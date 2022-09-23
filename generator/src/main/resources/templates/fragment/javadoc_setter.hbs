@@ -1,0 +1,13 @@
+{{!-- @formatter:off --}}
+/**
+{{#each this.splitDescription}}
+ * {{&this}}
+{{/each}}
+ *
+{{#each this.partOf}}
+ * @see <a href="{{&this}}">{{&this}}</a>
+{{/each}}
+{{#each this.source}}
+ * @see <a href="{{&this}}">{{&this}}</a>
+{{/each}}
+ */

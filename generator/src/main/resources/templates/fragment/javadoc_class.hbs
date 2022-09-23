@@ -1,0 +1,14 @@
+{{!-- @formatter:off --}}
+/**
+{{#each this.splitDescription}}
+ * {{&this}}
+{{/each}}
+ *
+{{#each this.partOf}}
+ * @see <a href="{{&this}}">{{&this}}</a>
+{{/each}}
+{{#each this.source}}
+ * @see <a href="{{&this}}">{{&this}}</a>
+{{/each}}
+ * @see <a href="https://schema.org/{{this.name}}">https://schema.org/{{this.name}}</a>
+ */

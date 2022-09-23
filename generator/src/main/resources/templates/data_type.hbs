@@ -1,0 +1,42 @@
+{{!-- @formatter:off --}}
+{{> templates/fragment/file_header}}
+package {{this.usedPackage}};
+
+{{#each this.imports}}
+import {{this}};
+{{/each}}
+
+{{#with this.type}}
+{{> templates/fragment/javadoc_class}}
+@JsonLdTypeName("{{this.id}}")
+public class {{this.name}}{{#if this.parents}} extends {{#each this.parents}}{{this.name}}{{#eq this.name "DataType"}}<{{../this.javaType}}>{{/eq}}{{#not @last}}, {{/not}}{{/each}}{{/if}} {
+
+    {{this.name}}({{this.javaType}} value) {
+        super(value{{#eq this.name "URL"}}.toString(){{/eq}});
+    }
+
+    public static {{this.name}} of({{this.javaType}} value) {
+        return new {{this.name}}(value);
+    }
+
+{{#each this.allProperties}}
+
+    private {{#gt this.types.length 1}}Object{{else}}{{this.types.[0].name}}{{/gt}} {{this.fieldName}};
+
+    {{> templates/fragment/javadoc_getter}}
+    public {{&this.returnFieldType}} get{{capitalizeFirst this.name}}() {
+        return {{#gt this.types.length 1}}(T) {{/gt}}{{this.fieldName}};
+    }
+
+    {{> templates/fragment/javadoc_setter}}
+    public void set{{capitalizeFirst this.name}}({{&this.paramFieldType}} {{this.fieldName}}) {
+{{#gt this.types.length 1}}
+        if({{#each this.types}}!({{../this.fieldName}} instanceof {{this.name}}){{#not @last}} && {{/not}}{{/each}}) {
+        throw new java.lang.IllegalArgumentException("Invalid value for property '{{this.name}}': " + {{this.fieldName}});
+        }
+{{/gt}}
+        this.{{this.fieldName}} = {{this.fieldName}};
+    }
+{{/each}}
+}
+{{/with}}

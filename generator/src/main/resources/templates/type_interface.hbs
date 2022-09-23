@@ -1,0 +1,21 @@
+{{!-- @formatter:off --}}
+{{> templates/fragment/file_header}}
+package {{this.usedPackage}};
+
+{{#each this.imports}}
+import {{this}};
+{{/each}}
+
+{{#with this.type}}
+{{> templates/fragment/javadoc_class}}
+public interface {{this.name}}{{#if this.parents}} extends {{#each this.parents}}{{this.name}}{{#not @last}}, {{/not}}{{/each}}{{/if}} {
+{{#each this.properties}}
+
+    {{> templates/fragment/javadoc_getter}}
+    {{&this.returnFieldType}} get{{capitalizeFirst this.name}}();
+
+    {{> templates/fragment/javadoc_setter}}
+    void set{{capitalizeFirst this.name}}({{&this.paramFieldType}} {{this.fieldName}});
+{{/each}}
+}
+{{/with}}

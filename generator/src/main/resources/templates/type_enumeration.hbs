@@ -1,0 +1,29 @@
+{{!-- @formatter:off --}}
+{{> templates/fragment/file_header}}
+package {{this.usedPackage}};
+
+{{#each this.imports}}
+import {{this}};
+{{/each}}
+
+{{#with this.type}}
+{{> templates/fragment/javadoc_class}}
+@JsonLdTypeName("{{this.id}}")
+public enum {{this.name}}Enum implements {{this.name}} {
+{{#each this.enumerationMembers}}
+    {{this}}{{#not @last}},{{else}};{{/not}}
+{{/each}}
+
+{{#each this.allProperties}}
+    @Override
+    public {{&this.returnFieldType}} get{{capitalizeFirst this.name}}() {
+        return null;
+    }
+
+    @Override
+    public void set{{capitalizeFirst this.name}}({{&this.paramFieldType}} {{this.fieldName}}) {
+        throw new java.lang.IllegalAccessError("Unable to set property '{{this.name}}': method not allowed for enum {{../this.name}}Enum");
+    }
+{{/each}}
+}
+{{/with}}

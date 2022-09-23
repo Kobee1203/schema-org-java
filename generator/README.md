@@ -1,0 +1,1 @@
+# Java Model Generator from Schema.org

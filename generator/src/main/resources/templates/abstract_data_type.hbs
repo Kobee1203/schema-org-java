@@ -1,0 +1,23 @@
+{{!-- @formatter:off --}}
+{{> templates/fragment/file_header}}
+package {{this.usedPackage}};
+
+{{#each this.imports}}
+import {{this}};
+{{/each}}
+
+{{#with this.type}}
+{{> templates/fragment/javadoc_class}}
+public abstract class {{this.name}}<T>{{#if this.parents}} extends {{#each this.parents}}{{this.name}}{{#not @last}}, {{/not}}{{/each}}{{/if}} {
+
+    private final T value;
+
+    {{this.name}}(T value) {
+        this.value = value;
+    }
+
+    public T getValue() {
+        return value;
+    }
+}
+{{/with}}
