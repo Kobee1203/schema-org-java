@@ -11,8 +11,19 @@ import {{this}};
 @JsonLdTypeName("{{this.id}}")
 public enum {{this.name}}Enum implements {{this.name}} {
 {{#each this.enumerationMembers}}
-    {{this}}{{#not @last}},{{else}};{{/not}}
+    {{capitalizeWithUnderscore this}}("{{this}}"){{#not @last}},{{else}};{{/not}}
 {{/each}}
+
+    private final String enumValue;
+
+    {{this.name}}Enum(String enumValue) {
+        this.enumValue = enumValue;
+    }
+
+    @Override
+    public String toString() {
+        return enumValue;
+    }
 
 {{#each this.allProperties}}
     @Override

@@ -4,6 +4,7 @@ import com.github.jknack.handlebars.Handlebars;
 import com.github.jknack.handlebars.Template;
 import com.github.jknack.handlebars.helper.ConditionalHelpers;
 import com.github.jknack.handlebars.helper.StringHelpers;
+ import com.weedow.schemaorg.generator.template.helper.CharSequenceHelpers;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -22,6 +23,7 @@ public class TemplateServiceImpl implements TemplateService {
         handlebars.setPrettyPrint(true);
         handlebars.registerHelpers(StringHelpers.class);
         handlebars.registerHelpers(ConditionalHelpers.class);
+        handlebars.registerHelpers(CharSequenceHelpers.class);
         return handlebars;
     }
 
