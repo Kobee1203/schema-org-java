@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+ import org.mockito.Spy;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.io.File;
@@ -16,6 +17,9 @@ import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 class SchemaModelGeneratorImplTest {
+
+    @Spy
+    private GeneratorOptions options = new GeneratorOptions();
 
     @Mock
     private TemplateService templateService;
@@ -30,9 +34,7 @@ class SchemaModelGeneratorImplTest {
     void generate_without_schema_definitions() throws IOException {
         when(schemaDefinitions.entrySet()).thenReturn(Collections.emptySet());
 
-        GeneratorOptions options = new GeneratorOptions();
-
-        schemaModelGenerator.generate(options);
+        schemaModelGenerator.generate();
 
         final File modelFolder = options.getModelFolder();
         final File modelImplFolder = options.getModelImplFolder();
@@ -50,9 +52,7 @@ class SchemaModelGeneratorImplTest {
         when(type.getName()).thenReturn("DataType");
         when(schemaDefinitions.entrySet()).thenReturn(Set.of(new AbstractMap.SimpleEntry<>("schema:DataType", type)));
 
-        GeneratorOptions options = new GeneratorOptions();
-
-        schemaModelGenerator.generate(options);
+        schemaModelGenerator.generate();
 
         final File modelFolder = options.getModelFolder();
         final File modelImplFolder = options.getModelImplFolder();
@@ -77,9 +77,7 @@ class SchemaModelGeneratorImplTest {
         when(type.getProperties()).thenReturn(Collections.emptySet());
         when(schemaDefinitions.entrySet()).thenReturn(Set.of(new AbstractMap.SimpleEntry<>("schema:Boolean", type)));
 
-        GeneratorOptions options = new GeneratorOptions();
-
-        schemaModelGenerator.generate(options);
+        schemaModelGenerator.generate();
 
         final File modelFolder = options.getModelFolder();
         final File modelImplFolder = options.getModelImplFolder();
@@ -108,9 +106,7 @@ class SchemaModelGeneratorImplTest {
         when(type.getProperties()).thenReturn(Collections.emptySet());
         when(schemaDefinitions.entrySet()).thenReturn(Set.of(new AbstractMap.SimpleEntry<>("schema:XPathType", type)));
 
-        GeneratorOptions options = new GeneratorOptions();
-
-        schemaModelGenerator.generate(options);
+        schemaModelGenerator.generate();
 
         final File modelFolder = options.getModelFolder();
         final File modelImplFolder = options.getModelImplFolder();
@@ -137,9 +133,7 @@ class SchemaModelGeneratorImplTest {
         when(type.getProperties()).thenReturn(Collections.emptySet());
         when(schemaDefinitions.entrySet()).thenReturn(Set.of(new AbstractMap.SimpleEntry<>("schema:ActionStatusType", type)));
 
-        GeneratorOptions options = new GeneratorOptions();
-
-        schemaModelGenerator.generate(options);
+        schemaModelGenerator.generate();
 
         final File modelFolder = options.getModelFolder();
         final File modelImplFolder = options.getModelImplFolder();
@@ -168,9 +162,7 @@ class SchemaModelGeneratorImplTest {
         when(type.getProperties()).thenReturn(Collections.emptySet());
         when(schemaDefinitions.entrySet()).thenReturn(Set.of(new AbstractMap.SimpleEntry<>("schema:Thing", type)));
 
-        GeneratorOptions options = new GeneratorOptions();
-
-        schemaModelGenerator.generate(options);
+        schemaModelGenerator.generate();
 
         final File modelFolder = options.getModelFolder();
         final File modelImplFolder = options.getModelImplFolder();

@@ -7,4 +7,9 @@ public final class ParserOptions {
     public String getSchemaVersion() {
         return schemaVersion;
     }
+
+    public ParserOptions setSchemaVersion(String schemaVersion) {
+        this.schemaVersion = schemaVersion;
+        return this;
+    }
 }

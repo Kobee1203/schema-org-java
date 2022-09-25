@@ -19,16 +19,18 @@ public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
 
     private static final String JAVA_EXTENSION = ".java";
 
+    private final GeneratorOptions options;
     private final TemplateService templateService;
     private final Map<String, Type> schemaDefinitions;
 
-    public SchemaModelGeneratorImpl(TemplateService templateService, Map<String, Type> schemaDefinitions) {
+    public SchemaModelGeneratorImpl(GeneratorOptions options, TemplateService templateService, Map<String, Type> schemaDefinitions) {
+        this.options = options;
         this.templateService = templateService;
         this.schemaDefinitions = schemaDefinitions;
     }
 
     @Override
-    public void generate(GeneratorOptions options) {
+    public void generate() {
         final File modelFolder = options.getModelFolder();
         final File modelImplFolder = options.getModelImplFolder();
         final File dataTypeFolder = options.getDataTypeFolder();
