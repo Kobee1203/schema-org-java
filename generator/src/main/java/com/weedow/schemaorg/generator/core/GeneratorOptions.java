@@ -1,6 +1,11 @@
 package com.weedow.schemaorg.generator.core;
 
+import com.weedow.schemaorg.generator.core.handler.ErrorHandler;
+import com.weedow.schemaorg.generator.core.handler.SuccessHandler;
+
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 public final class GeneratorOptions {
 
@@ -9,31 +14,72 @@ public final class GeneratorOptions {
     private String modelImplPackage = "org.schema.model.impl";
     private String dataTypePackage = "org.schema.model.datatype";
 
-    public File getOutputFolder() {
+    private final List<SuccessHandler> successHandlers = new ArrayList<>();
+    private final List<ErrorHandler> errorHandlers = new ArrayList<>();
+
+    File getOutputFolder() {
         return outputFolder;
     }
 
-    public String getModelPackage() {
+    public GeneratorOptions setOutputFolder(File outputFolder) {
+        this.outputFolder = outputFolder;
+        return this;
+    }
+
+    String getModelPackage() {
         return modelPackage;
     }
 
-    public String getModelImplPackage() {
-        return modelImplPackage;
+    public GeneratorOptions setModelPackage(String modelPackage) {
+        this.modelPackage = modelPackage;
+        return this;
     }
 
-    public String getDataTypePackage() {
-        return dataTypePackage;
-    }
-
-    public File getModelFolder() {
+    File getModelFolder() {
         return new File(outputFolder, modelPackage.replace(".", "/"));
     }
 
-    public File getModelImplFolder() {
+    String getModelImplPackage() {
+        return modelImplPackage;
+    }
+
+    public GeneratorOptions setModelImplPackage(String modelImplPackage) {
+        this.modelImplPackage = modelImplPackage;
+        return this;
+    }
+
+    File getModelImplFolder() {
         return new File(outputFolder, modelImplPackage.replace(".", "/"));
     }
 
-    public File getDataTypeFolder() {
+    String getDataTypePackage() {
+        return dataTypePackage;
+    }
+
+    public GeneratorOptions setDataTypePackage(String dataTypePackage) {
+        this.dataTypePackage = dataTypePackage;
+        return this;
+    }
+
+    File getDataTypeFolder() {
         return new File(outputFolder, dataTypePackage.replace(".", "/"));
+    }
+
+    List<SuccessHandler> getSuccessHandlers() {
+        return successHandlers;
+    }
+
+    public GeneratorOptions addSuccessHandler(SuccessHandler successHandler) {
+        successHandlers.add(successHandler);
+        return this;
+    }
+
+    List<ErrorHandler> getErrorHandlers() {
+        return errorHandlers;
+    }
+
+    public GeneratorOptions addErrorHandler(ErrorHandler errorHandler) {
+        errorHandlers.add(errorHandler);
+        return this;
     }
 }

@@ -126,8 +126,10 @@ public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
     private void applyTemplate(String templateName, File outputFile, Context context) {
         try {
             templateService.apply(templateName, outputFile, context);
+            options.getSuccessHandlers().forEach(successHandler -> successHandler.onSuccess(templateName, outputFile, context));
         } catch (IOException e) {
             LOG.warn("Could not write output file {} from template '{}': {}", outputFile, templateName, e.getMessage());
+            options.getErrorHandlers().forEach(errorHandler -> errorHandler.onError(templateName, outputFile, context, e));
         }
     }
 
