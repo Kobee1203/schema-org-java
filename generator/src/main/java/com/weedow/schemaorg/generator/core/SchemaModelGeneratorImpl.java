@@ -8,10 +8,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
 
@@ -54,10 +51,10 @@ public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
             applyTemplate(
                     "templates/jsonld_node_impl",
                     new File(modelImplFolder, "JsonLdNodeImpl.java"),
-                    new Context(null, modelImplPackage, Set.of(
+                    new Context(null, modelImplPackage, new LinkedHashSet<>(Arrays.asList(
                             SchemaGeneratorUtils.resolveClassName(modelPackage, dataTypePackage, SchemaGeneratorUtils.JSON_LD_NODE),
                             SchemaGeneratorUtils.resolveClassName(modelPackage, dataTypePackage, SchemaGeneratorUtils.JSON_LD_TYPE_NAME)
-                    ))
+                    )))
             );
 
             for (Map.Entry<String, Type> entry : schemaDefinitions.entrySet()) {
