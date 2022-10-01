@@ -17,7 +17,7 @@ public final class GeneratorOptions {
     private final List<SuccessHandler> successHandlers = new ArrayList<>();
     private final List<ErrorHandler> errorHandlers = new ArrayList<>();
 
-    File getOutputFolder() {
+    public File getOutputFolder() {
         return outputFolder;
     }
 
@@ -26,7 +26,7 @@ public final class GeneratorOptions {
         return this;
     }
 
-    String getModelPackage() {
+    public String getModelPackage() {
         return modelPackage;
     }
 
@@ -35,11 +35,11 @@ public final class GeneratorOptions {
         return this;
     }
 
-    File getModelFolder() {
+    public File getModelFolder() {
         return new File(outputFolder, modelPackage.replace(".", "/"));
     }
 
-    String getModelImplPackage() {
+    public String getModelImplPackage() {
         return modelImplPackage;
     }
 
@@ -48,11 +48,11 @@ public final class GeneratorOptions {
         return this;
     }
 
-    File getModelImplFolder() {
+    public File getModelImplFolder() {
         return new File(outputFolder, modelImplPackage.replace(".", "/"));
     }
 
-    String getDataTypePackage() {
+    public String getDataTypePackage() {
         return dataTypePackage;
     }
 
@@ -61,11 +61,11 @@ public final class GeneratorOptions {
         return this;
     }
 
-    File getDataTypeFolder() {
+    public File getDataTypeFolder() {
         return new File(outputFolder, dataTypePackage.replace(".", "/"));
     }
 
-    List<SuccessHandler> getSuccessHandlers() {
+    public List<SuccessHandler> getSuccessHandlers() {
         return successHandlers;
     }
 
@@ -74,7 +74,7 @@ public final class GeneratorOptions {
         return this;
     }
 
-    List<ErrorHandler> getErrorHandlers() {
+    public List<ErrorHandler> getErrorHandlers() {
         return errorHandlers;
     }
 
