@@ -4,6 +4,7 @@ import com.weedow.schemaorg.generator.core.handler.ErrorHandler;
 import com.weedow.schemaorg.generator.core.handler.SuccessHandler;
 import com.weedow.schemaorg.generator.model.Type;
 import com.weedow.schemaorg.generator.template.TemplateService;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -31,6 +32,11 @@ class SchemaModelGeneratorImplTest {
 
     @InjectMocks
     private SchemaModelGeneratorImpl schemaModelGenerator;
+
+    @AfterEach
+    public void tearDown() {
+        SchemaGeneratorUtils.clearCache();
+    }
 
     @Test
     void generate_without_schema_definitions() throws IOException {

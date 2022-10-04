@@ -43,4 +43,8 @@ public final class SchemaGeneratorUtils {
             return imports;
         });
     }
+
+    public static void clearCache() {
+        ALL_IMPORTS_BY_TYPE_CACHE.clear();
+    }
 }
