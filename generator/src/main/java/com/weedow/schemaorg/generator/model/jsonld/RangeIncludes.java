@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Objects;
 
-public class PartOf {
+public class RangeIncludes {
 
     @JsonProperty("@id")
     private String id;
@@ -21,8 +21,8 @@ public class PartOf {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        PartOf partOf = (PartOf) o;
-        return Objects.equals(id, partOf.id);
+        RangeIncludes that = (RangeIncludes) o;
+        return Objects.equals(id, that.id);
     }
 
     @Override
@@ -32,7 +32,7 @@ public class PartOf {
 
     @Override
     public String toString() {
-        return "PartOf{" +
+        return "RangeIncludes{" +
                 "id='" + id + '\'' +
                 '}';
     }

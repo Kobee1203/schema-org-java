@@ -42,7 +42,7 @@ class EnumerationMemberModelHandlerImplTest {
 
         GraphItem graphItem = mock(GraphItem.class);
         when(graphItem.getTypes()).thenReturn(List.of("schema:ActionStatusType"));
-        when(graphItem.getLabel()).thenReturn(label("PotentialActionStatus"));
+        when(graphItem.getLabel()).thenReturn(label("en", "PotentialActionStatus"));
 
         modelHandler.handle(schemaDefinitions, graphItem);
 

@@ -3,7 +3,7 @@ package com.weedow.schemaorg.generator.model.handler;
 import com.weedow.schemaorg.generator.model.Type;
 import com.weedow.schemaorg.generator.model.jsonld.GraphItem;
 import com.weedow.schemaorg.generator.model.jsonld.PartOf;
-import com.weedow.schemaorg.generator.model.jsonld.RangIncludes;
+import com.weedow.schemaorg.generator.model.jsonld.RangeIncludes;
 import com.weedow.schemaorg.generator.model.jsonld.Source;
 
 import java.util.Collections;
@@ -47,7 +47,7 @@ public final class ModelHandlerUtils {
     }
 
     public static List<Type> getPropertyTypes(Map<String, Type> schemaDefinitions, GraphItem graphItem) {
-        final List<RangIncludes> rangeIncludes = graphItem.getRangeIncludes();
+        final List<RangeIncludes> rangeIncludes = graphItem.getRangeIncludes();
         return rangeIncludes != null ? rangeIncludes.stream().map(rangIncludes -> getType(schemaDefinitions, rangIncludes.getId())).collect(Collectors.toList()) : Collections.emptyList();
     }
 

@@ -44,8 +44,8 @@ class ClassModelHandlerImplTest {
 
         GraphItem graphItem = mock(GraphItem.class);
         when(graphItem.getId()).thenReturn("schema:MyType");
-        when(graphItem.getLabel()).thenReturn(label("MyType"));
-        when(graphItem.getComment()).thenReturn(comment("This is my Type"));
+        when(graphItem.getLabel()).thenReturn(label("en", "MyType"));
+        when(graphItem.getComment()).thenReturn(comment("en", "This is my Type"));
         when(graphItem.getPartOf()).thenReturn(List.of(partOf("https://pending.schema.org")));
         when(graphItem.getSource()).thenReturn(List.of(source("https://github.com/schemaorg/schemaorg/issues/2373")));
         when(graphItem.getSubClassOf()).thenReturn(List.of(subClassOf("rdfs:Class"), subClassOf("schema:Parent")));

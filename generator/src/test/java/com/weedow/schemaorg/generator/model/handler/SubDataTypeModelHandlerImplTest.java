@@ -44,8 +44,8 @@ class SubDataTypeModelHandlerImplTest {
 
         GraphItem graphItem = mock(GraphItem.class);
         when(graphItem.getId()).thenReturn("schema:XPathType");
-        when(graphItem.getLabel()).thenReturn(label("XPathType"));
-        when(graphItem.getComment()).thenReturn(comment("This is XPathType"));
+        when(graphItem.getLabel()).thenReturn(label("en", "XPathType"));
+        when(graphItem.getComment()).thenReturn(comment("en", "This is XPathType"));
         when(graphItem.getPartOf()).thenReturn(List.of(partOf("https://pending.schema.org")));
         when(graphItem.getSource()).thenReturn(List.of(source("https://github.com/schemaorg/schemaorg/issues/1672")));
         when(graphItem.getSubClassOf()).thenReturn(List.of(subClassOf("schema:Text")));

@@ -4,4 +4,9 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 
 @JsonTypeName("rdf:Property")
 public class PropertyItem extends GraphItem {
+
+    @Override
+    public String toString() {
+        return toString("PropertyItem");
+    }
 }

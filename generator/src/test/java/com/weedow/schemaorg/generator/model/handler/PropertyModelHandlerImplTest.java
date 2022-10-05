@@ -44,8 +44,8 @@ class PropertyModelHandlerImplTest {
         GraphItem graphItem = mock(GraphItem.class);
         when(graphItem.getId()).thenReturn("schema:MyProperty");
         when(graphItem.getRangeIncludes()).thenReturn(List.of(rangeInclude("schema:Text")));
-        when(graphItem.getLabel()).thenReturn(label("MyProperty"));
-        when(graphItem.getComment()).thenReturn(comment("This is my Property"));
+        when(graphItem.getLabel()).thenReturn(label("en", "MyProperty"));
+        when(graphItem.getComment()).thenReturn(comment("en", "This is my Property"));
         when(graphItem.getPartOf()).thenReturn(List.of(partOf("https://pending.schema.org")));
         when(graphItem.getSource()).thenReturn(List.of(source("https://github.com/schemaorg/schemaorg/issues/2373")));
         when(graphItem.getDomainIncludes()).thenReturn(List.of(domainInclude("schema:MyType")));

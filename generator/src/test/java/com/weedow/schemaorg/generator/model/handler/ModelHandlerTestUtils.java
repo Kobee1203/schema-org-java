@@ -7,14 +7,16 @@ public final class ModelHandlerTestUtils {
     private ModelHandlerTestUtils() {
     }
 
-    public static Label label(String value) {
+    public static Label label(String language, String value) {
         Label label = new Label();
+        label.setLanguage(language);
         label.setValue(value);
         return label;
     }
 
-    public static Comment comment(String value) {
+    public static Comment comment(String language, String value) {
         Comment comment = new Comment();
+        comment.setLanguage(language);
         comment.setValue(value);
         return comment;
     }
@@ -31,8 +33,8 @@ public final class ModelHandlerTestUtils {
         return partOf;
     }
 
-    public static RangIncludes rangeInclude(String id) {
-        RangIncludes rangeIncludes = new RangIncludes();
+    public static RangeIncludes rangeInclude(String id) {
+        RangeIncludes rangeIncludes = new RangeIncludes();
         rangeIncludes.setId(id);
         return rangeIncludes;
     }
