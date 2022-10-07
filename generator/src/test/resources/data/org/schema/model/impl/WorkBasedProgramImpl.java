@@ -45,57 +45,247 @@ import org.schema.model.WorkBasedProgram;
 @JsonLdTypeName("schema:WorkBasedProgram")
 public class WorkBasedProgramImpl implements WorkBasedProgram {
 
-    private Object fEducationalProgramMode;
+    private MonetaryAmountDistribution fTrainingSalary;
 
     /**
-     * Similar to courseMode, The medium or means of delivery of the program as a whole. The value may either be a text label (e.g. "online", "onsite" or "blended"; "synchronous" or "asynchronous"; "full-time" or "part-time") or a URL reference to a term from a controlled vocabulary (e.g. https://ceds.ed.gov/element/001311#Asynchronous ).
+     * The estimated salary earned while in the program.
      *
-     * @return {@link URL} or {@link Text}
+     * @return {@link MonetaryAmountDistribution}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
      */
     @Override
-    public <T> T getEducationalProgramMode() {
-        return (T) fEducationalProgramMode;
+    public MonetaryAmountDistribution getTrainingSalary() {
+        return fTrainingSalary;
     }
 
     /**
-     * Similar to courseMode, The medium or means of delivery of the program as a whole. The value may either be a text label (e.g. "online", "onsite" or "blended"; "synchronous" or "asynchronous"; "full-time" or "part-time") or a URL reference to a term from a controlled vocabulary (e.g. https://ceds.ed.gov/element/001311#Asynchronous ).
+     * The estimated salary earned while in the program.
      *
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
      */
     @Override
-    public void setEducationalProgramMode(Object fEducationalProgramMode) {
-        if(!(fEducationalProgramMode instanceof URL) && !(fEducationalProgramMode instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'educationalProgramMode': " + fEducationalProgramMode);
+    public void setTrainingSalary(MonetaryAmountDistribution fTrainingSalary) {
+        this.fTrainingSalary = fTrainingSalary;
+    }
+
+    private Object fOccupationalCategory;
+
+    /**
+     * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.<br/>
+     * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
+     *
+     * @return {@link CategoryCode} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    @Override
+    public <T> T getOccupationalCategory() {
+        return (T) fOccupationalCategory;
+    }
+
+    /**
+     * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.<br/>
+     * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    @Override
+    public void setOccupationalCategory(Object fOccupationalCategory) {
+        if(!(fOccupationalCategory instanceof CategoryCode) && !(fOccupationalCategory instanceof Text)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'occupationalCategory': " + fOccupationalCategory);
         }
-        this.fEducationalProgramMode = fEducationalProgramMode;
+        this.fOccupationalCategory = fOccupationalCategory;
     }
 
-    private Text fTimeOfDay;
+    private Object fProgramPrerequisites;
 
     /**
-     * The time of day the program normally runs. For example, "evenings".
+     * Prerequisites for enrolling in the program.
      *
-     * @return {@link Text}
+     * @return {@link AlignmentObject} or {@link Course} or {@link EducationalOccupationalCredential} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public <T> T getProgramPrerequisites() {
+        return (T) fProgramPrerequisites;
+    }
+
+    /**
+     * Prerequisites for enrolling in the program.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public void setProgramPrerequisites(Object fProgramPrerequisites) {
+        if(!(fProgramPrerequisites instanceof AlignmentObject) && !(fProgramPrerequisites instanceof Course) && !(fProgramPrerequisites instanceof EducationalOccupationalCredential) && !(fProgramPrerequisites instanceof Text)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'programPrerequisites': " + fProgramPrerequisites);
+        }
+        this.fProgramPrerequisites = fProgramPrerequisites;
+    }
+
+    private Course fHasCourse;
+
+    /**
+     * A course or class that is one of the learning opportunities that constitute an educational / occupational program. No information is implied about whether the course is mandatory or optional; no guarantee is implied about whether the course will be available to everyone on the program.
+     *
+     * @return {@link Course}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2483">https://github.com/schemaorg/schemaorg/issues/2483</a>
+     */
+    @Override
+    public Course getHasCourse() {
+        return fHasCourse;
+    }
+
+    /**
+     * A course or class that is one of the learning opportunities that constitute an educational / occupational program. No information is implied about whether the course is mandatory or optional; no guarantee is implied about whether the course will be available to everyone on the program.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2483">https://github.com/schemaorg/schemaorg/issues/2483</a>
+     */
+    @Override
+    public void setHasCourse(Course fHasCourse) {
+        this.fHasCourse = fHasCourse;
+    }
+
+    private Object fStartDate;
+
+    /**
+     * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
+     *
+     * @return {@link DateTime} or {@link Date}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
+     */
+    @Override
+    public <T> T getStartDate() {
+        return (T) fStartDate;
+    }
+
+    /**
+     * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
+     *
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
+     */
+    @Override
+    public void setStartDate(Object fStartDate) {
+        if(!(fStartDate instanceof DateTime) && !(fStartDate instanceof Date)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'startDate': " + fStartDate);
+        }
+        this.fStartDate = fStartDate;
+    }
+
+    private MonetaryAmountDistribution fSalaryUponCompletion;
+
+    /**
+     * The expected salary upon completing the training.
+     *
+     * @return {@link MonetaryAmountDistribution}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public MonetaryAmountDistribution getSalaryUponCompletion() {
+        return fSalaryUponCompletion;
+    }
+
+    /**
+     * The expected salary upon completing the training.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public void setSalaryUponCompletion(MonetaryAmountDistribution fSalaryUponCompletion) {
+        this.fSalaryUponCompletion = fSalaryUponCompletion;
+    }
+
+    private Number fTermsPerYear;
+
+    /**
+     * The number of times terms of study are offered per year. Semesters and quarters are common units for term. For example, if the student can only take 2 semesters for the program in one year, then termsPerYear should be 2.
+     *
+     * @return {@link Number}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
      */
     @Override
-    public Text getTimeOfDay() {
-        return fTimeOfDay;
+    public Number getTermsPerYear() {
+        return fTermsPerYear;
     }
 
     /**
-     * The time of day the program normally runs. For example, "evenings".
+     * The number of times terms of study are offered per year. Semesters and quarters are common units for term. For example, if the student can only take 2 semesters for the program in one year, then termsPerYear should be 2.
      *
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
      */
     @Override
-    public void setTimeOfDay(Text fTimeOfDay) {
-        this.fTimeOfDay = fTimeOfDay;
+    public void setTermsPerYear(Number fTermsPerYear) {
+        this.fTermsPerYear = fTermsPerYear;
+    }
+
+    private DayOfWeek fDayOfWeek;
+
+    /**
+     * The day of the week for which these opening hours are valid.
+     *
+     * @return {@link DayOfWeek}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public DayOfWeek getDayOfWeek() {
+        return fDayOfWeek;
+    }
+
+    /**
+     * The day of the week for which these opening hours are valid.
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setDayOfWeek(DayOfWeek fDayOfWeek) {
+        this.fDayOfWeek = fDayOfWeek;
+    }
+
+    private Object fOffers;
+
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     *
+     * @return {@link Offer} or {@link Demand}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public <T> T getOffers() {
+        return (T) fOffers;
+    }
+
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     *
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public void setOffers(Object fOffers) {
+        if(!(fOffers instanceof Offer) && !(fOffers instanceof Demand)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'offers': " + fOffers);
+        }
+        this.fOffers = fOffers;
     }
 
     private Object fTypicalCreditsPerTerm;
@@ -126,99 +316,80 @@ public class WorkBasedProgramImpl implements WorkBasedProgram {
         this.fTypicalCreditsPerTerm = fTypicalCreditsPerTerm;
     }
 
-    private Number fTermsPerYear;
+    private Date fApplicationStartDate;
 
     /**
-     * The number of times terms of study are offered per year. Semesters and quarters are common units for term. For example, if the student can only take 2 semesters for the program in one year, then termsPerYear should be 2.
-     *
-     * @return {@link Number}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
-     */
-    @Override
-    public Number getTermsPerYear() {
-        return fTermsPerYear;
-    }
-
-    /**
-     * The number of times terms of study are offered per year. Semesters and quarters are common units for term. For example, if the student can only take 2 semesters for the program in one year, then termsPerYear should be 2.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
-     */
-    @Override
-    public void setTermsPerYear(Number fTermsPerYear) {
-        this.fTermsPerYear = fTermsPerYear;
-    }
-
-    private Date fApplicationDeadline;
-
-    /**
-     * The date at which the program stops collecting applications for the next enrollment cycle.
+     * The date at which the program begins collecting applications for the next enrollment cycle.
      *
      * @return {@link Date}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
      */
     @Override
-    public Date getApplicationDeadline() {
-        return fApplicationDeadline;
+    public Date getApplicationStartDate() {
+        return fApplicationStartDate;
     }
 
     /**
-     * The date at which the program stops collecting applications for the next enrollment cycle.
+     * The date at which the program begins collecting applications for the next enrollment cycle.
      *
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
      */
     @Override
-    public void setApplicationDeadline(Date fApplicationDeadline) {
-        this.fApplicationDeadline = fApplicationDeadline;
+    public void setApplicationStartDate(Date fApplicationStartDate) {
+        this.fApplicationStartDate = fApplicationStartDate;
     }
 
-    private Text fAlternateName;
+    private Text fTimeOfDay;
 
     /**
-     * An alias for the item.
+     * The time of day the program normally runs. For example, "evenings".
      *
      * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
      */
     @Override
-    public Text getAlternateName() {
-        return fAlternateName;
+    public Text getTimeOfDay() {
+        return fTimeOfDay;
     }
 
     /**
-     * An alias for the item.
+     * The time of day the program normally runs. For example, "evenings".
      *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
      */
     @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
+    public void setTimeOfDay(Text fTimeOfDay) {
+        this.fTimeOfDay = fTimeOfDay;
     }
 
-    private Object fMainEntityOfPage;
+    private Object fEndDate;
 
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
      *
-     * @return {@link CreativeWork} or {@link URL}
+     * @return {@link Date} or {@link DateTime}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
     @Override
-    public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
+    public <T> T getEndDate() {
+        return (T) fEndDate;
     }
 
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
      *
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
     @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
+    public void setEndDate(Object fEndDate) {
+        if(!(fEndDate instanceof Date) && !(fEndDate instanceof DateTime)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'endDate': " + fEndDate);
         }
-        this.fMainEntityOfPage = fMainEntityOfPage;
+        this.fEndDate = fEndDate;
     }
 
     private Object fProvider;
@@ -251,108 +422,6 @@ public class WorkBasedProgramImpl implements WorkBasedProgram {
         this.fProvider = fProvider;
     }
 
-    private Duration fTimeToComplete;
-
-    /**
-     * The expected length of time to complete the program if attending full-time.
-     *
-     * @return {@link Duration}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    @Override
-    public Duration getTimeToComplete() {
-        return fTimeToComplete;
-    }
-
-    /**
-     * The expected length of time to complete the program if attending full-time.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    @Override
-    public void setTimeToComplete(Duration fTimeToComplete) {
-        this.fTimeToComplete = fTimeToComplete;
-    }
-
-    private Object fStartDate;
-
-    /**
-     * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
-     *
-     * @return {@link DateTime} or {@link Date}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
-     */
-    @Override
-    public <T> T getStartDate() {
-        return (T) fStartDate;
-    }
-
-    /**
-     * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
-     *
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
-     */
-    @Override
-    public void setStartDate(Object fStartDate) {
-        if(!(fStartDate instanceof DateTime) && !(fStartDate instanceof Date)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'startDate': " + fStartDate);
-        }
-        this.fStartDate = fStartDate;
-    }
-
-    private Object fEndDate;
-
-    /**
-     * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
-     *
-     * @return {@link Date} or {@link DateTime}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
-     */
-    @Override
-    public <T> T getEndDate() {
-        return (T) fEndDate;
-    }
-
-    /**
-     * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
-     *
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
-     */
-    @Override
-    public void setEndDate(Object fEndDate) {
-        if(!(fEndDate instanceof Date) && !(fEndDate instanceof DateTime)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'endDate': " + fEndDate);
-        }
-        this.fEndDate = fEndDate;
-    }
-
-    private Integer fMaximumEnrollment;
-
-    /**
-     * The maximum number of students who may be enrolled in the program.
-     *
-     * @return {@link Integer}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
-     */
-    @Override
-    public Integer getMaximumEnrollment() {
-        return fMaximumEnrollment;
-    }
-
-    /**
-     * The maximum number of students who may be enrolled in the program.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
-     */
-    @Override
-    public void setMaximumEnrollment(Integer fMaximumEnrollment) {
-        this.fMaximumEnrollment = fMaximumEnrollment;
-    }
-
     private Object fEducationalCredentialAwarded;
 
     /**
@@ -377,130 +446,6 @@ public class WorkBasedProgramImpl implements WorkBasedProgram {
             throw new java.lang.IllegalArgumentException("Invalid value for property 'educationalCredentialAwarded': " + fEducationalCredentialAwarded);
         }
         this.fEducationalCredentialAwarded = fEducationalCredentialAwarded;
-    }
-
-    private Object fProgramType;
-
-    /**
-     * The type of educational or occupational program. For example, classroom, internship, alternance, etc..
-     *
-     * @return {@link Text} or {@link DefinedTerm}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
-     */
-    @Override
-    public <T> T getProgramType() {
-        return (T) fProgramType;
-    }
-
-    /**
-     * The type of educational or occupational program. For example, classroom, internship, alternance, etc..
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
-     */
-    @Override
-    public void setProgramType(Object fProgramType) {
-        if(!(fProgramType instanceof Text) && !(fProgramType instanceof DefinedTerm)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'programType': " + fProgramType);
-        }
-        this.fProgramType = fProgramType;
-    }
-
-    private MonetaryAmountDistribution fTrainingSalary;
-
-    /**
-     * The estimated salary earned while in the program.
-     *
-     * @return {@link MonetaryAmountDistribution}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
-     */
-    @Override
-    public MonetaryAmountDistribution getTrainingSalary() {
-        return fTrainingSalary;
-    }
-
-    /**
-     * The estimated salary earned while in the program.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
-     */
-    @Override
-    public void setTrainingSalary(MonetaryAmountDistribution fTrainingSalary) {
-        this.fTrainingSalary = fTrainingSalary;
-    }
-
-    private Action fPotentialAction;
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
-    @Override
-    public Action getPotentialAction() {
-        return fPotentialAction;
-    }
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     */
-    @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
-    }
-
-    private Date fApplicationStartDate;
-
-    /**
-     * The date at which the program begins collecting applications for the next enrollment cycle.
-     *
-     * @return {@link Date}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
-     */
-    @Override
-    public Date getApplicationStartDate() {
-        return fApplicationStartDate;
-    }
-
-    /**
-     * The date at which the program begins collecting applications for the next enrollment cycle.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
-     */
-    @Override
-    public void setApplicationStartDate(Date fApplicationStartDate) {
-        this.fApplicationStartDate = fApplicationStartDate;
-    }
-
-    private DayOfWeek fDayOfWeek;
-
-    /**
-     * The day of the week for which these opening hours are valid.
-     *
-     * @return {@link DayOfWeek}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public DayOfWeek getDayOfWeek() {
-        return fDayOfWeek;
-    }
-
-    /**
-     * The day of the week for which these opening hours are valid.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setDayOfWeek(DayOfWeek fDayOfWeek) {
-        this.fDayOfWeek = fDayOfWeek;
     }
 
     private Object fNumberOfCredits;
@@ -531,224 +476,29 @@ public class WorkBasedProgramImpl implements WorkBasedProgram {
         this.fNumberOfCredits = fNumberOfCredits;
     }
 
-    private Object fProgramPrerequisites;
+    private Duration fTimeToComplete;
 
     /**
-     * Prerequisites for enrolling in the program.
+     * The expected length of time to complete the program if attending full-time.
      *
-     * @return {@link AlignmentObject} or {@link Course} or {@link EducationalOccupationalCredential} or {@link Text}
+     * @return {@link Duration}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
     @Override
-    public <T> T getProgramPrerequisites() {
-        return (T) fProgramPrerequisites;
+    public Duration getTimeToComplete() {
+        return fTimeToComplete;
     }
 
     /**
-     * Prerequisites for enrolling in the program.
+     * The expected length of time to complete the program if attending full-time.
      *
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
     @Override
-    public void setProgramPrerequisites(Object fProgramPrerequisites) {
-        if(!(fProgramPrerequisites instanceof AlignmentObject) && !(fProgramPrerequisites instanceof Course) && !(fProgramPrerequisites instanceof EducationalOccupationalCredential) && !(fProgramPrerequisites instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'programPrerequisites': " + fProgramPrerequisites);
-        }
-        this.fProgramPrerequisites = fProgramPrerequisites;
-    }
-
-    private Object fSubjectOf;
-
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @return {@link Event} or {@link CreativeWork}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    @Override
-    public <T> T getSubjectOf() {
-        return (T) fSubjectOf;
-    }
-
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    @Override
-    public void setSubjectOf(Object fSubjectOf) {
-        if(!(fSubjectOf instanceof Event) && !(fSubjectOf instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'subjectOf': " + fSubjectOf);
-        }
-        this.fSubjectOf = fSubjectOf;
-    }
-
-    private Text fName;
-
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getName() {
-        return fName;
-    }
-
-    /**
-     * The name of the item.
-     *
-     */
-    @Override
-    public void setName(Text fName) {
-        this.fName = fName;
-    }
-
-    private Object fOffers;
-
-    /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
-     *
-     * @return {@link Offer} or {@link Demand}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    @Override
-    public <T> T getOffers() {
-        return (T) fOffers;
-    }
-
-    /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
-     *
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    @Override
-    public void setOffers(Object fOffers) {
-        if(!(fOffers instanceof Offer) && !(fOffers instanceof Demand)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'offers': " + fOffers);
-        }
-        this.fOffers = fOffers;
-    }
-
-    private Text fDisambiguatingDescription;
-
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDisambiguatingDescription() {
-        return fDisambiguatingDescription;
-    }
-
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     */
-    @Override
-    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = fDisambiguatingDescription;
-    }
-
-    private Object fImage;
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link URL} or {@link ImageObject}
-     */
-    @Override
-    public <T> T getImage() {
-        return (T) fImage;
-    }
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     */
-    @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
-        this.fImage = fImage;
-    }
-
-    private URL fSameAs;
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getSameAs() {
-        return fSameAs;
-    }
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     */
-    @Override
-    public void setSameAs(URL fSameAs) {
-        this.fSameAs = fSameAs;
-    }
-
-    private Object fIdentifier;
-
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @return {@link URL} or {@link Text} or {@link PropertyValue}
-     */
-    @Override
-    public <T> T getIdentifier() {
-        return (T) fIdentifier;
-    }
-
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     */
-    @Override
-    public void setIdentifier(Object fIdentifier) {
-        if(!(fIdentifier instanceof URL) && !(fIdentifier instanceof Text) && !(fIdentifier instanceof PropertyValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
-        }
-        this.fIdentifier = fIdentifier;
-    }
-
-    private Course fHasCourse;
-
-    /**
-     * A course or class that is one of the learning opportunities that constitute an educational / occupational program. No information is implied about whether the course is mandatory or optional; no guarantee is implied about whether the course will be available to everyone on the program.
-     *
-     * @return {@link Course}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2483">https://github.com/schemaorg/schemaorg/issues/2483</a>
-     */
-    @Override
-    public Course getHasCourse() {
-        return fHasCourse;
-    }
-
-    /**
-     * A course or class that is one of the learning opportunities that constitute an educational / occupational program. No information is implied about whether the course is mandatory or optional; no guarantee is implied about whether the course will be available to everyone on the program.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2483">https://github.com/schemaorg/schemaorg/issues/2483</a>
-     */
-    @Override
-    public void setHasCourse(Course fHasCourse) {
-        this.fHasCourse = fHasCourse;
+    public void setTimeToComplete(Duration fTimeToComplete) {
+        this.fTimeToComplete = fTimeToComplete;
     }
 
     private Object fOccupationalCredentialAwarded;
@@ -804,6 +554,87 @@ public class WorkBasedProgramImpl implements WorkBasedProgram {
         this.fTermDuration = fTermDuration;
     }
 
+    private Object fEducationalProgramMode;
+
+    /**
+     * Similar to courseMode, The medium or means of delivery of the program as a whole. The value may either be a text label (e.g. "online", "onsite" or "blended"; "synchronous" or "asynchronous"; "full-time" or "part-time") or a URL reference to a term from a controlled vocabulary (e.g. https://ceds.ed.gov/element/001311#Asynchronous ).
+     *
+     * @return {@link URL} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
+     */
+    @Override
+    public <T> T getEducationalProgramMode() {
+        return (T) fEducationalProgramMode;
+    }
+
+    /**
+     * Similar to courseMode, The medium or means of delivery of the program as a whole. The value may either be a text label (e.g. "online", "onsite" or "blended"; "synchronous" or "asynchronous"; "full-time" or "part-time") or a URL reference to a term from a controlled vocabulary (e.g. https://ceds.ed.gov/element/001311#Asynchronous ).
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
+     */
+    @Override
+    public void setEducationalProgramMode(Object fEducationalProgramMode) {
+        if(!(fEducationalProgramMode instanceof URL) && !(fEducationalProgramMode instanceof Text)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'educationalProgramMode': " + fEducationalProgramMode);
+        }
+        this.fEducationalProgramMode = fEducationalProgramMode;
+    }
+
+    private Object fProgramType;
+
+    /**
+     * The type of educational or occupational program. For example, classroom, internship, alternance, etc..
+     *
+     * @return {@link Text} or {@link DefinedTerm}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
+     */
+    @Override
+    public <T> T getProgramType() {
+        return (T) fProgramType;
+    }
+
+    /**
+     * The type of educational or occupational program. For example, classroom, internship, alternance, etc..
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
+     */
+    @Override
+    public void setProgramType(Object fProgramType) {
+        if(!(fProgramType instanceof Text) && !(fProgramType instanceof DefinedTerm)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'programType': " + fProgramType);
+        }
+        this.fProgramType = fProgramType;
+    }
+
+    private Integer fMaximumEnrollment;
+
+    /**
+     * The maximum number of students who may be enrolled in the program.
+     *
+     * @return {@link Integer}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
+     */
+    @Override
+    public Integer getMaximumEnrollment() {
+        return fMaximumEnrollment;
+    }
+
+    /**
+     * The maximum number of students who may be enrolled in the program.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
+     */
+    @Override
+    public void setMaximumEnrollment(Integer fMaximumEnrollment) {
+        this.fMaximumEnrollment = fMaximumEnrollment;
+    }
+
     private Object fFinancialAidEligible;
 
     /**
@@ -832,6 +663,142 @@ public class WorkBasedProgramImpl implements WorkBasedProgram {
         this.fFinancialAidEligible = fFinancialAidEligible;
     }
 
+    private Date fApplicationDeadline;
+
+    /**
+     * The date at which the program stops collecting applications for the next enrollment cycle.
+     *
+     * @return {@link Date}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
+     */
+    @Override
+    public Date getApplicationDeadline() {
+        return fApplicationDeadline;
+    }
+
+    /**
+     * The date at which the program stops collecting applications for the next enrollment cycle.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
+     */
+    @Override
+    public void setApplicationDeadline(Date fApplicationDeadline) {
+        this.fApplicationDeadline = fApplicationDeadline;
+    }
+
+    private Object fMainEntityOfPage;
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    @Override
+    public <T> T getMainEntityOfPage() {
+        return (T) fMainEntityOfPage;
+    }
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     */
+    @Override
+    public void setMainEntityOfPage(Object fMainEntityOfPage) {
+        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
+        }
+        this.fMainEntityOfPage = fMainEntityOfPage;
+    }
+
+    private Text fAlternateName;
+
+    /**
+     * An alias for the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getAlternateName() {
+        return fAlternateName;
+    }
+
+    /**
+     * An alias for the item.
+     *
+     */
+    @Override
+    public void setAlternateName(Text fAlternateName) {
+        this.fAlternateName = fAlternateName;
+    }
+
+    private Text fName;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getName() {
+        return fName;
+    }
+
+    /**
+     * The name of the item.
+     *
+     */
+    @Override
+    public void setName(Text fName) {
+        this.fName = fName;
+    }
+
+    private Action fPotentialAction;
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public Action getPotentialAction() {
+        return fPotentialAction;
+    }
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     */
+    @Override
+    public void setPotentialAction(Action fPotentialAction) {
+        this.fPotentialAction = fPotentialAction;
+    }
+
+    private Object fImage;
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link URL} or {@link ImageObject}
+     */
+    @Override
+    public <T> T getImage() {
+        return (T) fImage;
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     */
+    @Override
+    public void setImage(Object fImage) {
+        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
+        }
+        this.fImage = fImage;
+    }
+
     private URL fUrl;
 
     /**
@@ -851,52 +818,6 @@ public class WorkBasedProgramImpl implements WorkBasedProgram {
     @Override
     public void setUrl(URL fUrl) {
         this.fUrl = fUrl;
-    }
-
-    private MonetaryAmountDistribution fSalaryUponCompletion;
-
-    /**
-     * The expected salary upon completing the training.
-     *
-     * @return {@link MonetaryAmountDistribution}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    @Override
-    public MonetaryAmountDistribution getSalaryUponCompletion() {
-        return fSalaryUponCompletion;
-    }
-
-    /**
-     * The expected salary upon completing the training.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    @Override
-    public void setSalaryUponCompletion(MonetaryAmountDistribution fSalaryUponCompletion) {
-        this.fSalaryUponCompletion = fSalaryUponCompletion;
-    }
-
-    private URL fAdditionalType;
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getAdditionalType() {
-        return fAdditionalType;
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     */
-    @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
     }
 
     private Text fDescription;
@@ -920,39 +841,118 @@ public class WorkBasedProgramImpl implements WorkBasedProgram {
         this.fDescription = fDescription;
     }
 
-    private Object fOccupationalCategory;
+    private Object fSubjectOf;
 
     /**
-     * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.<br/>
-     * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
+     * A CreativeWork or Event about this Thing.
      *
-     * @return {@link CategoryCode} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @return {@link Event} or {@link CreativeWork}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public <T> T getOccupationalCategory() {
-        return (T) fOccupationalCategory;
+    public <T> T getSubjectOf() {
+        return (T) fSubjectOf;
     }
 
     /**
-     * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.<br/>
-     * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
+     * A CreativeWork or Event about this Thing.
      *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setOccupationalCategory(Object fOccupationalCategory) {
-        if(!(fOccupationalCategory instanceof CategoryCode) && !(fOccupationalCategory instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'occupationalCategory': " + fOccupationalCategory);
+    public void setSubjectOf(Object fSubjectOf) {
+        if(!(fSubjectOf instanceof Event) && !(fSubjectOf instanceof CreativeWork)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'subjectOf': " + fSubjectOf);
         }
-        this.fOccupationalCategory = fOccupationalCategory;
+        this.fSubjectOf = fSubjectOf;
+    }
+
+    private URL fAdditionalType;
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getAdditionalType() {
+        return fAdditionalType;
+    }
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     */
+    @Override
+    public void setAdditionalType(URL fAdditionalType) {
+        this.fAdditionalType = fAdditionalType;
+    }
+
+    private Text fDisambiguatingDescription;
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDisambiguatingDescription() {
+        return fDisambiguatingDescription;
+    }
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     */
+    @Override
+    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
+        this.fDisambiguatingDescription = fDisambiguatingDescription;
+    }
+
+    private URL fSameAs;
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getSameAs() {
+        return fSameAs;
+    }
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     */
+    @Override
+    public void setSameAs(URL fSameAs) {
+        this.fSameAs = fSameAs;
+    }
+
+    private Object fIdentifier;
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @return {@link URL} or {@link Text} or {@link PropertyValue}
+     */
+    @Override
+    public <T> T getIdentifier() {
+        return (T) fIdentifier;
+    }
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     */
+    @Override
+    public void setIdentifier(Object fIdentifier) {
+        if(!(fIdentifier instanceof URL) && !(fIdentifier instanceof Text) && !(fIdentifier instanceof PropertyValue)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
+        }
+        this.fIdentifier = fIdentifier;
     }
 }

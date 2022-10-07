@@ -33,25 +33,88 @@ import org.schema.model.ParentAudience;
 @JsonLdTypeName("schema:ParentAudience")
 public class ParentAudienceImpl implements ParentAudience {
 
-    private Integer fRequiredMaxAge;
+    private Number fChildMaxAge;
 
     /**
-     * Audiences defined by a person's maximum age.
+     * Maximal age of the child.
+     *
+     * @return {@link Number}
+     */
+    @Override
+    public Number getChildMaxAge() {
+        return fChildMaxAge;
+    }
+
+    /**
+     * Maximal age of the child.
+     *
+     */
+    @Override
+    public void setChildMaxAge(Number fChildMaxAge) {
+        this.fChildMaxAge = fChildMaxAge;
+    }
+
+    private Number fChildMinAge;
+
+    /**
+     * Minimal age of the child.
+     *
+     * @return {@link Number}
+     */
+    @Override
+    public Number getChildMinAge() {
+        return fChildMinAge;
+    }
+
+    /**
+     * Minimal age of the child.
+     *
+     */
+    @Override
+    public void setChildMinAge(Number fChildMinAge) {
+        this.fChildMinAge = fChildMinAge;
+    }
+
+    private Integer fRequiredMinAge;
+
+    /**
+     * Audiences defined by a person's minimum age.
      *
      * @return {@link Integer}
      */
     @Override
-    public Integer getRequiredMaxAge() {
-        return fRequiredMaxAge;
+    public Integer getRequiredMinAge() {
+        return fRequiredMinAge;
     }
 
     /**
-     * Audiences defined by a person's maximum age.
+     * Audiences defined by a person's minimum age.
      *
      */
     @Override
-    public void setRequiredMaxAge(Integer fRequiredMaxAge) {
-        this.fRequiredMaxAge = fRequiredMaxAge;
+    public void setRequiredMinAge(Integer fRequiredMinAge) {
+        this.fRequiredMinAge = fRequiredMinAge;
+    }
+
+    private Number fSuggestedMaxAge;
+
+    /**
+     * Maximum recommended age in years for the audience or user.
+     *
+     * @return {@link Number}
+     */
+    @Override
+    public Number getSuggestedMaxAge() {
+        return fSuggestedMaxAge;
+    }
+
+    /**
+     * Maximum recommended age in years for the audience or user.
+     *
+     */
+    @Override
+    public void setSuggestedMaxAge(Number fSuggestedMaxAge) {
+        this.fSuggestedMaxAge = fSuggestedMaxAge;
     }
 
     private MedicalCondition fHealthCondition;
@@ -75,27 +138,6 @@ public class ParentAudienceImpl implements ParentAudience {
     @Override
     public void setHealthCondition(MedicalCondition fHealthCondition) {
         this.fHealthCondition = fHealthCondition;
-    }
-
-    private Number fSuggestedMinAge;
-
-    /**
-     * Minimum recommended age in years for the audience or user.
-     *
-     * @return {@link Number}
-     */
-    @Override
-    public Number getSuggestedMinAge() {
-        return fSuggestedMinAge;
-    }
-
-    /**
-     * Minimum recommended age in years for the audience or user.
-     *
-     */
-    @Override
-    public void setSuggestedMinAge(Number fSuggestedMinAge) {
-        this.fSuggestedMinAge = fSuggestedMinAge;
     }
 
     private QuantitativeValue fSuggestedMeasurement;
@@ -123,25 +165,158 @@ public class ParentAudienceImpl implements ParentAudience {
         this.fSuggestedMeasurement = fSuggestedMeasurement;
     }
 
-    private Text fAlternateName;
+    private QuantitativeValue fSuggestedAge;
 
     /**
-     * An alias for the item.
+     * The age or age range for the intended audience or person, for example 3-12 months for infants, 1-5 years for toddlers.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
+     */
+    @Override
+    public QuantitativeValue getSuggestedAge() {
+        return fSuggestedAge;
+    }
+
+    /**
+     * The age or age range for the intended audience or person, for example 3-12 months for infants, 1-5 years for toddlers.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
+     */
+    @Override
+    public void setSuggestedAge(QuantitativeValue fSuggestedAge) {
+        this.fSuggestedAge = fSuggestedAge;
+    }
+
+    private Integer fRequiredMaxAge;
+
+    /**
+     * Audiences defined by a person's maximum age.
+     *
+     * @return {@link Integer}
+     */
+    @Override
+    public Integer getRequiredMaxAge() {
+        return fRequiredMaxAge;
+    }
+
+    /**
+     * Audiences defined by a person's maximum age.
+     *
+     */
+    @Override
+    public void setRequiredMaxAge(Integer fRequiredMaxAge) {
+        this.fRequiredMaxAge = fRequiredMaxAge;
+    }
+
+    private Number fSuggestedMinAge;
+
+    /**
+     * Minimum recommended age in years for the audience or user.
+     *
+     * @return {@link Number}
+     */
+    @Override
+    public Number getSuggestedMinAge() {
+        return fSuggestedMinAge;
+    }
+
+    /**
+     * Minimum recommended age in years for the audience or user.
+     *
+     */
+    @Override
+    public void setSuggestedMinAge(Number fSuggestedMinAge) {
+        this.fSuggestedMinAge = fSuggestedMinAge;
+    }
+
+    private Text fRequiredGender;
+
+    /**
+     * Audiences defined by a person's gender.
      *
      * @return {@link Text}
      */
     @Override
-    public Text getAlternateName() {
-        return fAlternateName;
+    public Text getRequiredGender() {
+        return fRequiredGender;
     }
 
     /**
-     * An alias for the item.
+     * Audiences defined by a person's gender.
      *
      */
     @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
+    public void setRequiredGender(Text fRequiredGender) {
+        this.fRequiredGender = fRequiredGender;
+    }
+
+    private Object fSuggestedGender;
+
+    /**
+     * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
+     *
+     * @return {@link GenderType} or {@link Text}
+     */
+    @Override
+    public <T> T getSuggestedGender() {
+        return (T) fSuggestedGender;
+    }
+
+    /**
+     * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
+     *
+     */
+    @Override
+    public void setSuggestedGender(Object fSuggestedGender) {
+        if(!(fSuggestedGender instanceof GenderType) && !(fSuggestedGender instanceof Text)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'suggestedGender': " + fSuggestedGender);
+        }
+        this.fSuggestedGender = fSuggestedGender;
+    }
+
+    private Text fAudienceType;
+
+    /**
+     * The target group associated with a given audience (e.g. veterans, car owners, musicians, etc.).
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getAudienceType() {
+        return fAudienceType;
+    }
+
+    /**
+     * The target group associated with a given audience (e.g. veterans, car owners, musicians, etc.).
+     *
+     */
+    @Override
+    public void setAudienceType(Text fAudienceType) {
+        this.fAudienceType = fAudienceType;
+    }
+
+    private AdministrativeArea fGeographicArea;
+
+    /**
+     * The geographic area associated with the audience.
+     *
+     * @return {@link AdministrativeArea}
+     */
+    @Override
+    public AdministrativeArea getGeographicArea() {
+        return fGeographicArea;
+    }
+
+    /**
+     * The geographic area associated with the audience.
+     *
+     */
+    @Override
+    public void setGeographicArea(AdministrativeArea fGeographicArea) {
+        this.fGeographicArea = fGeographicArea;
     }
 
     private Object fMainEntityOfPage;
@@ -168,46 +343,46 @@ public class ParentAudienceImpl implements ParentAudience {
         this.fMainEntityOfPage = fMainEntityOfPage;
     }
 
-    private Text fAudienceType;
+    private Text fAlternateName;
 
     /**
-     * The target group associated with a given audience (e.g. veterans, car owners, musicians, etc.).
+     * An alias for the item.
      *
      * @return {@link Text}
      */
     @Override
-    public Text getAudienceType() {
-        return fAudienceType;
+    public Text getAlternateName() {
+        return fAlternateName;
     }
 
     /**
-     * The target group associated with a given audience (e.g. veterans, car owners, musicians, etc.).
+     * An alias for the item.
      *
      */
     @Override
-    public void setAudienceType(Text fAudienceType) {
-        this.fAudienceType = fAudienceType;
+    public void setAlternateName(Text fAlternateName) {
+        this.fAlternateName = fAlternateName;
     }
 
-    private Text fRequiredGender;
+    private Text fName;
 
     /**
-     * Audiences defined by a person's gender.
+     * The name of the item.
      *
      * @return {@link Text}
      */
     @Override
-    public Text getRequiredGender() {
-        return fRequiredGender;
+    public Text getName() {
+        return fName;
     }
 
     /**
-     * Audiences defined by a person's gender.
+     * The name of the item.
      *
      */
     @Override
-    public void setRequiredGender(Text fRequiredGender) {
-        this.fRequiredGender = fRequiredGender;
+    public void setName(Text fName) {
+        this.fName = fName;
     }
 
     private Action fPotentialAction;
@@ -229,6 +404,72 @@ public class ParentAudienceImpl implements ParentAudience {
     @Override
     public void setPotentialAction(Action fPotentialAction) {
         this.fPotentialAction = fPotentialAction;
+    }
+
+    private Object fImage;
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link URL} or {@link ImageObject}
+     */
+    @Override
+    public <T> T getImage() {
+        return (T) fImage;
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     */
+    @Override
+    public void setImage(Object fImage) {
+        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
+        }
+        this.fImage = fImage;
+    }
+
+    private URL fUrl;
+
+    /**
+     * URL of the item.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getUrl() {
+        return fUrl;
+    }
+
+    /**
+     * URL of the item.
+     *
+     */
+    @Override
+    public void setUrl(URL fUrl) {
+        this.fUrl = fUrl;
+    }
+
+    private Text fDescription;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDescription() {
+        return fDescription;
+    }
+
+    /**
+     * A description of the item.
+     *
+     */
+    @Override
+    public void setDescription(Text fDescription) {
+        this.fDescription = fDescription;
     }
 
     private Object fSubjectOf;
@@ -257,25 +498,25 @@ public class ParentAudienceImpl implements ParentAudience {
         this.fSubjectOf = fSubjectOf;
     }
 
-    private Text fName;
+    private URL fAdditionalType;
 
     /**
-     * The name of the item.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
-     * @return {@link Text}
+     * @return {@link URL}
      */
     @Override
-    public Text getName() {
-        return fName;
+    public URL getAdditionalType() {
+        return fAdditionalType;
     }
 
     /**
-     * The name of the item.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
      */
     @Override
-    public void setName(Text fName) {
-        this.fName = fName;
+    public void setAdditionalType(URL fAdditionalType) {
+        this.fAdditionalType = fAdditionalType;
     }
 
     private Text fDisambiguatingDescription;
@@ -297,30 +538,6 @@ public class ParentAudienceImpl implements ParentAudience {
     @Override
     public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
         this.fDisambiguatingDescription = fDisambiguatingDescription;
-    }
-
-    private Object fImage;
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link URL} or {@link ImageObject}
-     */
-    @Override
-    public <T> T getImage() {
-        return (T) fImage;
-    }
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     */
-    @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
-        this.fImage = fImage;
     }
 
     private URL fSameAs;
@@ -368,222 +585,5 @@ public class ParentAudienceImpl implements ParentAudience {
             throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
         }
         this.fIdentifier = fIdentifier;
-    }
-
-    private AdministrativeArea fGeographicArea;
-
-    /**
-     * The geographic area associated with the audience.
-     *
-     * @return {@link AdministrativeArea}
-     */
-    @Override
-    public AdministrativeArea getGeographicArea() {
-        return fGeographicArea;
-    }
-
-    /**
-     * The geographic area associated with the audience.
-     *
-     */
-    @Override
-    public void setGeographicArea(AdministrativeArea fGeographicArea) {
-        this.fGeographicArea = fGeographicArea;
-    }
-
-    private Number fChildMaxAge;
-
-    /**
-     * Maximal age of the child.
-     *
-     * @return {@link Number}
-     */
-    @Override
-    public Number getChildMaxAge() {
-        return fChildMaxAge;
-    }
-
-    /**
-     * Maximal age of the child.
-     *
-     */
-    @Override
-    public void setChildMaxAge(Number fChildMaxAge) {
-        this.fChildMaxAge = fChildMaxAge;
-    }
-
-    private Integer fRequiredMinAge;
-
-    /**
-     * Audiences defined by a person's minimum age.
-     *
-     * @return {@link Integer}
-     */
-    @Override
-    public Integer getRequiredMinAge() {
-        return fRequiredMinAge;
-    }
-
-    /**
-     * Audiences defined by a person's minimum age.
-     *
-     */
-    @Override
-    public void setRequiredMinAge(Integer fRequiredMinAge) {
-        this.fRequiredMinAge = fRequiredMinAge;
-    }
-
-    private Object fSuggestedGender;
-
-    /**
-     * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
-     *
-     * @return {@link GenderType} or {@link Text}
-     */
-    @Override
-    public <T> T getSuggestedGender() {
-        return (T) fSuggestedGender;
-    }
-
-    /**
-     * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
-     *
-     */
-    @Override
-    public void setSuggestedGender(Object fSuggestedGender) {
-        if(!(fSuggestedGender instanceof GenderType) && !(fSuggestedGender instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'suggestedGender': " + fSuggestedGender);
-        }
-        this.fSuggestedGender = fSuggestedGender;
-    }
-
-    private Number fChildMinAge;
-
-    /**
-     * Minimal age of the child.
-     *
-     * @return {@link Number}
-     */
-    @Override
-    public Number getChildMinAge() {
-        return fChildMinAge;
-    }
-
-    /**
-     * Minimal age of the child.
-     *
-     */
-    @Override
-    public void setChildMinAge(Number fChildMinAge) {
-        this.fChildMinAge = fChildMinAge;
-    }
-
-    private URL fUrl;
-
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getUrl() {
-        return fUrl;
-    }
-
-    /**
-     * URL of the item.
-     *
-     */
-    @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
-    }
-
-    private Number fSuggestedMaxAge;
-
-    /**
-     * Maximum recommended age in years for the audience or user.
-     *
-     * @return {@link Number}
-     */
-    @Override
-    public Number getSuggestedMaxAge() {
-        return fSuggestedMaxAge;
-    }
-
-    /**
-     * Maximum recommended age in years for the audience or user.
-     *
-     */
-    @Override
-    public void setSuggestedMaxAge(Number fSuggestedMaxAge) {
-        this.fSuggestedMaxAge = fSuggestedMaxAge;
-    }
-
-    private QuantitativeValue fSuggestedAge;
-
-    /**
-     * The age or age range for the intended audience or person, for example 3-12 months for infants, 1-5 years for toddlers.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
-     */
-    @Override
-    public QuantitativeValue getSuggestedAge() {
-        return fSuggestedAge;
-    }
-
-    /**
-     * The age or age range for the intended audience or person, for example 3-12 months for infants, 1-5 years for toddlers.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
-     */
-    @Override
-    public void setSuggestedAge(QuantitativeValue fSuggestedAge) {
-        this.fSuggestedAge = fSuggestedAge;
-    }
-
-    private URL fAdditionalType;
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getAdditionalType() {
-        return fAdditionalType;
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     */
-    @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
-    }
-
-    private Text fDescription;
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDescription() {
-        return fDescription;
-    }
-
-    /**
-     * A description of the item.
-     *
-     */
-    @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
     }
 }

@@ -28,6 +28,174 @@ import org.schema.model.Intangible;
 @JsonLdTypeName("schema:GeospatialGeometry")
 public class GeospatialGeometryImpl implements GeospatialGeometry {
 
+    private Object fGeoContains;
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. "a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @return {@link Place} or {@link GeospatialGeometry}
+     */
+    @Override
+    public <T> T getGeoContains() {
+        return (T) fGeoContains;
+    }
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. "a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     */
+    @Override
+    public void setGeoContains(Object fGeoContains) {
+        if(!(fGeoContains instanceof Place) && !(fGeoContains instanceof GeospatialGeometry)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoContains': " + fGeoContains);
+        }
+        this.fGeoContains = fGeoContains;
+    }
+
+    private Object fGeoIntersects;
+
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @return {@link GeospatialGeometry} or {@link Place}
+     */
+    @Override
+    public <T> T getGeoIntersects() {
+        return (T) fGeoIntersects;
+    }
+
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     */
+    @Override
+    public void setGeoIntersects(Object fGeoIntersects) {
+        if(!(fGeoIntersects instanceof GeospatialGeometry) && !(fGeoIntersects instanceof Place)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoIntersects': " + fGeoIntersects);
+        }
+        this.fGeoIntersects = fGeoIntersects;
+    }
+
+    private Object fGeoTouches;
+
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) touch: they have at least one boundary point in common, but no interior points." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM) )
+     *
+     * @return {@link Place} or {@link GeospatialGeometry}
+     */
+    @Override
+    public <T> T getGeoTouches() {
+        return (T) fGeoTouches;
+    }
+
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) touch: they have at least one boundary point in common, but no interior points." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM) )
+     *
+     */
+    @Override
+    public void setGeoTouches(Object fGeoTouches) {
+        if(!(fGeoTouches instanceof Place) && !(fGeoTouches instanceof GeospatialGeometry)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoTouches': " + fGeoTouches);
+        }
+        this.fGeoTouches = fGeoTouches;
+    }
+
+    private Object fGeoCoveredBy;
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @return {@link Place} or {@link GeospatialGeometry}
+     */
+    @Override
+    public <T> T getGeoCoveredBy() {
+        return (T) fGeoCoveredBy;
+    }
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     */
+    @Override
+    public void setGeoCoveredBy(Object fGeoCoveredBy) {
+        if(!(fGeoCoveredBy instanceof Place) && !(fGeoCoveredBy instanceof GeospatialGeometry)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoCoveredBy': " + fGeoCoveredBy);
+        }
+        this.fGeoCoveredBy = fGeoCoveredBy;
+    }
+
+    private Object fGeoEquals;
+
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). "Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other" (a symmetric relationship)
+     *
+     * @return {@link Place} or {@link GeospatialGeometry}
+     */
+    @Override
+    public <T> T getGeoEquals() {
+        return (T) fGeoEquals;
+    }
+
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). "Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other" (a symmetric relationship)
+     *
+     */
+    @Override
+    public void setGeoEquals(Object fGeoEquals) {
+        if(!(fGeoEquals instanceof Place) && !(fGeoEquals instanceof GeospatialGeometry)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoEquals': " + fGeoEquals);
+        }
+        this.fGeoEquals = fGeoEquals;
+    }
+
+    private Object fGeoCrosses;
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: "a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @return {@link GeospatialGeometry} or {@link Place}
+     */
+    @Override
+    public <T> T getGeoCrosses() {
+        return (T) fGeoCrosses;
+    }
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: "a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     */
+    @Override
+    public void setGeoCrosses(Object fGeoCrosses) {
+        if(!(fGeoCrosses instanceof GeospatialGeometry) && !(fGeoCrosses instanceof Place)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoCrosses': " + fGeoCrosses);
+        }
+        this.fGeoCrosses = fGeoCrosses;
+    }
+
+    private Object fGeoCovers;
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. "Every point of b is a point of (the interior or boundary of) a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @return {@link GeospatialGeometry} or {@link Place}
+     */
+    @Override
+    public <T> T getGeoCovers() {
+        return (T) fGeoCovers;
+    }
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. "Every point of b is a point of (the interior or boundary of) a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     */
+    @Override
+    public void setGeoCovers(Object fGeoCovers) {
+        if(!(fGeoCovers instanceof GeospatialGeometry) && !(fGeoCovers instanceof Place)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoCovers': " + fGeoCovers);
+        }
+        this.fGeoCovers = fGeoCovers;
+    }
+
     private Object fGeoWithin;
 
     /**
@@ -50,6 +218,207 @@ public class GeospatialGeometryImpl implements GeospatialGeometry {
             throw new java.lang.IllegalArgumentException("Invalid value for property 'geoWithin': " + fGeoWithin);
         }
         this.fGeoWithin = fGeoWithin;
+    }
+
+    private Object fGeoDisjoint;
+
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM))
+     *
+     * @return {@link GeospatialGeometry} or {@link Place}
+     */
+    @Override
+    public <T> T getGeoDisjoint() {
+        return (T) fGeoDisjoint;
+    }
+
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM))
+     *
+     */
+    @Override
+    public void setGeoDisjoint(Object fGeoDisjoint) {
+        if(!(fGeoDisjoint instanceof GeospatialGeometry) && !(fGeoDisjoint instanceof Place)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoDisjoint': " + fGeoDisjoint);
+        }
+        this.fGeoDisjoint = fGeoDisjoint;
+    }
+
+    private Object fGeoOverlaps;
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @return {@link GeospatialGeometry} or {@link Place}
+     */
+    @Override
+    public <T> T getGeoOverlaps() {
+        return (T) fGeoOverlaps;
+    }
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     */
+    @Override
+    public void setGeoOverlaps(Object fGeoOverlaps) {
+        if(!(fGeoOverlaps instanceof GeospatialGeometry) && !(fGeoOverlaps instanceof Place)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoOverlaps': " + fGeoOverlaps);
+        }
+        this.fGeoOverlaps = fGeoOverlaps;
+    }
+
+    private Object fMainEntityOfPage;
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    @Override
+    public <T> T getMainEntityOfPage() {
+        return (T) fMainEntityOfPage;
+    }
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     */
+    @Override
+    public void setMainEntityOfPage(Object fMainEntityOfPage) {
+        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
+        }
+        this.fMainEntityOfPage = fMainEntityOfPage;
+    }
+
+    private Text fAlternateName;
+
+    /**
+     * An alias for the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getAlternateName() {
+        return fAlternateName;
+    }
+
+    /**
+     * An alias for the item.
+     *
+     */
+    @Override
+    public void setAlternateName(Text fAlternateName) {
+        this.fAlternateName = fAlternateName;
+    }
+
+    private Text fName;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getName() {
+        return fName;
+    }
+
+    /**
+     * The name of the item.
+     *
+     */
+    @Override
+    public void setName(Text fName) {
+        this.fName = fName;
+    }
+
+    private Action fPotentialAction;
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public Action getPotentialAction() {
+        return fPotentialAction;
+    }
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     */
+    @Override
+    public void setPotentialAction(Action fPotentialAction) {
+        this.fPotentialAction = fPotentialAction;
+    }
+
+    private Object fImage;
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link URL} or {@link ImageObject}
+     */
+    @Override
+    public <T> T getImage() {
+        return (T) fImage;
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     */
+    @Override
+    public void setImage(Object fImage) {
+        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
+        }
+        this.fImage = fImage;
+    }
+
+    private URL fUrl;
+
+    /**
+     * URL of the item.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getUrl() {
+        return fUrl;
+    }
+
+    /**
+     * URL of the item.
+     *
+     */
+    @Override
+    public void setUrl(URL fUrl) {
+        this.fUrl = fUrl;
+    }
+
+    private Text fDescription;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDescription() {
+        return fDescription;
+    }
+
+    /**
+     * A description of the item.
+     *
+     */
+    @Override
+    public void setDescription(Text fDescription) {
+        this.fDescription = fDescription;
     }
 
     private Object fSubjectOf;
@@ -78,49 +447,25 @@ public class GeospatialGeometryImpl implements GeospatialGeometry {
         this.fSubjectOf = fSubjectOf;
     }
 
-    private Text fName;
+    private URL fAdditionalType;
 
     /**
-     * The name of the item.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
-     * @return {@link Text}
+     * @return {@link URL}
      */
     @Override
-    public Text getName() {
-        return fName;
+    public URL getAdditionalType() {
+        return fAdditionalType;
     }
 
     /**
-     * The name of the item.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
      */
     @Override
-    public void setName(Text fName) {
-        this.fName = fName;
-    }
-
-    private Object fGeoCrosses;
-
-    /**
-     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: "a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     * @return {@link GeospatialGeometry} or {@link Place}
-     */
-    @Override
-    public <T> T getGeoCrosses() {
-        return (T) fGeoCrosses;
-    }
-
-    /**
-     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: "a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     */
-    @Override
-    public void setGeoCrosses(Object fGeoCrosses) {
-        if(!(fGeoCrosses instanceof GeospatialGeometry) && !(fGeoCrosses instanceof Place)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoCrosses': " + fGeoCrosses);
-        }
-        this.fGeoCrosses = fGeoCrosses;
+    public void setAdditionalType(URL fAdditionalType) {
+        this.fAdditionalType = fAdditionalType;
     }
 
     private Text fDisambiguatingDescription;
@@ -142,30 +487,6 @@ public class GeospatialGeometryImpl implements GeospatialGeometry {
     @Override
     public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
         this.fDisambiguatingDescription = fDisambiguatingDescription;
-    }
-
-    private Object fImage;
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link URL} or {@link ImageObject}
-     */
-    @Override
-    public <T> T getImage() {
-        return (T) fImage;
-    }
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     */
-    @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
-        this.fImage = fImage;
     }
 
     private URL fSameAs;
@@ -213,326 +534,5 @@ public class GeospatialGeometryImpl implements GeospatialGeometry {
             throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
         }
         this.fIdentifier = fIdentifier;
-    }
-
-    private Text fAlternateName;
-
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getAlternateName() {
-        return fAlternateName;
-    }
-
-    /**
-     * An alias for the item.
-     *
-     */
-    @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
-    }
-
-    private Object fMainEntityOfPage;
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     */
-    @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
-        }
-        this.fMainEntityOfPage = fMainEntityOfPage;
-    }
-
-    private URL fUrl;
-
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getUrl() {
-        return fUrl;
-    }
-
-    /**
-     * URL of the item.
-     *
-     */
-    @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
-    }
-
-    private Object fGeoOverlaps;
-
-    /**
-     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     * @return {@link GeospatialGeometry} or {@link Place}
-     */
-    @Override
-    public <T> T getGeoOverlaps() {
-        return (T) fGeoOverlaps;
-    }
-
-    /**
-     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     */
-    @Override
-    public void setGeoOverlaps(Object fGeoOverlaps) {
-        if(!(fGeoOverlaps instanceof GeospatialGeometry) && !(fGeoOverlaps instanceof Place)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoOverlaps': " + fGeoOverlaps);
-        }
-        this.fGeoOverlaps = fGeoOverlaps;
-    }
-
-    private Object fGeoCovers;
-
-    /**
-     * Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. "Every point of b is a point of (the interior or boundary of) a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     * @return {@link GeospatialGeometry} or {@link Place}
-     */
-    @Override
-    public <T> T getGeoCovers() {
-        return (T) fGeoCovers;
-    }
-
-    /**
-     * Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. "Every point of b is a point of (the interior or boundary of) a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     */
-    @Override
-    public void setGeoCovers(Object fGeoCovers) {
-        if(!(fGeoCovers instanceof GeospatialGeometry) && !(fGeoCovers instanceof Place)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoCovers': " + fGeoCovers);
-        }
-        this.fGeoCovers = fGeoCovers;
-    }
-
-    private Object fGeoContains;
-
-    /**
-     * Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. "a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     * @return {@link Place} or {@link GeospatialGeometry}
-     */
-    @Override
-    public <T> T getGeoContains() {
-        return (T) fGeoContains;
-    }
-
-    /**
-     * Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. "a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     */
-    @Override
-    public void setGeoContains(Object fGeoContains) {
-        if(!(fGeoContains instanceof Place) && !(fGeoContains instanceof GeospatialGeometry)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoContains': " + fGeoContains);
-        }
-        this.fGeoContains = fGeoContains;
-    }
-
-    private Object fGeoEquals;
-
-    /**
-     * Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). "Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other" (a symmetric relationship)
-     *
-     * @return {@link Place} or {@link GeospatialGeometry}
-     */
-    @Override
-    public <T> T getGeoEquals() {
-        return (T) fGeoEquals;
-    }
-
-    /**
-     * Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). "Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other" (a symmetric relationship)
-     *
-     */
-    @Override
-    public void setGeoEquals(Object fGeoEquals) {
-        if(!(fGeoEquals instanceof Place) && !(fGeoEquals instanceof GeospatialGeometry)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoEquals': " + fGeoEquals);
-        }
-        this.fGeoEquals = fGeoEquals;
-    }
-
-    private Object fGeoDisjoint;
-
-    /**
-     * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM))
-     *
-     * @return {@link GeospatialGeometry} or {@link Place}
-     */
-    @Override
-    public <T> T getGeoDisjoint() {
-        return (T) fGeoDisjoint;
-    }
-
-    /**
-     * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM))
-     *
-     */
-    @Override
-    public void setGeoDisjoint(Object fGeoDisjoint) {
-        if(!(fGeoDisjoint instanceof GeospatialGeometry) && !(fGeoDisjoint instanceof Place)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoDisjoint': " + fGeoDisjoint);
-        }
-        this.fGeoDisjoint = fGeoDisjoint;
-    }
-
-    private URL fAdditionalType;
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getAdditionalType() {
-        return fAdditionalType;
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     */
-    @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
-    }
-
-    private Text fDescription;
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDescription() {
-        return fDescription;
-    }
-
-    /**
-     * A description of the item.
-     *
-     */
-    @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
-    }
-
-    private Object fGeoIntersects;
-
-    /**
-     * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     * @return {@link GeospatialGeometry} or {@link Place}
-     */
-    @Override
-    public <T> T getGeoIntersects() {
-        return (T) fGeoIntersects;
-    }
-
-    /**
-     * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     */
-    @Override
-    public void setGeoIntersects(Object fGeoIntersects) {
-        if(!(fGeoIntersects instanceof GeospatialGeometry) && !(fGeoIntersects instanceof Place)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoIntersects': " + fGeoIntersects);
-        }
-        this.fGeoIntersects = fGeoIntersects;
-    }
-
-    private Object fGeoCoveredBy;
-
-    /**
-     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     * @return {@link Place} or {@link GeospatialGeometry}
-     */
-    @Override
-    public <T> T getGeoCoveredBy() {
-        return (T) fGeoCoveredBy;
-    }
-
-    /**
-     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     */
-    @Override
-    public void setGeoCoveredBy(Object fGeoCoveredBy) {
-        if(!(fGeoCoveredBy instanceof Place) && !(fGeoCoveredBy instanceof GeospatialGeometry)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoCoveredBy': " + fGeoCoveredBy);
-        }
-        this.fGeoCoveredBy = fGeoCoveredBy;
-    }
-
-    private Action fPotentialAction;
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
-    @Override
-    public Action getPotentialAction() {
-        return fPotentialAction;
-    }
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     */
-    @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
-    }
-
-    private Object fGeoTouches;
-
-    /**
-     * Represents spatial relations in which two geometries (or the places they represent) touch: they have at least one boundary point in common, but no interior points." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM) )
-     *
-     * @return {@link Place} or {@link GeospatialGeometry}
-     */
-    @Override
-    public <T> T getGeoTouches() {
-        return (T) fGeoTouches;
-    }
-
-    /**
-     * Represents spatial relations in which two geometries (or the places they represent) touch: they have at least one boundary point in common, but no interior points." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM) )
-     *
-     */
-    @Override
-    public void setGeoTouches(Object fGeoTouches) {
-        if(!(fGeoTouches instanceof Place) && !(fGeoTouches instanceof GeospatialGeometry)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoTouches': " + fGeoTouches);
-        }
-        this.fGeoTouches = fGeoTouches;
     }
 }

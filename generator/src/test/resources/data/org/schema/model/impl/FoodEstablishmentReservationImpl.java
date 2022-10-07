@@ -37,70 +37,101 @@ import org.schema.model.FoodEstablishmentReservation;
 @JsonLdTypeName("schema:FoodEstablishmentReservation")
 public class FoodEstablishmentReservationImpl implements FoodEstablishmentReservation {
 
-    private DateTime fBookingTime;
+    private Object fPartySize;
 
     /**
-     * The date and time the reservation was booked.
+     * Number of people the reservation should accommodate.
+     *
+     * @return {@link Integer} or {@link QuantitativeValue}
+     */
+    @Override
+    public <T> T getPartySize() {
+        return (T) fPartySize;
+    }
+
+    /**
+     * Number of people the reservation should accommodate.
+     *
+     */
+    @Override
+    public void setPartySize(Object fPartySize) {
+        if(!(fPartySize instanceof Integer) && !(fPartySize instanceof QuantitativeValue)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'partySize': " + fPartySize);
+        }
+        this.fPartySize = fPartySize;
+    }
+
+    private Object fStartTime;
+
+    /**
+     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @return {@link DateTime} or {@link Time}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    @Override
+    public <T> T getStartTime() {
+        return (T) fStartTime;
+    }
+
+    /**
+     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    @Override
+    public void setStartTime(Object fStartTime) {
+        if(!(fStartTime instanceof DateTime) && !(fStartTime instanceof Time)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'startTime': " + fStartTime);
+        }
+        this.fStartTime = fStartTime;
+    }
+
+    private Object fEndTime;
+
+    /**
+     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @return {@link DateTime} or {@link Time}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    @Override
+    public <T> T getEndTime() {
+        return (T) fEndTime;
+    }
+
+    /**
+     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    @Override
+    public void setEndTime(Object fEndTime) {
+        if(!(fEndTime instanceof DateTime) && !(fEndTime instanceof Time)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'endTime': " + fEndTime);
+        }
+        this.fEndTime = fEndTime;
+    }
+
+    private DateTime fModifiedTime;
+
+    /**
+     * The date and time the reservation was modified.
      *
      * @return {@link DateTime}
      */
     @Override
-    public DateTime getBookingTime() {
-        return fBookingTime;
+    public DateTime getModifiedTime() {
+        return fModifiedTime;
     }
 
     /**
-     * The date and time the reservation was booked.
+     * The date and time the reservation was modified.
      *
      */
     @Override
-    public void setBookingTime(DateTime fBookingTime) {
-        this.fBookingTime = fBookingTime;
-    }
-
-    private Text fAlternateName;
-
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getAlternateName() {
-        return fAlternateName;
-    }
-
-    /**
-     * An alias for the item.
-     *
-     */
-    @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
-    }
-
-    private Object fMainEntityOfPage;
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     */
-    @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
-        }
-        this.fMainEntityOfPage = fMainEntityOfPage;
+    public void setModifiedTime(DateTime fModifiedTime) {
+        this.fModifiedTime = fModifiedTime;
     }
 
     private Object fTotalPrice;
@@ -125,6 +156,48 @@ public class FoodEstablishmentReservationImpl implements FoodEstablishmentReserv
             throw new java.lang.IllegalArgumentException("Invalid value for property 'totalPrice': " + fTotalPrice);
         }
         this.fTotalPrice = fTotalPrice;
+    }
+
+    private Ticket fReservedTicket;
+
+    /**
+     * A ticket associated with the reservation.
+     *
+     * @return {@link Ticket}
+     */
+    @Override
+    public Ticket getReservedTicket() {
+        return fReservedTicket;
+    }
+
+    /**
+     * A ticket associated with the reservation.
+     *
+     */
+    @Override
+    public void setReservedTicket(Ticket fReservedTicket) {
+        this.fReservedTicket = fReservedTicket;
+    }
+
+    private ReservationStatusType fReservationStatus;
+
+    /**
+     * The current status of the reservation.
+     *
+     * @return {@link ReservationStatusType}
+     */
+    @Override
+    public ReservationStatusType getReservationStatus() {
+        return fReservationStatus;
+    }
+
+    /**
+     * The current status of the reservation.
+     *
+     */
+    @Override
+    public void setReservationStatus(ReservationStatusType fReservationStatus) {
+        this.fReservationStatus = fReservationStatus;
     }
 
     private Object fProvider;
@@ -157,67 +230,94 @@ public class FoodEstablishmentReservationImpl implements FoodEstablishmentReserv
         this.fProvider = fProvider;
     }
 
-    private DateTime fModifiedTime;
+    private Object fBroker;
 
     /**
-     * The date and time the reservation was modified.
+     * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    @Override
+    public <T> T getBroker() {
+        return (T) fBroker;
+    }
+
+    /**
+     * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
+     *
+     */
+    @Override
+    public void setBroker(Object fBroker) {
+        if(!(fBroker instanceof Person) && !(fBroker instanceof Organization)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'broker': " + fBroker);
+        }
+        this.fBroker = fBroker;
+    }
+
+    private DateTime fBookingTime;
+
+    /**
+     * The date and time the reservation was booked.
      *
      * @return {@link DateTime}
      */
     @Override
-    public DateTime getModifiedTime() {
-        return fModifiedTime;
+    public DateTime getBookingTime() {
+        return fBookingTime;
     }
 
     /**
-     * The date and time the reservation was modified.
+     * The date and time the reservation was booked.
      *
      */
     @Override
-    public void setModifiedTime(DateTime fModifiedTime) {
-        this.fModifiedTime = fModifiedTime;
+    public void setBookingTime(DateTime fBookingTime) {
+        this.fBookingTime = fBookingTime;
     }
 
-    private Text fReservationId;
+    private ProgramMembership fProgramMembershipUsed;
 
     /**
-     * A unique identifier for the reservation.
+     * Any membership in a frequent flyer, hotel loyalty program, etc. being applied to the reservation.
      *
-     * @return {@link Text}
+     * @return {@link ProgramMembership}
      */
     @Override
-    public Text getReservationId() {
-        return fReservationId;
-    }
-
-    /**
-     * A unique identifier for the reservation.
-     *
-     */
-    @Override
-    public void setReservationId(Text fReservationId) {
-        this.fReservationId = fReservationId;
-    }
-
-    private Action fPotentialAction;
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
-    @Override
-    public Action getPotentialAction() {
-        return fPotentialAction;
+    public ProgramMembership getProgramMembershipUsed() {
+        return fProgramMembershipUsed;
     }
 
     /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     * Any membership in a frequent flyer, hotel loyalty program, etc. being applied to the reservation.
      *
      */
     @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
+    public void setProgramMembershipUsed(ProgramMembership fProgramMembershipUsed) {
+        this.fProgramMembershipUsed = fProgramMembershipUsed;
+    }
+
+    private Object fBookingAgent;
+
+    /**
+     * 'bookingAgent' is an out-dated term indicating a 'broker' that serves as a booking agent.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    @Override
+    public <T> T getBookingAgent() {
+        return (T) fBookingAgent;
+    }
+
+    /**
+     * 'bookingAgent' is an out-dated term indicating a 'broker' that serves as a booking agent.
+     *
+     */
+    @Override
+    public void setBookingAgent(Object fBookingAgent) {
+        if(!(fBookingAgent instanceof Person) && !(fBookingAgent instanceof Organization)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'bookingAgent': " + fBookingAgent);
+        }
+        this.fBookingAgent = fBookingAgent;
     }
 
     private Text fPriceCurrency;
@@ -241,30 +341,25 @@ public class FoodEstablishmentReservationImpl implements FoodEstablishmentReserv
         this.fPriceCurrency = fPriceCurrency;
     }
 
-    private Object fStartTime;
+    private Text fReservationId;
 
     /**
-     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     * A unique identifier for the reservation.
      *
-     * @return {@link DateTime} or {@link Time}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     * @return {@link Text}
      */
     @Override
-    public <T> T getStartTime() {
-        return (T) fStartTime;
+    public Text getReservationId() {
+        return fReservationId;
     }
 
     /**
-     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     * A unique identifier for the reservation.
      *
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
      */
     @Override
-    public void setStartTime(Object fStartTime) {
-        if(!(fStartTime instanceof DateTime) && !(fStartTime instanceof Time)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'startTime': " + fStartTime);
-        }
-        this.fStartTime = fStartTime;
+    public void setReservationId(Text fReservationId) {
+        this.fReservationId = fReservationId;
     }
 
     private Object fUnderName;
@@ -289,6 +384,180 @@ public class FoodEstablishmentReservationImpl implements FoodEstablishmentReserv
             throw new java.lang.IllegalArgumentException("Invalid value for property 'underName': " + fUnderName);
         }
         this.fUnderName = fUnderName;
+    }
+
+    private Thing fReservationFor;
+
+    /**
+     * The thing -- flight, event, restaurant,etc. being reserved.
+     *
+     * @return {@link Thing}
+     */
+    @Override
+    public Thing getReservationFor() {
+        return fReservationFor;
+    }
+
+    /**
+     * The thing -- flight, event, restaurant,etc. being reserved.
+     *
+     */
+    @Override
+    public void setReservationFor(Thing fReservationFor) {
+        this.fReservationFor = fReservationFor;
+    }
+
+    private Object fMainEntityOfPage;
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    @Override
+    public <T> T getMainEntityOfPage() {
+        return (T) fMainEntityOfPage;
+    }
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     */
+    @Override
+    public void setMainEntityOfPage(Object fMainEntityOfPage) {
+        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
+        }
+        this.fMainEntityOfPage = fMainEntityOfPage;
+    }
+
+    private Text fAlternateName;
+
+    /**
+     * An alias for the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getAlternateName() {
+        return fAlternateName;
+    }
+
+    /**
+     * An alias for the item.
+     *
+     */
+    @Override
+    public void setAlternateName(Text fAlternateName) {
+        this.fAlternateName = fAlternateName;
+    }
+
+    private Text fName;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getName() {
+        return fName;
+    }
+
+    /**
+     * The name of the item.
+     *
+     */
+    @Override
+    public void setName(Text fName) {
+        this.fName = fName;
+    }
+
+    private Action fPotentialAction;
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public Action getPotentialAction() {
+        return fPotentialAction;
+    }
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     */
+    @Override
+    public void setPotentialAction(Action fPotentialAction) {
+        this.fPotentialAction = fPotentialAction;
+    }
+
+    private Object fImage;
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link URL} or {@link ImageObject}
+     */
+    @Override
+    public <T> T getImage() {
+        return (T) fImage;
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     */
+    @Override
+    public void setImage(Object fImage) {
+        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
+        }
+        this.fImage = fImage;
+    }
+
+    private URL fUrl;
+
+    /**
+     * URL of the item.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getUrl() {
+        return fUrl;
+    }
+
+    /**
+     * URL of the item.
+     *
+     */
+    @Override
+    public void setUrl(URL fUrl) {
+        this.fUrl = fUrl;
+    }
+
+    private Text fDescription;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDescription() {
+        return fDescription;
+    }
+
+    /**
+     * A description of the item.
+     *
+     */
+    @Override
+    public void setDescription(Text fDescription) {
+        this.fDescription = fDescription;
     }
 
     private Object fSubjectOf;
@@ -317,46 +586,25 @@ public class FoodEstablishmentReservationImpl implements FoodEstablishmentReserv
         this.fSubjectOf = fSubjectOf;
     }
 
-    private Text fName;
+    private URL fAdditionalType;
 
     /**
-     * The name of the item.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
-     * @return {@link Text}
+     * @return {@link URL}
      */
     @Override
-    public Text getName() {
-        return fName;
+    public URL getAdditionalType() {
+        return fAdditionalType;
     }
 
     /**
-     * The name of the item.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
      */
     @Override
-    public void setName(Text fName) {
-        this.fName = fName;
-    }
-
-    private Ticket fReservedTicket;
-
-    /**
-     * A ticket associated with the reservation.
-     *
-     * @return {@link Ticket}
-     */
-    @Override
-    public Ticket getReservedTicket() {
-        return fReservedTicket;
-    }
-
-    /**
-     * A ticket associated with the reservation.
-     *
-     */
-    @Override
-    public void setReservedTicket(Ticket fReservedTicket) {
-        this.fReservedTicket = fReservedTicket;
+    public void setAdditionalType(URL fAdditionalType) {
+        this.fAdditionalType = fAdditionalType;
     }
 
     private Text fDisambiguatingDescription;
@@ -378,30 +626,6 @@ public class FoodEstablishmentReservationImpl implements FoodEstablishmentReserv
     @Override
     public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
         this.fDisambiguatingDescription = fDisambiguatingDescription;
-    }
-
-    private Object fImage;
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link URL} or {@link ImageObject}
-     */
-    @Override
-    public <T> T getImage() {
-        return (T) fImage;
-    }
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     */
-    @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
-        this.fImage = fImage;
     }
 
     private URL fSameAs;
@@ -449,229 +673,5 @@ public class FoodEstablishmentReservationImpl implements FoodEstablishmentReserv
             throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
         }
         this.fIdentifier = fIdentifier;
-    }
-
-    private Object fBookingAgent;
-
-    /**
-     * 'bookingAgent' is an out-dated term indicating a 'broker' that serves as a booking agent.
-     *
-     * @return {@link Person} or {@link Organization}
-     */
-    @Override
-    public <T> T getBookingAgent() {
-        return (T) fBookingAgent;
-    }
-
-    /**
-     * 'bookingAgent' is an out-dated term indicating a 'broker' that serves as a booking agent.
-     *
-     */
-    @Override
-    public void setBookingAgent(Object fBookingAgent) {
-        if(!(fBookingAgent instanceof Person) && !(fBookingAgent instanceof Organization)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'bookingAgent': " + fBookingAgent);
-        }
-        this.fBookingAgent = fBookingAgent;
-    }
-
-    private Thing fReservationFor;
-
-    /**
-     * The thing -- flight, event, restaurant,etc. being reserved.
-     *
-     * @return {@link Thing}
-     */
-    @Override
-    public Thing getReservationFor() {
-        return fReservationFor;
-    }
-
-    /**
-     * The thing -- flight, event, restaurant,etc. being reserved.
-     *
-     */
-    @Override
-    public void setReservationFor(Thing fReservationFor) {
-        this.fReservationFor = fReservationFor;
-    }
-
-    private Object fEndTime;
-
-    /**
-     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     *
-     * @return {@link DateTime} or {@link Time}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
-     */
-    @Override
-    public <T> T getEndTime() {
-        return (T) fEndTime;
-    }
-
-    /**
-     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     *
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
-     */
-    @Override
-    public void setEndTime(Object fEndTime) {
-        if(!(fEndTime instanceof DateTime) && !(fEndTime instanceof Time)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'endTime': " + fEndTime);
-        }
-        this.fEndTime = fEndTime;
-    }
-
-    private URL fUrl;
-
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getUrl() {
-        return fUrl;
-    }
-
-    /**
-     * URL of the item.
-     *
-     */
-    @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
-    }
-
-    private Object fBroker;
-
-    /**
-     * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
-     *
-     * @return {@link Person} or {@link Organization}
-     */
-    @Override
-    public <T> T getBroker() {
-        return (T) fBroker;
-    }
-
-    /**
-     * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
-     *
-     */
-    @Override
-    public void setBroker(Object fBroker) {
-        if(!(fBroker instanceof Person) && !(fBroker instanceof Organization)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'broker': " + fBroker);
-        }
-        this.fBroker = fBroker;
-    }
-
-    private URL fAdditionalType;
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getAdditionalType() {
-        return fAdditionalType;
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     */
-    @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
-    }
-
-    private Object fPartySize;
-
-    /**
-     * Number of people the reservation should accommodate.
-     *
-     * @return {@link Integer} or {@link QuantitativeValue}
-     */
-    @Override
-    public <T> T getPartySize() {
-        return (T) fPartySize;
-    }
-
-    /**
-     * Number of people the reservation should accommodate.
-     *
-     */
-    @Override
-    public void setPartySize(Object fPartySize) {
-        if(!(fPartySize instanceof Integer) && !(fPartySize instanceof QuantitativeValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'partySize': " + fPartySize);
-        }
-        this.fPartySize = fPartySize;
-    }
-
-    private Text fDescription;
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDescription() {
-        return fDescription;
-    }
-
-    /**
-     * A description of the item.
-     *
-     */
-    @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
-    }
-
-    private ReservationStatusType fReservationStatus;
-
-    /**
-     * The current status of the reservation.
-     *
-     * @return {@link ReservationStatusType}
-     */
-    @Override
-    public ReservationStatusType getReservationStatus() {
-        return fReservationStatus;
-    }
-
-    /**
-     * The current status of the reservation.
-     *
-     */
-    @Override
-    public void setReservationStatus(ReservationStatusType fReservationStatus) {
-        this.fReservationStatus = fReservationStatus;
-    }
-
-    private ProgramMembership fProgramMembershipUsed;
-
-    /**
-     * Any membership in a frequent flyer, hotel loyalty program, etc. being applied to the reservation.
-     *
-     * @return {@link ProgramMembership}
-     */
-    @Override
-    public ProgramMembership getProgramMembershipUsed() {
-        return fProgramMembershipUsed;
-    }
-
-    /**
-     * Any membership in a frequent flyer, hotel loyalty program, etc. being applied to the reservation.
-     *
-     */
-    @Override
-    public void setProgramMembershipUsed(ProgramMembership fProgramMembershipUsed) {
-        this.fProgramMembershipUsed = fProgramMembershipUsed;
     }
 }

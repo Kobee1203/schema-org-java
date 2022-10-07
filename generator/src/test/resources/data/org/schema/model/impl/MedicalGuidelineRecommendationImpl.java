@@ -37,6 +37,197 @@ import org.schema.model.MedicalGuidelineRecommendation;
 @JsonLdTypeName("schema:MedicalGuidelineRecommendation")
 public class MedicalGuidelineRecommendationImpl implements MedicalGuidelineRecommendation {
 
+    private Text fRecommendationStrength;
+
+    /**
+     * Strength of the guideline's recommendation (e.g. 'class I').
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public Text getRecommendationStrength() {
+        return fRecommendationStrength;
+    }
+
+    /**
+     * Strength of the guideline's recommendation (e.g. 'class I').
+     *
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void setRecommendationStrength(Text fRecommendationStrength) {
+        this.fRecommendationStrength = fRecommendationStrength;
+    }
+
+    private MedicalEvidenceLevel fEvidenceLevel;
+
+    /**
+     * Strength of evidence of the data used to formulate the guideline (enumerated).
+     *
+     * @return {@link MedicalEvidenceLevel}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public MedicalEvidenceLevel getEvidenceLevel() {
+        return fEvidenceLevel;
+    }
+
+    /**
+     * Strength of evidence of the data used to formulate the guideline (enumerated).
+     *
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void setEvidenceLevel(MedicalEvidenceLevel fEvidenceLevel) {
+        this.fEvidenceLevel = fEvidenceLevel;
+    }
+
+    private Text fEvidenceOrigin;
+
+    /**
+     * Source of the data used to formulate the guidance, e.g. RCT, consensus opinion, etc.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public Text getEvidenceOrigin() {
+        return fEvidenceOrigin;
+    }
+
+    /**
+     * Source of the data used to formulate the guidance, e.g. RCT, consensus opinion, etc.
+     *
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void setEvidenceOrigin(Text fEvidenceOrigin) {
+        this.fEvidenceOrigin = fEvidenceOrigin;
+    }
+
+    private MedicalEntity fGuidelineSubject;
+
+    /**
+     * The medical conditions, treatments, etc. that are the subject of the guideline.
+     *
+     * @return {@link MedicalEntity}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public MedicalEntity getGuidelineSubject() {
+        return fGuidelineSubject;
+    }
+
+    /**
+     * The medical conditions, treatments, etc. that are the subject of the guideline.
+     *
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void setGuidelineSubject(MedicalEntity fGuidelineSubject) {
+        this.fGuidelineSubject = fGuidelineSubject;
+    }
+
+    private Date fGuidelineDate;
+
+    /**
+     * Date on which this guideline's recommendation was made.
+     *
+     * @return {@link Date}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public Date getGuidelineDate() {
+        return fGuidelineDate;
+    }
+
+    /**
+     * Date on which this guideline's recommendation was made.
+     *
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void setGuidelineDate(Date fGuidelineDate) {
+        this.fGuidelineDate = fGuidelineDate;
+    }
+
+    private Object fLegalStatus;
+
+    /**
+     * The drug or supplement's legal status, including any controlled substance schedules that apply.
+     *
+     * @return {@link DrugLegalStatus} or {@link Text} or {@link MedicalEnumeration}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public <T> T getLegalStatus() {
+        return (T) fLegalStatus;
+    }
+
+    /**
+     * The drug or supplement's legal status, including any controlled substance schedules that apply.
+     *
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void setLegalStatus(Object fLegalStatus) {
+        if(!(fLegalStatus instanceof DrugLegalStatus) && !(fLegalStatus instanceof Text) && !(fLegalStatus instanceof MedicalEnumeration)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'legalStatus': " + fLegalStatus);
+        }
+        this.fLegalStatus = fLegalStatus;
+    }
+
+    private Grant fFunding;
+
+    /**
+     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
+     *
+     * @return {@link Grant}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    @Override
+    public Grant getFunding() {
+        return fFunding;
+    }
+
+    /**
+     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    @Override
+    public void setFunding(Grant fFunding) {
+        this.fFunding = fFunding;
+    }
+
+    private MedicalStudy fStudy;
+
+    /**
+     * A medical study or trial related to this entity.
+     *
+     * @return {@link MedicalStudy}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public MedicalStudy getStudy() {
+        return fStudy;
+    }
+
+    /**
+     * A medical study or trial related to this entity.
+     *
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void setStudy(MedicalStudy fStudy) {
+        this.fStudy = fStudy;
+    }
+
     private MedicalCode fCode;
 
     /**
@@ -83,74 +274,73 @@ public class MedicalGuidelineRecommendationImpl implements MedicalGuidelineRecom
         this.fGuideline = fGuideline;
     }
 
-    private MedicalEvidenceLevel fEvidenceLevel;
+    private Organization fRecognizingAuthority;
 
     /**
-     * Strength of evidence of the data used to formulate the guideline (enumerated).
+     * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
      *
-     * @return {@link MedicalEvidenceLevel}
+     * @return {@link Organization}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public MedicalEvidenceLevel getEvidenceLevel() {
-        return fEvidenceLevel;
+    public Organization getRecognizingAuthority() {
+        return fRecognizingAuthority;
     }
 
     /**
-     * Strength of evidence of the data used to formulate the guideline (enumerated).
-     *
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setEvidenceLevel(MedicalEvidenceLevel fEvidenceLevel) {
-        this.fEvidenceLevel = fEvidenceLevel;
-    }
-
-    private Object fLegalStatus;
-
-    /**
-     * The drug or supplement's legal status, including any controlled substance schedules that apply.
-     *
-     * @return {@link DrugLegalStatus} or {@link Text} or {@link MedicalEnumeration}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public <T> T getLegalStatus() {
-        return (T) fLegalStatus;
-    }
-
-    /**
-     * The drug or supplement's legal status, including any controlled substance schedules that apply.
+     * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
      *
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setLegalStatus(Object fLegalStatus) {
-        if(!(fLegalStatus instanceof DrugLegalStatus) && !(fLegalStatus instanceof Text) && !(fLegalStatus instanceof MedicalEnumeration)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'legalStatus': " + fLegalStatus);
-        }
-        this.fLegalStatus = fLegalStatus;
+    public void setRecognizingAuthority(Organization fRecognizingAuthority) {
+        this.fRecognizingAuthority = fRecognizingAuthority;
     }
 
-    private Text fAlternateName;
+    private MedicineSystem fMedicineSystem;
 
     /**
-     * An alias for the item.
+     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
      *
-     * @return {@link Text}
+     * @return {@link MedicineSystem}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public Text getAlternateName() {
-        return fAlternateName;
+    public MedicineSystem getMedicineSystem() {
+        return fMedicineSystem;
     }
 
     /**
-     * An alias for the item.
+     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
      *
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
+    public void setMedicineSystem(MedicineSystem fMedicineSystem) {
+        this.fMedicineSystem = fMedicineSystem;
+    }
+
+    private MedicalSpecialty fRelevantSpecialty;
+
+    /**
+     * If applicable, a medical specialty in which this entity is relevant.
+     *
+     * @return {@link MedicalSpecialty}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public MedicalSpecialty getRelevantSpecialty() {
+        return fRelevantSpecialty;
+    }
+
+    /**
+     * If applicable, a medical specialty in which this entity is relevant.
+     *
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void setRelevantSpecialty(MedicalSpecialty fRelevantSpecialty) {
+        this.fRelevantSpecialty = fRelevantSpecialty;
     }
 
     private Object fMainEntityOfPage;
@@ -177,50 +367,46 @@ public class MedicalGuidelineRecommendationImpl implements MedicalGuidelineRecom
         this.fMainEntityOfPage = fMainEntityOfPage;
     }
 
-    private Organization fRecognizingAuthority;
+    private Text fAlternateName;
 
     /**
-     * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
-     *
-     * @return {@link Organization}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public Organization getRecognizingAuthority() {
-        return fRecognizingAuthority;
-    }
-
-    /**
-     * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
-     *
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setRecognizingAuthority(Organization fRecognizingAuthority) {
-        this.fRecognizingAuthority = fRecognizingAuthority;
-    }
-
-    private Text fRecommendationStrength;
-
-    /**
-     * Strength of the guideline's recommendation (e.g. 'class I').
+     * An alias for the item.
      *
      * @return {@link Text}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public Text getRecommendationStrength() {
-        return fRecommendationStrength;
+    public Text getAlternateName() {
+        return fAlternateName;
     }
 
     /**
-     * Strength of the guideline's recommendation (e.g. 'class I').
+     * An alias for the item.
      *
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setRecommendationStrength(Text fRecommendationStrength) {
-        this.fRecommendationStrength = fRecommendationStrength;
+    public void setAlternateName(Text fAlternateName) {
+        this.fAlternateName = fAlternateName;
+    }
+
+    private Text fName;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getName() {
+        return fName;
+    }
+
+    /**
+     * The name of the item.
+     *
+     */
+    @Override
+    public void setName(Text fName) {
+        this.fName = fName;
     }
 
     private Action fPotentialAction;
@@ -244,50 +430,70 @@ public class MedicalGuidelineRecommendationImpl implements MedicalGuidelineRecom
         this.fPotentialAction = fPotentialAction;
     }
 
-    private Text fEvidenceOrigin;
+    private Object fImage;
 
     /**
-     * Source of the data used to formulate the guidance, e.g. RCT, consensus opinion, etc.
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link URL} or {@link ImageObject}
+     */
+    @Override
+    public <T> T getImage() {
+        return (T) fImage;
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     */
+    @Override
+    public void setImage(Object fImage) {
+        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
+        }
+        this.fImage = fImage;
+    }
+
+    private URL fUrl;
+
+    /**
+     * URL of the item.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getUrl() {
+        return fUrl;
+    }
+
+    /**
+     * URL of the item.
+     *
+     */
+    @Override
+    public void setUrl(URL fUrl) {
+        this.fUrl = fUrl;
+    }
+
+    private Text fDescription;
+
+    /**
+     * A description of the item.
      *
      * @return {@link Text}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public Text getEvidenceOrigin() {
-        return fEvidenceOrigin;
+    public Text getDescription() {
+        return fDescription;
     }
 
     /**
-     * Source of the data used to formulate the guidance, e.g. RCT, consensus opinion, etc.
+     * A description of the item.
      *
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setEvidenceOrigin(Text fEvidenceOrigin) {
-        this.fEvidenceOrigin = fEvidenceOrigin;
-    }
-
-    private MedicalSpecialty fRelevantSpecialty;
-
-    /**
-     * If applicable, a medical specialty in which this entity is relevant.
-     *
-     * @return {@link MedicalSpecialty}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public MedicalSpecialty getRelevantSpecialty() {
-        return fRelevantSpecialty;
-    }
-
-    /**
-     * If applicable, a medical specialty in which this entity is relevant.
-     *
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setRelevantSpecialty(MedicalSpecialty fRelevantSpecialty) {
-        this.fRelevantSpecialty = fRelevantSpecialty;
+    public void setDescription(Text fDescription) {
+        this.fDescription = fDescription;
     }
 
     private Object fSubjectOf;
@@ -316,25 +522,25 @@ public class MedicalGuidelineRecommendationImpl implements MedicalGuidelineRecom
         this.fSubjectOf = fSubjectOf;
     }
 
-    private Text fName;
+    private URL fAdditionalType;
 
     /**
-     * The name of the item.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
-     * @return {@link Text}
+     * @return {@link URL}
      */
     @Override
-    public Text getName() {
-        return fName;
+    public URL getAdditionalType() {
+        return fAdditionalType;
     }
 
     /**
-     * The name of the item.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
      */
     @Override
-    public void setName(Text fName) {
-        this.fName = fName;
+    public void setAdditionalType(URL fAdditionalType) {
+        this.fAdditionalType = fAdditionalType;
     }
 
     private Text fDisambiguatingDescription;
@@ -358,30 +564,6 @@ public class MedicalGuidelineRecommendationImpl implements MedicalGuidelineRecom
         this.fDisambiguatingDescription = fDisambiguatingDescription;
     }
 
-    private Object fImage;
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link URL} or {@link ImageObject}
-     */
-    @Override
-    public <T> T getImage() {
-        return (T) fImage;
-    }
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     */
-    @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
-        this.fImage = fImage;
-    }
-
     private URL fSameAs;
 
     /**
@@ -401,29 +583,6 @@ public class MedicalGuidelineRecommendationImpl implements MedicalGuidelineRecom
     @Override
     public void setSameAs(URL fSameAs) {
         this.fSameAs = fSameAs;
-    }
-
-    private MedicineSystem fMedicineSystem;
-
-    /**
-     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
-     *
-     * @return {@link MedicineSystem}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public MedicineSystem getMedicineSystem() {
-        return fMedicineSystem;
-    }
-
-    /**
-     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
-     *
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setMedicineSystem(MedicineSystem fMedicineSystem) {
-        this.fMedicineSystem = fMedicineSystem;
     }
 
     private Object fIdentifier;
@@ -450,164 +609,5 @@ public class MedicalGuidelineRecommendationImpl implements MedicalGuidelineRecom
             throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
         }
         this.fIdentifier = fIdentifier;
-    }
-
-    private Grant fFunding;
-
-    /**
-     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
-     *
-     * @return {@link Grant}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     */
-    @Override
-    public Grant getFunding() {
-        return fFunding;
-    }
-
-    /**
-     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     */
-    @Override
-    public void setFunding(Grant fFunding) {
-        this.fFunding = fFunding;
-    }
-
-    private URL fUrl;
-
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getUrl() {
-        return fUrl;
-    }
-
-    /**
-     * URL of the item.
-     *
-     */
-    @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
-    }
-
-    private Date fGuidelineDate;
-
-    /**
-     * Date on which this guideline's recommendation was made.
-     *
-     * @return {@link Date}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public Date getGuidelineDate() {
-        return fGuidelineDate;
-    }
-
-    /**
-     * Date on which this guideline's recommendation was made.
-     *
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setGuidelineDate(Date fGuidelineDate) {
-        this.fGuidelineDate = fGuidelineDate;
-    }
-
-    private MedicalEntity fGuidelineSubject;
-
-    /**
-     * The medical conditions, treatments, etc. that are the subject of the guideline.
-     *
-     * @return {@link MedicalEntity}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public MedicalEntity getGuidelineSubject() {
-        return fGuidelineSubject;
-    }
-
-    /**
-     * The medical conditions, treatments, etc. that are the subject of the guideline.
-     *
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setGuidelineSubject(MedicalEntity fGuidelineSubject) {
-        this.fGuidelineSubject = fGuidelineSubject;
-    }
-
-    private URL fAdditionalType;
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getAdditionalType() {
-        return fAdditionalType;
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     */
-    @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
-    }
-
-    private Text fDescription;
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDescription() {
-        return fDescription;
-    }
-
-    /**
-     * A description of the item.
-     *
-     */
-    @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
-    }
-
-    private MedicalStudy fStudy;
-
-    /**
-     * A medical study or trial related to this entity.
-     *
-     * @return {@link MedicalStudy}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public MedicalStudy getStudy() {
-        return fStudy;
-    }
-
-    /**
-     * A medical study or trial related to this entity.
-     *
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setStudy(MedicalStudy fStudy) {
-        this.fStudy = fStudy;
     }
 }

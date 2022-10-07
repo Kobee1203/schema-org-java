@@ -28,6 +28,31 @@ import org.schema.model.HealthPlanNetwork;
 @JsonLdTypeName("schema:HealthPlanNetwork")
 public class HealthPlanNetworkImpl implements HealthPlanNetwork {
 
+    private Text fHealthPlanNetworkId;
+
+    /**
+     * Name or unique ID of network. (Networks are often reused across different insurance plans).
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    @Override
+    public Text getHealthPlanNetworkId() {
+        return fHealthPlanNetworkId;
+    }
+
+    /**
+     * Name or unique ID of network. (Networks are often reused across different insurance plans).
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    @Override
+    public void setHealthPlanNetworkId(Text fHealthPlanNetworkId) {
+        this.fHealthPlanNetworkId = fHealthPlanNetworkId;
+    }
+
     private Boolean fHealthPlanCostSharing;
 
     /**
@@ -51,6 +76,184 @@ public class HealthPlanNetworkImpl implements HealthPlanNetwork {
     @Override
     public void setHealthPlanCostSharing(Boolean fHealthPlanCostSharing) {
         this.fHealthPlanCostSharing = fHealthPlanCostSharing;
+    }
+
+    private Text fHealthPlanNetworkTier;
+
+    /**
+     * The tier(s) for this network.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    @Override
+    public Text getHealthPlanNetworkTier() {
+        return fHealthPlanNetworkTier;
+    }
+
+    /**
+     * The tier(s) for this network.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    @Override
+    public void setHealthPlanNetworkTier(Text fHealthPlanNetworkTier) {
+        this.fHealthPlanNetworkTier = fHealthPlanNetworkTier;
+    }
+
+    private Object fMainEntityOfPage;
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    @Override
+    public <T> T getMainEntityOfPage() {
+        return (T) fMainEntityOfPage;
+    }
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     */
+    @Override
+    public void setMainEntityOfPage(Object fMainEntityOfPage) {
+        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
+        }
+        this.fMainEntityOfPage = fMainEntityOfPage;
+    }
+
+    private Text fAlternateName;
+
+    /**
+     * An alias for the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getAlternateName() {
+        return fAlternateName;
+    }
+
+    /**
+     * An alias for the item.
+     *
+     */
+    @Override
+    public void setAlternateName(Text fAlternateName) {
+        this.fAlternateName = fAlternateName;
+    }
+
+    private Text fName;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getName() {
+        return fName;
+    }
+
+    /**
+     * The name of the item.
+     *
+     */
+    @Override
+    public void setName(Text fName) {
+        this.fName = fName;
+    }
+
+    private Action fPotentialAction;
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public Action getPotentialAction() {
+        return fPotentialAction;
+    }
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     */
+    @Override
+    public void setPotentialAction(Action fPotentialAction) {
+        this.fPotentialAction = fPotentialAction;
+    }
+
+    private Object fImage;
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link URL} or {@link ImageObject}
+     */
+    @Override
+    public <T> T getImage() {
+        return (T) fImage;
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     */
+    @Override
+    public void setImage(Object fImage) {
+        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
+        }
+        this.fImage = fImage;
+    }
+
+    private URL fUrl;
+
+    /**
+     * URL of the item.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getUrl() {
+        return fUrl;
+    }
+
+    /**
+     * URL of the item.
+     *
+     */
+    @Override
+    public void setUrl(URL fUrl) {
+        this.fUrl = fUrl;
+    }
+
+    private Text fDescription;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDescription() {
+        return fDescription;
+    }
+
+    /**
+     * A description of the item.
+     *
+     */
+    @Override
+    public void setDescription(Text fDescription) {
+        this.fDescription = fDescription;
     }
 
     private Object fSubjectOf;
@@ -79,25 +282,25 @@ public class HealthPlanNetworkImpl implements HealthPlanNetwork {
         this.fSubjectOf = fSubjectOf;
     }
 
-    private Text fName;
+    private URL fAdditionalType;
 
     /**
-     * The name of the item.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
-     * @return {@link Text}
+     * @return {@link URL}
      */
     @Override
-    public Text getName() {
-        return fName;
+    public URL getAdditionalType() {
+        return fAdditionalType;
     }
 
     /**
-     * The name of the item.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
      */
     @Override
-    public void setName(Text fName) {
-        this.fName = fName;
+    public void setAdditionalType(URL fAdditionalType) {
+        this.fAdditionalType = fAdditionalType;
     }
 
     private Text fDisambiguatingDescription;
@@ -121,30 +324,6 @@ public class HealthPlanNetworkImpl implements HealthPlanNetwork {
         this.fDisambiguatingDescription = fDisambiguatingDescription;
     }
 
-    private Object fImage;
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link URL} or {@link ImageObject}
-     */
-    @Override
-    public <T> T getImage() {
-        return (T) fImage;
-    }
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     */
-    @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
-        this.fImage = fImage;
-    }
-
     private URL fSameAs;
 
     /**
@@ -164,31 +343,6 @@ public class HealthPlanNetworkImpl implements HealthPlanNetwork {
     @Override
     public void setSameAs(URL fSameAs) {
         this.fSameAs = fSameAs;
-    }
-
-    private Text fHealthPlanNetworkTier;
-
-    /**
-     * The tier(s) for this network.
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
-    @Override
-    public Text getHealthPlanNetworkTier() {
-        return fHealthPlanNetworkTier;
-    }
-
-    /**
-     * The tier(s) for this network.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
-    @Override
-    public void setHealthPlanNetworkTier(Text fHealthPlanNetworkTier) {
-        this.fHealthPlanNetworkTier = fHealthPlanNetworkTier;
     }
 
     private Object fIdentifier;
@@ -215,159 +369,5 @@ public class HealthPlanNetworkImpl implements HealthPlanNetwork {
             throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
         }
         this.fIdentifier = fIdentifier;
-    }
-
-    private Text fAlternateName;
-
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getAlternateName() {
-        return fAlternateName;
-    }
-
-    /**
-     * An alias for the item.
-     *
-     */
-    @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
-    }
-
-    private Object fMainEntityOfPage;
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     */
-    @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
-        }
-        this.fMainEntityOfPage = fMainEntityOfPage;
-    }
-
-    private Text fHealthPlanNetworkId;
-
-    /**
-     * Name or unique ID of network. (Networks are often reused across different insurance plans).
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
-    @Override
-    public Text getHealthPlanNetworkId() {
-        return fHealthPlanNetworkId;
-    }
-
-    /**
-     * Name or unique ID of network. (Networks are often reused across different insurance plans).
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
-    @Override
-    public void setHealthPlanNetworkId(Text fHealthPlanNetworkId) {
-        this.fHealthPlanNetworkId = fHealthPlanNetworkId;
-    }
-
-    private URL fUrl;
-
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getUrl() {
-        return fUrl;
-    }
-
-    /**
-     * URL of the item.
-     *
-     */
-    @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
-    }
-
-    private URL fAdditionalType;
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getAdditionalType() {
-        return fAdditionalType;
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     */
-    @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
-    }
-
-    private Text fDescription;
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDescription() {
-        return fDescription;
-    }
-
-    /**
-     * A description of the item.
-     *
-     */
-    @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
-    }
-
-    private Action fPotentialAction;
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
-    @Override
-    public Action getPotentialAction() {
-        return fPotentialAction;
-    }
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     */
-    @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
     }
 }

@@ -1,58 +1,32 @@
 package com.weedow.schemaorg.generator.model;
 
+import lombok.EqualsAndHashCode;
+import lombok.Value;
+
 import java.util.List;
-import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-public final class Property {
+@Value
+public class Property {
 
-    private final String id;
+    String id;
 
-    private final String name;
+    String name;
 
-    private final String fieldName;
+    String fieldName;
 
-    private final String description;
+    String description;
 
-    private final List<Type> types;
+    @EqualsAndHashCode.Exclude
+    List<Type> types;
 
-    private final List<String> partOf;
+    List<String> partOf;
 
-    private final List<String> source;
-
-    public Property(String id, String name, String fieldName, String description, List<Type> types, List<String> partOf, List<String> source) {
-        this.id = id;
-        this.name = name;
-        this.fieldName = fieldName;
-        this.types = types;
-        this.description = description;
-        this.partOf = partOf;
-        this.source = source;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getFieldName() {
-        return fieldName;
-    }
-
-    public String getDescription() {
-        return description;
-    }
+    List<String> source;
 
     public String[] getSplitDescription() {
         return description != null ? description.replace("\\n", "<br/>").split("\\n") : null;
-    }
-
-    public List<Type> getTypes() {
-        return types;
     }
 
     public String getParamFieldType() {
@@ -65,32 +39,6 @@ public final class Property {
 
     public String getReturnJavadoc() {
         return this.types.stream().map(type -> "{@link " + type.getName() + "}").collect(Collectors.joining(" or "));
-    }
-
-    public List<String> getPartOf() {
-        return partOf;
-    }
-
-    public List<String> getSource() {
-        return source;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Property property = (Property) o;
-        return Objects.equals(id, property.id)
-                && Objects.equals(name, property.name)
-                && Objects.equals(fieldName, property.fieldName)
-                && Objects.equals(description, property.description)
-                && Objects.equals(partOf, property.partOf)
-                && Objects.equals(source, property.source);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name, fieldName, description, partOf, source);
     }
 
     @Override

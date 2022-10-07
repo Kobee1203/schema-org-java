@@ -39,25 +39,247 @@ import org.schema.model.Flight;
 @JsonLdTypeName("schema:Flight")
 public class FlightImpl implements Flight {
 
-    private Text fFlightNumber;
+    private Object fFlightDistance;
 
     /**
-     * The unique identifier for a flight including the airline IATA code. For example, if describing United flight 110, where the IATA code for United is 'UA', the flightNumber is 'UA110'.
+     * The distance of the flight.
+     *
+     * @return {@link Distance} or {@link Text}
+     */
+    @Override
+    public <T> T getFlightDistance() {
+        return (T) fFlightDistance;
+    }
+
+    /**
+     * The distance of the flight.
+     *
+     */
+    @Override
+    public void setFlightDistance(Object fFlightDistance) {
+        if(!(fFlightDistance instanceof Distance) && !(fFlightDistance instanceof Text)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'flightDistance': " + fFlightDistance);
+        }
+        this.fFlightDistance = fFlightDistance;
+    }
+
+    private DateTime fWebCheckinTime;
+
+    /**
+     * The time when a passenger can check into the flight online.
+     *
+     * @return {@link DateTime}
+     */
+    @Override
+    public DateTime getWebCheckinTime() {
+        return fWebCheckinTime;
+    }
+
+    /**
+     * The time when a passenger can check into the flight online.
+     *
+     */
+    @Override
+    public void setWebCheckinTime(DateTime fWebCheckinTime) {
+        this.fWebCheckinTime = fWebCheckinTime;
+    }
+
+    private Object fAircraft;
+
+    /**
+     * The kind of aircraft (e.g., "Boeing 747").
+     *
+     * @return {@link Vehicle} or {@link Text}
+     */
+    @Override
+    public <T> T getAircraft() {
+        return (T) fAircraft;
+    }
+
+    /**
+     * The kind of aircraft (e.g., "Boeing 747").
+     *
+     */
+    @Override
+    public void setAircraft(Object fAircraft) {
+        if(!(fAircraft instanceof Vehicle) && !(fAircraft instanceof Text)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'aircraft': " + fAircraft);
+        }
+        this.fAircraft = fAircraft;
+    }
+
+    private Object fSeller;
+
+    /**
+     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> T getSeller() {
+        return (T) fSeller;
+    }
+
+    /**
+     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+     *
+     */
+    @Override
+    public void setSeller(Object fSeller) {
+        if(!(fSeller instanceof Organization) && !(fSeller instanceof Person)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'seller': " + fSeller);
+        }
+        this.fSeller = fSeller;
+    }
+
+    private Airport fArrivalAirport;
+
+    /**
+     * The airport where the flight terminates.
+     *
+     * @return {@link Airport}
+     */
+    @Override
+    public Airport getArrivalAirport() {
+        return fArrivalAirport;
+    }
+
+    /**
+     * The airport where the flight terminates.
+     *
+     */
+    @Override
+    public void setArrivalAirport(Airport fArrivalAirport) {
+        this.fArrivalAirport = fArrivalAirport;
+    }
+
+    private Text fArrivalTerminal;
+
+    /**
+     * Identifier of the flight's arrival terminal.
      *
      * @return {@link Text}
      */
     @Override
-    public Text getFlightNumber() {
-        return fFlightNumber;
+    public Text getArrivalTerminal() {
+        return fArrivalTerminal;
     }
 
     /**
-     * The unique identifier for a flight including the airline IATA code. For example, if describing United flight 110, where the IATA code for United is 'UA', the flightNumber is 'UA110'.
+     * Identifier of the flight's arrival terminal.
      *
      */
     @Override
-    public void setFlightNumber(Text fFlightNumber) {
-        this.fFlightNumber = fFlightNumber;
+    public void setArrivalTerminal(Text fArrivalTerminal) {
+        this.fArrivalTerminal = fArrivalTerminal;
+    }
+
+    private Airport fDepartureAirport;
+
+    /**
+     * The airport where the flight originates.
+     *
+     * @return {@link Airport}
+     */
+    @Override
+    public Airport getDepartureAirport() {
+        return fDepartureAirport;
+    }
+
+    /**
+     * The airport where the flight originates.
+     *
+     */
+    @Override
+    public void setDepartureAirport(Airport fDepartureAirport) {
+        this.fDepartureAirport = fDepartureAirport;
+    }
+
+    private Text fArrivalGate;
+
+    /**
+     * Identifier of the flight's arrival gate.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getArrivalGate() {
+        return fArrivalGate;
+    }
+
+    /**
+     * Identifier of the flight's arrival gate.
+     *
+     */
+    @Override
+    public void setArrivalGate(Text fArrivalGate) {
+        this.fArrivalGate = fArrivalGate;
+    }
+
+    private Text fDepartureTerminal;
+
+    /**
+     * Identifier of the flight's departure terminal.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDepartureTerminal() {
+        return fDepartureTerminal;
+    }
+
+    /**
+     * Identifier of the flight's departure terminal.
+     *
+     */
+    @Override
+    public void setDepartureTerminal(Text fDepartureTerminal) {
+        this.fDepartureTerminal = fDepartureTerminal;
+    }
+
+    private Organization fCarrier;
+
+    /**
+     * 'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.
+     *
+     * @return {@link Organization}
+     */
+    @Override
+    public Organization getCarrier() {
+        return fCarrier;
+    }
+
+    /**
+     * 'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.
+     *
+     */
+    @Override
+    public void setCarrier(Organization fCarrier) {
+        this.fCarrier = fCarrier;
+    }
+
+    private Object fEstimatedFlightDuration;
+
+    /**
+     * The estimated time the flight will take.
+     *
+     * @return {@link Text} or {@link Duration}
+     */
+    @Override
+    public <T> T getEstimatedFlightDuration() {
+        return (T) fEstimatedFlightDuration;
+    }
+
+    /**
+     * The estimated time the flight will take.
+     *
+     */
+    @Override
+    public void setEstimatedFlightDuration(Object fEstimatedFlightDuration) {
+        if(!(fEstimatedFlightDuration instanceof Text) && !(fEstimatedFlightDuration instanceof Duration)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'estimatedFlightDuration': " + fEstimatedFlightDuration);
+        }
+        this.fEstimatedFlightDuration = fEstimatedFlightDuration;
     }
 
     private Text fDepartureGate;
@@ -79,6 +301,121 @@ public class FlightImpl implements Flight {
     @Override
     public void setDepartureGate(Text fDepartureGate) {
         this.fDepartureGate = fDepartureGate;
+    }
+
+    private Text fFlightNumber;
+
+    /**
+     * The unique identifier for a flight including the airline IATA code. For example, if describing United flight 110, where the IATA code for United is 'UA', the flightNumber is 'UA110'.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getFlightNumber() {
+        return fFlightNumber;
+    }
+
+    /**
+     * The unique identifier for a flight including the airline IATA code. For example, if describing United flight 110, where the IATA code for United is 'UA', the flightNumber is 'UA110'.
+     *
+     */
+    @Override
+    public void setFlightNumber(Text fFlightNumber) {
+        this.fFlightNumber = fFlightNumber;
+    }
+
+    private Text fMealService;
+
+    /**
+     * Description of the meals that will be provided or available for purchase.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getMealService() {
+        return fMealService;
+    }
+
+    /**
+     * Description of the meals that will be provided or available for purchase.
+     *
+     */
+    @Override
+    public void setMealService(Text fMealService) {
+        this.fMealService = fMealService;
+    }
+
+    private BoardingPolicyType fBoardingPolicy;
+
+    /**
+     * The type of boarding policy used by the airline (e.g. zone-based or group-based).
+     *
+     * @return {@link BoardingPolicyType}
+     */
+    @Override
+    public BoardingPolicyType getBoardingPolicy() {
+        return fBoardingPolicy;
+    }
+
+    /**
+     * The type of boarding policy used by the airline (e.g. zone-based or group-based).
+     *
+     */
+    @Override
+    public void setBoardingPolicy(BoardingPolicyType fBoardingPolicy) {
+        this.fBoardingPolicy = fBoardingPolicy;
+    }
+
+    private Object fArrivalTime;
+
+    /**
+     * The expected arrival time.
+     *
+     * @return {@link Time} or {@link DateTime}
+     */
+    @Override
+    public <T> T getArrivalTime() {
+        return (T) fArrivalTime;
+    }
+
+    /**
+     * The expected arrival time.
+     *
+     */
+    @Override
+    public void setArrivalTime(Object fArrivalTime) {
+        if(!(fArrivalTime instanceof Time) && !(fArrivalTime instanceof DateTime)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'arrivalTime': " + fArrivalTime);
+        }
+        this.fArrivalTime = fArrivalTime;
+    }
+
+    private Object fOffers;
+
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     *
+     * @return {@link Offer} or {@link Demand}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public <T> T getOffers() {
+        return (T) fOffers;
+    }
+
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     *
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public void setOffers(Object fOffers) {
+        if(!(fOffers instanceof Offer) && !(fOffers instanceof Demand)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'offers': " + fOffers);
+        }
+        this.fOffers = fOffers;
     }
 
     private Object fDepartureTime;
@@ -103,72 +440,6 @@ public class FlightImpl implements Flight {
             throw new java.lang.IllegalArgumentException("Invalid value for property 'departureTime': " + fDepartureTime);
         }
         this.fDepartureTime = fDepartureTime;
-    }
-
-    private Text fAlternateName;
-
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getAlternateName() {
-        return fAlternateName;
-    }
-
-    /**
-     * An alias for the item.
-     *
-     */
-    @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
-    }
-
-    private Object fMainEntityOfPage;
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     */
-    @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
-        }
-        this.fMainEntityOfPage = fMainEntityOfPage;
-    }
-
-    private Airport fArrivalAirport;
-
-    /**
-     * The airport where the flight terminates.
-     *
-     * @return {@link Airport}
-     */
-    @Override
-    public Airport getArrivalAirport() {
-        return fArrivalAirport;
-    }
-
-    /**
-     * The airport where the flight terminates.
-     *
-     */
-    @Override
-    public void setArrivalAirport(Airport fArrivalAirport) {
-        this.fArrivalAirport = fArrivalAirport;
     }
 
     private Object fProvider;
@@ -201,48 +472,6 @@ public class FlightImpl implements Flight {
         this.fProvider = fProvider;
     }
 
-    private Organization fCarrier;
-
-    /**
-     * 'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.
-     *
-     * @return {@link Organization}
-     */
-    @Override
-    public Organization getCarrier() {
-        return fCarrier;
-    }
-
-    /**
-     * 'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.
-     *
-     */
-    @Override
-    public void setCarrier(Organization fCarrier) {
-        this.fCarrier = fCarrier;
-    }
-
-    private DateTime fWebCheckinTime;
-
-    /**
-     * The time when a passenger can check into the flight online.
-     *
-     * @return {@link DateTime}
-     */
-    @Override
-    public DateTime getWebCheckinTime() {
-        return fWebCheckinTime;
-    }
-
-    /**
-     * The time when a passenger can check into the flight online.
-     *
-     */
-    @Override
-    public void setWebCheckinTime(DateTime fWebCheckinTime) {
-        this.fWebCheckinTime = fWebCheckinTime;
-    }
-
     private Trip fSubTrip;
 
     /**
@@ -270,6 +499,129 @@ public class FlightImpl implements Flight {
         this.fSubTrip = fSubTrip;
     }
 
+    private Object fItinerary;
+
+    /**
+     * Destination(s) ( [[Place]] ) that make up a trip. For a trip where destination order is important use [[ItemList]] to specify that order (see examples).
+     *
+     * @return {@link ItemList} or {@link Place}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism</a>
+     */
+    @Override
+    public <T> T getItinerary() {
+        return (T) fItinerary;
+    }
+
+    /**
+     * Destination(s) ( [[Place]] ) that make up a trip. For a trip where destination order is important use [[ItemList]] to specify that order (see examples).
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism</a>
+     */
+    @Override
+    public void setItinerary(Object fItinerary) {
+        if(!(fItinerary instanceof ItemList) && !(fItinerary instanceof Place)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'itinerary': " + fItinerary);
+        }
+        this.fItinerary = fItinerary;
+    }
+
+    private Trip fPartOfTrip;
+
+    /**
+     * Identifies that this [[Trip]] is a subTrip of another Trip.  For example Day 1, Day 2, etc. of a multi-day trip.
+     *
+     * @return {@link Trip}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism</a>
+     */
+    @Override
+    public Trip getPartOfTrip() {
+        return fPartOfTrip;
+    }
+
+    /**
+     * Identifies that this [[Trip]] is a subTrip of another Trip.  For example Day 1, Day 2, etc. of a multi-day trip.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism</a>
+     */
+    @Override
+    public void setPartOfTrip(Trip fPartOfTrip) {
+        this.fPartOfTrip = fPartOfTrip;
+    }
+
+    private Object fMainEntityOfPage;
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    @Override
+    public <T> T getMainEntityOfPage() {
+        return (T) fMainEntityOfPage;
+    }
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     */
+    @Override
+    public void setMainEntityOfPage(Object fMainEntityOfPage) {
+        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
+        }
+        this.fMainEntityOfPage = fMainEntityOfPage;
+    }
+
+    private Text fAlternateName;
+
+    /**
+     * An alias for the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getAlternateName() {
+        return fAlternateName;
+    }
+
+    /**
+     * An alias for the item.
+     *
+     */
+    @Override
+    public void setAlternateName(Text fAlternateName) {
+        this.fAlternateName = fAlternateName;
+    }
+
+    private Text fName;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getName() {
+        return fName;
+    }
+
+    /**
+     * The name of the item.
+     *
+     */
+    @Override
+    public void setName(Text fName) {
+        this.fName = fName;
+    }
+
     private Action fPotentialAction;
 
     /**
@@ -291,91 +643,70 @@ public class FlightImpl implements Flight {
         this.fPotentialAction = fPotentialAction;
     }
 
-    private BoardingPolicyType fBoardingPolicy;
+    private Object fImage;
 
     /**
-     * The type of boarding policy used by the airline (e.g. zone-based or group-based).
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @return {@link BoardingPolicyType}
+     * @return {@link URL} or {@link ImageObject}
      */
     @Override
-    public BoardingPolicyType getBoardingPolicy() {
-        return fBoardingPolicy;
+    public <T> T getImage() {
+        return (T) fImage;
     }
 
     /**
-     * The type of boarding policy used by the airline (e.g. zone-based or group-based).
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
      */
     @Override
-    public void setBoardingPolicy(BoardingPolicyType fBoardingPolicy) {
-        this.fBoardingPolicy = fBoardingPolicy;
-    }
-
-    private Text fArrivalTerminal;
-
-    /**
-     * Identifier of the flight's arrival terminal.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getArrivalTerminal() {
-        return fArrivalTerminal;
-    }
-
-    /**
-     * Identifier of the flight's arrival terminal.
-     *
-     */
-    @Override
-    public void setArrivalTerminal(Text fArrivalTerminal) {
-        this.fArrivalTerminal = fArrivalTerminal;
-    }
-
-    private Object fAircraft;
-
-    /**
-     * The kind of aircraft (e.g., "Boeing 747").
-     *
-     * @return {@link Vehicle} or {@link Text}
-     */
-    @Override
-    public <T> T getAircraft() {
-        return (T) fAircraft;
-    }
-
-    /**
-     * The kind of aircraft (e.g., "Boeing 747").
-     *
-     */
-    @Override
-    public void setAircraft(Object fAircraft) {
-        if(!(fAircraft instanceof Vehicle) && !(fAircraft instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'aircraft': " + fAircraft);
+    public void setImage(Object fImage) {
+        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
         }
-        this.fAircraft = fAircraft;
+        this.fImage = fImage;
     }
 
-    private Text fArrivalGate;
+    private URL fUrl;
 
     /**
-     * Identifier of the flight's arrival gate.
+     * URL of the item.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getUrl() {
+        return fUrl;
+    }
+
+    /**
+     * URL of the item.
+     *
+     */
+    @Override
+    public void setUrl(URL fUrl) {
+        this.fUrl = fUrl;
+    }
+
+    private Text fDescription;
+
+    /**
+     * A description of the item.
      *
      * @return {@link Text}
      */
     @Override
-    public Text getArrivalGate() {
-        return fArrivalGate;
+    public Text getDescription() {
+        return fDescription;
     }
 
     /**
-     * Identifier of the flight's arrival gate.
+     * A description of the item.
      *
      */
     @Override
-    public void setArrivalGate(Text fArrivalGate) {
-        this.fArrivalGate = fArrivalGate;
+    public void setDescription(Text fDescription) {
+        this.fDescription = fDescription;
     }
 
     private Object fSubjectOf;
@@ -404,53 +735,25 @@ public class FlightImpl implements Flight {
         this.fSubjectOf = fSubjectOf;
     }
 
-    private Text fName;
+    private URL fAdditionalType;
 
     /**
-     * The name of the item.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
-     * @return {@link Text}
+     * @return {@link URL}
      */
     @Override
-    public Text getName() {
-        return fName;
+    public URL getAdditionalType() {
+        return fAdditionalType;
     }
 
     /**
-     * The name of the item.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
      */
     @Override
-    public void setName(Text fName) {
-        this.fName = fName;
-    }
-
-    private Object fOffers;
-
-    /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
-     *
-     * @return {@link Offer} or {@link Demand}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    @Override
-    public <T> T getOffers() {
-        return (T) fOffers;
-    }
-
-    /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
-     *
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    @Override
-    public void setOffers(Object fOffers) {
-        if(!(fOffers instanceof Offer) && !(fOffers instanceof Demand)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'offers': " + fOffers);
-        }
-        this.fOffers = fOffers;
+    public void setAdditionalType(URL fAdditionalType) {
+        this.fAdditionalType = fAdditionalType;
     }
 
     private Text fDisambiguatingDescription;
@@ -472,54 +775,6 @@ public class FlightImpl implements Flight {
     @Override
     public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
         this.fDisambiguatingDescription = fDisambiguatingDescription;
-    }
-
-    private Object fFlightDistance;
-
-    /**
-     * The distance of the flight.
-     *
-     * @return {@link Distance} or {@link Text}
-     */
-    @Override
-    public <T> T getFlightDistance() {
-        return (T) fFlightDistance;
-    }
-
-    /**
-     * The distance of the flight.
-     *
-     */
-    @Override
-    public void setFlightDistance(Object fFlightDistance) {
-        if(!(fFlightDistance instanceof Distance) && !(fFlightDistance instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'flightDistance': " + fFlightDistance);
-        }
-        this.fFlightDistance = fFlightDistance;
-    }
-
-    private Object fImage;
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link URL} or {@link ImageObject}
-     */
-    @Override
-    public <T> T getImage() {
-        return (T) fImage;
-    }
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     */
-    @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
-        this.fImage = fImage;
     }
 
     private URL fSameAs;
@@ -567,260 +822,5 @@ public class FlightImpl implements Flight {
             throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
         }
         this.fIdentifier = fIdentifier;
-    }
-
-    private Object fEstimatedFlightDuration;
-
-    /**
-     * The estimated time the flight will take.
-     *
-     * @return {@link Text} or {@link Duration}
-     */
-    @Override
-    public <T> T getEstimatedFlightDuration() {
-        return (T) fEstimatedFlightDuration;
-    }
-
-    /**
-     * The estimated time the flight will take.
-     *
-     */
-    @Override
-    public void setEstimatedFlightDuration(Object fEstimatedFlightDuration) {
-        if(!(fEstimatedFlightDuration instanceof Text) && !(fEstimatedFlightDuration instanceof Duration)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'estimatedFlightDuration': " + fEstimatedFlightDuration);
-        }
-        this.fEstimatedFlightDuration = fEstimatedFlightDuration;
-    }
-
-    private Text fMealService;
-
-    /**
-     * Description of the meals that will be provided or available for purchase.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getMealService() {
-        return fMealService;
-    }
-
-    /**
-     * Description of the meals that will be provided or available for purchase.
-     *
-     */
-    @Override
-    public void setMealService(Text fMealService) {
-        this.fMealService = fMealService;
-    }
-
-    private Airport fDepartureAirport;
-
-    /**
-     * The airport where the flight originates.
-     *
-     * @return {@link Airport}
-     */
-    @Override
-    public Airport getDepartureAirport() {
-        return fDepartureAirport;
-    }
-
-    /**
-     * The airport where the flight originates.
-     *
-     */
-    @Override
-    public void setDepartureAirport(Airport fDepartureAirport) {
-        this.fDepartureAirport = fDepartureAirport;
-    }
-
-    private Object fArrivalTime;
-
-    /**
-     * The expected arrival time.
-     *
-     * @return {@link Time} or {@link DateTime}
-     */
-    @Override
-    public <T> T getArrivalTime() {
-        return (T) fArrivalTime;
-    }
-
-    /**
-     * The expected arrival time.
-     *
-     */
-    @Override
-    public void setArrivalTime(Object fArrivalTime) {
-        if(!(fArrivalTime instanceof Time) && !(fArrivalTime instanceof DateTime)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'arrivalTime': " + fArrivalTime);
-        }
-        this.fArrivalTime = fArrivalTime;
-    }
-
-    private URL fUrl;
-
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getUrl() {
-        return fUrl;
-    }
-
-    /**
-     * URL of the item.
-     *
-     */
-    @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
-    }
-
-    private Object fSeller;
-
-    /**
-     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    @Override
-    public <T> T getSeller() {
-        return (T) fSeller;
-    }
-
-    /**
-     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
-     *
-     */
-    @Override
-    public void setSeller(Object fSeller) {
-        if(!(fSeller instanceof Organization) && !(fSeller instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'seller': " + fSeller);
-        }
-        this.fSeller = fSeller;
-    }
-
-    private URL fAdditionalType;
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getAdditionalType() {
-        return fAdditionalType;
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     */
-    @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
-    }
-
-    private Trip fPartOfTrip;
-
-    /**
-     * Identifies that this [[Trip]] is a subTrip of another Trip.  For example Day 1, Day 2, etc. of a multi-day trip.
-     *
-     * @return {@link Trip}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism</a>
-     */
-    @Override
-    public Trip getPartOfTrip() {
-        return fPartOfTrip;
-    }
-
-    /**
-     * Identifies that this [[Trip]] is a subTrip of another Trip.  For example Day 1, Day 2, etc. of a multi-day trip.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism</a>
-     */
-    @Override
-    public void setPartOfTrip(Trip fPartOfTrip) {
-        this.fPartOfTrip = fPartOfTrip;
-    }
-
-    private Text fDescription;
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDescription() {
-        return fDescription;
-    }
-
-    /**
-     * A description of the item.
-     *
-     */
-    @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
-    }
-
-    private Text fDepartureTerminal;
-
-    /**
-     * Identifier of the flight's departure terminal.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDepartureTerminal() {
-        return fDepartureTerminal;
-    }
-
-    /**
-     * Identifier of the flight's departure terminal.
-     *
-     */
-    @Override
-    public void setDepartureTerminal(Text fDepartureTerminal) {
-        this.fDepartureTerminal = fDepartureTerminal;
-    }
-
-    private Object fItinerary;
-
-    /**
-     * Destination(s) ( [[Place]] ) that make up a trip. For a trip where destination order is important use [[ItemList]] to specify that order (see examples).
-     *
-     * @return {@link ItemList} or {@link Place}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism</a>
-     */
-    @Override
-    public <T> T getItinerary() {
-        return (T) fItinerary;
-    }
-
-    /**
-     * Destination(s) ( [[Place]] ) that make up a trip. For a trip where destination order is important use [[ItemList]] to specify that order (see examples).
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism</a>
-     */
-    @Override
-    public void setItinerary(Object fItinerary) {
-        if(!(fItinerary instanceof ItemList) && !(fItinerary instanceof Place)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'itinerary': " + fItinerary);
-        }
-        this.fItinerary = fItinerary;
     }
 }

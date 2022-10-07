@@ -37,25 +37,70 @@ import org.schema.model.RentAction;
 @JsonLdTypeName("schema:RentAction")
 public class RentActionImpl implements RentAction {
 
-    private Thing fError;
+    private Object fLandlord;
 
     /**
-     * For failed actions, more information on the cause of the failure.
+     * A sub property of participant. The owner of the real estate property.
      *
-     * @return {@link Thing}
+     * @return {@link Person} or {@link Organization}
      */
     @Override
-    public Thing getError() {
-        return fError;
+    public <T> T getLandlord() {
+        return (T) fLandlord;
     }
 
     /**
-     * For failed actions, more information on the cause of the failure.
+     * A sub property of participant. The owner of the real estate property.
      *
      */
     @Override
-    public void setError(Thing fError) {
-        this.fError = fError;
+    public void setLandlord(Object fLandlord) {
+        if(!(fLandlord instanceof Person) && !(fLandlord instanceof Organization)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'landlord': " + fLandlord);
+        }
+        this.fLandlord = fLandlord;
+    }
+
+    private RealEstateAgent fRealEstateAgent;
+
+    /**
+     * A sub property of participant. The real estate agent involved in the action.
+     *
+     * @return {@link RealEstateAgent}
+     */
+    @Override
+    public RealEstateAgent getRealEstateAgent() {
+        return fRealEstateAgent;
+    }
+
+    /**
+     * A sub property of participant. The real estate agent involved in the action.
+     *
+     */
+    @Override
+    public void setRealEstateAgent(RealEstateAgent fRealEstateAgent) {
+        this.fRealEstateAgent = fRealEstateAgent;
+    }
+
+    private Text fPriceCurrency;
+
+    /**
+     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getPriceCurrency() {
+        return fPriceCurrency;
+    }
+
+    /**
+     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
+     *
+     */
+    @Override
+    public void setPriceCurrency(Text fPriceCurrency) {
+        this.fPriceCurrency = fPriceCurrency;
     }
 
     private PriceSpecification fPriceSpecification;
@@ -81,97 +126,101 @@ public class RentActionImpl implements RentAction {
         this.fPriceSpecification = fPriceSpecification;
     }
 
-    private Object fLocation;
+    private Object fPrice;
 
     /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.<br/><br/>Usage guidelines:<br/><br/>* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR") instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.<br/>* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a "content=" attribute for publishing simple machine-readable values alongside more human-friendly formatting.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
+     *       
      *
-     * @return {@link PostalAddress} or {@link Text} or {@link Place} or {@link VirtualLocation}
+     * @return {@link Number} or {@link Text}
      */
     @Override
-    public <T> T getLocation() {
-        return (T) fLocation;
+    public <T> T getPrice() {
+        return (T) fPrice;
     }
 
     /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.<br/><br/>Usage guidelines:<br/><br/>* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR") instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.<br/>* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a "content=" attribute for publishing simple machine-readable values alongside more human-friendly formatting.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
+     *       
      *
      */
     @Override
-    public void setLocation(Object fLocation) {
-        if(!(fLocation instanceof PostalAddress) && !(fLocation instanceof Text) && !(fLocation instanceof Place) && !(fLocation instanceof VirtualLocation)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'location': " + fLocation);
+    public void setPrice(Object fPrice) {
+        if(!(fPrice instanceof Number) && !(fPrice instanceof Text)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'price': " + fPrice);
         }
-        this.fLocation = fLocation;
+        this.fPrice = fPrice;
     }
 
-    private Object fLandlord;
+    private Object fAgent;
 
     /**
-     * A sub property of participant. The owner of the real estate property.
+     * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
      *
-     * @return {@link Person} or {@link Organization}
+     * @return {@link Organization} or {@link Person}
      */
     @Override
-    public <T> T getLandlord() {
-        return (T) fLandlord;
+    public <T> T getAgent() {
+        return (T) fAgent;
     }
 
     /**
-     * A sub property of participant. The owner of the real estate property.
+     * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
      *
      */
     @Override
-    public void setLandlord(Object fLandlord) {
-        if(!(fLandlord instanceof Person) && !(fLandlord instanceof Organization)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'landlord': " + fLandlord);
+    public void setAgent(Object fAgent) {
+        if(!(fAgent instanceof Organization) && !(fAgent instanceof Person)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'agent': " + fAgent);
         }
-        this.fLandlord = fLandlord;
+        this.fAgent = fAgent;
     }
 
-    private Text fAlternateName;
+    private Object fStartTime;
 
     /**
-     * An alias for the item.
+     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
      *
-     * @return {@link Text}
+     * @return {@link DateTime} or {@link Time}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
      */
     @Override
-    public Text getAlternateName() {
-        return fAlternateName;
-    }
-
-    /**
-     * An alias for the item.
-     *
-     */
-    @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
-    }
-
-    private Object fMainEntityOfPage;
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
+    public <T> T getStartTime() {
+        return (T) fStartTime;
     }
 
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
      *
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
      */
     @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
+    public void setStartTime(Object fStartTime) {
+        if(!(fStartTime instanceof DateTime) && !(fStartTime instanceof Time)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'startTime': " + fStartTime);
         }
-        this.fMainEntityOfPage = fMainEntityOfPage;
+        this.fStartTime = fStartTime;
+    }
+
+    private ActionStatusType fActionStatus;
+
+    /**
+     * Indicates the current disposition of the Action.
+     *
+     * @return {@link ActionStatusType}
+     */
+    @Override
+    public ActionStatusType getActionStatus() {
+        return fActionStatus;
+    }
+
+    /**
+     * Indicates the current disposition of the Action.
+     *
+     */
+    @Override
+    public void setActionStatus(ActionStatusType fActionStatus) {
+        this.fActionStatus = fActionStatus;
     }
 
     private Object fProvider;
@@ -225,6 +274,122 @@ public class RentActionImpl implements RentAction {
         this.fResult = fResult;
     }
 
+    private Object fLocation;
+
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @return {@link PostalAddress} or {@link Text} or {@link Place} or {@link VirtualLocation}
+     */
+    @Override
+    public <T> T getLocation() {
+        return (T) fLocation;
+    }
+
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     */
+    @Override
+    public void setLocation(Object fLocation) {
+        if(!(fLocation instanceof PostalAddress) && !(fLocation instanceof Text) && !(fLocation instanceof Place) && !(fLocation instanceof VirtualLocation)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'location': " + fLocation);
+        }
+        this.fLocation = fLocation;
+    }
+
+    private Thing fObject;
+
+    /**
+     * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read *a book*.
+     *
+     * @return {@link Thing}
+     */
+    @Override
+    public Thing getObject() {
+        return fObject;
+    }
+
+    /**
+     * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read *a book*.
+     *
+     */
+    @Override
+    public void setObject(Thing fObject) {
+        this.fObject = fObject;
+    }
+
+    private EntryPoint fTarget;
+
+    /**
+     * Indicates a target EntryPoint for an Action.
+     *
+     * @return {@link EntryPoint}
+     */
+    @Override
+    public EntryPoint getTarget() {
+        return fTarget;
+    }
+
+    /**
+     * Indicates a target EntryPoint for an Action.
+     *
+     */
+    @Override
+    public void setTarget(EntryPoint fTarget) {
+        this.fTarget = fTarget;
+    }
+
+    private Object fEndTime;
+
+    /**
+     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @return {@link DateTime} or {@link Time}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    @Override
+    public <T> T getEndTime() {
+        return (T) fEndTime;
+    }
+
+    /**
+     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    @Override
+    public void setEndTime(Object fEndTime) {
+        if(!(fEndTime instanceof DateTime) && !(fEndTime instanceof Time)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'endTime': " + fEndTime);
+        }
+        this.fEndTime = fEndTime;
+    }
+
+    private Object fParticipant;
+
+    /**
+     * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> T getParticipant() {
+        return (T) fParticipant;
+    }
+
+    /**
+     * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
+     *
+     */
+    @Override
+    public void setParticipant(Object fParticipant) {
+        if(!(fParticipant instanceof Organization) && !(fParticipant instanceof Person)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'participant': " + fParticipant);
+        }
+        this.fParticipant = fParticipant;
+    }
+
     private Thing fInstrument;
 
     /**
@@ -244,6 +409,93 @@ public class RentActionImpl implements RentAction {
     @Override
     public void setInstrument(Thing fInstrument) {
         this.fInstrument = fInstrument;
+    }
+
+    private Thing fError;
+
+    /**
+     * For failed actions, more information on the cause of the failure.
+     *
+     * @return {@link Thing}
+     */
+    @Override
+    public Thing getError() {
+        return fError;
+    }
+
+    /**
+     * For failed actions, more information on the cause of the failure.
+     *
+     */
+    @Override
+    public void setError(Thing fError) {
+        this.fError = fError;
+    }
+
+    private Object fMainEntityOfPage;
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    @Override
+    public <T> T getMainEntityOfPage() {
+        return (T) fMainEntityOfPage;
+    }
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     */
+    @Override
+    public void setMainEntityOfPage(Object fMainEntityOfPage) {
+        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
+        }
+        this.fMainEntityOfPage = fMainEntityOfPage;
+    }
+
+    private Text fAlternateName;
+
+    /**
+     * An alias for the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getAlternateName() {
+        return fAlternateName;
+    }
+
+    /**
+     * An alias for the item.
+     *
+     */
+    @Override
+    public void setAlternateName(Text fAlternateName) {
+        this.fAlternateName = fAlternateName;
+    }
+
+    private Text fName;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getName() {
+        return fName;
+    }
+
+    /**
+     * The name of the item.
+     *
+     */
+    @Override
+    public void setName(Text fName) {
+        this.fName = fName;
     }
 
     private Action fPotentialAction;
@@ -267,93 +519,70 @@ public class RentActionImpl implements RentAction {
         this.fPotentialAction = fPotentialAction;
     }
 
-    private RealEstateAgent fRealEstateAgent;
+    private Object fImage;
 
     /**
-     * A sub property of participant. The real estate agent involved in the action.
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @return {@link RealEstateAgent}
+     * @return {@link URL} or {@link ImageObject}
      */
     @Override
-    public RealEstateAgent getRealEstateAgent() {
-        return fRealEstateAgent;
+    public <T> T getImage() {
+        return (T) fImage;
     }
 
     /**
-     * A sub property of participant. The real estate agent involved in the action.
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
      */
     @Override
-    public void setRealEstateAgent(RealEstateAgent fRealEstateAgent) {
-        this.fRealEstateAgent = fRealEstateAgent;
+    public void setImage(Object fImage) {
+        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
+        }
+        this.fImage = fImage;
     }
 
-    private Text fPriceCurrency;
+    private URL fUrl;
 
     /**
-     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
+     * URL of the item.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getUrl() {
+        return fUrl;
+    }
+
+    /**
+     * URL of the item.
+     *
+     */
+    @Override
+    public void setUrl(URL fUrl) {
+        this.fUrl = fUrl;
+    }
+
+    private Text fDescription;
+
+    /**
+     * A description of the item.
      *
      * @return {@link Text}
      */
     @Override
-    public Text getPriceCurrency() {
-        return fPriceCurrency;
+    public Text getDescription() {
+        return fDescription;
     }
 
     /**
-     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
+     * A description of the item.
      *
      */
     @Override
-    public void setPriceCurrency(Text fPriceCurrency) {
-        this.fPriceCurrency = fPriceCurrency;
-    }
-
-    private ActionStatusType fActionStatus;
-
-    /**
-     * Indicates the current disposition of the Action.
-     *
-     * @return {@link ActionStatusType}
-     */
-    @Override
-    public ActionStatusType getActionStatus() {
-        return fActionStatus;
-    }
-
-    /**
-     * Indicates the current disposition of the Action.
-     *
-     */
-    @Override
-    public void setActionStatus(ActionStatusType fActionStatus) {
-        this.fActionStatus = fActionStatus;
-    }
-
-    private Object fStartTime;
-
-    /**
-     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     *
-     * @return {@link DateTime} or {@link Time}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
-     */
-    @Override
-    public <T> T getStartTime() {
-        return (T) fStartTime;
-    }
-
-    /**
-     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     *
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
-     */
-    @Override
-    public void setStartTime(Object fStartTime) {
-        if(!(fStartTime instanceof DateTime) && !(fStartTime instanceof Time)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'startTime': " + fStartTime);
-        }
-        this.fStartTime = fStartTime;
+    public void setDescription(Text fDescription) {
+        this.fDescription = fDescription;
     }
 
     private Object fSubjectOf;
@@ -382,25 +611,25 @@ public class RentActionImpl implements RentAction {
         this.fSubjectOf = fSubjectOf;
     }
 
-    private Text fName;
+    private URL fAdditionalType;
 
     /**
-     * The name of the item.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
-     * @return {@link Text}
+     * @return {@link URL}
      */
     @Override
-    public Text getName() {
-        return fName;
+    public URL getAdditionalType() {
+        return fAdditionalType;
     }
 
     /**
-     * The name of the item.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
      */
     @Override
-    public void setName(Text fName) {
-        this.fName = fName;
+    public void setAdditionalType(URL fAdditionalType) {
+        this.fAdditionalType = fAdditionalType;
     }
 
     private Text fDisambiguatingDescription;
@@ -422,30 +651,6 @@ public class RentActionImpl implements RentAction {
     @Override
     public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
         this.fDisambiguatingDescription = fDisambiguatingDescription;
-    }
-
-    private Object fImage;
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link URL} or {@link ImageObject}
-     */
-    @Override
-    public <T> T getImage() {
-        return (T) fImage;
-    }
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     */
-    @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
-        this.fImage = fImage;
     }
 
     private URL fSameAs;
@@ -493,210 +698,5 @@ public class RentActionImpl implements RentAction {
             throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
         }
         this.fIdentifier = fIdentifier;
-    }
-
-    private Thing fObject;
-
-    /**
-     * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read *a book*.
-     *
-     * @return {@link Thing}
-     */
-    @Override
-    public Thing getObject() {
-        return fObject;
-    }
-
-    /**
-     * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read *a book*.
-     *
-     */
-    @Override
-    public void setObject(Thing fObject) {
-        this.fObject = fObject;
-    }
-
-    private Object fParticipant;
-
-    /**
-     * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    @Override
-    public <T> T getParticipant() {
-        return (T) fParticipant;
-    }
-
-    /**
-     * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
-     *
-     */
-    @Override
-    public void setParticipant(Object fParticipant) {
-        if(!(fParticipant instanceof Organization) && !(fParticipant instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'participant': " + fParticipant);
-        }
-        this.fParticipant = fParticipant;
-    }
-
-    private Object fEndTime;
-
-    /**
-     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     *
-     * @return {@link DateTime} or {@link Time}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
-     */
-    @Override
-    public <T> T getEndTime() {
-        return (T) fEndTime;
-    }
-
-    /**
-     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     *
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
-     */
-    @Override
-    public void setEndTime(Object fEndTime) {
-        if(!(fEndTime instanceof DateTime) && !(fEndTime instanceof Time)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'endTime': " + fEndTime);
-        }
-        this.fEndTime = fEndTime;
-    }
-
-    private Object fAgent;
-
-    /**
-     * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    @Override
-    public <T> T getAgent() {
-        return (T) fAgent;
-    }
-
-    /**
-     * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
-     *
-     */
-    @Override
-    public void setAgent(Object fAgent) {
-        if(!(fAgent instanceof Organization) && !(fAgent instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'agent': " + fAgent);
-        }
-        this.fAgent = fAgent;
-    }
-
-    private URL fUrl;
-
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getUrl() {
-        return fUrl;
-    }
-
-    /**
-     * URL of the item.
-     *
-     */
-    @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
-    }
-
-    private Object fPrice;
-
-    /**
-     * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.<br/><br/>Usage guidelines:<br/><br/>* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR") instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.<br/>* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a "content=" attribute for publishing simple machine-readable values alongside more human-friendly formatting.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
-     *       
-     *
-     * @return {@link Number} or {@link Text}
-     */
-    @Override
-    public <T> T getPrice() {
-        return (T) fPrice;
-    }
-
-    /**
-     * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.<br/><br/>Usage guidelines:<br/><br/>* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR") instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.<br/>* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a "content=" attribute for publishing simple machine-readable values alongside more human-friendly formatting.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
-     *       
-     *
-     */
-    @Override
-    public void setPrice(Object fPrice) {
-        if(!(fPrice instanceof Number) && !(fPrice instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'price': " + fPrice);
-        }
-        this.fPrice = fPrice;
-    }
-
-    private EntryPoint fTarget;
-
-    /**
-     * Indicates a target EntryPoint for an Action.
-     *
-     * @return {@link EntryPoint}
-     */
-    @Override
-    public EntryPoint getTarget() {
-        return fTarget;
-    }
-
-    /**
-     * Indicates a target EntryPoint for an Action.
-     *
-     */
-    @Override
-    public void setTarget(EntryPoint fTarget) {
-        this.fTarget = fTarget;
-    }
-
-    private URL fAdditionalType;
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getAdditionalType() {
-        return fAdditionalType;
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     */
-    @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
-    }
-
-    private Text fDescription;
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDescription() {
-        return fDescription;
-    }
-
-    /**
-     * A description of the item.
-     *
-     */
-    @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
     }
 }

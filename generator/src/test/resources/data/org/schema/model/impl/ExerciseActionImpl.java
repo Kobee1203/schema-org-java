@@ -41,7 +41,70 @@ import org.schema.model.ExerciseAction;
 @JsonLdTypeName("schema:ExerciseAction")
 public class ExerciseActionImpl implements ExerciseAction {
 
-    private Diet fExerciseRelatedDiet;
+    private SportsTeam fSportsTeam;
+
+    /**
+     * A sub property of participant. The sports team that participated on this action.
+     *
+     * @return {@link SportsTeam}
+     */
+    @Override
+    public SportsTeam getSportsTeam() {
+        return fSportsTeam;
+    }
+
+    /**
+     * A sub property of participant. The sports team that participated on this action.
+     *
+     */
+    @Override
+    public void setSportsTeam(SportsTeam fSportsTeam) {
+        this.fSportsTeam = fSportsTeam;
+    }
+
+    private Place fCourse;
+
+    /**
+     * A sub property of location. The course where this action was taken.
+     *
+     * @return {@link Place}
+     */
+    @Override
+    public Place getCourse() {
+        return fCourse;
+    }
+
+    /**
+     * A sub property of location. The course where this action was taken.
+     *
+     */
+    @Override
+    public void setCourse(Place fCourse) {
+        this.fCourse = fCourse;
+    }
+
+    private Place fFromLocation;
+
+    /**
+     * A sub property of location. The original location of the object or the agent before the action.
+     *
+     * @return {@link Place}
+     */
+    @Override
+    public Place getFromLocation() {
+        return fFromLocation;
+    }
+
+    /**
+     * A sub property of location. The original location of the object or the agent before the action.
+     *
+     */
+    @Override
+    public void setFromLocation(Place fFromLocation) {
+        this.fFromLocation = fFromLocation;
+    }
+
+    private Diet fDiet;
 
     /**
      * A sub property of instrument. The diet used in this action.
@@ -50,8 +113,8 @@ public class ExerciseActionImpl implements ExerciseAction {
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public Diet getExerciseRelatedDiet() {
-        return fExerciseRelatedDiet;
+    public Diet getDiet() {
+        return fDiet;
     }
 
     /**
@@ -60,53 +123,29 @@ public class ExerciseActionImpl implements ExerciseAction {
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setExerciseRelatedDiet(Diet fExerciseRelatedDiet) {
-        this.fExerciseRelatedDiet = fExerciseRelatedDiet;
+    public void setDiet(Diet fDiet) {
+        this.fDiet = fDiet;
     }
 
-    private Thing fError;
+    private SportsActivityLocation fSportsActivityLocation;
 
     /**
-     * For failed actions, more information on the cause of the failure.
+     * A sub property of location. The sports activity location where this action occurred.
      *
-     * @return {@link Thing}
+     * @return {@link SportsActivityLocation}
      */
     @Override
-    public Thing getError() {
-        return fError;
-    }
-
-    /**
-     * For failed actions, more information on the cause of the failure.
-     *
-     */
-    @Override
-    public void setError(Thing fError) {
-        this.fError = fError;
-    }
-
-    private Object fLocation;
-
-    /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-     *
-     * @return {@link PostalAddress} or {@link Text} or {@link Place} or {@link VirtualLocation}
-     */
-    @Override
-    public <T> T getLocation() {
-        return (T) fLocation;
+    public SportsActivityLocation getSportsActivityLocation() {
+        return fSportsActivityLocation;
     }
 
     /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     * A sub property of location. The sports activity location where this action occurred.
      *
      */
     @Override
-    public void setLocation(Object fLocation) {
-        if(!(fLocation instanceof PostalAddress) && !(fLocation instanceof Text) && !(fLocation instanceof Place) && !(fLocation instanceof VirtualLocation)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'location': " + fLocation);
-        }
-        this.fLocation = fLocation;
+    public void setSportsActivityLocation(SportsActivityLocation fSportsActivityLocation) {
+        this.fSportsActivityLocation = fSportsActivityLocation;
     }
 
     private Distance fDistance;
@@ -130,49 +169,270 @@ public class ExerciseActionImpl implements ExerciseAction {
         this.fDistance = fDistance;
     }
 
-    private Text fAlternateName;
+    private ExercisePlan fExercisePlan;
 
     /**
-     * An alias for the item.
+     * A sub property of instrument. The exercise plan used on this action.
+     *
+     * @return {@link ExercisePlan}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public ExercisePlan getExercisePlan() {
+        return fExercisePlan;
+    }
+
+    /**
+     * A sub property of instrument. The exercise plan used on this action.
+     *
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void setExercisePlan(ExercisePlan fExercisePlan) {
+        this.fExercisePlan = fExercisePlan;
+    }
+
+    private SportsEvent fSportsEvent;
+
+    /**
+     * A sub property of location. The sports event where this action occurred.
+     *
+     * @return {@link SportsEvent}
+     */
+    @Override
+    public SportsEvent getSportsEvent() {
+        return fSportsEvent;
+    }
+
+    /**
+     * A sub property of location. The sports event where this action occurred.
+     *
+     */
+    @Override
+    public void setSportsEvent(SportsEvent fSportsEvent) {
+        this.fSportsEvent = fSportsEvent;
+    }
+
+    private Diet fExerciseRelatedDiet;
+
+    /**
+     * A sub property of instrument. The diet used in this action.
+     *
+     * @return {@link Diet}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public Diet getExerciseRelatedDiet() {
+        return fExerciseRelatedDiet;
+    }
+
+    /**
+     * A sub property of instrument. The diet used in this action.
+     *
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void setExerciseRelatedDiet(Diet fExerciseRelatedDiet) {
+        this.fExerciseRelatedDiet = fExerciseRelatedDiet;
+    }
+
+    private Person fOpponent;
+
+    /**
+     * A sub property of participant. The opponent on this action.
+     *
+     * @return {@link Person}
+     */
+    @Override
+    public Person getOpponent() {
+        return fOpponent;
+    }
+
+    /**
+     * A sub property of participant. The opponent on this action.
+     *
+     */
+    @Override
+    public void setOpponent(Person fOpponent) {
+        this.fOpponent = fOpponent;
+    }
+
+    private Place fExerciseCourse;
+
+    /**
+     * A sub property of location. The course where this action was taken.
+     *
+     * @return {@link Place}
+     */
+    @Override
+    public Place getExerciseCourse() {
+        return fExerciseCourse;
+    }
+
+    /**
+     * A sub property of location. The course where this action was taken.
+     *
+     */
+    @Override
+    public void setExerciseCourse(Place fExerciseCourse) {
+        this.fExerciseCourse = fExerciseCourse;
+    }
+
+    private Place fToLocation;
+
+    /**
+     * A sub property of location. The final location of the object or the agent after the action.
+     *
+     * @return {@link Place}
+     */
+    @Override
+    public Place getToLocation() {
+        return fToLocation;
+    }
+
+    /**
+     * A sub property of location. The final location of the object or the agent after the action.
+     *
+     */
+    @Override
+    public void setToLocation(Place fToLocation) {
+        this.fToLocation = fToLocation;
+    }
+
+    private Text fExerciseType;
+
+    /**
+     * Type(s) of exercise or activity, such as strength training, flexibility training, aerobics, cardiac rehabilitation, etc.
      *
      * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public Text getAlternateName() {
-        return fAlternateName;
+    public Text getExerciseType() {
+        return fExerciseType;
     }
 
     /**
-     * An alias for the item.
+     * Type(s) of exercise or activity, such as strength training, flexibility training, aerobics, cardiac rehabilitation, etc.
      *
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
+    public void setExerciseType(Text fExerciseType) {
+        this.fExerciseType = fExerciseType;
     }
 
-    private Object fMainEntityOfPage;
+    private Audience fAudience;
 
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * An intended audience, i.e. a group for whom something was created.
      *
-     * @return {@link CreativeWork} or {@link URL}
+     * @return {@link Audience}
      */
     @Override
-    public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
+    public Audience getAudience() {
+        return fAudience;
     }
 
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * An intended audience, i.e. a group for whom something was created.
      *
      */
     @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
+    public void setAudience(Audience fAudience) {
+        this.fAudience = fAudience;
+    }
+
+    private Event fEvent;
+
+    /**
+     * Upcoming or past event associated with this place, organization, or action.
+     *
+     * @return {@link Event}
+     */
+    @Override
+    public Event getEvent() {
+        return fEvent;
+    }
+
+    /**
+     * Upcoming or past event associated with this place, organization, or action.
+     *
+     */
+    @Override
+    public void setEvent(Event fEvent) {
+        this.fEvent = fEvent;
+    }
+
+    private Object fAgent;
+
+    /**
+     * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> T getAgent() {
+        return (T) fAgent;
+    }
+
+    /**
+     * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
+     *
+     */
+    @Override
+    public void setAgent(Object fAgent) {
+        if(!(fAgent instanceof Organization) && !(fAgent instanceof Person)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'agent': " + fAgent);
         }
-        this.fMainEntityOfPage = fMainEntityOfPage;
+        this.fAgent = fAgent;
+    }
+
+    private Object fStartTime;
+
+    /**
+     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @return {@link DateTime} or {@link Time}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    @Override
+    public <T> T getStartTime() {
+        return (T) fStartTime;
+    }
+
+    /**
+     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    @Override
+    public void setStartTime(Object fStartTime) {
+        if(!(fStartTime instanceof DateTime) && !(fStartTime instanceof Time)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'startTime': " + fStartTime);
+        }
+        this.fStartTime = fStartTime;
+    }
+
+    private ActionStatusType fActionStatus;
+
+    /**
+     * Indicates the current disposition of the Action.
+     *
+     * @return {@link ActionStatusType}
+     */
+    @Override
+    public ActionStatusType getActionStatus() {
+        return fActionStatus;
+    }
+
+    /**
+     * Indicates the current disposition of the Action.
+     *
+     */
+    @Override
+    public void setActionStatus(ActionStatusType fActionStatus) {
+        this.fActionStatus = fActionStatus;
     }
 
     private Object fProvider;
@@ -226,25 +486,120 @@ public class ExerciseActionImpl implements ExerciseAction {
         this.fResult = fResult;
     }
 
-    private SportsTeam fSportsTeam;
+    private Object fLocation;
 
     /**
-     * A sub property of participant. The sports team that participated on this action.
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
      *
-     * @return {@link SportsTeam}
+     * @return {@link PostalAddress} or {@link Text} or {@link Place} or {@link VirtualLocation}
      */
     @Override
-    public SportsTeam getSportsTeam() {
-        return fSportsTeam;
+    public <T> T getLocation() {
+        return (T) fLocation;
     }
 
     /**
-     * A sub property of participant. The sports team that participated on this action.
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
      *
      */
     @Override
-    public void setSportsTeam(SportsTeam fSportsTeam) {
-        this.fSportsTeam = fSportsTeam;
+    public void setLocation(Object fLocation) {
+        if(!(fLocation instanceof PostalAddress) && !(fLocation instanceof Text) && !(fLocation instanceof Place) && !(fLocation instanceof VirtualLocation)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'location': " + fLocation);
+        }
+        this.fLocation = fLocation;
+    }
+
+    private Thing fObject;
+
+    /**
+     * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read *a book*.
+     *
+     * @return {@link Thing}
+     */
+    @Override
+    public Thing getObject() {
+        return fObject;
+    }
+
+    /**
+     * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read *a book*.
+     *
+     */
+    @Override
+    public void setObject(Thing fObject) {
+        this.fObject = fObject;
+    }
+
+    private EntryPoint fTarget;
+
+    /**
+     * Indicates a target EntryPoint for an Action.
+     *
+     * @return {@link EntryPoint}
+     */
+    @Override
+    public EntryPoint getTarget() {
+        return fTarget;
+    }
+
+    /**
+     * Indicates a target EntryPoint for an Action.
+     *
+     */
+    @Override
+    public void setTarget(EntryPoint fTarget) {
+        this.fTarget = fTarget;
+    }
+
+    private Object fEndTime;
+
+    /**
+     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @return {@link DateTime} or {@link Time}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    @Override
+    public <T> T getEndTime() {
+        return (T) fEndTime;
+    }
+
+    /**
+     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    @Override
+    public void setEndTime(Object fEndTime) {
+        if(!(fEndTime instanceof DateTime) && !(fEndTime instanceof Time)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'endTime': " + fEndTime);
+        }
+        this.fEndTime = fEndTime;
+    }
+
+    private Object fParticipant;
+
+    /**
+     * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> T getParticipant() {
+        return (T) fParticipant;
+    }
+
+    /**
+     * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
+     *
+     */
+    @Override
+    public void setParticipant(Object fParticipant) {
+        if(!(fParticipant instanceof Organization) && !(fParticipant instanceof Person)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'participant': " + fParticipant);
+        }
+        this.fParticipant = fParticipant;
     }
 
     private Thing fInstrument;
@@ -268,6 +623,93 @@ public class ExerciseActionImpl implements ExerciseAction {
         this.fInstrument = fInstrument;
     }
 
+    private Thing fError;
+
+    /**
+     * For failed actions, more information on the cause of the failure.
+     *
+     * @return {@link Thing}
+     */
+    @Override
+    public Thing getError() {
+        return fError;
+    }
+
+    /**
+     * For failed actions, more information on the cause of the failure.
+     *
+     */
+    @Override
+    public void setError(Thing fError) {
+        this.fError = fError;
+    }
+
+    private Object fMainEntityOfPage;
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    @Override
+    public <T> T getMainEntityOfPage() {
+        return (T) fMainEntityOfPage;
+    }
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     */
+    @Override
+    public void setMainEntityOfPage(Object fMainEntityOfPage) {
+        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
+        }
+        this.fMainEntityOfPage = fMainEntityOfPage;
+    }
+
+    private Text fAlternateName;
+
+    /**
+     * An alias for the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getAlternateName() {
+        return fAlternateName;
+    }
+
+    /**
+     * An alias for the item.
+     *
+     */
+    @Override
+    public void setAlternateName(Text fAlternateName) {
+        this.fAlternateName = fAlternateName;
+    }
+
+    private Text fName;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getName() {
+        return fName;
+    }
+
+    /**
+     * The name of the item.
+     *
+     */
+    @Override
+    public void setName(Text fName) {
+        this.fName = fName;
+    }
+
     private Action fPotentialAction;
 
     /**
@@ -289,114 +731,70 @@ public class ExerciseActionImpl implements ExerciseAction {
         this.fPotentialAction = fPotentialAction;
     }
 
-    private ActionStatusType fActionStatus;
+    private Object fImage;
 
     /**
-     * Indicates the current disposition of the Action.
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @return {@link ActionStatusType}
+     * @return {@link URL} or {@link ImageObject}
      */
     @Override
-    public ActionStatusType getActionStatus() {
-        return fActionStatus;
+    public <T> T getImage() {
+        return (T) fImage;
     }
 
     /**
-     * Indicates the current disposition of the Action.
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
      */
     @Override
-    public void setActionStatus(ActionStatusType fActionStatus) {
-        this.fActionStatus = fActionStatus;
-    }
-
-    private Person fOpponent;
-
-    /**
-     * A sub property of participant. The opponent on this action.
-     *
-     * @return {@link Person}
-     */
-    @Override
-    public Person getOpponent() {
-        return fOpponent;
-    }
-
-    /**
-     * A sub property of participant. The opponent on this action.
-     *
-     */
-    @Override
-    public void setOpponent(Person fOpponent) {
-        this.fOpponent = fOpponent;
-    }
-
-    private Place fFromLocation;
-
-    /**
-     * A sub property of location. The original location of the object or the agent before the action.
-     *
-     * @return {@link Place}
-     */
-    @Override
-    public Place getFromLocation() {
-        return fFromLocation;
-    }
-
-    /**
-     * A sub property of location. The original location of the object or the agent before the action.
-     *
-     */
-    @Override
-    public void setFromLocation(Place fFromLocation) {
-        this.fFromLocation = fFromLocation;
-    }
-
-    private Place fExerciseCourse;
-
-    /**
-     * A sub property of location. The course where this action was taken.
-     *
-     * @return {@link Place}
-     */
-    @Override
-    public Place getExerciseCourse() {
-        return fExerciseCourse;
-    }
-
-    /**
-     * A sub property of location. The course where this action was taken.
-     *
-     */
-    @Override
-    public void setExerciseCourse(Place fExerciseCourse) {
-        this.fExerciseCourse = fExerciseCourse;
-    }
-
-    private Object fStartTime;
-
-    /**
-     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     *
-     * @return {@link DateTime} or {@link Time}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
-     */
-    @Override
-    public <T> T getStartTime() {
-        return (T) fStartTime;
-    }
-
-    /**
-     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     *
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
-     */
-    @Override
-    public void setStartTime(Object fStartTime) {
-        if(!(fStartTime instanceof DateTime) && !(fStartTime instanceof Time)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'startTime': " + fStartTime);
+    public void setImage(Object fImage) {
+        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
         }
-        this.fStartTime = fStartTime;
+        this.fImage = fImage;
+    }
+
+    private URL fUrl;
+
+    /**
+     * URL of the item.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getUrl() {
+        return fUrl;
+    }
+
+    /**
+     * URL of the item.
+     *
+     */
+    @Override
+    public void setUrl(URL fUrl) {
+        this.fUrl = fUrl;
+    }
+
+    private Text fDescription;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDescription() {
+        return fDescription;
+    }
+
+    /**
+     * A description of the item.
+     *
+     */
+    @Override
+    public void setDescription(Text fDescription) {
+        this.fDescription = fDescription;
     }
 
     private Object fSubjectOf;
@@ -425,48 +823,25 @@ public class ExerciseActionImpl implements ExerciseAction {
         this.fSubjectOf = fSubjectOf;
     }
 
-    private Text fExerciseType;
+    private URL fAdditionalType;
 
     /**
-     * Type(s) of exercise or activity, such as strength training, flexibility training, aerobics, cardiac rehabilitation, etc.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
-     * @return {@link Text}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     * @return {@link URL}
      */
     @Override
-    public Text getExerciseType() {
-        return fExerciseType;
+    public URL getAdditionalType() {
+        return fAdditionalType;
     }
 
     /**
-     * Type(s) of exercise or activity, such as strength training, flexibility training, aerobics, cardiac rehabilitation, etc.
-     *
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setExerciseType(Text fExerciseType) {
-        this.fExerciseType = fExerciseType;
-    }
-
-    private Text fName;
-
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getName() {
-        return fName;
-    }
-
-    /**
-     * The name of the item.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
      */
     @Override
-    public void setName(Text fName) {
-        this.fName = fName;
+    public void setAdditionalType(URL fAdditionalType) {
+        this.fAdditionalType = fAdditionalType;
     }
 
     private Text fDisambiguatingDescription;
@@ -488,53 +863,6 @@ public class ExerciseActionImpl implements ExerciseAction {
     @Override
     public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
         this.fDisambiguatingDescription = fDisambiguatingDescription;
-    }
-
-    private Diet fDiet;
-
-    /**
-     * A sub property of instrument. The diet used in this action.
-     *
-     * @return {@link Diet}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public Diet getDiet() {
-        return fDiet;
-    }
-
-    /**
-     * A sub property of instrument. The diet used in this action.
-     *
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setDiet(Diet fDiet) {
-        this.fDiet = fDiet;
-    }
-
-    private Object fImage;
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link URL} or {@link ImageObject}
-     */
-    @Override
-    public <T> T getImage() {
-        return (T) fImage;
-    }
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     */
-    @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
-        this.fImage = fImage;
     }
 
     private URL fSameAs;
@@ -582,333 +910,5 @@ public class ExerciseActionImpl implements ExerciseAction {
             throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
         }
         this.fIdentifier = fIdentifier;
-    }
-
-    private Event fEvent;
-
-    /**
-     * Upcoming or past event associated with this place, organization, or action.
-     *
-     * @return {@link Event}
-     */
-    @Override
-    public Event getEvent() {
-        return fEvent;
-    }
-
-    /**
-     * Upcoming or past event associated with this place, organization, or action.
-     *
-     */
-    @Override
-    public void setEvent(Event fEvent) {
-        this.fEvent = fEvent;
-    }
-
-    private Thing fObject;
-
-    /**
-     * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read *a book*.
-     *
-     * @return {@link Thing}
-     */
-    @Override
-    public Thing getObject() {
-        return fObject;
-    }
-
-    /**
-     * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read *a book*.
-     *
-     */
-    @Override
-    public void setObject(Thing fObject) {
-        this.fObject = fObject;
-    }
-
-    private Object fParticipant;
-
-    /**
-     * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    @Override
-    public <T> T getParticipant() {
-        return (T) fParticipant;
-    }
-
-    /**
-     * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
-     *
-     */
-    @Override
-    public void setParticipant(Object fParticipant) {
-        if(!(fParticipant instanceof Organization) && !(fParticipant instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'participant': " + fParticipant);
-        }
-        this.fParticipant = fParticipant;
-    }
-
-    private ExercisePlan fExercisePlan;
-
-    /**
-     * A sub property of instrument. The exercise plan used on this action.
-     *
-     * @return {@link ExercisePlan}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public ExercisePlan getExercisePlan() {
-        return fExercisePlan;
-    }
-
-    /**
-     * A sub property of instrument. The exercise plan used on this action.
-     *
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setExercisePlan(ExercisePlan fExercisePlan) {
-        this.fExercisePlan = fExercisePlan;
-    }
-
-    private Object fEndTime;
-
-    /**
-     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     *
-     * @return {@link DateTime} or {@link Time}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
-     */
-    @Override
-    public <T> T getEndTime() {
-        return (T) fEndTime;
-    }
-
-    /**
-     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     *
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
-     */
-    @Override
-    public void setEndTime(Object fEndTime) {
-        if(!(fEndTime instanceof DateTime) && !(fEndTime instanceof Time)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'endTime': " + fEndTime);
-        }
-        this.fEndTime = fEndTime;
-    }
-
-    private Place fCourse;
-
-    /**
-     * A sub property of location. The course where this action was taken.
-     *
-     * @return {@link Place}
-     */
-    @Override
-    public Place getCourse() {
-        return fCourse;
-    }
-
-    /**
-     * A sub property of location. The course where this action was taken.
-     *
-     */
-    @Override
-    public void setCourse(Place fCourse) {
-        this.fCourse = fCourse;
-    }
-
-    private Place fToLocation;
-
-    /**
-     * A sub property of location. The final location of the object or the agent after the action.
-     *
-     * @return {@link Place}
-     */
-    @Override
-    public Place getToLocation() {
-        return fToLocation;
-    }
-
-    /**
-     * A sub property of location. The final location of the object or the agent after the action.
-     *
-     */
-    @Override
-    public void setToLocation(Place fToLocation) {
-        this.fToLocation = fToLocation;
-    }
-
-    private Object fAgent;
-
-    /**
-     * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    @Override
-    public <T> T getAgent() {
-        return (T) fAgent;
-    }
-
-    /**
-     * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
-     *
-     */
-    @Override
-    public void setAgent(Object fAgent) {
-        if(!(fAgent instanceof Organization) && !(fAgent instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'agent': " + fAgent);
-        }
-        this.fAgent = fAgent;
-    }
-
-    private URL fUrl;
-
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getUrl() {
-        return fUrl;
-    }
-
-    /**
-     * URL of the item.
-     *
-     */
-    @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
-    }
-
-    private SportsEvent fSportsEvent;
-
-    /**
-     * A sub property of location. The sports event where this action occurred.
-     *
-     * @return {@link SportsEvent}
-     */
-    @Override
-    public SportsEvent getSportsEvent() {
-        return fSportsEvent;
-    }
-
-    /**
-     * A sub property of location. The sports event where this action occurred.
-     *
-     */
-    @Override
-    public void setSportsEvent(SportsEvent fSportsEvent) {
-        this.fSportsEvent = fSportsEvent;
-    }
-
-    private Audience fAudience;
-
-    /**
-     * An intended audience, i.e. a group for whom something was created.
-     *
-     * @return {@link Audience}
-     */
-    @Override
-    public Audience getAudience() {
-        return fAudience;
-    }
-
-    /**
-     * An intended audience, i.e. a group for whom something was created.
-     *
-     */
-    @Override
-    public void setAudience(Audience fAudience) {
-        this.fAudience = fAudience;
-    }
-
-    private EntryPoint fTarget;
-
-    /**
-     * Indicates a target EntryPoint for an Action.
-     *
-     * @return {@link EntryPoint}
-     */
-    @Override
-    public EntryPoint getTarget() {
-        return fTarget;
-    }
-
-    /**
-     * Indicates a target EntryPoint for an Action.
-     *
-     */
-    @Override
-    public void setTarget(EntryPoint fTarget) {
-        this.fTarget = fTarget;
-    }
-
-    private SportsActivityLocation fSportsActivityLocation;
-
-    /**
-     * A sub property of location. The sports activity location where this action occurred.
-     *
-     * @return {@link SportsActivityLocation}
-     */
-    @Override
-    public SportsActivityLocation getSportsActivityLocation() {
-        return fSportsActivityLocation;
-    }
-
-    /**
-     * A sub property of location. The sports activity location where this action occurred.
-     *
-     */
-    @Override
-    public void setSportsActivityLocation(SportsActivityLocation fSportsActivityLocation) {
-        this.fSportsActivityLocation = fSportsActivityLocation;
-    }
-
-    private URL fAdditionalType;
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getAdditionalType() {
-        return fAdditionalType;
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     */
-    @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
-    }
-
-    private Text fDescription;
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDescription() {
-        return fDescription;
-    }
-
-    /**
-     * A description of the item.
-     *
-     */
-    @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
     }
 }

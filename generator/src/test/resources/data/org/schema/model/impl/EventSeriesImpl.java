@@ -63,149 +63,6 @@ import org.schema.model.EventSeries;
 @JsonLdTypeName("schema:EventSeries")
 public class EventSeriesImpl implements EventSeries {
 
-    private Boolean fIsAccessibleForFree;
-
-    /**
-     * A flag to signal that the item, event, or place is accessible for free.
-     *
-     * @return {@link Boolean}
-     */
-    @Override
-    public Boolean getIsAccessibleForFree() {
-        return fIsAccessibleForFree;
-    }
-
-    /**
-     * A flag to signal that the item, event, or place is accessible for free.
-     *
-     */
-    @Override
-    public void setIsAccessibleForFree(Boolean fIsAccessibleForFree) {
-        this.fIsAccessibleForFree = fIsAccessibleForFree;
-    }
-
-    private Object fInLanguage;
-
-    /**
-     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
-     *
-     * @return {@link Text} or {@link Language}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
-     */
-    @Override
-    public <T> T getInLanguage() {
-        return (T) fInLanguage;
-    }
-
-    /**
-     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
-     *
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
-     */
-    @Override
-    public void setInLanguage(Object fInLanguage) {
-        if(!(fInLanguage instanceof Text) && !(fInLanguage instanceof Language)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'inLanguage': " + fInLanguage);
-        }
-        this.fInLanguage = fInLanguage;
-    }
-
-    private Event fSuperEvent;
-
-    /**
-     * An event that this event is a part of. For example, a collection of individual music performances might each have a music festival as their superEvent.
-     *
-     * @return {@link Event}
-     */
-    @Override
-    public Event getSuperEvent() {
-        return fSuperEvent;
-    }
-
-    /**
-     * An event that this event is a part of. For example, a collection of individual music performances might each have a music festival as their superEvent.
-     *
-     */
-    @Override
-    public void setSuperEvent(Event fSuperEvent) {
-        this.fSuperEvent = fSuperEvent;
-    }
-
-    private Object fPerformer;
-
-    /**
-     * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    @Override
-    public <T> T getPerformer() {
-        return (T) fPerformer;
-    }
-
-    /**
-     * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
-     *
-     */
-    @Override
-    public void setPerformer(Object fPerformer) {
-        if(!(fPerformer instanceof Organization) && !(fPerformer instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'performer': " + fPerformer);
-        }
-        this.fPerformer = fPerformer;
-    }
-
-    private Object fComposer;
-
-    /**
-     * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
-     *
-     * @return {@link Organization} or {@link Person}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
-     */
-    @Override
-    public <T> T getComposer() {
-        return (T) fComposer;
-    }
-
-    /**
-     * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
-     */
-    @Override
-    public void setComposer(Object fComposer) {
-        if(!(fComposer instanceof Organization) && !(fComposer instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'composer': " + fComposer);
-        }
-        this.fComposer = fComposer;
-    }
-
-    private Integer fMaximumVirtualAttendeeCapacity;
-
-    /**
-     * The maximum physical attendee capacity of an [[Event]] whose [[eventAttendanceMode]] is [[OnlineEventAttendanceMode]] (or the online aspects, in the case of a [[MixedEventAttendanceMode]]). 
-     *
-     * @return {@link Integer}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1842">https://github.com/schemaorg/schemaorg/issues/1842</a>
-     */
-    @Override
-    public Integer getMaximumVirtualAttendeeCapacity() {
-        return fMaximumVirtualAttendeeCapacity;
-    }
-
-    /**
-     * The maximum physical attendee capacity of an [[Event]] whose [[eventAttendanceMode]] is [[OnlineEventAttendanceMode]] (or the online aspects, in the case of a [[MixedEventAttendanceMode]]). 
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1842">https://github.com/schemaorg/schemaorg/issues/1842</a>
-     */
-    @Override
-    public void setMaximumVirtualAttendeeCapacity(Integer fMaximumVirtualAttendeeCapacity) {
-        this.fMaximumVirtualAttendeeCapacity = fMaximumVirtualAttendeeCapacity;
-    }
-
     private Object fMainEntityOfPage;
 
     /**
@@ -230,103 +87,46 @@ public class EventSeriesImpl implements EventSeries {
         this.fMainEntityOfPage = fMainEntityOfPage;
     }
 
-    private Object fStartDate;
+    private Text fAlternateName;
 
     /**
-     * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
+     * An alias for the item.
      *
-     * @return {@link DateTime} or {@link Date}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
+     * @return {@link Text}
      */
     @Override
-    public <T> T getStartDate() {
-        return (T) fStartDate;
+    public Text getAlternateName() {
+        return fAlternateName;
     }
 
     /**
-     * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
+     * An alias for the item.
      *
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
     @Override
-    public void setStartDate(Object fStartDate) {
-        if(!(fStartDate instanceof DateTime) && !(fStartDate instanceof Date)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'startDate': " + fStartDate);
-        }
-        this.fStartDate = fStartDate;
+    public void setAlternateName(Text fAlternateName) {
+        this.fAlternateName = fAlternateName;
     }
 
-    private Object fContributor;
+    private Text fName;
 
     /**
-     * A secondary contributor to the CreativeWork or Event.
+     * The name of the item.
      *
-     * @return {@link Organization} or {@link Person}
+     * @return {@link Text}
      */
     @Override
-    public <T> T getContributor() {
-        return (T) fContributor;
+    public Text getName() {
+        return fName;
     }
 
     /**
-     * A secondary contributor to the CreativeWork or Event.
+     * The name of the item.
      *
      */
     @Override
-    public void setContributor(Object fContributor) {
-        if(!(fContributor instanceof Organization) && !(fContributor instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'contributor': " + fContributor);
-        }
-        this.fContributor = fContributor;
-    }
-
-    private Duration fDuration;
-
-    /**
-     * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
-     *
-     * @return {@link Duration}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
-     */
-    @Override
-    public Duration getDuration() {
-        return fDuration;
-    }
-
-    /**
-     * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
-     *
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
-     */
-    @Override
-    public void setDuration(Duration fDuration) {
-        this.fDuration = fDuration;
-    }
-
-    private Object fSponsor;
-
-    /**
-     * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    @Override
-    public <T> T getSponsor() {
-        return (T) fSponsor;
-    }
-
-    /**
-     * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
-     *
-     */
-    @Override
-    public void setSponsor(Object fSponsor) {
-        if(!(fSponsor instanceof Organization) && !(fSponsor instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'sponsor': " + fSponsor);
-        }
-        this.fSponsor = fSponsor;
+    public void setName(Text fName) {
+        this.fName = fName;
     }
 
     private Action fPotentialAction;
@@ -350,73 +150,70 @@ public class EventSeriesImpl implements EventSeries {
         this.fPotentialAction = fPotentialAction;
     }
 
-    private Integer fMaximumAttendeeCapacity;
+    private Object fImage;
 
     /**
-     * The total number of individuals that may attend an event or venue.
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @return {@link Integer}
+     * @return {@link URL} or {@link ImageObject}
      */
     @Override
-    public Integer getMaximumAttendeeCapacity() {
-        return fMaximumAttendeeCapacity;
+    public <T> T getImage() {
+        return (T) fImage;
     }
 
     /**
-     * The total number of individuals that may attend an event or venue.
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
      */
     @Override
-    public void setMaximumAttendeeCapacity(Integer fMaximumAttendeeCapacity) {
-        this.fMaximumAttendeeCapacity = fMaximumAttendeeCapacity;
-    }
-
-    private Object fAttendees;
-
-    /**
-     * A person attending the event.
-     *
-     * @return {@link Person} or {@link Organization}
-     */
-    @Override
-    public <T> T getAttendees() {
-        return (T) fAttendees;
-    }
-
-    /**
-     * A person attending the event.
-     *
-     */
-    @Override
-    public void setAttendees(Object fAttendees) {
-        if(!(fAttendees instanceof Person) && !(fAttendees instanceof Organization)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'attendees': " + fAttendees);
+    public void setImage(Object fImage) {
+        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
         }
-        this.fAttendees = fAttendees;
+        this.fImage = fImage;
     }
 
-    private Object fTranslator;
+    private URL fUrl;
 
     /**
-     * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
+     * URL of the item.
      *
-     * @return {@link Person} or {@link Organization}
+     * @return {@link URL}
      */
     @Override
-    public <T> T getTranslator() {
-        return (T) fTranslator;
+    public URL getUrl() {
+        return fUrl;
     }
 
     /**
-     * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
+     * URL of the item.
      *
      */
     @Override
-    public void setTranslator(Object fTranslator) {
-        if(!(fTranslator instanceof Person) && !(fTranslator instanceof Organization)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'translator': " + fTranslator);
-        }
-        this.fTranslator = fTranslator;
+    public void setUrl(URL fUrl) {
+        this.fUrl = fUrl;
+    }
+
+    private Text fDescription;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDescription() {
+        return fDescription;
+    }
+
+    /**
+     * A description of the item.
+     *
+     */
+    @Override
+    public void setDescription(Text fDescription) {
+        this.fDescription = fDescription;
     }
 
     private Object fSubjectOf;
@@ -445,46 +242,25 @@ public class EventSeriesImpl implements EventSeries {
         this.fSubjectOf = fSubjectOf;
     }
 
-    private Text fName;
+    private URL fAdditionalType;
 
     /**
-     * The name of the item.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
-     * @return {@link Text}
+     * @return {@link URL}
      */
     @Override
-    public Text getName() {
-        return fName;
+    public URL getAdditionalType() {
+        return fAdditionalType;
     }
 
     /**
-     * The name of the item.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
      */
     @Override
-    public void setName(Text fName) {
-        this.fName = fName;
-    }
-
-    private AggregateRating fAggregateRating;
-
-    /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
-     *
-     * @return {@link AggregateRating}
-     */
-    @Override
-    public AggregateRating getAggregateRating() {
-        return fAggregateRating;
-    }
-
-    /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
-     *
-     */
-    @Override
-    public void setAggregateRating(AggregateRating fAggregateRating) {
-        this.fAggregateRating = fAggregateRating;
+    public void setAdditionalType(URL fAdditionalType) {
+        this.fAdditionalType = fAdditionalType;
     }
 
     private Text fDisambiguatingDescription;
@@ -506,6 +282,335 @@ public class EventSeriesImpl implements EventSeries {
     @Override
     public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
         this.fDisambiguatingDescription = fDisambiguatingDescription;
+    }
+
+    private URL fSameAs;
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getSameAs() {
+        return fSameAs;
+    }
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     */
+    @Override
+    public void setSameAs(URL fSameAs) {
+        this.fSameAs = fSameAs;
+    }
+
+    private Object fIdentifier;
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @return {@link URL} or {@link Text} or {@link PropertyValue}
+     */
+    @Override
+    public <T> T getIdentifier() {
+        return (T) fIdentifier;
+    }
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     */
+    @Override
+    public void setIdentifier(Object fIdentifier) {
+        if(!(fIdentifier instanceof URL) && !(fIdentifier instanceof Text) && !(fIdentifier instanceof PropertyValue)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
+        }
+        this.fIdentifier = fIdentifier;
+    }
+
+    private Event fSuperEvent;
+
+    /**
+     * An event that this event is a part of. For example, a collection of individual music performances might each have a music festival as their superEvent.
+     *
+     * @return {@link Event}
+     */
+    @Override
+    public Event getSuperEvent() {
+        return fSuperEvent;
+    }
+
+    /**
+     * An event that this event is a part of. For example, a collection of individual music performances might each have a music festival as their superEvent.
+     *
+     */
+    @Override
+    public void setSuperEvent(Event fSuperEvent) {
+        this.fSuperEvent = fSuperEvent;
+    }
+
+    private EventAttendanceModeEnumeration fEventAttendanceMode;
+
+    /**
+     * The eventAttendanceMode of an event indicates whether it occurs online, offline, or a mix.
+     *
+     * @return {@link EventAttendanceModeEnumeration}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1842">https://github.com/schemaorg/schemaorg/issues/1842</a>
+     */
+    @Override
+    public EventAttendanceModeEnumeration getEventAttendanceMode() {
+        return fEventAttendanceMode;
+    }
+
+    /**
+     * The eventAttendanceMode of an event indicates whether it occurs online, offline, or a mix.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1842">https://github.com/schemaorg/schemaorg/issues/1842</a>
+     */
+    @Override
+    public void setEventAttendanceMode(EventAttendanceModeEnumeration fEventAttendanceMode) {
+        this.fEventAttendanceMode = fEventAttendanceMode;
+    }
+
+    private Review fReview;
+
+    /**
+     * A review of the item.
+     *
+     * @return {@link Review}
+     */
+    @Override
+    public Review getReview() {
+        return fReview;
+    }
+
+    /**
+     * A review of the item.
+     *
+     */
+    @Override
+    public void setReview(Review fReview) {
+        this.fReview = fReview;
+    }
+
+    private Object fTranslator;
+
+    /**
+     * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    @Override
+    public <T> T getTranslator() {
+        return (T) fTranslator;
+    }
+
+    /**
+     * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
+     *
+     */
+    @Override
+    public void setTranslator(Object fTranslator) {
+        if(!(fTranslator instanceof Person) && !(fTranslator instanceof Organization)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'translator': " + fTranslator);
+        }
+        this.fTranslator = fTranslator;
+    }
+
+    private Object fStartDate;
+
+    /**
+     * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
+     *
+     * @return {@link DateTime} or {@link Date}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
+     */
+    @Override
+    public <T> T getStartDate() {
+        return (T) fStartDate;
+    }
+
+    /**
+     * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
+     *
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
+     */
+    @Override
+    public void setStartDate(Object fStartDate) {
+        if(!(fStartDate instanceof DateTime) && !(fStartDate instanceof Date)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'startDate': " + fStartDate);
+        }
+        this.fStartDate = fStartDate;
+    }
+
+    private Object fComposer;
+
+    /**
+     * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
+     *
+     * @return {@link Organization} or {@link Person}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
+     */
+    @Override
+    public <T> T getComposer() {
+        return (T) fComposer;
+    }
+
+    /**
+     * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
+     */
+    @Override
+    public void setComposer(Object fComposer) {
+        if(!(fComposer instanceof Organization) && !(fComposer instanceof Person)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'composer': " + fComposer);
+        }
+        this.fComposer = fComposer;
+    }
+
+    private Integer fMaximumAttendeeCapacity;
+
+    /**
+     * The total number of individuals that may attend an event or venue.
+     *
+     * @return {@link Integer}
+     */
+    @Override
+    public Integer getMaximumAttendeeCapacity() {
+        return fMaximumAttendeeCapacity;
+    }
+
+    /**
+     * The total number of individuals that may attend an event or venue.
+     *
+     */
+    @Override
+    public void setMaximumAttendeeCapacity(Integer fMaximumAttendeeCapacity) {
+        this.fMaximumAttendeeCapacity = fMaximumAttendeeCapacity;
+    }
+
+    private Integer fMaximumVirtualAttendeeCapacity;
+
+    /**
+     * The maximum physical attendee capacity of an [[Event]] whose [[eventAttendanceMode]] is [[OnlineEventAttendanceMode]] (or the online aspects, in the case of a [[MixedEventAttendanceMode]]). 
+     *
+     * @return {@link Integer}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1842">https://github.com/schemaorg/schemaorg/issues/1842</a>
+     */
+    @Override
+    public Integer getMaximumVirtualAttendeeCapacity() {
+        return fMaximumVirtualAttendeeCapacity;
+    }
+
+    /**
+     * The maximum physical attendee capacity of an [[Event]] whose [[eventAttendanceMode]] is [[OnlineEventAttendanceMode]] (or the online aspects, in the case of a [[MixedEventAttendanceMode]]). 
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1842">https://github.com/schemaorg/schemaorg/issues/1842</a>
+     */
+    @Override
+    public void setMaximumVirtualAttendeeCapacity(Integer fMaximumVirtualAttendeeCapacity) {
+        this.fMaximumVirtualAttendeeCapacity = fMaximumVirtualAttendeeCapacity;
+    }
+
+    private Person fDirector;
+
+    /**
+     * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    @Override
+    public Person getDirector() {
+        return fDirector;
+    }
+
+    /**
+     * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
+     *
+     */
+    @Override
+    public void setDirector(Person fDirector) {
+        this.fDirector = fDirector;
+    }
+
+    private Grant fFunding;
+
+    /**
+     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
+     *
+     * @return {@link Grant}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    @Override
+    public Grant getFunding() {
+        return fFunding;
+    }
+
+    /**
+     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    @Override
+    public void setFunding(Grant fFunding) {
+        this.fFunding = fFunding;
+    }
+
+    private Object fKeywords;
+
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     * @return {@link DefinedTerm} or {@link Text} or {@link URL}
+     */
+    @Override
+    public <T> T getKeywords() {
+        return (T) fKeywords;
+    }
+
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     */
+    @Override
+    public void setKeywords(Object fKeywords) {
+        if(!(fKeywords instanceof DefinedTerm) && !(fKeywords instanceof Text) && !(fKeywords instanceof URL)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'keywords': " + fKeywords);
+        }
+        this.fKeywords = fKeywords;
+    }
+
+    private Audience fAudience;
+
+    /**
+     * An intended audience, i.e. a group for whom something was created.
+     *
+     * @return {@link Audience}
+     */
+    @Override
+    public Audience getAudience() {
+        return fAudience;
+    }
+
+    /**
+     * An intended audience, i.e. a group for whom something was created.
+     *
+     */
+    @Override
+    public void setAudience(Audience fAudience) {
+        this.fAudience = fAudience;
     }
 
     private Object fOffers;
@@ -536,153 +641,25 @@ public class EventSeriesImpl implements EventSeries {
         this.fOffers = fOffers;
     }
 
-    private Object fImage;
+    private Event fSubEvent;
 
     /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     * An Event that is part of this event. For example, a conference event includes many presentations, each of which is a subEvent of the conference.
      *
-     * @return {@link URL} or {@link ImageObject}
+     * @return {@link Event}
      */
     @Override
-    public <T> T getImage() {
-        return (T) fImage;
+    public Event getSubEvent() {
+        return fSubEvent;
     }
 
     /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     * An Event that is part of this event. For example, a conference event includes many presentations, each of which is a subEvent of the conference.
      *
      */
     @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
-        this.fImage = fImage;
-    }
-
-    private URL fSameAs;
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getSameAs() {
-        return fSameAs;
-    }
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     */
-    @Override
-    public void setSameAs(URL fSameAs) {
-        this.fSameAs = fSameAs;
-    }
-
-    private Grant fFunding;
-
-    /**
-     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
-     *
-     * @return {@link Grant}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     */
-    @Override
-    public Grant getFunding() {
-        return fFunding;
-    }
-
-    /**
-     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     */
-    @Override
-    public void setFunding(Grant fFunding) {
-        this.fFunding = fFunding;
-    }
-
-    private URL fUrl;
-
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getUrl() {
-        return fUrl;
-    }
-
-    /**
-     * URL of the item.
-     *
-     */
-    @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
-    }
-
-    private Schedule fEventSchedule;
-
-    /**
-     * Associates an [[Event]] with a [[Schedule]]. There are circumstances where it is preferable to share a schedule for a series of
-     *       repeating events rather than data on the individual events themselves. For example, a website or application might prefer to publish a schedule for a weekly
-     *       gym class rather than provide data on every event. A schedule could be processed by applications to add forthcoming events to a calendar. An [[Event]] that
-     *       is associated with a [[Schedule]] using this property should not have [[startDate]] or [[endDate]] properties. These are instead defined within the associated
-     *       [[Schedule]], this avoids any ambiguity for clients using the data. The property might have repeated values to specify different schedules, e.g. for different months
-     *       or seasons.
-     *
-     * @return {@link Schedule}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
-     */
-    @Override
-    public Schedule getEventSchedule() {
-        return fEventSchedule;
-    }
-
-    /**
-     * Associates an [[Event]] with a [[Schedule]]. There are circumstances where it is preferable to share a schedule for a series of
-     *       repeating events rather than data on the individual events themselves. For example, a website or application might prefer to publish a schedule for a weekly
-     *       gym class rather than provide data on every event. A schedule could be processed by applications to add forthcoming events to a calendar. An [[Event]] that
-     *       is associated with a [[Schedule]] using this property should not have [[startDate]] or [[endDate]] properties. These are instead defined within the associated
-     *       [[Schedule]], this avoids any ambiguity for clients using the data. The property might have repeated values to specify different schedules, e.g. for different months
-     *       or seasons.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
-     */
-    @Override
-    public void setEventSchedule(Schedule fEventSchedule) {
-        this.fEventSchedule = fEventSchedule;
-    }
-
-    private Audience fAudience;
-
-    /**
-     * An intended audience, i.e. a group for whom something was created.
-     *
-     * @return {@link Audience}
-     */
-    @Override
-    public Audience getAudience() {
-        return fAudience;
-    }
-
-    /**
-     * An intended audience, i.e. a group for whom something was created.
-     *
-     */
-    @Override
-    public void setAudience(Audience fAudience) {
-        this.fAudience = fAudience;
+    public void setSubEvent(Event fSubEvent) {
+        this.fSubEvent = fSubEvent;
     }
 
     private Person fActor;
@@ -706,254 +683,25 @@ public class EventSeriesImpl implements EventSeries {
         this.fActor = fActor;
     }
 
-    private URL fAdditionalType;
+    private EventStatusType fEventStatus;
 
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled.
      *
-     * @return {@link URL}
+     * @return {@link EventStatusType}
      */
     @Override
-    public URL getAdditionalType() {
-        return fAdditionalType;
+    public EventStatusType getEventStatus() {
+        return fEventStatus;
     }
 
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled.
      *
      */
     @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
-    }
-
-    private Object fDoorTime;
-
-    /**
-     * The time admission will commence.
-     *
-     * @return {@link Time} or {@link DateTime}
-     */
-    @Override
-    public <T> T getDoorTime() {
-        return (T) fDoorTime;
-    }
-
-    /**
-     * The time admission will commence.
-     *
-     */
-    @Override
-    public void setDoorTime(Object fDoorTime) {
-        if(!(fDoorTime instanceof Time) && !(fDoorTime instanceof DateTime)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'doorTime': " + fDoorTime);
-        }
-        this.fDoorTime = fDoorTime;
-    }
-
-    private CreativeWork fWorkPerformed;
-
-    /**
-     * A work performed in some event, for example a play performed in a TheaterEvent.
-     *
-     * @return {@link CreativeWork}
-     */
-    @Override
-    public CreativeWork getWorkPerformed() {
-        return fWorkPerformed;
-    }
-
-    /**
-     * A work performed in some event, for example a play performed in a TheaterEvent.
-     *
-     */
-    @Override
-    public void setWorkPerformed(CreativeWork fWorkPerformed) {
-        this.fWorkPerformed = fWorkPerformed;
-    }
-
-    private Object fKeywords;
-
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     * @return {@link DefinedTerm} or {@link Text} or {@link URL}
-     */
-    @Override
-    public <T> T getKeywords() {
-        return (T) fKeywords;
-    }
-
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     */
-    @Override
-    public void setKeywords(Object fKeywords) {
-        if(!(fKeywords instanceof DefinedTerm) && !(fKeywords instanceof Text) && !(fKeywords instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'keywords': " + fKeywords);
-        }
-        this.fKeywords = fKeywords;
-    }
-
-    private Object fOrganizer;
-
-    /**
-     * An organizer of an Event.
-     *
-     * @return {@link Person} or {@link Organization}
-     */
-    @Override
-    public <T> T getOrganizer() {
-        return (T) fOrganizer;
-    }
-
-    /**
-     * An organizer of an Event.
-     *
-     */
-    @Override
-    public void setOrganizer(Object fOrganizer) {
-        if(!(fOrganizer instanceof Person) && !(fOrganizer instanceof Organization)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'organizer': " + fOrganizer);
-        }
-        this.fOrganizer = fOrganizer;
-    }
-
-    private EventAttendanceModeEnumeration fEventAttendanceMode;
-
-    /**
-     * The eventAttendanceMode of an event indicates whether it occurs online, offline, or a mix.
-     *
-     * @return {@link EventAttendanceModeEnumeration}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1842">https://github.com/schemaorg/schemaorg/issues/1842</a>
-     */
-    @Override
-    public EventAttendanceModeEnumeration getEventAttendanceMode() {
-        return fEventAttendanceMode;
-    }
-
-    /**
-     * The eventAttendanceMode of an event indicates whether it occurs online, offline, or a mix.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1842">https://github.com/schemaorg/schemaorg/issues/1842</a>
-     */
-    @Override
-    public void setEventAttendanceMode(EventAttendanceModeEnumeration fEventAttendanceMode) {
-        this.fEventAttendanceMode = fEventAttendanceMode;
-    }
-
-    private Object fFunder;
-
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    @Override
-    public <T> T getFunder() {
-        return (T) fFunder;
-    }
-
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     *
-     */
-    @Override
-    public void setFunder(Object fFunder) {
-        if(!(fFunder instanceof Organization) && !(fFunder instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'funder': " + fFunder);
-        }
-        this.fFunder = fFunder;
-    }
-
-    private Object fLocation;
-
-    /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-     *
-     * @return {@link PostalAddress} or {@link Text} or {@link Place} or {@link VirtualLocation}
-     */
-    @Override
-    public <T> T getLocation() {
-        return (T) fLocation;
-    }
-
-    /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-     *
-     */
-    @Override
-    public void setLocation(Object fLocation) {
-        if(!(fLocation instanceof PostalAddress) && !(fLocation instanceof Text) && !(fLocation instanceof Place) && !(fLocation instanceof VirtualLocation)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'location': " + fLocation);
-        }
-        this.fLocation = fLocation;
-    }
-
-    private Text fAlternateName;
-
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getAlternateName() {
-        return fAlternateName;
-    }
-
-    /**
-     * An alias for the item.
-     *
-     */
-    @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
-    }
-
-    private Person fDirector;
-
-    /**
-     * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
-     *
-     * @return {@link Person}
-     */
-    @Override
-    public Person getDirector() {
-        return fDirector;
-    }
-
-    /**
-     * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
-     *
-     */
-    @Override
-    public void setDirector(Person fDirector) {
-        this.fDirector = fDirector;
-    }
-
-    private Review fReview;
-
-    /**
-     * A review of the item.
-     *
-     * @return {@link Review}
-     */
-    @Override
-    public Review getReview() {
-        return fReview;
-    }
-
-    /**
-     * A review of the item.
-     *
-     */
-    @Override
-    public void setReview(Review fReview) {
-        this.fReview = fReview;
+    public void setEventStatus(EventStatusType fEventStatus) {
+        this.fEventStatus = fEventStatus;
     }
 
     private Object fEndDate;
@@ -980,6 +728,416 @@ public class EventSeriesImpl implements EventSeries {
             throw new java.lang.IllegalArgumentException("Invalid value for property 'endDate': " + fEndDate);
         }
         this.fEndDate = fEndDate;
+    }
+
+    private Object fFunder;
+
+    /**
+     * A person or organization that supports (sponsors) something through some kind of financial contribution.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> T getFunder() {
+        return (T) fFunder;
+    }
+
+    /**
+     * A person or organization that supports (sponsors) something through some kind of financial contribution.
+     *
+     */
+    @Override
+    public void setFunder(Object fFunder) {
+        if(!(fFunder instanceof Organization) && !(fFunder instanceof Person)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'funder': " + fFunder);
+        }
+        this.fFunder = fFunder;
+    }
+
+    private Object fPerformer;
+
+    /**
+     * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> T getPerformer() {
+        return (T) fPerformer;
+    }
+
+    /**
+     * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
+     *
+     */
+    @Override
+    public void setPerformer(Object fPerformer) {
+        if(!(fPerformer instanceof Organization) && !(fPerformer instanceof Person)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'performer': " + fPerformer);
+        }
+        this.fPerformer = fPerformer;
+    }
+
+    private AggregateRating fAggregateRating;
+
+    /**
+     * The overall rating, based on a collection of reviews or ratings, of the item.
+     *
+     * @return {@link AggregateRating}
+     */
+    @Override
+    public AggregateRating getAggregateRating() {
+        return fAggregateRating;
+    }
+
+    /**
+     * The overall rating, based on a collection of reviews or ratings, of the item.
+     *
+     */
+    @Override
+    public void setAggregateRating(AggregateRating fAggregateRating) {
+        this.fAggregateRating = fAggregateRating;
+    }
+
+    private Text fTypicalAgeRange;
+
+    /**
+     * The typical expected age range, e.g. '7-9', '11-'.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getTypicalAgeRange() {
+        return fTypicalAgeRange;
+    }
+
+    /**
+     * The typical expected age range, e.g. '7-9', '11-'.
+     *
+     */
+    @Override
+    public void setTypicalAgeRange(Text fTypicalAgeRange) {
+        this.fTypicalAgeRange = fTypicalAgeRange;
+    }
+
+    private Object fLocation;
+
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @return {@link PostalAddress} or {@link Text} or {@link Place} or {@link VirtualLocation}
+     */
+    @Override
+    public <T> T getLocation() {
+        return (T) fLocation;
+    }
+
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     */
+    @Override
+    public void setLocation(Object fLocation) {
+        if(!(fLocation instanceof PostalAddress) && !(fLocation instanceof Text) && !(fLocation instanceof Place) && !(fLocation instanceof VirtualLocation)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'location': " + fLocation);
+        }
+        this.fLocation = fLocation;
+    }
+
+    private Object fPerformers;
+
+    /**
+     * The main performer or performers of the event&#x2014;for example, a presenter, musician, or actor.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    @Override
+    public <T> T getPerformers() {
+        return (T) fPerformers;
+    }
+
+    /**
+     * The main performer or performers of the event&#x2014;for example, a presenter, musician, or actor.
+     *
+     */
+    @Override
+    public void setPerformers(Object fPerformers) {
+        if(!(fPerformers instanceof Person) && !(fPerformers instanceof Organization)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'performers': " + fPerformers);
+        }
+        this.fPerformers = fPerformers;
+    }
+
+    private Duration fDuration;
+
+    /**
+     * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
+     *
+     * @return {@link Duration}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
+     */
+    @Override
+    public Duration getDuration() {
+        return fDuration;
+    }
+
+    /**
+     * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
+     *
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
+     */
+    @Override
+    public void setDuration(Duration fDuration) {
+        this.fDuration = fDuration;
+    }
+
+    private Object fOrganizer;
+
+    /**
+     * An organizer of an Event.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    @Override
+    public <T> T getOrganizer() {
+        return (T) fOrganizer;
+    }
+
+    /**
+     * An organizer of an Event.
+     *
+     */
+    @Override
+    public void setOrganizer(Object fOrganizer) {
+        if(!(fOrganizer instanceof Person) && !(fOrganizer instanceof Organization)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'organizer': " + fOrganizer);
+        }
+        this.fOrganizer = fOrganizer;
+    }
+
+    private Object fSponsor;
+
+    /**
+     * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> T getSponsor() {
+        return (T) fSponsor;
+    }
+
+    /**
+     * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
+     *
+     */
+    @Override
+    public void setSponsor(Object fSponsor) {
+        if(!(fSponsor instanceof Organization) && !(fSponsor instanceof Person)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'sponsor': " + fSponsor);
+        }
+        this.fSponsor = fSponsor;
+    }
+
+    private Date fPreviousStartDate;
+
+    /**
+     * Used in conjunction with eventStatus for rescheduled or cancelled events. This property contains the previously scheduled start date. For rescheduled events, the startDate property should be used for the newly scheduled start date. In the (rare) case of an event that has been postponed and rescheduled multiple times, this field may be repeated.
+     *
+     * @return {@link Date}
+     */
+    @Override
+    public Date getPreviousStartDate() {
+        return fPreviousStartDate;
+    }
+
+    /**
+     * Used in conjunction with eventStatus for rescheduled or cancelled events. This property contains the previously scheduled start date. For rescheduled events, the startDate property should be used for the newly scheduled start date. In the (rare) case of an event that has been postponed and rescheduled multiple times, this field may be repeated.
+     *
+     */
+    @Override
+    public void setPreviousStartDate(Date fPreviousStartDate) {
+        this.fPreviousStartDate = fPreviousStartDate;
+    }
+
+    private Boolean fIsAccessibleForFree;
+
+    /**
+     * A flag to signal that the item, event, or place is accessible for free.
+     *
+     * @return {@link Boolean}
+     */
+    @Override
+    public Boolean getIsAccessibleForFree() {
+        return fIsAccessibleForFree;
+    }
+
+    /**
+     * A flag to signal that the item, event, or place is accessible for free.
+     *
+     */
+    @Override
+    public void setIsAccessibleForFree(Boolean fIsAccessibleForFree) {
+        this.fIsAccessibleForFree = fIsAccessibleForFree;
+    }
+
+    private Integer fRemainingAttendeeCapacity;
+
+    /**
+     * The number of attendee places for an event that remain unallocated.
+     *
+     * @return {@link Integer}
+     */
+    @Override
+    public Integer getRemainingAttendeeCapacity() {
+        return fRemainingAttendeeCapacity;
+    }
+
+    /**
+     * The number of attendee places for an event that remain unallocated.
+     *
+     */
+    @Override
+    public void setRemainingAttendeeCapacity(Integer fRemainingAttendeeCapacity) {
+        this.fRemainingAttendeeCapacity = fRemainingAttendeeCapacity;
+    }
+
+    private Event fSubEvents;
+
+    /**
+     * Events that are a part of this event. For example, a conference event includes many presentations, each subEvents of the conference.
+     *
+     * @return {@link Event}
+     */
+    @Override
+    public Event getSubEvents() {
+        return fSubEvents;
+    }
+
+    /**
+     * Events that are a part of this event. For example, a conference event includes many presentations, each subEvents of the conference.
+     *
+     */
+    @Override
+    public void setSubEvents(Event fSubEvents) {
+        this.fSubEvents = fSubEvents;
+    }
+
+    private CreativeWork fWorkPerformed;
+
+    /**
+     * A work performed in some event, for example a play performed in a TheaterEvent.
+     *
+     * @return {@link CreativeWork}
+     */
+    @Override
+    public CreativeWork getWorkPerformed() {
+        return fWorkPerformed;
+    }
+
+    /**
+     * A work performed in some event, for example a play performed in a TheaterEvent.
+     *
+     */
+    @Override
+    public void setWorkPerformed(CreativeWork fWorkPerformed) {
+        this.fWorkPerformed = fWorkPerformed;
+    }
+
+    private Object fDoorTime;
+
+    /**
+     * The time admission will commence.
+     *
+     * @return {@link Time} or {@link DateTime}
+     */
+    @Override
+    public <T> T getDoorTime() {
+        return (T) fDoorTime;
+    }
+
+    /**
+     * The time admission will commence.
+     *
+     */
+    @Override
+    public void setDoorTime(Object fDoorTime) {
+        if(!(fDoorTime instanceof Time) && !(fDoorTime instanceof DateTime)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'doorTime': " + fDoorTime);
+        }
+        this.fDoorTime = fDoorTime;
+    }
+
+    private Object fInLanguage;
+
+    /**
+     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     *
+     * @return {@link Text} or {@link Language}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
+     */
+    @Override
+    public <T> T getInLanguage() {
+        return (T) fInLanguage;
+    }
+
+    /**
+     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     *
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
+     */
+    @Override
+    public void setInLanguage(Object fInLanguage) {
+        if(!(fInLanguage instanceof Text) && !(fInLanguage instanceof Language)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'inLanguage': " + fInLanguage);
+        }
+        this.fInLanguage = fInLanguage;
+    }
+
+    private Thing fAbout;
+
+    /**
+     * The subject matter of the content.
+     *
+     * @return {@link Thing}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public Thing getAbout() {
+        return fAbout;
+    }
+
+    /**
+     * The subject matter of the content.
+     *
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public void setAbout(Thing fAbout) {
+        this.fAbout = fAbout;
+    }
+
+    private CreativeWork fRecordedIn;
+
+    /**
+     * The CreativeWork that captured all or part of this Event.
+     *
+     * @return {@link CreativeWork}
+     */
+    @Override
+    public CreativeWork getRecordedIn() {
+        return fRecordedIn;
+    }
+
+    /**
+     * The CreativeWork that captured all or part of this Event.
+     *
+     */
+    @Override
+    public void setRecordedIn(CreativeWork fRecordedIn) {
+        this.fRecordedIn = fRecordedIn;
     }
 
     private Integer fMaximumPhysicalAttendeeCapacity;
@@ -1031,224 +1189,6 @@ public class EventSeriesImpl implements EventSeries {
         this.fAttendee = fAttendee;
     }
 
-    private EventStatusType fEventStatus;
-
-    /**
-     * An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled.
-     *
-     * @return {@link EventStatusType}
-     */
-    @Override
-    public EventStatusType getEventStatus() {
-        return fEventStatus;
-    }
-
-    /**
-     * An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled.
-     *
-     */
-    @Override
-    public void setEventStatus(EventStatusType fEventStatus) {
-        this.fEventStatus = fEventStatus;
-    }
-
-    private Object fPerformers;
-
-    /**
-     * The main performer or performers of the event&#x2014;for example, a presenter, musician, or actor.
-     *
-     * @return {@link Person} or {@link Organization}
-     */
-    @Override
-    public <T> T getPerformers() {
-        return (T) fPerformers;
-    }
-
-    /**
-     * The main performer or performers of the event&#x2014;for example, a presenter, musician, or actor.
-     *
-     */
-    @Override
-    public void setPerformers(Object fPerformers) {
-        if(!(fPerformers instanceof Person) && !(fPerformers instanceof Organization)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'performers': " + fPerformers);
-        }
-        this.fPerformers = fPerformers;
-    }
-
-    private Integer fRemainingAttendeeCapacity;
-
-    /**
-     * The number of attendee places for an event that remain unallocated.
-     *
-     * @return {@link Integer}
-     */
-    @Override
-    public Integer getRemainingAttendeeCapacity() {
-        return fRemainingAttendeeCapacity;
-    }
-
-    /**
-     * The number of attendee places for an event that remain unallocated.
-     *
-     */
-    @Override
-    public void setRemainingAttendeeCapacity(Integer fRemainingAttendeeCapacity) {
-        this.fRemainingAttendeeCapacity = fRemainingAttendeeCapacity;
-    }
-
-    private Object fIdentifier;
-
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @return {@link URL} or {@link Text} or {@link PropertyValue}
-     */
-    @Override
-    public <T> T getIdentifier() {
-        return (T) fIdentifier;
-    }
-
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     */
-    @Override
-    public void setIdentifier(Object fIdentifier) {
-        if(!(fIdentifier instanceof URL) && !(fIdentifier instanceof Text) && !(fIdentifier instanceof PropertyValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
-        }
-        this.fIdentifier = fIdentifier;
-    }
-
-    private Event fSubEvents;
-
-    /**
-     * Events that are a part of this event. For example, a conference event includes many presentations, each subEvents of the conference.
-     *
-     * @return {@link Event}
-     */
-    @Override
-    public Event getSubEvents() {
-        return fSubEvents;
-    }
-
-    /**
-     * Events that are a part of this event. For example, a conference event includes many presentations, each subEvents of the conference.
-     *
-     */
-    @Override
-    public void setSubEvents(Event fSubEvents) {
-        this.fSubEvents = fSubEvents;
-    }
-
-    private Event fSubEvent;
-
-    /**
-     * An Event that is part of this event. For example, a conference event includes many presentations, each of which is a subEvent of the conference.
-     *
-     * @return {@link Event}
-     */
-    @Override
-    public Event getSubEvent() {
-        return fSubEvent;
-    }
-
-    /**
-     * An Event that is part of this event. For example, a conference event includes many presentations, each of which is a subEvent of the conference.
-     *
-     */
-    @Override
-    public void setSubEvent(Event fSubEvent) {
-        this.fSubEvent = fSubEvent;
-    }
-
-    private Text fTypicalAgeRange;
-
-    /**
-     * The typical expected age range, e.g. '7-9', '11-'.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getTypicalAgeRange() {
-        return fTypicalAgeRange;
-    }
-
-    /**
-     * The typical expected age range, e.g. '7-9', '11-'.
-     *
-     */
-    @Override
-    public void setTypicalAgeRange(Text fTypicalAgeRange) {
-        this.fTypicalAgeRange = fTypicalAgeRange;
-    }
-
-    private CreativeWork fRecordedIn;
-
-    /**
-     * The CreativeWork that captured all or part of this Event.
-     *
-     * @return {@link CreativeWork}
-     */
-    @Override
-    public CreativeWork getRecordedIn() {
-        return fRecordedIn;
-    }
-
-    /**
-     * The CreativeWork that captured all or part of this Event.
-     *
-     */
-    @Override
-    public void setRecordedIn(CreativeWork fRecordedIn) {
-        this.fRecordedIn = fRecordedIn;
-    }
-
-    private Text fDescription;
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDescription() {
-        return fDescription;
-    }
-
-    /**
-     * A description of the item.
-     *
-     */
-    @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
-    }
-
-    private Date fPreviousStartDate;
-
-    /**
-     * Used in conjunction with eventStatus for rescheduled or cancelled events. This property contains the previously scheduled start date. For rescheduled events, the startDate property should be used for the newly scheduled start date. In the (rare) case of an event that has been postponed and rescheduled multiple times, this field may be repeated.
-     *
-     * @return {@link Date}
-     */
-    @Override
-    public Date getPreviousStartDate() {
-        return fPreviousStartDate;
-    }
-
-    /**
-     * Used in conjunction with eventStatus for rescheduled or cancelled events. This property contains the previously scheduled start date. For rescheduled events, the startDate property should be used for the newly scheduled start date. In the (rare) case of an event that has been postponed and rescheduled multiple times, this field may be repeated.
-     *
-     */
-    @Override
-    public void setPreviousStartDate(Date fPreviousStartDate) {
-        this.fPreviousStartDate = fPreviousStartDate;
-    }
-
     private CreativeWork fWorkFeatured;
 
     /**
@@ -1272,26 +1212,86 @@ public class EventSeriesImpl implements EventSeries {
         this.fWorkFeatured = fWorkFeatured;
     }
 
-    private Thing fAbout;
+    private Schedule fEventSchedule;
 
     /**
-     * The subject matter of the content.
+     * Associates an [[Event]] with a [[Schedule]]. There are circumstances where it is preferable to share a schedule for a series of
+     *       repeating events rather than data on the individual events themselves. For example, a website or application might prefer to publish a schedule for a weekly
+     *       gym class rather than provide data on every event. A schedule could be processed by applications to add forthcoming events to a calendar. An [[Event]] that
+     *       is associated with a [[Schedule]] using this property should not have [[startDate]] or [[endDate]] properties. These are instead defined within the associated
+     *       [[Schedule]], this avoids any ambiguity for clients using the data. The property might have repeated values to specify different schedules, e.g. for different months
+     *       or seasons.
      *
-     * @return {@link Thing}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     * @return {@link Schedule}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
      */
     @Override
-    public Thing getAbout() {
-        return fAbout;
+    public Schedule getEventSchedule() {
+        return fEventSchedule;
     }
 
     /**
-     * The subject matter of the content.
+     * Associates an [[Event]] with a [[Schedule]]. There are circumstances where it is preferable to share a schedule for a series of
+     *       repeating events rather than data on the individual events themselves. For example, a website or application might prefer to publish a schedule for a weekly
+     *       gym class rather than provide data on every event. A schedule could be processed by applications to add forthcoming events to a calendar. An [[Event]] that
+     *       is associated with a [[Schedule]] using this property should not have [[startDate]] or [[endDate]] properties. These are instead defined within the associated
+     *       [[Schedule]], this avoids any ambiguity for clients using the data. The property might have repeated values to specify different schedules, e.g. for different months
+     *       or seasons.
      *
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
      */
     @Override
-    public void setAbout(Thing fAbout) {
-        this.fAbout = fAbout;
+    public void setEventSchedule(Schedule fEventSchedule) {
+        this.fEventSchedule = fEventSchedule;
+    }
+
+    private Object fContributor;
+
+    /**
+     * A secondary contributor to the CreativeWork or Event.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> T getContributor() {
+        return (T) fContributor;
+    }
+
+    /**
+     * A secondary contributor to the CreativeWork or Event.
+     *
+     */
+    @Override
+    public void setContributor(Object fContributor) {
+        if(!(fContributor instanceof Organization) && !(fContributor instanceof Person)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'contributor': " + fContributor);
+        }
+        this.fContributor = fContributor;
+    }
+
+    private Object fAttendees;
+
+    /**
+     * A person attending the event.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    @Override
+    public <T> T getAttendees() {
+        return (T) fAttendees;
+    }
+
+    /**
+     * A person attending the event.
+     *
+     */
+    @Override
+    public void setAttendees(Object fAttendees) {
+        if(!(fAttendees instanceof Person) && !(fAttendees instanceof Organization)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'attendees': " + fAttendees);
+        }
+        this.fAttendees = fAttendees;
     }
 }

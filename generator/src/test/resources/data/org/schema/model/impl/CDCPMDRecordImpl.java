@@ -59,84 +59,6 @@ public class CDCPMDRecordImpl implements CDCPMDRecord {
         this.fCvdNumBedsOcc = fCvdNumBedsOcc;
     }
 
-    private Object fDatePosted;
-
-    /**
-     * Publication date of an online listing.
-     *
-     * @return {@link Date} or {@link DateTime}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public <T> T getDatePosted() {
-        return (T) fDatePosted;
-    }
-
-    /**
-     * Publication date of an online listing.
-     *
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public void setDatePosted(Object fDatePosted) {
-        if(!(fDatePosted instanceof Date) && !(fDatePosted instanceof DateTime)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'datePosted': " + fDatePosted);
-        }
-        this.fDatePosted = fDatePosted;
-    }
-
-    private Text fCvdFacilityCounty;
-
-    /**
-     * Name of the County of the NHSN facility that this data record applies to. Use [[cvdFacilityId]] to identify the facility. To provide other details, [[healthcareReportingData]] can be used on a [[Hospital]] entry.
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public Text getCvdFacilityCounty() {
-        return fCvdFacilityCounty;
-    }
-
-    /**
-     * Name of the County of the NHSN facility that this data record applies to. Use [[cvdFacilityId]] to identify the facility. To provide other details, [[healthcareReportingData]] can be used on a [[Hospital]] entry.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public void setCvdFacilityCounty(Text fCvdFacilityCounty) {
-        this.fCvdFacilityCounty = fCvdFacilityCounty;
-    }
-
-    private Number fCvdNumC19HOPats;
-
-    /**
-     * numc19hopats - HOSPITAL ONSET: Patients hospitalized in an NHSN inpatient care location with onset of suspected or confirmed COVID-19 14 or more days after hospitalization.
-     *
-     * @return {@link Number}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public Number getCvdNumC19HOPats() {
-        return fCvdNumC19HOPats;
-    }
-
-    /**
-     * numc19hopats - HOSPITAL ONSET: Patients hospitalized in an NHSN inpatient care location with onset of suspected or confirmed COVID-19 14 or more days after hospitalization.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public void setCvdNumC19HOPats(Number fCvdNumC19HOPats) {
-        this.fCvdNumC19HOPats = fCvdNumC19HOPats;
-    }
-
     private Number fCvdNumICUBedsOcc;
 
     /**
@@ -162,25 +84,29 @@ public class CDCPMDRecordImpl implements CDCPMDRecord {
         this.fCvdNumICUBedsOcc = fCvdNumICUBedsOcc;
     }
 
-    private Text fAlternateName;
+    private Number fCvdNumVent;
 
     /**
-     * An alias for the item.
+     * numvent - MECHANICAL VENTILATORS: Total number of ventilators available.
      *
-     * @return {@link Text}
+     * @return {@link Number}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
     @Override
-    public Text getAlternateName() {
-        return fAlternateName;
+    public Number getCvdNumVent() {
+        return fCvdNumVent;
     }
 
     /**
-     * An alias for the item.
+     * numvent - MECHANICAL VENTILATORS: Total number of ventilators available.
      *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
     @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
+    public void setCvdNumVent(Number fCvdNumVent) {
+        this.fCvdNumVent = fCvdNumVent;
     }
 
     private Number fCvdNumC19Died;
@@ -208,28 +134,79 @@ public class CDCPMDRecordImpl implements CDCPMDRecord {
         this.fCvdNumC19Died = fCvdNumC19Died;
     }
 
-    private Object fMainEntityOfPage;
+    private Number fCvdNumTotBeds;
 
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * numtotbeds - ALL HOSPITAL BEDS: Total number of all Inpatient and outpatient beds, including all staffed,ICU, licensed, and overflow (surge) beds used for inpatients or outpatients.
      *
-     * @return {@link CreativeWork} or {@link URL}
+     * @return {@link Number}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
     @Override
-    public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
+    public Number getCvdNumTotBeds() {
+        return fCvdNumTotBeds;
     }
 
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * numtotbeds - ALL HOSPITAL BEDS: Total number of all Inpatient and outpatient beds, including all staffed,ICU, licensed, and overflow (surge) beds used for inpatients or outpatients.
      *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
     @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
-        }
-        this.fMainEntityOfPage = fMainEntityOfPage;
+    public void setCvdNumTotBeds(Number fCvdNumTotBeds) {
+        this.fCvdNumTotBeds = fCvdNumTotBeds;
+    }
+
+    private Text fCvdFacilityCounty;
+
+    /**
+     * Name of the County of the NHSN facility that this data record applies to. Use [[cvdFacilityId]] to identify the facility. To provide other details, [[healthcareReportingData]] can be used on a [[Hospital]] entry.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
+     */
+    @Override
+    public Text getCvdFacilityCounty() {
+        return fCvdFacilityCounty;
+    }
+
+    /**
+     * Name of the County of the NHSN facility that this data record applies to. Use [[cvdFacilityId]] to identify the facility. To provide other details, [[healthcareReportingData]] can be used on a [[Hospital]] entry.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
+     */
+    @Override
+    public void setCvdFacilityCounty(Text fCvdFacilityCounty) {
+        this.fCvdFacilityCounty = fCvdFacilityCounty;
+    }
+
+    private Number fCvdNumICUBeds;
+
+    /**
+     * numicubeds - ICU BEDS: Total number of staffed inpatient intensive care unit (ICU) beds.
+     *
+     * @return {@link Number}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
+     */
+    @Override
+    public Number getCvdNumICUBeds() {
+        return fCvdNumICUBeds;
+    }
+
+    /**
+     * numicubeds - ICU BEDS: Total number of staffed inpatient intensive care unit (ICU) beds.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
+     */
+    @Override
+    public void setCvdNumICUBeds(Number fCvdNumICUBeds) {
+        this.fCvdNumICUBeds = fCvdNumICUBeds;
     }
 
     private Object fCvdCollectionDate;
@@ -260,79 +237,54 @@ public class CDCPMDRecordImpl implements CDCPMDRecord {
         this.fCvdCollectionDate = fCvdCollectionDate;
     }
 
-    private Number fCvdNumVentUse;
+    private Number fCvdNumC19HOPats;
 
     /**
-     * numventuse - MECHANICAL VENTILATORS IN USE: Total number of ventilators in use.
+     * numc19hopats - HOSPITAL ONSET: Patients hospitalized in an NHSN inpatient care location with onset of suspected or confirmed COVID-19 14 or more days after hospitalization.
      *
      * @return {@link Number}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
     @Override
-    public Number getCvdNumVentUse() {
-        return fCvdNumVentUse;
+    public Number getCvdNumC19HOPats() {
+        return fCvdNumC19HOPats;
     }
 
     /**
-     * numventuse - MECHANICAL VENTILATORS IN USE: Total number of ventilators in use.
+     * numc19hopats - HOSPITAL ONSET: Patients hospitalized in an NHSN inpatient care location with onset of suspected or confirmed COVID-19 14 or more days after hospitalization.
      *
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
     @Override
-    public void setCvdNumVentUse(Number fCvdNumVentUse) {
-        this.fCvdNumVentUse = fCvdNumVentUse;
+    public void setCvdNumC19HOPats(Number fCvdNumC19HOPats) {
+        this.fCvdNumC19HOPats = fCvdNumC19HOPats;
     }
 
-    private Number fCvdNumC19OverflowPats;
+    private Number fCvdNumC19OFMechVentPats;
 
     /**
-     * numc19overflowpats - ED/OVERFLOW: Patients with suspected or confirmed COVID-19 who are in the ED or any overflow location awaiting an inpatient bed.
-     *
-     * @return {@link Number}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public Number getCvdNumC19OverflowPats() {
-        return fCvdNumC19OverflowPats;
-    }
-
-    /**
-     * numc19overflowpats - ED/OVERFLOW: Patients with suspected or confirmed COVID-19 who are in the ED or any overflow location awaiting an inpatient bed.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public void setCvdNumC19OverflowPats(Number fCvdNumC19OverflowPats) {
-        this.fCvdNumC19OverflowPats = fCvdNumC19OverflowPats;
-    }
-
-    private Number fCvdNumBeds;
-
-    /**
-     * numbeds - HOSPITAL INPATIENT BEDS: Inpatient beds, including all staffed, licensed, and overflow (surge) beds used for inpatients.
+     * numc19ofmechventpats - ED/OVERFLOW and VENTILATED: Patients with suspected or confirmed COVID-19 who are in the ED or any overflow location awaiting an inpatient bed and on a mechanical ventilator.
      *
      * @return {@link Number}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
     @Override
-    public Number getCvdNumBeds() {
-        return fCvdNumBeds;
+    public Number getCvdNumC19OFMechVentPats() {
+        return fCvdNumC19OFMechVentPats;
     }
 
     /**
-     * numbeds - HOSPITAL INPATIENT BEDS: Inpatient beds, including all staffed, licensed, and overflow (surge) beds used for inpatients.
+     * numc19ofmechventpats - ED/OVERFLOW and VENTILATED: Patients with suspected or confirmed COVID-19 who are in the ED or any overflow location awaiting an inpatient bed and on a mechanical ventilator.
      *
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
     @Override
-    public void setCvdNumBeds(Number fCvdNumBeds) {
-        this.fCvdNumBeds = fCvdNumBeds;
+    public void setCvdNumC19OFMechVentPats(Number fCvdNumC19OFMechVentPats) {
+        this.fCvdNumC19OFMechVentPats = fCvdNumC19OFMechVentPats;
     }
 
     private Text fCvdFacilityId;
@@ -360,25 +312,54 @@ public class CDCPMDRecordImpl implements CDCPMDRecord {
         this.fCvdFacilityId = fCvdFacilityId;
     }
 
-    private Action fPotentialAction;
+    private Number fCvdNumVentUse;
 
     /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     * numventuse - MECHANICAL VENTILATORS IN USE: Total number of ventilators in use.
      *
-     * @return {@link Action}
+     * @return {@link Number}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
     @Override
-    public Action getPotentialAction() {
-        return fPotentialAction;
+    public Number getCvdNumVentUse() {
+        return fCvdNumVentUse;
     }
 
     /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     * numventuse - MECHANICAL VENTILATORS IN USE: Total number of ventilators in use.
      *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
     @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
+    public void setCvdNumVentUse(Number fCvdNumVentUse) {
+        this.fCvdNumVentUse = fCvdNumVentUse;
+    }
+
+    private Number fCvdNumBeds;
+
+    /**
+     * numbeds - HOSPITAL INPATIENT BEDS: Inpatient beds, including all staffed, licensed, and overflow (surge) beds used for inpatients.
+     *
+     * @return {@link Number}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
+     */
+    @Override
+    public Number getCvdNumBeds() {
+        return fCvdNumBeds;
+    }
+
+    /**
+     * numbeds - HOSPITAL INPATIENT BEDS: Inpatient beds, including all staffed, licensed, and overflow (surge) beds used for inpatients.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
+     */
+    @Override
+    public void setCvdNumBeds(Number fCvdNumBeds) {
+        this.fCvdNumBeds = fCvdNumBeds;
     }
 
     private Number fCvdNumC19MechVentPats;
@@ -404,6 +385,237 @@ public class CDCPMDRecordImpl implements CDCPMDRecord {
     @Override
     public void setCvdNumC19MechVentPats(Number fCvdNumC19MechVentPats) {
         this.fCvdNumC19MechVentPats = fCvdNumC19MechVentPats;
+    }
+
+    private Object fDatePosted;
+
+    /**
+     * Publication date of an online listing.
+     *
+     * @return {@link Date} or {@link DateTime}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
+     */
+    @Override
+    public <T> T getDatePosted() {
+        return (T) fDatePosted;
+    }
+
+    /**
+     * Publication date of an online listing.
+     *
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
+     */
+    @Override
+    public void setDatePosted(Object fDatePosted) {
+        if(!(fDatePosted instanceof Date) && !(fDatePosted instanceof DateTime)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'datePosted': " + fDatePosted);
+        }
+        this.fDatePosted = fDatePosted;
+    }
+
+    private Number fCvdNumC19OverflowPats;
+
+    /**
+     * numc19overflowpats - ED/OVERFLOW: Patients with suspected or confirmed COVID-19 who are in the ED or any overflow location awaiting an inpatient bed.
+     *
+     * @return {@link Number}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
+     */
+    @Override
+    public Number getCvdNumC19OverflowPats() {
+        return fCvdNumC19OverflowPats;
+    }
+
+    /**
+     * numc19overflowpats - ED/OVERFLOW: Patients with suspected or confirmed COVID-19 who are in the ED or any overflow location awaiting an inpatient bed.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
+     */
+    @Override
+    public void setCvdNumC19OverflowPats(Number fCvdNumC19OverflowPats) {
+        this.fCvdNumC19OverflowPats = fCvdNumC19OverflowPats;
+    }
+
+    private Number fCvdNumC19HospPats;
+
+    /**
+     * numc19hosppats - HOSPITALIZED: Patients currently hospitalized in an inpatient care location who have suspected or confirmed COVID-19.
+     *
+     * @return {@link Number}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
+     */
+    @Override
+    public Number getCvdNumC19HospPats() {
+        return fCvdNumC19HospPats;
+    }
+
+    /**
+     * numc19hosppats - HOSPITALIZED: Patients currently hospitalized in an inpatient care location who have suspected or confirmed COVID-19.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
+     */
+    @Override
+    public void setCvdNumC19HospPats(Number fCvdNumC19HospPats) {
+        this.fCvdNumC19HospPats = fCvdNumC19HospPats;
+    }
+
+    private Object fMainEntityOfPage;
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    @Override
+    public <T> T getMainEntityOfPage() {
+        return (T) fMainEntityOfPage;
+    }
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     */
+    @Override
+    public void setMainEntityOfPage(Object fMainEntityOfPage) {
+        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
+        }
+        this.fMainEntityOfPage = fMainEntityOfPage;
+    }
+
+    private Text fAlternateName;
+
+    /**
+     * An alias for the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getAlternateName() {
+        return fAlternateName;
+    }
+
+    /**
+     * An alias for the item.
+     *
+     */
+    @Override
+    public void setAlternateName(Text fAlternateName) {
+        this.fAlternateName = fAlternateName;
+    }
+
+    private Text fName;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getName() {
+        return fName;
+    }
+
+    /**
+     * The name of the item.
+     *
+     */
+    @Override
+    public void setName(Text fName) {
+        this.fName = fName;
+    }
+
+    private Action fPotentialAction;
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public Action getPotentialAction() {
+        return fPotentialAction;
+    }
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     */
+    @Override
+    public void setPotentialAction(Action fPotentialAction) {
+        this.fPotentialAction = fPotentialAction;
+    }
+
+    private Object fImage;
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link URL} or {@link ImageObject}
+     */
+    @Override
+    public <T> T getImage() {
+        return (T) fImage;
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     */
+    @Override
+    public void setImage(Object fImage) {
+        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
+        }
+        this.fImage = fImage;
+    }
+
+    private URL fUrl;
+
+    /**
+     * URL of the item.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getUrl() {
+        return fUrl;
+    }
+
+    /**
+     * URL of the item.
+     *
+     */
+    @Override
+    public void setUrl(URL fUrl) {
+        this.fUrl = fUrl;
+    }
+
+    private Text fDescription;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDescription() {
+        return fDescription;
+    }
+
+    /**
+     * A description of the item.
+     *
+     */
+    @Override
+    public void setDescription(Text fDescription) {
+        this.fDescription = fDescription;
     }
 
     private Object fSubjectOf;
@@ -432,25 +644,25 @@ public class CDCPMDRecordImpl implements CDCPMDRecord {
         this.fSubjectOf = fSubjectOf;
     }
 
-    private Text fName;
+    private URL fAdditionalType;
 
     /**
-     * The name of the item.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
-     * @return {@link Text}
+     * @return {@link URL}
      */
     @Override
-    public Text getName() {
-        return fName;
+    public URL getAdditionalType() {
+        return fAdditionalType;
     }
 
     /**
-     * The name of the item.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
      */
     @Override
-    public void setName(Text fName) {
-        this.fName = fName;
+    public void setAdditionalType(URL fAdditionalType) {
+        this.fAdditionalType = fAdditionalType;
     }
 
     private Text fDisambiguatingDescription;
@@ -474,30 +686,6 @@ public class CDCPMDRecordImpl implements CDCPMDRecord {
         this.fDisambiguatingDescription = fDisambiguatingDescription;
     }
 
-    private Object fImage;
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link URL} or {@link ImageObject}
-     */
-    @Override
-    public <T> T getImage() {
-        return (T) fImage;
-    }
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     */
-    @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
-        this.fImage = fImage;
-    }
-
     private URL fSameAs;
 
     /**
@@ -517,31 +705,6 @@ public class CDCPMDRecordImpl implements CDCPMDRecord {
     @Override
     public void setSameAs(URL fSameAs) {
         this.fSameAs = fSameAs;
-    }
-
-    private Number fCvdNumC19HospPats;
-
-    /**
-     * numc19hosppats - HOSPITALIZED: Patients currently hospitalized in an inpatient care location who have suspected or confirmed COVID-19.
-     *
-     * @return {@link Number}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public Number getCvdNumC19HospPats() {
-        return fCvdNumC19HospPats;
-    }
-
-    /**
-     * numc19hosppats - HOSPITALIZED: Patients currently hospitalized in an inpatient care location who have suspected or confirmed COVID-19.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public void setCvdNumC19HospPats(Number fCvdNumC19HospPats) {
-        this.fCvdNumC19HospPats = fCvdNumC19HospPats;
     }
 
     private Object fIdentifier;
@@ -568,168 +731,5 @@ public class CDCPMDRecordImpl implements CDCPMDRecord {
             throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
         }
         this.fIdentifier = fIdentifier;
-    }
-
-    private Number fCvdNumICUBeds;
-
-    /**
-     * numicubeds - ICU BEDS: Total number of staffed inpatient intensive care unit (ICU) beds.
-     *
-     * @return {@link Number}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public Number getCvdNumICUBeds() {
-        return fCvdNumICUBeds;
-    }
-
-    /**
-     * numicubeds - ICU BEDS: Total number of staffed inpatient intensive care unit (ICU) beds.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public void setCvdNumICUBeds(Number fCvdNumICUBeds) {
-        this.fCvdNumICUBeds = fCvdNumICUBeds;
-    }
-
-    private URL fUrl;
-
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getUrl() {
-        return fUrl;
-    }
-
-    /**
-     * URL of the item.
-     *
-     */
-    @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
-    }
-
-    private Number fCvdNumC19OFMechVentPats;
-
-    /**
-     * numc19ofmechventpats - ED/OVERFLOW and VENTILATED: Patients with suspected or confirmed COVID-19 who are in the ED or any overflow location awaiting an inpatient bed and on a mechanical ventilator.
-     *
-     * @return {@link Number}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public Number getCvdNumC19OFMechVentPats() {
-        return fCvdNumC19OFMechVentPats;
-    }
-
-    /**
-     * numc19ofmechventpats - ED/OVERFLOW and VENTILATED: Patients with suspected or confirmed COVID-19 who are in the ED or any overflow location awaiting an inpatient bed and on a mechanical ventilator.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public void setCvdNumC19OFMechVentPats(Number fCvdNumC19OFMechVentPats) {
-        this.fCvdNumC19OFMechVentPats = fCvdNumC19OFMechVentPats;
-    }
-
-    private Number fCvdNumTotBeds;
-
-    /**
-     * numtotbeds - ALL HOSPITAL BEDS: Total number of all Inpatient and outpatient beds, including all staffed,ICU, licensed, and overflow (surge) beds used for inpatients or outpatients.
-     *
-     * @return {@link Number}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public Number getCvdNumTotBeds() {
-        return fCvdNumTotBeds;
-    }
-
-    /**
-     * numtotbeds - ALL HOSPITAL BEDS: Total number of all Inpatient and outpatient beds, including all staffed,ICU, licensed, and overflow (surge) beds used for inpatients or outpatients.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public void setCvdNumTotBeds(Number fCvdNumTotBeds) {
-        this.fCvdNumTotBeds = fCvdNumTotBeds;
-    }
-
-    private URL fAdditionalType;
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getAdditionalType() {
-        return fAdditionalType;
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     */
-    @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
-    }
-
-    private Text fDescription;
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDescription() {
-        return fDescription;
-    }
-
-    /**
-     * A description of the item.
-     *
-     */
-    @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
-    }
-
-    private Number fCvdNumVent;
-
-    /**
-     * numvent - MECHANICAL VENTILATORS: Total number of ventilators available.
-     *
-     * @return {@link Number}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public Number getCvdNumVent() {
-        return fCvdNumVent;
-    }
-
-    /**
-     * numvent - MECHANICAL VENTILATORS: Total number of ventilators available.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public void setCvdNumVent(Number fCvdNumVent) {
-        this.fCvdNumVent = fCvdNumVent;
     }
 }

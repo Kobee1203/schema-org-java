@@ -36,30 +36,139 @@ import org.schema.model.ActionAccessSpecification;
 @JsonLdTypeName("schema:ActionAccessSpecification")
 public class ActionAccessSpecificationImpl implements ActionAccessSpecification {
 
-    private Object fSubjectOf;
+    private Offer fExpectsAcceptanceOf;
 
     /**
-     * A CreativeWork or Event about this Thing.
+     * An Offer which must be accepted before the user can perform the Action. For example, the user may need to buy a movie before being able to watch it.
      *
-     * @return {@link Event} or {@link CreativeWork}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     * @return {@link Offer}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
     @Override
-    public <T> T getSubjectOf() {
-        return (T) fSubjectOf;
+    public Offer getExpectsAcceptanceOf() {
+        return fExpectsAcceptanceOf;
     }
 
     /**
-     * A CreativeWork or Event about this Thing.
+     * An Offer which must be accepted before the user can perform the Action. For example, the user may need to buy a movie before being able to watch it.
      *
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
     @Override
-    public void setSubjectOf(Object fSubjectOf) {
-        if(!(fSubjectOf instanceof Event) && !(fSubjectOf instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'subjectOf': " + fSubjectOf);
+    public void setExpectsAcceptanceOf(Offer fExpectsAcceptanceOf) {
+        this.fExpectsAcceptanceOf = fExpectsAcceptanceOf;
+    }
+
+    private Object fCategory;
+
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @return {@link URL} or {@link Text} or {@link PhysicalActivityCategory} or {@link Thing} or {@link CategoryCode}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    @Override
+    public <T> T getCategory() {
+        return (T) fCategory;
+    }
+
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    @Override
+    public void setCategory(Object fCategory) {
+        if(!(fCategory instanceof URL) && !(fCategory instanceof Text) && !(fCategory instanceof PhysicalActivityCategory) && !(fCategory instanceof Thing) && !(fCategory instanceof CategoryCode)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'category': " + fCategory);
         }
-        this.fSubjectOf = fSubjectOf;
+        this.fCategory = fCategory;
+    }
+
+    private Object fIneligibleRegion;
+
+    /**
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>See also [[eligibleRegion]].
+     *       
+     *
+     * @return {@link Place} or {@link Text} or {@link GeoShape}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2242">https://github.com/schemaorg/schemaorg/issues/2242</a>
+     */
+    @Override
+    public <T> T getIneligibleRegion() {
+        return (T) fIneligibleRegion;
+    }
+
+    /**
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>See also [[eligibleRegion]].
+     *       
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2242">https://github.com/schemaorg/schemaorg/issues/2242</a>
+     */
+    @Override
+    public void setIneligibleRegion(Object fIneligibleRegion) {
+        if(!(fIneligibleRegion instanceof Place) && !(fIneligibleRegion instanceof Text) && !(fIneligibleRegion instanceof GeoShape)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'ineligibleRegion': " + fIneligibleRegion);
+        }
+        this.fIneligibleRegion = fIneligibleRegion;
+    }
+
+    private Object fRequiresSubscription;
+
+    /**
+     * Indicates if use of the media require a subscription  (either paid or free). Allowed values are ```true``` or ```false``` (note that an earlier version had 'yes', 'no').
+     *
+     * @return {@link MediaSubscription} or {@link Boolean}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    @Override
+    public <T> T getRequiresSubscription() {
+        return (T) fRequiresSubscription;
+    }
+
+    /**
+     * Indicates if use of the media require a subscription  (either paid or free). Allowed values are ```true``` or ```false``` (note that an earlier version had 'yes', 'no').
+     *
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    @Override
+    public void setRequiresSubscription(Object fRequiresSubscription) {
+        if(!(fRequiresSubscription instanceof MediaSubscription) && !(fRequiresSubscription instanceof Boolean)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'requiresSubscription': " + fRequiresSubscription);
+        }
+        this.fRequiresSubscription = fRequiresSubscription;
+    }
+
+    private Object fAvailabilityEnds;
+
+    /**
+     * The end of the availability of the product or service included in the offer.
+     *
+     * @return {@link Date} or {@link DateTime} or {@link Time}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public <T> T getAvailabilityEnds() {
+        return (T) fAvailabilityEnds;
+    }
+
+    /**
+     * The end of the availability of the product or service included in the offer.
+     *
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setAvailabilityEnds(Object fAvailabilityEnds) {
+        if(!(fAvailabilityEnds instanceof Date) && !(fAvailabilityEnds instanceof DateTime) && !(fAvailabilityEnds instanceof Time)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'availabilityEnds': " + fAvailabilityEnds);
+        }
+        this.fAvailabilityEnds = fAvailabilityEnds;
     }
 
     private Object fEligibleRegion;
@@ -92,6 +201,79 @@ public class ActionAccessSpecificationImpl implements ActionAccessSpecification 
         this.fEligibleRegion = fEligibleRegion;
     }
 
+    private Object fAvailabilityStarts;
+
+    /**
+     * The beginning of the availability of the product or service included in the offer.
+     *
+     * @return {@link Time} or {@link DateTime} or {@link Date}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public <T> T getAvailabilityStarts() {
+        return (T) fAvailabilityStarts;
+    }
+
+    /**
+     * The beginning of the availability of the product or service included in the offer.
+     *
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setAvailabilityStarts(Object fAvailabilityStarts) {
+        if(!(fAvailabilityStarts instanceof Time) && !(fAvailabilityStarts instanceof DateTime) && !(fAvailabilityStarts instanceof Date)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'availabilityStarts': " + fAvailabilityStarts);
+        }
+        this.fAvailabilityStarts = fAvailabilityStarts;
+    }
+
+    private Object fMainEntityOfPage;
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    @Override
+    public <T> T getMainEntityOfPage() {
+        return (T) fMainEntityOfPage;
+    }
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     */
+    @Override
+    public void setMainEntityOfPage(Object fMainEntityOfPage) {
+        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
+        }
+        this.fMainEntityOfPage = fMainEntityOfPage;
+    }
+
+    private Text fAlternateName;
+
+    /**
+     * An alias for the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getAlternateName() {
+        return fAlternateName;
+    }
+
+    /**
+     * An alias for the item.
+     *
+     */
+    @Override
+    public void setAlternateName(Text fAlternateName) {
+        this.fAlternateName = fAlternateName;
+    }
+
     private Text fName;
 
     /**
@@ -113,25 +295,25 @@ public class ActionAccessSpecificationImpl implements ActionAccessSpecification 
         this.fName = fName;
     }
 
-    private Text fDisambiguatingDescription;
+    private Action fPotentialAction;
 
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      *
-     * @return {@link Text}
+     * @return {@link Action}
      */
     @Override
-    public Text getDisambiguatingDescription() {
-        return fDisambiguatingDescription;
+    public Action getPotentialAction() {
+        return fPotentialAction;
     }
 
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      *
      */
     @Override
-    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = fDisambiguatingDescription;
+    public void setPotentialAction(Action fPotentialAction) {
+        this.fPotentialAction = fPotentialAction;
     }
 
     private Object fImage;
@@ -156,6 +338,116 @@ public class ActionAccessSpecificationImpl implements ActionAccessSpecification 
             throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
         }
         this.fImage = fImage;
+    }
+
+    private URL fUrl;
+
+    /**
+     * URL of the item.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getUrl() {
+        return fUrl;
+    }
+
+    /**
+     * URL of the item.
+     *
+     */
+    @Override
+    public void setUrl(URL fUrl) {
+        this.fUrl = fUrl;
+    }
+
+    private Text fDescription;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDescription() {
+        return fDescription;
+    }
+
+    /**
+     * A description of the item.
+     *
+     */
+    @Override
+    public void setDescription(Text fDescription) {
+        this.fDescription = fDescription;
+    }
+
+    private Object fSubjectOf;
+
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @return {@link Event} or {@link CreativeWork}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public <T> T getSubjectOf() {
+        return (T) fSubjectOf;
+    }
+
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public void setSubjectOf(Object fSubjectOf) {
+        if(!(fSubjectOf instanceof Event) && !(fSubjectOf instanceof CreativeWork)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'subjectOf': " + fSubjectOf);
+        }
+        this.fSubjectOf = fSubjectOf;
+    }
+
+    private URL fAdditionalType;
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getAdditionalType() {
+        return fAdditionalType;
+    }
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     */
+    @Override
+    public void setAdditionalType(URL fAdditionalType) {
+        this.fAdditionalType = fAdditionalType;
+    }
+
+    private Text fDisambiguatingDescription;
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDisambiguatingDescription() {
+        return fDisambiguatingDescription;
+    }
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     */
+    @Override
+    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
+        this.fDisambiguatingDescription = fDisambiguatingDescription;
     }
 
     private URL fSameAs;
@@ -203,297 +495,5 @@ public class ActionAccessSpecificationImpl implements ActionAccessSpecification 
             throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
         }
         this.fIdentifier = fIdentifier;
-    }
-
-    private Offer fExpectsAcceptanceOf;
-
-    /**
-     * An Offer which must be accepted before the user can perform the Action. For example, the user may need to buy a movie before being able to watch it.
-     *
-     * @return {@link Offer}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     */
-    @Override
-    public Offer getExpectsAcceptanceOf() {
-        return fExpectsAcceptanceOf;
-    }
-
-    /**
-     * An Offer which must be accepted before the user can perform the Action. For example, the user may need to buy a movie before being able to watch it.
-     *
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     */
-    @Override
-    public void setExpectsAcceptanceOf(Offer fExpectsAcceptanceOf) {
-        this.fExpectsAcceptanceOf = fExpectsAcceptanceOf;
-    }
-
-    private Object fRequiresSubscription;
-
-    /**
-     * Indicates if use of the media require a subscription  (either paid or free). Allowed values are ```true``` or ```false``` (note that an earlier version had 'yes', 'no').
-     *
-     * @return {@link MediaSubscription} or {@link Boolean}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     */
-    @Override
-    public <T> T getRequiresSubscription() {
-        return (T) fRequiresSubscription;
-    }
-
-    /**
-     * Indicates if use of the media require a subscription  (either paid or free). Allowed values are ```true``` or ```false``` (note that an earlier version had 'yes', 'no').
-     *
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     */
-    @Override
-    public void setRequiresSubscription(Object fRequiresSubscription) {
-        if(!(fRequiresSubscription instanceof MediaSubscription) && !(fRequiresSubscription instanceof Boolean)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'requiresSubscription': " + fRequiresSubscription);
-        }
-        this.fRequiresSubscription = fRequiresSubscription;
-    }
-
-    private Text fAlternateName;
-
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getAlternateName() {
-        return fAlternateName;
-    }
-
-    /**
-     * An alias for the item.
-     *
-     */
-    @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
-    }
-
-    private Object fMainEntityOfPage;
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     */
-    @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
-        }
-        this.fMainEntityOfPage = fMainEntityOfPage;
-    }
-
-    private Object fAvailabilityStarts;
-
-    /**
-     * The beginning of the availability of the product or service included in the offer.
-     *
-     * @return {@link Time} or {@link DateTime} or {@link Date}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public <T> T getAvailabilityStarts() {
-        return (T) fAvailabilityStarts;
-    }
-
-    /**
-     * The beginning of the availability of the product or service included in the offer.
-     *
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setAvailabilityStarts(Object fAvailabilityStarts) {
-        if(!(fAvailabilityStarts instanceof Time) && !(fAvailabilityStarts instanceof DateTime) && !(fAvailabilityStarts instanceof Date)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'availabilityStarts': " + fAvailabilityStarts);
-        }
-        this.fAvailabilityStarts = fAvailabilityStarts;
-    }
-
-    private URL fUrl;
-
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getUrl() {
-        return fUrl;
-    }
-
-    /**
-     * URL of the item.
-     *
-     */
-    @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
-    }
-
-    private Object fIneligibleRegion;
-
-    /**
-     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>See also [[eligibleRegion]].
-     *       
-     *
-     * @return {@link Place} or {@link Text} or {@link GeoShape}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2242">https://github.com/schemaorg/schemaorg/issues/2242</a>
-     */
-    @Override
-    public <T> T getIneligibleRegion() {
-        return (T) fIneligibleRegion;
-    }
-
-    /**
-     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>See also [[eligibleRegion]].
-     *       
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2242">https://github.com/schemaorg/schemaorg/issues/2242</a>
-     */
-    @Override
-    public void setIneligibleRegion(Object fIneligibleRegion) {
-        if(!(fIneligibleRegion instanceof Place) && !(fIneligibleRegion instanceof Text) && !(fIneligibleRegion instanceof GeoShape)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'ineligibleRegion': " + fIneligibleRegion);
-        }
-        this.fIneligibleRegion = fIneligibleRegion;
-    }
-
-    private Object fCategory;
-
-    /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-     *
-     * @return {@link URL} or {@link Text} or {@link PhysicalActivityCategory} or {@link Thing} or {@link CategoryCode}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     */
-    @Override
-    public <T> T getCategory() {
-        return (T) fCategory;
-    }
-
-    /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-     *
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     */
-    @Override
-    public void setCategory(Object fCategory) {
-        if(!(fCategory instanceof URL) && !(fCategory instanceof Text) && !(fCategory instanceof PhysicalActivityCategory) && !(fCategory instanceof Thing) && !(fCategory instanceof CategoryCode)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'category': " + fCategory);
-        }
-        this.fCategory = fCategory;
-    }
-
-    private Object fAvailabilityEnds;
-
-    /**
-     * The end of the availability of the product or service included in the offer.
-     *
-     * @return {@link Date} or {@link DateTime} or {@link Time}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public <T> T getAvailabilityEnds() {
-        return (T) fAvailabilityEnds;
-    }
-
-    /**
-     * The end of the availability of the product or service included in the offer.
-     *
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setAvailabilityEnds(Object fAvailabilityEnds) {
-        if(!(fAvailabilityEnds instanceof Date) && !(fAvailabilityEnds instanceof DateTime) && !(fAvailabilityEnds instanceof Time)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'availabilityEnds': " + fAvailabilityEnds);
-        }
-        this.fAvailabilityEnds = fAvailabilityEnds;
-    }
-
-    private URL fAdditionalType;
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getAdditionalType() {
-        return fAdditionalType;
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     */
-    @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
-    }
-
-    private Text fDescription;
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDescription() {
-        return fDescription;
-    }
-
-    /**
-     * A description of the item.
-     *
-     */
-    @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
-    }
-
-    private Action fPotentialAction;
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
-    @Override
-    public Action getPotentialAction() {
-        return fPotentialAction;
-    }
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     */
-    @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
     }
 }

@@ -34,30 +34,91 @@ import org.schema.model.MedicalAudience;
 @JsonLdTypeName("schema:MedicalAudience")
 public class MedicalAudienceImpl implements MedicalAudience {
 
-    private Object fSubjectOf;
+    private Text fAudienceType;
 
     /**
-     * A CreativeWork or Event about this Thing.
+     * The target group associated with a given audience (e.g. veterans, car owners, musicians, etc.).
      *
-     * @return {@link Event} or {@link CreativeWork}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     * @return {@link Text}
      */
     @Override
-    public <T> T getSubjectOf() {
-        return (T) fSubjectOf;
+    public Text getAudienceType() {
+        return fAudienceType;
     }
 
     /**
-     * A CreativeWork or Event about this Thing.
+     * The target group associated with a given audience (e.g. veterans, car owners, musicians, etc.).
      *
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Object fSubjectOf) {
-        if(!(fSubjectOf instanceof Event) && !(fSubjectOf instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'subjectOf': " + fSubjectOf);
+    public void setAudienceType(Text fAudienceType) {
+        this.fAudienceType = fAudienceType;
+    }
+
+    private AdministrativeArea fGeographicArea;
+
+    /**
+     * The geographic area associated with the audience.
+     *
+     * @return {@link AdministrativeArea}
+     */
+    @Override
+    public AdministrativeArea getGeographicArea() {
+        return fGeographicArea;
+    }
+
+    /**
+     * The geographic area associated with the audience.
+     *
+     */
+    @Override
+    public void setGeographicArea(AdministrativeArea fGeographicArea) {
+        this.fGeographicArea = fGeographicArea;
+    }
+
+    private Object fMainEntityOfPage;
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    @Override
+    public <T> T getMainEntityOfPage() {
+        return (T) fMainEntityOfPage;
+    }
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     */
+    @Override
+    public void setMainEntityOfPage(Object fMainEntityOfPage) {
+        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
         }
-        this.fSubjectOf = fSubjectOf;
+        this.fMainEntityOfPage = fMainEntityOfPage;
+    }
+
+    private Text fAlternateName;
+
+    /**
+     * An alias for the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getAlternateName() {
+        return fAlternateName;
+    }
+
+    /**
+     * An alias for the item.
+     *
+     */
+    @Override
+    public void setAlternateName(Text fAlternateName) {
+        this.fAlternateName = fAlternateName;
     }
 
     private Text fName;
@@ -81,46 +142,25 @@ public class MedicalAudienceImpl implements MedicalAudience {
         this.fName = fName;
     }
 
-    private Integer fRequiredMaxAge;
+    private Action fPotentialAction;
 
     /**
-     * Audiences defined by a person's maximum age.
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      *
-     * @return {@link Integer}
+     * @return {@link Action}
      */
     @Override
-    public Integer getRequiredMaxAge() {
-        return fRequiredMaxAge;
+    public Action getPotentialAction() {
+        return fPotentialAction;
     }
 
     /**
-     * Audiences defined by a person's maximum age.
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      *
      */
     @Override
-    public void setRequiredMaxAge(Integer fRequiredMaxAge) {
-        this.fRequiredMaxAge = fRequiredMaxAge;
-    }
-
-    private Text fDisambiguatingDescription;
-
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDisambiguatingDescription() {
-        return fDisambiguatingDescription;
-    }
-
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     */
-    @Override
-    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = fDisambiguatingDescription;
+    public void setPotentialAction(Action fPotentialAction) {
+        this.fPotentialAction = fPotentialAction;
     }
 
     private Object fImage;
@@ -147,6 +187,116 @@ public class MedicalAudienceImpl implements MedicalAudience {
         this.fImage = fImage;
     }
 
+    private URL fUrl;
+
+    /**
+     * URL of the item.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getUrl() {
+        return fUrl;
+    }
+
+    /**
+     * URL of the item.
+     *
+     */
+    @Override
+    public void setUrl(URL fUrl) {
+        this.fUrl = fUrl;
+    }
+
+    private Text fDescription;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDescription() {
+        return fDescription;
+    }
+
+    /**
+     * A description of the item.
+     *
+     */
+    @Override
+    public void setDescription(Text fDescription) {
+        this.fDescription = fDescription;
+    }
+
+    private Object fSubjectOf;
+
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @return {@link Event} or {@link CreativeWork}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public <T> T getSubjectOf() {
+        return (T) fSubjectOf;
+    }
+
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public void setSubjectOf(Object fSubjectOf) {
+        if(!(fSubjectOf instanceof Event) && !(fSubjectOf instanceof CreativeWork)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'subjectOf': " + fSubjectOf);
+        }
+        this.fSubjectOf = fSubjectOf;
+    }
+
+    private URL fAdditionalType;
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getAdditionalType() {
+        return fAdditionalType;
+    }
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     */
+    @Override
+    public void setAdditionalType(URL fAdditionalType) {
+        this.fAdditionalType = fAdditionalType;
+    }
+
+    private Text fDisambiguatingDescription;
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDisambiguatingDescription() {
+        return fDisambiguatingDescription;
+    }
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     */
+    @Override
+    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
+        this.fDisambiguatingDescription = fDisambiguatingDescription;
+    }
+
     private URL fSameAs;
 
     /**
@@ -166,29 +316,6 @@ public class MedicalAudienceImpl implements MedicalAudience {
     @Override
     public void setSameAs(URL fSameAs) {
         this.fSameAs = fSameAs;
-    }
-
-    private MedicalCondition fHealthCondition;
-
-    /**
-     * Specifying the health condition(s) of a patient, medical study, or other target audience.
-     *
-     * @return {@link MedicalCondition}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public MedicalCondition getHealthCondition() {
-        return fHealthCondition;
-    }
-
-    /**
-     * Specifying the health condition(s) of a patient, medical study, or other target audience.
-     *
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setHealthCondition(MedicalCondition fHealthCondition) {
-        this.fHealthCondition = fHealthCondition;
     }
 
     private Object fIdentifier;
@@ -217,46 +344,69 @@ public class MedicalAudienceImpl implements MedicalAudience {
         this.fIdentifier = fIdentifier;
     }
 
-    private AdministrativeArea fGeographicArea;
+    private Integer fRequiredMinAge;
 
     /**
-     * The geographic area associated with the audience.
+     * Audiences defined by a person's minimum age.
      *
-     * @return {@link AdministrativeArea}
+     * @return {@link Integer}
      */
     @Override
-    public AdministrativeArea getGeographicArea() {
-        return fGeographicArea;
+    public Integer getRequiredMinAge() {
+        return fRequiredMinAge;
     }
 
     /**
-     * The geographic area associated with the audience.
+     * Audiences defined by a person's minimum age.
      *
      */
     @Override
-    public void setGeographicArea(AdministrativeArea fGeographicArea) {
-        this.fGeographicArea = fGeographicArea;
+    public void setRequiredMinAge(Integer fRequiredMinAge) {
+        this.fRequiredMinAge = fRequiredMinAge;
     }
 
-    private Number fSuggestedMinAge;
+    private Number fSuggestedMaxAge;
 
     /**
-     * Minimum recommended age in years for the audience or user.
+     * Maximum recommended age in years for the audience or user.
      *
      * @return {@link Number}
      */
     @Override
-    public Number getSuggestedMinAge() {
-        return fSuggestedMinAge;
+    public Number getSuggestedMaxAge() {
+        return fSuggestedMaxAge;
     }
 
     /**
-     * Minimum recommended age in years for the audience or user.
+     * Maximum recommended age in years for the audience or user.
      *
      */
     @Override
-    public void setSuggestedMinAge(Number fSuggestedMinAge) {
-        this.fSuggestedMinAge = fSuggestedMinAge;
+    public void setSuggestedMaxAge(Number fSuggestedMaxAge) {
+        this.fSuggestedMaxAge = fSuggestedMaxAge;
+    }
+
+    private MedicalCondition fHealthCondition;
+
+    /**
+     * Specifying the health condition(s) of a patient, medical study, or other target audience.
+     *
+     * @return {@link MedicalCondition}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public MedicalCondition getHealthCondition() {
+        return fHealthCondition;
+    }
+
+    /**
+     * Specifying the health condition(s) of a patient, medical study, or other target audience.
+     *
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void setHealthCondition(MedicalCondition fHealthCondition) {
+        this.fHealthCondition = fHealthCondition;
     }
 
     private QuantitativeValue fSuggestedMeasurement;
@@ -284,159 +434,6 @@ public class MedicalAudienceImpl implements MedicalAudience {
         this.fSuggestedMeasurement = fSuggestedMeasurement;
     }
 
-    private Text fAlternateName;
-
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getAlternateName() {
-        return fAlternateName;
-    }
-
-    /**
-     * An alias for the item.
-     *
-     */
-    @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
-    }
-
-    private Integer fRequiredMinAge;
-
-    /**
-     * Audiences defined by a person's minimum age.
-     *
-     * @return {@link Integer}
-     */
-    @Override
-    public Integer getRequiredMinAge() {
-        return fRequiredMinAge;
-    }
-
-    /**
-     * Audiences defined by a person's minimum age.
-     *
-     */
-    @Override
-    public void setRequiredMinAge(Integer fRequiredMinAge) {
-        this.fRequiredMinAge = fRequiredMinAge;
-    }
-
-    private Object fSuggestedGender;
-
-    /**
-     * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
-     *
-     * @return {@link GenderType} or {@link Text}
-     */
-    @Override
-    public <T> T getSuggestedGender() {
-        return (T) fSuggestedGender;
-    }
-
-    /**
-     * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
-     *
-     */
-    @Override
-    public void setSuggestedGender(Object fSuggestedGender) {
-        if(!(fSuggestedGender instanceof GenderType) && !(fSuggestedGender instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'suggestedGender': " + fSuggestedGender);
-        }
-        this.fSuggestedGender = fSuggestedGender;
-    }
-
-    private Object fMainEntityOfPage;
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     */
-    @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
-        }
-        this.fMainEntityOfPage = fMainEntityOfPage;
-    }
-
-    private Text fAudienceType;
-
-    /**
-     * The target group associated with a given audience (e.g. veterans, car owners, musicians, etc.).
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getAudienceType() {
-        return fAudienceType;
-    }
-
-    /**
-     * The target group associated with a given audience (e.g. veterans, car owners, musicians, etc.).
-     *
-     */
-    @Override
-    public void setAudienceType(Text fAudienceType) {
-        this.fAudienceType = fAudienceType;
-    }
-
-    private URL fUrl;
-
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getUrl() {
-        return fUrl;
-    }
-
-    /**
-     * URL of the item.
-     *
-     */
-    @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
-    }
-
-    private Number fSuggestedMaxAge;
-
-    /**
-     * Maximum recommended age in years for the audience or user.
-     *
-     * @return {@link Number}
-     */
-    @Override
-    public Number getSuggestedMaxAge() {
-        return fSuggestedMaxAge;
-    }
-
-    /**
-     * Maximum recommended age in years for the audience or user.
-     *
-     */
-    @Override
-    public void setSuggestedMaxAge(Number fSuggestedMaxAge) {
-        this.fSuggestedMaxAge = fSuggestedMaxAge;
-    }
-
     private QuantitativeValue fSuggestedAge;
 
     /**
@@ -462,67 +459,46 @@ public class MedicalAudienceImpl implements MedicalAudience {
         this.fSuggestedAge = fSuggestedAge;
     }
 
-    private URL fAdditionalType;
+    private Integer fRequiredMaxAge;
 
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * Audiences defined by a person's maximum age.
      *
-     * @return {@link URL}
+     * @return {@link Integer}
      */
     @Override
-    public URL getAdditionalType() {
-        return fAdditionalType;
+    public Integer getRequiredMaxAge() {
+        return fRequiredMaxAge;
     }
 
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * Audiences defined by a person's maximum age.
      *
      */
     @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
+    public void setRequiredMaxAge(Integer fRequiredMaxAge) {
+        this.fRequiredMaxAge = fRequiredMaxAge;
     }
 
-    private Text fDescription;
+    private Number fSuggestedMinAge;
 
     /**
-     * A description of the item.
+     * Minimum recommended age in years for the audience or user.
      *
-     * @return {@link Text}
+     * @return {@link Number}
      */
     @Override
-    public Text getDescription() {
-        return fDescription;
-    }
-
-    /**
-     * A description of the item.
-     *
-     */
-    @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
-    }
-
-    private Action fPotentialAction;
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
-    @Override
-    public Action getPotentialAction() {
-        return fPotentialAction;
+    public Number getSuggestedMinAge() {
+        return fSuggestedMinAge;
     }
 
     /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     * Minimum recommended age in years for the audience or user.
      *
      */
     @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
+    public void setSuggestedMinAge(Number fSuggestedMinAge) {
+        this.fSuggestedMinAge = fSuggestedMinAge;
     }
 
     private Text fRequiredGender;
@@ -544,5 +520,29 @@ public class MedicalAudienceImpl implements MedicalAudience {
     @Override
     public void setRequiredGender(Text fRequiredGender) {
         this.fRequiredGender = fRequiredGender;
+    }
+
+    private Object fSuggestedGender;
+
+    /**
+     * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
+     *
+     * @return {@link GenderType} or {@link Text}
+     */
+    @Override
+    public <T> T getSuggestedGender() {
+        return (T) fSuggestedGender;
+    }
+
+    /**
+     * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
+     *
+     */
+    @Override
+    public void setSuggestedGender(Object fSuggestedGender) {
+        if(!(fSuggestedGender instanceof GenderType) && !(fSuggestedGender instanceof Text)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'suggestedGender': " + fSuggestedGender);
+        }
+        this.fSuggestedGender = fSuggestedGender;
     }
 }

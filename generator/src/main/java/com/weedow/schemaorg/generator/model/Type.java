@@ -1,9 +1,17 @@
 package com.weedow.schemaorg.generator.model;
 
+import lombok.AccessLevel;
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.experimental.Accessors;
+
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+@Data
+@Accessors(chain = true)
 public final class Type {
 
     private final String id;
@@ -14,59 +22,28 @@ public final class Type {
 
     private String description;
 
+    @Setter(AccessLevel.NONE)
     private final Set<Property> properties = new LinkedHashSet<>();
+
+    @Setter(AccessLevel.NONE)
     private Set<Property> allProperties;
 
+    @Setter(AccessLevel.NONE)
     private final List<Type> parents = new ArrayList<>();
-
-    private Boolean enumerationType;
-    private final List<String> enumerationMembers = new ArrayList<>();
 
     private List<String> partOf = new ArrayList<>();
 
     private List<String> source = new ArrayList<>();
 
-    public Type(String id) {
-        this.id = id;
-    }
+    @Getter(AccessLevel.NONE)
+    @Setter(AccessLevel.NONE)
+    private Boolean enumerationType;
 
-    public String getId() {
-        return id;
-    }
-
-    public String getJavaType() {
-        return javaType;
-    }
-
-    public Type setJavaType(String javaType) {
-        this.javaType = javaType;
-        return this;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public Type setName(String name) {
-        this.name = name;
-        return this;
-    }
-
-    public String getDescription() {
-        return description;
-    }
+    @Setter(AccessLevel.NONE)
+    private final List<String> enumerationMembers = new ArrayList<>();
 
     public String[] getSplitDescription() {
         return description != null ? description.replace("\\n", "<br/>").split("\\n") : null;
-    }
-
-    public Type setDescription(String description) {
-        this.description = description;
-        return this;
-    }
-
-    public Set<Property> getProperties() {
-        return properties;
     }
 
     public Set<Property> getAllProperties() {
@@ -77,7 +54,7 @@ public final class Type {
                                     .stream()
                                     .flatMap(type -> type.getAllProperties().stream()).filter(prop -> !properties.contains(prop))
                     )
-                    .collect(Collectors.toSet());
+                    .collect(Collectors.toCollection(LinkedHashSet::new));
         }
         return this.allProperties;
     }
@@ -87,17 +64,13 @@ public final class Type {
         return this;
     }
 
-    public List<Type> getParents() {
-        return parents;
-    }
-
     public Type addParent(Type parent) {
         this.parents.add(parent);
         return this;
     }
 
     public boolean isEnumerationType() {
-        if(this.enumerationType == null) {
+        if (this.enumerationType == null) {
             this.enumerationType = isEnumerationType(getParents());
         }
         return this.enumerationType;
@@ -105,7 +78,7 @@ public final class Type {
 
     private static boolean isEnumerationType(List<Type> parents) {
         for (Type parent : parents) {
-            if("schema:Enumeration".equals(parent.getId()) || isEnumerationType(parent.getParents())) {
+            if ("schema:Enumeration".equals(parent.getId()) || isEnumerationType(parent.getParents())) {
                 return true;
             }
         }
@@ -119,43 +92,6 @@ public final class Type {
     public Type addEnumerationMember(String value) {
         this.enumerationMembers.add(value);
         return this;
-    }
-
-    public List<String> getPartOf() {
-        return partOf;
-    }
-
-    public Type setPartOf(List<String> partOf) {
-        this.partOf = partOf;
-        return this;
-    }
-
-    public List<String> getSource() {
-        return source;
-    }
-
-    public Type setSource(List<String> source) {
-        this.source = source;
-        return this;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Type type = (Type) o;
-        return Objects.equals(id, type.id)
-                && Objects.equals(name, type.name)
-                && Objects.equals(description, type.description)
-                && Objects.equals(properties, type.properties)
-                && Objects.equals(parents, type.parents)
-                && Objects.equals(partOf, type.partOf)
-                && Objects.equals(source, type.source);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name, description, properties, parents, partOf, source);
     }
 
     @Override

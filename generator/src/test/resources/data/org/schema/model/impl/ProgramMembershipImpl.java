@@ -29,6 +29,298 @@ import org.schema.model.ProgramMembership;
 @JsonLdTypeName("schema:ProgramMembership")
 public class ProgramMembershipImpl implements ProgramMembership {
 
+    private Object fMembershipPointsEarned;
+
+    /**
+     * The number of membership points earned by the member. If necessary, the unitText can be used to express the units the points are issued in. (e.g. stars, miles, etc.)
+     *
+     * @return {@link Number} or {@link QuantitativeValue}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2085">https://github.com/schemaorg/schemaorg/issues/2085</a>
+     */
+    @Override
+    public <T> T getMembershipPointsEarned() {
+        return (T) fMembershipPointsEarned;
+    }
+
+    /**
+     * The number of membership points earned by the member. If necessary, the unitText can be used to express the units the points are issued in. (e.g. stars, miles, etc.)
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2085">https://github.com/schemaorg/schemaorg/issues/2085</a>
+     */
+    @Override
+    public void setMembershipPointsEarned(Object fMembershipPointsEarned) {
+        if(!(fMembershipPointsEarned instanceof Number) && !(fMembershipPointsEarned instanceof QuantitativeValue)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'membershipPointsEarned': " + fMembershipPointsEarned);
+        }
+        this.fMembershipPointsEarned = fMembershipPointsEarned;
+    }
+
+    private Object fMember;
+
+    /**
+     * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> T getMember() {
+        return (T) fMember;
+    }
+
+    /**
+     * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
+     *
+     */
+    @Override
+    public void setMember(Object fMember) {
+        if(!(fMember instanceof Organization) && !(fMember instanceof Person)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'member': " + fMember);
+        }
+        this.fMember = fMember;
+    }
+
+    private Text fMembershipNumber;
+
+    /**
+     * A unique identifier for the membership.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getMembershipNumber() {
+        return fMembershipNumber;
+    }
+
+    /**
+     * A unique identifier for the membership.
+     *
+     */
+    @Override
+    public void setMembershipNumber(Text fMembershipNumber) {
+        this.fMembershipNumber = fMembershipNumber;
+    }
+
+    private Organization fHostingOrganization;
+
+    /**
+     * The organization (airline, travelers' club, etc.) the membership is made with.
+     *
+     * @return {@link Organization}
+     */
+    @Override
+    public Organization getHostingOrganization() {
+        return fHostingOrganization;
+    }
+
+    /**
+     * The organization (airline, travelers' club, etc.) the membership is made with.
+     *
+     */
+    @Override
+    public void setHostingOrganization(Organization fHostingOrganization) {
+        this.fHostingOrganization = fHostingOrganization;
+    }
+
+    private Text fProgramName;
+
+    /**
+     * The program providing the membership.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getProgramName() {
+        return fProgramName;
+    }
+
+    /**
+     * The program providing the membership.
+     *
+     */
+    @Override
+    public void setProgramName(Text fProgramName) {
+        this.fProgramName = fProgramName;
+    }
+
+    private Object fMembers;
+
+    /**
+     * A member of this organization.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    @Override
+    public <T> T getMembers() {
+        return (T) fMembers;
+    }
+
+    /**
+     * A member of this organization.
+     *
+     */
+    @Override
+    public void setMembers(Object fMembers) {
+        if(!(fMembers instanceof Person) && !(fMembers instanceof Organization)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'members': " + fMembers);
+        }
+        this.fMembers = fMembers;
+    }
+
+    private Object fMainEntityOfPage;
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    @Override
+    public <T> T getMainEntityOfPage() {
+        return (T) fMainEntityOfPage;
+    }
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     */
+    @Override
+    public void setMainEntityOfPage(Object fMainEntityOfPage) {
+        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
+        }
+        this.fMainEntityOfPage = fMainEntityOfPage;
+    }
+
+    private Text fAlternateName;
+
+    /**
+     * An alias for the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getAlternateName() {
+        return fAlternateName;
+    }
+
+    /**
+     * An alias for the item.
+     *
+     */
+    @Override
+    public void setAlternateName(Text fAlternateName) {
+        this.fAlternateName = fAlternateName;
+    }
+
+    private Text fName;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getName() {
+        return fName;
+    }
+
+    /**
+     * The name of the item.
+     *
+     */
+    @Override
+    public void setName(Text fName) {
+        this.fName = fName;
+    }
+
+    private Action fPotentialAction;
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public Action getPotentialAction() {
+        return fPotentialAction;
+    }
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     */
+    @Override
+    public void setPotentialAction(Action fPotentialAction) {
+        this.fPotentialAction = fPotentialAction;
+    }
+
+    private Object fImage;
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link URL} or {@link ImageObject}
+     */
+    @Override
+    public <T> T getImage() {
+        return (T) fImage;
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     */
+    @Override
+    public void setImage(Object fImage) {
+        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
+        }
+        this.fImage = fImage;
+    }
+
+    private URL fUrl;
+
+    /**
+     * URL of the item.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getUrl() {
+        return fUrl;
+    }
+
+    /**
+     * URL of the item.
+     *
+     */
+    @Override
+    public void setUrl(URL fUrl) {
+        this.fUrl = fUrl;
+    }
+
+    private Text fDescription;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDescription() {
+        return fDescription;
+    }
+
+    /**
+     * A description of the item.
+     *
+     */
+    @Override
+    public void setDescription(Text fDescription) {
+        this.fDescription = fDescription;
+    }
+
     private Object fSubjectOf;
 
     /**
@@ -55,25 +347,25 @@ public class ProgramMembershipImpl implements ProgramMembership {
         this.fSubjectOf = fSubjectOf;
     }
 
-    private Text fName;
+    private URL fAdditionalType;
 
     /**
-     * The name of the item.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
-     * @return {@link Text}
+     * @return {@link URL}
      */
     @Override
-    public Text getName() {
-        return fName;
+    public URL getAdditionalType() {
+        return fAdditionalType;
     }
 
     /**
-     * The name of the item.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
      */
     @Override
-    public void setName(Text fName) {
-        this.fName = fName;
+    public void setAdditionalType(URL fAdditionalType) {
+        this.fAdditionalType = fAdditionalType;
     }
 
     private Text fDisambiguatingDescription;
@@ -95,30 +387,6 @@ public class ProgramMembershipImpl implements ProgramMembership {
     @Override
     public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
         this.fDisambiguatingDescription = fDisambiguatingDescription;
-    }
-
-    private Object fImage;
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link URL} or {@link ImageObject}
-     */
-    @Override
-    public <T> T getImage() {
-        return (T) fImage;
-    }
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     */
-    @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
-        this.fImage = fImage;
     }
 
     private URL fSameAs;
@@ -166,273 +434,5 @@ public class ProgramMembershipImpl implements ProgramMembership {
             throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
         }
         this.fIdentifier = fIdentifier;
-    }
-
-    private Text fMembershipNumber;
-
-    /**
-     * A unique identifier for the membership.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getMembershipNumber() {
-        return fMembershipNumber;
-    }
-
-    /**
-     * A unique identifier for the membership.
-     *
-     */
-    @Override
-    public void setMembershipNumber(Text fMembershipNumber) {
-        this.fMembershipNumber = fMembershipNumber;
-    }
-
-    private Text fProgramName;
-
-    /**
-     * The program providing the membership.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getProgramName() {
-        return fProgramName;
-    }
-
-    /**
-     * The program providing the membership.
-     *
-     */
-    @Override
-    public void setProgramName(Text fProgramName) {
-        this.fProgramName = fProgramName;
-    }
-
-    private Object fMembershipPointsEarned;
-
-    /**
-     * The number of membership points earned by the member. If necessary, the unitText can be used to express the units the points are issued in. (e.g. stars, miles, etc.)
-     *
-     * @return {@link Number} or {@link QuantitativeValue}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2085">https://github.com/schemaorg/schemaorg/issues/2085</a>
-     */
-    @Override
-    public <T> T getMembershipPointsEarned() {
-        return (T) fMembershipPointsEarned;
-    }
-
-    /**
-     * The number of membership points earned by the member. If necessary, the unitText can be used to express the units the points are issued in. (e.g. stars, miles, etc.)
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2085">https://github.com/schemaorg/schemaorg/issues/2085</a>
-     */
-    @Override
-    public void setMembershipPointsEarned(Object fMembershipPointsEarned) {
-        if(!(fMembershipPointsEarned instanceof Number) && !(fMembershipPointsEarned instanceof QuantitativeValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'membershipPointsEarned': " + fMembershipPointsEarned);
-        }
-        this.fMembershipPointsEarned = fMembershipPointsEarned;
-    }
-
-    private Text fAlternateName;
-
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getAlternateName() {
-        return fAlternateName;
-    }
-
-    /**
-     * An alias for the item.
-     *
-     */
-    @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
-    }
-
-    private Object fMainEntityOfPage;
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     */
-    @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
-        }
-        this.fMainEntityOfPage = fMainEntityOfPage;
-    }
-
-    private Organization fHostingOrganization;
-
-    /**
-     * The organization (airline, travelers' club, etc.) the membership is made with.
-     *
-     * @return {@link Organization}
-     */
-    @Override
-    public Organization getHostingOrganization() {
-        return fHostingOrganization;
-    }
-
-    /**
-     * The organization (airline, travelers' club, etc.) the membership is made with.
-     *
-     */
-    @Override
-    public void setHostingOrganization(Organization fHostingOrganization) {
-        this.fHostingOrganization = fHostingOrganization;
-    }
-
-    private Object fMembers;
-
-    /**
-     * A member of this organization.
-     *
-     * @return {@link Person} or {@link Organization}
-     */
-    @Override
-    public <T> T getMembers() {
-        return (T) fMembers;
-    }
-
-    /**
-     * A member of this organization.
-     *
-     */
-    @Override
-    public void setMembers(Object fMembers) {
-        if(!(fMembers instanceof Person) && !(fMembers instanceof Organization)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'members': " + fMembers);
-        }
-        this.fMembers = fMembers;
-    }
-
-    private URL fUrl;
-
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getUrl() {
-        return fUrl;
-    }
-
-    /**
-     * URL of the item.
-     *
-     */
-    @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
-    }
-
-    private URL fAdditionalType;
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getAdditionalType() {
-        return fAdditionalType;
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     */
-    @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
-    }
-
-    private Text fDescription;
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDescription() {
-        return fDescription;
-    }
-
-    /**
-     * A description of the item.
-     *
-     */
-    @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
-    }
-
-    private Action fPotentialAction;
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
-    @Override
-    public Action getPotentialAction() {
-        return fPotentialAction;
-    }
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     */
-    @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
-    }
-
-    private Object fMember;
-
-    /**
-     * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    @Override
-    public <T> T getMember() {
-        return (T) fMember;
-    }
-
-    /**
-     * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
-     *
-     */
-    @Override
-    public void setMember(Object fMember) {
-        if(!(fMember instanceof Organization) && !(fMember instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'member': " + fMember);
-        }
-        this.fMember = fMember;
     }
 }

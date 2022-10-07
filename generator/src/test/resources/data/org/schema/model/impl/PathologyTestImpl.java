@@ -40,6 +40,223 @@ import org.schema.model.PathologyTest;
 @JsonLdTypeName("schema:PathologyTest")
 public class PathologyTestImpl implements PathologyTest {
 
+    private Text fTissueSample;
+
+    /**
+     * The type of tissue sample required for the test.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public Text getTissueSample() {
+        return fTissueSample;
+    }
+
+    /**
+     * The type of tissue sample required for the test.
+     *
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void setTissueSample(Text fTissueSample) {
+        this.fTissueSample = fTissueSample;
+    }
+
+    private MedicalCondition fUsedToDiagnose;
+
+    /**
+     * A condition the test is used to diagnose.
+     *
+     * @return {@link MedicalCondition}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public MedicalCondition getUsedToDiagnose() {
+        return fUsedToDiagnose;
+    }
+
+    /**
+     * A condition the test is used to diagnose.
+     *
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void setUsedToDiagnose(MedicalCondition fUsedToDiagnose) {
+        this.fUsedToDiagnose = fUsedToDiagnose;
+    }
+
+    private Drug fAffectedBy;
+
+    /**
+     * Drugs that affect the test's results.
+     *
+     * @return {@link Drug}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public Drug getAffectedBy() {
+        return fAffectedBy;
+    }
+
+    /**
+     * Drugs that affect the test's results.
+     *
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void setAffectedBy(Drug fAffectedBy) {
+        this.fAffectedBy = fAffectedBy;
+    }
+
+    private Object fNormalRange;
+
+    /**
+     * Range of acceptable values for a typical patient, when applicable.
+     *
+     * @return {@link Text} or {@link MedicalEnumeration}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public <T> T getNormalRange() {
+        return (T) fNormalRange;
+    }
+
+    /**
+     * Range of acceptable values for a typical patient, when applicable.
+     *
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void setNormalRange(Object fNormalRange) {
+        if(!(fNormalRange instanceof Text) && !(fNormalRange instanceof MedicalEnumeration)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'normalRange': " + fNormalRange);
+        }
+        this.fNormalRange = fNormalRange;
+    }
+
+    private MedicalSign fSignDetected;
+
+    /**
+     * A sign detected by the test.
+     *
+     * @return {@link MedicalSign}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public MedicalSign getSignDetected() {
+        return fSignDetected;
+    }
+
+    /**
+     * A sign detected by the test.
+     *
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void setSignDetected(MedicalSign fSignDetected) {
+        this.fSignDetected = fSignDetected;
+    }
+
+    private MedicalDevice fUsesDevice;
+
+    /**
+     * Device used to perform the test.
+     *
+     * @return {@link MedicalDevice}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public MedicalDevice getUsesDevice() {
+        return fUsesDevice;
+    }
+
+    /**
+     * Device used to perform the test.
+     *
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void setUsesDevice(MedicalDevice fUsesDevice) {
+        this.fUsesDevice = fUsesDevice;
+    }
+
+    private Object fLegalStatus;
+
+    /**
+     * The drug or supplement's legal status, including any controlled substance schedules that apply.
+     *
+     * @return {@link DrugLegalStatus} or {@link Text} or {@link MedicalEnumeration}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public <T> T getLegalStatus() {
+        return (T) fLegalStatus;
+    }
+
+    /**
+     * The drug or supplement's legal status, including any controlled substance schedules that apply.
+     *
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void setLegalStatus(Object fLegalStatus) {
+        if(!(fLegalStatus instanceof DrugLegalStatus) && !(fLegalStatus instanceof Text) && !(fLegalStatus instanceof MedicalEnumeration)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'legalStatus': " + fLegalStatus);
+        }
+        this.fLegalStatus = fLegalStatus;
+    }
+
+    private Grant fFunding;
+
+    /**
+     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
+     *
+     * @return {@link Grant}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    @Override
+    public Grant getFunding() {
+        return fFunding;
+    }
+
+    /**
+     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    @Override
+    public void setFunding(Grant fFunding) {
+        this.fFunding = fFunding;
+    }
+
+    private MedicalStudy fStudy;
+
+    /**
+     * A medical study or trial related to this entity.
+     *
+     * @return {@link MedicalStudy}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public MedicalStudy getStudy() {
+        return fStudy;
+    }
+
+    /**
+     * A medical study or trial related to this entity.
+     *
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void setStudy(MedicalStudy fStudy) {
+        this.fStudy = fStudy;
+    }
+
     private MedicalCode fCode;
 
     /**
@@ -86,51 +303,73 @@ public class PathologyTestImpl implements PathologyTest {
         this.fGuideline = fGuideline;
     }
 
-    private Object fLegalStatus;
+    private Organization fRecognizingAuthority;
 
     /**
-     * The drug or supplement's legal status, including any controlled substance schedules that apply.
+     * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
      *
-     * @return {@link DrugLegalStatus} or {@link Text} or {@link MedicalEnumeration}
+     * @return {@link Organization}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public <T> T getLegalStatus() {
-        return (T) fLegalStatus;
+    public Organization getRecognizingAuthority() {
+        return fRecognizingAuthority;
     }
 
     /**
-     * The drug or supplement's legal status, including any controlled substance schedules that apply.
+     * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
      *
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setLegalStatus(Object fLegalStatus) {
-        if(!(fLegalStatus instanceof DrugLegalStatus) && !(fLegalStatus instanceof Text) && !(fLegalStatus instanceof MedicalEnumeration)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'legalStatus': " + fLegalStatus);
-        }
-        this.fLegalStatus = fLegalStatus;
+    public void setRecognizingAuthority(Organization fRecognizingAuthority) {
+        this.fRecognizingAuthority = fRecognizingAuthority;
     }
 
-    private Text fAlternateName;
+    private MedicineSystem fMedicineSystem;
 
     /**
-     * An alias for the item.
+     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
      *
-     * @return {@link Text}
+     * @return {@link MedicineSystem}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public Text getAlternateName() {
-        return fAlternateName;
+    public MedicineSystem getMedicineSystem() {
+        return fMedicineSystem;
     }
 
     /**
-     * An alias for the item.
+     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
      *
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
+    public void setMedicineSystem(MedicineSystem fMedicineSystem) {
+        this.fMedicineSystem = fMedicineSystem;
+    }
+
+    private MedicalSpecialty fRelevantSpecialty;
+
+    /**
+     * If applicable, a medical specialty in which this entity is relevant.
+     *
+     * @return {@link MedicalSpecialty}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public MedicalSpecialty getRelevantSpecialty() {
+        return fRelevantSpecialty;
+    }
+
+    /**
+     * If applicable, a medical specialty in which this entity is relevant.
+     *
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void setRelevantSpecialty(MedicalSpecialty fRelevantSpecialty) {
+        this.fRelevantSpecialty = fRelevantSpecialty;
     }
 
     private Object fMainEntityOfPage;
@@ -157,27 +396,46 @@ public class PathologyTestImpl implements PathologyTest {
         this.fMainEntityOfPage = fMainEntityOfPage;
     }
 
-    private Organization fRecognizingAuthority;
+    private Text fAlternateName;
 
     /**
-     * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
+     * An alias for the item.
      *
-     * @return {@link Organization}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     * @return {@link Text}
      */
     @Override
-    public Organization getRecognizingAuthority() {
-        return fRecognizingAuthority;
+    public Text getAlternateName() {
+        return fAlternateName;
     }
 
     /**
-     * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
+     * An alias for the item.
      *
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setRecognizingAuthority(Organization fRecognizingAuthority) {
-        this.fRecognizingAuthority = fRecognizingAuthority;
+    public void setAlternateName(Text fAlternateName) {
+        this.fAlternateName = fAlternateName;
+    }
+
+    private Text fName;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getName() {
+        return fName;
+    }
+
+    /**
+     * The name of the item.
+     *
+     */
+    @Override
+    public void setName(Text fName) {
+        this.fName = fName;
     }
 
     private Action fPotentialAction;
@@ -201,50 +459,70 @@ public class PathologyTestImpl implements PathologyTest {
         this.fPotentialAction = fPotentialAction;
     }
 
-    private MedicalSpecialty fRelevantSpecialty;
+    private Object fImage;
 
     /**
-     * If applicable, a medical specialty in which this entity is relevant.
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @return {@link MedicalSpecialty}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     * @return {@link URL} or {@link ImageObject}
      */
     @Override
-    public MedicalSpecialty getRelevantSpecialty() {
-        return fRelevantSpecialty;
+    public <T> T getImage() {
+        return (T) fImage;
     }
 
     /**
-     * If applicable, a medical specialty in which this entity is relevant.
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setRelevantSpecialty(MedicalSpecialty fRelevantSpecialty) {
-        this.fRelevantSpecialty = fRelevantSpecialty;
+    public void setImage(Object fImage) {
+        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
+        }
+        this.fImage = fImage;
     }
 
-    private MedicalCondition fUsedToDiagnose;
+    private URL fUrl;
 
     /**
-     * A condition the test is used to diagnose.
+     * URL of the item.
      *
-     * @return {@link MedicalCondition}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     * @return {@link URL}
      */
     @Override
-    public MedicalCondition getUsedToDiagnose() {
-        return fUsedToDiagnose;
+    public URL getUrl() {
+        return fUrl;
     }
 
     /**
-     * A condition the test is used to diagnose.
+     * URL of the item.
      *
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setUsedToDiagnose(MedicalCondition fUsedToDiagnose) {
-        this.fUsedToDiagnose = fUsedToDiagnose;
+    public void setUrl(URL fUrl) {
+        this.fUrl = fUrl;
+    }
+
+    private Text fDescription;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDescription() {
+        return fDescription;
+    }
+
+    /**
+     * A description of the item.
+     *
+     */
+    @Override
+    public void setDescription(Text fDescription) {
+        this.fDescription = fDescription;
     }
 
     private Object fSubjectOf;
@@ -273,25 +551,25 @@ public class PathologyTestImpl implements PathologyTest {
         this.fSubjectOf = fSubjectOf;
     }
 
-    private Text fName;
+    private URL fAdditionalType;
 
     /**
-     * The name of the item.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
-     * @return {@link Text}
+     * @return {@link URL}
      */
     @Override
-    public Text getName() {
-        return fName;
+    public URL getAdditionalType() {
+        return fAdditionalType;
     }
 
     /**
-     * The name of the item.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
      */
     @Override
-    public void setName(Text fName) {
-        this.fName = fName;
+    public void setAdditionalType(URL fAdditionalType) {
+        this.fAdditionalType = fAdditionalType;
     }
 
     private Text fDisambiguatingDescription;
@@ -315,30 +593,6 @@ public class PathologyTestImpl implements PathologyTest {
         this.fDisambiguatingDescription = fDisambiguatingDescription;
     }
 
-    private Object fImage;
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link URL} or {@link ImageObject}
-     */
-    @Override
-    public <T> T getImage() {
-        return (T) fImage;
-    }
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     */
-    @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
-        this.fImage = fImage;
-    }
-
     private URL fSameAs;
 
     /**
@@ -358,52 +612,6 @@ public class PathologyTestImpl implements PathologyTest {
     @Override
     public void setSameAs(URL fSameAs) {
         this.fSameAs = fSameAs;
-    }
-
-    private Drug fAffectedBy;
-
-    /**
-     * Drugs that affect the test's results.
-     *
-     * @return {@link Drug}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public Drug getAffectedBy() {
-        return fAffectedBy;
-    }
-
-    /**
-     * Drugs that affect the test's results.
-     *
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setAffectedBy(Drug fAffectedBy) {
-        this.fAffectedBy = fAffectedBy;
-    }
-
-    private MedicineSystem fMedicineSystem;
-
-    /**
-     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
-     *
-     * @return {@link MedicineSystem}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public MedicineSystem getMedicineSystem() {
-        return fMedicineSystem;
-    }
-
-    /**
-     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
-     *
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setMedicineSystem(MedicineSystem fMedicineSystem) {
-        this.fMedicineSystem = fMedicineSystem;
     }
 
     private Object fIdentifier;
@@ -430,213 +638,5 @@ public class PathologyTestImpl implements PathologyTest {
             throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
         }
         this.fIdentifier = fIdentifier;
-    }
-
-    private MedicalDevice fUsesDevice;
-
-    /**
-     * Device used to perform the test.
-     *
-     * @return {@link MedicalDevice}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public MedicalDevice getUsesDevice() {
-        return fUsesDevice;
-    }
-
-    /**
-     * Device used to perform the test.
-     *
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setUsesDevice(MedicalDevice fUsesDevice) {
-        this.fUsesDevice = fUsesDevice;
-    }
-
-    private Text fTissueSample;
-
-    /**
-     * The type of tissue sample required for the test.
-     *
-     * @return {@link Text}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public Text getTissueSample() {
-        return fTissueSample;
-    }
-
-    /**
-     * The type of tissue sample required for the test.
-     *
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setTissueSample(Text fTissueSample) {
-        this.fTissueSample = fTissueSample;
-    }
-
-    private Grant fFunding;
-
-    /**
-     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
-     *
-     * @return {@link Grant}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     */
-    @Override
-    public Grant getFunding() {
-        return fFunding;
-    }
-
-    /**
-     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     */
-    @Override
-    public void setFunding(Grant fFunding) {
-        this.fFunding = fFunding;
-    }
-
-    private URL fUrl;
-
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getUrl() {
-        return fUrl;
-    }
-
-    /**
-     * URL of the item.
-     *
-     */
-    @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
-    }
-
-    private MedicalSign fSignDetected;
-
-    /**
-     * A sign detected by the test.
-     *
-     * @return {@link MedicalSign}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public MedicalSign getSignDetected() {
-        return fSignDetected;
-    }
-
-    /**
-     * A sign detected by the test.
-     *
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setSignDetected(MedicalSign fSignDetected) {
-        this.fSignDetected = fSignDetected;
-    }
-
-    private URL fAdditionalType;
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getAdditionalType() {
-        return fAdditionalType;
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     */
-    @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
-    }
-
-    private Text fDescription;
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDescription() {
-        return fDescription;
-    }
-
-    /**
-     * A description of the item.
-     *
-     */
-    @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
-    }
-
-    private MedicalStudy fStudy;
-
-    /**
-     * A medical study or trial related to this entity.
-     *
-     * @return {@link MedicalStudy}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public MedicalStudy getStudy() {
-        return fStudy;
-    }
-
-    /**
-     * A medical study or trial related to this entity.
-     *
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setStudy(MedicalStudy fStudy) {
-        this.fStudy = fStudy;
-    }
-
-    private Object fNormalRange;
-
-    /**
-     * Range of acceptable values for a typical patient, when applicable.
-     *
-     * @return {@link Text} or {@link MedicalEnumeration}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public <T> T getNormalRange() {
-        return (T) fNormalRange;
-    }
-
-    /**
-     * Range of acceptable values for a typical patient, when applicable.
-     *
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setNormalRange(Object fNormalRange) {
-        if(!(fNormalRange instanceof Text) && !(fNormalRange instanceof MedicalEnumeration)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'normalRange': " + fNormalRange);
-        }
-        this.fNormalRange = fNormalRange;
     }
 }

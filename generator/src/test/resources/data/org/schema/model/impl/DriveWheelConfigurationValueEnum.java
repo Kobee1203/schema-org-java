@@ -50,6 +50,60 @@ public enum DriveWheelConfigurationValueEnum implements DriveWheelConfigurationV
     }
 
     @Override
+    public <T> T getValueReference() {
+        return null;
+    }
+
+    @Override
+    public void setValueReference(Object fValueReference) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'valueReference': method not allowed for enum DriveWheelConfigurationValueEnum");
+    }
+    @Override
+    public QualitativeValue getGreaterOrEqual() {
+        return null;
+    }
+
+    @Override
+    public void setGreaterOrEqual(QualitativeValue fGreaterOrEqual) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'greaterOrEqual': method not allowed for enum DriveWheelConfigurationValueEnum");
+    }
+    @Override
+    public QualitativeValue getNonEqual() {
+        return null;
+    }
+
+    @Override
+    public void setNonEqual(QualitativeValue fNonEqual) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'nonEqual': method not allowed for enum DriveWheelConfigurationValueEnum");
+    }
+    @Override
+    public QualitativeValue getEqual() {
+        return null;
+    }
+
+    @Override
+    public void setEqual(QualitativeValue fEqual) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'equal': method not allowed for enum DriveWheelConfigurationValueEnum");
+    }
+    @Override
+    public QualitativeValue getLesser() {
+        return null;
+    }
+
+    @Override
+    public void setLesser(QualitativeValue fLesser) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'lesser': method not allowed for enum DriveWheelConfigurationValueEnum");
+    }
+    @Override
+    public QualitativeValue getGreater() {
+        return null;
+    }
+
+    @Override
+    public void setGreater(QualitativeValue fGreater) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'greater': method not allowed for enum DriveWheelConfigurationValueEnum");
+    }
+    @Override
     public PropertyValue getAdditionalProperty() {
         return null;
     }
@@ -77,85 +131,13 @@ public enum DriveWheelConfigurationValueEnum implements DriveWheelConfigurationV
         throw new java.lang.IllegalAccessError("Unable to set property 'supersededBy': method not allowed for enum DriveWheelConfigurationValueEnum");
     }
     @Override
-    public <T> T getSubjectOf() {
+    public <T> T getMainEntityOfPage() {
         return null;
     }
 
     @Override
-    public void setSubjectOf(Object fSubjectOf) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'subjectOf': method not allowed for enum DriveWheelConfigurationValueEnum");
-    }
-    @Override
-    public Text getName() {
-        return null;
-    }
-
-    @Override
-    public void setName(Text fName) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'name': method not allowed for enum DriveWheelConfigurationValueEnum");
-    }
-    @Override
-    public Text getDisambiguatingDescription() {
-        return null;
-    }
-
-    @Override
-    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'disambiguatingDescription': method not allowed for enum DriveWheelConfigurationValueEnum");
-    }
-    @Override
-    public <T> T getImage() {
-        return null;
-    }
-
-    @Override
-    public void setImage(Object fImage) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'image': method not allowed for enum DriveWheelConfigurationValueEnum");
-    }
-    @Override
-    public URL getSameAs() {
-        return null;
-    }
-
-    @Override
-    public void setSameAs(URL fSameAs) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'sameAs': method not allowed for enum DriveWheelConfigurationValueEnum");
-    }
-    @Override
-    public QualitativeValue getGreater() {
-        return null;
-    }
-
-    @Override
-    public void setGreater(QualitativeValue fGreater) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'greater': method not allowed for enum DriveWheelConfigurationValueEnum");
-    }
-    @Override
-    public <T> T getIdentifier() {
-        return null;
-    }
-
-    @Override
-    public void setIdentifier(Object fIdentifier) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum DriveWheelConfigurationValueEnum");
-    }
-    @Override
-    public QualitativeValue getGreaterOrEqual() {
-        return null;
-    }
-
-    @Override
-    public void setGreaterOrEqual(QualitativeValue fGreaterOrEqual) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'greaterOrEqual': method not allowed for enum DriveWheelConfigurationValueEnum");
-    }
-    @Override
-    public <T> T getValueReference() {
-        return null;
-    }
-
-    @Override
-    public void setValueReference(Object fValueReference) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'valueReference': method not allowed for enum DriveWheelConfigurationValueEnum");
+    public void setMainEntityOfPage(Object fMainEntityOfPage) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'mainEntityOfPage': method not allowed for enum DriveWheelConfigurationValueEnum");
     }
     @Override
     public Text getAlternateName() {
@@ -167,58 +149,13 @@ public enum DriveWheelConfigurationValueEnum implements DriveWheelConfigurationV
         throw new java.lang.IllegalAccessError("Unable to set property 'alternateName': method not allowed for enum DriveWheelConfigurationValueEnum");
     }
     @Override
-    public <T> T getMainEntityOfPage() {
+    public Text getName() {
         return null;
     }
 
     @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'mainEntityOfPage': method not allowed for enum DriveWheelConfigurationValueEnum");
-    }
-    @Override
-    public QualitativeValue getEqual() {
-        return null;
-    }
-
-    @Override
-    public void setEqual(QualitativeValue fEqual) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'equal': method not allowed for enum DriveWheelConfigurationValueEnum");
-    }
-    @Override
-    public URL getUrl() {
-        return null;
-    }
-
-    @Override
-    public void setUrl(URL fUrl) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'url': method not allowed for enum DriveWheelConfigurationValueEnum");
-    }
-    @Override
-    public URL getAdditionalType() {
-        return null;
-    }
-
-    @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'additionalType': method not allowed for enum DriveWheelConfigurationValueEnum");
-    }
-    @Override
-    public Text getDescription() {
-        return null;
-    }
-
-    @Override
-    public void setDescription(Text fDescription) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'description': method not allowed for enum DriveWheelConfigurationValueEnum");
-    }
-    @Override
-    public QualitativeValue getLesser() {
-        return null;
-    }
-
-    @Override
-    public void setLesser(QualitativeValue fLesser) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'lesser': method not allowed for enum DriveWheelConfigurationValueEnum");
+    public void setName(Text fName) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'name': method not allowed for enum DriveWheelConfigurationValueEnum");
     }
     @Override
     public Action getPotentialAction() {
@@ -230,12 +167,75 @@ public enum DriveWheelConfigurationValueEnum implements DriveWheelConfigurationV
         throw new java.lang.IllegalAccessError("Unable to set property 'potentialAction': method not allowed for enum DriveWheelConfigurationValueEnum");
     }
     @Override
-    public QualitativeValue getNonEqual() {
+    public <T> T getImage() {
         return null;
     }
 
     @Override
-    public void setNonEqual(QualitativeValue fNonEqual) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'nonEqual': method not allowed for enum DriveWheelConfigurationValueEnum");
+    public void setImage(Object fImage) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'image': method not allowed for enum DriveWheelConfigurationValueEnum");
+    }
+    @Override
+    public URL getUrl() {
+        return null;
+    }
+
+    @Override
+    public void setUrl(URL fUrl) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'url': method not allowed for enum DriveWheelConfigurationValueEnum");
+    }
+    @Override
+    public Text getDescription() {
+        return null;
+    }
+
+    @Override
+    public void setDescription(Text fDescription) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'description': method not allowed for enum DriveWheelConfigurationValueEnum");
+    }
+    @Override
+    public <T> T getSubjectOf() {
+        return null;
+    }
+
+    @Override
+    public void setSubjectOf(Object fSubjectOf) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'subjectOf': method not allowed for enum DriveWheelConfigurationValueEnum");
+    }
+    @Override
+    public URL getAdditionalType() {
+        return null;
+    }
+
+    @Override
+    public void setAdditionalType(URL fAdditionalType) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'additionalType': method not allowed for enum DriveWheelConfigurationValueEnum");
+    }
+    @Override
+    public Text getDisambiguatingDescription() {
+        return null;
+    }
+
+    @Override
+    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'disambiguatingDescription': method not allowed for enum DriveWheelConfigurationValueEnum");
+    }
+    @Override
+    public URL getSameAs() {
+        return null;
+    }
+
+    @Override
+    public void setSameAs(URL fSameAs) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'sameAs': method not allowed for enum DriveWheelConfigurationValueEnum");
+    }
+    @Override
+    public <T> T getIdentifier() {
+        return null;
+    }
+
+    @Override
+    public void setIdentifier(Object fIdentifier) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum DriveWheelConfigurationValueEnum");
     }
 }

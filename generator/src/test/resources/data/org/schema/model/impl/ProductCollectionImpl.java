@@ -74,899 +74,27 @@ import org.schema.model.ProductCollection;
 @JsonLdTypeName("schema:ProductCollection")
 public class ProductCollectionImpl implements ProductCollection {
 
-    private Boolean fIsAccessibleForFree;
+    private TypeAndQuantityNode fIncludesObject;
 
     /**
-     * A flag to signal that the item, event, or place is accessible for free.
+     * This links to a node or nodes indicating the exact quantity of the products included in  an [[Offer]] or [[ProductCollection]].
      *
-     * @return {@link Boolean}
-     */
-    @Override
-    public Boolean getIsAccessibleForFree() {
-        return fIsAccessibleForFree;
-    }
-
-    /**
-     * A flag to signal that the item, event, or place is accessible for free.
-     *
-     */
-    @Override
-    public void setIsAccessibleForFree(Boolean fIsAccessibleForFree) {
-        this.fIsAccessibleForFree = fIsAccessibleForFree;
-    }
-
-    private Text fAccessMode;
-
-    /**
-     * The human sensory perceptual system or cognitive faculty through which a person may process or perceive information. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessMode-vocabulary).
-     *
-     * @return {@link Text}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
-     */
-    @Override
-    public Text getAccessMode() {
-        return fAccessMode;
-    }
-
-    /**
-     * The human sensory perceptual system or cognitive faculty through which a person may process or perceive information. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessMode-vocabulary).
-     *
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
-     */
-    @Override
-    public void setAccessMode(Text fAccessMode) {
-        this.fAccessMode = fAccessMode;
-    }
-
-    private Object fCitation;
-
-    /**
-     * A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.
-     *
-     * @return {@link CreativeWork} or {@link Text}
-     */
-    @Override
-    public <T> T getCitation() {
-        return (T) fCitation;
-    }
-
-    /**
-     * A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.
-     *
-     */
-    @Override
-    public void setCitation(Object fCitation) {
-        if(!(fCitation instanceof CreativeWork) && !(fCitation instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'citation': " + fCitation);
-        }
-        this.fCitation = fCitation;
-    }
-
-    private Object fLogo;
-
-    /**
-     * An associated logo.
-     *
-     * @return {@link URL} or {@link ImageObject}
+     * @return {@link TypeAndQuantityNode}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public <T> T getLogo() {
-        return (T) fLogo;
+    public TypeAndQuantityNode getIncludesObject() {
+        return fIncludesObject;
     }
 
     /**
-     * An associated logo.
+     * This links to a node or nodes indicating the exact quantity of the products included in  an [[Offer]] or [[ProductCollection]].
      *
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setLogo(Object fLogo) {
-        if(!(fLogo instanceof URL) && !(fLogo instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'logo': " + fLogo);
-        }
-        this.fLogo = fLogo;
-    }
-
-    private Text fSku;
-
-    /**
-     * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
-     *
-     * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public Text getSku() {
-        return fSku;
-    }
-
-    /**
-     * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setSku(Text fSku) {
-        this.fSku = fSku;
-    }
-
-    private Text fGtin12;
-
-    /**
-     * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getGtin12() {
-        return fGtin12;
-    }
-
-    /**
-     * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
-     *
-     */
-    @Override
-    public void setGtin12(Text fGtin12) {
-        this.fGtin12 = fGtin12;
-    }
-
-    private Object fMainEntityOfPage;
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     */
-    @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
-        }
-        this.fMainEntityOfPage = fMainEntityOfPage;
-    }
-
-    private Text fGtin8;
-
-    /**
-     * The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
-     *
-     * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public Text getGtin8() {
-        return fGtin8;
-    }
-
-    /**
-     * The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setGtin8(Text fGtin8) {
-        this.fGtin8 = fGtin8;
-    }
-
-    private CreativeWork fWorkTranslation;
-
-    /**
-     * A work that is a translation of the content of this work. e.g. 西遊記 has an English workTranslation “Journey to the West”,a German workTranslation “Monkeys Pilgerfahrt” and a Vietnamese  translation Tây du ký bình khảo.
-     *
-     * @return {@link CreativeWork}
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
-     */
-    @Override
-    public CreativeWork getWorkTranslation() {
-        return fWorkTranslation;
-    }
-
-    /**
-     * A work that is a translation of the content of this work. e.g. 西遊記 has an English workTranslation “Journey to the West”,a German workTranslation “Monkeys Pilgerfahrt” and a Vietnamese  translation Tây du ký bình khảo.
-     *
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
-     */
-    @Override
-    public void setWorkTranslation(CreativeWork fWorkTranslation) {
-        this.fWorkTranslation = fWorkTranslation;
-    }
-
-    private Text fAlternativeHeadline;
-
-    /**
-     * A secondary title of the CreativeWork.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getAlternativeHeadline() {
-        return fAlternativeHeadline;
-    }
-
-    /**
-     * A secondary title of the CreativeWork.
-     *
-     */
-    @Override
-    public void setAlternativeHeadline(Text fAlternativeHeadline) {
-        this.fAlternativeHeadline = fAlternativeHeadline;
-    }
-
-    private Text fGtin13;
-
-    /**
-     * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
-     *
-     * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public Text getGtin13() {
-        return fGtin13;
-    }
-
-    /**
-     * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setGtin13(Text fGtin13) {
-        this.fGtin13 = fGtin13;
-    }
-
-    private Object fWidth;
-
-    /**
-     * The width of the item.
-     *
-     * @return {@link QuantitativeValue} or {@link Distance}
-     */
-    @Override
-    public <T> T getWidth() {
-        return (T) fWidth;
-    }
-
-    /**
-     * The width of the item.
-     *
-     */
-    @Override
-    public void setWidth(Object fWidth) {
-        if(!(fWidth instanceof QuantitativeValue) && !(fWidth instanceof Distance)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'width': " + fWidth);
-        }
-        this.fWidth = fWidth;
-    }
-
-    private Claim fInterpretedAsClaim;
-
-    /**
-     * Used to indicate a specific claim contained, implied, translated or refined from the content of a [[MediaObject]] or other [[CreativeWork]]. The interpreting party can be indicated using [[claimInterpreter]].
-     *
-     * @return {@link Claim}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
-     */
-    @Override
-    public Claim getInterpretedAsClaim() {
-        return fInterpretedAsClaim;
-    }
-
-    /**
-     * Used to indicate a specific claim contained, implied, translated or refined from the content of a [[MediaObject]] or other [[CreativeWork]]. The interpreting party can be indicated using [[claimInterpreter]].
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
-     */
-    @Override
-    public void setInterpretedAsClaim(Claim fInterpretedAsClaim) {
-        this.fInterpretedAsClaim = fInterpretedAsClaim;
-    }
-
-    private MediaObject fEncodings;
-
-    /**
-     * A media object that encodes this CreativeWork.
-     *
-     * @return {@link MediaObject}
-     */
-    @Override
-    public MediaObject getEncodings() {
-        return fEncodings;
-    }
-
-    /**
-     * A media object that encodes this CreativeWork.
-     *
-     */
-    @Override
-    public void setEncodings(MediaObject fEncodings) {
-        this.fEncodings = fEncodings;
-    }
-
-    private Object fArchivedAt;
-
-    /**
-     * Indicates a page or other link involved in archival of a [[CreativeWork]]. In the case of [[MediaReview]], the items in a [[MediaReviewItem]] may often become inaccessible, but be archived by archival, journalistic, activist, or law enforcement organizations. In such cases, the referenced page may not directly publish the content.
-     *
-     * @return {@link WebPage} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
-     */
-    @Override
-    public <T> T getArchivedAt() {
-        return (T) fArchivedAt;
-    }
-
-    /**
-     * Indicates a page or other link involved in archival of a [[CreativeWork]]. In the case of [[MediaReview]], the items in a [[MediaReviewItem]] may often become inaccessible, but be archived by archival, journalistic, activist, or law enforcement organizations. In such cases, the referenced page may not directly publish the content.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
-     */
-    @Override
-    public void setArchivedAt(Object fArchivedAt) {
-        if(!(fArchivedAt instanceof WebPage) && !(fArchivedAt instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'archivedAt': " + fArchivedAt);
-        }
-        this.fArchivedAt = fArchivedAt;
-    }
-
-    private Object fMaterial;
-
-    /**
-     * A material that something is made from, e.g. leather, wool, cotton, paper.
-     *
-     * @return {@link Text} or {@link URL} or {@link Product}
-     */
-    @Override
-    public <T> T getMaterial() {
-        return (T) fMaterial;
-    }
-
-    /**
-     * A material that something is made from, e.g. leather, wool, cotton, paper.
-     *
-     */
-    @Override
-    public void setMaterial(Object fMaterial) {
-        if(!(fMaterial instanceof Text) && !(fMaterial instanceof URL) && !(fMaterial instanceof Product)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'material': " + fMaterial);
-        }
-        this.fMaterial = fMaterial;
-    }
-
-    private Object fTranslator;
-
-    /**
-     * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
-     *
-     * @return {@link Person} or {@link Organization}
-     */
-    @Override
-    public <T> T getTranslator() {
-        return (T) fTranslator;
-    }
-
-    /**
-     * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
-     *
-     */
-    @Override
-    public void setTranslator(Object fTranslator) {
-        if(!(fTranslator instanceof Person) && !(fTranslator instanceof Organization)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'translator': " + fTranslator);
-        }
-        this.fTranslator = fTranslator;
-    }
-
-    private AggregateRating fAggregateRating;
-
-    /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
-     *
-     * @return {@link AggregateRating}
-     */
-    @Override
-    public AggregateRating getAggregateRating() {
-        return fAggregateRating;
-    }
-
-    /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
-     *
-     */
-    @Override
-    public void setAggregateRating(AggregateRating fAggregateRating) {
-        this.fAggregateRating = fAggregateRating;
-    }
-
-    private Text fName;
-
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getName() {
-        return fName;
-    }
-
-    /**
-     * The name of the item.
-     *
-     */
-    @Override
-    public void setName(Text fName) {
-        this.fName = fName;
-    }
-
-    private PublicationEvent fReleasedEvent;
-
-    /**
-     * The place and time the release was issued, expressed as a PublicationEvent.
-     *
-     * @return {@link PublicationEvent}
-     */
-    @Override
-    public PublicationEvent getReleasedEvent() {
-        return fReleasedEvent;
-    }
-
-    /**
-     * The place and time the release was issued, expressed as a PublicationEvent.
-     *
-     */
-    @Override
-    public void setReleasedEvent(PublicationEvent fReleasedEvent) {
-        this.fReleasedEvent = fReleasedEvent;
-    }
-
-    private Text fAccessibilityControl;
-
-    /**
-     * Identifies input methods that are sufficient to fully control the described resource. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityControl-vocabulary).
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getAccessibilityControl() {
-        return fAccessibilityControl;
-    }
-
-    /**
-     * Identifies input methods that are sufficient to fully control the described resource. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityControl-vocabulary).
-     *
-     */
-    @Override
-    public void setAccessibilityControl(Text fAccessibilityControl) {
-        this.fAccessibilityControl = fAccessibilityControl;
-    }
-
-    private Object fOffers;
-
-    /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
-     *
-     * @return {@link Offer} or {@link Demand}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    @Override
-    public <T> T getOffers() {
-        return (T) fOffers;
-    }
-
-    /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
-     *
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    @Override
-    public void setOffers(Object fOffers) {
-        if(!(fOffers instanceof Offer) && !(fOffers instanceof Demand)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'offers': " + fOffers);
-        }
-        this.fOffers = fOffers;
-    }
-
-    private URL fDiscussionUrl;
-
-    /**
-     * A link to the page containing the comments of the CreativeWork.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getDiscussionUrl() {
-        return fDiscussionUrl;
-    }
-
-    /**
-     * A link to the page containing the comments of the CreativeWork.
-     *
-     */
-    @Override
-    public void setDiscussionUrl(URL fDiscussionUrl) {
-        this.fDiscussionUrl = fDiscussionUrl;
-    }
-
-    private Object fAudio;
-
-    /**
-     * An embedded audio object.
-     *
-     * @return {@link AudioObject} or {@link MusicRecording} or {@link Clip}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2420">https://github.com/schemaorg/schemaorg/issues/2420</a>
-     */
-    @Override
-    public <T> T getAudio() {
-        return (T) fAudio;
-    }
-
-    /**
-     * An embedded audio object.
-     *
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2420">https://github.com/schemaorg/schemaorg/issues/2420</a>
-     */
-    @Override
-    public void setAudio(Object fAudio) {
-        if(!(fAudio instanceof AudioObject) && !(fAudio instanceof MusicRecording) && !(fAudio instanceof Clip)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'audio': " + fAudio);
-        }
-        this.fAudio = fAudio;
-    }
-
-    private Object fIsSimilarTo;
-
-    /**
-     * A pointer to another, functionally similar product (or multiple products).
-     *
-     * @return {@link Service} or {@link Product}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public <T> T getIsSimilarTo() {
-        return (T) fIsSimilarTo;
-    }
-
-    /**
-     * A pointer to another, functionally similar product (or multiple products).
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setIsSimilarTo(Object fIsSimilarTo) {
-        if(!(fIsSimilarTo instanceof Service) && !(fIsSimilarTo instanceof Product)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'isSimilarTo': " + fIsSimilarTo);
-        }
-        this.fIsSimilarTo = fIsSimilarTo;
-    }
-
-    private CreativeWork fWorkExample;
-
-    /**
-     * Example/instance/realization/derivation of the concept of this creative work. eg. The paperback edition, first edition, or eBook.
-     *
-     * @return {@link CreativeWork}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
-     */
-    @Override
-    public CreativeWork getWorkExample() {
-        return fWorkExample;
-    }
-
-    /**
-     * Example/instance/realization/derivation of the concept of this creative work. eg. The paperback edition, first edition, or eBook.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
-     */
-    @Override
-    public void setWorkExample(CreativeWork fWorkExample) {
-        this.fWorkExample = fWorkExample;
-    }
-
-    private Grant fFunding;
-
-    /**
-     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
-     *
-     * @return {@link Grant}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     */
-    @Override
-    public Grant getFunding() {
-        return fFunding;
-    }
-
-    /**
-     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     */
-    @Override
-    public void setFunding(Grant fFunding) {
-        this.fFunding = fFunding;
-    }
-
-    private Object fGenre;
-
-    /**
-     * Genre of the creative work, broadcast channel or group.
-     *
-     * @return {@link URL} or {@link Text}
-     */
-    @Override
-    public <T> T getGenre() {
-        return (T) fGenre;
-    }
-
-    /**
-     * Genre of the creative work, broadcast channel or group.
-     *
-     */
-    @Override
-    public void setGenre(Object fGenre) {
-        if(!(fGenre instanceof URL) && !(fGenre instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'genre': " + fGenre);
-        }
-        this.fGenre = fGenre;
-    }
-
-    private Text fInProductGroupWithID;
-
-    /**
-     * Indicates the [[productGroupID]] for a [[ProductGroup]] that this product [[isVariantOf]]. 
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
-     */
-    @Override
-    public Text getInProductGroupWithID() {
-        return fInProductGroupWithID;
-    }
-
-    /**
-     * Indicates the [[productGroupID]] for a [[ProductGroup]] that this product [[isVariantOf]]. 
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
-     */
-    @Override
-    public void setInProductGroupWithID(Text fInProductGroupWithID) {
-        this.fInProductGroupWithID = fInProductGroupWithID;
-    }
-
-    private MerchantReturnPolicy fHasMerchantReturnPolicy;
-
-    /**
-     * Specifies a MerchantReturnPolicy that may be applicable.
-     *
-     * @return {@link MerchantReturnPolicy}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    @Override
-    public MerchantReturnPolicy getHasMerchantReturnPolicy() {
-        return fHasMerchantReturnPolicy;
-    }
-
-    /**
-     * Specifies a MerchantReturnPolicy that may be applicable.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    @Override
-    public void setHasMerchantReturnPolicy(MerchantReturnPolicy fHasMerchantReturnPolicy) {
-        this.fHasMerchantReturnPolicy = fHasMerchantReturnPolicy;
-    }
-
-    private Text fColor;
-
-    /**
-     * The color of the product.
-     *
-     * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public Text getColor() {
-        return fColor;
-    }
-
-    /**
-     * The color of the product.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setColor(Text fColor) {
-        this.fColor = fColor;
-    }
-
-    private Audience fAudience;
-
-    /**
-     * An intended audience, i.e. a group for whom something was created.
-     *
-     * @return {@link Audience}
-     */
-    @Override
-    public Audience getAudience() {
-        return fAudience;
-    }
-
-    /**
-     * An intended audience, i.e. a group for whom something was created.
-     *
-     */
-    @Override
-    public void setAudience(Audience fAudience) {
-        this.fAudience = fAudience;
-    }
-
-    private Place fContentLocation;
-
-    /**
-     * The location depicted or described in the content. For example, the location in a photograph or painting.
-     *
-     * @return {@link Place}
-     */
-    @Override
-    public Place getContentLocation() {
-        return fContentLocation;
-    }
-
-    /**
-     * The location depicted or described in the content. For example, the location in a photograph or painting.
-     *
-     */
-    @Override
-    public void setContentLocation(Place fContentLocation) {
-        this.fContentLocation = fContentLocation;
-    }
-
-    private Object fAssesses;
-
-    /**
-     * The item being described is intended to assess the competency or learning outcome defined by the referenced term.
-     *
-     * @return {@link Text} or {@link DefinedTerm}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
-     */
-    @Override
-    public <T> T getAssesses() {
-        return (T) fAssesses;
-    }
-
-    /**
-     * The item being described is intended to assess the competency or learning outcome defined by the referenced term.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
-     */
-    @Override
-    public void setAssesses(Object fAssesses) {
-        if(!(fAssesses instanceof Text) && !(fAssesses instanceof DefinedTerm)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'assesses': " + fAssesses);
-        }
-        this.fAssesses = fAssesses;
-    }
-
-    private DateTime fContentReferenceTime;
-
-    /**
-     * The specific time described by a creative work, for works (e.g. articles, video objects etc.) that emphasise a particular moment within an Event.
-     *
-     * @return {@link DateTime}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1050">https://github.com/schemaorg/schemaorg/issues/1050</a>
-     */
-    @Override
-    public DateTime getContentReferenceTime() {
-        return fContentReferenceTime;
-    }
-
-    /**
-     * The specific time described by a creative work, for works (e.g. articles, video objects etc.) that emphasise a particular moment within an Event.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1050">https://github.com/schemaorg/schemaorg/issues/1050</a>
-     */
-    @Override
-    public void setContentReferenceTime(DateTime fContentReferenceTime) {
-        this.fContentReferenceTime = fContentReferenceTime;
-    }
-
-    private Date fProductionDate;
-
-    /**
-     * The date of production of the item, e.g. vehicle.
-     *
-     * @return {@link Date}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public Date getProductionDate() {
-        return fProductionDate;
-    }
-
-    /**
-     * The date of production of the item, e.g. vehicle.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void setProductionDate(Date fProductionDate) {
-        this.fProductionDate = fProductionDate;
-    }
-
-    private Object fIsVariantOf;
-
-    /**
-     * Indicates the kind of product that this is a variant of. In the case of [[ProductModel]], this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a [[ProductGroup]], the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with [[ProductGroup]], this property can apply to any [[Product]] included in the group.
-     *
-     * @return {@link ProductModel} or {@link ProductGroup}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public <T> T getIsVariantOf() {
-        return (T) fIsVariantOf;
-    }
-
-    /**
-     * Indicates the kind of product that this is a variant of. In the case of [[ProductModel]], this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a [[ProductGroup]], the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with [[ProductGroup]], this property can apply to any [[Product]] included in the group.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setIsVariantOf(Object fIsVariantOf) {
-        if(!(fIsVariantOf instanceof ProductModel) && !(fIsVariantOf instanceof ProductGroup)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'isVariantOf': " + fIsVariantOf);
-        }
-        this.fIsVariantOf = fIsVariantOf;
-    }
-
-    private Text fHeadline;
-
-    /**
-     * Headline of the article.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getHeadline() {
-        return fHeadline;
-    }
-
-    /**
-     * Headline of the article.
-     *
-     */
-    @Override
-    public void setHeadline(Text fHeadline) {
-        this.fHeadline = fHeadline;
+    public void setIncludesObject(TypeAndQuantityNode fIncludesObject) {
+        this.fIncludesObject = fIncludesObject;
     }
 
     private Product fIsAccessoryOrSparePartFor;
@@ -990,203 +118,6 @@ public class ProductCollectionImpl implements ProductCollection {
     @Override
     public void setIsAccessoryOrSparePartFor(Product fIsAccessoryOrSparePartFor) {
         this.fIsAccessoryOrSparePartFor = fIsAccessoryOrSparePartFor;
-    }
-
-    private Organization fManufacturer;
-
-    /**
-     * The manufacturer of the product.
-     *
-     * @return {@link Organization}
-     */
-    @Override
-    public Organization getManufacturer() {
-        return fManufacturer;
-    }
-
-    /**
-     * The manufacturer of the product.
-     *
-     */
-    @Override
-    public void setManufacturer(Organization fManufacturer) {
-        this.fManufacturer = fManufacturer;
-    }
-
-    private Object fDateModified;
-
-    /**
-     * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
-     *
-     * @return {@link DateTime} or {@link Date}
-     */
-    @Override
-    public <T> T getDateModified() {
-        return (T) fDateModified;
-    }
-
-    /**
-     * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
-     *
-     */
-    @Override
-    public void setDateModified(Object fDateModified) {
-        if(!(fDateModified instanceof DateTime) && !(fDateModified instanceof Date)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'dateModified': " + fDateModified);
-        }
-        this.fDateModified = fDateModified;
-    }
-
-    private ItemList fAccessModeSufficient;
-
-    /**
-     * A list of single or combined accessModes that are sufficient to understand all the intellectual content of a resource. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessModeSufficient-vocabulary).
-     *
-     * @return {@link ItemList}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
-     */
-    @Override
-    public ItemList getAccessModeSufficient() {
-        return fAccessModeSufficient;
-    }
-
-    /**
-     * A list of single or combined accessModes that are sufficient to understand all the intellectual content of a resource. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessModeSufficient-vocabulary).
-     *
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
-     */
-    @Override
-    public void setAccessModeSufficient(ItemList fAccessModeSufficient) {
-        this.fAccessModeSufficient = fAccessModeSufficient;
-    }
-
-    private CreativeWork fHasPart;
-
-    /**
-     * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
-     *
-     * @return {@link CreativeWork}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
-     */
-    @Override
-    public CreativeWork getHasPart() {
-        return fHasPart;
-    }
-
-    /**
-     * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
-     */
-    @Override
-    public void setHasPart(CreativeWork fHasPart) {
-        this.fHasPart = fHasPart;
-    }
-
-    private Object fKeywords;
-
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     * @return {@link DefinedTerm} or {@link Text} or {@link URL}
-     */
-    @Override
-    public <T> T getKeywords() {
-        return (T) fKeywords;
-    }
-
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     */
-    @Override
-    public void setKeywords(Object fKeywords) {
-        if(!(fKeywords instanceof DefinedTerm) && !(fKeywords instanceof Text) && !(fKeywords instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'keywords': " + fKeywords);
-        }
-        this.fKeywords = fKeywords;
-    }
-
-    private Text fConditionsOfAccess;
-
-    /**
-     * Conditions that affect the availability of, or method(s) of access to, an item. Typically used for real world items such as an [[ArchiveComponent]] held by an [[ArchiveOrganization]]. This property is not suitable for use as a general Web access control mechanism. It is expressed only in natural language.<br/><br/>For example "Available by appointment from the Reading Room" or "Accessible only from logged-in accounts ". 
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2173">https://github.com/schemaorg/schemaorg/issues/2173</a>
-     */
-    @Override
-    public Text getConditionsOfAccess() {
-        return fConditionsOfAccess;
-    }
-
-    /**
-     * Conditions that affect the availability of, or method(s) of access to, an item. Typically used for real world items such as an [[ArchiveComponent]] held by an [[ArchiveOrganization]]. This property is not suitable for use as a general Web access control mechanism. It is expressed only in natural language.<br/><br/>For example "Available by appointment from the Reading Room" or "Accessible only from logged-in accounts ". 
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2173">https://github.com/schemaorg/schemaorg/issues/2173</a>
-     */
-    @Override
-    public void setConditionsOfAccess(Text fConditionsOfAccess) {
-        this.fConditionsOfAccess = fConditionsOfAccess;
-    }
-
-    private QuantitativeValue fHasMeasurement;
-
-    /**
-     * A product measurement, for example the inseam of pants, the wheel size of a bicycle, or the gauge of a screw. Usually an exact measurement, but can also be a range of measurements for adjustable products, for example belts and ski bindings.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
-     */
-    @Override
-    public QuantitativeValue getHasMeasurement() {
-        return fHasMeasurement;
-    }
-
-    /**
-     * A product measurement, for example the inseam of pants, the wheel size of a bicycle, or the gauge of a screw. Usually an exact measurement, but can also be a range of measurements for adjustable products, for example belts and ski bindings.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
-     */
-    @Override
-    public void setHasMeasurement(QuantitativeValue fHasMeasurement) {
-        this.fHasMeasurement = fHasMeasurement;
-    }
-
-    private Object fUsageInfo;
-
-    /**
-     * The schema.org [[usageInfo]] property indicates further information about a [[CreativeWork]]. This property is applicable both to works that are freely available and to those that require payment or other transactions. It can reference additional information e.g. community expectations on preferred linking and citation conventions, as well as purchasing details. For something that can be commercially licensed, usageInfo can provide detailed, resource-specific information about licensing options.
-     * 
-     * This property can be used alongside the license property which indicates license(s) applicable to some piece of content. The usageInfo property can provide information about other licensing options, e.g. acquiring commercial usage rights for an image that is also available under non-commercial creative commons licenses.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
-     */
-    @Override
-    public <T> T getUsageInfo() {
-        return (T) fUsageInfo;
-    }
-
-    /**
-     * The schema.org [[usageInfo]] property indicates further information about a [[CreativeWork]]. This property is applicable both to works that are freely available and to those that require payment or other transactions. It can reference additional information e.g. community expectations on preferred linking and citation conventions, as well as purchasing details. For something that can be commercially licensed, usageInfo can provide detailed, resource-specific information about licensing options.
-     * 
-     * This property can be used alongside the license property which indicates license(s) applicable to some piece of content. The usageInfo property can provide information about other licensing options, e.g. acquiring commercial usage rights for an image that is also available under non-commercial creative commons licenses.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
-     */
-    @Override
-    public void setUsageInfo(Object fUsageInfo) {
-        if(!(fUsageInfo instanceof CreativeWork) && !(fUsageInfo instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'usageInfo': " + fUsageInfo);
-        }
-        this.fUsageInfo = fUsageInfo;
     }
 
     private AdultOrientedEnumeration fHasAdultConsideration;
@@ -1214,123 +145,74 @@ public class ProductCollectionImpl implements ProductCollection {
         this.fHasAdultConsideration = fHasAdultConsideration;
     }
 
-    private Text fAccessibilityAPI;
+    private Text fGtin12;
 
     /**
-     * Indicates that the resource is compatible with the referenced accessibility API. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityAPI-vocabulary).
+     * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
      * @return {@link Text}
      */
     @Override
-    public Text getAccessibilityAPI() {
-        return fAccessibilityAPI;
+    public Text getGtin12() {
+        return fGtin12;
     }
 
     /**
-     * Indicates that the resource is compatible with the referenced accessibility API. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityAPI-vocabulary).
+     * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
      */
     @Override
-    public void setAccessibilityAPI(Text fAccessibilityAPI) {
-        this.fAccessibilityAPI = fAccessibilityAPI;
+    public void setGtin12(Text fGtin12) {
+        this.fGtin12 = fGtin12;
     }
 
-    private Object fCorrection;
+    private Text fNsn;
 
     /**
-     * Indicates a correction to a [[CreativeWork]], either via a [[CorrectionComment]], textually or in another document.
-     *
-     * @return {@link URL} or {@link Text} or {@link CorrectionComment}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
-     */
-    @Override
-    public <T> T getCorrection() {
-        return (T) fCorrection;
-    }
-
-    /**
-     * Indicates a correction to a [[CreativeWork]], either via a [[CorrectionComment]], textually or in another document.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
-     */
-    @Override
-    public void setCorrection(Object fCorrection) {
-        if(!(fCorrection instanceof URL) && !(fCorrection instanceof Text) && !(fCorrection instanceof CorrectionComment)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'correction': " + fCorrection);
-        }
-        this.fCorrection = fCorrection;
-    }
-
-    private Text fAlternateName;
-
-    /**
-     * An alias for the item.
+     * Indicates the [NATO stock number](https://en.wikipedia.org/wiki/NATO_Stock_Number) (nsn) of a [[Product]]. 
      *
      * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2126">https://github.com/schemaorg/schemaorg/issues/2126</a>
      */
     @Override
-    public Text getAlternateName() {
-        return fAlternateName;
+    public Text getNsn() {
+        return fNsn;
     }
 
     /**
-     * An alias for the item.
+     * Indicates the [NATO stock number](https://en.wikipedia.org/wiki/NATO_Stock_Number) (nsn) of a [[Product]]. 
      *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2126">https://github.com/schemaorg/schemaorg/issues/2126</a>
      */
     @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
+    public void setNsn(Text fNsn) {
+        this.fNsn = fNsn;
     }
 
-    private Object fLearningResourceType;
+    private Object fMaterial;
 
     /**
-     * The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.
+     * A material that something is made from, e.g. leather, wool, cotton, paper.
      *
-     * @return {@link DefinedTerm} or {@link Text}
+     * @return {@link Text} or {@link URL} or {@link Product}
      */
     @Override
-    public <T> T getLearningResourceType() {
-        return (T) fLearningResourceType;
+    public <T> T getMaterial() {
+        return (T) fMaterial;
     }
 
     /**
-     * The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.
+     * A material that something is made from, e.g. leather, wool, cotton, paper.
      *
      */
     @Override
-    public void setLearningResourceType(Object fLearningResourceType) {
-        if(!(fLearningResourceType instanceof DefinedTerm) && !(fLearningResourceType instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'learningResourceType': " + fLearningResourceType);
+    public void setMaterial(Object fMaterial) {
+        if(!(fMaterial instanceof Text) && !(fMaterial instanceof URL) && !(fMaterial instanceof Product)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'material': " + fMaterial);
         }
-        this.fLearningResourceType = fLearningResourceType;
-    }
-
-    private TypeAndQuantityNode fIncludesObject;
-
-    /**
-     * This links to a node or nodes indicating the exact quantity of the products included in  an [[Offer]] or [[ProductCollection]].
-     *
-     * @return {@link TypeAndQuantityNode}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public TypeAndQuantityNode getIncludesObject() {
-        return fIncludesObject;
-    }
-
-    /**
-     * This links to a node or nodes indicating the exact quantity of the products included in  an [[Offer]] or [[ProductCollection]].
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setIncludesObject(TypeAndQuantityNode fIncludesObject) {
-        this.fIncludesObject = fIncludesObject;
+        this.fMaterial = fMaterial;
     }
 
     private Review fReview;
@@ -1354,2025 +236,78 @@ public class ProductCollectionImpl implements ProductCollection {
         this.fReview = fReview;
     }
 
-    private Object fBrand;
+    private Text fAward;
 
     /**
-     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
-     *
-     * @return {@link Organization} or {@link Brand}
-     */
-    @Override
-    public <T> T getBrand() {
-        return (T) fBrand;
-    }
-
-    /**
-     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
-     *
-     */
-    @Override
-    public void setBrand(Object fBrand) {
-        if(!(fBrand instanceof Organization) && !(fBrand instanceof Brand)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'brand': " + fBrand);
-        }
-        this.fBrand = fBrand;
-    }
-
-    private QuantitativeValue fWeight;
-
-    /**
-     * The weight of the product or person.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public QuantitativeValue getWeight() {
-        return fWeight;
-    }
-
-    /**
-     * The weight of the product or person.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setWeight(QuantitativeValue fWeight) {
-        this.fWeight = fWeight;
-    }
-
-    private Object fCreativeWorkStatus;
-
-    /**
-     * The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle.
-     *
-     * @return {@link Text} or {@link DefinedTerm}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/987">https://github.com/schemaorg/schemaorg/issues/987</a>
-     */
-    @Override
-    public <T> T getCreativeWorkStatus() {
-        return (T) fCreativeWorkStatus;
-    }
-
-    /**
-     * The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/987">https://github.com/schemaorg/schemaorg/issues/987</a>
-     */
-    @Override
-    public void setCreativeWorkStatus(Object fCreativeWorkStatus) {
-        if(!(fCreativeWorkStatus instanceof Text) && !(fCreativeWorkStatus instanceof DefinedTerm)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'creativeWorkStatus': " + fCreativeWorkStatus);
-        }
-        this.fCreativeWorkStatus = fCreativeWorkStatus;
-    }
-
-    private Date fPurchaseDate;
-
-    /**
-     * The date the item e.g. vehicle was purchased by the current owner.
-     *
-     * @return {@link Date}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public Date getPurchaseDate() {
-        return fPurchaseDate;
-    }
-
-    /**
-     * The date the item e.g. vehicle was purchased by the current owner.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void setPurchaseDate(Date fPurchaseDate) {
-        this.fPurchaseDate = fPurchaseDate;
-    }
-
-    private Place fLocationCreated;
-
-    /**
-     * The location where the CreativeWork was created, which may not be the same as the location depicted in the CreativeWork.
-     *
-     * @return {@link Place}
-     */
-    @Override
-    public Place getLocationCreated() {
-        return fLocationCreated;
-    }
-
-    /**
-     * The location where the CreativeWork was created, which may not be the same as the location depicted in the CreativeWork.
-     *
-     */
-    @Override
-    public void setLocationCreated(Place fLocationCreated) {
-        this.fLocationCreated = fLocationCreated;
-    }
-
-    private PublicationEvent fPublication;
-
-    /**
-     * A publication event associated with the item.
-     *
-     * @return {@link PublicationEvent}
-     */
-    @Override
-    public PublicationEvent getPublication() {
-        return fPublication;
-    }
-
-    /**
-     * A publication event associated with the item.
-     *
-     */
-    @Override
-    public void setPublication(PublicationEvent fPublication) {
-        this.fPublication = fPublication;
-    }
-
-    private Text fSlogan;
-
-    /**
-     * A slogan or motto associated with the item.
+     * An award won by or for this item.
      *
      * @return {@link Text}
      */
     @Override
-    public Text getSlogan() {
-        return fSlogan;
+    public Text getAward() {
+        return fAward;
     }
 
     /**
-     * A slogan or motto associated with the item.
+     * An award won by or for this item.
      *
      */
     @Override
-    public void setSlogan(Text fSlogan) {
-        this.fSlogan = fSlogan;
+    public void setAward(Text fAward) {
+        this.fAward = fAward;
     }
 
-    private Date fSdDatePublished;
+    private Object fWidth;
 
     /**
-     * Indicates the date on which the current structured data was generated / published. Typically used alongside [[sdPublisher]]
+     * The width of the item.
      *
-     * @return {@link Date}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
+     * @return {@link QuantitativeValue} or {@link Distance}
      */
     @Override
-    public Date getSdDatePublished() {
-        return fSdDatePublished;
+    public <T> T getWidth() {
+        return (T) fWidth;
     }
 
     /**
-     * Indicates the date on which the current structured data was generated / published. Typically used alongside [[sdPublisher]]
+     * The width of the item.
      *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
      */
     @Override
-    public void setSdDatePublished(Date fSdDatePublished) {
-        this.fSdDatePublished = fSdDatePublished;
+    public void setWidth(Object fWidth) {
+        if(!(fWidth instanceof QuantitativeValue) && !(fWidth instanceof Distance)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'width': " + fWidth);
+        }
+        this.fWidth = fWidth;
     }
 
-    private Object fPublishingPrinciples;
+    private Country fCountryOfOrigin;
 
     /**
-     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * The country of origin of something, including products as well as creative  works such as movie and TV content.
      * 
-     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
-     *
-     * @return {@link URL} or {@link CreativeWork}
-     */
-    @Override
-    public <T> T getPublishingPrinciples() {
-        return (T) fPublishingPrinciples;
-    }
-
-    /**
-     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * In the case of TV and movie, this would be the country of the principle offices of the production company or individual responsible for the movie. For other kinds of [[CreativeWork]] it is difficult to provide fully general guidance, and properties such as [[contentLocation]] and [[locationCreated]] may be more applicable.
      * 
-     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+     * In the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.
      *
+     * @return {@link Country}
      */
     @Override
-    public void setPublishingPrinciples(Object fPublishingPrinciples) {
-        if(!(fPublishingPrinciples instanceof URL) && !(fPublishingPrinciples instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'publishingPrinciples': " + fPublishingPrinciples);
-        }
-        this.fPublishingPrinciples = fPublishingPrinciples;
+    public Country getCountryOfOrigin() {
+        return fCountryOfOrigin;
     }
 
-    private Object fIdentifier;
-
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @return {@link URL} or {@link Text} or {@link PropertyValue}
-     */
-    @Override
-    public <T> T getIdentifier() {
-        return (T) fIdentifier;
-    }
-
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     */
-    @Override
-    public void setIdentifier(Object fIdentifier) {
-        if(!(fIdentifier instanceof URL) && !(fIdentifier instanceof Text) && !(fIdentifier instanceof PropertyValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
-        }
-        this.fIdentifier = fIdentifier;
-    }
-
-    private Organization fSourceOrganization;
-
-    /**
-     * The Organization on whose behalf the creator was working.
-     *
-     * @return {@link Organization}
-     */
-    @Override
-    public Organization getSourceOrganization() {
-        return fSourceOrganization;
-    }
-
-    /**
-     * The Organization on whose behalf the creator was working.
-     *
-     */
-    @Override
-    public void setSourceOrganization(Organization fSourceOrganization) {
-        this.fSourceOrganization = fSourceOrganization;
-    }
-
-    private Object fDateCreated;
-
-    /**
-     * The date on which the CreativeWork was created or the item was added to a DataFeed.
-     *
-     * @return {@link Date} or {@link DateTime}
-     */
-    @Override
-    public <T> T getDateCreated() {
-        return (T) fDateCreated;
-    }
-
-    /**
-     * The date on which the CreativeWork was created or the item was added to a DataFeed.
-     *
-     */
-    @Override
-    public void setDateCreated(Object fDateCreated) {
-        if(!(fDateCreated instanceof Date) && !(fDateCreated instanceof DateTime)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'dateCreated': " + fDateCreated);
-        }
-        this.fDateCreated = fDateCreated;
-    }
-
-    private CreativeWork fExampleOfWork;
-
-    /**
-     * A creative work that this work is an example/instance/realization/derivation of.
-     *
-     * @return {@link CreativeWork}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
-     */
-    @Override
-    public CreativeWork getExampleOfWork() {
-        return fExampleOfWork;
-    }
-
-    /**
-     * A creative work that this work is an example/instance/realization/derivation of.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
-     */
-    @Override
-    public void setExampleOfWork(CreativeWork fExampleOfWork) {
-        this.fExampleOfWork = fExampleOfWork;
-    }
-
-    private Review fReviews;
-
-    /**
-     * Review of the item.
-     *
-     * @return {@link Review}
-     */
-    @Override
-    public Review getReviews() {
-        return fReviews;
-    }
-
-    /**
-     * Review of the item.
-     *
-     */
-    @Override
-    public void setReviews(Review fReviews) {
-        this.fReviews = fReviews;
-    }
-
-    private Text fText;
-
-    /**
-     * The textual content of this CreativeWork.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getText() {
-        return fText;
-    }
-
-    /**
-     * The textual content of this CreativeWork.
-     *
-     */
-    @Override
-    public void setText(Text fText) {
-        this.fText = fText;
-    }
-
-    private Text fInteractivityType;
-
-    /**
-     * The predominant mode of learning supported by the learning resource. Acceptable values are 'active', 'expositive', or 'mixed'.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getInteractivityType() {
-        return fInteractivityType;
-    }
-
-    /**
-     * The predominant mode of learning supported by the learning resource. Acceptable values are 'active', 'expositive', or 'mixed'.
-     *
-     */
-    @Override
-    public void setInteractivityType(Text fInteractivityType) {
-        this.fInteractivityType = fInteractivityType;
-    }
-
-    private Person fEditor;
-
-    /**
-     * Specifies the Person who edited the CreativeWork.
-     *
-     * @return {@link Person}
-     */
-    @Override
-    public Person getEditor() {
-        return fEditor;
-    }
-
-    /**
-     * Specifies the Person who edited the CreativeWork.
-     *
-     */
-    @Override
-    public void setEditor(Person fEditor) {
-        this.fEditor = fEditor;
-    }
-
-    private Object fIsRelatedTo;
-
-    /**
-     * A pointer to another, somehow related product (or multiple products).
-     *
-     * @return {@link Service} or {@link Product}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public <T> T getIsRelatedTo() {
-        return (T) fIsRelatedTo;
-    }
-
-    /**
-     * A pointer to another, somehow related product (or multiple products).
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setIsRelatedTo(Object fIsRelatedTo) {
-        if(!(fIsRelatedTo instanceof Service) && !(fIsRelatedTo instanceof Product)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'isRelatedTo': " + fIsRelatedTo);
-        }
-        this.fIsRelatedTo = fIsRelatedTo;
-    }
-
-    private Object fLicense;
-
-    /**
-     * A license document that applies to this content, typically indicated by URL.
-     *
-     * @return {@link URL} or {@link CreativeWork}
-     */
-    @Override
-    public <T> T getLicense() {
-        return (T) fLicense;
-    }
-
-    /**
-     * A license document that applies to this content, typically indicated by URL.
-     *
-     */
-    @Override
-    public void setLicense(Object fLicense) {
-        if(!(fLicense instanceof URL) && !(fLicense instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'license': " + fLicense);
-        }
-        this.fLicense = fLicense;
-    }
-
-    private Text fTypicalAgeRange;
-
-    /**
-     * The typical expected age range, e.g. '7-9', '11-'.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getTypicalAgeRange() {
-        return fTypicalAgeRange;
-    }
-
-    /**
-     * The typical expected age range, e.g. '7-9', '11-'.
-     *
-     */
-    @Override
-    public void setTypicalAgeRange(Text fTypicalAgeRange) {
-        this.fTypicalAgeRange = fTypicalAgeRange;
-    }
-
-    private Object fAuthor;
-
-    /**
-     * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
-     *
-     * @return {@link Person} or {@link Organization}
-     */
-    @Override
-    public <T> T getAuthor() {
-        return (T) fAuthor;
-    }
-
-    /**
-     * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
-     *
-     */
-    @Override
-    public void setAuthor(Object fAuthor) {
-        if(!(fAuthor instanceof Person) && !(fAuthor instanceof Organization)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'author': " + fAuthor);
-        }
-        this.fAuthor = fAuthor;
-    }
-
-    private Text fAccessibilityHazard;
-
-    /**
-     * A characteristic of the described resource that is physiologically dangerous to some users. Related to WCAG 2.0 guideline 2.3. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityHazard-vocabulary).
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getAccessibilityHazard() {
-        return fAccessibilityHazard;
-    }
-
-    /**
-     * A characteristic of the described resource that is physiologically dangerous to some users. Related to WCAG 2.0 guideline 2.3. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityHazard-vocabulary).
-     *
-     */
-    @Override
-    public void setAccessibilityHazard(Text fAccessibilityHazard) {
-        this.fAccessibilityHazard = fAccessibilityHazard;
-    }
-
-    private Text fDescription;
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDescription() {
-        return fDescription;
-    }
-
-    /**
-     * A description of the item.
-     *
-     */
-    @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
-    }
-
-    private Text fGtin;
-
-    /**
-     * A Global Trade Item Number ([GTIN](https://www.gs1.org/standards/id-keys/gtin)). GTINs identify trade items, including products and services, using numeric identification codes. The [[gtin]] property generalizes the earlier [[gtin8]], [[gtin12]], [[gtin13]], and [[gtin14]] properties. The GS1 [digital link specifications](https://www.gs1.org/standards/Digital-Link/) express GTINs as URLs. A correct [[gtin]] value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a "GS1 Digital Link" URL based on such a string. The numeric component should also have a [valid GS1 check digit](https://www.gs1.org/services/check-digit-calculator) and meet the other rules for valid GTINs. See also [GS1's GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) and [Wikipedia](https://en.wikipedia.org/wiki/Global_Trade_Item_Number) for more details. Left-padding of the gtin values is not required or encouraged.
-     *    
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    @Override
-    public Text getGtin() {
-        return fGtin;
-    }
-
-    /**
-     * A Global Trade Item Number ([GTIN](https://www.gs1.org/standards/id-keys/gtin)). GTINs identify trade items, including products and services, using numeric identification codes. The [[gtin]] property generalizes the earlier [[gtin8]], [[gtin12]], [[gtin13]], and [[gtin14]] properties. The GS1 [digital link specifications](https://www.gs1.org/standards/Digital-Link/) express GTINs as URLs. A correct [[gtin]] value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a "GS1 Digital Link" URL based on such a string. The numeric component should also have a [valid GS1 check digit](https://www.gs1.org/services/check-digit-calculator) and meet the other rules for valid GTINs. See also [GS1's GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) and [Wikipedia](https://en.wikipedia.org/wiki/Global_Trade_Item_Number) for more details. Left-padding of the gtin values is not required or encouraged.
-     *    
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    @Override
-    public void setGtin(Text fGtin) {
-        this.fGtin = fGtin;
-    }
-
-    private Object fInLanguage;
-
-    /**
-     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
-     *
-     * @return {@link Text} or {@link Language}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
-     */
-    @Override
-    public <T> T getInLanguage() {
-        return (T) fInLanguage;
-    }
-
-    /**
-     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
-     *
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
-     */
-    @Override
-    public void setInLanguage(Object fInLanguage) {
-        if(!(fInLanguage instanceof Text) && !(fInLanguage instanceof Language)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'inLanguage': " + fInLanguage);
-        }
-        this.fInLanguage = fInLanguage;
-    }
-
-    private Boolean fIsFamilyFriendly;
-
-    /**
-     * Indicates whether this content is family friendly.
-     *
-     * @return {@link Boolean}
-     */
-    @Override
-    public Boolean getIsFamilyFriendly() {
-        return fIsFamilyFriendly;
-    }
-
-    /**
-     * Indicates whether this content is family friendly.
-     *
-     */
-    @Override
-    public void setIsFamilyFriendly(Boolean fIsFamilyFriendly) {
-        this.fIsFamilyFriendly = fIsFamilyFriendly;
-    }
-
-    private Integer fCollectionSize;
-
-    /**
-     * The number of items in the [[Collection]].
-     *
-     * @return {@link Integer}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1759">https://github.com/schemaorg/schemaorg/issues/1759</a>
-     */
-    @Override
-    public Integer getCollectionSize() {
-        return fCollectionSize;
-    }
-
-    /**
-     * The number of items in the [[Collection]].
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1759">https://github.com/schemaorg/schemaorg/issues/1759</a>
-     */
-    @Override
-    public void setCollectionSize(Integer fCollectionSize) {
-        this.fCollectionSize = fCollectionSize;
-    }
-
-    private Object fEducationalUse;
-
-    /**
-     * The purpose of a work in the context of education; for example, 'assignment', 'group work'.
-     *
-     * @return {@link DefinedTerm} or {@link Text}
-     */
-    @Override
-    public <T> T getEducationalUse() {
-        return (T) fEducationalUse;
-    }
-
-    /**
-     * The purpose of a work in the context of education; for example, 'assignment', 'group work'.
-     *
-     */
-    @Override
-    public void setEducationalUse(Object fEducationalUse) {
-        if(!(fEducationalUse instanceof DefinedTerm) && !(fEducationalUse instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'educationalUse': " + fEducationalUse);
-        }
-        this.fEducationalUse = fEducationalUse;
-    }
-
-    private Person fCharacter;
-
-    /**
-     * Fictional person connected with a creative work.
-     *
-     * @return {@link Person}
-     */
-    @Override
-    public Person getCharacter() {
-        return fCharacter;
-    }
-
-    /**
-     * Fictional person connected with a creative work.
-     *
-     */
-    @Override
-    public void setCharacter(Person fCharacter) {
-        this.fCharacter = fCharacter;
-    }
-
-    private Thing fMainEntity;
-
-    /**
-     * Indicates the primary entity described in some page or other CreativeWork.
-     *
-     * @return {@link Thing}
-     */
-    @Override
-    public Thing getMainEntity() {
-        return fMainEntity;
-    }
-
-    /**
-     * Indicates the primary entity described in some page or other CreativeWork.
-     *
-     */
-    @Override
-    public void setMainEntity(Thing fMainEntity) {
-        this.fMainEntity = fMainEntity;
-    }
-
-    private Text fAccessibilityFeature;
-
-    /**
-     * Content features of the resource, such as accessible media, alternatives and supported enhancements for accessibility. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityFeature-vocabulary).
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getAccessibilityFeature() {
-        return fAccessibilityFeature;
-    }
-
-    /**
-     * Content features of the resource, such as accessible media, alternatives and supported enhancements for accessibility. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityFeature-vocabulary).
-     *
-     */
-    @Override
-    public void setAccessibilityFeature(Text fAccessibilityFeature) {
-        this.fAccessibilityFeature = fAccessibilityFeature;
-    }
-
-    private Date fExpires;
-
-    /**
-     * Date the content expires and is no longer useful or available. For example a [[VideoObject]] or [[NewsArticle]] whose availability or relevance is time-limited, or a [[ClaimReview]] fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date.
-     *
-     * @return {@link Date}
-     */
-    @Override
-    public Date getExpires() {
-        return fExpires;
-    }
-
-    /**
-     * Date the content expires and is no longer useful or available. For example a [[VideoObject]] or [[NewsArticle]] whose availability or relevance is time-limited, or a [[ClaimReview]] fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date.
-     *
-     */
-    @Override
-    public void setExpires(Date fExpires) {
-        this.fExpires = fExpires;
-    }
-
-    private CreativeWork fTranslationOfWork;
-
-    /**
-     * The work that this work has been translated from. e.g. 物种起源 is a translationOf “On the Origin of Species”
-     *
-     * @return {@link CreativeWork}
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
-     */
-    @Override
-    public CreativeWork getTranslationOfWork() {
-        return fTranslationOfWork;
-    }
-
-    /**
-     * The work that this work has been translated from. e.g. 物种起源 is a translationOf “On the Origin of Species”
-     *
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
-     */
-    @Override
-    public void setTranslationOfWork(CreativeWork fTranslationOfWork) {
-        this.fTranslationOfWork = fTranslationOfWork;
-    }
-
-    private Organization fPublisherImprint;
-
-    /**
-     * The publishing division which published the comic.
-     *
-     * @return {@link Organization}
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
-     */
-    @Override
-    public Organization getPublisherImprint() {
-        return fPublisherImprint;
-    }
-
-    /**
-     * The publishing division which published the comic.
-     *
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
-     */
-    @Override
-    public void setPublisherImprint(Organization fPublisherImprint) {
-        this.fPublisherImprint = fPublisherImprint;
-    }
-
-    private InteractionCounter fInteractionStatistic;
-
-    /**
-     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
-     *
-     * @return {@link InteractionCounter}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
-     */
-    @Override
-    public InteractionCounter getInteractionStatistic() {
-        return fInteractionStatistic;
-    }
-
-    /**
-     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
-     *
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
-     */
-    @Override
-    public void setInteractionStatistic(InteractionCounter fInteractionStatistic) {
-        this.fInteractionStatistic = fInteractionStatistic;
-    }
-
-    private Object fSize;
-
-    /**
-     * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
-     *
-     * @return {@link QuantitativeValue} or {@link DefinedTerm} or {@link Text} or {@link SizeSpecification}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
-     */
-    @Override
-    public <T> T getSize() {
-        return (T) fSize;
-    }
-
-    /**
-     * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
-     */
-    @Override
-    public void setSize(Object fSize) {
-        if(!(fSize instanceof QuantitativeValue) && !(fSize instanceof DefinedTerm) && !(fSize instanceof Text) && !(fSize instanceof SizeSpecification)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'size': " + fSize);
-        }
-        this.fSize = fSize;
-    }
-
-    private Object fFileFormat;
-
-    /**
-     * Media type, typically MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml)) of the content e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.
-     *
-     * @return {@link URL} or {@link Text}
-     */
-    @Override
-    public <T> T getFileFormat() {
-        return (T) fFileFormat;
-    }
-
-    /**
-     * Media type, typically MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml)) of the content e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.
-     *
-     */
-    @Override
-    public void setFileFormat(Object fFileFormat) {
-        if(!(fFileFormat instanceof URL) && !(fFileFormat instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'fileFormat': " + fFileFormat);
-        }
-        this.fFileFormat = fFileFormat;
-    }
-
-    private Text fMpn;
-
-    /**
-     * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
-     *
-     * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public Text getMpn() {
-        return fMpn;
-    }
-
-    /**
-     * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setMpn(Text fMpn) {
-        this.fMpn = fMpn;
-    }
-
-    private OfferItemCondition fItemCondition;
-
-    /**
-     * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
-     *
-     * @return {@link OfferItemCondition}
-     */
-    @Override
-    public OfferItemCondition getItemCondition() {
-        return fItemCondition;
-    }
-
-    /**
-     * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
-     *
-     */
-    @Override
-    public void setItemCondition(OfferItemCondition fItemCondition) {
-        this.fItemCondition = fItemCondition;
-    }
-
-    private Text fGtin14;
-
-    /**
-     * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
-     *
-     * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public Text getGtin14() {
-        return fGtin14;
-    }
-
-    /**
-     * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setGtin14(Text fGtin14) {
-        this.fGtin14 = fGtin14;
-    }
-
-    private Object fContributor;
-
-    /**
-     * A secondary contributor to the CreativeWork or Event.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    @Override
-    public <T> T getContributor() {
-        return (T) fContributor;
-    }
-
-    /**
-     * A secondary contributor to the CreativeWork or Event.
-     *
-     */
-    @Override
-    public void setContributor(Object fContributor) {
-        if(!(fContributor instanceof Organization) && !(fContributor instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'contributor': " + fContributor);
-        }
-        this.fContributor = fContributor;
-    }
-
-    private Object fContentRating;
-
-    /**
-     * Official rating of a piece of content&#x2014;for example,'MPAA PG-13'.
-     *
-     * @return {@link Text} or {@link Rating}
-     */
-    @Override
-    public <T> T getContentRating() {
-        return (T) fContentRating;
-    }
-
-    /**
-     * Official rating of a piece of content&#x2014;for example,'MPAA PG-13'.
-     *
-     */
-    @Override
-    public void setContentRating(Object fContentRating) {
-        if(!(fContentRating instanceof Text) && !(fContentRating instanceof Rating)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'contentRating': " + fContentRating);
-        }
-        this.fContentRating = fContentRating;
-    }
-
-    private AlignmentObject fEducationalAlignment;
-
     /**
-     * An alignment to an established educational framework.
+     * The country of origin of something, including products as well as creative  works such as movie and TV content.
      * 
-     * This property should not be used where the nature of the alignment can be described using a simple property, for example to express that a resource [[teaches]] or [[assesses]] a competency.
-     *
-     * @return {@link AlignmentObject}
-     */
-    @Override
-    public AlignmentObject getEducationalAlignment() {
-        return fEducationalAlignment;
-    }
-
-    /**
-     * An alignment to an established educational framework.
+     * In the case of TV and movie, this would be the country of the principle offices of the production company or individual responsible for the movie. For other kinds of [[CreativeWork]] it is difficult to provide fully general guidance, and properties such as [[contentLocation]] and [[locationCreated]] may be more applicable.
      * 
-     * This property should not be used where the nature of the alignment can be described using a simple property, for example to express that a resource [[teaches]] or [[assesses]] a competency.
+     * In the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.
      *
      */
     @Override
-    public void setEducationalAlignment(AlignmentObject fEducationalAlignment) {
-        this.fEducationalAlignment = fEducationalAlignment;
-    }
-
-    private Product fIsConsumableFor;
-
-    /**
-     * A pointer to another product (or multiple products) for which this product is a consumable.
-     *
-     * @return {@link Product}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public Product getIsConsumableFor() {
-        return fIsConsumableFor;
-    }
-
-    /**
-     * A pointer to another product (or multiple products) for which this product is a consumable.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setIsConsumableFor(Product fIsConsumableFor) {
-        this.fIsConsumableFor = fIsConsumableFor;
-    }
-
-    private Object fEducationalLevel;
-
-    /**
-     * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
-     *
-     * @return {@link URL} or {@link DefinedTerm} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
-     */
-    @Override
-    public <T> T getEducationalLevel() {
-        return (T) fEducationalLevel;
-    }
-
-    /**
-     * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
-     */
-    @Override
-    public void setEducationalLevel(Object fEducationalLevel) {
-        if(!(fEducationalLevel instanceof URL) && !(fEducationalLevel instanceof DefinedTerm) && !(fEducationalLevel instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'educationalLevel': " + fEducationalLevel);
-        }
-        this.fEducationalLevel = fEducationalLevel;
-    }
-
-    private Object fSponsor;
-
-    /**
-     * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    @Override
-    public <T> T getSponsor() {
-        return (T) fSponsor;
-    }
-
-    /**
-     * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
-     *
-     */
-    @Override
-    public void setSponsor(Object fSponsor) {
-        if(!(fSponsor instanceof Organization) && !(fSponsor instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'sponsor': " + fSponsor);
-        }
-        this.fSponsor = fSponsor;
-    }
-
-    private Action fPotentialAction;
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
-    @Override
-    public Action getPotentialAction() {
-        return fPotentialAction;
-    }
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     */
-    @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
-    }
-
-    private Object fVideo;
-
-    /**
-     * An embedded video object.
-     *
-     * @return {@link Clip} or {@link VideoObject}
-     */
-    @Override
-    public <T> T getVideo() {
-        return (T) fVideo;
-    }
-
-    /**
-     * An embedded video object.
-     *
-     */
-    @Override
-    public void setVideo(Object fVideo) {
-        if(!(fVideo instanceof Clip) && !(fVideo instanceof VideoObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'video': " + fVideo);
-        }
-        this.fVideo = fVideo;
-    }
-
-    private Object fCopyrightHolder;
-
-    /**
-     * The party holding the legal copyright to the CreativeWork.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    @Override
-    public <T> T getCopyrightHolder() {
-        return (T) fCopyrightHolder;
-    }
-
-    /**
-     * The party holding the legal copyright to the CreativeWork.
-     *
-     */
-    @Override
-    public void setCopyrightHolder(Object fCopyrightHolder) {
-        if(!(fCopyrightHolder instanceof Organization) && !(fCopyrightHolder instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'copyrightHolder': " + fCopyrightHolder);
-        }
-        this.fCopyrightHolder = fCopyrightHolder;
-    }
-
-    private Object fEditEIDR;
-
-    /**
-     * An [EIDR](https://eidr.org/) (Entertainment Identifier Registry) [[identifier]] representing a specific edit / edition for a work of film or television.
-     * 
-     * For example, the motion picture known as "Ghostbusters" whose [[titleEIDR]] is "10.5240/7EC7-228A-510A-053E-CBB8-J", has several edits e.g. "10.5240/1F2A-E1C5-680A-14C6-E76B-I" and "10.5240/8A35-3BEE-6497-5D12-9E4F-3".
-     * 
-     * Since schema.org types like [[Movie]] and [[TVEpisode]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.
-     *
-     * @return {@link URL} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2469">https://github.com/schemaorg/schemaorg/issues/2469</a>
-     */
-    @Override
-    public <T> T getEditEIDR() {
-        return (T) fEditEIDR;
-    }
-
-    /**
-     * An [EIDR](https://eidr.org/) (Entertainment Identifier Registry) [[identifier]] representing a specific edit / edition for a work of film or television.
-     * 
-     * For example, the motion picture known as "Ghostbusters" whose [[titleEIDR]] is "10.5240/7EC7-228A-510A-053E-CBB8-J", has several edits e.g. "10.5240/1F2A-E1C5-680A-14C6-E76B-I" and "10.5240/8A35-3BEE-6497-5D12-9E4F-3".
-     * 
-     * Since schema.org types like [[Movie]] and [[TVEpisode]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2469">https://github.com/schemaorg/schemaorg/issues/2469</a>
-     */
-    @Override
-    public void setEditEIDR(Object fEditEIDR) {
-        if(!(fEditEIDR instanceof URL) && !(fEditEIDR instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'editEIDR': " + fEditEIDR);
-        }
-        this.fEditEIDR = fEditEIDR;
-    }
-
-    private Text fAccessibilitySummary;
-
-    /**
-     * A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as "short descriptions are present but long descriptions will be needed for non-visual users" or "short descriptions are present and no long descriptions are needed."
-     *
-     * @return {@link Text}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
-     */
-    @Override
-    public Text getAccessibilitySummary() {
-        return fAccessibilitySummary;
-    }
-
-    /**
-     * A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as "short descriptions are present but long descriptions will be needed for non-visual users" or "short descriptions are present and no long descriptions are needed."
-     *
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
-     */
-    @Override
-    public void setAccessibilitySummary(Text fAccessibilitySummary) {
-        this.fAccessibilitySummary = fAccessibilitySummary;
-    }
-
-    private Object fSubjectOf;
-
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @return {@link Event} or {@link CreativeWork}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    @Override
-    public <T> T getSubjectOf() {
-        return (T) fSubjectOf;
-    }
-
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    @Override
-    public void setSubjectOf(Object fSubjectOf) {
-        if(!(fSubjectOf instanceof Event) && !(fSubjectOf instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'subjectOf': " + fSubjectOf);
-        }
-        this.fSubjectOf = fSubjectOf;
-    }
-
-    private Object fIsBasedOnUrl;
-
-    /**
-     * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
-     *
-     * @return {@link URL} or {@link CreativeWork} or {@link Product}
-     */
-    @Override
-    public <T> T getIsBasedOnUrl() {
-        return (T) fIsBasedOnUrl;
-    }
-
-    /**
-     * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
-     *
-     */
-    @Override
-    public void setIsBasedOnUrl(Object fIsBasedOnUrl) {
-        if(!(fIsBasedOnUrl instanceof URL) && !(fIsBasedOnUrl instanceof CreativeWork) && !(fIsBasedOnUrl instanceof Product)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'isBasedOnUrl': " + fIsBasedOnUrl);
-        }
-        this.fIsBasedOnUrl = fIsBasedOnUrl;
-    }
-
-    private Object fSchemaVersion;
-
-    /**
-     * Indicates (by URL or string) a particular version of a schema used in some CreativeWork. This property was created primarily to
-     *     indicate the use of a specific schema.org release, e.g. ```10.0``` as a simple string, or more explicitly via URL, ```https://schema.org/docs/releases.html#v10.0```. There may be situations in which other schemas might usefully be referenced this way, e.g. ```http://dublincore.org/specifications/dublin-core/dces/1999-07-02/``` but this has not been carefully explored in the community.
-     *
-     * @return {@link Text} or {@link URL}
-     */
-    @Override
-    public <T> T getSchemaVersion() {
-        return (T) fSchemaVersion;
-    }
-
-    /**
-     * Indicates (by URL or string) a particular version of a schema used in some CreativeWork. This property was created primarily to
-     *     indicate the use of a specific schema.org release, e.g. ```10.0``` as a simple string, or more explicitly via URL, ```https://schema.org/docs/releases.html#v10.0```. There may be situations in which other schemas might usefully be referenced this way, e.g. ```http://dublincore.org/specifications/dublin-core/dces/1999-07-02/``` but this has not been carefully explored in the community.
-     *
-     */
-    @Override
-    public void setSchemaVersion(Object fSchemaVersion) {
-        if(!(fSchemaVersion instanceof Text) && !(fSchemaVersion instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'schemaVersion': " + fSchemaVersion);
-        }
-        this.fSchemaVersion = fSchemaVersion;
-    }
-
-    private Text fDisambiguatingDescription;
-
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDisambiguatingDescription() {
-        return fDisambiguatingDescription;
-    }
-
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     */
-    @Override
-    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = fDisambiguatingDescription;
-    }
-
-    private Object fImage;
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link URL} or {@link ImageObject}
-     */
-    @Override
-    public <T> T getImage() {
-        return (T) fImage;
-    }
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     */
-    @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
-        this.fImage = fImage;
-    }
-
-    private URL fSameAs;
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getSameAs() {
-        return fSameAs;
-    }
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     */
-    @Override
-    public void setSameAs(URL fSameAs) {
-        this.fSameAs = fSameAs;
-    }
-
-    private Text fAwards;
-
-    /**
-     * Awards won by or for this item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getAwards() {
-        return fAwards;
-    }
-
-    /**
-     * Awards won by or for this item.
-     *
-     */
-    @Override
-    public void setAwards(Text fAwards) {
-        this.fAwards = fAwards;
-    }
-
-    private Object fDepth;
-
-    /**
-     * The depth of the item.
-     *
-     * @return {@link Distance} or {@link QuantitativeValue}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public <T> T getDepth() {
-        return (T) fDepth;
-    }
-
-    /**
-     * The depth of the item.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setDepth(Object fDepth) {
-        if(!(fDepth instanceof Distance) && !(fDepth instanceof QuantitativeValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'depth': " + fDepth);
-        }
-        this.fDepth = fDepth;
-    }
-
-    private Comment fComment;
-
-    /**
-     * Comments, typically from users.
-     *
-     * @return {@link Comment}
-     */
-    @Override
-    public Comment getComment() {
-        return fComment;
-    }
-
-    /**
-     * Comments, typically from users.
-     *
-     */
-    @Override
-    public void setComment(Comment fComment) {
-        this.fComment = fComment;
-    }
-
-    private EnergyConsumptionDetails fHasEnergyConsumptionDetails;
-
-    /**
-     * Defines the energy efficiency Category (also known as "class" or "rating") for a product according to an international energy efficiency standard.
-     *
-     * @return {@link EnergyConsumptionDetails}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2670">https://github.com/schemaorg/schemaorg/issues/2670</a>
-     */
-    @Override
-    public EnergyConsumptionDetails getHasEnergyConsumptionDetails() {
-        return fHasEnergyConsumptionDetails;
-    }
-
-    /**
-     * Defines the energy efficiency Category (also known as "class" or "rating") for a product according to an international energy efficiency standard.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2670">https://github.com/schemaorg/schemaorg/issues/2670</a>
-     */
-    @Override
-    public void setHasEnergyConsumptionDetails(EnergyConsumptionDetails fHasEnergyConsumptionDetails) {
-        this.fHasEnergyConsumptionDetails = fHasEnergyConsumptionDetails;
-    }
-
-    private Text fCountryOfLastProcessing;
-
-    /**
-     * The place where the item (typically [[Product]]) was last processed and tested before importation.
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/991">https://github.com/schemaorg/schemaorg/issues/991</a>
-     */
-    @Override
-    public Text getCountryOfLastProcessing() {
-        return fCountryOfLastProcessing;
-    }
-
-    /**
-     * The place where the item (typically [[Product]]) was last processed and tested before importation.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/991">https://github.com/schemaorg/schemaorg/issues/991</a>
-     */
-    @Override
-    public void setCountryOfLastProcessing(Text fCountryOfLastProcessing) {
-        this.fCountryOfLastProcessing = fCountryOfLastProcessing;
-    }
-
-    private Object fSdLicense;
-
-    /**
-     * A license document that applies to this structured data, typically indicated by URL.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
-     */
-    @Override
-    public <T> T getSdLicense() {
-        return (T) fSdLicense;
-    }
-
-    /**
-     * A license document that applies to this structured data, typically indicated by URL.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
-     */
-    @Override
-    public void setSdLicense(Object fSdLicense) {
-        if(!(fSdLicense instanceof CreativeWork) && !(fSdLicense instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'sdLicense': " + fSdLicense);
-        }
-        this.fSdLicense = fSdLicense;
-    }
-
-    private URL fUrl;
-
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getUrl() {
-        return fUrl;
-    }
-
-    /**
-     * URL of the item.
-     *
-     */
-    @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
-    }
-
-    private Text fCreditText;
-
-    /**
-     * Text that can be used to credit person(s) and/or organization(s) associated with a published Creative Work.
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2659">https://github.com/schemaorg/schemaorg/issues/2659</a>
-     */
-    @Override
-    public Text getCreditText() {
-        return fCreditText;
-    }
-
-    /**
-     * Text that can be used to credit person(s) and/or organization(s) associated with a published Creative Work.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2659">https://github.com/schemaorg/schemaorg/issues/2659</a>
-     */
-    @Override
-    public void setCreditText(Text fCreditText) {
-        this.fCreditText = fCreditText;
-    }
-
-    private Thing fMentions;
-
-    /**
-     * Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept.
-     *
-     * @return {@link Thing}
-     */
-    @Override
-    public Thing getMentions() {
-        return fMentions;
-    }
-
-    /**
-     * Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept.
-     *
-     */
-    @Override
-    public void setMentions(Thing fMentions) {
-        this.fMentions = fMentions;
-    }
-
-    private Object fMaterialExtent;
-
-    /**
-     * The quantity of the materials being described or an expression of the physical space they occupy.
-     *
-     * @return {@link QuantitativeValue} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1759">https://github.com/schemaorg/schemaorg/issues/1759</a>
-     */
-    @Override
-    public <T> T getMaterialExtent() {
-        return (T) fMaterialExtent;
-    }
-
-    /**
-     * The quantity of the materials being described or an expression of the physical space they occupy.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1759">https://github.com/schemaorg/schemaorg/issues/1759</a>
-     */
-    @Override
-    public void setMaterialExtent(Object fMaterialExtent) {
-        if(!(fMaterialExtent instanceof QuantitativeValue) && !(fMaterialExtent instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'materialExtent': " + fMaterialExtent);
-        }
-        this.fMaterialExtent = fMaterialExtent;
-    }
-
-    private URL fAdditionalType;
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getAdditionalType() {
-        return fAdditionalType;
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     */
-    @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
-    }
-
-    private URL fThumbnailUrl;
-
-    /**
-     * A thumbnail image relevant to the Thing.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getThumbnailUrl() {
-        return fThumbnailUrl;
-    }
-
-    /**
-     * A thumbnail image relevant to the Thing.
-     *
-     */
-    @Override
-    public void setThumbnailUrl(URL fThumbnailUrl) {
-        this.fThumbnailUrl = fThumbnailUrl;
-    }
-
-    private Object fDatePublished;
-
-    /**
-     * Date of first broadcast/publication.
-     *
-     * @return {@link Date} or {@link DateTime}
-     */
-    @Override
-    public <T> T getDatePublished() {
-        return (T) fDatePublished;
-    }
-
-    /**
-     * Date of first broadcast/publication.
-     *
-     */
-    @Override
-    public void setDatePublished(Object fDatePublished) {
-        if(!(fDatePublished instanceof Date) && !(fDatePublished instanceof DateTime)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'datePublished': " + fDatePublished);
-        }
-        this.fDatePublished = fDatePublished;
-    }
-
-    private Event fRecordedAt;
-
-    /**
-     * The Event where the CreativeWork was recorded. The CreativeWork may capture all or part of the event.
-     *
-     * @return {@link Event}
-     */
-    @Override
-    public Event getRecordedAt() {
-        return fRecordedAt;
-    }
-
-    /**
-     * The Event where the CreativeWork was recorded. The CreativeWork may capture all or part of the event.
-     *
-     */
-    @Override
-    public void setRecordedAt(Event fRecordedAt) {
-        this.fRecordedAt = fRecordedAt;
-    }
-
-    private Object fTeaches;
-
-    /**
-     * The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.
-     *
-     * @return {@link DefinedTerm} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
-     */
-    @Override
-    public <T> T getTeaches() {
-        return (T) fTeaches;
-    }
-
-    /**
-     * The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
-     */
-    @Override
-    public void setTeaches(Object fTeaches) {
-        if(!(fTeaches instanceof DefinedTerm) && !(fTeaches instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'teaches': " + fTeaches);
-        }
-        this.fTeaches = fTeaches;
-    }
-
-    private Object fIsBasedOn;
-
-    /**
-     * A resource from which this work is derived or from which it is a modification or adaption.
-     *
-     * @return {@link CreativeWork} or {@link URL} or {@link Product}
-     */
-    @Override
-    public <T> T getIsBasedOn() {
-        return (T) fIsBasedOn;
-    }
-
-    /**
-     * A resource from which this work is derived or from which it is a modification or adaption.
-     *
-     */
-    @Override
-    public void setIsBasedOn(Object fIsBasedOn) {
-        if(!(fIsBasedOn instanceof CreativeWork) && !(fIsBasedOn instanceof URL) && !(fIsBasedOn instanceof Product)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'isBasedOn': " + fIsBasedOn);
-        }
-        this.fIsBasedOn = fIsBasedOn;
-    }
-
-    private Object fIsPartOf;
-
-    /**
-     * Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.
-     *
-     * @return {@link URL} or {@link CreativeWork}
-     */
-    @Override
-    public <T> T getIsPartOf() {
-        return (T) fIsPartOf;
-    }
-
-    /**
-     * Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.
-     *
-     */
-    @Override
-    public void setIsPartOf(Object fIsPartOf) {
-        if(!(fIsPartOf instanceof URL) && !(fIsPartOf instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'isPartOf': " + fIsPartOf);
-        }
-        this.fIsPartOf = fIsPartOf;
-    }
-
-    private Text fCopyrightNotice;
-
-    /**
-     * Text of a notice appropriate for describing the copyright aspects of this Creative Work, ideally indicating the owner of the copyright for the Work.
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2659">https://github.com/schemaorg/schemaorg/issues/2659</a>
-     */
-    @Override
-    public Text getCopyrightNotice() {
-        return fCopyrightNotice;
-    }
-
-    /**
-     * Text of a notice appropriate for describing the copyright aspects of this Creative Work, ideally indicating the owner of the copyright for the Work.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2659">https://github.com/schemaorg/schemaorg/issues/2659</a>
-     */
-    @Override
-    public void setCopyrightNotice(Text fCopyrightNotice) {
-        this.fCopyrightNotice = fCopyrightNotice;
-    }
-
-    private Person fAccountablePerson;
-
-    /**
-     * Specifies the Person that is legally accountable for the CreativeWork.
-     *
-     * @return {@link Person}
-     */
-    @Override
-    public Person getAccountablePerson() {
-        return fAccountablePerson;
-    }
-
-    /**
-     * Specifies the Person that is legally accountable for the CreativeWork.
-     *
-     */
-    @Override
-    public void setAccountablePerson(Person fAccountablePerson) {
-        this.fAccountablePerson = fAccountablePerson;
-    }
-
-    private Object fPosition;
-
-    /**
-     * The position of an item in a series or sequence of items.
-     *
-     * @return {@link Integer} or {@link Text}
-     */
-    @Override
-    public <T> T getPosition() {
-        return (T) fPosition;
-    }
-
-    /**
-     * The position of an item in a series or sequence of items.
-     *
-     */
-    @Override
-    public void setPosition(Object fPosition) {
-        if(!(fPosition instanceof Integer) && !(fPosition instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'position': " + fPosition);
-        }
-        this.fPosition = fPosition;
-    }
-
-    private Object fFunder;
-
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    @Override
-    public <T> T getFunder() {
-        return (T) fFunder;
-    }
-
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     *
-     */
-    @Override
-    public void setFunder(Object fFunder) {
-        if(!(fFunder instanceof Organization) && !(fFunder instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'funder': " + fFunder);
-        }
-        this.fFunder = fFunder;
-    }
-
-    private Text fProductID;
-
-    /**
-     * The product identifier, such as ISBN. For example: ``` meta itemprop="productID" content="isbn:123-456-789" ```.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getProductID() {
-        return fProductID;
-    }
-
-    /**
-     * The product identifier, such as ISBN. For example: ``` meta itemprop="productID" content="isbn:123-456-789" ```.
-     *
-     */
-    @Override
-    public void setProductID(Text fProductID) {
-        this.fProductID = fProductID;
-    }
-
-    private Object fAcquireLicensePage;
-
-    /**
-     * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
-     */
-    @Override
-    public <T> T getAcquireLicensePage() {
-        return (T) fAcquireLicensePage;
-    }
-
-    /**
-     * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
-     */
-    @Override
-    public void setAcquireLicensePage(Object fAcquireLicensePage) {
-        if(!(fAcquireLicensePage instanceof CreativeWork) && !(fAcquireLicensePage instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'acquireLicensePage': " + fAcquireLicensePage);
-        }
-        this.fAcquireLicensePage = fAcquireLicensePage;
-    }
-
-    private Place fSpatialCoverage;
-
-    /**
-     * The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of
-     *       contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates
-     *       areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.
-     *
-     * @return {@link Place}
-     */
-    @Override
-    public Place getSpatialCoverage() {
-        return fSpatialCoverage;
-    }
-
-    /**
-     * The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of
-     *       contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates
-     *       areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.
-     *
-     */
-    @Override
-    public void setSpatialCoverage(Place fSpatialCoverage) {
-        this.fSpatialCoverage = fSpatialCoverage;
-    }
-
-    private Object fTemporalCoverage;
-
-    /**
-     * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
-     *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content e.g. ScholarlyArticle, Book, TVSeries or TVEpisode may indicate their temporalCoverage in broader terms - textually or via well-known URL.
-     *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945".
-     * 
-     * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
-     *
-     * @return {@link URL} or {@link DateTime} or {@link Text}
-     */
-    @Override
-    public <T> T getTemporalCoverage() {
-        return (T) fTemporalCoverage;
-    }
-
-    /**
-     * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
-     *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content e.g. ScholarlyArticle, Book, TVSeries or TVEpisode may indicate their temporalCoverage in broader terms - textually or via well-known URL.
-     *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945".
-     * 
-     * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
-     *
-     */
-    @Override
-    public void setTemporalCoverage(Object fTemporalCoverage) {
-        if(!(fTemporalCoverage instanceof URL) && !(fTemporalCoverage instanceof DateTime) && !(fTemporalCoverage instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'temporalCoverage': " + fTemporalCoverage);
-        }
-        this.fTemporalCoverage = fTemporalCoverage;
-    }
-
-    private Object fHeight;
-
-    /**
-     * The height of the item.
-     *
-     * @return {@link Distance} or {@link QuantitativeValue}
-     */
-    @Override
-    public <T> T getHeight() {
-        return (T) fHeight;
-    }
-
-    /**
-     * The height of the item.
-     *
-     */
-    @Override
-    public void setHeight(Object fHeight) {
-        if(!(fHeight instanceof Distance) && !(fHeight instanceof QuantitativeValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'height': " + fHeight);
-        }
-        this.fHeight = fHeight;
-    }
-
-    private Number fCopyrightYear;
-
-    /**
-     * The year during which the claimed copyright for the CreativeWork was first asserted.
-     *
-     * @return {@link Number}
-     */
-    @Override
-    public Number getCopyrightYear() {
-        return fCopyrightYear;
-    }
-
-    /**
-     * The year during which the claimed copyright for the CreativeWork was first asserted.
-     *
-     */
-    @Override
-    public void setCopyrightYear(Number fCopyrightYear) {
-        this.fCopyrightYear = fCopyrightYear;
-    }
-
-    private Object fProvider;
-
-    /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     *
-     * @return {@link Organization} or {@link Person}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     */
-    @Override
-    public <T> T getProvider() {
-        return (T) fProvider;
-    }
-
-    /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     */
-    @Override
-    public void setProvider(Object fProvider) {
-        if(!(fProvider instanceof Organization) && !(fProvider instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'provider': " + fProvider);
-        }
-        this.fProvider = fProvider;
+    public void setCountryOfOrigin(Country fCountryOfOrigin) {
+        this.fCountryOfOrigin = fCountryOfOrigin;
     }
 
     private Object fPattern;
@@ -3431,115 +366,312 @@ public class ProductCollectionImpl implements ProductCollection {
         this.fCategory = fCategory;
     }
 
-    private MediaObject fAssociatedMedia;
+    private Grant fFunding;
 
     /**
-     * A media object that encodes this CreativeWork. This property is a synonym for encoding.
+     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
      *
-     * @return {@link MediaObject}
+     * @return {@link Grant}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
     @Override
-    public MediaObject getAssociatedMedia() {
-        return fAssociatedMedia;
+    public Grant getFunding() {
+        return fFunding;
     }
 
     /**
-     * A media object that encodes this CreativeWork. This property is a synonym for encoding.
+     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
      *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
     @Override
-    public void setAssociatedMedia(MediaObject fAssociatedMedia) {
-        this.fAssociatedMedia = fAssociatedMedia;
+    public void setFunding(Grant fFunding) {
+        this.fFunding = fFunding;
     }
 
-    private Object fProducer;
+    private Text fMpn;
 
     /**
-     * The person or organization who produced the work (e.g. music album, movie, tv/radio series etc.).
+     * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
      *
-     * @return {@link Organization} or {@link Person}
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public <T> T getProducer() {
-        return (T) fProducer;
+    public Text getMpn() {
+        return fMpn;
     }
 
     /**
-     * The person or organization who produced the work (e.g. music album, movie, tv/radio series etc.).
+     * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setMpn(Text fMpn) {
+        this.fMpn = fMpn;
+    }
+
+    private Object fHeight;
+
+    /**
+     * The height of the item.
+     *
+     * @return {@link Distance} or {@link QuantitativeValue}
+     */
+    @Override
+    public <T> T getHeight() {
+        return (T) fHeight;
+    }
+
+    /**
+     * The height of the item.
      *
      */
     @Override
-    public void setProducer(Object fProducer) {
-        if(!(fProducer instanceof Organization) && !(fProducer instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'producer': " + fProducer);
+    public void setHeight(Object fHeight) {
+        if(!(fHeight instanceof Distance) && !(fHeight instanceof QuantitativeValue)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'height': " + fHeight);
         }
-        this.fProducer = fProducer;
+        this.fHeight = fHeight;
     }
 
-    private Object fPublisher;
+    private Object fKeywords;
 
     /**
-     * The publisher of the creative work.
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
      *
-     * @return {@link Person} or {@link Organization}
+     * @return {@link DefinedTerm} or {@link Text} or {@link URL}
      */
     @Override
-    public <T> T getPublisher() {
-        return (T) fPublisher;
+    public <T> T getKeywords() {
+        return (T) fKeywords;
     }
 
     /**
-     * The publisher of the creative work.
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
      *
      */
     @Override
-    public void setPublisher(Object fPublisher) {
-        if(!(fPublisher instanceof Person) && !(fPublisher instanceof Organization)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'publisher': " + fPublisher);
+    public void setKeywords(Object fKeywords) {
+        if(!(fKeywords instanceof DefinedTerm) && !(fKeywords instanceof Text) && !(fKeywords instanceof URL)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'keywords': " + fKeywords);
         }
-        this.fPublisher = fPublisher;
+        this.fKeywords = fKeywords;
     }
 
-    private Duration fTimeRequired;
+    private Date fPurchaseDate;
 
     /**
-     * Approximate or typical time it takes to work with or through this learning resource for the typical intended target audience, e.g. 'PT30M', 'PT1H25M'.
+     * The date the item e.g. vehicle was purchased by the current owner.
      *
-     * @return {@link Duration}
+     * @return {@link Date}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public Duration getTimeRequired() {
-        return fTimeRequired;
-    }
-
-    /**
-     * Approximate or typical time it takes to work with or through this learning resource for the typical intended target audience, e.g. 'PT30M', 'PT1H25M'.
-     *
-     */
-    @Override
-    public void setTimeRequired(Duration fTimeRequired) {
-        this.fTimeRequired = fTimeRequired;
-    }
-
-    private MediaObject fEncoding;
-
-    /**
-     * A media object that encodes this CreativeWork. This property is a synonym for associatedMedia.
-     *
-     * @return {@link MediaObject}
-     */
-    @Override
-    public MediaObject getEncoding() {
-        return fEncoding;
+    public Date getPurchaseDate() {
+        return fPurchaseDate;
     }
 
     /**
-     * A media object that encodes this CreativeWork. This property is a synonym for associatedMedia.
+     * The date the item e.g. vehicle was purchased by the current owner.
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public void setPurchaseDate(Date fPurchaseDate) {
+        this.fPurchaseDate = fPurchaseDate;
+    }
+
+    private EnergyConsumptionDetails fHasEnergyConsumptionDetails;
+
+    /**
+     * Defines the energy efficiency Category (also known as "class" or "rating") for a product according to an international energy efficiency standard.
+     *
+     * @return {@link EnergyConsumptionDetails}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2670">https://github.com/schemaorg/schemaorg/issues/2670</a>
+     */
+    @Override
+    public EnergyConsumptionDetails getHasEnergyConsumptionDetails() {
+        return fHasEnergyConsumptionDetails;
+    }
+
+    /**
+     * Defines the energy efficiency Category (also known as "class" or "rating") for a product according to an international energy efficiency standard.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2670">https://github.com/schemaorg/schemaorg/issues/2670</a>
+     */
+    @Override
+    public void setHasEnergyConsumptionDetails(EnergyConsumptionDetails fHasEnergyConsumptionDetails) {
+        this.fHasEnergyConsumptionDetails = fHasEnergyConsumptionDetails;
+    }
+
+    private Audience fAudience;
+
+    /**
+     * An intended audience, i.e. a group for whom something was created.
+     *
+     * @return {@link Audience}
+     */
+    @Override
+    public Audience getAudience() {
+        return fAudience;
+    }
+
+    /**
+     * An intended audience, i.e. a group for whom something was created.
      *
      */
     @Override
-    public void setEncoding(MediaObject fEncoding) {
-        this.fEncoding = fEncoding;
+    public void setAudience(Audience fAudience) {
+        this.fAudience = fAudience;
+    }
+
+    private Object fOffers;
+
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     *
+     * @return {@link Offer} or {@link Demand}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public <T> T getOffers() {
+        return (T) fOffers;
+    }
+
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     *
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public void setOffers(Object fOffers) {
+        if(!(fOffers instanceof Offer) && !(fOffers instanceof Demand)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'offers': " + fOffers);
+        }
+        this.fOffers = fOffers;
+    }
+
+    private Date fProductionDate;
+
+    /**
+     * The date of production of the item, e.g. vehicle.
+     *
+     * @return {@link Date}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public Date getProductionDate() {
+        return fProductionDate;
+    }
+
+    /**
+     * The date of production of the item, e.g. vehicle.
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public void setProductionDate(Date fProductionDate) {
+        this.fProductionDate = fProductionDate;
+    }
+
+    private OfferItemCondition fItemCondition;
+
+    /**
+     * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
+     *
+     * @return {@link OfferItemCondition}
+     */
+    @Override
+    public OfferItemCondition getItemCondition() {
+        return fItemCondition;
+    }
+
+    /**
+     * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
+     *
+     */
+    @Override
+    public void setItemCondition(OfferItemCondition fItemCondition) {
+        this.fItemCondition = fItemCondition;
+    }
+
+    private Text fAwards;
+
+    /**
+     * Awards won by or for this item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getAwards() {
+        return fAwards;
+    }
+
+    /**
+     * Awards won by or for this item.
+     *
+     */
+    @Override
+    public void setAwards(Text fAwards) {
+        this.fAwards = fAwards;
+    }
+
+    private Text fGtin;
+
+    /**
+     * A Global Trade Item Number ([GTIN](https://www.gs1.org/standards/id-keys/gtin)). GTINs identify trade items, including products and services, using numeric identification codes. The [[gtin]] property generalizes the earlier [[gtin8]], [[gtin12]], [[gtin13]], and [[gtin14]] properties. The GS1 [digital link specifications](https://www.gs1.org/standards/Digital-Link/) express GTINs as URLs. A correct [[gtin]] value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a "GS1 Digital Link" URL based on such a string. The numeric component should also have a [valid GS1 check digit](https://www.gs1.org/services/check-digit-calculator) and meet the other rules for valid GTINs. See also [GS1's GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) and [Wikipedia](https://en.wikipedia.org/wiki/Global_Trade_Item_Number) for more details. Left-padding of the gtin values is not required or encouraged.
+     *    
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     */
+    @Override
+    public Text getGtin() {
+        return fGtin;
+    }
+
+    /**
+     * A Global Trade Item Number ([GTIN](https://www.gs1.org/standards/id-keys/gtin)). GTINs identify trade items, including products and services, using numeric identification codes. The [[gtin]] property generalizes the earlier [[gtin8]], [[gtin12]], [[gtin13]], and [[gtin14]] properties. The GS1 [digital link specifications](https://www.gs1.org/standards/Digital-Link/) express GTINs as URLs. A correct [[gtin]] value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a "GS1 Digital Link" URL based on such a string. The numeric component should also have a [valid GS1 check digit](https://www.gs1.org/services/check-digit-calculator) and meet the other rules for valid GTINs. See also [GS1's GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) and [Wikipedia](https://en.wikipedia.org/wiki/Global_Trade_Item_Number) for more details. Left-padding of the gtin values is not required or encouraged.
+     *    
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     */
+    @Override
+    public void setGtin(Text fGtin) {
+        this.fGtin = fGtin;
+    }
+
+    private Text fProductID;
+
+    /**
+     * The product identifier, such as ISBN. For example: ``` meta itemprop="productID" content="isbn:123-456-789" ```.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getProductID() {
+        return fProductID;
+    }
+
+    /**
+     * The product identifier, such as ISBN. For example: ``` meta itemprop="productID" content="isbn:123-456-789" ```.
+     *
+     */
+    @Override
+    public void setProductID(Text fProductID) {
+        this.fProductID = fProductID;
     }
 
     private Text fCountryOfAssembly;
@@ -3567,78 +699,362 @@ public class ProductCollectionImpl implements ProductCollection {
         this.fCountryOfAssembly = fCountryOfAssembly;
     }
 
-    private Place fSpatial;
+    private Text fColor;
 
     /**
-     * The "spatial" property can be used in cases when more specific properties
-     * (e.g. [[locationCreated]], [[spatialCoverage]], [[contentLocation]]) are not known to be appropriate.
+     * The color of the product.
      *
-     * @return {@link Place}
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public Place getSpatial() {
-        return fSpatial;
+    public Text getColor() {
+        return fColor;
     }
 
     /**
-     * The "spatial" property can be used in cases when more specific properties
-     * (e.g. [[locationCreated]], [[spatialCoverage]], [[contentLocation]]) are not known to be appropriate.
+     * The color of the product.
      *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setSpatial(Place fSpatial) {
-        this.fSpatial = fSpatial;
+    public void setColor(Text fColor) {
+        this.fColor = fColor;
     }
 
-    private Object fMaintainer;
+    private AggregateRating fAggregateRating;
 
     /**
-     * A maintainer of a [[Dataset]], software package ([[SoftwareApplication]]), or other [[Project]]. A maintainer is a [[Person]] or [[Organization]] that manages contributions to, and/or publication of, some (typically complex) artifact. It is common for distributions of software and data to be based on "upstream" sources. When [[maintainer]] is applied to a specific version of something e.g. a particular version or packaging of a [[Dataset]], it is always  possible that the upstream source has a different maintainer. The [[isBasedOn]] property can be used to indicate such relationships between datasets to make the different maintenance roles clear. Similarly in the case of software, a package may have dedicated maintainers working on integration into software distributions such as Ubuntu, as well as upstream maintainers of the underlying work.
-     *       
+     * The overall rating, based on a collection of reviews or ratings, of the item.
      *
-     * @return {@link Person} or {@link Organization}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2311">https://github.com/schemaorg/schemaorg/issues/2311</a>
+     * @return {@link AggregateRating}
      */
     @Override
-    public <T> T getMaintainer() {
-        return (T) fMaintainer;
+    public AggregateRating getAggregateRating() {
+        return fAggregateRating;
     }
 
     /**
-     * A maintainer of a [[Dataset]], software package ([[SoftwareApplication]]), or other [[Project]]. A maintainer is a [[Person]] or [[Organization]] that manages contributions to, and/or publication of, some (typically complex) artifact. It is common for distributions of software and data to be based on "upstream" sources. When [[maintainer]] is applied to a specific version of something e.g. a particular version or packaging of a [[Dataset]], it is always  possible that the upstream source has a different maintainer. The [[isBasedOn]] property can be used to indicate such relationships between datasets to make the different maintenance roles clear. Similarly in the case of software, a package may have dedicated maintainers working on integration into software distributions such as Ubuntu, as well as upstream maintainers of the underlying work.
-     *       
+     * The overall rating, based on a collection of reviews or ratings, of the item.
      *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2311">https://github.com/schemaorg/schemaorg/issues/2311</a>
      */
     @Override
-    public void setMaintainer(Object fMaintainer) {
-        if(!(fMaintainer instanceof Person) && !(fMaintainer instanceof Organization)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'maintainer': " + fMaintainer);
+    public void setAggregateRating(AggregateRating fAggregateRating) {
+        this.fAggregateRating = fAggregateRating;
+    }
+
+    private Object fIsSimilarTo;
+
+    /**
+     * A pointer to another, functionally similar product (or multiple products).
+     *
+     * @return {@link Service} or {@link Product}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public <T> T getIsSimilarTo() {
+        return (T) fIsSimilarTo;
+    }
+
+    /**
+     * A pointer to another, functionally similar product (or multiple products).
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setIsSimilarTo(Object fIsSimilarTo) {
+        if(!(fIsSimilarTo instanceof Service) && !(fIsSimilarTo instanceof Product)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'isSimilarTo': " + fIsSimilarTo);
         }
-        this.fMaintainer = fMaintainer;
+        this.fIsSimilarTo = fIsSimilarTo;
     }
 
-    private PropertyValue fAdditionalProperty;
+    private Object fDepth;
 
     /**
-     * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
+     * The depth of the item.
      *
-     * @return {@link PropertyValue}
+     * @return {@link Distance} or {@link QuantitativeValue}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public PropertyValue getAdditionalProperty() {
-        return fAdditionalProperty;
+    public <T> T getDepth() {
+        return (T) fDepth;
     }
 
     /**
-     * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
+     * The depth of the item.
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setDepth(Object fDepth) {
+        if(!(fDepth instanceof Distance) && !(fDepth instanceof QuantitativeValue)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'depth': " + fDepth);
+        }
+        this.fDepth = fDepth;
+    }
+
+    private Text fCountryOfLastProcessing;
+
+    /**
+     * The place where the item (typically [[Product]]) was last processed and tested before importation.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/991">https://github.com/schemaorg/schemaorg/issues/991</a>
+     */
+    @Override
+    public Text getCountryOfLastProcessing() {
+        return fCountryOfLastProcessing;
+    }
+
+    /**
+     * The place where the item (typically [[Product]]) was last processed and tested before importation.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/991">https://github.com/schemaorg/schemaorg/issues/991</a>
+     */
+    @Override
+    public void setCountryOfLastProcessing(Text fCountryOfLastProcessing) {
+        this.fCountryOfLastProcessing = fCountryOfLastProcessing;
+    }
+
+    private Object fIsVariantOf;
+
+    /**
+     * Indicates the kind of product that this is a variant of. In the case of [[ProductModel]], this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a [[ProductGroup]], the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with [[ProductGroup]], this property can apply to any [[Product]] included in the group.
+     *
+     * @return {@link ProductModel} or {@link ProductGroup}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public <T> T getIsVariantOf() {
+        return (T) fIsVariantOf;
+    }
+
+    /**
+     * Indicates the kind of product that this is a variant of. In the case of [[ProductModel]], this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a [[ProductGroup]], the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with [[ProductGroup]], this property can apply to any [[Product]] included in the group.
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setIsVariantOf(Object fIsVariantOf) {
+        if(!(fIsVariantOf instanceof ProductModel) && !(fIsVariantOf instanceof ProductGroup)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'isVariantOf': " + fIsVariantOf);
+        }
+        this.fIsVariantOf = fIsVariantOf;
+    }
+
+    private Text fSlogan;
+
+    /**
+     * A slogan or motto associated with the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getSlogan() {
+        return fSlogan;
+    }
+
+    /**
+     * A slogan or motto associated with the item.
      *
      */
     @Override
-    public void setAdditionalProperty(PropertyValue fAdditionalProperty) {
-        this.fAdditionalProperty = fAdditionalProperty;
+    public void setSlogan(Text fSlogan) {
+        this.fSlogan = fSlogan;
+    }
+
+    private Object fBrand;
+
+    /**
+     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     *
+     * @return {@link Organization} or {@link Brand}
+     */
+    @Override
+    public <T> T getBrand() {
+        return (T) fBrand;
+    }
+
+    /**
+     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     *
+     */
+    @Override
+    public void setBrand(Object fBrand) {
+        if(!(fBrand instanceof Organization) && !(fBrand instanceof Brand)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'brand': " + fBrand);
+        }
+        this.fBrand = fBrand;
+    }
+
+    private Organization fManufacturer;
+
+    /**
+     * The manufacturer of the product.
+     *
+     * @return {@link Organization}
+     */
+    @Override
+    public Organization getManufacturer() {
+        return fManufacturer;
+    }
+
+    /**
+     * The manufacturer of the product.
+     *
+     */
+    @Override
+    public void setManufacturer(Organization fManufacturer) {
+        this.fManufacturer = fManufacturer;
+    }
+
+    private QuantitativeValue fHasMeasurement;
+
+    /**
+     * A product measurement, for example the inseam of pants, the wheel size of a bicycle, or the gauge of a screw. Usually an exact measurement, but can also be a range of measurements for adjustable products, for example belts and ski bindings.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
+     */
+    @Override
+    public QuantitativeValue getHasMeasurement() {
+        return fHasMeasurement;
+    }
+
+    /**
+     * A product measurement, for example the inseam of pants, the wheel size of a bicycle, or the gauge of a screw. Usually an exact measurement, but can also be a range of measurements for adjustable products, for example belts and ski bindings.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
+     */
+    @Override
+    public void setHasMeasurement(QuantitativeValue fHasMeasurement) {
+        this.fHasMeasurement = fHasMeasurement;
+    }
+
+    private Product fIsConsumableFor;
+
+    /**
+     * A pointer to another product (or multiple products) for which this product is a consumable.
+     *
+     * @return {@link Product}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public Product getIsConsumableFor() {
+        return fIsConsumableFor;
+    }
+
+    /**
+     * A pointer to another product (or multiple products) for which this product is a consumable.
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setIsConsumableFor(Product fIsConsumableFor) {
+        this.fIsConsumableFor = fIsConsumableFor;
+    }
+
+    private Object fLogo;
+
+    /**
+     * An associated logo.
+     *
+     * @return {@link URL} or {@link ImageObject}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public <T> T getLogo() {
+        return (T) fLogo;
+    }
+
+    /**
+     * An associated logo.
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setLogo(Object fLogo) {
+        if(!(fLogo instanceof URL) && !(fLogo instanceof ImageObject)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'logo': " + fLogo);
+        }
+        this.fLogo = fLogo;
+    }
+
+    private Text fGtin8;
+
+    /**
+     * The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public Text getGtin8() {
+        return fGtin8;
+    }
+
+    /**
+     * The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setGtin8(Text fGtin8) {
+        this.fGtin8 = fGtin8;
+    }
+
+    private Text fSku;
+
+    /**
+     * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public Text getSku() {
+        return fSku;
+    }
+
+    /**
+     * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setSku(Text fSku) {
+        this.fSku = fSku;
+    }
+
+    private Text fInProductGroupWithID;
+
+    /**
+     * Indicates the [[productGroupID]] for a [[ProductGroup]] that this product [[isVariantOf]]. 
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     */
+    @Override
+    public Text getInProductGroupWithID() {
+        return fInProductGroupWithID;
+    }
+
+    /**
+     * Indicates the [[productGroupID]] for a [[ProductGroup]] that this product [[isVariantOf]]. 
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     */
+    @Override
+    public void setInProductGroupWithID(Text fInProductGroupWithID) {
+        this.fInProductGroupWithID = fInProductGroupWithID;
     }
 
     private Object fModel;
@@ -3665,6 +1081,31 @@ public class ProductCollectionImpl implements ProductCollection {
         this.fModel = fModel;
     }
 
+    private MerchantReturnPolicy fHasMerchantReturnPolicy;
+
+    /**
+     * Specifies a MerchantReturnPolicy that may be applicable.
+     *
+     * @return {@link MerchantReturnPolicy}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     */
+    @Override
+    public MerchantReturnPolicy getHasMerchantReturnPolicy() {
+        return fHasMerchantReturnPolicy;
+    }
+
+    /**
+     * Specifies a MerchantReturnPolicy that may be applicable.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     */
+    @Override
+    public void setHasMerchantReturnPolicy(MerchantReturnPolicy fHasMerchantReturnPolicy) {
+        this.fHasMerchantReturnPolicy = fHasMerchantReturnPolicy;
+    }
+
     private Date fReleaseDate;
 
     /**
@@ -3688,25 +1129,539 @@ public class ProductCollectionImpl implements ProductCollection {
         this.fReleaseDate = fReleaseDate;
     }
 
-    private Integer fCommentCount;
+    private Text fGtin14;
 
     /**
-     * The number of comments this CreativeWork (e.g. Article, Question or Answer) has received. This is most applicable to works published in Web sites with commenting system; additional comments may exist elsewhere.
+     * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
-     * @return {@link Integer}
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public Integer getCommentCount() {
-        return fCommentCount;
+    public Text getGtin14() {
+        return fGtin14;
     }
 
     /**
-     * The number of comments this CreativeWork (e.g. Article, Question or Answer) has received. This is most applicable to works published in Web sites with commenting system; additional comments may exist elsewhere.
+     * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setGtin14(Text fGtin14) {
+        this.fGtin14 = fGtin14;
+    }
+
+    private QuantitativeValue fWeight;
+
+    /**
+     * The weight of the product or person.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public QuantitativeValue getWeight() {
+        return fWeight;
+    }
+
+    /**
+     * The weight of the product or person.
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setWeight(QuantitativeValue fWeight) {
+        this.fWeight = fWeight;
+    }
+
+    private Object fSize;
+
+    /**
+     * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
+     *
+     * @return {@link QuantitativeValue} or {@link DefinedTerm} or {@link Text} or {@link SizeSpecification}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     */
+    @Override
+    public <T> T getSize() {
+        return (T) fSize;
+    }
+
+    /**
+     * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     */
+    @Override
+    public void setSize(Object fSize) {
+        if(!(fSize instanceof QuantitativeValue) && !(fSize instanceof DefinedTerm) && !(fSize instanceof Text) && !(fSize instanceof SizeSpecification)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'size': " + fSize);
+        }
+        this.fSize = fSize;
+    }
+
+    private PropertyValue fAdditionalProperty;
+
+    /**
+     * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
+     *
+     * @return {@link PropertyValue}
+     */
+    @Override
+    public PropertyValue getAdditionalProperty() {
+        return fAdditionalProperty;
+    }
+
+    /**
+     * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
      *
      */
     @Override
-    public void setCommentCount(Integer fCommentCount) {
-        this.fCommentCount = fCommentCount;
+    public void setAdditionalProperty(PropertyValue fAdditionalProperty) {
+        this.fAdditionalProperty = fAdditionalProperty;
+    }
+
+    private Text fGtin13;
+
+    /**
+     * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public Text getGtin13() {
+        return fGtin13;
+    }
+
+    /**
+     * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setGtin13(Text fGtin13) {
+        this.fGtin13 = fGtin13;
+    }
+
+    private Review fReviews;
+
+    /**
+     * Review of the item.
+     *
+     * @return {@link Review}
+     */
+    @Override
+    public Review getReviews() {
+        return fReviews;
+    }
+
+    /**
+     * Review of the item.
+     *
+     */
+    @Override
+    public void setReviews(Review fReviews) {
+        this.fReviews = fReviews;
+    }
+
+    private Boolean fIsFamilyFriendly;
+
+    /**
+     * Indicates whether this content is family friendly.
+     *
+     * @return {@link Boolean}
+     */
+    @Override
+    public Boolean getIsFamilyFriendly() {
+        return fIsFamilyFriendly;
+    }
+
+    /**
+     * Indicates whether this content is family friendly.
+     *
+     */
+    @Override
+    public void setIsFamilyFriendly(Boolean fIsFamilyFriendly) {
+        this.fIsFamilyFriendly = fIsFamilyFriendly;
+    }
+
+    private Object fIsRelatedTo;
+
+    /**
+     * A pointer to another, somehow related product (or multiple products).
+     *
+     * @return {@link Service} or {@link Product}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public <T> T getIsRelatedTo() {
+        return (T) fIsRelatedTo;
+    }
+
+    /**
+     * A pointer to another, somehow related product (or multiple products).
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setIsRelatedTo(Object fIsRelatedTo) {
+        if(!(fIsRelatedTo instanceof Service) && !(fIsRelatedTo instanceof Product)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'isRelatedTo': " + fIsRelatedTo);
+        }
+        this.fIsRelatedTo = fIsRelatedTo;
+    }
+
+    private Object fMainEntityOfPage;
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    @Override
+    public <T> T getMainEntityOfPage() {
+        return (T) fMainEntityOfPage;
+    }
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     */
+    @Override
+    public void setMainEntityOfPage(Object fMainEntityOfPage) {
+        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
+        }
+        this.fMainEntityOfPage = fMainEntityOfPage;
+    }
+
+    private Text fAlternateName;
+
+    /**
+     * An alias for the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getAlternateName() {
+        return fAlternateName;
+    }
+
+    /**
+     * An alias for the item.
+     *
+     */
+    @Override
+    public void setAlternateName(Text fAlternateName) {
+        this.fAlternateName = fAlternateName;
+    }
+
+    private Text fName;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getName() {
+        return fName;
+    }
+
+    /**
+     * The name of the item.
+     *
+     */
+    @Override
+    public void setName(Text fName) {
+        this.fName = fName;
+    }
+
+    private Action fPotentialAction;
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public Action getPotentialAction() {
+        return fPotentialAction;
+    }
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     */
+    @Override
+    public void setPotentialAction(Action fPotentialAction) {
+        this.fPotentialAction = fPotentialAction;
+    }
+
+    private Object fImage;
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link URL} or {@link ImageObject}
+     */
+    @Override
+    public <T> T getImage() {
+        return (T) fImage;
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     */
+    @Override
+    public void setImage(Object fImage) {
+        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
+        }
+        this.fImage = fImage;
+    }
+
+    private URL fUrl;
+
+    /**
+     * URL of the item.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getUrl() {
+        return fUrl;
+    }
+
+    /**
+     * URL of the item.
+     *
+     */
+    @Override
+    public void setUrl(URL fUrl) {
+        this.fUrl = fUrl;
+    }
+
+    private Text fDescription;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDescription() {
+        return fDescription;
+    }
+
+    /**
+     * A description of the item.
+     *
+     */
+    @Override
+    public void setDescription(Text fDescription) {
+        this.fDescription = fDescription;
+    }
+
+    private Object fSubjectOf;
+
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @return {@link Event} or {@link CreativeWork}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public <T> T getSubjectOf() {
+        return (T) fSubjectOf;
+    }
+
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public void setSubjectOf(Object fSubjectOf) {
+        if(!(fSubjectOf instanceof Event) && !(fSubjectOf instanceof CreativeWork)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'subjectOf': " + fSubjectOf);
+        }
+        this.fSubjectOf = fSubjectOf;
+    }
+
+    private URL fAdditionalType;
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getAdditionalType() {
+        return fAdditionalType;
+    }
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     */
+    @Override
+    public void setAdditionalType(URL fAdditionalType) {
+        this.fAdditionalType = fAdditionalType;
+    }
+
+    private Text fDisambiguatingDescription;
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDisambiguatingDescription() {
+        return fDisambiguatingDescription;
+    }
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     */
+    @Override
+    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
+        this.fDisambiguatingDescription = fDisambiguatingDescription;
+    }
+
+    private URL fSameAs;
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getSameAs() {
+        return fSameAs;
+    }
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     */
+    @Override
+    public void setSameAs(URL fSameAs) {
+        this.fSameAs = fSameAs;
+    }
+
+    private Object fIdentifier;
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @return {@link URL} or {@link Text} or {@link PropertyValue}
+     */
+    @Override
+    public <T> T getIdentifier() {
+        return (T) fIdentifier;
+    }
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     */
+    @Override
+    public void setIdentifier(Object fIdentifier) {
+        if(!(fIdentifier instanceof URL) && !(fIdentifier instanceof Text) && !(fIdentifier instanceof PropertyValue)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
+        }
+        this.fIdentifier = fIdentifier;
+    }
+
+    private Integer fCollectionSize;
+
+    /**
+     * The number of items in the [[Collection]].
+     *
+     * @return {@link Integer}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1759">https://github.com/schemaorg/schemaorg/issues/1759</a>
+     */
+    @Override
+    public Integer getCollectionSize() {
+        return fCollectionSize;
+    }
+
+    /**
+     * The number of items in the [[Collection]].
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1759">https://github.com/schemaorg/schemaorg/issues/1759</a>
+     */
+    @Override
+    public void setCollectionSize(Integer fCollectionSize) {
+        this.fCollectionSize = fCollectionSize;
+    }
+
+    private Object fTeaches;
+
+    /**
+     * The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.
+     *
+     * @return {@link DefinedTerm} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
+     */
+    @Override
+    public <T> T getTeaches() {
+        return (T) fTeaches;
+    }
+
+    /**
+     * The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
+     */
+    @Override
+    public void setTeaches(Object fTeaches) {
+        if(!(fTeaches instanceof DefinedTerm) && !(fTeaches instanceof Text)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'teaches': " + fTeaches);
+        }
+        this.fTeaches = fTeaches;
+    }
+
+    private Object fEducationalLevel;
+
+    /**
+     * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
+     *
+     * @return {@link URL} or {@link DefinedTerm} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     */
+    @Override
+    public <T> T getEducationalLevel() {
+        return (T) fEducationalLevel;
+    }
+
+    /**
+     * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     */
+    @Override
+    public void setEducationalLevel(Object fEducationalLevel) {
+        if(!(fEducationalLevel instanceof URL) && !(fEducationalLevel instanceof DefinedTerm) && !(fEducationalLevel instanceof Text)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'educationalLevel': " + fEducationalLevel);
+        }
+        this.fEducationalLevel = fEducationalLevel;
     }
 
     private Text fAbstract;
@@ -3734,53 +1689,1373 @@ public class ProductCollectionImpl implements ProductCollection {
         this.fAbstract = fAbstract;
     }
 
-    private Text fNsn;
+    private Object fCreativeWorkStatus;
 
     /**
-     * Indicates the [NATO stock number](https://en.wikipedia.org/wiki/NATO_Stock_Number) (nsn) of a [[Product]]. 
+     * The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle.
+     *
+     * @return {@link Text} or {@link DefinedTerm}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/987">https://github.com/schemaorg/schemaorg/issues/987</a>
+     */
+    @Override
+    public <T> T getCreativeWorkStatus() {
+        return (T) fCreativeWorkStatus;
+    }
+
+    /**
+     * The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/987">https://github.com/schemaorg/schemaorg/issues/987</a>
+     */
+    @Override
+    public void setCreativeWorkStatus(Object fCreativeWorkStatus) {
+        if(!(fCreativeWorkStatus instanceof Text) && !(fCreativeWorkStatus instanceof DefinedTerm)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'creativeWorkStatus': " + fCreativeWorkStatus);
+        }
+        this.fCreativeWorkStatus = fCreativeWorkStatus;
+    }
+
+    private Date fExpires;
+
+    /**
+     * Date the content expires and is no longer useful or available. For example a [[VideoObject]] or [[NewsArticle]] whose availability or relevance is time-limited, or a [[ClaimReview]] fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date.
+     *
+     * @return {@link Date}
+     */
+    @Override
+    public Date getExpires() {
+        return fExpires;
+    }
+
+    /**
+     * Date the content expires and is no longer useful or available. For example a [[VideoObject]] or [[NewsArticle]] whose availability or relevance is time-limited, or a [[ClaimReview]] fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date.
+     *
+     */
+    @Override
+    public void setExpires(Date fExpires) {
+        this.fExpires = fExpires;
+    }
+
+    private DateTime fContentReferenceTime;
+
+    /**
+     * The specific time described by a creative work, for works (e.g. articles, video objects etc.) that emphasise a particular moment within an Event.
+     *
+     * @return {@link DateTime}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1050">https://github.com/schemaorg/schemaorg/issues/1050</a>
+     */
+    @Override
+    public DateTime getContentReferenceTime() {
+        return fContentReferenceTime;
+    }
+
+    /**
+     * The specific time described by a creative work, for works (e.g. articles, video objects etc.) that emphasise a particular moment within an Event.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1050">https://github.com/schemaorg/schemaorg/issues/1050</a>
+     */
+    @Override
+    public void setContentReferenceTime(DateTime fContentReferenceTime) {
+        this.fContentReferenceTime = fContentReferenceTime;
+    }
+
+    private Object fFileFormat;
+
+    /**
+     * Media type, typically MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml)) of the content e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.
+     *
+     * @return {@link URL} or {@link Text}
+     */
+    @Override
+    public <T> T getFileFormat() {
+        return (T) fFileFormat;
+    }
+
+    /**
+     * Media type, typically MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml)) of the content e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.
+     *
+     */
+    @Override
+    public void setFileFormat(Object fFileFormat) {
+        if(!(fFileFormat instanceof URL) && !(fFileFormat instanceof Text)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'fileFormat': " + fFileFormat);
+        }
+        this.fFileFormat = fFileFormat;
+    }
+
+    private Text fText;
+
+    /**
+     * The textual content of this CreativeWork.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getText() {
+        return fText;
+    }
+
+    /**
+     * The textual content of this CreativeWork.
+     *
+     */
+    @Override
+    public void setText(Text fText) {
+        this.fText = fText;
+    }
+
+    private Object fTranslator;
+
+    /**
+     * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    @Override
+    public <T> T getTranslator() {
+        return (T) fTranslator;
+    }
+
+    /**
+     * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
+     *
+     */
+    @Override
+    public void setTranslator(Object fTranslator) {
+        if(!(fTranslator instanceof Person) && !(fTranslator instanceof Organization)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'translator': " + fTranslator);
+        }
+        this.fTranslator = fTranslator;
+    }
+
+    private Object fAssesses;
+
+    /**
+     * The item being described is intended to assess the competency or learning outcome defined by the referenced term.
+     *
+     * @return {@link Text} or {@link DefinedTerm}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
+     */
+    @Override
+    public <T> T getAssesses() {
+        return (T) fAssesses;
+    }
+
+    /**
+     * The item being described is intended to assess the competency or learning outcome defined by the referenced term.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
+     */
+    @Override
+    public void setAssesses(Object fAssesses) {
+        if(!(fAssesses instanceof Text) && !(fAssesses instanceof DefinedTerm)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'assesses': " + fAssesses);
+        }
+        this.fAssesses = fAssesses;
+    }
+
+    private Text fCopyrightNotice;
+
+    /**
+     * Text of a notice appropriate for describing the copyright aspects of this Creative Work, ideally indicating the owner of the copyright for the Work.
      *
      * @return {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2126">https://github.com/schemaorg/schemaorg/issues/2126</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2659">https://github.com/schemaorg/schemaorg/issues/2659</a>
      */
     @Override
-    public Text getNsn() {
-        return fNsn;
+    public Text getCopyrightNotice() {
+        return fCopyrightNotice;
     }
 
     /**
-     * Indicates the [NATO stock number](https://en.wikipedia.org/wiki/NATO_Stock_Number) (nsn) of a [[Product]]. 
+     * Text of a notice appropriate for describing the copyright aspects of this Creative Work, ideally indicating the owner of the copyright for the Work.
      *
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2126">https://github.com/schemaorg/schemaorg/issues/2126</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2659">https://github.com/schemaorg/schemaorg/issues/2659</a>
      */
     @Override
-    public void setNsn(Text fNsn) {
-        this.fNsn = fNsn;
+    public void setCopyrightNotice(Text fCopyrightNotice) {
+        this.fCopyrightNotice = fCopyrightNotice;
     }
 
-    private Object fCreator;
+    private Object fSchemaVersion;
 
     /**
-     * The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.
+     * Indicates (by URL or string) a particular version of a schema used in some CreativeWork. This property was created primarily to
+     *     indicate the use of a specific schema.org release, e.g. ```10.0``` as a simple string, or more explicitly via URL, ```https://schema.org/docs/releases.html#v10.0```. There may be situations in which other schemas might usefully be referenced this way, e.g. ```http://dublincore.org/specifications/dublin-core/dces/1999-07-02/``` but this has not been carefully explored in the community.
+     *
+     * @return {@link Text} or {@link URL}
+     */
+    @Override
+    public <T> T getSchemaVersion() {
+        return (T) fSchemaVersion;
+    }
+
+    /**
+     * Indicates (by URL or string) a particular version of a schema used in some CreativeWork. This property was created primarily to
+     *     indicate the use of a specific schema.org release, e.g. ```10.0``` as a simple string, or more explicitly via URL, ```https://schema.org/docs/releases.html#v10.0```. There may be situations in which other schemas might usefully be referenced this way, e.g. ```http://dublincore.org/specifications/dublin-core/dces/1999-07-02/``` but this has not been carefully explored in the community.
+     *
+     */
+    @Override
+    public void setSchemaVersion(Object fSchemaVersion) {
+        if(!(fSchemaVersion instanceof Text) && !(fSchemaVersion instanceof URL)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'schemaVersion': " + fSchemaVersion);
+        }
+        this.fSchemaVersion = fSchemaVersion;
+    }
+
+    private Person fAccountablePerson;
+
+    /**
+     * Specifies the Person that is legally accountable for the CreativeWork.
+     *
+     * @return {@link Person}
+     */
+    @Override
+    public Person getAccountablePerson() {
+        return fAccountablePerson;
+    }
+
+    /**
+     * Specifies the Person that is legally accountable for the CreativeWork.
+     *
+     */
+    @Override
+    public void setAccountablePerson(Person fAccountablePerson) {
+        this.fAccountablePerson = fAccountablePerson;
+    }
+
+    private Object fEducationalUse;
+
+    /**
+     * The purpose of a work in the context of education; for example, 'assignment', 'group work'.
+     *
+     * @return {@link DefinedTerm} or {@link Text}
+     */
+    @Override
+    public <T> T getEducationalUse() {
+        return (T) fEducationalUse;
+    }
+
+    /**
+     * The purpose of a work in the context of education; for example, 'assignment', 'group work'.
+     *
+     */
+    @Override
+    public void setEducationalUse(Object fEducationalUse) {
+        if(!(fEducationalUse instanceof DefinedTerm) && !(fEducationalUse instanceof Text)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'educationalUse': " + fEducationalUse);
+        }
+        this.fEducationalUse = fEducationalUse;
+    }
+
+    private Object fGenre;
+
+    /**
+     * Genre of the creative work, broadcast channel or group.
+     *
+     * @return {@link URL} or {@link Text}
+     */
+    @Override
+    public <T> T getGenre() {
+        return (T) fGenre;
+    }
+
+    /**
+     * Genre of the creative work, broadcast channel or group.
+     *
+     */
+    @Override
+    public void setGenre(Object fGenre) {
+        if(!(fGenre instanceof URL) && !(fGenre instanceof Text)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'genre': " + fGenre);
+        }
+        this.fGenre = fGenre;
+    }
+
+    private Object fPosition;
+
+    /**
+     * The position of an item in a series or sequence of items.
+     *
+     * @return {@link Integer} or {@link Text}
+     */
+    @Override
+    public <T> T getPosition() {
+        return (T) fPosition;
+    }
+
+    /**
+     * The position of an item in a series or sequence of items.
+     *
+     */
+    @Override
+    public void setPosition(Object fPosition) {
+        if(!(fPosition instanceof Integer) && !(fPosition instanceof Text)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'position': " + fPosition);
+        }
+        this.fPosition = fPosition;
+    }
+
+    private Text fAccessibilityHazard;
+
+    /**
+     * A characteristic of the described resource that is physiologically dangerous to some users. Related to WCAG 2.0 guideline 2.3. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityHazard-vocabulary).
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getAccessibilityHazard() {
+        return fAccessibilityHazard;
+    }
+
+    /**
+     * A characteristic of the described resource that is physiologically dangerous to some users. Related to WCAG 2.0 guideline 2.3. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityHazard-vocabulary).
+     *
+     */
+    @Override
+    public void setAccessibilityHazard(Text fAccessibilityHazard) {
+        this.fAccessibilityHazard = fAccessibilityHazard;
+    }
+
+    private Text fAlternativeHeadline;
+
+    /**
+     * A secondary title of the CreativeWork.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getAlternativeHeadline() {
+        return fAlternativeHeadline;
+    }
+
+    /**
+     * A secondary title of the CreativeWork.
+     *
+     */
+    @Override
+    public void setAlternativeHeadline(Text fAlternativeHeadline) {
+        this.fAlternativeHeadline = fAlternativeHeadline;
+    }
+
+    private Place fLocationCreated;
+
+    /**
+     * The location where the CreativeWork was created, which may not be the same as the location depicted in the CreativeWork.
+     *
+     * @return {@link Place}
+     */
+    @Override
+    public Place getLocationCreated() {
+        return fLocationCreated;
+    }
+
+    /**
+     * The location where the CreativeWork was created, which may not be the same as the location depicted in the CreativeWork.
+     *
+     */
+    @Override
+    public void setLocationCreated(Place fLocationCreated) {
+        this.fLocationCreated = fLocationCreated;
+    }
+
+    private MediaObject fAssociatedMedia;
+
+    /**
+     * A media object that encodes this CreativeWork. This property is a synonym for encoding.
+     *
+     * @return {@link MediaObject}
+     */
+    @Override
+    public MediaObject getAssociatedMedia() {
+        return fAssociatedMedia;
+    }
+
+    /**
+     * A media object that encodes this CreativeWork. This property is a synonym for encoding.
+     *
+     */
+    @Override
+    public void setAssociatedMedia(MediaObject fAssociatedMedia) {
+        this.fAssociatedMedia = fAssociatedMedia;
+    }
+
+    private Object fMaterialExtent;
+
+    /**
+     * The quantity of the materials being described or an expression of the physical space they occupy.
+     *
+     * @return {@link QuantitativeValue} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1759">https://github.com/schemaorg/schemaorg/issues/1759</a>
+     */
+    @Override
+    public <T> T getMaterialExtent() {
+        return (T) fMaterialExtent;
+    }
+
+    /**
+     * The quantity of the materials being described or an expression of the physical space they occupy.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1759">https://github.com/schemaorg/schemaorg/issues/1759</a>
+     */
+    @Override
+    public void setMaterialExtent(Object fMaterialExtent) {
+        if(!(fMaterialExtent instanceof QuantitativeValue) && !(fMaterialExtent instanceof Text)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'materialExtent': " + fMaterialExtent);
+        }
+        this.fMaterialExtent = fMaterialExtent;
+    }
+
+    private Thing fMainEntity;
+
+    /**
+     * Indicates the primary entity described in some page or other CreativeWork.
+     *
+     * @return {@link Thing}
+     */
+    @Override
+    public Thing getMainEntity() {
+        return fMainEntity;
+    }
+
+    /**
+     * Indicates the primary entity described in some page or other CreativeWork.
+     *
+     */
+    @Override
+    public void setMainEntity(Thing fMainEntity) {
+        this.fMainEntity = fMainEntity;
+    }
+
+    private Object fCopyrightHolder;
+
+    /**
+     * The party holding the legal copyright to the CreativeWork.
      *
      * @return {@link Organization} or {@link Person}
      */
     @Override
-    public <T> T getCreator() {
-        return (T) fCreator;
+    public <T> T getCopyrightHolder() {
+        return (T) fCopyrightHolder;
     }
 
     /**
-     * The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.
+     * The party holding the legal copyright to the CreativeWork.
      *
      */
     @Override
-    public void setCreator(Object fCreator) {
-        if(!(fCreator instanceof Organization) && !(fCreator instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'creator': " + fCreator);
+    public void setCopyrightHolder(Object fCopyrightHolder) {
+        if(!(fCopyrightHolder instanceof Organization) && !(fCopyrightHolder instanceof Person)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'copyrightHolder': " + fCopyrightHolder);
         }
-        this.fCreator = fCreator;
+        this.fCopyrightHolder = fCopyrightHolder;
+    }
+
+    private Place fContentLocation;
+
+    /**
+     * The location depicted or described in the content. For example, the location in a photograph or painting.
+     *
+     * @return {@link Place}
+     */
+    @Override
+    public Place getContentLocation() {
+        return fContentLocation;
+    }
+
+    /**
+     * The location depicted or described in the content. For example, the location in a photograph or painting.
+     *
+     */
+    @Override
+    public void setContentLocation(Place fContentLocation) {
+        this.fContentLocation = fContentLocation;
+    }
+
+    private Date fSdDatePublished;
+
+    /**
+     * Indicates the date on which the current structured data was generated / published. Typically used alongside [[sdPublisher]]
+     *
+     * @return {@link Date}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
+     */
+    @Override
+    public Date getSdDatePublished() {
+        return fSdDatePublished;
+    }
+
+    /**
+     * Indicates the date on which the current structured data was generated / published. Typically used alongside [[sdPublisher]]
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
+     */
+    @Override
+    public void setSdDatePublished(Date fSdDatePublished) {
+        this.fSdDatePublished = fSdDatePublished;
+    }
+
+    private Object fProducer;
+
+    /**
+     * The person or organization who produced the work (e.g. music album, movie, tv/radio series etc.).
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> T getProducer() {
+        return (T) fProducer;
+    }
+
+    /**
+     * The person or organization who produced the work (e.g. music album, movie, tv/radio series etc.).
+     *
+     */
+    @Override
+    public void setProducer(Object fProducer) {
+        if(!(fProducer instanceof Organization) && !(fProducer instanceof Person)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'producer': " + fProducer);
+        }
+        this.fProducer = fProducer;
+    }
+
+    private Place fSpatial;
+
+    /**
+     * The "spatial" property can be used in cases when more specific properties
+     * (e.g. [[locationCreated]], [[spatialCoverage]], [[contentLocation]]) are not known to be appropriate.
+     *
+     * @return {@link Place}
+     */
+    @Override
+    public Place getSpatial() {
+        return fSpatial;
+    }
+
+    /**
+     * The "spatial" property can be used in cases when more specific properties
+     * (e.g. [[locationCreated]], [[spatialCoverage]], [[contentLocation]]) are not known to be appropriate.
+     *
+     */
+    @Override
+    public void setSpatial(Place fSpatial) {
+        this.fSpatial = fSpatial;
+    }
+
+    private Object fPublisher;
+
+    /**
+     * The publisher of the creative work.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    @Override
+    public <T> T getPublisher() {
+        return (T) fPublisher;
+    }
+
+    /**
+     * The publisher of the creative work.
+     *
+     */
+    @Override
+    public void setPublisher(Object fPublisher) {
+        if(!(fPublisher instanceof Person) && !(fPublisher instanceof Organization)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'publisher': " + fPublisher);
+        }
+        this.fPublisher = fPublisher;
+    }
+
+    private Organization fSourceOrganization;
+
+    /**
+     * The Organization on whose behalf the creator was working.
+     *
+     * @return {@link Organization}
+     */
+    @Override
+    public Organization getSourceOrganization() {
+        return fSourceOrganization;
+    }
+
+    /**
+     * The Organization on whose behalf the creator was working.
+     *
+     */
+    @Override
+    public void setSourceOrganization(Organization fSourceOrganization) {
+        this.fSourceOrganization = fSourceOrganization;
+    }
+
+    private Person fCharacter;
+
+    /**
+     * Fictional person connected with a creative work.
+     *
+     * @return {@link Person}
+     */
+    @Override
+    public Person getCharacter() {
+        return fCharacter;
+    }
+
+    /**
+     * Fictional person connected with a creative work.
+     *
+     */
+    @Override
+    public void setCharacter(Person fCharacter) {
+        this.fCharacter = fCharacter;
+    }
+
+    private Object fFunder;
+
+    /**
+     * A person or organization that supports (sponsors) something through some kind of financial contribution.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> T getFunder() {
+        return (T) fFunder;
+    }
+
+    /**
+     * A person or organization that supports (sponsors) something through some kind of financial contribution.
+     *
+     */
+    @Override
+    public void setFunder(Object fFunder) {
+        if(!(fFunder instanceof Organization) && !(fFunder instanceof Person)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'funder': " + fFunder);
+        }
+        this.fFunder = fFunder;
+    }
+
+    private CreativeWork fExampleOfWork;
+
+    /**
+     * A creative work that this work is an example/instance/realization/derivation of.
+     *
+     * @return {@link CreativeWork}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
+     */
+    @Override
+    public CreativeWork getExampleOfWork() {
+        return fExampleOfWork;
+    }
+
+    /**
+     * A creative work that this work is an example/instance/realization/derivation of.
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
+     */
+    @Override
+    public void setExampleOfWork(CreativeWork fExampleOfWork) {
+        this.fExampleOfWork = fExampleOfWork;
+    }
+
+    private Object fUsageInfo;
+
+    /**
+     * The schema.org [[usageInfo]] property indicates further information about a [[CreativeWork]]. This property is applicable both to works that are freely available and to those that require payment or other transactions. It can reference additional information e.g. community expectations on preferred linking and citation conventions, as well as purchasing details. For something that can be commercially licensed, usageInfo can provide detailed, resource-specific information about licensing options.
+     * 
+     * This property can be used alongside the license property which indicates license(s) applicable to some piece of content. The usageInfo property can provide information about other licensing options, e.g. acquiring commercial usage rights for an image that is also available under non-commercial creative commons licenses.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
+     */
+    @Override
+    public <T> T getUsageInfo() {
+        return (T) fUsageInfo;
+    }
+
+    /**
+     * The schema.org [[usageInfo]] property indicates further information about a [[CreativeWork]]. This property is applicable both to works that are freely available and to those that require payment or other transactions. It can reference additional information e.g. community expectations on preferred linking and citation conventions, as well as purchasing details. For something that can be commercially licensed, usageInfo can provide detailed, resource-specific information about licensing options.
+     * 
+     * This property can be used alongside the license property which indicates license(s) applicable to some piece of content. The usageInfo property can provide information about other licensing options, e.g. acquiring commercial usage rights for an image that is also available under non-commercial creative commons licenses.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
+     */
+    @Override
+    public void setUsageInfo(Object fUsageInfo) {
+        if(!(fUsageInfo instanceof CreativeWork) && !(fUsageInfo instanceof URL)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'usageInfo': " + fUsageInfo);
+        }
+        this.fUsageInfo = fUsageInfo;
+    }
+
+    private Object fProvider;
+
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @return {@link Organization} or {@link Person}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     */
+    @Override
+    public <T> T getProvider() {
+        return (T) fProvider;
+    }
+
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     */
+    @Override
+    public void setProvider(Object fProvider) {
+        if(!(fProvider instanceof Organization) && !(fProvider instanceof Person)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'provider': " + fProvider);
+        }
+        this.fProvider = fProvider;
+    }
+
+    private Object fSdPublisher;
+
+    /**
+     * Indicates the party responsible for generating and publishing the current structured data markup, typically in cases where the structured data is derived automatically from existing published content but published on a different site. For example, student projects and open data initiatives often re-publish existing content with more explicitly structured metadata. The
+     * [[sdPublisher]] property helps make such practices more explicit.
+     *
+     * @return {@link Organization} or {@link Person}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
+     */
+    @Override
+    public <T> T getSdPublisher() {
+        return (T) fSdPublisher;
+    }
+
+    /**
+     * Indicates the party responsible for generating and publishing the current structured data markup, typically in cases where the structured data is derived automatically from existing published content but published on a different site. For example, student projects and open data initiatives often re-publish existing content with more explicitly structured metadata. The
+     * [[sdPublisher]] property helps make such practices more explicit.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
+     */
+    @Override
+    public void setSdPublisher(Object fSdPublisher) {
+        if(!(fSdPublisher instanceof Organization) && !(fSdPublisher instanceof Person)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'sdPublisher': " + fSdPublisher);
+        }
+        this.fSdPublisher = fSdPublisher;
+    }
+
+    private Comment fComment;
+
+    /**
+     * Comments, typically from users.
+     *
+     * @return {@link Comment}
+     */
+    @Override
+    public Comment getComment() {
+        return fComment;
+    }
+
+    /**
+     * Comments, typically from users.
+     *
+     */
+    @Override
+    public void setComment(Comment fComment) {
+        this.fComment = fComment;
+    }
+
+    private Text fAccessibilityFeature;
+
+    /**
+     * Content features of the resource, such as accessible media, alternatives and supported enhancements for accessibility. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityFeature-vocabulary).
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getAccessibilityFeature() {
+        return fAccessibilityFeature;
+    }
+
+    /**
+     * Content features of the resource, such as accessible media, alternatives and supported enhancements for accessibility. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityFeature-vocabulary).
+     *
+     */
+    @Override
+    public void setAccessibilityFeature(Text fAccessibilityFeature) {
+        this.fAccessibilityFeature = fAccessibilityFeature;
+    }
+
+    private PublicationEvent fPublication;
+
+    /**
+     * A publication event associated with the item.
+     *
+     * @return {@link PublicationEvent}
+     */
+    @Override
+    public PublicationEvent getPublication() {
+        return fPublication;
+    }
+
+    /**
+     * A publication event associated with the item.
+     *
+     */
+    @Override
+    public void setPublication(PublicationEvent fPublication) {
+        this.fPublication = fPublication;
+    }
+
+    private CreativeWork fTranslationOfWork;
+
+    /**
+     * The work that this work has been translated from. e.g. 物种起源 is a translationOf “On the Origin of Species”
+     *
+     * @return {@link CreativeWork}
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    @Override
+    public CreativeWork getTranslationOfWork() {
+        return fTranslationOfWork;
+    }
+
+    /**
+     * The work that this work has been translated from. e.g. 物种起源 is a translationOf “On the Origin of Species”
+     *
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    @Override
+    public void setTranslationOfWork(CreativeWork fTranslationOfWork) {
+        this.fTranslationOfWork = fTranslationOfWork;
+    }
+
+    private Text fInteractivityType;
+
+    /**
+     * The predominant mode of learning supported by the learning resource. Acceptable values are 'active', 'expositive', or 'mixed'.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getInteractivityType() {
+        return fInteractivityType;
+    }
+
+    /**
+     * The predominant mode of learning supported by the learning resource. Acceptable values are 'active', 'expositive', or 'mixed'.
+     *
+     */
+    @Override
+    public void setInteractivityType(Text fInteractivityType) {
+        this.fInteractivityType = fInteractivityType;
+    }
+
+    private Integer fCommentCount;
+
+    /**
+     * The number of comments this CreativeWork (e.g. Article, Question or Answer) has received. This is most applicable to works published in Web sites with commenting system; additional comments may exist elsewhere.
+     *
+     * @return {@link Integer}
+     */
+    @Override
+    public Integer getCommentCount() {
+        return fCommentCount;
+    }
+
+    /**
+     * The number of comments this CreativeWork (e.g. Article, Question or Answer) has received. This is most applicable to works published in Web sites with commenting system; additional comments may exist elsewhere.
+     *
+     */
+    @Override
+    public void setCommentCount(Integer fCommentCount) {
+        this.fCommentCount = fCommentCount;
+    }
+
+    private Text fAccessMode;
+
+    /**
+     * The human sensory perceptual system or cognitive faculty through which a person may process or perceive information. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessMode-vocabulary).
+     *
+     * @return {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
+     */
+    @Override
+    public Text getAccessMode() {
+        return fAccessMode;
+    }
+
+    /**
+     * The human sensory perceptual system or cognitive faculty through which a person may process or perceive information. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessMode-vocabulary).
+     *
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
+     */
+    @Override
+    public void setAccessMode(Text fAccessMode) {
+        this.fAccessMode = fAccessMode;
+    }
+
+    private Duration fTimeRequired;
+
+    /**
+     * Approximate or typical time it takes to work with or through this learning resource for the typical intended target audience, e.g. 'PT30M', 'PT1H25M'.
+     *
+     * @return {@link Duration}
+     */
+    @Override
+    public Duration getTimeRequired() {
+        return fTimeRequired;
+    }
+
+    /**
+     * Approximate or typical time it takes to work with or through this learning resource for the typical intended target audience, e.g. 'PT30M', 'PT1H25M'.
+     *
+     */
+    @Override
+    public void setTimeRequired(Duration fTimeRequired) {
+        this.fTimeRequired = fTimeRequired;
+    }
+
+    private Text fTypicalAgeRange;
+
+    /**
+     * The typical expected age range, e.g. '7-9', '11-'.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getTypicalAgeRange() {
+        return fTypicalAgeRange;
+    }
+
+    /**
+     * The typical expected age range, e.g. '7-9', '11-'.
+     *
+     */
+    @Override
+    public void setTypicalAgeRange(Text fTypicalAgeRange) {
+        this.fTypicalAgeRange = fTypicalAgeRange;
+    }
+
+    private InteractionCounter fInteractionStatistic;
+
+    /**
+     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
+     *
+     * @return {@link InteractionCounter}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
+     */
+    @Override
+    public InteractionCounter getInteractionStatistic() {
+        return fInteractionStatistic;
+    }
+
+    /**
+     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
+     *
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
+     */
+    @Override
+    public void setInteractionStatistic(InteractionCounter fInteractionStatistic) {
+        this.fInteractionStatistic = fInteractionStatistic;
+    }
+
+    private Number fCopyrightYear;
+
+    /**
+     * The year during which the claimed copyright for the CreativeWork was first asserted.
+     *
+     * @return {@link Number}
+     */
+    @Override
+    public Number getCopyrightYear() {
+        return fCopyrightYear;
+    }
+
+    /**
+     * The year during which the claimed copyright for the CreativeWork was first asserted.
+     *
+     */
+    @Override
+    public void setCopyrightYear(Number fCopyrightYear) {
+        this.fCopyrightYear = fCopyrightYear;
+    }
+
+    private Object fIsBasedOn;
+
+    /**
+     * A resource from which this work is derived or from which it is a modification or adaption.
+     *
+     * @return {@link CreativeWork} or {@link URL} or {@link Product}
+     */
+    @Override
+    public <T> T getIsBasedOn() {
+        return (T) fIsBasedOn;
+    }
+
+    /**
+     * A resource from which this work is derived or from which it is a modification or adaption.
+     *
+     */
+    @Override
+    public void setIsBasedOn(Object fIsBasedOn) {
+        if(!(fIsBasedOn instanceof CreativeWork) && !(fIsBasedOn instanceof URL) && !(fIsBasedOn instanceof Product)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'isBasedOn': " + fIsBasedOn);
+        }
+        this.fIsBasedOn = fIsBasedOn;
+    }
+
+    private CreativeWork fWorkExample;
+
+    /**
+     * Example/instance/realization/derivation of the concept of this creative work. eg. The paperback edition, first edition, or eBook.
+     *
+     * @return {@link CreativeWork}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
+     */
+    @Override
+    public CreativeWork getWorkExample() {
+        return fWorkExample;
+    }
+
+    /**
+     * Example/instance/realization/derivation of the concept of this creative work. eg. The paperback edition, first edition, or eBook.
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
+     */
+    @Override
+    public void setWorkExample(CreativeWork fWorkExample) {
+        this.fWorkExample = fWorkExample;
+    }
+
+    private Object fPublishingPrinciples;
+
+    /**
+     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * 
+     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+     *
+     * @return {@link URL} or {@link CreativeWork}
+     */
+    @Override
+    public <T> T getPublishingPrinciples() {
+        return (T) fPublishingPrinciples;
+    }
+
+    /**
+     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * 
+     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+     *
+     */
+    @Override
+    public void setPublishingPrinciples(Object fPublishingPrinciples) {
+        if(!(fPublishingPrinciples instanceof URL) && !(fPublishingPrinciples instanceof CreativeWork)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'publishingPrinciples': " + fPublishingPrinciples);
+        }
+        this.fPublishingPrinciples = fPublishingPrinciples;
+    }
+
+    private URL fDiscussionUrl;
+
+    /**
+     * A link to the page containing the comments of the CreativeWork.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getDiscussionUrl() {
+        return fDiscussionUrl;
+    }
+
+    /**
+     * A link to the page containing the comments of the CreativeWork.
+     *
+     */
+    @Override
+    public void setDiscussionUrl(URL fDiscussionUrl) {
+        this.fDiscussionUrl = fDiscussionUrl;
+    }
+
+    private PublicationEvent fReleasedEvent;
+
+    /**
+     * The place and time the release was issued, expressed as a PublicationEvent.
+     *
+     * @return {@link PublicationEvent}
+     */
+    @Override
+    public PublicationEvent getReleasedEvent() {
+        return fReleasedEvent;
+    }
+
+    /**
+     * The place and time the release was issued, expressed as a PublicationEvent.
+     *
+     */
+    @Override
+    public void setReleasedEvent(PublicationEvent fReleasedEvent) {
+        this.fReleasedEvent = fReleasedEvent;
+    }
+
+    private Object fDateCreated;
+
+    /**
+     * The date on which the CreativeWork was created or the item was added to a DataFeed.
+     *
+     * @return {@link Date} or {@link DateTime}
+     */
+    @Override
+    public <T> T getDateCreated() {
+        return (T) fDateCreated;
+    }
+
+    /**
+     * The date on which the CreativeWork was created or the item was added to a DataFeed.
+     *
+     */
+    @Override
+    public void setDateCreated(Object fDateCreated) {
+        if(!(fDateCreated instanceof Date) && !(fDateCreated instanceof DateTime)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'dateCreated': " + fDateCreated);
+        }
+        this.fDateCreated = fDateCreated;
+    }
+
+    private CreativeWork fWorkTranslation;
+
+    /**
+     * A work that is a translation of the content of this work. e.g. 西遊記 has an English workTranslation “Journey to the West”,a German workTranslation “Monkeys Pilgerfahrt” and a Vietnamese  translation Tây du ký bình khảo.
+     *
+     * @return {@link CreativeWork}
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    @Override
+    public CreativeWork getWorkTranslation() {
+        return fWorkTranslation;
+    }
+
+    /**
+     * A work that is a translation of the content of this work. e.g. 西遊記 has an English workTranslation “Journey to the West”,a German workTranslation “Monkeys Pilgerfahrt” and a Vietnamese  translation Tây du ký bình khảo.
+     *
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    @Override
+    public void setWorkTranslation(CreativeWork fWorkTranslation) {
+        this.fWorkTranslation = fWorkTranslation;
+    }
+
+    private Person fEditor;
+
+    /**
+     * Specifies the Person who edited the CreativeWork.
+     *
+     * @return {@link Person}
+     */
+    @Override
+    public Person getEditor() {
+        return fEditor;
+    }
+
+    /**
+     * Specifies the Person who edited the CreativeWork.
+     *
+     */
+    @Override
+    public void setEditor(Person fEditor) {
+        this.fEditor = fEditor;
+    }
+
+    private Text fCreditText;
+
+    /**
+     * Text that can be used to credit person(s) and/or organization(s) associated with a published Creative Work.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2659">https://github.com/schemaorg/schemaorg/issues/2659</a>
+     */
+    @Override
+    public Text getCreditText() {
+        return fCreditText;
+    }
+
+    /**
+     * Text that can be used to credit person(s) and/or organization(s) associated with a published Creative Work.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2659">https://github.com/schemaorg/schemaorg/issues/2659</a>
+     */
+    @Override
+    public void setCreditText(Text fCreditText) {
+        this.fCreditText = fCreditText;
+    }
+
+    private Event fRecordedAt;
+
+    /**
+     * The Event where the CreativeWork was recorded. The CreativeWork may capture all or part of the event.
+     *
+     * @return {@link Event}
+     */
+    @Override
+    public Event getRecordedAt() {
+        return fRecordedAt;
+    }
+
+    /**
+     * The Event where the CreativeWork was recorded. The CreativeWork may capture all or part of the event.
+     *
+     */
+    @Override
+    public void setRecordedAt(Event fRecordedAt) {
+        this.fRecordedAt = fRecordedAt;
+    }
+
+    private Object fEditEIDR;
+
+    /**
+     * An [EIDR](https://eidr.org/) (Entertainment Identifier Registry) [[identifier]] representing a specific edit / edition for a work of film or television.
+     * 
+     * For example, the motion picture known as "Ghostbusters" whose [[titleEIDR]] is "10.5240/7EC7-228A-510A-053E-CBB8-J", has several edits e.g. "10.5240/1F2A-E1C5-680A-14C6-E76B-I" and "10.5240/8A35-3BEE-6497-5D12-9E4F-3".
+     * 
+     * Since schema.org types like [[Movie]] and [[TVEpisode]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.
+     *
+     * @return {@link URL} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2469">https://github.com/schemaorg/schemaorg/issues/2469</a>
+     */
+    @Override
+    public <T> T getEditEIDR() {
+        return (T) fEditEIDR;
+    }
+
+    /**
+     * An [EIDR](https://eidr.org/) (Entertainment Identifier Registry) [[identifier]] representing a specific edit / edition for a work of film or television.
+     * 
+     * For example, the motion picture known as "Ghostbusters" whose [[titleEIDR]] is "10.5240/7EC7-228A-510A-053E-CBB8-J", has several edits e.g. "10.5240/1F2A-E1C5-680A-14C6-E76B-I" and "10.5240/8A35-3BEE-6497-5D12-9E4F-3".
+     * 
+     * Since schema.org types like [[Movie]] and [[TVEpisode]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2469">https://github.com/schemaorg/schemaorg/issues/2469</a>
+     */
+    @Override
+    public void setEditEIDR(Object fEditEIDR) {
+        if(!(fEditEIDR instanceof URL) && !(fEditEIDR instanceof Text)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'editEIDR': " + fEditEIDR);
+        }
+        this.fEditEIDR = fEditEIDR;
+    }
+
+    private Object fAuthor;
+
+    /**
+     * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    @Override
+    public <T> T getAuthor() {
+        return (T) fAuthor;
+    }
+
+    /**
+     * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
+     *
+     */
+    @Override
+    public void setAuthor(Object fAuthor) {
+        if(!(fAuthor instanceof Person) && !(fAuthor instanceof Organization)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'author': " + fAuthor);
+        }
+        this.fAuthor = fAuthor;
+    }
+
+    private Object fDateModified;
+
+    /**
+     * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
+     *
+     * @return {@link DateTime} or {@link Date}
+     */
+    @Override
+    public <T> T getDateModified() {
+        return (T) fDateModified;
+    }
+
+    /**
+     * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
+     *
+     */
+    @Override
+    public void setDateModified(Object fDateModified) {
+        if(!(fDateModified instanceof DateTime) && !(fDateModified instanceof Date)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'dateModified': " + fDateModified);
+        }
+        this.fDateModified = fDateModified;
+    }
+
+    private Object fSponsor;
+
+    /**
+     * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> T getSponsor() {
+        return (T) fSponsor;
+    }
+
+    /**
+     * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
+     *
+     */
+    @Override
+    public void setSponsor(Object fSponsor) {
+        if(!(fSponsor instanceof Organization) && !(fSponsor instanceof Person)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'sponsor': " + fSponsor);
+        }
+        this.fSponsor = fSponsor;
+    }
+
+    private Text fAccessibilitySummary;
+
+    /**
+     * A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as "short descriptions are present but long descriptions will be needed for non-visual users" or "short descriptions are present and no long descriptions are needed."
+     *
+     * @return {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
+     */
+    @Override
+    public Text getAccessibilitySummary() {
+        return fAccessibilitySummary;
+    }
+
+    /**
+     * A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as "short descriptions are present but long descriptions will be needed for non-visual users" or "short descriptions are present and no long descriptions are needed."
+     *
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
+     */
+    @Override
+    public void setAccessibilitySummary(Text fAccessibilitySummary) {
+        this.fAccessibilitySummary = fAccessibilitySummary;
     }
 
     private Object fEncodingFormat;
@@ -3815,131 +3090,288 @@ public class ProductCollectionImpl implements ProductCollection {
         this.fEncodingFormat = fEncodingFormat;
     }
 
-    private Object fSdPublisher;
+    private Object fMaintainer;
 
     /**
-     * Indicates the party responsible for generating and publishing the current structured data markup, typically in cases where the structured data is derived automatically from existing published content but published on a different site. For example, student projects and open data initiatives often re-publish existing content with more explicitly structured metadata. The
-     * [[sdPublisher]] property helps make such practices more explicit.
+     * A maintainer of a [[Dataset]], software package ([[SoftwareApplication]]), or other [[Project]]. A maintainer is a [[Person]] or [[Organization]] that manages contributions to, and/or publication of, some (typically complex) artifact. It is common for distributions of software and data to be based on "upstream" sources. When [[maintainer]] is applied to a specific version of something e.g. a particular version or packaging of a [[Dataset]], it is always  possible that the upstream source has a different maintainer. The [[isBasedOn]] property can be used to indicate such relationships between datasets to make the different maintenance roles clear. Similarly in the case of software, a package may have dedicated maintainers working on integration into software distributions such as Ubuntu, as well as upstream maintainers of the underlying work.
+     *       
      *
-     * @return {@link Organization} or {@link Person}
+     * @return {@link Person} or {@link Organization}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2311">https://github.com/schemaorg/schemaorg/issues/2311</a>
+     */
+    @Override
+    public <T> T getMaintainer() {
+        return (T) fMaintainer;
+    }
+
+    /**
+     * A maintainer of a [[Dataset]], software package ([[SoftwareApplication]]), or other [[Project]]. A maintainer is a [[Person]] or [[Organization]] that manages contributions to, and/or publication of, some (typically complex) artifact. It is common for distributions of software and data to be based on "upstream" sources. When [[maintainer]] is applied to a specific version of something e.g. a particular version or packaging of a [[Dataset]], it is always  possible that the upstream source has a different maintainer. The [[isBasedOn]] property can be used to indicate such relationships between datasets to make the different maintenance roles clear. Similarly in the case of software, a package may have dedicated maintainers working on integration into software distributions such as Ubuntu, as well as upstream maintainers of the underlying work.
+     *       
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2311">https://github.com/schemaorg/schemaorg/issues/2311</a>
+     */
+    @Override
+    public void setMaintainer(Object fMaintainer) {
+        if(!(fMaintainer instanceof Person) && !(fMaintainer instanceof Organization)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'maintainer': " + fMaintainer);
+        }
+        this.fMaintainer = fMaintainer;
+    }
+
+    private AlignmentObject fEducationalAlignment;
+
+    /**
+     * An alignment to an established educational framework.
+     * 
+     * This property should not be used where the nature of the alignment can be described using a simple property, for example to express that a resource [[teaches]] or [[assesses]] a competency.
+     *
+     * @return {@link AlignmentObject}
+     */
+    @Override
+    public AlignmentObject getEducationalAlignment() {
+        return fEducationalAlignment;
+    }
+
+    /**
+     * An alignment to an established educational framework.
+     * 
+     * This property should not be used where the nature of the alignment can be described using a simple property, for example to express that a resource [[teaches]] or [[assesses]] a competency.
+     *
+     */
+    @Override
+    public void setEducationalAlignment(AlignmentObject fEducationalAlignment) {
+        this.fEducationalAlignment = fEducationalAlignment;
+    }
+
+    private Object fAcquireLicensePage;
+
+    /**
+     * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
+     */
+    @Override
+    public <T> T getAcquireLicensePage() {
+        return (T) fAcquireLicensePage;
+    }
+
+    /**
+     * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
+     */
+    @Override
+    public void setAcquireLicensePage(Object fAcquireLicensePage) {
+        if(!(fAcquireLicensePage instanceof CreativeWork) && !(fAcquireLicensePage instanceof URL)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'acquireLicensePage': " + fAcquireLicensePage);
+        }
+        this.fAcquireLicensePage = fAcquireLicensePage;
+    }
+
+    private Boolean fIsAccessibleForFree;
+
+    /**
+     * A flag to signal that the item, event, or place is accessible for free.
+     *
+     * @return {@link Boolean}
+     */
+    @Override
+    public Boolean getIsAccessibleForFree() {
+        return fIsAccessibleForFree;
+    }
+
+    /**
+     * A flag to signal that the item, event, or place is accessible for free.
+     *
+     */
+    @Override
+    public void setIsAccessibleForFree(Boolean fIsAccessibleForFree) {
+        this.fIsAccessibleForFree = fIsAccessibleForFree;
+    }
+
+    private Object fDatePublished;
+
+    /**
+     * Date of first broadcast/publication.
+     *
+     * @return {@link Date} or {@link DateTime}
+     */
+    @Override
+    public <T> T getDatePublished() {
+        return (T) fDatePublished;
+    }
+
+    /**
+     * Date of first broadcast/publication.
+     *
+     */
+    @Override
+    public void setDatePublished(Object fDatePublished) {
+        if(!(fDatePublished instanceof Date) && !(fDatePublished instanceof DateTime)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'datePublished': " + fDatePublished);
+        }
+        this.fDatePublished = fDatePublished;
+    }
+
+    private Place fSpatialCoverage;
+
+    /**
+     * The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of
+     *       contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates
+     *       areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.
+     *
+     * @return {@link Place}
+     */
+    @Override
+    public Place getSpatialCoverage() {
+        return fSpatialCoverage;
+    }
+
+    /**
+     * The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of
+     *       contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates
+     *       areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.
+     *
+     */
+    @Override
+    public void setSpatialCoverage(Place fSpatialCoverage) {
+        this.fSpatialCoverage = fSpatialCoverage;
+    }
+
+    private Object fSdLicense;
+
+    /**
+     * A license document that applies to this structured data, typically indicated by URL.
+     *
+     * @return {@link CreativeWork} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
      */
     @Override
-    public <T> T getSdPublisher() {
-        return (T) fSdPublisher;
+    public <T> T getSdLicense() {
+        return (T) fSdLicense;
     }
 
     /**
-     * Indicates the party responsible for generating and publishing the current structured data markup, typically in cases where the structured data is derived automatically from existing published content but published on a different site. For example, student projects and open data initiatives often re-publish existing content with more explicitly structured metadata. The
-     * [[sdPublisher]] property helps make such practices more explicit.
+     * A license document that applies to this structured data, typically indicated by URL.
      *
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
      */
     @Override
-    public void setSdPublisher(Object fSdPublisher) {
-        if(!(fSdPublisher instanceof Organization) && !(fSdPublisher instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'sdPublisher': " + fSdPublisher);
+    public void setSdLicense(Object fSdLicense) {
+        if(!(fSdLicense instanceof CreativeWork) && !(fSdLicense instanceof URL)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'sdLicense': " + fSdLicense);
         }
-        this.fSdPublisher = fSdPublisher;
+        this.fSdLicense = fSdLicense;
     }
 
-    private Object fVersion;
+    private Text fConditionsOfAccess;
 
     /**
-     * The version of the CreativeWork embodied by a specified resource.
-     *
-     * @return {@link Number} or {@link Text}
-     */
-    @Override
-    public <T> T getVersion() {
-        return (T) fVersion;
-    }
-
-    /**
-     * The version of the CreativeWork embodied by a specified resource.
-     *
-     */
-    @Override
-    public void setVersion(Object fVersion) {
-        if(!(fVersion instanceof Number) && !(fVersion instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'version': " + fVersion);
-        }
-        this.fVersion = fVersion;
-    }
-
-    private Text fAward;
-
-    /**
-     * An award won by or for this item.
+     * Conditions that affect the availability of, or method(s) of access to, an item. Typically used for real world items such as an [[ArchiveComponent]] held by an [[ArchiveOrganization]]. This property is not suitable for use as a general Web access control mechanism. It is expressed only in natural language.<br/><br/>For example "Available by appointment from the Reading Room" or "Accessible only from logged-in accounts ". 
      *
      * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2173">https://github.com/schemaorg/schemaorg/issues/2173</a>
      */
     @Override
-    public Text getAward() {
-        return fAward;
+    public Text getConditionsOfAccess() {
+        return fConditionsOfAccess;
     }
 
     /**
-     * An award won by or for this item.
+     * Conditions that affect the availability of, or method(s) of access to, an item. Typically used for real world items such as an [[ArchiveComponent]] held by an [[ArchiveOrganization]]. This property is not suitable for use as a general Web access control mechanism. It is expressed only in natural language.<br/><br/>For example "Available by appointment from the Reading Room" or "Accessible only from logged-in accounts ". 
      *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2173">https://github.com/schemaorg/schemaorg/issues/2173</a>
      */
     @Override
-    public void setAward(Text fAward) {
-        this.fAward = fAward;
+    public void setConditionsOfAccess(Text fConditionsOfAccess) {
+        this.fConditionsOfAccess = fConditionsOfAccess;
     }
 
-    private Country fCountryOfOrigin;
+    private Object fCorrection;
 
     /**
-     * The country of origin of something, including products as well as creative  works such as movie and TV content.
-     * 
-     * In the case of TV and movie, this would be the country of the principle offices of the production company or individual responsible for the movie. For other kinds of [[CreativeWork]] it is difficult to provide fully general guidance, and properties such as [[contentLocation]] and [[locationCreated]] may be more applicable.
-     * 
-     * In the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.
+     * Indicates a correction to a [[CreativeWork]], either via a [[CorrectionComment]], textually or in another document.
      *
-     * @return {@link Country}
+     * @return {@link URL} or {@link Text} or {@link CorrectionComment}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
      */
     @Override
-    public Country getCountryOfOrigin() {
-        return fCountryOfOrigin;
-    }
-
-    /**
-     * The country of origin of something, including products as well as creative  works such as movie and TV content.
-     * 
-     * In the case of TV and movie, this would be the country of the principle offices of the production company or individual responsible for the movie. For other kinds of [[CreativeWork]] it is difficult to provide fully general guidance, and properties such as [[contentLocation]] and [[locationCreated]] may be more applicable.
-     * 
-     * In the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.
-     *
-     */
-    @Override
-    public void setCountryOfOrigin(Country fCountryOfOrigin) {
-        this.fCountryOfOrigin = fCountryOfOrigin;
-    }
-
-    private Thing fAbout;
-
-    /**
-     * The subject matter of the content.
-     *
-     * @return {@link Thing}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    @Override
-    public Thing getAbout() {
-        return fAbout;
+    public <T> T getCorrection() {
+        return (T) fCorrection;
     }
 
     /**
-     * The subject matter of the content.
+     * Indicates a correction to a [[CreativeWork]], either via a [[CorrectionComment]], textually or in another document.
      *
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
      */
     @Override
-    public void setAbout(Thing fAbout) {
-        this.fAbout = fAbout;
+    public void setCorrection(Object fCorrection) {
+        if(!(fCorrection instanceof URL) && !(fCorrection instanceof Text) && !(fCorrection instanceof CorrectionComment)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'correction': " + fCorrection);
+        }
+        this.fCorrection = fCorrection;
+    }
+
+    private Object fContentRating;
+
+    /**
+     * Official rating of a piece of content&#x2014;for example,'MPAA PG-13'.
+     *
+     * @return {@link Text} or {@link Rating}
+     */
+    @Override
+    public <T> T getContentRating() {
+        return (T) fContentRating;
+    }
+
+    /**
+     * Official rating of a piece of content&#x2014;for example,'MPAA PG-13'.
+     *
+     */
+    @Override
+    public void setContentRating(Object fContentRating) {
+        if(!(fContentRating instanceof Text) && !(fContentRating instanceof Rating)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'contentRating': " + fContentRating);
+        }
+        this.fContentRating = fContentRating;
+    }
+
+    private Object fIsPartOf;
+
+    /**
+     * Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.
+     *
+     * @return {@link URL} or {@link CreativeWork}
+     */
+    @Override
+    public <T> T getIsPartOf() {
+        return (T) fIsPartOf;
+    }
+
+    /**
+     * Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.
+     *
+     */
+    @Override
+    public void setIsPartOf(Object fIsPartOf) {
+        if(!(fIsPartOf instanceof URL) && !(fIsPartOf instanceof CreativeWork)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'isPartOf': " + fIsPartOf);
+        }
+        this.fIsPartOf = fIsPartOf;
     }
 
     private Object fTemporal;
@@ -3966,5 +3398,573 @@ public class ProductCollectionImpl implements ProductCollection {
             throw new java.lang.IllegalArgumentException("Invalid value for property 'temporal': " + fTemporal);
         }
         this.fTemporal = fTemporal;
+    }
+
+    private URL fThumbnailUrl;
+
+    /**
+     * A thumbnail image relevant to the Thing.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getThumbnailUrl() {
+        return fThumbnailUrl;
+    }
+
+    /**
+     * A thumbnail image relevant to the Thing.
+     *
+     */
+    @Override
+    public void setThumbnailUrl(URL fThumbnailUrl) {
+        this.fThumbnailUrl = fThumbnailUrl;
+    }
+
+    private Object fInLanguage;
+
+    /**
+     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     *
+     * @return {@link Text} or {@link Language}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
+     */
+    @Override
+    public <T> T getInLanguage() {
+        return (T) fInLanguage;
+    }
+
+    /**
+     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     *
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
+     */
+    @Override
+    public void setInLanguage(Object fInLanguage) {
+        if(!(fInLanguage instanceof Text) && !(fInLanguage instanceof Language)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'inLanguage': " + fInLanguage);
+        }
+        this.fInLanguage = fInLanguage;
+    }
+
+    private Object fLicense;
+
+    /**
+     * A license document that applies to this content, typically indicated by URL.
+     *
+     * @return {@link URL} or {@link CreativeWork}
+     */
+    @Override
+    public <T> T getLicense() {
+        return (T) fLicense;
+    }
+
+    /**
+     * A license document that applies to this content, typically indicated by URL.
+     *
+     */
+    @Override
+    public void setLicense(Object fLicense) {
+        if(!(fLicense instanceof URL) && !(fLicense instanceof CreativeWork)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'license': " + fLicense);
+        }
+        this.fLicense = fLicense;
+    }
+
+    private Object fCreator;
+
+    /**
+     * The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> T getCreator() {
+        return (T) fCreator;
+    }
+
+    /**
+     * The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.
+     *
+     */
+    @Override
+    public void setCreator(Object fCreator) {
+        if(!(fCreator instanceof Organization) && !(fCreator instanceof Person)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'creator': " + fCreator);
+        }
+        this.fCreator = fCreator;
+    }
+
+    private Thing fAbout;
+
+    /**
+     * The subject matter of the content.
+     *
+     * @return {@link Thing}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public Thing getAbout() {
+        return fAbout;
+    }
+
+    /**
+     * The subject matter of the content.
+     *
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public void setAbout(Thing fAbout) {
+        this.fAbout = fAbout;
+    }
+
+    private Text fHeadline;
+
+    /**
+     * Headline of the article.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getHeadline() {
+        return fHeadline;
+    }
+
+    /**
+     * Headline of the article.
+     *
+     */
+    @Override
+    public void setHeadline(Text fHeadline) {
+        this.fHeadline = fHeadline;
+    }
+
+    private Text fAccessibilityAPI;
+
+    /**
+     * Indicates that the resource is compatible with the referenced accessibility API. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityAPI-vocabulary).
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getAccessibilityAPI() {
+        return fAccessibilityAPI;
+    }
+
+    /**
+     * Indicates that the resource is compatible with the referenced accessibility API. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityAPI-vocabulary).
+     *
+     */
+    @Override
+    public void setAccessibilityAPI(Text fAccessibilityAPI) {
+        this.fAccessibilityAPI = fAccessibilityAPI;
+    }
+
+    private Organization fPublisherImprint;
+
+    /**
+     * The publishing division which published the comic.
+     *
+     * @return {@link Organization}
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    @Override
+    public Organization getPublisherImprint() {
+        return fPublisherImprint;
+    }
+
+    /**
+     * The publishing division which published the comic.
+     *
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    @Override
+    public void setPublisherImprint(Organization fPublisherImprint) {
+        this.fPublisherImprint = fPublisherImprint;
+    }
+
+    private Object fIsBasedOnUrl;
+
+    /**
+     * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
+     *
+     * @return {@link URL} or {@link CreativeWork} or {@link Product}
+     */
+    @Override
+    public <T> T getIsBasedOnUrl() {
+        return (T) fIsBasedOnUrl;
+    }
+
+    /**
+     * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
+     *
+     */
+    @Override
+    public void setIsBasedOnUrl(Object fIsBasedOnUrl) {
+        if(!(fIsBasedOnUrl instanceof URL) && !(fIsBasedOnUrl instanceof CreativeWork) && !(fIsBasedOnUrl instanceof Product)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'isBasedOnUrl': " + fIsBasedOnUrl);
+        }
+        this.fIsBasedOnUrl = fIsBasedOnUrl;
+    }
+
+    private MediaObject fEncodings;
+
+    /**
+     * A media object that encodes this CreativeWork.
+     *
+     * @return {@link MediaObject}
+     */
+    @Override
+    public MediaObject getEncodings() {
+        return fEncodings;
+    }
+
+    /**
+     * A media object that encodes this CreativeWork.
+     *
+     */
+    @Override
+    public void setEncodings(MediaObject fEncodings) {
+        this.fEncodings = fEncodings;
+    }
+
+    private Claim fInterpretedAsClaim;
+
+    /**
+     * Used to indicate a specific claim contained, implied, translated or refined from the content of a [[MediaObject]] or other [[CreativeWork]]. The interpreting party can be indicated using [[claimInterpreter]].
+     *
+     * @return {@link Claim}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     */
+    @Override
+    public Claim getInterpretedAsClaim() {
+        return fInterpretedAsClaim;
+    }
+
+    /**
+     * Used to indicate a specific claim contained, implied, translated or refined from the content of a [[MediaObject]] or other [[CreativeWork]]. The interpreting party can be indicated using [[claimInterpreter]].
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     */
+    @Override
+    public void setInterpretedAsClaim(Claim fInterpretedAsClaim) {
+        this.fInterpretedAsClaim = fInterpretedAsClaim;
+    }
+
+    private Text fAccessibilityControl;
+
+    /**
+     * Identifies input methods that are sufficient to fully control the described resource. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityControl-vocabulary).
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getAccessibilityControl() {
+        return fAccessibilityControl;
+    }
+
+    /**
+     * Identifies input methods that are sufficient to fully control the described resource. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityControl-vocabulary).
+     *
+     */
+    @Override
+    public void setAccessibilityControl(Text fAccessibilityControl) {
+        this.fAccessibilityControl = fAccessibilityControl;
+    }
+
+    private Object fCitation;
+
+    /**
+     * A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.
+     *
+     * @return {@link CreativeWork} or {@link Text}
+     */
+    @Override
+    public <T> T getCitation() {
+        return (T) fCitation;
+    }
+
+    /**
+     * A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.
+     *
+     */
+    @Override
+    public void setCitation(Object fCitation) {
+        if(!(fCitation instanceof CreativeWork) && !(fCitation instanceof Text)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'citation': " + fCitation);
+        }
+        this.fCitation = fCitation;
+    }
+
+    private Object fVersion;
+
+    /**
+     * The version of the CreativeWork embodied by a specified resource.
+     *
+     * @return {@link Number} or {@link Text}
+     */
+    @Override
+    public <T> T getVersion() {
+        return (T) fVersion;
+    }
+
+    /**
+     * The version of the CreativeWork embodied by a specified resource.
+     *
+     */
+    @Override
+    public void setVersion(Object fVersion) {
+        if(!(fVersion instanceof Number) && !(fVersion instanceof Text)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'version': " + fVersion);
+        }
+        this.fVersion = fVersion;
+    }
+
+    private Object fArchivedAt;
+
+    /**
+     * Indicates a page or other link involved in archival of a [[CreativeWork]]. In the case of [[MediaReview]], the items in a [[MediaReviewItem]] may often become inaccessible, but be archived by archival, journalistic, activist, or law enforcement organizations. In such cases, the referenced page may not directly publish the content.
+     *
+     * @return {@link WebPage} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     */
+    @Override
+    public <T> T getArchivedAt() {
+        return (T) fArchivedAt;
+    }
+
+    /**
+     * Indicates a page or other link involved in archival of a [[CreativeWork]]. In the case of [[MediaReview]], the items in a [[MediaReviewItem]] may often become inaccessible, but be archived by archival, journalistic, activist, or law enforcement organizations. In such cases, the referenced page may not directly publish the content.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     */
+    @Override
+    public void setArchivedAt(Object fArchivedAt) {
+        if(!(fArchivedAt instanceof WebPage) && !(fArchivedAt instanceof URL)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'archivedAt': " + fArchivedAt);
+        }
+        this.fArchivedAt = fArchivedAt;
+    }
+
+    private Object fLearningResourceType;
+
+    /**
+     * The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.
+     *
+     * @return {@link DefinedTerm} or {@link Text}
+     */
+    @Override
+    public <T> T getLearningResourceType() {
+        return (T) fLearningResourceType;
+    }
+
+    /**
+     * The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.
+     *
+     */
+    @Override
+    public void setLearningResourceType(Object fLearningResourceType) {
+        if(!(fLearningResourceType instanceof DefinedTerm) && !(fLearningResourceType instanceof Text)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'learningResourceType': " + fLearningResourceType);
+        }
+        this.fLearningResourceType = fLearningResourceType;
+    }
+
+    private MediaObject fEncoding;
+
+    /**
+     * A media object that encodes this CreativeWork. This property is a synonym for associatedMedia.
+     *
+     * @return {@link MediaObject}
+     */
+    @Override
+    public MediaObject getEncoding() {
+        return fEncoding;
+    }
+
+    /**
+     * A media object that encodes this CreativeWork. This property is a synonym for associatedMedia.
+     *
+     */
+    @Override
+    public void setEncoding(MediaObject fEncoding) {
+        this.fEncoding = fEncoding;
+    }
+
+    private Object fAudio;
+
+    /**
+     * An embedded audio object.
+     *
+     * @return {@link AudioObject} or {@link MusicRecording} or {@link Clip}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2420">https://github.com/schemaorg/schemaorg/issues/2420</a>
+     */
+    @Override
+    public <T> T getAudio() {
+        return (T) fAudio;
+    }
+
+    /**
+     * An embedded audio object.
+     *
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2420">https://github.com/schemaorg/schemaorg/issues/2420</a>
+     */
+    @Override
+    public void setAudio(Object fAudio) {
+        if(!(fAudio instanceof AudioObject) && !(fAudio instanceof MusicRecording) && !(fAudio instanceof Clip)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'audio': " + fAudio);
+        }
+        this.fAudio = fAudio;
+    }
+
+    private Thing fMentions;
+
+    /**
+     * Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept.
+     *
+     * @return {@link Thing}
+     */
+    @Override
+    public Thing getMentions() {
+        return fMentions;
+    }
+
+    /**
+     * Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept.
+     *
+     */
+    @Override
+    public void setMentions(Thing fMentions) {
+        this.fMentions = fMentions;
+    }
+
+    private ItemList fAccessModeSufficient;
+
+    /**
+     * A list of single or combined accessModes that are sufficient to understand all the intellectual content of a resource. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessModeSufficient-vocabulary).
+     *
+     * @return {@link ItemList}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
+     */
+    @Override
+    public ItemList getAccessModeSufficient() {
+        return fAccessModeSufficient;
+    }
+
+    /**
+     * A list of single or combined accessModes that are sufficient to understand all the intellectual content of a resource. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessModeSufficient-vocabulary).
+     *
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
+     */
+    @Override
+    public void setAccessModeSufficient(ItemList fAccessModeSufficient) {
+        this.fAccessModeSufficient = fAccessModeSufficient;
+    }
+
+    private CreativeWork fHasPart;
+
+    /**
+     * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
+     *
+     * @return {@link CreativeWork}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
+     */
+    @Override
+    public CreativeWork getHasPart() {
+        return fHasPart;
+    }
+
+    /**
+     * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
+     */
+    @Override
+    public void setHasPart(CreativeWork fHasPart) {
+        this.fHasPart = fHasPart;
+    }
+
+    private Object fTemporalCoverage;
+
+    /**
+     * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
+     *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content e.g. ScholarlyArticle, Book, TVSeries or TVEpisode may indicate their temporalCoverage in broader terms - textually or via well-known URL.
+     *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945".
+     * 
+     * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
+     *
+     * @return {@link URL} or {@link DateTime} or {@link Text}
+     */
+    @Override
+    public <T> T getTemporalCoverage() {
+        return (T) fTemporalCoverage;
+    }
+
+    /**
+     * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
+     *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content e.g. ScholarlyArticle, Book, TVSeries or TVEpisode may indicate their temporalCoverage in broader terms - textually or via well-known URL.
+     *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945".
+     * 
+     * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
+     *
+     */
+    @Override
+    public void setTemporalCoverage(Object fTemporalCoverage) {
+        if(!(fTemporalCoverage instanceof URL) && !(fTemporalCoverage instanceof DateTime) && !(fTemporalCoverage instanceof Text)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'temporalCoverage': " + fTemporalCoverage);
+        }
+        this.fTemporalCoverage = fTemporalCoverage;
+    }
+
+    private Object fContributor;
+
+    /**
+     * A secondary contributor to the CreativeWork or Event.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> T getContributor() {
+        return (T) fContributor;
+    }
+
+    /**
+     * A secondary contributor to the CreativeWork or Event.
+     *
+     */
+    @Override
+    public void setContributor(Object fContributor) {
+        if(!(fContributor instanceof Organization) && !(fContributor instanceof Person)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'contributor': " + fContributor);
+        }
+        this.fContributor = fContributor;
+    }
+
+    private Object fVideo;
+
+    /**
+     * An embedded video object.
+     *
+     * @return {@link Clip} or {@link VideoObject}
+     */
+    @Override
+    public <T> T getVideo() {
+        return (T) fVideo;
+    }
+
+    /**
+     * An embedded video object.
+     *
+     */
+    @Override
+    public void setVideo(Object fVideo) {
+        if(!(fVideo instanceof Clip) && !(fVideo instanceof VideoObject)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'video': " + fVideo);
+        }
+        this.fVideo = fVideo;
     }
 }

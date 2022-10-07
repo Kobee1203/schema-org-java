@@ -65,27 +65,215 @@ import org.schema.model.OfferForPurchase;
 @JsonLdTypeName("schema:OfferForPurchase")
 public class OfferForPurchaseImpl implements OfferForPurchase {
 
-    private QuantitativeValue fEligibleQuantity;
+    private AdultOrientedEnumeration fHasAdultConsideration;
 
     /**
-     * The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.
+     * Used to tag an item to be intended or suitable for consumption or use by adults only.
      *
-     * @return {@link QuantitativeValue}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @return {@link AdultOrientedEnumeration}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2989">https://github.com/schemaorg/schemaorg/issues/2989</a>
      */
     @Override
-    public QuantitativeValue getEligibleQuantity() {
-        return fEligibleQuantity;
+    public AdultOrientedEnumeration getHasAdultConsideration() {
+        return fHasAdultConsideration;
     }
 
     /**
-     * The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.
+     * Used to tag an item to be intended or suitable for consumption or use by adults only.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2989">https://github.com/schemaorg/schemaorg/issues/2989</a>
+     */
+    @Override
+    public void setHasAdultConsideration(AdultOrientedEnumeration fHasAdultConsideration) {
+        this.fHasAdultConsideration = fHasAdultConsideration;
+    }
+
+    private Text fGtin12;
+
+    /**
+     * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getGtin12() {
+        return fGtin12;
+    }
+
+    /**
+     * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     *
+     */
+    @Override
+    public void setGtin12(Text fGtin12) {
+        this.fGtin12 = fGtin12;
+    }
+
+    private Review fReview;
+
+    /**
+     * A review of the item.
+     *
+     * @return {@link Review}
+     */
+    @Override
+    public Review getReview() {
+        return fReview;
+    }
+
+    /**
+     * A review of the item.
+     *
+     */
+    @Override
+    public void setReview(Review fReview) {
+        this.fReview = fReview;
+    }
+
+    private Object fItemOffered;
+
+    /**
+     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *
+     * @return {@link Trip} or {@link Event} or {@link Product} or {@link AggregateOffer} or {@link CreativeWork} or {@link MenuItem} or {@link Service}
+     */
+    @Override
+    public <T> T getItemOffered() {
+        return (T) fItemOffered;
+    }
+
+    /**
+     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *
+     */
+    @Override
+    public void setItemOffered(Object fItemOffered) {
+        if(!(fItemOffered instanceof Trip) && !(fItemOffered instanceof Event) && !(fItemOffered instanceof Product) && !(fItemOffered instanceof AggregateOffer) && !(fItemOffered instanceof CreativeWork) && !(fItemOffered instanceof MenuItem) && !(fItemOffered instanceof Service)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'itemOffered': " + fItemOffered);
+        }
+        this.fItemOffered = fItemOffered;
+    }
+
+    private Object fCategory;
+
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @return {@link URL} or {@link Text} or {@link PhysicalActivityCategory} or {@link Thing} or {@link CategoryCode}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    @Override
+    public <T> T getCategory() {
+        return (T) fCategory;
+    }
+
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    @Override
+    public void setCategory(Object fCategory) {
+        if(!(fCategory instanceof URL) && !(fCategory instanceof Text) && !(fCategory instanceof PhysicalActivityCategory) && !(fCategory instanceof Thing) && !(fCategory instanceof CategoryCode)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'category': " + fCategory);
+        }
+        this.fCategory = fCategory;
+    }
+
+    private Date fPriceValidUntil;
+
+    /**
+     * The date after which the price is no longer available.
+     *
+     * @return {@link Date}
+     */
+    @Override
+    public Date getPriceValidUntil() {
+        return fPriceValidUntil;
+    }
+
+    /**
+     * The date after which the price is no longer available.
+     *
+     */
+    @Override
+    public void setPriceValidUntil(Date fPriceValidUntil) {
+        this.fPriceValidUntil = fPriceValidUntil;
+    }
+
+    private OfferShippingDetails fShippingDetails;
+
+    /**
+     * Indicates information about the shipping policies and options associated with an [[Offer]].
+     *
+     * @return {@link OfferShippingDetails}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    @Override
+    public OfferShippingDetails getShippingDetails() {
+        return fShippingDetails;
+    }
+
+    /**
+     * Indicates information about the shipping policies and options associated with an [[Offer]].
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    @Override
+    public void setShippingDetails(OfferShippingDetails fShippingDetails) {
+        this.fShippingDetails = fShippingDetails;
+    }
+
+    private Text fMpn;
+
+    /**
+     * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public Text getMpn() {
+        return fMpn;
+    }
+
+    /**
+     * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
      *
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setEligibleQuantity(QuantitativeValue fEligibleQuantity) {
-        this.fEligibleQuantity = fEligibleQuantity;
+    public void setMpn(Text fMpn) {
+        this.fMpn = fMpn;
+    }
+
+    private TypeAndQuantityNode fIncludesObject;
+
+    /**
+     * This links to a node or nodes indicating the exact quantity of the products included in  an [[Offer]] or [[ProductCollection]].
+     *
+     * @return {@link TypeAndQuantityNode}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public TypeAndQuantityNode getIncludesObject() {
+        return fIncludesObject;
+    }
+
+    /**
+     * This links to a node or nodes indicating the exact quantity of the products included in  an [[Offer]] or [[ProductCollection]].
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setIncludesObject(TypeAndQuantityNode fIncludesObject) {
+        this.fIncludesObject = fIncludesObject;
     }
 
     private BusinessFunction fBusinessFunction;
@@ -111,25 +299,351 @@ public class OfferForPurchaseImpl implements OfferForPurchase {
         this.fBusinessFunction = fBusinessFunction;
     }
 
-    private Boolean fIsFamilyFriendly;
+    private OfferItemCondition fItemCondition;
 
     /**
-     * Indicates whether this content is family friendly.
+     * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
      *
-     * @return {@link Boolean}
+     * @return {@link OfferItemCondition}
      */
     @Override
-    public Boolean getIsFamilyFriendly() {
-        return fIsFamilyFriendly;
+    public OfferItemCondition getItemCondition() {
+        return fItemCondition;
     }
 
     /**
-     * Indicates whether this content is family friendly.
+     * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
      *
      */
     @Override
-    public void setIsFamilyFriendly(Boolean fIsFamilyFriendly) {
-        this.fIsFamilyFriendly = fIsFamilyFriendly;
+    public void setItemCondition(OfferItemCondition fItemCondition) {
+        this.fItemCondition = fItemCondition;
+    }
+
+    private Text fGtin;
+
+    /**
+     * A Global Trade Item Number ([GTIN](https://www.gs1.org/standards/id-keys/gtin)). GTINs identify trade items, including products and services, using numeric identification codes. The [[gtin]] property generalizes the earlier [[gtin8]], [[gtin12]], [[gtin13]], and [[gtin14]] properties. The GS1 [digital link specifications](https://www.gs1.org/standards/Digital-Link/) express GTINs as URLs. A correct [[gtin]] value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a "GS1 Digital Link" URL based on such a string. The numeric component should also have a [valid GS1 check digit](https://www.gs1.org/services/check-digit-calculator) and meet the other rules for valid GTINs. See also [GS1's GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) and [Wikipedia](https://en.wikipedia.org/wiki/Global_Trade_Item_Number) for more details. Left-padding of the gtin values is not required or encouraged.
+     *    
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     */
+    @Override
+    public Text getGtin() {
+        return fGtin;
+    }
+
+    /**
+     * A Global Trade Item Number ([GTIN](https://www.gs1.org/standards/id-keys/gtin)). GTINs identify trade items, including products and services, using numeric identification codes. The [[gtin]] property generalizes the earlier [[gtin8]], [[gtin12]], [[gtin13]], and [[gtin14]] properties. The GS1 [digital link specifications](https://www.gs1.org/standards/Digital-Link/) express GTINs as URLs. A correct [[gtin]] value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a "GS1 Digital Link" URL based on such a string. The numeric component should also have a [valid GS1 check digit](https://www.gs1.org/services/check-digit-calculator) and meet the other rules for valid GTINs. See also [GS1's GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) and [Wikipedia](https://en.wikipedia.org/wiki/Global_Trade_Item_Number) for more details. Left-padding of the gtin values is not required or encouraged.
+     *    
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     */
+    @Override
+    public void setGtin(Text fGtin) {
+        this.fGtin = fGtin;
+    }
+
+    private QuantitativeValue fEligibleQuantity;
+
+    /**
+     * The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public QuantitativeValue getEligibleQuantity() {
+        return fEligibleQuantity;
+    }
+
+    /**
+     * The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setEligibleQuantity(QuantitativeValue fEligibleQuantity) {
+        this.fEligibleQuantity = fEligibleQuantity;
+    }
+
+    private Object fAcceptedPaymentMethod;
+
+    /**
+     * The payment method(s) accepted by seller for this offer.
+     *
+     * @return {@link LoanOrCredit} or {@link PaymentMethod}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public <T> T getAcceptedPaymentMethod() {
+        return (T) fAcceptedPaymentMethod;
+    }
+
+    /**
+     * The payment method(s) accepted by seller for this offer.
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setAcceptedPaymentMethod(Object fAcceptedPaymentMethod) {
+        if(!(fAcceptedPaymentMethod instanceof LoanOrCredit) && !(fAcceptedPaymentMethod instanceof PaymentMethod)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'acceptedPaymentMethod': " + fAcceptedPaymentMethod);
+        }
+        this.fAcceptedPaymentMethod = fAcceptedPaymentMethod;
+    }
+
+    private WarrantyPromise fWarranty;
+
+    /**
+     * The warranty promise(s) included in the offer.
+     *
+     * @return {@link WarrantyPromise}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public WarrantyPromise getWarranty() {
+        return fWarranty;
+    }
+
+    /**
+     * The warranty promise(s) included in the offer.
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setWarranty(WarrantyPromise fWarranty) {
+        this.fWarranty = fWarranty;
+    }
+
+    private Object fSeller;
+
+    /**
+     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> T getSeller() {
+        return (T) fSeller;
+    }
+
+    /**
+     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+     *
+     */
+    @Override
+    public void setSeller(Object fSeller) {
+        if(!(fSeller instanceof Organization) && !(fSeller instanceof Person)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'seller': " + fSeller);
+        }
+        this.fSeller = fSeller;
+    }
+
+    private Object fIneligibleRegion;
+
+    /**
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>See also [[eligibleRegion]].
+     *       
+     *
+     * @return {@link Place} or {@link Text} or {@link GeoShape}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2242">https://github.com/schemaorg/schemaorg/issues/2242</a>
+     */
+    @Override
+    public <T> T getIneligibleRegion() {
+        return (T) fIneligibleRegion;
+    }
+
+    /**
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>See also [[eligibleRegion]].
+     *       
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2242">https://github.com/schemaorg/schemaorg/issues/2242</a>
+     */
+    @Override
+    public void setIneligibleRegion(Object fIneligibleRegion) {
+        if(!(fIneligibleRegion instanceof Place) && !(fIneligibleRegion instanceof Text) && !(fIneligibleRegion instanceof GeoShape)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'ineligibleRegion': " + fIneligibleRegion);
+        }
+        this.fIneligibleRegion = fIneligibleRegion;
+    }
+
+    private Object fLeaseLength;
+
+    /**
+     * Length of the lease for some [[Accommodation]], either particular to some [[Offer]] or in some cases intrinsic to the property.
+     *
+     * @return {@link QuantitativeValue} or {@link Duration}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     */
+    @Override
+    public <T> T getLeaseLength() {
+        return (T) fLeaseLength;
+    }
+
+    /**
+     * Length of the lease for some [[Accommodation]], either particular to some [[Offer]] or in some cases intrinsic to the property.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     */
+    @Override
+    public void setLeaseLength(Object fLeaseLength) {
+        if(!(fLeaseLength instanceof QuantitativeValue) && !(fLeaseLength instanceof Duration)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'leaseLength': " + fLeaseLength);
+        }
+        this.fLeaseLength = fLeaseLength;
+    }
+
+    private AggregateRating fAggregateRating;
+
+    /**
+     * The overall rating, based on a collection of reviews or ratings, of the item.
+     *
+     * @return {@link AggregateRating}
+     */
+    @Override
+    public AggregateRating getAggregateRating() {
+        return fAggregateRating;
+    }
+
+    /**
+     * The overall rating, based on a collection of reviews or ratings, of the item.
+     *
+     */
+    @Override
+    public void setAggregateRating(AggregateRating fAggregateRating) {
+        this.fAggregateRating = fAggregateRating;
+    }
+
+    private Object fOfferedBy;
+
+    /**
+     * A pointer to the organization or person making the offer.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    @Override
+    public <T> T getOfferedBy() {
+        return (T) fOfferedBy;
+    }
+
+    /**
+     * A pointer to the organization or person making the offer.
+     *
+     */
+    @Override
+    public void setOfferedBy(Object fOfferedBy) {
+        if(!(fOfferedBy instanceof Person) && !(fOfferedBy instanceof Organization)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'offeredBy': " + fOfferedBy);
+        }
+        this.fOfferedBy = fOfferedBy;
+    }
+
+    private QuantitativeValue fDeliveryLeadTime;
+
+    /**
+     * The typical delay between the receipt of the order and the goods either leaving the warehouse or being prepared for pickup, in case the delivery method is on site pickup.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public QuantitativeValue getDeliveryLeadTime() {
+        return fDeliveryLeadTime;
+    }
+
+    /**
+     * The typical delay between the receipt of the order and the goods either leaving the warehouse or being prepared for pickup, in case the delivery method is on site pickup.
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setDeliveryLeadTime(QuantitativeValue fDeliveryLeadTime) {
+        this.fDeliveryLeadTime = fDeliveryLeadTime;
+    }
+
+    private DeliveryMethod fAvailableDeliveryMethod;
+
+    /**
+     * The delivery method(s) available for this offer.
+     *
+     * @return {@link DeliveryMethod}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public DeliveryMethod getAvailableDeliveryMethod() {
+        return fAvailableDeliveryMethod;
+    }
+
+    /**
+     * The delivery method(s) available for this offer.
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setAvailableDeliveryMethod(DeliveryMethod fAvailableDeliveryMethod) {
+        this.fAvailableDeliveryMethod = fAvailableDeliveryMethod;
+    }
+
+    private Object fValidFrom;
+
+    /**
+     * The date when the item becomes valid.
+     *
+     * @return {@link DateTime} or {@link Date}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public <T> T getValidFrom() {
+        return (T) fValidFrom;
+    }
+
+    /**
+     * The date when the item becomes valid.
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setValidFrom(Object fValidFrom) {
+        if(!(fValidFrom instanceof DateTime) && !(fValidFrom instanceof Date)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'validFrom': " + fValidFrom);
+        }
+        this.fValidFrom = fValidFrom;
+    }
+
+    private Object fAvailabilityEnds;
+
+    /**
+     * The end of the availability of the product or service included in the offer.
+     *
+     * @return {@link Date} or {@link DateTime} or {@link Time}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public <T> T getAvailabilityEnds() {
+        return (T) fAvailabilityEnds;
+    }
+
+    /**
+     * The end of the availability of the product or service included in the offer.
+     *
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setAvailabilityEnds(Object fAvailabilityEnds) {
+        if(!(fAvailabilityEnds instanceof Date) && !(fAvailabilityEnds instanceof DateTime) && !(fAvailabilityEnds instanceof Time)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'availabilityEnds': " + fAvailabilityEnds);
+        }
+        this.fAvailabilityEnds = fAvailabilityEnds;
     }
 
     private Object fEligibleRegion;
@@ -162,142 +676,29 @@ public class OfferForPurchaseImpl implements OfferForPurchase {
         this.fEligibleRegion = fEligibleRegion;
     }
 
-    private Text fSku;
+    private QuantitativeValue fHasMeasurement;
 
     /**
-     * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
-     *
-     * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public Text getSku() {
-        return fSku;
-    }
-
-    /**
-     * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setSku(Text fSku) {
-        this.fSku = fSku;
-    }
-
-    private Place fAvailableAtOrFrom;
-
-    /**
-     * The place(s) from which the offer can be obtained (e.g. store locations).
-     *
-     * @return {@link Place}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public Place getAvailableAtOrFrom() {
-        return fAvailableAtOrFrom;
-    }
-
-    /**
-     * The place(s) from which the offer can be obtained (e.g. store locations).
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setAvailableAtOrFrom(Place fAvailableAtOrFrom) {
-        this.fAvailableAtOrFrom = fAvailableAtOrFrom;
-    }
-
-    private QuantitativeValue fInventoryLevel;
-
-    /**
-     * The current approximate inventory level for the item or items.
+     * A product measurement, for example the inseam of pants, the wheel size of a bicycle, or the gauge of a screw. Usually an exact measurement, but can also be a range of measurements for adjustable products, for example belts and ski bindings.
      *
      * @return {@link QuantitativeValue}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
      */
     @Override
-    public QuantitativeValue getInventoryLevel() {
-        return fInventoryLevel;
+    public QuantitativeValue getHasMeasurement() {
+        return fHasMeasurement;
     }
 
     /**
-     * The current approximate inventory level for the item or items.
+     * A product measurement, for example the inseam of pants, the wheel size of a bicycle, or the gauge of a screw. Usually an exact measurement, but can also be a range of measurements for adjustable products, for example belts and ski bindings.
      *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
      */
     @Override
-    public void setInventoryLevel(QuantitativeValue fInventoryLevel) {
-        this.fInventoryLevel = fInventoryLevel;
-    }
-
-    private Object fItemOffered;
-
-    /**
-     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *
-     * @return {@link Trip} or {@link Event} or {@link Product} or {@link AggregateOffer} or {@link CreativeWork} or {@link MenuItem} or {@link Service}
-     */
-    @Override
-    public <T> T getItemOffered() {
-        return (T) fItemOffered;
-    }
-
-    /**
-     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *
-     */
-    @Override
-    public void setItemOffered(Object fItemOffered) {
-        if(!(fItemOffered instanceof Trip) && !(fItemOffered instanceof Event) && !(fItemOffered instanceof Product) && !(fItemOffered instanceof AggregateOffer) && !(fItemOffered instanceof CreativeWork) && !(fItemOffered instanceof MenuItem) && !(fItemOffered instanceof Service)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'itemOffered': " + fItemOffered);
-        }
-        this.fItemOffered = fItemOffered;
-    }
-
-    private Text fGtin12;
-
-    /**
-     * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getGtin12() {
-        return fGtin12;
-    }
-
-    /**
-     * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
-     *
-     */
-    @Override
-    public void setGtin12(Text fGtin12) {
-        this.fGtin12 = fGtin12;
-    }
-
-    private Object fMainEntityOfPage;
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     */
-    @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
-        }
-        this.fMainEntityOfPage = fMainEntityOfPage;
+    public void setHasMeasurement(QuantitativeValue fHasMeasurement) {
+        this.fHasMeasurement = fHasMeasurement;
     }
 
     private Text fGtin8;
@@ -323,6 +724,52 @@ public class OfferForPurchaseImpl implements OfferForPurchase {
         this.fGtin8 = fGtin8;
     }
 
+    private QuantitativeValue fInventoryLevel;
+
+    /**
+     * The current approximate inventory level for the item or items.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public QuantitativeValue getInventoryLevel() {
+        return fInventoryLevel;
+    }
+
+    /**
+     * The current approximate inventory level for the item or items.
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setInventoryLevel(QuantitativeValue fInventoryLevel) {
+        this.fInventoryLevel = fInventoryLevel;
+    }
+
+    private Text fSku;
+
+    /**
+     * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public Text getSku() {
+        return fSku;
+    }
+
+    /**
+     * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setSku(Text fSku) {
+        this.fSku = fSku;
+    }
+
     private Offer fAddOn;
 
     /**
@@ -344,396 +791,6 @@ public class OfferForPurchaseImpl implements OfferForPurchase {
     @Override
     public void setAddOn(Offer fAddOn) {
         this.fAddOn = fAddOn;
-    }
-
-    private Text fMpn;
-
-    /**
-     * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
-     *
-     * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public Text getMpn() {
-        return fMpn;
-    }
-
-    /**
-     * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setMpn(Text fMpn) {
-        this.fMpn = fMpn;
-    }
-
-    private Object fAcceptedPaymentMethod;
-
-    /**
-     * The payment method(s) accepted by seller for this offer.
-     *
-     * @return {@link LoanOrCredit} or {@link PaymentMethod}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public <T> T getAcceptedPaymentMethod() {
-        return (T) fAcceptedPaymentMethod;
-    }
-
-    /**
-     * The payment method(s) accepted by seller for this offer.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setAcceptedPaymentMethod(Object fAcceptedPaymentMethod) {
-        if(!(fAcceptedPaymentMethod instanceof LoanOrCredit) && !(fAcceptedPaymentMethod instanceof PaymentMethod)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'acceptedPaymentMethod': " + fAcceptedPaymentMethod);
-        }
-        this.fAcceptedPaymentMethod = fAcceptedPaymentMethod;
-    }
-
-    private Text fGtin13;
-
-    /**
-     * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
-     *
-     * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public Text getGtin13() {
-        return fGtin13;
-    }
-
-    /**
-     * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setGtin13(Text fGtin13) {
-        this.fGtin13 = fGtin13;
-    }
-
-    private OfferItemCondition fItemCondition;
-
-    /**
-     * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
-     *
-     * @return {@link OfferItemCondition}
-     */
-    @Override
-    public OfferItemCondition getItemCondition() {
-        return fItemCondition;
-    }
-
-    /**
-     * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
-     *
-     */
-    @Override
-    public void setItemCondition(OfferItemCondition fItemCondition) {
-        this.fItemCondition = fItemCondition;
-    }
-
-    private Text fGtin14;
-
-    /**
-     * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
-     *
-     * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public Text getGtin14() {
-        return fGtin14;
-    }
-
-    /**
-     * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setGtin14(Text fGtin14) {
-        this.fGtin14 = fGtin14;
-    }
-
-    private Object fAvailabilityEnds;
-
-    /**
-     * The end of the availability of the product or service included in the offer.
-     *
-     * @return {@link Date} or {@link DateTime} or {@link Time}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public <T> T getAvailabilityEnds() {
-        return (T) fAvailabilityEnds;
-    }
-
-    /**
-     * The end of the availability of the product or service included in the offer.
-     *
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setAvailabilityEnds(Object fAvailabilityEnds) {
-        if(!(fAvailabilityEnds instanceof Date) && !(fAvailabilityEnds instanceof DateTime) && !(fAvailabilityEnds instanceof Time)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'availabilityEnds': " + fAvailabilityEnds);
-        }
-        this.fAvailabilityEnds = fAvailabilityEnds;
-    }
-
-    private Text fSerialNumber;
-
-    /**
-     * The serial number or any alphanumeric identifier of a particular product. When attached to an offer, it is a shortcut for the serial number of the product included in the offer.
-     *
-     * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public Text getSerialNumber() {
-        return fSerialNumber;
-    }
-
-    /**
-     * The serial number or any alphanumeric identifier of a particular product. When attached to an offer, it is a shortcut for the serial number of the product included in the offer.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setSerialNumber(Text fSerialNumber) {
-        this.fSerialNumber = fSerialNumber;
-    }
-
-    private Action fPotentialAction;
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
-    @Override
-    public Action getPotentialAction() {
-        return fPotentialAction;
-    }
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     */
-    @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
-    }
-
-    private Object fSubjectOf;
-
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @return {@link Event} or {@link CreativeWork}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    @Override
-    public <T> T getSubjectOf() {
-        return (T) fSubjectOf;
-    }
-
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    @Override
-    public void setSubjectOf(Object fSubjectOf) {
-        if(!(fSubjectOf instanceof Event) && !(fSubjectOf instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'subjectOf': " + fSubjectOf);
-        }
-        this.fSubjectOf = fSubjectOf;
-    }
-
-    private AggregateRating fAggregateRating;
-
-    /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
-     *
-     * @return {@link AggregateRating}
-     */
-    @Override
-    public AggregateRating getAggregateRating() {
-        return fAggregateRating;
-    }
-
-    /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
-     *
-     */
-    @Override
-    public void setAggregateRating(AggregateRating fAggregateRating) {
-        this.fAggregateRating = fAggregateRating;
-    }
-
-    private Text fName;
-
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getName() {
-        return fName;
-    }
-
-    /**
-     * The name of the item.
-     *
-     */
-    @Override
-    public void setName(Text fName) {
-        this.fName = fName;
-    }
-
-    private Text fDisambiguatingDescription;
-
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDisambiguatingDescription() {
-        return fDisambiguatingDescription;
-    }
-
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     */
-    @Override
-    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = fDisambiguatingDescription;
-    }
-
-    private Object fImage;
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link URL} or {@link ImageObject}
-     */
-    @Override
-    public <T> T getImage() {
-        return (T) fImage;
-    }
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     */
-    @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
-        this.fImage = fImage;
-    }
-
-    private URL fSameAs;
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getSameAs() {
-        return fSameAs;
-    }
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     */
-    @Override
-    public void setSameAs(URL fSameAs) {
-        this.fSameAs = fSameAs;
-    }
-
-    private Date fPriceValidUntil;
-
-    /**
-     * The date after which the price is no longer available.
-     *
-     * @return {@link Date}
-     */
-    @Override
-    public Date getPriceValidUntil() {
-        return fPriceValidUntil;
-    }
-
-    /**
-     * The date after which the price is no longer available.
-     *
-     */
-    @Override
-    public void setPriceValidUntil(Date fPriceValidUntil) {
-        this.fPriceValidUntil = fPriceValidUntil;
-    }
-
-    private Object fOfferedBy;
-
-    /**
-     * A pointer to the organization or person making the offer.
-     *
-     * @return {@link Person} or {@link Organization}
-     */
-    @Override
-    public <T> T getOfferedBy() {
-        return (T) fOfferedBy;
-    }
-
-    /**
-     * A pointer to the organization or person making the offer.
-     *
-     */
-    @Override
-    public void setOfferedBy(Object fOfferedBy) {
-        if(!(fOfferedBy instanceof Person) && !(fOfferedBy instanceof Organization)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'offeredBy': " + fOfferedBy);
-        }
-        this.fOfferedBy = fOfferedBy;
-    }
-
-    private WarrantyPromise fWarranty;
-
-    /**
-     * The warranty promise(s) included in the offer.
-     *
-     * @return {@link WarrantyPromise}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public WarrantyPromise getWarranty() {
-        return fWarranty;
-    }
-
-    /**
-     * The warranty promise(s) included in the offer.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setWarranty(WarrantyPromise fWarranty) {
-        this.fWarranty = fWarranty;
     }
 
     private MerchantReturnPolicy fHasMerchantReturnPolicy;
@@ -761,128 +818,71 @@ public class OfferForPurchaseImpl implements OfferForPurchase {
         this.fHasMerchantReturnPolicy = fHasMerchantReturnPolicy;
     }
 
-    private Object fAvailabilityStarts;
+    private QuantitativeValue fAdvanceBookingRequirement;
 
     /**
-     * The beginning of the availability of the product or service included in the offer.
+     * The amount of time that is required between accepting the offer and the actual usage of the resource or service.
      *
-     * @return {@link Time} or {@link DateTime} or {@link Date}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @return {@link QuantitativeValue}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public <T> T getAvailabilityStarts() {
-        return (T) fAvailabilityStarts;
+    public QuantitativeValue getAdvanceBookingRequirement() {
+        return fAdvanceBookingRequirement;
     }
 
     /**
-     * The beginning of the availability of the product or service included in the offer.
+     * The amount of time that is required between accepting the offer and the actual usage of the resource or service.
      *
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setAvailabilityStarts(Object fAvailabilityStarts) {
-        if(!(fAvailabilityStarts instanceof Time) && !(fAvailabilityStarts instanceof DateTime) && !(fAvailabilityStarts instanceof Date)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'availabilityStarts': " + fAvailabilityStarts);
-        }
-        this.fAvailabilityStarts = fAvailabilityStarts;
+    public void setAdvanceBookingRequirement(QuantitativeValue fAdvanceBookingRequirement) {
+        this.fAdvanceBookingRequirement = fAdvanceBookingRequirement;
     }
 
-    private URL fUrl;
+    private Text fGtin14;
 
     /**
-     * URL of the item.
+     * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
-     * @return {@link URL}
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public URL getUrl() {
-        return fUrl;
-    }
-
-    /**
-     * URL of the item.
-     *
-     */
-    @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
-    }
-
-    private OfferShippingDetails fShippingDetails;
-
-    /**
-     * Indicates information about the shipping policies and options associated with an [[Offer]].
-     *
-     * @return {@link OfferShippingDetails}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     */
-    @Override
-    public OfferShippingDetails getShippingDetails() {
-        return fShippingDetails;
+    public Text getGtin14() {
+        return fGtin14;
     }
 
     /**
-     * Indicates information about the shipping policies and options associated with an [[Offer]].
+     * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setShippingDetails(OfferShippingDetails fShippingDetails) {
-        this.fShippingDetails = fShippingDetails;
+    public void setGtin14(Text fGtin14) {
+        this.fGtin14 = fGtin14;
     }
 
-    private Object fPrice;
+    private Text fPriceCurrency;
 
     /**
-     * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.<br/><br/>Usage guidelines:<br/><br/>* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR") instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.<br/>* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a "content=" attribute for publishing simple machine-readable values alongside more human-friendly formatting.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
-     *       
+     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
      *
-     * @return {@link Number} or {@link Text}
+     * @return {@link Text}
      */
     @Override
-    public <T> T getPrice() {
-        return (T) fPrice;
-    }
-
-    /**
-     * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.<br/><br/>Usage guidelines:<br/><br/>* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR") instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.<br/>* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a "content=" attribute for publishing simple machine-readable values alongside more human-friendly formatting.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
-     *       
-     *
-     */
-    @Override
-    public void setPrice(Object fPrice) {
-        if(!(fPrice instanceof Number) && !(fPrice instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'price': " + fPrice);
-        }
-        this.fPrice = fPrice;
-    }
-
-    private Object fSeller;
-
-    /**
-     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    @Override
-    public <T> T getSeller() {
-        return (T) fSeller;
+    public Text getPriceCurrency() {
+        return fPriceCurrency;
     }
 
     /**
-     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
      *
      */
     @Override
-    public void setSeller(Object fSeller) {
-        if(!(fSeller instanceof Organization) && !(fSeller instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'seller': " + fSeller);
-        }
-        this.fSeller = fSeller;
+    public void setPriceCurrency(Text fPriceCurrency) {
+        this.fPriceCurrency = fPriceCurrency;
     }
 
     private PriceSpecification fEligibleTransactionVolume;
@@ -908,53 +908,137 @@ public class OfferForPurchaseImpl implements OfferForPurchase {
         this.fEligibleTransactionVolume = fEligibleTransactionVolume;
     }
 
-    private URL fAdditionalType;
+    private Object fAreaServed;
 
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * The geographic area where a service or offered item is provided.
      *
-     * @return {@link URL}
+     * @return {@link AdministrativeArea} or {@link GeoShape} or {@link Text} or {@link Place}
      */
     @Override
-    public URL getAdditionalType() {
-        return fAdditionalType;
+    public <T> T getAreaServed() {
+        return (T) fAreaServed;
     }
 
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * The geographic area where a service or offered item is provided.
      *
      */
     @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
-    }
-
-    private Object fLeaseLength;
-
-    /**
-     * Length of the lease for some [[Accommodation]], either particular to some [[Offer]] or in some cases intrinsic to the property.
-     *
-     * @return {@link QuantitativeValue} or {@link Duration}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
-     */
-    @Override
-    public <T> T getLeaseLength() {
-        return (T) fLeaseLength;
-    }
-
-    /**
-     * Length of the lease for some [[Accommodation]], either particular to some [[Offer]] or in some cases intrinsic to the property.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
-     */
-    @Override
-    public void setLeaseLength(Object fLeaseLength) {
-        if(!(fLeaseLength instanceof QuantitativeValue) && !(fLeaseLength instanceof Duration)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'leaseLength': " + fLeaseLength);
+    public void setAreaServed(Object fAreaServed) {
+        if(!(fAreaServed instanceof AdministrativeArea) && !(fAreaServed instanceof GeoShape) && !(fAreaServed instanceof Text) && !(fAreaServed instanceof Place)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'areaServed': " + fAreaServed);
         }
-        this.fLeaseLength = fLeaseLength;
+        this.fAreaServed = fAreaServed;
+    }
+
+    private BusinessEntityType fEligibleCustomerType;
+
+    /**
+     * The type(s) of customers for which the given offer is valid.
+     *
+     * @return {@link BusinessEntityType}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public BusinessEntityType getEligibleCustomerType() {
+        return fEligibleCustomerType;
+    }
+
+    /**
+     * The type(s) of customers for which the given offer is valid.
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setEligibleCustomerType(BusinessEntityType fEligibleCustomerType) {
+        this.fEligibleCustomerType = fEligibleCustomerType;
+    }
+
+    private ItemAvailability fAvailability;
+
+    /**
+     * The availability of this item&#x2014;for example In stock, Out of stock, Pre-order, etc.
+     *
+     * @return {@link ItemAvailability}
+     */
+    @Override
+    public ItemAvailability getAvailability() {
+        return fAvailability;
+    }
+
+    /**
+     * The availability of this item&#x2014;for example In stock, Out of stock, Pre-order, etc.
+     *
+     */
+    @Override
+    public void setAvailability(ItemAvailability fAvailability) {
+        this.fAvailability = fAvailability;
+    }
+
+    private Text fGtin13;
+
+    /**
+     * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public Text getGtin13() {
+        return fGtin13;
+    }
+
+    /**
+     * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setGtin13(Text fGtin13) {
+        this.fGtin13 = fGtin13;
+    }
+
+    private Review fReviews;
+
+    /**
+     * Review of the item.
+     *
+     * @return {@link Review}
+     */
+    @Override
+    public Review getReviews() {
+        return fReviews;
+    }
+
+    /**
+     * Review of the item.
+     *
+     */
+    @Override
+    public void setReviews(Review fReviews) {
+        this.fReviews = fReviews;
+    }
+
+    private Boolean fIsFamilyFriendly;
+
+    /**
+     * Indicates whether this content is family friendly.
+     *
+     * @return {@link Boolean}
+     */
+    @Override
+    public Boolean getIsFamilyFriendly() {
+        return fIsFamilyFriendly;
+    }
+
+    /**
+     * Indicates whether this content is family friendly.
+     *
+     */
+    @Override
+    public void setIsFamilyFriendly(Boolean fIsFamilyFriendly) {
+        this.fIsFamilyFriendly = fIsFamilyFriendly;
     }
 
     private Object fValidThrough;
@@ -1006,169 +1090,58 @@ public class OfferForPurchaseImpl implements OfferForPurchase {
         this.fPriceSpecification = fPriceSpecification;
     }
 
-    private QuantitativeValue fHasMeasurement;
+    private Object fPrice;
 
     /**
-     * A product measurement, for example the inseam of pants, the wheel size of a bicycle, or the gauge of a screw. Usually an exact measurement, but can also be a range of measurements for adjustable products, for example belts and ski bindings.
+     * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.<br/><br/>Usage guidelines:<br/><br/>* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR") instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.<br/>* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a "content=" attribute for publishing simple machine-readable values alongside more human-friendly formatting.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
+     *       
      *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
+     * @return {@link Number} or {@link Text}
      */
     @Override
-    public QuantitativeValue getHasMeasurement() {
-        return fHasMeasurement;
+    public <T> T getPrice() {
+        return (T) fPrice;
     }
 
     /**
-     * A product measurement, for example the inseam of pants, the wheel size of a bicycle, or the gauge of a screw. Usually an exact measurement, but can also be a range of measurements for adjustable products, for example belts and ski bindings.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
-     */
-    @Override
-    public void setHasMeasurement(QuantitativeValue fHasMeasurement) {
-        this.fHasMeasurement = fHasMeasurement;
-    }
-
-    private ItemAvailability fAvailability;
-
-    /**
-     * The availability of this item&#x2014;for example In stock, Out of stock, Pre-order, etc.
-     *
-     * @return {@link ItemAvailability}
-     */
-    @Override
-    public ItemAvailability getAvailability() {
-        return fAvailability;
-    }
-
-    /**
-     * The availability of this item&#x2014;for example In stock, Out of stock, Pre-order, etc.
+     * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.<br/><br/>Usage guidelines:<br/><br/>* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR") instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.<br/>* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a "content=" attribute for publishing simple machine-readable values alongside more human-friendly formatting.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
+     *       
      *
      */
     @Override
-    public void setAvailability(ItemAvailability fAvailability) {
-        this.fAvailability = fAvailability;
-    }
-
-    private AdultOrientedEnumeration fHasAdultConsideration;
-
-    /**
-     * Used to tag an item to be intended or suitable for consumption or use by adults only.
-     *
-     * @return {@link AdultOrientedEnumeration}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2989">https://github.com/schemaorg/schemaorg/issues/2989</a>
-     */
-    @Override
-    public AdultOrientedEnumeration getHasAdultConsideration() {
-        return fHasAdultConsideration;
-    }
-
-    /**
-     * Used to tag an item to be intended or suitable for consumption or use by adults only.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2989">https://github.com/schemaorg/schemaorg/issues/2989</a>
-     */
-    @Override
-    public void setHasAdultConsideration(AdultOrientedEnumeration fHasAdultConsideration) {
-        this.fHasAdultConsideration = fHasAdultConsideration;
-    }
-
-    private Object fValidFrom;
-
-    /**
-     * The date when the item becomes valid.
-     *
-     * @return {@link DateTime} or {@link Date}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public <T> T getValidFrom() {
-        return (T) fValidFrom;
-    }
-
-    /**
-     * The date when the item becomes valid.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setValidFrom(Object fValidFrom) {
-        if(!(fValidFrom instanceof DateTime) && !(fValidFrom instanceof Date)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'validFrom': " + fValidFrom);
+    public void setPrice(Object fPrice) {
+        if(!(fPrice instanceof Number) && !(fPrice instanceof Text)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'price': " + fPrice);
         }
-        this.fValidFrom = fValidFrom;
+        this.fPrice = fPrice;
     }
 
-    private QuantitativeValue fAdvanceBookingRequirement;
+    private Object fAvailabilityStarts;
 
     /**
-     * The amount of time that is required between accepting the offer and the actual usage of the resource or service.
+     * The beginning of the availability of the product or service included in the offer.
      *
-     * @return {@link QuantitativeValue}
+     * @return {@link Time} or {@link DateTime} or {@link Date}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public QuantitativeValue getAdvanceBookingRequirement() {
-        return fAdvanceBookingRequirement;
+    public <T> T getAvailabilityStarts() {
+        return (T) fAvailabilityStarts;
     }
 
     /**
-     * The amount of time that is required between accepting the offer and the actual usage of the resource or service.
+     * The beginning of the availability of the product or service included in the offer.
      *
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setAdvanceBookingRequirement(QuantitativeValue fAdvanceBookingRequirement) {
-        this.fAdvanceBookingRequirement = fAdvanceBookingRequirement;
-    }
-
-    private Text fAlternateName;
-
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getAlternateName() {
-        return fAlternateName;
-    }
-
-    /**
-     * An alias for the item.
-     *
-     */
-    @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
-    }
-
-    private Object fAreaServed;
-
-    /**
-     * The geographic area where a service or offered item is provided.
-     *
-     * @return {@link AdministrativeArea} or {@link GeoShape} or {@link Text} or {@link Place}
-     */
-    @Override
-    public <T> T getAreaServed() {
-        return (T) fAreaServed;
-    }
-
-    /**
-     * The geographic area where a service or offered item is provided.
-     *
-     */
-    @Override
-    public void setAreaServed(Object fAreaServed) {
-        if(!(fAreaServed instanceof AdministrativeArea) && !(fAreaServed instanceof GeoShape) && !(fAreaServed instanceof Text) && !(fAreaServed instanceof Place)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'areaServed': " + fAreaServed);
+    public void setAvailabilityStarts(Object fAvailabilityStarts) {
+        if(!(fAvailabilityStarts instanceof Time) && !(fAvailabilityStarts instanceof DateTime) && !(fAvailabilityStarts instanceof Date)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'availabilityStarts': " + fAvailabilityStarts);
         }
-        this.fAreaServed = fAreaServed;
+        this.fAvailabilityStarts = fAvailabilityStarts;
     }
 
     private QuantitativeValue fEligibleDuration;
@@ -1194,143 +1167,292 @@ public class OfferForPurchaseImpl implements OfferForPurchase {
         this.fEligibleDuration = fEligibleDuration;
     }
 
-    private TypeAndQuantityNode fIncludesObject;
+    private Place fAvailableAtOrFrom;
 
     /**
-     * This links to a node or nodes indicating the exact quantity of the products included in  an [[Offer]] or [[ProductCollection]].
+     * The place(s) from which the offer can be obtained (e.g. store locations).
      *
-     * @return {@link TypeAndQuantityNode}
+     * @return {@link Place}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public TypeAndQuantityNode getIncludesObject() {
-        return fIncludesObject;
+    public Place getAvailableAtOrFrom() {
+        return fAvailableAtOrFrom;
     }
 
     /**
-     * This links to a node or nodes indicating the exact quantity of the products included in  an [[Offer]] or [[ProductCollection]].
+     * The place(s) from which the offer can be obtained (e.g. store locations).
      *
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setIncludesObject(TypeAndQuantityNode fIncludesObject) {
-        this.fIncludesObject = fIncludesObject;
+    public void setAvailableAtOrFrom(Place fAvailableAtOrFrom) {
+        this.fAvailableAtOrFrom = fAvailableAtOrFrom;
     }
 
-    private Review fReview;
+    private Text fSerialNumber;
 
     /**
-     * A review of the item.
+     * The serial number or any alphanumeric identifier of a particular product. When attached to an offer, it is a shortcut for the serial number of the product included in the offer.
      *
-     * @return {@link Review}
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public Review getReview() {
-        return fReview;
-    }
-
-    /**
-     * A review of the item.
-     *
-     */
-    @Override
-    public void setReview(Review fReview) {
-        this.fReview = fReview;
-    }
-
-    private Object fCategory;
-
-    /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-     *
-     * @return {@link URL} or {@link Text} or {@link PhysicalActivityCategory} or {@link Thing} or {@link CategoryCode}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     */
-    @Override
-    public <T> T getCategory() {
-        return (T) fCategory;
+    public Text getSerialNumber() {
+        return fSerialNumber;
     }
 
     /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     * The serial number or any alphanumeric identifier of a particular product. When attached to an offer, it is a shortcut for the serial number of the product included in the offer.
      *
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setCategory(Object fCategory) {
-        if(!(fCategory instanceof URL) && !(fCategory instanceof Text) && !(fCategory instanceof PhysicalActivityCategory) && !(fCategory instanceof Thing) && !(fCategory instanceof CategoryCode)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'category': " + fCategory);
+    public void setSerialNumber(Text fSerialNumber) {
+        this.fSerialNumber = fSerialNumber;
+    }
+
+    private Object fMainEntityOfPage;
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    @Override
+    public <T> T getMainEntityOfPage() {
+        return (T) fMainEntityOfPage;
+    }
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     */
+    @Override
+    public void setMainEntityOfPage(Object fMainEntityOfPage) {
+        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
         }
-        this.fCategory = fCategory;
+        this.fMainEntityOfPage = fMainEntityOfPage;
     }
 
-    private QuantitativeValue fDeliveryLeadTime;
+    private Text fAlternateName;
 
     /**
-     * The typical delay between the receipt of the order and the goods either leaving the warehouse or being prepared for pickup, in case the delivery method is on site pickup.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public QuantitativeValue getDeliveryLeadTime() {
-        return fDeliveryLeadTime;
-    }
-
-    /**
-     * The typical delay between the receipt of the order and the goods either leaving the warehouse or being prepared for pickup, in case the delivery method is on site pickup.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setDeliveryLeadTime(QuantitativeValue fDeliveryLeadTime) {
-        this.fDeliveryLeadTime = fDeliveryLeadTime;
-    }
-
-    private Text fPriceCurrency;
-
-    /**
-     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
+     * An alias for the item.
      *
      * @return {@link Text}
      */
     @Override
-    public Text getPriceCurrency() {
-        return fPriceCurrency;
+    public Text getAlternateName() {
+        return fAlternateName;
     }
 
     /**
-     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
+     * An alias for the item.
      *
      */
     @Override
-    public void setPriceCurrency(Text fPriceCurrency) {
-        this.fPriceCurrency = fPriceCurrency;
+    public void setAlternateName(Text fAlternateName) {
+        this.fAlternateName = fAlternateName;
     }
 
-    private BusinessEntityType fEligibleCustomerType;
+    private Text fName;
 
     /**
-     * The type(s) of customers for which the given offer is valid.
+     * The name of the item.
      *
-     * @return {@link BusinessEntityType}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @return {@link Text}
      */
     @Override
-    public BusinessEntityType getEligibleCustomerType() {
-        return fEligibleCustomerType;
+    public Text getName() {
+        return fName;
     }
 
     /**
-     * The type(s) of customers for which the given offer is valid.
+     * The name of the item.
      *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setEligibleCustomerType(BusinessEntityType fEligibleCustomerType) {
-        this.fEligibleCustomerType = fEligibleCustomerType;
+    public void setName(Text fName) {
+        this.fName = fName;
+    }
+
+    private Action fPotentialAction;
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public Action getPotentialAction() {
+        return fPotentialAction;
+    }
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     */
+    @Override
+    public void setPotentialAction(Action fPotentialAction) {
+        this.fPotentialAction = fPotentialAction;
+    }
+
+    private Object fImage;
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link URL} or {@link ImageObject}
+     */
+    @Override
+    public <T> T getImage() {
+        return (T) fImage;
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     */
+    @Override
+    public void setImage(Object fImage) {
+        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
+        }
+        this.fImage = fImage;
+    }
+
+    private URL fUrl;
+
+    /**
+     * URL of the item.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getUrl() {
+        return fUrl;
+    }
+
+    /**
+     * URL of the item.
+     *
+     */
+    @Override
+    public void setUrl(URL fUrl) {
+        this.fUrl = fUrl;
+    }
+
+    private Text fDescription;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDescription() {
+        return fDescription;
+    }
+
+    /**
+     * A description of the item.
+     *
+     */
+    @Override
+    public void setDescription(Text fDescription) {
+        this.fDescription = fDescription;
+    }
+
+    private Object fSubjectOf;
+
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @return {@link Event} or {@link CreativeWork}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public <T> T getSubjectOf() {
+        return (T) fSubjectOf;
+    }
+
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public void setSubjectOf(Object fSubjectOf) {
+        if(!(fSubjectOf instanceof Event) && !(fSubjectOf instanceof CreativeWork)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'subjectOf': " + fSubjectOf);
+        }
+        this.fSubjectOf = fSubjectOf;
+    }
+
+    private URL fAdditionalType;
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getAdditionalType() {
+        return fAdditionalType;
+    }
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     */
+    @Override
+    public void setAdditionalType(URL fAdditionalType) {
+        this.fAdditionalType = fAdditionalType;
+    }
+
+    private Text fDisambiguatingDescription;
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDisambiguatingDescription() {
+        return fDisambiguatingDescription;
+    }
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     */
+    @Override
+    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
+        this.fDisambiguatingDescription = fDisambiguatingDescription;
+    }
+
+    private URL fSameAs;
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getSameAs() {
+        return fSameAs;
+    }
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     */
+    @Override
+    public void setSameAs(URL fSameAs) {
+        this.fSameAs = fSameAs;
     }
 
     private Object fIdentifier;
@@ -1357,127 +1479,5 @@ public class OfferForPurchaseImpl implements OfferForPurchase {
             throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
         }
         this.fIdentifier = fIdentifier;
-    }
-
-    private Review fReviews;
-
-    /**
-     * Review of the item.
-     *
-     * @return {@link Review}
-     */
-    @Override
-    public Review getReviews() {
-        return fReviews;
-    }
-
-    /**
-     * Review of the item.
-     *
-     */
-    @Override
-    public void setReviews(Review fReviews) {
-        this.fReviews = fReviews;
-    }
-
-    private DeliveryMethod fAvailableDeliveryMethod;
-
-    /**
-     * The delivery method(s) available for this offer.
-     *
-     * @return {@link DeliveryMethod}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public DeliveryMethod getAvailableDeliveryMethod() {
-        return fAvailableDeliveryMethod;
-    }
-
-    /**
-     * The delivery method(s) available for this offer.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setAvailableDeliveryMethod(DeliveryMethod fAvailableDeliveryMethod) {
-        this.fAvailableDeliveryMethod = fAvailableDeliveryMethod;
-    }
-
-    private Object fIneligibleRegion;
-
-    /**
-     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>See also [[eligibleRegion]].
-     *       
-     *
-     * @return {@link Place} or {@link Text} or {@link GeoShape}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2242">https://github.com/schemaorg/schemaorg/issues/2242</a>
-     */
-    @Override
-    public <T> T getIneligibleRegion() {
-        return (T) fIneligibleRegion;
-    }
-
-    /**
-     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>See also [[eligibleRegion]].
-     *       
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2242">https://github.com/schemaorg/schemaorg/issues/2242</a>
-     */
-    @Override
-    public void setIneligibleRegion(Object fIneligibleRegion) {
-        if(!(fIneligibleRegion instanceof Place) && !(fIneligibleRegion instanceof Text) && !(fIneligibleRegion instanceof GeoShape)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'ineligibleRegion': " + fIneligibleRegion);
-        }
-        this.fIneligibleRegion = fIneligibleRegion;
-    }
-
-    private Text fDescription;
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDescription() {
-        return fDescription;
-    }
-
-    /**
-     * A description of the item.
-     *
-     */
-    @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
-    }
-
-    private Text fGtin;
-
-    /**
-     * A Global Trade Item Number ([GTIN](https://www.gs1.org/standards/id-keys/gtin)). GTINs identify trade items, including products and services, using numeric identification codes. The [[gtin]] property generalizes the earlier [[gtin8]], [[gtin12]], [[gtin13]], and [[gtin14]] properties. The GS1 [digital link specifications](https://www.gs1.org/standards/Digital-Link/) express GTINs as URLs. A correct [[gtin]] value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a "GS1 Digital Link" URL based on such a string. The numeric component should also have a [valid GS1 check digit](https://www.gs1.org/services/check-digit-calculator) and meet the other rules for valid GTINs. See also [GS1's GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) and [Wikipedia](https://en.wikipedia.org/wiki/Global_Trade_Item_Number) for more details. Left-padding of the gtin values is not required or encouraged.
-     *    
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    @Override
-    public Text getGtin() {
-        return fGtin;
-    }
-
-    /**
-     * A Global Trade Item Number ([GTIN](https://www.gs1.org/standards/id-keys/gtin)). GTINs identify trade items, including products and services, using numeric identification codes. The [[gtin]] property generalizes the earlier [[gtin8]], [[gtin12]], [[gtin13]], and [[gtin14]] properties. The GS1 [digital link specifications](https://www.gs1.org/standards/Digital-Link/) express GTINs as URLs. A correct [[gtin]] value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a "GS1 Digital Link" URL based on such a string. The numeric component should also have a [valid GS1 check digit](https://www.gs1.org/services/check-digit-calculator) and meet the other rules for valid GTINs. See also [GS1's GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) and [Wikipedia](https://en.wikipedia.org/wiki/Global_Trade_Item_Number) for more details. Left-padding of the gtin values is not required or encouraged.
-     *    
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    @Override
-    public void setGtin(Text fGtin) {
-        this.fGtin = fGtin;
     }
 }

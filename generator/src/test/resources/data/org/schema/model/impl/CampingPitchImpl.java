@@ -47,51 +47,210 @@ import org.schema.model.CampingPitch;
 @JsonLdTypeName("schema:CampingPitch")
 public class CampingPitchImpl implements CampingPitch {
 
-    private Boolean fIsAccessibleForFree;
+    private Text fFloorLevel;
 
     /**
-     * A flag to signal that the item, event, or place is accessible for free.
+     * The floor level for an [[Accommodation]] in a multi-storey building. Since counting
+     *   systems [vary internationally](https://en.wikipedia.org/wiki/Storey#Consecutive_number_floor_designations), the local system should be used where possible.
      *
-     * @return {@link Boolean}
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
     @Override
-    public Boolean getIsAccessibleForFree() {
-        return fIsAccessibleForFree;
+    public Text getFloorLevel() {
+        return fFloorLevel;
     }
 
     /**
-     * A flag to signal that the item, event, or place is accessible for free.
+     * The floor level for an [[Accommodation]] in a multi-storey building. Since counting
+     *   systems [vary internationally](https://en.wikipedia.org/wiki/Storey#Consecutive_number_floor_designations), the local system should be used where possible.
      *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
     @Override
-    public void setIsAccessibleForFree(Boolean fIsAccessibleForFree) {
-        this.fIsAccessibleForFree = fIsAccessibleForFree;
+    public void setFloorLevel(Text fFloorLevel) {
+        this.fFloorLevel = fFloorLevel;
     }
 
-    private Object fLogo;
+    private Integer fNumberOfBathroomsTotal;
 
     /**
-     * An associated logo.
+     * The total integer number of bathrooms in a some [[Accommodation]], following real estate conventions as [documented in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsTotalInteger+Field): "The simple sum of the number of bathrooms. For example for a property with two Full Bathrooms and one Half Bathroom, the Bathrooms Total Integer will be 3.". See also [[numberOfRooms]].
      *
-     * @return {@link URL} or {@link ImageObject}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @return {@link Integer}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
     @Override
-    public <T> T getLogo() {
-        return (T) fLogo;
+    public Integer getNumberOfBathroomsTotal() {
+        return fNumberOfBathroomsTotal;
     }
 
     /**
-     * An associated logo.
+     * The total integer number of bathrooms in a some [[Accommodation]], following real estate conventions as [documented in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsTotalInteger+Field): "The simple sum of the number of bathrooms. For example for a property with two Full Bathrooms and one Half Bathroom, the Bathrooms Total Integer will be 3.". See also [[numberOfRooms]].
      *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
     @Override
-    public void setLogo(Object fLogo) {
-        if(!(fLogo instanceof URL) && !(fLogo instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'logo': " + fLogo);
+    public void setNumberOfBathroomsTotal(Integer fNumberOfBathroomsTotal) {
+        this.fNumberOfBathroomsTotal = fNumberOfBathroomsTotal;
+    }
+
+    private Object fNumberOfRooms;
+
+    /**
+     * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
+     * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
+     *
+     * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
+     */
+    @Override
+    public <T> T getNumberOfRooms() {
+        return (T) fNumberOfRooms;
+    }
+
+    /**
+     * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
+     * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
+     *
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
+     */
+    @Override
+    public void setNumberOfRooms(Object fNumberOfRooms) {
+        if(!(fNumberOfRooms instanceof QuantitativeValue) && !(fNumberOfRooms instanceof Number)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'numberOfRooms': " + fNumberOfRooms);
         }
-        this.fLogo = fLogo;
+        this.fNumberOfRooms = fNumberOfRooms;
+    }
+
+    private Object fLeaseLength;
+
+    /**
+     * Length of the lease for some [[Accommodation]], either particular to some [[Offer]] or in some cases intrinsic to the property.
+     *
+     * @return {@link QuantitativeValue} or {@link Duration}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     */
+    @Override
+    public <T> T getLeaseLength() {
+        return (T) fLeaseLength;
+    }
+
+    /**
+     * Length of the lease for some [[Accommodation]], either particular to some [[Offer]] or in some cases intrinsic to the property.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     */
+    @Override
+    public void setLeaseLength(Object fLeaseLength) {
+        if(!(fLeaseLength instanceof QuantitativeValue) && !(fLeaseLength instanceof Duration)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'leaseLength': " + fLeaseLength);
+        }
+        this.fLeaseLength = fLeaseLength;
+    }
+
+    private Number fYearBuilt;
+
+    /**
+     * The year an [[Accommodation]] was constructed. This corresponds to the [YearBuilt field in RESO](https://ddwiki.reso.org/display/DDW17/YearBuilt+Field). 
+     *
+     * @return {@link Number}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     */
+    @Override
+    public Number getYearBuilt() {
+        return fYearBuilt;
+    }
+
+    /**
+     * The year an [[Accommodation]] was constructed. This corresponds to the [YearBuilt field in RESO](https://ddwiki.reso.org/display/DDW17/YearBuilt+Field). 
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     */
+    @Override
+    public void setYearBuilt(Number fYearBuilt) {
+        this.fYearBuilt = fYearBuilt;
+    }
+
+    private Text fAccommodationCategory;
+
+    /**
+     * Category of an [[Accommodation]], following real estate conventions e.g. RESO (see [PropertySubType](https://ddwiki.reso.org/display/DDW17/PropertySubType+Field), and [PropertyType](https://ddwiki.reso.org/display/DDW17/PropertyType+Field) fields  for suggested values).
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     */
+    @Override
+    public Text getAccommodationCategory() {
+        return fAccommodationCategory;
+    }
+
+    /**
+     * Category of an [[Accommodation]], following real estate conventions e.g. RESO (see [PropertySubType](https://ddwiki.reso.org/display/DDW17/PropertySubType+Field), and [PropertyType](https://ddwiki.reso.org/display/DDW17/PropertyType+Field) fields  for suggested values).
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     */
+    @Override
+    public void setAccommodationCategory(Text fAccommodationCategory) {
+        this.fAccommodationCategory = fAccommodationCategory;
+    }
+
+    private LocationFeatureSpecification fAmenityFeature;
+
+    /**
+     * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
+     *
+     * @return {@link LocationFeatureSpecification}
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
+     */
+    @Override
+    public LocationFeatureSpecification getAmenityFeature() {
+        return fAmenityFeature;
+    }
+
+    /**
+     * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
+     *
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
+     */
+    @Override
+    public void setAmenityFeature(LocationFeatureSpecification fAmenityFeature) {
+        this.fAmenityFeature = fAmenityFeature;
+    }
+
+    private URL fTourBookingPage;
+
+    /**
+     * A page providing information on how to book a tour of some [[Place]], such as an [[Accommodation]] or [[ApartmentComplex]] in a real estate setting, as well as other kinds of tours as appropriate.
+     *
+     * @return {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     */
+    @Override
+    public URL getTourBookingPage() {
+        return fTourBookingPage;
+    }
+
+    /**
+     * A page providing information on how to book a tour of some [[Place]], such as an [[Accommodation]] or [[ApartmentComplex]] in a real estate setting, as well as other kinds of tours as appropriate.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     */
+    @Override
+    public void setTourBookingPage(URL fTourBookingPage) {
+        this.fTourBookingPage = fTourBookingPage;
     }
 
     private Object fNumberOfBedrooms;
@@ -120,6 +279,951 @@ public class CampingPitchImpl implements CampingPitch {
             throw new java.lang.IllegalArgumentException("Invalid value for property 'numberOfBedrooms': " + fNumberOfBedrooms);
         }
         this.fNumberOfBedrooms = fNumberOfBedrooms;
+    }
+
+    private Number fNumberOfPartialBathrooms;
+
+    /**
+     * Number of partial bathrooms - The total number of half and ¼ bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsPartial field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsPartial+Field). 
+     *
+     * @return {@link Number}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     */
+    @Override
+    public Number getNumberOfPartialBathrooms() {
+        return fNumberOfPartialBathrooms;
+    }
+
+    /**
+     * Number of partial bathrooms - The total number of half and ¼ bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsPartial field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsPartial+Field). 
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     */
+    @Override
+    public void setNumberOfPartialBathrooms(Number fNumberOfPartialBathrooms) {
+        this.fNumberOfPartialBathrooms = fNumberOfPartialBathrooms;
+    }
+
+    private QuantitativeValue fFloorSize;
+
+    /**
+     * The size of the accommodation, e.g. in square meter or squarefoot.
+     * Typical unit code(s): MTK for square meter, FTK for square foot, or YDK for square yard 
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
+     */
+    @Override
+    public QuantitativeValue getFloorSize() {
+        return fFloorSize;
+    }
+
+    /**
+     * The size of the accommodation, e.g. in square meter or squarefoot.
+     * Typical unit code(s): MTK for square meter, FTK for square foot, or YDK for square yard 
+     *
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
+     */
+    @Override
+    public void setFloorSize(QuantitativeValue fFloorSize) {
+        this.fFloorSize = fFloorSize;
+    }
+
+    private FloorPlan fAccommodationFloorPlan;
+
+    /**
+     * A floorplan of some [[Accommodation]].
+     *
+     * @return {@link FloorPlan}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     */
+    @Override
+    public FloorPlan getAccommodationFloorPlan() {
+        return fAccommodationFloorPlan;
+    }
+
+    /**
+     * A floorplan of some [[Accommodation]].
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     */
+    @Override
+    public void setAccommodationFloorPlan(FloorPlan fAccommodationFloorPlan) {
+        this.fAccommodationFloorPlan = fAccommodationFloorPlan;
+    }
+
+    private Number fNumberOfFullBathrooms;
+
+    /**
+     * Number of full bathrooms - The total number of full and ¾ bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsFull field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsFull+Field).
+     *
+     * @return {@link Number}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     */
+    @Override
+    public Number getNumberOfFullBathrooms() {
+        return fNumberOfFullBathrooms;
+    }
+
+    /**
+     * Number of full bathrooms - The total number of full and ¾ bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsFull field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsFull+Field).
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     */
+    @Override
+    public void setNumberOfFullBathrooms(Number fNumberOfFullBathrooms) {
+        this.fNumberOfFullBathrooms = fNumberOfFullBathrooms;
+    }
+
+    private Text fPermittedUsage;
+
+    /**
+     * Indications regarding the permitted usage of the accommodation.
+     *
+     * @return {@link Text}
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
+     */
+    @Override
+    public Text getPermittedUsage() {
+        return fPermittedUsage;
+    }
+
+    /**
+     * Indications regarding the permitted usage of the accommodation.
+     *
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
+     */
+    @Override
+    public void setPermittedUsage(Text fPermittedUsage) {
+        this.fPermittedUsage = fPermittedUsage;
+    }
+
+    private Object fPetsAllowed;
+
+    /**
+     * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
+     *
+     * @return {@link Text} or {@link Boolean}
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
+     */
+    @Override
+    public <T> T getPetsAllowed() {
+        return (T) fPetsAllowed;
+    }
+
+    /**
+     * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
+     *
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
+     */
+    @Override
+    public void setPetsAllowed(Object fPetsAllowed) {
+        if(!(fPetsAllowed instanceof Text) && !(fPetsAllowed instanceof Boolean)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'petsAllowed': " + fPetsAllowed);
+        }
+        this.fPetsAllowed = fPetsAllowed;
+    }
+
+    private Text fTelephone;
+
+    /**
+     * The telephone number.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getTelephone() {
+        return fTelephone;
+    }
+
+    /**
+     * The telephone number.
+     *
+     */
+    @Override
+    public void setTelephone(Text fTelephone) {
+        this.fTelephone = fTelephone;
+    }
+
+    private Review fReview;
+
+    /**
+     * A review of the item.
+     *
+     * @return {@link Review}
+     */
+    @Override
+    public Review getReview() {
+        return fReview;
+    }
+
+    /**
+     * A review of the item.
+     *
+     */
+    @Override
+    public void setReview(Review fReview) {
+        this.fReview = fReview;
+    }
+
+    private URL fMaps;
+
+    /**
+     * A URL to a map of the place.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getMaps() {
+        return fMaps;
+    }
+
+    /**
+     * A URL to a map of the place.
+     *
+     */
+    @Override
+    public void setMaps(URL fMaps) {
+        this.fMaps = fMaps;
+    }
+
+    private Object fGeoContains;
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. "a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @return {@link Place} or {@link GeospatialGeometry}
+     */
+    @Override
+    public <T> T getGeoContains() {
+        return (T) fGeoContains;
+    }
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. "a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     */
+    @Override
+    public void setGeoContains(Object fGeoContains) {
+        if(!(fGeoContains instanceof Place) && !(fGeoContains instanceof GeospatialGeometry)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoContains': " + fGeoContains);
+        }
+        this.fGeoContains = fGeoContains;
+    }
+
+    private Integer fMaximumAttendeeCapacity;
+
+    /**
+     * The total number of individuals that may attend an event or venue.
+     *
+     * @return {@link Integer}
+     */
+    @Override
+    public Integer getMaximumAttendeeCapacity() {
+        return fMaximumAttendeeCapacity;
+    }
+
+    /**
+     * The total number of individuals that may attend an event or venue.
+     *
+     */
+    @Override
+    public void setMaximumAttendeeCapacity(Integer fMaximumAttendeeCapacity) {
+        this.fMaximumAttendeeCapacity = fMaximumAttendeeCapacity;
+    }
+
+    private Place fContainsPlace;
+
+    /**
+     * The basic containment relation between a place and another that it contains.
+     *
+     * @return {@link Place}
+     */
+    @Override
+    public Place getContainsPlace() {
+        return fContainsPlace;
+    }
+
+    /**
+     * The basic containment relation between a place and another that it contains.
+     *
+     */
+    @Override
+    public void setContainsPlace(Place fContainsPlace) {
+        this.fContainsPlace = fContainsPlace;
+    }
+
+    private Boolean fSmokingAllowed;
+
+    /**
+     * Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
+     */
+    @Override
+    public Boolean getSmokingAllowed() {
+        return fSmokingAllowed;
+    }
+
+    /**
+     * Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.
+     *
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
+     */
+    @Override
+    public void setSmokingAllowed(Boolean fSmokingAllowed) {
+        this.fSmokingAllowed = fSmokingAllowed;
+    }
+
+    private Text fGlobalLocationNumber;
+
+    /**
+     * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public Text getGlobalLocationNumber() {
+        return fGlobalLocationNumber;
+    }
+
+    /**
+     * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setGlobalLocationNumber(Text fGlobalLocationNumber) {
+        this.fGlobalLocationNumber = fGlobalLocationNumber;
+    }
+
+    private Object fKeywords;
+
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     * @return {@link DefinedTerm} or {@link Text} or {@link URL}
+     */
+    @Override
+    public <T> T getKeywords() {
+        return (T) fKeywords;
+    }
+
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     */
+    @Override
+    public void setKeywords(Object fKeywords) {
+        if(!(fKeywords instanceof DefinedTerm) && !(fKeywords instanceof Text) && !(fKeywords instanceof URL)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'keywords': " + fKeywords);
+        }
+        this.fKeywords = fKeywords;
+    }
+
+    private Object fGeoIntersects;
+
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @return {@link GeospatialGeometry} or {@link Place}
+     */
+    @Override
+    public <T> T getGeoIntersects() {
+        return (T) fGeoIntersects;
+    }
+
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     */
+    @Override
+    public void setGeoIntersects(Object fGeoIntersects) {
+        if(!(fGeoIntersects instanceof GeospatialGeometry) && !(fGeoIntersects instanceof Place)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoIntersects': " + fGeoIntersects);
+        }
+        this.fGeoIntersects = fGeoIntersects;
+    }
+
+    private Object fLatitude;
+
+    /**
+     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     *
+     * @return {@link Text} or {@link Number}
+     */
+    @Override
+    public <T> T getLatitude() {
+        return (T) fLatitude;
+    }
+
+    /**
+     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     *
+     */
+    @Override
+    public void setLatitude(Object fLatitude) {
+        if(!(fLatitude instanceof Text) && !(fLatitude instanceof Number)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'latitude': " + fLatitude);
+        }
+        this.fLatitude = fLatitude;
+    }
+
+    private Object fGeoTouches;
+
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) touch: they have at least one boundary point in common, but no interior points." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM) )
+     *
+     * @return {@link Place} or {@link GeospatialGeometry}
+     */
+    @Override
+    public <T> T getGeoTouches() {
+        return (T) fGeoTouches;
+    }
+
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) touch: they have at least one boundary point in common, but no interior points." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM) )
+     *
+     */
+    @Override
+    public void setGeoTouches(Object fGeoTouches) {
+        if(!(fGeoTouches instanceof Place) && !(fGeoTouches instanceof GeospatialGeometry)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoTouches': " + fGeoTouches);
+        }
+        this.fGeoTouches = fGeoTouches;
+    }
+
+    private Object fGeoCoveredBy;
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @return {@link Place} or {@link GeospatialGeometry}
+     */
+    @Override
+    public <T> T getGeoCoveredBy() {
+        return (T) fGeoCoveredBy;
+    }
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     */
+    @Override
+    public void setGeoCoveredBy(Object fGeoCoveredBy) {
+        if(!(fGeoCoveredBy instanceof Place) && !(fGeoCoveredBy instanceof GeospatialGeometry)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoCoveredBy': " + fGeoCoveredBy);
+        }
+        this.fGeoCoveredBy = fGeoCoveredBy;
+    }
+
+    private AggregateRating fAggregateRating;
+
+    /**
+     * The overall rating, based on a collection of reviews or ratings, of the item.
+     *
+     * @return {@link AggregateRating}
+     */
+    @Override
+    public AggregateRating getAggregateRating() {
+        return fAggregateRating;
+    }
+
+    /**
+     * The overall rating, based on a collection of reviews or ratings, of the item.
+     *
+     */
+    @Override
+    public void setAggregateRating(AggregateRating fAggregateRating) {
+        this.fAggregateRating = fAggregateRating;
+    }
+
+    private Object fAddress;
+
+    /**
+     * Physical address of the item.
+     *
+     * @return {@link Text} or {@link PostalAddress}
+     */
+    @Override
+    public <T> T getAddress() {
+        return (T) fAddress;
+    }
+
+    /**
+     * Physical address of the item.
+     *
+     */
+    @Override
+    public void setAddress(Object fAddress) {
+        if(!(fAddress instanceof Text) && !(fAddress instanceof PostalAddress)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'address': " + fAddress);
+        }
+        this.fAddress = fAddress;
+    }
+
+    private Object fGeoEquals;
+
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). "Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other" (a symmetric relationship)
+     *
+     * @return {@link Place} or {@link GeospatialGeometry}
+     */
+    @Override
+    public <T> T getGeoEquals() {
+        return (T) fGeoEquals;
+    }
+
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). "Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other" (a symmetric relationship)
+     *
+     */
+    @Override
+    public void setGeoEquals(Object fGeoEquals) {
+        if(!(fGeoEquals instanceof Place) && !(fGeoEquals instanceof GeospatialGeometry)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoEquals': " + fGeoEquals);
+        }
+        this.fGeoEquals = fGeoEquals;
+    }
+
+    private URL fMap;
+
+    /**
+     * A URL to a map of the place.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getMap() {
+        return fMap;
+    }
+
+    /**
+     * A URL to a map of the place.
+     *
+     */
+    @Override
+    public void setMap(URL fMap) {
+        this.fMap = fMap;
+    }
+
+    private Boolean fPublicAccess;
+
+    /**
+     * A flag to signal that the [[Place]] is open to public visitors.  If this property is omitted there is no assumed default boolean value
+     *
+     * @return {@link Boolean}
+     */
+    @Override
+    public Boolean getPublicAccess() {
+        return fPublicAccess;
+    }
+
+    /**
+     * A flag to signal that the [[Place]] is open to public visitors.  If this property is omitted there is no assumed default boolean value
+     *
+     */
+    @Override
+    public void setPublicAccess(Boolean fPublicAccess) {
+        this.fPublicAccess = fPublicAccess;
+    }
+
+    private Object fGeoCrosses;
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: "a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @return {@link GeospatialGeometry} or {@link Place}
+     */
+    @Override
+    public <T> T getGeoCrosses() {
+        return (T) fGeoCrosses;
+    }
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: "a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     */
+    @Override
+    public void setGeoCrosses(Object fGeoCrosses) {
+        if(!(fGeoCrosses instanceof GeospatialGeometry) && !(fGeoCrosses instanceof Place)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoCrosses': " + fGeoCrosses);
+        }
+        this.fGeoCrosses = fGeoCrosses;
+    }
+
+    private Place fContainedInPlace;
+
+    /**
+     * The basic containment relation between a place and one that contains it.
+     *
+     * @return {@link Place}
+     */
+    @Override
+    public Place getContainedInPlace() {
+        return fContainedInPlace;
+    }
+
+    /**
+     * The basic containment relation between a place and one that contains it.
+     *
+     */
+    @Override
+    public void setContainedInPlace(Place fContainedInPlace) {
+        this.fContainedInPlace = fContainedInPlace;
+    }
+
+    private Text fSlogan;
+
+    /**
+     * A slogan or motto associated with the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getSlogan() {
+        return fSlogan;
+    }
+
+    /**
+     * A slogan or motto associated with the item.
+     *
+     */
+    @Override
+    public void setSlogan(Text fSlogan) {
+        this.fSlogan = fSlogan;
+    }
+
+    private Object fPhotos;
+
+    /**
+     * Photographs of this place.
+     *
+     * @return {@link ImageObject} or {@link Photograph}
+     */
+    @Override
+    public <T> T getPhotos() {
+        return (T) fPhotos;
+    }
+
+    /**
+     * Photographs of this place.
+     *
+     */
+    @Override
+    public void setPhotos(Object fPhotos) {
+        if(!(fPhotos instanceof ImageObject) && !(fPhotos instanceof Photograph)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'photos': " + fPhotos);
+        }
+        this.fPhotos = fPhotos;
+    }
+
+    private Object fGeoCovers;
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. "Every point of b is a point of (the interior or boundary of) a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @return {@link GeospatialGeometry} or {@link Place}
+     */
+    @Override
+    public <T> T getGeoCovers() {
+        return (T) fGeoCovers;
+    }
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. "Every point of b is a point of (the interior or boundary of) a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     */
+    @Override
+    public void setGeoCovers(Object fGeoCovers) {
+        if(!(fGeoCovers instanceof GeospatialGeometry) && !(fGeoCovers instanceof Place)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoCovers': " + fGeoCovers);
+        }
+        this.fGeoCovers = fGeoCovers;
+    }
+
+    private Place fContainedIn;
+
+    /**
+     * The basic containment relation between a place and one that contains it.
+     *
+     * @return {@link Place}
+     */
+    @Override
+    public Place getContainedIn() {
+        return fContainedIn;
+    }
+
+    /**
+     * The basic containment relation between a place and one that contains it.
+     *
+     */
+    @Override
+    public void setContainedIn(Place fContainedIn) {
+        this.fContainedIn = fContainedIn;
+    }
+
+    private Boolean fHasDriveThroughService;
+
+    /**
+     * Indicates whether some facility (e.g. [[FoodEstablishment]], [[CovidTestingFacility]]) offers a service that can be used by driving through in a car. In the case of [[CovidTestingFacility]] such facilities could potentially help with social distancing from other potentially-infected users.
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    @Override
+    public Boolean getHasDriveThroughService() {
+        return fHasDriveThroughService;
+    }
+
+    /**
+     * Indicates whether some facility (e.g. [[FoodEstablishment]], [[CovidTestingFacility]]) offers a service that can be used by driving through in a car. In the case of [[CovidTestingFacility]] such facilities could potentially help with social distancing from other potentially-infected users.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    @Override
+    public void setHasDriveThroughService(Boolean fHasDriveThroughService) {
+        this.fHasDriveThroughService = fHasDriveThroughService;
+    }
+
+    private Object fLogo;
+
+    /**
+     * An associated logo.
+     *
+     * @return {@link URL} or {@link ImageObject}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public <T> T getLogo() {
+        return (T) fLogo;
+    }
+
+    /**
+     * An associated logo.
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setLogo(Object fLogo) {
+        if(!(fLogo instanceof URL) && !(fLogo instanceof ImageObject)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'logo': " + fLogo);
+        }
+        this.fLogo = fLogo;
+    }
+
+    private Boolean fIsAccessibleForFree;
+
+    /**
+     * A flag to signal that the item, event, or place is accessible for free.
+     *
+     * @return {@link Boolean}
+     */
+    @Override
+    public Boolean getIsAccessibleForFree() {
+        return fIsAccessibleForFree;
+    }
+
+    /**
+     * A flag to signal that the item, event, or place is accessible for free.
+     *
+     */
+    @Override
+    public void setIsAccessibleForFree(Boolean fIsAccessibleForFree) {
+        this.fIsAccessibleForFree = fIsAccessibleForFree;
+    }
+
+    private Object fGeoWithin;
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @return {@link Place} or {@link GeospatialGeometry}
+     */
+    @Override
+    public <T> T getGeoWithin() {
+        return (T) fGeoWithin;
+    }
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     */
+    @Override
+    public void setGeoWithin(Object fGeoWithin) {
+        if(!(fGeoWithin instanceof Place) && !(fGeoWithin instanceof GeospatialGeometry)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoWithin': " + fGeoWithin);
+        }
+        this.fGeoWithin = fGeoWithin;
+    }
+
+    private Object fGeoDisjoint;
+
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM))
+     *
+     * @return {@link GeospatialGeometry} or {@link Place}
+     */
+    @Override
+    public <T> T getGeoDisjoint() {
+        return (T) fGeoDisjoint;
+    }
+
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM))
+     *
+     */
+    @Override
+    public void setGeoDisjoint(Object fGeoDisjoint) {
+        if(!(fGeoDisjoint instanceof GeospatialGeometry) && !(fGeoDisjoint instanceof Place)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoDisjoint': " + fGeoDisjoint);
+        }
+        this.fGeoDisjoint = fGeoDisjoint;
+    }
+
+    private Text fIsicV4;
+
+    /**
+     * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public Text getIsicV4() {
+        return fIsicV4;
+    }
+
+    /**
+     * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setIsicV4(Text fIsicV4) {
+        this.fIsicV4 = fIsicV4;
+    }
+
+    private Object fGeoOverlaps;
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @return {@link GeospatialGeometry} or {@link Place}
+     */
+    @Override
+    public <T> T getGeoOverlaps() {
+        return (T) fGeoOverlaps;
+    }
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     */
+    @Override
+    public void setGeoOverlaps(Object fGeoOverlaps) {
+        if(!(fGeoOverlaps instanceof GeospatialGeometry) && !(fGeoOverlaps instanceof Place)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoOverlaps': " + fGeoOverlaps);
+        }
+        this.fGeoOverlaps = fGeoOverlaps;
+    }
+
+    private Text fBranchCode;
+
+    /**
+     * A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.<br/><br/>For example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code "3047" is a branchCode for a particular branch.
+     *       
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getBranchCode() {
+        return fBranchCode;
+    }
+
+    /**
+     * A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.<br/><br/>For example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code "3047" is a branchCode for a particular branch.
+     *       
+     *
+     */
+    @Override
+    public void setBranchCode(Text fBranchCode) {
+        this.fBranchCode = fBranchCode;
+    }
+
+    private PropertyValue fAdditionalProperty;
+
+    /**
+     * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
+     *
+     * @return {@link PropertyValue}
+     */
+    @Override
+    public PropertyValue getAdditionalProperty() {
+        return fAdditionalProperty;
+    }
+
+    /**
+     * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
+     *
+     */
+    @Override
+    public void setAdditionalProperty(PropertyValue fAdditionalProperty) {
+        this.fAdditionalProperty = fAdditionalProperty;
+    }
+
+    private OpeningHoursSpecification fOpeningHoursSpecification;
+
+    /**
+     * The opening hours of a certain place.
+     *
+     * @return {@link OpeningHoursSpecification}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public OpeningHoursSpecification getOpeningHoursSpecification() {
+        return fOpeningHoursSpecification;
+    }
+
+    /**
+     * The opening hours of a certain place.
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setOpeningHoursSpecification(OpeningHoursSpecification fOpeningHoursSpecification) {
+        this.fOpeningHoursSpecification = fOpeningHoursSpecification;
+    }
+
+    private Review fReviews;
+
+    /**
+     * Review of the item.
+     *
+     * @return {@link Review}
+     */
+    @Override
+    public Review getReviews() {
+        return fReviews;
+    }
+
+    /**
+     * Review of the item.
+     *
+     */
+    @Override
+    public void setReviews(Review fReviews) {
+        this.fReviews = fReviews;
     }
 
     private Object fPhoto;
@@ -169,6 +1273,141 @@ public class CampingPitchImpl implements CampingPitch {
         this.fSpecialOpeningHoursSpecification = fSpecialOpeningHoursSpecification;
     }
 
+    private Object fHasMap;
+
+    /**
+     * A URL to a map of the place.
+     *
+     * @return {@link URL} or {@link Map}
+     */
+    @Override
+    public <T> T getHasMap() {
+        return (T) fHasMap;
+    }
+
+    /**
+     * A URL to a map of the place.
+     *
+     */
+    @Override
+    public void setHasMap(Object fHasMap) {
+        if(!(fHasMap instanceof URL) && !(fHasMap instanceof Map)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'hasMap': " + fHasMap);
+        }
+        this.fHasMap = fHasMap;
+    }
+
+    private Object fLongitude;
+
+    /**
+     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     *
+     * @return {@link Number} or {@link Text}
+     */
+    @Override
+    public <T> T getLongitude() {
+        return (T) fLongitude;
+    }
+
+    /**
+     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     *
+     */
+    @Override
+    public void setLongitude(Object fLongitude) {
+        if(!(fLongitude instanceof Number) && !(fLongitude instanceof Text)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'longitude': " + fLongitude);
+        }
+        this.fLongitude = fLongitude;
+    }
+
+    private Object fGeo;
+
+    /**
+     * The geo coordinates of the place.
+     *
+     * @return {@link GeoCoordinates} or {@link GeoShape}
+     */
+    @Override
+    public <T> T getGeo() {
+        return (T) fGeo;
+    }
+
+    /**
+     * The geo coordinates of the place.
+     *
+     */
+    @Override
+    public void setGeo(Object fGeo) {
+        if(!(fGeo instanceof GeoCoordinates) && !(fGeo instanceof GeoShape)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'geo': " + fGeo);
+        }
+        this.fGeo = fGeo;
+    }
+
+    private Event fEvents;
+
+    /**
+     * Upcoming or past events associated with this place or organization.
+     *
+     * @return {@link Event}
+     */
+    @Override
+    public Event getEvents() {
+        return fEvents;
+    }
+
+    /**
+     * Upcoming or past events associated with this place or organization.
+     *
+     */
+    @Override
+    public void setEvents(Event fEvents) {
+        this.fEvents = fEvents;
+    }
+
+    private Text fFaxNumber;
+
+    /**
+     * The fax number.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getFaxNumber() {
+        return fFaxNumber;
+    }
+
+    /**
+     * The fax number.
+     *
+     */
+    @Override
+    public void setFaxNumber(Text fFaxNumber) {
+        this.fFaxNumber = fFaxNumber;
+    }
+
+    private Event fEvent;
+
+    /**
+     * Upcoming or past event associated with this place, organization, or action.
+     *
+     * @return {@link Event}
+     */
+    @Override
+    public Event getEvent() {
+        return fEvent;
+    }
+
+    /**
+     * Upcoming or past event associated with this place, organization, or action.
+     *
+     */
+    @Override
+    public void setEvent(Event fEvent) {
+        this.fEvent = fEvent;
+    }
+
     private Object fMainEntityOfPage;
 
     /**
@@ -193,149 +1432,46 @@ public class CampingPitchImpl implements CampingPitch {
         this.fMainEntityOfPage = fMainEntityOfPage;
     }
 
-    private Object fNumberOfRooms;
+    private Text fAlternateName;
 
     /**
-     * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
-     * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
-     *
-     * @return {@link QuantitativeValue} or {@link Number}
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
-     */
-    @Override
-    public <T> T getNumberOfRooms() {
-        return (T) fNumberOfRooms;
-    }
-
-    /**
-     * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
-     * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
-     *
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
-     */
-    @Override
-    public void setNumberOfRooms(Object fNumberOfRooms) {
-        if(!(fNumberOfRooms instanceof QuantitativeValue) && !(fNumberOfRooms instanceof Number)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'numberOfRooms': " + fNumberOfRooms);
-        }
-        this.fNumberOfRooms = fNumberOfRooms;
-    }
-
-    private Object fGeoCovers;
-
-    /**
-     * Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. "Every point of b is a point of (the interior or boundary of) a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     * @return {@link GeospatialGeometry} or {@link Place}
-     */
-    @Override
-    public <T> T getGeoCovers() {
-        return (T) fGeoCovers;
-    }
-
-    /**
-     * Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. "Every point of b is a point of (the interior or boundary of) a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     */
-    @Override
-    public void setGeoCovers(Object fGeoCovers) {
-        if(!(fGeoCovers instanceof GeospatialGeometry) && !(fGeoCovers instanceof Place)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoCovers': " + fGeoCovers);
-        }
-        this.fGeoCovers = fGeoCovers;
-    }
-
-    private Text fBranchCode;
-
-    /**
-     * A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.<br/><br/>For example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code "3047" is a branchCode for a particular branch.
-     *       
+     * An alias for the item.
      *
      * @return {@link Text}
      */
     @Override
-    public Text getBranchCode() {
-        return fBranchCode;
+    public Text getAlternateName() {
+        return fAlternateName;
     }
 
     /**
-     * A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.<br/><br/>For example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code "3047" is a branchCode for a particular branch.
-     *       
+     * An alias for the item.
      *
      */
     @Override
-    public void setBranchCode(Text fBranchCode) {
-        this.fBranchCode = fBranchCode;
+    public void setAlternateName(Text fAlternateName) {
+        this.fAlternateName = fAlternateName;
     }
 
-    private FloorPlan fAccommodationFloorPlan;
+    private Text fName;
 
     /**
-     * A floorplan of some [[Accommodation]].
+     * The name of the item.
      *
-     * @return {@link FloorPlan}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     * @return {@link Text}
      */
     @Override
-    public FloorPlan getAccommodationFloorPlan() {
-        return fAccommodationFloorPlan;
+    public Text getName() {
+        return fName;
     }
 
     /**
-     * A floorplan of some [[Accommodation]].
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
-     */
-    @Override
-    public void setAccommodationFloorPlan(FloorPlan fAccommodationFloorPlan) {
-        this.fAccommodationFloorPlan = fAccommodationFloorPlan;
-    }
-
-    private Object fGeoDisjoint;
-
-    /**
-     * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM))
-     *
-     * @return {@link GeospatialGeometry} or {@link Place}
-     */
-    @Override
-    public <T> T getGeoDisjoint() {
-        return (T) fGeoDisjoint;
-    }
-
-    /**
-     * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM))
+     * The name of the item.
      *
      */
     @Override
-    public void setGeoDisjoint(Object fGeoDisjoint) {
-        if(!(fGeoDisjoint instanceof GeospatialGeometry) && !(fGeoDisjoint instanceof Place)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoDisjoint': " + fGeoDisjoint);
-        }
-        this.fGeoDisjoint = fGeoDisjoint;
-    }
-
-    private Integer fMaximumAttendeeCapacity;
-
-    /**
-     * The total number of individuals that may attend an event or venue.
-     *
-     * @return {@link Integer}
-     */
-    @Override
-    public Integer getMaximumAttendeeCapacity() {
-        return fMaximumAttendeeCapacity;
-    }
-
-    /**
-     * The total number of individuals that may attend an event or venue.
-     *
-     */
-    @Override
-    public void setMaximumAttendeeCapacity(Integer fMaximumAttendeeCapacity) {
-        this.fMaximumAttendeeCapacity = fMaximumAttendeeCapacity;
+    public void setName(Text fName) {
+        this.fName = fName;
     }
 
     private Action fPotentialAction;
@@ -359,69 +1495,70 @@ public class CampingPitchImpl implements CampingPitch {
         this.fPotentialAction = fPotentialAction;
     }
 
-    private Text fIsicV4;
+    private Object fImage;
 
     /**
-     * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link URL} or {@link ImageObject}
+     */
+    @Override
+    public <T> T getImage() {
+        return (T) fImage;
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     */
+    @Override
+    public void setImage(Object fImage) {
+        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
+        }
+        this.fImage = fImage;
+    }
+
+    private URL fUrl;
+
+    /**
+     * URL of the item.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getUrl() {
+        return fUrl;
+    }
+
+    /**
+     * URL of the item.
+     *
+     */
+    @Override
+    public void setUrl(URL fUrl) {
+        this.fUrl = fUrl;
+    }
+
+    private Text fDescription;
+
+    /**
+     * A description of the item.
      *
      * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public Text getIsicV4() {
-        return fIsicV4;
+    public Text getDescription() {
+        return fDescription;
     }
 
     /**
-     * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setIsicV4(Text fIsicV4) {
-        this.fIsicV4 = fIsicV4;
-    }
-
-    private Event fEvents;
-
-    /**
-     * Upcoming or past events associated with this place or organization.
-     *
-     * @return {@link Event}
-     */
-    @Override
-    public Event getEvents() {
-        return fEvents;
-    }
-
-    /**
-     * Upcoming or past events associated with this place or organization.
+     * A description of the item.
      *
      */
     @Override
-    public void setEvents(Event fEvents) {
-        this.fEvents = fEvents;
-    }
-
-    private Place fContainedIn;
-
-    /**
-     * The basic containment relation between a place and one that contains it.
-     *
-     * @return {@link Place}
-     */
-    @Override
-    public Place getContainedIn() {
-        return fContainedIn;
-    }
-
-    /**
-     * The basic containment relation between a place and one that contains it.
-     *
-     */
-    @Override
-    public void setContainedIn(Place fContainedIn) {
-        this.fContainedIn = fContainedIn;
+    public void setDescription(Text fDescription) {
+        this.fDescription = fDescription;
     }
 
     private Object fSubjectOf;
@@ -450,67 +1587,25 @@ public class CampingPitchImpl implements CampingPitch {
         this.fSubjectOf = fSubjectOf;
     }
 
-    private AggregateRating fAggregateRating;
+    private URL fAdditionalType;
 
     /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
-     * @return {@link AggregateRating}
+     * @return {@link URL}
      */
     @Override
-    public AggregateRating getAggregateRating() {
-        return fAggregateRating;
+    public URL getAdditionalType() {
+        return fAdditionalType;
     }
 
     /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
      */
     @Override
-    public void setAggregateRating(AggregateRating fAggregateRating) {
-        this.fAggregateRating = fAggregateRating;
-    }
-
-    private Boolean fPublicAccess;
-
-    /**
-     * A flag to signal that the [[Place]] is open to public visitors.  If this property is omitted there is no assumed default boolean value
-     *
-     * @return {@link Boolean}
-     */
-    @Override
-    public Boolean getPublicAccess() {
-        return fPublicAccess;
-    }
-
-    /**
-     * A flag to signal that the [[Place]] is open to public visitors.  If this property is omitted there is no assumed default boolean value
-     *
-     */
-    @Override
-    public void setPublicAccess(Boolean fPublicAccess) {
-        this.fPublicAccess = fPublicAccess;
-    }
-
-    private Text fName;
-
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getName() {
-        return fName;
-    }
-
-    /**
-     * The name of the item.
-     *
-     */
-    @Override
-    public void setName(Text fName) {
-        this.fName = fName;
+    public void setAdditionalType(URL fAdditionalType) {
+        this.fAdditionalType = fAdditionalType;
     }
 
     private Text fDisambiguatingDescription;
@@ -534,30 +1629,6 @@ public class CampingPitchImpl implements CampingPitch {
         this.fDisambiguatingDescription = fDisambiguatingDescription;
     }
 
-    private Object fImage;
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link URL} or {@link ImageObject}
-     */
-    @Override
-    public <T> T getImage() {
-        return (T) fImage;
-    }
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     */
-    @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
-        this.fImage = fImage;
-    }
-
     private URL fSameAs;
 
     /**
@@ -577,870 +1648,6 @@ public class CampingPitchImpl implements CampingPitch {
     @Override
     public void setSameAs(URL fSameAs) {
         this.fSameAs = fSameAs;
-    }
-
-    private Object fPetsAllowed;
-
-    /**
-     * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
-     *
-     * @return {@link Text} or {@link Boolean}
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
-     */
-    @Override
-    public <T> T getPetsAllowed() {
-        return (T) fPetsAllowed;
-    }
-
-    /**
-     * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
-     *
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
-     */
-    @Override
-    public void setPetsAllowed(Object fPetsAllowed) {
-        if(!(fPetsAllowed instanceof Text) && !(fPetsAllowed instanceof Boolean)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'petsAllowed': " + fPetsAllowed);
-        }
-        this.fPetsAllowed = fPetsAllowed;
-    }
-
-    private Number fNumberOfFullBathrooms;
-
-    /**
-     * Number of full bathrooms - The total number of full and ¾ bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsFull field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsFull+Field).
-     *
-     * @return {@link Number}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
-     */
-    @Override
-    public Number getNumberOfFullBathrooms() {
-        return fNumberOfFullBathrooms;
-    }
-
-    /**
-     * Number of full bathrooms - The total number of full and ¾ bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsFull field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsFull+Field).
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
-     */
-    @Override
-    public void setNumberOfFullBathrooms(Number fNumberOfFullBathrooms) {
-        this.fNumberOfFullBathrooms = fNumberOfFullBathrooms;
-    }
-
-    private Event fEvent;
-
-    /**
-     * Upcoming or past event associated with this place, organization, or action.
-     *
-     * @return {@link Event}
-     */
-    @Override
-    public Event getEvent() {
-        return fEvent;
-    }
-
-    /**
-     * Upcoming or past event associated with this place, organization, or action.
-     *
-     */
-    @Override
-    public void setEvent(Event fEvent) {
-        this.fEvent = fEvent;
-    }
-
-    private LocationFeatureSpecification fAmenityFeature;
-
-    /**
-     * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
-     *
-     * @return {@link LocationFeatureSpecification}
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
-     */
-    @Override
-    public LocationFeatureSpecification getAmenityFeature() {
-        return fAmenityFeature;
-    }
-
-    /**
-     * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
-     *
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
-     */
-    @Override
-    public void setAmenityFeature(LocationFeatureSpecification fAmenityFeature) {
-        this.fAmenityFeature = fAmenityFeature;
-    }
-
-    private Boolean fHasDriveThroughService;
-
-    /**
-     * Indicates whether some facility (e.g. [[FoodEstablishment]], [[CovidTestingFacility]]) offers a service that can be used by driving through in a car. In the case of [[CovidTestingFacility]] such facilities could potentially help with social distancing from other potentially-infected users.
-     *
-     * @return {@link Boolean}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     */
-    @Override
-    public Boolean getHasDriveThroughService() {
-        return fHasDriveThroughService;
-    }
-
-    /**
-     * Indicates whether some facility (e.g. [[FoodEstablishment]], [[CovidTestingFacility]]) offers a service that can be used by driving through in a car. In the case of [[CovidTestingFacility]] such facilities could potentially help with social distancing from other potentially-infected users.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     */
-    @Override
-    public void setHasDriveThroughService(Boolean fHasDriveThroughService) {
-        this.fHasDriveThroughService = fHasDriveThroughService;
-    }
-
-    private Text fFloorLevel;
-
-    /**
-     * The floor level for an [[Accommodation]] in a multi-storey building. Since counting
-     *   systems [vary internationally](https://en.wikipedia.org/wiki/Storey#Consecutive_number_floor_designations), the local system should be used where possible.
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
-     */
-    @Override
-    public Text getFloorLevel() {
-        return fFloorLevel;
-    }
-
-    /**
-     * The floor level for an [[Accommodation]] in a multi-storey building. Since counting
-     *   systems [vary internationally](https://en.wikipedia.org/wiki/Storey#Consecutive_number_floor_designations), the local system should be used where possible.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
-     */
-    @Override
-    public void setFloorLevel(Text fFloorLevel) {
-        this.fFloorLevel = fFloorLevel;
-    }
-
-    private Text fGlobalLocationNumber;
-
-    /**
-     * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
-     *
-     * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public Text getGlobalLocationNumber() {
-        return fGlobalLocationNumber;
-    }
-
-    /**
-     * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setGlobalLocationNumber(Text fGlobalLocationNumber) {
-        this.fGlobalLocationNumber = fGlobalLocationNumber;
-    }
-
-    private Object fLatitude;
-
-    /**
-     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
-     *
-     * @return {@link Text} or {@link Number}
-     */
-    @Override
-    public <T> T getLatitude() {
-        return (T) fLatitude;
-    }
-
-    /**
-     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
-     *
-     */
-    @Override
-    public void setLatitude(Object fLatitude) {
-        if(!(fLatitude instanceof Text) && !(fLatitude instanceof Number)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'latitude': " + fLatitude);
-        }
-        this.fLatitude = fLatitude;
-    }
-
-    private URL fUrl;
-
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getUrl() {
-        return fUrl;
-    }
-
-    /**
-     * URL of the item.
-     *
-     */
-    @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
-    }
-
-    private Object fGeoOverlaps;
-
-    /**
-     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     * @return {@link GeospatialGeometry} or {@link Place}
-     */
-    @Override
-    public <T> T getGeoOverlaps() {
-        return (T) fGeoOverlaps;
-    }
-
-    /**
-     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     */
-    @Override
-    public void setGeoOverlaps(Object fGeoOverlaps) {
-        if(!(fGeoOverlaps instanceof GeospatialGeometry) && !(fGeoOverlaps instanceof Place)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoOverlaps': " + fGeoOverlaps);
-        }
-        this.fGeoOverlaps = fGeoOverlaps;
-    }
-
-    private Object fGeoContains;
-
-    /**
-     * Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. "a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     * @return {@link Place} or {@link GeospatialGeometry}
-     */
-    @Override
-    public <T> T getGeoContains() {
-        return (T) fGeoContains;
-    }
-
-    /**
-     * Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. "a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     */
-    @Override
-    public void setGeoContains(Object fGeoContains) {
-        if(!(fGeoContains instanceof Place) && !(fGeoContains instanceof GeospatialGeometry)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoContains': " + fGeoContains);
-        }
-        this.fGeoContains = fGeoContains;
-    }
-
-    private Object fGeoEquals;
-
-    /**
-     * Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). "Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other" (a symmetric relationship)
-     *
-     * @return {@link Place} or {@link GeospatialGeometry}
-     */
-    @Override
-    public <T> T getGeoEquals() {
-        return (T) fGeoEquals;
-    }
-
-    /**
-     * Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). "Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other" (a symmetric relationship)
-     *
-     */
-    @Override
-    public void setGeoEquals(Object fGeoEquals) {
-        if(!(fGeoEquals instanceof Place) && !(fGeoEquals instanceof GeospatialGeometry)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoEquals': " + fGeoEquals);
-        }
-        this.fGeoEquals = fGeoEquals;
-    }
-
-    private URL fAdditionalType;
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getAdditionalType() {
-        return fAdditionalType;
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     */
-    @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
-    }
-
-    private Number fYearBuilt;
-
-    /**
-     * The year an [[Accommodation]] was constructed. This corresponds to the [YearBuilt field in RESO](https://ddwiki.reso.org/display/DDW17/YearBuilt+Field). 
-     *
-     * @return {@link Number}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
-     */
-    @Override
-    public Number getYearBuilt() {
-        return fYearBuilt;
-    }
-
-    /**
-     * The year an [[Accommodation]] was constructed. This corresponds to the [YearBuilt field in RESO](https://ddwiki.reso.org/display/DDW17/YearBuilt+Field). 
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
-     */
-    @Override
-    public void setYearBuilt(Number fYearBuilt) {
-        this.fYearBuilt = fYearBuilt;
-    }
-
-    private Object fGeoIntersects;
-
-    /**
-     * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     * @return {@link GeospatialGeometry} or {@link Place}
-     */
-    @Override
-    public <T> T getGeoIntersects() {
-        return (T) fGeoIntersects;
-    }
-
-    /**
-     * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     */
-    @Override
-    public void setGeoIntersects(Object fGeoIntersects) {
-        if(!(fGeoIntersects instanceof GeospatialGeometry) && !(fGeoIntersects instanceof Place)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoIntersects': " + fGeoIntersects);
-        }
-        this.fGeoIntersects = fGeoIntersects;
-    }
-
-    private Object fGeo;
-
-    /**
-     * The geo coordinates of the place.
-     *
-     * @return {@link GeoCoordinates} or {@link GeoShape}
-     */
-    @Override
-    public <T> T getGeo() {
-        return (T) fGeo;
-    }
-
-    /**
-     * The geo coordinates of the place.
-     *
-     */
-    @Override
-    public void setGeo(Object fGeo) {
-        if(!(fGeo instanceof GeoCoordinates) && !(fGeo instanceof GeoShape)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geo': " + fGeo);
-        }
-        this.fGeo = fGeo;
-    }
-
-    private Text fFaxNumber;
-
-    /**
-     * The fax number.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getFaxNumber() {
-        return fFaxNumber;
-    }
-
-    /**
-     * The fax number.
-     *
-     */
-    @Override
-    public void setFaxNumber(Text fFaxNumber) {
-        this.fFaxNumber = fFaxNumber;
-    }
-
-    private Place fContainedInPlace;
-
-    /**
-     * The basic containment relation between a place and one that contains it.
-     *
-     * @return {@link Place}
-     */
-    @Override
-    public Place getContainedInPlace() {
-        return fContainedInPlace;
-    }
-
-    /**
-     * The basic containment relation between a place and one that contains it.
-     *
-     */
-    @Override
-    public void setContainedInPlace(Place fContainedInPlace) {
-        this.fContainedInPlace = fContainedInPlace;
-    }
-
-    private Object fAddress;
-
-    /**
-     * Physical address of the item.
-     *
-     * @return {@link Text} or {@link PostalAddress}
-     */
-    @Override
-    public <T> T getAddress() {
-        return (T) fAddress;
-    }
-
-    /**
-     * Physical address of the item.
-     *
-     */
-    @Override
-    public void setAddress(Object fAddress) {
-        if(!(fAddress instanceof Text) && !(fAddress instanceof PostalAddress)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'address': " + fAddress);
-        }
-        this.fAddress = fAddress;
-    }
-
-    private Boolean fSmokingAllowed;
-
-    /**
-     * Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.
-     *
-     * @return {@link Boolean}
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
-     */
-    @Override
-    public Boolean getSmokingAllowed() {
-        return fSmokingAllowed;
-    }
-
-    /**
-     * Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.
-     *
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
-     */
-    @Override
-    public void setSmokingAllowed(Boolean fSmokingAllowed) {
-        this.fSmokingAllowed = fSmokingAllowed;
-    }
-
-    private Object fLeaseLength;
-
-    /**
-     * Length of the lease for some [[Accommodation]], either particular to some [[Offer]] or in some cases intrinsic to the property.
-     *
-     * @return {@link QuantitativeValue} or {@link Duration}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
-     */
-    @Override
-    public <T> T getLeaseLength() {
-        return (T) fLeaseLength;
-    }
-
-    /**
-     * Length of the lease for some [[Accommodation]], either particular to some [[Offer]] or in some cases intrinsic to the property.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
-     */
-    @Override
-    public void setLeaseLength(Object fLeaseLength) {
-        if(!(fLeaseLength instanceof QuantitativeValue) && !(fLeaseLength instanceof Duration)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'leaseLength': " + fLeaseLength);
-        }
-        this.fLeaseLength = fLeaseLength;
-    }
-
-    private Object fKeywords;
-
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     * @return {@link DefinedTerm} or {@link Text} or {@link URL}
-     */
-    @Override
-    public <T> T getKeywords() {
-        return (T) fKeywords;
-    }
-
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     */
-    @Override
-    public void setKeywords(Object fKeywords) {
-        if(!(fKeywords instanceof DefinedTerm) && !(fKeywords instanceof Text) && !(fKeywords instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'keywords': " + fKeywords);
-        }
-        this.fKeywords = fKeywords;
-    }
-
-    private Text fTelephone;
-
-    /**
-     * The telephone number.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getTelephone() {
-        return fTelephone;
-    }
-
-    /**
-     * The telephone number.
-     *
-     */
-    @Override
-    public void setTelephone(Text fTelephone) {
-        this.fTelephone = fTelephone;
-    }
-
-    private URL fMaps;
-
-    /**
-     * A URL to a map of the place.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getMaps() {
-        return fMaps;
-    }
-
-    /**
-     * A URL to a map of the place.
-     *
-     */
-    @Override
-    public void setMaps(URL fMaps) {
-        this.fMaps = fMaps;
-    }
-
-    private Number fNumberOfPartialBathrooms;
-
-    /**
-     * Number of partial bathrooms - The total number of half and ¼ bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsPartial field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsPartial+Field). 
-     *
-     * @return {@link Number}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
-     */
-    @Override
-    public Number getNumberOfPartialBathrooms() {
-        return fNumberOfPartialBathrooms;
-    }
-
-    /**
-     * Number of partial bathrooms - The total number of half and ¼ bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsPartial field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsPartial+Field). 
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
-     */
-    @Override
-    public void setNumberOfPartialBathrooms(Number fNumberOfPartialBathrooms) {
-        this.fNumberOfPartialBathrooms = fNumberOfPartialBathrooms;
-    }
-
-    private Text fAlternateName;
-
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getAlternateName() {
-        return fAlternateName;
-    }
-
-    /**
-     * An alias for the item.
-     *
-     */
-    @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
-    }
-
-    private Review fReview;
-
-    /**
-     * A review of the item.
-     *
-     * @return {@link Review}
-     */
-    @Override
-    public Review getReview() {
-        return fReview;
-    }
-
-    /**
-     * A review of the item.
-     *
-     */
-    @Override
-    public void setReview(Review fReview) {
-        this.fReview = fReview;
-    }
-
-    private Object fHasMap;
-
-    /**
-     * A URL to a map of the place.
-     *
-     * @return {@link URL} or {@link Map}
-     */
-    @Override
-    public <T> T getHasMap() {
-        return (T) fHasMap;
-    }
-
-    /**
-     * A URL to a map of the place.
-     *
-     */
-    @Override
-    public void setHasMap(Object fHasMap) {
-        if(!(fHasMap instanceof URL) && !(fHasMap instanceof Map)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'hasMap': " + fHasMap);
-        }
-        this.fHasMap = fHasMap;
-    }
-
-    private Object fGeoCoveredBy;
-
-    /**
-     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     * @return {@link Place} or {@link GeospatialGeometry}
-     */
-    @Override
-    public <T> T getGeoCoveredBy() {
-        return (T) fGeoCoveredBy;
-    }
-
-    /**
-     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     */
-    @Override
-    public void setGeoCoveredBy(Object fGeoCoveredBy) {
-        if(!(fGeoCoveredBy instanceof Place) && !(fGeoCoveredBy instanceof GeospatialGeometry)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoCoveredBy': " + fGeoCoveredBy);
-        }
-        this.fGeoCoveredBy = fGeoCoveredBy;
-    }
-
-    private OpeningHoursSpecification fOpeningHoursSpecification;
-
-    /**
-     * The opening hours of a certain place.
-     *
-     * @return {@link OpeningHoursSpecification}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public OpeningHoursSpecification getOpeningHoursSpecification() {
-        return fOpeningHoursSpecification;
-    }
-
-    /**
-     * The opening hours of a certain place.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setOpeningHoursSpecification(OpeningHoursSpecification fOpeningHoursSpecification) {
-        this.fOpeningHoursSpecification = fOpeningHoursSpecification;
-    }
-
-    private Object fGeoTouches;
-
-    /**
-     * Represents spatial relations in which two geometries (or the places they represent) touch: they have at least one boundary point in common, but no interior points." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM) )
-     *
-     * @return {@link Place} or {@link GeospatialGeometry}
-     */
-    @Override
-    public <T> T getGeoTouches() {
-        return (T) fGeoTouches;
-    }
-
-    /**
-     * Represents spatial relations in which two geometries (or the places they represent) touch: they have at least one boundary point in common, but no interior points." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM) )
-     *
-     */
-    @Override
-    public void setGeoTouches(Object fGeoTouches) {
-        if(!(fGeoTouches instanceof Place) && !(fGeoTouches instanceof GeospatialGeometry)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoTouches': " + fGeoTouches);
-        }
-        this.fGeoTouches = fGeoTouches;
-    }
-
-    private Object fLongitude;
-
-    /**
-     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
-     *
-     * @return {@link Number} or {@link Text}
-     */
-    @Override
-    public <T> T getLongitude() {
-        return (T) fLongitude;
-    }
-
-    /**
-     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
-     *
-     */
-    @Override
-    public void setLongitude(Object fLongitude) {
-        if(!(fLongitude instanceof Number) && !(fLongitude instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'longitude': " + fLongitude);
-        }
-        this.fLongitude = fLongitude;
-    }
-
-    private Object fGeoWithin;
-
-    /**
-     * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     * @return {@link Place} or {@link GeospatialGeometry}
-     */
-    @Override
-    public <T> T getGeoWithin() {
-        return (T) fGeoWithin;
-    }
-
-    /**
-     * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     */
-    @Override
-    public void setGeoWithin(Object fGeoWithin) {
-        if(!(fGeoWithin instanceof Place) && !(fGeoWithin instanceof GeospatialGeometry)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoWithin': " + fGeoWithin);
-        }
-        this.fGeoWithin = fGeoWithin;
-    }
-
-    private PropertyValue fAdditionalProperty;
-
-    /**
-     * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
-     *
-     * @return {@link PropertyValue}
-     */
-    @Override
-    public PropertyValue getAdditionalProperty() {
-        return fAdditionalProperty;
-    }
-
-    /**
-     * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
-     *
-     */
-    @Override
-    public void setAdditionalProperty(PropertyValue fAdditionalProperty) {
-        this.fAdditionalProperty = fAdditionalProperty;
-    }
-
-    private Object fPhotos;
-
-    /**
-     * Photographs of this place.
-     *
-     * @return {@link ImageObject} or {@link Photograph}
-     */
-    @Override
-    public <T> T getPhotos() {
-        return (T) fPhotos;
-    }
-
-    /**
-     * Photographs of this place.
-     *
-     */
-    @Override
-    public void setPhotos(Object fPhotos) {
-        if(!(fPhotos instanceof ImageObject) && !(fPhotos instanceof Photograph)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'photos': " + fPhotos);
-        }
-        this.fPhotos = fPhotos;
-    }
-
-    private Object fGeoCrosses;
-
-    /**
-     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: "a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     * @return {@link GeospatialGeometry} or {@link Place}
-     */
-    @Override
-    public <T> T getGeoCrosses() {
-        return (T) fGeoCrosses;
-    }
-
-    /**
-     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: "a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     */
-    @Override
-    public void setGeoCrosses(Object fGeoCrosses) {
-        if(!(fGeoCrosses instanceof GeospatialGeometry) && !(fGeoCrosses instanceof Place)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoCrosses': " + fGeoCrosses);
-        }
-        this.fGeoCrosses = fGeoCrosses;
-    }
-
-    private Text fSlogan;
-
-    /**
-     * A slogan or motto associated with the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getSlogan() {
-        return fSlogan;
-    }
-
-    /**
-     * A slogan or motto associated with the item.
-     *
-     */
-    @Override
-    public void setSlogan(Text fSlogan) {
-        this.fSlogan = fSlogan;
     }
 
     private Object fIdentifier;
@@ -1467,212 +1674,5 @@ public class CampingPitchImpl implements CampingPitch {
             throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
         }
         this.fIdentifier = fIdentifier;
-    }
-
-    private Text fPermittedUsage;
-
-    /**
-     * Indications regarding the permitted usage of the accommodation.
-     *
-     * @return {@link Text}
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
-     */
-    @Override
-    public Text getPermittedUsage() {
-        return fPermittedUsage;
-    }
-
-    /**
-     * Indications regarding the permitted usage of the accommodation.
-     *
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
-     */
-    @Override
-    public void setPermittedUsage(Text fPermittedUsage) {
-        this.fPermittedUsage = fPermittedUsage;
-    }
-
-    private Place fContainsPlace;
-
-    /**
-     * The basic containment relation between a place and another that it contains.
-     *
-     * @return {@link Place}
-     */
-    @Override
-    public Place getContainsPlace() {
-        return fContainsPlace;
-    }
-
-    /**
-     * The basic containment relation between a place and another that it contains.
-     *
-     */
-    @Override
-    public void setContainsPlace(Place fContainsPlace) {
-        this.fContainsPlace = fContainsPlace;
-    }
-
-    private Integer fNumberOfBathroomsTotal;
-
-    /**
-     * The total integer number of bathrooms in a some [[Accommodation]], following real estate conventions as [documented in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsTotalInteger+Field): "The simple sum of the number of bathrooms. For example for a property with two Full Bathrooms and one Half Bathroom, the Bathrooms Total Integer will be 3.". See also [[numberOfRooms]].
-     *
-     * @return {@link Integer}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
-     */
-    @Override
-    public Integer getNumberOfBathroomsTotal() {
-        return fNumberOfBathroomsTotal;
-    }
-
-    /**
-     * The total integer number of bathrooms in a some [[Accommodation]], following real estate conventions as [documented in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsTotalInteger+Field): "The simple sum of the number of bathrooms. For example for a property with two Full Bathrooms and one Half Bathroom, the Bathrooms Total Integer will be 3.". See also [[numberOfRooms]].
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
-     */
-    @Override
-    public void setNumberOfBathroomsTotal(Integer fNumberOfBathroomsTotal) {
-        this.fNumberOfBathroomsTotal = fNumberOfBathroomsTotal;
-    }
-
-    private Review fReviews;
-
-    /**
-     * Review of the item.
-     *
-     * @return {@link Review}
-     */
-    @Override
-    public Review getReviews() {
-        return fReviews;
-    }
-
-    /**
-     * Review of the item.
-     *
-     */
-    @Override
-    public void setReviews(Review fReviews) {
-        this.fReviews = fReviews;
-    }
-
-    private URL fMap;
-
-    /**
-     * A URL to a map of the place.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getMap() {
-        return fMap;
-    }
-
-    /**
-     * A URL to a map of the place.
-     *
-     */
-    @Override
-    public void setMap(URL fMap) {
-        this.fMap = fMap;
-    }
-
-    private URL fTourBookingPage;
-
-    /**
-     * A page providing information on how to book a tour of some [[Place]], such as an [[Accommodation]] or [[ApartmentComplex]] in a real estate setting, as well as other kinds of tours as appropriate.
-     *
-     * @return {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
-     */
-    @Override
-    public URL getTourBookingPage() {
-        return fTourBookingPage;
-    }
-
-    /**
-     * A page providing information on how to book a tour of some [[Place]], such as an [[Accommodation]] or [[ApartmentComplex]] in a real estate setting, as well as other kinds of tours as appropriate.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
-     */
-    @Override
-    public void setTourBookingPage(URL fTourBookingPage) {
-        this.fTourBookingPage = fTourBookingPage;
-    }
-
-    private Text fAccommodationCategory;
-
-    /**
-     * Category of an [[Accommodation]], following real estate conventions e.g. RESO (see [PropertySubType](https://ddwiki.reso.org/display/DDW17/PropertySubType+Field), and [PropertyType](https://ddwiki.reso.org/display/DDW17/PropertyType+Field) fields  for suggested values).
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
-     */
-    @Override
-    public Text getAccommodationCategory() {
-        return fAccommodationCategory;
-    }
-
-    /**
-     * Category of an [[Accommodation]], following real estate conventions e.g. RESO (see [PropertySubType](https://ddwiki.reso.org/display/DDW17/PropertySubType+Field), and [PropertyType](https://ddwiki.reso.org/display/DDW17/PropertyType+Field) fields  for suggested values).
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
-     */
-    @Override
-    public void setAccommodationCategory(Text fAccommodationCategory) {
-        this.fAccommodationCategory = fAccommodationCategory;
-    }
-
-    private QuantitativeValue fFloorSize;
-
-    /**
-     * The size of the accommodation, e.g. in square meter or squarefoot.
-     * Typical unit code(s): MTK for square meter, FTK for square foot, or YDK for square yard 
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
-     */
-    @Override
-    public QuantitativeValue getFloorSize() {
-        return fFloorSize;
-    }
-
-    /**
-     * The size of the accommodation, e.g. in square meter or squarefoot.
-     * Typical unit code(s): MTK for square meter, FTK for square foot, or YDK for square yard 
-     *
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
-     */
-    @Override
-    public void setFloorSize(QuantitativeValue fFloorSize) {
-        this.fFloorSize = fFloorSize;
-    }
-
-    private Text fDescription;
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDescription() {
-        return fDescription;
-    }
-
-    /**
-     * A description of the item.
-     *
-     */
-    @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
     }
 }

@@ -28,6 +28,309 @@ import org.schema.model.EntryPoint;
 @JsonLdTypeName("schema:EntryPoint")
 public class EntryPointImpl implements EntryPoint {
 
+    private SoftwareApplication fActionApplication;
+
+    /**
+     * An application that can complete the request.
+     *
+     * @return {@link SoftwareApplication}
+     */
+    @Override
+    public SoftwareApplication getActionApplication() {
+        return fActionApplication;
+    }
+
+    /**
+     * An application that can complete the request.
+     *
+     */
+    @Override
+    public void setActionApplication(SoftwareApplication fActionApplication) {
+        this.fActionApplication = fActionApplication;
+    }
+
+    private SoftwareApplication fApplication;
+
+    /**
+     * An application that can complete the request.
+     *
+     * @return {@link SoftwareApplication}
+     */
+    @Override
+    public SoftwareApplication getApplication() {
+        return fApplication;
+    }
+
+    /**
+     * An application that can complete the request.
+     *
+     */
+    @Override
+    public void setApplication(SoftwareApplication fApplication) {
+        this.fApplication = fApplication;
+    }
+
+    private Object fActionPlatform;
+
+    /**
+     * The high level platform(s) where the Action can be performed for the given URL. To specify a specific application or operating system instance, use actionApplication.
+     *
+     * @return {@link Text} or {@link URL} or {@link DigitalPlatformEnumeration}
+     */
+    @Override
+    public <T> T getActionPlatform() {
+        return (T) fActionPlatform;
+    }
+
+    /**
+     * The high level platform(s) where the Action can be performed for the given URL. To specify a specific application or operating system instance, use actionApplication.
+     *
+     */
+    @Override
+    public void setActionPlatform(Object fActionPlatform) {
+        if(!(fActionPlatform instanceof Text) && !(fActionPlatform instanceof URL) && !(fActionPlatform instanceof DigitalPlatformEnumeration)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'actionPlatform': " + fActionPlatform);
+        }
+        this.fActionPlatform = fActionPlatform;
+    }
+
+    private Text fHttpMethod;
+
+    /**
+     * An HTTP method that specifies the appropriate HTTP method for a request to an HTTP EntryPoint. Values are capitalized strings as used in HTTP.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getHttpMethod() {
+        return fHttpMethod;
+    }
+
+    /**
+     * An HTTP method that specifies the appropriate HTTP method for a request to an HTTP EntryPoint. Values are capitalized strings as used in HTTP.
+     *
+     */
+    @Override
+    public void setHttpMethod(Text fHttpMethod) {
+        this.fHttpMethod = fHttpMethod;
+    }
+
+    private Text fUrlTemplate;
+
+    /**
+     * An url template (RFC6570) that will be used to construct the target of the execution of the action.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getUrlTemplate() {
+        return fUrlTemplate;
+    }
+
+    /**
+     * An url template (RFC6570) that will be used to construct the target of the execution of the action.
+     *
+     */
+    @Override
+    public void setUrlTemplate(Text fUrlTemplate) {
+        this.fUrlTemplate = fUrlTemplate;
+    }
+
+    private Text fEncodingType;
+
+    /**
+     * The supported encoding type(s) for an EntryPoint request.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getEncodingType() {
+        return fEncodingType;
+    }
+
+    /**
+     * The supported encoding type(s) for an EntryPoint request.
+     *
+     */
+    @Override
+    public void setEncodingType(Text fEncodingType) {
+        this.fEncodingType = fEncodingType;
+    }
+
+    private Text fContentType;
+
+    /**
+     * The supported content type(s) for an EntryPoint response.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getContentType() {
+        return fContentType;
+    }
+
+    /**
+     * The supported content type(s) for an EntryPoint response.
+     *
+     */
+    @Override
+    public void setContentType(Text fContentType) {
+        this.fContentType = fContentType;
+    }
+
+    private Object fMainEntityOfPage;
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    @Override
+    public <T> T getMainEntityOfPage() {
+        return (T) fMainEntityOfPage;
+    }
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     */
+    @Override
+    public void setMainEntityOfPage(Object fMainEntityOfPage) {
+        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
+        }
+        this.fMainEntityOfPage = fMainEntityOfPage;
+    }
+
+    private Text fAlternateName;
+
+    /**
+     * An alias for the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getAlternateName() {
+        return fAlternateName;
+    }
+
+    /**
+     * An alias for the item.
+     *
+     */
+    @Override
+    public void setAlternateName(Text fAlternateName) {
+        this.fAlternateName = fAlternateName;
+    }
+
+    private Text fName;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getName() {
+        return fName;
+    }
+
+    /**
+     * The name of the item.
+     *
+     */
+    @Override
+    public void setName(Text fName) {
+        this.fName = fName;
+    }
+
+    private Action fPotentialAction;
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public Action getPotentialAction() {
+        return fPotentialAction;
+    }
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     */
+    @Override
+    public void setPotentialAction(Action fPotentialAction) {
+        this.fPotentialAction = fPotentialAction;
+    }
+
+    private Object fImage;
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link URL} or {@link ImageObject}
+     */
+    @Override
+    public <T> T getImage() {
+        return (T) fImage;
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     */
+    @Override
+    public void setImage(Object fImage) {
+        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
+        }
+        this.fImage = fImage;
+    }
+
+    private URL fUrl;
+
+    /**
+     * URL of the item.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getUrl() {
+        return fUrl;
+    }
+
+    /**
+     * URL of the item.
+     *
+     */
+    @Override
+    public void setUrl(URL fUrl) {
+        this.fUrl = fUrl;
+    }
+
+    private Text fDescription;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDescription() {
+        return fDescription;
+    }
+
+    /**
+     * A description of the item.
+     *
+     */
+    @Override
+    public void setDescription(Text fDescription) {
+        this.fDescription = fDescription;
+    }
+
     private Object fSubjectOf;
 
     /**
@@ -54,25 +357,25 @@ public class EntryPointImpl implements EntryPoint {
         this.fSubjectOf = fSubjectOf;
     }
 
-    private Text fName;
+    private URL fAdditionalType;
 
     /**
-     * The name of the item.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
-     * @return {@link Text}
+     * @return {@link URL}
      */
     @Override
-    public Text getName() {
-        return fName;
+    public URL getAdditionalType() {
+        return fAdditionalType;
     }
 
     /**
-     * The name of the item.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
      */
     @Override
-    public void setName(Text fName) {
-        this.fName = fName;
+    public void setAdditionalType(URL fAdditionalType) {
+        this.fAdditionalType = fAdditionalType;
     }
 
     private Text fDisambiguatingDescription;
@@ -94,30 +397,6 @@ public class EntryPointImpl implements EntryPoint {
     @Override
     public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
         this.fDisambiguatingDescription = fDisambiguatingDescription;
-    }
-
-    private Object fImage;
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link URL} or {@link ImageObject}
-     */
-    @Override
-    public <T> T getImage() {
-        return (T) fImage;
-    }
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     */
-    @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
-        this.fImage = fImage;
     }
 
     private URL fSameAs;
@@ -165,284 +444,5 @@ public class EntryPointImpl implements EntryPoint {
             throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
         }
         this.fIdentifier = fIdentifier;
-    }
-
-    private Text fUrlTemplate;
-
-    /**
-     * An url template (RFC6570) that will be used to construct the target of the execution of the action.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getUrlTemplate() {
-        return fUrlTemplate;
-    }
-
-    /**
-     * An url template (RFC6570) that will be used to construct the target of the execution of the action.
-     *
-     */
-    @Override
-    public void setUrlTemplate(Text fUrlTemplate) {
-        this.fUrlTemplate = fUrlTemplate;
-    }
-
-    private Text fHttpMethod;
-
-    /**
-     * An HTTP method that specifies the appropriate HTTP method for a request to an HTTP EntryPoint. Values are capitalized strings as used in HTTP.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getHttpMethod() {
-        return fHttpMethod;
-    }
-
-    /**
-     * An HTTP method that specifies the appropriate HTTP method for a request to an HTTP EntryPoint. Values are capitalized strings as used in HTTP.
-     *
-     */
-    @Override
-    public void setHttpMethod(Text fHttpMethod) {
-        this.fHttpMethod = fHttpMethod;
-    }
-
-    private SoftwareApplication fActionApplication;
-
-    /**
-     * An application that can complete the request.
-     *
-     * @return {@link SoftwareApplication}
-     */
-    @Override
-    public SoftwareApplication getActionApplication() {
-        return fActionApplication;
-    }
-
-    /**
-     * An application that can complete the request.
-     *
-     */
-    @Override
-    public void setActionApplication(SoftwareApplication fActionApplication) {
-        this.fActionApplication = fActionApplication;
-    }
-
-    private Text fAlternateName;
-
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getAlternateName() {
-        return fAlternateName;
-    }
-
-    /**
-     * An alias for the item.
-     *
-     */
-    @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
-    }
-
-    private Object fMainEntityOfPage;
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     */
-    @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
-        }
-        this.fMainEntityOfPage = fMainEntityOfPage;
-    }
-
-    private Text fEncodingType;
-
-    /**
-     * The supported encoding type(s) for an EntryPoint request.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getEncodingType() {
-        return fEncodingType;
-    }
-
-    /**
-     * The supported encoding type(s) for an EntryPoint request.
-     *
-     */
-    @Override
-    public void setEncodingType(Text fEncodingType) {
-        this.fEncodingType = fEncodingType;
-    }
-
-    private URL fUrl;
-
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getUrl() {
-        return fUrl;
-    }
-
-    /**
-     * URL of the item.
-     *
-     */
-    @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
-    }
-
-    private Object fActionPlatform;
-
-    /**
-     * The high level platform(s) where the Action can be performed for the given URL. To specify a specific application or operating system instance, use actionApplication.
-     *
-     * @return {@link Text} or {@link URL} or {@link DigitalPlatformEnumeration}
-     */
-    @Override
-    public <T> T getActionPlatform() {
-        return (T) fActionPlatform;
-    }
-
-    /**
-     * The high level platform(s) where the Action can be performed for the given URL. To specify a specific application or operating system instance, use actionApplication.
-     *
-     */
-    @Override
-    public void setActionPlatform(Object fActionPlatform) {
-        if(!(fActionPlatform instanceof Text) && !(fActionPlatform instanceof URL) && !(fActionPlatform instanceof DigitalPlatformEnumeration)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'actionPlatform': " + fActionPlatform);
-        }
-        this.fActionPlatform = fActionPlatform;
-    }
-
-    private URL fAdditionalType;
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getAdditionalType() {
-        return fAdditionalType;
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     */
-    @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
-    }
-
-    private Text fDescription;
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDescription() {
-        return fDescription;
-    }
-
-    /**
-     * A description of the item.
-     *
-     */
-    @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
-    }
-
-    private Action fPotentialAction;
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
-    @Override
-    public Action getPotentialAction() {
-        return fPotentialAction;
-    }
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     */
-    @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
-    }
-
-    private SoftwareApplication fApplication;
-
-    /**
-     * An application that can complete the request.
-     *
-     * @return {@link SoftwareApplication}
-     */
-    @Override
-    public SoftwareApplication getApplication() {
-        return fApplication;
-    }
-
-    /**
-     * An application that can complete the request.
-     *
-     */
-    @Override
-    public void setApplication(SoftwareApplication fApplication) {
-        this.fApplication = fApplication;
-    }
-
-    private Text fContentType;
-
-    /**
-     * The supported content type(s) for an EntryPoint response.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getContentType() {
-        return fContentType;
-    }
-
-    /**
-     * The supported content type(s) for an EntryPoint response.
-     *
-     */
-    @Override
-    public void setContentType(Text fContentType) {
-        this.fContentType = fContentType;
     }
 }

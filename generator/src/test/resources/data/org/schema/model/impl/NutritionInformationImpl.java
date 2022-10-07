@@ -28,6 +28,90 @@ import org.schema.model.NutritionInformation;
 @JsonLdTypeName("schema:NutritionInformation")
 public class NutritionInformationImpl implements NutritionInformation {
 
+    private Mass fFatContent;
+
+    /**
+     * The number of grams of fat.
+     *
+     * @return {@link Mass}
+     */
+    @Override
+    public Mass getFatContent() {
+        return fFatContent;
+    }
+
+    /**
+     * The number of grams of fat.
+     *
+     */
+    @Override
+    public void setFatContent(Mass fFatContent) {
+        this.fFatContent = fFatContent;
+    }
+
+    private Text fServingSize;
+
+    /**
+     * The serving size, in terms of the number of volume or mass.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getServingSize() {
+        return fServingSize;
+    }
+
+    /**
+     * The serving size, in terms of the number of volume or mass.
+     *
+     */
+    @Override
+    public void setServingSize(Text fServingSize) {
+        this.fServingSize = fServingSize;
+    }
+
+    private Mass fProteinContent;
+
+    /**
+     * The number of grams of protein.
+     *
+     * @return {@link Mass}
+     */
+    @Override
+    public Mass getProteinContent() {
+        return fProteinContent;
+    }
+
+    /**
+     * The number of grams of protein.
+     *
+     */
+    @Override
+    public void setProteinContent(Mass fProteinContent) {
+        this.fProteinContent = fProteinContent;
+    }
+
+    private Energy fCalories;
+
+    /**
+     * The number of calories.
+     *
+     * @return {@link Energy}
+     */
+    @Override
+    public Energy getCalories() {
+        return fCalories;
+    }
+
+    /**
+     * The number of calories.
+     *
+     */
+    @Override
+    public void setCalories(Energy fCalories) {
+        this.fCalories = fCalories;
+    }
+
     private Mass fSodiumContent;
 
     /**
@@ -47,27 +131,6 @@ public class NutritionInformationImpl implements NutritionInformation {
     @Override
     public void setSodiumContent(Mass fSodiumContent) {
         this.fSodiumContent = fSodiumContent;
-    }
-
-    private Mass fFiberContent;
-
-    /**
-     * The number of grams of fiber.
-     *
-     * @return {@link Mass}
-     */
-    @Override
-    public Mass getFiberContent() {
-        return fFiberContent;
-    }
-
-    /**
-     * The number of grams of fiber.
-     *
-     */
-    @Override
-    public void setFiberContent(Mass fFiberContent) {
-        this.fFiberContent = fFiberContent;
     }
 
     private Mass fCholesterolContent;
@@ -112,6 +175,264 @@ public class NutritionInformationImpl implements NutritionInformation {
         this.fSugarContent = fSugarContent;
     }
 
+    private Mass fCarbohydrateContent;
+
+    /**
+     * The number of grams of carbohydrates.
+     *
+     * @return {@link Mass}
+     */
+    @Override
+    public Mass getCarbohydrateContent() {
+        return fCarbohydrateContent;
+    }
+
+    /**
+     * The number of grams of carbohydrates.
+     *
+     */
+    @Override
+    public void setCarbohydrateContent(Mass fCarbohydrateContent) {
+        this.fCarbohydrateContent = fCarbohydrateContent;
+    }
+
+    private Mass fTransFatContent;
+
+    /**
+     * The number of grams of trans fat.
+     *
+     * @return {@link Mass}
+     */
+    @Override
+    public Mass getTransFatContent() {
+        return fTransFatContent;
+    }
+
+    /**
+     * The number of grams of trans fat.
+     *
+     */
+    @Override
+    public void setTransFatContent(Mass fTransFatContent) {
+        this.fTransFatContent = fTransFatContent;
+    }
+
+    private Mass fFiberContent;
+
+    /**
+     * The number of grams of fiber.
+     *
+     * @return {@link Mass}
+     */
+    @Override
+    public Mass getFiberContent() {
+        return fFiberContent;
+    }
+
+    /**
+     * The number of grams of fiber.
+     *
+     */
+    @Override
+    public void setFiberContent(Mass fFiberContent) {
+        this.fFiberContent = fFiberContent;
+    }
+
+    private Mass fUnsaturatedFatContent;
+
+    /**
+     * The number of grams of unsaturated fat.
+     *
+     * @return {@link Mass}
+     */
+    @Override
+    public Mass getUnsaturatedFatContent() {
+        return fUnsaturatedFatContent;
+    }
+
+    /**
+     * The number of grams of unsaturated fat.
+     *
+     */
+    @Override
+    public void setUnsaturatedFatContent(Mass fUnsaturatedFatContent) {
+        this.fUnsaturatedFatContent = fUnsaturatedFatContent;
+    }
+
+    private Mass fSaturatedFatContent;
+
+    /**
+     * The number of grams of saturated fat.
+     *
+     * @return {@link Mass}
+     */
+    @Override
+    public Mass getSaturatedFatContent() {
+        return fSaturatedFatContent;
+    }
+
+    /**
+     * The number of grams of saturated fat.
+     *
+     */
+    @Override
+    public void setSaturatedFatContent(Mass fSaturatedFatContent) {
+        this.fSaturatedFatContent = fSaturatedFatContent;
+    }
+
+    private Object fMainEntityOfPage;
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    @Override
+    public <T> T getMainEntityOfPage() {
+        return (T) fMainEntityOfPage;
+    }
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     */
+    @Override
+    public void setMainEntityOfPage(Object fMainEntityOfPage) {
+        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
+        }
+        this.fMainEntityOfPage = fMainEntityOfPage;
+    }
+
+    private Text fAlternateName;
+
+    /**
+     * An alias for the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getAlternateName() {
+        return fAlternateName;
+    }
+
+    /**
+     * An alias for the item.
+     *
+     */
+    @Override
+    public void setAlternateName(Text fAlternateName) {
+        this.fAlternateName = fAlternateName;
+    }
+
+    private Text fName;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getName() {
+        return fName;
+    }
+
+    /**
+     * The name of the item.
+     *
+     */
+    @Override
+    public void setName(Text fName) {
+        this.fName = fName;
+    }
+
+    private Action fPotentialAction;
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public Action getPotentialAction() {
+        return fPotentialAction;
+    }
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     */
+    @Override
+    public void setPotentialAction(Action fPotentialAction) {
+        this.fPotentialAction = fPotentialAction;
+    }
+
+    private Object fImage;
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link URL} or {@link ImageObject}
+     */
+    @Override
+    public <T> T getImage() {
+        return (T) fImage;
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     */
+    @Override
+    public void setImage(Object fImage) {
+        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
+        }
+        this.fImage = fImage;
+    }
+
+    private URL fUrl;
+
+    /**
+     * URL of the item.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getUrl() {
+        return fUrl;
+    }
+
+    /**
+     * URL of the item.
+     *
+     */
+    @Override
+    public void setUrl(URL fUrl) {
+        this.fUrl = fUrl;
+    }
+
+    private Text fDescription;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDescription() {
+        return fDescription;
+    }
+
+    /**
+     * A description of the item.
+     *
+     */
+    @Override
+    public void setDescription(Text fDescription) {
+        this.fDescription = fDescription;
+    }
+
     private Object fSubjectOf;
 
     /**
@@ -138,25 +459,25 @@ public class NutritionInformationImpl implements NutritionInformation {
         this.fSubjectOf = fSubjectOf;
     }
 
-    private Text fName;
+    private URL fAdditionalType;
 
     /**
-     * The name of the item.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
-     * @return {@link Text}
+     * @return {@link URL}
      */
     @Override
-    public Text getName() {
-        return fName;
+    public URL getAdditionalType() {
+        return fAdditionalType;
     }
 
     /**
-     * The name of the item.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
      */
     @Override
-    public void setName(Text fName) {
-        this.fName = fName;
+    public void setAdditionalType(URL fAdditionalType) {
+        this.fAdditionalType = fAdditionalType;
     }
 
     private Text fDisambiguatingDescription;
@@ -178,30 +499,6 @@ public class NutritionInformationImpl implements NutritionInformation {
     @Override
     public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
         this.fDisambiguatingDescription = fDisambiguatingDescription;
-    }
-
-    private Object fImage;
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link URL} or {@link ImageObject}
-     */
-    @Override
-    public <T> T getImage() {
-        return (T) fImage;
-    }
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     */
-    @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
-        this.fImage = fImage;
     }
 
     private URL fSameAs;
@@ -249,302 +546,5 @@ public class NutritionInformationImpl implements NutritionInformation {
             throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
         }
         this.fIdentifier = fIdentifier;
-    }
-
-    private Text fServingSize;
-
-    /**
-     * The serving size, in terms of the number of volume or mass.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getServingSize() {
-        return fServingSize;
-    }
-
-    /**
-     * The serving size, in terms of the number of volume or mass.
-     *
-     */
-    @Override
-    public void setServingSize(Text fServingSize) {
-        this.fServingSize = fServingSize;
-    }
-
-    private Mass fCarbohydrateContent;
-
-    /**
-     * The number of grams of carbohydrates.
-     *
-     * @return {@link Mass}
-     */
-    @Override
-    public Mass getCarbohydrateContent() {
-        return fCarbohydrateContent;
-    }
-
-    /**
-     * The number of grams of carbohydrates.
-     *
-     */
-    @Override
-    public void setCarbohydrateContent(Mass fCarbohydrateContent) {
-        this.fCarbohydrateContent = fCarbohydrateContent;
-    }
-
-    private Text fAlternateName;
-
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getAlternateName() {
-        return fAlternateName;
-    }
-
-    /**
-     * An alias for the item.
-     *
-     */
-    @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
-    }
-
-    private Object fMainEntityOfPage;
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     */
-    @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
-        }
-        this.fMainEntityOfPage = fMainEntityOfPage;
-    }
-
-    private Mass fSaturatedFatContent;
-
-    /**
-     * The number of grams of saturated fat.
-     *
-     * @return {@link Mass}
-     */
-    @Override
-    public Mass getSaturatedFatContent() {
-        return fSaturatedFatContent;
-    }
-
-    /**
-     * The number of grams of saturated fat.
-     *
-     */
-    @Override
-    public void setSaturatedFatContent(Mass fSaturatedFatContent) {
-        this.fSaturatedFatContent = fSaturatedFatContent;
-    }
-
-    private Mass fUnsaturatedFatContent;
-
-    /**
-     * The number of grams of unsaturated fat.
-     *
-     * @return {@link Mass}
-     */
-    @Override
-    public Mass getUnsaturatedFatContent() {
-        return fUnsaturatedFatContent;
-    }
-
-    /**
-     * The number of grams of unsaturated fat.
-     *
-     */
-    @Override
-    public void setUnsaturatedFatContent(Mass fUnsaturatedFatContent) {
-        this.fUnsaturatedFatContent = fUnsaturatedFatContent;
-    }
-
-    private URL fUrl;
-
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getUrl() {
-        return fUrl;
-    }
-
-    /**
-     * URL of the item.
-     *
-     */
-    @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
-    }
-
-    private Mass fProteinContent;
-
-    /**
-     * The number of grams of protein.
-     *
-     * @return {@link Mass}
-     */
-    @Override
-    public Mass getProteinContent() {
-        return fProteinContent;
-    }
-
-    /**
-     * The number of grams of protein.
-     *
-     */
-    @Override
-    public void setProteinContent(Mass fProteinContent) {
-        this.fProteinContent = fProteinContent;
-    }
-
-    private Mass fFatContent;
-
-    /**
-     * The number of grams of fat.
-     *
-     * @return {@link Mass}
-     */
-    @Override
-    public Mass getFatContent() {
-        return fFatContent;
-    }
-
-    /**
-     * The number of grams of fat.
-     *
-     */
-    @Override
-    public void setFatContent(Mass fFatContent) {
-        this.fFatContent = fFatContent;
-    }
-
-    private URL fAdditionalType;
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getAdditionalType() {
-        return fAdditionalType;
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     */
-    @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
-    }
-
-    private Text fDescription;
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDescription() {
-        return fDescription;
-    }
-
-    /**
-     * A description of the item.
-     *
-     */
-    @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
-    }
-
-    private Action fPotentialAction;
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
-    @Override
-    public Action getPotentialAction() {
-        return fPotentialAction;
-    }
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     */
-    @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
-    }
-
-    private Energy fCalories;
-
-    /**
-     * The number of calories.
-     *
-     * @return {@link Energy}
-     */
-    @Override
-    public Energy getCalories() {
-        return fCalories;
-    }
-
-    /**
-     * The number of calories.
-     *
-     */
-    @Override
-    public void setCalories(Energy fCalories) {
-        this.fCalories = fCalories;
-    }
-
-    private Mass fTransFatContent;
-
-    /**
-     * The number of grams of trans fat.
-     *
-     * @return {@link Mass}
-     */
-    @Override
-    public Mass getTransFatContent() {
-        return fTransFatContent;
-    }
-
-    /**
-     * The number of grams of trans fat.
-     *
-     */
-    @Override
-    public void setTransFatContent(Mass fTransFatContent) {
-        this.fTransFatContent = fTransFatContent;
     }
 }

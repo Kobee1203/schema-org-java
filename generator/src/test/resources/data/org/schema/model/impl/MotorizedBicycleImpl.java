@@ -58,532 +58,54 @@ import org.schema.model.MotorizedBicycle;
 @JsonLdTypeName("schema:MotorizedBicycle")
 public class MotorizedBicycleImpl implements MotorizedBicycle {
 
-    private Object fLogo;
+    private QuantitativeValue fFuelCapacity;
 
     /**
-     * An associated logo.
-     *
-     * @return {@link URL} or {@link ImageObject}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public <T> T getLogo() {
-        return (T) fLogo;
-    }
-
-    /**
-     * An associated logo.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setLogo(Object fLogo) {
-        if(!(fLogo instanceof URL) && !(fLogo instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'logo': " + fLogo);
-        }
-        this.fLogo = fLogo;
-    }
-
-    private Text fSku;
-
-    /**
-     * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
-     *
-     * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public Text getSku() {
-        return fSku;
-    }
-
-    /**
-     * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setSku(Text fSku) {
-        this.fSku = fSku;
-    }
-
-    private QuantitativeValue fFuelEfficiency;
-
-    /**
-     * The distance traveled per unit of fuel used; most commonly miles per gallon (mpg) or kilometers per liter (km/L).<br/><br/>* Note 1: There are unfortunately no standard unit codes for miles per gallon or kilometers per liter. Use [[unitText]] to indicate the unit of measurement, e.g. mpg or km/L.<br/>* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.<br/>* Note 3: Often, the absolute value is useful only when related to driving speed ("at 80 km/h") or usage pattern ("city traffic"). You can use [[valueReference]] to link the value for the fuel economy to another value.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public QuantitativeValue getFuelEfficiency() {
-        return fFuelEfficiency;
-    }
-
-    /**
-     * The distance traveled per unit of fuel used; most commonly miles per gallon (mpg) or kilometers per liter (km/L).<br/><br/>* Note 1: There are unfortunately no standard unit codes for miles per gallon or kilometers per liter. Use [[unitText]] to indicate the unit of measurement, e.g. mpg or km/L.<br/>* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.<br/>* Note 3: Often, the absolute value is useful only when related to driving speed ("at 80 km/h") or usage pattern ("city traffic"). You can use [[valueReference]] to link the value for the fuel economy to another value.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void setFuelEfficiency(QuantitativeValue fFuelEfficiency) {
-        this.fFuelEfficiency = fFuelEfficiency;
-    }
-
-    private Text fGtin12;
-
-    /**
-     * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getGtin12() {
-        return fGtin12;
-    }
-
-    /**
-     * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
-     *
-     */
-    @Override
-    public void setGtin12(Text fGtin12) {
-        this.fGtin12 = fGtin12;
-    }
-
-    private Object fMainEntityOfPage;
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     */
-    @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
-        }
-        this.fMainEntityOfPage = fMainEntityOfPage;
-    }
-
-    private Text fGtin8;
-
-    /**
-     * The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
-     *
-     * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public Text getGtin8() {
-        return fGtin8;
-    }
-
-    /**
-     * The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setGtin8(Text fGtin8) {
-        this.fGtin8 = fGtin8;
-    }
-
-    private Text fGtin13;
-
-    /**
-     * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
-     *
-     * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public Text getGtin13() {
-        return fGtin13;
-    }
-
-    /**
-     * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setGtin13(Text fGtin13) {
-        this.fGtin13 = fGtin13;
-    }
-
-    private Object fWidth;
-
-    /**
-     * The width of the item.
-     *
-     * @return {@link QuantitativeValue} or {@link Distance}
-     */
-    @Override
-    public <T> T getWidth() {
-        return (T) fWidth;
-    }
-
-    /**
-     * The width of the item.
-     *
-     */
-    @Override
-    public void setWidth(Object fWidth) {
-        if(!(fWidth instanceof QuantitativeValue) && !(fWidth instanceof Distance)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'width': " + fWidth);
-        }
-        this.fWidth = fWidth;
-    }
-
-    private Object fNumberOfAxles;
-
-    /**
-     * The number of axles.<br/><br/>Typical unit code(s): C62
-     *
-     * @return {@link Number} or {@link QuantitativeValue}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public <T> T getNumberOfAxles() {
-        return (T) fNumberOfAxles;
-    }
-
-    /**
-     * The number of axles.<br/><br/>Typical unit code(s): C62
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void setNumberOfAxles(Object fNumberOfAxles) {
-        if(!(fNumberOfAxles instanceof Number) && !(fNumberOfAxles instanceof QuantitativeValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'numberOfAxles': " + fNumberOfAxles);
-        }
-        this.fNumberOfAxles = fNumberOfAxles;
-    }
-
-    private Object fMaterial;
-
-    /**
-     * A material that something is made from, e.g. leather, wool, cotton, paper.
-     *
-     * @return {@link Text} or {@link URL} or {@link Product}
-     */
-    @Override
-    public <T> T getMaterial() {
-        return (T) fMaterial;
-    }
-
-    /**
-     * A material that something is made from, e.g. leather, wool, cotton, paper.
-     *
-     */
-    @Override
-    public void setMaterial(Object fMaterial) {
-        if(!(fMaterial instanceof Text) && !(fMaterial instanceof URL) && !(fMaterial instanceof Product)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'material': " + fMaterial);
-        }
-        this.fMaterial = fMaterial;
-    }
-
-    private Text fVehicleIdentificationNumber;
-
-    /**
-     * The Vehicle Identification Number (VIN) is a unique serial number used by the automotive industry to identify individual motor vehicles.
-     *
-     * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public Text getVehicleIdentificationNumber() {
-        return fVehicleIdentificationNumber;
-    }
-
-    /**
-     * The Vehicle Identification Number (VIN) is a unique serial number used by the automotive industry to identify individual motor vehicles.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void setVehicleIdentificationNumber(Text fVehicleIdentificationNumber) {
-        this.fVehicleIdentificationNumber = fVehicleIdentificationNumber;
-    }
-
-    private QuantitativeValue fWheelbase;
-
-    /**
-     * The distance between the centers of the front and rear wheels.<br/><br/>Typical unit code(s): CMT for centimeters, MTR for meters, INH for inches, FOT for foot/feet
+     * The capacity of the fuel tank or in the case of electric cars, the battery. If there are multiple components for storage, this should indicate the total of all storage of the same type.<br/><br/>Typical unit code(s): LTR for liters, GLL of US gallons, GLI for UK / imperial gallons, AMH for ampere-hours (for electrical vehicles).
      *
      * @return {@link QuantitativeValue}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public QuantitativeValue getWheelbase() {
-        return fWheelbase;
+    public QuantitativeValue getFuelCapacity() {
+        return fFuelCapacity;
     }
 
     /**
-     * The distance between the centers of the front and rear wheels.<br/><br/>Typical unit code(s): CMT for centimeters, MTR for meters, INH for inches, FOT for foot/feet
+     * The capacity of the fuel tank or in the case of electric cars, the battery. If there are multiple components for storage, this should indicate the total of all storage of the same type.<br/><br/>Typical unit code(s): LTR for liters, GLL of US gallons, GLI for UK / imperial gallons, AMH for ampere-hours (for electrical vehicles).
      *
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setWheelbase(QuantitativeValue fWheelbase) {
-        this.fWheelbase = fWheelbase;
+    public void setFuelCapacity(QuantitativeValue fFuelCapacity) {
+        this.fFuelCapacity = fFuelCapacity;
     }
 
-    private AggregateRating fAggregateRating;
+    private QuantitativeValue fAccelerationTime;
 
     /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
+     * The time needed to accelerate the vehicle from a given start velocity to a given target velocity.<br/><br/>Typical unit code(s): SEC for seconds<br/><br/>* Note: There are unfortunately no standard unit codes for seconds/0..100 km/h or seconds/0..60 mph. Simply use "SEC" for seconds and indicate the velocities in the [[name]] of the [[QuantitativeValue]], or use [[valueReference]] with a [[QuantitativeValue]] of 0..60 mph or 0..100 km/h to specify the reference speeds.
      *
-     * @return {@link AggregateRating}
-     */
-    @Override
-    public AggregateRating getAggregateRating() {
-        return fAggregateRating;
-    }
-
-    /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
-     *
-     */
-    @Override
-    public void setAggregateRating(AggregateRating fAggregateRating) {
-        this.fAggregateRating = fAggregateRating;
-    }
-
-    private Text fName;
-
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getName() {
-        return fName;
-    }
-
-    /**
-     * The name of the item.
-     *
-     */
-    @Override
-    public void setName(Text fName) {
-        this.fName = fName;
-    }
-
-    private Object fOffers;
-
-    /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
-     *
-     * @return {@link Offer} or {@link Demand}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    @Override
-    public <T> T getOffers() {
-        return (T) fOffers;
-    }
-
-    /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
-     *
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    @Override
-    public void setOffers(Object fOffers) {
-        if(!(fOffers instanceof Offer) && !(fOffers instanceof Demand)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'offers': " + fOffers);
-        }
-        this.fOffers = fOffers;
-    }
-
-    private Object fIsSimilarTo;
-
-    /**
-     * A pointer to another, functionally similar product (or multiple products).
-     *
-     * @return {@link Service} or {@link Product}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public <T> T getIsSimilarTo() {
-        return (T) fIsSimilarTo;
-    }
-
-    /**
-     * A pointer to another, functionally similar product (or multiple products).
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setIsSimilarTo(Object fIsSimilarTo) {
-        if(!(fIsSimilarTo instanceof Service) && !(fIsSimilarTo instanceof Product)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'isSimilarTo': " + fIsSimilarTo);
-        }
-        this.fIsSimilarTo = fIsSimilarTo;
-    }
-
-    private Grant fFunding;
-
-    /**
-     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
-     *
-     * @return {@link Grant}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     */
-    @Override
-    public Grant getFunding() {
-        return fFunding;
-    }
-
-    /**
-     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     */
-    @Override
-    public void setFunding(Grant fFunding) {
-        this.fFunding = fFunding;
-    }
-
-    private Object fNumberOfPreviousOwners;
-
-    /**
-     * The number of owners of the vehicle, including the current one.<br/><br/>Typical unit code(s): C62
-     *
-     * @return {@link Number} or {@link QuantitativeValue}
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public <T> T getNumberOfPreviousOwners() {
-        return (T) fNumberOfPreviousOwners;
+    public QuantitativeValue getAccelerationTime() {
+        return fAccelerationTime;
     }
 
     /**
-     * The number of owners of the vehicle, including the current one.<br/><br/>Typical unit code(s): C62
+     * The time needed to accelerate the vehicle from a given start velocity to a given target velocity.<br/><br/>Typical unit code(s): SEC for seconds<br/><br/>* Note: There are unfortunately no standard unit codes for seconds/0..100 km/h or seconds/0..60 mph. Simply use "SEC" for seconds and indicate the velocities in the [[name]] of the [[QuantitativeValue]], or use [[valueReference]] with a [[QuantitativeValue]] of 0..60 mph or 0..100 km/h to specify the reference speeds.
      *
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setNumberOfPreviousOwners(Object fNumberOfPreviousOwners) {
-        if(!(fNumberOfPreviousOwners instanceof Number) && !(fNumberOfPreviousOwners instanceof QuantitativeValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'numberOfPreviousOwners': " + fNumberOfPreviousOwners);
-        }
-        this.fNumberOfPreviousOwners = fNumberOfPreviousOwners;
-    }
-
-    private Text fInProductGroupWithID;
-
-    /**
-     * Indicates the [[productGroupID]] for a [[ProductGroup]] that this product [[isVariantOf]]. 
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
-     */
-    @Override
-    public Text getInProductGroupWithID() {
-        return fInProductGroupWithID;
-    }
-
-    /**
-     * Indicates the [[productGroupID]] for a [[ProductGroup]] that this product [[isVariantOf]]. 
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
-     */
-    @Override
-    public void setInProductGroupWithID(Text fInProductGroupWithID) {
-        this.fInProductGroupWithID = fInProductGroupWithID;
-    }
-
-    private MerchantReturnPolicy fHasMerchantReturnPolicy;
-
-    /**
-     * Specifies a MerchantReturnPolicy that may be applicable.
-     *
-     * @return {@link MerchantReturnPolicy}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    @Override
-    public MerchantReturnPolicy getHasMerchantReturnPolicy() {
-        return fHasMerchantReturnPolicy;
-    }
-
-    /**
-     * Specifies a MerchantReturnPolicy that may be applicable.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    @Override
-    public void setHasMerchantReturnPolicy(MerchantReturnPolicy fHasMerchantReturnPolicy) {
-        this.fHasMerchantReturnPolicy = fHasMerchantReturnPolicy;
-    }
-
-    private Text fColor;
-
-    /**
-     * The color of the product.
-     *
-     * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public Text getColor() {
-        return fColor;
-    }
-
-    /**
-     * The color of the product.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setColor(Text fColor) {
-        this.fColor = fColor;
-    }
-
-    private Audience fAudience;
-
-    /**
-     * An intended audience, i.e. a group for whom something was created.
-     *
-     * @return {@link Audience}
-     */
-    @Override
-    public Audience getAudience() {
-        return fAudience;
-    }
-
-    /**
-     * An intended audience, i.e. a group for whom something was created.
-     *
-     */
-    @Override
-    public void setAudience(Audience fAudience) {
-        this.fAudience = fAudience;
+    public void setAccelerationTime(QuantitativeValue fAccelerationTime) {
+        this.fAccelerationTime = fAccelerationTime;
     }
 
     private QuantitativeValue fSpeed;
@@ -611,339 +133,100 @@ public class MotorizedBicycleImpl implements MotorizedBicycle {
         this.fSpeed = fSpeed;
     }
 
-    private Date fProductionDate;
+    private QuantitativeValue fTrailerWeight;
 
     /**
-     * The date of production of the item, e.g. vehicle.
+     * The permitted weight of a trailer attached to the vehicle.<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/>* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public QuantitativeValue getTrailerWeight() {
+        return fTrailerWeight;
+    }
+
+    /**
+     * The permitted weight of a trailer attached to the vehicle.<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/>* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
+     *
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public void setTrailerWeight(QuantitativeValue fTrailerWeight) {
+        this.fTrailerWeight = fTrailerWeight;
+    }
+
+    private EngineSpecification fVehicleEngine;
+
+    /**
+     * Information about the engine or engines of the vehicle.
+     *
+     * @return {@link EngineSpecification}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public EngineSpecification getVehicleEngine() {
+        return fVehicleEngine;
+    }
+
+    /**
+     * Information about the engine or engines of the vehicle.
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public void setVehicleEngine(EngineSpecification fVehicleEngine) {
+        this.fVehicleEngine = fVehicleEngine;
+    }
+
+    private Number fEmissionsCO2;
+
+    /**
+     * The CO2 emissions in g/km. When used in combination with a QuantitativeValue, put "g/km" into the unitText property of that value, since there is no UN/CEFACT Common Code for "g/km".
+     *
+     * @return {@link Number}
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public Number getEmissionsCO2() {
+        return fEmissionsCO2;
+    }
+
+    /**
+     * The CO2 emissions in g/km. When used in combination with a QuantitativeValue, put "g/km" into the unitText property of that value, since there is no UN/CEFACT Common Code for "g/km".
+     *
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public void setEmissionsCO2(Number fEmissionsCO2) {
+        this.fEmissionsCO2 = fEmissionsCO2;
+    }
+
+    private Date fPurchaseDate;
+
+    /**
+     * The date the item e.g. vehicle was purchased by the current owner.
      *
      * @return {@link Date}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public Date getProductionDate() {
-        return fProductionDate;
+    public Date getPurchaseDate() {
+        return fPurchaseDate;
     }
 
     /**
-     * The date of production of the item, e.g. vehicle.
+     * The date the item e.g. vehicle was purchased by the current owner.
      *
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setProductionDate(Date fProductionDate) {
-        this.fProductionDate = fProductionDate;
-    }
-
-    private Text fVehicleInteriorColor;
-
-    /**
-     * The color or color combination of the interior of the vehicle.
-     *
-     * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public Text getVehicleInteriorColor() {
-        return fVehicleInteriorColor;
-    }
-
-    /**
-     * The color or color combination of the interior of the vehicle.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void setVehicleInteriorColor(Text fVehicleInteriorColor) {
-        this.fVehicleInteriorColor = fVehicleInteriorColor;
-    }
-
-    private Object fIsVariantOf;
-
-    /**
-     * Indicates the kind of product that this is a variant of. In the case of [[ProductModel]], this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a [[ProductGroup]], the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with [[ProductGroup]], this property can apply to any [[Product]] included in the group.
-     *
-     * @return {@link ProductModel} or {@link ProductGroup}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public <T> T getIsVariantOf() {
-        return (T) fIsVariantOf;
-    }
-
-    /**
-     * Indicates the kind of product that this is a variant of. In the case of [[ProductModel]], this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a [[ProductGroup]], the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with [[ProductGroup]], this property can apply to any [[Product]] included in the group.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setIsVariantOf(Object fIsVariantOf) {
-        if(!(fIsVariantOf instanceof ProductModel) && !(fIsVariantOf instanceof ProductGroup)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'isVariantOf': " + fIsVariantOf);
-        }
-        this.fIsVariantOf = fIsVariantOf;
-    }
-
-    private Product fIsAccessoryOrSparePartFor;
-
-    /**
-     * A pointer to another product (or multiple products) for which this product is an accessory or spare part.
-     *
-     * @return {@link Product}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public Product getIsAccessoryOrSparePartFor() {
-        return fIsAccessoryOrSparePartFor;
-    }
-
-    /**
-     * A pointer to another product (or multiple products) for which this product is an accessory or spare part.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setIsAccessoryOrSparePartFor(Product fIsAccessoryOrSparePartFor) {
-        this.fIsAccessoryOrSparePartFor = fIsAccessoryOrSparePartFor;
-    }
-
-    private Organization fManufacturer;
-
-    /**
-     * The manufacturer of the product.
-     *
-     * @return {@link Organization}
-     */
-    @Override
-    public Organization getManufacturer() {
-        return fManufacturer;
-    }
-
-    /**
-     * The manufacturer of the product.
-     *
-     */
-    @Override
-    public void setManufacturer(Organization fManufacturer) {
-        this.fManufacturer = fManufacturer;
-    }
-
-    private Object fFuelType;
-
-    /**
-     * The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.
-     *
-     * @return {@link Text} or {@link URL} or {@link QualitativeValue}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public <T> T getFuelType() {
-        return (T) fFuelType;
-    }
-
-    /**
-     * The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void setFuelType(Object fFuelType) {
-        if(!(fFuelType instanceof Text) && !(fFuelType instanceof URL) && !(fFuelType instanceof QualitativeValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'fuelType': " + fFuelType);
-        }
-        this.fFuelType = fFuelType;
-    }
-
-    private Object fKeywords;
-
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     * @return {@link DefinedTerm} or {@link Text} or {@link URL}
-     */
-    @Override
-    public <T> T getKeywords() {
-        return (T) fKeywords;
-    }
-
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     */
-    @Override
-    public void setKeywords(Object fKeywords) {
-        if(!(fKeywords instanceof DefinedTerm) && !(fKeywords instanceof Text) && !(fKeywords instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'keywords': " + fKeywords);
-        }
-        this.fKeywords = fKeywords;
-    }
-
-    private Object fNumberOfDoors;
-
-    /**
-     * The number of doors.<br/><br/>Typical unit code(s): C62
-     *
-     * @return {@link QuantitativeValue} or {@link Number}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public <T> T getNumberOfDoors() {
-        return (T) fNumberOfDoors;
-    }
-
-    /**
-     * The number of doors.<br/><br/>Typical unit code(s): C62
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void setNumberOfDoors(Object fNumberOfDoors) {
-        if(!(fNumberOfDoors instanceof QuantitativeValue) && !(fNumberOfDoors instanceof Number)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'numberOfDoors': " + fNumberOfDoors);
-        }
-        this.fNumberOfDoors = fNumberOfDoors;
-    }
-
-    private QuantitativeValue fHasMeasurement;
-
-    /**
-     * A product measurement, for example the inseam of pants, the wheel size of a bicycle, or the gauge of a screw. Usually an exact measurement, but can also be a range of measurements for adjustable products, for example belts and ski bindings.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
-     */
-    @Override
-    public QuantitativeValue getHasMeasurement() {
-        return fHasMeasurement;
-    }
-
-    /**
-     * A product measurement, for example the inseam of pants, the wheel size of a bicycle, or the gauge of a screw. Usually an exact measurement, but can also be a range of measurements for adjustable products, for example belts and ski bindings.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
-     */
-    @Override
-    public void setHasMeasurement(QuantitativeValue fHasMeasurement) {
-        this.fHasMeasurement = fHasMeasurement;
-    }
-
-    private AdultOrientedEnumeration fHasAdultConsideration;
-
-    /**
-     * Used to tag an item to be intended or suitable for consumption or use by adults only.
-     *
-     * @return {@link AdultOrientedEnumeration}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2989">https://github.com/schemaorg/schemaorg/issues/2989</a>
-     */
-    @Override
-    public AdultOrientedEnumeration getHasAdultConsideration() {
-        return fHasAdultConsideration;
-    }
-
-    /**
-     * Used to tag an item to be intended or suitable for consumption or use by adults only.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2989">https://github.com/schemaorg/schemaorg/issues/2989</a>
-     */
-    @Override
-    public void setHasAdultConsideration(AdultOrientedEnumeration fHasAdultConsideration) {
-        this.fHasAdultConsideration = fHasAdultConsideration;
-    }
-
-    private QuantitativeValue fPayload;
-
-    /**
-     * The permitted weight of passengers and cargo, EXCLUDING the weight of the empty vehicle.<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>* Note 1: Many databases specify the permitted TOTAL weight instead, which is the sum of [[weight]] and [[payload]]<br/>* Note 2: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 3: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 4: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public QuantitativeValue getPayload() {
-        return fPayload;
-    }
-
-    /**
-     * The permitted weight of passengers and cargo, EXCLUDING the weight of the empty vehicle.<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>* Note 1: Many databases specify the permitted TOTAL weight instead, which is the sum of [[weight]] and [[payload]]<br/>* Note 2: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 3: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 4: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
-     *
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void setPayload(QuantitativeValue fPayload) {
-        this.fPayload = fPayload;
-    }
-
-    private Text fAlternateName;
-
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getAlternateName() {
-        return fAlternateName;
-    }
-
-    /**
-     * An alias for the item.
-     *
-     */
-    @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
-    }
-
-    private Object fVehicleSeatingCapacity;
-
-    /**
-     * The number of passengers that can be seated in the vehicle, both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>Typical unit code(s): C62 for persons.
-     *
-     * @return {@link QuantitativeValue} or {@link Number}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public <T> T getVehicleSeatingCapacity() {
-        return (T) fVehicleSeatingCapacity;
-    }
-
-    /**
-     * The number of passengers that can be seated in the vehicle, both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>Typical unit code(s): C62 for persons.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void setVehicleSeatingCapacity(Object fVehicleSeatingCapacity) {
-        if(!(fVehicleSeatingCapacity instanceof QuantitativeValue) && !(fVehicleSeatingCapacity instanceof Number)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'vehicleSeatingCapacity': " + fVehicleSeatingCapacity);
-        }
-        this.fVehicleSeatingCapacity = fVehicleSeatingCapacity;
-    }
-
-    private Review fReview;
-
-    /**
-     * A review of the item.
-     *
-     * @return {@link Review}
-     */
-    @Override
-    public Review getReview() {
-        return fReview;
-    }
-
-    /**
-     * A review of the item.
-     *
-     */
-    @Override
-    public void setReview(Review fReview) {
-        this.fReview = fReview;
+    public void setPurchaseDate(Date fPurchaseDate) {
+        this.fPurchaseDate = fPurchaseDate;
     }
 
     private Object fNumberOfForwardGears;
@@ -997,120 +280,101 @@ public class MotorizedBicycleImpl implements MotorizedBicycle {
         this.fWeightTotal = fWeightTotal;
     }
 
-    private Object fBrand;
+    private Date fProductionDate;
 
     /**
-     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     * The date of production of the item, e.g. vehicle.
      *
-     * @return {@link Organization} or {@link Brand}
+     * @return {@link Date}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public <T> T getBrand() {
-        return (T) fBrand;
+    public Date getProductionDate() {
+        return fProductionDate;
     }
 
     /**
-     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     * The date of production of the item, e.g. vehicle.
      *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setBrand(Object fBrand) {
-        if(!(fBrand instanceof Organization) && !(fBrand instanceof Brand)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'brand': " + fBrand);
+    public void setProductionDate(Date fProductionDate) {
+        this.fProductionDate = fProductionDate;
+    }
+
+    private Object fNumberOfPreviousOwners;
+
+    /**
+     * The number of owners of the vehicle, including the current one.<br/><br/>Typical unit code(s): C62
+     *
+     * @return {@link Number} or {@link QuantitativeValue}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public <T> T getNumberOfPreviousOwners() {
+        return (T) fNumberOfPreviousOwners;
+    }
+
+    /**
+     * The number of owners of the vehicle, including the current one.<br/><br/>Typical unit code(s): C62
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public void setNumberOfPreviousOwners(Object fNumberOfPreviousOwners) {
+        if(!(fNumberOfPreviousOwners instanceof Number) && !(fNumberOfPreviousOwners instanceof QuantitativeValue)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'numberOfPreviousOwners': " + fNumberOfPreviousOwners);
         }
-        this.fBrand = fBrand;
+        this.fNumberOfPreviousOwners = fNumberOfPreviousOwners;
     }
 
-    private QuantitativeValue fWeight;
+    private SteeringPositionValue fSteeringPosition;
 
     /**
-     * The weight of the product or person.
+     * The position of the steering wheel or similar device (mostly for cars).
+     *
+     * @return {@link SteeringPositionValue}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public SteeringPositionValue getSteeringPosition() {
+        return fSteeringPosition;
+    }
+
+    /**
+     * The position of the steering wheel or similar device (mostly for cars).
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public void setSteeringPosition(SteeringPositionValue fSteeringPosition) {
+        this.fSteeringPosition = fSteeringPosition;
+    }
+
+    private QuantitativeValue fWheelbase;
+
+    /**
+     * The distance between the centers of the front and rear wheels.<br/><br/>Typical unit code(s): CMT for centimeters, MTR for meters, INH for inches, FOT for foot/feet
      *
      * @return {@link QuantitativeValue}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public QuantitativeValue getWeight() {
-        return fWeight;
-    }
-
-    /**
-     * The weight of the product or person.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setWeight(QuantitativeValue fWeight) {
-        this.fWeight = fWeight;
-    }
-
-    private QuantitativeValue fFuelConsumption;
-
-    /**
-     * The amount of fuel consumed for traveling a particular distance or temporal duration with the given vehicle (e.g. liters per 100 km).<br/><br/>* Note 1: There are unfortunately no standard unit codes for liters per 100 km.  Use [[unitText]] to indicate the unit of measurement, e.g. L/100 km.<br/>* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.<br/>* Note 3: Often, the absolute value is useful only when related to driving speed ("at 80 km/h") or usage pattern ("city traffic"). You can use [[valueReference]] to link the value for the fuel consumption to another value.
-     *
-     * @return {@link QuantitativeValue}
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public QuantitativeValue getFuelConsumption() {
-        return fFuelConsumption;
+    public QuantitativeValue getWheelbase() {
+        return fWheelbase;
     }
 
     /**
-     * The amount of fuel consumed for traveling a particular distance or temporal duration with the given vehicle (e.g. liters per 100 km).<br/><br/>* Note 1: There are unfortunately no standard unit codes for liters per 100 km.  Use [[unitText]] to indicate the unit of measurement, e.g. L/100 km.<br/>* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.<br/>* Note 3: Often, the absolute value is useful only when related to driving speed ("at 80 km/h") or usage pattern ("city traffic"). You can use [[valueReference]] to link the value for the fuel consumption to another value.
+     * The distance between the centers of the front and rear wheels.<br/><br/>Typical unit code(s): CMT for centimeters, MTR for meters, INH for inches, FOT for foot/feet
      *
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setFuelConsumption(QuantitativeValue fFuelConsumption) {
-        this.fFuelConsumption = fFuelConsumption;
-    }
-
-    private Date fVehicleModelDate;
-
-    /**
-     * The release date of a vehicle model (often used to differentiate versions of the same make and model).
-     *
-     * @return {@link Date}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public Date getVehicleModelDate() {
-        return fVehicleModelDate;
-    }
-
-    /**
-     * The release date of a vehicle model (often used to differentiate versions of the same make and model).
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void setVehicleModelDate(Date fVehicleModelDate) {
-        this.fVehicleModelDate = fVehicleModelDate;
-    }
-
-    private Date fPurchaseDate;
-
-    /**
-     * The date the item e.g. vehicle was purchased by the current owner.
-     *
-     * @return {@link Date}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public Date getPurchaseDate() {
-        return fPurchaseDate;
-    }
-
-    /**
-     * The date the item e.g. vehicle was purchased by the current owner.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void setPurchaseDate(Date fPurchaseDate) {
-        this.fPurchaseDate = fPurchaseDate;
+    public void setWheelbase(QuantitativeValue fWheelbase) {
+        this.fWheelbase = fWheelbase;
     }
 
     private Text fVehicleInteriorType;
@@ -1136,195 +400,79 @@ public class MotorizedBicycleImpl implements MotorizedBicycle {
         this.fVehicleInteriorType = fVehicleInteriorType;
     }
 
-    private Text fSlogan;
+    private Object fNumberOfAirbags;
 
     /**
-     * A slogan or motto associated with the item.
+     * The number or type of airbags in the vehicle.
      *
-     * @return {@link Text}
+     * @return {@link Text} or {@link Number}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public Text getSlogan() {
-        return fSlogan;
+    public <T> T getNumberOfAirbags() {
+        return (T) fNumberOfAirbags;
     }
 
     /**
-     * A slogan or motto associated with the item.
+     * The number or type of airbags in the vehicle.
      *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setSlogan(Text fSlogan) {
-        this.fSlogan = fSlogan;
-    }
-
-    private Object fIdentifier;
-
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @return {@link URL} or {@link Text} or {@link PropertyValue}
-     */
-    @Override
-    public <T> T getIdentifier() {
-        return (T) fIdentifier;
-    }
-
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     */
-    @Override
-    public void setIdentifier(Object fIdentifier) {
-        if(!(fIdentifier instanceof URL) && !(fIdentifier instanceof Text) && !(fIdentifier instanceof PropertyValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
+    public void setNumberOfAirbags(Object fNumberOfAirbags) {
+        if(!(fNumberOfAirbags instanceof Text) && !(fNumberOfAirbags instanceof Number)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'numberOfAirbags': " + fNumberOfAirbags);
         }
-        this.fIdentifier = fIdentifier;
+        this.fNumberOfAirbags = fNumberOfAirbags;
     }
 
-    private Text fCallSign;
+    private Object fFuelType;
 
     /**
-     * A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.
+     * The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.
      *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2109">https://github.com/schemaorg/schemaorg/issues/2109</a>
+     * @return {@link Text} or {@link URL} or {@link QualitativeValue}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public Text getCallSign() {
-        return fCallSign;
-    }
-
-    /**
-     * A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2109">https://github.com/schemaorg/schemaorg/issues/2109</a>
-     */
-    @Override
-    public void setCallSign(Text fCallSign) {
-        this.fCallSign = fCallSign;
-    }
-
-    private Review fReviews;
-
-    /**
-     * Review of the item.
-     *
-     * @return {@link Review}
-     */
-    @Override
-    public Review getReviews() {
-        return fReviews;
+    public <T> T getFuelType() {
+        return (T) fFuelType;
     }
 
     /**
-     * Review of the item.
+     * The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.
      *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setReviews(Review fReviews) {
-        this.fReviews = fReviews;
-    }
-
-    private Object fIsRelatedTo;
-
-    /**
-     * A pointer to another, somehow related product (or multiple products).
-     *
-     * @return {@link Service} or {@link Product}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public <T> T getIsRelatedTo() {
-        return (T) fIsRelatedTo;
-    }
-
-    /**
-     * A pointer to another, somehow related product (or multiple products).
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setIsRelatedTo(Object fIsRelatedTo) {
-        if(!(fIsRelatedTo instanceof Service) && !(fIsRelatedTo instanceof Product)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'isRelatedTo': " + fIsRelatedTo);
+    public void setFuelType(Object fFuelType) {
+        if(!(fFuelType instanceof Text) && !(fFuelType instanceof URL) && !(fFuelType instanceof QualitativeValue)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'fuelType': " + fFuelType);
         }
-        this.fIsRelatedTo = fIsRelatedTo;
+        this.fFuelType = fFuelType;
     }
 
-    private Object fVehicleSpecialUsage;
+    private QuantitativeValue fCargoVolume;
 
     /**
-     * Indicates whether the vehicle has been used for special purposes, like commercial rental, driving school, or as a taxi. The legislation in many countries requires this information to be revealed when offering a car for sale.
+     * The available volume for cargo or luggage. For automobiles, this is usually the trunk volume.<br/><br/>Typical unit code(s): LTR for liters, FTQ for cubic foot/feet<br/><br/>Note: You can use [[minValue]] and [[maxValue]] to indicate ranges.
      *
-     * @return {@link CarUsageType} or {@link Text}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @return {@link QuantitativeValue}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public <T> T getVehicleSpecialUsage() {
-        return (T) fVehicleSpecialUsage;
+    public QuantitativeValue getCargoVolume() {
+        return fCargoVolume;
     }
 
     /**
-     * Indicates whether the vehicle has been used for special purposes, like commercial rental, driving school, or as a taxi. The legislation in many countries requires this information to be revealed when offering a car for sale.
-     *
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void setVehicleSpecialUsage(Object fVehicleSpecialUsage) {
-        if(!(fVehicleSpecialUsage instanceof CarUsageType) && !(fVehicleSpecialUsage instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'vehicleSpecialUsage': " + fVehicleSpecialUsage);
-        }
-        this.fVehicleSpecialUsage = fVehicleSpecialUsage;
-    }
-
-    private EngineSpecification fVehicleEngine;
-
-    /**
-     * Information about the engine or engines of the vehicle.
-     *
-     * @return {@link EngineSpecification}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public EngineSpecification getVehicleEngine() {
-        return fVehicleEngine;
-    }
-
-    /**
-     * Information about the engine or engines of the vehicle.
+     * The available volume for cargo or luggage. For automobiles, this is usually the trunk volume.<br/><br/>Typical unit code(s): LTR for liters, FTQ for cubic foot/feet<br/><br/>Note: You can use [[minValue]] and [[maxValue]] to indicate ranges.
      *
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setVehicleEngine(EngineSpecification fVehicleEngine) {
-        this.fVehicleEngine = fVehicleEngine;
-    }
-
-    private Text fDescription;
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDescription() {
-        return fDescription;
-    }
-
-    /**
-     * A description of the item.
-     *
-     */
-    @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
+    public void setCargoVolume(QuantitativeValue fCargoVolume) {
+        this.fCargoVolume = fCargoVolume;
     }
 
     private Object fVehicleTransmission;
@@ -1353,52 +501,29 @@ public class MotorizedBicycleImpl implements MotorizedBicycle {
         this.fVehicleTransmission = fVehicleTransmission;
     }
 
-    private Text fGtin;
+    private QuantitativeValue fPayload;
 
     /**
-     * A Global Trade Item Number ([GTIN](https://www.gs1.org/standards/id-keys/gtin)). GTINs identify trade items, including products and services, using numeric identification codes. The [[gtin]] property generalizes the earlier [[gtin8]], [[gtin12]], [[gtin13]], and [[gtin14]] properties. The GS1 [digital link specifications](https://www.gs1.org/standards/Digital-Link/) express GTINs as URLs. A correct [[gtin]] value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a "GS1 Digital Link" URL based on such a string. The numeric component should also have a [valid GS1 check digit](https://www.gs1.org/services/check-digit-calculator) and meet the other rules for valid GTINs. See also [GS1's GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) and [Wikipedia](https://en.wikipedia.org/wiki/Global_Trade_Item_Number) for more details. Left-padding of the gtin values is not required or encouraged.
-     *    
+     * The permitted weight of passengers and cargo, EXCLUDING the weight of the empty vehicle.<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>* Note 1: Many databases specify the permitted TOTAL weight instead, which is the sum of [[weight]] and [[payload]]<br/>* Note 2: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 3: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 4: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
      *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public Text getGtin() {
-        return fGtin;
+    public QuantitativeValue getPayload() {
+        return fPayload;
     }
 
     /**
-     * A Global Trade Item Number ([GTIN](https://www.gs1.org/standards/id-keys/gtin)). GTINs identify trade items, including products and services, using numeric identification codes. The [[gtin]] property generalizes the earlier [[gtin8]], [[gtin12]], [[gtin13]], and [[gtin14]] properties. The GS1 [digital link specifications](https://www.gs1.org/standards/Digital-Link/) express GTINs as URLs. A correct [[gtin]] value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a "GS1 Digital Link" URL based on such a string. The numeric component should also have a [valid GS1 check digit](https://www.gs1.org/services/check-digit-calculator) and meet the other rules for valid GTINs. See also [GS1's GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) and [Wikipedia](https://en.wikipedia.org/wiki/Global_Trade_Item_Number) for more details. Left-padding of the gtin values is not required or encouraged.
-     *    
+     * The permitted weight of passengers and cargo, EXCLUDING the weight of the empty vehicle.<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>* Note 1: Many databases specify the permitted TOTAL weight instead, which is the sum of [[weight]] and [[payload]]<br/>* Note 2: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 3: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 4: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
      *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setGtin(Text fGtin) {
-        this.fGtin = fGtin;
-    }
-
-    private Boolean fIsFamilyFriendly;
-
-    /**
-     * Indicates whether this content is family friendly.
-     *
-     * @return {@link Boolean}
-     */
-    @Override
-    public Boolean getIsFamilyFriendly() {
-        return fIsFamilyFriendly;
-    }
-
-    /**
-     * Indicates whether this content is family friendly.
-     *
-     */
-    @Override
-    public void setIsFamilyFriendly(Boolean fIsFamilyFriendly) {
-        this.fIsFamilyFriendly = fIsFamilyFriendly;
+    public void setPayload(QuantitativeValue fPayload) {
+        this.fPayload = fPayload;
     }
 
     private Object fDriveWheelConfiguration;
@@ -1427,80 +552,99 @@ public class MotorizedBicycleImpl implements MotorizedBicycle {
         this.fDriveWheelConfiguration = fDriveWheelConfiguration;
     }
 
-    private QuantitativeValue fAccelerationTime;
+    private Text fKnownVehicleDamages;
 
     /**
-     * The time needed to accelerate the vehicle from a given start velocity to a given target velocity.<br/><br/>Typical unit code(s): SEC for seconds<br/><br/>* Note: There are unfortunately no standard unit codes for seconds/0..100 km/h or seconds/0..60 mph. Simply use "SEC" for seconds and indicate the velocities in the [[name]] of the [[QuantitativeValue]], or use [[valueReference]] with a [[QuantitativeValue]] of 0..60 mph or 0..100 km/h to specify the reference speeds.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public QuantitativeValue getAccelerationTime() {
-        return fAccelerationTime;
-    }
-
-    /**
-     * The time needed to accelerate the vehicle from a given start velocity to a given target velocity.<br/><br/>Typical unit code(s): SEC for seconds<br/><br/>* Note: There are unfortunately no standard unit codes for seconds/0..100 km/h or seconds/0..60 mph. Simply use "SEC" for seconds and indicate the velocities in the [[name]] of the [[QuantitativeValue]], or use [[valueReference]] with a [[QuantitativeValue]] of 0..60 mph or 0..100 km/h to specify the reference speeds.
-     *
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void setAccelerationTime(QuantitativeValue fAccelerationTime) {
-        this.fAccelerationTime = fAccelerationTime;
-    }
-
-    private Object fSize;
-
-    /**
-     * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
-     *
-     * @return {@link QuantitativeValue} or {@link DefinedTerm} or {@link Text} or {@link SizeSpecification}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
-     */
-    @Override
-    public <T> T getSize() {
-        return (T) fSize;
-    }
-
-    /**
-     * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
-     */
-    @Override
-    public void setSize(Object fSize) {
-        if(!(fSize instanceof QuantitativeValue) && !(fSize instanceof DefinedTerm) && !(fSize instanceof Text) && !(fSize instanceof SizeSpecification)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'size': " + fSize);
-        }
-        this.fSize = fSize;
-    }
-
-    private Text fMpn;
-
-    /**
-     * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
+     * A textual description of known damages, both repaired and unrepaired.
      *
      * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public Text getMpn() {
-        return fMpn;
+    public Text getKnownVehicleDamages() {
+        return fKnownVehicleDamages;
     }
 
     /**
-     * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
+     * A textual description of known damages, both repaired and unrepaired.
      *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setMpn(Text fMpn) {
-        this.fMpn = fMpn;
+    public void setKnownVehicleDamages(Text fKnownVehicleDamages) {
+        this.fKnownVehicleDamages = fKnownVehicleDamages;
+    }
+
+    private QuantitativeValue fFuelConsumption;
+
+    /**
+     * The amount of fuel consumed for traveling a particular distance or temporal duration with the given vehicle (e.g. liters per 100 km).<br/><br/>* Note 1: There are unfortunately no standard unit codes for liters per 100 km.  Use [[unitText]] to indicate the unit of measurement, e.g. L/100 km.<br/>* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.<br/>* Note 3: Often, the absolute value is useful only when related to driving speed ("at 80 km/h") or usage pattern ("city traffic"). You can use [[valueReference]] to link the value for the fuel consumption to another value.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public QuantitativeValue getFuelConsumption() {
+        return fFuelConsumption;
+    }
+
+    /**
+     * The amount of fuel consumed for traveling a particular distance or temporal duration with the given vehicle (e.g. liters per 100 km).<br/><br/>* Note 1: There are unfortunately no standard unit codes for liters per 100 km.  Use [[unitText]] to indicate the unit of measurement, e.g. L/100 km.<br/>* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.<br/>* Note 3: Often, the absolute value is useful only when related to driving speed ("at 80 km/h") or usage pattern ("city traffic"). You can use [[valueReference]] to link the value for the fuel consumption to another value.
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public void setFuelConsumption(QuantitativeValue fFuelConsumption) {
+        this.fFuelConsumption = fFuelConsumption;
+    }
+
+    private Text fVehicleInteriorColor;
+
+    /**
+     * The color or color combination of the interior of the vehicle.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public Text getVehicleInteriorColor() {
+        return fVehicleInteriorColor;
+    }
+
+    /**
+     * The color or color combination of the interior of the vehicle.
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public void setVehicleInteriorColor(Text fVehicleInteriorColor) {
+        this.fVehicleInteriorColor = fVehicleInteriorColor;
+    }
+
+    private Object fNumberOfAxles;
+
+    /**
+     * The number of axles.<br/><br/>Typical unit code(s): C62
+     *
+     * @return {@link Number} or {@link QuantitativeValue}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public <T> T getNumberOfAxles() {
+        return (T) fNumberOfAxles;
+    }
+
+    /**
+     * The number of axles.<br/><br/>Typical unit code(s): C62
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public void setNumberOfAxles(Object fNumberOfAxles) {
+        if(!(fNumberOfAxles instanceof Number) && !(fNumberOfAxles instanceof QuantitativeValue)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'numberOfAxles': " + fNumberOfAxles);
+        }
+        this.fNumberOfAxles = fNumberOfAxles;
     }
 
     private Date fModelDate;
@@ -1528,285 +672,226 @@ public class MotorizedBicycleImpl implements MotorizedBicycle {
         this.fModelDate = fModelDate;
     }
 
-    private OfferItemCondition fItemCondition;
+    private Object fNumberOfDoors;
 
     /**
-     * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
+     * The number of doors.<br/><br/>Typical unit code(s): C62
      *
-     * @return {@link OfferItemCondition}
+     * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public OfferItemCondition getItemCondition() {
-        return fItemCondition;
+    public <T> T getNumberOfDoors() {
+        return (T) fNumberOfDoors;
     }
 
     /**
-     * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
+     * The number of doors.<br/><br/>Typical unit code(s): C62
      *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setItemCondition(OfferItemCondition fItemCondition) {
-        this.fItemCondition = fItemCondition;
+    public void setNumberOfDoors(Object fNumberOfDoors) {
+        if(!(fNumberOfDoors instanceof QuantitativeValue) && !(fNumberOfDoors instanceof Number)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'numberOfDoors': " + fNumberOfDoors);
+        }
+        this.fNumberOfDoors = fNumberOfDoors;
     }
 
-    private Text fGtin14;
+    private Object fVehicleSeatingCapacity;
 
     /**
-     * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     * The number of passengers that can be seated in the vehicle, both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>Typical unit code(s): C62 for persons.
+     *
+     * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public <T> T getVehicleSeatingCapacity() {
+        return (T) fVehicleSeatingCapacity;
+    }
+
+    /**
+     * The number of passengers that can be seated in the vehicle, both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>Typical unit code(s): C62 for persons.
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public void setVehicleSeatingCapacity(Object fVehicleSeatingCapacity) {
+        if(!(fVehicleSeatingCapacity instanceof QuantitativeValue) && !(fVehicleSeatingCapacity instanceof Number)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'vehicleSeatingCapacity': " + fVehicleSeatingCapacity);
+        }
+        this.fVehicleSeatingCapacity = fVehicleSeatingCapacity;
+    }
+
+    private Text fCallSign;
+
+    /**
+     * A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.
      *
      * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2109">https://github.com/schemaorg/schemaorg/issues/2109</a>
      */
     @Override
-    public Text getGtin14() {
-        return fGtin14;
+    public Text getCallSign() {
+        return fCallSign;
     }
 
     /**
-     * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     * A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.
      *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2109">https://github.com/schemaorg/schemaorg/issues/2109</a>
      */
     @Override
-    public void setGtin14(Text fGtin14) {
-        this.fGtin14 = fGtin14;
+    public void setCallSign(Text fCallSign) {
+        this.fCallSign = fCallSign;
     }
 
-    private Object fMeetsEmissionStandard;
+    private QuantitativeValue fTongueWeight;
 
     /**
-     * Indicates that the vehicle meets the respective emission standard.
-     *
-     * @return {@link Text} or {@link URL} or {@link QualitativeValue}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public <T> T getMeetsEmissionStandard() {
-        return (T) fMeetsEmissionStandard;
-    }
-
-    /**
-     * Indicates that the vehicle meets the respective emission standard.
-     *
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void setMeetsEmissionStandard(Object fMeetsEmissionStandard) {
-        if(!(fMeetsEmissionStandard instanceof Text) && !(fMeetsEmissionStandard instanceof URL) && !(fMeetsEmissionStandard instanceof QualitativeValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'meetsEmissionStandard': " + fMeetsEmissionStandard);
-        }
-        this.fMeetsEmissionStandard = fMeetsEmissionStandard;
-    }
-
-    private Product fIsConsumableFor;
-
-    /**
-     * A pointer to another product (or multiple products) for which this product is a consumable.
-     *
-     * @return {@link Product}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public Product getIsConsumableFor() {
-        return fIsConsumableFor;
-    }
-
-    /**
-     * A pointer to another product (or multiple products) for which this product is a consumable.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setIsConsumableFor(Product fIsConsumableFor) {
-        this.fIsConsumableFor = fIsConsumableFor;
-    }
-
-    private Action fPotentialAction;
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
-    @Override
-    public Action getPotentialAction() {
-        return fPotentialAction;
-    }
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     */
-    @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
-    }
-
-    private QuantitativeValue fFuelCapacity;
-
-    /**
-     * The capacity of the fuel tank or in the case of electric cars, the battery. If there are multiple components for storage, this should indicate the total of all storage of the same type.<br/><br/>Typical unit code(s): LTR for liters, GLL of US gallons, GLI for UK / imperial gallons, AMH for ampere-hours (for electrical vehicles).
+     * The permitted vertical load (TWR) of a trailer attached to the vehicle. Also referred to as Tongue Load Rating (TLR) or Vertical Load Rating (VLR)<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
      *
      * @return {@link QuantitativeValue}
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public QuantitativeValue getFuelCapacity() {
-        return fFuelCapacity;
+    public QuantitativeValue getTongueWeight() {
+        return fTongueWeight;
     }
 
     /**
-     * The capacity of the fuel tank or in the case of electric cars, the battery. If there are multiple components for storage, this should indicate the total of all storage of the same type.<br/><br/>Typical unit code(s): LTR for liters, GLL of US gallons, GLI for UK / imperial gallons, AMH for ampere-hours (for electrical vehicles).
+     * The permitted vertical load (TWR) of a trailer attached to the vehicle. Also referred to as Tongue Load Rating (TLR) or Vertical Load Rating (VLR)<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
      *
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setFuelCapacity(QuantitativeValue fFuelCapacity) {
-        this.fFuelCapacity = fFuelCapacity;
+    public void setTongueWeight(QuantitativeValue fTongueWeight) {
+        this.fTongueWeight = fTongueWeight;
     }
 
-    private QuantitativeValue fTrailerWeight;
+    private QuantitativeValue fFuelEfficiency;
 
     /**
-     * The permitted weight of a trailer attached to the vehicle.<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/>* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
+     * The distance traveled per unit of fuel used; most commonly miles per gallon (mpg) or kilometers per liter (km/L).<br/><br/>* Note 1: There are unfortunately no standard unit codes for miles per gallon or kilometers per liter. Use [[unitText]] to indicate the unit of measurement, e.g. mpg or km/L.<br/>* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.<br/>* Note 3: Often, the absolute value is useful only when related to driving speed ("at 80 km/h") or usage pattern ("city traffic"). You can use [[valueReference]] to link the value for the fuel economy to another value.
      *
      * @return {@link QuantitativeValue}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public QuantitativeValue getTrailerWeight() {
-        return fTrailerWeight;
+    public QuantitativeValue getFuelEfficiency() {
+        return fFuelEfficiency;
     }
 
     /**
-     * The permitted weight of a trailer attached to the vehicle.<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/>* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
+     * The distance traveled per unit of fuel used; most commonly miles per gallon (mpg) or kilometers per liter (km/L).<br/><br/>* Note 1: There are unfortunately no standard unit codes for miles per gallon or kilometers per liter. Use [[unitText]] to indicate the unit of measurement, e.g. mpg or km/L.<br/>* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.<br/>* Note 3: Often, the absolute value is useful only when related to driving speed ("at 80 km/h") or usage pattern ("city traffic"). You can use [[valueReference]] to link the value for the fuel economy to another value.
      *
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setTrailerWeight(QuantitativeValue fTrailerWeight) {
-        this.fTrailerWeight = fTrailerWeight;
+    public void setFuelEfficiency(QuantitativeValue fFuelEfficiency) {
+        this.fFuelEfficiency = fFuelEfficiency;
     }
 
-    private Text fKnownVehicleDamages;
+    private Date fVehicleModelDate;
 
     /**
-     * A textual description of known damages, both repaired and unrepaired.
+     * The release date of a vehicle model (often used to differentiate versions of the same make and model).
+     *
+     * @return {@link Date}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public Date getVehicleModelDate() {
+        return fVehicleModelDate;
+    }
+
+    /**
+     * The release date of a vehicle model (often used to differentiate versions of the same make and model).
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public void setVehicleModelDate(Date fVehicleModelDate) {
+        this.fVehicleModelDate = fVehicleModelDate;
+    }
+
+    private Text fVehicleConfiguration;
+
+    /**
+     * A short text indicating the configuration of the vehicle, e.g. '5dr hatchback ST 2.5 MT 225 hp' or 'limited edition'.
      *
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public Text getKnownVehicleDamages() {
-        return fKnownVehicleDamages;
+    public Text getVehicleConfiguration() {
+        return fVehicleConfiguration;
     }
 
     /**
-     * A textual description of known damages, both repaired and unrepaired.
+     * A short text indicating the configuration of the vehicle, e.g. '5dr hatchback ST 2.5 MT 225 hp' or 'limited edition'.
      *
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setKnownVehicleDamages(Text fKnownVehicleDamages) {
-        this.fKnownVehicleDamages = fKnownVehicleDamages;
+    public void setVehicleConfiguration(Text fVehicleConfiguration) {
+        this.fVehicleConfiguration = fVehicleConfiguration;
     }
 
-    private Object fSubjectOf;
+    private QuantitativeValue fMileageFromOdometer;
 
     /**
-     * A CreativeWork or Event about this Thing.
+     * The total distance travelled by the particular vehicle since its initial production, as read from its odometer.<br/><br/>Typical unit code(s): KMT for kilometers, SMI for statute miles
      *
-     * @return {@link Event} or {@link CreativeWork}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     * @return {@link QuantitativeValue}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public <T> T getSubjectOf() {
-        return (T) fSubjectOf;
+    public QuantitativeValue getMileageFromOdometer() {
+        return fMileageFromOdometer;
     }
 
     /**
-     * A CreativeWork or Event about this Thing.
+     * The total distance travelled by the particular vehicle since its initial production, as read from its odometer.<br/><br/>Typical unit code(s): KMT for kilometers, SMI for statute miles
      *
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setSubjectOf(Object fSubjectOf) {
-        if(!(fSubjectOf instanceof Event) && !(fSubjectOf instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'subjectOf': " + fSubjectOf);
+    public void setMileageFromOdometer(QuantitativeValue fMileageFromOdometer) {
+        this.fMileageFromOdometer = fMileageFromOdometer;
+    }
+
+    private Object fSeatingCapacity;
+
+    /**
+     * The number of persons that can be seated (e.g. in a vehicle), both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>Typical unit code(s): C62 for persons 
+     *
+     * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public <T> T getSeatingCapacity() {
+        return (T) fSeatingCapacity;
+    }
+
+    /**
+     * The number of persons that can be seated (e.g. in a vehicle), both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>Typical unit code(s): C62 for persons 
+     *
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public void setSeatingCapacity(Object fSeatingCapacity) {
+        if(!(fSeatingCapacity instanceof QuantitativeValue) && !(fSeatingCapacity instanceof Number)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'seatingCapacity': " + fSeatingCapacity);
         }
-        this.fSubjectOf = fSubjectOf;
-    }
-
-    private Text fDisambiguatingDescription;
-
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDisambiguatingDescription() {
-        return fDisambiguatingDescription;
-    }
-
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     */
-    @Override
-    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = fDisambiguatingDescription;
-    }
-
-    private Object fImage;
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link URL} or {@link ImageObject}
-     */
-    @Override
-    public <T> T getImage() {
-        return (T) fImage;
-    }
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     */
-    @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
-        this.fImage = fImage;
-    }
-
-    private URL fSameAs;
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getSameAs() {
-        return fSameAs;
-    }
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     */
-    @Override
-    public void setSameAs(URL fSameAs) {
-        this.fSameAs = fSameAs;
+        this.fSeatingCapacity = fSeatingCapacity;
     }
 
     private Object fBodyType;
@@ -1837,287 +922,6 @@ public class MotorizedBicycleImpl implements MotorizedBicycle {
         this.fBodyType = fBodyType;
     }
 
-    private Text fAwards;
-
-    /**
-     * Awards won by or for this item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getAwards() {
-        return fAwards;
-    }
-
-    /**
-     * Awards won by or for this item.
-     *
-     */
-    @Override
-    public void setAwards(Text fAwards) {
-        this.fAwards = fAwards;
-    }
-
-    private Object fDepth;
-
-    /**
-     * The depth of the item.
-     *
-     * @return {@link Distance} or {@link QuantitativeValue}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public <T> T getDepth() {
-        return (T) fDepth;
-    }
-
-    /**
-     * The depth of the item.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setDepth(Object fDepth) {
-        if(!(fDepth instanceof Distance) && !(fDepth instanceof QuantitativeValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'depth': " + fDepth);
-        }
-        this.fDepth = fDepth;
-    }
-
-    private EnergyConsumptionDetails fHasEnergyConsumptionDetails;
-
-    /**
-     * Defines the energy efficiency Category (also known as "class" or "rating") for a product according to an international energy efficiency standard.
-     *
-     * @return {@link EnergyConsumptionDetails}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2670">https://github.com/schemaorg/schemaorg/issues/2670</a>
-     */
-    @Override
-    public EnergyConsumptionDetails getHasEnergyConsumptionDetails() {
-        return fHasEnergyConsumptionDetails;
-    }
-
-    /**
-     * Defines the energy efficiency Category (also known as "class" or "rating") for a product according to an international energy efficiency standard.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2670">https://github.com/schemaorg/schemaorg/issues/2670</a>
-     */
-    @Override
-    public void setHasEnergyConsumptionDetails(EnergyConsumptionDetails fHasEnergyConsumptionDetails) {
-        this.fHasEnergyConsumptionDetails = fHasEnergyConsumptionDetails;
-    }
-
-    private SteeringPositionValue fSteeringPosition;
-
-    /**
-     * The position of the steering wheel or similar device (mostly for cars).
-     *
-     * @return {@link SteeringPositionValue}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public SteeringPositionValue getSteeringPosition() {
-        return fSteeringPosition;
-    }
-
-    /**
-     * The position of the steering wheel or similar device (mostly for cars).
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void setSteeringPosition(SteeringPositionValue fSteeringPosition) {
-        this.fSteeringPosition = fSteeringPosition;
-    }
-
-    private Text fCountryOfLastProcessing;
-
-    /**
-     * The place where the item (typically [[Product]]) was last processed and tested before importation.
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/991">https://github.com/schemaorg/schemaorg/issues/991</a>
-     */
-    @Override
-    public Text getCountryOfLastProcessing() {
-        return fCountryOfLastProcessing;
-    }
-
-    /**
-     * The place where the item (typically [[Product]]) was last processed and tested before importation.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/991">https://github.com/schemaorg/schemaorg/issues/991</a>
-     */
-    @Override
-    public void setCountryOfLastProcessing(Text fCountryOfLastProcessing) {
-        this.fCountryOfLastProcessing = fCountryOfLastProcessing;
-    }
-
-    private URL fUrl;
-
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getUrl() {
-        return fUrl;
-    }
-
-    /**
-     * URL of the item.
-     *
-     */
-    @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
-    }
-
-    private Object fNumberOfAirbags;
-
-    /**
-     * The number or type of airbags in the vehicle.
-     *
-     * @return {@link Text} or {@link Number}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public <T> T getNumberOfAirbags() {
-        return (T) fNumberOfAirbags;
-    }
-
-    /**
-     * The number or type of airbags in the vehicle.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void setNumberOfAirbags(Object fNumberOfAirbags) {
-        if(!(fNumberOfAirbags instanceof Text) && !(fNumberOfAirbags instanceof Number)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'numberOfAirbags': " + fNumberOfAirbags);
-        }
-        this.fNumberOfAirbags = fNumberOfAirbags;
-    }
-
-    private URL fAdditionalType;
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getAdditionalType() {
-        return fAdditionalType;
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     */
-    @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
-    }
-
-    private QuantitativeValue fCargoVolume;
-
-    /**
-     * The available volume for cargo or luggage. For automobiles, this is usually the trunk volume.<br/><br/>Typical unit code(s): LTR for liters, FTQ for cubic foot/feet<br/><br/>Note: You can use [[minValue]] and [[maxValue]] to indicate ranges.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public QuantitativeValue getCargoVolume() {
-        return fCargoVolume;
-    }
-
-    /**
-     * The available volume for cargo or luggage. For automobiles, this is usually the trunk volume.<br/><br/>Typical unit code(s): LTR for liters, FTQ for cubic foot/feet<br/><br/>Note: You can use [[minValue]] and [[maxValue]] to indicate ranges.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void setCargoVolume(QuantitativeValue fCargoVolume) {
-        this.fCargoVolume = fCargoVolume;
-    }
-
-    private Number fEmissionsCO2;
-
-    /**
-     * The CO2 emissions in g/km. When used in combination with a QuantitativeValue, put "g/km" into the unitText property of that value, since there is no UN/CEFACT Common Code for "g/km".
-     *
-     * @return {@link Number}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public Number getEmissionsCO2() {
-        return fEmissionsCO2;
-    }
-
-    /**
-     * The CO2 emissions in g/km. When used in combination with a QuantitativeValue, put "g/km" into the unitText property of that value, since there is no UN/CEFACT Common Code for "g/km".
-     *
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void setEmissionsCO2(Number fEmissionsCO2) {
-        this.fEmissionsCO2 = fEmissionsCO2;
-    }
-
-    private Text fProductID;
-
-    /**
-     * The product identifier, such as ISBN. For example: ``` meta itemprop="productID" content="isbn:123-456-789" ```.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getProductID() {
-        return fProductID;
-    }
-
-    /**
-     * The product identifier, such as ISBN. For example: ``` meta itemprop="productID" content="isbn:123-456-789" ```.
-     *
-     */
-    @Override
-    public void setProductID(Text fProductID) {
-        this.fProductID = fProductID;
-    }
-
-    private Object fHeight;
-
-    /**
-     * The height of the item.
-     *
-     * @return {@link Distance} or {@link QuantitativeValue}
-     */
-    @Override
-    public <T> T getHeight() {
-        return (T) fHeight;
-    }
-
-    /**
-     * The height of the item.
-     *
-     */
-    @Override
-    public void setHeight(Object fHeight) {
-        if(!(fHeight instanceof Distance) && !(fHeight instanceof QuantitativeValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'height': " + fHeight);
-        }
-        this.fHeight = fHeight;
-    }
-
     private Date fDateVehicleFirstRegistered;
 
     /**
@@ -2139,6 +943,298 @@ public class MotorizedBicycleImpl implements MotorizedBicycle {
     @Override
     public void setDateVehicleFirstRegistered(Date fDateVehicleFirstRegistered) {
         this.fDateVehicleFirstRegistered = fDateVehicleFirstRegistered;
+    }
+
+    private Text fVehicleIdentificationNumber;
+
+    /**
+     * The Vehicle Identification Number (VIN) is a unique serial number used by the automotive industry to identify individual motor vehicles.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public Text getVehicleIdentificationNumber() {
+        return fVehicleIdentificationNumber;
+    }
+
+    /**
+     * The Vehicle Identification Number (VIN) is a unique serial number used by the automotive industry to identify individual motor vehicles.
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public void setVehicleIdentificationNumber(Text fVehicleIdentificationNumber) {
+        this.fVehicleIdentificationNumber = fVehicleIdentificationNumber;
+    }
+
+    private Object fMeetsEmissionStandard;
+
+    /**
+     * Indicates that the vehicle meets the respective emission standard.
+     *
+     * @return {@link Text} or {@link URL} or {@link QualitativeValue}
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public <T> T getMeetsEmissionStandard() {
+        return (T) fMeetsEmissionStandard;
+    }
+
+    /**
+     * Indicates that the vehicle meets the respective emission standard.
+     *
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public void setMeetsEmissionStandard(Object fMeetsEmissionStandard) {
+        if(!(fMeetsEmissionStandard instanceof Text) && !(fMeetsEmissionStandard instanceof URL) && !(fMeetsEmissionStandard instanceof QualitativeValue)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'meetsEmissionStandard': " + fMeetsEmissionStandard);
+        }
+        this.fMeetsEmissionStandard = fMeetsEmissionStandard;
+    }
+
+    private Object fVehicleSpecialUsage;
+
+    /**
+     * Indicates whether the vehicle has been used for special purposes, like commercial rental, driving school, or as a taxi. The legislation in many countries requires this information to be revealed when offering a car for sale.
+     *
+     * @return {@link CarUsageType} or {@link Text}
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public <T> T getVehicleSpecialUsage() {
+        return (T) fVehicleSpecialUsage;
+    }
+
+    /**
+     * Indicates whether the vehicle has been used for special purposes, like commercial rental, driving school, or as a taxi. The legislation in many countries requires this information to be revealed when offering a car for sale.
+     *
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public void setVehicleSpecialUsage(Object fVehicleSpecialUsage) {
+        if(!(fVehicleSpecialUsage instanceof CarUsageType) && !(fVehicleSpecialUsage instanceof Text)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'vehicleSpecialUsage': " + fVehicleSpecialUsage);
+        }
+        this.fVehicleSpecialUsage = fVehicleSpecialUsage;
+    }
+
+    private Product fIsAccessoryOrSparePartFor;
+
+    /**
+     * A pointer to another product (or multiple products) for which this product is an accessory or spare part.
+     *
+     * @return {@link Product}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public Product getIsAccessoryOrSparePartFor() {
+        return fIsAccessoryOrSparePartFor;
+    }
+
+    /**
+     * A pointer to another product (or multiple products) for which this product is an accessory or spare part.
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setIsAccessoryOrSparePartFor(Product fIsAccessoryOrSparePartFor) {
+        this.fIsAccessoryOrSparePartFor = fIsAccessoryOrSparePartFor;
+    }
+
+    private AdultOrientedEnumeration fHasAdultConsideration;
+
+    /**
+     * Used to tag an item to be intended or suitable for consumption or use by adults only.
+     *
+     * @return {@link AdultOrientedEnumeration}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2989">https://github.com/schemaorg/schemaorg/issues/2989</a>
+     */
+    @Override
+    public AdultOrientedEnumeration getHasAdultConsideration() {
+        return fHasAdultConsideration;
+    }
+
+    /**
+     * Used to tag an item to be intended or suitable for consumption or use by adults only.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2989">https://github.com/schemaorg/schemaorg/issues/2989</a>
+     */
+    @Override
+    public void setHasAdultConsideration(AdultOrientedEnumeration fHasAdultConsideration) {
+        this.fHasAdultConsideration = fHasAdultConsideration;
+    }
+
+    private Text fGtin12;
+
+    /**
+     * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getGtin12() {
+        return fGtin12;
+    }
+
+    /**
+     * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     *
+     */
+    @Override
+    public void setGtin12(Text fGtin12) {
+        this.fGtin12 = fGtin12;
+    }
+
+    private Text fNsn;
+
+    /**
+     * Indicates the [NATO stock number](https://en.wikipedia.org/wiki/NATO_Stock_Number) (nsn) of a [[Product]]. 
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2126">https://github.com/schemaorg/schemaorg/issues/2126</a>
+     */
+    @Override
+    public Text getNsn() {
+        return fNsn;
+    }
+
+    /**
+     * Indicates the [NATO stock number](https://en.wikipedia.org/wiki/NATO_Stock_Number) (nsn) of a [[Product]]. 
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2126">https://github.com/schemaorg/schemaorg/issues/2126</a>
+     */
+    @Override
+    public void setNsn(Text fNsn) {
+        this.fNsn = fNsn;
+    }
+
+    private Object fMaterial;
+
+    /**
+     * A material that something is made from, e.g. leather, wool, cotton, paper.
+     *
+     * @return {@link Text} or {@link URL} or {@link Product}
+     */
+    @Override
+    public <T> T getMaterial() {
+        return (T) fMaterial;
+    }
+
+    /**
+     * A material that something is made from, e.g. leather, wool, cotton, paper.
+     *
+     */
+    @Override
+    public void setMaterial(Object fMaterial) {
+        if(!(fMaterial instanceof Text) && !(fMaterial instanceof URL) && !(fMaterial instanceof Product)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'material': " + fMaterial);
+        }
+        this.fMaterial = fMaterial;
+    }
+
+    private Review fReview;
+
+    /**
+     * A review of the item.
+     *
+     * @return {@link Review}
+     */
+    @Override
+    public Review getReview() {
+        return fReview;
+    }
+
+    /**
+     * A review of the item.
+     *
+     */
+    @Override
+    public void setReview(Review fReview) {
+        this.fReview = fReview;
+    }
+
+    private Text fAward;
+
+    /**
+     * An award won by or for this item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getAward() {
+        return fAward;
+    }
+
+    /**
+     * An award won by or for this item.
+     *
+     */
+    @Override
+    public void setAward(Text fAward) {
+        this.fAward = fAward;
+    }
+
+    private Object fWidth;
+
+    /**
+     * The width of the item.
+     *
+     * @return {@link QuantitativeValue} or {@link Distance}
+     */
+    @Override
+    public <T> T getWidth() {
+        return (T) fWidth;
+    }
+
+    /**
+     * The width of the item.
+     *
+     */
+    @Override
+    public void setWidth(Object fWidth) {
+        if(!(fWidth instanceof QuantitativeValue) && !(fWidth instanceof Distance)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'width': " + fWidth);
+        }
+        this.fWidth = fWidth;
+    }
+
+    private Country fCountryOfOrigin;
+
+    /**
+     * The country of origin of something, including products as well as creative  works such as movie and TV content.
+     * 
+     * In the case of TV and movie, this would be the country of the principle offices of the production company or individual responsible for the movie. For other kinds of [[CreativeWork]] it is difficult to provide fully general guidance, and properties such as [[contentLocation]] and [[locationCreated]] may be more applicable.
+     * 
+     * In the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.
+     *
+     * @return {@link Country}
+     */
+    @Override
+    public Country getCountryOfOrigin() {
+        return fCountryOfOrigin;
+    }
+
+    /**
+     * The country of origin of something, including products as well as creative  works such as movie and TV content.
+     * 
+     * In the case of TV and movie, this would be the country of the principle offices of the production company or individual responsible for the movie. For other kinds of [[CreativeWork]] it is difficult to provide fully general guidance, and properties such as [[contentLocation]] and [[locationCreated]] may be more applicable.
+     * 
+     * In the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.
+     *
+     */
+    @Override
+    public void setCountryOfOrigin(Country fCountryOfOrigin) {
+        this.fCountryOfOrigin = fCountryOfOrigin;
     }
 
     private Object fPattern;
@@ -2197,32 +1293,266 @@ public class MotorizedBicycleImpl implements MotorizedBicycle {
         this.fCategory = fCategory;
     }
 
-    private Object fSeatingCapacity;
+    private Grant fFunding;
 
     /**
-     * The number of persons that can be seated (e.g. in a vehicle), both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>Typical unit code(s): C62 for persons 
+     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
      *
-     * @return {@link QuantitativeValue} or {@link Number}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     * @return {@link Grant}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
     @Override
-    public <T> T getSeatingCapacity() {
-        return (T) fSeatingCapacity;
+    public Grant getFunding() {
+        return fFunding;
     }
 
     /**
-     * The number of persons that can be seated (e.g. in a vehicle), both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>Typical unit code(s): C62 for persons 
+     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
      *
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
     @Override
-    public void setSeatingCapacity(Object fSeatingCapacity) {
-        if(!(fSeatingCapacity instanceof QuantitativeValue) && !(fSeatingCapacity instanceof Number)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'seatingCapacity': " + fSeatingCapacity);
+    public void setFunding(Grant fFunding) {
+        this.fFunding = fFunding;
+    }
+
+    private Text fMpn;
+
+    /**
+     * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public Text getMpn() {
+        return fMpn;
+    }
+
+    /**
+     * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setMpn(Text fMpn) {
+        this.fMpn = fMpn;
+    }
+
+    private Object fHeight;
+
+    /**
+     * The height of the item.
+     *
+     * @return {@link Distance} or {@link QuantitativeValue}
+     */
+    @Override
+    public <T> T getHeight() {
+        return (T) fHeight;
+    }
+
+    /**
+     * The height of the item.
+     *
+     */
+    @Override
+    public void setHeight(Object fHeight) {
+        if(!(fHeight instanceof Distance) && !(fHeight instanceof QuantitativeValue)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'height': " + fHeight);
         }
-        this.fSeatingCapacity = fSeatingCapacity;
+        this.fHeight = fHeight;
+    }
+
+    private Object fKeywords;
+
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     * @return {@link DefinedTerm} or {@link Text} or {@link URL}
+     */
+    @Override
+    public <T> T getKeywords() {
+        return (T) fKeywords;
+    }
+
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     */
+    @Override
+    public void setKeywords(Object fKeywords) {
+        if(!(fKeywords instanceof DefinedTerm) && !(fKeywords instanceof Text) && !(fKeywords instanceof URL)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'keywords': " + fKeywords);
+        }
+        this.fKeywords = fKeywords;
+    }
+
+    private EnergyConsumptionDetails fHasEnergyConsumptionDetails;
+
+    /**
+     * Defines the energy efficiency Category (also known as "class" or "rating") for a product according to an international energy efficiency standard.
+     *
+     * @return {@link EnergyConsumptionDetails}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2670">https://github.com/schemaorg/schemaorg/issues/2670</a>
+     */
+    @Override
+    public EnergyConsumptionDetails getHasEnergyConsumptionDetails() {
+        return fHasEnergyConsumptionDetails;
+    }
+
+    /**
+     * Defines the energy efficiency Category (also known as "class" or "rating") for a product according to an international energy efficiency standard.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2670">https://github.com/schemaorg/schemaorg/issues/2670</a>
+     */
+    @Override
+    public void setHasEnergyConsumptionDetails(EnergyConsumptionDetails fHasEnergyConsumptionDetails) {
+        this.fHasEnergyConsumptionDetails = fHasEnergyConsumptionDetails;
+    }
+
+    private Audience fAudience;
+
+    /**
+     * An intended audience, i.e. a group for whom something was created.
+     *
+     * @return {@link Audience}
+     */
+    @Override
+    public Audience getAudience() {
+        return fAudience;
+    }
+
+    /**
+     * An intended audience, i.e. a group for whom something was created.
+     *
+     */
+    @Override
+    public void setAudience(Audience fAudience) {
+        this.fAudience = fAudience;
+    }
+
+    private Object fOffers;
+
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     *
+     * @return {@link Offer} or {@link Demand}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public <T> T getOffers() {
+        return (T) fOffers;
+    }
+
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     *
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public void setOffers(Object fOffers) {
+        if(!(fOffers instanceof Offer) && !(fOffers instanceof Demand)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'offers': " + fOffers);
+        }
+        this.fOffers = fOffers;
+    }
+
+    private OfferItemCondition fItemCondition;
+
+    /**
+     * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
+     *
+     * @return {@link OfferItemCondition}
+     */
+    @Override
+    public OfferItemCondition getItemCondition() {
+        return fItemCondition;
+    }
+
+    /**
+     * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
+     *
+     */
+    @Override
+    public void setItemCondition(OfferItemCondition fItemCondition) {
+        this.fItemCondition = fItemCondition;
+    }
+
+    private Text fAwards;
+
+    /**
+     * Awards won by or for this item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getAwards() {
+        return fAwards;
+    }
+
+    /**
+     * Awards won by or for this item.
+     *
+     */
+    @Override
+    public void setAwards(Text fAwards) {
+        this.fAwards = fAwards;
+    }
+
+    private Text fGtin;
+
+    /**
+     * A Global Trade Item Number ([GTIN](https://www.gs1.org/standards/id-keys/gtin)). GTINs identify trade items, including products and services, using numeric identification codes. The [[gtin]] property generalizes the earlier [[gtin8]], [[gtin12]], [[gtin13]], and [[gtin14]] properties. The GS1 [digital link specifications](https://www.gs1.org/standards/Digital-Link/) express GTINs as URLs. A correct [[gtin]] value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a "GS1 Digital Link" URL based on such a string. The numeric component should also have a [valid GS1 check digit](https://www.gs1.org/services/check-digit-calculator) and meet the other rules for valid GTINs. See also [GS1's GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) and [Wikipedia](https://en.wikipedia.org/wiki/Global_Trade_Item_Number) for more details. Left-padding of the gtin values is not required or encouraged.
+     *    
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     */
+    @Override
+    public Text getGtin() {
+        return fGtin;
+    }
+
+    /**
+     * A Global Trade Item Number ([GTIN](https://www.gs1.org/standards/id-keys/gtin)). GTINs identify trade items, including products and services, using numeric identification codes. The [[gtin]] property generalizes the earlier [[gtin8]], [[gtin12]], [[gtin13]], and [[gtin14]] properties. The GS1 [digital link specifications](https://www.gs1.org/standards/Digital-Link/) express GTINs as URLs. A correct [[gtin]] value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a "GS1 Digital Link" URL based on such a string. The numeric component should also have a [valid GS1 check digit](https://www.gs1.org/services/check-digit-calculator) and meet the other rules for valid GTINs. See also [GS1's GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) and [Wikipedia](https://en.wikipedia.org/wiki/Global_Trade_Item_Number) for more details. Left-padding of the gtin values is not required or encouraged.
+     *    
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     */
+    @Override
+    public void setGtin(Text fGtin) {
+        this.fGtin = fGtin;
+    }
+
+    private Text fProductID;
+
+    /**
+     * The product identifier, such as ISBN. For example: ``` meta itemprop="productID" content="isbn:123-456-789" ```.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getProductID() {
+        return fProductID;
+    }
+
+    /**
+     * The product identifier, such as ISBN. For example: ``` meta itemprop="productID" content="isbn:123-456-789" ```.
+     *
+     */
+    @Override
+    public void setProductID(Text fProductID) {
+        this.fProductID = fProductID;
     }
 
     private Text fCountryOfAssembly;
@@ -2250,25 +1580,362 @@ public class MotorizedBicycleImpl implements MotorizedBicycle {
         this.fCountryOfAssembly = fCountryOfAssembly;
     }
 
-    private PropertyValue fAdditionalProperty;
+    private Text fColor;
 
     /**
-     * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
+     * The color of the product.
      *
-     * @return {@link PropertyValue}
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public PropertyValue getAdditionalProperty() {
-        return fAdditionalProperty;
+    public Text getColor() {
+        return fColor;
     }
 
     /**
-     * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
+     * The color of the product.
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setColor(Text fColor) {
+        this.fColor = fColor;
+    }
+
+    private AggregateRating fAggregateRating;
+
+    /**
+     * The overall rating, based on a collection of reviews or ratings, of the item.
+     *
+     * @return {@link AggregateRating}
+     */
+    @Override
+    public AggregateRating getAggregateRating() {
+        return fAggregateRating;
+    }
+
+    /**
+     * The overall rating, based on a collection of reviews or ratings, of the item.
      *
      */
     @Override
-    public void setAdditionalProperty(PropertyValue fAdditionalProperty) {
-        this.fAdditionalProperty = fAdditionalProperty;
+    public void setAggregateRating(AggregateRating fAggregateRating) {
+        this.fAggregateRating = fAggregateRating;
+    }
+
+    private Object fIsSimilarTo;
+
+    /**
+     * A pointer to another, functionally similar product (or multiple products).
+     *
+     * @return {@link Service} or {@link Product}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public <T> T getIsSimilarTo() {
+        return (T) fIsSimilarTo;
+    }
+
+    /**
+     * A pointer to another, functionally similar product (or multiple products).
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setIsSimilarTo(Object fIsSimilarTo) {
+        if(!(fIsSimilarTo instanceof Service) && !(fIsSimilarTo instanceof Product)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'isSimilarTo': " + fIsSimilarTo);
+        }
+        this.fIsSimilarTo = fIsSimilarTo;
+    }
+
+    private Object fDepth;
+
+    /**
+     * The depth of the item.
+     *
+     * @return {@link Distance} or {@link QuantitativeValue}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public <T> T getDepth() {
+        return (T) fDepth;
+    }
+
+    /**
+     * The depth of the item.
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setDepth(Object fDepth) {
+        if(!(fDepth instanceof Distance) && !(fDepth instanceof QuantitativeValue)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'depth': " + fDepth);
+        }
+        this.fDepth = fDepth;
+    }
+
+    private Text fCountryOfLastProcessing;
+
+    /**
+     * The place where the item (typically [[Product]]) was last processed and tested before importation.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/991">https://github.com/schemaorg/schemaorg/issues/991</a>
+     */
+    @Override
+    public Text getCountryOfLastProcessing() {
+        return fCountryOfLastProcessing;
+    }
+
+    /**
+     * The place where the item (typically [[Product]]) was last processed and tested before importation.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/991">https://github.com/schemaorg/schemaorg/issues/991</a>
+     */
+    @Override
+    public void setCountryOfLastProcessing(Text fCountryOfLastProcessing) {
+        this.fCountryOfLastProcessing = fCountryOfLastProcessing;
+    }
+
+    private Object fIsVariantOf;
+
+    /**
+     * Indicates the kind of product that this is a variant of. In the case of [[ProductModel]], this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a [[ProductGroup]], the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with [[ProductGroup]], this property can apply to any [[Product]] included in the group.
+     *
+     * @return {@link ProductModel} or {@link ProductGroup}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public <T> T getIsVariantOf() {
+        return (T) fIsVariantOf;
+    }
+
+    /**
+     * Indicates the kind of product that this is a variant of. In the case of [[ProductModel]], this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a [[ProductGroup]], the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with [[ProductGroup]], this property can apply to any [[Product]] included in the group.
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setIsVariantOf(Object fIsVariantOf) {
+        if(!(fIsVariantOf instanceof ProductModel) && !(fIsVariantOf instanceof ProductGroup)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'isVariantOf': " + fIsVariantOf);
+        }
+        this.fIsVariantOf = fIsVariantOf;
+    }
+
+    private Text fSlogan;
+
+    /**
+     * A slogan or motto associated with the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getSlogan() {
+        return fSlogan;
+    }
+
+    /**
+     * A slogan or motto associated with the item.
+     *
+     */
+    @Override
+    public void setSlogan(Text fSlogan) {
+        this.fSlogan = fSlogan;
+    }
+
+    private Object fBrand;
+
+    /**
+     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     *
+     * @return {@link Organization} or {@link Brand}
+     */
+    @Override
+    public <T> T getBrand() {
+        return (T) fBrand;
+    }
+
+    /**
+     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     *
+     */
+    @Override
+    public void setBrand(Object fBrand) {
+        if(!(fBrand instanceof Organization) && !(fBrand instanceof Brand)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'brand': " + fBrand);
+        }
+        this.fBrand = fBrand;
+    }
+
+    private Organization fManufacturer;
+
+    /**
+     * The manufacturer of the product.
+     *
+     * @return {@link Organization}
+     */
+    @Override
+    public Organization getManufacturer() {
+        return fManufacturer;
+    }
+
+    /**
+     * The manufacturer of the product.
+     *
+     */
+    @Override
+    public void setManufacturer(Organization fManufacturer) {
+        this.fManufacturer = fManufacturer;
+    }
+
+    private QuantitativeValue fHasMeasurement;
+
+    /**
+     * A product measurement, for example the inseam of pants, the wheel size of a bicycle, or the gauge of a screw. Usually an exact measurement, but can also be a range of measurements for adjustable products, for example belts and ski bindings.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
+     */
+    @Override
+    public QuantitativeValue getHasMeasurement() {
+        return fHasMeasurement;
+    }
+
+    /**
+     * A product measurement, for example the inseam of pants, the wheel size of a bicycle, or the gauge of a screw. Usually an exact measurement, but can also be a range of measurements for adjustable products, for example belts and ski bindings.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
+     */
+    @Override
+    public void setHasMeasurement(QuantitativeValue fHasMeasurement) {
+        this.fHasMeasurement = fHasMeasurement;
+    }
+
+    private Product fIsConsumableFor;
+
+    /**
+     * A pointer to another product (or multiple products) for which this product is a consumable.
+     *
+     * @return {@link Product}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public Product getIsConsumableFor() {
+        return fIsConsumableFor;
+    }
+
+    /**
+     * A pointer to another product (or multiple products) for which this product is a consumable.
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setIsConsumableFor(Product fIsConsumableFor) {
+        this.fIsConsumableFor = fIsConsumableFor;
+    }
+
+    private Object fLogo;
+
+    /**
+     * An associated logo.
+     *
+     * @return {@link URL} or {@link ImageObject}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public <T> T getLogo() {
+        return (T) fLogo;
+    }
+
+    /**
+     * An associated logo.
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setLogo(Object fLogo) {
+        if(!(fLogo instanceof URL) && !(fLogo instanceof ImageObject)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'logo': " + fLogo);
+        }
+        this.fLogo = fLogo;
+    }
+
+    private Text fGtin8;
+
+    /**
+     * The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public Text getGtin8() {
+        return fGtin8;
+    }
+
+    /**
+     * The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setGtin8(Text fGtin8) {
+        this.fGtin8 = fGtin8;
+    }
+
+    private Text fSku;
+
+    /**
+     * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public Text getSku() {
+        return fSku;
+    }
+
+    /**
+     * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setSku(Text fSku) {
+        this.fSku = fSku;
+    }
+
+    private Text fInProductGroupWithID;
+
+    /**
+     * Indicates the [[productGroupID]] for a [[ProductGroup]] that this product [[isVariantOf]]. 
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     */
+    @Override
+    public Text getInProductGroupWithID() {
+        return fInProductGroupWithID;
+    }
+
+    /**
+     * Indicates the [[productGroupID]] for a [[ProductGroup]] that this product [[isVariantOf]]. 
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     */
+    @Override
+    public void setInProductGroupWithID(Text fInProductGroupWithID) {
+        this.fInProductGroupWithID = fInProductGroupWithID;
     }
 
     private Object fModel;
@@ -2295,6 +1962,31 @@ public class MotorizedBicycleImpl implements MotorizedBicycle {
         this.fModel = fModel;
     }
 
+    private MerchantReturnPolicy fHasMerchantReturnPolicy;
+
+    /**
+     * Specifies a MerchantReturnPolicy that may be applicable.
+     *
+     * @return {@link MerchantReturnPolicy}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     */
+    @Override
+    public MerchantReturnPolicy getHasMerchantReturnPolicy() {
+        return fHasMerchantReturnPolicy;
+    }
+
+    /**
+     * Specifies a MerchantReturnPolicy that may be applicable.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     */
+    @Override
+    public void setHasMerchantReturnPolicy(MerchantReturnPolicy fHasMerchantReturnPolicy) {
+        this.fHasMerchantReturnPolicy = fHasMerchantReturnPolicy;
+    }
+
     private Date fReleaseDate;
 
     /**
@@ -2318,149 +2010,457 @@ public class MotorizedBicycleImpl implements MotorizedBicycle {
         this.fReleaseDate = fReleaseDate;
     }
 
-    private Text fNsn;
+    private Text fGtin14;
 
     /**
-     * Indicates the [NATO stock number](https://en.wikipedia.org/wiki/NATO_Stock_Number) (nsn) of a [[Product]]. 
+     * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
      * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2126">https://github.com/schemaorg/schemaorg/issues/2126</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public Text getNsn() {
-        return fNsn;
+    public Text getGtin14() {
+        return fGtin14;
     }
 
     /**
-     * Indicates the [NATO stock number](https://en.wikipedia.org/wiki/NATO_Stock_Number) (nsn) of a [[Product]]. 
+     * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2126">https://github.com/schemaorg/schemaorg/issues/2126</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setNsn(Text fNsn) {
-        this.fNsn = fNsn;
+    public void setGtin14(Text fGtin14) {
+        this.fGtin14 = fGtin14;
     }
 
-    private QuantitativeValue fMileageFromOdometer;
+    private QuantitativeValue fWeight;
 
     /**
-     * The total distance travelled by the particular vehicle since its initial production, as read from its odometer.<br/><br/>Typical unit code(s): KMT for kilometers, SMI for statute miles
+     * The weight of the product or person.
      *
      * @return {@link QuantitativeValue}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public QuantitativeValue getMileageFromOdometer() {
-        return fMileageFromOdometer;
+    public QuantitativeValue getWeight() {
+        return fWeight;
     }
 
     /**
-     * The total distance travelled by the particular vehicle since its initial production, as read from its odometer.<br/><br/>Typical unit code(s): KMT for kilometers, SMI for statute miles
+     * The weight of the product or person.
      *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setMileageFromOdometer(QuantitativeValue fMileageFromOdometer) {
-        this.fMileageFromOdometer = fMileageFromOdometer;
+    public void setWeight(QuantitativeValue fWeight) {
+        this.fWeight = fWeight;
     }
 
-    private Text fVehicleConfiguration;
+    private Object fSize;
 
     /**
-     * A short text indicating the configuration of the vehicle, e.g. '5dr hatchback ST 2.5 MT 225 hp' or 'limited edition'.
+     * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
+     *
+     * @return {@link QuantitativeValue} or {@link DefinedTerm} or {@link Text} or {@link SizeSpecification}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     */
+    @Override
+    public <T> T getSize() {
+        return (T) fSize;
+    }
+
+    /**
+     * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     */
+    @Override
+    public void setSize(Object fSize) {
+        if(!(fSize instanceof QuantitativeValue) && !(fSize instanceof DefinedTerm) && !(fSize instanceof Text) && !(fSize instanceof SizeSpecification)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'size': " + fSize);
+        }
+        this.fSize = fSize;
+    }
+
+    private PropertyValue fAdditionalProperty;
+
+    /**
+     * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
+     *
+     * @return {@link PropertyValue}
+     */
+    @Override
+    public PropertyValue getAdditionalProperty() {
+        return fAdditionalProperty;
+    }
+
+    /**
+     * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
+     *
+     */
+    @Override
+    public void setAdditionalProperty(PropertyValue fAdditionalProperty) {
+        this.fAdditionalProperty = fAdditionalProperty;
+    }
+
+    private Text fGtin13;
+
+    /**
+     * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
      * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public Text getVehicleConfiguration() {
-        return fVehicleConfiguration;
+    public Text getGtin13() {
+        return fGtin13;
     }
 
     /**
-     * A short text indicating the configuration of the vehicle, e.g. '5dr hatchback ST 2.5 MT 225 hp' or 'limited edition'.
+     * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setVehicleConfiguration(Text fVehicleConfiguration) {
-        this.fVehicleConfiguration = fVehicleConfiguration;
+    public void setGtin13(Text fGtin13) {
+        this.fGtin13 = fGtin13;
     }
 
-    private Text fAward;
+    private Review fReviews;
 
     /**
-     * An award won by or for this item.
+     * Review of the item.
+     *
+     * @return {@link Review}
+     */
+    @Override
+    public Review getReviews() {
+        return fReviews;
+    }
+
+    /**
+     * Review of the item.
+     *
+     */
+    @Override
+    public void setReviews(Review fReviews) {
+        this.fReviews = fReviews;
+    }
+
+    private Boolean fIsFamilyFriendly;
+
+    /**
+     * Indicates whether this content is family friendly.
+     *
+     * @return {@link Boolean}
+     */
+    @Override
+    public Boolean getIsFamilyFriendly() {
+        return fIsFamilyFriendly;
+    }
+
+    /**
+     * Indicates whether this content is family friendly.
+     *
+     */
+    @Override
+    public void setIsFamilyFriendly(Boolean fIsFamilyFriendly) {
+        this.fIsFamilyFriendly = fIsFamilyFriendly;
+    }
+
+    private Object fIsRelatedTo;
+
+    /**
+     * A pointer to another, somehow related product (or multiple products).
+     *
+     * @return {@link Service} or {@link Product}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public <T> T getIsRelatedTo() {
+        return (T) fIsRelatedTo;
+    }
+
+    /**
+     * A pointer to another, somehow related product (or multiple products).
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setIsRelatedTo(Object fIsRelatedTo) {
+        if(!(fIsRelatedTo instanceof Service) && !(fIsRelatedTo instanceof Product)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'isRelatedTo': " + fIsRelatedTo);
+        }
+        this.fIsRelatedTo = fIsRelatedTo;
+    }
+
+    private Object fMainEntityOfPage;
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    @Override
+    public <T> T getMainEntityOfPage() {
+        return (T) fMainEntityOfPage;
+    }
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     */
+    @Override
+    public void setMainEntityOfPage(Object fMainEntityOfPage) {
+        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
+        }
+        this.fMainEntityOfPage = fMainEntityOfPage;
+    }
+
+    private Text fAlternateName;
+
+    /**
+     * An alias for the item.
      *
      * @return {@link Text}
      */
     @Override
-    public Text getAward() {
-        return fAward;
+    public Text getAlternateName() {
+        return fAlternateName;
     }
 
     /**
-     * An award won by or for this item.
+     * An alias for the item.
      *
      */
     @Override
-    public void setAward(Text fAward) {
-        this.fAward = fAward;
+    public void setAlternateName(Text fAlternateName) {
+        this.fAlternateName = fAlternateName;
     }
 
-    private QuantitativeValue fTongueWeight;
+    private Text fName;
 
     /**
-     * The permitted vertical load (TWR) of a trailer attached to the vehicle. Also referred to as Tongue Load Rating (TLR) or Vertical Load Rating (VLR)<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
+     * The name of the item.
      *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     * @return {@link Text}
      */
     @Override
-    public QuantitativeValue getTongueWeight() {
-        return fTongueWeight;
-    }
-
-    /**
-     * The permitted vertical load (TWR) of a trailer attached to the vehicle. Also referred to as Tongue Load Rating (TLR) or Vertical Load Rating (VLR)<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
-     *
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void setTongueWeight(QuantitativeValue fTongueWeight) {
-        this.fTongueWeight = fTongueWeight;
-    }
-
-    private Country fCountryOfOrigin;
-
-    /**
-     * The country of origin of something, including products as well as creative  works such as movie and TV content.
-     * 
-     * In the case of TV and movie, this would be the country of the principle offices of the production company or individual responsible for the movie. For other kinds of [[CreativeWork]] it is difficult to provide fully general guidance, and properties such as [[contentLocation]] and [[locationCreated]] may be more applicable.
-     * 
-     * In the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.
-     *
-     * @return {@link Country}
-     */
-    @Override
-    public Country getCountryOfOrigin() {
-        return fCountryOfOrigin;
+    public Text getName() {
+        return fName;
     }
 
     /**
-     * The country of origin of something, including products as well as creative  works such as movie and TV content.
-     * 
-     * In the case of TV and movie, this would be the country of the principle offices of the production company or individual responsible for the movie. For other kinds of [[CreativeWork]] it is difficult to provide fully general guidance, and properties such as [[contentLocation]] and [[locationCreated]] may be more applicable.
-     * 
-     * In the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.
+     * The name of the item.
      *
      */
     @Override
-    public void setCountryOfOrigin(Country fCountryOfOrigin) {
-        this.fCountryOfOrigin = fCountryOfOrigin;
+    public void setName(Text fName) {
+        this.fName = fName;
+    }
+
+    private Action fPotentialAction;
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public Action getPotentialAction() {
+        return fPotentialAction;
+    }
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     */
+    @Override
+    public void setPotentialAction(Action fPotentialAction) {
+        this.fPotentialAction = fPotentialAction;
+    }
+
+    private Object fImage;
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link URL} or {@link ImageObject}
+     */
+    @Override
+    public <T> T getImage() {
+        return (T) fImage;
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     */
+    @Override
+    public void setImage(Object fImage) {
+        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
+        }
+        this.fImage = fImage;
+    }
+
+    private URL fUrl;
+
+    /**
+     * URL of the item.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getUrl() {
+        return fUrl;
+    }
+
+    /**
+     * URL of the item.
+     *
+     */
+    @Override
+    public void setUrl(URL fUrl) {
+        this.fUrl = fUrl;
+    }
+
+    private Text fDescription;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDescription() {
+        return fDescription;
+    }
+
+    /**
+     * A description of the item.
+     *
+     */
+    @Override
+    public void setDescription(Text fDescription) {
+        this.fDescription = fDescription;
+    }
+
+    private Object fSubjectOf;
+
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @return {@link Event} or {@link CreativeWork}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public <T> T getSubjectOf() {
+        return (T) fSubjectOf;
+    }
+
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public void setSubjectOf(Object fSubjectOf) {
+        if(!(fSubjectOf instanceof Event) && !(fSubjectOf instanceof CreativeWork)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'subjectOf': " + fSubjectOf);
+        }
+        this.fSubjectOf = fSubjectOf;
+    }
+
+    private URL fAdditionalType;
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getAdditionalType() {
+        return fAdditionalType;
+    }
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     */
+    @Override
+    public void setAdditionalType(URL fAdditionalType) {
+        this.fAdditionalType = fAdditionalType;
+    }
+
+    private Text fDisambiguatingDescription;
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDisambiguatingDescription() {
+        return fDisambiguatingDescription;
+    }
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     */
+    @Override
+    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
+        this.fDisambiguatingDescription = fDisambiguatingDescription;
+    }
+
+    private URL fSameAs;
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getSameAs() {
+        return fSameAs;
+    }
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     */
+    @Override
+    public void setSameAs(URL fSameAs) {
+        this.fSameAs = fSameAs;
+    }
+
+    private Object fIdentifier;
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @return {@link URL} or {@link Text} or {@link PropertyValue}
+     */
+    @Override
+    public <T> T getIdentifier() {
+        return (T) fIdentifier;
+    }
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     */
+    @Override
+    public void setIdentifier(Object fIdentifier) {
+        if(!(fIdentifier instanceof URL) && !(fIdentifier instanceof Text) && !(fIdentifier instanceof PropertyValue)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
+        }
+        this.fIdentifier = fIdentifier;
     }
 }

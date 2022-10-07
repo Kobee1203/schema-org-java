@@ -30,25 +30,25 @@ import org.schema.model.Intangible;
 @JsonLdTypeName("schema:OrderItem")
 public class OrderItemImpl implements OrderItem {
 
-    private Text fOrderItemNumber;
+    private ParcelDelivery fOrderDelivery;
 
     /**
-     * The identifier of the order item.
+     * The delivery of the parcel related to this order or order item.
      *
-     * @return {@link Text}
+     * @return {@link ParcelDelivery}
      */
     @Override
-    public Text getOrderItemNumber() {
-        return fOrderItemNumber;
+    public ParcelDelivery getOrderDelivery() {
+        return fOrderDelivery;
     }
 
     /**
-     * The identifier of the order item.
+     * The delivery of the parcel related to this order or order item.
      *
      */
     @Override
-    public void setOrderItemNumber(Text fOrderItemNumber) {
-        this.fOrderItemNumber = fOrderItemNumber;
+    public void setOrderDelivery(ParcelDelivery fOrderDelivery) {
+        this.fOrderDelivery = fOrderDelivery;
     }
 
     private OrderStatus fOrderItemStatus;
@@ -70,6 +70,225 @@ public class OrderItemImpl implements OrderItem {
     @Override
     public void setOrderItemStatus(OrderStatus fOrderItemStatus) {
         this.fOrderItemStatus = fOrderItemStatus;
+    }
+
+    private Number fOrderQuantity;
+
+    /**
+     * The number of the item ordered. If the property is not set, assume the quantity is one.
+     *
+     * @return {@link Number}
+     */
+    @Override
+    public Number getOrderQuantity() {
+        return fOrderQuantity;
+    }
+
+    /**
+     * The number of the item ordered. If the property is not set, assume the quantity is one.
+     *
+     */
+    @Override
+    public void setOrderQuantity(Number fOrderQuantity) {
+        this.fOrderQuantity = fOrderQuantity;
+    }
+
+    private Text fOrderItemNumber;
+
+    /**
+     * The identifier of the order item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getOrderItemNumber() {
+        return fOrderItemNumber;
+    }
+
+    /**
+     * The identifier of the order item.
+     *
+     */
+    @Override
+    public void setOrderItemNumber(Text fOrderItemNumber) {
+        this.fOrderItemNumber = fOrderItemNumber;
+    }
+
+    private Object fOrderedItem;
+
+    /**
+     * The item ordered.
+     *
+     * @return {@link Service} or {@link OrderItem} or {@link Product}
+     */
+    @Override
+    public <T> T getOrderedItem() {
+        return (T) fOrderedItem;
+    }
+
+    /**
+     * The item ordered.
+     *
+     */
+    @Override
+    public void setOrderedItem(Object fOrderedItem) {
+        if(!(fOrderedItem instanceof Service) && !(fOrderedItem instanceof OrderItem) && !(fOrderedItem instanceof Product)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'orderedItem': " + fOrderedItem);
+        }
+        this.fOrderedItem = fOrderedItem;
+    }
+
+    private Object fMainEntityOfPage;
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    @Override
+    public <T> T getMainEntityOfPage() {
+        return (T) fMainEntityOfPage;
+    }
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     */
+    @Override
+    public void setMainEntityOfPage(Object fMainEntityOfPage) {
+        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
+        }
+        this.fMainEntityOfPage = fMainEntityOfPage;
+    }
+
+    private Text fAlternateName;
+
+    /**
+     * An alias for the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getAlternateName() {
+        return fAlternateName;
+    }
+
+    /**
+     * An alias for the item.
+     *
+     */
+    @Override
+    public void setAlternateName(Text fAlternateName) {
+        this.fAlternateName = fAlternateName;
+    }
+
+    private Text fName;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getName() {
+        return fName;
+    }
+
+    /**
+     * The name of the item.
+     *
+     */
+    @Override
+    public void setName(Text fName) {
+        this.fName = fName;
+    }
+
+    private Action fPotentialAction;
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public Action getPotentialAction() {
+        return fPotentialAction;
+    }
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     */
+    @Override
+    public void setPotentialAction(Action fPotentialAction) {
+        this.fPotentialAction = fPotentialAction;
+    }
+
+    private Object fImage;
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link URL} or {@link ImageObject}
+     */
+    @Override
+    public <T> T getImage() {
+        return (T) fImage;
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     */
+    @Override
+    public void setImage(Object fImage) {
+        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
+        }
+        this.fImage = fImage;
+    }
+
+    private URL fUrl;
+
+    /**
+     * URL of the item.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getUrl() {
+        return fUrl;
+    }
+
+    /**
+     * URL of the item.
+     *
+     */
+    @Override
+    public void setUrl(URL fUrl) {
+        this.fUrl = fUrl;
+    }
+
+    private Text fDescription;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDescription() {
+        return fDescription;
+    }
+
+    /**
+     * A description of the item.
+     *
+     */
+    @Override
+    public void setDescription(Text fDescription) {
+        this.fDescription = fDescription;
     }
 
     private Object fSubjectOf;
@@ -98,25 +317,25 @@ public class OrderItemImpl implements OrderItem {
         this.fSubjectOf = fSubjectOf;
     }
 
-    private Text fName;
+    private URL fAdditionalType;
 
     /**
-     * The name of the item.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
-     * @return {@link Text}
+     * @return {@link URL}
      */
     @Override
-    public Text getName() {
-        return fName;
+    public URL getAdditionalType() {
+        return fAdditionalType;
     }
 
     /**
-     * The name of the item.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
      */
     @Override
-    public void setName(Text fName) {
-        this.fName = fName;
+    public void setAdditionalType(URL fAdditionalType) {
+        this.fAdditionalType = fAdditionalType;
     }
 
     private Text fDisambiguatingDescription;
@@ -138,30 +357,6 @@ public class OrderItemImpl implements OrderItem {
     @Override
     public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
         this.fDisambiguatingDescription = fDisambiguatingDescription;
-    }
-
-    private Object fImage;
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link URL} or {@link ImageObject}
-     */
-    @Override
-    public <T> T getImage() {
-        return (T) fImage;
-    }
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     */
-    @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
-        this.fImage = fImage;
     }
 
     private URL fSameAs;
@@ -209,200 +404,5 @@ public class OrderItemImpl implements OrderItem {
             throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
         }
         this.fIdentifier = fIdentifier;
-    }
-
-    private Text fAlternateName;
-
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getAlternateName() {
-        return fAlternateName;
-    }
-
-    /**
-     * An alias for the item.
-     *
-     */
-    @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
-    }
-
-    private Object fMainEntityOfPage;
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     */
-    @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
-        }
-        this.fMainEntityOfPage = fMainEntityOfPage;
-    }
-
-    private Object fOrderedItem;
-
-    /**
-     * The item ordered.
-     *
-     * @return {@link Service} or {@link OrderItem} or {@link Product}
-     */
-    @Override
-    public <T> T getOrderedItem() {
-        return (T) fOrderedItem;
-    }
-
-    /**
-     * The item ordered.
-     *
-     */
-    @Override
-    public void setOrderedItem(Object fOrderedItem) {
-        if(!(fOrderedItem instanceof Service) && !(fOrderedItem instanceof OrderItem) && !(fOrderedItem instanceof Product)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'orderedItem': " + fOrderedItem);
-        }
-        this.fOrderedItem = fOrderedItem;
-    }
-
-    private URL fUrl;
-
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getUrl() {
-        return fUrl;
-    }
-
-    /**
-     * URL of the item.
-     *
-     */
-    @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
-    }
-
-    private Number fOrderQuantity;
-
-    /**
-     * The number of the item ordered. If the property is not set, assume the quantity is one.
-     *
-     * @return {@link Number}
-     */
-    @Override
-    public Number getOrderQuantity() {
-        return fOrderQuantity;
-    }
-
-    /**
-     * The number of the item ordered. If the property is not set, assume the quantity is one.
-     *
-     */
-    @Override
-    public void setOrderQuantity(Number fOrderQuantity) {
-        this.fOrderQuantity = fOrderQuantity;
-    }
-
-    private URL fAdditionalType;
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getAdditionalType() {
-        return fAdditionalType;
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     */
-    @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
-    }
-
-    private ParcelDelivery fOrderDelivery;
-
-    /**
-     * The delivery of the parcel related to this order or order item.
-     *
-     * @return {@link ParcelDelivery}
-     */
-    @Override
-    public ParcelDelivery getOrderDelivery() {
-        return fOrderDelivery;
-    }
-
-    /**
-     * The delivery of the parcel related to this order or order item.
-     *
-     */
-    @Override
-    public void setOrderDelivery(ParcelDelivery fOrderDelivery) {
-        this.fOrderDelivery = fOrderDelivery;
-    }
-
-    private Text fDescription;
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDescription() {
-        return fDescription;
-    }
-
-    /**
-     * A description of the item.
-     *
-     */
-    @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
-    }
-
-    private Action fPotentialAction;
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
-    @Override
-    public Action getPotentialAction() {
-        return fPotentialAction;
-    }
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     */
-    @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
     }
 }

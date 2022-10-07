@@ -32,55 +32,6 @@ import org.schema.model.JsonLdTypeName;
 @JsonLdTypeName("schema:Gene")
 public class GeneImpl implements Gene {
 
-    private Object fHasMolecularFunction;
-
-    /**
-     * Molecular function performed by this BioChemEntity; please use PropertyValue if you want to include any evidence.
-     *
-     * @return {@link PropertyValue} or {@link DefinedTerm} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     */
-    @Override
-    public <T> T getHasMolecularFunction() {
-        return (T) fHasMolecularFunction;
-    }
-
-    /**
-     * Molecular function performed by this BioChemEntity; please use PropertyValue if you want to include any evidence.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     */
-    @Override
-    public void setHasMolecularFunction(Object fHasMolecularFunction) {
-        if(!(fHasMolecularFunction instanceof PropertyValue) && !(fHasMolecularFunction instanceof DefinedTerm) && !(fHasMolecularFunction instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'hasMolecularFunction': " + fHasMolecularFunction);
-        }
-        this.fHasMolecularFunction = fHasMolecularFunction;
-    }
-
-    private BioChemEntity fBioChemInteraction;
-
-    /**
-     * A BioChemEntity that is known to interact with this item.
-     *
-     * @return {@link BioChemEntity}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     */
-    @Override
-    public BioChemEntity getBioChemInteraction() {
-        return fBioChemInteraction;
-    }
-
-    /**
-     * A BioChemEntity that is known to interact with this item.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     */
-    @Override
-    public void setBioChemInteraction(BioChemEntity fBioChemInteraction) {
-        this.fBioChemInteraction = fBioChemInteraction;
-    }
-
     private Gene fAlternativeOf;
 
     /**
@@ -104,145 +55,126 @@ public class GeneImpl implements Gene {
         this.fAlternativeOf = fAlternativeOf;
     }
 
-    private Text fAlternateName;
+    private Text fHasBioPolymerSequence;
 
     /**
-     * An alias for the item.
+     * A symbolic representation of a BioChemEnity. For example, a nucleotide sequence of a Gene or an amino acid sequence of a Protein.
      *
      * @return {@link Text}
-     */
-    @Override
-    public Text getAlternateName() {
-        return fAlternateName;
-    }
-
-    /**
-     * An alias for the item.
-     *
-     */
-    @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
-    }
-
-    private Object fMainEntityOfPage;
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     */
-    @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
-        }
-        this.fMainEntityOfPage = fMainEntityOfPage;
-    }
-
-    private Object fAssociatedDisease;
-
-    /**
-     * Disease associated to this BioChemEntity. Such disease can be a MedicalCondition or a URL. If you want to add an evidence supporting the association, please use PropertyValue.
-     *
-     * @return {@link URL} or {@link PropertyValue} or {@link MedicalCondition}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
     @Override
-    public <T> T getAssociatedDisease() {
-        return (T) fAssociatedDisease;
+    public Text getHasBioPolymerSequence() {
+        return fHasBioPolymerSequence;
     }
 
     /**
-     * Disease associated to this BioChemEntity. Such disease can be a MedicalCondition or a URL. If you want to add an evidence supporting the association, please use PropertyValue.
+     * A symbolic representation of a BioChemEnity. For example, a nucleotide sequence of a Gene or an amino acid sequence of a Protein.
      *
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
     @Override
-    public void setAssociatedDisease(Object fAssociatedDisease) {
-        if(!(fAssociatedDisease instanceof URL) && !(fAssociatedDisease instanceof PropertyValue) && !(fAssociatedDisease instanceof MedicalCondition)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'associatedDisease': " + fAssociatedDisease);
-        }
-        this.fAssociatedDisease = fAssociatedDisease;
+    public void setHasBioPolymerSequence(Text fHasBioPolymerSequence) {
+        this.fHasBioPolymerSequence = fHasBioPolymerSequence;
     }
 
-    private Object fIsInvolvedInBiologicalProcess;
+    private BioChemEntity fEncodesBioChemEntity;
 
     /**
-     * Biological process this BioChemEntity is involved in; please use PropertyValue if you want to include any evidence.
-     *
-     * @return {@link PropertyValue} or {@link URL} or {@link DefinedTerm}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     */
-    @Override
-    public <T> T getIsInvolvedInBiologicalProcess() {
-        return (T) fIsInvolvedInBiologicalProcess;
-    }
-
-    /**
-     * Biological process this BioChemEntity is involved in; please use PropertyValue if you want to include any evidence.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     */
-    @Override
-    public void setIsInvolvedInBiologicalProcess(Object fIsInvolvedInBiologicalProcess) {
-        if(!(fIsInvolvedInBiologicalProcess instanceof PropertyValue) && !(fIsInvolvedInBiologicalProcess instanceof URL) && !(fIsInvolvedInBiologicalProcess instanceof DefinedTerm)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'isInvolvedInBiologicalProcess': " + fIsInvolvedInBiologicalProcess);
-        }
-        this.fIsInvolvedInBiologicalProcess = fIsInvolvedInBiologicalProcess;
-    }
-
-    private Action fPotentialAction;
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
-    @Override
-    public Action getPotentialAction() {
-        return fPotentialAction;
-    }
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     */
-    @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
-    }
-
-    private BioChemEntity fBioChemSimilarity;
-
-    /**
-     * A similar BioChemEntity, e.g., obtained by fingerprint similarity algorithms.
+     * Another BioChemEntity encoded by this one. 
      *
      * @return {@link BioChemEntity}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
     @Override
-    public BioChemEntity getBioChemSimilarity() {
-        return fBioChemSimilarity;
+    public BioChemEntity getEncodesBioChemEntity() {
+        return fEncodesBioChemEntity;
     }
 
     /**
-     * A similar BioChemEntity, e.g., obtained by fingerprint similarity algorithms.
+     * Another BioChemEntity encoded by this one. 
      *
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
     @Override
-    public void setBioChemSimilarity(BioChemEntity fBioChemSimilarity) {
-        this.fBioChemSimilarity = fBioChemSimilarity;
+    public void setEncodesBioChemEntity(BioChemEntity fEncodesBioChemEntity) {
+        this.fEncodesBioChemEntity = fEncodesBioChemEntity;
+    }
+
+    private Object fExpressedIn;
+
+    /**
+     * Tissue, organ, biological sample, etc in which activity of this gene has been observed experimentally. For example brain, digestive system.
+     *
+     * @return {@link AnatomicalStructure} or {@link BioChemEntity} or {@link DefinedTerm} or {@link AnatomicalSystem}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    @Override
+    public <T> T getExpressedIn() {
+        return (T) fExpressedIn;
+    }
+
+    /**
+     * Tissue, organ, biological sample, etc in which activity of this gene has been observed experimentally. For example brain, digestive system.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    @Override
+    public void setExpressedIn(Object fExpressedIn) {
+        if(!(fExpressedIn instanceof AnatomicalStructure) && !(fExpressedIn instanceof BioChemEntity) && !(fExpressedIn instanceof DefinedTerm) && !(fExpressedIn instanceof AnatomicalSystem)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'expressedIn': " + fExpressedIn);
+        }
+        this.fExpressedIn = fExpressedIn;
+    }
+
+    private Grant fFunding;
+
+    /**
+     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
+     *
+     * @return {@link Grant}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    @Override
+    public Grant getFunding() {
+        return fFunding;
+    }
+
+    /**
+     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    @Override
+    public void setFunding(Grant fFunding) {
+        this.fFunding = fFunding;
+    }
+
+    private Gene fIsEncodedByBioChemEntity;
+
+    /**
+     * Another BioChemEntity encoding by this one.
+     *
+     * @return {@link Gene}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    @Override
+    public Gene getIsEncodedByBioChemEntity() {
+        return fIsEncodedByBioChemEntity;
+    }
+
+    /**
+     * Another BioChemEntity encoding by this one.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    @Override
+    public void setIsEncodedByBioChemEntity(Gene fIsEncodedByBioChemEntity) {
+        this.fIsEncodedByBioChemEntity = fIsEncodedByBioChemEntity;
     }
 
     private BioChemEntity fIsPartOfBioChemEntity;
@@ -294,314 +226,30 @@ public class GeneImpl implements Gene {
         this.fTaxonomicRange = fTaxonomicRange;
     }
 
-    private Object fExpressedIn;
+    private Object fIsInvolvedInBiologicalProcess;
 
     /**
-     * Tissue, organ, biological sample, etc in which activity of this gene has been observed experimentally. For example brain, digestive system.
+     * Biological process this BioChemEntity is involved in; please use PropertyValue if you want to include any evidence.
      *
-     * @return {@link AnatomicalStructure} or {@link BioChemEntity} or {@link DefinedTerm} or {@link AnatomicalSystem}
+     * @return {@link PropertyValue} or {@link URL} or {@link DefinedTerm}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
     @Override
-    public <T> T getExpressedIn() {
-        return (T) fExpressedIn;
+    public <T> T getIsInvolvedInBiologicalProcess() {
+        return (T) fIsInvolvedInBiologicalProcess;
     }
 
     /**
-     * Tissue, organ, biological sample, etc in which activity of this gene has been observed experimentally. For example brain, digestive system.
+     * Biological process this BioChemEntity is involved in; please use PropertyValue if you want to include any evidence.
      *
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
     @Override
-    public void setExpressedIn(Object fExpressedIn) {
-        if(!(fExpressedIn instanceof AnatomicalStructure) && !(fExpressedIn instanceof BioChemEntity) && !(fExpressedIn instanceof DefinedTerm) && !(fExpressedIn instanceof AnatomicalSystem)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'expressedIn': " + fExpressedIn);
+    public void setIsInvolvedInBiologicalProcess(Object fIsInvolvedInBiologicalProcess) {
+        if(!(fIsInvolvedInBiologicalProcess instanceof PropertyValue) && !(fIsInvolvedInBiologicalProcess instanceof URL) && !(fIsInvolvedInBiologicalProcess instanceof DefinedTerm)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'isInvolvedInBiologicalProcess': " + fIsInvolvedInBiologicalProcess);
         }
-        this.fExpressedIn = fExpressedIn;
-    }
-
-    private Object fSubjectOf;
-
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @return {@link Event} or {@link CreativeWork}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    @Override
-    public <T> T getSubjectOf() {
-        return (T) fSubjectOf;
-    }
-
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    @Override
-    public void setSubjectOf(Object fSubjectOf) {
-        if(!(fSubjectOf instanceof Event) && !(fSubjectOf instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'subjectOf': " + fSubjectOf);
-        }
-        this.fSubjectOf = fSubjectOf;
-    }
-
-    private Text fName;
-
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getName() {
-        return fName;
-    }
-
-    /**
-     * The name of the item.
-     *
-     */
-    @Override
-    public void setName(Text fName) {
-        this.fName = fName;
-    }
-
-    private BioChemEntity fEncodesBioChemEntity;
-
-    /**
-     * Another BioChemEntity encoded by this one. 
-     *
-     * @return {@link BioChemEntity}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     */
-    @Override
-    public BioChemEntity getEncodesBioChemEntity() {
-        return fEncodesBioChemEntity;
-    }
-
-    /**
-     * Another BioChemEntity encoded by this one. 
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     */
-    @Override
-    public void setEncodesBioChemEntity(BioChemEntity fEncodesBioChemEntity) {
-        this.fEncodesBioChemEntity = fEncodesBioChemEntity;
-    }
-
-    private Text fDisambiguatingDescription;
-
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDisambiguatingDescription() {
-        return fDisambiguatingDescription;
-    }
-
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     */
-    @Override
-    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = fDisambiguatingDescription;
-    }
-
-    private Object fHasRepresentation;
-
-    /**
-     * A common representation such as a protein sequence or chemical structure for this entity. For images use schema.org/image.
-     *
-     * @return {@link Text} or {@link PropertyValue} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     */
-    @Override
-    public <T> T getHasRepresentation() {
-        return (T) fHasRepresentation;
-    }
-
-    /**
-     * A common representation such as a protein sequence or chemical structure for this entity. For images use schema.org/image.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     */
-    @Override
-    public void setHasRepresentation(Object fHasRepresentation) {
-        if(!(fHasRepresentation instanceof Text) && !(fHasRepresentation instanceof PropertyValue) && !(fHasRepresentation instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'hasRepresentation': " + fHasRepresentation);
-        }
-        this.fHasRepresentation = fHasRepresentation;
-    }
-
-    private Object fImage;
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link URL} or {@link ImageObject}
-     */
-    @Override
-    public <T> T getImage() {
-        return (T) fImage;
-    }
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     */
-    @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
-        this.fImage = fImage;
-    }
-
-    private URL fSameAs;
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getSameAs() {
-        return fSameAs;
-    }
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     */
-    @Override
-    public void setSameAs(URL fSameAs) {
-        this.fSameAs = fSameAs;
-    }
-
-    private Gene fIsEncodedByBioChemEntity;
-
-    /**
-     * Another BioChemEntity encoding by this one.
-     *
-     * @return {@link Gene}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     */
-    @Override
-    public Gene getIsEncodedByBioChemEntity() {
-        return fIsEncodedByBioChemEntity;
-    }
-
-    /**
-     * Another BioChemEntity encoding by this one.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     */
-    @Override
-    public void setIsEncodedByBioChemEntity(Gene fIsEncodedByBioChemEntity) {
-        this.fIsEncodedByBioChemEntity = fIsEncodedByBioChemEntity;
-    }
-
-    private Object fIdentifier;
-
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @return {@link URL} or {@link Text} or {@link PropertyValue}
-     */
-    @Override
-    public <T> T getIdentifier() {
-        return (T) fIdentifier;
-    }
-
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     */
-    @Override
-    public void setIdentifier(Object fIdentifier) {
-        if(!(fIdentifier instanceof URL) && !(fIdentifier instanceof Text) && !(fIdentifier instanceof PropertyValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
-        }
-        this.fIdentifier = fIdentifier;
-    }
-
-    private BioChemEntity fHasBioChemEntityPart;
-
-    /**
-     * Indicates a BioChemEntity that (in some sense) has this BioChemEntity as a part. 
-     *
-     * @return {@link BioChemEntity}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     */
-    @Override
-    public BioChemEntity getHasBioChemEntityPart() {
-        return fHasBioChemEntityPart;
-    }
-
-    /**
-     * Indicates a BioChemEntity that (in some sense) has this BioChemEntity as a part. 
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     */
-    @Override
-    public void setHasBioChemEntityPart(BioChemEntity fHasBioChemEntityPart) {
-        this.fHasBioChemEntityPart = fHasBioChemEntityPart;
-    }
-
-    private Grant fFunding;
-
-    /**
-     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
-     *
-     * @return {@link Grant}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     */
-    @Override
-    public Grant getFunding() {
-        return fFunding;
-    }
-
-    /**
-     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     */
-    @Override
-    public void setFunding(Grant fFunding) {
-        this.fFunding = fFunding;
-    }
-
-    private Text fHasBioPolymerSequence;
-
-    /**
-     * A symbolic representation of a BioChemEnity. For example, a nucleotide sequence of a Gene or an amino acid sequence of a Protein.
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     */
-    @Override
-    public Text getHasBioPolymerSequence() {
-        return fHasBioPolymerSequence;
-    }
-
-    /**
-     * A symbolic representation of a BioChemEnity. For example, a nucleotide sequence of a Gene or an amino acid sequence of a Protein.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     */
-    @Override
-    public void setHasBioPolymerSequence(Text fHasBioPolymerSequence) {
-        this.fHasBioPolymerSequence = fHasBioPolymerSequence;
+        this.fIsInvolvedInBiologicalProcess = fIsInvolvedInBiologicalProcess;
     }
 
     private Object fIsLocatedInSubcellularLocation;
@@ -630,67 +278,151 @@ public class GeneImpl implements Gene {
         this.fIsLocatedInSubcellularLocation = fIsLocatedInSubcellularLocation;
     }
 
-    private URL fUrl;
+    private Object fAssociatedDisease;
 
     /**
-     * URL of the item.
+     * Disease associated to this BioChemEntity. Such disease can be a MedicalCondition or a URL. If you want to add an evidence supporting the association, please use PropertyValue.
      *
-     * @return {@link URL}
+     * @return {@link URL} or {@link PropertyValue} or {@link MedicalCondition}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
     @Override
-    public URL getUrl() {
-        return fUrl;
+    public <T> T getAssociatedDisease() {
+        return (T) fAssociatedDisease;
     }
 
     /**
-     * URL of the item.
+     * Disease associated to this BioChemEntity. Such disease can be a MedicalCondition or a URL. If you want to add an evidence supporting the association, please use PropertyValue.
      *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
     @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
+    public void setAssociatedDisease(Object fAssociatedDisease) {
+        if(!(fAssociatedDisease instanceof URL) && !(fAssociatedDisease instanceof PropertyValue) && !(fAssociatedDisease instanceof MedicalCondition)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'associatedDisease': " + fAssociatedDisease);
+        }
+        this.fAssociatedDisease = fAssociatedDisease;
     }
 
-    private URL fAdditionalType;
+    private Object fHasMolecularFunction;
 
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * Molecular function performed by this BioChemEntity; please use PropertyValue if you want to include any evidence.
      *
-     * @return {@link URL}
+     * @return {@link PropertyValue} or {@link DefinedTerm} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
     @Override
-    public URL getAdditionalType() {
-        return fAdditionalType;
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     */
-    @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
-    }
-
-    private Text fDescription;
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDescription() {
-        return fDescription;
+    public <T> T getHasMolecularFunction() {
+        return (T) fHasMolecularFunction;
     }
 
     /**
-     * A description of the item.
+     * Molecular function performed by this BioChemEntity; please use PropertyValue if you want to include any evidence.
      *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
     @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
+    public void setHasMolecularFunction(Object fHasMolecularFunction) {
+        if(!(fHasMolecularFunction instanceof PropertyValue) && !(fHasMolecularFunction instanceof DefinedTerm) && !(fHasMolecularFunction instanceof URL)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'hasMolecularFunction': " + fHasMolecularFunction);
+        }
+        this.fHasMolecularFunction = fHasMolecularFunction;
+    }
+
+    private BioChemEntity fHasBioChemEntityPart;
+
+    /**
+     * Indicates a BioChemEntity that (in some sense) has this BioChemEntity as a part. 
+     *
+     * @return {@link BioChemEntity}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    @Override
+    public BioChemEntity getHasBioChemEntityPart() {
+        return fHasBioChemEntityPart;
+    }
+
+    /**
+     * Indicates a BioChemEntity that (in some sense) has this BioChemEntity as a part. 
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    @Override
+    public void setHasBioChemEntityPart(BioChemEntity fHasBioChemEntityPart) {
+        this.fHasBioChemEntityPart = fHasBioChemEntityPart;
+    }
+
+    private BioChemEntity fBioChemInteraction;
+
+    /**
+     * A BioChemEntity that is known to interact with this item.
+     *
+     * @return {@link BioChemEntity}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    @Override
+    public BioChemEntity getBioChemInteraction() {
+        return fBioChemInteraction;
+    }
+
+    /**
+     * A BioChemEntity that is known to interact with this item.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    @Override
+    public void setBioChemInteraction(BioChemEntity fBioChemInteraction) {
+        this.fBioChemInteraction = fBioChemInteraction;
+    }
+
+    private Object fHasRepresentation;
+
+    /**
+     * A common representation such as a protein sequence or chemical structure for this entity. For images use schema.org/image.
+     *
+     * @return {@link Text} or {@link PropertyValue} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    @Override
+    public <T> T getHasRepresentation() {
+        return (T) fHasRepresentation;
+    }
+
+    /**
+     * A common representation such as a protein sequence or chemical structure for this entity. For images use schema.org/image.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    @Override
+    public void setHasRepresentation(Object fHasRepresentation) {
+        if(!(fHasRepresentation instanceof Text) && !(fHasRepresentation instanceof PropertyValue) && !(fHasRepresentation instanceof URL)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'hasRepresentation': " + fHasRepresentation);
+        }
+        this.fHasRepresentation = fHasRepresentation;
+    }
+
+    private BioChemEntity fBioChemSimilarity;
+
+    /**
+     * A similar BioChemEntity, e.g., obtained by fingerprint similarity algorithms.
+     *
+     * @return {@link BioChemEntity}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    @Override
+    public BioChemEntity getBioChemSimilarity() {
+        return fBioChemSimilarity;
+    }
+
+    /**
+     * A similar BioChemEntity, e.g., obtained by fingerprint similarity algorithms.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    @Override
+    public void setBioChemSimilarity(BioChemEntity fBioChemSimilarity) {
+        this.fBioChemSimilarity = fBioChemSimilarity;
     }
 
     private DefinedTerm fBiologicalRole;
@@ -714,5 +446,273 @@ public class GeneImpl implements Gene {
     @Override
     public void setBiologicalRole(DefinedTerm fBiologicalRole) {
         this.fBiologicalRole = fBiologicalRole;
+    }
+
+    private Object fMainEntityOfPage;
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    @Override
+    public <T> T getMainEntityOfPage() {
+        return (T) fMainEntityOfPage;
+    }
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     */
+    @Override
+    public void setMainEntityOfPage(Object fMainEntityOfPage) {
+        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
+        }
+        this.fMainEntityOfPage = fMainEntityOfPage;
+    }
+
+    private Text fAlternateName;
+
+    /**
+     * An alias for the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getAlternateName() {
+        return fAlternateName;
+    }
+
+    /**
+     * An alias for the item.
+     *
+     */
+    @Override
+    public void setAlternateName(Text fAlternateName) {
+        this.fAlternateName = fAlternateName;
+    }
+
+    private Text fName;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getName() {
+        return fName;
+    }
+
+    /**
+     * The name of the item.
+     *
+     */
+    @Override
+    public void setName(Text fName) {
+        this.fName = fName;
+    }
+
+    private Action fPotentialAction;
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public Action getPotentialAction() {
+        return fPotentialAction;
+    }
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     */
+    @Override
+    public void setPotentialAction(Action fPotentialAction) {
+        this.fPotentialAction = fPotentialAction;
+    }
+
+    private Object fImage;
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link URL} or {@link ImageObject}
+     */
+    @Override
+    public <T> T getImage() {
+        return (T) fImage;
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     */
+    @Override
+    public void setImage(Object fImage) {
+        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
+        }
+        this.fImage = fImage;
+    }
+
+    private URL fUrl;
+
+    /**
+     * URL of the item.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getUrl() {
+        return fUrl;
+    }
+
+    /**
+     * URL of the item.
+     *
+     */
+    @Override
+    public void setUrl(URL fUrl) {
+        this.fUrl = fUrl;
+    }
+
+    private Text fDescription;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDescription() {
+        return fDescription;
+    }
+
+    /**
+     * A description of the item.
+     *
+     */
+    @Override
+    public void setDescription(Text fDescription) {
+        this.fDescription = fDescription;
+    }
+
+    private Object fSubjectOf;
+
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @return {@link Event} or {@link CreativeWork}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public <T> T getSubjectOf() {
+        return (T) fSubjectOf;
+    }
+
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public void setSubjectOf(Object fSubjectOf) {
+        if(!(fSubjectOf instanceof Event) && !(fSubjectOf instanceof CreativeWork)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'subjectOf': " + fSubjectOf);
+        }
+        this.fSubjectOf = fSubjectOf;
+    }
+
+    private URL fAdditionalType;
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getAdditionalType() {
+        return fAdditionalType;
+    }
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     */
+    @Override
+    public void setAdditionalType(URL fAdditionalType) {
+        this.fAdditionalType = fAdditionalType;
+    }
+
+    private Text fDisambiguatingDescription;
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDisambiguatingDescription() {
+        return fDisambiguatingDescription;
+    }
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     */
+    @Override
+    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
+        this.fDisambiguatingDescription = fDisambiguatingDescription;
+    }
+
+    private URL fSameAs;
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getSameAs() {
+        return fSameAs;
+    }
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     */
+    @Override
+    public void setSameAs(URL fSameAs) {
+        this.fSameAs = fSameAs;
+    }
+
+    private Object fIdentifier;
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @return {@link URL} or {@link Text} or {@link PropertyValue}
+     */
+    @Override
+    public <T> T getIdentifier() {
+        return (T) fIdentifier;
+    }
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     */
+    @Override
+    public void setIdentifier(Object fIdentifier) {
+        if(!(fIdentifier instanceof URL) && !(fIdentifier instanceof Text) && !(fIdentifier instanceof PropertyValue)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
+        }
+        this.fIdentifier = fIdentifier;
     }
 }

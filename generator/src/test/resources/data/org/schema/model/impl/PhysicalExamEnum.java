@@ -69,15 +69,6 @@ public enum PhysicalExamEnum implements PhysicalExam {
     }
 
     @Override
-    public MedicalCode getCode() {
-        return null;
-    }
-
-    @Override
-    public void setCode(MedicalCode fCode) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'code': method not allowed for enum PhysicalExamEnum");
-    }
-    @Override
     public <T> T getSupersededBy() {
         return null;
     }
@@ -85,42 +76,6 @@ public enum PhysicalExamEnum implements PhysicalExam {
     @Override
     public void setSupersededBy(Object fSupersededBy) {
         throw new java.lang.IllegalAccessError("Unable to set property 'supersededBy': method not allowed for enum PhysicalExamEnum");
-    }
-    @Override
-    public MedicalProcedureType getProcedureType() {
-        return null;
-    }
-
-    @Override
-    public void setProcedureType(MedicalProcedureType fProcedureType) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'procedureType': method not allowed for enum PhysicalExamEnum");
-    }
-    @Override
-    public MedicalGuideline getGuideline() {
-        return null;
-    }
-
-    @Override
-    public void setGuideline(MedicalGuideline fGuideline) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'guideline': method not allowed for enum PhysicalExamEnum");
-    }
-    @Override
-    public Text getAlternateName() {
-        return null;
-    }
-
-    @Override
-    public void setAlternateName(Text fAlternateName) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'alternateName': method not allowed for enum PhysicalExamEnum");
-    }
-    @Override
-    public <T> T getLegalStatus() {
-        return null;
-    }
-
-    @Override
-    public void setLegalStatus(Object fLegalStatus) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'legalStatus': method not allowed for enum PhysicalExamEnum");
     }
     @Override
     public <T> T getMainEntityOfPage() {
@@ -132,58 +87,13 @@ public enum PhysicalExamEnum implements PhysicalExam {
         throw new java.lang.IllegalAccessError("Unable to set property 'mainEntityOfPage': method not allowed for enum PhysicalExamEnum");
     }
     @Override
-    public Text getFollowup() {
+    public Text getAlternateName() {
         return null;
     }
 
     @Override
-    public void setFollowup(Text fFollowup) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'followup': method not allowed for enum PhysicalExamEnum");
-    }
-    @Override
-    public Organization getRecognizingAuthority() {
-        return null;
-    }
-
-    @Override
-    public void setRecognizingAuthority(Organization fRecognizingAuthority) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'recognizingAuthority': method not allowed for enum PhysicalExamEnum");
-    }
-    @Override
-    public Action getPotentialAction() {
-        return null;
-    }
-
-    @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'potentialAction': method not allowed for enum PhysicalExamEnum");
-    }
-    @Override
-    public MedicalSpecialty getRelevantSpecialty() {
-        return null;
-    }
-
-    @Override
-    public void setRelevantSpecialty(MedicalSpecialty fRelevantSpecialty) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'relevantSpecialty': method not allowed for enum PhysicalExamEnum");
-    }
-    @Override
-    public <T> T getPreparation() {
-        return null;
-    }
-
-    @Override
-    public void setPreparation(Object fPreparation) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'preparation': method not allowed for enum PhysicalExamEnum");
-    }
-    @Override
-    public <T> T getSubjectOf() {
-        return null;
-    }
-
-    @Override
-    public void setSubjectOf(Object fSubjectOf) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'subjectOf': method not allowed for enum PhysicalExamEnum");
+    public void setAlternateName(Text fAlternateName) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'alternateName': method not allowed for enum PhysicalExamEnum");
     }
     @Override
     public Text getName() {
@@ -195,13 +105,13 @@ public enum PhysicalExamEnum implements PhysicalExam {
         throw new java.lang.IllegalAccessError("Unable to set property 'name': method not allowed for enum PhysicalExamEnum");
     }
     @Override
-    public Text getDisambiguatingDescription() {
+    public Action getPotentialAction() {
         return null;
     }
 
     @Override
-    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'disambiguatingDescription': method not allowed for enum PhysicalExamEnum");
+    public void setPotentialAction(Action fPotentialAction) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'potentialAction': method not allowed for enum PhysicalExamEnum");
     }
     @Override
     public <T> T getImage() {
@@ -211,6 +121,51 @@ public enum PhysicalExamEnum implements PhysicalExam {
     @Override
     public void setImage(Object fImage) {
         throw new java.lang.IllegalAccessError("Unable to set property 'image': method not allowed for enum PhysicalExamEnum");
+    }
+    @Override
+    public URL getUrl() {
+        return null;
+    }
+
+    @Override
+    public void setUrl(URL fUrl) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'url': method not allowed for enum PhysicalExamEnum");
+    }
+    @Override
+    public Text getDescription() {
+        return null;
+    }
+
+    @Override
+    public void setDescription(Text fDescription) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'description': method not allowed for enum PhysicalExamEnum");
+    }
+    @Override
+    public <T> T getSubjectOf() {
+        return null;
+    }
+
+    @Override
+    public void setSubjectOf(Object fSubjectOf) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'subjectOf': method not allowed for enum PhysicalExamEnum");
+    }
+    @Override
+    public URL getAdditionalType() {
+        return null;
+    }
+
+    @Override
+    public void setAdditionalType(URL fAdditionalType) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'additionalType': method not allowed for enum PhysicalExamEnum");
+    }
+    @Override
+    public Text getDisambiguatingDescription() {
+        return null;
+    }
+
+    @Override
+    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'disambiguatingDescription': method not allowed for enum PhysicalExamEnum");
     }
     @Override
     public URL getSameAs() {
@@ -231,6 +186,24 @@ public enum PhysicalExamEnum implements PhysicalExam {
         throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum PhysicalExamEnum");
     }
     @Override
+    public MedicalProcedureType getProcedureType() {
+        return null;
+    }
+
+    @Override
+    public void setProcedureType(MedicalProcedureType fProcedureType) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'procedureType': method not allowed for enum PhysicalExamEnum");
+    }
+    @Override
+    public <T> T getPreparation() {
+        return null;
+    }
+
+    @Override
+    public void setPreparation(Object fPreparation) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'preparation': method not allowed for enum PhysicalExamEnum");
+    }
+    @Override
     public Text getBodyLocation() {
         return null;
     }
@@ -238,15 +211,6 @@ public enum PhysicalExamEnum implements PhysicalExam {
     @Override
     public void setBodyLocation(Text fBodyLocation) {
         throw new java.lang.IllegalAccessError("Unable to set property 'bodyLocation': method not allowed for enum PhysicalExamEnum");
-    }
-    @Override
-    public MedicineSystem getMedicineSystem() {
-        return null;
-    }
-
-    @Override
-    public void setMedicineSystem(MedicineSystem fMedicineSystem) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'medicineSystem': method not allowed for enum PhysicalExamEnum");
     }
     @Override
     public <T> T getStatus() {
@@ -258,24 +222,6 @@ public enum PhysicalExamEnum implements PhysicalExam {
         throw new java.lang.IllegalAccessError("Unable to set property 'status': method not allowed for enum PhysicalExamEnum");
     }
     @Override
-    public Grant getFunding() {
-        return null;
-    }
-
-    @Override
-    public void setFunding(Grant fFunding) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'funding': method not allowed for enum PhysicalExamEnum");
-    }
-    @Override
-    public URL getUrl() {
-        return null;
-    }
-
-    @Override
-    public void setUrl(URL fUrl) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'url': method not allowed for enum PhysicalExamEnum");
-    }
-    @Override
     public Text getHowPerformed() {
         return null;
     }
@@ -285,22 +231,31 @@ public enum PhysicalExamEnum implements PhysicalExam {
         throw new java.lang.IllegalAccessError("Unable to set property 'howPerformed': method not allowed for enum PhysicalExamEnum");
     }
     @Override
-    public URL getAdditionalType() {
+    public Text getFollowup() {
         return null;
     }
 
     @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'additionalType': method not allowed for enum PhysicalExamEnum");
+    public void setFollowup(Text fFollowup) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'followup': method not allowed for enum PhysicalExamEnum");
     }
     @Override
-    public Text getDescription() {
+    public <T> T getLegalStatus() {
         return null;
     }
 
     @Override
-    public void setDescription(Text fDescription) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'description': method not allowed for enum PhysicalExamEnum");
+    public void setLegalStatus(Object fLegalStatus) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'legalStatus': method not allowed for enum PhysicalExamEnum");
+    }
+    @Override
+    public Grant getFunding() {
+        return null;
+    }
+
+    @Override
+    public void setFunding(Grant fFunding) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'funding': method not allowed for enum PhysicalExamEnum");
     }
     @Override
     public MedicalStudy getStudy() {
@@ -310,5 +265,50 @@ public enum PhysicalExamEnum implements PhysicalExam {
     @Override
     public void setStudy(MedicalStudy fStudy) {
         throw new java.lang.IllegalAccessError("Unable to set property 'study': method not allowed for enum PhysicalExamEnum");
+    }
+    @Override
+    public MedicalCode getCode() {
+        return null;
+    }
+
+    @Override
+    public void setCode(MedicalCode fCode) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'code': method not allowed for enum PhysicalExamEnum");
+    }
+    @Override
+    public MedicalGuideline getGuideline() {
+        return null;
+    }
+
+    @Override
+    public void setGuideline(MedicalGuideline fGuideline) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'guideline': method not allowed for enum PhysicalExamEnum");
+    }
+    @Override
+    public Organization getRecognizingAuthority() {
+        return null;
+    }
+
+    @Override
+    public void setRecognizingAuthority(Organization fRecognizingAuthority) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'recognizingAuthority': method not allowed for enum PhysicalExamEnum");
+    }
+    @Override
+    public MedicineSystem getMedicineSystem() {
+        return null;
+    }
+
+    @Override
+    public void setMedicineSystem(MedicineSystem fMedicineSystem) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'medicineSystem': method not allowed for enum PhysicalExamEnum");
+    }
+    @Override
+    public MedicalSpecialty getRelevantSpecialty() {
+        return null;
+    }
+
+    @Override
+    public void setRelevantSpecialty(MedicalSpecialty fRelevantSpecialty) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'relevantSpecialty': method not allowed for enum PhysicalExamEnum");
     }
 }

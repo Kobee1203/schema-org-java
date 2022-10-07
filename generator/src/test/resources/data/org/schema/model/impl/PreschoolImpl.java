@@ -63,46 +63,635 @@ import org.schema.model.Preschool;
 @JsonLdTypeName("schema:Preschool")
 public class PreschoolImpl implements Preschool {
 
-    private Boolean fIsAccessibleForFree;
+    private Person fAlumni;
 
     /**
-     * A flag to signal that the item, event, or place is accessible for free.
+     * Alumni of an organization.
+     *
+     * @return {@link Person}
+     */
+    @Override
+    public Person getAlumni() {
+        return fAlumni;
+    }
+
+    /**
+     * Alumni of an organization.
+     *
+     */
+    @Override
+    public void setAlumni(Person fAlumni) {
+        this.fAlumni = fAlumni;
+    }
+
+    private Text fOpeningHours;
+
+    /**
+     * The general opening hours for a business. Opening hours can be specified as a weekly time range, starting with days, then times per day. Multiple days can be listed with commas ',' separating each day. Day or time ranges are specified using a hyphen '-'.<br/><br/>* Days are specified using the following two-letter combinations: ```Mo```, ```Tu```, ```We```, ```Th```, ```Fr```, ```Sa```, ```Su```.<br/>* Times are specified using 24:00 format. For example, 3pm is specified as ```15:00```, 10am as ```10:00```. <br/>* Here is an example: <code>&lt;time itemprop="openingHours" datetime=&quot;Tu,Th 16:00-20:00&quot;&gt;Tuesdays and Thursdays 4-8pm&lt;/time&gt;</code>.<br/>* If a business is open 7 days a week, then it can be specified as <code>&lt;time itemprop=&quot;openingHours&quot; datetime=&quot;Mo-Su&quot;&gt;Monday through Sunday, all day&lt;/time&gt;</code>.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getOpeningHours() {
+        return fOpeningHours;
+    }
+
+    /**
+     * The general opening hours for a business. Opening hours can be specified as a weekly time range, starting with days, then times per day. Multiple days can be listed with commas ',' separating each day. Day or time ranges are specified using a hyphen '-'.<br/><br/>* Days are specified using the following two-letter combinations: ```Mo```, ```Tu```, ```We```, ```Th```, ```Fr```, ```Sa```, ```Su```.<br/>* Times are specified using 24:00 format. For example, 3pm is specified as ```15:00```, 10am as ```10:00```. <br/>* Here is an example: <code>&lt;time itemprop="openingHours" datetime=&quot;Tu,Th 16:00-20:00&quot;&gt;Tuesdays and Thursdays 4-8pm&lt;/time&gt;</code>.<br/>* If a business is open 7 days a week, then it can be specified as <code>&lt;time itemprop=&quot;openingHours&quot; datetime=&quot;Mo-Su&quot;&gt;Monday through Sunday, all day&lt;/time&gt;</code>.
+     *
+     */
+    @Override
+    public void setOpeningHours(Text fOpeningHours) {
+        this.fOpeningHours = fOpeningHours;
+    }
+
+    private Text fTelephone;
+
+    /**
+     * The telephone number.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getTelephone() {
+        return fTelephone;
+    }
+
+    /**
+     * The telephone number.
+     *
+     */
+    @Override
+    public void setTelephone(Text fTelephone) {
+        this.fTelephone = fTelephone;
+    }
+
+    private Review fReview;
+
+    /**
+     * A review of the item.
+     *
+     * @return {@link Review}
+     */
+    @Override
+    public Review getReview() {
+        return fReview;
+    }
+
+    /**
+     * A review of the item.
+     *
+     */
+    @Override
+    public void setReview(Review fReview) {
+        this.fReview = fReview;
+    }
+
+    private URL fMaps;
+
+    /**
+     * A URL to a map of the place.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getMaps() {
+        return fMaps;
+    }
+
+    /**
+     * A URL to a map of the place.
+     *
+     */
+    @Override
+    public void setMaps(URL fMaps) {
+        this.fMaps = fMaps;
+    }
+
+    private Object fGeoContains;
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. "a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @return {@link Place} or {@link GeospatialGeometry}
+     */
+    @Override
+    public <T> T getGeoContains() {
+        return (T) fGeoContains;
+    }
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. "a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     */
+    @Override
+    public void setGeoContains(Object fGeoContains) {
+        if(!(fGeoContains instanceof Place) && !(fGeoContains instanceof GeospatialGeometry)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoContains': " + fGeoContains);
+        }
+        this.fGeoContains = fGeoContains;
+    }
+
+    private Integer fMaximumAttendeeCapacity;
+
+    /**
+     * The total number of individuals that may attend an event or venue.
+     *
+     * @return {@link Integer}
+     */
+    @Override
+    public Integer getMaximumAttendeeCapacity() {
+        return fMaximumAttendeeCapacity;
+    }
+
+    /**
+     * The total number of individuals that may attend an event or venue.
+     *
+     */
+    @Override
+    public void setMaximumAttendeeCapacity(Integer fMaximumAttendeeCapacity) {
+        this.fMaximumAttendeeCapacity = fMaximumAttendeeCapacity;
+    }
+
+    private Place fContainsPlace;
+
+    /**
+     * The basic containment relation between a place and another that it contains.
+     *
+     * @return {@link Place}
+     */
+    @Override
+    public Place getContainsPlace() {
+        return fContainsPlace;
+    }
+
+    /**
+     * The basic containment relation between a place and another that it contains.
+     *
+     */
+    @Override
+    public void setContainsPlace(Place fContainsPlace) {
+        this.fContainsPlace = fContainsPlace;
+    }
+
+    private Boolean fSmokingAllowed;
+
+    /**
+     * Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
+     */
+    @Override
+    public Boolean getSmokingAllowed() {
+        return fSmokingAllowed;
+    }
+
+    /**
+     * Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.
+     *
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
+     */
+    @Override
+    public void setSmokingAllowed(Boolean fSmokingAllowed) {
+        this.fSmokingAllowed = fSmokingAllowed;
+    }
+
+    private Text fGlobalLocationNumber;
+
+    /**
+     * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public Text getGlobalLocationNumber() {
+        return fGlobalLocationNumber;
+    }
+
+    /**
+     * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setGlobalLocationNumber(Text fGlobalLocationNumber) {
+        this.fGlobalLocationNumber = fGlobalLocationNumber;
+    }
+
+    private Object fKeywords;
+
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     * @return {@link DefinedTerm} or {@link Text} or {@link URL}
+     */
+    @Override
+    public <T> T getKeywords() {
+        return (T) fKeywords;
+    }
+
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     */
+    @Override
+    public void setKeywords(Object fKeywords) {
+        if(!(fKeywords instanceof DefinedTerm) && !(fKeywords instanceof Text) && !(fKeywords instanceof URL)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'keywords': " + fKeywords);
+        }
+        this.fKeywords = fKeywords;
+    }
+
+    private Object fGeoIntersects;
+
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @return {@link GeospatialGeometry} or {@link Place}
+     */
+    @Override
+    public <T> T getGeoIntersects() {
+        return (T) fGeoIntersects;
+    }
+
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     */
+    @Override
+    public void setGeoIntersects(Object fGeoIntersects) {
+        if(!(fGeoIntersects instanceof GeospatialGeometry) && !(fGeoIntersects instanceof Place)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoIntersects': " + fGeoIntersects);
+        }
+        this.fGeoIntersects = fGeoIntersects;
+    }
+
+    private Object fLatitude;
+
+    /**
+     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     *
+     * @return {@link Text} or {@link Number}
+     */
+    @Override
+    public <T> T getLatitude() {
+        return (T) fLatitude;
+    }
+
+    /**
+     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     *
+     */
+    @Override
+    public void setLatitude(Object fLatitude) {
+        if(!(fLatitude instanceof Text) && !(fLatitude instanceof Number)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'latitude': " + fLatitude);
+        }
+        this.fLatitude = fLatitude;
+    }
+
+    private Object fGeoTouches;
+
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) touch: they have at least one boundary point in common, but no interior points." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM) )
+     *
+     * @return {@link Place} or {@link GeospatialGeometry}
+     */
+    @Override
+    public <T> T getGeoTouches() {
+        return (T) fGeoTouches;
+    }
+
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) touch: they have at least one boundary point in common, but no interior points." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM) )
+     *
+     */
+    @Override
+    public void setGeoTouches(Object fGeoTouches) {
+        if(!(fGeoTouches instanceof Place) && !(fGeoTouches instanceof GeospatialGeometry)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoTouches': " + fGeoTouches);
+        }
+        this.fGeoTouches = fGeoTouches;
+    }
+
+    private Object fGeoCoveredBy;
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @return {@link Place} or {@link GeospatialGeometry}
+     */
+    @Override
+    public <T> T getGeoCoveredBy() {
+        return (T) fGeoCoveredBy;
+    }
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     */
+    @Override
+    public void setGeoCoveredBy(Object fGeoCoveredBy) {
+        if(!(fGeoCoveredBy instanceof Place) && !(fGeoCoveredBy instanceof GeospatialGeometry)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoCoveredBy': " + fGeoCoveredBy);
+        }
+        this.fGeoCoveredBy = fGeoCoveredBy;
+    }
+
+    private AggregateRating fAggregateRating;
+
+    /**
+     * The overall rating, based on a collection of reviews or ratings, of the item.
+     *
+     * @return {@link AggregateRating}
+     */
+    @Override
+    public AggregateRating getAggregateRating() {
+        return fAggregateRating;
+    }
+
+    /**
+     * The overall rating, based on a collection of reviews or ratings, of the item.
+     *
+     */
+    @Override
+    public void setAggregateRating(AggregateRating fAggregateRating) {
+        this.fAggregateRating = fAggregateRating;
+    }
+
+    private Object fAddress;
+
+    /**
+     * Physical address of the item.
+     *
+     * @return {@link Text} or {@link PostalAddress}
+     */
+    @Override
+    public <T> T getAddress() {
+        return (T) fAddress;
+    }
+
+    /**
+     * Physical address of the item.
+     *
+     */
+    @Override
+    public void setAddress(Object fAddress) {
+        if(!(fAddress instanceof Text) && !(fAddress instanceof PostalAddress)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'address': " + fAddress);
+        }
+        this.fAddress = fAddress;
+    }
+
+    private Object fGeoEquals;
+
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). "Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other" (a symmetric relationship)
+     *
+     * @return {@link Place} or {@link GeospatialGeometry}
+     */
+    @Override
+    public <T> T getGeoEquals() {
+        return (T) fGeoEquals;
+    }
+
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). "Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other" (a symmetric relationship)
+     *
+     */
+    @Override
+    public void setGeoEquals(Object fGeoEquals) {
+        if(!(fGeoEquals instanceof Place) && !(fGeoEquals instanceof GeospatialGeometry)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoEquals': " + fGeoEquals);
+        }
+        this.fGeoEquals = fGeoEquals;
+    }
+
+    private URL fMap;
+
+    /**
+     * A URL to a map of the place.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getMap() {
+        return fMap;
+    }
+
+    /**
+     * A URL to a map of the place.
+     *
+     */
+    @Override
+    public void setMap(URL fMap) {
+        this.fMap = fMap;
+    }
+
+    private Boolean fPublicAccess;
+
+    /**
+     * A flag to signal that the [[Place]] is open to public visitors.  If this property is omitted there is no assumed default boolean value
      *
      * @return {@link Boolean}
      */
     @Override
-    public Boolean getIsAccessibleForFree() {
-        return fIsAccessibleForFree;
+    public Boolean getPublicAccess() {
+        return fPublicAccess;
     }
 
     /**
-     * A flag to signal that the item, event, or place is accessible for free.
+     * A flag to signal that the [[Place]] is open to public visitors.  If this property is omitted there is no assumed default boolean value
      *
      */
     @Override
-    public void setIsAccessibleForFree(Boolean fIsAccessibleForFree) {
-        this.fIsAccessibleForFree = fIsAccessibleForFree;
+    public void setPublicAccess(Boolean fPublicAccess) {
+        this.fPublicAccess = fPublicAccess;
     }
 
-    private Organization fDepartment;
+    private Object fGeoCrosses;
 
     /**
-     * A relationship between an organization and a department of that organization, also described as an organization (allowing different urls, logos, opening hours). For example: a store with a pharmacy, or a bakery with a cafe.
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: "a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
-     * @return {@link Organization}
+     * @return {@link GeospatialGeometry} or {@link Place}
      */
     @Override
-    public Organization getDepartment() {
-        return fDepartment;
+    public <T> T getGeoCrosses() {
+        return (T) fGeoCrosses;
     }
 
     /**
-     * A relationship between an organization and a department of that organization, also described as an organization (allowing different urls, logos, opening hours). For example: a store with a pharmacy, or a bakery with a cafe.
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: "a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
      */
     @Override
-    public void setDepartment(Organization fDepartment) {
-        this.fDepartment = fDepartment;
+    public void setGeoCrosses(Object fGeoCrosses) {
+        if(!(fGeoCrosses instanceof GeospatialGeometry) && !(fGeoCrosses instanceof Place)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoCrosses': " + fGeoCrosses);
+        }
+        this.fGeoCrosses = fGeoCrosses;
+    }
+
+    private Place fContainedInPlace;
+
+    /**
+     * The basic containment relation between a place and one that contains it.
+     *
+     * @return {@link Place}
+     */
+    @Override
+    public Place getContainedInPlace() {
+        return fContainedInPlace;
+    }
+
+    /**
+     * The basic containment relation between a place and one that contains it.
+     *
+     */
+    @Override
+    public void setContainedInPlace(Place fContainedInPlace) {
+        this.fContainedInPlace = fContainedInPlace;
+    }
+
+    private LocationFeatureSpecification fAmenityFeature;
+
+    /**
+     * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
+     *
+     * @return {@link LocationFeatureSpecification}
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
+     */
+    @Override
+    public LocationFeatureSpecification getAmenityFeature() {
+        return fAmenityFeature;
+    }
+
+    /**
+     * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
+     *
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
+     */
+    @Override
+    public void setAmenityFeature(LocationFeatureSpecification fAmenityFeature) {
+        this.fAmenityFeature = fAmenityFeature;
+    }
+
+    private Text fSlogan;
+
+    /**
+     * A slogan or motto associated with the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getSlogan() {
+        return fSlogan;
+    }
+
+    /**
+     * A slogan or motto associated with the item.
+     *
+     */
+    @Override
+    public void setSlogan(Text fSlogan) {
+        this.fSlogan = fSlogan;
+    }
+
+    private Object fPhotos;
+
+    /**
+     * Photographs of this place.
+     *
+     * @return {@link ImageObject} or {@link Photograph}
+     */
+    @Override
+    public <T> T getPhotos() {
+        return (T) fPhotos;
+    }
+
+    /**
+     * Photographs of this place.
+     *
+     */
+    @Override
+    public void setPhotos(Object fPhotos) {
+        if(!(fPhotos instanceof ImageObject) && !(fPhotos instanceof Photograph)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'photos': " + fPhotos);
+        }
+        this.fPhotos = fPhotos;
+    }
+
+    private Object fGeoCovers;
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. "Every point of b is a point of (the interior or boundary of) a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @return {@link GeospatialGeometry} or {@link Place}
+     */
+    @Override
+    public <T> T getGeoCovers() {
+        return (T) fGeoCovers;
+    }
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. "Every point of b is a point of (the interior or boundary of) a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     */
+    @Override
+    public void setGeoCovers(Object fGeoCovers) {
+        if(!(fGeoCovers instanceof GeospatialGeometry) && !(fGeoCovers instanceof Place)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoCovers': " + fGeoCovers);
+        }
+        this.fGeoCovers = fGeoCovers;
+    }
+
+    private Place fContainedIn;
+
+    /**
+     * The basic containment relation between a place and one that contains it.
+     *
+     * @return {@link Place}
+     */
+    @Override
+    public Place getContainedIn() {
+        return fContainedIn;
+    }
+
+    /**
+     * The basic containment relation between a place and one that contains it.
+     *
+     */
+    @Override
+    public void setContainedIn(Place fContainedIn) {
+        this.fContainedIn = fContainedIn;
+    }
+
+    private Boolean fHasDriveThroughService;
+
+    /**
+     * Indicates whether some facility (e.g. [[FoodEstablishment]], [[CovidTestingFacility]]) offers a service that can be used by driving through in a car. In the case of [[CovidTestingFacility]] such facilities could potentially help with social distancing from other potentially-infected users.
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    @Override
+    public Boolean getHasDriveThroughService() {
+        return fHasDriveThroughService;
+    }
+
+    /**
+     * Indicates whether some facility (e.g. [[FoodEstablishment]], [[CovidTestingFacility]]) offers a service that can be used by driving through in a car. In the case of [[CovidTestingFacility]] such facilities could potentially help with social distancing from other potentially-infected users.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    @Override
+    public void setHasDriveThroughService(Boolean fHasDriveThroughService) {
+        this.fHasDriveThroughService = fHasDriveThroughService;
     }
 
     private Object fLogo;
@@ -131,845 +720,189 @@ public class PreschoolImpl implements Preschool {
         this.fLogo = fLogo;
     }
 
-    private Object fOwnershipFundingInfo;
+    private Boolean fIsAccessibleForFree;
 
     /**
-     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.
-     *
-     * @return {@link URL} or {@link AboutPage} or {@link Text} or {@link CreativeWork}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     */
-    @Override
-    public <T> T getOwnershipFundingInfo() {
-        return (T) fOwnershipFundingInfo;
-    }
-
-    /**
-     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     */
-    @Override
-    public void setOwnershipFundingInfo(Object fOwnershipFundingInfo) {
-        if(!(fOwnershipFundingInfo instanceof URL) && !(fOwnershipFundingInfo instanceof AboutPage) && !(fOwnershipFundingInfo instanceof Text) && !(fOwnershipFundingInfo instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'ownershipFundingInfo': " + fOwnershipFundingInfo);
-        }
-        this.fOwnershipFundingInfo = fOwnershipFundingInfo;
-    }
-
-    private Object fMainEntityOfPage;
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     */
-    @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
-        }
-        this.fMainEntityOfPage = fMainEntityOfPage;
-    }
-
-    private ContactPoint fContactPoints;
-
-    /**
-     * A contact point for a person or organization.
-     *
-     * @return {@link ContactPoint}
-     */
-    @Override
-    public ContactPoint getContactPoints() {
-        return fContactPoints;
-    }
-
-    /**
-     * A contact point for a person or organization.
-     *
-     */
-    @Override
-    public void setContactPoints(ContactPoint fContactPoints) {
-        this.fContactPoints = fContactPoints;
-    }
-
-    private Object fGeoCovers;
-
-    /**
-     * Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. "Every point of b is a point of (the interior or boundary of) a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     * @return {@link GeospatialGeometry} or {@link Place}
-     */
-    @Override
-    public <T> T getGeoCovers() {
-        return (T) fGeoCovers;
-    }
-
-    /**
-     * Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. "Every point of b is a point of (the interior or boundary of) a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     */
-    @Override
-    public void setGeoCovers(Object fGeoCovers) {
-        if(!(fGeoCovers instanceof GeospatialGeometry) && !(fGeoCovers instanceof Place)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoCovers': " + fGeoCovers);
-        }
-        this.fGeoCovers = fGeoCovers;
-    }
-
-    private Integer fMaximumAttendeeCapacity;
-
-    /**
-     * The total number of individuals that may attend an event or venue.
-     *
-     * @return {@link Integer}
-     */
-    @Override
-    public Integer getMaximumAttendeeCapacity() {
-        return fMaximumAttendeeCapacity;
-    }
-
-    /**
-     * The total number of individuals that may attend an event or venue.
-     *
-     */
-    @Override
-    public void setMaximumAttendeeCapacity(Integer fMaximumAttendeeCapacity) {
-        this.fMaximumAttendeeCapacity = fMaximumAttendeeCapacity;
-    }
-
-    private Object fEthicsPolicy;
-
-    /**
-     * Statement about ethics policy, e.g. of a [[NewsMediaOrganization]] regarding journalistic and publishing practices, or of a [[Restaurant]], a page describing food source policies. In the case of a [[NewsMediaOrganization]], an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization.
-     *
-     * @return {@link URL} or {@link CreativeWork}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     */
-    @Override
-    public <T> T getEthicsPolicy() {
-        return (T) fEthicsPolicy;
-    }
-
-    /**
-     * Statement about ethics policy, e.g. of a [[NewsMediaOrganization]] regarding journalistic and publishing practices, or of a [[Restaurant]], a page describing food source policies. In the case of a [[NewsMediaOrganization]], an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     */
-    @Override
-    public void setEthicsPolicy(Object fEthicsPolicy) {
-        if(!(fEthicsPolicy instanceof URL) && !(fEthicsPolicy instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'ethicsPolicy': " + fEthicsPolicy);
-        }
-        this.fEthicsPolicy = fEthicsPolicy;
-    }
-
-    private Event fEvents;
-
-    /**
-     * Upcoming or past events associated with this place or organization.
-     *
-     * @return {@link Event}
-     */
-    @Override
-    public Event getEvents() {
-        return fEvents;
-    }
-
-    /**
-     * Upcoming or past events associated with this place or organization.
-     *
-     */
-    @Override
-    public void setEvents(Event fEvents) {
-        this.fEvents = fEvents;
-    }
-
-    private Place fContainedIn;
-
-    /**
-     * The basic containment relation between a place and one that contains it.
-     *
-     * @return {@link Place}
-     */
-    @Override
-    public Place getContainedIn() {
-        return fContainedIn;
-    }
-
-    /**
-     * The basic containment relation between a place and one that contains it.
-     *
-     */
-    @Override
-    public void setContainedIn(Place fContainedIn) {
-        this.fContainedIn = fContainedIn;
-    }
-
-    private Object fServiceArea;
-
-    /**
-     * The geographic area where the service is provided.
-     *
-     * @return {@link GeoShape} or {@link AdministrativeArea} or {@link Place}
-     */
-    @Override
-    public <T> T getServiceArea() {
-        return (T) fServiceArea;
-    }
-
-    /**
-     * The geographic area where the service is provided.
-     *
-     */
-    @Override
-    public void setServiceArea(Object fServiceArea) {
-        if(!(fServiceArea instanceof GeoShape) && !(fServiceArea instanceof AdministrativeArea) && !(fServiceArea instanceof Place)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'serviceArea': " + fServiceArea);
-        }
-        this.fServiceArea = fServiceArea;
-    }
-
-    private AggregateRating fAggregateRating;
-
-    /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
-     *
-     * @return {@link AggregateRating}
-     */
-    @Override
-    public AggregateRating getAggregateRating() {
-        return fAggregateRating;
-    }
-
-    /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
-     *
-     */
-    @Override
-    public void setAggregateRating(AggregateRating fAggregateRating) {
-        this.fAggregateRating = fAggregateRating;
-    }
-
-    private Boolean fPublicAccess;
-
-    /**
-     * A flag to signal that the [[Place]] is open to public visitors.  If this property is omitted there is no assumed default boolean value
+     * A flag to signal that the item, event, or place is accessible for free.
      *
      * @return {@link Boolean}
      */
     @Override
-    public Boolean getPublicAccess() {
-        return fPublicAccess;
+    public Boolean getIsAccessibleForFree() {
+        return fIsAccessibleForFree;
     }
 
     /**
-     * A flag to signal that the [[Place]] is open to public visitors.  If this property is omitted there is no assumed default boolean value
+     * A flag to signal that the item, event, or place is accessible for free.
      *
      */
     @Override
-    public void setPublicAccess(Boolean fPublicAccess) {
-        this.fPublicAccess = fPublicAccess;
+    public void setIsAccessibleForFree(Boolean fIsAccessibleForFree) {
+        this.fIsAccessibleForFree = fIsAccessibleForFree;
     }
 
-    private Text fName;
+    private Object fGeoWithin;
 
     /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getName() {
-        return fName;
-    }
-
-    /**
-     * The name of the item.
-     *
-     */
-    @Override
-    public void setName(Text fName) {
-        this.fName = fName;
-    }
-
-    private Text fEmail;
-
-    /**
-     * Email address.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getEmail() {
-        return fEmail;
-    }
-
-    /**
-     * Email address.
-     *
-     */
-    @Override
-    public void setEmail(Text fEmail) {
-        this.fEmail = fEmail;
-    }
-
-    private LocationFeatureSpecification fAmenityFeature;
-
-    /**
-     * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
-     *
-     * @return {@link LocationFeatureSpecification}
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
-     */
-    @Override
-    public LocationFeatureSpecification getAmenityFeature() {
-        return fAmenityFeature;
-    }
-
-    /**
-     * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
-     *
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
-     */
-    @Override
-    public void setAmenityFeature(LocationFeatureSpecification fAmenityFeature) {
-        this.fAmenityFeature = fAmenityFeature;
-    }
-
-    private Boolean fHasDriveThroughService;
-
-    /**
-     * Indicates whether some facility (e.g. [[FoodEstablishment]], [[CovidTestingFacility]]) offers a service that can be used by driving through in a car. In the case of [[CovidTestingFacility]] such facilities could potentially help with social distancing from other potentially-infected users.
-     *
-     * @return {@link Boolean}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     */
-    @Override
-    public Boolean getHasDriveThroughService() {
-        return fHasDriveThroughService;
-    }
-
-    /**
-     * Indicates whether some facility (e.g. [[FoodEstablishment]], [[CovidTestingFacility]]) offers a service that can be used by driving through in a car. In the case of [[CovidTestingFacility]] such facilities could potentially help with social distancing from other potentially-infected users.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     */
-    @Override
-    public void setHasDriveThroughService(Boolean fHasDriveThroughService) {
-        this.fHasDriveThroughService = fHasDriveThroughService;
-    }
-
-    private Grant fFunding;
-
-    /**
-     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
-     *
-     * @return {@link Grant}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     */
-    @Override
-    public Grant getFunding() {
-        return fFunding;
-    }
-
-    /**
-     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     */
-    @Override
-    public void setFunding(Grant fFunding) {
-        this.fFunding = fFunding;
-    }
-
-    private MerchantReturnPolicy fHasMerchantReturnPolicy;
-
-    /**
-     * Specifies a MerchantReturnPolicy that may be applicable.
-     *
-     * @return {@link MerchantReturnPolicy}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    @Override
-    public MerchantReturnPolicy getHasMerchantReturnPolicy() {
-        return fHasMerchantReturnPolicy;
-    }
-
-    /**
-     * Specifies a MerchantReturnPolicy that may be applicable.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    @Override
-    public void setHasMerchantReturnPolicy(MerchantReturnPolicy fHasMerchantReturnPolicy) {
-        this.fHasMerchantReturnPolicy = fHasMerchantReturnPolicy;
-    }
-
-    private Object fGeoContains;
-
-    /**
-     * Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. "a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
      * @return {@link Place} or {@link GeospatialGeometry}
      */
     @Override
-    public <T> T getGeoContains() {
-        return (T) fGeoContains;
+    public <T> T getGeoWithin() {
+        return (T) fGeoWithin;
     }
 
     /**
-     * Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. "a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
      */
     @Override
-    public void setGeoContains(Object fGeoContains) {
-        if(!(fGeoContains instanceof Place) && !(fGeoContains instanceof GeospatialGeometry)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoContains': " + fGeoContains);
+    public void setGeoWithin(Object fGeoWithin) {
+        if(!(fGeoWithin instanceof Place) && !(fGeoWithin instanceof GeospatialGeometry)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoWithin': " + fGeoWithin);
         }
-        this.fGeoContains = fGeoContains;
+        this.fGeoWithin = fGeoWithin;
     }
 
-    private Object fGeoIntersects;
+    private Object fGeoDisjoint;
 
     /**
-     * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM))
      *
      * @return {@link GeospatialGeometry} or {@link Place}
      */
     @Override
-    public <T> T getGeoIntersects() {
-        return (T) fGeoIntersects;
+    public <T> T getGeoDisjoint() {
+        return (T) fGeoDisjoint;
     }
 
     /**
-     * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM))
      *
      */
     @Override
-    public void setGeoIntersects(Object fGeoIntersects) {
-        if(!(fGeoIntersects instanceof GeospatialGeometry) && !(fGeoIntersects instanceof Place)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoIntersects': " + fGeoIntersects);
+    public void setGeoDisjoint(Object fGeoDisjoint) {
+        if(!(fGeoDisjoint instanceof GeospatialGeometry) && !(fGeoDisjoint instanceof Place)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoDisjoint': " + fGeoDisjoint);
         }
-        this.fGeoIntersects = fGeoIntersects;
+        this.fGeoDisjoint = fGeoDisjoint;
     }
 
-    private Object fGeo;
+    private URL fTourBookingPage;
 
     /**
-     * The geo coordinates of the place.
+     * A page providing information on how to book a tour of some [[Place]], such as an [[Accommodation]] or [[ApartmentComplex]] in a real estate setting, as well as other kinds of tours as appropriate.
      *
-     * @return {@link GeoCoordinates} or {@link GeoShape}
-     */
-    @Override
-    public <T> T getGeo() {
-        return (T) fGeo;
-    }
-
-    /**
-     * The geo coordinates of the place.
-     *
-     */
-    @Override
-    public void setGeo(Object fGeo) {
-        if(!(fGeo instanceof GeoCoordinates) && !(fGeo instanceof GeoShape)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geo': " + fGeo);
-        }
-        this.fGeo = fGeo;
-    }
-
-    private Person fFounders;
-
-    /**
-     * A person who founded this organization.
-     *
-     * @return {@link Person}
-     */
-    @Override
-    public Person getFounders() {
-        return fFounders;
-    }
-
-    /**
-     * A person who founded this organization.
-     *
-     */
-    @Override
-    public void setFounders(Person fFounders) {
-        this.fFounders = fFounders;
-    }
-
-    private Boolean fSmokingAllowed;
-
-    /**
-     * Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.
-     *
-     * @return {@link Boolean}
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
-     */
-    @Override
-    public Boolean getSmokingAllowed() {
-        return fSmokingAllowed;
-    }
-
-    /**
-     * Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.
-     *
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
-     */
-    @Override
-    public void setSmokingAllowed(Boolean fSmokingAllowed) {
-        this.fSmokingAllowed = fSmokingAllowed;
-    }
-
-    private Object fKeywords;
-
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     * @return {@link DefinedTerm} or {@link Text} or {@link URL}
-     */
-    @Override
-    public <T> T getKeywords() {
-        return (T) fKeywords;
-    }
-
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     */
-    @Override
-    public void setKeywords(Object fKeywords) {
-        if(!(fKeywords instanceof DefinedTerm) && !(fKeywords instanceof Text) && !(fKeywords instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'keywords': " + fKeywords);
-        }
-        this.fKeywords = fKeywords;
-    }
-
-    private Text fTelephone;
-
-    /**
-     * The telephone number.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getTelephone() {
-        return fTelephone;
-    }
-
-    /**
-     * The telephone number.
-     *
-     */
-    @Override
-    public void setTelephone(Text fTelephone) {
-        this.fTelephone = fTelephone;
-    }
-
-    private Text fVatID;
-
-    /**
-     * The Value-added Tax ID of the organization or person.
-     *
-     * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public Text getVatID() {
-        return fVatID;
-    }
-
-    /**
-     * The Value-added Tax ID of the organization or person.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setVatID(Text fVatID) {
-        this.fVatID = fVatID;
-    }
-
-    private Text fLegalName;
-
-    /**
-     * The official name of the organization, e.g. the registered company name.
-     *
-     * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public Text getLegalName() {
-        return fLegalName;
-    }
-
-    /**
-     * The official name of the organization, e.g. the registered company name.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setLegalName(Text fLegalName) {
-        this.fLegalName = fLegalName;
-    }
-
-    private Organization fParentOrganization;
-
-    /**
-     * The larger organization that this organization is a [[subOrganization]] of, if any.
-     *
-     * @return {@link Organization}
-     */
-    @Override
-    public Organization getParentOrganization() {
-        return fParentOrganization;
-    }
-
-    /**
-     * The larger organization that this organization is a [[subOrganization]] of, if any.
-     *
-     */
-    @Override
-    public void setParentOrganization(Organization fParentOrganization) {
-        this.fParentOrganization = fParentOrganization;
-    }
-
-    private Place fHasPOS;
-
-    /**
-     * Points-of-Sales operated by the organization or person.
-     *
-     * @return {@link Place}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public Place getHasPOS() {
-        return fHasPOS;
-    }
-
-    /**
-     * Points-of-Sales operated by the organization or person.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setHasPOS(Place fHasPOS) {
-        this.fHasPOS = fHasPOS;
-    }
-
-    private Text fAlternateName;
-
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getAlternateName() {
-        return fAlternateName;
-    }
-
-    /**
-     * An alias for the item.
-     *
-     */
-    @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
-    }
-
-    private Object fAreaServed;
-
-    /**
-     * The geographic area where a service or offered item is provided.
-     *
-     * @return {@link AdministrativeArea} or {@link GeoShape} or {@link Text} or {@link Place}
-     */
-    @Override
-    public <T> T getAreaServed() {
-        return (T) fAreaServed;
-    }
-
-    /**
-     * The geographic area where a service or offered item is provided.
-     *
-     */
-    @Override
-    public void setAreaServed(Object fAreaServed) {
-        if(!(fAreaServed instanceof AdministrativeArea) && !(fAreaServed instanceof GeoShape) && !(fAreaServed instanceof Text) && !(fAreaServed instanceof Place)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'areaServed': " + fAreaServed);
-        }
-        this.fAreaServed = fAreaServed;
-    }
-
-    private Review fReview;
-
-    /**
-     * A review of the item.
-     *
-     * @return {@link Review}
-     */
-    @Override
-    public Review getReview() {
-        return fReview;
-    }
-
-    /**
-     * A review of the item.
-     *
-     */
-    @Override
-    public void setReview(Review fReview) {
-        this.fReview = fReview;
-    }
-
-    private Object fKnowsLanguage;
-
-    /**
-     * Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).
-     *
-     * @return {@link Language} or {@link Text}
+     * @return {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
     @Override
-    public <T> T getKnowsLanguage() {
-        return (T) fKnowsLanguage;
+    public URL getTourBookingPage() {
+        return fTourBookingPage;
     }
 
     /**
-     * Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).
+     * A page providing information on how to book a tour of some [[Place]], such as an [[Accommodation]] or [[ApartmentComplex]] in a real estate setting, as well as other kinds of tours as appropriate.
      *
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
     @Override
-    public void setKnowsLanguage(Object fKnowsLanguage) {
-        if(!(fKnowsLanguage instanceof Language) && !(fKnowsLanguage instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'knowsLanguage': " + fKnowsLanguage);
-        }
-        this.fKnowsLanguage = fKnowsLanguage;
+    public void setTourBookingPage(URL fTourBookingPage) {
+        this.fTourBookingPage = fTourBookingPage;
     }
 
-    private Text fTaxID;
+    private Text fIsicV4;
 
     /**
-     * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
+     * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
      *
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public Text getTaxID() {
-        return fTaxID;
+    public Text getIsicV4() {
+        return fIsicV4;
     }
 
     /**
-     * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
+     * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
      *
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setTaxID(Text fTaxID) {
-        this.fTaxID = fTaxID;
+    public void setIsicV4(Text fIsicV4) {
+        this.fIsicV4 = fIsicV4;
     }
 
-    private Object fBrand;
+    private Object fGeoOverlaps;
 
     /**
-     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
-     * @return {@link Organization} or {@link Brand}
+     * @return {@link GeospatialGeometry} or {@link Place}
      */
     @Override
-    public <T> T getBrand() {
-        return (T) fBrand;
+    public <T> T getGeoOverlaps() {
+        return (T) fGeoOverlaps;
     }
 
     /**
-     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
      */
     @Override
-    public void setBrand(Object fBrand) {
-        if(!(fBrand instanceof Organization) && !(fBrand instanceof Brand)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'brand': " + fBrand);
+    public void setGeoOverlaps(Object fGeoOverlaps) {
+        if(!(fGeoOverlaps instanceof GeospatialGeometry) && !(fGeoOverlaps instanceof Place)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoOverlaps': " + fGeoOverlaps);
         }
-        this.fBrand = fBrand;
+        this.fGeoOverlaps = fGeoOverlaps;
     }
 
-    private Text fIso6523Code;
+    private Text fBranchCode;
 
     /**
-     * An organization identifier as defined in ISO 6523(-1). Note that many existing organization identifiers such as [leiCode](https://schema.org/leiCode), [duns](https://schema.org/duns) and [vatID](https://schema.org/vatID) can be expressed as an ISO 6523 identifier by setting the ICD part of the ISO 6523 identifier accordingly. 
+     * A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.<br/><br/>For example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code "3047" is a branchCode for a particular branch.
+     *       
      *
      * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2915">https://github.com/schemaorg/schemaorg/issues/2915</a>
      */
     @Override
-    public Text getIso6523Code() {
-        return fIso6523Code;
+    public Text getBranchCode() {
+        return fBranchCode;
     }
 
     /**
-     * An organization identifier as defined in ISO 6523(-1). Note that many existing organization identifiers such as [leiCode](https://schema.org/leiCode), [duns](https://schema.org/duns) and [vatID](https://schema.org/vatID) can be expressed as an ISO 6523 identifier by setting the ICD part of the ISO 6523 identifier accordingly. 
+     * A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.<br/><br/>For example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code "3047" is a branchCode for a particular branch.
+     *       
      *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2915">https://github.com/schemaorg/schemaorg/issues/2915</a>
      */
     @Override
-    public void setIso6523Code(Text fIso6523Code) {
-        this.fIso6523Code = fIso6523Code;
+    public void setBranchCode(Text fBranchCode) {
+        this.fBranchCode = fBranchCode;
     }
 
-    private Object fHasMap;
+    private PropertyValue fAdditionalProperty;
 
     /**
-     * A URL to a map of the place.
+     * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
      *
-     * @return {@link URL} or {@link Map}
+     * @return {@link PropertyValue}
      */
     @Override
-    public <T> T getHasMap() {
-        return (T) fHasMap;
+    public PropertyValue getAdditionalProperty() {
+        return fAdditionalProperty;
     }
 
     /**
-     * A URL to a map of the place.
+     * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
      *
      */
     @Override
-    public void setHasMap(Object fHasMap) {
-        if(!(fHasMap instanceof URL) && !(fHasMap instanceof Map)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'hasMap': " + fHasMap);
-        }
-        this.fHasMap = fHasMap;
+    public void setAdditionalProperty(PropertyValue fAdditionalProperty) {
+        this.fAdditionalProperty = fAdditionalProperty;
     }
 
     private OpeningHoursSpecification fOpeningHoursSpecification;
@@ -995,217 +928,6 @@ public class PreschoolImpl implements Preschool {
         this.fOpeningHoursSpecification = fOpeningHoursSpecification;
     }
 
-    private Object fLongitude;
-
-    /**
-     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
-     *
-     * @return {@link Number} or {@link Text}
-     */
-    @Override
-    public <T> T getLongitude() {
-        return (T) fLongitude;
-    }
-
-    /**
-     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
-     *
-     */
-    @Override
-    public void setLongitude(Object fLongitude) {
-        if(!(fLongitude instanceof Number) && !(fLongitude instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'longitude': " + fLongitude);
-        }
-        this.fLongitude = fLongitude;
-    }
-
-    private Date fDissolutionDate;
-
-    /**
-     * The date that this organization was dissolved.
-     *
-     * @return {@link Date}
-     */
-    @Override
-    public Date getDissolutionDate() {
-        return fDissolutionDate;
-    }
-
-    /**
-     * The date that this organization was dissolved.
-     *
-     */
-    @Override
-    public void setDissolutionDate(Date fDissolutionDate) {
-        this.fDissolutionDate = fDissolutionDate;
-    }
-
-    private NonprofitType fNonprofitStatus;
-
-    /**
-     * nonprofit Status indicates the legal status of a non-profit organization in its primary place of business.
-     *
-     * @return {@link NonprofitType}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2543">https://github.com/schemaorg/schemaorg/issues/2543</a>
-     */
-    @Override
-    public NonprofitType getNonprofitStatus() {
-        return fNonprofitStatus;
-    }
-
-    /**
-     * nonprofit Status indicates the legal status of a non-profit organization in its primary place of business.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2543">https://github.com/schemaorg/schemaorg/issues/2543</a>
-     */
-    @Override
-    public void setNonprofitStatus(NonprofitType fNonprofitStatus) {
-        this.fNonprofitStatus = fNonprofitStatus;
-    }
-
-    private Object fGeoCrosses;
-
-    /**
-     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: "a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     * @return {@link GeospatialGeometry} or {@link Place}
-     */
-    @Override
-    public <T> T getGeoCrosses() {
-        return (T) fGeoCrosses;
-    }
-
-    /**
-     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: "a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     */
-    @Override
-    public void setGeoCrosses(Object fGeoCrosses) {
-        if(!(fGeoCrosses instanceof GeospatialGeometry) && !(fGeoCrosses instanceof Place)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoCrosses': " + fGeoCrosses);
-        }
-        this.fGeoCrosses = fGeoCrosses;
-    }
-
-    private Text fSlogan;
-
-    /**
-     * A slogan or motto associated with the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getSlogan() {
-        return fSlogan;
-    }
-
-    /**
-     * A slogan or motto associated with the item.
-     *
-     */
-    @Override
-    public void setSlogan(Text fSlogan) {
-        this.fSlogan = fSlogan;
-    }
-
-    private Object fPublishingPrinciples;
-
-    /**
-     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
-     * 
-     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
-     *
-     * @return {@link URL} or {@link CreativeWork}
-     */
-    @Override
-    public <T> T getPublishingPrinciples() {
-        return (T) fPublishingPrinciples;
-    }
-
-    /**
-     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
-     * 
-     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
-     *
-     */
-    @Override
-    public void setPublishingPrinciples(Object fPublishingPrinciples) {
-        if(!(fPublishingPrinciples instanceof URL) && !(fPublishingPrinciples instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'publishingPrinciples': " + fPublishingPrinciples);
-        }
-        this.fPublishingPrinciples = fPublishingPrinciples;
-    }
-
-    private Object fIdentifier;
-
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @return {@link URL} or {@link Text} or {@link PropertyValue}
-     */
-    @Override
-    public <T> T getIdentifier() {
-        return (T) fIdentifier;
-    }
-
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     */
-    @Override
-    public void setIdentifier(Object fIdentifier) {
-        if(!(fIdentifier instanceof URL) && !(fIdentifier instanceof Text) && !(fIdentifier instanceof PropertyValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
-        }
-        this.fIdentifier = fIdentifier;
-    }
-
-    private Text fOpeningHours;
-
-    /**
-     * The general opening hours for a business. Opening hours can be specified as a weekly time range, starting with days, then times per day. Multiple days can be listed with commas ',' separating each day. Day or time ranges are specified using a hyphen '-'.<br/><br/>* Days are specified using the following two-letter combinations: ```Mo```, ```Tu```, ```We```, ```Th```, ```Fr```, ```Sa```, ```Su```.<br/>* Times are specified using 24:00 format. For example, 3pm is specified as ```15:00```, 10am as ```10:00```. <br/>* Here is an example: <code>&lt;time itemprop="openingHours" datetime=&quot;Tu,Th 16:00-20:00&quot;&gt;Tuesdays and Thursdays 4-8pm&lt;/time&gt;</code>.<br/>* If a business is open 7 days a week, then it can be specified as <code>&lt;time itemprop=&quot;openingHours&quot; datetime=&quot;Mo-Su&quot;&gt;Monday through Sunday, all day&lt;/time&gt;</code>.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getOpeningHours() {
-        return fOpeningHours;
-    }
-
-    /**
-     * The general opening hours for a business. Opening hours can be specified as a weekly time range, starting with days, then times per day. Multiple days can be listed with commas ',' separating each day. Day or time ranges are specified using a hyphen '-'.<br/><br/>* Days are specified using the following two-letter combinations: ```Mo```, ```Tu```, ```We```, ```Th```, ```Fr```, ```Sa```, ```Su```.<br/>* Times are specified using 24:00 format. For example, 3pm is specified as ```15:00```, 10am as ```10:00```. <br/>* Here is an example: <code>&lt;time itemprop="openingHours" datetime=&quot;Tu,Th 16:00-20:00&quot;&gt;Tuesdays and Thursdays 4-8pm&lt;/time&gt;</code>.<br/>* If a business is open 7 days a week, then it can be specified as <code>&lt;time itemprop=&quot;openingHours&quot; datetime=&quot;Mo-Su&quot;&gt;Monday through Sunday, all day&lt;/time&gt;</code>.
-     *
-     */
-    @Override
-    public void setOpeningHours(Text fOpeningHours) {
-        this.fOpeningHours = fOpeningHours;
-    }
-
-    private Place fContainsPlace;
-
-    /**
-     * The basic containment relation between a place and another that it contains.
-     *
-     * @return {@link Place}
-     */
-    @Override
-    public Place getContainsPlace() {
-        return fContainsPlace;
-    }
-
-    /**
-     * The basic containment relation between a place and another that it contains.
-     *
-     */
-    @Override
-    public void setContainsPlace(Place fContainsPlace) {
-        this.fContainsPlace = fContainsPlace;
-    }
-
     private Review fReviews;
 
     /**
@@ -1225,192 +947,6 @@ public class PreschoolImpl implements Preschool {
     @Override
     public void setReviews(Review fReviews) {
         this.fReviews = fReviews;
-    }
-
-    private OfferCatalog fHasOfferCatalog;
-
-    /**
-     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
-     *
-     * @return {@link OfferCatalog}
-     */
-    @Override
-    public OfferCatalog getHasOfferCatalog() {
-        return fHasOfferCatalog;
-    }
-
-    /**
-     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
-     *
-     */
-    @Override
-    public void setHasOfferCatalog(OfferCatalog fHasOfferCatalog) {
-        this.fHasOfferCatalog = fHasOfferCatalog;
-    }
-
-    private URL fMap;
-
-    /**
-     * A URL to a map of the place.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getMap() {
-        return fMap;
-    }
-
-    /**
-     * A URL to a map of the place.
-     *
-     */
-    @Override
-    public void setMap(URL fMap) {
-        this.fMap = fMap;
-    }
-
-    private Organization fSubOrganization;
-
-    /**
-     * A relationship between two organizations where the first includes the second, e.g., as a subsidiary. See also: the more specific 'department' property.
-     *
-     * @return {@link Organization}
-     */
-    @Override
-    public Organization getSubOrganization() {
-        return fSubOrganization;
-    }
-
-    /**
-     * A relationship between two organizations where the first includes the second, e.g., as a subsidiary. See also: the more specific 'department' property.
-     *
-     */
-    @Override
-    public void setSubOrganization(Organization fSubOrganization) {
-        this.fSubOrganization = fSubOrganization;
-    }
-
-    private Person fEmployee;
-
-    /**
-     * Someone working for this organization.
-     *
-     * @return {@link Person}
-     */
-    @Override
-    public Person getEmployee() {
-        return fEmployee;
-    }
-
-    /**
-     * Someone working for this organization.
-     *
-     */
-    @Override
-    public void setEmployee(Person fEmployee) {
-        this.fEmployee = fEmployee;
-    }
-
-    private Object fOwns;
-
-    /**
-     * Products owned by the organization or person.
-     *
-     * @return {@link Product} or {@link OwnershipInfo}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public <T> T getOwns() {
-        return (T) fOwns;
-    }
-
-    /**
-     * Products owned by the organization or person.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setOwns(Object fOwns) {
-        if(!(fOwns instanceof Product) && !(fOwns instanceof OwnershipInfo)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'owns': " + fOwns);
-        }
-        this.fOwns = fOwns;
-    }
-
-    private Text fDescription;
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDescription() {
-        return fDescription;
-    }
-
-    /**
-     * A description of the item.
-     *
-     */
-    @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
-    }
-
-    private Text fLeiCode;
-
-    /**
-     * An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.
-     *
-     * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#GLEIF">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#GLEIF</a>
-     */
-    @Override
-    public Text getLeiCode() {
-        return fLeiCode;
-    }
-
-    /**
-     * An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#GLEIF">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#GLEIF</a>
-     */
-    @Override
-    public void setLeiCode(Text fLeiCode) {
-        this.fLeiCode = fLeiCode;
-    }
-
-    private Object fUnnamedSourcesPolicy;
-
-    /**
-     * For an [[Organization]] (typically a [[NewsMediaOrganization]]), a statement about policy on use of unnamed sources and the decision process required.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     */
-    @Override
-    public <T> T getUnnamedSourcesPolicy() {
-        return (T) fUnnamedSourcesPolicy;
-    }
-
-    /**
-     * For an [[Organization]] (typically a [[NewsMediaOrganization]]), a statement about policy on use of unnamed sources and the decision process required.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     */
-    @Override
-    public void setUnnamedSourcesPolicy(Object fUnnamedSourcesPolicy) {
-        if(!(fUnnamedSourcesPolicy instanceof CreativeWork) && !(fUnnamedSourcesPolicy instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'unnamedSourcesPolicy': " + fUnnamedSourcesPolicy);
-        }
-        this.fUnnamedSourcesPolicy = fUnnamedSourcesPolicy;
     }
 
     private Object fPhoto;
@@ -1460,128 +996,205 @@ public class PreschoolImpl implements Preschool {
         this.fSpecialOpeningHoursSpecification = fSpecialOpeningHoursSpecification;
     }
 
-    private InteractionCounter fInteractionStatistic;
+    private Object fHasMap;
 
     /**
-     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
+     * A URL to a map of the place.
      *
-     * @return {@link InteractionCounter}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
+     * @return {@link URL} or {@link Map}
      */
     @Override
-    public InteractionCounter getInteractionStatistic() {
-        return fInteractionStatistic;
+    public <T> T getHasMap() {
+        return (T) fHasMap;
     }
 
     /**
-     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
+     * A URL to a map of the place.
      *
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
      */
     @Override
-    public void setInteractionStatistic(InteractionCounter fInteractionStatistic) {
-        this.fInteractionStatistic = fInteractionStatistic;
-    }
-
-    private Object fActionableFeedbackPolicy;
-
-    /**
-     * For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement about public engagement activities (for news media, the newsroom’s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.
-     *
-     * @return {@link URL} or {@link CreativeWork}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     */
-    @Override
-    public <T> T getActionableFeedbackPolicy() {
-        return (T) fActionableFeedbackPolicy;
-    }
-
-    /**
-     * For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement about public engagement activities (for news media, the newsroom’s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     */
-    @Override
-    public void setActionableFeedbackPolicy(Object fActionableFeedbackPolicy) {
-        if(!(fActionableFeedbackPolicy instanceof URL) && !(fActionableFeedbackPolicy instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'actionableFeedbackPolicy': " + fActionableFeedbackPolicy);
+    public void setHasMap(Object fHasMap) {
+        if(!(fHasMap instanceof URL) && !(fHasMap instanceof Map)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'hasMap': " + fHasMap);
         }
-        this.fActionableFeedbackPolicy = fActionableFeedbackPolicy;
+        this.fHasMap = fHasMap;
     }
 
-    private Text fBranchCode;
+    private Object fLongitude;
 
     /**
-     * A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.<br/><br/>For example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code "3047" is a branchCode for a particular branch.
-     *       
+     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     *
+     * @return {@link Number} or {@link Text}
+     */
+    @Override
+    public <T> T getLongitude() {
+        return (T) fLongitude;
+    }
+
+    /**
+     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     *
+     */
+    @Override
+    public void setLongitude(Object fLongitude) {
+        if(!(fLongitude instanceof Number) && !(fLongitude instanceof Text)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'longitude': " + fLongitude);
+        }
+        this.fLongitude = fLongitude;
+    }
+
+    private Object fGeo;
+
+    /**
+     * The geo coordinates of the place.
+     *
+     * @return {@link GeoCoordinates} or {@link GeoShape}
+     */
+    @Override
+    public <T> T getGeo() {
+        return (T) fGeo;
+    }
+
+    /**
+     * The geo coordinates of the place.
+     *
+     */
+    @Override
+    public void setGeo(Object fGeo) {
+        if(!(fGeo instanceof GeoCoordinates) && !(fGeo instanceof GeoShape)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'geo': " + fGeo);
+        }
+        this.fGeo = fGeo;
+    }
+
+    private Event fEvents;
+
+    /**
+     * Upcoming or past events associated with this place or organization.
+     *
+     * @return {@link Event}
+     */
+    @Override
+    public Event getEvents() {
+        return fEvents;
+    }
+
+    /**
+     * Upcoming or past events associated with this place or organization.
+     *
+     */
+    @Override
+    public void setEvents(Event fEvents) {
+        this.fEvents = fEvents;
+    }
+
+    private Text fFaxNumber;
+
+    /**
+     * The fax number.
      *
      * @return {@link Text}
      */
     @Override
-    public Text getBranchCode() {
-        return fBranchCode;
+    public Text getFaxNumber() {
+        return fFaxNumber;
     }
 
     /**
-     * A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.<br/><br/>For example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code "3047" is a branchCode for a particular branch.
-     *       
+     * The fax number.
      *
      */
     @Override
-    public void setBranchCode(Text fBranchCode) {
-        this.fBranchCode = fBranchCode;
+    public void setFaxNumber(Text fFaxNumber) {
+        this.fFaxNumber = fFaxNumber;
     }
 
-    private Object fGeoDisjoint;
+    private Event fEvent;
 
     /**
-     * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM))
+     * Upcoming or past event associated with this place, organization, or action.
      *
-     * @return {@link GeospatialGeometry} or {@link Place}
+     * @return {@link Event}
      */
     @Override
-    public <T> T getGeoDisjoint() {
-        return (T) fGeoDisjoint;
+    public Event getEvent() {
+        return fEvent;
     }
 
     /**
-     * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM))
+     * Upcoming or past event associated with this place, organization, or action.
      *
      */
     @Override
-    public void setGeoDisjoint(Object fGeoDisjoint) {
-        if(!(fGeoDisjoint instanceof GeospatialGeometry) && !(fGeoDisjoint instanceof Place)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoDisjoint': " + fGeoDisjoint);
+    public void setEvent(Event fEvent) {
+        this.fEvent = fEvent;
+    }
+
+    private Object fMainEntityOfPage;
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    @Override
+    public <T> T getMainEntityOfPage() {
+        return (T) fMainEntityOfPage;
+    }
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     */
+    @Override
+    public void setMainEntityOfPage(Object fMainEntityOfPage) {
+        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
         }
-        this.fGeoDisjoint = fGeoDisjoint;
+        this.fMainEntityOfPage = fMainEntityOfPage;
     }
 
-    private Object fSponsor;
+    private Text fAlternateName;
 
     /**
-     * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
+     * An alias for the item.
      *
-     * @return {@link Organization} or {@link Person}
+     * @return {@link Text}
      */
     @Override
-    public <T> T getSponsor() {
-        return (T) fSponsor;
+    public Text getAlternateName() {
+        return fAlternateName;
     }
 
     /**
-     * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
+     * An alias for the item.
      *
      */
     @Override
-    public void setSponsor(Object fSponsor) {
-        if(!(fSponsor instanceof Organization) && !(fSponsor instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'sponsor': " + fSponsor);
-        }
-        this.fSponsor = fSponsor;
+    public void setAlternateName(Text fAlternateName) {
+        this.fAlternateName = fAlternateName;
+    }
+
+    private Text fName;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getName() {
+        return fName;
+    }
+
+    /**
+     * The name of the item.
+     *
+     */
+    @Override
+    public void setName(Text fName) {
+        this.fName = fName;
     }
 
     private Action fPotentialAction;
@@ -1605,72 +1218,70 @@ public class PreschoolImpl implements Preschool {
         this.fPotentialAction = fPotentialAction;
     }
 
-    private Text fIsicV4;
+    private Object fImage;
 
     /**
-     * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link URL} or {@link ImageObject}
+     */
+    @Override
+    public <T> T getImage() {
+        return (T) fImage;
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     */
+    @Override
+    public void setImage(Object fImage) {
+        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
+        }
+        this.fImage = fImage;
+    }
+
+    private URL fUrl;
+
+    /**
+     * URL of the item.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getUrl() {
+        return fUrl;
+    }
+
+    /**
+     * URL of the item.
+     *
+     */
+    @Override
+    public void setUrl(URL fUrl) {
+        this.fUrl = fUrl;
+    }
+
+    private Text fDescription;
+
+    /**
+     * A description of the item.
      *
      * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public Text getIsicV4() {
-        return fIsicV4;
+    public Text getDescription() {
+        return fDescription;
     }
 
     /**
-     * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setIsicV4(Text fIsicV4) {
-        this.fIsicV4 = fIsicV4;
-    }
-
-    private Object fMember;
-
-    /**
-     * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    @Override
-    public <T> T getMember() {
-        return (T) fMember;
-    }
-
-    /**
-     * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
+     * A description of the item.
      *
      */
     @Override
-    public void setMember(Object fMember) {
-        if(!(fMember instanceof Organization) && !(fMember instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'member': " + fMember);
-        }
-        this.fMember = fMember;
-    }
-
-    private Person fAlumni;
-
-    /**
-     * Alumni of an organization.
-     *
-     * @return {@link Person}
-     */
-    @Override
-    public Person getAlumni() {
-        return fAlumni;
-    }
-
-    /**
-     * Alumni of an organization.
-     *
-     */
-    @Override
-    public void setAlumni(Person fAlumni) {
-        this.fAlumni = fAlumni;
+    public void setDescription(Text fDescription) {
+        this.fDescription = fDescription;
     }
 
     private Object fSubjectOf;
@@ -1699,6 +1310,27 @@ public class PreschoolImpl implements Preschool {
         this.fSubjectOf = fSubjectOf;
     }
 
+    private URL fAdditionalType;
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getAdditionalType() {
+        return fAdditionalType;
+    }
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     */
+    @Override
+    public void setAdditionalType(URL fAdditionalType) {
+        this.fAdditionalType = fAdditionalType;
+    }
+
     private Text fDisambiguatingDescription;
 
     /**
@@ -1718,30 +1350,6 @@ public class PreschoolImpl implements Preschool {
     @Override
     public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
         this.fDisambiguatingDescription = fDisambiguatingDescription;
-    }
-
-    private Object fImage;
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link URL} or {@link ImageObject}
-     */
-    @Override
-    public <T> T getImage() {
-        return (T) fImage;
-    }
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     */
-    @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
-        this.fImage = fImage;
     }
 
     private URL fSameAs;
@@ -1765,158 +1373,60 @@ public class PreschoolImpl implements Preschool {
         this.fSameAs = fSameAs;
     }
 
-    private Place fFoundingLocation;
+    private Object fIdentifier;
 
     /**
-     * The place where the Organization was founded.
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
      *
-     * @return {@link Place}
+     * @return {@link URL} or {@link Text} or {@link PropertyValue}
      */
     @Override
-    public Place getFoundingLocation() {
-        return fFoundingLocation;
+    public <T> T getIdentifier() {
+        return (T) fIdentifier;
     }
 
     /**
-     * The place where the Organization was founded.
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
      *
      */
     @Override
-    public void setFoundingLocation(Place fFoundingLocation) {
-        this.fFoundingLocation = fFoundingLocation;
-    }
-
-    private QuantitativeValue fNumberOfEmployees;
-
-    /**
-     * The number of employees in an organization e.g. business.
-     *
-     * @return {@link QuantitativeValue}
-     */
-    @Override
-    public QuantitativeValue getNumberOfEmployees() {
-        return fNumberOfEmployees;
-    }
-
-    /**
-     * The number of employees in an organization e.g. business.
-     *
-     */
-    @Override
-    public void setNumberOfEmployees(QuantitativeValue fNumberOfEmployees) {
-        this.fNumberOfEmployees = fNumberOfEmployees;
-    }
-
-    private Event fEvent;
-
-    /**
-     * Upcoming or past event associated with this place, organization, or action.
-     *
-     * @return {@link Event}
-     */
-    @Override
-    public Event getEvent() {
-        return fEvent;
-    }
-
-    /**
-     * Upcoming or past event associated with this place, organization, or action.
-     *
-     */
-    @Override
-    public void setEvent(Event fEvent) {
-        this.fEvent = fEvent;
-    }
-
-    private Text fAwards;
-
-    /**
-     * Awards won by or for this item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getAwards() {
-        return fAwards;
-    }
-
-    /**
-     * Awards won by or for this item.
-     *
-     */
-    @Override
-    public void setAwards(Text fAwards) {
-        this.fAwards = fAwards;
-    }
-
-    private Text fNaics;
-
-    /**
-     * The North American Industry Classification System (NAICS) code for a particular organization or business person.
-     *
-     * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public Text getNaics() {
-        return fNaics;
-    }
-
-    /**
-     * The North American Industry Classification System (NAICS) code for a particular organization or business person.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setNaics(Text fNaics) {
-        this.fNaics = fNaics;
-    }
-
-    private Text fGlobalLocationNumber;
-
-    /**
-     * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
-     *
-     * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public Text getGlobalLocationNumber() {
-        return fGlobalLocationNumber;
-    }
-
-    /**
-     * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setGlobalLocationNumber(Text fGlobalLocationNumber) {
-        this.fGlobalLocationNumber = fGlobalLocationNumber;
-    }
-
-    private Object fLatitude;
-
-    /**
-     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
-     *
-     * @return {@link Text} or {@link Number}
-     */
-    @Override
-    public <T> T getLatitude() {
-        return (T) fLatitude;
-    }
-
-    /**
-     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
-     *
-     */
-    @Override
-    public void setLatitude(Object fLatitude) {
-        if(!(fLatitude instanceof Text) && !(fLatitude instanceof Number)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'latitude': " + fLatitude);
+    public void setIdentifier(Object fIdentifier) {
+        if(!(fIdentifier instanceof URL) && !(fIdentifier instanceof Text) && !(fIdentifier instanceof PropertyValue)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
         }
-        this.fLatitude = fLatitude;
+        this.fIdentifier = fIdentifier;
+    }
+
+    private Object fOwnershipFundingInfo;
+
+    /**
+     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.
+     *
+     * @return {@link URL} or {@link AboutPage} or {@link Text} or {@link CreativeWork}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    @Override
+    public <T> T getOwnershipFundingInfo() {
+        return (T) fOwnershipFundingInfo;
+    }
+
+    /**
+     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    @Override
+    public void setOwnershipFundingInfo(Object fOwnershipFundingInfo) {
+        if(!(fOwnershipFundingInfo instanceof URL) && !(fOwnershipFundingInfo instanceof AboutPage) && !(fOwnershipFundingInfo instanceof Text) && !(fOwnershipFundingInfo instanceof CreativeWork)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'ownershipFundingInfo': " + fOwnershipFundingInfo);
+        }
+        this.fOwnershipFundingInfo = fOwnershipFundingInfo;
     }
 
     private EducationalOccupationalCredential fHasCredential;
@@ -1944,160 +1454,25 @@ public class PreschoolImpl implements Preschool {
         this.fHasCredential = fHasCredential;
     }
 
-    private URL fUrl;
+    private Person fFounders;
 
     /**
-     * URL of the item.
+     * A person who founded this organization.
      *
-     * @return {@link URL}
+     * @return {@link Person}
      */
     @Override
-    public URL getUrl() {
-        return fUrl;
+    public Person getFounders() {
+        return fFounders;
     }
 
     /**
-     * URL of the item.
+     * A person who founded this organization.
      *
      */
     @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
-    }
-
-    private Object fMembers;
-
-    /**
-     * A member of this organization.
-     *
-     * @return {@link Person} or {@link Organization}
-     */
-    @Override
-    public <T> T getMembers() {
-        return (T) fMembers;
-    }
-
-    /**
-     * A member of this organization.
-     *
-     */
-    @Override
-    public void setMembers(Object fMembers) {
-        if(!(fMembers instanceof Person) && !(fMembers instanceof Organization)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'members': " + fMembers);
-        }
-        this.fMembers = fMembers;
-    }
-
-    private Object fGeoOverlaps;
-
-    /**
-     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     * @return {@link GeospatialGeometry} or {@link Place}
-     */
-    @Override
-    public <T> T getGeoOverlaps() {
-        return (T) fGeoOverlaps;
-    }
-
-    /**
-     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     */
-    @Override
-    public void setGeoOverlaps(Object fGeoOverlaps) {
-        if(!(fGeoOverlaps instanceof GeospatialGeometry) && !(fGeoOverlaps instanceof Place)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoOverlaps': " + fGeoOverlaps);
-        }
-        this.fGeoOverlaps = fGeoOverlaps;
-    }
-
-    private Object fGeoEquals;
-
-    /**
-     * Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). "Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other" (a symmetric relationship)
-     *
-     * @return {@link Place} or {@link GeospatialGeometry}
-     */
-    @Override
-    public <T> T getGeoEquals() {
-        return (T) fGeoEquals;
-    }
-
-    /**
-     * Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). "Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other" (a symmetric relationship)
-     *
-     */
-    @Override
-    public void setGeoEquals(Object fGeoEquals) {
-        if(!(fGeoEquals instanceof Place) && !(fGeoEquals instanceof GeospatialGeometry)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoEquals': " + fGeoEquals);
-        }
-        this.fGeoEquals = fGeoEquals;
-    }
-
-    private URL fAdditionalType;
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getAdditionalType() {
-        return fAdditionalType;
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     */
-    @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
-    }
-
-    private Text fFaxNumber;
-
-    /**
-     * The fax number.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getFaxNumber() {
-        return fFaxNumber;
-    }
-
-    /**
-     * The fax number.
-     *
-     */
-    @Override
-    public void setFaxNumber(Text fFaxNumber) {
-        this.fFaxNumber = fFaxNumber;
-    }
-
-    private Place fContainedInPlace;
-
-    /**
-     * The basic containment relation between a place and one that contains it.
-     *
-     * @return {@link Place}
-     */
-    @Override
-    public Place getContainedInPlace() {
-        return fContainedInPlace;
-    }
-
-    /**
-     * The basic containment relation between a place and one that contains it.
-     *
-     */
-    @Override
-    public void setContainedInPlace(Place fContainedInPlace) {
-        this.fContainedInPlace = fContainedInPlace;
+    public void setFounders(Person fFounders) {
+        this.fFounders = fFounders;
     }
 
     private Object fKnowsAbout;
@@ -2130,51 +1505,225 @@ public class PreschoolImpl implements Preschool {
         this.fKnowsAbout = fKnowsAbout;
     }
 
-    private Demand fSeeks;
+    private Text fAward;
 
     /**
-     * A pointer to products or services sought by the organization or person (demand).
+     * An award won by or for this item.
      *
-     * @return {@link Demand}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @return {@link Text}
      */
     @Override
-    public Demand getSeeks() {
-        return fSeeks;
+    public Text getAward() {
+        return fAward;
     }
 
     /**
-     * A pointer to products or services sought by the organization or person (demand).
+     * An award won by or for this item.
      *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setSeeks(Demand fSeeks) {
-        this.fSeeks = fSeeks;
+    public void setAward(Text fAward) {
+        this.fAward = fAward;
     }
 
-    private Object fAddress;
+    private Object fMember;
 
     /**
-     * Physical address of the item.
+     * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
      *
-     * @return {@link Text} or {@link PostalAddress}
+     * @return {@link Organization} or {@link Person}
      */
     @Override
-    public <T> T getAddress() {
-        return (T) fAddress;
+    public <T> T getMember() {
+        return (T) fMember;
     }
 
     /**
-     * Physical address of the item.
+     * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
      *
      */
     @Override
-    public void setAddress(Object fAddress) {
-        if(!(fAddress instanceof Text) && !(fAddress instanceof PostalAddress)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'address': " + fAddress);
+    public void setMember(Object fMember) {
+        if(!(fMember instanceof Organization) && !(fMember instanceof Person)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'member': " + fMember);
         }
-        this.fAddress = fAddress;
+        this.fMember = fMember;
+    }
+
+    private Person fEmployee;
+
+    /**
+     * Someone working for this organization.
+     *
+     * @return {@link Person}
+     */
+    @Override
+    public Person getEmployee() {
+        return fEmployee;
+    }
+
+    /**
+     * Someone working for this organization.
+     *
+     */
+    @Override
+    public void setEmployee(Person fEmployee) {
+        this.fEmployee = fEmployee;
+    }
+
+    private Date fDissolutionDate;
+
+    /**
+     * The date that this organization was dissolved.
+     *
+     * @return {@link Date}
+     */
+    @Override
+    public Date getDissolutionDate() {
+        return fDissolutionDate;
+    }
+
+    /**
+     * The date that this organization was dissolved.
+     *
+     */
+    @Override
+    public void setDissolutionDate(Date fDissolutionDate) {
+        this.fDissolutionDate = fDissolutionDate;
+    }
+
+    private Grant fFunding;
+
+    /**
+     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
+     *
+     * @return {@link Grant}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    @Override
+    public Grant getFunding() {
+        return fFunding;
+    }
+
+    /**
+     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    @Override
+    public void setFunding(Grant fFunding) {
+        this.fFunding = fFunding;
+    }
+
+    private Text fVatID;
+
+    /**
+     * The Value-added Tax ID of the organization or person.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public Text getVatID() {
+        return fVatID;
+    }
+
+    /**
+     * The Value-added Tax ID of the organization or person.
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setVatID(Text fVatID) {
+        this.fVatID = fVatID;
+    }
+
+    private ContactPoint fContactPoints;
+
+    /**
+     * A contact point for a person or organization.
+     *
+     * @return {@link ContactPoint}
+     */
+    @Override
+    public ContactPoint getContactPoints() {
+        return fContactPoints;
+    }
+
+    /**
+     * A contact point for a person or organization.
+     *
+     */
+    @Override
+    public void setContactPoints(ContactPoint fContactPoints) {
+        this.fContactPoints = fContactPoints;
+    }
+
+    private Organization fSubOrganization;
+
+    /**
+     * A relationship between two organizations where the first includes the second, e.g., as a subsidiary. See also: the more specific 'department' property.
+     *
+     * @return {@link Organization}
+     */
+    @Override
+    public Organization getSubOrganization() {
+        return fSubOrganization;
+    }
+
+    /**
+     * A relationship between two organizations where the first includes the second, e.g., as a subsidiary. See also: the more specific 'department' property.
+     *
+     */
+    @Override
+    public void setSubOrganization(Organization fSubOrganization) {
+        this.fSubOrganization = fSubOrganization;
+    }
+
+    private Text fAwards;
+
+    /**
+     * Awards won by or for this item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getAwards() {
+        return fAwards;
+    }
+
+    /**
+     * Awards won by or for this item.
+     *
+     */
+    @Override
+    public void setAwards(Text fAwards) {
+        this.fAwards = fAwards;
+    }
+
+    private QuantitativeValue fNumberOfEmployees;
+
+    /**
+     * The number of employees in an organization e.g. business.
+     *
+     * @return {@link QuantitativeValue}
+     */
+    @Override
+    public QuantitativeValue getNumberOfEmployees() {
+        return fNumberOfEmployees;
+    }
+
+    /**
+     * The number of employees in an organization e.g. business.
+     *
+     */
+    @Override
+    public void setNumberOfEmployees(QuantitativeValue fNumberOfEmployees) {
+        this.fNumberOfEmployees = fNumberOfEmployees;
     }
 
     private Object fFunder;
@@ -2201,236 +1750,6 @@ public class PreschoolImpl implements Preschool {
         this.fFunder = fFunder;
     }
 
-    private Object fLocation;
-
-    /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-     *
-     * @return {@link PostalAddress} or {@link Text} or {@link Place} or {@link VirtualLocation}
-     */
-    @Override
-    public <T> T getLocation() {
-        return (T) fLocation;
-    }
-
-    /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-     *
-     */
-    @Override
-    public void setLocation(Object fLocation) {
-        if(!(fLocation instanceof PostalAddress) && !(fLocation instanceof Text) && !(fLocation instanceof Place) && !(fLocation instanceof VirtualLocation)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'location': " + fLocation);
-        }
-        this.fLocation = fLocation;
-    }
-
-    private URL fMaps;
-
-    /**
-     * A URL to a map of the place.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getMaps() {
-        return fMaps;
-    }
-
-    /**
-     * A URL to a map of the place.
-     *
-     */
-    @Override
-    public void setMaps(URL fMaps) {
-        this.fMaps = fMaps;
-    }
-
-    private Text fDuns;
-
-    /**
-     * The Dun & Bradstreet DUNS number for identifying an organization or business person.
-     *
-     * @return {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public Text getDuns() {
-        return fDuns;
-    }
-
-    /**
-     * The Dun & Bradstreet DUNS number for identifying an organization or business person.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setDuns(Text fDuns) {
-        this.fDuns = fDuns;
-    }
-
-    private Person fFounder;
-
-    /**
-     * A person who founded this organization.
-     *
-     * @return {@link Person}
-     */
-    @Override
-    public Person getFounder() {
-        return fFounder;
-    }
-
-    /**
-     * A person who founded this organization.
-     *
-     */
-    @Override
-    public void setFounder(Person fFounder) {
-        this.fFounder = fFounder;
-    }
-
-    private Object fMemberOf;
-
-    /**
-     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
-     *
-     * @return {@link ProgramMembership} or {@link Organization}
-     */
-    @Override
-    public <T> T getMemberOf() {
-        return (T) fMemberOf;
-    }
-
-    /**
-     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
-     *
-     */
-    @Override
-    public void setMemberOf(Object fMemberOf) {
-        if(!(fMemberOf instanceof ProgramMembership) && !(fMemberOf instanceof Organization)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'memberOf': " + fMemberOf);
-        }
-        this.fMemberOf = fMemberOf;
-    }
-
-    private Object fGeoCoveredBy;
-
-    /**
-     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     * @return {@link Place} or {@link GeospatialGeometry}
-     */
-    @Override
-    public <T> T getGeoCoveredBy() {
-        return (T) fGeoCoveredBy;
-    }
-
-    /**
-     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     */
-    @Override
-    public void setGeoCoveredBy(Object fGeoCoveredBy) {
-        if(!(fGeoCoveredBy instanceof Place) && !(fGeoCoveredBy instanceof GeospatialGeometry)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoCoveredBy': " + fGeoCoveredBy);
-        }
-        this.fGeoCoveredBy = fGeoCoveredBy;
-    }
-
-    private Object fGeoTouches;
-
-    /**
-     * Represents spatial relations in which two geometries (or the places they represent) touch: they have at least one boundary point in common, but no interior points." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM) )
-     *
-     * @return {@link Place} or {@link GeospatialGeometry}
-     */
-    @Override
-    public <T> T getGeoTouches() {
-        return (T) fGeoTouches;
-    }
-
-    /**
-     * Represents spatial relations in which two geometries (or the places they represent) touch: they have at least one boundary point in common, but no interior points." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM) )
-     *
-     */
-    @Override
-    public void setGeoTouches(Object fGeoTouches) {
-        if(!(fGeoTouches instanceof Place) && !(fGeoTouches instanceof GeospatialGeometry)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoTouches': " + fGeoTouches);
-        }
-        this.fGeoTouches = fGeoTouches;
-    }
-
-    private Object fGeoWithin;
-
-    /**
-     * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     * @return {@link Place} or {@link GeospatialGeometry}
-     */
-    @Override
-    public <T> T getGeoWithin() {
-        return (T) fGeoWithin;
-    }
-
-    /**
-     * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     */
-    @Override
-    public void setGeoWithin(Object fGeoWithin) {
-        if(!(fGeoWithin instanceof Place) && !(fGeoWithin instanceof GeospatialGeometry)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoWithin': " + fGeoWithin);
-        }
-        this.fGeoWithin = fGeoWithin;
-    }
-
-    private PropertyValue fAdditionalProperty;
-
-    /**
-     * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
-     *
-     * @return {@link PropertyValue}
-     */
-    @Override
-    public PropertyValue getAdditionalProperty() {
-        return fAdditionalProperty;
-    }
-
-    /**
-     * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
-     *
-     */
-    @Override
-    public void setAdditionalProperty(PropertyValue fAdditionalProperty) {
-        this.fAdditionalProperty = fAdditionalProperty;
-    }
-
-    private Object fPhotos;
-
-    /**
-     * Photographs of this place.
-     *
-     * @return {@link ImageObject} or {@link Photograph}
-     */
-    @Override
-    public <T> T getPhotos() {
-        return (T) fPhotos;
-    }
-
-    /**
-     * Photographs of this place.
-     *
-     */
-    @Override
-    public void setPhotos(Object fPhotos) {
-        if(!(fPhotos instanceof ImageObject) && !(fPhotos instanceof Photograph)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'photos': " + fPhotos);
-        }
-        this.fPhotos = fPhotos;
-    }
-
     private Offer fMakesOffer;
 
     /**
@@ -2452,6 +1771,29 @@ public class PreschoolImpl implements Preschool {
     @Override
     public void setMakesOffer(Offer fMakesOffer) {
         this.fMakesOffer = fMakesOffer;
+    }
+
+    private Text fLegalName;
+
+    /**
+     * The official name of the organization, e.g. the registered company name.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public Text getLegalName() {
+        return fLegalName;
+    }
+
+    /**
+     * The official name of the organization, e.g. the registered company name.
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setLegalName(Text fLegalName) {
+        this.fLegalName = fLegalName;
     }
 
     private Object fCorrectionsPolicy;
@@ -2484,46 +1826,103 @@ public class PreschoolImpl implements Preschool {
         this.fCorrectionsPolicy = fCorrectionsPolicy;
     }
 
-    private Date fFoundingDate;
+    private InteractionCounter fInteractionStatistic;
 
     /**
-     * The date that this organization was founded.
+     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
      *
-     * @return {@link Date}
+     * @return {@link InteractionCounter}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
      */
     @Override
-    public Date getFoundingDate() {
-        return fFoundingDate;
+    public InteractionCounter getInteractionStatistic() {
+        return fInteractionStatistic;
     }
 
     /**
-     * The date that this organization was founded.
+     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
      *
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
      */
     @Override
-    public void setFoundingDate(Date fFoundingDate) {
-        this.fFoundingDate = fFoundingDate;
+    public void setInteractionStatistic(InteractionCounter fInteractionStatistic) {
+        this.fInteractionStatistic = fInteractionStatistic;
     }
 
-    private Person fEmployees;
+    private Object fLocation;
 
     /**
-     * People working for this organization.
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
      *
-     * @return {@link Person}
+     * @return {@link PostalAddress} or {@link Text} or {@link Place} or {@link VirtualLocation}
      */
     @Override
-    public Person getEmployees() {
-        return fEmployees;
+    public <T> T getLocation() {
+        return (T) fLocation;
     }
 
     /**
-     * People working for this organization.
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
      *
      */
     @Override
-    public void setEmployees(Person fEmployees) {
-        this.fEmployees = fEmployees;
+    public void setLocation(Object fLocation) {
+        if(!(fLocation instanceof PostalAddress) && !(fLocation instanceof Text) && !(fLocation instanceof Place) && !(fLocation instanceof VirtualLocation)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'location': " + fLocation);
+        }
+        this.fLocation = fLocation;
+    }
+
+    private Object fMemberOf;
+
+    /**
+     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
+     *
+     * @return {@link ProgramMembership} or {@link Organization}
+     */
+    @Override
+    public <T> T getMemberOf() {
+        return (T) fMemberOf;
+    }
+
+    /**
+     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
+     *
+     */
+    @Override
+    public void setMemberOf(Object fMemberOf) {
+        if(!(fMemberOf instanceof ProgramMembership) && !(fMemberOf instanceof Organization)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'memberOf': " + fMemberOf);
+        }
+        this.fMemberOf = fMemberOf;
+    }
+
+    private Object fPublishingPrinciples;
+
+    /**
+     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * 
+     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+     *
+     * @return {@link URL} or {@link CreativeWork}
+     */
+    @Override
+    public <T> T getPublishingPrinciples() {
+        return (T) fPublishingPrinciples;
+    }
+
+    /**
+     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * 
+     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+     *
+     */
+    @Override
+    public void setPublishingPrinciples(Object fPublishingPrinciples) {
+        if(!(fPublishingPrinciples instanceof URL) && !(fPublishingPrinciples instanceof CreativeWork)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'publishingPrinciples': " + fPublishingPrinciples);
+        }
+        this.fPublishingPrinciples = fPublishingPrinciples;
     }
 
     private Object fDiversityStaffingReport;
@@ -2556,52 +1955,6 @@ public class PreschoolImpl implements Preschool {
         this.fDiversityStaffingReport = fDiversityStaffingReport;
     }
 
-    private URL fTourBookingPage;
-
-    /**
-     * A page providing information on how to book a tour of some [[Place]], such as an [[Accommodation]] or [[ApartmentComplex]] in a real estate setting, as well as other kinds of tours as appropriate.
-     *
-     * @return {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
-     */
-    @Override
-    public URL getTourBookingPage() {
-        return fTourBookingPage;
-    }
-
-    /**
-     * A page providing information on how to book a tour of some [[Place]], such as an [[Accommodation]] or [[ApartmentComplex]] in a real estate setting, as well as other kinds of tours as appropriate.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
-     */
-    @Override
-    public void setTourBookingPage(URL fTourBookingPage) {
-        this.fTourBookingPage = fTourBookingPage;
-    }
-
-    private Text fAward;
-
-    /**
-     * An award won by or for this item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getAward() {
-        return fAward;
-    }
-
-    /**
-     * An award won by or for this item.
-     *
-     */
-    @Override
-    public void setAward(Text fAward) {
-        this.fAward = fAward;
-    }
-
     private Object fDiversityPolicy;
 
     /**
@@ -2632,6 +1985,202 @@ public class PreschoolImpl implements Preschool {
         this.fDiversityPolicy = fDiversityPolicy;
     }
 
+    private Text fEmail;
+
+    /**
+     * Email address.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getEmail() {
+        return fEmail;
+    }
+
+    /**
+     * Email address.
+     *
+     */
+    @Override
+    public void setEmail(Text fEmail) {
+        this.fEmail = fEmail;
+    }
+
+    private Person fEmployees;
+
+    /**
+     * People working for this organization.
+     *
+     * @return {@link Person}
+     */
+    @Override
+    public Person getEmployees() {
+        return fEmployees;
+    }
+
+    /**
+     * People working for this organization.
+     *
+     */
+    @Override
+    public void setEmployees(Person fEmployees) {
+        this.fEmployees = fEmployees;
+    }
+
+    private NonprofitType fNonprofitStatus;
+
+    /**
+     * nonprofit Status indicates the legal status of a non-profit organization in its primary place of business.
+     *
+     * @return {@link NonprofitType}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2543">https://github.com/schemaorg/schemaorg/issues/2543</a>
+     */
+    @Override
+    public NonprofitType getNonprofitStatus() {
+        return fNonprofitStatus;
+    }
+
+    /**
+     * nonprofit Status indicates the legal status of a non-profit organization in its primary place of business.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2543">https://github.com/schemaorg/schemaorg/issues/2543</a>
+     */
+    @Override
+    public void setNonprofitStatus(NonprofitType fNonprofitStatus) {
+        this.fNonprofitStatus = fNonprofitStatus;
+    }
+
+    private Object fEthicsPolicy;
+
+    /**
+     * Statement about ethics policy, e.g. of a [[NewsMediaOrganization]] regarding journalistic and publishing practices, or of a [[Restaurant]], a page describing food source policies. In the case of a [[NewsMediaOrganization]], an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization.
+     *
+     * @return {@link URL} or {@link CreativeWork}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     */
+    @Override
+    public <T> T getEthicsPolicy() {
+        return (T) fEthicsPolicy;
+    }
+
+    /**
+     * Statement about ethics policy, e.g. of a [[NewsMediaOrganization]] regarding journalistic and publishing practices, or of a [[Restaurant]], a page describing food source policies. In the case of a [[NewsMediaOrganization]], an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     */
+    @Override
+    public void setEthicsPolicy(Object fEthicsPolicy) {
+        if(!(fEthicsPolicy instanceof URL) && !(fEthicsPolicy instanceof CreativeWork)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'ethicsPolicy': " + fEthicsPolicy);
+        }
+        this.fEthicsPolicy = fEthicsPolicy;
+    }
+
+    private Object fBrand;
+
+    /**
+     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     *
+     * @return {@link Organization} or {@link Brand}
+     */
+    @Override
+    public <T> T getBrand() {
+        return (T) fBrand;
+    }
+
+    /**
+     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     *
+     */
+    @Override
+    public void setBrand(Object fBrand) {
+        if(!(fBrand instanceof Organization) && !(fBrand instanceof Brand)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'brand': " + fBrand);
+        }
+        this.fBrand = fBrand;
+    }
+
+    private Object fSponsor;
+
+    /**
+     * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> T getSponsor() {
+        return (T) fSponsor;
+    }
+
+    /**
+     * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
+     *
+     */
+    @Override
+    public void setSponsor(Object fSponsor) {
+        if(!(fSponsor instanceof Organization) && !(fSponsor instanceof Person)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'sponsor': " + fSponsor);
+        }
+        this.fSponsor = fSponsor;
+    }
+
+    private Object fActionableFeedbackPolicy;
+
+    /**
+     * For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement about public engagement activities (for news media, the newsroom’s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.
+     *
+     * @return {@link URL} or {@link CreativeWork}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     */
+    @Override
+    public <T> T getActionableFeedbackPolicy() {
+        return (T) fActionableFeedbackPolicy;
+    }
+
+    /**
+     * For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement about public engagement activities (for news media, the newsroom’s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     */
+    @Override
+    public void setActionableFeedbackPolicy(Object fActionableFeedbackPolicy) {
+        if(!(fActionableFeedbackPolicy instanceof URL) && !(fActionableFeedbackPolicy instanceof CreativeWork)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'actionableFeedbackPolicy': " + fActionableFeedbackPolicy);
+        }
+        this.fActionableFeedbackPolicy = fActionableFeedbackPolicy;
+    }
+
+    private Text fNaics;
+
+    /**
+     * The North American Industry Classification System (NAICS) code for a particular organization or business person.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public Text getNaics() {
+        return fNaics;
+    }
+
+    /**
+     * The North American Industry Classification System (NAICS) code for a particular organization or business person.
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setNaics(Text fNaics) {
+        this.fNaics = fNaics;
+    }
+
     private ContactPoint fContactPoint;
 
     /**
@@ -2651,5 +2200,456 @@ public class PreschoolImpl implements Preschool {
     @Override
     public void setContactPoint(ContactPoint fContactPoint) {
         this.fContactPoint = fContactPoint;
+    }
+
+    private Object fServiceArea;
+
+    /**
+     * The geographic area where the service is provided.
+     *
+     * @return {@link GeoShape} or {@link AdministrativeArea} or {@link Place}
+     */
+    @Override
+    public <T> T getServiceArea() {
+        return (T) fServiceArea;
+    }
+
+    /**
+     * The geographic area where the service is provided.
+     *
+     */
+    @Override
+    public void setServiceArea(Object fServiceArea) {
+        if(!(fServiceArea instanceof GeoShape) && !(fServiceArea instanceof AdministrativeArea) && !(fServiceArea instanceof Place)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'serviceArea': " + fServiceArea);
+        }
+        this.fServiceArea = fServiceArea;
+    }
+
+    private MerchantReturnPolicy fHasMerchantReturnPolicy;
+
+    /**
+     * Specifies a MerchantReturnPolicy that may be applicable.
+     *
+     * @return {@link MerchantReturnPolicy}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     */
+    @Override
+    public MerchantReturnPolicy getHasMerchantReturnPolicy() {
+        return fHasMerchantReturnPolicy;
+    }
+
+    /**
+     * Specifies a MerchantReturnPolicy that may be applicable.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     */
+    @Override
+    public void setHasMerchantReturnPolicy(MerchantReturnPolicy fHasMerchantReturnPolicy) {
+        this.fHasMerchantReturnPolicy = fHasMerchantReturnPolicy;
+    }
+
+    private Place fHasPOS;
+
+    /**
+     * Points-of-Sales operated by the organization or person.
+     *
+     * @return {@link Place}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public Place getHasPOS() {
+        return fHasPOS;
+    }
+
+    /**
+     * Points-of-Sales operated by the organization or person.
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setHasPOS(Place fHasPOS) {
+        this.fHasPOS = fHasPOS;
+    }
+
+    private Person fFounder;
+
+    /**
+     * A person who founded this organization.
+     *
+     * @return {@link Person}
+     */
+    @Override
+    public Person getFounder() {
+        return fFounder;
+    }
+
+    /**
+     * A person who founded this organization.
+     *
+     */
+    @Override
+    public void setFounder(Person fFounder) {
+        this.fFounder = fFounder;
+    }
+
+    private Object fUnnamedSourcesPolicy;
+
+    /**
+     * For an [[Organization]] (typically a [[NewsMediaOrganization]]), a statement about policy on use of unnamed sources and the decision process required.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     */
+    @Override
+    public <T> T getUnnamedSourcesPolicy() {
+        return (T) fUnnamedSourcesPolicy;
+    }
+
+    /**
+     * For an [[Organization]] (typically a [[NewsMediaOrganization]]), a statement about policy on use of unnamed sources and the decision process required.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     */
+    @Override
+    public void setUnnamedSourcesPolicy(Object fUnnamedSourcesPolicy) {
+        if(!(fUnnamedSourcesPolicy instanceof CreativeWork) && !(fUnnamedSourcesPolicy instanceof URL)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'unnamedSourcesPolicy': " + fUnnamedSourcesPolicy);
+        }
+        this.fUnnamedSourcesPolicy = fUnnamedSourcesPolicy;
+    }
+
+    private Place fFoundingLocation;
+
+    /**
+     * The place where the Organization was founded.
+     *
+     * @return {@link Place}
+     */
+    @Override
+    public Place getFoundingLocation() {
+        return fFoundingLocation;
+    }
+
+    /**
+     * The place where the Organization was founded.
+     *
+     */
+    @Override
+    public void setFoundingLocation(Place fFoundingLocation) {
+        this.fFoundingLocation = fFoundingLocation;
+    }
+
+    private Text fDuns;
+
+    /**
+     * The Dun & Bradstreet DUNS number for identifying an organization or business person.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public Text getDuns() {
+        return fDuns;
+    }
+
+    /**
+     * The Dun & Bradstreet DUNS number for identifying an organization or business person.
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setDuns(Text fDuns) {
+        this.fDuns = fDuns;
+    }
+
+    private Organization fParentOrganization;
+
+    /**
+     * The larger organization that this organization is a [[subOrganization]] of, if any.
+     *
+     * @return {@link Organization}
+     */
+    @Override
+    public Organization getParentOrganization() {
+        return fParentOrganization;
+    }
+
+    /**
+     * The larger organization that this organization is a [[subOrganization]] of, if any.
+     *
+     */
+    @Override
+    public void setParentOrganization(Organization fParentOrganization) {
+        this.fParentOrganization = fParentOrganization;
+    }
+
+    private Text fLeiCode;
+
+    /**
+     * An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#GLEIF">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#GLEIF</a>
+     */
+    @Override
+    public Text getLeiCode() {
+        return fLeiCode;
+    }
+
+    /**
+     * An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#GLEIF">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#GLEIF</a>
+     */
+    @Override
+    public void setLeiCode(Text fLeiCode) {
+        this.fLeiCode = fLeiCode;
+    }
+
+    private Object fAreaServed;
+
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @return {@link AdministrativeArea} or {@link GeoShape} or {@link Text} or {@link Place}
+     */
+    @Override
+    public <T> T getAreaServed() {
+        return (T) fAreaServed;
+    }
+
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     */
+    @Override
+    public void setAreaServed(Object fAreaServed) {
+        if(!(fAreaServed instanceof AdministrativeArea) && !(fAreaServed instanceof GeoShape) && !(fAreaServed instanceof Text) && !(fAreaServed instanceof Place)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'areaServed': " + fAreaServed);
+        }
+        this.fAreaServed = fAreaServed;
+    }
+
+    private Date fFoundingDate;
+
+    /**
+     * The date that this organization was founded.
+     *
+     * @return {@link Date}
+     */
+    @Override
+    public Date getFoundingDate() {
+        return fFoundingDate;
+    }
+
+    /**
+     * The date that this organization was founded.
+     *
+     */
+    @Override
+    public void setFoundingDate(Date fFoundingDate) {
+        this.fFoundingDate = fFoundingDate;
+    }
+
+    private Object fKnowsLanguage;
+
+    /**
+     * Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).
+     *
+     * @return {@link Language} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    @Override
+    public <T> T getKnowsLanguage() {
+        return (T) fKnowsLanguage;
+    }
+
+    /**
+     * Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    @Override
+    public void setKnowsLanguage(Object fKnowsLanguage) {
+        if(!(fKnowsLanguage instanceof Language) && !(fKnowsLanguage instanceof Text)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'knowsLanguage': " + fKnowsLanguage);
+        }
+        this.fKnowsLanguage = fKnowsLanguage;
+    }
+
+    private Demand fSeeks;
+
+    /**
+     * A pointer to products or services sought by the organization or person (demand).
+     *
+     * @return {@link Demand}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public Demand getSeeks() {
+        return fSeeks;
+    }
+
+    /**
+     * A pointer to products or services sought by the organization or person (demand).
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setSeeks(Demand fSeeks) {
+        this.fSeeks = fSeeks;
+    }
+
+    private Text fTaxID;
+
+    /**
+     * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public Text getTaxID() {
+        return fTaxID;
+    }
+
+    /**
+     * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setTaxID(Text fTaxID) {
+        this.fTaxID = fTaxID;
+    }
+
+    private Object fOwns;
+
+    /**
+     * Products owned by the organization or person.
+     *
+     * @return {@link Product} or {@link OwnershipInfo}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public <T> T getOwns() {
+        return (T) fOwns;
+    }
+
+    /**
+     * Products owned by the organization or person.
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setOwns(Object fOwns) {
+        if(!(fOwns instanceof Product) && !(fOwns instanceof OwnershipInfo)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'owns': " + fOwns);
+        }
+        this.fOwns = fOwns;
+    }
+
+    private OfferCatalog fHasOfferCatalog;
+
+    /**
+     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
+     *
+     * @return {@link OfferCatalog}
+     */
+    @Override
+    public OfferCatalog getHasOfferCatalog() {
+        return fHasOfferCatalog;
+    }
+
+    /**
+     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
+     *
+     */
+    @Override
+    public void setHasOfferCatalog(OfferCatalog fHasOfferCatalog) {
+        this.fHasOfferCatalog = fHasOfferCatalog;
+    }
+
+    private Object fMembers;
+
+    /**
+     * A member of this organization.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    @Override
+    public <T> T getMembers() {
+        return (T) fMembers;
+    }
+
+    /**
+     * A member of this organization.
+     *
+     */
+    @Override
+    public void setMembers(Object fMembers) {
+        if(!(fMembers instanceof Person) && !(fMembers instanceof Organization)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'members': " + fMembers);
+        }
+        this.fMembers = fMembers;
+    }
+
+    private Text fIso6523Code;
+
+    /**
+     * An organization identifier as defined in ISO 6523(-1). Note that many existing organization identifiers such as [leiCode](https://schema.org/leiCode), [duns](https://schema.org/duns) and [vatID](https://schema.org/vatID) can be expressed as an ISO 6523 identifier by setting the ICD part of the ISO 6523 identifier accordingly. 
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2915">https://github.com/schemaorg/schemaorg/issues/2915</a>
+     */
+    @Override
+    public Text getIso6523Code() {
+        return fIso6523Code;
+    }
+
+    /**
+     * An organization identifier as defined in ISO 6523(-1). Note that many existing organization identifiers such as [leiCode](https://schema.org/leiCode), [duns](https://schema.org/duns) and [vatID](https://schema.org/vatID) can be expressed as an ISO 6523 identifier by setting the ICD part of the ISO 6523 identifier accordingly. 
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2915">https://github.com/schemaorg/schemaorg/issues/2915</a>
+     */
+    @Override
+    public void setIso6523Code(Text fIso6523Code) {
+        this.fIso6523Code = fIso6523Code;
+    }
+
+    private Organization fDepartment;
+
+    /**
+     * A relationship between an organization and a department of that organization, also described as an organization (allowing different urls, logos, opening hours). For example: a store with a pharmacy, or a bakery with a cafe.
+     *
+     * @return {@link Organization}
+     */
+    @Override
+    public Organization getDepartment() {
+        return fDepartment;
+    }
+
+    /**
+     * A relationship between an organization and a department of that organization, also described as an organization (allowing different urls, logos, opening hours). For example: a store with a pharmacy, or a bakery with a cafe.
+     *
+     */
+    @Override
+    public void setDepartment(Organization fDepartment) {
+        this.fDepartment = fDepartment;
     }
 }

@@ -38,30 +38,82 @@ import org.schema.model.SizeSpecification;
 @JsonLdTypeName("schema:SizeSpecification")
 public class SizeSpecificationImpl implements SizeSpecification {
 
-    private Object fSupersededBy;
+    private Object fSizeGroup;
 
     /**
-     * Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
+     * The size group (also known as "size type") for a product's size. Size groups are common in the fashion industry to define size segments and suggested audiences for wearable products. Multiple values can be combined, for example "men's big and tall", "petite maternity" or "regular"
      *
-     * @return {@link Enumeration} or {@link Class} or {@link Property}
-     * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
+     * @return {@link Text} or {@link SizeGroupEnumeration}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
      */
     @Override
-    public <T> T getSupersededBy() {
-        return (T) fSupersededBy;
+    public <T> T getSizeGroup() {
+        return (T) fSizeGroup;
     }
 
     /**
-     * Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
+     * The size group (also known as "size type") for a product's size. Size groups are common in the fashion industry to define size segments and suggested audiences for wearable products. Multiple values can be combined, for example "men's big and tall", "petite maternity" or "regular"
      *
-     * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
      */
     @Override
-    public void setSupersededBy(Object fSupersededBy) {
-        if(!(fSupersededBy instanceof Enumeration) && !(fSupersededBy instanceof Class) && !(fSupersededBy instanceof Property)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'supersededBy': " + fSupersededBy);
+    public void setSizeGroup(Object fSizeGroup) {
+        if(!(fSizeGroup instanceof Text) && !(fSizeGroup instanceof SizeGroupEnumeration)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'sizeGroup': " + fSizeGroup);
         }
-        this.fSupersededBy = fSupersededBy;
+        this.fSizeGroup = fSizeGroup;
+    }
+
+    private QuantitativeValue fSuggestedMeasurement;
+
+    /**
+     * A suggested range of body measurements for the intended audience or person, for example inseam between 32 and 34 inches or height between 170 and 190 cm. Typically found on a size chart for wearable products.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
+     */
+    @Override
+    public QuantitativeValue getSuggestedMeasurement() {
+        return fSuggestedMeasurement;
+    }
+
+    /**
+     * A suggested range of body measurements for the intended audience or person, for example inseam between 32 and 34 inches or height between 170 and 190 cm. Typically found on a size chart for wearable products.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
+     */
+    @Override
+    public void setSuggestedMeasurement(QuantitativeValue fSuggestedMeasurement) {
+        this.fSuggestedMeasurement = fSuggestedMeasurement;
+    }
+
+    private QuantitativeValue fSuggestedAge;
+
+    /**
+     * The age or age range for the intended audience or person, for example 3-12 months for infants, 1-5 years for toddlers.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
+     */
+    @Override
+    public QuantitativeValue getSuggestedAge() {
+        return fSuggestedAge;
+    }
+
+    /**
+     * The age or age range for the intended audience or person, for example 3-12 months for infants, 1-5 years for toddlers.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
+     */
+    @Override
+    public void setSuggestedAge(QuantitativeValue fSuggestedAge) {
+        this.fSuggestedAge = fSuggestedAge;
     }
 
     private QuantitativeValue fHasMeasurement;
@@ -117,29 +169,28 @@ public class SizeSpecificationImpl implements SizeSpecification {
         this.fSizeSystem = fSizeSystem;
     }
 
-    private QuantitativeValue fSuggestedMeasurement;
+    private Object fSuggestedGender;
 
     /**
-     * A suggested range of body measurements for the intended audience or person, for example inseam between 32 and 34 inches or height between 170 and 190 cm. Typically found on a size chart for wearable products.
+     * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
      *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
+     * @return {@link GenderType} or {@link Text}
      */
     @Override
-    public QuantitativeValue getSuggestedMeasurement() {
-        return fSuggestedMeasurement;
+    public <T> T getSuggestedGender() {
+        return (T) fSuggestedGender;
     }
 
     /**
-     * A suggested range of body measurements for the intended audience or person, for example inseam between 32 and 34 inches or height between 170 and 190 cm. Typically found on a size chart for wearable products.
+     * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
      *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
      */
     @Override
-    public void setSuggestedMeasurement(QuantitativeValue fSuggestedMeasurement) {
-        this.fSuggestedMeasurement = fSuggestedMeasurement;
+    public void setSuggestedGender(Object fSuggestedGender) {
+        if(!(fSuggestedGender instanceof GenderType) && !(fSuggestedGender instanceof Text)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'suggestedGender': " + fSuggestedGender);
+        }
+        this.fSuggestedGender = fSuggestedGender;
     }
 
     private Object fValueReference;
@@ -168,77 +219,73 @@ public class SizeSpecificationImpl implements SizeSpecification {
         this.fValueReference = fValueReference;
     }
 
-    private Text fAlternateName;
+    private QualitativeValue fGreaterOrEqual;
 
     /**
-     * An alias for the item.
+     * This ordering relation for qualitative values indicates that the subject is greater than or equal to the object.
      *
-     * @return {@link Text}
+     * @return {@link QualitativeValue}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public Text getAlternateName() {
-        return fAlternateName;
+    public QualitativeValue getGreaterOrEqual() {
+        return fGreaterOrEqual;
     }
 
     /**
-     * An alias for the item.
+     * This ordering relation for qualitative values indicates that the subject is greater than or equal to the object.
      *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
+    public void setGreaterOrEqual(QualitativeValue fGreaterOrEqual) {
+        this.fGreaterOrEqual = fGreaterOrEqual;
     }
 
-    private Object fMainEntityOfPage;
+    private QualitativeValue fNonEqual;
 
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * This ordering relation for qualitative values indicates that the subject is not equal to the object.
      *
-     * @return {@link CreativeWork} or {@link URL}
+     * @return {@link QualitativeValue}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     */
-    @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
-        }
-        this.fMainEntityOfPage = fMainEntityOfPage;
-    }
-
-    private Object fSizeGroup;
-
-    /**
-     * The size group (also known as "size type") for a product's size. Size groups are common in the fashion industry to define size segments and suggested audiences for wearable products. Multiple values can be combined, for example "men's big and tall", "petite maternity" or "regular"
-     *
-     * @return {@link Text} or {@link SizeGroupEnumeration}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
-     */
-    @Override
-    public <T> T getSizeGroup() {
-        return (T) fSizeGroup;
+    public QualitativeValue getNonEqual() {
+        return fNonEqual;
     }
 
     /**
-     * The size group (also known as "size type") for a product's size. Size groups are common in the fashion industry to define size segments and suggested audiences for wearable products. Multiple values can be combined, for example "men's big and tall", "petite maternity" or "regular"
+     * This ordering relation for qualitative values indicates that the subject is not equal to the object.
      *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setSizeGroup(Object fSizeGroup) {
-        if(!(fSizeGroup instanceof Text) && !(fSizeGroup instanceof SizeGroupEnumeration)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'sizeGroup': " + fSizeGroup);
-        }
-        this.fSizeGroup = fSizeGroup;
+    public void setNonEqual(QualitativeValue fNonEqual) {
+        this.fNonEqual = fNonEqual;
+    }
+
+    private QualitativeValue fEqual;
+
+    /**
+     * This ordering relation for qualitative values indicates that the subject is equal to the object.
+     *
+     * @return {@link QualitativeValue}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public QualitativeValue getEqual() {
+        return fEqual;
+    }
+
+    /**
+     * This ordering relation for qualitative values indicates that the subject is equal to the object.
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setEqual(QualitativeValue fEqual) {
+        this.fEqual = fEqual;
     }
 
     private QualitativeValue fLesser;
@@ -264,48 +311,27 @@ public class SizeSpecificationImpl implements SizeSpecification {
         this.fLesser = fLesser;
     }
 
-    private Action fPotentialAction;
+    private QualitativeValue fGreater;
 
     /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
-    @Override
-    public Action getPotentialAction() {
-        return fPotentialAction;
-    }
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     */
-    @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
-    }
-
-    private QualitativeValue fNonEqual;
-
-    /**
-     * This ordering relation for qualitative values indicates that the subject is not equal to the object.
+     * This ordering relation for qualitative values indicates that the subject is greater than the object.
      *
      * @return {@link QualitativeValue}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public QualitativeValue getNonEqual() {
-        return fNonEqual;
+    public QualitativeValue getGreater() {
+        return fGreater;
     }
 
     /**
-     * This ordering relation for qualitative values indicates that the subject is not equal to the object.
+     * This ordering relation for qualitative values indicates that the subject is greater than the object.
      *
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setNonEqual(QualitativeValue fNonEqual) {
-        this.fNonEqual = fNonEqual;
+    public void setGreater(QualitativeValue fGreater) {
+        this.fGreater = fGreater;
     }
 
     private PropertyValue fAdditionalProperty;
@@ -352,30 +378,75 @@ public class SizeSpecificationImpl implements SizeSpecification {
         this.fLesserOrEqual = fLesserOrEqual;
     }
 
-    private Object fSubjectOf;
+    private Object fSupersededBy;
 
     /**
-     * A CreativeWork or Event about this Thing.
+     * Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
      *
-     * @return {@link Event} or {@link CreativeWork}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     * @return {@link Enumeration} or {@link Class} or {@link Property}
+     * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
      */
     @Override
-    public <T> T getSubjectOf() {
-        return (T) fSubjectOf;
+    public <T> T getSupersededBy() {
+        return (T) fSupersededBy;
     }
 
     /**
-     * A CreativeWork or Event about this Thing.
+     * Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
      *
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
      */
     @Override
-    public void setSubjectOf(Object fSubjectOf) {
-        if(!(fSubjectOf instanceof Event) && !(fSubjectOf instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'subjectOf': " + fSubjectOf);
+    public void setSupersededBy(Object fSupersededBy) {
+        if(!(fSupersededBy instanceof Enumeration) && !(fSupersededBy instanceof Class) && !(fSupersededBy instanceof Property)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'supersededBy': " + fSupersededBy);
         }
-        this.fSubjectOf = fSubjectOf;
+        this.fSupersededBy = fSupersededBy;
+    }
+
+    private Object fMainEntityOfPage;
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    @Override
+    public <T> T getMainEntityOfPage() {
+        return (T) fMainEntityOfPage;
+    }
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     */
+    @Override
+    public void setMainEntityOfPage(Object fMainEntityOfPage) {
+        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
+        }
+        this.fMainEntityOfPage = fMainEntityOfPage;
+    }
+
+    private Text fAlternateName;
+
+    /**
+     * An alias for the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getAlternateName() {
+        return fAlternateName;
+    }
+
+    /**
+     * An alias for the item.
+     *
+     */
+    @Override
+    public void setAlternateName(Text fAlternateName) {
+        this.fAlternateName = fAlternateName;
     }
 
     private Text fName;
@@ -399,25 +470,25 @@ public class SizeSpecificationImpl implements SizeSpecification {
         this.fName = fName;
     }
 
-    private Text fDisambiguatingDescription;
+    private Action fPotentialAction;
 
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      *
-     * @return {@link Text}
+     * @return {@link Action}
      */
     @Override
-    public Text getDisambiguatingDescription() {
-        return fDisambiguatingDescription;
+    public Action getPotentialAction() {
+        return fPotentialAction;
     }
 
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      *
      */
     @Override
-    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = fDisambiguatingDescription;
+    public void setPotentialAction(Action fPotentialAction) {
+        this.fPotentialAction = fPotentialAction;
     }
 
     private Object fImage;
@@ -444,6 +515,116 @@ public class SizeSpecificationImpl implements SizeSpecification {
         this.fImage = fImage;
     }
 
+    private URL fUrl;
+
+    /**
+     * URL of the item.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getUrl() {
+        return fUrl;
+    }
+
+    /**
+     * URL of the item.
+     *
+     */
+    @Override
+    public void setUrl(URL fUrl) {
+        this.fUrl = fUrl;
+    }
+
+    private Text fDescription;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDescription() {
+        return fDescription;
+    }
+
+    /**
+     * A description of the item.
+     *
+     */
+    @Override
+    public void setDescription(Text fDescription) {
+        this.fDescription = fDescription;
+    }
+
+    private Object fSubjectOf;
+
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @return {@link Event} or {@link CreativeWork}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public <T> T getSubjectOf() {
+        return (T) fSubjectOf;
+    }
+
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public void setSubjectOf(Object fSubjectOf) {
+        if(!(fSubjectOf instanceof Event) && !(fSubjectOf instanceof CreativeWork)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'subjectOf': " + fSubjectOf);
+        }
+        this.fSubjectOf = fSubjectOf;
+    }
+
+    private URL fAdditionalType;
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getAdditionalType() {
+        return fAdditionalType;
+    }
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     */
+    @Override
+    public void setAdditionalType(URL fAdditionalType) {
+        this.fAdditionalType = fAdditionalType;
+    }
+
+    private Text fDisambiguatingDescription;
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDisambiguatingDescription() {
+        return fDisambiguatingDescription;
+    }
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     */
+    @Override
+    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
+        this.fDisambiguatingDescription = fDisambiguatingDescription;
+    }
+
     private URL fSameAs;
 
     /**
@@ -463,29 +644,6 @@ public class SizeSpecificationImpl implements SizeSpecification {
     @Override
     public void setSameAs(URL fSameAs) {
         this.fSameAs = fSameAs;
-    }
-
-    private QualitativeValue fGreater;
-
-    /**
-     * This ordering relation for qualitative values indicates that the subject is greater than the object.
-     *
-     * @return {@link QualitativeValue}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public QualitativeValue getGreater() {
-        return fGreater;
-    }
-
-    /**
-     * This ordering relation for qualitative values indicates that the subject is greater than the object.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setGreater(QualitativeValue fGreater) {
-        this.fGreater = fGreater;
     }
 
     private Object fIdentifier;
@@ -512,163 +670,5 @@ public class SizeSpecificationImpl implements SizeSpecification {
             throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
         }
         this.fIdentifier = fIdentifier;
-    }
-
-    private QualitativeValue fGreaterOrEqual;
-
-    /**
-     * This ordering relation for qualitative values indicates that the subject is greater than or equal to the object.
-     *
-     * @return {@link QualitativeValue}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public QualitativeValue getGreaterOrEqual() {
-        return fGreaterOrEqual;
-    }
-
-    /**
-     * This ordering relation for qualitative values indicates that the subject is greater than or equal to the object.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setGreaterOrEqual(QualitativeValue fGreaterOrEqual) {
-        this.fGreaterOrEqual = fGreaterOrEqual;
-    }
-
-    private Object fSuggestedGender;
-
-    /**
-     * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
-     *
-     * @return {@link GenderType} or {@link Text}
-     */
-    @Override
-    public <T> T getSuggestedGender() {
-        return (T) fSuggestedGender;
-    }
-
-    /**
-     * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
-     *
-     */
-    @Override
-    public void setSuggestedGender(Object fSuggestedGender) {
-        if(!(fSuggestedGender instanceof GenderType) && !(fSuggestedGender instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'suggestedGender': " + fSuggestedGender);
-        }
-        this.fSuggestedGender = fSuggestedGender;
-    }
-
-    private QualitativeValue fEqual;
-
-    /**
-     * This ordering relation for qualitative values indicates that the subject is equal to the object.
-     *
-     * @return {@link QualitativeValue}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public QualitativeValue getEqual() {
-        return fEqual;
-    }
-
-    /**
-     * This ordering relation for qualitative values indicates that the subject is equal to the object.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setEqual(QualitativeValue fEqual) {
-        this.fEqual = fEqual;
-    }
-
-    private URL fUrl;
-
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getUrl() {
-        return fUrl;
-    }
-
-    /**
-     * URL of the item.
-     *
-     */
-    @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
-    }
-
-    private QuantitativeValue fSuggestedAge;
-
-    /**
-     * The age or age range for the intended audience or person, for example 3-12 months for infants, 1-5 years for toddlers.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
-     */
-    @Override
-    public QuantitativeValue getSuggestedAge() {
-        return fSuggestedAge;
-    }
-
-    /**
-     * The age or age range for the intended audience or person, for example 3-12 months for infants, 1-5 years for toddlers.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
-     */
-    @Override
-    public void setSuggestedAge(QuantitativeValue fSuggestedAge) {
-        this.fSuggestedAge = fSuggestedAge;
-    }
-
-    private URL fAdditionalType;
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getAdditionalType() {
-        return fAdditionalType;
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     */
-    @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
-    }
-
-    private Text fDescription;
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDescription() {
-        return fDescription;
-    }
-
-    /**
-     * A description of the item.
-     *
-     */
-    @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
     }
 }

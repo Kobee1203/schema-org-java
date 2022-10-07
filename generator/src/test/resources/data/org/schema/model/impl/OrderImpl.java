@@ -40,6 +40,27 @@ import org.schema.model.Order;
 @JsonLdTypeName("schema:Order")
 public class OrderImpl implements Order {
 
+    private ParcelDelivery fOrderDelivery;
+
+    /**
+     * The delivery of the parcel related to this order or order item.
+     *
+     * @return {@link ParcelDelivery}
+     */
+    @Override
+    public ParcelDelivery getOrderDelivery() {
+        return fOrderDelivery;
+    }
+
+    /**
+     * The delivery of the parcel related to this order or order item.
+     *
+     */
+    @Override
+    public void setOrderDelivery(ParcelDelivery fOrderDelivery) {
+        this.fOrderDelivery = fOrderDelivery;
+    }
+
     private PostalAddress fBillingAddress;
 
     /**
@@ -82,6 +103,51 @@ public class OrderImpl implements Order {
         this.fAcceptedOffer = fAcceptedOffer;
     }
 
+    private Object fMerchant;
+
+    /**
+     * 'merchant' is an out-dated term for 'seller'.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> T getMerchant() {
+        return (T) fMerchant;
+    }
+
+    /**
+     * 'merchant' is an out-dated term for 'seller'.
+     *
+     */
+    @Override
+    public void setMerchant(Object fMerchant) {
+        if(!(fMerchant instanceof Organization) && !(fMerchant instanceof Person)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'merchant': " + fMerchant);
+        }
+        this.fMerchant = fMerchant;
+    }
+
+    private OrderStatus fOrderStatus;
+
+    /**
+     * The current status of the order.
+     *
+     * @return {@link OrderStatus}
+     */
+    @Override
+    public OrderStatus getOrderStatus() {
+        return fOrderStatus;
+    }
+
+    /**
+     * The current status of the order.
+     *
+     */
+    @Override
+    public void setOrderStatus(OrderStatus fOrderStatus) {
+        this.fOrderStatus = fOrderStatus;
+    }
+
     private Text fConfirmationNumber;
 
     /**
@@ -103,25 +169,361 @@ public class OrderImpl implements Order {
         this.fConfirmationNumber = fConfirmationNumber;
     }
 
-    private Text fAlternateName;
+    private Invoice fPartOfInvoice;
 
     /**
-     * An alias for the item.
+     * The order is being paid as part of the referenced Invoice.
+     *
+     * @return {@link Invoice}
+     */
+    @Override
+    public Invoice getPartOfInvoice() {
+        return fPartOfInvoice;
+    }
+
+    /**
+     * The order is being paid as part of the referenced Invoice.
+     *
+     */
+    @Override
+    public void setPartOfInvoice(Invoice fPartOfInvoice) {
+        this.fPartOfInvoice = fPartOfInvoice;
+    }
+
+    private Text fOrderNumber;
+
+    /**
+     * The identifier of the transaction.
      *
      * @return {@link Text}
      */
     @Override
-    public Text getAlternateName() {
-        return fAlternateName;
+    public Text getOrderNumber() {
+        return fOrderNumber;
     }
 
     /**
-     * An alias for the item.
+     * The identifier of the transaction.
      *
      */
     @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
+    public void setOrderNumber(Text fOrderNumber) {
+        this.fOrderNumber = fOrderNumber;
+    }
+
+    private Object fSeller;
+
+    /**
+     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> T getSeller() {
+        return (T) fSeller;
+    }
+
+    /**
+     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+     *
+     */
+    @Override
+    public void setSeller(Object fSeller) {
+        if(!(fSeller instanceof Organization) && !(fSeller instanceof Person)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'seller': " + fSeller);
+        }
+        this.fSeller = fSeller;
+    }
+
+    private Object fCustomer;
+
+    /**
+     * Party placing the order or paying the invoice.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> T getCustomer() {
+        return (T) fCustomer;
+    }
+
+    /**
+     * Party placing the order or paying the invoice.
+     *
+     */
+    @Override
+    public void setCustomer(Object fCustomer) {
+        if(!(fCustomer instanceof Organization) && !(fCustomer instanceof Person)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'customer': " + fCustomer);
+        }
+        this.fCustomer = fCustomer;
+    }
+
+    private Object fPaymentDueDate;
+
+    /**
+     * The date that payment is due.
+     *
+     * @return {@link DateTime} or {@link Date}
+     */
+    @Override
+    public <T> T getPaymentDueDate() {
+        return (T) fPaymentDueDate;
+    }
+
+    /**
+     * The date that payment is due.
+     *
+     */
+    @Override
+    public void setPaymentDueDate(Object fPaymentDueDate) {
+        if(!(fPaymentDueDate instanceof DateTime) && !(fPaymentDueDate instanceof Date)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'paymentDueDate': " + fPaymentDueDate);
+        }
+        this.fPaymentDueDate = fPaymentDueDate;
+    }
+
+    private Object fBroker;
+
+    /**
+     * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    @Override
+    public <T> T getBroker() {
+        return (T) fBroker;
+    }
+
+    /**
+     * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
+     *
+     */
+    @Override
+    public void setBroker(Object fBroker) {
+        if(!(fBroker instanceof Person) && !(fBroker instanceof Organization)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'broker': " + fBroker);
+        }
+        this.fBroker = fBroker;
+    }
+
+    private Text fDiscountCode;
+
+    /**
+     * Code used to redeem a discount.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDiscountCode() {
+        return fDiscountCode;
+    }
+
+    /**
+     * Code used to redeem a discount.
+     *
+     */
+    @Override
+    public void setDiscountCode(Text fDiscountCode) {
+        this.fDiscountCode = fDiscountCode;
+    }
+
+    private Object fDiscount;
+
+    /**
+     * Any discount applied (to an Order).
+     *
+     * @return {@link Text} or {@link Number}
+     */
+    @Override
+    public <T> T getDiscount() {
+        return (T) fDiscount;
+    }
+
+    /**
+     * Any discount applied (to an Order).
+     *
+     */
+    @Override
+    public void setDiscount(Object fDiscount) {
+        if(!(fDiscount instanceof Text) && !(fDiscount instanceof Number)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'discount': " + fDiscount);
+        }
+        this.fDiscount = fDiscount;
+    }
+
+    private Text fPaymentMethodId;
+
+    /**
+     * An identifier for the method of payment used (e.g. the last 4 digits of the credit card).
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getPaymentMethodId() {
+        return fPaymentMethodId;
+    }
+
+    /**
+     * An identifier for the method of payment used (e.g. the last 4 digits of the credit card).
+     *
+     */
+    @Override
+    public void setPaymentMethodId(Text fPaymentMethodId) {
+        this.fPaymentMethodId = fPaymentMethodId;
+    }
+
+    private URL fPaymentUrl;
+
+    /**
+     * The URL for sending a payment.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getPaymentUrl() {
+        return fPaymentUrl;
+    }
+
+    /**
+     * The URL for sending a payment.
+     *
+     */
+    @Override
+    public void setPaymentUrl(URL fPaymentUrl) {
+        this.fPaymentUrl = fPaymentUrl;
+    }
+
+    private Text fDiscountCurrency;
+
+    /**
+     * The currency of the discount.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDiscountCurrency() {
+        return fDiscountCurrency;
+    }
+
+    /**
+     * The currency of the discount.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
+     *
+     */
+    @Override
+    public void setDiscountCurrency(Text fDiscountCurrency) {
+        this.fDiscountCurrency = fDiscountCurrency;
+    }
+
+    private DateTime fPaymentDue;
+
+    /**
+     * The date that payment is due.
+     *
+     * @return {@link DateTime}
+     */
+    @Override
+    public DateTime getPaymentDue() {
+        return fPaymentDue;
+    }
+
+    /**
+     * The date that payment is due.
+     *
+     */
+    @Override
+    public void setPaymentDue(DateTime fPaymentDue) {
+        this.fPaymentDue = fPaymentDue;
+    }
+
+    private Object fOrderDate;
+
+    /**
+     * Date order was placed.
+     *
+     * @return {@link Date} or {@link DateTime}
+     */
+    @Override
+    public <T> T getOrderDate() {
+        return (T) fOrderDate;
+    }
+
+    /**
+     * Date order was placed.
+     *
+     */
+    @Override
+    public void setOrderDate(Object fOrderDate) {
+        if(!(fOrderDate instanceof Date) && !(fOrderDate instanceof DateTime)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'orderDate': " + fOrderDate);
+        }
+        this.fOrderDate = fOrderDate;
+    }
+
+    private Boolean fIsGift;
+
+    /**
+     * Was the offer accepted as a gift for someone other than the buyer.
+     *
+     * @return {@link Boolean}
+     */
+    @Override
+    public Boolean getIsGift() {
+        return fIsGift;
+    }
+
+    /**
+     * Was the offer accepted as a gift for someone other than the buyer.
+     *
+     */
+    @Override
+    public void setIsGift(Boolean fIsGift) {
+        this.fIsGift = fIsGift;
+    }
+
+    private Object fOrderedItem;
+
+    /**
+     * The item ordered.
+     *
+     * @return {@link Service} or {@link OrderItem} or {@link Product}
+     */
+    @Override
+    public <T> T getOrderedItem() {
+        return (T) fOrderedItem;
+    }
+
+    /**
+     * The item ordered.
+     *
+     */
+    @Override
+    public void setOrderedItem(Object fOrderedItem) {
+        if(!(fOrderedItem instanceof Service) && !(fOrderedItem instanceof OrderItem) && !(fOrderedItem instanceof Product)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'orderedItem': " + fOrderedItem);
+        }
+        this.fOrderedItem = fOrderedItem;
+    }
+
+    private PaymentMethod fPaymentMethod;
+
+    /**
+     * The name of the credit card or other method of payment for the order.
+     *
+     * @return {@link PaymentMethod}
+     */
+    @Override
+    public PaymentMethod getPaymentMethod() {
+        return fPaymentMethod;
+    }
+
+    /**
+     * The name of the credit card or other method of payment for the order.
+     *
+     */
+    @Override
+    public void setPaymentMethod(PaymentMethod fPaymentMethod) {
+        this.fPaymentMethod = fPaymentMethod;
     }
 
     private Object fMainEntityOfPage;
@@ -148,112 +550,46 @@ public class OrderImpl implements Order {
         this.fMainEntityOfPage = fMainEntityOfPage;
     }
 
-    private Text fDiscountCurrency;
+    private Text fAlternateName;
 
     /**
-     * The currency of the discount.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
+     * An alias for the item.
      *
      * @return {@link Text}
      */
     @Override
-    public Text getDiscountCurrency() {
-        return fDiscountCurrency;
+    public Text getAlternateName() {
+        return fAlternateName;
     }
 
     /**
-     * The currency of the discount.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
+     * An alias for the item.
      *
      */
     @Override
-    public void setDiscountCurrency(Text fDiscountCurrency) {
-        this.fDiscountCurrency = fDiscountCurrency;
+    public void setAlternateName(Text fAlternateName) {
+        this.fAlternateName = fAlternateName;
     }
 
-    private Text fDiscountCode;
+    private Text fName;
 
     /**
-     * Code used to redeem a discount.
+     * The name of the item.
      *
      * @return {@link Text}
      */
     @Override
-    public Text getDiscountCode() {
-        return fDiscountCode;
+    public Text getName() {
+        return fName;
     }
 
     /**
-     * Code used to redeem a discount.
+     * The name of the item.
      *
      */
     @Override
-    public void setDiscountCode(Text fDiscountCode) {
-        this.fDiscountCode = fDiscountCode;
-    }
-
-    private PaymentMethod fPaymentMethod;
-
-    /**
-     * The name of the credit card or other method of payment for the order.
-     *
-     * @return {@link PaymentMethod}
-     */
-    @Override
-    public PaymentMethod getPaymentMethod() {
-        return fPaymentMethod;
-    }
-
-    /**
-     * The name of the credit card or other method of payment for the order.
-     *
-     */
-    @Override
-    public void setPaymentMethod(PaymentMethod fPaymentMethod) {
-        this.fPaymentMethod = fPaymentMethod;
-    }
-
-    private DateTime fPaymentDue;
-
-    /**
-     * The date that payment is due.
-     *
-     * @return {@link DateTime}
-     */
-    @Override
-    public DateTime getPaymentDue() {
-        return fPaymentDue;
-    }
-
-    /**
-     * The date that payment is due.
-     *
-     */
-    @Override
-    public void setPaymentDue(DateTime fPaymentDue) {
-        this.fPaymentDue = fPaymentDue;
-    }
-
-    private Object fMerchant;
-
-    /**
-     * 'merchant' is an out-dated term for 'seller'.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    @Override
-    public <T> T getMerchant() {
-        return (T) fMerchant;
-    }
-
-    /**
-     * 'merchant' is an out-dated term for 'seller'.
-     *
-     */
-    @Override
-    public void setMerchant(Object fMerchant) {
-        if(!(fMerchant instanceof Organization) && !(fMerchant instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'merchant': " + fMerchant);
-        }
-        this.fMerchant = fMerchant;
+    public void setName(Text fName) {
+        this.fName = fName;
     }
 
     private Action fPotentialAction;
@@ -277,28 +613,70 @@ public class OrderImpl implements Order {
         this.fPotentialAction = fPotentialAction;
     }
 
-    private Object fOrderDate;
+    private Object fImage;
 
     /**
-     * Date order was placed.
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @return {@link Date} or {@link DateTime}
+     * @return {@link URL} or {@link ImageObject}
      */
     @Override
-    public <T> T getOrderDate() {
-        return (T) fOrderDate;
+    public <T> T getImage() {
+        return (T) fImage;
     }
 
     /**
-     * Date order was placed.
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
      */
     @Override
-    public void setOrderDate(Object fOrderDate) {
-        if(!(fOrderDate instanceof Date) && !(fOrderDate instanceof DateTime)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'orderDate': " + fOrderDate);
+    public void setImage(Object fImage) {
+        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
         }
-        this.fOrderDate = fOrderDate;
+        this.fImage = fImage;
+    }
+
+    private URL fUrl;
+
+    /**
+     * URL of the item.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getUrl() {
+        return fUrl;
+    }
+
+    /**
+     * URL of the item.
+     *
+     */
+    @Override
+    public void setUrl(URL fUrl) {
+        this.fUrl = fUrl;
+    }
+
+    private Text fDescription;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDescription() {
+        return fDescription;
+    }
+
+    /**
+     * A description of the item.
+     *
+     */
+    @Override
+    public void setDescription(Text fDescription) {
+        this.fDescription = fDescription;
     }
 
     private Object fSubjectOf;
@@ -327,49 +705,25 @@ public class OrderImpl implements Order {
         this.fSubjectOf = fSubjectOf;
     }
 
-    private Text fName;
+    private URL fAdditionalType;
 
     /**
-     * The name of the item.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
-     * @return {@link Text}
+     * @return {@link URL}
      */
     @Override
-    public Text getName() {
-        return fName;
+    public URL getAdditionalType() {
+        return fAdditionalType;
     }
 
     /**
-     * The name of the item.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
      */
     @Override
-    public void setName(Text fName) {
-        this.fName = fName;
-    }
-
-    private Object fCustomer;
-
-    /**
-     * Party placing the order or paying the invoice.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    @Override
-    public <T> T getCustomer() {
-        return (T) fCustomer;
-    }
-
-    /**
-     * Party placing the order or paying the invoice.
-     *
-     */
-    @Override
-    public void setCustomer(Object fCustomer) {
-        if(!(fCustomer instanceof Organization) && !(fCustomer instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'customer': " + fCustomer);
-        }
-        this.fCustomer = fCustomer;
+    public void setAdditionalType(URL fAdditionalType) {
+        this.fAdditionalType = fAdditionalType;
     }
 
     private Text fDisambiguatingDescription;
@@ -393,30 +747,6 @@ public class OrderImpl implements Order {
         this.fDisambiguatingDescription = fDisambiguatingDescription;
     }
 
-    private Object fImage;
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link URL} or {@link ImageObject}
-     */
-    @Override
-    public <T> T getImage() {
-        return (T) fImage;
-    }
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     */
-    @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
-        this.fImage = fImage;
-    }
-
     private URL fSameAs;
 
     /**
@@ -436,27 +766,6 @@ public class OrderImpl implements Order {
     @Override
     public void setSameAs(URL fSameAs) {
         this.fSameAs = fSameAs;
-    }
-
-    private URL fPaymentUrl;
-
-    /**
-     * The URL for sending a payment.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getPaymentUrl() {
-        return fPaymentUrl;
-    }
-
-    /**
-     * The URL for sending a payment.
-     *
-     */
-    @Override
-    public void setPaymentUrl(URL fPaymentUrl) {
-        this.fPaymentUrl = fPaymentUrl;
     }
 
     private Object fIdentifier;
@@ -483,314 +792,5 @@ public class OrderImpl implements Order {
             throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
         }
         this.fIdentifier = fIdentifier;
-    }
-
-    private Invoice fPartOfInvoice;
-
-    /**
-     * The order is being paid as part of the referenced Invoice.
-     *
-     * @return {@link Invoice}
-     */
-    @Override
-    public Invoice getPartOfInvoice() {
-        return fPartOfInvoice;
-    }
-
-    /**
-     * The order is being paid as part of the referenced Invoice.
-     *
-     */
-    @Override
-    public void setPartOfInvoice(Invoice fPartOfInvoice) {
-        this.fPartOfInvoice = fPartOfInvoice;
-    }
-
-    private Object fDiscount;
-
-    /**
-     * Any discount applied (to an Order).
-     *
-     * @return {@link Text} or {@link Number}
-     */
-    @Override
-    public <T> T getDiscount() {
-        return (T) fDiscount;
-    }
-
-    /**
-     * Any discount applied (to an Order).
-     *
-     */
-    @Override
-    public void setDiscount(Object fDiscount) {
-        if(!(fDiscount instanceof Text) && !(fDiscount instanceof Number)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'discount': " + fDiscount);
-        }
-        this.fDiscount = fDiscount;
-    }
-
-    private Boolean fIsGift;
-
-    /**
-     * Was the offer accepted as a gift for someone other than the buyer.
-     *
-     * @return {@link Boolean}
-     */
-    @Override
-    public Boolean getIsGift() {
-        return fIsGift;
-    }
-
-    /**
-     * Was the offer accepted as a gift for someone other than the buyer.
-     *
-     */
-    @Override
-    public void setIsGift(Boolean fIsGift) {
-        this.fIsGift = fIsGift;
-    }
-
-    private Text fPaymentMethodId;
-
-    /**
-     * An identifier for the method of payment used (e.g. the last 4 digits of the credit card).
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getPaymentMethodId() {
-        return fPaymentMethodId;
-    }
-
-    /**
-     * An identifier for the method of payment used (e.g. the last 4 digits of the credit card).
-     *
-     */
-    @Override
-    public void setPaymentMethodId(Text fPaymentMethodId) {
-        this.fPaymentMethodId = fPaymentMethodId;
-    }
-
-    private OrderStatus fOrderStatus;
-
-    /**
-     * The current status of the order.
-     *
-     * @return {@link OrderStatus}
-     */
-    @Override
-    public OrderStatus getOrderStatus() {
-        return fOrderStatus;
-    }
-
-    /**
-     * The current status of the order.
-     *
-     */
-    @Override
-    public void setOrderStatus(OrderStatus fOrderStatus) {
-        this.fOrderStatus = fOrderStatus;
-    }
-
-    private Object fOrderedItem;
-
-    /**
-     * The item ordered.
-     *
-     * @return {@link Service} or {@link OrderItem} or {@link Product}
-     */
-    @Override
-    public <T> T getOrderedItem() {
-        return (T) fOrderedItem;
-    }
-
-    /**
-     * The item ordered.
-     *
-     */
-    @Override
-    public void setOrderedItem(Object fOrderedItem) {
-        if(!(fOrderedItem instanceof Service) && !(fOrderedItem instanceof OrderItem) && !(fOrderedItem instanceof Product)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'orderedItem': " + fOrderedItem);
-        }
-        this.fOrderedItem = fOrderedItem;
-    }
-
-    private URL fUrl;
-
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getUrl() {
-        return fUrl;
-    }
-
-    /**
-     * URL of the item.
-     *
-     */
-    @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
-    }
-
-    private Object fSeller;
-
-    /**
-     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    @Override
-    public <T> T getSeller() {
-        return (T) fSeller;
-    }
-
-    /**
-     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
-     *
-     */
-    @Override
-    public void setSeller(Object fSeller) {
-        if(!(fSeller instanceof Organization) && !(fSeller instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'seller': " + fSeller);
-        }
-        this.fSeller = fSeller;
-    }
-
-    private Object fBroker;
-
-    /**
-     * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
-     *
-     * @return {@link Person} or {@link Organization}
-     */
-    @Override
-    public <T> T getBroker() {
-        return (T) fBroker;
-    }
-
-    /**
-     * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
-     *
-     */
-    @Override
-    public void setBroker(Object fBroker) {
-        if(!(fBroker instanceof Person) && !(fBroker instanceof Organization)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'broker': " + fBroker);
-        }
-        this.fBroker = fBroker;
-    }
-
-    private URL fAdditionalType;
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getAdditionalType() {
-        return fAdditionalType;
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     */
-    @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
-    }
-
-    private ParcelDelivery fOrderDelivery;
-
-    /**
-     * The delivery of the parcel related to this order or order item.
-     *
-     * @return {@link ParcelDelivery}
-     */
-    @Override
-    public ParcelDelivery getOrderDelivery() {
-        return fOrderDelivery;
-    }
-
-    /**
-     * The delivery of the parcel related to this order or order item.
-     *
-     */
-    @Override
-    public void setOrderDelivery(ParcelDelivery fOrderDelivery) {
-        this.fOrderDelivery = fOrderDelivery;
-    }
-
-    private Text fDescription;
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDescription() {
-        return fDescription;
-    }
-
-    /**
-     * A description of the item.
-     *
-     */
-    @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
-    }
-
-    private Text fOrderNumber;
-
-    /**
-     * The identifier of the transaction.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getOrderNumber() {
-        return fOrderNumber;
-    }
-
-    /**
-     * The identifier of the transaction.
-     *
-     */
-    @Override
-    public void setOrderNumber(Text fOrderNumber) {
-        this.fOrderNumber = fOrderNumber;
-    }
-
-    private Object fPaymentDueDate;
-
-    /**
-     * The date that payment is due.
-     *
-     * @return {@link DateTime} or {@link Date}
-     */
-    @Override
-    public <T> T getPaymentDueDate() {
-        return (T) fPaymentDueDate;
-    }
-
-    /**
-     * The date that payment is due.
-     *
-     */
-    @Override
-    public void setPaymentDueDate(Object fPaymentDueDate) {
-        if(!(fPaymentDueDate instanceof DateTime) && !(fPaymentDueDate instanceof Date)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'paymentDueDate': " + fPaymentDueDate);
-        }
-        this.fPaymentDueDate = fPaymentDueDate;
     }
 }

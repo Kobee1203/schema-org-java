@@ -28,53 +28,6 @@ public class PronounceableText extends Text {
     }
 
 
-    private Object fInLanguage;
-
-    /**
-     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
-     *
-     * @return {@link Text} or {@link Language}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
-     */
-    public <T> T getInLanguage() {
-        return (T) fInLanguage;
-    }
-
-    /**
-     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
-     *
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
-     */
-    public void setInLanguage(Object fInLanguage) {
-        if(!(fInLanguage instanceof Text) && !(fInLanguage instanceof Language)) {
-        throw new java.lang.IllegalArgumentException("Invalid value for property 'inLanguage': " + fInLanguage);
-        }
-        this.fInLanguage = fInLanguage;
-    }
-
-    private Text fTextValue;
-
-    /**
-     * Text value being annotated.
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2108">https://github.com/schemaorg/schemaorg/issues/2108</a>
-     */
-    public Text getTextValue() {
-        return fTextValue;
-    }
-
-    /**
-     * Text value being annotated.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2108">https://github.com/schemaorg/schemaorg/issues/2108</a>
-     */
-    public void setTextValue(Text fTextValue) {
-        this.fTextValue = fTextValue;
-    }
-
     private Text fPhoneticText;
 
     /**
@@ -119,5 +72,52 @@ public class PronounceableText extends Text {
      */
     public void setSpeechToTextMarkup(Text fSpeechToTextMarkup) {
         this.fSpeechToTextMarkup = fSpeechToTextMarkup;
+    }
+
+    private Text fTextValue;
+
+    /**
+     * Text value being annotated.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2108">https://github.com/schemaorg/schemaorg/issues/2108</a>
+     */
+    public Text getTextValue() {
+        return fTextValue;
+    }
+
+    /**
+     * Text value being annotated.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2108">https://github.com/schemaorg/schemaorg/issues/2108</a>
+     */
+    public void setTextValue(Text fTextValue) {
+        this.fTextValue = fTextValue;
+    }
+
+    private Object fInLanguage;
+
+    /**
+     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     *
+     * @return {@link Text} or {@link Language}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
+     */
+    public <T> T getInLanguage() {
+        return (T) fInLanguage;
+    }
+
+    /**
+     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     *
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
+     */
+    public void setInLanguage(Object fInLanguage) {
+        if(!(fInLanguage instanceof Text) && !(fInLanguage instanceof Language)) {
+        throw new java.lang.IllegalArgumentException("Invalid value for property 'inLanguage': " + fInLanguage);
+        }
+        this.fInLanguage = fInLanguage;
     }
 }

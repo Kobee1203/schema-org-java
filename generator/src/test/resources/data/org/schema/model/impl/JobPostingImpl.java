@@ -42,6 +42,531 @@ import org.schema.model.JobPosting;
 @JsonLdTypeName("schema:JobPosting")
 public class JobPostingImpl implements JobPosting {
 
+    private Text fEmployerOverview;
+
+    /**
+     * A description of the employer, career opportunities and work environment for this position.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2396">https://github.com/schemaorg/schemaorg/issues/2396</a>
+     */
+    @Override
+    public Text getEmployerOverview() {
+        return fEmployerOverview;
+    }
+
+    /**
+     * A description of the employer, career opportunities and work environment for this position.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2396">https://github.com/schemaorg/schemaorg/issues/2396</a>
+     */
+    @Override
+    public void setEmployerOverview(Text fEmployerOverview) {
+        this.fEmployerOverview = fEmployerOverview;
+    }
+
+    private Object fEstimatedSalary;
+
+    /**
+     * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
+     *
+     * @return {@link MonetaryAmountDistribution} or {@link MonetaryAmount} or {@link Number}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    @Override
+    public <T> T getEstimatedSalary() {
+        return (T) fEstimatedSalary;
+    }
+
+    /**
+     * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
+     *
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    @Override
+    public void setEstimatedSalary(Object fEstimatedSalary) {
+        if(!(fEstimatedSalary instanceof MonetaryAmountDistribution) && !(fEstimatedSalary instanceof MonetaryAmount) && !(fEstimatedSalary instanceof Number)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'estimatedSalary': " + fEstimatedSalary);
+        }
+        this.fEstimatedSalary = fEstimatedSalary;
+    }
+
+    private Text fJobLocationType;
+
+    /**
+     * A description of the job location (e.g TELECOMMUTE for telecommute jobs).
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1591">https://github.com/schemaorg/schemaorg/issues/1591</a>
+     */
+    @Override
+    public Text getJobLocationType() {
+        return fJobLocationType;
+    }
+
+    /**
+     * A description of the job location (e.g TELECOMMUTE for telecommute jobs).
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1591">https://github.com/schemaorg/schemaorg/issues/1591</a>
+     */
+    @Override
+    public void setJobLocationType(Text fJobLocationType) {
+        this.fJobLocationType = fJobLocationType;
+    }
+
+    private Text fResponsibilities;
+
+    /**
+     * Responsibilities associated with this role or Occupation.
+     *
+     * @return {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    @Override
+    public Text getResponsibilities() {
+        return fResponsibilities;
+    }
+
+    /**
+     * Responsibilities associated with this role or Occupation.
+     *
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    @Override
+    public void setResponsibilities(Text fResponsibilities) {
+        this.fResponsibilities = fResponsibilities;
+    }
+
+    private Place fJobLocation;
+
+    /**
+     * A (typically single) geographic location associated with the job position.
+     *
+     * @return {@link Place}
+     */
+    @Override
+    public Place getJobLocation() {
+        return fJobLocation;
+    }
+
+    /**
+     * A (typically single) geographic location associated with the job position.
+     *
+     */
+    @Override
+    public void setJobLocation(Place fJobLocation) {
+        this.fJobLocation = fJobLocation;
+    }
+
+    private Object fPhysicalRequirement;
+
+    /**
+     * A description of the types of physical activity associated with the job. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
+     *
+     * @return {@link URL} or {@link Text} or {@link DefinedTerm}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
+     */
+    @Override
+    public <T> T getPhysicalRequirement() {
+        return (T) fPhysicalRequirement;
+    }
+
+    /**
+     * A description of the types of physical activity associated with the job. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
+     */
+    @Override
+    public void setPhysicalRequirement(Object fPhysicalRequirement) {
+        if(!(fPhysicalRequirement instanceof URL) && !(fPhysicalRequirement instanceof Text) && !(fPhysicalRequirement instanceof DefinedTerm)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'physicalRequirement': " + fPhysicalRequirement);
+        }
+        this.fPhysicalRequirement = fPhysicalRequirement;
+    }
+
+    private Text fIncentives;
+
+    /**
+     * Description of bonus and commission compensation aspects of the job.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getIncentives() {
+        return fIncentives;
+    }
+
+    /**
+     * Description of bonus and commission compensation aspects of the job.
+     *
+     */
+    @Override
+    public void setIncentives(Text fIncentives) {
+        this.fIncentives = fIncentives;
+    }
+
+    private Boolean fDirectApply;
+
+    /**
+     * Indicates whether an [[url]] that is associated with a [[JobPosting]] enables direct application for the job, via the posting website. A job posting is considered to have directApply of [[True]] if an application process for the specified job can be directly initiated via the url(s) given (noting that e.g. multiple internet domains might nevertheless be involved at an implementation level). A value of [[False]] is appropriate if there is no clear path to applying directly online for the specified job, navigating directly from the JobPosting url(s) supplied.
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2907">https://github.com/schemaorg/schemaorg/issues/2907</a>
+     */
+    @Override
+    public Boolean getDirectApply() {
+        return fDirectApply;
+    }
+
+    /**
+     * Indicates whether an [[url]] that is associated with a [[JobPosting]] enables direct application for the job, via the posting website. A job posting is considered to have directApply of [[True]] if an application process for the specified job can be directly initiated via the url(s) given (noting that e.g. multiple internet domains might nevertheless be involved at an implementation level). A value of [[False]] is appropriate if there is no clear path to applying directly online for the specified job, navigating directly from the JobPosting url(s) supplied.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2907">https://github.com/schemaorg/schemaorg/issues/2907</a>
+     */
+    @Override
+    public void setDirectApply(Boolean fDirectApply) {
+        this.fDirectApply = fDirectApply;
+    }
+
+    private Object fSensoryRequirement;
+
+    /**
+     * A description of any sensory requirements and levels necessary to function on the job, including hearing and vision. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
+     *
+     * @return {@link DefinedTerm} or {@link URL} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
+     */
+    @Override
+    public <T> T getSensoryRequirement() {
+        return (T) fSensoryRequirement;
+    }
+
+    /**
+     * A description of any sensory requirements and levels necessary to function on the job, including hearing and vision. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
+     */
+    @Override
+    public void setSensoryRequirement(Object fSensoryRequirement) {
+        if(!(fSensoryRequirement instanceof DefinedTerm) && !(fSensoryRequirement instanceof URL) && !(fSensoryRequirement instanceof Text)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'sensoryRequirement': " + fSensoryRequirement);
+        }
+        this.fSensoryRequirement = fSensoryRequirement;
+    }
+
+    private AdministrativeArea fApplicantLocationRequirements;
+
+    /**
+     * The location(s) applicants can apply from. This is usually used for telecommuting jobs where the applicant does not need to be in a physical office. Note: This should not be used for citizenship or work visa requirements.
+     *
+     * @return {@link AdministrativeArea}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2083">https://github.com/schemaorg/schemaorg/issues/2083</a>
+     */
+    @Override
+    public AdministrativeArea getApplicantLocationRequirements() {
+        return fApplicantLocationRequirements;
+    }
+
+    /**
+     * The location(s) applicants can apply from. This is usually used for telecommuting jobs where the applicant does not need to be in a physical office. Note: This should not be used for citizenship or work visa requirements.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2083">https://github.com/schemaorg/schemaorg/issues/2083</a>
+     */
+    @Override
+    public void setApplicantLocationRequirements(AdministrativeArea fApplicantLocationRequirements) {
+        this.fApplicantLocationRequirements = fApplicantLocationRequirements;
+    }
+
+    private Text fWorkHours;
+
+    /**
+     * The typical working hours for this job (e.g. 1st shift, night shift, 8am-5pm).
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getWorkHours() {
+        return fWorkHours;
+    }
+
+    /**
+     * The typical working hours for this job (e.g. 1st shift, night shift, 8am-5pm).
+     *
+     */
+    @Override
+    public void setWorkHours(Text fWorkHours) {
+        this.fWorkHours = fWorkHours;
+    }
+
+    private Object fJobStartDate;
+
+    /**
+     * The date on which a successful applicant for this job would be expected to start work. Choose a specific date in the future or use the jobImmediateStart property to indicate the position is to be filled as soon as possible.
+     *
+     * @return {@link Date} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2244">https://github.com/schemaorg/schemaorg/issues/2244</a>
+     */
+    @Override
+    public <T> T getJobStartDate() {
+        return (T) fJobStartDate;
+    }
+
+    /**
+     * The date on which a successful applicant for this job would be expected to start work. Choose a specific date in the future or use the jobImmediateStart property to indicate the position is to be filled as soon as possible.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2244">https://github.com/schemaorg/schemaorg/issues/2244</a>
+     */
+    @Override
+    public void setJobStartDate(Object fJobStartDate) {
+        if(!(fJobStartDate instanceof Date) && !(fJobStartDate instanceof Text)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'jobStartDate': " + fJobStartDate);
+        }
+        this.fJobStartDate = fJobStartDate;
+    }
+
+    private Text fEmploymentType;
+
+    /**
+     * Type of employment (e.g. full-time, part-time, contract, temporary, seasonal, internship).
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getEmploymentType() {
+        return fEmploymentType;
+    }
+
+    /**
+     * Type of employment (e.g. full-time, part-time, contract, temporary, seasonal, internship).
+     *
+     */
+    @Override
+    public void setEmploymentType(Text fEmploymentType) {
+        this.fEmploymentType = fEmploymentType;
+    }
+
+    private Text fSpecialCommitments;
+
+    /**
+     * Any special commitments associated with this job posting. Valid entries include VeteranCommit, MilitarySpouseCommit, etc.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getSpecialCommitments() {
+        return fSpecialCommitments;
+    }
+
+    /**
+     * Any special commitments associated with this job posting. Valid entries include VeteranCommit, MilitarySpouseCommit, etc.
+     *
+     */
+    @Override
+    public void setSpecialCommitments(Text fSpecialCommitments) {
+        this.fSpecialCommitments = fSpecialCommitments;
+    }
+
+    private ContactPoint fApplicationContact;
+
+    /**
+     * Contact details for further information relevant to this job posting.
+     *
+     * @return {@link ContactPoint}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2396">https://github.com/schemaorg/schemaorg/issues/2396</a>
+     */
+    @Override
+    public ContactPoint getApplicationContact() {
+        return fApplicationContact;
+    }
+
+    /**
+     * Contact details for further information relevant to this job posting.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2396">https://github.com/schemaorg/schemaorg/issues/2396</a>
+     */
+    @Override
+    public void setApplicationContact(ContactPoint fApplicationContact) {
+        this.fApplicationContact = fApplicationContact;
+    }
+
+    private Text fIncentiveCompensation;
+
+    /**
+     * Description of bonus and commission compensation aspects of the job.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getIncentiveCompensation() {
+        return fIncentiveCompensation;
+    }
+
+    /**
+     * Description of bonus and commission compensation aspects of the job.
+     *
+     */
+    @Override
+    public void setIncentiveCompensation(Text fIncentiveCompensation) {
+        this.fIncentiveCompensation = fIncentiveCompensation;
+    }
+
+    private Occupation fRelevantOccupation;
+
+    /**
+     * The Occupation for the JobPosting.
+     *
+     * @return {@link Occupation}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    @Override
+    public Occupation getRelevantOccupation() {
+        return fRelevantOccupation;
+    }
+
+    /**
+     * The Occupation for the JobPosting.
+     *
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    @Override
+    public void setRelevantOccupation(Occupation fRelevantOccupation) {
+        this.fRelevantOccupation = fRelevantOccupation;
+    }
+
+    private Integer fTotalJobOpenings;
+
+    /**
+     * The number of positions open for this job posting. Use a positive integer. Do not use if the number of positions is unclear or not known.
+     *
+     * @return {@link Integer}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2329">https://github.com/schemaorg/schemaorg/issues/2329</a>
+     */
+    @Override
+    public Integer getTotalJobOpenings() {
+        return fTotalJobOpenings;
+    }
+
+    /**
+     * The number of positions open for this job posting. Use a positive integer. Do not use if the number of positions is unclear or not known.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2329">https://github.com/schemaorg/schemaorg/issues/2329</a>
+     */
+    @Override
+    public void setTotalJobOpenings(Integer fTotalJobOpenings) {
+        this.fTotalJobOpenings = fTotalJobOpenings;
+    }
+
+    private Object fExperienceRequirements;
+
+    /**
+     * Description of skills and experience needed for the position or Occupation.
+     *
+     * @return {@link Text} or {@link OccupationalExperienceRequirements}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    @Override
+    public <T> T getExperienceRequirements() {
+        return (T) fExperienceRequirements;
+    }
+
+    /**
+     * Description of skills and experience needed for the position or Occupation.
+     *
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    @Override
+    public void setExperienceRequirements(Object fExperienceRequirements) {
+        if(!(fExperienceRequirements instanceof Text) && !(fExperienceRequirements instanceof OccupationalExperienceRequirements)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'experienceRequirements': " + fExperienceRequirements);
+        }
+        this.fExperienceRequirements = fExperienceRequirements;
+    }
+
+    private Text fJobBenefits;
+
+    /**
+     * Description of benefits associated with the job.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getJobBenefits() {
+        return fJobBenefits;
+    }
+
+    /**
+     * Description of benefits associated with the job.
+     *
+     */
+    @Override
+    public void setJobBenefits(Text fJobBenefits) {
+        this.fJobBenefits = fJobBenefits;
+    }
+
+    private Text fSalaryCurrency;
+
+    /**
+     * The currency (coded using [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217) ) used for the main salary information in this job posting or for this employee.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getSalaryCurrency() {
+        return fSalaryCurrency;
+    }
+
+    /**
+     * The currency (coded using [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217) ) used for the main salary information in this job posting or for this employee.
+     *
+     */
+    @Override
+    public void setSalaryCurrency(Text fSalaryCurrency) {
+        this.fSalaryCurrency = fSalaryCurrency;
+    }
+
+    private Boolean fExperienceInPlaceOfEducation;
+
+    /**
+     * Indicates whether a [[JobPosting]] will accept experience (as indicated by [[OccupationalExperienceRequirements]]) in place of its formal educational qualifications (as indicated by [[educationRequirements]]). If true, indicates that satisfying one of these requirements is sufficient.
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2681">https://github.com/schemaorg/schemaorg/issues/2681</a>
+     */
+    @Override
+    public Boolean getExperienceInPlaceOfEducation() {
+        return fExperienceInPlaceOfEducation;
+    }
+
+    /**
+     * Indicates whether a [[JobPosting]] will accept experience (as indicated by [[OccupationalExperienceRequirements]]) in place of its formal educational qualifications (as indicated by [[educationRequirements]]). If true, indicates that satisfying one of these requirements is sufficient.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2681">https://github.com/schemaorg/schemaorg/issues/2681</a>
+     */
+    @Override
+    public void setExperienceInPlaceOfEducation(Boolean fExperienceInPlaceOfEducation) {
+        this.fExperienceInPlaceOfEducation = fExperienceInPlaceOfEducation;
+    }
+
     private Object fSecurityClearanceRequirement;
 
     /**
@@ -70,32 +595,29 @@ public class JobPostingImpl implements JobPosting {
         this.fSecurityClearanceRequirement = fSecurityClearanceRequirement;
     }
 
-    private Object fDatePosted;
+    private Text fEligibilityToWorkRequirement;
 
     /**
-     * Publication date of an online listing.
+     * The legal requirements such as citizenship, visa and other documentation required for an applicant to this job.
      *
-     * @return {@link Date} or {@link DateTime}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
      */
     @Override
-    public <T> T getDatePosted() {
-        return (T) fDatePosted;
+    public Text getEligibilityToWorkRequirement() {
+        return fEligibilityToWorkRequirement;
     }
 
     /**
-     * Publication date of an online listing.
+     * The legal requirements such as citizenship, visa and other documentation required for an applicant to this job.
      *
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
      */
     @Override
-    public void setDatePosted(Object fDatePosted) {
-        if(!(fDatePosted instanceof Date) && !(fDatePosted instanceof DateTime)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'datePosted': " + fDatePosted);
-        }
-        this.fDatePosted = fDatePosted;
+    public void setEligibilityToWorkRequirement(Text fEligibilityToWorkRequirement) {
+        this.fEligibilityToWorkRequirement = fEligibilityToWorkRequirement;
     }
 
     private Object fEducationRequirements;
@@ -128,54 +650,49 @@ public class JobPostingImpl implements JobPosting {
         this.fEducationRequirements = fEducationRequirements;
     }
 
-    private Boolean fJobImmediateStart;
+    private Text fBenefits;
 
     /**
-     * An indicator as to whether a position is available for an immediate start.
+     * Description of benefits associated with the job.
      *
-     * @return {@link Boolean}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2244">https://github.com/schemaorg/schemaorg/issues/2244</a>
+     * @return {@link Text}
      */
     @Override
-    public Boolean getJobImmediateStart() {
-        return fJobImmediateStart;
+    public Text getBenefits() {
+        return fBenefits;
     }
 
     /**
-     * An indicator as to whether a position is available for an immediate start.
+     * Description of benefits associated with the job.
      *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2244">https://github.com/schemaorg/schemaorg/issues/2244</a>
      */
     @Override
-    public void setJobImmediateStart(Boolean fJobImmediateStart) {
-        this.fJobImmediateStart = fJobImmediateStart;
+    public void setBenefits(Text fBenefits) {
+        this.fBenefits = fBenefits;
     }
 
-    private Boolean fExperienceInPlaceOfEducation;
+    private Object fIndustry;
 
     /**
-     * Indicates whether a [[JobPosting]] will accept experience (as indicated by [[OccupationalExperienceRequirements]]) in place of its formal educational qualifications (as indicated by [[educationRequirements]]). If true, indicates that satisfying one of these requirements is sufficient.
+     * The industry associated with the job position.
      *
-     * @return {@link Boolean}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2681">https://github.com/schemaorg/schemaorg/issues/2681</a>
+     * @return {@link DefinedTerm} or {@link Text}
      */
     @Override
-    public Boolean getExperienceInPlaceOfEducation() {
-        return fExperienceInPlaceOfEducation;
+    public <T> T getIndustry() {
+        return (T) fIndustry;
     }
 
     /**
-     * Indicates whether a [[JobPosting]] will accept experience (as indicated by [[OccupationalExperienceRequirements]]) in place of its formal educational qualifications (as indicated by [[educationRequirements]]). If true, indicates that satisfying one of these requirements is sufficient.
+     * The industry associated with the job position.
      *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2681">https://github.com/schemaorg/schemaorg/issues/2681</a>
      */
     @Override
-    public void setExperienceInPlaceOfEducation(Boolean fExperienceInPlaceOfEducation) {
-        this.fExperienceInPlaceOfEducation = fExperienceInPlaceOfEducation;
+    public void setIndustry(Object fIndustry) {
+        if(!(fIndustry instanceof DefinedTerm) && !(fIndustry instanceof Text)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'industry': " + fIndustry);
+        }
+        this.fIndustry = fIndustry;
     }
 
     private Object fBaseSalary;
@@ -202,75 +719,32 @@ public class JobPostingImpl implements JobPosting {
         this.fBaseSalary = fBaseSalary;
     }
 
-    private Text fEmploymentType;
+    private Object fDatePosted;
 
     /**
-     * Type of employment (e.g. full-time, part-time, contract, temporary, seasonal, internship).
+     * Publication date of an online listing.
      *
-     * @return {@link Text}
+     * @return {@link Date} or {@link DateTime}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
     @Override
-    public Text getEmploymentType() {
-        return fEmploymentType;
+    public <T> T getDatePosted() {
+        return (T) fDatePosted;
     }
 
     /**
-     * Type of employment (e.g. full-time, part-time, contract, temporary, seasonal, internship).
+     * Publication date of an online listing.
      *
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
     @Override
-    public void setEmploymentType(Text fEmploymentType) {
-        this.fEmploymentType = fEmploymentType;
-    }
-
-    private Organization fEmploymentUnit;
-
-    /**
-     * Indicates the department, unit and/or facility where the employee reports and/or in which the job is to be performed.
-     *
-     * @return {@link Organization}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2296">https://github.com/schemaorg/schemaorg/issues/2296</a>
-     */
-    @Override
-    public Organization getEmploymentUnit() {
-        return fEmploymentUnit;
-    }
-
-    /**
-     * Indicates the department, unit and/or facility where the employee reports and/or in which the job is to be performed.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2296">https://github.com/schemaorg/schemaorg/issues/2296</a>
-     */
-    @Override
-    public void setEmploymentUnit(Organization fEmploymentUnit) {
-        this.fEmploymentUnit = fEmploymentUnit;
-    }
-
-    private Text fJobLocationType;
-
-    /**
-     * A description of the job location (e.g TELECOMMUTE for telecommute jobs).
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1591">https://github.com/schemaorg/schemaorg/issues/1591</a>
-     */
-    @Override
-    public Text getJobLocationType() {
-        return fJobLocationType;
-    }
-
-    /**
-     * A description of the job location (e.g TELECOMMUTE for telecommute jobs).
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1591">https://github.com/schemaorg/schemaorg/issues/1591</a>
-     */
-    @Override
-    public void setJobLocationType(Text fJobLocationType) {
-        this.fJobLocationType = fJobLocationType;
+    public void setDatePosted(Object fDatePosted) {
+        if(!(fDatePosted instanceof Date) && !(fDatePosted instanceof DateTime)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'datePosted': " + fDatePosted);
+        }
+        this.fDatePosted = fDatePosted;
     }
 
     private Object fSkills;
@@ -301,182 +775,25 @@ public class JobPostingImpl implements JobPosting {
         this.fSkills = fSkills;
     }
 
-    private Object fMainEntityOfPage;
+    private Text fTitle;
 
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     */
-    @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
-        }
-        this.fMainEntityOfPage = fMainEntityOfPage;
-    }
-
-    private Place fJobLocation;
-
-    /**
-     * A (typically single) geographic location associated with the job position.
-     *
-     * @return {@link Place}
-     */
-    @Override
-    public Place getJobLocation() {
-        return fJobLocation;
-    }
-
-    /**
-     * A (typically single) geographic location associated with the job position.
-     *
-     */
-    @Override
-    public void setJobLocation(Place fJobLocation) {
-        this.fJobLocation = fJobLocation;
-    }
-
-    private Text fSpecialCommitments;
-
-    /**
-     * Any special commitments associated with this job posting. Valid entries include VeteranCommit, MilitarySpouseCommit, etc.
+     * The title of the job.
      *
      * @return {@link Text}
      */
     @Override
-    public Text getSpecialCommitments() {
-        return fSpecialCommitments;
+    public Text getTitle() {
+        return fTitle;
     }
 
     /**
-     * Any special commitments associated with this job posting. Valid entries include VeteranCommit, MilitarySpouseCommit, etc.
+     * The title of the job.
      *
      */
     @Override
-    public void setSpecialCommitments(Text fSpecialCommitments) {
-        this.fSpecialCommitments = fSpecialCommitments;
-    }
-
-    private Occupation fRelevantOccupation;
-
-    /**
-     * The Occupation for the JobPosting.
-     *
-     * @return {@link Occupation}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    @Override
-    public Occupation getRelevantOccupation() {
-        return fRelevantOccupation;
-    }
-
-    /**
-     * The Occupation for the JobPosting.
-     *
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    @Override
-    public void setRelevantOccupation(Occupation fRelevantOccupation) {
-        this.fRelevantOccupation = fRelevantOccupation;
-    }
-
-    private Action fPotentialAction;
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
-    @Override
-    public Action getPotentialAction() {
-        return fPotentialAction;
-    }
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     */
-    @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
-    }
-
-    private Text fIncentives;
-
-    /**
-     * Description of bonus and commission compensation aspects of the job.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getIncentives() {
-        return fIncentives;
-    }
-
-    /**
-     * Description of bonus and commission compensation aspects of the job.
-     *
-     */
-    @Override
-    public void setIncentives(Text fIncentives) {
-        this.fIncentives = fIncentives;
-    }
-
-    private Object fSubjectOf;
-
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @return {@link Event} or {@link CreativeWork}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    @Override
-    public <T> T getSubjectOf() {
-        return (T) fSubjectOf;
-    }
-
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    @Override
-    public void setSubjectOf(Object fSubjectOf) {
-        if(!(fSubjectOf instanceof Event) && !(fSubjectOf instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'subjectOf': " + fSubjectOf);
-        }
-        this.fSubjectOf = fSubjectOf;
-    }
-
-    private Text fName;
-
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getName() {
-        return fName;
-    }
-
-    /**
-     * The name of the item.
-     *
-     */
-    @Override
-    public void setName(Text fName) {
-        this.fName = fName;
+    public void setTitle(Text fTitle) {
+        this.fTitle = fTitle;
     }
 
     private Organization fHiringOrganization;
@@ -500,189 +817,80 @@ public class JobPostingImpl implements JobPosting {
         this.fHiringOrganization = fHiringOrganization;
     }
 
-    private Text fDisambiguatingDescription;
+    private Boolean fJobImmediateStart;
 
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * An indicator as to whether a position is available for an immediate start.
      *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDisambiguatingDescription() {
-        return fDisambiguatingDescription;
-    }
-
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     */
-    @Override
-    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = fDisambiguatingDescription;
-    }
-
-    private Object fEstimatedSalary;
-
-    /**
-     * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
-     *
-     * @return {@link MonetaryAmountDistribution} or {@link MonetaryAmount} or {@link Number}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    @Override
-    public <T> T getEstimatedSalary() {
-        return (T) fEstimatedSalary;
-    }
-
-    /**
-     * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
-     *
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    @Override
-    public void setEstimatedSalary(Object fEstimatedSalary) {
-        if(!(fEstimatedSalary instanceof MonetaryAmountDistribution) && !(fEstimatedSalary instanceof MonetaryAmount) && !(fEstimatedSalary instanceof Number)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'estimatedSalary': " + fEstimatedSalary);
-        }
-        this.fEstimatedSalary = fEstimatedSalary;
-    }
-
-    private Object fImage;
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link URL} or {@link ImageObject}
-     */
-    @Override
-    public <T> T getImage() {
-        return (T) fImage;
-    }
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     */
-    @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
-        this.fImage = fImage;
-    }
-
-    private URL fSameAs;
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getSameAs() {
-        return fSameAs;
-    }
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     */
-    @Override
-    public void setSameAs(URL fSameAs) {
-        this.fSameAs = fSameAs;
-    }
-
-    private Text fEmployerOverview;
-
-    /**
-     * A description of the employer, career opportunities and work environment for this position.
-     *
-     * @return {@link Text}
+     * @return {@link Boolean}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2396">https://github.com/schemaorg/schemaorg/issues/2396</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2244">https://github.com/schemaorg/schemaorg/issues/2244</a>
      */
     @Override
-    public Text getEmployerOverview() {
-        return fEmployerOverview;
+    public Boolean getJobImmediateStart() {
+        return fJobImmediateStart;
     }
 
     /**
-     * A description of the employer, career opportunities and work environment for this position.
+     * An indicator as to whether a position is available for an immediate start.
      *
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2396">https://github.com/schemaorg/schemaorg/issues/2396</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2244">https://github.com/schemaorg/schemaorg/issues/2244</a>
      */
     @Override
-    public void setEmployerOverview(Text fEmployerOverview) {
-        this.fEmployerOverview = fEmployerOverview;
+    public void setJobImmediateStart(Boolean fJobImmediateStart) {
+        this.fJobImmediateStart = fJobImmediateStart;
     }
 
-    private Text fJobBenefits;
+    private Object fValidThrough;
 
     /**
-     * Description of benefits associated with the job.
+     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
      *
-     * @return {@link Text}
+     * @return {@link DateTime} or {@link Date}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public Text getJobBenefits() {
-        return fJobBenefits;
-    }
-
-    /**
-     * Description of benefits associated with the job.
-     *
-     */
-    @Override
-    public void setJobBenefits(Text fJobBenefits) {
-        this.fJobBenefits = fJobBenefits;
-    }
-
-    private Object fExperienceRequirements;
-
-    /**
-     * Description of skills and experience needed for the position or Occupation.
-     *
-     * @return {@link Text} or {@link OccupationalExperienceRequirements}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    @Override
-    public <T> T getExperienceRequirements() {
-        return (T) fExperienceRequirements;
+    public <T> T getValidThrough() {
+        return (T) fValidThrough;
     }
 
     /**
-     * Description of skills and experience needed for the position or Occupation.
+     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
      *
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setExperienceRequirements(Object fExperienceRequirements) {
-        if(!(fExperienceRequirements instanceof Text) && !(fExperienceRequirements instanceof OccupationalExperienceRequirements)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'experienceRequirements': " + fExperienceRequirements);
+    public void setValidThrough(Object fValidThrough) {
+        if(!(fValidThrough instanceof DateTime) && !(fValidThrough instanceof Date)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'validThrough': " + fValidThrough);
         }
-        this.fExperienceRequirements = fExperienceRequirements;
+        this.fValidThrough = fValidThrough;
     }
 
-    private URL fUrl;
+    private Organization fEmploymentUnit;
 
     /**
-     * URL of the item.
+     * Indicates the department, unit and/or facility where the employee reports and/or in which the job is to be performed.
      *
-     * @return {@link URL}
+     * @return {@link Organization}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2296">https://github.com/schemaorg/schemaorg/issues/2296</a>
      */
     @Override
-    public URL getUrl() {
-        return fUrl;
+    public Organization getEmploymentUnit() {
+        return fEmploymentUnit;
     }
 
     /**
-     * URL of the item.
+     * Indicates the department, unit and/or facility where the employee reports and/or in which the job is to be performed.
      *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2296">https://github.com/schemaorg/schemaorg/issues/2296</a>
      */
     @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
+    public void setEmploymentUnit(Organization fEmploymentUnit) {
+        this.fEmploymentUnit = fEmploymentUnit;
     }
 
     private Object fQualifications;
@@ -713,27 +921,6 @@ public class JobPostingImpl implements JobPosting {
             throw new java.lang.IllegalArgumentException("Invalid value for property 'qualifications': " + fQualifications);
         }
         this.fQualifications = fQualifications;
-    }
-
-    private URL fAdditionalType;
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getAdditionalType() {
-        return fAdditionalType;
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     */
-    @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
     }
 
     private Object fOccupationalCategory;
@@ -772,79 +959,28 @@ public class JobPostingImpl implements JobPosting {
         this.fOccupationalCategory = fOccupationalCategory;
     }
 
-    private Object fValidThrough;
+    private Object fMainEntityOfPage;
 
     /**
-     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @return {@link DateTime} or {@link Date}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @return {@link CreativeWork} or {@link URL}
      */
     @Override
-    public <T> T getValidThrough() {
-        return (T) fValidThrough;
+    public <T> T getMainEntityOfPage() {
+        return (T) fMainEntityOfPage;
     }
 
     /**
-     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setValidThrough(Object fValidThrough) {
-        if(!(fValidThrough instanceof DateTime) && !(fValidThrough instanceof Date)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'validThrough': " + fValidThrough);
+    public void setMainEntityOfPage(Object fMainEntityOfPage) {
+        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
         }
-        this.fValidThrough = fValidThrough;
-    }
-
-    private Object fPhysicalRequirement;
-
-    /**
-     * A description of the types of physical activity associated with the job. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
-     *
-     * @return {@link URL} or {@link Text} or {@link DefinedTerm}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
-     */
-    @Override
-    public <T> T getPhysicalRequirement() {
-        return (T) fPhysicalRequirement;
-    }
-
-    /**
-     * A description of the types of physical activity associated with the job. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
-     */
-    @Override
-    public void setPhysicalRequirement(Object fPhysicalRequirement) {
-        if(!(fPhysicalRequirement instanceof URL) && !(fPhysicalRequirement instanceof Text) && !(fPhysicalRequirement instanceof DefinedTerm)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'physicalRequirement': " + fPhysicalRequirement);
-        }
-        this.fPhysicalRequirement = fPhysicalRequirement;
-    }
-
-    private Text fWorkHours;
-
-    /**
-     * The typical working hours for this job (e.g. 1st shift, night shift, 8am-5pm).
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getWorkHours() {
-        return fWorkHours;
-    }
-
-    /**
-     * The typical working hours for this job (e.g. 1st shift, night shift, 8am-5pm).
-     *
-     */
-    @Override
-    public void setWorkHours(Text fWorkHours) {
-        this.fWorkHours = fWorkHours;
+        this.fMainEntityOfPage = fMainEntityOfPage;
     }
 
     private Text fAlternateName;
@@ -868,200 +1004,201 @@ public class JobPostingImpl implements JobPosting {
         this.fAlternateName = fAlternateName;
     }
 
-    private Text fEligibilityToWorkRequirement;
+    private Text fName;
 
     /**
-     * The legal requirements such as citizenship, visa and other documentation required for an applicant to this job.
+     * The name of the item.
      *
      * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
      */
     @Override
-    public Text getEligibilityToWorkRequirement() {
-        return fEligibilityToWorkRequirement;
+    public Text getName() {
+        return fName;
     }
 
     /**
-     * The legal requirements such as citizenship, visa and other documentation required for an applicant to this job.
+     * The name of the item.
      *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
      */
     @Override
-    public void setEligibilityToWorkRequirement(Text fEligibilityToWorkRequirement) {
-        this.fEligibilityToWorkRequirement = fEligibilityToWorkRequirement;
+    public void setName(Text fName) {
+        this.fName = fName;
     }
 
-    private Object fJobStartDate;
+    private Action fPotentialAction;
 
     /**
-     * The date on which a successful applicant for this job would be expected to start work. Choose a specific date in the future or use the jobImmediateStart property to indicate the position is to be filled as soon as possible.
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      *
-     * @return {@link Date} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2244">https://github.com/schemaorg/schemaorg/issues/2244</a>
+     * @return {@link Action}
      */
     @Override
-    public <T> T getJobStartDate() {
-        return (T) fJobStartDate;
+    public Action getPotentialAction() {
+        return fPotentialAction;
     }
 
     /**
-     * The date on which a successful applicant for this job would be expected to start work. Choose a specific date in the future or use the jobImmediateStart property to indicate the position is to be filled as soon as possible.
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2244">https://github.com/schemaorg/schemaorg/issues/2244</a>
      */
     @Override
-    public void setJobStartDate(Object fJobStartDate) {
-        if(!(fJobStartDate instanceof Date) && !(fJobStartDate instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'jobStartDate': " + fJobStartDate);
+    public void setPotentialAction(Action fPotentialAction) {
+        this.fPotentialAction = fPotentialAction;
+    }
+
+    private Object fImage;
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link URL} or {@link ImageObject}
+     */
+    @Override
+    public <T> T getImage() {
+        return (T) fImage;
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     */
+    @Override
+    public void setImage(Object fImage) {
+        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
         }
-        this.fJobStartDate = fJobStartDate;
+        this.fImage = fImage;
     }
 
-    private ContactPoint fApplicationContact;
+    private URL fUrl;
 
     /**
-     * Contact details for further information relevant to this job posting.
+     * URL of the item.
      *
-     * @return {@link ContactPoint}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2396">https://github.com/schemaorg/schemaorg/issues/2396</a>
+     * @return {@link URL}
      */
     @Override
-    public ContactPoint getApplicationContact() {
-        return fApplicationContact;
+    public URL getUrl() {
+        return fUrl;
     }
 
     /**
-     * Contact details for further information relevant to this job posting.
+     * URL of the item.
      *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2396">https://github.com/schemaorg/schemaorg/issues/2396</a>
      */
     @Override
-    public void setApplicationContact(ContactPoint fApplicationContact) {
-        this.fApplicationContact = fApplicationContact;
+    public void setUrl(URL fUrl) {
+        this.fUrl = fUrl;
     }
 
-    private Text fResponsibilities;
+    private Text fDescription;
 
     /**
-     * Responsibilities associated with this role or Occupation.
-     *
-     * @return {@link Text}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    @Override
-    public Text getResponsibilities() {
-        return fResponsibilities;
-    }
-
-    /**
-     * Responsibilities associated with this role or Occupation.
-     *
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    @Override
-    public void setResponsibilities(Text fResponsibilities) {
-        this.fResponsibilities = fResponsibilities;
-    }
-
-    private Text fSalaryCurrency;
-
-    /**
-     * The currency (coded using [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217) ) used for the main salary information in this job posting or for this employee.
+     * A description of the item.
      *
      * @return {@link Text}
      */
     @Override
-    public Text getSalaryCurrency() {
-        return fSalaryCurrency;
+    public Text getDescription() {
+        return fDescription;
     }
 
     /**
-     * The currency (coded using [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217) ) used for the main salary information in this job posting or for this employee.
+     * A description of the item.
      *
      */
     @Override
-    public void setSalaryCurrency(Text fSalaryCurrency) {
-        this.fSalaryCurrency = fSalaryCurrency;
+    public void setDescription(Text fDescription) {
+        this.fDescription = fDescription;
     }
 
-    private Text fBenefits;
+    private Object fSubjectOf;
 
     /**
-     * Description of benefits associated with the job.
+     * A CreativeWork or Event about this Thing.
      *
-     * @return {@link Text}
+     * @return {@link Event} or {@link CreativeWork}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public Text getBenefits() {
-        return fBenefits;
-    }
-
-    /**
-     * Description of benefits associated with the job.
-     *
-     */
-    @Override
-    public void setBenefits(Text fBenefits) {
-        this.fBenefits = fBenefits;
-    }
-
-    private Object fSensoryRequirement;
-
-    /**
-     * A description of any sensory requirements and levels necessary to function on the job, including hearing and vision. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
-     *
-     * @return {@link DefinedTerm} or {@link URL} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
-     */
-    @Override
-    public <T> T getSensoryRequirement() {
-        return (T) fSensoryRequirement;
+    public <T> T getSubjectOf() {
+        return (T) fSubjectOf;
     }
 
     /**
-     * A description of any sensory requirements and levels necessary to function on the job, including hearing and vision. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
+     * A CreativeWork or Event about this Thing.
      *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSensoryRequirement(Object fSensoryRequirement) {
-        if(!(fSensoryRequirement instanceof DefinedTerm) && !(fSensoryRequirement instanceof URL) && !(fSensoryRequirement instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'sensoryRequirement': " + fSensoryRequirement);
+    public void setSubjectOf(Object fSubjectOf) {
+        if(!(fSubjectOf instanceof Event) && !(fSubjectOf instanceof CreativeWork)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'subjectOf': " + fSubjectOf);
         }
-        this.fSensoryRequirement = fSensoryRequirement;
+        this.fSubjectOf = fSubjectOf;
     }
 
-    private Integer fTotalJobOpenings;
+    private URL fAdditionalType;
 
     /**
-     * The number of positions open for this job posting. Use a positive integer. Do not use if the number of positions is unclear or not known.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
-     * @return {@link Integer}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2329">https://github.com/schemaorg/schemaorg/issues/2329</a>
+     * @return {@link URL}
      */
     @Override
-    public Integer getTotalJobOpenings() {
-        return fTotalJobOpenings;
+    public URL getAdditionalType() {
+        return fAdditionalType;
     }
 
     /**
-     * The number of positions open for this job posting. Use a positive integer. Do not use if the number of positions is unclear or not known.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2329">https://github.com/schemaorg/schemaorg/issues/2329</a>
      */
     @Override
-    public void setTotalJobOpenings(Integer fTotalJobOpenings) {
-        this.fTotalJobOpenings = fTotalJobOpenings;
+    public void setAdditionalType(URL fAdditionalType) {
+        this.fAdditionalType = fAdditionalType;
+    }
+
+    private Text fDisambiguatingDescription;
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDisambiguatingDescription() {
+        return fDisambiguatingDescription;
+    }
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     */
+    @Override
+    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
+        this.fDisambiguatingDescription = fDisambiguatingDescription;
+    }
+
+    private URL fSameAs;
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getSameAs() {
+        return fSameAs;
+    }
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     */
+    @Override
+    public void setSameAs(URL fSameAs) {
+        this.fSameAs = fSameAs;
     }
 
     private Object fIdentifier;
@@ -1088,142 +1225,5 @@ public class JobPostingImpl implements JobPosting {
             throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
         }
         this.fIdentifier = fIdentifier;
-    }
-
-    private AdministrativeArea fApplicantLocationRequirements;
-
-    /**
-     * The location(s) applicants can apply from. This is usually used for telecommuting jobs where the applicant does not need to be in a physical office. Note: This should not be used for citizenship or work visa requirements.
-     *
-     * @return {@link AdministrativeArea}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2083">https://github.com/schemaorg/schemaorg/issues/2083</a>
-     */
-    @Override
-    public AdministrativeArea getApplicantLocationRequirements() {
-        return fApplicantLocationRequirements;
-    }
-
-    /**
-     * The location(s) applicants can apply from. This is usually used for telecommuting jobs where the applicant does not need to be in a physical office. Note: This should not be used for citizenship or work visa requirements.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2083">https://github.com/schemaorg/schemaorg/issues/2083</a>
-     */
-    @Override
-    public void setApplicantLocationRequirements(AdministrativeArea fApplicantLocationRequirements) {
-        this.fApplicantLocationRequirements = fApplicantLocationRequirements;
-    }
-
-    private Text fIncentiveCompensation;
-
-    /**
-     * Description of bonus and commission compensation aspects of the job.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getIncentiveCompensation() {
-        return fIncentiveCompensation;
-    }
-
-    /**
-     * Description of bonus and commission compensation aspects of the job.
-     *
-     */
-    @Override
-    public void setIncentiveCompensation(Text fIncentiveCompensation) {
-        this.fIncentiveCompensation = fIncentiveCompensation;
-    }
-
-    private Boolean fDirectApply;
-
-    /**
-     * Indicates whether an [[url]] that is associated with a [[JobPosting]] enables direct application for the job, via the posting website. A job posting is considered to have directApply of [[True]] if an application process for the specified job can be directly initiated via the url(s) given (noting that e.g. multiple internet domains might nevertheless be involved at an implementation level). A value of [[False]] is appropriate if there is no clear path to applying directly online for the specified job, navigating directly from the JobPosting url(s) supplied.
-     *
-     * @return {@link Boolean}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2907">https://github.com/schemaorg/schemaorg/issues/2907</a>
-     */
-    @Override
-    public Boolean getDirectApply() {
-        return fDirectApply;
-    }
-
-    /**
-     * Indicates whether an [[url]] that is associated with a [[JobPosting]] enables direct application for the job, via the posting website. A job posting is considered to have directApply of [[True]] if an application process for the specified job can be directly initiated via the url(s) given (noting that e.g. multiple internet domains might nevertheless be involved at an implementation level). A value of [[False]] is appropriate if there is no clear path to applying directly online for the specified job, navigating directly from the JobPosting url(s) supplied.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2907">https://github.com/schemaorg/schemaorg/issues/2907</a>
-     */
-    @Override
-    public void setDirectApply(Boolean fDirectApply) {
-        this.fDirectApply = fDirectApply;
-    }
-
-    private Text fTitle;
-
-    /**
-     * The title of the job.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getTitle() {
-        return fTitle;
-    }
-
-    /**
-     * The title of the job.
-     *
-     */
-    @Override
-    public void setTitle(Text fTitle) {
-        this.fTitle = fTitle;
-    }
-
-    private Text fDescription;
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDescription() {
-        return fDescription;
-    }
-
-    /**
-     * A description of the item.
-     *
-     */
-    @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
-    }
-
-    private Object fIndustry;
-
-    /**
-     * The industry associated with the job position.
-     *
-     * @return {@link DefinedTerm} or {@link Text}
-     */
-    @Override
-    public <T> T getIndustry() {
-        return (T) fIndustry;
-    }
-
-    /**
-     * The industry associated with the job position.
-     *
-     */
-    @Override
-    public void setIndustry(Object fIndustry) {
-        if(!(fIndustry instanceof DefinedTerm) && !(fIndustry instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'industry': " + fIndustry);
-        }
-        this.fIndustry = fIndustry;
     }
 }

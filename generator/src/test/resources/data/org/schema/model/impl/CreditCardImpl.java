@@ -60,173 +60,34 @@ import org.schema.model.CreditCard;
 @JsonLdTypeName("schema:CreditCard")
 public class CreditCardImpl implements CreditCard {
 
-    private Boolean fRecourseLoan;
+    private Object fCashBack;
 
     /**
-     * The only way you get the money back in the event of default is the security. Recourse is where you still have the opportunity to go back to the borrower for the rest of the money.
+     * A cardholder benefit that pays the cardholder a small percentage of their net expenditures.
      *
-     * @return {@link Boolean}
+     * @return {@link Number} or {@link Boolean}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      */
     @Override
-    public Boolean getRecourseLoan() {
-        return fRecourseLoan;
+    public <T> T getCashBack() {
+        return (T) fCashBack;
     }
 
     /**
-     * The only way you get the money back in the event of default is the security. Recourse is where you still have the opportunity to go back to the borrower for the rest of the money.
+     * A cardholder benefit that pays the cardholder a small percentage of their net expenditures.
      *
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
-     */
-    @Override
-    public void setRecourseLoan(Boolean fRecourseLoan) {
-        this.fRecourseLoan = fRecourseLoan;
-    }
-
-    private Object fServiceType;
-
-    /**
-     * The type of service being offered, e.g. veterans' benefits, emergency relief, etc.
-     *
-     * @return {@link GovernmentBenefitsType} or {@link Text}
-     */
-    @Override
-    public <T> T getServiceType() {
-        return (T) fServiceType;
-    }
-
-    /**
-     * The type of service being offered, e.g. veterans' benefits, emergency relief, etc.
-     *
-     */
-    @Override
-    public void setServiceType(Object fServiceType) {
-        if(!(fServiceType instanceof GovernmentBenefitsType) && !(fServiceType instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'serviceType': " + fServiceType);
-        }
-        this.fServiceType = fServiceType;
-    }
-
-    private Object fLogo;
-
-    /**
-     * An associated logo.
-     *
-     * @return {@link URL} or {@link ImageObject}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public <T> T getLogo() {
-        return (T) fLogo;
-    }
-
-    /**
-     * An associated logo.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setLogo(Object fLogo) {
-        if(!(fLogo instanceof URL) && !(fLogo instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'logo': " + fLogo);
-        }
-        this.fLogo = fLogo;
-    }
-
-    private Object fInterestRate;
-
-    /**
-     * The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.
-     *
-     * @return {@link Number} or {@link QuantitativeValue}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      */
     @Override
-    public <T> T getInterestRate() {
-        return (T) fInterestRate;
-    }
-
-    /**
-     * The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
-     */
-    @Override
-    public void setInterestRate(Object fInterestRate) {
-        if(!(fInterestRate instanceof Number) && !(fInterestRate instanceof QuantitativeValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'interestRate': " + fInterestRate);
+    public void setCashBack(Object fCashBack) {
+        if(!(fCashBack instanceof Number) && !(fCashBack instanceof Boolean)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'cashBack': " + fCashBack);
         }
-        this.fInterestRate = fInterestRate;
-    }
-
-    private Object fMainEntityOfPage;
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     */
-    @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
-        }
-        this.fMainEntityOfPage = fMainEntityOfPage;
-    }
-
-    private Audience fServiceAudience;
-
-    /**
-     * The audience eligible for this service.
-     *
-     * @return {@link Audience}
-     */
-    @Override
-    public Audience getServiceAudience() {
-        return fServiceAudience;
-    }
-
-    /**
-     * The audience eligible for this service.
-     *
-     */
-    @Override
-    public void setServiceAudience(Audience fServiceAudience) {
-        this.fServiceAudience = fServiceAudience;
-    }
-
-    private Action fPotentialAction;
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
-    @Override
-    public Action getPotentialAction() {
-        return fPotentialAction;
-    }
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     */
-    @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
+        this.fCashBack = fCashBack;
     }
 
     private Object fMonthlyMinimumRepaymentAmount;
@@ -259,6 +120,239 @@ public class CreditCardImpl implements CreditCard {
         this.fMonthlyMinimumRepaymentAmount = fMonthlyMinimumRepaymentAmount;
     }
 
+    private MonetaryAmount fFloorLimit;
+
+    /**
+     * A floor limit is the amount of money above which credit card transactions must be authorized.
+     *
+     * @return {@link MonetaryAmount}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     */
+    @Override
+    public MonetaryAmount getFloorLimit() {
+        return fFloorLimit;
+    }
+
+    /**
+     * A floor limit is the amount of money above which credit card transactions must be authorized.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     */
+    @Override
+    public void setFloorLimit(MonetaryAmount fFloorLimit) {
+        this.fFloorLimit = fFloorLimit;
+    }
+
+    private Boolean fContactlessPayment;
+
+    /**
+     * A secure method for consumers to purchase products or services via debit, credit or smartcards by using RFID or NFC technology.
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     */
+    @Override
+    public Boolean getContactlessPayment() {
+        return fContactlessPayment;
+    }
+
+    /**
+     * A secure method for consumers to purchase products or services via debit, credit or smartcards by using RFID or NFC technology.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     */
+    @Override
+    public void setContactlessPayment(Boolean fContactlessPayment) {
+        this.fContactlessPayment = fContactlessPayment;
+    }
+
+    private Object fSupersededBy;
+
+    /**
+     * Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
+     *
+     * @return {@link Enumeration} or {@link Class} or {@link Property}
+     * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
+     */
+    @Override
+    public <T> T getSupersededBy() {
+        return (T) fSupersededBy;
+    }
+
+    /**
+     * Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
+     *
+     * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
+     */
+    @Override
+    public void setSupersededBy(Object fSupersededBy) {
+        if(!(fSupersededBy instanceof Enumeration) && !(fSupersededBy instanceof Class) && !(fSupersededBy instanceof Property)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'supersededBy': " + fSupersededBy);
+        }
+        this.fSupersededBy = fSupersededBy;
+    }
+
+    private Object fMainEntityOfPage;
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    @Override
+    public <T> T getMainEntityOfPage() {
+        return (T) fMainEntityOfPage;
+    }
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     */
+    @Override
+    public void setMainEntityOfPage(Object fMainEntityOfPage) {
+        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
+        }
+        this.fMainEntityOfPage = fMainEntityOfPage;
+    }
+
+    private Text fAlternateName;
+
+    /**
+     * An alias for the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getAlternateName() {
+        return fAlternateName;
+    }
+
+    /**
+     * An alias for the item.
+     *
+     */
+    @Override
+    public void setAlternateName(Text fAlternateName) {
+        this.fAlternateName = fAlternateName;
+    }
+
+    private Text fName;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getName() {
+        return fName;
+    }
+
+    /**
+     * The name of the item.
+     *
+     */
+    @Override
+    public void setName(Text fName) {
+        this.fName = fName;
+    }
+
+    private Action fPotentialAction;
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public Action getPotentialAction() {
+        return fPotentialAction;
+    }
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     */
+    @Override
+    public void setPotentialAction(Action fPotentialAction) {
+        this.fPotentialAction = fPotentialAction;
+    }
+
+    private Object fImage;
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link URL} or {@link ImageObject}
+     */
+    @Override
+    public <T> T getImage() {
+        return (T) fImage;
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     */
+    @Override
+    public void setImage(Object fImage) {
+        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
+        }
+        this.fImage = fImage;
+    }
+
+    private URL fUrl;
+
+    /**
+     * URL of the item.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getUrl() {
+        return fUrl;
+    }
+
+    /**
+     * URL of the item.
+     *
+     */
+    @Override
+    public void setUrl(URL fUrl) {
+        this.fUrl = fUrl;
+    }
+
+    private Text fDescription;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDescription() {
+        return fDescription;
+    }
+
+    /**
+     * A description of the item.
+     *
+     */
+    @Override
+    public void setDescription(Text fDescription) {
+        this.fDescription = fDescription;
+    }
+
     private Object fSubjectOf;
 
     /**
@@ -285,91 +379,25 @@ public class CreditCardImpl implements CreditCard {
         this.fSubjectOf = fSubjectOf;
     }
 
-    private Object fServiceArea;
+    private URL fAdditionalType;
 
     /**
-     * The geographic area where the service is provided.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
-     * @return {@link GeoShape} or {@link AdministrativeArea} or {@link Place}
+     * @return {@link URL}
      */
     @Override
-    public <T> T getServiceArea() {
-        return (T) fServiceArea;
+    public URL getAdditionalType() {
+        return fAdditionalType;
     }
 
     /**
-     * The geographic area where the service is provided.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
      */
     @Override
-    public void setServiceArea(Object fServiceArea) {
-        if(!(fServiceArea instanceof GeoShape) && !(fServiceArea instanceof AdministrativeArea) && !(fServiceArea instanceof Place)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'serviceArea': " + fServiceArea);
-        }
-        this.fServiceArea = fServiceArea;
-    }
-
-    private Text fName;
-
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getName() {
-        return fName;
-    }
-
-    /**
-     * The name of the item.
-     *
-     */
-    @Override
-    public void setName(Text fName) {
-        this.fName = fName;
-    }
-
-    private AggregateRating fAggregateRating;
-
-    /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
-     *
-     * @return {@link AggregateRating}
-     */
-    @Override
-    public AggregateRating getAggregateRating() {
-        return fAggregateRating;
-    }
-
-    /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
-     *
-     */
-    @Override
-    public void setAggregateRating(AggregateRating fAggregateRating) {
-        this.fAggregateRating = fAggregateRating;
-    }
-
-    private ServiceChannel fAvailableChannel;
-
-    /**
-     * A means of accessing the service (e.g. a phone bank, a web site, a location, etc.).
-     *
-     * @return {@link ServiceChannel}
-     */
-    @Override
-    public ServiceChannel getAvailableChannel() {
-        return fAvailableChannel;
-    }
-
-    /**
-     * A means of accessing the service (e.g. a phone bank, a web site, a location, etc.).
-     *
-     */
-    @Override
-    public void setAvailableChannel(ServiceChannel fAvailableChannel) {
-        this.fAvailableChannel = fAvailableChannel;
+    public void setAdditionalType(URL fAdditionalType) {
+        this.fAdditionalType = fAdditionalType;
     }
 
     private Text fDisambiguatingDescription;
@@ -391,6 +419,264 @@ public class CreditCardImpl implements CreditCard {
     @Override
     public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
         this.fDisambiguatingDescription = fDisambiguatingDescription;
+    }
+
+    private URL fSameAs;
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getSameAs() {
+        return fSameAs;
+    }
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     */
+    @Override
+    public void setSameAs(URL fSameAs) {
+        this.fSameAs = fSameAs;
+    }
+
+    private Object fIdentifier;
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @return {@link URL} or {@link Text} or {@link PropertyValue}
+     */
+    @Override
+    public <T> T getIdentifier() {
+        return (T) fIdentifier;
+    }
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     */
+    @Override
+    public void setIdentifier(Object fIdentifier) {
+        if(!(fIdentifier instanceof URL) && !(fIdentifier instanceof Text) && !(fIdentifier instanceof PropertyValue)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
+        }
+        this.fIdentifier = fIdentifier;
+    }
+
+    private Object fAnnualPercentageRate;
+
+    /**
+     * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
+     *
+     * @return {@link Number} or {@link QuantitativeValue}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     */
+    @Override
+    public <T> T getAnnualPercentageRate() {
+        return (T) fAnnualPercentageRate;
+    }
+
+    /**
+     * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     */
+    @Override
+    public void setAnnualPercentageRate(Object fAnnualPercentageRate) {
+        if(!(fAnnualPercentageRate instanceof Number) && !(fAnnualPercentageRate instanceof QuantitativeValue)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'annualPercentageRate': " + fAnnualPercentageRate);
+        }
+        this.fAnnualPercentageRate = fAnnualPercentageRate;
+    }
+
+    private Object fFeesAndCommissionsSpecification;
+
+    /**
+     * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
+     *
+     * @return {@link URL} or {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     */
+    @Override
+    public <T> T getFeesAndCommissionsSpecification() {
+        return (T) fFeesAndCommissionsSpecification;
+    }
+
+    /**
+     * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     */
+    @Override
+    public void setFeesAndCommissionsSpecification(Object fFeesAndCommissionsSpecification) {
+        if(!(fFeesAndCommissionsSpecification instanceof URL) && !(fFeesAndCommissionsSpecification instanceof Text)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'feesAndCommissionsSpecification': " + fFeesAndCommissionsSpecification);
+        }
+        this.fFeesAndCommissionsSpecification = fFeesAndCommissionsSpecification;
+    }
+
+    private Object fInterestRate;
+
+    /**
+     * The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.
+     *
+     * @return {@link Number} or {@link QuantitativeValue}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     */
+    @Override
+    public <T> T getInterestRate() {
+        return (T) fInterestRate;
+    }
+
+    /**
+     * The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     */
+    @Override
+    public void setInterestRate(Object fInterestRate) {
+        if(!(fInterestRate instanceof Number) && !(fInterestRate instanceof QuantitativeValue)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'interestRate': " + fInterestRate);
+        }
+        this.fInterestRate = fInterestRate;
+    }
+
+    private Review fReview;
+
+    /**
+     * A review of the item.
+     *
+     * @return {@link Review}
+     */
+    @Override
+    public Review getReview() {
+        return fReview;
+    }
+
+    /**
+     * A review of the item.
+     *
+     */
+    @Override
+    public void setReview(Review fReview) {
+        this.fReview = fReview;
+    }
+
+    private Text fAward;
+
+    /**
+     * An award won by or for this item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getAward() {
+        return fAward;
+    }
+
+    /**
+     * An award won by or for this item.
+     *
+     */
+    @Override
+    public void setAward(Text fAward) {
+        this.fAward = fAward;
+    }
+
+    private Audience fServiceAudience;
+
+    /**
+     * The audience eligible for this service.
+     *
+     * @return {@link Audience}
+     */
+    @Override
+    public Audience getServiceAudience() {
+        return fServiceAudience;
+    }
+
+    /**
+     * The audience eligible for this service.
+     *
+     */
+    @Override
+    public void setServiceAudience(Audience fServiceAudience) {
+        this.fServiceAudience = fServiceAudience;
+    }
+
+    private Object fCategory;
+
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @return {@link URL} or {@link Text} or {@link PhysicalActivityCategory} or {@link Thing} or {@link CategoryCode}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    @Override
+    public <T> T getCategory() {
+        return (T) fCategory;
+    }
+
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    @Override
+    public void setCategory(Object fCategory) {
+        if(!(fCategory instanceof URL) && !(fCategory instanceof Text) && !(fCategory instanceof PhysicalActivityCategory) && !(fCategory instanceof Thing) && !(fCategory instanceof CategoryCode)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'category': " + fCategory);
+        }
+        this.fCategory = fCategory;
+    }
+
+    private OpeningHoursSpecification fHoursAvailable;
+
+    /**
+     * The hours during which this service or contact is available.
+     *
+     * @return {@link OpeningHoursSpecification}
+     */
+    @Override
+    public OpeningHoursSpecification getHoursAvailable() {
+        return fHoursAvailable;
+    }
+
+    /**
+     * The hours during which this service or contact is available.
+     *
+     */
+    @Override
+    public void setHoursAvailable(OpeningHoursSpecification fHoursAvailable) {
+        this.fHoursAvailable = fHoursAvailable;
+    }
+
+    private Audience fAudience;
+
+    /**
+     * An intended audience, i.e. a group for whom something was created.
+     *
+     * @return {@link Audience}
+     */
+    @Override
+    public Audience getAudience() {
+        return fAudience;
+    }
+
+    /**
+     * An intended audience, i.e. a group for whom something was created.
+     *
+     */
+    @Override
+    public void setAudience(Audience fAudience) {
+        this.fAudience = fAudience;
     }
 
     private Object fOffers;
@@ -421,376 +707,6 @@ public class CreditCardImpl implements CreditCard {
         this.fOffers = fOffers;
     }
 
-    private Object fImage;
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link URL} or {@link ImageObject}
-     */
-    @Override
-    public <T> T getImage() {
-        return (T) fImage;
-    }
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     */
-    @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
-        this.fImage = fImage;
-    }
-
-    private URL fSameAs;
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getSameAs() {
-        return fSameAs;
-    }
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     */
-    @Override
-    public void setSameAs(URL fSameAs) {
-        this.fSameAs = fSameAs;
-    }
-
-    private Text fCurrency;
-
-    /**
-     * The currency in which the monetary amount is expressed.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
-     *
-     * @return {@link Text}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
-     */
-    @Override
-    public Text getCurrency() {
-        return fCurrency;
-    }
-
-    /**
-     * The currency in which the monetary amount is expressed.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
-     *
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
-     */
-    @Override
-    public void setCurrency(Text fCurrency) {
-        this.fCurrency = fCurrency;
-    }
-
-    private Boolean fRenegotiableLoan;
-
-    /**
-     * Whether the terms for payment of interest can be renegotiated during the life of the loan.
-     *
-     * @return {@link Boolean}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
-     */
-    @Override
-    public Boolean getRenegotiableLoan() {
-        return fRenegotiableLoan;
-    }
-
-    /**
-     * Whether the terms for payment of interest can be renegotiated during the life of the loan.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
-     */
-    @Override
-    public void setRenegotiableLoan(Boolean fRenegotiableLoan) {
-        this.fRenegotiableLoan = fRenegotiableLoan;
-    }
-
-    private Object fIsSimilarTo;
-
-    /**
-     * A pointer to another, functionally similar product (or multiple products).
-     *
-     * @return {@link Service} or {@link Product}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public <T> T getIsSimilarTo() {
-        return (T) fIsSimilarTo;
-    }
-
-    /**
-     * A pointer to another, functionally similar product (or multiple products).
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setIsSimilarTo(Object fIsSimilarTo) {
-        if(!(fIsSimilarTo instanceof Service) && !(fIsSimilarTo instanceof Product)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'isSimilarTo': " + fIsSimilarTo);
-        }
-        this.fIsSimilarTo = fIsSimilarTo;
-    }
-
-    private Thing fProduces;
-
-    /**
-     * The tangible thing generated by the service, e.g. a passport, permit, etc.
-     *
-     * @return {@link Thing}
-     */
-    @Override
-    public Thing getProduces() {
-        return fProduces;
-    }
-
-    /**
-     * The tangible thing generated by the service, e.g. a passport, permit, etc.
-     *
-     */
-    @Override
-    public void setProduces(Thing fProduces) {
-        this.fProduces = fProduces;
-    }
-
-    private URL fUrl;
-
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getUrl() {
-        return fUrl;
-    }
-
-    /**
-     * URL of the item.
-     *
-     */
-    @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
-    }
-
-    private Audience fAudience;
-
-    /**
-     * An intended audience, i.e. a group for whom something was created.
-     *
-     * @return {@link Audience}
-     */
-    @Override
-    public Audience getAudience() {
-        return fAudience;
-    }
-
-    /**
-     * An intended audience, i.e. a group for whom something was created.
-     *
-     */
-    @Override
-    public void setAudience(Audience fAudience) {
-        this.fAudience = fAudience;
-    }
-
-    private Object fRequiredCollateral;
-
-    /**
-     * Assets required to secure loan or credit repayments. It may take form of third party pledge, goods, financial instruments (cash, securities, etc.)
-     *
-     * @return {@link Text} or {@link Thing}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
-     */
-    @Override
-    public <T> T getRequiredCollateral() {
-        return (T) fRequiredCollateral;
-    }
-
-    /**
-     * Assets required to secure loan or credit repayments. It may take form of third party pledge, goods, financial instruments (cash, securities, etc.)
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
-     */
-    @Override
-    public void setRequiredCollateral(Object fRequiredCollateral) {
-        if(!(fRequiredCollateral instanceof Text) && !(fRequiredCollateral instanceof Thing)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'requiredCollateral': " + fRequiredCollateral);
-        }
-        this.fRequiredCollateral = fRequiredCollateral;
-    }
-
-    private Object fCashBack;
-
-    /**
-     * A cardholder benefit that pays the cardholder a small percentage of their net expenditures.
-     *
-     * @return {@link Number} or {@link Boolean}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
-     */
-    @Override
-    public <T> T getCashBack() {
-        return (T) fCashBack;
-    }
-
-    /**
-     * A cardholder benefit that pays the cardholder a small percentage of their net expenditures.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
-     */
-    @Override
-    public void setCashBack(Object fCashBack) {
-        if(!(fCashBack instanceof Number) && !(fCashBack instanceof Boolean)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'cashBack': " + fCashBack);
-        }
-        this.fCashBack = fCashBack;
-    }
-
-    private URL fAdditionalType;
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getAdditionalType() {
-        return fAdditionalType;
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     */
-    @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
-    }
-
-    private Object fLoanType;
-
-    /**
-     * The type of a loan or credit.
-     *
-     * @return {@link URL} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
-     */
-    @Override
-    public <T> T getLoanType() {
-        return (T) fLoanType;
-    }
-
-    /**
-     * The type of a loan or credit.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
-     */
-    @Override
-    public void setLoanType(Object fLoanType) {
-        if(!(fLoanType instanceof URL) && !(fLoanType instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'loanType': " + fLoanType);
-        }
-        this.fLoanType = fLoanType;
-    }
-
-    private Object fAnnualPercentageRate;
-
-    /**
-     * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
-     *
-     * @return {@link Number} or {@link QuantitativeValue}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
-     */
-    @Override
-    public <T> T getAnnualPercentageRate() {
-        return (T) fAnnualPercentageRate;
-    }
-
-    /**
-     * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
-     */
-    @Override
-    public void setAnnualPercentageRate(Object fAnnualPercentageRate) {
-        if(!(fAnnualPercentageRate instanceof Number) && !(fAnnualPercentageRate instanceof QuantitativeValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'annualPercentageRate': " + fAnnualPercentageRate);
-        }
-        this.fAnnualPercentageRate = fAnnualPercentageRate;
-    }
-
-    private Duration fGracePeriod;
-
-    /**
-     * The period of time after any due date that the borrower has to fulfil its obligations before a default (failure to pay) is deemed to have occurred.
-     *
-     * @return {@link Duration}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
-     */
-    @Override
-    public Duration getGracePeriod() {
-        return fGracePeriod;
-    }
-
-    /**
-     * The period of time after any due date that the borrower has to fulfil its obligations before a default (failure to pay) is deemed to have occurred.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
-     */
-    @Override
-    public void setGracePeriod(Duration fGracePeriod) {
-        this.fGracePeriod = fGracePeriod;
-    }
-
-    private Object fSupersededBy;
-
-    /**
-     * Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
-     *
-     * @return {@link Enumeration} or {@link Class} or {@link Property}
-     * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
-     */
-    @Override
-    public <T> T getSupersededBy() {
-        return (T) fSupersededBy;
-    }
-
-    /**
-     * Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
-     *
-     * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
-     */
-    @Override
-    public void setSupersededBy(Object fSupersededBy) {
-        if(!(fSupersededBy instanceof Enumeration) && !(fSupersededBy instanceof Class) && !(fSupersededBy instanceof Property)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'supersededBy': " + fSupersededBy);
-        }
-        this.fSupersededBy = fSupersededBy;
-    }
-
     private Thing fServiceOutput;
 
     /**
@@ -810,72 +726,6 @@ public class CreditCardImpl implements CreditCard {
     @Override
     public void setServiceOutput(Thing fServiceOutput) {
         this.fServiceOutput = fServiceOutput;
-    }
-
-    private Text fAlternateName;
-
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getAlternateName() {
-        return fAlternateName;
-    }
-
-    /**
-     * An alias for the item.
-     *
-     */
-    @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
-    }
-
-    private Text fProviderMobility;
-
-    /**
-     * Indicates the mobility of a provided service (e.g. 'static', 'dynamic').
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getProviderMobility() {
-        return fProviderMobility;
-    }
-
-    /**
-     * Indicates the mobility of a provided service (e.g. 'static', 'dynamic').
-     *
-     */
-    @Override
-    public void setProviderMobility(Text fProviderMobility) {
-        this.fProviderMobility = fProviderMobility;
-    }
-
-    private Object fAreaServed;
-
-    /**
-     * The geographic area where a service or offered item is provided.
-     *
-     * @return {@link AdministrativeArea} or {@link GeoShape} or {@link Text} or {@link Place}
-     */
-    @Override
-    public <T> T getAreaServed() {
-        return (T) fAreaServed;
-    }
-
-    /**
-     * The geographic area where a service or offered item is provided.
-     *
-     */
-    @Override
-    public void setAreaServed(Object fAreaServed) {
-        if(!(fAreaServed instanceof AdministrativeArea) && !(fAreaServed instanceof GeoShape) && !(fAreaServed instanceof Text) && !(fAreaServed instanceof Place)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'areaServed': " + fAreaServed);
-        }
-        this.fAreaServed = fAreaServed;
     }
 
     private Object fProvider;
@@ -908,27 +758,6 @@ public class CreditCardImpl implements CreditCard {
         this.fProvider = fProvider;
     }
 
-    private Review fReview;
-
-    /**
-     * A review of the item.
-     *
-     * @return {@link Review}
-     */
-    @Override
-    public Review getReview() {
-        return fReview;
-    }
-
-    /**
-     * A review of the item.
-     *
-     */
-    @Override
-    public void setReview(Review fReview) {
-        this.fReview = fReview;
-    }
-
     private Object fTermsOfService;
 
     /**
@@ -957,32 +786,138 @@ public class CreditCardImpl implements CreditCard {
         this.fTermsOfService = fTermsOfService;
     }
 
-    private Object fCategory;
+    private Text fProviderMobility;
 
     /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     * Indicates the mobility of a provided service (e.g. 'static', 'dynamic').
      *
-     * @return {@link URL} or {@link Text} or {@link PhysicalActivityCategory} or {@link Thing} or {@link CategoryCode}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @return {@link Text}
      */
     @Override
-    public <T> T getCategory() {
-        return (T) fCategory;
+    public Text getProviderMobility() {
+        return fProviderMobility;
     }
 
     /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     * Indicates the mobility of a provided service (e.g. 'static', 'dynamic').
      *
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
     @Override
-    public void setCategory(Object fCategory) {
-        if(!(fCategory instanceof URL) && !(fCategory instanceof Text) && !(fCategory instanceof PhysicalActivityCategory) && !(fCategory instanceof Thing) && !(fCategory instanceof CategoryCode)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'category': " + fCategory);
+    public void setProviderMobility(Text fProviderMobility) {
+        this.fProviderMobility = fProviderMobility;
+    }
+
+    private Object fBroker;
+
+    /**
+     * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    @Override
+    public <T> T getBroker() {
+        return (T) fBroker;
+    }
+
+    /**
+     * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
+     *
+     */
+    @Override
+    public void setBroker(Object fBroker) {
+        if(!(fBroker instanceof Person) && !(fBroker instanceof Organization)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'broker': " + fBroker);
         }
-        this.fCategory = fCategory;
+        this.fBroker = fBroker;
+    }
+
+    private AggregateRating fAggregateRating;
+
+    /**
+     * The overall rating, based on a collection of reviews or ratings, of the item.
+     *
+     * @return {@link AggregateRating}
+     */
+    @Override
+    public AggregateRating getAggregateRating() {
+        return fAggregateRating;
+    }
+
+    /**
+     * The overall rating, based on a collection of reviews or ratings, of the item.
+     *
+     */
+    @Override
+    public void setAggregateRating(AggregateRating fAggregateRating) {
+        this.fAggregateRating = fAggregateRating;
+    }
+
+    private Object fIsSimilarTo;
+
+    /**
+     * A pointer to another, functionally similar product (or multiple products).
+     *
+     * @return {@link Service} or {@link Product}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public <T> T getIsSimilarTo() {
+        return (T) fIsSimilarTo;
+    }
+
+    /**
+     * A pointer to another, functionally similar product (or multiple products).
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setIsSimilarTo(Object fIsSimilarTo) {
+        if(!(fIsSimilarTo instanceof Service) && !(fIsSimilarTo instanceof Product)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'isSimilarTo': " + fIsSimilarTo);
+        }
+        this.fIsSimilarTo = fIsSimilarTo;
+    }
+
+    private ServiceChannel fAvailableChannel;
+
+    /**
+     * A means of accessing the service (e.g. a phone bank, a web site, a location, etc.).
+     *
+     * @return {@link ServiceChannel}
+     */
+    @Override
+    public ServiceChannel getAvailableChannel() {
+        return fAvailableChannel;
+    }
+
+    /**
+     * A means of accessing the service (e.g. a phone bank, a web site, a location, etc.).
+     *
+     */
+    @Override
+    public void setAvailableChannel(ServiceChannel fAvailableChannel) {
+        this.fAvailableChannel = fAvailableChannel;
+    }
+
+    private Text fSlogan;
+
+    /**
+     * A slogan or motto associated with the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getSlogan() {
+        return fSlogan;
+    }
+
+    /**
+     * A slogan or motto associated with the item.
+     *
+     */
+    @Override
+    public void setSlogan(Text fSlogan) {
+        this.fSlogan = fSlogan;
     }
 
     private Object fBrand;
@@ -1009,31 +944,353 @@ public class CreditCardImpl implements CreditCard {
         this.fBrand = fBrand;
     }
 
-    private MonetaryAmount fFloorLimit;
+    private Object fLogo;
 
     /**
-     * A floor limit is the amount of money above which credit card transactions must be authorized.
+     * An associated logo.
      *
-     * @return {@link MonetaryAmount}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @return {@link URL} or {@link ImageObject}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public MonetaryAmount getFloorLimit() {
-        return fFloorLimit;
+    public <T> T getLogo() {
+        return (T) fLogo;
     }
 
     /**
-     * A floor limit is the amount of money above which credit card transactions must be authorized.
+     * An associated logo.
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setLogo(Object fLogo) {
+        if(!(fLogo instanceof URL) && !(fLogo instanceof ImageObject)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'logo': " + fLogo);
+        }
+        this.fLogo = fLogo;
+    }
+
+    private Thing fProduces;
+
+    /**
+     * The tangible thing generated by the service, e.g. a passport, permit, etc.
+     *
+     * @return {@link Thing}
+     */
+    @Override
+    public Thing getProduces() {
+        return fProduces;
+    }
+
+    /**
+     * The tangible thing generated by the service, e.g. a passport, permit, etc.
+     *
+     */
+    @Override
+    public void setProduces(Thing fProduces) {
+        this.fProduces = fProduces;
+    }
+
+    private Object fServiceArea;
+
+    /**
+     * The geographic area where the service is provided.
+     *
+     * @return {@link GeoShape} or {@link AdministrativeArea} or {@link Place}
+     */
+    @Override
+    public <T> T getServiceArea() {
+        return (T) fServiceArea;
+    }
+
+    /**
+     * The geographic area where the service is provided.
+     *
+     */
+    @Override
+    public void setServiceArea(Object fServiceArea) {
+        if(!(fServiceArea instanceof GeoShape) && !(fServiceArea instanceof AdministrativeArea) && !(fServiceArea instanceof Place)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'serviceArea': " + fServiceArea);
+        }
+        this.fServiceArea = fServiceArea;
+    }
+
+    private Object fServiceType;
+
+    /**
+     * The type of service being offered, e.g. veterans' benefits, emergency relief, etc.
+     *
+     * @return {@link GovernmentBenefitsType} or {@link Text}
+     */
+    @Override
+    public <T> T getServiceType() {
+        return (T) fServiceType;
+    }
+
+    /**
+     * The type of service being offered, e.g. veterans' benefits, emergency relief, etc.
+     *
+     */
+    @Override
+    public void setServiceType(Object fServiceType) {
+        if(!(fServiceType instanceof GovernmentBenefitsType) && !(fServiceType instanceof Text)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'serviceType': " + fServiceType);
+        }
+        this.fServiceType = fServiceType;
+    }
+
+    private Object fAreaServed;
+
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @return {@link AdministrativeArea} or {@link GeoShape} or {@link Text} or {@link Place}
+     */
+    @Override
+    public <T> T getAreaServed() {
+        return (T) fAreaServed;
+    }
+
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     */
+    @Override
+    public void setAreaServed(Object fAreaServed) {
+        if(!(fAreaServed instanceof AdministrativeArea) && !(fAreaServed instanceof GeoShape) && !(fAreaServed instanceof Text) && !(fAreaServed instanceof Place)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'areaServed': " + fAreaServed);
+        }
+        this.fAreaServed = fAreaServed;
+    }
+
+    private Object fIsRelatedTo;
+
+    /**
+     * A pointer to another, somehow related product (or multiple products).
+     *
+     * @return {@link Service} or {@link Product}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public <T> T getIsRelatedTo() {
+        return (T) fIsRelatedTo;
+    }
+
+    /**
+     * A pointer to another, somehow related product (or multiple products).
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setIsRelatedTo(Object fIsRelatedTo) {
+        if(!(fIsRelatedTo instanceof Service) && !(fIsRelatedTo instanceof Product)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'isRelatedTo': " + fIsRelatedTo);
+        }
+        this.fIsRelatedTo = fIsRelatedTo;
+    }
+
+    private OfferCatalog fHasOfferCatalog;
+
+    /**
+     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
+     *
+     * @return {@link OfferCatalog}
+     */
+    @Override
+    public OfferCatalog getHasOfferCatalog() {
+        return fHasOfferCatalog;
+    }
+
+    /**
+     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
+     *
+     */
+    @Override
+    public void setHasOfferCatalog(OfferCatalog fHasOfferCatalog) {
+        this.fHasOfferCatalog = fHasOfferCatalog;
+    }
+
+    private Boolean fRenegotiableLoan;
+
+    /**
+     * Whether the terms for payment of interest can be renegotiated during the life of the loan.
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     */
+    @Override
+    public Boolean getRenegotiableLoan() {
+        return fRenegotiableLoan;
+    }
+
+    /**
+     * Whether the terms for payment of interest can be renegotiated during the life of the loan.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     */
+    @Override
+    public void setRenegotiableLoan(Boolean fRenegotiableLoan) {
+        this.fRenegotiableLoan = fRenegotiableLoan;
+    }
+
+    private Object fLoanType;
+
+    /**
+     * The type of a loan or credit.
+     *
+     * @return {@link URL} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     */
+    @Override
+    public <T> T getLoanType() {
+        return (T) fLoanType;
+    }
+
+    /**
+     * The type of a loan or credit.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     */
+    @Override
+    public void setLoanType(Object fLoanType) {
+        if(!(fLoanType instanceof URL) && !(fLoanType instanceof Text)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'loanType': " + fLoanType);
+        }
+        this.fLoanType = fLoanType;
+    }
+
+    private Boolean fRecourseLoan;
+
+    /**
+     * The only way you get the money back in the event of default is the security. Recourse is where you still have the opportunity to go back to the borrower for the rest of the money.
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     */
+    @Override
+    public Boolean getRecourseLoan() {
+        return fRecourseLoan;
+    }
+
+    /**
+     * The only way you get the money back in the event of default is the security. Recourse is where you still have the opportunity to go back to the borrower for the rest of the money.
      *
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
      */
     @Override
-    public void setFloorLimit(MonetaryAmount fFloorLimit) {
-        this.fFloorLimit = fFloorLimit;
+    public void setRecourseLoan(Boolean fRecourseLoan) {
+        this.fRecourseLoan = fRecourseLoan;
+    }
+
+    private QuantitativeValue fLoanTerm;
+
+    /**
+     * The duration of the loan or credit agreement.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     */
+    @Override
+    public QuantitativeValue getLoanTerm() {
+        return fLoanTerm;
+    }
+
+    /**
+     * The duration of the loan or credit agreement.
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     */
+    @Override
+    public void setLoanTerm(QuantitativeValue fLoanTerm) {
+        this.fLoanTerm = fLoanTerm;
+    }
+
+    private Duration fGracePeriod;
+
+    /**
+     * The period of time after any due date that the borrower has to fulfil its obligations before a default (failure to pay) is deemed to have occurred.
+     *
+     * @return {@link Duration}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     */
+    @Override
+    public Duration getGracePeriod() {
+        return fGracePeriod;
+    }
+
+    /**
+     * The period of time after any due date that the borrower has to fulfil its obligations before a default (failure to pay) is deemed to have occurred.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     */
+    @Override
+    public void setGracePeriod(Duration fGracePeriod) {
+        this.fGracePeriod = fGracePeriod;
+    }
+
+    private Object fRequiredCollateral;
+
+    /**
+     * Assets required to secure loan or credit repayments. It may take form of third party pledge, goods, financial instruments (cash, securities, etc.)
+     *
+     * @return {@link Text} or {@link Thing}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     */
+    @Override
+    public <T> T getRequiredCollateral() {
+        return (T) fRequiredCollateral;
+    }
+
+    /**
+     * Assets required to secure loan or credit repayments. It may take form of third party pledge, goods, financial instruments (cash, securities, etc.)
+     *
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     */
+    @Override
+    public void setRequiredCollateral(Object fRequiredCollateral) {
+        if(!(fRequiredCollateral instanceof Text) && !(fRequiredCollateral instanceof Thing)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'requiredCollateral': " + fRequiredCollateral);
+        }
+        this.fRequiredCollateral = fRequiredCollateral;
+    }
+
+    private Text fCurrency;
+
+    /**
+     * The currency in which the monetary amount is expressed.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
+     *
+     * @return {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     */
+    @Override
+    public Text getCurrency() {
+        return fCurrency;
+    }
+
+    /**
+     * The currency in which the monetary amount is expressed.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
+     *
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     */
+    @Override
+    public void setCurrency(Text fCurrency) {
+        this.fCurrency = fCurrency;
     }
 
     private Object fAmount;
@@ -1089,262 +1346,5 @@ public class CreditCardImpl implements CreditCard {
     @Override
     public void setLoanRepaymentForm(RepaymentSpecification fLoanRepaymentForm) {
         this.fLoanRepaymentForm = fLoanRepaymentForm;
-    }
-
-    private Text fSlogan;
-
-    /**
-     * A slogan or motto associated with the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getSlogan() {
-        return fSlogan;
-    }
-
-    /**
-     * A slogan or motto associated with the item.
-     *
-     */
-    @Override
-    public void setSlogan(Text fSlogan) {
-        this.fSlogan = fSlogan;
-    }
-
-    private QuantitativeValue fLoanTerm;
-
-    /**
-     * The duration of the loan or credit agreement.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
-     */
-    @Override
-    public QuantitativeValue getLoanTerm() {
-        return fLoanTerm;
-    }
-
-    /**
-     * The duration of the loan or credit agreement.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
-     */
-    @Override
-    public void setLoanTerm(QuantitativeValue fLoanTerm) {
-        this.fLoanTerm = fLoanTerm;
-    }
-
-    private Object fIdentifier;
-
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @return {@link URL} or {@link Text} or {@link PropertyValue}
-     */
-    @Override
-    public <T> T getIdentifier() {
-        return (T) fIdentifier;
-    }
-
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     */
-    @Override
-    public void setIdentifier(Object fIdentifier) {
-        if(!(fIdentifier instanceof URL) && !(fIdentifier instanceof Text) && !(fIdentifier instanceof PropertyValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
-        }
-        this.fIdentifier = fIdentifier;
-    }
-
-    private Boolean fContactlessPayment;
-
-    /**
-     * A secure method for consumers to purchase products or services via debit, credit or smartcards by using RFID or NFC technology.
-     *
-     * @return {@link Boolean}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
-     */
-    @Override
-    public Boolean getContactlessPayment() {
-        return fContactlessPayment;
-    }
-
-    /**
-     * A secure method for consumers to purchase products or services via debit, credit or smartcards by using RFID or NFC technology.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
-     */
-    @Override
-    public void setContactlessPayment(Boolean fContactlessPayment) {
-        this.fContactlessPayment = fContactlessPayment;
-    }
-
-    private OfferCatalog fHasOfferCatalog;
-
-    /**
-     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
-     *
-     * @return {@link OfferCatalog}
-     */
-    @Override
-    public OfferCatalog getHasOfferCatalog() {
-        return fHasOfferCatalog;
-    }
-
-    /**
-     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
-     *
-     */
-    @Override
-    public void setHasOfferCatalog(OfferCatalog fHasOfferCatalog) {
-        this.fHasOfferCatalog = fHasOfferCatalog;
-    }
-
-    private Object fIsRelatedTo;
-
-    /**
-     * A pointer to another, somehow related product (or multiple products).
-     *
-     * @return {@link Service} or {@link Product}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public <T> T getIsRelatedTo() {
-        return (T) fIsRelatedTo;
-    }
-
-    /**
-     * A pointer to another, somehow related product (or multiple products).
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setIsRelatedTo(Object fIsRelatedTo) {
-        if(!(fIsRelatedTo instanceof Service) && !(fIsRelatedTo instanceof Product)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'isRelatedTo': " + fIsRelatedTo);
-        }
-        this.fIsRelatedTo = fIsRelatedTo;
-    }
-
-    private Object fFeesAndCommissionsSpecification;
-
-    /**
-     * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
-     *
-     * @return {@link URL} or {@link Text}
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
-     */
-    @Override
-    public <T> T getFeesAndCommissionsSpecification() {
-        return (T) fFeesAndCommissionsSpecification;
-    }
-
-    /**
-     * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
-     *
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
-     */
-    @Override
-    public void setFeesAndCommissionsSpecification(Object fFeesAndCommissionsSpecification) {
-        if(!(fFeesAndCommissionsSpecification instanceof URL) && !(fFeesAndCommissionsSpecification instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'feesAndCommissionsSpecification': " + fFeesAndCommissionsSpecification);
-        }
-        this.fFeesAndCommissionsSpecification = fFeesAndCommissionsSpecification;
-    }
-
-    private Object fBroker;
-
-    /**
-     * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
-     *
-     * @return {@link Person} or {@link Organization}
-     */
-    @Override
-    public <T> T getBroker() {
-        return (T) fBroker;
-    }
-
-    /**
-     * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
-     *
-     */
-    @Override
-    public void setBroker(Object fBroker) {
-        if(!(fBroker instanceof Person) && !(fBroker instanceof Organization)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'broker': " + fBroker);
-        }
-        this.fBroker = fBroker;
-    }
-
-    private Text fDescription;
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDescription() {
-        return fDescription;
-    }
-
-    /**
-     * A description of the item.
-     *
-     */
-    @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
-    }
-
-    private Text fAward;
-
-    /**
-     * An award won by or for this item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getAward() {
-        return fAward;
-    }
-
-    /**
-     * An award won by or for this item.
-     *
-     */
-    @Override
-    public void setAward(Text fAward) {
-        this.fAward = fAward;
-    }
-
-    private OpeningHoursSpecification fHoursAvailable;
-
-    /**
-     * The hours during which this service or contact is available.
-     *
-     * @return {@link OpeningHoursSpecification}
-     */
-    @Override
-    public OpeningHoursSpecification getHoursAvailable() {
-        return fHoursAvailable;
-    }
-
-    /**
-     * The hours during which this service or contact is available.
-     *
-     */
-    @Override
-    public void setHoursAvailable(OpeningHoursSpecification fHoursAvailable) {
-        this.fHoursAvailable = fHoursAvailable;
     }
 }

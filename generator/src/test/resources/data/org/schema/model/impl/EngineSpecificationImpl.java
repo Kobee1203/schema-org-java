@@ -29,31 +29,6 @@ import org.schema.model.EngineSpecification;
 @JsonLdTypeName("schema:EngineSpecification")
 public class EngineSpecificationImpl implements EngineSpecification {
 
-    private QuantitativeValue fTorque;
-
-    /**
-     * The torque (turning force) of the vehicle's engine.<br/><br/>Typical unit code(s): NU for newton metre (N m), F17 for pound-force per foot, or F48 for pound-force per inch<br/><br/>* Note 1: You can link to information about how the given value has been determined (e.g. reference RPM) using the [[valueReference]] property.<br/>* Note 2: You can use [[minValue]] and [[maxValue]] to indicate ranges.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public QuantitativeValue getTorque() {
-        return fTorque;
-    }
-
-    /**
-     * The torque (turning force) of the vehicle's engine.<br/><br/>Typical unit code(s): NU for newton metre (N m), F17 for pound-force per foot, or F48 for pound-force per inch<br/><br/>* Note 1: You can link to information about how the given value has been determined (e.g. reference RPM) using the [[valueReference]] property.<br/>* Note 2: You can use [[minValue]] and [[maxValue]] to indicate ranges.
-     *
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void setTorque(QuantitativeValue fTorque) {
-        this.fTorque = fTorque;
-    }
-
     private Object fFuelType;
 
     /**
@@ -80,51 +55,81 @@ public class EngineSpecificationImpl implements EngineSpecification {
         this.fFuelType = fFuelType;
     }
 
-    private Object fSubjectOf;
+    private QuantitativeValue fTorque;
 
     /**
-     * A CreativeWork or Event about this Thing.
+     * The torque (turning force) of the vehicle's engine.<br/><br/>Typical unit code(s): NU for newton metre (N m), F17 for pound-force per foot, or F48 for pound-force per inch<br/><br/>* Note 1: You can link to information about how the given value has been determined (e.g. reference RPM) using the [[valueReference]] property.<br/>* Note 2: You can use [[minValue]] and [[maxValue]] to indicate ranges.
      *
-     * @return {@link Event} or {@link CreativeWork}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public <T> T getSubjectOf() {
-        return (T) fSubjectOf;
+    public QuantitativeValue getTorque() {
+        return fTorque;
     }
 
     /**
-     * A CreativeWork or Event about this Thing.
+     * The torque (turning force) of the vehicle's engine.<br/><br/>Typical unit code(s): NU for newton metre (N m), F17 for pound-force per foot, or F48 for pound-force per inch<br/><br/>* Note 1: You can link to information about how the given value has been determined (e.g. reference RPM) using the [[valueReference]] property.<br/>* Note 2: You can use [[minValue]] and [[maxValue]] to indicate ranges.
      *
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setSubjectOf(Object fSubjectOf) {
-        if(!(fSubjectOf instanceof Event) && !(fSubjectOf instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'subjectOf': " + fSubjectOf);
-        }
-        this.fSubjectOf = fSubjectOf;
+    public void setTorque(QuantitativeValue fTorque) {
+        this.fTorque = fTorque;
     }
 
-    private Text fName;
+    private QuantitativeValue fEngineDisplacement;
 
     /**
-     * The name of the item.
+     * The volume swept by all of the pistons inside the cylinders of an internal combustion engine in a single movement. <br/><br/>Typical unit code(s): CMQ for cubic centimeter, LTR for liters, INQ for cubic inches<br/>* Note 1: You can link to information about how the given value has been determined using the [[valueReference]] property.<br/>* Note 2: You can use [[minValue]] and [[maxValue]] to indicate ranges.
      *
-     * @return {@link Text}
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public Text getName() {
-        return fName;
+    public QuantitativeValue getEngineDisplacement() {
+        return fEngineDisplacement;
     }
 
     /**
-     * The name of the item.
+     * The volume swept by all of the pistons inside the cylinders of an internal combustion engine in a single movement. <br/><br/>Typical unit code(s): CMQ for cubic centimeter, LTR for liters, INQ for cubic inches<br/>* Note 1: You can link to information about how the given value has been determined using the [[valueReference]] property.<br/>* Note 2: You can use [[minValue]] and [[maxValue]] to indicate ranges.
      *
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setName(Text fName) {
-        this.fName = fName;
+    public void setEngineDisplacement(QuantitativeValue fEngineDisplacement) {
+        this.fEngineDisplacement = fEngineDisplacement;
+    }
+
+    private QuantitativeValue fEnginePower;
+
+    /**
+     * The power of the vehicle's engine.
+     *     Typical unit code(s): KWT for kilowatt, BHP for brake horsepower, N12 for metric horsepower (PS, with 1 PS = 735,49875 W)<br/><br/>* Note 1: There are many different ways of measuring an engine's power. For an overview, see  [http://en.wikipedia.org/wiki/Horsepower#Engine_power_test_codes](http://en.wikipedia.org/wiki/Horsepower#Engine_power_test_codes).<br/>* Note 2: You can link to information about how the given value has been determined using the [[valueReference]] property.<br/>* Note 3: You can use [[minValue]] and [[maxValue]] to indicate ranges.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public QuantitativeValue getEnginePower() {
+        return fEnginePower;
+    }
+
+    /**
+     * The power of the vehicle's engine.
+     *     Typical unit code(s): KWT for kilowatt, BHP for brake horsepower, N12 for metric horsepower (PS, with 1 PS = 735,49875 W)<br/><br/>* Note 1: There are many different ways of measuring an engine's power. For an overview, see  [http://en.wikipedia.org/wiki/Horsepower#Engine_power_test_codes](http://en.wikipedia.org/wiki/Horsepower#Engine_power_test_codes).<br/>* Note 2: You can link to information about how the given value has been determined using the [[valueReference]] property.<br/>* Note 3: You can use [[minValue]] and [[maxValue]] to indicate ranges.
+     *
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public void setEnginePower(QuantitativeValue fEnginePower) {
+        this.fEnginePower = fEnginePower;
     }
 
     private Object fEngineType;
@@ -155,25 +160,91 @@ public class EngineSpecificationImpl implements EngineSpecification {
         this.fEngineType = fEngineType;
     }
 
-    private Text fDisambiguatingDescription;
+    private Object fMainEntityOfPage;
 
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    @Override
+    public <T> T getMainEntityOfPage() {
+        return (T) fMainEntityOfPage;
+    }
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     */
+    @Override
+    public void setMainEntityOfPage(Object fMainEntityOfPage) {
+        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
+        }
+        this.fMainEntityOfPage = fMainEntityOfPage;
+    }
+
+    private Text fAlternateName;
+
+    /**
+     * An alias for the item.
      *
      * @return {@link Text}
      */
     @Override
-    public Text getDisambiguatingDescription() {
-        return fDisambiguatingDescription;
+    public Text getAlternateName() {
+        return fAlternateName;
     }
 
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * An alias for the item.
      *
      */
     @Override
-    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = fDisambiguatingDescription;
+    public void setAlternateName(Text fAlternateName) {
+        this.fAlternateName = fAlternateName;
+    }
+
+    private Text fName;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getName() {
+        return fName;
+    }
+
+    /**
+     * The name of the item.
+     *
+     */
+    @Override
+    public void setName(Text fName) {
+        this.fName = fName;
+    }
+
+    private Action fPotentialAction;
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public Action getPotentialAction() {
+        return fPotentialAction;
+    }
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     */
+    @Override
+    public void setPotentialAction(Action fPotentialAction) {
+        this.fPotentialAction = fPotentialAction;
     }
 
     private Object fImage;
@@ -198,6 +269,116 @@ public class EngineSpecificationImpl implements EngineSpecification {
             throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
         }
         this.fImage = fImage;
+    }
+
+    private URL fUrl;
+
+    /**
+     * URL of the item.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getUrl() {
+        return fUrl;
+    }
+
+    /**
+     * URL of the item.
+     *
+     */
+    @Override
+    public void setUrl(URL fUrl) {
+        this.fUrl = fUrl;
+    }
+
+    private Text fDescription;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDescription() {
+        return fDescription;
+    }
+
+    /**
+     * A description of the item.
+     *
+     */
+    @Override
+    public void setDescription(Text fDescription) {
+        this.fDescription = fDescription;
+    }
+
+    private Object fSubjectOf;
+
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @return {@link Event} or {@link CreativeWork}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public <T> T getSubjectOf() {
+        return (T) fSubjectOf;
+    }
+
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public void setSubjectOf(Object fSubjectOf) {
+        if(!(fSubjectOf instanceof Event) && !(fSubjectOf instanceof CreativeWork)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'subjectOf': " + fSubjectOf);
+        }
+        this.fSubjectOf = fSubjectOf;
+    }
+
+    private URL fAdditionalType;
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getAdditionalType() {
+        return fAdditionalType;
+    }
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     */
+    @Override
+    public void setAdditionalType(URL fAdditionalType) {
+        this.fAdditionalType = fAdditionalType;
+    }
+
+    private Text fDisambiguatingDescription;
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDisambiguatingDescription() {
+        return fDisambiguatingDescription;
+    }
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     */
+    @Override
+    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
+        this.fDisambiguatingDescription = fDisambiguatingDescription;
     }
 
     private URL fSameAs;
@@ -245,186 +426,5 @@ public class EngineSpecificationImpl implements EngineSpecification {
             throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
         }
         this.fIdentifier = fIdentifier;
-    }
-
-    private Text fAlternateName;
-
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getAlternateName() {
-        return fAlternateName;
-    }
-
-    /**
-     * An alias for the item.
-     *
-     */
-    @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
-    }
-
-    private Object fMainEntityOfPage;
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     */
-    @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
-        }
-        this.fMainEntityOfPage = fMainEntityOfPage;
-    }
-
-    private URL fUrl;
-
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getUrl() {
-        return fUrl;
-    }
-
-    /**
-     * URL of the item.
-     *
-     */
-    @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
-    }
-
-    private QuantitativeValue fEngineDisplacement;
-
-    /**
-     * The volume swept by all of the pistons inside the cylinders of an internal combustion engine in a single movement. <br/><br/>Typical unit code(s): CMQ for cubic centimeter, LTR for liters, INQ for cubic inches<br/>* Note 1: You can link to information about how the given value has been determined using the [[valueReference]] property.<br/>* Note 2: You can use [[minValue]] and [[maxValue]] to indicate ranges.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public QuantitativeValue getEngineDisplacement() {
-        return fEngineDisplacement;
-    }
-
-    /**
-     * The volume swept by all of the pistons inside the cylinders of an internal combustion engine in a single movement. <br/><br/>Typical unit code(s): CMQ for cubic centimeter, LTR for liters, INQ for cubic inches<br/>* Note 1: You can link to information about how the given value has been determined using the [[valueReference]] property.<br/>* Note 2: You can use [[minValue]] and [[maxValue]] to indicate ranges.
-     *
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void setEngineDisplacement(QuantitativeValue fEngineDisplacement) {
-        this.fEngineDisplacement = fEngineDisplacement;
-    }
-
-    private URL fAdditionalType;
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getAdditionalType() {
-        return fAdditionalType;
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     */
-    @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
-    }
-
-    private Text fDescription;
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDescription() {
-        return fDescription;
-    }
-
-    /**
-     * A description of the item.
-     *
-     */
-    @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
-    }
-
-    private Action fPotentialAction;
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
-    @Override
-    public Action getPotentialAction() {
-        return fPotentialAction;
-    }
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     */
-    @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
-    }
-
-    private QuantitativeValue fEnginePower;
-
-    /**
-     * The power of the vehicle's engine.
-     *     Typical unit code(s): KWT for kilowatt, BHP for brake horsepower, N12 for metric horsepower (PS, with 1 PS = 735,49875 W)<br/><br/>* Note 1: There are many different ways of measuring an engine's power. For an overview, see  [http://en.wikipedia.org/wiki/Horsepower#Engine_power_test_codes](http://en.wikipedia.org/wiki/Horsepower#Engine_power_test_codes).<br/>* Note 2: You can link to information about how the given value has been determined using the [[valueReference]] property.<br/>* Note 3: You can use [[minValue]] and [[maxValue]] to indicate ranges.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public QuantitativeValue getEnginePower() {
-        return fEnginePower;
-    }
-
-    /**
-     * The power of the vehicle's engine.
-     *     Typical unit code(s): KWT for kilowatt, BHP for brake horsepower, N12 for metric horsepower (PS, with 1 PS = 735,49875 W)<br/><br/>* Note 1: There are many different ways of measuring an engine's power. For an overview, see  [http://en.wikipedia.org/wiki/Horsepower#Engine_power_test_codes](http://en.wikipedia.org/wiki/Horsepower#Engine_power_test_codes).<br/>* Note 2: You can link to information about how the given value has been determined using the [[valueReference]] property.<br/>* Note 3: You can use [[minValue]] and [[maxValue]] to indicate ranges.
-     *
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void setEnginePower(QuantitativeValue fEnginePower) {
-        this.fEnginePower = fEnginePower;
     }
 }

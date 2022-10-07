@@ -61,13 +61,22 @@ public enum MedicalTrialDesignEnum implements MedicalTrialDesign {
         throw new java.lang.IllegalAccessError("Unable to set property 'supersededBy': method not allowed for enum MedicalTrialDesignEnum");
     }
     @Override
-    public <T> T getSubjectOf() {
+    public <T> T getMainEntityOfPage() {
         return null;
     }
 
     @Override
-    public void setSubjectOf(Object fSubjectOf) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'subjectOf': method not allowed for enum MedicalTrialDesignEnum");
+    public void setMainEntityOfPage(Object fMainEntityOfPage) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'mainEntityOfPage': method not allowed for enum MedicalTrialDesignEnum");
+    }
+    @Override
+    public Text getAlternateName() {
+        return null;
+    }
+
+    @Override
+    public void setAlternateName(Text fAlternateName) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'alternateName': method not allowed for enum MedicalTrialDesignEnum");
     }
     @Override
     public Text getName() {
@@ -79,13 +88,13 @@ public enum MedicalTrialDesignEnum implements MedicalTrialDesign {
         throw new java.lang.IllegalAccessError("Unable to set property 'name': method not allowed for enum MedicalTrialDesignEnum");
     }
     @Override
-    public Text getDisambiguatingDescription() {
+    public Action getPotentialAction() {
         return null;
     }
 
     @Override
-    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'disambiguatingDescription': method not allowed for enum MedicalTrialDesignEnum");
+    public void setPotentialAction(Action fPotentialAction) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'potentialAction': method not allowed for enum MedicalTrialDesignEnum");
     }
     @Override
     public <T> T getImage() {
@@ -95,6 +104,51 @@ public enum MedicalTrialDesignEnum implements MedicalTrialDesign {
     @Override
     public void setImage(Object fImage) {
         throw new java.lang.IllegalAccessError("Unable to set property 'image': method not allowed for enum MedicalTrialDesignEnum");
+    }
+    @Override
+    public URL getUrl() {
+        return null;
+    }
+
+    @Override
+    public void setUrl(URL fUrl) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'url': method not allowed for enum MedicalTrialDesignEnum");
+    }
+    @Override
+    public Text getDescription() {
+        return null;
+    }
+
+    @Override
+    public void setDescription(Text fDescription) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'description': method not allowed for enum MedicalTrialDesignEnum");
+    }
+    @Override
+    public <T> T getSubjectOf() {
+        return null;
+    }
+
+    @Override
+    public void setSubjectOf(Object fSubjectOf) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'subjectOf': method not allowed for enum MedicalTrialDesignEnum");
+    }
+    @Override
+    public URL getAdditionalType() {
+        return null;
+    }
+
+    @Override
+    public void setAdditionalType(URL fAdditionalType) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'additionalType': method not allowed for enum MedicalTrialDesignEnum");
+    }
+    @Override
+    public Text getDisambiguatingDescription() {
+        return null;
+    }
+
+    @Override
+    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'disambiguatingDescription': method not allowed for enum MedicalTrialDesignEnum");
     }
     @Override
     public URL getSameAs() {
@@ -113,59 +167,5 @@ public enum MedicalTrialDesignEnum implements MedicalTrialDesign {
     @Override
     public void setIdentifier(Object fIdentifier) {
         throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum MedicalTrialDesignEnum");
-    }
-    @Override
-    public Text getAlternateName() {
-        return null;
-    }
-
-    @Override
-    public void setAlternateName(Text fAlternateName) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'alternateName': method not allowed for enum MedicalTrialDesignEnum");
-    }
-    @Override
-    public <T> T getMainEntityOfPage() {
-        return null;
-    }
-
-    @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'mainEntityOfPage': method not allowed for enum MedicalTrialDesignEnum");
-    }
-    @Override
-    public URL getUrl() {
-        return null;
-    }
-
-    @Override
-    public void setUrl(URL fUrl) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'url': method not allowed for enum MedicalTrialDesignEnum");
-    }
-    @Override
-    public URL getAdditionalType() {
-        return null;
-    }
-
-    @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'additionalType': method not allowed for enum MedicalTrialDesignEnum");
-    }
-    @Override
-    public Text getDescription() {
-        return null;
-    }
-
-    @Override
-    public void setDescription(Text fDescription) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'description': method not allowed for enum MedicalTrialDesignEnum");
-    }
-    @Override
-    public Action getPotentialAction() {
-        return null;
-    }
-
-    @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'potentialAction': method not allowed for enum MedicalTrialDesignEnum");
     }
 }

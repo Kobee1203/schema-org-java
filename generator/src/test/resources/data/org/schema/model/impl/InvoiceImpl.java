@@ -37,25 +37,119 @@ import org.schema.model.Invoice;
 @JsonLdTypeName("schema:Invoice")
 public class InvoiceImpl implements Invoice {
 
-    private Text fConfirmationNumber;
+    private Object fTotalPaymentDue;
 
     /**
-     * A number that confirms the given order or payment has been received.
+     * The total amount due.
+     *
+     * @return {@link MonetaryAmount} or {@link PriceSpecification}
+     */
+    @Override
+    public <T> T getTotalPaymentDue() {
+        return (T) fTotalPaymentDue;
+    }
+
+    /**
+     * The total amount due.
+     *
+     */
+    @Override
+    public void setTotalPaymentDue(Object fTotalPaymentDue) {
+        if(!(fTotalPaymentDue instanceof MonetaryAmount) && !(fTotalPaymentDue instanceof PriceSpecification)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'totalPaymentDue': " + fTotalPaymentDue);
+        }
+        this.fTotalPaymentDue = fTotalPaymentDue;
+    }
+
+    private Duration fBillingPeriod;
+
+    /**
+     * The time interval used to compute the invoice.
+     *
+     * @return {@link Duration}
+     */
+    @Override
+    public Duration getBillingPeriod() {
+        return fBillingPeriod;
+    }
+
+    /**
+     * The time interval used to compute the invoice.
+     *
+     */
+    @Override
+    public void setBillingPeriod(Duration fBillingPeriod) {
+        this.fBillingPeriod = fBillingPeriod;
+    }
+
+    private Order fReferencesOrder;
+
+    /**
+     * The Order(s) related to this Invoice. One or more Orders may be combined into a single Invoice.
+     *
+     * @return {@link Order}
+     */
+    @Override
+    public Order getReferencesOrder() {
+        return fReferencesOrder;
+    }
+
+    /**
+     * The Order(s) related to this Invoice. One or more Orders may be combined into a single Invoice.
+     *
+     */
+    @Override
+    public void setReferencesOrder(Order fReferencesOrder) {
+        this.fReferencesOrder = fReferencesOrder;
+    }
+
+    private Text fAccountId;
+
+    /**
+     * The identifier for the account the payment will be applied to.
      *
      * @return {@link Text}
      */
     @Override
-    public Text getConfirmationNumber() {
-        return fConfirmationNumber;
+    public Text getAccountId() {
+        return fAccountId;
     }
 
     /**
-     * A number that confirms the given order or payment has been received.
+     * The identifier for the account the payment will be applied to.
      *
      */
     @Override
-    public void setConfirmationNumber(Text fConfirmationNumber) {
-        this.fConfirmationNumber = fConfirmationNumber;
+    public void setAccountId(Text fAccountId) {
+        this.fAccountId = fAccountId;
+    }
+
+    private Object fCategory;
+
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @return {@link URL} or {@link Text} or {@link PhysicalActivityCategory} or {@link Thing} or {@link CategoryCode}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    @Override
+    public <T> T getCategory() {
+        return (T) fCategory;
+    }
+
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    @Override
+    public void setCategory(Object fCategory) {
+        if(!(fCategory instanceof URL) && !(fCategory instanceof Text) && !(fCategory instanceof PhysicalActivityCategory) && !(fCategory instanceof Thing) && !(fCategory instanceof CategoryCode)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'category': " + fCategory);
+        }
+        this.fCategory = fCategory;
     }
 
     private Date fScheduledPaymentDate;
@@ -79,49 +173,49 @@ public class InvoiceImpl implements Invoice {
         this.fScheduledPaymentDate = fScheduledPaymentDate;
     }
 
-    private Text fAlternateName;
+    private Text fConfirmationNumber;
 
     /**
-     * An alias for the item.
+     * A number that confirms the given order or payment has been received.
      *
      * @return {@link Text}
      */
     @Override
-    public Text getAlternateName() {
-        return fAlternateName;
+    public Text getConfirmationNumber() {
+        return fConfirmationNumber;
     }
 
     /**
-     * An alias for the item.
+     * A number that confirms the given order or payment has been received.
      *
      */
     @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
+    public void setConfirmationNumber(Text fConfirmationNumber) {
+        this.fConfirmationNumber = fConfirmationNumber;
     }
 
-    private Object fMainEntityOfPage;
+    private Object fCustomer;
 
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * Party placing the order or paying the invoice.
      *
-     * @return {@link CreativeWork} or {@link URL}
+     * @return {@link Organization} or {@link Person}
      */
     @Override
-    public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
+    public <T> T getCustomer() {
+        return (T) fCustomer;
     }
 
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * Party placing the order or paying the invoice.
      *
      */
     @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
+    public void setCustomer(Object fCustomer) {
+        if(!(fCustomer instanceof Organization) && !(fCustomer instanceof Person)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'customer': " + fCustomer);
         }
-        this.fMainEntityOfPage = fMainEntityOfPage;
+        this.fCustomer = fCustomer;
     }
 
     private Object fProvider;
@@ -154,118 +248,6 @@ public class InvoiceImpl implements Invoice {
         this.fProvider = fProvider;
     }
 
-    private PaymentMethod fPaymentMethod;
-
-    /**
-     * The name of the credit card or other method of payment for the order.
-     *
-     * @return {@link PaymentMethod}
-     */
-    @Override
-    public PaymentMethod getPaymentMethod() {
-        return fPaymentMethod;
-    }
-
-    /**
-     * The name of the credit card or other method of payment for the order.
-     *
-     */
-    @Override
-    public void setPaymentMethod(PaymentMethod fPaymentMethod) {
-        this.fPaymentMethod = fPaymentMethod;
-    }
-
-    private Object fCategory;
-
-    /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-     *
-     * @return {@link URL} or {@link Text} or {@link PhysicalActivityCategory} or {@link Thing} or {@link CategoryCode}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     */
-    @Override
-    public <T> T getCategory() {
-        return (T) fCategory;
-    }
-
-    /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-     *
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     */
-    @Override
-    public void setCategory(Object fCategory) {
-        if(!(fCategory instanceof URL) && !(fCategory instanceof Text) && !(fCategory instanceof PhysicalActivityCategory) && !(fCategory instanceof Thing) && !(fCategory instanceof CategoryCode)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'category': " + fCategory);
-        }
-        this.fCategory = fCategory;
-    }
-
-    private Text fAccountId;
-
-    /**
-     * The identifier for the account the payment will be applied to.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getAccountId() {
-        return fAccountId;
-    }
-
-    /**
-     * The identifier for the account the payment will be applied to.
-     *
-     */
-    @Override
-    public void setAccountId(Text fAccountId) {
-        this.fAccountId = fAccountId;
-    }
-
-    private DateTime fPaymentDue;
-
-    /**
-     * The date that payment is due.
-     *
-     * @return {@link DateTime}
-     */
-    @Override
-    public DateTime getPaymentDue() {
-        return fPaymentDue;
-    }
-
-    /**
-     * The date that payment is due.
-     *
-     */
-    @Override
-    public void setPaymentDue(DateTime fPaymentDue) {
-        this.fPaymentDue = fPaymentDue;
-    }
-
-    private Action fPotentialAction;
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
-    @Override
-    public Action getPotentialAction() {
-        return fPotentialAction;
-    }
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     */
-    @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
-    }
-
     private Object fMinimumPaymentDue;
 
     /**
@@ -290,25 +272,52 @@ public class InvoiceImpl implements Invoice {
         this.fMinimumPaymentDue = fMinimumPaymentDue;
     }
 
-    private Order fReferencesOrder;
+    private Object fPaymentDueDate;
 
     /**
-     * The Order(s) related to this Invoice. One or more Orders may be combined into a single Invoice.
+     * The date that payment is due.
      *
-     * @return {@link Order}
+     * @return {@link DateTime} or {@link Date}
      */
     @Override
-    public Order getReferencesOrder() {
-        return fReferencesOrder;
+    public <T> T getPaymentDueDate() {
+        return (T) fPaymentDueDate;
     }
 
     /**
-     * The Order(s) related to this Invoice. One or more Orders may be combined into a single Invoice.
+     * The date that payment is due.
      *
      */
     @Override
-    public void setReferencesOrder(Order fReferencesOrder) {
-        this.fReferencesOrder = fReferencesOrder;
+    public void setPaymentDueDate(Object fPaymentDueDate) {
+        if(!(fPaymentDueDate instanceof DateTime) && !(fPaymentDueDate instanceof Date)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'paymentDueDate': " + fPaymentDueDate);
+        }
+        this.fPaymentDueDate = fPaymentDueDate;
+    }
+
+    private Object fBroker;
+
+    /**
+     * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    @Override
+    public <T> T getBroker() {
+        return (T) fBroker;
+    }
+
+    /**
+     * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
+     *
+     */
+    @Override
+    public void setBroker(Object fBroker) {
+        if(!(fBroker instanceof Person) && !(fBroker instanceof Organization)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'broker': " + fBroker);
+        }
+        this.fBroker = fBroker;
     }
 
     private Object fPaymentStatus;
@@ -333,6 +342,222 @@ public class InvoiceImpl implements Invoice {
             throw new java.lang.IllegalArgumentException("Invalid value for property 'paymentStatus': " + fPaymentStatus);
         }
         this.fPaymentStatus = fPaymentStatus;
+    }
+
+    private Text fPaymentMethodId;
+
+    /**
+     * An identifier for the method of payment used (e.g. the last 4 digits of the credit card).
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getPaymentMethodId() {
+        return fPaymentMethodId;
+    }
+
+    /**
+     * An identifier for the method of payment used (e.g. the last 4 digits of the credit card).
+     *
+     */
+    @Override
+    public void setPaymentMethodId(Text fPaymentMethodId) {
+        this.fPaymentMethodId = fPaymentMethodId;
+    }
+
+    private DateTime fPaymentDue;
+
+    /**
+     * The date that payment is due.
+     *
+     * @return {@link DateTime}
+     */
+    @Override
+    public DateTime getPaymentDue() {
+        return fPaymentDue;
+    }
+
+    /**
+     * The date that payment is due.
+     *
+     */
+    @Override
+    public void setPaymentDue(DateTime fPaymentDue) {
+        this.fPaymentDue = fPaymentDue;
+    }
+
+    private PaymentMethod fPaymentMethod;
+
+    /**
+     * The name of the credit card or other method of payment for the order.
+     *
+     * @return {@link PaymentMethod}
+     */
+    @Override
+    public PaymentMethod getPaymentMethod() {
+        return fPaymentMethod;
+    }
+
+    /**
+     * The name of the credit card or other method of payment for the order.
+     *
+     */
+    @Override
+    public void setPaymentMethod(PaymentMethod fPaymentMethod) {
+        this.fPaymentMethod = fPaymentMethod;
+    }
+
+    private Object fMainEntityOfPage;
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    @Override
+    public <T> T getMainEntityOfPage() {
+        return (T) fMainEntityOfPage;
+    }
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     */
+    @Override
+    public void setMainEntityOfPage(Object fMainEntityOfPage) {
+        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
+        }
+        this.fMainEntityOfPage = fMainEntityOfPage;
+    }
+
+    private Text fAlternateName;
+
+    /**
+     * An alias for the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getAlternateName() {
+        return fAlternateName;
+    }
+
+    /**
+     * An alias for the item.
+     *
+     */
+    @Override
+    public void setAlternateName(Text fAlternateName) {
+        this.fAlternateName = fAlternateName;
+    }
+
+    private Text fName;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getName() {
+        return fName;
+    }
+
+    /**
+     * The name of the item.
+     *
+     */
+    @Override
+    public void setName(Text fName) {
+        this.fName = fName;
+    }
+
+    private Action fPotentialAction;
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public Action getPotentialAction() {
+        return fPotentialAction;
+    }
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     */
+    @Override
+    public void setPotentialAction(Action fPotentialAction) {
+        this.fPotentialAction = fPotentialAction;
+    }
+
+    private Object fImage;
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link URL} or {@link ImageObject}
+     */
+    @Override
+    public <T> T getImage() {
+        return (T) fImage;
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     */
+    @Override
+    public void setImage(Object fImage) {
+        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
+        }
+        this.fImage = fImage;
+    }
+
+    private URL fUrl;
+
+    /**
+     * URL of the item.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getUrl() {
+        return fUrl;
+    }
+
+    /**
+     * URL of the item.
+     *
+     */
+    @Override
+    public void setUrl(URL fUrl) {
+        this.fUrl = fUrl;
+    }
+
+    private Text fDescription;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDescription() {
+        return fDescription;
+    }
+
+    /**
+     * A description of the item.
+     *
+     */
+    @Override
+    public void setDescription(Text fDescription) {
+        this.fDescription = fDescription;
     }
 
     private Object fSubjectOf;
@@ -361,49 +586,25 @@ public class InvoiceImpl implements Invoice {
         this.fSubjectOf = fSubjectOf;
     }
 
-    private Text fName;
+    private URL fAdditionalType;
 
     /**
-     * The name of the item.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
-     * @return {@link Text}
+     * @return {@link URL}
      */
     @Override
-    public Text getName() {
-        return fName;
+    public URL getAdditionalType() {
+        return fAdditionalType;
     }
 
     /**
-     * The name of the item.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
      */
     @Override
-    public void setName(Text fName) {
-        this.fName = fName;
-    }
-
-    private Object fCustomer;
-
-    /**
-     * Party placing the order or paying the invoice.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    @Override
-    public <T> T getCustomer() {
-        return (T) fCustomer;
-    }
-
-    /**
-     * Party placing the order or paying the invoice.
-     *
-     */
-    @Override
-    public void setCustomer(Object fCustomer) {
-        if(!(fCustomer instanceof Organization) && !(fCustomer instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'customer': " + fCustomer);
-        }
-        this.fCustomer = fCustomer;
+    public void setAdditionalType(URL fAdditionalType) {
+        this.fAdditionalType = fAdditionalType;
     }
 
     private Text fDisambiguatingDescription;
@@ -425,30 +626,6 @@ public class InvoiceImpl implements Invoice {
     @Override
     public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
         this.fDisambiguatingDescription = fDisambiguatingDescription;
-    }
-
-    private Object fImage;
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link URL} or {@link ImageObject}
-     */
-    @Override
-    public <T> T getImage() {
-        return (T) fImage;
-    }
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     */
-    @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
-        this.fImage = fImage;
     }
 
     private URL fSameAs;
@@ -496,182 +673,5 @@ public class InvoiceImpl implements Invoice {
             throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
         }
         this.fIdentifier = fIdentifier;
-    }
-
-    private Object fTotalPaymentDue;
-
-    /**
-     * The total amount due.
-     *
-     * @return {@link MonetaryAmount} or {@link PriceSpecification}
-     */
-    @Override
-    public <T> T getTotalPaymentDue() {
-        return (T) fTotalPaymentDue;
-    }
-
-    /**
-     * The total amount due.
-     *
-     */
-    @Override
-    public void setTotalPaymentDue(Object fTotalPaymentDue) {
-        if(!(fTotalPaymentDue instanceof MonetaryAmount) && !(fTotalPaymentDue instanceof PriceSpecification)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'totalPaymentDue': " + fTotalPaymentDue);
-        }
-        this.fTotalPaymentDue = fTotalPaymentDue;
-    }
-
-    private Duration fBillingPeriod;
-
-    /**
-     * The time interval used to compute the invoice.
-     *
-     * @return {@link Duration}
-     */
-    @Override
-    public Duration getBillingPeriod() {
-        return fBillingPeriod;
-    }
-
-    /**
-     * The time interval used to compute the invoice.
-     *
-     */
-    @Override
-    public void setBillingPeriod(Duration fBillingPeriod) {
-        this.fBillingPeriod = fBillingPeriod;
-    }
-
-    private Text fPaymentMethodId;
-
-    /**
-     * An identifier for the method of payment used (e.g. the last 4 digits of the credit card).
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getPaymentMethodId() {
-        return fPaymentMethodId;
-    }
-
-    /**
-     * An identifier for the method of payment used (e.g. the last 4 digits of the credit card).
-     *
-     */
-    @Override
-    public void setPaymentMethodId(Text fPaymentMethodId) {
-        this.fPaymentMethodId = fPaymentMethodId;
-    }
-
-    private URL fUrl;
-
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getUrl() {
-        return fUrl;
-    }
-
-    /**
-     * URL of the item.
-     *
-     */
-    @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
-    }
-
-    private Object fBroker;
-
-    /**
-     * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
-     *
-     * @return {@link Person} or {@link Organization}
-     */
-    @Override
-    public <T> T getBroker() {
-        return (T) fBroker;
-    }
-
-    /**
-     * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
-     *
-     */
-    @Override
-    public void setBroker(Object fBroker) {
-        if(!(fBroker instanceof Person) && !(fBroker instanceof Organization)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'broker': " + fBroker);
-        }
-        this.fBroker = fBroker;
-    }
-
-    private URL fAdditionalType;
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getAdditionalType() {
-        return fAdditionalType;
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     */
-    @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
-    }
-
-    private Text fDescription;
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDescription() {
-        return fDescription;
-    }
-
-    /**
-     * A description of the item.
-     *
-     */
-    @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
-    }
-
-    private Object fPaymentDueDate;
-
-    /**
-     * The date that payment is due.
-     *
-     * @return {@link DateTime} or {@link Date}
-     */
-    @Override
-    public <T> T getPaymentDueDate() {
-        return (T) fPaymentDueDate;
-    }
-
-    /**
-     * The date that payment is due.
-     *
-     */
-    @Override
-    public void setPaymentDueDate(Object fPaymentDueDate) {
-        if(!(fPaymentDueDate instanceof DateTime) && !(fPaymentDueDate instanceof Date)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'paymentDueDate': " + fPaymentDueDate);
-        }
-        this.fPaymentDueDate = fPaymentDueDate;
     }
 }

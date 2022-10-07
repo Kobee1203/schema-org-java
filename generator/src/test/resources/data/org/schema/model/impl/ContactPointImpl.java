@@ -33,6 +33,114 @@ import org.schema.model.ContactPoint;
 @JsonLdTypeName("schema:ContactPoint")
 public class ContactPointImpl implements ContactPoint {
 
+    private Text fTelephone;
+
+    /**
+     * The telephone number.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getTelephone() {
+        return fTelephone;
+    }
+
+    /**
+     * The telephone number.
+     *
+     */
+    @Override
+    public void setTelephone(Text fTelephone) {
+        this.fTelephone = fTelephone;
+    }
+
+    private OpeningHoursSpecification fHoursAvailable;
+
+    /**
+     * The hours during which this service or contact is available.
+     *
+     * @return {@link OpeningHoursSpecification}
+     */
+    @Override
+    public OpeningHoursSpecification getHoursAvailable() {
+        return fHoursAvailable;
+    }
+
+    /**
+     * The hours during which this service or contact is available.
+     *
+     */
+    @Override
+    public void setHoursAvailable(OpeningHoursSpecification fHoursAvailable) {
+        this.fHoursAvailable = fHoursAvailable;
+    }
+
+    private Text fEmail;
+
+    /**
+     * Email address.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getEmail() {
+        return fEmail;
+    }
+
+    /**
+     * Email address.
+     *
+     */
+    @Override
+    public void setEmail(Text fEmail) {
+        this.fEmail = fEmail;
+    }
+
+    private ContactPointOption fContactOption;
+
+    /**
+     * An option available on this contact point (e.g. a toll-free number or support for hearing-impaired callers).
+     *
+     * @return {@link ContactPointOption}
+     */
+    @Override
+    public ContactPointOption getContactOption() {
+        return fContactOption;
+    }
+
+    /**
+     * An option available on this contact point (e.g. a toll-free number or support for hearing-impaired callers).
+     *
+     */
+    @Override
+    public void setContactOption(ContactPointOption fContactOption) {
+        this.fContactOption = fContactOption;
+    }
+
+    private Object fAvailableLanguage;
+
+    /**
+     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
+     *
+     * @return {@link Text} or {@link Language}
+     */
+    @Override
+    public <T> T getAvailableLanguage() {
+        return (T) fAvailableLanguage;
+    }
+
+    /**
+     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
+     *
+     */
+    @Override
+    public void setAvailableLanguage(Object fAvailableLanguage) {
+        if(!(fAvailableLanguage instanceof Text) && !(fAvailableLanguage instanceof Language)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'availableLanguage': " + fAvailableLanguage);
+        }
+        this.fAvailableLanguage = fAvailableLanguage;
+    }
+
     private Object fServiceArea;
 
     /**
@@ -55,6 +163,249 @@ public class ContactPointImpl implements ContactPoint {
             throw new java.lang.IllegalArgumentException("Invalid value for property 'serviceArea': " + fServiceArea);
         }
         this.fServiceArea = fServiceArea;
+    }
+
+    private Object fAreaServed;
+
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @return {@link AdministrativeArea} or {@link GeoShape} or {@link Text} or {@link Place}
+     */
+    @Override
+    public <T> T getAreaServed() {
+        return (T) fAreaServed;
+    }
+
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     */
+    @Override
+    public void setAreaServed(Object fAreaServed) {
+        if(!(fAreaServed instanceof AdministrativeArea) && !(fAreaServed instanceof GeoShape) && !(fAreaServed instanceof Text) && !(fAreaServed instanceof Place)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'areaServed': " + fAreaServed);
+        }
+        this.fAreaServed = fAreaServed;
+    }
+
+    private Text fContactType;
+
+    /**
+     * A person or organization can have different contact points, for different purposes. For example, a sales contact point, a PR contact point and so on. This property is used to specify the kind of contact point.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getContactType() {
+        return fContactType;
+    }
+
+    /**
+     * A person or organization can have different contact points, for different purposes. For example, a sales contact point, a PR contact point and so on. This property is used to specify the kind of contact point.
+     *
+     */
+    @Override
+    public void setContactType(Text fContactType) {
+        this.fContactType = fContactType;
+    }
+
+    private Object fProductSupported;
+
+    /**
+     * The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. "iPhone") or a general category of products or services (e.g. "smartphones").
+     *
+     * @return {@link Text} or {@link Product}
+     */
+    @Override
+    public <T> T getProductSupported() {
+        return (T) fProductSupported;
+    }
+
+    /**
+     * The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. "iPhone") or a general category of products or services (e.g. "smartphones").
+     *
+     */
+    @Override
+    public void setProductSupported(Object fProductSupported) {
+        if(!(fProductSupported instanceof Text) && !(fProductSupported instanceof Product)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'productSupported': " + fProductSupported);
+        }
+        this.fProductSupported = fProductSupported;
+    }
+
+    private Text fFaxNumber;
+
+    /**
+     * The fax number.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getFaxNumber() {
+        return fFaxNumber;
+    }
+
+    /**
+     * The fax number.
+     *
+     */
+    @Override
+    public void setFaxNumber(Text fFaxNumber) {
+        this.fFaxNumber = fFaxNumber;
+    }
+
+    private Object fMainEntityOfPage;
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    @Override
+    public <T> T getMainEntityOfPage() {
+        return (T) fMainEntityOfPage;
+    }
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     */
+    @Override
+    public void setMainEntityOfPage(Object fMainEntityOfPage) {
+        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
+        }
+        this.fMainEntityOfPage = fMainEntityOfPage;
+    }
+
+    private Text fAlternateName;
+
+    /**
+     * An alias for the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getAlternateName() {
+        return fAlternateName;
+    }
+
+    /**
+     * An alias for the item.
+     *
+     */
+    @Override
+    public void setAlternateName(Text fAlternateName) {
+        this.fAlternateName = fAlternateName;
+    }
+
+    private Text fName;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getName() {
+        return fName;
+    }
+
+    /**
+     * The name of the item.
+     *
+     */
+    @Override
+    public void setName(Text fName) {
+        this.fName = fName;
+    }
+
+    private Action fPotentialAction;
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public Action getPotentialAction() {
+        return fPotentialAction;
+    }
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     */
+    @Override
+    public void setPotentialAction(Action fPotentialAction) {
+        this.fPotentialAction = fPotentialAction;
+    }
+
+    private Object fImage;
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link URL} or {@link ImageObject}
+     */
+    @Override
+    public <T> T getImage() {
+        return (T) fImage;
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     */
+    @Override
+    public void setImage(Object fImage) {
+        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
+        }
+        this.fImage = fImage;
+    }
+
+    private URL fUrl;
+
+    /**
+     * URL of the item.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getUrl() {
+        return fUrl;
+    }
+
+    /**
+     * URL of the item.
+     *
+     */
+    @Override
+    public void setUrl(URL fUrl) {
+        this.fUrl = fUrl;
+    }
+
+    private Text fDescription;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDescription() {
+        return fDescription;
+    }
+
+    /**
+     * A description of the item.
+     *
+     */
+    @Override
+    public void setDescription(Text fDescription) {
+        this.fDescription = fDescription;
     }
 
     private Object fSubjectOf;
@@ -83,46 +434,25 @@ public class ContactPointImpl implements ContactPoint {
         this.fSubjectOf = fSubjectOf;
     }
 
-    private Text fName;
+    private URL fAdditionalType;
 
     /**
-     * The name of the item.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
-     * @return {@link Text}
+     * @return {@link URL}
      */
     @Override
-    public Text getName() {
-        return fName;
+    public URL getAdditionalType() {
+        return fAdditionalType;
     }
 
     /**
-     * The name of the item.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
      */
     @Override
-    public void setName(Text fName) {
-        this.fName = fName;
-    }
-
-    private Text fTelephone;
-
-    /**
-     * The telephone number.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getTelephone() {
-        return fTelephone;
-    }
-
-    /**
-     * The telephone number.
-     *
-     */
-    @Override
-    public void setTelephone(Text fTelephone) {
-        this.fTelephone = fTelephone;
+    public void setAdditionalType(URL fAdditionalType) {
+        this.fAdditionalType = fAdditionalType;
     }
 
     private Text fDisambiguatingDescription;
@@ -144,51 +474,6 @@ public class ContactPointImpl implements ContactPoint {
     @Override
     public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
         this.fDisambiguatingDescription = fDisambiguatingDescription;
-    }
-
-    private Text fEmail;
-
-    /**
-     * Email address.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getEmail() {
-        return fEmail;
-    }
-
-    /**
-     * Email address.
-     *
-     */
-    @Override
-    public void setEmail(Text fEmail) {
-        this.fEmail = fEmail;
-    }
-
-    private Object fImage;
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link URL} or {@link ImageObject}
-     */
-    @Override
-    public <T> T getImage() {
-        return (T) fImage;
-    }
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     */
-    @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
-        this.fImage = fImage;
     }
 
     private URL fSameAs;
@@ -236,290 +521,5 @@ public class ContactPointImpl implements ContactPoint {
             throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
         }
         this.fIdentifier = fIdentifier;
-    }
-
-    private Text fAlternateName;
-
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getAlternateName() {
-        return fAlternateName;
-    }
-
-    /**
-     * An alias for the item.
-     *
-     */
-    @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
-    }
-
-    private Object fAvailableLanguage;
-
-    /**
-     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
-     *
-     * @return {@link Text} or {@link Language}
-     */
-    @Override
-    public <T> T getAvailableLanguage() {
-        return (T) fAvailableLanguage;
-    }
-
-    /**
-     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
-     *
-     */
-    @Override
-    public void setAvailableLanguage(Object fAvailableLanguage) {
-        if(!(fAvailableLanguage instanceof Text) && !(fAvailableLanguage instanceof Language)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'availableLanguage': " + fAvailableLanguage);
-        }
-        this.fAvailableLanguage = fAvailableLanguage;
-    }
-
-    private Object fMainEntityOfPage;
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     */
-    @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
-        }
-        this.fMainEntityOfPage = fMainEntityOfPage;
-    }
-
-    private Object fAreaServed;
-
-    /**
-     * The geographic area where a service or offered item is provided.
-     *
-     * @return {@link AdministrativeArea} or {@link GeoShape} or {@link Text} or {@link Place}
-     */
-    @Override
-    public <T> T getAreaServed() {
-        return (T) fAreaServed;
-    }
-
-    /**
-     * The geographic area where a service or offered item is provided.
-     *
-     */
-    @Override
-    public void setAreaServed(Object fAreaServed) {
-        if(!(fAreaServed instanceof AdministrativeArea) && !(fAreaServed instanceof GeoShape) && !(fAreaServed instanceof Text) && !(fAreaServed instanceof Place)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'areaServed': " + fAreaServed);
-        }
-        this.fAreaServed = fAreaServed;
-    }
-
-    private Object fProductSupported;
-
-    /**
-     * The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. "iPhone") or a general category of products or services (e.g. "smartphones").
-     *
-     * @return {@link Text} or {@link Product}
-     */
-    @Override
-    public <T> T getProductSupported() {
-        return (T) fProductSupported;
-    }
-
-    /**
-     * The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. "iPhone") or a general category of products or services (e.g. "smartphones").
-     *
-     */
-    @Override
-    public void setProductSupported(Object fProductSupported) {
-        if(!(fProductSupported instanceof Text) && !(fProductSupported instanceof Product)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'productSupported': " + fProductSupported);
-        }
-        this.fProductSupported = fProductSupported;
-    }
-
-    private URL fUrl;
-
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getUrl() {
-        return fUrl;
-    }
-
-    /**
-     * URL of the item.
-     *
-     */
-    @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
-    }
-
-    private ContactPointOption fContactOption;
-
-    /**
-     * An option available on this contact point (e.g. a toll-free number or support for hearing-impaired callers).
-     *
-     * @return {@link ContactPointOption}
-     */
-    @Override
-    public ContactPointOption getContactOption() {
-        return fContactOption;
-    }
-
-    /**
-     * An option available on this contact point (e.g. a toll-free number or support for hearing-impaired callers).
-     *
-     */
-    @Override
-    public void setContactOption(ContactPointOption fContactOption) {
-        this.fContactOption = fContactOption;
-    }
-
-    private Text fContactType;
-
-    /**
-     * A person or organization can have different contact points, for different purposes. For example, a sales contact point, a PR contact point and so on. This property is used to specify the kind of contact point.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getContactType() {
-        return fContactType;
-    }
-
-    /**
-     * A person or organization can have different contact points, for different purposes. For example, a sales contact point, a PR contact point and so on. This property is used to specify the kind of contact point.
-     *
-     */
-    @Override
-    public void setContactType(Text fContactType) {
-        this.fContactType = fContactType;
-    }
-
-    private URL fAdditionalType;
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getAdditionalType() {
-        return fAdditionalType;
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     */
-    @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
-    }
-
-    private Text fDescription;
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDescription() {
-        return fDescription;
-    }
-
-    /**
-     * A description of the item.
-     *
-     */
-    @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
-    }
-
-    private Text fFaxNumber;
-
-    /**
-     * The fax number.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getFaxNumber() {
-        return fFaxNumber;
-    }
-
-    /**
-     * The fax number.
-     *
-     */
-    @Override
-    public void setFaxNumber(Text fFaxNumber) {
-        this.fFaxNumber = fFaxNumber;
-    }
-
-    private Action fPotentialAction;
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
-    @Override
-    public Action getPotentialAction() {
-        return fPotentialAction;
-    }
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     */
-    @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
-    }
-
-    private OpeningHoursSpecification fHoursAvailable;
-
-    /**
-     * The hours during which this service or contact is available.
-     *
-     * @return {@link OpeningHoursSpecification}
-     */
-    @Override
-    public OpeningHoursSpecification getHoursAvailable() {
-        return fHoursAvailable;
-    }
-
-    /**
-     * The hours during which this service or contact is available.
-     *
-     */
-    @Override
-    public void setHoursAvailable(OpeningHoursSpecification fHoursAvailable) {
-        this.fHoursAvailable = fHoursAvailable;
     }
 }

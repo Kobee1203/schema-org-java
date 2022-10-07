@@ -34,25 +34,139 @@ import org.schema.model.ParcelDelivery;
 @JsonLdTypeName("schema:ParcelDelivery")
 public class ParcelDeliveryImpl implements ParcelDelivery {
 
-    private DeliveryMethod fHasDeliveryMethod;
+    private PostalAddress fOriginAddress;
 
     /**
-     * Method used for delivery or shipping.
+     * Shipper's address.
      *
-     * @return {@link DeliveryMethod}
+     * @return {@link PostalAddress}
      */
     @Override
-    public DeliveryMethod getHasDeliveryMethod() {
-        return fHasDeliveryMethod;
+    public PostalAddress getOriginAddress() {
+        return fOriginAddress;
     }
 
     /**
-     * Method used for delivery or shipping.
+     * Shipper's address.
      *
      */
     @Override
-    public void setHasDeliveryMethod(DeliveryMethod fHasDeliveryMethod) {
-        this.fHasDeliveryMethod = fHasDeliveryMethod;
+    public void setOriginAddress(PostalAddress fOriginAddress) {
+        this.fOriginAddress = fOriginAddress;
+    }
+
+    private Text fTrackingNumber;
+
+    /**
+     * Shipper tracking number.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getTrackingNumber() {
+        return fTrackingNumber;
+    }
+
+    /**
+     * Shipper tracking number.
+     *
+     */
+    @Override
+    public void setTrackingNumber(Text fTrackingNumber) {
+        this.fTrackingNumber = fTrackingNumber;
+    }
+
+    private Product fItemShipped;
+
+    /**
+     * Item(s) being shipped.
+     *
+     * @return {@link Product}
+     */
+    @Override
+    public Product getItemShipped() {
+        return fItemShipped;
+    }
+
+    /**
+     * Item(s) being shipped.
+     *
+     */
+    @Override
+    public void setItemShipped(Product fItemShipped) {
+        this.fItemShipped = fItemShipped;
+    }
+
+    private Object fProvider;
+
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @return {@link Organization} or {@link Person}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     */
+    @Override
+    public <T> T getProvider() {
+        return (T) fProvider;
+    }
+
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     */
+    @Override
+    public void setProvider(Object fProvider) {
+        if(!(fProvider instanceof Organization) && !(fProvider instanceof Person)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'provider': " + fProvider);
+        }
+        this.fProvider = fProvider;
+    }
+
+    private URL fTrackingUrl;
+
+    /**
+     * Tracking url for the parcel delivery.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getTrackingUrl() {
+        return fTrackingUrl;
+    }
+
+    /**
+     * Tracking url for the parcel delivery.
+     *
+     */
+    @Override
+    public void setTrackingUrl(URL fTrackingUrl) {
+        this.fTrackingUrl = fTrackingUrl;
+    }
+
+    private PostalAddress fDeliveryAddress;
+
+    /**
+     * Destination address.
+     *
+     * @return {@link PostalAddress}
+     */
+    @Override
+    public PostalAddress getDeliveryAddress() {
+        return fDeliveryAddress;
+    }
+
+    /**
+     * Destination address.
+     *
+     */
+    @Override
+    public void setDeliveryAddress(PostalAddress fDeliveryAddress) {
+        this.fDeliveryAddress = fDeliveryAddress;
     }
 
     private Object fExpectedArrivalUntil;
@@ -77,6 +191,267 @@ public class ParcelDeliveryImpl implements ParcelDelivery {
             throw new java.lang.IllegalArgumentException("Invalid value for property 'expectedArrivalUntil': " + fExpectedArrivalUntil);
         }
         this.fExpectedArrivalUntil = fExpectedArrivalUntil;
+    }
+
+    private DeliveryEvent fDeliveryStatus;
+
+    /**
+     * New entry added as the package passes through each leg of its journey (from shipment to final delivery).
+     *
+     * @return {@link DeliveryEvent}
+     */
+    @Override
+    public DeliveryEvent getDeliveryStatus() {
+        return fDeliveryStatus;
+    }
+
+    /**
+     * New entry added as the package passes through each leg of its journey (from shipment to final delivery).
+     *
+     */
+    @Override
+    public void setDeliveryStatus(DeliveryEvent fDeliveryStatus) {
+        this.fDeliveryStatus = fDeliveryStatus;
+    }
+
+    private Object fExpectedArrivalFrom;
+
+    /**
+     * The earliest date the package may arrive.
+     *
+     * @return {@link Date} or {@link DateTime}
+     */
+    @Override
+    public <T> T getExpectedArrivalFrom() {
+        return (T) fExpectedArrivalFrom;
+    }
+
+    /**
+     * The earliest date the package may arrive.
+     *
+     */
+    @Override
+    public void setExpectedArrivalFrom(Object fExpectedArrivalFrom) {
+        if(!(fExpectedArrivalFrom instanceof Date) && !(fExpectedArrivalFrom instanceof DateTime)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'expectedArrivalFrom': " + fExpectedArrivalFrom);
+        }
+        this.fExpectedArrivalFrom = fExpectedArrivalFrom;
+    }
+
+    private Organization fCarrier;
+
+    /**
+     * 'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.
+     *
+     * @return {@link Organization}
+     */
+    @Override
+    public Organization getCarrier() {
+        return fCarrier;
+    }
+
+    /**
+     * 'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.
+     *
+     */
+    @Override
+    public void setCarrier(Organization fCarrier) {
+        this.fCarrier = fCarrier;
+    }
+
+    private DeliveryMethod fHasDeliveryMethod;
+
+    /**
+     * Method used for delivery or shipping.
+     *
+     * @return {@link DeliveryMethod}
+     */
+    @Override
+    public DeliveryMethod getHasDeliveryMethod() {
+        return fHasDeliveryMethod;
+    }
+
+    /**
+     * Method used for delivery or shipping.
+     *
+     */
+    @Override
+    public void setHasDeliveryMethod(DeliveryMethod fHasDeliveryMethod) {
+        this.fHasDeliveryMethod = fHasDeliveryMethod;
+    }
+
+    private Order fPartOfOrder;
+
+    /**
+     * The overall order the items in this delivery were included in.
+     *
+     * @return {@link Order}
+     */
+    @Override
+    public Order getPartOfOrder() {
+        return fPartOfOrder;
+    }
+
+    /**
+     * The overall order the items in this delivery were included in.
+     *
+     */
+    @Override
+    public void setPartOfOrder(Order fPartOfOrder) {
+        this.fPartOfOrder = fPartOfOrder;
+    }
+
+    private Object fMainEntityOfPage;
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    @Override
+    public <T> T getMainEntityOfPage() {
+        return (T) fMainEntityOfPage;
+    }
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     */
+    @Override
+    public void setMainEntityOfPage(Object fMainEntityOfPage) {
+        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
+        }
+        this.fMainEntityOfPage = fMainEntityOfPage;
+    }
+
+    private Text fAlternateName;
+
+    /**
+     * An alias for the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getAlternateName() {
+        return fAlternateName;
+    }
+
+    /**
+     * An alias for the item.
+     *
+     */
+    @Override
+    public void setAlternateName(Text fAlternateName) {
+        this.fAlternateName = fAlternateName;
+    }
+
+    private Text fName;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getName() {
+        return fName;
+    }
+
+    /**
+     * The name of the item.
+     *
+     */
+    @Override
+    public void setName(Text fName) {
+        this.fName = fName;
+    }
+
+    private Action fPotentialAction;
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public Action getPotentialAction() {
+        return fPotentialAction;
+    }
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     */
+    @Override
+    public void setPotentialAction(Action fPotentialAction) {
+        this.fPotentialAction = fPotentialAction;
+    }
+
+    private Object fImage;
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link URL} or {@link ImageObject}
+     */
+    @Override
+    public <T> T getImage() {
+        return (T) fImage;
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     */
+    @Override
+    public void setImage(Object fImage) {
+        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
+        }
+        this.fImage = fImage;
+    }
+
+    private URL fUrl;
+
+    /**
+     * URL of the item.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getUrl() {
+        return fUrl;
+    }
+
+    /**
+     * URL of the item.
+     *
+     */
+    @Override
+    public void setUrl(URL fUrl) {
+        this.fUrl = fUrl;
+    }
+
+    private Text fDescription;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDescription() {
+        return fDescription;
+    }
+
+    /**
+     * A description of the item.
+     *
+     */
+    @Override
+    public void setDescription(Text fDescription) {
+        this.fDescription = fDescription;
     }
 
     private Object fSubjectOf;
@@ -105,25 +480,25 @@ public class ParcelDeliveryImpl implements ParcelDelivery {
         this.fSubjectOf = fSubjectOf;
     }
 
-    private Text fName;
+    private URL fAdditionalType;
 
     /**
-     * The name of the item.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
-     * @return {@link Text}
+     * @return {@link URL}
      */
     @Override
-    public Text getName() {
-        return fName;
+    public URL getAdditionalType() {
+        return fAdditionalType;
     }
 
     /**
-     * The name of the item.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
      */
     @Override
-    public void setName(Text fName) {
-        this.fName = fName;
+    public void setAdditionalType(URL fAdditionalType) {
+        this.fAdditionalType = fAdditionalType;
     }
 
     private Text fDisambiguatingDescription;
@@ -145,75 +520,6 @@ public class ParcelDeliveryImpl implements ParcelDelivery {
     @Override
     public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
         this.fDisambiguatingDescription = fDisambiguatingDescription;
-    }
-
-    private PostalAddress fOriginAddress;
-
-    /**
-     * Shipper's address.
-     *
-     * @return {@link PostalAddress}
-     */
-    @Override
-    public PostalAddress getOriginAddress() {
-        return fOriginAddress;
-    }
-
-    /**
-     * Shipper's address.
-     *
-     */
-    @Override
-    public void setOriginAddress(PostalAddress fOriginAddress) {
-        this.fOriginAddress = fOriginAddress;
-    }
-
-    private Object fExpectedArrivalFrom;
-
-    /**
-     * The earliest date the package may arrive.
-     *
-     * @return {@link Date} or {@link DateTime}
-     */
-    @Override
-    public <T> T getExpectedArrivalFrom() {
-        return (T) fExpectedArrivalFrom;
-    }
-
-    /**
-     * The earliest date the package may arrive.
-     *
-     */
-    @Override
-    public void setExpectedArrivalFrom(Object fExpectedArrivalFrom) {
-        if(!(fExpectedArrivalFrom instanceof Date) && !(fExpectedArrivalFrom instanceof DateTime)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'expectedArrivalFrom': " + fExpectedArrivalFrom);
-        }
-        this.fExpectedArrivalFrom = fExpectedArrivalFrom;
-    }
-
-    private Object fImage;
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link URL} or {@link ImageObject}
-     */
-    @Override
-    public <T> T getImage() {
-        return (T) fImage;
-    }
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     */
-    @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
-        this.fImage = fImage;
     }
 
     private URL fSameAs;
@@ -261,311 +567,5 @@ public class ParcelDeliveryImpl implements ParcelDelivery {
             throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
         }
         this.fIdentifier = fIdentifier;
-    }
-
-    private Text fAlternateName;
-
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getAlternateName() {
-        return fAlternateName;
-    }
-
-    /**
-     * An alias for the item.
-     *
-     */
-    @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
-    }
-
-    private Object fMainEntityOfPage;
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     */
-    @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
-        }
-        this.fMainEntityOfPage = fMainEntityOfPage;
-    }
-
-    private URL fTrackingUrl;
-
-    /**
-     * Tracking url for the parcel delivery.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getTrackingUrl() {
-        return fTrackingUrl;
-    }
-
-    /**
-     * Tracking url for the parcel delivery.
-     *
-     */
-    @Override
-    public void setTrackingUrl(URL fTrackingUrl) {
-        this.fTrackingUrl = fTrackingUrl;
-    }
-
-    private Order fPartOfOrder;
-
-    /**
-     * The overall order the items in this delivery were included in.
-     *
-     * @return {@link Order}
-     */
-    @Override
-    public Order getPartOfOrder() {
-        return fPartOfOrder;
-    }
-
-    /**
-     * The overall order the items in this delivery were included in.
-     *
-     */
-    @Override
-    public void setPartOfOrder(Order fPartOfOrder) {
-        this.fPartOfOrder = fPartOfOrder;
-    }
-
-    private Object fProvider;
-
-    /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     *
-     * @return {@link Organization} or {@link Person}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     */
-    @Override
-    public <T> T getProvider() {
-        return (T) fProvider;
-    }
-
-    /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     */
-    @Override
-    public void setProvider(Object fProvider) {
-        if(!(fProvider instanceof Organization) && !(fProvider instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'provider': " + fProvider);
-        }
-        this.fProvider = fProvider;
-    }
-
-    private DeliveryEvent fDeliveryStatus;
-
-    /**
-     * New entry added as the package passes through each leg of its journey (from shipment to final delivery).
-     *
-     * @return {@link DeliveryEvent}
-     */
-    @Override
-    public DeliveryEvent getDeliveryStatus() {
-        return fDeliveryStatus;
-    }
-
-    /**
-     * New entry added as the package passes through each leg of its journey (from shipment to final delivery).
-     *
-     */
-    @Override
-    public void setDeliveryStatus(DeliveryEvent fDeliveryStatus) {
-        this.fDeliveryStatus = fDeliveryStatus;
-    }
-
-    private PostalAddress fDeliveryAddress;
-
-    /**
-     * Destination address.
-     *
-     * @return {@link PostalAddress}
-     */
-    @Override
-    public PostalAddress getDeliveryAddress() {
-        return fDeliveryAddress;
-    }
-
-    /**
-     * Destination address.
-     *
-     */
-    @Override
-    public void setDeliveryAddress(PostalAddress fDeliveryAddress) {
-        this.fDeliveryAddress = fDeliveryAddress;
-    }
-
-    private Organization fCarrier;
-
-    /**
-     * 'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.
-     *
-     * @return {@link Organization}
-     */
-    @Override
-    public Organization getCarrier() {
-        return fCarrier;
-    }
-
-    /**
-     * 'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.
-     *
-     */
-    @Override
-    public void setCarrier(Organization fCarrier) {
-        this.fCarrier = fCarrier;
-    }
-
-    private URL fUrl;
-
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getUrl() {
-        return fUrl;
-    }
-
-    /**
-     * URL of the item.
-     *
-     */
-    @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
-    }
-
-    private Text fTrackingNumber;
-
-    /**
-     * Shipper tracking number.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getTrackingNumber() {
-        return fTrackingNumber;
-    }
-
-    /**
-     * Shipper tracking number.
-     *
-     */
-    @Override
-    public void setTrackingNumber(Text fTrackingNumber) {
-        this.fTrackingNumber = fTrackingNumber;
-    }
-
-    private Product fItemShipped;
-
-    /**
-     * Item(s) being shipped.
-     *
-     * @return {@link Product}
-     */
-    @Override
-    public Product getItemShipped() {
-        return fItemShipped;
-    }
-
-    /**
-     * Item(s) being shipped.
-     *
-     */
-    @Override
-    public void setItemShipped(Product fItemShipped) {
-        this.fItemShipped = fItemShipped;
-    }
-
-    private URL fAdditionalType;
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getAdditionalType() {
-        return fAdditionalType;
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     */
-    @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
-    }
-
-    private Text fDescription;
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDescription() {
-        return fDescription;
-    }
-
-    /**
-     * A description of the item.
-     *
-     */
-    @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
-    }
-
-    private Action fPotentialAction;
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
-    @Override
-    public Action getPotentialAction() {
-        return fPotentialAction;
-    }
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     */
-    @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
     }
 }

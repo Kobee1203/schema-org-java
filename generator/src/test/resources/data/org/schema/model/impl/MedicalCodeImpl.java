@@ -40,78 +40,52 @@ import org.schema.model.CategoryCode;
 @JsonLdTypeName("schema:MedicalCode")
 public class MedicalCodeImpl implements MedicalCode {
 
-    private MedicalCode fCode;
+    private Text fCodeValue;
 
     /**
-     * A medical code for the entity, taken from a controlled vocabulary or ontology such as ICD-9, DiseasesDB, MeSH, SNOMED-CT, RxNorm, etc.
+     * A short textual code that uniquely identifies the value.
      *
-     * @return {@link MedicalCode}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public MedicalCode getCode() {
-        return fCode;
-    }
-
-    /**
-     * A medical code for the entity, taken from a controlled vocabulary or ontology such as ICD-9, DiseasesDB, MeSH, SNOMED-CT, RxNorm, etc.
-     *
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setCode(MedicalCode fCode) {
-        this.fCode = fCode;
-    }
-
-    private Object fInDefinedTermSet;
-
-    /**
-     * A [[DefinedTermSet]] that contains this term.
-     *
-     * @return {@link URL} or {@link DefinedTermSet}
+     * @return {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
      */
     @Override
-    public <T> T getInDefinedTermSet() {
-        return (T) fInDefinedTermSet;
+    public Text getCodeValue() {
+        return fCodeValue;
     }
 
     /**
-     * A [[DefinedTermSet]] that contains this term.
+     * A short textual code that uniquely identifies the value.
      *
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
      */
     @Override
-    public void setInDefinedTermSet(Object fInDefinedTermSet) {
-        if(!(fInDefinedTermSet instanceof URL) && !(fInDefinedTermSet instanceof DefinedTermSet)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'inDefinedTermSet': " + fInDefinedTermSet);
-        }
-        this.fInDefinedTermSet = fInDefinedTermSet;
+    public void setCodeValue(Text fCodeValue) {
+        this.fCodeValue = fCodeValue;
     }
 
-    private MedicalGuideline fGuideline;
+    private Text fCodingSystem;
 
     /**
-     * A medical guideline related to this entity.
+     * The coding system, e.g. 'ICD-10'.
      *
-     * @return {@link MedicalGuideline}
+     * @return {@link Text}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public MedicalGuideline getGuideline() {
-        return fGuideline;
+    public Text getCodingSystem() {
+        return fCodingSystem;
     }
 
     /**
-     * A medical guideline related to this entity.
+     * The coding system, e.g. 'ICD-10'.
      *
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setGuideline(MedicalGuideline fGuideline) {
-        this.fGuideline = fGuideline;
+    public void setCodingSystem(Text fCodingSystem) {
+        this.fCodingSystem = fCodingSystem;
     }
 
     private Object fLegalStatus;
@@ -140,25 +114,169 @@ public class MedicalCodeImpl implements MedicalCode {
         this.fLegalStatus = fLegalStatus;
     }
 
-    private Text fAlternateName;
+    private Grant fFunding;
 
     /**
-     * An alias for the item.
+     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
      *
-     * @return {@link Text}
+     * @return {@link Grant}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
     @Override
-    public Text getAlternateName() {
-        return fAlternateName;
+    public Grant getFunding() {
+        return fFunding;
     }
 
     /**
-     * An alias for the item.
+     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
      *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
     @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
+    public void setFunding(Grant fFunding) {
+        this.fFunding = fFunding;
+    }
+
+    private MedicalStudy fStudy;
+
+    /**
+     * A medical study or trial related to this entity.
+     *
+     * @return {@link MedicalStudy}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public MedicalStudy getStudy() {
+        return fStudy;
+    }
+
+    /**
+     * A medical study or trial related to this entity.
+     *
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void setStudy(MedicalStudy fStudy) {
+        this.fStudy = fStudy;
+    }
+
+    private MedicalCode fCode;
+
+    /**
+     * A medical code for the entity, taken from a controlled vocabulary or ontology such as ICD-9, DiseasesDB, MeSH, SNOMED-CT, RxNorm, etc.
+     *
+     * @return {@link MedicalCode}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public MedicalCode getCode() {
+        return fCode;
+    }
+
+    /**
+     * A medical code for the entity, taken from a controlled vocabulary or ontology such as ICD-9, DiseasesDB, MeSH, SNOMED-CT, RxNorm, etc.
+     *
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void setCode(MedicalCode fCode) {
+        this.fCode = fCode;
+    }
+
+    private MedicalGuideline fGuideline;
+
+    /**
+     * A medical guideline related to this entity.
+     *
+     * @return {@link MedicalGuideline}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public MedicalGuideline getGuideline() {
+        return fGuideline;
+    }
+
+    /**
+     * A medical guideline related to this entity.
+     *
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void setGuideline(MedicalGuideline fGuideline) {
+        this.fGuideline = fGuideline;
+    }
+
+    private Organization fRecognizingAuthority;
+
+    /**
+     * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
+     *
+     * @return {@link Organization}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public Organization getRecognizingAuthority() {
+        return fRecognizingAuthority;
+    }
+
+    /**
+     * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
+     *
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void setRecognizingAuthority(Organization fRecognizingAuthority) {
+        this.fRecognizingAuthority = fRecognizingAuthority;
+    }
+
+    private MedicineSystem fMedicineSystem;
+
+    /**
+     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
+     *
+     * @return {@link MedicineSystem}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public MedicineSystem getMedicineSystem() {
+        return fMedicineSystem;
+    }
+
+    /**
+     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
+     *
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void setMedicineSystem(MedicineSystem fMedicineSystem) {
+        this.fMedicineSystem = fMedicineSystem;
+    }
+
+    private MedicalSpecialty fRelevantSpecialty;
+
+    /**
+     * If applicable, a medical specialty in which this entity is relevant.
+     *
+     * @return {@link MedicalSpecialty}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public MedicalSpecialty getRelevantSpecialty() {
+        return fRelevantSpecialty;
+    }
+
+    /**
+     * If applicable, a medical specialty in which this entity is relevant.
+     *
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void setRelevantSpecialty(MedicalSpecialty fRelevantSpecialty) {
+        this.fRelevantSpecialty = fRelevantSpecialty;
     }
 
     private Object fMainEntityOfPage;
@@ -185,27 +303,46 @@ public class MedicalCodeImpl implements MedicalCode {
         this.fMainEntityOfPage = fMainEntityOfPage;
     }
 
-    private Organization fRecognizingAuthority;
+    private Text fAlternateName;
 
     /**
-     * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
+     * An alias for the item.
      *
-     * @return {@link Organization}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     * @return {@link Text}
      */
     @Override
-    public Organization getRecognizingAuthority() {
-        return fRecognizingAuthority;
+    public Text getAlternateName() {
+        return fAlternateName;
     }
 
     /**
-     * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
+     * An alias for the item.
      *
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setRecognizingAuthority(Organization fRecognizingAuthority) {
-        this.fRecognizingAuthority = fRecognizingAuthority;
+    public void setAlternateName(Text fAlternateName) {
+        this.fAlternateName = fAlternateName;
+    }
+
+    private Text fName;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getName() {
+        return fName;
+    }
+
+    /**
+     * The name of the item.
+     *
+     */
+    @Override
+    public void setName(Text fName) {
+        this.fName = fName;
     }
 
     private Action fPotentialAction;
@@ -229,50 +366,70 @@ public class MedicalCodeImpl implements MedicalCode {
         this.fPotentialAction = fPotentialAction;
     }
 
-    private MedicalSpecialty fRelevantSpecialty;
+    private Object fImage;
 
     /**
-     * If applicable, a medical specialty in which this entity is relevant.
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @return {@link MedicalSpecialty}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     * @return {@link URL} or {@link ImageObject}
      */
     @Override
-    public MedicalSpecialty getRelevantSpecialty() {
-        return fRelevantSpecialty;
+    public <T> T getImage() {
+        return (T) fImage;
     }
 
     /**
-     * If applicable, a medical specialty in which this entity is relevant.
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setRelevantSpecialty(MedicalSpecialty fRelevantSpecialty) {
-        this.fRelevantSpecialty = fRelevantSpecialty;
+    public void setImage(Object fImage) {
+        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
+        }
+        this.fImage = fImage;
     }
 
-    private Text fCodingSystem;
+    private URL fUrl;
 
     /**
-     * The coding system, e.g. 'ICD-10'.
+     * URL of the item.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getUrl() {
+        return fUrl;
+    }
+
+    /**
+     * URL of the item.
+     *
+     */
+    @Override
+    public void setUrl(URL fUrl) {
+        this.fUrl = fUrl;
+    }
+
+    private Text fDescription;
+
+    /**
+     * A description of the item.
      *
      * @return {@link Text}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public Text getCodingSystem() {
-        return fCodingSystem;
+    public Text getDescription() {
+        return fDescription;
     }
 
     /**
-     * The coding system, e.g. 'ICD-10'.
+     * A description of the item.
      *
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setCodingSystem(Text fCodingSystem) {
-        this.fCodingSystem = fCodingSystem;
+    public void setDescription(Text fDescription) {
+        this.fDescription = fDescription;
     }
 
     private Object fSubjectOf;
@@ -301,25 +458,25 @@ public class MedicalCodeImpl implements MedicalCode {
         this.fSubjectOf = fSubjectOf;
     }
 
-    private Text fName;
+    private URL fAdditionalType;
 
     /**
-     * The name of the item.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
-     * @return {@link Text}
+     * @return {@link URL}
      */
     @Override
-    public Text getName() {
-        return fName;
+    public URL getAdditionalType() {
+        return fAdditionalType;
     }
 
     /**
-     * The name of the item.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
      */
     @Override
-    public void setName(Text fName) {
-        this.fName = fName;
+    public void setAdditionalType(URL fAdditionalType) {
+        this.fAdditionalType = fAdditionalType;
     }
 
     private Text fDisambiguatingDescription;
@@ -343,30 +500,6 @@ public class MedicalCodeImpl implements MedicalCode {
         this.fDisambiguatingDescription = fDisambiguatingDescription;
     }
 
-    private Object fImage;
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link URL} or {@link ImageObject}
-     */
-    @Override
-    public <T> T getImage() {
-        return (T) fImage;
-    }
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     */
-    @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
-        this.fImage = fImage;
-    }
-
     private URL fSameAs;
 
     /**
@@ -386,29 +519,6 @@ public class MedicalCodeImpl implements MedicalCode {
     @Override
     public void setSameAs(URL fSameAs) {
         this.fSameAs = fSameAs;
-    }
-
-    private MedicineSystem fMedicineSystem;
-
-    /**
-     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
-     *
-     * @return {@link MedicineSystem}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public MedicineSystem getMedicineSystem() {
-        return fMedicineSystem;
-    }
-
-    /**
-     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
-     *
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setMedicineSystem(MedicineSystem fMedicineSystem) {
-        this.fMedicineSystem = fMedicineSystem;
     }
 
     private Object fIdentifier;
@@ -435,58 +545,6 @@ public class MedicalCodeImpl implements MedicalCode {
             throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
         }
         this.fIdentifier = fIdentifier;
-    }
-
-    private Text fTermCode;
-
-    /**
-     * A code that identifies this [[DefinedTerm]] within a [[DefinedTermSet]]
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
-     */
-    @Override
-    public Text getTermCode() {
-        return fTermCode;
-    }
-
-    /**
-     * A code that identifies this [[DefinedTerm]] within a [[DefinedTermSet]]
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
-     */
-    @Override
-    public void setTermCode(Text fTermCode) {
-        this.fTermCode = fTermCode;
-    }
-
-    private Grant fFunding;
-
-    /**
-     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
-     *
-     * @return {@link Grant}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     */
-    @Override
-    public Grant getFunding() {
-        return fFunding;
-    }
-
-    /**
-     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     */
-    @Override
-    public void setFunding(Grant fFunding) {
-        this.fFunding = fFunding;
     }
 
     private Object fInCodeSet;
@@ -517,114 +575,56 @@ public class MedicalCodeImpl implements MedicalCode {
         this.fInCodeSet = fInCodeSet;
     }
 
-    private URL fUrl;
+    private Text fTermCode;
 
     /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getUrl() {
-        return fUrl;
-    }
-
-    /**
-     * URL of the item.
-     *
-     */
-    @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
-    }
-
-    private Text fCodeValue;
-
-    /**
-     * A short textual code that uniquely identifies the value.
+     * A code that identifies this [[DefinedTerm]] within a [[DefinedTermSet]]
      *
      * @return {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
      */
     @Override
-    public Text getCodeValue() {
-        return fCodeValue;
+    public Text getTermCode() {
+        return fTermCode;
     }
 
     /**
-     * A short textual code that uniquely identifies the value.
+     * A code that identifies this [[DefinedTerm]] within a [[DefinedTermSet]]
      *
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
      */
     @Override
-    public void setCodeValue(Text fCodeValue) {
-        this.fCodeValue = fCodeValue;
+    public void setTermCode(Text fTermCode) {
+        this.fTermCode = fTermCode;
     }
 
-    private URL fAdditionalType;
+    private Object fInDefinedTermSet;
 
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     * A [[DefinedTermSet]] that contains this term.
      *
-     * @return {@link URL}
+     * @return {@link URL} or {@link DefinedTermSet}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
      */
     @Override
-    public URL getAdditionalType() {
-        return fAdditionalType;
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     */
-    @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
-    }
-
-    private Text fDescription;
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDescription() {
-        return fDescription;
+    public <T> T getInDefinedTermSet() {
+        return (T) fInDefinedTermSet;
     }
 
     /**
-     * A description of the item.
+     * A [[DefinedTermSet]] that contains this term.
      *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
      */
     @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
-    }
-
-    private MedicalStudy fStudy;
-
-    /**
-     * A medical study or trial related to this entity.
-     *
-     * @return {@link MedicalStudy}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public MedicalStudy getStudy() {
-        return fStudy;
-    }
-
-    /**
-     * A medical study or trial related to this entity.
-     *
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setStudy(MedicalStudy fStudy) {
-        this.fStudy = fStudy;
+    public void setInDefinedTermSet(Object fInDefinedTermSet) {
+        if(!(fInDefinedTermSet instanceof URL) && !(fInDefinedTermSet instanceof DefinedTermSet)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'inDefinedTermSet': " + fInDefinedTermSet);
+        }
+        this.fInDefinedTermSet = fInDefinedTermSet;
     }
 }

@@ -36,51 +36,6 @@ import org.schema.model.ListenAction;
 @JsonLdTypeName("schema:ListenAction")
 public class ListenActionImpl implements ListenAction {
 
-    private Thing fError;
-
-    /**
-     * For failed actions, more information on the cause of the failure.
-     *
-     * @return {@link Thing}
-     */
-    @Override
-    public Thing getError() {
-        return fError;
-    }
-
-    /**
-     * For failed actions, more information on the cause of the failure.
-     *
-     */
-    @Override
-    public void setError(Thing fError) {
-        this.fError = fError;
-    }
-
-    private Object fLocation;
-
-    /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-     *
-     * @return {@link PostalAddress} or {@link Text} or {@link Place} or {@link VirtualLocation}
-     */
-    @Override
-    public <T> T getLocation() {
-        return (T) fLocation;
-    }
-
-    /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-     *
-     */
-    @Override
-    public void setLocation(Object fLocation) {
-        if(!(fLocation instanceof PostalAddress) && !(fLocation instanceof Text) && !(fLocation instanceof Place) && !(fLocation instanceof VirtualLocation)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'location': " + fLocation);
-        }
-        this.fLocation = fLocation;
-    }
-
     private Offer fExpectsAcceptanceOf;
 
     /**
@@ -104,49 +59,98 @@ public class ListenActionImpl implements ListenAction {
         this.fExpectsAcceptanceOf = fExpectsAcceptanceOf;
     }
 
-    private Text fAlternateName;
+    private ActionAccessSpecification fActionAccessibilityRequirement;
 
     /**
-     * An alias for the item.
+     * A set of requirements that a must be fulfilled in order to perform an Action. If more than one value is specied, fulfilling one set of requirements will allow the Action to be performed.
      *
-     * @return {@link Text}
+     * @return {@link ActionAccessSpecification}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
     @Override
-    public Text getAlternateName() {
-        return fAlternateName;
+    public ActionAccessSpecification getActionAccessibilityRequirement() {
+        return fActionAccessibilityRequirement;
     }
 
     /**
-     * An alias for the item.
+     * A set of requirements that a must be fulfilled in order to perform an Action. If more than one value is specied, fulfilling one set of requirements will allow the Action to be performed.
      *
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
     @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
+    public void setActionAccessibilityRequirement(ActionAccessSpecification fActionAccessibilityRequirement) {
+        this.fActionAccessibilityRequirement = fActionAccessibilityRequirement;
     }
 
-    private Object fMainEntityOfPage;
+    private Object fAgent;
 
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
      *
-     * @return {@link CreativeWork} or {@link URL}
+     * @return {@link Organization} or {@link Person}
      */
     @Override
-    public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
+    public <T> T getAgent() {
+        return (T) fAgent;
     }
 
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
      *
      */
     @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
+    public void setAgent(Object fAgent) {
+        if(!(fAgent instanceof Organization) && !(fAgent instanceof Person)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'agent': " + fAgent);
         }
-        this.fMainEntityOfPage = fMainEntityOfPage;
+        this.fAgent = fAgent;
+    }
+
+    private Object fStartTime;
+
+    /**
+     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @return {@link DateTime} or {@link Time}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    @Override
+    public <T> T getStartTime() {
+        return (T) fStartTime;
+    }
+
+    /**
+     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    @Override
+    public void setStartTime(Object fStartTime) {
+        if(!(fStartTime instanceof DateTime) && !(fStartTime instanceof Time)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'startTime': " + fStartTime);
+        }
+        this.fStartTime = fStartTime;
+    }
+
+    private ActionStatusType fActionStatus;
+
+    /**
+     * Indicates the current disposition of the Action.
+     *
+     * @return {@link ActionStatusType}
+     */
+    @Override
+    public ActionStatusType getActionStatus() {
+        return fActionStatus;
+    }
+
+    /**
+     * Indicates the current disposition of the Action.
+     *
+     */
+    @Override
+    public void setActionStatus(ActionStatusType fActionStatus) {
+        this.fActionStatus = fActionStatus;
     }
 
     private Object fProvider;
@@ -200,255 +204,28 @@ public class ListenActionImpl implements ListenAction {
         this.fResult = fResult;
     }
 
-    private Thing fInstrument;
+    private Object fLocation;
 
     /**
-     * The object that helped the agent perform the action. e.g. John wrote a book with *a pen*.
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
      *
-     * @return {@link Thing}
+     * @return {@link PostalAddress} or {@link Text} or {@link Place} or {@link VirtualLocation}
      */
     @Override
-    public Thing getInstrument() {
-        return fInstrument;
+    public <T> T getLocation() {
+        return (T) fLocation;
     }
 
     /**
-     * The object that helped the agent perform the action. e.g. John wrote a book with *a pen*.
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
      *
      */
     @Override
-    public void setInstrument(Thing fInstrument) {
-        this.fInstrument = fInstrument;
-    }
-
-    private Action fPotentialAction;
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
-    @Override
-    public Action getPotentialAction() {
-        return fPotentialAction;
-    }
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     */
-    @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
-    }
-
-    private ActionStatusType fActionStatus;
-
-    /**
-     * Indicates the current disposition of the Action.
-     *
-     * @return {@link ActionStatusType}
-     */
-    @Override
-    public ActionStatusType getActionStatus() {
-        return fActionStatus;
-    }
-
-    /**
-     * Indicates the current disposition of the Action.
-     *
-     */
-    @Override
-    public void setActionStatus(ActionStatusType fActionStatus) {
-        this.fActionStatus = fActionStatus;
-    }
-
-    private Object fStartTime;
-
-    /**
-     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     *
-     * @return {@link DateTime} or {@link Time}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
-     */
-    @Override
-    public <T> T getStartTime() {
-        return (T) fStartTime;
-    }
-
-    /**
-     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     *
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
-     */
-    @Override
-    public void setStartTime(Object fStartTime) {
-        if(!(fStartTime instanceof DateTime) && !(fStartTime instanceof Time)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'startTime': " + fStartTime);
+    public void setLocation(Object fLocation) {
+        if(!(fLocation instanceof PostalAddress) && !(fLocation instanceof Text) && !(fLocation instanceof Place) && !(fLocation instanceof VirtualLocation)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'location': " + fLocation);
         }
-        this.fStartTime = fStartTime;
-    }
-
-    private Object fSubjectOf;
-
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @return {@link Event} or {@link CreativeWork}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    @Override
-    public <T> T getSubjectOf() {
-        return (T) fSubjectOf;
-    }
-
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    @Override
-    public void setSubjectOf(Object fSubjectOf) {
-        if(!(fSubjectOf instanceof Event) && !(fSubjectOf instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'subjectOf': " + fSubjectOf);
-        }
-        this.fSubjectOf = fSubjectOf;
-    }
-
-    private Text fName;
-
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getName() {
-        return fName;
-    }
-
-    /**
-     * The name of the item.
-     *
-     */
-    @Override
-    public void setName(Text fName) {
-        this.fName = fName;
-    }
-
-    private Text fDisambiguatingDescription;
-
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDisambiguatingDescription() {
-        return fDisambiguatingDescription;
-    }
-
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     */
-    @Override
-    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = fDisambiguatingDescription;
-    }
-
-    private Object fImage;
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link URL} or {@link ImageObject}
-     */
-    @Override
-    public <T> T getImage() {
-        return (T) fImage;
-    }
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     */
-    @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
-        this.fImage = fImage;
-    }
-
-    private URL fSameAs;
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getSameAs() {
-        return fSameAs;
-    }
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     */
-    @Override
-    public void setSameAs(URL fSameAs) {
-        this.fSameAs = fSameAs;
-    }
-
-    private ActionAccessSpecification fActionAccessibilityRequirement;
-
-    /**
-     * A set of requirements that a must be fulfilled in order to perform an Action. If more than one value is specied, fulfilling one set of requirements will allow the Action to be performed.
-     *
-     * @return {@link ActionAccessSpecification}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     */
-    @Override
-    public ActionAccessSpecification getActionAccessibilityRequirement() {
-        return fActionAccessibilityRequirement;
-    }
-
-    /**
-     * A set of requirements that a must be fulfilled in order to perform an Action. If more than one value is specied, fulfilling one set of requirements will allow the Action to be performed.
-     *
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     */
-    @Override
-    public void setActionAccessibilityRequirement(ActionAccessSpecification fActionAccessibilityRequirement) {
-        this.fActionAccessibilityRequirement = fActionAccessibilityRequirement;
-    }
-
-    private Object fIdentifier;
-
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @return {@link URL} or {@link Text} or {@link PropertyValue}
-     */
-    @Override
-    public <T> T getIdentifier() {
-        return (T) fIdentifier;
-    }
-
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     */
-    @Override
-    public void setIdentifier(Object fIdentifier) {
-        if(!(fIdentifier instanceof URL) && !(fIdentifier instanceof Text) && !(fIdentifier instanceof PropertyValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
-        }
-        this.fIdentifier = fIdentifier;
+        this.fLocation = fLocation;
     }
 
     private Thing fObject;
@@ -472,28 +249,25 @@ public class ListenActionImpl implements ListenAction {
         this.fObject = fObject;
     }
 
-    private Object fParticipant;
+    private EntryPoint fTarget;
 
     /**
-     * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
+     * Indicates a target EntryPoint for an Action.
      *
-     * @return {@link Organization} or {@link Person}
+     * @return {@link EntryPoint}
      */
     @Override
-    public <T> T getParticipant() {
-        return (T) fParticipant;
+    public EntryPoint getTarget() {
+        return fTarget;
     }
 
     /**
-     * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
+     * Indicates a target EntryPoint for an Action.
      *
      */
     @Override
-    public void setParticipant(Object fParticipant) {
-        if(!(fParticipant instanceof Organization) && !(fParticipant instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'participant': " + fParticipant);
-        }
-        this.fParticipant = fParticipant;
+    public void setTarget(EntryPoint fTarget) {
+        this.fTarget = fTarget;
     }
 
     private Object fEndTime;
@@ -522,28 +296,181 @@ public class ListenActionImpl implements ListenAction {
         this.fEndTime = fEndTime;
     }
 
-    private Object fAgent;
+    private Object fParticipant;
 
     /**
-     * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
+     * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
      *
      * @return {@link Organization} or {@link Person}
      */
     @Override
-    public <T> T getAgent() {
-        return (T) fAgent;
+    public <T> T getParticipant() {
+        return (T) fParticipant;
     }
 
     /**
-     * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
+     * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
      *
      */
     @Override
-    public void setAgent(Object fAgent) {
-        if(!(fAgent instanceof Organization) && !(fAgent instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'agent': " + fAgent);
+    public void setParticipant(Object fParticipant) {
+        if(!(fParticipant instanceof Organization) && !(fParticipant instanceof Person)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'participant': " + fParticipant);
         }
-        this.fAgent = fAgent;
+        this.fParticipant = fParticipant;
+    }
+
+    private Thing fInstrument;
+
+    /**
+     * The object that helped the agent perform the action. e.g. John wrote a book with *a pen*.
+     *
+     * @return {@link Thing}
+     */
+    @Override
+    public Thing getInstrument() {
+        return fInstrument;
+    }
+
+    /**
+     * The object that helped the agent perform the action. e.g. John wrote a book with *a pen*.
+     *
+     */
+    @Override
+    public void setInstrument(Thing fInstrument) {
+        this.fInstrument = fInstrument;
+    }
+
+    private Thing fError;
+
+    /**
+     * For failed actions, more information on the cause of the failure.
+     *
+     * @return {@link Thing}
+     */
+    @Override
+    public Thing getError() {
+        return fError;
+    }
+
+    /**
+     * For failed actions, more information on the cause of the failure.
+     *
+     */
+    @Override
+    public void setError(Thing fError) {
+        this.fError = fError;
+    }
+
+    private Object fMainEntityOfPage;
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    @Override
+    public <T> T getMainEntityOfPage() {
+        return (T) fMainEntityOfPage;
+    }
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     */
+    @Override
+    public void setMainEntityOfPage(Object fMainEntityOfPage) {
+        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
+        }
+        this.fMainEntityOfPage = fMainEntityOfPage;
+    }
+
+    private Text fAlternateName;
+
+    /**
+     * An alias for the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getAlternateName() {
+        return fAlternateName;
+    }
+
+    /**
+     * An alias for the item.
+     *
+     */
+    @Override
+    public void setAlternateName(Text fAlternateName) {
+        this.fAlternateName = fAlternateName;
+    }
+
+    private Text fName;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getName() {
+        return fName;
+    }
+
+    /**
+     * The name of the item.
+     *
+     */
+    @Override
+    public void setName(Text fName) {
+        this.fName = fName;
+    }
+
+    private Action fPotentialAction;
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public Action getPotentialAction() {
+        return fPotentialAction;
+    }
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     */
+    @Override
+    public void setPotentialAction(Action fPotentialAction) {
+        this.fPotentialAction = fPotentialAction;
+    }
+
+    private Object fImage;
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link URL} or {@link ImageObject}
+     */
+    @Override
+    public <T> T getImage() {
+        return (T) fImage;
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     */
+    @Override
+    public void setImage(Object fImage) {
+        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
+        }
+        this.fImage = fImage;
     }
 
     private URL fUrl;
@@ -567,25 +494,51 @@ public class ListenActionImpl implements ListenAction {
         this.fUrl = fUrl;
     }
 
-    private EntryPoint fTarget;
+    private Text fDescription;
 
     /**
-     * Indicates a target EntryPoint for an Action.
+     * A description of the item.
      *
-     * @return {@link EntryPoint}
+     * @return {@link Text}
      */
     @Override
-    public EntryPoint getTarget() {
-        return fTarget;
+    public Text getDescription() {
+        return fDescription;
     }
 
     /**
-     * Indicates a target EntryPoint for an Action.
+     * A description of the item.
      *
      */
     @Override
-    public void setTarget(EntryPoint fTarget) {
-        this.fTarget = fTarget;
+    public void setDescription(Text fDescription) {
+        this.fDescription = fDescription;
+    }
+
+    private Object fSubjectOf;
+
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @return {@link Event} or {@link CreativeWork}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public <T> T getSubjectOf() {
+        return (T) fSubjectOf;
+    }
+
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public void setSubjectOf(Object fSubjectOf) {
+        if(!(fSubjectOf instanceof Event) && !(fSubjectOf instanceof CreativeWork)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'subjectOf': " + fSubjectOf);
+        }
+        this.fSubjectOf = fSubjectOf;
     }
 
     private URL fAdditionalType;
@@ -609,24 +562,71 @@ public class ListenActionImpl implements ListenAction {
         this.fAdditionalType = fAdditionalType;
     }
 
-    private Text fDescription;
+    private Text fDisambiguatingDescription;
 
     /**
-     * A description of the item.
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
      * @return {@link Text}
      */
     @Override
-    public Text getDescription() {
-        return fDescription;
+    public Text getDisambiguatingDescription() {
+        return fDisambiguatingDescription;
     }
 
     /**
-     * A description of the item.
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
      */
     @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
+    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
+        this.fDisambiguatingDescription = fDisambiguatingDescription;
+    }
+
+    private URL fSameAs;
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getSameAs() {
+        return fSameAs;
+    }
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     */
+    @Override
+    public void setSameAs(URL fSameAs) {
+        this.fSameAs = fSameAs;
+    }
+
+    private Object fIdentifier;
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @return {@link URL} or {@link Text} or {@link PropertyValue}
+     */
+    @Override
+    public <T> T getIdentifier() {
+        return (T) fIdentifier;
+    }
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     */
+    @Override
+    public void setIdentifier(Object fIdentifier) {
+        if(!(fIdentifier instanceof URL) && !(fIdentifier instanceof Text) && !(fIdentifier instanceof PropertyValue)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
+        }
+        this.fIdentifier = fIdentifier;
     }
 }

@@ -34,6 +34,30 @@ import org.schema.model.MarryAction;
 @JsonLdTypeName("schema:MarryAction")
 public class MarryActionImpl implements MarryAction {
 
+    private Object fAgent;
+
+    /**
+     * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> T getAgent() {
+        return (T) fAgent;
+    }
+
+    /**
+     * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
+     *
+     */
+    @Override
+    public void setAgent(Object fAgent) {
+        if(!(fAgent instanceof Organization) && !(fAgent instanceof Person)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'agent': " + fAgent);
+        }
+        this.fAgent = fAgent;
+    }
+
     private Object fStartTime;
 
     /**
@@ -60,6 +84,215 @@ public class MarryActionImpl implements MarryAction {
         this.fStartTime = fStartTime;
     }
 
+    private ActionStatusType fActionStatus;
+
+    /**
+     * Indicates the current disposition of the Action.
+     *
+     * @return {@link ActionStatusType}
+     */
+    @Override
+    public ActionStatusType getActionStatus() {
+        return fActionStatus;
+    }
+
+    /**
+     * Indicates the current disposition of the Action.
+     *
+     */
+    @Override
+    public void setActionStatus(ActionStatusType fActionStatus) {
+        this.fActionStatus = fActionStatus;
+    }
+
+    private Object fProvider;
+
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @return {@link Organization} or {@link Person}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     */
+    @Override
+    public <T> T getProvider() {
+        return (T) fProvider;
+    }
+
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     */
+    @Override
+    public void setProvider(Object fProvider) {
+        if(!(fProvider instanceof Organization) && !(fProvider instanceof Person)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'provider': " + fProvider);
+        }
+        this.fProvider = fProvider;
+    }
+
+    private Thing fResult;
+
+    /**
+     * The result produced in the action. e.g. John wrote *a book*.
+     *
+     * @return {@link Thing}
+     */
+    @Override
+    public Thing getResult() {
+        return fResult;
+    }
+
+    /**
+     * The result produced in the action. e.g. John wrote *a book*.
+     *
+     */
+    @Override
+    public void setResult(Thing fResult) {
+        this.fResult = fResult;
+    }
+
+    private Object fLocation;
+
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @return {@link PostalAddress} or {@link Text} or {@link Place} or {@link VirtualLocation}
+     */
+    @Override
+    public <T> T getLocation() {
+        return (T) fLocation;
+    }
+
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     */
+    @Override
+    public void setLocation(Object fLocation) {
+        if(!(fLocation instanceof PostalAddress) && !(fLocation instanceof Text) && !(fLocation instanceof Place) && !(fLocation instanceof VirtualLocation)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'location': " + fLocation);
+        }
+        this.fLocation = fLocation;
+    }
+
+    private Thing fObject;
+
+    /**
+     * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read *a book*.
+     *
+     * @return {@link Thing}
+     */
+    @Override
+    public Thing getObject() {
+        return fObject;
+    }
+
+    /**
+     * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read *a book*.
+     *
+     */
+    @Override
+    public void setObject(Thing fObject) {
+        this.fObject = fObject;
+    }
+
+    private EntryPoint fTarget;
+
+    /**
+     * Indicates a target EntryPoint for an Action.
+     *
+     * @return {@link EntryPoint}
+     */
+    @Override
+    public EntryPoint getTarget() {
+        return fTarget;
+    }
+
+    /**
+     * Indicates a target EntryPoint for an Action.
+     *
+     */
+    @Override
+    public void setTarget(EntryPoint fTarget) {
+        this.fTarget = fTarget;
+    }
+
+    private Object fEndTime;
+
+    /**
+     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @return {@link DateTime} or {@link Time}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    @Override
+    public <T> T getEndTime() {
+        return (T) fEndTime;
+    }
+
+    /**
+     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    @Override
+    public void setEndTime(Object fEndTime) {
+        if(!(fEndTime instanceof DateTime) && !(fEndTime instanceof Time)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'endTime': " + fEndTime);
+        }
+        this.fEndTime = fEndTime;
+    }
+
+    private Object fParticipant;
+
+    /**
+     * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> T getParticipant() {
+        return (T) fParticipant;
+    }
+
+    /**
+     * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
+     *
+     */
+    @Override
+    public void setParticipant(Object fParticipant) {
+        if(!(fParticipant instanceof Organization) && !(fParticipant instanceof Person)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'participant': " + fParticipant);
+        }
+        this.fParticipant = fParticipant;
+    }
+
+    private Thing fInstrument;
+
+    /**
+     * The object that helped the agent perform the action. e.g. John wrote a book with *a pen*.
+     *
+     * @return {@link Thing}
+     */
+    @Override
+    public Thing getInstrument() {
+        return fInstrument;
+    }
+
+    /**
+     * The object that helped the agent perform the action. e.g. John wrote a book with *a pen*.
+     *
+     */
+    @Override
+    public void setInstrument(Thing fInstrument) {
+        this.fInstrument = fInstrument;
+    }
+
     private Thing fError;
 
     /**
@@ -79,6 +312,159 @@ public class MarryActionImpl implements MarryAction {
     @Override
     public void setError(Thing fError) {
         this.fError = fError;
+    }
+
+    private Object fMainEntityOfPage;
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    @Override
+    public <T> T getMainEntityOfPage() {
+        return (T) fMainEntityOfPage;
+    }
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     */
+    @Override
+    public void setMainEntityOfPage(Object fMainEntityOfPage) {
+        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
+        }
+        this.fMainEntityOfPage = fMainEntityOfPage;
+    }
+
+    private Text fAlternateName;
+
+    /**
+     * An alias for the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getAlternateName() {
+        return fAlternateName;
+    }
+
+    /**
+     * An alias for the item.
+     *
+     */
+    @Override
+    public void setAlternateName(Text fAlternateName) {
+        this.fAlternateName = fAlternateName;
+    }
+
+    private Text fName;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getName() {
+        return fName;
+    }
+
+    /**
+     * The name of the item.
+     *
+     */
+    @Override
+    public void setName(Text fName) {
+        this.fName = fName;
+    }
+
+    private Action fPotentialAction;
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public Action getPotentialAction() {
+        return fPotentialAction;
+    }
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     */
+    @Override
+    public void setPotentialAction(Action fPotentialAction) {
+        this.fPotentialAction = fPotentialAction;
+    }
+
+    private Object fImage;
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link URL} or {@link ImageObject}
+     */
+    @Override
+    public <T> T getImage() {
+        return (T) fImage;
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     */
+    @Override
+    public void setImage(Object fImage) {
+        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
+        }
+        this.fImage = fImage;
+    }
+
+    private URL fUrl;
+
+    /**
+     * URL of the item.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getUrl() {
+        return fUrl;
+    }
+
+    /**
+     * URL of the item.
+     *
+     */
+    @Override
+    public void setUrl(URL fUrl) {
+        this.fUrl = fUrl;
+    }
+
+    private Text fDescription;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDescription() {
+        return fDescription;
+    }
+
+    /**
+     * A description of the item.
+     *
+     */
+    @Override
+    public void setDescription(Text fDescription) {
+        this.fDescription = fDescription;
     }
 
     private Object fSubjectOf;
@@ -107,25 +493,25 @@ public class MarryActionImpl implements MarryAction {
         this.fSubjectOf = fSubjectOf;
     }
 
-    private Text fName;
+    private URL fAdditionalType;
 
     /**
-     * The name of the item.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
-     * @return {@link Text}
+     * @return {@link URL}
      */
     @Override
-    public Text getName() {
-        return fName;
+    public URL getAdditionalType() {
+        return fAdditionalType;
     }
 
     /**
-     * The name of the item.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
      */
     @Override
-    public void setName(Text fName) {
-        this.fName = fName;
+    public void setAdditionalType(URL fAdditionalType) {
+        this.fAdditionalType = fAdditionalType;
     }
 
     private Text fDisambiguatingDescription;
@@ -147,54 +533,6 @@ public class MarryActionImpl implements MarryAction {
     @Override
     public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
         this.fDisambiguatingDescription = fDisambiguatingDescription;
-    }
-
-    private Object fLocation;
-
-    /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-     *
-     * @return {@link PostalAddress} or {@link Text} or {@link Place} or {@link VirtualLocation}
-     */
-    @Override
-    public <T> T getLocation() {
-        return (T) fLocation;
-    }
-
-    /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-     *
-     */
-    @Override
-    public void setLocation(Object fLocation) {
-        if(!(fLocation instanceof PostalAddress) && !(fLocation instanceof Text) && !(fLocation instanceof Place) && !(fLocation instanceof VirtualLocation)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'location': " + fLocation);
-        }
-        this.fLocation = fLocation;
-    }
-
-    private Object fImage;
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link URL} or {@link ImageObject}
-     */
-    @Override
-    public <T> T getImage() {
-        return (T) fImage;
-    }
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     */
-    @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
-        this.fImage = fImage;
     }
 
     private URL fSameAs;
@@ -242,343 +580,5 @@ public class MarryActionImpl implements MarryAction {
             throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
         }
         this.fIdentifier = fIdentifier;
-    }
-
-    private Thing fObject;
-
-    /**
-     * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read *a book*.
-     *
-     * @return {@link Thing}
-     */
-    @Override
-    public Thing getObject() {
-        return fObject;
-    }
-
-    /**
-     * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read *a book*.
-     *
-     */
-    @Override
-    public void setObject(Thing fObject) {
-        this.fObject = fObject;
-    }
-
-    private Object fParticipant;
-
-    /**
-     * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    @Override
-    public <T> T getParticipant() {
-        return (T) fParticipant;
-    }
-
-    /**
-     * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
-     *
-     */
-    @Override
-    public void setParticipant(Object fParticipant) {
-        if(!(fParticipant instanceof Organization) && !(fParticipant instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'participant': " + fParticipant);
-        }
-        this.fParticipant = fParticipant;
-    }
-
-    private Text fAlternateName;
-
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getAlternateName() {
-        return fAlternateName;
-    }
-
-    /**
-     * An alias for the item.
-     *
-     */
-    @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
-    }
-
-    private Object fMainEntityOfPage;
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     */
-    @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
-        }
-        this.fMainEntityOfPage = fMainEntityOfPage;
-    }
-
-    private Object fEndTime;
-
-    /**
-     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     *
-     * @return {@link DateTime} or {@link Time}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
-     */
-    @Override
-    public <T> T getEndTime() {
-        return (T) fEndTime;
-    }
-
-    /**
-     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     *
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
-     */
-    @Override
-    public void setEndTime(Object fEndTime) {
-        if(!(fEndTime instanceof DateTime) && !(fEndTime instanceof Time)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'endTime': " + fEndTime);
-        }
-        this.fEndTime = fEndTime;
-    }
-
-    private Object fAgent;
-
-    /**
-     * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    @Override
-    public <T> T getAgent() {
-        return (T) fAgent;
-    }
-
-    /**
-     * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
-     *
-     */
-    @Override
-    public void setAgent(Object fAgent) {
-        if(!(fAgent instanceof Organization) && !(fAgent instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'agent': " + fAgent);
-        }
-        this.fAgent = fAgent;
-    }
-
-    private Object fProvider;
-
-    /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     *
-     * @return {@link Organization} or {@link Person}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     */
-    @Override
-    public <T> T getProvider() {
-        return (T) fProvider;
-    }
-
-    /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     */
-    @Override
-    public void setProvider(Object fProvider) {
-        if(!(fProvider instanceof Organization) && !(fProvider instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'provider': " + fProvider);
-        }
-        this.fProvider = fProvider;
-    }
-
-    private URL fUrl;
-
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getUrl() {
-        return fUrl;
-    }
-
-    /**
-     * URL of the item.
-     *
-     */
-    @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
-    }
-
-    private Thing fResult;
-
-    /**
-     * The result produced in the action. e.g. John wrote *a book*.
-     *
-     * @return {@link Thing}
-     */
-    @Override
-    public Thing getResult() {
-        return fResult;
-    }
-
-    /**
-     * The result produced in the action. e.g. John wrote *a book*.
-     *
-     */
-    @Override
-    public void setResult(Thing fResult) {
-        this.fResult = fResult;
-    }
-
-    private EntryPoint fTarget;
-
-    /**
-     * Indicates a target EntryPoint for an Action.
-     *
-     * @return {@link EntryPoint}
-     */
-    @Override
-    public EntryPoint getTarget() {
-        return fTarget;
-    }
-
-    /**
-     * Indicates a target EntryPoint for an Action.
-     *
-     */
-    @Override
-    public void setTarget(EntryPoint fTarget) {
-        this.fTarget = fTarget;
-    }
-
-    private URL fAdditionalType;
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getAdditionalType() {
-        return fAdditionalType;
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     */
-    @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
-    }
-
-    private Thing fInstrument;
-
-    /**
-     * The object that helped the agent perform the action. e.g. John wrote a book with *a pen*.
-     *
-     * @return {@link Thing}
-     */
-    @Override
-    public Thing getInstrument() {
-        return fInstrument;
-    }
-
-    /**
-     * The object that helped the agent perform the action. e.g. John wrote a book with *a pen*.
-     *
-     */
-    @Override
-    public void setInstrument(Thing fInstrument) {
-        this.fInstrument = fInstrument;
-    }
-
-    private Text fDescription;
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDescription() {
-        return fDescription;
-    }
-
-    /**
-     * A description of the item.
-     *
-     */
-    @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
-    }
-
-    private Action fPotentialAction;
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
-    @Override
-    public Action getPotentialAction() {
-        return fPotentialAction;
-    }
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     */
-    @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
-    }
-
-    private ActionStatusType fActionStatus;
-
-    /**
-     * Indicates the current disposition of the Action.
-     *
-     * @return {@link ActionStatusType}
-     */
-    @Override
-    public ActionStatusType getActionStatus() {
-        return fActionStatus;
-    }
-
-    /**
-     * Indicates the current disposition of the Action.
-     *
-     */
-    @Override
-    public void setActionStatus(ActionStatusType fActionStatus) {
-        this.fActionStatus = fActionStatus;
     }
 }

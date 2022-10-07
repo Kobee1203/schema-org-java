@@ -28,117 +28,25 @@ import org.schema.model.BusinessAudience;
 @JsonLdTypeName("schema:BusinessAudience")
 public class BusinessAudienceImpl implements BusinessAudience {
 
-    private Object fSubjectOf;
+    private QuantitativeValue fYearlyRevenue;
 
     /**
-     * A CreativeWork or Event about this Thing.
+     * The size of the business in annual revenue.
      *
-     * @return {@link Event} or {@link CreativeWork}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     * @return {@link QuantitativeValue}
      */
     @Override
-    public <T> T getSubjectOf() {
-        return (T) fSubjectOf;
+    public QuantitativeValue getYearlyRevenue() {
+        return fYearlyRevenue;
     }
 
     /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    @Override
-    public void setSubjectOf(Object fSubjectOf) {
-        if(!(fSubjectOf instanceof Event) && !(fSubjectOf instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'subjectOf': " + fSubjectOf);
-        }
-        this.fSubjectOf = fSubjectOf;
-    }
-
-    private Text fName;
-
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getName() {
-        return fName;
-    }
-
-    /**
-     * The name of the item.
+     * The size of the business in annual revenue.
      *
      */
     @Override
-    public void setName(Text fName) {
-        this.fName = fName;
-    }
-
-    private Text fDisambiguatingDescription;
-
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDisambiguatingDescription() {
-        return fDisambiguatingDescription;
-    }
-
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     */
-    @Override
-    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = fDisambiguatingDescription;
-    }
-
-    private Object fImage;
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link URL} or {@link ImageObject}
-     */
-    @Override
-    public <T> T getImage() {
-        return (T) fImage;
-    }
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     */
-    @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
-        this.fImage = fImage;
-    }
-
-    private URL fSameAs;
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getSameAs() {
-        return fSameAs;
-    }
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     */
-    @Override
-    public void setSameAs(URL fSameAs) {
-        this.fSameAs = fSameAs;
+    public void setYearlyRevenue(QuantitativeValue fYearlyRevenue) {
+        this.fYearlyRevenue = fYearlyRevenue;
     }
 
     private QuantitativeValue fNumberOfEmployees;
@@ -162,30 +70,46 @@ public class BusinessAudienceImpl implements BusinessAudience {
         this.fNumberOfEmployees = fNumberOfEmployees;
     }
 
-    private Object fIdentifier;
+    private QuantitativeValue fYearsInOperation;
 
     /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
+     * The age of the business.
      *
-     * @return {@link URL} or {@link Text} or {@link PropertyValue}
+     * @return {@link QuantitativeValue}
      */
     @Override
-    public <T> T getIdentifier() {
-        return (T) fIdentifier;
+    public QuantitativeValue getYearsInOperation() {
+        return fYearsInOperation;
     }
 
     /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
+     * The age of the business.
      *
      */
     @Override
-    public void setIdentifier(Object fIdentifier) {
-        if(!(fIdentifier instanceof URL) && !(fIdentifier instanceof Text) && !(fIdentifier instanceof PropertyValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
-        }
-        this.fIdentifier = fIdentifier;
+    public void setYearsInOperation(QuantitativeValue fYearsInOperation) {
+        this.fYearsInOperation = fYearsInOperation;
+    }
+
+    private Text fAudienceType;
+
+    /**
+     * The target group associated with a given audience (e.g. veterans, car owners, musicians, etc.).
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getAudienceType() {
+        return fAudienceType;
+    }
+
+    /**
+     * The target group associated with a given audience (e.g. veterans, car owners, musicians, etc.).
+     *
+     */
+    @Override
+    public void setAudienceType(Text fAudienceType) {
+        this.fAudienceType = fAudienceType;
     }
 
     private AdministrativeArea fGeographicArea;
@@ -207,27 +131,6 @@ public class BusinessAudienceImpl implements BusinessAudience {
     @Override
     public void setGeographicArea(AdministrativeArea fGeographicArea) {
         this.fGeographicArea = fGeographicArea;
-    }
-
-    private Text fAlternateName;
-
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getAlternateName() {
-        return fAlternateName;
-    }
-
-    /**
-     * An alias for the item.
-     *
-     */
-    @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
     }
 
     private Object fMainEntityOfPage;
@@ -254,25 +157,91 @@ public class BusinessAudienceImpl implements BusinessAudience {
         this.fMainEntityOfPage = fMainEntityOfPage;
     }
 
-    private Text fAudienceType;
+    private Text fAlternateName;
 
     /**
-     * The target group associated with a given audience (e.g. veterans, car owners, musicians, etc.).
+     * An alias for the item.
      *
      * @return {@link Text}
      */
     @Override
-    public Text getAudienceType() {
-        return fAudienceType;
+    public Text getAlternateName() {
+        return fAlternateName;
     }
 
     /**
-     * The target group associated with a given audience (e.g. veterans, car owners, musicians, etc.).
+     * An alias for the item.
      *
      */
     @Override
-    public void setAudienceType(Text fAudienceType) {
-        this.fAudienceType = fAudienceType;
+    public void setAlternateName(Text fAlternateName) {
+        this.fAlternateName = fAlternateName;
+    }
+
+    private Text fName;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getName() {
+        return fName;
+    }
+
+    /**
+     * The name of the item.
+     *
+     */
+    @Override
+    public void setName(Text fName) {
+        this.fName = fName;
+    }
+
+    private Action fPotentialAction;
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public Action getPotentialAction() {
+        return fPotentialAction;
+    }
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     */
+    @Override
+    public void setPotentialAction(Action fPotentialAction) {
+        this.fPotentialAction = fPotentialAction;
+    }
+
+    private Object fImage;
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link URL} or {@link ImageObject}
+     */
+    @Override
+    public <T> T getImage() {
+        return (T) fImage;
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     */
+    @Override
+    public void setImage(Object fImage) {
+        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
+        }
+        this.fImage = fImage;
     }
 
     private URL fUrl;
@@ -296,25 +265,51 @@ public class BusinessAudienceImpl implements BusinessAudience {
         this.fUrl = fUrl;
     }
 
-    private QuantitativeValue fYearlyRevenue;
+    private Text fDescription;
 
     /**
-     * The size of the business in annual revenue.
+     * A description of the item.
      *
-     * @return {@link QuantitativeValue}
+     * @return {@link Text}
      */
     @Override
-    public QuantitativeValue getYearlyRevenue() {
-        return fYearlyRevenue;
+    public Text getDescription() {
+        return fDescription;
     }
 
     /**
-     * The size of the business in annual revenue.
+     * A description of the item.
      *
      */
     @Override
-    public void setYearlyRevenue(QuantitativeValue fYearlyRevenue) {
-        this.fYearlyRevenue = fYearlyRevenue;
+    public void setDescription(Text fDescription) {
+        this.fDescription = fDescription;
+    }
+
+    private Object fSubjectOf;
+
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @return {@link Event} or {@link CreativeWork}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public <T> T getSubjectOf() {
+        return (T) fSubjectOf;
+    }
+
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public void setSubjectOf(Object fSubjectOf) {
+        if(!(fSubjectOf instanceof Event) && !(fSubjectOf instanceof CreativeWork)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'subjectOf': " + fSubjectOf);
+        }
+        this.fSubjectOf = fSubjectOf;
     }
 
     private URL fAdditionalType;
@@ -338,66 +333,71 @@ public class BusinessAudienceImpl implements BusinessAudience {
         this.fAdditionalType = fAdditionalType;
     }
 
-    private Text fDescription;
+    private Text fDisambiguatingDescription;
 
     /**
-     * A description of the item.
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
      * @return {@link Text}
      */
     @Override
-    public Text getDescription() {
-        return fDescription;
+    public Text getDisambiguatingDescription() {
+        return fDisambiguatingDescription;
     }
 
     /**
-     * A description of the item.
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
      */
     @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
+    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
+        this.fDisambiguatingDescription = fDisambiguatingDescription;
     }
 
-    private QuantitativeValue fYearsInOperation;
+    private URL fSameAs;
 
     /**
-     * The age of the business.
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
-     * @return {@link QuantitativeValue}
+     * @return {@link URL}
      */
     @Override
-    public QuantitativeValue getYearsInOperation() {
-        return fYearsInOperation;
-    }
-
-    /**
-     * The age of the business.
-     *
-     */
-    @Override
-    public void setYearsInOperation(QuantitativeValue fYearsInOperation) {
-        this.fYearsInOperation = fYearsInOperation;
-    }
-
-    private Action fPotentialAction;
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
-    @Override
-    public Action getPotentialAction() {
-        return fPotentialAction;
+    public URL getSameAs() {
+        return fSameAs;
     }
 
     /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
      */
     @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
+    public void setSameAs(URL fSameAs) {
+        this.fSameAs = fSameAs;
+    }
+
+    private Object fIdentifier;
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @return {@link URL} or {@link Text} or {@link PropertyValue}
+     */
+    @Override
+    public <T> T getIdentifier() {
+        return (T) fIdentifier;
+    }
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     */
+    @Override
+    public void setIdentifier(Object fIdentifier) {
+        if(!(fIdentifier instanceof URL) && !(fIdentifier instanceof Text) && !(fIdentifier instanceof PropertyValue)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
+        }
+        this.fIdentifier = fIdentifier;
     }
 }

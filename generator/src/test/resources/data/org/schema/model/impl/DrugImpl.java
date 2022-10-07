@@ -44,191 +44,50 @@ import org.schema.model.Substance;
 @JsonLdTypeName("schema:Drug")
 public class DrugImpl implements Drug {
 
-    private MedicalCode fCode;
+    private DrugPregnancyCategory fPregnancyCategory;
 
     /**
-     * A medical code for the entity, taken from a controlled vocabulary or ontology such as ICD-9, DiseasesDB, MeSH, SNOMED-CT, RxNorm, etc.
+     * Pregnancy category of this drug.
      *
-     * @return {@link MedicalCode}
+     * @return {@link DrugPregnancyCategory}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public MedicalCode getCode() {
-        return fCode;
+    public DrugPregnancyCategory getPregnancyCategory() {
+        return fPregnancyCategory;
     }
 
     /**
-     * A medical code for the entity, taken from a controlled vocabulary or ontology such as ICD-9, DiseasesDB, MeSH, SNOMED-CT, RxNorm, etc.
+     * Pregnancy category of this drug.
      *
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setCode(MedicalCode fCode) {
-        this.fCode = fCode;
+    public void setPregnancyCategory(DrugPregnancyCategory fPregnancyCategory) {
+        this.fPregnancyCategory = fPregnancyCategory;
     }
 
-    private Text fClinicalPharmacology;
+    private Text fOverdosage;
 
     /**
-     * Description of the absorption and elimination of drugs, including their concentration (pharmacokinetics, pK) and biological effects (pharmacodynamics, pD).
+     * Any information related to overdose on a drug, including signs or symptoms, treatments, contact information for emergency response.
      *
      * @return {@link Text}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public Text getClinicalPharmacology() {
-        return fClinicalPharmacology;
+    public Text getOverdosage() {
+        return fOverdosage;
     }
 
     /**
-     * Description of the absorption and elimination of drugs, including their concentration (pharmacokinetics, pK) and biological effects (pharmacodynamics, pD).
+     * Any information related to overdose on a drug, including signs or symptoms, treatments, contact information for emergency response.
      *
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setClinicalPharmacology(Text fClinicalPharmacology) {
-        this.fClinicalPharmacology = fClinicalPharmacology;
-    }
-
-    private Object fWarning;
-
-    /**
-     * Any FDA or other warnings about the drug (text or URL).
-     *
-     * @return {@link URL} or {@link Text}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public <T> T getWarning() {
-        return (T) fWarning;
-    }
-
-    /**
-     * Any FDA or other warnings about the drug (text or URL).
-     *
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setWarning(Object fWarning) {
-        if(!(fWarning instanceof URL) && !(fWarning instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'warning': " + fWarning);
-        }
-        this.fWarning = fWarning;
-    }
-
-    private Boolean fIsProprietary;
-
-    /**
-     * True if this item's name is a proprietary/brand name (vs. generic name).
-     *
-     * @return {@link Boolean}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public Boolean getIsProprietary() {
-        return fIsProprietary;
-    }
-
-    /**
-     * True if this item's name is a proprietary/brand name (vs. generic name).
-     *
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setIsProprietary(Boolean fIsProprietary) {
-        this.fIsProprietary = fIsProprietary;
-    }
-
-    private URL fPrescribingInfo;
-
-    /**
-     * Link to prescribing information for the drug.
-     *
-     * @return {@link URL}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public URL getPrescribingInfo() {
-        return fPrescribingInfo;
-    }
-
-    /**
-     * Link to prescribing information for the drug.
-     *
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setPrescribingInfo(URL fPrescribingInfo) {
-        this.fPrescribingInfo = fPrescribingInfo;
-    }
-
-    private MaximumDoseSchedule fMaximumIntake;
-
-    /**
-     * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
-     *
-     * @return {@link MaximumDoseSchedule}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public MaximumDoseSchedule getMaximumIntake() {
-        return fMaximumIntake;
-    }
-
-    /**
-     * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
-     *
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setMaximumIntake(MaximumDoseSchedule fMaximumIntake) {
-        this.fMaximumIntake = fMaximumIntake;
-    }
-
-    private Drug fInteractingDrug;
-
-    /**
-     * Another drug that is known to interact with this drug in a way that impacts the effect of this drug or causes a risk to the patient. Note: disease interactions are typically captured as contraindications.
-     *
-     * @return {@link Drug}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public Drug getInteractingDrug() {
-        return fInteractingDrug;
-    }
-
-    /**
-     * Another drug that is known to interact with this drug in a way that impacts the effect of this drug or causes a risk to the patient. Note: disease interactions are typically captured as contraindications.
-     *
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setInteractingDrug(Drug fInteractingDrug) {
-        this.fInteractingDrug = fInteractingDrug;
-    }
-
-    private Text fBreastfeedingWarning;
-
-    /**
-     * Any precaution, guidance, contraindication, etc. related to this drug's use by breastfeeding mothers.
-     *
-     * @return {@link Text}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public Text getBreastfeedingWarning() {
-        return fBreastfeedingWarning;
-    }
-
-    /**
-     * Any precaution, guidance, contraindication, etc. related to this drug's use by breastfeeding mothers.
-     *
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setBreastfeedingWarning(Text fBreastfeedingWarning) {
-        this.fBreastfeedingWarning = fBreastfeedingWarning;
+    public void setOverdosage(Text fOverdosage) {
+        this.fOverdosage = fOverdosage;
     }
 
     private Object fLegalStatus;
@@ -257,51 +116,50 @@ public class DrugImpl implements Drug {
         this.fLegalStatus = fLegalStatus;
     }
 
-    private Object fMainEntityOfPage;
+    private Text fMechanismOfAction;
 
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     */
-    @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
-        }
-        this.fMainEntityOfPage = fMainEntityOfPage;
-    }
-
-    private Text fAdministrationRoute;
-
-    /**
-     * A route by which this drug may be administered, e.g. 'oral'.
+     * The specific biochemical interaction through which this drug or supplement produces its pharmacological effect.
      *
      * @return {@link Text}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public Text getAdministrationRoute() {
-        return fAdministrationRoute;
+    public Text getMechanismOfAction() {
+        return fMechanismOfAction;
     }
 
     /**
-     * A route by which this drug may be administered, e.g. 'oral'.
+     * The specific biochemical interaction through which this drug or supplement produces its pharmacological effect.
      *
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setAdministrationRoute(Text fAdministrationRoute) {
-        this.fAdministrationRoute = fAdministrationRoute;
+    public void setMechanismOfAction(Text fMechanismOfAction) {
+        this.fMechanismOfAction = fMechanismOfAction;
+    }
+
+    private Text fClinicalPharmacology;
+
+    /**
+     * Description of the absorption and elimination of drugs, including their concentration (pharmacokinetics, pK) and biological effects (pharmacodynamics, pD).
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public Text getClinicalPharmacology() {
+        return fClinicalPharmacology;
+    }
+
+    /**
+     * Description of the absorption and elimination of drugs, including their concentration (pharmacokinetics, pK) and biological effects (pharmacodynamics, pD).
+     *
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void setClinicalPharmacology(Text fClinicalPharmacology) {
+        this.fClinicalPharmacology = fClinicalPharmacology;
     }
 
     private Text fRxcui;
@@ -329,94 +187,27 @@ public class DrugImpl implements Drug {
         this.fRxcui = fRxcui;
     }
 
-    private Text fMechanismOfAction;
+    private Drug fInteractingDrug;
 
     /**
-     * The specific biochemical interaction through which this drug or supplement produces its pharmacological effect.
+     * Another drug that is known to interact with this drug in a way that impacts the effect of this drug or causes a risk to the patient. Note: disease interactions are typically captured as contraindications.
      *
-     * @return {@link Text}
+     * @return {@link Drug}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public Text getMechanismOfAction() {
-        return fMechanismOfAction;
+    public Drug getInteractingDrug() {
+        return fInteractingDrug;
     }
 
     /**
-     * The specific biochemical interaction through which this drug or supplement produces its pharmacological effect.
-     *
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setMechanismOfAction(Text fMechanismOfAction) {
-        this.fMechanismOfAction = fMechanismOfAction;
-    }
-
-    private URL fLabelDetails;
-
-    /**
-     * Link to the drug's label details.
-     *
-     * @return {@link URL}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public URL getLabelDetails() {
-        return fLabelDetails;
-    }
-
-    /**
-     * Link to the drug's label details.
+     * Another drug that is known to interact with this drug in a way that impacts the effect of this drug or causes a risk to the patient. Note: disease interactions are typically captured as contraindications.
      *
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setLabelDetails(URL fLabelDetails) {
-        this.fLabelDetails = fLabelDetails;
-    }
-
-    private Action fPotentialAction;
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
-    @Override
-    public Action getPotentialAction() {
-        return fPotentialAction;
-    }
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     */
-    @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
-    }
-
-    private Text fDrugUnit;
-
-    /**
-     * The unit in which the drug is measured, e.g. '5 mg tablet'.
-     *
-     * @return {@link Text}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public Text getDrugUnit() {
-        return fDrugUnit;
-    }
-
-    /**
-     * The unit in which the drug is measured, e.g. '5 mg tablet'.
-     *
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setDrugUnit(Text fDrugUnit) {
-        this.fDrugUnit = fDrugUnit;
+    public void setInteractingDrug(Drug fInteractingDrug) {
+        this.fInteractingDrug = fInteractingDrug;
     }
 
     private Text fDosageForm;
@@ -442,140 +233,378 @@ public class DrugImpl implements Drug {
         this.fDosageForm = fDosageForm;
     }
 
-    private Object fSubjectOf;
+    private URL fLabelDetails;
 
     /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @return {@link Event} or {@link CreativeWork}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    @Override
-    public <T> T getSubjectOf() {
-        return (T) fSubjectOf;
-    }
-
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    @Override
-    public void setSubjectOf(Object fSubjectOf) {
-        if(!(fSubjectOf instanceof Event) && !(fSubjectOf instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'subjectOf': " + fSubjectOf);
-        }
-        this.fSubjectOf = fSubjectOf;
-    }
-
-    private Text fName;
-
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getName() {
-        return fName;
-    }
-
-    /**
-     * The name of the item.
-     *
-     */
-    @Override
-    public void setName(Text fName) {
-        this.fName = fName;
-    }
-
-    private Text fDisambiguatingDescription;
-
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDisambiguatingDescription() {
-        return fDisambiguatingDescription;
-    }
-
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     */
-    @Override
-    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = fDisambiguatingDescription;
-    }
-
-    private Object fImage;
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link URL} or {@link ImageObject}
-     */
-    @Override
-    public <T> T getImage() {
-        return (T) fImage;
-    }
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     */
-    @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
-        this.fImage = fImage;
-    }
-
-    private URL fSameAs;
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     * Link to the drug's label details.
      *
      * @return {@link URL}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public URL getSameAs() {
-        return fSameAs;
+    public URL getLabelDetails() {
+        return fLabelDetails;
     }
 
     /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     * Link to the drug's label details.
      *
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setSameAs(URL fSameAs) {
-        this.fSameAs = fSameAs;
+    public void setLabelDetails(URL fLabelDetails) {
+        this.fLabelDetails = fLabelDetails;
     }
 
-    private Text fOverdosage;
+    private MaximumDoseSchedule fMaximumIntake;
 
     /**
-     * Any information related to overdose on a drug, including signs or symptoms, treatments, contact information for emergency response.
+     * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
+     *
+     * @return {@link MaximumDoseSchedule}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public MaximumDoseSchedule getMaximumIntake() {
+        return fMaximumIntake;
+    }
+
+    /**
+     * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
+     *
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void setMaximumIntake(MaximumDoseSchedule fMaximumIntake) {
+        this.fMaximumIntake = fMaximumIntake;
+    }
+
+    private Text fActiveIngredient;
+
+    /**
+     * An active ingredient, typically chemical compounds and/or biologic substances.
      *
      * @return {@link Text}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public Text getOverdosage() {
-        return fOverdosage;
+    public Text getActiveIngredient() {
+        return fActiveIngredient;
     }
 
     /**
-     * Any information related to overdose on a drug, including signs or symptoms, treatments, contact information for emergency response.
+     * An active ingredient, typically chemical compounds and/or biologic substances.
      *
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setOverdosage(Text fOverdosage) {
-        this.fOverdosage = fOverdosage;
+    public void setActiveIngredient(Text fActiveIngredient) {
+        this.fActiveIngredient = fActiveIngredient;
+    }
+
+    private Drug fRelatedDrug;
+
+    /**
+     * Any other drug related to this one, for example commonly-prescribed alternatives.
+     *
+     * @return {@link Drug}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public Drug getRelatedDrug() {
+        return fRelatedDrug;
+    }
+
+    /**
+     * Any other drug related to this one, for example commonly-prescribed alternatives.
+     *
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void setRelatedDrug(Drug fRelatedDrug) {
+        this.fRelatedDrug = fRelatedDrug;
+    }
+
+    private Text fAdministrationRoute;
+
+    /**
+     * A route by which this drug may be administered, e.g. 'oral'.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public Text getAdministrationRoute() {
+        return fAdministrationRoute;
+    }
+
+    /**
+     * A route by which this drug may be administered, e.g. 'oral'.
+     *
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void setAdministrationRoute(Text fAdministrationRoute) {
+        this.fAdministrationRoute = fAdministrationRoute;
+    }
+
+    private Text fDrugUnit;
+
+    /**
+     * The unit in which the drug is measured, e.g. '5 mg tablet'.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public Text getDrugUnit() {
+        return fDrugUnit;
+    }
+
+    /**
+     * The unit in which the drug is measured, e.g. '5 mg tablet'.
+     *
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void setDrugUnit(Text fDrugUnit) {
+        this.fDrugUnit = fDrugUnit;
+    }
+
+    private Text fFoodWarning;
+
+    /**
+     * Any precaution, guidance, contraindication, etc. related to consumption of specific foods while taking this drug.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public Text getFoodWarning() {
+        return fFoodWarning;
+    }
+
+    /**
+     * Any precaution, guidance, contraindication, etc. related to consumption of specific foods while taking this drug.
+     *
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void setFoodWarning(Text fFoodWarning) {
+        this.fFoodWarning = fFoodWarning;
+    }
+
+    private Object fWarning;
+
+    /**
+     * Any FDA or other warnings about the drug (text or URL).
+     *
+     * @return {@link URL} or {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public <T> T getWarning() {
+        return (T) fWarning;
+    }
+
+    /**
+     * Any FDA or other warnings about the drug (text or URL).
+     *
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void setWarning(Object fWarning) {
+        if(!(fWarning instanceof URL) && !(fWarning instanceof Text)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'warning': " + fWarning);
+        }
+        this.fWarning = fWarning;
+    }
+
+    private Object fPrescriptionStatus;
+
+    /**
+     * Indicates the status of drug prescription eg. local catalogs classifications or whether the drug is available by prescription or over-the-counter, etc.
+     *
+     * @return {@link DrugPrescriptionStatus} or {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public <T> T getPrescriptionStatus() {
+        return (T) fPrescriptionStatus;
+    }
+
+    /**
+     * Indicates the status of drug prescription eg. local catalogs classifications or whether the drug is available by prescription or over-the-counter, etc.
+     *
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void setPrescriptionStatus(Object fPrescriptionStatus) {
+        if(!(fPrescriptionStatus instanceof DrugPrescriptionStatus) && !(fPrescriptionStatus instanceof Text)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'prescriptionStatus': " + fPrescriptionStatus);
+        }
+        this.fPrescriptionStatus = fPrescriptionStatus;
+    }
+
+    private Text fProprietaryName;
+
+    /**
+     * Proprietary name given to the diet plan, typically by its originator or creator.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public Text getProprietaryName() {
+        return fProprietaryName;
+    }
+
+    /**
+     * Proprietary name given to the diet plan, typically by its originator or creator.
+     *
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void setProprietaryName(Text fProprietaryName) {
+        this.fProprietaryName = fProprietaryName;
+    }
+
+    private DrugClass fDrugClass;
+
+    /**
+     * The class of drug this belongs to (e.g., statins).
+     *
+     * @return {@link DrugClass}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public DrugClass getDrugClass() {
+        return fDrugClass;
+    }
+
+    /**
+     * The class of drug this belongs to (e.g., statins).
+     *
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void setDrugClass(DrugClass fDrugClass) {
+        this.fDrugClass = fDrugClass;
+    }
+
+    private URL fPrescribingInfo;
+
+    /**
+     * Link to prescribing information for the drug.
+     *
+     * @return {@link URL}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public URL getPrescribingInfo() {
+        return fPrescribingInfo;
+    }
+
+    /**
+     * Link to prescribing information for the drug.
+     *
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void setPrescribingInfo(URL fPrescribingInfo) {
+        this.fPrescribingInfo = fPrescribingInfo;
+    }
+
+    private HealthInsurancePlan fIncludedInHealthInsurancePlan;
+
+    /**
+     * The insurance plans that cover this drug.
+     *
+     * @return {@link HealthInsurancePlan}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    @Override
+    public HealthInsurancePlan getIncludedInHealthInsurancePlan() {
+        return fIncludedInHealthInsurancePlan;
+    }
+
+    /**
+     * The insurance plans that cover this drug.
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    @Override
+    public void setIncludedInHealthInsurancePlan(HealthInsurancePlan fIncludedInHealthInsurancePlan) {
+        this.fIncludedInHealthInsurancePlan = fIncludedInHealthInsurancePlan;
+    }
+
+    private Text fNonProprietaryName;
+
+    /**
+     * The generic name of this drug or supplement.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public Text getNonProprietaryName() {
+        return fNonProprietaryName;
+    }
+
+    /**
+     * The generic name of this drug or supplement.
+     *
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void setNonProprietaryName(Text fNonProprietaryName) {
+        this.fNonProprietaryName = fNonProprietaryName;
+    }
+
+    private Organization fManufacturer;
+
+    /**
+     * The manufacturer of the product.
+     *
+     * @return {@link Organization}
+     */
+    @Override
+    public Organization getManufacturer() {
+        return fManufacturer;
+    }
+
+    /**
+     * The manufacturer of the product.
+     *
+     */
+    @Override
+    public void setManufacturer(Organization fManufacturer) {
+        this.fManufacturer = fManufacturer;
+    }
+
+    private Boolean fIsProprietary;
+
+    /**
+     * True if this item's name is a proprietary/brand name (vs. generic name).
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public Boolean getIsProprietary() {
+        return fIsProprietary;
+    }
+
+    /**
+     * True if this item's name is a proprietary/brand name (vs. generic name).
+     *
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void setIsProprietary(Boolean fIsProprietary) {
+        this.fIsProprietary = fIsProprietary;
     }
 
     private Text fClincalPharmacology;
@@ -599,6 +628,121 @@ public class DrugImpl implements Drug {
     @Override
     public void setClincalPharmacology(Text fClincalPharmacology) {
         this.fClincalPharmacology = fClincalPharmacology;
+    }
+
+    private Boolean fIsAvailableGenerically;
+
+    /**
+     * True if the drug is available in a generic form (regardless of name).
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public Boolean getIsAvailableGenerically() {
+        return fIsAvailableGenerically;
+    }
+
+    /**
+     * True if the drug is available in a generic form (regardless of name).
+     *
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void setIsAvailableGenerically(Boolean fIsAvailableGenerically) {
+        this.fIsAvailableGenerically = fIsAvailableGenerically;
+    }
+
+    private Text fBreastfeedingWarning;
+
+    /**
+     * Any precaution, guidance, contraindication, etc. related to this drug's use by breastfeeding mothers.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public Text getBreastfeedingWarning() {
+        return fBreastfeedingWarning;
+    }
+
+    /**
+     * Any precaution, guidance, contraindication, etc. related to this drug's use by breastfeeding mothers.
+     *
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void setBreastfeedingWarning(Text fBreastfeedingWarning) {
+        this.fBreastfeedingWarning = fBreastfeedingWarning;
+    }
+
+    private Text fPregnancyWarning;
+
+    /**
+     * Any precaution, guidance, contraindication, etc. related to this drug's use during pregnancy.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public Text getPregnancyWarning() {
+        return fPregnancyWarning;
+    }
+
+    /**
+     * Any precaution, guidance, contraindication, etc. related to this drug's use during pregnancy.
+     *
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void setPregnancyWarning(Text fPregnancyWarning) {
+        this.fPregnancyWarning = fPregnancyWarning;
+    }
+
+    private Text fAlcoholWarning;
+
+    /**
+     * Any precaution, guidance, contraindication, etc. related to consumption of alcohol while taking this drug.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public Text getAlcoholWarning() {
+        return fAlcoholWarning;
+    }
+
+    /**
+     * Any precaution, guidance, contraindication, etc. related to consumption of alcohol while taking this drug.
+     *
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void setAlcoholWarning(Text fAlcoholWarning) {
+        this.fAlcoholWarning = fAlcoholWarning;
+    }
+
+    private DoseSchedule fDoseSchedule;
+
+    /**
+     * A dosing schedule for the drug for a given population, either observed, recommended, or maximum dose based on the type used.
+     *
+     * @return {@link DoseSchedule}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public DoseSchedule getDoseSchedule() {
+        return fDoseSchedule;
+    }
+
+    /**
+     * A dosing schedule for the drug for a given population, either observed, recommended, or maximum dose based on the type used.
+     *
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void setDoseSchedule(DoseSchedule fDoseSchedule) {
+        this.fDoseSchedule = fDoseSchedule;
     }
 
     private DrugStrength fAvailableStrength;
@@ -651,97 +795,6 @@ public class DrugImpl implements Drug {
         this.fFunding = fFunding;
     }
 
-    private URL fUrl;
-
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getUrl() {
-        return fUrl;
-    }
-
-    /**
-     * URL of the item.
-     *
-     */
-    @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
-    }
-
-    private Text fFoodWarning;
-
-    /**
-     * Any precaution, guidance, contraindication, etc. related to consumption of specific foods while taking this drug.
-     *
-     * @return {@link Text}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public Text getFoodWarning() {
-        return fFoodWarning;
-    }
-
-    /**
-     * Any precaution, guidance, contraindication, etc. related to consumption of specific foods while taking this drug.
-     *
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setFoodWarning(Text fFoodWarning) {
-        this.fFoodWarning = fFoodWarning;
-    }
-
-    private URL fAdditionalType;
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getAdditionalType() {
-        return fAdditionalType;
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     */
-    @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
-    }
-
-    private Object fPrescriptionStatus;
-
-    /**
-     * Indicates the status of drug prescription eg. local catalogs classifications or whether the drug is available by prescription or over-the-counter, etc.
-     *
-     * @return {@link DrugPrescriptionStatus} or {@link Text}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public <T> T getPrescriptionStatus() {
-        return (T) fPrescriptionStatus;
-    }
-
-    /**
-     * Indicates the status of drug prescription eg. local catalogs classifications or whether the drug is available by prescription or over-the-counter, etc.
-     *
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setPrescriptionStatus(Object fPrescriptionStatus) {
-        if(!(fPrescriptionStatus instanceof DrugPrescriptionStatus) && !(fPrescriptionStatus instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'prescriptionStatus': " + fPrescriptionStatus);
-        }
-        this.fPrescriptionStatus = fPrescriptionStatus;
-    }
-
     private MedicalStudy fStudy;
 
     /**
@@ -765,71 +818,27 @@ public class DrugImpl implements Drug {
         this.fStudy = fStudy;
     }
 
-    private DrugClass fDrugClass;
+    private MedicalCode fCode;
 
     /**
-     * The class of drug this belongs to (e.g., statins).
+     * A medical code for the entity, taken from a controlled vocabulary or ontology such as ICD-9, DiseasesDB, MeSH, SNOMED-CT, RxNorm, etc.
      *
-     * @return {@link DrugClass}
+     * @return {@link MedicalCode}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public DrugClass getDrugClass() {
-        return fDrugClass;
+    public MedicalCode getCode() {
+        return fCode;
     }
 
     /**
-     * The class of drug this belongs to (e.g., statins).
-     *
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setDrugClass(DrugClass fDrugClass) {
-        this.fDrugClass = fDrugClass;
-    }
-
-    private Organization fManufacturer;
-
-    /**
-     * The manufacturer of the product.
-     *
-     * @return {@link Organization}
-     */
-    @Override
-    public Organization getManufacturer() {
-        return fManufacturer;
-    }
-
-    /**
-     * The manufacturer of the product.
-     *
-     */
-    @Override
-    public void setManufacturer(Organization fManufacturer) {
-        this.fManufacturer = fManufacturer;
-    }
-
-    private Text fActiveIngredient;
-
-    /**
-     * An active ingredient, typically chemical compounds and/or biologic substances.
-     *
-     * @return {@link Text}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public Text getActiveIngredient() {
-        return fActiveIngredient;
-    }
-
-    /**
-     * An active ingredient, typically chemical compounds and/or biologic substances.
+     * A medical code for the entity, taken from a controlled vocabulary or ontology such as ICD-9, DiseasesDB, MeSH, SNOMED-CT, RxNorm, etc.
      *
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setActiveIngredient(Text fActiveIngredient) {
-        this.fActiveIngredient = fActiveIngredient;
+    public void setCode(MedicalCode fCode) {
+        this.fCode = fCode;
     }
 
     private MedicalGuideline fGuideline;
@@ -855,27 +864,6 @@ public class DrugImpl implements Drug {
         this.fGuideline = fGuideline;
     }
 
-    private Text fAlternateName;
-
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getAlternateName() {
-        return fAlternateName;
-    }
-
-    /**
-     * An alias for the item.
-     *
-     */
-    @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
-    }
-
     private Organization fRecognizingAuthority;
 
     /**
@@ -899,73 +887,27 @@ public class DrugImpl implements Drug {
         this.fRecognizingAuthority = fRecognizingAuthority;
     }
 
-    private Boolean fIsAvailableGenerically;
+    private MedicineSystem fMedicineSystem;
 
     /**
-     * True if the drug is available in a generic form (regardless of name).
+     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
      *
-     * @return {@link Boolean}
+     * @return {@link MedicineSystem}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public Boolean getIsAvailableGenerically() {
-        return fIsAvailableGenerically;
+    public MedicineSystem getMedicineSystem() {
+        return fMedicineSystem;
     }
 
     /**
-     * True if the drug is available in a generic form (regardless of name).
+     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
      *
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setIsAvailableGenerically(Boolean fIsAvailableGenerically) {
-        this.fIsAvailableGenerically = fIsAvailableGenerically;
-    }
-
-    private Drug fRelatedDrug;
-
-    /**
-     * Any other drug related to this one, for example commonly-prescribed alternatives.
-     *
-     * @return {@link Drug}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public Drug getRelatedDrug() {
-        return fRelatedDrug;
-    }
-
-    /**
-     * Any other drug related to this one, for example commonly-prescribed alternatives.
-     *
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setRelatedDrug(Drug fRelatedDrug) {
-        this.fRelatedDrug = fRelatedDrug;
-    }
-
-    private Text fAlcoholWarning;
-
-    /**
-     * Any precaution, guidance, contraindication, etc. related to consumption of alcohol while taking this drug.
-     *
-     * @return {@link Text}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public Text getAlcoholWarning() {
-        return fAlcoholWarning;
-    }
-
-    /**
-     * Any precaution, guidance, contraindication, etc. related to consumption of alcohol while taking this drug.
-     *
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setAlcoholWarning(Text fAlcoholWarning) {
-        this.fAlcoholWarning = fAlcoholWarning;
+    public void setMedicineSystem(MedicineSystem fMedicineSystem) {
+        this.fMedicineSystem = fMedicineSystem;
     }
 
     private MedicalSpecialty fRelevantSpecialty;
@@ -991,27 +933,246 @@ public class DrugImpl implements Drug {
         this.fRelevantSpecialty = fRelevantSpecialty;
     }
 
-    private MedicineSystem fMedicineSystem;
+    private Object fMainEntityOfPage;
 
     /**
-     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @return {@link MedicineSystem}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     * @return {@link CreativeWork} or {@link URL}
      */
     @Override
-    public MedicineSystem getMedicineSystem() {
-        return fMedicineSystem;
+    public <T> T getMainEntityOfPage() {
+        return (T) fMainEntityOfPage;
     }
 
     /**
-     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setMedicineSystem(MedicineSystem fMedicineSystem) {
-        this.fMedicineSystem = fMedicineSystem;
+    public void setMainEntityOfPage(Object fMainEntityOfPage) {
+        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
+        }
+        this.fMainEntityOfPage = fMainEntityOfPage;
+    }
+
+    private Text fAlternateName;
+
+    /**
+     * An alias for the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getAlternateName() {
+        return fAlternateName;
+    }
+
+    /**
+     * An alias for the item.
+     *
+     */
+    @Override
+    public void setAlternateName(Text fAlternateName) {
+        this.fAlternateName = fAlternateName;
+    }
+
+    private Text fName;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getName() {
+        return fName;
+    }
+
+    /**
+     * The name of the item.
+     *
+     */
+    @Override
+    public void setName(Text fName) {
+        this.fName = fName;
+    }
+
+    private Action fPotentialAction;
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public Action getPotentialAction() {
+        return fPotentialAction;
+    }
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     */
+    @Override
+    public void setPotentialAction(Action fPotentialAction) {
+        this.fPotentialAction = fPotentialAction;
+    }
+
+    private Object fImage;
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link URL} or {@link ImageObject}
+     */
+    @Override
+    public <T> T getImage() {
+        return (T) fImage;
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     */
+    @Override
+    public void setImage(Object fImage) {
+        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
+        }
+        this.fImage = fImage;
+    }
+
+    private URL fUrl;
+
+    /**
+     * URL of the item.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getUrl() {
+        return fUrl;
+    }
+
+    /**
+     * URL of the item.
+     *
+     */
+    @Override
+    public void setUrl(URL fUrl) {
+        this.fUrl = fUrl;
+    }
+
+    private Text fDescription;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDescription() {
+        return fDescription;
+    }
+
+    /**
+     * A description of the item.
+     *
+     */
+    @Override
+    public void setDescription(Text fDescription) {
+        this.fDescription = fDescription;
+    }
+
+    private Object fSubjectOf;
+
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @return {@link Event} or {@link CreativeWork}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public <T> T getSubjectOf() {
+        return (T) fSubjectOf;
+    }
+
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public void setSubjectOf(Object fSubjectOf) {
+        if(!(fSubjectOf instanceof Event) && !(fSubjectOf instanceof CreativeWork)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'subjectOf': " + fSubjectOf);
+        }
+        this.fSubjectOf = fSubjectOf;
+    }
+
+    private URL fAdditionalType;
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getAdditionalType() {
+        return fAdditionalType;
+    }
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     */
+    @Override
+    public void setAdditionalType(URL fAdditionalType) {
+        this.fAdditionalType = fAdditionalType;
+    }
+
+    private Text fDisambiguatingDescription;
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDisambiguatingDescription() {
+        return fDisambiguatingDescription;
+    }
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     */
+    @Override
+    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
+        this.fDisambiguatingDescription = fDisambiguatingDescription;
+    }
+
+    private URL fSameAs;
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getSameAs() {
+        return fSameAs;
+    }
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     */
+    @Override
+    public void setSameAs(URL fSameAs) {
+        this.fSameAs = fSameAs;
     }
 
     private Object fIdentifier;
@@ -1038,166 +1199,5 @@ public class DrugImpl implements Drug {
             throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
         }
         this.fIdentifier = fIdentifier;
-    }
-
-    private HealthInsurancePlan fIncludedInHealthInsurancePlan;
-
-    /**
-     * The insurance plans that cover this drug.
-     *
-     * @return {@link HealthInsurancePlan}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
-    @Override
-    public HealthInsurancePlan getIncludedInHealthInsurancePlan() {
-        return fIncludedInHealthInsurancePlan;
-    }
-
-    /**
-     * The insurance plans that cover this drug.
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
-    @Override
-    public void setIncludedInHealthInsurancePlan(HealthInsurancePlan fIncludedInHealthInsurancePlan) {
-        this.fIncludedInHealthInsurancePlan = fIncludedInHealthInsurancePlan;
-    }
-
-    private Text fNonProprietaryName;
-
-    /**
-     * The generic name of this drug or supplement.
-     *
-     * @return {@link Text}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public Text getNonProprietaryName() {
-        return fNonProprietaryName;
-    }
-
-    /**
-     * The generic name of this drug or supplement.
-     *
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setNonProprietaryName(Text fNonProprietaryName) {
-        this.fNonProprietaryName = fNonProprietaryName;
-    }
-
-    private Text fProprietaryName;
-
-    /**
-     * Proprietary name given to the diet plan, typically by its originator or creator.
-     *
-     * @return {@link Text}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public Text getProprietaryName() {
-        return fProprietaryName;
-    }
-
-    /**
-     * Proprietary name given to the diet plan, typically by its originator or creator.
-     *
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setProprietaryName(Text fProprietaryName) {
-        this.fProprietaryName = fProprietaryName;
-    }
-
-    private Text fPregnancyWarning;
-
-    /**
-     * Any precaution, guidance, contraindication, etc. related to this drug's use during pregnancy.
-     *
-     * @return {@link Text}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public Text getPregnancyWarning() {
-        return fPregnancyWarning;
-    }
-
-    /**
-     * Any precaution, guidance, contraindication, etc. related to this drug's use during pregnancy.
-     *
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setPregnancyWarning(Text fPregnancyWarning) {
-        this.fPregnancyWarning = fPregnancyWarning;
-    }
-
-    private DoseSchedule fDoseSchedule;
-
-    /**
-     * A dosing schedule for the drug for a given population, either observed, recommended, or maximum dose based on the type used.
-     *
-     * @return {@link DoseSchedule}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public DoseSchedule getDoseSchedule() {
-        return fDoseSchedule;
-    }
-
-    /**
-     * A dosing schedule for the drug for a given population, either observed, recommended, or maximum dose based on the type used.
-     *
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setDoseSchedule(DoseSchedule fDoseSchedule) {
-        this.fDoseSchedule = fDoseSchedule;
-    }
-
-    private Text fDescription;
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDescription() {
-        return fDescription;
-    }
-
-    /**
-     * A description of the item.
-     *
-     */
-    @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
-    }
-
-    private DrugPregnancyCategory fPregnancyCategory;
-
-    /**
-     * Pregnancy category of this drug.
-     *
-     * @return {@link DrugPregnancyCategory}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public DrugPregnancyCategory getPregnancyCategory() {
-        return fPregnancyCategory;
-    }
-
-    /**
-     * Pregnancy category of this drug.
-     *
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setPregnancyCategory(DrugPregnancyCategory fPregnancyCategory) {
-        this.fPregnancyCategory = fPregnancyCategory;
     }
 }

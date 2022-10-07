@@ -39,6 +39,223 @@ import org.schema.model.DrugCost;
 @JsonLdTypeName("schema:DrugCost")
 public class DrugCostImpl implements DrugCost {
 
+    private AdministrativeArea fApplicableLocation;
+
+    /**
+     * The location in which the status applies.
+     *
+     * @return {@link AdministrativeArea}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public AdministrativeArea getApplicableLocation() {
+        return fApplicableLocation;
+    }
+
+    /**
+     * The location in which the status applies.
+     *
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void setApplicableLocation(AdministrativeArea fApplicableLocation) {
+        this.fApplicableLocation = fApplicableLocation;
+    }
+
+    private Object fCostPerUnit;
+
+    /**
+     * The cost per unit of the drug.
+     *
+     * @return {@link Number} or {@link Text} or {@link QualitativeValue}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public <T> T getCostPerUnit() {
+        return (T) fCostPerUnit;
+    }
+
+    /**
+     * The cost per unit of the drug.
+     *
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void setCostPerUnit(Object fCostPerUnit) {
+        if(!(fCostPerUnit instanceof Number) && !(fCostPerUnit instanceof Text) && !(fCostPerUnit instanceof QualitativeValue)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'costPerUnit': " + fCostPerUnit);
+        }
+        this.fCostPerUnit = fCostPerUnit;
+    }
+
+    private DrugCostCategory fCostCategory;
+
+    /**
+     * The category of cost, such as wholesale, retail, reimbursement cap, etc.
+     *
+     * @return {@link DrugCostCategory}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public DrugCostCategory getCostCategory() {
+        return fCostCategory;
+    }
+
+    /**
+     * The category of cost, such as wholesale, retail, reimbursement cap, etc.
+     *
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void setCostCategory(DrugCostCategory fCostCategory) {
+        this.fCostCategory = fCostCategory;
+    }
+
+    private Text fDrugUnit;
+
+    /**
+     * The unit in which the drug is measured, e.g. '5 mg tablet'.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public Text getDrugUnit() {
+        return fDrugUnit;
+    }
+
+    /**
+     * The unit in which the drug is measured, e.g. '5 mg tablet'.
+     *
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void setDrugUnit(Text fDrugUnit) {
+        this.fDrugUnit = fDrugUnit;
+    }
+
+    private Text fCostCurrency;
+
+    /**
+     * The currency (in 3-letter of the drug cost. See: http://en.wikipedia.org/wiki/ISO_4217. 
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public Text getCostCurrency() {
+        return fCostCurrency;
+    }
+
+    /**
+     * The currency (in 3-letter of the drug cost. See: http://en.wikipedia.org/wiki/ISO_4217. 
+     *
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void setCostCurrency(Text fCostCurrency) {
+        this.fCostCurrency = fCostCurrency;
+    }
+
+    private Text fCostOrigin;
+
+    /**
+     * Additional details to capture the origin of the cost data. For example, 'Medicare Part B'.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public Text getCostOrigin() {
+        return fCostOrigin;
+    }
+
+    /**
+     * Additional details to capture the origin of the cost data. For example, 'Medicare Part B'.
+     *
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void setCostOrigin(Text fCostOrigin) {
+        this.fCostOrigin = fCostOrigin;
+    }
+
+    private Object fLegalStatus;
+
+    /**
+     * The drug or supplement's legal status, including any controlled substance schedules that apply.
+     *
+     * @return {@link DrugLegalStatus} or {@link Text} or {@link MedicalEnumeration}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public <T> T getLegalStatus() {
+        return (T) fLegalStatus;
+    }
+
+    /**
+     * The drug or supplement's legal status, including any controlled substance schedules that apply.
+     *
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void setLegalStatus(Object fLegalStatus) {
+        if(!(fLegalStatus instanceof DrugLegalStatus) && !(fLegalStatus instanceof Text) && !(fLegalStatus instanceof MedicalEnumeration)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'legalStatus': " + fLegalStatus);
+        }
+        this.fLegalStatus = fLegalStatus;
+    }
+
+    private Grant fFunding;
+
+    /**
+     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
+     *
+     * @return {@link Grant}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    @Override
+    public Grant getFunding() {
+        return fFunding;
+    }
+
+    /**
+     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
+     *
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    @Override
+    public void setFunding(Grant fFunding) {
+        this.fFunding = fFunding;
+    }
+
+    private MedicalStudy fStudy;
+
+    /**
+     * A medical study or trial related to this entity.
+     *
+     * @return {@link MedicalStudy}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public MedicalStudy getStudy() {
+        return fStudy;
+    }
+
+    /**
+     * A medical study or trial related to this entity.
+     *
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void setStudy(MedicalStudy fStudy) {
+        this.fStudy = fStudy;
+    }
+
     private MedicalCode fCode;
 
     /**
@@ -85,74 +302,73 @@ public class DrugCostImpl implements DrugCost {
         this.fGuideline = fGuideline;
     }
 
-    private AdministrativeArea fApplicableLocation;
+    private Organization fRecognizingAuthority;
 
     /**
-     * The location in which the status applies.
+     * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
      *
-     * @return {@link AdministrativeArea}
+     * @return {@link Organization}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public AdministrativeArea getApplicableLocation() {
-        return fApplicableLocation;
+    public Organization getRecognizingAuthority() {
+        return fRecognizingAuthority;
     }
 
     /**
-     * The location in which the status applies.
-     *
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setApplicableLocation(AdministrativeArea fApplicableLocation) {
-        this.fApplicableLocation = fApplicableLocation;
-    }
-
-    private Object fLegalStatus;
-
-    /**
-     * The drug or supplement's legal status, including any controlled substance schedules that apply.
-     *
-     * @return {@link DrugLegalStatus} or {@link Text} or {@link MedicalEnumeration}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public <T> T getLegalStatus() {
-        return (T) fLegalStatus;
-    }
-
-    /**
-     * The drug or supplement's legal status, including any controlled substance schedules that apply.
+     * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
      *
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setLegalStatus(Object fLegalStatus) {
-        if(!(fLegalStatus instanceof DrugLegalStatus) && !(fLegalStatus instanceof Text) && !(fLegalStatus instanceof MedicalEnumeration)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'legalStatus': " + fLegalStatus);
-        }
-        this.fLegalStatus = fLegalStatus;
+    public void setRecognizingAuthority(Organization fRecognizingAuthority) {
+        this.fRecognizingAuthority = fRecognizingAuthority;
     }
 
-    private Text fAlternateName;
+    private MedicineSystem fMedicineSystem;
 
     /**
-     * An alias for the item.
+     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
      *
-     * @return {@link Text}
+     * @return {@link MedicineSystem}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public Text getAlternateName() {
-        return fAlternateName;
+    public MedicineSystem getMedicineSystem() {
+        return fMedicineSystem;
     }
 
     /**
-     * An alias for the item.
+     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
      *
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
+    public void setMedicineSystem(MedicineSystem fMedicineSystem) {
+        this.fMedicineSystem = fMedicineSystem;
+    }
+
+    private MedicalSpecialty fRelevantSpecialty;
+
+    /**
+     * If applicable, a medical specialty in which this entity is relevant.
+     *
+     * @return {@link MedicalSpecialty}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public MedicalSpecialty getRelevantSpecialty() {
+        return fRelevantSpecialty;
+    }
+
+    /**
+     * If applicable, a medical specialty in which this entity is relevant.
+     *
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void setRelevantSpecialty(MedicalSpecialty fRelevantSpecialty) {
+        this.fRelevantSpecialty = fRelevantSpecialty;
     }
 
     private Object fMainEntityOfPage;
@@ -179,50 +395,46 @@ public class DrugCostImpl implements DrugCost {
         this.fMainEntityOfPage = fMainEntityOfPage;
     }
 
-    private Text fCostCurrency;
+    private Text fAlternateName;
 
     /**
-     * The currency (in 3-letter of the drug cost. See: http://en.wikipedia.org/wiki/ISO_4217. 
+     * An alias for the item.
      *
      * @return {@link Text}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public Text getCostCurrency() {
-        return fCostCurrency;
+    public Text getAlternateName() {
+        return fAlternateName;
     }
 
     /**
-     * The currency (in 3-letter of the drug cost. See: http://en.wikipedia.org/wiki/ISO_4217. 
+     * An alias for the item.
      *
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setCostCurrency(Text fCostCurrency) {
-        this.fCostCurrency = fCostCurrency;
+    public void setAlternateName(Text fAlternateName) {
+        this.fAlternateName = fAlternateName;
     }
 
-    private Organization fRecognizingAuthority;
+    private Text fName;
 
     /**
-     * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
+     * The name of the item.
      *
-     * @return {@link Organization}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     * @return {@link Text}
      */
     @Override
-    public Organization getRecognizingAuthority() {
-        return fRecognizingAuthority;
+    public Text getName() {
+        return fName;
     }
 
     /**
-     * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
+     * The name of the item.
      *
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setRecognizingAuthority(Organization fRecognizingAuthority) {
-        this.fRecognizingAuthority = fRecognizingAuthority;
+    public void setName(Text fName) {
+        this.fName = fName;
     }
 
     private Action fPotentialAction;
@@ -246,50 +458,70 @@ public class DrugCostImpl implements DrugCost {
         this.fPotentialAction = fPotentialAction;
     }
 
-    private Text fDrugUnit;
+    private Object fImage;
 
     /**
-     * The unit in which the drug is measured, e.g. '5 mg tablet'.
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link URL} or {@link ImageObject}
+     */
+    @Override
+    public <T> T getImage() {
+        return (T) fImage;
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     */
+    @Override
+    public void setImage(Object fImage) {
+        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
+            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
+        }
+        this.fImage = fImage;
+    }
+
+    private URL fUrl;
+
+    /**
+     * URL of the item.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getUrl() {
+        return fUrl;
+    }
+
+    /**
+     * URL of the item.
+     *
+     */
+    @Override
+    public void setUrl(URL fUrl) {
+        this.fUrl = fUrl;
+    }
+
+    private Text fDescription;
+
+    /**
+     * A description of the item.
      *
      * @return {@link Text}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public Text getDrugUnit() {
-        return fDrugUnit;
+    public Text getDescription() {
+        return fDescription;
     }
 
     /**
-     * The unit in which the drug is measured, e.g. '5 mg tablet'.
+     * A description of the item.
      *
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setDrugUnit(Text fDrugUnit) {
-        this.fDrugUnit = fDrugUnit;
-    }
-
-    private MedicalSpecialty fRelevantSpecialty;
-
-    /**
-     * If applicable, a medical specialty in which this entity is relevant.
-     *
-     * @return {@link MedicalSpecialty}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public MedicalSpecialty getRelevantSpecialty() {
-        return fRelevantSpecialty;
-    }
-
-    /**
-     * If applicable, a medical specialty in which this entity is relevant.
-     *
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setRelevantSpecialty(MedicalSpecialty fRelevantSpecialty) {
-        this.fRelevantSpecialty = fRelevantSpecialty;
+    public void setDescription(Text fDescription) {
+        this.fDescription = fDescription;
     }
 
     private Object fSubjectOf;
@@ -318,25 +550,25 @@ public class DrugCostImpl implements DrugCost {
         this.fSubjectOf = fSubjectOf;
     }
 
-    private Text fName;
+    private URL fAdditionalType;
 
     /**
-     * The name of the item.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
-     * @return {@link Text}
+     * @return {@link URL}
      */
     @Override
-    public Text getName() {
-        return fName;
+    public URL getAdditionalType() {
+        return fAdditionalType;
     }
 
     /**
-     * The name of the item.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
      */
     @Override
-    public void setName(Text fName) {
-        this.fName = fName;
+    public void setAdditionalType(URL fAdditionalType) {
+        this.fAdditionalType = fAdditionalType;
     }
 
     private Text fDisambiguatingDescription;
@@ -360,30 +592,6 @@ public class DrugCostImpl implements DrugCost {
         this.fDisambiguatingDescription = fDisambiguatingDescription;
     }
 
-    private Object fImage;
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link URL} or {@link ImageObject}
-     */
-    @Override
-    public <T> T getImage() {
-        return (T) fImage;
-    }
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     */
-    @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
-        this.fImage = fImage;
-    }
-
     private URL fSameAs;
 
     /**
@@ -403,55 +611,6 @@ public class DrugCostImpl implements DrugCost {
     @Override
     public void setSameAs(URL fSameAs) {
         this.fSameAs = fSameAs;
-    }
-
-    private Object fCostPerUnit;
-
-    /**
-     * The cost per unit of the drug.
-     *
-     * @return {@link Number} or {@link Text} or {@link QualitativeValue}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public <T> T getCostPerUnit() {
-        return (T) fCostPerUnit;
-    }
-
-    /**
-     * The cost per unit of the drug.
-     *
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setCostPerUnit(Object fCostPerUnit) {
-        if(!(fCostPerUnit instanceof Number) && !(fCostPerUnit instanceof Text) && !(fCostPerUnit instanceof QualitativeValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'costPerUnit': " + fCostPerUnit);
-        }
-        this.fCostPerUnit = fCostPerUnit;
-    }
-
-    private MedicineSystem fMedicineSystem;
-
-    /**
-     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
-     *
-     * @return {@link MedicineSystem}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public MedicineSystem getMedicineSystem() {
-        return fMedicineSystem;
-    }
-
-    /**
-     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
-     *
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setMedicineSystem(MedicineSystem fMedicineSystem) {
-        this.fMedicineSystem = fMedicineSystem;
     }
 
     private Object fIdentifier;
@@ -478,164 +637,5 @@ public class DrugCostImpl implements DrugCost {
             throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
         }
         this.fIdentifier = fIdentifier;
-    }
-
-    private Grant fFunding;
-
-    /**
-     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
-     *
-     * @return {@link Grant}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     */
-    @Override
-    public Grant getFunding() {
-        return fFunding;
-    }
-
-    /**
-     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
-     *
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     */
-    @Override
-    public void setFunding(Grant fFunding) {
-        this.fFunding = fFunding;
-    }
-
-    private URL fUrl;
-
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getUrl() {
-        return fUrl;
-    }
-
-    /**
-     * URL of the item.
-     *
-     */
-    @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
-    }
-
-    private Text fCostOrigin;
-
-    /**
-     * Additional details to capture the origin of the cost data. For example, 'Medicare Part B'.
-     *
-     * @return {@link Text}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public Text getCostOrigin() {
-        return fCostOrigin;
-    }
-
-    /**
-     * Additional details to capture the origin of the cost data. For example, 'Medicare Part B'.
-     *
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setCostOrigin(Text fCostOrigin) {
-        this.fCostOrigin = fCostOrigin;
-    }
-
-    private URL fAdditionalType;
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getAdditionalType() {
-        return fAdditionalType;
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     */
-    @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
-    }
-
-    private DrugCostCategory fCostCategory;
-
-    /**
-     * The category of cost, such as wholesale, retail, reimbursement cap, etc.
-     *
-     * @return {@link DrugCostCategory}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public DrugCostCategory getCostCategory() {
-        return fCostCategory;
-    }
-
-    /**
-     * The category of cost, such as wholesale, retail, reimbursement cap, etc.
-     *
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setCostCategory(DrugCostCategory fCostCategory) {
-        this.fCostCategory = fCostCategory;
-    }
-
-    private Text fDescription;
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDescription() {
-        return fDescription;
-    }
-
-    /**
-     * A description of the item.
-     *
-     */
-    @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
-    }
-
-    private MedicalStudy fStudy;
-
-    /**
-     * A medical study or trial related to this entity.
-     *
-     * @return {@link MedicalStudy}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public MedicalStudy getStudy() {
-        return fStudy;
-    }
-
-    /**
-     * A medical study or trial related to this entity.
-     *
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setStudy(MedicalStudy fStudy) {
-        this.fStudy = fStudy;
     }
 }
