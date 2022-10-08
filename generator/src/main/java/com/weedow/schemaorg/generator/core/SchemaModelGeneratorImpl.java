@@ -7,8 +7,9 @@ import com.weedow.schemaorg.generator.template.TemplateService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.*;
 import java.util.stream.Stream;
 
@@ -32,19 +33,19 @@ public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
 
     @Override
     public void generate() {
-        final File modelFolder = options.getModelFolder();
-        final File modelImplFolder = options.getModelImplFolder();
-        final File dataTypeFolder = options.getDataTypeFolder();
+        final Path modelFolder = options.getModelFolder();
+        final Path modelImplFolder = options.getModelImplFolder();
+        final Path dataTypeFolder = options.getDataTypeFolder();
 
-        if (!isFolderExists(modelFolder)) {
+        if (!createFolderIfNotExists(modelFolder)) {
             LOG.error("Model directory does not exist and could not be created: {}", modelFolder);
             return;
         }
-        if (!isFolderExists(modelImplFolder)) {
+        if (!createFolderIfNotExists(modelImplFolder)) {
             LOG.error("Model Implementation directory does not exist and could not be created: {}", modelFolder);
             return;
         }
-        if (!isFolderExists(dataTypeFolder)) {
+        if (!createFolderIfNotExists(dataTypeFolder)) {
             LOG.error("DataType directory does not exist and could not be created: {}", modelFolder);
             return;
         }
@@ -58,19 +59,19 @@ public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
 
         applyTemplate(
                 "templates/jsonld_typename",
-                new File(modelFolder, "JsonLdTypeName.java"),
+                modelFolder.resolve("JsonLdTypeName.java"),
                 new Context(null, modelPackage, Collections.emptySet())
         );
 
         applyTemplate(
                 "templates/jsonld_node",
-                new File(modelFolder, "JsonLdNode.java"),
+                modelFolder.resolve("JsonLdNode.java"),
                 new Context(null, modelPackage, Collections.emptySet())
         );
 
         applyTemplate(
                 "templates/jsonld_node_impl",
-                new File(modelImplFolder, "JsonLdNodeImpl.java"),
+                modelImplFolder.resolve("JsonLdNodeImpl.java"),
                 new Context(null, modelImplPackage, new LinkedHashSet<>(Arrays.asList(
                         SchemaGeneratorUtils.resolveClassName(modelPackage, dataTypePackage, SchemaGeneratorUtils.JSON_LD_NODE),
                         SchemaGeneratorUtils.resolveClassName(modelPackage, dataTypePackage, SchemaGeneratorUtils.JSON_LD_TYPE_NAME)
@@ -84,7 +85,7 @@ public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
         }
 
         Stream<Type> stream;
-        if(LOG.isDebugEnabled()) { // verbose mode
+        if (LOG.isDebugEnabled()/*options.isVerboseMode()*/) { // verbose mode
             stream = filteredSchemaDefinitions.values().stream();
         } else {
             stream = filteredSchemaDefinitions.values().parallelStream();
@@ -106,52 +107,52 @@ public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
         LOG.info("Model generation completed.");
     }
 
-    private void generateAbstractDataType(File dataTypeFolder, String dataTypePackage, Type type) {
+    private void generateAbstractDataType(Path dataTypeFolder, String dataTypePackage, Type type) {
         applyTemplate(
                 "templates/abstract_data_type",
-                new File(dataTypeFolder, type.getName() + JAVA_EXTENSION),
+                dataTypeFolder.resolve(type.getName() + JAVA_EXTENSION),
                 new Context(type, dataTypePackage, Collections.emptySet())
         );
     }
 
-    private void generateDataType(File dataTypeFolder, String dataTypePackage, String modelPackage, Type type) {
+    private void generateDataType(Path dataTypeFolder, String dataTypePackage, String modelPackage, Type type) {
         final List<String> additionalImports = Collections.singletonList(SchemaGeneratorUtils.resolveClassName(modelPackage, dataTypePackage, SchemaGeneratorUtils.JSON_LD_TYPE_NAME));
         applyTemplate(
                 "templates/data_type",
-                new File(dataTypeFolder, type.getName() + JAVA_EXTENSION),
+                dataTypeFolder.resolve(type.getName() + JAVA_EXTENSION),
                 new Context(type, dataTypePackage, SchemaGeneratorUtils.getImports(modelPackage, dataTypePackage, type, additionalImports))
         );
     }
 
-    private void generateEnumerationType(File modelFolder, File modelImplFolder, String modelPackage, String modelImplPackage, String dataTypePackage, Type type) {
+    private void generateEnumerationType(Path modelFolder, Path modelImplFolder, String modelPackage, String modelImplPackage, String dataTypePackage, Type type) {
         applyTemplate(
                 "templates/type_interface",
-                new File(modelFolder, type.getName() + JAVA_EXTENSION),
+                modelFolder.resolve(type.getName() + JAVA_EXTENSION),
                 new Context(type, modelPackage, SchemaGeneratorUtils.getImports(modelPackage, dataTypePackage, type, Collections.emptyList()))
         );
 
         applyTemplate(
                 "templates/type_enumeration",
-                new File(modelImplFolder, type.getName() + "Enum" + JAVA_EXTENSION),
+                modelImplFolder.resolve(type.getName() + "Enum" + JAVA_EXTENSION),
                 new Context(type, modelImplPackage, SchemaGeneratorUtils.getAllImports(modelPackage, dataTypePackage, type))
         );
     }
 
-    private void generateType(File modelFolder, File modelImplFolder, String modelPackage, String modelImplPackage, String dataTypePackage, Type type) {
+    private void generateType(Path modelFolder, Path modelImplFolder, String modelPackage, String modelImplPackage, String dataTypePackage, Type type) {
         applyTemplate(
                 "templates/type_interface",
-                new File(modelFolder, type.getName() + JAVA_EXTENSION),
+                modelFolder.resolve(type.getName() + JAVA_EXTENSION),
                 new Context(type, modelPackage, SchemaGeneratorUtils.getImports(modelPackage, dataTypePackage, type, Collections.emptyList()))
         );
 
         applyTemplate(
                 "templates/type_implementation",
-                new File(modelImplFolder, type.getName() + "Impl" + JAVA_EXTENSION),
+                modelImplFolder.resolve(type.getName() + "Impl" + JAVA_EXTENSION),
                 new Context(type, modelImplPackage, SchemaGeneratorUtils.getAllImports(modelPackage, dataTypePackage, type))
         );
     }
 
-    private void applyTemplate(String templateLocation, File outputFile, Context context) {
+    private void applyTemplate(String templateLocation, Path outputFile, Context context) {
         try {
             templateService.apply(templateLocation, outputFile, context);
             options.getSuccessHandlers().forEach(successHandler -> successHandler.onSuccess(templateLocation, outputFile, context));
@@ -161,7 +162,12 @@ public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
         }
     }
 
-    private static boolean isFolderExists(File folder) {
-        return folder.exists() || folder.mkdirs();
+    private static boolean createFolderIfNotExists(Path folder) {
+        try {
+            return Files.exists(Files.createDirectories(folder));
+        } catch (IOException e) {
+            LOG.warn("Could not create directory {}: {}", folder, e.getMessage());
+            return false;
+        }
     }
 }

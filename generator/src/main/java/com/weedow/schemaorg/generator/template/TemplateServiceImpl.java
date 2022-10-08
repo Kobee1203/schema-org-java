@@ -8,9 +8,11 @@ import com.weedow.schemaorg.generator.template.helper.CharSequenceHelpers;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
+import java.io.Writer;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 public class TemplateServiceImpl implements TemplateService {
 
@@ -28,11 +30,11 @@ public class TemplateServiceImpl implements TemplateService {
     }
 
     @Override
-    public void apply(String templateLocation, File outputFile, Object context) throws IOException {
+    public void apply(String templateLocation, Path outputFile, Object context) throws IOException {
         LOG.info("Generating '{}'...", outputFile);
         LOG.debug("... from template '{}'...", templateLocation);
         long start = System.currentTimeMillis();
-        try (final FileWriter writer = new FileWriter(outputFile)) {
+        try (final Writer writer = Files.newBufferedWriter(outputFile, StandardCharsets.UTF_8)) {
             final Template template = handlebars.compile(templateLocation);
             template.apply(context, writer);
         }

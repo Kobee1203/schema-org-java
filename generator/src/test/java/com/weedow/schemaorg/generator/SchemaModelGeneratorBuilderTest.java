@@ -12,7 +12,6 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.*;
 
 class SchemaModelGeneratorBuilderTest {
@@ -42,9 +41,8 @@ class SchemaModelGeneratorBuilderTest {
         generatorOptions.setModels(models);
         generatorOptions
                 .addSuccessHandler((templateName, outputFile, context) -> {
-                    Path outputFilePath = outputFile.toPath();
-                    String expectedFilePath = "/data/" + generatorOptions.getOutputFolder().toPath().relativize(outputFilePath).toString().replace("\\", "/");
-                    LOG.info("Comparing {} with {}", outputFilePath, expectedFilePath);
+                    String expectedFilePath = "/data/" + generatorOptions.getOutputFolder().relativize(outputFile).toString().replace("\\", "/");
+                    LOG.info("Comparing {} with {}", outputFile, expectedFilePath);
                     try (InputStream resourceAsStream = getClass().getResourceAsStream(expectedFilePath)) {
                         assert resourceAsStream != null;
                         byte[] expected = resourceAsStream.readAllBytes();
@@ -54,8 +52,7 @@ class SchemaModelGeneratorBuilderTest {
                     }
                 })
                 .addSuccessHandler((templateName, outputFile, context) -> {
-                    Path outputFilePath = outputFile.toPath();
-                    Path classPath = generatorOptions.getOutputFolder().toPath().relativize(outputFilePath);
+                    Path classPath = generatorOptions.getOutputFolder().relativize(outputFile);
                     dataMap.computeIfAbsent(classPath.getParent(), path -> new ArrayList<>()).add(classPath.getFileName().toString());
                 })
                 .addErrorHandler((templateName, outputFile, context, e) -> Assertions.fail("An error occurred while generating {}: {}", outputFile, e.getMessage()));
@@ -74,9 +71,9 @@ class SchemaModelGeneratorBuilderTest {
             modelCount = 207; // + JsonLdTypeName
             modelImplCount = 206;
         }
-        Assertions.assertThat(dataMap.get(Paths.get("org/schema/model/datatype"))).hasSize(dataTypeCount);
-        Assertions.assertThat(dataMap.get(Paths.get("org/schema/model"))).hasSize(modelCount);
-        Assertions.assertThat(dataMap.get(Paths.get("org/schema/model/impl"))).hasSize(modelImplCount);
+        Assertions.assertThat(dataMap.get(Path.of("org", "schema", "model", "datatype"))).hasSize(dataTypeCount);
+        Assertions.assertThat(dataMap.get(Path.of("org", "schema", "model"))).hasSize(modelCount);
+        Assertions.assertThat(dataMap.get(Path.of("org", "schema", "model", "impl"))).hasSize(modelImplCount);
     }
 
 }

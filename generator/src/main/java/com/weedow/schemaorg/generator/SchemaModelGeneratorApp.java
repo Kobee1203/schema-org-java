@@ -60,9 +60,11 @@ public class SchemaModelGeneratorApp {
 
         ParserOptions parserOptions = new ParserOptions();
         parserOptions.setSchemaVersion(schemaVersion);
+        //parserOptions.setVerboseMode(verboseMode);
 
         GeneratorOptions generatorOptions = new GeneratorOptions();
         generatorOptions.setModels(models);
+        //generatorOptions.setVerboseMode(verboseMode);
 
         final SchemaModelGenerator generator = new SchemaModelGeneratorBuilder()
                 .parserOptions(parserOptions)

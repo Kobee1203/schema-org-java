@@ -7,7 +7,7 @@ import lombok.Data;
 import lombok.Setter;
 import lombok.experimental.Accessors;
 
-import java.io.File;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,7 +15,7 @@ import java.util.List;
 @Accessors(chain = true)
 public final class GeneratorOptions {
 
-    private File outputFolder = new File("target/schemaorg");
+    private Path outputFolder = Path.of("target", "schemaorg");
     private String modelPackage = "org.schema.model";
     private String modelImplPackage = "org.schema.model.impl";
     private String dataTypePackage = "org.schema.model.datatype";
@@ -27,16 +27,16 @@ public final class GeneratorOptions {
     @Setter(AccessLevel.NONE)
     private final List<ErrorHandler> errorHandlers = new ArrayList<>();
 
-    public File getModelFolder() {
-        return new File(outputFolder, modelPackage.replace(".", "/"));
+    public Path getModelFolder() {
+        return outputFolder.resolve(Path.of("", modelPackage.split("\\.")));
     }
 
-    public File getModelImplFolder() {
-        return new File(outputFolder, modelImplPackage.replace(".", "/"));
+    public Path getModelImplFolder() {
+        return outputFolder.resolve(Path.of("", modelImplPackage.split("\\.")));
     }
 
-    public File getDataTypeFolder() {
-        return new File(outputFolder, dataTypePackage.replace(".", "/"));
+    public Path getDataTypeFolder() {
+        return outputFolder.resolve(Path.of("", dataTypePackage.split("\\.")));
     }
 
     public GeneratorOptions addSuccessHandler(SuccessHandler successHandler) {

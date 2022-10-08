@@ -2,9 +2,9 @@ package com.weedow.schemaorg.generator.core.handler;
 
 import com.weedow.schemaorg.generator.core.Context;
 
-import java.io.File;
+import java.nio.file.Path;
 
 public interface ErrorHandler {
 
-    void onError(String templateName, File outputFile, Context context, Exception e);
+    void onError(String templateName, Path outputFile, Context context, Exception e);
 }
