@@ -11,7 +11,7 @@
         </encoder>
     </appender>
 
-    <logger name="com.weedow.schemaorg" level="DEBUG"/>
+    <logger name="com.weedow.schemaorg" level="INFO"/>
 
     <root level="INFO">
         <appender-ref ref="STDOUT"/>

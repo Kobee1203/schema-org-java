@@ -1,5 +1,6 @@
 package com.weedow.schemaorg.generator.core;
 
+import com.weedow.schemaorg.generator.core.filter.SchemaDefinitionFilter;
 import com.weedow.schemaorg.generator.model.Type;
 import com.weedow.schemaorg.generator.model.handler.ModelHandlerUtils;
 import com.weedow.schemaorg.generator.template.TemplateService;
@@ -9,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
+import java.util.stream.Stream;
 
 public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
 
@@ -18,11 +20,13 @@ public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
 
     private final GeneratorOptions options;
     private final TemplateService templateService;
+    private final SchemaDefinitionFilter schemaDefinitionFilter;
     private final Map<String, Type> schemaDefinitions;
 
-    public SchemaModelGeneratorImpl(GeneratorOptions options, TemplateService templateService, Map<String, Type> schemaDefinitions) {
+    public SchemaModelGeneratorImpl(GeneratorOptions options, TemplateService templateService, SchemaDefinitionFilter schemaDefinitionFilter, Map<String, Type> schemaDefinitions) {
         this.options = options;
         this.templateService = templateService;
+        this.schemaDefinitionFilter = schemaDefinitionFilter;
         this.schemaDefinitions = schemaDefinitions;
     }
 
@@ -31,48 +35,75 @@ public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
         final File modelFolder = options.getModelFolder();
         final File modelImplFolder = options.getModelImplFolder();
         final File dataTypeFolder = options.getDataTypeFolder();
-        if (isFolderExists(modelFolder) && isFolderExists(modelImplFolder) && isFolderExists(dataTypeFolder)) {
-            final String modelPackage = options.getModelPackage();
-            final String modelImplPackage = options.getModelImplPackage();
-            final String dataTypePackage = options.getDataTypePackage();
 
-            applyTemplate(
-                    "templates/jsonld_typename",
-                    new File(modelFolder, "JsonLdTypeName.java"),
-                    new Context(null, modelPackage, Collections.emptySet())
-            );
-
-            applyTemplate(
-                    "templates/jsonld_node",
-                    new File(modelFolder, "JsonLdNode.java"),
-                    new Context(null, modelPackage, Collections.emptySet())
-            );
-
-            applyTemplate(
-                    "templates/jsonld_node_impl",
-                    new File(modelImplFolder, "JsonLdNodeImpl.java"),
-                    new Context(null, modelImplPackage, new LinkedHashSet<>(Arrays.asList(
-                            SchemaGeneratorUtils.resolveClassName(modelPackage, dataTypePackage, SchemaGeneratorUtils.JSON_LD_NODE),
-                            SchemaGeneratorUtils.resolveClassName(modelPackage, dataTypePackage, SchemaGeneratorUtils.JSON_LD_TYPE_NAME)
-                    )))
-            );
-
-            for (Map.Entry<String, Type> entry : schemaDefinitions.entrySet()) {
-                final Type type = entry.getValue();
-
-                if (type.getId().equals("schema:DataType")) {
-                    generateAbstractDataType(dataTypeFolder, dataTypePackage, type);
-                } else if (ModelHandlerUtils.isDataType(type.getId())) {
-                    generateDataType(dataTypeFolder, dataTypePackage, modelPackage, type);
-                } else if (ModelHandlerUtils.isSubDataType(type)) {
-                    generateDataType(dataTypeFolder, dataTypePackage, modelPackage, type);
-                } else if (ModelHandlerUtils.isEnumeration(type)) {
-                    generateEnumerationType(modelFolder, modelImplFolder, modelPackage, modelImplPackage, dataTypePackage, type);
-                } else {
-                    generateType(modelFolder, modelImplFolder, modelPackage, modelImplPackage, dataTypePackage, type);
-                }
-            }
+        if (!isFolderExists(modelFolder)) {
+            LOG.error("Model directory does not exist and could not be created: {}", modelFolder);
+            return;
         }
+        if (!isFolderExists(modelImplFolder)) {
+            LOG.error("Model Implementation directory does not exist and could not be created: {}", modelFolder);
+            return;
+        }
+        if (!isFolderExists(dataTypeFolder)) {
+            LOG.error("DataType directory does not exist and could not be created: {}", modelFolder);
+            return;
+        }
+
+        LOG.info("Generating models...");
+
+        final String modelPackage = options.getModelPackage();
+        final String modelImplPackage = options.getModelImplPackage();
+        final String dataTypePackage = options.getDataTypePackage();
+        final List<String> models = options.getModels();
+
+        applyTemplate(
+                "templates/jsonld_typename",
+                new File(modelFolder, "JsonLdTypeName.java"),
+                new Context(null, modelPackage, Collections.emptySet())
+        );
+
+        applyTemplate(
+                "templates/jsonld_node",
+                new File(modelFolder, "JsonLdNode.java"),
+                new Context(null, modelPackage, Collections.emptySet())
+        );
+
+        applyTemplate(
+                "templates/jsonld_node_impl",
+                new File(modelImplFolder, "JsonLdNodeImpl.java"),
+                new Context(null, modelImplPackage, new LinkedHashSet<>(Arrays.asList(
+                        SchemaGeneratorUtils.resolveClassName(modelPackage, dataTypePackage, SchemaGeneratorUtils.JSON_LD_NODE),
+                        SchemaGeneratorUtils.resolveClassName(modelPackage, dataTypePackage, SchemaGeneratorUtils.JSON_LD_TYPE_NAME)
+                )))
+        );
+
+        Map<String, Type> filteredSchemaDefinitions = schemaDefinitionFilter.filter(schemaDefinitions, models);
+        if (filteredSchemaDefinitions.isEmpty()) {
+            LOG.info("No schema model found to generate");
+            return;
+        }
+
+        Stream<Type> stream;
+        if(LOG.isDebugEnabled()) { // verbose mode
+            stream = filteredSchemaDefinitions.values().stream();
+        } else {
+            stream = filteredSchemaDefinitions.values().parallelStream();
+        }
+
+        stream.forEach(type -> {
+            if (type.getId().equals("schema:DataType")) {
+                generateAbstractDataType(dataTypeFolder, dataTypePackage, type);
+            } else if (ModelHandlerUtils.isDataType(type.getId())) {
+                generateDataType(dataTypeFolder, dataTypePackage, modelPackage, type);
+            } else if (ModelHandlerUtils.isSubDataType(type)) {
+                generateDataType(dataTypeFolder, dataTypePackage, modelPackage, type);
+            } else if (ModelHandlerUtils.isEnumeration(type)) {
+                generateEnumerationType(modelFolder, modelImplFolder, modelPackage, modelImplPackage, dataTypePackage, type);
+            } else {
+                generateType(modelFolder, modelImplFolder, modelPackage, modelImplPackage, dataTypePackage, type);
+            }
+        });
+        LOG.info("Model generation completed.");
     }
 
     private void generateAbstractDataType(File dataTypeFolder, String dataTypePackage, Type type) {
@@ -120,13 +151,13 @@ public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
         );
     }
 
-    private void applyTemplate(String templateName, File outputFile, Context context) {
+    private void applyTemplate(String templateLocation, File outputFile, Context context) {
         try {
-            templateService.apply(templateName, outputFile, context);
-            options.getSuccessHandlers().forEach(successHandler -> successHandler.onSuccess(templateName, outputFile, context));
+            templateService.apply(templateLocation, outputFile, context);
+            options.getSuccessHandlers().forEach(successHandler -> successHandler.onSuccess(templateLocation, outputFile, context));
         } catch (IOException e) {
-            LOG.warn("Could not write output file {} from template '{}': {}", outputFile, templateName, e.getMessage());
-            options.getErrorHandlers().forEach(errorHandler -> errorHandler.onError(templateName, outputFile, context, e));
+            LOG.warn("Could not write output file {} from template '{}': {}", outputFile, templateLocation, e.getMessage());
+            options.getErrorHandlers().forEach(errorHandler -> errorHandler.onError(templateLocation, outputFile, context, e));
         }
     }
 

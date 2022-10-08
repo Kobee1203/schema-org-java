@@ -36,6 +36,7 @@ public class SchemaModelParserImpl implements SchemaModelParser {
 
         final String schemaVersion = options.getSchemaVersion();
         try (InputStream in = getInputStream(schemaVersion)) {
+            LOG.info("Parsing the schema definitions...");
             final SchemaDefinition schemaDefinition = schemaDefinitionReader.read(in);
 
             schemaDefinition.getGraph().forEach(graphItem -> {
@@ -46,6 +47,7 @@ public class SchemaModelParserImpl implements SchemaModelParser {
                         .filter(modelHandler -> modelHandler.supports(graphItem))
                         .forEach(modelHandler -> modelHandler.handle(schemaDefinitions, graphItem));
             });
+            LOG.info("Parsing completed.");
         } catch (Exception e) {
             LOG.warn("Could not generate the schema models: " + e.getMessage(), e);
         }

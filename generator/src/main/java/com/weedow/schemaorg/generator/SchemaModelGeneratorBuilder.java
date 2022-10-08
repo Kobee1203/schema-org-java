@@ -3,11 +3,14 @@ package com.weedow.schemaorg.generator;
 import com.weedow.schemaorg.generator.core.GeneratorOptions;
 import com.weedow.schemaorg.generator.core.SchemaModelGenerator;
 import com.weedow.schemaorg.generator.core.SchemaModelGeneratorImpl;
+import com.weedow.schemaorg.generator.core.filter.SchemaDefinitionFilter;
+import com.weedow.schemaorg.generator.core.filter.SchemaDefinitionFilterImpl;
 import com.weedow.schemaorg.generator.model.Type;
 import com.weedow.schemaorg.generator.model.handler.*;
 import com.weedow.schemaorg.generator.parser.ParserOptions;
 import com.weedow.schemaorg.generator.parser.SchemaModelParser;
 import com.weedow.schemaorg.generator.parser.SchemaModelParserImpl;
+import com.weedow.schemaorg.generator.reader.SchemaDefinitionReader;
 import com.weedow.schemaorg.generator.reader.SchemaDefinitionReaderImpl;
 import com.weedow.schemaorg.generator.template.TemplateService;
 import com.weedow.schemaorg.generator.template.TemplateServiceImpl;
@@ -32,22 +35,23 @@ public class SchemaModelGeneratorBuilder {
     }
 
     public SchemaModelGenerator build() {
-        final SchemaDefinitionReaderImpl schemaDefinitionReader = new SchemaDefinitionReaderImpl();
-        List<ModelHandler> modelHandlers = Arrays.asList(
+        final SchemaDefinitionReader schemaDefinitionReader = new SchemaDefinitionReaderImpl();
+        final List<ModelHandler> modelHandlers = Arrays.asList(
                 new PropertyModelHandlerImpl(),
                 new DataTypeModelHandlerImpl(),
                 new SubDataTypeModelHandlerImpl(),
                 new ClassModelHandlerImpl(),
                 new EnumerationMemberModelHandlerImpl()
         );
-        SchemaModelParser schemaModelParser = new SchemaModelParserImpl(schemaDefinitionReader, modelHandlers);
+        final SchemaModelParser schemaModelParser = new SchemaModelParserImpl(schemaDefinitionReader, modelHandlers);
 
         final ParserOptions pOptions = this.parserOptions != null ? this.parserOptions : new ParserOptions();
         final Map<String, Type> schemaDefinitions = schemaModelParser.parse(pOptions);
 
         final GeneratorOptions gOptions = this.generatorOptions != null ? this.generatorOptions : new GeneratorOptions();
-        TemplateService templateService = new TemplateServiceImpl();
+        final TemplateService templateService = new TemplateServiceImpl();
+        final SchemaDefinitionFilter schemaDefinitionFilter = new SchemaDefinitionFilterImpl();
 
-        return new SchemaModelGeneratorImpl(gOptions, templateService, schemaDefinitions);
+        return new SchemaModelGeneratorImpl(gOptions, templateService, schemaDefinitionFilter, schemaDefinitions);
     }
 }

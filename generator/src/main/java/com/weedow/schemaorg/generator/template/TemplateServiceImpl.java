@@ -4,7 +4,7 @@ import com.github.jknack.handlebars.Handlebars;
 import com.github.jknack.handlebars.Template;
 import com.github.jknack.handlebars.helper.ConditionalHelpers;
 import com.github.jknack.handlebars.helper.StringHelpers;
- import com.weedow.schemaorg.generator.template.helper.CharSequenceHelpers;
+import com.weedow.schemaorg.generator.template.helper.CharSequenceHelpers;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -28,14 +28,15 @@ public class TemplateServiceImpl implements TemplateService {
     }
 
     @Override
-    public void apply(String templateName, File outputFile, Object context) throws IOException {
-        LOG.info("Generating '{}' from template '{}'", outputFile, templateName);
+    public void apply(String templateLocation, File outputFile, Object context) throws IOException {
+        LOG.info("Generating '{}'...", outputFile);
+        LOG.debug("... from template '{}'...", templateLocation);
         long start = System.currentTimeMillis();
         try (final FileWriter writer = new FileWriter(outputFile)) {
-            final Template tplJsonLdTypeName = handlebars.compile(templateName);
-            tplJsonLdTypeName.apply(context, writer);
+            final Template template = handlebars.compile(templateLocation);
+            template.apply(context, writer);
         }
         long end = System.currentTimeMillis();
-        LOG.info("Generated: {} ms", (end - start));
+        LOG.debug("Generated: {} ms", (end - start));
     }
 }

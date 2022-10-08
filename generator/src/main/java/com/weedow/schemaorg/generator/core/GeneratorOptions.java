@@ -20,6 +20,8 @@ public final class GeneratorOptions {
     private String modelImplPackage = "org.schema.model.impl";
     private String dataTypePackage = "org.schema.model.datatype";
 
+    private List<String> models;
+
     @Setter(AccessLevel.NONE)
     private final List<SuccessHandler> successHandlers = new ArrayList<>();
     @Setter(AccessLevel.NONE)

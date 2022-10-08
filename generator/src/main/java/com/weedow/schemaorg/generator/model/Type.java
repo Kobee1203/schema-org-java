@@ -1,9 +1,6 @@
 package com.weedow.schemaorg.generator.model;
 
-import lombok.AccessLevel;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import lombok.experimental.Accessors;
 
 import java.util.*;
@@ -26,6 +23,7 @@ public final class Type {
     private final Set<Property> properties = new LinkedHashSet<>();
 
     @Setter(AccessLevel.NONE)
+    @EqualsAndHashCode.Exclude
     private Set<Property> allProperties;
 
     @Setter(AccessLevel.NONE)
