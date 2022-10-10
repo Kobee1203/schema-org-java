@@ -32,12 +32,12 @@
     </licenses>
 
     <properties>
+        <revision>1.0.0-SNAPSHOT</revision>
+
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>11</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
-
-        <revision>1.0.0-SNAPSHOT</revision>
 
         <!-- Dependencies -->
         <lombok.version>1.18.24</lombok.version>
@@ -59,6 +59,7 @@
 
     <modules>
         <module>generator</module>
+        <module>maven-plugin</module>
     </modules>
 
     <dependencies>

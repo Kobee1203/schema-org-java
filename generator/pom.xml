@@ -12,7 +12,7 @@
     <artifactId>schema-org-generator</artifactId>
 
     <name>schema-org-generator</name>
-    <description>Generates Java model from Schema.org</description>
+    <description>Generates Java models from Schema.org</description>
     <url>https://github.com/Kobee1203/schema-org-java</url>
 
     <dependencies>
