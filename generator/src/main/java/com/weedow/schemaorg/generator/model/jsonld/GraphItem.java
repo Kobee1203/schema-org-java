@@ -3,9 +3,9 @@ package com.weedow.schemaorg.generator.model.jsonld;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.weedow.schemaorg.generator.logging.Logger;
+import com.weedow.schemaorg.generator.logging.LoggerFactory;
 import lombok.Data;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.List;
 import java.util.Map;

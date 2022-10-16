@@ -1,11 +1,12 @@
 package com.weedow.schemaorg.generator.core;
 
+import com.weedow.schemaorg.generator.SchemaModelGeneratorConstants;
 import com.weedow.schemaorg.generator.core.filter.SchemaDefinitionFilter;
+import com.weedow.schemaorg.generator.logging.Logger;
+import com.weedow.schemaorg.generator.logging.LoggerFactory;
 import com.weedow.schemaorg.generator.model.Type;
 import com.weedow.schemaorg.generator.model.handler.ModelHandlerUtils;
 import com.weedow.schemaorg.generator.template.TemplateService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -85,7 +86,7 @@ public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
         }
 
         Stream<Type> stream;
-        if (LOG.isDebugEnabled()/*options.isVerboseMode()*/) { // verbose mode
+        if (SchemaModelGeneratorConstants.isVerbose()) {
             stream = filteredSchemaDefinitions.values().stream();
         } else {
             stream = filteredSchemaDefinitions.values().parallelStream();

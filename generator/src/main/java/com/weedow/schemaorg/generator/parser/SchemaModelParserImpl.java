@@ -1,12 +1,12 @@
 package com.weedow.schemaorg.generator.parser;
 
 import com.weedow.schemaorg.generator.SchemaModelGeneratorApp;
+import com.weedow.schemaorg.generator.logging.Logger;
+import com.weedow.schemaorg.generator.logging.LoggerFactory;
 import com.weedow.schemaorg.generator.model.Type;
 import com.weedow.schemaorg.generator.model.handler.ModelHandler;
 import com.weedow.schemaorg.generator.model.jsonld.SchemaDefinition;
 import com.weedow.schemaorg.generator.reader.SchemaDefinitionReader;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -40,7 +40,7 @@ public class SchemaModelParserImpl implements SchemaModelParser {
             final SchemaDefinition schemaDefinition = schemaDefinitionReader.read(in);
 
             schemaDefinition.getGraph().forEach(graphItem -> {
-                LOG.debug("id={}, types={}, label={}", graphItem.getId(), graphItem.getTypes(), graphItem.getLabel());
+                LOG.verbose("id={}, types={}, label={}", graphItem.getId(), graphItem.getTypes(), graphItem.getLabel());
 
                 this.modelHandlers
                         .stream()

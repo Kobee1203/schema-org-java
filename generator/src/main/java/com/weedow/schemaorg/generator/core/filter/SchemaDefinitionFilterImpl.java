@@ -1,8 +1,8 @@
 package com.weedow.schemaorg.generator.core.filter;
 
+import com.weedow.schemaorg.generator.logging.Logger;
+import com.weedow.schemaorg.generator.logging.LoggerFactory;
 import com.weedow.schemaorg.generator.model.Type;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.*;
 import java.util.function.Function;
@@ -15,15 +15,13 @@ public class SchemaDefinitionFilterImpl implements SchemaDefinitionFilter {
     @Override
     public Map<String, Type> filter(Map<String, Type> schemaDefinitions, List<String> modelIds) {
         Map<String, Type> filteredSchemaDefinitions = new HashMap<>(schemaDefinitions);
+
         if (modelIds != null && !modelIds.isEmpty()) {
             filteredSchemaDefinitions = modelIds.stream()
                     // Fix model id (format 'schema:xxx')
                     .map(modelId -> modelId.contains(":") ? modelId : "schema:" + modelId)
                     // Filter existing models, skip models not found
-                    .filter(modelId -> {
-                        final String typeId = modelId.contains(":") ? modelId : "schema:" + modelId;
-                        return schemaDefinitions.containsKey(typeId);
-                    })
+                    .filter(schemaDefinitions::containsKey)
                     .flatMap(modelId -> {
                         Set<Type> types = new LinkedHashSet<>();
                         Type type = schemaDefinitions.get(modelId);
@@ -38,7 +36,7 @@ public class SchemaDefinitionFilterImpl implements SchemaDefinitionFilter {
 
     private static void addType(Set<Type> types, Type type) {
         if (!types.contains(type)) {
-            LOG.debug("adding type: {}", type.getId());
+            LOG.verbose("adding type: {}", type.getId());
             types.add(type);
             type.getParents().forEach(parent -> addType(types, parent));
             type.getAllProperties().forEach(property -> property.getTypes().forEach(propertyType -> addType(types, propertyType)));

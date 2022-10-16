@@ -5,7 +5,7 @@
 
     <groupId>com.weedow</groupId>
     <artifactId>schema-org-parent</artifactId>
-    <version>${revision}</version>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>schema-org-java-parent</name>
     <description>Java utilities for working with Schema.org data in JSON-LD format</description>
@@ -32,8 +32,6 @@
     </licenses>
 
     <properties>
-        <revision>1.0.0-SNAPSHOT</revision>
-
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>11</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>

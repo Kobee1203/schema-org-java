@@ -23,6 +23,7 @@ public class SchemaModelGeneratorBuilder {
 
     private ParserOptions parserOptions;
     private GeneratorOptions generatorOptions;
+    private boolean verbose;
 
     public SchemaModelGeneratorBuilder parserOptions(ParserOptions parserOptions) {
         this.parserOptions = parserOptions;
@@ -34,7 +35,14 @@ public class SchemaModelGeneratorBuilder {
         return this;
     }
 
+    public SchemaModelGeneratorBuilder verbose(boolean verbose) {
+        this.verbose = verbose;
+        return this;
+    }
+
     public SchemaModelGenerator build() {
+        SchemaModelGeneratorConstants.setVerbose(this.verbose);
+
         final SchemaDefinitionReader schemaDefinitionReader = new SchemaDefinitionReaderImpl();
         final List<ModelHandler> modelHandlers = Arrays.asList(
                 new PropertyModelHandlerImpl(),

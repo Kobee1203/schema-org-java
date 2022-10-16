@@ -1,13 +1,11 @@
 package com.weedow.schemaorg.generator;
 
-import ch.qos.logback.classic.Level;
-import ch.qos.logback.classic.LoggerContext;
 import com.weedow.schemaorg.generator.core.GeneratorOptions;
 import com.weedow.schemaorg.generator.core.SchemaModelGenerator;
+import com.weedow.schemaorg.generator.logging.Logger;
+import com.weedow.schemaorg.generator.logging.LoggerFactory;
 import com.weedow.schemaorg.generator.parser.ParserOptions;
 import org.apache.commons.cli.*;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.Arrays;
 import java.util.List;
@@ -50,25 +48,18 @@ public class SchemaModelGeneratorApp {
     }
 
     private static void generate(String schemaVersion, List<String> models, boolean verboseMode) {
-        if (verboseMode) {
-            LoggerContext loggerContext = (LoggerContext) LoggerFactory.getILoggerFactory();
-            ch.qos.logback.classic.Logger logger = loggerContext.getLogger("com.weedow.schemaorg");
-            logger.setLevel(Level.DEBUG);
-        }
-
         long start = System.currentTimeMillis();
 
         ParserOptions parserOptions = new ParserOptions();
         parserOptions.setSchemaVersion(schemaVersion);
-        //parserOptions.setVerboseMode(verboseMode);
 
         GeneratorOptions generatorOptions = new GeneratorOptions();
         generatorOptions.setModels(models);
-        //generatorOptions.setVerboseMode(verboseMode);
 
         final SchemaModelGenerator generator = new SchemaModelGeneratorBuilder()
                 .parserOptions(parserOptions)
                 .generatorOptions(generatorOptions)
+                .verbose(verboseMode)
                 .build();
         generator.generate();
 

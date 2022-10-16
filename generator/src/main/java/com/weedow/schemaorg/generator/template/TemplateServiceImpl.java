@@ -4,9 +4,9 @@ import com.github.jknack.handlebars.Handlebars;
 import com.github.jknack.handlebars.Template;
 import com.github.jknack.handlebars.helper.ConditionalHelpers;
 import com.github.jknack.handlebars.helper.StringHelpers;
+import com.weedow.schemaorg.generator.logging.Logger;
+import com.weedow.schemaorg.generator.logging.LoggerFactory;
 import com.weedow.schemaorg.generator.template.helper.CharSequenceHelpers;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.io.Writer;
@@ -32,13 +32,13 @@ public class TemplateServiceImpl implements TemplateService {
     @Override
     public void apply(String templateLocation, Path outputFile, Object context) throws IOException {
         LOG.info("Generating '{}'...", outputFile);
-        LOG.debug("... from template '{}'...", templateLocation);
+        LOG.verbose("... from template '{}'...", templateLocation);
         long start = System.currentTimeMillis();
         try (final Writer writer = Files.newBufferedWriter(outputFile, StandardCharsets.UTF_8)) {
             final Template template = handlebars.compile(templateLocation);
             template.apply(context, writer);
         }
         long end = System.currentTimeMillis();
-        LOG.debug("Generated: {} ms", (end - start));
+        LOG.verbose("Generated: {} ms", (end - start));
     }
 }

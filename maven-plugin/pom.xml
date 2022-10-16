@@ -7,7 +7,8 @@
     <parent>
         <groupId>com.weedow</groupId>
         <artifactId>schema-org-parent</artifactId>
-        <version>${revision}</version>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
     <artifactId>schema-org-generator-maven-plugin</artifactId>
@@ -28,6 +29,7 @@
         <maven-invoker-plugin.version>3.3.0</maven-invoker-plugin.version>
         <mrm-maven-plugin.version>1.4.1</mrm-maven-plugin.version>
         <maven-antrun-plugin.version>3.1.0</maven-antrun-plugin.version>
+        <maven-it-extension.version>0.11.0</maven-it-extension.version>
     </properties>
 
     <dependencies>
@@ -51,16 +53,52 @@
         <dependency>
             <groupId>com.weedow</groupId>
             <artifactId>schema-org-generator</artifactId>
-            <version>${revision}</version>
+            <version>${project.version}</version>
         </dependency>
 
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
         </dependency>
+
+        <!-- Tests Dependencies -->
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.soebes.itf.jupiter.extension</groupId>
+            <artifactId>itf-jupiter-extension</artifactId>
+            <version>${maven-it-extension.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.soebes.itf.jupiter.extension</groupId>
+            <artifactId>itf-assertj</artifactId>
+            <version>${maven-it-extension.version}</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
+        <testResources>
+            <testResource>
+                <directory>src/test/resources</directory>
+                <filtering>false</filtering>
+            </testResource>
+            <testResource>
+                <directory>src/test/resources-its</directory>
+                <filtering>true</filtering>
+            </testResource>
+        </testResources>
+
         <pluginManagement>
             <plugins>
                 <plugin>
@@ -91,6 +129,44 @@
                     </execution>
                 </executions>
             </plugin>
+
+            <plugin>
+                <groupId>com.soebes.itf.jupiter.extension</groupId>
+                <artifactId>itf-maven-plugin</artifactId>
+                <version>${maven-it-extension.version}</version>
+                <executions>
+                    <execution>
+                        <id>installing</id>
+                        <phase>pre-integration-test</phase>
+                        <goals>
+                            <goal>install</goal>
+                            <goal>resources-its</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>3.0.0-M7</version>
+                <configuration>
+                    <!-- ! currently needed to run integration tests. -->
+                    <systemProperties>
+                        <maven.version>${maven.version}</maven.version>
+                        <maven.home>${maven.home}</maven.home>
+                    </systemProperties>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>integration-test</goal>
+                            <goal>verify</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-invoker-plugin</artifactId>
@@ -135,7 +211,7 @@
                         <configuration>
                             <target>
                                 <replaceregexp match="\$\{revision\}" replace="${project.version}" flags="g" byline="true">
-                                    <fileset dir="${project.build.directory}/local-repo/com/weedow/" includes="**/*.pom" />
+                                    <fileset dir="${project.build.directory}/local-repo/com/weedow/" includes="**/*.pom"/>
                                 </replaceregexp>
                             </target>
                         </configuration>
@@ -162,7 +238,7 @@
                         <localRepo>
                             <source>${project.build.directory}/local-repo</source>
                         </localRepo>
-                        <proxyRepo />
+                        <proxyRepo/>
                     </repositories>
                 </configuration>
             </plugin>
