@@ -130,6 +130,10 @@
                 </executions>
             </plugin>
 
+            <!--
+            https://github.com/khmarbaise/maven-it-extension
+            https://khmarbaise.github.io/maven-it-extension/itf-documentation/usersguide/usersguide.html
+            -->
             <plugin>
                 <groupId>com.soebes.itf.jupiter.extension</groupId>
                 <artifactId>itf-maven-plugin</artifactId>
@@ -167,6 +171,7 @@
                 </executions>
             </plugin>
 
+            <!--
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-invoker-plugin</artifactId>
@@ -242,6 +247,7 @@
                     </repositories>
                 </configuration>
             </plugin>
+            -->
         </plugins>
     </build>
 </project>

@@ -1,7 +1,5 @@
 package com.weedow.schemaorg.generator.plugin;
 
-import ch.qos.logback.classic.Level;
-import ch.qos.logback.classic.LoggerContext;
 import com.weedow.schemaorg.generator.SchemaModelGeneratorBuilder;
 import com.weedow.schemaorg.generator.core.GeneratorOptions;
 import com.weedow.schemaorg.generator.core.SchemaModelGenerator;
@@ -12,8 +10,7 @@ import org.apache.maven.plugin.MojoFailureException;
 import org.apache.maven.plugins.annotations.LifecyclePhase;
 import org.apache.maven.plugins.annotations.Mojo;
 import org.apache.maven.plugins.annotations.Parameter;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.maven.project.MavenProject;
 
 import java.io.File;
 import java.util.List;
@@ -24,8 +21,6 @@ import java.util.concurrent.TimeUnit;
  */
 @Mojo(name = "generate", defaultPhase = LifecyclePhase.GENERATE_SOURCES, threadSafe = true)
 public class SchemaModelGeneratorMojo extends AbstractMojo {
-
-    private static final Logger LOG = LoggerFactory.getLogger(SchemaModelGeneratorMojo.class);
 
     @Parameter(name = "verbose", defaultValue = "false")
     private boolean verbose;
@@ -53,12 +48,26 @@ public class SchemaModelGeneratorMojo extends AbstractMojo {
     @Parameter(name = "models", property = "weedow.schemaorg.generator.maven.plugin.models")
     private List<String> models;
 
+    /** Skip the execution. */
+    @Parameter(name = "skip", property = "codegen.skip", defaultValue = "false")
+    private boolean skip;
+
+    /** Add the output directory to the project as a source root, so that the generated java types are compiled and included in the project artifact. */
+    @Parameter(defaultValue = "true")
+    private boolean addCompileSourceRoot = true;
+
+    /** The project being built. */
+    @Parameter(readonly = true, required = true, defaultValue = "${project}")
+    private MavenProject project;
+
     @Override
     public void execute() throws MojoExecutionException, MojoFailureException {
-        if (verbose) {
-            LoggerContext loggerContext = (LoggerContext) LoggerFactory.getILoggerFactory();
-            ch.qos.logback.classic.Logger logger = loggerContext.getLogger("com.weedow.schemaorg");
-            logger.setLevel(Level.DEBUG);
+        if (skip) {
+            getLog().info("Code generation is skipped.");
+            // Even when no new sources are generated, the existing ones should
+            // still be compiled if needed.
+            addCompileSourceRootIfConfigured();
+            return;
         }
 
         long start = System.currentTimeMillis();
@@ -66,16 +75,29 @@ public class SchemaModelGeneratorMojo extends AbstractMojo {
         ParserOptions parserOptions = new ParserOptions();
         parserOptions.setSchemaVersion(schemaVersion);
 
-        GeneratorOptions generatorOptions = new GeneratorOptions();
-        generatorOptions.setModels(models);
+        GeneratorOptions generatorOptions = new GeneratorOptions()
+                .setOutputFolder(output.toPath())
+                .setModels(models)
+                .setModelPackage(modelPackage)
+                .setModelImplPackage(modelImplPackage)
+                .setDataTypePackage(dataTypePackage);
 
         final SchemaModelGenerator generator = new SchemaModelGeneratorBuilder()
                 .parserOptions(parserOptions)
                 .generatorOptions(generatorOptions)
+                .verbose(verbose)
                 .build();
         generator.generate();
 
+        addCompileSourceRootIfConfigured();
+
         long end = System.currentTimeMillis();
-        LOG.info("Finished: {} s", TimeUnit.SECONDS.convert(end - start, TimeUnit.MILLISECONDS));
+        getLog().info(String.format("Finished: %s s", TimeUnit.SECONDS.convert(end - start, TimeUnit.MILLISECONDS)));
+    }
+
+    private void addCompileSourceRootIfConfigured() {
+        if (addCompileSourceRoot) {
+            project.addCompileSourceRoot(output.toString());
+        }
     }
 }
