@@ -15,7 +15,7 @@ import java.util.List;
 @Accessors(chain = true)
 public final class GeneratorOptions {
 
-    private Path outputFolder = Path.of("target", "schemaorg");
+    private Path outputFolder = Path.of("target", "generated-sources", "schemaorg");
     private String modelPackage = "org.schema.model";
     private String modelImplPackage = "org.schema.model.impl";
     private String dataTypePackage = "org.schema.model.datatype";
