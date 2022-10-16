@@ -1,0 +1,21 @@
+# To get started with Dependabot version updates, you'll need to specify which
+# package ecosystems to update and where the package manifests are located.
+# Please see the documentation for all configuration options:
+# https://help.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
+
+version: 2
+updates:
+
+  # Maintain dependencies for Maven
+  - package-ecosystem: "maven"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    open-pull-requests-limit: 10
+
+  # Maintain dependencies for GitHub Actions
+  - package-ecosystem: "github-actions"
+    # Set the directory to / to check for workflow files stored in the default location of `.github/workflows`
+    directory: "/"
+    schedule:
+      interval: "daily"
