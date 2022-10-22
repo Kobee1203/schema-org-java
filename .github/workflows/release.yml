@@ -1,0 +1,69 @@
+name: Release
+
+on:
+  push:
+    branches: [ 'releases/**' ]
+    paths-ignore:
+      - 'docs/**'
+      - '**.md'
+
+jobs:
+  build:
+    if: "!contains(toJSON(github.event.commits.*.message), '[skip ci]')"
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - id: install-secret-key
+        name: Install gpg secret key
+        run: |
+          cat <(echo -e "${{ secrets.OSSRH_GPG_SECRET_KEY }}") | gpg --batch --import
+          gpg --list-secret-keys --keyid-format LONG
+      - name: Setup git user configuration
+        run: |
+          echo "Setup git user name to '$GIT_RELEASE_BOT_NAME'"
+          git config --global user.name "$GIT_RELEASE_BOT_NAME";
+          echo "Setup git user email to '$GIT_RELEASE_BOT_EMAIL'"
+          git config --global user.email "$GIT_RELEASE_BOT_EMAIL";
+        env:
+          GIT_RELEASE_BOT_NAME: ${{ secrets.GIT_RELEASE_BOT_NAME }}
+          GIT_RELEASE_BOT_EMAIL: ${{ secrets.GIT_RELEASE_BOT_EMAIL }}
+
+      - name: 'Checkout repository on branch: ${{ github.REF }}'
+        uses: actions/checkout@v3
+        env:
+          GIT_TRACE: 1
+          GIT_CURL_VERBOSE: 1
+        with:
+          ref: ${{ github.REF }}
+
+      - name: Set up JDK 11
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'zulu'
+          java-version: 11
+
+      - name: Create Maven Settings
+        uses: whelk-io/maven-settings-xml-action@v20
+        with:
+          servers: '[
+            {
+              "id": "ossrh",
+              "username": "${{ secrets.OSSRH_USERNAME }}",
+              "password": "${{ secrets.OSSRH_PASSWORD }}"
+            },
+            {
+              "id": "github",
+              "username": "${{ github.actor }}",
+              "password": "${{ github.token }}"
+            }
+          ]'
+
+      - name: Maven Version
+        run: mvn --version
+
+      - name: Prepare Release (Dry Run)
+        run: mvn --batch-mode -Dgpg.passphrase="${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}" -DdryRun=true release:clean release:prepare -P release,ossrh
+
+      - name: Prepare and Perform Release
+        run: mvn --batch-mode -Dgpg.passphrase="${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}" release:clean release:prepare release:perform -P release,ossrh

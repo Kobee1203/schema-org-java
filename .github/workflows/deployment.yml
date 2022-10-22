@@ -1,0 +1,45 @@
+name: Deployment
+
+on:
+  push:
+    branches:
+      - 'releases/**'
+      - 'develop'
+
+jobs:
+  build:
+    if: "!contains(toJSON(github.event.commits.*.message), '[skip ci]')"
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - id: install-secret-key
+        name: Install gpg secret key
+        run: |
+          cat <(echo -e "${{ secrets.OSSRH_GPG_SECRET_KEY }}") | gpg --batch --import
+          gpg --list-secret-keys --keyid-format LONG
+      - name: 'Checkout repository on branch: ${{ github.REF }}'
+        uses: actions/checkout@v3
+        env:
+          GIT_TRACE: 1
+          GIT_CURL_VERBOSE: 1
+        with:
+          ref: ${{ github.REF }}
+
+      - name: Set up JDK 11 and Maven Central Repository configuration
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'zulu'
+          java-version: 11
+          server-id: ossrh
+          server-username: MAVEN_USERNAME
+          server-password: MAVEN_PASSWORD
+
+      - name: Maven Version
+        run: mvn --version
+
+      - name: Build and Deploy to the Maven Central Repository
+        run: mvn --batch-mode --update-snapshots -Dgpg.passphrase="${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}" clean deploy -P ossrh,skip-all-tests
+        env:
+          MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
+          MAVEN_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}

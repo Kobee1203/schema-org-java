@@ -15,7 +15,6 @@
     <packaging>maven-plugin</packaging>
 
     <name>schema-org-generator-maven-plugin</name>
-
     <description>Maven plugin to generate Java models from Schema.org</description>
     <url>https://github.com/Kobee1203/schema-org-java</url>
 

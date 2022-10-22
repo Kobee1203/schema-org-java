@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.weedow</groupId>
+        <artifactId>schema-org-parent</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>schema-org-java-distribution</artifactId>
+    <packaging>pom</packaging>
+
+    <name>schema-org-java-distribution</name>
+    <description>Schema.org Java Distribution</description>
+
+    <properties>
+        <maven.deploy.skip>true</maven.deploy.skip>
+
+        <maven-assembly-plugin.version>3.4.2</maven-assembly-plugin.version>
+        <github-release-plugin.version>1.4.0</github-release-plugin.version>
+    </properties>
+
+    <profiles>
+        <profile>
+            <id>release</id>
+
+            <!-- NOTE: These dependency declarations are only required to sort this project to the end of the line in the multimodule build. -->
+            <dependencies>
+                <dependency>
+                    <groupId>com.weedow</groupId>
+                    <artifactId>schema-org-generator</artifactId>
+                    <version>${project.version}</version>
+                </dependency>
+
+                <dependency>
+                    <groupId>com.weedow</groupId>
+                    <artifactId>schema-org-generator-maven-plugin</artifactId>
+                    <version>${project.version}</version>
+                </dependency>
+            </dependencies>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-assembly-plugin</artifactId>
+                        <version>${maven-assembly-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>distro-assembly</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>single</goal>
+                                </goals>
+                                <configuration>
+                                    <appendAssemblyId>false</appendAssemblyId>
+                                    <descriptors>
+                                        <descriptor>src/assembly/assembly.xml</descriptor>
+                                    </descriptors>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>de.jutzig</groupId>
+                        <artifactId>github-release-plugin</artifactId>
+                        <version>${github-release-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <phase>deploy</phase>
+                                <goals>
+                                    <goal>release</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <description>Release Schema.org Java ${project.version}</description>
+                            <releaseName>${project.version}</releaseName>
+                            <tag>${project.version}</tag>
+
+                            <artifact>${project.build.directory}/${project.artifactId}-${project.version}.zip</artifact>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <profile>
+            <id>ossrh</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.sonatype.plugins</groupId>
+                        <artifactId>nexus-staging-maven-plugin</artifactId>
+                        <configuration>
+                            <skipNexusStagingDeployMojo>${maven.deploy.skip}</skipNexusStagingDeployMojo>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+</project>
