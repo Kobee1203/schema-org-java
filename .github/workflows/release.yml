@@ -63,7 +63,7 @@ jobs:
         run: mvn --version
 
       - name: Prepare Release (Dry Run)
-        run: mvn --batch-mode -Dgpg.passphrase="${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}" -DdryRun=true release:clean release:prepare -P release,ossrh
+        run: mvn -B -Dgpg.passphrase="${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}" -DdryRun=true release:clean release:prepare -P release,ossrh
 
       - name: Prepare and Perform Release
-        run: mvn --batch-mode -Dgpg.passphrase="${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}" release:clean release:prepare release:perform -P release,ossrh
+        run: mvn -B -Dgpg.passphrase="${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}" release:clean release:prepare release:perform -P release,ossrh

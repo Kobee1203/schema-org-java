@@ -42,11 +42,8 @@ jobs:
       - name: Maven Version
         run: mvn --version
 
-      - name: Build Project
-        run: mvn --batch-mode --update-snapshots clean verify
-
-      - name: Analyze with Sonar
-        run: mvn --batch-mode sonar:sonar -Dsonar.login=$SONAR_TOKEN
+      - name: Build Project And Analyze with Sonar
+        run: mvn -e -B -U clean install org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.login=$SONAR_TOKEN
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}

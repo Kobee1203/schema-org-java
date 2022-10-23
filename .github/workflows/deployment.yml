@@ -39,7 +39,7 @@ jobs:
         run: mvn --version
 
       - name: Build and Deploy to the Maven Central Repository
-        run: mvn --batch-mode --update-snapshots -Dgpg.passphrase="${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}" clean deploy -P ossrh,skip-all-tests
+        run: mvn -B -U -Dgpg.passphrase="${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}" clean deploy -DskipTests -P ossrh
         env:
           MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}

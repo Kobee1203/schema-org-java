@@ -16,6 +16,10 @@
     <description>Generates Java models from Schema.org</description>
     <url>https://github.com/Kobee1203/schema-org-java</url>
 
+    <properties>
+        <sonar.coverage.jacoco.xmlReportPaths>${project.basedir}/../report/target/site/jacoco-aggregate/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>ch.qos.logback</groupId>
