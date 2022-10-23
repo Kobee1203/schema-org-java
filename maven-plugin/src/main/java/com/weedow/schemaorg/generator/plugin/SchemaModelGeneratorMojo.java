@@ -82,7 +82,7 @@ public class SchemaModelGeneratorMojo extends AbstractMojo {
                 .setModelImplPackage(modelImplPackage)
                 .setDataTypePackage(dataTypePackage);
 
-        final SchemaModelGenerator generator = new SchemaModelGeneratorBuilder()
+        final SchemaModelGenerator generator = schemaModelGeneratorBuilder()
                 .parserOptions(parserOptions)
                 .generatorOptions(generatorOptions)
                 .verbose(verbose)
@@ -99,5 +99,9 @@ public class SchemaModelGeneratorMojo extends AbstractMojo {
         if (addCompileSourceRoot) {
             project.addCompileSourceRoot(output.toString());
         }
+    }
+
+    SchemaModelGeneratorBuilder schemaModelGeneratorBuilder() {
+        return new SchemaModelGeneratorBuilder();
     }
 }

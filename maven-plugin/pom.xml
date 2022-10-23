@@ -77,6 +77,11 @@
             <scope>test</scope>
         </dependency>
         <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-junit-jupiter</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
             <groupId>com.soebes.itf.jupiter.extension</groupId>
             <artifactId>itf-jupiter-extension</artifactId>
             <version>${maven-it-extension.version}</version>
@@ -86,6 +91,12 @@
             <groupId>com.soebes.itf.jupiter.extension</groupId>
             <artifactId>itf-assertj</artifactId>
             <version>${maven-it-extension.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven</groupId>
+            <artifactId>maven-core</artifactId>
+            <version>3.8.6</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
