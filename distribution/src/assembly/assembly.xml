@@ -1,0 +1,33 @@
+<assembly xmlns="http://maven.apache.org/ASSEMBLY/2.1.1"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/ASSEMBLY/2.1.1 http://maven.apache.org/xsd/assembly-2.1.1.xsd">
+    <id>distrib</id>
+
+    <formats>
+        <format>zip</format>
+    </formats>
+
+    <includeBaseDirectory>false</includeBaseDirectory>
+
+    <fileSets>
+        <!-- Generator -->
+        <fileSet>
+            <outputDirectory>generator</outputDirectory>
+            <directory>${project.basedir}/../generator/target</directory>
+            <includes>
+                <include>*-generator-*.jar</include>
+                <include>./dependencies/*.jar</include>
+            </includes>
+        </fileSet>
+
+        <!-- Maven Plugin -->
+        <fileSet>
+            <outputDirectory>maven-plugin</outputDirectory>
+            <directory>${project.basedir}/../maven-plugin/target</directory>
+            <includes>
+                <include>*-maven-plugin-*.jar</include>
+                <include>./dependencies/*.jar</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+</assembly>
