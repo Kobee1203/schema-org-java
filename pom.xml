@@ -73,6 +73,9 @@
         <jacoco-maven-plugin.version>0.8.8</jacoco-maven-plugin.version>
         <lombok-maven-plugin.version>1.18.20.0</lombok-maven-plugin.version>
         <nexus-staging-maven-plugin.version>1.6.13</nexus-staging-maven-plugin.version>
+        <equalsverifier.version>3.10.1</equalsverifier.version>
+        <to-string-verifier.version>1.4.8</to-string-verifier.version>
+        <system-stubs-jupiter.version>2.0.1</system-stubs-jupiter.version>
     </properties>
 
     <modules>
@@ -145,6 +148,25 @@
                 <groupId>org.mockito</groupId>
                 <artifactId>mockito-junit-jupiter</artifactId>
                 <version>${mockito-junit-jupiter.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>nl.jqno.equalsverifier</groupId>
+                <artifactId>equalsverifier</artifactId>
+                <version>${equalsverifier.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.jparams</groupId>
+                <artifactId>to-string-verifier</artifactId>
+                <version>${to-string-verifier.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <!-- https://github.com/webcompere/system-stubs -->
+            <dependency>
+                <groupId>uk.org.webcompere</groupId>
+                <artifactId>system-stubs-jupiter</artifactId>
+                <version>${system-stubs-jupiter.version}</version>
                 <scope>test</scope>
             </dependency>
         </dependencies>

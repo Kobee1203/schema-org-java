@@ -15,6 +15,12 @@ public class SchemaModelGeneratorApp {
 
     private static final Logger LOG = LoggerFactory.getLogger(SchemaModelGeneratorApp.class);
 
+    private static final String VERBOSE_OPTION = "verbose";
+    private static final String TIMER_OPTION = "timer";
+    private static final String VERSION_OPTION = "version";
+    private static final String MODELS_OPTION = "models";
+    private static final String HELP_OPTION = "help";
+
     public static void main(String[] args) throws ParseException {
         // Options
         final Options firstOptions = configFirstParameters();
@@ -24,7 +30,7 @@ public class SchemaModelGeneratorApp {
         final CommandLineParser parser = new DefaultParser();
         final CommandLine firstLine = parser.parse(firstOptions, args, true);
 
-        boolean helpMode = firstLine.hasOption("help");
+        boolean helpMode = firstLine.hasOption(HELP_OPTION);
         if (helpMode) {
             final HelpFormatter formatter = new HelpFormatter();
             formatter.printHelp("java -jar schema-org-generator.jar SchemaModelGeneratorApp", options, true);
@@ -34,15 +40,17 @@ public class SchemaModelGeneratorApp {
         // Parsing options
         final CommandLine line = parser.parse(options, args);
 
+        // Models - if null all models will be generated
+        List<String> models = line.hasOption(MODELS_OPTION) ? Arrays.asList(line.getOptionValues(MODELS_OPTION)) : null;
+
+        // Schema version - if null the schema model resource into the JAR is used
+        final String schemaVersion = line.getOptionValue(VERSION_OPTION, null);
+
         // Verbose
-        final boolean verboseMode = line.hasOption("verbose");
+        final boolean verboseMode = line.hasOption(VERBOSE_OPTION);
 
         // Timer
-        final boolean timerMode = verboseMode || line.hasOption("timer");
-
-        final String schemaVersion = line.getOptionValue("version", null);
-
-        List<String> models = line.hasOption("models") ? Arrays.asList(line.getOptionValues("models")) : null;
+        final boolean timerMode = verboseMode || line.hasOption(TIMER_OPTION);
 
         generate(schemaVersion, models, verboseMode);
     }
@@ -69,7 +77,7 @@ public class SchemaModelGeneratorApp {
 
     private static Options configFirstParameters() {
         final Option helpFileOption = Option.builder("h")
-                .longOpt("help")
+                .longOpt(HELP_OPTION)
                 .desc("Show the help message")
                 .build();
 
@@ -82,30 +90,30 @@ public class SchemaModelGeneratorApp {
 
     private static Options configParameters(final Options firstOptions) {
         final Option modelOption = Option.builder("m")
-                .longOpt("models")
+                .longOpt(MODELS_OPTION)
                 .desc("list of models to be generated. If not specified, all models will be generated.")
                 .hasArgs()
-                .argName("models")
+                .argName(MODELS_OPTION)
                 .required(false)
                 .build();
 
         final Option versionOption = Option.builder("V")
-                .longOpt("version")
+                .longOpt(VERSION_OPTION)
                 .desc("Schema version to be used: 'latest' to use the latest version, or specific version (eg. 13.0). If not specified, the generator uses the resource in the JAR. see https://github.com/schemaorg/schemaorg/tree/main/data/releases")
                 .hasArg()
-                .argName("version")
+                .argName(VERSION_OPTION)
                 .required(false)
                 .build();
 
         final Option timerOption = Option.builder("t")
-                .longOpt("timer")
+                .longOpt(TIMER_OPTION)
                 .desc("Timer")
                 .hasArg(false)
                 .required(false)
                 .build();
 
         final Option verboseOption = Option.builder("v")
-                .longOpt("verbose")
+                .longOpt(VERBOSE_OPTION)
                 .desc("Verbose")
                 .hasArg(false)
                 .required(false)
