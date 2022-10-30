@@ -43,7 +43,7 @@
         <!-- Sonar Configuration -->
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
         <sonar.organization>kobee1203</sonar.organization>
-        <sonar.projectKey>Kobee1203_schema-org-java</sonar.projectKey>
+        <sonar.projectKey>schema-org-java</sonar.projectKey>
         <sonar.moduleKey>${project.artifactId}</sonar.moduleKey>
         <sonar.exclusions>**/generated-sources/**</sonar.exclusions>
         <sonar.coverage.exclusions>**/generated-sources/**</sonar.coverage.exclusions>
