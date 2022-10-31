@@ -16,7 +16,6 @@ public class SchemaModelGeneratorApp {
     private static final Logger LOG = LoggerFactory.getLogger(SchemaModelGeneratorApp.class);
 
     private static final String VERBOSE_OPTION = "verbose";
-    private static final String TIMER_OPTION = "timer";
     private static final String VERSION_OPTION = "version";
     private static final String MODELS_OPTION = "models";
     private static final String HELP_OPTION = "help";
@@ -48,9 +47,6 @@ public class SchemaModelGeneratorApp {
 
         // Verbose
         final boolean verboseMode = line.hasOption(VERBOSE_OPTION);
-
-        // Timer
-        final boolean timerMode = verboseMode || line.hasOption(TIMER_OPTION);
 
         generate(schemaVersion, models, verboseMode);
     }
@@ -105,13 +101,6 @@ public class SchemaModelGeneratorApp {
                 .required(false)
                 .build();
 
-        final Option timerOption = Option.builder("t")
-                .longOpt(TIMER_OPTION)
-                .desc("Timer")
-                .hasArg(false)
-                .required(false)
-                .build();
-
         final Option verboseOption = Option.builder("v")
                 .longOpt(VERBOSE_OPTION)
                 .desc("Verbose")
@@ -129,7 +118,6 @@ public class SchemaModelGeneratorApp {
         // All other options
         options.addOption(modelOption);
         options.addOption(versionOption);
-        options.addOption(timerOption);
         options.addOption(verboseOption);
 
         return options;
