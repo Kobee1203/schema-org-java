@@ -95,12 +95,13 @@ public final class Type {
     @Override
     public String toString() {
         return "---------- " + id + " ----------\n" +
-                "name        = " + name + "\n" +
-                "description = " + Optional.ofNullable(description).map(s -> s.substring(0, Math.min(50, s.length()))).orElse(null) + "\n" +
-                "parents     = " + parents.stream().map(Type::getId).collect(Collectors.joining(", ")) + "\n" +
-                "partOf      = " + String.join(", ", partOf) + "\n" +
-                "source      = " + String.join(", ", source) + "\n" +
-                "properties  = " + toString(properties) + "\n";
+                "name          = " + name + "\n" +
+                "description   = " + Optional.ofNullable(description).map(s -> s.substring(0, Math.min(50, s.length()))).orElse(null) + "\n" +
+                "parents       = " + parents.stream().map(Type::getId).collect(Collectors.joining(", ")) + "\n" +
+                "partOf        = " + String.join(", ", partOf) + "\n" +
+                "source        = " + String.join(", ", source) + "\n" +
+                "properties    = " + toString(properties) + "\n" +
+                "enum members  = " + String.join(", ", enumerationMembers) + "\n";
     }
 
     private static String toString(Collection<Property> properties) {

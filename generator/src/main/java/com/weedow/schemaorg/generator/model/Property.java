@@ -47,7 +47,7 @@ public class Property {
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", description='" + Optional.ofNullable(description).map(s -> s.substring(0, Math.min(50, s.length()))).orElse(null) + '\'' +
-                ", types=[" + types.stream().map(Type::getName).collect(Collectors.joining(", ")) + "]" +
+                ", types=[" + Optional.ofNullable(types).map(t -> t.stream().map(Type::getName).collect(Collectors.joining(", "))).orElse(null) + "]" +
                 ", partOf=" + partOf +
                 ", source=" + source +
                 '}';
