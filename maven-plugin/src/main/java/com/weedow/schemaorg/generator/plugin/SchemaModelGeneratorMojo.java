@@ -25,9 +25,13 @@ public class SchemaModelGeneratorMojo extends AbstractMojo {
     @Parameter(name = "verbose", defaultValue = "false")
     private boolean verbose;
 
-    /** Schema version to be used for generation. If not defined, uses the local resource from the plugin. */
+    /** Schema version to be used for generation. If not defined, uses the local resource named `schemaorg-current-https.jsonld` present in the classpath. */
     @Parameter(name = "schemaVersion", property = "weedow.schemaorg.generator.maven.plugin.schemaVersion")
     private String schemaVersion;
+
+    /** List of models to be generated. If not defined, all models are be generated. */
+    @Parameter(name = "models", property = "weedow.schemaorg.generator.maven.plugin.models")
+    private List<String> models;
 
     /** Location of the output directory. */
     @Parameter(name = "output", property = "weedow.schemaorg.generator.maven.plugin.output", defaultValue = "${project.build.directory}/generated-sources/schemaorg")
@@ -45,11 +49,8 @@ public class SchemaModelGeneratorMojo extends AbstractMojo {
     @Parameter(name = "dataTypePackage", property = "weedow.schemaorg.generator.maven.plugin.dataTypePackage", defaultValue = "org.schema.model.datatype")
     private String dataTypePackage;
 
-    @Parameter(name = "models", property = "weedow.schemaorg.generator.maven.plugin.models")
-    private List<String> models;
-
-    /** Skip the execution. */
-    @Parameter(name = "skip", property = "codegen.skip", defaultValue = "false")
+    /** Skip the execution. Can also be set globally through the {@code weedow.schemaorg.generator.maven.plugin.skip} property. */
+    @Parameter(name = "skip", property = "weedow.schemaorg.generator.maven.plugin.skip", defaultValue = "false")
     private boolean skip;
 
     /** Add the output directory to the project as a source root, so that the generated java types are compiled and included in the project artifact. */

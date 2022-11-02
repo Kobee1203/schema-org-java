@@ -19,7 +19,6 @@
     <properties>
         <maven.deploy.skip>true</maven.deploy.skip>
 
-        <maven-assembly-plugin.version>3.4.2</maven-assembly-plugin.version>
         <github-release-plugin.version>1.4.0</github-release-plugin.version>
     </properties>
 
@@ -46,7 +45,6 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-assembly-plugin</artifactId>
-                        <version>${maven-assembly-plugin.version}</version>
                         <executions>
                             <execution>
                                 <id>distro-assembly</id>
