@@ -2,7 +2,7 @@ name: Release
 
 on:
   push:
-    branches: [ 'releases/**' ]
+    branches: [ 'release/**' ]
     paths-ignore:
       - 'docs/**'
       - '**.md'
