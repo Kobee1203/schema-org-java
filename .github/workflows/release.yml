@@ -17,8 +17,10 @@ jobs:
       - id: install-secret-key
         name: Install gpg secret key
         run: |
-          cat <(echo -e "${{ secrets.OSSRH_GPG_SECRET_KEY }}") | gpg --batch --import
+          gpg --version
+          cat <(echo -e "${{ secrets.GPG_PRIVATE_KEY }}") | gpg --batch --import
           gpg --list-secret-keys --keyid-format LONG
+
       - name: Setup git user configuration
         run: |
           echo "Setup git user name to '$GIT_RELEASE_BOT_NAME'"
@@ -63,7 +65,15 @@ jobs:
         run: mvn --version
 
       - name: Prepare Release (Dry Run)
-        run: mvn -B -Dgpg.passphrase="${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}" -DdryRun=true release:clean release:prepare -P release,ossrh
+        run: mvn -e -X -B -DdryRun=true release:clean release:prepare -P release,ossrh
+        env:
+          SIGN_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
+          SIGN_KEY_ID: ${{ secrets.GPG_KEY_ID }}
+          SIGN_KEY_PASS: ${{ secrets.GPG_PASSPHRASE }}
 
       - name: Prepare and Perform Release
-        run: mvn -B -Dgpg.passphrase="${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}" release:clean release:prepare release:perform -P release,ossrh
+        run: mvn -B release:clean release:prepare release:perform -P release,ossrh
+        env:
+          SIGN_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
+          SIGN_KEY_ID: ${{ secrets.GPG_KEY_ID }}
+          SIGN_KEY_PASS: ${{ secrets.GPG_PASSPHRASE }}
