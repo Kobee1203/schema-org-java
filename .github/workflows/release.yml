@@ -65,14 +65,14 @@ jobs:
         run: mvn --version
 
       - name: Prepare Release (Dry Run)
-        run: mvn -e -X -B -DdryRun=true release:clean release:prepare -P release,ossrh
+        run: mvn -e -B -DdryRun=true release:clean release:prepare -P release,ossrh
         env:
           SIGN_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
           SIGN_KEY_ID: ${{ secrets.GPG_KEY_ID }}
           SIGN_KEY_PASS: ${{ secrets.GPG_PASSPHRASE }}
 
       - name: Prepare and Perform Release
-        run: mvn -B release:clean release:prepare release:perform -P release,ossrh
+        run: mvn -e -B release:clean release:prepare release:perform -P release,ossrh
         env:
           SIGN_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
           SIGN_KEY_ID: ${{ secrets.GPG_KEY_ID }}
