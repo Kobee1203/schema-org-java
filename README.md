@@ -31,12 +31,14 @@ The library has the following features:
 * Supports different versions of the [Schema.org vocabulary](https://schema.org/docs/developers.html#defs)
 <!--* Supports serializing and deserializing schema.org objects to and from JSON-LD formats.-->
 
+https://user-images.githubusercontent.com/1423193/199852384-e41869fb-beae-4106-be0f-1482393b9e0c.mp4
+
 ## <a name="Build">Build</a>
-![GitHub repo size](https://img.shields.io/github/repo-size/Kobee1203/schema-org-java)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Kobee1203/schema-org-java)
+[![GitHub repo size](https://img.shields.io/github/repo-size/Kobee1203/schema-org-java)](https://github.com/Kobee1203/schema-org-java)
+[![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Kobee1203/schema-org-java)](https://github.com/Kobee1203/schema-org-java)
 
 [![Build](https://img.shields.io/github/workflow/status/Kobee1203/schema-org-java/Build%20and%20Analyze)](https://github.com/Kobee1203/schema-org-java/actions?query=workflow%3A%22Build+and+Analyze%22)
-[![Libraries.io dependency status for GitHub repo](https://img.shields.io/librariesio/github/Kobee1203/schema-org-java)]()
+[![Libraries.io dependency status for GitHub repo](https://img.shields.io/librariesio/github/Kobee1203/schema-org-java)](https://libraries.io/github/Kobee1203/schema-org-java)
 
 [![Code Coverage](https://img.shields.io/sonar/coverage/schema-org-java?server=https%3A%2F%2Fsonarcloud.io)](https://sonarcloud.io/dashboard?id=schema-org-java)
 [![Sonar Quality Gate](https://img.shields.io/sonar/quality_gate/schema-org-java?server=https%3A%2F%2Fsonarcloud.io)](https://sonarcloud.io/dashboard?id=schema-org-java)
@@ -44,6 +46,10 @@ The library has the following features:
 [![Sonar Violations](https://img.shields.io/sonar/violations/schema-org-java?server=https%3A%2F%2Fsonarcloud.io)](https://sonarcloud.io/dashboard?id=schema-org-java)
 
 ## <a name="Generator">Generator</a>
+
+[![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/Kobee1203/schema-org-java?include_prereleases)](https://github.com/Kobee1203/schema-org-java/releases)
+[![Downloads](https://img.shields.io/github/downloads/Kobee1203/schema-org-java/total)](https://github.com/Kobee1203/schema-org-java/releases)
+3[![Maven Central](https://img.shields.io/maven-central/v/com.weedow/schema-org-generator)](https://search.maven.org/search?q=g:com.weedow%20AND%20a:schema-org-generator*)
 
 The library allows to generate Schema.org types in several ways.
 
