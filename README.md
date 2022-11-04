@@ -28,7 +28,7 @@ The library has the following features:
   properties of that particular type.
 * Supports the generation of all Schema.org types at once, or specific ones.
 * Fully supports Schema.org documentation of types and properties by adding Javadoc on generated classes and methods. 
-* Supports different versions of the [Schema.org vocabulary](https://schema.org/docs/developers.html#defs)
+* Supports different versions of the [Schema.org vocabulary](https://schema.org/docs/developers.html#defs).
 <!--* Supports serializing and deserializing schema.org objects to and from JSON-LD formats.-->
 
 https://user-images.githubusercontent.com/1423193/199852384-e41869fb-beae-4106-be0f-1482393b9e0c.mp4
@@ -49,7 +49,7 @@ https://user-images.githubusercontent.com/1423193/199852384-e41869fb-beae-4106-b
 
 [![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/Kobee1203/schema-org-java?include_prereleases)](https://github.com/Kobee1203/schema-org-java/releases)
 [![Downloads](https://img.shields.io/github/downloads/Kobee1203/schema-org-java/total)](https://github.com/Kobee1203/schema-org-java/releases)
-3[![Maven Central](https://img.shields.io/maven-central/v/com.weedow/schema-org-generator)](https://search.maven.org/search?q=g:com.weedow%20AND%20a:schema-org-generator*)
+[![Maven Central](https://img.shields.io/maven-central/v/com.weedow/schema-org-generator)](https://search.maven.org/search?q=g:com.weedow%20AND%20a:schema-org-generator*)
 
 The library allows to generate Schema.org types in several ways.
 
