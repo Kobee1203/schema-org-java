@@ -6,7 +6,7 @@ import com.weedow.schemaorg.generator.model.jsonld.GraphItem;
 import java.util.List;
 import java.util.Map;
 
-public class DataTypeModelHandlerImpl extends ClassModelHandlerImpl {
+public class DataTypeModelHandlerImpl extends AbstractTypeModelHandler {
 
     @Override
     public boolean supports(GraphItem graphItem) {
@@ -18,10 +18,9 @@ public class DataTypeModelHandlerImpl extends ClassModelHandlerImpl {
     public void handle(Map<String, Type> schemaDefinitions, GraphItem graphItem) {
         super.handle(schemaDefinitions, graphItem);
 
-        final String typeId = ModelHandlerUtils.getTypeId(graphItem.getId());
-        final Type type = ModelHandlerUtils.getType(schemaDefinitions, typeId);
+        final Type type = getType(schemaDefinitions, graphItem);
 
-        type.setJavaType(ModelHandlerUtils.getJavaType(typeId, null));
+        type.setJavaType(ModelHandlerUtils.getJavaType(type.getId(), null));
         type.addParent(ModelHandlerUtils.getType(schemaDefinitions, ModelHandlerUtils.getTypeId("schema:DataType")));
     }
 }

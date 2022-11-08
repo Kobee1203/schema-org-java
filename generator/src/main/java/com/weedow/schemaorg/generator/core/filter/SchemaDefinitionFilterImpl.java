@@ -28,10 +28,11 @@ public class SchemaDefinitionFilterImpl implements SchemaDefinitionFilter {
                         addType(types, type);
                         return types.stream();
                     })
-                    .collect(Collectors.toUnmodifiableMap(Type::getId, Function.identity(), (oldValue, newValue) -> oldValue));
+                    .collect(Collectors.toMap(Type::getId, Function.identity(), (oldValue, newValue) -> oldValue, LinkedHashMap::new));
         }
 
-        return filteredSchemaDefinitions;
+        // Unmodifiable Map
+        return Collections.unmodifiableMap(filteredSchemaDefinitions);
     }
 
     private static void addType(Set<Type> types, Type type) {

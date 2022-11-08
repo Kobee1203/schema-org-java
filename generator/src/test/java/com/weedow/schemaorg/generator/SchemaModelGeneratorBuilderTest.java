@@ -58,6 +58,7 @@ class SchemaModelGeneratorBuilderTest {
                 .addErrorHandler((templateName, outputFile, context, e) -> Assertions.fail("An error occurred while generating {}: {}", outputFile, e.getMessage()));
 
         final SchemaModelGenerator schemaModelGenerator = new SchemaModelGeneratorBuilder()
+                .verbose(true)
                 .parserOptions(parserOptions)
                 .generatorOptions(generatorOptions)
                 .build();

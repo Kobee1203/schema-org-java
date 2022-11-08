@@ -26,6 +26,8 @@ public final class Type {
     @EqualsAndHashCode.Exclude
     private Set<Property> allProperties;
 
+    private BaseType baseParent;
+
     @Setter(AccessLevel.NONE)
     private final List<Type> parents = new ArrayList<>();
 
