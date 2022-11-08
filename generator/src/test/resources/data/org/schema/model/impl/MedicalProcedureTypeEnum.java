@@ -5,11 +5,21 @@
  */
 package org.schema.model.impl;
 
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
-import org.schema.model.Action;
-import org.schema.model.MedicalProcedureType;
-import org.schema.model.datatype.Text;
+import org.schema.model.Enumeration;
+import org.schema.model.Class;
+import org.schema.model.Property;
+import org.schema.model.CreativeWork;
 import org.schema.model.datatype.URL;
+import org.schema.model.datatype.Text;
+import org.schema.model.Action;
+import org.schema.model.ImageObject;
+import org.schema.model.Event;
+import org.schema.model.PropertyValue;
+import org.schema.model.Thing;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import org.schema.model.Intangible;
+import org.schema.model.MedicalEnumeration;
+import org.schema.model.MedicalProcedureType;
 
 /**
  * An enumeration that describes different types of medical procedures.
@@ -36,31 +46,31 @@ public enum MedicalProcedureTypeEnum implements MedicalProcedureType {
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
     public  java.lang.String getContext() {
-      return null;
+        return null;
     }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
     public  java.lang.String getId() {
-      return null;
+        return null;
     }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
     public  java.lang.String getType() {
-      return null;
+        return null;
     }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
     public  void setContext(java.lang.String arg0) {
-      throw new java.lang.IllegalAccessError("Method 'setContext' not allowed for enum MedicalProcedureTypeEnum");
+        throw new java.lang.IllegalAccessError("Method 'setContext' not allowed for enum MedicalProcedureTypeEnum");
     }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
     public  void setId(java.lang.String arg0) {
-      throw new java.lang.IllegalAccessError("Method 'setId' not allowed for enum MedicalProcedureTypeEnum");
+        throw new java.lang.IllegalAccessError("Method 'setId' not allowed for enum MedicalProcedureTypeEnum");
     }
 
 

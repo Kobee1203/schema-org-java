@@ -12,7 +12,10 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Path;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 class SchemaModelGeneratorBuilderTest {
 
@@ -26,13 +29,13 @@ class SchemaModelGeneratorBuilderTest {
 
     @Test
     void generate_specific_models() {
-        List<String> models = Arrays.asList("Thing");
+        List<String> models = List.of("Thing");
 
         generateAndVerify(models);
     }
 
     private void generateAndVerify(List<String> models) {
-        final Map<Path, List<String>> dataMap = new HashMap<>();
+        final Map<Path, List<String>> dataMap = new ConcurrentHashMap<>();
 
         final ParserOptions parserOptions = new ParserOptions();
         parserOptions.setSchemaVersion(null); // Use local resource
@@ -58,19 +61,18 @@ class SchemaModelGeneratorBuilderTest {
                 .addErrorHandler((templateName, outputFile, context, e) -> Assertions.fail("An error occurred while generating {}: {}", outputFile, e.getMessage()));
 
         final SchemaModelGenerator schemaModelGenerator = new SchemaModelGeneratorBuilder()
-                .verbose(true)
                 .parserOptions(parserOptions)
                 .generatorOptions(generatorOptions)
                 .build();
         schemaModelGenerator.generate();
         Assertions.assertThat(dataMap).hasSize(3);
         int dataTypeCount = 13;
-        int modelCount = 882; // + JsonLdTypeName
-        int modelImplCount = 881;
+        int modelCount = 880;
+        int modelImplCount = 880;
         if (models != null && !models.isEmpty()) {
             dataTypeCount = 11;
-            modelCount = 207; // + JsonLdTypeName
-            modelImplCount = 206;
+            modelCount = 205;
+            modelImplCount = 205;
         }
         Assertions.assertThat(dataMap.get(Path.of("org", "schema", "model", "datatype"))).hasSize(dataTypeCount);
         Assertions.assertThat(dataMap.get(Path.of("org", "schema", "model"))).hasSize(modelCount);

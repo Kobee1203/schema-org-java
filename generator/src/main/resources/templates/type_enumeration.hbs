@@ -30,9 +30,9 @@ public enum {{this.name}}Enum implements {{this.name}} {
     @Override
     {{this.modifiers}} {{&this.returnType}} {{this.name}}({{this.parametersAsString}}){{this.exceptionsAsString}} {
     {{#if this.voidReturnType}}{{!--
-    --}}  throw new java.lang.IllegalAccessError("Method '{{this.name}}' not allowed for enum {{../this.name}}Enum");{{!--
+    --}}    throw new java.lang.IllegalAccessError("Method '{{this.name}}' not allowed for enum {{../this.name}}Enum");{{!--
     --}}{{else}}{{!--
-    --}}  return null;{{!--
+    --}}    return null;{{!--
     --}}{{/if}}
     }
 
