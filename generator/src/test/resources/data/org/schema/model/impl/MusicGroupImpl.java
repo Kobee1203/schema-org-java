@@ -44,7 +44,7 @@ import org.schema.model.OfferCatalog;
 import org.schema.model.Event;
 import org.schema.model.Action;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.PerformingGroup;
 import org.schema.model.MusicGroup;
 
@@ -54,7 +54,7 @@ import org.schema.model.MusicGroup;
  * @see <a href="https://schema.org/MusicGroup">https://schema.org/MusicGroup</a>
  */
 @JsonLdTypeName("schema:MusicGroup")
-public class MusicGroupImpl implements MusicGroup {
+public class MusicGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MusicGroup {
 
     private MusicRecording fTracks;
 

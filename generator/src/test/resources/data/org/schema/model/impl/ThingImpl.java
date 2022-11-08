@@ -13,7 +13,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 
 /**
  * The most generic type of item.
@@ -21,7 +21,7 @@ import org.schema.model.JsonLdTypeName;
  * @see <a href="https://schema.org/Thing">https://schema.org/Thing</a>
  */
 @JsonLdTypeName("schema:Thing")
-public class ThingImpl implements Thing {
+public class ThingImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Thing {
 
     private Object fMainEntityOfPage;
 

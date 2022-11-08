@@ -53,7 +53,7 @@ import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.MusicVideoObject;
 
 /**
@@ -62,7 +62,7 @@ import org.schema.model.MusicVideoObject;
  * @see <a href="https://schema.org/MusicVideoObject">https://schema.org/MusicVideoObject</a>
  */
 @JsonLdTypeName("schema:MusicVideoObject")
-public class MusicVideoObjectImpl implements MusicVideoObject {
+public class MusicVideoObjectImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MusicVideoObject {
 
     private Text fContentSize;
 

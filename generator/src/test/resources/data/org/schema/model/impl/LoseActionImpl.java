@@ -22,7 +22,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.AchieveAction;
 import org.schema.model.LoseAction;
 
@@ -32,7 +32,7 @@ import org.schema.model.LoseAction;
  * @see <a href="https://schema.org/LoseAction">https://schema.org/LoseAction</a>
  */
 @JsonLdTypeName("schema:LoseAction")
-public class LoseActionImpl implements LoseAction {
+public class LoseActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements LoseAction {
 
     private Person fWinner;
 

@@ -35,7 +35,7 @@ import org.schema.model.Schedule;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 
 /**
  * An event happening at a certain time and location, such as a concert, lecture, or festival. Ticketing information may be added via the [[offers]] property. Repeated events may be structured as separate Event objects.
@@ -43,7 +43,7 @@ import org.schema.model.JsonLdTypeName;
  * @see <a href="https://schema.org/Event">https://schema.org/Event</a>
  */
 @JsonLdTypeName("schema:Event")
-public class EventImpl implements Event {
+public class EventImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Event {
 
     private Event fSuperEvent;
 

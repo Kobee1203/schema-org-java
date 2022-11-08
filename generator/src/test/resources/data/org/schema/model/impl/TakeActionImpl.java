@@ -22,7 +22,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.TransferAction;
 import org.schema.model.TakeAction;
 
@@ -32,7 +32,7 @@ import org.schema.model.TakeAction;
  * @see <a href="https://schema.org/TakeAction">https://schema.org/TakeAction</a>
  */
 @JsonLdTypeName("schema:TakeAction")
-public class TakeActionImpl implements TakeAction {
+public class TakeActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements TakeAction {
 
     private Place fFromLocation;
 

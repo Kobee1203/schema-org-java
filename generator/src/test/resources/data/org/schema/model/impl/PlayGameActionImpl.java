@@ -25,7 +25,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.ConsumeAction;
 import org.schema.model.PlayGameAction;
 
@@ -37,7 +37,7 @@ import org.schema.model.PlayGameAction;
  * @see <a href="https://schema.org/PlayGameAction">https://schema.org/PlayGameAction</a>
  */
 @JsonLdTypeName("schema:PlayGameAction")
-public class PlayGameActionImpl implements PlayGameAction {
+public class PlayGameActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PlayGameAction {
 
     private Object fGameAvailabilityType;
 

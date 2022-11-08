@@ -22,7 +22,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.InteractAction;
 import org.schema.model.MarryAction;
 
@@ -32,7 +32,7 @@ import org.schema.model.MarryAction;
  * @see <a href="https://schema.org/MarryAction">https://schema.org/MarryAction</a>
  */
 @JsonLdTypeName("schema:MarryAction")
-public class MarryActionImpl implements MarryAction {
+public class MarryActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MarryAction {
 
     private Object fAgent;
 

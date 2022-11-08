@@ -48,7 +48,7 @@ import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Thesis;
 
 /**
@@ -59,7 +59,7 @@ import org.schema.model.Thesis;
  * @see <a href="https://schema.org/Thesis">https://schema.org/Thesis</a>
  */
 @JsonLdTypeName("schema:Thesis")
-public class ThesisImpl implements Thesis {
+public class ThesisImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Thesis {
 
     private Text fInSupportOf;
 

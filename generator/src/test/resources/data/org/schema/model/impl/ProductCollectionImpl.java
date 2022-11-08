@@ -39,7 +39,7 @@ import org.schema.model.datatype.Boolean;
 import org.schema.model.CreativeWork;
 import org.schema.model.Action;
 import org.schema.model.Event;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.datatype.Integer;
 import org.schema.model.datatype.DateTime;
 import org.schema.model.Person;
@@ -72,7 +72,7 @@ import org.schema.model.ProductCollection;
  * @see <a href="https://schema.org/ProductCollection">https://schema.org/ProductCollection</a>
  */
 @JsonLdTypeName("schema:ProductCollection")
-public class ProductCollectionImpl implements ProductCollection {
+public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ProductCollection {
 
     private TypeAndQuantityNode fIncludesObject;
 

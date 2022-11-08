@@ -28,7 +28,7 @@ import org.schema.model.Event;
 import org.schema.model.CreativeWork;
 import org.schema.model.Action;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Landform;
 import org.schema.model.BodyOfWater;
 import org.schema.model.RiverBodyOfWater;
@@ -39,7 +39,7 @@ import org.schema.model.RiverBodyOfWater;
  * @see <a href="https://schema.org/RiverBodyOfWater">https://schema.org/RiverBodyOfWater</a>
  */
 @JsonLdTypeName("schema:RiverBodyOfWater")
-public class RiverBodyOfWaterImpl implements RiverBodyOfWater {
+public class RiverBodyOfWaterImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements RiverBodyOfWater {
 
     private Text fTelephone;
 

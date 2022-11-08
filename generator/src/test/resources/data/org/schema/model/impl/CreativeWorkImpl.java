@@ -48,7 +48,7 @@ import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 
 /**
  * The most generic kind of creative work, including books, movies, photographs, software programs, etc.
@@ -57,7 +57,7 @@ import org.schema.model.JsonLdTypeName;
  * @see <a href="https://schema.org/CreativeWork">https://schema.org/CreativeWork</a>
  */
 @JsonLdTypeName("schema:CreativeWork")
-public class CreativeWorkImpl implements CreativeWork {
+public class CreativeWorkImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements CreativeWork {
 
     private Object fTeaches;
 

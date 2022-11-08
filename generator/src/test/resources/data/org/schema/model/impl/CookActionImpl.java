@@ -25,7 +25,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.CreateAction;
 import org.schema.model.CookAction;
 
@@ -35,7 +35,7 @@ import org.schema.model.CookAction;
  * @see <a href="https://schema.org/CookAction">https://schema.org/CookAction</a>
  */
 @JsonLdTypeName("schema:CookAction")
-public class CookActionImpl implements CookAction {
+public class CookActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements CookAction {
 
     private Recipe fRecipe;
 

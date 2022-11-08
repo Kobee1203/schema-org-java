@@ -27,7 +27,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.MedicalEntity;
 import org.schema.model.MedicalTest;
 import org.schema.model.ImagingTest;
@@ -39,7 +39,7 @@ import org.schema.model.ImagingTest;
  * @see <a href="https://schema.org/ImagingTest">https://schema.org/ImagingTest</a>
  */
 @JsonLdTypeName("schema:ImagingTest")
-public class ImagingTestImpl implements ImagingTest {
+public class ImagingTestImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ImagingTest {
 
     private MedicalImagingTechnique fImagingTechnique;
 

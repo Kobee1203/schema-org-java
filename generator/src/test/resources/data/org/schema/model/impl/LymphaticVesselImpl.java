@@ -27,7 +27,7 @@ import org.schema.model.Action;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.MedicalEntity;
 import org.schema.model.LymphaticVessel;
 
@@ -38,7 +38,7 @@ import org.schema.model.LymphaticVessel;
  * @see <a href="https://schema.org/LymphaticVessel">https://schema.org/LymphaticVessel</a>
  */
 @JsonLdTypeName("schema:LymphaticVessel")
-public class LymphaticVesselImpl implements LymphaticVessel {
+public class LymphaticVesselImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements LymphaticVessel {
 
     private Vessel fRunsTo;
 

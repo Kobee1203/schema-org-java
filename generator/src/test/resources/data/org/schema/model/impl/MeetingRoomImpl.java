@@ -31,7 +31,7 @@ import org.schema.model.Event;
 import org.schema.model.CreativeWork;
 import org.schema.model.Action;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Accommodation;
 import org.schema.model.Room;
 import org.schema.model.MeetingRoom;
@@ -45,7 +45,7 @@ import org.schema.model.MeetingRoom;
  * @see <a href="https://schema.org/MeetingRoom">https://schema.org/MeetingRoom</a>
  */
 @JsonLdTypeName("schema:MeetingRoom")
-public class MeetingRoomImpl implements MeetingRoom {
+public class MeetingRoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MeetingRoom {
 
     private Text fFloorLevel;
 

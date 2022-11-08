@@ -34,7 +34,7 @@ import org.schema.model.CreativeWork;
 import org.schema.model.Action;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.FinancialProduct;
 import org.schema.model.PaymentService;
@@ -46,7 +46,7 @@ import org.schema.model.PaymentService;
  * @see <a href="https://schema.org/PaymentService">https://schema.org/PaymentService</a>
  */
 @JsonLdTypeName("schema:PaymentService")
-public class PaymentServiceImpl implements PaymentService {
+public class PaymentServiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PaymentService {
 
     private Object fAnnualPercentageRate;
 

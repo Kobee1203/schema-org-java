@@ -15,7 +15,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.Role;
 
@@ -25,7 +25,7 @@ import org.schema.model.Role;
  * @see <a href="https://schema.org/Role">https://schema.org/Role</a>
  */
 @JsonLdTypeName("schema:Role")
-public class RoleImpl implements Role {
+public class RoleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Role {
 
     private Object fNamedPosition;
 

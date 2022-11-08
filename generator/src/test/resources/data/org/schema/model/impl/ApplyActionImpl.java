@@ -22,7 +22,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.OrganizeAction;
 import org.schema.model.ApplyAction;
 
@@ -32,7 +32,7 @@ import org.schema.model.ApplyAction;
  * @see <a href="https://schema.org/ApplyAction">https://schema.org/ApplyAction</a>
  */
 @JsonLdTypeName("schema:ApplyAction")
-public class ApplyActionImpl implements ApplyAction {
+public class ApplyActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ApplyAction {
 
     private Object fAgent;
 

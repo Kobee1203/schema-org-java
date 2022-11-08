@@ -52,7 +52,7 @@ import org.schema.model.ItemList;
 import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.SearchResultsPage;
 
 /**
@@ -61,7 +61,7 @@ import org.schema.model.SearchResultsPage;
  * @see <a href="https://schema.org/SearchResultsPage">https://schema.org/SearchResultsPage</a>
  */
 @JsonLdTypeName("schema:SearchResultsPage")
-public class SearchResultsPageImpl implements SearchResultsPage {
+public class SearchResultsPageImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements SearchResultsPage {
 
     private Date fLastReviewed;
 

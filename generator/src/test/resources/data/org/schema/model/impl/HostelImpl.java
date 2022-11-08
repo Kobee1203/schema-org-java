@@ -48,7 +48,7 @@ import org.schema.model.OfferCatalog;
 import org.schema.model.Event;
 import org.schema.model.Action;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.GeospatialGeometry;
 import org.schema.model.datatype.Integer;
 import org.schema.model.Photograph;
@@ -67,7 +67,7 @@ import org.schema.model.Hostel;
  * @see <a href="https://schema.org/Hostel">https://schema.org/Hostel</a>
  */
 @JsonLdTypeName("schema:Hostel")
-public class HostelImpl implements Hostel {
+public class HostelImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Hostel {
 
     private Object fNumberOfRooms;
 

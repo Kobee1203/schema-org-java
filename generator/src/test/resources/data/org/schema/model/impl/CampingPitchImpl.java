@@ -31,7 +31,7 @@ import org.schema.model.Event;
 import org.schema.model.CreativeWork;
 import org.schema.model.Action;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Accommodation;
 import org.schema.model.CampingPitch;
 
@@ -45,7 +45,7 @@ import org.schema.model.CampingPitch;
  * @see <a href="https://schema.org/CampingPitch">https://schema.org/CampingPitch</a>
  */
 @JsonLdTypeName("schema:CampingPitch")
-public class CampingPitchImpl implements CampingPitch {
+public class CampingPitchImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements CampingPitch {
 
     private Text fFloorLevel;
 

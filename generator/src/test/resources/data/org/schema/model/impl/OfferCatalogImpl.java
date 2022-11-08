@@ -16,7 +16,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.ItemList;
 import org.schema.model.OfferCatalog;
@@ -27,7 +27,7 @@ import org.schema.model.OfferCatalog;
  * @see <a href="https://schema.org/OfferCatalog">https://schema.org/OfferCatalog</a>
  */
 @JsonLdTypeName("schema:OfferCatalog")
-public class OfferCatalogImpl implements OfferCatalog {
+public class OfferCatalogImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements OfferCatalog {
 
     private Integer fNumberOfItems;
 

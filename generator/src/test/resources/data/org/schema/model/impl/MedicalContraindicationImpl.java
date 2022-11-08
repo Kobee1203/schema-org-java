@@ -22,7 +22,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.MedicalEntity;
 import org.schema.model.MedicalContraindication;
 
@@ -33,7 +33,7 @@ import org.schema.model.MedicalContraindication;
  * @see <a href="https://schema.org/MedicalContraindication">https://schema.org/MedicalContraindication</a>
  */
 @JsonLdTypeName("schema:MedicalContraindication")
-public class MedicalContraindicationImpl implements MedicalContraindication {
+public class MedicalContraindicationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MedicalContraindication {
 
     private Object fLegalStatus;
 

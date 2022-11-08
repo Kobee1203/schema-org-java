@@ -19,7 +19,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.ChemicalSubstance;
 
 /**
@@ -29,7 +29,7 @@ import org.schema.model.ChemicalSubstance;
  * @see <a href="https://schema.org/ChemicalSubstance">https://schema.org/ChemicalSubstance</a>
  */
 @JsonLdTypeName("schema:ChemicalSubstance")
-public class ChemicalSubstanceImpl implements ChemicalSubstance {
+public class ChemicalSubstanceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ChemicalSubstance {
 
     private Text fChemicalComposition;
 

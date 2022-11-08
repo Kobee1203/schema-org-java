@@ -41,7 +41,7 @@ import org.schema.model.OfferCatalog;
 import org.schema.model.Event;
 import org.schema.model.Action;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.ResearchOrganization;
 
 /**
@@ -52,7 +52,7 @@ import org.schema.model.ResearchOrganization;
  * @see <a href="https://schema.org/ResearchOrganization">https://schema.org/ResearchOrganization</a>
  */
 @JsonLdTypeName("schema:ResearchOrganization")
-public class ResearchOrganizationImpl implements ResearchOrganization {
+public class ResearchOrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ResearchOrganization {
 
     private Object fOwnershipFundingInfo;
 

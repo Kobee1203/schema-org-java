@@ -49,7 +49,7 @@ import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Map;
 
 /**
@@ -58,7 +58,7 @@ import org.schema.model.Map;
  * @see <a href="https://schema.org/Map">https://schema.org/Map</a>
  */
 @JsonLdTypeName("schema:Map")
-public class MapImpl implements Map {
+public class MapImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Map {
 
     private MapCategoryType fMapType;
 

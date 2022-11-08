@@ -43,7 +43,7 @@ import org.schema.model.OfferCatalog;
 import org.schema.model.Event;
 import org.schema.model.Action;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.MedicalOrganization;
 
 /**
@@ -52,7 +52,7 @@ import org.schema.model.MedicalOrganization;
  * @see <a href="https://schema.org/MedicalOrganization">https://schema.org/MedicalOrganization</a>
  */
 @JsonLdTypeName("schema:MedicalOrganization")
-public class MedicalOrganizationImpl implements MedicalOrganization {
+public class MedicalOrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MedicalOrganization {
 
     private Boolean fIsAcceptingNewPatients;
 

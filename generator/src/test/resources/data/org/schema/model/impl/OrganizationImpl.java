@@ -41,7 +41,7 @@ import org.schema.model.OfferCatalog;
 import org.schema.model.Event;
 import org.schema.model.Action;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 
 /**
  * An organization such as a school, NGO, corporation, club, etc.
@@ -49,7 +49,7 @@ import org.schema.model.JsonLdTypeName;
  * @see <a href="https://schema.org/Organization">https://schema.org/Organization</a>
  */
 @JsonLdTypeName("schema:Organization")
-public class OrganizationImpl implements Organization {
+public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Organization {
 
     private Object fOwnershipFundingInfo;
 

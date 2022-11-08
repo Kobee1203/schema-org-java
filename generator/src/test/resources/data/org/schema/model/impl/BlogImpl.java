@@ -49,7 +49,7 @@ import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Blog;
 
 /**
@@ -58,7 +58,7 @@ import org.schema.model.Blog;
  * @see <a href="https://schema.org/Blog">https://schema.org/Blog</a>
  */
 @JsonLdTypeName("schema:Blog")
-public class BlogImpl implements Blog {
+public class BlogImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Blog {
 
     private BlogPosting fBlogPosts;
 

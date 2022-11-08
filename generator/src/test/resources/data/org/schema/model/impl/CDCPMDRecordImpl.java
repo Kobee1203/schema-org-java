@@ -16,7 +16,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.StructuredValue;
 import org.schema.model.CDCPMDRecord;
@@ -32,7 +32,7 @@ import org.schema.model.CDCPMDRecord;
  * @see <a href="https://schema.org/CDCPMDRecord">https://schema.org/CDCPMDRecord</a>
  */
 @JsonLdTypeName("schema:CDCPMDRecord")
-public class CDCPMDRecordImpl implements CDCPMDRecord {
+public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements CDCPMDRecord {
 
     private Number fCvdNumBedsOcc;
 

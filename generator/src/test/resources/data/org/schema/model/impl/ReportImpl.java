@@ -49,7 +49,7 @@ import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Article;
 import org.schema.model.Report;
 
@@ -59,7 +59,7 @@ import org.schema.model.Report;
  * @see <a href="https://schema.org/Report">https://schema.org/Report</a>
  */
 @JsonLdTypeName("schema:Report")
-public class ReportImpl implements Report {
+public class ReportImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Report {
 
     private Text fReportNumber;
 

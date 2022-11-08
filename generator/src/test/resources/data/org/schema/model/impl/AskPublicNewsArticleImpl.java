@@ -49,7 +49,7 @@ import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Article;
 import org.schema.model.NewsArticle;
 import org.schema.model.AskPublicNewsArticle;
@@ -63,7 +63,7 @@ import org.schema.model.AskPublicNewsArticle;
  * @see <a href="https://schema.org/AskPublicNewsArticle">https://schema.org/AskPublicNewsArticle</a>
  */
 @JsonLdTypeName("schema:AskPublicNewsArticle")
-public class AskPublicNewsArticleImpl implements AskPublicNewsArticle {
+public class AskPublicNewsArticleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements AskPublicNewsArticle {
 
     private Text fPrintEdition;
 

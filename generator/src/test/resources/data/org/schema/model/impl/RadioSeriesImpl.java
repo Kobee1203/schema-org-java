@@ -51,7 +51,7 @@ import org.schema.model.ItemList;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.Series;
 import org.schema.model.CreativeWorkSeries;
@@ -63,7 +63,7 @@ import org.schema.model.RadioSeries;
  * @see <a href="https://schema.org/RadioSeries">https://schema.org/RadioSeries</a>
  */
 @JsonLdTypeName("schema:RadioSeries")
-public class RadioSeriesImpl implements RadioSeries {
+public class RadioSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements RadioSeries {
 
     private Object fSeason;
 

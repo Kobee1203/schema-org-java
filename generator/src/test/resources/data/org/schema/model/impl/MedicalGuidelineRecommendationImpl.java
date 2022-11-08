@@ -25,7 +25,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.MedicalGuidelineRecommendation;
 
 /**
@@ -35,7 +35,7 @@ import org.schema.model.MedicalGuidelineRecommendation;
  * @see <a href="https://schema.org/MedicalGuidelineRecommendation">https://schema.org/MedicalGuidelineRecommendation</a>
  */
 @JsonLdTypeName("schema:MedicalGuidelineRecommendation")
-public class MedicalGuidelineRecommendationImpl implements MedicalGuidelineRecommendation {
+public class MedicalGuidelineRecommendationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MedicalGuidelineRecommendation {
 
     private Text fRecommendationStrength;
 

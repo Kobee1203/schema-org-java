@@ -13,7 +13,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.AlignmentObject;
 
@@ -26,7 +26,7 @@ import org.schema.model.AlignmentObject;
  * @see <a href="https://schema.org/AlignmentObject">https://schema.org/AlignmentObject</a>
  */
 @JsonLdTypeName("schema:AlignmentObject")
-public class AlignmentObjectImpl implements AlignmentObject {
+public class AlignmentObjectImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements AlignmentObject {
 
     private Text fAlignmentType;
 

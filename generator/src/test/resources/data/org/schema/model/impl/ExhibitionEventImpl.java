@@ -35,7 +35,7 @@ import org.schema.model.Schedule;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.ExhibitionEvent;
 
 /**
@@ -44,7 +44,7 @@ import org.schema.model.ExhibitionEvent;
  * @see <a href="https://schema.org/ExhibitionEvent">https://schema.org/ExhibitionEvent</a>
  */
 @JsonLdTypeName("schema:ExhibitionEvent")
-public class ExhibitionEventImpl implements ExhibitionEvent {
+public class ExhibitionEventImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ExhibitionEvent {
 
     private Event fSuperEvent;
 

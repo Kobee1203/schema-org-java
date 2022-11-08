@@ -25,7 +25,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.TradeAction;
 import org.schema.model.SellAction;
 
@@ -35,7 +35,7 @@ import org.schema.model.SellAction;
  * @see <a href="https://schema.org/SellAction">https://schema.org/SellAction</a>
  */
 @JsonLdTypeName("schema:SellAction")
-public class SellActionImpl implements SellAction {
+public class SellActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements SellAction {
 
     private WarrantyPromise fWarrantyPromise;
 

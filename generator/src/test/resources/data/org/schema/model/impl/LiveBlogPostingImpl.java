@@ -50,7 +50,7 @@ import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Article;
 import org.schema.model.SocialMediaPosting;
 import org.schema.model.LiveBlogPosting;
@@ -61,7 +61,7 @@ import org.schema.model.LiveBlogPosting;
  * @see <a href="https://schema.org/LiveBlogPosting">https://schema.org/LiveBlogPosting</a>
  */
 @JsonLdTypeName("schema:LiveBlogPosting")
-public class LiveBlogPostingImpl implements LiveBlogPosting {
+public class LiveBlogPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements LiveBlogPosting {
 
     private DateTime fCoverageEndTime;
 

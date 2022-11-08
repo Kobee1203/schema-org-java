@@ -17,7 +17,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.Rating;
 import org.schema.model.AggregateRating;
@@ -30,7 +30,7 @@ import org.schema.model.EmployerAggregateRating;
  * @see <a href="https://schema.org/EmployerAggregateRating">https://schema.org/EmployerAggregateRating</a>
  */
 @JsonLdTypeName("schema:EmployerAggregateRating")
-public class EmployerAggregateRatingImpl implements EmployerAggregateRating {
+public class EmployerAggregateRatingImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements EmployerAggregateRating {
 
     private Thing fItemReviewed;
 

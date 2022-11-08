@@ -20,7 +20,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.Grant;
 import org.schema.model.MonetaryGrant;
@@ -34,7 +34,7 @@ import org.schema.model.MonetaryGrant;
  * @see <a href="https://schema.org/MonetaryGrant">https://schema.org/MonetaryGrant</a>
  */
 @JsonLdTypeName("schema:MonetaryGrant")
-public class MonetaryGrantImpl implements MonetaryGrant {
+public class MonetaryGrantImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MonetaryGrant {
 
     private Object fFunder;
 

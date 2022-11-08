@@ -36,7 +36,7 @@ import org.schema.model.Schedule;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.ScreeningEvent;
 
 /**
@@ -45,7 +45,7 @@ import org.schema.model.ScreeningEvent;
  * @see <a href="https://schema.org/ScreeningEvent">https://schema.org/ScreeningEvent</a>
  */
 @JsonLdTypeName("schema:ScreeningEvent")
-public class ScreeningEventImpl implements ScreeningEvent {
+public class ScreeningEventImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ScreeningEvent {
 
     private Object fSubtitleLanguage;
 

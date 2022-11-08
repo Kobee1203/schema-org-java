@@ -49,7 +49,7 @@ import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 
 /**
  * A HyperToEntry is an item within a [[HyperToc]], which represents a hypertext table of contents for complex media objects, such as [[VideoObject]], [[AudioObject]]. The media object itself is indicated using [[associatedMedia]]. Each section of interest within that content can be described with a [[HyperTocEntry]], with associated [[startOffset]] and [[endOffset]]. When several entries are all from the same file, [[associatedMedia]] is used on the overarching [[HyperTocEntry]]; if the content has been split into multiple files, they can be referenced using [[associatedMedia]] on each [[HyperTocEntry]].
@@ -59,7 +59,7 @@ import org.schema.model.JsonLdTypeName;
  * @see <a href="https://schema.org/HyperTocEntry">https://schema.org/HyperTocEntry</a>
  */
 @JsonLdTypeName("schema:HyperTocEntry")
-public class HyperTocEntryImpl implements HyperTocEntry {
+public class HyperTocEntryImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements HyperTocEntry {
 
     private HyperTocEntry fTocContinuation;
 

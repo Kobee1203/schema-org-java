@@ -16,7 +16,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.BusinessFunction;
 
@@ -28,7 +28,7 @@ import org.schema.model.BusinessFunction;
  * @see <a href="https://schema.org/BusinessFunction">https://schema.org/BusinessFunction</a>
  */
 @JsonLdTypeName("schema:BusinessFunction")
-public class BusinessFunctionImpl implements BusinessFunction {
+public class BusinessFunctionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements BusinessFunction {
 
     private Object fSupersededBy;
 

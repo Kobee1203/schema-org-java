@@ -44,7 +44,7 @@ import org.schema.model.datatype.Boolean;
 import org.schema.model.CreativeWork;
 import org.schema.model.Action;
 import org.schema.model.Event;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Vehicle;
 import org.schema.model.Car;
 
@@ -55,7 +55,7 @@ import org.schema.model.Car;
  * @see <a href="https://schema.org/Car">https://schema.org/Car</a>
  */
 @JsonLdTypeName("schema:Car")
-public class CarImpl implements Car {
+public class CarImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Car {
 
     private QuantitativeValue fRoofLoad;
 

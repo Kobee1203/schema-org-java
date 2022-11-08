@@ -48,7 +48,7 @@ import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.Series;
 import org.schema.model.CreativeWorkSeries;
@@ -61,7 +61,7 @@ import org.schema.model.Periodical;
  * @see <a href="https://schema.org/Periodical">https://schema.org/Periodical</a>
  */
 @JsonLdTypeName("schema:Periodical")
-public class PeriodicalImpl implements Periodical {
+public class PeriodicalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Periodical {
 
     private Object fStartDate;
 

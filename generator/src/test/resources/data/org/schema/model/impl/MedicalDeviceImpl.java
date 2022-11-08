@@ -24,7 +24,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.MedicalDevice;
 
 /**
@@ -34,7 +34,7 @@ import org.schema.model.MedicalDevice;
  * @see <a href="https://schema.org/MedicalDevice">https://schema.org/MedicalDevice</a>
  */
 @JsonLdTypeName("schema:MedicalDevice")
-public class MedicalDeviceImpl implements MedicalDevice {
+public class MedicalDeviceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MedicalDevice {
 
     private MedicalEntity fAdverseOutcome;
 

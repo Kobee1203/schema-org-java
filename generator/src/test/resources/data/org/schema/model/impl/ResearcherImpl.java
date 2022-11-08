@@ -14,7 +14,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.Audience;
 import org.schema.model.Researcher;
@@ -25,7 +25,7 @@ import org.schema.model.Researcher;
  * @see <a href="https://schema.org/Researcher">https://schema.org/Researcher</a>
  */
 @JsonLdTypeName("schema:Researcher")
-public class ResearcherImpl implements Researcher {
+public class ResearcherImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Researcher {
 
     private Text fAudienceType;
 

@@ -22,7 +22,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.Reservation;
 import org.schema.model.RentalCarReservation;
@@ -33,7 +33,7 @@ import org.schema.model.RentalCarReservation;
  * @see <a href="https://schema.org/RentalCarReservation">https://schema.org/RentalCarReservation</a>
  */
 @JsonLdTypeName("schema:RentalCarReservation")
-public class RentalCarReservationImpl implements RentalCarReservation {
+public class RentalCarReservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements RentalCarReservation {
 
     private Place fDropoffLocation;
 

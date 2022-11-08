@@ -26,7 +26,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.TradeAction;
 import org.schema.model.PayAction;
 
@@ -36,7 +36,7 @@ import org.schema.model.PayAction;
  * @see <a href="https://schema.org/PayAction">https://schema.org/PayAction</a>
  */
 @JsonLdTypeName("schema:PayAction")
-public class PayActionImpl implements PayAction {
+public class PayActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PayAction {
 
     private Object fRecipient;
 

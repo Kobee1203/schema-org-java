@@ -48,7 +48,7 @@ import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.PublicationVolume;
 
 /**
@@ -58,7 +58,7 @@ import org.schema.model.PublicationVolume;
  * @see <a href="https://schema.org/PublicationVolume">https://schema.org/PublicationVolume</a>
  */
 @JsonLdTypeName("schema:PublicationVolume")
-public class PublicationVolumeImpl implements PublicationVolume {
+public class PublicationVolumeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PublicationVolume {
 
     private Object fPageStart;
 

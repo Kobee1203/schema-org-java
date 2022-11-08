@@ -29,7 +29,7 @@ import org.schema.model.Action;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.MedicalEntity;
 
 /**
@@ -39,7 +39,7 @@ import org.schema.model.MedicalEntity;
  * @see <a href="https://schema.org/Muscle">https://schema.org/Muscle</a>
  */
 @JsonLdTypeName("schema:Muscle")
-public class MuscleImpl implements Muscle {
+public class MuscleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Muscle {
 
     private AnatomicalStructure fInsertion;
 

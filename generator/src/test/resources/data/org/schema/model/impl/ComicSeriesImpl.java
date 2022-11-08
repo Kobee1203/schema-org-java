@@ -48,7 +48,7 @@ import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.Series;
 import org.schema.model.CreativeWorkSeries;
@@ -64,7 +64,7 @@ import org.schema.model.ComicSeries;
  * @see <a href="https://schema.org/ComicSeries">https://schema.org/ComicSeries</a>
  */
 @JsonLdTypeName("schema:ComicSeries")
-public class ComicSeriesImpl implements ComicSeries {
+public class ComicSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ComicSeries {
 
     private Object fStartDate;
 

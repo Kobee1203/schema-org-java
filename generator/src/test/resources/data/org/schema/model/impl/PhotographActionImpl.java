@@ -22,7 +22,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.CreateAction;
 import org.schema.model.PhotographAction;
 
@@ -32,7 +32,7 @@ import org.schema.model.PhotographAction;
  * @see <a href="https://schema.org/PhotographAction">https://schema.org/PhotographAction</a>
  */
 @JsonLdTypeName("schema:PhotographAction")
-public class PhotographActionImpl implements PhotographAction {
+public class PhotographActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PhotographAction {
 
     private Object fAgent;
 

@@ -23,7 +23,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.CreateAction;
 import org.schema.model.WriteAction;
 
@@ -33,7 +33,7 @@ import org.schema.model.WriteAction;
  * @see <a href="https://schema.org/WriteAction">https://schema.org/WriteAction</a>
  */
 @JsonLdTypeName("schema:WriteAction")
-public class WriteActionImpl implements WriteAction {
+public class WriteActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements WriteAction {
 
     private Object fInLanguage;
 

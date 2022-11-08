@@ -19,7 +19,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Protein;
 
 /**
@@ -29,7 +29,7 @@ import org.schema.model.Protein;
  * @see <a href="https://schema.org/Protein">https://schema.org/Protein</a>
  */
 @JsonLdTypeName("schema:Protein")
-public class ProteinImpl implements Protein {
+public class ProteinImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Protein {
 
     private Text fHasBioPolymerSequence;
 

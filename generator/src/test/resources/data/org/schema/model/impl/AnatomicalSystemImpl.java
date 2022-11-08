@@ -26,7 +26,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.MedicalEntity;
 
 /**
@@ -36,7 +36,7 @@ import org.schema.model.MedicalEntity;
  * @see <a href="https://schema.org/AnatomicalSystem">https://schema.org/AnatomicalSystem</a>
  */
 @JsonLdTypeName("schema:AnatomicalSystem")
-public class AnatomicalSystemImpl implements AnatomicalSystem {
+public class AnatomicalSystemImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements AnatomicalSystem {
 
     private MedicalTherapy fRelatedTherapy;
 

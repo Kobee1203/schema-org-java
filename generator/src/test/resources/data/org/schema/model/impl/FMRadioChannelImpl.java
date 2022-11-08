@@ -16,7 +16,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.BroadcastChannel;
 import org.schema.model.RadioChannel;
@@ -29,7 +29,7 @@ import org.schema.model.FMRadioChannel;
  * @see <a href="https://schema.org/FMRadioChannel">https://schema.org/FMRadioChannel</a>
  */
 @JsonLdTypeName("schema:FMRadioChannel")
-public class FMRadioChannelImpl implements FMRadioChannel {
+public class FMRadioChannelImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements FMRadioChannel {
 
     private Object fGenre;
 

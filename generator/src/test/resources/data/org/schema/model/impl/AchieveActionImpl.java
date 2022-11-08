@@ -22,7 +22,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.AchieveAction;
 
 /**
@@ -31,7 +31,7 @@ import org.schema.model.AchieveAction;
  * @see <a href="https://schema.org/AchieveAction">https://schema.org/AchieveAction</a>
  */
 @JsonLdTypeName("schema:AchieveAction")
-public class AchieveActionImpl implements AchieveAction {
+public class AchieveActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements AchieveAction {
 
     private Object fAgent;
 

@@ -22,7 +22,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.MedicalEntity;
 import org.schema.model.MedicalIntangible;
 import org.schema.model.CategoryCodeSet;
@@ -38,7 +38,7 @@ import org.schema.model.CategoryCode;
  * @see <a href="https://schema.org/MedicalCode">https://schema.org/MedicalCode</a>
  */
 @JsonLdTypeName("schema:MedicalCode")
-public class MedicalCodeImpl implements MedicalCode {
+public class MedicalCodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MedicalCode {
 
     private Text fCodeValue;
 

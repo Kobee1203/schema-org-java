@@ -22,7 +22,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.AssessAction;
 
 /**
@@ -31,7 +31,7 @@ import org.schema.model.AssessAction;
  * @see <a href="https://schema.org/AssessAction">https://schema.org/AssessAction</a>
  */
 @JsonLdTypeName("schema:AssessAction")
-public class AssessActionImpl implements AssessAction {
+public class AssessActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements AssessAction {
 
     private Object fAgent;
 

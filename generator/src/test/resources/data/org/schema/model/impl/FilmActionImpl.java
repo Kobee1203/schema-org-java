@@ -22,7 +22,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.CreateAction;
 import org.schema.model.FilmAction;
 
@@ -32,7 +32,7 @@ import org.schema.model.FilmAction;
  * @see <a href="https://schema.org/FilmAction">https://schema.org/FilmAction</a>
  */
 @JsonLdTypeName("schema:FilmAction")
-public class FilmActionImpl implements FilmAction {
+public class FilmActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements FilmAction {
 
     private Object fAgent;
 

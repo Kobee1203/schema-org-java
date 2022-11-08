@@ -33,7 +33,7 @@ import org.schema.model.Event;
 import org.schema.model.CreativeWork;
 import org.schema.model.Action;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Accommodation;
 import org.schema.model.Room;
 import org.schema.model.HotelRoom;
@@ -47,7 +47,7 @@ import org.schema.model.HotelRoom;
  * @see <a href="https://schema.org/HotelRoom">https://schema.org/HotelRoom</a>
  */
 @JsonLdTypeName("schema:HotelRoom")
-public class HotelRoomImpl implements HotelRoom {
+public class HotelRoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements HotelRoom {
 
     private Object fBed;
 

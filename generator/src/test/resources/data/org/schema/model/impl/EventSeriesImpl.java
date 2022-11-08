@@ -13,7 +13,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.Series;
 import org.schema.model.EventAttendanceModeEnumeration;
@@ -61,7 +61,7 @@ import org.schema.model.EventSeries;
  * @see <a href="https://schema.org/EventSeries">https://schema.org/EventSeries</a>
  */
 @JsonLdTypeName("schema:EventSeries")
-public class EventSeriesImpl implements EventSeries {
+public class EventSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements EventSeries {
 
     private Object fMainEntityOfPage;
 

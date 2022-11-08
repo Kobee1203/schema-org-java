@@ -26,7 +26,7 @@ import org.schema.model.Action;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.MedicalEntity;
 import org.schema.model.Vessel;
 
@@ -37,7 +37,7 @@ import org.schema.model.Vessel;
  * @see <a href="https://schema.org/Vessel">https://schema.org/Vessel</a>
  */
 @JsonLdTypeName("schema:Vessel")
-public class VesselImpl implements Vessel {
+public class VesselImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Vessel {
 
     private Text fBodyLocation;
 

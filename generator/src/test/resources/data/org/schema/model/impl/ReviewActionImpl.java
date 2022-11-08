@@ -23,7 +23,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.AssessAction;
 import org.schema.model.ReviewAction;
 
@@ -33,7 +33,7 @@ import org.schema.model.ReviewAction;
  * @see <a href="https://schema.org/ReviewAction">https://schema.org/ReviewAction</a>
  */
 @JsonLdTypeName("schema:ReviewAction")
-public class ReviewActionImpl implements ReviewAction {
+public class ReviewActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ReviewAction {
 
     private Review fResultReview;
 

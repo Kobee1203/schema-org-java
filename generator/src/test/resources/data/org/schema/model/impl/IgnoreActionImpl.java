@@ -22,7 +22,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.AssessAction;
 import org.schema.model.IgnoreAction;
 
@@ -32,7 +32,7 @@ import org.schema.model.IgnoreAction;
  * @see <a href="https://schema.org/IgnoreAction">https://schema.org/IgnoreAction</a>
  */
 @JsonLdTypeName("schema:IgnoreAction")
-public class IgnoreActionImpl implements IgnoreAction {
+public class IgnoreActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements IgnoreAction {
 
     private Object fAgent;
 

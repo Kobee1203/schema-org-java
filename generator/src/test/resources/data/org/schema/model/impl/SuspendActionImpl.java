@@ -22,7 +22,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.ControlAction;
 import org.schema.model.SuspendAction;
 
@@ -32,7 +32,7 @@ import org.schema.model.SuspendAction;
  * @see <a href="https://schema.org/SuspendAction">https://schema.org/SuspendAction</a>
  */
 @JsonLdTypeName("schema:SuspendAction")
-public class SuspendActionImpl implements SuspendAction {
+public class SuspendActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements SuspendAction {
 
     private Object fAgent;
 

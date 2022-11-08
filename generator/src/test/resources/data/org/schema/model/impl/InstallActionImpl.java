@@ -24,7 +24,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.ConsumeAction;
 import org.schema.model.InstallAction;
 
@@ -34,7 +34,7 @@ import org.schema.model.InstallAction;
  * @see <a href="https://schema.org/InstallAction">https://schema.org/InstallAction</a>
  */
 @JsonLdTypeName("schema:InstallAction")
-public class InstallActionImpl implements InstallAction {
+public class InstallActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements InstallAction {
 
     private Offer fExpectsAcceptanceOf;
 

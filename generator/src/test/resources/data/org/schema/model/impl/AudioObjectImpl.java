@@ -53,7 +53,7 @@ import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 
 /**
  * An audio file.
@@ -62,7 +62,7 @@ import org.schema.model.JsonLdTypeName;
  * @see <a href="https://schema.org/AudioObject">https://schema.org/AudioObject</a>
  */
 @JsonLdTypeName("schema:AudioObject")
-public class AudioObjectImpl implements AudioObject {
+public class AudioObjectImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements AudioObject {
 
     private Text fEmbeddedTextCaption;
 

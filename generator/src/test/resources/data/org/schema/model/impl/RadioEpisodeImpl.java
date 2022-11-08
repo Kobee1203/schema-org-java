@@ -51,7 +51,7 @@ import org.schema.model.ItemList;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Episode;
 import org.schema.model.RadioEpisode;
 
@@ -61,7 +61,7 @@ import org.schema.model.RadioEpisode;
  * @see <a href="https://schema.org/RadioEpisode">https://schema.org/RadioEpisode</a>
  */
 @JsonLdTypeName("schema:RadioEpisode")
-public class RadioEpisodeImpl implements RadioEpisode {
+public class RadioEpisodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements RadioEpisode {
 
     private Object fEpisodeNumber;
 

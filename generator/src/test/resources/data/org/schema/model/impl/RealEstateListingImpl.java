@@ -52,7 +52,7 @@ import org.schema.model.ItemList;
 import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.RealEstateListing;
 
 /**
@@ -65,7 +65,7 @@ import org.schema.model.RealEstateListing;
  * @see <a href="https://schema.org/RealEstateListing">https://schema.org/RealEstateListing</a>
  */
 @JsonLdTypeName("schema:RealEstateListing")
-public class RealEstateListingImpl implements RealEstateListing {
+public class RealEstateListingImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements RealEstateListing {
 
     private Object fLeaseLength;
 

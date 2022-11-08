@@ -18,7 +18,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.HowToItem;
 import org.schema.model.HowToSupply;
@@ -29,7 +29,7 @@ import org.schema.model.HowToSupply;
  * @see <a href="https://schema.org/HowToSupply">https://schema.org/HowToSupply</a>
  */
 @JsonLdTypeName("schema:HowToSupply")
-public class HowToSupplyImpl implements HowToSupply {
+public class HowToSupplyImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements HowToSupply {
 
     private Object fEstimatedCost;
 

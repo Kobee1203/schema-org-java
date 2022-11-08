@@ -41,7 +41,7 @@ import org.schema.model.OfferCatalog;
 import org.schema.model.Event;
 import org.schema.model.Action;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.NGO;
 
 /**
@@ -50,7 +50,7 @@ import org.schema.model.NGO;
  * @see <a href="https://schema.org/NGO">https://schema.org/NGO</a>
  */
 @JsonLdTypeName("schema:NGO")
-public class NGOImpl implements NGO {
+public class NGOImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements NGO {
 
     private Object fOwnershipFundingInfo;
 

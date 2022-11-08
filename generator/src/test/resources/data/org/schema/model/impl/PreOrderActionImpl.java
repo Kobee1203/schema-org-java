@@ -24,7 +24,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.TradeAction;
 import org.schema.model.PreOrderAction;
 
@@ -35,7 +35,7 @@ import org.schema.model.PreOrderAction;
  * @see <a href="https://schema.org/PreOrderAction">https://schema.org/PreOrderAction</a>
  */
 @JsonLdTypeName("schema:PreOrderAction")
-public class PreOrderActionImpl implements PreOrderAction {
+public class PreOrderActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PreOrderAction {
 
     private Text fPriceCurrency;
 

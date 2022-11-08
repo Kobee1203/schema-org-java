@@ -15,7 +15,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.Role;
 import org.schema.model.PerformanceRole;
@@ -26,7 +26,7 @@ import org.schema.model.PerformanceRole;
  * @see <a href="https://schema.org/PerformanceRole">https://schema.org/PerformanceRole</a>
  */
 @JsonLdTypeName("schema:PerformanceRole")
-public class PerformanceRoleImpl implements PerformanceRole {
+public class PerformanceRoleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PerformanceRole {
 
     private Text fCharacterName;
 

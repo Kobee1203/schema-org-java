@@ -39,7 +39,7 @@ import org.schema.model.Country;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 
 /**
  * A person (alive, dead, undead, or fictional).
@@ -48,7 +48,7 @@ import org.schema.model.JsonLdTypeName;
  * @see <a href="https://schema.org/Person">https://schema.org/Person</a>
  */
 @JsonLdTypeName("schema:Person")
-public class PersonImpl implements Person {
+public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Person {
 
     private Person fSpouse;
 

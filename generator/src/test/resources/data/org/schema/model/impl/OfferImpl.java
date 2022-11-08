@@ -48,7 +48,7 @@ import org.schema.model.datatype.Number;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 
 /**
@@ -58,7 +58,7 @@ import org.schema.model.Intangible;
  * @see <a href="https://schema.org/Offer">https://schema.org/Offer</a>
  */
 @JsonLdTypeName("schema:Offer")
-public class OfferImpl implements Offer {
+public class OfferImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Offer {
 
     private AdultOrientedEnumeration fHasAdultConsideration;
 

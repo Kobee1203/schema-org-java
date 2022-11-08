@@ -2,6 +2,7 @@ package com.weedow.schemaorg.generator.core;
 
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.LoggerContext;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.generator.core.filter.SchemaDefinitionFilter;
 import com.weedow.schemaorg.generator.core.handler.ErrorHandler;
 import com.weedow.schemaorg.generator.core.handler.SuccessHandler;
@@ -50,12 +51,12 @@ class SchemaModelGeneratorImplTest {
     }
 
     @Test
-    void generate_without_schema_definitions() throws IOException {
+    void generate_without_schema_definitions() {
         when(schemaDefinitionFilter.filter(schemaDefinitions, null)).thenReturn(Collections.emptyMap());
 
         schemaModelGenerator.generate();
 
-        verifyCommonTemplates(options, templateService);
+        verifyNoInteractions(templateService);
     }
 
     @Test
@@ -68,7 +69,6 @@ class SchemaModelGeneratorImplTest {
 
         schemaModelGenerator.generate();
 
-        verifyCommonTemplates(options, templateService);
         verify(templateService).apply(
                 "templates/abstract_data_type",
                 options.getDataTypeFolder().resolve("DataType.java"),
@@ -87,11 +87,10 @@ class SchemaModelGeneratorImplTest {
 
         schemaModelGenerator.generate();
 
-        verifyCommonTemplates(options, templateService);
         verify(templateService).apply(
                 "templates/data_type",
                 options.getDataTypeFolder().resolve("Boolean.java"),
-                new Context(type, options.getDataTypePackage(), Set.of("org.schema.model.JsonLdTypeName"))
+                new Context(type, options.getDataTypePackage(), Set.of(JsonLdTypeName.class.getCanonicalName()))
         );
     }
 
@@ -110,11 +109,10 @@ class SchemaModelGeneratorImplTest {
 
         schemaModelGenerator.generate();
 
-        verifyCommonTemplates(options, templateService);
         verify(templateService).apply(
                 "templates/data_type",
                 options.getDataTypeFolder().resolve("XPathType.java"),
-                new Context(type, options.getDataTypePackage(), Set.of("org.schema.model.JsonLdTypeName"))
+                new Context(type, options.getDataTypePackage(), Set.of(JsonLdTypeName.class.getCanonicalName()))
         );
     }
 
@@ -131,7 +129,6 @@ class SchemaModelGeneratorImplTest {
 
         schemaModelGenerator.generate();
 
-        verifyCommonTemplates(options, templateService);
         verify(templateService).apply(
                 "templates/type_interface",
                 options.getModelFolder().resolve("ActionStatusType.java"),
@@ -140,7 +137,7 @@ class SchemaModelGeneratorImplTest {
         verify(templateService).apply(
                 "templates/type_enumeration",
                 options.getModelImplFolder().resolve("ActionStatusTypeEnum.java"),
-                new Context(type, options.getModelImplPackage(), Set.of("org.schema.model.ActionStatusType", "org.schema.model.JsonLdTypeName"))
+                new Context(type, options.getModelImplPackage(), Set.of("org.schema.model.ActionStatusType", JsonLdTypeName.class.getCanonicalName()))
         );
     }
 
@@ -158,7 +155,6 @@ class SchemaModelGeneratorImplTest {
 
         schemaModelGenerator.generate();
 
-        verifyCommonTemplates(options, templateService);
         verify(templateService).apply(
                 "templates/type_interface",
                 options.getModelFolder().resolve("Thing.java"),
@@ -167,7 +163,7 @@ class SchemaModelGeneratorImplTest {
         verify(templateService).apply(
                 "templates/type_implementation",
                 options.getModelImplFolder().resolve("ThingImpl.java"),
-                new Context(type, options.getModelImplPackage(), Set.of("org.schema.model.Thing", "org.schema.model.JsonLdTypeName"))
+                new Context(type, options.getModelImplPackage(), Set.of("org.schema.model.Thing", JsonLdTypeName.class.getCanonicalName()))
         );
 
         initLogLevel(verboseMode ? backupLevel : null);
@@ -184,7 +180,7 @@ class SchemaModelGeneratorImplTest {
     }
 
     @Test
-    void generate_with_success_handler() throws IOException {
+    void generate_with_success_handler() {
         final SuccessHandler successHandler = mock(SuccessHandler.class);
         options.addSuccessHandler(successHandler);
         final ErrorHandler errorHandler = mock(ErrorHandler.class);
@@ -194,7 +190,6 @@ class SchemaModelGeneratorImplTest {
 
         schemaModelGenerator.generate();
 
-        verifyCommonTemplates(options, templateService, successHandler);
         verifyNoInteractions(errorHandler);
     }
 
@@ -205,58 +200,46 @@ class SchemaModelGeneratorImplTest {
         final ErrorHandler errorHandler = mock(ErrorHandler.class);
         options.addErrorHandler(errorHandler);
 
-        when(schemaDefinitionFilter.filter(schemaDefinitions, null)).thenReturn(Collections.emptyMap());
+        final Type type = mock(Type.class);
+        when(type.getId()).thenReturn("schema:Thing");
+        when(type.getName()).thenReturn("Thing");
+        when(type.getProperties()).thenReturn(Collections.emptySet());
+
+        when(schemaDefinitionFilter.filter(schemaDefinitions, null)).thenReturn(Map.of("schema:Thing", type));
 
         final Path modelFolder = options.getModelFolder();
         final Path modelImplFolder = options.getModelImplFolder();
         final String modelPackage = options.getModelPackage();
         final String modelImplPackage = options.getModelImplPackage();
-        final String dataTypePackage = options.getDataTypePackage();
 
         final IOException ioException1 = new IOException();
         doThrow(ioException1).when(templateService).apply(
-                "templates/jsonld_typename",
-                modelFolder.resolve("JsonLdTypeName.java"),
-                new Context(null, modelPackage, Collections.emptySet())
+                "templates/type_interface",
+                modelFolder.resolve("Thing.java"),
+                new Context(type, modelPackage, Collections.emptySet())
         );
         final IOException ioException2 = new IOException();
         doThrow(ioException2).when(templateService).apply(
-                "templates/jsonld_node",
-                modelFolder.resolve("JsonLdNode.java"),
-                new Context(null, modelPackage, Collections.emptySet())
-        );
-        final IOException ioException3 = new IOException();
-        doThrow(ioException3).when(templateService).apply(
-                "templates/jsonld_node_impl",
-                modelImplFolder.resolve("JsonLdNodeImpl.java"),
-                new Context(null, modelImplPackage, Set.of(
-                        SchemaGeneratorUtils.resolveClassName(modelPackage, dataTypePackage, SchemaGeneratorUtils.JSON_LD_NODE),
-                        SchemaGeneratorUtils.resolveClassName(modelPackage, dataTypePackage, SchemaGeneratorUtils.JSON_LD_TYPE_NAME)
-                ))
+                "templates/type_implementation",
+                modelImplFolder.resolve("ThingImpl.java"),
+                new Context(type, modelImplPackage, Set.of("org.schema.model.Thing", JsonLdTypeName.class.getCanonicalName()))
         );
 
         schemaModelGenerator.generate();
 
-        verify(errorHandler).onError("templates/jsonld_typename",
-                modelFolder.resolve("JsonLdTypeName.java"),
-                new Context(null, modelPackage, Collections.emptySet()),
+        verify(errorHandler).onError(
+                "templates/type_interface",
+                modelFolder.resolve("Thing.java"),
+                new Context(type, modelPackage, Collections.emptySet()),
                 ioException1
         );
         verify(errorHandler).onError(
-                "templates/jsonld_node",
-                modelFolder.resolve("JsonLdNode.java"),
-                new Context(null, modelPackage, Collections.emptySet()),
+                "templates/type_implementation",
+                modelImplFolder.resolve("ThingImpl.java"),
+                new Context(type, modelImplPackage, Set.of("org.schema.model.Thing", JsonLdTypeName.class.getCanonicalName())),
                 ioException2
         );
-        verify(errorHandler).onError(
-                "templates/jsonld_node_impl",
-                modelImplFolder.resolve("JsonLdNodeImpl.java"),
-                new Context(null, modelImplPackage, Set.of(
-                        SchemaGeneratorUtils.resolveClassName(modelPackage, dataTypePackage, SchemaGeneratorUtils.JSON_LD_NODE),
-                        SchemaGeneratorUtils.resolveClassName(modelPackage, dataTypePackage, SchemaGeneratorUtils.JSON_LD_TYPE_NAME)
-                )),
-                ioException3
-        );
+
         verifyNoInteractions(successHandler);
     }
 
@@ -312,60 +295,5 @@ class SchemaModelGeneratorImplTest {
             verifyNoInteractions(schemaDefinitionFilter);
             verifyNoInteractions(schemaDefinitions);
         }
-    }
-
-    private static void verifyCommonTemplates(GeneratorOptions options, TemplateService templateService) throws IOException {
-        final Path modelFolder = options.getModelFolder();
-        final Path modelImplFolder = options.getModelImplFolder();
-        final String modelPackage = options.getModelPackage();
-        final String modelImplPackage = options.getModelImplPackage();
-        final String dataTypePackage = options.getDataTypePackage();
-
-        verify(templateService).apply(
-                "templates/jsonld_typename",
-                modelFolder.resolve("JsonLdTypeName.java"),
-                new Context(null, modelPackage, Collections.emptySet())
-        );
-        verify(templateService).apply(
-                "templates/jsonld_node",
-                modelFolder.resolve("JsonLdNode.java"),
-                new Context(null, modelPackage, Collections.emptySet())
-        );
-        verify(templateService).apply(
-                "templates/jsonld_node_impl",
-                modelImplFolder.resolve("JsonLdNodeImpl.java"),
-                new Context(null, modelImplPackage, Set.of(
-                        SchemaGeneratorUtils.resolveClassName(modelPackage, dataTypePackage, SchemaGeneratorUtils.JSON_LD_NODE),
-                        SchemaGeneratorUtils.resolveClassName(modelPackage, dataTypePackage, SchemaGeneratorUtils.JSON_LD_TYPE_NAME)
-                ))
-        );
-    }
-
-    private static void verifyCommonTemplates(GeneratorOptions options, TemplateService templateService, SuccessHandler successHandler) throws IOException {
-        verifyCommonTemplates(options, templateService);
-
-        final Path modelFolder = options.getModelFolder();
-        final Path modelImplFolder = options.getModelImplFolder();
-        final String modelPackage = options.getModelPackage();
-        final String modelImplPackage = options.getModelImplPackage();
-        final String dataTypePackage = options.getDataTypePackage();
-
-        verify(successHandler).onSuccess("templates/jsonld_typename",
-                modelFolder.resolve("JsonLdTypeName.java"),
-                new Context(null, modelPackage, Collections.emptySet())
-        );
-        verify(successHandler).onSuccess(
-                "templates/jsonld_node",
-                modelFolder.resolve("JsonLdNode.java"),
-                new Context(null, modelPackage, Collections.emptySet())
-        );
-        verify(successHandler).onSuccess(
-                "templates/jsonld_node_impl",
-                modelImplFolder.resolve("JsonLdNodeImpl.java"),
-                new Context(null, modelImplPackage, Set.of(
-                        SchemaGeneratorUtils.resolveClassName(modelPackage, dataTypePackage, SchemaGeneratorUtils.JSON_LD_NODE),
-                        SchemaGeneratorUtils.resolveClassName(modelPackage, dataTypePackage, SchemaGeneratorUtils.JSON_LD_TYPE_NAME)
-                ))
-        );
     }
 }

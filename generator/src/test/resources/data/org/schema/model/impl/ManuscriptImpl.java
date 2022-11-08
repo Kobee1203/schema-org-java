@@ -48,7 +48,7 @@ import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Manuscript;
 
 /**
@@ -59,7 +59,7 @@ import org.schema.model.Manuscript;
  * @see <a href="https://schema.org/Manuscript">https://schema.org/Manuscript</a>
  */
 @JsonLdTypeName("schema:Manuscript")
-public class ManuscriptImpl implements Manuscript {
+public class ManuscriptImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Manuscript {
 
     private Object fTeaches;
 

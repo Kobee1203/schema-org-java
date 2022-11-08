@@ -50,7 +50,7 @@ import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.UserReview;
 
 /**
@@ -61,7 +61,7 @@ import org.schema.model.UserReview;
  * @see <a href="https://schema.org/UserReview">https://schema.org/UserReview</a>
  */
 @JsonLdTypeName("schema:UserReview")
-public class UserReviewImpl implements UserReview {
+public class UserReviewImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements UserReview {
 
     private Rating fReviewRating;
 

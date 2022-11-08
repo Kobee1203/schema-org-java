@@ -35,7 +35,7 @@ import org.schema.model.Schedule;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.CourseInstance;
 
 /**
@@ -44,7 +44,7 @@ import org.schema.model.CourseInstance;
  * @see <a href="https://schema.org/CourseInstance">https://schema.org/CourseInstance</a>
  */
 @JsonLdTypeName("schema:CourseInstance")
-public class CourseInstanceImpl implements CourseInstance {
+public class CourseInstanceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements CourseInstance {
 
     private Person fInstructor;
 

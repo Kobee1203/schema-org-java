@@ -30,7 +30,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.MedicalProcedure;
 import org.schema.model.TherapeuticProcedure;
 
@@ -41,7 +41,7 @@ import org.schema.model.TherapeuticProcedure;
  * @see <a href="https://schema.org/MedicalTherapy">https://schema.org/MedicalTherapy</a>
  */
 @JsonLdTypeName("schema:MedicalTherapy")
-public class MedicalTherapyImpl implements MedicalTherapy {
+public class MedicalTherapyImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MedicalTherapy {
 
     private MedicalTherapy fDuplicateTherapy;
 

@@ -24,7 +24,7 @@ import org.schema.model.datatype.URL;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.PlayAction;
 import org.schema.model.PerformAction;
 
@@ -34,7 +34,7 @@ import org.schema.model.PerformAction;
  * @see <a href="https://schema.org/PerformAction">https://schema.org/PerformAction</a>
  */
 @JsonLdTypeName("schema:PerformAction")
-public class PerformActionImpl implements PerformAction {
+public class PerformActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PerformAction {
 
     private EntertainmentBusiness fEntertainmentBusiness;
 

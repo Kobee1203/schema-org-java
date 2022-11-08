@@ -35,7 +35,7 @@ import org.schema.model.Schedule;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.UserInteraction;
 import org.schema.model.UserCheckins;
 
@@ -45,7 +45,7 @@ import org.schema.model.UserCheckins;
  * @see <a href="https://schema.org/UserCheckins">https://schema.org/UserCheckins</a>
  */
 @JsonLdTypeName("schema:UserCheckins")
-public class UserCheckinsImpl implements UserCheckins {
+public class UserCheckinsImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements UserCheckins {
 
     private Event fSuperEvent;
 

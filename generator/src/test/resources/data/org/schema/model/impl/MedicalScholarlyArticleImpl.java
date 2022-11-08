@@ -49,7 +49,7 @@ import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Article;
 import org.schema.model.ScholarlyArticle;
 import org.schema.model.MedicalScholarlyArticle;
@@ -61,7 +61,7 @@ import org.schema.model.MedicalScholarlyArticle;
  * @see <a href="https://schema.org/MedicalScholarlyArticle">https://schema.org/MedicalScholarlyArticle</a>
  */
 @JsonLdTypeName("schema:MedicalScholarlyArticle")
-public class MedicalScholarlyArticleImpl implements MedicalScholarlyArticle {
+public class MedicalScholarlyArticleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MedicalScholarlyArticle {
 
     private Text fPublicationType;
 

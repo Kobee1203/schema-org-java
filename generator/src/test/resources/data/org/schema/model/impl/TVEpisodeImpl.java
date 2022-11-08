@@ -52,7 +52,7 @@ import org.schema.model.ItemList;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Episode;
 import org.schema.model.TVEpisode;
 
@@ -62,7 +62,7 @@ import org.schema.model.TVEpisode;
  * @see <a href="https://schema.org/TVEpisode">https://schema.org/TVEpisode</a>
  */
 @JsonLdTypeName("schema:TVEpisode")
-public class TVEpisodeImpl implements TVEpisode {
+public class TVEpisodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements TVEpisode {
 
     private Country fCountryOfOrigin;
 

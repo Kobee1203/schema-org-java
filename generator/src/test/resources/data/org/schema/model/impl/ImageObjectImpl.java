@@ -53,7 +53,7 @@ import org.schema.model.Clip;
 import org.schema.model.ItemList;
 import org.schema.model.VideoObject;
 import org.schema.model.Action;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 
 /**
  * An image file.
@@ -61,7 +61,7 @@ import org.schema.model.JsonLdTypeName;
  * @see <a href="https://schema.org/ImageObject">https://schema.org/ImageObject</a>
  */
 @JsonLdTypeName("schema:ImageObject")
-public class ImageObjectImpl implements ImageObject {
+public class ImageObjectImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ImageObject {
 
     private Text fEmbeddedTextCaption;
 

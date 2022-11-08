@@ -38,7 +38,7 @@ import org.schema.model.CreativeWork;
 import org.schema.model.Action;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.FinancialProduct;
 import org.schema.model.LoanOrCredit;
@@ -53,7 +53,7 @@ import org.schema.model.MortgageLoan;
  * @see <a href="https://schema.org/MortgageLoan">https://schema.org/MortgageLoan</a>
  */
 @JsonLdTypeName("schema:MortgageLoan")
-public class MortgageLoanImpl implements MortgageLoan {
+public class MortgageLoanImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MortgageLoan {
 
     private MonetaryAmount fLoanMortgageMandateAmount;
 

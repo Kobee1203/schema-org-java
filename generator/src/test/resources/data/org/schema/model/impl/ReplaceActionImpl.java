@@ -22,7 +22,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.UpdateAction;
 import org.schema.model.ReplaceAction;
 
@@ -32,7 +32,7 @@ import org.schema.model.ReplaceAction;
  * @see <a href="https://schema.org/ReplaceAction">https://schema.org/ReplaceAction</a>
  */
 @JsonLdTypeName("schema:ReplaceAction")
-public class ReplaceActionImpl implements ReplaceAction {
+public class ReplaceActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ReplaceAction {
 
     private Thing fReplacee;
 

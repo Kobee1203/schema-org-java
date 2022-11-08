@@ -5,7 +5,7 @@
  */
 package org.schema.model.datatype;
 
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 
 /**
  * Boolean: True or False.

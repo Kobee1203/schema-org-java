@@ -15,7 +15,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.MediaSubscription;
 
@@ -26,7 +26,7 @@ import org.schema.model.MediaSubscription;
  * @see <a href="https://schema.org/MediaSubscription">https://schema.org/MediaSubscription</a>
  */
 @JsonLdTypeName("schema:MediaSubscription")
-public class MediaSubscriptionImpl implements MediaSubscription {
+public class MediaSubscriptionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MediaSubscription {
 
     private Offer fExpectsAcceptanceOf;
 

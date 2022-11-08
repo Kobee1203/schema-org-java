@@ -25,7 +25,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.MedicalEntity;
 import org.schema.model.MedicalIntangible;
 import org.schema.model.DrugStrength;
@@ -37,7 +37,7 @@ import org.schema.model.DrugStrength;
  * @see <a href="https://schema.org/DrugStrength">https://schema.org/DrugStrength</a>
  */
 @JsonLdTypeName("schema:DrugStrength")
-public class DrugStrengthImpl implements DrugStrength {
+public class DrugStrengthImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements DrugStrength {
 
     private AdministrativeArea fAvailableIn;
 

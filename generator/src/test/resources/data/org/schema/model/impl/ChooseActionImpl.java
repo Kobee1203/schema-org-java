@@ -22,7 +22,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.AssessAction;
 import org.schema.model.ChooseAction;
 
@@ -32,7 +32,7 @@ import org.schema.model.ChooseAction;
  * @see <a href="https://schema.org/ChooseAction">https://schema.org/ChooseAction</a>
  */
 @JsonLdTypeName("schema:ChooseAction")
-public class ChooseActionImpl implements ChooseAction {
+public class ChooseActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ChooseAction {
 
     private Object fOption;
 

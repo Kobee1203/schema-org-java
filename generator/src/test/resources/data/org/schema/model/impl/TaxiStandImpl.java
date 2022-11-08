@@ -28,7 +28,7 @@ import org.schema.model.Event;
 import org.schema.model.CreativeWork;
 import org.schema.model.Action;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.CivicStructure;
 import org.schema.model.TaxiStand;
 
@@ -38,7 +38,7 @@ import org.schema.model.TaxiStand;
  * @see <a href="https://schema.org/TaxiStand">https://schema.org/TaxiStand</a>
  */
 @JsonLdTypeName("schema:TaxiStand")
-public class TaxiStandImpl implements TaxiStand {
+public class TaxiStandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements TaxiStand {
 
     private Text fOpeningHours;
 

@@ -5,7 +5,7 @@
  */
 package org.schema.model.datatype;
 
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 
 /**
  * Text representing an XPath (typically but not necessarily version 1.0).

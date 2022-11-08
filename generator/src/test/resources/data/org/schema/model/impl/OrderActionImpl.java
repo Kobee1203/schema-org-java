@@ -25,7 +25,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.TradeAction;
 import org.schema.model.OrderAction;
 
@@ -35,7 +35,7 @@ import org.schema.model.OrderAction;
  * @see <a href="https://schema.org/OrderAction">https://schema.org/OrderAction</a>
  */
 @JsonLdTypeName("schema:OrderAction")
-public class OrderActionImpl implements OrderAction {
+public class OrderActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements OrderAction {
 
     private DeliveryMethod fDeliveryMethod;
 

@@ -41,7 +41,7 @@ import org.schema.model.OfferCatalog;
 import org.schema.model.Event;
 import org.schema.model.Action;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.LibrarySystem;
 
 /**
@@ -52,7 +52,7 @@ import org.schema.model.LibrarySystem;
  * @see <a href="https://schema.org/LibrarySystem">https://schema.org/LibrarySystem</a>
  */
 @JsonLdTypeName("schema:LibrarySystem")
-public class LibrarySystemImpl implements LibrarySystem {
+public class LibrarySystemImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements LibrarySystem {
 
     private Object fOwnershipFundingInfo;
 

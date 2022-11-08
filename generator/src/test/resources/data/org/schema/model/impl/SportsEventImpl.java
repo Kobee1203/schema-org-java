@@ -36,7 +36,7 @@ import org.schema.model.Schedule;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.SportsEvent;
 
 /**
@@ -45,7 +45,7 @@ import org.schema.model.SportsEvent;
  * @see <a href="https://schema.org/SportsEvent">https://schema.org/SportsEvent</a>
  */
 @JsonLdTypeName("schema:SportsEvent")
-public class SportsEventImpl implements SportsEvent {
+public class SportsEventImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements SportsEvent {
 
     private Object fHomeTeam;
 

@@ -36,7 +36,7 @@ import org.schema.model.Schedule;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.DeliveryEvent;
 
 /**
@@ -45,7 +45,7 @@ import org.schema.model.DeliveryEvent;
  * @see <a href="https://schema.org/DeliveryEvent">https://schema.org/DeliveryEvent</a>
  */
 @JsonLdTypeName("schema:DeliveryEvent")
-public class DeliveryEventImpl implements DeliveryEvent {
+public class DeliveryEventImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements DeliveryEvent {
 
     private Text fAccessCode;
 

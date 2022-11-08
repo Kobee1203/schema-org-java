@@ -38,7 +38,7 @@ import org.schema.model.datatype.Boolean;
 import org.schema.model.CreativeWork;
 import org.schema.model.Action;
 import org.schema.model.Event;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.IndividualProduct;
 
 /**
@@ -48,7 +48,7 @@ import org.schema.model.IndividualProduct;
  * @see <a href="https://schema.org/IndividualProduct">https://schema.org/IndividualProduct</a>
  */
 @JsonLdTypeName("schema:IndividualProduct")
-public class IndividualProductImpl implements IndividualProduct {
+public class IndividualProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements IndividualProduct {
 
     private Text fSerialNumber;
 

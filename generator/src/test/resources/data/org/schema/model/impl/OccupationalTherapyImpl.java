@@ -30,7 +30,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.MedicalProcedure;
 import org.schema.model.TherapeuticProcedure;
 import org.schema.model.OccupationalTherapy;
@@ -42,7 +42,7 @@ import org.schema.model.OccupationalTherapy;
  * @see <a href="https://schema.org/OccupationalTherapy">https://schema.org/OccupationalTherapy</a>
  */
 @JsonLdTypeName("schema:OccupationalTherapy")
-public class OccupationalTherapyImpl implements OccupationalTherapy {
+public class OccupationalTherapyImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements OccupationalTherapy {
 
     private MedicalTherapy fDuplicateTherapy;
 

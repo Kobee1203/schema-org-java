@@ -22,7 +22,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.FindAction;
 
 /**
@@ -31,7 +31,7 @@ import org.schema.model.FindAction;
  * @see <a href="https://schema.org/FindAction">https://schema.org/FindAction</a>
  */
 @JsonLdTypeName("schema:FindAction")
-public class FindActionImpl implements FindAction {
+public class FindActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements FindAction {
 
     private Object fAgent;
 

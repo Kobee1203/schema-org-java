@@ -22,7 +22,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.SearchAction;
 
 /**
@@ -31,7 +31,7 @@ import org.schema.model.SearchAction;
  * @see <a href="https://schema.org/SearchAction">https://schema.org/SearchAction</a>
  */
 @JsonLdTypeName("schema:SearchAction")
-public class SearchActionImpl implements SearchAction {
+public class SearchActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements SearchAction {
 
     private Text fQuery;
 

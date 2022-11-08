@@ -24,7 +24,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.Reservation;
 import org.schema.model.FoodEstablishmentReservation;
@@ -35,7 +35,7 @@ import org.schema.model.FoodEstablishmentReservation;
  * @see <a href="https://schema.org/FoodEstablishmentReservation">https://schema.org/FoodEstablishmentReservation</a>
  */
 @JsonLdTypeName("schema:FoodEstablishmentReservation")
-public class FoodEstablishmentReservationImpl implements FoodEstablishmentReservation {
+public class FoodEstablishmentReservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements FoodEstablishmentReservation {
 
     private Object fPartySize;
 

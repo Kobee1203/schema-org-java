@@ -49,7 +49,7 @@ import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Article;
 import org.schema.model.SocialMediaPosting;
 
@@ -59,7 +59,7 @@ import org.schema.model.SocialMediaPosting;
  * @see <a href="https://schema.org/SocialMediaPosting">https://schema.org/SocialMediaPosting</a>
  */
 @JsonLdTypeName("schema:SocialMediaPosting")
-public class SocialMediaPostingImpl implements SocialMediaPosting {
+public class SocialMediaPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements SocialMediaPosting {
 
     private CreativeWork fSharedContent;
 

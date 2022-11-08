@@ -25,7 +25,7 @@ import org.schema.model.datatype.URL;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.InteractAction;
 import org.schema.model.CommunicateAction;
 import org.schema.model.InviteAction;
@@ -36,7 +36,7 @@ import org.schema.model.InviteAction;
  * @see <a href="https://schema.org/InviteAction">https://schema.org/InviteAction</a>
  */
 @JsonLdTypeName("schema:InviteAction")
-public class InviteActionImpl implements InviteAction {
+public class InviteActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements InviteAction {
 
     private Event fEvent;
 

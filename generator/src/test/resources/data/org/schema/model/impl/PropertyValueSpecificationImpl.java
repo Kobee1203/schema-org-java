@@ -15,7 +15,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.PropertyValueSpecification;
 
@@ -26,7 +26,7 @@ import org.schema.model.PropertyValueSpecification;
  * @see <a href="https://schema.org/PropertyValueSpecification">https://schema.org/PropertyValueSpecification</a>
  */
 @JsonLdTypeName("schema:PropertyValueSpecification")
-public class PropertyValueSpecificationImpl implements PropertyValueSpecification {
+public class PropertyValueSpecificationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PropertyValueSpecification {
 
     private Number fValueMaxLength;
 

@@ -28,7 +28,7 @@ import org.schema.model.Event;
 import org.schema.model.CreativeWork;
 import org.schema.model.Action;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.AdministrativeArea;
 
 /**
@@ -37,7 +37,7 @@ import org.schema.model.AdministrativeArea;
  * @see <a href="https://schema.org/AdministrativeArea">https://schema.org/AdministrativeArea</a>
  */
 @JsonLdTypeName("schema:AdministrativeArea")
-public class AdministrativeAreaImpl implements AdministrativeArea {
+public class AdministrativeAreaImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements AdministrativeArea {
 
     private Text fTelephone;
 

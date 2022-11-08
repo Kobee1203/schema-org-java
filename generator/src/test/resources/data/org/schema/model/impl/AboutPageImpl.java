@@ -52,7 +52,7 @@ import org.schema.model.ItemList;
 import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.AboutPage;
 
 /**
@@ -61,7 +61,7 @@ import org.schema.model.AboutPage;
  * @see <a href="https://schema.org/AboutPage">https://schema.org/AboutPage</a>
  */
 @JsonLdTypeName("schema:AboutPage")
-public class AboutPageImpl implements AboutPage {
+public class AboutPageImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements AboutPage {
 
     private Date fLastReviewed;
 

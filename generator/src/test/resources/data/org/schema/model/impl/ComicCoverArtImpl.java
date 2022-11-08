@@ -48,7 +48,7 @@ import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.ComicStory;
 import org.schema.model.Distance;
 import org.schema.model.VisualArtwork;
@@ -62,7 +62,7 @@ import org.schema.model.ComicCoverArt;
  * @see <a href="https://schema.org/ComicCoverArt">https://schema.org/ComicCoverArt</a>
  */
 @JsonLdTypeName("schema:ComicCoverArt")
-public class ComicCoverArtImpl implements ComicCoverArt {
+public class ComicCoverArtImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ComicCoverArt {
 
     private Person fLetterer;
 

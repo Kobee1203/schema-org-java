@@ -41,7 +41,7 @@ import org.schema.model.OfferCatalog;
 import org.schema.model.Event;
 import org.schema.model.Action;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.GeospatialGeometry;
 import org.schema.model.datatype.Integer;
 import org.schema.model.datatype.Boolean;
@@ -61,7 +61,7 @@ import org.schema.model.BookStore;
  * @see <a href="https://schema.org/BookStore">https://schema.org/BookStore</a>
  */
 @JsonLdTypeName("schema:BookStore")
-public class BookStoreImpl implements BookStore {
+public class BookStoreImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements BookStore {
 
     private Organization fBranchOf;
 

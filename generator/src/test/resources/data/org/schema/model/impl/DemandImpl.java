@@ -37,7 +37,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.Demand;
 
@@ -48,7 +48,7 @@ import org.schema.model.Demand;
  * @see <a href="https://schema.org/Demand">https://schema.org/Demand</a>
  */
 @JsonLdTypeName("schema:Demand")
-public class DemandImpl implements Demand {
+public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Demand {
 
     private Text fGtin12;
 

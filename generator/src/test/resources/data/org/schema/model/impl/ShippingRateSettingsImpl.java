@@ -17,7 +17,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.StructuredValue;
 import org.schema.model.ShippingRateSettings;
@@ -30,7 +30,7 @@ import org.schema.model.ShippingRateSettings;
  * @see <a href="https://schema.org/ShippingRateSettings">https://schema.org/ShippingRateSettings</a>
  */
 @JsonLdTypeName("schema:ShippingRateSettings")
-public class ShippingRateSettingsImpl implements ShippingRateSettings {
+public class ShippingRateSettingsImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ShippingRateSettings {
 
     private DefinedRegion fShippingDestination;
 

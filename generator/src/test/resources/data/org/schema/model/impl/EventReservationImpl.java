@@ -21,7 +21,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.Reservation;
 import org.schema.model.EventReservation;
@@ -32,7 +32,7 @@ import org.schema.model.EventReservation;
  * @see <a href="https://schema.org/EventReservation">https://schema.org/EventReservation</a>
  */
 @JsonLdTypeName("schema:EventReservation")
-public class EventReservationImpl implements EventReservation {
+public class EventReservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements EventReservation {
 
     private DateTime fModifiedTime;
 

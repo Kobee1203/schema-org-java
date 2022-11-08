@@ -35,7 +35,7 @@ import org.schema.model.Schedule;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.UserInteraction;
 import org.schema.model.UserPlusOnes;
 
@@ -45,7 +45,7 @@ import org.schema.model.UserPlusOnes;
  * @see <a href="https://schema.org/UserPlusOnes">https://schema.org/UserPlusOnes</a>
  */
 @JsonLdTypeName("schema:UserPlusOnes")
-public class UserPlusOnesImpl implements UserPlusOnes {
+public class UserPlusOnesImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements UserPlusOnes {
 
     private Event fSuperEvent;
 

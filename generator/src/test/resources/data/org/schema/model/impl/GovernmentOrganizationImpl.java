@@ -41,7 +41,7 @@ import org.schema.model.OfferCatalog;
 import org.schema.model.Event;
 import org.schema.model.Action;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.GovernmentOrganization;
 
 /**
@@ -50,7 +50,7 @@ import org.schema.model.GovernmentOrganization;
  * @see <a href="https://schema.org/GovernmentOrganization">https://schema.org/GovernmentOrganization</a>
  */
 @JsonLdTypeName("schema:GovernmentOrganization")
-public class GovernmentOrganizationImpl implements GovernmentOrganization {
+public class GovernmentOrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements GovernmentOrganization {
 
     private Object fOwnershipFundingInfo;
 

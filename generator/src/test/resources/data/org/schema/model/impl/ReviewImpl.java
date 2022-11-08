@@ -50,7 +50,7 @@ import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 
 /**
  * A review of an item - for example, of a restaurant, movie, or store.
@@ -58,7 +58,7 @@ import org.schema.model.JsonLdTypeName;
  * @see <a href="https://schema.org/Review">https://schema.org/Review</a>
  */
 @JsonLdTypeName("schema:Review")
-public class ReviewImpl implements Review {
+public class ReviewImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Review {
 
     private Rating fReviewRating;
 

@@ -49,7 +49,7 @@ import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 
 /**
  * A musical composition.
@@ -58,7 +58,7 @@ import org.schema.model.JsonLdTypeName;
  * @see <a href="https://schema.org/MusicComposition">https://schema.org/MusicComposition</a>
  */
 @JsonLdTypeName("schema:MusicComposition")
-public class MusicCompositionImpl implements MusicComposition {
+public class MusicCompositionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MusicComposition {
 
     private Text fIswcCode;
 

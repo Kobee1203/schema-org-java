@@ -17,7 +17,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.Rating;
 import org.schema.model.AggregateRating;
@@ -28,7 +28,7 @@ import org.schema.model.AggregateRating;
  * @see <a href="https://schema.org/AggregateRating">https://schema.org/AggregateRating</a>
  */
 @JsonLdTypeName("schema:AggregateRating")
-public class AggregateRatingImpl implements AggregateRating {
+public class AggregateRatingImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements AggregateRating {
 
     private Thing fItemReviewed;
 

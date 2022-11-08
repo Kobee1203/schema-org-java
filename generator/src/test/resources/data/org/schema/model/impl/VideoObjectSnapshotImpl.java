@@ -54,7 +54,7 @@ import org.schema.model.ItemList;
 import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.VideoObjectSnapshot;
 
 /**
@@ -65,7 +65,7 @@ import org.schema.model.VideoObjectSnapshot;
  * @see <a href="https://schema.org/VideoObjectSnapshot">https://schema.org/VideoObjectSnapshot</a>
  */
 @JsonLdTypeName("schema:VideoObjectSnapshot")
-public class VideoObjectSnapshotImpl implements VideoObjectSnapshot {
+public class VideoObjectSnapshotImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements VideoObjectSnapshot {
 
     private Text fEmbeddedTextCaption;
 

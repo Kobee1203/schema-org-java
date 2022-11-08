@@ -13,7 +13,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.Quantity;
 
@@ -23,7 +23,7 @@ import org.schema.model.Quantity;
  * @see <a href="https://schema.org/Quantity">https://schema.org/Quantity</a>
  */
 @JsonLdTypeName("schema:Quantity")
-public class QuantityImpl implements Quantity {
+public class QuantityImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Quantity {
 
     private Object fMainEntityOfPage;
 

@@ -28,7 +28,7 @@ import org.schema.model.Event;
 import org.schema.model.CreativeWork;
 import org.schema.model.Action;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Landform;
 
 /**
@@ -37,7 +37,7 @@ import org.schema.model.Landform;
  * @see <a href="https://schema.org/Landform">https://schema.org/Landform</a>
  */
 @JsonLdTypeName("schema:Landform")
-public class LandformImpl implements Landform {
+public class LandformImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Landform {
 
     private Text fTelephone;
 

@@ -35,7 +35,7 @@ import org.schema.model.Schedule;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.UserInteraction;
 import org.schema.model.UserBlocks;
 
@@ -45,7 +45,7 @@ import org.schema.model.UserBlocks;
  * @see <a href="https://schema.org/UserBlocks">https://schema.org/UserBlocks</a>
  */
 @JsonLdTypeName("schema:UserBlocks")
-public class UserBlocksImpl implements UserBlocks {
+public class UserBlocksImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements UserBlocks {
 
     private Event fSuperEvent;
 

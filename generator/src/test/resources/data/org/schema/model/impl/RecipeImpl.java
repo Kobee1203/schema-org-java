@@ -55,7 +55,7 @@ import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.HowTo;
 import org.schema.model.Recipe;
 
@@ -65,7 +65,7 @@ import org.schema.model.Recipe;
  * @see <a href="https://schema.org/Recipe">https://schema.org/Recipe</a>
  */
 @JsonLdTypeName("schema:Recipe")
-public class RecipeImpl implements Recipe {
+public class RecipeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Recipe {
 
     private Object fRecipeInstructions;
 

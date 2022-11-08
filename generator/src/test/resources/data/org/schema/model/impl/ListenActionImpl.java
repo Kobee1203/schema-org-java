@@ -24,7 +24,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.ConsumeAction;
 import org.schema.model.ListenAction;
 
@@ -34,7 +34,7 @@ import org.schema.model.ListenAction;
  * @see <a href="https://schema.org/ListenAction">https://schema.org/ListenAction</a>
  */
 @JsonLdTypeName("schema:ListenAction")
-public class ListenActionImpl implements ListenAction {
+public class ListenActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ListenAction {
 
     private Offer fExpectsAcceptanceOf;
 

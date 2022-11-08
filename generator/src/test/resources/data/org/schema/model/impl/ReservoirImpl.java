@@ -28,7 +28,7 @@ import org.schema.model.Event;
 import org.schema.model.CreativeWork;
 import org.schema.model.Action;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Landform;
 import org.schema.model.BodyOfWater;
 import org.schema.model.Reservoir;
@@ -39,7 +39,7 @@ import org.schema.model.Reservoir;
  * @see <a href="https://schema.org/Reservoir">https://schema.org/Reservoir</a>
  */
 @JsonLdTypeName("schema:Reservoir")
-public class ReservoirImpl implements Reservoir {
+public class ReservoirImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Reservoir {
 
     private Text fTelephone;
 

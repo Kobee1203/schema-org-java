@@ -15,7 +15,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 
 /**
  * A set of organisms asserted to represent a natural cohesive biological unit.
@@ -24,7 +24,7 @@ import org.schema.model.JsonLdTypeName;
  * @see <a href="https://schema.org/Taxon">https://schema.org/Taxon</a>
  */
 @JsonLdTypeName("schema:Taxon")
-public class TaxonImpl implements Taxon {
+public class TaxonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Taxon {
 
     private Object fParentTaxon;
 

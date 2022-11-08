@@ -19,7 +19,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.DefinedTerm;
 import org.schema.model.datatype.Date;
@@ -61,7 +61,7 @@ import org.schema.model.HowToDirection;
  * @see <a href="https://schema.org/HowToDirection">https://schema.org/HowToDirection</a>
  */
 @JsonLdTypeName("schema:HowToDirection")
-public class HowToDirectionImpl implements HowToDirection {
+public class HowToDirectionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements HowToDirection {
 
     private Object fAfterMedia;
 

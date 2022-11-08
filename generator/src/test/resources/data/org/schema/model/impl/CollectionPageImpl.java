@@ -52,7 +52,7 @@ import org.schema.model.ItemList;
 import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.CollectionPage;
 
 /**
@@ -61,7 +61,7 @@ import org.schema.model.CollectionPage;
  * @see <a href="https://schema.org/CollectionPage">https://schema.org/CollectionPage</a>
  */
 @JsonLdTypeName("schema:CollectionPage")
-public class CollectionPageImpl implements CollectionPage {
+public class CollectionPageImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements CollectionPage {
 
     private Date fLastReviewed;
 

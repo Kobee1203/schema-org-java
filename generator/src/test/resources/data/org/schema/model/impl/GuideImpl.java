@@ -48,7 +48,7 @@ import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Guide;
 
 /**
@@ -59,7 +59,7 @@ import org.schema.model.Guide;
  * @see <a href="https://schema.org/Guide">https://schema.org/Guide</a>
  */
 @JsonLdTypeName("schema:Guide")
-public class GuideImpl implements Guide {
+public class GuideImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Guide {
 
     private Text fReviewAspect;
 

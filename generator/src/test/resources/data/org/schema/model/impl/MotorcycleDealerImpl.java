@@ -41,7 +41,7 @@ import org.schema.model.OfferCatalog;
 import org.schema.model.Event;
 import org.schema.model.Action;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.GeospatialGeometry;
 import org.schema.model.datatype.Integer;
 import org.schema.model.datatype.Boolean;
@@ -61,7 +61,7 @@ import org.schema.model.MotorcycleDealer;
  * @see <a href="https://schema.org/MotorcycleDealer">https://schema.org/MotorcycleDealer</a>
  */
 @JsonLdTypeName("schema:MotorcycleDealer")
-public class MotorcycleDealerImpl implements MotorcycleDealer {
+public class MotorcycleDealerImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MotorcycleDealer {
 
     private Organization fBranchOf;
 

@@ -26,7 +26,7 @@ import org.schema.model.Action;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.MedicalEntity;
 import org.schema.model.Bone;
 
@@ -37,7 +37,7 @@ import org.schema.model.Bone;
  * @see <a href="https://schema.org/Bone">https://schema.org/Bone</a>
  */
 @JsonLdTypeName("schema:Bone")
-public class BoneImpl implements Bone {
+public class BoneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Bone {
 
     private Text fBodyLocation;
 

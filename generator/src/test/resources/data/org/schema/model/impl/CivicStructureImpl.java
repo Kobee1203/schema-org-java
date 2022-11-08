@@ -28,7 +28,7 @@ import org.schema.model.Event;
 import org.schema.model.CreativeWork;
 import org.schema.model.Action;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.CivicStructure;
 
 /**
@@ -37,7 +37,7 @@ import org.schema.model.CivicStructure;
  * @see <a href="https://schema.org/CivicStructure">https://schema.org/CivicStructure</a>
  */
 @JsonLdTypeName("schema:CivicStructure")
-public class CivicStructureImpl implements CivicStructure {
+public class CivicStructureImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements CivicStructure {
 
     private Text fOpeningHours;
 

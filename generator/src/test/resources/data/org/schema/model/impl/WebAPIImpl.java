@@ -32,7 +32,7 @@ import org.schema.model.OfferCatalog;
 import org.schema.model.Action;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.WebAPI;
 
@@ -44,7 +44,7 @@ import org.schema.model.WebAPI;
  * @see <a href="https://schema.org/WebAPI">https://schema.org/WebAPI</a>
  */
 @JsonLdTypeName("schema:WebAPI")
-public class WebAPIImpl implements WebAPI {
+public class WebAPIImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements WebAPI {
 
     private Object fDocumentation;
 

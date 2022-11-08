@@ -22,7 +22,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.OrganizeAction;
 import org.schema.model.PlanAction;
 import org.schema.model.ReserveAction;
@@ -33,7 +33,7 @@ import org.schema.model.ReserveAction;
  * @see <a href="https://schema.org/ReserveAction">https://schema.org/ReserveAction</a>
  */
 @JsonLdTypeName("schema:ReserveAction")
-public class ReserveActionImpl implements ReserveAction {
+public class ReserveActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ReserveAction {
 
     private DateTime fScheduledTime;
 

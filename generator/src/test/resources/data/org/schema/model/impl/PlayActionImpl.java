@@ -23,7 +23,7 @@ import org.schema.model.datatype.URL;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.PlayAction;
 
 /**
@@ -32,7 +32,7 @@ import org.schema.model.PlayAction;
  * @see <a href="https://schema.org/PlayAction">https://schema.org/PlayAction</a>
  */
 @JsonLdTypeName("schema:PlayAction")
-public class PlayActionImpl implements PlayAction {
+public class PlayActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PlayAction {
 
     private Audience fAudience;
 

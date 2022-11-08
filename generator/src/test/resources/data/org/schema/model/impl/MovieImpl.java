@@ -49,7 +49,7 @@ import org.schema.model.ItemList;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Movie;
 
 /**
@@ -58,7 +58,7 @@ import org.schema.model.Movie;
  * @see <a href="https://schema.org/Movie">https://schema.org/Movie</a>
  */
 @JsonLdTypeName("schema:Movie")
-public class MovieImpl implements Movie {
+public class MovieImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Movie {
 
     private Country fCountryOfOrigin;
 

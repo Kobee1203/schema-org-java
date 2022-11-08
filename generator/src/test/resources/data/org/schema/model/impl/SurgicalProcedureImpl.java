@@ -26,7 +26,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.MedicalProcedure;
 import org.schema.model.SurgicalProcedure;
 
@@ -37,7 +37,7 @@ import org.schema.model.SurgicalProcedure;
  * @see <a href="https://schema.org/SurgicalProcedure">https://schema.org/SurgicalProcedure</a>
  */
 @JsonLdTypeName("schema:SurgicalProcedure")
-public class SurgicalProcedureImpl implements SurgicalProcedure {
+public class SurgicalProcedureImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements SurgicalProcedure {
 
     private MedicalProcedureType fProcedureType;
 

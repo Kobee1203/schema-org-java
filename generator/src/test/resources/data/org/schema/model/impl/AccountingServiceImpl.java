@@ -41,7 +41,7 @@ import org.schema.model.OfferCatalog;
 import org.schema.model.Event;
 import org.schema.model.Action;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.GeospatialGeometry;
 import org.schema.model.datatype.Integer;
 import org.schema.model.datatype.Boolean;
@@ -62,7 +62,7 @@ import org.schema.model.AccountingService;
  * @see <a href="https://schema.org/AccountingService">https://schema.org/AccountingService</a>
  */
 @JsonLdTypeName("schema:AccountingService")
-public class AccountingServiceImpl implements AccountingService {
+public class AccountingServiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements AccountingService {
 
     private Object fFeesAndCommissionsSpecification;
 

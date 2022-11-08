@@ -23,7 +23,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.MedicalEntity;
 import org.schema.model.DrugClass;
 
@@ -34,7 +34,7 @@ import org.schema.model.DrugClass;
  * @see <a href="https://schema.org/DrugClass">https://schema.org/DrugClass</a>
  */
 @JsonLdTypeName("schema:DrugClass")
-public class DrugClassImpl implements DrugClass {
+public class DrugClassImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements DrugClass {
 
     private Drug fDrug;
 

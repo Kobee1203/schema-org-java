@@ -17,7 +17,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.StructuredValue;
 import org.schema.model.OpeningHoursSpecification;
@@ -31,7 +31,7 @@ import org.schema.model.OpeningHoursSpecification;
  * @see <a href="https://schema.org/OpeningHoursSpecification">https://schema.org/OpeningHoursSpecification</a>
  */
 @JsonLdTypeName("schema:OpeningHoursSpecification")
-public class OpeningHoursSpecificationImpl implements OpeningHoursSpecification {
+public class OpeningHoursSpecificationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements OpeningHoursSpecification {
 
     private Time fCloses;
 

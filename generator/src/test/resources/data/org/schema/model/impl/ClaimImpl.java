@@ -48,7 +48,7 @@ import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 
 /**
  * A [[Claim]] in Schema.org represents a specific, factually-oriented claim that could be the [[itemReviewed]] in a [[ClaimReview]]. The content of a claim can be summarized with the [[text]] property. Variations on well known claims can have their common identity indicated via [[sameAs]] links, and summarized with a [[name]]. Ideally, a [[Claim]] description includes enough contextual information to minimize the risk of ambiguity or inclarity. In practice, many claims are better understood in the context in which they appear or the interpretations provided by claim reviews.
@@ -63,7 +63,7 @@ import org.schema.model.JsonLdTypeName;
  * @see <a href="https://schema.org/Claim">https://schema.org/Claim</a>
  */
 @JsonLdTypeName("schema:Claim")
-public class ClaimImpl implements Claim {
+public class ClaimImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Claim {
 
     private Object fClaimInterpreter;
 

@@ -26,7 +26,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.MedicalEntity;
 import org.schema.model.MedicalTest;
 import org.schema.model.BloodTest;
@@ -38,7 +38,7 @@ import org.schema.model.BloodTest;
  * @see <a href="https://schema.org/BloodTest">https://schema.org/BloodTest</a>
  */
 @JsonLdTypeName("schema:BloodTest")
-public class BloodTestImpl implements BloodTest {
+public class BloodTestImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements BloodTest {
 
     private MedicalCondition fUsedToDiagnose;
 

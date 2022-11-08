@@ -22,7 +22,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.OrganizeAction;
 import org.schema.model.AllocateAction;
 import org.schema.model.AssignAction;
@@ -33,7 +33,7 @@ import org.schema.model.AssignAction;
  * @see <a href="https://schema.org/AssignAction">https://schema.org/AssignAction</a>
  */
 @JsonLdTypeName("schema:AssignAction")
-public class AssignActionImpl implements AssignAction {
+public class AssignActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements AssignAction {
 
     private Object fAgent;
 

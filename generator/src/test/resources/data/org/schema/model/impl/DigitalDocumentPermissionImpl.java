@@ -18,7 +18,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.DigitalDocumentPermission;
 
@@ -28,7 +28,7 @@ import org.schema.model.DigitalDocumentPermission;
  * @see <a href="https://schema.org/DigitalDocumentPermission">https://schema.org/DigitalDocumentPermission</a>
  */
 @JsonLdTypeName("schema:DigitalDocumentPermission")
-public class DigitalDocumentPermissionImpl implements DigitalDocumentPermission {
+public class DigitalDocumentPermissionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements DigitalDocumentPermission {
 
     private Object fGrantee;
 

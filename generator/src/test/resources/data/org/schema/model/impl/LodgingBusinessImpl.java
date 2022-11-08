@@ -48,7 +48,7 @@ import org.schema.model.OfferCatalog;
 import org.schema.model.Event;
 import org.schema.model.Action;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.GeospatialGeometry;
 import org.schema.model.datatype.Integer;
 import org.schema.model.Photograph;
@@ -64,7 +64,7 @@ import org.schema.model.LodgingBusiness;
  * @see <a href="https://schema.org/LodgingBusiness">https://schema.org/LodgingBusiness</a>
  */
 @JsonLdTypeName("schema:LodgingBusiness")
-public class LodgingBusinessImpl implements LodgingBusiness {
+public class LodgingBusinessImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements LodgingBusiness {
 
     private Object fNumberOfRooms;
 

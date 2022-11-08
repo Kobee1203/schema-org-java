@@ -22,7 +22,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.TransferAction;
 
 /**
@@ -31,7 +31,7 @@ import org.schema.model.TransferAction;
  * @see <a href="https://schema.org/TransferAction">https://schema.org/TransferAction</a>
  */
 @JsonLdTypeName("schema:TransferAction")
-public class TransferActionImpl implements TransferAction {
+public class TransferActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements TransferAction {
 
     private Place fFromLocation;
 

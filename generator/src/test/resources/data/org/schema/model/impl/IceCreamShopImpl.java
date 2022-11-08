@@ -44,7 +44,7 @@ import org.schema.model.OfferCatalog;
 import org.schema.model.Event;
 import org.schema.model.Action;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.GeospatialGeometry;
 import org.schema.model.datatype.Integer;
 import org.schema.model.datatype.Number;
@@ -63,7 +63,7 @@ import org.schema.model.IceCreamShop;
  * @see <a href="https://schema.org/IceCreamShop">https://schema.org/IceCreamShop</a>
  */
 @JsonLdTypeName("schema:IceCreamShop")
-public class IceCreamShopImpl implements IceCreamShop {
+public class IceCreamShopImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements IceCreamShop {
 
     private Rating fStarRating;
 

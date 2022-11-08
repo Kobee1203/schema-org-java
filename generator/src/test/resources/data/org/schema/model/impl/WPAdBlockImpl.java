@@ -50,7 +50,7 @@ import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.WebPageElement;
 import org.schema.model.WPAdBlock;
 
@@ -60,7 +60,7 @@ import org.schema.model.WPAdBlock;
  * @see <a href="https://schema.org/WPAdBlock">https://schema.org/WPAdBlock</a>
  */
 @JsonLdTypeName("schema:WPAdBlock")
-public class WPAdBlockImpl implements WPAdBlock {
+public class WPAdBlockImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements WPAdBlock {
 
     private CssSelectorType fCssSelector;
 

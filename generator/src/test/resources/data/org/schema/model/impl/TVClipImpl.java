@@ -54,7 +54,7 @@ import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.TVClip;
 
 /**
@@ -63,7 +63,7 @@ import org.schema.model.TVClip;
  * @see <a href="https://schema.org/TVClip">https://schema.org/TVClip</a>
  */
 @JsonLdTypeName("schema:TVClip")
-public class TVClipImpl implements TVClip {
+public class TVClipImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements TVClip {
 
     private TVSeries fPartOfTVSeries;
 

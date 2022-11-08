@@ -1,5 +1,6 @@
 package com.weedow.schemaorg.generator.core;
 
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.generator.SchemaModelGeneratorConstants;
 import com.weedow.schemaorg.generator.core.filter.SchemaDefinitionFilter;
 import com.weedow.schemaorg.generator.logging.Logger;
@@ -58,27 +59,6 @@ public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
         final String dataTypePackage = options.getDataTypePackage();
         final List<String> models = options.getModels();
 
-        applyTemplate(
-                "templates/jsonld_typename",
-                modelFolder.resolve("JsonLdTypeName.java"),
-                new Context(null, modelPackage, Collections.emptySet())
-        );
-
-        applyTemplate(
-                "templates/jsonld_node",
-                modelFolder.resolve("JsonLdNode.java"),
-                new Context(null, modelPackage, Collections.emptySet())
-        );
-
-        applyTemplate(
-                "templates/jsonld_node_impl",
-                modelImplFolder.resolve("JsonLdNodeImpl.java"),
-                new Context(null, modelImplPackage, new LinkedHashSet<>(Arrays.asList(
-                        SchemaGeneratorUtils.resolveClassName(modelPackage, dataTypePackage, SchemaGeneratorUtils.JSON_LD_NODE),
-                        SchemaGeneratorUtils.resolveClassName(modelPackage, dataTypePackage, SchemaGeneratorUtils.JSON_LD_TYPE_NAME)
-                )))
-        );
-
         Map<String, Type> filteredSchemaDefinitions = schemaDefinitionFilter.filter(schemaDefinitions, models);
         if (filteredSchemaDefinitions.isEmpty()) {
             LOG.info("No schema model found to generate");
@@ -117,7 +97,7 @@ public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
     }
 
     private void generateDataType(Path dataTypeFolder, String dataTypePackage, String modelPackage, Type type) {
-        final List<String> additionalImports = Collections.singletonList(SchemaGeneratorUtils.resolveClassName(modelPackage, dataTypePackage, SchemaGeneratorUtils.JSON_LD_TYPE_NAME));
+        final List<String> additionalImports = Collections.singletonList(JsonLdTypeName.class.getCanonicalName());
         applyTemplate(
                 "templates/data_type",
                 dataTypeFolder.resolve(type.getName() + JAVA_EXTENSION),

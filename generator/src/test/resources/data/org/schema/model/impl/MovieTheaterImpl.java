@@ -28,7 +28,7 @@ import org.schema.model.Event;
 import org.schema.model.CreativeWork;
 import org.schema.model.Action;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.CivicStructure;
 import org.schema.model.Organization;
 import org.schema.model.AboutPage;
@@ -62,7 +62,7 @@ import org.schema.model.MovieTheater;
  * @see <a href="https://schema.org/MovieTheater">https://schema.org/MovieTheater</a>
  */
 @JsonLdTypeName("schema:MovieTheater")
-public class MovieTheaterImpl implements MovieTheater {
+public class MovieTheaterImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MovieTheater {
 
     private Number fScreenCount;
 

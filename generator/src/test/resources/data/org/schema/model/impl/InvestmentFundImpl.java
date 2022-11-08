@@ -35,7 +35,7 @@ import org.schema.model.CreativeWork;
 import org.schema.model.Action;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.FinancialProduct;
 import org.schema.model.InvestmentOrDeposit;
@@ -50,7 +50,7 @@ import org.schema.model.InvestmentFund;
  * @see <a href="https://schema.org/InvestmentFund">https://schema.org/InvestmentFund</a>
  */
 @JsonLdTypeName("schema:InvestmentFund")
-public class InvestmentFundImpl implements InvestmentFund {
+public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements InvestmentFund {
 
     private Object fAmount;
 

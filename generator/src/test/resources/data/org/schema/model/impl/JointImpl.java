@@ -27,7 +27,7 @@ import org.schema.model.Action;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Joint;
 
 /**
@@ -37,7 +37,7 @@ import org.schema.model.Joint;
  * @see <a href="https://schema.org/Joint">https://schema.org/Joint</a>
  */
 @JsonLdTypeName("schema:Joint")
-public class JointImpl implements Joint {
+public class JointImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Joint {
 
     private Text fStructuralClass;
 

@@ -48,7 +48,7 @@ import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Sculpture;
 
 /**
@@ -57,7 +57,7 @@ import org.schema.model.Sculpture;
  * @see <a href="https://schema.org/Sculpture">https://schema.org/Sculpture</a>
  */
 @JsonLdTypeName("schema:Sculpture")
-public class SculptureImpl implements Sculpture {
+public class SculptureImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Sculpture {
 
     private Object fTeaches;
 

@@ -16,7 +16,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.StructuredValue;
 import org.schema.model.ExchangeRateSpecification;
@@ -30,7 +30,7 @@ import org.schema.model.ExchangeRateSpecification;
  * @see <a href="https://schema.org/ExchangeRateSpecification">https://schema.org/ExchangeRateSpecification</a>
  */
 @JsonLdTypeName("schema:ExchangeRateSpecification")
-public class ExchangeRateSpecificationImpl implements ExchangeRateSpecification {
+public class ExchangeRateSpecificationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ExchangeRateSpecification {
 
     private UnitPriceSpecification fCurrentExchangeRate;
 

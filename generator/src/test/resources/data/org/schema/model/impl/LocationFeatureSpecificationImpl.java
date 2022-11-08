@@ -24,7 +24,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.LocationFeatureSpecification;
 
@@ -35,7 +35,7 @@ import org.schema.model.LocationFeatureSpecification;
  * @see <a href="https://schema.org/LocationFeatureSpecification">https://schema.org/LocationFeatureSpecification</a>
  */
 @JsonLdTypeName("schema:LocationFeatureSpecification")
-public class LocationFeatureSpecificationImpl implements LocationFeatureSpecification {
+public class LocationFeatureSpecificationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements LocationFeatureSpecification {
 
     private OpeningHoursSpecification fHoursAvailable;
 

@@ -16,7 +16,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.StructuredValue;
 import org.schema.model.GeoCoordinates;
@@ -27,7 +27,7 @@ import org.schema.model.GeoCoordinates;
  * @see <a href="https://schema.org/GeoCoordinates">https://schema.org/GeoCoordinates</a>
  */
 @JsonLdTypeName("schema:GeoCoordinates")
-public class GeoCoordinatesImpl implements GeoCoordinates {
+public class GeoCoordinatesImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements GeoCoordinates {
 
     private Object fAddressCountry;
 

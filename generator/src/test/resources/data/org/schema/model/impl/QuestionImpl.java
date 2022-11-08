@@ -49,7 +49,7 @@ import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Question;
 
 /**
@@ -59,7 +59,7 @@ import org.schema.model.Question;
  * @see <a href="https://schema.org/Question">https://schema.org/Question</a>
  */
 @JsonLdTypeName("schema:Question")
-public class QuestionImpl implements Question {
+public class QuestionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Question {
 
     private Object fSuggestedAnswer;
 

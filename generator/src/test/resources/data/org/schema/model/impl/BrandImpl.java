@@ -15,7 +15,7 @@ import org.schema.model.Action;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.Brand;
 
@@ -26,7 +26,7 @@ import org.schema.model.Brand;
  * @see <a href="https://schema.org/Brand">https://schema.org/Brand</a>
  */
 @JsonLdTypeName("schema:Brand")
-public class BrandImpl implements Brand {
+public class BrandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Brand {
 
     private Review fReview;
 

@@ -22,7 +22,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.InteractAction;
 
 /**
@@ -31,7 +31,7 @@ import org.schema.model.InteractAction;
  * @see <a href="https://schema.org/InteractAction">https://schema.org/InteractAction</a>
  */
 @JsonLdTypeName("schema:InteractAction")
-public class InteractActionImpl implements InteractAction {
+public class InteractActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements InteractAction {
 
     private Object fAgent;
 

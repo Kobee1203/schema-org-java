@@ -22,7 +22,7 @@ import org.schema.model.datatype.URL;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.InteractAction;
 import org.schema.model.LeaveAction;
 
@@ -32,7 +32,7 @@ import org.schema.model.LeaveAction;
  * @see <a href="https://schema.org/LeaveAction">https://schema.org/LeaveAction</a>
  */
 @JsonLdTypeName("schema:LeaveAction")
-public class LeaveActionImpl implements LeaveAction {
+public class LeaveActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements LeaveAction {
 
     private Event fEvent;
 

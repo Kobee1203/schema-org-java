@@ -23,7 +23,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.MedicalRiskFactor;
 
 /**
@@ -33,7 +33,7 @@ import org.schema.model.MedicalRiskFactor;
  * @see <a href="https://schema.org/MedicalRiskFactor">https://schema.org/MedicalRiskFactor</a>
  */
 @JsonLdTypeName("schema:MedicalRiskFactor")
-public class MedicalRiskFactorImpl implements MedicalRiskFactor {
+public class MedicalRiskFactorImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MedicalRiskFactor {
 
     private MedicalEntity fIncreasesRiskOf;
 

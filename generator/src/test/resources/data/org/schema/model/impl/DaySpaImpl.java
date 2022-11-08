@@ -41,7 +41,7 @@ import org.schema.model.OfferCatalog;
 import org.schema.model.Event;
 import org.schema.model.Action;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.GeospatialGeometry;
 import org.schema.model.datatype.Integer;
 import org.schema.model.datatype.Boolean;
@@ -61,7 +61,7 @@ import org.schema.model.DaySpa;
  * @see <a href="https://schema.org/DaySpa">https://schema.org/DaySpa</a>
  */
 @JsonLdTypeName("schema:DaySpa")
-public class DaySpaImpl implements DaySpa {
+public class DaySpaImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements DaySpa {
 
     private Organization fBranchOf;
 

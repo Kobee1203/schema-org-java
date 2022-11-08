@@ -49,7 +49,7 @@ import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Message;
 import org.schema.model.EmailMessage;
 
@@ -59,7 +59,7 @@ import org.schema.model.EmailMessage;
  * @see <a href="https://schema.org/EmailMessage">https://schema.org/EmailMessage</a>
  */
 @JsonLdTypeName("schema:EmailMessage")
-public class EmailMessageImpl implements EmailMessage {
+public class EmailMessageImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements EmailMessage {
 
     private Object fBccRecipient;
 

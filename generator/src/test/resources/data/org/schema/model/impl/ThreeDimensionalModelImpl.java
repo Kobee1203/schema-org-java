@@ -53,7 +53,7 @@ import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.ThreeDimensionalModel;
 
 /**
@@ -65,7 +65,7 @@ import org.schema.model.ThreeDimensionalModel;
  * @see <a href="https://schema.org/ThreeDimensionalModel">https://schema.org/ThreeDimensionalModel</a>
  */
 @JsonLdTypeName("schema:3DModel")
-public class ThreeDimensionalModelImpl implements ThreeDimensionalModel {
+public class ThreeDimensionalModelImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ThreeDimensionalModel {
 
     private Boolean fIsResizable;
 

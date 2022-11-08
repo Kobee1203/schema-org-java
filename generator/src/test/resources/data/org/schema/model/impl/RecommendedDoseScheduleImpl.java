@@ -24,7 +24,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.MedicalEntity;
 import org.schema.model.MedicalIntangible;
 import org.schema.model.DoseSchedule;
@@ -37,7 +37,7 @@ import org.schema.model.RecommendedDoseSchedule;
  * @see <a href="https://schema.org/RecommendedDoseSchedule">https://schema.org/RecommendedDoseSchedule</a>
  */
 @JsonLdTypeName("schema:RecommendedDoseSchedule")
-public class RecommendedDoseScheduleImpl implements RecommendedDoseSchedule {
+public class RecommendedDoseScheduleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements RecommendedDoseSchedule {
 
     private Text fTargetPopulation;
 

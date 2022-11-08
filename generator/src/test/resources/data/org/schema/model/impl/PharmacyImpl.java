@@ -43,7 +43,7 @@ import org.schema.model.OfferCatalog;
 import org.schema.model.Event;
 import org.schema.model.Action;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.MedicalOrganization;
 import org.schema.model.GeospatialGeometry;
 import org.schema.model.datatype.Integer;
@@ -63,7 +63,7 @@ import org.schema.model.Pharmacy;
  * @see <a href="https://schema.org/Pharmacy">https://schema.org/Pharmacy</a>
  */
 @JsonLdTypeName("schema:Pharmacy")
-public class PharmacyImpl implements Pharmacy {
+public class PharmacyImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Pharmacy {
 
     private Boolean fIsAcceptingNewPatients;
 

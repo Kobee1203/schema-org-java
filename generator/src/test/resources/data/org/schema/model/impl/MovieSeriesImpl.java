@@ -49,7 +49,7 @@ import org.schema.model.ItemList;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.Series;
 import org.schema.model.CreativeWorkSeries;
@@ -61,7 +61,7 @@ import org.schema.model.MovieSeries;
  * @see <a href="https://schema.org/MovieSeries">https://schema.org/MovieSeries</a>
  */
 @JsonLdTypeName("schema:MovieSeries")
-public class MovieSeriesImpl implements MovieSeries {
+public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MovieSeries {
 
     private Person fDirector;
 

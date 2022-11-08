@@ -22,7 +22,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.CreateAction;
 import org.schema.model.DrawAction;
 
@@ -32,7 +32,7 @@ import org.schema.model.DrawAction;
  * @see <a href="https://schema.org/DrawAction">https://schema.org/DrawAction</a>
  */
 @JsonLdTypeName("schema:DrawAction")
-public class DrawActionImpl implements DrawAction {
+public class DrawActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements DrawAction {
 
     private Object fAgent;
 

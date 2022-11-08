@@ -41,7 +41,7 @@ import org.schema.model.OfferCatalog;
 import org.schema.model.Event;
 import org.schema.model.Action;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Corporation;
 
 /**
@@ -51,7 +51,7 @@ import org.schema.model.Corporation;
  * @see <a href="https://schema.org/Corporation">https://schema.org/Corporation</a>
  */
 @JsonLdTypeName("schema:Corporation")
-public class CorporationImpl implements Corporation {
+public class CorporationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Corporation {
 
     private Text fTickerSymbol;
 

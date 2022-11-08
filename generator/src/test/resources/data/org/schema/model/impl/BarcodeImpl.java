@@ -53,7 +53,7 @@ import org.schema.model.Clip;
 import org.schema.model.ItemList;
 import org.schema.model.VideoObject;
 import org.schema.model.Action;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Barcode;
 
 /**
@@ -62,7 +62,7 @@ import org.schema.model.Barcode;
  * @see <a href="https://schema.org/Barcode">https://schema.org/Barcode</a>
  */
 @JsonLdTypeName("schema:Barcode")
-public class BarcodeImpl implements Barcode {
+public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Barcode {
 
     private Text fEmbeddedTextCaption;
 

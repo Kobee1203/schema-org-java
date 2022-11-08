@@ -28,7 +28,7 @@ import org.schema.model.Event;
 import org.schema.model.CreativeWork;
 import org.schema.model.Action;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.CivicStructure;
 import org.schema.model.ParkingFacility;
 
@@ -38,7 +38,7 @@ import org.schema.model.ParkingFacility;
  * @see <a href="https://schema.org/ParkingFacility">https://schema.org/ParkingFacility</a>
  */
 @JsonLdTypeName("schema:ParkingFacility")
-public class ParkingFacilityImpl implements ParkingFacility {
+public class ParkingFacilityImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ParkingFacility {
 
     private Text fOpeningHours;
 

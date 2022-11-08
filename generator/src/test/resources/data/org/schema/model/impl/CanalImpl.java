@@ -28,7 +28,7 @@ import org.schema.model.Event;
 import org.schema.model.CreativeWork;
 import org.schema.model.Action;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Landform;
 import org.schema.model.BodyOfWater;
 import org.schema.model.Canal;
@@ -39,7 +39,7 @@ import org.schema.model.Canal;
  * @see <a href="https://schema.org/Canal">https://schema.org/Canal</a>
  */
 @JsonLdTypeName("schema:Canal")
-public class CanalImpl implements Canal {
+public class CanalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Canal {
 
     private Text fTelephone;
 

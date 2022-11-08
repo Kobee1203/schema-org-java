@@ -48,7 +48,7 @@ import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Play;
 
 /**
@@ -59,7 +59,7 @@ import org.schema.model.Play;
  * @see <a href="https://schema.org/Play">https://schema.org/Play</a>
  */
 @JsonLdTypeName("schema:Play")
-public class PlayImpl implements Play {
+public class PlayImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Play {
 
     private Object fTeaches;
 

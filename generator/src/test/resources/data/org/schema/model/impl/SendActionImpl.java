@@ -25,7 +25,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.TransferAction;
 import org.schema.model.SendAction;
 
@@ -35,7 +35,7 @@ import org.schema.model.SendAction;
  * @see <a href="https://schema.org/SendAction">https://schema.org/SendAction</a>
  */
 @JsonLdTypeName("schema:SendAction")
-public class SendActionImpl implements SendAction {
+public class SendActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements SendAction {
 
     private Object fRecipient;
 

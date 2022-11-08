@@ -24,7 +24,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.TransferAction;
 import org.schema.model.ReturnAction;
 
@@ -34,7 +34,7 @@ import org.schema.model.ReturnAction;
  * @see <a href="https://schema.org/ReturnAction">https://schema.org/ReturnAction</a>
  */
 @JsonLdTypeName("schema:ReturnAction")
-public class ReturnActionImpl implements ReturnAction {
+public class ReturnActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ReturnAction {
 
     private Object fRecipient;
 

@@ -50,7 +50,7 @@ import org.schema.model.ItemList;
 import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.WebApplication;
 
 /**
@@ -59,7 +59,7 @@ import org.schema.model.WebApplication;
  * @see <a href="https://schema.org/WebApplication">https://schema.org/WebApplication</a>
  */
 @JsonLdTypeName("schema:WebApplication")
-public class WebApplicationImpl implements WebApplication {
+public class WebApplicationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements WebApplication {
 
     private Text fBrowserRequirements;
 

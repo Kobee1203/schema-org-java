@@ -50,7 +50,7 @@ import org.schema.model.ItemList;
 import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.MobileApplication;
 
 /**
@@ -59,7 +59,7 @@ import org.schema.model.MobileApplication;
  * @see <a href="https://schema.org/MobileApplication">https://schema.org/MobileApplication</a>
  */
 @JsonLdTypeName("schema:MobileApplication")
-public class MobileApplicationImpl implements MobileApplication {
+public class MobileApplicationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MobileApplication {
 
     private Text fCarrierRequirements;
 

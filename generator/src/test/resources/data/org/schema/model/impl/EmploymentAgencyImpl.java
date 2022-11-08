@@ -41,7 +41,7 @@ import org.schema.model.OfferCatalog;
 import org.schema.model.Event;
 import org.schema.model.Action;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.GeospatialGeometry;
 import org.schema.model.datatype.Integer;
 import org.schema.model.datatype.Boolean;
@@ -60,7 +60,7 @@ import org.schema.model.EmploymentAgency;
  * @see <a href="https://schema.org/EmploymentAgency">https://schema.org/EmploymentAgency</a>
  */
 @JsonLdTypeName("schema:EmploymentAgency")
-public class EmploymentAgencyImpl implements EmploymentAgency {
+public class EmploymentAgencyImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements EmploymentAgency {
 
     private Organization fBranchOf;
 

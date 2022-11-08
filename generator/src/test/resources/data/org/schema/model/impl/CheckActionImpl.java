@@ -22,7 +22,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.FindAction;
 import org.schema.model.CheckAction;
 
@@ -32,7 +32,7 @@ import org.schema.model.CheckAction;
  * @see <a href="https://schema.org/CheckAction">https://schema.org/CheckAction</a>
  */
 @JsonLdTypeName("schema:CheckAction")
-public class CheckActionImpl implements CheckAction {
+public class CheckActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements CheckAction {
 
     private Object fAgent;
 

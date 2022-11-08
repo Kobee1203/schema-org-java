@@ -16,7 +16,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.MeasurementTypeEnumeration;
 
@@ -28,7 +28,7 @@ import org.schema.model.MeasurementTypeEnumeration;
  * @see <a href="https://schema.org/MeasurementTypeEnumeration">https://schema.org/MeasurementTypeEnumeration</a>
  */
 @JsonLdTypeName("schema:MeasurementTypeEnumeration")
-public class MeasurementTypeEnumerationImpl implements MeasurementTypeEnumeration {
+public class MeasurementTypeEnumerationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MeasurementTypeEnumeration {
 
     private Object fSupersededBy;
 

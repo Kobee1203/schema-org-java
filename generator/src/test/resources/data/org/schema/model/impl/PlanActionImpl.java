@@ -22,7 +22,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.OrganizeAction;
 import org.schema.model.PlanAction;
 
@@ -32,7 +32,7 @@ import org.schema.model.PlanAction;
  * @see <a href="https://schema.org/PlanAction">https://schema.org/PlanAction</a>
  */
 @JsonLdTypeName("schema:PlanAction")
-public class PlanActionImpl implements PlanAction {
+public class PlanActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PlanAction {
 
     private DateTime fScheduledTime;
 

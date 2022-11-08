@@ -22,7 +22,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.AssessAction;
 import org.schema.model.ReactAction;
 import org.schema.model.EndorseAction;
@@ -33,7 +33,7 @@ import org.schema.model.EndorseAction;
  * @see <a href="https://schema.org/EndorseAction">https://schema.org/EndorseAction</a>
  */
 @JsonLdTypeName("schema:EndorseAction")
-public class EndorseActionImpl implements EndorseAction {
+public class EndorseActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements EndorseAction {
 
     private Object fEndorsee;
 

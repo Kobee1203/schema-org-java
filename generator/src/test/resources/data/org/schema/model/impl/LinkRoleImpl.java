@@ -16,7 +16,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.Role;
 import org.schema.model.LinkRole;
@@ -29,7 +29,7 @@ import org.schema.model.LinkRole;
  * @see <a href="https://schema.org/LinkRole">https://schema.org/LinkRole</a>
  */
 @JsonLdTypeName("schema:LinkRole")
-public class LinkRoleImpl implements LinkRole {
+public class LinkRoleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements LinkRole {
 
     private Text fLinkRelationship;
 

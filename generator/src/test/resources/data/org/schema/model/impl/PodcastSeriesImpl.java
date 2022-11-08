@@ -49,7 +49,7 @@ import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.Series;
 import org.schema.model.CreativeWorkSeries;
@@ -63,7 +63,7 @@ import org.schema.model.PodcastSeries;
  * @see <a href="https://schema.org/PodcastSeries">https://schema.org/PodcastSeries</a>
  */
 @JsonLdTypeName("schema:PodcastSeries")
-public class PodcastSeriesImpl implements PodcastSeries {
+public class PodcastSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PodcastSeries {
 
     private Person fActor;
 

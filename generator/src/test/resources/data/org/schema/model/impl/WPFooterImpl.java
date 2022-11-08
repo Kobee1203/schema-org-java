@@ -50,7 +50,7 @@ import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.WebPageElement;
 import org.schema.model.WPFooter;
 
@@ -60,7 +60,7 @@ import org.schema.model.WPFooter;
  * @see <a href="https://schema.org/WPFooter">https://schema.org/WPFooter</a>
  */
 @JsonLdTypeName("schema:WPFooter")
-public class WPFooterImpl implements WPFooter {
+public class WPFooterImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements WPFooter {
 
     private CssSelectorType fCssSelector;
 

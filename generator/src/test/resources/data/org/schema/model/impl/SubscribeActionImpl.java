@@ -22,7 +22,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.InteractAction;
 import org.schema.model.SubscribeAction;
 
@@ -32,7 +32,7 @@ import org.schema.model.SubscribeAction;
  * @see <a href="https://schema.org/SubscribeAction">https://schema.org/SubscribeAction</a>
  */
 @JsonLdTypeName("schema:SubscribeAction")
-public class SubscribeActionImpl implements SubscribeAction {
+public class SubscribeActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements SubscribeAction {
 
     private Object fAgent;
 

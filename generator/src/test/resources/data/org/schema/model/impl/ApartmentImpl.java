@@ -31,7 +31,7 @@ import org.schema.model.Event;
 import org.schema.model.CreativeWork;
 import org.schema.model.Action;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Accommodation;
 import org.schema.model.Apartment;
 
@@ -42,7 +42,7 @@ import org.schema.model.Apartment;
  * @see <a href="https://schema.org/Apartment">https://schema.org/Apartment</a>
  */
 @JsonLdTypeName("schema:Apartment")
-public class ApartmentImpl implements Apartment {
+public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Apartment {
 
     private Object fNumberOfRooms;
 

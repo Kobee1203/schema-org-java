@@ -22,7 +22,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.AssessAction;
 import org.schema.model.ReactAction;
 import org.schema.model.WantAction;
@@ -33,7 +33,7 @@ import org.schema.model.WantAction;
  * @see <a href="https://schema.org/WantAction">https://schema.org/WantAction</a>
  */
 @JsonLdTypeName("schema:WantAction")
-public class WantActionImpl implements WantAction {
+public class WantActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements WantAction {
 
     private Object fAgent;
 

@@ -52,7 +52,7 @@ import org.schema.model.ItemList;
 import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.CollectionPage;
 import org.schema.model.MediaGallery;
 
@@ -62,7 +62,7 @@ import org.schema.model.MediaGallery;
  * @see <a href="https://schema.org/MediaGallery">https://schema.org/MediaGallery</a>
  */
 @JsonLdTypeName("schema:MediaGallery")
-public class MediaGalleryImpl implements MediaGallery {
+public class MediaGalleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MediaGallery {
 
     private Date fLastReviewed;
 

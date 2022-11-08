@@ -22,7 +22,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.MedicalEntity;
 import org.schema.model.MedicalIndication;
 import org.schema.model.TreatmentIndication;
@@ -34,7 +34,7 @@ import org.schema.model.TreatmentIndication;
  * @see <a href="https://schema.org/TreatmentIndication">https://schema.org/TreatmentIndication</a>
  */
 @JsonLdTypeName("schema:TreatmentIndication")
-public class TreatmentIndicationImpl implements TreatmentIndication {
+public class TreatmentIndicationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements TreatmentIndication {
 
     private Object fLegalStatus;
 

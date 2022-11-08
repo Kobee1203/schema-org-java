@@ -28,7 +28,7 @@ import org.schema.model.Event;
 import org.schema.model.CreativeWork;
 import org.schema.model.Action;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.CivicStructure;
 import org.schema.model.PlaceOfWorship;
 import org.schema.model.Church;
@@ -40,7 +40,7 @@ import org.schema.model.CatholicChurch;
  * @see <a href="https://schema.org/CatholicChurch">https://schema.org/CatholicChurch</a>
  */
 @JsonLdTypeName("schema:CatholicChurch")
-public class CatholicChurchImpl implements CatholicChurch {
+public class CatholicChurchImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements CatholicChurch {
 
     private Text fOpeningHours;
 

@@ -50,7 +50,7 @@ import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.SoftwareSourceCode;
 
 /**
@@ -59,7 +59,7 @@ import org.schema.model.SoftwareSourceCode;
  * @see <a href="https://schema.org/SoftwareSourceCode">https://schema.org/SoftwareSourceCode</a>
  */
 @JsonLdTypeName("schema:SoftwareSourceCode")
-public class SoftwareSourceCodeImpl implements SoftwareSourceCode {
+public class SoftwareSourceCodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements SoftwareSourceCode {
 
     private Object fProgrammingLanguage;
 

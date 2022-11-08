@@ -22,7 +22,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.OrganizeAction;
 import org.schema.model.AllocateAction;
 import org.schema.model.AcceptAction;
@@ -33,7 +33,7 @@ import org.schema.model.AcceptAction;
  * @see <a href="https://schema.org/AcceptAction">https://schema.org/AcceptAction</a>
  */
 @JsonLdTypeName("schema:AcceptAction")
-public class AcceptActionImpl implements AcceptAction {
+public class AcceptActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements AcceptAction {
 
     private Object fAgent;
 
