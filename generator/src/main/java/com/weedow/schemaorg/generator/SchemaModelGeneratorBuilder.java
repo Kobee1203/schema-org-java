@@ -1,5 +1,7 @@
 package com.weedow.schemaorg.generator;
 
+import com.weedow.schemaorg.generator.copy.CopyService;
+import com.weedow.schemaorg.generator.copy.CopyServiceImpl;
 import com.weedow.schemaorg.generator.core.GeneratorOptions;
 import com.weedow.schemaorg.generator.core.SchemaModelGenerator;
 import com.weedow.schemaorg.generator.core.SchemaModelGeneratorImpl;
@@ -60,6 +62,8 @@ public class SchemaModelGeneratorBuilder {
         final TemplateService templateService = new TemplateServiceImpl();
         final SchemaDefinitionFilter schemaDefinitionFilter = new SchemaDefinitionFilterImpl();
 
-        return new SchemaModelGeneratorImpl(gOptions, templateService, schemaDefinitionFilter, schemaDefinitions);
+        final CopyService copyService = new CopyServiceImpl();
+
+        return new SchemaModelGeneratorImpl(gOptions, templateService, schemaDefinitionFilter, schemaDefinitions, copyService);
     }
 }

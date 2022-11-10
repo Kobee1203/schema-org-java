@@ -52,11 +52,11 @@ public class BaseType {
     }
 
     public String getInterfaceClassName() {
-        return interfaceClass.getCanonicalName();
+        return interfaceClass.getName();
     }
 
     public String getImplementationClassName() {
-        return implementationClass.getCanonicalName();
+        return implementationClass.getName();
     }
 
     @Value

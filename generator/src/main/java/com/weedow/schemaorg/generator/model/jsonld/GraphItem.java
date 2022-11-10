@@ -70,7 +70,7 @@ public abstract class GraphItem {
             c.setLanguage(commentMap.get("@language"));
             c.setValue(commentMap.get("@value"));
         } else {
-            LOG.warn("Type '{}' not handled for 'comment' field", comment.getClass().getCanonicalName());
+            LOG.warn("Type '{}' not handled for 'comment' field", comment.getClass().getName());
         }
         this.comment = c;
         return this;
@@ -87,7 +87,7 @@ public abstract class GraphItem {
             l.setLanguage(labelMap.get("@language"));
             l.setValue(labelMap.get("@value"));
         } else {
-            LOG.warn("Type '{}' not handled for 'label' field", label.getClass().getCanonicalName());
+            LOG.warn("Type '{}' not handled for 'label' field", label.getClass().getName());
         }
         this.label = l;
         return this;

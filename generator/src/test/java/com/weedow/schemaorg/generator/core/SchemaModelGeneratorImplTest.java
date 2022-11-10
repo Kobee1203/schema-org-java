@@ -2,7 +2,10 @@ package com.weedow.schemaorg.generator.core;
 
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.LoggerContext;
+import com.weedow.schemaorg.commons.model.JsonLdNode;
+import com.weedow.schemaorg.commons.model.JsonLdNodeImpl;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.generator.copy.CopyService;
 import com.weedow.schemaorg.generator.core.filter.SchemaDefinitionFilter;
 import com.weedow.schemaorg.generator.core.handler.ErrorHandler;
 import com.weedow.schemaorg.generator.core.handler.SuccessHandler;
@@ -20,6 +23,7 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -42,6 +46,9 @@ class SchemaModelGeneratorImplTest {
     @Mock
     private Map<String, Type> schemaDefinitions;
 
+    @Mock
+    private CopyService copyService;
+
     @InjectMocks
     private SchemaModelGeneratorImpl schemaModelGenerator;
 
@@ -56,6 +63,7 @@ class SchemaModelGeneratorImplTest {
 
         schemaModelGenerator.generate();
 
+        verifyNoInteractions(copyService);
         verifyNoInteractions(templateService);
     }
 
@@ -68,6 +76,11 @@ class SchemaModelGeneratorImplTest {
         when(schemaDefinitionFilter.filter(schemaDefinitions, null)).thenReturn(Map.of("schema:DataType", type));
 
         schemaModelGenerator.generate();
+
+        Path targetDirectory = Paths.get("target", "generated-sources", "schemaorg", "com", "weedow", "schemaorg", "commons", "model");
+        verify(copyService).copy(JsonLdTypeName.class, targetDirectory);
+        verify(copyService).copy(JsonLdNode.class, targetDirectory);
+        verify(copyService).copy(JsonLdNodeImpl.class, targetDirectory);
 
         verify(templateService).apply(
                 "templates/abstract_data_type",
@@ -87,10 +100,15 @@ class SchemaModelGeneratorImplTest {
 
         schemaModelGenerator.generate();
 
+        Path targetDirectory = Paths.get("target", "generated-sources", "schemaorg", "com", "weedow", "schemaorg", "commons", "model");
+        verify(copyService).copy(JsonLdTypeName.class, targetDirectory);
+        verify(copyService).copy(JsonLdNode.class, targetDirectory);
+        verify(copyService).copy(JsonLdNodeImpl.class, targetDirectory);
+
         verify(templateService).apply(
                 "templates/data_type",
                 options.getDataTypeFolder().resolve("Boolean.java"),
-                new Context(type, options.getDataTypePackage(), Set.of(JsonLdTypeName.class.getCanonicalName()))
+                new Context(type, options.getDataTypePackage(), Set.of(JsonLdTypeName.class.getName()))
         );
     }
 
@@ -109,10 +127,15 @@ class SchemaModelGeneratorImplTest {
 
         schemaModelGenerator.generate();
 
+        Path targetDirectory = Paths.get("target", "generated-sources", "schemaorg", "com", "weedow", "schemaorg", "commons", "model");
+        verify(copyService).copy(JsonLdTypeName.class, targetDirectory);
+        verify(copyService).copy(JsonLdNode.class, targetDirectory);
+        verify(copyService).copy(JsonLdNodeImpl.class, targetDirectory);
+
         verify(templateService).apply(
                 "templates/data_type",
                 options.getDataTypeFolder().resolve("XPathType.java"),
-                new Context(type, options.getDataTypePackage(), Set.of(JsonLdTypeName.class.getCanonicalName()))
+                new Context(type, options.getDataTypePackage(), Set.of(JsonLdTypeName.class.getName()))
         );
     }
 
@@ -129,6 +152,11 @@ class SchemaModelGeneratorImplTest {
 
         schemaModelGenerator.generate();
 
+        Path targetDirectory = Paths.get("target", "generated-sources", "schemaorg", "com", "weedow", "schemaorg", "commons", "model");
+        verify(copyService).copy(JsonLdTypeName.class, targetDirectory);
+        verify(copyService).copy(JsonLdNode.class, targetDirectory);
+        verify(copyService).copy(JsonLdNodeImpl.class, targetDirectory);
+
         verify(templateService).apply(
                 "templates/type_interface",
                 options.getModelFolder().resolve("ActionStatusType.java"),
@@ -137,7 +165,7 @@ class SchemaModelGeneratorImplTest {
         verify(templateService).apply(
                 "templates/type_enumeration",
                 options.getModelImplFolder().resolve("ActionStatusTypeEnum.java"),
-                new Context(type, options.getModelImplPackage(), Set.of("org.schema.model.ActionStatusType", JsonLdTypeName.class.getCanonicalName()))
+                new Context(type, options.getModelImplPackage(), Set.of("org.schema.model.ActionStatusType", JsonLdTypeName.class.getName()))
         );
     }
 
@@ -163,7 +191,7 @@ class SchemaModelGeneratorImplTest {
         verify(templateService).apply(
                 "templates/type_implementation",
                 options.getModelImplFolder().resolve("ThingImpl.java"),
-                new Context(type, options.getModelImplPackage(), Set.of("org.schema.model.Thing", JsonLdTypeName.class.getCanonicalName()))
+                new Context(type, options.getModelImplPackage(), Set.of("org.schema.model.Thing", JsonLdTypeName.class.getName()))
         );
 
         initLogLevel(verboseMode ? backupLevel : null);
@@ -222,7 +250,7 @@ class SchemaModelGeneratorImplTest {
         doThrow(ioException2).when(templateService).apply(
                 "templates/type_implementation",
                 modelImplFolder.resolve("ThingImpl.java"),
-                new Context(type, modelImplPackage, Set.of("org.schema.model.Thing", JsonLdTypeName.class.getCanonicalName()))
+                new Context(type, modelImplPackage, Set.of("org.schema.model.Thing", JsonLdTypeName.class.getName()))
         );
 
         schemaModelGenerator.generate();
@@ -236,7 +264,7 @@ class SchemaModelGeneratorImplTest {
         verify(errorHandler).onError(
                 "templates/type_implementation",
                 modelImplFolder.resolve("ThingImpl.java"),
-                new Context(type, modelImplPackage, Set.of("org.schema.model.Thing", JsonLdTypeName.class.getCanonicalName())),
+                new Context(type, modelImplPackage, Set.of("org.schema.model.Thing", JsonLdTypeName.class.getName())),
                 ioException2
         );
 
@@ -295,5 +323,27 @@ class SchemaModelGeneratorImplTest {
             verifyNoInteractions(schemaDefinitionFilter);
             verifyNoInteractions(schemaDefinitions);
         }
+    }
+
+    @Test
+    void generate_without_common_models_copy() throws IOException {
+        options.setCopyCommonModels(false);
+        
+        final Type type = mock(Type.class);
+        when(type.getId()).thenReturn("schema:Boolean");
+        when(type.getName()).thenReturn("Boolean");
+        when(type.getProperties()).thenReturn(Collections.emptySet());
+
+        when(schemaDefinitionFilter.filter(schemaDefinitions, null)).thenReturn(Map.of("schema:Boolean", type));
+
+        schemaModelGenerator.generate();
+
+        verifyNoInteractions(copyService);
+        
+        verify(templateService).apply(
+                "templates/data_type",
+                options.getDataTypeFolder().resolve("Boolean.java"),
+                new Context(type, options.getDataTypePackage(), Set.of(JsonLdTypeName.class.getName()))
+        );
     }
 }

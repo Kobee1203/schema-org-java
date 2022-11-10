@@ -44,7 +44,7 @@ class SchemaModelGeneratorAppTest {
             SchemaModelGeneratorApp.main(args);
         });
         Assertions.assertThat(text)
-                .contains("Loading local resource...")
+                .contains("Loading local resource '/schemaorg-current-https.jsonld'")
                 .contains("Parsing the schema definitions...")
                 .contains("Parsing completed.")
                 .contains("Generating models...")

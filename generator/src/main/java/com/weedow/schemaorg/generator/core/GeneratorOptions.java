@@ -20,6 +20,8 @@ public final class GeneratorOptions {
     private String modelImplPackage = "org.schema.model.impl";
     private String dataTypePackage = "org.schema.model.datatype";
 
+    private boolean copyCommonModels = true;
+
     private List<String> models;
 
     @Setter(AccessLevel.NONE)
@@ -28,15 +30,31 @@ public final class GeneratorOptions {
     private final List<ErrorHandler> errorHandlers = new ArrayList<>();
 
     public Path getModelFolder() {
-        return outputFolder.resolve(Path.of("", modelPackage.split("\\.")));
+        return resolvePath(modelPackage);
     }
 
     public Path getModelImplFolder() {
-        return outputFolder.resolve(Path.of("", modelImplPackage.split("\\.")));
+        return resolvePath(modelImplPackage);
     }
 
     public Path getDataTypeFolder() {
-        return outputFolder.resolve(Path.of("", dataTypePackage.split("\\.")));
+        return resolvePath(dataTypePackage);
+    }
+
+    /**
+     * <p>Convert the given package as {@link Path} and resolve this path against the outputFolder path.</p>
+     * <p>Example:</p>
+     * <pre>
+     * <b>Output folder:</b> /target/generated-sources/schemaorg
+     * <b>Package to resolve:</b> com.weedow.commons
+     * <b>==> Result:</b> /target/generated-sources/schemaorg/com/weedow/commons
+     * </pre>
+     *
+     * @param packageToResolve Package value to resolve against the outputFolder path.
+     * @return The resolved path
+     */
+    public Path resolvePath(String packageToResolve) {
+        return outputFolder.resolve(Path.of("", packageToResolve.split("\\.")));
     }
 
     public GeneratorOptions addSuccessHandler(SuccessHandler successHandler) {

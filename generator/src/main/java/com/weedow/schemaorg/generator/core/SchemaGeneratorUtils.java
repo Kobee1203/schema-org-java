@@ -37,7 +37,7 @@ public final class SchemaGeneratorUtils {
                         .forEach(imports::add);
             }
             imports.add(resolveClassName(modelPackage, dataTypePackage, type));
-            imports.add(JsonLdTypeName.class.getCanonicalName());
+            imports.add(JsonLdTypeName.class.getName());
             return imports;
         });
     }
