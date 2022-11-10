@@ -5,6 +5,14 @@ META-INF/maven/com.weedow/
 META-INF/maven/com.weedow/schema-org-sample/
 META-INF/maven/com.weedow/schema-org-sample/pom.xml
 META-INF/maven/com.weedow/schema-org-sample/pom.properties
+com/,
+com/weedow/,
+com/weedow/schemaorg/,
+com/weedow/schemaorg/commons/,
+com/weedow/schemaorg/commons/model/,
+com/weedow/schemaorg/commons/model/JsonLdNode.class,
+com/weedow/schemaorg/commons/model/JsonLdNodeImpl.class,
+com/weedow/schemaorg/commons/model/JsonLdTypeName.class,
 org/
 org/schema/
 org/schema/model/
@@ -97,8 +105,6 @@ org/schema/model/InteractionCounter.class
 org/schema/model/ItemAvailability.class
 org/schema/model/ItemList.class
 org/schema/model/ItemListOrderType.class
-org/schema/model/JsonLdNode.class
-org/schema/model/JsonLdTypeName.class
 org/schema/model/Language.class
 org/schema/model/ListItem.class
 org/schema/model/LoanOrCredit.class
@@ -320,7 +326,6 @@ org/schema/model/impl/InteractionCounterImpl.class
 org/schema/model/impl/ItemAvailabilityEnum.class
 org/schema/model/impl/ItemListImpl.class
 org/schema/model/impl/ItemListOrderTypeEnum.class
-org/schema/model/impl/JsonLdNodeImpl.class
 org/schema/model/impl/LanguageImpl.class
 org/schema/model/impl/ListItemImpl.class
 org/schema/model/impl/LoanOrCreditImpl.class
