@@ -20,7 +20,7 @@ import java.util.stream.Collectors;
 class SchemaModelGeneratorMojoIT {
 
     @MavenTest
-    void test(MavenExecutionResult result) {
+    void generate_with_verbose_mode(MavenExecutionResult result) {
         MavenITAssertions.assertThat(result).isSuccessful();
 
         MavenITAssertions.assertThat(result)
@@ -35,7 +35,50 @@ class SchemaModelGeneratorMojoIT {
                 .has("target/generated-sources/schemaorg/org/schema/model/datatype")
                 .has("target/generated-sources/schemaorg/org/schema/model/impl");
 
-        final List<String> lines = readResourceLines("/generated-classes.txt");
+        final List<String> lines = readResourceLines("/generated-classes-generate_with_verbose_mode.txt");
+        MavenITAssertions.assertThat(result)
+                .project()
+                .withJarFile()
+                .containsOnly(lines.toArray(new String[]{}));
+    }
+
+    @MavenTest
+    void generate_with_commons_dependency(MavenExecutionResult result) {
+        MavenITAssertions.assertThat(result).isSuccessful();
+
+        MavenITAssertions.assertThat(result)
+                .out()
+                .info()
+                .doesNotContain("VERBOSE MODE: ON.");
+
+        MavenITAssertions.assertThat(result)
+                .project()
+                .hasTarget()
+                .has("target/generated-sources/schemaorg/org/schema/model")
+                .has("target/generated-sources/schemaorg/org/schema/model/datatype")
+                .has("target/generated-sources/schemaorg/org/schema/model/impl");
+
+        final List<String> lines = readResourceLines("/generated-classes-generate_with_commons_dependency.txt");
+        MavenITAssertions.assertThat(result)
+                .project()
+                .withJarFile()
+                .containsOnly(lines.toArray(new String[]{}));
+    }
+
+    @MavenTest
+    void generate_with_skip_option(MavenExecutionResult result) {
+        MavenITAssertions.assertThat(result).isSuccessful();
+
+        MavenITAssertions.assertThat(result)
+                .out()
+                .info()
+                .contains("Code generation is skipped.");
+
+        MavenITAssertions.assertThat(result)
+                .project()
+                .hasTarget();
+
+        final List<String> lines = readResourceLines("/generated-classes-generate_with_skip_option.txt");
         MavenITAssertions.assertThat(result)
                 .project()
                 .withJarFile()
