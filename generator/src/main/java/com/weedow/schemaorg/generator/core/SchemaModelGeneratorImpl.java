@@ -4,7 +4,7 @@ import com.weedow.schemaorg.commons.model.JsonLdNode;
 import com.weedow.schemaorg.commons.model.JsonLdNodeImpl;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.generator.SchemaModelGeneratorConstants;
-import com.weedow.schemaorg.generator.copy.CopyService;
+import com.weedow.schemaorg.generator.core.copy.CopyService;
 import com.weedow.schemaorg.generator.core.filter.SchemaDefinitionFilter;
 import com.weedow.schemaorg.generator.logging.Logger;
 import com.weedow.schemaorg.generator.logging.LoggerFactory;

@@ -221,6 +221,15 @@ class SchemaDefinitionReaderImplTest {
                 );
     }
 
+    @Test
+    void throw_exception_when_read_invalid_jsonld() {
+        final SchemaDefinitionReader schemaDefinitionReader = new SchemaDefinitionReaderImpl();
+        Assertions.assertThatThrownBy(() -> schemaDefinitionReader.read(getClass().getResourceAsStream("/data/invalid-schemaorg.jsonld")))
+                .isInstanceOf(SchemaDefinitionReaderException.class)
+                .hasMessage("Could not read the JSON schema definition: No content to map due to end-of-input\n" +
+                        " at [Source: (String)\"\"; line: 1, column: 0]");
+    }
+
     private static List<GraphItem> filter(SchemaDefinition schemaDefinition, Predicate<GraphItem> predicate) {
         return schemaDefinition.getGraph().stream().filter(predicate).collect(Collectors.toList());
     }

@@ -1,4 +1,4 @@
-package com.weedow.schemaorg.generator.copy;
+package com.weedow.schemaorg.generator.core.copy;
 
 import java.nio.file.Path;
 

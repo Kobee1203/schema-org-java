@@ -1,7 +1,7 @@
 package com.weedow.schemaorg.generator;
 
-import com.weedow.schemaorg.generator.copy.CopyService;
-import com.weedow.schemaorg.generator.copy.CopyServiceImpl;
+import com.weedow.schemaorg.generator.core.copy.CopyService;
+import com.weedow.schemaorg.generator.core.copy.CopyServiceImpl;
 import com.weedow.schemaorg.generator.core.GeneratorOptions;
 import com.weedow.schemaorg.generator.core.SchemaModelGenerator;
 import com.weedow.schemaorg.generator.core.SchemaModelGeneratorImpl;

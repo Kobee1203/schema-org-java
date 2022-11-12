@@ -69,6 +69,7 @@
         <equalsverifier.version>3.11</equalsverifier.version>
         <to-string-verifier.version>1.4.8</to-string-verifier.version>
         <system-stubs-jupiter.version>2.0.1</system-stubs-jupiter.version>
+        <logcaptor.version>2.7.10</logcaptor.version>
 
         <!-- Plugins -->
         <maven-dependency-plugin.version>3.3.0</maven-dependency-plugin.version>
@@ -178,6 +179,13 @@
                 <groupId>uk.org.webcompere</groupId>
                 <artifactId>system-stubs-jupiter</artifactId>
                 <version>${system-stubs-jupiter.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <!-- https://github.com/Hakky54/log-captor -->
+            <dependency>
+                <groupId>io.github.hakky54</groupId>
+                <artifactId>logcaptor</artifactId>
+                <version>${logcaptor.version}</version>
                 <scope>test</scope>
             </dependency>
         </dependencies>

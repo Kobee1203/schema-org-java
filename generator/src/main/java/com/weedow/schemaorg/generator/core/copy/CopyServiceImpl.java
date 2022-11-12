@@ -1,7 +1,7 @@
-package com.weedow.schemaorg.generator.copy;
+package com.weedow.schemaorg.generator.core.copy;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.weedow.schemaorg.generator.logging.Logger;
+import com.weedow.schemaorg.generator.logging.LoggerFactory;
 
 import java.io.InputStream;
 import java.nio.file.Files;
@@ -13,6 +13,13 @@ public class CopyServiceImpl implements CopyService {
 
     private static final Logger LOG = LoggerFactory.getLogger(CopyServiceImpl.class);
 
+    /**
+     * {@inheritDoc}
+     * <p>Thsi implementation copies the Java file present in the same package as the given Class.</p>
+     *
+     * @param clazz           Class to copy
+     * @param targetDirectory Target directory where the java class file is written
+     */
     @Override
     public void copy(Class<?> clazz, Path targetDirectory) {
         LOG.info("Copying '{}'", clazz.getName());

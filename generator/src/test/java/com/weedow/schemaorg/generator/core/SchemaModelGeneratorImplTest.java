@@ -1,11 +1,9 @@
 package com.weedow.schemaorg.generator.core;
 
-import ch.qos.logback.classic.Level;
-import ch.qos.logback.classic.LoggerContext;
 import com.weedow.schemaorg.commons.model.JsonLdNode;
 import com.weedow.schemaorg.commons.model.JsonLdNodeImpl;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
-import com.weedow.schemaorg.generator.copy.CopyService;
+import com.weedow.schemaorg.generator.core.copy.CopyService;
 import com.weedow.schemaorg.generator.core.filter.SchemaDefinitionFilter;
 import com.weedow.schemaorg.generator.core.handler.ErrorHandler;
 import com.weedow.schemaorg.generator.core.handler.SuccessHandler;
@@ -14,11 +12,8 @@ import com.weedow.schemaorg.generator.template.TemplateService;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.ValueSource;
 import org.mockito.*;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -169,11 +164,8 @@ class SchemaModelGeneratorImplTest {
         );
     }
 
-    @ParameterizedTest
-    @ValueSource(booleans = {true, false})
-    void generate_type(boolean verboseMode) throws IOException {
-        Level backupLevel = initLogLevel(verboseMode ? Level.DEBUG : null);
-
+    @Test
+    void generate_type() throws IOException {
         final Type type = mock(Type.class);
         when(type.getId()).thenReturn("schema:Thing");
         when(type.getName()).thenReturn("Thing");
@@ -193,18 +185,6 @@ class SchemaModelGeneratorImplTest {
                 options.getModelImplFolder().resolve("ThingImpl.java"),
                 new Context(type, options.getModelImplPackage(), Set.of("org.schema.model.Thing", JsonLdTypeName.class.getName()))
         );
-
-        initLogLevel(verboseMode ? backupLevel : null);
-    }
-
-    private static Level initLogLevel(Level level) {
-        LoggerContext loggerContext = (LoggerContext) LoggerFactory.getILoggerFactory();
-        ch.qos.logback.classic.Logger logger = loggerContext.getLogger("com.weedow.schemaorg");
-        Level currentLevel = logger.getLevel();
-        if (level != null) {
-            logger.setLevel(level);
-        }
-        return currentLevel;
     }
 
     @Test
@@ -328,7 +308,7 @@ class SchemaModelGeneratorImplTest {
     @Test
     void generate_without_common_models_copy() throws IOException {
         options.setCopyCommonModels(false);
-        
+
         final Type type = mock(Type.class);
         when(type.getId()).thenReturn("schema:Boolean");
         when(type.getName()).thenReturn("Boolean");
@@ -339,7 +319,7 @@ class SchemaModelGeneratorImplTest {
         schemaModelGenerator.generate();
 
         verifyNoInteractions(copyService);
-        
+
         verify(templateService).apply(
                 "templates/data_type",
                 options.getDataTypeFolder().resolve("Boolean.java"),
