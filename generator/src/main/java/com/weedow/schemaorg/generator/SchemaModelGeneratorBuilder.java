@@ -1,12 +1,14 @@
 package com.weedow.schemaorg.generator;
 
-import com.weedow.schemaorg.generator.core.copy.CopyService;
-import com.weedow.schemaorg.generator.core.copy.CopyServiceImpl;
 import com.weedow.schemaorg.generator.core.GeneratorOptions;
 import com.weedow.schemaorg.generator.core.SchemaModelGenerator;
 import com.weedow.schemaorg.generator.core.SchemaModelGeneratorImpl;
+import com.weedow.schemaorg.generator.core.copy.CopyService;
+import com.weedow.schemaorg.generator.core.copy.CopyServiceImpl;
 import com.weedow.schemaorg.generator.core.filter.SchemaDefinitionFilter;
 import com.weedow.schemaorg.generator.core.filter.SchemaDefinitionFilterImpl;
+import com.weedow.schemaorg.generator.core.stream.StreamService;
+import com.weedow.schemaorg.generator.core.stream.StreamServiceImpl;
 import com.weedow.schemaorg.generator.model.Type;
 import com.weedow.schemaorg.generator.model.handler.*;
 import com.weedow.schemaorg.generator.parser.ParserOptions;
@@ -63,7 +65,8 @@ public class SchemaModelGeneratorBuilder {
         final SchemaDefinitionFilter schemaDefinitionFilter = new SchemaDefinitionFilterImpl();
 
         final CopyService copyService = new CopyServiceImpl();
+        final StreamService streamService = new StreamServiceImpl();
 
-        return new SchemaModelGeneratorImpl(gOptions, templateService, schemaDefinitionFilter, schemaDefinitions, copyService);
+        return new SchemaModelGeneratorImpl(gOptions, templateService, schemaDefinitionFilter, schemaDefinitions, copyService, streamService);
     }
 }

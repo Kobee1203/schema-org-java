@@ -62,6 +62,8 @@ class LoggerManagerTest {
             Assertions.assertThat(logEvent4.getThrowable().get())
                     .isInstanceOf(IOException.class)
                     .hasMessage("Error message");
+        } finally {
+            SchemaModelGeneratorConstants.setVerbose(backupVerbose);
         }
     }
 

@@ -3,9 +3,9 @@ package com.weedow.schemaorg.generator.core;
 import com.weedow.schemaorg.commons.model.JsonLdNode;
 import com.weedow.schemaorg.commons.model.JsonLdNodeImpl;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
-import com.weedow.schemaorg.generator.SchemaModelGeneratorConstants;
 import com.weedow.schemaorg.generator.core.copy.CopyService;
 import com.weedow.schemaorg.generator.core.filter.SchemaDefinitionFilter;
+import com.weedow.schemaorg.generator.core.stream.StreamService;
 import com.weedow.schemaorg.generator.logging.Logger;
 import com.weedow.schemaorg.generator.logging.LoggerFactory;
 import com.weedow.schemaorg.generator.model.Type;
@@ -31,19 +31,22 @@ public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
     private final SchemaDefinitionFilter schemaDefinitionFilter;
     private final Map<String, Type> schemaDefinitions;
     private final CopyService copyService;
+    private final StreamService streamService;
 
     public SchemaModelGeneratorImpl(
             GeneratorOptions options,
             TemplateService templateService,
             SchemaDefinitionFilter schemaDefinitionFilter,
             Map<String, Type> schemaDefinitions,
-            CopyService copyService
+            CopyService copyService,
+            StreamService streamService
     ) {
         this.options = options;
         this.templateService = templateService;
         this.schemaDefinitionFilter = schemaDefinitionFilter;
         this.schemaDefinitions = schemaDefinitions;
         this.copyService = copyService;
+        this.streamService = streamService;
     }
 
     @Override
@@ -85,12 +88,7 @@ public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
 
         LOG.info("Generating models...");
 
-        Stream<Type> stream;
-        if (SchemaModelGeneratorConstants.isVerbose()) {
-            stream = filteredSchemaDefinitions.values().stream();
-        } else {
-            stream = filteredSchemaDefinitions.values().parallelStream();
-        }
+        Stream<Type> stream = streamService.stream(filteredSchemaDefinitions);
 
         stream.forEach(type -> {
             if (type.getId().equals("schema:DataType")) {

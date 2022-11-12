@@ -7,6 +7,7 @@ import com.weedow.schemaorg.generator.core.copy.CopyService;
 import com.weedow.schemaorg.generator.core.filter.SchemaDefinitionFilter;
 import com.weedow.schemaorg.generator.core.handler.ErrorHandler;
 import com.weedow.schemaorg.generator.core.handler.SuccessHandler;
+import com.weedow.schemaorg.generator.core.stream.StreamService;
 import com.weedow.schemaorg.generator.model.Type;
 import com.weedow.schemaorg.generator.template.TemplateService;
 import org.junit.jupiter.api.AfterEach;
@@ -44,6 +45,9 @@ class SchemaModelGeneratorImplTest {
     @Mock
     private CopyService copyService;
 
+    @Mock
+    private StreamService streamService;
+
     @InjectMocks
     private SchemaModelGeneratorImpl schemaModelGenerator;
 
@@ -58,6 +62,7 @@ class SchemaModelGeneratorImplTest {
 
         schemaModelGenerator.generate();
 
+        verifyNoInteractions(streamService);
         verifyNoInteractions(copyService);
         verifyNoInteractions(templateService);
     }
@@ -68,7 +73,9 @@ class SchemaModelGeneratorImplTest {
         when(type.getId()).thenReturn("schema:DataType");
         when(type.getName()).thenReturn("DataType");
 
-        when(schemaDefinitionFilter.filter(schemaDefinitions, null)).thenReturn(Map.of("schema:DataType", type));
+        Map<String, Type> filteredSchemaDefinitions = Map.of("schema:DataType", type);
+        when(schemaDefinitionFilter.filter(schemaDefinitions, null)).thenReturn(filteredSchemaDefinitions);
+        when(streamService.stream(filteredSchemaDefinitions)).thenReturn(filteredSchemaDefinitions.values().stream());
 
         schemaModelGenerator.generate();
 
@@ -91,7 +98,9 @@ class SchemaModelGeneratorImplTest {
         when(type.getName()).thenReturn("Boolean");
         when(type.getProperties()).thenReturn(Collections.emptySet());
 
-        when(schemaDefinitionFilter.filter(schemaDefinitions, null)).thenReturn(Map.of("schema:Boolean", type));
+        Map<String, Type> filteredSchemaDefinitions = Map.of("schema:Boolean", type);
+        when(schemaDefinitionFilter.filter(schemaDefinitions, null)).thenReturn(filteredSchemaDefinitions);
+        when(streamService.stream(filteredSchemaDefinitions)).thenReturn(filteredSchemaDefinitions.values().stream());
 
         schemaModelGenerator.generate();
 
@@ -118,7 +127,9 @@ class SchemaModelGeneratorImplTest {
         when(type.getParents()).thenReturn(List.of(parent));
         when(type.getProperties()).thenReturn(Collections.emptySet());
 
-        when(schemaDefinitionFilter.filter(schemaDefinitions, null)).thenReturn(Map.of("schema:XPathType", type));
+        Map<String, Type> filteredSchemaDefinitions = Map.of("schema:XPathType", type);
+        when(schemaDefinitionFilter.filter(schemaDefinitions, null)).thenReturn(filteredSchemaDefinitions);
+        when(streamService.stream(filteredSchemaDefinitions)).thenReturn(filteredSchemaDefinitions.values().stream());
 
         schemaModelGenerator.generate();
 
@@ -143,7 +154,9 @@ class SchemaModelGeneratorImplTest {
         when(type.getEnumerationMembers()).thenReturn(List.of("PotentialActionStatus", "ActiveActionStatus", "FailedActionStatus", "CompletedActionStatus"));
         when(type.getProperties()).thenReturn(Collections.emptySet());
 
-        when(schemaDefinitionFilter.filter(schemaDefinitions, null)).thenReturn(Map.of("schema:ActionStatusType", type));
+        Map<String, Type> filteredSchemaDefinitions = Map.of("schema:ActionStatusType", type);
+        when(schemaDefinitionFilter.filter(schemaDefinitions, null)).thenReturn(filteredSchemaDefinitions);
+        when(streamService.stream(filteredSchemaDefinitions)).thenReturn(filteredSchemaDefinitions.values().stream());
 
         schemaModelGenerator.generate();
 
@@ -171,7 +184,9 @@ class SchemaModelGeneratorImplTest {
         when(type.getName()).thenReturn("Thing");
         when(type.getProperties()).thenReturn(Collections.emptySet());
 
-        when(schemaDefinitionFilter.filter(schemaDefinitions, null)).thenReturn(Map.of("schema:Thing", type));
+        Map<String, Type> filteredSchemaDefinitions = Map.of("schema:Thing", type);
+        when(schemaDefinitionFilter.filter(schemaDefinitions, null)).thenReturn(filteredSchemaDefinitions);
+        when(streamService.stream(filteredSchemaDefinitions)).thenReturn(filteredSchemaDefinitions.values().stream());
 
         schemaModelGenerator.generate();
 
@@ -194,9 +209,32 @@ class SchemaModelGeneratorImplTest {
         final ErrorHandler errorHandler = mock(ErrorHandler.class);
         options.addErrorHandler(errorHandler);
 
-        when(schemaDefinitionFilter.filter(schemaDefinitions, null)).thenReturn(Collections.emptyMap());
+        final Type type = mock(Type.class);
+        when(type.getId()).thenReturn("schema:Thing");
+        when(type.getName()).thenReturn("Thing");
+        when(type.getProperties()).thenReturn(Collections.emptySet());
+
+        final Path modelFolder = options.getModelFolder();
+        final Path modelImplFolder = options.getModelImplFolder();
+        final String modelPackage = options.getModelPackage();
+        final String modelImplPackage = options.getModelImplPackage();
+
+        Map<String, Type> filteredSchemaDefinitions = Map.of("schema:Thing", type);
+        when(schemaDefinitionFilter.filter(schemaDefinitions, null)).thenReturn(filteredSchemaDefinitions);
+        when(streamService.stream(filteredSchemaDefinitions)).thenReturn(filteredSchemaDefinitions.values().stream());
 
         schemaModelGenerator.generate();
+
+        verify(successHandler).onSuccess(
+                "templates/type_interface",
+                modelFolder.resolve("Thing.java"),
+                new Context(type, modelPackage, Collections.emptySet())
+        );
+        verify(successHandler).onSuccess(
+                "templates/type_implementation",
+                modelImplFolder.resolve("ThingImpl.java"),
+                new Context(type, modelImplPackage, Set.of("org.schema.model.Thing", JsonLdTypeName.class.getName()))
+        );
 
         verifyNoInteractions(errorHandler);
     }
@@ -213,7 +251,9 @@ class SchemaModelGeneratorImplTest {
         when(type.getName()).thenReturn("Thing");
         when(type.getProperties()).thenReturn(Collections.emptySet());
 
-        when(schemaDefinitionFilter.filter(schemaDefinitions, null)).thenReturn(Map.of("schema:Thing", type));
+        Map<String, Type> filteredSchemaDefinitions = Map.of("schema:Thing", type);
+        when(schemaDefinitionFilter.filter(schemaDefinitions, null)).thenReturn(filteredSchemaDefinitions);
+        when(streamService.stream(filteredSchemaDefinitions)).thenReturn(filteredSchemaDefinitions.values().stream());
 
         final Path modelFolder = options.getModelFolder();
         final Path modelImplFolder = options.getModelImplFolder();
@@ -314,7 +354,9 @@ class SchemaModelGeneratorImplTest {
         when(type.getName()).thenReturn("Boolean");
         when(type.getProperties()).thenReturn(Collections.emptySet());
 
-        when(schemaDefinitionFilter.filter(schemaDefinitions, null)).thenReturn(Map.of("schema:Boolean", type));
+        Map<String, Type> filteredSchemaDefinitions = Map.of("schema:Boolean", type);
+        when(schemaDefinitionFilter.filter(schemaDefinitions, null)).thenReturn(filteredSchemaDefinitions);
+        when(streamService.stream(filteredSchemaDefinitions)).thenReturn(filteredSchemaDefinitions.values().stream());
 
         schemaModelGenerator.generate();
 
