@@ -1,0 +1,44 @@
+{
+  "@context" : "https://schema.org",
+  "@type" : "schema:Hotel",
+  "address" : {
+    "@type" : "schema:PostalAddress",
+    "addressCountry" : {
+      "@type" : "schema:Country",
+      "map" : "https://goo.gl/maps/tvsDMhfk3yah43Mm6",
+      "name" : "United States Of America"
+    },
+    "addressLocality" : "Lost City",
+    "streetAddress" : "21 jump street"
+  },
+  "description" : "This is a hotel where every day is sunny",
+  "employee" : {
+    "@type" : "schema:Person",
+    "birthDate" : "1981-03-12",
+    "email" : "john.doe@sunnyhotel.com",
+    "familyName" : "Doe",
+    "givenName" : "John"
+  },
+  "event" : {
+    "@type" : "schema:Event",
+    "eventAttendanceMode" : "MixedEventAttendanceMode",
+    "isAccessibleForFree" : true,
+    "maximumAttendeeCapacity" : 654,
+    "name" : "Funny Party"
+  },
+  "name" : "Sunny Hotel",
+  "openingHoursSpecification" : {
+    "@type" : "schema:OpeningHoursSpecification",
+    "closes" : "23:00:00",
+    "dayOfWeek" : "Saturday",
+    "opens" : "09:00:00",
+    "validFrom" : "2022-12-01T09:00:00",
+    "validThrough" : "2024-12-31"
+  },
+  "starRating" : {
+    "@type" : "schema:Rating",
+    "bestRating" : 5,
+    "ratingValue" : 4.5,
+    "worstRating" : 3.5
+  }
+}
