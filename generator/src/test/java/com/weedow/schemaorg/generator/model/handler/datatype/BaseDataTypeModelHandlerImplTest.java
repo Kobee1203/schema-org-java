@@ -1,10 +1,8 @@
-package com.weedow.schemaorg.generator.model.handler;
+package com.weedow.schemaorg.generator.model.handler.datatype;
 
-import com.weedow.schemaorg.commons.model.JsonLdNode;
-import com.weedow.schemaorg.commons.model.JsonLdNodeImpl;
+import com.weedow.schemaorg.commons.model.JsonLdDataType;
 import com.weedow.schemaorg.generator.model.Type;
 import com.weedow.schemaorg.generator.model.jsonld.GraphItem;
-import com.weedow.schemaorg.generator.model.jsonld.SubClassOf;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -25,18 +23,17 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-class ClassModelHandlerImplTest {
+class BaseDataTypeModelHandlerImplTest {
 
     @InjectMocks
-    private ClassModelHandlerImpl modelHandler;
+    private BaseDataTypeModelHandlerImpl modelHandler;
 
     @ParameterizedTest
     @MethodSource
-    void supports(String id, List<String> types, List<SubClassOf> subClassOfs, boolean expected) {
+    void supports(String id, boolean expected) {
         GraphItem graphItem = mock(GraphItem.class);
         when(graphItem.getId()).thenReturn(id);
-        when(graphItem.getTypes()).thenReturn(types);
-        when(graphItem.getSubClassOf()).thenReturn(subClassOfs);
+
         boolean result = modelHandler.supports(graphItem);
         Assertions.assertThat(result).isEqualTo(expected);
     }
@@ -68,7 +65,7 @@ class ClassModelHandlerImplTest {
                         "schema:MyType", null, "MyType", "This is my Type",
                         Collections.emptySet(), Collections.emptySet(),
                         List.of(schemaDefinitions.get("schema:Parent")),
-                        "java:JsonLdNode", JsonLdNode.class, JsonLdNodeImpl.class,
+                        "java:JsonLdDataType", JsonLdDataType.class, null,
                         false, Collections.emptyList(),
                         List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/2373")
                 );
@@ -91,13 +88,9 @@ class ClassModelHandlerImplTest {
 
     private static Stream<Arguments> supports() {
         return Stream.of(
-                Arguments.of(null, List.of("rdfs:Class", "rdfs:OtherType"), null, true),
-                Arguments.of("schema:MyType", List.of("rdfs:Class", "rdfs:OtherType"), null, true),
-                Arguments.of("schema:MyType", List.of("rdfs:Class", "rdfs:OtherType"), List.of(subClassOf("schema:SubClass")), true),
-                Arguments.of("schema:DataType", List.of("rdfs:Class", "schema:DataType"), null, false),
-                Arguments.of("schema:MyType", List.of("rdfs:Class", "schema:DataType"), null, false),
-                Arguments.of("schema:MyType", List.of("rdfs:Class", "rdfs:OtherType"), List.of(subClassOf("schema:Text")), false)
+                Arguments.of("schema:DataType", true),
+                Arguments.of(null, false),
+                Arguments.of("rdfs:OtherClass", false)
         );
     }
-
 }

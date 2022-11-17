@@ -11,7 +11,7 @@ package org.schema.model.datatype;
  *
  * @see <a href="https://schema.org/DataType">https://schema.org/DataType</a>
  */
-public abstract class DataType<T> {
+public abstract class DataType<T> implements com.weedow.schemaorg.commons.model.JsonLdDataType<T> {
 
     private final T value;
 
@@ -19,6 +19,7 @@ public abstract class DataType<T> {
         this.value = value;
     }
 
+    @Override
     public T getValue() {
         return value;
     }

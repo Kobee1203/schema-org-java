@@ -1,6 +1,8 @@
-package com.weedow.schemaorg.generator.model.handler;
+package com.weedow.schemaorg.generator.model.handler.datatype;
 
 import com.weedow.schemaorg.generator.model.Type;
+import com.weedow.schemaorg.generator.model.handler.AbstractTypeModelHandler;
+import com.weedow.schemaorg.generator.model.handler.ModelHandlerUtils;
 import com.weedow.schemaorg.generator.model.jsonld.GraphItem;
 
 import java.util.List;

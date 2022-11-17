@@ -16,9 +16,11 @@ public class ClassModelHandlerImpl extends AbstractTypeModelHandler {
 
     @Override
     public boolean supports(GraphItem graphItem) {
+        final String id = graphItem.getId();
         final List<String> types = graphItem.getTypes();
         final List<SubClassOf> subClassOf = graphItem.getSubClassOf();
-        return types.contains("rdfs:Class") && !types.contains("schema:DataType")
+        return !"schema:DataType".equals(id)
+                && types.contains("rdfs:Class") && !types.contains("schema:DataType")
                 && (subClassOf == null || subClassOf.stream().noneMatch(subClass -> ModelHandlerUtils.isDataType(subClass.getId())));
     }
 

@@ -11,6 +11,9 @@ import com.weedow.schemaorg.generator.core.stream.StreamService;
 import com.weedow.schemaorg.generator.core.stream.StreamServiceImpl;
 import com.weedow.schemaorg.generator.model.Type;
 import com.weedow.schemaorg.generator.model.handler.*;
+import com.weedow.schemaorg.generator.model.handler.datatype.BaseDataTypeModelHandlerImpl;
+import com.weedow.schemaorg.generator.model.handler.datatype.DataTypeModelHandlerImpl;
+import com.weedow.schemaorg.generator.model.handler.datatype.SubDataTypeModelHandlerImpl;
 import com.weedow.schemaorg.generator.parser.ParserOptions;
 import com.weedow.schemaorg.generator.parser.SchemaModelParser;
 import com.weedow.schemaorg.generator.parser.SchemaModelParserImpl;
@@ -50,6 +53,7 @@ public class SchemaModelGeneratorBuilder {
         final SchemaDefinitionReader schemaDefinitionReader = new SchemaDefinitionReaderImpl();
         final List<ModelHandler> modelHandlers = Arrays.asList(
                 new PropertyModelHandlerImpl(),
+                new BaseDataTypeModelHandlerImpl(),
                 new DataTypeModelHandlerImpl(),
                 new SubDataTypeModelHandlerImpl(),
                 new ClassModelHandlerImpl(),
