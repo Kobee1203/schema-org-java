@@ -11,6 +11,16 @@ import static org.mockito.Mockito.mock;
 class ModelVerifierTest {
 
     @Test
+    void equalsContract() {
+        EqualsVerifier
+                .forPackage(getClass().getPackageName())
+                .except(Property.class, Type.class)
+                // Skip '*Builder' classes
+                .except(clazz -> clazz.getSimpleName().endsWith("Builder"))
+                .verify();
+    }
+
+    @Test
     void equalsContractProperty() {
         EqualsVerifier
                 .forClass(Property.class)

@@ -2,9 +2,12 @@ package com.weedow.schemaorg.serializer;
 
 import com.adelean.inject.resources.junit.jupiter.GivenTextResource;
 import com.adelean.inject.resources.junit.jupiter.TestWithResources;
+import com.fasterxml.jackson.databind.JsonMappingException;
 import com.weedow.schemaorg.commons.model.JsonLdNode;
 import com.weedow.schemaorg.commons.model.JsonLdNodeImpl;
 import com.weedow.schemaorg.serializer.data.Example;
+import com.weedow.schemaorg.serializer.data.InvalidData;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.schema.model.*;
 import org.schema.model.datatype.Boolean;
@@ -19,6 +22,8 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.Month;
+import java.util.Arrays;
+import java.util.List;
 
 import static net.javacrumbs.jsonunit.assertj.JsonAssertions.assertThatJson;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -132,5 +137,63 @@ class JsonLdSerializerImplTest {
         String result = jsonLdSerializer.serialize(hotel);
 
         assertThatJson(result).isEqualTo(expected);
+    }
+
+    @Test
+    void throws_exception_when_serialize_invalid_data() {
+        final JsonLdSerializer jsonLdSerializer = new JsonLdSerializerImpl();
+
+        InvalidData invalidData = new InvalidData();
+        Assertions.assertThatThrownBy(() -> jsonLdSerializer.serialize(invalidData))
+                .isInstanceOf(JsonLdException.class)
+                .hasMessage("JSON-LD serialize internal error for type schema:InvalidData.")
+                .hasCauseInstanceOf(JsonMappingException.class)
+                //.hasMessage("Unexpected error (through reference chain: com.weedow.schemaorg.serializer.data.InvalidData[\"text\"])")
+                .hasRootCauseInstanceOf(RuntimeException.class)
+                .hasRootCauseMessage("Unexpected error");
+    }
+
+    @Test
+    void serialize_list(@GivenTextResource("/data/List.json") String expected) throws MalformedURLException, JsonLdException {
+        final JsonLdSerializer jsonLdSerializer = new JsonLdSerializerImpl(JsonLdSerializerOptions.builder().prettyPrint(true).build());
+
+        Thing thing = new ThingImpl();
+        thing.setId("my_id");
+        thing.setName(Text.of("My Thing"));
+        thing.setDescription(Text.of("This is my thing."));
+        thing.setUrl(URL.of(new java.net.URL("https://github.com/Kobee1203/schema-org-java")));
+
+        Example example = new Example();
+        example.setBool(Boolean.of(true));
+        example.setCssSelectorType(CssSelectorType.of(".css-selector-type"));
+        example.setDate(Date.of(LocalDate.of(2022, Month.MARCH, 12)));
+        example.setDateTime(DateTime.of(LocalDateTime.of(2022, Month.MARCH, 12, 10, 36, 30)));
+        example.setAFloat(Float.of(12345.67f));
+        example.setInteger(Integer.of(12345));
+        example.setNumber(Number.of(12345.67d));
+        example.setPronounceableText(PronounceableText.of("This is my thing."));
+        example.setText(Text.of("My Thing"));
+        example.setTime(Time.of(LocalTime.of(10, 36, 30)));
+        example.setUrl(URL.of(new java.net.URL("https://github.com/Kobee1203/schema-org-java")));
+        example.setXPathType(XPathType.of("/xpath/example/title"));
+
+        List<? extends JsonLdNode> objects = Arrays.asList(thing, example);
+        String result = jsonLdSerializer.serialize(objects);
+
+        assertThatJson(result).isEqualTo(expected);
+    }
+
+    @Test
+    void throws_exception_when_serialize_invalid_data_list() {
+        final JsonLdSerializer jsonLdSerializer = new JsonLdSerializerImpl();
+
+        InvalidData invalidData = new InvalidData();
+        Assertions.assertThatThrownBy(() -> jsonLdSerializer.serialize(Arrays.asList(invalidData, invalidData)))
+                .isInstanceOf(JsonLdException.class)
+                .hasMessage("JSON-LD serialize internal error for type schema:InvalidData.")
+                .hasCauseInstanceOf(JsonMappingException.class)
+                //.hasMessage("Unexpected error (through reference chain: com.weedow.schemaorg.serializer.data.InvalidData[\"text\"])")
+                .hasRootCauseInstanceOf(RuntimeException.class)
+                .hasRootCauseMessage("Unexpected error");
     }
 }
