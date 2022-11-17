@@ -10,6 +10,7 @@ com/weedow/
 com/weedow/schemaorg/
 com/weedow/schemaorg/commons/
 com/weedow/schemaorg/commons/model/
+com/weedow/schemaorg/commons/model/JsonLdDataType.class
 com/weedow/schemaorg/commons/model/JsonLdNode.class
 com/weedow/schemaorg/commons/model/JsonLdNodeImpl.class
 com/weedow/schemaorg/commons/model/JsonLdTypeName.class

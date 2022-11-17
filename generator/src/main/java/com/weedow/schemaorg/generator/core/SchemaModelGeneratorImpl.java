@@ -1,5 +1,6 @@
 package com.weedow.schemaorg.generator.core;
 
+import com.weedow.schemaorg.commons.model.JsonLdDataType;
 import com.weedow.schemaorg.commons.model.JsonLdNode;
 import com.weedow.schemaorg.commons.model.JsonLdNodeImpl;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
@@ -84,6 +85,7 @@ public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
             copyJavaFile(JsonLdTypeName.class);
             copyJavaFile(JsonLdNode.class);
             copyJavaFile(JsonLdNodeImpl.class);
+            copyJavaFile(JsonLdDataType.class);
         }
 
         LOG.info("Generating models...");
