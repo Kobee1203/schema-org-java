@@ -1,0 +1,8 @@
+{
+  "@context" : "https://schema.org",
+  "@id" : "my_id",
+  "@type" : "schema:Thing",
+  "description" : "This is my thing.",
+  "name" : "My Thing",
+  "url" : "https://github.com/Kobee1203/schema-org-java"
+}

@@ -1,4 +1,4 @@
-package com.weedow.schemaorg.serializer.serializer;
+package com.weedow.schemaorg.serializer;
 
 import com.weedow.schemaorg.commons.model.JsonLdNode;
 
@@ -9,8 +9,8 @@ import java.util.List;
  * <p>
  * An example for serialization:
  * <pre>
- * {@code JsonLdSerializer serializer = new JsonLdSerializer(true);
- * Thing object = new Thing();
+ * {@code JsonLdSerializer serializer = new JsonLdSerializerImpl();
+ * Thing object = new ThingImpl();
  * object.setContext("https://schema.org");
  * object.setName("name");
  * String jsonldStr = serializer.serialize(object); }

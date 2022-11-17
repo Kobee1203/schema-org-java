@@ -1,0 +1,16 @@
+{
+  "@context" : "https://schema.org",
+  "@type" : "schema:Example",
+  "afloat" : 12345.67,
+  "bool" : true,
+  "cssSelectorType" : ".css-selector-type",
+  "date" : "2022-03-12",
+  "dateTime" : "2022-03-12T10:36:30",
+  "integer" : 12345,
+  "number" : 12345.67,
+  "pronounceableText" : "This is my thing.",
+  "text" : "My Thing",
+  "time" : "10:36:30",
+  "url" : "https://github.com/Kobee1203/schema-org-java",
+  "xpathType" : "/xpath/example/title"
+}

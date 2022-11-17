@@ -1,4 +1,4 @@
-package com.weedow.schemaorg.serializer.serializer;
+package com.weedow.schemaorg.serializer;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
