@@ -52,7 +52,7 @@ import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 
 /**
  * A music recording (track), usually a single song.
@@ -60,7 +60,7 @@ import org.schema.model.JsonLdTypeName;
  * @see <a href="https://schema.org/MusicRecording">https://schema.org/MusicRecording</a>
  */
 @JsonLdTypeName("schema:MusicRecording")
-public class MusicRecordingImpl implements MusicRecording {
+public class MusicRecordingImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MusicRecording {
 
     private Text fIsrcCode;
 

@@ -28,7 +28,7 @@ import org.schema.model.Event;
 import org.schema.model.CreativeWork;
 import org.schema.model.Action;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.CivicStructure;
 import org.schema.model.Crematorium;
 
@@ -38,7 +38,7 @@ import org.schema.model.Crematorium;
  * @see <a href="https://schema.org/Crematorium">https://schema.org/Crematorium</a>
  */
 @JsonLdTypeName("schema:Crematorium")
-public class CrematoriumImpl implements Crematorium {
+public class CrematoriumImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Crematorium {
 
     private Text fOpeningHours;
 

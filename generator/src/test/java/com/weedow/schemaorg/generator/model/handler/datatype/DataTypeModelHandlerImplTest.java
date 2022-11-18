@@ -1,4 +1,4 @@
-package com.weedow.schemaorg.generator.model.handler;
+package com.weedow.schemaorg.generator.model.handler.datatype;
 
 import com.weedow.schemaorg.generator.model.Type;
 import com.weedow.schemaorg.generator.model.jsonld.GraphItem;
@@ -54,14 +54,14 @@ class DataTypeModelHandlerImplTest {
                 .extracting(
                         "id", "javaType", "name", "description",
                         "properties", "allProperties",
-                        "parents",
+                        "parents", "baseParent",
                         "enumerationType", "enumerationMembers",
                         "partOf", "source"
                 )
                 .containsExactly(
                         "schema:MyType", null, "MyType", "This is my Type",
                         Collections.emptySet(), Collections.emptySet(),
-                        List.of(schemaDefinitions.get("schema:Parent"), schemaDefinitions.get("schema:DataType")),
+                        List.of(schemaDefinitions.get("schema:Parent"), schemaDefinitions.get("schema:DataType")), null,
                         false, Collections.emptyList(),
                         List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/2373")
                 );
@@ -69,14 +69,14 @@ class DataTypeModelHandlerImplTest {
                 .extracting(
                         "id", "javaType", "name", "description",
                         "properties", "allProperties",
-                        "parents",
+                        "parents", "baseParent",
                         "enumerationType", "enumerationMembers",
                         "partOf", "source"
                 )
                 .containsExactly(
                         "schema:Parent", null, null, null,
                         Collections.emptySet(), Collections.emptySet(),
-                        Collections.emptyList(),
+                        Collections.emptyList(), null,
                         false, Collections.emptyList(),
                         Collections.emptyList(), Collections.emptyList()
                 );

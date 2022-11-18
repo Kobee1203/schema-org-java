@@ -1,10 +1,4 @@
-{{!-- @formatter:off --}}
-{{> templates/fragment/file_header}}
-package {{this.usedPackage}};
-
-{{#each this.imports}}
-import {{this}};
-{{/each}}
+package com.weedow.schemaorg.commons.model;
 
 /**
  * Implementation of {@link JsonLdNode}.
@@ -39,7 +33,7 @@ public class JsonLdNodeImpl implements JsonLdNode {
 
     @Override
     public String getType() {
-        final java.lang.Class<? extends JsonLdNodeImpl> objectClass = getClass();
+        final Class<? extends JsonLdNodeImpl> objectClass = getClass();
         final JsonLdTypeName jsonLdTypeName = objectClass.getAnnotation(JsonLdTypeName.class);
         return jsonLdTypeName != null && !jsonLdTypeName.value().isEmpty() ? jsonLdTypeName.value() : objectClass.getSimpleName();
     }

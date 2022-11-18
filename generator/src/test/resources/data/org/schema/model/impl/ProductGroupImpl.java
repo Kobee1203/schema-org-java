@@ -38,7 +38,7 @@ import org.schema.model.datatype.Boolean;
 import org.schema.model.CreativeWork;
 import org.schema.model.Action;
 import org.schema.model.Event;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 
 /**
  * A ProductGroup represents a group of [[Product]]s that vary only in certain well-described ways, such as by [[size]], [[color]], [[material]] etc.
@@ -50,7 +50,7 @@ import org.schema.model.JsonLdTypeName;
  * @see <a href="https://schema.org/ProductGroup">https://schema.org/ProductGroup</a>
  */
 @JsonLdTypeName("schema:ProductGroup")
-public class ProductGroupImpl implements ProductGroup {
+public class ProductGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ProductGroup {
 
     private Product fHasVariant;
 

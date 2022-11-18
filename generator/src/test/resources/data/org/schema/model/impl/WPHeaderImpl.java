@@ -50,7 +50,7 @@ import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.WebPageElement;
 import org.schema.model.WPHeader;
 
@@ -60,7 +60,7 @@ import org.schema.model.WPHeader;
  * @see <a href="https://schema.org/WPHeader">https://schema.org/WPHeader</a>
  */
 @JsonLdTypeName("schema:WPHeader")
-public class WPHeaderImpl implements WPHeader {
+public class WPHeaderImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements WPHeader {
 
     private CssSelectorType fCssSelector;
 

@@ -26,7 +26,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.TradeAction;
 import org.schema.model.TipAction;
 
@@ -36,7 +36,7 @@ import org.schema.model.TipAction;
  * @see <a href="https://schema.org/TipAction">https://schema.org/TipAction</a>
  */
 @JsonLdTypeName("schema:TipAction")
-public class TipActionImpl implements TipAction {
+public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements TipAction {
 
     private Object fRecipient;
 

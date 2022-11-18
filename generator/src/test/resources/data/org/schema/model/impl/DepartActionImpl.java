@@ -22,7 +22,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.MoveAction;
 import org.schema.model.DepartAction;
 
@@ -32,7 +32,7 @@ import org.schema.model.DepartAction;
  * @see <a href="https://schema.org/DepartAction">https://schema.org/DepartAction</a>
  */
 @JsonLdTypeName("schema:DepartAction")
-public class DepartActionImpl implements DepartAction {
+public class DepartActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements DepartAction {
 
     private Place fFromLocation;
 

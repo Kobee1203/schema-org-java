@@ -24,7 +24,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.MedicalEntity;
 import org.schema.model.MedicalIntangible;
 import org.schema.model.DDxElement;
@@ -36,7 +36,7 @@ import org.schema.model.DDxElement;
  * @see <a href="https://schema.org/DDxElement">https://schema.org/DDxElement</a>
  */
 @JsonLdTypeName("schema:DDxElement")
-public class DDxElementImpl implements DDxElement {
+public class DDxElementImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements DDxElement {
 
     private MedicalSignOrSymptom fDistinguishingSign;
 

@@ -48,7 +48,7 @@ import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Conversation;
 
 /**
@@ -57,7 +57,7 @@ import org.schema.model.Conversation;
  * @see <a href="https://schema.org/Conversation">https://schema.org/Conversation</a>
  */
 @JsonLdTypeName("schema:Conversation")
-public class ConversationImpl implements Conversation {
+public class ConversationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Conversation {
 
     private Object fTeaches;
 

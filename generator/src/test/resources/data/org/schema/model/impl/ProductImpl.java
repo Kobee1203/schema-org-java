@@ -38,7 +38,7 @@ import org.schema.model.datatype.Boolean;
 import org.schema.model.CreativeWork;
 import org.schema.model.Action;
 import org.schema.model.Event;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 
 /**
  * Any offered product or service. For example: a pair of shoes; a concert ticket; the rental of a car; a haircut; or an episode of a TV show streamed online.
@@ -47,7 +47,7 @@ import org.schema.model.JsonLdTypeName;
  * @see <a href="https://schema.org/Product">https://schema.org/Product</a>
  */
 @JsonLdTypeName("schema:Product")
-public class ProductImpl implements Product {
+public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Product {
 
     private Product fIsAccessoryOrSparePartFor;
 

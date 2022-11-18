@@ -22,7 +22,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.AssessAction;
 import org.schema.model.ReactAction;
 import org.schema.model.LikeAction;
@@ -33,7 +33,7 @@ import org.schema.model.LikeAction;
  * @see <a href="https://schema.org/LikeAction">https://schema.org/LikeAction</a>
  */
 @JsonLdTypeName("schema:LikeAction")
-public class LikeActionImpl implements LikeAction {
+public class LikeActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements LikeAction {
 
     private Object fAgent;
 

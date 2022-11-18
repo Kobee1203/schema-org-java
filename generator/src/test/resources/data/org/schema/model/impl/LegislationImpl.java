@@ -52,7 +52,7 @@ import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 
 /**
  * A legal document such as an act, decree, bill, etc. (enforceable or not) or a component of a legal act (like an article).
@@ -63,7 +63,7 @@ import org.schema.model.JsonLdTypeName;
  * @see <a href="https://schema.org/Legislation">https://schema.org/Legislation</a>
  */
 @JsonLdTypeName("schema:Legislation")
-public class LegislationImpl implements Legislation {
+public class LegislationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Legislation {
 
     private Legislation fLegislationTransposes;
 

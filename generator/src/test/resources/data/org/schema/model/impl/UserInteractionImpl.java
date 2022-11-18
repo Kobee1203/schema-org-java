@@ -35,7 +35,7 @@ import org.schema.model.Schedule;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.UserInteraction;
 
 /**
@@ -44,7 +44,7 @@ import org.schema.model.UserInteraction;
  * @see <a href="https://schema.org/UserInteraction">https://schema.org/UserInteraction</a>
  */
 @JsonLdTypeName("schema:UserInteraction")
-public class UserInteractionImpl implements UserInteraction {
+public class UserInteractionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements UserInteraction {
 
     private Event fSuperEvent;
 

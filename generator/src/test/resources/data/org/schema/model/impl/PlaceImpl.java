@@ -28,7 +28,7 @@ import org.schema.model.Event;
 import org.schema.model.CreativeWork;
 import org.schema.model.Action;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 
 /**
  * Entities that have a somewhat fixed, physical extension.
@@ -36,7 +36,7 @@ import org.schema.model.JsonLdTypeName;
  * @see <a href="https://schema.org/Place">https://schema.org/Place</a>
  */
 @JsonLdTypeName("schema:Place")
-public class PlaceImpl implements Place {
+public class PlaceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Place {
 
     private Text fTelephone;
 

@@ -48,7 +48,7 @@ import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Painting;
 
 /**
@@ -57,7 +57,7 @@ import org.schema.model.Painting;
  * @see <a href="https://schema.org/Painting">https://schema.org/Painting</a>
  */
 @JsonLdTypeName("schema:Painting")
-public class PaintingImpl implements Painting {
+public class PaintingImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Painting {
 
     private Object fTeaches;
 

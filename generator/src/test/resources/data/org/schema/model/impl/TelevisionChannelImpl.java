@@ -16,7 +16,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.BroadcastChannel;
 import org.schema.model.TelevisionChannel;
@@ -27,7 +27,7 @@ import org.schema.model.TelevisionChannel;
  * @see <a href="https://schema.org/TelevisionChannel">https://schema.org/TelevisionChannel</a>
  */
 @JsonLdTypeName("schema:TelevisionChannel")
-public class TelevisionChannelImpl implements TelevisionChannel {
+public class TelevisionChannelImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements TelevisionChannel {
 
     private Object fGenre;
 

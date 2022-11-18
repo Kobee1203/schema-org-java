@@ -24,7 +24,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.Reservation;
 import org.schema.model.TaxiReservation;
@@ -35,7 +35,7 @@ import org.schema.model.TaxiReservation;
  * @see <a href="https://schema.org/TaxiReservation">https://schema.org/TaxiReservation</a>
  */
 @JsonLdTypeName("schema:TaxiReservation")
-public class TaxiReservationImpl implements TaxiReservation {
+public class TaxiReservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements TaxiReservation {
 
     private Object fPartySize;
 

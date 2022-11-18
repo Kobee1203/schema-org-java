@@ -29,7 +29,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.MedicalTrial;
 
 /**
@@ -39,7 +39,7 @@ import org.schema.model.MedicalTrial;
  * @see <a href="https://schema.org/MedicalTrial">https://schema.org/MedicalTrial</a>
  */
 @JsonLdTypeName("schema:MedicalTrial")
-public class MedicalTrialImpl implements MedicalTrial {
+public class MedicalTrialImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MedicalTrial {
 
     private MedicalTrialDesign fTrialDesign;
 

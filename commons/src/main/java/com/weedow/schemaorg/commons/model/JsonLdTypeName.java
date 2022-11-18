@@ -1,6 +1,4 @@
-{{!-- @formatter:off --}}
-{{> templates/fragment/file_header}}
-package {{this.usedPackage}};
+package com.weedow.schemaorg.commons.model;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

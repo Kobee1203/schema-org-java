@@ -49,7 +49,7 @@ import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.DigitalDocument;
 import org.schema.model.SpreadsheetDigitalDocument;
 
@@ -59,7 +59,7 @@ import org.schema.model.SpreadsheetDigitalDocument;
  * @see <a href="https://schema.org/SpreadsheetDigitalDocument">https://schema.org/SpreadsheetDigitalDocument</a>
  */
 @JsonLdTypeName("schema:SpreadsheetDigitalDocument")
-public class SpreadsheetDigitalDocumentImpl implements SpreadsheetDigitalDocument {
+public class SpreadsheetDigitalDocumentImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements SpreadsheetDigitalDocument {
 
     private DigitalDocumentPermission fHasDigitalDocumentPermission;
 

@@ -30,7 +30,7 @@ import org.schema.model.Event;
 import org.schema.model.CreativeWork;
 import org.schema.model.Action;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.TouristAttraction;
 
 /**
@@ -41,7 +41,7 @@ import org.schema.model.TouristAttraction;
  * @see <a href="https://schema.org/TouristAttraction">https://schema.org/TouristAttraction</a>
  */
 @JsonLdTypeName("schema:TouristAttraction")
-public class TouristAttractionImpl implements TouristAttraction {
+public class TouristAttractionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements TouristAttraction {
 
     private Object fTouristType;
 

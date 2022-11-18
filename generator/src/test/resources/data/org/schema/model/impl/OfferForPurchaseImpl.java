@@ -48,7 +48,7 @@ import org.schema.model.datatype.Number;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.OfferForPurchase;
 
@@ -63,7 +63,7 @@ import org.schema.model.OfferForPurchase;
  * @see <a href="https://schema.org/OfferForPurchase">https://schema.org/OfferForPurchase</a>
  */
 @JsonLdTypeName("schema:OfferForPurchase")
-public class OfferForPurchaseImpl implements OfferForPurchase {
+public class OfferForPurchaseImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements OfferForPurchase {
 
     private AdultOrientedEnumeration fHasAdultConsideration;
 

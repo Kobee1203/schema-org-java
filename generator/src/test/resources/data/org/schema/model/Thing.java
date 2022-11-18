@@ -18,7 +18,7 @@ import org.schema.model.PropertyValue;
  *
  * @see <a href="https://schema.org/Thing">https://schema.org/Thing</a>
  */
-public interface Thing {
+public interface Thing extends com.weedow.schemaorg.commons.model.JsonLdNode {
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.

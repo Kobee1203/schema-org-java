@@ -50,7 +50,7 @@ import org.schema.model.ItemList;
 import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Dataset;
 
 /**
@@ -60,7 +60,7 @@ import org.schema.model.Dataset;
  * @see <a href="https://schema.org/Dataset">https://schema.org/Dataset</a>
  */
 @JsonLdTypeName("schema:Dataset")
-public class DatasetImpl implements Dataset {
+public class DatasetImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Dataset {
 
     private DataCatalog fCatalog;
 

@@ -26,7 +26,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.MedicalEntity;
 import org.schema.model.SuperficialAnatomy;
 
@@ -37,7 +37,7 @@ import org.schema.model.SuperficialAnatomy;
  * @see <a href="https://schema.org/SuperficialAnatomy">https://schema.org/SuperficialAnatomy</a>
  */
 @JsonLdTypeName("schema:SuperficialAnatomy")
-public class SuperficialAnatomyImpl implements SuperficialAnatomy {
+public class SuperficialAnatomyImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements SuperficialAnatomy {
 
     private MedicalTherapy fRelatedTherapy;
 

@@ -28,7 +28,7 @@ import org.schema.model.Event;
 import org.schema.model.CreativeWork;
 import org.schema.model.Action;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.CivicStructure;
 import org.schema.model.MusicVenue;
 
@@ -38,7 +38,7 @@ import org.schema.model.MusicVenue;
  * @see <a href="https://schema.org/MusicVenue">https://schema.org/MusicVenue</a>
  */
 @JsonLdTypeName("schema:MusicVenue")
-public class MusicVenueImpl implements MusicVenue {
+public class MusicVenueImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MusicVenue {
 
     private Text fOpeningHours;
 

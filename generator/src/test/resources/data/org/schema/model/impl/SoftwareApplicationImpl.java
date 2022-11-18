@@ -50,7 +50,7 @@ import org.schema.model.ItemList;
 import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 
 /**
  * A software application.
@@ -58,7 +58,7 @@ import org.schema.model.JsonLdTypeName;
  * @see <a href="https://schema.org/SoftwareApplication">https://schema.org/SoftwareApplication</a>
  */
 @JsonLdTypeName("schema:SoftwareApplication")
-public class SoftwareApplicationImpl implements SoftwareApplication {
+public class SoftwareApplicationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements SoftwareApplication {
 
     private Text fCountriesSupported;
 

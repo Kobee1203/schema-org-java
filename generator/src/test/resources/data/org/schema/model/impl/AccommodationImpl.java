@@ -31,7 +31,7 @@ import org.schema.model.Event;
 import org.schema.model.CreativeWork;
 import org.schema.model.Action;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Accommodation;
 
 /**
@@ -44,7 +44,7 @@ import org.schema.model.Accommodation;
  * @see <a href="https://schema.org/Accommodation">https://schema.org/Accommodation</a>
  */
 @JsonLdTypeName("schema:Accommodation")
-public class AccommodationImpl implements Accommodation {
+public class AccommodationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Accommodation {
 
     private Text fFloorLevel;
 

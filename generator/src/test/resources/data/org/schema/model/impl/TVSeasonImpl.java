@@ -51,7 +51,7 @@ import org.schema.model.ItemList;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.CreativeWorkSeason;
 import org.schema.model.TVSeason;
 
@@ -61,7 +61,7 @@ import org.schema.model.TVSeason;
  * @see <a href="https://schema.org/TVSeason">https://schema.org/TVSeason</a>
  */
 @JsonLdTypeName("schema:TVSeason")
-public class TVSeasonImpl implements TVSeason {
+public class TVSeasonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements TVSeason {
 
     private Country fCountryOfOrigin;
 

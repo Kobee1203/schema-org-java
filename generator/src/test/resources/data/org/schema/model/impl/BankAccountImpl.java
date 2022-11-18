@@ -35,7 +35,7 @@ import org.schema.model.CreativeWork;
 import org.schema.model.Action;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.FinancialProduct;
 import org.schema.model.BankAccount;
@@ -47,7 +47,7 @@ import org.schema.model.BankAccount;
  * @see <a href="https://schema.org/BankAccount">https://schema.org/BankAccount</a>
  */
 @JsonLdTypeName("schema:BankAccount")
-public class BankAccountImpl implements BankAccount {
+public class BankAccountImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements BankAccount {
 
     private Object fBankAccountType;
 

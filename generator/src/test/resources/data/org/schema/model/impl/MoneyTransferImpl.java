@@ -25,7 +25,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.TransferAction;
 import org.schema.model.MoneyTransfer;
 
@@ -38,7 +38,7 @@ import org.schema.model.MoneyTransfer;
  * @see <a href="https://schema.org/MoneyTransfer">https://schema.org/MoneyTransfer</a>
  */
 @JsonLdTypeName("schema:MoneyTransfer")
-public class MoneyTransferImpl implements MoneyTransfer {
+public class MoneyTransferImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MoneyTransfer {
 
     private Object fBeneficiaryBank;
 

@@ -41,7 +41,7 @@ import org.schema.model.OfferCatalog;
 import org.schema.model.Event;
 import org.schema.model.Action;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Project;
 import org.schema.model.FundingAgency;
 
@@ -59,7 +59,7 @@ import org.schema.model.FundingAgency;
  * @see <a href="https://schema.org/FundingAgency">https://schema.org/FundingAgency</a>
  */
 @JsonLdTypeName("schema:FundingAgency")
-public class FundingAgencyImpl implements FundingAgency {
+public class FundingAgencyImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements FundingAgency {
 
     private Object fOwnershipFundingInfo;
 

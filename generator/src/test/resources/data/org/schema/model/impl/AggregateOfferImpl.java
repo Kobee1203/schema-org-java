@@ -50,7 +50,7 @@ import org.schema.model.datatype.Boolean;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 
 /**
@@ -59,7 +59,7 @@ import org.schema.model.Intangible;
  * @see <a href="https://schema.org/AggregateOffer">https://schema.org/AggregateOffer</a>
  */
 @JsonLdTypeName("schema:AggregateOffer")
-public class AggregateOfferImpl implements AggregateOffer {
+public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements AggregateOffer {
 
     private Object fHighPrice;
 

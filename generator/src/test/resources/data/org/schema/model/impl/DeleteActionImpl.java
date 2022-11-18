@@ -22,7 +22,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.UpdateAction;
 import org.schema.model.DeleteAction;
 
@@ -32,7 +32,7 @@ import org.schema.model.DeleteAction;
  * @see <a href="https://schema.org/DeleteAction">https://schema.org/DeleteAction</a>
  */
 @JsonLdTypeName("schema:DeleteAction")
-public class DeleteActionImpl implements DeleteAction {
+public class DeleteActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements DeleteAction {
 
     private Thing fTargetCollection;
 

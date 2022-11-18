@@ -5,7 +5,7 @@
  */
 package org.schema.model.datatype;
 
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.datatype.Text;
 import org.schema.model.Language;
 

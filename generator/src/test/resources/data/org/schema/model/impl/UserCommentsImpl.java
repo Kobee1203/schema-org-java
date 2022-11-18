@@ -35,7 +35,7 @@ import org.schema.model.Schedule;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.UserInteraction;
 import org.schema.model.UserComments;
 
@@ -46,7 +46,7 @@ import org.schema.model.UserComments;
  * @see <a href="https://schema.org/UserComments">https://schema.org/UserComments</a>
  */
 @JsonLdTypeName("schema:UserComments")
-public class UserCommentsImpl implements UserComments {
+public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements UserComments {
 
     private URL fReplyToUrl;
 

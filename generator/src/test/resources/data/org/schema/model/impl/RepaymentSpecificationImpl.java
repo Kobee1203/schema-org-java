@@ -15,7 +15,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.StructuredValue;
 import org.schema.model.RepaymentSpecification;
@@ -29,7 +29,7 @@ import org.schema.model.RepaymentSpecification;
  * @see <a href="https://schema.org/RepaymentSpecification">https://schema.org/RepaymentSpecification</a>
  */
 @JsonLdTypeName("schema:RepaymentSpecification")
-public class RepaymentSpecificationImpl implements RepaymentSpecification {
+public class RepaymentSpecificationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements RepaymentSpecification {
 
     private Number fNumberOfLoanPayments;
 

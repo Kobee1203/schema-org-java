@@ -24,7 +24,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.ConsumeAction;
 import org.schema.model.UseAction;
 import org.schema.model.WearAction;
@@ -35,7 +35,7 @@ import org.schema.model.WearAction;
  * @see <a href="https://schema.org/WearAction">https://schema.org/WearAction</a>
  */
 @JsonLdTypeName("schema:WearAction")
-public class WearActionImpl implements WearAction {
+public class WearActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements WearAction {
 
     private Offer fExpectsAcceptanceOf;
 

@@ -41,7 +41,7 @@ import org.schema.model.OfferCatalog;
 import org.schema.model.Event;
 import org.schema.model.Action;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.GeospatialGeometry;
 import org.schema.model.datatype.Integer;
 import org.schema.model.datatype.Boolean;
@@ -60,7 +60,7 @@ import org.schema.model.AutomotiveBusiness;
  * @see <a href="https://schema.org/AutomotiveBusiness">https://schema.org/AutomotiveBusiness</a>
  */
 @JsonLdTypeName("schema:AutomotiveBusiness")
-public class AutomotiveBusinessImpl implements AutomotiveBusiness {
+public class AutomotiveBusinessImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements AutomotiveBusiness {
 
     private Organization fBranchOf;
 

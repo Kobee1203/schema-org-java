@@ -21,6 +21,7 @@ public class SchemaModelParserImpl implements SchemaModelParser {
 
     private static final String LATEST_SCHEMA_URL = "https://schema.org/version/latest/schemaorg-current-https.jsonld";
     private static final String VERSIONED_SCHEMA_URL = "https://raw.githubusercontent.com/schemaorg/schemaorg/main/data/releases/%s/schemaorg-current-https.jsonld";
+    private static final String SCHEMAORG_DEFINITION_LOCAL_RESOURCE = "/schemaorg-current-https.jsonld";
 
     private final SchemaDefinitionReader schemaDefinitionReader;
     private final List<ModelHandler> modelHandlers;
@@ -57,12 +58,12 @@ public class SchemaModelParserImpl implements SchemaModelParser {
 
     private static InputStream getInputStream(String version) throws IOException {
         if (version != null) {
-            LOG.info("Downloading version '{}'...", version);
+            LOG.info("Downloading version '{}'", version);
             final String url = getUrl(version);
             return new URL(url).openStream();
         } else {
-            LOG.info("Loading local resource...");
-            return SchemaModelGeneratorApp.class.getResourceAsStream("/schemaorg-current-https.jsonld");
+            LOG.info("Loading local resource '{}'", SCHEMAORG_DEFINITION_LOCAL_RESOURCE);
+            return SchemaModelGeneratorApp.class.getResourceAsStream(SCHEMAORG_DEFINITION_LOCAL_RESOURCE);
         }
     }
 

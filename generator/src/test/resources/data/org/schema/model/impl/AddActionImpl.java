@@ -22,7 +22,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.UpdateAction;
 import org.schema.model.AddAction;
 
@@ -32,7 +32,7 @@ import org.schema.model.AddAction;
  * @see <a href="https://schema.org/AddAction">https://schema.org/AddAction</a>
  */
 @JsonLdTypeName("schema:AddAction")
-public class AddActionImpl implements AddAction {
+public class AddActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements AddAction {
 
     private Thing fTargetCollection;
 

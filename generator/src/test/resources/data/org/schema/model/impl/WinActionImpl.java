@@ -22,7 +22,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.AchieveAction;
 import org.schema.model.WinAction;
 
@@ -32,7 +32,7 @@ import org.schema.model.WinAction;
  * @see <a href="https://schema.org/WinAction">https://schema.org/WinAction</a>
  */
 @JsonLdTypeName("schema:WinAction")
-public class WinActionImpl implements WinAction {
+public class WinActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements WinAction {
 
     private Person fLoser;
 

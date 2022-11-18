@@ -22,7 +22,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.Reservation;
 import org.schema.model.FlightReservation;
@@ -33,7 +33,7 @@ import org.schema.model.FlightReservation;
  * @see <a href="https://schema.org/FlightReservation">https://schema.org/FlightReservation</a>
  */
 @JsonLdTypeName("schema:FlightReservation")
-public class FlightReservationImpl implements FlightReservation {
+public class FlightReservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements FlightReservation {
 
     private Object fPassengerPriorityStatus;
 

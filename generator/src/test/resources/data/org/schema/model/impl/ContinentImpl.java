@@ -28,7 +28,7 @@ import org.schema.model.Event;
 import org.schema.model.CreativeWork;
 import org.schema.model.Action;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Landform;
 import org.schema.model.Continent;
 
@@ -38,7 +38,7 @@ import org.schema.model.Continent;
  * @see <a href="https://schema.org/Continent">https://schema.org/Continent</a>
  */
 @JsonLdTypeName("schema:Continent")
-public class ContinentImpl implements Continent {
+public class ContinentImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Continent {
 
     private Text fTelephone;
 

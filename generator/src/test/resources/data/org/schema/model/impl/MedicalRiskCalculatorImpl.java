@@ -24,7 +24,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.MedicalRiskEstimator;
 import org.schema.model.MedicalRiskCalculator;
 
@@ -35,7 +35,7 @@ import org.schema.model.MedicalRiskCalculator;
  * @see <a href="https://schema.org/MedicalRiskCalculator">https://schema.org/MedicalRiskCalculator</a>
  */
 @JsonLdTypeName("schema:MedicalRiskCalculator")
-public class MedicalRiskCalculatorImpl implements MedicalRiskCalculator {
+public class MedicalRiskCalculatorImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MedicalRiskCalculator {
 
     private MedicalEntity fEstimatesRiskOf;
 

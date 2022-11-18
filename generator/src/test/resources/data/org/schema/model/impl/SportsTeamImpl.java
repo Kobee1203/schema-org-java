@@ -42,7 +42,7 @@ import org.schema.model.OfferCatalog;
 import org.schema.model.Event;
 import org.schema.model.Action;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.SportsOrganization;
 import org.schema.model.SportsTeam;
 
@@ -52,7 +52,7 @@ import org.schema.model.SportsTeam;
  * @see <a href="https://schema.org/SportsTeam">https://schema.org/SportsTeam</a>
  */
 @JsonLdTypeName("schema:SportsTeam")
-public class SportsTeamImpl implements SportsTeam {
+public class SportsTeamImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements SportsTeam {
 
     private Person fAthlete;
 

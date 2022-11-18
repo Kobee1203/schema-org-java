@@ -38,7 +38,7 @@ import org.schema.model.CreativeWork;
 import org.schema.model.Action;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.FinancialProduct;
 import org.schema.model.LoanOrCredit;
@@ -50,7 +50,7 @@ import org.schema.model.LoanOrCredit;
  * @see <a href="https://schema.org/LoanOrCredit">https://schema.org/LoanOrCredit</a>
  */
 @JsonLdTypeName("schema:LoanOrCredit")
-public class LoanOrCreditImpl implements LoanOrCredit {
+public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements LoanOrCredit {
 
     private Boolean fRenegotiableLoan;
 

@@ -49,7 +49,7 @@ import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.PhysicalActivityCategory;
 import org.schema.model.CategoryCode;
 import org.schema.model.AnatomicalStructure;
@@ -74,7 +74,7 @@ import org.schema.model.ExercisePlan;
  * @see <a href="https://schema.org/ExercisePlan">https://schema.org/ExercisePlan</a>
  */
 @JsonLdTypeName("schema:ExercisePlan")
-public class ExercisePlanImpl implements ExercisePlan {
+public class ExercisePlanImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ExercisePlan {
 
     private Object fRepetitions;
 

@@ -24,7 +24,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.BusTrip;
 
@@ -34,7 +34,7 @@ import org.schema.model.BusTrip;
  * @see <a href="https://schema.org/BusTrip">https://schema.org/BusTrip</a>
  */
 @JsonLdTypeName("schema:BusTrip")
-public class BusTripImpl implements BusTrip {
+public class BusTripImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements BusTrip {
 
     private Object fDepartureBusStop;
 

@@ -49,7 +49,7 @@ import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Article;
 import org.schema.model.AdvertiserContentArticle;
 
@@ -62,7 +62,7 @@ import org.schema.model.AdvertiserContentArticle;
  * @see <a href="https://schema.org/AdvertiserContentArticle">https://schema.org/AdvertiserContentArticle</a>
  */
 @JsonLdTypeName("schema:AdvertiserContentArticle")
-public class AdvertiserContentArticleImpl implements AdvertiserContentArticle {
+public class AdvertiserContentArticleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements AdvertiserContentArticle {
 
     private Object fPageStart;
 

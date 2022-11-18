@@ -24,7 +24,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.ConsumeAction;
 
 /**
@@ -33,7 +33,7 @@ import org.schema.model.ConsumeAction;
  * @see <a href="https://schema.org/ConsumeAction">https://schema.org/ConsumeAction</a>
  */
 @JsonLdTypeName("schema:ConsumeAction")
-public class ConsumeActionImpl implements ConsumeAction {
+public class ConsumeActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ConsumeAction {
 
     private Offer fExpectsAcceptanceOf;
 

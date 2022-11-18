@@ -19,7 +19,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.PaymentMethod;
 import org.schema.model.QuantitativeValue;
@@ -58,7 +58,7 @@ import org.schema.model.CreditCard;
  * @see <a href="https://schema.org/CreditCard">https://schema.org/CreditCard</a>
  */
 @JsonLdTypeName("schema:CreditCard")
-public class CreditCardImpl implements CreditCard {
+public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements CreditCard {
 
     private Object fCashBack;
 

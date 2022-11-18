@@ -48,7 +48,7 @@ import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.SheetMusic;
 
 /**
@@ -59,7 +59,7 @@ import org.schema.model.SheetMusic;
  * @see <a href="https://schema.org/SheetMusic">https://schema.org/SheetMusic</a>
  */
 @JsonLdTypeName("schema:SheetMusic")
-public class SheetMusicImpl implements SheetMusic {
+public class SheetMusicImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements SheetMusic {
 
     private Object fTeaches;
 

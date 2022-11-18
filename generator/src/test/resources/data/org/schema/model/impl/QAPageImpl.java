@@ -52,7 +52,7 @@ import org.schema.model.ItemList;
 import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.QAPage;
 
 /**
@@ -61,7 +61,7 @@ import org.schema.model.QAPage;
  * @see <a href="https://schema.org/QAPage">https://schema.org/QAPage</a>
  */
 @JsonLdTypeName("schema:QAPage")
-public class QAPageImpl implements QAPage {
+public class QAPageImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements QAPage {
 
     private Date fLastReviewed;
 

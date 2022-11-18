@@ -23,7 +23,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.MedicalEntity;
 import org.schema.model.MedicalIntangible;
 
@@ -34,7 +34,7 @@ import org.schema.model.MedicalIntangible;
  * @see <a href="https://schema.org/DrugLegalStatus">https://schema.org/DrugLegalStatus</a>
  */
 @JsonLdTypeName("schema:DrugLegalStatus")
-public class DrugLegalStatusImpl implements DrugLegalStatus {
+public class DrugLegalStatusImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements DrugLegalStatus {
 
     private AdministrativeArea fApplicableLocation;
 

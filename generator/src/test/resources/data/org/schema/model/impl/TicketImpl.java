@@ -20,7 +20,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.Ticket;
 
@@ -30,7 +30,7 @@ import org.schema.model.Ticket;
  * @see <a href="https://schema.org/Ticket">https://schema.org/Ticket</a>
  */
 @JsonLdTypeName("schema:Ticket")
-public class TicketImpl implements Ticket {
+public class TicketImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Ticket {
 
     private Object fTicketToken;
 

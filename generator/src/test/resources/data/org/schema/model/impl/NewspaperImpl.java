@@ -48,7 +48,7 @@ import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.Series;
 import org.schema.model.CreativeWorkSeries;
@@ -63,7 +63,7 @@ import org.schema.model.Newspaper;
  * @see <a href="https://schema.org/Newspaper">https://schema.org/Newspaper</a>
  */
 @JsonLdTypeName("schema:Newspaper")
-public class NewspaperImpl implements Newspaper {
+public class NewspaperImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Newspaper {
 
     private Object fStartDate;
 

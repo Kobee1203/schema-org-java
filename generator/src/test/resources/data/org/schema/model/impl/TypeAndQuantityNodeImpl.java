@@ -17,7 +17,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.StructuredValue;
 import org.schema.model.TypeAndQuantityNode;
@@ -29,7 +29,7 @@ import org.schema.model.TypeAndQuantityNode;
  * @see <a href="https://schema.org/TypeAndQuantityNode">https://schema.org/TypeAndQuantityNode</a>
  */
 @JsonLdTypeName("schema:TypeAndQuantityNode")
-public class TypeAndQuantityNodeImpl implements TypeAndQuantityNode {
+public class TypeAndQuantityNodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements TypeAndQuantityNode {
 
     private Text fUnitText;
 

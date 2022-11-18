@@ -50,7 +50,7 @@ import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.CriticReview;
 import org.schema.model.SpeakableSpecification;
 import org.schema.model.Article;
@@ -66,7 +66,7 @@ import org.schema.model.ReviewNewsArticle;
  * @see <a href="https://schema.org/ReviewNewsArticle">https://schema.org/ReviewNewsArticle</a>
  */
 @JsonLdTypeName("schema:ReviewNewsArticle")
-public class ReviewNewsArticleImpl implements ReviewNewsArticle {
+public class ReviewNewsArticleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ReviewNewsArticle {
 
     private Rating fReviewRating;
 

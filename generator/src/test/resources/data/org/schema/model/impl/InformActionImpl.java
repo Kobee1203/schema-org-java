@@ -25,7 +25,7 @@ import org.schema.model.datatype.URL;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.InteractAction;
 import org.schema.model.CommunicateAction;
 import org.schema.model.InformAction;
@@ -36,7 +36,7 @@ import org.schema.model.InformAction;
  * @see <a href="https://schema.org/InformAction">https://schema.org/InformAction</a>
  */
 @JsonLdTypeName("schema:InformAction")
-public class InformActionImpl implements InformAction {
+public class InformActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements InformAction {
 
     private Event fEvent;
 

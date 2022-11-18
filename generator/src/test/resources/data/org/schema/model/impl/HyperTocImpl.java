@@ -49,7 +49,7 @@ import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.HyperToc;
 
 /**
@@ -60,7 +60,7 @@ import org.schema.model.HyperToc;
  * @see <a href="https://schema.org/HyperToc">https://schema.org/HyperToc</a>
  */
 @JsonLdTypeName("schema:HyperToc")
-public class HyperTocImpl implements HyperToc {
+public class HyperTocImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements HyperToc {
 
     private HyperTocEntry fTocEntry;
 

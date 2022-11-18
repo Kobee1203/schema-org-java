@@ -44,7 +44,7 @@ import org.schema.model.OfferCatalog;
 import org.schema.model.Event;
 import org.schema.model.Action;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.GeospatialGeometry;
 import org.schema.model.datatype.Integer;
 import org.schema.model.datatype.Number;
@@ -64,7 +64,7 @@ import org.schema.model.Distillery;
  * @see <a href="https://schema.org/Distillery">https://schema.org/Distillery</a>
  */
 @JsonLdTypeName("schema:Distillery")
-public class DistilleryImpl implements Distillery {
+public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Distillery {
 
     private Rating fStarRating;
 

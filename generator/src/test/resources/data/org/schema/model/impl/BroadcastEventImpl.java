@@ -36,7 +36,7 @@ import org.schema.model.Schedule;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.PublicationEvent;
 import org.schema.model.BroadcastEvent;
 
@@ -46,7 +46,7 @@ import org.schema.model.BroadcastEvent;
  * @see <a href="https://schema.org/BroadcastEvent">https://schema.org/BroadcastEvent</a>
  */
 @JsonLdTypeName("schema:BroadcastEvent")
-public class BroadcastEventImpl implements BroadcastEvent {
+public class BroadcastEventImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements BroadcastEvent {
 
     private Object fSubtitleLanguage;
 

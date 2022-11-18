@@ -49,7 +49,7 @@ import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.WebContent;
 import org.schema.model.HealthTopicContent;
 
@@ -62,7 +62,7 @@ import org.schema.model.HealthTopicContent;
  * @see <a href="https://schema.org/HealthTopicContent">https://schema.org/HealthTopicContent</a>
  */
 @JsonLdTypeName("schema:HealthTopicContent")
-public class HealthTopicContentImpl implements HealthTopicContent {
+public class HealthTopicContentImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements HealthTopicContent {
 
     private HealthAspectEnumeration fHasHealthAspect;
 

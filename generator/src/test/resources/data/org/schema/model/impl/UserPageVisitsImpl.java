@@ -35,7 +35,7 @@ import org.schema.model.Schedule;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.UserInteraction;
 import org.schema.model.UserPageVisits;
 
@@ -45,7 +45,7 @@ import org.schema.model.UserPageVisits;
  * @see <a href="https://schema.org/UserPageVisits">https://schema.org/UserPageVisits</a>
  */
 @JsonLdTypeName("schema:UserPageVisits")
-public class UserPageVisitsImpl implements UserPageVisits {
+public class UserPageVisitsImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements UserPageVisits {
 
     private Event fSuperEvent;
 

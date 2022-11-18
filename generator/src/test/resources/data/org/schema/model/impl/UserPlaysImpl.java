@@ -35,7 +35,7 @@ import org.schema.model.Schedule;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.UserInteraction;
 import org.schema.model.UserPlays;
 
@@ -45,7 +45,7 @@ import org.schema.model.UserPlays;
  * @see <a href="https://schema.org/UserPlays">https://schema.org/UserPlays</a>
  */
 @JsonLdTypeName("schema:UserPlays")
-public class UserPlaysImpl implements UserPlays {
+public class UserPlaysImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements UserPlays {
 
     private Event fSuperEvent;
 

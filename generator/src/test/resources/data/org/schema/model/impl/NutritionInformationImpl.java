@@ -15,7 +15,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.StructuredValue;
 import org.schema.model.NutritionInformation;
@@ -26,7 +26,7 @@ import org.schema.model.NutritionInformation;
  * @see <a href="https://schema.org/NutritionInformation">https://schema.org/NutritionInformation</a>
  */
 @JsonLdTypeName("schema:NutritionInformation")
-public class NutritionInformationImpl implements NutritionInformation {
+public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements NutritionInformation {
 
     private Mass fFatContent;
 

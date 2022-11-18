@@ -20,7 +20,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.Permit;
 import org.schema.model.GovernmentPermit;
@@ -31,7 +31,7 @@ import org.schema.model.GovernmentPermit;
  * @see <a href="https://schema.org/GovernmentPermit">https://schema.org/GovernmentPermit</a>
  */
 @JsonLdTypeName("schema:GovernmentPermit")
-public class GovernmentPermitImpl implements GovernmentPermit {
+public class GovernmentPermitImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements GovernmentPermit {
 
     private Duration fValidFor;
 

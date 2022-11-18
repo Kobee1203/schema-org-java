@@ -41,7 +41,7 @@ import org.schema.model.OfferCatalog;
 import org.schema.model.Event;
 import org.schema.model.Action;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Project;
 
 /**
@@ -55,7 +55,7 @@ import org.schema.model.Project;
  * @see <a href="https://schema.org/Project">https://schema.org/Project</a>
  */
 @JsonLdTypeName("schema:Project")
-public class ProjectImpl implements Project {
+public class ProjectImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Project {
 
     private Object fOwnershipFundingInfo;
 

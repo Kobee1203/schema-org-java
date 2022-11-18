@@ -9,7 +9,7 @@ import {{this}};
 {{#with this.type}}
 {{> templates/fragment/javadoc_class}}
 @JsonLdTypeName("{{this.id}}")
-public class {{this.name}}Impl implements {{this.name}} {
+public class {{this.name}}Impl{{#if this.baseParent}} extends {{this.baseParent.implementationClassName}}{{/if}} implements {{this.name}} {
 {{#each this.allProperties}}
 
     private {{#gt this.types.length 1}}Object{{else}}{{this.types.[0].name}}{{/gt}} {{this.fieldName}};

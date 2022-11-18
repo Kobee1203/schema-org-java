@@ -22,7 +22,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.OrganizeAction;
 import org.schema.model.AllocateAction;
 
@@ -32,7 +32,7 @@ import org.schema.model.AllocateAction;
  * @see <a href="https://schema.org/AllocateAction">https://schema.org/AllocateAction</a>
  */
 @JsonLdTypeName("schema:AllocateAction")
-public class AllocateActionImpl implements AllocateAction {
+public class AllocateActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements AllocateAction {
 
     private Object fAgent;
 

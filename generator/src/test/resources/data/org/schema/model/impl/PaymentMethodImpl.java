@@ -16,7 +16,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.PaymentMethod;
 
@@ -28,7 +28,7 @@ import org.schema.model.PaymentMethod;
  * @see <a href="https://schema.org/PaymentMethod">https://schema.org/PaymentMethod</a>
  */
 @JsonLdTypeName("schema:PaymentMethod")
-public class PaymentMethodImpl implements PaymentMethod {
+public class PaymentMethodImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PaymentMethod {
 
     private Object fSupersededBy;
 

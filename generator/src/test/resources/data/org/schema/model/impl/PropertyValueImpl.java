@@ -21,7 +21,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 
 /**
@@ -32,7 +32,7 @@ import org.schema.model.Intangible;
  * @see <a href="https://schema.org/PropertyValue">https://schema.org/PropertyValue</a>
  */
 @JsonLdTypeName("schema:PropertyValue")
-public class PropertyValueImpl implements PropertyValue {
+public class PropertyValueImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PropertyValue {
 
     private Object fValueReference;
 

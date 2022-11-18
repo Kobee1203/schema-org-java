@@ -1,4 +1,4 @@
-package com.weedow.schemaorg.generator.model.handler;
+package com.weedow.schemaorg.generator.model.handler.datatype;
 
 import com.weedow.schemaorg.generator.model.Type;
 import com.weedow.schemaorg.generator.model.jsonld.GraphItem;
@@ -57,14 +57,14 @@ class SubDataTypeModelHandlerImplTest {
                 .extracting(
                         "id", "javaType", "name", "description",
                         "properties", "allProperties",
-                        "parents",
+                        "parents", "baseParent",
                         "enumerationType", "enumerationMembers",
                         "partOf", "source"
                 )
                 .containsExactly(
                         "schema:Text", null, null, null,
                         Collections.emptySet(), Collections.emptySet(),
-                        Collections.emptyList(),
+                        Collections.emptyList(), null,
                         false, Collections.emptyList(),
                         Collections.emptyList(), Collections.emptyList()
                 );
@@ -73,14 +73,14 @@ class SubDataTypeModelHandlerImplTest {
                 .extracting(
                         "id", "javaType", "name", "description",
                         "properties", "allProperties",
-                        "parents",
+                        "parents", "baseParent",
                         "enumerationType", "enumerationMembers",
                         "partOf", "source"
                 )
                 .containsExactly(
                         "schema:XPathType", "java.lang.String", "XPathType", "This is XPathType",
                         Collections.emptySet(), Collections.emptySet(),
-                        List.of(schemaDefinitions.get("schema:Text")),
+                        List.of(schemaDefinitions.get("schema:Text")), null,
                         false, Collections.emptyList(),
                         List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/1672")
                 );

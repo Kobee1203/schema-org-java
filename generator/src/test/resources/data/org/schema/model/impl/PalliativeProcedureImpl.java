@@ -30,7 +30,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.MedicalProcedure;
 import org.schema.model.TherapeuticProcedure;
 import org.schema.model.PalliativeProcedure;
@@ -42,7 +42,7 @@ import org.schema.model.PalliativeProcedure;
  * @see <a href="https://schema.org/PalliativeProcedure">https://schema.org/PalliativeProcedure</a>
  */
 @JsonLdTypeName("schema:PalliativeProcedure")
-public class PalliativeProcedureImpl implements PalliativeProcedure {
+public class PalliativeProcedureImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PalliativeProcedure {
 
     private MedicalTherapy fDuplicateTherapy;
 

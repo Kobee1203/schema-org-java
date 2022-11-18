@@ -20,7 +20,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.MolecularEntity;
 
 /**
@@ -30,7 +30,7 @@ import org.schema.model.MolecularEntity;
  * @see <a href="https://schema.org/MolecularEntity">https://schema.org/MolecularEntity</a>
  */
 @JsonLdTypeName("schema:MolecularEntity")
-public class MolecularEntityImpl implements MolecularEntity {
+public class MolecularEntityImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MolecularEntity {
 
     private Text fInChIKey;
 

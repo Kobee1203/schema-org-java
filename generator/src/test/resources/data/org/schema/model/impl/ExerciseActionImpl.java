@@ -29,7 +29,7 @@ import org.schema.model.datatype.URL;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.PlayAction;
 import org.schema.model.ExerciseAction;
 
@@ -39,7 +39,7 @@ import org.schema.model.ExerciseAction;
  * @see <a href="https://schema.org/ExerciseAction">https://schema.org/ExerciseAction</a>
  */
 @JsonLdTypeName("schema:ExerciseAction")
-public class ExerciseActionImpl implements ExerciseAction {
+public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ExerciseAction {
 
     private SportsTeam fSportsTeam;
 

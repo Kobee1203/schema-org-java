@@ -50,7 +50,7 @@ import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.WebPageElement;
 import org.schema.model.Table;
 
@@ -60,7 +60,7 @@ import org.schema.model.Table;
  * @see <a href="https://schema.org/Table">https://schema.org/Table</a>
  */
 @JsonLdTypeName("schema:Table")
-public class TableImpl implements Table {
+public class TableImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Table {
 
     private CssSelectorType fCssSelector;
 

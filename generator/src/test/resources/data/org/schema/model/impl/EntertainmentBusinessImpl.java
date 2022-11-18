@@ -41,7 +41,7 @@ import org.schema.model.OfferCatalog;
 import org.schema.model.Event;
 import org.schema.model.Action;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.GeospatialGeometry;
 import org.schema.model.datatype.Integer;
 import org.schema.model.datatype.Boolean;
@@ -60,7 +60,7 @@ import org.schema.model.EntertainmentBusiness;
  * @see <a href="https://schema.org/EntertainmentBusiness">https://schema.org/EntertainmentBusiness</a>
  */
 @JsonLdTypeName("schema:EntertainmentBusiness")
-public class EntertainmentBusinessImpl implements EntertainmentBusiness {
+public class EntertainmentBusinessImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements EntertainmentBusiness {
 
     private Organization fBranchOf;
 

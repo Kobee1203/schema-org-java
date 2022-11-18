@@ -221,6 +221,15 @@ class SchemaDefinitionReaderImplTest {
                 );
     }
 
+    @Test
+    void throw_exception_when_read_invalid_jsonld() {
+        final SchemaDefinitionReader schemaDefinitionReader = new SchemaDefinitionReaderImpl();
+        Assertions.assertThatThrownBy(() -> schemaDefinitionReader.read(getClass().getResourceAsStream("/data/invalid-schemaorg.jsonld")))
+                .isInstanceOf(SchemaDefinitionReaderException.class)
+                .hasMessage("Could not read the JSON schema definition: Unrecognized token 'invalid': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')\n" +
+                        " at [Source: (String)\"invalid json\"; line: 1, column: 8]");
+    }
+
     private static List<GraphItem> filter(SchemaDefinition schemaDefinition, Predicate<GraphItem> predicate) {
         return schemaDefinition.getGraph().stream().filter(predicate).collect(Collectors.toList());
     }

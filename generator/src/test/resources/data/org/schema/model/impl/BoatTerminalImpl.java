@@ -28,7 +28,7 @@ import org.schema.model.Event;
 import org.schema.model.CreativeWork;
 import org.schema.model.Action;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.CivicStructure;
 import org.schema.model.BoatTerminal;
 
@@ -40,7 +40,7 @@ import org.schema.model.BoatTerminal;
  * @see <a href="https://schema.org/BoatTerminal">https://schema.org/BoatTerminal</a>
  */
 @JsonLdTypeName("schema:BoatTerminal")
-public class BoatTerminalImpl implements BoatTerminal {
+public class BoatTerminalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements BoatTerminal {
 
     private Text fOpeningHours;
 

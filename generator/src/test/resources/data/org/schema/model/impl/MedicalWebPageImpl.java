@@ -54,7 +54,7 @@ import org.schema.model.ItemList;
 import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.MedicalWebPage;
 
 /**
@@ -64,7 +64,7 @@ import org.schema.model.MedicalWebPage;
  * @see <a href="https://schema.org/MedicalWebPage">https://schema.org/MedicalWebPage</a>
  */
 @JsonLdTypeName("schema:MedicalWebPage")
-public class MedicalWebPageImpl implements MedicalWebPage {
+public class MedicalWebPageImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MedicalWebPage {
 
     private Text fAspect;
 

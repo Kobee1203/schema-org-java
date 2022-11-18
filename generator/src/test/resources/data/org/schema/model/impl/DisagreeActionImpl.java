@@ -22,7 +22,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.AssessAction;
 import org.schema.model.ReactAction;
 import org.schema.model.DisagreeAction;
@@ -33,7 +33,7 @@ import org.schema.model.DisagreeAction;
  * @see <a href="https://schema.org/DisagreeAction">https://schema.org/DisagreeAction</a>
  */
 @JsonLdTypeName("schema:DisagreeAction")
-public class DisagreeActionImpl implements DisagreeAction {
+public class DisagreeActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements DisagreeAction {
 
     private Object fAgent;
 

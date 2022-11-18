@@ -48,7 +48,7 @@ import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Photograph;
 
 /**
@@ -57,7 +57,7 @@ import org.schema.model.Photograph;
  * @see <a href="https://schema.org/Photograph">https://schema.org/Photograph</a>
  */
 @JsonLdTypeName("schema:Photograph")
-public class PhotographImpl implements Photograph {
+public class PhotographImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Photograph {
 
     private Object fTeaches;
 

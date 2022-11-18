@@ -49,7 +49,7 @@ import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Book;
 
 /**
@@ -58,7 +58,7 @@ import org.schema.model.Book;
  * @see <a href="https://schema.org/Book">https://schema.org/Book</a>
  */
 @JsonLdTypeName("schema:Book")
-public class BookImpl implements Book {
+public class BookImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Book {
 
     private Text fIsbn;
 

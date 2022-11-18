@@ -52,7 +52,7 @@ import org.schema.model.ItemList;
 import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.ContactPage;
 
 /**
@@ -61,7 +61,7 @@ import org.schema.model.ContactPage;
  * @see <a href="https://schema.org/ContactPage">https://schema.org/ContactPage</a>
  */
 @JsonLdTypeName("schema:ContactPage")
-public class ContactPageImpl implements ContactPage {
+public class ContactPageImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ContactPage {
 
     private Date fLastReviewed;
 

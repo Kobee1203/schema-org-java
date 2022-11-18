@@ -54,7 +54,7 @@ import org.schema.model.ItemList;
 import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 
 /**
  * A video file.
@@ -63,7 +63,7 @@ import org.schema.model.JsonLdTypeName;
  * @see <a href="https://schema.org/VideoObject">https://schema.org/VideoObject</a>
  */
 @JsonLdTypeName("schema:VideoObject")
-public class VideoObjectImpl implements VideoObject {
+public class VideoObjectImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements VideoObject {
 
     private Text fEmbeddedTextCaption;
 

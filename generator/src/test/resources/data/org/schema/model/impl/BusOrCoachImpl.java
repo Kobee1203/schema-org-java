@@ -44,7 +44,7 @@ import org.schema.model.datatype.Boolean;
 import org.schema.model.CreativeWork;
 import org.schema.model.Action;
 import org.schema.model.Event;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Vehicle;
 import org.schema.model.BusOrCoach;
 
@@ -56,7 +56,7 @@ import org.schema.model.BusOrCoach;
  * @see <a href="https://schema.org/BusOrCoach">https://schema.org/BusOrCoach</a>
  */
 @JsonLdTypeName("schema:BusOrCoach")
-public class BusOrCoachImpl implements BusOrCoach {
+public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements BusOrCoach {
 
     private QuantitativeValue fRoofLoad;
 

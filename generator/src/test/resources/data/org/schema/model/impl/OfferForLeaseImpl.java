@@ -48,7 +48,7 @@ import org.schema.model.datatype.Number;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.OfferForLease;
 
@@ -63,7 +63,7 @@ import org.schema.model.OfferForLease;
  * @see <a href="https://schema.org/OfferForLease">https://schema.org/OfferForLease</a>
  */
 @JsonLdTypeName("schema:OfferForLease")
-public class OfferForLeaseImpl implements OfferForLease {
+public class OfferForLeaseImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements OfferForLease {
 
     private AdultOrientedEnumeration fHasAdultConsideration;
 

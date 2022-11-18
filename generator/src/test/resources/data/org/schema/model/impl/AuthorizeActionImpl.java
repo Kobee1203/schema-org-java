@@ -24,7 +24,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.OrganizeAction;
 import org.schema.model.AllocateAction;
 import org.schema.model.AuthorizeAction;
@@ -35,7 +35,7 @@ import org.schema.model.AuthorizeAction;
  * @see <a href="https://schema.org/AuthorizeAction">https://schema.org/AuthorizeAction</a>
  */
 @JsonLdTypeName("schema:AuthorizeAction")
-public class AuthorizeActionImpl implements AuthorizeAction {
+public class AuthorizeActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements AuthorizeAction {
 
     private Object fRecipient;
 

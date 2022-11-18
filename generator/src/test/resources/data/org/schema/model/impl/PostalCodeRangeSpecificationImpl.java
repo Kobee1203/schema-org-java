@@ -13,7 +13,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.StructuredValue;
 import org.schema.model.PostalCodeRangeSpecification;
@@ -26,7 +26,7 @@ import org.schema.model.PostalCodeRangeSpecification;
  * @see <a href="https://schema.org/PostalCodeRangeSpecification">https://schema.org/PostalCodeRangeSpecification</a>
  */
 @JsonLdTypeName("schema:PostalCodeRangeSpecification")
-public class PostalCodeRangeSpecificationImpl implements PostalCodeRangeSpecification {
+public class PostalCodeRangeSpecificationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PostalCodeRangeSpecification {
 
     private Text fPostalCodeEnd;
 

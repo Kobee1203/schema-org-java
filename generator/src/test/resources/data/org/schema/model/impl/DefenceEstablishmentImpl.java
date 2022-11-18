@@ -28,7 +28,7 @@ import org.schema.model.Event;
 import org.schema.model.CreativeWork;
 import org.schema.model.Action;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.CivicStructure;
 import org.schema.model.GovernmentBuilding;
 import org.schema.model.DefenceEstablishment;
@@ -39,7 +39,7 @@ import org.schema.model.DefenceEstablishment;
  * @see <a href="https://schema.org/DefenceEstablishment">https://schema.org/DefenceEstablishment</a>
  */
 @JsonLdTypeName("schema:DefenceEstablishment")
-public class DefenceEstablishmentImpl implements DefenceEstablishment {
+public class DefenceEstablishmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements DefenceEstablishment {
 
     private Text fOpeningHours;
 

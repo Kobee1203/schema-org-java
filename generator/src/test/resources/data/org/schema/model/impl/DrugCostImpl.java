@@ -26,7 +26,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.MedicalEntity;
 import org.schema.model.DrugCost;
 
@@ -37,7 +37,7 @@ import org.schema.model.DrugCost;
  * @see <a href="https://schema.org/DrugCost">https://schema.org/DrugCost</a>
  */
 @JsonLdTypeName("schema:DrugCost")
-public class DrugCostImpl implements DrugCost {
+public class DrugCostImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements DrugCost {
 
     private AdministrativeArea fApplicableLocation;
 

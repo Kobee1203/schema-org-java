@@ -48,7 +48,7 @@ import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Chapter;
 
 /**
@@ -58,7 +58,7 @@ import org.schema.model.Chapter;
  * @see <a href="https://schema.org/Chapter">https://schema.org/Chapter</a>
  */
 @JsonLdTypeName("schema:Chapter")
-public class ChapterImpl implements Chapter {
+public class ChapterImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Chapter {
 
     private Object fPageStart;
 

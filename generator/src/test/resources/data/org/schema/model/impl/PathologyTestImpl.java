@@ -26,7 +26,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.MedicalEntity;
 import org.schema.model.MedicalTest;
 import org.schema.model.PathologyTest;
@@ -38,7 +38,7 @@ import org.schema.model.PathologyTest;
  * @see <a href="https://schema.org/PathologyTest">https://schema.org/PathologyTest</a>
  */
 @JsonLdTypeName("schema:PathologyTest")
-public class PathologyTestImpl implements PathologyTest {
+public class PathologyTestImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PathologyTest {
 
     private Text fTissueSample;
 

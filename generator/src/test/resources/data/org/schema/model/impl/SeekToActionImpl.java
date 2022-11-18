@@ -24,7 +24,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.SeekToAction;
 
 /**
@@ -35,7 +35,7 @@ import org.schema.model.SeekToAction;
  * @see <a href="https://schema.org/SeekToAction">https://schema.org/SeekToAction</a>
  */
 @JsonLdTypeName("schema:SeekToAction")
-public class SeekToActionImpl implements SeekToAction {
+public class SeekToActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements SeekToAction {
 
     private Object fStartOffset;
 

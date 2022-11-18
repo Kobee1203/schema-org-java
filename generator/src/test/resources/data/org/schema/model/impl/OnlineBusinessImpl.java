@@ -41,7 +41,7 @@ import org.schema.model.OfferCatalog;
 import org.schema.model.Event;
 import org.schema.model.Action;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.OnlineBusiness;
 
 /**
@@ -52,7 +52,7 @@ import org.schema.model.OnlineBusiness;
  * @see <a href="https://schema.org/OnlineBusiness">https://schema.org/OnlineBusiness</a>
  */
 @JsonLdTypeName("schema:OnlineBusiness")
-public class OnlineBusinessImpl implements OnlineBusiness {
+public class OnlineBusinessImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements OnlineBusiness {
 
     private Object fOwnershipFundingInfo;
 

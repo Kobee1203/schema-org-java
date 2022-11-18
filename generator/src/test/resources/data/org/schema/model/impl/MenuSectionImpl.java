@@ -50,7 +50,7 @@ import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 
 /**
  * A sub-grouping of food or drink items in a menu. E.g. courses (such as 'Dinner', 'Breakfast', etc.), specific type of dishes (such as 'Meat', 'Vegan', 'Drinks', etc.), or some other classification made by the menu provider.
@@ -58,7 +58,7 @@ import org.schema.model.JsonLdTypeName;
  * @see <a href="https://schema.org/MenuSection">https://schema.org/MenuSection</a>
  */
 @JsonLdTypeName("schema:MenuSection")
-public class MenuSectionImpl implements MenuSection {
+public class MenuSectionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MenuSection {
 
     private MenuSection fHasMenuSection;
 

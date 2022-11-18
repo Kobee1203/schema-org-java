@@ -16,7 +16,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.Rating;
 import org.schema.model.EndorsementRating;
@@ -33,7 +33,7 @@ import org.schema.model.EndorsementRating;
  * @see <a href="https://schema.org/EndorsementRating">https://schema.org/EndorsementRating</a>
  */
 @JsonLdTypeName("schema:EndorsementRating")
-public class EndorsementRatingImpl implements EndorsementRating {
+public class EndorsementRatingImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements EndorsementRating {
 
     private Text fReviewAspect;
 

@@ -49,7 +49,7 @@ import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Article;
 import org.schema.model.ScholarlyArticle;
 
@@ -59,7 +59,7 @@ import org.schema.model.ScholarlyArticle;
  * @see <a href="https://schema.org/ScholarlyArticle">https://schema.org/ScholarlyArticle</a>
  */
 @JsonLdTypeName("schema:ScholarlyArticle")
-public class ScholarlyArticleImpl implements ScholarlyArticle {
+public class ScholarlyArticleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ScholarlyArticle {
 
     private Object fPageStart;
 

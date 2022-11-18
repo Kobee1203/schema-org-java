@@ -1,5 +1,7 @@
 package com.weedow.schemaorg.generator.model.handler;
 
+import com.weedow.schemaorg.commons.model.JsonLdNode;
+import com.weedow.schemaorg.commons.model.JsonLdNodeImpl;
 import com.weedow.schemaorg.generator.model.Type;
 import com.weedow.schemaorg.generator.model.jsonld.GraphItem;
 import com.weedow.schemaorg.generator.model.jsonld.SubClassOf;
@@ -30,8 +32,9 @@ class ClassModelHandlerImplTest {
 
     @ParameterizedTest
     @MethodSource
-    void supports(List<String> types, List<SubClassOf> subClassOfs, boolean expected) {
+    void supports(String id, List<String> types, List<SubClassOf> subClassOfs, boolean expected) {
         GraphItem graphItem = mock(GraphItem.class);
+        when(graphItem.getId()).thenReturn(id);
         when(graphItem.getTypes()).thenReturn(types);
         when(graphItem.getSubClassOf()).thenReturn(subClassOfs);
         boolean result = modelHandler.supports(graphItem);
@@ -57,6 +60,7 @@ class ClassModelHandlerImplTest {
                         "id", "javaType", "name", "description",
                         "properties", "allProperties",
                         "parents",
+                        "baseParent.id", "baseParent.interfaceClass", "baseParent.implementationClass",
                         "enumerationType", "enumerationMembers",
                         "partOf", "source"
                 )
@@ -64,6 +68,7 @@ class ClassModelHandlerImplTest {
                         "schema:MyType", null, "MyType", "This is my Type",
                         Collections.emptySet(), Collections.emptySet(),
                         List.of(schemaDefinitions.get("schema:Parent")),
+                        "java:JsonLdNode", JsonLdNode.class, JsonLdNodeImpl.class,
                         false, Collections.emptyList(),
                         List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/2373")
                 );
@@ -71,14 +76,14 @@ class ClassModelHandlerImplTest {
                 .extracting(
                         "id", "javaType", "name", "description",
                         "properties", "allProperties",
-                        "parents",
+                        "parents", "baseParent",
                         "enumerationType", "enumerationMembers",
                         "partOf", "source"
                 )
                 .containsExactly(
                         "schema:Parent", null, null, null,
                         Collections.emptySet(), Collections.emptySet(),
-                        Collections.emptyList(),
+                        Collections.emptyList(), null,
                         false, Collections.emptyList(),
                         Collections.emptyList(), Collections.emptyList()
                 );
@@ -86,10 +91,12 @@ class ClassModelHandlerImplTest {
 
     private static Stream<Arguments> supports() {
         return Stream.of(
-                Arguments.of(List.of("rdfs:Class", "rdfs:OtherType"), null, true),
-                Arguments.of(List.of("rdfs:Class", "rdfs:OtherType"), List.of(subClassOf("schema:SubClass")), true),
-                Arguments.of(List.of("rdfs:Class", "schema:DataType"), null, false),
-                Arguments.of(List.of("rdfs:Class", "rdfs:OtherType"), List.of(subClassOf("schema:Text")), false)
+                Arguments.of(null, List.of("rdfs:Class", "rdfs:OtherType"), null, true),
+                Arguments.of("schema:MyType", List.of("rdfs:Class", "rdfs:OtherType"), null, true),
+                Arguments.of("schema:MyType", List.of("rdfs:Class", "rdfs:OtherType"), List.of(subClassOf("schema:SubClass")), true),
+                Arguments.of("schema:DataType", List.of("rdfs:Class", "schema:DataType"), null, false),
+                Arguments.of("schema:MyType", List.of("rdfs:Class", "schema:DataType"), null, false),
+                Arguments.of("schema:MyType", List.of("rdfs:Class", "rdfs:OtherType"), List.of(subClassOf("schema:Text")), false)
         );
     }
 

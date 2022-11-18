@@ -34,7 +34,7 @@ import org.schema.model.CreativeWork;
 import org.schema.model.Action;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.FinancialProduct;
 
@@ -45,7 +45,7 @@ import org.schema.model.FinancialProduct;
  * @see <a href="https://schema.org/FinancialProduct">https://schema.org/FinancialProduct</a>
  */
 @JsonLdTypeName("schema:FinancialProduct")
-public class FinancialProductImpl implements FinancialProduct {
+public class FinancialProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements FinancialProduct {
 
     private Object fAnnualPercentageRate;
 

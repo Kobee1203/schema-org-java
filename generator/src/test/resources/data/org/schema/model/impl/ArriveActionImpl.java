@@ -22,7 +22,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.MoveAction;
 import org.schema.model.ArriveAction;
 
@@ -32,7 +32,7 @@ import org.schema.model.ArriveAction;
  * @see <a href="https://schema.org/ArriveAction">https://schema.org/ArriveAction</a>
  */
 @JsonLdTypeName("schema:ArriveAction")
-public class ArriveActionImpl implements ArriveAction {
+public class ArriveActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ArriveAction {
 
     private Place fFromLocation;
 

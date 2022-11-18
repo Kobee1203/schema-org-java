@@ -24,7 +24,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.ConsumeAction;
 import org.schema.model.WatchAction;
 
@@ -34,7 +34,7 @@ import org.schema.model.WatchAction;
  * @see <a href="https://schema.org/WatchAction">https://schema.org/WatchAction</a>
  */
 @JsonLdTypeName("schema:WatchAction")
-public class WatchActionImpl implements WatchAction {
+public class WatchActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements WatchAction {
 
     private Offer fExpectsAcceptanceOf;
 

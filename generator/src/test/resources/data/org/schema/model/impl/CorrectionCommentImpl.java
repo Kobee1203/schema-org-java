@@ -48,7 +48,7 @@ import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 
 /**
  * A [[comment]] that corrects [[CreativeWork]].
@@ -58,7 +58,7 @@ import org.schema.model.JsonLdTypeName;
  * @see <a href="https://schema.org/CorrectionComment">https://schema.org/CorrectionComment</a>
  */
 @JsonLdTypeName("schema:CorrectionComment")
-public class CorrectionCommentImpl implements CorrectionComment {
+public class CorrectionCommentImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements CorrectionComment {
 
     private Comment fParentItem;
 

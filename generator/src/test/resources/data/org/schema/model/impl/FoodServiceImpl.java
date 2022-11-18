@@ -32,7 +32,7 @@ import org.schema.model.CreativeWork;
 import org.schema.model.Action;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.FoodService;
 
@@ -43,7 +43,7 @@ import org.schema.model.FoodService;
  * @see <a href="https://schema.org/FoodService">https://schema.org/FoodService</a>
  */
 @JsonLdTypeName("schema:FoodService")
-public class FoodServiceImpl implements FoodService {
+public class FoodServiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements FoodService {
 
     private Review fReview;
 

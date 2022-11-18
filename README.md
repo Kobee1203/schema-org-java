@@ -18,7 +18,7 @@
 
 The entities can be easily generated with the [maven plugin](https://github.com/Kobee1203/schema-org-java/tree/main/maven-plugin), programmatically, or in command line.
 
-<!--The entities can be easily serialized and deserialized with [JSON-LD](https://json-ld.org) format by using the JSON-LD serializer in the library.-->
+The entities can be easily serialized and deserialized with [JSON-LD](https://json-ld.org) format by using the JSON-LD serializer in the library.
 
 The library has the following features:
 
@@ -29,7 +29,7 @@ The library has the following features:
 * Supports the generation of all Schema.org types at once, or specific ones.
 * Fully supports Schema.org documentation of types and properties by adding Javadoc on generated classes and methods. 
 * Supports different versions of the [Schema.org vocabulary](https://schema.org/docs/developers.html#defs).
-<!--* Supports serializing and deserializing schema.org objects to and from JSON-LD formats.-->
+* Supports serializing and deserializing schema.org objects to and from JSON-LD formats.
 
 https://user-images.githubusercontent.com/1423193/199852384-e41869fb-beae-4106-be0f-1482393b9e0c.mp4
 

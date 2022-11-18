@@ -36,7 +36,7 @@ import org.schema.model.CreativeWork;
 import org.schema.model.Action;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 
 /**
@@ -45,7 +45,7 @@ import org.schema.model.Intangible;
  * @see <a href="https://schema.org/BroadcastService">https://schema.org/BroadcastService</a>
  */
 @JsonLdTypeName("schema:BroadcastService")
-public class BroadcastServiceImpl implements BroadcastService {
+public class BroadcastServiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements BroadcastService {
 
     private BroadcastService fParentService;
 

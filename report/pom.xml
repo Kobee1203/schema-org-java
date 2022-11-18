@@ -23,12 +23,22 @@
     <dependencies>
         <dependency>
             <groupId>com.weedow</groupId>
+            <artifactId>schema-org-java-commons</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.weedow</groupId>
             <artifactId>schema-org-generator</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>com.weedow</groupId>
             <artifactId>schema-org-generator-maven-plugin</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.weedow</groupId>
+            <artifactId>schema-org-serializer</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>

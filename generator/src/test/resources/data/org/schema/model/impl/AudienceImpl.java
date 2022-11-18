@@ -14,7 +14,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.Audience;
 
@@ -24,7 +24,7 @@ import org.schema.model.Audience;
  * @see <a href="https://schema.org/Audience">https://schema.org/Audience</a>
  */
 @JsonLdTypeName("schema:Audience")
-public class AudienceImpl implements Audience {
+public class AudienceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Audience {
 
     private Text fAudienceType;
 

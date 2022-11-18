@@ -26,7 +26,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.TradeAction;
 import org.schema.model.DonateAction;
 
@@ -36,7 +36,7 @@ import org.schema.model.DonateAction;
  * @see <a href="https://schema.org/DonateAction">https://schema.org/DonateAction</a>
  */
 @JsonLdTypeName("schema:DonateAction")
-public class DonateActionImpl implements DonateAction {
+public class DonateActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements DonateAction {
 
     private Object fRecipient;
 

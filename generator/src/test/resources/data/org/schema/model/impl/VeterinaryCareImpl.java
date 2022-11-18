@@ -43,7 +43,7 @@ import org.schema.model.OfferCatalog;
 import org.schema.model.Event;
 import org.schema.model.Action;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.MedicalOrganization;
 import org.schema.model.VeterinaryCare;
 
@@ -54,7 +54,7 @@ import org.schema.model.VeterinaryCare;
  * @see <a href="https://schema.org/VeterinaryCare">https://schema.org/VeterinaryCare</a>
  */
 @JsonLdTypeName("schema:VeterinaryCare")
-public class VeterinaryCareImpl implements VeterinaryCare {
+public class VeterinaryCareImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements VeterinaryCare {
 
     private Boolean fIsAcceptingNewPatients;
 

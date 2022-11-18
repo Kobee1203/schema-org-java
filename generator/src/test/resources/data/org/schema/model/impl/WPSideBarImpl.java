@@ -50,7 +50,7 @@ import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.WebPageElement;
 import org.schema.model.WPSideBar;
 
@@ -60,7 +60,7 @@ import org.schema.model.WPSideBar;
  * @see <a href="https://schema.org/WPSideBar">https://schema.org/WPSideBar</a>
  */
 @JsonLdTypeName("schema:WPSideBar")
-public class WPSideBarImpl implements WPSideBar {
+public class WPSideBarImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements WPSideBar {
 
     private CssSelectorType fCssSelector;
 

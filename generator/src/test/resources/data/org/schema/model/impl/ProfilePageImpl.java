@@ -52,7 +52,7 @@ import org.schema.model.ItemList;
 import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.ProfilePage;
 
 /**
@@ -61,7 +61,7 @@ import org.schema.model.ProfilePage;
  * @see <a href="https://schema.org/ProfilePage">https://schema.org/ProfilePage</a>
  */
 @JsonLdTypeName("schema:ProfilePage")
-public class ProfilePageImpl implements ProfilePage {
+public class ProfilePageImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ProfilePage {
 
     private Date fLastReviewed;
 

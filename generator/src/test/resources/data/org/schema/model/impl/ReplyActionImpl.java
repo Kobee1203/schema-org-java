@@ -26,7 +26,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.InteractAction;
 import org.schema.model.CommunicateAction;
 import org.schema.model.ReplyAction;
@@ -37,7 +37,7 @@ import org.schema.model.ReplyAction;
  * @see <a href="https://schema.org/ReplyAction">https://schema.org/ReplyAction</a>
  */
 @JsonLdTypeName("schema:ReplyAction")
-public class ReplyActionImpl implements ReplyAction {
+public class ReplyActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ReplyAction {
 
     private Comment fResultComment;
 

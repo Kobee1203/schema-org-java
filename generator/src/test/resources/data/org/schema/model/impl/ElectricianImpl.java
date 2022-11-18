@@ -41,7 +41,7 @@ import org.schema.model.OfferCatalog;
 import org.schema.model.Event;
 import org.schema.model.Action;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.GeospatialGeometry;
 import org.schema.model.datatype.Integer;
 import org.schema.model.datatype.Boolean;
@@ -61,7 +61,7 @@ import org.schema.model.Electrician;
  * @see <a href="https://schema.org/Electrician">https://schema.org/Electrician</a>
  */
 @JsonLdTypeName("schema:Electrician")
-public class ElectricianImpl implements Electrician {
+public class ElectricianImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Electrician {
 
     private Organization fBranchOf;
 

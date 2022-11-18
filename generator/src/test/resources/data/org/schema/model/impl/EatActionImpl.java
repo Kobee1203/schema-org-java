@@ -24,7 +24,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.ConsumeAction;
 import org.schema.model.EatAction;
 
@@ -34,7 +34,7 @@ import org.schema.model.EatAction;
  * @see <a href="https://schema.org/EatAction">https://schema.org/EatAction</a>
  */
 @JsonLdTypeName("schema:EatAction")
-public class EatActionImpl implements EatAction {
+public class EatActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements EatAction {
 
     private Offer fExpectsAcceptanceOf;
 

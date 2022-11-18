@@ -25,16 +25,32 @@ public enum {{this.name}}Enum implements {{this.name}} {
         return enumValue;
     }
 
+{{#each this.baseParent.methods}}
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    {{this.modifiers}} {{&this.returnType}} {{this.name}}({{this.parametersAsString}}){{this.exceptionsAsString}} {
+    {{#if this.voidReturnType}}{{!--
+    --}}    throw new java.lang.IllegalAccessError("Method '{{this.name}}' not allowed for enum {{../this.name}}Enum");{{!--
+    --}}{{else}}{{!--
+    --}}    return null;{{!--
+    --}}{{/if}}
+    }
+
+{{/each}}
+
 {{#each this.allProperties}}
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
     public {{&this.returnFieldType}} get{{capitalizeFirst this.name}}() {
         return null;
     }
 
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
     public void set{{capitalizeFirst this.name}}({{&this.paramFieldType}} {{this.fieldName}}) {
         throw new java.lang.IllegalAccessError("Unable to set property '{{this.name}}': method not allowed for enum {{../this.name}}Enum");
     }
+
 {{/each}}
 }
 {{/with}}

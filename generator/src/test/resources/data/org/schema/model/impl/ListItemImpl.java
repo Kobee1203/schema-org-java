@@ -15,7 +15,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 
 /**
@@ -24,7 +24,7 @@ import org.schema.model.Intangible;
  * @see <a href="https://schema.org/ListItem">https://schema.org/ListItem</a>
  */
 @JsonLdTypeName("schema:ListItem")
-public class ListItemImpl implements ListItem {
+public class ListItemImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ListItem {
 
     private Object fPosition;
 

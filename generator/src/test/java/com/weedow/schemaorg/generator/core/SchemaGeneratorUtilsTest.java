@@ -78,11 +78,11 @@ class SchemaGeneratorUtilsTest {
         Type type = type("schema:MyType", "MyType");
         type.addParent(type("schema:Text", "Parent"));
         Set<String> result = SchemaGeneratorUtils.getAllImports(modelPackage, dataTypePackage, type);
-        Assertions.assertThat(result).containsExactly("datatype.Parent", "model.JsonLdTypeName", "datatype.MyType");
+        Assertions.assertThat(result).containsExactly("datatype.Parent", "com.weedow.schemaorg.commons.model.JsonLdTypeName", "datatype.MyType");
 
         // Test cache
         Set<String> result2 = SchemaGeneratorUtils.getAllImports(modelPackage, dataTypePackage, type);
-        Assertions.assertThat(result2).containsExactly("datatype.Parent", "model.JsonLdTypeName", "datatype.MyType");
+        Assertions.assertThat(result2).containsExactly("datatype.Parent", "com.weedow.schemaorg.commons.model.JsonLdTypeName", "datatype.MyType");
     }
 
     @Test
@@ -91,11 +91,11 @@ class SchemaGeneratorUtilsTest {
         String dataTypePackage = "datatype";
         Type type = type("schema:NewType", "NewType");
         Set<String> result = SchemaGeneratorUtils.getAllImports(modelPackage, dataTypePackage, type);
-        Assertions.assertThat(result).containsExactly("model.NewType", "model.JsonLdTypeName");
+        Assertions.assertThat(result).containsExactly("model.NewType", "com.weedow.schemaorg.commons.model.JsonLdTypeName");
 
         // Test cache
         Set<String> result2 = SchemaGeneratorUtils.getAllImports(modelPackage, dataTypePackage, type);
-        Assertions.assertThat(result2).containsExactly("model.NewType", "model.JsonLdTypeName");
+        Assertions.assertThat(result2).containsExactly("model.NewType", "com.weedow.schemaorg.commons.model.JsonLdTypeName");
     }
 
     private static Type type(String id, String name) {

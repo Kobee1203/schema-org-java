@@ -16,7 +16,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.DefinedTerm;
 import org.schema.model.datatype.Date;
@@ -60,7 +60,7 @@ import org.schema.model.HowToSection;
  * @see <a href="https://schema.org/HowToSection">https://schema.org/HowToSection</a>
  */
 @JsonLdTypeName("schema:HowToSection")
-public class HowToSectionImpl implements HowToSection {
+public class HowToSectionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements HowToSection {
 
     private Object fSteps;
 

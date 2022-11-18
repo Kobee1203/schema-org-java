@@ -1,7 +1,12 @@
 package com.weedow.schemaorg.generator.core;
 
-import com.weedow.schemaorg.generator.SchemaModelGeneratorConstants;
+import com.weedow.schemaorg.commons.model.JsonLdDataType;
+import com.weedow.schemaorg.commons.model.JsonLdNode;
+import com.weedow.schemaorg.commons.model.JsonLdNodeImpl;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.generator.core.copy.CopyService;
 import com.weedow.schemaorg.generator.core.filter.SchemaDefinitionFilter;
+import com.weedow.schemaorg.generator.core.stream.StreamService;
 import com.weedow.schemaorg.generator.logging.Logger;
 import com.weedow.schemaorg.generator.logging.LoggerFactory;
 import com.weedow.schemaorg.generator.model.Type;
@@ -11,7 +16,9 @@ import com.weedow.schemaorg.generator.template.TemplateService;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.*;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
 import java.util.stream.Stream;
 
 public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
@@ -24,12 +31,23 @@ public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
     private final TemplateService templateService;
     private final SchemaDefinitionFilter schemaDefinitionFilter;
     private final Map<String, Type> schemaDefinitions;
+    private final CopyService copyService;
+    private final StreamService streamService;
 
-    public SchemaModelGeneratorImpl(GeneratorOptions options, TemplateService templateService, SchemaDefinitionFilter schemaDefinitionFilter, Map<String, Type> schemaDefinitions) {
+    public SchemaModelGeneratorImpl(
+            GeneratorOptions options,
+            TemplateService templateService,
+            SchemaDefinitionFilter schemaDefinitionFilter,
+            Map<String, Type> schemaDefinitions,
+            CopyService copyService,
+            StreamService streamService
+    ) {
         this.options = options;
         this.templateService = templateService;
         this.schemaDefinitionFilter = schemaDefinitionFilter;
         this.schemaDefinitions = schemaDefinitions;
+        this.copyService = copyService;
+        this.streamService = streamService;
     }
 
     @Override
@@ -51,33 +69,10 @@ public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
             return;
         }
 
-        LOG.info("Generating models...");
-
         final String modelPackage = options.getModelPackage();
         final String modelImplPackage = options.getModelImplPackage();
         final String dataTypePackage = options.getDataTypePackage();
         final List<String> models = options.getModels();
-
-        applyTemplate(
-                "templates/jsonld_typename",
-                modelFolder.resolve("JsonLdTypeName.java"),
-                new Context(null, modelPackage, Collections.emptySet())
-        );
-
-        applyTemplate(
-                "templates/jsonld_node",
-                modelFolder.resolve("JsonLdNode.java"),
-                new Context(null, modelPackage, Collections.emptySet())
-        );
-
-        applyTemplate(
-                "templates/jsonld_node_impl",
-                modelImplFolder.resolve("JsonLdNodeImpl.java"),
-                new Context(null, modelImplPackage, new LinkedHashSet<>(Arrays.asList(
-                        SchemaGeneratorUtils.resolveClassName(modelPackage, dataTypePackage, SchemaGeneratorUtils.JSON_LD_NODE),
-                        SchemaGeneratorUtils.resolveClassName(modelPackage, dataTypePackage, SchemaGeneratorUtils.JSON_LD_TYPE_NAME)
-                )))
-        );
 
         Map<String, Type> filteredSchemaDefinitions = schemaDefinitionFilter.filter(schemaDefinitions, models);
         if (filteredSchemaDefinitions.isEmpty()) {
@@ -85,12 +80,17 @@ public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
             return;
         }
 
-        Stream<Type> stream;
-        if (SchemaModelGeneratorConstants.isVerbose()) {
-            stream = filteredSchemaDefinitions.values().stream();
-        } else {
-            stream = filteredSchemaDefinitions.values().parallelStream();
+        if (options.isCopyCommonModels()) {
+            LOG.info("Copying common models...");
+            copyJavaFile(JsonLdTypeName.class);
+            copyJavaFile(JsonLdNode.class);
+            copyJavaFile(JsonLdNodeImpl.class);
+            copyJavaFile(JsonLdDataType.class);
         }
+
+        LOG.info("Generating models...");
+
+        Stream<Type> stream = streamService.stream(filteredSchemaDefinitions);
 
         stream.forEach(type -> {
             if (type.getId().equals("schema:DataType")) {
@@ -108,6 +108,10 @@ public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
         LOG.info("Model generation completed.");
     }
 
+    private void copyJavaFile(Class<?> clazz) {
+        copyService.copy(clazz, options.resolvePath(clazz.getPackageName()));
+    }
+
     private void generateAbstractDataType(Path dataTypeFolder, String dataTypePackage, Type type) {
         applyTemplate(
                 "templates/abstract_data_type",
@@ -117,7 +121,7 @@ public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
     }
 
     private void generateDataType(Path dataTypeFolder, String dataTypePackage, String modelPackage, Type type) {
-        final List<String> additionalImports = Collections.singletonList(SchemaGeneratorUtils.resolveClassName(modelPackage, dataTypePackage, SchemaGeneratorUtils.JSON_LD_TYPE_NAME));
+        final List<String> additionalImports = Collections.singletonList(JsonLdTypeName.class.getName());
         applyTemplate(
                 "templates/data_type",
                 dataTypeFolder.resolve(type.getName() + JAVA_EXTENSION),

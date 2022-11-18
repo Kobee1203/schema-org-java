@@ -48,7 +48,7 @@ import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 
 /**
  * A comment on an item - for example, a comment on a blog post. The comment's content is expressed via the [[text]] property, and its topic via [[about]], properties shared with all CreativeWorks.
@@ -56,7 +56,7 @@ import org.schema.model.JsonLdTypeName;
  * @see <a href="https://schema.org/Comment">https://schema.org/Comment</a>
  */
 @JsonLdTypeName("schema:Comment")
-public class CommentImpl implements Comment {
+public class CommentImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Comment {
 
     private Comment fParentItem;
 

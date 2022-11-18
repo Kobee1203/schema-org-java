@@ -16,7 +16,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.EnergyEfficiencyEnumeration;
 
@@ -28,7 +28,7 @@ import org.schema.model.EnergyEfficiencyEnumeration;
  * @see <a href="https://schema.org/EnergyEfficiencyEnumeration">https://schema.org/EnergyEfficiencyEnumeration</a>
  */
 @JsonLdTypeName("schema:EnergyEfficiencyEnumeration")
-public class EnergyEfficiencyEnumerationImpl implements EnergyEfficiencyEnumeration {
+public class EnergyEfficiencyEnumerationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements EnergyEfficiencyEnumeration {
 
     private Object fSupersededBy;
 

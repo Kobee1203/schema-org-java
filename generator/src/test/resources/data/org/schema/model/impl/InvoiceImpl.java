@@ -25,7 +25,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.Invoice;
 
@@ -35,7 +35,7 @@ import org.schema.model.Invoice;
  * @see <a href="https://schema.org/Invoice">https://schema.org/Invoice</a>
  */
 @JsonLdTypeName("schema:Invoice")
-public class InvoiceImpl implements Invoice {
+public class InvoiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Invoice {
 
     private Object fTotalPaymentDue;
 

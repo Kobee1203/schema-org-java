@@ -49,7 +49,7 @@ import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.DigitalDocument;
 import org.schema.model.PresentationDigitalDocument;
 
@@ -59,7 +59,7 @@ import org.schema.model.PresentationDigitalDocument;
  * @see <a href="https://schema.org/PresentationDigitalDocument">https://schema.org/PresentationDigitalDocument</a>
  */
 @JsonLdTypeName("schema:PresentationDigitalDocument")
-public class PresentationDigitalDocumentImpl implements PresentationDigitalDocument {
+public class PresentationDigitalDocumentImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PresentationDigitalDocument {
 
     private DigitalDocumentPermission fHasDigitalDocumentPermission;
 

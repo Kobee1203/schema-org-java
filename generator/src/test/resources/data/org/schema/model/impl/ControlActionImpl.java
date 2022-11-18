@@ -22,7 +22,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.ControlAction;
 
 /**
@@ -31,7 +31,7 @@ import org.schema.model.ControlAction;
  * @see <a href="https://schema.org/ControlAction">https://schema.org/ControlAction</a>
  */
 @JsonLdTypeName("schema:ControlAction")
-public class ControlActionImpl implements ControlAction {
+public class ControlActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ControlAction {
 
     private Object fAgent;
 

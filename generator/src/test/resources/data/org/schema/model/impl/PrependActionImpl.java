@@ -22,7 +22,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.UpdateAction;
 import org.schema.model.AddAction;
 import org.schema.model.InsertAction;
@@ -34,7 +34,7 @@ import org.schema.model.PrependAction;
  * @see <a href="https://schema.org/PrependAction">https://schema.org/PrependAction</a>
  */
 @JsonLdTypeName("schema:PrependAction")
-public class PrependActionImpl implements PrependAction {
+public class PrependActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PrependAction {
 
     private Place fToLocation;
 

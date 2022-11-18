@@ -32,7 +32,7 @@ import org.schema.model.CreativeWork;
 import org.schema.model.Action;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.Taxi;
 
@@ -42,7 +42,7 @@ import org.schema.model.Taxi;
  * @see <a href="https://schema.org/Taxi">https://schema.org/Taxi</a>
  */
 @JsonLdTypeName("schema:Taxi")
-public class TaxiImpl implements Taxi {
+public class TaxiImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Taxi {
 
     private Review fReview;
 

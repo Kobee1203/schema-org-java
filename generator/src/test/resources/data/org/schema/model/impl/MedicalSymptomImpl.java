@@ -34,7 +34,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.MedicalEntity;
 import org.schema.model.MedicalCondition;
 import org.schema.model.MedicalSymptom;
@@ -46,7 +46,7 @@ import org.schema.model.MedicalSymptom;
  * @see <a href="https://schema.org/MedicalSymptom">https://schema.org/MedicalSymptom</a>
  */
 @JsonLdTypeName("schema:MedicalSymptom")
-public class MedicalSymptomImpl implements MedicalSymptom {
+public class MedicalSymptomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MedicalSymptom {
 
     private MedicalTherapy fPossibleTreatment;
 

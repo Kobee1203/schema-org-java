@@ -21,7 +21,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 
 /**
  * A discrete unit of inheritance which affects one or more biological traits (Source: [https://en.wikipedia.org/wiki/Gene](https://en.wikipedia.org/wiki/Gene)). Examples include FOXP2 (Forkhead box protein P2), SCARNA21 (small Cajal body-specific RNA 21), A- (agouti genotype).
@@ -30,7 +30,7 @@ import org.schema.model.JsonLdTypeName;
  * @see <a href="https://schema.org/Gene">https://schema.org/Gene</a>
  */
 @JsonLdTypeName("schema:Gene")
-public class GeneImpl implements Gene {
+public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Gene {
 
     private Gene fAlternativeOf;
 

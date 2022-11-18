@@ -41,7 +41,7 @@ import org.schema.model.OfferCatalog;
 import org.schema.model.Event;
 import org.schema.model.Action;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.PerformingGroup;
 import org.schema.model.TheaterGroup;
 
@@ -51,7 +51,7 @@ import org.schema.model.TheaterGroup;
  * @see <a href="https://schema.org/TheaterGroup">https://schema.org/TheaterGroup</a>
  */
 @JsonLdTypeName("schema:TheaterGroup")
-public class TheaterGroupImpl implements TheaterGroup {
+public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements TheaterGroup {
 
     private Object fOwnershipFundingInfo;
 

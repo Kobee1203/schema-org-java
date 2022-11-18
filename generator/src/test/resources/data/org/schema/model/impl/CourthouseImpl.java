@@ -28,7 +28,7 @@ import org.schema.model.Event;
 import org.schema.model.CreativeWork;
 import org.schema.model.Action;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.CivicStructure;
 import org.schema.model.GovernmentBuilding;
 import org.schema.model.Courthouse;
@@ -39,7 +39,7 @@ import org.schema.model.Courthouse;
  * @see <a href="https://schema.org/Courthouse">https://schema.org/Courthouse</a>
  */
 @JsonLdTypeName("schema:Courthouse")
-public class CourthouseImpl implements Courthouse {
+public class CourthouseImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Courthouse {
 
     private Text fOpeningHours;
 

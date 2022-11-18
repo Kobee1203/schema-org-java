@@ -19,7 +19,7 @@ import org.schema.model.Action;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.FloorPlan;
 
@@ -31,7 +31,7 @@ import org.schema.model.FloorPlan;
  * @see <a href="https://schema.org/FloorPlan">https://schema.org/FloorPlan</a>
  */
 @JsonLdTypeName("schema:FloorPlan")
-public class FloorPlanImpl implements FloorPlan {
+public class FloorPlanImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements FloorPlan {
 
     private Accommodation fIsPlanForApartment;
 

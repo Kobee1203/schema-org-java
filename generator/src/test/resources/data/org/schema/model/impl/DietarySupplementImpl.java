@@ -25,7 +25,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.MedicalEntity;
 import org.schema.model.Substance;
 import org.schema.model.DietarySupplement;
@@ -37,7 +37,7 @@ import org.schema.model.DietarySupplement;
  * @see <a href="https://schema.org/DietarySupplement">https://schema.org/DietarySupplement</a>
  */
 @JsonLdTypeName("schema:DietarySupplement")
-public class DietarySupplementImpl implements DietarySupplement {
+public class DietarySupplementImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements DietarySupplement {
 
     private Text fTargetPopulation;
 

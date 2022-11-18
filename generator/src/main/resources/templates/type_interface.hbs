@@ -8,7 +8,7 @@ import {{this}};
 
 {{#with this.type}}
 {{> templates/fragment/javadoc_class}}
-public interface {{this.name}}{{#if this.parents}} extends {{#each this.parents}}{{this.name}}{{#not @last}}, {{/not}}{{/each}}{{/if}} {
+public interface {{this.name}} extends {{#if this.parents}}{{#each this.parents}}{{this.name}}{{#not @last}}, {{/not}}{{/each}}{{else}}{{this.baseParent.interfaceClassName}}{{/if}} {
 {{#each this.properties}}
 
     {{> templates/fragment/javadoc_getter}}

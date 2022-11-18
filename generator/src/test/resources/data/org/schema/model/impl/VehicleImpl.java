@@ -44,7 +44,7 @@ import org.schema.model.datatype.Boolean;
 import org.schema.model.CreativeWork;
 import org.schema.model.Action;
 import org.schema.model.Event;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Vehicle;
 
 /**
@@ -53,7 +53,7 @@ import org.schema.model.Vehicle;
  * @see <a href="https://schema.org/Vehicle">https://schema.org/Vehicle</a>
  */
 @JsonLdTypeName("schema:Vehicle")
-public class VehicleImpl implements Vehicle {
+public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Vehicle {
 
     private QuantitativeValue fFuelCapacity;
 

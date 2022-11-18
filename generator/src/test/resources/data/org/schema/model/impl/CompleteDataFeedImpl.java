@@ -51,7 +51,7 @@ import org.schema.model.ItemList;
 import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Dataset;
 import org.schema.model.DataFeed;
 import org.schema.model.CompleteDataFeed;
@@ -66,7 +66,7 @@ import org.schema.model.CompleteDataFeed;
  * @see <a href="https://schema.org/CompleteDataFeed">https://schema.org/CompleteDataFeed</a>
  */
 @JsonLdTypeName("schema:CompleteDataFeed")
-public class CompleteDataFeedImpl implements CompleteDataFeed {
+public class CompleteDataFeedImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements CompleteDataFeed {
 
     private Object fDataFeedElement;
 

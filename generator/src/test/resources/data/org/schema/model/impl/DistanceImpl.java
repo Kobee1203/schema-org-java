@@ -13,7 +13,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.Quantity;
 import org.schema.model.Distance;
@@ -24,7 +24,7 @@ import org.schema.model.Distance;
  * @see <a href="https://schema.org/Distance">https://schema.org/Distance</a>
  */
 @JsonLdTypeName("schema:Distance")
-public class DistanceImpl implements Distance {
+public class DistanceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Distance {
 
     private Object fMainEntityOfPage;
 

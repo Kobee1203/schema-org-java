@@ -1,5 +1,6 @@
 package com.weedow.schemaorg.generator.core;
 
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.generator.model.Type;
 import com.weedow.schemaorg.generator.model.handler.ModelHandlerUtils;
 
@@ -7,9 +8,6 @@ import java.util.*;
 import java.util.concurrent.ConcurrentSkipListMap;
 
 public final class SchemaGeneratorUtils {
-
-    public static final Type JSON_LD_TYPE_NAME = new Type("java:JsonLdTypeName").setName("JsonLdTypeName");
-    public static final Type JSON_LD_NODE = new Type("java:JsonLdNode").setName("JsonLdNode");
 
     private SchemaGeneratorUtils() {
     }
@@ -39,7 +37,7 @@ public final class SchemaGeneratorUtils {
                         .forEach(imports::add);
             }
             imports.add(resolveClassName(modelPackage, dataTypePackage, type));
-            imports.add(resolveClassName(modelPackage, dataTypePackage, JSON_LD_TYPE_NAME));
+            imports.add(JsonLdTypeName.class.getName());
             return imports;
         });
     }

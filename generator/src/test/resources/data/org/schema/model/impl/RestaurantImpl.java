@@ -44,7 +44,7 @@ import org.schema.model.OfferCatalog;
 import org.schema.model.Event;
 import org.schema.model.Action;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.GeospatialGeometry;
 import org.schema.model.datatype.Integer;
 import org.schema.model.datatype.Number;
@@ -63,7 +63,7 @@ import org.schema.model.Restaurant;
  * @see <a href="https://schema.org/Restaurant">https://schema.org/Restaurant</a>
  */
 @JsonLdTypeName("schema:Restaurant")
-public class RestaurantImpl implements Restaurant {
+public class RestaurantImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Restaurant {
 
     private Rating fStarRating;
 

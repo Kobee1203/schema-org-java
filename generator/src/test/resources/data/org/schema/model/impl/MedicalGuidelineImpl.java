@@ -25,7 +25,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 
 /**
  * Any recommendation made by a standard society (e.g. ACC/AHA) or consensus statement that denotes how to diagnose and treat a particular condition. Note: this type should be used to tag the actual guideline recommendation; if the guideline recommendation occurs in a larger scholarly article, use MedicalScholarlyArticle to tag the overall article, not this type. Note also: the organization making the recommendation should be captured in the recognizingAuthority base property of MedicalEntity.
@@ -34,7 +34,7 @@ import org.schema.model.JsonLdTypeName;
  * @see <a href="https://schema.org/MedicalGuideline">https://schema.org/MedicalGuideline</a>
  */
 @JsonLdTypeName("schema:MedicalGuideline")
-public class MedicalGuidelineImpl implements MedicalGuideline {
+public class MedicalGuidelineImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MedicalGuideline {
 
     private MedicalEvidenceLevel fEvidenceLevel;
 

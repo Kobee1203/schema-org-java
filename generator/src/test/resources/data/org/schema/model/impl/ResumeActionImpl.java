@@ -22,7 +22,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.ControlAction;
 import org.schema.model.ResumeAction;
 
@@ -32,7 +32,7 @@ import org.schema.model.ResumeAction;
  * @see <a href="https://schema.org/ResumeAction">https://schema.org/ResumeAction</a>
  */
 @JsonLdTypeName("schema:ResumeAction")
-public class ResumeActionImpl implements ResumeAction {
+public class ResumeActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ResumeAction {
 
     private Object fAgent;
 

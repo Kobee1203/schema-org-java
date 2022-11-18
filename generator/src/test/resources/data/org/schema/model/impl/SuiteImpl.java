@@ -33,7 +33,7 @@ import org.schema.model.Event;
 import org.schema.model.CreativeWork;
 import org.schema.model.Action;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Accommodation;
 import org.schema.model.Suite;
 
@@ -46,7 +46,7 @@ import org.schema.model.Suite;
  * @see <a href="https://schema.org/Suite">https://schema.org/Suite</a>
  */
 @JsonLdTypeName("schema:Suite")
-public class SuiteImpl implements Suite {
+public class SuiteImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Suite {
 
     private Object fNumberOfRooms;
 

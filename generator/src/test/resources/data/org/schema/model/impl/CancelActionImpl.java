@@ -22,7 +22,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.OrganizeAction;
 import org.schema.model.PlanAction;
 import org.schema.model.CancelAction;
@@ -33,7 +33,7 @@ import org.schema.model.CancelAction;
  * @see <a href="https://schema.org/CancelAction">https://schema.org/CancelAction</a>
  */
 @JsonLdTypeName("schema:CancelAction")
-public class CancelActionImpl implements CancelAction {
+public class CancelActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements CancelAction {
 
     private DateTime fScheduledTime;
 

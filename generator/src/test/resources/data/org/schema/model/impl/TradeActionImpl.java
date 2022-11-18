@@ -24,7 +24,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.TradeAction;
 
 /**
@@ -33,7 +33,7 @@ import org.schema.model.TradeAction;
  * @see <a href="https://schema.org/TradeAction">https://schema.org/TradeAction</a>
  */
 @JsonLdTypeName("schema:TradeAction")
-public class TradeActionImpl implements TradeAction {
+public class TradeActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements TradeAction {
 
     private Text fPriceCurrency;
 

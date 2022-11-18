@@ -29,7 +29,7 @@ import org.schema.model.Event;
 import org.schema.model.CreativeWork;
 import org.schema.model.Action;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Residence;
 
 /**
@@ -38,7 +38,7 @@ import org.schema.model.Residence;
  * @see <a href="https://schema.org/Residence">https://schema.org/Residence</a>
  */
 @JsonLdTypeName("schema:Residence")
-public class ResidenceImpl implements Residence {
+public class ResidenceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Residence {
 
     private FloorPlan fAccommodationFloorPlan;
 

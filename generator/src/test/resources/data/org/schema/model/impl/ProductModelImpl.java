@@ -38,7 +38,7 @@ import org.schema.model.datatype.Boolean;
 import org.schema.model.CreativeWork;
 import org.schema.model.Action;
 import org.schema.model.Event;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 
 /**
  * A datasheet or vendor specification of a product (in the sense of a prototypical description).
@@ -47,7 +47,7 @@ import org.schema.model.JsonLdTypeName;
  * @see <a href="https://schema.org/ProductModel">https://schema.org/ProductModel</a>
  */
 @JsonLdTypeName("schema:ProductModel")
-public class ProductModelImpl implements ProductModel {
+public class ProductModelImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ProductModel {
 
     private ProductModel fSuccessorOf;
 

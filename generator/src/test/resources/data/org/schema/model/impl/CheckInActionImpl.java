@@ -25,7 +25,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.InteractAction;
 import org.schema.model.CommunicateAction;
 import org.schema.model.CheckInAction;
@@ -36,7 +36,7 @@ import org.schema.model.CheckInAction;
  * @see <a href="https://schema.org/CheckInAction">https://schema.org/CheckInAction</a>
  */
 @JsonLdTypeName("schema:CheckInAction")
-public class CheckInActionImpl implements CheckInAction {
+public class CheckInActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements CheckInAction {
 
     private Object fRecipient;
 

@@ -52,7 +52,7 @@ import org.schema.model.ItemList;
 import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 
 /**
  * A web page. Every web page is implicitly assumed to be declared to be of type WebPage, so the various properties about that webpage, such as <code>breadcrumb</code> may be used. We recommend explicit declaration if these properties are specified, but if they are found outside of an itemscope, they will be assumed to be about the page.
@@ -60,7 +60,7 @@ import org.schema.model.JsonLdTypeName;
  * @see <a href="https://schema.org/WebPage">https://schema.org/WebPage</a>
  */
 @JsonLdTypeName("schema:WebPage")
-public class WebPageImpl implements WebPage {
+public class WebPageImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements WebPage {
 
     private Date fLastReviewed;
 

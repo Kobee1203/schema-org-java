@@ -22,7 +22,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.TransferAction;
 import org.schema.model.DownloadAction;
 
@@ -32,7 +32,7 @@ import org.schema.model.DownloadAction;
  * @see <a href="https://schema.org/DownloadAction">https://schema.org/DownloadAction</a>
  */
 @JsonLdTypeName("schema:DownloadAction")
-public class DownloadActionImpl implements DownloadAction {
+public class DownloadActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements DownloadAction {
 
     private Place fFromLocation;
 

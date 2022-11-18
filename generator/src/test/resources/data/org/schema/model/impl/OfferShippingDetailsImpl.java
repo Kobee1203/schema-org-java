@@ -17,7 +17,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.StructuredValue;
 import org.schema.model.OfferShippingDetails;
@@ -41,7 +41,7 @@ import org.schema.model.OfferShippingDetails;
  * @see <a href="https://schema.org/OfferShippingDetails">https://schema.org/OfferShippingDetails</a>
  */
 @JsonLdTypeName("schema:OfferShippingDetails")
-public class OfferShippingDetailsImpl implements OfferShippingDetails {
+public class OfferShippingDetailsImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements OfferShippingDetails {
 
     private DefinedRegion fShippingDestination;
 

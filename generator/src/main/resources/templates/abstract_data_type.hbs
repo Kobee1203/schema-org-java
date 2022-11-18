@@ -8,7 +8,7 @@ import {{this}};
 
 {{#with this.type}}
 {{> templates/fragment/javadoc_class}}
-public abstract class {{this.name}}<T>{{#if this.parents}} extends {{#each this.parents}}{{this.name}}{{#not @last}}, {{/not}}{{/each}}{{/if}} {
+public abstract class {{this.name}}<T>{{#if this.parents}} extends {{#each this.parents}}{{this.name}}{{#not @last}}, {{/not}}{{/each}}{{/if}} implements {{this.baseParent.interfaceClassName}}<T> {
 
     private final T value;
 
@@ -16,6 +16,7 @@ public abstract class {{this.name}}<T>{{#if this.parents}} extends {{#each this.
         this.value = value;
     }
 
+    @Override
     public T getValue() {
         return value;
     }

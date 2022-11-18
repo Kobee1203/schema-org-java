@@ -29,7 +29,7 @@ import org.schema.model.Action;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.MedicalEntity;
 import org.schema.model.Nerve;
 
@@ -40,7 +40,7 @@ import org.schema.model.Nerve;
  * @see <a href="https://schema.org/Nerve">https://schema.org/Nerve</a>
  */
 @JsonLdTypeName("schema:Nerve")
-public class NerveImpl implements Nerve {
+public class NerveImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Nerve {
 
     private Object fSensoryUnit;
 

@@ -53,7 +53,7 @@ import org.schema.model.Clip;
 import org.schema.model.ItemList;
 import org.schema.model.Action;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.PostalAddress;
 import org.schema.model.Game;
 import org.schema.model.VideoGame;
@@ -64,7 +64,7 @@ import org.schema.model.VideoGame;
  * @see <a href="https://schema.org/VideoGame">https://schema.org/VideoGame</a>
  */
 @JsonLdTypeName("schema:VideoGame")
-public class VideoGameImpl implements VideoGame {
+public class VideoGameImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements VideoGame {
 
     private Person fDirector;
 

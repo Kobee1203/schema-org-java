@@ -50,7 +50,7 @@ import org.schema.model.ItemList;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.CreativeWorkSeason;
 
 /**
@@ -59,7 +59,7 @@ import org.schema.model.CreativeWorkSeason;
  * @see <a href="https://schema.org/CreativeWorkSeason">https://schema.org/CreativeWorkSeason</a>
  */
 @JsonLdTypeName("schema:CreativeWorkSeason")
-public class CreativeWorkSeasonImpl implements CreativeWorkSeason {
+public class CreativeWorkSeasonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements CreativeWorkSeason {
 
     private Object fStartDate;
 

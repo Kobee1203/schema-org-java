@@ -22,7 +22,7 @@ import org.schema.model.datatype.URL;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.InteractAction;
 import org.schema.model.JoinAction;
 
@@ -32,7 +32,7 @@ import org.schema.model.JoinAction;
  * @see <a href="https://schema.org/JoinAction">https://schema.org/JoinAction</a>
  */
 @JsonLdTypeName("schema:JoinAction")
-public class JoinActionImpl implements JoinAction {
+public class JoinActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements JoinAction {
 
     private Event fEvent;
 

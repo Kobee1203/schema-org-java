@@ -25,7 +25,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.MedicalGuidelineContraindication;
 
 /**
@@ -35,7 +35,7 @@ import org.schema.model.MedicalGuidelineContraindication;
  * @see <a href="https://schema.org/MedicalGuidelineContraindication">https://schema.org/MedicalGuidelineContraindication</a>
  */
 @JsonLdTypeName("schema:MedicalGuidelineContraindication")
-public class MedicalGuidelineContraindicationImpl implements MedicalGuidelineContraindication {
+public class MedicalGuidelineContraindicationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MedicalGuidelineContraindication {
 
     private MedicalEvidenceLevel fEvidenceLevel;
 

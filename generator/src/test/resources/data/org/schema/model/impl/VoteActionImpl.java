@@ -22,7 +22,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.AssessAction;
 import org.schema.model.ChooseAction;
 import org.schema.model.VoteAction;
@@ -33,7 +33,7 @@ import org.schema.model.VoteAction;
  * @see <a href="https://schema.org/VoteAction">https://schema.org/VoteAction</a>
  */
 @JsonLdTypeName("schema:VoteAction")
-public class VoteActionImpl implements VoteAction {
+public class VoteActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements VoteAction {
 
     private Person fCandidate;
 

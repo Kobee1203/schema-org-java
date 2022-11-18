@@ -51,7 +51,7 @@ import org.schema.model.ItemList;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Episode;
 
 /**
@@ -60,7 +60,7 @@ import org.schema.model.Episode;
  * @see <a href="https://schema.org/Episode">https://schema.org/Episode</a>
  */
 @JsonLdTypeName("schema:Episode")
-public class EpisodeImpl implements Episode {
+public class EpisodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Episode {
 
     private Object fEpisodeNumber;
 

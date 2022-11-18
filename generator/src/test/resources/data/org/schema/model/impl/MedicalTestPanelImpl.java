@@ -27,7 +27,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.MedicalEntity;
 import org.schema.model.MedicalTestPanel;
 
@@ -38,7 +38,7 @@ import org.schema.model.MedicalTestPanel;
  * @see <a href="https://schema.org/MedicalTestPanel">https://schema.org/MedicalTestPanel</a>
  */
 @JsonLdTypeName("schema:MedicalTestPanel")
-public class MedicalTestPanelImpl implements MedicalTestPanel {
+public class MedicalTestPanelImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MedicalTestPanel {
 
     private MedicalTest fSubTest;
 

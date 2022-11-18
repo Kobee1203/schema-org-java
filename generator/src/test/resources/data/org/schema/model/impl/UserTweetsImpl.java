@@ -35,7 +35,7 @@ import org.schema.model.Schedule;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.UserInteraction;
 import org.schema.model.UserTweets;
 
@@ -45,7 +45,7 @@ import org.schema.model.UserTweets;
  * @see <a href="https://schema.org/UserTweets">https://schema.org/UserTweets</a>
  */
 @JsonLdTypeName("schema:UserTweets")
-public class UserTweetsImpl implements UserTweets {
+public class UserTweetsImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements UserTweets {
 
     private Event fSuperEvent;
 

@@ -52,7 +52,7 @@ import org.schema.model.ItemList;
 import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.CheckoutPage;
 
 /**
@@ -61,7 +61,7 @@ import org.schema.model.CheckoutPage;
  * @see <a href="https://schema.org/CheckoutPage">https://schema.org/CheckoutPage</a>
  */
 @JsonLdTypeName("schema:CheckoutPage")
-public class CheckoutPageImpl implements CheckoutPage {
+public class CheckoutPageImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements CheckoutPage {
 
     private Date fLastReviewed;
 

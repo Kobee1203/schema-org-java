@@ -28,7 +28,7 @@ import org.schema.model.Event;
 import org.schema.model.CreativeWork;
 import org.schema.model.Action;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.CivicStructure;
 import org.schema.model.Zoo;
 
@@ -38,7 +38,7 @@ import org.schema.model.Zoo;
  * @see <a href="https://schema.org/Zoo">https://schema.org/Zoo</a>
  */
 @JsonLdTypeName("schema:Zoo")
-public class ZooImpl implements Zoo {
+public class ZooImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Zoo {
 
     private Text fOpeningHours;
 

@@ -1,0 +1,1 @@
+File used for unit tests of CopyServiceImpl class.

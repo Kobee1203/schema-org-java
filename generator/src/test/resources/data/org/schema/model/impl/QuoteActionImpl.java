@@ -24,7 +24,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.TradeAction;
 import org.schema.model.QuoteAction;
 
@@ -34,7 +34,7 @@ import org.schema.model.QuoteAction;
  * @see <a href="https://schema.org/QuoteAction">https://schema.org/QuoteAction</a>
  */
 @JsonLdTypeName("schema:QuoteAction")
-public class QuoteActionImpl implements QuoteAction {
+public class QuoteActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements QuoteAction {
 
     private Text fPriceCurrency;
 

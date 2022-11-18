@@ -36,7 +36,7 @@ import org.schema.model.Schedule;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.PublicationEvent;
 import org.schema.model.OnDemandEvent;
 
@@ -46,7 +46,7 @@ import org.schema.model.OnDemandEvent;
  * @see <a href="https://schema.org/OnDemandEvent">https://schema.org/OnDemandEvent</a>
  */
 @JsonLdTypeName("schema:OnDemandEvent")
-public class OnDemandEventImpl implements OnDemandEvent {
+public class OnDemandEventImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements OnDemandEvent {
 
     private Object fPublishedBy;
 

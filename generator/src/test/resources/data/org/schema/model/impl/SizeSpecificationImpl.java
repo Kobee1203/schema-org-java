@@ -24,7 +24,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.SizeSpecification;
 
@@ -36,7 +36,7 @@ import org.schema.model.SizeSpecification;
  * @see <a href="https://schema.org/SizeSpecification">https://schema.org/SizeSpecification</a>
  */
 @JsonLdTypeName("schema:SizeSpecification")
-public class SizeSpecificationImpl implements SizeSpecification {
+public class SizeSpecificationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements SizeSpecification {
 
     private Object fSizeGroup;
 

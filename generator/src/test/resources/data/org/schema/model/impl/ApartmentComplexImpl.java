@@ -30,7 +30,7 @@ import org.schema.model.Event;
 import org.schema.model.CreativeWork;
 import org.schema.model.Action;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Residence;
 import org.schema.model.ApartmentComplex;
 
@@ -40,7 +40,7 @@ import org.schema.model.ApartmentComplex;
  * @see <a href="https://schema.org/ApartmentComplex">https://schema.org/ApartmentComplex</a>
  */
 @JsonLdTypeName("schema:ApartmentComplex")
-public class ApartmentComplexImpl implements ApartmentComplex {
+public class ApartmentComplexImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ApartmentComplex {
 
     private QuantitativeValue fNumberOfAccommodationUnits;
 

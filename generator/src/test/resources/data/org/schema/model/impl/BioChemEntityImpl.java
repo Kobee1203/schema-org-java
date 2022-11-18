@@ -19,7 +19,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 
 /**
  * Any biological, chemical, or biochemical thing. For example: a protein; a gene; a chemical; a synthetic chemical.
@@ -28,7 +28,7 @@ import org.schema.model.JsonLdTypeName;
  * @see <a href="https://schema.org/BioChemEntity">https://schema.org/BioChemEntity</a>
  */
 @JsonLdTypeName("schema:BioChemEntity")
-public class BioChemEntityImpl implements BioChemEntity {
+public class BioChemEntityImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements BioChemEntity {
 
     private Grant fFunding;
 

@@ -18,7 +18,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.StructuredValue;
 import org.schema.model.GeoShape;
@@ -33,7 +33,7 @@ import org.schema.model.GeoCircle;
  * @see <a href="https://schema.org/GeoCircle">https://schema.org/GeoCircle</a>
  */
 @JsonLdTypeName("schema:GeoCircle")
-public class GeoCircleImpl implements GeoCircle {
+public class GeoCircleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements GeoCircle {
 
     private Object fGeoRadius;
 

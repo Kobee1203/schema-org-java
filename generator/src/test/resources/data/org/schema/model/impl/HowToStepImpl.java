@@ -15,7 +15,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.ItemListOrderType;
 import org.schema.model.ItemList;
@@ -60,7 +60,7 @@ import org.schema.model.HowToStep;
  * @see <a href="https://schema.org/HowToStep">https://schema.org/HowToStep</a>
  */
 @JsonLdTypeName("schema:HowToStep")
-public class HowToStepImpl implements HowToStep {
+public class HowToStepImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements HowToStep {
 
     private Object fPosition;
 

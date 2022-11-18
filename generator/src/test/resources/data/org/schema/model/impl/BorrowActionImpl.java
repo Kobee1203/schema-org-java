@@ -22,7 +22,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.TransferAction;
 import org.schema.model.BorrowAction;
 
@@ -32,7 +32,7 @@ import org.schema.model.BorrowAction;
  * @see <a href="https://schema.org/BorrowAction">https://schema.org/BorrowAction</a>
  */
 @JsonLdTypeName("schema:BorrowAction")
-public class BorrowActionImpl implements BorrowAction {
+public class BorrowActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements BorrowAction {
 
     private Object fLender;
 

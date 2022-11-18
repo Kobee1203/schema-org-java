@@ -26,7 +26,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.InteractAction;
 import org.schema.model.CommunicateAction;
 import org.schema.model.AskAction;
@@ -37,7 +37,7 @@ import org.schema.model.AskAction;
  * @see <a href="https://schema.org/AskAction">https://schema.org/AskAction</a>
  */
 @JsonLdTypeName("schema:AskAction")
-public class AskActionImpl implements AskAction {
+public class AskActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements AskAction {
 
     private Question fQuestion;
 

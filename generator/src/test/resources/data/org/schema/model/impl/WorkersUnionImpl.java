@@ -41,7 +41,7 @@ import org.schema.model.OfferCatalog;
 import org.schema.model.Event;
 import org.schema.model.Action;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.WorkersUnion;
 
 /**
@@ -51,7 +51,7 @@ import org.schema.model.WorkersUnion;
  * @see <a href="https://schema.org/WorkersUnion">https://schema.org/WorkersUnion</a>
  */
 @JsonLdTypeName("schema:WorkersUnion")
-public class WorkersUnionImpl implements WorkersUnion {
+public class WorkersUnionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements WorkersUnion {
 
     private Object fOwnershipFundingInfo;
 

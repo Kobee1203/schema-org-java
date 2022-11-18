@@ -26,7 +26,7 @@ import org.schema.model.Action;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.MedicalEntity;
 import org.schema.model.BrainStructure;
 
@@ -37,7 +37,7 @@ import org.schema.model.BrainStructure;
  * @see <a href="https://schema.org/BrainStructure">https://schema.org/BrainStructure</a>
  */
 @JsonLdTypeName("schema:BrainStructure")
-public class BrainStructureImpl implements BrainStructure {
+public class BrainStructureImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements BrainStructure {
 
     private Text fBodyLocation;
 

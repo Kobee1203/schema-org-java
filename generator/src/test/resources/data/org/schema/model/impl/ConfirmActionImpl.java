@@ -25,7 +25,7 @@ import org.schema.model.datatype.URL;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.InteractAction;
 import org.schema.model.CommunicateAction;
 import org.schema.model.InformAction;
@@ -37,7 +37,7 @@ import org.schema.model.ConfirmAction;
  * @see <a href="https://schema.org/ConfirmAction">https://schema.org/ConfirmAction</a>
  */
 @JsonLdTypeName("schema:ConfirmAction")
-public class ConfirmActionImpl implements ConfirmAction {
+public class ConfirmActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ConfirmAction {
 
     private Event fEvent;
 

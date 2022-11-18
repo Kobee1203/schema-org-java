@@ -38,7 +38,7 @@ import org.schema.model.datatype.Boolean;
 import org.schema.model.CreativeWork;
 import org.schema.model.Action;
 import org.schema.model.Event;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.SomeProducts;
 
 /**
@@ -48,7 +48,7 @@ import org.schema.model.SomeProducts;
  * @see <a href="https://schema.org/SomeProducts">https://schema.org/SomeProducts</a>
  */
 @JsonLdTypeName("schema:SomeProducts")
-public class SomeProductsImpl implements SomeProducts {
+public class SomeProductsImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements SomeProducts {
 
     private QuantitativeValue fInventoryLevel;
 

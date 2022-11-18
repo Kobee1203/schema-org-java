@@ -53,7 +53,7 @@ import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Distance;
 import org.schema.model.datatype.Time;
 import org.schema.model.NewsArticle;
@@ -70,7 +70,7 @@ import org.schema.model.LegislationObject;
  * @see <a href="https://schema.org/LegislationObject">https://schema.org/LegislationObject</a>
  */
 @JsonLdTypeName("schema:LegislationObject")
-public class LegislationObjectImpl implements LegislationObject {
+public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements LegislationObject {
 
     private LegalValueLevel fLegislationLegalValue;
 

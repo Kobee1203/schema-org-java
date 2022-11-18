@@ -20,7 +20,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.Permit;
 
@@ -30,7 +30,7 @@ import org.schema.model.Permit;
  * @see <a href="https://schema.org/Permit">https://schema.org/Permit</a>
  */
 @JsonLdTypeName("schema:Permit")
-public class PermitImpl implements Permit {
+public class PermitImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Permit {
 
     private Duration fValidFor;
 

@@ -50,7 +50,7 @@ import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.ArchiveComponent;
 
 /**
@@ -61,7 +61,7 @@ import org.schema.model.ArchiveComponent;
  * @see <a href="https://schema.org/ArchiveComponent">https://schema.org/ArchiveComponent</a>
  */
 @JsonLdTypeName("schema:ArchiveComponent")
-public class ArchiveComponentImpl implements ArchiveComponent {
+public class ArchiveComponentImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ArchiveComponent {
 
     private ArchiveOrganization fHoldingArchive;
 

@@ -28,7 +28,7 @@ import org.schema.model.Event;
 import org.schema.model.CreativeWork;
 import org.schema.model.Action;
 import org.schema.model.Thing;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Landform;
 import org.schema.model.Volcano;
 
@@ -38,7 +38,7 @@ import org.schema.model.Volcano;
  * @see <a href="https://schema.org/Volcano">https://schema.org/Volcano</a>
  */
 @JsonLdTypeName("schema:Volcano")
-public class VolcanoImpl implements Volcano {
+public class VolcanoImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Volcano {
 
     private Text fTelephone;
 

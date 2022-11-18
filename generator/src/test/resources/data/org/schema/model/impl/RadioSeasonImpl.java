@@ -50,7 +50,7 @@ import org.schema.model.ItemList;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.CreativeWorkSeason;
 import org.schema.model.RadioSeason;
 
@@ -60,7 +60,7 @@ import org.schema.model.RadioSeason;
  * @see <a href="https://schema.org/RadioSeason">https://schema.org/RadioSeason</a>
  */
 @JsonLdTypeName("schema:RadioSeason")
-public class RadioSeasonImpl implements RadioSeason {
+public class RadioSeasonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements RadioSeason {
 
     private Object fStartDate;
 

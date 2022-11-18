@@ -41,7 +41,7 @@ import org.schema.model.OfferCatalog;
 import org.schema.model.Event;
 import org.schema.model.Action;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.GeospatialGeometry;
 import org.schema.model.datatype.Integer;
 import org.schema.model.datatype.Boolean;
@@ -61,7 +61,7 @@ import org.schema.model.AutoRental;
  * @see <a href="https://schema.org/AutoRental">https://schema.org/AutoRental</a>
  */
 @JsonLdTypeName("schema:AutoRental")
-public class AutoRentalImpl implements AutoRental {
+public class AutoRentalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements AutoRental {
 
     private Organization fBranchOf;
 

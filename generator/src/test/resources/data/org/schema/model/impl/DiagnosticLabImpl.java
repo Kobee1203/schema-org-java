@@ -44,7 +44,7 @@ import org.schema.model.OfferCatalog;
 import org.schema.model.Event;
 import org.schema.model.Action;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.MedicalOrganization;
 import org.schema.model.DiagnosticLab;
 
@@ -55,7 +55,7 @@ import org.schema.model.DiagnosticLab;
  * @see <a href="https://schema.org/DiagnosticLab">https://schema.org/DiagnosticLab</a>
  */
 @JsonLdTypeName("schema:DiagnosticLab")
-public class DiagnosticLabImpl implements DiagnosticLab {
+public class DiagnosticLabImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements DiagnosticLab {
 
     private MedicalTest fAvailableTest;
 

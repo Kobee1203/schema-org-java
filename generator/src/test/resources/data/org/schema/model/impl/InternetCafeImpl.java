@@ -41,7 +41,7 @@ import org.schema.model.OfferCatalog;
 import org.schema.model.Event;
 import org.schema.model.Action;
 import org.schema.model.PropertyValue;
-import org.schema.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.GeospatialGeometry;
 import org.schema.model.datatype.Integer;
 import org.schema.model.datatype.Boolean;
@@ -60,7 +60,7 @@ import org.schema.model.InternetCafe;
  * @see <a href="https://schema.org/InternetCafe">https://schema.org/InternetCafe</a>
  */
 @JsonLdTypeName("schema:InternetCafe")
-public class InternetCafeImpl implements InternetCafe {
+public class InternetCafeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements InternetCafe {
 
     private Organization fBranchOf;
 

@@ -25,17 +25,29 @@
         <profile>
             <id>release</id>
 
-            <!-- NOTE: These dependency declarations are only required to sort this project to the end of the line in the multimodule build. -->
+            <!--
+            NOTE: These dependency declarations are only required to sort this project to the end of the line in the multimodule build.
+            We need to ensure this distribution project builds AFTER the following modules.
+            -->
             <dependencies>
+                <dependency>
+                    <groupId>com.weedow</groupId>
+                    <artifactId>schema-org-java-commons</artifactId>
+                    <version>${project.version}</version>
+                </dependency>
                 <dependency>
                     <groupId>com.weedow</groupId>
                     <artifactId>schema-org-generator</artifactId>
                     <version>${project.version}</version>
                 </dependency>
-
                 <dependency>
                     <groupId>com.weedow</groupId>
                     <artifactId>schema-org-generator-maven-plugin</artifactId>
+                    <version>${project.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>com.weedow</groupId>
+                    <artifactId>schema-org-serializer</artifactId>
                     <version>${project.version}</version>
                 </dependency>
             </dependencies>
