@@ -4,7 +4,7 @@
 
     <groupId>com.weedow</groupId>
     <artifactId>schema-org-parent</artifactId>
-    <version>0.1.3-SNAPSHOT</version>
+    <version>0.2.2-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>schema-org-java-parent</name>
     <description>Java utilities for working with Schema.org data in JSON-LD format</description>
@@ -221,19 +221,6 @@
                     <artifactId>maven-assembly-plugin</artifactId>
                     <version>${maven-assembly-plugin.version}</version>
                 </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-javadoc-plugin</artifactId>
-                    <version>${maven-javadoc-plugin.version}</version>
-                    <executions>
-                        <execution>
-                            <id>attach-javadocs</id>
-                            <goals>
-                                <goal>jar</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin>
             </plugins>
         </pluginManagement>
 
@@ -368,6 +355,21 @@
                         <executions>
                             <execution>
                                 <id>attach-sources</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <!-- Attach JAR of javadoc -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <version>${maven-javadoc-plugin.version}</version>
+                        <executions>
+                            <execution>
+                                <id>attach-javadocs</id>
                                 <goals>
                                     <goal>jar</goal>
                                 </goals>
