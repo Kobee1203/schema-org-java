@@ -47,7 +47,7 @@ public final class GeneratorOptions {
      * <pre>
      * <b>Output folder:</b> /target/generated-sources/schemaorg
      * <b>Package to resolve:</b> com.weedow.commons
-     * <b>==> Result:</b> /target/generated-sources/schemaorg/com/weedow/commons
+     * <b>==&gt; Result:</b> /target/generated-sources/schemaorg/com/weedow/commons
      * </pre>
      *
      * @param packageToResolve Package value to resolve against the outputFolder path.
