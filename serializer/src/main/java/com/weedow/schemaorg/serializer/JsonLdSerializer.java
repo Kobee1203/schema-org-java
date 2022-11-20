@@ -10,10 +10,14 @@ import java.util.List;
  * An example for serialization:
  * <pre>
  * {@code JsonLdSerializer serializer = new JsonLdSerializerImpl();
- * Thing object = new ThingImpl();
- * object.setContext("https://schema.org");
- * object.setName("name");
- * String jsonldStr = serializer.serialize(object); }
+ *
+ * Thing thing = new ThingImpl();
+ * thing.setId("my_id");
+ * thing.setName(Text.of("My Thing"));
+ * thing.setDescription(Text.of("This is my thing."));
+ * thing.setUrl(URL.of(new java.net.URL("https://github.com/Kobee1203/schema-org-java")));
+ *
+ * String jsonldStr = serializer.serialize(thing); }
  * </pre>
  *
  * <p>The serialized JSON-LD string should look like:
