@@ -10,6 +10,16 @@
     <includeBaseDirectory>false</includeBaseDirectory>
 
     <fileSets>
+        <!-- Commons -->
+        <fileSet>
+            <outputDirectory>commons</outputDirectory>
+            <directory>${project.basedir}/../commons/target</directory>
+            <includes>
+                <include>*-commons-*.jar</include>
+                <include>./dependencies/*.jar</include>
+            </includes>
+        </fileSet>
+
         <!-- Generator -->
         <fileSet>
             <outputDirectory>generator</outputDirectory>
@@ -26,6 +36,16 @@
             <directory>${project.basedir}/../maven-plugin/target</directory>
             <includes>
                 <include>*-maven-plugin-*.jar</include>
+                <include>./dependencies/*.jar</include>
+            </includes>
+        </fileSet>
+
+        <!-- Serializer -->
+        <fileSet>
+            <outputDirectory>serializer</outputDirectory>
+            <directory>${project.basedir}/../serializer/target</directory>
+            <includes>
+                <include>*-serializer-*.jar</include>
                 <include>./dependencies/*.jar</include>
             </includes>
         </fileSet>
