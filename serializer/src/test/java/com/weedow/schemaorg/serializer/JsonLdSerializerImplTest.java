@@ -184,6 +184,21 @@ class JsonLdSerializerImplTest {
     }
 
     @Test
+    void serialize_list_with_one_object(@GivenTextResource("/data/Thing.json") String expected) throws JsonLdException, MalformedURLException {
+        final JsonLdSerializer jsonLdSerializer = new JsonLdSerializerImpl(JsonLdSerializerOptions.builder().prettyPrint(true).build());
+
+        Thing thing = new ThingImpl();
+        thing.setId("my_id");
+        thing.setName(Text.of("My Thing"));
+        thing.setDescription(Text.of("This is my thing."));
+        thing.setUrl(URL.of(new java.net.URL("https://github.com/Kobee1203/schema-org-java")));
+
+        String result = jsonLdSerializer.serialize(List.of(thing));
+
+        assertThatJson(result).isEqualTo(expected);
+    }
+
+    @Test
     void throws_exception_when_serialize_invalid_data_list() {
         final JsonLdSerializer jsonLdSerializer = new JsonLdSerializerImpl();
 
