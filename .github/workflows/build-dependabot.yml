@@ -1,10 +1,10 @@
-name: Build and Analyze
+name: Dependabot Workflow
 
-on: [push, pull_request]
+on: [ pull_request ]
 
 jobs:
   build:
-    if: ${{ !contains(toJSON(github.event.commits.*.message), '[skip ci]') && github.actor != 'dependabot[bot]' }}
+    if: ${{ github.actor == 'dependabot[bot]' }}
 
     runs-on: ubuntu-latest
 
@@ -27,12 +27,6 @@ jobs:
           distribution: 'zulu'
           java-version: 11
 
-      - name: Cache SonarCloud packages
-        uses: actions/cache@v3
-        with:
-          path: ~/.sonar/cache
-          key: ${{ runner.os }}-sonar
-          restore-keys: ${{ runner.os }}-sonar
       - name: Cache Maven packages
         uses: actions/cache@v3
         with:
@@ -44,7 +38,6 @@ jobs:
         run: mvn --version
 
       - name: Build Project And Analyze with Sonar
-        run: mvn -e -B -U clean install org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.login=$SONAR_TOKEN
+        run: mvn -e -B -U clean install
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
