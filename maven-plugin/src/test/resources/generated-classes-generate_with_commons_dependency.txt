@@ -437,3 +437,4 @@ org/schema/model/impl/WebContentImpl.class
 org/schema/model/impl/WebPageElementImpl.class
 org/schema/model/impl/WebPageImpl.class
 org/schema/model/impl/WebSiteImpl.class
+schema-org-java.properties
