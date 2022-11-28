@@ -1,5 +1,6 @@
 package com.weedow.schemaorg.generator.core;
 
+import com.weedow.schemaorg.commons.generator.GeneratorConstants;
 import com.weedow.schemaorg.commons.model.JsonLdDataType;
 import com.weedow.schemaorg.commons.model.JsonLdNode;
 import com.weedow.schemaorg.commons.model.JsonLdNodeImpl;
@@ -13,12 +14,15 @@ import com.weedow.schemaorg.generator.model.Type;
 import com.weedow.schemaorg.generator.model.handler.ModelHandlerUtils;
 import com.weedow.schemaorg.generator.template.TemplateService;
 
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
 import java.util.stream.Stream;
 
 public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
@@ -74,6 +78,8 @@ public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
         final String dataTypePackage = options.getDataTypePackage();
         final List<String> models = options.getModels();
 
+        copyPropertyFile(options.getOutputFolder(), modelPackage, modelImplPackage, dataTypePackage);
+
         Map<String, Type> filteredSchemaDefinitions = schemaDefinitionFilter.filter(schemaDefinitions, models);
         if (filteredSchemaDefinitions.isEmpty()) {
             LOG.info("No schema model found to generate");
@@ -106,6 +112,21 @@ public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
             }
         });
         LOG.info("Model generation completed.");
+    }
+
+    private void copyPropertyFile(Path outputFolder, String modelPackage, String modelImplPackage, String dataTypePackage) {
+        try (OutputStream outputStream = new FileOutputStream(outputFolder.resolve(GeneratorConstants.SCHEMA_ORG_PROP_FILENAME).toFile())) {
+            Properties properties = new Properties();
+
+            properties.put(GeneratorConstants.SCHEMA_ORG_PROP_COMMONS, JsonLdNode.class.getPackageName());
+            properties.put(GeneratorConstants.SCHEMA_ORG_PROP_MODEL, modelPackage);
+            properties.put(GeneratorConstants.SCHEMA_ORG_PROP_MODEL_IMPL, modelImplPackage);
+            properties.put(GeneratorConstants.SCHEMA_ORG_PROP_DATA_TYPE, dataTypePackage);
+
+            properties.store(outputStream, "Schema.org Java properties");
+        } catch (IOException e) {
+            LOG.warn("Could not write the properties file to directory {}", outputFolder);
+        }
     }
 
     private void copyJavaFile(Class<?> clazz) {
