@@ -43,7 +43,7 @@ import org.schema.model.ComedyEvent;
  *
  * @see <a href="https://schema.org/ComedyEvent">https://schema.org/ComedyEvent</a>
  */
-@JsonLdTypeName("schema:ComedyEvent")
+@JsonLdTypeName("ComedyEvent")
 public class ComedyEventImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ComedyEvent {
 
     private Event fSuperEvent;

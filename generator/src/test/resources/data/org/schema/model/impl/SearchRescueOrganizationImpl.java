@@ -51,7 +51,7 @@ import org.schema.model.SearchRescueOrganization;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/3052">https://github.com/schemaorg/schemaorg/issues/3052</a>
  * @see <a href="https://schema.org/SearchRescueOrganization">https://schema.org/SearchRescueOrganization</a>
  */
-@JsonLdTypeName("schema:SearchRescueOrganization")
+@JsonLdTypeName("SearchRescueOrganization")
 public class SearchRescueOrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements SearchRescueOrganization {
 
     private Object fOwnershipFundingInfo;

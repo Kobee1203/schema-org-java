@@ -42,6 +42,10 @@ public final class Type {
     @Setter(AccessLevel.NONE)
     private final List<String> enumerationMembers = new ArrayList<>();
 
+    public String getTypeId() {
+        return id.substring(id.indexOf(':') + 1);
+    }
+
     public String[] getSplitDescription() {
         return description != null ? description.replace("\\n", "<br/>").split("\\n") : null;
     }

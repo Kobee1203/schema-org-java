@@ -61,7 +61,7 @@ import org.schema.model.AutoPartsStore;
  *
  * @see <a href="https://schema.org/AutoPartsStore">https://schema.org/AutoPartsStore</a>
  */
-@JsonLdTypeName("schema:AutoPartsStore")
+@JsonLdTypeName("AutoPartsStore")
 public class AutoPartsStoreImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements AutoPartsStore {
 
     private Organization fBranchOf;

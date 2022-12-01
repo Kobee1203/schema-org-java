@@ -47,7 +47,7 @@ import org.schema.model.VitalSign;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/VitalSign">https://schema.org/VitalSign</a>
  */
-@JsonLdTypeName("schema:VitalSign")
+@JsonLdTypeName("VitalSign")
 public class VitalSignImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements VitalSign {
 
     private MedicalTest fIdentifyingTest;

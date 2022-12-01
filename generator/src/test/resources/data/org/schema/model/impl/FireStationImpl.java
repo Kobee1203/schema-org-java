@@ -61,7 +61,7 @@ import org.schema.model.FireStation;
  *
  * @see <a href="https://schema.org/FireStation">https://schema.org/FireStation</a>
  */
-@JsonLdTypeName("schema:FireStation")
+@JsonLdTypeName("FireStation")
 public class FireStationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements FireStation {
 
     private Text fOpeningHours;

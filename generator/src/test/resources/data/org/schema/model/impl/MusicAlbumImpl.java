@@ -61,7 +61,7 @@ import org.schema.model.MusicAlbum;
  *
  * @see <a href="https://schema.org/MusicAlbum">https://schema.org/MusicAlbum</a>
  */
-@JsonLdTypeName("schema:MusicAlbum")
+@JsonLdTypeName("MusicAlbum")
 public class MusicAlbumImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MusicAlbum {
 
     private MusicAlbumProductionType fAlbumProductionType;

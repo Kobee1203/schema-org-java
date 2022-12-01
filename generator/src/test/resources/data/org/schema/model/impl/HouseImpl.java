@@ -41,7 +41,7 @@ import org.schema.model.House;
  * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
  * @see <a href="https://schema.org/House">https://schema.org/House</a>
  */
-@JsonLdTypeName("schema:House")
+@JsonLdTypeName("House")
 public class HouseImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements House {
 
     private Object fNumberOfRooms;

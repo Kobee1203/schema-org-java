@@ -59,7 +59,7 @@ import com.weedow.schemaorg.commons.model.JsonLdTypeName;
  *
  * @see <a href="https://schema.org/MusicRecording">https://schema.org/MusicRecording</a>
  */
-@JsonLdTypeName("schema:MusicRecording")
+@JsonLdTypeName("MusicRecording")
 public class MusicRecordingImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MusicRecording {
 
     private Text fIsrcCode;

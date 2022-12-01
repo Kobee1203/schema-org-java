@@ -32,7 +32,7 @@ import org.schema.model.ScheduleAction;
  *
  * @see <a href="https://schema.org/ScheduleAction">https://schema.org/ScheduleAction</a>
  */
-@JsonLdTypeName("schema:ScheduleAction")
+@JsonLdTypeName("ScheduleAction")
 public class ScheduleActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ScheduleAction {
 
     private DateTime fScheduledTime;

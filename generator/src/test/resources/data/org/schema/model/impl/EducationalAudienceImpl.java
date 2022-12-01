@@ -25,7 +25,7 @@ import org.schema.model.EducationalAudience;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_LRMIClass">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_LRMIClass</a>
  * @see <a href="https://schema.org/EducationalAudience">https://schema.org/EducationalAudience</a>
  */
-@JsonLdTypeName("schema:EducationalAudience")
+@JsonLdTypeName("EducationalAudience")
 public class EducationalAudienceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements EducationalAudience {
 
     private Text fEducationalRole;

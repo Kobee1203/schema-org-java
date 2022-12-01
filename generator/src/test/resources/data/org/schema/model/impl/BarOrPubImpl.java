@@ -62,7 +62,7 @@ import org.schema.model.BarOrPub;
  *
  * @see <a href="https://schema.org/BarOrPub">https://schema.org/BarOrPub</a>
  */
-@JsonLdTypeName("schema:BarOrPub")
+@JsonLdTypeName("BarOrPub")
 public class BarOrPubImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements BarOrPub {
 
     private Rating fStarRating;

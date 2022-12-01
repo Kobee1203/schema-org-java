@@ -57,7 +57,7 @@ import org.schema.model.PublicationVolume;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
  * @see <a href="https://schema.org/PublicationVolume">https://schema.org/PublicationVolume</a>
  */
-@JsonLdTypeName("schema:PublicationVolume")
+@JsonLdTypeName("PublicationVolume")
 public class PublicationVolumeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PublicationVolume {
 
     private Object fPageStart;

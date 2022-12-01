@@ -52,7 +52,7 @@ import org.schema.model.OnlineStore;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/3028">https://github.com/schemaorg/schemaorg/issues/3028</a>
  * @see <a href="https://schema.org/OnlineStore">https://schema.org/OnlineStore</a>
  */
-@JsonLdTypeName("schema:OnlineStore")
+@JsonLdTypeName("OnlineStore")
 public class OnlineStoreImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements OnlineStore {
 
     private Object fOwnershipFundingInfo;

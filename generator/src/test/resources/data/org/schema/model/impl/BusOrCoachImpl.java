@@ -55,7 +55,7 @@ import org.schema.model.BusOrCoach;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
  * @see <a href="https://schema.org/BusOrCoach">https://schema.org/BusOrCoach</a>
  */
-@JsonLdTypeName("schema:BusOrCoach")
+@JsonLdTypeName("BusOrCoach")
 public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements BusOrCoach {
 
     private QuantitativeValue fRoofLoad;

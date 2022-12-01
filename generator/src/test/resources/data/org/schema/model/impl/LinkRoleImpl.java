@@ -28,7 +28,7 @@ import org.schema.model.LinkRole;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1045">https://github.com/schemaorg/schemaorg/issues/1045</a>
  * @see <a href="https://schema.org/LinkRole">https://schema.org/LinkRole</a>
  */
-@JsonLdTypeName("schema:LinkRole")
+@JsonLdTypeName("LinkRole")
 public class LinkRoleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements LinkRole {
 
     private Text fLinkRelationship;

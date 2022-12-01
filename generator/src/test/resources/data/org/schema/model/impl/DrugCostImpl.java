@@ -36,7 +36,7 @@ import org.schema.model.DrugCost;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/DrugCost">https://schema.org/DrugCost</a>
  */
-@JsonLdTypeName("schema:DrugCost")
+@JsonLdTypeName("DrugCost")
 public class DrugCostImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements DrugCost {
 
     private AdministrativeArea fApplicableLocation;

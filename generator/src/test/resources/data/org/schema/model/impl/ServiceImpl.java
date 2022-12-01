@@ -40,7 +40,7 @@ import org.schema.model.Intangible;
  *
  * @see <a href="https://schema.org/Service">https://schema.org/Service</a>
  */
-@JsonLdTypeName("schema:Service")
+@JsonLdTypeName("Service")
 public class ServiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Service {
 
     private Review fReview;

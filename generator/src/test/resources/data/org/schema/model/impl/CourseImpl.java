@@ -60,7 +60,7 @@ import org.schema.model.LearningResource;
  *
  * @see <a href="https://schema.org/Course">https://schema.org/Course</a>
  */
-@JsonLdTypeName("schema:Course")
+@JsonLdTypeName("Course")
 public class CourseImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Course {
 
     private Object fCoursePrerequisites;

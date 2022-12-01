@@ -62,7 +62,7 @@ import org.schema.model.TVSeries;
  *
  * @see <a href="https://schema.org/TVSeries">https://schema.org/TVSeries</a>
  */
-@JsonLdTypeName("schema:TVSeries")
+@JsonLdTypeName("TVSeries")
 public class TVSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements TVSeries {
 
     private Object fSeason;

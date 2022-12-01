@@ -59,7 +59,7 @@ import org.schema.model.SelfStorage;
  *
  * @see <a href="https://schema.org/SelfStorage">https://schema.org/SelfStorage</a>
  */
-@JsonLdTypeName("schema:SelfStorage")
+@JsonLdTypeName("SelfStorage")
 public class SelfStorageImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements SelfStorage {
 
     private Organization fBranchOf;

@@ -25,7 +25,7 @@ import org.schema.model.OccupationalExperienceRequirements;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2681">https://github.com/schemaorg/schemaorg/issues/2681</a>
  * @see <a href="https://schema.org/OccupationalExperienceRequirements">https://schema.org/OccupationalExperienceRequirements</a>
  */
-@JsonLdTypeName("schema:OccupationalExperienceRequirements")
+@JsonLdTypeName("OccupationalExperienceRequirements")
 public class OccupationalExperienceRequirementsImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements OccupationalExperienceRequirements {
 
     private Number fMonthsOfExperience;

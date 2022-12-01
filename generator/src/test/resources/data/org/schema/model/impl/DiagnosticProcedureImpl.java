@@ -36,7 +36,7 @@ import org.schema.model.DiagnosticProcedure;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/DiagnosticProcedure">https://schema.org/DiagnosticProcedure</a>
  */
-@JsonLdTypeName("schema:DiagnosticProcedure")
+@JsonLdTypeName("DiagnosticProcedure")
 public class DiagnosticProcedureImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements DiagnosticProcedure {
 
     private MedicalProcedureType fProcedureType;

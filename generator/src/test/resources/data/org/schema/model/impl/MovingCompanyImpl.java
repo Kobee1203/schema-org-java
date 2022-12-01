@@ -60,7 +60,7 @@ import org.schema.model.MovingCompany;
  *
  * @see <a href="https://schema.org/MovingCompany">https://schema.org/MovingCompany</a>
  */
-@JsonLdTypeName("schema:MovingCompany")
+@JsonLdTypeName("MovingCompany")
 public class MovingCompanyImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MovingCompany {
 
     private Organization fBranchOf;

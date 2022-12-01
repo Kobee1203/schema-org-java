@@ -60,7 +60,7 @@ import org.schema.model.QAPage;
  *
  * @see <a href="https://schema.org/QAPage">https://schema.org/QAPage</a>
  */
-@JsonLdTypeName("schema:QAPage")
+@JsonLdTypeName("QAPage")
 public class QAPageImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements QAPage {
 
     private Date fLastReviewed;

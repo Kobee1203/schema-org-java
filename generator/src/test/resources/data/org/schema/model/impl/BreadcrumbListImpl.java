@@ -27,7 +27,7 @@ import org.schema.model.BreadcrumbList;
  *
  * @see <a href="https://schema.org/BreadcrumbList">https://schema.org/BreadcrumbList</a>
  */
-@JsonLdTypeName("schema:BreadcrumbList")
+@JsonLdTypeName("BreadcrumbList")
 public class BreadcrumbListImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements BreadcrumbList {
 
     private Integer fNumberOfItems;

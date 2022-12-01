@@ -25,7 +25,7 @@ import org.schema.model.Intangible;
  * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
  * @see <a href="https://schema.org/Class">https://schema.org/Class</a>
  */
-@JsonLdTypeName("schema:Class")
+@JsonLdTypeName("Class")
 public class ClassImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Class {
 
     private Object fSupersededBy;

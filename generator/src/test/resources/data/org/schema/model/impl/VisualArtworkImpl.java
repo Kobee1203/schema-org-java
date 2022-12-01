@@ -58,7 +58,7 @@ import org.schema.model.VisualArtwork;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_VisualArtworkClass">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_VisualArtworkClass</a>
  * @see <a href="https://schema.org/VisualArtwork">https://schema.org/VisualArtwork</a>
  */
-@JsonLdTypeName("schema:VisualArtwork")
+@JsonLdTypeName("VisualArtwork")
 public class VisualArtworkImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements VisualArtwork {
 
     private Object fWidth;

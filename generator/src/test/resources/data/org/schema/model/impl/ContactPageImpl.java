@@ -60,7 +60,7 @@ import org.schema.model.ContactPage;
  *
  * @see <a href="https://schema.org/ContactPage">https://schema.org/ContactPage</a>
  */
-@JsonLdTypeName("schema:ContactPage")
+@JsonLdTypeName("ContactPage")
 public class ContactPageImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ContactPage {
 
     private Date fLastReviewed;

@@ -25,7 +25,7 @@ import org.schema.model.Intangible;
  * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
  * @see <a href="https://schema.org/Property">https://schema.org/Property</a>
  */
-@JsonLdTypeName("schema:Property")
+@JsonLdTypeName("Property")
 public class PropertyImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Property {
 
     private Class fDomainIncludes;

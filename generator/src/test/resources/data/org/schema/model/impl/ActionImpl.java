@@ -30,7 +30,7 @@ import com.weedow.schemaorg.commons.model.JsonLdTypeName;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_ActionCollabClass">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_ActionCollabClass</a>
  * @see <a href="https://schema.org/Action">https://schema.org/Action</a>
  */
-@JsonLdTypeName("schema:Action")
+@JsonLdTypeName("Action")
 public class ActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Action {
 
     private Object fAgent;

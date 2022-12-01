@@ -27,7 +27,7 @@ import org.schema.model.MedicalStudyStatus;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/MedicalStudyStatus">https://schema.org/MedicalStudyStatus</a>
  */
-@JsonLdTypeName("schema:MedicalStudyStatus")
+@JsonLdTypeName("MedicalStudyStatus")
 public enum MedicalStudyStatusEnum implements MedicalStudyStatus {
     RECRUITING("Recruiting"),
     NOT_YET_RECRUITING("NotYetRecruiting"),

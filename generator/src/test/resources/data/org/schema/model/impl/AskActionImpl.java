@@ -36,7 +36,7 @@ import org.schema.model.AskAction;
  *
  * @see <a href="https://schema.org/AskAction">https://schema.org/AskAction</a>
  */
-@JsonLdTypeName("schema:AskAction")
+@JsonLdTypeName("AskAction")
 public class AskActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements AskAction {
 
     private Question fQuestion;

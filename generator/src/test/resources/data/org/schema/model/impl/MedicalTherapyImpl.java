@@ -40,7 +40,7 @@ import org.schema.model.TherapeuticProcedure;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/MedicalTherapy">https://schema.org/MedicalTherapy</a>
  */
-@JsonLdTypeName("schema:MedicalTherapy")
+@JsonLdTypeName("MedicalTherapy")
 public class MedicalTherapyImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MedicalTherapy {
 
     private MedicalTherapy fDuplicateTherapy;

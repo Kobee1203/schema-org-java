@@ -31,7 +31,7 @@ import org.schema.model.BookmarkAction;
  *
  * @see <a href="https://schema.org/BookmarkAction">https://schema.org/BookmarkAction</a>
  */
-@JsonLdTypeName("schema:BookmarkAction")
+@JsonLdTypeName("BookmarkAction")
 public class BookmarkActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements BookmarkAction {
 
     private Object fAgent;

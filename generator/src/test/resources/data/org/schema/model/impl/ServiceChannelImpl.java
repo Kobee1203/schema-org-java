@@ -28,7 +28,7 @@ import org.schema.model.ServiceChannel;
  *
  * @see <a href="https://schema.org/ServiceChannel">https://schema.org/ServiceChannel</a>
  */
-@JsonLdTypeName("schema:ServiceChannel")
+@JsonLdTypeName("ServiceChannel")
 public class ServiceChannelImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ServiceChannel {
 
     private Service fProvidesService;

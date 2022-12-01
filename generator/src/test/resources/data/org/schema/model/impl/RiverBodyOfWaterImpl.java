@@ -38,7 +38,7 @@ import org.schema.model.RiverBodyOfWater;
  *
  * @see <a href="https://schema.org/RiverBodyOfWater">https://schema.org/RiverBodyOfWater</a>
  */
-@JsonLdTypeName("schema:RiverBodyOfWater")
+@JsonLdTypeName("RiverBodyOfWater")
 public class RiverBodyOfWaterImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements RiverBodyOfWater {
 
     private Text fTelephone;

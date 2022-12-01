@@ -38,7 +38,7 @@ import org.schema.model.Canal;
  *
  * @see <a href="https://schema.org/Canal">https://schema.org/Canal</a>
  */
-@JsonLdTypeName("schema:Canal")
+@JsonLdTypeName("Canal")
 public class CanalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Canal {
 
     private Text fTelephone;

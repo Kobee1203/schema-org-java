@@ -65,7 +65,7 @@ import org.schema.model.CompleteDataFeed;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1397">https://github.com/schemaorg/schemaorg/issues/1397</a>
  * @see <a href="https://schema.org/CompleteDataFeed">https://schema.org/CompleteDataFeed</a>
  */
-@JsonLdTypeName("schema:CompleteDataFeed")
+@JsonLdTypeName("CompleteDataFeed")
 public class CompleteDataFeedImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements CompleteDataFeed {
 
     private Object fDataFeedElement;

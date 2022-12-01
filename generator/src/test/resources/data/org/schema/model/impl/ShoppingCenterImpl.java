@@ -59,7 +59,7 @@ import org.schema.model.ShoppingCenter;
  *
  * @see <a href="https://schema.org/ShoppingCenter">https://schema.org/ShoppingCenter</a>
  */
-@JsonLdTypeName("schema:ShoppingCenter")
+@JsonLdTypeName("ShoppingCenter")
 public class ShoppingCenterImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ShoppingCenter {
 
     private Organization fBranchOf;

@@ -58,7 +58,7 @@ import org.schema.model.HowToTip;
  *
  * @see <a href="https://schema.org/HowToTip">https://schema.org/HowToTip</a>
  */
-@JsonLdTypeName("schema:HowToTip")
+@JsonLdTypeName("HowToTip")
 public class HowToTipImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements HowToTip {
 
     private Object fTeaches;

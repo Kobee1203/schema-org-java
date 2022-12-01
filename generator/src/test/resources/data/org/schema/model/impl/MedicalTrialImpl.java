@@ -38,7 +38,7 @@ import org.schema.model.MedicalTrial;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/MedicalTrial">https://schema.org/MedicalTrial</a>
  */
-@JsonLdTypeName("schema:MedicalTrial")
+@JsonLdTypeName("MedicalTrial")
 public class MedicalTrialImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MedicalTrial {
 
     private MedicalTrialDesign fTrialDesign;

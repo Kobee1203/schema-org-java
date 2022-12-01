@@ -33,7 +33,7 @@ import org.schema.model.ApprovedIndication;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/ApprovedIndication">https://schema.org/ApprovedIndication</a>
  */
-@JsonLdTypeName("schema:ApprovedIndication")
+@JsonLdTypeName("ApprovedIndication")
 public class ApprovedIndicationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ApprovedIndication {
 
     private Object fLegalStatus;

@@ -58,7 +58,7 @@ import org.schema.model.ShortStory;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1976">https://github.com/schemaorg/schemaorg/issues/1976</a>
  * @see <a href="https://schema.org/ShortStory">https://schema.org/ShortStory</a>
  */
-@JsonLdTypeName("schema:ShortStory")
+@JsonLdTypeName("ShortStory")
 public class ShortStoryImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ShortStory {
 
     private Object fTeaches;

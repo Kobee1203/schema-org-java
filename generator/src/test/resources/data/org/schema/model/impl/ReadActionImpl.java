@@ -33,7 +33,7 @@ import org.schema.model.ReadAction;
  *
  * @see <a href="https://schema.org/ReadAction">https://schema.org/ReadAction</a>
  */
-@JsonLdTypeName("schema:ReadAction")
+@JsonLdTypeName("ReadAction")
 public class ReadActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ReadAction {
 
     private Offer fExpectsAcceptanceOf;

@@ -62,7 +62,7 @@ import org.schema.model.CafeOrCoffeeShop;
  *
  * @see <a href="https://schema.org/CafeOrCoffeeShop">https://schema.org/CafeOrCoffeeShop</a>
  */
-@JsonLdTypeName("schema:CafeOrCoffeeShop")
+@JsonLdTypeName("CafeOrCoffeeShop")
 public class CafeOrCoffeeShopImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements CafeOrCoffeeShop {
 
     private Rating fStarRating;

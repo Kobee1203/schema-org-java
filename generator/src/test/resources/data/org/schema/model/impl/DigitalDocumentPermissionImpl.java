@@ -27,7 +27,7 @@ import org.schema.model.DigitalDocumentPermission;
  *
  * @see <a href="https://schema.org/DigitalDocumentPermission">https://schema.org/DigitalDocumentPermission</a>
  */
-@JsonLdTypeName("schema:DigitalDocumentPermission")
+@JsonLdTypeName("DigitalDocumentPermission")
 public class DigitalDocumentPermissionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements DigitalDocumentPermission {
 
     private Object fGrantee;

@@ -25,7 +25,7 @@ import org.schema.model.RestrictedDiet;
  *
  * @see <a href="https://schema.org/RestrictedDiet">https://schema.org/RestrictedDiet</a>
  */
-@JsonLdTypeName("schema:RestrictedDiet")
+@JsonLdTypeName("RestrictedDiet")
 public enum RestrictedDietEnum implements RestrictedDiet {
     VEGAN_DIET("VeganDiet"),
     LOW_FAT_DIET("LowFatDiet"),

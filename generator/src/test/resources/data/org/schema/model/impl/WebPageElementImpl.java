@@ -58,7 +58,7 @@ import org.schema.model.WebPageElement;
  *
  * @see <a href="https://schema.org/WebPageElement">https://schema.org/WebPageElement</a>
  */
-@JsonLdTypeName("schema:WebPageElement")
+@JsonLdTypeName("WebPageElement")
 public class WebPageElementImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements WebPageElement {
 
     private CssSelectorType fCssSelector;

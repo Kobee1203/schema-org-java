@@ -46,7 +46,7 @@ import org.schema.model.InfectiousDisease;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/InfectiousDisease">https://schema.org/InfectiousDisease</a>
  */
-@JsonLdTypeName("schema:InfectiousDisease")
+@JsonLdTypeName("InfectiousDisease")
 public class InfectiousDiseaseImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements InfectiousDisease {
 
     private InfectiousAgentClass fInfectiousAgentClass;

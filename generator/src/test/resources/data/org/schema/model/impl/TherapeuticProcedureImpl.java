@@ -38,7 +38,7 @@ import org.schema.model.TherapeuticProcedure;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/TherapeuticProcedure">https://schema.org/TherapeuticProcedure</a>
  */
-@JsonLdTypeName("schema:TherapeuticProcedure")
+@JsonLdTypeName("TherapeuticProcedure")
 public class TherapeuticProcedureImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements TherapeuticProcedure {
 
     private MedicalEntity fAdverseOutcome;

@@ -59,7 +59,7 @@ import org.schema.model.SportsActivityLocation;
  *
  * @see <a href="https://schema.org/SportsActivityLocation">https://schema.org/SportsActivityLocation</a>
  */
-@JsonLdTypeName("schema:SportsActivityLocation")
+@JsonLdTypeName("SportsActivityLocation")
 public class SportsActivityLocationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements SportsActivityLocation {
 
     private Organization fBranchOf;

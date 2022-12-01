@@ -26,7 +26,7 @@ import org.schema.model.WarrantyPromise;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass</a>
  * @see <a href="https://schema.org/WarrantyPromise">https://schema.org/WarrantyPromise</a>
  */
-@JsonLdTypeName("schema:WarrantyPromise")
+@JsonLdTypeName("WarrantyPromise")
 public class WarrantyPromiseImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements WarrantyPromise {
 
     private WarrantyScope fWarrantyScope;

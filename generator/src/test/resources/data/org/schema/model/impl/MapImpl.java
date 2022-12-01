@@ -57,7 +57,7 @@ import org.schema.model.Map;
  *
  * @see <a href="https://schema.org/Map">https://schema.org/Map</a>
  */
-@JsonLdTypeName("schema:Map")
+@JsonLdTypeName("Map")
 public class MapImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Map {
 
     private MapCategoryType fMapType;

@@ -60,7 +60,7 @@ import org.schema.model.ComedyClub;
  *
  * @see <a href="https://schema.org/ComedyClub">https://schema.org/ComedyClub</a>
  */
-@JsonLdTypeName("schema:ComedyClub")
+@JsonLdTypeName("ComedyClub")
 public class ComedyClubImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ComedyClub {
 
     private Organization fBranchOf;

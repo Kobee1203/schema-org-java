@@ -36,7 +36,7 @@ import org.schema.model.Grant;
  * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FundInfoCollab">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FundInfoCollab</a>
  * @see <a href="https://schema.org/Grant">https://schema.org/Grant</a>
  */
-@JsonLdTypeName("schema:Grant")
+@JsonLdTypeName("Grant")
 public class GrantImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Grant {
 
     private Object fFunder;

@@ -51,7 +51,7 @@ import org.schema.model.SportsTeam;
  *
  * @see <a href="https://schema.org/SportsTeam">https://schema.org/SportsTeam</a>
  */
-@JsonLdTypeName("schema:SportsTeam")
+@JsonLdTypeName("SportsTeam")
 public class SportsTeamImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements SportsTeam {
 
     private Person fAthlete;

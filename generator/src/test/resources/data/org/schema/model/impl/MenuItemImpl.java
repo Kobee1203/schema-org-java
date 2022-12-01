@@ -27,7 +27,7 @@ import org.schema.model.Intangible;
  *
  * @see <a href="https://schema.org/MenuItem">https://schema.org/MenuItem</a>
  */
-@JsonLdTypeName("schema:MenuItem")
+@JsonLdTypeName("MenuItem")
 public class MenuItemImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MenuItem {
 
     private Object fMenuAddOn;

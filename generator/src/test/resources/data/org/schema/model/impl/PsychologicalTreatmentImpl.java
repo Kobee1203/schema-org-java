@@ -39,7 +39,7 @@ import org.schema.model.PsychologicalTreatment;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/PsychologicalTreatment">https://schema.org/PsychologicalTreatment</a>
  */
-@JsonLdTypeName("schema:PsychologicalTreatment")
+@JsonLdTypeName("PsychologicalTreatment")
 public class PsychologicalTreatmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PsychologicalTreatment {
 
     private MedicalEntity fAdverseOutcome;

@@ -32,7 +32,7 @@ import org.schema.model.FlightReservation;
  *
  * @see <a href="https://schema.org/FlightReservation">https://schema.org/FlightReservation</a>
  */
-@JsonLdTypeName("schema:FlightReservation")
+@JsonLdTypeName("FlightReservation")
 public class FlightReservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements FlightReservation {
 
     private Object fPassengerPriorityStatus;

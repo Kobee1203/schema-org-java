@@ -28,7 +28,7 @@ import org.schema.model.EUEnergyEfficiencyEnumeration;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2670">https://github.com/schemaorg/schemaorg/issues/2670</a>
  * @see <a href="https://schema.org/EUEnergyEfficiencyEnumeration">https://schema.org/EUEnergyEfficiencyEnumeration</a>
  */
-@JsonLdTypeName("schema:EUEnergyEfficiencyEnumeration")
+@JsonLdTypeName("EUEnergyEfficiencyEnumeration")
 public enum EUEnergyEfficiencyEnumerationEnum implements EUEnergyEfficiencyEnumeration {
     EU_ENERGY_EFFICIENCY_CATEGORY_D("EUEnergyEfficiencyCategoryD"),
     EU_ENERGY_EFFICIENCY_CATEGORY_A2_PLUS("EUEnergyEfficiencyCategoryA2Plus"),

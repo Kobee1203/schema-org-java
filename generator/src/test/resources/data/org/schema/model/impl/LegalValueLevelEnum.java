@@ -28,7 +28,7 @@ import org.schema.model.LegalValueLevel;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
  * @see <a href="https://schema.org/LegalValueLevel">https://schema.org/LegalValueLevel</a>
  */
-@JsonLdTypeName("schema:LegalValueLevel")
+@JsonLdTypeName("LegalValueLevel")
 public enum LegalValueLevelEnum implements LegalValueLevel {
     DEFINITIVE_LEGAL_VALUE("DefinitiveLegalValue"),
     UNOFFICIAL_LEGAL_VALUE("UnofficialLegalValue"),

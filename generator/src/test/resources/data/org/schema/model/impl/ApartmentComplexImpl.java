@@ -39,7 +39,7 @@ import org.schema.model.ApartmentComplex;
  *
  * @see <a href="https://schema.org/ApartmentComplex">https://schema.org/ApartmentComplex</a>
  */
-@JsonLdTypeName("schema:ApartmentComplex")
+@JsonLdTypeName("ApartmentComplex")
 public class ApartmentComplexImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ApartmentComplex {
 
     private QuantitativeValue fNumberOfAccommodationUnits;

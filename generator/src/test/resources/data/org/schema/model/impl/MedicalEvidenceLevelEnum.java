@@ -27,7 +27,7 @@ import org.schema.model.MedicalEvidenceLevel;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/MedicalEvidenceLevel">https://schema.org/MedicalEvidenceLevel</a>
  */
-@JsonLdTypeName("schema:MedicalEvidenceLevel")
+@JsonLdTypeName("MedicalEvidenceLevel")
 public enum MedicalEvidenceLevelEnum implements MedicalEvidenceLevel {
     EVIDENCE_LEVEL_A("EvidenceLevelA"),
     EVIDENCE_LEVEL_B("EvidenceLevelB"),

@@ -60,7 +60,7 @@ import org.schema.model.WholesaleStore;
  *
  * @see <a href="https://schema.org/WholesaleStore">https://schema.org/WholesaleStore</a>
  */
-@JsonLdTypeName("schema:WholesaleStore")
+@JsonLdTypeName("WholesaleStore")
 public class WholesaleStoreImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements WholesaleStore {
 
     private Organization fBranchOf;

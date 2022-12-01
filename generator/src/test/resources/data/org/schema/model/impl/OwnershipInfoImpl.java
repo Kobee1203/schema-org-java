@@ -29,7 +29,7 @@ import org.schema.model.OwnershipInfo;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass</a>
  * @see <a href="https://schema.org/OwnershipInfo">https://schema.org/OwnershipInfo</a>
  */
-@JsonLdTypeName("schema:OwnershipInfo")
+@JsonLdTypeName("OwnershipInfo")
 public class OwnershipInfoImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements OwnershipInfo {
 
     private DateTime fOwnedFrom;

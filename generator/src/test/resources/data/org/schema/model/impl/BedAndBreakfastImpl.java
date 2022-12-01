@@ -66,7 +66,7 @@ import org.schema.model.BedAndBreakfast;
  *
  * @see <a href="https://schema.org/BedAndBreakfast">https://schema.org/BedAndBreakfast</a>
  */
-@JsonLdTypeName("schema:BedAndBreakfast")
+@JsonLdTypeName("BedAndBreakfast")
 public class BedAndBreakfastImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements BedAndBreakfast {
 
     private Object fNumberOfRooms;

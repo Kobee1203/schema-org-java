@@ -58,7 +58,7 @@ import org.schema.model.WebContent;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2358">https://github.com/schemaorg/schemaorg/issues/2358</a>
  * @see <a href="https://schema.org/WebContent">https://schema.org/WebContent</a>
  */
-@JsonLdTypeName("schema:WebContent")
+@JsonLdTypeName("WebContent")
 public class WebContentImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements WebContent {
 
     private Object fTeaches;

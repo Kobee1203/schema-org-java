@@ -60,7 +60,7 @@ import org.schema.model.FurnitureStore;
  *
  * @see <a href="https://schema.org/FurnitureStore">https://schema.org/FurnitureStore</a>
  */
-@JsonLdTypeName("schema:FurnitureStore")
+@JsonLdTypeName("FurnitureStore")
 public class FurnitureStoreImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements FurnitureStore {
 
     private Organization fBranchOf;

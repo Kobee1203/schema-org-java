@@ -31,7 +31,7 @@ import org.schema.model.TieAction;
  *
  * @see <a href="https://schema.org/TieAction">https://schema.org/TieAction</a>
  */
-@JsonLdTypeName("schema:TieAction")
+@JsonLdTypeName("TieAction")
 public class TieActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements TieAction {
 
     private Object fAgent;

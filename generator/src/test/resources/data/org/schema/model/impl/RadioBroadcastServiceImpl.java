@@ -47,7 +47,7 @@ import org.schema.model.RadioBroadcastService;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2109">https://github.com/schemaorg/schemaorg/issues/2109</a>
  * @see <a href="https://schema.org/RadioBroadcastService">https://schema.org/RadioBroadcastService</a>
  */
-@JsonLdTypeName("schema:RadioBroadcastService")
+@JsonLdTypeName("RadioBroadcastService")
 public class RadioBroadcastServiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements RadioBroadcastService {
 
     private BroadcastService fParentService;

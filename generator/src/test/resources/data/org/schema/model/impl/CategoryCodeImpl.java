@@ -27,7 +27,7 @@ import org.schema.model.CategoryCode;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
  * @see <a href="https://schema.org/CategoryCode">https://schema.org/CategoryCode</a>
  */
-@JsonLdTypeName("schema:CategoryCode")
+@JsonLdTypeName("CategoryCode")
 public class CategoryCodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements CategoryCode {
 
     private Text fCodeValue;

@@ -26,7 +26,7 @@ import org.schema.model.OrderStatus;
  *
  * @see <a href="https://schema.org/OrderStatus">https://schema.org/OrderStatus</a>
  */
-@JsonLdTypeName("schema:OrderStatus")
+@JsonLdTypeName("OrderStatus")
 public enum OrderStatusEnum implements OrderStatus {
     ORDER_CANCELLED("OrderCancelled"),
     ORDER_PROBLEM("OrderProblem"),

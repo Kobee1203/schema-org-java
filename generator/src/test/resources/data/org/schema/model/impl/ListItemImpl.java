@@ -23,7 +23,7 @@ import org.schema.model.Intangible;
  *
  * @see <a href="https://schema.org/ListItem">https://schema.org/ListItem</a>
  */
-@JsonLdTypeName("schema:ListItem")
+@JsonLdTypeName("ListItem")
 public class ListItemImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ListItem {
 
     private Object fPosition;

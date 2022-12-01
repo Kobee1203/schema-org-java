@@ -58,7 +58,7 @@ import org.schema.model.MobileApplication;
  *
  * @see <a href="https://schema.org/MobileApplication">https://schema.org/MobileApplication</a>
  */
-@JsonLdTypeName("schema:MobileApplication")
+@JsonLdTypeName("MobileApplication")
 public class MobileApplicationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MobileApplication {
 
     private Text fCarrierRequirements;

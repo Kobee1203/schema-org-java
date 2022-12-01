@@ -60,7 +60,7 @@ import org.schema.model.MusicRelease;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
  * @see <a href="https://schema.org/MusicRelease">https://schema.org/MusicRelease</a>
  */
-@JsonLdTypeName("schema:MusicRelease")
+@JsonLdTypeName("MusicRelease")
 public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MusicRelease {
 
     private MusicAlbum fReleaseOf;

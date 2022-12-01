@@ -23,7 +23,7 @@ import org.schema.model.Energy;
  *
  * @see <a href="https://schema.org/Energy">https://schema.org/Energy</a>
  */
-@JsonLdTypeName("schema:Energy")
+@JsonLdTypeName("Energy")
 public class EnergyImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Energy {
 
     private Object fMainEntityOfPage;

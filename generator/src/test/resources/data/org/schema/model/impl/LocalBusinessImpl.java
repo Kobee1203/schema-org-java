@@ -58,7 +58,7 @@ import org.schema.model.LocalBusiness;
  *
  * @see <a href="https://schema.org/LocalBusiness">https://schema.org/LocalBusiness</a>
  */
-@JsonLdTypeName("schema:LocalBusiness")
+@JsonLdTypeName("LocalBusiness")
 public class LocalBusinessImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements LocalBusiness {
 
     private Organization fBranchOf;

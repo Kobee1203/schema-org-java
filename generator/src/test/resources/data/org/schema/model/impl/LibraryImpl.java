@@ -59,7 +59,7 @@ import org.schema.model.Library;
  *
  * @see <a href="https://schema.org/Library">https://schema.org/Library</a>
  */
-@JsonLdTypeName("schema:Library")
+@JsonLdTypeName("Library")
 public class LibraryImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Library {
 
     private Organization fBranchOf;

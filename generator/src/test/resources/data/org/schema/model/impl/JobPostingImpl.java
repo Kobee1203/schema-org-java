@@ -39,7 +39,7 @@ import org.schema.model.JobPosting;
  *
  * @see <a href="https://schema.org/JobPosting">https://schema.org/JobPosting</a>
  */
-@JsonLdTypeName("schema:JobPosting")
+@JsonLdTypeName("JobPosting")
 public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements JobPosting {
 
     private Text fEmployerOverview;

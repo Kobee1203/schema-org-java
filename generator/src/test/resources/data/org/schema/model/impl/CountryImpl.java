@@ -37,7 +37,7 @@ import org.schema.model.Country;
  *
  * @see <a href="https://schema.org/Country">https://schema.org/Country</a>
  */
-@JsonLdTypeName("schema:Country")
+@JsonLdTypeName("Country")
 public class CountryImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Country {
 
     private Text fTelephone;

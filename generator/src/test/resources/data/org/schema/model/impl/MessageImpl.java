@@ -57,7 +57,7 @@ import org.schema.model.Message;
  *
  * @see <a href="https://schema.org/Message">https://schema.org/Message</a>
  */
-@JsonLdTypeName("schema:Message")
+@JsonLdTypeName("Message")
 public class MessageImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Message {
 
     private Object fBccRecipient;

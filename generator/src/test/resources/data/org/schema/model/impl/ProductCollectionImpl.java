@@ -71,7 +71,7 @@ import org.schema.model.ProductCollection;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2597">https://github.com/schemaorg/schemaorg/issues/2597</a>
  * @see <a href="https://schema.org/ProductCollection">https://schema.org/ProductCollection</a>
  */
-@JsonLdTypeName("schema:ProductCollection")
+@JsonLdTypeName("ProductCollection")
 public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ProductCollection {
 
     private TypeAndQuantityNode fIncludesObject;

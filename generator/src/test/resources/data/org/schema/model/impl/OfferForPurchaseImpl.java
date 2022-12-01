@@ -62,7 +62,7 @@ import org.schema.model.OfferForPurchase;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2348">https://github.com/schemaorg/schemaorg/issues/2348</a>
  * @see <a href="https://schema.org/OfferForPurchase">https://schema.org/OfferForPurchase</a>
  */
-@JsonLdTypeName("schema:OfferForPurchase")
+@JsonLdTypeName("OfferForPurchase")
 public class OfferForPurchaseImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements OfferForPurchase {
 
     private AdultOrientedEnumeration fHasAdultConsideration;

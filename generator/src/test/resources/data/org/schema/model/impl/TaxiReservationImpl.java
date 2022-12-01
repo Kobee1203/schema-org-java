@@ -34,7 +34,7 @@ import org.schema.model.TaxiReservation;
  *
  * @see <a href="https://schema.org/TaxiReservation">https://schema.org/TaxiReservation</a>
  */
-@JsonLdTypeName("schema:TaxiReservation")
+@JsonLdTypeName("TaxiReservation")
 public class TaxiReservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements TaxiReservation {
 
     private Object fPartySize;

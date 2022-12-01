@@ -60,7 +60,7 @@ import com.weedow.schemaorg.commons.model.JsonLdTypeName;
  *
  * @see <a href="https://schema.org/MediaObject">https://schema.org/MediaObject</a>
  */
-@JsonLdTypeName("schema:MediaObject")
+@JsonLdTypeName("MediaObject")
 public class MediaObjectImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MediaObject {
 
     private Text fContentSize;

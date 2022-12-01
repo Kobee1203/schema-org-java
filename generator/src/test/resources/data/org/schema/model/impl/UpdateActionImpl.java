@@ -30,7 +30,7 @@ import org.schema.model.UpdateAction;
  *
  * @see <a href="https://schema.org/UpdateAction">https://schema.org/UpdateAction</a>
  */
-@JsonLdTypeName("schema:UpdateAction")
+@JsonLdTypeName("UpdateAction")
 public class UpdateActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements UpdateAction {
 
     private Thing fTargetCollection;

@@ -31,7 +31,7 @@ import org.schema.model.PaintAction;
  *
  * @see <a href="https://schema.org/PaintAction">https://schema.org/PaintAction</a>
  */
-@JsonLdTypeName("schema:PaintAction")
+@JsonLdTypeName("PaintAction")
 public class PaintActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PaintAction {
 
     private Object fAgent;

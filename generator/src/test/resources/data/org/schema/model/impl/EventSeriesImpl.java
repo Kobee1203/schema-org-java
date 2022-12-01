@@ -60,7 +60,7 @@ import org.schema.model.EventSeries;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/447">https://github.com/schemaorg/schemaorg/issues/447</a>
  * @see <a href="https://schema.org/EventSeries">https://schema.org/EventSeries</a>
  */
-@JsonLdTypeName("schema:EventSeries")
+@JsonLdTypeName("EventSeries")
 public class EventSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements EventSeries {
 
     private Object fMainEntityOfPage;

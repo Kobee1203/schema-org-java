@@ -38,7 +38,7 @@ import org.schema.model.Church;
  *
  * @see <a href="https://schema.org/Church">https://schema.org/Church</a>
  */
-@JsonLdTypeName("schema:Church")
+@JsonLdTypeName("Church")
 public class ChurchImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Church {
 
     private Text fOpeningHours;

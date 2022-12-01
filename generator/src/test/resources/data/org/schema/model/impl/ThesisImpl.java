@@ -58,7 +58,7 @@ import org.schema.model.Thesis;
  * @see <a href="http://www.productontology.org/id/Thesis">http://www.productontology.org/id/Thesis</a>
  * @see <a href="https://schema.org/Thesis">https://schema.org/Thesis</a>
  */
-@JsonLdTypeName("schema:Thesis")
+@JsonLdTypeName("Thesis")
 public class ThesisImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Thesis {
 
     private Text fInSupportOf;

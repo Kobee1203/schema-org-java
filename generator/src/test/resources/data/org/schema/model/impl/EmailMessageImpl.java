@@ -58,7 +58,7 @@ import org.schema.model.EmailMessage;
  *
  * @see <a href="https://schema.org/EmailMessage">https://schema.org/EmailMessage</a>
  */
-@JsonLdTypeName("schema:EmailMessage")
+@JsonLdTypeName("EmailMessage")
 public class EmailMessageImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements EmailMessage {
 
     private Object fBccRecipient;

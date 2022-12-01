@@ -30,7 +30,7 @@ import org.schema.model.Intangible;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass</a>
  * @see <a href="https://schema.org/QualitativeValue">https://schema.org/QualitativeValue</a>
  */
-@JsonLdTypeName("schema:QualitativeValue")
+@JsonLdTypeName("QualitativeValue")
 public class QualitativeValueImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements QualitativeValue {
 
     private Object fValueReference;

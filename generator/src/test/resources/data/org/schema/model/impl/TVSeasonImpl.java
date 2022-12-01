@@ -60,7 +60,7 @@ import org.schema.model.TVSeason;
  *
  * @see <a href="https://schema.org/TVSeason">https://schema.org/TVSeason</a>
  */
-@JsonLdTypeName("schema:TVSeason")
+@JsonLdTypeName("TVSeason")
 public class TVSeasonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements TVSeason {
 
     private Country fCountryOfOrigin;

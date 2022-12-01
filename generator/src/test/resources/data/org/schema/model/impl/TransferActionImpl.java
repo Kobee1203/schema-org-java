@@ -30,7 +30,7 @@ import org.schema.model.TransferAction;
  *
  * @see <a href="https://schema.org/TransferAction">https://schema.org/TransferAction</a>
  */
-@JsonLdTypeName("schema:TransferAction")
+@JsonLdTypeName("TransferAction")
 public class TransferActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements TransferAction {
 
     private Place fFromLocation;

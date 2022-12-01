@@ -28,7 +28,7 @@ import org.schema.model.UKNonprofitType;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2543">https://github.com/schemaorg/schemaorg/issues/2543</a>
  * @see <a href="https://schema.org/UKNonprofitType">https://schema.org/UKNonprofitType</a>
  */
-@JsonLdTypeName("schema:UKNonprofitType")
+@JsonLdTypeName("UKNonprofitType")
 public enum UKNonprofitTypeEnum implements UKNonprofitType {
     UNINCORPORATED_ASSOCIATION_CHARITY("UnincorporatedAssociationCharity"),
     UK_TRUST("UKTrust"),

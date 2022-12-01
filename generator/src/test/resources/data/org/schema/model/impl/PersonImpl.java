@@ -47,7 +47,7 @@ import com.weedow.schemaorg.commons.model.JsonLdTypeName;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_rNews">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_rNews</a>
  * @see <a href="https://schema.org/Person">https://schema.org/Person</a>
  */
-@JsonLdTypeName("schema:Person")
+@JsonLdTypeName("Person")
 public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Person {
 
     private Person fSpouse;

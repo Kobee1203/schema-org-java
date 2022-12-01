@@ -36,7 +36,7 @@ import org.schema.model.Vessel;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/Vessel">https://schema.org/Vessel</a>
  */
-@JsonLdTypeName("schema:Vessel")
+@JsonLdTypeName("Vessel")
 public class VesselImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Vessel {
 
     private Text fBodyLocation;

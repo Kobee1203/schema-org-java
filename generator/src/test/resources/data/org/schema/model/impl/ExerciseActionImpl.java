@@ -38,7 +38,7 @@ import org.schema.model.ExerciseAction;
  *
  * @see <a href="https://schema.org/ExerciseAction">https://schema.org/ExerciseAction</a>
  */
-@JsonLdTypeName("schema:ExerciseAction")
+@JsonLdTypeName("ExerciseAction")
 public class ExerciseActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ExerciseAction {
 
     private SportsTeam fSportsTeam;

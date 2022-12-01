@@ -29,7 +29,7 @@ import org.schema.model.PeopleAudience;
  *
  * @see <a href="https://schema.org/PeopleAudience">https://schema.org/PeopleAudience</a>
  */
-@JsonLdTypeName("schema:PeopleAudience")
+@JsonLdTypeName("PeopleAudience")
 public class PeopleAudienceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PeopleAudience {
 
     private Integer fRequiredMinAge;

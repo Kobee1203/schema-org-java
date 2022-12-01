@@ -27,7 +27,7 @@ import org.schema.model.WarrantyScope;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass</a>
  * @see <a href="https://schema.org/WarrantyScope">https://schema.org/WarrantyScope</a>
  */
-@JsonLdTypeName("schema:WarrantyScope")
+@JsonLdTypeName("WarrantyScope")
 public class WarrantyScopeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements WarrantyScope {
 
     private Object fSupersededBy;

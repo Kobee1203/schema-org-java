@@ -44,7 +44,7 @@ import org.schema.model.ScreeningEvent;
  *
  * @see <a href="https://schema.org/ScreeningEvent">https://schema.org/ScreeningEvent</a>
  */
-@JsonLdTypeName("schema:ScreeningEvent")
+@JsonLdTypeName("ScreeningEvent")
 public class ScreeningEventImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ScreeningEvent {
 
     private Object fSubtitleLanguage;

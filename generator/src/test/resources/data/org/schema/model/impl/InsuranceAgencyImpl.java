@@ -60,7 +60,7 @@ import org.schema.model.InsuranceAgency;
  *
  * @see <a href="https://schema.org/InsuranceAgency">https://schema.org/InsuranceAgency</a>
  */
-@JsonLdTypeName("schema:InsuranceAgency")
+@JsonLdTypeName("InsuranceAgency")
 public class InsuranceAgencyImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements InsuranceAgency {
 
     private Object fFeesAndCommissionsSpecification;

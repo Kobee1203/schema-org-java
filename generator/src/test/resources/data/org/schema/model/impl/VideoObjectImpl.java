@@ -62,7 +62,7 @@ import com.weedow.schemaorg.commons.model.JsonLdTypeName;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_rNews">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_rNews</a>
  * @see <a href="https://schema.org/VideoObject">https://schema.org/VideoObject</a>
  */
-@JsonLdTypeName("schema:VideoObject")
+@JsonLdTypeName("VideoObject")
 public class VideoObjectImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements VideoObject {
 
     private Text fEmbeddedTextCaption;

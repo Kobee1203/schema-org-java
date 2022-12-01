@@ -33,7 +33,7 @@ import org.schema.model.UnitPriceSpecification;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass</a>
  * @see <a href="https://schema.org/UnitPriceSpecification">https://schema.org/UnitPriceSpecification</a>
  */
-@JsonLdTypeName("schema:UnitPriceSpecification")
+@JsonLdTypeName("UnitPriceSpecification")
 public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements UnitPriceSpecification {
 
     private Object fPriceType;

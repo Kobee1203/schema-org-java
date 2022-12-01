@@ -53,7 +53,7 @@ import org.schema.model.ResearchProject;
  * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FundInfoCollab">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FundInfoCollab</a>
  * @see <a href="https://schema.org/ResearchProject">https://schema.org/ResearchProject</a>
  */
-@JsonLdTypeName("schema:ResearchProject")
+@JsonLdTypeName("ResearchProject")
 public class ResearchProjectImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ResearchProject {
 
     private Object fOwnershipFundingInfo;

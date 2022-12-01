@@ -31,7 +31,7 @@ import org.schema.model.LoseAction;
  *
  * @see <a href="https://schema.org/LoseAction">https://schema.org/LoseAction</a>
  */
-@JsonLdTypeName("schema:LoseAction")
+@JsonLdTypeName("LoseAction")
 public class LoseActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements LoseAction {
 
     private Person fWinner;

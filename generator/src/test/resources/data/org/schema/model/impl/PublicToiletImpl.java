@@ -39,7 +39,7 @@ import org.schema.model.PublicToilet;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1624">https://github.com/schemaorg/schemaorg/issues/1624</a>
  * @see <a href="https://schema.org/PublicToilet">https://schema.org/PublicToilet</a>
  */
-@JsonLdTypeName("schema:PublicToilet")
+@JsonLdTypeName("PublicToilet")
 public class PublicToiletImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PublicToilet {
 
     private Text fOpeningHours;

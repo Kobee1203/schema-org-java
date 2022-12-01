@@ -31,7 +31,7 @@ import org.schema.model.PlanAction;
  *
  * @see <a href="https://schema.org/PlanAction">https://schema.org/PlanAction</a>
  */
-@JsonLdTypeName("schema:PlanAction")
+@JsonLdTypeName("PlanAction")
 public class PlanActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PlanAction {
 
     private DateTime fScheduledTime;

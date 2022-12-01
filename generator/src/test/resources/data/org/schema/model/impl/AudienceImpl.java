@@ -23,7 +23,7 @@ import org.schema.model.Audience;
  *
  * @see <a href="https://schema.org/Audience">https://schema.org/Audience</a>
  */
-@JsonLdTypeName("schema:Audience")
+@JsonLdTypeName("Audience")
 public class AudienceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Audience {
 
     private Text fAudienceType;

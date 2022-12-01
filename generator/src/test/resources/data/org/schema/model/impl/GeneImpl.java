@@ -29,7 +29,7 @@ import com.weedow.schemaorg.commons.model.JsonLdTypeName;
  * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
  * @see <a href="https://schema.org/Gene">https://schema.org/Gene</a>
  */
-@JsonLdTypeName("schema:Gene")
+@JsonLdTypeName("Gene")
 public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Gene {
 
     private Gene fAlternativeOf;

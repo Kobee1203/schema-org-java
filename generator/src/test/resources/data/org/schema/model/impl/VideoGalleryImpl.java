@@ -62,7 +62,7 @@ import org.schema.model.VideoGallery;
  *
  * @see <a href="https://schema.org/VideoGallery">https://schema.org/VideoGallery</a>
  */
-@JsonLdTypeName("schema:VideoGallery")
+@JsonLdTypeName("VideoGallery")
 public class VideoGalleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements VideoGallery {
 
     private Date fLastReviewed;

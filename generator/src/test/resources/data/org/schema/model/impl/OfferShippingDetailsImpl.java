@@ -40,7 +40,7 @@ import org.schema.model.OfferShippingDetails;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
  * @see <a href="https://schema.org/OfferShippingDetails">https://schema.org/OfferShippingDetails</a>
  */
-@JsonLdTypeName("schema:OfferShippingDetails")
+@JsonLdTypeName("OfferShippingDetails")
 public class OfferShippingDetailsImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements OfferShippingDetails {
 
     private DefinedRegion fShippingDestination;

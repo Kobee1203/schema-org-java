@@ -32,7 +32,7 @@ import org.schema.model.EndorseAction;
  *
  * @see <a href="https://schema.org/EndorseAction">https://schema.org/EndorseAction</a>
  */
-@JsonLdTypeName("schema:EndorseAction")
+@JsonLdTypeName("EndorseAction")
 public class EndorseActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements EndorseAction {
 
     private Object fEndorsee;

@@ -30,7 +30,7 @@ import org.schema.model.ParentAudience;
  *
  * @see <a href="https://schema.org/ParentAudience">https://schema.org/ParentAudience</a>
  */
-@JsonLdTypeName("schema:ParentAudience")
+@JsonLdTypeName("ParentAudience")
 public class ParentAudienceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ParentAudience {
 
     private Number fChildMaxAge;

@@ -59,7 +59,7 @@ import org.schema.model.WPHeader;
  *
  * @see <a href="https://schema.org/WPHeader">https://schema.org/WPHeader</a>
  */
-@JsonLdTypeName("schema:WPHeader")
+@JsonLdTypeName("WPHeader")
 public class WPHeaderImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements WPHeader {
 
     private CssSelectorType fCssSelector;

@@ -59,7 +59,7 @@ import org.schema.model.HealthAndBeautyBusiness;
  *
  * @see <a href="https://schema.org/HealthAndBeautyBusiness">https://schema.org/HealthAndBeautyBusiness</a>
  */
-@JsonLdTypeName("schema:HealthAndBeautyBusiness")
+@JsonLdTypeName("HealthAndBeautyBusiness")
 public class HealthAndBeautyBusinessImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements HealthAndBeautyBusiness {
 
     private Organization fBranchOf;

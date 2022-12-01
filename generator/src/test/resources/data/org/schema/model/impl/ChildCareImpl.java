@@ -59,7 +59,7 @@ import org.schema.model.ChildCare;
  *
  * @see <a href="https://schema.org/ChildCare">https://schema.org/ChildCare</a>
  */
-@JsonLdTypeName("schema:ChildCare")
+@JsonLdTypeName("ChildCare")
 public class ChildCareImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ChildCare {
 
     private Organization fBranchOf;

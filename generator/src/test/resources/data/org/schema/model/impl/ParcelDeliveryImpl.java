@@ -31,7 +31,7 @@ import org.schema.model.ParcelDelivery;
  *
  * @see <a href="https://schema.org/ParcelDelivery">https://schema.org/ParcelDelivery</a>
  */
-@JsonLdTypeName("schema:ParcelDelivery")
+@JsonLdTypeName("ParcelDelivery")
 public class ParcelDeliveryImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ParcelDelivery {
 
     private PostalAddress fOriginAddress;

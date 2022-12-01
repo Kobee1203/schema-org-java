@@ -44,7 +44,7 @@ import org.schema.model.Intangible;
  *
  * @see <a href="https://schema.org/BroadcastService">https://schema.org/BroadcastService</a>
  */
-@JsonLdTypeName("schema:BroadcastService")
+@JsonLdTypeName("BroadcastService")
 public class BroadcastServiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements BroadcastService {
 
     private BroadcastService fParentService;

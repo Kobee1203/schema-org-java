@@ -60,7 +60,7 @@ import org.schema.model.DataFeed;
  *
  * @see <a href="https://schema.org/DataFeed">https://schema.org/DataFeed</a>
  */
-@JsonLdTypeName("schema:DataFeed")
+@JsonLdTypeName("DataFeed")
 public class DataFeedImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements DataFeed {
 
     private Object fDataFeedElement;

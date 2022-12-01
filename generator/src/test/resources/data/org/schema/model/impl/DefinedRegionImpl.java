@@ -39,7 +39,7 @@ import org.schema.model.DefinedRegion;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
  * @see <a href="https://schema.org/DefinedRegion">https://schema.org/DefinedRegion</a>
  */
-@JsonLdTypeName("schema:DefinedRegion")
+@JsonLdTypeName("DefinedRegion")
 public class DefinedRegionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements DefinedRegion {
 
     private Object fAddressCountry;

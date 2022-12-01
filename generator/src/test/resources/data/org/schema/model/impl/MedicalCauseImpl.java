@@ -32,7 +32,7 @@ import org.schema.model.MedicalCause;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/MedicalCause">https://schema.org/MedicalCause</a>
  */
-@JsonLdTypeName("schema:MedicalCause")
+@JsonLdTypeName("MedicalCause")
 public class MedicalCauseImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MedicalCause {
 
     private MedicalEntity fCauseOf;

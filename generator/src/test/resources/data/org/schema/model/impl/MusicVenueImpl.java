@@ -37,7 +37,7 @@ import org.schema.model.MusicVenue;
  *
  * @see <a href="https://schema.org/MusicVenue">https://schema.org/MusicVenue</a>
  */
-@JsonLdTypeName("schema:MusicVenue")
+@JsonLdTypeName("MusicVenue")
 public class MusicVenueImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MusicVenue {
 
     private Text fOpeningHours;

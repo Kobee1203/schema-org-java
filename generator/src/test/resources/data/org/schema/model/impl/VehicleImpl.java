@@ -52,7 +52,7 @@ import org.schema.model.Vehicle;
  *
  * @see <a href="https://schema.org/Vehicle">https://schema.org/Vehicle</a>
  */
-@JsonLdTypeName("schema:Vehicle")
+@JsonLdTypeName("Vehicle")
 public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Vehicle {
 
     private QuantitativeValue fFuelCapacity;

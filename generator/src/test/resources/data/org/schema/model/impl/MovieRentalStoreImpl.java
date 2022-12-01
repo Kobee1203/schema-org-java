@@ -60,7 +60,7 @@ import org.schema.model.MovieRentalStore;
  *
  * @see <a href="https://schema.org/MovieRentalStore">https://schema.org/MovieRentalStore</a>
  */
-@JsonLdTypeName("schema:MovieRentalStore")
+@JsonLdTypeName("MovieRentalStore")
 public class MovieRentalStoreImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MovieRentalStore {
 
     private Organization fBranchOf;

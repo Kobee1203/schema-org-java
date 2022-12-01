@@ -60,7 +60,7 @@ import org.schema.model.UserReview;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1589">https://github.com/schemaorg/schemaorg/issues/1589</a>
  * @see <a href="https://schema.org/UserReview">https://schema.org/UserReview</a>
  */
-@JsonLdTypeName("schema:UserReview")
+@JsonLdTypeName("UserReview")
 public class UserReviewImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements UserReview {
 
     private Rating fReviewRating;

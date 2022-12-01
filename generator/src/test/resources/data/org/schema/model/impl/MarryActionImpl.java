@@ -31,7 +31,7 @@ import org.schema.model.MarryAction;
  *
  * @see <a href="https://schema.org/MarryAction">https://schema.org/MarryAction</a>
  */
-@JsonLdTypeName("schema:MarryAction")
+@JsonLdTypeName("MarryAction")
 public class MarryActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MarryAction {
 
     private Object fAgent;

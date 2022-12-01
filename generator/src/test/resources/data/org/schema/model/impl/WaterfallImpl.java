@@ -38,7 +38,7 @@ import org.schema.model.Waterfall;
  *
  * @see <a href="https://schema.org/Waterfall">https://schema.org/Waterfall</a>
  */
-@JsonLdTypeName("schema:Waterfall")
+@JsonLdTypeName("Waterfall")
 public class WaterfallImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Waterfall {
 
     private Text fTelephone;

@@ -61,7 +61,7 @@ import org.schema.model.MovieClip;
  *
  * @see <a href="https://schema.org/MovieClip">https://schema.org/MovieClip</a>
  */
-@JsonLdTypeName("schema:MovieClip")
+@JsonLdTypeName("MovieClip")
 public class MovieClipImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MovieClip {
 
     private Object fStartOffset;

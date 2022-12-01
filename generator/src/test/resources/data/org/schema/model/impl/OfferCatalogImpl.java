@@ -26,7 +26,7 @@ import org.schema.model.OfferCatalog;
  *
  * @see <a href="https://schema.org/OfferCatalog">https://schema.org/OfferCatalog</a>
  */
-@JsonLdTypeName("schema:OfferCatalog")
+@JsonLdTypeName("OfferCatalog")
 public class OfferCatalogImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements OfferCatalog {
 
     private Integer fNumberOfItems;

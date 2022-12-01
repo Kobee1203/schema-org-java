@@ -34,7 +34,7 @@ import org.schema.model.PreOrderAction;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1125">https://github.com/schemaorg/schemaorg/issues/1125</a>
  * @see <a href="https://schema.org/PreOrderAction">https://schema.org/PreOrderAction</a>
  */
-@JsonLdTypeName("schema:PreOrderAction")
+@JsonLdTypeName("PreOrderAction")
 public class PreOrderActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PreOrderAction {
 
     private Text fPriceCurrency;

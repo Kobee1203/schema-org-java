@@ -25,7 +25,7 @@ import org.schema.model.PostalCodeRangeSpecification;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
  * @see <a href="https://schema.org/PostalCodeRangeSpecification">https://schema.org/PostalCodeRangeSpecification</a>
  */
-@JsonLdTypeName("schema:PostalCodeRangeSpecification")
+@JsonLdTypeName("PostalCodeRangeSpecification")
 public class PostalCodeRangeSpecificationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PostalCodeRangeSpecification {
 
     private Text fPostalCodeEnd;

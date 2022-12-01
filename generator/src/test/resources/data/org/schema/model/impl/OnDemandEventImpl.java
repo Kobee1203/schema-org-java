@@ -45,7 +45,7 @@ import org.schema.model.OnDemandEvent;
  *
  * @see <a href="https://schema.org/OnDemandEvent">https://schema.org/OnDemandEvent</a>
  */
-@JsonLdTypeName("schema:OnDemandEvent")
+@JsonLdTypeName("OnDemandEvent")
 public class OnDemandEventImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements OnDemandEvent {
 
     private Object fPublishedBy;

@@ -28,7 +28,7 @@ import org.schema.model.FMRadioChannel;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
  * @see <a href="https://schema.org/FMRadioChannel">https://schema.org/FMRadioChannel</a>
  */
-@JsonLdTypeName("schema:FMRadioChannel")
+@JsonLdTypeName("FMRadioChannel")
 public class FMRadioChannelImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements FMRadioChannel {
 
     private Object fGenre;

@@ -57,7 +57,7 @@ import org.schema.model.CreditCard;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
  * @see <a href="https://schema.org/CreditCard">https://schema.org/CreditCard</a>
  */
-@JsonLdTypeName("schema:CreditCard")
+@JsonLdTypeName("CreditCard")
 public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements CreditCard {
 
     private Object fCashBack;

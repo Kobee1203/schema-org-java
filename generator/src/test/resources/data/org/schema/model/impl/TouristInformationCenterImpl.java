@@ -59,7 +59,7 @@ import org.schema.model.TouristInformationCenter;
  *
  * @see <a href="https://schema.org/TouristInformationCenter">https://schema.org/TouristInformationCenter</a>
  */
-@JsonLdTypeName("schema:TouristInformationCenter")
+@JsonLdTypeName("TouristInformationCenter")
 public class TouristInformationCenterImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements TouristInformationCenter {
 
     private Organization fBranchOf;

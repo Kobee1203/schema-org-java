@@ -32,7 +32,7 @@ import org.schema.model.InsertAction;
  *
  * @see <a href="https://schema.org/InsertAction">https://schema.org/InsertAction</a>
  */
-@JsonLdTypeName("schema:InsertAction")
+@JsonLdTypeName("InsertAction")
 public class InsertActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements InsertAction {
 
     private Place fToLocation;

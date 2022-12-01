@@ -36,7 +36,7 @@ import org.schema.model.ConfirmAction;
  *
  * @see <a href="https://schema.org/ConfirmAction">https://schema.org/ConfirmAction</a>
  */
-@JsonLdTypeName("schema:ConfirmAction")
+@JsonLdTypeName("ConfirmAction")
 public class ConfirmActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ConfirmAction {
 
     private Event fEvent;

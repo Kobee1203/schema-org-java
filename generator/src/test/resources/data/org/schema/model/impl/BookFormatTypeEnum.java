@@ -25,7 +25,7 @@ import org.schema.model.BookFormatType;
  *
  * @see <a href="https://schema.org/BookFormatType">https://schema.org/BookFormatType</a>
  */
-@JsonLdTypeName("schema:BookFormatType")
+@JsonLdTypeName("BookFormatType")
 public enum BookFormatTypeEnum implements BookFormatType {
     AUDIOBOOK_FORMAT("AudiobookFormat"),
     GRAPHIC_NOVEL("GraphicNovel"),

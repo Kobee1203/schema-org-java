@@ -31,7 +31,7 @@ import org.schema.model.DeleteAction;
  *
  * @see <a href="https://schema.org/DeleteAction">https://schema.org/DeleteAction</a>
  */
-@JsonLdTypeName("schema:DeleteAction")
+@JsonLdTypeName("DeleteAction")
 public class DeleteActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements DeleteAction {
 
     private Thing fTargetCollection;

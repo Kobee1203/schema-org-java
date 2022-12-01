@@ -56,7 +56,7 @@ import com.weedow.schemaorg.commons.model.JsonLdTypeName;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_rNews">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_rNews</a>
  * @see <a href="https://schema.org/CreativeWork">https://schema.org/CreativeWork</a>
  */
-@JsonLdTypeName("schema:CreativeWork")
+@JsonLdTypeName("CreativeWork")
 public class CreativeWorkImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements CreativeWork {
 
     private Object fTeaches;

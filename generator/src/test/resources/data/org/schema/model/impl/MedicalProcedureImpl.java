@@ -35,7 +35,7 @@ import org.schema.model.MedicalProcedure;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/MedicalProcedure">https://schema.org/MedicalProcedure</a>
  */
-@JsonLdTypeName("schema:MedicalProcedure")
+@JsonLdTypeName("MedicalProcedure")
 public class MedicalProcedureImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MedicalProcedure {
 
     private MedicalProcedureType fProcedureType;

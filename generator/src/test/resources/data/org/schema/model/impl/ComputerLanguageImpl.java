@@ -22,7 +22,7 @@ import org.schema.model.ComputerLanguage;
  *
  * @see <a href="https://schema.org/ComputerLanguage">https://schema.org/ComputerLanguage</a>
  */
-@JsonLdTypeName("schema:ComputerLanguage")
+@JsonLdTypeName("ComputerLanguage")
 public class ComputerLanguageImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ComputerLanguage {
 
     private Object fMainEntityOfPage;

@@ -28,7 +28,7 @@ import org.schema.model.WearableMeasurementTypeEnumeration;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
  * @see <a href="https://schema.org/WearableMeasurementTypeEnumeration">https://schema.org/WearableMeasurementTypeEnumeration</a>
  */
-@JsonLdTypeName("schema:WearableMeasurementTypeEnumeration")
+@JsonLdTypeName("WearableMeasurementTypeEnumeration")
 public enum WearableMeasurementTypeEnumerationEnum implements WearableMeasurementTypeEnumeration {
     WEARABLE_MEASUREMENT_SLEEVE("WearableMeasurementSleeve"),
     WEARABLE_MEASUREMENT_CHEST_OR_BUST("WearableMeasurementChestOrBust"),

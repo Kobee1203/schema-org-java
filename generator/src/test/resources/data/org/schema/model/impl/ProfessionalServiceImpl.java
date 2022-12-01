@@ -61,7 +61,7 @@ import org.schema.model.ProfessionalService;
  *
  * @see <a href="https://schema.org/ProfessionalService">https://schema.org/ProfessionalService</a>
  */
-@JsonLdTypeName("schema:ProfessionalService")
+@JsonLdTypeName("ProfessionalService")
 public class ProfessionalServiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ProfessionalService {
 
     private Organization fBranchOf;

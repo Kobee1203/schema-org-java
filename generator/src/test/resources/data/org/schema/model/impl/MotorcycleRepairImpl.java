@@ -60,7 +60,7 @@ import org.schema.model.MotorcycleRepair;
  *
  * @see <a href="https://schema.org/MotorcycleRepair">https://schema.org/MotorcycleRepair</a>
  */
-@JsonLdTypeName("schema:MotorcycleRepair")
+@JsonLdTypeName("MotorcycleRepair")
 public class MotorcycleRepairImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MotorcycleRepair {
 
     private Organization fBranchOf;

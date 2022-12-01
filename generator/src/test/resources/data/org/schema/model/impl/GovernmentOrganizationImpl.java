@@ -49,7 +49,7 @@ import org.schema.model.GovernmentOrganization;
  *
  * @see <a href="https://schema.org/GovernmentOrganization">https://schema.org/GovernmentOrganization</a>
  */
-@JsonLdTypeName("schema:GovernmentOrganization")
+@JsonLdTypeName("GovernmentOrganization")
 public class GovernmentOrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements GovernmentOrganization {
 
     private Object fOwnershipFundingInfo;

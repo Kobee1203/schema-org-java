@@ -35,7 +35,7 @@ import org.schema.model.CheckOutAction;
  *
  * @see <a href="https://schema.org/CheckOutAction">https://schema.org/CheckOutAction</a>
  */
-@JsonLdTypeName("schema:CheckOutAction")
+@JsonLdTypeName("CheckOutAction")
 public class CheckOutActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements CheckOutAction {
 
     private Object fRecipient;

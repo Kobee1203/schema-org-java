@@ -28,7 +28,7 @@ import org.schema.model.WearableSizeSystemEnumeration;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
  * @see <a href="https://schema.org/WearableSizeSystemEnumeration">https://schema.org/WearableSizeSystemEnumeration</a>
  */
-@JsonLdTypeName("schema:WearableSizeSystemEnumeration")
+@JsonLdTypeName("WearableSizeSystemEnumeration")
 public enum WearableSizeSystemEnumerationEnum implements WearableSizeSystemEnumeration {
     WEARABLE_SIZE_SYSTEM_JP("WearableSizeSystemJP"),
     WEARABLE_SIZE_SYSTEM_CN("WearableSizeSystemCN"),

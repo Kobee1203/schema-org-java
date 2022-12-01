@@ -63,7 +63,7 @@ import org.schema.model.ComicIssue;
  * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
  * @see <a href="https://schema.org/ComicIssue">https://schema.org/ComicIssue</a>
  */
-@JsonLdTypeName("schema:ComicIssue")
+@JsonLdTypeName("ComicIssue")
 public class ComicIssueImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ComicIssue {
 
     private Person fLetterer;

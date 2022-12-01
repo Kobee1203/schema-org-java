@@ -25,7 +25,7 @@ import org.schema.model.EntryPoint;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_ActionCollabClass">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_ActionCollabClass</a>
  * @see <a href="https://schema.org/EntryPoint">https://schema.org/EntryPoint</a>
  */
-@JsonLdTypeName("schema:EntryPoint")
+@JsonLdTypeName("EntryPoint")
 public class EntryPointImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements EntryPoint {
 
     private SoftwareApplication fActionApplication;

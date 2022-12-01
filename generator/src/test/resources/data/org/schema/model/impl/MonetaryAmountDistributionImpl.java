@@ -27,7 +27,7 @@ import org.schema.model.MonetaryAmountDistribution;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
  * @see <a href="https://schema.org/MonetaryAmountDistribution">https://schema.org/MonetaryAmountDistribution</a>
  */
-@JsonLdTypeName("schema:MonetaryAmountDistribution")
+@JsonLdTypeName("MonetaryAmountDistribution")
 public class MonetaryAmountDistributionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MonetaryAmountDistribution {
 
     private Text fCurrency;

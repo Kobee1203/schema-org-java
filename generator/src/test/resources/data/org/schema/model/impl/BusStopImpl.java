@@ -37,7 +37,7 @@ import org.schema.model.BusStop;
  *
  * @see <a href="https://schema.org/BusStop">https://schema.org/BusStop</a>
  */
-@JsonLdTypeName("schema:BusStop")
+@JsonLdTypeName("BusStop")
 public class BusStopImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements BusStop {
 
     private Text fOpeningHours;

@@ -41,7 +41,7 @@ import org.schema.model.CableOrSatelliteService;
  *
  * @see <a href="https://schema.org/CableOrSatelliteService">https://schema.org/CableOrSatelliteService</a>
  */
-@JsonLdTypeName("schema:CableOrSatelliteService")
+@JsonLdTypeName("CableOrSatelliteService")
 public class CableOrSatelliteServiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements CableOrSatelliteService {
 
     private Review fReview;

@@ -60,7 +60,7 @@ import org.schema.model.Attorney;
  *
  * @see <a href="https://schema.org/Attorney">https://schema.org/Attorney</a>
  */
-@JsonLdTypeName("schema:Attorney")
+@JsonLdTypeName("Attorney")
 public class AttorneyImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Attorney {
 
     private Organization fBranchOf;

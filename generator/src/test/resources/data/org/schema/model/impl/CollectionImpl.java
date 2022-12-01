@@ -57,7 +57,7 @@ import org.schema.model.Collection;
  * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
  * @see <a href="https://schema.org/Collection">https://schema.org/Collection</a>
  */
-@JsonLdTypeName("schema:Collection")
+@JsonLdTypeName("Collection")
 public class CollectionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Collection {
 
     private Integer fCollectionSize;

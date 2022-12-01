@@ -32,7 +32,7 @@ import org.schema.model.SolveMathAction;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2740">https://github.com/schemaorg/schemaorg/issues/2740</a>
  * @see <a href="https://schema.org/SolveMathAction">https://schema.org/SolveMathAction</a>
  */
-@JsonLdTypeName("schema:SolveMathAction")
+@JsonLdTypeName("SolveMathAction")
 public class SolveMathActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements SolveMathAction {
 
     private Text fEduQuestionType;

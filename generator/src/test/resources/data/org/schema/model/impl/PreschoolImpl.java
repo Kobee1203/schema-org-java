@@ -60,7 +60,7 @@ import org.schema.model.Preschool;
  *
  * @see <a href="https://schema.org/Preschool">https://schema.org/Preschool</a>
  */
-@JsonLdTypeName("schema:Preschool")
+@JsonLdTypeName("Preschool")
 public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Preschool {
 
     private Person fAlumni;

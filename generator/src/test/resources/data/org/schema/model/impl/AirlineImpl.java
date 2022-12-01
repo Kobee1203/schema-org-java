@@ -50,7 +50,7 @@ import org.schema.model.Airline;
  *
  * @see <a href="https://schema.org/Airline">https://schema.org/Airline</a>
  */
-@JsonLdTypeName("schema:Airline")
+@JsonLdTypeName("Airline")
 public class AirlineImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Airline {
 
     private Text fIataCode;

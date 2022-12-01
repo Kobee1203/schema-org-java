@@ -40,7 +40,7 @@ import org.schema.model.TouristAttraction;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#IIT-CNR.it">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#IIT-CNR.it</a>
  * @see <a href="https://schema.org/TouristAttraction">https://schema.org/TouristAttraction</a>
  */
-@JsonLdTypeName("schema:TouristAttraction")
+@JsonLdTypeName("TouristAttraction")
 public class TouristAttractionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements TouristAttraction {
 
     private Object fTouristType;

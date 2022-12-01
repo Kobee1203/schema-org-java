@@ -25,7 +25,7 @@ import org.schema.model.ItemAvailability;
  *
  * @see <a href="https://schema.org/ItemAvailability">https://schema.org/ItemAvailability</a>
  */
-@JsonLdTypeName("schema:ItemAvailability")
+@JsonLdTypeName("ItemAvailability")
 public enum ItemAvailabilityEnum implements ItemAvailability {
     OUT_OF_STOCK("OutOfStock"),
     DISCONTINUED("Discontinued"),

@@ -55,7 +55,7 @@ import org.schema.model.Motorcycle;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
  * @see <a href="https://schema.org/Motorcycle">https://schema.org/Motorcycle</a>
  */
-@JsonLdTypeName("schema:Motorcycle")
+@JsonLdTypeName("Motorcycle")
 public class MotorcycleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Motorcycle {
 
     private QuantitativeValue fFuelCapacity;

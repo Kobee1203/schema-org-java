@@ -59,7 +59,7 @@ import org.schema.model.EducationalOrganization;
  *
  * @see <a href="https://schema.org/EducationalOrganization">https://schema.org/EducationalOrganization</a>
  */
-@JsonLdTypeName("schema:EducationalOrganization")
+@JsonLdTypeName("EducationalOrganization")
 public class EducationalOrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements EducationalOrganization {
 
     private Person fAlumni;

@@ -44,7 +44,7 @@ import org.schema.model.MedicalCondition;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/MedicalSignOrSymptom">https://schema.org/MedicalSignOrSymptom</a>
  */
-@JsonLdTypeName("schema:MedicalSignOrSymptom")
+@JsonLdTypeName("MedicalSignOrSymptom")
 public class MedicalSignOrSymptomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MedicalSignOrSymptom {
 
     private MedicalTherapy fPossibleTreatment;

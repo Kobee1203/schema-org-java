@@ -34,7 +34,7 @@ import org.schema.model.LocationFeatureSpecification;
  * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
  * @see <a href="https://schema.org/LocationFeatureSpecification">https://schema.org/LocationFeatureSpecification</a>
  */
-@JsonLdTypeName("schema:LocationFeatureSpecification")
+@JsonLdTypeName("LocationFeatureSpecification")
 public class LocationFeatureSpecificationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements LocationFeatureSpecification {
 
     private OpeningHoursSpecification fHoursAvailable;

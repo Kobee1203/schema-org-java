@@ -26,7 +26,7 @@ import org.schema.model.EventStatusType;
  *
  * @see <a href="https://schema.org/EventStatusType">https://schema.org/EventStatusType</a>
  */
-@JsonLdTypeName("schema:EventStatusType")
+@JsonLdTypeName("EventStatusType")
 public enum EventStatusTypeEnum implements EventStatusType {
     EVENT_CANCELLED("EventCancelled"),
     EVENT_SCHEDULED("EventScheduled"),

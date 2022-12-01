@@ -60,7 +60,7 @@ import org.schema.model.HobbyShop;
  *
  * @see <a href="https://schema.org/HobbyShop">https://schema.org/HobbyShop</a>
  */
-@JsonLdTypeName("schema:HobbyShop")
+@JsonLdTypeName("HobbyShop")
 public class HobbyShopImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements HobbyShop {
 
     private Organization fBranchOf;

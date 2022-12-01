@@ -39,7 +39,7 @@ import org.schema.model.Nerve;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/Nerve">https://schema.org/Nerve</a>
  */
-@JsonLdTypeName("schema:Nerve")
+@JsonLdTypeName("Nerve")
 public class NerveImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Nerve {
 
     private Object fSensoryUnit;

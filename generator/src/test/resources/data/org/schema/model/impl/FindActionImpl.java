@@ -30,7 +30,7 @@ import org.schema.model.FindAction;
  *
  * @see <a href="https://schema.org/FindAction">https://schema.org/FindAction</a>
  */
-@JsonLdTypeName("schema:FindAction")
+@JsonLdTypeName("FindAction")
 public class FindActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements FindAction {
 
     private Object fAgent;

@@ -25,7 +25,7 @@ import org.schema.model.RsvpResponseType;
  *
  * @see <a href="https://schema.org/RsvpResponseType">https://schema.org/RsvpResponseType</a>
  */
-@JsonLdTypeName("schema:RsvpResponseType")
+@JsonLdTypeName("RsvpResponseType")
 public enum RsvpResponseTypeEnum implements RsvpResponseType {
     RSVP_RESPONSE_NO("RsvpResponseNo"),
     RSVP_RESPONSE_MAYBE("RsvpResponseMaybe"),

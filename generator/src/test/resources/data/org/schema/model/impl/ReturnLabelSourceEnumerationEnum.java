@@ -27,7 +27,7 @@ import org.schema.model.ReturnLabelSourceEnumeration;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
  * @see <a href="https://schema.org/ReturnLabelSourceEnumeration">https://schema.org/ReturnLabelSourceEnumeration</a>
  */
-@JsonLdTypeName("schema:ReturnLabelSourceEnumeration")
+@JsonLdTypeName("ReturnLabelSourceEnumeration")
 public enum ReturnLabelSourceEnumerationEnum implements ReturnLabelSourceEnumeration {
     RETURN_LABEL_CUSTOMER_RESPONSIBILITY("ReturnLabelCustomerResponsibility"),
     RETURN_LABEL_DOWNLOAD_AND_PRINT("ReturnLabelDownloadAndPrint"),

@@ -25,7 +25,7 @@ import org.schema.model.BedDetails;
  * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
  * @see <a href="https://schema.org/BedDetails">https://schema.org/BedDetails</a>
  */
-@JsonLdTypeName("schema:BedDetails")
+@JsonLdTypeName("BedDetails")
 public class BedDetailsImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements BedDetails {
 
     private Object fTypeOfBed;

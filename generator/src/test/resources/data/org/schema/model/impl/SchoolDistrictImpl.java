@@ -39,7 +39,7 @@ import org.schema.model.SchoolDistrict;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2500">https://github.com/schemaorg/schemaorg/issues/2500</a>
  * @see <a href="https://schema.org/SchoolDistrict">https://schema.org/SchoolDistrict</a>
  */
-@JsonLdTypeName("schema:SchoolDistrict")
+@JsonLdTypeName("SchoolDistrict")
 public class SchoolDistrictImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements SchoolDistrict {
 
     private Text fTelephone;

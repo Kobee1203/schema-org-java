@@ -35,7 +35,7 @@ import org.schema.model.DonateAction;
  *
  * @see <a href="https://schema.org/DonateAction">https://schema.org/DonateAction</a>
  */
-@JsonLdTypeName("schema:DonateAction")
+@JsonLdTypeName("DonateAction")
 public class DonateActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements DonateAction {
 
     private Object fRecipient;

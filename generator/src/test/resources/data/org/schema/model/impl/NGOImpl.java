@@ -49,7 +49,7 @@ import org.schema.model.NGO;
  *
  * @see <a href="https://schema.org/NGO">https://schema.org/NGO</a>
  */
-@JsonLdTypeName("schema:NGO")
+@JsonLdTypeName("NGO")
 public class NGOImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements NGO {
 
     private Object fOwnershipFundingInfo;

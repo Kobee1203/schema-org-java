@@ -31,7 +31,7 @@ import org.schema.model.PhotographAction;
  *
  * @see <a href="https://schema.org/PhotographAction">https://schema.org/PhotographAction</a>
  */
-@JsonLdTypeName("schema:PhotographAction")
+@JsonLdTypeName("PhotographAction")
 public class PhotographActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PhotographAction {
 
     private Object fAgent;

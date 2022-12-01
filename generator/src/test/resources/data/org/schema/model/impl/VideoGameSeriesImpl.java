@@ -64,7 +64,7 @@ import org.schema.model.VideoGameSeries;
  *
  * @see <a href="https://schema.org/VideoGameSeries">https://schema.org/VideoGameSeries</a>
  */
-@JsonLdTypeName("schema:VideoGameSeries")
+@JsonLdTypeName("VideoGameSeries")
 public class VideoGameSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements VideoGameSeries {
 
     private Object fSeason;

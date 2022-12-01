@@ -24,7 +24,7 @@ import org.schema.model.VirtualLocation;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1842">https://github.com/schemaorg/schemaorg/issues/1842</a>
  * @see <a href="https://schema.org/VirtualLocation">https://schema.org/VirtualLocation</a>
  */
-@JsonLdTypeName("schema:VirtualLocation")
+@JsonLdTypeName("VirtualLocation")
 public class VirtualLocationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements VirtualLocation {
 
     private Object fMainEntityOfPage;

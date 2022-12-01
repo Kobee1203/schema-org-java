@@ -31,7 +31,7 @@ import org.schema.model.SuspendAction;
  *
  * @see <a href="https://schema.org/SuspendAction">https://schema.org/SuspendAction</a>
  */
-@JsonLdTypeName("schema:SuspendAction")
+@JsonLdTypeName("SuspendAction")
 public class SuspendActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements SuspendAction {
 
     private Object fAgent;

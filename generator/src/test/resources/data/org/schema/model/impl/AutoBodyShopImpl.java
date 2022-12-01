@@ -60,7 +60,7 @@ import org.schema.model.AutoBodyShop;
  *
  * @see <a href="https://schema.org/AutoBodyShop">https://schema.org/AutoBodyShop</a>
  */
-@JsonLdTypeName("schema:AutoBodyShop")
+@JsonLdTypeName("AutoBodyShop")
 public class AutoBodyShopImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements AutoBodyShop {
 
     private Organization fBranchOf;

@@ -62,7 +62,7 @@ import org.schema.model.AskPublicNewsArticle;
  * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
  * @see <a href="https://schema.org/AskPublicNewsArticle">https://schema.org/AskPublicNewsArticle</a>
  */
-@JsonLdTypeName("schema:AskPublicNewsArticle")
+@JsonLdTypeName("AskPublicNewsArticle")
 public class AskPublicNewsArticleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements AskPublicNewsArticle {
 
     private Text fPrintEdition;

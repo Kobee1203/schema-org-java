@@ -63,7 +63,7 @@ import org.schema.model.ImageObjectSnapshot;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
  * @see <a href="https://schema.org/ImageObjectSnapshot">https://schema.org/ImageObjectSnapshot</a>
  */
-@JsonLdTypeName("schema:ImageObjectSnapshot")
+@JsonLdTypeName("ImageObjectSnapshot")
 public class ImageObjectSnapshotImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ImageObjectSnapshot {
 
     private Text fEmbeddedTextCaption;

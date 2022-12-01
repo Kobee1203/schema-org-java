@@ -50,7 +50,7 @@ import org.schema.model.DanceGroup;
  *
  * @see <a href="https://schema.org/DanceGroup">https://schema.org/DanceGroup</a>
  */
-@JsonLdTypeName("schema:DanceGroup")
+@JsonLdTypeName("DanceGroup")
 public class DanceGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements DanceGroup {
 
     private Object fOwnershipFundingInfo;

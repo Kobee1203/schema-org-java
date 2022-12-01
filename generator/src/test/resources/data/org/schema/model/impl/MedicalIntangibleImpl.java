@@ -32,7 +32,7 @@ import org.schema.model.MedicalIntangible;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/MedicalIntangible">https://schema.org/MedicalIntangible</a>
  */
-@JsonLdTypeName("schema:MedicalIntangible")
+@JsonLdTypeName("MedicalIntangible")
 public class MedicalIntangibleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MedicalIntangible {
 
     private Object fLegalStatus;

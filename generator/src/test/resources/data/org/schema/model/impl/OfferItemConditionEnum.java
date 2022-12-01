@@ -25,7 +25,7 @@ import org.schema.model.OfferItemCondition;
  *
  * @see <a href="https://schema.org/OfferItemCondition">https://schema.org/OfferItemCondition</a>
  */
-@JsonLdTypeName("schema:OfferItemCondition")
+@JsonLdTypeName("OfferItemCondition")
 public enum OfferItemConditionEnum implements OfferItemCondition {
     DAMAGED_CONDITION("DamagedCondition"),
     REFURBISHED_CONDITION("RefurbishedCondition"),

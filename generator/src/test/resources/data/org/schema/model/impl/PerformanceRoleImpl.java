@@ -25,7 +25,7 @@ import org.schema.model.PerformanceRole;
  *
  * @see <a href="https://schema.org/PerformanceRole">https://schema.org/PerformanceRole</a>
  */
-@JsonLdTypeName("schema:PerformanceRole")
+@JsonLdTypeName("PerformanceRole")
 public class PerformanceRoleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PerformanceRole {
 
     private Text fCharacterName;

@@ -61,7 +61,7 @@ import com.weedow.schemaorg.commons.model.JsonLdTypeName;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_rNews">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_rNews</a>
  * @see <a href="https://schema.org/AudioObject">https://schema.org/AudioObject</a>
  */
-@JsonLdTypeName("schema:AudioObject")
+@JsonLdTypeName("AudioObject")
 public class AudioObjectImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements AudioObject {
 
     private Text fEmbeddedTextCaption;

@@ -28,7 +28,7 @@ import org.schema.model.AMRadioChannel;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
  * @see <a href="https://schema.org/AMRadioChannel">https://schema.org/AMRadioChannel</a>
  */
-@JsonLdTypeName("schema:AMRadioChannel")
+@JsonLdTypeName("AMRadioChannel")
 public class AMRadioChannelImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements AMRadioChannel {
 
     private Object fGenre;

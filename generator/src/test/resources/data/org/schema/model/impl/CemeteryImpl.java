@@ -37,7 +37,7 @@ import org.schema.model.Cemetery;
  *
  * @see <a href="https://schema.org/Cemetery">https://schema.org/Cemetery</a>
  */
-@JsonLdTypeName("schema:Cemetery")
+@JsonLdTypeName("Cemetery")
 public class CemeteryImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Cemetery {
 
     private Text fOpeningHours;

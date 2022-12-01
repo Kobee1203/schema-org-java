@@ -55,7 +55,7 @@ import org.schema.model.MotorizedBicycle;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
  * @see <a href="https://schema.org/MotorizedBicycle">https://schema.org/MotorizedBicycle</a>
  */
-@JsonLdTypeName("schema:MotorizedBicycle")
+@JsonLdTypeName("MotorizedBicycle")
 public class MotorizedBicycleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MotorizedBicycle {
 
     private QuantitativeValue fFuelCapacity;

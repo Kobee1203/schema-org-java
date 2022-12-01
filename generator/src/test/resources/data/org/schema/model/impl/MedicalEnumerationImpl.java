@@ -26,7 +26,7 @@ import org.schema.model.MedicalEnumeration;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/MedicalEnumeration">https://schema.org/MedicalEnumeration</a>
  */
-@JsonLdTypeName("schema:MedicalEnumeration")
+@JsonLdTypeName("MedicalEnumeration")
 public class MedicalEnumerationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MedicalEnumeration {
 
     private Object fSupersededBy;

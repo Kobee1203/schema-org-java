@@ -26,7 +26,7 @@ import org.schema.model.MusicReleaseFormatType;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
  * @see <a href="https://schema.org/MusicReleaseFormatType">https://schema.org/MusicReleaseFormatType</a>
  */
-@JsonLdTypeName("schema:MusicReleaseFormatType")
+@JsonLdTypeName("MusicReleaseFormatType")
 public enum MusicReleaseFormatTypeEnum implements MusicReleaseFormatType {
     CD_FORMAT("CDFormat"),
     DIGITAL_AUDIO_TAPE_FORMAT("DigitalAudioTapeFormat"),

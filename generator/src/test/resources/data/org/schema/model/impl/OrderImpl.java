@@ -37,7 +37,7 @@ import org.schema.model.Order;
  *
  * @see <a href="https://schema.org/Order">https://schema.org/Order</a>
  */
-@JsonLdTypeName("schema:Order")
+@JsonLdTypeName("Order")
 public class OrderImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Order {
 
     private ParcelDelivery fOrderDelivery;

@@ -32,7 +32,7 @@ import org.schema.model.CancelAction;
  *
  * @see <a href="https://schema.org/CancelAction">https://schema.org/CancelAction</a>
  */
-@JsonLdTypeName("schema:CancelAction")
+@JsonLdTypeName("CancelAction")
 public class CancelActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements CancelAction {
 
     private DateTime fScheduledTime;

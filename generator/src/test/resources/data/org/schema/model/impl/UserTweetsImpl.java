@@ -44,7 +44,7 @@ import org.schema.model.UserTweets;
  *
  * @see <a href="https://schema.org/UserTweets">https://schema.org/UserTweets</a>
  */
-@JsonLdTypeName("schema:UserTweets")
+@JsonLdTypeName("UserTweets")
 public class UserTweetsImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements UserTweets {
 
     private Event fSuperEvent;

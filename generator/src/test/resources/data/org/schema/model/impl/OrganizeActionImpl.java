@@ -30,7 +30,7 @@ import org.schema.model.OrganizeAction;
  *
  * @see <a href="https://schema.org/OrganizeAction">https://schema.org/OrganizeAction</a>
  */
-@JsonLdTypeName("schema:OrganizeAction")
+@JsonLdTypeName("OrganizeAction")
 public class OrganizeActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements OrganizeAction {
 
     private Object fAgent;

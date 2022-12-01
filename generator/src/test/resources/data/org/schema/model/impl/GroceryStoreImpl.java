@@ -60,7 +60,7 @@ import org.schema.model.GroceryStore;
  *
  * @see <a href="https://schema.org/GroceryStore">https://schema.org/GroceryStore</a>
  */
-@JsonLdTypeName("schema:GroceryStore")
+@JsonLdTypeName("GroceryStore")
 public class GroceryStoreImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements GroceryStore {
 
     private Organization fBranchOf;

@@ -27,7 +27,7 @@ import org.schema.model.BusinessEntityType;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass</a>
  * @see <a href="https://schema.org/BusinessEntityType">https://schema.org/BusinessEntityType</a>
  */
-@JsonLdTypeName("schema:BusinessEntityType")
+@JsonLdTypeName("BusinessEntityType")
 public class BusinessEntityTypeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements BusinessEntityType {
 
     private Object fSupersededBy;

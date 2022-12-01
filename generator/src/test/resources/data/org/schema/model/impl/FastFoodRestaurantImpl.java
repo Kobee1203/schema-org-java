@@ -62,7 +62,7 @@ import org.schema.model.FastFoodRestaurant;
  *
  * @see <a href="https://schema.org/FastFoodRestaurant">https://schema.org/FastFoodRestaurant</a>
  */
-@JsonLdTypeName("schema:FastFoodRestaurant")
+@JsonLdTypeName("FastFoodRestaurant")
 public class FastFoodRestaurantImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements FastFoodRestaurant {
 
     private Rating fStarRating;

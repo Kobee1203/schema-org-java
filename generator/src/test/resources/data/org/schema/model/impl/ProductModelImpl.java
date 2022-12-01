@@ -46,7 +46,7 @@ import com.weedow.schemaorg.commons.model.JsonLdTypeName;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass</a>
  * @see <a href="https://schema.org/ProductModel">https://schema.org/ProductModel</a>
  */
-@JsonLdTypeName("schema:ProductModel")
+@JsonLdTypeName("ProductModel")
 public class ProductModelImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ProductModel {
 
     private ProductModel fSuccessorOf;

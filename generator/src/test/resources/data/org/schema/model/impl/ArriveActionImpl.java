@@ -31,7 +31,7 @@ import org.schema.model.ArriveAction;
  *
  * @see <a href="https://schema.org/ArriveAction">https://schema.org/ArriveAction</a>
  */
-@JsonLdTypeName("schema:ArriveAction")
+@JsonLdTypeName("ArriveAction")
 public class ArriveActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ArriveAction {
 
     private Place fFromLocation;

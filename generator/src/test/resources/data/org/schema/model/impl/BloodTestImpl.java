@@ -37,7 +37,7 @@ import org.schema.model.BloodTest;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/BloodTest">https://schema.org/BloodTest</a>
  */
-@JsonLdTypeName("schema:BloodTest")
+@JsonLdTypeName("BloodTest")
 public class BloodTestImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements BloodTest {
 
     private MedicalCondition fUsedToDiagnose;

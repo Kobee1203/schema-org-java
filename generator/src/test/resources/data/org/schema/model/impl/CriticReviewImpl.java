@@ -60,7 +60,7 @@ import org.schema.model.CriticReview;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1589">https://github.com/schemaorg/schemaorg/issues/1589</a>
  * @see <a href="https://schema.org/CriticReview">https://schema.org/CriticReview</a>
  */
-@JsonLdTypeName("schema:CriticReview")
+@JsonLdTypeName("CriticReview")
 public class CriticReviewImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements CriticReview {
 
     private Rating fReviewRating;

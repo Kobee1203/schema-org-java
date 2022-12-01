@@ -27,7 +27,7 @@ import org.schema.model.HealthAspectEnumeration;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2374">https://github.com/schemaorg/schemaorg/issues/2374</a>
  * @see <a href="https://schema.org/HealthAspectEnumeration">https://schema.org/HealthAspectEnumeration</a>
  */
-@JsonLdTypeName("schema:HealthAspectEnumeration")
+@JsonLdTypeName("HealthAspectEnumeration")
 public enum HealthAspectEnumerationEnum implements HealthAspectEnumeration {
     SIDE_EFFECTS_HEALTH_ASPECT("SideEffectsHealthAspect"),
     ALLERGIES_HEALTH_ASPECT("AllergiesHealthAspect"),

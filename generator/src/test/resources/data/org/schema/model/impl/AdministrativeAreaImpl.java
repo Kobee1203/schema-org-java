@@ -36,7 +36,7 @@ import org.schema.model.AdministrativeArea;
  *
  * @see <a href="https://schema.org/AdministrativeArea">https://schema.org/AdministrativeArea</a>
  */
-@JsonLdTypeName("schema:AdministrativeArea")
+@JsonLdTypeName("AdministrativeArea")
 public class AdministrativeAreaImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements AdministrativeArea {
 
     private Text fTelephone;

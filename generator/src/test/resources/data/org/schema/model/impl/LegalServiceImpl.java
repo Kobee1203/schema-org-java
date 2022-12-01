@@ -59,7 +59,7 @@ import org.schema.model.LegalService;
  *
  * @see <a href="https://schema.org/LegalService">https://schema.org/LegalService</a>
  */
-@JsonLdTypeName("schema:LegalService")
+@JsonLdTypeName("LegalService")
 public class LegalServiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements LegalService {
 
     private Organization fBranchOf;

@@ -48,7 +48,7 @@ import com.weedow.schemaorg.commons.model.JsonLdTypeName;
  *
  * @see <a href="https://schema.org/Organization">https://schema.org/Organization</a>
  */
-@JsonLdTypeName("schema:Organization")
+@JsonLdTypeName("Organization")
 public class OrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Organization {
 
     private Object fOwnershipFundingInfo;

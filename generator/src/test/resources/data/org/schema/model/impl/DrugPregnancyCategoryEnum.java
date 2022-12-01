@@ -27,7 +27,7 @@ import org.schema.model.DrugPregnancyCategory;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/DrugPregnancyCategory">https://schema.org/DrugPregnancyCategory</a>
  */
-@JsonLdTypeName("schema:DrugPregnancyCategory")
+@JsonLdTypeName("DrugPregnancyCategory")
 public enum DrugPregnancyCategoryEnum implements DrugPregnancyCategory {
     FD_ACATEGORY_C("FDAcategoryC"),
     FD_ACATEGORY_A("FDAcategoryA"),

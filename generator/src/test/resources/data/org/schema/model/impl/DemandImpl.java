@@ -47,7 +47,7 @@ import org.schema.model.Demand;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass</a>
  * @see <a href="https://schema.org/Demand">https://schema.org/Demand</a>
  */
-@JsonLdTypeName("schema:Demand")
+@JsonLdTypeName("Demand")
 public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Demand {
 
     private Text fGtin12;

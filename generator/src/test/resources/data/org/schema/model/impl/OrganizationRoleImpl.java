@@ -26,7 +26,7 @@ import org.schema.model.OrganizationRole;
  *
  * @see <a href="https://schema.org/OrganizationRole">https://schema.org/OrganizationRole</a>
  */
-@JsonLdTypeName("schema:OrganizationRole")
+@JsonLdTypeName("OrganizationRole")
 public class OrganizationRoleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements OrganizationRole {
 
     private Number fNumberedPosition;

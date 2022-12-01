@@ -33,7 +33,7 @@ import org.schema.model.ListenAction;
  *
  * @see <a href="https://schema.org/ListenAction">https://schema.org/ListenAction</a>
  */
-@JsonLdTypeName("schema:ListenAction")
+@JsonLdTypeName("ListenAction")
 public class ListenActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ListenAction {
 
     private Offer fExpectsAcceptanceOf;

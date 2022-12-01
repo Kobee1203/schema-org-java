@@ -45,7 +45,7 @@ import org.schema.model.UserComments;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_rNews">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_rNews</a>
  * @see <a href="https://schema.org/UserComments">https://schema.org/UserComments</a>
  */
-@JsonLdTypeName("schema:UserComments")
+@JsonLdTypeName("UserComments")
 public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements UserComments {
 
     private URL fReplyToUrl;

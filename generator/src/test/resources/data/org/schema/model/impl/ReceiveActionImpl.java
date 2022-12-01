@@ -33,7 +33,7 @@ import org.schema.model.ReceiveAction;
  *
  * @see <a href="https://schema.org/ReceiveAction">https://schema.org/ReceiveAction</a>
  */
-@JsonLdTypeName("schema:ReceiveAction")
+@JsonLdTypeName("ReceiveAction")
 public class ReceiveActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ReceiveAction {
 
     private Object fSender;

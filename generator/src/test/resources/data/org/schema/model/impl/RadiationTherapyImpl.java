@@ -41,7 +41,7 @@ import org.schema.model.RadiationTherapy;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/RadiationTherapy">https://schema.org/RadiationTherapy</a>
  */
-@JsonLdTypeName("schema:RadiationTherapy")
+@JsonLdTypeName("RadiationTherapy")
 public class RadiationTherapyImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements RadiationTherapy {
 
     private MedicalTherapy fDuplicateTherapy;

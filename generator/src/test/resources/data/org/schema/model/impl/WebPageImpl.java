@@ -59,7 +59,7 @@ import com.weedow.schemaorg.commons.model.JsonLdTypeName;
  *
  * @see <a href="https://schema.org/WebPage">https://schema.org/WebPage</a>
  */
-@JsonLdTypeName("schema:WebPage")
+@JsonLdTypeName("WebPage")
 public class WebPageImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements WebPage {
 
     private Date fLastReviewed;

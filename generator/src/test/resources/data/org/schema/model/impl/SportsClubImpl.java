@@ -60,7 +60,7 @@ import org.schema.model.SportsClub;
  *
  * @see <a href="https://schema.org/SportsClub">https://schema.org/SportsClub</a>
  */
-@JsonLdTypeName("schema:SportsClub")
+@JsonLdTypeName("SportsClub")
 public class SportsClubImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements SportsClub {
 
     private Organization fBranchOf;

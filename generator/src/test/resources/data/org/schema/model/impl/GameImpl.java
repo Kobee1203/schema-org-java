@@ -57,7 +57,7 @@ import org.schema.model.Game;
  *
  * @see <a href="https://schema.org/Game">https://schema.org/Game</a>
  */
-@JsonLdTypeName("schema:Game")
+@JsonLdTypeName("Game")
 public class GameImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Game {
 
     private Thing fCharacterAttribute;

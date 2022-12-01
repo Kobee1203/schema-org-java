@@ -25,7 +25,7 @@ import org.schema.model.ContactPointOption;
  *
  * @see <a href="https://schema.org/ContactPointOption">https://schema.org/ContactPointOption</a>
  */
-@JsonLdTypeName("schema:ContactPointOption")
+@JsonLdTypeName("ContactPointOption")
 public enum ContactPointOptionEnum implements ContactPointOption {
     HEARING_IMPAIRED_SUPPORTED("HearingImpairedSupported"),
     TOLL_FREE("TollFree");

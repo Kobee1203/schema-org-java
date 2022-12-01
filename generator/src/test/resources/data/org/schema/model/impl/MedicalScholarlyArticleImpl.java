@@ -60,7 +60,7 @@ import org.schema.model.MedicalScholarlyArticle;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/MedicalScholarlyArticle">https://schema.org/MedicalScholarlyArticle</a>
  */
-@JsonLdTypeName("schema:MedicalScholarlyArticle")
+@JsonLdTypeName("MedicalScholarlyArticle")
 public class MedicalScholarlyArticleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MedicalScholarlyArticle {
 
     private Text fPublicationType;

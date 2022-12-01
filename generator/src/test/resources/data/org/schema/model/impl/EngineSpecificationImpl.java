@@ -26,7 +26,7 @@ import org.schema.model.EngineSpecification;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
  * @see <a href="https://schema.org/EngineSpecification">https://schema.org/EngineSpecification</a>
  */
-@JsonLdTypeName("schema:EngineSpecification")
+@JsonLdTypeName("EngineSpecification")
 public class EngineSpecificationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements EngineSpecification {
 
     private Object fFuelType;

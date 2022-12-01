@@ -58,7 +58,7 @@ import org.schema.model.SheetMusic;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1448">https://github.com/schemaorg/schemaorg/issues/1448</a>
  * @see <a href="https://schema.org/SheetMusic">https://schema.org/SheetMusic</a>
  */
-@JsonLdTypeName("schema:SheetMusic")
+@JsonLdTypeName("SheetMusic")
 public class SheetMusicImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements SheetMusic {
 
     private Object fTeaches;

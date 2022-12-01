@@ -33,7 +33,7 @@ import org.schema.model.MedicalDevice;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/MedicalDevice">https://schema.org/MedicalDevice</a>
  */
-@JsonLdTypeName("schema:MedicalDevice")
+@JsonLdTypeName("MedicalDevice")
 public class MedicalDeviceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MedicalDevice {
 
     private MedicalEntity fAdverseOutcome;

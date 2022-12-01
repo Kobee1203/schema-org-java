@@ -32,7 +32,7 @@ import org.schema.model.BedType;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1262">https://github.com/schemaorg/schemaorg/issues/1262</a>
  * @see <a href="https://schema.org/BedType">https://schema.org/BedType</a>
  */
-@JsonLdTypeName("schema:BedType")
+@JsonLdTypeName("BedType")
 public class BedTypeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements BedType {
 
     private Object fValueReference;

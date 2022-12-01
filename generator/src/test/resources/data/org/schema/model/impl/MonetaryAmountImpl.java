@@ -28,7 +28,7 @@ import org.schema.model.MonetaryAmount;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
  * @see <a href="https://schema.org/MonetaryAmount">https://schema.org/MonetaryAmount</a>
  */
-@JsonLdTypeName("schema:MonetaryAmount")
+@JsonLdTypeName("MonetaryAmount")
 public class MonetaryAmountImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MonetaryAmount {
 
     private Number fMaxValue;

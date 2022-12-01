@@ -60,7 +60,7 @@ import org.schema.model.AutoRepair;
  *
  * @see <a href="https://schema.org/AutoRepair">https://schema.org/AutoRepair</a>
  */
-@JsonLdTypeName("schema:AutoRepair")
+@JsonLdTypeName("AutoRepair")
 public class AutoRepairImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements AutoRepair {
 
     private Organization fBranchOf;

@@ -31,7 +31,7 @@ import org.schema.model.DiscoverAction;
  *
  * @see <a href="https://schema.org/DiscoverAction">https://schema.org/DiscoverAction</a>
  */
-@JsonLdTypeName("schema:DiscoverAction")
+@JsonLdTypeName("DiscoverAction")
 public class DiscoverActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements DiscoverAction {
 
     private Object fAgent;

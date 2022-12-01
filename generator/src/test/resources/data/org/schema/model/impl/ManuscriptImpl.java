@@ -58,7 +58,7 @@ import org.schema.model.Manuscript;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1448">https://github.com/schemaorg/schemaorg/issues/1448</a>
  * @see <a href="https://schema.org/Manuscript">https://schema.org/Manuscript</a>
  */
-@JsonLdTypeName("schema:Manuscript")
+@JsonLdTypeName("Manuscript")
 public class ManuscriptImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Manuscript {
 
     private Object fTeaches;

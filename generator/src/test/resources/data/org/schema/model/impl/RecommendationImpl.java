@@ -62,7 +62,7 @@ import org.schema.model.Recommendation;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2405">https://github.com/schemaorg/schemaorg/issues/2405</a>
  * @see <a href="https://schema.org/Recommendation">https://schema.org/Recommendation</a>
  */
-@JsonLdTypeName("schema:Recommendation")
+@JsonLdTypeName("Recommendation")
 public class RecommendationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Recommendation {
 
     private Object fCategory;

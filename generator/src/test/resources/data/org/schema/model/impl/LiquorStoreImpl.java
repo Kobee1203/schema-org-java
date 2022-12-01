@@ -60,7 +60,7 @@ import org.schema.model.LiquorStore;
  *
  * @see <a href="https://schema.org/LiquorStore">https://schema.org/LiquorStore</a>
  */
-@JsonLdTypeName("schema:LiquorStore")
+@JsonLdTypeName("LiquorStore")
 public class LiquorStoreImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements LiquorStore {
 
     private Organization fBranchOf;

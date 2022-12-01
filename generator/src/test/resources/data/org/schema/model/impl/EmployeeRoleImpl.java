@@ -29,7 +29,7 @@ import org.schema.model.EmployeeRole;
  *
  * @see <a href="https://schema.org/EmployeeRole">https://schema.org/EmployeeRole</a>
  */
-@JsonLdTypeName("schema:EmployeeRole")
+@JsonLdTypeName("EmployeeRole")
 public class EmployeeRoleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements EmployeeRole {
 
     private Text fSalaryCurrency;

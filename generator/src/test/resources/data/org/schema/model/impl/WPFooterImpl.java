@@ -59,7 +59,7 @@ import org.schema.model.WPFooter;
  *
  * @see <a href="https://schema.org/WPFooter">https://schema.org/WPFooter</a>
  */
-@JsonLdTypeName("schema:WPFooter")
+@JsonLdTypeName("WPFooter")
 public class WPFooterImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements WPFooter {
 
     private CssSelectorType fCssSelector;

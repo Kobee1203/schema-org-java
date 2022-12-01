@@ -58,7 +58,7 @@ import org.schema.model.Atlas;
  * @see <a href="http://www.productontology.org/id/Atlas">http://www.productontology.org/id/Atlas</a>
  * @see <a href="https://schema.org/Atlas">https://schema.org/Atlas</a>
  */
-@JsonLdTypeName("schema:Atlas")
+@JsonLdTypeName("Atlas")
 public class AtlasImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Atlas {
 
     private Object fTeaches;

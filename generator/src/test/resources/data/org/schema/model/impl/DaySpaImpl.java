@@ -60,7 +60,7 @@ import org.schema.model.DaySpa;
  *
  * @see <a href="https://schema.org/DaySpa">https://schema.org/DaySpa</a>
  */
-@JsonLdTypeName("schema:DaySpa")
+@JsonLdTypeName("DaySpa")
 public class DaySpaImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements DaySpa {
 
     private Organization fBranchOf;

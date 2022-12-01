@@ -27,7 +27,7 @@ import org.schema.model.Intangible;
  *
  * @see <a href="https://schema.org/OrderItem">https://schema.org/OrderItem</a>
  */
-@JsonLdTypeName("schema:OrderItem")
+@JsonLdTypeName("OrderItem")
 public class OrderItemImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements OrderItem {
 
     private ParcelDelivery fOrderDelivery;

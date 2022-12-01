@@ -45,7 +45,7 @@ import org.schema.model.BroadcastEvent;
  *
  * @see <a href="https://schema.org/BroadcastEvent">https://schema.org/BroadcastEvent</a>
  */
-@JsonLdTypeName("schema:BroadcastEvent")
+@JsonLdTypeName("BroadcastEvent")
 public class BroadcastEventImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements BroadcastEvent {
 
     private Object fSubtitleLanguage;

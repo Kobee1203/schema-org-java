@@ -35,7 +35,7 @@ import org.schema.model.CheckInAction;
  *
  * @see <a href="https://schema.org/CheckInAction">https://schema.org/CheckInAction</a>
  */
-@JsonLdTypeName("schema:CheckInAction")
+@JsonLdTypeName("CheckInAction")
 public class CheckInActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements CheckInAction {
 
     private Object fRecipient;

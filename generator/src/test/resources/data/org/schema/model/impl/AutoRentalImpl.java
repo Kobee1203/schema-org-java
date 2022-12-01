@@ -60,7 +60,7 @@ import org.schema.model.AutoRental;
  *
  * @see <a href="https://schema.org/AutoRental">https://schema.org/AutoRental</a>
  */
-@JsonLdTypeName("schema:AutoRental")
+@JsonLdTypeName("AutoRental")
 public class AutoRentalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements AutoRental {
 
     private Organization fBranchOf;

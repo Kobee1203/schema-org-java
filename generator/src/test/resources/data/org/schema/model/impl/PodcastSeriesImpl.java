@@ -62,7 +62,7 @@ import org.schema.model.PodcastSeries;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/373">https://github.com/schemaorg/schemaorg/issues/373</a>
  * @see <a href="https://schema.org/PodcastSeries">https://schema.org/PodcastSeries</a>
  */
-@JsonLdTypeName("schema:PodcastSeries")
+@JsonLdTypeName("PodcastSeries")
 public class PodcastSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PodcastSeries {
 
     private Person fActor;

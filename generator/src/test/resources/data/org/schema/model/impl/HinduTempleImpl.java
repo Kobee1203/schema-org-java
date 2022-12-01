@@ -38,7 +38,7 @@ import org.schema.model.HinduTemple;
  *
  * @see <a href="https://schema.org/HinduTemple">https://schema.org/HinduTemple</a>
  */
-@JsonLdTypeName("schema:HinduTemple")
+@JsonLdTypeName("HinduTemple")
 public class HinduTempleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements HinduTemple {
 
     private Text fOpeningHours;

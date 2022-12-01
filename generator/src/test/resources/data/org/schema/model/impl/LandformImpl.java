@@ -36,7 +36,7 @@ import org.schema.model.Landform;
  *
  * @see <a href="https://schema.org/Landform">https://schema.org/Landform</a>
  */
-@JsonLdTypeName("schema:Landform")
+@JsonLdTypeName("Landform")
 public class LandformImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Landform {
 
     private Text fTelephone;

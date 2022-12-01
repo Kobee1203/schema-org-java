@@ -60,7 +60,7 @@ import org.schema.model.NightClub;
  *
  * @see <a href="https://schema.org/NightClub">https://schema.org/NightClub</a>
  */
-@JsonLdTypeName("schema:NightClub")
+@JsonLdTypeName("NightClub")
 public class NightClubImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements NightClub {
 
     private Organization fBranchOf;

@@ -59,7 +59,7 @@ import org.schema.model.DiscussionForumPosting;
  *
  * @see <a href="https://schema.org/DiscussionForumPosting">https://schema.org/DiscussionForumPosting</a>
  */
-@JsonLdTypeName("schema:DiscussionForumPosting")
+@JsonLdTypeName("DiscussionForumPosting")
 public class DiscussionForumPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements DiscussionForumPosting {
 
     private CreativeWork fSharedContent;

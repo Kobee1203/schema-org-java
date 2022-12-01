@@ -38,7 +38,7 @@ import org.schema.model.Pond;
  *
  * @see <a href="https://schema.org/Pond">https://schema.org/Pond</a>
  */
-@JsonLdTypeName("schema:Pond")
+@JsonLdTypeName("Pond")
 public class PondImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Pond {
 
     private Text fTelephone;

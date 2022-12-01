@@ -57,7 +57,7 @@ import org.schema.model.Book;
  *
  * @see <a href="https://schema.org/Book">https://schema.org/Book</a>
  */
-@JsonLdTypeName("schema:Book")
+@JsonLdTypeName("Book")
 public class BookImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Book {
 
     private Text fIsbn;

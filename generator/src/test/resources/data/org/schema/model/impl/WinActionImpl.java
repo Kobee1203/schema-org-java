@@ -31,7 +31,7 @@ import org.schema.model.WinAction;
  *
  * @see <a href="https://schema.org/WinAction">https://schema.org/WinAction</a>
  */
-@JsonLdTypeName("schema:WinAction")
+@JsonLdTypeName("WinAction")
 public class WinActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements WinAction {
 
     private Person fLoser;

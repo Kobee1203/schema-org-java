@@ -33,7 +33,7 @@ import org.schema.model.Substance;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/Substance">https://schema.org/Substance</a>
  */
-@JsonLdTypeName("schema:Substance")
+@JsonLdTypeName("Substance")
 public class SubstanceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Substance {
 
     private MaximumDoseSchedule fMaximumIntake;

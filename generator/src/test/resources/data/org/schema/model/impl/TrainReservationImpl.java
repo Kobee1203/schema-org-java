@@ -31,7 +31,7 @@ import org.schema.model.TrainReservation;
  *
  * @see <a href="https://schema.org/TrainReservation">https://schema.org/TrainReservation</a>
  */
-@JsonLdTypeName("schema:TrainReservation")
+@JsonLdTypeName("TrainReservation")
 public class TrainReservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements TrainReservation {
 
     private DateTime fModifiedTime;

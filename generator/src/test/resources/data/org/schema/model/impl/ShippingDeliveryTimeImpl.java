@@ -28,7 +28,7 @@ import org.schema.model.ShippingDeliveryTime;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
  * @see <a href="https://schema.org/ShippingDeliveryTime">https://schema.org/ShippingDeliveryTime</a>
  */
-@JsonLdTypeName("schema:ShippingDeliveryTime")
+@JsonLdTypeName("ShippingDeliveryTime")
 public class ShippingDeliveryTimeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ShippingDeliveryTime {
 
     private QuantitativeValue fTransitTime;

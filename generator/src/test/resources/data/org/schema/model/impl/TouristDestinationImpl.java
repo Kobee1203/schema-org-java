@@ -43,7 +43,7 @@ import org.schema.model.TouristDestination;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
  * @see <a href="https://schema.org/TouristDestination">https://schema.org/TouristDestination</a>
  */
-@JsonLdTypeName("schema:TouristDestination")
+@JsonLdTypeName("TouristDestination")
 public class TouristDestinationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements TouristDestination {
 
     private Object fTouristType;

@@ -63,7 +63,7 @@ import org.schema.model.VideoGame;
  *
  * @see <a href="https://schema.org/VideoGame">https://schema.org/VideoGame</a>
  */
-@JsonLdTypeName("schema:VideoGame")
+@JsonLdTypeName("VideoGame")
 public class VideoGameImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements VideoGame {
 
     private Person fDirector;

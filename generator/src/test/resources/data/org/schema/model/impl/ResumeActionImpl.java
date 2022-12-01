@@ -31,7 +31,7 @@ import org.schema.model.ResumeAction;
  *
  * @see <a href="https://schema.org/ResumeAction">https://schema.org/ResumeAction</a>
  */
-@JsonLdTypeName("schema:ResumeAction")
+@JsonLdTypeName("ResumeAction")
 public class ResumeActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ResumeAction {
 
     private Object fAgent;

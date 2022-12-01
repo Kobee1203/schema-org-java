@@ -41,7 +41,7 @@ import org.schema.model.SingleFamilyResidence;
  *
  * @see <a href="https://schema.org/SingleFamilyResidence">https://schema.org/SingleFamilyResidence</a>
  */
-@JsonLdTypeName("schema:SingleFamilyResidence")
+@JsonLdTypeName("SingleFamilyResidence")
 public class SingleFamilyResidenceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements SingleFamilyResidence {
 
     private Object fNumberOfRooms;

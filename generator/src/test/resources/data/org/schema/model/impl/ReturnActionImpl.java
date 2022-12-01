@@ -33,7 +33,7 @@ import org.schema.model.ReturnAction;
  *
  * @see <a href="https://schema.org/ReturnAction">https://schema.org/ReturnAction</a>
  */
-@JsonLdTypeName("schema:ReturnAction")
+@JsonLdTypeName("ReturnAction")
 public class ReturnActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ReturnAction {
 
     private Object fRecipient;

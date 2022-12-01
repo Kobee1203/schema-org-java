@@ -30,7 +30,7 @@ import org.schema.model.Intangible;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass</a>
  * @see <a href="https://schema.org/QuantitativeValue">https://schema.org/QuantitativeValue</a>
  */
-@JsonLdTypeName("schema:QuantitativeValue")
+@JsonLdTypeName("QuantitativeValue")
 public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements QuantitativeValue {
 
     private Object fValueReference;

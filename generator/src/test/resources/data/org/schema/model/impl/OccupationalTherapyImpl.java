@@ -41,7 +41,7 @@ import org.schema.model.OccupationalTherapy;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/OccupationalTherapy">https://schema.org/OccupationalTherapy</a>
  */
-@JsonLdTypeName("schema:OccupationalTherapy")
+@JsonLdTypeName("OccupationalTherapy")
 public class OccupationalTherapyImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements OccupationalTherapy {
 
     private MedicalTherapy fDuplicateTherapy;

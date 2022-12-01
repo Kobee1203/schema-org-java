@@ -41,7 +41,7 @@ import org.schema.model.Taxi;
  *
  * @see <a href="https://schema.org/Taxi">https://schema.org/Taxi</a>
  */
-@JsonLdTypeName("schema:Taxi")
+@JsonLdTypeName("Taxi")
 public class TaxiImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Taxi {
 
     private Review fReview;

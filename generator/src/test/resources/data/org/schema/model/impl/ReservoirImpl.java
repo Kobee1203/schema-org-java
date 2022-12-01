@@ -38,7 +38,7 @@ import org.schema.model.Reservoir;
  *
  * @see <a href="https://schema.org/Reservoir">https://schema.org/Reservoir</a>
  */
-@JsonLdTypeName("schema:Reservoir")
+@JsonLdTypeName("Reservoir")
 public class ReservoirImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Reservoir {
 
     private Text fTelephone;

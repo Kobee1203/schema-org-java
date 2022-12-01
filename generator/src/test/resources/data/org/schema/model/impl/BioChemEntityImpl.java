@@ -27,7 +27,7 @@ import com.weedow.schemaorg.commons.model.JsonLdTypeName;
  * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
  * @see <a href="https://schema.org/BioChemEntity">https://schema.org/BioChemEntity</a>
  */
-@JsonLdTypeName("schema:BioChemEntity")
+@JsonLdTypeName("BioChemEntity")
 public class BioChemEntityImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements BioChemEntity {
 
     private Grant fFunding;

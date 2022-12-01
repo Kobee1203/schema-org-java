@@ -34,7 +34,7 @@ import org.schema.model.WearAction;
  *
  * @see <a href="https://schema.org/WearAction">https://schema.org/WearAction</a>
  */
-@JsonLdTypeName("schema:WearAction")
+@JsonLdTypeName("WearAction")
 public class WearActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements WearAction {
 
     private Offer fExpectsAcceptanceOf;

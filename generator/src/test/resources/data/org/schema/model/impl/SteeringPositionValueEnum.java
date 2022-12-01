@@ -31,7 +31,7 @@ import org.schema.model.SteeringPositionValue;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
  * @see <a href="https://schema.org/SteeringPositionValue">https://schema.org/SteeringPositionValue</a>
  */
-@JsonLdTypeName("schema:SteeringPositionValue")
+@JsonLdTypeName("SteeringPositionValue")
 public enum SteeringPositionValueEnum implements SteeringPositionValue {
     LEFT_HAND_DRIVING("LeftHandDriving"),
     RIGHT_HAND_DRIVING("RightHandDriving");

@@ -20,7 +20,7 @@ import com.weedow.schemaorg.commons.model.JsonLdTypeName;
  *
  * @see <a href="https://schema.org/Thing">https://schema.org/Thing</a>
  */
-@JsonLdTypeName("schema:Thing")
+@JsonLdTypeName("Thing")
 public class ThingImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Thing {
 
     private Object fMainEntityOfPage;

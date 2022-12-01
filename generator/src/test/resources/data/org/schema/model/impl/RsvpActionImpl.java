@@ -39,7 +39,7 @@ import org.schema.model.RsvpAction;
  *
  * @see <a href="https://schema.org/RsvpAction">https://schema.org/RsvpAction</a>
  */
-@JsonLdTypeName("schema:RsvpAction")
+@JsonLdTypeName("RsvpAction")
 public class RsvpActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements RsvpAction {
 
     private RsvpResponseType fRsvpResponse;

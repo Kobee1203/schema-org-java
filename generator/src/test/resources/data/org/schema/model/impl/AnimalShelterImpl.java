@@ -59,7 +59,7 @@ import org.schema.model.AnimalShelter;
  *
  * @see <a href="https://schema.org/AnimalShelter">https://schema.org/AnimalShelter</a>
  */
-@JsonLdTypeName("schema:AnimalShelter")
+@JsonLdTypeName("AnimalShelter")
 public class AnimalShelterImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements AnimalShelter {
 
     private Organization fBranchOf;

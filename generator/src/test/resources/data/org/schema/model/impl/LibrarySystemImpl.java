@@ -51,7 +51,7 @@ import org.schema.model.LibrarySystem;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1495">https://github.com/schemaorg/schemaorg/issues/1495</a>
  * @see <a href="https://schema.org/LibrarySystem">https://schema.org/LibrarySystem</a>
  */
-@JsonLdTypeName("schema:LibrarySystem")
+@JsonLdTypeName("LibrarySystem")
 public class LibrarySystemImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements LibrarySystem {
 
     private Object fOwnershipFundingInfo;

@@ -31,7 +31,7 @@ import org.schema.model.LendAction;
  *
  * @see <a href="https://schema.org/LendAction">https://schema.org/LendAction</a>
  */
-@JsonLdTypeName("schema:LendAction")
+@JsonLdTypeName("LendAction")
 public class LendActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements LendAction {
 
     private Person fBorrower;

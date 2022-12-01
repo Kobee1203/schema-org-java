@@ -33,7 +33,7 @@ import org.schema.model.UseAction;
  *
  * @see <a href="https://schema.org/UseAction">https://schema.org/UseAction</a>
  */
-@JsonLdTypeName("schema:UseAction")
+@JsonLdTypeName("UseAction")
 public class UseActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements UseAction {
 
     private Offer fExpectsAcceptanceOf;

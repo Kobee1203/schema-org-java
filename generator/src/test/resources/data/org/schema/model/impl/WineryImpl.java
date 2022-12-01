@@ -62,7 +62,7 @@ import org.schema.model.Winery;
  *
  * @see <a href="https://schema.org/Winery">https://schema.org/Winery</a>
  */
-@JsonLdTypeName("schema:Winery")
+@JsonLdTypeName("Winery")
 public class WineryImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Winery {
 
     private Rating fStarRating;

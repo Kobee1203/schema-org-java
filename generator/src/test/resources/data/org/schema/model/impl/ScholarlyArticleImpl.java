@@ -58,7 +58,7 @@ import org.schema.model.ScholarlyArticle;
  *
  * @see <a href="https://schema.org/ScholarlyArticle">https://schema.org/ScholarlyArticle</a>
  */
-@JsonLdTypeName("schema:ScholarlyArticle")
+@JsonLdTypeName("ScholarlyArticle")
 public class ScholarlyArticleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ScholarlyArticle {
 
     private Object fPageStart;

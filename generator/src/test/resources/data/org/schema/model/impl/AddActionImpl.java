@@ -31,7 +31,7 @@ import org.schema.model.AddAction;
  *
  * @see <a href="https://schema.org/AddAction">https://schema.org/AddAction</a>
  */
-@JsonLdTypeName("schema:AddAction")
+@JsonLdTypeName("AddAction")
 public class AddActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements AddAction {
 
     private Thing fTargetCollection;

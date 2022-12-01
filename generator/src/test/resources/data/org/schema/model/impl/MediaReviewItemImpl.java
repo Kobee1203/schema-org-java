@@ -58,7 +58,7 @@ import org.schema.model.MediaReviewItem;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
  * @see <a href="https://schema.org/MediaReviewItem">https://schema.org/MediaReviewItem</a>
  */
-@JsonLdTypeName("schema:MediaReviewItem")
+@JsonLdTypeName("MediaReviewItem")
 public class MediaReviewItemImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MediaReviewItem {
 
     private MediaObject fMediaItemAppearance;

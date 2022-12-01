@@ -60,7 +60,7 @@ import org.schema.model.HighSchool;
  *
  * @see <a href="https://schema.org/HighSchool">https://schema.org/HighSchool</a>
  */
-@JsonLdTypeName("schema:HighSchool")
+@JsonLdTypeName("HighSchool")
 public class HighSchoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements HighSchool {
 
     private Person fAlumni;

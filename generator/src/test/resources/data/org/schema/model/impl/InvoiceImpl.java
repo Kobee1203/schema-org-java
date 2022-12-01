@@ -34,7 +34,7 @@ import org.schema.model.Invoice;
  *
  * @see <a href="https://schema.org/Invoice">https://schema.org/Invoice</a>
  */
-@JsonLdTypeName("schema:Invoice")
+@JsonLdTypeName("Invoice")
 public class InvoiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Invoice {
 
     private Object fTotalPaymentDue;

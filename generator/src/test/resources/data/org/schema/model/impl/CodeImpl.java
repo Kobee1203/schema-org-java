@@ -56,7 +56,7 @@ import org.schema.model.Code;
  *
  * @see <a href="https://schema.org/Code">https://schema.org/Code</a>
  */
-@JsonLdTypeName("schema:Code")
+@JsonLdTypeName("Code")
 public class CodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Code {
 
     private Object fTeaches;

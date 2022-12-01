@@ -27,7 +27,7 @@ import org.schema.model.MediaManipulationRatingEnumeration;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
  * @see <a href="https://schema.org/MediaManipulationRatingEnumeration">https://schema.org/MediaManipulationRatingEnumeration</a>
  */
-@JsonLdTypeName("schema:MediaManipulationRatingEnumeration")
+@JsonLdTypeName("MediaManipulationRatingEnumeration")
 public enum MediaManipulationRatingEnumerationEnum implements MediaManipulationRatingEnumeration {
     ORIGINAL_MEDIA_CONTENT("OriginalMediaContent"),
     SATIRE_OR_PARODY_CONTENT("SatireOrParodyContent"),

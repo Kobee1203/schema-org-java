@@ -37,7 +37,7 @@ import org.schema.model.Park;
  *
  * @see <a href="https://schema.org/Park">https://schema.org/Park</a>
  */
-@JsonLdTypeName("schema:Park")
+@JsonLdTypeName("Park")
 public class ParkImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Park {
 
     private Text fOpeningHours;

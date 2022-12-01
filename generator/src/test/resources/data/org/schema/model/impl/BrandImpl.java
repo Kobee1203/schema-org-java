@@ -25,7 +25,7 @@ import org.schema.model.Brand;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass</a>
  * @see <a href="https://schema.org/Brand">https://schema.org/Brand</a>
  */
-@JsonLdTypeName("schema:Brand")
+@JsonLdTypeName("Brand")
 public class BrandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Brand {
 
     private Review fReview;

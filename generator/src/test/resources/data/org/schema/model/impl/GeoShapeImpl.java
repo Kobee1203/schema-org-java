@@ -27,7 +27,7 @@ import org.schema.model.GeoShape;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_rNews">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_rNews</a>
  * @see <a href="https://schema.org/GeoShape">https://schema.org/GeoShape</a>
  */
-@JsonLdTypeName("schema:GeoShape")
+@JsonLdTypeName("GeoShape")
 public class GeoShapeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements GeoShape {
 
     private Object fAddressCountry;

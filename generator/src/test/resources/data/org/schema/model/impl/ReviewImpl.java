@@ -57,7 +57,7 @@ import com.weedow.schemaorg.commons.model.JsonLdTypeName;
  *
  * @see <a href="https://schema.org/Review">https://schema.org/Review</a>
  */
-@JsonLdTypeName("schema:Review")
+@JsonLdTypeName("Review")
 public class ReviewImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Review {
 
     private Rating fReviewRating;

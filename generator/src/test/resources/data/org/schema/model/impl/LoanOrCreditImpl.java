@@ -49,7 +49,7 @@ import org.schema.model.LoanOrCredit;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
  * @see <a href="https://schema.org/LoanOrCredit">https://schema.org/LoanOrCredit</a>
  */
-@JsonLdTypeName("schema:LoanOrCredit")
+@JsonLdTypeName("LoanOrCredit")
 public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements LoanOrCredit {
 
     private Boolean fRenegotiableLoan;

@@ -60,7 +60,7 @@ import org.schema.model.HowToDirection;
  *
  * @see <a href="https://schema.org/HowToDirection">https://schema.org/HowToDirection</a>
  */
-@JsonLdTypeName("schema:HowToDirection")
+@JsonLdTypeName("HowToDirection")
 public class HowToDirectionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements HowToDirection {
 
     private Object fAfterMedia;

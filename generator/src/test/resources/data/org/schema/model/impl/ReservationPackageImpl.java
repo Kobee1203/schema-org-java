@@ -31,7 +31,7 @@ import org.schema.model.ReservationPackage;
  *
  * @see <a href="https://schema.org/ReservationPackage">https://schema.org/ReservationPackage</a>
  */
-@JsonLdTypeName("schema:ReservationPackage")
+@JsonLdTypeName("ReservationPackage")
 public class ReservationPackageImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ReservationPackage {
 
     private Reservation fSubReservation;

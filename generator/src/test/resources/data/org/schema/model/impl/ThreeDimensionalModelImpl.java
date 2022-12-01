@@ -64,7 +64,7 @@ import org.schema.model.ThreeDimensionalModel;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2140">https://github.com/schemaorg/schemaorg/issues/2140</a>
  * @see <a href="https://schema.org/ThreeDimensionalModel">https://schema.org/ThreeDimensionalModel</a>
  */
-@JsonLdTypeName("schema:3DModel")
+@JsonLdTypeName("3DModel")
 public class ThreeDimensionalModelImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ThreeDimensionalModel {
 
     private Boolean fIsResizable;

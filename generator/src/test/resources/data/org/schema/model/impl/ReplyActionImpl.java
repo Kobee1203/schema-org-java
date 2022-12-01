@@ -36,7 +36,7 @@ import org.schema.model.ReplyAction;
  *
  * @see <a href="https://schema.org/ReplyAction">https://schema.org/ReplyAction</a>
  */
-@JsonLdTypeName("schema:ReplyAction")
+@JsonLdTypeName("ReplyAction")
 public class ReplyActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ReplyAction {
 
     private Comment fResultComment;

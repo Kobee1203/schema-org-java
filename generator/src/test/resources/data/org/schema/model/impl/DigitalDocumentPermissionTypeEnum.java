@@ -25,7 +25,7 @@ import org.schema.model.DigitalDocumentPermissionType;
  *
  * @see <a href="https://schema.org/DigitalDocumentPermissionType">https://schema.org/DigitalDocumentPermissionType</a>
  */
-@JsonLdTypeName("schema:DigitalDocumentPermissionType")
+@JsonLdTypeName("DigitalDocumentPermissionType")
 public enum DigitalDocumentPermissionTypeEnum implements DigitalDocumentPermissionType {
     COMMENT_PERMISSION("CommentPermission"),
     READ_PERMISSION("ReadPermission"),

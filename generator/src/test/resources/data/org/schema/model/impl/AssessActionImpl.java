@@ -30,7 +30,7 @@ import org.schema.model.AssessAction;
  *
  * @see <a href="https://schema.org/AssessAction">https://schema.org/AssessAction</a>
  */
-@JsonLdTypeName("schema:AssessAction")
+@JsonLdTypeName("AssessAction")
 public class AssessActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements AssessAction {
 
     private Object fAgent;

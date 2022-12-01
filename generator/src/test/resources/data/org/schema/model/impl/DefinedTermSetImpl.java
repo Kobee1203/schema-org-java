@@ -58,7 +58,7 @@ import org.schema.model.DefinedTermSet;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
  * @see <a href="https://schema.org/DefinedTermSet">https://schema.org/DefinedTermSet</a>
  */
-@JsonLdTypeName("schema:DefinedTermSet")
+@JsonLdTypeName("DefinedTermSet")
 public class DefinedTermSetImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements DefinedTermSet {
 
     private DefinedTerm fHasDefinedTerm;

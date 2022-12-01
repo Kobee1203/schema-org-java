@@ -51,7 +51,7 @@ import org.schema.model.OnlineBusiness;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/3028">https://github.com/schemaorg/schemaorg/issues/3028</a>
  * @see <a href="https://schema.org/OnlineBusiness">https://schema.org/OnlineBusiness</a>
  */
-@JsonLdTypeName("schema:OnlineBusiness")
+@JsonLdTypeName("OnlineBusiness")
 public class OnlineBusinessImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements OnlineBusiness {
 
     private Object fOwnershipFundingInfo;

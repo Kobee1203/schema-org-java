@@ -57,7 +57,7 @@ import com.weedow.schemaorg.commons.model.JsonLdTypeName;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
  * @see <a href="https://schema.org/CorrectionComment">https://schema.org/CorrectionComment</a>
  */
-@JsonLdTypeName("schema:CorrectionComment")
+@JsonLdTypeName("CorrectionComment")
 public class CorrectionCommentImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements CorrectionComment {
 
     private Comment fParentItem;

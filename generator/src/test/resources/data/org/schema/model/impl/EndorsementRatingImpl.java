@@ -32,7 +32,7 @@ import org.schema.model.EndorsementRating;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1293">https://github.com/schemaorg/schemaorg/issues/1293</a>
  * @see <a href="https://schema.org/EndorsementRating">https://schema.org/EndorsementRating</a>
  */
-@JsonLdTypeName("schema:EndorsementRating")
+@JsonLdTypeName("EndorsementRating")
 public class EndorsementRatingImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements EndorsementRating {
 
     private Text fReviewAspect;

@@ -66,7 +66,7 @@ import org.schema.model.MedicalClinic;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/MedicalClinic">https://schema.org/MedicalClinic</a>
  */
-@JsonLdTypeName("schema:MedicalClinic")
+@JsonLdTypeName("MedicalClinic")
 public class MedicalClinicImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MedicalClinic {
 
     private Object fAvailableService;

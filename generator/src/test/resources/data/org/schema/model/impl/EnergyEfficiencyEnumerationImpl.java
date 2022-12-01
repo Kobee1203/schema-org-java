@@ -27,7 +27,7 @@ import org.schema.model.EnergyEfficiencyEnumeration;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2670">https://github.com/schemaorg/schemaorg/issues/2670</a>
  * @see <a href="https://schema.org/EnergyEfficiencyEnumeration">https://schema.org/EnergyEfficiencyEnumeration</a>
  */
-@JsonLdTypeName("schema:EnergyEfficiencyEnumeration")
+@JsonLdTypeName("EnergyEfficiencyEnumeration")
 public class EnergyEfficiencyEnumerationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements EnergyEfficiencyEnumeration {
 
     private Object fSupersededBy;

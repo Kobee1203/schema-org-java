@@ -50,7 +50,7 @@ import org.schema.model.Corporation;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_rNews">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_rNews</a>
  * @see <a href="https://schema.org/Corporation">https://schema.org/Corporation</a>
  */
-@JsonLdTypeName("schema:Corporation")
+@JsonLdTypeName("Corporation")
 public class CorporationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Corporation {
 
     private Text fTickerSymbol;

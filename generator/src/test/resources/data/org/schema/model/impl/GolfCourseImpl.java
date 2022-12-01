@@ -60,7 +60,7 @@ import org.schema.model.GolfCourse;
  *
  * @see <a href="https://schema.org/GolfCourse">https://schema.org/GolfCourse</a>
  */
-@JsonLdTypeName("schema:GolfCourse")
+@JsonLdTypeName("GolfCourse")
 public class GolfCourseImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements GolfCourse {
 
     private Organization fBranchOf;

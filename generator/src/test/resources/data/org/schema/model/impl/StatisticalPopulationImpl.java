@@ -29,7 +29,7 @@ import org.schema.model.StatisticalPopulation;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
  * @see <a href="https://schema.org/StatisticalPopulation">https://schema.org/StatisticalPopulation</a>
  */
-@JsonLdTypeName("schema:StatisticalPopulation")
+@JsonLdTypeName("StatisticalPopulation")
 public class StatisticalPopulationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements StatisticalPopulation {
 
     private Class fPopulationType;

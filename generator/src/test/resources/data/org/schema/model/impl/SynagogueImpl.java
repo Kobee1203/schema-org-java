@@ -38,7 +38,7 @@ import org.schema.model.Synagogue;
  *
  * @see <a href="https://schema.org/Synagogue">https://schema.org/Synagogue</a>
  */
-@JsonLdTypeName("schema:Synagogue")
+@JsonLdTypeName("Synagogue")
 public class SynagogueImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Synagogue {
 
     private Text fOpeningHours;

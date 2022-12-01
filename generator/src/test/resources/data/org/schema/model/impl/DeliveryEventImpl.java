@@ -44,7 +44,7 @@ import org.schema.model.DeliveryEvent;
  *
  * @see <a href="https://schema.org/DeliveryEvent">https://schema.org/DeliveryEvent</a>
  */
-@JsonLdTypeName("schema:DeliveryEvent")
+@JsonLdTypeName("DeliveryEvent")
 public class DeliveryEventImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements DeliveryEvent {
 
     private Text fAccessCode;

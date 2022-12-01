@@ -27,7 +27,7 @@ import org.schema.model.AggregateRating;
  *
  * @see <a href="https://schema.org/AggregateRating">https://schema.org/AggregateRating</a>
  */
-@JsonLdTypeName("schema:AggregateRating")
+@JsonLdTypeName("AggregateRating")
 public class AggregateRatingImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements AggregateRating {
 
     private Thing fItemReviewed;

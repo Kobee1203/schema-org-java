@@ -43,7 +43,7 @@ import org.schema.model.LiteraryEvent;
  *
  * @see <a href="https://schema.org/LiteraryEvent">https://schema.org/LiteraryEvent</a>
  */
-@JsonLdTypeName("schema:LiteraryEvent")
+@JsonLdTypeName("LiteraryEvent")
 public class LiteraryEventImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements LiteraryEvent {
 
     private Event fSuperEvent;

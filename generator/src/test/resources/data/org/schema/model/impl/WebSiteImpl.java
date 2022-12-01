@@ -56,7 +56,7 @@ import org.schema.model.WebSite;
  *
  * @see <a href="https://schema.org/WebSite">https://schema.org/WebSite</a>
  */
-@JsonLdTypeName("schema:WebSite")
+@JsonLdTypeName("WebSite")
 public class WebSiteImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements WebSite {
 
     private Text fIssn;

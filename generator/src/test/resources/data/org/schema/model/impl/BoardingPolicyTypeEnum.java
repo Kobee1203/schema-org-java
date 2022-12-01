@@ -25,7 +25,7 @@ import org.schema.model.BoardingPolicyType;
  *
  * @see <a href="https://schema.org/BoardingPolicyType">https://schema.org/BoardingPolicyType</a>
  */
-@JsonLdTypeName("schema:BoardingPolicyType")
+@JsonLdTypeName("BoardingPolicyType")
 public enum BoardingPolicyTypeEnum implements BoardingPolicyType {
     GROUP_BOARDING_POLICY("GroupBoardingPolicy"),
     ZONE_BOARDING_POLICY("ZoneBoardingPolicy");

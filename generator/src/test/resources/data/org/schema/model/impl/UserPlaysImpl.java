@@ -44,7 +44,7 @@ import org.schema.model.UserPlays;
  *
  * @see <a href="https://schema.org/UserPlays">https://schema.org/UserPlays</a>
  */
-@JsonLdTypeName("schema:UserPlays")
+@JsonLdTypeName("UserPlays")
 public class UserPlaysImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements UserPlays {
 
     private Event fSuperEvent;

@@ -54,7 +54,7 @@ import org.schema.model.Project;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
  * @see <a href="https://schema.org/Project">https://schema.org/Project</a>
  */
-@JsonLdTypeName("schema:Project")
+@JsonLdTypeName("Project")
 public class ProjectImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Project {
 
     private Object fOwnershipFundingInfo;

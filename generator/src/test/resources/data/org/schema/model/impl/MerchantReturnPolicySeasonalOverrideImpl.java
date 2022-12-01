@@ -28,7 +28,7 @@ import org.schema.model.MerchantReturnPolicySeasonalOverride;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
  * @see <a href="https://schema.org/MerchantReturnPolicySeasonalOverride">https://schema.org/MerchantReturnPolicySeasonalOverride</a>
  */
-@JsonLdTypeName("schema:MerchantReturnPolicySeasonalOverride")
+@JsonLdTypeName("MerchantReturnPolicySeasonalOverride")
 public class MerchantReturnPolicySeasonalOverrideImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MerchantReturnPolicySeasonalOverride {
 
     private MerchantReturnEnumeration fReturnPolicyCategory;

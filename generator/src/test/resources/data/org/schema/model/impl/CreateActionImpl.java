@@ -30,7 +30,7 @@ import org.schema.model.CreateAction;
  *
  * @see <a href="https://schema.org/CreateAction">https://schema.org/CreateAction</a>
  */
-@JsonLdTypeName("schema:CreateAction")
+@JsonLdTypeName("CreateAction")
 public class CreateActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements CreateAction {
 
     private Object fAgent;

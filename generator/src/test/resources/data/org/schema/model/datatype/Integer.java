@@ -12,7 +12,7 @@ import com.weedow.schemaorg.commons.model.JsonLdTypeName;
  *
  * @see <a href="https://schema.org/Integer">https://schema.org/Integer</a>
  */
-@JsonLdTypeName("schema:Integer")
+@JsonLdTypeName("Integer")
 public class Integer extends Number {
 
     Integer(java.lang.Integer value) {

@@ -59,7 +59,7 @@ import org.schema.model.Quiz;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2611">https://github.com/schemaorg/schemaorg/issues/2611</a>
  * @see <a href="https://schema.org/Quiz">https://schema.org/Quiz</a>
  */
-@JsonLdTypeName("schema:Quiz")
+@JsonLdTypeName("Quiz")
 public class QuizImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Quiz {
 
     private Object fTeaches;

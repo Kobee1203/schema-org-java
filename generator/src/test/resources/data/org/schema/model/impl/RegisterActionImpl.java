@@ -31,7 +31,7 @@ import org.schema.model.RegisterAction;
  *
  * @see <a href="https://schema.org/RegisterAction">https://schema.org/RegisterAction</a>
  */
-@JsonLdTypeName("schema:RegisterAction")
+@JsonLdTypeName("RegisterAction")
 public class RegisterActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements RegisterAction {
 
     private Object fAgent;

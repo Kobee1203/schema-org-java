@@ -66,7 +66,7 @@ import org.schema.model.SkiResort;
  *
  * @see <a href="https://schema.org/SkiResort">https://schema.org/SkiResort</a>
  */
-@JsonLdTypeName("schema:SkiResort")
+@JsonLdTypeName("SkiResort")
 public class SkiResortImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements SkiResort {
 
     private Organization fBranchOf;

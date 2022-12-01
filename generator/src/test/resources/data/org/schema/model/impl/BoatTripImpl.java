@@ -34,7 +34,7 @@ import org.schema.model.BoatTrip;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1755">https://github.com/schemaorg/schemaorg/issues/1755</a>
  * @see <a href="https://schema.org/BoatTrip">https://schema.org/BoatTrip</a>
  */
-@JsonLdTypeName("schema:BoatTrip")
+@JsonLdTypeName("BoatTrip")
 public class BoatTripImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements BoatTrip {
 
     private BoatTerminal fArrivalBoatTerminal;

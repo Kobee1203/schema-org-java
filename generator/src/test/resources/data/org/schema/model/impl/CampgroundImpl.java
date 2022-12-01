@@ -69,7 +69,7 @@ import org.schema.model.Campground;
  * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
  * @see <a href="https://schema.org/Campground">https://schema.org/Campground</a>
  */
-@JsonLdTypeName("schema:Campground")
+@JsonLdTypeName("Campground")
 public class CampgroundImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Campground {
 
     private Object fNumberOfRooms;

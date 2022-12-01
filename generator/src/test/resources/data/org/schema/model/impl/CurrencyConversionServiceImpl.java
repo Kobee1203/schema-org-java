@@ -45,7 +45,7 @@ import org.schema.model.CurrencyConversionService;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
  * @see <a href="https://schema.org/CurrencyConversionService">https://schema.org/CurrencyConversionService</a>
  */
-@JsonLdTypeName("schema:CurrencyConversionService")
+@JsonLdTypeName("CurrencyConversionService")
 public class CurrencyConversionServiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements CurrencyConversionService {
 
     private Object fAnnualPercentageRate;

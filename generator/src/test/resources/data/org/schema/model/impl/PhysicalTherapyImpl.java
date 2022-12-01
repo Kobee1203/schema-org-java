@@ -41,7 +41,7 @@ import org.schema.model.PhysicalTherapy;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/PhysicalTherapy">https://schema.org/PhysicalTherapy</a>
  */
-@JsonLdTypeName("schema:PhysicalTherapy")
+@JsonLdTypeName("PhysicalTherapy")
 public class PhysicalTherapyImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PhysicalTherapy {
 
     private MedicalTherapy fDuplicateTherapy;

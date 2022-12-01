@@ -25,7 +25,7 @@ import org.schema.model.AlignmentObject;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_LRMIClass">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_LRMIClass</a>
  * @see <a href="https://schema.org/AlignmentObject">https://schema.org/AlignmentObject</a>
  */
-@JsonLdTypeName("schema:AlignmentObject")
+@JsonLdTypeName("AlignmentObject")
 public class AlignmentObjectImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements AlignmentObject {
 
     private Text fAlignmentType;

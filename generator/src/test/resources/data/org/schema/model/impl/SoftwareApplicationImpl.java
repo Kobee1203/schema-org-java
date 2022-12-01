@@ -57,7 +57,7 @@ import com.weedow.schemaorg.commons.model.JsonLdTypeName;
  *
  * @see <a href="https://schema.org/SoftwareApplication">https://schema.org/SoftwareApplication</a>
  */
-@JsonLdTypeName("schema:SoftwareApplication")
+@JsonLdTypeName("SoftwareApplication")
 public class SoftwareApplicationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements SoftwareApplication {
 
     private Text fCountriesSupported;

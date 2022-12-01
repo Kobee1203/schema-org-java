@@ -29,7 +29,7 @@ import org.schema.model.EmployerAggregateRating;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1689">https://github.com/schemaorg/schemaorg/issues/1689</a>
  * @see <a href="https://schema.org/EmployerAggregateRating">https://schema.org/EmployerAggregateRating</a>
  */
-@JsonLdTypeName("schema:EmployerAggregateRating")
+@JsonLdTypeName("EmployerAggregateRating")
 public class EmployerAggregateRatingImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements EmployerAggregateRating {
 
     private Thing fItemReviewed;

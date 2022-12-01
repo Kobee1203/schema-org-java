@@ -31,7 +31,7 @@ import org.schema.model.DriveWheelConfigurationValue;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
  * @see <a href="https://schema.org/DriveWheelConfigurationValue">https://schema.org/DriveWheelConfigurationValue</a>
  */
-@JsonLdTypeName("schema:DriveWheelConfigurationValue")
+@JsonLdTypeName("DriveWheelConfigurationValue")
 public enum DriveWheelConfigurationValueEnum implements DriveWheelConfigurationValue {
     FRONT_WHEEL_DRIVE_CONFIGURATION("FrontWheelDriveConfiguration"),
     FOUR_WHEEL_DRIVE_CONFIGURATION("FourWheelDriveConfiguration"),

@@ -60,7 +60,7 @@ import com.weedow.schemaorg.commons.model.JsonLdTypeName;
  *
  * @see <a href="https://schema.org/ImageObject">https://schema.org/ImageObject</a>
  */
-@JsonLdTypeName("schema:ImageObject")
+@JsonLdTypeName("ImageObject")
 public class ImageObjectImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ImageObject {
 
     private Text fEmbeddedTextCaption;

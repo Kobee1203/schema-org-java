@@ -37,7 +37,7 @@ import org.schema.model.GovernmentBuilding;
  *
  * @see <a href="https://schema.org/GovernmentBuilding">https://schema.org/GovernmentBuilding</a>
  */
-@JsonLdTypeName("schema:GovernmentBuilding")
+@JsonLdTypeName("GovernmentBuilding")
 public class GovernmentBuildingImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements GovernmentBuilding {
 
     private Text fOpeningHours;

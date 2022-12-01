@@ -32,7 +32,7 @@ import org.schema.model.PostalAddress;
  *
  * @see <a href="https://schema.org/PostalAddress">https://schema.org/PostalAddress</a>
  */
-@JsonLdTypeName("schema:PostalAddress")
+@JsonLdTypeName("PostalAddress")
 public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PostalAddress {
 
     private Object fAddressCountry;

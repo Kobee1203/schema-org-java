@@ -26,7 +26,7 @@ import org.schema.model.StatusEnumeration;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2604">https://github.com/schemaorg/schemaorg/issues/2604</a>
  * @see <a href="https://schema.org/StatusEnumeration">https://schema.org/StatusEnumeration</a>
  */
-@JsonLdTypeName("schema:StatusEnumeration")
+@JsonLdTypeName("StatusEnumeration")
 public class StatusEnumerationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements StatusEnumeration {
 
     private Object fSupersededBy;

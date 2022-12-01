@@ -60,7 +60,7 @@ import org.schema.model.CheckoutPage;
  *
  * @see <a href="https://schema.org/CheckoutPage">https://schema.org/CheckoutPage</a>
  */
-@JsonLdTypeName("schema:CheckoutPage")
+@JsonLdTypeName("CheckoutPage")
 public class CheckoutPageImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements CheckoutPage {
 
     private Date fLastReviewed;

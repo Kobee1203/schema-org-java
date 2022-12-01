@@ -28,7 +28,7 @@ import org.schema.model.MedicalTrialDesign;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_WikiDoc">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_WikiDoc</a>
  * @see <a href="https://schema.org/MedicalTrialDesign">https://schema.org/MedicalTrialDesign</a>
  */
-@JsonLdTypeName("schema:MedicalTrialDesign")
+@JsonLdTypeName("MedicalTrialDesign")
 public enum MedicalTrialDesignEnum implements MedicalTrialDesign {
     PLACEBO_CONTROLLED_TRIAL("PlaceboControlledTrial"),
     DOUBLE_BLINDED_TRIAL("DoubleBlindedTrial"),

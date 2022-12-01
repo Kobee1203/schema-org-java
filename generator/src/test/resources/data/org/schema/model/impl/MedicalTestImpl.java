@@ -36,7 +36,7 @@ import org.schema.model.MedicalTest;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/MedicalTest">https://schema.org/MedicalTest</a>
  */
-@JsonLdTypeName("schema:MedicalTest")
+@JsonLdTypeName("MedicalTest")
 public class MedicalTestImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MedicalTest {
 
     private MedicalCondition fUsedToDiagnose;

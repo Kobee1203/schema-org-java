@@ -59,7 +59,7 @@ import org.schema.model.EducationalOccupationalCredential;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
  * @see <a href="https://schema.org/EducationalOccupationalCredential">https://schema.org/EducationalOccupationalCredential</a>
  */
-@JsonLdTypeName("schema:EducationalOccupationalCredential")
+@JsonLdTypeName("EducationalOccupationalCredential")
 public class EducationalOccupationalCredentialImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements EducationalOccupationalCredential {
 
     private Duration fValidFor;

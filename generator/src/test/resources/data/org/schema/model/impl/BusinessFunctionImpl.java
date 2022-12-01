@@ -27,7 +27,7 @@ import org.schema.model.BusinessFunction;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass</a>
  * @see <a href="https://schema.org/BusinessFunction">https://schema.org/BusinessFunction</a>
  */
-@JsonLdTypeName("schema:BusinessFunction")
+@JsonLdTypeName("BusinessFunction")
 public class BusinessFunctionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements BusinessFunction {
 
     private Object fSupersededBy;

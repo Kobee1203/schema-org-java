@@ -36,7 +36,7 @@ import org.schema.model.PlayGameAction;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/3058">https://github.com/schemaorg/schemaorg/issues/3058</a>
  * @see <a href="https://schema.org/PlayGameAction">https://schema.org/PlayGameAction</a>
  */
-@JsonLdTypeName("schema:PlayGameAction")
+@JsonLdTypeName("PlayGameAction")
 public class PlayGameActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PlayGameAction {
 
     private Object fGameAvailabilityType;

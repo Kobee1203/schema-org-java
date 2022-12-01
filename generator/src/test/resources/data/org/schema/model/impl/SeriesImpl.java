@@ -22,7 +22,7 @@ import org.schema.model.Series;
  *
  * @see <a href="https://schema.org/Series">https://schema.org/Series</a>
  */
-@JsonLdTypeName("schema:Series")
+@JsonLdTypeName("Series")
 public class SeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Series {
 
     private Object fMainEntityOfPage;

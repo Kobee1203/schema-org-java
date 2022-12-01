@@ -24,7 +24,7 @@ import org.schema.model.Intangible;
  *
  * @see <a href="https://schema.org/Enumeration">https://schema.org/Enumeration</a>
  */
-@JsonLdTypeName("schema:Enumeration")
+@JsonLdTypeName("Enumeration")
 public class EnumerationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Enumeration {
 
     private Object fSupersededBy;

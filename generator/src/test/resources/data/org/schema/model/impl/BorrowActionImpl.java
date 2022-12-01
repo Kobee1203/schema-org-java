@@ -31,7 +31,7 @@ import org.schema.model.BorrowAction;
  *
  * @see <a href="https://schema.org/BorrowAction">https://schema.org/BorrowAction</a>
  */
-@JsonLdTypeName("schema:BorrowAction")
+@JsonLdTypeName("BorrowAction")
 public class BorrowActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements BorrowAction {
 
     private Object fLender;

@@ -41,7 +41,7 @@ import org.schema.model.EducationalOccupationalProgram;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
  * @see <a href="https://schema.org/EducationalOccupationalProgram">https://schema.org/EducationalOccupationalProgram</a>
  */
-@JsonLdTypeName("schema:EducationalOccupationalProgram")
+@JsonLdTypeName("EducationalOccupationalProgram")
 public class EducationalOccupationalProgramImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements EducationalOccupationalProgram {
 
     private Object fProgramPrerequisites;

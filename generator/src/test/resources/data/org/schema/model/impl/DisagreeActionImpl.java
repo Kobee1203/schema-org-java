@@ -32,7 +32,7 @@ import org.schema.model.DisagreeAction;
  *
  * @see <a href="https://schema.org/DisagreeAction">https://schema.org/DisagreeAction</a>
  */
-@JsonLdTypeName("schema:DisagreeAction")
+@JsonLdTypeName("DisagreeAction")
 public class DisagreeActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements DisagreeAction {
 
     private Object fAgent;

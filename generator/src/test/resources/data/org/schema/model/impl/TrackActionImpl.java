@@ -32,7 +32,7 @@ import org.schema.model.TrackAction;
  *
  * @see <a href="https://schema.org/TrackAction">https://schema.org/TrackAction</a>
  */
-@JsonLdTypeName("schema:TrackAction")
+@JsonLdTypeName("TrackAction")
 public class TrackActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements TrackAction {
 
     private DeliveryMethod fDeliveryMethod;

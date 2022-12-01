@@ -26,7 +26,7 @@ import org.schema.model.TelevisionChannel;
  *
  * @see <a href="https://schema.org/TelevisionChannel">https://schema.org/TelevisionChannel</a>
  */
-@JsonLdTypeName("schema:TelevisionChannel")
+@JsonLdTypeName("TelevisionChannel")
 public class TelevisionChannelImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements TelevisionChannel {
 
     private Object fGenre;

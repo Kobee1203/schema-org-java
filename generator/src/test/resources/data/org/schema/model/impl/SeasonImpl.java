@@ -56,7 +56,7 @@ import org.schema.model.Season;
  *
  * @see <a href="https://schema.org/Season">https://schema.org/Season</a>
  */
-@JsonLdTypeName("schema:Season")
+@JsonLdTypeName("Season")
 public class SeasonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Season {
 
     private Object fTeaches;

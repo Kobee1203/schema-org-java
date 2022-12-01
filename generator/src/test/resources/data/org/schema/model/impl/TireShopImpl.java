@@ -60,7 +60,7 @@ import org.schema.model.TireShop;
  *
  * @see <a href="https://schema.org/TireShop">https://schema.org/TireShop</a>
  */
-@JsonLdTypeName("schema:TireShop")
+@JsonLdTypeName("TireShop")
 public class TireShopImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements TireShop {
 
     private Organization fBranchOf;

@@ -60,7 +60,7 @@ import org.schema.model.BikeStore;
  *
  * @see <a href="https://schema.org/BikeStore">https://schema.org/BikeStore</a>
  */
-@JsonLdTypeName("schema:BikeStore")
+@JsonLdTypeName("BikeStore")
 public class BikeStoreImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements BikeStore {
 
     private Organization fBranchOf;

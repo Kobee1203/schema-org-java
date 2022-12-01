@@ -29,7 +29,7 @@ import org.schema.model.ShippingRateSettings;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
  * @see <a href="https://schema.org/ShippingRateSettings">https://schema.org/ShippingRateSettings</a>
  */
-@JsonLdTypeName("schema:ShippingRateSettings")
+@JsonLdTypeName("ShippingRateSettings")
 public class ShippingRateSettingsImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ShippingRateSettings {
 
     private DefinedRegion fShippingDestination;

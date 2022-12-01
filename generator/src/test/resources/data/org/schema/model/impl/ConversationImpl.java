@@ -56,7 +56,7 @@ import org.schema.model.Conversation;
  *
  * @see <a href="https://schema.org/Conversation">https://schema.org/Conversation</a>
  */
-@JsonLdTypeName("schema:Conversation")
+@JsonLdTypeName("Conversation")
 public class ConversationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Conversation {
 
     private Object fTeaches;

@@ -60,7 +60,7 @@ import org.schema.model.PetStore;
  *
  * @see <a href="https://schema.org/PetStore">https://schema.org/PetStore</a>
  */
-@JsonLdTypeName("schema:PetStore")
+@JsonLdTypeName("PetStore")
 public class PetStoreImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PetStore {
 
     private Organization fBranchOf;

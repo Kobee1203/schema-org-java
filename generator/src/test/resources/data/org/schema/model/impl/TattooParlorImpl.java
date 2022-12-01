@@ -60,7 +60,7 @@ import org.schema.model.TattooParlor;
  *
  * @see <a href="https://schema.org/TattooParlor">https://schema.org/TattooParlor</a>
  */
-@JsonLdTypeName("schema:TattooParlor")
+@JsonLdTypeName("TattooParlor")
 public class TattooParlorImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements TattooParlor {
 
     private Organization fBranchOf;

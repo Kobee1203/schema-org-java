@@ -28,7 +28,7 @@ import org.schema.model.TypeAndQuantityNode;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass</a>
  * @see <a href="https://schema.org/TypeAndQuantityNode">https://schema.org/TypeAndQuantityNode</a>
  */
-@JsonLdTypeName("schema:TypeAndQuantityNode")
+@JsonLdTypeName("TypeAndQuantityNode")
 public class TypeAndQuantityNodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements TypeAndQuantityNode {
 
     private Text fUnitText;

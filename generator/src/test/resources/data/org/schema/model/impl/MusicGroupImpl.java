@@ -53,7 +53,7 @@ import org.schema.model.MusicGroup;
  *
  * @see <a href="https://schema.org/MusicGroup">https://schema.org/MusicGroup</a>
  */
-@JsonLdTypeName("schema:MusicGroup")
+@JsonLdTypeName("MusicGroup")
 public class MusicGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MusicGroup {
 
     private MusicRecording fTracks;

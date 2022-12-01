@@ -28,7 +28,7 @@ import org.schema.model.MedicalSpecialty;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/MedicalSpecialty">https://schema.org/MedicalSpecialty</a>
  */
-@JsonLdTypeName("schema:MedicalSpecialty")
+@JsonLdTypeName("MedicalSpecialty")
 public enum MedicalSpecialtyEnum implements MedicalSpecialty {
     CARDIOVASCULAR("Cardiovascular"),
     RENAL("Renal"),

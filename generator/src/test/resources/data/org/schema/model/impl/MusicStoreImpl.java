@@ -60,7 +60,7 @@ import org.schema.model.MusicStore;
  *
  * @see <a href="https://schema.org/MusicStore">https://schema.org/MusicStore</a>
  */
-@JsonLdTypeName("schema:MusicStore")
+@JsonLdTypeName("MusicStore")
 public class MusicStoreImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MusicStore {
 
     private Organization fBranchOf;

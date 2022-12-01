@@ -60,7 +60,7 @@ import org.schema.model.AdultEntertainment;
  *
  * @see <a href="https://schema.org/AdultEntertainment">https://schema.org/AdultEntertainment</a>
  */
-@JsonLdTypeName("schema:AdultEntertainment")
+@JsonLdTypeName("AdultEntertainment")
 public class AdultEntertainmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements AdultEntertainment {
 
     private Organization fBranchOf;

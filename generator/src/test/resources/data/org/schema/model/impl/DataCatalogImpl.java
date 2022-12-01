@@ -58,7 +58,7 @@ import org.schema.model.DataCatalog;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_DatasetClass">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_DatasetClass</a>
  * @see <a href="https://schema.org/DataCatalog">https://schema.org/DataCatalog</a>
  */
-@JsonLdTypeName("schema:DataCatalog")
+@JsonLdTypeName("DataCatalog")
 public class DataCatalogImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements DataCatalog {
 
     private Object fMeasurementTechnique;

@@ -44,7 +44,7 @@ import org.schema.model.MedicalCondition;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/MedicalCondition">https://schema.org/MedicalCondition</a>
  */
-@JsonLdTypeName("schema:MedicalCondition")
+@JsonLdTypeName("MedicalCondition")
 public class MedicalConditionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MedicalCondition {
 
     private Text fPossibleComplication;

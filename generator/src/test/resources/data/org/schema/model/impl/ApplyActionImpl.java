@@ -31,7 +31,7 @@ import org.schema.model.ApplyAction;
  *
  * @see <a href="https://schema.org/ApplyAction">https://schema.org/ApplyAction</a>
  */
-@JsonLdTypeName("schema:ApplyAction")
+@JsonLdTypeName("ApplyAction")
 public class ApplyActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ApplyAction {
 
     private Object fAgent;

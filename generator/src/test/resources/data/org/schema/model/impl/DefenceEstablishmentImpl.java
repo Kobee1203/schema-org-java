@@ -38,7 +38,7 @@ import org.schema.model.DefenceEstablishment;
  *
  * @see <a href="https://schema.org/DefenceEstablishment">https://schema.org/DefenceEstablishment</a>
  */
-@JsonLdTypeName("schema:DefenceEstablishment")
+@JsonLdTypeName("DefenceEstablishment")
 public class DefenceEstablishmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements DefenceEstablishment {
 
     private Text fOpeningHours;

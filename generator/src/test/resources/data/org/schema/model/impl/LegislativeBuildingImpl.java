@@ -38,7 +38,7 @@ import org.schema.model.LegislativeBuilding;
  *
  * @see <a href="https://schema.org/LegislativeBuilding">https://schema.org/LegislativeBuilding</a>
  */
-@JsonLdTypeName("schema:LegislativeBuilding")
+@JsonLdTypeName("LegislativeBuilding")
 public class LegislativeBuildingImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements LegislativeBuilding {
 
     private Text fOpeningHours;

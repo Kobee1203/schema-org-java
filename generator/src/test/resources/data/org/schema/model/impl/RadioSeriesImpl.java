@@ -62,7 +62,7 @@ import org.schema.model.RadioSeries;
  *
  * @see <a href="https://schema.org/RadioSeries">https://schema.org/RadioSeries</a>
  */
-@JsonLdTypeName("schema:RadioSeries")
+@JsonLdTypeName("RadioSeries")
 public class RadioSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements RadioSeries {
 
     private Object fSeason;

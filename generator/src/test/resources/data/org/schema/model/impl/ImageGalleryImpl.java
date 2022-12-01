@@ -62,7 +62,7 @@ import org.schema.model.ImageGallery;
  *
  * @see <a href="https://schema.org/ImageGallery">https://schema.org/ImageGallery</a>
  */
-@JsonLdTypeName("schema:ImageGallery")
+@JsonLdTypeName("ImageGallery")
 public class ImageGalleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ImageGallery {
 
     private Date fLastReviewed;

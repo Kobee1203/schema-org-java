@@ -69,7 +69,7 @@ import org.schema.model.ReportageNewsArticle;
  * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
  * @see <a href="https://schema.org/ReportageNewsArticle">https://schema.org/ReportageNewsArticle</a>
  */
-@JsonLdTypeName("schema:ReportageNewsArticle")
+@JsonLdTypeName("ReportageNewsArticle")
 public class ReportageNewsArticleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ReportageNewsArticle {
 
     private Text fPrintEdition;

@@ -60,7 +60,7 @@ import org.schema.model.HomeGoodsStore;
  *
  * @see <a href="https://schema.org/HomeGoodsStore">https://schema.org/HomeGoodsStore</a>
  */
-@JsonLdTypeName("schema:HomeGoodsStore")
+@JsonLdTypeName("HomeGoodsStore")
 public class HomeGoodsStoreImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements HomeGoodsStore {
 
     private Organization fBranchOf;

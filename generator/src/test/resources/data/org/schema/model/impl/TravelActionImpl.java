@@ -32,7 +32,7 @@ import org.schema.model.TravelAction;
  *
  * @see <a href="https://schema.org/TravelAction">https://schema.org/TravelAction</a>
  */
-@JsonLdTypeName("schema:TravelAction")
+@JsonLdTypeName("TravelAction")
 public class TravelActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements TravelAction {
 
     private Distance fDistance;

@@ -36,7 +36,7 @@ import org.schema.model.Ligament;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/Ligament">https://schema.org/Ligament</a>
  */
-@JsonLdTypeName("schema:Ligament")
+@JsonLdTypeName("Ligament")
 public class LigamentImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Ligament {
 
     private Text fBodyLocation;

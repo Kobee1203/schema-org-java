@@ -62,7 +62,7 @@ import org.schema.model.TVClip;
  *
  * @see <a href="https://schema.org/TVClip">https://schema.org/TVClip</a>
  */
-@JsonLdTypeName("schema:TVClip")
+@JsonLdTypeName("TVClip")
 public class TVClipImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements TVClip {
 
     private TVSeries fPartOfTVSeries;

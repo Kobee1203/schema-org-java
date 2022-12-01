@@ -42,7 +42,7 @@ import org.schema.model.WorkBasedProgram;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
  * @see <a href="https://schema.org/WorkBasedProgram">https://schema.org/WorkBasedProgram</a>
  */
-@JsonLdTypeName("schema:WorkBasedProgram")
+@JsonLdTypeName("WorkBasedProgram")
 public class WorkBasedProgramImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements WorkBasedProgram {
 
     private MonetaryAmountDistribution fTrainingSalary;

@@ -47,7 +47,7 @@ import org.schema.model.SomeProducts;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass</a>
  * @see <a href="https://schema.org/SomeProducts">https://schema.org/SomeProducts</a>
  */
-@JsonLdTypeName("schema:SomeProducts")
+@JsonLdTypeName("SomeProducts")
 public class SomeProductsImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements SomeProducts {
 
     private QuantitativeValue fInventoryLevel;

@@ -64,7 +64,7 @@ import org.schema.model.MediaReview;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
  * @see <a href="https://schema.org/MediaReview">https://schema.org/MediaReview</a>
  */
-@JsonLdTypeName("schema:MediaReview")
+@JsonLdTypeName("MediaReview")
 public class MediaReviewImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MediaReview {
 
     private Text fOriginalMediaContextDescription;

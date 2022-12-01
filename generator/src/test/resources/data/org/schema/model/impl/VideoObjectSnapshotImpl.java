@@ -64,7 +64,7 @@ import org.schema.model.VideoObjectSnapshot;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
  * @see <a href="https://schema.org/VideoObjectSnapshot">https://schema.org/VideoObjectSnapshot</a>
  */
-@JsonLdTypeName("schema:VideoObjectSnapshot")
+@JsonLdTypeName("VideoObjectSnapshot")
 public class VideoObjectSnapshotImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements VideoObjectSnapshot {
 
     private Text fEmbeddedTextCaption;

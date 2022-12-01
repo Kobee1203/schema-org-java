@@ -60,7 +60,7 @@ import org.schema.model.MobilePhoneStore;
  *
  * @see <a href="https://schema.org/MobilePhoneStore">https://schema.org/MobilePhoneStore</a>
  */
-@JsonLdTypeName("schema:MobilePhoneStore")
+@JsonLdTypeName("MobilePhoneStore")
 public class MobilePhoneStoreImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MobilePhoneStore {
 
     private Organization fBranchOf;

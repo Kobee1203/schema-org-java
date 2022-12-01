@@ -42,7 +42,7 @@ import org.schema.model.FoodService;
  * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
  * @see <a href="https://schema.org/FoodService">https://schema.org/FoodService</a>
  */
-@JsonLdTypeName("schema:FoodService")
+@JsonLdTypeName("FoodService")
 public class FoodServiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements FoodService {
 
     private Review fReview;

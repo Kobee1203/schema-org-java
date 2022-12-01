@@ -32,7 +32,7 @@ import org.schema.model.TrainTrip;
  *
  * @see <a href="https://schema.org/TrainTrip">https://schema.org/TrainTrip</a>
  */
-@JsonLdTypeName("schema:TrainTrip")
+@JsonLdTypeName("TrainTrip")
 public class TrainTripImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements TrainTrip {
 
     private Text fTrainName;

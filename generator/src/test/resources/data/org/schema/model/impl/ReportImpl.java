@@ -58,7 +58,7 @@ import org.schema.model.Report;
  *
  * @see <a href="https://schema.org/Report">https://schema.org/Report</a>
  */
-@JsonLdTypeName("schema:Report")
+@JsonLdTypeName("Report")
 public class ReportImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Report {
 
     private Text fReportNumber;

@@ -59,7 +59,7 @@ import org.schema.model.Dataset;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_DatasetClass">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_DatasetClass</a>
  * @see <a href="https://schema.org/Dataset">https://schema.org/Dataset</a>
  */
-@JsonLdTypeName("schema:Dataset")
+@JsonLdTypeName("Dataset")
 public class DatasetImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Dataset {
 
     private DataCatalog fCatalog;

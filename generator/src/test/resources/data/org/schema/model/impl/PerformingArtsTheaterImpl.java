@@ -37,7 +37,7 @@ import org.schema.model.PerformingArtsTheater;
  *
  * @see <a href="https://schema.org/PerformingArtsTheater">https://schema.org/PerformingArtsTheater</a>
  */
-@JsonLdTypeName("schema:PerformingArtsTheater")
+@JsonLdTypeName("PerformingArtsTheater")
 public class PerformingArtsTheaterImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PerformingArtsTheater {
 
     private Text fOpeningHours;

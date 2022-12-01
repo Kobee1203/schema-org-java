@@ -33,7 +33,7 @@ import org.schema.model.EatAction;
  *
  * @see <a href="https://schema.org/EatAction">https://schema.org/EatAction</a>
  */
-@JsonLdTypeName("schema:EatAction")
+@JsonLdTypeName("EatAction")
 public class EatActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements EatAction {
 
     private Offer fExpectsAcceptanceOf;

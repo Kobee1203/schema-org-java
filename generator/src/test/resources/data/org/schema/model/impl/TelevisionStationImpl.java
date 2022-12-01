@@ -59,7 +59,7 @@ import org.schema.model.TelevisionStation;
  *
  * @see <a href="https://schema.org/TelevisionStation">https://schema.org/TelevisionStation</a>
  */
-@JsonLdTypeName("schema:TelevisionStation")
+@JsonLdTypeName("TelevisionStation")
 public class TelevisionStationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements TelevisionStation {
 
     private Organization fBranchOf;

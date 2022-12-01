@@ -58,7 +58,7 @@ import org.schema.model.PresentationDigitalDocument;
  *
  * @see <a href="https://schema.org/PresentationDigitalDocument">https://schema.org/PresentationDigitalDocument</a>
  */
-@JsonLdTypeName("schema:PresentationDigitalDocument")
+@JsonLdTypeName("PresentationDigitalDocument")
 public class PresentationDigitalDocumentImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PresentationDigitalDocument {
 
     private DigitalDocumentPermission fHasDigitalDocumentPermission;

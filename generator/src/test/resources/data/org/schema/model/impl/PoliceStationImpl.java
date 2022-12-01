@@ -61,7 +61,7 @@ import org.schema.model.PoliceStation;
  *
  * @see <a href="https://schema.org/PoliceStation">https://schema.org/PoliceStation</a>
  */
-@JsonLdTypeName("schema:PoliceStation")
+@JsonLdTypeName("PoliceStation")
 public class PoliceStationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PoliceStation {
 
     private Text fOpeningHours;

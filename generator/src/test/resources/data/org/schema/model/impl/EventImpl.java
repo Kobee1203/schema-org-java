@@ -42,7 +42,7 @@ import com.weedow.schemaorg.commons.model.JsonLdTypeName;
  *
  * @see <a href="https://schema.org/Event">https://schema.org/Event</a>
  */
-@JsonLdTypeName("schema:Event")
+@JsonLdTypeName("Event")
 public class EventImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Event {
 
     private Event fSuperEvent;

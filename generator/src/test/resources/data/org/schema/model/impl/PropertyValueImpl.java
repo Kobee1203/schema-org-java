@@ -31,7 +31,7 @@ import org.schema.model.Intangible;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass</a>
  * @see <a href="https://schema.org/PropertyValue">https://schema.org/PropertyValue</a>
  */
-@JsonLdTypeName("schema:PropertyValue")
+@JsonLdTypeName("PropertyValue")
 public class PropertyValueImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PropertyValue {
 
     private Object fValueReference;

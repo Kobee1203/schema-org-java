@@ -56,7 +56,7 @@ import org.schema.model.Sculpture;
  *
  * @see <a href="https://schema.org/Sculpture">https://schema.org/Sculpture</a>
  */
-@JsonLdTypeName("schema:Sculpture")
+@JsonLdTypeName("Sculpture")
 public class SculptureImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Sculpture {
 
     private Object fTeaches;

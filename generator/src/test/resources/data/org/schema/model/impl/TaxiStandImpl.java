@@ -37,7 +37,7 @@ import org.schema.model.TaxiStand;
  *
  * @see <a href="https://schema.org/TaxiStand">https://schema.org/TaxiStand</a>
  */
-@JsonLdTypeName("schema:TaxiStand")
+@JsonLdTypeName("TaxiStand")
 public class TaxiStandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements TaxiStand {
 
     private Text fOpeningHours;

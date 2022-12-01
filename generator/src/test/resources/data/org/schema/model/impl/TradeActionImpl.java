@@ -32,7 +32,7 @@ import org.schema.model.TradeAction;
  *
  * @see <a href="https://schema.org/TradeAction">https://schema.org/TradeAction</a>
  */
-@JsonLdTypeName("schema:TradeAction")
+@JsonLdTypeName("TradeAction")
 public class TradeActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements TradeAction {
 
     private Text fPriceCurrency;

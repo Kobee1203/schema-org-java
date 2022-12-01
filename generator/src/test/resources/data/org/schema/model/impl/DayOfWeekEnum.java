@@ -29,7 +29,7 @@ import org.schema.model.DayOfWeek;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass</a>
  * @see <a href="https://schema.org/DayOfWeek">https://schema.org/DayOfWeek</a>
  */
-@JsonLdTypeName("schema:DayOfWeek")
+@JsonLdTypeName("DayOfWeek")
 public enum DayOfWeekEnum implements DayOfWeek {
     THURSDAY("Thursday"),
     SATURDAY("Saturday"),

@@ -31,7 +31,7 @@ import org.schema.model.CDCPMDRecord;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
  * @see <a href="https://schema.org/CDCPMDRecord">https://schema.org/CDCPMDRecord</a>
  */
-@JsonLdTypeName("schema:CDCPMDRecord")
+@JsonLdTypeName("CDCPMDRecord")
 public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements CDCPMDRecord {
 
     private Number fCvdNumBedsOcc;

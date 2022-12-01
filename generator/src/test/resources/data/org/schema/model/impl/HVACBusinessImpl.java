@@ -60,7 +60,7 @@ import org.schema.model.HVACBusiness;
  *
  * @see <a href="https://schema.org/HVACBusiness">https://schema.org/HVACBusiness</a>
  */
-@JsonLdTypeName("schema:HVACBusiness")
+@JsonLdTypeName("HVACBusiness")
 public class HVACBusinessImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements HVACBusiness {
 
     private Organization fBranchOf;

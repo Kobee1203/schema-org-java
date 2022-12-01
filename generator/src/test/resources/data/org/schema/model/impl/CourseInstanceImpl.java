@@ -43,7 +43,7 @@ import org.schema.model.CourseInstance;
  *
  * @see <a href="https://schema.org/CourseInstance">https://schema.org/CourseInstance</a>
  */
-@JsonLdTypeName("schema:CourseInstance")
+@JsonLdTypeName("CourseInstance")
 public class CourseInstanceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements CourseInstance {
 
     private Person fInstructor;

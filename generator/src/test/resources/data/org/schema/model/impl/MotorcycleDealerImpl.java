@@ -60,7 +60,7 @@ import org.schema.model.MotorcycleDealer;
  *
  * @see <a href="https://schema.org/MotorcycleDealer">https://schema.org/MotorcycleDealer</a>
  */
-@JsonLdTypeName("schema:MotorcycleDealer")
+@JsonLdTypeName("MotorcycleDealer")
 public class MotorcycleDealerImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MotorcycleDealer {
 
     private Organization fBranchOf;

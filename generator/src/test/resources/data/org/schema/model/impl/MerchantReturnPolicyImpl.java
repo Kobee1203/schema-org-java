@@ -38,7 +38,7 @@ import org.schema.model.MerchantReturnPolicy;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
  * @see <a href="https://schema.org/MerchantReturnPolicy">https://schema.org/MerchantReturnPolicy</a>
  */
-@JsonLdTypeName("schema:MerchantReturnPolicy")
+@JsonLdTypeName("MerchantReturnPolicy")
 public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MerchantReturnPolicy {
 
     private MerchantReturnEnumeration fReturnPolicyCategory;

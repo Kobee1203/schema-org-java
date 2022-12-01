@@ -59,7 +59,7 @@ import org.schema.model.ClaimReview;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1061">https://github.com/schemaorg/schemaorg/issues/1061</a>
  * @see <a href="https://schema.org/ClaimReview">https://schema.org/ClaimReview</a>
  */
-@JsonLdTypeName("schema:ClaimReview")
+@JsonLdTypeName("ClaimReview")
 public class ClaimReviewImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ClaimReview {
 
     private Text fClaimReviewed;

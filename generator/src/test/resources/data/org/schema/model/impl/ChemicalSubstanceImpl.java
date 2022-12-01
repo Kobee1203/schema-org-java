@@ -28,7 +28,7 @@ import org.schema.model.ChemicalSubstance;
  * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
  * @see <a href="https://schema.org/ChemicalSubstance">https://schema.org/ChemicalSubstance</a>
  */
-@JsonLdTypeName("schema:ChemicalSubstance")
+@JsonLdTypeName("ChemicalSubstance")
 public class ChemicalSubstanceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ChemicalSubstance {
 
     private Text fChemicalComposition;

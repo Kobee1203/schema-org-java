@@ -28,7 +28,7 @@ import org.schema.model.EnergyStarEnergyEfficiencyEnumeration;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2670">https://github.com/schemaorg/schemaorg/issues/2670</a>
  * @see <a href="https://schema.org/EnergyStarEnergyEfficiencyEnumeration">https://schema.org/EnergyStarEnergyEfficiencyEnumeration</a>
  */
-@JsonLdTypeName("schema:EnergyStarEnergyEfficiencyEnumeration")
+@JsonLdTypeName("EnergyStarEnergyEfficiencyEnumeration")
 public enum EnergyStarEnergyEfficiencyEnumerationEnum implements EnergyStarEnergyEfficiencyEnumeration {
     ENERGY_STAR_CERTIFIED("EnergyStarCertified");
 

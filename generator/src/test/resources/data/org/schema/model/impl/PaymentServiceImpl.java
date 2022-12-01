@@ -45,7 +45,7 @@ import org.schema.model.PaymentService;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
  * @see <a href="https://schema.org/PaymentService">https://schema.org/PaymentService</a>
  */
-@JsonLdTypeName("schema:PaymentService")
+@JsonLdTypeName("PaymentService")
 public class PaymentServiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PaymentService {
 
     private Object fAnnualPercentageRate;

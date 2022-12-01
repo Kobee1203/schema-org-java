@@ -52,7 +52,7 @@ import org.schema.model.MortgageLoan;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
  * @see <a href="https://schema.org/MortgageLoan">https://schema.org/MortgageLoan</a>
  */
-@JsonLdTypeName("schema:MortgageLoan")
+@JsonLdTypeName("MortgageLoan")
 public class MortgageLoanImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MortgageLoan {
 
     private MonetaryAmount fLoanMortgageMandateAmount;

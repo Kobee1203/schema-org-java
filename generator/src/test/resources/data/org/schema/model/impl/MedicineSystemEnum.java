@@ -27,7 +27,7 @@ import org.schema.model.MedicineSystem;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/MedicineSystem">https://schema.org/MedicineSystem</a>
  */
-@JsonLdTypeName("schema:MedicineSystem")
+@JsonLdTypeName("MedicineSystem")
 public enum MedicineSystemEnum implements MedicineSystem {
     HOMEOPATHIC("Homeopathic"),
     TRADITIONAL_CHINESE("TraditionalChinese"),

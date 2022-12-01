@@ -43,7 +43,7 @@ import org.schema.model.Festival;
  *
  * @see <a href="https://schema.org/Festival">https://schema.org/Festival</a>
  */
-@JsonLdTypeName("schema:Festival")
+@JsonLdTypeName("Festival")
 public class FestivalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Festival {
 
     private Event fSuperEvent;

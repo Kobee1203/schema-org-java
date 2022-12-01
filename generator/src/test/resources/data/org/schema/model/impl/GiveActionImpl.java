@@ -33,7 +33,7 @@ import org.schema.model.GiveAction;
  *
  * @see <a href="https://schema.org/GiveAction">https://schema.org/GiveAction</a>
  */
-@JsonLdTypeName("schema:GiveAction")
+@JsonLdTypeName("GiveAction")
 public class GiveActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements GiveAction {
 
     private Object fRecipient;

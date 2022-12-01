@@ -25,7 +25,7 @@ import org.schema.model.NutritionInformation;
  *
  * @see <a href="https://schema.org/NutritionInformation">https://schema.org/NutritionInformation</a>
  */
-@JsonLdTypeName("schema:NutritionInformation")
+@JsonLdTypeName("NutritionInformation")
 public class NutritionInformationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements NutritionInformation {
 
     private Mass fFatContent;

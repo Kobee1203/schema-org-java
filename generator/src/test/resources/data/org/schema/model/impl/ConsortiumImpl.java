@@ -51,7 +51,7 @@ import org.schema.model.Consortium;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1559">https://github.com/schemaorg/schemaorg/issues/1559</a>
  * @see <a href="https://schema.org/Consortium">https://schema.org/Consortium</a>
  */
-@JsonLdTypeName("schema:Consortium")
+@JsonLdTypeName("Consortium")
 public class ConsortiumImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Consortium {
 
     private Object fOwnershipFundingInfo;

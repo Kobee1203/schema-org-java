@@ -27,7 +27,7 @@ import org.schema.model.PaymentMethod;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass</a>
  * @see <a href="https://schema.org/PaymentMethod">https://schema.org/PaymentMethod</a>
  */
-@JsonLdTypeName("schema:PaymentMethod")
+@JsonLdTypeName("PaymentMethod")
 public class PaymentMethodImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PaymentMethod {
 
     private Object fSupersededBy;

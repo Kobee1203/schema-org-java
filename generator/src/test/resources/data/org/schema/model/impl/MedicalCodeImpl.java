@@ -37,7 +37,7 @@ import org.schema.model.CategoryCode;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/MedicalCode">https://schema.org/MedicalCode</a>
  */
-@JsonLdTypeName("schema:MedicalCode")
+@JsonLdTypeName("MedicalCode")
 public class MedicalCodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MedicalCode {
 
     private Text fCodeValue;

@@ -60,7 +60,7 @@ import org.schema.model.Casino;
  *
  * @see <a href="https://schema.org/Casino">https://schema.org/Casino</a>
  */
-@JsonLdTypeName("schema:Casino")
+@JsonLdTypeName("Casino")
 public class CasinoImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Casino {
 
     private Organization fBranchOf;

@@ -58,7 +58,7 @@ import org.schema.model.TechArticle;
  *
  * @see <a href="https://schema.org/TechArticle">https://schema.org/TechArticle</a>
  */
-@JsonLdTypeName("schema:TechArticle")
+@JsonLdTypeName("TechArticle")
 public class TechArticleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements TechArticle {
 
     private Text fDependencies;

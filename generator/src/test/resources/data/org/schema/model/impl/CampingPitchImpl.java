@@ -44,7 +44,7 @@ import org.schema.model.CampingPitch;
  * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
  * @see <a href="https://schema.org/CampingPitch">https://schema.org/CampingPitch</a>
  */
-@JsonLdTypeName("schema:CampingPitch")
+@JsonLdTypeName("CampingPitch")
 public class CampingPitchImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements CampingPitch {
 
     private Text fFloorLevel;

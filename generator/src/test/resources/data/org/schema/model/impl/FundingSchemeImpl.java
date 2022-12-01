@@ -54,7 +54,7 @@ import org.schema.model.FundingScheme;
  * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FundInfoCollab">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FundInfoCollab</a>
  * @see <a href="https://schema.org/FundingScheme">https://schema.org/FundingScheme</a>
  */
-@JsonLdTypeName("schema:FundingScheme")
+@JsonLdTypeName("FundingScheme")
 public class FundingSchemeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements FundingScheme {
 
     private Object fOwnershipFundingInfo;

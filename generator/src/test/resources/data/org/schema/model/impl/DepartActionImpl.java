@@ -31,7 +31,7 @@ import org.schema.model.DepartAction;
  *
  * @see <a href="https://schema.org/DepartAction">https://schema.org/DepartAction</a>
  */
-@JsonLdTypeName("schema:DepartAction")
+@JsonLdTypeName("DepartAction")
 public class DepartActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements DepartAction {
 
     private Place fFromLocation;

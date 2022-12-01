@@ -49,7 +49,7 @@ import org.schema.model.BrokerageAccount;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
  * @see <a href="https://schema.org/BrokerageAccount">https://schema.org/BrokerageAccount</a>
  */
-@JsonLdTypeName("schema:BrokerageAccount")
+@JsonLdTypeName("BrokerageAccount")
 public class BrokerageAccountImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements BrokerageAccount {
 
     private Object fAmount;

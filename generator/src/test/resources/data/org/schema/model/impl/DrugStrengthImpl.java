@@ -36,7 +36,7 @@ import org.schema.model.DrugStrength;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/DrugStrength">https://schema.org/DrugStrength</a>
  */
-@JsonLdTypeName("schema:DrugStrength")
+@JsonLdTypeName("DrugStrength")
 public class DrugStrengthImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements DrugStrength {
 
     private AdministrativeArea fAvailableIn;

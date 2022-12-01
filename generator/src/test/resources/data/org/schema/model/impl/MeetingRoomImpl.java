@@ -44,7 +44,7 @@ import org.schema.model.MeetingRoom;
  * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
  * @see <a href="https://schema.org/MeetingRoom">https://schema.org/MeetingRoom</a>
  */
-@JsonLdTypeName("schema:MeetingRoom")
+@JsonLdTypeName("MeetingRoom")
 public class MeetingRoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MeetingRoom {
 
     private Text fFloorLevel;

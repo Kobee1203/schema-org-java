@@ -68,7 +68,7 @@ import org.schema.model.Hospital;
  *
  * @see <a href="https://schema.org/Hospital">https://schema.org/Hospital</a>
  */
-@JsonLdTypeName("schema:Hospital")
+@JsonLdTypeName("Hospital")
 public class HospitalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Hospital {
 
     private Object fAvailableService;

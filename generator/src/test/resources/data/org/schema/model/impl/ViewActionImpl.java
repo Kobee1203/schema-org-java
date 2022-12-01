@@ -33,7 +33,7 @@ import org.schema.model.ViewAction;
  *
  * @see <a href="https://schema.org/ViewAction">https://schema.org/ViewAction</a>
  */
-@JsonLdTypeName("schema:ViewAction")
+@JsonLdTypeName("ViewAction")
 public class ViewActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ViewAction {
 
     private Offer fExpectsAcceptanceOf;

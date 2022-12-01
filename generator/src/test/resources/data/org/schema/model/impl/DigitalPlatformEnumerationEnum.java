@@ -27,7 +27,7 @@ import org.schema.model.DigitalPlatformEnumeration;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/3057">https://github.com/schemaorg/schemaorg/issues/3057</a>
  * @see <a href="https://schema.org/DigitalPlatformEnumeration">https://schema.org/DigitalPlatformEnumeration</a>
  */
-@JsonLdTypeName("schema:DigitalPlatformEnumeration")
+@JsonLdTypeName("DigitalPlatformEnumeration")
 public enum DigitalPlatformEnumerationEnum implements DigitalPlatformEnumeration {
     MOBILE_WEB_PLATFORM("MobileWebPlatform"),
     ANDROID_PLATFORM("AndroidPlatform"),

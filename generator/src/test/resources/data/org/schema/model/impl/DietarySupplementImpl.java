@@ -36,7 +36,7 @@ import org.schema.model.DietarySupplement;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/DietarySupplement">https://schema.org/DietarySupplement</a>
  */
-@JsonLdTypeName("schema:DietarySupplement")
+@JsonLdTypeName("DietarySupplement")
 public class DietarySupplementImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements DietarySupplement {
 
     private Text fTargetPopulation;

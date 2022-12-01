@@ -59,7 +59,7 @@ import org.schema.model.Table;
  *
  * @see <a href="https://schema.org/Table">https://schema.org/Table</a>
  */
-@JsonLdTypeName("schema:Table")
+@JsonLdTypeName("Table")
 public class TableImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Table {
 
     private CssSelectorType fCssSelector;

@@ -61,7 +61,7 @@ import org.schema.model.SatiricalArticle;
  * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
  * @see <a href="https://schema.org/SatiricalArticle">https://schema.org/SatiricalArticle</a>
  */
-@JsonLdTypeName("schema:SatiricalArticle")
+@JsonLdTypeName("SatiricalArticle")
 public class SatiricalArticleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements SatiricalArticle {
 
     private Object fPageStart;

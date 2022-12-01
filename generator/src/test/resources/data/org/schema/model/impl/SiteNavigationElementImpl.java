@@ -59,7 +59,7 @@ import org.schema.model.SiteNavigationElement;
  *
  * @see <a href="https://schema.org/SiteNavigationElement">https://schema.org/SiteNavigationElement</a>
  */
-@JsonLdTypeName("schema:SiteNavigationElement")
+@JsonLdTypeName("SiteNavigationElement")
 public class SiteNavigationElementImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements SiteNavigationElement {
 
     private CssSelectorType fCssSelector;

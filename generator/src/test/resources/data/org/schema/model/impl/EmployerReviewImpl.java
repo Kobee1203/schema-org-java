@@ -60,7 +60,7 @@ import org.schema.model.EmployerReview;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1589">https://github.com/schemaorg/schemaorg/issues/1589</a>
  * @see <a href="https://schema.org/EmployerReview">https://schema.org/EmployerReview</a>
  */
-@JsonLdTypeName("schema:EmployerReview")
+@JsonLdTypeName("EmployerReview")
 public class EmployerReviewImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements EmployerReview {
 
     private Rating fReviewRating;

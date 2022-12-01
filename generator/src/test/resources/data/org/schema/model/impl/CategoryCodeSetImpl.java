@@ -60,7 +60,7 @@ import org.schema.model.CategoryCodeSet;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
  * @see <a href="https://schema.org/CategoryCodeSet">https://schema.org/CategoryCodeSet</a>
  */
-@JsonLdTypeName("schema:CategoryCodeSet")
+@JsonLdTypeName("CategoryCodeSet")
 public class CategoryCodeSetImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements CategoryCodeSet {
 
     private CategoryCode fHasCategoryCode;

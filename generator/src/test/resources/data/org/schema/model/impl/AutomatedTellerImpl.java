@@ -60,7 +60,7 @@ import org.schema.model.AutomatedTeller;
  *
  * @see <a href="https://schema.org/AutomatedTeller">https://schema.org/AutomatedTeller</a>
  */
-@JsonLdTypeName("schema:AutomatedTeller")
+@JsonLdTypeName("AutomatedTeller")
 public class AutomatedTellerImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements AutomatedTeller {
 
     private Object fFeesAndCommissionsSpecification;

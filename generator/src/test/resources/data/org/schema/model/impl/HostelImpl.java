@@ -66,7 +66,7 @@ import org.schema.model.Hostel;
  *
  * @see <a href="https://schema.org/Hostel">https://schema.org/Hostel</a>
  */
-@JsonLdTypeName("schema:Hostel")
+@JsonLdTypeName("Hostel")
 public class HostelImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Hostel {
 
     private Object fNumberOfRooms;

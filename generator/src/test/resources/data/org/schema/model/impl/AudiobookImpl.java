@@ -64,7 +64,7 @@ import org.schema.model.Audiobook;
  * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
  * @see <a href="https://schema.org/Audiobook">https://schema.org/Audiobook</a>
  */
-@JsonLdTypeName("schema:Audiobook")
+@JsonLdTypeName("Audiobook")
 public class AudiobookImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Audiobook {
 
     private Person fReadBy;

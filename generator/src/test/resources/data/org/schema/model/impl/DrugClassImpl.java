@@ -33,7 +33,7 @@ import org.schema.model.DrugClass;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/DrugClass">https://schema.org/DrugClass</a>
  */
-@JsonLdTypeName("schema:DrugClass")
+@JsonLdTypeName("DrugClass")
 public class DrugClassImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements DrugClass {
 
     private Drug fDrug;

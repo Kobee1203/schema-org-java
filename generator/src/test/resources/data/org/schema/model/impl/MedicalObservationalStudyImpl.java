@@ -38,7 +38,7 @@ import org.schema.model.MedicalObservationalStudy;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/MedicalObservationalStudy">https://schema.org/MedicalObservationalStudy</a>
  */
-@JsonLdTypeName("schema:MedicalObservationalStudy")
+@JsonLdTypeName("MedicalObservationalStudy")
 public class MedicalObservationalStudyImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MedicalObservationalStudy {
 
     private MedicalObservationalStudyDesign fStudyDesign;

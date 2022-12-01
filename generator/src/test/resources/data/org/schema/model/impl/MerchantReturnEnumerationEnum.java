@@ -27,7 +27,7 @@ import org.schema.model.MerchantReturnEnumeration;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
  * @see <a href="https://schema.org/MerchantReturnEnumeration">https://schema.org/MerchantReturnEnumeration</a>
  */
-@JsonLdTypeName("schema:MerchantReturnEnumeration")
+@JsonLdTypeName("MerchantReturnEnumeration")
 public enum MerchantReturnEnumerationEnum implements MerchantReturnEnumeration {
     MERCHANT_RETURN_NOT_PERMITTED("MerchantReturnNotPermitted"),
     MERCHANT_RETURN_UNLIMITED_WINDOW("MerchantReturnUnlimitedWindow"),

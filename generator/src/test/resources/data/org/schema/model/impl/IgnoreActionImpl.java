@@ -31,7 +31,7 @@ import org.schema.model.IgnoreAction;
  *
  * @see <a href="https://schema.org/IgnoreAction">https://schema.org/IgnoreAction</a>
  */
-@JsonLdTypeName("schema:IgnoreAction")
+@JsonLdTypeName("IgnoreAction")
 public class IgnoreActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements IgnoreAction {
 
     private Object fAgent;

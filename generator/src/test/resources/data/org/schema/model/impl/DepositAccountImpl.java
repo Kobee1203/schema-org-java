@@ -48,7 +48,7 @@ import org.schema.model.DepositAccount;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
  * @see <a href="https://schema.org/DepositAccount">https://schema.org/DepositAccount</a>
  */
-@JsonLdTypeName("schema:DepositAccount")
+@JsonLdTypeName("DepositAccount")
 public class DepositAccountImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements DepositAccount {
 
     private Object fAmount;

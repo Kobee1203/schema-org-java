@@ -30,7 +30,7 @@ import org.schema.model.InteractAction;
  *
  * @see <a href="https://schema.org/InteractAction">https://schema.org/InteractAction</a>
  */
-@JsonLdTypeName("schema:InteractAction")
+@JsonLdTypeName("InteractAction")
 public class InteractActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements InteractAction {
 
     private Object fAgent;

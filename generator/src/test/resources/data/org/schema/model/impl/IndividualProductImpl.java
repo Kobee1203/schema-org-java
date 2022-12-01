@@ -47,7 +47,7 @@ import org.schema.model.IndividualProduct;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass</a>
  * @see <a href="https://schema.org/IndividualProduct">https://schema.org/IndividualProduct</a>
  */
-@JsonLdTypeName("schema:IndividualProduct")
+@JsonLdTypeName("IndividualProduct")
 public class IndividualProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements IndividualProduct {
 
     private Text fSerialNumber;

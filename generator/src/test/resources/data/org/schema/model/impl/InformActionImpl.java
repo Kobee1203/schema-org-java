@@ -35,7 +35,7 @@ import org.schema.model.InformAction;
  *
  * @see <a href="https://schema.org/InformAction">https://schema.org/InformAction</a>
  */
-@JsonLdTypeName("schema:InformAction")
+@JsonLdTypeName("InformAction")
 public class InformActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements InformAction {
 
     private Event fEvent;

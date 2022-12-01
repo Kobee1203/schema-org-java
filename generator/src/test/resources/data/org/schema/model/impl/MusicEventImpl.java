@@ -43,7 +43,7 @@ import org.schema.model.MusicEvent;
  *
  * @see <a href="https://schema.org/MusicEvent">https://schema.org/MusicEvent</a>
  */
-@JsonLdTypeName("schema:MusicEvent")
+@JsonLdTypeName("MusicEvent")
 public class MusicEventImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MusicEvent {
 
     private Event fSuperEvent;

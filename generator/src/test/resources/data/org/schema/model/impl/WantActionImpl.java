@@ -32,7 +32,7 @@ import org.schema.model.WantAction;
  *
  * @see <a href="https://schema.org/WantAction">https://schema.org/WantAction</a>
  */
-@JsonLdTypeName("schema:WantAction")
+@JsonLdTypeName("WantAction")
 public class WantActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements WantAction {
 
     private Object fAgent;

@@ -67,7 +67,7 @@ import org.schema.model.Hotel;
  * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
  * @see <a href="https://schema.org/Hotel">https://schema.org/Hotel</a>
  */
-@JsonLdTypeName("schema:Hotel")
+@JsonLdTypeName("Hotel")
 public class HotelImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Hotel {
 
     private Object fNumberOfRooms;

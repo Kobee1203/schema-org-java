@@ -34,7 +34,7 @@ import org.schema.model.RentAction;
  *
  * @see <a href="https://schema.org/RentAction">https://schema.org/RentAction</a>
  */
-@JsonLdTypeName("schema:RentAction")
+@JsonLdTypeName("RentAction")
 public class RentActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements RentAction {
 
     private Object fLandlord;

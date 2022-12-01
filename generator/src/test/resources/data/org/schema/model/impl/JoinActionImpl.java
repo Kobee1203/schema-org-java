@@ -31,7 +31,7 @@ import org.schema.model.JoinAction;
  *
  * @see <a href="https://schema.org/JoinAction">https://schema.org/JoinAction</a>
  */
-@JsonLdTypeName("schema:JoinAction")
+@JsonLdTypeName("JoinAction")
 public class JoinActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements JoinAction {
 
     private Event fEvent;

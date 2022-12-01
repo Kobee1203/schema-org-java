@@ -33,7 +33,7 @@ import org.schema.model.PreventionIndication;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/PreventionIndication">https://schema.org/PreventionIndication</a>
  */
-@JsonLdTypeName("schema:PreventionIndication")
+@JsonLdTypeName("PreventionIndication")
 public class PreventionIndicationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PreventionIndication {
 
     private Object fLegalStatus;

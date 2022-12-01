@@ -37,7 +37,7 @@ import org.schema.model.Playground;
  *
  * @see <a href="https://schema.org/Playground">https://schema.org/Playground</a>
  */
-@JsonLdTypeName("schema:Playground")
+@JsonLdTypeName("Playground")
 public class PlaygroundImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Playground {
 
     private Text fOpeningHours;

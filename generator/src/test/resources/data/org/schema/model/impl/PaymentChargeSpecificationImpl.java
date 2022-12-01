@@ -32,7 +32,7 @@ import org.schema.model.PaymentChargeSpecification;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass</a>
  * @see <a href="https://schema.org/PaymentChargeSpecification">https://schema.org/PaymentChargeSpecification</a>
  */
-@JsonLdTypeName("schema:PaymentChargeSpecification")
+@JsonLdTypeName("PaymentChargeSpecification")
 public class PaymentChargeSpecificationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PaymentChargeSpecification {
 
     private PaymentMethod fAppliesToPaymentMethod;

@@ -60,7 +60,7 @@ import org.schema.model.OfficeEquipmentStore;
  *
  * @see <a href="https://schema.org/OfficeEquipmentStore">https://schema.org/OfficeEquipmentStore</a>
  */
-@JsonLdTypeName("schema:OfficeEquipmentStore")
+@JsonLdTypeName("OfficeEquipmentStore")
 public class OfficeEquipmentStoreImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements OfficeEquipmentStore {
 
     private Organization fBranchOf;

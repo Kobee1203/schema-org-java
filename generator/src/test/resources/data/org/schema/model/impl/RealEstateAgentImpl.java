@@ -59,7 +59,7 @@ import org.schema.model.RealEstateAgent;
  *
  * @see <a href="https://schema.org/RealEstateAgent">https://schema.org/RealEstateAgent</a>
  */
-@JsonLdTypeName("schema:RealEstateAgent")
+@JsonLdTypeName("RealEstateAgent")
 public class RealEstateAgentImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements RealEstateAgent {
 
     private Organization fBranchOf;

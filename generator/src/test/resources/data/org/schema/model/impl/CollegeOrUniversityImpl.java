@@ -60,7 +60,7 @@ import org.schema.model.CollegeOrUniversity;
  *
  * @see <a href="https://schema.org/CollegeOrUniversity">https://schema.org/CollegeOrUniversity</a>
  */
-@JsonLdTypeName("schema:CollegeOrUniversity")
+@JsonLdTypeName("CollegeOrUniversity")
 public class CollegeOrUniversityImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements CollegeOrUniversity {
 
     private Person fAlumni;

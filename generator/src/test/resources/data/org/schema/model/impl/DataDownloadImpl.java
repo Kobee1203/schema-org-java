@@ -62,7 +62,7 @@ import org.schema.model.DataDownload;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_DatasetClass">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_DatasetClass</a>
  * @see <a href="https://schema.org/DataDownload">https://schema.org/DataDownload</a>
  */
-@JsonLdTypeName("schema:DataDownload")
+@JsonLdTypeName("DataDownload")
 public class DataDownloadImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements DataDownload {
 
     private Object fMeasurementTechnique;

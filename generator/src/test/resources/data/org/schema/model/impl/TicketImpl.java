@@ -29,7 +29,7 @@ import org.schema.model.Ticket;
  *
  * @see <a href="https://schema.org/Ticket">https://schema.org/Ticket</a>
  */
-@JsonLdTypeName("schema:Ticket")
+@JsonLdTypeName("Ticket")
 public class TicketImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Ticket {
 
     private Object fTicketToken;

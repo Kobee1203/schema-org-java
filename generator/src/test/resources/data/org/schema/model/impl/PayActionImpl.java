@@ -35,7 +35,7 @@ import org.schema.model.PayAction;
  *
  * @see <a href="https://schema.org/PayAction">https://schema.org/PayAction</a>
  */
-@JsonLdTypeName("schema:PayAction")
+@JsonLdTypeName("PayAction")
 public class PayActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PayAction {
 
     private Object fRecipient;

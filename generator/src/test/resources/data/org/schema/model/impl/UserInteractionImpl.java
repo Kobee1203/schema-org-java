@@ -43,7 +43,7 @@ import org.schema.model.UserInteraction;
  *
  * @see <a href="https://schema.org/UserInteraction">https://schema.org/UserInteraction</a>
  */
-@JsonLdTypeName("schema:UserInteraction")
+@JsonLdTypeName("UserInteraction")
 public class UserInteractionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements UserInteraction {
 
     private Event fSuperEvent;

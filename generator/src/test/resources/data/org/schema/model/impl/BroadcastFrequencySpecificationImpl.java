@@ -26,7 +26,7 @@ import org.schema.model.BroadcastFrequencySpecification;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
  * @see <a href="https://schema.org/BroadcastFrequencySpecification">https://schema.org/BroadcastFrequencySpecification</a>
  */
-@JsonLdTypeName("schema:BroadcastFrequencySpecification")
+@JsonLdTypeName("BroadcastFrequencySpecification")
 public class BroadcastFrequencySpecificationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements BroadcastFrequencySpecification {
 
     private Text fBroadcastSubChannel;

@@ -63,7 +63,7 @@ import org.schema.model.LodgingBusiness;
  *
  * @see <a href="https://schema.org/LodgingBusiness">https://schema.org/LodgingBusiness</a>
  */
-@JsonLdTypeName("schema:LodgingBusiness")
+@JsonLdTypeName("LodgingBusiness")
 public class LodgingBusinessImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements LodgingBusiness {
 
     private Object fNumberOfRooms;

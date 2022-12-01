@@ -27,7 +27,7 @@ import org.schema.model.SizeSystemEnumeration;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
  * @see <a href="https://schema.org/SizeSystemEnumeration">https://schema.org/SizeSystemEnumeration</a>
  */
-@JsonLdTypeName("schema:SizeSystemEnumeration")
+@JsonLdTypeName("SizeSystemEnumeration")
 public enum SizeSystemEnumerationEnum implements SizeSystemEnumeration {
     SIZE_SYSTEM_METRIC("SizeSystemMetric"),
     SIZE_SYSTEM_IMPERIAL("SizeSystemImperial");

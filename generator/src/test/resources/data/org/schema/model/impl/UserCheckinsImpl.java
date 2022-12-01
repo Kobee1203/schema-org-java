@@ -44,7 +44,7 @@ import org.schema.model.UserCheckins;
  *
  * @see <a href="https://schema.org/UserCheckins">https://schema.org/UserCheckins</a>
  */
-@JsonLdTypeName("schema:UserCheckins")
+@JsonLdTypeName("UserCheckins")
 public class UserCheckinsImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements UserCheckins {
 
     private Event fSuperEvent;

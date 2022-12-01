@@ -32,7 +32,7 @@ import org.schema.model.MedicalContraindication;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/MedicalContraindication">https://schema.org/MedicalContraindication</a>
  */
-@JsonLdTypeName("schema:MedicalContraindication")
+@JsonLdTypeName("MedicalContraindication")
 public class MedicalContraindicationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MedicalContraindication {
 
     private Object fLegalStatus;

@@ -62,7 +62,7 @@ import org.schema.model.ArchiveOrganization;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1758">https://github.com/schemaorg/schemaorg/issues/1758</a>
  * @see <a href="https://schema.org/ArchiveOrganization">https://schema.org/ArchiveOrganization</a>
  */
-@JsonLdTypeName("schema:ArchiveOrganization")
+@JsonLdTypeName("ArchiveOrganization")
 public class ArchiveOrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ArchiveOrganization {
 
     private ArchiveComponent fArchiveHeld;

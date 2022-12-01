@@ -37,7 +37,7 @@ import org.schema.model.BodyOfWater;
  *
  * @see <a href="https://schema.org/BodyOfWater">https://schema.org/BodyOfWater</a>
  */
-@JsonLdTypeName("schema:BodyOfWater")
+@JsonLdTypeName("BodyOfWater")
 public class BodyOfWaterImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements BodyOfWater {
 
     private Text fTelephone;

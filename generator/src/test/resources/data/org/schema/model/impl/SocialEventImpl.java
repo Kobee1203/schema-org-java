@@ -43,7 +43,7 @@ import org.schema.model.SocialEvent;
  *
  * @see <a href="https://schema.org/SocialEvent">https://schema.org/SocialEvent</a>
  */
-@JsonLdTypeName("schema:SocialEvent")
+@JsonLdTypeName("SocialEvent")
 public class SocialEventImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements SocialEvent {
 
     private Event fSuperEvent;

@@ -32,7 +32,7 @@ import org.schema.model.ReviewAction;
  *
  * @see <a href="https://schema.org/ReviewAction">https://schema.org/ReviewAction</a>
  */
-@JsonLdTypeName("schema:ReviewAction")
+@JsonLdTypeName("ReviewAction")
 public class ReviewActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ReviewAction {
 
     private Review fResultReview;

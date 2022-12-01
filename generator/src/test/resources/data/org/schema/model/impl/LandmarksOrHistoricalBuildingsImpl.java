@@ -36,7 +36,7 @@ import org.schema.model.LandmarksOrHistoricalBuildings;
  *
  * @see <a href="https://schema.org/LandmarksOrHistoricalBuildings">https://schema.org/LandmarksOrHistoricalBuildings</a>
  */
-@JsonLdTypeName("schema:LandmarksOrHistoricalBuildings")
+@JsonLdTypeName("LandmarksOrHistoricalBuildings")
 public class LandmarksOrHistoricalBuildingsImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements LandmarksOrHistoricalBuildings {
 
     private Text fTelephone;

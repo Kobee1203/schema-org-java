@@ -31,7 +31,7 @@ import org.schema.model.TakeAction;
  *
  * @see <a href="https://schema.org/TakeAction">https://schema.org/TakeAction</a>
  */
-@JsonLdTypeName("schema:TakeAction")
+@JsonLdTypeName("TakeAction")
 public class TakeActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements TakeAction {
 
     private Place fFromLocation;

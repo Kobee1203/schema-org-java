@@ -25,7 +25,7 @@ import org.schema.model.Intangible;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1375">https://github.com/schemaorg/schemaorg/issues/1375</a>
  * @see <a href="https://schema.org/GeospatialGeometry">https://schema.org/GeospatialGeometry</a>
  */
-@JsonLdTypeName("schema:GeospatialGeometry")
+@JsonLdTypeName("GeospatialGeometry")
 public class GeospatialGeometryImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements GeospatialGeometry {
 
     private Object fGeoContains;

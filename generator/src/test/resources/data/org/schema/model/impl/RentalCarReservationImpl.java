@@ -32,7 +32,7 @@ import org.schema.model.RentalCarReservation;
  *
  * @see <a href="https://schema.org/RentalCarReservation">https://schema.org/RentalCarReservation</a>
  */
-@JsonLdTypeName("schema:RentalCarReservation")
+@JsonLdTypeName("RentalCarReservation")
 public class RentalCarReservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements RentalCarReservation {
 
     private Place fDropoffLocation;

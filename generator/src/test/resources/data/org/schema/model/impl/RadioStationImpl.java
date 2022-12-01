@@ -59,7 +59,7 @@ import org.schema.model.RadioStation;
  *
  * @see <a href="https://schema.org/RadioStation">https://schema.org/RadioStation</a>
  */
-@JsonLdTypeName("schema:RadioStation")
+@JsonLdTypeName("RadioStation")
 public class RadioStationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements RadioStation {
 
     private Organization fBranchOf;

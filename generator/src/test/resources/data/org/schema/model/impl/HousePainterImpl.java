@@ -60,7 +60,7 @@ import org.schema.model.HousePainter;
  *
  * @see <a href="https://schema.org/HousePainter">https://schema.org/HousePainter</a>
  */
-@JsonLdTypeName("schema:HousePainter")
+@JsonLdTypeName("HousePainter")
 public class HousePainterImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements HousePainter {
 
     private Organization fBranchOf;

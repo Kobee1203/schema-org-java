@@ -37,7 +37,7 @@ import org.schema.model.Artery;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/Artery">https://schema.org/Artery</a>
  */
-@JsonLdTypeName("schema:Artery")
+@JsonLdTypeName("Artery")
 public class ArteryImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Artery {
 
     private AnatomicalStructure fSupplyTo;

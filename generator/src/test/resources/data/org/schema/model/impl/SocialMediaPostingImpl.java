@@ -58,7 +58,7 @@ import org.schema.model.SocialMediaPosting;
  *
  * @see <a href="https://schema.org/SocialMediaPosting">https://schema.org/SocialMediaPosting</a>
  */
-@JsonLdTypeName("schema:SocialMediaPosting")
+@JsonLdTypeName("SocialMediaPosting")
 public class SocialMediaPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements SocialMediaPosting {
 
     private CreativeWork fSharedContent;

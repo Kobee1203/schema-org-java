@@ -27,7 +27,7 @@ import org.schema.model.SizeGroupEnumeration;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
  * @see <a href="https://schema.org/SizeGroupEnumeration">https://schema.org/SizeGroupEnumeration</a>
  */
-@JsonLdTypeName("schema:SizeGroupEnumeration")
+@JsonLdTypeName("SizeGroupEnumeration")
 public class SizeGroupEnumerationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements SizeGroupEnumeration {
 
     private Object fSupersededBy;

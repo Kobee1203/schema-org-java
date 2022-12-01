@@ -26,7 +26,7 @@ import org.schema.model.GeoCoordinates;
  *
  * @see <a href="https://schema.org/GeoCoordinates">https://schema.org/GeoCoordinates</a>
  */
-@JsonLdTypeName("schema:GeoCoordinates")
+@JsonLdTypeName("GeoCoordinates")
 public class GeoCoordinatesImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements GeoCoordinates {
 
     private Object fAddressCountry;

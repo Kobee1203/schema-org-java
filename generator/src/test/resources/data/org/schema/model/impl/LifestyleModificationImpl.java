@@ -32,7 +32,7 @@ import org.schema.model.LifestyleModification;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/LifestyleModification">https://schema.org/LifestyleModification</a>
  */
-@JsonLdTypeName("schema:LifestyleModification")
+@JsonLdTypeName("LifestyleModification")
 public class LifestyleModificationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements LifestyleModification {
 
     private Object fLegalStatus;

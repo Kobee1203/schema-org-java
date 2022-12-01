@@ -25,7 +25,7 @@ import org.schema.model.BusinessAudience;
  *
  * @see <a href="https://schema.org/BusinessAudience">https://schema.org/BusinessAudience</a>
  */
-@JsonLdTypeName("schema:BusinessAudience")
+@JsonLdTypeName("BusinessAudience")
 public class BusinessAudienceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements BusinessAudience {
 
     private QuantitativeValue fYearlyRevenue;

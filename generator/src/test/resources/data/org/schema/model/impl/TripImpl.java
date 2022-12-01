@@ -31,7 +31,7 @@ import org.schema.model.Intangible;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism</a>
  * @see <a href="https://schema.org/Trip">https://schema.org/Trip</a>
  */
-@JsonLdTypeName("schema:Trip")
+@JsonLdTypeName("Trip")
 public class TripImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Trip {
 
     private Object fArrivalTime;

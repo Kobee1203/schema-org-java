@@ -28,7 +28,7 @@ import org.schema.model.RepaymentSpecification;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
  * @see <a href="https://schema.org/RepaymentSpecification">https://schema.org/RepaymentSpecification</a>
  */
-@JsonLdTypeName("schema:RepaymentSpecification")
+@JsonLdTypeName("RepaymentSpecification")
 public class RepaymentSpecificationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements RepaymentSpecification {
 
     private Number fNumberOfLoanPayments;

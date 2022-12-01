@@ -30,7 +30,7 @@ import org.schema.model.SearchAction;
  *
  * @see <a href="https://schema.org/SearchAction">https://schema.org/SearchAction</a>
  */
-@JsonLdTypeName("schema:SearchAction")
+@JsonLdTypeName("SearchAction")
 public class SearchActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements SearchAction {
 
     private Text fQuery;

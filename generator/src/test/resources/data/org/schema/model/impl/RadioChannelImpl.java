@@ -26,7 +26,7 @@ import org.schema.model.RadioChannel;
  *
  * @see <a href="https://schema.org/RadioChannel">https://schema.org/RadioChannel</a>
  */
-@JsonLdTypeName("schema:RadioChannel")
+@JsonLdTypeName("RadioChannel")
 public class RadioChannelImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements RadioChannel {
 
     private Object fGenre;

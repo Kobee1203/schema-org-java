@@ -61,7 +61,7 @@ import org.schema.model.MediaGallery;
  *
  * @see <a href="https://schema.org/MediaGallery">https://schema.org/MediaGallery</a>
  */
-@JsonLdTypeName("schema:MediaGallery")
+@JsonLdTypeName("MediaGallery")
 public class MediaGalleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MediaGallery {
 
     private Date fLastReviewed;

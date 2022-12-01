@@ -60,7 +60,7 @@ import org.schema.model.BeautySalon;
  *
  * @see <a href="https://schema.org/BeautySalon">https://schema.org/BeautySalon</a>
  */
-@JsonLdTypeName("schema:BeautySalon")
+@JsonLdTypeName("BeautySalon")
 public class BeautySalonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements BeautySalon {
 
     private Organization fBranchOf;

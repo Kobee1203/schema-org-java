@@ -31,7 +31,7 @@ import org.schema.model.ChooseAction;
  *
  * @see <a href="https://schema.org/ChooseAction">https://schema.org/ChooseAction</a>
  */
-@JsonLdTypeName("schema:ChooseAction")
+@JsonLdTypeName("ChooseAction")
 public class ChooseActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ChooseAction {
 
     private Object fOption;

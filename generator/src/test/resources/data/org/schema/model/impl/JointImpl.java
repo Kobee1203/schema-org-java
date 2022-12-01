@@ -36,7 +36,7 @@ import org.schema.model.Joint;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/Joint">https://schema.org/Joint</a>
  */
-@JsonLdTypeName("schema:Joint")
+@JsonLdTypeName("Joint")
 public class JointImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Joint {
 
     private Text fStructuralClass;

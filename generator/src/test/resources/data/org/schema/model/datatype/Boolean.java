@@ -12,7 +12,7 @@ import com.weedow.schemaorg.commons.model.JsonLdTypeName;
  *
  * @see <a href="https://schema.org/Boolean">https://schema.org/Boolean</a>
  */
-@JsonLdTypeName("schema:Boolean")
+@JsonLdTypeName("Boolean")
 public class Boolean extends DataType<java.lang.Boolean> {
 
     Boolean(java.lang.Boolean value) {

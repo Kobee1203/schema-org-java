@@ -44,7 +44,7 @@ import org.schema.model.UserDownloads;
  *
  * @see <a href="https://schema.org/UserDownloads">https://schema.org/UserDownloads</a>
  */
-@JsonLdTypeName("schema:UserDownloads")
+@JsonLdTypeName("UserDownloads")
 public class UserDownloadsImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements UserDownloads {
 
     private Event fSuperEvent;

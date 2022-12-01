@@ -26,7 +26,7 @@ import org.schema.model.ProgramMembership;
  *
  * @see <a href="https://schema.org/ProgramMembership">https://schema.org/ProgramMembership</a>
  */
-@JsonLdTypeName("schema:ProgramMembership")
+@JsonLdTypeName("ProgramMembership")
 public class ProgramMembershipImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ProgramMembership {
 
     private Object fMembershipPointsEarned;

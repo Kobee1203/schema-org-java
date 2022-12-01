@@ -32,7 +32,7 @@ import org.schema.model.MedicalRiskFactor;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/MedicalRiskFactor">https://schema.org/MedicalRiskFactor</a>
  */
-@JsonLdTypeName("schema:MedicalRiskFactor")
+@JsonLdTypeName("MedicalRiskFactor")
 public class MedicalRiskFactorImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MedicalRiskFactor {
 
     private MedicalEntity fIncreasesRiskOf;

@@ -30,7 +30,7 @@ import org.schema.model.Reservation;
  *
  * @see <a href="https://schema.org/Reservation">https://schema.org/Reservation</a>
  */
-@JsonLdTypeName("schema:Reservation")
+@JsonLdTypeName("Reservation")
 public class ReservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Reservation {
 
     private DateTime fModifiedTime;

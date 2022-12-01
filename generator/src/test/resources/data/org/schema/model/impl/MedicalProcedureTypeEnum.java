@@ -27,7 +27,7 @@ import org.schema.model.MedicalProcedureType;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/MedicalProcedureType">https://schema.org/MedicalProcedureType</a>
  */
-@JsonLdTypeName("schema:MedicalProcedureType")
+@JsonLdTypeName("MedicalProcedureType")
 public enum MedicalProcedureTypeEnum implements MedicalProcedureType {
     PERCUTANEOUS_PROCEDURE("PercutaneousProcedure"),
     NONINVASIVE_PROCEDURE("NoninvasiveProcedure");

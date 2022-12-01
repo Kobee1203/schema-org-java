@@ -61,7 +61,7 @@ import org.schema.model.Barcode;
  *
  * @see <a href="https://schema.org/Barcode">https://schema.org/Barcode</a>
  */
-@JsonLdTypeName("schema:Barcode")
+@JsonLdTypeName("Barcode")
 public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Barcode {
 
     private Text fEmbeddedTextCaption;

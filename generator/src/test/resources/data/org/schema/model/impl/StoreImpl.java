@@ -59,7 +59,7 @@ import org.schema.model.Store;
  *
  * @see <a href="https://schema.org/Store">https://schema.org/Store</a>
  */
-@JsonLdTypeName("schema:Store")
+@JsonLdTypeName("Store")
 public class StoreImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Store {
 
     private Organization fBranchOf;

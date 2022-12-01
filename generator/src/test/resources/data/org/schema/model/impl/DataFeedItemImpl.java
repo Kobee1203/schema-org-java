@@ -24,7 +24,7 @@ import org.schema.model.DataFeedItem;
  *
  * @see <a href="https://schema.org/DataFeedItem">https://schema.org/DataFeedItem</a>
  */
-@JsonLdTypeName("schema:DataFeedItem")
+@JsonLdTypeName("DataFeedItem")
 public class DataFeedItemImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements DataFeedItem {
 
     private Object fDateDeleted;

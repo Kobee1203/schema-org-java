@@ -60,7 +60,7 @@ import org.schema.model.MedicalBusiness;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/MedicalBusiness">https://schema.org/MedicalBusiness</a>
  */
-@JsonLdTypeName("schema:MedicalBusiness")
+@JsonLdTypeName("MedicalBusiness")
 public class MedicalBusinessImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MedicalBusiness {
 
     private Organization fBranchOf;

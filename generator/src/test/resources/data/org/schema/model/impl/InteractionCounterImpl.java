@@ -31,7 +31,7 @@ import org.schema.model.InteractionCounter;
  *
  * @see <a href="https://schema.org/InteractionCounter">https://schema.org/InteractionCounter</a>
  */
-@JsonLdTypeName("schema:InteractionCounter")
+@JsonLdTypeName("InteractionCounter")
 public class InteractionCounterImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements InteractionCounter {
 
     private Object fStartTime;

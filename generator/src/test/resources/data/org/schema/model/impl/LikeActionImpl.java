@@ -32,7 +32,7 @@ import org.schema.model.LikeAction;
  *
  * @see <a href="https://schema.org/LikeAction">https://schema.org/LikeAction</a>
  */
-@JsonLdTypeName("schema:LikeAction")
+@JsonLdTypeName("LikeAction")
 public class LikeActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements LikeAction {
 
     private Object fAgent;

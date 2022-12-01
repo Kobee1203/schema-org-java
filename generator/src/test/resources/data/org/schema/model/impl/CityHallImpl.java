@@ -38,7 +38,7 @@ import org.schema.model.CityHall;
  *
  * @see <a href="https://schema.org/CityHall">https://schema.org/CityHall</a>
  */
-@JsonLdTypeName("schema:CityHall")
+@JsonLdTypeName("CityHall")
 public class CityHallImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements CityHall {
 
     private Text fOpeningHours;

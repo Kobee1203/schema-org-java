@@ -37,7 +37,7 @@ import org.schema.model.Aquarium;
  *
  * @see <a href="https://schema.org/Aquarium">https://schema.org/Aquarium</a>
  */
-@JsonLdTypeName("schema:Aquarium")
+@JsonLdTypeName("Aquarium")
 public class AquariumImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Aquarium {
 
     private Text fOpeningHours;

@@ -60,7 +60,7 @@ import org.schema.model.AboutPage;
  *
  * @see <a href="https://schema.org/AboutPage">https://schema.org/AboutPage</a>
  */
-@JsonLdTypeName("schema:AboutPage")
+@JsonLdTypeName("AboutPage")
 public class AboutPageImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements AboutPage {
 
     private Date fLastReviewed;

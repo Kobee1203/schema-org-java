@@ -36,7 +36,7 @@ import org.schema.model.RecommendedDoseSchedule;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/RecommendedDoseSchedule">https://schema.org/RecommendedDoseSchedule</a>
  */
-@JsonLdTypeName("schema:RecommendedDoseSchedule")
+@JsonLdTypeName("RecommendedDoseSchedule")
 public class RecommendedDoseScheduleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements RecommendedDoseSchedule {
 
     private Text fTargetPopulation;

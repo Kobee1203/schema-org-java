@@ -32,7 +32,7 @@ import org.schema.model.VoteAction;
  *
  * @see <a href="https://schema.org/VoteAction">https://schema.org/VoteAction</a>
  */
-@JsonLdTypeName("schema:VoteAction")
+@JsonLdTypeName("VoteAction")
 public class VoteActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements VoteAction {
 
     private Person fCandidate;

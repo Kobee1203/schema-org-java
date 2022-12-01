@@ -57,7 +57,7 @@ import org.schema.model.Blog;
  *
  * @see <a href="https://schema.org/Blog">https://schema.org/Blog</a>
  */
-@JsonLdTypeName("schema:Blog")
+@JsonLdTypeName("Blog")
 public class BlogImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Blog {
 
     private BlogPosting fBlogPosts;

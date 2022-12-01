@@ -37,7 +37,7 @@ import org.schema.model.RVPark;
  *
  * @see <a href="https://schema.org/RVPark">https://schema.org/RVPark</a>
  */
-@JsonLdTypeName("schema:RVPark")
+@JsonLdTypeName("RVPark")
 public class RVParkImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements RVPark {
 
     private Text fOpeningHours;

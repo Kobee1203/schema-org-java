@@ -61,7 +61,7 @@ import org.schema.model.VideoGameClip;
  *
  * @see <a href="https://schema.org/VideoGameClip">https://schema.org/VideoGameClip</a>
  */
-@JsonLdTypeName("schema:VideoGameClip")
+@JsonLdTypeName("VideoGameClip")
 public class VideoGameClipImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements VideoGameClip {
 
     private Object fStartOffset;

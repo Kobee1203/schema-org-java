@@ -27,7 +27,7 @@ import org.schema.model.HowToTool;
  *
  * @see <a href="https://schema.org/HowToTool">https://schema.org/HowToTool</a>
  */
-@JsonLdTypeName("schema:HowToTool")
+@JsonLdTypeName("HowToTool")
 public class HowToToolImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements HowToTool {
 
     private Object fRequiredQuantity;

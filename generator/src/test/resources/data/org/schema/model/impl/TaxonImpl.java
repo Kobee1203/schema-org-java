@@ -23,7 +23,7 @@ import com.weedow.schemaorg.commons.model.JsonLdTypeName;
  * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
  * @see <a href="https://schema.org/Taxon">https://schema.org/Taxon</a>
  */
-@JsonLdTypeName("schema:Taxon")
+@JsonLdTypeName("Taxon")
 public class TaxonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Taxon {
 
     private Object fParentTaxon;

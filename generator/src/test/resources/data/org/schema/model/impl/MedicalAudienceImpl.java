@@ -31,7 +31,7 @@ import org.schema.model.MedicalAudience;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/MedicalAudience">https://schema.org/MedicalAudience</a>
  */
-@JsonLdTypeName("schema:MedicalAudience")
+@JsonLdTypeName("MedicalAudience")
 public class MedicalAudienceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MedicalAudience {
 
     private Text fAudienceType;

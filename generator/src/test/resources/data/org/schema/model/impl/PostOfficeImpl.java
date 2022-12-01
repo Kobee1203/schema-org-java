@@ -60,7 +60,7 @@ import org.schema.model.PostOffice;
  *
  * @see <a href="https://schema.org/PostOffice">https://schema.org/PostOffice</a>
  */
-@JsonLdTypeName("schema:PostOffice")
+@JsonLdTypeName("PostOffice")
 public class PostOfficeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PostOffice {
 
     private Organization fBranchOf;

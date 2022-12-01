@@ -65,7 +65,7 @@ import org.schema.model.ReviewNewsArticle;
  * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
  * @see <a href="https://schema.org/ReviewNewsArticle">https://schema.org/ReviewNewsArticle</a>
  */
-@JsonLdTypeName("schema:ReviewNewsArticle")
+@JsonLdTypeName("ReviewNewsArticle")
 public class ReviewNewsArticleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ReviewNewsArticle {
 
     private Rating fReviewRating;

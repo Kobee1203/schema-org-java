@@ -25,7 +25,7 @@ import org.schema.model.GenderType;
  *
  * @see <a href="https://schema.org/GenderType">https://schema.org/GenderType</a>
  */
-@JsonLdTypeName("schema:GenderType")
+@JsonLdTypeName("GenderType")
 public enum GenderTypeEnum implements GenderType {
     MALE("Male"),
     FEMALE("Female");

@@ -32,7 +32,7 @@ import org.schema.model.CompoundPriceSpecification;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass</a>
  * @see <a href="https://schema.org/CompoundPriceSpecification">https://schema.org/CompoundPriceSpecification</a>
  */
-@JsonLdTypeName("schema:CompoundPriceSpecification")
+@JsonLdTypeName("CompoundPriceSpecification")
 public class CompoundPriceSpecificationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements CompoundPriceSpecification {
 
     private UnitPriceSpecification fPriceComponent;

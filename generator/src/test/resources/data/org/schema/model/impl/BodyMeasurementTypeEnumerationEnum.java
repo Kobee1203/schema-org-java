@@ -28,7 +28,7 @@ import org.schema.model.BodyMeasurementTypeEnumeration;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
  * @see <a href="https://schema.org/BodyMeasurementTypeEnumeration">https://schema.org/BodyMeasurementTypeEnumeration</a>
  */
-@JsonLdTypeName("schema:BodyMeasurementTypeEnumeration")
+@JsonLdTypeName("BodyMeasurementTypeEnumeration")
 public enum BodyMeasurementTypeEnumerationEnum implements BodyMeasurementTypeEnumeration {
     BODY_MEASUREMENT_HAND("BodyMeasurementHand"),
     BODY_MEASUREMENT_HIPS("BodyMeasurementHips"),

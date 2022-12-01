@@ -64,7 +64,7 @@ import org.schema.model.Recipe;
  *
  * @see <a href="https://schema.org/Recipe">https://schema.org/Recipe</a>
  */
-@JsonLdTypeName("schema:Recipe")
+@JsonLdTypeName("Recipe")
 public class RecipeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Recipe {
 
     private Object fRecipeInstructions;

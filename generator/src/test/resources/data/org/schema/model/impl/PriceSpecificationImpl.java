@@ -29,7 +29,7 @@ import org.schema.model.StructuredValue;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass</a>
  * @see <a href="https://schema.org/PriceSpecification">https://schema.org/PriceSpecification</a>
  */
-@JsonLdTypeName("schema:PriceSpecification")
+@JsonLdTypeName("PriceSpecification")
 public class PriceSpecificationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PriceSpecification {
 
     private Number fMinPrice;

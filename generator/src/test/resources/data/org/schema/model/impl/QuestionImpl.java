@@ -58,7 +58,7 @@ import org.schema.model.Question;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_QAStackExchange">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_QAStackExchange</a>
  * @see <a href="https://schema.org/Question">https://schema.org/Question</a>
  */
-@JsonLdTypeName("schema:Question")
+@JsonLdTypeName("Question")
 public class QuestionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Question {
 
     private Object fSuggestedAnswer;

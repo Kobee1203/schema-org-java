@@ -28,7 +28,7 @@ import org.schema.model.NLNonprofitType;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2543">https://github.com/schemaorg/schemaorg/issues/2543</a>
  * @see <a href="https://schema.org/NLNonprofitType">https://schema.org/NLNonprofitType</a>
  */
-@JsonLdTypeName("schema:NLNonprofitType")
+@JsonLdTypeName("NLNonprofitType")
 public enum NLNonprofitTypeEnum implements NLNonprofitType {
     NONPROFIT_ANBI("NonprofitANBI"),
     NONPROFIT_SBBI("NonprofitSBBI");

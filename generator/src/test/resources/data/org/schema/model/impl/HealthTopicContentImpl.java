@@ -61,7 +61,7 @@ import org.schema.model.HealthTopicContent;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2374">https://github.com/schemaorg/schemaorg/issues/2374</a>
  * @see <a href="https://schema.org/HealthTopicContent">https://schema.org/HealthTopicContent</a>
  */
-@JsonLdTypeName("schema:HealthTopicContent")
+@JsonLdTypeName("HealthTopicContent")
 public class HealthTopicContentImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements HealthTopicContent {
 
     private HealthAspectEnumeration fHasHealthAspect;

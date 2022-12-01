@@ -22,7 +22,7 @@ import org.schema.model.Quantity;
  *
  * @see <a href="https://schema.org/Quantity">https://schema.org/Quantity</a>
  */
-@JsonLdTypeName("schema:Quantity")
+@JsonLdTypeName("Quantity")
 public class QuantityImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Quantity {
 
     private Object fMainEntityOfPage;

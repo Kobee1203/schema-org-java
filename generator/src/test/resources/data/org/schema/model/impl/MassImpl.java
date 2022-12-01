@@ -23,7 +23,7 @@ import org.schema.model.Mass;
  *
  * @see <a href="https://schema.org/Mass">https://schema.org/Mass</a>
  */
-@JsonLdTypeName("schema:Mass")
+@JsonLdTypeName("Mass")
 public class MassImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Mass {
 
     private Object fMainEntityOfPage;

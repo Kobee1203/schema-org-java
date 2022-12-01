@@ -31,7 +31,7 @@ import org.schema.model.Occupation;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
  * @see <a href="https://schema.org/Occupation">https://schema.org/Occupation</a>
  */
-@JsonLdTypeName("schema:Occupation")
+@JsonLdTypeName("Occupation")
 public class OccupationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Occupation {
 
     private Object fEstimatedSalary;

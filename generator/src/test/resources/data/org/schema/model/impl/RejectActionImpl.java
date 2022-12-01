@@ -32,7 +32,7 @@ import org.schema.model.RejectAction;
  *
  * @see <a href="https://schema.org/RejectAction">https://schema.org/RejectAction</a>
  */
-@JsonLdTypeName("schema:RejectAction")
+@JsonLdTypeName("RejectAction")
 public class RejectActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements RejectAction {
 
     private Object fAgent;

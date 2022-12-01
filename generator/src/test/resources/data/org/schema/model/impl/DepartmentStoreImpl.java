@@ -60,7 +60,7 @@ import org.schema.model.DepartmentStore;
  *
  * @see <a href="https://schema.org/DepartmentStore">https://schema.org/DepartmentStore</a>
  */
-@JsonLdTypeName("schema:DepartmentStore")
+@JsonLdTypeName("DepartmentStore")
 public class DepartmentStoreImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements DepartmentStore {
 
     private Organization fBranchOf;

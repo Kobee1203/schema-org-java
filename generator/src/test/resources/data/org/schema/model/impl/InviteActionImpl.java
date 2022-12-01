@@ -35,7 +35,7 @@ import org.schema.model.InviteAction;
  *
  * @see <a href="https://schema.org/InviteAction">https://schema.org/InviteAction</a>
  */
-@JsonLdTypeName("schema:InviteAction")
+@JsonLdTypeName("InviteAction")
 public class InviteActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements InviteAction {
 
     private Event fEvent;

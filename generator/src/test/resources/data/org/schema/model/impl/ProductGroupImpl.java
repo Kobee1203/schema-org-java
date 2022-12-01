@@ -49,7 +49,7 @@ import com.weedow.schemaorg.commons.model.JsonLdTypeName;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2597">https://github.com/schemaorg/schemaorg/issues/2597</a>
  * @see <a href="https://schema.org/ProductGroup">https://schema.org/ProductGroup</a>
  */
-@JsonLdTypeName("schema:ProductGroup")
+@JsonLdTypeName("ProductGroup")
 public class ProductGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ProductGroup {
 
     private Product fHasVariant;

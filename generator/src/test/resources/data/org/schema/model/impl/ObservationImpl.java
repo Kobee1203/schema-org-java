@@ -31,7 +31,7 @@ import org.schema.model.Observation;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
  * @see <a href="https://schema.org/Observation">https://schema.org/Observation</a>
  */
-@JsonLdTypeName("schema:Observation")
+@JsonLdTypeName("Observation")
 public class ObservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Observation {
 
     private DataType fMeasuredValue;

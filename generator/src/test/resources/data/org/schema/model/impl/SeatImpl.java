@@ -23,7 +23,7 @@ import org.schema.model.Seat;
  *
  * @see <a href="https://schema.org/Seat">https://schema.org/Seat</a>
  */
-@JsonLdTypeName("schema:Seat")
+@JsonLdTypeName("Seat")
 public class SeatImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Seat {
 
     private Object fSeatingType;

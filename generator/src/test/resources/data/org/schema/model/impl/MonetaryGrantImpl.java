@@ -33,7 +33,7 @@ import org.schema.model.MonetaryGrant;
  * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FundInfoCollab">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FundInfoCollab</a>
  * @see <a href="https://schema.org/MonetaryGrant">https://schema.org/MonetaryGrant</a>
  */
-@JsonLdTypeName("schema:MonetaryGrant")
+@JsonLdTypeName("MonetaryGrant")
 public class MonetaryGrantImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MonetaryGrant {
 
     private Object fFunder;

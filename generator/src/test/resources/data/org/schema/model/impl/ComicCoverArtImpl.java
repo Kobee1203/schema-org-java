@@ -61,7 +61,7 @@ import org.schema.model.ComicCoverArt;
  * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
  * @see <a href="https://schema.org/ComicCoverArt">https://schema.org/ComicCoverArt</a>
  */
-@JsonLdTypeName("schema:ComicCoverArt")
+@JsonLdTypeName("ComicCoverArt")
 public class ComicCoverArtImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ComicCoverArt {
 
     private Person fLetterer;

@@ -59,7 +59,7 @@ import org.schema.model.CoverArt;
  * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
  * @see <a href="https://schema.org/CoverArt">https://schema.org/CoverArt</a>
  */
-@JsonLdTypeName("schema:CoverArt")
+@JsonLdTypeName("CoverArt")
 public class CoverArtImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements CoverArt {
 
     private Object fWidth;

@@ -62,7 +62,7 @@ import org.schema.model.Bakery;
  *
  * @see <a href="https://schema.org/Bakery">https://schema.org/Bakery</a>
  */
-@JsonLdTypeName("schema:Bakery")
+@JsonLdTypeName("Bakery")
 public class BakeryImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Bakery {
 
     private Rating fStarRating;

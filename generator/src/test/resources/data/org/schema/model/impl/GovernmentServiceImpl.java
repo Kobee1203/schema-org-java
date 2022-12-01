@@ -41,7 +41,7 @@ import org.schema.model.GovernmentService;
  *
  * @see <a href="https://schema.org/GovernmentService">https://schema.org/GovernmentService</a>
  */
-@JsonLdTypeName("schema:GovernmentService")
+@JsonLdTypeName("GovernmentService")
 public class GovernmentServiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements GovernmentService {
 
     private Object fJurisdiction;

@@ -36,7 +36,7 @@ import org.schema.model.BrainStructure;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/BrainStructure">https://schema.org/BrainStructure</a>
  */
-@JsonLdTypeName("schema:BrainStructure")
+@JsonLdTypeName("BrainStructure")
 public class BrainStructureImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements BrainStructure {
 
     private Text fBodyLocation;

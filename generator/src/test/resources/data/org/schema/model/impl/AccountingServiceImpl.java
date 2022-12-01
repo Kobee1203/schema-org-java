@@ -61,7 +61,7 @@ import org.schema.model.AccountingService;
  *
  * @see <a href="https://schema.org/AccountingService">https://schema.org/AccountingService</a>
  */
-@JsonLdTypeName("schema:AccountingService")
+@JsonLdTypeName("AccountingService")
 public class AccountingServiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements AccountingService {
 
     private Object fFeesAndCommissionsSpecification;

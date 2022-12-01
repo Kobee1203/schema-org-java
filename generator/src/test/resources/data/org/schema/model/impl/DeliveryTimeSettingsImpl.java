@@ -28,7 +28,7 @@ import org.schema.model.DeliveryTimeSettings;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
  * @see <a href="https://schema.org/DeliveryTimeSettings">https://schema.org/DeliveryTimeSettings</a>
  */
-@JsonLdTypeName("schema:DeliveryTimeSettings")
+@JsonLdTypeName("DeliveryTimeSettings")
 public class DeliveryTimeSettingsImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements DeliveryTimeSettings {
 
     private DefinedRegion fShippingDestination;

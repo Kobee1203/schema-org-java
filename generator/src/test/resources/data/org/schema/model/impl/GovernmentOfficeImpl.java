@@ -59,7 +59,7 @@ import org.schema.model.GovernmentOffice;
  *
  * @see <a href="https://schema.org/GovernmentOffice">https://schema.org/GovernmentOffice</a>
  */
-@JsonLdTypeName("schema:GovernmentOffice")
+@JsonLdTypeName("GovernmentOffice")
 public class GovernmentOfficeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements GovernmentOffice {
 
     private Organization fBranchOf;

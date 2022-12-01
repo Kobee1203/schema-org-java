@@ -60,7 +60,7 @@ import org.schema.model.AmusementPark;
  *
  * @see <a href="https://schema.org/AmusementPark">https://schema.org/AmusementPark</a>
  */
-@JsonLdTypeName("schema:AmusementPark")
+@JsonLdTypeName("AmusementPark")
 public class AmusementParkImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements AmusementPark {
 
     private Organization fBranchOf;

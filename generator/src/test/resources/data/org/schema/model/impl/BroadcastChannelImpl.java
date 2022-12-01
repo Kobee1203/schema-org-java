@@ -25,7 +25,7 @@ import org.schema.model.BroadcastChannel;
  *
  * @see <a href="https://schema.org/BroadcastChannel">https://schema.org/BroadcastChannel</a>
  */
-@JsonLdTypeName("schema:BroadcastChannel")
+@JsonLdTypeName("BroadcastChannel")
 public class BroadcastChannelImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements BroadcastChannel {
 
     private Object fGenre;

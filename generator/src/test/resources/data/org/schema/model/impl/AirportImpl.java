@@ -37,7 +37,7 @@ import org.schema.model.Airport;
  *
  * @see <a href="https://schema.org/Airport">https://schema.org/Airport</a>
  */
-@JsonLdTypeName("schema:Airport")
+@JsonLdTypeName("Airport")
 public class AirportImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Airport {
 
     private Text fIataCode;

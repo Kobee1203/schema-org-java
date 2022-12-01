@@ -60,7 +60,7 @@ import org.schema.model.SportingGoodsStore;
  *
  * @see <a href="https://schema.org/SportingGoodsStore">https://schema.org/SportingGoodsStore</a>
  */
-@JsonLdTypeName("schema:SportingGoodsStore")
+@JsonLdTypeName("SportingGoodsStore")
 public class SportingGoodsStoreImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements SportingGoodsStore {
 
     private Organization fBranchOf;

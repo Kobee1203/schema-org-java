@@ -31,7 +31,7 @@ import org.schema.model.BusReservation;
  *
  * @see <a href="https://schema.org/BusReservation">https://schema.org/BusReservation</a>
  */
-@JsonLdTypeName("schema:BusReservation")
+@JsonLdTypeName("BusReservation")
 public class BusReservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements BusReservation {
 
     private DateTime fModifiedTime;

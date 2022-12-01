@@ -33,7 +33,7 @@ import org.schema.model.InstallAction;
  *
  * @see <a href="https://schema.org/InstallAction">https://schema.org/InstallAction</a>
  */
-@JsonLdTypeName("schema:InstallAction")
+@JsonLdTypeName("InstallAction")
 public class InstallActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements InstallAction {
 
     private Offer fExpectsAcceptanceOf;

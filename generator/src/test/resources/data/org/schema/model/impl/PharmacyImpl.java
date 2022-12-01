@@ -62,7 +62,7 @@ import org.schema.model.Pharmacy;
  *
  * @see <a href="https://schema.org/Pharmacy">https://schema.org/Pharmacy</a>
  */
-@JsonLdTypeName("schema:Pharmacy")
+@JsonLdTypeName("Pharmacy")
 public class PharmacyImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Pharmacy {
 
     private Boolean fIsAcceptingNewPatients;

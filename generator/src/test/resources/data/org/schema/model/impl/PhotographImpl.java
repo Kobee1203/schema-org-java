@@ -56,7 +56,7 @@ import org.schema.model.Photograph;
  *
  * @see <a href="https://schema.org/Photograph">https://schema.org/Photograph</a>
  */
-@JsonLdTypeName("schema:Photograph")
+@JsonLdTypeName("Photograph")
 public class PhotographImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Photograph {
 
     private Object fTeaches;

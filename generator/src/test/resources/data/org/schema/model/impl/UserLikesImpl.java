@@ -44,7 +44,7 @@ import org.schema.model.UserLikes;
  *
  * @see <a href="https://schema.org/UserLikes">https://schema.org/UserLikes</a>
  */
-@JsonLdTypeName("schema:UserLikes")
+@JsonLdTypeName("UserLikes")
 public class UserLikesImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements UserLikes {
 
     private Event fSuperEvent;

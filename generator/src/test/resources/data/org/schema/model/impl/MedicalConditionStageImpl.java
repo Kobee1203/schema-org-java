@@ -34,7 +34,7 @@ import org.schema.model.MedicalConditionStage;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/MedicalConditionStage">https://schema.org/MedicalConditionStage</a>
  */
-@JsonLdTypeName("schema:MedicalConditionStage")
+@JsonLdTypeName("MedicalConditionStage")
 public class MedicalConditionStageImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MedicalConditionStage {
 
     private Text fSubStageSuffix;

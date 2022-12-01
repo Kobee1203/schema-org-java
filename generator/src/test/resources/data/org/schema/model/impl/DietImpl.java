@@ -66,7 +66,7 @@ import org.schema.model.Diet;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/Diet">https://schema.org/Diet</a>
  */
-@JsonLdTypeName("schema:Diet")
+@JsonLdTypeName("Diet")
 public class DietImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Diet {
 
     private Text fExpertConsiderations;

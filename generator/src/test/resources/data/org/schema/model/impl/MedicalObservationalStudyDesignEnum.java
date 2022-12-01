@@ -27,7 +27,7 @@ import org.schema.model.MedicalObservationalStudyDesign;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/MedicalObservationalStudyDesign">https://schema.org/MedicalObservationalStudyDesign</a>
  */
-@JsonLdTypeName("schema:MedicalObservationalStudyDesign")
+@JsonLdTypeName("MedicalObservationalStudyDesign")
 public enum MedicalObservationalStudyDesignEnum implements MedicalObservationalStudyDesign {
     REGISTRY("Registry"),
     COHORT_STUDY("CohortStudy"),

@@ -62,7 +62,7 @@ import com.weedow.schemaorg.commons.model.JsonLdTypeName;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1828">https://github.com/schemaorg/schemaorg/issues/1828</a>
  * @see <a href="https://schema.org/Claim">https://schema.org/Claim</a>
  */
-@JsonLdTypeName("schema:Claim")
+@JsonLdTypeName("Claim")
 public class ClaimImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Claim {
 
     private Object fClaimInterpreter;

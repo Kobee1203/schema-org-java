@@ -52,7 +52,7 @@ import org.schema.model.NewsMediaOrganization;
  * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
  * @see <a href="https://schema.org/NewsMediaOrganization">https://schema.org/NewsMediaOrganization</a>
  */
-@JsonLdTypeName("schema:NewsMediaOrganization")
+@JsonLdTypeName("NewsMediaOrganization")
 public class NewsMediaOrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements NewsMediaOrganization {
 
     private Object fOwnershipFundingInfo;

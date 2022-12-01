@@ -45,7 +45,7 @@ import org.schema.model.Suite;
  * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
  * @see <a href="https://schema.org/Suite">https://schema.org/Suite</a>
  */
-@JsonLdTypeName("schema:Suite")
+@JsonLdTypeName("Suite")
 public class SuiteImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Suite {
 
     private Object fNumberOfRooms;

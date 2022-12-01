@@ -30,7 +30,7 @@ import org.schema.model.OpeningHoursSpecification;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass</a>
  * @see <a href="https://schema.org/OpeningHoursSpecification">https://schema.org/OpeningHoursSpecification</a>
  */
-@JsonLdTypeName("schema:OpeningHoursSpecification")
+@JsonLdTypeName("OpeningHoursSpecification")
 public class OpeningHoursSpecificationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements OpeningHoursSpecification {
 
     private Time fCloses;

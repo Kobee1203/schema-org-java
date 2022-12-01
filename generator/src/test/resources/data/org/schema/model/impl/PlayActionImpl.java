@@ -31,7 +31,7 @@ import org.schema.model.PlayAction;
  *
  * @see <a href="https://schema.org/PlayAction">https://schema.org/PlayAction</a>
  */
-@JsonLdTypeName("schema:PlayAction")
+@JsonLdTypeName("PlayAction")
 public class PlayActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PlayAction {
 
     private Audience fAudience;

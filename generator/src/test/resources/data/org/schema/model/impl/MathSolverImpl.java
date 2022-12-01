@@ -59,7 +59,7 @@ import org.schema.model.MathSolver;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2740">https://github.com/schemaorg/schemaorg/issues/2740</a>
  * @see <a href="https://schema.org/MathSolver">https://schema.org/MathSolver</a>
  */
-@JsonLdTypeName("schema:MathSolver")
+@JsonLdTypeName("MathSolver")
 public class MathSolverImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MathSolver {
 
     private Object fMathExpression;

@@ -59,7 +59,7 @@ import org.schema.model.RadioSeason;
  *
  * @see <a href="https://schema.org/RadioSeason">https://schema.org/RadioSeason</a>
  */
-@JsonLdTypeName("schema:RadioSeason")
+@JsonLdTypeName("RadioSeason")
 public class RadioSeasonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements RadioSeason {
 
     private Object fStartDate;

@@ -60,7 +60,7 @@ import org.schema.model.ElementarySchool;
  *
  * @see <a href="https://schema.org/ElementarySchool">https://schema.org/ElementarySchool</a>
  */
-@JsonLdTypeName("schema:ElementarySchool")
+@JsonLdTypeName("ElementarySchool")
 public class ElementarySchoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ElementarySchool {
 
     private Person fAlumni;

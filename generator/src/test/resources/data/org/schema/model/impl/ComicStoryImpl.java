@@ -59,7 +59,7 @@ import org.schema.model.ComicStory;
  * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
  * @see <a href="https://schema.org/ComicStory">https://schema.org/ComicStory</a>
  */
-@JsonLdTypeName("schema:ComicStory")
+@JsonLdTypeName("ComicStory")
 public class ComicStoryImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ComicStory {
 
     private Person fLetterer;

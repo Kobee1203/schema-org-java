@@ -61,7 +61,7 @@ import org.schema.model.FoodEstablishment;
  *
  * @see <a href="https://schema.org/FoodEstablishment">https://schema.org/FoodEstablishment</a>
  */
-@JsonLdTypeName("schema:FoodEstablishment")
+@JsonLdTypeName("FoodEstablishment")
 public class FoodEstablishmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements FoodEstablishment {
 
     private Rating fStarRating;

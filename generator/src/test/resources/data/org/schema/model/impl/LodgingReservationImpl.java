@@ -35,7 +35,7 @@ import org.schema.model.LodgingReservation;
  *
  * @see <a href="https://schema.org/LodgingReservation">https://schema.org/LodgingReservation</a>
  */
-@JsonLdTypeName("schema:LodgingReservation")
+@JsonLdTypeName("LodgingReservation")
 public class LodgingReservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements LodgingReservation {
 
     private Object fLodgingUnitType;

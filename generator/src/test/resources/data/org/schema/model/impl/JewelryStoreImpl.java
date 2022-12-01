@@ -60,7 +60,7 @@ import org.schema.model.JewelryStore;
  *
  * @see <a href="https://schema.org/JewelryStore">https://schema.org/JewelryStore</a>
  */
-@JsonLdTypeName("schema:JewelryStore")
+@JsonLdTypeName("JewelryStore")
 public class JewelryStoreImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements JewelryStore {
 
     private Organization fBranchOf;

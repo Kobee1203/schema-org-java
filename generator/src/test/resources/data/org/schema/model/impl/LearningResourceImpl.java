@@ -62,7 +62,7 @@ import org.schema.model.LearningResource;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1401">https://github.com/schemaorg/schemaorg/issues/1401</a>
  * @see <a href="https://schema.org/LearningResource">https://schema.org/LearningResource</a>
  */
-@JsonLdTypeName("schema:LearningResource")
+@JsonLdTypeName("LearningResource")
 public class LearningResourceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements LearningResource {
 
     private Object fTeaches;

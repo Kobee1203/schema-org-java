@@ -57,7 +57,7 @@ import org.schema.model.PublicationIssue;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
  * @see <a href="https://schema.org/PublicationIssue">https://schema.org/PublicationIssue</a>
  */
-@JsonLdTypeName("schema:PublicationIssue")
+@JsonLdTypeName("PublicationIssue")
 public class PublicationIssueImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PublicationIssue {
 
     private Object fPageStart;

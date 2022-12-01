@@ -40,7 +40,7 @@ import org.schema.model.PhysicalExam;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/PhysicalExam">https://schema.org/PhysicalExam</a>
  */
-@JsonLdTypeName("schema:PhysicalExam")
+@JsonLdTypeName("PhysicalExam")
 public enum PhysicalExamEnum implements PhysicalExam {
     GENITOURINARY("Genitourinary"),
     ABDOMEN("Abdomen"),

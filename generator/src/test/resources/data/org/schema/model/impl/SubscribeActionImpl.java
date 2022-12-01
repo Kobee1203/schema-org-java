@@ -31,7 +31,7 @@ import org.schema.model.SubscribeAction;
  *
  * @see <a href="https://schema.org/SubscribeAction">https://schema.org/SubscribeAction</a>
  */
-@JsonLdTypeName("schema:SubscribeAction")
+@JsonLdTypeName("SubscribeAction")
 public class SubscribeActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements SubscribeAction {
 
     private Object fAgent;

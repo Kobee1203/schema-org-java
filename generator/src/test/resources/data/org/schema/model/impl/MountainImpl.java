@@ -37,7 +37,7 @@ import org.schema.model.Mountain;
  *
  * @see <a href="https://schema.org/Mountain">https://schema.org/Mountain</a>
  */
-@JsonLdTypeName("schema:Mountain")
+@JsonLdTypeName("Mountain")
 public class MountainImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Mountain {
 
     private Text fTelephone;

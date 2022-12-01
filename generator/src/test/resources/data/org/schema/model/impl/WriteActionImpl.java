@@ -32,7 +32,7 @@ import org.schema.model.WriteAction;
  *
  * @see <a href="https://schema.org/WriteAction">https://schema.org/WriteAction</a>
  */
-@JsonLdTypeName("schema:WriteAction")
+@JsonLdTypeName("WriteAction")
 public class WriteActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements WriteAction {
 
     private Object fInLanguage;

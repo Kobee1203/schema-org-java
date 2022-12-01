@@ -60,7 +60,7 @@ import org.schema.model.ProfilePage;
  *
  * @see <a href="https://schema.org/ProfilePage">https://schema.org/ProfilePage</a>
  */
-@JsonLdTypeName("schema:ProfilePage")
+@JsonLdTypeName("ProfilePage")
 public class ProfilePageImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ProfilePage {
 
     private Date fLastReviewed;

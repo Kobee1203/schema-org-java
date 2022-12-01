@@ -60,7 +60,7 @@ import org.schema.model.RadioEpisode;
  *
  * @see <a href="https://schema.org/RadioEpisode">https://schema.org/RadioEpisode</a>
  */
-@JsonLdTypeName("schema:RadioEpisode")
+@JsonLdTypeName("RadioEpisode")
 public class RadioEpisodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements RadioEpisode {
 
     private Object fEpisodeNumber;

@@ -66,7 +66,7 @@ import org.schema.model.Physician;
  *
  * @see <a href="https://schema.org/Physician">https://schema.org/Physician</a>
  */
-@JsonLdTypeName("schema:Physician")
+@JsonLdTypeName("Physician")
 public class PhysicianImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Physician {
 
     private Object fAvailableService;

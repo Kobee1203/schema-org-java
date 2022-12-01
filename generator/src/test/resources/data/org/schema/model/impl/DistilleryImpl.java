@@ -63,7 +63,7 @@ import org.schema.model.Distillery;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/743">https://github.com/schemaorg/schemaorg/issues/743</a>
  * @see <a href="https://schema.org/Distillery">https://schema.org/Distillery</a>
  */
-@JsonLdTypeName("schema:Distillery")
+@JsonLdTypeName("Distillery")
 public class DistilleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Distillery {
 
     private Rating fStarRating;

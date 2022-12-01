@@ -38,7 +38,7 @@ import org.schema.model.Mosque;
  *
  * @see <a href="https://schema.org/Mosque">https://schema.org/Mosque</a>
  */
-@JsonLdTypeName("schema:Mosque")
+@JsonLdTypeName("Mosque")
 public class MosqueImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Mosque {
 
     private Text fOpeningHours;

@@ -34,7 +34,7 @@ import org.schema.model.AuthorizeAction;
  *
  * @see <a href="https://schema.org/AuthorizeAction">https://schema.org/AuthorizeAction</a>
  */
-@JsonLdTypeName("schema:AuthorizeAction")
+@JsonLdTypeName("AuthorizeAction")
 public class AuthorizeActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements AuthorizeAction {
 
     private Object fRecipient;

@@ -35,7 +35,7 @@ import org.schema.model.ShareAction;
  *
  * @see <a href="https://schema.org/ShareAction">https://schema.org/ShareAction</a>
  */
-@JsonLdTypeName("schema:ShareAction")
+@JsonLdTypeName("ShareAction")
 public class ShareActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ShareAction {
 
     private Object fRecipient;

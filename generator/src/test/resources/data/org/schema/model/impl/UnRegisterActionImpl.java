@@ -31,7 +31,7 @@ import org.schema.model.UnRegisterAction;
  *
  * @see <a href="https://schema.org/UnRegisterAction">https://schema.org/UnRegisterAction</a>
  */
-@JsonLdTypeName("schema:UnRegisterAction")
+@JsonLdTypeName("UnRegisterAction")
 public class UnRegisterActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements UnRegisterAction {
 
     private Object fAgent;

@@ -12,7 +12,7 @@ import com.weedow.schemaorg.commons.model.JsonLdTypeName;
  *
  * @see <a href="https://schema.org/Number">https://schema.org/Number</a>
  */
-@JsonLdTypeName("schema:Number")
+@JsonLdTypeName("Number")
 public class Number extends DataType<java.lang.Number> {
 
     Number(java.lang.Number value) {

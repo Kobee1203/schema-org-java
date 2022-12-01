@@ -27,7 +27,7 @@ import org.schema.model.MedicalImagingTechnique;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/MedicalImagingTechnique">https://schema.org/MedicalImagingTechnique</a>
  */
-@JsonLdTypeName("schema:MedicalImagingTechnique")
+@JsonLdTypeName("MedicalImagingTechnique")
 public enum MedicalImagingTechniqueEnum implements MedicalImagingTechnique {
     X_RAY("XRay"),
     PET("PET"),

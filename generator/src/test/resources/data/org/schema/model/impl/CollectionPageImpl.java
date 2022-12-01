@@ -60,7 +60,7 @@ import org.schema.model.CollectionPage;
  *
  * @see <a href="https://schema.org/CollectionPage">https://schema.org/CollectionPage</a>
  */
-@JsonLdTypeName("schema:CollectionPage")
+@JsonLdTypeName("CollectionPage")
 public class CollectionPageImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements CollectionPage {
 
     private Date fLastReviewed;

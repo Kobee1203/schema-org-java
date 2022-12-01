@@ -62,7 +62,7 @@ import org.schema.model.Restaurant;
  *
  * @see <a href="https://schema.org/Restaurant">https://schema.org/Restaurant</a>
  */
-@JsonLdTypeName("schema:Restaurant")
+@JsonLdTypeName("Restaurant")
 public class RestaurantImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Restaurant {
 
     private Rating fStarRating;

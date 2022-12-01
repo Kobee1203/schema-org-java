@@ -60,7 +60,7 @@ import com.weedow.schemaorg.commons.model.JsonLdTypeName;
  *
  * @see <a href="https://schema.org/Clip">https://schema.org/Clip</a>
  */
-@JsonLdTypeName("schema:Clip")
+@JsonLdTypeName("Clip")
 public class ClipImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Clip {
 
     private Object fStartOffset;

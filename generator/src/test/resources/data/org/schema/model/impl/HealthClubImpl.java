@@ -61,7 +61,7 @@ import org.schema.model.HealthClub;
  *
  * @see <a href="https://schema.org/HealthClub">https://schema.org/HealthClub</a>
  */
-@JsonLdTypeName("schema:HealthClub")
+@JsonLdTypeName("HealthClub")
 public class HealthClubImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements HealthClub {
 
     private Organization fBranchOf;

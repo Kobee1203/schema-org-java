@@ -33,7 +33,7 @@ import org.schema.model.PerformAction;
  *
  * @see <a href="https://schema.org/PerformAction">https://schema.org/PerformAction</a>
  */
-@JsonLdTypeName("schema:PerformAction")
+@JsonLdTypeName("PerformAction")
 public class PerformActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PerformAction {
 
     private EntertainmentBusiness fEntertainmentBusiness;

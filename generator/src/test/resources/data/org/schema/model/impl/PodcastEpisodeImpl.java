@@ -62,7 +62,7 @@ import org.schema.model.PodcastEpisode;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/373">https://github.com/schemaorg/schemaorg/issues/373</a>
  * @see <a href="https://schema.org/PodcastEpisode">https://schema.org/PodcastEpisode</a>
  */
-@JsonLdTypeName("schema:PodcastEpisode")
+@JsonLdTypeName("PodcastEpisode")
 public class PodcastEpisodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PodcastEpisode {
 
     private Object fEpisodeNumber;

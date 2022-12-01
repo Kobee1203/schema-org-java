@@ -34,7 +34,7 @@ import org.schema.model.MedicalRiskScore;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/MedicalRiskScore">https://schema.org/MedicalRiskScore</a>
  */
-@JsonLdTypeName("schema:MedicalRiskScore")
+@JsonLdTypeName("MedicalRiskScore")
 public class MedicalRiskScoreImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MedicalRiskScore {
 
     private Text fAlgorithm;

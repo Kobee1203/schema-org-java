@@ -25,7 +25,7 @@ import org.schema.model.DefinedTerm;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
  * @see <a href="https://schema.org/DefinedTerm">https://schema.org/DefinedTerm</a>
  */
-@JsonLdTypeName("schema:DefinedTerm")
+@JsonLdTypeName("DefinedTerm")
 public class DefinedTermImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements DefinedTerm {
 
     private Text fTermCode;

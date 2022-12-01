@@ -33,7 +33,7 @@ import org.schema.model.AppendAction;
  *
  * @see <a href="https://schema.org/AppendAction">https://schema.org/AppendAction</a>
  */
-@JsonLdTypeName("schema:AppendAction")
+@JsonLdTypeName("AppendAction")
 public class AppendActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements AppendAction {
 
     private Place fToLocation;

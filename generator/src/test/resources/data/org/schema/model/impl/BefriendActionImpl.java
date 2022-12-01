@@ -31,7 +31,7 @@ import org.schema.model.BefriendAction;
  *
  * @see <a href="https://schema.org/BefriendAction">https://schema.org/BefriendAction</a>
  */
-@JsonLdTypeName("schema:BefriendAction")
+@JsonLdTypeName("BefriendAction")
 public class BefriendActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements BefriendAction {
 
     private Object fAgent;

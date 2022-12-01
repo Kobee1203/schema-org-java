@@ -37,7 +37,7 @@ import org.schema.model.MoneyTransfer;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
  * @see <a href="https://schema.org/MoneyTransfer">https://schema.org/MoneyTransfer</a>
  */
-@JsonLdTypeName("schema:MoneyTransfer")
+@JsonLdTypeName("MoneyTransfer")
 public class MoneyTransferImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MoneyTransfer {
 
     private Object fBeneficiaryBank;

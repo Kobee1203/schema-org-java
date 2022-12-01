@@ -60,7 +60,7 @@ import org.schema.model.ItemPage;
  *
  * @see <a href="https://schema.org/ItemPage">https://schema.org/ItemPage</a>
  */
-@JsonLdTypeName("schema:ItemPage")
+@JsonLdTypeName("ItemPage")
 public class ItemPageImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ItemPage {
 
     private Date fLastReviewed;

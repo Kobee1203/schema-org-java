@@ -60,7 +60,7 @@ import org.schema.model.HardwareStore;
  *
  * @see <a href="https://schema.org/HardwareStore">https://schema.org/HardwareStore</a>
  */
-@JsonLdTypeName("schema:HardwareStore")
+@JsonLdTypeName("HardwareStore")
 public class HardwareStoreImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements HardwareStore {
 
     private Organization fBranchOf;

@@ -66,7 +66,7 @@ import org.schema.model.Motel;
  *
  * @see <a href="https://schema.org/Motel">https://schema.org/Motel</a>
  */
-@JsonLdTypeName("schema:Motel")
+@JsonLdTypeName("Motel")
 public class MotelImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Motel {
 
     private Object fNumberOfRooms;

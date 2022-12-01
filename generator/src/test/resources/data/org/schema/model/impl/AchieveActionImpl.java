@@ -30,7 +30,7 @@ import org.schema.model.AchieveAction;
  *
  * @see <a href="https://schema.org/AchieveAction">https://schema.org/AchieveAction</a>
  */
-@JsonLdTypeName("schema:AchieveAction")
+@JsonLdTypeName("AchieveAction")
 public class AchieveActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements AchieveAction {
 
     private Object fAgent;

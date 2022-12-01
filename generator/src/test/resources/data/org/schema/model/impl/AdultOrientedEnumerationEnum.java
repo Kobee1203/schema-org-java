@@ -27,7 +27,7 @@ import org.schema.model.AdultOrientedEnumeration;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2989">https://github.com/schemaorg/schemaorg/issues/2989</a>
  * @see <a href="https://schema.org/AdultOrientedEnumeration">https://schema.org/AdultOrientedEnumeration</a>
  */
-@JsonLdTypeName("schema:AdultOrientedEnumeration")
+@JsonLdTypeName("AdultOrientedEnumeration")
 public enum AdultOrientedEnumerationEnum implements AdultOrientedEnumeration {
     REDUCED_RELEVANCE_FOR_CHILDREN_CONSIDERATION("ReducedRelevanceForChildrenConsideration"),
     SEXUAL_CONTENT_CONSIDERATION("SexualContentConsideration"),

@@ -60,7 +60,7 @@ import org.schema.model.GardenStore;
  *
  * @see <a href="https://schema.org/GardenStore">https://schema.org/GardenStore</a>
  */
-@JsonLdTypeName("schema:GardenStore")
+@JsonLdTypeName("GardenStore")
 public class GardenStoreImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements GardenStore {
 
     private Organization fBranchOf;

@@ -27,7 +27,7 @@ import org.schema.model.PriceComponentTypeEnumeration;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2689">https://github.com/schemaorg/schemaorg/issues/2689</a>
  * @see <a href="https://schema.org/PriceComponentTypeEnumeration">https://schema.org/PriceComponentTypeEnumeration</a>
  */
-@JsonLdTypeName("schema:PriceComponentTypeEnumeration")
+@JsonLdTypeName("PriceComponentTypeEnumeration")
 public enum PriceComponentTypeEnumerationEnum implements PriceComponentTypeEnumeration {
     SUBSCRIPTION("Subscription"),
     INSTALLMENT("Installment"),

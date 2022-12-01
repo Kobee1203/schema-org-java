@@ -26,7 +26,7 @@ import org.schema.model.HowToItem;
  *
  * @see <a href="https://schema.org/HowToItem">https://schema.org/HowToItem</a>
  */
-@JsonLdTypeName("schema:HowToItem")
+@JsonLdTypeName("HowToItem")
 public class HowToItemImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements HowToItem {
 
     private Object fRequiredQuantity;

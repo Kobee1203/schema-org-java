@@ -34,7 +34,7 @@ import org.schema.model.BuyAction;
  *
  * @see <a href="https://schema.org/BuyAction">https://schema.org/BuyAction</a>
  */
-@JsonLdTypeName("schema:BuyAction")
+@JsonLdTypeName("BuyAction")
 public class BuyActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements BuyAction {
 
     private WarrantyPromise fWarrantyPromise;

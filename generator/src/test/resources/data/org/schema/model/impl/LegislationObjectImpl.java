@@ -69,7 +69,7 @@ import org.schema.model.LegislationObject;
  * @see <a href="http://publications.europa.eu/mdr/eli/index.html">http://publications.europa.eu/mdr/eli/index.html</a>
  * @see <a href="https://schema.org/LegislationObject">https://schema.org/LegislationObject</a>
  */
-@JsonLdTypeName("schema:LegislationObject")
+@JsonLdTypeName("LegislationObject")
 public class LegislationObjectImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements LegislationObject {
 
     private LegalValueLevel fLegislationLegalValue;

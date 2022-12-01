@@ -37,7 +37,7 @@ import org.schema.model.LymphaticVessel;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/LymphaticVessel">https://schema.org/LymphaticVessel</a>
  */
-@JsonLdTypeName("schema:LymphaticVessel")
+@JsonLdTypeName("LymphaticVessel")
 public class LymphaticVesselImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements LymphaticVessel {
 
     private Vessel fRunsTo;

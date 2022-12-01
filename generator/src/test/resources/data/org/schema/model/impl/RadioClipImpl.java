@@ -61,7 +61,7 @@ import org.schema.model.RadioClip;
  *
  * @see <a href="https://schema.org/RadioClip">https://schema.org/RadioClip</a>
  */
-@JsonLdTypeName("schema:RadioClip")
+@JsonLdTypeName("RadioClip")
 public class RadioClipImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements RadioClip {
 
     private Object fStartOffset;

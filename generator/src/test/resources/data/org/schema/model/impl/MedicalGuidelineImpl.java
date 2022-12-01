@@ -33,7 +33,7 @@ import com.weedow.schemaorg.commons.model.JsonLdTypeName;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/MedicalGuideline">https://schema.org/MedicalGuideline</a>
  */
-@JsonLdTypeName("schema:MedicalGuideline")
+@JsonLdTypeName("MedicalGuideline")
 public class MedicalGuidelineImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MedicalGuideline {
 
     private MedicalEvidenceLevel fEvidenceLevel;

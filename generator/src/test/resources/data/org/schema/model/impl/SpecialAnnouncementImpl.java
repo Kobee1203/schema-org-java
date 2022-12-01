@@ -101,7 +101,7 @@ import org.schema.model.SpecialAnnouncement;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
  * @see <a href="https://schema.org/SpecialAnnouncement">https://schema.org/SpecialAnnouncement</a>
  */
-@JsonLdTypeName("schema:SpecialAnnouncement")
+@JsonLdTypeName("SpecialAnnouncement")
 public class SpecialAnnouncementImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements SpecialAnnouncement {
 
     private GovernmentService fGovernmentBenefitsInfo;

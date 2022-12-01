@@ -33,7 +33,7 @@ import org.schema.model.ActionAccessSpecification;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
  * @see <a href="https://schema.org/ActionAccessSpecification">https://schema.org/ActionAccessSpecification</a>
  */
-@JsonLdTypeName("schema:ActionAccessSpecification")
+@JsonLdTypeName("ActionAccessSpecification")
 public class ActionAccessSpecificationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ActionAccessSpecification {
 
     private Offer fExpectsAcceptanceOf;

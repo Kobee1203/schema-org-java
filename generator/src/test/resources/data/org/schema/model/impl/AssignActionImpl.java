@@ -32,7 +32,7 @@ import org.schema.model.AssignAction;
  *
  * @see <a href="https://schema.org/AssignAction">https://schema.org/AssignAction</a>
  */
-@JsonLdTypeName("schema:AssignAction")
+@JsonLdTypeName("AssignAction")
 public class AssignActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements AssignAction {
 
     private Object fAgent;

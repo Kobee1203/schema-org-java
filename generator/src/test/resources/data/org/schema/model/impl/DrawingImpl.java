@@ -58,7 +58,7 @@ import org.schema.model.Drawing;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1448">https://github.com/schemaorg/schemaorg/issues/1448</a>
  * @see <a href="https://schema.org/Drawing">https://schema.org/Drawing</a>
  */
-@JsonLdTypeName("schema:Drawing")
+@JsonLdTypeName("Drawing")
 public class DrawingImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Drawing {
 
     private Object fTeaches;

@@ -49,7 +49,7 @@ import org.schema.model.SportsOrganization;
  *
  * @see <a href="https://schema.org/SportsOrganization">https://schema.org/SportsOrganization</a>
  */
-@JsonLdTypeName("schema:SportsOrganization")
+@JsonLdTypeName("SportsOrganization")
 public class SportsOrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements SportsOrganization {
 
     private Object fSport;

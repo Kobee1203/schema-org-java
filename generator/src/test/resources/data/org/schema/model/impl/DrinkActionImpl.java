@@ -33,7 +33,7 @@ import org.schema.model.DrinkAction;
  *
  * @see <a href="https://schema.org/DrinkAction">https://schema.org/DrinkAction</a>
  */
-@JsonLdTypeName("schema:DrinkAction")
+@JsonLdTypeName("DrinkAction")
 public class DrinkActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements DrinkAction {
 
     private Offer fExpectsAcceptanceOf;

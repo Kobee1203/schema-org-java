@@ -29,7 +29,7 @@ import org.schema.model.LegalForceStatus;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
  * @see <a href="https://schema.org/LegalForceStatus">https://schema.org/LegalForceStatus</a>
  */
-@JsonLdTypeName("schema:LegalForceStatus")
+@JsonLdTypeName("LegalForceStatus")
 public enum LegalForceStatusEnum implements LegalForceStatus {
     NOT_IN_FORCE("NotInForce"),
     IN_FORCE("InForce"),

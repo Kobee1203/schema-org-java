@@ -60,7 +60,7 @@ import org.schema.model.TennisComplex;
  *
  * @see <a href="https://schema.org/TennisComplex">https://schema.org/TennisComplex</a>
  */
-@JsonLdTypeName("schema:TennisComplex")
+@JsonLdTypeName("TennisComplex")
 public class TennisComplexImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements TennisComplex {
 
     private Organization fBranchOf;

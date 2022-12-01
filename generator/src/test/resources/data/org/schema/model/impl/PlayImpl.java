@@ -58,7 +58,7 @@ import org.schema.model.Play;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1816">https://github.com/schemaorg/schemaorg/issues/1816</a>
  * @see <a href="https://schema.org/Play">https://schema.org/Play</a>
  */
-@JsonLdTypeName("schema:Play")
+@JsonLdTypeName("Play")
 public class PlayImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Play {
 
     private Object fTeaches;

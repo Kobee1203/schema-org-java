@@ -27,7 +27,7 @@ import org.schema.model.RefundTypeEnumeration;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
  * @see <a href="https://schema.org/RefundTypeEnumeration">https://schema.org/RefundTypeEnumeration</a>
  */
-@JsonLdTypeName("schema:RefundTypeEnumeration")
+@JsonLdTypeName("RefundTypeEnumeration")
 public enum RefundTypeEnumerationEnum implements RefundTypeEnumeration {
     STORE_CREDIT_REFUND("StoreCreditRefund"),
     EXCHANGE_REFUND("ExchangeRefund"),

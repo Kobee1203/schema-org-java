@@ -8,7 +8,7 @@ import {{this}};
 
 {{#with this.type}}
 {{> templates/fragment/javadoc_class}}
-@JsonLdTypeName("{{this.id}}")
+@JsonLdTypeName("{{this.typeId}}")
 public enum {{this.name}}Enum implements {{this.name}} {
 {{#each this.enumerationMembers}}
     {{capitalizeWithUnderscore this}}("{{this}}"){{#not @last}},{{else}};{{/not}}

@@ -27,7 +27,7 @@ import org.schema.model.MeasurementTypeEnumeration;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
  * @see <a href="https://schema.org/MeasurementTypeEnumeration">https://schema.org/MeasurementTypeEnumeration</a>
  */
-@JsonLdTypeName("schema:MeasurementTypeEnumeration")
+@JsonLdTypeName("MeasurementTypeEnumeration")
 public class MeasurementTypeEnumerationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MeasurementTypeEnumeration {
 
     private Object fSupersededBy;

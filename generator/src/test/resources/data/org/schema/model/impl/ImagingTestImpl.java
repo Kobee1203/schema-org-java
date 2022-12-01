@@ -38,7 +38,7 @@ import org.schema.model.ImagingTest;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/ImagingTest">https://schema.org/ImagingTest</a>
  */
-@JsonLdTypeName("schema:ImagingTest")
+@JsonLdTypeName("ImagingTest")
 public class ImagingTestImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ImagingTest {
 
     private MedicalImagingTechnique fImagingTechnique;

@@ -25,7 +25,7 @@ import org.schema.model.PropertyValueSpecification;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_ActionCollabClass">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_ActionCollabClass</a>
  * @see <a href="https://schema.org/PropertyValueSpecification">https://schema.org/PropertyValueSpecification</a>
  */
-@JsonLdTypeName("schema:PropertyValueSpecification")
+@JsonLdTypeName("PropertyValueSpecification")
 public class PropertyValueSpecificationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PropertyValueSpecification {
 
     private Number fValueMaxLength;

@@ -26,7 +26,7 @@ import org.schema.model.MusicAlbumProductionType;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
  * @see <a href="https://schema.org/MusicAlbumProductionType">https://schema.org/MusicAlbumProductionType</a>
  */
-@JsonLdTypeName("schema:MusicAlbumProductionType")
+@JsonLdTypeName("MusicAlbumProductionType")
 public enum MusicAlbumProductionTypeEnum implements MusicAlbumProductionType {
     SOUNDTRACK_ALBUM("SoundtrackAlbum"),
     REMIX_ALBUM("RemixAlbum"),

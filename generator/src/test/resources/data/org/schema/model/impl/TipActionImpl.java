@@ -35,7 +35,7 @@ import org.schema.model.TipAction;
  *
  * @see <a href="https://schema.org/TipAction">https://schema.org/TipAction</a>
  */
-@JsonLdTypeName("schema:TipAction")
+@JsonLdTypeName("TipAction")
 public class TipActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements TipAction {
 
     private Object fRecipient;

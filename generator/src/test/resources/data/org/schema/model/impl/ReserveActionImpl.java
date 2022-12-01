@@ -32,7 +32,7 @@ import org.schema.model.ReserveAction;
  *
  * @see <a href="https://schema.org/ReserveAction">https://schema.org/ReserveAction</a>
  */
-@JsonLdTypeName("schema:ReserveAction")
+@JsonLdTypeName("ReserveAction")
 public class ReserveActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ReserveAction {
 
     private DateTime fScheduledTime;

@@ -57,7 +57,7 @@ import org.schema.model.Movie;
  *
  * @see <a href="https://schema.org/Movie">https://schema.org/Movie</a>
  */
-@JsonLdTypeName("schema:Movie")
+@JsonLdTypeName("Movie")
 public class MovieImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Movie {
 
     private Country fCountryOfOrigin;

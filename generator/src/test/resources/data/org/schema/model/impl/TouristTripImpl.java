@@ -37,7 +37,7 @@ import org.schema.model.TouristTrip;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism</a>
  * @see <a href="https://schema.org/TouristTrip">https://schema.org/TouristTrip</a>
  */
-@JsonLdTypeName("schema:TouristTrip")
+@JsonLdTypeName("TouristTrip")
 public class TouristTripImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements TouristTrip {
 
     private Object fTouristType;

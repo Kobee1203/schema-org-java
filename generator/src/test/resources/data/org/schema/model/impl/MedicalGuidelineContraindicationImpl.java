@@ -34,7 +34,7 @@ import org.schema.model.MedicalGuidelineContraindication;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/MedicalGuidelineContraindication">https://schema.org/MedicalGuidelineContraindication</a>
  */
-@JsonLdTypeName("schema:MedicalGuidelineContraindication")
+@JsonLdTypeName("MedicalGuidelineContraindication")
 public class MedicalGuidelineContraindicationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MedicalGuidelineContraindication {
 
     private MedicalEvidenceLevel fEvidenceLevel;

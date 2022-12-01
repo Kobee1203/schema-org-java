@@ -31,7 +31,7 @@ import org.schema.model.AllocateAction;
  *
  * @see <a href="https://schema.org/AllocateAction">https://schema.org/AllocateAction</a>
  */
-@JsonLdTypeName("schema:AllocateAction")
+@JsonLdTypeName("AllocateAction")
 public class AllocateActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements AllocateAction {
 
     private Object fAgent;

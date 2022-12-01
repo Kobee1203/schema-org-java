@@ -27,7 +27,7 @@ import org.schema.model.NonprofitType;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2543">https://github.com/schemaorg/schemaorg/issues/2543</a>
  * @see <a href="https://schema.org/NonprofitType">https://schema.org/NonprofitType</a>
  */
-@JsonLdTypeName("schema:NonprofitType")
+@JsonLdTypeName("NonprofitType")
 public class NonprofitTypeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements NonprofitType {
 
     private Object fSupersededBy;

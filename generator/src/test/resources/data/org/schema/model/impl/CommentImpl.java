@@ -55,7 +55,7 @@ import com.weedow.schemaorg.commons.model.JsonLdTypeName;
  *
  * @see <a href="https://schema.org/Comment">https://schema.org/Comment</a>
  */
-@JsonLdTypeName("schema:Comment")
+@JsonLdTypeName("Comment")
 public class CommentImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Comment {
 
     private Comment fParentItem;

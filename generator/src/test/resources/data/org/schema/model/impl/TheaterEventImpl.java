@@ -43,7 +43,7 @@ import org.schema.model.TheaterEvent;
  *
  * @see <a href="https://schema.org/TheaterEvent">https://schema.org/TheaterEvent</a>
  */
-@JsonLdTypeName("schema:TheaterEvent")
+@JsonLdTypeName("TheaterEvent")
 public class TheaterEventImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements TheaterEvent {
 
     private Event fSuperEvent;

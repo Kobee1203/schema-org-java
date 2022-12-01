@@ -60,7 +60,7 @@ import org.schema.model.ArtGallery;
  *
  * @see <a href="https://schema.org/ArtGallery">https://schema.org/ArtGallery</a>
  */
-@JsonLdTypeName("schema:ArtGallery")
+@JsonLdTypeName("ArtGallery")
 public class ArtGalleryImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ArtGallery {
 
     private Organization fBranchOf;

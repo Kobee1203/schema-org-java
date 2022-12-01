@@ -37,7 +37,7 @@ import org.schema.model.Continent;
  *
  * @see <a href="https://schema.org/Continent">https://schema.org/Continent</a>
  */
-@JsonLdTypeName("schema:Continent")
+@JsonLdTypeName("Continent")
 public class ContinentImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Continent {
 
     private Text fTelephone;

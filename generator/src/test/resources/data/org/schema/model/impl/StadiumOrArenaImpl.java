@@ -61,7 +61,7 @@ import org.schema.model.StadiumOrArena;
  *
  * @see <a href="https://schema.org/StadiumOrArena">https://schema.org/StadiumOrArena</a>
  */
-@JsonLdTypeName("schema:StadiumOrArena")
+@JsonLdTypeName("StadiumOrArena")
 public class StadiumOrArenaImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements StadiumOrArena {
 
     private Organization fBranchOf;

@@ -60,7 +60,7 @@ import org.schema.model.Florist;
  *
  * @see <a href="https://schema.org/Florist">https://schema.org/Florist</a>
  */
-@JsonLdTypeName("schema:Florist")
+@JsonLdTypeName("Florist")
 public class FloristImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Florist {
 
     private Organization fBranchOf;

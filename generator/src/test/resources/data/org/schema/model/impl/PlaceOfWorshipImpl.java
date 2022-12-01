@@ -37,7 +37,7 @@ import org.schema.model.PlaceOfWorship;
  *
  * @see <a href="https://schema.org/PlaceOfWorship">https://schema.org/PlaceOfWorship</a>
  */
-@JsonLdTypeName("schema:PlaceOfWorship")
+@JsonLdTypeName("PlaceOfWorship")
 public class PlaceOfWorshipImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PlaceOfWorship {
 
     private Text fOpeningHours;

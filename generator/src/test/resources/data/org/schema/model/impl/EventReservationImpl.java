@@ -31,7 +31,7 @@ import org.schema.model.EventReservation;
  *
  * @see <a href="https://schema.org/EventReservation">https://schema.org/EventReservation</a>
  */
-@JsonLdTypeName("schema:EventReservation")
+@JsonLdTypeName("EventReservation")
 public class EventReservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements EventReservation {
 
     private DateTime fModifiedTime;

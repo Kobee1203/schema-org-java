@@ -61,7 +61,7 @@ import org.schema.model.FAQPage;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1723">https://github.com/schemaorg/schemaorg/issues/1723</a>
  * @see <a href="https://schema.org/FAQPage">https://schema.org/FAQPage</a>
  */
-@JsonLdTypeName("schema:FAQPage")
+@JsonLdTypeName("FAQPage")
 public class FAQPageImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements FAQPage {
 
     private Date fLastReviewed;

@@ -37,7 +37,7 @@ import org.schema.model.Museum;
  *
  * @see <a href="https://schema.org/Museum">https://schema.org/Museum</a>
  */
-@JsonLdTypeName("schema:Museum")
+@JsonLdTypeName("Museum")
 public class MuseumImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Museum {
 
     private Text fOpeningHours;

@@ -61,7 +61,7 @@ import org.schema.model.PodcastSeason;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/373">https://github.com/schemaorg/schemaorg/issues/373</a>
  * @see <a href="https://schema.org/PodcastSeason">https://schema.org/PodcastSeason</a>
  */
-@JsonLdTypeName("schema:PodcastSeason")
+@JsonLdTypeName("PodcastSeason")
 public class PodcastSeasonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PodcastSeason {
 
     private Object fStartDate;

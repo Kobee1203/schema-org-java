@@ -35,7 +35,7 @@ import org.schema.model.BoatReservation;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1755">https://github.com/schemaorg/schemaorg/issues/1755</a>
  * @see <a href="https://schema.org/BoatReservation">https://schema.org/BoatReservation</a>
  */
-@JsonLdTypeName("schema:BoatReservation")
+@JsonLdTypeName("BoatReservation")
 public class BoatReservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements BoatReservation {
 
     private DateTime fModifiedTime;

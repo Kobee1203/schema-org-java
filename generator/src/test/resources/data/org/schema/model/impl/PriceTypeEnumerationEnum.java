@@ -27,7 +27,7 @@ import org.schema.model.PriceTypeEnumeration;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2712">https://github.com/schemaorg/schemaorg/issues/2712</a>
  * @see <a href="https://schema.org/PriceTypeEnumeration">https://schema.org/PriceTypeEnumeration</a>
  */
-@JsonLdTypeName("schema:PriceTypeEnumeration")
+@JsonLdTypeName("PriceTypeEnumeration")
 public enum PriceTypeEnumerationEnum implements PriceTypeEnumeration {
     SALE_PRICE("SalePrice"),
     SRP("SRP"),

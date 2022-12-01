@@ -58,7 +58,7 @@ import org.schema.model.Poster;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1448">https://github.com/schemaorg/schemaorg/issues/1448</a>
  * @see <a href="https://schema.org/Poster">https://schema.org/Poster</a>
  */
-@JsonLdTypeName("schema:Poster")
+@JsonLdTypeName("Poster")
 public class PosterImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Poster {
 
     private Object fTeaches;

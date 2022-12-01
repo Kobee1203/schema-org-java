@@ -43,7 +43,7 @@ import org.schema.model.Room;
  * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
  * @see <a href="https://schema.org/Room">https://schema.org/Room</a>
  */
-@JsonLdTypeName("schema:Room")
+@JsonLdTypeName("Room")
 public class RoomImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Room {
 
     private Text fFloorLevel;

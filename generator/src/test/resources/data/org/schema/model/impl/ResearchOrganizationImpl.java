@@ -51,7 +51,7 @@ import org.schema.model.ResearchOrganization;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2877">https://github.com/schemaorg/schemaorg/issues/2877</a>
  * @see <a href="https://schema.org/ResearchOrganization">https://schema.org/ResearchOrganization</a>
  */
-@JsonLdTypeName("schema:ResearchOrganization")
+@JsonLdTypeName("ResearchOrganization")
 public class ResearchOrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ResearchOrganization {
 
     private Object fOwnershipFundingInfo;

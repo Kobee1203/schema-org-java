@@ -32,7 +32,7 @@ import org.schema.model.AcceptAction;
  *
  * @see <a href="https://schema.org/AcceptAction">https://schema.org/AcceptAction</a>
  */
-@JsonLdTypeName("schema:AcceptAction")
+@JsonLdTypeName("AcceptAction")
 public class AcceptActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements AcceptAction {
 
     private Object fAgent;

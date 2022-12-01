@@ -37,7 +37,7 @@ import org.schema.model.Crematorium;
  *
  * @see <a href="https://schema.org/Crematorium">https://schema.org/Crematorium</a>
  */
-@JsonLdTypeName("schema:Crematorium")
+@JsonLdTypeName("Crematorium")
 public class CrematoriumImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Crematorium {
 
     private Text fOpeningHours;

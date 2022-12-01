@@ -34,7 +34,7 @@ import org.schema.model.SendAction;
  *
  * @see <a href="https://schema.org/SendAction">https://schema.org/SendAction</a>
  */
-@JsonLdTypeName("schema:SendAction")
+@JsonLdTypeName("SendAction")
 public class SendActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements SendAction {
 
     private Object fRecipient;

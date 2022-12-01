@@ -25,7 +25,7 @@ import org.schema.model.Specialty;
  *
  * @see <a href="https://schema.org/Specialty">https://schema.org/Specialty</a>
  */
-@JsonLdTypeName("schema:Specialty")
+@JsonLdTypeName("Specialty")
 public class SpecialtyImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Specialty {
 
     private Object fSupersededBy;

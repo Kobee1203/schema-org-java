@@ -62,7 +62,7 @@ import org.schema.model.Newspaper;
  * @see <a href="http://www.productontology.org/id/Newspaper">http://www.productontology.org/id/Newspaper</a>
  * @see <a href="https://schema.org/Newspaper">https://schema.org/Newspaper</a>
  */
-@JsonLdTypeName("schema:Newspaper")
+@JsonLdTypeName("Newspaper")
 public class NewspaperImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Newspaper {
 
     private Object fStartDate;

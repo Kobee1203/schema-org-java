@@ -36,7 +36,7 @@ import org.schema.model.Flight;
  *
  * @see <a href="https://schema.org/Flight">https://schema.org/Flight</a>
  */
-@JsonLdTypeName("schema:Flight")
+@JsonLdTypeName("Flight")
 public class FlightImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Flight {
 
     private Object fFlightDistance;

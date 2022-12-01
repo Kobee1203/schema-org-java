@@ -60,7 +60,7 @@ import org.schema.model.ComputerStore;
  *
  * @see <a href="https://schema.org/ComputerStore">https://schema.org/ComputerStore</a>
  */
-@JsonLdTypeName("schema:ComputerStore")
+@JsonLdTypeName("ComputerStore")
 public class ComputerStoreImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ComputerStore {
 
     private Organization fBranchOf;

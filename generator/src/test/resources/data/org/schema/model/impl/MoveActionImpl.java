@@ -30,7 +30,7 @@ import org.schema.model.MoveAction;
  *
  * @see <a href="https://schema.org/MoveAction">https://schema.org/MoveAction</a>
  */
-@JsonLdTypeName("schema:MoveAction")
+@JsonLdTypeName("MoveAction")
 public class MoveActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MoveAction {
 
     private Place fFromLocation;

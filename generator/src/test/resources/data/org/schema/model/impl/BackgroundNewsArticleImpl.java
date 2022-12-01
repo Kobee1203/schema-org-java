@@ -62,7 +62,7 @@ import org.schema.model.BackgroundNewsArticle;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
  * @see <a href="https://schema.org/BackgroundNewsArticle">https://schema.org/BackgroundNewsArticle</a>
  */
-@JsonLdTypeName("schema:BackgroundNewsArticle")
+@JsonLdTypeName("BackgroundNewsArticle")
 public class BackgroundNewsArticleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements BackgroundNewsArticle {
 
     private Text fPrintEdition;

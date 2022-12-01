@@ -68,7 +68,7 @@ import org.schema.model.Resort;
  * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
  * @see <a href="https://schema.org/Resort">https://schema.org/Resort</a>
  */
-@JsonLdTypeName("schema:Resort")
+@JsonLdTypeName("Resort")
 public class ResortImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Resort {
 
     private Object fNumberOfRooms;

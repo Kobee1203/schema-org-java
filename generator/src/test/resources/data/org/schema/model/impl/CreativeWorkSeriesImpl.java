@@ -59,7 +59,7 @@ import org.schema.model.CreativeWorkSeries;
  *
  * @see <a href="https://schema.org/CreativeWorkSeries">https://schema.org/CreativeWorkSeries</a>
  */
-@JsonLdTypeName("schema:CreativeWorkSeries")
+@JsonLdTypeName("CreativeWorkSeries")
 public class CreativeWorkSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements CreativeWorkSeries {
 
     private Object fStartDate;

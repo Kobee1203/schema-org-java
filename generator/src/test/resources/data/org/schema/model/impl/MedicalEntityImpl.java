@@ -31,7 +31,7 @@ import org.schema.model.MedicalEntity;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/MedicalEntity">https://schema.org/MedicalEntity</a>
  */
-@JsonLdTypeName("schema:MedicalEntity")
+@JsonLdTypeName("MedicalEntity")
 public class MedicalEntityImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MedicalEntity {
 
     private Object fLegalStatus;

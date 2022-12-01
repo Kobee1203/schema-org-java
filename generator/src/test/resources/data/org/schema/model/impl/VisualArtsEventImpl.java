@@ -43,7 +43,7 @@ import org.schema.model.VisualArtsEvent;
  *
  * @see <a href="https://schema.org/VisualArtsEvent">https://schema.org/VisualArtsEvent</a>
  */
-@JsonLdTypeName("schema:VisualArtsEvent")
+@JsonLdTypeName("VisualArtsEvent")
 public class VisualArtsEventImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements VisualArtsEvent {
 
     private Event fSuperEvent;

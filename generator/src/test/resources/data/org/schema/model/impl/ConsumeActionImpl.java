@@ -32,7 +32,7 @@ import org.schema.model.ConsumeAction;
  *
  * @see <a href="https://schema.org/ConsumeAction">https://schema.org/ConsumeAction</a>
  */
-@JsonLdTypeName("schema:ConsumeAction")
+@JsonLdTypeName("ConsumeAction")
 public class ConsumeActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ConsumeAction {
 
     private Offer fExpectsAcceptanceOf;

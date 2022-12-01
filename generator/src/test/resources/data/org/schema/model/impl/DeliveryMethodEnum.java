@@ -27,7 +27,7 @@ import org.schema.model.DeliveryMethod;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass</a>
  * @see <a href="https://schema.org/DeliveryMethod">https://schema.org/DeliveryMethod</a>
  */
-@JsonLdTypeName("schema:DeliveryMethod")
+@JsonLdTypeName("DeliveryMethod")
 public enum DeliveryMethodEnum implements DeliveryMethod {
     PARCEL_SERVICE("ParcelService"),
     ON_SITE_PICKUP("OnSitePickup"),

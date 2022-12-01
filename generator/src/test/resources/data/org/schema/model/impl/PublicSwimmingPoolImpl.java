@@ -60,7 +60,7 @@ import org.schema.model.PublicSwimmingPool;
  *
  * @see <a href="https://schema.org/PublicSwimmingPool">https://schema.org/PublicSwimmingPool</a>
  */
-@JsonLdTypeName("schema:PublicSwimmingPool")
+@JsonLdTypeName("PublicSwimmingPool")
 public class PublicSwimmingPoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PublicSwimmingPool {
 
     private Organization fBranchOf;

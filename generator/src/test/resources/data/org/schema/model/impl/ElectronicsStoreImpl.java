@@ -60,7 +60,7 @@ import org.schema.model.ElectronicsStore;
  *
  * @see <a href="https://schema.org/ElectronicsStore">https://schema.org/ElectronicsStore</a>
  */
-@JsonLdTypeName("schema:ElectronicsStore")
+@JsonLdTypeName("ElectronicsStore")
 public class ElectronicsStoreImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ElectronicsStore {
 
     private Organization fBranchOf;

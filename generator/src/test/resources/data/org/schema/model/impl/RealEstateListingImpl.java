@@ -64,7 +64,7 @@ import org.schema.model.RealEstateListing;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2348">https://github.com/schemaorg/schemaorg/issues/2348</a>
  * @see <a href="https://schema.org/RealEstateListing">https://schema.org/RealEstateListing</a>
  */
-@JsonLdTypeName("schema:RealEstateListing")
+@JsonLdTypeName("RealEstateListing")
 public class RealEstateListingImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements RealEstateListing {
 
     private Object fLeaseLength;

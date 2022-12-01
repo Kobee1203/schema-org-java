@@ -26,7 +26,7 @@ import org.schema.model.GameServerStatus;
  *
  * @see <a href="https://schema.org/GameServerStatus">https://schema.org/GameServerStatus</a>
  */
-@JsonLdTypeName("schema:GameServerStatus")
+@JsonLdTypeName("GameServerStatus")
 public enum GameServerStatusEnum implements GameServerStatus {
     ONLINE_FULL("OnlineFull"),
     OFFLINE_PERMANENTLY("OfflinePermanently"),

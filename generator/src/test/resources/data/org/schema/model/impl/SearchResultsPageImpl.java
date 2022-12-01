@@ -60,7 +60,7 @@ import org.schema.model.SearchResultsPage;
  *
  * @see <a href="https://schema.org/SearchResultsPage">https://schema.org/SearchResultsPage</a>
  */
-@JsonLdTypeName("schema:SearchResultsPage")
+@JsonLdTypeName("SearchResultsPage")
 public class SearchResultsPageImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements SearchResultsPage {
 
     private Date fLastReviewed;

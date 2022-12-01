@@ -60,7 +60,7 @@ import org.schema.model.ConvenienceStore;
  *
  * @see <a href="https://schema.org/ConvenienceStore">https://schema.org/ConvenienceStore</a>
  */
-@JsonLdTypeName("schema:ConvenienceStore")
+@JsonLdTypeName("ConvenienceStore")
 public class ConvenienceStoreImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ConvenienceStore {
 
     private Organization fBranchOf;

@@ -58,7 +58,7 @@ import org.schema.model.Quotation;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/271">https://github.com/schemaorg/schemaorg/issues/271</a>
  * @see <a href="https://schema.org/Quotation">https://schema.org/Quotation</a>
  */
-@JsonLdTypeName("schema:Quotation")
+@JsonLdTypeName("Quotation")
 public class QuotationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Quotation {
 
     private Object fSpokenByCharacter;

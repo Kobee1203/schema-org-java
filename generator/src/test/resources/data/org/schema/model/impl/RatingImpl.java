@@ -25,7 +25,7 @@ import org.schema.model.Rating;
  *
  * @see <a href="https://schema.org/Rating">https://schema.org/Rating</a>
  */
-@JsonLdTypeName("schema:Rating")
+@JsonLdTypeName("Rating")
 public class RatingImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Rating {
 
     private Text fReviewAspect;

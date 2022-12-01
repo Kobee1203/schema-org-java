@@ -36,7 +36,7 @@ import org.schema.model.SuperficialAnatomy;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/SuperficialAnatomy">https://schema.org/SuperficialAnatomy</a>
  */
-@JsonLdTypeName("schema:SuperficialAnatomy")
+@JsonLdTypeName("SuperficialAnatomy")
 public class SuperficialAnatomyImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements SuperficialAnatomy {
 
     private MedicalTherapy fRelatedTherapy;

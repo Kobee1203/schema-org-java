@@ -44,7 +44,7 @@ import org.schema.model.FinancialProduct;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
  * @see <a href="https://schema.org/FinancialProduct">https://schema.org/FinancialProduct</a>
  */
-@JsonLdTypeName("schema:FinancialProduct")
+@JsonLdTypeName("FinancialProduct")
 public class FinancialProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements FinancialProduct {
 
     private Object fAnnualPercentageRate;

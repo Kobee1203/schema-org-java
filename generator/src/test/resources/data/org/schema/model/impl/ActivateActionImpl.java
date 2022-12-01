@@ -31,7 +31,7 @@ import org.schema.model.ActivateAction;
  *
  * @see <a href="https://schema.org/ActivateAction">https://schema.org/ActivateAction</a>
  */
-@JsonLdTypeName("schema:ActivateAction")
+@JsonLdTypeName("ActivateAction")
 public class ActivateActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ActivateAction {
 
     private Object fAgent;

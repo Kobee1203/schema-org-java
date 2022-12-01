@@ -27,7 +27,7 @@ import org.schema.model.DrugCostCategory;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/DrugCostCategory">https://schema.org/DrugCostCategory</a>
  */
-@JsonLdTypeName("schema:DrugCostCategory")
+@JsonLdTypeName("DrugCostCategory")
 public enum DrugCostCategoryEnum implements DrugCostCategory {
     WHOLESALE("Wholesale"),
     REIMBURSEMENT_CAP("ReimbursementCap"),

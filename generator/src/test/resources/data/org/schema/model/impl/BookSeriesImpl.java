@@ -59,7 +59,7 @@ import org.schema.model.BookSeries;
  *
  * @see <a href="https://schema.org/BookSeries">https://schema.org/BookSeries</a>
  */
-@JsonLdTypeName("schema:BookSeries")
+@JsonLdTypeName("BookSeries")
 public class BookSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements BookSeries {
 
     private Object fStartDate;

@@ -50,7 +50,7 @@ import org.schema.model.TheaterGroup;
  *
  * @see <a href="https://schema.org/TheaterGroup">https://schema.org/TheaterGroup</a>
  */
-@JsonLdTypeName("schema:TheaterGroup")
+@JsonLdTypeName("TheaterGroup")
 public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements TheaterGroup {
 
     private Object fOwnershipFundingInfo;

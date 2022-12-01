@@ -25,7 +25,7 @@ import org.schema.model.HealthPlanNetwork;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
  * @see <a href="https://schema.org/HealthPlanNetwork">https://schema.org/HealthPlanNetwork</a>
  */
-@JsonLdTypeName("schema:HealthPlanNetwork")
+@JsonLdTypeName("HealthPlanNetwork")
 public class HealthPlanNetworkImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements HealthPlanNetwork {
 
     private Text fHealthPlanNetworkId;

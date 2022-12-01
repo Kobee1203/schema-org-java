@@ -37,7 +37,7 @@ import org.schema.model.SubwayStation;
  *
  * @see <a href="https://schema.org/SubwayStation">https://schema.org/SubwayStation</a>
  */
-@JsonLdTypeName("schema:SubwayStation")
+@JsonLdTypeName("SubwayStation")
 public class SubwayStationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements SubwayStation {
 
     private Text fOpeningHours;

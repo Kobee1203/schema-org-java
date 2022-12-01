@@ -27,7 +27,7 @@ import org.schema.model.DatedMoneySpecification;
  *
  * @see <a href="https://schema.org/DatedMoneySpecification">https://schema.org/DatedMoneySpecification</a>
  */
-@JsonLdTypeName("schema:DatedMoneySpecification")
+@JsonLdTypeName("DatedMoneySpecification")
 public class DatedMoneySpecificationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements DatedMoneySpecification {
 
     private Object fStartDate;

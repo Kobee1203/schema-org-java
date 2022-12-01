@@ -63,7 +63,7 @@ import org.schema.model.ComicSeries;
  * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
  * @see <a href="https://schema.org/ComicSeries">https://schema.org/ComicSeries</a>
  */
-@JsonLdTypeName("schema:ComicSeries")
+@JsonLdTypeName("ComicSeries")
 public class ComicSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ComicSeries {
 
     private Object fStartDate;

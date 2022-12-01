@@ -38,7 +38,7 @@ import org.schema.model.GatedResidenceCommunity;
  *
  * @see <a href="https://schema.org/GatedResidenceCommunity">https://schema.org/GatedResidenceCommunity</a>
  */
-@JsonLdTypeName("schema:GatedResidenceCommunity")
+@JsonLdTypeName("GatedResidenceCommunity")
 public class GatedResidenceCommunityImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements GatedResidenceCommunity {
 
     private FloorPlan fAccommodationFloorPlan;

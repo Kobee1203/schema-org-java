@@ -59,7 +59,7 @@ import org.schema.model.HowToStep;
  *
  * @see <a href="https://schema.org/HowToStep">https://schema.org/HowToStep</a>
  */
-@JsonLdTypeName("schema:HowToStep")
+@JsonLdTypeName("HowToStep")
 public class HowToStepImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements HowToStep {
 
     private Object fPosition;

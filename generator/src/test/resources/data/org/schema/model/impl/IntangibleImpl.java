@@ -21,7 +21,7 @@ import org.schema.model.Intangible;
  *
  * @see <a href="https://schema.org/Intangible">https://schema.org/Intangible</a>
  */
-@JsonLdTypeName("schema:Intangible")
+@JsonLdTypeName("Intangible")
 public class IntangibleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Intangible {
 
     private Object fMainEntityOfPage;

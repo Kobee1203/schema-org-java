@@ -58,7 +58,7 @@ import org.schema.model.FundingAgency;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
  * @see <a href="https://schema.org/FundingAgency">https://schema.org/FundingAgency</a>
  */
-@JsonLdTypeName("schema:FundingAgency")
+@JsonLdTypeName("FundingAgency")
 public class FundingAgencyImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements FundingAgency {
 
     private Object fOwnershipFundingInfo;

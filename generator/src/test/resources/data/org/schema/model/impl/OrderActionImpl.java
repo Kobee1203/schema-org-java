@@ -34,7 +34,7 @@ import org.schema.model.OrderAction;
  *
  * @see <a href="https://schema.org/OrderAction">https://schema.org/OrderAction</a>
  */
-@JsonLdTypeName("schema:OrderAction")
+@JsonLdTypeName("OrderAction")
 public class OrderActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements OrderAction {
 
     private DeliveryMethod fDeliveryMethod;

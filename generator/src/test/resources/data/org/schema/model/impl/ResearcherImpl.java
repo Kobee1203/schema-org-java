@@ -24,7 +24,7 @@ import org.schema.model.Researcher;
  *
  * @see <a href="https://schema.org/Researcher">https://schema.org/Researcher</a>
  */
-@JsonLdTypeName("schema:Researcher")
+@JsonLdTypeName("Researcher")
 public class ResearcherImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Researcher {
 
     private Text fAudienceType;

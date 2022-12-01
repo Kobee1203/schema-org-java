@@ -26,7 +26,7 @@ import org.schema.model.HealthPlanCostSharingSpecification;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
  * @see <a href="https://schema.org/HealthPlanCostSharingSpecification">https://schema.org/HealthPlanCostSharingSpecification</a>
  */
-@JsonLdTypeName("schema:HealthPlanCostSharingSpecification")
+@JsonLdTypeName("HealthPlanCostSharingSpecification")
 public class HealthPlanCostSharingSpecificationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements HealthPlanCostSharingSpecification {
 
     private Number fHealthPlanCoinsuranceRate;

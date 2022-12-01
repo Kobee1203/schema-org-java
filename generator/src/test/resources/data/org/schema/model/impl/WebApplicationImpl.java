@@ -58,7 +58,7 @@ import org.schema.model.WebApplication;
  *
  * @see <a href="https://schema.org/WebApplication">https://schema.org/WebApplication</a>
  */
-@JsonLdTypeName("schema:WebApplication")
+@JsonLdTypeName("WebApplication")
 public class WebApplicationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements WebApplication {
 
     private Text fBrowserRequirements;

@@ -34,7 +34,7 @@ import org.schema.model.SellAction;
  *
  * @see <a href="https://schema.org/SellAction">https://schema.org/SellAction</a>
  */
-@JsonLdTypeName("schema:SellAction")
+@JsonLdTypeName("SellAction")
 public class SellActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements SellAction {
 
     private WarrantyPromise fWarrantyPromise;

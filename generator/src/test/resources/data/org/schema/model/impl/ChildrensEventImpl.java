@@ -43,7 +43,7 @@ import org.schema.model.ChildrensEvent;
  *
  * @see <a href="https://schema.org/ChildrensEvent">https://schema.org/ChildrensEvent</a>
  */
-@JsonLdTypeName("schema:ChildrensEvent")
+@JsonLdTypeName("ChildrensEvent")
 public class ChildrensEventImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ChildrensEvent {
 
     private Event fSuperEvent;

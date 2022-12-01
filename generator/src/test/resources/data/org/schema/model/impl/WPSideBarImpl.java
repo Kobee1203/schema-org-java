@@ -59,7 +59,7 @@ import org.schema.model.WPSideBar;
  *
  * @see <a href="https://schema.org/WPSideBar">https://schema.org/WPSideBar</a>
  */
-@JsonLdTypeName("schema:WPSideBar")
+@JsonLdTypeName("WPSideBar")
 public class WPSideBarImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements WPSideBar {
 
     private CssSelectorType fCssSelector;

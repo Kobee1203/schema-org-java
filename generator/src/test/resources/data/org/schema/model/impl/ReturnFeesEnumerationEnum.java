@@ -27,7 +27,7 @@ import org.schema.model.ReturnFeesEnumeration;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
  * @see <a href="https://schema.org/ReturnFeesEnumeration">https://schema.org/ReturnFeesEnumeration</a>
  */
-@JsonLdTypeName("schema:ReturnFeesEnumeration")
+@JsonLdTypeName("ReturnFeesEnumeration")
 public enum ReturnFeesEnumerationEnum implements ReturnFeesEnumeration {
     RETURN_FEES_CUSTOMER_RESPONSIBILITY("ReturnFeesCustomerResponsibility"),
     ORIGINAL_SHIPPING_FEES("OriginalShippingFees"),

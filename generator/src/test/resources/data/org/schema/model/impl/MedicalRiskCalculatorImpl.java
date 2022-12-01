@@ -34,7 +34,7 @@ import org.schema.model.MedicalRiskCalculator;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/MedicalRiskCalculator">https://schema.org/MedicalRiskCalculator</a>
  */
-@JsonLdTypeName("schema:MedicalRiskCalculator")
+@JsonLdTypeName("MedicalRiskCalculator")
 public class MedicalRiskCalculatorImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MedicalRiskCalculator {
 
     private MedicalEntity fEstimatesRiskOf;

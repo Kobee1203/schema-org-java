@@ -62,7 +62,7 @@ import org.schema.model.OfferForLease;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2348">https://github.com/schemaorg/schemaorg/issues/2348</a>
  * @see <a href="https://schema.org/OfferForLease">https://schema.org/OfferForLease</a>
  */
-@JsonLdTypeName("schema:OfferForLease")
+@JsonLdTypeName("OfferForLease")
 public class OfferForLeaseImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements OfferForLease {
 
     private AdultOrientedEnumeration fHasAdultConsideration;

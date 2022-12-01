@@ -63,7 +63,7 @@ import org.schema.model.MedicalWebPage;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/MedicalWebPage">https://schema.org/MedicalWebPage</a>
  */
-@JsonLdTypeName("schema:MedicalWebPage")
+@JsonLdTypeName("MedicalWebPage")
 public class MedicalWebPageImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MedicalWebPage {
 
     private Text fAspect;

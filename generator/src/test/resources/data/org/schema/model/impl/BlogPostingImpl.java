@@ -59,7 +59,7 @@ import org.schema.model.BlogPosting;
  *
  * @see <a href="https://schema.org/BlogPosting">https://schema.org/BlogPosting</a>
  */
-@JsonLdTypeName("schema:BlogPosting")
+@JsonLdTypeName("BlogPosting")
 public class BlogPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements BlogPosting {
 
     private CreativeWork fSharedContent;

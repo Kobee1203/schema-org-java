@@ -61,7 +61,7 @@ import org.schema.model.MovieTheater;
  *
  * @see <a href="https://schema.org/MovieTheater">https://schema.org/MovieTheater</a>
  */
-@JsonLdTypeName("schema:MovieTheater")
+@JsonLdTypeName("MovieTheater")
 public class MovieTheaterImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MovieTheater {
 
     private Number fScreenCount;

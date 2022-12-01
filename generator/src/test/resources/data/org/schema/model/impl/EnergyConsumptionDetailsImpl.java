@@ -26,7 +26,7 @@ import org.schema.model.EnergyConsumptionDetails;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2670">https://github.com/schemaorg/schemaorg/issues/2670</a>
  * @see <a href="https://schema.org/EnergyConsumptionDetails">https://schema.org/EnergyConsumptionDetails</a>
  */
-@JsonLdTypeName("schema:EnergyConsumptionDetails")
+@JsonLdTypeName("EnergyConsumptionDetails")
 public class EnergyConsumptionDetailsImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements EnergyConsumptionDetails {
 
     private EUEnergyEfficiencyEnumeration fEnergyEfficiencyScaleMin;

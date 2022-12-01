@@ -63,7 +63,7 @@ import org.schema.model.AudioObjectSnapshot;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
  * @see <a href="https://schema.org/AudioObjectSnapshot">https://schema.org/AudioObjectSnapshot</a>
  */
-@JsonLdTypeName("schema:AudioObjectSnapshot")
+@JsonLdTypeName("AudioObjectSnapshot")
 public class AudioObjectSnapshotImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements AudioObjectSnapshot {
 
     private Text fEmbeddedTextCaption;

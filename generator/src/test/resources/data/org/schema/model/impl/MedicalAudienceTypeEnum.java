@@ -27,7 +27,7 @@ import org.schema.model.MedicalAudienceType;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/MedicalAudienceType">https://schema.org/MedicalAudienceType</a>
  */
-@JsonLdTypeName("schema:MedicalAudienceType")
+@JsonLdTypeName("MedicalAudienceType")
 public enum MedicalAudienceTypeEnum implements MedicalAudienceType {
     MEDICAL_RESEARCHER("MedicalResearcher"),
     CLINICIAN("Clinician");

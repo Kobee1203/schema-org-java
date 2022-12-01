@@ -60,7 +60,7 @@ import org.schema.model.Locksmith;
  *
  * @see <a href="https://schema.org/Locksmith">https://schema.org/Locksmith</a>
  */
-@JsonLdTypeName("schema:Locksmith")
+@JsonLdTypeName("Locksmith")
 public class LocksmithImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Locksmith {
 
     private Organization fBranchOf;

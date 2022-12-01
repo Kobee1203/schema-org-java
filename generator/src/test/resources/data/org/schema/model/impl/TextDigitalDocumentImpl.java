@@ -58,7 +58,7 @@ import org.schema.model.TextDigitalDocument;
  *
  * @see <a href="https://schema.org/TextDigitalDocument">https://schema.org/TextDigitalDocument</a>
  */
-@JsonLdTypeName("schema:TextDigitalDocument")
+@JsonLdTypeName("TextDigitalDocument")
 public class TextDigitalDocumentImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements TextDigitalDocument {
 
     private DigitalDocumentPermission fHasDigitalDocumentPermission;

@@ -27,7 +27,7 @@ import org.schema.model.EventAttendanceModeEnumeration;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1842">https://github.com/schemaorg/schemaorg/issues/1842</a>
  * @see <a href="https://schema.org/EventAttendanceModeEnumeration">https://schema.org/EventAttendanceModeEnumeration</a>
  */
-@JsonLdTypeName("schema:EventAttendanceModeEnumeration")
+@JsonLdTypeName("EventAttendanceModeEnumeration")
 public enum EventAttendanceModeEnumerationEnum implements EventAttendanceModeEnumeration {
     OFFLINE_EVENT_ATTENDANCE_MODE("OfflineEventAttendanceMode"),
     MIXED_EVENT_ATTENDANCE_MODE("MixedEventAttendanceMode"),

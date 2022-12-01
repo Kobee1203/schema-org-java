@@ -58,7 +58,7 @@ import org.schema.model.SpreadsheetDigitalDocument;
  *
  * @see <a href="https://schema.org/SpreadsheetDigitalDocument">https://schema.org/SpreadsheetDigitalDocument</a>
  */
-@JsonLdTypeName("schema:SpreadsheetDigitalDocument")
+@JsonLdTypeName("SpreadsheetDigitalDocument")
 public class SpreadsheetDigitalDocumentImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements SpreadsheetDigitalDocument {
 
     private DigitalDocumentPermission fHasDigitalDocumentPermission;

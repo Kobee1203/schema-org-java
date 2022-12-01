@@ -58,7 +58,7 @@ import org.schema.model.Guide;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2405">https://github.com/schemaorg/schemaorg/issues/2405</a>
  * @see <a href="https://schema.org/Guide">https://schema.org/Guide</a>
  */
-@JsonLdTypeName("schema:Guide")
+@JsonLdTypeName("Guide")
 public class GuideImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Guide {
 
     private Text fReviewAspect;

@@ -59,7 +59,7 @@ import org.schema.model.AutomotiveBusiness;
  *
  * @see <a href="https://schema.org/AutomotiveBusiness">https://schema.org/AutomotiveBusiness</a>
  */
-@JsonLdTypeName("schema:AutomotiveBusiness")
+@JsonLdTypeName("AutomotiveBusiness")
 public class AutomotiveBusinessImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements AutomotiveBusiness {
 
     private Organization fBranchOf;

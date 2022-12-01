@@ -36,7 +36,7 @@ import org.schema.model.Bone;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/Bone">https://schema.org/Bone</a>
  */
-@JsonLdTypeName("schema:Bone")
+@JsonLdTypeName("Bone")
 public class BoneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Bone {
 
     private Text fBodyLocation;

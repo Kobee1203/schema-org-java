@@ -60,7 +60,7 @@ import org.schema.model.MovieSeries;
  *
  * @see <a href="https://schema.org/MovieSeries">https://schema.org/MovieSeries</a>
  */
-@JsonLdTypeName("schema:MovieSeries")
+@JsonLdTypeName("MovieSeries")
 public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MovieSeries {
 
     private Person fDirector;

@@ -63,7 +63,7 @@ import org.schema.model.AmpStory;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2646">https://github.com/schemaorg/schemaorg/issues/2646</a>
  * @see <a href="https://schema.org/AmpStory">https://schema.org/AmpStory</a>
  */
-@JsonLdTypeName("schema:AmpStory")
+@JsonLdTypeName("AmpStory")
 public class AmpStoryImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements AmpStory {
 
     private Object fTeaches;

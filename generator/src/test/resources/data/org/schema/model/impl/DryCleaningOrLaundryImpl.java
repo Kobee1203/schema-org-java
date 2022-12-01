@@ -59,7 +59,7 @@ import org.schema.model.DryCleaningOrLaundry;
  *
  * @see <a href="https://schema.org/DryCleaningOrLaundry">https://schema.org/DryCleaningOrLaundry</a>
  */
-@JsonLdTypeName("schema:DryCleaningOrLaundry")
+@JsonLdTypeName("DryCleaningOrLaundry")
 public class DryCleaningOrLaundryImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements DryCleaningOrLaundry {
 
     private Organization fBranchOf;

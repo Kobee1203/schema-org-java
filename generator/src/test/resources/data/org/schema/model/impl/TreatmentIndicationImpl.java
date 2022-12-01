@@ -33,7 +33,7 @@ import org.schema.model.TreatmentIndication;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/TreatmentIndication">https://schema.org/TreatmentIndication</a>
  */
-@JsonLdTypeName("schema:TreatmentIndication")
+@JsonLdTypeName("TreatmentIndication")
 public class TreatmentIndicationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements TreatmentIndication {
 
     private Object fLegalStatus;

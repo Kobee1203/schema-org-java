@@ -29,7 +29,7 @@ import org.schema.model.ExchangeRateSpecification;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
  * @see <a href="https://schema.org/ExchangeRateSpecification">https://schema.org/ExchangeRateSpecification</a>
  */
-@JsonLdTypeName("schema:ExchangeRateSpecification")
+@JsonLdTypeName("ExchangeRateSpecification")
 public class ExchangeRateSpecificationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ExchangeRateSpecification {
 
     private UnitPriceSpecification fCurrentExchangeRate;

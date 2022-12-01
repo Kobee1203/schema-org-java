@@ -31,7 +31,7 @@ import org.schema.model.CheckAction;
  *
  * @see <a href="https://schema.org/CheckAction">https://schema.org/CheckAction</a>
  */
-@JsonLdTypeName("schema:CheckAction")
+@JsonLdTypeName("CheckAction")
 public class CheckActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements CheckAction {
 
     private Object fAgent;

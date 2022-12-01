@@ -57,7 +57,7 @@ import com.weedow.schemaorg.commons.model.JsonLdTypeName;
  *
  * @see <a href="https://schema.org/MenuSection">https://schema.org/MenuSection</a>
  */
-@JsonLdTypeName("schema:MenuSection")
+@JsonLdTypeName("MenuSection")
 public class MenuSectionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MenuSection {
 
     private MenuSection fHasMenuSection;

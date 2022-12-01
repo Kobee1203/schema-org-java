@@ -27,7 +27,7 @@ import org.schema.model.CarUsageType;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
  * @see <a href="https://schema.org/CarUsageType">https://schema.org/CarUsageType</a>
  */
-@JsonLdTypeName("schema:CarUsageType")
+@JsonLdTypeName("CarUsageType")
 public enum CarUsageTypeEnum implements CarUsageType {
     TAXI_VEHICLE_USAGE("TaxiVehicleUsage"),
     DRIVING_SCHOOL_VEHICLE_USAGE("DrivingSchoolVehicleUsage"),

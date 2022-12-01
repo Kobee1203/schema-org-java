@@ -59,7 +59,7 @@ import org.schema.model.APIReference;
  *
  * @see <a href="https://schema.org/APIReference">https://schema.org/APIReference</a>
  */
-@JsonLdTypeName("schema:APIReference")
+@JsonLdTypeName("APIReference")
 public class APIReferenceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements APIReference {
 
     private Text fAssembly;

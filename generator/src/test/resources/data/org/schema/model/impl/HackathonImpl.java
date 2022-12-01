@@ -45,7 +45,7 @@ import org.schema.model.Hackathon;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2526">https://github.com/schemaorg/schemaorg/issues/2526</a>
  * @see <a href="https://schema.org/Hackathon">https://schema.org/Hackathon</a>
  */
-@JsonLdTypeName("schema:Hackathon")
+@JsonLdTypeName("Hackathon")
 public class HackathonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Hackathon {
 
     private Event fSuperEvent;

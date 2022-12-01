@@ -31,7 +31,7 @@ import org.schema.model.DeactivateAction;
  *
  * @see <a href="https://schema.org/DeactivateAction">https://schema.org/DeactivateAction</a>
  */
-@JsonLdTypeName("schema:DeactivateAction")
+@JsonLdTypeName("DeactivateAction")
 public class DeactivateActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements DeactivateAction {
 
     private Object fAgent;

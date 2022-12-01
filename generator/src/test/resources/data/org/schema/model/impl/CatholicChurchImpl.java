@@ -39,7 +39,7 @@ import org.schema.model.CatholicChurch;
  *
  * @see <a href="https://schema.org/CatholicChurch">https://schema.org/CatholicChurch</a>
  */
-@JsonLdTypeName("schema:CatholicChurch")
+@JsonLdTypeName("CatholicChurch")
 public class CatholicChurchImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements CatholicChurch {
 
     private Text fOpeningHours;

@@ -58,7 +58,7 @@ import org.schema.model.Answer;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_QAStackExchange">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_QAStackExchange</a>
  * @see <a href="https://schema.org/Answer">https://schema.org/Answer</a>
  */
-@JsonLdTypeName("schema:Answer")
+@JsonLdTypeName("Answer")
 public class AnswerImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Answer {
 
     private Object fAnswerExplanation;

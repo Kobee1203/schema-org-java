@@ -32,7 +32,7 @@ import org.schema.model.AgreeAction;
  *
  * @see <a href="https://schema.org/AgreeAction">https://schema.org/AgreeAction</a>
  */
-@JsonLdTypeName("schema:AgreeAction")
+@JsonLdTypeName("AgreeAction")
 public class AgreeActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements AgreeAction {
 
     private Object fAgent;

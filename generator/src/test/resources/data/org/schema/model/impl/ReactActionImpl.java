@@ -31,7 +31,7 @@ import org.schema.model.ReactAction;
  *
  * @see <a href="https://schema.org/ReactAction">https://schema.org/ReactAction</a>
  */
-@JsonLdTypeName("schema:ReactAction")
+@JsonLdTypeName("ReactAction")
 public class ReactActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ReactAction {
 
     private Object fAgent;

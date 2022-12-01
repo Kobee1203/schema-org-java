@@ -27,7 +27,7 @@ import org.schema.model.ReturnMethodEnumeration;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
  * @see <a href="https://schema.org/ReturnMethodEnumeration">https://schema.org/ReturnMethodEnumeration</a>
  */
-@JsonLdTypeName("schema:ReturnMethodEnumeration")
+@JsonLdTypeName("ReturnMethodEnumeration")
 public enum ReturnMethodEnumerationEnum implements ReturnMethodEnumeration {
     RETURN_BY_MAIL("ReturnByMail"),
     RETURN_AT_KIOSK("ReturnAtKiosk"),

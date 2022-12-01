@@ -59,7 +59,7 @@ import org.schema.model.FinancialService;
  *
  * @see <a href="https://schema.org/FinancialService">https://schema.org/FinancialService</a>
  */
-@JsonLdTypeName("schema:FinancialService")
+@JsonLdTypeName("FinancialService")
 public class FinancialServiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements FinancialService {
 
     private Object fFeesAndCommissionsSpecification;

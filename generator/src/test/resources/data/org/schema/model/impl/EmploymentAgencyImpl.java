@@ -59,7 +59,7 @@ import org.schema.model.EmploymentAgency;
  *
  * @see <a href="https://schema.org/EmploymentAgency">https://schema.org/EmploymentAgency</a>
  */
-@JsonLdTypeName("schema:EmploymentAgency")
+@JsonLdTypeName("EmploymentAgency")
 public class EmploymentAgencyImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements EmploymentAgency {
 
     private Organization fBranchOf;

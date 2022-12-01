@@ -38,7 +38,7 @@ import org.schema.model.PhysicalActivity;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/PhysicalActivity">https://schema.org/PhysicalActivity</a>
  */
-@JsonLdTypeName("schema:PhysicalActivity")
+@JsonLdTypeName("PhysicalActivity")
 public class PhysicalActivityImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PhysicalActivity {
 
     private Object fCategory;

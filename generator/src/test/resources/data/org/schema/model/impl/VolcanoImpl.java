@@ -37,7 +37,7 @@ import org.schema.model.Volcano;
  *
  * @see <a href="https://schema.org/Volcano">https://schema.org/Volcano</a>
  */
-@JsonLdTypeName("schema:Volcano")
+@JsonLdTypeName("Volcano")
 public class VolcanoImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Volcano {
 
     private Text fTelephone;

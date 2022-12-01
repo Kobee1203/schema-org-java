@@ -36,7 +36,7 @@ import org.schema.model.CivicStructure;
  *
  * @see <a href="https://schema.org/CivicStructure">https://schema.org/CivicStructure</a>
  */
-@JsonLdTypeName("schema:CivicStructure")
+@JsonLdTypeName("CivicStructure")
 public class CivicStructureImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements CivicStructure {
 
     private Text fOpeningHours;

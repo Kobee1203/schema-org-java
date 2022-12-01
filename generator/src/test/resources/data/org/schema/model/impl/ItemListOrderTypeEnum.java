@@ -25,7 +25,7 @@ import org.schema.model.ItemListOrderType;
  *
  * @see <a href="https://schema.org/ItemListOrderType">https://schema.org/ItemListOrderType</a>
  */
-@JsonLdTypeName("schema:ItemListOrderType")
+@JsonLdTypeName("ItemListOrderType")
 public enum ItemListOrderTypeEnum implements ItemListOrderType {
     ITEM_LIST_UNORDERED("ItemListUnordered"),
     ITEM_LIST_ORDER_DESCENDING("ItemListOrderDescending"),

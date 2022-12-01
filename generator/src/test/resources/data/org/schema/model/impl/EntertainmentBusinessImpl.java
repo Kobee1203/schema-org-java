@@ -59,7 +59,7 @@ import org.schema.model.EntertainmentBusiness;
  *
  * @see <a href="https://schema.org/EntertainmentBusiness">https://schema.org/EntertainmentBusiness</a>
  */
-@JsonLdTypeName("schema:EntertainmentBusiness")
+@JsonLdTypeName("EntertainmentBusiness")
 public class EntertainmentBusinessImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements EntertainmentBusiness {
 
     private Organization fBranchOf;

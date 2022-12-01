@@ -34,7 +34,7 @@ import org.schema.model.MedicalGuidelineRecommendation;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/MedicalGuidelineRecommendation">https://schema.org/MedicalGuidelineRecommendation</a>
  */
-@JsonLdTypeName("schema:MedicalGuidelineRecommendation")
+@JsonLdTypeName("MedicalGuidelineRecommendation")
 public class MedicalGuidelineRecommendationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MedicalGuidelineRecommendation {
 
     private Text fRecommendationStrength;

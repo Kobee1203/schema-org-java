@@ -60,7 +60,7 @@ import org.schema.model.LiveBlogPosting;
  *
  * @see <a href="https://schema.org/LiveBlogPosting">https://schema.org/LiveBlogPosting</a>
  */
-@JsonLdTypeName("schema:LiveBlogPosting")
+@JsonLdTypeName("LiveBlogPosting")
 public class LiveBlogPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements LiveBlogPosting {
 
     private DateTime fCoverageEndTime;

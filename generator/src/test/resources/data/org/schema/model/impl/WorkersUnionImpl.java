@@ -50,7 +50,7 @@ import org.schema.model.WorkersUnion;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/243">https://github.com/schemaorg/schemaorg/issues/243</a>
  * @see <a href="https://schema.org/WorkersUnion">https://schema.org/WorkersUnion</a>
  */
-@JsonLdTypeName("schema:WorkersUnion")
+@JsonLdTypeName("WorkersUnion")
 public class WorkersUnionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements WorkersUnion {
 
     private Object fOwnershipFundingInfo;

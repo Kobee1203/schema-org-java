@@ -36,7 +36,7 @@ import org.schema.model.CommentAction;
  *
  * @see <a href="https://schema.org/CommentAction">https://schema.org/CommentAction</a>
  */
-@JsonLdTypeName("schema:CommentAction")
+@JsonLdTypeName("CommentAction")
 public class CommentActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements CommentAction {
 
     private Comment fResultComment;

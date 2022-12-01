@@ -35,7 +35,7 @@ import org.schema.model.MedicalEntity;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/AnatomicalStructure">https://schema.org/AnatomicalStructure</a>
  */
-@JsonLdTypeName("schema:AnatomicalStructure")
+@JsonLdTypeName("AnatomicalStructure")
 public class AnatomicalStructureImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements AnatomicalStructure {
 
     private Text fBodyLocation;

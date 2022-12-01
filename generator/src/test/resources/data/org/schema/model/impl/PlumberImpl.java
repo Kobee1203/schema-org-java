@@ -60,7 +60,7 @@ import org.schema.model.Plumber;
  *
  * @see <a href="https://schema.org/Plumber">https://schema.org/Plumber</a>
  */
-@JsonLdTypeName("schema:Plumber")
+@JsonLdTypeName("Plumber")
 public class PlumberImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Plumber {
 
     private Organization fBranchOf;

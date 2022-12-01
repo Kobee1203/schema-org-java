@@ -60,7 +60,7 @@ import org.schema.model.OutletStore;
  *
  * @see <a href="https://schema.org/OutletStore">https://schema.org/OutletStore</a>
  */
-@JsonLdTypeName("schema:OutletStore")
+@JsonLdTypeName("OutletStore")
 public class OutletStoreImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements OutletStore {
 
     private Organization fBranchOf;

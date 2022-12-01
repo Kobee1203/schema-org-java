@@ -57,7 +57,7 @@ import org.schema.model.DigitalDocument;
  *
  * @see <a href="https://schema.org/DigitalDocument">https://schema.org/DigitalDocument</a>
  */
-@JsonLdTypeName("schema:DigitalDocument")
+@JsonLdTypeName("DigitalDocument")
 public class DigitalDocumentImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements DigitalDocument {
 
     private DigitalDocumentPermission fHasDigitalDocumentPermission;

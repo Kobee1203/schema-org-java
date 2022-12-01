@@ -27,7 +27,7 @@ import org.schema.model.HealthInsurancePlan;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
  * @see <a href="https://schema.org/HealthInsurancePlan">https://schema.org/HealthInsurancePlan</a>
  */
-@JsonLdTypeName("schema:HealthInsurancePlan")
+@JsonLdTypeName("HealthInsurancePlan")
 public class HealthInsurancePlanImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements HealthInsurancePlan {
 
     private HealthPlanFormulary fIncludesHealthPlanFormulary;

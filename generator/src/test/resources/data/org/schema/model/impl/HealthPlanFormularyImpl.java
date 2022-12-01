@@ -25,7 +25,7 @@ import org.schema.model.HealthPlanFormulary;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
  * @see <a href="https://schema.org/HealthPlanFormulary">https://schema.org/HealthPlanFormulary</a>
  */
-@JsonLdTypeName("schema:HealthPlanFormulary")
+@JsonLdTypeName("HealthPlanFormulary")
 public class HealthPlanFormularyImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements HealthPlanFormulary {
 
     private Boolean fOffersPrescriptionByMail;

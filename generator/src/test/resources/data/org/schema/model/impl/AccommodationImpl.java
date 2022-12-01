@@ -43,7 +43,7 @@ import org.schema.model.Accommodation;
  * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
  * @see <a href="https://schema.org/Accommodation">https://schema.org/Accommodation</a>
  */
-@JsonLdTypeName("schema:Accommodation")
+@JsonLdTypeName("Accommodation")
 public class AccommodationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Accommodation {
 
     private Text fFloorLevel;

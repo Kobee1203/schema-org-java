@@ -31,7 +31,7 @@ import org.schema.model.LeaveAction;
  *
  * @see <a href="https://schema.org/LeaveAction">https://schema.org/LeaveAction</a>
  */
-@JsonLdTypeName("schema:LeaveAction")
+@JsonLdTypeName("LeaveAction")
 public class LeaveActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements LeaveAction {
 
     private Event fEvent;

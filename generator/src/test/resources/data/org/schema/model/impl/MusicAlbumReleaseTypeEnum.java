@@ -26,7 +26,7 @@ import org.schema.model.MusicAlbumReleaseType;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
  * @see <a href="https://schema.org/MusicAlbumReleaseType">https://schema.org/MusicAlbumReleaseType</a>
  */
-@JsonLdTypeName("schema:MusicAlbumReleaseType")
+@JsonLdTypeName("MusicAlbumReleaseType")
 public enum MusicAlbumReleaseTypeEnum implements MusicAlbumReleaseType {
     EP_RELEASE("EPRelease"),
     BROADCAST_RELEASE("BroadcastRelease"),

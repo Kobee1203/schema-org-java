@@ -36,7 +36,7 @@ import org.schema.model.MaximumDoseSchedule;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/MaximumDoseSchedule">https://schema.org/MaximumDoseSchedule</a>
  */
-@JsonLdTypeName("schema:MaximumDoseSchedule")
+@JsonLdTypeName("MaximumDoseSchedule")
 public class MaximumDoseScheduleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MaximumDoseSchedule {
 
     private Text fTargetPopulation;

@@ -31,7 +31,7 @@ import org.schema.model.DownloadAction;
  *
  * @see <a href="https://schema.org/DownloadAction">https://schema.org/DownloadAction</a>
  */
-@JsonLdTypeName("schema:DownloadAction")
+@JsonLdTypeName("DownloadAction")
 public class DownloadActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements DownloadAction {
 
     private Place fFromLocation;

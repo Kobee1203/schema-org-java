@@ -39,7 +39,7 @@ import org.schema.model.BoatTerminal;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1755">https://github.com/schemaorg/schemaorg/issues/1755</a>
  * @see <a href="https://schema.org/BoatTerminal">https://schema.org/BoatTerminal</a>
  */
-@JsonLdTypeName("schema:BoatTerminal")
+@JsonLdTypeName("BoatTerminal")
 public class BoatTerminalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements BoatTerminal {
 
     private Text fOpeningHours;

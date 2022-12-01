@@ -61,7 +61,7 @@ import org.schema.model.AdvertiserContentArticle;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
  * @see <a href="https://schema.org/AdvertiserContentArticle">https://schema.org/AdvertiserContentArticle</a>
  */
-@JsonLdTypeName("schema:AdvertiserContentArticle")
+@JsonLdTypeName("AdvertiserContentArticle")
 public class AdvertiserContentArticleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements AdvertiserContentArticle {
 
     private Object fPageStart;

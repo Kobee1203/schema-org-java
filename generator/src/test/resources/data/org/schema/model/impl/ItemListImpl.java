@@ -25,7 +25,7 @@ import org.schema.model.ItemList;
  *
  * @see <a href="https://schema.org/ItemList">https://schema.org/ItemList</a>
  */
-@JsonLdTypeName("schema:ItemList")
+@JsonLdTypeName("ItemList")
 public class ItemListImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ItemList {
 
     private Integer fNumberOfItems;

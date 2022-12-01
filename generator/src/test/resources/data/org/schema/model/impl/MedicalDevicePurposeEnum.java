@@ -27,7 +27,7 @@ import org.schema.model.MedicalDevicePurpose;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/MedicalDevicePurpose">https://schema.org/MedicalDevicePurpose</a>
  */
-@JsonLdTypeName("schema:MedicalDevicePurpose")
+@JsonLdTypeName("MedicalDevicePurpose")
 public enum MedicalDevicePurposeEnum implements MedicalDevicePurpose {
     THERAPEUTIC("Therapeutic"),
     DIAGNOSTIC("Diagnostic");

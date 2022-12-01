@@ -60,7 +60,7 @@ import org.schema.model.GasStation;
  *
  * @see <a href="https://schema.org/GasStation">https://schema.org/GasStation</a>
  */
-@JsonLdTypeName("schema:GasStation")
+@JsonLdTypeName("GasStation")
 public class GasStationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements GasStation {
 
     private Organization fBranchOf;

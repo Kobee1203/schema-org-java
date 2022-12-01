@@ -43,7 +43,7 @@ import org.schema.model.SaleEvent;
  *
  * @see <a href="https://schema.org/SaleEvent">https://schema.org/SaleEvent</a>
  */
-@JsonLdTypeName("schema:SaleEvent")
+@JsonLdTypeName("SaleEvent")
 public class SaleEventImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements SaleEvent {
 
     private Event fSuperEvent;

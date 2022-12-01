@@ -57,7 +57,7 @@ import com.weedow.schemaorg.commons.model.JsonLdTypeName;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
  * @see <a href="https://schema.org/MusicComposition">https://schema.org/MusicComposition</a>
  */
-@JsonLdTypeName("schema:MusicComposition")
+@JsonLdTypeName("MusicComposition")
 public class MusicCompositionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MusicComposition {
 
     private Text fIswcCode;

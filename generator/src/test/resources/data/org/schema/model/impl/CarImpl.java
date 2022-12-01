@@ -54,7 +54,7 @@ import org.schema.model.Car;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
  * @see <a href="https://schema.org/Car">https://schema.org/Car</a>
  */
-@JsonLdTypeName("schema:Car")
+@JsonLdTypeName("Car")
 public class CarImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Car {
 
     private QuantitativeValue fRoofLoad;

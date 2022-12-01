@@ -22,7 +22,7 @@ import org.schema.model.Language;
  *
  * @see <a href="https://schema.org/Language">https://schema.org/Language</a>
  */
-@JsonLdTypeName("schema:Language")
+@JsonLdTypeName("Language")
 public class LanguageImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Language {
 
     private Object fMainEntityOfPage;

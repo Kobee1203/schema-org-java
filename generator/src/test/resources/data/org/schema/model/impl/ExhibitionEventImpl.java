@@ -43,7 +43,7 @@ import org.schema.model.ExhibitionEvent;
  *
  * @see <a href="https://schema.org/ExhibitionEvent">https://schema.org/ExhibitionEvent</a>
  */
-@JsonLdTypeName("schema:ExhibitionEvent")
+@JsonLdTypeName("ExhibitionEvent")
 public class ExhibitionEventImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ExhibitionEvent {
 
     private Event fSuperEvent;

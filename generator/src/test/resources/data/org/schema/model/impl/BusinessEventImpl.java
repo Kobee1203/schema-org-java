@@ -43,7 +43,7 @@ import org.schema.model.BusinessEvent;
  *
  * @see <a href="https://schema.org/BusinessEvent">https://schema.org/BusinessEvent</a>
  */
-@JsonLdTypeName("schema:BusinessEvent")
+@JsonLdTypeName("BusinessEvent")
 public class BusinessEventImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements BusinessEvent {
 
     private Event fSuperEvent;

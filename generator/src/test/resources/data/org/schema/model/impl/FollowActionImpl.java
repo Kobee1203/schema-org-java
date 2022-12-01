@@ -31,7 +31,7 @@ import org.schema.model.FollowAction;
  *
  * @see <a href="https://schema.org/FollowAction">https://schema.org/FollowAction</a>
  */
-@JsonLdTypeName("schema:FollowAction")
+@JsonLdTypeName("FollowAction")
 public class FollowActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements FollowAction {
 
     private Object fFollowee;

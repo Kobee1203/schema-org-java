@@ -32,7 +32,7 @@ import org.schema.model.Schedule;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
  * @see <a href="https://schema.org/Schedule">https://schema.org/Schedule</a>
  */
-@JsonLdTypeName("schema:Schedule")
+@JsonLdTypeName("Schedule")
 public class ScheduleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Schedule {
 
     private Text fScheduleTimezone;

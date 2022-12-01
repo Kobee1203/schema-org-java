@@ -60,7 +60,7 @@ import org.schema.model.BookStore;
  *
  * @see <a href="https://schema.org/BookStore">https://schema.org/BookStore</a>
  */
-@JsonLdTypeName("schema:BookStore")
+@JsonLdTypeName("BookStore")
 public class BookStoreImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements BookStore {
 
     private Organization fBranchOf;

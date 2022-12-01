@@ -58,7 +58,7 @@ import org.schema.model.SoftwareSourceCode;
  *
  * @see <a href="https://schema.org/SoftwareSourceCode">https://schema.org/SoftwareSourceCode</a>
  */
-@JsonLdTypeName("schema:SoftwareSourceCode")
+@JsonLdTypeName("SoftwareSourceCode")
 public class SoftwareSourceCodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements SoftwareSourceCode {
 
     private Object fProgrammingLanguage;

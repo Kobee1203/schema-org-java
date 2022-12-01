@@ -30,7 +30,7 @@ import org.schema.model.ContactPoint;
  *
  * @see <a href="https://schema.org/ContactPoint">https://schema.org/ContactPoint</a>
  */
-@JsonLdTypeName("schema:ContactPoint")
+@JsonLdTypeName("ContactPoint")
 public class ContactPointImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ContactPoint {
 
     private Text fTelephone;

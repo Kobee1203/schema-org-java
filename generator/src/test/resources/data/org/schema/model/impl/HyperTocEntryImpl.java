@@ -58,7 +58,7 @@ import com.weedow.schemaorg.commons.model.JsonLdTypeName;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2766">https://github.com/schemaorg/schemaorg/issues/2766</a>
  * @see <a href="https://schema.org/HyperTocEntry">https://schema.org/HyperTocEntry</a>
  */
-@JsonLdTypeName("schema:HyperTocEntry")
+@JsonLdTypeName("HyperTocEntry")
 public class HyperTocEntryImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements HyperTocEntry {
 
     private HyperTocEntry fTocContinuation;

@@ -58,7 +58,7 @@ import org.schema.model.Intangible;
  *
  * @see <a href="https://schema.org/AggregateOffer">https://schema.org/AggregateOffer</a>
  */
-@JsonLdTypeName("schema:AggregateOffer")
+@JsonLdTypeName("AggregateOffer")
 public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements AggregateOffer {
 
     private Object fHighPrice;

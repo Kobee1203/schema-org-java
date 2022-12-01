@@ -30,7 +30,7 @@ import org.schema.model.ControlAction;
  *
  * @see <a href="https://schema.org/ControlAction">https://schema.org/ControlAction</a>
  */
-@JsonLdTypeName("schema:ControlAction")
+@JsonLdTypeName("ControlAction")
 public class ControlActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ControlAction {
 
     private Object fAgent;

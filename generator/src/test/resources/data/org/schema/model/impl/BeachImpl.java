@@ -37,7 +37,7 @@ import org.schema.model.Beach;
  *
  * @see <a href="https://schema.org/Beach">https://schema.org/Beach</a>
  */
-@JsonLdTypeName("schema:Beach")
+@JsonLdTypeName("Beach")
 public class BeachImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Beach {
 
     private Text fOpeningHours;

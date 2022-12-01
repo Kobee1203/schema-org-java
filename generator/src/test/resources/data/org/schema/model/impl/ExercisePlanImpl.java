@@ -73,7 +73,7 @@ import org.schema.model.ExercisePlan;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/ExercisePlan">https://schema.org/ExercisePlan</a>
  */
-@JsonLdTypeName("schema:ExercisePlan")
+@JsonLdTypeName("ExercisePlan")
 public class ExercisePlanImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ExercisePlan {
 
     private Object fRepetitions;

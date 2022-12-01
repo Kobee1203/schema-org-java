@@ -32,7 +32,7 @@ import org.schema.model.DislikeAction;
  *
  * @see <a href="https://schema.org/DislikeAction">https://schema.org/DislikeAction</a>
  */
-@JsonLdTypeName("schema:DislikeAction")
+@JsonLdTypeName("DislikeAction")
 public class DislikeActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements DislikeAction {
 
     private Object fAgent;

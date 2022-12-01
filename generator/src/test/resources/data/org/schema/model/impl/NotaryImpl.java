@@ -60,7 +60,7 @@ import org.schema.model.Notary;
  *
  * @see <a href="https://schema.org/Notary">https://schema.org/Notary</a>
  */
-@JsonLdTypeName("schema:Notary")
+@JsonLdTypeName("Notary")
 public class NotaryImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Notary {
 
     private Organization fBranchOf;

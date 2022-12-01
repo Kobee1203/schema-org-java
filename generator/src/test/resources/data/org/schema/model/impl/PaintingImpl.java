@@ -56,7 +56,7 @@ import org.schema.model.Painting;
  *
  * @see <a href="https://schema.org/Painting">https://schema.org/Painting</a>
  */
-@JsonLdTypeName("schema:Painting")
+@JsonLdTypeName("Painting")
 public class PaintingImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Painting {
 
     private Object fTeaches;

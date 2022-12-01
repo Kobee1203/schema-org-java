@@ -37,7 +37,7 @@ import org.schema.model.ParkingFacility;
  *
  * @see <a href="https://schema.org/ParkingFacility">https://schema.org/ParkingFacility</a>
  */
-@JsonLdTypeName("schema:ParkingFacility")
+@JsonLdTypeName("ParkingFacility")
 public class ParkingFacilityImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ParkingFacility {
 
     private Text fOpeningHours;

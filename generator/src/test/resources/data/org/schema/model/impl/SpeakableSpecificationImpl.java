@@ -25,7 +25,7 @@ import org.schema.model.SpeakableSpecification;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1389">https://github.com/schemaorg/schemaorg/issues/1389</a>
  * @see <a href="https://schema.org/SpeakableSpecification">https://schema.org/SpeakableSpecification</a>
  */
-@JsonLdTypeName("schema:SpeakableSpecification")
+@JsonLdTypeName("SpeakableSpecification")
 public class SpeakableSpecificationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements SpeakableSpecification {
 
     private CssSelectorType fCssSelector;

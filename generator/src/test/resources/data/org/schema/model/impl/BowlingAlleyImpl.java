@@ -60,7 +60,7 @@ import org.schema.model.BowlingAlley;
  *
  * @see <a href="https://schema.org/BowlingAlley">https://schema.org/BowlingAlley</a>
  */
-@JsonLdTypeName("schema:BowlingAlley")
+@JsonLdTypeName("BowlingAlley")
 public class BowlingAlleyImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements BowlingAlley {
 
     private Organization fBranchOf;

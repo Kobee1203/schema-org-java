@@ -28,7 +28,7 @@ import org.schema.model.USNonprofitType;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2543">https://github.com/schemaorg/schemaorg/issues/2543</a>
  * @see <a href="https://schema.org/USNonprofitType">https://schema.org/USNonprofitType</a>
  */
-@JsonLdTypeName("schema:USNonprofitType")
+@JsonLdTypeName("USNonprofitType")
 public enum USNonprofitTypeEnum implements USNonprofitType {
     NONPROFIT_501C4("Nonprofit501c4"),
     NONPROFIT_501C23("Nonprofit501c23"),

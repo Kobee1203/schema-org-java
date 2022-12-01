@@ -59,7 +59,7 @@ import org.schema.model.EmergencyService;
  *
  * @see <a href="https://schema.org/EmergencyService">https://schema.org/EmergencyService</a>
  */
-@JsonLdTypeName("schema:EmergencyService")
+@JsonLdTypeName("EmergencyService")
 public class EmergencyServiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements EmergencyService {
 
     private Organization fBranchOf;

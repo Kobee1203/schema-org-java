@@ -25,7 +25,7 @@ import org.schema.model.GamePlayMode;
  *
  * @see <a href="https://schema.org/GamePlayMode">https://schema.org/GamePlayMode</a>
  */
-@JsonLdTypeName("schema:GamePlayMode")
+@JsonLdTypeName("GamePlayMode")
 public enum GamePlayModeEnum implements GamePlayMode {
     MULTI_PLAYER("MultiPlayer"),
     CO_OP("CoOp"),

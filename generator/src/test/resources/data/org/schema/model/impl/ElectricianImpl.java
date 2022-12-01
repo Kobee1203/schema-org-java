@@ -60,7 +60,7 @@ import org.schema.model.Electrician;
  *
  * @see <a href="https://schema.org/Electrician">https://schema.org/Electrician</a>
  */
-@JsonLdTypeName("schema:Electrician")
+@JsonLdTypeName("Electrician")
 public class ElectricianImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Electrician {
 
     private Organization fBranchOf;

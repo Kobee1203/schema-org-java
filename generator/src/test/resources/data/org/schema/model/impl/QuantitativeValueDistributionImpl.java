@@ -26,7 +26,7 @@ import org.schema.model.QuantitativeValueDistribution;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
  * @see <a href="https://schema.org/QuantitativeValueDistribution">https://schema.org/QuantitativeValueDistribution</a>
  */
-@JsonLdTypeName("schema:QuantitativeValueDistribution")
+@JsonLdTypeName("QuantitativeValueDistribution")
 public class QuantitativeValueDistributionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements QuantitativeValueDistribution {
 
     private Number fPercentile75;

@@ -60,7 +60,7 @@ import org.schema.model.GeneralContractor;
  *
  * @see <a href="https://schema.org/GeneralContractor">https://schema.org/GeneralContractor</a>
  */
-@JsonLdTypeName("schema:GeneralContractor")
+@JsonLdTypeName("GeneralContractor")
 public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements GeneralContractor {
 
     private Organization fBranchOf;

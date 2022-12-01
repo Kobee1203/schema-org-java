@@ -59,7 +59,7 @@ import org.schema.model.InternetCafe;
  *
  * @see <a href="https://schema.org/InternetCafe">https://schema.org/InternetCafe</a>
  */
-@JsonLdTypeName("schema:InternetCafe")
+@JsonLdTypeName("InternetCafe")
 public class InternetCafeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements InternetCafe {
 
     private Organization fBranchOf;

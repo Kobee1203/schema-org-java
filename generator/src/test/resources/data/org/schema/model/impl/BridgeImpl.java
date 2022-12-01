@@ -37,7 +37,7 @@ import org.schema.model.Bridge;
  *
  * @see <a href="https://schema.org/Bridge">https://schema.org/Bridge</a>
  */
-@JsonLdTypeName("schema:Bridge")
+@JsonLdTypeName("Bridge")
 public class BridgeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Bridge {
 
     private Text fOpeningHours;

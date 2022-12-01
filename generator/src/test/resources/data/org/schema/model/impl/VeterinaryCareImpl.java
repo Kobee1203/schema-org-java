@@ -53,7 +53,7 @@ import org.schema.model.VeterinaryCare;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/VeterinaryCare">https://schema.org/VeterinaryCare</a>
  */
-@JsonLdTypeName("schema:VeterinaryCare")
+@JsonLdTypeName("VeterinaryCare")
 public class VeterinaryCareImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements VeterinaryCare {
 
     private Boolean fIsAcceptingNewPatients;

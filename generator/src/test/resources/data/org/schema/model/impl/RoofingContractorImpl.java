@@ -60,7 +60,7 @@ import org.schema.model.RoofingContractor;
  *
  * @see <a href="https://schema.org/RoofingContractor">https://schema.org/RoofingContractor</a>
  */
-@JsonLdTypeName("schema:RoofingContractor")
+@JsonLdTypeName("RoofingContractor")
 public class RoofingContractorImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements RoofingContractor {
 
     private Organization fBranchOf;

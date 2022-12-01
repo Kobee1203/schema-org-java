@@ -60,7 +60,7 @@ import org.schema.model.PawnShop;
  *
  * @see <a href="https://schema.org/PawnShop">https://schema.org/PawnShop</a>
  */
-@JsonLdTypeName("schema:PawnShop")
+@JsonLdTypeName("PawnShop")
 public class PawnShopImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PawnShop {
 
     private Organization fBranchOf;

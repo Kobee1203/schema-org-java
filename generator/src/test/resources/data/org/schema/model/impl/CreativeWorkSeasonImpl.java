@@ -58,7 +58,7 @@ import org.schema.model.CreativeWorkSeason;
  *
  * @see <a href="https://schema.org/CreativeWorkSeason">https://schema.org/CreativeWorkSeason</a>
  */
-@JsonLdTypeName("schema:CreativeWorkSeason")
+@JsonLdTypeName("CreativeWorkSeason")
 public class CreativeWorkSeasonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements CreativeWorkSeason {
 
     private Object fStartDate;

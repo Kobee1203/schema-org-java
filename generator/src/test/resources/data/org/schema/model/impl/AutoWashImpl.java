@@ -60,7 +60,7 @@ import org.schema.model.AutoWash;
  *
  * @see <a href="https://schema.org/AutoWash">https://schema.org/AutoWash</a>
  */
-@JsonLdTypeName("schema:AutoWash")
+@JsonLdTypeName("AutoWash")
 public class AutoWashImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements AutoWash {
 
     private Organization fBranchOf;

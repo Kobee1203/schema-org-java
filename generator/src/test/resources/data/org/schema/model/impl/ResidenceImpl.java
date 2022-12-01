@@ -37,7 +37,7 @@ import org.schema.model.Residence;
  *
  * @see <a href="https://schema.org/Residence">https://schema.org/Residence</a>
  */
-@JsonLdTypeName("schema:Residence")
+@JsonLdTypeName("Residence")
 public class ResidenceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Residence {
 
     private FloorPlan fAccommodationFloorPlan;

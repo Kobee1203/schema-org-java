@@ -38,7 +38,7 @@ import org.schema.model.LakeBodyOfWater;
  *
  * @see <a href="https://schema.org/LakeBodyOfWater">https://schema.org/LakeBodyOfWater</a>
  */
-@JsonLdTypeName("schema:LakeBodyOfWater")
+@JsonLdTypeName("LakeBodyOfWater")
 public class LakeBodyOfWaterImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements LakeBodyOfWater {
 
     private Text fTelephone;

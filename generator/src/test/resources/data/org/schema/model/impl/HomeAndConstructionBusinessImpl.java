@@ -59,7 +59,7 @@ import org.schema.model.HomeAndConstructionBusiness;
  *
  * @see <a href="https://schema.org/HomeAndConstructionBusiness">https://schema.org/HomeAndConstructionBusiness</a>
  */
-@JsonLdTypeName("schema:HomeAndConstructionBusiness")
+@JsonLdTypeName("HomeAndConstructionBusiness")
 public class HomeAndConstructionBusinessImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements HomeAndConstructionBusiness {
 
     private Organization fBranchOf;

@@ -59,7 +59,7 @@ import org.schema.model.RecyclingCenter;
  *
  * @see <a href="https://schema.org/RecyclingCenter">https://schema.org/RecyclingCenter</a>
  */
-@JsonLdTypeName("schema:RecyclingCenter")
+@JsonLdTypeName("RecyclingCenter")
 public class RecyclingCenterImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements RecyclingCenter {
 
     private Organization fBranchOf;

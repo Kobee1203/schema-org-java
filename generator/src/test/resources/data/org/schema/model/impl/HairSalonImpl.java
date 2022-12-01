@@ -60,7 +60,7 @@ import org.schema.model.HairSalon;
  *
  * @see <a href="https://schema.org/HairSalon">https://schema.org/HairSalon</a>
  */
-@JsonLdTypeName("schema:HairSalon")
+@JsonLdTypeName("HairSalon")
 public class HairSalonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements HairSalon {
 
     private Organization fBranchOf;

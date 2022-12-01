@@ -27,7 +27,7 @@ import org.schema.model.GovernmentBenefitsType;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2534">https://github.com/schemaorg/schemaorg/issues/2534</a>
  * @see <a href="https://schema.org/GovernmentBenefitsType">https://schema.org/GovernmentBenefitsType</a>
  */
-@JsonLdTypeName("schema:GovernmentBenefitsType")
+@JsonLdTypeName("GovernmentBenefitsType")
 public enum GovernmentBenefitsTypeEnum implements GovernmentBenefitsType {
     HEALTH_CARE("HealthCare"),
     BUSINESS_SUPPORT("BusinessSupport"),

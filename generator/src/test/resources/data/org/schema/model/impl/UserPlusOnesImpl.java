@@ -44,7 +44,7 @@ import org.schema.model.UserPlusOnes;
  *
  * @see <a href="https://schema.org/UserPlusOnes">https://schema.org/UserPlusOnes</a>
  */
-@JsonLdTypeName("schema:UserPlusOnes")
+@JsonLdTypeName("UserPlusOnes")
 public class UserPlusOnesImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements UserPlusOnes {
 
     private Event fSuperEvent;

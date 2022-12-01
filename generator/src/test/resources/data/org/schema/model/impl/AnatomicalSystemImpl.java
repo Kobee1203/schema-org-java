@@ -35,7 +35,7 @@ import org.schema.model.MedicalEntity;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/AnatomicalSystem">https://schema.org/AnatomicalSystem</a>
  */
-@JsonLdTypeName("schema:AnatomicalSystem")
+@JsonLdTypeName("AnatomicalSystem")
 public class AnatomicalSystemImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements AnatomicalSystem {
 
     private MedicalTherapy fRelatedTherapy;

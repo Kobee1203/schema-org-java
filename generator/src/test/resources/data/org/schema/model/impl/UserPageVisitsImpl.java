@@ -44,7 +44,7 @@ import org.schema.model.UserPageVisits;
  *
  * @see <a href="https://schema.org/UserPageVisits">https://schema.org/UserPageVisits</a>
  */
-@JsonLdTypeName("schema:UserPageVisits")
+@JsonLdTypeName("UserPageVisits")
 public class UserPageVisitsImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements UserPageVisits {
 
     private Event fSuperEvent;

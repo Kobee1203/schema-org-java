@@ -60,7 +60,7 @@ import org.schema.model.ToyStore;
  *
  * @see <a href="https://schema.org/ToyStore">https://schema.org/ToyStore</a>
  */
-@JsonLdTypeName("schema:ToyStore")
+@JsonLdTypeName("ToyStore")
 public class ToyStoreImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ToyStore {
 
     private Organization fBranchOf;

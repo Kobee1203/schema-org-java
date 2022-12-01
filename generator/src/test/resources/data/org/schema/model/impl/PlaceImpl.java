@@ -35,7 +35,7 @@ import com.weedow.schemaorg.commons.model.JsonLdTypeName;
  *
  * @see <a href="https://schema.org/Place">https://schema.org/Place</a>
  */
-@JsonLdTypeName("schema:Place")
+@JsonLdTypeName("Place")
 public class PlaceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Place {
 
     private Text fTelephone;

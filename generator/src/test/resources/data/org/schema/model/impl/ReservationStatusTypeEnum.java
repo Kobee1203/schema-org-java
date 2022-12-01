@@ -26,7 +26,7 @@ import org.schema.model.ReservationStatusType;
  *
  * @see <a href="https://schema.org/ReservationStatusType">https://schema.org/ReservationStatusType</a>
  */
-@JsonLdTypeName("schema:ReservationStatusType")
+@JsonLdTypeName("ReservationStatusType")
 public enum ReservationStatusTypeEnum implements ReservationStatusType {
     RESERVATION_PENDING("ReservationPending"),
     RESERVATION_CONFIRMED("ReservationConfirmed"),

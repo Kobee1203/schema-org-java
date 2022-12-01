@@ -38,7 +38,7 @@ import org.schema.model.Courthouse;
  *
  * @see <a href="https://schema.org/Courthouse">https://schema.org/Courthouse</a>
  */
-@JsonLdTypeName("schema:Courthouse")
+@JsonLdTypeName("Courthouse")
 public class CourthouseImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Courthouse {
 
     private Text fOpeningHours;

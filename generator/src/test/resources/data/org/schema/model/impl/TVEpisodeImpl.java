@@ -61,7 +61,7 @@ import org.schema.model.TVEpisode;
  *
  * @see <a href="https://schema.org/TVEpisode">https://schema.org/TVEpisode</a>
  */
-@JsonLdTypeName("schema:TVEpisode")
+@JsonLdTypeName("TVEpisode")
 public class TVEpisodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements TVEpisode {
 
     private Country fCountryOfOrigin;

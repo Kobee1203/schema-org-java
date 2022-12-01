@@ -32,7 +32,7 @@ import org.schema.model.GeoCircle;
  *
  * @see <a href="https://schema.org/GeoCircle">https://schema.org/GeoCircle</a>
  */
-@JsonLdTypeName("schema:GeoCircle")
+@JsonLdTypeName("GeoCircle")
 public class GeoCircleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements GeoCircle {
 
     private Object fGeoRadius;

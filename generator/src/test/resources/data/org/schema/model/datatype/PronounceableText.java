@@ -16,7 +16,7 @@ import org.schema.model.Language;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2108">https://github.com/schemaorg/schemaorg/issues/2108</a>
  * @see <a href="https://schema.org/PronounceableText">https://schema.org/PronounceableText</a>
  */
-@JsonLdTypeName("schema:PronounceableText")
+@JsonLdTypeName("PronounceableText")
 public class PronounceableText extends Text {
 
     PronounceableText(java.lang.String value) {

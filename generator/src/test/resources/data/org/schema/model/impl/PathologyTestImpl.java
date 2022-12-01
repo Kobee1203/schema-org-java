@@ -37,7 +37,7 @@ import org.schema.model.PathologyTest;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/PathologyTest">https://schema.org/PathologyTest</a>
  */
-@JsonLdTypeName("schema:PathologyTest")
+@JsonLdTypeName("PathologyTest")
 public class PathologyTestImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PathologyTest {
 
     private Text fTissueSample;

@@ -43,7 +43,7 @@ import org.schema.model.WebAPI;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1423">https://github.com/schemaorg/schemaorg/issues/1423</a>
  * @see <a href="https://schema.org/WebAPI">https://schema.org/WebAPI</a>
  */
-@JsonLdTypeName("schema:WebAPI")
+@JsonLdTypeName("WebAPI")
 public class WebAPIImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements WebAPI {
 
     private Object fDocumentation;

@@ -37,7 +37,7 @@ import org.schema.model.EventVenue;
  *
  * @see <a href="https://schema.org/EventVenue">https://schema.org/EventVenue</a>
  */
-@JsonLdTypeName("schema:EventVenue")
+@JsonLdTypeName("EventVenue")
 public class EventVenueImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements EventVenue {
 
     private Text fOpeningHours;

@@ -34,7 +34,7 @@ import org.schema.model.DeliveryChargeSpecification;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass</a>
  * @see <a href="https://schema.org/DeliveryChargeSpecification">https://schema.org/DeliveryChargeSpecification</a>
  */
-@JsonLdTypeName("schema:DeliveryChargeSpecification")
+@JsonLdTypeName("DeliveryChargeSpecification")
 public class DeliveryChargeSpecificationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements DeliveryChargeSpecification {
 
     private Object fIneligibleRegion;

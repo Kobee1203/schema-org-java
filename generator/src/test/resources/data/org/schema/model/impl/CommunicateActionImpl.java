@@ -34,7 +34,7 @@ import org.schema.model.CommunicateAction;
  *
  * @see <a href="https://schema.org/CommunicateAction">https://schema.org/CommunicateAction</a>
  */
-@JsonLdTypeName("schema:CommunicateAction")
+@JsonLdTypeName("CommunicateAction")
 public class CommunicateActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements CommunicateAction {
 
     private Object fRecipient;

@@ -60,7 +60,7 @@ import org.schema.model.Periodical;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
  * @see <a href="https://schema.org/Periodical">https://schema.org/Periodical</a>
  */
-@JsonLdTypeName("schema:Periodical")
+@JsonLdTypeName("Periodical")
 public class PeriodicalImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Periodical {
 
     private Object fStartDate;

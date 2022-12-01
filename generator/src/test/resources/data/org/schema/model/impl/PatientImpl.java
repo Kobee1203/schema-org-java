@@ -57,7 +57,7 @@ import org.schema.model.Patient;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/Patient">https://schema.org/Patient</a>
  */
-@JsonLdTypeName("schema:Patient")
+@JsonLdTypeName("Patient")
 public class PatientImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Patient {
 
     private MedicalCondition fHealthCondition;

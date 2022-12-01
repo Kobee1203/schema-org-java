@@ -25,7 +25,7 @@ import org.schema.model.MapCategoryType;
  *
  * @see <a href="https://schema.org/MapCategoryType">https://schema.org/MapCategoryType</a>
  */
-@JsonLdTypeName("schema:MapCategoryType")
+@JsonLdTypeName("MapCategoryType")
 public enum MapCategoryTypeEnum implements MapCategoryType {
     SEATING_MAP("SeatingMap"),
     VENUE_MAP("VenueMap"),

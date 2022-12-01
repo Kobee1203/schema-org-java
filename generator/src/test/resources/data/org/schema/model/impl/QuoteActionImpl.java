@@ -33,7 +33,7 @@ import org.schema.model.QuoteAction;
  *
  * @see <a href="https://schema.org/QuoteAction">https://schema.org/QuoteAction</a>
  */
-@JsonLdTypeName("schema:QuoteAction")
+@JsonLdTypeName("QuoteAction")
 public class QuoteActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements QuoteAction {
 
     private Text fPriceCurrency;

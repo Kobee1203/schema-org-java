@@ -46,7 +46,7 @@ import org.schema.model.BankAccount;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
  * @see <a href="https://schema.org/BankAccount">https://schema.org/BankAccount</a>
  */
-@JsonLdTypeName("schema:BankAccount")
+@JsonLdTypeName("BankAccount")
 public class BankAccountImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements BankAccount {
 
     private Object fBankAccountType;

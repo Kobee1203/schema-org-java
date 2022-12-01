@@ -60,7 +60,7 @@ import org.schema.model.NailSalon;
  *
  * @see <a href="https://schema.org/NailSalon">https://schema.org/NailSalon</a>
  */
-@JsonLdTypeName("schema:NailSalon")
+@JsonLdTypeName("NailSalon")
 public class NailSalonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements NailSalon {
 
     private Organization fBranchOf;

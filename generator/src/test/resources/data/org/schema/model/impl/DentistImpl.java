@@ -62,7 +62,7 @@ import org.schema.model.Dentist;
  *
  * @see <a href="https://schema.org/Dentist">https://schema.org/Dentist</a>
  */
-@JsonLdTypeName("schema:Dentist")
+@JsonLdTypeName("Dentist")
 public class DentistImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Dentist {
 
     private Boolean fIsAcceptingNewPatients;

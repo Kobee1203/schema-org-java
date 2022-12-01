@@ -36,7 +36,7 @@ import com.weedow.schemaorg.commons.model.JsonLdTypeName;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/MedicalStudy">https://schema.org/MedicalStudy</a>
  */
-@JsonLdTypeName("schema:MedicalStudy")
+@JsonLdTypeName("MedicalStudy")
 public class MedicalStudyImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MedicalStudy {
 
     private MedicalCondition fHealthCondition;

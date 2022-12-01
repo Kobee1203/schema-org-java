@@ -72,7 +72,7 @@ import org.schema.model.CovidTestingFacility;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
  * @see <a href="https://schema.org/CovidTestingFacility">https://schema.org/CovidTestingFacility</a>
  */
-@JsonLdTypeName("schema:CovidTestingFacility")
+@JsonLdTypeName("CovidTestingFacility")
 public class CovidTestingFacilityImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements CovidTestingFacility {
 
     private Object fAvailableService;

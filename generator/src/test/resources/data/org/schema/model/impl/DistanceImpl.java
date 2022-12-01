@@ -23,7 +23,7 @@ import org.schema.model.Distance;
  *
  * @see <a href="https://schema.org/Distance">https://schema.org/Distance</a>
  */
-@JsonLdTypeName("schema:Distance")
+@JsonLdTypeName("Distance")
 public class DistanceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Distance {
 
     private Object fMainEntityOfPage;

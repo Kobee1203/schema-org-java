@@ -33,7 +33,7 @@ import org.schema.model.WatchAction;
  *
  * @see <a href="https://schema.org/WatchAction">https://schema.org/WatchAction</a>
  */
-@JsonLdTypeName("schema:WatchAction")
+@JsonLdTypeName("WatchAction")
 public class WatchActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements WatchAction {
 
     private Offer fExpectsAcceptanceOf;

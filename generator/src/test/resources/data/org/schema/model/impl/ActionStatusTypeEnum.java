@@ -26,7 +26,7 @@ import org.schema.model.ActionStatusType;
  *
  * @see <a href="https://schema.org/ActionStatusType">https://schema.org/ActionStatusType</a>
  */
-@JsonLdTypeName("schema:ActionStatusType")
+@JsonLdTypeName("ActionStatusType")
 public enum ActionStatusTypeEnum implements ActionStatusType {
     POTENTIAL_ACTION_STATUS("PotentialActionStatus"),
     ACTIVE_ACTION_STATUS("ActiveActionStatus"),

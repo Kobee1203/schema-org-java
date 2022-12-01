@@ -28,7 +28,7 @@ import org.schema.model.WearableSizeGroupEnumeration;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
  * @see <a href="https://schema.org/WearableSizeGroupEnumeration">https://schema.org/WearableSizeGroupEnumeration</a>
  */
-@JsonLdTypeName("schema:WearableSizeGroupEnumeration")
+@JsonLdTypeName("WearableSizeGroupEnumeration")
 public enum WearableSizeGroupEnumerationEnum implements WearableSizeGroupEnumeration {
     WEARABLE_SIZE_GROUP_SHORT("WearableSizeGroupShort"),
     WEARABLE_SIZE_GROUP_EXTRA_TALL("WearableSizeGroupExtraTall"),

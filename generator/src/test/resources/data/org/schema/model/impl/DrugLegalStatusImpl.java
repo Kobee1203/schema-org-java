@@ -33,7 +33,7 @@ import org.schema.model.MedicalIntangible;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/DrugLegalStatus">https://schema.org/DrugLegalStatus</a>
  */
-@JsonLdTypeName("schema:DrugLegalStatus")
+@JsonLdTypeName("DrugLegalStatus")
 public class DrugLegalStatusImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements DrugLegalStatus {
 
     private AdministrativeArea fApplicableLocation;

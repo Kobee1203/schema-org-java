@@ -59,7 +59,7 @@ import org.schema.model.WPAdBlock;
  *
  * @see <a href="https://schema.org/WPAdBlock">https://schema.org/WPAdBlock</a>
  */
-@JsonLdTypeName("schema:WPAdBlock")
+@JsonLdTypeName("WPAdBlock")
 public class WPAdBlockImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements WPAdBlock {
 
     private CssSelectorType fCssSelector;

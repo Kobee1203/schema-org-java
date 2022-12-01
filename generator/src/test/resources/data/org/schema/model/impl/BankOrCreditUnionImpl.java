@@ -60,7 +60,7 @@ import org.schema.model.BankOrCreditUnion;
  *
  * @see <a href="https://schema.org/BankOrCreditUnion">https://schema.org/BankOrCreditUnion</a>
  */
-@JsonLdTypeName("schema:BankOrCreditUnion")
+@JsonLdTypeName("BankOrCreditUnion")
 public class BankOrCreditUnionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements BankOrCreditUnion {
 
     private Object fFeesAndCommissionsSpecification;

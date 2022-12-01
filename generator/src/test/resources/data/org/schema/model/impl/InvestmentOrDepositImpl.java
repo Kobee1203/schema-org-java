@@ -46,7 +46,7 @@ import org.schema.model.InvestmentOrDeposit;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
  * @see <a href="https://schema.org/InvestmentOrDeposit">https://schema.org/InvestmentOrDeposit</a>
  */
-@JsonLdTypeName("schema:InvestmentOrDeposit")
+@JsonLdTypeName("InvestmentOrDeposit")
 public class InvestmentOrDepositImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements InvestmentOrDeposit {
 
     private Object fAmount;

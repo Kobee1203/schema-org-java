@@ -60,7 +60,7 @@ import org.schema.model.MiddleSchool;
  *
  * @see <a href="https://schema.org/MiddleSchool">https://schema.org/MiddleSchool</a>
  */
-@JsonLdTypeName("schema:MiddleSchool")
+@JsonLdTypeName("MiddleSchool")
 public class MiddleSchoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MiddleSchool {
 
     private Person fAlumni;

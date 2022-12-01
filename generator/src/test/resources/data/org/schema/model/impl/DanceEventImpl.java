@@ -43,7 +43,7 @@ import org.schema.model.DanceEvent;
  *
  * @see <a href="https://schema.org/DanceEvent">https://schema.org/DanceEvent</a>
  */
-@JsonLdTypeName("schema:DanceEvent")
+@JsonLdTypeName("DanceEvent")
 public class DanceEventImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements DanceEvent {
 
     private Event fSuperEvent;

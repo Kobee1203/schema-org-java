@@ -43,7 +43,7 @@ import org.schema.model.FoodEvent;
  *
  * @see <a href="https://schema.org/FoodEvent">https://schema.org/FoodEvent</a>
  */
-@JsonLdTypeName("schema:FoodEvent")
+@JsonLdTypeName("FoodEvent")
 public class FoodEventImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements FoodEvent {
 
     private Event fSuperEvent;

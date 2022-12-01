@@ -59,7 +59,7 @@ import org.schema.model.HowToSection;
  *
  * @see <a href="https://schema.org/HowToSection">https://schema.org/HowToSection</a>
  */
-@JsonLdTypeName("schema:HowToSection")
+@JsonLdTypeName("HowToSection")
 public class HowToSectionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements HowToSection {
 
     private Object fSteps;

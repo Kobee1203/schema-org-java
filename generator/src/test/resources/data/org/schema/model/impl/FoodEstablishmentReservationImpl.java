@@ -34,7 +34,7 @@ import org.schema.model.FoodEstablishmentReservation;
  *
  * @see <a href="https://schema.org/FoodEstablishmentReservation">https://schema.org/FoodEstablishmentReservation</a>
  */
-@JsonLdTypeName("schema:FoodEstablishmentReservation")
+@JsonLdTypeName("FoodEstablishmentReservation")
 public class FoodEstablishmentReservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements FoodEstablishmentReservation {
 
     private Object fPartySize;

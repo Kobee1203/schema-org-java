@@ -33,7 +33,7 @@ import org.schema.model.PrependAction;
  *
  * @see <a href="https://schema.org/PrependAction">https://schema.org/PrependAction</a>
  */
-@JsonLdTypeName("schema:PrependAction")
+@JsonLdTypeName("PrependAction")
 public class PrependActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PrependAction {
 
     private Place fToLocation;

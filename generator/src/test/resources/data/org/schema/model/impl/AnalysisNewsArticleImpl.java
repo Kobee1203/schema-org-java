@@ -62,7 +62,7 @@ import org.schema.model.AnalysisNewsArticle;
  * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
  * @see <a href="https://schema.org/AnalysisNewsArticle">https://schema.org/AnalysisNewsArticle</a>
  */
-@JsonLdTypeName("schema:AnalysisNewsArticle")
+@JsonLdTypeName("AnalysisNewsArticle")
 public class AnalysisNewsArticleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements AnalysisNewsArticle {
 
     private Text fPrintEdition;

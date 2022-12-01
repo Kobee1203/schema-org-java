@@ -30,7 +30,7 @@ import org.schema.model.GovernmentPermit;
  *
  * @see <a href="https://schema.org/GovernmentPermit">https://schema.org/GovernmentPermit</a>
  */
-@JsonLdTypeName("schema:GovernmentPermit")
+@JsonLdTypeName("GovernmentPermit")
 public class GovernmentPermitImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements GovernmentPermit {
 
     private Duration fValidFor;

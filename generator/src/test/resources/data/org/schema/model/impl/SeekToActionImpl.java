@@ -34,7 +34,7 @@ import org.schema.model.SeekToAction;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2722">https://github.com/schemaorg/schemaorg/issues/2722</a>
  * @see <a href="https://schema.org/SeekToAction">https://schema.org/SeekToAction</a>
  */
-@JsonLdTypeName("schema:SeekToAction")
+@JsonLdTypeName("SeekToAction")
 public class SeekToActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements SeekToAction {
 
     private Object fStartOffset;

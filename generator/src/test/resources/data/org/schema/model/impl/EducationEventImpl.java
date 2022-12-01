@@ -43,7 +43,7 @@ import org.schema.model.EducationEvent;
  *
  * @see <a href="https://schema.org/EducationEvent">https://schema.org/EducationEvent</a>
  */
-@JsonLdTypeName("schema:EducationEvent")
+@JsonLdTypeName("EducationEvent")
 public class EducationEventImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements EducationEvent {
 
     private Object fTeaches;

@@ -59,7 +59,7 @@ import org.schema.model.Episode;
  *
  * @see <a href="https://schema.org/Episode">https://schema.org/Episode</a>
  */
-@JsonLdTypeName("schema:Episode")
+@JsonLdTypeName("Episode")
 public class EpisodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Episode {
 
     private Object fEpisodeNumber;

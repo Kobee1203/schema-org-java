@@ -33,7 +33,7 @@ import org.schema.model.BusTrip;
  *
  * @see <a href="https://schema.org/BusTrip">https://schema.org/BusTrip</a>
  */
-@JsonLdTypeName("schema:BusTrip")
+@JsonLdTypeName("BusTrip")
 public class BusTripImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements BusTrip {
 
     private Object fDepartureBusStop;

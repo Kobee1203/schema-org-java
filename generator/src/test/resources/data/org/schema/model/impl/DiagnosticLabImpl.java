@@ -54,7 +54,7 @@ import org.schema.model.DiagnosticLab;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/DiagnosticLab">https://schema.org/DiagnosticLab</a>
  */
-@JsonLdTypeName("schema:DiagnosticLab")
+@JsonLdTypeName("DiagnosticLab")
 public class DiagnosticLabImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements DiagnosticLab {
 
     private MedicalTest fAvailableTest;

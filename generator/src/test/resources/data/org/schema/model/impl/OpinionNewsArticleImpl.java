@@ -62,7 +62,7 @@ import org.schema.model.OpinionNewsArticle;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
  * @see <a href="https://schema.org/OpinionNewsArticle">https://schema.org/OpinionNewsArticle</a>
  */
-@JsonLdTypeName("schema:OpinionNewsArticle")
+@JsonLdTypeName("OpinionNewsArticle")
 public class OpinionNewsArticleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements OpinionNewsArticle {
 
     private Text fPrintEdition;

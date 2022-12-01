@@ -29,7 +29,7 @@ import org.schema.model.MolecularEntity;
  * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
  * @see <a href="https://schema.org/MolecularEntity">https://schema.org/MolecularEntity</a>
  */
-@JsonLdTypeName("schema:MolecularEntity")
+@JsonLdTypeName("MolecularEntity")
 public class MolecularEntityImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MolecularEntity {
 
     private Text fInChIKey;

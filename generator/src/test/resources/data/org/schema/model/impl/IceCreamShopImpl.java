@@ -62,7 +62,7 @@ import org.schema.model.IceCreamShop;
  *
  * @see <a href="https://schema.org/IceCreamShop">https://schema.org/IceCreamShop</a>
  */
-@JsonLdTypeName("schema:IceCreamShop")
+@JsonLdTypeName("IceCreamShop")
 public class IceCreamShopImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements IceCreamShop {
 
     private Rating fStarRating;

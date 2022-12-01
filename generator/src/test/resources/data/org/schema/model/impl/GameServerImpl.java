@@ -25,7 +25,7 @@ import org.schema.model.GameServer;
  *
  * @see <a href="https://schema.org/GameServer">https://schema.org/GameServer</a>
  */
-@JsonLdTypeName("schema:GameServer")
+@JsonLdTypeName("GameServer")
 public class GameServerImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements GameServer {
 
     private GameServerStatus fServerStatus;

@@ -35,7 +35,7 @@ import org.schema.model.SizeSpecification;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
  * @see <a href="https://schema.org/SizeSpecification">https://schema.org/SizeSpecification</a>
  */
-@JsonLdTypeName("schema:SizeSpecification")
+@JsonLdTypeName("SizeSpecification")
 public class SizeSpecificationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements SizeSpecification {
 
     private Object fSizeGroup;

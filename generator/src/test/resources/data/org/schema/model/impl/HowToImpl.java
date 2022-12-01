@@ -61,7 +61,7 @@ import org.schema.model.HowTo;
  *
  * @see <a href="https://schema.org/HowTo">https://schema.org/HowTo</a>
  */
-@JsonLdTypeName("schema:HowTo")
+@JsonLdTypeName("HowTo")
 public class HowToImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements HowTo {
 
     private Object fYield;

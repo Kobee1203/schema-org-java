@@ -37,7 +37,7 @@ import org.schema.model.Vein;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/Vein">https://schema.org/Vein</a>
  */
-@JsonLdTypeName("schema:Vein")
+@JsonLdTypeName("Vein")
 public class VeinImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Vein {
 
     private Object fRegionDrained;

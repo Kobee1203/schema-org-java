@@ -44,7 +44,7 @@ import org.schema.model.UserBlocks;
  *
  * @see <a href="https://schema.org/UserBlocks">https://schema.org/UserBlocks</a>
  */
-@JsonLdTypeName("schema:UserBlocks")
+@JsonLdTypeName("UserBlocks")
 public class UserBlocksImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements UserBlocks {
 
     private Event fSuperEvent;

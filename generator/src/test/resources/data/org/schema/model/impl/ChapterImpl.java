@@ -57,7 +57,7 @@ import org.schema.model.Chapter;
  * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
  * @see <a href="https://schema.org/Chapter">https://schema.org/Chapter</a>
  */
-@JsonLdTypeName("schema:Chapter")
+@JsonLdTypeName("Chapter")
 public class ChapterImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Chapter {
 
     private Object fPageStart;

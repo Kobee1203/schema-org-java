@@ -60,7 +60,7 @@ import org.schema.model.ExerciseGym;
  *
  * @see <a href="https://schema.org/ExerciseGym">https://schema.org/ExerciseGym</a>
  */
-@JsonLdTypeName("schema:ExerciseGym")
+@JsonLdTypeName("ExerciseGym")
 public class ExerciseGymImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ExerciseGym {
 
     private Organization fBranchOf;

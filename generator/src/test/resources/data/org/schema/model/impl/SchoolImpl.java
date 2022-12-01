@@ -60,7 +60,7 @@ import org.schema.model.School;
  *
  * @see <a href="https://schema.org/School">https://schema.org/School</a>
  */
-@JsonLdTypeName("schema:School")
+@JsonLdTypeName("School")
 public class SchoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements School {
 
     private Person fAlumni;

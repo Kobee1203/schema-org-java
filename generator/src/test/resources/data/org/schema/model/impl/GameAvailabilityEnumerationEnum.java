@@ -27,7 +27,7 @@ import org.schema.model.GameAvailabilityEnumeration;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/3058">https://github.com/schemaorg/schemaorg/issues/3058</a>
  * @see <a href="https://schema.org/GameAvailabilityEnumeration">https://schema.org/GameAvailabilityEnumeration</a>
  */
-@JsonLdTypeName("schema:GameAvailabilityEnumeration")
+@JsonLdTypeName("GameAvailabilityEnumeration")
 public enum GameAvailabilityEnumerationEnum implements GameAvailabilityEnumeration {
     FULL_GAME_AVAILABILITY("FullGameAvailability"),
     DEMO_GAME_AVAILABILITY("DemoGameAvailability");

@@ -58,7 +58,7 @@ import org.schema.model.NoteDigitalDocument;
  *
  * @see <a href="https://schema.org/NoteDigitalDocument">https://schema.org/NoteDigitalDocument</a>
  */
-@JsonLdTypeName("schema:NoteDigitalDocument")
+@JsonLdTypeName("NoteDigitalDocument")
 public class NoteDigitalDocumentImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements NoteDigitalDocument {
 
     private DigitalDocumentPermission fHasDigitalDocumentPermission;

@@ -57,7 +57,7 @@ import org.schema.model.Intangible;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
  * @see <a href="https://schema.org/Offer">https://schema.org/Offer</a>
  */
-@JsonLdTypeName("schema:Offer")
+@JsonLdTypeName("Offer")
 public class OfferImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Offer {
 
     private AdultOrientedEnumeration fHasAdultConsideration;

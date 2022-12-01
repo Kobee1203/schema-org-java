@@ -34,7 +34,7 @@ import org.schema.model.CookAction;
  *
  * @see <a href="https://schema.org/CookAction">https://schema.org/CookAction</a>
  */
-@JsonLdTypeName("schema:CookAction")
+@JsonLdTypeName("CookAction")
 public class CookActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements CookAction {
 
     private Recipe fRecipe;

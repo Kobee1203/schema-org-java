@@ -27,7 +27,7 @@ import org.schema.model.DrugPrescriptionStatus;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/DrugPrescriptionStatus">https://schema.org/DrugPrescriptionStatus</a>
  */
-@JsonLdTypeName("schema:DrugPrescriptionStatus")
+@JsonLdTypeName("DrugPrescriptionStatus")
 public enum DrugPrescriptionStatusEnum implements DrugPrescriptionStatus {
     OTC("OTC"),
     PRESCRIPTION_ONLY("PrescriptionOnly");

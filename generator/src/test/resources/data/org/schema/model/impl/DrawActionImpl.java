@@ -31,7 +31,7 @@ import org.schema.model.DrawAction;
  *
  * @see <a href="https://schema.org/DrawAction">https://schema.org/DrawAction</a>
  */
-@JsonLdTypeName("schema:DrawAction")
+@JsonLdTypeName("DrawAction")
 public class DrawActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements DrawAction {
 
     private Object fAgent;

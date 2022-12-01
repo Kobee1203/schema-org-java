@@ -29,7 +29,7 @@ import org.schema.model.Permit;
  *
  * @see <a href="https://schema.org/Permit">https://schema.org/Permit</a>
  */
-@JsonLdTypeName("schema:Permit")
+@JsonLdTypeName("Permit")
 public class PermitImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Permit {
 
     private Duration fValidFor;

@@ -62,7 +62,7 @@ import org.schema.model.Brewery;
  *
  * @see <a href="https://schema.org/Brewery">https://schema.org/Brewery</a>
  */
-@JsonLdTypeName("schema:Brewery")
+@JsonLdTypeName("Brewery")
 public class BreweryImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Brewery {
 
     private Rating fStarRating;

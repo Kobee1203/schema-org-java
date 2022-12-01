@@ -62,7 +62,7 @@ import com.weedow.schemaorg.commons.model.JsonLdTypeName;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
  * @see <a href="https://schema.org/Legislation">https://schema.org/Legislation</a>
  */
-@JsonLdTypeName("schema:Legislation")
+@JsonLdTypeName("Legislation")
 public class LegislationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Legislation {
 
     private Legislation fLegislationTransposes;

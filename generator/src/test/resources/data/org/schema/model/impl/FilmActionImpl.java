@@ -31,7 +31,7 @@ import org.schema.model.FilmAction;
  *
  * @see <a href="https://schema.org/FilmAction">https://schema.org/FilmAction</a>
  */
-@JsonLdTypeName("schema:FilmAction")
+@JsonLdTypeName("FilmAction")
 public class FilmActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements FilmAction {
 
     private Object fAgent;

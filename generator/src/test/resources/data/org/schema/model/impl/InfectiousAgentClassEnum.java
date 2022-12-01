@@ -27,7 +27,7 @@ import org.schema.model.InfectiousAgentClass;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/InfectiousAgentClass">https://schema.org/InfectiousAgentClass</a>
  */
-@JsonLdTypeName("schema:InfectiousAgentClass")
+@JsonLdTypeName("InfectiousAgentClass")
 public enum InfectiousAgentClassEnum implements InfectiousAgentClass {
     BACTERIA("Bacteria"),
     PROTOZOA("Protozoa"),

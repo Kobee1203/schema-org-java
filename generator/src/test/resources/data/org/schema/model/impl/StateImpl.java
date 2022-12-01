@@ -37,7 +37,7 @@ import org.schema.model.State;
  *
  * @see <a href="https://schema.org/State">https://schema.org/State</a>
  */
-@JsonLdTypeName("schema:State")
+@JsonLdTypeName("State")
 public class StateImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements State {
 
     private Text fTelephone;

@@ -37,7 +37,7 @@ import org.schema.model.City;
  *
  * @see <a href="https://schema.org/City">https://schema.org/City</a>
  */
-@JsonLdTypeName("schema:City")
+@JsonLdTypeName("City")
 public class CityImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements City {
 
     private Text fTelephone;

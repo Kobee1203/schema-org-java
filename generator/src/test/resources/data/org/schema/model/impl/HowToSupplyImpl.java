@@ -28,7 +28,7 @@ import org.schema.model.HowToSupply;
  *
  * @see <a href="https://schema.org/HowToSupply">https://schema.org/HowToSupply</a>
  */
-@JsonLdTypeName("schema:HowToSupply")
+@JsonLdTypeName("HowToSupply")
 public class HowToSupplyImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements HowToSupply {
 
     private Object fEstimatedCost;

@@ -26,7 +26,7 @@ import org.schema.model.PhysicalActivityCategory;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/PhysicalActivityCategory">https://schema.org/PhysicalActivityCategory</a>
  */
-@JsonLdTypeName("schema:PhysicalActivityCategory")
+@JsonLdTypeName("PhysicalActivityCategory")
 public enum PhysicalActivityCategoryEnum implements PhysicalActivityCategory {
     BALANCE("Balance"),
     ANAEROBIC_ACTIVITY("AnaerobicActivity"),

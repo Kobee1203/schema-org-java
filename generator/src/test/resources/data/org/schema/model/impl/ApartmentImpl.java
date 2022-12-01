@@ -41,7 +41,7 @@ import org.schema.model.Apartment;
  * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
  * @see <a href="https://schema.org/Apartment">https://schema.org/Apartment</a>
  */
-@JsonLdTypeName("schema:Apartment")
+@JsonLdTypeName("Apartment")
 public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Apartment {
 
     private Object fNumberOfRooms;

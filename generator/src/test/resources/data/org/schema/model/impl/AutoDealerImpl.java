@@ -60,7 +60,7 @@ import org.schema.model.AutoDealer;
  *
  * @see <a href="https://schema.org/AutoDealer">https://schema.org/AutoDealer</a>
  */
-@JsonLdTypeName("schema:AutoDealer")
+@JsonLdTypeName("AutoDealer")
 public class AutoDealerImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements AutoDealer {
 
     private Organization fBranchOf;

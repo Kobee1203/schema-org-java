@@ -44,7 +44,7 @@ import org.schema.model.PublicationEvent;
  *
  * @see <a href="https://schema.org/PublicationEvent">https://schema.org/PublicationEvent</a>
  */
-@JsonLdTypeName("schema:PublicationEvent")
+@JsonLdTypeName("PublicationEvent")
 public class PublicationEventImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PublicationEvent {
 
     private Object fPublishedBy;

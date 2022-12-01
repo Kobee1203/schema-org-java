@@ -14,7 +14,7 @@ import com.weedow.schemaorg.commons.model.JsonLdTypeName;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1672">https://github.com/schemaorg/schemaorg/issues/1672</a>
  * @see <a href="https://schema.org/XPathType">https://schema.org/XPathType</a>
  */
-@JsonLdTypeName("schema:XPathType")
+@JsonLdTypeName("XPathType")
 public class XPathType extends Text {
 
     XPathType(java.lang.String value) {

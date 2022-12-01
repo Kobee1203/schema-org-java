@@ -61,7 +61,7 @@ import org.schema.model.Optician;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/Optician">https://schema.org/Optician</a>
  */
-@JsonLdTypeName("schema:Optician")
+@JsonLdTypeName("Optician")
 public class OpticianImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Optician {
 
     private Organization fBranchOf;

@@ -38,7 +38,7 @@ import org.schema.model.Embassy;
  *
  * @see <a href="https://schema.org/Embassy">https://schema.org/Embassy</a>
  */
-@JsonLdTypeName("schema:Embassy")
+@JsonLdTypeName("Embassy")
 public class EmbassyImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Embassy {
 
     private Text fOpeningHours;

@@ -37,7 +37,7 @@ import org.schema.model.Zoo;
  *
  * @see <a href="https://schema.org/Zoo">https://schema.org/Zoo</a>
  */
-@JsonLdTypeName("schema:Zoo")
+@JsonLdTypeName("Zoo")
 public class ZooImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Zoo {
 
     private Text fOpeningHours;

@@ -59,7 +59,7 @@ import org.schema.model.TravelAgency;
  *
  * @see <a href="https://schema.org/TravelAgency">https://schema.org/TravelAgency</a>
  */
-@JsonLdTypeName("schema:TravelAgency")
+@JsonLdTypeName("TravelAgency")
 public class TravelAgencyImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements TravelAgency {
 
     private Organization fBranchOf;

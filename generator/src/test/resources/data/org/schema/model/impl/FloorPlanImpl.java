@@ -30,7 +30,7 @@ import org.schema.model.FloorPlan;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
  * @see <a href="https://schema.org/FloorPlan">https://schema.org/FloorPlan</a>
  */
-@JsonLdTypeName("schema:FloorPlan")
+@JsonLdTypeName("FloorPlan")
 public class FloorPlanImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements FloorPlan {
 
     private Accommodation fIsPlanForApartment;

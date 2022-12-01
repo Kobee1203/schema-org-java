@@ -46,7 +46,7 @@ import com.weedow.schemaorg.commons.model.JsonLdTypeName;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
  * @see <a href="https://schema.org/Product">https://schema.org/Product</a>
  */
-@JsonLdTypeName("schema:Product")
+@JsonLdTypeName("Product")
 public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Product {
 
     private Product fIsAccessoryOrSparePartFor;

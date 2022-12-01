@@ -26,7 +26,7 @@ import org.schema.model.PaymentStatusType;
  *
  * @see <a href="https://schema.org/PaymentStatusType">https://schema.org/PaymentStatusType</a>
  */
-@JsonLdTypeName("schema:PaymentStatusType")
+@JsonLdTypeName("PaymentStatusType")
 public enum PaymentStatusTypeEnum implements PaymentStatusType {
     PAYMENT_DUE("PaymentDue"),
     PAYMENT_DECLINED("PaymentDeclined"),

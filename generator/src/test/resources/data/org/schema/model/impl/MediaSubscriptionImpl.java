@@ -25,7 +25,7 @@ import org.schema.model.MediaSubscription;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
  * @see <a href="https://schema.org/MediaSubscription">https://schema.org/MediaSubscription</a>
  */
-@JsonLdTypeName("schema:MediaSubscription")
+@JsonLdTypeName("MediaSubscription")
 public class MediaSubscriptionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MediaSubscription {
 
     private Offer fExpectsAcceptanceOf;

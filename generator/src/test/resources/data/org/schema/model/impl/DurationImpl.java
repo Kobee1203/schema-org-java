@@ -23,7 +23,7 @@ import org.schema.model.Duration;
  *
  * @see <a href="https://schema.org/Duration">https://schema.org/Duration</a>
  */
-@JsonLdTypeName("schema:Duration")
+@JsonLdTypeName("Duration")
 public class DurationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Duration {
 
     private Object fMainEntityOfPage;

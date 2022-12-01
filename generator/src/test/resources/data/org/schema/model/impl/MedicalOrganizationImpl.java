@@ -51,7 +51,7 @@ import org.schema.model.MedicalOrganization;
  *
  * @see <a href="https://schema.org/MedicalOrganization">https://schema.org/MedicalOrganization</a>
  */
-@JsonLdTypeName("schema:MedicalOrganization")
+@JsonLdTypeName("MedicalOrganization")
 public class MedicalOrganizationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MedicalOrganization {
 
     private Boolean fIsAcceptingNewPatients;

@@ -31,7 +31,7 @@ import org.schema.model.ReplaceAction;
  *
  * @see <a href="https://schema.org/ReplaceAction">https://schema.org/ReplaceAction</a>
  */
-@JsonLdTypeName("schema:ReplaceAction")
+@JsonLdTypeName("ReplaceAction")
 public class ReplaceActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ReplaceAction {
 
     private Thing fReplacee;

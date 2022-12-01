@@ -60,7 +60,7 @@ import org.schema.model.ClothingStore;
  *
  * @see <a href="https://schema.org/ClothingStore">https://schema.org/ClothingStore</a>
  */
-@JsonLdTypeName("schema:ClothingStore")
+@JsonLdTypeName("ClothingStore")
 public class ClothingStoreImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ClothingStore {
 
     private Organization fBranchOf;

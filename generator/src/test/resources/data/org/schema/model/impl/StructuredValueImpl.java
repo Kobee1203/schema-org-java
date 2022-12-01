@@ -22,7 +22,7 @@ import org.schema.model.StructuredValue;
  *
  * @see <a href="https://schema.org/StructuredValue">https://schema.org/StructuredValue</a>
  */
-@JsonLdTypeName("schema:StructuredValue")
+@JsonLdTypeName("StructuredValue")
 public class StructuredValueImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements StructuredValue {
 
     private Object fMainEntityOfPage;

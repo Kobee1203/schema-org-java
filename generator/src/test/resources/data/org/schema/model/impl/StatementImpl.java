@@ -58,7 +58,7 @@ import org.schema.model.Statement;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2912">https://github.com/schemaorg/schemaorg/issues/2912</a>
  * @see <a href="https://schema.org/Statement">https://schema.org/Statement</a>
  */
-@JsonLdTypeName("schema:Statement")
+@JsonLdTypeName("Statement")
 public class StatementImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Statement {
 
     private Object fTeaches;

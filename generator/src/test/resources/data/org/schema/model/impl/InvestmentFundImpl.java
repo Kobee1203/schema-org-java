@@ -49,7 +49,7 @@ import org.schema.model.InvestmentFund;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
  * @see <a href="https://schema.org/InvestmentFund">https://schema.org/InvestmentFund</a>
  */
-@JsonLdTypeName("schema:InvestmentFund")
+@JsonLdTypeName("InvestmentFund")
 public class InvestmentFundImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements InvestmentFund {
 
     private Object fAmount;

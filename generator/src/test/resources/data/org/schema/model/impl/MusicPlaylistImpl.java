@@ -56,7 +56,7 @@ import org.schema.model.MusicPlaylist;
  *
  * @see <a href="https://schema.org/MusicPlaylist">https://schema.org/MusicPlaylist</a>
  */
-@JsonLdTypeName("schema:MusicPlaylist")
+@JsonLdTypeName("MusicPlaylist")
 public class MusicPlaylistImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MusicPlaylist {
 
     private MusicRecording fTracks;
