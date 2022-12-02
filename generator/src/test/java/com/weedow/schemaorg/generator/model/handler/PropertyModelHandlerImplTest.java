@@ -1,5 +1,6 @@
 package com.weedow.schemaorg.generator.model.handler;
 
+import com.weedow.schemaorg.generator.model.Property;
 import com.weedow.schemaorg.generator.model.Type;
 import com.weedow.schemaorg.generator.model.jsonld.GraphItem;
 import org.assertj.core.api.Assertions;
@@ -12,10 +13,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 import org.mockito.InjectMocks;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Stream;
 
 import static com.weedow.schemaorg.generator.model.handler.ModelHandlerTestUtils.*;
@@ -85,27 +83,45 @@ class PropertyModelHandlerImplTest {
                         false, Collections.emptyList(),
                         Collections.emptyList(), Collections.emptyList()
                 );
-        Assertions.assertThat(myType.getProperties())
-                .extracting(
-                        "id", "name", "fieldName", "description", "types",
-                        "partOf", "source"
-                )
+
+        Set<Property> properties = myType.getProperties();
+        Assertions.assertThat(properties)
+                .extracting("id", "field.name", "field.fieldName", "types")
                 .containsExactly(
-                        Tuple.tuple(
-                                "schema:MyProperty", "MyProperty", "fMyProperty", "This is my Property", List.of(schemaDefinitions.get("schema:Text")),
-                                List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/2373")
-                        )
+                        Tuple.tuple("schema:MyProperty", "MyProperty", "fMyProperty", List.of(schemaDefinitions.get("schema:Text")))
                 );
-        Assertions.assertThat(myType.getAllProperties())
-                .extracting(
-                        "id", "name", "fieldName", "description", "types",
-                        "partOf", "source"
-                )
+        Assertions.assertThat(properties)
+                .extracting("accessor")
+                .extracting("name", "fieldName", "methodName", "description", "partOf", "source", "fieldTypeLinks", "returnFieldType", "cast")
                 .containsExactly(
-                        Tuple.tuple(
-                                "schema:MyProperty", "MyProperty", "fMyProperty", "This is my Property", List.of(schemaDefinitions.get("schema:Text")),
-                                List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/2373")
-                        )
+                        Tuple.tuple("MyProperty", "fMyProperty", "getMyProperty", "This is my Property", List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/2373"), "{@link null}", null, null)
+                );
+        Assertions.assertThat(properties)
+                .flatExtracting("mutators")
+                .extracting("name", "fieldName", "methodName", "description", "partOf", "source", "paramType", "paramValue")
+                .containsExactly(
+                        Tuple.tuple("MyProperty", "fMyProperty", "setMyProperty", "This is my Property", List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/2373"), null, "fMyProperty"),
+                        Tuple.tuple("MyProperty", "fMyProperty", "setMyProperty", "This is my Property", List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/2373"), "java.lang.String", "null.of(fMyProperty)")
+                );
+
+        Set<Property> allProperties = myType.getAllProperties();
+        Assertions.assertThat(allProperties)
+                .extracting("id", "field.name", "field.fieldName", "types")
+                .containsExactly(
+                        Tuple.tuple("schema:MyProperty", "MyProperty", "fMyProperty", List.of(schemaDefinitions.get("schema:Text")))
+                );
+        Assertions.assertThat(allProperties)
+                .extracting("accessor")
+                .extracting("name", "fieldName", "methodName", "description", "partOf", "source", "fieldTypeLinks", "returnFieldType", "cast")
+                .containsExactly(
+                        Tuple.tuple("MyProperty", "fMyProperty", "getMyProperty", "This is my Property", List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/2373"), "{@link null}", null, null)
+                );
+        Assertions.assertThat(allProperties)
+                .flatExtracting("mutators")
+                .extracting("name", "fieldName", "methodName", "description", "partOf", "source", "paramType", "paramValue")
+                .containsExactly(
+                        Tuple.tuple("MyProperty", "fMyProperty", "setMyProperty", "This is my Property", List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/2373"), null, "fMyProperty"),
+                        Tuple.tuple("MyProperty", "fMyProperty", "setMyProperty", "This is my Property", List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/2373"), "java.lang.String", "null.of(fMyProperty)")
                 );
     }
 

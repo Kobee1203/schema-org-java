@@ -28,8 +28,27 @@ public interface BroadcastChannel extends Intangible {
     /**
      * Genre of the creative work, broadcast channel or group.
      *
+     * @param fGenre URL value to set.
      */
-    void setGenre(Object fGenre);
+    void setGenre(URL fGenre);
+    /**
+     * Genre of the creative work, broadcast channel or group.
+     *
+     * @param fGenre java.net.URL value to set.
+     */
+    void setGenre(java.net.URL fGenre);
+    /**
+     * Genre of the creative work, broadcast channel or group.
+     *
+     * @param fGenre Text value to set.
+     */
+    void setGenre(Text fGenre);
+    /**
+     * Genre of the creative work, broadcast channel or group.
+     *
+     * @param fGenre java.lang.String value to set.
+     */
+    void setGenre(java.lang.String fGenre);
 
     /**
      * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
@@ -42,9 +61,24 @@ public interface BroadcastChannel extends Intangible {
     /**
      * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
      *
+     * @param fBroadcastFrequency BroadcastFrequencySpecification value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
      */
-    void setBroadcastFrequency(Object fBroadcastFrequency);
+    void setBroadcastFrequency(BroadcastFrequencySpecification fBroadcastFrequency);
+    /**
+     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
+     *
+     * @param fBroadcastFrequency Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
+     */
+    void setBroadcastFrequency(Text fBroadcastFrequency);
+    /**
+     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
+     *
+     * @param fBroadcastFrequency java.lang.String value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
+     */
+    void setBroadcastFrequency(java.lang.String fBroadcastFrequency);
 
     /**
      * The BroadcastService offered on this channel.
@@ -56,6 +90,7 @@ public interface BroadcastChannel extends Intangible {
     /**
      * The BroadcastService offered on this channel.
      *
+     * @param fProvidesBroadcastService BroadcastService value to set.
      */
     void setProvidesBroadcastService(BroadcastService fProvidesBroadcastService);
 
@@ -69,8 +104,15 @@ public interface BroadcastChannel extends Intangible {
     /**
      * The unique address by which the BroadcastService can be identified in a provider lineup. In US, this is typically a number.
      *
+     * @param fBroadcastChannelId Text value to set.
      */
     void setBroadcastChannelId(Text fBroadcastChannelId);
+    /**
+     * The unique address by which the BroadcastService can be identified in a provider lineup. In US, this is typically a number.
+     *
+     * @param fBroadcastChannelId java.lang.String value to set.
+     */
+    void setBroadcastChannelId(java.lang.String fBroadcastChannelId);
 
     /**
      * The CableOrSatelliteService offering the channel.
@@ -82,6 +124,7 @@ public interface BroadcastChannel extends Intangible {
     /**
      * The CableOrSatelliteService offering the channel.
      *
+     * @param fInBroadcastLineup CableOrSatelliteService value to set.
      */
     void setInBroadcastLineup(CableOrSatelliteService fInBroadcastLineup);
 
@@ -95,6 +138,13 @@ public interface BroadcastChannel extends Intangible {
     /**
      * The type of service required to have access to the channel (e.g. Standard or Premium).
      *
+     * @param fBroadcastServiceTier Text value to set.
      */
     void setBroadcastServiceTier(Text fBroadcastServiceTier);
+    /**
+     * The type of service required to have access to the channel (e.g. Standard or Premium).
+     *
+     * @param fBroadcastServiceTier java.lang.String value to set.
+     */
+    void setBroadcastServiceTier(java.lang.String fBroadcastServiceTier);
 }

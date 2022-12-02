@@ -39,6 +39,7 @@ public interface Drug extends Substance {
     /**
      * Pregnancy category of this drug.
      *
+     * @param fPregnancyCategory DrugPregnancyCategory value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setPregnancyCategory(DrugPregnancyCategory fPregnancyCategory);
@@ -54,9 +55,17 @@ public interface Drug extends Substance {
     /**
      * Any information related to overdose on a drug, including signs or symptoms, treatments, contact information for emergency response.
      *
+     * @param fOverdosage Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setOverdosage(Text fOverdosage);
+    /**
+     * Any information related to overdose on a drug, including signs or symptoms, treatments, contact information for emergency response.
+     *
+     * @param fOverdosage java.lang.String value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setOverdosage(java.lang.String fOverdosage);
 
     /**
      * The drug or supplement's legal status, including any controlled substance schedules that apply.
@@ -69,9 +78,31 @@ public interface Drug extends Substance {
     /**
      * The drug or supplement's legal status, including any controlled substance schedules that apply.
      *
+     * @param fLegalStatus DrugLegalStatus value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setLegalStatus(Object fLegalStatus);
+    void setLegalStatus(DrugLegalStatus fLegalStatus);
+    /**
+     * The drug or supplement's legal status, including any controlled substance schedules that apply.
+     *
+     * @param fLegalStatus Text value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setLegalStatus(Text fLegalStatus);
+    /**
+     * The drug or supplement's legal status, including any controlled substance schedules that apply.
+     *
+     * @param fLegalStatus java.lang.String value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setLegalStatus(java.lang.String fLegalStatus);
+    /**
+     * The drug or supplement's legal status, including any controlled substance schedules that apply.
+     *
+     * @param fLegalStatus MedicalEnumeration value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setLegalStatus(MedicalEnumeration fLegalStatus);
 
     /**
      * The specific biochemical interaction through which this drug or supplement produces its pharmacological effect.
@@ -84,9 +115,17 @@ public interface Drug extends Substance {
     /**
      * The specific biochemical interaction through which this drug or supplement produces its pharmacological effect.
      *
+     * @param fMechanismOfAction Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setMechanismOfAction(Text fMechanismOfAction);
+    /**
+     * The specific biochemical interaction through which this drug or supplement produces its pharmacological effect.
+     *
+     * @param fMechanismOfAction java.lang.String value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setMechanismOfAction(java.lang.String fMechanismOfAction);
 
     /**
      * Description of the absorption and elimination of drugs, including their concentration (pharmacokinetics, pK) and biological effects (pharmacodynamics, pD).
@@ -99,9 +138,17 @@ public interface Drug extends Substance {
     /**
      * Description of the absorption and elimination of drugs, including their concentration (pharmacokinetics, pK) and biological effects (pharmacodynamics, pD).
      *
+     * @param fClinicalPharmacology Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setClinicalPharmacology(Text fClinicalPharmacology);
+    /**
+     * Description of the absorption and elimination of drugs, including their concentration (pharmacokinetics, pK) and biological effects (pharmacodynamics, pD).
+     *
+     * @param fClinicalPharmacology java.lang.String value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setClinicalPharmacology(java.lang.String fClinicalPharmacology);
 
     /**
      * The RxCUI drug identifier from RXNORM.
@@ -115,10 +162,19 @@ public interface Drug extends Substance {
     /**
      * The RxCUI drug identifier from RXNORM.
      *
+     * @param fRxcui Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
     void setRxcui(Text fRxcui);
+    /**
+     * The RxCUI drug identifier from RXNORM.
+     *
+     * @param fRxcui java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    void setRxcui(java.lang.String fRxcui);
 
     /**
      * Another drug that is known to interact with this drug in a way that impacts the effect of this drug or causes a risk to the patient. Note: disease interactions are typically captured as contraindications.
@@ -131,6 +187,7 @@ public interface Drug extends Substance {
     /**
      * Another drug that is known to interact with this drug in a way that impacts the effect of this drug or causes a risk to the patient. Note: disease interactions are typically captured as contraindications.
      *
+     * @param fInteractingDrug Drug value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setInteractingDrug(Drug fInteractingDrug);
@@ -146,9 +203,17 @@ public interface Drug extends Substance {
     /**
      * A dosage form in which this drug/supplement is available, e.g. 'tablet', 'suspension', 'injection'.
      *
+     * @param fDosageForm Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setDosageForm(Text fDosageForm);
+    /**
+     * A dosage form in which this drug/supplement is available, e.g. 'tablet', 'suspension', 'injection'.
+     *
+     * @param fDosageForm java.lang.String value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setDosageForm(java.lang.String fDosageForm);
 
     /**
      * Link to the drug's label details.
@@ -161,9 +226,17 @@ public interface Drug extends Substance {
     /**
      * Link to the drug's label details.
      *
+     * @param fLabelDetails URL value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setLabelDetails(URL fLabelDetails);
+    /**
+     * Link to the drug's label details.
+     *
+     * @param fLabelDetails java.net.URL value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setLabelDetails(java.net.URL fLabelDetails);
 
     /**
      * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
@@ -176,6 +249,7 @@ public interface Drug extends Substance {
     /**
      * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
      *
+     * @param fMaximumIntake MaximumDoseSchedule value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setMaximumIntake(MaximumDoseSchedule fMaximumIntake);
@@ -191,9 +265,17 @@ public interface Drug extends Substance {
     /**
      * An active ingredient, typically chemical compounds and/or biologic substances.
      *
+     * @param fActiveIngredient Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setActiveIngredient(Text fActiveIngredient);
+    /**
+     * An active ingredient, typically chemical compounds and/or biologic substances.
+     *
+     * @param fActiveIngredient java.lang.String value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setActiveIngredient(java.lang.String fActiveIngredient);
 
     /**
      * Any other drug related to this one, for example commonly-prescribed alternatives.
@@ -206,6 +288,7 @@ public interface Drug extends Substance {
     /**
      * Any other drug related to this one, for example commonly-prescribed alternatives.
      *
+     * @param fRelatedDrug Drug value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setRelatedDrug(Drug fRelatedDrug);
@@ -221,9 +304,17 @@ public interface Drug extends Substance {
     /**
      * A route by which this drug may be administered, e.g. 'oral'.
      *
+     * @param fAdministrationRoute Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setAdministrationRoute(Text fAdministrationRoute);
+    /**
+     * A route by which this drug may be administered, e.g. 'oral'.
+     *
+     * @param fAdministrationRoute java.lang.String value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setAdministrationRoute(java.lang.String fAdministrationRoute);
 
     /**
      * The unit in which the drug is measured, e.g. '5 mg tablet'.
@@ -236,9 +327,17 @@ public interface Drug extends Substance {
     /**
      * The unit in which the drug is measured, e.g. '5 mg tablet'.
      *
+     * @param fDrugUnit Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setDrugUnit(Text fDrugUnit);
+    /**
+     * The unit in which the drug is measured, e.g. '5 mg tablet'.
+     *
+     * @param fDrugUnit java.lang.String value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setDrugUnit(java.lang.String fDrugUnit);
 
     /**
      * Any precaution, guidance, contraindication, etc. related to consumption of specific foods while taking this drug.
@@ -251,9 +350,17 @@ public interface Drug extends Substance {
     /**
      * Any precaution, guidance, contraindication, etc. related to consumption of specific foods while taking this drug.
      *
+     * @param fFoodWarning Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setFoodWarning(Text fFoodWarning);
+    /**
+     * Any precaution, guidance, contraindication, etc. related to consumption of specific foods while taking this drug.
+     *
+     * @param fFoodWarning java.lang.String value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setFoodWarning(java.lang.String fFoodWarning);
 
     /**
      * Any FDA or other warnings about the drug (text or URL).
@@ -266,9 +373,31 @@ public interface Drug extends Substance {
     /**
      * Any FDA or other warnings about the drug (text or URL).
      *
+     * @param fWarning URL value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setWarning(Object fWarning);
+    void setWarning(URL fWarning);
+    /**
+     * Any FDA or other warnings about the drug (text or URL).
+     *
+     * @param fWarning java.net.URL value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setWarning(java.net.URL fWarning);
+    /**
+     * Any FDA or other warnings about the drug (text or URL).
+     *
+     * @param fWarning Text value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setWarning(Text fWarning);
+    /**
+     * Any FDA or other warnings about the drug (text or URL).
+     *
+     * @param fWarning java.lang.String value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setWarning(java.lang.String fWarning);
 
     /**
      * Indicates the status of drug prescription eg. local catalogs classifications or whether the drug is available by prescription or over-the-counter, etc.
@@ -281,9 +410,24 @@ public interface Drug extends Substance {
     /**
      * Indicates the status of drug prescription eg. local catalogs classifications or whether the drug is available by prescription or over-the-counter, etc.
      *
+     * @param fPrescriptionStatus DrugPrescriptionStatus value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setPrescriptionStatus(Object fPrescriptionStatus);
+    void setPrescriptionStatus(DrugPrescriptionStatus fPrescriptionStatus);
+    /**
+     * Indicates the status of drug prescription eg. local catalogs classifications or whether the drug is available by prescription or over-the-counter, etc.
+     *
+     * @param fPrescriptionStatus Text value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setPrescriptionStatus(Text fPrescriptionStatus);
+    /**
+     * Indicates the status of drug prescription eg. local catalogs classifications or whether the drug is available by prescription or over-the-counter, etc.
+     *
+     * @param fPrescriptionStatus java.lang.String value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setPrescriptionStatus(java.lang.String fPrescriptionStatus);
 
     /**
      * Proprietary name given to the diet plan, typically by its originator or creator.
@@ -296,9 +440,17 @@ public interface Drug extends Substance {
     /**
      * Proprietary name given to the diet plan, typically by its originator or creator.
      *
+     * @param fProprietaryName Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setProprietaryName(Text fProprietaryName);
+    /**
+     * Proprietary name given to the diet plan, typically by its originator or creator.
+     *
+     * @param fProprietaryName java.lang.String value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setProprietaryName(java.lang.String fProprietaryName);
 
     /**
      * The class of drug this belongs to (e.g., statins).
@@ -311,6 +463,7 @@ public interface Drug extends Substance {
     /**
      * The class of drug this belongs to (e.g., statins).
      *
+     * @param fDrugClass DrugClass value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setDrugClass(DrugClass fDrugClass);
@@ -326,9 +479,17 @@ public interface Drug extends Substance {
     /**
      * Link to prescribing information for the drug.
      *
+     * @param fPrescribingInfo URL value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setPrescribingInfo(URL fPrescribingInfo);
+    /**
+     * Link to prescribing information for the drug.
+     *
+     * @param fPrescribingInfo java.net.URL value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setPrescribingInfo(java.net.URL fPrescribingInfo);
 
     /**
      * The insurance plans that cover this drug.
@@ -342,6 +503,7 @@ public interface Drug extends Substance {
     /**
      * The insurance plans that cover this drug.
      *
+     * @param fIncludedInHealthInsurancePlan HealthInsurancePlan value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
@@ -358,9 +520,17 @@ public interface Drug extends Substance {
     /**
      * The generic name of this drug or supplement.
      *
+     * @param fNonProprietaryName Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setNonProprietaryName(Text fNonProprietaryName);
+    /**
+     * The generic name of this drug or supplement.
+     *
+     * @param fNonProprietaryName java.lang.String value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setNonProprietaryName(java.lang.String fNonProprietaryName);
 
     /**
      * The manufacturer of the product.
@@ -372,6 +542,7 @@ public interface Drug extends Substance {
     /**
      * The manufacturer of the product.
      *
+     * @param fManufacturer Organization value to set.
      */
     void setManufacturer(Organization fManufacturer);
 
@@ -386,9 +557,17 @@ public interface Drug extends Substance {
     /**
      * True if this item's name is a proprietary/brand name (vs. generic name).
      *
+     * @param fIsProprietary Boolean value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setIsProprietary(Boolean fIsProprietary);
+    /**
+     * True if this item's name is a proprietary/brand name (vs. generic name).
+     *
+     * @param fIsProprietary java.lang.Boolean value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setIsProprietary(java.lang.Boolean fIsProprietary);
 
     /**
      * Description of the absorption and elimination of drugs, including their concentration (pharmacokinetics, pK) and biological effects (pharmacodynamics, pD).
@@ -401,9 +580,17 @@ public interface Drug extends Substance {
     /**
      * Description of the absorption and elimination of drugs, including their concentration (pharmacokinetics, pK) and biological effects (pharmacodynamics, pD).
      *
+     * @param fClincalPharmacology Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setClincalPharmacology(Text fClincalPharmacology);
+    /**
+     * Description of the absorption and elimination of drugs, including their concentration (pharmacokinetics, pK) and biological effects (pharmacodynamics, pD).
+     *
+     * @param fClincalPharmacology java.lang.String value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setClincalPharmacology(java.lang.String fClincalPharmacology);
 
     /**
      * True if the drug is available in a generic form (regardless of name).
@@ -416,9 +603,17 @@ public interface Drug extends Substance {
     /**
      * True if the drug is available in a generic form (regardless of name).
      *
+     * @param fIsAvailableGenerically Boolean value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setIsAvailableGenerically(Boolean fIsAvailableGenerically);
+    /**
+     * True if the drug is available in a generic form (regardless of name).
+     *
+     * @param fIsAvailableGenerically java.lang.Boolean value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setIsAvailableGenerically(java.lang.Boolean fIsAvailableGenerically);
 
     /**
      * Any precaution, guidance, contraindication, etc. related to this drug's use by breastfeeding mothers.
@@ -431,9 +626,17 @@ public interface Drug extends Substance {
     /**
      * Any precaution, guidance, contraindication, etc. related to this drug's use by breastfeeding mothers.
      *
+     * @param fBreastfeedingWarning Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setBreastfeedingWarning(Text fBreastfeedingWarning);
+    /**
+     * Any precaution, guidance, contraindication, etc. related to this drug's use by breastfeeding mothers.
+     *
+     * @param fBreastfeedingWarning java.lang.String value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setBreastfeedingWarning(java.lang.String fBreastfeedingWarning);
 
     /**
      * Any precaution, guidance, contraindication, etc. related to this drug's use during pregnancy.
@@ -446,9 +649,17 @@ public interface Drug extends Substance {
     /**
      * Any precaution, guidance, contraindication, etc. related to this drug's use during pregnancy.
      *
+     * @param fPregnancyWarning Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setPregnancyWarning(Text fPregnancyWarning);
+    /**
+     * Any precaution, guidance, contraindication, etc. related to this drug's use during pregnancy.
+     *
+     * @param fPregnancyWarning java.lang.String value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setPregnancyWarning(java.lang.String fPregnancyWarning);
 
     /**
      * Any precaution, guidance, contraindication, etc. related to consumption of alcohol while taking this drug.
@@ -461,9 +672,17 @@ public interface Drug extends Substance {
     /**
      * Any precaution, guidance, contraindication, etc. related to consumption of alcohol while taking this drug.
      *
+     * @param fAlcoholWarning Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setAlcoholWarning(Text fAlcoholWarning);
+    /**
+     * Any precaution, guidance, contraindication, etc. related to consumption of alcohol while taking this drug.
+     *
+     * @param fAlcoholWarning java.lang.String value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setAlcoholWarning(java.lang.String fAlcoholWarning);
 
     /**
      * A dosing schedule for the drug for a given population, either observed, recommended, or maximum dose based on the type used.
@@ -476,6 +695,7 @@ public interface Drug extends Substance {
     /**
      * A dosing schedule for the drug for a given population, either observed, recommended, or maximum dose based on the type used.
      *
+     * @param fDoseSchedule DoseSchedule value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setDoseSchedule(DoseSchedule fDoseSchedule);
@@ -491,6 +711,7 @@ public interface Drug extends Substance {
     /**
      * An available dosage strength for the drug.
      *
+     * @param fAvailableStrength DrugStrength value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setAvailableStrength(DrugStrength fAvailableStrength);

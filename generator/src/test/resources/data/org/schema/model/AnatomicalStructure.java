@@ -31,9 +31,17 @@ public interface AnatomicalStructure extends MedicalEntity {
     /**
      * Location in the body of the anatomical structure.
      *
+     * @param fBodyLocation Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setBodyLocation(Text fBodyLocation);
+    /**
+     * Location in the body of the anatomical structure.
+     *
+     * @param fBodyLocation java.lang.String value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setBodyLocation(java.lang.String fBodyLocation);
 
     /**
      * Other anatomical structures to which this structure is connected.
@@ -46,6 +54,7 @@ public interface AnatomicalStructure extends MedicalEntity {
     /**
      * Other anatomical structures to which this structure is connected.
      *
+     * @param fConnectedTo AnatomicalStructure value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setConnectedTo(AnatomicalStructure fConnectedTo);
@@ -61,6 +70,7 @@ public interface AnatomicalStructure extends MedicalEntity {
     /**
      * The anatomical or organ system that this structure is part of.
      *
+     * @param fPartOfSystem AnatomicalSystem value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setPartOfSystem(AnatomicalSystem fPartOfSystem);
@@ -76,6 +86,7 @@ public interface AnatomicalStructure extends MedicalEntity {
     /**
      * A medical therapy related to this anatomy.
      *
+     * @param fRelatedTherapy MedicalTherapy value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setRelatedTherapy(MedicalTherapy fRelatedTherapy);
@@ -91,6 +102,7 @@ public interface AnatomicalStructure extends MedicalEntity {
     /**
      * An image containing a diagram that illustrates the structure and/or its component substructures and/or connections with other structures.
      *
+     * @param fDiagram ImageObject value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setDiagram(ImageObject fDiagram);
@@ -106,6 +118,7 @@ public interface AnatomicalStructure extends MedicalEntity {
     /**
      * A medical condition associated with this anatomy.
      *
+     * @param fRelatedCondition MedicalCondition value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setRelatedCondition(MedicalCondition fRelatedCondition);
@@ -121,6 +134,7 @@ public interface AnatomicalStructure extends MedicalEntity {
     /**
      * Component (sub-)structure(s) that comprise this anatomical structure.
      *
+     * @param fSubStructure AnatomicalStructure value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setSubStructure(AnatomicalStructure fSubStructure);
@@ -136,7 +150,15 @@ public interface AnatomicalStructure extends MedicalEntity {
     /**
      * If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.
      *
+     * @param fAssociatedPathophysiology Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setAssociatedPathophysiology(Text fAssociatedPathophysiology);
+    /**
+     * If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.
+     *
+     * @param fAssociatedPathophysiology java.lang.String value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setAssociatedPathophysiology(java.lang.String fAssociatedPathophysiology);
 }

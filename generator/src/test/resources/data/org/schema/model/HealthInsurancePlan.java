@@ -32,6 +32,7 @@ public interface HealthInsurancePlan extends Intangible {
     /**
      * Formularies covered by this plan.
      *
+     * @param fIncludesHealthPlanFormulary HealthPlanFormulary value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
@@ -49,10 +50,19 @@ public interface HealthInsurancePlan extends Intangible {
     /**
      * The URL that goes directly to the summary of benefits and coverage for the specific standard plan or plan variation.
      *
+     * @param fBenefitsSummaryUrl URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
     void setBenefitsSummaryUrl(URL fBenefitsSummaryUrl);
+    /**
+     * The URL that goes directly to the summary of benefits and coverage for the specific standard plan or plan variation.
+     *
+     * @param fBenefitsSummaryUrl java.net.URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    void setBenefitsSummaryUrl(java.net.URL fBenefitsSummaryUrl);
 
     /**
      * TODO.
@@ -66,10 +76,19 @@ public interface HealthInsurancePlan extends Intangible {
     /**
      * TODO.
      *
+     * @param fHealthPlanDrugOption Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
     void setHealthPlanDrugOption(Text fHealthPlanDrugOption);
+    /**
+     * TODO.
+     *
+     * @param fHealthPlanDrugOption java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    void setHealthPlanDrugOption(java.lang.String fHealthPlanDrugOption);
 
     /**
      * The tier(s) of drugs offered by this formulary or insurance plan.
@@ -83,10 +102,19 @@ public interface HealthInsurancePlan extends Intangible {
     /**
      * The tier(s) of drugs offered by this formulary or insurance plan.
      *
+     * @param fHealthPlanDrugTier Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
     void setHealthPlanDrugTier(Text fHealthPlanDrugTier);
+    /**
+     * The tier(s) of drugs offered by this formulary or insurance plan.
+     *
+     * @param fHealthPlanDrugTier java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    void setHealthPlanDrugTier(java.lang.String fHealthPlanDrugTier);
 
     /**
      * The 14-character, HIOS-generated Plan ID number. (Plan IDs must be unique, even across different markets.)
@@ -100,10 +128,19 @@ public interface HealthInsurancePlan extends Intangible {
     /**
      * The 14-character, HIOS-generated Plan ID number. (Plan IDs must be unique, even across different markets.)
      *
+     * @param fHealthPlanId Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
     void setHealthPlanId(Text fHealthPlanId);
+    /**
+     * The 14-character, HIOS-generated Plan ID number. (Plan IDs must be unique, even across different markets.)
+     *
+     * @param fHealthPlanId java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    void setHealthPlanId(java.lang.String fHealthPlanId);
 
     /**
      * A contact point for a person or organization.
@@ -115,6 +152,7 @@ public interface HealthInsurancePlan extends Intangible {
     /**
      * A contact point for a person or organization.
      *
+     * @param fContactPoint ContactPoint value to set.
      */
     void setContactPoint(ContactPoint fContactPoint);
 
@@ -130,10 +168,35 @@ public interface HealthInsurancePlan extends Intangible {
     /**
      * The standard for interpreting thePlan ID. The preferred is "HIOS". See the Centers for Medicare & Medicaid Services for more details.
      *
+     * @param fUsesHealthPlanIdStandard URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
-    void setUsesHealthPlanIdStandard(Object fUsesHealthPlanIdStandard);
+    void setUsesHealthPlanIdStandard(URL fUsesHealthPlanIdStandard);
+    /**
+     * The standard for interpreting thePlan ID. The preferred is "HIOS". See the Centers for Medicare & Medicaid Services for more details.
+     *
+     * @param fUsesHealthPlanIdStandard java.net.URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    void setUsesHealthPlanIdStandard(java.net.URL fUsesHealthPlanIdStandard);
+    /**
+     * The standard for interpreting thePlan ID. The preferred is "HIOS". See the Centers for Medicare & Medicaid Services for more details.
+     *
+     * @param fUsesHealthPlanIdStandard Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    void setUsesHealthPlanIdStandard(Text fUsesHealthPlanIdStandard);
+    /**
+     * The standard for interpreting thePlan ID. The preferred is "HIOS". See the Centers for Medicare & Medicaid Services for more details.
+     *
+     * @param fUsesHealthPlanIdStandard java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    void setUsesHealthPlanIdStandard(java.lang.String fUsesHealthPlanIdStandard);
 
     /**
      * Networks covered by this plan.
@@ -147,6 +210,7 @@ public interface HealthInsurancePlan extends Intangible {
     /**
      * Networks covered by this plan.
      *
+     * @param fIncludesHealthPlanNetwork HealthPlanNetwork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
@@ -164,8 +228,17 @@ public interface HealthInsurancePlan extends Intangible {
     /**
      * The URL that goes directly to the plan brochure for the specific standard plan or plan variation.
      *
+     * @param fHealthPlanMarketingUrl URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
     void setHealthPlanMarketingUrl(URL fHealthPlanMarketingUrl);
+    /**
+     * The URL that goes directly to the plan brochure for the specific standard plan or plan variation.
+     *
+     * @param fHealthPlanMarketingUrl java.net.URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    void setHealthPlanMarketingUrl(java.net.URL fHealthPlanMarketingUrl);
 }

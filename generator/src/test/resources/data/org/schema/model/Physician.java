@@ -29,9 +29,24 @@ public interface Physician extends MedicalOrganization, MedicalBusiness {
     /**
      * A medical service available from this provider.
      *
+     * @param fAvailableService MedicalTest value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setAvailableService(Object fAvailableService);
+    void setAvailableService(MedicalTest fAvailableService);
+    /**
+     * A medical service available from this provider.
+     *
+     * @param fAvailableService MedicalProcedure value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setAvailableService(MedicalProcedure fAvailableService);
+    /**
+     * A medical service available from this provider.
+     *
+     * @param fAvailableService MedicalTherapy value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setAvailableService(MedicalTherapy fAvailableService);
 
     /**
      * A medical specialty of the provider.
@@ -44,6 +59,7 @@ public interface Physician extends MedicalOrganization, MedicalBusiness {
     /**
      * A medical specialty of the provider.
      *
+     * @param fMedicalSpecialty MedicalSpecialty value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setMedicalSpecialty(MedicalSpecialty fMedicalSpecialty);
@@ -59,6 +75,7 @@ public interface Physician extends MedicalOrganization, MedicalBusiness {
     /**
      * A hospital with which the physician or office is affiliated.
      *
+     * @param fHospitalAffiliation Hospital value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setHospitalAffiliation(Hospital fHospitalAffiliation);

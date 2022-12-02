@@ -32,8 +32,21 @@ public interface TVSeries extends CreativeWorkSeries, CreativeWork {
     /**
      * A season in a media series.
      *
+     * @param fSeason URL value to set.
      */
-    void setSeason(Object fSeason);
+    void setSeason(URL fSeason);
+    /**
+     * A season in a media series.
+     *
+     * @param fSeason java.net.URL value to set.
+     */
+    void setSeason(java.net.URL fSeason);
+    /**
+     * A season in a media series.
+     *
+     * @param fSeason CreativeWorkSeason value to set.
+     */
+    void setSeason(CreativeWorkSeason fSeason);
 
     /**
      * A season that is part of the media series.
@@ -45,6 +58,7 @@ public interface TVSeries extends CreativeWorkSeries, CreativeWork {
     /**
      * A season that is part of the media series.
      *
+     * @param fContainsSeason CreativeWorkSeason value to set.
      */
     void setContainsSeason(CreativeWorkSeason fContainsSeason);
 
@@ -66,6 +80,7 @@ public interface TVSeries extends CreativeWorkSeries, CreativeWork {
      * 
      * In the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.
      *
+     * @param fCountryOfOrigin Country value to set.
      */
     void setCountryOfOrigin(Country fCountryOfOrigin);
 
@@ -79,6 +94,7 @@ public interface TVSeries extends CreativeWorkSeries, CreativeWork {
     /**
      * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
      *
+     * @param fDirector Person value to set.
      */
     void setDirector(Person fDirector);
 
@@ -92,6 +108,7 @@ public interface TVSeries extends CreativeWorkSeries, CreativeWork {
     /**
      * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
      *
+     * @param fActor Person value to set.
      */
     void setActor(Person fActor);
 
@@ -105,6 +122,7 @@ public interface TVSeries extends CreativeWorkSeries, CreativeWork {
     /**
      * The trailer of a movie or tv/radio series, season, episode, etc.
      *
+     * @param fTrailer VideoObject value to set.
      */
     void setTrailer(VideoObject fTrailer);
 
@@ -118,6 +136,7 @@ public interface TVSeries extends CreativeWorkSeries, CreativeWork {
     /**
      * An episode of a TV/radio series or season.
      *
+     * @param fEpisodes Episode value to set.
      */
     void setEpisodes(Episode fEpisodes);
 
@@ -131,8 +150,15 @@ public interface TVSeries extends CreativeWorkSeries, CreativeWork {
     /**
      * The number of episodes in this season or series.
      *
+     * @param fNumberOfEpisodes Integer value to set.
      */
     void setNumberOfEpisodes(Integer fNumberOfEpisodes);
+    /**
+     * The number of episodes in this season or series.
+     *
+     * @param fNumberOfEpisodes java.lang.Integer value to set.
+     */
+    void setNumberOfEpisodes(java.lang.Integer fNumberOfEpisodes);
 
     /**
      * A season in a media series.
@@ -144,6 +170,7 @@ public interface TVSeries extends CreativeWorkSeries, CreativeWork {
     /**
      * A season in a media series.
      *
+     * @param fSeasons CreativeWorkSeason value to set.
      */
     void setSeasons(CreativeWorkSeason fSeasons);
 
@@ -157,6 +184,7 @@ public interface TVSeries extends CreativeWorkSeries, CreativeWork {
     /**
      * The production company or studio responsible for the item e.g. series, video game, episode etc.
      *
+     * @param fProductionCompany Organization value to set.
      */
     void setProductionCompany(Organization fProductionCompany);
 
@@ -170,6 +198,7 @@ public interface TVSeries extends CreativeWorkSeries, CreativeWork {
     /**
      * An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
      *
+     * @param fActors Person value to set.
      */
     void setActors(Person fActors);
 
@@ -183,8 +212,15 @@ public interface TVSeries extends CreativeWorkSeries, CreativeWork {
     /**
      * The number of seasons in this series.
      *
+     * @param fNumberOfSeasons Integer value to set.
      */
     void setNumberOfSeasons(Integer fNumberOfSeasons);
+    /**
+     * The number of seasons in this series.
+     *
+     * @param fNumberOfSeasons java.lang.Integer value to set.
+     */
+    void setNumberOfSeasons(java.lang.Integer fNumberOfSeasons);
 
     /**
      * The composer of the soundtrack.
@@ -196,8 +232,15 @@ public interface TVSeries extends CreativeWorkSeries, CreativeWork {
     /**
      * The composer of the soundtrack.
      *
+     * @param fMusicBy Person value to set.
      */
-    void setMusicBy(Object fMusicBy);
+    void setMusicBy(Person fMusicBy);
+    /**
+     * The composer of the soundtrack.
+     *
+     * @param fMusicBy MusicGroup value to set.
+     */
+    void setMusicBy(MusicGroup fMusicBy);
 
     /**
      * An episode of a tv, radio or game media within a series or season.
@@ -209,6 +252,7 @@ public interface TVSeries extends CreativeWorkSeries, CreativeWork {
     /**
      * An episode of a tv, radio or game media within a series or season.
      *
+     * @param fEpisode Episode value to set.
      */
     void setEpisode(Episode fEpisode);
 
@@ -222,6 +266,7 @@ public interface TVSeries extends CreativeWorkSeries, CreativeWork {
     /**
      * A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
      *
+     * @param fDirectors Person value to set.
      */
     void setDirectors(Person fDirectors);
 }

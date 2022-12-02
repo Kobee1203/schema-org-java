@@ -28,6 +28,7 @@ public interface LymphaticVessel extends Vessel {
     /**
      * The vasculature the lymphatic structure runs, or efferents, to.
      *
+     * @param fRunsTo Vessel value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setRunsTo(Vessel fRunsTo);
@@ -43,9 +44,17 @@ public interface LymphaticVessel extends Vessel {
     /**
      * The anatomical or organ system drained by this vessel; generally refers to a specific part of an organ.
      *
+     * @param fRegionDrained AnatomicalSystem value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setRegionDrained(Object fRegionDrained);
+    void setRegionDrained(AnatomicalSystem fRegionDrained);
+    /**
+     * The anatomical or organ system drained by this vessel; generally refers to a specific part of an organ.
+     *
+     * @param fRegionDrained AnatomicalStructure value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setRegionDrained(AnatomicalStructure fRegionDrained);
 
     /**
      * The vasculature the lymphatic structure originates, or afferents, from.
@@ -58,6 +67,7 @@ public interface LymphaticVessel extends Vessel {
     /**
      * The vasculature the lymphatic structure originates, or afferents, from.
      *
+     * @param fOriginatesFrom Vessel value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setOriginatesFrom(Vessel fOriginatesFrom);

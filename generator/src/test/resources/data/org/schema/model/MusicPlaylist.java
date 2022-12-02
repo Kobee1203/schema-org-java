@@ -26,6 +26,7 @@ public interface MusicPlaylist extends CreativeWork {
     /**
      * A music recording (track)&#x2014;usually a single song.
      *
+     * @param fTracks MusicRecording value to set.
      */
     void setTracks(MusicRecording fTracks);
 
@@ -39,8 +40,15 @@ public interface MusicPlaylist extends CreativeWork {
     /**
      * The number of tracks in this album or playlist.
      *
+     * @param fNumTracks Integer value to set.
      */
     void setNumTracks(Integer fNumTracks);
+    /**
+     * The number of tracks in this album or playlist.
+     *
+     * @param fNumTracks java.lang.Integer value to set.
+     */
+    void setNumTracks(java.lang.Integer fNumTracks);
 
     /**
      * A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
@@ -53,7 +61,15 @@ public interface MusicPlaylist extends CreativeWork {
     /**
      * A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
      *
+     * @param fTrack ItemList value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
-    void setTrack(Object fTrack);
+    void setTrack(ItemList fTrack);
+    /**
+     * A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
+     *
+     * @param fTrack MusicRecording value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
+     */
+    void setTrack(MusicRecording fTrack);
 }

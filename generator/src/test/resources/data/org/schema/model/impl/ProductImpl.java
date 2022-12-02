@@ -65,6 +65,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     /**
      * A pointer to another product (or multiple products) for which this product is an accessory or spare part.
      *
+     * @param fIsAccessoryOrSparePartFor Product value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
@@ -89,6 +90,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     /**
      * Used to tag an item to be intended or suitable for consumption or use by adults only.
      *
+     * @param fHasAdultConsideration AdultOrientedEnumeration value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2989">https://github.com/schemaorg/schemaorg/issues/2989</a>
      */
@@ -112,10 +114,20 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     /**
      * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
+     * @param fGtin12 Text value to set.
      */
     @Override
     public void setGtin12(Text fGtin12) {
         this.fGtin12 = fGtin12;
+    }
+    /**
+     * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     *
+     * @param fGtin12 java.lang.String value to set.
+     */
+    @Override
+    public void setGtin12(java.lang.String fGtin12) {
+        this.fGtin12 = Text.of(fGtin12);
     }
 
     private Text fNsn;
@@ -135,12 +147,24 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     /**
      * Indicates the [NATO stock number](https://en.wikipedia.org/wiki/NATO_Stock_Number) (nsn) of a [[Product]]. 
      *
+     * @param fNsn Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2126">https://github.com/schemaorg/schemaorg/issues/2126</a>
      */
     @Override
     public void setNsn(Text fNsn) {
         this.fNsn = fNsn;
+    }
+    /**
+     * Indicates the [NATO stock number](https://en.wikipedia.org/wiki/NATO_Stock_Number) (nsn) of a [[Product]]. 
+     *
+     * @param fNsn java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2126">https://github.com/schemaorg/schemaorg/issues/2126</a>
+     */
+    @Override
+    public void setNsn(java.lang.String fNsn) {
+        this.fNsn = Text.of(fNsn);
     }
 
     private Object fMaterial;
@@ -158,12 +182,46 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     /**
      * A material that something is made from, e.g. leather, wool, cotton, paper.
      *
+     * @param fMaterial Text value to set.
      */
     @Override
-    public void setMaterial(Object fMaterial) {
-        if(!(fMaterial instanceof Text) && !(fMaterial instanceof URL) && !(fMaterial instanceof Product)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'material': " + fMaterial);
-        }
+    public void setMaterial(Text fMaterial) {
+        this.fMaterial = fMaterial;
+    }
+    /**
+     * A material that something is made from, e.g. leather, wool, cotton, paper.
+     *
+     * @param fMaterial java.lang.String value to set.
+     */
+    @Override
+    public void setMaterial(java.lang.String fMaterial) {
+        this.fMaterial = Text.of(fMaterial);
+    }
+    /**
+     * A material that something is made from, e.g. leather, wool, cotton, paper.
+     *
+     * @param fMaterial URL value to set.
+     */
+    @Override
+    public void setMaterial(URL fMaterial) {
+        this.fMaterial = fMaterial;
+    }
+    /**
+     * A material that something is made from, e.g. leather, wool, cotton, paper.
+     *
+     * @param fMaterial java.net.URL value to set.
+     */
+    @Override
+    public void setMaterial(java.net.URL fMaterial) {
+        this.fMaterial = URL.of(fMaterial);
+    }
+    /**
+     * A material that something is made from, e.g. leather, wool, cotton, paper.
+     *
+     * @param fMaterial Product value to set.
+     */
+    @Override
+    public void setMaterial(Product fMaterial) {
         this.fMaterial = fMaterial;
     }
 
@@ -182,6 +240,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     /**
      * A review of the item.
      *
+     * @param fReview Review value to set.
      */
     @Override
     public void setReview(Review fReview) {
@@ -203,10 +262,20 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     /**
      * An award won by or for this item.
      *
+     * @param fAward Text value to set.
      */
     @Override
     public void setAward(Text fAward) {
         this.fAward = fAward;
+    }
+    /**
+     * An award won by or for this item.
+     *
+     * @param fAward java.lang.String value to set.
+     */
+    @Override
+    public void setAward(java.lang.String fAward) {
+        this.fAward = Text.of(fAward);
     }
 
     private Object fWidth;
@@ -224,12 +293,19 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     /**
      * The width of the item.
      *
+     * @param fWidth QuantitativeValue value to set.
      */
     @Override
-    public void setWidth(Object fWidth) {
-        if(!(fWidth instanceof QuantitativeValue) && !(fWidth instanceof Distance)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'width': " + fWidth);
-        }
+    public void setWidth(QuantitativeValue fWidth) {
+        this.fWidth = fWidth;
+    }
+    /**
+     * The width of the item.
+     *
+     * @param fWidth Distance value to set.
+     */
+    @Override
+    public void setWidth(Distance fWidth) {
         this.fWidth = fWidth;
     }
 
@@ -256,6 +332,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * 
      * In the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.
      *
+     * @param fCountryOfOrigin Country value to set.
      */
     @Override
     public void setCountryOfOrigin(Country fCountryOfOrigin) {
@@ -279,15 +356,35 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     /**
      * A pattern that something has, for example 'polka dot', 'striped', 'Canadian flag'. Values are typically expressed as text, although links to controlled value schemes are also supported.
      *
+     * @param fPattern DefinedTerm value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
     @Override
-    public void setPattern(Object fPattern) {
-        if(!(fPattern instanceof DefinedTerm) && !(fPattern instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'pattern': " + fPattern);
-        }
+    public void setPattern(DefinedTerm fPattern) {
         this.fPattern = fPattern;
+    }
+    /**
+     * A pattern that something has, for example 'polka dot', 'striped', 'Canadian flag'. Values are typically expressed as text, although links to controlled value schemes are also supported.
+     *
+     * @param fPattern Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     */
+    @Override
+    public void setPattern(Text fPattern) {
+        this.fPattern = fPattern;
+    }
+    /**
+     * A pattern that something has, for example 'polka dot', 'striped', 'Canadian flag'. Values are typically expressed as text, although links to controlled value schemes are also supported.
+     *
+     * @param fPattern java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     */
+    @Override
+    public void setPattern(java.lang.String fPattern) {
+        this.fPattern = Text.of(fPattern);
     }
 
     private Object fCategory;
@@ -307,14 +404,78 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
+     * @param fCategory URL value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
     @Override
-    public void setCategory(Object fCategory) {
-        if(!(fCategory instanceof URL) && !(fCategory instanceof Text) && !(fCategory instanceof PhysicalActivityCategory) && !(fCategory instanceof Thing) && !(fCategory instanceof CategoryCode)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'category': " + fCategory);
-        }
+    public void setCategory(URL fCategory) {
+        this.fCategory = fCategory;
+    }
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @param fCategory java.net.URL value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    @Override
+    public void setCategory(java.net.URL fCategory) {
+        this.fCategory = URL.of(fCategory);
+    }
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @param fCategory Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    @Override
+    public void setCategory(Text fCategory) {
+        this.fCategory = fCategory;
+    }
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @param fCategory java.lang.String value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    @Override
+    public void setCategory(java.lang.String fCategory) {
+        this.fCategory = Text.of(fCategory);
+    }
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @param fCategory PhysicalActivityCategory value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    @Override
+    public void setCategory(PhysicalActivityCategory fCategory) {
+        this.fCategory = fCategory;
+    }
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @param fCategory Thing value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    @Override
+    public void setCategory(Thing fCategory) {
+        this.fCategory = fCategory;
+    }
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @param fCategory CategoryCode value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    @Override
+    public void setCategory(CategoryCode fCategory) {
         this.fCategory = fCategory;
     }
 
@@ -336,6 +497,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     /**
      * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
      *
+     * @param fFunding Grant value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
@@ -361,11 +523,22 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     /**
      * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
      *
+     * @param fMpn Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
     public void setMpn(Text fMpn) {
         this.fMpn = fMpn;
+    }
+    /**
+     * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
+     *
+     * @param fMpn java.lang.String value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setMpn(java.lang.String fMpn) {
+        this.fMpn = Text.of(fMpn);
     }
 
     private Object fHeight;
@@ -383,12 +556,19 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     /**
      * The height of the item.
      *
+     * @param fHeight Distance value to set.
      */
     @Override
-    public void setHeight(Object fHeight) {
-        if(!(fHeight instanceof Distance) && !(fHeight instanceof QuantitativeValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'height': " + fHeight);
-        }
+    public void setHeight(Distance fHeight) {
+        this.fHeight = fHeight;
+    }
+    /**
+     * The height of the item.
+     *
+     * @param fHeight QuantitativeValue value to set.
+     */
+    @Override
+    public void setHeight(QuantitativeValue fHeight) {
         this.fHeight = fHeight;
     }
 
@@ -407,13 +587,47 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
      *
+     * @param fKeywords DefinedTerm value to set.
      */
     @Override
-    public void setKeywords(Object fKeywords) {
-        if(!(fKeywords instanceof DefinedTerm) && !(fKeywords instanceof Text) && !(fKeywords instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'keywords': " + fKeywords);
-        }
+    public void setKeywords(DefinedTerm fKeywords) {
         this.fKeywords = fKeywords;
+    }
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     * @param fKeywords Text value to set.
+     */
+    @Override
+    public void setKeywords(Text fKeywords) {
+        this.fKeywords = fKeywords;
+    }
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     * @param fKeywords java.lang.String value to set.
+     */
+    @Override
+    public void setKeywords(java.lang.String fKeywords) {
+        this.fKeywords = Text.of(fKeywords);
+    }
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     * @param fKeywords URL value to set.
+     */
+    @Override
+    public void setKeywords(URL fKeywords) {
+        this.fKeywords = fKeywords;
+    }
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     * @param fKeywords java.net.URL value to set.
+     */
+    @Override
+    public void setKeywords(java.net.URL fKeywords) {
+        this.fKeywords = URL.of(fKeywords);
     }
 
     private Date fPurchaseDate;
@@ -432,11 +646,22 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     /**
      * The date the item e.g. vehicle was purchased by the current owner.
      *
+     * @param fPurchaseDate Date value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void setPurchaseDate(Date fPurchaseDate) {
         this.fPurchaseDate = fPurchaseDate;
+    }
+    /**
+     * The date the item e.g. vehicle was purchased by the current owner.
+     *
+     * @param fPurchaseDate java.time.LocalDate value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public void setPurchaseDate(java.time.LocalDate fPurchaseDate) {
+        this.fPurchaseDate = Date.of(fPurchaseDate);
     }
 
     private EnergyConsumptionDetails fHasEnergyConsumptionDetails;
@@ -456,6 +681,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     /**
      * Defines the energy efficiency Category (also known as "class" or "rating") for a product according to an international energy efficiency standard.
      *
+     * @param fHasEnergyConsumptionDetails EnergyConsumptionDetails value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2670">https://github.com/schemaorg/schemaorg/issues/2670</a>
      */
@@ -479,6 +705,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     /**
      * An intended audience, i.e. a group for whom something was created.
      *
+     * @param fAudience Audience value to set.
      */
     @Override
     public void setAudience(Audience fAudience) {
@@ -503,13 +730,22 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      *
+     * @param fOffers Offer value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
     @Override
-    public void setOffers(Object fOffers) {
-        if(!(fOffers instanceof Offer) && !(fOffers instanceof Demand)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'offers': " + fOffers);
-        }
+    public void setOffers(Offer fOffers) {
+        this.fOffers = fOffers;
+    }
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     *
+     * @param fOffers Demand value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public void setOffers(Demand fOffers) {
         this.fOffers = fOffers;
     }
 
@@ -529,11 +765,22 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     /**
      * The date of production of the item, e.g. vehicle.
      *
+     * @param fProductionDate Date value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
     public void setProductionDate(Date fProductionDate) {
         this.fProductionDate = fProductionDate;
+    }
+    /**
+     * The date of production of the item, e.g. vehicle.
+     *
+     * @param fProductionDate java.time.LocalDate value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public void setProductionDate(java.time.LocalDate fProductionDate) {
+        this.fProductionDate = Date.of(fProductionDate);
     }
 
     private OfferItemCondition fItemCondition;
@@ -551,6 +798,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     /**
      * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
      *
+     * @param fItemCondition OfferItemCondition value to set.
      */
     @Override
     public void setItemCondition(OfferItemCondition fItemCondition) {
@@ -572,10 +820,20 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     /**
      * Awards won by or for this item.
      *
+     * @param fAwards Text value to set.
      */
     @Override
     public void setAwards(Text fAwards) {
         this.fAwards = fAwards;
+    }
+    /**
+     * Awards won by or for this item.
+     *
+     * @param fAwards java.lang.String value to set.
+     */
+    @Override
+    public void setAwards(java.lang.String fAwards) {
+        this.fAwards = Text.of(fAwards);
     }
 
     private Text fGtin;
@@ -597,12 +855,25 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * A Global Trade Item Number ([GTIN](https://www.gs1.org/standards/id-keys/gtin)). GTINs identify trade items, including products and services, using numeric identification codes. The [[gtin]] property generalizes the earlier [[gtin8]], [[gtin12]], [[gtin13]], and [[gtin14]] properties. The GS1 [digital link specifications](https://www.gs1.org/standards/Digital-Link/) express GTINs as URLs. A correct [[gtin]] value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a "GS1 Digital Link" URL based on such a string. The numeric component should also have a [valid GS1 check digit](https://www.gs1.org/services/check-digit-calculator) and meet the other rules for valid GTINs. See also [GS1's GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) and [Wikipedia](https://en.wikipedia.org/wiki/Global_Trade_Item_Number) for more details. Left-padding of the gtin values is not required or encouraged.
      *    
      *
+     * @param fGtin Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
      */
     @Override
     public void setGtin(Text fGtin) {
         this.fGtin = fGtin;
+    }
+    /**
+     * A Global Trade Item Number ([GTIN](https://www.gs1.org/standards/id-keys/gtin)). GTINs identify trade items, including products and services, using numeric identification codes. The [[gtin]] property generalizes the earlier [[gtin8]], [[gtin12]], [[gtin13]], and [[gtin14]] properties. The GS1 [digital link specifications](https://www.gs1.org/standards/Digital-Link/) express GTINs as URLs. A correct [[gtin]] value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a "GS1 Digital Link" URL based on such a string. The numeric component should also have a [valid GS1 check digit](https://www.gs1.org/services/check-digit-calculator) and meet the other rules for valid GTINs. See also [GS1's GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) and [Wikipedia](https://en.wikipedia.org/wiki/Global_Trade_Item_Number) for more details. Left-padding of the gtin values is not required or encouraged.
+     *    
+     *
+     * @param fGtin java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     */
+    @Override
+    public void setGtin(java.lang.String fGtin) {
+        this.fGtin = Text.of(fGtin);
     }
 
     private Text fProductID;
@@ -620,10 +891,20 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     /**
      * The product identifier, such as ISBN. For example: ``` meta itemprop="productID" content="isbn:123-456-789" ```.
      *
+     * @param fProductID Text value to set.
      */
     @Override
     public void setProductID(Text fProductID) {
         this.fProductID = fProductID;
+    }
+    /**
+     * The product identifier, such as ISBN. For example: ``` meta itemprop="productID" content="isbn:123-456-789" ```.
+     *
+     * @param fProductID java.lang.String value to set.
+     */
+    @Override
+    public void setProductID(java.lang.String fProductID) {
+        this.fProductID = Text.of(fProductID);
     }
 
     private Text fCountryOfAssembly;
@@ -643,12 +924,24 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     /**
      * The place where the product was assembled.
      *
+     * @param fCountryOfAssembly Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/991">https://github.com/schemaorg/schemaorg/issues/991</a>
      */
     @Override
     public void setCountryOfAssembly(Text fCountryOfAssembly) {
         this.fCountryOfAssembly = fCountryOfAssembly;
+    }
+    /**
+     * The place where the product was assembled.
+     *
+     * @param fCountryOfAssembly java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/991">https://github.com/schemaorg/schemaorg/issues/991</a>
+     */
+    @Override
+    public void setCountryOfAssembly(java.lang.String fCountryOfAssembly) {
+        this.fCountryOfAssembly = Text.of(fCountryOfAssembly);
     }
 
     private Text fColor;
@@ -667,11 +960,22 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     /**
      * The color of the product.
      *
+     * @param fColor Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
     public void setColor(Text fColor) {
         this.fColor = fColor;
+    }
+    /**
+     * The color of the product.
+     *
+     * @param fColor java.lang.String value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setColor(java.lang.String fColor) {
+        this.fColor = Text.of(fColor);
     }
 
     private AggregateRating fAggregateRating;
@@ -689,6 +993,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     /**
      * The overall rating, based on a collection of reviews or ratings, of the item.
      *
+     * @param fAggregateRating AggregateRating value to set.
      */
     @Override
     public void setAggregateRating(AggregateRating fAggregateRating) {
@@ -711,13 +1016,21 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     /**
      * A pointer to another, functionally similar product (or multiple products).
      *
+     * @param fIsSimilarTo Service value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setIsSimilarTo(Object fIsSimilarTo) {
-        if(!(fIsSimilarTo instanceof Service) && !(fIsSimilarTo instanceof Product)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'isSimilarTo': " + fIsSimilarTo);
-        }
+    public void setIsSimilarTo(Service fIsSimilarTo) {
+        this.fIsSimilarTo = fIsSimilarTo;
+    }
+    /**
+     * A pointer to another, functionally similar product (or multiple products).
+     *
+     * @param fIsSimilarTo Product value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setIsSimilarTo(Product fIsSimilarTo) {
         this.fIsSimilarTo = fIsSimilarTo;
     }
 
@@ -737,13 +1050,21 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     /**
      * The depth of the item.
      *
+     * @param fDepth Distance value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setDepth(Object fDepth) {
-        if(!(fDepth instanceof Distance) && !(fDepth instanceof QuantitativeValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'depth': " + fDepth);
-        }
+    public void setDepth(Distance fDepth) {
+        this.fDepth = fDepth;
+    }
+    /**
+     * The depth of the item.
+     *
+     * @param fDepth QuantitativeValue value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setDepth(QuantitativeValue fDepth) {
         this.fDepth = fDepth;
     }
 
@@ -764,12 +1085,24 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     /**
      * The place where the item (typically [[Product]]) was last processed and tested before importation.
      *
+     * @param fCountryOfLastProcessing Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/991">https://github.com/schemaorg/schemaorg/issues/991</a>
      */
     @Override
     public void setCountryOfLastProcessing(Text fCountryOfLastProcessing) {
         this.fCountryOfLastProcessing = fCountryOfLastProcessing;
+    }
+    /**
+     * The place where the item (typically [[Product]]) was last processed and tested before importation.
+     *
+     * @param fCountryOfLastProcessing java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/991">https://github.com/schemaorg/schemaorg/issues/991</a>
+     */
+    @Override
+    public void setCountryOfLastProcessing(java.lang.String fCountryOfLastProcessing) {
+        this.fCountryOfLastProcessing = Text.of(fCountryOfLastProcessing);
     }
 
     private Object fIsVariantOf;
@@ -788,13 +1121,21 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     /**
      * Indicates the kind of product that this is a variant of. In the case of [[ProductModel]], this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a [[ProductGroup]], the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with [[ProductGroup]], this property can apply to any [[Product]] included in the group.
      *
+     * @param fIsVariantOf ProductModel value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setIsVariantOf(Object fIsVariantOf) {
-        if(!(fIsVariantOf instanceof ProductModel) && !(fIsVariantOf instanceof ProductGroup)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'isVariantOf': " + fIsVariantOf);
-        }
+    public void setIsVariantOf(ProductModel fIsVariantOf) {
+        this.fIsVariantOf = fIsVariantOf;
+    }
+    /**
+     * Indicates the kind of product that this is a variant of. In the case of [[ProductModel]], this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a [[ProductGroup]], the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with [[ProductGroup]], this property can apply to any [[Product]] included in the group.
+     *
+     * @param fIsVariantOf ProductGroup value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setIsVariantOf(ProductGroup fIsVariantOf) {
         this.fIsVariantOf = fIsVariantOf;
     }
 
@@ -813,10 +1154,20 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     /**
      * A slogan or motto associated with the item.
      *
+     * @param fSlogan Text value to set.
      */
     @Override
     public void setSlogan(Text fSlogan) {
         this.fSlogan = fSlogan;
+    }
+    /**
+     * A slogan or motto associated with the item.
+     *
+     * @param fSlogan java.lang.String value to set.
+     */
+    @Override
+    public void setSlogan(java.lang.String fSlogan) {
+        this.fSlogan = Text.of(fSlogan);
     }
 
     private Object fBrand;
@@ -834,12 +1185,19 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     /**
      * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
      *
+     * @param fBrand Organization value to set.
      */
     @Override
-    public void setBrand(Object fBrand) {
-        if(!(fBrand instanceof Organization) && !(fBrand instanceof Brand)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'brand': " + fBrand);
-        }
+    public void setBrand(Organization fBrand) {
+        this.fBrand = fBrand;
+    }
+    /**
+     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     *
+     * @param fBrand Brand value to set.
+     */
+    @Override
+    public void setBrand(Brand fBrand) {
         this.fBrand = fBrand;
     }
 
@@ -858,6 +1216,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     /**
      * The manufacturer of the product.
      *
+     * @param fManufacturer Organization value to set.
      */
     @Override
     public void setManufacturer(Organization fManufacturer) {
@@ -881,6 +1240,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     /**
      * A product measurement, for example the inseam of pants, the wheel size of a bicycle, or the gauge of a screw. Usually an exact measurement, but can also be a range of measurements for adjustable products, for example belts and ski bindings.
      *
+     * @param fHasMeasurement QuantitativeValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
      */
@@ -905,6 +1265,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     /**
      * A pointer to another product (or multiple products) for which this product is a consumable.
      *
+     * @param fIsConsumableFor Product value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
@@ -928,13 +1289,31 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     /**
      * An associated logo.
      *
+     * @param fLogo URL value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setLogo(Object fLogo) {
-        if(!(fLogo instanceof URL) && !(fLogo instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'logo': " + fLogo);
-        }
+    public void setLogo(URL fLogo) {
+        this.fLogo = fLogo;
+    }
+    /**
+     * An associated logo.
+     *
+     * @param fLogo java.net.URL value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setLogo(java.net.URL fLogo) {
+        this.fLogo = URL.of(fLogo);
+    }
+    /**
+     * An associated logo.
+     *
+     * @param fLogo ImageObject value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setLogo(ImageObject fLogo) {
         this.fLogo = fLogo;
     }
 
@@ -954,11 +1333,22 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     /**
      * The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
+     * @param fGtin8 Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
     public void setGtin8(Text fGtin8) {
         this.fGtin8 = fGtin8;
+    }
+    /**
+     * The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     *
+     * @param fGtin8 java.lang.String value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setGtin8(java.lang.String fGtin8) {
+        this.fGtin8 = Text.of(fGtin8);
     }
 
     private Text fSku;
@@ -977,11 +1367,22 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     /**
      * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
      *
+     * @param fSku Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
     public void setSku(Text fSku) {
         this.fSku = fSku;
+    }
+    /**
+     * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
+     *
+     * @param fSku java.lang.String value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setSku(java.lang.String fSku) {
+        this.fSku = Text.of(fSku);
     }
 
     private Text fInProductGroupWithID;
@@ -1001,12 +1402,24 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     /**
      * Indicates the [[productGroupID]] for a [[ProductGroup]] that this product [[isVariantOf]]. 
      *
+     * @param fInProductGroupWithID Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
     @Override
     public void setInProductGroupWithID(Text fInProductGroupWithID) {
         this.fInProductGroupWithID = fInProductGroupWithID;
+    }
+    /**
+     * Indicates the [[productGroupID]] for a [[ProductGroup]] that this product [[isVariantOf]]. 
+     *
+     * @param fInProductGroupWithID java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     */
+    @Override
+    public void setInProductGroupWithID(java.lang.String fInProductGroupWithID) {
+        this.fInProductGroupWithID = Text.of(fInProductGroupWithID);
     }
 
     private Object fModel;
@@ -1024,13 +1437,29 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     /**
      * The model of the product. Use with the URL of a ProductModel or a textual representation of the model identifier. The URL of the ProductModel can be from an external source. It is recommended to additionally provide strong product identifiers via the gtin8/gtin13/gtin14 and mpn properties.
      *
+     * @param fModel ProductModel value to set.
      */
     @Override
-    public void setModel(Object fModel) {
-        if(!(fModel instanceof ProductModel) && !(fModel instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'model': " + fModel);
-        }
+    public void setModel(ProductModel fModel) {
         this.fModel = fModel;
+    }
+    /**
+     * The model of the product. Use with the URL of a ProductModel or a textual representation of the model identifier. The URL of the ProductModel can be from an external source. It is recommended to additionally provide strong product identifiers via the gtin8/gtin13/gtin14 and mpn properties.
+     *
+     * @param fModel Text value to set.
+     */
+    @Override
+    public void setModel(Text fModel) {
+        this.fModel = fModel;
+    }
+    /**
+     * The model of the product. Use with the URL of a ProductModel or a textual representation of the model identifier. The URL of the ProductModel can be from an external source. It is recommended to additionally provide strong product identifiers via the gtin8/gtin13/gtin14 and mpn properties.
+     *
+     * @param fModel java.lang.String value to set.
+     */
+    @Override
+    public void setModel(java.lang.String fModel) {
+        this.fModel = Text.of(fModel);
     }
 
     private MerchantReturnPolicy fHasMerchantReturnPolicy;
@@ -1050,6 +1479,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     /**
      * Specifies a MerchantReturnPolicy that may be applicable.
      *
+     * @param fHasMerchantReturnPolicy MerchantReturnPolicy value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
      */
@@ -1074,11 +1504,22 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     /**
      * The release date of a product or product model. This can be used to distinguish the exact variant of a product.
      *
+     * @param fReleaseDate Date value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
     public void setReleaseDate(Date fReleaseDate) {
         this.fReleaseDate = fReleaseDate;
+    }
+    /**
+     * The release date of a product or product model. This can be used to distinguish the exact variant of a product.
+     *
+     * @param fReleaseDate java.time.LocalDate value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setReleaseDate(java.time.LocalDate fReleaseDate) {
+        this.fReleaseDate = Date.of(fReleaseDate);
     }
 
     private Text fGtin14;
@@ -1097,11 +1538,22 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     /**
      * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
+     * @param fGtin14 Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
     public void setGtin14(Text fGtin14) {
         this.fGtin14 = fGtin14;
+    }
+    /**
+     * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     *
+     * @param fGtin14 java.lang.String value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setGtin14(java.lang.String fGtin14) {
+        this.fGtin14 = Text.of(fGtin14);
     }
 
     private QuantitativeValue fWeight;
@@ -1120,6 +1572,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     /**
      * The weight of the product or person.
      *
+     * @param fWeight QuantitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
@@ -1144,14 +1597,56 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     /**
      * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
      *
+     * @param fSize QuantitativeValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
     @Override
-    public void setSize(Object fSize) {
-        if(!(fSize instanceof QuantitativeValue) && !(fSize instanceof DefinedTerm) && !(fSize instanceof Text) && !(fSize instanceof SizeSpecification)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'size': " + fSize);
-        }
+    public void setSize(QuantitativeValue fSize) {
+        this.fSize = fSize;
+    }
+    /**
+     * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
+     *
+     * @param fSize DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     */
+    @Override
+    public void setSize(DefinedTerm fSize) {
+        this.fSize = fSize;
+    }
+    /**
+     * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
+     *
+     * @param fSize Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     */
+    @Override
+    public void setSize(Text fSize) {
+        this.fSize = fSize;
+    }
+    /**
+     * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
+     *
+     * @param fSize java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     */
+    @Override
+    public void setSize(java.lang.String fSize) {
+        this.fSize = Text.of(fSize);
+    }
+    /**
+     * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
+     *
+     * @param fSize SizeSpecification value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     */
+    @Override
+    public void setSize(SizeSpecification fSize) {
         this.fSize = fSize;
     }
 
@@ -1170,6 +1665,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     /**
      * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
      *
+     * @param fAdditionalProperty PropertyValue value to set.
      */
     @Override
     public void setAdditionalProperty(PropertyValue fAdditionalProperty) {
@@ -1192,11 +1688,22 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     /**
      * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
+     * @param fGtin13 Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
     public void setGtin13(Text fGtin13) {
         this.fGtin13 = fGtin13;
+    }
+    /**
+     * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     *
+     * @param fGtin13 java.lang.String value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setGtin13(java.lang.String fGtin13) {
+        this.fGtin13 = Text.of(fGtin13);
     }
 
     private Review fReviews;
@@ -1214,6 +1721,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     /**
      * Review of the item.
      *
+     * @param fReviews Review value to set.
      */
     @Override
     public void setReviews(Review fReviews) {
@@ -1235,10 +1743,20 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     /**
      * Indicates whether this content is family friendly.
      *
+     * @param fIsFamilyFriendly Boolean value to set.
      */
     @Override
     public void setIsFamilyFriendly(Boolean fIsFamilyFriendly) {
         this.fIsFamilyFriendly = fIsFamilyFriendly;
+    }
+    /**
+     * Indicates whether this content is family friendly.
+     *
+     * @param fIsFamilyFriendly java.lang.Boolean value to set.
+     */
+    @Override
+    public void setIsFamilyFriendly(java.lang.Boolean fIsFamilyFriendly) {
+        this.fIsFamilyFriendly = Boolean.of(fIsFamilyFriendly);
     }
 
     private Object fIsRelatedTo;
@@ -1257,13 +1775,21 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     /**
      * A pointer to another, somehow related product (or multiple products).
      *
+     * @param fIsRelatedTo Service value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setIsRelatedTo(Object fIsRelatedTo) {
-        if(!(fIsRelatedTo instanceof Service) && !(fIsRelatedTo instanceof Product)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'isRelatedTo': " + fIsRelatedTo);
-        }
+    public void setIsRelatedTo(Service fIsRelatedTo) {
+        this.fIsRelatedTo = fIsRelatedTo;
+    }
+    /**
+     * A pointer to another, somehow related product (or multiple products).
+     *
+     * @param fIsRelatedTo Product value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setIsRelatedTo(Product fIsRelatedTo) {
         this.fIsRelatedTo = fIsRelatedTo;
     }
 
@@ -1282,13 +1808,29 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
+     * @param fMainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
-        }
+    public void setMainEntityOfPage(CreativeWork fMainEntityOfPage) {
         this.fMainEntityOfPage = fMainEntityOfPage;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param fMainEntityOfPage URL value to set.
+     */
+    @Override
+    public void setMainEntityOfPage(URL fMainEntityOfPage) {
+        this.fMainEntityOfPage = fMainEntityOfPage;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param fMainEntityOfPage java.net.URL value to set.
+     */
+    @Override
+    public void setMainEntityOfPage(java.net.URL fMainEntityOfPage) {
+        this.fMainEntityOfPage = URL.of(fMainEntityOfPage);
     }
 
     private Text fAlternateName;
@@ -1306,10 +1848,20 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     /**
      * An alias for the item.
      *
+     * @param fAlternateName Text value to set.
      */
     @Override
     public void setAlternateName(Text fAlternateName) {
         this.fAlternateName = fAlternateName;
+    }
+    /**
+     * An alias for the item.
+     *
+     * @param fAlternateName java.lang.String value to set.
+     */
+    @Override
+    public void setAlternateName(java.lang.String fAlternateName) {
+        this.fAlternateName = Text.of(fAlternateName);
     }
 
     private Text fName;
@@ -1327,10 +1879,20 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     /**
      * The name of the item.
      *
+     * @param fName Text value to set.
      */
     @Override
     public void setName(Text fName) {
         this.fName = fName;
+    }
+    /**
+     * The name of the item.
+     *
+     * @param fName java.lang.String value to set.
+     */
+    @Override
+    public void setName(java.lang.String fName) {
+        this.fName = Text.of(fName);
     }
 
     private Action fPotentialAction;
@@ -1348,6 +1910,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      *
+     * @param fPotentialAction Action value to set.
      */
     @Override
     public void setPotentialAction(Action fPotentialAction) {
@@ -1369,12 +1932,28 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
+     * @param fImage URL value to set.
      */
     @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
+    public void setImage(URL fImage) {
+        this.fImage = fImage;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param fImage java.net.URL value to set.
+     */
+    @Override
+    public void setImage(java.net.URL fImage) {
+        this.fImage = URL.of(fImage);
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param fImage ImageObject value to set.
+     */
+    @Override
+    public void setImage(ImageObject fImage) {
         this.fImage = fImage;
     }
 
@@ -1393,10 +1972,20 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     /**
      * URL of the item.
      *
+     * @param fUrl URL value to set.
      */
     @Override
     public void setUrl(URL fUrl) {
         this.fUrl = fUrl;
+    }
+    /**
+     * URL of the item.
+     *
+     * @param fUrl java.net.URL value to set.
+     */
+    @Override
+    public void setUrl(java.net.URL fUrl) {
+        this.fUrl = URL.of(fUrl);
     }
 
     private Text fDescription;
@@ -1414,10 +2003,20 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     /**
      * A description of the item.
      *
+     * @param fDescription Text value to set.
      */
     @Override
     public void setDescription(Text fDescription) {
         this.fDescription = fDescription;
+    }
+    /**
+     * A description of the item.
+     *
+     * @param fDescription java.lang.String value to set.
+     */
+    @Override
+    public void setDescription(java.lang.String fDescription) {
+        this.fDescription = Text.of(fDescription);
     }
 
     private Object fSubjectOf;
@@ -1436,13 +2035,21 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     /**
      * A CreativeWork or Event about this Thing.
      *
+     * @param fSubjectOf Event value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Object fSubjectOf) {
-        if(!(fSubjectOf instanceof Event) && !(fSubjectOf instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'subjectOf': " + fSubjectOf);
-        }
+    public void setSubjectOf(Event fSubjectOf) {
+        this.fSubjectOf = fSubjectOf;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @param fSubjectOf CreativeWork value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public void setSubjectOf(CreativeWork fSubjectOf) {
         this.fSubjectOf = fSubjectOf;
     }
 
@@ -1461,10 +2068,20 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
+     * @param fAdditionalType URL value to set.
      */
     @Override
     public void setAdditionalType(URL fAdditionalType) {
         this.fAdditionalType = fAdditionalType;
+    }
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @param fAdditionalType java.net.URL value to set.
+     */
+    @Override
+    public void setAdditionalType(java.net.URL fAdditionalType) {
+        this.fAdditionalType = URL.of(fAdditionalType);
     }
 
     private Text fDisambiguatingDescription;
@@ -1482,10 +2099,20 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
+     * @param fDisambiguatingDescription Text value to set.
      */
     @Override
     public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
         this.fDisambiguatingDescription = fDisambiguatingDescription;
+    }
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @param fDisambiguatingDescription java.lang.String value to set.
+     */
+    @Override
+    public void setDisambiguatingDescription(java.lang.String fDisambiguatingDescription) {
+        this.fDisambiguatingDescription = Text.of(fDisambiguatingDescription);
     }
 
     private URL fSameAs;
@@ -1503,10 +2130,20 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
+     * @param fSameAs URL value to set.
      */
     @Override
     public void setSameAs(URL fSameAs) {
         this.fSameAs = fSameAs;
+    }
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @param fSameAs java.net.URL value to set.
+     */
+    @Override
+    public void setSameAs(java.net.URL fSameAs) {
+        this.fSameAs = URL.of(fSameAs);
     }
 
     private Object fIdentifier;
@@ -1526,12 +2163,50 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
+     * @param fIdentifier URL value to set.
      */
     @Override
-    public void setIdentifier(Object fIdentifier) {
-        if(!(fIdentifier instanceof URL) && !(fIdentifier instanceof Text) && !(fIdentifier instanceof PropertyValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
-        }
+    public void setIdentifier(URL fIdentifier) {
+        this.fIdentifier = fIdentifier;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param fIdentifier java.net.URL value to set.
+     */
+    @Override
+    public void setIdentifier(java.net.URL fIdentifier) {
+        this.fIdentifier = URL.of(fIdentifier);
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param fIdentifier Text value to set.
+     */
+    @Override
+    public void setIdentifier(Text fIdentifier) {
+        this.fIdentifier = fIdentifier;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param fIdentifier java.lang.String value to set.
+     */
+    @Override
+    public void setIdentifier(java.lang.String fIdentifier) {
+        this.fIdentifier = Text.of(fIdentifier);
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param fIdentifier PropertyValue value to set.
+     */
+    @Override
+    public void setIdentifier(PropertyValue fIdentifier) {
         this.fIdentifier = fIdentifier;
     }
 }

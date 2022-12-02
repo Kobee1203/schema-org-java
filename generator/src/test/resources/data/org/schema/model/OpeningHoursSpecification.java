@@ -31,9 +31,17 @@ public interface OpeningHoursSpecification extends StructuredValue {
     /**
      * The closing hour of the place or service on the given day(s) of the week.
      *
+     * @param fCloses Time value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     void setCloses(Time fCloses);
+    /**
+     * The closing hour of the place or service on the given day(s) of the week.
+     *
+     * @param fCloses java.time.LocalTime value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    void setCloses(java.time.LocalTime fCloses);
 
     /**
      * The day of the week for which these opening hours are valid.
@@ -46,6 +54,7 @@ public interface OpeningHoursSpecification extends StructuredValue {
     /**
      * The day of the week for which these opening hours are valid.
      *
+     * @param fDayOfWeek DayOfWeek value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     void setDayOfWeek(DayOfWeek fDayOfWeek);
@@ -61,9 +70,31 @@ public interface OpeningHoursSpecification extends StructuredValue {
     /**
      * The date when the item becomes valid.
      *
+     * @param fValidFrom DateTime value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setValidFrom(Object fValidFrom);
+    void setValidFrom(DateTime fValidFrom);
+    /**
+     * The date when the item becomes valid.
+     *
+     * @param fValidFrom java.time.LocalDateTime value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    void setValidFrom(java.time.LocalDateTime fValidFrom);
+    /**
+     * The date when the item becomes valid.
+     *
+     * @param fValidFrom Date value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    void setValidFrom(Date fValidFrom);
+    /**
+     * The date when the item becomes valid.
+     *
+     * @param fValidFrom java.time.LocalDate value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    void setValidFrom(java.time.LocalDate fValidFrom);
 
     /**
      * The opening hour of the place or service on the given day(s) of the week.
@@ -76,9 +107,17 @@ public interface OpeningHoursSpecification extends StructuredValue {
     /**
      * The opening hour of the place or service on the given day(s) of the week.
      *
+     * @param fOpens Time value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     void setOpens(Time fOpens);
+    /**
+     * The opening hour of the place or service on the given day(s) of the week.
+     *
+     * @param fOpens java.time.LocalTime value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    void setOpens(java.time.LocalTime fOpens);
 
     /**
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
@@ -91,7 +130,29 @@ public interface OpeningHoursSpecification extends StructuredValue {
     /**
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
      *
+     * @param fValidThrough DateTime value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setValidThrough(Object fValidThrough);
+    void setValidThrough(DateTime fValidThrough);
+    /**
+     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
+     *
+     * @param fValidThrough java.time.LocalDateTime value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    void setValidThrough(java.time.LocalDateTime fValidThrough);
+    /**
+     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
+     *
+     * @param fValidThrough Date value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    void setValidThrough(Date fValidThrough);
+    /**
+     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
+     *
+     * @param fValidThrough java.time.LocalDate value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    void setValidThrough(java.time.LocalDate fValidThrough);
 }

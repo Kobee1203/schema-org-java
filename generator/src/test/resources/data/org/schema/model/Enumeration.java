@@ -27,7 +27,22 @@ public interface Enumeration extends Intangible {
     /**
      * Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
      *
+     * @param fSupersededBy Enumeration value to set.
      * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
      */
-    void setSupersededBy(Object fSupersededBy);
+    void setSupersededBy(Enumeration fSupersededBy);
+    /**
+     * Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
+     *
+     * @param fSupersededBy Class value to set.
+     * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
+     */
+    void setSupersededBy(Class fSupersededBy);
+    /**
+     * Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
+     *
+     * @param fSupersededBy Property value to set.
+     * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
+     */
+    void setSupersededBy(Property fSupersededBy);
 }

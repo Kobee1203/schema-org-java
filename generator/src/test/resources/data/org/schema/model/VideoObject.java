@@ -31,10 +31,19 @@ public interface VideoObject extends MediaObject {
     /**
      * Represents textual captioning from a [[MediaObject]], e.g. text of a 'meme'.
      *
+     * @param fEmbeddedTextCaption Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
     void setEmbeddedTextCaption(Text fEmbeddedTextCaption);
+    /**
+     * Represents textual captioning from a [[MediaObject]], e.g. text of a 'meme'.
+     *
+     * @param fEmbeddedTextCaption java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     */
+    void setEmbeddedTextCaption(java.lang.String fEmbeddedTextCaption);
 
     /**
      * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
@@ -46,6 +55,7 @@ public interface VideoObject extends MediaObject {
     /**
      * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
      *
+     * @param fDirector Person value to set.
      */
     void setDirector(Person fDirector);
 
@@ -59,6 +69,7 @@ public interface VideoObject extends MediaObject {
     /**
      * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
      *
+     * @param fActor Person value to set.
      */
     void setActor(Person fActor);
 
@@ -72,8 +83,21 @@ public interface VideoObject extends MediaObject {
     /**
      * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
      *
+     * @param fCaption Text value to set.
      */
-    void setCaption(Object fCaption);
+    void setCaption(Text fCaption);
+    /**
+     * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
+     *
+     * @param fCaption java.lang.String value to set.
+     */
+    void setCaption(java.lang.String fCaption);
+    /**
+     * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
+     *
+     * @param fCaption MediaObject value to set.
+     */
+    void setCaption(MediaObject fCaption);
 
     /**
      * Thumbnail image for an image or video.
@@ -85,6 +109,7 @@ public interface VideoObject extends MediaObject {
     /**
      * Thumbnail image for an image or video.
      *
+     * @param fThumbnail ImageObject value to set.
      */
     void setThumbnail(ImageObject fThumbnail);
 
@@ -98,8 +123,15 @@ public interface VideoObject extends MediaObject {
     /**
      * If this MediaObject is an AudioObject or VideoObject, the transcript of that object.
      *
+     * @param fTranscript Text value to set.
      */
     void setTranscript(Text fTranscript);
+    /**
+     * If this MediaObject is an AudioObject or VideoObject, the transcript of that object.
+     *
+     * @param fTranscript java.lang.String value to set.
+     */
+    void setTranscript(java.lang.String fTranscript);
 
     /**
      * The quality of the video.
@@ -111,8 +143,15 @@ public interface VideoObject extends MediaObject {
     /**
      * The quality of the video.
      *
+     * @param fVideoQuality Text value to set.
      */
     void setVideoQuality(Text fVideoQuality);
+    /**
+     * The quality of the video.
+     *
+     * @param fVideoQuality java.lang.String value to set.
+     */
+    void setVideoQuality(java.lang.String fVideoQuality);
 
     /**
      * The frame size of the video.
@@ -124,8 +163,15 @@ public interface VideoObject extends MediaObject {
     /**
      * The frame size of the video.
      *
+     * @param fVideoFrameSize Text value to set.
      */
     void setVideoFrameSize(Text fVideoFrameSize);
+    /**
+     * The frame size of the video.
+     *
+     * @param fVideoFrameSize java.lang.String value to set.
+     */
+    void setVideoFrameSize(java.lang.String fVideoFrameSize);
 
     /**
      * An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
@@ -137,6 +183,7 @@ public interface VideoObject extends MediaObject {
     /**
      * An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
      *
+     * @param fActors Person value to set.
      */
     void setActors(Person fActors);
 
@@ -150,8 +197,15 @@ public interface VideoObject extends MediaObject {
     /**
      * The composer of the soundtrack.
      *
+     * @param fMusicBy Person value to set.
      */
-    void setMusicBy(Object fMusicBy);
+    void setMusicBy(Person fMusicBy);
+    /**
+     * The composer of the soundtrack.
+     *
+     * @param fMusicBy MusicGroup value to set.
+     */
+    void setMusicBy(MusicGroup fMusicBy);
 
     /**
      * A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
@@ -163,6 +217,7 @@ public interface VideoObject extends MediaObject {
     /**
      * A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
      *
+     * @param fDirectors Person value to set.
      */
     void setDirectors(Person fDirectors);
 }

@@ -39,18 +39,21 @@ public enum {{this.name}}Enum implements {{this.name}} {
 {{/each}}
 
 {{#each this.allProperties}}
+{{#with this.accessor}}
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public {{&this.returnFieldType}} get{{capitalizeFirst this.name}}() {
+    public {{&this.returnFieldType}} {{this.methodName}}() {
         return null;
     }
+{{/with}}
 
+{{#each this.mutators}}
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void set{{capitalizeFirst this.name}}({{&this.paramFieldType}} {{this.fieldName}}) {
+    public void {{this.methodName}}({{this.paramType}} {{../this.field.fieldName}}) {
         throw new java.lang.IllegalAccessError("Unable to set property '{{this.name}}': method not allowed for enum {{../this.name}}Enum");
     }
-
+{{/each}}
 {{/each}}
 }
 {{/with}}

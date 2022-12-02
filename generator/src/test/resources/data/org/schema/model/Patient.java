@@ -27,6 +27,7 @@ public interface Patient extends MedicalAudience, Person {
     /**
      * Specifying the health condition(s) of a patient, medical study, or other target audience.
      *
+     * @param fHealthCondition MedicalCondition value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setHealthCondition(MedicalCondition fHealthCondition);
@@ -42,6 +43,7 @@ public interface Patient extends MedicalAudience, Person {
     /**
      * Specifying a drug or medicine used in a medication procedure.
      *
+     * @param fDrug Drug value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setDrug(Drug fDrug);
@@ -57,6 +59,7 @@ public interface Patient extends MedicalAudience, Person {
     /**
      * One or more alternative conditions considered in the differential diagnosis process as output of a diagnosis process.
      *
+     * @param fDiagnosis MedicalCondition value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setDiagnosis(MedicalCondition fDiagnosis);

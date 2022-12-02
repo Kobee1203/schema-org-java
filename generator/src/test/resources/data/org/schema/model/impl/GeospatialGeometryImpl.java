@@ -43,12 +43,19 @@ public class GeospatialGeometryImpl extends com.weedow.schemaorg.commons.model.J
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. "a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
+     * @param fGeoContains Place value to set.
      */
     @Override
-    public void setGeoContains(Object fGeoContains) {
-        if(!(fGeoContains instanceof Place) && !(fGeoContains instanceof GeospatialGeometry)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoContains': " + fGeoContains);
-        }
+    public void setGeoContains(Place fGeoContains) {
+        this.fGeoContains = fGeoContains;
+    }
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. "a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @param fGeoContains GeospatialGeometry value to set.
+     */
+    @Override
+    public void setGeoContains(GeospatialGeometry fGeoContains) {
         this.fGeoContains = fGeoContains;
     }
 
@@ -67,12 +74,19 @@ public class GeospatialGeometryImpl extends com.weedow.schemaorg.commons.model.J
     /**
      * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
+     * @param fGeoIntersects GeospatialGeometry value to set.
      */
     @Override
-    public void setGeoIntersects(Object fGeoIntersects) {
-        if(!(fGeoIntersects instanceof GeospatialGeometry) && !(fGeoIntersects instanceof Place)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoIntersects': " + fGeoIntersects);
-        }
+    public void setGeoIntersects(GeospatialGeometry fGeoIntersects) {
+        this.fGeoIntersects = fGeoIntersects;
+    }
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @param fGeoIntersects Place value to set.
+     */
+    @Override
+    public void setGeoIntersects(Place fGeoIntersects) {
         this.fGeoIntersects = fGeoIntersects;
     }
 
@@ -91,12 +105,19 @@ public class GeospatialGeometryImpl extends com.weedow.schemaorg.commons.model.J
     /**
      * Represents spatial relations in which two geometries (or the places they represent) touch: they have at least one boundary point in common, but no interior points." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM) )
      *
+     * @param fGeoTouches Place value to set.
      */
     @Override
-    public void setGeoTouches(Object fGeoTouches) {
-        if(!(fGeoTouches instanceof Place) && !(fGeoTouches instanceof GeospatialGeometry)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoTouches': " + fGeoTouches);
-        }
+    public void setGeoTouches(Place fGeoTouches) {
+        this.fGeoTouches = fGeoTouches;
+    }
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) touch: they have at least one boundary point in common, but no interior points." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM) )
+     *
+     * @param fGeoTouches GeospatialGeometry value to set.
+     */
+    @Override
+    public void setGeoTouches(GeospatialGeometry fGeoTouches) {
         this.fGeoTouches = fGeoTouches;
     }
 
@@ -115,12 +136,19 @@ public class GeospatialGeometryImpl extends com.weedow.schemaorg.commons.model.J
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
+     * @param fGeoCoveredBy Place value to set.
      */
     @Override
-    public void setGeoCoveredBy(Object fGeoCoveredBy) {
-        if(!(fGeoCoveredBy instanceof Place) && !(fGeoCoveredBy instanceof GeospatialGeometry)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoCoveredBy': " + fGeoCoveredBy);
-        }
+    public void setGeoCoveredBy(Place fGeoCoveredBy) {
+        this.fGeoCoveredBy = fGeoCoveredBy;
+    }
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @param fGeoCoveredBy GeospatialGeometry value to set.
+     */
+    @Override
+    public void setGeoCoveredBy(GeospatialGeometry fGeoCoveredBy) {
         this.fGeoCoveredBy = fGeoCoveredBy;
     }
 
@@ -139,12 +167,19 @@ public class GeospatialGeometryImpl extends com.weedow.schemaorg.commons.model.J
     /**
      * Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). "Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other" (a symmetric relationship)
      *
+     * @param fGeoEquals Place value to set.
      */
     @Override
-    public void setGeoEquals(Object fGeoEquals) {
-        if(!(fGeoEquals instanceof Place) && !(fGeoEquals instanceof GeospatialGeometry)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoEquals': " + fGeoEquals);
-        }
+    public void setGeoEquals(Place fGeoEquals) {
+        this.fGeoEquals = fGeoEquals;
+    }
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). "Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other" (a symmetric relationship)
+     *
+     * @param fGeoEquals GeospatialGeometry value to set.
+     */
+    @Override
+    public void setGeoEquals(GeospatialGeometry fGeoEquals) {
         this.fGeoEquals = fGeoEquals;
     }
 
@@ -163,12 +198,19 @@ public class GeospatialGeometryImpl extends com.weedow.schemaorg.commons.model.J
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: "a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
+     * @param fGeoCrosses GeospatialGeometry value to set.
      */
     @Override
-    public void setGeoCrosses(Object fGeoCrosses) {
-        if(!(fGeoCrosses instanceof GeospatialGeometry) && !(fGeoCrosses instanceof Place)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoCrosses': " + fGeoCrosses);
-        }
+    public void setGeoCrosses(GeospatialGeometry fGeoCrosses) {
+        this.fGeoCrosses = fGeoCrosses;
+    }
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: "a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @param fGeoCrosses Place value to set.
+     */
+    @Override
+    public void setGeoCrosses(Place fGeoCrosses) {
         this.fGeoCrosses = fGeoCrosses;
     }
 
@@ -187,12 +229,19 @@ public class GeospatialGeometryImpl extends com.weedow.schemaorg.commons.model.J
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. "Every point of b is a point of (the interior or boundary of) a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
+     * @param fGeoCovers GeospatialGeometry value to set.
      */
     @Override
-    public void setGeoCovers(Object fGeoCovers) {
-        if(!(fGeoCovers instanceof GeospatialGeometry) && !(fGeoCovers instanceof Place)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoCovers': " + fGeoCovers);
-        }
+    public void setGeoCovers(GeospatialGeometry fGeoCovers) {
+        this.fGeoCovers = fGeoCovers;
+    }
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. "Every point of b is a point of (the interior or boundary of) a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @param fGeoCovers Place value to set.
+     */
+    @Override
+    public void setGeoCovers(Place fGeoCovers) {
         this.fGeoCovers = fGeoCovers;
     }
 
@@ -211,12 +260,19 @@ public class GeospatialGeometryImpl extends com.weedow.schemaorg.commons.model.J
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
+     * @param fGeoWithin Place value to set.
      */
     @Override
-    public void setGeoWithin(Object fGeoWithin) {
-        if(!(fGeoWithin instanceof Place) && !(fGeoWithin instanceof GeospatialGeometry)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoWithin': " + fGeoWithin);
-        }
+    public void setGeoWithin(Place fGeoWithin) {
+        this.fGeoWithin = fGeoWithin;
+    }
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @param fGeoWithin GeospatialGeometry value to set.
+     */
+    @Override
+    public void setGeoWithin(GeospatialGeometry fGeoWithin) {
         this.fGeoWithin = fGeoWithin;
     }
 
@@ -235,12 +291,19 @@ public class GeospatialGeometryImpl extends com.weedow.schemaorg.commons.model.J
     /**
      * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM))
      *
+     * @param fGeoDisjoint GeospatialGeometry value to set.
      */
     @Override
-    public void setGeoDisjoint(Object fGeoDisjoint) {
-        if(!(fGeoDisjoint instanceof GeospatialGeometry) && !(fGeoDisjoint instanceof Place)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoDisjoint': " + fGeoDisjoint);
-        }
+    public void setGeoDisjoint(GeospatialGeometry fGeoDisjoint) {
+        this.fGeoDisjoint = fGeoDisjoint;
+    }
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM))
+     *
+     * @param fGeoDisjoint Place value to set.
+     */
+    @Override
+    public void setGeoDisjoint(Place fGeoDisjoint) {
         this.fGeoDisjoint = fGeoDisjoint;
     }
 
@@ -259,12 +322,19 @@ public class GeospatialGeometryImpl extends com.weedow.schemaorg.commons.model.J
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
+     * @param fGeoOverlaps GeospatialGeometry value to set.
      */
     @Override
-    public void setGeoOverlaps(Object fGeoOverlaps) {
-        if(!(fGeoOverlaps instanceof GeospatialGeometry) && !(fGeoOverlaps instanceof Place)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoOverlaps': " + fGeoOverlaps);
-        }
+    public void setGeoOverlaps(GeospatialGeometry fGeoOverlaps) {
+        this.fGeoOverlaps = fGeoOverlaps;
+    }
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @param fGeoOverlaps Place value to set.
+     */
+    @Override
+    public void setGeoOverlaps(Place fGeoOverlaps) {
         this.fGeoOverlaps = fGeoOverlaps;
     }
 
@@ -283,13 +353,29 @@ public class GeospatialGeometryImpl extends com.weedow.schemaorg.commons.model.J
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
+     * @param fMainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
-        }
+    public void setMainEntityOfPage(CreativeWork fMainEntityOfPage) {
         this.fMainEntityOfPage = fMainEntityOfPage;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param fMainEntityOfPage URL value to set.
+     */
+    @Override
+    public void setMainEntityOfPage(URL fMainEntityOfPage) {
+        this.fMainEntityOfPage = fMainEntityOfPage;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param fMainEntityOfPage java.net.URL value to set.
+     */
+    @Override
+    public void setMainEntityOfPage(java.net.URL fMainEntityOfPage) {
+        this.fMainEntityOfPage = URL.of(fMainEntityOfPage);
     }
 
     private Text fAlternateName;
@@ -307,10 +393,20 @@ public class GeospatialGeometryImpl extends com.weedow.schemaorg.commons.model.J
     /**
      * An alias for the item.
      *
+     * @param fAlternateName Text value to set.
      */
     @Override
     public void setAlternateName(Text fAlternateName) {
         this.fAlternateName = fAlternateName;
+    }
+    /**
+     * An alias for the item.
+     *
+     * @param fAlternateName java.lang.String value to set.
+     */
+    @Override
+    public void setAlternateName(java.lang.String fAlternateName) {
+        this.fAlternateName = Text.of(fAlternateName);
     }
 
     private Text fName;
@@ -328,10 +424,20 @@ public class GeospatialGeometryImpl extends com.weedow.schemaorg.commons.model.J
     /**
      * The name of the item.
      *
+     * @param fName Text value to set.
      */
     @Override
     public void setName(Text fName) {
         this.fName = fName;
+    }
+    /**
+     * The name of the item.
+     *
+     * @param fName java.lang.String value to set.
+     */
+    @Override
+    public void setName(java.lang.String fName) {
+        this.fName = Text.of(fName);
     }
 
     private Action fPotentialAction;
@@ -349,6 +455,7 @@ public class GeospatialGeometryImpl extends com.weedow.schemaorg.commons.model.J
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      *
+     * @param fPotentialAction Action value to set.
      */
     @Override
     public void setPotentialAction(Action fPotentialAction) {
@@ -370,12 +477,28 @@ public class GeospatialGeometryImpl extends com.weedow.schemaorg.commons.model.J
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
+     * @param fImage URL value to set.
      */
     @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
+    public void setImage(URL fImage) {
+        this.fImage = fImage;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param fImage java.net.URL value to set.
+     */
+    @Override
+    public void setImage(java.net.URL fImage) {
+        this.fImage = URL.of(fImage);
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param fImage ImageObject value to set.
+     */
+    @Override
+    public void setImage(ImageObject fImage) {
         this.fImage = fImage;
     }
 
@@ -394,10 +517,20 @@ public class GeospatialGeometryImpl extends com.weedow.schemaorg.commons.model.J
     /**
      * URL of the item.
      *
+     * @param fUrl URL value to set.
      */
     @Override
     public void setUrl(URL fUrl) {
         this.fUrl = fUrl;
+    }
+    /**
+     * URL of the item.
+     *
+     * @param fUrl java.net.URL value to set.
+     */
+    @Override
+    public void setUrl(java.net.URL fUrl) {
+        this.fUrl = URL.of(fUrl);
     }
 
     private Text fDescription;
@@ -415,10 +548,20 @@ public class GeospatialGeometryImpl extends com.weedow.schemaorg.commons.model.J
     /**
      * A description of the item.
      *
+     * @param fDescription Text value to set.
      */
     @Override
     public void setDescription(Text fDescription) {
         this.fDescription = fDescription;
+    }
+    /**
+     * A description of the item.
+     *
+     * @param fDescription java.lang.String value to set.
+     */
+    @Override
+    public void setDescription(java.lang.String fDescription) {
+        this.fDescription = Text.of(fDescription);
     }
 
     private Object fSubjectOf;
@@ -437,13 +580,21 @@ public class GeospatialGeometryImpl extends com.weedow.schemaorg.commons.model.J
     /**
      * A CreativeWork or Event about this Thing.
      *
+     * @param fSubjectOf Event value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Object fSubjectOf) {
-        if(!(fSubjectOf instanceof Event) && !(fSubjectOf instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'subjectOf': " + fSubjectOf);
-        }
+    public void setSubjectOf(Event fSubjectOf) {
+        this.fSubjectOf = fSubjectOf;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @param fSubjectOf CreativeWork value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public void setSubjectOf(CreativeWork fSubjectOf) {
         this.fSubjectOf = fSubjectOf;
     }
 
@@ -462,10 +613,20 @@ public class GeospatialGeometryImpl extends com.weedow.schemaorg.commons.model.J
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
+     * @param fAdditionalType URL value to set.
      */
     @Override
     public void setAdditionalType(URL fAdditionalType) {
         this.fAdditionalType = fAdditionalType;
+    }
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @param fAdditionalType java.net.URL value to set.
+     */
+    @Override
+    public void setAdditionalType(java.net.URL fAdditionalType) {
+        this.fAdditionalType = URL.of(fAdditionalType);
     }
 
     private Text fDisambiguatingDescription;
@@ -483,10 +644,20 @@ public class GeospatialGeometryImpl extends com.weedow.schemaorg.commons.model.J
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
+     * @param fDisambiguatingDescription Text value to set.
      */
     @Override
     public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
         this.fDisambiguatingDescription = fDisambiguatingDescription;
+    }
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @param fDisambiguatingDescription java.lang.String value to set.
+     */
+    @Override
+    public void setDisambiguatingDescription(java.lang.String fDisambiguatingDescription) {
+        this.fDisambiguatingDescription = Text.of(fDisambiguatingDescription);
     }
 
     private URL fSameAs;
@@ -504,10 +675,20 @@ public class GeospatialGeometryImpl extends com.weedow.schemaorg.commons.model.J
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
+     * @param fSameAs URL value to set.
      */
     @Override
     public void setSameAs(URL fSameAs) {
         this.fSameAs = fSameAs;
+    }
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @param fSameAs java.net.URL value to set.
+     */
+    @Override
+    public void setSameAs(java.net.URL fSameAs) {
+        this.fSameAs = URL.of(fSameAs);
     }
 
     private Object fIdentifier;
@@ -527,12 +708,50 @@ public class GeospatialGeometryImpl extends com.weedow.schemaorg.commons.model.J
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
+     * @param fIdentifier URL value to set.
      */
     @Override
-    public void setIdentifier(Object fIdentifier) {
-        if(!(fIdentifier instanceof URL) && !(fIdentifier instanceof Text) && !(fIdentifier instanceof PropertyValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
-        }
+    public void setIdentifier(URL fIdentifier) {
+        this.fIdentifier = fIdentifier;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param fIdentifier java.net.URL value to set.
+     */
+    @Override
+    public void setIdentifier(java.net.URL fIdentifier) {
+        this.fIdentifier = URL.of(fIdentifier);
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param fIdentifier Text value to set.
+     */
+    @Override
+    public void setIdentifier(Text fIdentifier) {
+        this.fIdentifier = fIdentifier;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param fIdentifier java.lang.String value to set.
+     */
+    @Override
+    public void setIdentifier(java.lang.String fIdentifier) {
+        this.fIdentifier = Text.of(fIdentifier);
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param fIdentifier PropertyValue value to set.
+     */
+    @Override
+    public void setIdentifier(PropertyValue fIdentifier) {
         this.fIdentifier = fIdentifier;
     }
 }

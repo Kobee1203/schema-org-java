@@ -26,8 +26,15 @@ public interface DeliveryEvent extends Event {
     /**
      * Password, PIN, or access code needed for delivery (e.g. from a locker).
      *
+     * @param fAccessCode Text value to set.
      */
     void setAccessCode(Text fAccessCode);
+    /**
+     * Password, PIN, or access code needed for delivery (e.g. from a locker).
+     *
+     * @param fAccessCode java.lang.String value to set.
+     */
+    void setAccessCode(java.lang.String fAccessCode);
 
     /**
      * After this date, the item will no longer be available for pickup.
@@ -39,8 +46,15 @@ public interface DeliveryEvent extends Event {
     /**
      * After this date, the item will no longer be available for pickup.
      *
+     * @param fAvailableThrough DateTime value to set.
      */
     void setAvailableThrough(DateTime fAvailableThrough);
+    /**
+     * After this date, the item will no longer be available for pickup.
+     *
+     * @param fAvailableThrough java.time.LocalDateTime value to set.
+     */
+    void setAvailableThrough(java.time.LocalDateTime fAvailableThrough);
 
     /**
      * Method used for delivery or shipping.
@@ -52,6 +66,7 @@ public interface DeliveryEvent extends Event {
     /**
      * Method used for delivery or shipping.
      *
+     * @param fHasDeliveryMethod DeliveryMethod value to set.
      */
     void setHasDeliveryMethod(DeliveryMethod fHasDeliveryMethod);
 
@@ -65,6 +80,13 @@ public interface DeliveryEvent extends Event {
     /**
      * When the item is available for pickup from the store, locker, etc.
      *
+     * @param fAvailableFrom DateTime value to set.
      */
     void setAvailableFrom(DateTime fAvailableFrom);
+    /**
+     * When the item is available for pickup from the store, locker, etc.
+     *
+     * @param fAvailableFrom java.time.LocalDateTime value to set.
+     */
+    void setAvailableFrom(java.time.LocalDateTime fAvailableFrom);
 }

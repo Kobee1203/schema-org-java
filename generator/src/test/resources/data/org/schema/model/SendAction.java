@@ -28,8 +28,27 @@ public interface SendAction extends TransferAction {
     /**
      * A sub property of participant. The participant who is at the receiving end of the action.
      *
+     * @param fRecipient Person value to set.
      */
-    void setRecipient(Object fRecipient);
+    void setRecipient(Person fRecipient);
+    /**
+     * A sub property of participant. The participant who is at the receiving end of the action.
+     *
+     * @param fRecipient Audience value to set.
+     */
+    void setRecipient(Audience fRecipient);
+    /**
+     * A sub property of participant. The participant who is at the receiving end of the action.
+     *
+     * @param fRecipient ContactPoint value to set.
+     */
+    void setRecipient(ContactPoint fRecipient);
+    /**
+     * A sub property of participant. The participant who is at the receiving end of the action.
+     *
+     * @param fRecipient Organization value to set.
+     */
+    void setRecipient(Organization fRecipient);
 
     /**
      * A sub property of instrument. The method of delivery.
@@ -41,6 +60,7 @@ public interface SendAction extends TransferAction {
     /**
      * A sub property of instrument. The method of delivery.
      *
+     * @param fDeliveryMethod DeliveryMethod value to set.
      */
     void setDeliveryMethod(DeliveryMethod fDeliveryMethod);
 }

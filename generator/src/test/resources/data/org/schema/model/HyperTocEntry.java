@@ -30,6 +30,7 @@ public interface HyperTocEntry extends CreativeWork {
     /**
      * A [[HyperTocEntry]] can have a [[tocContinuation]] indicated, which is another [[HyperTocEntry]] that would be the default next item to play or render.
      *
+     * @param fTocContinuation HyperTocEntry value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2766">https://github.com/schemaorg/schemaorg/issues/2766</a>
      */
@@ -45,6 +46,7 @@ public interface HyperTocEntry extends CreativeWork {
     /**
      * A media object that encodes this CreativeWork. This property is a synonym for encoding.
      *
+     * @param fAssociatedMedia MediaObject value to set.
      */
     void setAssociatedMedia(MediaObject fAssociatedMedia);
 
@@ -60,8 +62,17 @@ public interface HyperTocEntry extends CreativeWork {
     /**
      * Text of an utterances (spoken words, lyrics etc.) that occurs at a certain section of a media object, represented as a [[HyperTocEntry]].
      *
+     * @param fUtterances Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2766">https://github.com/schemaorg/schemaorg/issues/2766</a>
      */
     void setUtterances(Text fUtterances);
+    /**
+     * Text of an utterances (spoken words, lyrics etc.) that occurs at a certain section of a media object, represented as a [[HyperTocEntry]].
+     *
+     * @param fUtterances java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2766">https://github.com/schemaorg/schemaorg/issues/2766</a>
+     */
+    void setUtterances(java.lang.String fUtterances);
 }

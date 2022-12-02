@@ -24,8 +24,15 @@ public interface TechArticle extends Article {
     /**
      * Prerequisites needed to fulfill steps in article.
      *
+     * @param fDependencies Text value to set.
      */
     void setDependencies(Text fDependencies);
+    /**
+     * Prerequisites needed to fulfill steps in article.
+     *
+     * @param fDependencies java.lang.String value to set.
+     */
+    void setDependencies(java.lang.String fDependencies);
 
     /**
      * Proficiency needed for this content; expected values: 'Beginner', 'Expert'.
@@ -37,6 +44,13 @@ public interface TechArticle extends Article {
     /**
      * Proficiency needed for this content; expected values: 'Beginner', 'Expert'.
      *
+     * @param fProficiencyLevel Text value to set.
      */
     void setProficiencyLevel(Text fProficiencyLevel);
+    /**
+     * Proficiency needed for this content; expected values: 'Beginner', 'Expert'.
+     *
+     * @param fProficiencyLevel java.lang.String value to set.
+     */
+    void setProficiencyLevel(java.lang.String fProficiencyLevel);
 }

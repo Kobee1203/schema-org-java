@@ -24,6 +24,7 @@ public interface UpdateAction extends Action {
     /**
      * A sub property of object. The collection target of the action.
      *
+     * @param fTargetCollection Thing value to set.
      */
     void setTargetCollection(Thing fTargetCollection);
 
@@ -37,6 +38,7 @@ public interface UpdateAction extends Action {
     /**
      * A sub property of object. The collection target of the action.
      *
+     * @param fCollection Thing value to set.
      */
     void setCollection(Thing fCollection);
 }

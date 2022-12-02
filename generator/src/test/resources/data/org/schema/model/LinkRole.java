@@ -29,10 +29,19 @@ public interface LinkRole extends Role {
     /**
      * Indicates the relationship type of a Web link. 
      *
+     * @param fLinkRelationship Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1045">https://github.com/schemaorg/schemaorg/issues/1045</a>
      */
     void setLinkRelationship(Text fLinkRelationship);
+    /**
+     * Indicates the relationship type of a Web link. 
+     *
+     * @param fLinkRelationship java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1045">https://github.com/schemaorg/schemaorg/issues/1045</a>
+     */
+    void setLinkRelationship(java.lang.String fLinkRelationship);
 
     /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
@@ -45,7 +54,22 @@ public interface LinkRole extends Role {
     /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
      *
+     * @param fInLanguage Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
      */
-    void setInLanguage(Object fInLanguage);
+    void setInLanguage(Text fInLanguage);
+    /**
+     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     *
+     * @param fInLanguage java.lang.String value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
+     */
+    void setInLanguage(java.lang.String fInLanguage);
+    /**
+     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     *
+     * @param fInLanguage Language value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
+     */
+    void setInLanguage(Language fInLanguage);
 }

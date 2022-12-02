@@ -44,6 +44,7 @@ public interface OfferShippingDetails extends StructuredValue {
     /**
      * indicates (possibly multiple) shipping destinations. These can be defined in several ways e.g. postalCode ranges.
      *
+     * @param fShippingDestination DefinedRegion value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
@@ -61,10 +62,19 @@ public interface OfferShippingDetails extends StructuredValue {
     /**
      * Indicates when shipping to a particular [[shippingDestination]] is not available.
      *
+     * @param fDoesNotShip Boolean value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
     void setDoesNotShip(Boolean fDoesNotShip);
+    /**
+     * Indicates when shipping to a particular [[shippingDestination]] is not available.
+     *
+     * @param fDoesNotShip java.lang.Boolean value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    void setDoesNotShip(java.lang.Boolean fDoesNotShip);
 
     /**
      * Link to a page containing [[ShippingRateSettings]] and [[DeliveryTimeSettings]] details.
@@ -78,10 +88,19 @@ public interface OfferShippingDetails extends StructuredValue {
     /**
      * Link to a page containing [[ShippingRateSettings]] and [[DeliveryTimeSettings]] details.
      *
+     * @param fShippingSettingsLink URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
     void setShippingSettingsLink(URL fShippingSettingsLink);
+    /**
+     * Link to a page containing [[ShippingRateSettings]] and [[DeliveryTimeSettings]] details.
+     *
+     * @param fShippingSettingsLink java.net.URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    void setShippingSettingsLink(java.net.URL fShippingSettingsLink);
 
     /**
      * Label to match an [[OfferShippingDetails]] with a [[DeliveryTimeSettings]] (within the context of a [[shippingSettingsLink]] cross-reference).
@@ -95,10 +114,19 @@ public interface OfferShippingDetails extends StructuredValue {
     /**
      * Label to match an [[OfferShippingDetails]] with a [[DeliveryTimeSettings]] (within the context of a [[shippingSettingsLink]] cross-reference).
      *
+     * @param fTransitTimeLabel Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
     void setTransitTimeLabel(Text fTransitTimeLabel);
+    /**
+     * Label to match an [[OfferShippingDetails]] with a [[DeliveryTimeSettings]] (within the context of a [[shippingSettingsLink]] cross-reference).
+     *
+     * @param fTransitTimeLabel java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    void setTransitTimeLabel(java.lang.String fTransitTimeLabel);
 
     /**
      * Label to match an [[OfferShippingDetails]] with a [[ShippingRateSettings]] (within the context of a [[shippingSettingsLink]] cross-reference).
@@ -112,10 +140,19 @@ public interface OfferShippingDetails extends StructuredValue {
     /**
      * Label to match an [[OfferShippingDetails]] with a [[ShippingRateSettings]] (within the context of a [[shippingSettingsLink]] cross-reference).
      *
+     * @param fShippingLabel Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
     void setShippingLabel(Text fShippingLabel);
+    /**
+     * Label to match an [[OfferShippingDetails]] with a [[ShippingRateSettings]] (within the context of a [[shippingSettingsLink]] cross-reference).
+     *
+     * @param fShippingLabel java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    void setShippingLabel(java.lang.String fShippingLabel);
 
     /**
      * The total delay between the receipt of the order and the goods reaching the final customer.
@@ -129,6 +166,7 @@ public interface OfferShippingDetails extends StructuredValue {
     /**
      * The total delay between the receipt of the order and the goods reaching the final customer.
      *
+     * @param fDeliveryTime ShippingDeliveryTime value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
@@ -146,6 +184,7 @@ public interface OfferShippingDetails extends StructuredValue {
     /**
      * The shipping rate is the cost of shipping to the specified destination. Typically, the maxValue and currency values (of the [[MonetaryAmount]]) are most appropriate.
      *
+     * @param fShippingRate MonetaryAmount value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */

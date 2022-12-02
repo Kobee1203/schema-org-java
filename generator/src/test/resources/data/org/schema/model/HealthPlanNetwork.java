@@ -29,10 +29,19 @@ public interface HealthPlanNetwork extends Intangible {
     /**
      * Name or unique ID of network. (Networks are often reused across different insurance plans).
      *
+     * @param fHealthPlanNetworkId Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
     void setHealthPlanNetworkId(Text fHealthPlanNetworkId);
+    /**
+     * Name or unique ID of network. (Networks are often reused across different insurance plans).
+     *
+     * @param fHealthPlanNetworkId java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    void setHealthPlanNetworkId(java.lang.String fHealthPlanNetworkId);
 
     /**
      * Whether The costs to the patient for services under this network or formulary.
@@ -46,10 +55,19 @@ public interface HealthPlanNetwork extends Intangible {
     /**
      * Whether The costs to the patient for services under this network or formulary.
      *
+     * @param fHealthPlanCostSharing Boolean value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
     void setHealthPlanCostSharing(Boolean fHealthPlanCostSharing);
+    /**
+     * Whether The costs to the patient for services under this network or formulary.
+     *
+     * @param fHealthPlanCostSharing java.lang.Boolean value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    void setHealthPlanCostSharing(java.lang.Boolean fHealthPlanCostSharing);
 
     /**
      * The tier(s) for this network.
@@ -63,8 +81,17 @@ public interface HealthPlanNetwork extends Intangible {
     /**
      * The tier(s) for this network.
      *
+     * @param fHealthPlanNetworkTier Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
     void setHealthPlanNetworkTier(Text fHealthPlanNetworkTier);
+    /**
+     * The tier(s) for this network.
+     *
+     * @param fHealthPlanNetworkTier java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    void setHealthPlanNetworkTier(java.lang.String fHealthPlanNetworkTier);
 }

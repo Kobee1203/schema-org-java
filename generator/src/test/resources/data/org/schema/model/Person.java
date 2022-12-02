@@ -55,6 +55,7 @@ public interface Person extends Thing {
     /**
      * The person's spouse.
      *
+     * @param fSpouse Person value to set.
      */
     void setSpouse(Person fSpouse);
 
@@ -68,8 +69,15 @@ public interface Person extends Thing {
     /**
      * An additional name for a Person, can be used for a middle name.
      *
+     * @param fAdditionalName Text value to set.
      */
     void setAdditionalName(Text fAdditionalName);
+    /**
+     * An additional name for a Person, can be used for a middle name.
+     *
+     * @param fAdditionalName java.lang.String value to set.
+     */
+    void setAdditionalName(java.lang.String fAdditionalName);
 
     /**
      * A credential awarded to the Person or Organization.
@@ -83,6 +91,7 @@ public interface Person extends Thing {
     /**
      * A credential awarded to the Person or Organization.
      *
+     * @param fHasCredential EducationalOccupationalCredential value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
@@ -98,8 +107,15 @@ public interface Person extends Thing {
     /**
      * The telephone number.
      *
+     * @param fTelephone Text value to set.
      */
     void setTelephone(Text fTelephone);
+    /**
+     * The telephone number.
+     *
+     * @param fTelephone java.lang.String value to set.
+     */
+    void setTelephone(java.lang.String fTelephone);
 
     /**
      * An honorific prefix preceding a Person's name such as Dr/Mrs/Mr.
@@ -111,8 +127,15 @@ public interface Person extends Thing {
     /**
      * An honorific prefix preceding a Person's name such as Dr/Mrs/Mr.
      *
+     * @param fHonorificPrefix Text value to set.
      */
     void setHonorificPrefix(Text fHonorificPrefix);
+    /**
+     * An honorific prefix preceding a Person's name such as Dr/Mrs/Mr.
+     *
+     * @param fHonorificPrefix java.lang.String value to set.
+     */
+    void setHonorificPrefix(java.lang.String fHonorificPrefix);
 
     /**
      * A parents of the person.
@@ -124,6 +147,7 @@ public interface Person extends Thing {
     /**
      * A parents of the person.
      *
+     * @param fParents Person value to set.
      */
     void setParents(Person fParents);
 
@@ -137,8 +161,15 @@ public interface Person extends Thing {
     /**
      * Family name. In the U.S., the last name of a Person.
      *
+     * @param fFamilyName Text value to set.
      */
     void setFamilyName(Text fFamilyName);
+    /**
+     * Family name. In the U.S., the last name of a Person.
+     *
+     * @param fFamilyName java.lang.String value to set.
+     */
+    void setFamilyName(java.lang.String fFamilyName);
 
     /**
      * Given name. In the U.S., the first name of a Person.
@@ -150,8 +181,15 @@ public interface Person extends Thing {
     /**
      * Given name. In the U.S., the first name of a Person.
      *
+     * @param fGivenName Text value to set.
      */
     void setGivenName(Text fGivenName);
+    /**
+     * Given name. In the U.S., the first name of a Person.
+     *
+     * @param fGivenName java.lang.String value to set.
+     */
+    void setGivenName(java.lang.String fGivenName);
 
     /**
      * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
@@ -166,11 +204,48 @@ public interface Person extends Thing {
     /**
      * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
      *
+     * @param fKnowsAbout URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
      */
-    void setKnowsAbout(Object fKnowsAbout);
+    void setKnowsAbout(URL fKnowsAbout);
+    /**
+     * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
+     *
+     * @param fKnowsAbout java.net.URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     */
+    void setKnowsAbout(java.net.URL fKnowsAbout);
+    /**
+     * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
+     *
+     * @param fKnowsAbout Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     */
+    void setKnowsAbout(Text fKnowsAbout);
+    /**
+     * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
+     *
+     * @param fKnowsAbout java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     */
+    void setKnowsAbout(java.lang.String fKnowsAbout);
+    /**
+     * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
+     *
+     * @param fKnowsAbout Thing value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     */
+    void setKnowsAbout(Thing fKnowsAbout);
 
     /**
      * Event that this person is a performer or participant in.
@@ -182,6 +257,7 @@ public interface Person extends Thing {
     /**
      * Event that this person is a performer or participant in.
      *
+     * @param fPerformerIn Event value to set.
      */
     void setPerformerIn(Event fPerformerIn);
 
@@ -195,8 +271,15 @@ public interface Person extends Thing {
     /**
      * The total financial value of the person as calculated by subtracting assets from liabilities.
      *
+     * @param fNetWorth MonetaryAmount value to set.
      */
-    void setNetWorth(Object fNetWorth);
+    void setNetWorth(MonetaryAmount fNetWorth);
+    /**
+     * The total financial value of the person as calculated by subtracting assets from liabilities.
+     *
+     * @param fNetWorth PriceSpecification value to set.
+     */
+    void setNetWorth(PriceSpecification fNetWorth);
 
     /**
      * An award won by or for this item.
@@ -208,8 +291,15 @@ public interface Person extends Thing {
     /**
      * An award won by or for this item.
      *
+     * @param fAward Text value to set.
      */
     void setAward(Text fAward);
+    /**
+     * An award won by or for this item.
+     *
+     * @param fAward java.lang.String value to set.
+     */
+    void setAward(java.lang.String fAward);
 
     /**
      * A contact location for a person's place of work.
@@ -221,8 +311,15 @@ public interface Person extends Thing {
     /**
      * A contact location for a person's place of work.
      *
+     * @param fWorkLocation Place value to set.
      */
-    void setWorkLocation(Object fWorkLocation);
+    void setWorkLocation(Place fWorkLocation);
+    /**
+     * A contact location for a person's place of work.
+     *
+     * @param fWorkLocation ContactPoint value to set.
+     */
+    void setWorkLocation(ContactPoint fWorkLocation);
 
     /**
      * An honorific suffix following a Person's name such as M.D. /PhD/MSCSW.
@@ -234,8 +331,15 @@ public interface Person extends Thing {
     /**
      * An honorific suffix following a Person's name such as M.D. /PhD/MSCSW.
      *
+     * @param fHonorificSuffix Text value to set.
      */
     void setHonorificSuffix(Text fHonorificSuffix);
+    /**
+     * An honorific suffix following a Person's name such as M.D. /PhD/MSCSW.
+     *
+     * @param fHonorificSuffix java.lang.String value to set.
+     */
+    void setHonorificSuffix(java.lang.String fHonorificSuffix);
 
     /**
      * The place where the person died.
@@ -247,6 +351,7 @@ public interface Person extends Thing {
     /**
      * The place where the person died.
      *
+     * @param fDeathPlace Place value to set.
      */
     void setDeathPlace(Place fDeathPlace);
 
@@ -260,8 +365,15 @@ public interface Person extends Thing {
     /**
      * A contact location for a person's residence.
      *
+     * @param fHomeLocation Place value to set.
      */
-    void setHomeLocation(Object fHomeLocation);
+    void setHomeLocation(Place fHomeLocation);
+    /**
+     * A contact location for a person's residence.
+     *
+     * @param fHomeLocation ContactPoint value to set.
+     */
+    void setHomeLocation(ContactPoint fHomeLocation);
 
     /**
      * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
@@ -276,6 +388,7 @@ public interface Person extends Thing {
     /**
      * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
      *
+     * @param fFunding Grant value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
@@ -293,9 +406,17 @@ public interface Person extends Thing {
     /**
      * The Value-added Tax ID of the organization or person.
      *
+     * @param fVatID Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     void setVatID(Text fVatID);
+    /**
+     * The Value-added Tax ID of the organization or person.
+     *
+     * @param fVatID java.lang.String value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    void setVatID(java.lang.String fVatID);
 
     /**
      * The height of the item.
@@ -307,8 +428,15 @@ public interface Person extends Thing {
     /**
      * The height of the item.
      *
+     * @param fHeight Distance value to set.
      */
-    void setHeight(Object fHeight);
+    void setHeight(Distance fHeight);
+    /**
+     * The height of the item.
+     *
+     * @param fHeight QuantitativeValue value to set.
+     */
+    void setHeight(QuantitativeValue fHeight);
 
     /**
      * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
@@ -321,9 +449,17 @@ public interface Person extends Thing {
     /**
      * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
      *
+     * @param fGlobalLocationNumber Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     void setGlobalLocationNumber(Text fGlobalLocationNumber);
+    /**
+     * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
+     *
+     * @param fGlobalLocationNumber java.lang.String value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    void setGlobalLocationNumber(java.lang.String fGlobalLocationNumber);
 
     /**
      * A contact point for a person or organization.
@@ -335,6 +471,7 @@ public interface Person extends Thing {
     /**
      * A contact point for a person or organization.
      *
+     * @param fContactPoints ContactPoint value to set.
      */
     void setContactPoints(ContactPoint fContactPoints);
 
@@ -349,6 +486,7 @@ public interface Person extends Thing {
     /**
      * The Person's occupation. For past professions, use Role for expressing dates.
      *
+     * @param fHasOccupation Occupation value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
     void setHasOccupation(Occupation fHasOccupation);
@@ -365,10 +503,27 @@ public interface Person extends Thing {
     /**
      * Gender of something, typically a [[Person]], but possibly also fictional characters, animals, etc. While https://schema.org/Male and https://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender. The [[gender]] property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender [[SportsTeam]] can be indicated with a text value of "Mixed".
      *
+     * @param fGender GenderType value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2341">https://github.com/schemaorg/schemaorg/issues/2341</a>
      */
-    void setGender(Object fGender);
+    void setGender(GenderType fGender);
+    /**
+     * Gender of something, typically a [[Person]], but possibly also fictional characters, animals, etc. While https://schema.org/Male and https://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender. The [[gender]] property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender [[SportsTeam]] can be indicated with a text value of "Mixed".
+     *
+     * @param fGender Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2341">https://github.com/schemaorg/schemaorg/issues/2341</a>
+     */
+    void setGender(Text fGender);
+    /**
+     * Gender of something, typically a [[Person]], but possibly also fictional characters, animals, etc. While https://schema.org/Male and https://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender. The [[gender]] property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender [[SportsTeam]] can be indicated with a text value of "Mixed".
+     *
+     * @param fGender java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2341">https://github.com/schemaorg/schemaorg/issues/2341</a>
+     */
+    void setGender(java.lang.String fGender);
 
     /**
      * A parent of this person.
@@ -380,6 +535,7 @@ public interface Person extends Thing {
     /**
      * A parent of this person.
      *
+     * @param fParent Person value to set.
      */
     void setParent(Person fParent);
 
@@ -393,8 +549,15 @@ public interface Person extends Thing {
     /**
      * Awards won by or for this item.
      *
+     * @param fAwards Text value to set.
      */
     void setAwards(Text fAwards);
+    /**
+     * Awards won by or for this item.
+     *
+     * @param fAwards java.lang.String value to set.
+     */
+    void setAwards(java.lang.String fAwards);
 
     /**
      * A sibling of the person.
@@ -406,6 +569,7 @@ public interface Person extends Thing {
     /**
      * A sibling of the person.
      *
+     * @param fSibling Person value to set.
      */
     void setSibling(Person fSibling);
 
@@ -421,10 +585,27 @@ public interface Person extends Thing {
     /**
      * The job title of the person (for example, Financial Manager).
      *
+     * @param fJobTitle Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
      */
-    void setJobTitle(Object fJobTitle);
+    void setJobTitle(Text fJobTitle);
+    /**
+     * The job title of the person (for example, Financial Manager).
+     *
+     * @param fJobTitle java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
+     */
+    void setJobTitle(java.lang.String fJobTitle);
+    /**
+     * The job title of the person (for example, Financial Manager).
+     *
+     * @param fJobTitle DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
+     */
+    void setJobTitle(DefinedTerm fJobTitle);
 
     /**
      * Date of birth.
@@ -436,8 +617,15 @@ public interface Person extends Thing {
     /**
      * Date of birth.
      *
+     * @param fBirthDate Date value to set.
      */
     void setBirthDate(Date fBirthDate);
+    /**
+     * Date of birth.
+     *
+     * @param fBirthDate java.time.LocalDate value to set.
+     */
+    void setBirthDate(java.time.LocalDate fBirthDate);
 
     /**
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
@@ -449,8 +637,15 @@ public interface Person extends Thing {
     /**
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
+     * @param fFunder Organization value to set.
      */
-    void setFunder(Object fFunder);
+    void setFunder(Organization fFunder);
+    /**
+     * A person or organization that supports (sponsors) something through some kind of financial contribution.
+     *
+     * @param fFunder Person value to set.
+     */
+    void setFunder(Person fFunder);
 
     /**
      * A pointer to products or services offered by the organization or person.
@@ -463,6 +658,7 @@ public interface Person extends Thing {
     /**
      * A pointer to products or services offered by the organization or person.
      *
+     * @param fMakesOffer Offer value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     void setMakesOffer(Offer fMakesOffer);
@@ -477,6 +673,7 @@ public interface Person extends Thing {
     /**
      * A child of the person.
      *
+     * @param fChildren Person value to set.
      */
     void setChildren(Person fChildren);
 
@@ -490,6 +687,7 @@ public interface Person extends Thing {
     /**
      * Organizations that the person works for.
      *
+     * @param fWorksFor Organization value to set.
      */
     void setWorksFor(Organization fWorksFor);
 
@@ -503,6 +701,7 @@ public interface Person extends Thing {
     /**
      * The most generic bi-directional social/work relation.
      *
+     * @param fKnows Person value to set.
      */
     void setKnows(Person fKnows);
 
@@ -517,6 +716,7 @@ public interface Person extends Thing {
     /**
      * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
      *
+     * @param fInteractionStatistic InteractionCounter value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
      */
     void setInteractionStatistic(InteractionCounter fInteractionStatistic);
@@ -531,8 +731,21 @@ public interface Person extends Thing {
     /**
      * Physical address of the item.
      *
+     * @param fAddress Text value to set.
      */
-    void setAddress(Object fAddress);
+    void setAddress(Text fAddress);
+    /**
+     * Physical address of the item.
+     *
+     * @param fAddress java.lang.String value to set.
+     */
+    void setAddress(java.lang.String fAddress);
+    /**
+     * Physical address of the item.
+     *
+     * @param fAddress PostalAddress value to set.
+     */
+    void setAddress(PostalAddress fAddress);
 
     /**
      * An Organization (or ProgramMembership) to which this Person or Organization belongs.
@@ -544,8 +757,15 @@ public interface Person extends Thing {
     /**
      * An Organization (or ProgramMembership) to which this Person or Organization belongs.
      *
+     * @param fMemberOf ProgramMembership value to set.
      */
-    void setMemberOf(Object fMemberOf);
+    void setMemberOf(ProgramMembership fMemberOf);
+    /**
+     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
+     *
+     * @param fMemberOf Organization value to set.
+     */
+    void setMemberOf(Organization fMemberOf);
 
     /**
      * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
@@ -561,8 +781,25 @@ public interface Person extends Thing {
      * 
      * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
      *
+     * @param fPublishingPrinciples URL value to set.
      */
-    void setPublishingPrinciples(Object fPublishingPrinciples);
+    void setPublishingPrinciples(URL fPublishingPrinciples);
+    /**
+     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * 
+     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+     *
+     * @param fPublishingPrinciples java.net.URL value to set.
+     */
+    void setPublishingPrinciples(java.net.URL fPublishingPrinciples);
+    /**
+     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * 
+     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+     *
+     * @param fPublishingPrinciples CreativeWork value to set.
+     */
+    void setPublishingPrinciples(CreativeWork fPublishingPrinciples);
 
     /**
      * A colleague of the person.
@@ -574,6 +811,7 @@ public interface Person extends Thing {
     /**
      * A colleague of the person.
      *
+     * @param fColleagues Person value to set.
      */
     void setColleagues(Person fColleagues);
 
@@ -587,8 +825,15 @@ public interface Person extends Thing {
     /**
      * Date of death.
      *
+     * @param fDeathDate Date value to set.
      */
     void setDeathDate(Date fDeathDate);
+    /**
+     * Date of death.
+     *
+     * @param fDeathDate java.time.LocalDate value to set.
+     */
+    void setDeathDate(java.time.LocalDate fDeathDate);
 
     /**
      * Email address.
@@ -600,8 +845,15 @@ public interface Person extends Thing {
     /**
      * Email address.
      *
+     * @param fEmail Text value to set.
      */
     void setEmail(Text fEmail);
+    /**
+     * Email address.
+     *
+     * @param fEmail java.lang.String value to set.
+     */
+    void setEmail(java.lang.String fEmail);
 
     /**
      * An organization that this person is affiliated with. For example, a school/university, a club, or a team.
@@ -613,6 +865,7 @@ public interface Person extends Thing {
     /**
      * An organization that this person is affiliated with. For example, a school/university, a club, or a team.
      *
+     * @param fAffiliation Organization value to set.
      */
     void setAffiliation(Organization fAffiliation);
 
@@ -626,6 +879,7 @@ public interface Person extends Thing {
     /**
      * A sibling of the person.
      *
+     * @param fSiblings Person value to set.
      */
     void setSiblings(Person fSiblings);
 
@@ -639,6 +893,7 @@ public interface Person extends Thing {
     /**
      * The place where the person was born.
      *
+     * @param fBirthPlace Place value to set.
      */
     void setBirthPlace(Place fBirthPlace);
 
@@ -652,8 +907,15 @@ public interface Person extends Thing {
     /**
      * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
      *
+     * @param fBrand Organization value to set.
      */
-    void setBrand(Object fBrand);
+    void setBrand(Organization fBrand);
+    /**
+     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     *
+     * @param fBrand Brand value to set.
+     */
+    void setBrand(Brand fBrand);
 
     /**
      * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
@@ -665,8 +927,15 @@ public interface Person extends Thing {
     /**
      * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
      *
+     * @param fSponsor Organization value to set.
      */
-    void setSponsor(Object fSponsor);
+    void setSponsor(Organization fSponsor);
+    /**
+     * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
+     *
+     * @param fSponsor Person value to set.
+     */
+    void setSponsor(Person fSponsor);
 
     /**
      * The North American Industry Classification System (NAICS) code for a particular organization or business person.
@@ -679,9 +948,17 @@ public interface Person extends Thing {
     /**
      * The North American Industry Classification System (NAICS) code for a particular organization or business person.
      *
+     * @param fNaics Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     void setNaics(Text fNaics);
+    /**
+     * The North American Industry Classification System (NAICS) code for a particular organization or business person.
+     *
+     * @param fNaics java.lang.String value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    void setNaics(java.lang.String fNaics);
 
     /**
      * A contact point for a person or organization.
@@ -693,6 +970,7 @@ public interface Person extends Thing {
     /**
      * A contact point for a person or organization.
      *
+     * @param fContactPoint ContactPoint value to set.
      */
     void setContactPoint(ContactPoint fContactPoint);
 
@@ -708,10 +986,19 @@ public interface Person extends Thing {
     /**
      * A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.
      *
+     * @param fCallSign Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2109">https://github.com/schemaorg/schemaorg/issues/2109</a>
      */
     void setCallSign(Text fCallSign);
+    /**
+     * A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.
+     *
+     * @param fCallSign java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2109">https://github.com/schemaorg/schemaorg/issues/2109</a>
+     */
+    void setCallSign(java.lang.String fCallSign);
 
     /**
      * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
@@ -724,9 +1011,17 @@ public interface Person extends Thing {
     /**
      * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
      *
+     * @param fIsicV4 Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     void setIsicV4(Text fIsicV4);
+    /**
+     * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
+     *
+     * @param fIsicV4 java.lang.String value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    void setIsicV4(java.lang.String fIsicV4);
 
     /**
      * Points-of-Sales operated by the organization or person.
@@ -739,6 +1034,7 @@ public interface Person extends Thing {
     /**
      * Points-of-Sales operated by the organization or person.
      *
+     * @param fHasPOS Place value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     void setHasPOS(Place fHasPOS);
@@ -753,8 +1049,15 @@ public interface Person extends Thing {
     /**
      * An organization that the person is an alumni of.
      *
+     * @param fAlumniOf EducationalOrganization value to set.
      */
-    void setAlumniOf(Object fAlumniOf);
+    void setAlumniOf(EducationalOrganization fAlumniOf);
+    /**
+     * An organization that the person is an alumni of.
+     *
+     * @param fAlumniOf Organization value to set.
+     */
+    void setAlumniOf(Organization fAlumniOf);
 
     /**
      * The Dun & Bradstreet DUNS number for identifying an organization or business person.
@@ -767,9 +1070,17 @@ public interface Person extends Thing {
     /**
      * The Dun & Bradstreet DUNS number for identifying an organization or business person.
      *
+     * @param fDuns Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     void setDuns(Text fDuns);
+    /**
+     * The Dun & Bradstreet DUNS number for identifying an organization or business person.
+     *
+     * @param fDuns java.lang.String value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    void setDuns(java.lang.String fDuns);
 
     /**
      * The weight of the product or person.
@@ -782,6 +1093,7 @@ public interface Person extends Thing {
     /**
      * The weight of the product or person.
      *
+     * @param fWeight QuantitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     void setWeight(QuantitativeValue fWeight);
@@ -799,11 +1111,30 @@ public interface Person extends Thing {
     /**
      * Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).
      *
+     * @param fKnowsLanguage Language value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
-    void setKnowsLanguage(Object fKnowsLanguage);
+    void setKnowsLanguage(Language fKnowsLanguage);
+    /**
+     * Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).
+     *
+     * @param fKnowsLanguage Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    void setKnowsLanguage(Text fKnowsLanguage);
+    /**
+     * Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).
+     *
+     * @param fKnowsLanguage java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    void setKnowsLanguage(java.lang.String fKnowsLanguage);
 
     /**
      * The most generic familial relation.
@@ -815,6 +1146,7 @@ public interface Person extends Thing {
     /**
      * The most generic familial relation.
      *
+     * @param fRelatedTo Person value to set.
      */
     void setRelatedTo(Person fRelatedTo);
 
@@ -828,8 +1160,21 @@ public interface Person extends Thing {
     /**
      * A colleague of the person.
      *
+     * @param fColleague Person value to set.
      */
-    void setColleague(Object fColleague);
+    void setColleague(Person fColleague);
+    /**
+     * A colleague of the person.
+     *
+     * @param fColleague URL value to set.
+     */
+    void setColleague(URL fColleague);
+    /**
+     * A colleague of the person.
+     *
+     * @param fColleague java.net.URL value to set.
+     */
+    void setColleague(java.net.URL fColleague);
 
     /**
      * A pointer to products or services sought by the organization or person (demand).
@@ -842,6 +1187,7 @@ public interface Person extends Thing {
     /**
      * A pointer to products or services sought by the organization or person (demand).
      *
+     * @param fSeeks Demand value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     void setSeeks(Demand fSeeks);
@@ -857,9 +1203,17 @@ public interface Person extends Thing {
     /**
      * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
      *
+     * @param fTaxID Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     void setTaxID(Text fTaxID);
+    /**
+     * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
+     *
+     * @param fTaxID java.lang.String value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    void setTaxID(java.lang.String fTaxID);
 
     /**
      * Products owned by the organization or person.
@@ -872,9 +1226,17 @@ public interface Person extends Thing {
     /**
      * Products owned by the organization or person.
      *
+     * @param fOwns Product value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setOwns(Object fOwns);
+    void setOwns(Product fOwns);
+    /**
+     * Products owned by the organization or person.
+     *
+     * @param fOwns OwnershipInfo value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    void setOwns(OwnershipInfo fOwns);
 
     /**
      * Indicates an OfferCatalog listing for this Organization, Person, or Service.
@@ -886,6 +1248,7 @@ public interface Person extends Thing {
     /**
      * Indicates an OfferCatalog listing for this Organization, Person, or Service.
      *
+     * @param fHasOfferCatalog OfferCatalog value to set.
      */
     void setHasOfferCatalog(OfferCatalog fHasOfferCatalog);
 
@@ -899,6 +1262,7 @@ public interface Person extends Thing {
     /**
      * The most generic uni-directional social relation.
      *
+     * @param fFollows Person value to set.
      */
     void setFollows(Person fFollows);
 
@@ -912,6 +1276,7 @@ public interface Person extends Thing {
     /**
      * Nationality of the person.
      *
+     * @param fNationality Country value to set.
      */
     void setNationality(Country fNationality);
 
@@ -925,6 +1290,13 @@ public interface Person extends Thing {
     /**
      * The fax number.
      *
+     * @param fFaxNumber Text value to set.
      */
     void setFaxNumber(Text fFaxNumber);
+    /**
+     * The fax number.
+     *
+     * @param fFaxNumber java.lang.String value to set.
+     */
+    void setFaxNumber(java.lang.String fFaxNumber);
 }

@@ -26,6 +26,7 @@ public interface Artery extends Vessel {
     /**
      * The area to which the artery supplies blood.
      *
+     * @param fSupplyTo AnatomicalStructure value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setSupplyTo(AnatomicalStructure fSupplyTo);
@@ -41,6 +42,7 @@ public interface Artery extends Vessel {
     /**
      * The branches that comprise the arterial structure.
      *
+     * @param fArterialBranch AnatomicalStructure value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setArterialBranch(AnatomicalStructure fArterialBranch);

@@ -30,10 +30,27 @@ public interface ProgramMembership extends Intangible {
     /**
      * The number of membership points earned by the member. If necessary, the unitText can be used to express the units the points are issued in. (e.g. stars, miles, etc.)
      *
+     * @param fMembershipPointsEarned Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2085">https://github.com/schemaorg/schemaorg/issues/2085</a>
      */
-    void setMembershipPointsEarned(Object fMembershipPointsEarned);
+    void setMembershipPointsEarned(Number fMembershipPointsEarned);
+    /**
+     * The number of membership points earned by the member. If necessary, the unitText can be used to express the units the points are issued in. (e.g. stars, miles, etc.)
+     *
+     * @param fMembershipPointsEarned java.lang.Number value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2085">https://github.com/schemaorg/schemaorg/issues/2085</a>
+     */
+    void setMembershipPointsEarned(java.lang.Number fMembershipPointsEarned);
+    /**
+     * The number of membership points earned by the member. If necessary, the unitText can be used to express the units the points are issued in. (e.g. stars, miles, etc.)
+     *
+     * @param fMembershipPointsEarned QuantitativeValue value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2085">https://github.com/schemaorg/schemaorg/issues/2085</a>
+     */
+    void setMembershipPointsEarned(QuantitativeValue fMembershipPointsEarned);
 
     /**
      * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
@@ -45,8 +62,15 @@ public interface ProgramMembership extends Intangible {
     /**
      * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
      *
+     * @param fMember Organization value to set.
      */
-    void setMember(Object fMember);
+    void setMember(Organization fMember);
+    /**
+     * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
+     *
+     * @param fMember Person value to set.
+     */
+    void setMember(Person fMember);
 
     /**
      * A unique identifier for the membership.
@@ -58,8 +82,15 @@ public interface ProgramMembership extends Intangible {
     /**
      * A unique identifier for the membership.
      *
+     * @param fMembershipNumber Text value to set.
      */
     void setMembershipNumber(Text fMembershipNumber);
+    /**
+     * A unique identifier for the membership.
+     *
+     * @param fMembershipNumber java.lang.String value to set.
+     */
+    void setMembershipNumber(java.lang.String fMembershipNumber);
 
     /**
      * The organization (airline, travelers' club, etc.) the membership is made with.
@@ -71,6 +102,7 @@ public interface ProgramMembership extends Intangible {
     /**
      * The organization (airline, travelers' club, etc.) the membership is made with.
      *
+     * @param fHostingOrganization Organization value to set.
      */
     void setHostingOrganization(Organization fHostingOrganization);
 
@@ -84,8 +116,15 @@ public interface ProgramMembership extends Intangible {
     /**
      * The program providing the membership.
      *
+     * @param fProgramName Text value to set.
      */
     void setProgramName(Text fProgramName);
+    /**
+     * The program providing the membership.
+     *
+     * @param fProgramName java.lang.String value to set.
+     */
+    void setProgramName(java.lang.String fProgramName);
 
     /**
      * A member of this organization.
@@ -97,6 +136,13 @@ public interface ProgramMembership extends Intangible {
     /**
      * A member of this organization.
      *
+     * @param fMembers Person value to set.
      */
-    void setMembers(Object fMembers);
+    void setMembers(Person fMembers);
+    /**
+     * A member of this organization.
+     *
+     * @param fMembers Organization value to set.
+     */
+    void setMembers(Organization fMembers);
 }

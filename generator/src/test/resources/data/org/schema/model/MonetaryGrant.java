@@ -30,8 +30,15 @@ public interface MonetaryGrant extends Grant {
     /**
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
+     * @param fFunder Organization value to set.
      */
-    void setFunder(Object fFunder);
+    void setFunder(Organization fFunder);
+    /**
+     * A person or organization that supports (sponsors) something through some kind of financial contribution.
+     *
+     * @param fFunder Person value to set.
+     */
+    void setFunder(Person fFunder);
 
     /**
      * The amount of money.
@@ -45,8 +52,25 @@ public interface MonetaryGrant extends Grant {
     /**
      * The amount of money.
      *
+     * @param fAmount Number value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
      */
-    void setAmount(Object fAmount);
+    void setAmount(Number fAmount);
+    /**
+     * The amount of money.
+     *
+     * @param fAmount java.lang.Number value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     */
+    void setAmount(java.lang.Number fAmount);
+    /**
+     * The amount of money.
+     *
+     * @param fAmount MonetaryAmount value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     */
+    void setAmount(MonetaryAmount fAmount);
 }

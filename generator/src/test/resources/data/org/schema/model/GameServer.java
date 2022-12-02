@@ -26,6 +26,7 @@ public interface GameServer extends Intangible {
     /**
      * Status of a game server.
      *
+     * @param fServerStatus GameServerStatus value to set.
      */
     void setServerStatus(GameServerStatus fServerStatus);
 
@@ -39,6 +40,7 @@ public interface GameServer extends Intangible {
     /**
      * Video game which is played on this server.
      *
+     * @param fGame VideoGame value to set.
      */
     void setGame(VideoGame fGame);
 
@@ -52,6 +54,13 @@ public interface GameServer extends Intangible {
     /**
      * Number of players on the server.
      *
+     * @param fPlayersOnline Integer value to set.
      */
     void setPlayersOnline(Integer fPlayersOnline);
+    /**
+     * Number of players on the server.
+     *
+     * @param fPlayersOnline java.lang.Integer value to set.
+     */
+    void setPlayersOnline(java.lang.Integer fPlayersOnline);
 }

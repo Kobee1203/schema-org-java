@@ -46,6 +46,7 @@ public interface Service extends Intangible {
     /**
      * A review of the item.
      *
+     * @param fReview Review value to set.
      */
     void setReview(Review fReview);
 
@@ -59,8 +60,15 @@ public interface Service extends Intangible {
     /**
      * An award won by or for this item.
      *
+     * @param fAward Text value to set.
      */
     void setAward(Text fAward);
+    /**
+     * An award won by or for this item.
+     *
+     * @param fAward java.lang.String value to set.
+     */
+    void setAward(java.lang.String fAward);
 
     /**
      * The audience eligible for this service.
@@ -72,6 +80,7 @@ public interface Service extends Intangible {
     /**
      * The audience eligible for this service.
      *
+     * @param fServiceAudience Audience value to set.
      */
     void setServiceAudience(Audience fServiceAudience);
 
@@ -87,10 +96,59 @@ public interface Service extends Intangible {
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
+     * @param fCategory URL value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
-    void setCategory(Object fCategory);
+    void setCategory(URL fCategory);
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @param fCategory java.net.URL value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    void setCategory(java.net.URL fCategory);
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @param fCategory Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    void setCategory(Text fCategory);
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @param fCategory java.lang.String value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    void setCategory(java.lang.String fCategory);
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @param fCategory PhysicalActivityCategory value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    void setCategory(PhysicalActivityCategory fCategory);
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @param fCategory Thing value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    void setCategory(Thing fCategory);
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @param fCategory CategoryCode value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    void setCategory(CategoryCode fCategory);
 
     /**
      * The hours during which this service or contact is available.
@@ -102,6 +160,7 @@ public interface Service extends Intangible {
     /**
      * The hours during which this service or contact is available.
      *
+     * @param fHoursAvailable OpeningHoursSpecification value to set.
      */
     void setHoursAvailable(OpeningHoursSpecification fHoursAvailable);
 
@@ -115,6 +174,7 @@ public interface Service extends Intangible {
     /**
      * An intended audience, i.e. a group for whom something was created.
      *
+     * @param fAudience Audience value to set.
      */
     void setAudience(Audience fAudience);
 
@@ -131,9 +191,18 @@ public interface Service extends Intangible {
      * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      *
+     * @param fOffers Offer value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
-    void setOffers(Object fOffers);
+    void setOffers(Offer fOffers);
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     *
+     * @param fOffers Demand value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    void setOffers(Demand fOffers);
 
     /**
      * The tangible thing generated by the service, e.g. a passport, permit, etc.
@@ -145,6 +214,7 @@ public interface Service extends Intangible {
     /**
      * The tangible thing generated by the service, e.g. a passport, permit, etc.
      *
+     * @param fServiceOutput Thing value to set.
      */
     void setServiceOutput(Thing fServiceOutput);
 
@@ -161,11 +231,21 @@ public interface Service extends Intangible {
     /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
      *
+     * @param fProvider Organization value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
      */
-    void setProvider(Object fProvider);
+    void setProvider(Organization fProvider);
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @param fProvider Person value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     */
+    void setProvider(Person fProvider);
 
     /**
      * Human-readable terms of service documentation.
@@ -179,10 +259,35 @@ public interface Service extends Intangible {
     /**
      * Human-readable terms of service documentation.
      *
+     * @param fTermsOfService URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1423">https://github.com/schemaorg/schemaorg/issues/1423</a>
      */
-    void setTermsOfService(Object fTermsOfService);
+    void setTermsOfService(URL fTermsOfService);
+    /**
+     * Human-readable terms of service documentation.
+     *
+     * @param fTermsOfService java.net.URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1423">https://github.com/schemaorg/schemaorg/issues/1423</a>
+     */
+    void setTermsOfService(java.net.URL fTermsOfService);
+    /**
+     * Human-readable terms of service documentation.
+     *
+     * @param fTermsOfService Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1423">https://github.com/schemaorg/schemaorg/issues/1423</a>
+     */
+    void setTermsOfService(Text fTermsOfService);
+    /**
+     * Human-readable terms of service documentation.
+     *
+     * @param fTermsOfService java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1423">https://github.com/schemaorg/schemaorg/issues/1423</a>
+     */
+    void setTermsOfService(java.lang.String fTermsOfService);
 
     /**
      * Indicates the mobility of a provided service (e.g. 'static', 'dynamic').
@@ -194,8 +299,15 @@ public interface Service extends Intangible {
     /**
      * Indicates the mobility of a provided service (e.g. 'static', 'dynamic').
      *
+     * @param fProviderMobility Text value to set.
      */
     void setProviderMobility(Text fProviderMobility);
+    /**
+     * Indicates the mobility of a provided service (e.g. 'static', 'dynamic').
+     *
+     * @param fProviderMobility java.lang.String value to set.
+     */
+    void setProviderMobility(java.lang.String fProviderMobility);
 
     /**
      * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
@@ -207,8 +319,15 @@ public interface Service extends Intangible {
     /**
      * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
      *
+     * @param fBroker Person value to set.
      */
-    void setBroker(Object fBroker);
+    void setBroker(Person fBroker);
+    /**
+     * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
+     *
+     * @param fBroker Organization value to set.
+     */
+    void setBroker(Organization fBroker);
 
     /**
      * The overall rating, based on a collection of reviews or ratings, of the item.
@@ -220,6 +339,7 @@ public interface Service extends Intangible {
     /**
      * The overall rating, based on a collection of reviews or ratings, of the item.
      *
+     * @param fAggregateRating AggregateRating value to set.
      */
     void setAggregateRating(AggregateRating fAggregateRating);
 
@@ -234,9 +354,17 @@ public interface Service extends Intangible {
     /**
      * A pointer to another, functionally similar product (or multiple products).
      *
+     * @param fIsSimilarTo Service value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setIsSimilarTo(Object fIsSimilarTo);
+    void setIsSimilarTo(Service fIsSimilarTo);
+    /**
+     * A pointer to another, functionally similar product (or multiple products).
+     *
+     * @param fIsSimilarTo Product value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    void setIsSimilarTo(Product fIsSimilarTo);
 
     /**
      * A means of accessing the service (e.g. a phone bank, a web site, a location, etc.).
@@ -248,6 +376,7 @@ public interface Service extends Intangible {
     /**
      * A means of accessing the service (e.g. a phone bank, a web site, a location, etc.).
      *
+     * @param fAvailableChannel ServiceChannel value to set.
      */
     void setAvailableChannel(ServiceChannel fAvailableChannel);
 
@@ -261,8 +390,15 @@ public interface Service extends Intangible {
     /**
      * A slogan or motto associated with the item.
      *
+     * @param fSlogan Text value to set.
      */
     void setSlogan(Text fSlogan);
+    /**
+     * A slogan or motto associated with the item.
+     *
+     * @param fSlogan java.lang.String value to set.
+     */
+    void setSlogan(java.lang.String fSlogan);
 
     /**
      * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
@@ -274,8 +410,15 @@ public interface Service extends Intangible {
     /**
      * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
      *
+     * @param fBrand Organization value to set.
      */
-    void setBrand(Object fBrand);
+    void setBrand(Organization fBrand);
+    /**
+     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     *
+     * @param fBrand Brand value to set.
+     */
+    void setBrand(Brand fBrand);
 
     /**
      * An associated logo.
@@ -288,9 +431,24 @@ public interface Service extends Intangible {
     /**
      * An associated logo.
      *
+     * @param fLogo URL value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setLogo(Object fLogo);
+    void setLogo(URL fLogo);
+    /**
+     * An associated logo.
+     *
+     * @param fLogo java.net.URL value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    void setLogo(java.net.URL fLogo);
+    /**
+     * An associated logo.
+     *
+     * @param fLogo ImageObject value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    void setLogo(ImageObject fLogo);
 
     /**
      * The tangible thing generated by the service, e.g. a passport, permit, etc.
@@ -302,6 +460,7 @@ public interface Service extends Intangible {
     /**
      * The tangible thing generated by the service, e.g. a passport, permit, etc.
      *
+     * @param fProduces Thing value to set.
      */
     void setProduces(Thing fProduces);
 
@@ -315,8 +474,21 @@ public interface Service extends Intangible {
     /**
      * The geographic area where the service is provided.
      *
+     * @param fServiceArea GeoShape value to set.
      */
-    void setServiceArea(Object fServiceArea);
+    void setServiceArea(GeoShape fServiceArea);
+    /**
+     * The geographic area where the service is provided.
+     *
+     * @param fServiceArea AdministrativeArea value to set.
+     */
+    void setServiceArea(AdministrativeArea fServiceArea);
+    /**
+     * The geographic area where the service is provided.
+     *
+     * @param fServiceArea Place value to set.
+     */
+    void setServiceArea(Place fServiceArea);
 
     /**
      * The type of service being offered, e.g. veterans' benefits, emergency relief, etc.
@@ -328,8 +500,21 @@ public interface Service extends Intangible {
     /**
      * The type of service being offered, e.g. veterans' benefits, emergency relief, etc.
      *
+     * @param fServiceType GovernmentBenefitsType value to set.
      */
-    void setServiceType(Object fServiceType);
+    void setServiceType(GovernmentBenefitsType fServiceType);
+    /**
+     * The type of service being offered, e.g. veterans' benefits, emergency relief, etc.
+     *
+     * @param fServiceType Text value to set.
+     */
+    void setServiceType(Text fServiceType);
+    /**
+     * The type of service being offered, e.g. veterans' benefits, emergency relief, etc.
+     *
+     * @param fServiceType java.lang.String value to set.
+     */
+    void setServiceType(java.lang.String fServiceType);
 
     /**
      * The geographic area where a service or offered item is provided.
@@ -341,8 +526,33 @@ public interface Service extends Intangible {
     /**
      * The geographic area where a service or offered item is provided.
      *
+     * @param fAreaServed AdministrativeArea value to set.
      */
-    void setAreaServed(Object fAreaServed);
+    void setAreaServed(AdministrativeArea fAreaServed);
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @param fAreaServed GeoShape value to set.
+     */
+    void setAreaServed(GeoShape fAreaServed);
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @param fAreaServed Text value to set.
+     */
+    void setAreaServed(Text fAreaServed);
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @param fAreaServed java.lang.String value to set.
+     */
+    void setAreaServed(java.lang.String fAreaServed);
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @param fAreaServed Place value to set.
+     */
+    void setAreaServed(Place fAreaServed);
 
     /**
      * A pointer to another, somehow related product (or multiple products).
@@ -355,9 +565,17 @@ public interface Service extends Intangible {
     /**
      * A pointer to another, somehow related product (or multiple products).
      *
+     * @param fIsRelatedTo Service value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setIsRelatedTo(Object fIsRelatedTo);
+    void setIsRelatedTo(Service fIsRelatedTo);
+    /**
+     * A pointer to another, somehow related product (or multiple products).
+     *
+     * @param fIsRelatedTo Product value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    void setIsRelatedTo(Product fIsRelatedTo);
 
     /**
      * Indicates an OfferCatalog listing for this Organization, Person, or Service.
@@ -369,6 +587,7 @@ public interface Service extends Intangible {
     /**
      * Indicates an OfferCatalog listing for this Organization, Person, or Service.
      *
+     * @param fHasOfferCatalog OfferCatalog value to set.
      */
     void setHasOfferCatalog(OfferCatalog fHasOfferCatalog);
 }

@@ -31,6 +31,7 @@ public interface Permit extends Intangible {
     /**
      * The duration of validity of a permit or similar thing.
      *
+     * @param fValidFor Duration value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
     void setValidFor(Duration fValidFor);
@@ -45,6 +46,7 @@ public interface Permit extends Intangible {
     /**
      * The organization issuing the ticket or permit.
      *
+     * @param fIssuedBy Organization value to set.
      */
     void setIssuedBy(Organization fIssuedBy);
 
@@ -58,8 +60,15 @@ public interface Permit extends Intangible {
     /**
      * The date when the item is no longer valid.
      *
+     * @param fValidUntil Date value to set.
      */
     void setValidUntil(Date fValidUntil);
+    /**
+     * The date when the item is no longer valid.
+     *
+     * @param fValidUntil java.time.LocalDate value to set.
+     */
+    void setValidUntil(java.time.LocalDate fValidUntil);
 
     /**
      * The date when the item becomes valid.
@@ -72,9 +81,31 @@ public interface Permit extends Intangible {
     /**
      * The date when the item becomes valid.
      *
+     * @param fValidFrom DateTime value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setValidFrom(Object fValidFrom);
+    void setValidFrom(DateTime fValidFrom);
+    /**
+     * The date when the item becomes valid.
+     *
+     * @param fValidFrom java.time.LocalDateTime value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    void setValidFrom(java.time.LocalDateTime fValidFrom);
+    /**
+     * The date when the item becomes valid.
+     *
+     * @param fValidFrom Date value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    void setValidFrom(Date fValidFrom);
+    /**
+     * The date when the item becomes valid.
+     *
+     * @param fValidFrom java.time.LocalDate value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    void setValidFrom(java.time.LocalDate fValidFrom);
 
     /**
      * The service through with the permit was granted.
@@ -86,6 +117,7 @@ public interface Permit extends Intangible {
     /**
      * The service through with the permit was granted.
      *
+     * @param fIssuedThrough Service value to set.
      */
     void setIssuedThrough(Service fIssuedThrough);
 
@@ -100,6 +132,7 @@ public interface Permit extends Intangible {
     /**
      * The geographic area where a permit or similar thing is valid.
      *
+     * @param fValidIn AdministrativeArea value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
     void setValidIn(AdministrativeArea fValidIn);
@@ -114,6 +147,7 @@ public interface Permit extends Intangible {
     /**
      * The target audience for this permit.
      *
+     * @param fPermitAudience Audience value to set.
      */
     void setPermitAudience(Audience fPermitAudience);
 }

@@ -24,6 +24,7 @@ public interface SocialMediaPosting extends Article {
     /**
      * A CreativeWork such as an image, video, or audio clip shared as part of this posting.
      *
+     * @param fSharedContent CreativeWork value to set.
      */
     void setSharedContent(CreativeWork fSharedContent);
 }

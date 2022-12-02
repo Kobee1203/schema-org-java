@@ -32,9 +32,17 @@ public interface DietarySupplement extends Substance {
     /**
      * Characteristics of the population for which this is intended, or which typically uses it, e.g. 'adults'.
      *
+     * @param fTargetPopulation Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setTargetPopulation(Text fTargetPopulation);
+    /**
+     * Characteristics of the population for which this is intended, or which typically uses it, e.g. 'adults'.
+     *
+     * @param fTargetPopulation java.lang.String value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setTargetPopulation(java.lang.String fTargetPopulation);
 
     /**
      * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
@@ -47,6 +55,7 @@ public interface DietarySupplement extends Substance {
     /**
      * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
      *
+     * @param fRecommendedIntake RecommendedDoseSchedule value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setRecommendedIntake(RecommendedDoseSchedule fRecommendedIntake);
@@ -62,9 +71,31 @@ public interface DietarySupplement extends Substance {
     /**
      * The drug or supplement's legal status, including any controlled substance schedules that apply.
      *
+     * @param fLegalStatus DrugLegalStatus value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setLegalStatus(Object fLegalStatus);
+    void setLegalStatus(DrugLegalStatus fLegalStatus);
+    /**
+     * The drug or supplement's legal status, including any controlled substance schedules that apply.
+     *
+     * @param fLegalStatus Text value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setLegalStatus(Text fLegalStatus);
+    /**
+     * The drug or supplement's legal status, including any controlled substance schedules that apply.
+     *
+     * @param fLegalStatus java.lang.String value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setLegalStatus(java.lang.String fLegalStatus);
+    /**
+     * The drug or supplement's legal status, including any controlled substance schedules that apply.
+     *
+     * @param fLegalStatus MedicalEnumeration value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setLegalStatus(MedicalEnumeration fLegalStatus);
 
     /**
      * The specific biochemical interaction through which this drug or supplement produces its pharmacological effect.
@@ -77,9 +108,17 @@ public interface DietarySupplement extends Substance {
     /**
      * The specific biochemical interaction through which this drug or supplement produces its pharmacological effect.
      *
+     * @param fMechanismOfAction Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setMechanismOfAction(Text fMechanismOfAction);
+    /**
+     * The specific biochemical interaction through which this drug or supplement produces its pharmacological effect.
+     *
+     * @param fMechanismOfAction java.lang.String value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setMechanismOfAction(java.lang.String fMechanismOfAction);
 
     /**
      * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
@@ -92,6 +131,7 @@ public interface DietarySupplement extends Substance {
     /**
      * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
      *
+     * @param fMaximumIntake MaximumDoseSchedule value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setMaximumIntake(MaximumDoseSchedule fMaximumIntake);
@@ -107,9 +147,17 @@ public interface DietarySupplement extends Substance {
     /**
      * An active ingredient, typically chemical compounds and/or biologic substances.
      *
+     * @param fActiveIngredient Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setActiveIngredient(Text fActiveIngredient);
+    /**
+     * An active ingredient, typically chemical compounds and/or biologic substances.
+     *
+     * @param fActiveIngredient java.lang.String value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setActiveIngredient(java.lang.String fActiveIngredient);
 
     /**
      * Proprietary name given to the diet plan, typically by its originator or creator.
@@ -122,9 +170,17 @@ public interface DietarySupplement extends Substance {
     /**
      * Proprietary name given to the diet plan, typically by its originator or creator.
      *
+     * @param fProprietaryName Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setProprietaryName(Text fProprietaryName);
+    /**
+     * Proprietary name given to the diet plan, typically by its originator or creator.
+     *
+     * @param fProprietaryName java.lang.String value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setProprietaryName(java.lang.String fProprietaryName);
 
     /**
      * The generic name of this drug or supplement.
@@ -137,9 +193,17 @@ public interface DietarySupplement extends Substance {
     /**
      * The generic name of this drug or supplement.
      *
+     * @param fNonProprietaryName Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setNonProprietaryName(Text fNonProprietaryName);
+    /**
+     * The generic name of this drug or supplement.
+     *
+     * @param fNonProprietaryName java.lang.String value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setNonProprietaryName(java.lang.String fNonProprietaryName);
 
     /**
      * The manufacturer of the product.
@@ -151,6 +215,7 @@ public interface DietarySupplement extends Substance {
     /**
      * The manufacturer of the product.
      *
+     * @param fManufacturer Organization value to set.
      */
     void setManufacturer(Organization fManufacturer);
 
@@ -165,9 +230,17 @@ public interface DietarySupplement extends Substance {
     /**
      * True if this item's name is a proprietary/brand name (vs. generic name).
      *
+     * @param fIsProprietary Boolean value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setIsProprietary(Boolean fIsProprietary);
+    /**
+     * True if this item's name is a proprietary/brand name (vs. generic name).
+     *
+     * @param fIsProprietary java.lang.Boolean value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setIsProprietary(java.lang.Boolean fIsProprietary);
 
     /**
      * Any potential safety concern associated with the supplement. May include interactions with other drugs and foods, pregnancy, breastfeeding, known adverse reactions, and documented efficacy of the supplement.
@@ -180,7 +253,15 @@ public interface DietarySupplement extends Substance {
     /**
      * Any potential safety concern associated with the supplement. May include interactions with other drugs and foods, pregnancy, breastfeeding, known adverse reactions, and documented efficacy of the supplement.
      *
+     * @param fSafetyConsideration Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setSafetyConsideration(Text fSafetyConsideration);
+    /**
+     * Any potential safety concern associated with the supplement. May include interactions with other drugs and foods, pregnancy, breastfeeding, known adverse reactions, and documented efficacy of the supplement.
+     *
+     * @param fSafetyConsideration java.lang.String value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setSafetyConsideration(java.lang.String fSafetyConsideration);
 }

@@ -41,9 +41,24 @@ public interface DefinedRegion extends StructuredValue {
     /**
      * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
      *
+     * @param fAddressCountry Country value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
-    void setAddressCountry(Object fAddressCountry);
+    void setAddressCountry(Country fAddressCountry);
+    /**
+     * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
+     *
+     * @param fAddressCountry Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    void setAddressCountry(Text fAddressCountry);
+    /**
+     * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
+     *
+     * @param fAddressCountry java.lang.String value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    void setAddressCountry(java.lang.String fAddressCountry);
 
     /**
      * The region in which the locality is, and which is in the country. For example, California or another appropriate first-level [Administrative division](https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country) 
@@ -56,9 +71,17 @@ public interface DefinedRegion extends StructuredValue {
     /**
      * The region in which the locality is, and which is in the country. For example, California or another appropriate first-level [Administrative division](https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country) 
      *
+     * @param fAddressRegion Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
     void setAddressRegion(Text fAddressRegion);
+    /**
+     * The region in which the locality is, and which is in the country. For example, California or another appropriate first-level [Administrative division](https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country) 
+     *
+     * @param fAddressRegion java.lang.String value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    void setAddressRegion(java.lang.String fAddressRegion);
 
     /**
      * A defined range of postal codes.
@@ -72,6 +95,7 @@ public interface DefinedRegion extends StructuredValue {
     /**
      * A defined range of postal codes.
      *
+     * @param fPostalCodeRange PostalCodeRangeSpecification value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
@@ -89,10 +113,19 @@ public interface DefinedRegion extends StructuredValue {
     /**
      * A defined range of postal codes indicated by a common textual prefix. Used for non-numeric systems such as UK.
      *
+     * @param fPostalCodePrefix Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
     void setPostalCodePrefix(Text fPostalCodePrefix);
+    /**
+     * A defined range of postal codes indicated by a common textual prefix. Used for non-numeric systems such as UK.
+     *
+     * @param fPostalCodePrefix java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    void setPostalCodePrefix(java.lang.String fPostalCodePrefix);
 
     /**
      * The postal code. For example, 94043.
@@ -105,7 +138,15 @@ public interface DefinedRegion extends StructuredValue {
     /**
      * The postal code. For example, 94043.
      *
+     * @param fPostalCode Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
     void setPostalCode(Text fPostalCode);
+    /**
+     * The postal code. For example, 94043.
+     *
+     * @param fPostalCode java.lang.String value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    void setPostalCode(java.lang.String fPostalCode);
 }

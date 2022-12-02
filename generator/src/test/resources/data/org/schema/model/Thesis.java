@@ -27,7 +27,15 @@ public interface Thesis extends CreativeWork {
     /**
      * Qualification, candidature, degree, application that Thesis supports.
      *
+     * @param fInSupportOf Text value to set.
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
     void setInSupportOf(Text fInSupportOf);
+    /**
+     * Qualification, candidature, degree, application that Thesis supports.
+     *
+     * @param fInSupportOf java.lang.String value to set.
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    void setInSupportOf(java.lang.String fInSupportOf);
 }

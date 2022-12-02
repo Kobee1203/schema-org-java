@@ -65,10 +65,20 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
+     * @param fGtin12 Text value to set.
      */
     @Override
     public void setGtin12(Text fGtin12) {
         this.fGtin12 = fGtin12;
+    }
+    /**
+     * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     *
+     * @param fGtin12 java.lang.String value to set.
+     */
+    @Override
+    public void setGtin12(java.lang.String fGtin12) {
+        this.fGtin12 = Text.of(fGtin12);
     }
 
     private Object fItemOffered;
@@ -86,12 +96,64 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *
+     * @param fItemOffered Trip value to set.
      */
     @Override
-    public void setItemOffered(Object fItemOffered) {
-        if(!(fItemOffered instanceof Trip) && !(fItemOffered instanceof Event) && !(fItemOffered instanceof Product) && !(fItemOffered instanceof AggregateOffer) && !(fItemOffered instanceof CreativeWork) && !(fItemOffered instanceof MenuItem) && !(fItemOffered instanceof Service)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'itemOffered': " + fItemOffered);
-        }
+    public void setItemOffered(Trip fItemOffered) {
+        this.fItemOffered = fItemOffered;
+    }
+    /**
+     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *
+     * @param fItemOffered Event value to set.
+     */
+    @Override
+    public void setItemOffered(Event fItemOffered) {
+        this.fItemOffered = fItemOffered;
+    }
+    /**
+     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *
+     * @param fItemOffered Product value to set.
+     */
+    @Override
+    public void setItemOffered(Product fItemOffered) {
+        this.fItemOffered = fItemOffered;
+    }
+    /**
+     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *
+     * @param fItemOffered AggregateOffer value to set.
+     */
+    @Override
+    public void setItemOffered(AggregateOffer fItemOffered) {
+        this.fItemOffered = fItemOffered;
+    }
+    /**
+     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *
+     * @param fItemOffered CreativeWork value to set.
+     */
+    @Override
+    public void setItemOffered(CreativeWork fItemOffered) {
+        this.fItemOffered = fItemOffered;
+    }
+    /**
+     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *
+     * @param fItemOffered MenuItem value to set.
+     */
+    @Override
+    public void setItemOffered(MenuItem fItemOffered) {
+        this.fItemOffered = fItemOffered;
+    }
+    /**
+     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *
+     * @param fItemOffered Service value to set.
+     */
+    @Override
+    public void setItemOffered(Service fItemOffered) {
         this.fItemOffered = fItemOffered;
     }
 
@@ -111,11 +173,22 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
      *
+     * @param fMpn Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
     public void setMpn(Text fMpn) {
         this.fMpn = fMpn;
+    }
+    /**
+     * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
+     *
+     * @param fMpn java.lang.String value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setMpn(java.lang.String fMpn) {
+        this.fMpn = Text.of(fMpn);
     }
 
     private TypeAndQuantityNode fIncludesObject;
@@ -134,6 +207,7 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * This links to a node or nodes indicating the exact quantity of the products included in  an [[Offer]] or [[ProductCollection]].
      *
+     * @param fIncludesObject TypeAndQuantityNode value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
@@ -157,6 +231,7 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.
      *
+     * @param fBusinessFunction BusinessFunction value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
@@ -179,6 +254,7 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
      *
+     * @param fItemCondition OfferItemCondition value to set.
      */
     @Override
     public void setItemCondition(OfferItemCondition fItemCondition) {
@@ -204,12 +280,25 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * A Global Trade Item Number ([GTIN](https://www.gs1.org/standards/id-keys/gtin)). GTINs identify trade items, including products and services, using numeric identification codes. The [[gtin]] property generalizes the earlier [[gtin8]], [[gtin12]], [[gtin13]], and [[gtin14]] properties. The GS1 [digital link specifications](https://www.gs1.org/standards/Digital-Link/) express GTINs as URLs. A correct [[gtin]] value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a "GS1 Digital Link" URL based on such a string. The numeric component should also have a [valid GS1 check digit](https://www.gs1.org/services/check-digit-calculator) and meet the other rules for valid GTINs. See also [GS1's GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) and [Wikipedia](https://en.wikipedia.org/wiki/Global_Trade_Item_Number) for more details. Left-padding of the gtin values is not required or encouraged.
      *    
      *
+     * @param fGtin Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
      */
     @Override
     public void setGtin(Text fGtin) {
         this.fGtin = fGtin;
+    }
+    /**
+     * A Global Trade Item Number ([GTIN](https://www.gs1.org/standards/id-keys/gtin)). GTINs identify trade items, including products and services, using numeric identification codes. The [[gtin]] property generalizes the earlier [[gtin8]], [[gtin12]], [[gtin13]], and [[gtin14]] properties. The GS1 [digital link specifications](https://www.gs1.org/standards/Digital-Link/) express GTINs as URLs. A correct [[gtin]] value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a "GS1 Digital Link" URL based on such a string. The numeric component should also have a [valid GS1 check digit](https://www.gs1.org/services/check-digit-calculator) and meet the other rules for valid GTINs. See also [GS1's GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) and [Wikipedia](https://en.wikipedia.org/wiki/Global_Trade_Item_Number) for more details. Left-padding of the gtin values is not required or encouraged.
+     *    
+     *
+     * @param fGtin java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     */
+    @Override
+    public void setGtin(java.lang.String fGtin) {
+        this.fGtin = Text.of(fGtin);
     }
 
     private QuantitativeValue fEligibleQuantity;
@@ -228,6 +317,7 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.
      *
+     * @param fEligibleQuantity QuantitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
@@ -251,13 +341,21 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * The payment method(s) accepted by seller for this offer.
      *
+     * @param fAcceptedPaymentMethod LoanOrCredit value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setAcceptedPaymentMethod(Object fAcceptedPaymentMethod) {
-        if(!(fAcceptedPaymentMethod instanceof LoanOrCredit) && !(fAcceptedPaymentMethod instanceof PaymentMethod)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'acceptedPaymentMethod': " + fAcceptedPaymentMethod);
-        }
+    public void setAcceptedPaymentMethod(LoanOrCredit fAcceptedPaymentMethod) {
+        this.fAcceptedPaymentMethod = fAcceptedPaymentMethod;
+    }
+    /**
+     * The payment method(s) accepted by seller for this offer.
+     *
+     * @param fAcceptedPaymentMethod PaymentMethod value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setAcceptedPaymentMethod(PaymentMethod fAcceptedPaymentMethod) {
         this.fAcceptedPaymentMethod = fAcceptedPaymentMethod;
     }
 
@@ -277,6 +375,7 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * The warranty promise(s) included in the offer.
      *
+     * @param fWarranty WarrantyPromise value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
@@ -299,12 +398,19 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
      *
+     * @param fSeller Organization value to set.
      */
     @Override
-    public void setSeller(Object fSeller) {
-        if(!(fSeller instanceof Organization) && !(fSeller instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'seller': " + fSeller);
-        }
+    public void setSeller(Organization fSeller) {
+        this.fSeller = fSeller;
+    }
+    /**
+     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+     *
+     * @param fSeller Person value to set.
+     */
+    @Override
+    public void setSeller(Person fSeller) {
         this.fSeller = fSeller;
     }
 
@@ -327,14 +433,48 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>See also [[eligibleRegion]].
      *       
      *
+     * @param fIneligibleRegion Place value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2242">https://github.com/schemaorg/schemaorg/issues/2242</a>
      */
     @Override
-    public void setIneligibleRegion(Object fIneligibleRegion) {
-        if(!(fIneligibleRegion instanceof Place) && !(fIneligibleRegion instanceof Text) && !(fIneligibleRegion instanceof GeoShape)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'ineligibleRegion': " + fIneligibleRegion);
-        }
+    public void setIneligibleRegion(Place fIneligibleRegion) {
+        this.fIneligibleRegion = fIneligibleRegion;
+    }
+    /**
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>See also [[eligibleRegion]].
+     *       
+     *
+     * @param fIneligibleRegion Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2242">https://github.com/schemaorg/schemaorg/issues/2242</a>
+     */
+    @Override
+    public void setIneligibleRegion(Text fIneligibleRegion) {
+        this.fIneligibleRegion = fIneligibleRegion;
+    }
+    /**
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>See also [[eligibleRegion]].
+     *       
+     *
+     * @param fIneligibleRegion java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2242">https://github.com/schemaorg/schemaorg/issues/2242</a>
+     */
+    @Override
+    public void setIneligibleRegion(java.lang.String fIneligibleRegion) {
+        this.fIneligibleRegion = Text.of(fIneligibleRegion);
+    }
+    /**
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>See also [[eligibleRegion]].
+     *       
+     *
+     * @param fIneligibleRegion GeoShape value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2242">https://github.com/schemaorg/schemaorg/issues/2242</a>
+     */
+    @Override
+    public void setIneligibleRegion(GeoShape fIneligibleRegion) {
         this.fIneligibleRegion = fIneligibleRegion;
     }
 
@@ -354,6 +494,7 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * The typical delay between the receipt of the order and the goods either leaving the warehouse or being prepared for pickup, in case the delivery method is on site pickup.
      *
+     * @param fDeliveryLeadTime QuantitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
@@ -377,6 +518,7 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * The delivery method(s) available for this offer.
      *
+     * @param fAvailableDeliveryMethod DeliveryMethod value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
@@ -400,14 +542,42 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * The date when the item becomes valid.
      *
+     * @param fValidFrom DateTime value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setValidFrom(Object fValidFrom) {
-        if(!(fValidFrom instanceof DateTime) && !(fValidFrom instanceof Date)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'validFrom': " + fValidFrom);
-        }
+    public void setValidFrom(DateTime fValidFrom) {
         this.fValidFrom = fValidFrom;
+    }
+    /**
+     * The date when the item becomes valid.
+     *
+     * @param fValidFrom java.time.LocalDateTime value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setValidFrom(java.time.LocalDateTime fValidFrom) {
+        this.fValidFrom = DateTime.of(fValidFrom);
+    }
+    /**
+     * The date when the item becomes valid.
+     *
+     * @param fValidFrom Date value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setValidFrom(Date fValidFrom) {
+        this.fValidFrom = fValidFrom;
+    }
+    /**
+     * The date when the item becomes valid.
+     *
+     * @param fValidFrom java.time.LocalDate value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setValidFrom(java.time.LocalDate fValidFrom) {
+        this.fValidFrom = Date.of(fValidFrom);
     }
 
     private Object fAvailabilityEnds;
@@ -427,15 +597,68 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * The end of the availability of the product or service included in the offer.
      *
+     * @param fAvailabilityEnds Date value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setAvailabilityEnds(Object fAvailabilityEnds) {
-        if(!(fAvailabilityEnds instanceof Date) && !(fAvailabilityEnds instanceof DateTime) && !(fAvailabilityEnds instanceof Time)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'availabilityEnds': " + fAvailabilityEnds);
-        }
+    public void setAvailabilityEnds(Date fAvailabilityEnds) {
         this.fAvailabilityEnds = fAvailabilityEnds;
+    }
+    /**
+     * The end of the availability of the product or service included in the offer.
+     *
+     * @param fAvailabilityEnds java.time.LocalDate value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setAvailabilityEnds(java.time.LocalDate fAvailabilityEnds) {
+        this.fAvailabilityEnds = Date.of(fAvailabilityEnds);
+    }
+    /**
+     * The end of the availability of the product or service included in the offer.
+     *
+     * @param fAvailabilityEnds DateTime value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setAvailabilityEnds(DateTime fAvailabilityEnds) {
+        this.fAvailabilityEnds = fAvailabilityEnds;
+    }
+    /**
+     * The end of the availability of the product or service included in the offer.
+     *
+     * @param fAvailabilityEnds java.time.LocalDateTime value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setAvailabilityEnds(java.time.LocalDateTime fAvailabilityEnds) {
+        this.fAvailabilityEnds = DateTime.of(fAvailabilityEnds);
+    }
+    /**
+     * The end of the availability of the product or service included in the offer.
+     *
+     * @param fAvailabilityEnds Time value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setAvailabilityEnds(Time fAvailabilityEnds) {
+        this.fAvailabilityEnds = fAvailabilityEnds;
+    }
+    /**
+     * The end of the availability of the product or service included in the offer.
+     *
+     * @param fAvailabilityEnds java.time.LocalTime value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setAvailabilityEnds(java.time.LocalTime fAvailabilityEnds) {
+        this.fAvailabilityEnds = Time.of(fAvailabilityEnds);
     }
 
     private Object fEligibleRegion;
@@ -457,14 +680,48 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.<br/><br/>See also [[ineligibleRegion]].
      *     
      *
+     * @param fEligibleRegion GeoShape value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
     @Override
-    public void setEligibleRegion(Object fEligibleRegion) {
-        if(!(fEligibleRegion instanceof GeoShape) && !(fEligibleRegion instanceof Text) && !(fEligibleRegion instanceof Place)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'eligibleRegion': " + fEligibleRegion);
-        }
+    public void setEligibleRegion(GeoShape fEligibleRegion) {
+        this.fEligibleRegion = fEligibleRegion;
+    }
+    /**
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.<br/><br/>See also [[ineligibleRegion]].
+     *     
+     *
+     * @param fEligibleRegion Text value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    @Override
+    public void setEligibleRegion(Text fEligibleRegion) {
+        this.fEligibleRegion = fEligibleRegion;
+    }
+    /**
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.<br/><br/>See also [[ineligibleRegion]].
+     *     
+     *
+     * @param fEligibleRegion java.lang.String value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    @Override
+    public void setEligibleRegion(java.lang.String fEligibleRegion) {
+        this.fEligibleRegion = Text.of(fEligibleRegion);
+    }
+    /**
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.<br/><br/>See also [[ineligibleRegion]].
+     *     
+     *
+     * @param fEligibleRegion Place value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    @Override
+    public void setEligibleRegion(Place fEligibleRegion) {
         this.fEligibleRegion = fEligibleRegion;
     }
 
@@ -484,11 +741,22 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
+     * @param fGtin8 Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
     public void setGtin8(Text fGtin8) {
         this.fGtin8 = fGtin8;
+    }
+    /**
+     * The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     *
+     * @param fGtin8 java.lang.String value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setGtin8(java.lang.String fGtin8) {
+        this.fGtin8 = Text.of(fGtin8);
     }
 
     private QuantitativeValue fInventoryLevel;
@@ -507,6 +775,7 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * The current approximate inventory level for the item or items.
      *
+     * @param fInventoryLevel QuantitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
@@ -530,11 +799,22 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
      *
+     * @param fSku Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
     public void setSku(Text fSku) {
         this.fSku = fSku;
+    }
+    /**
+     * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
+     *
+     * @param fSku java.lang.String value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setSku(java.lang.String fSku) {
+        this.fSku = Text.of(fSku);
     }
 
     private QuantitativeValue fAdvanceBookingRequirement;
@@ -553,6 +833,7 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * The amount of time that is required between accepting the offer and the actual usage of the resource or service.
      *
+     * @param fAdvanceBookingRequirement QuantitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
@@ -576,11 +857,22 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
+     * @param fGtin14 Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
     public void setGtin14(Text fGtin14) {
         this.fGtin14 = fGtin14;
+    }
+    /**
+     * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     *
+     * @param fGtin14 java.lang.String value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setGtin14(java.lang.String fGtin14) {
+        this.fGtin14 = Text.of(fGtin14);
     }
 
     private PriceSpecification fEligibleTransactionVolume;
@@ -599,6 +891,7 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * The transaction volume, in a monetary unit, for which the offer or price specification is valid, e.g. for indicating a minimal purchasing volume, to express free shipping above a certain order volume, or to limit the acceptance of credit cards to purchases to a certain minimal amount.
      *
+     * @param fEligibleTransactionVolume PriceSpecification value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
@@ -621,12 +914,46 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * The geographic area where a service or offered item is provided.
      *
+     * @param fAreaServed AdministrativeArea value to set.
      */
     @Override
-    public void setAreaServed(Object fAreaServed) {
-        if(!(fAreaServed instanceof AdministrativeArea) && !(fAreaServed instanceof GeoShape) && !(fAreaServed instanceof Text) && !(fAreaServed instanceof Place)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'areaServed': " + fAreaServed);
-        }
+    public void setAreaServed(AdministrativeArea fAreaServed) {
+        this.fAreaServed = fAreaServed;
+    }
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @param fAreaServed GeoShape value to set.
+     */
+    @Override
+    public void setAreaServed(GeoShape fAreaServed) {
+        this.fAreaServed = fAreaServed;
+    }
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @param fAreaServed Text value to set.
+     */
+    @Override
+    public void setAreaServed(Text fAreaServed) {
+        this.fAreaServed = fAreaServed;
+    }
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @param fAreaServed java.lang.String value to set.
+     */
+    @Override
+    public void setAreaServed(java.lang.String fAreaServed) {
+        this.fAreaServed = Text.of(fAreaServed);
+    }
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @param fAreaServed Place value to set.
+     */
+    @Override
+    public void setAreaServed(Place fAreaServed) {
         this.fAreaServed = fAreaServed;
     }
 
@@ -646,6 +973,7 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * The type(s) of customers for which the given offer is valid.
      *
+     * @param fEligibleCustomerType BusinessEntityType value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
@@ -668,6 +996,7 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * The availability of this item&#x2014;for example In stock, Out of stock, Pre-order, etc.
      *
+     * @param fAvailability ItemAvailability value to set.
      */
     @Override
     public void setAvailability(ItemAvailability fAvailability) {
@@ -690,11 +1019,22 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
+     * @param fGtin13 Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
     public void setGtin13(Text fGtin13) {
         this.fGtin13 = fGtin13;
+    }
+    /**
+     * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     *
+     * @param fGtin13 java.lang.String value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setGtin13(java.lang.String fGtin13) {
+        this.fGtin13 = Text.of(fGtin13);
     }
 
     private Object fValidThrough;
@@ -713,14 +1053,42 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
      *
+     * @param fValidThrough DateTime value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setValidThrough(Object fValidThrough) {
-        if(!(fValidThrough instanceof DateTime) && !(fValidThrough instanceof Date)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'validThrough': " + fValidThrough);
-        }
+    public void setValidThrough(DateTime fValidThrough) {
         this.fValidThrough = fValidThrough;
+    }
+    /**
+     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
+     *
+     * @param fValidThrough java.time.LocalDateTime value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setValidThrough(java.time.LocalDateTime fValidThrough) {
+        this.fValidThrough = DateTime.of(fValidThrough);
+    }
+    /**
+     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
+     *
+     * @param fValidThrough Date value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setValidThrough(Date fValidThrough) {
+        this.fValidThrough = fValidThrough;
+    }
+    /**
+     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
+     *
+     * @param fValidThrough java.time.LocalDate value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setValidThrough(java.time.LocalDate fValidThrough) {
+        this.fValidThrough = Date.of(fValidThrough);
     }
 
     private PriceSpecification fPriceSpecification;
@@ -739,6 +1107,7 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * One or more detailed price specifications, indicating the unit price and delivery or payment charges.
      *
+     * @param fPriceSpecification PriceSpecification value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
@@ -763,15 +1132,68 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * The beginning of the availability of the product or service included in the offer.
      *
+     * @param fAvailabilityStarts Time value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setAvailabilityStarts(Object fAvailabilityStarts) {
-        if(!(fAvailabilityStarts instanceof Time) && !(fAvailabilityStarts instanceof DateTime) && !(fAvailabilityStarts instanceof Date)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'availabilityStarts': " + fAvailabilityStarts);
-        }
+    public void setAvailabilityStarts(Time fAvailabilityStarts) {
         this.fAvailabilityStarts = fAvailabilityStarts;
+    }
+    /**
+     * The beginning of the availability of the product or service included in the offer.
+     *
+     * @param fAvailabilityStarts java.time.LocalTime value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setAvailabilityStarts(java.time.LocalTime fAvailabilityStarts) {
+        this.fAvailabilityStarts = Time.of(fAvailabilityStarts);
+    }
+    /**
+     * The beginning of the availability of the product or service included in the offer.
+     *
+     * @param fAvailabilityStarts DateTime value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setAvailabilityStarts(DateTime fAvailabilityStarts) {
+        this.fAvailabilityStarts = fAvailabilityStarts;
+    }
+    /**
+     * The beginning of the availability of the product or service included in the offer.
+     *
+     * @param fAvailabilityStarts java.time.LocalDateTime value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setAvailabilityStarts(java.time.LocalDateTime fAvailabilityStarts) {
+        this.fAvailabilityStarts = DateTime.of(fAvailabilityStarts);
+    }
+    /**
+     * The beginning of the availability of the product or service included in the offer.
+     *
+     * @param fAvailabilityStarts Date value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setAvailabilityStarts(Date fAvailabilityStarts) {
+        this.fAvailabilityStarts = fAvailabilityStarts;
+    }
+    /**
+     * The beginning of the availability of the product or service included in the offer.
+     *
+     * @param fAvailabilityStarts java.time.LocalDate value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setAvailabilityStarts(java.time.LocalDate fAvailabilityStarts) {
+        this.fAvailabilityStarts = Date.of(fAvailabilityStarts);
     }
 
     private QuantitativeValue fEligibleDuration;
@@ -790,6 +1212,7 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * The duration for which the given offer is valid.
      *
+     * @param fEligibleDuration QuantitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
@@ -813,6 +1236,7 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * The place(s) from which the offer can be obtained (e.g. store locations).
      *
+     * @param fAvailableAtOrFrom Place value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
@@ -836,11 +1260,22 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * The serial number or any alphanumeric identifier of a particular product. When attached to an offer, it is a shortcut for the serial number of the product included in the offer.
      *
+     * @param fSerialNumber Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
     public void setSerialNumber(Text fSerialNumber) {
         this.fSerialNumber = fSerialNumber;
+    }
+    /**
+     * The serial number or any alphanumeric identifier of a particular product. When attached to an offer, it is a shortcut for the serial number of the product included in the offer.
+     *
+     * @param fSerialNumber java.lang.String value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setSerialNumber(java.lang.String fSerialNumber) {
+        this.fSerialNumber = Text.of(fSerialNumber);
     }
 
     private Object fMainEntityOfPage;
@@ -858,13 +1293,29 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
+     * @param fMainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
-        }
+    public void setMainEntityOfPage(CreativeWork fMainEntityOfPage) {
         this.fMainEntityOfPage = fMainEntityOfPage;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param fMainEntityOfPage URL value to set.
+     */
+    @Override
+    public void setMainEntityOfPage(URL fMainEntityOfPage) {
+        this.fMainEntityOfPage = fMainEntityOfPage;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param fMainEntityOfPage java.net.URL value to set.
+     */
+    @Override
+    public void setMainEntityOfPage(java.net.URL fMainEntityOfPage) {
+        this.fMainEntityOfPage = URL.of(fMainEntityOfPage);
     }
 
     private Text fAlternateName;
@@ -882,10 +1333,20 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * An alias for the item.
      *
+     * @param fAlternateName Text value to set.
      */
     @Override
     public void setAlternateName(Text fAlternateName) {
         this.fAlternateName = fAlternateName;
+    }
+    /**
+     * An alias for the item.
+     *
+     * @param fAlternateName java.lang.String value to set.
+     */
+    @Override
+    public void setAlternateName(java.lang.String fAlternateName) {
+        this.fAlternateName = Text.of(fAlternateName);
     }
 
     private Text fName;
@@ -903,10 +1364,20 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * The name of the item.
      *
+     * @param fName Text value to set.
      */
     @Override
     public void setName(Text fName) {
         this.fName = fName;
+    }
+    /**
+     * The name of the item.
+     *
+     * @param fName java.lang.String value to set.
+     */
+    @Override
+    public void setName(java.lang.String fName) {
+        this.fName = Text.of(fName);
     }
 
     private Action fPotentialAction;
@@ -924,6 +1395,7 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      *
+     * @param fPotentialAction Action value to set.
      */
     @Override
     public void setPotentialAction(Action fPotentialAction) {
@@ -945,12 +1417,28 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
+     * @param fImage URL value to set.
      */
     @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
+    public void setImage(URL fImage) {
+        this.fImage = fImage;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param fImage java.net.URL value to set.
+     */
+    @Override
+    public void setImage(java.net.URL fImage) {
+        this.fImage = URL.of(fImage);
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param fImage ImageObject value to set.
+     */
+    @Override
+    public void setImage(ImageObject fImage) {
         this.fImage = fImage;
     }
 
@@ -969,10 +1457,20 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * URL of the item.
      *
+     * @param fUrl URL value to set.
      */
     @Override
     public void setUrl(URL fUrl) {
         this.fUrl = fUrl;
+    }
+    /**
+     * URL of the item.
+     *
+     * @param fUrl java.net.URL value to set.
+     */
+    @Override
+    public void setUrl(java.net.URL fUrl) {
+        this.fUrl = URL.of(fUrl);
     }
 
     private Text fDescription;
@@ -990,10 +1488,20 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * A description of the item.
      *
+     * @param fDescription Text value to set.
      */
     @Override
     public void setDescription(Text fDescription) {
         this.fDescription = fDescription;
+    }
+    /**
+     * A description of the item.
+     *
+     * @param fDescription java.lang.String value to set.
+     */
+    @Override
+    public void setDescription(java.lang.String fDescription) {
+        this.fDescription = Text.of(fDescription);
     }
 
     private Object fSubjectOf;
@@ -1012,13 +1520,21 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * A CreativeWork or Event about this Thing.
      *
+     * @param fSubjectOf Event value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Object fSubjectOf) {
-        if(!(fSubjectOf instanceof Event) && !(fSubjectOf instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'subjectOf': " + fSubjectOf);
-        }
+    public void setSubjectOf(Event fSubjectOf) {
+        this.fSubjectOf = fSubjectOf;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @param fSubjectOf CreativeWork value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public void setSubjectOf(CreativeWork fSubjectOf) {
         this.fSubjectOf = fSubjectOf;
     }
 
@@ -1037,10 +1553,20 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
+     * @param fAdditionalType URL value to set.
      */
     @Override
     public void setAdditionalType(URL fAdditionalType) {
         this.fAdditionalType = fAdditionalType;
+    }
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @param fAdditionalType java.net.URL value to set.
+     */
+    @Override
+    public void setAdditionalType(java.net.URL fAdditionalType) {
+        this.fAdditionalType = URL.of(fAdditionalType);
     }
 
     private Text fDisambiguatingDescription;
@@ -1058,10 +1584,20 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
+     * @param fDisambiguatingDescription Text value to set.
      */
     @Override
     public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
         this.fDisambiguatingDescription = fDisambiguatingDescription;
+    }
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @param fDisambiguatingDescription java.lang.String value to set.
+     */
+    @Override
+    public void setDisambiguatingDescription(java.lang.String fDisambiguatingDescription) {
+        this.fDisambiguatingDescription = Text.of(fDisambiguatingDescription);
     }
 
     private URL fSameAs;
@@ -1079,10 +1615,20 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
+     * @param fSameAs URL value to set.
      */
     @Override
     public void setSameAs(URL fSameAs) {
         this.fSameAs = fSameAs;
+    }
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @param fSameAs java.net.URL value to set.
+     */
+    @Override
+    public void setSameAs(java.net.URL fSameAs) {
+        this.fSameAs = URL.of(fSameAs);
     }
 
     private Object fIdentifier;
@@ -1102,12 +1648,50 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
+     * @param fIdentifier URL value to set.
      */
     @Override
-    public void setIdentifier(Object fIdentifier) {
-        if(!(fIdentifier instanceof URL) && !(fIdentifier instanceof Text) && !(fIdentifier instanceof PropertyValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
-        }
+    public void setIdentifier(URL fIdentifier) {
+        this.fIdentifier = fIdentifier;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param fIdentifier java.net.URL value to set.
+     */
+    @Override
+    public void setIdentifier(java.net.URL fIdentifier) {
+        this.fIdentifier = URL.of(fIdentifier);
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param fIdentifier Text value to set.
+     */
+    @Override
+    public void setIdentifier(Text fIdentifier) {
+        this.fIdentifier = fIdentifier;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param fIdentifier java.lang.String value to set.
+     */
+    @Override
+    public void setIdentifier(java.lang.String fIdentifier) {
+        this.fIdentifier = Text.of(fIdentifier);
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param fIdentifier PropertyValue value to set.
+     */
+    @Override
+    public void setIdentifier(PropertyValue fIdentifier) {
         this.fIdentifier = fIdentifier;
     }
 }

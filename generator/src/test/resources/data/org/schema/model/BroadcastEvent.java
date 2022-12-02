@@ -29,10 +29,27 @@ public interface BroadcastEvent extends PublicationEvent {
     /**
      * Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).
      *
+     * @param fSubtitleLanguage Language value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2110">https://github.com/schemaorg/schemaorg/issues/2110</a>
      */
-    void setSubtitleLanguage(Object fSubtitleLanguage);
+    void setSubtitleLanguage(Language fSubtitleLanguage);
+    /**
+     * Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).
+     *
+     * @param fSubtitleLanguage Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2110">https://github.com/schemaorg/schemaorg/issues/2110</a>
+     */
+    void setSubtitleLanguage(Text fSubtitleLanguage);
+    /**
+     * Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).
+     *
+     * @param fSubtitleLanguage java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2110">https://github.com/schemaorg/schemaorg/issues/2110</a>
+     */
+    void setSubtitleLanguage(java.lang.String fSubtitleLanguage);
 
     /**
      * The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).
@@ -44,8 +61,15 @@ public interface BroadcastEvent extends PublicationEvent {
     /**
      * The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).
      *
+     * @param fVideoFormat Text value to set.
      */
     void setVideoFormat(Text fVideoFormat);
+    /**
+     * The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).
+     *
+     * @param fVideoFormat java.lang.String value to set.
+     */
+    void setVideoFormat(java.lang.String fVideoFormat);
 
     /**
      * The event being broadcast such as a sporting event or awards ceremony.
@@ -57,6 +81,7 @@ public interface BroadcastEvent extends PublicationEvent {
     /**
      * The event being broadcast such as a sporting event or awards ceremony.
      *
+     * @param fBroadcastOfEvent Event value to set.
      */
     void setBroadcastOfEvent(Event fBroadcastOfEvent);
 
@@ -70,6 +95,13 @@ public interface BroadcastEvent extends PublicationEvent {
     /**
      * True if the broadcast is of a live event.
      *
+     * @param fIsLiveBroadcast Boolean value to set.
      */
     void setIsLiveBroadcast(Boolean fIsLiveBroadcast);
+    /**
+     * True if the broadcast is of a live event.
+     *
+     * @param fIsLiveBroadcast java.lang.Boolean value to set.
+     */
+    void setIsLiveBroadcast(java.lang.Boolean fIsLiveBroadcast);
 }

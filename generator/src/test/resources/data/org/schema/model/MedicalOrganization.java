@@ -28,10 +28,19 @@ public interface MedicalOrganization extends Organization {
     /**
      * Whether the provider is accepting new patients.
      *
+     * @param fIsAcceptingNewPatients Boolean value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
     void setIsAcceptingNewPatients(Boolean fIsAcceptingNewPatients);
+    /**
+     * Whether the provider is accepting new patients.
+     *
+     * @param fIsAcceptingNewPatients java.lang.Boolean value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    void setIsAcceptingNewPatients(java.lang.Boolean fIsAcceptingNewPatients);
 
     /**
      * Name or unique ID of network. (Networks are often reused across different insurance plans).
@@ -45,10 +54,19 @@ public interface MedicalOrganization extends Organization {
     /**
      * Name or unique ID of network. (Networks are often reused across different insurance plans).
      *
+     * @param fHealthPlanNetworkId Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
     void setHealthPlanNetworkId(Text fHealthPlanNetworkId);
+    /**
+     * Name or unique ID of network. (Networks are often reused across different insurance plans).
+     *
+     * @param fHealthPlanNetworkId java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    void setHealthPlanNetworkId(java.lang.String fHealthPlanNetworkId);
 
     /**
      * A medical specialty of the provider.
@@ -61,6 +79,7 @@ public interface MedicalOrganization extends Organization {
     /**
      * A medical specialty of the provider.
      *
+     * @param fMedicalSpecialty MedicalSpecialty value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setMedicalSpecialty(MedicalSpecialty fMedicalSpecialty);

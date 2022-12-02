@@ -25,6 +25,13 @@ public interface EndorseAction extends ReactAction {
     /**
      * A sub property of participant. The person/organization being supported.
      *
+     * @param fEndorsee Person value to set.
      */
-    void setEndorsee(Object fEndorsee);
+    void setEndorsee(Person fEndorsee);
+    /**
+     * A sub property of participant. The person/organization being supported.
+     *
+     * @param fEndorsee Organization value to set.
+     */
+    void setEndorsee(Organization fEndorsee);
 }

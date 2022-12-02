@@ -26,6 +26,7 @@ public interface MedicalCause extends MedicalEntity {
     /**
      * The condition, complication, symptom, sign, etc. caused.
      *
+     * @param fCauseOf MedicalEntity value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setCauseOf(MedicalEntity fCauseOf);

@@ -31,6 +31,7 @@ public interface ServiceChannel extends Intangible {
     /**
      * The service provided by this channel.
      *
+     * @param fProvidesService Service value to set.
      */
     void setProvidesService(Service fProvidesService);
 
@@ -44,6 +45,7 @@ public interface ServiceChannel extends Intangible {
     /**
      * The number to access the service by text message.
      *
+     * @param fServiceSmsNumber ContactPoint value to set.
      */
     void setServiceSmsNumber(ContactPoint fServiceSmsNumber);
 
@@ -57,6 +59,7 @@ public interface ServiceChannel extends Intangible {
     /**
      * The address for accessing the service by mail.
      *
+     * @param fServicePostalAddress PostalAddress value to set.
      */
     void setServicePostalAddress(PostalAddress fServicePostalAddress);
 
@@ -70,8 +73,15 @@ public interface ServiceChannel extends Intangible {
     /**
      * The website to access the service.
      *
+     * @param fServiceUrl URL value to set.
      */
     void setServiceUrl(URL fServiceUrl);
+    /**
+     * The website to access the service.
+     *
+     * @param fServiceUrl java.net.URL value to set.
+     */
+    void setServiceUrl(java.net.URL fServiceUrl);
 
     /**
      * The phone number to use to access the service.
@@ -83,6 +93,7 @@ public interface ServiceChannel extends Intangible {
     /**
      * The phone number to use to access the service.
      *
+     * @param fServicePhone ContactPoint value to set.
      */
     void setServicePhone(ContactPoint fServicePhone);
 
@@ -96,8 +107,21 @@ public interface ServiceChannel extends Intangible {
     /**
      * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
      *
+     * @param fAvailableLanguage Text value to set.
      */
-    void setAvailableLanguage(Object fAvailableLanguage);
+    void setAvailableLanguage(Text fAvailableLanguage);
+    /**
+     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
+     *
+     * @param fAvailableLanguage java.lang.String value to set.
+     */
+    void setAvailableLanguage(java.lang.String fAvailableLanguage);
+    /**
+     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
+     *
+     * @param fAvailableLanguage Language value to set.
+     */
+    void setAvailableLanguage(Language fAvailableLanguage);
 
     /**
      * Estimated processing time for the service using this channel.
@@ -109,6 +133,7 @@ public interface ServiceChannel extends Intangible {
     /**
      * Estimated processing time for the service using this channel.
      *
+     * @param fProcessingTime Duration value to set.
      */
     void setProcessingTime(Duration fProcessingTime);
 
@@ -122,6 +147,7 @@ public interface ServiceChannel extends Intangible {
     /**
      * The location (e.g. civic structure, local business, etc.) where a person can go to access the service.
      *
+     * @param fServiceLocation Place value to set.
      */
     void setServiceLocation(Place fServiceLocation);
 }

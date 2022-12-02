@@ -26,6 +26,7 @@ public interface MedicalSignOrSymptom extends MedicalCondition {
     /**
      * A possible treatment to address this condition, sign or symptom.
      *
+     * @param fPossibleTreatment MedicalTherapy value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setPossibleTreatment(MedicalTherapy fPossibleTreatment);

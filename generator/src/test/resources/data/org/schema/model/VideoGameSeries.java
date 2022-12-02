@@ -38,8 +38,21 @@ public interface VideoGameSeries extends CreativeWorkSeries {
     /**
      * A season in a media series.
      *
+     * @param fSeason URL value to set.
      */
-    void setSeason(Object fSeason);
+    void setSeason(URL fSeason);
+    /**
+     * A season in a media series.
+     *
+     * @param fSeason java.net.URL value to set.
+     */
+    void setSeason(java.net.URL fSeason);
+    /**
+     * A season in a media series.
+     *
+     * @param fSeason CreativeWorkSeason value to set.
+     */
+    void setSeason(CreativeWorkSeason fSeason);
 
     /**
      * A season that is part of the media series.
@@ -51,6 +64,7 @@ public interface VideoGameSeries extends CreativeWorkSeries {
     /**
      * A season that is part of the media series.
      *
+     * @param fContainsSeason CreativeWorkSeason value to set.
      */
     void setContainsSeason(CreativeWorkSeason fContainsSeason);
 
@@ -64,6 +78,7 @@ public interface VideoGameSeries extends CreativeWorkSeries {
     /**
      * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
      *
+     * @param fDirector Person value to set.
      */
     void setDirector(Person fDirector);
 
@@ -77,6 +92,7 @@ public interface VideoGameSeries extends CreativeWorkSeries {
     /**
      * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
      *
+     * @param fActor Person value to set.
      */
     void setActor(Person fActor);
 
@@ -90,6 +106,7 @@ public interface VideoGameSeries extends CreativeWorkSeries {
     /**
      * The trailer of a movie or tv/radio series, season, episode, etc.
      *
+     * @param fTrailer VideoObject value to set.
      */
     void setTrailer(VideoObject fTrailer);
 
@@ -103,6 +120,7 @@ public interface VideoGameSeries extends CreativeWorkSeries {
     /**
      * An episode of a TV/radio series or season.
      *
+     * @param fEpisodes Episode value to set.
      */
     void setEpisodes(Episode fEpisodes);
 
@@ -116,6 +134,7 @@ public interface VideoGameSeries extends CreativeWorkSeries {
     /**
      * A piece of data that represents a particular aspect of a fictional character (skill, power, character points, advantage, disadvantage).
      *
+     * @param fCharacterAttribute Thing value to set.
      */
     void setCharacterAttribute(Thing fCharacterAttribute);
 
@@ -129,8 +148,15 @@ public interface VideoGameSeries extends CreativeWorkSeries {
     /**
      * The number of episodes in this season or series.
      *
+     * @param fNumberOfEpisodes Integer value to set.
      */
     void setNumberOfEpisodes(Integer fNumberOfEpisodes);
+    /**
+     * The number of episodes in this season or series.
+     *
+     * @param fNumberOfEpisodes java.lang.Integer value to set.
+     */
+    void setNumberOfEpisodes(java.lang.Integer fNumberOfEpisodes);
 
     /**
      * A season in a media series.
@@ -142,6 +168,7 @@ public interface VideoGameSeries extends CreativeWorkSeries {
     /**
      * A season in a media series.
      *
+     * @param fSeasons CreativeWorkSeason value to set.
      */
     void setSeasons(CreativeWorkSeason fSeasons);
 
@@ -155,6 +182,7 @@ public interface VideoGameSeries extends CreativeWorkSeries {
     /**
      * Cheat codes to the game.
      *
+     * @param fCheatCode CreativeWork value to set.
      */
     void setCheatCode(CreativeWork fCheatCode);
 
@@ -168,6 +196,7 @@ public interface VideoGameSeries extends CreativeWorkSeries {
     /**
      * An item is an object within the game world that can be collected by a player or, occasionally, a non-player character.
      *
+     * @param fGameItem Thing value to set.
      */
     void setGameItem(Thing fGameItem);
 
@@ -181,6 +210,7 @@ public interface VideoGameSeries extends CreativeWorkSeries {
     /**
      * The production company or studio responsible for the item e.g. series, video game, episode etc.
      *
+     * @param fProductionCompany Organization value to set.
      */
     void setProductionCompany(Organization fProductionCompany);
 
@@ -194,6 +224,7 @@ public interface VideoGameSeries extends CreativeWorkSeries {
     /**
      * An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
      *
+     * @param fActors Person value to set.
      */
     void setActors(Person fActors);
 
@@ -207,6 +238,7 @@ public interface VideoGameSeries extends CreativeWorkSeries {
     /**
      * Indicates whether this game is multi-player, co-op or single-player.  The game can be marked as multi-player, co-op and single-player at the same time.
      *
+     * @param fPlayMode GamePlayMode value to set.
      */
     void setPlayMode(GamePlayMode fPlayMode);
 
@@ -220,8 +252,33 @@ public interface VideoGameSeries extends CreativeWorkSeries {
     /**
      * The electronic systems used to play <a href="http://en.wikipedia.org/wiki/Category:Video_game_platforms">video games</a>.
      *
+     * @param fGamePlatform Text value to set.
      */
-    void setGamePlatform(Object fGamePlatform);
+    void setGamePlatform(Text fGamePlatform);
+    /**
+     * The electronic systems used to play <a href="http://en.wikipedia.org/wiki/Category:Video_game_platforms">video games</a>.
+     *
+     * @param fGamePlatform java.lang.String value to set.
+     */
+    void setGamePlatform(java.lang.String fGamePlatform);
+    /**
+     * The electronic systems used to play <a href="http://en.wikipedia.org/wiki/Category:Video_game_platforms">video games</a>.
+     *
+     * @param fGamePlatform URL value to set.
+     */
+    void setGamePlatform(URL fGamePlatform);
+    /**
+     * The electronic systems used to play <a href="http://en.wikipedia.org/wiki/Category:Video_game_platforms">video games</a>.
+     *
+     * @param fGamePlatform java.net.URL value to set.
+     */
+    void setGamePlatform(java.net.URL fGamePlatform);
+    /**
+     * The electronic systems used to play <a href="http://en.wikipedia.org/wiki/Category:Video_game_platforms">video games</a>.
+     *
+     * @param fGamePlatform Thing value to set.
+     */
+    void setGamePlatform(Thing fGamePlatform);
 
     /**
      * The number of seasons in this series.
@@ -233,8 +290,15 @@ public interface VideoGameSeries extends CreativeWorkSeries {
     /**
      * The number of seasons in this series.
      *
+     * @param fNumberOfSeasons Integer value to set.
      */
     void setNumberOfSeasons(Integer fNumberOfSeasons);
+    /**
+     * The number of seasons in this series.
+     *
+     * @param fNumberOfSeasons java.lang.Integer value to set.
+     */
+    void setNumberOfSeasons(java.lang.Integer fNumberOfSeasons);
 
     /**
      * The composer of the soundtrack.
@@ -246,8 +310,15 @@ public interface VideoGameSeries extends CreativeWorkSeries {
     /**
      * The composer of the soundtrack.
      *
+     * @param fMusicBy Person value to set.
      */
-    void setMusicBy(Object fMusicBy);
+    void setMusicBy(Person fMusicBy);
+    /**
+     * The composer of the soundtrack.
+     *
+     * @param fMusicBy MusicGroup value to set.
+     */
+    void setMusicBy(MusicGroup fMusicBy);
 
     /**
      * Indicate how many people can play this game (minimum, maximum, or range).
@@ -259,6 +330,7 @@ public interface VideoGameSeries extends CreativeWorkSeries {
     /**
      * Indicate how many people can play this game (minimum, maximum, or range).
      *
+     * @param fNumberOfPlayers QuantitativeValue value to set.
      */
     void setNumberOfPlayers(QuantitativeValue fNumberOfPlayers);
 
@@ -272,6 +344,7 @@ public interface VideoGameSeries extends CreativeWorkSeries {
     /**
      * The task that a player-controlled character, or group of characters may complete in order to gain a reward.
      *
+     * @param fQuest Thing value to set.
      */
     void setQuest(Thing fQuest);
 
@@ -285,8 +358,27 @@ public interface VideoGameSeries extends CreativeWorkSeries {
     /**
      * Real or fictional location of the game (or part of game).
      *
+     * @param fGameLocation Place value to set.
      */
-    void setGameLocation(Object fGameLocation);
+    void setGameLocation(Place fGameLocation);
+    /**
+     * Real or fictional location of the game (or part of game).
+     *
+     * @param fGameLocation URL value to set.
+     */
+    void setGameLocation(URL fGameLocation);
+    /**
+     * Real or fictional location of the game (or part of game).
+     *
+     * @param fGameLocation java.net.URL value to set.
+     */
+    void setGameLocation(java.net.URL fGameLocation);
+    /**
+     * Real or fictional location of the game (or part of game).
+     *
+     * @param fGameLocation PostalAddress value to set.
+     */
+    void setGameLocation(PostalAddress fGameLocation);
 
     /**
      * An episode of a tv, radio or game media within a series or season.
@@ -298,6 +390,7 @@ public interface VideoGameSeries extends CreativeWorkSeries {
     /**
      * An episode of a tv, radio or game media within a series or season.
      *
+     * @param fEpisode Episode value to set.
      */
     void setEpisode(Episode fEpisode);
 
@@ -311,6 +404,7 @@ public interface VideoGameSeries extends CreativeWorkSeries {
     /**
      * A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
      *
+     * @param fDirectors Person value to set.
      */
     void setDirectors(Person fDirectors);
 }

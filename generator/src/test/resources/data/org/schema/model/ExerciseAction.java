@@ -32,6 +32,7 @@ public interface ExerciseAction extends PlayAction {
     /**
      * A sub property of participant. The sports team that participated on this action.
      *
+     * @param fSportsTeam SportsTeam value to set.
      */
     void setSportsTeam(SportsTeam fSportsTeam);
 
@@ -45,6 +46,7 @@ public interface ExerciseAction extends PlayAction {
     /**
      * A sub property of location. The course where this action was taken.
      *
+     * @param fCourse Place value to set.
      */
     void setCourse(Place fCourse);
 
@@ -58,6 +60,7 @@ public interface ExerciseAction extends PlayAction {
     /**
      * A sub property of location. The original location of the object or the agent before the action.
      *
+     * @param fFromLocation Place value to set.
      */
     void setFromLocation(Place fFromLocation);
 
@@ -72,6 +75,7 @@ public interface ExerciseAction extends PlayAction {
     /**
      * A sub property of instrument. The diet used in this action.
      *
+     * @param fDiet Diet value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setDiet(Diet fDiet);
@@ -86,6 +90,7 @@ public interface ExerciseAction extends PlayAction {
     /**
      * A sub property of location. The sports activity location where this action occurred.
      *
+     * @param fSportsActivityLocation SportsActivityLocation value to set.
      */
     void setSportsActivityLocation(SportsActivityLocation fSportsActivityLocation);
 
@@ -99,6 +104,7 @@ public interface ExerciseAction extends PlayAction {
     /**
      * The distance travelled, e.g. exercising or travelling.
      *
+     * @param fDistance Distance value to set.
      */
     void setDistance(Distance fDistance);
 
@@ -113,6 +119,7 @@ public interface ExerciseAction extends PlayAction {
     /**
      * A sub property of instrument. The exercise plan used on this action.
      *
+     * @param fExercisePlan ExercisePlan value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setExercisePlan(ExercisePlan fExercisePlan);
@@ -127,6 +134,7 @@ public interface ExerciseAction extends PlayAction {
     /**
      * A sub property of location. The sports event where this action occurred.
      *
+     * @param fSportsEvent SportsEvent value to set.
      */
     void setSportsEvent(SportsEvent fSportsEvent);
 
@@ -141,6 +149,7 @@ public interface ExerciseAction extends PlayAction {
     /**
      * A sub property of instrument. The diet used in this action.
      *
+     * @param fExerciseRelatedDiet Diet value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setExerciseRelatedDiet(Diet fExerciseRelatedDiet);
@@ -155,6 +164,7 @@ public interface ExerciseAction extends PlayAction {
     /**
      * A sub property of participant. The opponent on this action.
      *
+     * @param fOpponent Person value to set.
      */
     void setOpponent(Person fOpponent);
 
@@ -168,6 +178,7 @@ public interface ExerciseAction extends PlayAction {
     /**
      * A sub property of location. The course where this action was taken.
      *
+     * @param fExerciseCourse Place value to set.
      */
     void setExerciseCourse(Place fExerciseCourse);
 
@@ -181,6 +192,7 @@ public interface ExerciseAction extends PlayAction {
     /**
      * A sub property of location. The final location of the object or the agent after the action.
      *
+     * @param fToLocation Place value to set.
      */
     void setToLocation(Place fToLocation);
 
@@ -195,7 +207,15 @@ public interface ExerciseAction extends PlayAction {
     /**
      * Type(s) of exercise or activity, such as strength training, flexibility training, aerobics, cardiac rehabilitation, etc.
      *
+     * @param fExerciseType Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setExerciseType(Text fExerciseType);
+    /**
+     * Type(s) of exercise or activity, such as strength training, flexibility training, aerobics, cardiac rehabilitation, etc.
+     *
+     * @param fExerciseType java.lang.String value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setExerciseType(java.lang.String fExerciseType);
 }

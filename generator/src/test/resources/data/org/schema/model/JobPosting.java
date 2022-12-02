@@ -44,10 +44,19 @@ public interface JobPosting extends Intangible {
     /**
      * A description of the employer, career opportunities and work environment for this position.
      *
+     * @param fEmployerOverview Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2396">https://github.com/schemaorg/schemaorg/issues/2396</a>
      */
     void setEmployerOverview(Text fEmployerOverview);
+    /**
+     * A description of the employer, career opportunities and work environment for this position.
+     *
+     * @param fEmployerOverview java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2396">https://github.com/schemaorg/schemaorg/issues/2396</a>
+     */
+    void setEmployerOverview(java.lang.String fEmployerOverview);
 
     /**
      * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
@@ -60,9 +69,31 @@ public interface JobPosting extends Intangible {
     /**
      * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
      *
+     * @param fEstimatedSalary MonetaryAmountDistribution value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
-    void setEstimatedSalary(Object fEstimatedSalary);
+    void setEstimatedSalary(MonetaryAmountDistribution fEstimatedSalary);
+    /**
+     * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
+     *
+     * @param fEstimatedSalary MonetaryAmount value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    void setEstimatedSalary(MonetaryAmount fEstimatedSalary);
+    /**
+     * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
+     *
+     * @param fEstimatedSalary Number value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    void setEstimatedSalary(Number fEstimatedSalary);
+    /**
+     * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
+     *
+     * @param fEstimatedSalary java.lang.Number value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    void setEstimatedSalary(java.lang.Number fEstimatedSalary);
 
     /**
      * A description of the job location (e.g TELECOMMUTE for telecommute jobs).
@@ -76,10 +107,19 @@ public interface JobPosting extends Intangible {
     /**
      * A description of the job location (e.g TELECOMMUTE for telecommute jobs).
      *
+     * @param fJobLocationType Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1591">https://github.com/schemaorg/schemaorg/issues/1591</a>
      */
     void setJobLocationType(Text fJobLocationType);
+    /**
+     * A description of the job location (e.g TELECOMMUTE for telecommute jobs).
+     *
+     * @param fJobLocationType java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1591">https://github.com/schemaorg/schemaorg/issues/1591</a>
+     */
+    void setJobLocationType(java.lang.String fJobLocationType);
 
     /**
      * Responsibilities associated with this role or Occupation.
@@ -92,9 +132,17 @@ public interface JobPosting extends Intangible {
     /**
      * Responsibilities associated with this role or Occupation.
      *
+     * @param fResponsibilities Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
     void setResponsibilities(Text fResponsibilities);
+    /**
+     * Responsibilities associated with this role or Occupation.
+     *
+     * @param fResponsibilities java.lang.String value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    void setResponsibilities(java.lang.String fResponsibilities);
 
     /**
      * A (typically single) geographic location associated with the job position.
@@ -106,6 +154,7 @@ public interface JobPosting extends Intangible {
     /**
      * A (typically single) geographic location associated with the job position.
      *
+     * @param fJobLocation Place value to set.
      */
     void setJobLocation(Place fJobLocation);
 
@@ -121,10 +170,43 @@ public interface JobPosting extends Intangible {
     /**
      * A description of the types of physical activity associated with the job. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
      *
+     * @param fPhysicalRequirement URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
      */
-    void setPhysicalRequirement(Object fPhysicalRequirement);
+    void setPhysicalRequirement(URL fPhysicalRequirement);
+    /**
+     * A description of the types of physical activity associated with the job. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
+     *
+     * @param fPhysicalRequirement java.net.URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
+     */
+    void setPhysicalRequirement(java.net.URL fPhysicalRequirement);
+    /**
+     * A description of the types of physical activity associated with the job. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
+     *
+     * @param fPhysicalRequirement Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
+     */
+    void setPhysicalRequirement(Text fPhysicalRequirement);
+    /**
+     * A description of the types of physical activity associated with the job. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
+     *
+     * @param fPhysicalRequirement java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
+     */
+    void setPhysicalRequirement(java.lang.String fPhysicalRequirement);
+    /**
+     * A description of the types of physical activity associated with the job. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
+     *
+     * @param fPhysicalRequirement DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
+     */
+    void setPhysicalRequirement(DefinedTerm fPhysicalRequirement);
 
     /**
      * Description of bonus and commission compensation aspects of the job.
@@ -136,8 +218,15 @@ public interface JobPosting extends Intangible {
     /**
      * Description of bonus and commission compensation aspects of the job.
      *
+     * @param fIncentives Text value to set.
      */
     void setIncentives(Text fIncentives);
+    /**
+     * Description of bonus and commission compensation aspects of the job.
+     *
+     * @param fIncentives java.lang.String value to set.
+     */
+    void setIncentives(java.lang.String fIncentives);
 
     /**
      * Indicates whether an [[url]] that is associated with a [[JobPosting]] enables direct application for the job, via the posting website. A job posting is considered to have directApply of [[True]] if an application process for the specified job can be directly initiated via the url(s) given (noting that e.g. multiple internet domains might nevertheless be involved at an implementation level). A value of [[False]] is appropriate if there is no clear path to applying directly online for the specified job, navigating directly from the JobPosting url(s) supplied.
@@ -151,10 +240,19 @@ public interface JobPosting extends Intangible {
     /**
      * Indicates whether an [[url]] that is associated with a [[JobPosting]] enables direct application for the job, via the posting website. A job posting is considered to have directApply of [[True]] if an application process for the specified job can be directly initiated via the url(s) given (noting that e.g. multiple internet domains might nevertheless be involved at an implementation level). A value of [[False]] is appropriate if there is no clear path to applying directly online for the specified job, navigating directly from the JobPosting url(s) supplied.
      *
+     * @param fDirectApply Boolean value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2907">https://github.com/schemaorg/schemaorg/issues/2907</a>
      */
     void setDirectApply(Boolean fDirectApply);
+    /**
+     * Indicates whether an [[url]] that is associated with a [[JobPosting]] enables direct application for the job, via the posting website. A job posting is considered to have directApply of [[True]] if an application process for the specified job can be directly initiated via the url(s) given (noting that e.g. multiple internet domains might nevertheless be involved at an implementation level). A value of [[False]] is appropriate if there is no clear path to applying directly online for the specified job, navigating directly from the JobPosting url(s) supplied.
+     *
+     * @param fDirectApply java.lang.Boolean value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2907">https://github.com/schemaorg/schemaorg/issues/2907</a>
+     */
+    void setDirectApply(java.lang.Boolean fDirectApply);
 
     /**
      * A description of any sensory requirements and levels necessary to function on the job, including hearing and vision. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
@@ -168,10 +266,43 @@ public interface JobPosting extends Intangible {
     /**
      * A description of any sensory requirements and levels necessary to function on the job, including hearing and vision. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
      *
+     * @param fSensoryRequirement DefinedTerm value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
      */
-    void setSensoryRequirement(Object fSensoryRequirement);
+    void setSensoryRequirement(DefinedTerm fSensoryRequirement);
+    /**
+     * A description of any sensory requirements and levels necessary to function on the job, including hearing and vision. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
+     *
+     * @param fSensoryRequirement URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
+     */
+    void setSensoryRequirement(URL fSensoryRequirement);
+    /**
+     * A description of any sensory requirements and levels necessary to function on the job, including hearing and vision. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
+     *
+     * @param fSensoryRequirement java.net.URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
+     */
+    void setSensoryRequirement(java.net.URL fSensoryRequirement);
+    /**
+     * A description of any sensory requirements and levels necessary to function on the job, including hearing and vision. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
+     *
+     * @param fSensoryRequirement Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
+     */
+    void setSensoryRequirement(Text fSensoryRequirement);
+    /**
+     * A description of any sensory requirements and levels necessary to function on the job, including hearing and vision. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
+     *
+     * @param fSensoryRequirement java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
+     */
+    void setSensoryRequirement(java.lang.String fSensoryRequirement);
 
     /**
      * The location(s) applicants can apply from. This is usually used for telecommuting jobs where the applicant does not need to be in a physical office. Note: This should not be used for citizenship or work visa requirements.
@@ -185,6 +316,7 @@ public interface JobPosting extends Intangible {
     /**
      * The location(s) applicants can apply from. This is usually used for telecommuting jobs where the applicant does not need to be in a physical office. Note: This should not be used for citizenship or work visa requirements.
      *
+     * @param fApplicantLocationRequirements AdministrativeArea value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2083">https://github.com/schemaorg/schemaorg/issues/2083</a>
      */
@@ -200,8 +332,15 @@ public interface JobPosting extends Intangible {
     /**
      * The typical working hours for this job (e.g. 1st shift, night shift, 8am-5pm).
      *
+     * @param fWorkHours Text value to set.
      */
     void setWorkHours(Text fWorkHours);
+    /**
+     * The typical working hours for this job (e.g. 1st shift, night shift, 8am-5pm).
+     *
+     * @param fWorkHours java.lang.String value to set.
+     */
+    void setWorkHours(java.lang.String fWorkHours);
 
     /**
      * The date on which a successful applicant for this job would be expected to start work. Choose a specific date in the future or use the jobImmediateStart property to indicate the position is to be filled as soon as possible.
@@ -215,10 +354,35 @@ public interface JobPosting extends Intangible {
     /**
      * The date on which a successful applicant for this job would be expected to start work. Choose a specific date in the future or use the jobImmediateStart property to indicate the position is to be filled as soon as possible.
      *
+     * @param fJobStartDate Date value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2244">https://github.com/schemaorg/schemaorg/issues/2244</a>
      */
-    void setJobStartDate(Object fJobStartDate);
+    void setJobStartDate(Date fJobStartDate);
+    /**
+     * The date on which a successful applicant for this job would be expected to start work. Choose a specific date in the future or use the jobImmediateStart property to indicate the position is to be filled as soon as possible.
+     *
+     * @param fJobStartDate java.time.LocalDate value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2244">https://github.com/schemaorg/schemaorg/issues/2244</a>
+     */
+    void setJobStartDate(java.time.LocalDate fJobStartDate);
+    /**
+     * The date on which a successful applicant for this job would be expected to start work. Choose a specific date in the future or use the jobImmediateStart property to indicate the position is to be filled as soon as possible.
+     *
+     * @param fJobStartDate Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2244">https://github.com/schemaorg/schemaorg/issues/2244</a>
+     */
+    void setJobStartDate(Text fJobStartDate);
+    /**
+     * The date on which a successful applicant for this job would be expected to start work. Choose a specific date in the future or use the jobImmediateStart property to indicate the position is to be filled as soon as possible.
+     *
+     * @param fJobStartDate java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2244">https://github.com/schemaorg/schemaorg/issues/2244</a>
+     */
+    void setJobStartDate(java.lang.String fJobStartDate);
 
     /**
      * Type of employment (e.g. full-time, part-time, contract, temporary, seasonal, internship).
@@ -230,8 +394,15 @@ public interface JobPosting extends Intangible {
     /**
      * Type of employment (e.g. full-time, part-time, contract, temporary, seasonal, internship).
      *
+     * @param fEmploymentType Text value to set.
      */
     void setEmploymentType(Text fEmploymentType);
+    /**
+     * Type of employment (e.g. full-time, part-time, contract, temporary, seasonal, internship).
+     *
+     * @param fEmploymentType java.lang.String value to set.
+     */
+    void setEmploymentType(java.lang.String fEmploymentType);
 
     /**
      * Any special commitments associated with this job posting. Valid entries include VeteranCommit, MilitarySpouseCommit, etc.
@@ -243,8 +414,15 @@ public interface JobPosting extends Intangible {
     /**
      * Any special commitments associated with this job posting. Valid entries include VeteranCommit, MilitarySpouseCommit, etc.
      *
+     * @param fSpecialCommitments Text value to set.
      */
     void setSpecialCommitments(Text fSpecialCommitments);
+    /**
+     * Any special commitments associated with this job posting. Valid entries include VeteranCommit, MilitarySpouseCommit, etc.
+     *
+     * @param fSpecialCommitments java.lang.String value to set.
+     */
+    void setSpecialCommitments(java.lang.String fSpecialCommitments);
 
     /**
      * Contact details for further information relevant to this job posting.
@@ -258,6 +436,7 @@ public interface JobPosting extends Intangible {
     /**
      * Contact details for further information relevant to this job posting.
      *
+     * @param fApplicationContact ContactPoint value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2396">https://github.com/schemaorg/schemaorg/issues/2396</a>
      */
@@ -273,8 +452,15 @@ public interface JobPosting extends Intangible {
     /**
      * Description of bonus and commission compensation aspects of the job.
      *
+     * @param fIncentiveCompensation Text value to set.
      */
     void setIncentiveCompensation(Text fIncentiveCompensation);
+    /**
+     * Description of bonus and commission compensation aspects of the job.
+     *
+     * @param fIncentiveCompensation java.lang.String value to set.
+     */
+    void setIncentiveCompensation(java.lang.String fIncentiveCompensation);
 
     /**
      * The Occupation for the JobPosting.
@@ -287,6 +473,7 @@ public interface JobPosting extends Intangible {
     /**
      * The Occupation for the JobPosting.
      *
+     * @param fRelevantOccupation Occupation value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
     void setRelevantOccupation(Occupation fRelevantOccupation);
@@ -303,10 +490,19 @@ public interface JobPosting extends Intangible {
     /**
      * The number of positions open for this job posting. Use a positive integer. Do not use if the number of positions is unclear or not known.
      *
+     * @param fTotalJobOpenings Integer value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2329">https://github.com/schemaorg/schemaorg/issues/2329</a>
      */
     void setTotalJobOpenings(Integer fTotalJobOpenings);
+    /**
+     * The number of positions open for this job posting. Use a positive integer. Do not use if the number of positions is unclear or not known.
+     *
+     * @param fTotalJobOpenings java.lang.Integer value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2329">https://github.com/schemaorg/schemaorg/issues/2329</a>
+     */
+    void setTotalJobOpenings(java.lang.Integer fTotalJobOpenings);
 
     /**
      * Description of skills and experience needed for the position or Occupation.
@@ -319,9 +515,24 @@ public interface JobPosting extends Intangible {
     /**
      * Description of skills and experience needed for the position or Occupation.
      *
+     * @param fExperienceRequirements Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
-    void setExperienceRequirements(Object fExperienceRequirements);
+    void setExperienceRequirements(Text fExperienceRequirements);
+    /**
+     * Description of skills and experience needed for the position or Occupation.
+     *
+     * @param fExperienceRequirements java.lang.String value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    void setExperienceRequirements(java.lang.String fExperienceRequirements);
+    /**
+     * Description of skills and experience needed for the position or Occupation.
+     *
+     * @param fExperienceRequirements OccupationalExperienceRequirements value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    void setExperienceRequirements(OccupationalExperienceRequirements fExperienceRequirements);
 
     /**
      * Description of benefits associated with the job.
@@ -333,8 +544,15 @@ public interface JobPosting extends Intangible {
     /**
      * Description of benefits associated with the job.
      *
+     * @param fJobBenefits Text value to set.
      */
     void setJobBenefits(Text fJobBenefits);
+    /**
+     * Description of benefits associated with the job.
+     *
+     * @param fJobBenefits java.lang.String value to set.
+     */
+    void setJobBenefits(java.lang.String fJobBenefits);
 
     /**
      * The currency (coded using [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217) ) used for the main salary information in this job posting or for this employee.
@@ -346,8 +564,15 @@ public interface JobPosting extends Intangible {
     /**
      * The currency (coded using [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217) ) used for the main salary information in this job posting or for this employee.
      *
+     * @param fSalaryCurrency Text value to set.
      */
     void setSalaryCurrency(Text fSalaryCurrency);
+    /**
+     * The currency (coded using [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217) ) used for the main salary information in this job posting or for this employee.
+     *
+     * @param fSalaryCurrency java.lang.String value to set.
+     */
+    void setSalaryCurrency(java.lang.String fSalaryCurrency);
 
     /**
      * Indicates whether a [[JobPosting]] will accept experience (as indicated by [[OccupationalExperienceRequirements]]) in place of its formal educational qualifications (as indicated by [[educationRequirements]]). If true, indicates that satisfying one of these requirements is sufficient.
@@ -361,10 +586,19 @@ public interface JobPosting extends Intangible {
     /**
      * Indicates whether a [[JobPosting]] will accept experience (as indicated by [[OccupationalExperienceRequirements]]) in place of its formal educational qualifications (as indicated by [[educationRequirements]]). If true, indicates that satisfying one of these requirements is sufficient.
      *
+     * @param fExperienceInPlaceOfEducation Boolean value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2681">https://github.com/schemaorg/schemaorg/issues/2681</a>
      */
     void setExperienceInPlaceOfEducation(Boolean fExperienceInPlaceOfEducation);
+    /**
+     * Indicates whether a [[JobPosting]] will accept experience (as indicated by [[OccupationalExperienceRequirements]]) in place of its formal educational qualifications (as indicated by [[educationRequirements]]). If true, indicates that satisfying one of these requirements is sufficient.
+     *
+     * @param fExperienceInPlaceOfEducation java.lang.Boolean value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2681">https://github.com/schemaorg/schemaorg/issues/2681</a>
+     */
+    void setExperienceInPlaceOfEducation(java.lang.Boolean fExperienceInPlaceOfEducation);
 
     /**
      * A description of any security clearance requirements of the job.
@@ -378,10 +612,35 @@ public interface JobPosting extends Intangible {
     /**
      * A description of any security clearance requirements of the job.
      *
+     * @param fSecurityClearanceRequirement URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
      */
-    void setSecurityClearanceRequirement(Object fSecurityClearanceRequirement);
+    void setSecurityClearanceRequirement(URL fSecurityClearanceRequirement);
+    /**
+     * A description of any security clearance requirements of the job.
+     *
+     * @param fSecurityClearanceRequirement java.net.URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
+     */
+    void setSecurityClearanceRequirement(java.net.URL fSecurityClearanceRequirement);
+    /**
+     * A description of any security clearance requirements of the job.
+     *
+     * @param fSecurityClearanceRequirement Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
+     */
+    void setSecurityClearanceRequirement(Text fSecurityClearanceRequirement);
+    /**
+     * A description of any security clearance requirements of the job.
+     *
+     * @param fSecurityClearanceRequirement java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
+     */
+    void setSecurityClearanceRequirement(java.lang.String fSecurityClearanceRequirement);
 
     /**
      * The legal requirements such as citizenship, visa and other documentation required for an applicant to this job.
@@ -395,10 +654,19 @@ public interface JobPosting extends Intangible {
     /**
      * The legal requirements such as citizenship, visa and other documentation required for an applicant to this job.
      *
+     * @param fEligibilityToWorkRequirement Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
      */
     void setEligibilityToWorkRequirement(Text fEligibilityToWorkRequirement);
+    /**
+     * The legal requirements such as citizenship, visa and other documentation required for an applicant to this job.
+     *
+     * @param fEligibilityToWorkRequirement java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
+     */
+    void setEligibilityToWorkRequirement(java.lang.String fEligibilityToWorkRequirement);
 
     /**
      * Educational background needed for the position or Occupation.
@@ -413,11 +681,30 @@ public interface JobPosting extends Intangible {
     /**
      * Educational background needed for the position or Occupation.
      *
+     * @param fEducationRequirements EducationalOccupationalCredential value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    void setEducationRequirements(Object fEducationRequirements);
+    void setEducationRequirements(EducationalOccupationalCredential fEducationRequirements);
+    /**
+     * Educational background needed for the position or Occupation.
+     *
+     * @param fEducationRequirements Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     */
+    void setEducationRequirements(Text fEducationRequirements);
+    /**
+     * Educational background needed for the position or Occupation.
+     *
+     * @param fEducationRequirements java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     */
+    void setEducationRequirements(java.lang.String fEducationRequirements);
 
     /**
      * Description of benefits associated with the job.
@@ -429,8 +716,15 @@ public interface JobPosting extends Intangible {
     /**
      * Description of benefits associated with the job.
      *
+     * @param fBenefits Text value to set.
      */
     void setBenefits(Text fBenefits);
+    /**
+     * Description of benefits associated with the job.
+     *
+     * @param fBenefits java.lang.String value to set.
+     */
+    void setBenefits(java.lang.String fBenefits);
 
     /**
      * The industry associated with the job position.
@@ -442,8 +736,21 @@ public interface JobPosting extends Intangible {
     /**
      * The industry associated with the job position.
      *
+     * @param fIndustry DefinedTerm value to set.
      */
-    void setIndustry(Object fIndustry);
+    void setIndustry(DefinedTerm fIndustry);
+    /**
+     * The industry associated with the job position.
+     *
+     * @param fIndustry Text value to set.
+     */
+    void setIndustry(Text fIndustry);
+    /**
+     * The industry associated with the job position.
+     *
+     * @param fIndustry java.lang.String value to set.
+     */
+    void setIndustry(java.lang.String fIndustry);
 
     /**
      * The base salary of the job or of an employee in an EmployeeRole.
@@ -455,8 +762,27 @@ public interface JobPosting extends Intangible {
     /**
      * The base salary of the job or of an employee in an EmployeeRole.
      *
+     * @param fBaseSalary Number value to set.
      */
-    void setBaseSalary(Object fBaseSalary);
+    void setBaseSalary(Number fBaseSalary);
+    /**
+     * The base salary of the job or of an employee in an EmployeeRole.
+     *
+     * @param fBaseSalary java.lang.Number value to set.
+     */
+    void setBaseSalary(java.lang.Number fBaseSalary);
+    /**
+     * The base salary of the job or of an employee in an EmployeeRole.
+     *
+     * @param fBaseSalary PriceSpecification value to set.
+     */
+    void setBaseSalary(PriceSpecification fBaseSalary);
+    /**
+     * The base salary of the job or of an employee in an EmployeeRole.
+     *
+     * @param fBaseSalary MonetaryAmount value to set.
+     */
+    void setBaseSalary(MonetaryAmount fBaseSalary);
 
     /**
      * Publication date of an online listing.
@@ -470,10 +796,35 @@ public interface JobPosting extends Intangible {
     /**
      * Publication date of an online listing.
      *
+     * @param fDatePosted Date value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
-    void setDatePosted(Object fDatePosted);
+    void setDatePosted(Date fDatePosted);
+    /**
+     * Publication date of an online listing.
+     *
+     * @param fDatePosted java.time.LocalDate value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
+     */
+    void setDatePosted(java.time.LocalDate fDatePosted);
+    /**
+     * Publication date of an online listing.
+     *
+     * @param fDatePosted DateTime value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
+     */
+    void setDatePosted(DateTime fDatePosted);
+    /**
+     * Publication date of an online listing.
+     *
+     * @param fDatePosted java.time.LocalDateTime value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
+     */
+    void setDatePosted(java.time.LocalDateTime fDatePosted);
 
     /**
      * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is desired or required to fulfill this role or to work in this occupation.
@@ -487,10 +838,27 @@ public interface JobPosting extends Intangible {
     /**
      * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is desired or required to fulfill this role or to work in this occupation.
      *
+     * @param fSkills Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
-    void setSkills(Object fSkills);
+    void setSkills(Text fSkills);
+    /**
+     * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is desired or required to fulfill this role or to work in this occupation.
+     *
+     * @param fSkills java.lang.String value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    void setSkills(java.lang.String fSkills);
+    /**
+     * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is desired or required to fulfill this role or to work in this occupation.
+     *
+     * @param fSkills DefinedTerm value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    void setSkills(DefinedTerm fSkills);
 
     /**
      * The title of the job.
@@ -502,8 +870,15 @@ public interface JobPosting extends Intangible {
     /**
      * The title of the job.
      *
+     * @param fTitle Text value to set.
      */
     void setTitle(Text fTitle);
+    /**
+     * The title of the job.
+     *
+     * @param fTitle java.lang.String value to set.
+     */
+    void setTitle(java.lang.String fTitle);
 
     /**
      * Organization offering the job position.
@@ -515,6 +890,7 @@ public interface JobPosting extends Intangible {
     /**
      * Organization offering the job position.
      *
+     * @param fHiringOrganization Organization value to set.
      */
     void setHiringOrganization(Organization fHiringOrganization);
 
@@ -530,10 +906,19 @@ public interface JobPosting extends Intangible {
     /**
      * An indicator as to whether a position is available for an immediate start.
      *
+     * @param fJobImmediateStart Boolean value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2244">https://github.com/schemaorg/schemaorg/issues/2244</a>
      */
     void setJobImmediateStart(Boolean fJobImmediateStart);
+    /**
+     * An indicator as to whether a position is available for an immediate start.
+     *
+     * @param fJobImmediateStart java.lang.Boolean value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2244">https://github.com/schemaorg/schemaorg/issues/2244</a>
+     */
+    void setJobImmediateStart(java.lang.Boolean fJobImmediateStart);
 
     /**
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
@@ -546,9 +931,31 @@ public interface JobPosting extends Intangible {
     /**
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
      *
+     * @param fValidThrough DateTime value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setValidThrough(Object fValidThrough);
+    void setValidThrough(DateTime fValidThrough);
+    /**
+     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
+     *
+     * @param fValidThrough java.time.LocalDateTime value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    void setValidThrough(java.time.LocalDateTime fValidThrough);
+    /**
+     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
+     *
+     * @param fValidThrough Date value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    void setValidThrough(Date fValidThrough);
+    /**
+     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
+     *
+     * @param fValidThrough java.time.LocalDate value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    void setValidThrough(java.time.LocalDate fValidThrough);
 
     /**
      * Indicates the department, unit and/or facility where the employee reports and/or in which the job is to be performed.
@@ -562,6 +969,7 @@ public interface JobPosting extends Intangible {
     /**
      * Indicates the department, unit and/or facility where the employee reports and/or in which the job is to be performed.
      *
+     * @param fEmploymentUnit Organization value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2296">https://github.com/schemaorg/schemaorg/issues/2296</a>
      */
@@ -580,11 +988,30 @@ public interface JobPosting extends Intangible {
     /**
      * Specific qualifications required for this role or Occupation.
      *
+     * @param fQualifications Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    void setQualifications(Object fQualifications);
+    void setQualifications(Text fQualifications);
+    /**
+     * Specific qualifications required for this role or Occupation.
+     *
+     * @param fQualifications java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     */
+    void setQualifications(java.lang.String fQualifications);
+    /**
+     * Specific qualifications required for this role or Occupation.
+     *
+     * @param fQualifications EducationalOccupationalCredential value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     */
+    void setQualifications(EducationalOccupationalCredential fQualifications);
 
     /**
      * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.<br/>
@@ -603,11 +1030,36 @@ public interface JobPosting extends Intangible {
      * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.<br/>
      * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
      *
+     * @param fOccupationalCategory CategoryCode value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
-    void setOccupationalCategory(Object fOccupationalCategory);
+    void setOccupationalCategory(CategoryCode fOccupationalCategory);
+    /**
+     * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.<br/>
+     * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
+     *
+     * @param fOccupationalCategory Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    void setOccupationalCategory(Text fOccupationalCategory);
+    /**
+     * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.<br/>
+     * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
+     *
+     * @param fOccupationalCategory java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    void setOccupationalCategory(java.lang.String fOccupationalCategory);
 }

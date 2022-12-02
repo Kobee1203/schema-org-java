@@ -30,6 +30,7 @@ public interface OrderItem extends Intangible {
     /**
      * The delivery of the parcel related to this order or order item.
      *
+     * @param fOrderDelivery ParcelDelivery value to set.
      */
     void setOrderDelivery(ParcelDelivery fOrderDelivery);
 
@@ -43,6 +44,7 @@ public interface OrderItem extends Intangible {
     /**
      * The current status of the order item.
      *
+     * @param fOrderItemStatus OrderStatus value to set.
      */
     void setOrderItemStatus(OrderStatus fOrderItemStatus);
 
@@ -56,8 +58,15 @@ public interface OrderItem extends Intangible {
     /**
      * The number of the item ordered. If the property is not set, assume the quantity is one.
      *
+     * @param fOrderQuantity Number value to set.
      */
     void setOrderQuantity(Number fOrderQuantity);
+    /**
+     * The number of the item ordered. If the property is not set, assume the quantity is one.
+     *
+     * @param fOrderQuantity java.lang.Number value to set.
+     */
+    void setOrderQuantity(java.lang.Number fOrderQuantity);
 
     /**
      * The identifier of the order item.
@@ -69,8 +78,15 @@ public interface OrderItem extends Intangible {
     /**
      * The identifier of the order item.
      *
+     * @param fOrderItemNumber Text value to set.
      */
     void setOrderItemNumber(Text fOrderItemNumber);
+    /**
+     * The identifier of the order item.
+     *
+     * @param fOrderItemNumber java.lang.String value to set.
+     */
+    void setOrderItemNumber(java.lang.String fOrderItemNumber);
 
     /**
      * The item ordered.
@@ -82,6 +98,19 @@ public interface OrderItem extends Intangible {
     /**
      * The item ordered.
      *
+     * @param fOrderedItem Service value to set.
      */
-    void setOrderedItem(Object fOrderedItem);
+    void setOrderedItem(Service fOrderedItem);
+    /**
+     * The item ordered.
+     *
+     * @param fOrderedItem OrderItem value to set.
+     */
+    void setOrderedItem(OrderItem fOrderedItem);
+    /**
+     * The item ordered.
+     *
+     * @param fOrderedItem Product value to set.
+     */
+    void setOrderedItem(Product fOrderedItem);
 }

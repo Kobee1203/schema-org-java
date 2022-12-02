@@ -78,6 +78,7 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * Alumni of an organization.
      *
+     * @param fAlumni Person value to set.
      */
     @Override
     public void setAlumni(Person fAlumni) {
@@ -99,10 +100,20 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * The general opening hours for a business. Opening hours can be specified as a weekly time range, starting with days, then times per day. Multiple days can be listed with commas ',' separating each day. Day or time ranges are specified using a hyphen '-'.<br/><br/>* Days are specified using the following two-letter combinations: ```Mo```, ```Tu```, ```We```, ```Th```, ```Fr```, ```Sa```, ```Su```.<br/>* Times are specified using 24:00 format. For example, 3pm is specified as ```15:00```, 10am as ```10:00```. <br/>* Here is an example: <code>&lt;time itemprop="openingHours" datetime=&quot;Tu,Th 16:00-20:00&quot;&gt;Tuesdays and Thursdays 4-8pm&lt;/time&gt;</code>.<br/>* If a business is open 7 days a week, then it can be specified as <code>&lt;time itemprop=&quot;openingHours&quot; datetime=&quot;Mo-Su&quot;&gt;Monday through Sunday, all day&lt;/time&gt;</code>.
      *
+     * @param fOpeningHours Text value to set.
      */
     @Override
     public void setOpeningHours(Text fOpeningHours) {
         this.fOpeningHours = fOpeningHours;
+    }
+    /**
+     * The general opening hours for a business. Opening hours can be specified as a weekly time range, starting with days, then times per day. Multiple days can be listed with commas ',' separating each day. Day or time ranges are specified using a hyphen '-'.<br/><br/>* Days are specified using the following two-letter combinations: ```Mo```, ```Tu```, ```We```, ```Th```, ```Fr```, ```Sa```, ```Su```.<br/>* Times are specified using 24:00 format. For example, 3pm is specified as ```15:00```, 10am as ```10:00```. <br/>* Here is an example: <code>&lt;time itemprop="openingHours" datetime=&quot;Tu,Th 16:00-20:00&quot;&gt;Tuesdays and Thursdays 4-8pm&lt;/time&gt;</code>.<br/>* If a business is open 7 days a week, then it can be specified as <code>&lt;time itemprop=&quot;openingHours&quot; datetime=&quot;Mo-Su&quot;&gt;Monday through Sunday, all day&lt;/time&gt;</code>.
+     *
+     * @param fOpeningHours java.lang.String value to set.
+     */
+    @Override
+    public void setOpeningHours(java.lang.String fOpeningHours) {
+        this.fOpeningHours = Text.of(fOpeningHours);
     }
 
     private Text fTelephone;
@@ -120,10 +131,20 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * The telephone number.
      *
+     * @param fTelephone Text value to set.
      */
     @Override
     public void setTelephone(Text fTelephone) {
         this.fTelephone = fTelephone;
+    }
+    /**
+     * The telephone number.
+     *
+     * @param fTelephone java.lang.String value to set.
+     */
+    @Override
+    public void setTelephone(java.lang.String fTelephone) {
+        this.fTelephone = Text.of(fTelephone);
     }
 
     private Review fReview;
@@ -141,6 +162,7 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * A review of the item.
      *
+     * @param fReview Review value to set.
      */
     @Override
     public void setReview(Review fReview) {
@@ -162,10 +184,20 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * A URL to a map of the place.
      *
+     * @param fMaps URL value to set.
      */
     @Override
     public void setMaps(URL fMaps) {
         this.fMaps = fMaps;
+    }
+    /**
+     * A URL to a map of the place.
+     *
+     * @param fMaps java.net.URL value to set.
+     */
+    @Override
+    public void setMaps(java.net.URL fMaps) {
+        this.fMaps = URL.of(fMaps);
     }
 
     private Object fGeoContains;
@@ -183,12 +215,19 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. "a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
+     * @param fGeoContains Place value to set.
      */
     @Override
-    public void setGeoContains(Object fGeoContains) {
-        if(!(fGeoContains instanceof Place) && !(fGeoContains instanceof GeospatialGeometry)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoContains': " + fGeoContains);
-        }
+    public void setGeoContains(Place fGeoContains) {
+        this.fGeoContains = fGeoContains;
+    }
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. "a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @param fGeoContains GeospatialGeometry value to set.
+     */
+    @Override
+    public void setGeoContains(GeospatialGeometry fGeoContains) {
         this.fGeoContains = fGeoContains;
     }
 
@@ -207,10 +246,20 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * The total number of individuals that may attend an event or venue.
      *
+     * @param fMaximumAttendeeCapacity Integer value to set.
      */
     @Override
     public void setMaximumAttendeeCapacity(Integer fMaximumAttendeeCapacity) {
         this.fMaximumAttendeeCapacity = fMaximumAttendeeCapacity;
+    }
+    /**
+     * The total number of individuals that may attend an event or venue.
+     *
+     * @param fMaximumAttendeeCapacity java.lang.Integer value to set.
+     */
+    @Override
+    public void setMaximumAttendeeCapacity(java.lang.Integer fMaximumAttendeeCapacity) {
+        this.fMaximumAttendeeCapacity = Integer.of(fMaximumAttendeeCapacity);
     }
 
     private Place fContainsPlace;
@@ -228,6 +277,7 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * The basic containment relation between a place and another that it contains.
      *
+     * @param fContainsPlace Place value to set.
      */
     @Override
     public void setContainsPlace(Place fContainsPlace) {
@@ -250,11 +300,22 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.
      *
+     * @param fSmokingAllowed Boolean value to set.
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
     @Override
     public void setSmokingAllowed(Boolean fSmokingAllowed) {
         this.fSmokingAllowed = fSmokingAllowed;
+    }
+    /**
+     * Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.
+     *
+     * @param fSmokingAllowed java.lang.Boolean value to set.
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
+     */
+    @Override
+    public void setSmokingAllowed(java.lang.Boolean fSmokingAllowed) {
+        this.fSmokingAllowed = Boolean.of(fSmokingAllowed);
     }
 
     private Text fGlobalLocationNumber;
@@ -273,11 +334,22 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
      *
+     * @param fGlobalLocationNumber Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
     public void setGlobalLocationNumber(Text fGlobalLocationNumber) {
         this.fGlobalLocationNumber = fGlobalLocationNumber;
+    }
+    /**
+     * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
+     *
+     * @param fGlobalLocationNumber java.lang.String value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setGlobalLocationNumber(java.lang.String fGlobalLocationNumber) {
+        this.fGlobalLocationNumber = Text.of(fGlobalLocationNumber);
     }
 
     private Object fKeywords;
@@ -295,13 +367,47 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
      *
+     * @param fKeywords DefinedTerm value to set.
      */
     @Override
-    public void setKeywords(Object fKeywords) {
-        if(!(fKeywords instanceof DefinedTerm) && !(fKeywords instanceof Text) && !(fKeywords instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'keywords': " + fKeywords);
-        }
+    public void setKeywords(DefinedTerm fKeywords) {
         this.fKeywords = fKeywords;
+    }
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     * @param fKeywords Text value to set.
+     */
+    @Override
+    public void setKeywords(Text fKeywords) {
+        this.fKeywords = fKeywords;
+    }
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     * @param fKeywords java.lang.String value to set.
+     */
+    @Override
+    public void setKeywords(java.lang.String fKeywords) {
+        this.fKeywords = Text.of(fKeywords);
+    }
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     * @param fKeywords URL value to set.
+     */
+    @Override
+    public void setKeywords(URL fKeywords) {
+        this.fKeywords = fKeywords;
+    }
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     * @param fKeywords java.net.URL value to set.
+     */
+    @Override
+    public void setKeywords(java.net.URL fKeywords) {
+        this.fKeywords = URL.of(fKeywords);
     }
 
     private Object fGeoIntersects;
@@ -319,12 +425,19 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
+     * @param fGeoIntersects GeospatialGeometry value to set.
      */
     @Override
-    public void setGeoIntersects(Object fGeoIntersects) {
-        if(!(fGeoIntersects instanceof GeospatialGeometry) && !(fGeoIntersects instanceof Place)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoIntersects': " + fGeoIntersects);
-        }
+    public void setGeoIntersects(GeospatialGeometry fGeoIntersects) {
+        this.fGeoIntersects = fGeoIntersects;
+    }
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @param fGeoIntersects Place value to set.
+     */
+    @Override
+    public void setGeoIntersects(Place fGeoIntersects) {
         this.fGeoIntersects = fGeoIntersects;
     }
 
@@ -343,13 +456,38 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
      *
+     * @param fLatitude Text value to set.
      */
     @Override
-    public void setLatitude(Object fLatitude) {
-        if(!(fLatitude instanceof Text) && !(fLatitude instanceof Number)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'latitude': " + fLatitude);
-        }
+    public void setLatitude(Text fLatitude) {
         this.fLatitude = fLatitude;
+    }
+    /**
+     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     *
+     * @param fLatitude java.lang.String value to set.
+     */
+    @Override
+    public void setLatitude(java.lang.String fLatitude) {
+        this.fLatitude = Text.of(fLatitude);
+    }
+    /**
+     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     *
+     * @param fLatitude Number value to set.
+     */
+    @Override
+    public void setLatitude(Number fLatitude) {
+        this.fLatitude = fLatitude;
+    }
+    /**
+     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     *
+     * @param fLatitude java.lang.Number value to set.
+     */
+    @Override
+    public void setLatitude(java.lang.Number fLatitude) {
+        this.fLatitude = Number.of(fLatitude);
     }
 
     private Object fGeoTouches;
@@ -367,12 +505,19 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * Represents spatial relations in which two geometries (or the places they represent) touch: they have at least one boundary point in common, but no interior points." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM) )
      *
+     * @param fGeoTouches Place value to set.
      */
     @Override
-    public void setGeoTouches(Object fGeoTouches) {
-        if(!(fGeoTouches instanceof Place) && !(fGeoTouches instanceof GeospatialGeometry)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoTouches': " + fGeoTouches);
-        }
+    public void setGeoTouches(Place fGeoTouches) {
+        this.fGeoTouches = fGeoTouches;
+    }
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) touch: they have at least one boundary point in common, but no interior points." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM) )
+     *
+     * @param fGeoTouches GeospatialGeometry value to set.
+     */
+    @Override
+    public void setGeoTouches(GeospatialGeometry fGeoTouches) {
         this.fGeoTouches = fGeoTouches;
     }
 
@@ -391,12 +536,19 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
+     * @param fGeoCoveredBy Place value to set.
      */
     @Override
-    public void setGeoCoveredBy(Object fGeoCoveredBy) {
-        if(!(fGeoCoveredBy instanceof Place) && !(fGeoCoveredBy instanceof GeospatialGeometry)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoCoveredBy': " + fGeoCoveredBy);
-        }
+    public void setGeoCoveredBy(Place fGeoCoveredBy) {
+        this.fGeoCoveredBy = fGeoCoveredBy;
+    }
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @param fGeoCoveredBy GeospatialGeometry value to set.
+     */
+    @Override
+    public void setGeoCoveredBy(GeospatialGeometry fGeoCoveredBy) {
         this.fGeoCoveredBy = fGeoCoveredBy;
     }
 
@@ -415,6 +567,7 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * The overall rating, based on a collection of reviews or ratings, of the item.
      *
+     * @param fAggregateRating AggregateRating value to set.
      */
     @Override
     public void setAggregateRating(AggregateRating fAggregateRating) {
@@ -436,12 +589,28 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * Physical address of the item.
      *
+     * @param fAddress Text value to set.
      */
     @Override
-    public void setAddress(Object fAddress) {
-        if(!(fAddress instanceof Text) && !(fAddress instanceof PostalAddress)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'address': " + fAddress);
-        }
+    public void setAddress(Text fAddress) {
+        this.fAddress = fAddress;
+    }
+    /**
+     * Physical address of the item.
+     *
+     * @param fAddress java.lang.String value to set.
+     */
+    @Override
+    public void setAddress(java.lang.String fAddress) {
+        this.fAddress = Text.of(fAddress);
+    }
+    /**
+     * Physical address of the item.
+     *
+     * @param fAddress PostalAddress value to set.
+     */
+    @Override
+    public void setAddress(PostalAddress fAddress) {
         this.fAddress = fAddress;
     }
 
@@ -460,12 +629,19 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). "Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other" (a symmetric relationship)
      *
+     * @param fGeoEquals Place value to set.
      */
     @Override
-    public void setGeoEquals(Object fGeoEquals) {
-        if(!(fGeoEquals instanceof Place) && !(fGeoEquals instanceof GeospatialGeometry)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoEquals': " + fGeoEquals);
-        }
+    public void setGeoEquals(Place fGeoEquals) {
+        this.fGeoEquals = fGeoEquals;
+    }
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). "Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other" (a symmetric relationship)
+     *
+     * @param fGeoEquals GeospatialGeometry value to set.
+     */
+    @Override
+    public void setGeoEquals(GeospatialGeometry fGeoEquals) {
         this.fGeoEquals = fGeoEquals;
     }
 
@@ -484,10 +660,20 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * A URL to a map of the place.
      *
+     * @param fMap URL value to set.
      */
     @Override
     public void setMap(URL fMap) {
         this.fMap = fMap;
+    }
+    /**
+     * A URL to a map of the place.
+     *
+     * @param fMap java.net.URL value to set.
+     */
+    @Override
+    public void setMap(java.net.URL fMap) {
+        this.fMap = URL.of(fMap);
     }
 
     private Boolean fPublicAccess;
@@ -505,10 +691,20 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * A flag to signal that the [[Place]] is open to public visitors.  If this property is omitted there is no assumed default boolean value
      *
+     * @param fPublicAccess Boolean value to set.
      */
     @Override
     public void setPublicAccess(Boolean fPublicAccess) {
         this.fPublicAccess = fPublicAccess;
+    }
+    /**
+     * A flag to signal that the [[Place]] is open to public visitors.  If this property is omitted there is no assumed default boolean value
+     *
+     * @param fPublicAccess java.lang.Boolean value to set.
+     */
+    @Override
+    public void setPublicAccess(java.lang.Boolean fPublicAccess) {
+        this.fPublicAccess = Boolean.of(fPublicAccess);
     }
 
     private Object fGeoCrosses;
@@ -526,12 +722,19 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: "a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
+     * @param fGeoCrosses GeospatialGeometry value to set.
      */
     @Override
-    public void setGeoCrosses(Object fGeoCrosses) {
-        if(!(fGeoCrosses instanceof GeospatialGeometry) && !(fGeoCrosses instanceof Place)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoCrosses': " + fGeoCrosses);
-        }
+    public void setGeoCrosses(GeospatialGeometry fGeoCrosses) {
+        this.fGeoCrosses = fGeoCrosses;
+    }
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: "a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @param fGeoCrosses Place value to set.
+     */
+    @Override
+    public void setGeoCrosses(Place fGeoCrosses) {
         this.fGeoCrosses = fGeoCrosses;
     }
 
@@ -550,6 +753,7 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * The basic containment relation between a place and one that contains it.
      *
+     * @param fContainedInPlace Place value to set.
      */
     @Override
     public void setContainedInPlace(Place fContainedInPlace) {
@@ -572,6 +776,7 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
      *
+     * @param fAmenityFeature LocationFeatureSpecification value to set.
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
     @Override
@@ -594,10 +799,20 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * A slogan or motto associated with the item.
      *
+     * @param fSlogan Text value to set.
      */
     @Override
     public void setSlogan(Text fSlogan) {
         this.fSlogan = fSlogan;
+    }
+    /**
+     * A slogan or motto associated with the item.
+     *
+     * @param fSlogan java.lang.String value to set.
+     */
+    @Override
+    public void setSlogan(java.lang.String fSlogan) {
+        this.fSlogan = Text.of(fSlogan);
     }
 
     private Object fPhotos;
@@ -615,12 +830,19 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * Photographs of this place.
      *
+     * @param fPhotos ImageObject value to set.
      */
     @Override
-    public void setPhotos(Object fPhotos) {
-        if(!(fPhotos instanceof ImageObject) && !(fPhotos instanceof Photograph)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'photos': " + fPhotos);
-        }
+    public void setPhotos(ImageObject fPhotos) {
+        this.fPhotos = fPhotos;
+    }
+    /**
+     * Photographs of this place.
+     *
+     * @param fPhotos Photograph value to set.
+     */
+    @Override
+    public void setPhotos(Photograph fPhotos) {
         this.fPhotos = fPhotos;
     }
 
@@ -639,12 +861,19 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. "Every point of b is a point of (the interior or boundary of) a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
+     * @param fGeoCovers GeospatialGeometry value to set.
      */
     @Override
-    public void setGeoCovers(Object fGeoCovers) {
-        if(!(fGeoCovers instanceof GeospatialGeometry) && !(fGeoCovers instanceof Place)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoCovers': " + fGeoCovers);
-        }
+    public void setGeoCovers(GeospatialGeometry fGeoCovers) {
+        this.fGeoCovers = fGeoCovers;
+    }
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. "Every point of b is a point of (the interior or boundary of) a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @param fGeoCovers Place value to set.
+     */
+    @Override
+    public void setGeoCovers(Place fGeoCovers) {
         this.fGeoCovers = fGeoCovers;
     }
 
@@ -663,6 +892,7 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * The basic containment relation between a place and one that contains it.
      *
+     * @param fContainedIn Place value to set.
      */
     @Override
     public void setContainedIn(Place fContainedIn) {
@@ -686,12 +916,24 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * Indicates whether some facility (e.g. [[FoodEstablishment]], [[CovidTestingFacility]]) offers a service that can be used by driving through in a car. In the case of [[CovidTestingFacility]] such facilities could potentially help with social distancing from other potentially-infected users.
      *
+     * @param fHasDriveThroughService Boolean value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      */
     @Override
     public void setHasDriveThroughService(Boolean fHasDriveThroughService) {
         this.fHasDriveThroughService = fHasDriveThroughService;
+    }
+    /**
+     * Indicates whether some facility (e.g. [[FoodEstablishment]], [[CovidTestingFacility]]) offers a service that can be used by driving through in a car. In the case of [[CovidTestingFacility]] such facilities could potentially help with social distancing from other potentially-infected users.
+     *
+     * @param fHasDriveThroughService java.lang.Boolean value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    @Override
+    public void setHasDriveThroughService(java.lang.Boolean fHasDriveThroughService) {
+        this.fHasDriveThroughService = Boolean.of(fHasDriveThroughService);
     }
 
     private Object fLogo;
@@ -710,13 +952,31 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * An associated logo.
      *
+     * @param fLogo URL value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setLogo(Object fLogo) {
-        if(!(fLogo instanceof URL) && !(fLogo instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'logo': " + fLogo);
-        }
+    public void setLogo(URL fLogo) {
+        this.fLogo = fLogo;
+    }
+    /**
+     * An associated logo.
+     *
+     * @param fLogo java.net.URL value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setLogo(java.net.URL fLogo) {
+        this.fLogo = URL.of(fLogo);
+    }
+    /**
+     * An associated logo.
+     *
+     * @param fLogo ImageObject value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setLogo(ImageObject fLogo) {
         this.fLogo = fLogo;
     }
 
@@ -735,10 +995,20 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * A flag to signal that the item, event, or place is accessible for free.
      *
+     * @param fIsAccessibleForFree Boolean value to set.
      */
     @Override
     public void setIsAccessibleForFree(Boolean fIsAccessibleForFree) {
         this.fIsAccessibleForFree = fIsAccessibleForFree;
+    }
+    /**
+     * A flag to signal that the item, event, or place is accessible for free.
+     *
+     * @param fIsAccessibleForFree java.lang.Boolean value to set.
+     */
+    @Override
+    public void setIsAccessibleForFree(java.lang.Boolean fIsAccessibleForFree) {
+        this.fIsAccessibleForFree = Boolean.of(fIsAccessibleForFree);
     }
 
     private Object fGeoWithin;
@@ -756,12 +1026,19 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
+     * @param fGeoWithin Place value to set.
      */
     @Override
-    public void setGeoWithin(Object fGeoWithin) {
-        if(!(fGeoWithin instanceof Place) && !(fGeoWithin instanceof GeospatialGeometry)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoWithin': " + fGeoWithin);
-        }
+    public void setGeoWithin(Place fGeoWithin) {
+        this.fGeoWithin = fGeoWithin;
+    }
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @param fGeoWithin GeospatialGeometry value to set.
+     */
+    @Override
+    public void setGeoWithin(GeospatialGeometry fGeoWithin) {
         this.fGeoWithin = fGeoWithin;
     }
 
@@ -780,12 +1057,19 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM))
      *
+     * @param fGeoDisjoint GeospatialGeometry value to set.
      */
     @Override
-    public void setGeoDisjoint(Object fGeoDisjoint) {
-        if(!(fGeoDisjoint instanceof GeospatialGeometry) && !(fGeoDisjoint instanceof Place)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoDisjoint': " + fGeoDisjoint);
-        }
+    public void setGeoDisjoint(GeospatialGeometry fGeoDisjoint) {
+        this.fGeoDisjoint = fGeoDisjoint;
+    }
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM))
+     *
+     * @param fGeoDisjoint Place value to set.
+     */
+    @Override
+    public void setGeoDisjoint(Place fGeoDisjoint) {
         this.fGeoDisjoint = fGeoDisjoint;
     }
 
@@ -806,12 +1090,24 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * A page providing information on how to book a tour of some [[Place]], such as an [[Accommodation]] or [[ApartmentComplex]] in a real estate setting, as well as other kinds of tours as appropriate.
      *
+     * @param fTourBookingPage URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
     @Override
     public void setTourBookingPage(URL fTourBookingPage) {
         this.fTourBookingPage = fTourBookingPage;
+    }
+    /**
+     * A page providing information on how to book a tour of some [[Place]], such as an [[Accommodation]] or [[ApartmentComplex]] in a real estate setting, as well as other kinds of tours as appropriate.
+     *
+     * @param fTourBookingPage java.net.URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     */
+    @Override
+    public void setTourBookingPage(java.net.URL fTourBookingPage) {
+        this.fTourBookingPage = URL.of(fTourBookingPage);
     }
 
     private Text fIsicV4;
@@ -830,11 +1126,22 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
      *
+     * @param fIsicV4 Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
     public void setIsicV4(Text fIsicV4) {
         this.fIsicV4 = fIsicV4;
+    }
+    /**
+     * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
+     *
+     * @param fIsicV4 java.lang.String value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setIsicV4(java.lang.String fIsicV4) {
+        this.fIsicV4 = Text.of(fIsicV4);
     }
 
     private Object fGeoOverlaps;
@@ -852,12 +1159,19 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
+     * @param fGeoOverlaps GeospatialGeometry value to set.
      */
     @Override
-    public void setGeoOverlaps(Object fGeoOverlaps) {
-        if(!(fGeoOverlaps instanceof GeospatialGeometry) && !(fGeoOverlaps instanceof Place)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoOverlaps': " + fGeoOverlaps);
-        }
+    public void setGeoOverlaps(GeospatialGeometry fGeoOverlaps) {
+        this.fGeoOverlaps = fGeoOverlaps;
+    }
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @param fGeoOverlaps Place value to set.
+     */
+    @Override
+    public void setGeoOverlaps(Place fGeoOverlaps) {
         this.fGeoOverlaps = fGeoOverlaps;
     }
 
@@ -878,10 +1192,21 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.<br/><br/>For example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code "3047" is a branchCode for a particular branch.
      *       
      *
+     * @param fBranchCode Text value to set.
      */
     @Override
     public void setBranchCode(Text fBranchCode) {
         this.fBranchCode = fBranchCode;
+    }
+    /**
+     * A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.<br/><br/>For example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code "3047" is a branchCode for a particular branch.
+     *       
+     *
+     * @param fBranchCode java.lang.String value to set.
+     */
+    @Override
+    public void setBranchCode(java.lang.String fBranchCode) {
+        this.fBranchCode = Text.of(fBranchCode);
     }
 
     private PropertyValue fAdditionalProperty;
@@ -899,6 +1224,7 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
      *
+     * @param fAdditionalProperty PropertyValue value to set.
      */
     @Override
     public void setAdditionalProperty(PropertyValue fAdditionalProperty) {
@@ -921,6 +1247,7 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * The opening hours of a certain place.
      *
+     * @param fOpeningHoursSpecification OpeningHoursSpecification value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
@@ -943,6 +1270,7 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * Review of the item.
      *
+     * @param fReviews Review value to set.
      */
     @Override
     public void setReviews(Review fReviews) {
@@ -964,12 +1292,19 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * A photograph of this place.
      *
+     * @param fPhoto Photograph value to set.
      */
     @Override
-    public void setPhoto(Object fPhoto) {
-        if(!(fPhoto instanceof Photograph) && !(fPhoto instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'photo': " + fPhoto);
-        }
+    public void setPhoto(Photograph fPhoto) {
+        this.fPhoto = fPhoto;
+    }
+    /**
+     * A photograph of this place.
+     *
+     * @param fPhoto ImageObject value to set.
+     */
+    @Override
+    public void setPhoto(ImageObject fPhoto) {
         this.fPhoto = fPhoto;
     }
 
@@ -990,6 +1325,7 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * The special opening hours of a certain place.<br/><br/>Use this to explicitly override general opening hours brought in scope by [[openingHoursSpecification]] or [[openingHours]].
      *       
      *
+     * @param fSpecialOpeningHoursSpecification OpeningHoursSpecification value to set.
      */
     @Override
     public void setSpecialOpeningHoursSpecification(OpeningHoursSpecification fSpecialOpeningHoursSpecification) {
@@ -1011,12 +1347,28 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * A URL to a map of the place.
      *
+     * @param fHasMap URL value to set.
      */
     @Override
-    public void setHasMap(Object fHasMap) {
-        if(!(fHasMap instanceof URL) && !(fHasMap instanceof Map)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'hasMap': " + fHasMap);
-        }
+    public void setHasMap(URL fHasMap) {
+        this.fHasMap = fHasMap;
+    }
+    /**
+     * A URL to a map of the place.
+     *
+     * @param fHasMap java.net.URL value to set.
+     */
+    @Override
+    public void setHasMap(java.net.URL fHasMap) {
+        this.fHasMap = URL.of(fHasMap);
+    }
+    /**
+     * A URL to a map of the place.
+     *
+     * @param fHasMap Map value to set.
+     */
+    @Override
+    public void setHasMap(Map fHasMap) {
         this.fHasMap = fHasMap;
     }
 
@@ -1035,13 +1387,38 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
      *
+     * @param fLongitude Number value to set.
      */
     @Override
-    public void setLongitude(Object fLongitude) {
-        if(!(fLongitude instanceof Number) && !(fLongitude instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'longitude': " + fLongitude);
-        }
+    public void setLongitude(Number fLongitude) {
         this.fLongitude = fLongitude;
+    }
+    /**
+     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     *
+     * @param fLongitude java.lang.Number value to set.
+     */
+    @Override
+    public void setLongitude(java.lang.Number fLongitude) {
+        this.fLongitude = Number.of(fLongitude);
+    }
+    /**
+     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     *
+     * @param fLongitude Text value to set.
+     */
+    @Override
+    public void setLongitude(Text fLongitude) {
+        this.fLongitude = fLongitude;
+    }
+    /**
+     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     *
+     * @param fLongitude java.lang.String value to set.
+     */
+    @Override
+    public void setLongitude(java.lang.String fLongitude) {
+        this.fLongitude = Text.of(fLongitude);
     }
 
     private Object fGeo;
@@ -1059,12 +1436,19 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * The geo coordinates of the place.
      *
+     * @param fGeo GeoCoordinates value to set.
      */
     @Override
-    public void setGeo(Object fGeo) {
-        if(!(fGeo instanceof GeoCoordinates) && !(fGeo instanceof GeoShape)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geo': " + fGeo);
-        }
+    public void setGeo(GeoCoordinates fGeo) {
+        this.fGeo = fGeo;
+    }
+    /**
+     * The geo coordinates of the place.
+     *
+     * @param fGeo GeoShape value to set.
+     */
+    @Override
+    public void setGeo(GeoShape fGeo) {
         this.fGeo = fGeo;
     }
 
@@ -1083,6 +1467,7 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * Upcoming or past events associated with this place or organization.
      *
+     * @param fEvents Event value to set.
      */
     @Override
     public void setEvents(Event fEvents) {
@@ -1104,10 +1489,20 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * The fax number.
      *
+     * @param fFaxNumber Text value to set.
      */
     @Override
     public void setFaxNumber(Text fFaxNumber) {
         this.fFaxNumber = fFaxNumber;
+    }
+    /**
+     * The fax number.
+     *
+     * @param fFaxNumber java.lang.String value to set.
+     */
+    @Override
+    public void setFaxNumber(java.lang.String fFaxNumber) {
+        this.fFaxNumber = Text.of(fFaxNumber);
     }
 
     private Event fEvent;
@@ -1125,6 +1520,7 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * Upcoming or past event associated with this place, organization, or action.
      *
+     * @param fEvent Event value to set.
      */
     @Override
     public void setEvent(Event fEvent) {
@@ -1146,13 +1542,29 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
+     * @param fMainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
-        }
+    public void setMainEntityOfPage(CreativeWork fMainEntityOfPage) {
         this.fMainEntityOfPage = fMainEntityOfPage;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param fMainEntityOfPage URL value to set.
+     */
+    @Override
+    public void setMainEntityOfPage(URL fMainEntityOfPage) {
+        this.fMainEntityOfPage = fMainEntityOfPage;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param fMainEntityOfPage java.net.URL value to set.
+     */
+    @Override
+    public void setMainEntityOfPage(java.net.URL fMainEntityOfPage) {
+        this.fMainEntityOfPage = URL.of(fMainEntityOfPage);
     }
 
     private Text fAlternateName;
@@ -1170,10 +1582,20 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * An alias for the item.
      *
+     * @param fAlternateName Text value to set.
      */
     @Override
     public void setAlternateName(Text fAlternateName) {
         this.fAlternateName = fAlternateName;
+    }
+    /**
+     * An alias for the item.
+     *
+     * @param fAlternateName java.lang.String value to set.
+     */
+    @Override
+    public void setAlternateName(java.lang.String fAlternateName) {
+        this.fAlternateName = Text.of(fAlternateName);
     }
 
     private Text fName;
@@ -1191,10 +1613,20 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * The name of the item.
      *
+     * @param fName Text value to set.
      */
     @Override
     public void setName(Text fName) {
         this.fName = fName;
+    }
+    /**
+     * The name of the item.
+     *
+     * @param fName java.lang.String value to set.
+     */
+    @Override
+    public void setName(java.lang.String fName) {
+        this.fName = Text.of(fName);
     }
 
     private Action fPotentialAction;
@@ -1212,6 +1644,7 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      *
+     * @param fPotentialAction Action value to set.
      */
     @Override
     public void setPotentialAction(Action fPotentialAction) {
@@ -1233,12 +1666,28 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
+     * @param fImage URL value to set.
      */
     @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
+    public void setImage(URL fImage) {
+        this.fImage = fImage;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param fImage java.net.URL value to set.
+     */
+    @Override
+    public void setImage(java.net.URL fImage) {
+        this.fImage = URL.of(fImage);
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param fImage ImageObject value to set.
+     */
+    @Override
+    public void setImage(ImageObject fImage) {
         this.fImage = fImage;
     }
 
@@ -1257,10 +1706,20 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * URL of the item.
      *
+     * @param fUrl URL value to set.
      */
     @Override
     public void setUrl(URL fUrl) {
         this.fUrl = fUrl;
+    }
+    /**
+     * URL of the item.
+     *
+     * @param fUrl java.net.URL value to set.
+     */
+    @Override
+    public void setUrl(java.net.URL fUrl) {
+        this.fUrl = URL.of(fUrl);
     }
 
     private Text fDescription;
@@ -1278,10 +1737,20 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * A description of the item.
      *
+     * @param fDescription Text value to set.
      */
     @Override
     public void setDescription(Text fDescription) {
         this.fDescription = fDescription;
+    }
+    /**
+     * A description of the item.
+     *
+     * @param fDescription java.lang.String value to set.
+     */
+    @Override
+    public void setDescription(java.lang.String fDescription) {
+        this.fDescription = Text.of(fDescription);
     }
 
     private Object fSubjectOf;
@@ -1300,13 +1769,21 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * A CreativeWork or Event about this Thing.
      *
+     * @param fSubjectOf Event value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Object fSubjectOf) {
-        if(!(fSubjectOf instanceof Event) && !(fSubjectOf instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'subjectOf': " + fSubjectOf);
-        }
+    public void setSubjectOf(Event fSubjectOf) {
+        this.fSubjectOf = fSubjectOf;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @param fSubjectOf CreativeWork value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public void setSubjectOf(CreativeWork fSubjectOf) {
         this.fSubjectOf = fSubjectOf;
     }
 
@@ -1325,10 +1802,20 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
+     * @param fAdditionalType URL value to set.
      */
     @Override
     public void setAdditionalType(URL fAdditionalType) {
         this.fAdditionalType = fAdditionalType;
+    }
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @param fAdditionalType java.net.URL value to set.
+     */
+    @Override
+    public void setAdditionalType(java.net.URL fAdditionalType) {
+        this.fAdditionalType = URL.of(fAdditionalType);
     }
 
     private Text fDisambiguatingDescription;
@@ -1346,10 +1833,20 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
+     * @param fDisambiguatingDescription Text value to set.
      */
     @Override
     public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
         this.fDisambiguatingDescription = fDisambiguatingDescription;
+    }
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @param fDisambiguatingDescription java.lang.String value to set.
+     */
+    @Override
+    public void setDisambiguatingDescription(java.lang.String fDisambiguatingDescription) {
+        this.fDisambiguatingDescription = Text.of(fDisambiguatingDescription);
     }
 
     private URL fSameAs;
@@ -1367,10 +1864,20 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
+     * @param fSameAs URL value to set.
      */
     @Override
     public void setSameAs(URL fSameAs) {
         this.fSameAs = fSameAs;
+    }
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @param fSameAs java.net.URL value to set.
+     */
+    @Override
+    public void setSameAs(java.net.URL fSameAs) {
+        this.fSameAs = URL.of(fSameAs);
     }
 
     private Object fIdentifier;
@@ -1390,12 +1897,50 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
+     * @param fIdentifier URL value to set.
      */
     @Override
-    public void setIdentifier(Object fIdentifier) {
-        if(!(fIdentifier instanceof URL) && !(fIdentifier instanceof Text) && !(fIdentifier instanceof PropertyValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
-        }
+    public void setIdentifier(URL fIdentifier) {
+        this.fIdentifier = fIdentifier;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param fIdentifier java.net.URL value to set.
+     */
+    @Override
+    public void setIdentifier(java.net.URL fIdentifier) {
+        this.fIdentifier = URL.of(fIdentifier);
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param fIdentifier Text value to set.
+     */
+    @Override
+    public void setIdentifier(Text fIdentifier) {
+        this.fIdentifier = fIdentifier;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param fIdentifier java.lang.String value to set.
+     */
+    @Override
+    public void setIdentifier(java.lang.String fIdentifier) {
+        this.fIdentifier = Text.of(fIdentifier);
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param fIdentifier PropertyValue value to set.
+     */
+    @Override
+    public void setIdentifier(PropertyValue fIdentifier) {
         this.fIdentifier = fIdentifier;
     }
 
@@ -1417,15 +1962,73 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.
      *
+     * @param fOwnershipFundingInfo URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
     @Override
-    public void setOwnershipFundingInfo(Object fOwnershipFundingInfo) {
-        if(!(fOwnershipFundingInfo instanceof URL) && !(fOwnershipFundingInfo instanceof AboutPage) && !(fOwnershipFundingInfo instanceof Text) && !(fOwnershipFundingInfo instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'ownershipFundingInfo': " + fOwnershipFundingInfo);
-        }
+    public void setOwnershipFundingInfo(URL fOwnershipFundingInfo) {
+        this.fOwnershipFundingInfo = fOwnershipFundingInfo;
+    }
+    /**
+     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.
+     *
+     * @param fOwnershipFundingInfo java.net.URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    @Override
+    public void setOwnershipFundingInfo(java.net.URL fOwnershipFundingInfo) {
+        this.fOwnershipFundingInfo = URL.of(fOwnershipFundingInfo);
+    }
+    /**
+     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.
+     *
+     * @param fOwnershipFundingInfo AboutPage value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    @Override
+    public void setOwnershipFundingInfo(AboutPage fOwnershipFundingInfo) {
+        this.fOwnershipFundingInfo = fOwnershipFundingInfo;
+    }
+    /**
+     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.
+     *
+     * @param fOwnershipFundingInfo Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    @Override
+    public void setOwnershipFundingInfo(Text fOwnershipFundingInfo) {
+        this.fOwnershipFundingInfo = fOwnershipFundingInfo;
+    }
+    /**
+     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.
+     *
+     * @param fOwnershipFundingInfo java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    @Override
+    public void setOwnershipFundingInfo(java.lang.String fOwnershipFundingInfo) {
+        this.fOwnershipFundingInfo = Text.of(fOwnershipFundingInfo);
+    }
+    /**
+     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.
+     *
+     * @param fOwnershipFundingInfo CreativeWork value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    @Override
+    public void setOwnershipFundingInfo(CreativeWork fOwnershipFundingInfo) {
         this.fOwnershipFundingInfo = fOwnershipFundingInfo;
     }
 
@@ -1446,6 +2049,7 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * A credential awarded to the Person or Organization.
      *
+     * @param fHasCredential EducationalOccupationalCredential value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
@@ -1469,6 +2073,7 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * A person who founded this organization.
      *
+     * @param fFounders Person value to set.
      */
     @Override
     public void setFounders(Person fFounders) {
@@ -1493,15 +2098,61 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
      *
+     * @param fKnowsAbout URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
      */
     @Override
-    public void setKnowsAbout(Object fKnowsAbout) {
-        if(!(fKnowsAbout instanceof URL) && !(fKnowsAbout instanceof Text) && !(fKnowsAbout instanceof Thing)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'knowsAbout': " + fKnowsAbout);
-        }
+    public void setKnowsAbout(URL fKnowsAbout) {
+        this.fKnowsAbout = fKnowsAbout;
+    }
+    /**
+     * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
+     *
+     * @param fKnowsAbout java.net.URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     */
+    @Override
+    public void setKnowsAbout(java.net.URL fKnowsAbout) {
+        this.fKnowsAbout = URL.of(fKnowsAbout);
+    }
+    /**
+     * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
+     *
+     * @param fKnowsAbout Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     */
+    @Override
+    public void setKnowsAbout(Text fKnowsAbout) {
+        this.fKnowsAbout = fKnowsAbout;
+    }
+    /**
+     * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
+     *
+     * @param fKnowsAbout java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     */
+    @Override
+    public void setKnowsAbout(java.lang.String fKnowsAbout) {
+        this.fKnowsAbout = Text.of(fKnowsAbout);
+    }
+    /**
+     * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
+     *
+     * @param fKnowsAbout Thing value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     */
+    @Override
+    public void setKnowsAbout(Thing fKnowsAbout) {
         this.fKnowsAbout = fKnowsAbout;
     }
 
@@ -1520,10 +2171,20 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * An award won by or for this item.
      *
+     * @param fAward Text value to set.
      */
     @Override
     public void setAward(Text fAward) {
         this.fAward = fAward;
+    }
+    /**
+     * An award won by or for this item.
+     *
+     * @param fAward java.lang.String value to set.
+     */
+    @Override
+    public void setAward(java.lang.String fAward) {
+        this.fAward = Text.of(fAward);
     }
 
     private Object fMember;
@@ -1541,12 +2202,19 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
      *
+     * @param fMember Organization value to set.
      */
     @Override
-    public void setMember(Object fMember) {
-        if(!(fMember instanceof Organization) && !(fMember instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'member': " + fMember);
-        }
+    public void setMember(Organization fMember) {
+        this.fMember = fMember;
+    }
+    /**
+     * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
+     *
+     * @param fMember Person value to set.
+     */
+    @Override
+    public void setMember(Person fMember) {
         this.fMember = fMember;
     }
 
@@ -1565,6 +2233,7 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * Someone working for this organization.
      *
+     * @param fEmployee Person value to set.
      */
     @Override
     public void setEmployee(Person fEmployee) {
@@ -1586,10 +2255,20 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * The date that this organization was dissolved.
      *
+     * @param fDissolutionDate Date value to set.
      */
     @Override
     public void setDissolutionDate(Date fDissolutionDate) {
         this.fDissolutionDate = fDissolutionDate;
+    }
+    /**
+     * The date that this organization was dissolved.
+     *
+     * @param fDissolutionDate java.time.LocalDate value to set.
+     */
+    @Override
+    public void setDissolutionDate(java.time.LocalDate fDissolutionDate) {
+        this.fDissolutionDate = Date.of(fDissolutionDate);
     }
 
     private Grant fFunding;
@@ -1610,6 +2289,7 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
      *
+     * @param fFunding Grant value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
@@ -1635,11 +2315,22 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * The Value-added Tax ID of the organization or person.
      *
+     * @param fVatID Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
     public void setVatID(Text fVatID) {
         this.fVatID = fVatID;
+    }
+    /**
+     * The Value-added Tax ID of the organization or person.
+     *
+     * @param fVatID java.lang.String value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setVatID(java.lang.String fVatID) {
+        this.fVatID = Text.of(fVatID);
     }
 
     private ContactPoint fContactPoints;
@@ -1657,6 +2348,7 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * A contact point for a person or organization.
      *
+     * @param fContactPoints ContactPoint value to set.
      */
     @Override
     public void setContactPoints(ContactPoint fContactPoints) {
@@ -1678,6 +2370,7 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * A relationship between two organizations where the first includes the second, e.g., as a subsidiary. See also: the more specific 'department' property.
      *
+     * @param fSubOrganization Organization value to set.
      */
     @Override
     public void setSubOrganization(Organization fSubOrganization) {
@@ -1699,10 +2392,20 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * Awards won by or for this item.
      *
+     * @param fAwards Text value to set.
      */
     @Override
     public void setAwards(Text fAwards) {
         this.fAwards = fAwards;
+    }
+    /**
+     * Awards won by or for this item.
+     *
+     * @param fAwards java.lang.String value to set.
+     */
+    @Override
+    public void setAwards(java.lang.String fAwards) {
+        this.fAwards = Text.of(fAwards);
     }
 
     private QuantitativeValue fNumberOfEmployees;
@@ -1720,6 +2423,7 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * The number of employees in an organization e.g. business.
      *
+     * @param fNumberOfEmployees QuantitativeValue value to set.
      */
     @Override
     public void setNumberOfEmployees(QuantitativeValue fNumberOfEmployees) {
@@ -1741,12 +2445,19 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
+     * @param fFunder Organization value to set.
      */
     @Override
-    public void setFunder(Object fFunder) {
-        if(!(fFunder instanceof Organization) && !(fFunder instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'funder': " + fFunder);
-        }
+    public void setFunder(Organization fFunder) {
+        this.fFunder = fFunder;
+    }
+    /**
+     * A person or organization that supports (sponsors) something through some kind of financial contribution.
+     *
+     * @param fFunder Person value to set.
+     */
+    @Override
+    public void setFunder(Person fFunder) {
         this.fFunder = fFunder;
     }
 
@@ -1766,6 +2477,7 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * A pointer to products or services offered by the organization or person.
      *
+     * @param fMakesOffer Offer value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
@@ -1789,11 +2501,22 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * The official name of the organization, e.g. the registered company name.
      *
+     * @param fLegalName Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
     public void setLegalName(Text fLegalName) {
         this.fLegalName = fLegalName;
+    }
+    /**
+     * The official name of the organization, e.g. the registered company name.
+     *
+     * @param fLegalName java.lang.String value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setLegalName(java.lang.String fLegalName) {
+        this.fLegalName = Text.of(fLegalName);
     }
 
     private Object fCorrectionsPolicy;
@@ -1814,15 +2537,37 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * For an [[Organization]] (e.g. [[NewsMediaOrganization]]), a statement describing (in news media, the newsroom’s) disclosure and correction policy for errors.
      *
+     * @param fCorrectionsPolicy URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
     @Override
-    public void setCorrectionsPolicy(Object fCorrectionsPolicy) {
-        if(!(fCorrectionsPolicy instanceof URL) && !(fCorrectionsPolicy instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'correctionsPolicy': " + fCorrectionsPolicy);
-        }
+    public void setCorrectionsPolicy(URL fCorrectionsPolicy) {
+        this.fCorrectionsPolicy = fCorrectionsPolicy;
+    }
+    /**
+     * For an [[Organization]] (e.g. [[NewsMediaOrganization]]), a statement describing (in news media, the newsroom’s) disclosure and correction policy for errors.
+     *
+     * @param fCorrectionsPolicy java.net.URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    @Override
+    public void setCorrectionsPolicy(java.net.URL fCorrectionsPolicy) {
+        this.fCorrectionsPolicy = URL.of(fCorrectionsPolicy);
+    }
+    /**
+     * For an [[Organization]] (e.g. [[NewsMediaOrganization]]), a statement describing (in news media, the newsroom’s) disclosure and correction policy for errors.
+     *
+     * @param fCorrectionsPolicy CreativeWork value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    @Override
+    public void setCorrectionsPolicy(CreativeWork fCorrectionsPolicy) {
         this.fCorrectionsPolicy = fCorrectionsPolicy;
     }
 
@@ -1842,6 +2587,7 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
      *
+     * @param fInteractionStatistic InteractionCounter value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
      */
     @Override
@@ -1864,12 +2610,46 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
      *
+     * @param fLocation PostalAddress value to set.
      */
     @Override
-    public void setLocation(Object fLocation) {
-        if(!(fLocation instanceof PostalAddress) && !(fLocation instanceof Text) && !(fLocation instanceof Place) && !(fLocation instanceof VirtualLocation)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'location': " + fLocation);
-        }
+    public void setLocation(PostalAddress fLocation) {
+        this.fLocation = fLocation;
+    }
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @param fLocation Text value to set.
+     */
+    @Override
+    public void setLocation(Text fLocation) {
+        this.fLocation = fLocation;
+    }
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @param fLocation java.lang.String value to set.
+     */
+    @Override
+    public void setLocation(java.lang.String fLocation) {
+        this.fLocation = Text.of(fLocation);
+    }
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @param fLocation Place value to set.
+     */
+    @Override
+    public void setLocation(Place fLocation) {
+        this.fLocation = fLocation;
+    }
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @param fLocation VirtualLocation value to set.
+     */
+    @Override
+    public void setLocation(VirtualLocation fLocation) {
         this.fLocation = fLocation;
     }
 
@@ -1888,12 +2668,19 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * An Organization (or ProgramMembership) to which this Person or Organization belongs.
      *
+     * @param fMemberOf ProgramMembership value to set.
      */
     @Override
-    public void setMemberOf(Object fMemberOf) {
-        if(!(fMemberOf instanceof ProgramMembership) && !(fMemberOf instanceof Organization)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'memberOf': " + fMemberOf);
-        }
+    public void setMemberOf(ProgramMembership fMemberOf) {
+        this.fMemberOf = fMemberOf;
+    }
+    /**
+     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
+     *
+     * @param fMemberOf Organization value to set.
+     */
+    @Override
+    public void setMemberOf(Organization fMemberOf) {
         this.fMemberOf = fMemberOf;
     }
 
@@ -1916,12 +2703,32 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * 
      * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
      *
+     * @param fPublishingPrinciples URL value to set.
      */
     @Override
-    public void setPublishingPrinciples(Object fPublishingPrinciples) {
-        if(!(fPublishingPrinciples instanceof URL) && !(fPublishingPrinciples instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'publishingPrinciples': " + fPublishingPrinciples);
-        }
+    public void setPublishingPrinciples(URL fPublishingPrinciples) {
+        this.fPublishingPrinciples = fPublishingPrinciples;
+    }
+    /**
+     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * 
+     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+     *
+     * @param fPublishingPrinciples java.net.URL value to set.
+     */
+    @Override
+    public void setPublishingPrinciples(java.net.URL fPublishingPrinciples) {
+        this.fPublishingPrinciples = URL.of(fPublishingPrinciples);
+    }
+    /**
+     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * 
+     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+     *
+     * @param fPublishingPrinciples CreativeWork value to set.
+     */
+    @Override
+    public void setPublishingPrinciples(CreativeWork fPublishingPrinciples) {
         this.fPublishingPrinciples = fPublishingPrinciples;
     }
 
@@ -1943,15 +2750,37 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.
      *
+     * @param fDiversityStaffingReport URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
     @Override
-    public void setDiversityStaffingReport(Object fDiversityStaffingReport) {
-        if(!(fDiversityStaffingReport instanceof URL) && !(fDiversityStaffingReport instanceof Article)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'diversityStaffingReport': " + fDiversityStaffingReport);
-        }
+    public void setDiversityStaffingReport(URL fDiversityStaffingReport) {
+        this.fDiversityStaffingReport = fDiversityStaffingReport;
+    }
+    /**
+     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.
+     *
+     * @param fDiversityStaffingReport java.net.URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    @Override
+    public void setDiversityStaffingReport(java.net.URL fDiversityStaffingReport) {
+        this.fDiversityStaffingReport = URL.of(fDiversityStaffingReport);
+    }
+    /**
+     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.
+     *
+     * @param fDiversityStaffingReport Article value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    @Override
+    public void setDiversityStaffingReport(Article fDiversityStaffingReport) {
         this.fDiversityStaffingReport = fDiversityStaffingReport;
     }
 
@@ -1973,16 +2802,38 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * Statement on diversity policy by an [[Organization]] e.g. a [[NewsMediaOrganization]]. For a [[NewsMediaOrganization]], a statement describing the newsroom’s diversity policy on both staffing and sources, typically providing staffing data.
      *
+     * @param fDiversityPolicy CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
     @Override
-    public void setDiversityPolicy(Object fDiversityPolicy) {
-        if(!(fDiversityPolicy instanceof CreativeWork) && !(fDiversityPolicy instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'diversityPolicy': " + fDiversityPolicy);
-        }
+    public void setDiversityPolicy(CreativeWork fDiversityPolicy) {
         this.fDiversityPolicy = fDiversityPolicy;
+    }
+    /**
+     * Statement on diversity policy by an [[Organization]] e.g. a [[NewsMediaOrganization]]. For a [[NewsMediaOrganization]], a statement describing the newsroom’s diversity policy on both staffing and sources, typically providing staffing data.
+     *
+     * @param fDiversityPolicy URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    @Override
+    public void setDiversityPolicy(URL fDiversityPolicy) {
+        this.fDiversityPolicy = fDiversityPolicy;
+    }
+    /**
+     * Statement on diversity policy by an [[Organization]] e.g. a [[NewsMediaOrganization]]. For a [[NewsMediaOrganization]], a statement describing the newsroom’s diversity policy on both staffing and sources, typically providing staffing data.
+     *
+     * @param fDiversityPolicy java.net.URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    @Override
+    public void setDiversityPolicy(java.net.URL fDiversityPolicy) {
+        this.fDiversityPolicy = URL.of(fDiversityPolicy);
     }
 
     private Text fEmail;
@@ -2000,10 +2851,20 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * Email address.
      *
+     * @param fEmail Text value to set.
      */
     @Override
     public void setEmail(Text fEmail) {
         this.fEmail = fEmail;
+    }
+    /**
+     * Email address.
+     *
+     * @param fEmail java.lang.String value to set.
+     */
+    @Override
+    public void setEmail(java.lang.String fEmail) {
+        this.fEmail = Text.of(fEmail);
     }
 
     private Person fEmployees;
@@ -2021,6 +2882,7 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * People working for this organization.
      *
+     * @param fEmployees Person value to set.
      */
     @Override
     public void setEmployees(Person fEmployees) {
@@ -2044,6 +2906,7 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * nonprofit Status indicates the legal status of a non-profit organization in its primary place of business.
      *
+     * @param fNonprofitStatus NonprofitType value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2543">https://github.com/schemaorg/schemaorg/issues/2543</a>
      */
@@ -2069,14 +2932,34 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * Statement about ethics policy, e.g. of a [[NewsMediaOrganization]] regarding journalistic and publishing practices, or of a [[Restaurant]], a page describing food source policies. In the case of a [[NewsMediaOrganization]], an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization.
      *
+     * @param fEthicsPolicy URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      */
     @Override
-    public void setEthicsPolicy(Object fEthicsPolicy) {
-        if(!(fEthicsPolicy instanceof URL) && !(fEthicsPolicy instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'ethicsPolicy': " + fEthicsPolicy);
-        }
+    public void setEthicsPolicy(URL fEthicsPolicy) {
+        this.fEthicsPolicy = fEthicsPolicy;
+    }
+    /**
+     * Statement about ethics policy, e.g. of a [[NewsMediaOrganization]] regarding journalistic and publishing practices, or of a [[Restaurant]], a page describing food source policies. In the case of a [[NewsMediaOrganization]], an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization.
+     *
+     * @param fEthicsPolicy java.net.URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     */
+    @Override
+    public void setEthicsPolicy(java.net.URL fEthicsPolicy) {
+        this.fEthicsPolicy = URL.of(fEthicsPolicy);
+    }
+    /**
+     * Statement about ethics policy, e.g. of a [[NewsMediaOrganization]] regarding journalistic and publishing practices, or of a [[Restaurant]], a page describing food source policies. In the case of a [[NewsMediaOrganization]], an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization.
+     *
+     * @param fEthicsPolicy CreativeWork value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     */
+    @Override
+    public void setEthicsPolicy(CreativeWork fEthicsPolicy) {
         this.fEthicsPolicy = fEthicsPolicy;
     }
 
@@ -2095,12 +2978,19 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
      *
+     * @param fBrand Organization value to set.
      */
     @Override
-    public void setBrand(Object fBrand) {
-        if(!(fBrand instanceof Organization) && !(fBrand instanceof Brand)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'brand': " + fBrand);
-        }
+    public void setBrand(Organization fBrand) {
+        this.fBrand = fBrand;
+    }
+    /**
+     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     *
+     * @param fBrand Brand value to set.
+     */
+    @Override
+    public void setBrand(Brand fBrand) {
         this.fBrand = fBrand;
     }
 
@@ -2119,12 +3009,19 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
      *
+     * @param fSponsor Organization value to set.
      */
     @Override
-    public void setSponsor(Object fSponsor) {
-        if(!(fSponsor instanceof Organization) && !(fSponsor instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'sponsor': " + fSponsor);
-        }
+    public void setSponsor(Organization fSponsor) {
+        this.fSponsor = fSponsor;
+    }
+    /**
+     * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
+     *
+     * @param fSponsor Person value to set.
+     */
+    @Override
+    public void setSponsor(Person fSponsor) {
         this.fSponsor = fSponsor;
     }
 
@@ -2146,15 +3043,37 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement about public engagement activities (for news media, the newsroom’s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.
      *
+     * @param fActionableFeedbackPolicy URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      */
     @Override
-    public void setActionableFeedbackPolicy(Object fActionableFeedbackPolicy) {
-        if(!(fActionableFeedbackPolicy instanceof URL) && !(fActionableFeedbackPolicy instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'actionableFeedbackPolicy': " + fActionableFeedbackPolicy);
-        }
+    public void setActionableFeedbackPolicy(URL fActionableFeedbackPolicy) {
+        this.fActionableFeedbackPolicy = fActionableFeedbackPolicy;
+    }
+    /**
+     * For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement about public engagement activities (for news media, the newsroom’s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.
+     *
+     * @param fActionableFeedbackPolicy java.net.URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     */
+    @Override
+    public void setActionableFeedbackPolicy(java.net.URL fActionableFeedbackPolicy) {
+        this.fActionableFeedbackPolicy = URL.of(fActionableFeedbackPolicy);
+    }
+    /**
+     * For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement about public engagement activities (for news media, the newsroom’s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.
+     *
+     * @param fActionableFeedbackPolicy CreativeWork value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     */
+    @Override
+    public void setActionableFeedbackPolicy(CreativeWork fActionableFeedbackPolicy) {
         this.fActionableFeedbackPolicy = fActionableFeedbackPolicy;
     }
 
@@ -2174,11 +3093,22 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * The North American Industry Classification System (NAICS) code for a particular organization or business person.
      *
+     * @param fNaics Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
     public void setNaics(Text fNaics) {
         this.fNaics = fNaics;
+    }
+    /**
+     * The North American Industry Classification System (NAICS) code for a particular organization or business person.
+     *
+     * @param fNaics java.lang.String value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setNaics(java.lang.String fNaics) {
+        this.fNaics = Text.of(fNaics);
     }
 
     private ContactPoint fContactPoint;
@@ -2196,6 +3126,7 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * A contact point for a person or organization.
      *
+     * @param fContactPoint ContactPoint value to set.
      */
     @Override
     public void setContactPoint(ContactPoint fContactPoint) {
@@ -2217,12 +3148,28 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * The geographic area where the service is provided.
      *
+     * @param fServiceArea GeoShape value to set.
      */
     @Override
-    public void setServiceArea(Object fServiceArea) {
-        if(!(fServiceArea instanceof GeoShape) && !(fServiceArea instanceof AdministrativeArea) && !(fServiceArea instanceof Place)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'serviceArea': " + fServiceArea);
-        }
+    public void setServiceArea(GeoShape fServiceArea) {
+        this.fServiceArea = fServiceArea;
+    }
+    /**
+     * The geographic area where the service is provided.
+     *
+     * @param fServiceArea AdministrativeArea value to set.
+     */
+    @Override
+    public void setServiceArea(AdministrativeArea fServiceArea) {
+        this.fServiceArea = fServiceArea;
+    }
+    /**
+     * The geographic area where the service is provided.
+     *
+     * @param fServiceArea Place value to set.
+     */
+    @Override
+    public void setServiceArea(Place fServiceArea) {
         this.fServiceArea = fServiceArea;
     }
 
@@ -2243,6 +3190,7 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * Specifies a MerchantReturnPolicy that may be applicable.
      *
+     * @param fHasMerchantReturnPolicy MerchantReturnPolicy value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
      */
@@ -2267,6 +3215,7 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * Points-of-Sales operated by the organization or person.
      *
+     * @param fHasPOS Place value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
@@ -2289,6 +3238,7 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * A person who founded this organization.
      *
+     * @param fFounder Person value to set.
      */
     @Override
     public void setFounder(Person fFounder) {
@@ -2313,16 +3263,38 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * For an [[Organization]] (typically a [[NewsMediaOrganization]]), a statement about policy on use of unnamed sources and the decision process required.
      *
+     * @param fUnnamedSourcesPolicy CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      */
     @Override
-    public void setUnnamedSourcesPolicy(Object fUnnamedSourcesPolicy) {
-        if(!(fUnnamedSourcesPolicy instanceof CreativeWork) && !(fUnnamedSourcesPolicy instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'unnamedSourcesPolicy': " + fUnnamedSourcesPolicy);
-        }
+    public void setUnnamedSourcesPolicy(CreativeWork fUnnamedSourcesPolicy) {
         this.fUnnamedSourcesPolicy = fUnnamedSourcesPolicy;
+    }
+    /**
+     * For an [[Organization]] (typically a [[NewsMediaOrganization]]), a statement about policy on use of unnamed sources and the decision process required.
+     *
+     * @param fUnnamedSourcesPolicy URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     */
+    @Override
+    public void setUnnamedSourcesPolicy(URL fUnnamedSourcesPolicy) {
+        this.fUnnamedSourcesPolicy = fUnnamedSourcesPolicy;
+    }
+    /**
+     * For an [[Organization]] (typically a [[NewsMediaOrganization]]), a statement about policy on use of unnamed sources and the decision process required.
+     *
+     * @param fUnnamedSourcesPolicy java.net.URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     */
+    @Override
+    public void setUnnamedSourcesPolicy(java.net.URL fUnnamedSourcesPolicy) {
+        this.fUnnamedSourcesPolicy = URL.of(fUnnamedSourcesPolicy);
     }
 
     private Place fFoundingLocation;
@@ -2340,6 +3312,7 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * The place where the Organization was founded.
      *
+     * @param fFoundingLocation Place value to set.
      */
     @Override
     public void setFoundingLocation(Place fFoundingLocation) {
@@ -2362,11 +3335,22 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * The Dun & Bradstreet DUNS number for identifying an organization or business person.
      *
+     * @param fDuns Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
     public void setDuns(Text fDuns) {
         this.fDuns = fDuns;
+    }
+    /**
+     * The Dun & Bradstreet DUNS number for identifying an organization or business person.
+     *
+     * @param fDuns java.lang.String value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setDuns(java.lang.String fDuns) {
+        this.fDuns = Text.of(fDuns);
     }
 
     private Organization fParentOrganization;
@@ -2384,6 +3368,7 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * The larger organization that this organization is a [[subOrganization]] of, if any.
      *
+     * @param fParentOrganization Organization value to set.
      */
     @Override
     public void setParentOrganization(Organization fParentOrganization) {
@@ -2407,12 +3392,24 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.
      *
+     * @param fLeiCode Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#GLEIF">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#GLEIF</a>
      */
     @Override
     public void setLeiCode(Text fLeiCode) {
         this.fLeiCode = fLeiCode;
+    }
+    /**
+     * An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.
+     *
+     * @param fLeiCode java.lang.String value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#GLEIF">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#GLEIF</a>
+     */
+    @Override
+    public void setLeiCode(java.lang.String fLeiCode) {
+        this.fLeiCode = Text.of(fLeiCode);
     }
 
     private Object fAreaServed;
@@ -2430,12 +3427,46 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * The geographic area where a service or offered item is provided.
      *
+     * @param fAreaServed AdministrativeArea value to set.
      */
     @Override
-    public void setAreaServed(Object fAreaServed) {
-        if(!(fAreaServed instanceof AdministrativeArea) && !(fAreaServed instanceof GeoShape) && !(fAreaServed instanceof Text) && !(fAreaServed instanceof Place)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'areaServed': " + fAreaServed);
-        }
+    public void setAreaServed(AdministrativeArea fAreaServed) {
+        this.fAreaServed = fAreaServed;
+    }
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @param fAreaServed GeoShape value to set.
+     */
+    @Override
+    public void setAreaServed(GeoShape fAreaServed) {
+        this.fAreaServed = fAreaServed;
+    }
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @param fAreaServed Text value to set.
+     */
+    @Override
+    public void setAreaServed(Text fAreaServed) {
+        this.fAreaServed = fAreaServed;
+    }
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @param fAreaServed java.lang.String value to set.
+     */
+    @Override
+    public void setAreaServed(java.lang.String fAreaServed) {
+        this.fAreaServed = Text.of(fAreaServed);
+    }
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @param fAreaServed Place value to set.
+     */
+    @Override
+    public void setAreaServed(Place fAreaServed) {
         this.fAreaServed = fAreaServed;
     }
 
@@ -2454,10 +3485,20 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * The date that this organization was founded.
      *
+     * @param fFoundingDate Date value to set.
      */
     @Override
     public void setFoundingDate(Date fFoundingDate) {
         this.fFoundingDate = fFoundingDate;
+    }
+    /**
+     * The date that this organization was founded.
+     *
+     * @param fFoundingDate java.time.LocalDate value to set.
+     */
+    @Override
+    public void setFoundingDate(java.time.LocalDate fFoundingDate) {
+        this.fFoundingDate = Date.of(fFoundingDate);
     }
 
     private Object fKnowsLanguage;
@@ -2478,16 +3519,38 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).
      *
+     * @param fKnowsLanguage Language value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
     @Override
-    public void setKnowsLanguage(Object fKnowsLanguage) {
-        if(!(fKnowsLanguage instanceof Language) && !(fKnowsLanguage instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'knowsLanguage': " + fKnowsLanguage);
-        }
+    public void setKnowsLanguage(Language fKnowsLanguage) {
         this.fKnowsLanguage = fKnowsLanguage;
+    }
+    /**
+     * Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).
+     *
+     * @param fKnowsLanguage Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    @Override
+    public void setKnowsLanguage(Text fKnowsLanguage) {
+        this.fKnowsLanguage = fKnowsLanguage;
+    }
+    /**
+     * Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).
+     *
+     * @param fKnowsLanguage java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    @Override
+    public void setKnowsLanguage(java.lang.String fKnowsLanguage) {
+        this.fKnowsLanguage = Text.of(fKnowsLanguage);
     }
 
     private Demand fSeeks;
@@ -2506,6 +3569,7 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * A pointer to products or services sought by the organization or person (demand).
      *
+     * @param fSeeks Demand value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
@@ -2529,11 +3593,22 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
      *
+     * @param fTaxID Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
     public void setTaxID(Text fTaxID) {
         this.fTaxID = fTaxID;
+    }
+    /**
+     * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
+     *
+     * @param fTaxID java.lang.String value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setTaxID(java.lang.String fTaxID) {
+        this.fTaxID = Text.of(fTaxID);
     }
 
     private Object fOwns;
@@ -2552,13 +3627,21 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * Products owned by the organization or person.
      *
+     * @param fOwns Product value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setOwns(Object fOwns) {
-        if(!(fOwns instanceof Product) && !(fOwns instanceof OwnershipInfo)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'owns': " + fOwns);
-        }
+    public void setOwns(Product fOwns) {
+        this.fOwns = fOwns;
+    }
+    /**
+     * Products owned by the organization or person.
+     *
+     * @param fOwns OwnershipInfo value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setOwns(OwnershipInfo fOwns) {
         this.fOwns = fOwns;
     }
 
@@ -2577,6 +3660,7 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * Indicates an OfferCatalog listing for this Organization, Person, or Service.
      *
+     * @param fHasOfferCatalog OfferCatalog value to set.
      */
     @Override
     public void setHasOfferCatalog(OfferCatalog fHasOfferCatalog) {
@@ -2598,12 +3682,19 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * A member of this organization.
      *
+     * @param fMembers Person value to set.
      */
     @Override
-    public void setMembers(Object fMembers) {
-        if(!(fMembers instanceof Person) && !(fMembers instanceof Organization)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'members': " + fMembers);
-        }
+    public void setMembers(Person fMembers) {
+        this.fMembers = fMembers;
+    }
+    /**
+     * A member of this organization.
+     *
+     * @param fMembers Organization value to set.
+     */
+    @Override
+    public void setMembers(Organization fMembers) {
         this.fMembers = fMembers;
     }
 
@@ -2624,12 +3715,24 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * An organization identifier as defined in ISO 6523(-1). Note that many existing organization identifiers such as [leiCode](https://schema.org/leiCode), [duns](https://schema.org/duns) and [vatID](https://schema.org/vatID) can be expressed as an ISO 6523 identifier by setting the ICD part of the ISO 6523 identifier accordingly. 
      *
+     * @param fIso6523Code Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2915">https://github.com/schemaorg/schemaorg/issues/2915</a>
      */
     @Override
     public void setIso6523Code(Text fIso6523Code) {
         this.fIso6523Code = fIso6523Code;
+    }
+    /**
+     * An organization identifier as defined in ISO 6523(-1). Note that many existing organization identifiers such as [leiCode](https://schema.org/leiCode), [duns](https://schema.org/duns) and [vatID](https://schema.org/vatID) can be expressed as an ISO 6523 identifier by setting the ICD part of the ISO 6523 identifier accordingly. 
+     *
+     * @param fIso6523Code java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2915">https://github.com/schemaorg/schemaorg/issues/2915</a>
+     */
+    @Override
+    public void setIso6523Code(java.lang.String fIso6523Code) {
+        this.fIso6523Code = Text.of(fIso6523Code);
     }
 
     private Organization fDepartment;
@@ -2647,6 +3750,7 @@ public class PreschoolImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * A relationship between an organization and a department of that organization, also described as an organization (allowing different urls, logos, opening hours). For example: a store with a pharmacy, or a bakery with a cafe.
      *
+     * @param fDepartment Organization value to set.
      */
     @Override
     public void setDepartment(Organization fDepartment) {

@@ -31,6 +31,7 @@ public interface MusicRelease extends MusicPlaylist {
     /**
      * The album this is a release of.
      *
+     * @param fReleaseOf MusicAlbum value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
     void setReleaseOf(MusicAlbum fReleaseOf);
@@ -46,6 +47,7 @@ public interface MusicRelease extends MusicPlaylist {
     /**
      * Format of this release (the type of recording media used, ie. compact disc, digital media, LP, etc.).
      *
+     * @param fMusicReleaseFormat MusicReleaseFormatType value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
     void setMusicReleaseFormat(MusicReleaseFormatType fMusicReleaseFormat);
@@ -62,6 +64,7 @@ public interface MusicRelease extends MusicPlaylist {
     /**
      * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
      *
+     * @param fDuration Duration value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
      */
@@ -78,9 +81,17 @@ public interface MusicRelease extends MusicPlaylist {
     /**
      * The group the release is credited to if different than the byArtist. For example, Red and Blue is credited to "Stefani Germanotta Band", but by Lady Gaga.
      *
+     * @param fCreditedTo Person value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
-    void setCreditedTo(Object fCreditedTo);
+    void setCreditedTo(Person fCreditedTo);
+    /**
+     * The group the release is credited to if different than the byArtist. For example, Red and Blue is credited to "Stefani Germanotta Band", but by Lady Gaga.
+     *
+     * @param fCreditedTo Organization value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
+     */
+    void setCreditedTo(Organization fCreditedTo);
 
     /**
      * The label that issued the release.
@@ -93,6 +104,7 @@ public interface MusicRelease extends MusicPlaylist {
     /**
      * The label that issued the release.
      *
+     * @param fRecordLabel Organization value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
     void setRecordLabel(Organization fRecordLabel);
@@ -108,7 +120,15 @@ public interface MusicRelease extends MusicPlaylist {
     /**
      * The catalog number for the release.
      *
+     * @param fCatalogNumber Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
     void setCatalogNumber(Text fCatalogNumber);
+    /**
+     * The catalog number for the release.
+     *
+     * @param fCatalogNumber java.lang.String value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
+     */
+    void setCatalogNumber(java.lang.String fCatalogNumber);
 }

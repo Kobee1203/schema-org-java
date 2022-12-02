@@ -28,9 +28,17 @@ public interface Rating extends Intangible {
     /**
      * This Review or Rating is relevant to this part or facet of the itemReviewed.
      *
+     * @param fReviewAspect Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1689">https://github.com/schemaorg/schemaorg/issues/1689</a>
      */
     void setReviewAspect(Text fReviewAspect);
+    /**
+     * This Review or Rating is relevant to this part or facet of the itemReviewed.
+     *
+     * @param fReviewAspect java.lang.String value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1689">https://github.com/schemaorg/schemaorg/issues/1689</a>
+     */
+    void setReviewAspect(java.lang.String fReviewAspect);
 
     /**
      * The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.
@@ -42,8 +50,27 @@ public interface Rating extends Intangible {
     /**
      * The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.
      *
+     * @param fWorstRating Text value to set.
      */
-    void setWorstRating(Object fWorstRating);
+    void setWorstRating(Text fWorstRating);
+    /**
+     * The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.
+     *
+     * @param fWorstRating java.lang.String value to set.
+     */
+    void setWorstRating(java.lang.String fWorstRating);
+    /**
+     * The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.
+     *
+     * @param fWorstRating Number value to set.
+     */
+    void setWorstRating(Number fWorstRating);
+    /**
+     * The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.
+     *
+     * @param fWorstRating java.lang.Number value to set.
+     */
+    void setWorstRating(java.lang.Number fWorstRating);
 
     /**
      * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
@@ -55,8 +82,15 @@ public interface Rating extends Intangible {
     /**
      * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
      *
+     * @param fAuthor Person value to set.
      */
-    void setAuthor(Object fAuthor);
+    void setAuthor(Person fAuthor);
+    /**
+     * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
+     *
+     * @param fAuthor Organization value to set.
+     */
+    void setAuthor(Organization fAuthor);
 
     /**
      * The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
@@ -68,8 +102,27 @@ public interface Rating extends Intangible {
     /**
      * The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
      *
+     * @param fBestRating Text value to set.
      */
-    void setBestRating(Object fBestRating);
+    void setBestRating(Text fBestRating);
+    /**
+     * The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
+     *
+     * @param fBestRating java.lang.String value to set.
+     */
+    void setBestRating(java.lang.String fBestRating);
+    /**
+     * The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
+     *
+     * @param fBestRating Number value to set.
+     */
+    void setBestRating(Number fBestRating);
+    /**
+     * The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
+     *
+     * @param fBestRating java.lang.Number value to set.
+     */
+    void setBestRating(java.lang.Number fBestRating);
 
     /**
      * The rating for the content.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
@@ -81,8 +134,27 @@ public interface Rating extends Intangible {
     /**
      * The rating for the content.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      *
+     * @param fRatingValue Number value to set.
      */
-    void setRatingValue(Object fRatingValue);
+    void setRatingValue(Number fRatingValue);
+    /**
+     * The rating for the content.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+     *
+     * @param fRatingValue java.lang.Number value to set.
+     */
+    void setRatingValue(java.lang.Number fRatingValue);
+    /**
+     * The rating for the content.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+     *
+     * @param fRatingValue Text value to set.
+     */
+    void setRatingValue(Text fRatingValue);
+    /**
+     * The rating for the content.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+     *
+     * @param fRatingValue java.lang.String value to set.
+     */
+    void setRatingValue(java.lang.String fRatingValue);
 
     /**
      * A short explanation (e.g. one to two sentences) providing background context and other information that led to the conclusion expressed in the rating. This is particularly applicable to ratings associated with "fact check" markup using [[ClaimReview]].
@@ -96,8 +168,17 @@ public interface Rating extends Intangible {
     /**
      * A short explanation (e.g. one to two sentences) providing background context and other information that led to the conclusion expressed in the rating. This is particularly applicable to ratings associated with "fact check" markup using [[ClaimReview]].
      *
+     * @param fRatingExplanation Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2300">https://github.com/schemaorg/schemaorg/issues/2300</a>
      */
     void setRatingExplanation(Text fRatingExplanation);
+    /**
+     * A short explanation (e.g. one to two sentences) providing background context and other information that led to the conclusion expressed in the rating. This is particularly applicable to ratings associated with "fact check" markup using [[ClaimReview]].
+     *
+     * @param fRatingExplanation java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2300">https://github.com/schemaorg/schemaorg/issues/2300</a>
+     */
+    void setRatingExplanation(java.lang.String fRatingExplanation);
 }

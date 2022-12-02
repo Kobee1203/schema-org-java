@@ -30,6 +30,7 @@ public interface Muscle extends AnatomicalStructure {
     /**
      * The place of attachment of a muscle, or what the muscle moves.
      *
+     * @param fInsertion AnatomicalStructure value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setInsertion(AnatomicalStructure fInsertion);
@@ -45,6 +46,7 @@ public interface Muscle extends AnatomicalStructure {
     /**
      * The muscle whose action counteracts the specified muscle.
      *
+     * @param fAntagonist Muscle value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setAntagonist(Muscle fAntagonist);
@@ -60,6 +62,7 @@ public interface Muscle extends AnatomicalStructure {
     /**
      * The underlying innervation associated with the muscle.
      *
+     * @param fNerve Nerve value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setNerve(Nerve fNerve);
@@ -75,6 +78,7 @@ public interface Muscle extends AnatomicalStructure {
     /**
      * The blood vessel that carries blood from the heart to the muscle.
      *
+     * @param fBloodSupply Vessel value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setBloodSupply(Vessel fBloodSupply);
@@ -90,7 +94,15 @@ public interface Muscle extends AnatomicalStructure {
     /**
      * The movement the muscle generates.
      *
+     * @param fMuscleAction Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setMuscleAction(Text fMuscleAction);
+    /**
+     * The movement the muscle generates.
+     *
+     * @param fMuscleAction java.lang.String value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setMuscleAction(java.lang.String fMuscleAction);
 }

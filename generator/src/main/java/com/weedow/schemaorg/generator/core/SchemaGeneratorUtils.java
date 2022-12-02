@@ -2,7 +2,7 @@ package com.weedow.schemaorg.generator.core;
 
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.generator.model.Type;
-import com.weedow.schemaorg.generator.model.handler.ModelHandlerUtils;
+import com.weedow.schemaorg.generator.model.utils.ModelUtils;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentSkipListMap;
@@ -13,7 +13,7 @@ public final class SchemaGeneratorUtils {
     }
 
     public static String resolveClassName(String modelPackage, String dataTypePackage, Type type) {
-        final String resolvedPackage = ModelHandlerUtils.isDataType(type.getId()) || ModelHandlerUtils.isSubDataType(type) ? dataTypePackage : modelPackage;
+        final String resolvedPackage = ModelUtils.isDataType(type.getId()) || ModelUtils.isSubDataType(type) ? dataTypePackage : modelPackage;
         return resolvedPackage + "." + type.getName();
     }
 

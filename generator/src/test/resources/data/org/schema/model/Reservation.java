@@ -33,8 +33,15 @@ public interface Reservation extends Intangible {
     /**
      * The date and time the reservation was modified.
      *
+     * @param fModifiedTime DateTime value to set.
      */
     void setModifiedTime(DateTime fModifiedTime);
+    /**
+     * The date and time the reservation was modified.
+     *
+     * @param fModifiedTime java.time.LocalDateTime value to set.
+     */
+    void setModifiedTime(java.time.LocalDateTime fModifiedTime);
 
     /**
      * The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
@@ -46,8 +53,33 @@ public interface Reservation extends Intangible {
     /**
      * The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      *
+     * @param fTotalPrice PriceSpecification value to set.
      */
-    void setTotalPrice(Object fTotalPrice);
+    void setTotalPrice(PriceSpecification fTotalPrice);
+    /**
+     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+     *
+     * @param fTotalPrice Number value to set.
+     */
+    void setTotalPrice(Number fTotalPrice);
+    /**
+     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+     *
+     * @param fTotalPrice java.lang.Number value to set.
+     */
+    void setTotalPrice(java.lang.Number fTotalPrice);
+    /**
+     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+     *
+     * @param fTotalPrice Text value to set.
+     */
+    void setTotalPrice(Text fTotalPrice);
+    /**
+     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+     *
+     * @param fTotalPrice java.lang.String value to set.
+     */
+    void setTotalPrice(java.lang.String fTotalPrice);
 
     /**
      * A ticket associated with the reservation.
@@ -59,6 +91,7 @@ public interface Reservation extends Intangible {
     /**
      * A ticket associated with the reservation.
      *
+     * @param fReservedTicket Ticket value to set.
      */
     void setReservedTicket(Ticket fReservedTicket);
 
@@ -72,6 +105,7 @@ public interface Reservation extends Intangible {
     /**
      * The current status of the reservation.
      *
+     * @param fReservationStatus ReservationStatusType value to set.
      */
     void setReservationStatus(ReservationStatusType fReservationStatus);
 
@@ -88,11 +122,21 @@ public interface Reservation extends Intangible {
     /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
      *
+     * @param fProvider Organization value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
      */
-    void setProvider(Object fProvider);
+    void setProvider(Organization fProvider);
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @param fProvider Person value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     */
+    void setProvider(Person fProvider);
 
     /**
      * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
@@ -104,8 +148,15 @@ public interface Reservation extends Intangible {
     /**
      * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
      *
+     * @param fBroker Person value to set.
      */
-    void setBroker(Object fBroker);
+    void setBroker(Person fBroker);
+    /**
+     * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
+     *
+     * @param fBroker Organization value to set.
+     */
+    void setBroker(Organization fBroker);
 
     /**
      * The date and time the reservation was booked.
@@ -117,8 +168,15 @@ public interface Reservation extends Intangible {
     /**
      * The date and time the reservation was booked.
      *
+     * @param fBookingTime DateTime value to set.
      */
     void setBookingTime(DateTime fBookingTime);
+    /**
+     * The date and time the reservation was booked.
+     *
+     * @param fBookingTime java.time.LocalDateTime value to set.
+     */
+    void setBookingTime(java.time.LocalDateTime fBookingTime);
 
     /**
      * Any membership in a frequent flyer, hotel loyalty program, etc. being applied to the reservation.
@@ -130,6 +188,7 @@ public interface Reservation extends Intangible {
     /**
      * Any membership in a frequent flyer, hotel loyalty program, etc. being applied to the reservation.
      *
+     * @param fProgramMembershipUsed ProgramMembership value to set.
      */
     void setProgramMembershipUsed(ProgramMembership fProgramMembershipUsed);
 
@@ -143,8 +202,15 @@ public interface Reservation extends Intangible {
     /**
      * 'bookingAgent' is an out-dated term indicating a 'broker' that serves as a booking agent.
      *
+     * @param fBookingAgent Person value to set.
      */
-    void setBookingAgent(Object fBookingAgent);
+    void setBookingAgent(Person fBookingAgent);
+    /**
+     * 'bookingAgent' is an out-dated term indicating a 'broker' that serves as a booking agent.
+     *
+     * @param fBookingAgent Organization value to set.
+     */
+    void setBookingAgent(Organization fBookingAgent);
 
     /**
      * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
@@ -156,8 +222,15 @@ public interface Reservation extends Intangible {
     /**
      * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
      *
+     * @param fPriceCurrency Text value to set.
      */
     void setPriceCurrency(Text fPriceCurrency);
+    /**
+     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
+     *
+     * @param fPriceCurrency java.lang.String value to set.
+     */
+    void setPriceCurrency(java.lang.String fPriceCurrency);
 
     /**
      * A unique identifier for the reservation.
@@ -169,8 +242,15 @@ public interface Reservation extends Intangible {
     /**
      * A unique identifier for the reservation.
      *
+     * @param fReservationId Text value to set.
      */
     void setReservationId(Text fReservationId);
+    /**
+     * A unique identifier for the reservation.
+     *
+     * @param fReservationId java.lang.String value to set.
+     */
+    void setReservationId(java.lang.String fReservationId);
 
     /**
      * The person or organization the reservation or ticket is for.
@@ -182,8 +262,15 @@ public interface Reservation extends Intangible {
     /**
      * The person or organization the reservation or ticket is for.
      *
+     * @param fUnderName Organization value to set.
      */
-    void setUnderName(Object fUnderName);
+    void setUnderName(Organization fUnderName);
+    /**
+     * The person or organization the reservation or ticket is for.
+     *
+     * @param fUnderName Person value to set.
+     */
+    void setUnderName(Person fUnderName);
 
     /**
      * The thing -- flight, event, restaurant,etc. being reserved.
@@ -195,6 +282,7 @@ public interface Reservation extends Intangible {
     /**
      * The thing -- flight, event, restaurant,etc. being reserved.
      *
+     * @param fReservationFor Thing value to set.
      */
     void setReservationFor(Thing fReservationFor);
 }

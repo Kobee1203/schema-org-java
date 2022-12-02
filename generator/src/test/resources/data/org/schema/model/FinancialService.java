@@ -26,7 +26,29 @@ public interface FinancialService extends LocalBusiness {
     /**
      * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
      *
+     * @param fFeesAndCommissionsSpecification URL value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      */
-    void setFeesAndCommissionsSpecification(Object fFeesAndCommissionsSpecification);
+    void setFeesAndCommissionsSpecification(URL fFeesAndCommissionsSpecification);
+    /**
+     * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
+     *
+     * @param fFeesAndCommissionsSpecification java.net.URL value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     */
+    void setFeesAndCommissionsSpecification(java.net.URL fFeesAndCommissionsSpecification);
+    /**
+     * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
+     *
+     * @param fFeesAndCommissionsSpecification Text value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     */
+    void setFeesAndCommissionsSpecification(Text fFeesAndCommissionsSpecification);
+    /**
+     * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
+     *
+     * @param fFeesAndCommissionsSpecification java.lang.String value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     */
+    void setFeesAndCommissionsSpecification(java.lang.String fFeesAndCommissionsSpecification);
 }

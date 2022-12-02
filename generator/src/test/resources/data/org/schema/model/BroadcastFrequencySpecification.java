@@ -30,10 +30,19 @@ public interface BroadcastFrequencySpecification extends Intangible {
     /**
      * The subchannel used for the broadcast.
      *
+     * @param fBroadcastSubChannel Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2111">https://github.com/schemaorg/schemaorg/issues/2111</a>
      */
     void setBroadcastSubChannel(Text fBroadcastSubChannel);
+    /**
+     * The subchannel used for the broadcast.
+     *
+     * @param fBroadcastSubChannel java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2111">https://github.com/schemaorg/schemaorg/issues/2111</a>
+     */
+    void setBroadcastSubChannel(java.lang.String fBroadcastSubChannel);
 
     /**
      * The modulation (e.g. FM, AM, etc) used by a particular broadcast service.
@@ -47,10 +56,27 @@ public interface BroadcastFrequencySpecification extends Intangible {
     /**
      * The modulation (e.g. FM, AM, etc) used by a particular broadcast service.
      *
+     * @param fBroadcastSignalModulation QualitativeValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2111">https://github.com/schemaorg/schemaorg/issues/2111</a>
      */
-    void setBroadcastSignalModulation(Object fBroadcastSignalModulation);
+    void setBroadcastSignalModulation(QualitativeValue fBroadcastSignalModulation);
+    /**
+     * The modulation (e.g. FM, AM, etc) used by a particular broadcast service.
+     *
+     * @param fBroadcastSignalModulation Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2111">https://github.com/schemaorg/schemaorg/issues/2111</a>
+     */
+    void setBroadcastSignalModulation(Text fBroadcastSignalModulation);
+    /**
+     * The modulation (e.g. FM, AM, etc) used by a particular broadcast service.
+     *
+     * @param fBroadcastSignalModulation java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2111">https://github.com/schemaorg/schemaorg/issues/2111</a>
+     */
+    void setBroadcastSignalModulation(java.lang.String fBroadcastSignalModulation);
 
     /**
      * The frequency in MHz for a particular broadcast.
@@ -63,7 +89,22 @@ public interface BroadcastFrequencySpecification extends Intangible {
     /**
      * The frequency in MHz for a particular broadcast.
      *
+     * @param fBroadcastFrequencyValue Number value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
      */
-    void setBroadcastFrequencyValue(Object fBroadcastFrequencyValue);
+    void setBroadcastFrequencyValue(Number fBroadcastFrequencyValue);
+    /**
+     * The frequency in MHz for a particular broadcast.
+     *
+     * @param fBroadcastFrequencyValue java.lang.Number value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
+     */
+    void setBroadcastFrequencyValue(java.lang.Number fBroadcastFrequencyValue);
+    /**
+     * The frequency in MHz for a particular broadcast.
+     *
+     * @param fBroadcastFrequencyValue QuantitativeValue value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
+     */
+    void setBroadcastFrequencyValue(QuantitativeValue fBroadcastFrequencyValue);
 }

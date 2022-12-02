@@ -11,7 +11,7 @@ import com.weedow.schemaorg.generator.core.stream.StreamService;
 import com.weedow.schemaorg.generator.logging.Logger;
 import com.weedow.schemaorg.generator.logging.LoggerFactory;
 import com.weedow.schemaorg.generator.model.Type;
-import com.weedow.schemaorg.generator.model.handler.ModelHandlerUtils;
+import com.weedow.schemaorg.generator.model.utils.ModelUtils;
 import com.weedow.schemaorg.generator.template.TemplateService;
 
 import java.io.FileOutputStream;
@@ -101,11 +101,11 @@ public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
         stream.forEach(type -> {
             if (type.getId().equals("schema:DataType")) {
                 generateAbstractDataType(dataTypeFolder, dataTypePackage, type);
-            } else if (ModelHandlerUtils.isDataType(type.getId())) {
+            } else if (ModelUtils.isDataType(type.getId())) {
                 generateDataType(dataTypeFolder, dataTypePackage, modelPackage, type);
-            } else if (ModelHandlerUtils.isSubDataType(type)) {
+            } else if (ModelUtils.isSubDataType(type)) {
                 generateDataType(dataTypeFolder, dataTypePackage, modelPackage, type);
-            } else if (ModelHandlerUtils.isEnumeration(type)) {
+            } else if (ModelUtils.isEnumeration(type)) {
                 generateEnumerationType(modelFolder, modelImplFolder, modelPackage, modelImplPackage, dataTypePackage, type);
             } else {
                 generateType(modelFolder, modelImplFolder, modelPackage, modelImplPackage, dataTypePackage, type);

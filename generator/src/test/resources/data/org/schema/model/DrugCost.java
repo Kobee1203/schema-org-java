@@ -30,6 +30,7 @@ public interface DrugCost extends MedicalEntity {
     /**
      * The location in which the status applies.
      *
+     * @param fApplicableLocation AdministrativeArea value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setApplicableLocation(AdministrativeArea fApplicableLocation);
@@ -45,9 +46,38 @@ public interface DrugCost extends MedicalEntity {
     /**
      * The cost per unit of the drug.
      *
+     * @param fCostPerUnit Number value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setCostPerUnit(Object fCostPerUnit);
+    void setCostPerUnit(Number fCostPerUnit);
+    /**
+     * The cost per unit of the drug.
+     *
+     * @param fCostPerUnit java.lang.Number value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setCostPerUnit(java.lang.Number fCostPerUnit);
+    /**
+     * The cost per unit of the drug.
+     *
+     * @param fCostPerUnit Text value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setCostPerUnit(Text fCostPerUnit);
+    /**
+     * The cost per unit of the drug.
+     *
+     * @param fCostPerUnit java.lang.String value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setCostPerUnit(java.lang.String fCostPerUnit);
+    /**
+     * The cost per unit of the drug.
+     *
+     * @param fCostPerUnit QualitativeValue value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setCostPerUnit(QualitativeValue fCostPerUnit);
 
     /**
      * The category of cost, such as wholesale, retail, reimbursement cap, etc.
@@ -60,6 +90,7 @@ public interface DrugCost extends MedicalEntity {
     /**
      * The category of cost, such as wholesale, retail, reimbursement cap, etc.
      *
+     * @param fCostCategory DrugCostCategory value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setCostCategory(DrugCostCategory fCostCategory);
@@ -75,9 +106,17 @@ public interface DrugCost extends MedicalEntity {
     /**
      * The unit in which the drug is measured, e.g. '5 mg tablet'.
      *
+     * @param fDrugUnit Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setDrugUnit(Text fDrugUnit);
+    /**
+     * The unit in which the drug is measured, e.g. '5 mg tablet'.
+     *
+     * @param fDrugUnit java.lang.String value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setDrugUnit(java.lang.String fDrugUnit);
 
     /**
      * The currency (in 3-letter of the drug cost. See: http://en.wikipedia.org/wiki/ISO_4217. 
@@ -90,9 +129,17 @@ public interface DrugCost extends MedicalEntity {
     /**
      * The currency (in 3-letter of the drug cost. See: http://en.wikipedia.org/wiki/ISO_4217. 
      *
+     * @param fCostCurrency Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setCostCurrency(Text fCostCurrency);
+    /**
+     * The currency (in 3-letter of the drug cost. See: http://en.wikipedia.org/wiki/ISO_4217. 
+     *
+     * @param fCostCurrency java.lang.String value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setCostCurrency(java.lang.String fCostCurrency);
 
     /**
      * Additional details to capture the origin of the cost data. For example, 'Medicare Part B'.
@@ -105,7 +152,15 @@ public interface DrugCost extends MedicalEntity {
     /**
      * Additional details to capture the origin of the cost data. For example, 'Medicare Part B'.
      *
+     * @param fCostOrigin Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setCostOrigin(Text fCostOrigin);
+    /**
+     * Additional details to capture the origin of the cost data. For example, 'Medicare Part B'.
+     *
+     * @param fCostOrigin java.lang.String value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setCostOrigin(java.lang.String fCostOrigin);
 }

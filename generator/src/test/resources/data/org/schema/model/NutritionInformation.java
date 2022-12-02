@@ -26,6 +26,7 @@ public interface NutritionInformation extends StructuredValue {
     /**
      * The number of grams of fat.
      *
+     * @param fFatContent Mass value to set.
      */
     void setFatContent(Mass fFatContent);
 
@@ -39,8 +40,15 @@ public interface NutritionInformation extends StructuredValue {
     /**
      * The serving size, in terms of the number of volume or mass.
      *
+     * @param fServingSize Text value to set.
      */
     void setServingSize(Text fServingSize);
+    /**
+     * The serving size, in terms of the number of volume or mass.
+     *
+     * @param fServingSize java.lang.String value to set.
+     */
+    void setServingSize(java.lang.String fServingSize);
 
     /**
      * The number of grams of protein.
@@ -52,6 +60,7 @@ public interface NutritionInformation extends StructuredValue {
     /**
      * The number of grams of protein.
      *
+     * @param fProteinContent Mass value to set.
      */
     void setProteinContent(Mass fProteinContent);
 
@@ -65,6 +74,7 @@ public interface NutritionInformation extends StructuredValue {
     /**
      * The number of calories.
      *
+     * @param fCalories Energy value to set.
      */
     void setCalories(Energy fCalories);
 
@@ -78,6 +88,7 @@ public interface NutritionInformation extends StructuredValue {
     /**
      * The number of milligrams of sodium.
      *
+     * @param fSodiumContent Mass value to set.
      */
     void setSodiumContent(Mass fSodiumContent);
 
@@ -91,6 +102,7 @@ public interface NutritionInformation extends StructuredValue {
     /**
      * The number of milligrams of cholesterol.
      *
+     * @param fCholesterolContent Mass value to set.
      */
     void setCholesterolContent(Mass fCholesterolContent);
 
@@ -104,6 +116,7 @@ public interface NutritionInformation extends StructuredValue {
     /**
      * The number of grams of sugar.
      *
+     * @param fSugarContent Mass value to set.
      */
     void setSugarContent(Mass fSugarContent);
 
@@ -117,6 +130,7 @@ public interface NutritionInformation extends StructuredValue {
     /**
      * The number of grams of carbohydrates.
      *
+     * @param fCarbohydrateContent Mass value to set.
      */
     void setCarbohydrateContent(Mass fCarbohydrateContent);
 
@@ -130,6 +144,7 @@ public interface NutritionInformation extends StructuredValue {
     /**
      * The number of grams of trans fat.
      *
+     * @param fTransFatContent Mass value to set.
      */
     void setTransFatContent(Mass fTransFatContent);
 
@@ -143,6 +158,7 @@ public interface NutritionInformation extends StructuredValue {
     /**
      * The number of grams of fiber.
      *
+     * @param fFiberContent Mass value to set.
      */
     void setFiberContent(Mass fFiberContent);
 
@@ -156,6 +172,7 @@ public interface NutritionInformation extends StructuredValue {
     /**
      * The number of grams of unsaturated fat.
      *
+     * @param fUnsaturatedFatContent Mass value to set.
      */
     void setUnsaturatedFatContent(Mass fUnsaturatedFatContent);
 
@@ -169,6 +186,7 @@ public interface NutritionInformation extends StructuredValue {
     /**
      * The number of grams of saturated fat.
      *
+     * @param fSaturatedFatContent Mass value to set.
      */
     void setSaturatedFatContent(Mass fSaturatedFatContent);
 }

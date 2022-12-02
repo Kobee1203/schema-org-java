@@ -28,6 +28,7 @@ public interface Game extends CreativeWork {
     /**
      * A piece of data that represents a particular aspect of a fictional character (skill, power, character points, advantage, disadvantage).
      *
+     * @param fCharacterAttribute Thing value to set.
      */
     void setCharacterAttribute(Thing fCharacterAttribute);
 
@@ -41,6 +42,7 @@ public interface Game extends CreativeWork {
     /**
      * An item is an object within the game world that can be collected by a player or, occasionally, a non-player character.
      *
+     * @param fGameItem Thing value to set.
      */
     void setGameItem(Thing fGameItem);
 
@@ -54,6 +56,7 @@ public interface Game extends CreativeWork {
     /**
      * Indicate how many people can play this game (minimum, maximum, or range).
      *
+     * @param fNumberOfPlayers QuantitativeValue value to set.
      */
     void setNumberOfPlayers(QuantitativeValue fNumberOfPlayers);
 
@@ -67,6 +70,7 @@ public interface Game extends CreativeWork {
     /**
      * The task that a player-controlled character, or group of characters may complete in order to gain a reward.
      *
+     * @param fQuest Thing value to set.
      */
     void setQuest(Thing fQuest);
 
@@ -80,6 +84,25 @@ public interface Game extends CreativeWork {
     /**
      * Real or fictional location of the game (or part of game).
      *
+     * @param fGameLocation Place value to set.
      */
-    void setGameLocation(Object fGameLocation);
+    void setGameLocation(Place fGameLocation);
+    /**
+     * Real or fictional location of the game (or part of game).
+     *
+     * @param fGameLocation URL value to set.
+     */
+    void setGameLocation(URL fGameLocation);
+    /**
+     * Real or fictional location of the game (or part of game).
+     *
+     * @param fGameLocation java.net.URL value to set.
+     */
+    void setGameLocation(java.net.URL fGameLocation);
+    /**
+     * Real or fictional location of the game (or part of game).
+     *
+     * @param fGameLocation PostalAddress value to set.
+     */
+    void setGameLocation(PostalAddress fGameLocation);
 }

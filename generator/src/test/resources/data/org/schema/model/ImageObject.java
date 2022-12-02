@@ -30,10 +30,19 @@ public interface ImageObject extends MediaObject {
     /**
      * Represents textual captioning from a [[MediaObject]], e.g. text of a 'meme'.
      *
+     * @param fEmbeddedTextCaption Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
     void setEmbeddedTextCaption(Text fEmbeddedTextCaption);
+    /**
+     * Represents textual captioning from a [[MediaObject]], e.g. text of a 'meme'.
+     *
+     * @param fEmbeddedTextCaption java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     */
+    void setEmbeddedTextCaption(java.lang.String fEmbeddedTextCaption);
 
     /**
      * Indicates whether this image is representative of the content of the page.
@@ -45,8 +54,15 @@ public interface ImageObject extends MediaObject {
     /**
      * Indicates whether this image is representative of the content of the page.
      *
+     * @param fRepresentativeOfPage Boolean value to set.
      */
     void setRepresentativeOfPage(Boolean fRepresentativeOfPage);
+    /**
+     * Indicates whether this image is representative of the content of the page.
+     *
+     * @param fRepresentativeOfPage java.lang.Boolean value to set.
+     */
+    void setRepresentativeOfPage(java.lang.Boolean fRepresentativeOfPage);
 
     /**
      * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
@@ -58,8 +74,21 @@ public interface ImageObject extends MediaObject {
     /**
      * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
      *
+     * @param fCaption Text value to set.
      */
-    void setCaption(Object fCaption);
+    void setCaption(Text fCaption);
+    /**
+     * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
+     *
+     * @param fCaption java.lang.String value to set.
+     */
+    void setCaption(java.lang.String fCaption);
+    /**
+     * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
+     *
+     * @param fCaption MediaObject value to set.
+     */
+    void setCaption(MediaObject fCaption);
 
     /**
      * Thumbnail image for an image or video.
@@ -71,6 +100,7 @@ public interface ImageObject extends MediaObject {
     /**
      * Thumbnail image for an image or video.
      *
+     * @param fThumbnail ImageObject value to set.
      */
     void setThumbnail(ImageObject fThumbnail);
 
@@ -84,6 +114,19 @@ public interface ImageObject extends MediaObject {
     /**
      * exif data for this object.
      *
+     * @param fExifData PropertyValue value to set.
      */
-    void setExifData(Object fExifData);
+    void setExifData(PropertyValue fExifData);
+    /**
+     * exif data for this object.
+     *
+     * @param fExifData Text value to set.
+     */
+    void setExifData(Text fExifData);
+    /**
+     * exif data for this object.
+     *
+     * @param fExifData java.lang.String value to set.
+     */
+    void setExifData(java.lang.String fExifData);
 }

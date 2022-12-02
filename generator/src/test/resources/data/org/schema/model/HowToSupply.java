@@ -25,6 +25,19 @@ public interface HowToSupply extends HowToItem {
     /**
      * The estimated cost of the supply or supplies consumed when performing instructions.
      *
+     * @param fEstimatedCost Text value to set.
      */
-    void setEstimatedCost(Object fEstimatedCost);
+    void setEstimatedCost(Text fEstimatedCost);
+    /**
+     * The estimated cost of the supply or supplies consumed when performing instructions.
+     *
+     * @param fEstimatedCost java.lang.String value to set.
+     */
+    void setEstimatedCost(java.lang.String fEstimatedCost);
+    /**
+     * The estimated cost of the supply or supplies consumed when performing instructions.
+     *
+     * @param fEstimatedCost MonetaryAmount value to set.
+     */
+    void setEstimatedCost(MonetaryAmount fEstimatedCost);
 }

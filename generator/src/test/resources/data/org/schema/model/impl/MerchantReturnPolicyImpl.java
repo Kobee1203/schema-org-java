@@ -58,6 +58,7 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
     /**
      * Specifies an applicable return policy (from an enumeration).
      *
+     * @param fReturnPolicyCategory MerchantReturnEnumeration value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
      */
@@ -83,15 +84,35 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
     /**
      * The country where the product has to be sent to for returns, for example "Ireland" using the [[name]] property of [[Country]]. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1). Note that this can be different from the country where the product was originally shipped from or sent too.
      *
+     * @param fReturnPolicyCountry Country value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
      */
     @Override
-    public void setReturnPolicyCountry(Object fReturnPolicyCountry) {
-        if(!(fReturnPolicyCountry instanceof Country) && !(fReturnPolicyCountry instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'returnPolicyCountry': " + fReturnPolicyCountry);
-        }
+    public void setReturnPolicyCountry(Country fReturnPolicyCountry) {
         this.fReturnPolicyCountry = fReturnPolicyCountry;
+    }
+    /**
+     * The country where the product has to be sent to for returns, for example "Ireland" using the [[name]] property of [[Country]]. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1). Note that this can be different from the country where the product was originally shipped from or sent too.
+     *
+     * @param fReturnPolicyCountry Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
+     */
+    @Override
+    public void setReturnPolicyCountry(Text fReturnPolicyCountry) {
+        this.fReturnPolicyCountry = fReturnPolicyCountry;
+    }
+    /**
+     * The country where the product has to be sent to for returns, for example "Ireland" using the [[name]] property of [[Country]]. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1). Note that this can be different from the country where the product was originally shipped from or sent too.
+     *
+     * @param fReturnPolicyCountry java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
+     */
+    @Override
+    public void setReturnPolicyCountry(java.lang.String fReturnPolicyCountry) {
+        this.fReturnPolicyCountry = Text.of(fReturnPolicyCountry);
     }
 
     private URL fMerchantReturnLink;
@@ -111,12 +132,24 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
     /**
      * Specifies a Web page or service by URL, for product returns.
      *
+     * @param fMerchantReturnLink URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
      */
     @Override
     public void setMerchantReturnLink(URL fMerchantReturnLink) {
         this.fMerchantReturnLink = fMerchantReturnLink;
+    }
+    /**
+     * Specifies a Web page or service by URL, for product returns.
+     *
+     * @param fMerchantReturnLink java.net.URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     */
+    @Override
+    public void setMerchantReturnLink(java.net.URL fMerchantReturnLink) {
+        this.fMerchantReturnLink = URL.of(fMerchantReturnLink);
     }
 
     private Object fRestockingFee;
@@ -136,15 +169,35 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
     /**
      * Use [[MonetaryAmount]] to specify a fixed restocking fee for product returns, or use [[Number]] to specify a percentage of the product price paid by the customer.
      *
+     * @param fRestockingFee MonetaryAmount value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
      */
     @Override
-    public void setRestockingFee(Object fRestockingFee) {
-        if(!(fRestockingFee instanceof MonetaryAmount) && !(fRestockingFee instanceof Number)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'restockingFee': " + fRestockingFee);
-        }
+    public void setRestockingFee(MonetaryAmount fRestockingFee) {
         this.fRestockingFee = fRestockingFee;
+    }
+    /**
+     * Use [[MonetaryAmount]] to specify a fixed restocking fee for product returns, or use [[Number]] to specify a percentage of the product price paid by the customer.
+     *
+     * @param fRestockingFee Number value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
+     */
+    @Override
+    public void setRestockingFee(Number fRestockingFee) {
+        this.fRestockingFee = fRestockingFee;
+    }
+    /**
+     * Use [[MonetaryAmount]] to specify a fixed restocking fee for product returns, or use [[Number]] to specify a percentage of the product price paid by the customer.
+     *
+     * @param fRestockingFee java.lang.Number value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
+     */
+    @Override
+    public void setRestockingFee(java.lang.Number fRestockingFee) {
+        this.fRestockingFee = Number.of(fRestockingFee);
     }
 
     private MonetaryAmount fItemDefectReturnShippingFeesAmount;
@@ -164,6 +217,7 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
     /**
      * Amount of shipping costs for defect product returns. Applicable when property [[itemDefectReturnFees]] equals [[ReturnShippingFees]].
      *
+     * @param fItemDefectReturnShippingFeesAmount MonetaryAmount value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
      */
@@ -189,6 +243,7 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
     /**
      * The type of return fees for returns of defect products.
      *
+     * @param fItemDefectReturnFees ReturnFeesEnumeration value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
      */
@@ -214,12 +269,24 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
     /**
      * Are in-store returns offered? (for more advanced return methods use the [[returnMethod]] property)
      *
+     * @param fInStoreReturnsOffered Boolean value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
      */
     @Override
     public void setInStoreReturnsOffered(Boolean fInStoreReturnsOffered) {
         this.fInStoreReturnsOffered = fInStoreReturnsOffered;
+    }
+    /**
+     * Are in-store returns offered? (for more advanced return methods use the [[returnMethod]] property)
+     *
+     * @param fInStoreReturnsOffered java.lang.Boolean value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     */
+    @Override
+    public void setInStoreReturnsOffered(java.lang.Boolean fInStoreReturnsOffered) {
+        this.fInStoreReturnsOffered = Boolean.of(fInStoreReturnsOffered);
     }
 
     private OfferItemCondition fItemCondition;
@@ -237,6 +304,7 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
     /**
      * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
      *
+     * @param fItemCondition OfferItemCondition value to set.
      */
     @Override
     public void setItemCondition(OfferItemCondition fItemCondition) {
@@ -260,6 +328,7 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
     /**
      * The method (from an enumeration) by which the customer obtains a return shipping label for a defect product.
      *
+     * @param fItemDefectReturnLabelSource ReturnLabelSourceEnumeration value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
      */
@@ -285,6 +354,7 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
     /**
      * The method (from an enumeration) by which the customer obtains a return shipping label for a product returned for any reason.
      *
+     * @param fReturnLabelSource ReturnLabelSourceEnumeration value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
      */
@@ -310,6 +380,7 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
     /**
      * The amount of shipping costs if a product is returned due to customer remorse. Applicable when property [[customerRemorseReturnFees]] equals [[ReturnShippingFees]].
      *
+     * @param fCustomerRemorseReturnShippingFeesAmount MonetaryAmount value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
      */
@@ -335,6 +406,7 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
     /**
      * A refund type, from an enumerated list.
      *
+     * @param fRefundType RefundTypeEnumeration value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
      */
@@ -360,6 +432,7 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
     /**
      * Amount of shipping costs for product returns (for any reason). Applicable when property [[returnFees]] equals [[ReturnShippingFees]].
      *
+     * @param fReturnShippingFeesAmount MonetaryAmount value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
      */
@@ -385,15 +458,68 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
     /**
      * Specifies either a fixed return date or the number of days (from the delivery date) that a product can be returned. Used when the [[returnPolicyCategory]] property is specified as [[MerchantReturnFiniteReturnWindow]].
      *
+     * @param fMerchantReturnDays DateTime value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
      */
     @Override
-    public void setMerchantReturnDays(Object fMerchantReturnDays) {
-        if(!(fMerchantReturnDays instanceof DateTime) && !(fMerchantReturnDays instanceof Integer) && !(fMerchantReturnDays instanceof Date)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'merchantReturnDays': " + fMerchantReturnDays);
-        }
+    public void setMerchantReturnDays(DateTime fMerchantReturnDays) {
         this.fMerchantReturnDays = fMerchantReturnDays;
+    }
+    /**
+     * Specifies either a fixed return date or the number of days (from the delivery date) that a product can be returned. Used when the [[returnPolicyCategory]] property is specified as [[MerchantReturnFiniteReturnWindow]].
+     *
+     * @param fMerchantReturnDays java.time.LocalDateTime value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     */
+    @Override
+    public void setMerchantReturnDays(java.time.LocalDateTime fMerchantReturnDays) {
+        this.fMerchantReturnDays = DateTime.of(fMerchantReturnDays);
+    }
+    /**
+     * Specifies either a fixed return date or the number of days (from the delivery date) that a product can be returned. Used when the [[returnPolicyCategory]] property is specified as [[MerchantReturnFiniteReturnWindow]].
+     *
+     * @param fMerchantReturnDays Integer value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     */
+    @Override
+    public void setMerchantReturnDays(Integer fMerchantReturnDays) {
+        this.fMerchantReturnDays = fMerchantReturnDays;
+    }
+    /**
+     * Specifies either a fixed return date or the number of days (from the delivery date) that a product can be returned. Used when the [[returnPolicyCategory]] property is specified as [[MerchantReturnFiniteReturnWindow]].
+     *
+     * @param fMerchantReturnDays java.lang.Integer value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     */
+    @Override
+    public void setMerchantReturnDays(java.lang.Integer fMerchantReturnDays) {
+        this.fMerchantReturnDays = Integer.of(fMerchantReturnDays);
+    }
+    /**
+     * Specifies either a fixed return date or the number of days (from the delivery date) that a product can be returned. Used when the [[returnPolicyCategory]] property is specified as [[MerchantReturnFiniteReturnWindow]].
+     *
+     * @param fMerchantReturnDays Date value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     */
+    @Override
+    public void setMerchantReturnDays(Date fMerchantReturnDays) {
+        this.fMerchantReturnDays = fMerchantReturnDays;
+    }
+    /**
+     * Specifies either a fixed return date or the number of days (from the delivery date) that a product can be returned. Used when the [[returnPolicyCategory]] property is specified as [[MerchantReturnFiniteReturnWindow]].
+     *
+     * @param fMerchantReturnDays java.time.LocalDate value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     */
+    @Override
+    public void setMerchantReturnDays(java.time.LocalDate fMerchantReturnDays) {
+        this.fMerchantReturnDays = Date.of(fMerchantReturnDays);
     }
 
     private ReturnMethodEnumeration fReturnMethod;
@@ -413,6 +539,7 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
     /**
      * The type of return method offered, specified from an enumeration.
      *
+     * @param fReturnMethod ReturnMethodEnumeration value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
      */
@@ -436,6 +563,7 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
     /**
      * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
      *
+     * @param fAdditionalProperty PropertyValue value to set.
      */
     @Override
     public void setAdditionalProperty(PropertyValue fAdditionalProperty) {
@@ -459,6 +587,7 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
     /**
      * The method (from an enumeration) by which the customer obtains a return shipping label for a product returned due to customer remorse.
      *
+     * @param fCustomerRemorseReturnLabelSource ReturnLabelSourceEnumeration value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
      */
@@ -484,6 +613,7 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
     /**
      * The type of return fees if the product is returned due to customer remorse.
      *
+     * @param fCustomerRemorseReturnFees ReturnFeesEnumeration value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
      */
@@ -509,6 +639,7 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
     /**
      * Seasonal override of a return policy.
      *
+     * @param fReturnPolicySeasonalOverride MerchantReturnPolicySeasonalOverride value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
      */
@@ -534,14 +665,34 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
     /**
      * A country where a particular merchant return policy applies to, for example the two-letter ISO 3166-1 alpha-2 country code.
      *
+     * @param fApplicableCountry Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3001">https://github.com/schemaorg/schemaorg/issues/3001</a>
      */
     @Override
-    public void setApplicableCountry(Object fApplicableCountry) {
-        if(!(fApplicableCountry instanceof Text) && !(fApplicableCountry instanceof Country)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'applicableCountry': " + fApplicableCountry);
-        }
+    public void setApplicableCountry(Text fApplicableCountry) {
+        this.fApplicableCountry = fApplicableCountry;
+    }
+    /**
+     * A country where a particular merchant return policy applies to, for example the two-letter ISO 3166-1 alpha-2 country code.
+     *
+     * @param fApplicableCountry java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3001">https://github.com/schemaorg/schemaorg/issues/3001</a>
+     */
+    @Override
+    public void setApplicableCountry(java.lang.String fApplicableCountry) {
+        this.fApplicableCountry = Text.of(fApplicableCountry);
+    }
+    /**
+     * A country where a particular merchant return policy applies to, for example the two-letter ISO 3166-1 alpha-2 country code.
+     *
+     * @param fApplicableCountry Country value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3001">https://github.com/schemaorg/schemaorg/issues/3001</a>
+     */
+    @Override
+    public void setApplicableCountry(Country fApplicableCountry) {
         this.fApplicableCountry = fApplicableCountry;
     }
 
@@ -562,6 +713,7 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
     /**
      * The type of return fees for purchased products (for any return reason)
      *
+     * @param fReturnFees ReturnFeesEnumeration value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
      */
@@ -585,13 +737,29 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
+     * @param fMainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
-        }
+    public void setMainEntityOfPage(CreativeWork fMainEntityOfPage) {
         this.fMainEntityOfPage = fMainEntityOfPage;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param fMainEntityOfPage URL value to set.
+     */
+    @Override
+    public void setMainEntityOfPage(URL fMainEntityOfPage) {
+        this.fMainEntityOfPage = fMainEntityOfPage;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param fMainEntityOfPage java.net.URL value to set.
+     */
+    @Override
+    public void setMainEntityOfPage(java.net.URL fMainEntityOfPage) {
+        this.fMainEntityOfPage = URL.of(fMainEntityOfPage);
     }
 
     private Text fAlternateName;
@@ -609,10 +777,20 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
     /**
      * An alias for the item.
      *
+     * @param fAlternateName Text value to set.
      */
     @Override
     public void setAlternateName(Text fAlternateName) {
         this.fAlternateName = fAlternateName;
+    }
+    /**
+     * An alias for the item.
+     *
+     * @param fAlternateName java.lang.String value to set.
+     */
+    @Override
+    public void setAlternateName(java.lang.String fAlternateName) {
+        this.fAlternateName = Text.of(fAlternateName);
     }
 
     private Text fName;
@@ -630,10 +808,20 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
     /**
      * The name of the item.
      *
+     * @param fName Text value to set.
      */
     @Override
     public void setName(Text fName) {
         this.fName = fName;
+    }
+    /**
+     * The name of the item.
+     *
+     * @param fName java.lang.String value to set.
+     */
+    @Override
+    public void setName(java.lang.String fName) {
+        this.fName = Text.of(fName);
     }
 
     private Action fPotentialAction;
@@ -651,6 +839,7 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      *
+     * @param fPotentialAction Action value to set.
      */
     @Override
     public void setPotentialAction(Action fPotentialAction) {
@@ -672,12 +861,28 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
+     * @param fImage URL value to set.
      */
     @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
+    public void setImage(URL fImage) {
+        this.fImage = fImage;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param fImage java.net.URL value to set.
+     */
+    @Override
+    public void setImage(java.net.URL fImage) {
+        this.fImage = URL.of(fImage);
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param fImage ImageObject value to set.
+     */
+    @Override
+    public void setImage(ImageObject fImage) {
         this.fImage = fImage;
     }
 
@@ -696,10 +901,20 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
     /**
      * URL of the item.
      *
+     * @param fUrl URL value to set.
      */
     @Override
     public void setUrl(URL fUrl) {
         this.fUrl = fUrl;
+    }
+    /**
+     * URL of the item.
+     *
+     * @param fUrl java.net.URL value to set.
+     */
+    @Override
+    public void setUrl(java.net.URL fUrl) {
+        this.fUrl = URL.of(fUrl);
     }
 
     private Text fDescription;
@@ -717,10 +932,20 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
     /**
      * A description of the item.
      *
+     * @param fDescription Text value to set.
      */
     @Override
     public void setDescription(Text fDescription) {
         this.fDescription = fDescription;
+    }
+    /**
+     * A description of the item.
+     *
+     * @param fDescription java.lang.String value to set.
+     */
+    @Override
+    public void setDescription(java.lang.String fDescription) {
+        this.fDescription = Text.of(fDescription);
     }
 
     private Object fSubjectOf;
@@ -739,13 +964,21 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
     /**
      * A CreativeWork or Event about this Thing.
      *
+     * @param fSubjectOf Event value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Object fSubjectOf) {
-        if(!(fSubjectOf instanceof Event) && !(fSubjectOf instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'subjectOf': " + fSubjectOf);
-        }
+    public void setSubjectOf(Event fSubjectOf) {
+        this.fSubjectOf = fSubjectOf;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @param fSubjectOf CreativeWork value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public void setSubjectOf(CreativeWork fSubjectOf) {
         this.fSubjectOf = fSubjectOf;
     }
 
@@ -764,10 +997,20 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
+     * @param fAdditionalType URL value to set.
      */
     @Override
     public void setAdditionalType(URL fAdditionalType) {
         this.fAdditionalType = fAdditionalType;
+    }
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @param fAdditionalType java.net.URL value to set.
+     */
+    @Override
+    public void setAdditionalType(java.net.URL fAdditionalType) {
+        this.fAdditionalType = URL.of(fAdditionalType);
     }
 
     private Text fDisambiguatingDescription;
@@ -785,10 +1028,20 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
+     * @param fDisambiguatingDescription Text value to set.
      */
     @Override
     public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
         this.fDisambiguatingDescription = fDisambiguatingDescription;
+    }
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @param fDisambiguatingDescription java.lang.String value to set.
+     */
+    @Override
+    public void setDisambiguatingDescription(java.lang.String fDisambiguatingDescription) {
+        this.fDisambiguatingDescription = Text.of(fDisambiguatingDescription);
     }
 
     private URL fSameAs;
@@ -806,10 +1059,20 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
+     * @param fSameAs URL value to set.
      */
     @Override
     public void setSameAs(URL fSameAs) {
         this.fSameAs = fSameAs;
+    }
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @param fSameAs java.net.URL value to set.
+     */
+    @Override
+    public void setSameAs(java.net.URL fSameAs) {
+        this.fSameAs = URL.of(fSameAs);
     }
 
     private Object fIdentifier;
@@ -829,12 +1092,50 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
+     * @param fIdentifier URL value to set.
      */
     @Override
-    public void setIdentifier(Object fIdentifier) {
-        if(!(fIdentifier instanceof URL) && !(fIdentifier instanceof Text) && !(fIdentifier instanceof PropertyValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
-        }
+    public void setIdentifier(URL fIdentifier) {
+        this.fIdentifier = fIdentifier;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param fIdentifier java.net.URL value to set.
+     */
+    @Override
+    public void setIdentifier(java.net.URL fIdentifier) {
+        this.fIdentifier = URL.of(fIdentifier);
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param fIdentifier Text value to set.
+     */
+    @Override
+    public void setIdentifier(Text fIdentifier) {
+        this.fIdentifier = fIdentifier;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param fIdentifier java.lang.String value to set.
+     */
+    @Override
+    public void setIdentifier(java.lang.String fIdentifier) {
+        this.fIdentifier = Text.of(fIdentifier);
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param fIdentifier PropertyValue value to set.
+     */
+    @Override
+    public void setIdentifier(PropertyValue fIdentifier) {
         this.fIdentifier = fIdentifier;
     }
 }

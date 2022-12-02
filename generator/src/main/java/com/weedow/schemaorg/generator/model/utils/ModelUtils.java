@@ -1,4 +1,4 @@
-package com.weedow.schemaorg.generator.model.handler;
+package com.weedow.schemaorg.generator.model.utils;
 
 import com.weedow.schemaorg.generator.model.Type;
 import com.weedow.schemaorg.generator.model.jsonld.GraphItem;
@@ -11,10 +11,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public final class ModelHandlerUtils {
+public final class ModelUtils {
+
+    private static final String SCHEMA_DATA_TYPE = "schema:DataType";
 
     private static final Map<String, String> DATA_TYPE_MAPPING = Map.of(
-            "schema:DataType", "-",
+            SCHEMA_DATA_TYPE, "-",
             "schema:Boolean", "java.lang.Boolean",
             "schema:Text", "java.lang.String",
             "schema:URL", "java.net.URL",
@@ -26,11 +28,11 @@ public final class ModelHandlerUtils {
             "schema:DateTime", "java.time.LocalDateTime"
     );
 
-    private ModelHandlerUtils() {
+    private ModelUtils() {
     }
 
     public static String getJavaType(String typeId, String defaultValue) {
-        return DATA_TYPE_MAPPING.getOrDefault(typeId, defaultValue);
+        return !SCHEMA_DATA_TYPE.equals(typeId) ? DATA_TYPE_MAPPING.getOrDefault(typeId, defaultValue) : defaultValue;
     }
 
     public static boolean isDataType(String typeId) {
@@ -71,5 +73,9 @@ public final class ModelHandlerUtils {
 
     public static String capitalize(String str) {
         return str == null || str.length() <= 1 ? str : str.substring(0, 1).toUpperCase() + str.substring(1);
+    }
+
+    public static String[] getSplitDescription(String description) {
+        return description != null ? description.replace("\\n", "<br/>").split("\\n") : null;
     }
 }

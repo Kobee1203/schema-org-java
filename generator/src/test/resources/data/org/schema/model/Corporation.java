@@ -25,6 +25,13 @@ public interface Corporation extends Organization {
     /**
      * The exchange traded instrument associated with a Corporation object. The tickerSymbol is expressed as an exchange and an instrument name separated by a space character. For the exchange component of the tickerSymbol attribute, we recommend using the controlled vocabulary of Market Identifier Codes (MIC) specified in ISO15022.
      *
+     * @param fTickerSymbol Text value to set.
      */
     void setTickerSymbol(Text fTickerSymbol);
+    /**
+     * The exchange traded instrument associated with a Corporation object. The tickerSymbol is expressed as an exchange and an instrument name separated by a space character. For the exchange component of the tickerSymbol attribute, we recommend using the controlled vocabulary of Market Identifier Codes (MIC) specified in ISO15022.
+     *
+     * @param fTickerSymbol java.lang.String value to set.
+     */
+    void setTickerSymbol(java.lang.String fTickerSymbol);
 }

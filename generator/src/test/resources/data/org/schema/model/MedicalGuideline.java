@@ -29,6 +29,7 @@ public interface MedicalGuideline extends MedicalEntity {
     /**
      * Strength of evidence of the data used to formulate the guideline (enumerated).
      *
+     * @param fEvidenceLevel MedicalEvidenceLevel value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setEvidenceLevel(MedicalEvidenceLevel fEvidenceLevel);
@@ -44,9 +45,17 @@ public interface MedicalGuideline extends MedicalEntity {
     /**
      * Source of the data used to formulate the guidance, e.g. RCT, consensus opinion, etc.
      *
+     * @param fEvidenceOrigin Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setEvidenceOrigin(Text fEvidenceOrigin);
+    /**
+     * Source of the data used to formulate the guidance, e.g. RCT, consensus opinion, etc.
+     *
+     * @param fEvidenceOrigin java.lang.String value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setEvidenceOrigin(java.lang.String fEvidenceOrigin);
 
     /**
      * The medical conditions, treatments, etc. that are the subject of the guideline.
@@ -59,6 +68,7 @@ public interface MedicalGuideline extends MedicalEntity {
     /**
      * The medical conditions, treatments, etc. that are the subject of the guideline.
      *
+     * @param fGuidelineSubject MedicalEntity value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setGuidelineSubject(MedicalEntity fGuidelineSubject);
@@ -74,7 +84,15 @@ public interface MedicalGuideline extends MedicalEntity {
     /**
      * Date on which this guideline's recommendation was made.
      *
+     * @param fGuidelineDate Date value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setGuidelineDate(Date fGuidelineDate);
+    /**
+     * Date on which this guideline's recommendation was made.
+     *
+     * @param fGuidelineDate java.time.LocalDate value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setGuidelineDate(java.time.LocalDate fGuidelineDate);
 }

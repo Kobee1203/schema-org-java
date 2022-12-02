@@ -31,6 +31,7 @@ public interface ArchiveComponent extends CreativeWork {
     /**
      * [[ArchiveOrganization]] that holds, keeps or maintains the [[ArchiveComponent]].
      *
+     * @param fHoldingArchive ArchiveOrganization value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1758">https://github.com/schemaorg/schemaorg/issues/1758</a>
      */
@@ -48,8 +49,33 @@ public interface ArchiveComponent extends CreativeWork {
     /**
      * Current location of the item.
      *
+     * @param fItemLocation Place value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1758">https://github.com/schemaorg/schemaorg/issues/1758</a>
      */
-    void setItemLocation(Object fItemLocation);
+    void setItemLocation(Place fItemLocation);
+    /**
+     * Current location of the item.
+     *
+     * @param fItemLocation Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1758">https://github.com/schemaorg/schemaorg/issues/1758</a>
+     */
+    void setItemLocation(Text fItemLocation);
+    /**
+     * Current location of the item.
+     *
+     * @param fItemLocation java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1758">https://github.com/schemaorg/schemaorg/issues/1758</a>
+     */
+    void setItemLocation(java.lang.String fItemLocation);
+    /**
+     * Current location of the item.
+     *
+     * @param fItemLocation PostalAddress value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1758">https://github.com/schemaorg/schemaorg/issues/1758</a>
+     */
+    void setItemLocation(PostalAddress fItemLocation);
 }

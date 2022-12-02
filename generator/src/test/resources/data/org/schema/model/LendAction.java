@@ -24,6 +24,7 @@ public interface LendAction extends TransferAction {
     /**
      * A sub property of participant. The person that borrows the object being lent.
      *
+     * @param fBorrower Person value to set.
      */
     void setBorrower(Person fBorrower);
 }

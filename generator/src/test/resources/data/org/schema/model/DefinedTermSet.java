@@ -28,6 +28,7 @@ public interface DefinedTermSet extends CreativeWork {
     /**
      * A Defined Term contained in this term set.
      *
+     * @param fHasDefinedTerm DefinedTerm value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
      */

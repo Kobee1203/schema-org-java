@@ -28,9 +28,17 @@ public interface MedicalWebPage extends WebPage {
     /**
      * An aspect of medical practice that is considered on the page, such as 'diagnosis', 'treatment', 'causes', 'prognosis', 'etiology', 'epidemiology', etc.
      *
+     * @param fAspect Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setAspect(Text fAspect);
+    /**
+     * An aspect of medical practice that is considered on the page, such as 'diagnosis', 'treatment', 'causes', 'prognosis', 'etiology', 'epidemiology', etc.
+     *
+     * @param fAspect java.lang.String value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setAspect(java.lang.String fAspect);
 
     /**
      * Medical audience for page.
@@ -43,7 +51,15 @@ public interface MedicalWebPage extends WebPage {
     /**
      * Medical audience for page.
      *
+     * @param fMedicalAudience MedicalAudienceType value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setMedicalAudience(Object fMedicalAudience);
+    void setMedicalAudience(MedicalAudienceType fMedicalAudience);
+    /**
+     * Medical audience for page.
+     *
+     * @param fMedicalAudience MedicalAudience value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setMedicalAudience(MedicalAudience fMedicalAudience);
 }

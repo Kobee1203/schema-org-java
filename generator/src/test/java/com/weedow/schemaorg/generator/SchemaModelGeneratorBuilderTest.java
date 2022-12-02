@@ -22,7 +22,7 @@ class SchemaModelGeneratorBuilderTest {
     private static final Logger LOG = LoggerFactory.getLogger(SchemaModelGeneratorBuilderTest.class);
 
     @Test
-    @Disabled("This test is too long because we compare verify all generated classes. Disable locally if it is required to check all generated classes.")
+    @Disabled("This test is too long because we compare verify all generated classes. Enable locally if it is required to check all generated classes.")
     void generate_all() {
         generateAndVerify(null);
     }

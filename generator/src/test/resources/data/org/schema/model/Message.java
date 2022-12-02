@@ -30,8 +30,21 @@ public interface Message extends CreativeWork {
     /**
      * A sub property of recipient. The recipient blind copied on a message.
      *
+     * @param fBccRecipient Person value to set.
      */
-    void setBccRecipient(Object fBccRecipient);
+    void setBccRecipient(Person fBccRecipient);
+    /**
+     * A sub property of recipient. The recipient blind copied on a message.
+     *
+     * @param fBccRecipient ContactPoint value to set.
+     */
+    void setBccRecipient(ContactPoint fBccRecipient);
+    /**
+     * A sub property of recipient. The recipient blind copied on a message.
+     *
+     * @param fBccRecipient Organization value to set.
+     */
+    void setBccRecipient(Organization fBccRecipient);
 
     /**
      * A sub property of participant. The participant who is at the receiving end of the action.
@@ -43,8 +56,27 @@ public interface Message extends CreativeWork {
     /**
      * A sub property of participant. The participant who is at the receiving end of the action.
      *
+     * @param fRecipient Person value to set.
      */
-    void setRecipient(Object fRecipient);
+    void setRecipient(Person fRecipient);
+    /**
+     * A sub property of participant. The participant who is at the receiving end of the action.
+     *
+     * @param fRecipient Audience value to set.
+     */
+    void setRecipient(Audience fRecipient);
+    /**
+     * A sub property of participant. The participant who is at the receiving end of the action.
+     *
+     * @param fRecipient ContactPoint value to set.
+     */
+    void setRecipient(ContactPoint fRecipient);
+    /**
+     * A sub property of participant. The participant who is at the receiving end of the action.
+     *
+     * @param fRecipient Organization value to set.
+     */
+    void setRecipient(Organization fRecipient);
 
     /**
      * The date/time the message was received if a single recipient exists.
@@ -56,8 +88,15 @@ public interface Message extends CreativeWork {
     /**
      * The date/time the message was received if a single recipient exists.
      *
+     * @param fDateReceived DateTime value to set.
      */
     void setDateReceived(DateTime fDateReceived);
+    /**
+     * The date/time the message was received if a single recipient exists.
+     *
+     * @param fDateReceived java.time.LocalDateTime value to set.
+     */
+    void setDateReceived(java.time.LocalDateTime fDateReceived);
 
     /**
      * A sub property of recipient. The recipient copied on a message.
@@ -69,8 +108,21 @@ public interface Message extends CreativeWork {
     /**
      * A sub property of recipient. The recipient copied on a message.
      *
+     * @param fCcRecipient Person value to set.
      */
-    void setCcRecipient(Object fCcRecipient);
+    void setCcRecipient(Person fCcRecipient);
+    /**
+     * A sub property of recipient. The recipient copied on a message.
+     *
+     * @param fCcRecipient Organization value to set.
+     */
+    void setCcRecipient(Organization fCcRecipient);
+    /**
+     * A sub property of recipient. The recipient copied on a message.
+     *
+     * @param fCcRecipient ContactPoint value to set.
+     */
+    void setCcRecipient(ContactPoint fCcRecipient);
 
     /**
      * A CreativeWork attached to the message.
@@ -82,6 +134,7 @@ public interface Message extends CreativeWork {
     /**
      * A CreativeWork attached to the message.
      *
+     * @param fMessageAttachment CreativeWork value to set.
      */
     void setMessageAttachment(CreativeWork fMessageAttachment);
 
@@ -95,8 +148,27 @@ public interface Message extends CreativeWork {
     /**
      * A sub property of recipient. The recipient who was directly sent the message.
      *
+     * @param fToRecipient ContactPoint value to set.
      */
-    void setToRecipient(Object fToRecipient);
+    void setToRecipient(ContactPoint fToRecipient);
+    /**
+     * A sub property of recipient. The recipient who was directly sent the message.
+     *
+     * @param fToRecipient Person value to set.
+     */
+    void setToRecipient(Person fToRecipient);
+    /**
+     * A sub property of recipient. The recipient who was directly sent the message.
+     *
+     * @param fToRecipient Audience value to set.
+     */
+    void setToRecipient(Audience fToRecipient);
+    /**
+     * A sub property of recipient. The recipient who was directly sent the message.
+     *
+     * @param fToRecipient Organization value to set.
+     */
+    void setToRecipient(Organization fToRecipient);
 
     /**
      * The date/time at which the message was sent.
@@ -108,8 +180,15 @@ public interface Message extends CreativeWork {
     /**
      * The date/time at which the message was sent.
      *
+     * @param fDateSent DateTime value to set.
      */
     void setDateSent(DateTime fDateSent);
+    /**
+     * The date/time at which the message was sent.
+     *
+     * @param fDateSent java.time.LocalDateTime value to set.
+     */
+    void setDateSent(java.time.LocalDateTime fDateSent);
 
     /**
      * The date/time at which the message has been read by the recipient if a single recipient exists.
@@ -121,8 +200,27 @@ public interface Message extends CreativeWork {
     /**
      * The date/time at which the message has been read by the recipient if a single recipient exists.
      *
+     * @param fDateRead Date value to set.
      */
-    void setDateRead(Object fDateRead);
+    void setDateRead(Date fDateRead);
+    /**
+     * The date/time at which the message has been read by the recipient if a single recipient exists.
+     *
+     * @param fDateRead java.time.LocalDate value to set.
+     */
+    void setDateRead(java.time.LocalDate fDateRead);
+    /**
+     * The date/time at which the message has been read by the recipient if a single recipient exists.
+     *
+     * @param fDateRead DateTime value to set.
+     */
+    void setDateRead(DateTime fDateRead);
+    /**
+     * The date/time at which the message has been read by the recipient if a single recipient exists.
+     *
+     * @param fDateRead java.time.LocalDateTime value to set.
+     */
+    void setDateRead(java.time.LocalDateTime fDateRead);
 
     /**
      * A sub property of participant. The participant who is at the sending end of the action.
@@ -134,6 +232,19 @@ public interface Message extends CreativeWork {
     /**
      * A sub property of participant. The participant who is at the sending end of the action.
      *
+     * @param fSender Person value to set.
      */
-    void setSender(Object fSender);
+    void setSender(Person fSender);
+    /**
+     * A sub property of participant. The participant who is at the sending end of the action.
+     *
+     * @param fSender Audience value to set.
+     */
+    void setSender(Audience fSender);
+    /**
+     * A sub property of participant. The participant who is at the sending end of the action.
+     *
+     * @param fSender Organization value to set.
+     */
+    void setSender(Organization fSender);
 }

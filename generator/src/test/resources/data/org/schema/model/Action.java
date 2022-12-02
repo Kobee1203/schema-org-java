@@ -35,8 +35,15 @@ public interface Action extends Thing {
     /**
      * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
      *
+     * @param fAgent Organization value to set.
      */
-    void setAgent(Object fAgent);
+    void setAgent(Organization fAgent);
+    /**
+     * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
+     *
+     * @param fAgent Person value to set.
+     */
+    void setAgent(Person fAgent);
 
     /**
      * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
@@ -49,9 +56,31 @@ public interface Action extends Thing {
     /**
      * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
      *
+     * @param fStartTime DateTime value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
      */
-    void setStartTime(Object fStartTime);
+    void setStartTime(DateTime fStartTime);
+    /**
+     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @param fStartTime java.time.LocalDateTime value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    void setStartTime(java.time.LocalDateTime fStartTime);
+    /**
+     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @param fStartTime Time value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    void setStartTime(Time fStartTime);
+    /**
+     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @param fStartTime java.time.LocalTime value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    void setStartTime(java.time.LocalTime fStartTime);
 
     /**
      * Indicates the current disposition of the Action.
@@ -63,6 +92,7 @@ public interface Action extends Thing {
     /**
      * Indicates the current disposition of the Action.
      *
+     * @param fActionStatus ActionStatusType value to set.
      */
     void setActionStatus(ActionStatusType fActionStatus);
 
@@ -79,11 +109,21 @@ public interface Action extends Thing {
     /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
      *
+     * @param fProvider Organization value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
      */
-    void setProvider(Object fProvider);
+    void setProvider(Organization fProvider);
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @param fProvider Person value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     */
+    void setProvider(Person fProvider);
 
     /**
      * The result produced in the action. e.g. John wrote *a book*.
@@ -95,6 +135,7 @@ public interface Action extends Thing {
     /**
      * The result produced in the action. e.g. John wrote *a book*.
      *
+     * @param fResult Thing value to set.
      */
     void setResult(Thing fResult);
 
@@ -108,8 +149,33 @@ public interface Action extends Thing {
     /**
      * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
      *
+     * @param fLocation PostalAddress value to set.
      */
-    void setLocation(Object fLocation);
+    void setLocation(PostalAddress fLocation);
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @param fLocation Text value to set.
+     */
+    void setLocation(Text fLocation);
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @param fLocation java.lang.String value to set.
+     */
+    void setLocation(java.lang.String fLocation);
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @param fLocation Place value to set.
+     */
+    void setLocation(Place fLocation);
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @param fLocation VirtualLocation value to set.
+     */
+    void setLocation(VirtualLocation fLocation);
 
     /**
      * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read *a book*.
@@ -121,6 +187,7 @@ public interface Action extends Thing {
     /**
      * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read *a book*.
      *
+     * @param fObject Thing value to set.
      */
     void setObject(Thing fObject);
 
@@ -134,6 +201,7 @@ public interface Action extends Thing {
     /**
      * Indicates a target EntryPoint for an Action.
      *
+     * @param fTarget EntryPoint value to set.
      */
     void setTarget(EntryPoint fTarget);
 
@@ -148,9 +216,31 @@ public interface Action extends Thing {
     /**
      * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
      *
+     * @param fEndTime DateTime value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
      */
-    void setEndTime(Object fEndTime);
+    void setEndTime(DateTime fEndTime);
+    /**
+     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @param fEndTime java.time.LocalDateTime value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    void setEndTime(java.time.LocalDateTime fEndTime);
+    /**
+     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @param fEndTime Time value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    void setEndTime(Time fEndTime);
+    /**
+     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @param fEndTime java.time.LocalTime value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    void setEndTime(java.time.LocalTime fEndTime);
 
     /**
      * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
@@ -162,8 +252,15 @@ public interface Action extends Thing {
     /**
      * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
      *
+     * @param fParticipant Organization value to set.
      */
-    void setParticipant(Object fParticipant);
+    void setParticipant(Organization fParticipant);
+    /**
+     * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
+     *
+     * @param fParticipant Person value to set.
+     */
+    void setParticipant(Person fParticipant);
 
     /**
      * The object that helped the agent perform the action. e.g. John wrote a book with *a pen*.
@@ -175,6 +272,7 @@ public interface Action extends Thing {
     /**
      * The object that helped the agent perform the action. e.g. John wrote a book with *a pen*.
      *
+     * @param fInstrument Thing value to set.
      */
     void setInstrument(Thing fInstrument);
 
@@ -188,6 +286,7 @@ public interface Action extends Thing {
     /**
      * For failed actions, more information on the cause of the failure.
      *
+     * @param fError Thing value to set.
      */
     void setError(Thing fError);
 }

@@ -25,6 +25,7 @@ public interface Comment extends CreativeWork {
     /**
      * The parent of a question, answer or item in general.
      *
+     * @param fParentItem Comment value to set.
      */
     void setParentItem(Comment fParentItem);
 
@@ -38,8 +39,15 @@ public interface Comment extends CreativeWork {
     /**
      * The number of downvotes this question, answer or comment has received from the community.
      *
+     * @param fDownvoteCount Integer value to set.
      */
     void setDownvoteCount(Integer fDownvoteCount);
+    /**
+     * The number of downvotes this question, answer or comment has received from the community.
+     *
+     * @param fDownvoteCount java.lang.Integer value to set.
+     */
+    void setDownvoteCount(java.lang.Integer fDownvoteCount);
 
     /**
      * The number of upvotes this question, answer or comment has received from the community.
@@ -51,6 +59,13 @@ public interface Comment extends CreativeWork {
     /**
      * The number of upvotes this question, answer or comment has received from the community.
      *
+     * @param fUpvoteCount Integer value to set.
      */
     void setUpvoteCount(Integer fUpvoteCount);
+    /**
+     * The number of upvotes this question, answer or comment has received from the community.
+     *
+     * @param fUpvoteCount java.lang.Integer value to set.
+     */
+    void setUpvoteCount(java.lang.Integer fUpvoteCount);
 }

@@ -28,6 +28,7 @@ public interface Property extends Intangible {
     /**
      * Relates a property to a class that is (one of) the type(s) the property is expected to be used on.
      *
+     * @param fDomainIncludes Class value to set.
      * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
      */
     void setDomainIncludes(Class fDomainIncludes);
@@ -43,9 +44,24 @@ public interface Property extends Intangible {
     /**
      * Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
      *
+     * @param fSupersededBy Enumeration value to set.
      * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
      */
-    void setSupersededBy(Object fSupersededBy);
+    void setSupersededBy(Enumeration fSupersededBy);
+    /**
+     * Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
+     *
+     * @param fSupersededBy Class value to set.
+     * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
+     */
+    void setSupersededBy(Class fSupersededBy);
+    /**
+     * Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
+     *
+     * @param fSupersededBy Property value to set.
+     * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
+     */
+    void setSupersededBy(Property fSupersededBy);
 
     /**
      * Relates a property to a class that constitutes (one of) the expected type(s) for values of the property.
@@ -58,6 +74,7 @@ public interface Property extends Intangible {
     /**
      * Relates a property to a class that constitutes (one of) the expected type(s) for values of the property.
      *
+     * @param fRangeIncludes Class value to set.
      * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
      */
     void setRangeIncludes(Class fRangeIncludes);
@@ -73,6 +90,7 @@ public interface Property extends Intangible {
     /**
      * Relates a property to a property that is its inverse. Inverse properties relate the same pairs of items to each other, but in reversed direction. For example, the 'alumni' and 'alumniOf' properties are inverseOf each other. Some properties don't have explicit inverses; in these situations RDFa and JSON-LD syntax for reverse properties can be used.
      *
+     * @param fInverseOf Property value to set.
      * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
      */
     void setInverseOf(Property fInverseOf);

@@ -25,6 +25,7 @@ public interface MenuSection extends CreativeWork {
     /**
      * A subgrouping of the menu (by dishes, course, serving time period, etc.).
      *
+     * @param fHasMenuSection MenuSection value to set.
      */
     void setHasMenuSection(MenuSection fHasMenuSection);
 
@@ -38,6 +39,7 @@ public interface MenuSection extends CreativeWork {
     /**
      * A food or drink item contained in a menu or menu section.
      *
+     * @param fHasMenuItem MenuItem value to set.
      */
     void setHasMenuItem(MenuItem fHasMenuItem);
 }

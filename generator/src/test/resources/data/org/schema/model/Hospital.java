@@ -30,9 +30,24 @@ public interface Hospital extends MedicalOrganization, EmergencyService, CivicSt
     /**
      * A medical service available from this provider.
      *
+     * @param fAvailableService MedicalTest value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setAvailableService(Object fAvailableService);
+    void setAvailableService(MedicalTest fAvailableService);
+    /**
+     * A medical service available from this provider.
+     *
+     * @param fAvailableService MedicalProcedure value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setAvailableService(MedicalProcedure fAvailableService);
+    /**
+     * A medical service available from this provider.
+     *
+     * @param fAvailableService MedicalTherapy value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setAvailableService(MedicalTherapy fAvailableService);
 
     /**
      * Indicates data describing a hospital, e.g. a CDC [[CDCPMDRecord]] or as some kind of [[Dataset]].
@@ -46,10 +61,19 @@ public interface Hospital extends MedicalOrganization, EmergencyService, CivicSt
     /**
      * Indicates data describing a hospital, e.g. a CDC [[CDCPMDRecord]] or as some kind of [[Dataset]].
      *
+     * @param fHealthcareReportingData Dataset value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
-    void setHealthcareReportingData(Object fHealthcareReportingData);
+    void setHealthcareReportingData(Dataset fHealthcareReportingData);
+    /**
+     * Indicates data describing a hospital, e.g. a CDC [[CDCPMDRecord]] or as some kind of [[Dataset]].
+     *
+     * @param fHealthcareReportingData CDCPMDRecord value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
+     */
+    void setHealthcareReportingData(CDCPMDRecord fHealthcareReportingData);
 
     /**
      * A medical specialty of the provider.
@@ -62,6 +86,7 @@ public interface Hospital extends MedicalOrganization, EmergencyService, CivicSt
     /**
      * A medical specialty of the provider.
      *
+     * @param fMedicalSpecialty MedicalSpecialty value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setMedicalSpecialty(MedicalSpecialty fMedicalSpecialty);

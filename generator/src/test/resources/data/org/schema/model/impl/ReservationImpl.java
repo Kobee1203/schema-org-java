@@ -48,10 +48,20 @@ public class ReservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * The date and time the reservation was modified.
      *
+     * @param fModifiedTime DateTime value to set.
      */
     @Override
     public void setModifiedTime(DateTime fModifiedTime) {
         this.fModifiedTime = fModifiedTime;
+    }
+    /**
+     * The date and time the reservation was modified.
+     *
+     * @param fModifiedTime java.time.LocalDateTime value to set.
+     */
+    @Override
+    public void setModifiedTime(java.time.LocalDateTime fModifiedTime) {
+        this.fModifiedTime = DateTime.of(fModifiedTime);
     }
 
     private Object fTotalPrice;
@@ -69,13 +79,47 @@ public class ReservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      *
+     * @param fTotalPrice PriceSpecification value to set.
      */
     @Override
-    public void setTotalPrice(Object fTotalPrice) {
-        if(!(fTotalPrice instanceof PriceSpecification) && !(fTotalPrice instanceof Number) && !(fTotalPrice instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'totalPrice': " + fTotalPrice);
-        }
+    public void setTotalPrice(PriceSpecification fTotalPrice) {
         this.fTotalPrice = fTotalPrice;
+    }
+    /**
+     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+     *
+     * @param fTotalPrice Number value to set.
+     */
+    @Override
+    public void setTotalPrice(Number fTotalPrice) {
+        this.fTotalPrice = fTotalPrice;
+    }
+    /**
+     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+     *
+     * @param fTotalPrice java.lang.Number value to set.
+     */
+    @Override
+    public void setTotalPrice(java.lang.Number fTotalPrice) {
+        this.fTotalPrice = Number.of(fTotalPrice);
+    }
+    /**
+     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+     *
+     * @param fTotalPrice Text value to set.
+     */
+    @Override
+    public void setTotalPrice(Text fTotalPrice) {
+        this.fTotalPrice = fTotalPrice;
+    }
+    /**
+     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+     *
+     * @param fTotalPrice java.lang.String value to set.
+     */
+    @Override
+    public void setTotalPrice(java.lang.String fTotalPrice) {
+        this.fTotalPrice = Text.of(fTotalPrice);
     }
 
     private Ticket fReservedTicket;
@@ -93,6 +137,7 @@ public class ReservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * A ticket associated with the reservation.
      *
+     * @param fReservedTicket Ticket value to set.
      */
     @Override
     public void setReservedTicket(Ticket fReservedTicket) {
@@ -114,6 +159,7 @@ public class ReservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * The current status of the reservation.
      *
+     * @param fReservationStatus ReservationStatusType value to set.
      */
     @Override
     public void setReservationStatus(ReservationStatusType fReservationStatus) {
@@ -138,15 +184,25 @@ public class ReservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
      *
+     * @param fProvider Organization value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
      */
     @Override
-    public void setProvider(Object fProvider) {
-        if(!(fProvider instanceof Organization) && !(fProvider instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'provider': " + fProvider);
-        }
+    public void setProvider(Organization fProvider) {
+        this.fProvider = fProvider;
+    }
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @param fProvider Person value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     */
+    @Override
+    public void setProvider(Person fProvider) {
         this.fProvider = fProvider;
     }
 
@@ -165,12 +221,19 @@ public class ReservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
      *
+     * @param fBroker Person value to set.
      */
     @Override
-    public void setBroker(Object fBroker) {
-        if(!(fBroker instanceof Person) && !(fBroker instanceof Organization)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'broker': " + fBroker);
-        }
+    public void setBroker(Person fBroker) {
+        this.fBroker = fBroker;
+    }
+    /**
+     * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
+     *
+     * @param fBroker Organization value to set.
+     */
+    @Override
+    public void setBroker(Organization fBroker) {
         this.fBroker = fBroker;
     }
 
@@ -189,10 +252,20 @@ public class ReservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * The date and time the reservation was booked.
      *
+     * @param fBookingTime DateTime value to set.
      */
     @Override
     public void setBookingTime(DateTime fBookingTime) {
         this.fBookingTime = fBookingTime;
+    }
+    /**
+     * The date and time the reservation was booked.
+     *
+     * @param fBookingTime java.time.LocalDateTime value to set.
+     */
+    @Override
+    public void setBookingTime(java.time.LocalDateTime fBookingTime) {
+        this.fBookingTime = DateTime.of(fBookingTime);
     }
 
     private ProgramMembership fProgramMembershipUsed;
@@ -210,6 +283,7 @@ public class ReservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * Any membership in a frequent flyer, hotel loyalty program, etc. being applied to the reservation.
      *
+     * @param fProgramMembershipUsed ProgramMembership value to set.
      */
     @Override
     public void setProgramMembershipUsed(ProgramMembership fProgramMembershipUsed) {
@@ -231,12 +305,19 @@ public class ReservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * 'bookingAgent' is an out-dated term indicating a 'broker' that serves as a booking agent.
      *
+     * @param fBookingAgent Person value to set.
      */
     @Override
-    public void setBookingAgent(Object fBookingAgent) {
-        if(!(fBookingAgent instanceof Person) && !(fBookingAgent instanceof Organization)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'bookingAgent': " + fBookingAgent);
-        }
+    public void setBookingAgent(Person fBookingAgent) {
+        this.fBookingAgent = fBookingAgent;
+    }
+    /**
+     * 'bookingAgent' is an out-dated term indicating a 'broker' that serves as a booking agent.
+     *
+     * @param fBookingAgent Organization value to set.
+     */
+    @Override
+    public void setBookingAgent(Organization fBookingAgent) {
         this.fBookingAgent = fBookingAgent;
     }
 
@@ -255,10 +336,20 @@ public class ReservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
      *
+     * @param fPriceCurrency Text value to set.
      */
     @Override
     public void setPriceCurrency(Text fPriceCurrency) {
         this.fPriceCurrency = fPriceCurrency;
+    }
+    /**
+     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
+     *
+     * @param fPriceCurrency java.lang.String value to set.
+     */
+    @Override
+    public void setPriceCurrency(java.lang.String fPriceCurrency) {
+        this.fPriceCurrency = Text.of(fPriceCurrency);
     }
 
     private Text fReservationId;
@@ -276,10 +367,20 @@ public class ReservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * A unique identifier for the reservation.
      *
+     * @param fReservationId Text value to set.
      */
     @Override
     public void setReservationId(Text fReservationId) {
         this.fReservationId = fReservationId;
+    }
+    /**
+     * A unique identifier for the reservation.
+     *
+     * @param fReservationId java.lang.String value to set.
+     */
+    @Override
+    public void setReservationId(java.lang.String fReservationId) {
+        this.fReservationId = Text.of(fReservationId);
     }
 
     private Object fUnderName;
@@ -297,12 +398,19 @@ public class ReservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * The person or organization the reservation or ticket is for.
      *
+     * @param fUnderName Organization value to set.
      */
     @Override
-    public void setUnderName(Object fUnderName) {
-        if(!(fUnderName instanceof Organization) && !(fUnderName instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'underName': " + fUnderName);
-        }
+    public void setUnderName(Organization fUnderName) {
+        this.fUnderName = fUnderName;
+    }
+    /**
+     * The person or organization the reservation or ticket is for.
+     *
+     * @param fUnderName Person value to set.
+     */
+    @Override
+    public void setUnderName(Person fUnderName) {
         this.fUnderName = fUnderName;
     }
 
@@ -321,6 +429,7 @@ public class ReservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * The thing -- flight, event, restaurant,etc. being reserved.
      *
+     * @param fReservationFor Thing value to set.
      */
     @Override
     public void setReservationFor(Thing fReservationFor) {
@@ -342,13 +451,29 @@ public class ReservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
+     * @param fMainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
-        }
+    public void setMainEntityOfPage(CreativeWork fMainEntityOfPage) {
         this.fMainEntityOfPage = fMainEntityOfPage;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param fMainEntityOfPage URL value to set.
+     */
+    @Override
+    public void setMainEntityOfPage(URL fMainEntityOfPage) {
+        this.fMainEntityOfPage = fMainEntityOfPage;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param fMainEntityOfPage java.net.URL value to set.
+     */
+    @Override
+    public void setMainEntityOfPage(java.net.URL fMainEntityOfPage) {
+        this.fMainEntityOfPage = URL.of(fMainEntityOfPage);
     }
 
     private Text fAlternateName;
@@ -366,10 +491,20 @@ public class ReservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * An alias for the item.
      *
+     * @param fAlternateName Text value to set.
      */
     @Override
     public void setAlternateName(Text fAlternateName) {
         this.fAlternateName = fAlternateName;
+    }
+    /**
+     * An alias for the item.
+     *
+     * @param fAlternateName java.lang.String value to set.
+     */
+    @Override
+    public void setAlternateName(java.lang.String fAlternateName) {
+        this.fAlternateName = Text.of(fAlternateName);
     }
 
     private Text fName;
@@ -387,10 +522,20 @@ public class ReservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * The name of the item.
      *
+     * @param fName Text value to set.
      */
     @Override
     public void setName(Text fName) {
         this.fName = fName;
+    }
+    /**
+     * The name of the item.
+     *
+     * @param fName java.lang.String value to set.
+     */
+    @Override
+    public void setName(java.lang.String fName) {
+        this.fName = Text.of(fName);
     }
 
     private Action fPotentialAction;
@@ -408,6 +553,7 @@ public class ReservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      *
+     * @param fPotentialAction Action value to set.
      */
     @Override
     public void setPotentialAction(Action fPotentialAction) {
@@ -429,12 +575,28 @@ public class ReservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
+     * @param fImage URL value to set.
      */
     @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
+    public void setImage(URL fImage) {
+        this.fImage = fImage;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param fImage java.net.URL value to set.
+     */
+    @Override
+    public void setImage(java.net.URL fImage) {
+        this.fImage = URL.of(fImage);
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param fImage ImageObject value to set.
+     */
+    @Override
+    public void setImage(ImageObject fImage) {
         this.fImage = fImage;
     }
 
@@ -453,10 +615,20 @@ public class ReservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * URL of the item.
      *
+     * @param fUrl URL value to set.
      */
     @Override
     public void setUrl(URL fUrl) {
         this.fUrl = fUrl;
+    }
+    /**
+     * URL of the item.
+     *
+     * @param fUrl java.net.URL value to set.
+     */
+    @Override
+    public void setUrl(java.net.URL fUrl) {
+        this.fUrl = URL.of(fUrl);
     }
 
     private Text fDescription;
@@ -474,10 +646,20 @@ public class ReservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * A description of the item.
      *
+     * @param fDescription Text value to set.
      */
     @Override
     public void setDescription(Text fDescription) {
         this.fDescription = fDescription;
+    }
+    /**
+     * A description of the item.
+     *
+     * @param fDescription java.lang.String value to set.
+     */
+    @Override
+    public void setDescription(java.lang.String fDescription) {
+        this.fDescription = Text.of(fDescription);
     }
 
     private Object fSubjectOf;
@@ -496,13 +678,21 @@ public class ReservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * A CreativeWork or Event about this Thing.
      *
+     * @param fSubjectOf Event value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Object fSubjectOf) {
-        if(!(fSubjectOf instanceof Event) && !(fSubjectOf instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'subjectOf': " + fSubjectOf);
-        }
+    public void setSubjectOf(Event fSubjectOf) {
+        this.fSubjectOf = fSubjectOf;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @param fSubjectOf CreativeWork value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public void setSubjectOf(CreativeWork fSubjectOf) {
         this.fSubjectOf = fSubjectOf;
     }
 
@@ -521,10 +711,20 @@ public class ReservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
+     * @param fAdditionalType URL value to set.
      */
     @Override
     public void setAdditionalType(URL fAdditionalType) {
         this.fAdditionalType = fAdditionalType;
+    }
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @param fAdditionalType java.net.URL value to set.
+     */
+    @Override
+    public void setAdditionalType(java.net.URL fAdditionalType) {
+        this.fAdditionalType = URL.of(fAdditionalType);
     }
 
     private Text fDisambiguatingDescription;
@@ -542,10 +742,20 @@ public class ReservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
+     * @param fDisambiguatingDescription Text value to set.
      */
     @Override
     public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
         this.fDisambiguatingDescription = fDisambiguatingDescription;
+    }
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @param fDisambiguatingDescription java.lang.String value to set.
+     */
+    @Override
+    public void setDisambiguatingDescription(java.lang.String fDisambiguatingDescription) {
+        this.fDisambiguatingDescription = Text.of(fDisambiguatingDescription);
     }
 
     private URL fSameAs;
@@ -563,10 +773,20 @@ public class ReservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
+     * @param fSameAs URL value to set.
      */
     @Override
     public void setSameAs(URL fSameAs) {
         this.fSameAs = fSameAs;
+    }
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @param fSameAs java.net.URL value to set.
+     */
+    @Override
+    public void setSameAs(java.net.URL fSameAs) {
+        this.fSameAs = URL.of(fSameAs);
     }
 
     private Object fIdentifier;
@@ -586,12 +806,50 @@ public class ReservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
+     * @param fIdentifier URL value to set.
      */
     @Override
-    public void setIdentifier(Object fIdentifier) {
-        if(!(fIdentifier instanceof URL) && !(fIdentifier instanceof Text) && !(fIdentifier instanceof PropertyValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
-        }
+    public void setIdentifier(URL fIdentifier) {
+        this.fIdentifier = fIdentifier;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param fIdentifier java.net.URL value to set.
+     */
+    @Override
+    public void setIdentifier(java.net.URL fIdentifier) {
+        this.fIdentifier = URL.of(fIdentifier);
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param fIdentifier Text value to set.
+     */
+    @Override
+    public void setIdentifier(Text fIdentifier) {
+        this.fIdentifier = fIdentifier;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param fIdentifier java.lang.String value to set.
+     */
+    @Override
+    public void setIdentifier(java.lang.String fIdentifier) {
+        this.fIdentifier = Text.of(fIdentifier);
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param fIdentifier PropertyValue value to set.
+     */
+    @Override
+    public void setIdentifier(PropertyValue fIdentifier) {
         this.fIdentifier = fIdentifier;
     }
 }

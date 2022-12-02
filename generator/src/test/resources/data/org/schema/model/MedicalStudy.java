@@ -33,6 +33,7 @@ public interface MedicalStudy extends MedicalEntity {
     /**
      * Specifying the health condition(s) of a patient, medical study, or other target audience.
      *
+     * @param fHealthCondition MedicalCondition value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setHealthCondition(MedicalCondition fHealthCondition);
@@ -48,9 +49,31 @@ public interface MedicalStudy extends MedicalEntity {
     /**
      * The status of the study (enumerated).
      *
+     * @param fStatus Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setStatus(Object fStatus);
+    void setStatus(Text fStatus);
+    /**
+     * The status of the study (enumerated).
+     *
+     * @param fStatus java.lang.String value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setStatus(java.lang.String fStatus);
+    /**
+     * The status of the study (enumerated).
+     *
+     * @param fStatus EventStatusType value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setStatus(EventStatusType fStatus);
+    /**
+     * The status of the study (enumerated).
+     *
+     * @param fStatus MedicalStudyStatus value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setStatus(MedicalStudyStatus fStatus);
 
     /**
      * A subject of the study, i.e. one of the medical conditions, therapies, devices, drugs, etc. investigated by the study.
@@ -63,6 +86,7 @@ public interface MedicalStudy extends MedicalEntity {
     /**
      * A subject of the study, i.e. one of the medical conditions, therapies, devices, drugs, etc. investigated by the study.
      *
+     * @param fStudySubject MedicalEntity value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setStudySubject(MedicalEntity fStudySubject);
@@ -78,6 +102,7 @@ public interface MedicalStudy extends MedicalEntity {
     /**
      * The location in which the study is taking/took place.
      *
+     * @param fStudyLocation AdministrativeArea value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setStudyLocation(AdministrativeArea fStudyLocation);
@@ -92,6 +117,13 @@ public interface MedicalStudy extends MedicalEntity {
     /**
      * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
      *
+     * @param fSponsor Organization value to set.
      */
-    void setSponsor(Object fSponsor);
+    void setSponsor(Organization fSponsor);
+    /**
+     * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
+     *
+     * @param fSponsor Person value to set.
+     */
+    void setSponsor(Person fSponsor);
 }

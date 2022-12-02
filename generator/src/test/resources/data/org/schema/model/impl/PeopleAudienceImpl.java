@@ -47,10 +47,20 @@ public class PeopleAudienceImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * Audiences defined by a person's minimum age.
      *
+     * @param fRequiredMinAge Integer value to set.
      */
     @Override
     public void setRequiredMinAge(Integer fRequiredMinAge) {
         this.fRequiredMinAge = fRequiredMinAge;
+    }
+    /**
+     * Audiences defined by a person's minimum age.
+     *
+     * @param fRequiredMinAge java.lang.Integer value to set.
+     */
+    @Override
+    public void setRequiredMinAge(java.lang.Integer fRequiredMinAge) {
+        this.fRequiredMinAge = Integer.of(fRequiredMinAge);
     }
 
     private Number fSuggestedMaxAge;
@@ -68,10 +78,20 @@ public class PeopleAudienceImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * Maximum recommended age in years for the audience or user.
      *
+     * @param fSuggestedMaxAge Number value to set.
      */
     @Override
     public void setSuggestedMaxAge(Number fSuggestedMaxAge) {
         this.fSuggestedMaxAge = fSuggestedMaxAge;
+    }
+    /**
+     * Maximum recommended age in years for the audience or user.
+     *
+     * @param fSuggestedMaxAge java.lang.Number value to set.
+     */
+    @Override
+    public void setSuggestedMaxAge(java.lang.Number fSuggestedMaxAge) {
+        this.fSuggestedMaxAge = Number.of(fSuggestedMaxAge);
     }
 
     private MedicalCondition fHealthCondition;
@@ -90,6 +110,7 @@ public class PeopleAudienceImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * Specifying the health condition(s) of a patient, medical study, or other target audience.
      *
+     * @param fHealthCondition MedicalCondition value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
@@ -114,6 +135,7 @@ public class PeopleAudienceImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * A suggested range of body measurements for the intended audience or person, for example inseam between 32 and 34 inches or height between 170 and 190 cm. Typically found on a size chart for wearable products.
      *
+     * @param fSuggestedMeasurement QuantitativeValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
      */
@@ -139,6 +161,7 @@ public class PeopleAudienceImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * The age or age range for the intended audience or person, for example 3-12 months for infants, 1-5 years for toddlers.
      *
+     * @param fSuggestedAge QuantitativeValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
      */
@@ -162,10 +185,20 @@ public class PeopleAudienceImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * Audiences defined by a person's maximum age.
      *
+     * @param fRequiredMaxAge Integer value to set.
      */
     @Override
     public void setRequiredMaxAge(Integer fRequiredMaxAge) {
         this.fRequiredMaxAge = fRequiredMaxAge;
+    }
+    /**
+     * Audiences defined by a person's maximum age.
+     *
+     * @param fRequiredMaxAge java.lang.Integer value to set.
+     */
+    @Override
+    public void setRequiredMaxAge(java.lang.Integer fRequiredMaxAge) {
+        this.fRequiredMaxAge = Integer.of(fRequiredMaxAge);
     }
 
     private Number fSuggestedMinAge;
@@ -183,10 +216,20 @@ public class PeopleAudienceImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * Minimum recommended age in years for the audience or user.
      *
+     * @param fSuggestedMinAge Number value to set.
      */
     @Override
     public void setSuggestedMinAge(Number fSuggestedMinAge) {
         this.fSuggestedMinAge = fSuggestedMinAge;
+    }
+    /**
+     * Minimum recommended age in years for the audience or user.
+     *
+     * @param fSuggestedMinAge java.lang.Number value to set.
+     */
+    @Override
+    public void setSuggestedMinAge(java.lang.Number fSuggestedMinAge) {
+        this.fSuggestedMinAge = Number.of(fSuggestedMinAge);
     }
 
     private Text fRequiredGender;
@@ -204,10 +247,20 @@ public class PeopleAudienceImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * Audiences defined by a person's gender.
      *
+     * @param fRequiredGender Text value to set.
      */
     @Override
     public void setRequiredGender(Text fRequiredGender) {
         this.fRequiredGender = fRequiredGender;
+    }
+    /**
+     * Audiences defined by a person's gender.
+     *
+     * @param fRequiredGender java.lang.String value to set.
+     */
+    @Override
+    public void setRequiredGender(java.lang.String fRequiredGender) {
+        this.fRequiredGender = Text.of(fRequiredGender);
     }
 
     private Object fSuggestedGender;
@@ -225,13 +278,29 @@ public class PeopleAudienceImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
      *
+     * @param fSuggestedGender GenderType value to set.
      */
     @Override
-    public void setSuggestedGender(Object fSuggestedGender) {
-        if(!(fSuggestedGender instanceof GenderType) && !(fSuggestedGender instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'suggestedGender': " + fSuggestedGender);
-        }
+    public void setSuggestedGender(GenderType fSuggestedGender) {
         this.fSuggestedGender = fSuggestedGender;
+    }
+    /**
+     * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
+     *
+     * @param fSuggestedGender Text value to set.
+     */
+    @Override
+    public void setSuggestedGender(Text fSuggestedGender) {
+        this.fSuggestedGender = fSuggestedGender;
+    }
+    /**
+     * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
+     *
+     * @param fSuggestedGender java.lang.String value to set.
+     */
+    @Override
+    public void setSuggestedGender(java.lang.String fSuggestedGender) {
+        this.fSuggestedGender = Text.of(fSuggestedGender);
     }
 
     private Text fAudienceType;
@@ -249,10 +318,20 @@ public class PeopleAudienceImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * The target group associated with a given audience (e.g. veterans, car owners, musicians, etc.).
      *
+     * @param fAudienceType Text value to set.
      */
     @Override
     public void setAudienceType(Text fAudienceType) {
         this.fAudienceType = fAudienceType;
+    }
+    /**
+     * The target group associated with a given audience (e.g. veterans, car owners, musicians, etc.).
+     *
+     * @param fAudienceType java.lang.String value to set.
+     */
+    @Override
+    public void setAudienceType(java.lang.String fAudienceType) {
+        this.fAudienceType = Text.of(fAudienceType);
     }
 
     private AdministrativeArea fGeographicArea;
@@ -270,6 +349,7 @@ public class PeopleAudienceImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * The geographic area associated with the audience.
      *
+     * @param fGeographicArea AdministrativeArea value to set.
      */
     @Override
     public void setGeographicArea(AdministrativeArea fGeographicArea) {
@@ -291,13 +371,29 @@ public class PeopleAudienceImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
+     * @param fMainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
-        }
+    public void setMainEntityOfPage(CreativeWork fMainEntityOfPage) {
         this.fMainEntityOfPage = fMainEntityOfPage;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param fMainEntityOfPage URL value to set.
+     */
+    @Override
+    public void setMainEntityOfPage(URL fMainEntityOfPage) {
+        this.fMainEntityOfPage = fMainEntityOfPage;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param fMainEntityOfPage java.net.URL value to set.
+     */
+    @Override
+    public void setMainEntityOfPage(java.net.URL fMainEntityOfPage) {
+        this.fMainEntityOfPage = URL.of(fMainEntityOfPage);
     }
 
     private Text fAlternateName;
@@ -315,10 +411,20 @@ public class PeopleAudienceImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * An alias for the item.
      *
+     * @param fAlternateName Text value to set.
      */
     @Override
     public void setAlternateName(Text fAlternateName) {
         this.fAlternateName = fAlternateName;
+    }
+    /**
+     * An alias for the item.
+     *
+     * @param fAlternateName java.lang.String value to set.
+     */
+    @Override
+    public void setAlternateName(java.lang.String fAlternateName) {
+        this.fAlternateName = Text.of(fAlternateName);
     }
 
     private Text fName;
@@ -336,10 +442,20 @@ public class PeopleAudienceImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * The name of the item.
      *
+     * @param fName Text value to set.
      */
     @Override
     public void setName(Text fName) {
         this.fName = fName;
+    }
+    /**
+     * The name of the item.
+     *
+     * @param fName java.lang.String value to set.
+     */
+    @Override
+    public void setName(java.lang.String fName) {
+        this.fName = Text.of(fName);
     }
 
     private Action fPotentialAction;
@@ -357,6 +473,7 @@ public class PeopleAudienceImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      *
+     * @param fPotentialAction Action value to set.
      */
     @Override
     public void setPotentialAction(Action fPotentialAction) {
@@ -378,12 +495,28 @@ public class PeopleAudienceImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
+     * @param fImage URL value to set.
      */
     @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
+    public void setImage(URL fImage) {
+        this.fImage = fImage;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param fImage java.net.URL value to set.
+     */
+    @Override
+    public void setImage(java.net.URL fImage) {
+        this.fImage = URL.of(fImage);
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param fImage ImageObject value to set.
+     */
+    @Override
+    public void setImage(ImageObject fImage) {
         this.fImage = fImage;
     }
 
@@ -402,10 +535,20 @@ public class PeopleAudienceImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * URL of the item.
      *
+     * @param fUrl URL value to set.
      */
     @Override
     public void setUrl(URL fUrl) {
         this.fUrl = fUrl;
+    }
+    /**
+     * URL of the item.
+     *
+     * @param fUrl java.net.URL value to set.
+     */
+    @Override
+    public void setUrl(java.net.URL fUrl) {
+        this.fUrl = URL.of(fUrl);
     }
 
     private Text fDescription;
@@ -423,10 +566,20 @@ public class PeopleAudienceImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * A description of the item.
      *
+     * @param fDescription Text value to set.
      */
     @Override
     public void setDescription(Text fDescription) {
         this.fDescription = fDescription;
+    }
+    /**
+     * A description of the item.
+     *
+     * @param fDescription java.lang.String value to set.
+     */
+    @Override
+    public void setDescription(java.lang.String fDescription) {
+        this.fDescription = Text.of(fDescription);
     }
 
     private Object fSubjectOf;
@@ -445,13 +598,21 @@ public class PeopleAudienceImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * A CreativeWork or Event about this Thing.
      *
+     * @param fSubjectOf Event value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Object fSubjectOf) {
-        if(!(fSubjectOf instanceof Event) && !(fSubjectOf instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'subjectOf': " + fSubjectOf);
-        }
+    public void setSubjectOf(Event fSubjectOf) {
+        this.fSubjectOf = fSubjectOf;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @param fSubjectOf CreativeWork value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public void setSubjectOf(CreativeWork fSubjectOf) {
         this.fSubjectOf = fSubjectOf;
     }
 
@@ -470,10 +631,20 @@ public class PeopleAudienceImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
+     * @param fAdditionalType URL value to set.
      */
     @Override
     public void setAdditionalType(URL fAdditionalType) {
         this.fAdditionalType = fAdditionalType;
+    }
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @param fAdditionalType java.net.URL value to set.
+     */
+    @Override
+    public void setAdditionalType(java.net.URL fAdditionalType) {
+        this.fAdditionalType = URL.of(fAdditionalType);
     }
 
     private Text fDisambiguatingDescription;
@@ -491,10 +662,20 @@ public class PeopleAudienceImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
+     * @param fDisambiguatingDescription Text value to set.
      */
     @Override
     public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
         this.fDisambiguatingDescription = fDisambiguatingDescription;
+    }
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @param fDisambiguatingDescription java.lang.String value to set.
+     */
+    @Override
+    public void setDisambiguatingDescription(java.lang.String fDisambiguatingDescription) {
+        this.fDisambiguatingDescription = Text.of(fDisambiguatingDescription);
     }
 
     private URL fSameAs;
@@ -512,10 +693,20 @@ public class PeopleAudienceImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
+     * @param fSameAs URL value to set.
      */
     @Override
     public void setSameAs(URL fSameAs) {
         this.fSameAs = fSameAs;
+    }
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @param fSameAs java.net.URL value to set.
+     */
+    @Override
+    public void setSameAs(java.net.URL fSameAs) {
+        this.fSameAs = URL.of(fSameAs);
     }
 
     private Object fIdentifier;
@@ -535,12 +726,50 @@ public class PeopleAudienceImpl extends com.weedow.schemaorg.commons.model.JsonL
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
+     * @param fIdentifier URL value to set.
      */
     @Override
-    public void setIdentifier(Object fIdentifier) {
-        if(!(fIdentifier instanceof URL) && !(fIdentifier instanceof Text) && !(fIdentifier instanceof PropertyValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
-        }
+    public void setIdentifier(URL fIdentifier) {
+        this.fIdentifier = fIdentifier;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param fIdentifier java.net.URL value to set.
+     */
+    @Override
+    public void setIdentifier(java.net.URL fIdentifier) {
+        this.fIdentifier = URL.of(fIdentifier);
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param fIdentifier Text value to set.
+     */
+    @Override
+    public void setIdentifier(Text fIdentifier) {
+        this.fIdentifier = fIdentifier;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param fIdentifier java.lang.String value to set.
+     */
+    @Override
+    public void setIdentifier(java.lang.String fIdentifier) {
+        this.fIdentifier = Text.of(fIdentifier);
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param fIdentifier PropertyValue value to set.
+     */
+    @Override
+    public void setIdentifier(PropertyValue fIdentifier) {
         this.fIdentifier = fIdentifier;
     }
 }

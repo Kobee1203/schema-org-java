@@ -31,6 +31,7 @@ public interface MortgageLoan extends LoanOrCredit {
     /**
      * Amount of mortgage mandate that can be converted into a proper mortgage at a later stage.
      *
+     * @param fLoanMortgageMandateAmount MonetaryAmount value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
@@ -50,9 +51,19 @@ public interface MortgageLoan extends LoanOrCredit {
     /**
      * Whether borrower is a resident of the jurisdiction where the property is located.
      *
+     * @param fDomiciledMortgage Boolean value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      */
     void setDomiciledMortgage(Boolean fDomiciledMortgage);
+    /**
+     * Whether borrower is a resident of the jurisdiction where the property is located.
+     *
+     * @param fDomiciledMortgage java.lang.Boolean value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     */
+    void setDomiciledMortgage(java.lang.Boolean fDomiciledMortgage);
 }

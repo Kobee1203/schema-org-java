@@ -28,8 +28,15 @@ public interface NewsArticle extends Article {
     /**
      * The edition of the print product in which the NewsArticle appears.
      *
+     * @param fPrintEdition Text value to set.
      */
     void setPrintEdition(Text fPrintEdition);
+    /**
+     * The edition of the print product in which the NewsArticle appears.
+     *
+     * @param fPrintEdition java.lang.String value to set.
+     */
+    void setPrintEdition(java.lang.String fPrintEdition);
 
     /**
      * The number of the column in which the NewsArticle appears in the print edition.
@@ -41,8 +48,15 @@ public interface NewsArticle extends Article {
     /**
      * The number of the column in which the NewsArticle appears in the print edition.
      *
+     * @param fPrintColumn Text value to set.
      */
     void setPrintColumn(Text fPrintColumn);
+    /**
+     * The number of the column in which the NewsArticle appears in the print edition.
+     *
+     * @param fPrintColumn java.lang.String value to set.
+     */
+    void setPrintColumn(java.lang.String fPrintColumn);
 
     /**
      * If this NewsArticle appears in print, this field indicates the name of the page on which the article is found. Please note that this field is intended for the exact page name (e.g. A5, B18).
@@ -54,8 +68,15 @@ public interface NewsArticle extends Article {
     /**
      * If this NewsArticle appears in print, this field indicates the name of the page on which the article is found. Please note that this field is intended for the exact page name (e.g. A5, B18).
      *
+     * @param fPrintPage Text value to set.
      */
     void setPrintPage(Text fPrintPage);
+    /**
+     * If this NewsArticle appears in print, this field indicates the name of the page on which the article is found. Please note that this field is intended for the exact page name (e.g. A5, B18).
+     *
+     * @param fPrintPage java.lang.String value to set.
+     */
+    void setPrintPage(java.lang.String fPrintPage);
 
     /**
      * If this NewsArticle appears in print, this field indicates the print section in which the article appeared.
@@ -67,8 +88,15 @@ public interface NewsArticle extends Article {
     /**
      * If this NewsArticle appears in print, this field indicates the print section in which the article appeared.
      *
+     * @param fPrintSection Text value to set.
      */
     void setPrintSection(Text fPrintSection);
+    /**
+     * If this NewsArticle appears in print, this field indicates the print section in which the article appeared.
+     *
+     * @param fPrintSection java.lang.String value to set.
+     */
+    void setPrintSection(java.lang.String fPrintSection);
 
     /**
      * A [dateline](https://en.wikipedia.org/wiki/Dateline) is a brief piece of text included in news articles that describes where and when the story was written or filed though the date is often omitted. Sometimes only a placename is provided.
@@ -90,6 +118,18 @@ public interface NewsArticle extends Article {
      * Dateline summaries are oriented more towards human readers than towards automated processing, and can vary substantially. Some examples: "BEIRUT, Lebanon, June 2.", "Paris, France", "December 19, 2017 11:43AM Reporting from Washington", "Beijing/Moscow", "QUEZON CITY, Philippines".
      *       
      *
+     * @param fDateline Text value to set.
      */
     void setDateline(Text fDateline);
+    /**
+     * A [dateline](https://en.wikipedia.org/wiki/Dateline) is a brief piece of text included in news articles that describes where and when the story was written or filed though the date is often omitted. Sometimes only a placename is provided.
+     * 
+     * Structured representations of dateline-related information can also be expressed more explicitly using [[locationCreated]] (which represents where a work was created e.g. where a news report was written).  For location depicted or described in the content, use [[contentLocation]].
+     * 
+     * Dateline summaries are oriented more towards human readers than towards automated processing, and can vary substantially. Some examples: "BEIRUT, Lebanon, June 2.", "Paris, France", "December 19, 2017 11:43AM Reporting from Washington", "Beijing/Moscow", "QUEZON CITY, Philippines".
+     *       
+     *
+     * @param fDateline java.lang.String value to set.
+     */
+    void setDateline(java.lang.String fDateline);
 }

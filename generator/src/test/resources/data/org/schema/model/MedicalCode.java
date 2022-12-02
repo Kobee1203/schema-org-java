@@ -27,10 +27,19 @@ public interface MedicalCode extends MedicalIntangible, CategoryCode {
     /**
      * A short textual code that uniquely identifies the value.
      *
+     * @param fCodeValue Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
      */
     void setCodeValue(Text fCodeValue);
+    /**
+     * A short textual code that uniquely identifies the value.
+     *
+     * @param fCodeValue java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
+     */
+    void setCodeValue(java.lang.String fCodeValue);
 
     /**
      * The coding system, e.g. 'ICD-10'.
@@ -43,7 +52,15 @@ public interface MedicalCode extends MedicalIntangible, CategoryCode {
     /**
      * The coding system, e.g. 'ICD-10'.
      *
+     * @param fCodingSystem Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setCodingSystem(Text fCodingSystem);
+    /**
+     * The coding system, e.g. 'ICD-10'.
+     *
+     * @param fCodingSystem java.lang.String value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setCodingSystem(java.lang.String fCodingSystem);
 }

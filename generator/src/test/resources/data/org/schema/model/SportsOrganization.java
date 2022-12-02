@@ -27,8 +27,33 @@ public interface SportsOrganization extends Organization {
     /**
      * A type of sport (e.g. Baseball).
      *
+     * @param fSport Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1951">https://github.com/schemaorg/schemaorg/issues/1951</a>
      */
-    void setSport(Object fSport);
+    void setSport(Text fSport);
+    /**
+     * A type of sport (e.g. Baseball).
+     *
+     * @param fSport java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1951">https://github.com/schemaorg/schemaorg/issues/1951</a>
+     */
+    void setSport(java.lang.String fSport);
+    /**
+     * A type of sport (e.g. Baseball).
+     *
+     * @param fSport URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1951">https://github.com/schemaorg/schemaorg/issues/1951</a>
+     */
+    void setSport(URL fSport);
+    /**
+     * A type of sport (e.g. Baseball).
+     *
+     * @param fSport java.net.URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1951">https://github.com/schemaorg/schemaorg/issues/1951</a>
+     */
+    void setSport(java.net.URL fSport);
 }

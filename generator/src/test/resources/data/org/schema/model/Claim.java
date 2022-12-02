@@ -37,10 +37,20 @@ public interface Claim extends CreativeWork {
      * For a [[Claim]] interpreted from [[MediaObject]] content
      *     sed to indicate a claim contained, implied or refined from the content of a [[MediaObject]].
      *
+     * @param fClaimInterpreter Person value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
-    void setClaimInterpreter(Object fClaimInterpreter);
+    void setClaimInterpreter(Person fClaimInterpreter);
+    /**
+     * For a [[Claim]] interpreted from [[MediaObject]] content
+     *     sed to indicate a claim contained, implied or refined from the content of a [[MediaObject]].
+     *
+     * @param fClaimInterpreter Organization value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     */
+    void setClaimInterpreter(Organization fClaimInterpreter);
 
     /**
      * Indicates the first known occurence of a [[Claim]] in some [[CreativeWork]].
@@ -54,6 +64,7 @@ public interface Claim extends CreativeWork {
     /**
      * Indicates the first known occurence of a [[Claim]] in some [[CreativeWork]].
      *
+     * @param fFirstAppearance CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1828">https://github.com/schemaorg/schemaorg/issues/1828</a>
      */
@@ -71,6 +82,7 @@ public interface Claim extends CreativeWork {
     /**
      * Indicates an occurence of a [[Claim]] in some [[CreativeWork]].
      *
+     * @param fAppearance CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1828">https://github.com/schemaorg/schemaorg/issues/1828</a>
      */

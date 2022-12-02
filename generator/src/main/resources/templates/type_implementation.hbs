@@ -12,24 +12,23 @@ import {{this}};
 public class {{this.name}}Impl{{#if this.baseParent}} extends {{this.baseParent.implementationClassName}}{{/if}} implements {{this.name}} {
 {{#each this.allProperties}}
 
-    private {{#gt this.types.length 1}}Object{{else}}{{this.types.[0].name}}{{/gt}} {{this.fieldName}};
+    private {{this.field.fieldType}} {{this.field.fieldName}};
 
+{{#with this.accessor}}
     {{> templates/fragment/javadoc_getter}}
     @Override
-    public {{&this.returnFieldType}} get{{capitalizeFirst this.name}}() {
-        return {{#gt this.types.length 1}}(T) {{/gt}}{{this.fieldName}};
+    public {{&this.returnFieldType}} {{this.methodName}}() {
+        return {{#if this.cast}}{{&this.cast}} {{/if}}{{../this.field.fieldName}};
     }
+{{/with}}
 
+{{#each this.mutators}}
     {{> templates/fragment/javadoc_setter}}
     @Override
-    public void set{{capitalizeFirst this.name}}({{&this.paramFieldType}} {{this.fieldName}}) {
-{{#gt this.types.length 1}}
-        if({{#each this.types}}!({{../this.fieldName}} instanceof {{this.name}}){{#not @last}} && {{/not}}{{/each}}) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property '{{this.name}}': " + {{this.fieldName}});
-        }
-{{/gt}}
-        this.{{this.fieldName}} = {{this.fieldName}};
+    public void {{this.methodName}}({{this.paramType}} {{../this.field.fieldName}}) {
+        this.{{../this.field.fieldName}} = {{this.paramValue}};
     }
+{{/each}}
 {{/each}}
 }
 {{/with}}

@@ -32,6 +32,7 @@ public interface ProductGroup extends Product {
     /**
      * Indicates a [[Product]] that is a member of this [[ProductGroup]] (or [[ProductModel]]).
      *
+     * @param fHasVariant Product value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
@@ -49,10 +50,19 @@ public interface ProductGroup extends Product {
     /**
      * Indicates a textual identifier for a ProductGroup.
      *
+     * @param fProductGroupID Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
     void setProductGroupID(Text fProductGroupID);
+    /**
+     * Indicates a textual identifier for a ProductGroup.
+     *
+     * @param fProductGroupID java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     */
+    void setProductGroupID(java.lang.String fProductGroupID);
 
     /**
      * Indicates the property or properties by which the variants in a [[ProductGroup]] vary, e.g. their size, color etc. Schema.org properties can be referenced by their short name e.g. "color"; terms defined elsewhere can be referenced with their URIs.
@@ -66,8 +76,25 @@ public interface ProductGroup extends Product {
     /**
      * Indicates the property or properties by which the variants in a [[ProductGroup]] vary, e.g. their size, color etc. Schema.org properties can be referenced by their short name e.g. "color"; terms defined elsewhere can be referenced with their URIs.
      *
+     * @param fVariesBy Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
-    void setVariesBy(Object fVariesBy);
+    void setVariesBy(Text fVariesBy);
+    /**
+     * Indicates the property or properties by which the variants in a [[ProductGroup]] vary, e.g. their size, color etc. Schema.org properties can be referenced by their short name e.g. "color"; terms defined elsewhere can be referenced with their URIs.
+     *
+     * @param fVariesBy java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     */
+    void setVariesBy(java.lang.String fVariesBy);
+    /**
+     * Indicates the property or properties by which the variants in a [[ProductGroup]] vary, e.g. their size, color etc. Schema.org properties can be referenced by their short name e.g. "color"; terms defined elsewhere can be referenced with their URIs.
+     *
+     * @param fVariesBy DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     */
+    void setVariesBy(DefinedTerm fVariesBy);
 }

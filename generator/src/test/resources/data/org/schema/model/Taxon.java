@@ -30,9 +30,38 @@ public interface Taxon extends Thing {
     /**
      * Closest parent taxon of the taxon in question.
      *
+     * @param fParentTaxon URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    void setParentTaxon(Object fParentTaxon);
+    void setParentTaxon(URL fParentTaxon);
+    /**
+     * Closest parent taxon of the taxon in question.
+     *
+     * @param fParentTaxon java.net.URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    void setParentTaxon(java.net.URL fParentTaxon);
+    /**
+     * Closest parent taxon of the taxon in question.
+     *
+     * @param fParentTaxon Taxon value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    void setParentTaxon(Taxon fParentTaxon);
+    /**
+     * Closest parent taxon of the taxon in question.
+     *
+     * @param fParentTaxon Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    void setParentTaxon(Text fParentTaxon);
+    /**
+     * Closest parent taxon of the taxon in question.
+     *
+     * @param fParentTaxon java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    void setParentTaxon(java.lang.String fParentTaxon);
 
     /**
      * The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary – (typically the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs).
@@ -45,9 +74,38 @@ public interface Taxon extends Thing {
     /**
      * The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary – (typically the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs).
      *
+     * @param fTaxonRank PropertyValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    void setTaxonRank(Object fTaxonRank);
+    void setTaxonRank(PropertyValue fTaxonRank);
+    /**
+     * The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary – (typically the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs).
+     *
+     * @param fTaxonRank URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    void setTaxonRank(URL fTaxonRank);
+    /**
+     * The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary – (typically the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs).
+     *
+     * @param fTaxonRank java.net.URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    void setTaxonRank(java.net.URL fTaxonRank);
+    /**
+     * The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary – (typically the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs).
+     *
+     * @param fTaxonRank Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    void setTaxonRank(Text fTaxonRank);
+    /**
+     * The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary – (typically the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs).
+     *
+     * @param fTaxonRank java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    void setTaxonRank(java.lang.String fTaxonRank);
 
     /**
      * Closest child taxa of the taxon in question.
@@ -60,9 +118,38 @@ public interface Taxon extends Thing {
     /**
      * Closest child taxa of the taxon in question.
      *
+     * @param fChildTaxon Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    void setChildTaxon(Object fChildTaxon);
+    void setChildTaxon(Text fChildTaxon);
+    /**
+     * Closest child taxa of the taxon in question.
+     *
+     * @param fChildTaxon java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    void setChildTaxon(java.lang.String fChildTaxon);
+    /**
+     * Closest child taxa of the taxon in question.
+     *
+     * @param fChildTaxon Taxon value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    void setChildTaxon(Taxon fChildTaxon);
+    /**
+     * Closest child taxa of the taxon in question.
+     *
+     * @param fChildTaxon URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    void setChildTaxon(URL fChildTaxon);
+    /**
+     * Closest child taxa of the taxon in question.
+     *
+     * @param fChildTaxon java.net.URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    void setChildTaxon(java.net.URL fChildTaxon);
 
     /**
      * A Defined Term contained in this term set.
@@ -76,6 +163,7 @@ public interface Taxon extends Thing {
     /**
      * A Defined Term contained in this term set.
      *
+     * @param fHasDefinedTerm DefinedTerm value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
      */

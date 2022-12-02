@@ -65,6 +65,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * The person's spouse.
      *
+     * @param fSpouse Person value to set.
      */
     @Override
     public void setSpouse(Person fSpouse) {
@@ -86,10 +87,20 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * An additional name for a Person, can be used for a middle name.
      *
+     * @param fAdditionalName Text value to set.
      */
     @Override
     public void setAdditionalName(Text fAdditionalName) {
         this.fAdditionalName = fAdditionalName;
+    }
+    /**
+     * An additional name for a Person, can be used for a middle name.
+     *
+     * @param fAdditionalName java.lang.String value to set.
+     */
+    @Override
+    public void setAdditionalName(java.lang.String fAdditionalName) {
+        this.fAdditionalName = Text.of(fAdditionalName);
     }
 
     private EducationalOccupationalCredential fHasCredential;
@@ -109,6 +120,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * A credential awarded to the Person or Organization.
      *
+     * @param fHasCredential EducationalOccupationalCredential value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
@@ -132,10 +144,20 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * The telephone number.
      *
+     * @param fTelephone Text value to set.
      */
     @Override
     public void setTelephone(Text fTelephone) {
         this.fTelephone = fTelephone;
+    }
+    /**
+     * The telephone number.
+     *
+     * @param fTelephone java.lang.String value to set.
+     */
+    @Override
+    public void setTelephone(java.lang.String fTelephone) {
+        this.fTelephone = Text.of(fTelephone);
     }
 
     private Text fHonorificPrefix;
@@ -153,10 +175,20 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * An honorific prefix preceding a Person's name such as Dr/Mrs/Mr.
      *
+     * @param fHonorificPrefix Text value to set.
      */
     @Override
     public void setHonorificPrefix(Text fHonorificPrefix) {
         this.fHonorificPrefix = fHonorificPrefix;
+    }
+    /**
+     * An honorific prefix preceding a Person's name such as Dr/Mrs/Mr.
+     *
+     * @param fHonorificPrefix java.lang.String value to set.
+     */
+    @Override
+    public void setHonorificPrefix(java.lang.String fHonorificPrefix) {
+        this.fHonorificPrefix = Text.of(fHonorificPrefix);
     }
 
     private Person fParents;
@@ -174,6 +206,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * A parents of the person.
      *
+     * @param fParents Person value to set.
      */
     @Override
     public void setParents(Person fParents) {
@@ -195,10 +228,20 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * Family name. In the U.S., the last name of a Person.
      *
+     * @param fFamilyName Text value to set.
      */
     @Override
     public void setFamilyName(Text fFamilyName) {
         this.fFamilyName = fFamilyName;
+    }
+    /**
+     * Family name. In the U.S., the last name of a Person.
+     *
+     * @param fFamilyName java.lang.String value to set.
+     */
+    @Override
+    public void setFamilyName(java.lang.String fFamilyName) {
+        this.fFamilyName = Text.of(fFamilyName);
     }
 
     private Text fGivenName;
@@ -216,10 +259,20 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * Given name. In the U.S., the first name of a Person.
      *
+     * @param fGivenName Text value to set.
      */
     @Override
     public void setGivenName(Text fGivenName) {
         this.fGivenName = fGivenName;
+    }
+    /**
+     * Given name. In the U.S., the first name of a Person.
+     *
+     * @param fGivenName java.lang.String value to set.
+     */
+    @Override
+    public void setGivenName(java.lang.String fGivenName) {
+        this.fGivenName = Text.of(fGivenName);
     }
 
     private Object fKnowsAbout;
@@ -240,15 +293,61 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
      *
+     * @param fKnowsAbout URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
      */
     @Override
-    public void setKnowsAbout(Object fKnowsAbout) {
-        if(!(fKnowsAbout instanceof URL) && !(fKnowsAbout instanceof Text) && !(fKnowsAbout instanceof Thing)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'knowsAbout': " + fKnowsAbout);
-        }
+    public void setKnowsAbout(URL fKnowsAbout) {
+        this.fKnowsAbout = fKnowsAbout;
+    }
+    /**
+     * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
+     *
+     * @param fKnowsAbout java.net.URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     */
+    @Override
+    public void setKnowsAbout(java.net.URL fKnowsAbout) {
+        this.fKnowsAbout = URL.of(fKnowsAbout);
+    }
+    /**
+     * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
+     *
+     * @param fKnowsAbout Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     */
+    @Override
+    public void setKnowsAbout(Text fKnowsAbout) {
+        this.fKnowsAbout = fKnowsAbout;
+    }
+    /**
+     * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
+     *
+     * @param fKnowsAbout java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     */
+    @Override
+    public void setKnowsAbout(java.lang.String fKnowsAbout) {
+        this.fKnowsAbout = Text.of(fKnowsAbout);
+    }
+    /**
+     * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
+     *
+     * @param fKnowsAbout Thing value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     */
+    @Override
+    public void setKnowsAbout(Thing fKnowsAbout) {
         this.fKnowsAbout = fKnowsAbout;
     }
 
@@ -267,6 +366,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * Event that this person is a performer or participant in.
      *
+     * @param fPerformerIn Event value to set.
      */
     @Override
     public void setPerformerIn(Event fPerformerIn) {
@@ -288,12 +388,19 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * The total financial value of the person as calculated by subtracting assets from liabilities.
      *
+     * @param fNetWorth MonetaryAmount value to set.
      */
     @Override
-    public void setNetWorth(Object fNetWorth) {
-        if(!(fNetWorth instanceof MonetaryAmount) && !(fNetWorth instanceof PriceSpecification)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'netWorth': " + fNetWorth);
-        }
+    public void setNetWorth(MonetaryAmount fNetWorth) {
+        this.fNetWorth = fNetWorth;
+    }
+    /**
+     * The total financial value of the person as calculated by subtracting assets from liabilities.
+     *
+     * @param fNetWorth PriceSpecification value to set.
+     */
+    @Override
+    public void setNetWorth(PriceSpecification fNetWorth) {
         this.fNetWorth = fNetWorth;
     }
 
@@ -312,10 +419,20 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * An award won by or for this item.
      *
+     * @param fAward Text value to set.
      */
     @Override
     public void setAward(Text fAward) {
         this.fAward = fAward;
+    }
+    /**
+     * An award won by or for this item.
+     *
+     * @param fAward java.lang.String value to set.
+     */
+    @Override
+    public void setAward(java.lang.String fAward) {
+        this.fAward = Text.of(fAward);
     }
 
     private Object fWorkLocation;
@@ -333,12 +450,19 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * A contact location for a person's place of work.
      *
+     * @param fWorkLocation Place value to set.
      */
     @Override
-    public void setWorkLocation(Object fWorkLocation) {
-        if(!(fWorkLocation instanceof Place) && !(fWorkLocation instanceof ContactPoint)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'workLocation': " + fWorkLocation);
-        }
+    public void setWorkLocation(Place fWorkLocation) {
+        this.fWorkLocation = fWorkLocation;
+    }
+    /**
+     * A contact location for a person's place of work.
+     *
+     * @param fWorkLocation ContactPoint value to set.
+     */
+    @Override
+    public void setWorkLocation(ContactPoint fWorkLocation) {
         this.fWorkLocation = fWorkLocation;
     }
 
@@ -357,10 +481,20 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * An honorific suffix following a Person's name such as M.D. /PhD/MSCSW.
      *
+     * @param fHonorificSuffix Text value to set.
      */
     @Override
     public void setHonorificSuffix(Text fHonorificSuffix) {
         this.fHonorificSuffix = fHonorificSuffix;
+    }
+    /**
+     * An honorific suffix following a Person's name such as M.D. /PhD/MSCSW.
+     *
+     * @param fHonorificSuffix java.lang.String value to set.
+     */
+    @Override
+    public void setHonorificSuffix(java.lang.String fHonorificSuffix) {
+        this.fHonorificSuffix = Text.of(fHonorificSuffix);
     }
 
     private Place fDeathPlace;
@@ -378,6 +512,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * The place where the person died.
      *
+     * @param fDeathPlace Place value to set.
      */
     @Override
     public void setDeathPlace(Place fDeathPlace) {
@@ -399,12 +534,19 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * A contact location for a person's residence.
      *
+     * @param fHomeLocation Place value to set.
      */
     @Override
-    public void setHomeLocation(Object fHomeLocation) {
-        if(!(fHomeLocation instanceof Place) && !(fHomeLocation instanceof ContactPoint)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'homeLocation': " + fHomeLocation);
-        }
+    public void setHomeLocation(Place fHomeLocation) {
+        this.fHomeLocation = fHomeLocation;
+    }
+    /**
+     * A contact location for a person's residence.
+     *
+     * @param fHomeLocation ContactPoint value to set.
+     */
+    @Override
+    public void setHomeLocation(ContactPoint fHomeLocation) {
         this.fHomeLocation = fHomeLocation;
     }
 
@@ -426,6 +568,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
      *
+     * @param fFunding Grant value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
@@ -451,11 +594,22 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * The Value-added Tax ID of the organization or person.
      *
+     * @param fVatID Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
     public void setVatID(Text fVatID) {
         this.fVatID = fVatID;
+    }
+    /**
+     * The Value-added Tax ID of the organization or person.
+     *
+     * @param fVatID java.lang.String value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setVatID(java.lang.String fVatID) {
+        this.fVatID = Text.of(fVatID);
     }
 
     private Object fHeight;
@@ -473,12 +627,19 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * The height of the item.
      *
+     * @param fHeight Distance value to set.
      */
     @Override
-    public void setHeight(Object fHeight) {
-        if(!(fHeight instanceof Distance) && !(fHeight instanceof QuantitativeValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'height': " + fHeight);
-        }
+    public void setHeight(Distance fHeight) {
+        this.fHeight = fHeight;
+    }
+    /**
+     * The height of the item.
+     *
+     * @param fHeight QuantitativeValue value to set.
+     */
+    @Override
+    public void setHeight(QuantitativeValue fHeight) {
         this.fHeight = fHeight;
     }
 
@@ -498,11 +659,22 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
      *
+     * @param fGlobalLocationNumber Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
     public void setGlobalLocationNumber(Text fGlobalLocationNumber) {
         this.fGlobalLocationNumber = fGlobalLocationNumber;
+    }
+    /**
+     * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
+     *
+     * @param fGlobalLocationNumber java.lang.String value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setGlobalLocationNumber(java.lang.String fGlobalLocationNumber) {
+        this.fGlobalLocationNumber = Text.of(fGlobalLocationNumber);
     }
 
     private ContactPoint fContactPoints;
@@ -520,6 +692,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * A contact point for a person or organization.
      *
+     * @param fContactPoints ContactPoint value to set.
      */
     @Override
     public void setContactPoints(ContactPoint fContactPoints) {
@@ -542,6 +715,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * The Person's occupation. For past professions, use Role for expressing dates.
      *
+     * @param fHasOccupation Occupation value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
     @Override
@@ -566,15 +740,35 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * Gender of something, typically a [[Person]], but possibly also fictional characters, animals, etc. While https://schema.org/Male and https://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender. The [[gender]] property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender [[SportsTeam]] can be indicated with a text value of "Mixed".
      *
+     * @param fGender GenderType value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2341">https://github.com/schemaorg/schemaorg/issues/2341</a>
      */
     @Override
-    public void setGender(Object fGender) {
-        if(!(fGender instanceof GenderType) && !(fGender instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'gender': " + fGender);
-        }
+    public void setGender(GenderType fGender) {
         this.fGender = fGender;
+    }
+    /**
+     * Gender of something, typically a [[Person]], but possibly also fictional characters, animals, etc. While https://schema.org/Male and https://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender. The [[gender]] property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender [[SportsTeam]] can be indicated with a text value of "Mixed".
+     *
+     * @param fGender Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2341">https://github.com/schemaorg/schemaorg/issues/2341</a>
+     */
+    @Override
+    public void setGender(Text fGender) {
+        this.fGender = fGender;
+    }
+    /**
+     * Gender of something, typically a [[Person]], but possibly also fictional characters, animals, etc. While https://schema.org/Male and https://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender. The [[gender]] property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender [[SportsTeam]] can be indicated with a text value of "Mixed".
+     *
+     * @param fGender java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2341">https://github.com/schemaorg/schemaorg/issues/2341</a>
+     */
+    @Override
+    public void setGender(java.lang.String fGender) {
+        this.fGender = Text.of(fGender);
     }
 
     private Person fParent;
@@ -592,6 +786,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * A parent of this person.
      *
+     * @param fParent Person value to set.
      */
     @Override
     public void setParent(Person fParent) {
@@ -613,10 +808,20 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * Awards won by or for this item.
      *
+     * @param fAwards Text value to set.
      */
     @Override
     public void setAwards(Text fAwards) {
         this.fAwards = fAwards;
+    }
+    /**
+     * Awards won by or for this item.
+     *
+     * @param fAwards java.lang.String value to set.
+     */
+    @Override
+    public void setAwards(java.lang.String fAwards) {
+        this.fAwards = Text.of(fAwards);
     }
 
     private Person fSibling;
@@ -634,6 +839,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * A sibling of the person.
      *
+     * @param fSibling Person value to set.
      */
     @Override
     public void setSibling(Person fSibling) {
@@ -657,14 +863,34 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * The job title of the person (for example, Financial Manager).
      *
+     * @param fJobTitle Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
      */
     @Override
-    public void setJobTitle(Object fJobTitle) {
-        if(!(fJobTitle instanceof Text) && !(fJobTitle instanceof DefinedTerm)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'jobTitle': " + fJobTitle);
-        }
+    public void setJobTitle(Text fJobTitle) {
+        this.fJobTitle = fJobTitle;
+    }
+    /**
+     * The job title of the person (for example, Financial Manager).
+     *
+     * @param fJobTitle java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
+     */
+    @Override
+    public void setJobTitle(java.lang.String fJobTitle) {
+        this.fJobTitle = Text.of(fJobTitle);
+    }
+    /**
+     * The job title of the person (for example, Financial Manager).
+     *
+     * @param fJobTitle DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
+     */
+    @Override
+    public void setJobTitle(DefinedTerm fJobTitle) {
         this.fJobTitle = fJobTitle;
     }
 
@@ -683,10 +909,20 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * Date of birth.
      *
+     * @param fBirthDate Date value to set.
      */
     @Override
     public void setBirthDate(Date fBirthDate) {
         this.fBirthDate = fBirthDate;
+    }
+    /**
+     * Date of birth.
+     *
+     * @param fBirthDate java.time.LocalDate value to set.
+     */
+    @Override
+    public void setBirthDate(java.time.LocalDate fBirthDate) {
+        this.fBirthDate = Date.of(fBirthDate);
     }
 
     private Object fFunder;
@@ -704,12 +940,19 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
+     * @param fFunder Organization value to set.
      */
     @Override
-    public void setFunder(Object fFunder) {
-        if(!(fFunder instanceof Organization) && !(fFunder instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'funder': " + fFunder);
-        }
+    public void setFunder(Organization fFunder) {
+        this.fFunder = fFunder;
+    }
+    /**
+     * A person or organization that supports (sponsors) something through some kind of financial contribution.
+     *
+     * @param fFunder Person value to set.
+     */
+    @Override
+    public void setFunder(Person fFunder) {
         this.fFunder = fFunder;
     }
 
@@ -729,6 +972,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * A pointer to products or services offered by the organization or person.
      *
+     * @param fMakesOffer Offer value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
@@ -751,6 +995,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * A child of the person.
      *
+     * @param fChildren Person value to set.
      */
     @Override
     public void setChildren(Person fChildren) {
@@ -772,6 +1017,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * Organizations that the person works for.
      *
+     * @param fWorksFor Organization value to set.
      */
     @Override
     public void setWorksFor(Organization fWorksFor) {
@@ -793,6 +1039,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * The most generic bi-directional social/work relation.
      *
+     * @param fKnows Person value to set.
      */
     @Override
     public void setKnows(Person fKnows) {
@@ -815,6 +1062,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
      *
+     * @param fInteractionStatistic InteractionCounter value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
      */
     @Override
@@ -837,12 +1085,28 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * Physical address of the item.
      *
+     * @param fAddress Text value to set.
      */
     @Override
-    public void setAddress(Object fAddress) {
-        if(!(fAddress instanceof Text) && !(fAddress instanceof PostalAddress)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'address': " + fAddress);
-        }
+    public void setAddress(Text fAddress) {
+        this.fAddress = fAddress;
+    }
+    /**
+     * Physical address of the item.
+     *
+     * @param fAddress java.lang.String value to set.
+     */
+    @Override
+    public void setAddress(java.lang.String fAddress) {
+        this.fAddress = Text.of(fAddress);
+    }
+    /**
+     * Physical address of the item.
+     *
+     * @param fAddress PostalAddress value to set.
+     */
+    @Override
+    public void setAddress(PostalAddress fAddress) {
         this.fAddress = fAddress;
     }
 
@@ -861,12 +1125,19 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * An Organization (or ProgramMembership) to which this Person or Organization belongs.
      *
+     * @param fMemberOf ProgramMembership value to set.
      */
     @Override
-    public void setMemberOf(Object fMemberOf) {
-        if(!(fMemberOf instanceof ProgramMembership) && !(fMemberOf instanceof Organization)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'memberOf': " + fMemberOf);
-        }
+    public void setMemberOf(ProgramMembership fMemberOf) {
+        this.fMemberOf = fMemberOf;
+    }
+    /**
+     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
+     *
+     * @param fMemberOf Organization value to set.
+     */
+    @Override
+    public void setMemberOf(Organization fMemberOf) {
         this.fMemberOf = fMemberOf;
     }
 
@@ -889,12 +1160,32 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * 
      * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
      *
+     * @param fPublishingPrinciples URL value to set.
      */
     @Override
-    public void setPublishingPrinciples(Object fPublishingPrinciples) {
-        if(!(fPublishingPrinciples instanceof URL) && !(fPublishingPrinciples instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'publishingPrinciples': " + fPublishingPrinciples);
-        }
+    public void setPublishingPrinciples(URL fPublishingPrinciples) {
+        this.fPublishingPrinciples = fPublishingPrinciples;
+    }
+    /**
+     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * 
+     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+     *
+     * @param fPublishingPrinciples java.net.URL value to set.
+     */
+    @Override
+    public void setPublishingPrinciples(java.net.URL fPublishingPrinciples) {
+        this.fPublishingPrinciples = URL.of(fPublishingPrinciples);
+    }
+    /**
+     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * 
+     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+     *
+     * @param fPublishingPrinciples CreativeWork value to set.
+     */
+    @Override
+    public void setPublishingPrinciples(CreativeWork fPublishingPrinciples) {
         this.fPublishingPrinciples = fPublishingPrinciples;
     }
 
@@ -913,6 +1204,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * A colleague of the person.
      *
+     * @param fColleagues Person value to set.
      */
     @Override
     public void setColleagues(Person fColleagues) {
@@ -934,10 +1226,20 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * Date of death.
      *
+     * @param fDeathDate Date value to set.
      */
     @Override
     public void setDeathDate(Date fDeathDate) {
         this.fDeathDate = fDeathDate;
+    }
+    /**
+     * Date of death.
+     *
+     * @param fDeathDate java.time.LocalDate value to set.
+     */
+    @Override
+    public void setDeathDate(java.time.LocalDate fDeathDate) {
+        this.fDeathDate = Date.of(fDeathDate);
     }
 
     private Text fEmail;
@@ -955,10 +1257,20 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * Email address.
      *
+     * @param fEmail Text value to set.
      */
     @Override
     public void setEmail(Text fEmail) {
         this.fEmail = fEmail;
+    }
+    /**
+     * Email address.
+     *
+     * @param fEmail java.lang.String value to set.
+     */
+    @Override
+    public void setEmail(java.lang.String fEmail) {
+        this.fEmail = Text.of(fEmail);
     }
 
     private Organization fAffiliation;
@@ -976,6 +1288,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * An organization that this person is affiliated with. For example, a school/university, a club, or a team.
      *
+     * @param fAffiliation Organization value to set.
      */
     @Override
     public void setAffiliation(Organization fAffiliation) {
@@ -997,6 +1310,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * A sibling of the person.
      *
+     * @param fSiblings Person value to set.
      */
     @Override
     public void setSiblings(Person fSiblings) {
@@ -1018,6 +1332,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * The place where the person was born.
      *
+     * @param fBirthPlace Place value to set.
      */
     @Override
     public void setBirthPlace(Place fBirthPlace) {
@@ -1039,12 +1354,19 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
      *
+     * @param fBrand Organization value to set.
      */
     @Override
-    public void setBrand(Object fBrand) {
-        if(!(fBrand instanceof Organization) && !(fBrand instanceof Brand)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'brand': " + fBrand);
-        }
+    public void setBrand(Organization fBrand) {
+        this.fBrand = fBrand;
+    }
+    /**
+     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     *
+     * @param fBrand Brand value to set.
+     */
+    @Override
+    public void setBrand(Brand fBrand) {
         this.fBrand = fBrand;
     }
 
@@ -1063,12 +1385,19 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
      *
+     * @param fSponsor Organization value to set.
      */
     @Override
-    public void setSponsor(Object fSponsor) {
-        if(!(fSponsor instanceof Organization) && !(fSponsor instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'sponsor': " + fSponsor);
-        }
+    public void setSponsor(Organization fSponsor) {
+        this.fSponsor = fSponsor;
+    }
+    /**
+     * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
+     *
+     * @param fSponsor Person value to set.
+     */
+    @Override
+    public void setSponsor(Person fSponsor) {
         this.fSponsor = fSponsor;
     }
 
@@ -1088,11 +1417,22 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * The North American Industry Classification System (NAICS) code for a particular organization or business person.
      *
+     * @param fNaics Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
     public void setNaics(Text fNaics) {
         this.fNaics = fNaics;
+    }
+    /**
+     * The North American Industry Classification System (NAICS) code for a particular organization or business person.
+     *
+     * @param fNaics java.lang.String value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setNaics(java.lang.String fNaics) {
+        this.fNaics = Text.of(fNaics);
     }
 
     private ContactPoint fContactPoint;
@@ -1110,6 +1450,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * A contact point for a person or organization.
      *
+     * @param fContactPoint ContactPoint value to set.
      */
     @Override
     public void setContactPoint(ContactPoint fContactPoint) {
@@ -1133,12 +1474,24 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.
      *
+     * @param fCallSign Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2109">https://github.com/schemaorg/schemaorg/issues/2109</a>
      */
     @Override
     public void setCallSign(Text fCallSign) {
         this.fCallSign = fCallSign;
+    }
+    /**
+     * A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.
+     *
+     * @param fCallSign java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2109">https://github.com/schemaorg/schemaorg/issues/2109</a>
+     */
+    @Override
+    public void setCallSign(java.lang.String fCallSign) {
+        this.fCallSign = Text.of(fCallSign);
     }
 
     private Text fIsicV4;
@@ -1157,11 +1510,22 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
      *
+     * @param fIsicV4 Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
     public void setIsicV4(Text fIsicV4) {
         this.fIsicV4 = fIsicV4;
+    }
+    /**
+     * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
+     *
+     * @param fIsicV4 java.lang.String value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setIsicV4(java.lang.String fIsicV4) {
+        this.fIsicV4 = Text.of(fIsicV4);
     }
 
     private Place fHasPOS;
@@ -1180,6 +1544,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * Points-of-Sales operated by the organization or person.
      *
+     * @param fHasPOS Place value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
@@ -1202,12 +1567,19 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * An organization that the person is an alumni of.
      *
+     * @param fAlumniOf EducationalOrganization value to set.
      */
     @Override
-    public void setAlumniOf(Object fAlumniOf) {
-        if(!(fAlumniOf instanceof EducationalOrganization) && !(fAlumniOf instanceof Organization)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'alumniOf': " + fAlumniOf);
-        }
+    public void setAlumniOf(EducationalOrganization fAlumniOf) {
+        this.fAlumniOf = fAlumniOf;
+    }
+    /**
+     * An organization that the person is an alumni of.
+     *
+     * @param fAlumniOf Organization value to set.
+     */
+    @Override
+    public void setAlumniOf(Organization fAlumniOf) {
         this.fAlumniOf = fAlumniOf;
     }
 
@@ -1227,11 +1599,22 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * The Dun & Bradstreet DUNS number for identifying an organization or business person.
      *
+     * @param fDuns Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
     public void setDuns(Text fDuns) {
         this.fDuns = fDuns;
+    }
+    /**
+     * The Dun & Bradstreet DUNS number for identifying an organization or business person.
+     *
+     * @param fDuns java.lang.String value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setDuns(java.lang.String fDuns) {
+        this.fDuns = Text.of(fDuns);
     }
 
     private QuantitativeValue fWeight;
@@ -1250,6 +1633,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * The weight of the product or person.
      *
+     * @param fWeight QuantitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
@@ -1275,16 +1659,38 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).
      *
+     * @param fKnowsLanguage Language value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
     @Override
-    public void setKnowsLanguage(Object fKnowsLanguage) {
-        if(!(fKnowsLanguage instanceof Language) && !(fKnowsLanguage instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'knowsLanguage': " + fKnowsLanguage);
-        }
+    public void setKnowsLanguage(Language fKnowsLanguage) {
         this.fKnowsLanguage = fKnowsLanguage;
+    }
+    /**
+     * Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).
+     *
+     * @param fKnowsLanguage Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    @Override
+    public void setKnowsLanguage(Text fKnowsLanguage) {
+        this.fKnowsLanguage = fKnowsLanguage;
+    }
+    /**
+     * Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).
+     *
+     * @param fKnowsLanguage java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    @Override
+    public void setKnowsLanguage(java.lang.String fKnowsLanguage) {
+        this.fKnowsLanguage = Text.of(fKnowsLanguage);
     }
 
     private Person fRelatedTo;
@@ -1302,6 +1708,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * The most generic familial relation.
      *
+     * @param fRelatedTo Person value to set.
      */
     @Override
     public void setRelatedTo(Person fRelatedTo) {
@@ -1323,13 +1730,29 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * A colleague of the person.
      *
+     * @param fColleague Person value to set.
      */
     @Override
-    public void setColleague(Object fColleague) {
-        if(!(fColleague instanceof Person) && !(fColleague instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'colleague': " + fColleague);
-        }
+    public void setColleague(Person fColleague) {
         this.fColleague = fColleague;
+    }
+    /**
+     * A colleague of the person.
+     *
+     * @param fColleague URL value to set.
+     */
+    @Override
+    public void setColleague(URL fColleague) {
+        this.fColleague = fColleague;
+    }
+    /**
+     * A colleague of the person.
+     *
+     * @param fColleague java.net.URL value to set.
+     */
+    @Override
+    public void setColleague(java.net.URL fColleague) {
+        this.fColleague = URL.of(fColleague);
     }
 
     private Demand fSeeks;
@@ -1348,6 +1771,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * A pointer to products or services sought by the organization or person (demand).
      *
+     * @param fSeeks Demand value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
@@ -1371,11 +1795,22 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
      *
+     * @param fTaxID Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
     public void setTaxID(Text fTaxID) {
         this.fTaxID = fTaxID;
+    }
+    /**
+     * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
+     *
+     * @param fTaxID java.lang.String value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setTaxID(java.lang.String fTaxID) {
+        this.fTaxID = Text.of(fTaxID);
     }
 
     private Object fOwns;
@@ -1394,13 +1829,21 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * Products owned by the organization or person.
      *
+     * @param fOwns Product value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setOwns(Object fOwns) {
-        if(!(fOwns instanceof Product) && !(fOwns instanceof OwnershipInfo)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'owns': " + fOwns);
-        }
+    public void setOwns(Product fOwns) {
+        this.fOwns = fOwns;
+    }
+    /**
+     * Products owned by the organization or person.
+     *
+     * @param fOwns OwnershipInfo value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setOwns(OwnershipInfo fOwns) {
         this.fOwns = fOwns;
     }
 
@@ -1419,6 +1862,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * Indicates an OfferCatalog listing for this Organization, Person, or Service.
      *
+     * @param fHasOfferCatalog OfferCatalog value to set.
      */
     @Override
     public void setHasOfferCatalog(OfferCatalog fHasOfferCatalog) {
@@ -1440,6 +1884,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * The most generic uni-directional social relation.
      *
+     * @param fFollows Person value to set.
      */
     @Override
     public void setFollows(Person fFollows) {
@@ -1461,6 +1906,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * Nationality of the person.
      *
+     * @param fNationality Country value to set.
      */
     @Override
     public void setNationality(Country fNationality) {
@@ -1482,10 +1928,20 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * The fax number.
      *
+     * @param fFaxNumber Text value to set.
      */
     @Override
     public void setFaxNumber(Text fFaxNumber) {
         this.fFaxNumber = fFaxNumber;
+    }
+    /**
+     * The fax number.
+     *
+     * @param fFaxNumber java.lang.String value to set.
+     */
+    @Override
+    public void setFaxNumber(java.lang.String fFaxNumber) {
+        this.fFaxNumber = Text.of(fFaxNumber);
     }
 
     private Object fMainEntityOfPage;
@@ -1503,13 +1959,29 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
+     * @param fMainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
-        }
+    public void setMainEntityOfPage(CreativeWork fMainEntityOfPage) {
         this.fMainEntityOfPage = fMainEntityOfPage;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param fMainEntityOfPage URL value to set.
+     */
+    @Override
+    public void setMainEntityOfPage(URL fMainEntityOfPage) {
+        this.fMainEntityOfPage = fMainEntityOfPage;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param fMainEntityOfPage java.net.URL value to set.
+     */
+    @Override
+    public void setMainEntityOfPage(java.net.URL fMainEntityOfPage) {
+        this.fMainEntityOfPage = URL.of(fMainEntityOfPage);
     }
 
     private Text fAlternateName;
@@ -1527,10 +1999,20 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * An alias for the item.
      *
+     * @param fAlternateName Text value to set.
      */
     @Override
     public void setAlternateName(Text fAlternateName) {
         this.fAlternateName = fAlternateName;
+    }
+    /**
+     * An alias for the item.
+     *
+     * @param fAlternateName java.lang.String value to set.
+     */
+    @Override
+    public void setAlternateName(java.lang.String fAlternateName) {
+        this.fAlternateName = Text.of(fAlternateName);
     }
 
     private Text fName;
@@ -1548,10 +2030,20 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * The name of the item.
      *
+     * @param fName Text value to set.
      */
     @Override
     public void setName(Text fName) {
         this.fName = fName;
+    }
+    /**
+     * The name of the item.
+     *
+     * @param fName java.lang.String value to set.
+     */
+    @Override
+    public void setName(java.lang.String fName) {
+        this.fName = Text.of(fName);
     }
 
     private Action fPotentialAction;
@@ -1569,6 +2061,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      *
+     * @param fPotentialAction Action value to set.
      */
     @Override
     public void setPotentialAction(Action fPotentialAction) {
@@ -1590,12 +2083,28 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
+     * @param fImage URL value to set.
      */
     @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
+    public void setImage(URL fImage) {
+        this.fImage = fImage;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param fImage java.net.URL value to set.
+     */
+    @Override
+    public void setImage(java.net.URL fImage) {
+        this.fImage = URL.of(fImage);
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param fImage ImageObject value to set.
+     */
+    @Override
+    public void setImage(ImageObject fImage) {
         this.fImage = fImage;
     }
 
@@ -1614,10 +2123,20 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * URL of the item.
      *
+     * @param fUrl URL value to set.
      */
     @Override
     public void setUrl(URL fUrl) {
         this.fUrl = fUrl;
+    }
+    /**
+     * URL of the item.
+     *
+     * @param fUrl java.net.URL value to set.
+     */
+    @Override
+    public void setUrl(java.net.URL fUrl) {
+        this.fUrl = URL.of(fUrl);
     }
 
     private Text fDescription;
@@ -1635,10 +2154,20 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * A description of the item.
      *
+     * @param fDescription Text value to set.
      */
     @Override
     public void setDescription(Text fDescription) {
         this.fDescription = fDescription;
+    }
+    /**
+     * A description of the item.
+     *
+     * @param fDescription java.lang.String value to set.
+     */
+    @Override
+    public void setDescription(java.lang.String fDescription) {
+        this.fDescription = Text.of(fDescription);
     }
 
     private Object fSubjectOf;
@@ -1657,13 +2186,21 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * A CreativeWork or Event about this Thing.
      *
+     * @param fSubjectOf Event value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Object fSubjectOf) {
-        if(!(fSubjectOf instanceof Event) && !(fSubjectOf instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'subjectOf': " + fSubjectOf);
-        }
+    public void setSubjectOf(Event fSubjectOf) {
+        this.fSubjectOf = fSubjectOf;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @param fSubjectOf CreativeWork value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public void setSubjectOf(CreativeWork fSubjectOf) {
         this.fSubjectOf = fSubjectOf;
     }
 
@@ -1682,10 +2219,20 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
+     * @param fAdditionalType URL value to set.
      */
     @Override
     public void setAdditionalType(URL fAdditionalType) {
         this.fAdditionalType = fAdditionalType;
+    }
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @param fAdditionalType java.net.URL value to set.
+     */
+    @Override
+    public void setAdditionalType(java.net.URL fAdditionalType) {
+        this.fAdditionalType = URL.of(fAdditionalType);
     }
 
     private Text fDisambiguatingDescription;
@@ -1703,10 +2250,20 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
+     * @param fDisambiguatingDescription Text value to set.
      */
     @Override
     public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
         this.fDisambiguatingDescription = fDisambiguatingDescription;
+    }
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @param fDisambiguatingDescription java.lang.String value to set.
+     */
+    @Override
+    public void setDisambiguatingDescription(java.lang.String fDisambiguatingDescription) {
+        this.fDisambiguatingDescription = Text.of(fDisambiguatingDescription);
     }
 
     private URL fSameAs;
@@ -1724,10 +2281,20 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
+     * @param fSameAs URL value to set.
      */
     @Override
     public void setSameAs(URL fSameAs) {
         this.fSameAs = fSameAs;
+    }
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @param fSameAs java.net.URL value to set.
+     */
+    @Override
+    public void setSameAs(java.net.URL fSameAs) {
+        this.fSameAs = URL.of(fSameAs);
     }
 
     private Object fIdentifier;
@@ -1747,12 +2314,50 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
+     * @param fIdentifier URL value to set.
      */
     @Override
-    public void setIdentifier(Object fIdentifier) {
-        if(!(fIdentifier instanceof URL) && !(fIdentifier instanceof Text) && !(fIdentifier instanceof PropertyValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
-        }
+    public void setIdentifier(URL fIdentifier) {
+        this.fIdentifier = fIdentifier;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param fIdentifier java.net.URL value to set.
+     */
+    @Override
+    public void setIdentifier(java.net.URL fIdentifier) {
+        this.fIdentifier = URL.of(fIdentifier);
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param fIdentifier Text value to set.
+     */
+    @Override
+    public void setIdentifier(Text fIdentifier) {
+        this.fIdentifier = fIdentifier;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param fIdentifier java.lang.String value to set.
+     */
+    @Override
+    public void setIdentifier(java.lang.String fIdentifier) {
+        this.fIdentifier = Text.of(fIdentifier);
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param fIdentifier PropertyValue value to set.
+     */
+    @Override
+    public void setIdentifier(PropertyValue fIdentifier) {
         this.fIdentifier = fIdentifier;
     }
 }

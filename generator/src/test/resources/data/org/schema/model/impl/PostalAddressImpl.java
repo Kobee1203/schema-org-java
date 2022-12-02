@@ -51,14 +51,32 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
     /**
      * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
      *
+     * @param fAddressCountry Country value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
     @Override
-    public void setAddressCountry(Object fAddressCountry) {
-        if(!(fAddressCountry instanceof Country) && !(fAddressCountry instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'addressCountry': " + fAddressCountry);
-        }
+    public void setAddressCountry(Country fAddressCountry) {
         this.fAddressCountry = fAddressCountry;
+    }
+    /**
+     * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
+     *
+     * @param fAddressCountry Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    @Override
+    public void setAddressCountry(Text fAddressCountry) {
+        this.fAddressCountry = fAddressCountry;
+    }
+    /**
+     * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
+     *
+     * @param fAddressCountry java.lang.String value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    @Override
+    public void setAddressCountry(java.lang.String fAddressCountry) {
+        this.fAddressCountry = Text.of(fAddressCountry);
     }
 
     private Text fAddressRegion;
@@ -77,11 +95,22 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
     /**
      * The region in which the locality is, and which is in the country. For example, California or another appropriate first-level [Administrative division](https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country) 
      *
+     * @param fAddressRegion Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
     @Override
     public void setAddressRegion(Text fAddressRegion) {
         this.fAddressRegion = fAddressRegion;
+    }
+    /**
+     * The region in which the locality is, and which is in the country. For example, California or another appropriate first-level [Administrative division](https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country) 
+     *
+     * @param fAddressRegion java.lang.String value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    @Override
+    public void setAddressRegion(java.lang.String fAddressRegion) {
+        this.fAddressRegion = Text.of(fAddressRegion);
     }
 
     private Text fAddressLocality;
@@ -99,10 +128,20 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
     /**
      * The locality in which the street address is, and which is in the region. For example, Mountain View.
      *
+     * @param fAddressLocality Text value to set.
      */
     @Override
     public void setAddressLocality(Text fAddressLocality) {
         this.fAddressLocality = fAddressLocality;
+    }
+    /**
+     * The locality in which the street address is, and which is in the region. For example, Mountain View.
+     *
+     * @param fAddressLocality java.lang.String value to set.
+     */
+    @Override
+    public void setAddressLocality(java.lang.String fAddressLocality) {
+        this.fAddressLocality = Text.of(fAddressLocality);
     }
 
     private Text fPostalCode;
@@ -121,11 +160,22 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
     /**
      * The postal code. For example, 94043.
      *
+     * @param fPostalCode Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
     @Override
     public void setPostalCode(Text fPostalCode) {
         this.fPostalCode = fPostalCode;
+    }
+    /**
+     * The postal code. For example, 94043.
+     *
+     * @param fPostalCode java.lang.String value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    @Override
+    public void setPostalCode(java.lang.String fPostalCode) {
+        this.fPostalCode = Text.of(fPostalCode);
     }
 
     private Text fPostOfficeBoxNumber;
@@ -143,10 +193,20 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
     /**
      * The post office box number for PO box addresses.
      *
+     * @param fPostOfficeBoxNumber Text value to set.
      */
     @Override
     public void setPostOfficeBoxNumber(Text fPostOfficeBoxNumber) {
         this.fPostOfficeBoxNumber = fPostOfficeBoxNumber;
+    }
+    /**
+     * The post office box number for PO box addresses.
+     *
+     * @param fPostOfficeBoxNumber java.lang.String value to set.
+     */
+    @Override
+    public void setPostOfficeBoxNumber(java.lang.String fPostOfficeBoxNumber) {
+        this.fPostOfficeBoxNumber = Text.of(fPostOfficeBoxNumber);
     }
 
     private Text fStreetAddress;
@@ -164,10 +224,20 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
     /**
      * The street address. For example, 1600 Amphitheatre Pkwy.
      *
+     * @param fStreetAddress Text value to set.
      */
     @Override
     public void setStreetAddress(Text fStreetAddress) {
         this.fStreetAddress = fStreetAddress;
+    }
+    /**
+     * The street address. For example, 1600 Amphitheatre Pkwy.
+     *
+     * @param fStreetAddress java.lang.String value to set.
+     */
+    @Override
+    public void setStreetAddress(java.lang.String fStreetAddress) {
+        this.fStreetAddress = Text.of(fStreetAddress);
     }
 
     private Text fTelephone;
@@ -185,10 +255,20 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
     /**
      * The telephone number.
      *
+     * @param fTelephone Text value to set.
      */
     @Override
     public void setTelephone(Text fTelephone) {
         this.fTelephone = fTelephone;
+    }
+    /**
+     * The telephone number.
+     *
+     * @param fTelephone java.lang.String value to set.
+     */
+    @Override
+    public void setTelephone(java.lang.String fTelephone) {
+        this.fTelephone = Text.of(fTelephone);
     }
 
     private OpeningHoursSpecification fHoursAvailable;
@@ -206,6 +286,7 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
     /**
      * The hours during which this service or contact is available.
      *
+     * @param fHoursAvailable OpeningHoursSpecification value to set.
      */
     @Override
     public void setHoursAvailable(OpeningHoursSpecification fHoursAvailable) {
@@ -227,10 +308,20 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
     /**
      * Email address.
      *
+     * @param fEmail Text value to set.
      */
     @Override
     public void setEmail(Text fEmail) {
         this.fEmail = fEmail;
+    }
+    /**
+     * Email address.
+     *
+     * @param fEmail java.lang.String value to set.
+     */
+    @Override
+    public void setEmail(java.lang.String fEmail) {
+        this.fEmail = Text.of(fEmail);
     }
 
     private ContactPointOption fContactOption;
@@ -248,6 +339,7 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
     /**
      * An option available on this contact point (e.g. a toll-free number or support for hearing-impaired callers).
      *
+     * @param fContactOption ContactPointOption value to set.
      */
     @Override
     public void setContactOption(ContactPointOption fContactOption) {
@@ -269,12 +361,28 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
     /**
      * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
      *
+     * @param fAvailableLanguage Text value to set.
      */
     @Override
-    public void setAvailableLanguage(Object fAvailableLanguage) {
-        if(!(fAvailableLanguage instanceof Text) && !(fAvailableLanguage instanceof Language)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'availableLanguage': " + fAvailableLanguage);
-        }
+    public void setAvailableLanguage(Text fAvailableLanguage) {
+        this.fAvailableLanguage = fAvailableLanguage;
+    }
+    /**
+     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
+     *
+     * @param fAvailableLanguage java.lang.String value to set.
+     */
+    @Override
+    public void setAvailableLanguage(java.lang.String fAvailableLanguage) {
+        this.fAvailableLanguage = Text.of(fAvailableLanguage);
+    }
+    /**
+     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
+     *
+     * @param fAvailableLanguage Language value to set.
+     */
+    @Override
+    public void setAvailableLanguage(Language fAvailableLanguage) {
         this.fAvailableLanguage = fAvailableLanguage;
     }
 
@@ -293,12 +401,28 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
     /**
      * The geographic area where the service is provided.
      *
+     * @param fServiceArea GeoShape value to set.
      */
     @Override
-    public void setServiceArea(Object fServiceArea) {
-        if(!(fServiceArea instanceof GeoShape) && !(fServiceArea instanceof AdministrativeArea) && !(fServiceArea instanceof Place)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'serviceArea': " + fServiceArea);
-        }
+    public void setServiceArea(GeoShape fServiceArea) {
+        this.fServiceArea = fServiceArea;
+    }
+    /**
+     * The geographic area where the service is provided.
+     *
+     * @param fServiceArea AdministrativeArea value to set.
+     */
+    @Override
+    public void setServiceArea(AdministrativeArea fServiceArea) {
+        this.fServiceArea = fServiceArea;
+    }
+    /**
+     * The geographic area where the service is provided.
+     *
+     * @param fServiceArea Place value to set.
+     */
+    @Override
+    public void setServiceArea(Place fServiceArea) {
         this.fServiceArea = fServiceArea;
     }
 
@@ -317,12 +441,46 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
     /**
      * The geographic area where a service or offered item is provided.
      *
+     * @param fAreaServed AdministrativeArea value to set.
      */
     @Override
-    public void setAreaServed(Object fAreaServed) {
-        if(!(fAreaServed instanceof AdministrativeArea) && !(fAreaServed instanceof GeoShape) && !(fAreaServed instanceof Text) && !(fAreaServed instanceof Place)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'areaServed': " + fAreaServed);
-        }
+    public void setAreaServed(AdministrativeArea fAreaServed) {
+        this.fAreaServed = fAreaServed;
+    }
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @param fAreaServed GeoShape value to set.
+     */
+    @Override
+    public void setAreaServed(GeoShape fAreaServed) {
+        this.fAreaServed = fAreaServed;
+    }
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @param fAreaServed Text value to set.
+     */
+    @Override
+    public void setAreaServed(Text fAreaServed) {
+        this.fAreaServed = fAreaServed;
+    }
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @param fAreaServed java.lang.String value to set.
+     */
+    @Override
+    public void setAreaServed(java.lang.String fAreaServed) {
+        this.fAreaServed = Text.of(fAreaServed);
+    }
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @param fAreaServed Place value to set.
+     */
+    @Override
+    public void setAreaServed(Place fAreaServed) {
         this.fAreaServed = fAreaServed;
     }
 
@@ -341,10 +499,20 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
     /**
      * A person or organization can have different contact points, for different purposes. For example, a sales contact point, a PR contact point and so on. This property is used to specify the kind of contact point.
      *
+     * @param fContactType Text value to set.
      */
     @Override
     public void setContactType(Text fContactType) {
         this.fContactType = fContactType;
+    }
+    /**
+     * A person or organization can have different contact points, for different purposes. For example, a sales contact point, a PR contact point and so on. This property is used to specify the kind of contact point.
+     *
+     * @param fContactType java.lang.String value to set.
+     */
+    @Override
+    public void setContactType(java.lang.String fContactType) {
+        this.fContactType = Text.of(fContactType);
     }
 
     private Object fProductSupported;
@@ -362,12 +530,28 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
     /**
      * The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. "iPhone") or a general category of products or services (e.g. "smartphones").
      *
+     * @param fProductSupported Text value to set.
      */
     @Override
-    public void setProductSupported(Object fProductSupported) {
-        if(!(fProductSupported instanceof Text) && !(fProductSupported instanceof Product)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'productSupported': " + fProductSupported);
-        }
+    public void setProductSupported(Text fProductSupported) {
+        this.fProductSupported = fProductSupported;
+    }
+    /**
+     * The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. "iPhone") or a general category of products or services (e.g. "smartphones").
+     *
+     * @param fProductSupported java.lang.String value to set.
+     */
+    @Override
+    public void setProductSupported(java.lang.String fProductSupported) {
+        this.fProductSupported = Text.of(fProductSupported);
+    }
+    /**
+     * The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. "iPhone") or a general category of products or services (e.g. "smartphones").
+     *
+     * @param fProductSupported Product value to set.
+     */
+    @Override
+    public void setProductSupported(Product fProductSupported) {
         this.fProductSupported = fProductSupported;
     }
 
@@ -386,10 +570,20 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
     /**
      * The fax number.
      *
+     * @param fFaxNumber Text value to set.
      */
     @Override
     public void setFaxNumber(Text fFaxNumber) {
         this.fFaxNumber = fFaxNumber;
+    }
+    /**
+     * The fax number.
+     *
+     * @param fFaxNumber java.lang.String value to set.
+     */
+    @Override
+    public void setFaxNumber(java.lang.String fFaxNumber) {
+        this.fFaxNumber = Text.of(fFaxNumber);
     }
 
     private Object fMainEntityOfPage;
@@ -407,13 +601,29 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
+     * @param fMainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
-        }
+    public void setMainEntityOfPage(CreativeWork fMainEntityOfPage) {
         this.fMainEntityOfPage = fMainEntityOfPage;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param fMainEntityOfPage URL value to set.
+     */
+    @Override
+    public void setMainEntityOfPage(URL fMainEntityOfPage) {
+        this.fMainEntityOfPage = fMainEntityOfPage;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param fMainEntityOfPage java.net.URL value to set.
+     */
+    @Override
+    public void setMainEntityOfPage(java.net.URL fMainEntityOfPage) {
+        this.fMainEntityOfPage = URL.of(fMainEntityOfPage);
     }
 
     private Text fAlternateName;
@@ -431,10 +641,20 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
     /**
      * An alias for the item.
      *
+     * @param fAlternateName Text value to set.
      */
     @Override
     public void setAlternateName(Text fAlternateName) {
         this.fAlternateName = fAlternateName;
+    }
+    /**
+     * An alias for the item.
+     *
+     * @param fAlternateName java.lang.String value to set.
+     */
+    @Override
+    public void setAlternateName(java.lang.String fAlternateName) {
+        this.fAlternateName = Text.of(fAlternateName);
     }
 
     private Text fName;
@@ -452,10 +672,20 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
     /**
      * The name of the item.
      *
+     * @param fName Text value to set.
      */
     @Override
     public void setName(Text fName) {
         this.fName = fName;
+    }
+    /**
+     * The name of the item.
+     *
+     * @param fName java.lang.String value to set.
+     */
+    @Override
+    public void setName(java.lang.String fName) {
+        this.fName = Text.of(fName);
     }
 
     private Action fPotentialAction;
@@ -473,6 +703,7 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      *
+     * @param fPotentialAction Action value to set.
      */
     @Override
     public void setPotentialAction(Action fPotentialAction) {
@@ -494,12 +725,28 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
+     * @param fImage URL value to set.
      */
     @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
+    public void setImage(URL fImage) {
+        this.fImage = fImage;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param fImage java.net.URL value to set.
+     */
+    @Override
+    public void setImage(java.net.URL fImage) {
+        this.fImage = URL.of(fImage);
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param fImage ImageObject value to set.
+     */
+    @Override
+    public void setImage(ImageObject fImage) {
         this.fImage = fImage;
     }
 
@@ -518,10 +765,20 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
     /**
      * URL of the item.
      *
+     * @param fUrl URL value to set.
      */
     @Override
     public void setUrl(URL fUrl) {
         this.fUrl = fUrl;
+    }
+    /**
+     * URL of the item.
+     *
+     * @param fUrl java.net.URL value to set.
+     */
+    @Override
+    public void setUrl(java.net.URL fUrl) {
+        this.fUrl = URL.of(fUrl);
     }
 
     private Text fDescription;
@@ -539,10 +796,20 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
     /**
      * A description of the item.
      *
+     * @param fDescription Text value to set.
      */
     @Override
     public void setDescription(Text fDescription) {
         this.fDescription = fDescription;
+    }
+    /**
+     * A description of the item.
+     *
+     * @param fDescription java.lang.String value to set.
+     */
+    @Override
+    public void setDescription(java.lang.String fDescription) {
+        this.fDescription = Text.of(fDescription);
     }
 
     private Object fSubjectOf;
@@ -561,13 +828,21 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
     /**
      * A CreativeWork or Event about this Thing.
      *
+     * @param fSubjectOf Event value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Object fSubjectOf) {
-        if(!(fSubjectOf instanceof Event) && !(fSubjectOf instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'subjectOf': " + fSubjectOf);
-        }
+    public void setSubjectOf(Event fSubjectOf) {
+        this.fSubjectOf = fSubjectOf;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @param fSubjectOf CreativeWork value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public void setSubjectOf(CreativeWork fSubjectOf) {
         this.fSubjectOf = fSubjectOf;
     }
 
@@ -586,10 +861,20 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
+     * @param fAdditionalType URL value to set.
      */
     @Override
     public void setAdditionalType(URL fAdditionalType) {
         this.fAdditionalType = fAdditionalType;
+    }
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @param fAdditionalType java.net.URL value to set.
+     */
+    @Override
+    public void setAdditionalType(java.net.URL fAdditionalType) {
+        this.fAdditionalType = URL.of(fAdditionalType);
     }
 
     private Text fDisambiguatingDescription;
@@ -607,10 +892,20 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
+     * @param fDisambiguatingDescription Text value to set.
      */
     @Override
     public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
         this.fDisambiguatingDescription = fDisambiguatingDescription;
+    }
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @param fDisambiguatingDescription java.lang.String value to set.
+     */
+    @Override
+    public void setDisambiguatingDescription(java.lang.String fDisambiguatingDescription) {
+        this.fDisambiguatingDescription = Text.of(fDisambiguatingDescription);
     }
 
     private URL fSameAs;
@@ -628,10 +923,20 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
+     * @param fSameAs URL value to set.
      */
     @Override
     public void setSameAs(URL fSameAs) {
         this.fSameAs = fSameAs;
+    }
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @param fSameAs java.net.URL value to set.
+     */
+    @Override
+    public void setSameAs(java.net.URL fSameAs) {
+        this.fSameAs = URL.of(fSameAs);
     }
 
     private Object fIdentifier;
@@ -651,12 +956,50 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
+     * @param fIdentifier URL value to set.
      */
     @Override
-    public void setIdentifier(Object fIdentifier) {
-        if(!(fIdentifier instanceof URL) && !(fIdentifier instanceof Text) && !(fIdentifier instanceof PropertyValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
-        }
+    public void setIdentifier(URL fIdentifier) {
+        this.fIdentifier = fIdentifier;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param fIdentifier java.net.URL value to set.
+     */
+    @Override
+    public void setIdentifier(java.net.URL fIdentifier) {
+        this.fIdentifier = URL.of(fIdentifier);
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param fIdentifier Text value to set.
+     */
+    @Override
+    public void setIdentifier(Text fIdentifier) {
+        this.fIdentifier = fIdentifier;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param fIdentifier java.lang.String value to set.
+     */
+    @Override
+    public void setIdentifier(java.lang.String fIdentifier) {
+        this.fIdentifier = Text.of(fIdentifier);
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param fIdentifier PropertyValue value to set.
+     */
+    @Override
+    public void setIdentifier(PropertyValue fIdentifier) {
         this.fIdentifier = fIdentifier;
     }
 }

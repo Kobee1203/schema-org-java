@@ -34,6 +34,7 @@ public interface ParcelDelivery extends Intangible {
     /**
      * Shipper's address.
      *
+     * @param fOriginAddress PostalAddress value to set.
      */
     void setOriginAddress(PostalAddress fOriginAddress);
 
@@ -47,8 +48,15 @@ public interface ParcelDelivery extends Intangible {
     /**
      * Shipper tracking number.
      *
+     * @param fTrackingNumber Text value to set.
      */
     void setTrackingNumber(Text fTrackingNumber);
+    /**
+     * Shipper tracking number.
+     *
+     * @param fTrackingNumber java.lang.String value to set.
+     */
+    void setTrackingNumber(java.lang.String fTrackingNumber);
 
     /**
      * Item(s) being shipped.
@@ -60,6 +68,7 @@ public interface ParcelDelivery extends Intangible {
     /**
      * Item(s) being shipped.
      *
+     * @param fItemShipped Product value to set.
      */
     void setItemShipped(Product fItemShipped);
 
@@ -76,11 +85,21 @@ public interface ParcelDelivery extends Intangible {
     /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
      *
+     * @param fProvider Organization value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
      */
-    void setProvider(Object fProvider);
+    void setProvider(Organization fProvider);
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @param fProvider Person value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     */
+    void setProvider(Person fProvider);
 
     /**
      * Tracking url for the parcel delivery.
@@ -92,8 +111,15 @@ public interface ParcelDelivery extends Intangible {
     /**
      * Tracking url for the parcel delivery.
      *
+     * @param fTrackingUrl URL value to set.
      */
     void setTrackingUrl(URL fTrackingUrl);
+    /**
+     * Tracking url for the parcel delivery.
+     *
+     * @param fTrackingUrl java.net.URL value to set.
+     */
+    void setTrackingUrl(java.net.URL fTrackingUrl);
 
     /**
      * Destination address.
@@ -105,6 +131,7 @@ public interface ParcelDelivery extends Intangible {
     /**
      * Destination address.
      *
+     * @param fDeliveryAddress PostalAddress value to set.
      */
     void setDeliveryAddress(PostalAddress fDeliveryAddress);
 
@@ -118,8 +145,27 @@ public interface ParcelDelivery extends Intangible {
     /**
      * The latest date the package may arrive.
      *
+     * @param fExpectedArrivalUntil Date value to set.
      */
-    void setExpectedArrivalUntil(Object fExpectedArrivalUntil);
+    void setExpectedArrivalUntil(Date fExpectedArrivalUntil);
+    /**
+     * The latest date the package may arrive.
+     *
+     * @param fExpectedArrivalUntil java.time.LocalDate value to set.
+     */
+    void setExpectedArrivalUntil(java.time.LocalDate fExpectedArrivalUntil);
+    /**
+     * The latest date the package may arrive.
+     *
+     * @param fExpectedArrivalUntil DateTime value to set.
+     */
+    void setExpectedArrivalUntil(DateTime fExpectedArrivalUntil);
+    /**
+     * The latest date the package may arrive.
+     *
+     * @param fExpectedArrivalUntil java.time.LocalDateTime value to set.
+     */
+    void setExpectedArrivalUntil(java.time.LocalDateTime fExpectedArrivalUntil);
 
     /**
      * New entry added as the package passes through each leg of its journey (from shipment to final delivery).
@@ -131,6 +177,7 @@ public interface ParcelDelivery extends Intangible {
     /**
      * New entry added as the package passes through each leg of its journey (from shipment to final delivery).
      *
+     * @param fDeliveryStatus DeliveryEvent value to set.
      */
     void setDeliveryStatus(DeliveryEvent fDeliveryStatus);
 
@@ -144,8 +191,27 @@ public interface ParcelDelivery extends Intangible {
     /**
      * The earliest date the package may arrive.
      *
+     * @param fExpectedArrivalFrom Date value to set.
      */
-    void setExpectedArrivalFrom(Object fExpectedArrivalFrom);
+    void setExpectedArrivalFrom(Date fExpectedArrivalFrom);
+    /**
+     * The earliest date the package may arrive.
+     *
+     * @param fExpectedArrivalFrom java.time.LocalDate value to set.
+     */
+    void setExpectedArrivalFrom(java.time.LocalDate fExpectedArrivalFrom);
+    /**
+     * The earliest date the package may arrive.
+     *
+     * @param fExpectedArrivalFrom DateTime value to set.
+     */
+    void setExpectedArrivalFrom(DateTime fExpectedArrivalFrom);
+    /**
+     * The earliest date the package may arrive.
+     *
+     * @param fExpectedArrivalFrom java.time.LocalDateTime value to set.
+     */
+    void setExpectedArrivalFrom(java.time.LocalDateTime fExpectedArrivalFrom);
 
     /**
      * 'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.
@@ -157,6 +223,7 @@ public interface ParcelDelivery extends Intangible {
     /**
      * 'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.
      *
+     * @param fCarrier Organization value to set.
      */
     void setCarrier(Organization fCarrier);
 
@@ -170,6 +237,7 @@ public interface ParcelDelivery extends Intangible {
     /**
      * Method used for delivery or shipping.
      *
+     * @param fHasDeliveryMethod DeliveryMethod value to set.
      */
     void setHasDeliveryMethod(DeliveryMethod fHasDeliveryMethod);
 
@@ -183,6 +251,7 @@ public interface ParcelDelivery extends Intangible {
     /**
      * The overall order the items in this delivery were included in.
      *
+     * @param fPartOfOrder Order value to set.
      */
     void setPartOfOrder(Order fPartOfOrder);
 }

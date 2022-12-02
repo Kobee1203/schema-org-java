@@ -65,6 +65,7 @@ public class RadioBroadcastServiceImpl extends com.weedow.schemaorg.commons.mode
     /**
      * A broadcast service to which the broadcast service may belong to such as regional variations of a national channel.
      *
+     * @param fParentService BroadcastService value to set.
      */
     @Override
     public void setParentService(BroadcastService fParentService) {
@@ -86,10 +87,20 @@ public class RadioBroadcastServiceImpl extends com.weedow.schemaorg.commons.mode
     /**
      * The name displayed in the channel guide. For many US affiliates, it is the network name.
      *
+     * @param fBroadcastDisplayName Text value to set.
      */
     @Override
     public void setBroadcastDisplayName(Text fBroadcastDisplayName) {
         this.fBroadcastDisplayName = fBroadcastDisplayName;
+    }
+    /**
+     * The name displayed in the channel guide. For many US affiliates, it is the network name.
+     *
+     * @param fBroadcastDisplayName java.lang.String value to set.
+     */
+    @Override
+    public void setBroadcastDisplayName(java.lang.String fBroadcastDisplayName) {
+        this.fBroadcastDisplayName = Text.of(fBroadcastDisplayName);
     }
 
     private Text fVideoFormat;
@@ -107,10 +118,20 @@ public class RadioBroadcastServiceImpl extends com.weedow.schemaorg.commons.mode
     /**
      * The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).
      *
+     * @param fVideoFormat Text value to set.
      */
     @Override
     public void setVideoFormat(Text fVideoFormat) {
         this.fVideoFormat = fVideoFormat;
+    }
+    /**
+     * The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).
+     *
+     * @param fVideoFormat java.lang.String value to set.
+     */
+    @Override
+    public void setVideoFormat(java.lang.String fVideoFormat) {
+        this.fVideoFormat = Text.of(fVideoFormat);
     }
 
     private Text fBroadcastTimezone;
@@ -128,10 +149,20 @@ public class RadioBroadcastServiceImpl extends com.weedow.schemaorg.commons.mode
     /**
      * The timezone in [ISO 8601 format](http://en.wikipedia.org/wiki/ISO_8601) for which the service bases its broadcasts
      *
+     * @param fBroadcastTimezone Text value to set.
      */
     @Override
     public void setBroadcastTimezone(Text fBroadcastTimezone) {
         this.fBroadcastTimezone = fBroadcastTimezone;
+    }
+    /**
+     * The timezone in [ISO 8601 format](http://en.wikipedia.org/wiki/ISO_8601) for which the service bases its broadcasts
+     *
+     * @param fBroadcastTimezone java.lang.String value to set.
+     */
+    @Override
+    public void setBroadcastTimezone(java.lang.String fBroadcastTimezone) {
+        this.fBroadcastTimezone = Text.of(fBroadcastTimezone);
     }
 
     private Object fBroadcastFrequency;
@@ -150,14 +181,32 @@ public class RadioBroadcastServiceImpl extends com.weedow.schemaorg.commons.mode
     /**
      * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
      *
+     * @param fBroadcastFrequency BroadcastFrequencySpecification value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
      */
     @Override
-    public void setBroadcastFrequency(Object fBroadcastFrequency) {
-        if(!(fBroadcastFrequency instanceof BroadcastFrequencySpecification) && !(fBroadcastFrequency instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'broadcastFrequency': " + fBroadcastFrequency);
-        }
+    public void setBroadcastFrequency(BroadcastFrequencySpecification fBroadcastFrequency) {
         this.fBroadcastFrequency = fBroadcastFrequency;
+    }
+    /**
+     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
+     *
+     * @param fBroadcastFrequency Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
+     */
+    @Override
+    public void setBroadcastFrequency(Text fBroadcastFrequency) {
+        this.fBroadcastFrequency = fBroadcastFrequency;
+    }
+    /**
+     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
+     *
+     * @param fBroadcastFrequency java.lang.String value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
+     */
+    @Override
+    public void setBroadcastFrequency(java.lang.String fBroadcastFrequency) {
+        this.fBroadcastFrequency = Text.of(fBroadcastFrequency);
     }
 
     private Text fCallSign;
@@ -177,12 +226,24 @@ public class RadioBroadcastServiceImpl extends com.weedow.schemaorg.commons.mode
     /**
      * A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.
      *
+     * @param fCallSign Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2109">https://github.com/schemaorg/schemaorg/issues/2109</a>
      */
     @Override
     public void setCallSign(Text fCallSign) {
         this.fCallSign = fCallSign;
+    }
+    /**
+     * A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.
+     *
+     * @param fCallSign java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2109">https://github.com/schemaorg/schemaorg/issues/2109</a>
+     */
+    @Override
+    public void setCallSign(java.lang.String fCallSign) {
+        this.fCallSign = Text.of(fCallSign);
     }
 
     private Object fInLanguage;
@@ -201,13 +262,31 @@ public class RadioBroadcastServiceImpl extends com.weedow.schemaorg.commons.mode
     /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
      *
+     * @param fInLanguage Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
      */
     @Override
-    public void setInLanguage(Object fInLanguage) {
-        if(!(fInLanguage instanceof Text) && !(fInLanguage instanceof Language)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'inLanguage': " + fInLanguage);
-        }
+    public void setInLanguage(Text fInLanguage) {
+        this.fInLanguage = fInLanguage;
+    }
+    /**
+     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     *
+     * @param fInLanguage java.lang.String value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
+     */
+    @Override
+    public void setInLanguage(java.lang.String fInLanguage) {
+        this.fInLanguage = Text.of(fInLanguage);
+    }
+    /**
+     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     *
+     * @param fInLanguage Language value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
+     */
+    @Override
+    public void setInLanguage(Language fInLanguage) {
         this.fInLanguage = fInLanguage;
     }
 
@@ -227,6 +306,7 @@ public class RadioBroadcastServiceImpl extends com.weedow.schemaorg.commons.mode
     /**
      * A broadcast channel of a broadcast service.
      *
+     * @param fHasBroadcastChannel BroadcastChannel value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
      */
     @Override
@@ -249,6 +329,7 @@ public class RadioBroadcastServiceImpl extends com.weedow.schemaorg.commons.mode
     /**
      * The organization owning or operating the broadcast service.
      *
+     * @param fBroadcaster Organization value to set.
      */
     @Override
     public void setBroadcaster(Organization fBroadcaster) {
@@ -270,6 +351,7 @@ public class RadioBroadcastServiceImpl extends com.weedow.schemaorg.commons.mode
     /**
      * The media network(s) whose content is broadcast on this station.
      *
+     * @param fBroadcastAffiliateOf Organization value to set.
      */
     @Override
     public void setBroadcastAffiliateOf(Organization fBroadcastAffiliateOf) {
@@ -291,6 +373,7 @@ public class RadioBroadcastServiceImpl extends com.weedow.schemaorg.commons.mode
     /**
      * The area within which users can expect to reach the broadcast service.
      *
+     * @param fArea Place value to set.
      */
     @Override
     public void setArea(Place fArea) {
@@ -312,6 +395,7 @@ public class RadioBroadcastServiceImpl extends com.weedow.schemaorg.commons.mode
     /**
      * A review of the item.
      *
+     * @param fReview Review value to set.
      */
     @Override
     public void setReview(Review fReview) {
@@ -333,10 +417,20 @@ public class RadioBroadcastServiceImpl extends com.weedow.schemaorg.commons.mode
     /**
      * An award won by or for this item.
      *
+     * @param fAward Text value to set.
      */
     @Override
     public void setAward(Text fAward) {
         this.fAward = fAward;
+    }
+    /**
+     * An award won by or for this item.
+     *
+     * @param fAward java.lang.String value to set.
+     */
+    @Override
+    public void setAward(java.lang.String fAward) {
+        this.fAward = Text.of(fAward);
     }
 
     private Audience fServiceAudience;
@@ -354,6 +448,7 @@ public class RadioBroadcastServiceImpl extends com.weedow.schemaorg.commons.mode
     /**
      * The audience eligible for this service.
      *
+     * @param fServiceAudience Audience value to set.
      */
     @Override
     public void setServiceAudience(Audience fServiceAudience) {
@@ -377,14 +472,78 @@ public class RadioBroadcastServiceImpl extends com.weedow.schemaorg.commons.mode
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
+     * @param fCategory URL value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
     @Override
-    public void setCategory(Object fCategory) {
-        if(!(fCategory instanceof URL) && !(fCategory instanceof Text) && !(fCategory instanceof PhysicalActivityCategory) && !(fCategory instanceof Thing) && !(fCategory instanceof CategoryCode)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'category': " + fCategory);
-        }
+    public void setCategory(URL fCategory) {
+        this.fCategory = fCategory;
+    }
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @param fCategory java.net.URL value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    @Override
+    public void setCategory(java.net.URL fCategory) {
+        this.fCategory = URL.of(fCategory);
+    }
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @param fCategory Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    @Override
+    public void setCategory(Text fCategory) {
+        this.fCategory = fCategory;
+    }
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @param fCategory java.lang.String value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    @Override
+    public void setCategory(java.lang.String fCategory) {
+        this.fCategory = Text.of(fCategory);
+    }
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @param fCategory PhysicalActivityCategory value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    @Override
+    public void setCategory(PhysicalActivityCategory fCategory) {
+        this.fCategory = fCategory;
+    }
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @param fCategory Thing value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    @Override
+    public void setCategory(Thing fCategory) {
+        this.fCategory = fCategory;
+    }
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @param fCategory CategoryCode value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    @Override
+    public void setCategory(CategoryCode fCategory) {
         this.fCategory = fCategory;
     }
 
@@ -403,6 +562,7 @@ public class RadioBroadcastServiceImpl extends com.weedow.schemaorg.commons.mode
     /**
      * The hours during which this service or contact is available.
      *
+     * @param fHoursAvailable OpeningHoursSpecification value to set.
      */
     @Override
     public void setHoursAvailable(OpeningHoursSpecification fHoursAvailable) {
@@ -424,6 +584,7 @@ public class RadioBroadcastServiceImpl extends com.weedow.schemaorg.commons.mode
     /**
      * An intended audience, i.e. a group for whom something was created.
      *
+     * @param fAudience Audience value to set.
      */
     @Override
     public void setAudience(Audience fAudience) {
@@ -448,13 +609,22 @@ public class RadioBroadcastServiceImpl extends com.weedow.schemaorg.commons.mode
      * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      *
+     * @param fOffers Offer value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
     @Override
-    public void setOffers(Object fOffers) {
-        if(!(fOffers instanceof Offer) && !(fOffers instanceof Demand)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'offers': " + fOffers);
-        }
+    public void setOffers(Offer fOffers) {
+        this.fOffers = fOffers;
+    }
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     *
+     * @param fOffers Demand value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public void setOffers(Demand fOffers) {
         this.fOffers = fOffers;
     }
 
@@ -473,6 +643,7 @@ public class RadioBroadcastServiceImpl extends com.weedow.schemaorg.commons.mode
     /**
      * The tangible thing generated by the service, e.g. a passport, permit, etc.
      *
+     * @param fServiceOutput Thing value to set.
      */
     @Override
     public void setServiceOutput(Thing fServiceOutput) {
@@ -497,15 +668,25 @@ public class RadioBroadcastServiceImpl extends com.weedow.schemaorg.commons.mode
     /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
      *
+     * @param fProvider Organization value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
      */
     @Override
-    public void setProvider(Object fProvider) {
-        if(!(fProvider instanceof Organization) && !(fProvider instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'provider': " + fProvider);
-        }
+    public void setProvider(Organization fProvider) {
+        this.fProvider = fProvider;
+    }
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @param fProvider Person value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     */
+    @Override
+    public void setProvider(Person fProvider) {
         this.fProvider = fProvider;
     }
 
@@ -526,15 +707,46 @@ public class RadioBroadcastServiceImpl extends com.weedow.schemaorg.commons.mode
     /**
      * Human-readable terms of service documentation.
      *
+     * @param fTermsOfService URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1423">https://github.com/schemaorg/schemaorg/issues/1423</a>
      */
     @Override
-    public void setTermsOfService(Object fTermsOfService) {
-        if(!(fTermsOfService instanceof URL) && !(fTermsOfService instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'termsOfService': " + fTermsOfService);
-        }
+    public void setTermsOfService(URL fTermsOfService) {
         this.fTermsOfService = fTermsOfService;
+    }
+    /**
+     * Human-readable terms of service documentation.
+     *
+     * @param fTermsOfService java.net.URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1423">https://github.com/schemaorg/schemaorg/issues/1423</a>
+     */
+    @Override
+    public void setTermsOfService(java.net.URL fTermsOfService) {
+        this.fTermsOfService = URL.of(fTermsOfService);
+    }
+    /**
+     * Human-readable terms of service documentation.
+     *
+     * @param fTermsOfService Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1423">https://github.com/schemaorg/schemaorg/issues/1423</a>
+     */
+    @Override
+    public void setTermsOfService(Text fTermsOfService) {
+        this.fTermsOfService = fTermsOfService;
+    }
+    /**
+     * Human-readable terms of service documentation.
+     *
+     * @param fTermsOfService java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1423">https://github.com/schemaorg/schemaorg/issues/1423</a>
+     */
+    @Override
+    public void setTermsOfService(java.lang.String fTermsOfService) {
+        this.fTermsOfService = Text.of(fTermsOfService);
     }
 
     private Text fProviderMobility;
@@ -552,10 +764,20 @@ public class RadioBroadcastServiceImpl extends com.weedow.schemaorg.commons.mode
     /**
      * Indicates the mobility of a provided service (e.g. 'static', 'dynamic').
      *
+     * @param fProviderMobility Text value to set.
      */
     @Override
     public void setProviderMobility(Text fProviderMobility) {
         this.fProviderMobility = fProviderMobility;
+    }
+    /**
+     * Indicates the mobility of a provided service (e.g. 'static', 'dynamic').
+     *
+     * @param fProviderMobility java.lang.String value to set.
+     */
+    @Override
+    public void setProviderMobility(java.lang.String fProviderMobility) {
+        this.fProviderMobility = Text.of(fProviderMobility);
     }
 
     private Object fBroker;
@@ -573,12 +795,19 @@ public class RadioBroadcastServiceImpl extends com.weedow.schemaorg.commons.mode
     /**
      * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
      *
+     * @param fBroker Person value to set.
      */
     @Override
-    public void setBroker(Object fBroker) {
-        if(!(fBroker instanceof Person) && !(fBroker instanceof Organization)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'broker': " + fBroker);
-        }
+    public void setBroker(Person fBroker) {
+        this.fBroker = fBroker;
+    }
+    /**
+     * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
+     *
+     * @param fBroker Organization value to set.
+     */
+    @Override
+    public void setBroker(Organization fBroker) {
         this.fBroker = fBroker;
     }
 
@@ -597,6 +826,7 @@ public class RadioBroadcastServiceImpl extends com.weedow.schemaorg.commons.mode
     /**
      * The overall rating, based on a collection of reviews or ratings, of the item.
      *
+     * @param fAggregateRating AggregateRating value to set.
      */
     @Override
     public void setAggregateRating(AggregateRating fAggregateRating) {
@@ -619,13 +849,21 @@ public class RadioBroadcastServiceImpl extends com.weedow.schemaorg.commons.mode
     /**
      * A pointer to another, functionally similar product (or multiple products).
      *
+     * @param fIsSimilarTo Service value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setIsSimilarTo(Object fIsSimilarTo) {
-        if(!(fIsSimilarTo instanceof Service) && !(fIsSimilarTo instanceof Product)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'isSimilarTo': " + fIsSimilarTo);
-        }
+    public void setIsSimilarTo(Service fIsSimilarTo) {
+        this.fIsSimilarTo = fIsSimilarTo;
+    }
+    /**
+     * A pointer to another, functionally similar product (or multiple products).
+     *
+     * @param fIsSimilarTo Product value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setIsSimilarTo(Product fIsSimilarTo) {
         this.fIsSimilarTo = fIsSimilarTo;
     }
 
@@ -644,6 +882,7 @@ public class RadioBroadcastServiceImpl extends com.weedow.schemaorg.commons.mode
     /**
      * A means of accessing the service (e.g. a phone bank, a web site, a location, etc.).
      *
+     * @param fAvailableChannel ServiceChannel value to set.
      */
     @Override
     public void setAvailableChannel(ServiceChannel fAvailableChannel) {
@@ -665,10 +904,20 @@ public class RadioBroadcastServiceImpl extends com.weedow.schemaorg.commons.mode
     /**
      * A slogan or motto associated with the item.
      *
+     * @param fSlogan Text value to set.
      */
     @Override
     public void setSlogan(Text fSlogan) {
         this.fSlogan = fSlogan;
+    }
+    /**
+     * A slogan or motto associated with the item.
+     *
+     * @param fSlogan java.lang.String value to set.
+     */
+    @Override
+    public void setSlogan(java.lang.String fSlogan) {
+        this.fSlogan = Text.of(fSlogan);
     }
 
     private Object fBrand;
@@ -686,12 +935,19 @@ public class RadioBroadcastServiceImpl extends com.weedow.schemaorg.commons.mode
     /**
      * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
      *
+     * @param fBrand Organization value to set.
      */
     @Override
-    public void setBrand(Object fBrand) {
-        if(!(fBrand instanceof Organization) && !(fBrand instanceof Brand)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'brand': " + fBrand);
-        }
+    public void setBrand(Organization fBrand) {
+        this.fBrand = fBrand;
+    }
+    /**
+     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     *
+     * @param fBrand Brand value to set.
+     */
+    @Override
+    public void setBrand(Brand fBrand) {
         this.fBrand = fBrand;
     }
 
@@ -711,13 +967,31 @@ public class RadioBroadcastServiceImpl extends com.weedow.schemaorg.commons.mode
     /**
      * An associated logo.
      *
+     * @param fLogo URL value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setLogo(Object fLogo) {
-        if(!(fLogo instanceof URL) && !(fLogo instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'logo': " + fLogo);
-        }
+    public void setLogo(URL fLogo) {
+        this.fLogo = fLogo;
+    }
+    /**
+     * An associated logo.
+     *
+     * @param fLogo java.net.URL value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setLogo(java.net.URL fLogo) {
+        this.fLogo = URL.of(fLogo);
+    }
+    /**
+     * An associated logo.
+     *
+     * @param fLogo ImageObject value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setLogo(ImageObject fLogo) {
         this.fLogo = fLogo;
     }
 
@@ -736,6 +1010,7 @@ public class RadioBroadcastServiceImpl extends com.weedow.schemaorg.commons.mode
     /**
      * The tangible thing generated by the service, e.g. a passport, permit, etc.
      *
+     * @param fProduces Thing value to set.
      */
     @Override
     public void setProduces(Thing fProduces) {
@@ -757,12 +1032,28 @@ public class RadioBroadcastServiceImpl extends com.weedow.schemaorg.commons.mode
     /**
      * The geographic area where the service is provided.
      *
+     * @param fServiceArea GeoShape value to set.
      */
     @Override
-    public void setServiceArea(Object fServiceArea) {
-        if(!(fServiceArea instanceof GeoShape) && !(fServiceArea instanceof AdministrativeArea) && !(fServiceArea instanceof Place)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'serviceArea': " + fServiceArea);
-        }
+    public void setServiceArea(GeoShape fServiceArea) {
+        this.fServiceArea = fServiceArea;
+    }
+    /**
+     * The geographic area where the service is provided.
+     *
+     * @param fServiceArea AdministrativeArea value to set.
+     */
+    @Override
+    public void setServiceArea(AdministrativeArea fServiceArea) {
+        this.fServiceArea = fServiceArea;
+    }
+    /**
+     * The geographic area where the service is provided.
+     *
+     * @param fServiceArea Place value to set.
+     */
+    @Override
+    public void setServiceArea(Place fServiceArea) {
         this.fServiceArea = fServiceArea;
     }
 
@@ -781,13 +1072,29 @@ public class RadioBroadcastServiceImpl extends com.weedow.schemaorg.commons.mode
     /**
      * The type of service being offered, e.g. veterans' benefits, emergency relief, etc.
      *
+     * @param fServiceType GovernmentBenefitsType value to set.
      */
     @Override
-    public void setServiceType(Object fServiceType) {
-        if(!(fServiceType instanceof GovernmentBenefitsType) && !(fServiceType instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'serviceType': " + fServiceType);
-        }
+    public void setServiceType(GovernmentBenefitsType fServiceType) {
         this.fServiceType = fServiceType;
+    }
+    /**
+     * The type of service being offered, e.g. veterans' benefits, emergency relief, etc.
+     *
+     * @param fServiceType Text value to set.
+     */
+    @Override
+    public void setServiceType(Text fServiceType) {
+        this.fServiceType = fServiceType;
+    }
+    /**
+     * The type of service being offered, e.g. veterans' benefits, emergency relief, etc.
+     *
+     * @param fServiceType java.lang.String value to set.
+     */
+    @Override
+    public void setServiceType(java.lang.String fServiceType) {
+        this.fServiceType = Text.of(fServiceType);
     }
 
     private Object fAreaServed;
@@ -805,12 +1112,46 @@ public class RadioBroadcastServiceImpl extends com.weedow.schemaorg.commons.mode
     /**
      * The geographic area where a service or offered item is provided.
      *
+     * @param fAreaServed AdministrativeArea value to set.
      */
     @Override
-    public void setAreaServed(Object fAreaServed) {
-        if(!(fAreaServed instanceof AdministrativeArea) && !(fAreaServed instanceof GeoShape) && !(fAreaServed instanceof Text) && !(fAreaServed instanceof Place)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'areaServed': " + fAreaServed);
-        }
+    public void setAreaServed(AdministrativeArea fAreaServed) {
+        this.fAreaServed = fAreaServed;
+    }
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @param fAreaServed GeoShape value to set.
+     */
+    @Override
+    public void setAreaServed(GeoShape fAreaServed) {
+        this.fAreaServed = fAreaServed;
+    }
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @param fAreaServed Text value to set.
+     */
+    @Override
+    public void setAreaServed(Text fAreaServed) {
+        this.fAreaServed = fAreaServed;
+    }
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @param fAreaServed java.lang.String value to set.
+     */
+    @Override
+    public void setAreaServed(java.lang.String fAreaServed) {
+        this.fAreaServed = Text.of(fAreaServed);
+    }
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @param fAreaServed Place value to set.
+     */
+    @Override
+    public void setAreaServed(Place fAreaServed) {
         this.fAreaServed = fAreaServed;
     }
 
@@ -830,13 +1171,21 @@ public class RadioBroadcastServiceImpl extends com.weedow.schemaorg.commons.mode
     /**
      * A pointer to another, somehow related product (or multiple products).
      *
+     * @param fIsRelatedTo Service value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setIsRelatedTo(Object fIsRelatedTo) {
-        if(!(fIsRelatedTo instanceof Service) && !(fIsRelatedTo instanceof Product)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'isRelatedTo': " + fIsRelatedTo);
-        }
+    public void setIsRelatedTo(Service fIsRelatedTo) {
+        this.fIsRelatedTo = fIsRelatedTo;
+    }
+    /**
+     * A pointer to another, somehow related product (or multiple products).
+     *
+     * @param fIsRelatedTo Product value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setIsRelatedTo(Product fIsRelatedTo) {
         this.fIsRelatedTo = fIsRelatedTo;
     }
 
@@ -855,6 +1204,7 @@ public class RadioBroadcastServiceImpl extends com.weedow.schemaorg.commons.mode
     /**
      * Indicates an OfferCatalog listing for this Organization, Person, or Service.
      *
+     * @param fHasOfferCatalog OfferCatalog value to set.
      */
     @Override
     public void setHasOfferCatalog(OfferCatalog fHasOfferCatalog) {
@@ -876,13 +1226,29 @@ public class RadioBroadcastServiceImpl extends com.weedow.schemaorg.commons.mode
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
+     * @param fMainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
-        }
+    public void setMainEntityOfPage(CreativeWork fMainEntityOfPage) {
         this.fMainEntityOfPage = fMainEntityOfPage;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param fMainEntityOfPage URL value to set.
+     */
+    @Override
+    public void setMainEntityOfPage(URL fMainEntityOfPage) {
+        this.fMainEntityOfPage = fMainEntityOfPage;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param fMainEntityOfPage java.net.URL value to set.
+     */
+    @Override
+    public void setMainEntityOfPage(java.net.URL fMainEntityOfPage) {
+        this.fMainEntityOfPage = URL.of(fMainEntityOfPage);
     }
 
     private Text fAlternateName;
@@ -900,10 +1266,20 @@ public class RadioBroadcastServiceImpl extends com.weedow.schemaorg.commons.mode
     /**
      * An alias for the item.
      *
+     * @param fAlternateName Text value to set.
      */
     @Override
     public void setAlternateName(Text fAlternateName) {
         this.fAlternateName = fAlternateName;
+    }
+    /**
+     * An alias for the item.
+     *
+     * @param fAlternateName java.lang.String value to set.
+     */
+    @Override
+    public void setAlternateName(java.lang.String fAlternateName) {
+        this.fAlternateName = Text.of(fAlternateName);
     }
 
     private Text fName;
@@ -921,10 +1297,20 @@ public class RadioBroadcastServiceImpl extends com.weedow.schemaorg.commons.mode
     /**
      * The name of the item.
      *
+     * @param fName Text value to set.
      */
     @Override
     public void setName(Text fName) {
         this.fName = fName;
+    }
+    /**
+     * The name of the item.
+     *
+     * @param fName java.lang.String value to set.
+     */
+    @Override
+    public void setName(java.lang.String fName) {
+        this.fName = Text.of(fName);
     }
 
     private Action fPotentialAction;
@@ -942,6 +1328,7 @@ public class RadioBroadcastServiceImpl extends com.weedow.schemaorg.commons.mode
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      *
+     * @param fPotentialAction Action value to set.
      */
     @Override
     public void setPotentialAction(Action fPotentialAction) {
@@ -963,12 +1350,28 @@ public class RadioBroadcastServiceImpl extends com.weedow.schemaorg.commons.mode
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
+     * @param fImage URL value to set.
      */
     @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
+    public void setImage(URL fImage) {
+        this.fImage = fImage;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param fImage java.net.URL value to set.
+     */
+    @Override
+    public void setImage(java.net.URL fImage) {
+        this.fImage = URL.of(fImage);
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param fImage ImageObject value to set.
+     */
+    @Override
+    public void setImage(ImageObject fImage) {
         this.fImage = fImage;
     }
 
@@ -987,10 +1390,20 @@ public class RadioBroadcastServiceImpl extends com.weedow.schemaorg.commons.mode
     /**
      * URL of the item.
      *
+     * @param fUrl URL value to set.
      */
     @Override
     public void setUrl(URL fUrl) {
         this.fUrl = fUrl;
+    }
+    /**
+     * URL of the item.
+     *
+     * @param fUrl java.net.URL value to set.
+     */
+    @Override
+    public void setUrl(java.net.URL fUrl) {
+        this.fUrl = URL.of(fUrl);
     }
 
     private Text fDescription;
@@ -1008,10 +1421,20 @@ public class RadioBroadcastServiceImpl extends com.weedow.schemaorg.commons.mode
     /**
      * A description of the item.
      *
+     * @param fDescription Text value to set.
      */
     @Override
     public void setDescription(Text fDescription) {
         this.fDescription = fDescription;
+    }
+    /**
+     * A description of the item.
+     *
+     * @param fDescription java.lang.String value to set.
+     */
+    @Override
+    public void setDescription(java.lang.String fDescription) {
+        this.fDescription = Text.of(fDescription);
     }
 
     private Object fSubjectOf;
@@ -1030,13 +1453,21 @@ public class RadioBroadcastServiceImpl extends com.weedow.schemaorg.commons.mode
     /**
      * A CreativeWork or Event about this Thing.
      *
+     * @param fSubjectOf Event value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Object fSubjectOf) {
-        if(!(fSubjectOf instanceof Event) && !(fSubjectOf instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'subjectOf': " + fSubjectOf);
-        }
+    public void setSubjectOf(Event fSubjectOf) {
+        this.fSubjectOf = fSubjectOf;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @param fSubjectOf CreativeWork value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public void setSubjectOf(CreativeWork fSubjectOf) {
         this.fSubjectOf = fSubjectOf;
     }
 
@@ -1055,10 +1486,20 @@ public class RadioBroadcastServiceImpl extends com.weedow.schemaorg.commons.mode
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
+     * @param fAdditionalType URL value to set.
      */
     @Override
     public void setAdditionalType(URL fAdditionalType) {
         this.fAdditionalType = fAdditionalType;
+    }
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @param fAdditionalType java.net.URL value to set.
+     */
+    @Override
+    public void setAdditionalType(java.net.URL fAdditionalType) {
+        this.fAdditionalType = URL.of(fAdditionalType);
     }
 
     private Text fDisambiguatingDescription;
@@ -1076,10 +1517,20 @@ public class RadioBroadcastServiceImpl extends com.weedow.schemaorg.commons.mode
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
+     * @param fDisambiguatingDescription Text value to set.
      */
     @Override
     public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
         this.fDisambiguatingDescription = fDisambiguatingDescription;
+    }
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @param fDisambiguatingDescription java.lang.String value to set.
+     */
+    @Override
+    public void setDisambiguatingDescription(java.lang.String fDisambiguatingDescription) {
+        this.fDisambiguatingDescription = Text.of(fDisambiguatingDescription);
     }
 
     private URL fSameAs;
@@ -1097,10 +1548,20 @@ public class RadioBroadcastServiceImpl extends com.weedow.schemaorg.commons.mode
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
+     * @param fSameAs URL value to set.
      */
     @Override
     public void setSameAs(URL fSameAs) {
         this.fSameAs = fSameAs;
+    }
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @param fSameAs java.net.URL value to set.
+     */
+    @Override
+    public void setSameAs(java.net.URL fSameAs) {
+        this.fSameAs = URL.of(fSameAs);
     }
 
     private Object fIdentifier;
@@ -1120,12 +1581,50 @@ public class RadioBroadcastServiceImpl extends com.weedow.schemaorg.commons.mode
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
+     * @param fIdentifier URL value to set.
      */
     @Override
-    public void setIdentifier(Object fIdentifier) {
-        if(!(fIdentifier instanceof URL) && !(fIdentifier instanceof Text) && !(fIdentifier instanceof PropertyValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
-        }
+    public void setIdentifier(URL fIdentifier) {
+        this.fIdentifier = fIdentifier;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param fIdentifier java.net.URL value to set.
+     */
+    @Override
+    public void setIdentifier(java.net.URL fIdentifier) {
+        this.fIdentifier = URL.of(fIdentifier);
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param fIdentifier Text value to set.
+     */
+    @Override
+    public void setIdentifier(Text fIdentifier) {
+        this.fIdentifier = fIdentifier;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param fIdentifier java.lang.String value to set.
+     */
+    @Override
+    public void setIdentifier(java.lang.String fIdentifier) {
+        this.fIdentifier = Text.of(fIdentifier);
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param fIdentifier PropertyValue value to set.
+     */
+    @Override
+    public void setIdentifier(PropertyValue fIdentifier) {
         this.fIdentifier = fIdentifier;
     }
 }

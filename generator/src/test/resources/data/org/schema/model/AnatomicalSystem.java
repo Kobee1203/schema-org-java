@@ -30,6 +30,7 @@ public interface AnatomicalSystem extends MedicalEntity {
     /**
      * A medical therapy related to this anatomy.
      *
+     * @param fRelatedTherapy MedicalTherapy value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setRelatedTherapy(MedicalTherapy fRelatedTherapy);
@@ -45,6 +46,7 @@ public interface AnatomicalSystem extends MedicalEntity {
     /**
      * A medical condition associated with this anatomy.
      *
+     * @param fRelatedCondition MedicalCondition value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setRelatedCondition(MedicalCondition fRelatedCondition);
@@ -60,6 +62,7 @@ public interface AnatomicalSystem extends MedicalEntity {
     /**
      * Related anatomical structure(s) that are not part of the system but relate or connect to it, such as vascular bundles associated with an organ system.
      *
+     * @param fRelatedStructure AnatomicalStructure value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setRelatedStructure(AnatomicalStructure fRelatedStructure);
@@ -75,9 +78,17 @@ public interface AnatomicalSystem extends MedicalEntity {
     /**
      * If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.
      *
+     * @param fAssociatedPathophysiology Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setAssociatedPathophysiology(Text fAssociatedPathophysiology);
+    /**
+     * If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.
+     *
+     * @param fAssociatedPathophysiology java.lang.String value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setAssociatedPathophysiology(java.lang.String fAssociatedPathophysiology);
 
     /**
      * Specifying something physically contained by something else. Typically used here for the underlying anatomical structures, such as organs, that comprise the anatomical system.
@@ -90,7 +101,15 @@ public interface AnatomicalSystem extends MedicalEntity {
     /**
      * Specifying something physically contained by something else. Typically used here for the underlying anatomical structures, such as organs, that comprise the anatomical system.
      *
+     * @param fComprisedOf AnatomicalStructure value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setComprisedOf(Object fComprisedOf);
+    void setComprisedOf(AnatomicalStructure fComprisedOf);
+    /**
+     * Specifying something physically contained by something else. Typically used here for the underlying anatomical structures, such as organs, that comprise the anatomical system.
+     *
+     * @param fComprisedOf AnatomicalSystem value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setComprisedOf(AnatomicalSystem fComprisedOf);
 }

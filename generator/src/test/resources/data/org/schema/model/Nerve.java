@@ -29,9 +29,17 @@ public interface Nerve extends AnatomicalStructure {
     /**
      * The neurological pathway extension that inputs and sends information to the brain or spinal cord.
      *
+     * @param fSensoryUnit SuperficialAnatomy value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setSensoryUnit(Object fSensoryUnit);
+    void setSensoryUnit(SuperficialAnatomy fSensoryUnit);
+    /**
+     * The neurological pathway extension that inputs and sends information to the brain or spinal cord.
+     *
+     * @param fSensoryUnit AnatomicalStructure value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setSensoryUnit(AnatomicalStructure fSensoryUnit);
 
     /**
      * The branches that delineate from the nerve bundle. Not to be confused with [[branchOf]].
@@ -44,6 +52,7 @@ public interface Nerve extends AnatomicalStructure {
     /**
      * The branches that delineate from the nerve bundle. Not to be confused with [[branchOf]].
      *
+     * @param fBranch AnatomicalStructure value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setBranch(AnatomicalStructure fBranch);
@@ -59,6 +68,7 @@ public interface Nerve extends AnatomicalStructure {
     /**
      * The neurological pathway that originates the neurons.
      *
+     * @param fSourcedFrom BrainStructure value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setSourcedFrom(BrainStructure fSourcedFrom);
@@ -74,6 +84,7 @@ public interface Nerve extends AnatomicalStructure {
     /**
      * The neurological pathway extension that involves muscle control.
      *
+     * @param fNerveMotor Muscle value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setNerveMotor(Muscle fNerveMotor);

@@ -29,9 +29,38 @@ public interface EngineSpecification extends StructuredValue {
     /**
      * The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.
      *
+     * @param fFuelType Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
-    void setFuelType(Object fFuelType);
+    void setFuelType(Text fFuelType);
+    /**
+     * The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.
+     *
+     * @param fFuelType java.lang.String value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    void setFuelType(java.lang.String fFuelType);
+    /**
+     * The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.
+     *
+     * @param fFuelType URL value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    void setFuelType(URL fFuelType);
+    /**
+     * The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.
+     *
+     * @param fFuelType java.net.URL value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    void setFuelType(java.net.URL fFuelType);
+    /**
+     * The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.
+     *
+     * @param fFuelType QualitativeValue value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    void setFuelType(QualitativeValue fFuelType);
 
     /**
      * The torque (turning force) of the vehicle's engine.<br/><br/>Typical unit code(s): NU for newton metre (N m), F17 for pound-force per foot, or F48 for pound-force per inch<br/><br/>* Note 1: You can link to information about how the given value has been determined (e.g. reference RPM) using the [[valueReference]] property.<br/>* Note 2: You can use [[minValue]] and [[maxValue]] to indicate ranges.
@@ -45,6 +74,7 @@ public interface EngineSpecification extends StructuredValue {
     /**
      * The torque (turning force) of the vehicle's engine.<br/><br/>Typical unit code(s): NU for newton metre (N m), F17 for pound-force per foot, or F48 for pound-force per inch<br/><br/>* Note 1: You can link to information about how the given value has been determined (e.g. reference RPM) using the [[valueReference]] property.<br/>* Note 2: You can use [[minValue]] and [[maxValue]] to indicate ranges.
      *
+     * @param fTorque QuantitativeValue value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
@@ -62,6 +92,7 @@ public interface EngineSpecification extends StructuredValue {
     /**
      * The volume swept by all of the pistons inside the cylinders of an internal combustion engine in a single movement. <br/><br/>Typical unit code(s): CMQ for cubic centimeter, LTR for liters, INQ for cubic inches<br/>* Note 1: You can link to information about how the given value has been determined using the [[valueReference]] property.<br/>* Note 2: You can use [[minValue]] and [[maxValue]] to indicate ranges.
      *
+     * @param fEngineDisplacement QuantitativeValue value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
@@ -81,6 +112,7 @@ public interface EngineSpecification extends StructuredValue {
      * The power of the vehicle's engine.
      *     Typical unit code(s): KWT for kilowatt, BHP for brake horsepower, N12 for metric horsepower (PS, with 1 PS = 735,49875 W)<br/><br/>* Note 1: There are many different ways of measuring an engine's power. For an overview, see  [http://en.wikipedia.org/wiki/Horsepower#Engine_power_test_codes](http://en.wikipedia.org/wiki/Horsepower#Engine_power_test_codes).<br/>* Note 2: You can link to information about how the given value has been determined using the [[valueReference]] property.<br/>* Note 3: You can use [[minValue]] and [[maxValue]] to indicate ranges.
      *
+     * @param fEnginePower QuantitativeValue value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
@@ -98,8 +130,41 @@ public interface EngineSpecification extends StructuredValue {
     /**
      * The type of engine or engines powering the vehicle.
      *
+     * @param fEngineType QualitativeValue value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
-    void setEngineType(Object fEngineType);
+    void setEngineType(QualitativeValue fEngineType);
+    /**
+     * The type of engine or engines powering the vehicle.
+     *
+     * @param fEngineType URL value to set.
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    void setEngineType(URL fEngineType);
+    /**
+     * The type of engine or engines powering the vehicle.
+     *
+     * @param fEngineType java.net.URL value to set.
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    void setEngineType(java.net.URL fEngineType);
+    /**
+     * The type of engine or engines powering the vehicle.
+     *
+     * @param fEngineType Text value to set.
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    void setEngineType(Text fEngineType);
+    /**
+     * The type of engine or engines powering the vehicle.
+     *
+     * @param fEngineType java.lang.String value to set.
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    void setEngineType(java.lang.String fEngineType);
 }

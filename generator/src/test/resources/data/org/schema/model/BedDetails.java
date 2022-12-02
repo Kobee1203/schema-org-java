@@ -28,9 +28,24 @@ public interface BedDetails extends Intangible {
     /**
      * The type of bed to which the BedDetail refers, i.e. the type of bed available in the quantity indicated by quantity.
      *
+     * @param fTypeOfBed BedType value to set.
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
-    void setTypeOfBed(Object fTypeOfBed);
+    void setTypeOfBed(BedType fTypeOfBed);
+    /**
+     * The type of bed to which the BedDetail refers, i.e. the type of bed available in the quantity indicated by quantity.
+     *
+     * @param fTypeOfBed Text value to set.
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
+     */
+    void setTypeOfBed(Text fTypeOfBed);
+    /**
+     * The type of bed to which the BedDetail refers, i.e. the type of bed available in the quantity indicated by quantity.
+     *
+     * @param fTypeOfBed java.lang.String value to set.
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
+     */
+    void setTypeOfBed(java.lang.String fTypeOfBed);
 
     /**
      * The quantity of the given bed type available in the HotelRoom, Suite, House, or Apartment.
@@ -43,7 +58,15 @@ public interface BedDetails extends Intangible {
     /**
      * The quantity of the given bed type available in the HotelRoom, Suite, House, or Apartment.
      *
+     * @param fNumberOfBeds Number value to set.
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
     void setNumberOfBeds(Number fNumberOfBeds);
+    /**
+     * The quantity of the given bed type available in the HotelRoom, Suite, House, or Apartment.
+     *
+     * @param fNumberOfBeds java.lang.Number value to set.
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
+     */
+    void setNumberOfBeds(java.lang.Number fNumberOfBeds);
 }

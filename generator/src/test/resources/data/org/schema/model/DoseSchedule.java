@@ -28,9 +28,17 @@ public interface DoseSchedule extends MedicalIntangible {
     /**
      * Characteristics of the population for which this is intended, or which typically uses it, e.g. 'adults'.
      *
+     * @param fTargetPopulation Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setTargetPopulation(Text fTargetPopulation);
+    /**
+     * Characteristics of the population for which this is intended, or which typically uses it, e.g. 'adults'.
+     *
+     * @param fTargetPopulation java.lang.String value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setTargetPopulation(java.lang.String fTargetPopulation);
 
     /**
      * How often the dose is taken, e.g. 'daily'.
@@ -43,9 +51,17 @@ public interface DoseSchedule extends MedicalIntangible {
     /**
      * How often the dose is taken, e.g. 'daily'.
      *
+     * @param fFrequency Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setFrequency(Text fFrequency);
+    /**
+     * How often the dose is taken, e.g. 'daily'.
+     *
+     * @param fFrequency java.lang.String value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setFrequency(java.lang.String fFrequency);
 
     /**
      * The unit of the dose, e.g. 'mg'.
@@ -58,9 +74,17 @@ public interface DoseSchedule extends MedicalIntangible {
     /**
      * The unit of the dose, e.g. 'mg'.
      *
+     * @param fDoseUnit Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setDoseUnit(Text fDoseUnit);
+    /**
+     * The unit of the dose, e.g. 'mg'.
+     *
+     * @param fDoseUnit java.lang.String value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setDoseUnit(java.lang.String fDoseUnit);
 
     /**
      * The value of the dose, e.g. 500.
@@ -73,7 +97,22 @@ public interface DoseSchedule extends MedicalIntangible {
     /**
      * The value of the dose, e.g. 500.
      *
+     * @param fDoseValue Number value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setDoseValue(Object fDoseValue);
+    void setDoseValue(Number fDoseValue);
+    /**
+     * The value of the dose, e.g. 500.
+     *
+     * @param fDoseValue java.lang.Number value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setDoseValue(java.lang.Number fDoseValue);
+    /**
+     * The value of the dose, e.g. 500.
+     *
+     * @param fDoseValue QualitativeValue value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setDoseValue(QualitativeValue fDoseValue);
 }

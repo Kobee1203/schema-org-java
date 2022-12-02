@@ -28,8 +28,17 @@ public interface Answer extends Comment {
     /**
      * A step-by-step or full explanation about Answer. Can outline how this Answer was achieved or contain more broad clarification or statement about it. 
      *
+     * @param fAnswerExplanation WebContent value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2636">https://github.com/schemaorg/schemaorg/issues/2636</a>
      */
-    void setAnswerExplanation(Object fAnswerExplanation);
+    void setAnswerExplanation(WebContent fAnswerExplanation);
+    /**
+     * A step-by-step or full explanation about Answer. Can outline how this Answer was achieved or contain more broad clarification or statement about it. 
+     *
+     * @param fAnswerExplanation Comment value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2636">https://github.com/schemaorg/schemaorg/issues/2636</a>
+     */
+    void setAnswerExplanation(Comment fAnswerExplanation);
 }

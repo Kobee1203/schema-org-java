@@ -29,8 +29,15 @@ public interface PeopleAudience extends Audience {
     /**
      * Audiences defined by a person's minimum age.
      *
+     * @param fRequiredMinAge Integer value to set.
      */
     void setRequiredMinAge(Integer fRequiredMinAge);
+    /**
+     * Audiences defined by a person's minimum age.
+     *
+     * @param fRequiredMinAge java.lang.Integer value to set.
+     */
+    void setRequiredMinAge(java.lang.Integer fRequiredMinAge);
 
     /**
      * Maximum recommended age in years for the audience or user.
@@ -42,8 +49,15 @@ public interface PeopleAudience extends Audience {
     /**
      * Maximum recommended age in years for the audience or user.
      *
+     * @param fSuggestedMaxAge Number value to set.
      */
     void setSuggestedMaxAge(Number fSuggestedMaxAge);
+    /**
+     * Maximum recommended age in years for the audience or user.
+     *
+     * @param fSuggestedMaxAge java.lang.Number value to set.
+     */
+    void setSuggestedMaxAge(java.lang.Number fSuggestedMaxAge);
 
     /**
      * Specifying the health condition(s) of a patient, medical study, or other target audience.
@@ -56,6 +70,7 @@ public interface PeopleAudience extends Audience {
     /**
      * Specifying the health condition(s) of a patient, medical study, or other target audience.
      *
+     * @param fHealthCondition MedicalCondition value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setHealthCondition(MedicalCondition fHealthCondition);
@@ -72,6 +87,7 @@ public interface PeopleAudience extends Audience {
     /**
      * A suggested range of body measurements for the intended audience or person, for example inseam between 32 and 34 inches or height between 170 and 190 cm. Typically found on a size chart for wearable products.
      *
+     * @param fSuggestedMeasurement QuantitativeValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
      */
@@ -89,6 +105,7 @@ public interface PeopleAudience extends Audience {
     /**
      * The age or age range for the intended audience or person, for example 3-12 months for infants, 1-5 years for toddlers.
      *
+     * @param fSuggestedAge QuantitativeValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
      */
@@ -104,8 +121,15 @@ public interface PeopleAudience extends Audience {
     /**
      * Audiences defined by a person's maximum age.
      *
+     * @param fRequiredMaxAge Integer value to set.
      */
     void setRequiredMaxAge(Integer fRequiredMaxAge);
+    /**
+     * Audiences defined by a person's maximum age.
+     *
+     * @param fRequiredMaxAge java.lang.Integer value to set.
+     */
+    void setRequiredMaxAge(java.lang.Integer fRequiredMaxAge);
 
     /**
      * Minimum recommended age in years for the audience or user.
@@ -117,8 +141,15 @@ public interface PeopleAudience extends Audience {
     /**
      * Minimum recommended age in years for the audience or user.
      *
+     * @param fSuggestedMinAge Number value to set.
      */
     void setSuggestedMinAge(Number fSuggestedMinAge);
+    /**
+     * Minimum recommended age in years for the audience or user.
+     *
+     * @param fSuggestedMinAge java.lang.Number value to set.
+     */
+    void setSuggestedMinAge(java.lang.Number fSuggestedMinAge);
 
     /**
      * Audiences defined by a person's gender.
@@ -130,8 +161,15 @@ public interface PeopleAudience extends Audience {
     /**
      * Audiences defined by a person's gender.
      *
+     * @param fRequiredGender Text value to set.
      */
     void setRequiredGender(Text fRequiredGender);
+    /**
+     * Audiences defined by a person's gender.
+     *
+     * @param fRequiredGender java.lang.String value to set.
+     */
+    void setRequiredGender(java.lang.String fRequiredGender);
 
     /**
      * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
@@ -143,6 +181,19 @@ public interface PeopleAudience extends Audience {
     /**
      * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
      *
+     * @param fSuggestedGender GenderType value to set.
      */
-    void setSuggestedGender(Object fSuggestedGender);
+    void setSuggestedGender(GenderType fSuggestedGender);
+    /**
+     * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
+     *
+     * @param fSuggestedGender Text value to set.
+     */
+    void setSuggestedGender(Text fSuggestedGender);
+    /**
+     * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
+     *
+     * @param fSuggestedGender java.lang.String value to set.
+     */
+    void setSuggestedGender(java.lang.String fSuggestedGender);
 }

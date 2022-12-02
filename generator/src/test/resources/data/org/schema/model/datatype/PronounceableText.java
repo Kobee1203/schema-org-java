@@ -44,11 +44,22 @@ public class PronounceableText extends Text {
     /**
      * Representation of a text [[textValue]] using the specified [[speechToTextMarkup]]. For example the city name of Houston in IPA: /ˈhjuːstən/.
      *
+     * @param fPhoneticText Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2108">https://github.com/schemaorg/schemaorg/issues/2108</a>
      */
     public void setPhoneticText(Text fPhoneticText) {
         this.fPhoneticText = fPhoneticText;
+    }
+    /**
+     * Representation of a text [[textValue]] using the specified [[speechToTextMarkup]]. For example the city name of Houston in IPA: /ˈhjuːstən/.
+     *
+     * @param fPhoneticText java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2108">https://github.com/schemaorg/schemaorg/issues/2108</a>
+     */
+    public void setPhoneticText(java.lang.String fPhoneticText) {
+        this.fPhoneticText = Text.of(fPhoneticText);
     }
 
     private Text fSpeechToTextMarkup;
@@ -67,11 +78,22 @@ public class PronounceableText extends Text {
     /**
      * Form of markup used. eg. [SSML](https://www.w3.org/TR/speech-synthesis11) or [IPA](https://www.wikidata.org/wiki/Property:P898).
      *
+     * @param fSpeechToTextMarkup Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2108">https://github.com/schemaorg/schemaorg/issues/2108</a>
      */
     public void setSpeechToTextMarkup(Text fSpeechToTextMarkup) {
         this.fSpeechToTextMarkup = fSpeechToTextMarkup;
+    }
+    /**
+     * Form of markup used. eg. [SSML](https://www.w3.org/TR/speech-synthesis11) or [IPA](https://www.wikidata.org/wiki/Property:P898).
+     *
+     * @param fSpeechToTextMarkup java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2108">https://github.com/schemaorg/schemaorg/issues/2108</a>
+     */
+    public void setSpeechToTextMarkup(java.lang.String fSpeechToTextMarkup) {
+        this.fSpeechToTextMarkup = Text.of(fSpeechToTextMarkup);
     }
 
     private Text fTextValue;
@@ -90,11 +112,22 @@ public class PronounceableText extends Text {
     /**
      * Text value being annotated.
      *
+     * @param fTextValue Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2108">https://github.com/schemaorg/schemaorg/issues/2108</a>
      */
     public void setTextValue(Text fTextValue) {
         this.fTextValue = fTextValue;
+    }
+    /**
+     * Text value being annotated.
+     *
+     * @param fTextValue java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2108">https://github.com/schemaorg/schemaorg/issues/2108</a>
+     */
+    public void setTextValue(java.lang.String fTextValue) {
+        this.fTextValue = Text.of(fTextValue);
     }
 
     private Object fInLanguage;
@@ -112,12 +145,28 @@ public class PronounceableText extends Text {
     /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
      *
+     * @param fInLanguage Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
      */
-    public void setInLanguage(Object fInLanguage) {
-        if(!(fInLanguage instanceof Text) && !(fInLanguage instanceof Language)) {
-        throw new java.lang.IllegalArgumentException("Invalid value for property 'inLanguage': " + fInLanguage);
-        }
+    public void setInLanguage(Text fInLanguage) {
+        this.fInLanguage = fInLanguage;
+    }
+    /**
+     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     *
+     * @param fInLanguage java.lang.String value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
+     */
+    public void setInLanguage(java.lang.String fInLanguage) {
+        this.fInLanguage = Text.of(fInLanguage);
+    }
+    /**
+     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     *
+     * @param fInLanguage Language value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
+     */
+    public void setInLanguage(Language fInLanguage) {
         this.fInLanguage = fInLanguage;
     }
 }

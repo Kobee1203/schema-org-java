@@ -28,10 +28,27 @@ public interface GovernmentService extends Service {
     /**
      * Indicates a legal jurisdiction, e.g. of some legislation, or where some government service is based.
      *
+     * @param fJurisdiction Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2534">https://github.com/schemaorg/schemaorg/issues/2534</a>
      */
-    void setJurisdiction(Object fJurisdiction);
+    void setJurisdiction(Text fJurisdiction);
+    /**
+     * Indicates a legal jurisdiction, e.g. of some legislation, or where some government service is based.
+     *
+     * @param fJurisdiction java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2534">https://github.com/schemaorg/schemaorg/issues/2534</a>
+     */
+    void setJurisdiction(java.lang.String fJurisdiction);
+    /**
+     * Indicates a legal jurisdiction, e.g. of some legislation, or where some government service is based.
+     *
+     * @param fJurisdiction AdministrativeArea value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2534">https://github.com/schemaorg/schemaorg/issues/2534</a>
+     */
+    void setJurisdiction(AdministrativeArea fJurisdiction);
 
     /**
      * The operating organization, if different from the provider.  This enables the representation of services that are provided by an organization, but operated by another organization like a subcontractor.
@@ -43,6 +60,7 @@ public interface GovernmentService extends Service {
     /**
      * The operating organization, if different from the provider.  This enables the representation of services that are provided by an organization, but operated by another organization like a subcontractor.
      *
+     * @param fServiceOperator Organization value to set.
      */
     void setServiceOperator(Organization fServiceOperator);
 }

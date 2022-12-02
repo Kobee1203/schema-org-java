@@ -33,6 +33,7 @@ public interface TVSeason extends CreativeWorkSeason, CreativeWork {
      * 
      * In the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.
      *
+     * @param fCountryOfOrigin Country value to set.
      */
     void setCountryOfOrigin(Country fCountryOfOrigin);
 
@@ -46,6 +47,7 @@ public interface TVSeason extends CreativeWorkSeason, CreativeWork {
     /**
      * The TV series to which this episode or season belongs.
      *
+     * @param fPartOfTVSeries TVSeries value to set.
      */
     void setPartOfTVSeries(TVSeries fPartOfTVSeries);
 }

@@ -28,8 +28,15 @@ public interface Book extends CreativeWork {
     /**
      * The ISBN of the book.
      *
+     * @param fIsbn Text value to set.
      */
     void setIsbn(Text fIsbn);
+    /**
+     * The ISBN of the book.
+     *
+     * @param fIsbn java.lang.String value to set.
+     */
+    void setIsbn(java.lang.String fIsbn);
 
     /**
      * The illustrator of the book.
@@ -41,6 +48,7 @@ public interface Book extends CreativeWork {
     /**
      * The illustrator of the book.
      *
+     * @param fIllustrator Person value to set.
      */
     void setIllustrator(Person fIllustrator);
 
@@ -54,8 +62,15 @@ public interface Book extends CreativeWork {
     /**
      * The number of pages in the book.
      *
+     * @param fNumberOfPages Integer value to set.
      */
     void setNumberOfPages(Integer fNumberOfPages);
+    /**
+     * The number of pages in the book.
+     *
+     * @param fNumberOfPages java.lang.Integer value to set.
+     */
+    void setNumberOfPages(java.lang.Integer fNumberOfPages);
 
     /**
      * Indicates whether the book is an abridged edition.
@@ -68,9 +83,17 @@ public interface Book extends CreativeWork {
     /**
      * Indicates whether the book is an abridged edition.
      *
+     * @param fAbridged Boolean value to set.
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
     void setAbridged(Boolean fAbridged);
+    /**
+     * Indicates whether the book is an abridged edition.
+     *
+     * @param fAbridged java.lang.Boolean value to set.
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    void setAbridged(java.lang.Boolean fAbridged);
 
     /**
      * The format of the book.
@@ -82,6 +105,7 @@ public interface Book extends CreativeWork {
     /**
      * The format of the book.
      *
+     * @param fBookFormat BookFormatType value to set.
      */
     void setBookFormat(BookFormatType fBookFormat);
 
@@ -95,6 +119,13 @@ public interface Book extends CreativeWork {
     /**
      * The edition of the book.
      *
+     * @param fBookEdition Text value to set.
      */
     void setBookEdition(Text fBookEdition);
+    /**
+     * The edition of the book.
+     *
+     * @param fBookEdition java.lang.String value to set.
+     */
+    void setBookEdition(java.lang.String fBookEdition);
 }

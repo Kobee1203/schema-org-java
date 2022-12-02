@@ -29,8 +29,25 @@ public interface MathSolver extends CreativeWork {
     /**
      * A mathematical expression (e.g. 'x^2-3x=0') that may be solved for a specific variable, simplified, or transformed. This can take many formats, e.g. LaTeX, Ascii-Math, or math as you would write with a keyboard.
      *
+     * @param fMathExpression SolveMathAction value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2740">https://github.com/schemaorg/schemaorg/issues/2740</a>
      */
-    void setMathExpression(Object fMathExpression);
+    void setMathExpression(SolveMathAction fMathExpression);
+    /**
+     * A mathematical expression (e.g. 'x^2-3x=0') that may be solved for a specific variable, simplified, or transformed. This can take many formats, e.g. LaTeX, Ascii-Math, or math as you would write with a keyboard.
+     *
+     * @param fMathExpression Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2740">https://github.com/schemaorg/schemaorg/issues/2740</a>
+     */
+    void setMathExpression(Text fMathExpression);
+    /**
+     * A mathematical expression (e.g. 'x^2-3x=0') that may be solved for a specific variable, simplified, or transformed. This can take many formats, e.g. LaTeX, Ascii-Math, or math as you would write with a keyboard.
+     *
+     * @param fMathExpression java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2740">https://github.com/schemaorg/schemaorg/issues/2740</a>
+     */
+    void setMathExpression(java.lang.String fMathExpression);
 }

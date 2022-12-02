@@ -33,10 +33,27 @@ public interface TouristDestination extends Place {
     /**
      * Attraction suitable for type(s) of tourist. eg. Children, visitors from a particular country, etc. 
      *
+     * @param fTouristType Audience value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#IIT-CNR.it">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#IIT-CNR.it</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism</a>
      */
-    void setTouristType(Object fTouristType);
+    void setTouristType(Audience fTouristType);
+    /**
+     * Attraction suitable for type(s) of tourist. eg. Children, visitors from a particular country, etc. 
+     *
+     * @param fTouristType Text value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#IIT-CNR.it">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#IIT-CNR.it</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism</a>
+     */
+    void setTouristType(Text fTouristType);
+    /**
+     * Attraction suitable for type(s) of tourist. eg. Children, visitors from a particular country, etc. 
+     *
+     * @param fTouristType java.lang.String value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#IIT-CNR.it">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#IIT-CNR.it</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism</a>
+     */
+    void setTouristType(java.lang.String fTouristType);
 
     /**
      * Attraction located at destination.
@@ -52,6 +69,7 @@ public interface TouristDestination extends Place {
     /**
      * Attraction located at destination.
      *
+     * @param fIncludesAttraction TouristAttraction value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#IIT-CNR.it">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#IIT-CNR.it</a>

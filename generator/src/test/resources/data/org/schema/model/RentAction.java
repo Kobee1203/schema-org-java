@@ -26,8 +26,15 @@ public interface RentAction extends TradeAction {
     /**
      * A sub property of participant. The owner of the real estate property.
      *
+     * @param fLandlord Person value to set.
      */
-    void setLandlord(Object fLandlord);
+    void setLandlord(Person fLandlord);
+    /**
+     * A sub property of participant. The owner of the real estate property.
+     *
+     * @param fLandlord Organization value to set.
+     */
+    void setLandlord(Organization fLandlord);
 
     /**
      * A sub property of participant. The real estate agent involved in the action.
@@ -39,6 +46,7 @@ public interface RentAction extends TradeAction {
     /**
      * A sub property of participant. The real estate agent involved in the action.
      *
+     * @param fRealEstateAgent RealEstateAgent value to set.
      */
     void setRealEstateAgent(RealEstateAgent fRealEstateAgent);
 }

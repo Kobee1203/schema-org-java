@@ -34,10 +34,27 @@ public interface Clip extends CreativeWork {
     /**
      * The start time of the clip expressed as the number of seconds from the beginning of the work.
      *
+     * @param fStartOffset Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2021">https://github.com/schemaorg/schemaorg/issues/2021</a>
      */
-    void setStartOffset(Object fStartOffset);
+    void setStartOffset(Number fStartOffset);
+    /**
+     * The start time of the clip expressed as the number of seconds from the beginning of the work.
+     *
+     * @param fStartOffset java.lang.Number value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2021">https://github.com/schemaorg/schemaorg/issues/2021</a>
+     */
+    void setStartOffset(java.lang.Number fStartOffset);
+    /**
+     * The start time of the clip expressed as the number of seconds from the beginning of the work.
+     *
+     * @param fStartOffset HyperTocEntry value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2021">https://github.com/schemaorg/schemaorg/issues/2021</a>
+     */
+    void setStartOffset(HyperTocEntry fStartOffset);
 
     /**
      * The end time of the clip expressed as the number of seconds from the beginning of the work.
@@ -51,10 +68,27 @@ public interface Clip extends CreativeWork {
     /**
      * The end time of the clip expressed as the number of seconds from the beginning of the work.
      *
+     * @param fEndOffset Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2021">https://github.com/schemaorg/schemaorg/issues/2021</a>
      */
-    void setEndOffset(Object fEndOffset);
+    void setEndOffset(Number fEndOffset);
+    /**
+     * The end time of the clip expressed as the number of seconds from the beginning of the work.
+     *
+     * @param fEndOffset java.lang.Number value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2021">https://github.com/schemaorg/schemaorg/issues/2021</a>
+     */
+    void setEndOffset(java.lang.Number fEndOffset);
+    /**
+     * The end time of the clip expressed as the number of seconds from the beginning of the work.
+     *
+     * @param fEndOffset HyperTocEntry value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2021">https://github.com/schemaorg/schemaorg/issues/2021</a>
+     */
+    void setEndOffset(HyperTocEntry fEndOffset);
 
     /**
      * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
@@ -66,6 +100,7 @@ public interface Clip extends CreativeWork {
     /**
      * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
      *
+     * @param fDirector Person value to set.
      */
     void setDirector(Person fDirector);
 
@@ -79,6 +114,7 @@ public interface Clip extends CreativeWork {
     /**
      * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
      *
+     * @param fActor Person value to set.
      */
     void setActor(Person fActor);
 
@@ -92,6 +128,7 @@ public interface Clip extends CreativeWork {
     /**
      * The episode to which this clip belongs.
      *
+     * @param fPartOfEpisode Episode value to set.
      */
     void setPartOfEpisode(Episode fPartOfEpisode);
 
@@ -105,8 +142,27 @@ public interface Clip extends CreativeWork {
     /**
      * Position of the clip within an ordered group of clips.
      *
+     * @param fClipNumber Text value to set.
      */
-    void setClipNumber(Object fClipNumber);
+    void setClipNumber(Text fClipNumber);
+    /**
+     * Position of the clip within an ordered group of clips.
+     *
+     * @param fClipNumber java.lang.String value to set.
+     */
+    void setClipNumber(java.lang.String fClipNumber);
+    /**
+     * Position of the clip within an ordered group of clips.
+     *
+     * @param fClipNumber Integer value to set.
+     */
+    void setClipNumber(Integer fClipNumber);
+    /**
+     * Position of the clip within an ordered group of clips.
+     *
+     * @param fClipNumber java.lang.Integer value to set.
+     */
+    void setClipNumber(java.lang.Integer fClipNumber);
 
     /**
      * The series to which this episode or season belongs.
@@ -118,6 +174,7 @@ public interface Clip extends CreativeWork {
     /**
      * The series to which this episode or season belongs.
      *
+     * @param fPartOfSeries CreativeWorkSeries value to set.
      */
     void setPartOfSeries(CreativeWorkSeries fPartOfSeries);
 
@@ -131,6 +188,7 @@ public interface Clip extends CreativeWork {
     /**
      * The season to which this episode belongs.
      *
+     * @param fPartOfSeason CreativeWorkSeason value to set.
      */
     void setPartOfSeason(CreativeWorkSeason fPartOfSeason);
 
@@ -144,6 +202,7 @@ public interface Clip extends CreativeWork {
     /**
      * An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
      *
+     * @param fActors Person value to set.
      */
     void setActors(Person fActors);
 
@@ -157,8 +216,15 @@ public interface Clip extends CreativeWork {
     /**
      * The composer of the soundtrack.
      *
+     * @param fMusicBy Person value to set.
      */
-    void setMusicBy(Object fMusicBy);
+    void setMusicBy(Person fMusicBy);
+    /**
+     * The composer of the soundtrack.
+     *
+     * @param fMusicBy MusicGroup value to set.
+     */
+    void setMusicBy(MusicGroup fMusicBy);
 
     /**
      * A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
@@ -170,6 +236,7 @@ public interface Clip extends CreativeWork {
     /**
      * A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
      *
+     * @param fDirectors Person value to set.
      */
     void setDirectors(Person fDirectors);
 }

@@ -56,7 +56,7 @@ class SchemaGeneratorUtilsTest {
     void getImports_with_properties_and_additional_imports() {
         String dataTypePackage = "datatype";
         Type type = type("schema:Text", "MyType");
-        type.addProperty(new Property("schema:Boolean", "myProperty", "myProperty", "This is my property", Arrays.asList(type("schema:Text", "Type1"), type("schema:URL", "Type2")), Collections.emptyList(), Collections.emptyList()));
+        type.addProperty(new Property("schema:Boolean", null, null, null, Arrays.asList(type("schema:Text", "Type1"), type("schema:URL", "Type2"))));
         List<String> additionalImports = List.of("OtherImport");
         Set<String> result = SchemaGeneratorUtils.getImports(null, dataTypePackage, type, additionalImports);
         Assertions.assertThat(result).containsExactly("OtherImport", "datatype.Type1", "datatype.Type2");
@@ -66,7 +66,7 @@ class SchemaGeneratorUtilsTest {
     void getImports_with_properties_and_without_additional_imports() {
         String dataTypePackage = "datatype";
         Type type = type("schema:Text", "MyType");
-        type.addProperty(new Property("schema:Boolean", "myProperty", "myProperty", "This is my property", Arrays.asList(type("schema:Text", "Type1"), type("schema:URL", "Type2")), Collections.emptyList(), Collections.emptyList()));
+        type.addProperty(new Property("schema:Boolean", null, null, null, Arrays.asList(type("schema:Text", "Type1"), type("schema:URL", "Type2"))));
         Set<String> result = SchemaGeneratorUtils.getImports(null, dataTypePackage, type, Collections.emptyList());
         Assertions.assertThat(result).containsExactly("datatype.Type1", "datatype.Type2");
     }

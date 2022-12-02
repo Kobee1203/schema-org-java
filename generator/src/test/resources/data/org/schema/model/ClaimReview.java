@@ -26,7 +26,15 @@ public interface ClaimReview extends Review {
     /**
      * A short summary of the specific claims reviewed in a ClaimReview.
      *
+     * @param fClaimReviewed Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1061">https://github.com/schemaorg/schemaorg/issues/1061</a>
      */
     void setClaimReviewed(Text fClaimReviewed);
+    /**
+     * A short summary of the specific claims reviewed in a ClaimReview.
+     *
+     * @param fClaimReviewed java.lang.String value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1061">https://github.com/schemaorg/schemaorg/issues/1061</a>
+     */
+    void setClaimReviewed(java.lang.String fClaimReviewed);
 }

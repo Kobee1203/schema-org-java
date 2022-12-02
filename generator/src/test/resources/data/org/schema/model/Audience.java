@@ -25,8 +25,15 @@ public interface Audience extends Intangible {
     /**
      * The target group associated with a given audience (e.g. veterans, car owners, musicians, etc.).
      *
+     * @param fAudienceType Text value to set.
      */
     void setAudienceType(Text fAudienceType);
+    /**
+     * The target group associated with a given audience (e.g. veterans, car owners, musicians, etc.).
+     *
+     * @param fAudienceType java.lang.String value to set.
+     */
+    void setAudienceType(java.lang.String fAudienceType);
 
     /**
      * The geographic area associated with the audience.
@@ -38,6 +45,7 @@ public interface Audience extends Intangible {
     /**
      * The geographic area associated with the audience.
      *
+     * @param fGeographicArea AdministrativeArea value to set.
      */
     void setGeographicArea(AdministrativeArea fGeographicArea);
 }

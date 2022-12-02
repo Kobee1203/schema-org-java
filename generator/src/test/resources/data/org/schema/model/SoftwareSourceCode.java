@@ -27,8 +27,21 @@ public interface SoftwareSourceCode extends CreativeWork {
     /**
      * The computer programming language.
      *
+     * @param fProgrammingLanguage Text value to set.
      */
-    void setProgrammingLanguage(Object fProgrammingLanguage);
+    void setProgrammingLanguage(Text fProgrammingLanguage);
+    /**
+     * The computer programming language.
+     *
+     * @param fProgrammingLanguage java.lang.String value to set.
+     */
+    void setProgrammingLanguage(java.lang.String fProgrammingLanguage);
+    /**
+     * The computer programming language.
+     *
+     * @param fProgrammingLanguage ComputerLanguage value to set.
+     */
+    void setProgrammingLanguage(ComputerLanguage fProgrammingLanguage);
 
     /**
      * What type of code sample: full (compile ready) solution, code snippet, inline code, scripts, template.
@@ -40,8 +53,15 @@ public interface SoftwareSourceCode extends CreativeWork {
     /**
      * What type of code sample: full (compile ready) solution, code snippet, inline code, scripts, template.
      *
+     * @param fSampleType Text value to set.
      */
     void setSampleType(Text fSampleType);
+    /**
+     * What type of code sample: full (compile ready) solution, code snippet, inline code, scripts, template.
+     *
+     * @param fSampleType java.lang.String value to set.
+     */
+    void setSampleType(java.lang.String fSampleType);
 
     /**
      * Runtime platform or script interpreter dependencies (Example - Java v1, Python2.3, .Net Framework 3.0).
@@ -53,8 +73,15 @@ public interface SoftwareSourceCode extends CreativeWork {
     /**
      * Runtime platform or script interpreter dependencies (Example - Java v1, Python2.3, .Net Framework 3.0).
      *
+     * @param fRuntimePlatform Text value to set.
      */
     void setRuntimePlatform(Text fRuntimePlatform);
+    /**
+     * Runtime platform or script interpreter dependencies (Example - Java v1, Python2.3, .Net Framework 3.0).
+     *
+     * @param fRuntimePlatform java.lang.String value to set.
+     */
+    void setRuntimePlatform(java.lang.String fRuntimePlatform);
 
     /**
      * Runtime platform or script interpreter dependencies (Example - Java v1, Python2.3, .Net Framework 3.0).
@@ -66,8 +93,15 @@ public interface SoftwareSourceCode extends CreativeWork {
     /**
      * Runtime platform or script interpreter dependencies (Example - Java v1, Python2.3, .Net Framework 3.0).
      *
+     * @param fRuntime Text value to set.
      */
     void setRuntime(Text fRuntime);
+    /**
+     * Runtime platform or script interpreter dependencies (Example - Java v1, Python2.3, .Net Framework 3.0).
+     *
+     * @param fRuntime java.lang.String value to set.
+     */
+    void setRuntime(java.lang.String fRuntime);
 
     /**
      * Target Operating System / Product to which the code applies.  If applies to several versions, just the product name can be used.
@@ -79,6 +113,7 @@ public interface SoftwareSourceCode extends CreativeWork {
     /**
      * Target Operating System / Product to which the code applies.  If applies to several versions, just the product name can be used.
      *
+     * @param fTargetProduct SoftwareApplication value to set.
      */
     void setTargetProduct(SoftwareApplication fTargetProduct);
 
@@ -92,8 +127,15 @@ public interface SoftwareSourceCode extends CreativeWork {
     /**
      * Link to the repository where the un-compiled, human readable code and related code is located (SVN, github, CodePlex).
      *
+     * @param fCodeRepository URL value to set.
      */
     void setCodeRepository(URL fCodeRepository);
+    /**
+     * Link to the repository where the un-compiled, human readable code and related code is located (SVN, github, CodePlex).
+     *
+     * @param fCodeRepository java.net.URL value to set.
+     */
+    void setCodeRepository(java.net.URL fCodeRepository);
 
     /**
      * What type of code sample: full (compile ready) solution, code snippet, inline code, scripts, template.
@@ -105,6 +147,13 @@ public interface SoftwareSourceCode extends CreativeWork {
     /**
      * What type of code sample: full (compile ready) solution, code snippet, inline code, scripts, template.
      *
+     * @param fCodeSampleType Text value to set.
      */
     void setCodeSampleType(Text fCodeSampleType);
+    /**
+     * What type of code sample: full (compile ready) solution, code snippet, inline code, scripts, template.
+     *
+     * @param fCodeSampleType java.lang.String value to set.
+     */
+    void setCodeSampleType(java.lang.String fCodeSampleType);
 }

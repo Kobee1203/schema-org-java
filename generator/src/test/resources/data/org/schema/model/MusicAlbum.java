@@ -29,6 +29,7 @@ public interface MusicAlbum extends MusicPlaylist {
     /**
      * Classification of the album by it's type of content: soundtrack, live album, studio album, etc.
      *
+     * @param fAlbumProductionType MusicAlbumProductionType value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
     void setAlbumProductionType(MusicAlbumProductionType fAlbumProductionType);
@@ -44,6 +45,7 @@ public interface MusicAlbum extends MusicPlaylist {
     /**
      * The kind of release which this album is: single, EP or album.
      *
+     * @param fAlbumReleaseType MusicAlbumReleaseType value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
     void setAlbumReleaseType(MusicAlbumReleaseType fAlbumReleaseType);
@@ -58,6 +60,7 @@ public interface MusicAlbum extends MusicPlaylist {
     /**
      * A release of this album.
      *
+     * @param fAlbumRelease MusicRelease value to set.
      */
     void setAlbumRelease(MusicRelease fAlbumRelease);
 
@@ -71,6 +74,13 @@ public interface MusicAlbum extends MusicPlaylist {
     /**
      * The artist that performed this album or recording.
      *
+     * @param fByArtist Person value to set.
      */
-    void setByArtist(Object fByArtist);
+    void setByArtist(Person fByArtist);
+    /**
+     * The artist that performed this album or recording.
+     *
+     * @param fByArtist MusicGroup value to set.
+     */
+    void setByArtist(MusicGroup fByArtist);
 }

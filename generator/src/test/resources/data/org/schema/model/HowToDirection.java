@@ -29,8 +29,21 @@ public interface HowToDirection extends ListItem, CreativeWork {
     /**
      * A media object representing the circumstances after performing this direction.
      *
+     * @param fAfterMedia URL value to set.
      */
-    void setAfterMedia(Object fAfterMedia);
+    void setAfterMedia(URL fAfterMedia);
+    /**
+     * A media object representing the circumstances after performing this direction.
+     *
+     * @param fAfterMedia java.net.URL value to set.
+     */
+    void setAfterMedia(java.net.URL fAfterMedia);
+    /**
+     * A media object representing the circumstances after performing this direction.
+     *
+     * @param fAfterMedia MediaObject value to set.
+     */
+    void setAfterMedia(MediaObject fAfterMedia);
 
     /**
      * A sub-property of instrument. A supply consumed when performing instructions or a direction.
@@ -42,8 +55,21 @@ public interface HowToDirection extends ListItem, CreativeWork {
     /**
      * A sub-property of instrument. A supply consumed when performing instructions or a direction.
      *
+     * @param fSupply HowToSupply value to set.
      */
-    void setSupply(Object fSupply);
+    void setSupply(HowToSupply fSupply);
+    /**
+     * A sub-property of instrument. A supply consumed when performing instructions or a direction.
+     *
+     * @param fSupply Text value to set.
+     */
+    void setSupply(Text fSupply);
+    /**
+     * A sub-property of instrument. A supply consumed when performing instructions or a direction.
+     *
+     * @param fSupply java.lang.String value to set.
+     */
+    void setSupply(java.lang.String fSupply);
 
     /**
      * A media object representing the circumstances while performing this direction.
@@ -55,8 +81,21 @@ public interface HowToDirection extends ListItem, CreativeWork {
     /**
      * A media object representing the circumstances while performing this direction.
      *
+     * @param fDuringMedia URL value to set.
      */
-    void setDuringMedia(Object fDuringMedia);
+    void setDuringMedia(URL fDuringMedia);
+    /**
+     * A media object representing the circumstances while performing this direction.
+     *
+     * @param fDuringMedia java.net.URL value to set.
+     */
+    void setDuringMedia(java.net.URL fDuringMedia);
+    /**
+     * A media object representing the circumstances while performing this direction.
+     *
+     * @param fDuringMedia MediaObject value to set.
+     */
+    void setDuringMedia(MediaObject fDuringMedia);
 
     /**
      * The total time required to perform instructions or a direction (including time to prepare the supplies), in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
@@ -68,6 +107,7 @@ public interface HowToDirection extends ListItem, CreativeWork {
     /**
      * The total time required to perform instructions or a direction (including time to prepare the supplies), in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
      *
+     * @param fTotalTime Duration value to set.
      */
     void setTotalTime(Duration fTotalTime);
 
@@ -81,8 +121,21 @@ public interface HowToDirection extends ListItem, CreativeWork {
     /**
      * A media object representing the circumstances before performing this direction.
      *
+     * @param fBeforeMedia URL value to set.
      */
-    void setBeforeMedia(Object fBeforeMedia);
+    void setBeforeMedia(URL fBeforeMedia);
+    /**
+     * A media object representing the circumstances before performing this direction.
+     *
+     * @param fBeforeMedia java.net.URL value to set.
+     */
+    void setBeforeMedia(java.net.URL fBeforeMedia);
+    /**
+     * A media object representing the circumstances before performing this direction.
+     *
+     * @param fBeforeMedia MediaObject value to set.
+     */
+    void setBeforeMedia(MediaObject fBeforeMedia);
 
     /**
      * A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.
@@ -94,8 +147,21 @@ public interface HowToDirection extends ListItem, CreativeWork {
     /**
      * A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.
      *
+     * @param fTool HowToTool value to set.
      */
-    void setTool(Object fTool);
+    void setTool(HowToTool fTool);
+    /**
+     * A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.
+     *
+     * @param fTool Text value to set.
+     */
+    void setTool(Text fTool);
+    /**
+     * A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.
+     *
+     * @param fTool java.lang.String value to set.
+     */
+    void setTool(java.lang.String fTool);
 
     /**
      * The length of time it takes to prepare the items to be used in instructions or a direction, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
@@ -107,6 +173,7 @@ public interface HowToDirection extends ListItem, CreativeWork {
     /**
      * The length of time it takes to prepare the items to be used in instructions or a direction, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
      *
+     * @param fPrepTime Duration value to set.
      */
     void setPrepTime(Duration fPrepTime);
 
@@ -120,6 +187,7 @@ public interface HowToDirection extends ListItem, CreativeWork {
     /**
      * The length of time it takes to perform instructions or a direction (not including time to prepare the supplies), in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
      *
+     * @param fPerformTime Duration value to set.
      */
     void setPerformTime(Duration fPerformTime);
 }

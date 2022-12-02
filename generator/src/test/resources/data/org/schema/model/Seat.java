@@ -25,8 +25,21 @@ public interface Seat extends Intangible {
     /**
      * The type/class of the seat.
      *
+     * @param fSeatingType QualitativeValue value to set.
      */
-    void setSeatingType(Object fSeatingType);
+    void setSeatingType(QualitativeValue fSeatingType);
+    /**
+     * The type/class of the seat.
+     *
+     * @param fSeatingType Text value to set.
+     */
+    void setSeatingType(Text fSeatingType);
+    /**
+     * The type/class of the seat.
+     *
+     * @param fSeatingType java.lang.String value to set.
+     */
+    void setSeatingType(java.lang.String fSeatingType);
 
     /**
      * The section location of the reserved seat (e.g. Orchestra).
@@ -38,8 +51,15 @@ public interface Seat extends Intangible {
     /**
      * The section location of the reserved seat (e.g. Orchestra).
      *
+     * @param fSeatSection Text value to set.
      */
     void setSeatSection(Text fSeatSection);
+    /**
+     * The section location of the reserved seat (e.g. Orchestra).
+     *
+     * @param fSeatSection java.lang.String value to set.
+     */
+    void setSeatSection(java.lang.String fSeatSection);
 
     /**
      * The row location of the reserved seat (e.g., B).
@@ -51,8 +71,15 @@ public interface Seat extends Intangible {
     /**
      * The row location of the reserved seat (e.g., B).
      *
+     * @param fSeatRow Text value to set.
      */
     void setSeatRow(Text fSeatRow);
+    /**
+     * The row location of the reserved seat (e.g., B).
+     *
+     * @param fSeatRow java.lang.String value to set.
+     */
+    void setSeatRow(java.lang.String fSeatRow);
 
     /**
      * The location of the reserved seat (e.g., 27).
@@ -64,6 +91,13 @@ public interface Seat extends Intangible {
     /**
      * The location of the reserved seat (e.g., 27).
      *
+     * @param fSeatNumber Text value to set.
      */
     void setSeatNumber(Text fSeatNumber);
+    /**
+     * The location of the reserved seat (e.g., 27).
+     *
+     * @param fSeatNumber java.lang.String value to set.
+     */
+    void setSeatNumber(java.lang.String fSeatNumber);
 }

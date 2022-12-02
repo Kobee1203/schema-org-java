@@ -36,6 +36,7 @@ public interface BioChemEntity extends Thing {
     /**
      * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
      *
+     * @param fFunding Grant value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
@@ -53,6 +54,7 @@ public interface BioChemEntity extends Thing {
     /**
      * Another BioChemEntity encoding by this one.
      *
+     * @param fIsEncodedByBioChemEntity Gene value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
     void setIsEncodedByBioChemEntity(Gene fIsEncodedByBioChemEntity);
@@ -68,6 +70,7 @@ public interface BioChemEntity extends Thing {
     /**
      * Indicates a BioChemEntity that is (in some sense) a part of this BioChemEntity. 
      *
+     * @param fIsPartOfBioChemEntity BioChemEntity value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
     void setIsPartOfBioChemEntity(BioChemEntity fIsPartOfBioChemEntity);
@@ -83,9 +86,45 @@ public interface BioChemEntity extends Thing {
     /**
      * The taxonomic grouping of the organism that expresses, encodes, or in someway related to the BioChemEntity.
      *
+     * @param fTaxonomicRange URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    void setTaxonomicRange(Object fTaxonomicRange);
+    void setTaxonomicRange(URL fTaxonomicRange);
+    /**
+     * The taxonomic grouping of the organism that expresses, encodes, or in someway related to the BioChemEntity.
+     *
+     * @param fTaxonomicRange java.net.URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    void setTaxonomicRange(java.net.URL fTaxonomicRange);
+    /**
+     * The taxonomic grouping of the organism that expresses, encodes, or in someway related to the BioChemEntity.
+     *
+     * @param fTaxonomicRange DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    void setTaxonomicRange(DefinedTerm fTaxonomicRange);
+    /**
+     * The taxonomic grouping of the organism that expresses, encodes, or in someway related to the BioChemEntity.
+     *
+     * @param fTaxonomicRange Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    void setTaxonomicRange(Text fTaxonomicRange);
+    /**
+     * The taxonomic grouping of the organism that expresses, encodes, or in someway related to the BioChemEntity.
+     *
+     * @param fTaxonomicRange java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    void setTaxonomicRange(java.lang.String fTaxonomicRange);
+    /**
+     * The taxonomic grouping of the organism that expresses, encodes, or in someway related to the BioChemEntity.
+     *
+     * @param fTaxonomicRange Taxon value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    void setTaxonomicRange(Taxon fTaxonomicRange);
 
     /**
      * Biological process this BioChemEntity is involved in; please use PropertyValue if you want to include any evidence.
@@ -98,9 +137,31 @@ public interface BioChemEntity extends Thing {
     /**
      * Biological process this BioChemEntity is involved in; please use PropertyValue if you want to include any evidence.
      *
+     * @param fIsInvolvedInBiologicalProcess PropertyValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    void setIsInvolvedInBiologicalProcess(Object fIsInvolvedInBiologicalProcess);
+    void setIsInvolvedInBiologicalProcess(PropertyValue fIsInvolvedInBiologicalProcess);
+    /**
+     * Biological process this BioChemEntity is involved in; please use PropertyValue if you want to include any evidence.
+     *
+     * @param fIsInvolvedInBiologicalProcess URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    void setIsInvolvedInBiologicalProcess(URL fIsInvolvedInBiologicalProcess);
+    /**
+     * Biological process this BioChemEntity is involved in; please use PropertyValue if you want to include any evidence.
+     *
+     * @param fIsInvolvedInBiologicalProcess java.net.URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    void setIsInvolvedInBiologicalProcess(java.net.URL fIsInvolvedInBiologicalProcess);
+    /**
+     * Biological process this BioChemEntity is involved in; please use PropertyValue if you want to include any evidence.
+     *
+     * @param fIsInvolvedInBiologicalProcess DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    void setIsInvolvedInBiologicalProcess(DefinedTerm fIsInvolvedInBiologicalProcess);
 
     /**
      * Subcellular location where this BioChemEntity is located; please use PropertyValue if you want to include any evidence.
@@ -113,9 +174,31 @@ public interface BioChemEntity extends Thing {
     /**
      * Subcellular location where this BioChemEntity is located; please use PropertyValue if you want to include any evidence.
      *
+     * @param fIsLocatedInSubcellularLocation PropertyValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    void setIsLocatedInSubcellularLocation(Object fIsLocatedInSubcellularLocation);
+    void setIsLocatedInSubcellularLocation(PropertyValue fIsLocatedInSubcellularLocation);
+    /**
+     * Subcellular location where this BioChemEntity is located; please use PropertyValue if you want to include any evidence.
+     *
+     * @param fIsLocatedInSubcellularLocation DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    void setIsLocatedInSubcellularLocation(DefinedTerm fIsLocatedInSubcellularLocation);
+    /**
+     * Subcellular location where this BioChemEntity is located; please use PropertyValue if you want to include any evidence.
+     *
+     * @param fIsLocatedInSubcellularLocation URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    void setIsLocatedInSubcellularLocation(URL fIsLocatedInSubcellularLocation);
+    /**
+     * Subcellular location where this BioChemEntity is located; please use PropertyValue if you want to include any evidence.
+     *
+     * @param fIsLocatedInSubcellularLocation java.net.URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    void setIsLocatedInSubcellularLocation(java.net.URL fIsLocatedInSubcellularLocation);
 
     /**
      * Disease associated to this BioChemEntity. Such disease can be a MedicalCondition or a URL. If you want to add an evidence supporting the association, please use PropertyValue.
@@ -128,9 +211,31 @@ public interface BioChemEntity extends Thing {
     /**
      * Disease associated to this BioChemEntity. Such disease can be a MedicalCondition or a URL. If you want to add an evidence supporting the association, please use PropertyValue.
      *
+     * @param fAssociatedDisease URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    void setAssociatedDisease(Object fAssociatedDisease);
+    void setAssociatedDisease(URL fAssociatedDisease);
+    /**
+     * Disease associated to this BioChemEntity. Such disease can be a MedicalCondition or a URL. If you want to add an evidence supporting the association, please use PropertyValue.
+     *
+     * @param fAssociatedDisease java.net.URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    void setAssociatedDisease(java.net.URL fAssociatedDisease);
+    /**
+     * Disease associated to this BioChemEntity. Such disease can be a MedicalCondition or a URL. If you want to add an evidence supporting the association, please use PropertyValue.
+     *
+     * @param fAssociatedDisease PropertyValue value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    void setAssociatedDisease(PropertyValue fAssociatedDisease);
+    /**
+     * Disease associated to this BioChemEntity. Such disease can be a MedicalCondition or a URL. If you want to add an evidence supporting the association, please use PropertyValue.
+     *
+     * @param fAssociatedDisease MedicalCondition value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    void setAssociatedDisease(MedicalCondition fAssociatedDisease);
 
     /**
      * Molecular function performed by this BioChemEntity; please use PropertyValue if you want to include any evidence.
@@ -143,9 +248,31 @@ public interface BioChemEntity extends Thing {
     /**
      * Molecular function performed by this BioChemEntity; please use PropertyValue if you want to include any evidence.
      *
+     * @param fHasMolecularFunction PropertyValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    void setHasMolecularFunction(Object fHasMolecularFunction);
+    void setHasMolecularFunction(PropertyValue fHasMolecularFunction);
+    /**
+     * Molecular function performed by this BioChemEntity; please use PropertyValue if you want to include any evidence.
+     *
+     * @param fHasMolecularFunction DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    void setHasMolecularFunction(DefinedTerm fHasMolecularFunction);
+    /**
+     * Molecular function performed by this BioChemEntity; please use PropertyValue if you want to include any evidence.
+     *
+     * @param fHasMolecularFunction URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    void setHasMolecularFunction(URL fHasMolecularFunction);
+    /**
+     * Molecular function performed by this BioChemEntity; please use PropertyValue if you want to include any evidence.
+     *
+     * @param fHasMolecularFunction java.net.URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    void setHasMolecularFunction(java.net.URL fHasMolecularFunction);
 
     /**
      * Indicates a BioChemEntity that (in some sense) has this BioChemEntity as a part. 
@@ -158,6 +285,7 @@ public interface BioChemEntity extends Thing {
     /**
      * Indicates a BioChemEntity that (in some sense) has this BioChemEntity as a part. 
      *
+     * @param fHasBioChemEntityPart BioChemEntity value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
     void setHasBioChemEntityPart(BioChemEntity fHasBioChemEntityPart);
@@ -173,6 +301,7 @@ public interface BioChemEntity extends Thing {
     /**
      * A BioChemEntity that is known to interact with this item.
      *
+     * @param fBioChemInteraction BioChemEntity value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
     void setBioChemInteraction(BioChemEntity fBioChemInteraction);
@@ -188,9 +317,38 @@ public interface BioChemEntity extends Thing {
     /**
      * A common representation such as a protein sequence or chemical structure for this entity. For images use schema.org/image.
      *
+     * @param fHasRepresentation Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    void setHasRepresentation(Object fHasRepresentation);
+    void setHasRepresentation(Text fHasRepresentation);
+    /**
+     * A common representation such as a protein sequence or chemical structure for this entity. For images use schema.org/image.
+     *
+     * @param fHasRepresentation java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    void setHasRepresentation(java.lang.String fHasRepresentation);
+    /**
+     * A common representation such as a protein sequence or chemical structure for this entity. For images use schema.org/image.
+     *
+     * @param fHasRepresentation PropertyValue value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    void setHasRepresentation(PropertyValue fHasRepresentation);
+    /**
+     * A common representation such as a protein sequence or chemical structure for this entity. For images use schema.org/image.
+     *
+     * @param fHasRepresentation URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    void setHasRepresentation(URL fHasRepresentation);
+    /**
+     * A common representation such as a protein sequence or chemical structure for this entity. For images use schema.org/image.
+     *
+     * @param fHasRepresentation java.net.URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    void setHasRepresentation(java.net.URL fHasRepresentation);
 
     /**
      * A similar BioChemEntity, e.g., obtained by fingerprint similarity algorithms.
@@ -203,6 +361,7 @@ public interface BioChemEntity extends Thing {
     /**
      * A similar BioChemEntity, e.g., obtained by fingerprint similarity algorithms.
      *
+     * @param fBioChemSimilarity BioChemEntity value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
     void setBioChemSimilarity(BioChemEntity fBioChemSimilarity);
@@ -218,6 +377,7 @@ public interface BioChemEntity extends Thing {
     /**
      * A role played by the BioChemEntity within a biological context.
      *
+     * @param fBiologicalRole DefinedTerm value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
     void setBiologicalRole(DefinedTerm fBiologicalRole);

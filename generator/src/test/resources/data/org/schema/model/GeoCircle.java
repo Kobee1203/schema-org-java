@@ -30,8 +30,33 @@ public interface GeoCircle extends GeoShape {
     /**
      * Indicates the approximate radius of a GeoCircle (metres unless indicated otherwise via Distance notation).
      *
+     * @param fGeoRadius Number value to set.
      */
-    void setGeoRadius(Object fGeoRadius);
+    void setGeoRadius(Number fGeoRadius);
+    /**
+     * Indicates the approximate radius of a GeoCircle (metres unless indicated otherwise via Distance notation).
+     *
+     * @param fGeoRadius java.lang.Number value to set.
+     */
+    void setGeoRadius(java.lang.Number fGeoRadius);
+    /**
+     * Indicates the approximate radius of a GeoCircle (metres unless indicated otherwise via Distance notation).
+     *
+     * @param fGeoRadius Text value to set.
+     */
+    void setGeoRadius(Text fGeoRadius);
+    /**
+     * Indicates the approximate radius of a GeoCircle (metres unless indicated otherwise via Distance notation).
+     *
+     * @param fGeoRadius java.lang.String value to set.
+     */
+    void setGeoRadius(java.lang.String fGeoRadius);
+    /**
+     * Indicates the approximate radius of a GeoCircle (metres unless indicated otherwise via Distance notation).
+     *
+     * @param fGeoRadius Distance value to set.
+     */
+    void setGeoRadius(Distance fGeoRadius);
 
     /**
      * Indicates the GeoCoordinates at the centre of a GeoShape e.g. GeoCircle.
@@ -43,6 +68,7 @@ public interface GeoCircle extends GeoShape {
     /**
      * Indicates the GeoCoordinates at the centre of a GeoShape e.g. GeoCircle.
      *
+     * @param fGeoMidpoint GeoCoordinates value to set.
      */
     void setGeoMidpoint(GeoCoordinates fGeoMidpoint);
 }

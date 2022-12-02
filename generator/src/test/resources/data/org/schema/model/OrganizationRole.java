@@ -24,6 +24,13 @@ public interface OrganizationRole extends Role {
     /**
      * A number associated with a role in an organization, for example, the number on an athlete's jersey.
      *
+     * @param fNumberedPosition Number value to set.
      */
     void setNumberedPosition(Number fNumberedPosition);
+    /**
+     * A number associated with a role in an organization, for example, the number on an athlete's jersey.
+     *
+     * @param fNumberedPosition java.lang.Number value to set.
+     */
+    void setNumberedPosition(java.lang.Number fNumberedPosition);
 }

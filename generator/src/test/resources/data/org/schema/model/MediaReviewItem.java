@@ -28,6 +28,7 @@ public interface MediaReviewItem extends CreativeWork {
     /**
      * In the context of a [[MediaReview]], indicates specific media item(s) that are grouped using a [[MediaReviewItem]].
      *
+     * @param fMediaItemAppearance MediaObject value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */

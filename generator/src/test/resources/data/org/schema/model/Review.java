@@ -30,6 +30,7 @@ public interface Review extends CreativeWork {
     /**
      * The rating given in this review. Note that reviews can themselves be rated. The ```reviewRating``` applies to rating given by the review. The [[aggregateRating]] property applies to the review itself, as a creative work.
      *
+     * @param fReviewRating Rating value to set.
      */
     void setReviewRating(Rating fReviewRating);
 
@@ -43,6 +44,7 @@ public interface Review extends CreativeWork {
     /**
      * The item that is being reviewed/rated.
      *
+     * @param fItemReviewed Thing value to set.
      */
     void setItemReviewed(Thing fItemReviewed);
 
@@ -58,10 +60,43 @@ public interface Review extends CreativeWork {
     /**
      * Indicates, in the context of a [[Review]] (e.g. framed as 'pro' vs 'con' considerations), negative considerations - either as unstructured text, or a list.
      *
+     * @param fNegativeNotes ListItem value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2832">https://github.com/schemaorg/schemaorg/issues/2832</a>
      */
-    void setNegativeNotes(Object fNegativeNotes);
+    void setNegativeNotes(ListItem fNegativeNotes);
+    /**
+     * Indicates, in the context of a [[Review]] (e.g. framed as 'pro' vs 'con' considerations), negative considerations - either as unstructured text, or a list.
+     *
+     * @param fNegativeNotes Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2832">https://github.com/schemaorg/schemaorg/issues/2832</a>
+     */
+    void setNegativeNotes(Text fNegativeNotes);
+    /**
+     * Indicates, in the context of a [[Review]] (e.g. framed as 'pro' vs 'con' considerations), negative considerations - either as unstructured text, or a list.
+     *
+     * @param fNegativeNotes java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2832">https://github.com/schemaorg/schemaorg/issues/2832</a>
+     */
+    void setNegativeNotes(java.lang.String fNegativeNotes);
+    /**
+     * Indicates, in the context of a [[Review]] (e.g. framed as 'pro' vs 'con' considerations), negative considerations - either as unstructured text, or a list.
+     *
+     * @param fNegativeNotes WebContent value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2832">https://github.com/schemaorg/schemaorg/issues/2832</a>
+     */
+    void setNegativeNotes(WebContent fNegativeNotes);
+    /**
+     * Indicates, in the context of a [[Review]] (e.g. framed as 'pro' vs 'con' considerations), negative considerations - either as unstructured text, or a list.
+     *
+     * @param fNegativeNotes ItemList value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2832">https://github.com/schemaorg/schemaorg/issues/2832</a>
+     */
+    void setNegativeNotes(ItemList fNegativeNotes);
 
     /**
      * This Review or Rating is relevant to this part or facet of the itemReviewed.
@@ -74,9 +109,17 @@ public interface Review extends CreativeWork {
     /**
      * This Review or Rating is relevant to this part or facet of the itemReviewed.
      *
+     * @param fReviewAspect Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1689">https://github.com/schemaorg/schemaorg/issues/1689</a>
      */
     void setReviewAspect(Text fReviewAspect);
+    /**
+     * This Review or Rating is relevant to this part or facet of the itemReviewed.
+     *
+     * @param fReviewAspect java.lang.String value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1689">https://github.com/schemaorg/schemaorg/issues/1689</a>
+     */
+    void setReviewAspect(java.lang.String fReviewAspect);
 
     /**
      * An associated [[ClaimReview]], related by specific common content, topic or claim. The expectation is that this property would be most typically used in cases where a single activity is conducting both claim reviews and media reviews, in which case [[relatedMediaReview]] would commonly be used on a [[ClaimReview]], while [[relatedClaimReview]] would be used on [[MediaReview]].
@@ -90,6 +133,7 @@ public interface Review extends CreativeWork {
     /**
      * An associated [[ClaimReview]], related by specific common content, topic or claim. The expectation is that this property would be most typically used in cases where a single activity is conducting both claim reviews and media reviews, in which case [[relatedMediaReview]] would commonly be used on a [[ClaimReview]], while [[relatedClaimReview]] would be used on [[MediaReview]].
      *
+     * @param fAssociatedClaimReview Review value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
@@ -107,10 +151,43 @@ public interface Review extends CreativeWork {
     /**
      * Indicates, in the context of a [[Review]] (e.g. framed as 'pro' vs 'con' considerations), positive considerations - either as unstructured text, or a list.
      *
+     * @param fPositiveNotes WebContent value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2832">https://github.com/schemaorg/schemaorg/issues/2832</a>
      */
-    void setPositiveNotes(Object fPositiveNotes);
+    void setPositiveNotes(WebContent fPositiveNotes);
+    /**
+     * Indicates, in the context of a [[Review]] (e.g. framed as 'pro' vs 'con' considerations), positive considerations - either as unstructured text, or a list.
+     *
+     * @param fPositiveNotes Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2832">https://github.com/schemaorg/schemaorg/issues/2832</a>
+     */
+    void setPositiveNotes(Text fPositiveNotes);
+    /**
+     * Indicates, in the context of a [[Review]] (e.g. framed as 'pro' vs 'con' considerations), positive considerations - either as unstructured text, or a list.
+     *
+     * @param fPositiveNotes java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2832">https://github.com/schemaorg/schemaorg/issues/2832</a>
+     */
+    void setPositiveNotes(java.lang.String fPositiveNotes);
+    /**
+     * Indicates, in the context of a [[Review]] (e.g. framed as 'pro' vs 'con' considerations), positive considerations - either as unstructured text, or a list.
+     *
+     * @param fPositiveNotes ListItem value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2832">https://github.com/schemaorg/schemaorg/issues/2832</a>
+     */
+    void setPositiveNotes(ListItem fPositiveNotes);
+    /**
+     * Indicates, in the context of a [[Review]] (e.g. framed as 'pro' vs 'con' considerations), positive considerations - either as unstructured text, or a list.
+     *
+     * @param fPositiveNotes ItemList value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2832">https://github.com/schemaorg/schemaorg/issues/2832</a>
+     */
+    void setPositiveNotes(ItemList fPositiveNotes);
 
     /**
      * An associated [[Review]].
@@ -124,6 +201,7 @@ public interface Review extends CreativeWork {
     /**
      * An associated [[Review]].
      *
+     * @param fAssociatedReview Review value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
@@ -141,6 +219,7 @@ public interface Review extends CreativeWork {
     /**
      * An associated [[MediaReview]], related by specific common content, topic or claim. The expectation is that this property would be most typically used in cases where a single activity is conducting both claim reviews and media reviews, in which case [[relatedMediaReview]] would commonly be used on a [[ClaimReview]], while [[relatedClaimReview]] would be used on [[MediaReview]].
      *
+     * @param fAssociatedMediaReview Review value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
@@ -156,6 +235,13 @@ public interface Review extends CreativeWork {
     /**
      * The actual body of the review.
      *
+     * @param fReviewBody Text value to set.
      */
     void setReviewBody(Text fReviewBody);
+    /**
+     * The actual body of the review.
+     *
+     * @param fReviewBody java.lang.String value to set.
+     */
+    void setReviewBody(java.lang.String fReviewBody);
 }

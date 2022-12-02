@@ -57,10 +57,20 @@ public class SchoolDistrictImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * The telephone number.
      *
+     * @param fTelephone Text value to set.
      */
     @Override
     public void setTelephone(Text fTelephone) {
         this.fTelephone = fTelephone;
+    }
+    /**
+     * The telephone number.
+     *
+     * @param fTelephone java.lang.String value to set.
+     */
+    @Override
+    public void setTelephone(java.lang.String fTelephone) {
+        this.fTelephone = Text.of(fTelephone);
     }
 
     private Review fReview;
@@ -78,6 +88,7 @@ public class SchoolDistrictImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * A review of the item.
      *
+     * @param fReview Review value to set.
      */
     @Override
     public void setReview(Review fReview) {
@@ -99,10 +110,20 @@ public class SchoolDistrictImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * A URL to a map of the place.
      *
+     * @param fMaps URL value to set.
      */
     @Override
     public void setMaps(URL fMaps) {
         this.fMaps = fMaps;
+    }
+    /**
+     * A URL to a map of the place.
+     *
+     * @param fMaps java.net.URL value to set.
+     */
+    @Override
+    public void setMaps(java.net.URL fMaps) {
+        this.fMaps = URL.of(fMaps);
     }
 
     private Object fGeoContains;
@@ -120,12 +141,19 @@ public class SchoolDistrictImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. "a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
+     * @param fGeoContains Place value to set.
      */
     @Override
-    public void setGeoContains(Object fGeoContains) {
-        if(!(fGeoContains instanceof Place) && !(fGeoContains instanceof GeospatialGeometry)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoContains': " + fGeoContains);
-        }
+    public void setGeoContains(Place fGeoContains) {
+        this.fGeoContains = fGeoContains;
+    }
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. "a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @param fGeoContains GeospatialGeometry value to set.
+     */
+    @Override
+    public void setGeoContains(GeospatialGeometry fGeoContains) {
         this.fGeoContains = fGeoContains;
     }
 
@@ -144,10 +172,20 @@ public class SchoolDistrictImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * The total number of individuals that may attend an event or venue.
      *
+     * @param fMaximumAttendeeCapacity Integer value to set.
      */
     @Override
     public void setMaximumAttendeeCapacity(Integer fMaximumAttendeeCapacity) {
         this.fMaximumAttendeeCapacity = fMaximumAttendeeCapacity;
+    }
+    /**
+     * The total number of individuals that may attend an event or venue.
+     *
+     * @param fMaximumAttendeeCapacity java.lang.Integer value to set.
+     */
+    @Override
+    public void setMaximumAttendeeCapacity(java.lang.Integer fMaximumAttendeeCapacity) {
+        this.fMaximumAttendeeCapacity = Integer.of(fMaximumAttendeeCapacity);
     }
 
     private Place fContainsPlace;
@@ -165,6 +203,7 @@ public class SchoolDistrictImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * The basic containment relation between a place and another that it contains.
      *
+     * @param fContainsPlace Place value to set.
      */
     @Override
     public void setContainsPlace(Place fContainsPlace) {
@@ -187,11 +226,22 @@ public class SchoolDistrictImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.
      *
+     * @param fSmokingAllowed Boolean value to set.
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
     @Override
     public void setSmokingAllowed(Boolean fSmokingAllowed) {
         this.fSmokingAllowed = fSmokingAllowed;
+    }
+    /**
+     * Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.
+     *
+     * @param fSmokingAllowed java.lang.Boolean value to set.
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
+     */
+    @Override
+    public void setSmokingAllowed(java.lang.Boolean fSmokingAllowed) {
+        this.fSmokingAllowed = Boolean.of(fSmokingAllowed);
     }
 
     private Text fGlobalLocationNumber;
@@ -210,11 +260,22 @@ public class SchoolDistrictImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
      *
+     * @param fGlobalLocationNumber Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
     public void setGlobalLocationNumber(Text fGlobalLocationNumber) {
         this.fGlobalLocationNumber = fGlobalLocationNumber;
+    }
+    /**
+     * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
+     *
+     * @param fGlobalLocationNumber java.lang.String value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setGlobalLocationNumber(java.lang.String fGlobalLocationNumber) {
+        this.fGlobalLocationNumber = Text.of(fGlobalLocationNumber);
     }
 
     private Object fKeywords;
@@ -232,13 +293,47 @@ public class SchoolDistrictImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
      *
+     * @param fKeywords DefinedTerm value to set.
      */
     @Override
-    public void setKeywords(Object fKeywords) {
-        if(!(fKeywords instanceof DefinedTerm) && !(fKeywords instanceof Text) && !(fKeywords instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'keywords': " + fKeywords);
-        }
+    public void setKeywords(DefinedTerm fKeywords) {
         this.fKeywords = fKeywords;
+    }
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     * @param fKeywords Text value to set.
+     */
+    @Override
+    public void setKeywords(Text fKeywords) {
+        this.fKeywords = fKeywords;
+    }
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     * @param fKeywords java.lang.String value to set.
+     */
+    @Override
+    public void setKeywords(java.lang.String fKeywords) {
+        this.fKeywords = Text.of(fKeywords);
+    }
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     * @param fKeywords URL value to set.
+     */
+    @Override
+    public void setKeywords(URL fKeywords) {
+        this.fKeywords = fKeywords;
+    }
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     * @param fKeywords java.net.URL value to set.
+     */
+    @Override
+    public void setKeywords(java.net.URL fKeywords) {
+        this.fKeywords = URL.of(fKeywords);
     }
 
     private Object fGeoIntersects;
@@ -256,12 +351,19 @@ public class SchoolDistrictImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
+     * @param fGeoIntersects GeospatialGeometry value to set.
      */
     @Override
-    public void setGeoIntersects(Object fGeoIntersects) {
-        if(!(fGeoIntersects instanceof GeospatialGeometry) && !(fGeoIntersects instanceof Place)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoIntersects': " + fGeoIntersects);
-        }
+    public void setGeoIntersects(GeospatialGeometry fGeoIntersects) {
+        this.fGeoIntersects = fGeoIntersects;
+    }
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @param fGeoIntersects Place value to set.
+     */
+    @Override
+    public void setGeoIntersects(Place fGeoIntersects) {
         this.fGeoIntersects = fGeoIntersects;
     }
 
@@ -280,13 +382,38 @@ public class SchoolDistrictImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
      *
+     * @param fLatitude Text value to set.
      */
     @Override
-    public void setLatitude(Object fLatitude) {
-        if(!(fLatitude instanceof Text) && !(fLatitude instanceof Number)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'latitude': " + fLatitude);
-        }
+    public void setLatitude(Text fLatitude) {
         this.fLatitude = fLatitude;
+    }
+    /**
+     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     *
+     * @param fLatitude java.lang.String value to set.
+     */
+    @Override
+    public void setLatitude(java.lang.String fLatitude) {
+        this.fLatitude = Text.of(fLatitude);
+    }
+    /**
+     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     *
+     * @param fLatitude Number value to set.
+     */
+    @Override
+    public void setLatitude(Number fLatitude) {
+        this.fLatitude = fLatitude;
+    }
+    /**
+     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     *
+     * @param fLatitude java.lang.Number value to set.
+     */
+    @Override
+    public void setLatitude(java.lang.Number fLatitude) {
+        this.fLatitude = Number.of(fLatitude);
     }
 
     private Object fGeoTouches;
@@ -304,12 +431,19 @@ public class SchoolDistrictImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * Represents spatial relations in which two geometries (or the places they represent) touch: they have at least one boundary point in common, but no interior points." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM) )
      *
+     * @param fGeoTouches Place value to set.
      */
     @Override
-    public void setGeoTouches(Object fGeoTouches) {
-        if(!(fGeoTouches instanceof Place) && !(fGeoTouches instanceof GeospatialGeometry)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoTouches': " + fGeoTouches);
-        }
+    public void setGeoTouches(Place fGeoTouches) {
+        this.fGeoTouches = fGeoTouches;
+    }
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) touch: they have at least one boundary point in common, but no interior points." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM) )
+     *
+     * @param fGeoTouches GeospatialGeometry value to set.
+     */
+    @Override
+    public void setGeoTouches(GeospatialGeometry fGeoTouches) {
         this.fGeoTouches = fGeoTouches;
     }
 
@@ -328,12 +462,19 @@ public class SchoolDistrictImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
+     * @param fGeoCoveredBy Place value to set.
      */
     @Override
-    public void setGeoCoveredBy(Object fGeoCoveredBy) {
-        if(!(fGeoCoveredBy instanceof Place) && !(fGeoCoveredBy instanceof GeospatialGeometry)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoCoveredBy': " + fGeoCoveredBy);
-        }
+    public void setGeoCoveredBy(Place fGeoCoveredBy) {
+        this.fGeoCoveredBy = fGeoCoveredBy;
+    }
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @param fGeoCoveredBy GeospatialGeometry value to set.
+     */
+    @Override
+    public void setGeoCoveredBy(GeospatialGeometry fGeoCoveredBy) {
         this.fGeoCoveredBy = fGeoCoveredBy;
     }
 
@@ -352,6 +493,7 @@ public class SchoolDistrictImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * The overall rating, based on a collection of reviews or ratings, of the item.
      *
+     * @param fAggregateRating AggregateRating value to set.
      */
     @Override
     public void setAggregateRating(AggregateRating fAggregateRating) {
@@ -373,12 +515,28 @@ public class SchoolDistrictImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * Physical address of the item.
      *
+     * @param fAddress Text value to set.
      */
     @Override
-    public void setAddress(Object fAddress) {
-        if(!(fAddress instanceof Text) && !(fAddress instanceof PostalAddress)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'address': " + fAddress);
-        }
+    public void setAddress(Text fAddress) {
+        this.fAddress = fAddress;
+    }
+    /**
+     * Physical address of the item.
+     *
+     * @param fAddress java.lang.String value to set.
+     */
+    @Override
+    public void setAddress(java.lang.String fAddress) {
+        this.fAddress = Text.of(fAddress);
+    }
+    /**
+     * Physical address of the item.
+     *
+     * @param fAddress PostalAddress value to set.
+     */
+    @Override
+    public void setAddress(PostalAddress fAddress) {
         this.fAddress = fAddress;
     }
 
@@ -397,12 +555,19 @@ public class SchoolDistrictImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). "Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other" (a symmetric relationship)
      *
+     * @param fGeoEquals Place value to set.
      */
     @Override
-    public void setGeoEquals(Object fGeoEquals) {
-        if(!(fGeoEquals instanceof Place) && !(fGeoEquals instanceof GeospatialGeometry)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoEquals': " + fGeoEquals);
-        }
+    public void setGeoEquals(Place fGeoEquals) {
+        this.fGeoEquals = fGeoEquals;
+    }
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). "Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other" (a symmetric relationship)
+     *
+     * @param fGeoEquals GeospatialGeometry value to set.
+     */
+    @Override
+    public void setGeoEquals(GeospatialGeometry fGeoEquals) {
         this.fGeoEquals = fGeoEquals;
     }
 
@@ -421,10 +586,20 @@ public class SchoolDistrictImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * A URL to a map of the place.
      *
+     * @param fMap URL value to set.
      */
     @Override
     public void setMap(URL fMap) {
         this.fMap = fMap;
+    }
+    /**
+     * A URL to a map of the place.
+     *
+     * @param fMap java.net.URL value to set.
+     */
+    @Override
+    public void setMap(java.net.URL fMap) {
+        this.fMap = URL.of(fMap);
     }
 
     private Boolean fPublicAccess;
@@ -442,10 +617,20 @@ public class SchoolDistrictImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * A flag to signal that the [[Place]] is open to public visitors.  If this property is omitted there is no assumed default boolean value
      *
+     * @param fPublicAccess Boolean value to set.
      */
     @Override
     public void setPublicAccess(Boolean fPublicAccess) {
         this.fPublicAccess = fPublicAccess;
+    }
+    /**
+     * A flag to signal that the [[Place]] is open to public visitors.  If this property is omitted there is no assumed default boolean value
+     *
+     * @param fPublicAccess java.lang.Boolean value to set.
+     */
+    @Override
+    public void setPublicAccess(java.lang.Boolean fPublicAccess) {
+        this.fPublicAccess = Boolean.of(fPublicAccess);
     }
 
     private Object fGeoCrosses;
@@ -463,12 +648,19 @@ public class SchoolDistrictImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: "a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
+     * @param fGeoCrosses GeospatialGeometry value to set.
      */
     @Override
-    public void setGeoCrosses(Object fGeoCrosses) {
-        if(!(fGeoCrosses instanceof GeospatialGeometry) && !(fGeoCrosses instanceof Place)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoCrosses': " + fGeoCrosses);
-        }
+    public void setGeoCrosses(GeospatialGeometry fGeoCrosses) {
+        this.fGeoCrosses = fGeoCrosses;
+    }
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: "a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @param fGeoCrosses Place value to set.
+     */
+    @Override
+    public void setGeoCrosses(Place fGeoCrosses) {
         this.fGeoCrosses = fGeoCrosses;
     }
 
@@ -487,6 +679,7 @@ public class SchoolDistrictImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * The basic containment relation between a place and one that contains it.
      *
+     * @param fContainedInPlace Place value to set.
      */
     @Override
     public void setContainedInPlace(Place fContainedInPlace) {
@@ -509,6 +702,7 @@ public class SchoolDistrictImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
      *
+     * @param fAmenityFeature LocationFeatureSpecification value to set.
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
     @Override
@@ -531,10 +725,20 @@ public class SchoolDistrictImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * A slogan or motto associated with the item.
      *
+     * @param fSlogan Text value to set.
      */
     @Override
     public void setSlogan(Text fSlogan) {
         this.fSlogan = fSlogan;
+    }
+    /**
+     * A slogan or motto associated with the item.
+     *
+     * @param fSlogan java.lang.String value to set.
+     */
+    @Override
+    public void setSlogan(java.lang.String fSlogan) {
+        this.fSlogan = Text.of(fSlogan);
     }
 
     private Object fPhotos;
@@ -552,12 +756,19 @@ public class SchoolDistrictImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * Photographs of this place.
      *
+     * @param fPhotos ImageObject value to set.
      */
     @Override
-    public void setPhotos(Object fPhotos) {
-        if(!(fPhotos instanceof ImageObject) && !(fPhotos instanceof Photograph)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'photos': " + fPhotos);
-        }
+    public void setPhotos(ImageObject fPhotos) {
+        this.fPhotos = fPhotos;
+    }
+    /**
+     * Photographs of this place.
+     *
+     * @param fPhotos Photograph value to set.
+     */
+    @Override
+    public void setPhotos(Photograph fPhotos) {
         this.fPhotos = fPhotos;
     }
 
@@ -576,12 +787,19 @@ public class SchoolDistrictImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. "Every point of b is a point of (the interior or boundary of) a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
+     * @param fGeoCovers GeospatialGeometry value to set.
      */
     @Override
-    public void setGeoCovers(Object fGeoCovers) {
-        if(!(fGeoCovers instanceof GeospatialGeometry) && !(fGeoCovers instanceof Place)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoCovers': " + fGeoCovers);
-        }
+    public void setGeoCovers(GeospatialGeometry fGeoCovers) {
+        this.fGeoCovers = fGeoCovers;
+    }
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. "Every point of b is a point of (the interior or boundary of) a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @param fGeoCovers Place value to set.
+     */
+    @Override
+    public void setGeoCovers(Place fGeoCovers) {
         this.fGeoCovers = fGeoCovers;
     }
 
@@ -600,6 +818,7 @@ public class SchoolDistrictImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * The basic containment relation between a place and one that contains it.
      *
+     * @param fContainedIn Place value to set.
      */
     @Override
     public void setContainedIn(Place fContainedIn) {
@@ -623,12 +842,24 @@ public class SchoolDistrictImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * Indicates whether some facility (e.g. [[FoodEstablishment]], [[CovidTestingFacility]]) offers a service that can be used by driving through in a car. In the case of [[CovidTestingFacility]] such facilities could potentially help with social distancing from other potentially-infected users.
      *
+     * @param fHasDriveThroughService Boolean value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      */
     @Override
     public void setHasDriveThroughService(Boolean fHasDriveThroughService) {
         this.fHasDriveThroughService = fHasDriveThroughService;
+    }
+    /**
+     * Indicates whether some facility (e.g. [[FoodEstablishment]], [[CovidTestingFacility]]) offers a service that can be used by driving through in a car. In the case of [[CovidTestingFacility]] such facilities could potentially help with social distancing from other potentially-infected users.
+     *
+     * @param fHasDriveThroughService java.lang.Boolean value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    @Override
+    public void setHasDriveThroughService(java.lang.Boolean fHasDriveThroughService) {
+        this.fHasDriveThroughService = Boolean.of(fHasDriveThroughService);
     }
 
     private Object fLogo;
@@ -647,13 +878,31 @@ public class SchoolDistrictImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * An associated logo.
      *
+     * @param fLogo URL value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setLogo(Object fLogo) {
-        if(!(fLogo instanceof URL) && !(fLogo instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'logo': " + fLogo);
-        }
+    public void setLogo(URL fLogo) {
+        this.fLogo = fLogo;
+    }
+    /**
+     * An associated logo.
+     *
+     * @param fLogo java.net.URL value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setLogo(java.net.URL fLogo) {
+        this.fLogo = URL.of(fLogo);
+    }
+    /**
+     * An associated logo.
+     *
+     * @param fLogo ImageObject value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setLogo(ImageObject fLogo) {
         this.fLogo = fLogo;
     }
 
@@ -672,10 +921,20 @@ public class SchoolDistrictImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * A flag to signal that the item, event, or place is accessible for free.
      *
+     * @param fIsAccessibleForFree Boolean value to set.
      */
     @Override
     public void setIsAccessibleForFree(Boolean fIsAccessibleForFree) {
         this.fIsAccessibleForFree = fIsAccessibleForFree;
+    }
+    /**
+     * A flag to signal that the item, event, or place is accessible for free.
+     *
+     * @param fIsAccessibleForFree java.lang.Boolean value to set.
+     */
+    @Override
+    public void setIsAccessibleForFree(java.lang.Boolean fIsAccessibleForFree) {
+        this.fIsAccessibleForFree = Boolean.of(fIsAccessibleForFree);
     }
 
     private Object fGeoWithin;
@@ -693,12 +952,19 @@ public class SchoolDistrictImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
+     * @param fGeoWithin Place value to set.
      */
     @Override
-    public void setGeoWithin(Object fGeoWithin) {
-        if(!(fGeoWithin instanceof Place) && !(fGeoWithin instanceof GeospatialGeometry)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoWithin': " + fGeoWithin);
-        }
+    public void setGeoWithin(Place fGeoWithin) {
+        this.fGeoWithin = fGeoWithin;
+    }
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @param fGeoWithin GeospatialGeometry value to set.
+     */
+    @Override
+    public void setGeoWithin(GeospatialGeometry fGeoWithin) {
         this.fGeoWithin = fGeoWithin;
     }
 
@@ -717,12 +983,19 @@ public class SchoolDistrictImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM))
      *
+     * @param fGeoDisjoint GeospatialGeometry value to set.
      */
     @Override
-    public void setGeoDisjoint(Object fGeoDisjoint) {
-        if(!(fGeoDisjoint instanceof GeospatialGeometry) && !(fGeoDisjoint instanceof Place)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoDisjoint': " + fGeoDisjoint);
-        }
+    public void setGeoDisjoint(GeospatialGeometry fGeoDisjoint) {
+        this.fGeoDisjoint = fGeoDisjoint;
+    }
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM))
+     *
+     * @param fGeoDisjoint Place value to set.
+     */
+    @Override
+    public void setGeoDisjoint(Place fGeoDisjoint) {
         this.fGeoDisjoint = fGeoDisjoint;
     }
 
@@ -743,12 +1016,24 @@ public class SchoolDistrictImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * A page providing information on how to book a tour of some [[Place]], such as an [[Accommodation]] or [[ApartmentComplex]] in a real estate setting, as well as other kinds of tours as appropriate.
      *
+     * @param fTourBookingPage URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
     @Override
     public void setTourBookingPage(URL fTourBookingPage) {
         this.fTourBookingPage = fTourBookingPage;
+    }
+    /**
+     * A page providing information on how to book a tour of some [[Place]], such as an [[Accommodation]] or [[ApartmentComplex]] in a real estate setting, as well as other kinds of tours as appropriate.
+     *
+     * @param fTourBookingPage java.net.URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     */
+    @Override
+    public void setTourBookingPage(java.net.URL fTourBookingPage) {
+        this.fTourBookingPage = URL.of(fTourBookingPage);
     }
 
     private Text fIsicV4;
@@ -767,11 +1052,22 @@ public class SchoolDistrictImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
      *
+     * @param fIsicV4 Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
     public void setIsicV4(Text fIsicV4) {
         this.fIsicV4 = fIsicV4;
+    }
+    /**
+     * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
+     *
+     * @param fIsicV4 java.lang.String value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setIsicV4(java.lang.String fIsicV4) {
+        this.fIsicV4 = Text.of(fIsicV4);
     }
 
     private Object fGeoOverlaps;
@@ -789,12 +1085,19 @@ public class SchoolDistrictImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
+     * @param fGeoOverlaps GeospatialGeometry value to set.
      */
     @Override
-    public void setGeoOverlaps(Object fGeoOverlaps) {
-        if(!(fGeoOverlaps instanceof GeospatialGeometry) && !(fGeoOverlaps instanceof Place)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoOverlaps': " + fGeoOverlaps);
-        }
+    public void setGeoOverlaps(GeospatialGeometry fGeoOverlaps) {
+        this.fGeoOverlaps = fGeoOverlaps;
+    }
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @param fGeoOverlaps Place value to set.
+     */
+    @Override
+    public void setGeoOverlaps(Place fGeoOverlaps) {
         this.fGeoOverlaps = fGeoOverlaps;
     }
 
@@ -815,10 +1118,21 @@ public class SchoolDistrictImpl extends com.weedow.schemaorg.commons.model.JsonL
      * A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.<br/><br/>For example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code "3047" is a branchCode for a particular branch.
      *       
      *
+     * @param fBranchCode Text value to set.
      */
     @Override
     public void setBranchCode(Text fBranchCode) {
         this.fBranchCode = fBranchCode;
+    }
+    /**
+     * A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.<br/><br/>For example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code "3047" is a branchCode for a particular branch.
+     *       
+     *
+     * @param fBranchCode java.lang.String value to set.
+     */
+    @Override
+    public void setBranchCode(java.lang.String fBranchCode) {
+        this.fBranchCode = Text.of(fBranchCode);
     }
 
     private PropertyValue fAdditionalProperty;
@@ -836,6 +1150,7 @@ public class SchoolDistrictImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
      *
+     * @param fAdditionalProperty PropertyValue value to set.
      */
     @Override
     public void setAdditionalProperty(PropertyValue fAdditionalProperty) {
@@ -858,6 +1173,7 @@ public class SchoolDistrictImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * The opening hours of a certain place.
      *
+     * @param fOpeningHoursSpecification OpeningHoursSpecification value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
@@ -880,6 +1196,7 @@ public class SchoolDistrictImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * Review of the item.
      *
+     * @param fReviews Review value to set.
      */
     @Override
     public void setReviews(Review fReviews) {
@@ -901,12 +1218,19 @@ public class SchoolDistrictImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * A photograph of this place.
      *
+     * @param fPhoto Photograph value to set.
      */
     @Override
-    public void setPhoto(Object fPhoto) {
-        if(!(fPhoto instanceof Photograph) && !(fPhoto instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'photo': " + fPhoto);
-        }
+    public void setPhoto(Photograph fPhoto) {
+        this.fPhoto = fPhoto;
+    }
+    /**
+     * A photograph of this place.
+     *
+     * @param fPhoto ImageObject value to set.
+     */
+    @Override
+    public void setPhoto(ImageObject fPhoto) {
         this.fPhoto = fPhoto;
     }
 
@@ -927,6 +1251,7 @@ public class SchoolDistrictImpl extends com.weedow.schemaorg.commons.model.JsonL
      * The special opening hours of a certain place.<br/><br/>Use this to explicitly override general opening hours brought in scope by [[openingHoursSpecification]] or [[openingHours]].
      *       
      *
+     * @param fSpecialOpeningHoursSpecification OpeningHoursSpecification value to set.
      */
     @Override
     public void setSpecialOpeningHoursSpecification(OpeningHoursSpecification fSpecialOpeningHoursSpecification) {
@@ -948,12 +1273,28 @@ public class SchoolDistrictImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * A URL to a map of the place.
      *
+     * @param fHasMap URL value to set.
      */
     @Override
-    public void setHasMap(Object fHasMap) {
-        if(!(fHasMap instanceof URL) && !(fHasMap instanceof Map)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'hasMap': " + fHasMap);
-        }
+    public void setHasMap(URL fHasMap) {
+        this.fHasMap = fHasMap;
+    }
+    /**
+     * A URL to a map of the place.
+     *
+     * @param fHasMap java.net.URL value to set.
+     */
+    @Override
+    public void setHasMap(java.net.URL fHasMap) {
+        this.fHasMap = URL.of(fHasMap);
+    }
+    /**
+     * A URL to a map of the place.
+     *
+     * @param fHasMap Map value to set.
+     */
+    @Override
+    public void setHasMap(Map fHasMap) {
         this.fHasMap = fHasMap;
     }
 
@@ -972,13 +1313,38 @@ public class SchoolDistrictImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
      *
+     * @param fLongitude Number value to set.
      */
     @Override
-    public void setLongitude(Object fLongitude) {
-        if(!(fLongitude instanceof Number) && !(fLongitude instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'longitude': " + fLongitude);
-        }
+    public void setLongitude(Number fLongitude) {
         this.fLongitude = fLongitude;
+    }
+    /**
+     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     *
+     * @param fLongitude java.lang.Number value to set.
+     */
+    @Override
+    public void setLongitude(java.lang.Number fLongitude) {
+        this.fLongitude = Number.of(fLongitude);
+    }
+    /**
+     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     *
+     * @param fLongitude Text value to set.
+     */
+    @Override
+    public void setLongitude(Text fLongitude) {
+        this.fLongitude = fLongitude;
+    }
+    /**
+     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     *
+     * @param fLongitude java.lang.String value to set.
+     */
+    @Override
+    public void setLongitude(java.lang.String fLongitude) {
+        this.fLongitude = Text.of(fLongitude);
     }
 
     private Object fGeo;
@@ -996,12 +1362,19 @@ public class SchoolDistrictImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * The geo coordinates of the place.
      *
+     * @param fGeo GeoCoordinates value to set.
      */
     @Override
-    public void setGeo(Object fGeo) {
-        if(!(fGeo instanceof GeoCoordinates) && !(fGeo instanceof GeoShape)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geo': " + fGeo);
-        }
+    public void setGeo(GeoCoordinates fGeo) {
+        this.fGeo = fGeo;
+    }
+    /**
+     * The geo coordinates of the place.
+     *
+     * @param fGeo GeoShape value to set.
+     */
+    @Override
+    public void setGeo(GeoShape fGeo) {
         this.fGeo = fGeo;
     }
 
@@ -1020,6 +1393,7 @@ public class SchoolDistrictImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * Upcoming or past events associated with this place or organization.
      *
+     * @param fEvents Event value to set.
      */
     @Override
     public void setEvents(Event fEvents) {
@@ -1041,10 +1415,20 @@ public class SchoolDistrictImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * The fax number.
      *
+     * @param fFaxNumber Text value to set.
      */
     @Override
     public void setFaxNumber(Text fFaxNumber) {
         this.fFaxNumber = fFaxNumber;
+    }
+    /**
+     * The fax number.
+     *
+     * @param fFaxNumber java.lang.String value to set.
+     */
+    @Override
+    public void setFaxNumber(java.lang.String fFaxNumber) {
+        this.fFaxNumber = Text.of(fFaxNumber);
     }
 
     private Event fEvent;
@@ -1062,6 +1446,7 @@ public class SchoolDistrictImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * Upcoming or past event associated with this place, organization, or action.
      *
+     * @param fEvent Event value to set.
      */
     @Override
     public void setEvent(Event fEvent) {
@@ -1083,13 +1468,29 @@ public class SchoolDistrictImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
+     * @param fMainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
-        }
+    public void setMainEntityOfPage(CreativeWork fMainEntityOfPage) {
         this.fMainEntityOfPage = fMainEntityOfPage;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param fMainEntityOfPage URL value to set.
+     */
+    @Override
+    public void setMainEntityOfPage(URL fMainEntityOfPage) {
+        this.fMainEntityOfPage = fMainEntityOfPage;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param fMainEntityOfPage java.net.URL value to set.
+     */
+    @Override
+    public void setMainEntityOfPage(java.net.URL fMainEntityOfPage) {
+        this.fMainEntityOfPage = URL.of(fMainEntityOfPage);
     }
 
     private Text fAlternateName;
@@ -1107,10 +1508,20 @@ public class SchoolDistrictImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * An alias for the item.
      *
+     * @param fAlternateName Text value to set.
      */
     @Override
     public void setAlternateName(Text fAlternateName) {
         this.fAlternateName = fAlternateName;
+    }
+    /**
+     * An alias for the item.
+     *
+     * @param fAlternateName java.lang.String value to set.
+     */
+    @Override
+    public void setAlternateName(java.lang.String fAlternateName) {
+        this.fAlternateName = Text.of(fAlternateName);
     }
 
     private Text fName;
@@ -1128,10 +1539,20 @@ public class SchoolDistrictImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * The name of the item.
      *
+     * @param fName Text value to set.
      */
     @Override
     public void setName(Text fName) {
         this.fName = fName;
+    }
+    /**
+     * The name of the item.
+     *
+     * @param fName java.lang.String value to set.
+     */
+    @Override
+    public void setName(java.lang.String fName) {
+        this.fName = Text.of(fName);
     }
 
     private Action fPotentialAction;
@@ -1149,6 +1570,7 @@ public class SchoolDistrictImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      *
+     * @param fPotentialAction Action value to set.
      */
     @Override
     public void setPotentialAction(Action fPotentialAction) {
@@ -1170,12 +1592,28 @@ public class SchoolDistrictImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
+     * @param fImage URL value to set.
      */
     @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
+    public void setImage(URL fImage) {
+        this.fImage = fImage;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param fImage java.net.URL value to set.
+     */
+    @Override
+    public void setImage(java.net.URL fImage) {
+        this.fImage = URL.of(fImage);
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param fImage ImageObject value to set.
+     */
+    @Override
+    public void setImage(ImageObject fImage) {
         this.fImage = fImage;
     }
 
@@ -1194,10 +1632,20 @@ public class SchoolDistrictImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * URL of the item.
      *
+     * @param fUrl URL value to set.
      */
     @Override
     public void setUrl(URL fUrl) {
         this.fUrl = fUrl;
+    }
+    /**
+     * URL of the item.
+     *
+     * @param fUrl java.net.URL value to set.
+     */
+    @Override
+    public void setUrl(java.net.URL fUrl) {
+        this.fUrl = URL.of(fUrl);
     }
 
     private Text fDescription;
@@ -1215,10 +1663,20 @@ public class SchoolDistrictImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * A description of the item.
      *
+     * @param fDescription Text value to set.
      */
     @Override
     public void setDescription(Text fDescription) {
         this.fDescription = fDescription;
+    }
+    /**
+     * A description of the item.
+     *
+     * @param fDescription java.lang.String value to set.
+     */
+    @Override
+    public void setDescription(java.lang.String fDescription) {
+        this.fDescription = Text.of(fDescription);
     }
 
     private Object fSubjectOf;
@@ -1237,13 +1695,21 @@ public class SchoolDistrictImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * A CreativeWork or Event about this Thing.
      *
+     * @param fSubjectOf Event value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Object fSubjectOf) {
-        if(!(fSubjectOf instanceof Event) && !(fSubjectOf instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'subjectOf': " + fSubjectOf);
-        }
+    public void setSubjectOf(Event fSubjectOf) {
+        this.fSubjectOf = fSubjectOf;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @param fSubjectOf CreativeWork value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public void setSubjectOf(CreativeWork fSubjectOf) {
         this.fSubjectOf = fSubjectOf;
     }
 
@@ -1262,10 +1728,20 @@ public class SchoolDistrictImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
+     * @param fAdditionalType URL value to set.
      */
     @Override
     public void setAdditionalType(URL fAdditionalType) {
         this.fAdditionalType = fAdditionalType;
+    }
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @param fAdditionalType java.net.URL value to set.
+     */
+    @Override
+    public void setAdditionalType(java.net.URL fAdditionalType) {
+        this.fAdditionalType = URL.of(fAdditionalType);
     }
 
     private Text fDisambiguatingDescription;
@@ -1283,10 +1759,20 @@ public class SchoolDistrictImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
+     * @param fDisambiguatingDescription Text value to set.
      */
     @Override
     public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
         this.fDisambiguatingDescription = fDisambiguatingDescription;
+    }
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @param fDisambiguatingDescription java.lang.String value to set.
+     */
+    @Override
+    public void setDisambiguatingDescription(java.lang.String fDisambiguatingDescription) {
+        this.fDisambiguatingDescription = Text.of(fDisambiguatingDescription);
     }
 
     private URL fSameAs;
@@ -1304,10 +1790,20 @@ public class SchoolDistrictImpl extends com.weedow.schemaorg.commons.model.JsonL
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
+     * @param fSameAs URL value to set.
      */
     @Override
     public void setSameAs(URL fSameAs) {
         this.fSameAs = fSameAs;
+    }
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @param fSameAs java.net.URL value to set.
+     */
+    @Override
+    public void setSameAs(java.net.URL fSameAs) {
+        this.fSameAs = URL.of(fSameAs);
     }
 
     private Object fIdentifier;
@@ -1327,12 +1823,50 @@ public class SchoolDistrictImpl extends com.weedow.schemaorg.commons.model.JsonL
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
+     * @param fIdentifier URL value to set.
      */
     @Override
-    public void setIdentifier(Object fIdentifier) {
-        if(!(fIdentifier instanceof URL) && !(fIdentifier instanceof Text) && !(fIdentifier instanceof PropertyValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
-        }
+    public void setIdentifier(URL fIdentifier) {
+        this.fIdentifier = fIdentifier;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param fIdentifier java.net.URL value to set.
+     */
+    @Override
+    public void setIdentifier(java.net.URL fIdentifier) {
+        this.fIdentifier = URL.of(fIdentifier);
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param fIdentifier Text value to set.
+     */
+    @Override
+    public void setIdentifier(Text fIdentifier) {
+        this.fIdentifier = fIdentifier;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param fIdentifier java.lang.String value to set.
+     */
+    @Override
+    public void setIdentifier(java.lang.String fIdentifier) {
+        this.fIdentifier = Text.of(fIdentifier);
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param fIdentifier PropertyValue value to set.
+     */
+    @Override
+    public void setIdentifier(PropertyValue fIdentifier) {
         this.fIdentifier = fIdentifier;
     }
 }

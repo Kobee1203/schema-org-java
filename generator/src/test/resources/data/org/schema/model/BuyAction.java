@@ -26,6 +26,7 @@ public interface BuyAction extends TradeAction {
     /**
      * The warranty promise(s) included in the offer.
      *
+     * @param fWarrantyPromise WarrantyPromise value to set.
      */
     void setWarrantyPromise(WarrantyPromise fWarrantyPromise);
 
@@ -39,8 +40,15 @@ public interface BuyAction extends TradeAction {
     /**
      * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
      *
+     * @param fSeller Organization value to set.
      */
-    void setSeller(Object fSeller);
+    void setSeller(Organization fSeller);
+    /**
+     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+     *
+     * @param fSeller Person value to set.
+     */
+    void setSeller(Person fSeller);
 
     /**
      * 'vendor' is an earlier term for 'seller'.
@@ -52,6 +60,13 @@ public interface BuyAction extends TradeAction {
     /**
      * 'vendor' is an earlier term for 'seller'.
      *
+     * @param fVendor Person value to set.
      */
-    void setVendor(Object fVendor);
+    void setVendor(Person fVendor);
+    /**
+     * 'vendor' is an earlier term for 'seller'.
+     *
+     * @param fVendor Organization value to set.
+     */
+    void setVendor(Organization fVendor);
 }

@@ -78,6 +78,7 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
      *
+     * @param fDirector Person value to set.
      */
     @Override
     public void setDirector(Person fDirector) {
@@ -99,6 +100,7 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
      *
+     * @param fActor Person value to set.
      */
     @Override
     public void setActor(Person fActor) {
@@ -120,6 +122,7 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * The trailer of a movie or tv/radio series, season, episode, etc.
      *
+     * @param fTrailer VideoObject value to set.
      */
     @Override
     public void setTrailer(VideoObject fTrailer) {
@@ -141,6 +144,7 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * The production company or studio responsible for the item e.g. series, video game, episode etc.
      *
+     * @param fProductionCompany Organization value to set.
      */
     @Override
     public void setProductionCompany(Organization fProductionCompany) {
@@ -162,6 +166,7 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
      *
+     * @param fActors Person value to set.
      */
     @Override
     public void setActors(Person fActors) {
@@ -183,12 +188,19 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * The composer of the soundtrack.
      *
+     * @param fMusicBy Person value to set.
      */
     @Override
-    public void setMusicBy(Object fMusicBy) {
-        if(!(fMusicBy instanceof Person) && !(fMusicBy instanceof MusicGroup)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'musicBy': " + fMusicBy);
-        }
+    public void setMusicBy(Person fMusicBy) {
+        this.fMusicBy = fMusicBy;
+    }
+    /**
+     * The composer of the soundtrack.
+     *
+     * @param fMusicBy MusicGroup value to set.
+     */
+    @Override
+    public void setMusicBy(MusicGroup fMusicBy) {
         this.fMusicBy = fMusicBy;
     }
 
@@ -207,6 +219,7 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
      *
+     * @param fDirectors Person value to set.
      */
     @Override
     public void setDirectors(Person fDirectors) {
@@ -229,14 +242,42 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
      *
+     * @param fStartDate DateTime value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
     @Override
-    public void setStartDate(Object fStartDate) {
-        if(!(fStartDate instanceof DateTime) && !(fStartDate instanceof Date)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'startDate': " + fStartDate);
-        }
+    public void setStartDate(DateTime fStartDate) {
         this.fStartDate = fStartDate;
+    }
+    /**
+     * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
+     *
+     * @param fStartDate java.time.LocalDateTime value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
+     */
+    @Override
+    public void setStartDate(java.time.LocalDateTime fStartDate) {
+        this.fStartDate = DateTime.of(fStartDate);
+    }
+    /**
+     * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
+     *
+     * @param fStartDate Date value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
+     */
+    @Override
+    public void setStartDate(Date fStartDate) {
+        this.fStartDate = fStartDate;
+    }
+    /**
+     * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
+     *
+     * @param fStartDate java.time.LocalDate value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
+     */
+    @Override
+    public void setStartDate(java.time.LocalDate fStartDate) {
+        this.fStartDate = Date.of(fStartDate);
     }
 
     private Object fEndDate;
@@ -255,14 +296,42 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
      *
+     * @param fEndDate Date value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
     @Override
-    public void setEndDate(Object fEndDate) {
-        if(!(fEndDate instanceof Date) && !(fEndDate instanceof DateTime)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'endDate': " + fEndDate);
-        }
+    public void setEndDate(Date fEndDate) {
         this.fEndDate = fEndDate;
+    }
+    /**
+     * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
+     *
+     * @param fEndDate java.time.LocalDate value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
+     */
+    @Override
+    public void setEndDate(java.time.LocalDate fEndDate) {
+        this.fEndDate = Date.of(fEndDate);
+    }
+    /**
+     * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
+     *
+     * @param fEndDate DateTime value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
+     */
+    @Override
+    public void setEndDate(DateTime fEndDate) {
+        this.fEndDate = fEndDate;
+    }
+    /**
+     * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
+     *
+     * @param fEndDate java.time.LocalDateTime value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
+     */
+    @Override
+    public void setEndDate(java.time.LocalDateTime fEndDate) {
+        this.fEndDate = DateTime.of(fEndDate);
     }
 
     private Text fIssn;
@@ -281,11 +350,22 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.
      *
+     * @param fIssn Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
     @Override
     public void setIssn(Text fIssn) {
         this.fIssn = fIssn;
+    }
+    /**
+     * The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.
+     *
+     * @param fIssn java.lang.String value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
+     */
+    @Override
+    public void setIssn(java.lang.String fIssn) {
+        this.fIssn = Text.of(fIssn);
     }
 
     private Object fTeaches;
@@ -305,15 +385,35 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.
      *
+     * @param fTeaches DefinedTerm value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
      */
     @Override
-    public void setTeaches(Object fTeaches) {
-        if(!(fTeaches instanceof DefinedTerm) && !(fTeaches instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'teaches': " + fTeaches);
-        }
+    public void setTeaches(DefinedTerm fTeaches) {
         this.fTeaches = fTeaches;
+    }
+    /**
+     * The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.
+     *
+     * @param fTeaches Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
+     */
+    @Override
+    public void setTeaches(Text fTeaches) {
+        this.fTeaches = fTeaches;
+    }
+    /**
+     * The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.
+     *
+     * @param fTeaches java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
+     */
+    @Override
+    public void setTeaches(java.lang.String fTeaches) {
+        this.fTeaches = Text.of(fTeaches);
     }
 
     private Object fEducationalLevel;
@@ -333,15 +433,57 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
      *
+     * @param fEducationalLevel URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
     @Override
-    public void setEducationalLevel(Object fEducationalLevel) {
-        if(!(fEducationalLevel instanceof URL) && !(fEducationalLevel instanceof DefinedTerm) && !(fEducationalLevel instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'educationalLevel': " + fEducationalLevel);
-        }
+    public void setEducationalLevel(URL fEducationalLevel) {
         this.fEducationalLevel = fEducationalLevel;
+    }
+    /**
+     * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
+     *
+     * @param fEducationalLevel java.net.URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     */
+    @Override
+    public void setEducationalLevel(java.net.URL fEducationalLevel) {
+        this.fEducationalLevel = URL.of(fEducationalLevel);
+    }
+    /**
+     * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
+     *
+     * @param fEducationalLevel DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     */
+    @Override
+    public void setEducationalLevel(DefinedTerm fEducationalLevel) {
+        this.fEducationalLevel = fEducationalLevel;
+    }
+    /**
+     * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
+     *
+     * @param fEducationalLevel Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     */
+    @Override
+    public void setEducationalLevel(Text fEducationalLevel) {
+        this.fEducationalLevel = fEducationalLevel;
+    }
+    /**
+     * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
+     *
+     * @param fEducationalLevel java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     */
+    @Override
+    public void setEducationalLevel(java.lang.String fEducationalLevel) {
+        this.fEducationalLevel = Text.of(fEducationalLevel);
     }
 
     private Text fAbstract;
@@ -361,12 +503,24 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      *
+     * @param fAbstract Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/276">https://github.com/schemaorg/schemaorg/issues/276</a>
      */
     @Override
     public void setAbstract(Text fAbstract) {
         this.fAbstract = fAbstract;
+    }
+    /**
+     * An abstract is a short description that summarizes a [[CreativeWork]].
+     *
+     * @param fAbstract java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/276">https://github.com/schemaorg/schemaorg/issues/276</a>
+     */
+    @Override
+    public void setAbstract(java.lang.String fAbstract) {
+        this.fAbstract = Text.of(fAbstract);
     }
 
     private Object fCreativeWorkStatus;
@@ -386,14 +540,34 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle.
      *
+     * @param fCreativeWorkStatus Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/987">https://github.com/schemaorg/schemaorg/issues/987</a>
      */
     @Override
-    public void setCreativeWorkStatus(Object fCreativeWorkStatus) {
-        if(!(fCreativeWorkStatus instanceof Text) && !(fCreativeWorkStatus instanceof DefinedTerm)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'creativeWorkStatus': " + fCreativeWorkStatus);
-        }
+    public void setCreativeWorkStatus(Text fCreativeWorkStatus) {
+        this.fCreativeWorkStatus = fCreativeWorkStatus;
+    }
+    /**
+     * The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle.
+     *
+     * @param fCreativeWorkStatus java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/987">https://github.com/schemaorg/schemaorg/issues/987</a>
+     */
+    @Override
+    public void setCreativeWorkStatus(java.lang.String fCreativeWorkStatus) {
+        this.fCreativeWorkStatus = Text.of(fCreativeWorkStatus);
+    }
+    /**
+     * The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle.
+     *
+     * @param fCreativeWorkStatus DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/987">https://github.com/schemaorg/schemaorg/issues/987</a>
+     */
+    @Override
+    public void setCreativeWorkStatus(DefinedTerm fCreativeWorkStatus) {
         this.fCreativeWorkStatus = fCreativeWorkStatus;
     }
 
@@ -412,10 +586,20 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * Date the content expires and is no longer useful or available. For example a [[VideoObject]] or [[NewsArticle]] whose availability or relevance is time-limited, or a [[ClaimReview]] fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date.
      *
+     * @param fExpires Date value to set.
      */
     @Override
     public void setExpires(Date fExpires) {
         this.fExpires = fExpires;
+    }
+    /**
+     * Date the content expires and is no longer useful or available. For example a [[VideoObject]] or [[NewsArticle]] whose availability or relevance is time-limited, or a [[ClaimReview]] fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date.
+     *
+     * @param fExpires java.time.LocalDate value to set.
+     */
+    @Override
+    public void setExpires(java.time.LocalDate fExpires) {
+        this.fExpires = Date.of(fExpires);
     }
 
     private DateTime fContentReferenceTime;
@@ -435,12 +619,24 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * The specific time described by a creative work, for works (e.g. articles, video objects etc.) that emphasise a particular moment within an Event.
      *
+     * @param fContentReferenceTime DateTime value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1050">https://github.com/schemaorg/schemaorg/issues/1050</a>
      */
     @Override
     public void setContentReferenceTime(DateTime fContentReferenceTime) {
         this.fContentReferenceTime = fContentReferenceTime;
+    }
+    /**
+     * The specific time described by a creative work, for works (e.g. articles, video objects etc.) that emphasise a particular moment within an Event.
+     *
+     * @param fContentReferenceTime java.time.LocalDateTime value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1050">https://github.com/schemaorg/schemaorg/issues/1050</a>
+     */
+    @Override
+    public void setContentReferenceTime(java.time.LocalDateTime fContentReferenceTime) {
+        this.fContentReferenceTime = DateTime.of(fContentReferenceTime);
     }
 
     private Object fMaterial;
@@ -458,12 +654,46 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * A material that something is made from, e.g. leather, wool, cotton, paper.
      *
+     * @param fMaterial Text value to set.
      */
     @Override
-    public void setMaterial(Object fMaterial) {
-        if(!(fMaterial instanceof Text) && !(fMaterial instanceof URL) && !(fMaterial instanceof Product)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'material': " + fMaterial);
-        }
+    public void setMaterial(Text fMaterial) {
+        this.fMaterial = fMaterial;
+    }
+    /**
+     * A material that something is made from, e.g. leather, wool, cotton, paper.
+     *
+     * @param fMaterial java.lang.String value to set.
+     */
+    @Override
+    public void setMaterial(java.lang.String fMaterial) {
+        this.fMaterial = Text.of(fMaterial);
+    }
+    /**
+     * A material that something is made from, e.g. leather, wool, cotton, paper.
+     *
+     * @param fMaterial URL value to set.
+     */
+    @Override
+    public void setMaterial(URL fMaterial) {
+        this.fMaterial = fMaterial;
+    }
+    /**
+     * A material that something is made from, e.g. leather, wool, cotton, paper.
+     *
+     * @param fMaterial java.net.URL value to set.
+     */
+    @Override
+    public void setMaterial(java.net.URL fMaterial) {
+        this.fMaterial = URL.of(fMaterial);
+    }
+    /**
+     * A material that something is made from, e.g. leather, wool, cotton, paper.
+     *
+     * @param fMaterial Product value to set.
+     */
+    @Override
+    public void setMaterial(Product fMaterial) {
         this.fMaterial = fMaterial;
     }
 
@@ -482,6 +712,7 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * A review of the item.
      *
+     * @param fReview Review value to set.
      */
     @Override
     public void setReview(Review fReview) {
@@ -503,13 +734,38 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * Media type, typically MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml)) of the content e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.
      *
+     * @param fFileFormat URL value to set.
      */
     @Override
-    public void setFileFormat(Object fFileFormat) {
-        if(!(fFileFormat instanceof URL) && !(fFileFormat instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'fileFormat': " + fFileFormat);
-        }
+    public void setFileFormat(URL fFileFormat) {
         this.fFileFormat = fFileFormat;
+    }
+    /**
+     * Media type, typically MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml)) of the content e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.
+     *
+     * @param fFileFormat java.net.URL value to set.
+     */
+    @Override
+    public void setFileFormat(java.net.URL fFileFormat) {
+        this.fFileFormat = URL.of(fFileFormat);
+    }
+    /**
+     * Media type, typically MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml)) of the content e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.
+     *
+     * @param fFileFormat Text value to set.
+     */
+    @Override
+    public void setFileFormat(Text fFileFormat) {
+        this.fFileFormat = fFileFormat;
+    }
+    /**
+     * Media type, typically MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml)) of the content e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.
+     *
+     * @param fFileFormat java.lang.String value to set.
+     */
+    @Override
+    public void setFileFormat(java.lang.String fFileFormat) {
+        this.fFileFormat = Text.of(fFileFormat);
     }
 
     private Text fText;
@@ -527,10 +783,20 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * The textual content of this CreativeWork.
      *
+     * @param fText Text value to set.
      */
     @Override
     public void setText(Text fText) {
         this.fText = fText;
+    }
+    /**
+     * The textual content of this CreativeWork.
+     *
+     * @param fText java.lang.String value to set.
+     */
+    @Override
+    public void setText(java.lang.String fText) {
+        this.fText = Text.of(fText);
     }
 
     private Object fTranslator;
@@ -548,12 +814,19 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
      *
+     * @param fTranslator Person value to set.
      */
     @Override
-    public void setTranslator(Object fTranslator) {
-        if(!(fTranslator instanceof Person) && !(fTranslator instanceof Organization)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'translator': " + fTranslator);
-        }
+    public void setTranslator(Person fTranslator) {
+        this.fTranslator = fTranslator;
+    }
+    /**
+     * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
+     *
+     * @param fTranslator Organization value to set.
+     */
+    @Override
+    public void setTranslator(Organization fTranslator) {
         this.fTranslator = fTranslator;
     }
 
@@ -572,10 +845,20 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * An award won by or for this item.
      *
+     * @param fAward Text value to set.
      */
     @Override
     public void setAward(Text fAward) {
         this.fAward = fAward;
+    }
+    /**
+     * An award won by or for this item.
+     *
+     * @param fAward java.lang.String value to set.
+     */
+    @Override
+    public void setAward(java.lang.String fAward) {
+        this.fAward = Text.of(fAward);
     }
 
     private Object fAssesses;
@@ -595,14 +878,34 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * The item being described is intended to assess the competency or learning outcome defined by the referenced term.
      *
+     * @param fAssesses Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
      */
     @Override
-    public void setAssesses(Object fAssesses) {
-        if(!(fAssesses instanceof Text) && !(fAssesses instanceof DefinedTerm)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'assesses': " + fAssesses);
-        }
+    public void setAssesses(Text fAssesses) {
+        this.fAssesses = fAssesses;
+    }
+    /**
+     * The item being described is intended to assess the competency or learning outcome defined by the referenced term.
+     *
+     * @param fAssesses java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
+     */
+    @Override
+    public void setAssesses(java.lang.String fAssesses) {
+        this.fAssesses = Text.of(fAssesses);
+    }
+    /**
+     * The item being described is intended to assess the competency or learning outcome defined by the referenced term.
+     *
+     * @param fAssesses DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
+     */
+    @Override
+    public void setAssesses(DefinedTerm fAssesses) {
         this.fAssesses = fAssesses;
     }
 
@@ -623,12 +926,24 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * Text of a notice appropriate for describing the copyright aspects of this Creative Work, ideally indicating the owner of the copyright for the Work.
      *
+     * @param fCopyrightNotice Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2659">https://github.com/schemaorg/schemaorg/issues/2659</a>
      */
     @Override
     public void setCopyrightNotice(Text fCopyrightNotice) {
         this.fCopyrightNotice = fCopyrightNotice;
+    }
+    /**
+     * Text of a notice appropriate for describing the copyright aspects of this Creative Work, ideally indicating the owner of the copyright for the Work.
+     *
+     * @param fCopyrightNotice java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2659">https://github.com/schemaorg/schemaorg/issues/2659</a>
+     */
+    @Override
+    public void setCopyrightNotice(java.lang.String fCopyrightNotice) {
+        this.fCopyrightNotice = Text.of(fCopyrightNotice);
     }
 
     private Object fSchemaVersion;
@@ -648,13 +963,41 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * Indicates (by URL or string) a particular version of a schema used in some CreativeWork. This property was created primarily to
      *     indicate the use of a specific schema.org release, e.g. ```10.0``` as a simple string, or more explicitly via URL, ```https://schema.org/docs/releases.html#v10.0```. There may be situations in which other schemas might usefully be referenced this way, e.g. ```http://dublincore.org/specifications/dublin-core/dces/1999-07-02/``` but this has not been carefully explored in the community.
      *
+     * @param fSchemaVersion Text value to set.
      */
     @Override
-    public void setSchemaVersion(Object fSchemaVersion) {
-        if(!(fSchemaVersion instanceof Text) && !(fSchemaVersion instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'schemaVersion': " + fSchemaVersion);
-        }
+    public void setSchemaVersion(Text fSchemaVersion) {
         this.fSchemaVersion = fSchemaVersion;
+    }
+    /**
+     * Indicates (by URL or string) a particular version of a schema used in some CreativeWork. This property was created primarily to
+     *     indicate the use of a specific schema.org release, e.g. ```10.0``` as a simple string, or more explicitly via URL, ```https://schema.org/docs/releases.html#v10.0```. There may be situations in which other schemas might usefully be referenced this way, e.g. ```http://dublincore.org/specifications/dublin-core/dces/1999-07-02/``` but this has not been carefully explored in the community.
+     *
+     * @param fSchemaVersion java.lang.String value to set.
+     */
+    @Override
+    public void setSchemaVersion(java.lang.String fSchemaVersion) {
+        this.fSchemaVersion = Text.of(fSchemaVersion);
+    }
+    /**
+     * Indicates (by URL or string) a particular version of a schema used in some CreativeWork. This property was created primarily to
+     *     indicate the use of a specific schema.org release, e.g. ```10.0``` as a simple string, or more explicitly via URL, ```https://schema.org/docs/releases.html#v10.0```. There may be situations in which other schemas might usefully be referenced this way, e.g. ```http://dublincore.org/specifications/dublin-core/dces/1999-07-02/``` but this has not been carefully explored in the community.
+     *
+     * @param fSchemaVersion URL value to set.
+     */
+    @Override
+    public void setSchemaVersion(URL fSchemaVersion) {
+        this.fSchemaVersion = fSchemaVersion;
+    }
+    /**
+     * Indicates (by URL or string) a particular version of a schema used in some CreativeWork. This property was created primarily to
+     *     indicate the use of a specific schema.org release, e.g. ```10.0``` as a simple string, or more explicitly via URL, ```https://schema.org/docs/releases.html#v10.0```. There may be situations in which other schemas might usefully be referenced this way, e.g. ```http://dublincore.org/specifications/dublin-core/dces/1999-07-02/``` but this has not been carefully explored in the community.
+     *
+     * @param fSchemaVersion java.net.URL value to set.
+     */
+    @Override
+    public void setSchemaVersion(java.net.URL fSchemaVersion) {
+        this.fSchemaVersion = URL.of(fSchemaVersion);
     }
 
     private Country fCountryOfOrigin;
@@ -680,6 +1023,7 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * 
      * In the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.
      *
+     * @param fCountryOfOrigin Country value to set.
      */
     @Override
     public void setCountryOfOrigin(Country fCountryOfOrigin) {
@@ -703,15 +1047,35 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * A pattern that something has, for example 'polka dot', 'striped', 'Canadian flag'. Values are typically expressed as text, although links to controlled value schemes are also supported.
      *
+     * @param fPattern DefinedTerm value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
     @Override
-    public void setPattern(Object fPattern) {
-        if(!(fPattern instanceof DefinedTerm) && !(fPattern instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'pattern': " + fPattern);
-        }
+    public void setPattern(DefinedTerm fPattern) {
         this.fPattern = fPattern;
+    }
+    /**
+     * A pattern that something has, for example 'polka dot', 'striped', 'Canadian flag'. Values are typically expressed as text, although links to controlled value schemes are also supported.
+     *
+     * @param fPattern Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     */
+    @Override
+    public void setPattern(Text fPattern) {
+        this.fPattern = fPattern;
+    }
+    /**
+     * A pattern that something has, for example 'polka dot', 'striped', 'Canadian flag'. Values are typically expressed as text, although links to controlled value schemes are also supported.
+     *
+     * @param fPattern java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     */
+    @Override
+    public void setPattern(java.lang.String fPattern) {
+        this.fPattern = Text.of(fPattern);
     }
 
     private Person fAccountablePerson;
@@ -729,6 +1093,7 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * Specifies the Person that is legally accountable for the CreativeWork.
      *
+     * @param fAccountablePerson Person value to set.
      */
     @Override
     public void setAccountablePerson(Person fAccountablePerson) {
@@ -753,6 +1118,7 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
      *
+     * @param fFunding Grant value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
@@ -777,13 +1143,29 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * The purpose of a work in the context of education; for example, 'assignment', 'group work'.
      *
+     * @param fEducationalUse DefinedTerm value to set.
      */
     @Override
-    public void setEducationalUse(Object fEducationalUse) {
-        if(!(fEducationalUse instanceof DefinedTerm) && !(fEducationalUse instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'educationalUse': " + fEducationalUse);
-        }
+    public void setEducationalUse(DefinedTerm fEducationalUse) {
         this.fEducationalUse = fEducationalUse;
+    }
+    /**
+     * The purpose of a work in the context of education; for example, 'assignment', 'group work'.
+     *
+     * @param fEducationalUse Text value to set.
+     */
+    @Override
+    public void setEducationalUse(Text fEducationalUse) {
+        this.fEducationalUse = fEducationalUse;
+    }
+    /**
+     * The purpose of a work in the context of education; for example, 'assignment', 'group work'.
+     *
+     * @param fEducationalUse java.lang.String value to set.
+     */
+    @Override
+    public void setEducationalUse(java.lang.String fEducationalUse) {
+        this.fEducationalUse = Text.of(fEducationalUse);
     }
 
     private Object fGenre;
@@ -801,13 +1183,38 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * Genre of the creative work, broadcast channel or group.
      *
+     * @param fGenre URL value to set.
      */
     @Override
-    public void setGenre(Object fGenre) {
-        if(!(fGenre instanceof URL) && !(fGenre instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'genre': " + fGenre);
-        }
+    public void setGenre(URL fGenre) {
         this.fGenre = fGenre;
+    }
+    /**
+     * Genre of the creative work, broadcast channel or group.
+     *
+     * @param fGenre java.net.URL value to set.
+     */
+    @Override
+    public void setGenre(java.net.URL fGenre) {
+        this.fGenre = URL.of(fGenre);
+    }
+    /**
+     * Genre of the creative work, broadcast channel or group.
+     *
+     * @param fGenre Text value to set.
+     */
+    @Override
+    public void setGenre(Text fGenre) {
+        this.fGenre = fGenre;
+    }
+    /**
+     * Genre of the creative work, broadcast channel or group.
+     *
+     * @param fGenre java.lang.String value to set.
+     */
+    @Override
+    public void setGenre(java.lang.String fGenre) {
+        this.fGenre = Text.of(fGenre);
     }
 
     private Object fKeywords;
@@ -825,13 +1232,47 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
      *
+     * @param fKeywords DefinedTerm value to set.
      */
     @Override
-    public void setKeywords(Object fKeywords) {
-        if(!(fKeywords instanceof DefinedTerm) && !(fKeywords instanceof Text) && !(fKeywords instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'keywords': " + fKeywords);
-        }
+    public void setKeywords(DefinedTerm fKeywords) {
         this.fKeywords = fKeywords;
+    }
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     * @param fKeywords Text value to set.
+     */
+    @Override
+    public void setKeywords(Text fKeywords) {
+        this.fKeywords = fKeywords;
+    }
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     * @param fKeywords java.lang.String value to set.
+     */
+    @Override
+    public void setKeywords(java.lang.String fKeywords) {
+        this.fKeywords = Text.of(fKeywords);
+    }
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     * @param fKeywords URL value to set.
+     */
+    @Override
+    public void setKeywords(URL fKeywords) {
+        this.fKeywords = fKeywords;
+    }
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     * @param fKeywords java.net.URL value to set.
+     */
+    @Override
+    public void setKeywords(java.net.URL fKeywords) {
+        this.fKeywords = URL.of(fKeywords);
     }
 
     private Object fPosition;
@@ -849,13 +1290,38 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * The position of an item in a series or sequence of items.
      *
+     * @param fPosition Integer value to set.
      */
     @Override
-    public void setPosition(Object fPosition) {
-        if(!(fPosition instanceof Integer) && !(fPosition instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'position': " + fPosition);
-        }
+    public void setPosition(Integer fPosition) {
         this.fPosition = fPosition;
+    }
+    /**
+     * The position of an item in a series or sequence of items.
+     *
+     * @param fPosition java.lang.Integer value to set.
+     */
+    @Override
+    public void setPosition(java.lang.Integer fPosition) {
+        this.fPosition = Integer.of(fPosition);
+    }
+    /**
+     * The position of an item in a series or sequence of items.
+     *
+     * @param fPosition Text value to set.
+     */
+    @Override
+    public void setPosition(Text fPosition) {
+        this.fPosition = fPosition;
+    }
+    /**
+     * The position of an item in a series or sequence of items.
+     *
+     * @param fPosition java.lang.String value to set.
+     */
+    @Override
+    public void setPosition(java.lang.String fPosition) {
+        this.fPosition = Text.of(fPosition);
     }
 
     private Text fAccessibilityHazard;
@@ -873,10 +1339,20 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * A characteristic of the described resource that is physiologically dangerous to some users. Related to WCAG 2.0 guideline 2.3. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityHazard-vocabulary).
      *
+     * @param fAccessibilityHazard Text value to set.
      */
     @Override
     public void setAccessibilityHazard(Text fAccessibilityHazard) {
         this.fAccessibilityHazard = fAccessibilityHazard;
+    }
+    /**
+     * A characteristic of the described resource that is physiologically dangerous to some users. Related to WCAG 2.0 guideline 2.3. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityHazard-vocabulary).
+     *
+     * @param fAccessibilityHazard java.lang.String value to set.
+     */
+    @Override
+    public void setAccessibilityHazard(java.lang.String fAccessibilityHazard) {
+        this.fAccessibilityHazard = Text.of(fAccessibilityHazard);
     }
 
     private Text fAlternativeHeadline;
@@ -894,10 +1370,20 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * A secondary title of the CreativeWork.
      *
+     * @param fAlternativeHeadline Text value to set.
      */
     @Override
     public void setAlternativeHeadline(Text fAlternativeHeadline) {
         this.fAlternativeHeadline = fAlternativeHeadline;
+    }
+    /**
+     * A secondary title of the CreativeWork.
+     *
+     * @param fAlternativeHeadline java.lang.String value to set.
+     */
+    @Override
+    public void setAlternativeHeadline(java.lang.String fAlternativeHeadline) {
+        this.fAlternativeHeadline = Text.of(fAlternativeHeadline);
     }
 
     private Audience fAudience;
@@ -915,6 +1401,7 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * An intended audience, i.e. a group for whom something was created.
      *
+     * @param fAudience Audience value to set.
      */
     @Override
     public void setAudience(Audience fAudience) {
@@ -939,13 +1426,22 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      *
+     * @param fOffers Offer value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
     @Override
-    public void setOffers(Object fOffers) {
-        if(!(fOffers instanceof Offer) && !(fOffers instanceof Demand)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'offers': " + fOffers);
-        }
+    public void setOffers(Offer fOffers) {
+        this.fOffers = fOffers;
+    }
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     *
+     * @param fOffers Demand value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public void setOffers(Demand fOffers) {
         this.fOffers = fOffers;
     }
 
@@ -964,6 +1460,7 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * The location where the CreativeWork was created, which may not be the same as the location depicted in the CreativeWork.
      *
+     * @param fLocationCreated Place value to set.
      */
     @Override
     public void setLocationCreated(Place fLocationCreated) {
@@ -985,6 +1482,7 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * A media object that encodes this CreativeWork. This property is a synonym for encoding.
      *
+     * @param fAssociatedMedia MediaObject value to set.
      */
     @Override
     public void setAssociatedMedia(MediaObject fAssociatedMedia) {
@@ -1008,15 +1506,35 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * The quantity of the materials being described or an expression of the physical space they occupy.
      *
+     * @param fMaterialExtent QuantitativeValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1759">https://github.com/schemaorg/schemaorg/issues/1759</a>
      */
     @Override
-    public void setMaterialExtent(Object fMaterialExtent) {
-        if(!(fMaterialExtent instanceof QuantitativeValue) && !(fMaterialExtent instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'materialExtent': " + fMaterialExtent);
-        }
+    public void setMaterialExtent(QuantitativeValue fMaterialExtent) {
         this.fMaterialExtent = fMaterialExtent;
+    }
+    /**
+     * The quantity of the materials being described or an expression of the physical space they occupy.
+     *
+     * @param fMaterialExtent Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1759">https://github.com/schemaorg/schemaorg/issues/1759</a>
+     */
+    @Override
+    public void setMaterialExtent(Text fMaterialExtent) {
+        this.fMaterialExtent = fMaterialExtent;
+    }
+    /**
+     * The quantity of the materials being described or an expression of the physical space they occupy.
+     *
+     * @param fMaterialExtent java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1759">https://github.com/schemaorg/schemaorg/issues/1759</a>
+     */
+    @Override
+    public void setMaterialExtent(java.lang.String fMaterialExtent) {
+        this.fMaterialExtent = Text.of(fMaterialExtent);
     }
 
     private Thing fMainEntity;
@@ -1034,6 +1552,7 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * Indicates the primary entity described in some page or other CreativeWork.
      *
+     * @param fMainEntity Thing value to set.
      */
     @Override
     public void setMainEntity(Thing fMainEntity) {
@@ -1055,12 +1574,19 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * The party holding the legal copyright to the CreativeWork.
      *
+     * @param fCopyrightHolder Organization value to set.
      */
     @Override
-    public void setCopyrightHolder(Object fCopyrightHolder) {
-        if(!(fCopyrightHolder instanceof Organization) && !(fCopyrightHolder instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'copyrightHolder': " + fCopyrightHolder);
-        }
+    public void setCopyrightHolder(Organization fCopyrightHolder) {
+        this.fCopyrightHolder = fCopyrightHolder;
+    }
+    /**
+     * The party holding the legal copyright to the CreativeWork.
+     *
+     * @param fCopyrightHolder Person value to set.
+     */
+    @Override
+    public void setCopyrightHolder(Person fCopyrightHolder) {
         this.fCopyrightHolder = fCopyrightHolder;
     }
 
@@ -1079,10 +1605,20 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * Awards won by or for this item.
      *
+     * @param fAwards Text value to set.
      */
     @Override
     public void setAwards(Text fAwards) {
         this.fAwards = fAwards;
+    }
+    /**
+     * Awards won by or for this item.
+     *
+     * @param fAwards java.lang.String value to set.
+     */
+    @Override
+    public void setAwards(java.lang.String fAwards) {
+        this.fAwards = Text.of(fAwards);
     }
 
     private Place fContentLocation;
@@ -1100,6 +1636,7 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * The location depicted or described in the content. For example, the location in a photograph or painting.
      *
+     * @param fContentLocation Place value to set.
      */
     @Override
     public void setContentLocation(Place fContentLocation) {
@@ -1123,12 +1660,24 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * Indicates the date on which the current structured data was generated / published. Typically used alongside [[sdPublisher]]
      *
+     * @param fSdDatePublished Date value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
      */
     @Override
     public void setSdDatePublished(Date fSdDatePublished) {
         this.fSdDatePublished = fSdDatePublished;
+    }
+    /**
+     * Indicates the date on which the current structured data was generated / published. Typically used alongside [[sdPublisher]]
+     *
+     * @param fSdDatePublished java.time.LocalDate value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
+     */
+    @Override
+    public void setSdDatePublished(java.time.LocalDate fSdDatePublished) {
+        this.fSdDatePublished = Date.of(fSdDatePublished);
     }
 
     private Object fProducer;
@@ -1146,12 +1695,19 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * The person or organization who produced the work (e.g. music album, movie, tv/radio series etc.).
      *
+     * @param fProducer Organization value to set.
      */
     @Override
-    public void setProducer(Object fProducer) {
-        if(!(fProducer instanceof Organization) && !(fProducer instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'producer': " + fProducer);
-        }
+    public void setProducer(Organization fProducer) {
+        this.fProducer = fProducer;
+    }
+    /**
+     * The person or organization who produced the work (e.g. music album, movie, tv/radio series etc.).
+     *
+     * @param fProducer Person value to set.
+     */
+    @Override
+    public void setProducer(Person fProducer) {
         this.fProducer = fProducer;
     }
 
@@ -1172,6 +1728,7 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * The "spatial" property can be used in cases when more specific properties
      * (e.g. [[locationCreated]], [[spatialCoverage]], [[contentLocation]]) are not known to be appropriate.
      *
+     * @param fSpatial Place value to set.
      */
     @Override
     public void setSpatial(Place fSpatial) {
@@ -1193,12 +1750,19 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * The publisher of the creative work.
      *
+     * @param fPublisher Person value to set.
      */
     @Override
-    public void setPublisher(Object fPublisher) {
-        if(!(fPublisher instanceof Person) && !(fPublisher instanceof Organization)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'publisher': " + fPublisher);
-        }
+    public void setPublisher(Person fPublisher) {
+        this.fPublisher = fPublisher;
+    }
+    /**
+     * The publisher of the creative work.
+     *
+     * @param fPublisher Organization value to set.
+     */
+    @Override
+    public void setPublisher(Organization fPublisher) {
         this.fPublisher = fPublisher;
     }
 
@@ -1217,6 +1781,7 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * The Organization on whose behalf the creator was working.
      *
+     * @param fSourceOrganization Organization value to set.
      */
     @Override
     public void setSourceOrganization(Organization fSourceOrganization) {
@@ -1238,6 +1803,7 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * Fictional person connected with a creative work.
      *
+     * @param fCharacter Person value to set.
      */
     @Override
     public void setCharacter(Person fCharacter) {
@@ -1259,12 +1825,19 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
+     * @param fFunder Organization value to set.
      */
     @Override
-    public void setFunder(Object fFunder) {
-        if(!(fFunder instanceof Organization) && !(fFunder instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'funder': " + fFunder);
-        }
+    public void setFunder(Organization fFunder) {
+        this.fFunder = fFunder;
+    }
+    /**
+     * A person or organization that supports (sponsors) something through some kind of financial contribution.
+     *
+     * @param fFunder Person value to set.
+     */
+    @Override
+    public void setFunder(Person fFunder) {
         this.fFunder = fFunder;
     }
 
@@ -1284,6 +1857,7 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * A creative work that this work is an example/instance/realization/derivation of.
      *
+     * @param fExampleOfWork CreativeWork value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
     @Override
@@ -1312,15 +1886,39 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * 
      * This property can be used alongside the license property which indicates license(s) applicable to some piece of content. The usageInfo property can provide information about other licensing options, e.g. acquiring commercial usage rights for an image that is also available under non-commercial creative commons licenses.
      *
+     * @param fUsageInfo CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
      */
     @Override
-    public void setUsageInfo(Object fUsageInfo) {
-        if(!(fUsageInfo instanceof CreativeWork) && !(fUsageInfo instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'usageInfo': " + fUsageInfo);
-        }
+    public void setUsageInfo(CreativeWork fUsageInfo) {
         this.fUsageInfo = fUsageInfo;
+    }
+    /**
+     * The schema.org [[usageInfo]] property indicates further information about a [[CreativeWork]]. This property is applicable both to works that are freely available and to those that require payment or other transactions. It can reference additional information e.g. community expectations on preferred linking and citation conventions, as well as purchasing details. For something that can be commercially licensed, usageInfo can provide detailed, resource-specific information about licensing options.
+     * 
+     * This property can be used alongside the license property which indicates license(s) applicable to some piece of content. The usageInfo property can provide information about other licensing options, e.g. acquiring commercial usage rights for an image that is also available under non-commercial creative commons licenses.
+     *
+     * @param fUsageInfo URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
+     */
+    @Override
+    public void setUsageInfo(URL fUsageInfo) {
+        this.fUsageInfo = fUsageInfo;
+    }
+    /**
+     * The schema.org [[usageInfo]] property indicates further information about a [[CreativeWork]]. This property is applicable both to works that are freely available and to those that require payment or other transactions. It can reference additional information e.g. community expectations on preferred linking and citation conventions, as well as purchasing details. For something that can be commercially licensed, usageInfo can provide detailed, resource-specific information about licensing options.
+     * 
+     * This property can be used alongside the license property which indicates license(s) applicable to some piece of content. The usageInfo property can provide information about other licensing options, e.g. acquiring commercial usage rights for an image that is also available under non-commercial creative commons licenses.
+     *
+     * @param fUsageInfo java.net.URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
+     */
+    @Override
+    public void setUsageInfo(java.net.URL fUsageInfo) {
+        this.fUsageInfo = URL.of(fUsageInfo);
     }
 
     private Object fProvider;
@@ -1341,15 +1939,25 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
      *
+     * @param fProvider Organization value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
      */
     @Override
-    public void setProvider(Object fProvider) {
-        if(!(fProvider instanceof Organization) && !(fProvider instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'provider': " + fProvider);
-        }
+    public void setProvider(Organization fProvider) {
+        this.fProvider = fProvider;
+    }
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @param fProvider Person value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     */
+    @Override
+    public void setProvider(Person fProvider) {
         this.fProvider = fProvider;
     }
 
@@ -1372,14 +1980,24 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * Indicates the party responsible for generating and publishing the current structured data markup, typically in cases where the structured data is derived automatically from existing published content but published on a different site. For example, student projects and open data initiatives often re-publish existing content with more explicitly structured metadata. The
      * [[sdPublisher]] property helps make such practices more explicit.
      *
+     * @param fSdPublisher Organization value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
      */
     @Override
-    public void setSdPublisher(Object fSdPublisher) {
-        if(!(fSdPublisher instanceof Organization) && !(fSdPublisher instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'sdPublisher': " + fSdPublisher);
-        }
+    public void setSdPublisher(Organization fSdPublisher) {
+        this.fSdPublisher = fSdPublisher;
+    }
+    /**
+     * Indicates the party responsible for generating and publishing the current structured data markup, typically in cases where the structured data is derived automatically from existing published content but published on a different site. For example, student projects and open data initiatives often re-publish existing content with more explicitly structured metadata. The
+     * [[sdPublisher]] property helps make such practices more explicit.
+     *
+     * @param fSdPublisher Person value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
+     */
+    @Override
+    public void setSdPublisher(Person fSdPublisher) {
         this.fSdPublisher = fSdPublisher;
     }
 
@@ -1398,6 +2016,7 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * Comments, typically from users.
      *
+     * @param fComment Comment value to set.
      */
     @Override
     public void setComment(Comment fComment) {
@@ -1419,10 +2038,20 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * Content features of the resource, such as accessible media, alternatives and supported enhancements for accessibility. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityFeature-vocabulary).
      *
+     * @param fAccessibilityFeature Text value to set.
      */
     @Override
     public void setAccessibilityFeature(Text fAccessibilityFeature) {
         this.fAccessibilityFeature = fAccessibilityFeature;
+    }
+    /**
+     * Content features of the resource, such as accessible media, alternatives and supported enhancements for accessibility. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityFeature-vocabulary).
+     *
+     * @param fAccessibilityFeature java.lang.String value to set.
+     */
+    @Override
+    public void setAccessibilityFeature(java.lang.String fAccessibilityFeature) {
+        this.fAccessibilityFeature = Text.of(fAccessibilityFeature);
     }
 
     private PublicationEvent fPublication;
@@ -1440,6 +2069,7 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * A publication event associated with the item.
      *
+     * @param fPublication PublicationEvent value to set.
      */
     @Override
     public void setPublication(PublicationEvent fPublication) {
@@ -1462,6 +2092,7 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * The work that this work has been translated from. e.g. 物种起源 is a translationOf “On the Origin of Species”
      *
+     * @param fTranslationOfWork CreativeWork value to set.
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
     @Override
@@ -1484,10 +2115,20 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * The predominant mode of learning supported by the learning resource. Acceptable values are 'active', 'expositive', or 'mixed'.
      *
+     * @param fInteractivityType Text value to set.
      */
     @Override
     public void setInteractivityType(Text fInteractivityType) {
         this.fInteractivityType = fInteractivityType;
+    }
+    /**
+     * The predominant mode of learning supported by the learning resource. Acceptable values are 'active', 'expositive', or 'mixed'.
+     *
+     * @param fInteractivityType java.lang.String value to set.
+     */
+    @Override
+    public void setInteractivityType(java.lang.String fInteractivityType) {
+        this.fInteractivityType = Text.of(fInteractivityType);
     }
 
     private Integer fCommentCount;
@@ -1505,10 +2146,20 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * The number of comments this CreativeWork (e.g. Article, Question or Answer) has received. This is most applicable to works published in Web sites with commenting system; additional comments may exist elsewhere.
      *
+     * @param fCommentCount Integer value to set.
      */
     @Override
     public void setCommentCount(Integer fCommentCount) {
         this.fCommentCount = fCommentCount;
+    }
+    /**
+     * The number of comments this CreativeWork (e.g. Article, Question or Answer) has received. This is most applicable to works published in Web sites with commenting system; additional comments may exist elsewhere.
+     *
+     * @param fCommentCount java.lang.Integer value to set.
+     */
+    @Override
+    public void setCommentCount(java.lang.Integer fCommentCount) {
+        this.fCommentCount = Integer.of(fCommentCount);
     }
 
     private Text fAccessMode;
@@ -1527,11 +2178,22 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * The human sensory perceptual system or cognitive faculty through which a person may process or perceive information. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessMode-vocabulary).
      *
+     * @param fAccessMode Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
      */
     @Override
     public void setAccessMode(Text fAccessMode) {
         this.fAccessMode = fAccessMode;
+    }
+    /**
+     * The human sensory perceptual system or cognitive faculty through which a person may process or perceive information. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessMode-vocabulary).
+     *
+     * @param fAccessMode java.lang.String value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
+     */
+    @Override
+    public void setAccessMode(java.lang.String fAccessMode) {
+        this.fAccessMode = Text.of(fAccessMode);
     }
 
     private AggregateRating fAggregateRating;
@@ -1549,6 +2211,7 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * The overall rating, based on a collection of reviews or ratings, of the item.
      *
+     * @param fAggregateRating AggregateRating value to set.
      */
     @Override
     public void setAggregateRating(AggregateRating fAggregateRating) {
@@ -1570,6 +2233,7 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * Approximate or typical time it takes to work with or through this learning resource for the typical intended target audience, e.g. 'PT30M', 'PT1H25M'.
      *
+     * @param fTimeRequired Duration value to set.
      */
     @Override
     public void setTimeRequired(Duration fTimeRequired) {
@@ -1591,10 +2255,20 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * The typical expected age range, e.g. '7-9', '11-'.
      *
+     * @param fTypicalAgeRange Text value to set.
      */
     @Override
     public void setTypicalAgeRange(Text fTypicalAgeRange) {
         this.fTypicalAgeRange = fTypicalAgeRange;
+    }
+    /**
+     * The typical expected age range, e.g. '7-9', '11-'.
+     *
+     * @param fTypicalAgeRange java.lang.String value to set.
+     */
+    @Override
+    public void setTypicalAgeRange(java.lang.String fTypicalAgeRange) {
+        this.fTypicalAgeRange = Text.of(fTypicalAgeRange);
     }
 
     private InteractionCounter fInteractionStatistic;
@@ -1613,6 +2287,7 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
      *
+     * @param fInteractionStatistic InteractionCounter value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
      */
     @Override
@@ -1635,10 +2310,20 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * The year during which the claimed copyright for the CreativeWork was first asserted.
      *
+     * @param fCopyrightYear Number value to set.
      */
     @Override
     public void setCopyrightYear(Number fCopyrightYear) {
         this.fCopyrightYear = fCopyrightYear;
+    }
+    /**
+     * The year during which the claimed copyright for the CreativeWork was first asserted.
+     *
+     * @param fCopyrightYear java.lang.Number value to set.
+     */
+    @Override
+    public void setCopyrightYear(java.lang.Number fCopyrightYear) {
+        this.fCopyrightYear = Number.of(fCopyrightYear);
     }
 
     private Object fIsBasedOn;
@@ -1656,12 +2341,37 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * A resource from which this work is derived or from which it is a modification or adaption.
      *
+     * @param fIsBasedOn CreativeWork value to set.
      */
     @Override
-    public void setIsBasedOn(Object fIsBasedOn) {
-        if(!(fIsBasedOn instanceof CreativeWork) && !(fIsBasedOn instanceof URL) && !(fIsBasedOn instanceof Product)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'isBasedOn': " + fIsBasedOn);
-        }
+    public void setIsBasedOn(CreativeWork fIsBasedOn) {
+        this.fIsBasedOn = fIsBasedOn;
+    }
+    /**
+     * A resource from which this work is derived or from which it is a modification or adaption.
+     *
+     * @param fIsBasedOn URL value to set.
+     */
+    @Override
+    public void setIsBasedOn(URL fIsBasedOn) {
+        this.fIsBasedOn = fIsBasedOn;
+    }
+    /**
+     * A resource from which this work is derived or from which it is a modification or adaption.
+     *
+     * @param fIsBasedOn java.net.URL value to set.
+     */
+    @Override
+    public void setIsBasedOn(java.net.URL fIsBasedOn) {
+        this.fIsBasedOn = URL.of(fIsBasedOn);
+    }
+    /**
+     * A resource from which this work is derived or from which it is a modification or adaption.
+     *
+     * @param fIsBasedOn Product value to set.
+     */
+    @Override
+    public void setIsBasedOn(Product fIsBasedOn) {
         this.fIsBasedOn = fIsBasedOn;
     }
 
@@ -1681,6 +2391,7 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * Example/instance/realization/derivation of the concept of this creative work. eg. The paperback edition, first edition, or eBook.
      *
+     * @param fWorkExample CreativeWork value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
     @Override
@@ -1707,12 +2418,32 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * 
      * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
      *
+     * @param fPublishingPrinciples URL value to set.
      */
     @Override
-    public void setPublishingPrinciples(Object fPublishingPrinciples) {
-        if(!(fPublishingPrinciples instanceof URL) && !(fPublishingPrinciples instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'publishingPrinciples': " + fPublishingPrinciples);
-        }
+    public void setPublishingPrinciples(URL fPublishingPrinciples) {
+        this.fPublishingPrinciples = fPublishingPrinciples;
+    }
+    /**
+     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * 
+     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+     *
+     * @param fPublishingPrinciples java.net.URL value to set.
+     */
+    @Override
+    public void setPublishingPrinciples(java.net.URL fPublishingPrinciples) {
+        this.fPublishingPrinciples = URL.of(fPublishingPrinciples);
+    }
+    /**
+     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * 
+     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+     *
+     * @param fPublishingPrinciples CreativeWork value to set.
+     */
+    @Override
+    public void setPublishingPrinciples(CreativeWork fPublishingPrinciples) {
         this.fPublishingPrinciples = fPublishingPrinciples;
     }
 
@@ -1731,10 +2462,20 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * A link to the page containing the comments of the CreativeWork.
      *
+     * @param fDiscussionUrl URL value to set.
      */
     @Override
     public void setDiscussionUrl(URL fDiscussionUrl) {
         this.fDiscussionUrl = fDiscussionUrl;
+    }
+    /**
+     * A link to the page containing the comments of the CreativeWork.
+     *
+     * @param fDiscussionUrl java.net.URL value to set.
+     */
+    @Override
+    public void setDiscussionUrl(java.net.URL fDiscussionUrl) {
+        this.fDiscussionUrl = URL.of(fDiscussionUrl);
     }
 
     private PublicationEvent fReleasedEvent;
@@ -1752,6 +2493,7 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * The place and time the release was issued, expressed as a PublicationEvent.
      *
+     * @param fReleasedEvent PublicationEvent value to set.
      */
     @Override
     public void setReleasedEvent(PublicationEvent fReleasedEvent) {
@@ -1773,13 +2515,38 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * The date on which the CreativeWork was created or the item was added to a DataFeed.
      *
+     * @param fDateCreated Date value to set.
      */
     @Override
-    public void setDateCreated(Object fDateCreated) {
-        if(!(fDateCreated instanceof Date) && !(fDateCreated instanceof DateTime)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'dateCreated': " + fDateCreated);
-        }
+    public void setDateCreated(Date fDateCreated) {
         this.fDateCreated = fDateCreated;
+    }
+    /**
+     * The date on which the CreativeWork was created or the item was added to a DataFeed.
+     *
+     * @param fDateCreated java.time.LocalDate value to set.
+     */
+    @Override
+    public void setDateCreated(java.time.LocalDate fDateCreated) {
+        this.fDateCreated = Date.of(fDateCreated);
+    }
+    /**
+     * The date on which the CreativeWork was created or the item was added to a DataFeed.
+     *
+     * @param fDateCreated DateTime value to set.
+     */
+    @Override
+    public void setDateCreated(DateTime fDateCreated) {
+        this.fDateCreated = fDateCreated;
+    }
+    /**
+     * The date on which the CreativeWork was created or the item was added to a DataFeed.
+     *
+     * @param fDateCreated java.time.LocalDateTime value to set.
+     */
+    @Override
+    public void setDateCreated(java.time.LocalDateTime fDateCreated) {
+        this.fDateCreated = DateTime.of(fDateCreated);
     }
 
     private CreativeWork fWorkTranslation;
@@ -1798,6 +2565,7 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * A work that is a translation of the content of this work. e.g. 西遊記 has an English workTranslation “Journey to the West”,a German workTranslation “Monkeys Pilgerfahrt” and a Vietnamese  translation Tây du ký bình khảo.
      *
+     * @param fWorkTranslation CreativeWork value to set.
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
     @Override
@@ -1820,6 +2588,7 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * Specifies the Person who edited the CreativeWork.
      *
+     * @param fEditor Person value to set.
      */
     @Override
     public void setEditor(Person fEditor) {
@@ -1843,12 +2612,24 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * Text that can be used to credit person(s) and/or organization(s) associated with a published Creative Work.
      *
+     * @param fCreditText Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2659">https://github.com/schemaorg/schemaorg/issues/2659</a>
      */
     @Override
     public void setCreditText(Text fCreditText) {
         this.fCreditText = fCreditText;
+    }
+    /**
+     * Text that can be used to credit person(s) and/or organization(s) associated with a published Creative Work.
+     *
+     * @param fCreditText java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2659">https://github.com/schemaorg/schemaorg/issues/2659</a>
+     */
+    @Override
+    public void setCreditText(java.lang.String fCreditText) {
+        this.fCreditText = Text.of(fCreditText);
     }
 
     private Event fRecordedAt;
@@ -1866,6 +2647,7 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * The Event where the CreativeWork was recorded. The CreativeWork may capture all or part of the event.
      *
+     * @param fRecordedAt Event value to set.
      */
     @Override
     public void setRecordedAt(Event fRecordedAt) {
@@ -1897,15 +2679,58 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * 
      * Since schema.org types like [[Movie]] and [[TVEpisode]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.
      *
+     * @param fEditEIDR URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2469">https://github.com/schemaorg/schemaorg/issues/2469</a>
      */
     @Override
-    public void setEditEIDR(Object fEditEIDR) {
-        if(!(fEditEIDR instanceof URL) && !(fEditEIDR instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'editEIDR': " + fEditEIDR);
-        }
+    public void setEditEIDR(URL fEditEIDR) {
         this.fEditEIDR = fEditEIDR;
+    }
+    /**
+     * An [EIDR](https://eidr.org/) (Entertainment Identifier Registry) [[identifier]] representing a specific edit / edition for a work of film or television.
+     * 
+     * For example, the motion picture known as "Ghostbusters" whose [[titleEIDR]] is "10.5240/7EC7-228A-510A-053E-CBB8-J", has several edits e.g. "10.5240/1F2A-E1C5-680A-14C6-E76B-I" and "10.5240/8A35-3BEE-6497-5D12-9E4F-3".
+     * 
+     * Since schema.org types like [[Movie]] and [[TVEpisode]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.
+     *
+     * @param fEditEIDR java.net.URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2469">https://github.com/schemaorg/schemaorg/issues/2469</a>
+     */
+    @Override
+    public void setEditEIDR(java.net.URL fEditEIDR) {
+        this.fEditEIDR = URL.of(fEditEIDR);
+    }
+    /**
+     * An [EIDR](https://eidr.org/) (Entertainment Identifier Registry) [[identifier]] representing a specific edit / edition for a work of film or television.
+     * 
+     * For example, the motion picture known as "Ghostbusters" whose [[titleEIDR]] is "10.5240/7EC7-228A-510A-053E-CBB8-J", has several edits e.g. "10.5240/1F2A-E1C5-680A-14C6-E76B-I" and "10.5240/8A35-3BEE-6497-5D12-9E4F-3".
+     * 
+     * Since schema.org types like [[Movie]] and [[TVEpisode]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.
+     *
+     * @param fEditEIDR Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2469">https://github.com/schemaorg/schemaorg/issues/2469</a>
+     */
+    @Override
+    public void setEditEIDR(Text fEditEIDR) {
+        this.fEditEIDR = fEditEIDR;
+    }
+    /**
+     * An [EIDR](https://eidr.org/) (Entertainment Identifier Registry) [[identifier]] representing a specific edit / edition for a work of film or television.
+     * 
+     * For example, the motion picture known as "Ghostbusters" whose [[titleEIDR]] is "10.5240/7EC7-228A-510A-053E-CBB8-J", has several edits e.g. "10.5240/1F2A-E1C5-680A-14C6-E76B-I" and "10.5240/8A35-3BEE-6497-5D12-9E4F-3".
+     * 
+     * Since schema.org types like [[Movie]] and [[TVEpisode]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.
+     *
+     * @param fEditEIDR java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2469">https://github.com/schemaorg/schemaorg/issues/2469</a>
+     */
+    @Override
+    public void setEditEIDR(java.lang.String fEditEIDR) {
+        this.fEditEIDR = Text.of(fEditEIDR);
     }
 
     private Object fAuthor;
@@ -1923,12 +2748,19 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
      *
+     * @param fAuthor Person value to set.
      */
     @Override
-    public void setAuthor(Object fAuthor) {
-        if(!(fAuthor instanceof Person) && !(fAuthor instanceof Organization)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'author': " + fAuthor);
-        }
+    public void setAuthor(Person fAuthor) {
+        this.fAuthor = fAuthor;
+    }
+    /**
+     * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
+     *
+     * @param fAuthor Organization value to set.
+     */
+    @Override
+    public void setAuthor(Organization fAuthor) {
         this.fAuthor = fAuthor;
     }
 
@@ -1947,13 +2779,38 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
      *
+     * @param fDateModified DateTime value to set.
      */
     @Override
-    public void setDateModified(Object fDateModified) {
-        if(!(fDateModified instanceof DateTime) && !(fDateModified instanceof Date)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'dateModified': " + fDateModified);
-        }
+    public void setDateModified(DateTime fDateModified) {
         this.fDateModified = fDateModified;
+    }
+    /**
+     * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
+     *
+     * @param fDateModified java.time.LocalDateTime value to set.
+     */
+    @Override
+    public void setDateModified(java.time.LocalDateTime fDateModified) {
+        this.fDateModified = DateTime.of(fDateModified);
+    }
+    /**
+     * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
+     *
+     * @param fDateModified Date value to set.
+     */
+    @Override
+    public void setDateModified(Date fDateModified) {
+        this.fDateModified = fDateModified;
+    }
+    /**
+     * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
+     *
+     * @param fDateModified java.time.LocalDate value to set.
+     */
+    @Override
+    public void setDateModified(java.time.LocalDate fDateModified) {
+        this.fDateModified = Date.of(fDateModified);
     }
 
     private Object fSponsor;
@@ -1971,12 +2828,19 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
      *
+     * @param fSponsor Organization value to set.
      */
     @Override
-    public void setSponsor(Object fSponsor) {
-        if(!(fSponsor instanceof Organization) && !(fSponsor instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'sponsor': " + fSponsor);
-        }
+    public void setSponsor(Organization fSponsor) {
+        this.fSponsor = fSponsor;
+    }
+    /**
+     * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
+     *
+     * @param fSponsor Person value to set.
+     */
+    @Override
+    public void setSponsor(Person fSponsor) {
         this.fSponsor = fSponsor;
     }
 
@@ -1996,11 +2860,22 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as "short descriptions are present but long descriptions will be needed for non-visual users" or "short descriptions are present and no long descriptions are needed."
      *
+     * @param fAccessibilitySummary Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
      */
     @Override
     public void setAccessibilitySummary(Text fAccessibilitySummary) {
         this.fAccessibilitySummary = fAccessibilitySummary;
+    }
+    /**
+     * A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as "short descriptions are present but long descriptions will be needed for non-visual users" or "short descriptions are present and no long descriptions are needed."
+     *
+     * @param fAccessibilitySummary java.lang.String value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
+     */
+    @Override
+    public void setAccessibilitySummary(java.lang.String fAccessibilitySummary) {
+        this.fAccessibilitySummary = Text.of(fAccessibilitySummary);
     }
 
     private Object fEncodingFormat;
@@ -2026,13 +2901,50 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * 
      * Unregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.
      *
+     * @param fEncodingFormat Text value to set.
      */
     @Override
-    public void setEncodingFormat(Object fEncodingFormat) {
-        if(!(fEncodingFormat instanceof Text) && !(fEncodingFormat instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'encodingFormat': " + fEncodingFormat);
-        }
+    public void setEncodingFormat(Text fEncodingFormat) {
         this.fEncodingFormat = fEncodingFormat;
+    }
+    /**
+     * Media type typically expressed using a MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml) and [MDN reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)) e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc.).
+     * 
+     * In cases where a [[CreativeWork]] has several media type representations, [[encoding]] can be used to indicate each [[MediaObject]] alongside particular [[encodingFormat]] information.
+     * 
+     * Unregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.
+     *
+     * @param fEncodingFormat java.lang.String value to set.
+     */
+    @Override
+    public void setEncodingFormat(java.lang.String fEncodingFormat) {
+        this.fEncodingFormat = Text.of(fEncodingFormat);
+    }
+    /**
+     * Media type typically expressed using a MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml) and [MDN reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)) e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc.).
+     * 
+     * In cases where a [[CreativeWork]] has several media type representations, [[encoding]] can be used to indicate each [[MediaObject]] alongside particular [[encodingFormat]] information.
+     * 
+     * Unregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.
+     *
+     * @param fEncodingFormat URL value to set.
+     */
+    @Override
+    public void setEncodingFormat(URL fEncodingFormat) {
+        this.fEncodingFormat = fEncodingFormat;
+    }
+    /**
+     * Media type typically expressed using a MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml) and [MDN reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)) e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc.).
+     * 
+     * In cases where a [[CreativeWork]] has several media type representations, [[encoding]] can be used to indicate each [[MediaObject]] alongside particular [[encodingFormat]] information.
+     * 
+     * Unregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.
+     *
+     * @param fEncodingFormat java.net.URL value to set.
+     */
+    @Override
+    public void setEncodingFormat(java.net.URL fEncodingFormat) {
+        this.fEncodingFormat = URL.of(fEncodingFormat);
     }
 
     private Object fMaintainer;
@@ -2054,14 +2966,24 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * A maintainer of a [[Dataset]], software package ([[SoftwareApplication]]), or other [[Project]]. A maintainer is a [[Person]] or [[Organization]] that manages contributions to, and/or publication of, some (typically complex) artifact. It is common for distributions of software and data to be based on "upstream" sources. When [[maintainer]] is applied to a specific version of something e.g. a particular version or packaging of a [[Dataset]], it is always  possible that the upstream source has a different maintainer. The [[isBasedOn]] property can be used to indicate such relationships between datasets to make the different maintenance roles clear. Similarly in the case of software, a package may have dedicated maintainers working on integration into software distributions such as Ubuntu, as well as upstream maintainers of the underlying work.
      *       
      *
+     * @param fMaintainer Person value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2311">https://github.com/schemaorg/schemaorg/issues/2311</a>
      */
     @Override
-    public void setMaintainer(Object fMaintainer) {
-        if(!(fMaintainer instanceof Person) && !(fMaintainer instanceof Organization)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'maintainer': " + fMaintainer);
-        }
+    public void setMaintainer(Person fMaintainer) {
+        this.fMaintainer = fMaintainer;
+    }
+    /**
+     * A maintainer of a [[Dataset]], software package ([[SoftwareApplication]]), or other [[Project]]. A maintainer is a [[Person]] or [[Organization]] that manages contributions to, and/or publication of, some (typically complex) artifact. It is common for distributions of software and data to be based on "upstream" sources. When [[maintainer]] is applied to a specific version of something e.g. a particular version or packaging of a [[Dataset]], it is always  possible that the upstream source has a different maintainer. The [[isBasedOn]] property can be used to indicate such relationships between datasets to make the different maintenance roles clear. Similarly in the case of software, a package may have dedicated maintainers working on integration into software distributions such as Ubuntu, as well as upstream maintainers of the underlying work.
+     *       
+     *
+     * @param fMaintainer Organization value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2311">https://github.com/schemaorg/schemaorg/issues/2311</a>
+     */
+    @Override
+    public void setMaintainer(Organization fMaintainer) {
         this.fMaintainer = fMaintainer;
     }
 
@@ -2084,6 +3006,7 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * 
      * This property should not be used where the nature of the alignment can be described using a simple property, for example to express that a resource [[teaches]] or [[assesses]] a competency.
      *
+     * @param fEducationalAlignment AlignmentObject value to set.
      */
     @Override
     public void setEducationalAlignment(AlignmentObject fEducationalAlignment) {
@@ -2107,15 +3030,35 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
      *
+     * @param fAcquireLicensePage CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
      */
     @Override
-    public void setAcquireLicensePage(Object fAcquireLicensePage) {
-        if(!(fAcquireLicensePage instanceof CreativeWork) && !(fAcquireLicensePage instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'acquireLicensePage': " + fAcquireLicensePage);
-        }
+    public void setAcquireLicensePage(CreativeWork fAcquireLicensePage) {
         this.fAcquireLicensePage = fAcquireLicensePage;
+    }
+    /**
+     * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
+     *
+     * @param fAcquireLicensePage URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
+     */
+    @Override
+    public void setAcquireLicensePage(URL fAcquireLicensePage) {
+        this.fAcquireLicensePage = fAcquireLicensePage;
+    }
+    /**
+     * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
+     *
+     * @param fAcquireLicensePage java.net.URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
+     */
+    @Override
+    public void setAcquireLicensePage(java.net.URL fAcquireLicensePage) {
+        this.fAcquireLicensePage = URL.of(fAcquireLicensePage);
     }
 
     private Boolean fIsAccessibleForFree;
@@ -2133,10 +3076,20 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * A flag to signal that the item, event, or place is accessible for free.
      *
+     * @param fIsAccessibleForFree Boolean value to set.
      */
     @Override
     public void setIsAccessibleForFree(Boolean fIsAccessibleForFree) {
         this.fIsAccessibleForFree = fIsAccessibleForFree;
+    }
+    /**
+     * A flag to signal that the item, event, or place is accessible for free.
+     *
+     * @param fIsAccessibleForFree java.lang.Boolean value to set.
+     */
+    @Override
+    public void setIsAccessibleForFree(java.lang.Boolean fIsAccessibleForFree) {
+        this.fIsAccessibleForFree = Boolean.of(fIsAccessibleForFree);
     }
 
     private Object fDatePublished;
@@ -2154,13 +3107,38 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * Date of first broadcast/publication.
      *
+     * @param fDatePublished Date value to set.
      */
     @Override
-    public void setDatePublished(Object fDatePublished) {
-        if(!(fDatePublished instanceof Date) && !(fDatePublished instanceof DateTime)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'datePublished': " + fDatePublished);
-        }
+    public void setDatePublished(Date fDatePublished) {
         this.fDatePublished = fDatePublished;
+    }
+    /**
+     * Date of first broadcast/publication.
+     *
+     * @param fDatePublished java.time.LocalDate value to set.
+     */
+    @Override
+    public void setDatePublished(java.time.LocalDate fDatePublished) {
+        this.fDatePublished = Date.of(fDatePublished);
+    }
+    /**
+     * Date of first broadcast/publication.
+     *
+     * @param fDatePublished DateTime value to set.
+     */
+    @Override
+    public void setDatePublished(DateTime fDatePublished) {
+        this.fDatePublished = fDatePublished;
+    }
+    /**
+     * Date of first broadcast/publication.
+     *
+     * @param fDatePublished java.time.LocalDateTime value to set.
+     */
+    @Override
+    public void setDatePublished(java.time.LocalDateTime fDatePublished) {
+        this.fDatePublished = DateTime.of(fDatePublished);
     }
 
     private Place fSpatialCoverage;
@@ -2182,6 +3160,7 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      *       contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates
      *       areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.
      *
+     * @param fSpatialCoverage Place value to set.
      */
     @Override
     public void setSpatialCoverage(Place fSpatialCoverage) {
@@ -2205,15 +3184,35 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * A license document that applies to this structured data, typically indicated by URL.
      *
+     * @param fSdLicense CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
      */
     @Override
-    public void setSdLicense(Object fSdLicense) {
-        if(!(fSdLicense instanceof CreativeWork) && !(fSdLicense instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'sdLicense': " + fSdLicense);
-        }
+    public void setSdLicense(CreativeWork fSdLicense) {
         this.fSdLicense = fSdLicense;
+    }
+    /**
+     * A license document that applies to this structured data, typically indicated by URL.
+     *
+     * @param fSdLicense URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
+     */
+    @Override
+    public void setSdLicense(URL fSdLicense) {
+        this.fSdLicense = fSdLicense;
+    }
+    /**
+     * A license document that applies to this structured data, typically indicated by URL.
+     *
+     * @param fSdLicense java.net.URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
+     */
+    @Override
+    public void setSdLicense(java.net.URL fSdLicense) {
+        this.fSdLicense = URL.of(fSdLicense);
     }
 
     private Text fConditionsOfAccess;
@@ -2233,12 +3232,24 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * Conditions that affect the availability of, or method(s) of access to, an item. Typically used for real world items such as an [[ArchiveComponent]] held by an [[ArchiveOrganization]]. This property is not suitable for use as a general Web access control mechanism. It is expressed only in natural language.<br/><br/>For example "Available by appointment from the Reading Room" or "Accessible only from logged-in accounts ". 
      *
+     * @param fConditionsOfAccess Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2173">https://github.com/schemaorg/schemaorg/issues/2173</a>
      */
     @Override
     public void setConditionsOfAccess(Text fConditionsOfAccess) {
         this.fConditionsOfAccess = fConditionsOfAccess;
+    }
+    /**
+     * Conditions that affect the availability of, or method(s) of access to, an item. Typically used for real world items such as an [[ArchiveComponent]] held by an [[ArchiveOrganization]]. This property is not suitable for use as a general Web access control mechanism. It is expressed only in natural language.<br/><br/>For example "Available by appointment from the Reading Room" or "Accessible only from logged-in accounts ". 
+     *
+     * @param fConditionsOfAccess java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2173">https://github.com/schemaorg/schemaorg/issues/2173</a>
+     */
+    @Override
+    public void setConditionsOfAccess(java.lang.String fConditionsOfAccess) {
+        this.fConditionsOfAccess = Text.of(fConditionsOfAccess);
     }
 
     private Object fCorrection;
@@ -2259,15 +3270,61 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * Indicates a correction to a [[CreativeWork]], either via a [[CorrectionComment]], textually or in another document.
      *
+     * @param fCorrection URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
      */
     @Override
-    public void setCorrection(Object fCorrection) {
-        if(!(fCorrection instanceof URL) && !(fCorrection instanceof Text) && !(fCorrection instanceof CorrectionComment)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'correction': " + fCorrection);
-        }
+    public void setCorrection(URL fCorrection) {
+        this.fCorrection = fCorrection;
+    }
+    /**
+     * Indicates a correction to a [[CreativeWork]], either via a [[CorrectionComment]], textually or in another document.
+     *
+     * @param fCorrection java.net.URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
+     */
+    @Override
+    public void setCorrection(java.net.URL fCorrection) {
+        this.fCorrection = URL.of(fCorrection);
+    }
+    /**
+     * Indicates a correction to a [[CreativeWork]], either via a [[CorrectionComment]], textually or in another document.
+     *
+     * @param fCorrection Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
+     */
+    @Override
+    public void setCorrection(Text fCorrection) {
+        this.fCorrection = fCorrection;
+    }
+    /**
+     * Indicates a correction to a [[CreativeWork]], either via a [[CorrectionComment]], textually or in another document.
+     *
+     * @param fCorrection java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
+     */
+    @Override
+    public void setCorrection(java.lang.String fCorrection) {
+        this.fCorrection = Text.of(fCorrection);
+    }
+    /**
+     * Indicates a correction to a [[CreativeWork]], either via a [[CorrectionComment]], textually or in another document.
+     *
+     * @param fCorrection CorrectionComment value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
+     */
+    @Override
+    public void setCorrection(CorrectionComment fCorrection) {
         this.fCorrection = fCorrection;
     }
 
@@ -2286,12 +3343,28 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * Official rating of a piece of content&#x2014;for example,'MPAA PG-13'.
      *
+     * @param fContentRating Text value to set.
      */
     @Override
-    public void setContentRating(Object fContentRating) {
-        if(!(fContentRating instanceof Text) && !(fContentRating instanceof Rating)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'contentRating': " + fContentRating);
-        }
+    public void setContentRating(Text fContentRating) {
+        this.fContentRating = fContentRating;
+    }
+    /**
+     * Official rating of a piece of content&#x2014;for example,'MPAA PG-13'.
+     *
+     * @param fContentRating java.lang.String value to set.
+     */
+    @Override
+    public void setContentRating(java.lang.String fContentRating) {
+        this.fContentRating = Text.of(fContentRating);
+    }
+    /**
+     * Official rating of a piece of content&#x2014;for example,'MPAA PG-13'.
+     *
+     * @param fContentRating Rating value to set.
+     */
+    @Override
+    public void setContentRating(Rating fContentRating) {
         this.fContentRating = fContentRating;
     }
 
@@ -2312,14 +3385,56 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
      *
+     * @param fSize QuantitativeValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
     @Override
-    public void setSize(Object fSize) {
-        if(!(fSize instanceof QuantitativeValue) && !(fSize instanceof DefinedTerm) && !(fSize instanceof Text) && !(fSize instanceof SizeSpecification)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'size': " + fSize);
-        }
+    public void setSize(QuantitativeValue fSize) {
+        this.fSize = fSize;
+    }
+    /**
+     * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
+     *
+     * @param fSize DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     */
+    @Override
+    public void setSize(DefinedTerm fSize) {
+        this.fSize = fSize;
+    }
+    /**
+     * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
+     *
+     * @param fSize Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     */
+    @Override
+    public void setSize(Text fSize) {
+        this.fSize = fSize;
+    }
+    /**
+     * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
+     *
+     * @param fSize java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     */
+    @Override
+    public void setSize(java.lang.String fSize) {
+        this.fSize = Text.of(fSize);
+    }
+    /**
+     * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
+     *
+     * @param fSize SizeSpecification value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     */
+    @Override
+    public void setSize(SizeSpecification fSize) {
         this.fSize = fSize;
     }
 
@@ -2338,12 +3453,28 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.
      *
+     * @param fIsPartOf URL value to set.
      */
     @Override
-    public void setIsPartOf(Object fIsPartOf) {
-        if(!(fIsPartOf instanceof URL) && !(fIsPartOf instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'isPartOf': " + fIsPartOf);
-        }
+    public void setIsPartOf(URL fIsPartOf) {
+        this.fIsPartOf = fIsPartOf;
+    }
+    /**
+     * Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.
+     *
+     * @param fIsPartOf java.net.URL value to set.
+     */
+    @Override
+    public void setIsPartOf(java.net.URL fIsPartOf) {
+        this.fIsPartOf = URL.of(fIsPartOf);
+    }
+    /**
+     * Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.
+     *
+     * @param fIsPartOf CreativeWork value to set.
+     */
+    @Override
+    public void setIsPartOf(CreativeWork fIsPartOf) {
         this.fIsPartOf = fIsPartOf;
     }
 
@@ -2364,13 +3495,41 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * The "temporal" property can be used in cases where more specific properties
      * (e.g. [[temporalCoverage]], [[dateCreated]], [[dateModified]], [[datePublished]]) are not known to be appropriate.
      *
+     * @param fTemporal DateTime value to set.
      */
     @Override
-    public void setTemporal(Object fTemporal) {
-        if(!(fTemporal instanceof DateTime) && !(fTemporal instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'temporal': " + fTemporal);
-        }
+    public void setTemporal(DateTime fTemporal) {
         this.fTemporal = fTemporal;
+    }
+    /**
+     * The "temporal" property can be used in cases where more specific properties
+     * (e.g. [[temporalCoverage]], [[dateCreated]], [[dateModified]], [[datePublished]]) are not known to be appropriate.
+     *
+     * @param fTemporal java.time.LocalDateTime value to set.
+     */
+    @Override
+    public void setTemporal(java.time.LocalDateTime fTemporal) {
+        this.fTemporal = DateTime.of(fTemporal);
+    }
+    /**
+     * The "temporal" property can be used in cases where more specific properties
+     * (e.g. [[temporalCoverage]], [[dateCreated]], [[dateModified]], [[datePublished]]) are not known to be appropriate.
+     *
+     * @param fTemporal Text value to set.
+     */
+    @Override
+    public void setTemporal(Text fTemporal) {
+        this.fTemporal = fTemporal;
+    }
+    /**
+     * The "temporal" property can be used in cases where more specific properties
+     * (e.g. [[temporalCoverage]], [[dateCreated]], [[dateModified]], [[datePublished]]) are not known to be appropriate.
+     *
+     * @param fTemporal java.lang.String value to set.
+     */
+    @Override
+    public void setTemporal(java.lang.String fTemporal) {
+        this.fTemporal = Text.of(fTemporal);
     }
 
     private URL fThumbnailUrl;
@@ -2388,10 +3547,20 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * A thumbnail image relevant to the Thing.
      *
+     * @param fThumbnailUrl URL value to set.
      */
     @Override
     public void setThumbnailUrl(URL fThumbnailUrl) {
         this.fThumbnailUrl = fThumbnailUrl;
+    }
+    /**
+     * A thumbnail image relevant to the Thing.
+     *
+     * @param fThumbnailUrl java.net.URL value to set.
+     */
+    @Override
+    public void setThumbnailUrl(java.net.URL fThumbnailUrl) {
+        this.fThumbnailUrl = URL.of(fThumbnailUrl);
     }
 
     private Object fInLanguage;
@@ -2410,13 +3579,31 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
      *
+     * @param fInLanguage Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
      */
     @Override
-    public void setInLanguage(Object fInLanguage) {
-        if(!(fInLanguage instanceof Text) && !(fInLanguage instanceof Language)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'inLanguage': " + fInLanguage);
-        }
+    public void setInLanguage(Text fInLanguage) {
+        this.fInLanguage = fInLanguage;
+    }
+    /**
+     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     *
+     * @param fInLanguage java.lang.String value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
+     */
+    @Override
+    public void setInLanguage(java.lang.String fInLanguage) {
+        this.fInLanguage = Text.of(fInLanguage);
+    }
+    /**
+     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     *
+     * @param fInLanguage Language value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
+     */
+    @Override
+    public void setInLanguage(Language fInLanguage) {
         this.fInLanguage = fInLanguage;
     }
 
@@ -2435,12 +3622,28 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * A license document that applies to this content, typically indicated by URL.
      *
+     * @param fLicense URL value to set.
      */
     @Override
-    public void setLicense(Object fLicense) {
-        if(!(fLicense instanceof URL) && !(fLicense instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'license': " + fLicense);
-        }
+    public void setLicense(URL fLicense) {
+        this.fLicense = fLicense;
+    }
+    /**
+     * A license document that applies to this content, typically indicated by URL.
+     *
+     * @param fLicense java.net.URL value to set.
+     */
+    @Override
+    public void setLicense(java.net.URL fLicense) {
+        this.fLicense = URL.of(fLicense);
+    }
+    /**
+     * A license document that applies to this content, typically indicated by URL.
+     *
+     * @param fLicense CreativeWork value to set.
+     */
+    @Override
+    public void setLicense(CreativeWork fLicense) {
         this.fLicense = fLicense;
     }
 
@@ -2459,12 +3662,19 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.
      *
+     * @param fCreator Organization value to set.
      */
     @Override
-    public void setCreator(Object fCreator) {
-        if(!(fCreator instanceof Organization) && !(fCreator instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'creator': " + fCreator);
-        }
+    public void setCreator(Organization fCreator) {
+        this.fCreator = fCreator;
+    }
+    /**
+     * The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.
+     *
+     * @param fCreator Person value to set.
+     */
+    @Override
+    public void setCreator(Person fCreator) {
         this.fCreator = fCreator;
     }
 
@@ -2483,6 +3693,7 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * Review of the item.
      *
+     * @param fReviews Review value to set.
      */
     @Override
     public void setReviews(Review fReviews) {
@@ -2505,6 +3716,7 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * The subject matter of the content.
      *
+     * @param fAbout Thing value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
@@ -2527,10 +3739,20 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * Indicates whether this content is family friendly.
      *
+     * @param fIsFamilyFriendly Boolean value to set.
      */
     @Override
     public void setIsFamilyFriendly(Boolean fIsFamilyFriendly) {
         this.fIsFamilyFriendly = fIsFamilyFriendly;
+    }
+    /**
+     * Indicates whether this content is family friendly.
+     *
+     * @param fIsFamilyFriendly java.lang.Boolean value to set.
+     */
+    @Override
+    public void setIsFamilyFriendly(java.lang.Boolean fIsFamilyFriendly) {
+        this.fIsFamilyFriendly = Boolean.of(fIsFamilyFriendly);
     }
 
     private Text fHeadline;
@@ -2548,10 +3770,20 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * Headline of the article.
      *
+     * @param fHeadline Text value to set.
      */
     @Override
     public void setHeadline(Text fHeadline) {
         this.fHeadline = fHeadline;
+    }
+    /**
+     * Headline of the article.
+     *
+     * @param fHeadline java.lang.String value to set.
+     */
+    @Override
+    public void setHeadline(java.lang.String fHeadline) {
+        this.fHeadline = Text.of(fHeadline);
     }
 
     private Text fAccessibilityAPI;
@@ -2569,10 +3801,20 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * Indicates that the resource is compatible with the referenced accessibility API. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityAPI-vocabulary).
      *
+     * @param fAccessibilityAPI Text value to set.
      */
     @Override
     public void setAccessibilityAPI(Text fAccessibilityAPI) {
         this.fAccessibilityAPI = fAccessibilityAPI;
+    }
+    /**
+     * Indicates that the resource is compatible with the referenced accessibility API. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityAPI-vocabulary).
+     *
+     * @param fAccessibilityAPI java.lang.String value to set.
+     */
+    @Override
+    public void setAccessibilityAPI(java.lang.String fAccessibilityAPI) {
+        this.fAccessibilityAPI = Text.of(fAccessibilityAPI);
     }
 
     private Organization fPublisherImprint;
@@ -2591,6 +3833,7 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * The publishing division which published the comic.
      *
+     * @param fPublisherImprint Organization value to set.
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
     @Override
@@ -2613,12 +3856,37 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
      *
+     * @param fIsBasedOnUrl URL value to set.
      */
     @Override
-    public void setIsBasedOnUrl(Object fIsBasedOnUrl) {
-        if(!(fIsBasedOnUrl instanceof URL) && !(fIsBasedOnUrl instanceof CreativeWork) && !(fIsBasedOnUrl instanceof Product)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'isBasedOnUrl': " + fIsBasedOnUrl);
-        }
+    public void setIsBasedOnUrl(URL fIsBasedOnUrl) {
+        this.fIsBasedOnUrl = fIsBasedOnUrl;
+    }
+    /**
+     * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
+     *
+     * @param fIsBasedOnUrl java.net.URL value to set.
+     */
+    @Override
+    public void setIsBasedOnUrl(java.net.URL fIsBasedOnUrl) {
+        this.fIsBasedOnUrl = URL.of(fIsBasedOnUrl);
+    }
+    /**
+     * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
+     *
+     * @param fIsBasedOnUrl CreativeWork value to set.
+     */
+    @Override
+    public void setIsBasedOnUrl(CreativeWork fIsBasedOnUrl) {
+        this.fIsBasedOnUrl = fIsBasedOnUrl;
+    }
+    /**
+     * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
+     *
+     * @param fIsBasedOnUrl Product value to set.
+     */
+    @Override
+    public void setIsBasedOnUrl(Product fIsBasedOnUrl) {
         this.fIsBasedOnUrl = fIsBasedOnUrl;
     }
 
@@ -2637,6 +3905,7 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * A media object that encodes this CreativeWork.
      *
+     * @param fEncodings MediaObject value to set.
      */
     @Override
     public void setEncodings(MediaObject fEncodings) {
@@ -2660,6 +3929,7 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * Used to indicate a specific claim contained, implied, translated or refined from the content of a [[MediaObject]] or other [[CreativeWork]]. The interpreting party can be indicated using [[claimInterpreter]].
      *
+     * @param fInterpretedAsClaim Claim value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
@@ -2683,10 +3953,20 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * Identifies input methods that are sufficient to fully control the described resource. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityControl-vocabulary).
      *
+     * @param fAccessibilityControl Text value to set.
      */
     @Override
     public void setAccessibilityControl(Text fAccessibilityControl) {
         this.fAccessibilityControl = fAccessibilityControl;
+    }
+    /**
+     * Identifies input methods that are sufficient to fully control the described resource. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityControl-vocabulary).
+     *
+     * @param fAccessibilityControl java.lang.String value to set.
+     */
+    @Override
+    public void setAccessibilityControl(java.lang.String fAccessibilityControl) {
+        this.fAccessibilityControl = Text.of(fAccessibilityControl);
     }
 
     private Object fCitation;
@@ -2704,13 +3984,29 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.
      *
+     * @param fCitation CreativeWork value to set.
      */
     @Override
-    public void setCitation(Object fCitation) {
-        if(!(fCitation instanceof CreativeWork) && !(fCitation instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'citation': " + fCitation);
-        }
+    public void setCitation(CreativeWork fCitation) {
         this.fCitation = fCitation;
+    }
+    /**
+     * A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.
+     *
+     * @param fCitation Text value to set.
+     */
+    @Override
+    public void setCitation(Text fCitation) {
+        this.fCitation = fCitation;
+    }
+    /**
+     * A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.
+     *
+     * @param fCitation java.lang.String value to set.
+     */
+    @Override
+    public void setCitation(java.lang.String fCitation) {
+        this.fCitation = Text.of(fCitation);
     }
 
     private Object fVersion;
@@ -2728,13 +4024,38 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * The version of the CreativeWork embodied by a specified resource.
      *
+     * @param fVersion Number value to set.
      */
     @Override
-    public void setVersion(Object fVersion) {
-        if(!(fVersion instanceof Number) && !(fVersion instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'version': " + fVersion);
-        }
+    public void setVersion(Number fVersion) {
         this.fVersion = fVersion;
+    }
+    /**
+     * The version of the CreativeWork embodied by a specified resource.
+     *
+     * @param fVersion java.lang.Number value to set.
+     */
+    @Override
+    public void setVersion(java.lang.Number fVersion) {
+        this.fVersion = Number.of(fVersion);
+    }
+    /**
+     * The version of the CreativeWork embodied by a specified resource.
+     *
+     * @param fVersion Text value to set.
+     */
+    @Override
+    public void setVersion(Text fVersion) {
+        this.fVersion = fVersion;
+    }
+    /**
+     * The version of the CreativeWork embodied by a specified resource.
+     *
+     * @param fVersion java.lang.String value to set.
+     */
+    @Override
+    public void setVersion(java.lang.String fVersion) {
+        this.fVersion = Text.of(fVersion);
     }
 
     private Object fArchivedAt;
@@ -2754,15 +4075,35 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * Indicates a page or other link involved in archival of a [[CreativeWork]]. In the case of [[MediaReview]], the items in a [[MediaReviewItem]] may often become inaccessible, but be archived by archival, journalistic, activist, or law enforcement organizations. In such cases, the referenced page may not directly publish the content.
      *
+     * @param fArchivedAt WebPage value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
     @Override
-    public void setArchivedAt(Object fArchivedAt) {
-        if(!(fArchivedAt instanceof WebPage) && !(fArchivedAt instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'archivedAt': " + fArchivedAt);
-        }
+    public void setArchivedAt(WebPage fArchivedAt) {
         this.fArchivedAt = fArchivedAt;
+    }
+    /**
+     * Indicates a page or other link involved in archival of a [[CreativeWork]]. In the case of [[MediaReview]], the items in a [[MediaReviewItem]] may often become inaccessible, but be archived by archival, journalistic, activist, or law enforcement organizations. In such cases, the referenced page may not directly publish the content.
+     *
+     * @param fArchivedAt URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     */
+    @Override
+    public void setArchivedAt(URL fArchivedAt) {
+        this.fArchivedAt = fArchivedAt;
+    }
+    /**
+     * Indicates a page or other link involved in archival of a [[CreativeWork]]. In the case of [[MediaReview]], the items in a [[MediaReviewItem]] may often become inaccessible, but be archived by archival, journalistic, activist, or law enforcement organizations. In such cases, the referenced page may not directly publish the content.
+     *
+     * @param fArchivedAt java.net.URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     */
+    @Override
+    public void setArchivedAt(java.net.URL fArchivedAt) {
+        this.fArchivedAt = URL.of(fArchivedAt);
     }
 
     private Object fLearningResourceType;
@@ -2780,13 +4121,29 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.
      *
+     * @param fLearningResourceType DefinedTerm value to set.
      */
     @Override
-    public void setLearningResourceType(Object fLearningResourceType) {
-        if(!(fLearningResourceType instanceof DefinedTerm) && !(fLearningResourceType instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'learningResourceType': " + fLearningResourceType);
-        }
+    public void setLearningResourceType(DefinedTerm fLearningResourceType) {
         this.fLearningResourceType = fLearningResourceType;
+    }
+    /**
+     * The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.
+     *
+     * @param fLearningResourceType Text value to set.
+     */
+    @Override
+    public void setLearningResourceType(Text fLearningResourceType) {
+        this.fLearningResourceType = fLearningResourceType;
+    }
+    /**
+     * The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.
+     *
+     * @param fLearningResourceType java.lang.String value to set.
+     */
+    @Override
+    public void setLearningResourceType(java.lang.String fLearningResourceType) {
+        this.fLearningResourceType = Text.of(fLearningResourceType);
     }
 
     private MediaObject fEncoding;
@@ -2804,6 +4161,7 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * A media object that encodes this CreativeWork. This property is a synonym for associatedMedia.
      *
+     * @param fEncoding MediaObject value to set.
      */
     @Override
     public void setEncoding(MediaObject fEncoding) {
@@ -2826,13 +4184,31 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * An embedded audio object.
      *
+     * @param fAudio AudioObject value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2420">https://github.com/schemaorg/schemaorg/issues/2420</a>
      */
     @Override
-    public void setAudio(Object fAudio) {
-        if(!(fAudio instanceof AudioObject) && !(fAudio instanceof MusicRecording) && !(fAudio instanceof Clip)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'audio': " + fAudio);
-        }
+    public void setAudio(AudioObject fAudio) {
+        this.fAudio = fAudio;
+    }
+    /**
+     * An embedded audio object.
+     *
+     * @param fAudio MusicRecording value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2420">https://github.com/schemaorg/schemaorg/issues/2420</a>
+     */
+    @Override
+    public void setAudio(MusicRecording fAudio) {
+        this.fAudio = fAudio;
+    }
+    /**
+     * An embedded audio object.
+     *
+     * @param fAudio Clip value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2420">https://github.com/schemaorg/schemaorg/issues/2420</a>
+     */
+    @Override
+    public void setAudio(Clip fAudio) {
         this.fAudio = fAudio;
     }
 
@@ -2851,6 +4227,7 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept.
      *
+     * @param fMentions Thing value to set.
      */
     @Override
     public void setMentions(Thing fMentions) {
@@ -2873,6 +4250,7 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * A list of single or combined accessModes that are sufficient to understand all the intellectual content of a resource. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessModeSufficient-vocabulary).
      *
+     * @param fAccessModeSufficient ItemList value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
      */
     @Override
@@ -2896,6 +4274,7 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
      *
+     * @param fHasPart CreativeWork value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
     @Override
@@ -2926,13 +4305,76 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * 
      * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
      *
+     * @param fTemporalCoverage URL value to set.
      */
     @Override
-    public void setTemporalCoverage(Object fTemporalCoverage) {
-        if(!(fTemporalCoverage instanceof URL) && !(fTemporalCoverage instanceof DateTime) && !(fTemporalCoverage instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'temporalCoverage': " + fTemporalCoverage);
-        }
+    public void setTemporalCoverage(URL fTemporalCoverage) {
         this.fTemporalCoverage = fTemporalCoverage;
+    }
+    /**
+     * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
+     *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content e.g. ScholarlyArticle, Book, TVSeries or TVEpisode may indicate their temporalCoverage in broader terms - textually or via well-known URL.
+     *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945".
+     * 
+     * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
+     *
+     * @param fTemporalCoverage java.net.URL value to set.
+     */
+    @Override
+    public void setTemporalCoverage(java.net.URL fTemporalCoverage) {
+        this.fTemporalCoverage = URL.of(fTemporalCoverage);
+    }
+    /**
+     * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
+     *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content e.g. ScholarlyArticle, Book, TVSeries or TVEpisode may indicate their temporalCoverage in broader terms - textually or via well-known URL.
+     *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945".
+     * 
+     * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
+     *
+     * @param fTemporalCoverage DateTime value to set.
+     */
+    @Override
+    public void setTemporalCoverage(DateTime fTemporalCoverage) {
+        this.fTemporalCoverage = fTemporalCoverage;
+    }
+    /**
+     * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
+     *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content e.g. ScholarlyArticle, Book, TVSeries or TVEpisode may indicate their temporalCoverage in broader terms - textually or via well-known URL.
+     *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945".
+     * 
+     * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
+     *
+     * @param fTemporalCoverage java.time.LocalDateTime value to set.
+     */
+    @Override
+    public void setTemporalCoverage(java.time.LocalDateTime fTemporalCoverage) {
+        this.fTemporalCoverage = DateTime.of(fTemporalCoverage);
+    }
+    /**
+     * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
+     *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content e.g. ScholarlyArticle, Book, TVSeries or TVEpisode may indicate their temporalCoverage in broader terms - textually or via well-known URL.
+     *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945".
+     * 
+     * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
+     *
+     * @param fTemporalCoverage Text value to set.
+     */
+    @Override
+    public void setTemporalCoverage(Text fTemporalCoverage) {
+        this.fTemporalCoverage = fTemporalCoverage;
+    }
+    /**
+     * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
+     *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content e.g. ScholarlyArticle, Book, TVSeries or TVEpisode may indicate their temporalCoverage in broader terms - textually or via well-known URL.
+     *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945".
+     * 
+     * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
+     *
+     * @param fTemporalCoverage java.lang.String value to set.
+     */
+    @Override
+    public void setTemporalCoverage(java.lang.String fTemporalCoverage) {
+        this.fTemporalCoverage = Text.of(fTemporalCoverage);
     }
 
     private Object fContributor;
@@ -2950,12 +4392,19 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * A secondary contributor to the CreativeWork or Event.
      *
+     * @param fContributor Organization value to set.
      */
     @Override
-    public void setContributor(Object fContributor) {
-        if(!(fContributor instanceof Organization) && !(fContributor instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'contributor': " + fContributor);
-        }
+    public void setContributor(Organization fContributor) {
+        this.fContributor = fContributor;
+    }
+    /**
+     * A secondary contributor to the CreativeWork or Event.
+     *
+     * @param fContributor Person value to set.
+     */
+    @Override
+    public void setContributor(Person fContributor) {
         this.fContributor = fContributor;
     }
 
@@ -2974,12 +4423,19 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * An embedded video object.
      *
+     * @param fVideo Clip value to set.
      */
     @Override
-    public void setVideo(Object fVideo) {
-        if(!(fVideo instanceof Clip) && !(fVideo instanceof VideoObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'video': " + fVideo);
-        }
+    public void setVideo(Clip fVideo) {
+        this.fVideo = fVideo;
+    }
+    /**
+     * An embedded video object.
+     *
+     * @param fVideo VideoObject value to set.
+     */
+    @Override
+    public void setVideo(VideoObject fVideo) {
         this.fVideo = fVideo;
     }
 
@@ -2998,13 +4454,29 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
+     * @param fMainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
-        }
+    public void setMainEntityOfPage(CreativeWork fMainEntityOfPage) {
         this.fMainEntityOfPage = fMainEntityOfPage;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param fMainEntityOfPage URL value to set.
+     */
+    @Override
+    public void setMainEntityOfPage(URL fMainEntityOfPage) {
+        this.fMainEntityOfPage = fMainEntityOfPage;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param fMainEntityOfPage java.net.URL value to set.
+     */
+    @Override
+    public void setMainEntityOfPage(java.net.URL fMainEntityOfPage) {
+        this.fMainEntityOfPage = URL.of(fMainEntityOfPage);
     }
 
     private Text fAlternateName;
@@ -3022,10 +4494,20 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * An alias for the item.
      *
+     * @param fAlternateName Text value to set.
      */
     @Override
     public void setAlternateName(Text fAlternateName) {
         this.fAlternateName = fAlternateName;
+    }
+    /**
+     * An alias for the item.
+     *
+     * @param fAlternateName java.lang.String value to set.
+     */
+    @Override
+    public void setAlternateName(java.lang.String fAlternateName) {
+        this.fAlternateName = Text.of(fAlternateName);
     }
 
     private Text fName;
@@ -3043,10 +4525,20 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * The name of the item.
      *
+     * @param fName Text value to set.
      */
     @Override
     public void setName(Text fName) {
         this.fName = fName;
+    }
+    /**
+     * The name of the item.
+     *
+     * @param fName java.lang.String value to set.
+     */
+    @Override
+    public void setName(java.lang.String fName) {
+        this.fName = Text.of(fName);
     }
 
     private Action fPotentialAction;
@@ -3064,6 +4556,7 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      *
+     * @param fPotentialAction Action value to set.
      */
     @Override
     public void setPotentialAction(Action fPotentialAction) {
@@ -3085,12 +4578,28 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
+     * @param fImage URL value to set.
      */
     @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
+    public void setImage(URL fImage) {
+        this.fImage = fImage;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param fImage java.net.URL value to set.
+     */
+    @Override
+    public void setImage(java.net.URL fImage) {
+        this.fImage = URL.of(fImage);
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param fImage ImageObject value to set.
+     */
+    @Override
+    public void setImage(ImageObject fImage) {
         this.fImage = fImage;
     }
 
@@ -3109,10 +4618,20 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * URL of the item.
      *
+     * @param fUrl URL value to set.
      */
     @Override
     public void setUrl(URL fUrl) {
         this.fUrl = fUrl;
+    }
+    /**
+     * URL of the item.
+     *
+     * @param fUrl java.net.URL value to set.
+     */
+    @Override
+    public void setUrl(java.net.URL fUrl) {
+        this.fUrl = URL.of(fUrl);
     }
 
     private Text fDescription;
@@ -3130,10 +4649,20 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * A description of the item.
      *
+     * @param fDescription Text value to set.
      */
     @Override
     public void setDescription(Text fDescription) {
         this.fDescription = fDescription;
+    }
+    /**
+     * A description of the item.
+     *
+     * @param fDescription java.lang.String value to set.
+     */
+    @Override
+    public void setDescription(java.lang.String fDescription) {
+        this.fDescription = Text.of(fDescription);
     }
 
     private Object fSubjectOf;
@@ -3152,13 +4681,21 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * A CreativeWork or Event about this Thing.
      *
+     * @param fSubjectOf Event value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Object fSubjectOf) {
-        if(!(fSubjectOf instanceof Event) && !(fSubjectOf instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'subjectOf': " + fSubjectOf);
-        }
+    public void setSubjectOf(Event fSubjectOf) {
+        this.fSubjectOf = fSubjectOf;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @param fSubjectOf CreativeWork value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public void setSubjectOf(CreativeWork fSubjectOf) {
         this.fSubjectOf = fSubjectOf;
     }
 
@@ -3177,10 +4714,20 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
+     * @param fAdditionalType URL value to set.
      */
     @Override
     public void setAdditionalType(URL fAdditionalType) {
         this.fAdditionalType = fAdditionalType;
+    }
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @param fAdditionalType java.net.URL value to set.
+     */
+    @Override
+    public void setAdditionalType(java.net.URL fAdditionalType) {
+        this.fAdditionalType = URL.of(fAdditionalType);
     }
 
     private Text fDisambiguatingDescription;
@@ -3198,10 +4745,20 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
+     * @param fDisambiguatingDescription Text value to set.
      */
     @Override
     public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
         this.fDisambiguatingDescription = fDisambiguatingDescription;
+    }
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @param fDisambiguatingDescription java.lang.String value to set.
+     */
+    @Override
+    public void setDisambiguatingDescription(java.lang.String fDisambiguatingDescription) {
+        this.fDisambiguatingDescription = Text.of(fDisambiguatingDescription);
     }
 
     private URL fSameAs;
@@ -3219,10 +4776,20 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
+     * @param fSameAs URL value to set.
      */
     @Override
     public void setSameAs(URL fSameAs) {
         this.fSameAs = fSameAs;
+    }
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @param fSameAs java.net.URL value to set.
+     */
+    @Override
+    public void setSameAs(java.net.URL fSameAs) {
+        this.fSameAs = URL.of(fSameAs);
     }
 
     private Object fIdentifier;
@@ -3242,12 +4809,50 @@ public class MovieSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
+     * @param fIdentifier URL value to set.
      */
     @Override
-    public void setIdentifier(Object fIdentifier) {
-        if(!(fIdentifier instanceof URL) && !(fIdentifier instanceof Text) && !(fIdentifier instanceof PropertyValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
-        }
+    public void setIdentifier(URL fIdentifier) {
+        this.fIdentifier = fIdentifier;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param fIdentifier java.net.URL value to set.
+     */
+    @Override
+    public void setIdentifier(java.net.URL fIdentifier) {
+        this.fIdentifier = URL.of(fIdentifier);
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param fIdentifier Text value to set.
+     */
+    @Override
+    public void setIdentifier(Text fIdentifier) {
+        this.fIdentifier = fIdentifier;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param fIdentifier java.lang.String value to set.
+     */
+    @Override
+    public void setIdentifier(java.lang.String fIdentifier) {
+        this.fIdentifier = Text.of(fIdentifier);
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param fIdentifier PropertyValue value to set.
+     */
+    @Override
+    public void setIdentifier(PropertyValue fIdentifier) {
         this.fIdentifier = fIdentifier;
     }
 }

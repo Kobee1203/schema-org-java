@@ -78,16 +78,50 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     /**
      * A cardholder benefit that pays the cardholder a small percentage of their net expenditures.
      *
+     * @param fCashBack Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      */
     @Override
-    public void setCashBack(Object fCashBack) {
-        if(!(fCashBack instanceof Number) && !(fCashBack instanceof Boolean)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'cashBack': " + fCashBack);
-        }
+    public void setCashBack(Number fCashBack) {
         this.fCashBack = fCashBack;
+    }
+    /**
+     * A cardholder benefit that pays the cardholder a small percentage of their net expenditures.
+     *
+     * @param fCashBack java.lang.Number value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     */
+    @Override
+    public void setCashBack(java.lang.Number fCashBack) {
+        this.fCashBack = Number.of(fCashBack);
+    }
+    /**
+     * A cardholder benefit that pays the cardholder a small percentage of their net expenditures.
+     *
+     * @param fCashBack Boolean value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     */
+    @Override
+    public void setCashBack(Boolean fCashBack) {
+        this.fCashBack = fCashBack;
+    }
+    /**
+     * A cardholder benefit that pays the cardholder a small percentage of their net expenditures.
+     *
+     * @param fCashBack java.lang.Boolean value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     */
+    @Override
+    public void setCashBack(java.lang.Boolean fCashBack) {
+        this.fCashBack = Boolean.of(fCashBack);
     }
 
     private Object fMonthlyMinimumRepaymentAmount;
@@ -108,16 +142,38 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     /**
      * The minimum payment is the lowest amount of money that one is required to pay on a credit card statement each month.
      *
+     * @param fMonthlyMinimumRepaymentAmount MonetaryAmount value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      */
     @Override
-    public void setMonthlyMinimumRepaymentAmount(Object fMonthlyMinimumRepaymentAmount) {
-        if(!(fMonthlyMinimumRepaymentAmount instanceof MonetaryAmount) && !(fMonthlyMinimumRepaymentAmount instanceof Number)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'monthlyMinimumRepaymentAmount': " + fMonthlyMinimumRepaymentAmount);
-        }
+    public void setMonthlyMinimumRepaymentAmount(MonetaryAmount fMonthlyMinimumRepaymentAmount) {
         this.fMonthlyMinimumRepaymentAmount = fMonthlyMinimumRepaymentAmount;
+    }
+    /**
+     * The minimum payment is the lowest amount of money that one is required to pay on a credit card statement each month.
+     *
+     * @param fMonthlyMinimumRepaymentAmount Number value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     */
+    @Override
+    public void setMonthlyMinimumRepaymentAmount(Number fMonthlyMinimumRepaymentAmount) {
+        this.fMonthlyMinimumRepaymentAmount = fMonthlyMinimumRepaymentAmount;
+    }
+    /**
+     * The minimum payment is the lowest amount of money that one is required to pay on a credit card statement each month.
+     *
+     * @param fMonthlyMinimumRepaymentAmount java.lang.Number value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     */
+    @Override
+    public void setMonthlyMinimumRepaymentAmount(java.lang.Number fMonthlyMinimumRepaymentAmount) {
+        this.fMonthlyMinimumRepaymentAmount = Number.of(fMonthlyMinimumRepaymentAmount);
     }
 
     private MonetaryAmount fFloorLimit;
@@ -138,6 +194,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     /**
      * A floor limit is the amount of money above which credit card transactions must be authorized.
      *
+     * @param fFloorLimit MonetaryAmount value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
@@ -165,6 +222,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     /**
      * A secure method for consumers to purchase products or services via debit, credit or smartcards by using RFID or NFC technology.
      *
+     * @param fContactlessPayment Boolean value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
@@ -172,6 +230,18 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     @Override
     public void setContactlessPayment(Boolean fContactlessPayment) {
         this.fContactlessPayment = fContactlessPayment;
+    }
+    /**
+     * A secure method for consumers to purchase products or services via debit, credit or smartcards by using RFID or NFC technology.
+     *
+     * @param fContactlessPayment java.lang.Boolean value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     */
+    @Override
+    public void setContactlessPayment(java.lang.Boolean fContactlessPayment) {
+        this.fContactlessPayment = Boolean.of(fContactlessPayment);
     }
 
     private Object fSupersededBy;
@@ -190,13 +260,31 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     /**
      * Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
      *
+     * @param fSupersededBy Enumeration value to set.
      * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
      */
     @Override
-    public void setSupersededBy(Object fSupersededBy) {
-        if(!(fSupersededBy instanceof Enumeration) && !(fSupersededBy instanceof Class) && !(fSupersededBy instanceof Property)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'supersededBy': " + fSupersededBy);
-        }
+    public void setSupersededBy(Enumeration fSupersededBy) {
+        this.fSupersededBy = fSupersededBy;
+    }
+    /**
+     * Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
+     *
+     * @param fSupersededBy Class value to set.
+     * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
+     */
+    @Override
+    public void setSupersededBy(Class fSupersededBy) {
+        this.fSupersededBy = fSupersededBy;
+    }
+    /**
+     * Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
+     *
+     * @param fSupersededBy Property value to set.
+     * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
+     */
+    @Override
+    public void setSupersededBy(Property fSupersededBy) {
         this.fSupersededBy = fSupersededBy;
     }
 
@@ -215,13 +303,29 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
+     * @param fMainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
-        }
+    public void setMainEntityOfPage(CreativeWork fMainEntityOfPage) {
         this.fMainEntityOfPage = fMainEntityOfPage;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param fMainEntityOfPage URL value to set.
+     */
+    @Override
+    public void setMainEntityOfPage(URL fMainEntityOfPage) {
+        this.fMainEntityOfPage = fMainEntityOfPage;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param fMainEntityOfPage java.net.URL value to set.
+     */
+    @Override
+    public void setMainEntityOfPage(java.net.URL fMainEntityOfPage) {
+        this.fMainEntityOfPage = URL.of(fMainEntityOfPage);
     }
 
     private Text fAlternateName;
@@ -239,10 +343,20 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     /**
      * An alias for the item.
      *
+     * @param fAlternateName Text value to set.
      */
     @Override
     public void setAlternateName(Text fAlternateName) {
         this.fAlternateName = fAlternateName;
+    }
+    /**
+     * An alias for the item.
+     *
+     * @param fAlternateName java.lang.String value to set.
+     */
+    @Override
+    public void setAlternateName(java.lang.String fAlternateName) {
+        this.fAlternateName = Text.of(fAlternateName);
     }
 
     private Text fName;
@@ -260,10 +374,20 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     /**
      * The name of the item.
      *
+     * @param fName Text value to set.
      */
     @Override
     public void setName(Text fName) {
         this.fName = fName;
+    }
+    /**
+     * The name of the item.
+     *
+     * @param fName java.lang.String value to set.
+     */
+    @Override
+    public void setName(java.lang.String fName) {
+        this.fName = Text.of(fName);
     }
 
     private Action fPotentialAction;
@@ -281,6 +405,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      *
+     * @param fPotentialAction Action value to set.
      */
     @Override
     public void setPotentialAction(Action fPotentialAction) {
@@ -302,12 +427,28 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
+     * @param fImage URL value to set.
      */
     @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
+    public void setImage(URL fImage) {
+        this.fImage = fImage;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param fImage java.net.URL value to set.
+     */
+    @Override
+    public void setImage(java.net.URL fImage) {
+        this.fImage = URL.of(fImage);
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param fImage ImageObject value to set.
+     */
+    @Override
+    public void setImage(ImageObject fImage) {
         this.fImage = fImage;
     }
 
@@ -326,10 +467,20 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     /**
      * URL of the item.
      *
+     * @param fUrl URL value to set.
      */
     @Override
     public void setUrl(URL fUrl) {
         this.fUrl = fUrl;
+    }
+    /**
+     * URL of the item.
+     *
+     * @param fUrl java.net.URL value to set.
+     */
+    @Override
+    public void setUrl(java.net.URL fUrl) {
+        this.fUrl = URL.of(fUrl);
     }
 
     private Text fDescription;
@@ -347,10 +498,20 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     /**
      * A description of the item.
      *
+     * @param fDescription Text value to set.
      */
     @Override
     public void setDescription(Text fDescription) {
         this.fDescription = fDescription;
+    }
+    /**
+     * A description of the item.
+     *
+     * @param fDescription java.lang.String value to set.
+     */
+    @Override
+    public void setDescription(java.lang.String fDescription) {
+        this.fDescription = Text.of(fDescription);
     }
 
     private Object fSubjectOf;
@@ -369,13 +530,21 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     /**
      * A CreativeWork or Event about this Thing.
      *
+     * @param fSubjectOf Event value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Object fSubjectOf) {
-        if(!(fSubjectOf instanceof Event) && !(fSubjectOf instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'subjectOf': " + fSubjectOf);
-        }
+    public void setSubjectOf(Event fSubjectOf) {
+        this.fSubjectOf = fSubjectOf;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @param fSubjectOf CreativeWork value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public void setSubjectOf(CreativeWork fSubjectOf) {
         this.fSubjectOf = fSubjectOf;
     }
 
@@ -394,10 +563,20 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
+     * @param fAdditionalType URL value to set.
      */
     @Override
     public void setAdditionalType(URL fAdditionalType) {
         this.fAdditionalType = fAdditionalType;
+    }
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @param fAdditionalType java.net.URL value to set.
+     */
+    @Override
+    public void setAdditionalType(java.net.URL fAdditionalType) {
+        this.fAdditionalType = URL.of(fAdditionalType);
     }
 
     private Text fDisambiguatingDescription;
@@ -415,10 +594,20 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
+     * @param fDisambiguatingDescription Text value to set.
      */
     @Override
     public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
         this.fDisambiguatingDescription = fDisambiguatingDescription;
+    }
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @param fDisambiguatingDescription java.lang.String value to set.
+     */
+    @Override
+    public void setDisambiguatingDescription(java.lang.String fDisambiguatingDescription) {
+        this.fDisambiguatingDescription = Text.of(fDisambiguatingDescription);
     }
 
     private URL fSameAs;
@@ -436,10 +625,20 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
+     * @param fSameAs URL value to set.
      */
     @Override
     public void setSameAs(URL fSameAs) {
         this.fSameAs = fSameAs;
+    }
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @param fSameAs java.net.URL value to set.
+     */
+    @Override
+    public void setSameAs(java.net.URL fSameAs) {
+        this.fSameAs = URL.of(fSameAs);
     }
 
     private Object fIdentifier;
@@ -459,12 +658,50 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
+     * @param fIdentifier URL value to set.
      */
     @Override
-    public void setIdentifier(Object fIdentifier) {
-        if(!(fIdentifier instanceof URL) && !(fIdentifier instanceof Text) && !(fIdentifier instanceof PropertyValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
-        }
+    public void setIdentifier(URL fIdentifier) {
+        this.fIdentifier = fIdentifier;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param fIdentifier java.net.URL value to set.
+     */
+    @Override
+    public void setIdentifier(java.net.URL fIdentifier) {
+        this.fIdentifier = URL.of(fIdentifier);
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param fIdentifier Text value to set.
+     */
+    @Override
+    public void setIdentifier(Text fIdentifier) {
+        this.fIdentifier = fIdentifier;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param fIdentifier java.lang.String value to set.
+     */
+    @Override
+    public void setIdentifier(java.lang.String fIdentifier) {
+        this.fIdentifier = Text.of(fIdentifier);
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param fIdentifier PropertyValue value to set.
+     */
+    @Override
+    public void setIdentifier(PropertyValue fIdentifier) {
         this.fIdentifier = fIdentifier;
     }
 
@@ -484,13 +721,31 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     /**
      * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
      *
+     * @param fAnnualPercentageRate Number value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      */
     @Override
-    public void setAnnualPercentageRate(Object fAnnualPercentageRate) {
-        if(!(fAnnualPercentageRate instanceof Number) && !(fAnnualPercentageRate instanceof QuantitativeValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'annualPercentageRate': " + fAnnualPercentageRate);
-        }
+    public void setAnnualPercentageRate(Number fAnnualPercentageRate) {
+        this.fAnnualPercentageRate = fAnnualPercentageRate;
+    }
+    /**
+     * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
+     *
+     * @param fAnnualPercentageRate java.lang.Number value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     */
+    @Override
+    public void setAnnualPercentageRate(java.lang.Number fAnnualPercentageRate) {
+        this.fAnnualPercentageRate = Number.of(fAnnualPercentageRate);
+    }
+    /**
+     * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
+     *
+     * @param fAnnualPercentageRate QuantitativeValue value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     */
+    @Override
+    public void setAnnualPercentageRate(QuantitativeValue fAnnualPercentageRate) {
         this.fAnnualPercentageRate = fAnnualPercentageRate;
     }
 
@@ -510,14 +765,42 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     /**
      * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
      *
+     * @param fFeesAndCommissionsSpecification URL value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      */
     @Override
-    public void setFeesAndCommissionsSpecification(Object fFeesAndCommissionsSpecification) {
-        if(!(fFeesAndCommissionsSpecification instanceof URL) && !(fFeesAndCommissionsSpecification instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'feesAndCommissionsSpecification': " + fFeesAndCommissionsSpecification);
-        }
+    public void setFeesAndCommissionsSpecification(URL fFeesAndCommissionsSpecification) {
         this.fFeesAndCommissionsSpecification = fFeesAndCommissionsSpecification;
+    }
+    /**
+     * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
+     *
+     * @param fFeesAndCommissionsSpecification java.net.URL value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     */
+    @Override
+    public void setFeesAndCommissionsSpecification(java.net.URL fFeesAndCommissionsSpecification) {
+        this.fFeesAndCommissionsSpecification = URL.of(fFeesAndCommissionsSpecification);
+    }
+    /**
+     * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
+     *
+     * @param fFeesAndCommissionsSpecification Text value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     */
+    @Override
+    public void setFeesAndCommissionsSpecification(Text fFeesAndCommissionsSpecification) {
+        this.fFeesAndCommissionsSpecification = fFeesAndCommissionsSpecification;
+    }
+    /**
+     * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
+     *
+     * @param fFeesAndCommissionsSpecification java.lang.String value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     */
+    @Override
+    public void setFeesAndCommissionsSpecification(java.lang.String fFeesAndCommissionsSpecification) {
+        this.fFeesAndCommissionsSpecification = Text.of(fFeesAndCommissionsSpecification);
     }
 
     private Object fInterestRate;
@@ -536,13 +819,31 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     /**
      * The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.
      *
+     * @param fInterestRate Number value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      */
     @Override
-    public void setInterestRate(Object fInterestRate) {
-        if(!(fInterestRate instanceof Number) && !(fInterestRate instanceof QuantitativeValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'interestRate': " + fInterestRate);
-        }
+    public void setInterestRate(Number fInterestRate) {
+        this.fInterestRate = fInterestRate;
+    }
+    /**
+     * The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.
+     *
+     * @param fInterestRate java.lang.Number value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     */
+    @Override
+    public void setInterestRate(java.lang.Number fInterestRate) {
+        this.fInterestRate = Number.of(fInterestRate);
+    }
+    /**
+     * The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.
+     *
+     * @param fInterestRate QuantitativeValue value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     */
+    @Override
+    public void setInterestRate(QuantitativeValue fInterestRate) {
         this.fInterestRate = fInterestRate;
     }
 
@@ -561,6 +862,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     /**
      * A review of the item.
      *
+     * @param fReview Review value to set.
      */
     @Override
     public void setReview(Review fReview) {
@@ -582,10 +884,20 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     /**
      * An award won by or for this item.
      *
+     * @param fAward Text value to set.
      */
     @Override
     public void setAward(Text fAward) {
         this.fAward = fAward;
+    }
+    /**
+     * An award won by or for this item.
+     *
+     * @param fAward java.lang.String value to set.
+     */
+    @Override
+    public void setAward(java.lang.String fAward) {
+        this.fAward = Text.of(fAward);
     }
 
     private Audience fServiceAudience;
@@ -603,6 +915,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     /**
      * The audience eligible for this service.
      *
+     * @param fServiceAudience Audience value to set.
      */
     @Override
     public void setServiceAudience(Audience fServiceAudience) {
@@ -626,14 +939,78 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
+     * @param fCategory URL value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
     @Override
-    public void setCategory(Object fCategory) {
-        if(!(fCategory instanceof URL) && !(fCategory instanceof Text) && !(fCategory instanceof PhysicalActivityCategory) && !(fCategory instanceof Thing) && !(fCategory instanceof CategoryCode)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'category': " + fCategory);
-        }
+    public void setCategory(URL fCategory) {
+        this.fCategory = fCategory;
+    }
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @param fCategory java.net.URL value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    @Override
+    public void setCategory(java.net.URL fCategory) {
+        this.fCategory = URL.of(fCategory);
+    }
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @param fCategory Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    @Override
+    public void setCategory(Text fCategory) {
+        this.fCategory = fCategory;
+    }
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @param fCategory java.lang.String value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    @Override
+    public void setCategory(java.lang.String fCategory) {
+        this.fCategory = Text.of(fCategory);
+    }
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @param fCategory PhysicalActivityCategory value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    @Override
+    public void setCategory(PhysicalActivityCategory fCategory) {
+        this.fCategory = fCategory;
+    }
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @param fCategory Thing value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    @Override
+    public void setCategory(Thing fCategory) {
+        this.fCategory = fCategory;
+    }
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @param fCategory CategoryCode value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    @Override
+    public void setCategory(CategoryCode fCategory) {
         this.fCategory = fCategory;
     }
 
@@ -652,6 +1029,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     /**
      * The hours during which this service or contact is available.
      *
+     * @param fHoursAvailable OpeningHoursSpecification value to set.
      */
     @Override
     public void setHoursAvailable(OpeningHoursSpecification fHoursAvailable) {
@@ -673,6 +1051,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     /**
      * An intended audience, i.e. a group for whom something was created.
      *
+     * @param fAudience Audience value to set.
      */
     @Override
     public void setAudience(Audience fAudience) {
@@ -697,13 +1076,22 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      *
+     * @param fOffers Offer value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
     @Override
-    public void setOffers(Object fOffers) {
-        if(!(fOffers instanceof Offer) && !(fOffers instanceof Demand)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'offers': " + fOffers);
-        }
+    public void setOffers(Offer fOffers) {
+        this.fOffers = fOffers;
+    }
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     *
+     * @param fOffers Demand value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public void setOffers(Demand fOffers) {
         this.fOffers = fOffers;
     }
 
@@ -722,6 +1110,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     /**
      * The tangible thing generated by the service, e.g. a passport, permit, etc.
      *
+     * @param fServiceOutput Thing value to set.
      */
     @Override
     public void setServiceOutput(Thing fServiceOutput) {
@@ -746,15 +1135,25 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
      *
+     * @param fProvider Organization value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
      */
     @Override
-    public void setProvider(Object fProvider) {
-        if(!(fProvider instanceof Organization) && !(fProvider instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'provider': " + fProvider);
-        }
+    public void setProvider(Organization fProvider) {
+        this.fProvider = fProvider;
+    }
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @param fProvider Person value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     */
+    @Override
+    public void setProvider(Person fProvider) {
         this.fProvider = fProvider;
     }
 
@@ -775,15 +1174,46 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     /**
      * Human-readable terms of service documentation.
      *
+     * @param fTermsOfService URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1423">https://github.com/schemaorg/schemaorg/issues/1423</a>
      */
     @Override
-    public void setTermsOfService(Object fTermsOfService) {
-        if(!(fTermsOfService instanceof URL) && !(fTermsOfService instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'termsOfService': " + fTermsOfService);
-        }
+    public void setTermsOfService(URL fTermsOfService) {
         this.fTermsOfService = fTermsOfService;
+    }
+    /**
+     * Human-readable terms of service documentation.
+     *
+     * @param fTermsOfService java.net.URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1423">https://github.com/schemaorg/schemaorg/issues/1423</a>
+     */
+    @Override
+    public void setTermsOfService(java.net.URL fTermsOfService) {
+        this.fTermsOfService = URL.of(fTermsOfService);
+    }
+    /**
+     * Human-readable terms of service documentation.
+     *
+     * @param fTermsOfService Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1423">https://github.com/schemaorg/schemaorg/issues/1423</a>
+     */
+    @Override
+    public void setTermsOfService(Text fTermsOfService) {
+        this.fTermsOfService = fTermsOfService;
+    }
+    /**
+     * Human-readable terms of service documentation.
+     *
+     * @param fTermsOfService java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1423">https://github.com/schemaorg/schemaorg/issues/1423</a>
+     */
+    @Override
+    public void setTermsOfService(java.lang.String fTermsOfService) {
+        this.fTermsOfService = Text.of(fTermsOfService);
     }
 
     private Text fProviderMobility;
@@ -801,10 +1231,20 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     /**
      * Indicates the mobility of a provided service (e.g. 'static', 'dynamic').
      *
+     * @param fProviderMobility Text value to set.
      */
     @Override
     public void setProviderMobility(Text fProviderMobility) {
         this.fProviderMobility = fProviderMobility;
+    }
+    /**
+     * Indicates the mobility of a provided service (e.g. 'static', 'dynamic').
+     *
+     * @param fProviderMobility java.lang.String value to set.
+     */
+    @Override
+    public void setProviderMobility(java.lang.String fProviderMobility) {
+        this.fProviderMobility = Text.of(fProviderMobility);
     }
 
     private Object fBroker;
@@ -822,12 +1262,19 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     /**
      * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
      *
+     * @param fBroker Person value to set.
      */
     @Override
-    public void setBroker(Object fBroker) {
-        if(!(fBroker instanceof Person) && !(fBroker instanceof Organization)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'broker': " + fBroker);
-        }
+    public void setBroker(Person fBroker) {
+        this.fBroker = fBroker;
+    }
+    /**
+     * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
+     *
+     * @param fBroker Organization value to set.
+     */
+    @Override
+    public void setBroker(Organization fBroker) {
         this.fBroker = fBroker;
     }
 
@@ -846,6 +1293,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     /**
      * The overall rating, based on a collection of reviews or ratings, of the item.
      *
+     * @param fAggregateRating AggregateRating value to set.
      */
     @Override
     public void setAggregateRating(AggregateRating fAggregateRating) {
@@ -868,13 +1316,21 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     /**
      * A pointer to another, functionally similar product (or multiple products).
      *
+     * @param fIsSimilarTo Service value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setIsSimilarTo(Object fIsSimilarTo) {
-        if(!(fIsSimilarTo instanceof Service) && !(fIsSimilarTo instanceof Product)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'isSimilarTo': " + fIsSimilarTo);
-        }
+    public void setIsSimilarTo(Service fIsSimilarTo) {
+        this.fIsSimilarTo = fIsSimilarTo;
+    }
+    /**
+     * A pointer to another, functionally similar product (or multiple products).
+     *
+     * @param fIsSimilarTo Product value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setIsSimilarTo(Product fIsSimilarTo) {
         this.fIsSimilarTo = fIsSimilarTo;
     }
 
@@ -893,6 +1349,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     /**
      * A means of accessing the service (e.g. a phone bank, a web site, a location, etc.).
      *
+     * @param fAvailableChannel ServiceChannel value to set.
      */
     @Override
     public void setAvailableChannel(ServiceChannel fAvailableChannel) {
@@ -914,10 +1371,20 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     /**
      * A slogan or motto associated with the item.
      *
+     * @param fSlogan Text value to set.
      */
     @Override
     public void setSlogan(Text fSlogan) {
         this.fSlogan = fSlogan;
+    }
+    /**
+     * A slogan or motto associated with the item.
+     *
+     * @param fSlogan java.lang.String value to set.
+     */
+    @Override
+    public void setSlogan(java.lang.String fSlogan) {
+        this.fSlogan = Text.of(fSlogan);
     }
 
     private Object fBrand;
@@ -935,12 +1402,19 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     /**
      * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
      *
+     * @param fBrand Organization value to set.
      */
     @Override
-    public void setBrand(Object fBrand) {
-        if(!(fBrand instanceof Organization) && !(fBrand instanceof Brand)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'brand': " + fBrand);
-        }
+    public void setBrand(Organization fBrand) {
+        this.fBrand = fBrand;
+    }
+    /**
+     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     *
+     * @param fBrand Brand value to set.
+     */
+    @Override
+    public void setBrand(Brand fBrand) {
         this.fBrand = fBrand;
     }
 
@@ -960,13 +1434,31 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     /**
      * An associated logo.
      *
+     * @param fLogo URL value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setLogo(Object fLogo) {
-        if(!(fLogo instanceof URL) && !(fLogo instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'logo': " + fLogo);
-        }
+    public void setLogo(URL fLogo) {
+        this.fLogo = fLogo;
+    }
+    /**
+     * An associated logo.
+     *
+     * @param fLogo java.net.URL value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setLogo(java.net.URL fLogo) {
+        this.fLogo = URL.of(fLogo);
+    }
+    /**
+     * An associated logo.
+     *
+     * @param fLogo ImageObject value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setLogo(ImageObject fLogo) {
         this.fLogo = fLogo;
     }
 
@@ -985,6 +1477,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     /**
      * The tangible thing generated by the service, e.g. a passport, permit, etc.
      *
+     * @param fProduces Thing value to set.
      */
     @Override
     public void setProduces(Thing fProduces) {
@@ -1006,12 +1499,28 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     /**
      * The geographic area where the service is provided.
      *
+     * @param fServiceArea GeoShape value to set.
      */
     @Override
-    public void setServiceArea(Object fServiceArea) {
-        if(!(fServiceArea instanceof GeoShape) && !(fServiceArea instanceof AdministrativeArea) && !(fServiceArea instanceof Place)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'serviceArea': " + fServiceArea);
-        }
+    public void setServiceArea(GeoShape fServiceArea) {
+        this.fServiceArea = fServiceArea;
+    }
+    /**
+     * The geographic area where the service is provided.
+     *
+     * @param fServiceArea AdministrativeArea value to set.
+     */
+    @Override
+    public void setServiceArea(AdministrativeArea fServiceArea) {
+        this.fServiceArea = fServiceArea;
+    }
+    /**
+     * The geographic area where the service is provided.
+     *
+     * @param fServiceArea Place value to set.
+     */
+    @Override
+    public void setServiceArea(Place fServiceArea) {
         this.fServiceArea = fServiceArea;
     }
 
@@ -1030,13 +1539,29 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     /**
      * The type of service being offered, e.g. veterans' benefits, emergency relief, etc.
      *
+     * @param fServiceType GovernmentBenefitsType value to set.
      */
     @Override
-    public void setServiceType(Object fServiceType) {
-        if(!(fServiceType instanceof GovernmentBenefitsType) && !(fServiceType instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'serviceType': " + fServiceType);
-        }
+    public void setServiceType(GovernmentBenefitsType fServiceType) {
         this.fServiceType = fServiceType;
+    }
+    /**
+     * The type of service being offered, e.g. veterans' benefits, emergency relief, etc.
+     *
+     * @param fServiceType Text value to set.
+     */
+    @Override
+    public void setServiceType(Text fServiceType) {
+        this.fServiceType = fServiceType;
+    }
+    /**
+     * The type of service being offered, e.g. veterans' benefits, emergency relief, etc.
+     *
+     * @param fServiceType java.lang.String value to set.
+     */
+    @Override
+    public void setServiceType(java.lang.String fServiceType) {
+        this.fServiceType = Text.of(fServiceType);
     }
 
     private Object fAreaServed;
@@ -1054,12 +1579,46 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     /**
      * The geographic area where a service or offered item is provided.
      *
+     * @param fAreaServed AdministrativeArea value to set.
      */
     @Override
-    public void setAreaServed(Object fAreaServed) {
-        if(!(fAreaServed instanceof AdministrativeArea) && !(fAreaServed instanceof GeoShape) && !(fAreaServed instanceof Text) && !(fAreaServed instanceof Place)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'areaServed': " + fAreaServed);
-        }
+    public void setAreaServed(AdministrativeArea fAreaServed) {
+        this.fAreaServed = fAreaServed;
+    }
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @param fAreaServed GeoShape value to set.
+     */
+    @Override
+    public void setAreaServed(GeoShape fAreaServed) {
+        this.fAreaServed = fAreaServed;
+    }
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @param fAreaServed Text value to set.
+     */
+    @Override
+    public void setAreaServed(Text fAreaServed) {
+        this.fAreaServed = fAreaServed;
+    }
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @param fAreaServed java.lang.String value to set.
+     */
+    @Override
+    public void setAreaServed(java.lang.String fAreaServed) {
+        this.fAreaServed = Text.of(fAreaServed);
+    }
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @param fAreaServed Place value to set.
+     */
+    @Override
+    public void setAreaServed(Place fAreaServed) {
         this.fAreaServed = fAreaServed;
     }
 
@@ -1079,13 +1638,21 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     /**
      * A pointer to another, somehow related product (or multiple products).
      *
+     * @param fIsRelatedTo Service value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setIsRelatedTo(Object fIsRelatedTo) {
-        if(!(fIsRelatedTo instanceof Service) && !(fIsRelatedTo instanceof Product)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'isRelatedTo': " + fIsRelatedTo);
-        }
+    public void setIsRelatedTo(Service fIsRelatedTo) {
+        this.fIsRelatedTo = fIsRelatedTo;
+    }
+    /**
+     * A pointer to another, somehow related product (or multiple products).
+     *
+     * @param fIsRelatedTo Product value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setIsRelatedTo(Product fIsRelatedTo) {
         this.fIsRelatedTo = fIsRelatedTo;
     }
 
@@ -1104,6 +1671,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     /**
      * Indicates an OfferCatalog listing for this Organization, Person, or Service.
      *
+     * @param fHasOfferCatalog OfferCatalog value to set.
      */
     @Override
     public void setHasOfferCatalog(OfferCatalog fHasOfferCatalog) {
@@ -1128,6 +1696,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     /**
      * Whether the terms for payment of interest can be renegotiated during the life of the loan.
      *
+     * @param fRenegotiableLoan Boolean value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
@@ -1135,6 +1704,18 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     @Override
     public void setRenegotiableLoan(Boolean fRenegotiableLoan) {
         this.fRenegotiableLoan = fRenegotiableLoan;
+    }
+    /**
+     * Whether the terms for payment of interest can be renegotiated during the life of the loan.
+     *
+     * @param fRenegotiableLoan java.lang.Boolean value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     */
+    @Override
+    public void setRenegotiableLoan(java.lang.Boolean fRenegotiableLoan) {
+        this.fRenegotiableLoan = Boolean.of(fRenegotiableLoan);
     }
 
     private Object fLoanType;
@@ -1155,16 +1736,50 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     /**
      * The type of a loan or credit.
      *
+     * @param fLoanType URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      */
     @Override
-    public void setLoanType(Object fLoanType) {
-        if(!(fLoanType instanceof URL) && !(fLoanType instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'loanType': " + fLoanType);
-        }
+    public void setLoanType(URL fLoanType) {
         this.fLoanType = fLoanType;
+    }
+    /**
+     * The type of a loan or credit.
+     *
+     * @param fLoanType java.net.URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     */
+    @Override
+    public void setLoanType(java.net.URL fLoanType) {
+        this.fLoanType = URL.of(fLoanType);
+    }
+    /**
+     * The type of a loan or credit.
+     *
+     * @param fLoanType Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     */
+    @Override
+    public void setLoanType(Text fLoanType) {
+        this.fLoanType = fLoanType;
+    }
+    /**
+     * The type of a loan or credit.
+     *
+     * @param fLoanType java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     */
+    @Override
+    public void setLoanType(java.lang.String fLoanType) {
+        this.fLoanType = Text.of(fLoanType);
     }
 
     private Boolean fRecourseLoan;
@@ -1185,6 +1800,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     /**
      * The only way you get the money back in the event of default is the security. Recourse is where you still have the opportunity to go back to the borrower for the rest of the money.
      *
+     * @param fRecourseLoan Boolean value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
@@ -1192,6 +1808,18 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     @Override
     public void setRecourseLoan(Boolean fRecourseLoan) {
         this.fRecourseLoan = fRecourseLoan;
+    }
+    /**
+     * The only way you get the money back in the event of default is the security. Recourse is where you still have the opportunity to go back to the borrower for the rest of the money.
+     *
+     * @param fRecourseLoan java.lang.Boolean value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     */
+    @Override
+    public void setRecourseLoan(java.lang.Boolean fRecourseLoan) {
+        this.fRecourseLoan = Boolean.of(fRecourseLoan);
     }
 
     private QuantitativeValue fLoanTerm;
@@ -1210,6 +1838,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     /**
      * The duration of the loan or credit agreement.
      *
+     * @param fLoanTerm QuantitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      */
     @Override
@@ -1235,6 +1864,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     /**
      * The period of time after any due date that the borrower has to fulfil its obligations before a default (failure to pay) is deemed to have occurred.
      *
+     * @param fGracePeriod Duration value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
@@ -1260,13 +1890,31 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     /**
      * Assets required to secure loan or credit repayments. It may take form of third party pledge, goods, financial instruments (cash, securities, etc.)
      *
+     * @param fRequiredCollateral Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      */
     @Override
-    public void setRequiredCollateral(Object fRequiredCollateral) {
-        if(!(fRequiredCollateral instanceof Text) && !(fRequiredCollateral instanceof Thing)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'requiredCollateral': " + fRequiredCollateral);
-        }
+    public void setRequiredCollateral(Text fRequiredCollateral) {
+        this.fRequiredCollateral = fRequiredCollateral;
+    }
+    /**
+     * Assets required to secure loan or credit repayments. It may take form of third party pledge, goods, financial instruments (cash, securities, etc.)
+     *
+     * @param fRequiredCollateral java.lang.String value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     */
+    @Override
+    public void setRequiredCollateral(java.lang.String fRequiredCollateral) {
+        this.fRequiredCollateral = Text.of(fRequiredCollateral);
+    }
+    /**
+     * Assets required to secure loan or credit repayments. It may take form of third party pledge, goods, financial instruments (cash, securities, etc.)
+     *
+     * @param fRequiredCollateral Thing value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     */
+    @Override
+    public void setRequiredCollateral(Thing fRequiredCollateral) {
         this.fRequiredCollateral = fRequiredCollateral;
     }
 
@@ -1286,11 +1934,22 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     /**
      * The currency in which the monetary amount is expressed.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
      *
+     * @param fCurrency Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
      */
     @Override
     public void setCurrency(Text fCurrency) {
         this.fCurrency = fCurrency;
+    }
+    /**
+     * The currency in which the monetary amount is expressed.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
+     *
+     * @param fCurrency java.lang.String value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     */
+    @Override
+    public void setCurrency(java.lang.String fCurrency) {
+        this.fCurrency = Text.of(fCurrency);
     }
 
     private Object fAmount;
@@ -1310,14 +1969,34 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     /**
      * The amount of money.
      *
+     * @param fAmount Number value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
      */
     @Override
-    public void setAmount(Object fAmount) {
-        if(!(fAmount instanceof Number) && !(fAmount instanceof MonetaryAmount)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'amount': " + fAmount);
-        }
+    public void setAmount(Number fAmount) {
+        this.fAmount = fAmount;
+    }
+    /**
+     * The amount of money.
+     *
+     * @param fAmount java.lang.Number value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     */
+    @Override
+    public void setAmount(java.lang.Number fAmount) {
+        this.fAmount = Number.of(fAmount);
+    }
+    /**
+     * The amount of money.
+     *
+     * @param fAmount MonetaryAmount value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     */
+    @Override
+    public void setAmount(MonetaryAmount fAmount) {
         this.fAmount = fAmount;
     }
 
@@ -1339,6 +2018,7 @@ public class CreditCardImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
     /**
      * A form of paying back money previously borrowed from a lender. Repayment usually takes the form of periodic payments that normally include part principal plus interest in each payment.
      *
+     * @param fLoanRepaymentForm RepaymentSpecification value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>

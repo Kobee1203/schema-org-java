@@ -32,8 +32,27 @@ public interface Ticket extends Intangible {
     /**
      * Reference to an asset (e.g., Barcode, QR code image or PDF) usable for entrance.
      *
+     * @param fTicketToken URL value to set.
      */
-    void setTicketToken(Object fTicketToken);
+    void setTicketToken(URL fTicketToken);
+    /**
+     * Reference to an asset (e.g., Barcode, QR code image or PDF) usable for entrance.
+     *
+     * @param fTicketToken java.net.URL value to set.
+     */
+    void setTicketToken(java.net.URL fTicketToken);
+    /**
+     * Reference to an asset (e.g., Barcode, QR code image or PDF) usable for entrance.
+     *
+     * @param fTicketToken Text value to set.
+     */
+    void setTicketToken(Text fTicketToken);
+    /**
+     * Reference to an asset (e.g., Barcode, QR code image or PDF) usable for entrance.
+     *
+     * @param fTicketToken java.lang.String value to set.
+     */
+    void setTicketToken(java.lang.String fTicketToken);
 
     /**
      * The seat associated with the ticket.
@@ -45,6 +64,7 @@ public interface Ticket extends Intangible {
     /**
      * The seat associated with the ticket.
      *
+     * @param fTicketedSeat Seat value to set.
      */
     void setTicketedSeat(Seat fTicketedSeat);
 
@@ -58,8 +78,33 @@ public interface Ticket extends Intangible {
     /**
      * The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      *
+     * @param fTotalPrice PriceSpecification value to set.
      */
-    void setTotalPrice(Object fTotalPrice);
+    void setTotalPrice(PriceSpecification fTotalPrice);
+    /**
+     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+     *
+     * @param fTotalPrice Number value to set.
+     */
+    void setTotalPrice(Number fTotalPrice);
+    /**
+     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+     *
+     * @param fTotalPrice java.lang.Number value to set.
+     */
+    void setTotalPrice(java.lang.Number fTotalPrice);
+    /**
+     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+     *
+     * @param fTotalPrice Text value to set.
+     */
+    void setTotalPrice(Text fTotalPrice);
+    /**
+     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+     *
+     * @param fTotalPrice java.lang.String value to set.
+     */
+    void setTotalPrice(java.lang.String fTotalPrice);
 
     /**
      * The organization issuing the ticket or permit.
@@ -71,6 +116,7 @@ public interface Ticket extends Intangible {
     /**
      * The organization issuing the ticket or permit.
      *
+     * @param fIssuedBy Organization value to set.
      */
     void setIssuedBy(Organization fIssuedBy);
 
@@ -84,8 +130,15 @@ public interface Ticket extends Intangible {
     /**
      * The unique identifier for the ticket.
      *
+     * @param fTicketNumber Text value to set.
      */
     void setTicketNumber(Text fTicketNumber);
+    /**
+     * The unique identifier for the ticket.
+     *
+     * @param fTicketNumber java.lang.String value to set.
+     */
+    void setTicketNumber(java.lang.String fTicketNumber);
 
     /**
      * The date the ticket was issued.
@@ -97,8 +150,27 @@ public interface Ticket extends Intangible {
     /**
      * The date the ticket was issued.
      *
+     * @param fDateIssued Date value to set.
      */
-    void setDateIssued(Object fDateIssued);
+    void setDateIssued(Date fDateIssued);
+    /**
+     * The date the ticket was issued.
+     *
+     * @param fDateIssued java.time.LocalDate value to set.
+     */
+    void setDateIssued(java.time.LocalDate fDateIssued);
+    /**
+     * The date the ticket was issued.
+     *
+     * @param fDateIssued DateTime value to set.
+     */
+    void setDateIssued(DateTime fDateIssued);
+    /**
+     * The date the ticket was issued.
+     *
+     * @param fDateIssued java.time.LocalDateTime value to set.
+     */
+    void setDateIssued(java.time.LocalDateTime fDateIssued);
 
     /**
      * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
@@ -110,8 +182,15 @@ public interface Ticket extends Intangible {
     /**
      * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
      *
+     * @param fPriceCurrency Text value to set.
      */
     void setPriceCurrency(Text fPriceCurrency);
+    /**
+     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
+     *
+     * @param fPriceCurrency java.lang.String value to set.
+     */
+    void setPriceCurrency(java.lang.String fPriceCurrency);
 
     /**
      * The person or organization the reservation or ticket is for.
@@ -123,6 +202,13 @@ public interface Ticket extends Intangible {
     /**
      * The person or organization the reservation or ticket is for.
      *
+     * @param fUnderName Organization value to set.
      */
-    void setUnderName(Object fUnderName);
+    void setUnderName(Organization fUnderName);
+    /**
+     * The person or organization the reservation or ticket is for.
+     *
+     * @param fUnderName Person value to set.
+     */
+    void setUnderName(Person fUnderName);
 }

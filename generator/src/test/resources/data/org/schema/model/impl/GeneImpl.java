@@ -48,6 +48,7 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
     /**
      * Another gene which is a variation of this one.
      *
+     * @param fAlternativeOf Gene value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
     @Override
@@ -71,11 +72,22 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
     /**
      * A symbolic representation of a BioChemEnity. For example, a nucleotide sequence of a Gene or an amino acid sequence of a Protein.
      *
+     * @param fHasBioPolymerSequence Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
     @Override
     public void setHasBioPolymerSequence(Text fHasBioPolymerSequence) {
         this.fHasBioPolymerSequence = fHasBioPolymerSequence;
+    }
+    /**
+     * A symbolic representation of a BioChemEnity. For example, a nucleotide sequence of a Gene or an amino acid sequence of a Protein.
+     *
+     * @param fHasBioPolymerSequence java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    @Override
+    public void setHasBioPolymerSequence(java.lang.String fHasBioPolymerSequence) {
+        this.fHasBioPolymerSequence = Text.of(fHasBioPolymerSequence);
     }
 
     private BioChemEntity fEncodesBioChemEntity;
@@ -94,6 +106,7 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
     /**
      * Another BioChemEntity encoded by this one. 
      *
+     * @param fEncodesBioChemEntity BioChemEntity value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
     @Override
@@ -117,13 +130,41 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
     /**
      * Tissue, organ, biological sample, etc in which activity of this gene has been observed experimentally. For example brain, digestive system.
      *
+     * @param fExpressedIn AnatomicalStructure value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
     @Override
-    public void setExpressedIn(Object fExpressedIn) {
-        if(!(fExpressedIn instanceof AnatomicalStructure) && !(fExpressedIn instanceof BioChemEntity) && !(fExpressedIn instanceof DefinedTerm) && !(fExpressedIn instanceof AnatomicalSystem)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'expressedIn': " + fExpressedIn);
-        }
+    public void setExpressedIn(AnatomicalStructure fExpressedIn) {
+        this.fExpressedIn = fExpressedIn;
+    }
+    /**
+     * Tissue, organ, biological sample, etc in which activity of this gene has been observed experimentally. For example brain, digestive system.
+     *
+     * @param fExpressedIn BioChemEntity value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    @Override
+    public void setExpressedIn(BioChemEntity fExpressedIn) {
+        this.fExpressedIn = fExpressedIn;
+    }
+    /**
+     * Tissue, organ, biological sample, etc in which activity of this gene has been observed experimentally. For example brain, digestive system.
+     *
+     * @param fExpressedIn DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    @Override
+    public void setExpressedIn(DefinedTerm fExpressedIn) {
+        this.fExpressedIn = fExpressedIn;
+    }
+    /**
+     * Tissue, organ, biological sample, etc in which activity of this gene has been observed experimentally. For example brain, digestive system.
+     *
+     * @param fExpressedIn AnatomicalSystem value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    @Override
+    public void setExpressedIn(AnatomicalSystem fExpressedIn) {
         this.fExpressedIn = fExpressedIn;
     }
 
@@ -145,6 +186,7 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
     /**
      * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
      *
+     * @param fFunding Grant value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
@@ -170,6 +212,7 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
     /**
      * Another BioChemEntity encoding by this one.
      *
+     * @param fIsEncodedByBioChemEntity Gene value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
     @Override
@@ -193,6 +236,7 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
     /**
      * Indicates a BioChemEntity that is (in some sense) a part of this BioChemEntity. 
      *
+     * @param fIsPartOfBioChemEntity BioChemEntity value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
     @Override
@@ -216,13 +260,61 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
     /**
      * The taxonomic grouping of the organism that expresses, encodes, or in someway related to the BioChemEntity.
      *
+     * @param fTaxonomicRange URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
     @Override
-    public void setTaxonomicRange(Object fTaxonomicRange) {
-        if(!(fTaxonomicRange instanceof URL) && !(fTaxonomicRange instanceof DefinedTerm) && !(fTaxonomicRange instanceof Text) && !(fTaxonomicRange instanceof Taxon)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'taxonomicRange': " + fTaxonomicRange);
-        }
+    public void setTaxonomicRange(URL fTaxonomicRange) {
+        this.fTaxonomicRange = fTaxonomicRange;
+    }
+    /**
+     * The taxonomic grouping of the organism that expresses, encodes, or in someway related to the BioChemEntity.
+     *
+     * @param fTaxonomicRange java.net.URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    @Override
+    public void setTaxonomicRange(java.net.URL fTaxonomicRange) {
+        this.fTaxonomicRange = URL.of(fTaxonomicRange);
+    }
+    /**
+     * The taxonomic grouping of the organism that expresses, encodes, or in someway related to the BioChemEntity.
+     *
+     * @param fTaxonomicRange DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    @Override
+    public void setTaxonomicRange(DefinedTerm fTaxonomicRange) {
+        this.fTaxonomicRange = fTaxonomicRange;
+    }
+    /**
+     * The taxonomic grouping of the organism that expresses, encodes, or in someway related to the BioChemEntity.
+     *
+     * @param fTaxonomicRange Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    @Override
+    public void setTaxonomicRange(Text fTaxonomicRange) {
+        this.fTaxonomicRange = fTaxonomicRange;
+    }
+    /**
+     * The taxonomic grouping of the organism that expresses, encodes, or in someway related to the BioChemEntity.
+     *
+     * @param fTaxonomicRange java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    @Override
+    public void setTaxonomicRange(java.lang.String fTaxonomicRange) {
+        this.fTaxonomicRange = Text.of(fTaxonomicRange);
+    }
+    /**
+     * The taxonomic grouping of the organism that expresses, encodes, or in someway related to the BioChemEntity.
+     *
+     * @param fTaxonomicRange Taxon value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    @Override
+    public void setTaxonomicRange(Taxon fTaxonomicRange) {
         this.fTaxonomicRange = fTaxonomicRange;
     }
 
@@ -242,13 +334,41 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
     /**
      * Biological process this BioChemEntity is involved in; please use PropertyValue if you want to include any evidence.
      *
+     * @param fIsInvolvedInBiologicalProcess PropertyValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
     @Override
-    public void setIsInvolvedInBiologicalProcess(Object fIsInvolvedInBiologicalProcess) {
-        if(!(fIsInvolvedInBiologicalProcess instanceof PropertyValue) && !(fIsInvolvedInBiologicalProcess instanceof URL) && !(fIsInvolvedInBiologicalProcess instanceof DefinedTerm)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'isInvolvedInBiologicalProcess': " + fIsInvolvedInBiologicalProcess);
-        }
+    public void setIsInvolvedInBiologicalProcess(PropertyValue fIsInvolvedInBiologicalProcess) {
+        this.fIsInvolvedInBiologicalProcess = fIsInvolvedInBiologicalProcess;
+    }
+    /**
+     * Biological process this BioChemEntity is involved in; please use PropertyValue if you want to include any evidence.
+     *
+     * @param fIsInvolvedInBiologicalProcess URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    @Override
+    public void setIsInvolvedInBiologicalProcess(URL fIsInvolvedInBiologicalProcess) {
+        this.fIsInvolvedInBiologicalProcess = fIsInvolvedInBiologicalProcess;
+    }
+    /**
+     * Biological process this BioChemEntity is involved in; please use PropertyValue if you want to include any evidence.
+     *
+     * @param fIsInvolvedInBiologicalProcess java.net.URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    @Override
+    public void setIsInvolvedInBiologicalProcess(java.net.URL fIsInvolvedInBiologicalProcess) {
+        this.fIsInvolvedInBiologicalProcess = URL.of(fIsInvolvedInBiologicalProcess);
+    }
+    /**
+     * Biological process this BioChemEntity is involved in; please use PropertyValue if you want to include any evidence.
+     *
+     * @param fIsInvolvedInBiologicalProcess DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    @Override
+    public void setIsInvolvedInBiologicalProcess(DefinedTerm fIsInvolvedInBiologicalProcess) {
         this.fIsInvolvedInBiologicalProcess = fIsInvolvedInBiologicalProcess;
     }
 
@@ -268,14 +388,42 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
     /**
      * Subcellular location where this BioChemEntity is located; please use PropertyValue if you want to include any evidence.
      *
+     * @param fIsLocatedInSubcellularLocation PropertyValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
     @Override
-    public void setIsLocatedInSubcellularLocation(Object fIsLocatedInSubcellularLocation) {
-        if(!(fIsLocatedInSubcellularLocation instanceof PropertyValue) && !(fIsLocatedInSubcellularLocation instanceof DefinedTerm) && !(fIsLocatedInSubcellularLocation instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'isLocatedInSubcellularLocation': " + fIsLocatedInSubcellularLocation);
-        }
+    public void setIsLocatedInSubcellularLocation(PropertyValue fIsLocatedInSubcellularLocation) {
         this.fIsLocatedInSubcellularLocation = fIsLocatedInSubcellularLocation;
+    }
+    /**
+     * Subcellular location where this BioChemEntity is located; please use PropertyValue if you want to include any evidence.
+     *
+     * @param fIsLocatedInSubcellularLocation DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    @Override
+    public void setIsLocatedInSubcellularLocation(DefinedTerm fIsLocatedInSubcellularLocation) {
+        this.fIsLocatedInSubcellularLocation = fIsLocatedInSubcellularLocation;
+    }
+    /**
+     * Subcellular location where this BioChemEntity is located; please use PropertyValue if you want to include any evidence.
+     *
+     * @param fIsLocatedInSubcellularLocation URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    @Override
+    public void setIsLocatedInSubcellularLocation(URL fIsLocatedInSubcellularLocation) {
+        this.fIsLocatedInSubcellularLocation = fIsLocatedInSubcellularLocation;
+    }
+    /**
+     * Subcellular location where this BioChemEntity is located; please use PropertyValue if you want to include any evidence.
+     *
+     * @param fIsLocatedInSubcellularLocation java.net.URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    @Override
+    public void setIsLocatedInSubcellularLocation(java.net.URL fIsLocatedInSubcellularLocation) {
+        this.fIsLocatedInSubcellularLocation = URL.of(fIsLocatedInSubcellularLocation);
     }
 
     private Object fAssociatedDisease;
@@ -294,13 +442,41 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
     /**
      * Disease associated to this BioChemEntity. Such disease can be a MedicalCondition or a URL. If you want to add an evidence supporting the association, please use PropertyValue.
      *
+     * @param fAssociatedDisease URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
     @Override
-    public void setAssociatedDisease(Object fAssociatedDisease) {
-        if(!(fAssociatedDisease instanceof URL) && !(fAssociatedDisease instanceof PropertyValue) && !(fAssociatedDisease instanceof MedicalCondition)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'associatedDisease': " + fAssociatedDisease);
-        }
+    public void setAssociatedDisease(URL fAssociatedDisease) {
+        this.fAssociatedDisease = fAssociatedDisease;
+    }
+    /**
+     * Disease associated to this BioChemEntity. Such disease can be a MedicalCondition or a URL. If you want to add an evidence supporting the association, please use PropertyValue.
+     *
+     * @param fAssociatedDisease java.net.URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    @Override
+    public void setAssociatedDisease(java.net.URL fAssociatedDisease) {
+        this.fAssociatedDisease = URL.of(fAssociatedDisease);
+    }
+    /**
+     * Disease associated to this BioChemEntity. Such disease can be a MedicalCondition or a URL. If you want to add an evidence supporting the association, please use PropertyValue.
+     *
+     * @param fAssociatedDisease PropertyValue value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    @Override
+    public void setAssociatedDisease(PropertyValue fAssociatedDisease) {
+        this.fAssociatedDisease = fAssociatedDisease;
+    }
+    /**
+     * Disease associated to this BioChemEntity. Such disease can be a MedicalCondition or a URL. If you want to add an evidence supporting the association, please use PropertyValue.
+     *
+     * @param fAssociatedDisease MedicalCondition value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    @Override
+    public void setAssociatedDisease(MedicalCondition fAssociatedDisease) {
         this.fAssociatedDisease = fAssociatedDisease;
     }
 
@@ -320,14 +496,42 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
     /**
      * Molecular function performed by this BioChemEntity; please use PropertyValue if you want to include any evidence.
      *
+     * @param fHasMolecularFunction PropertyValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
     @Override
-    public void setHasMolecularFunction(Object fHasMolecularFunction) {
-        if(!(fHasMolecularFunction instanceof PropertyValue) && !(fHasMolecularFunction instanceof DefinedTerm) && !(fHasMolecularFunction instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'hasMolecularFunction': " + fHasMolecularFunction);
-        }
+    public void setHasMolecularFunction(PropertyValue fHasMolecularFunction) {
         this.fHasMolecularFunction = fHasMolecularFunction;
+    }
+    /**
+     * Molecular function performed by this BioChemEntity; please use PropertyValue if you want to include any evidence.
+     *
+     * @param fHasMolecularFunction DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    @Override
+    public void setHasMolecularFunction(DefinedTerm fHasMolecularFunction) {
+        this.fHasMolecularFunction = fHasMolecularFunction;
+    }
+    /**
+     * Molecular function performed by this BioChemEntity; please use PropertyValue if you want to include any evidence.
+     *
+     * @param fHasMolecularFunction URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    @Override
+    public void setHasMolecularFunction(URL fHasMolecularFunction) {
+        this.fHasMolecularFunction = fHasMolecularFunction;
+    }
+    /**
+     * Molecular function performed by this BioChemEntity; please use PropertyValue if you want to include any evidence.
+     *
+     * @param fHasMolecularFunction java.net.URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    @Override
+    public void setHasMolecularFunction(java.net.URL fHasMolecularFunction) {
+        this.fHasMolecularFunction = URL.of(fHasMolecularFunction);
     }
 
     private BioChemEntity fHasBioChemEntityPart;
@@ -346,6 +550,7 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
     /**
      * Indicates a BioChemEntity that (in some sense) has this BioChemEntity as a part. 
      *
+     * @param fHasBioChemEntityPart BioChemEntity value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
     @Override
@@ -369,6 +574,7 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
     /**
      * A BioChemEntity that is known to interact with this item.
      *
+     * @param fBioChemInteraction BioChemEntity value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
     @Override
@@ -392,14 +598,52 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
     /**
      * A common representation such as a protein sequence or chemical structure for this entity. For images use schema.org/image.
      *
+     * @param fHasRepresentation Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
     @Override
-    public void setHasRepresentation(Object fHasRepresentation) {
-        if(!(fHasRepresentation instanceof Text) && !(fHasRepresentation instanceof PropertyValue) && !(fHasRepresentation instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'hasRepresentation': " + fHasRepresentation);
-        }
+    public void setHasRepresentation(Text fHasRepresentation) {
         this.fHasRepresentation = fHasRepresentation;
+    }
+    /**
+     * A common representation such as a protein sequence or chemical structure for this entity. For images use schema.org/image.
+     *
+     * @param fHasRepresentation java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    @Override
+    public void setHasRepresentation(java.lang.String fHasRepresentation) {
+        this.fHasRepresentation = Text.of(fHasRepresentation);
+    }
+    /**
+     * A common representation such as a protein sequence or chemical structure for this entity. For images use schema.org/image.
+     *
+     * @param fHasRepresentation PropertyValue value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    @Override
+    public void setHasRepresentation(PropertyValue fHasRepresentation) {
+        this.fHasRepresentation = fHasRepresentation;
+    }
+    /**
+     * A common representation such as a protein sequence or chemical structure for this entity. For images use schema.org/image.
+     *
+     * @param fHasRepresentation URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    @Override
+    public void setHasRepresentation(URL fHasRepresentation) {
+        this.fHasRepresentation = fHasRepresentation;
+    }
+    /**
+     * A common representation such as a protein sequence or chemical structure for this entity. For images use schema.org/image.
+     *
+     * @param fHasRepresentation java.net.URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    @Override
+    public void setHasRepresentation(java.net.URL fHasRepresentation) {
+        this.fHasRepresentation = URL.of(fHasRepresentation);
     }
 
     private BioChemEntity fBioChemSimilarity;
@@ -418,6 +662,7 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
     /**
      * A similar BioChemEntity, e.g., obtained by fingerprint similarity algorithms.
      *
+     * @param fBioChemSimilarity BioChemEntity value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
     @Override
@@ -441,6 +686,7 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
     /**
      * A role played by the BioChemEntity within a biological context.
      *
+     * @param fBiologicalRole DefinedTerm value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
     @Override
@@ -463,13 +709,29 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
+     * @param fMainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
-        }
+    public void setMainEntityOfPage(CreativeWork fMainEntityOfPage) {
         this.fMainEntityOfPage = fMainEntityOfPage;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param fMainEntityOfPage URL value to set.
+     */
+    @Override
+    public void setMainEntityOfPage(URL fMainEntityOfPage) {
+        this.fMainEntityOfPage = fMainEntityOfPage;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param fMainEntityOfPage java.net.URL value to set.
+     */
+    @Override
+    public void setMainEntityOfPage(java.net.URL fMainEntityOfPage) {
+        this.fMainEntityOfPage = URL.of(fMainEntityOfPage);
     }
 
     private Text fAlternateName;
@@ -487,10 +749,20 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
     /**
      * An alias for the item.
      *
+     * @param fAlternateName Text value to set.
      */
     @Override
     public void setAlternateName(Text fAlternateName) {
         this.fAlternateName = fAlternateName;
+    }
+    /**
+     * An alias for the item.
+     *
+     * @param fAlternateName java.lang.String value to set.
+     */
+    @Override
+    public void setAlternateName(java.lang.String fAlternateName) {
+        this.fAlternateName = Text.of(fAlternateName);
     }
 
     private Text fName;
@@ -508,10 +780,20 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
     /**
      * The name of the item.
      *
+     * @param fName Text value to set.
      */
     @Override
     public void setName(Text fName) {
         this.fName = fName;
+    }
+    /**
+     * The name of the item.
+     *
+     * @param fName java.lang.String value to set.
+     */
+    @Override
+    public void setName(java.lang.String fName) {
+        this.fName = Text.of(fName);
     }
 
     private Action fPotentialAction;
@@ -529,6 +811,7 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      *
+     * @param fPotentialAction Action value to set.
      */
     @Override
     public void setPotentialAction(Action fPotentialAction) {
@@ -550,12 +833,28 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
+     * @param fImage URL value to set.
      */
     @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
+    public void setImage(URL fImage) {
+        this.fImage = fImage;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param fImage java.net.URL value to set.
+     */
+    @Override
+    public void setImage(java.net.URL fImage) {
+        this.fImage = URL.of(fImage);
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param fImage ImageObject value to set.
+     */
+    @Override
+    public void setImage(ImageObject fImage) {
         this.fImage = fImage;
     }
 
@@ -574,10 +873,20 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
     /**
      * URL of the item.
      *
+     * @param fUrl URL value to set.
      */
     @Override
     public void setUrl(URL fUrl) {
         this.fUrl = fUrl;
+    }
+    /**
+     * URL of the item.
+     *
+     * @param fUrl java.net.URL value to set.
+     */
+    @Override
+    public void setUrl(java.net.URL fUrl) {
+        this.fUrl = URL.of(fUrl);
     }
 
     private Text fDescription;
@@ -595,10 +904,20 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
     /**
      * A description of the item.
      *
+     * @param fDescription Text value to set.
      */
     @Override
     public void setDescription(Text fDescription) {
         this.fDescription = fDescription;
+    }
+    /**
+     * A description of the item.
+     *
+     * @param fDescription java.lang.String value to set.
+     */
+    @Override
+    public void setDescription(java.lang.String fDescription) {
+        this.fDescription = Text.of(fDescription);
     }
 
     private Object fSubjectOf;
@@ -617,13 +936,21 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
     /**
      * A CreativeWork or Event about this Thing.
      *
+     * @param fSubjectOf Event value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Object fSubjectOf) {
-        if(!(fSubjectOf instanceof Event) && !(fSubjectOf instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'subjectOf': " + fSubjectOf);
-        }
+    public void setSubjectOf(Event fSubjectOf) {
+        this.fSubjectOf = fSubjectOf;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @param fSubjectOf CreativeWork value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public void setSubjectOf(CreativeWork fSubjectOf) {
         this.fSubjectOf = fSubjectOf;
     }
 
@@ -642,10 +969,20 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
+     * @param fAdditionalType URL value to set.
      */
     @Override
     public void setAdditionalType(URL fAdditionalType) {
         this.fAdditionalType = fAdditionalType;
+    }
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @param fAdditionalType java.net.URL value to set.
+     */
+    @Override
+    public void setAdditionalType(java.net.URL fAdditionalType) {
+        this.fAdditionalType = URL.of(fAdditionalType);
     }
 
     private Text fDisambiguatingDescription;
@@ -663,10 +1000,20 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
+     * @param fDisambiguatingDescription Text value to set.
      */
     @Override
     public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
         this.fDisambiguatingDescription = fDisambiguatingDescription;
+    }
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @param fDisambiguatingDescription java.lang.String value to set.
+     */
+    @Override
+    public void setDisambiguatingDescription(java.lang.String fDisambiguatingDescription) {
+        this.fDisambiguatingDescription = Text.of(fDisambiguatingDescription);
     }
 
     private URL fSameAs;
@@ -684,10 +1031,20 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
+     * @param fSameAs URL value to set.
      */
     @Override
     public void setSameAs(URL fSameAs) {
         this.fSameAs = fSameAs;
+    }
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @param fSameAs java.net.URL value to set.
+     */
+    @Override
+    public void setSameAs(java.net.URL fSameAs) {
+        this.fSameAs = URL.of(fSameAs);
     }
 
     private Object fIdentifier;
@@ -707,12 +1064,50 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
+     * @param fIdentifier URL value to set.
      */
     @Override
-    public void setIdentifier(Object fIdentifier) {
-        if(!(fIdentifier instanceof URL) && !(fIdentifier instanceof Text) && !(fIdentifier instanceof PropertyValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
-        }
+    public void setIdentifier(URL fIdentifier) {
+        this.fIdentifier = fIdentifier;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param fIdentifier java.net.URL value to set.
+     */
+    @Override
+    public void setIdentifier(java.net.URL fIdentifier) {
+        this.fIdentifier = URL.of(fIdentifier);
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param fIdentifier Text value to set.
+     */
+    @Override
+    public void setIdentifier(Text fIdentifier) {
+        this.fIdentifier = fIdentifier;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param fIdentifier java.lang.String value to set.
+     */
+    @Override
+    public void setIdentifier(java.lang.String fIdentifier) {
+        this.fIdentifier = Text.of(fIdentifier);
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param fIdentifier PropertyValue value to set.
+     */
+    @Override
+    public void setIdentifier(PropertyValue fIdentifier) {
         this.fIdentifier = fIdentifier;
     }
 }

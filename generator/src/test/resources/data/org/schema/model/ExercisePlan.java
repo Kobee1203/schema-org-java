@@ -30,9 +30,24 @@ public interface ExercisePlan extends CreativeWork, PhysicalActivity {
     /**
      * Number of times one should repeat the activity.
      *
+     * @param fRepetitions Number value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setRepetitions(Object fRepetitions);
+    void setRepetitions(Number fRepetitions);
+    /**
+     * Number of times one should repeat the activity.
+     *
+     * @param fRepetitions java.lang.Number value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setRepetitions(java.lang.Number fRepetitions);
+    /**
+     * Number of times one should repeat the activity.
+     *
+     * @param fRepetitions QuantitativeValue value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setRepetitions(QuantitativeValue fRepetitions);
 
     /**
      * Quantitative measure gauging the degree of force involved in the exercise, for example, heartbeats per minute. May include the velocity of the movement.
@@ -45,9 +60,24 @@ public interface ExercisePlan extends CreativeWork, PhysicalActivity {
     /**
      * Quantitative measure gauging the degree of force involved in the exercise, for example, heartbeats per minute. May include the velocity of the movement.
      *
+     * @param fIntensity QuantitativeValue value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setIntensity(Object fIntensity);
+    void setIntensity(QuantitativeValue fIntensity);
+    /**
+     * Quantitative measure gauging the degree of force involved in the exercise, for example, heartbeats per minute. May include the velocity of the movement.
+     *
+     * @param fIntensity Text value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setIntensity(Text fIntensity);
+    /**
+     * Quantitative measure gauging the degree of force involved in the exercise, for example, heartbeats per minute. May include the velocity of the movement.
+     *
+     * @param fIntensity java.lang.String value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setIntensity(java.lang.String fIntensity);
 
     /**
      * Quantitative measure of the physiologic output of the exercise; also referred to as energy expenditure.
@@ -60,9 +90,17 @@ public interface ExercisePlan extends CreativeWork, PhysicalActivity {
     /**
      * Quantitative measure of the physiologic output of the exercise; also referred to as energy expenditure.
      *
+     * @param fWorkload QuantitativeValue value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setWorkload(Object fWorkload);
+    void setWorkload(QuantitativeValue fWorkload);
+    /**
+     * Quantitative measure of the physiologic output of the exercise; also referred to as energy expenditure.
+     *
+     * @param fWorkload Energy value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setWorkload(Energy fWorkload);
 
     /**
      * Length of time to engage in the activity.
@@ -75,9 +113,17 @@ public interface ExercisePlan extends CreativeWork, PhysicalActivity {
     /**
      * Length of time to engage in the activity.
      *
+     * @param fActivityDuration Duration value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setActivityDuration(Object fActivityDuration);
+    void setActivityDuration(Duration fActivityDuration);
+    /**
+     * Length of time to engage in the activity.
+     *
+     * @param fActivityDuration QuantitativeValue value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setActivityDuration(QuantitativeValue fActivityDuration);
 
     /**
      * How often one should break from the activity.
@@ -90,9 +136,24 @@ public interface ExercisePlan extends CreativeWork, PhysicalActivity {
     /**
      * How often one should break from the activity.
      *
+     * @param fRestPeriods Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setRestPeriods(Object fRestPeriods);
+    void setRestPeriods(Text fRestPeriods);
+    /**
+     * How often one should break from the activity.
+     *
+     * @param fRestPeriods java.lang.String value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setRestPeriods(java.lang.String fRestPeriods);
+    /**
+     * How often one should break from the activity.
+     *
+     * @param fRestPeriods QuantitativeValue value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setRestPeriods(QuantitativeValue fRestPeriods);
 
     /**
      * How often one should engage in the activity.
@@ -105,9 +166,24 @@ public interface ExercisePlan extends CreativeWork, PhysicalActivity {
     /**
      * How often one should engage in the activity.
      *
+     * @param fActivityFrequency Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setActivityFrequency(Object fActivityFrequency);
+    void setActivityFrequency(Text fActivityFrequency);
+    /**
+     * How often one should engage in the activity.
+     *
+     * @param fActivityFrequency java.lang.String value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setActivityFrequency(java.lang.String fActivityFrequency);
+    /**
+     * How often one should engage in the activity.
+     *
+     * @param fActivityFrequency QuantitativeValue value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setActivityFrequency(QuantitativeValue fActivityFrequency);
 
     /**
      * Any additional component of the exercise prescription that may need to be articulated to the patient. This may include the order of exercises, the number of repetitions of movement, quantitative distance, progressions over time, etc.
@@ -120,9 +196,17 @@ public interface ExercisePlan extends CreativeWork, PhysicalActivity {
     /**
      * Any additional component of the exercise prescription that may need to be articulated to the patient. This may include the order of exercises, the number of repetitions of movement, quantitative distance, progressions over time, etc.
      *
+     * @param fAdditionalVariable Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setAdditionalVariable(Text fAdditionalVariable);
+    /**
+     * Any additional component of the exercise prescription that may need to be articulated to the patient. This may include the order of exercises, the number of repetitions of movement, quantitative distance, progressions over time, etc.
+     *
+     * @param fAdditionalVariable java.lang.String value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setAdditionalVariable(java.lang.String fAdditionalVariable);
 
     /**
      * Type(s) of exercise or activity, such as strength training, flexibility training, aerobics, cardiac rehabilitation, etc.
@@ -135,7 +219,15 @@ public interface ExercisePlan extends CreativeWork, PhysicalActivity {
     /**
      * Type(s) of exercise or activity, such as strength training, flexibility training, aerobics, cardiac rehabilitation, etc.
      *
+     * @param fExerciseType Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setExerciseType(Text fExerciseType);
+    /**
+     * Type(s) of exercise or activity, such as strength training, flexibility training, aerobics, cardiac rehabilitation, etc.
+     *
+     * @param fExerciseType java.lang.String value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setExerciseType(java.lang.String fExerciseType);
 }

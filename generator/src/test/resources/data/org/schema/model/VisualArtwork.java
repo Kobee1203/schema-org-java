@@ -30,8 +30,15 @@ public interface VisualArtwork extends CreativeWork {
     /**
      * The width of the item.
      *
+     * @param fWidth QuantitativeValue value to set.
      */
-    void setWidth(Object fWidth);
+    void setWidth(QuantitativeValue fWidth);
+    /**
+     * The width of the item.
+     *
+     * @param fWidth Distance value to set.
+     */
+    void setWidth(Distance fWidth);
 
     /**
      * The individual who adds lettering, including speech balloons and sound effects, to artwork.
@@ -44,6 +51,7 @@ public interface VisualArtwork extends CreativeWork {
     /**
      * The individual who adds lettering, including speech balloons and sound effects, to artwork.
      *
+     * @param fLetterer Person value to set.
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
     void setLetterer(Person fLetterer);
@@ -58,8 +66,15 @@ public interface VisualArtwork extends CreativeWork {
     /**
      * The height of the item.
      *
+     * @param fHeight Distance value to set.
      */
-    void setHeight(Object fHeight);
+    void setHeight(Distance fHeight);
+    /**
+     * The height of the item.
+     *
+     * @param fHeight QuantitativeValue value to set.
+     */
+    void setHeight(QuantitativeValue fHeight);
 
     /**
      * A material used as a surface in some artwork, e.g. Canvas, Paper, Wood, Board, etc.
@@ -71,8 +86,27 @@ public interface VisualArtwork extends CreativeWork {
     /**
      * A material used as a surface in some artwork, e.g. Canvas, Paper, Wood, Board, etc.
      *
+     * @param fSurface URL value to set.
      */
-    void setSurface(Object fSurface);
+    void setSurface(URL fSurface);
+    /**
+     * A material used as a surface in some artwork, e.g. Canvas, Paper, Wood, Board, etc.
+     *
+     * @param fSurface java.net.URL value to set.
+     */
+    void setSurface(java.net.URL fSurface);
+    /**
+     * A material used as a surface in some artwork, e.g. Canvas, Paper, Wood, Board, etc.
+     *
+     * @param fSurface Text value to set.
+     */
+    void setSurface(Text fSurface);
+    /**
+     * A material used as a surface in some artwork, e.g. Canvas, Paper, Wood, Board, etc.
+     *
+     * @param fSurface java.lang.String value to set.
+     */
+    void setSurface(java.lang.String fSurface);
 
     /**
      * The individual who adds color to inked drawings.
@@ -85,6 +119,7 @@ public interface VisualArtwork extends CreativeWork {
     /**
      * The individual who adds color to inked drawings.
      *
+     * @param fColorist Person value to set.
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
     void setColorist(Person fColorist);
@@ -100,6 +135,7 @@ public interface VisualArtwork extends CreativeWork {
     /**
      * The individual who traces over the pencil drawings in ink after pencils are complete.
      *
+     * @param fInker Person value to set.
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
     void setInker(Person fInker);
@@ -114,8 +150,27 @@ public interface VisualArtwork extends CreativeWork {
     /**
      * e.g. Painting, Drawing, Sculpture, Print, Photograph, Assemblage, Collage, etc.
      *
+     * @param fArtform Text value to set.
      */
-    void setArtform(Object fArtform);
+    void setArtform(Text fArtform);
+    /**
+     * e.g. Painting, Drawing, Sculpture, Print, Photograph, Assemblage, Collage, etc.
+     *
+     * @param fArtform java.lang.String value to set.
+     */
+    void setArtform(java.lang.String fArtform);
+    /**
+     * e.g. Painting, Drawing, Sculpture, Print, Photograph, Assemblage, Collage, etc.
+     *
+     * @param fArtform URL value to set.
+     */
+    void setArtform(URL fArtform);
+    /**
+     * e.g. Painting, Drawing, Sculpture, Print, Photograph, Assemblage, Collage, etc.
+     *
+     * @param fArtform java.net.URL value to set.
+     */
+    void setArtform(java.net.URL fArtform);
 
     /**
      * The supporting materials for the artwork, e.g. Canvas, Paper, Wood, Board, etc.
@@ -127,8 +182,27 @@ public interface VisualArtwork extends CreativeWork {
     /**
      * The supporting materials for the artwork, e.g. Canvas, Paper, Wood, Board, etc.
      *
+     * @param fArtworkSurface URL value to set.
      */
-    void setArtworkSurface(Object fArtworkSurface);
+    void setArtworkSurface(URL fArtworkSurface);
+    /**
+     * The supporting materials for the artwork, e.g. Canvas, Paper, Wood, Board, etc.
+     *
+     * @param fArtworkSurface java.net.URL value to set.
+     */
+    void setArtworkSurface(java.net.URL fArtworkSurface);
+    /**
+     * The supporting materials for the artwork, e.g. Canvas, Paper, Wood, Board, etc.
+     *
+     * @param fArtworkSurface Text value to set.
+     */
+    void setArtworkSurface(Text fArtworkSurface);
+    /**
+     * The supporting materials for the artwork, e.g. Canvas, Paper, Wood, Board, etc.
+     *
+     * @param fArtworkSurface java.lang.String value to set.
+     */
+    void setArtworkSurface(java.lang.String fArtworkSurface);
 
     /**
      * The number of copies when multiple copies of a piece of artwork are produced - e.g. for a limited edition of 20 prints, 'artEdition' refers to the total number of copies (in this example "20").
@@ -140,8 +214,27 @@ public interface VisualArtwork extends CreativeWork {
     /**
      * The number of copies when multiple copies of a piece of artwork are produced - e.g. for a limited edition of 20 prints, 'artEdition' refers to the total number of copies (in this example "20").
      *
+     * @param fArtEdition Integer value to set.
      */
-    void setArtEdition(Object fArtEdition);
+    void setArtEdition(Integer fArtEdition);
+    /**
+     * The number of copies when multiple copies of a piece of artwork are produced - e.g. for a limited edition of 20 prints, 'artEdition' refers to the total number of copies (in this example "20").
+     *
+     * @param fArtEdition java.lang.Integer value to set.
+     */
+    void setArtEdition(java.lang.Integer fArtEdition);
+    /**
+     * The number of copies when multiple copies of a piece of artwork are produced - e.g. for a limited edition of 20 prints, 'artEdition' refers to the total number of copies (in this example "20").
+     *
+     * @param fArtEdition Text value to set.
+     */
+    void setArtEdition(Text fArtEdition);
+    /**
+     * The number of copies when multiple copies of a piece of artwork are produced - e.g. for a limited edition of 20 prints, 'artEdition' refers to the total number of copies (in this example "20").
+     *
+     * @param fArtEdition java.lang.String value to set.
+     */
+    void setArtEdition(java.lang.String fArtEdition);
 
     /**
      * The depth of the item.
@@ -154,9 +247,17 @@ public interface VisualArtwork extends CreativeWork {
     /**
      * The depth of the item.
      *
+     * @param fDepth Distance value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setDepth(Object fDepth);
+    void setDepth(Distance fDepth);
+    /**
+     * The depth of the item.
+     *
+     * @param fDepth QuantitativeValue value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    void setDepth(QuantitativeValue fDepth);
 
     /**
      * The individual who draws the primary narrative artwork.
@@ -169,6 +270,7 @@ public interface VisualArtwork extends CreativeWork {
     /**
      * The individual who draws the primary narrative artwork.
      *
+     * @param fPenciler Person value to set.
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
     void setPenciler(Person fPenciler);
@@ -188,6 +290,7 @@ public interface VisualArtwork extends CreativeWork {
      *     	in a medium other than pencils or digital line art--for example, if the
      *     	primary artwork is done in watercolors or digital paints.
      *
+     * @param fArtist Person value to set.
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
     void setArtist(Person fArtist);
@@ -202,6 +305,25 @@ public interface VisualArtwork extends CreativeWork {
     /**
      * The material used. (e.g. Oil, Watercolour, Acrylic, Linoprint, Marble, Cyanotype, Digital, Lithograph, DryPoint, Intaglio, Pastel, Woodcut, Pencil, Mixed Media, etc.)
      *
+     * @param fArtMedium URL value to set.
      */
-    void setArtMedium(Object fArtMedium);
+    void setArtMedium(URL fArtMedium);
+    /**
+     * The material used. (e.g. Oil, Watercolour, Acrylic, Linoprint, Marble, Cyanotype, Digital, Lithograph, DryPoint, Intaglio, Pastel, Woodcut, Pencil, Mixed Media, etc.)
+     *
+     * @param fArtMedium java.net.URL value to set.
+     */
+    void setArtMedium(java.net.URL fArtMedium);
+    /**
+     * The material used. (e.g. Oil, Watercolour, Acrylic, Linoprint, Marble, Cyanotype, Digital, Lithograph, DryPoint, Intaglio, Pastel, Woodcut, Pencil, Mixed Media, etc.)
+     *
+     * @param fArtMedium Text value to set.
+     */
+    void setArtMedium(Text fArtMedium);
+    /**
+     * The material used. (e.g. Oil, Watercolour, Acrylic, Linoprint, Marble, Cyanotype, Digital, Lithograph, DryPoint, Intaglio, Pastel, Woodcut, Pencil, Mixed Media, etc.)
+     *
+     * @param fArtMedium java.lang.String value to set.
+     */
+    void setArtMedium(java.lang.String fArtMedium);
 }

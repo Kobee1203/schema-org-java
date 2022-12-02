@@ -30,6 +30,7 @@ public interface SuperficialAnatomy extends MedicalEntity {
     /**
      * A medical therapy related to this anatomy.
      *
+     * @param fRelatedTherapy MedicalTherapy value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setRelatedTherapy(MedicalTherapy fRelatedTherapy);
@@ -45,9 +46,17 @@ public interface SuperficialAnatomy extends MedicalEntity {
     /**
      * The significance associated with the superficial anatomy; as an example, how characteristics of the superficial anatomy can suggest underlying medical conditions or courses of treatment.
      *
+     * @param fSignificance Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setSignificance(Text fSignificance);
+    /**
+     * The significance associated with the superficial anatomy; as an example, how characteristics of the superficial anatomy can suggest underlying medical conditions or courses of treatment.
+     *
+     * @param fSignificance java.lang.String value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setSignificance(java.lang.String fSignificance);
 
     /**
      * Anatomical systems or structures that relate to the superficial anatomy.
@@ -60,9 +69,17 @@ public interface SuperficialAnatomy extends MedicalEntity {
     /**
      * Anatomical systems or structures that relate to the superficial anatomy.
      *
+     * @param fRelatedAnatomy AnatomicalSystem value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setRelatedAnatomy(Object fRelatedAnatomy);
+    void setRelatedAnatomy(AnatomicalSystem fRelatedAnatomy);
+    /**
+     * Anatomical systems or structures that relate to the superficial anatomy.
+     *
+     * @param fRelatedAnatomy AnatomicalStructure value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setRelatedAnatomy(AnatomicalStructure fRelatedAnatomy);
 
     /**
      * A medical condition associated with this anatomy.
@@ -75,6 +92,7 @@ public interface SuperficialAnatomy extends MedicalEntity {
     /**
      * A medical condition associated with this anatomy.
      *
+     * @param fRelatedCondition MedicalCondition value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setRelatedCondition(MedicalCondition fRelatedCondition);
@@ -90,7 +108,15 @@ public interface SuperficialAnatomy extends MedicalEntity {
     /**
      * If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.
      *
+     * @param fAssociatedPathophysiology Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setAssociatedPathophysiology(Text fAssociatedPathophysiology);
+    /**
+     * If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.
+     *
+     * @param fAssociatedPathophysiology java.lang.String value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setAssociatedPathophysiology(java.lang.String fAssociatedPathophysiology);
 }

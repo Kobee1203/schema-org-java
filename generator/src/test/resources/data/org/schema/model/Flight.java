@@ -32,8 +32,21 @@ public interface Flight extends Trip {
     /**
      * The distance of the flight.
      *
+     * @param fFlightDistance Distance value to set.
      */
-    void setFlightDistance(Object fFlightDistance);
+    void setFlightDistance(Distance fFlightDistance);
+    /**
+     * The distance of the flight.
+     *
+     * @param fFlightDistance Text value to set.
+     */
+    void setFlightDistance(Text fFlightDistance);
+    /**
+     * The distance of the flight.
+     *
+     * @param fFlightDistance java.lang.String value to set.
+     */
+    void setFlightDistance(java.lang.String fFlightDistance);
 
     /**
      * The time when a passenger can check into the flight online.
@@ -45,8 +58,15 @@ public interface Flight extends Trip {
     /**
      * The time when a passenger can check into the flight online.
      *
+     * @param fWebCheckinTime DateTime value to set.
      */
     void setWebCheckinTime(DateTime fWebCheckinTime);
+    /**
+     * The time when a passenger can check into the flight online.
+     *
+     * @param fWebCheckinTime java.time.LocalDateTime value to set.
+     */
+    void setWebCheckinTime(java.time.LocalDateTime fWebCheckinTime);
 
     /**
      * The kind of aircraft (e.g., "Boeing 747").
@@ -58,8 +78,21 @@ public interface Flight extends Trip {
     /**
      * The kind of aircraft (e.g., "Boeing 747").
      *
+     * @param fAircraft Vehicle value to set.
      */
-    void setAircraft(Object fAircraft);
+    void setAircraft(Vehicle fAircraft);
+    /**
+     * The kind of aircraft (e.g., "Boeing 747").
+     *
+     * @param fAircraft Text value to set.
+     */
+    void setAircraft(Text fAircraft);
+    /**
+     * The kind of aircraft (e.g., "Boeing 747").
+     *
+     * @param fAircraft java.lang.String value to set.
+     */
+    void setAircraft(java.lang.String fAircraft);
 
     /**
      * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
@@ -71,8 +104,15 @@ public interface Flight extends Trip {
     /**
      * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
      *
+     * @param fSeller Organization value to set.
      */
-    void setSeller(Object fSeller);
+    void setSeller(Organization fSeller);
+    /**
+     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+     *
+     * @param fSeller Person value to set.
+     */
+    void setSeller(Person fSeller);
 
     /**
      * The airport where the flight terminates.
@@ -84,6 +124,7 @@ public interface Flight extends Trip {
     /**
      * The airport where the flight terminates.
      *
+     * @param fArrivalAirport Airport value to set.
      */
     void setArrivalAirport(Airport fArrivalAirport);
 
@@ -97,8 +138,15 @@ public interface Flight extends Trip {
     /**
      * Identifier of the flight's arrival terminal.
      *
+     * @param fArrivalTerminal Text value to set.
      */
     void setArrivalTerminal(Text fArrivalTerminal);
+    /**
+     * Identifier of the flight's arrival terminal.
+     *
+     * @param fArrivalTerminal java.lang.String value to set.
+     */
+    void setArrivalTerminal(java.lang.String fArrivalTerminal);
 
     /**
      * The airport where the flight originates.
@@ -110,6 +158,7 @@ public interface Flight extends Trip {
     /**
      * The airport where the flight originates.
      *
+     * @param fDepartureAirport Airport value to set.
      */
     void setDepartureAirport(Airport fDepartureAirport);
 
@@ -123,8 +172,15 @@ public interface Flight extends Trip {
     /**
      * Identifier of the flight's arrival gate.
      *
+     * @param fArrivalGate Text value to set.
      */
     void setArrivalGate(Text fArrivalGate);
+    /**
+     * Identifier of the flight's arrival gate.
+     *
+     * @param fArrivalGate java.lang.String value to set.
+     */
+    void setArrivalGate(java.lang.String fArrivalGate);
 
     /**
      * Identifier of the flight's departure terminal.
@@ -136,8 +192,15 @@ public interface Flight extends Trip {
     /**
      * Identifier of the flight's departure terminal.
      *
+     * @param fDepartureTerminal Text value to set.
      */
     void setDepartureTerminal(Text fDepartureTerminal);
+    /**
+     * Identifier of the flight's departure terminal.
+     *
+     * @param fDepartureTerminal java.lang.String value to set.
+     */
+    void setDepartureTerminal(java.lang.String fDepartureTerminal);
 
     /**
      * 'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.
@@ -149,6 +212,7 @@ public interface Flight extends Trip {
     /**
      * 'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.
      *
+     * @param fCarrier Organization value to set.
      */
     void setCarrier(Organization fCarrier);
 
@@ -162,8 +226,21 @@ public interface Flight extends Trip {
     /**
      * The estimated time the flight will take.
      *
+     * @param fEstimatedFlightDuration Text value to set.
      */
-    void setEstimatedFlightDuration(Object fEstimatedFlightDuration);
+    void setEstimatedFlightDuration(Text fEstimatedFlightDuration);
+    /**
+     * The estimated time the flight will take.
+     *
+     * @param fEstimatedFlightDuration java.lang.String value to set.
+     */
+    void setEstimatedFlightDuration(java.lang.String fEstimatedFlightDuration);
+    /**
+     * The estimated time the flight will take.
+     *
+     * @param fEstimatedFlightDuration Duration value to set.
+     */
+    void setEstimatedFlightDuration(Duration fEstimatedFlightDuration);
 
     /**
      * Identifier of the flight's departure gate.
@@ -175,8 +252,15 @@ public interface Flight extends Trip {
     /**
      * Identifier of the flight's departure gate.
      *
+     * @param fDepartureGate Text value to set.
      */
     void setDepartureGate(Text fDepartureGate);
+    /**
+     * Identifier of the flight's departure gate.
+     *
+     * @param fDepartureGate java.lang.String value to set.
+     */
+    void setDepartureGate(java.lang.String fDepartureGate);
 
     /**
      * The unique identifier for a flight including the airline IATA code. For example, if describing United flight 110, where the IATA code for United is 'UA', the flightNumber is 'UA110'.
@@ -188,8 +272,15 @@ public interface Flight extends Trip {
     /**
      * The unique identifier for a flight including the airline IATA code. For example, if describing United flight 110, where the IATA code for United is 'UA', the flightNumber is 'UA110'.
      *
+     * @param fFlightNumber Text value to set.
      */
     void setFlightNumber(Text fFlightNumber);
+    /**
+     * The unique identifier for a flight including the airline IATA code. For example, if describing United flight 110, where the IATA code for United is 'UA', the flightNumber is 'UA110'.
+     *
+     * @param fFlightNumber java.lang.String value to set.
+     */
+    void setFlightNumber(java.lang.String fFlightNumber);
 
     /**
      * Description of the meals that will be provided or available for purchase.
@@ -201,8 +292,15 @@ public interface Flight extends Trip {
     /**
      * Description of the meals that will be provided or available for purchase.
      *
+     * @param fMealService Text value to set.
      */
     void setMealService(Text fMealService);
+    /**
+     * Description of the meals that will be provided or available for purchase.
+     *
+     * @param fMealService java.lang.String value to set.
+     */
+    void setMealService(java.lang.String fMealService);
 
     /**
      * The type of boarding policy used by the airline (e.g. zone-based or group-based).
@@ -214,6 +312,7 @@ public interface Flight extends Trip {
     /**
      * The type of boarding policy used by the airline (e.g. zone-based or group-based).
      *
+     * @param fBoardingPolicy BoardingPolicyType value to set.
      */
     void setBoardingPolicy(BoardingPolicyType fBoardingPolicy);
 }

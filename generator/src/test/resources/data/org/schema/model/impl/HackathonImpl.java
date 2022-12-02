@@ -63,6 +63,7 @@ public class HackathonImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * An event that this event is a part of. For example, a collection of individual music performances might each have a music festival as their superEvent.
      *
+     * @param fSuperEvent Event value to set.
      */
     @Override
     public void setSuperEvent(Event fSuperEvent) {
@@ -86,6 +87,7 @@ public class HackathonImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * The eventAttendanceMode of an event indicates whether it occurs online, offline, or a mix.
      *
+     * @param fEventAttendanceMode EventAttendanceModeEnumeration value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1842">https://github.com/schemaorg/schemaorg/issues/1842</a>
      */
@@ -109,6 +111,7 @@ public class HackathonImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * A review of the item.
      *
+     * @param fReview Review value to set.
      */
     @Override
     public void setReview(Review fReview) {
@@ -130,12 +133,19 @@ public class HackathonImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
      *
+     * @param fTranslator Person value to set.
      */
     @Override
-    public void setTranslator(Object fTranslator) {
-        if(!(fTranslator instanceof Person) && !(fTranslator instanceof Organization)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'translator': " + fTranslator);
-        }
+    public void setTranslator(Person fTranslator) {
+        this.fTranslator = fTranslator;
+    }
+    /**
+     * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
+     *
+     * @param fTranslator Organization value to set.
+     */
+    @Override
+    public void setTranslator(Organization fTranslator) {
         this.fTranslator = fTranslator;
     }
 
@@ -155,14 +165,42 @@ public class HackathonImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
      *
+     * @param fStartDate DateTime value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
     @Override
-    public void setStartDate(Object fStartDate) {
-        if(!(fStartDate instanceof DateTime) && !(fStartDate instanceof Date)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'startDate': " + fStartDate);
-        }
+    public void setStartDate(DateTime fStartDate) {
         this.fStartDate = fStartDate;
+    }
+    /**
+     * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
+     *
+     * @param fStartDate java.time.LocalDateTime value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
+     */
+    @Override
+    public void setStartDate(java.time.LocalDateTime fStartDate) {
+        this.fStartDate = DateTime.of(fStartDate);
+    }
+    /**
+     * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
+     *
+     * @param fStartDate Date value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
+     */
+    @Override
+    public void setStartDate(Date fStartDate) {
+        this.fStartDate = fStartDate;
+    }
+    /**
+     * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
+     *
+     * @param fStartDate java.time.LocalDate value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
+     */
+    @Override
+    public void setStartDate(java.time.LocalDate fStartDate) {
+        this.fStartDate = Date.of(fStartDate);
     }
 
     private Object fComposer;
@@ -181,13 +219,21 @@ public class HackathonImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
      *
+     * @param fComposer Organization value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
     @Override
-    public void setComposer(Object fComposer) {
-        if(!(fComposer instanceof Organization) && !(fComposer instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'composer': " + fComposer);
-        }
+    public void setComposer(Organization fComposer) {
+        this.fComposer = fComposer;
+    }
+    /**
+     * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
+     *
+     * @param fComposer Person value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
+     */
+    @Override
+    public void setComposer(Person fComposer) {
         this.fComposer = fComposer;
     }
 
@@ -206,10 +252,20 @@ public class HackathonImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * The total number of individuals that may attend an event or venue.
      *
+     * @param fMaximumAttendeeCapacity Integer value to set.
      */
     @Override
     public void setMaximumAttendeeCapacity(Integer fMaximumAttendeeCapacity) {
         this.fMaximumAttendeeCapacity = fMaximumAttendeeCapacity;
+    }
+    /**
+     * The total number of individuals that may attend an event or venue.
+     *
+     * @param fMaximumAttendeeCapacity java.lang.Integer value to set.
+     */
+    @Override
+    public void setMaximumAttendeeCapacity(java.lang.Integer fMaximumAttendeeCapacity) {
+        this.fMaximumAttendeeCapacity = Integer.of(fMaximumAttendeeCapacity);
     }
 
     private Integer fMaximumVirtualAttendeeCapacity;
@@ -229,12 +285,24 @@ public class HackathonImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * The maximum physical attendee capacity of an [[Event]] whose [[eventAttendanceMode]] is [[OnlineEventAttendanceMode]] (or the online aspects, in the case of a [[MixedEventAttendanceMode]]). 
      *
+     * @param fMaximumVirtualAttendeeCapacity Integer value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1842">https://github.com/schemaorg/schemaorg/issues/1842</a>
      */
     @Override
     public void setMaximumVirtualAttendeeCapacity(Integer fMaximumVirtualAttendeeCapacity) {
         this.fMaximumVirtualAttendeeCapacity = fMaximumVirtualAttendeeCapacity;
+    }
+    /**
+     * The maximum physical attendee capacity of an [[Event]] whose [[eventAttendanceMode]] is [[OnlineEventAttendanceMode]] (or the online aspects, in the case of a [[MixedEventAttendanceMode]]). 
+     *
+     * @param fMaximumVirtualAttendeeCapacity java.lang.Integer value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1842">https://github.com/schemaorg/schemaorg/issues/1842</a>
+     */
+    @Override
+    public void setMaximumVirtualAttendeeCapacity(java.lang.Integer fMaximumVirtualAttendeeCapacity) {
+        this.fMaximumVirtualAttendeeCapacity = Integer.of(fMaximumVirtualAttendeeCapacity);
     }
 
     private Person fDirector;
@@ -252,6 +320,7 @@ public class HackathonImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
      *
+     * @param fDirector Person value to set.
      */
     @Override
     public void setDirector(Person fDirector) {
@@ -276,6 +345,7 @@ public class HackathonImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
      *
+     * @param fFunding Grant value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
@@ -300,13 +370,47 @@ public class HackathonImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
      *
+     * @param fKeywords DefinedTerm value to set.
      */
     @Override
-    public void setKeywords(Object fKeywords) {
-        if(!(fKeywords instanceof DefinedTerm) && !(fKeywords instanceof Text) && !(fKeywords instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'keywords': " + fKeywords);
-        }
+    public void setKeywords(DefinedTerm fKeywords) {
         this.fKeywords = fKeywords;
+    }
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     * @param fKeywords Text value to set.
+     */
+    @Override
+    public void setKeywords(Text fKeywords) {
+        this.fKeywords = fKeywords;
+    }
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     * @param fKeywords java.lang.String value to set.
+     */
+    @Override
+    public void setKeywords(java.lang.String fKeywords) {
+        this.fKeywords = Text.of(fKeywords);
+    }
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     * @param fKeywords URL value to set.
+     */
+    @Override
+    public void setKeywords(URL fKeywords) {
+        this.fKeywords = fKeywords;
+    }
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     * @param fKeywords java.net.URL value to set.
+     */
+    @Override
+    public void setKeywords(java.net.URL fKeywords) {
+        this.fKeywords = URL.of(fKeywords);
     }
 
     private Audience fAudience;
@@ -324,6 +428,7 @@ public class HackathonImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * An intended audience, i.e. a group for whom something was created.
      *
+     * @param fAudience Audience value to set.
      */
     @Override
     public void setAudience(Audience fAudience) {
@@ -348,13 +453,22 @@ public class HackathonImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      *
+     * @param fOffers Offer value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
     @Override
-    public void setOffers(Object fOffers) {
-        if(!(fOffers instanceof Offer) && !(fOffers instanceof Demand)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'offers': " + fOffers);
-        }
+    public void setOffers(Offer fOffers) {
+        this.fOffers = fOffers;
+    }
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     *
+     * @param fOffers Demand value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public void setOffers(Demand fOffers) {
         this.fOffers = fOffers;
     }
 
@@ -373,6 +487,7 @@ public class HackathonImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * An Event that is part of this event. For example, a conference event includes many presentations, each of which is a subEvent of the conference.
      *
+     * @param fSubEvent Event value to set.
      */
     @Override
     public void setSubEvent(Event fSubEvent) {
@@ -394,6 +509,7 @@ public class HackathonImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
      *
+     * @param fActor Person value to set.
      */
     @Override
     public void setActor(Person fActor) {
@@ -415,6 +531,7 @@ public class HackathonImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled.
      *
+     * @param fEventStatus EventStatusType value to set.
      */
     @Override
     public void setEventStatus(EventStatusType fEventStatus) {
@@ -437,14 +554,42 @@ public class HackathonImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
      *
+     * @param fEndDate Date value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
     @Override
-    public void setEndDate(Object fEndDate) {
-        if(!(fEndDate instanceof Date) && !(fEndDate instanceof DateTime)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'endDate': " + fEndDate);
-        }
+    public void setEndDate(Date fEndDate) {
         this.fEndDate = fEndDate;
+    }
+    /**
+     * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
+     *
+     * @param fEndDate java.time.LocalDate value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
+     */
+    @Override
+    public void setEndDate(java.time.LocalDate fEndDate) {
+        this.fEndDate = Date.of(fEndDate);
+    }
+    /**
+     * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
+     *
+     * @param fEndDate DateTime value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
+     */
+    @Override
+    public void setEndDate(DateTime fEndDate) {
+        this.fEndDate = fEndDate;
+    }
+    /**
+     * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
+     *
+     * @param fEndDate java.time.LocalDateTime value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
+     */
+    @Override
+    public void setEndDate(java.time.LocalDateTime fEndDate) {
+        this.fEndDate = DateTime.of(fEndDate);
     }
 
     private Object fFunder;
@@ -462,12 +607,19 @@ public class HackathonImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
+     * @param fFunder Organization value to set.
      */
     @Override
-    public void setFunder(Object fFunder) {
-        if(!(fFunder instanceof Organization) && !(fFunder instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'funder': " + fFunder);
-        }
+    public void setFunder(Organization fFunder) {
+        this.fFunder = fFunder;
+    }
+    /**
+     * A person or organization that supports (sponsors) something through some kind of financial contribution.
+     *
+     * @param fFunder Person value to set.
+     */
+    @Override
+    public void setFunder(Person fFunder) {
         this.fFunder = fFunder;
     }
 
@@ -486,12 +638,19 @@ public class HackathonImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
      *
+     * @param fPerformer Organization value to set.
      */
     @Override
-    public void setPerformer(Object fPerformer) {
-        if(!(fPerformer instanceof Organization) && !(fPerformer instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'performer': " + fPerformer);
-        }
+    public void setPerformer(Organization fPerformer) {
+        this.fPerformer = fPerformer;
+    }
+    /**
+     * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
+     *
+     * @param fPerformer Person value to set.
+     */
+    @Override
+    public void setPerformer(Person fPerformer) {
         this.fPerformer = fPerformer;
     }
 
@@ -510,6 +669,7 @@ public class HackathonImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * The overall rating, based on a collection of reviews or ratings, of the item.
      *
+     * @param fAggregateRating AggregateRating value to set.
      */
     @Override
     public void setAggregateRating(AggregateRating fAggregateRating) {
@@ -531,10 +691,20 @@ public class HackathonImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * The typical expected age range, e.g. '7-9', '11-'.
      *
+     * @param fTypicalAgeRange Text value to set.
      */
     @Override
     public void setTypicalAgeRange(Text fTypicalAgeRange) {
         this.fTypicalAgeRange = fTypicalAgeRange;
+    }
+    /**
+     * The typical expected age range, e.g. '7-9', '11-'.
+     *
+     * @param fTypicalAgeRange java.lang.String value to set.
+     */
+    @Override
+    public void setTypicalAgeRange(java.lang.String fTypicalAgeRange) {
+        this.fTypicalAgeRange = Text.of(fTypicalAgeRange);
     }
 
     private Object fLocation;
@@ -552,12 +722,46 @@ public class HackathonImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
      *
+     * @param fLocation PostalAddress value to set.
      */
     @Override
-    public void setLocation(Object fLocation) {
-        if(!(fLocation instanceof PostalAddress) && !(fLocation instanceof Text) && !(fLocation instanceof Place) && !(fLocation instanceof VirtualLocation)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'location': " + fLocation);
-        }
+    public void setLocation(PostalAddress fLocation) {
+        this.fLocation = fLocation;
+    }
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @param fLocation Text value to set.
+     */
+    @Override
+    public void setLocation(Text fLocation) {
+        this.fLocation = fLocation;
+    }
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @param fLocation java.lang.String value to set.
+     */
+    @Override
+    public void setLocation(java.lang.String fLocation) {
+        this.fLocation = Text.of(fLocation);
+    }
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @param fLocation Place value to set.
+     */
+    @Override
+    public void setLocation(Place fLocation) {
+        this.fLocation = fLocation;
+    }
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @param fLocation VirtualLocation value to set.
+     */
+    @Override
+    public void setLocation(VirtualLocation fLocation) {
         this.fLocation = fLocation;
     }
 
@@ -576,12 +780,19 @@ public class HackathonImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * The main performer or performers of the event&#x2014;for example, a presenter, musician, or actor.
      *
+     * @param fPerformers Person value to set.
      */
     @Override
-    public void setPerformers(Object fPerformers) {
-        if(!(fPerformers instanceof Person) && !(fPerformers instanceof Organization)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'performers': " + fPerformers);
-        }
+    public void setPerformers(Person fPerformers) {
+        this.fPerformers = fPerformers;
+    }
+    /**
+     * The main performer or performers of the event&#x2014;for example, a presenter, musician, or actor.
+     *
+     * @param fPerformers Organization value to set.
+     */
+    @Override
+    public void setPerformers(Organization fPerformers) {
         this.fPerformers = fPerformers;
     }
 
@@ -602,6 +813,7 @@ public class HackathonImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
      *
+     * @param fDuration Duration value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
      */
@@ -625,12 +837,19 @@ public class HackathonImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * An organizer of an Event.
      *
+     * @param fOrganizer Person value to set.
      */
     @Override
-    public void setOrganizer(Object fOrganizer) {
-        if(!(fOrganizer instanceof Person) && !(fOrganizer instanceof Organization)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'organizer': " + fOrganizer);
-        }
+    public void setOrganizer(Person fOrganizer) {
+        this.fOrganizer = fOrganizer;
+    }
+    /**
+     * An organizer of an Event.
+     *
+     * @param fOrganizer Organization value to set.
+     */
+    @Override
+    public void setOrganizer(Organization fOrganizer) {
         this.fOrganizer = fOrganizer;
     }
 
@@ -649,12 +868,19 @@ public class HackathonImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
      *
+     * @param fSponsor Organization value to set.
      */
     @Override
-    public void setSponsor(Object fSponsor) {
-        if(!(fSponsor instanceof Organization) && !(fSponsor instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'sponsor': " + fSponsor);
-        }
+    public void setSponsor(Organization fSponsor) {
+        this.fSponsor = fSponsor;
+    }
+    /**
+     * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
+     *
+     * @param fSponsor Person value to set.
+     */
+    @Override
+    public void setSponsor(Person fSponsor) {
         this.fSponsor = fSponsor;
     }
 
@@ -673,10 +899,20 @@ public class HackathonImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * Used in conjunction with eventStatus for rescheduled or cancelled events. This property contains the previously scheduled start date. For rescheduled events, the startDate property should be used for the newly scheduled start date. In the (rare) case of an event that has been postponed and rescheduled multiple times, this field may be repeated.
      *
+     * @param fPreviousStartDate Date value to set.
      */
     @Override
     public void setPreviousStartDate(Date fPreviousStartDate) {
         this.fPreviousStartDate = fPreviousStartDate;
+    }
+    /**
+     * Used in conjunction with eventStatus for rescheduled or cancelled events. This property contains the previously scheduled start date. For rescheduled events, the startDate property should be used for the newly scheduled start date. In the (rare) case of an event that has been postponed and rescheduled multiple times, this field may be repeated.
+     *
+     * @param fPreviousStartDate java.time.LocalDate value to set.
+     */
+    @Override
+    public void setPreviousStartDate(java.time.LocalDate fPreviousStartDate) {
+        this.fPreviousStartDate = Date.of(fPreviousStartDate);
     }
 
     private Boolean fIsAccessibleForFree;
@@ -694,10 +930,20 @@ public class HackathonImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * A flag to signal that the item, event, or place is accessible for free.
      *
+     * @param fIsAccessibleForFree Boolean value to set.
      */
     @Override
     public void setIsAccessibleForFree(Boolean fIsAccessibleForFree) {
         this.fIsAccessibleForFree = fIsAccessibleForFree;
+    }
+    /**
+     * A flag to signal that the item, event, or place is accessible for free.
+     *
+     * @param fIsAccessibleForFree java.lang.Boolean value to set.
+     */
+    @Override
+    public void setIsAccessibleForFree(java.lang.Boolean fIsAccessibleForFree) {
+        this.fIsAccessibleForFree = Boolean.of(fIsAccessibleForFree);
     }
 
     private Integer fRemainingAttendeeCapacity;
@@ -715,10 +961,20 @@ public class HackathonImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * The number of attendee places for an event that remain unallocated.
      *
+     * @param fRemainingAttendeeCapacity Integer value to set.
      */
     @Override
     public void setRemainingAttendeeCapacity(Integer fRemainingAttendeeCapacity) {
         this.fRemainingAttendeeCapacity = fRemainingAttendeeCapacity;
+    }
+    /**
+     * The number of attendee places for an event that remain unallocated.
+     *
+     * @param fRemainingAttendeeCapacity java.lang.Integer value to set.
+     */
+    @Override
+    public void setRemainingAttendeeCapacity(java.lang.Integer fRemainingAttendeeCapacity) {
+        this.fRemainingAttendeeCapacity = Integer.of(fRemainingAttendeeCapacity);
     }
 
     private Event fSubEvents;
@@ -736,6 +992,7 @@ public class HackathonImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * Events that are a part of this event. For example, a conference event includes many presentations, each subEvents of the conference.
      *
+     * @param fSubEvents Event value to set.
      */
     @Override
     public void setSubEvents(Event fSubEvents) {
@@ -757,6 +1014,7 @@ public class HackathonImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * A work performed in some event, for example a play performed in a TheaterEvent.
      *
+     * @param fWorkPerformed CreativeWork value to set.
      */
     @Override
     public void setWorkPerformed(CreativeWork fWorkPerformed) {
@@ -778,13 +1036,38 @@ public class HackathonImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * The time admission will commence.
      *
+     * @param fDoorTime Time value to set.
      */
     @Override
-    public void setDoorTime(Object fDoorTime) {
-        if(!(fDoorTime instanceof Time) && !(fDoorTime instanceof DateTime)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'doorTime': " + fDoorTime);
-        }
+    public void setDoorTime(Time fDoorTime) {
         this.fDoorTime = fDoorTime;
+    }
+    /**
+     * The time admission will commence.
+     *
+     * @param fDoorTime java.time.LocalTime value to set.
+     */
+    @Override
+    public void setDoorTime(java.time.LocalTime fDoorTime) {
+        this.fDoorTime = Time.of(fDoorTime);
+    }
+    /**
+     * The time admission will commence.
+     *
+     * @param fDoorTime DateTime value to set.
+     */
+    @Override
+    public void setDoorTime(DateTime fDoorTime) {
+        this.fDoorTime = fDoorTime;
+    }
+    /**
+     * The time admission will commence.
+     *
+     * @param fDoorTime java.time.LocalDateTime value to set.
+     */
+    @Override
+    public void setDoorTime(java.time.LocalDateTime fDoorTime) {
+        this.fDoorTime = DateTime.of(fDoorTime);
     }
 
     private Object fInLanguage;
@@ -803,13 +1086,31 @@ public class HackathonImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
      *
+     * @param fInLanguage Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
      */
     @Override
-    public void setInLanguage(Object fInLanguage) {
-        if(!(fInLanguage instanceof Text) && !(fInLanguage instanceof Language)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'inLanguage': " + fInLanguage);
-        }
+    public void setInLanguage(Text fInLanguage) {
+        this.fInLanguage = fInLanguage;
+    }
+    /**
+     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     *
+     * @param fInLanguage java.lang.String value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
+     */
+    @Override
+    public void setInLanguage(java.lang.String fInLanguage) {
+        this.fInLanguage = Text.of(fInLanguage);
+    }
+    /**
+     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     *
+     * @param fInLanguage Language value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
+     */
+    @Override
+    public void setInLanguage(Language fInLanguage) {
         this.fInLanguage = fInLanguage;
     }
 
@@ -829,6 +1130,7 @@ public class HackathonImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * The subject matter of the content.
      *
+     * @param fAbout Thing value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
@@ -851,6 +1153,7 @@ public class HackathonImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * The CreativeWork that captured all or part of this Event.
      *
+     * @param fRecordedIn CreativeWork value to set.
      */
     @Override
     public void setRecordedIn(CreativeWork fRecordedIn) {
@@ -874,12 +1177,24 @@ public class HackathonImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * The maximum physical attendee capacity of an [[Event]] whose [[eventAttendanceMode]] is [[OfflineEventAttendanceMode]] (or the offline aspects, in the case of a [[MixedEventAttendanceMode]]). 
      *
+     * @param fMaximumPhysicalAttendeeCapacity Integer value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1842">https://github.com/schemaorg/schemaorg/issues/1842</a>
      */
     @Override
     public void setMaximumPhysicalAttendeeCapacity(Integer fMaximumPhysicalAttendeeCapacity) {
         this.fMaximumPhysicalAttendeeCapacity = fMaximumPhysicalAttendeeCapacity;
+    }
+    /**
+     * The maximum physical attendee capacity of an [[Event]] whose [[eventAttendanceMode]] is [[OfflineEventAttendanceMode]] (or the offline aspects, in the case of a [[MixedEventAttendanceMode]]). 
+     *
+     * @param fMaximumPhysicalAttendeeCapacity java.lang.Integer value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1842">https://github.com/schemaorg/schemaorg/issues/1842</a>
+     */
+    @Override
+    public void setMaximumPhysicalAttendeeCapacity(java.lang.Integer fMaximumPhysicalAttendeeCapacity) {
+        this.fMaximumPhysicalAttendeeCapacity = Integer.of(fMaximumPhysicalAttendeeCapacity);
     }
 
     private Object fAttendee;
@@ -897,12 +1212,19 @@ public class HackathonImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * A person or organization attending the event.
      *
+     * @param fAttendee Person value to set.
      */
     @Override
-    public void setAttendee(Object fAttendee) {
-        if(!(fAttendee instanceof Person) && !(fAttendee instanceof Organization)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'attendee': " + fAttendee);
-        }
+    public void setAttendee(Person fAttendee) {
+        this.fAttendee = fAttendee;
+    }
+    /**
+     * A person or organization attending the event.
+     *
+     * @param fAttendee Organization value to set.
+     */
+    @Override
+    public void setAttendee(Organization fAttendee) {
         this.fAttendee = fAttendee;
     }
 
@@ -923,6 +1245,7 @@ public class HackathonImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * A work featured in some event, e.g. exhibited in an ExhibitionEvent.
      *        Specific subproperties are available for workPerformed (e.g. a play), or a workPresented (a Movie at a ScreeningEvent).
      *
+     * @param fWorkFeatured CreativeWork value to set.
      */
     @Override
     public void setWorkFeatured(CreativeWork fWorkFeatured) {
@@ -956,6 +1279,7 @@ public class HackathonImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      *       [[Schedule]], this avoids any ambiguity for clients using the data. The property might have repeated values to specify different schedules, e.g. for different months
      *       or seasons.
      *
+     * @param fEventSchedule Schedule value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
      */
@@ -979,12 +1303,19 @@ public class HackathonImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * A secondary contributor to the CreativeWork or Event.
      *
+     * @param fContributor Organization value to set.
      */
     @Override
-    public void setContributor(Object fContributor) {
-        if(!(fContributor instanceof Organization) && !(fContributor instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'contributor': " + fContributor);
-        }
+    public void setContributor(Organization fContributor) {
+        this.fContributor = fContributor;
+    }
+    /**
+     * A secondary contributor to the CreativeWork or Event.
+     *
+     * @param fContributor Person value to set.
+     */
+    @Override
+    public void setContributor(Person fContributor) {
         this.fContributor = fContributor;
     }
 
@@ -1003,12 +1334,19 @@ public class HackathonImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * A person attending the event.
      *
+     * @param fAttendees Person value to set.
      */
     @Override
-    public void setAttendees(Object fAttendees) {
-        if(!(fAttendees instanceof Person) && !(fAttendees instanceof Organization)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'attendees': " + fAttendees);
-        }
+    public void setAttendees(Person fAttendees) {
+        this.fAttendees = fAttendees;
+    }
+    /**
+     * A person attending the event.
+     *
+     * @param fAttendees Organization value to set.
+     */
+    @Override
+    public void setAttendees(Organization fAttendees) {
         this.fAttendees = fAttendees;
     }
 
@@ -1027,13 +1365,29 @@ public class HackathonImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
+     * @param fMainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
-        }
+    public void setMainEntityOfPage(CreativeWork fMainEntityOfPage) {
         this.fMainEntityOfPage = fMainEntityOfPage;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param fMainEntityOfPage URL value to set.
+     */
+    @Override
+    public void setMainEntityOfPage(URL fMainEntityOfPage) {
+        this.fMainEntityOfPage = fMainEntityOfPage;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param fMainEntityOfPage java.net.URL value to set.
+     */
+    @Override
+    public void setMainEntityOfPage(java.net.URL fMainEntityOfPage) {
+        this.fMainEntityOfPage = URL.of(fMainEntityOfPage);
     }
 
     private Text fAlternateName;
@@ -1051,10 +1405,20 @@ public class HackathonImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * An alias for the item.
      *
+     * @param fAlternateName Text value to set.
      */
     @Override
     public void setAlternateName(Text fAlternateName) {
         this.fAlternateName = fAlternateName;
+    }
+    /**
+     * An alias for the item.
+     *
+     * @param fAlternateName java.lang.String value to set.
+     */
+    @Override
+    public void setAlternateName(java.lang.String fAlternateName) {
+        this.fAlternateName = Text.of(fAlternateName);
     }
 
     private Text fName;
@@ -1072,10 +1436,20 @@ public class HackathonImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * The name of the item.
      *
+     * @param fName Text value to set.
      */
     @Override
     public void setName(Text fName) {
         this.fName = fName;
+    }
+    /**
+     * The name of the item.
+     *
+     * @param fName java.lang.String value to set.
+     */
+    @Override
+    public void setName(java.lang.String fName) {
+        this.fName = Text.of(fName);
     }
 
     private Action fPotentialAction;
@@ -1093,6 +1467,7 @@ public class HackathonImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      *
+     * @param fPotentialAction Action value to set.
      */
     @Override
     public void setPotentialAction(Action fPotentialAction) {
@@ -1114,12 +1489,28 @@ public class HackathonImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
+     * @param fImage URL value to set.
      */
     @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
+    public void setImage(URL fImage) {
+        this.fImage = fImage;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param fImage java.net.URL value to set.
+     */
+    @Override
+    public void setImage(java.net.URL fImage) {
+        this.fImage = URL.of(fImage);
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param fImage ImageObject value to set.
+     */
+    @Override
+    public void setImage(ImageObject fImage) {
         this.fImage = fImage;
     }
 
@@ -1138,10 +1529,20 @@ public class HackathonImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * URL of the item.
      *
+     * @param fUrl URL value to set.
      */
     @Override
     public void setUrl(URL fUrl) {
         this.fUrl = fUrl;
+    }
+    /**
+     * URL of the item.
+     *
+     * @param fUrl java.net.URL value to set.
+     */
+    @Override
+    public void setUrl(java.net.URL fUrl) {
+        this.fUrl = URL.of(fUrl);
     }
 
     private Text fDescription;
@@ -1159,10 +1560,20 @@ public class HackathonImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * A description of the item.
      *
+     * @param fDescription Text value to set.
      */
     @Override
     public void setDescription(Text fDescription) {
         this.fDescription = fDescription;
+    }
+    /**
+     * A description of the item.
+     *
+     * @param fDescription java.lang.String value to set.
+     */
+    @Override
+    public void setDescription(java.lang.String fDescription) {
+        this.fDescription = Text.of(fDescription);
     }
 
     private Object fSubjectOf;
@@ -1181,13 +1592,21 @@ public class HackathonImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * A CreativeWork or Event about this Thing.
      *
+     * @param fSubjectOf Event value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Object fSubjectOf) {
-        if(!(fSubjectOf instanceof Event) && !(fSubjectOf instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'subjectOf': " + fSubjectOf);
-        }
+    public void setSubjectOf(Event fSubjectOf) {
+        this.fSubjectOf = fSubjectOf;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @param fSubjectOf CreativeWork value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public void setSubjectOf(CreativeWork fSubjectOf) {
         this.fSubjectOf = fSubjectOf;
     }
 
@@ -1206,10 +1625,20 @@ public class HackathonImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
+     * @param fAdditionalType URL value to set.
      */
     @Override
     public void setAdditionalType(URL fAdditionalType) {
         this.fAdditionalType = fAdditionalType;
+    }
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @param fAdditionalType java.net.URL value to set.
+     */
+    @Override
+    public void setAdditionalType(java.net.URL fAdditionalType) {
+        this.fAdditionalType = URL.of(fAdditionalType);
     }
 
     private Text fDisambiguatingDescription;
@@ -1227,10 +1656,20 @@ public class HackathonImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
+     * @param fDisambiguatingDescription Text value to set.
      */
     @Override
     public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
         this.fDisambiguatingDescription = fDisambiguatingDescription;
+    }
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @param fDisambiguatingDescription java.lang.String value to set.
+     */
+    @Override
+    public void setDisambiguatingDescription(java.lang.String fDisambiguatingDescription) {
+        this.fDisambiguatingDescription = Text.of(fDisambiguatingDescription);
     }
 
     private URL fSameAs;
@@ -1248,10 +1687,20 @@ public class HackathonImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
+     * @param fSameAs URL value to set.
      */
     @Override
     public void setSameAs(URL fSameAs) {
         this.fSameAs = fSameAs;
+    }
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @param fSameAs java.net.URL value to set.
+     */
+    @Override
+    public void setSameAs(java.net.URL fSameAs) {
+        this.fSameAs = URL.of(fSameAs);
     }
 
     private Object fIdentifier;
@@ -1271,12 +1720,50 @@ public class HackathonImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
+     * @param fIdentifier URL value to set.
      */
     @Override
-    public void setIdentifier(Object fIdentifier) {
-        if(!(fIdentifier instanceof URL) && !(fIdentifier instanceof Text) && !(fIdentifier instanceof PropertyValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
-        }
+    public void setIdentifier(URL fIdentifier) {
+        this.fIdentifier = fIdentifier;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param fIdentifier java.net.URL value to set.
+     */
+    @Override
+    public void setIdentifier(java.net.URL fIdentifier) {
+        this.fIdentifier = URL.of(fIdentifier);
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param fIdentifier Text value to set.
+     */
+    @Override
+    public void setIdentifier(Text fIdentifier) {
+        this.fIdentifier = fIdentifier;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param fIdentifier java.lang.String value to set.
+     */
+    @Override
+    public void setIdentifier(java.lang.String fIdentifier) {
+        this.fIdentifier = Text.of(fIdentifier);
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param fIdentifier PropertyValue value to set.
+     */
+    @Override
+    public void setIdentifier(PropertyValue fIdentifier) {
         this.fIdentifier = fIdentifier;
     }
 }

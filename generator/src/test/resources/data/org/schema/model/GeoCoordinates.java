@@ -28,9 +28,24 @@ public interface GeoCoordinates extends StructuredValue {
     /**
      * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
      *
+     * @param fAddressCountry Country value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
-    void setAddressCountry(Object fAddressCountry);
+    void setAddressCountry(Country fAddressCountry);
+    /**
+     * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
+     *
+     * @param fAddressCountry Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    void setAddressCountry(Text fAddressCountry);
+    /**
+     * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
+     *
+     * @param fAddressCountry java.lang.String value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    void setAddressCountry(java.lang.String fAddressCountry);
 
     /**
      * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
@@ -42,8 +57,27 @@ public interface GeoCoordinates extends StructuredValue {
     /**
      * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
      *
+     * @param fLatitude Text value to set.
      */
-    void setLatitude(Object fLatitude);
+    void setLatitude(Text fLatitude);
+    /**
+     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     *
+     * @param fLatitude java.lang.String value to set.
+     */
+    void setLatitude(java.lang.String fLatitude);
+    /**
+     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     *
+     * @param fLatitude Number value to set.
+     */
+    void setLatitude(Number fLatitude);
+    /**
+     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     *
+     * @param fLatitude java.lang.Number value to set.
+     */
+    void setLatitude(java.lang.Number fLatitude);
 
     /**
      * Physical address of the item.
@@ -55,8 +89,21 @@ public interface GeoCoordinates extends StructuredValue {
     /**
      * Physical address of the item.
      *
+     * @param fAddress Text value to set.
      */
-    void setAddress(Object fAddress);
+    void setAddress(Text fAddress);
+    /**
+     * Physical address of the item.
+     *
+     * @param fAddress java.lang.String value to set.
+     */
+    void setAddress(java.lang.String fAddress);
+    /**
+     * Physical address of the item.
+     *
+     * @param fAddress PostalAddress value to set.
+     */
+    void setAddress(PostalAddress fAddress);
 
     /**
      * The postal code. For example, 94043.
@@ -69,9 +116,17 @@ public interface GeoCoordinates extends StructuredValue {
     /**
      * The postal code. For example, 94043.
      *
+     * @param fPostalCode Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
     void setPostalCode(Text fPostalCode);
+    /**
+     * The postal code. For example, 94043.
+     *
+     * @param fPostalCode java.lang.String value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    void setPostalCode(java.lang.String fPostalCode);
 
     /**
      * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
@@ -83,8 +138,27 @@ public interface GeoCoordinates extends StructuredValue {
     /**
      * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
      *
+     * @param fElevation Text value to set.
      */
-    void setElevation(Object fElevation);
+    void setElevation(Text fElevation);
+    /**
+     * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
+     *
+     * @param fElevation java.lang.String value to set.
+     */
+    void setElevation(java.lang.String fElevation);
+    /**
+     * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
+     *
+     * @param fElevation Number value to set.
+     */
+    void setElevation(Number fElevation);
+    /**
+     * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
+     *
+     * @param fElevation java.lang.Number value to set.
+     */
+    void setElevation(java.lang.Number fElevation);
 
     /**
      * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
@@ -96,6 +170,25 @@ public interface GeoCoordinates extends StructuredValue {
     /**
      * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
      *
+     * @param fLongitude Number value to set.
      */
-    void setLongitude(Object fLongitude);
+    void setLongitude(Number fLongitude);
+    /**
+     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     *
+     * @param fLongitude java.lang.Number value to set.
+     */
+    void setLongitude(java.lang.Number fLongitude);
+    /**
+     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     *
+     * @param fLongitude Text value to set.
+     */
+    void setLongitude(Text fLongitude);
+    /**
+     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     *
+     * @param fLongitude java.lang.String value to set.
+     */
+    void setLongitude(java.lang.String fLongitude);
 }

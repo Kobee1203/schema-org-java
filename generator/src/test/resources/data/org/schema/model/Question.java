@@ -28,8 +28,15 @@ public interface Question extends Comment {
     /**
      * An answer (possibly one of several, possibly incorrect) to a Question, e.g. on a Question/Answer site.
      *
+     * @param fSuggestedAnswer ItemList value to set.
      */
-    void setSuggestedAnswer(Object fSuggestedAnswer);
+    void setSuggestedAnswer(ItemList fSuggestedAnswer);
+    /**
+     * An answer (possibly one of several, possibly incorrect) to a Question, e.g. on a Question/Answer site.
+     *
+     * @param fSuggestedAnswer Answer value to set.
+     */
+    void setSuggestedAnswer(Answer fSuggestedAnswer);
 
     /**
      * The answer(s) that has been accepted as best, typically on a Question/Answer site. Sites vary in their selection mechanisms, e.g. drawing on community opinion and/or the view of the Question author.
@@ -41,8 +48,15 @@ public interface Question extends Comment {
     /**
      * The answer(s) that has been accepted as best, typically on a Question/Answer site. Sites vary in their selection mechanisms, e.g. drawing on community opinion and/or the view of the Question author.
      *
+     * @param fAcceptedAnswer Answer value to set.
      */
-    void setAcceptedAnswer(Object fAcceptedAnswer);
+    void setAcceptedAnswer(Answer fAcceptedAnswer);
+    /**
+     * The answer(s) that has been accepted as best, typically on a Question/Answer site. Sites vary in their selection mechanisms, e.g. drawing on community opinion and/or the view of the Question author.
+     *
+     * @param fAcceptedAnswer ItemList value to set.
+     */
+    void setAcceptedAnswer(ItemList fAcceptedAnswer);
 
     /**
      * The number of answers this question has received.
@@ -54,8 +68,15 @@ public interface Question extends Comment {
     /**
      * The number of answers this question has received.
      *
+     * @param fAnswerCount Integer value to set.
      */
     void setAnswerCount(Integer fAnswerCount);
+    /**
+     * The number of answers this question has received.
+     *
+     * @param fAnswerCount java.lang.Integer value to set.
+     */
+    void setAnswerCount(java.lang.Integer fAnswerCount);
 
     /**
      * For questions that are part of learning resources (e.g. Quiz), eduQuestionType indicates the format of question being given. Example: "Multiple choice", "Open ended", "Flashcard".
@@ -69,8 +90,17 @@ public interface Question extends Comment {
     /**
      * For questions that are part of learning resources (e.g. Quiz), eduQuestionType indicates the format of question being given. Example: "Multiple choice", "Open ended", "Flashcard".
      *
+     * @param fEduQuestionType Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2636">https://github.com/schemaorg/schemaorg/issues/2636</a>
      */
     void setEduQuestionType(Text fEduQuestionType);
+    /**
+     * For questions that are part of learning resources (e.g. Quiz), eduQuestionType indicates the format of question being given. Example: "Multiple choice", "Open ended", "Flashcard".
+     *
+     * @param fEduQuestionType java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2636">https://github.com/schemaorg/schemaorg/issues/2636</a>
+     */
+    void setEduQuestionType(java.lang.String fEduQuestionType);
 }

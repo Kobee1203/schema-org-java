@@ -11,11 +11,15 @@ import {{this}};
 public interface {{this.name}} extends {{#if this.parents}}{{#each this.parents}}{{this.name}}{{#not @last}}, {{/not}}{{/each}}{{else}}{{this.baseParent.interfaceClassName}}{{/if}} {
 {{#each this.properties}}
 
+{{#with this.accessor}}
     {{> templates/fragment/javadoc_getter}}
-    {{&this.returnFieldType}} get{{capitalizeFirst this.name}}();
+    {{&this.returnFieldType}} {{this.methodName}}();
+{{/with}}
 
+{{#each this.mutators}}
     {{> templates/fragment/javadoc_setter}}
-    void set{{capitalizeFirst this.name}}({{&this.paramFieldType}} {{this.fieldName}});
+    void {{this.methodName}}({{&this.paramType}} {{../this.field.fieldName}});
+{{/each}}
 {{/each}}
 }
 {{/with}}

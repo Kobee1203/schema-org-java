@@ -28,9 +28,17 @@ public interface Diet extends LifestyleModification, CreativeWork {
     /**
      * Medical expert advice related to the plan.
      *
+     * @param fExpertConsiderations Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setExpertConsiderations(Text fExpertConsiderations);
+    /**
+     * Medical expert advice related to the plan.
+     *
+     * @param fExpertConsiderations java.lang.String value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setExpertConsiderations(java.lang.String fExpertConsiderations);
 
     /**
      * Specific physiologic risks associated to the diet plan.
@@ -43,9 +51,17 @@ public interface Diet extends LifestyleModification, CreativeWork {
     /**
      * Specific physiologic risks associated to the diet plan.
      *
+     * @param fRisks Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setRisks(Text fRisks);
+    /**
+     * Specific physiologic risks associated to the diet plan.
+     *
+     * @param fRisks java.lang.String value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setRisks(java.lang.String fRisks);
 
     /**
      * Specific physiologic benefits associated to the plan.
@@ -58,9 +74,17 @@ public interface Diet extends LifestyleModification, CreativeWork {
     /**
      * Specific physiologic benefits associated to the plan.
      *
+     * @param fPhysiologicalBenefits Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setPhysiologicalBenefits(Text fPhysiologicalBenefits);
+    /**
+     * Specific physiologic benefits associated to the plan.
+     *
+     * @param fPhysiologicalBenefits java.lang.String value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setPhysiologicalBenefits(java.lang.String fPhysiologicalBenefits);
 
     /**
      * People or organizations that endorse the plan.
@@ -73,9 +97,17 @@ public interface Diet extends LifestyleModification, CreativeWork {
     /**
      * People or organizations that endorse the plan.
      *
+     * @param fEndorsers Person value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setEndorsers(Object fEndorsers);
+    void setEndorsers(Person fEndorsers);
+    /**
+     * People or organizations that endorse the plan.
+     *
+     * @param fEndorsers Organization value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setEndorsers(Organization fEndorsers);
 
     /**
      * Nutritional information specific to the dietary plan. May include dietary recommendations on what foods to avoid, what foods to consume, and specific alterations/deviations from the USDA or other regulatory body's approved dietary guidelines.
@@ -88,7 +120,15 @@ public interface Diet extends LifestyleModification, CreativeWork {
     /**
      * Nutritional information specific to the dietary plan. May include dietary recommendations on what foods to avoid, what foods to consume, and specific alterations/deviations from the USDA or other regulatory body's approved dietary guidelines.
      *
+     * @param fDietFeatures Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void setDietFeatures(Text fDietFeatures);
+    /**
+     * Nutritional information specific to the dietary plan. May include dietary recommendations on what foods to avoid, what foods to consume, and specific alterations/deviations from the USDA or other regulatory body's approved dietary guidelines.
+     *
+     * @param fDietFeatures java.lang.String value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setDietFeatures(java.lang.String fDietFeatures);
 }

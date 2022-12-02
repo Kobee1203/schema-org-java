@@ -27,6 +27,7 @@ public interface CookAction extends CreateAction {
     /**
      * A sub property of instrument. The recipe/instructions used to perform the action.
      *
+     * @param fRecipe Recipe value to set.
      */
     void setRecipe(Recipe fRecipe);
 
@@ -40,8 +41,15 @@ public interface CookAction extends CreateAction {
     /**
      * A sub property of location. The specific food establishment where the action occurred.
      *
+     * @param fFoodEstablishment Place value to set.
      */
-    void setFoodEstablishment(Object fFoodEstablishment);
+    void setFoodEstablishment(Place fFoodEstablishment);
+    /**
+     * A sub property of location. The specific food establishment where the action occurred.
+     *
+     * @param fFoodEstablishment FoodEstablishment value to set.
+     */
+    void setFoodEstablishment(FoodEstablishment fFoodEstablishment);
 
     /**
      * A sub property of location. The specific food event where the action occurred.
@@ -53,6 +61,7 @@ public interface CookAction extends CreateAction {
     /**
      * A sub property of location. The specific food event where the action occurred.
      *
+     * @param fFoodEvent FoodEvent value to set.
      */
     void setFoodEvent(FoodEvent fFoodEvent);
 }

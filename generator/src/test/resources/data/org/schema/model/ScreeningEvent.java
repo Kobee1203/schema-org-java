@@ -28,10 +28,27 @@ public interface ScreeningEvent extends Event {
     /**
      * Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).
      *
+     * @param fSubtitleLanguage Language value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2110">https://github.com/schemaorg/schemaorg/issues/2110</a>
      */
-    void setSubtitleLanguage(Object fSubtitleLanguage);
+    void setSubtitleLanguage(Language fSubtitleLanguage);
+    /**
+     * Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).
+     *
+     * @param fSubtitleLanguage Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2110">https://github.com/schemaorg/schemaorg/issues/2110</a>
+     */
+    void setSubtitleLanguage(Text fSubtitleLanguage);
+    /**
+     * Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).
+     *
+     * @param fSubtitleLanguage java.lang.String value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2110">https://github.com/schemaorg/schemaorg/issues/2110</a>
+     */
+    void setSubtitleLanguage(java.lang.String fSubtitleLanguage);
 
     /**
      * The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).
@@ -43,8 +60,15 @@ public interface ScreeningEvent extends Event {
     /**
      * The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).
      *
+     * @param fVideoFormat Text value to set.
      */
     void setVideoFormat(Text fVideoFormat);
+    /**
+     * The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).
+     *
+     * @param fVideoFormat java.lang.String value to set.
+     */
+    void setVideoFormat(java.lang.String fVideoFormat);
 
     /**
      * The movie presented during this event.
@@ -56,6 +80,7 @@ public interface ScreeningEvent extends Event {
     /**
      * The movie presented during this event.
      *
+     * @param fWorkPresented Movie value to set.
      */
     void setWorkPresented(Movie fWorkPresented);
 }

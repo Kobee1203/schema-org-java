@@ -27,6 +27,7 @@ public interface SpeakableSpecification extends Intangible {
     /**
      * A CSS selector, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual "Web page element".
      *
+     * @param fCssSelector CssSelectorType value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1389">https://github.com/schemaorg/schemaorg/issues/1389</a>
      */
     void setCssSelector(CssSelectorType fCssSelector);
@@ -42,6 +43,7 @@ public interface SpeakableSpecification extends Intangible {
     /**
      * An XPath, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual "Web page element".
      *
+     * @param fXpath XPathType value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1389">https://github.com/schemaorg/schemaorg/issues/1389</a>
      */
     void setXpath(XPathType fXpath);

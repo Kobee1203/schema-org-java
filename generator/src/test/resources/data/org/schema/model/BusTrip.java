@@ -26,8 +26,15 @@ public interface BusTrip extends Trip {
     /**
      * The stop or station from which the bus departs.
      *
+     * @param fDepartureBusStop BusStop value to set.
      */
-    void setDepartureBusStop(Object fDepartureBusStop);
+    void setDepartureBusStop(BusStop fDepartureBusStop);
+    /**
+     * The stop or station from which the bus departs.
+     *
+     * @param fDepartureBusStop BusStation value to set.
+     */
+    void setDepartureBusStop(BusStation fDepartureBusStop);
 
     /**
      * The name of the bus (e.g. Bolt Express).
@@ -39,8 +46,15 @@ public interface BusTrip extends Trip {
     /**
      * The name of the bus (e.g. Bolt Express).
      *
+     * @param fBusName Text value to set.
      */
     void setBusName(Text fBusName);
+    /**
+     * The name of the bus (e.g. Bolt Express).
+     *
+     * @param fBusName java.lang.String value to set.
+     */
+    void setBusName(java.lang.String fBusName);
 
     /**
      * The stop or station from which the bus arrives.
@@ -52,8 +66,15 @@ public interface BusTrip extends Trip {
     /**
      * The stop or station from which the bus arrives.
      *
+     * @param fArrivalBusStop BusStation value to set.
      */
-    void setArrivalBusStop(Object fArrivalBusStop);
+    void setArrivalBusStop(BusStation fArrivalBusStop);
+    /**
+     * The stop or station from which the bus arrives.
+     *
+     * @param fArrivalBusStop BusStop value to set.
+     */
+    void setArrivalBusStop(BusStop fArrivalBusStop);
 
     /**
      * The unique identifier for the bus.
@@ -65,6 +86,13 @@ public interface BusTrip extends Trip {
     /**
      * The unique identifier for the bus.
      *
+     * @param fBusNumber Text value to set.
      */
     void setBusNumber(Text fBusNumber);
+    /**
+     * The unique identifier for the bus.
+     *
+     * @param fBusNumber java.lang.String value to set.
+     */
+    void setBusNumber(java.lang.String fBusNumber);
 }
