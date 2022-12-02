@@ -1,6 +1,7 @@
-package com.weedow.schemaorg.serializer;
+package com.weedow.schemaorg.serializer.serialization;
 
 import com.weedow.schemaorg.commons.model.JsonLdNode;
+import com.weedow.schemaorg.serializer.JsonLdException;
 
 import java.util.List;
 
@@ -46,8 +47,10 @@ public interface JsonLdSerializer extends Serializer<JsonLdNode> {
      * Serializes one schema.org object.
      *
      * @param object schema.org object to serialize
-     * @return A String representing the given serialized schema.org object
+     * @return A String representing the given serialized schema.org object.
+     * @throws JsonLdException if the object cannot be serialized to JSON-LD.
      */
+    @Override
     String serialize(JsonLdNode object) throws JsonLdException;
 
     /**
@@ -55,6 +58,7 @@ public interface JsonLdSerializer extends Serializer<JsonLdNode> {
      *
      * @param objects schema.org object to serialize
      * @return A String representing the given serialized schema.org objects
+     * @throws JsonLdException if the list cannot be serialized to JSON-LD.
      */
     String serialize(List<? extends JsonLdNode> objects) throws JsonLdException;
 }

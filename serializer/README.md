@@ -42,76 +42,76 @@ Add the serializer module and the [Maven Plugin](#Maven-Plugin) to serialize/des
 ### <a name="Serialization">Serialization</a>
 
 ```java
-import com.weedow.schemaorg.serializer.JsonLdSerializer;
-import com.weedow.schemaorg.serializer.JsonLdSerializerImpl;
+import com.weedow.schemaorg.serializer.serialization.JsonLdSerializer;
+import com.weedow.schemaorg.serializer.serialization.JsonLdSerializerImpl;
 import org.schema.model.Thing;
 import org.schema.model.impl.ThingImpl;
 
 final class SerializerUtils {
 
-  private SerializerUtils() {
-  }
-
-  public static String serialize() {
-    final JsonLdSerializer jsonLdSerializer = new JsonLdSerializerImpl();
-
-    Thing thing = new ThingImpl();
-    thing.setId("my_id");
-    thing.setName(Text.of("My Thing"));
-    thing.setDescription(Text.of("This is my thing."));
-    thing.setUrl(URL.of(new java.net.URL("https://github.com/Kobee1203/schema-org-java")));
-
-    String result = null;
-    try {
-      result = jsonLdSerializer.serialize(thing);
-    } catch (JsonLdException e) {
-      // Errors related to JSON-LD serializer
+    private SerializerUtils() {
     }
-    return result;
-  }
+
+    public static String serialize() {
+        final JsonLdSerializer jsonLdSerializer = new JsonLdSerializerImpl();
+
+        Thing thing = new ThingImpl();
+        thing.setId("my_id");
+        thing.setName(Text.of("My Thing"));
+        thing.setDescription(Text.of("This is my thing."));
+        thing.setUrl(URL.of(new java.net.URL("https://github.com/Kobee1203/schema-org-java")));
+
+        String result = null;
+        try {
+            result = jsonLdSerializer.serialize(thing);
+        } catch (JsonLdException e) {
+            // Errors related to JSON-LD serializer
+        }
+        return result;
+    }
 }
 ```
 
 This example will give the following result:
 
 ```json
-{"@context":"https://schema.org","@id":"my_id","@type":"schema:Thing","description":"This is my thing.","name":"My Thing","url":"https://github.com/Kobee1203/schema-org-java"}
+{"@context":"https://schema.org","@id":"my_id","@type":"Thing","description":"This is my thing.","name":"My Thing","url":"https://github.com/Kobee1203/schema-org-java"}
 ```
 
 There is another constructor that receives options as parameters.\
 Here is an example to serialize the Schema.org object with a pretty printed result:
 
 ```java
-import com.weedow.schemaorg.serializer.JsonLdSerializer;
-import com.weedow.schemaorg.serializer.JsonLdSerializerImpl;
+import com.weedow.schemaorg.serializer.serialization.JsonLdSerializer;
+import com.weedow.schemaorg.serializer.serialization.JsonLdSerializerImpl;
 import org.schema.model.Thing;
 import org.schema.model.impl.ThingImpl;
 
 final class SerializerUtils {
 
-  private SerializerUtils() {
-  }
-
-  public static String serialize() {
-    JsonLdSerializerOptions options = JsonLdSerializerOptions.builder()
-            .prettyPrint(true)
-            .build();
-    final JsonLdSerializer jsonLdSerializer = new JsonLdSerializerImpl(options);
-
-    Thing thing = new ThingImpl();
-    thing.setId("my_id");
-    thing.setName(Text.of("My Thing"));
-    thing.setDescription(Text.of("This is my thing."));
-    thing.setUrl(URL.of(new java.net.URL("https://github.com/Kobee1203/schema-org-java")));
-
-    String result = null;
-    try {
-      result = jsonLdSerializer.serialize(thing);
-    } catch (JsonLdException e) {
-      // Errors related to JSON-LD serializer
+    private SerializerUtils() {
     }
-    return result;
-  }
+
+    public static String serialize() {
+        JsonLdSerializerOptions options = JsonLdSerializerOptions.builder()
+                .prettyPrint(true)
+                .build();
+        final JsonLdSerializer jsonLdSerializer = new JsonLdSerializerImpl(options);
+
+        Thing thing = new ThingImpl();
+        thing.setId("my_id");
+        thing.setName(Text.of("My Thing"));
+        thing.setDescription(Text.of("This is my thing."));
+        thing.setUrl(URL.of(new java.net.URL("https://github.com/Kobee1203/schema-org-java")));
+
+        String result = null;
+        try {
+            result = jsonLdSerializer.serialize(thing);
+        } catch (JsonLdException e) {
+            // Errors related to JSON-LD serializer
+        }
+        return result;
+    }
 }
 ```
 
@@ -121,7 +121,7 @@ This example will give the following result:
 {
   "@context" : "https://schema.org",
   "@id" : "my_id",
-  "@type" : "schema:Thing",
+  "@type" : "Thing",
   "description" : "This is my thing.",
   "name" : "My Thing",
   "url" : "https://github.com/Kobee1203/schema-org-java"

@@ -10,7 +10,7 @@ import org.schema.model.datatype.Number;
 import org.schema.model.datatype.*;
 
 @Data
-@JsonLdTypeName("schema:Example")
+@JsonLdTypeName("Example")
 public class Example extends JsonLdNodeImpl {
 
     private Boolean bool;

@@ -1,10 +1,12 @@
-package com.weedow.schemaorg.serializer;
+package com.weedow.schemaorg.serializer.serialization;
 
 import com.adelean.inject.resources.junit.jupiter.GivenTextResource;
 import com.adelean.inject.resources.junit.jupiter.TestWithResources;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.weedow.schemaorg.commons.model.JsonLdNode;
 import com.weedow.schemaorg.commons.model.JsonLdNodeImpl;
+import com.weedow.schemaorg.serializer.JsonLdException;
+import com.weedow.schemaorg.serializer.JsonLdSerializerOptions;
 import com.weedow.schemaorg.serializer.data.Example;
 import com.weedow.schemaorg.serializer.data.InvalidData;
 import org.assertj.core.api.Assertions;
@@ -146,7 +148,7 @@ class JsonLdSerializerImplTest {
         InvalidData invalidData = new InvalidData();
         Assertions.assertThatThrownBy(() -> jsonLdSerializer.serialize(invalidData))
                 .isInstanceOf(JsonLdException.class)
-                .hasMessage("JSON-LD serialize internal error for type schema:InvalidData.")
+                .hasMessage("JSON-LD serialization internal error for type InvalidData.")
                 .hasCauseInstanceOf(JsonMappingException.class)
                 //.hasMessage("Unexpected error (through reference chain: com.weedow.schemaorg.serializer.data.InvalidData[\"text\"])")
                 .hasRootCauseInstanceOf(RuntimeException.class)
@@ -205,7 +207,7 @@ class JsonLdSerializerImplTest {
         InvalidData invalidData = new InvalidData();
         Assertions.assertThatThrownBy(() -> jsonLdSerializer.serialize(Arrays.asList(invalidData, invalidData)))
                 .isInstanceOf(JsonLdException.class)
-                .hasMessage("JSON-LD serialize internal error for type schema:InvalidData.")
+                .hasMessage("JSON-LD serialization internal error for type InvalidData.")
                 .hasCauseInstanceOf(JsonMappingException.class)
                 //.hasMessage("Unexpected error (through reference chain: com.weedow.schemaorg.serializer.data.InvalidData[\"text\"])")
                 .hasRootCauseInstanceOf(RuntimeException.class)

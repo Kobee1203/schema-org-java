@@ -1,6 +1,6 @@
 {
   "@context" : "https://schema.org",
-  "@type" : "schema:Example",
+  "@type" : "Example",
   "afloat" : 12345.67,
   "bool" : true,
   "cssSelectorType" : ".css-selector-type",

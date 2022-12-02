@@ -6,7 +6,7 @@ import lombok.Data;
 import org.schema.model.datatype.Text;
 
 @Data
-@JsonLdTypeName("schema:InvalidData")
+@JsonLdTypeName("InvalidData")
 public class InvalidData extends JsonLdNodeImpl {
 
     private Text text;

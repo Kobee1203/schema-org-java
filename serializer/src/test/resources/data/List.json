@@ -2,14 +2,14 @@
   {
     "@context" : "https://schema.org",
     "@id" : "my_id",
-    "@type" : "schema:Thing",
+    "@type" : "Thing",
     "description" : "This is my thing.",
     "name" : "My Thing",
     "url" : "https://github.com/Kobee1203/schema-org-java"
   },
   {
     "@context" : "https://schema.org",
-    "@type" : "schema:Example",
+    "@type" : "Example",
     "afloat" : 12345.67,
     "bool" : true,
     "cssSelectorType" : ".css-selector-type",

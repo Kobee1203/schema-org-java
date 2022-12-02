@@ -1,4 +1,6 @@
-package com.weedow.schemaorg.serializer;
+package com.weedow.schemaorg.serializer.serialization;
+
+import com.weedow.schemaorg.serializer.SerializerException;
 
 /**
  * Serialize an object of type {@code T} to a String.
@@ -18,7 +20,8 @@ public interface Serializer<T> {
      * Serializes an object to a {@link String}.
      *
      * @param object Object to serialize
-     * @return A String representing the given serialized object
+     * @return A String representing the given serialized object.
+     * @throws SerializerException if the object cannot be serialized.
      */
     String serialize(T object) throws SerializerException;
 

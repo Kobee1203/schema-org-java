@@ -108,27 +108,8 @@
                             <goal>generate</goal>
                         </goals>
                         <configuration>
-                            <addCompileSourceRoot>false</addCompileSourceRoot>
+                            <sourcesAndResourcesProcessing>TEST_SOURCES_AND_RESOURCES</sourcesAndResourcesProcessing>
                             <output>${project.build.directory}/generated-test-sources/schemaorg</output>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>build-helper-maven-plugin</artifactId>
-                <version>${build-helper-maven-plugin.version}</version>
-                <executions>
-                    <execution>
-                        <id>add-test-sources</id>
-                        <phase>generate-test-sources</phase>
-                        <goals>
-                            <goal>add-test-source</goal>
-                        </goals>
-                        <configuration>
-                            <sources>
-                                <source>${project.build.directory}/generated-test-sources/schemaorg</source>
-                            </sources>
                         </configuration>
                     </execution>
                 </executions>
