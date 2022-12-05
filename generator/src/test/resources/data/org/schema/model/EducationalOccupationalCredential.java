@@ -32,10 +32,10 @@ public interface EducationalOccupationalCredential extends CreativeWork {
     /**
      * The duration of validity of a permit or similar thing.
      *
-     * @param fValidFor Duration value to set.
+     * @param validFor Duration value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    void setValidFor(Duration fValidFor);
+    void setValidFor(Duration validFor);
 
     /**
      * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
@@ -49,43 +49,27 @@ public interface EducationalOccupationalCredential extends CreativeWork {
     /**
      * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
      *
-     * @param fEducationalLevel URL value to set.
+     * @param educationalLevel URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    void setEducationalLevel(URL fEducationalLevel);
+    void setEducationalLevel(URL educationalLevel);
     /**
      * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
      *
-     * @param fEducationalLevel java.net.URL value to set.
+     * @param educationalLevel DefinedTerm value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    void setEducationalLevel(java.net.URL fEducationalLevel);
+    void setEducationalLevel(DefinedTerm educationalLevel);
     /**
      * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
      *
-     * @param fEducationalLevel DefinedTerm value to set.
+     * @param educationalLevel Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    void setEducationalLevel(DefinedTerm fEducationalLevel);
-    /**
-     * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
-     *
-     * @param fEducationalLevel Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
-     */
-    void setEducationalLevel(Text fEducationalLevel);
-    /**
-     * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
-     *
-     * @param fEducationalLevel java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
-     */
-    void setEducationalLevel(java.lang.String fEducationalLevel);
+    void setEducationalLevel(Text educationalLevel);
 
     /**
      * The category or type of credential being described, for example "degree”, “certificate”, “badge”, or more specific term.
@@ -99,43 +83,27 @@ public interface EducationalOccupationalCredential extends CreativeWork {
     /**
      * The category or type of credential being described, for example "degree”, “certificate”, “badge”, or more specific term.
      *
-     * @param fCredentialCategory URL value to set.
+     * @param credentialCategory URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    void setCredentialCategory(URL fCredentialCategory);
+    void setCredentialCategory(URL credentialCategory);
     /**
      * The category or type of credential being described, for example "degree”, “certificate”, “badge”, or more specific term.
      *
-     * @param fCredentialCategory java.net.URL value to set.
+     * @param credentialCategory DefinedTerm value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    void setCredentialCategory(java.net.URL fCredentialCategory);
+    void setCredentialCategory(DefinedTerm credentialCategory);
     /**
      * The category or type of credential being described, for example "degree”, “certificate”, “badge”, or more specific term.
      *
-     * @param fCredentialCategory DefinedTerm value to set.
+     * @param credentialCategory Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    void setCredentialCategory(DefinedTerm fCredentialCategory);
-    /**
-     * The category or type of credential being described, for example "degree”, “certificate”, “badge”, or more specific term.
-     *
-     * @param fCredentialCategory Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
-     */
-    void setCredentialCategory(Text fCredentialCategory);
-    /**
-     * The category or type of credential being described, for example "degree”, “certificate”, “badge”, or more specific term.
-     *
-     * @param fCredentialCategory java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
-     */
-    void setCredentialCategory(java.lang.String fCredentialCategory);
+    void setCredentialCategory(Text credentialCategory);
 
     /**
      * An organization that acknowledges the validity, value or utility of a credential. Note: recognition may include a process of quality assurance or accreditation.
@@ -149,11 +117,11 @@ public interface EducationalOccupationalCredential extends CreativeWork {
     /**
      * An organization that acknowledges the validity, value or utility of a credential. Note: recognition may include a process of quality assurance or accreditation.
      *
-     * @param fRecognizedBy Organization value to set.
+     * @param recognizedBy Organization value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    void setRecognizedBy(Organization fRecognizedBy);
+    void setRecognizedBy(Organization recognizedBy);
 
     /**
      * Knowledge, skill, ability or personal attribute that must be demonstrated by a person or other entity in order to do something such as earn an Educational Occupational Credential or understand a LearningResource.
@@ -167,43 +135,27 @@ public interface EducationalOccupationalCredential extends CreativeWork {
     /**
      * Knowledge, skill, ability or personal attribute that must be demonstrated by a person or other entity in order to do something such as earn an Educational Occupational Credential or understand a LearningResource.
      *
-     * @param fCompetencyRequired Text value to set.
+     * @param competencyRequired Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    void setCompetencyRequired(Text fCompetencyRequired);
+    void setCompetencyRequired(Text competencyRequired);
     /**
      * Knowledge, skill, ability or personal attribute that must be demonstrated by a person or other entity in order to do something such as earn an Educational Occupational Credential or understand a LearningResource.
      *
-     * @param fCompetencyRequired java.lang.String value to set.
+     * @param competencyRequired DefinedTerm value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    void setCompetencyRequired(java.lang.String fCompetencyRequired);
+    void setCompetencyRequired(DefinedTerm competencyRequired);
     /**
      * Knowledge, skill, ability or personal attribute that must be demonstrated by a person or other entity in order to do something such as earn an Educational Occupational Credential or understand a LearningResource.
      *
-     * @param fCompetencyRequired DefinedTerm value to set.
+     * @param competencyRequired URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    void setCompetencyRequired(DefinedTerm fCompetencyRequired);
-    /**
-     * Knowledge, skill, ability or personal attribute that must be demonstrated by a person or other entity in order to do something such as earn an Educational Occupational Credential or understand a LearningResource.
-     *
-     * @param fCompetencyRequired URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
-     */
-    void setCompetencyRequired(URL fCompetencyRequired);
-    /**
-     * Knowledge, skill, ability or personal attribute that must be demonstrated by a person or other entity in order to do something such as earn an Educational Occupational Credential or understand a LearningResource.
-     *
-     * @param fCompetencyRequired java.net.URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
-     */
-    void setCompetencyRequired(java.net.URL fCompetencyRequired);
+    void setCompetencyRequired(URL competencyRequired);
 
     /**
      * The geographic area where a permit or similar thing is valid.
@@ -216,8 +168,8 @@ public interface EducationalOccupationalCredential extends CreativeWork {
     /**
      * The geographic area where a permit or similar thing is valid.
      *
-     * @param fValidIn AdministrativeArea value to set.
+     * @param validIn AdministrativeArea value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    void setValidIn(AdministrativeArea fValidIn);
+    void setValidIn(AdministrativeArea validIn);
 }

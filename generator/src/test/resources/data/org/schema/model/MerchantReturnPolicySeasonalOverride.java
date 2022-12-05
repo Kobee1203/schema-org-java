@@ -31,11 +31,11 @@ public interface MerchantReturnPolicySeasonalOverride extends Intangible {
     /**
      * Specifies an applicable return policy (from an enumeration).
      *
-     * @param fReturnPolicyCategory MerchantReturnEnumeration value to set.
+     * @param returnPolicyCategory MerchantReturnEnumeration value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
      */
-    void setReturnPolicyCategory(MerchantReturnEnumeration fReturnPolicyCategory);
+    void setReturnPolicyCategory(MerchantReturnEnumeration returnPolicyCategory);
 
     /**
      * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
@@ -48,31 +48,17 @@ public interface MerchantReturnPolicySeasonalOverride extends Intangible {
     /**
      * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
      *
-     * @param fStartDate DateTime value to set.
+     * @param startDate DateTime value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
-    void setStartDate(DateTime fStartDate);
+    void setStartDate(DateTime startDate);
     /**
      * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
      *
-     * @param fStartDate java.time.LocalDateTime value to set.
+     * @param startDate Date value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
-    void setStartDate(java.time.LocalDateTime fStartDate);
-    /**
-     * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
-     *
-     * @param fStartDate Date value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
-     */
-    void setStartDate(Date fStartDate);
-    /**
-     * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
-     *
-     * @param fStartDate java.time.LocalDate value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
-     */
-    void setStartDate(java.time.LocalDate fStartDate);
+    void setStartDate(Date startDate);
 
     /**
      * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
@@ -85,31 +71,17 @@ public interface MerchantReturnPolicySeasonalOverride extends Intangible {
     /**
      * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
      *
-     * @param fEndDate Date value to set.
+     * @param endDate Date value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
-    void setEndDate(Date fEndDate);
+    void setEndDate(Date endDate);
     /**
      * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
      *
-     * @param fEndDate java.time.LocalDate value to set.
+     * @param endDate DateTime value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
-    void setEndDate(java.time.LocalDate fEndDate);
-    /**
-     * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
-     *
-     * @param fEndDate DateTime value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
-     */
-    void setEndDate(DateTime fEndDate);
-    /**
-     * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
-     *
-     * @param fEndDate java.time.LocalDateTime value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
-     */
-    void setEndDate(java.time.LocalDateTime fEndDate);
+    void setEndDate(DateTime endDate);
 
     /**
      * Specifies either a fixed return date or the number of days (from the delivery date) that a product can be returned. Used when the [[returnPolicyCategory]] property is specified as [[MerchantReturnFiniteReturnWindow]].
@@ -123,49 +95,25 @@ public interface MerchantReturnPolicySeasonalOverride extends Intangible {
     /**
      * Specifies either a fixed return date or the number of days (from the delivery date) that a product can be returned. Used when the [[returnPolicyCategory]] property is specified as [[MerchantReturnFiniteReturnWindow]].
      *
-     * @param fMerchantReturnDays DateTime value to set.
+     * @param merchantReturnDays DateTime value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
      */
-    void setMerchantReturnDays(DateTime fMerchantReturnDays);
+    void setMerchantReturnDays(DateTime merchantReturnDays);
     /**
      * Specifies either a fixed return date or the number of days (from the delivery date) that a product can be returned. Used when the [[returnPolicyCategory]] property is specified as [[MerchantReturnFiniteReturnWindow]].
      *
-     * @param fMerchantReturnDays java.time.LocalDateTime value to set.
+     * @param merchantReturnDays Integer value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
      */
-    void setMerchantReturnDays(java.time.LocalDateTime fMerchantReturnDays);
+    void setMerchantReturnDays(Integer merchantReturnDays);
     /**
      * Specifies either a fixed return date or the number of days (from the delivery date) that a product can be returned. Used when the [[returnPolicyCategory]] property is specified as [[MerchantReturnFiniteReturnWindow]].
      *
-     * @param fMerchantReturnDays Integer value to set.
+     * @param merchantReturnDays Date value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
      */
-    void setMerchantReturnDays(Integer fMerchantReturnDays);
-    /**
-     * Specifies either a fixed return date or the number of days (from the delivery date) that a product can be returned. Used when the [[returnPolicyCategory]] property is specified as [[MerchantReturnFiniteReturnWindow]].
-     *
-     * @param fMerchantReturnDays java.lang.Integer value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    void setMerchantReturnDays(java.lang.Integer fMerchantReturnDays);
-    /**
-     * Specifies either a fixed return date or the number of days (from the delivery date) that a product can be returned. Used when the [[returnPolicyCategory]] property is specified as [[MerchantReturnFiniteReturnWindow]].
-     *
-     * @param fMerchantReturnDays Date value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    void setMerchantReturnDays(Date fMerchantReturnDays);
-    /**
-     * Specifies either a fixed return date or the number of days (from the delivery date) that a product can be returned. Used when the [[returnPolicyCategory]] property is specified as [[MerchantReturnFiniteReturnWindow]].
-     *
-     * @param fMerchantReturnDays java.time.LocalDate value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    void setMerchantReturnDays(java.time.LocalDate fMerchantReturnDays);
+    void setMerchantReturnDays(Date merchantReturnDays);
 }

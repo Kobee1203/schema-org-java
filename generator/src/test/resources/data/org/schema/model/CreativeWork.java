@@ -66,27 +66,19 @@ public interface CreativeWork extends Thing {
     /**
      * The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.
      *
-     * @param fTeaches DefinedTerm value to set.
+     * @param teaches DefinedTerm value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
      */
-    void setTeaches(DefinedTerm fTeaches);
+    void setTeaches(DefinedTerm teaches);
     /**
      * The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.
      *
-     * @param fTeaches Text value to set.
+     * @param teaches Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
      */
-    void setTeaches(Text fTeaches);
-    /**
-     * The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.
-     *
-     * @param fTeaches java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
-     */
-    void setTeaches(java.lang.String fTeaches);
+    void setTeaches(Text teaches);
 
     /**
      * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
@@ -100,43 +92,27 @@ public interface CreativeWork extends Thing {
     /**
      * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
      *
-     * @param fEducationalLevel URL value to set.
+     * @param educationalLevel URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    void setEducationalLevel(URL fEducationalLevel);
+    void setEducationalLevel(URL educationalLevel);
     /**
      * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
      *
-     * @param fEducationalLevel java.net.URL value to set.
+     * @param educationalLevel DefinedTerm value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    void setEducationalLevel(java.net.URL fEducationalLevel);
+    void setEducationalLevel(DefinedTerm educationalLevel);
     /**
      * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
      *
-     * @param fEducationalLevel DefinedTerm value to set.
+     * @param educationalLevel Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    void setEducationalLevel(DefinedTerm fEducationalLevel);
-    /**
-     * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
-     *
-     * @param fEducationalLevel Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
-     */
-    void setEducationalLevel(Text fEducationalLevel);
-    /**
-     * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
-     *
-     * @param fEducationalLevel java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
-     */
-    void setEducationalLevel(java.lang.String fEducationalLevel);
+    void setEducationalLevel(Text educationalLevel);
 
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
@@ -150,19 +126,11 @@ public interface CreativeWork extends Thing {
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      *
-     * @param fAbstract Text value to set.
+     * @param abstract_ Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/276">https://github.com/schemaorg/schemaorg/issues/276</a>
      */
-    void setAbstract(Text fAbstract);
-    /**
-     * An abstract is a short description that summarizes a [[CreativeWork]].
-     *
-     * @param fAbstract java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/276">https://github.com/schemaorg/schemaorg/issues/276</a>
-     */
-    void setAbstract(java.lang.String fAbstract);
+    void setAbstract(Text abstract_);
 
     /**
      * The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle.
@@ -176,27 +144,19 @@ public interface CreativeWork extends Thing {
     /**
      * The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle.
      *
-     * @param fCreativeWorkStatus Text value to set.
+     * @param creativeWorkStatus Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/987">https://github.com/schemaorg/schemaorg/issues/987</a>
      */
-    void setCreativeWorkStatus(Text fCreativeWorkStatus);
+    void setCreativeWorkStatus(Text creativeWorkStatus);
     /**
      * The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle.
      *
-     * @param fCreativeWorkStatus java.lang.String value to set.
+     * @param creativeWorkStatus DefinedTerm value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/987">https://github.com/schemaorg/schemaorg/issues/987</a>
      */
-    void setCreativeWorkStatus(java.lang.String fCreativeWorkStatus);
-    /**
-     * The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle.
-     *
-     * @param fCreativeWorkStatus DefinedTerm value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/987">https://github.com/schemaorg/schemaorg/issues/987</a>
-     */
-    void setCreativeWorkStatus(DefinedTerm fCreativeWorkStatus);
+    void setCreativeWorkStatus(DefinedTerm creativeWorkStatus);
 
     /**
      * Date the content expires and is no longer useful or available. For example a [[VideoObject]] or [[NewsArticle]] whose availability or relevance is time-limited, or a [[ClaimReview]] fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date.
@@ -208,15 +168,9 @@ public interface CreativeWork extends Thing {
     /**
      * Date the content expires and is no longer useful or available. For example a [[VideoObject]] or [[NewsArticle]] whose availability or relevance is time-limited, or a [[ClaimReview]] fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date.
      *
-     * @param fExpires Date value to set.
+     * @param expires Date value to set.
      */
-    void setExpires(Date fExpires);
-    /**
-     * Date the content expires and is no longer useful or available. For example a [[VideoObject]] or [[NewsArticle]] whose availability or relevance is time-limited, or a [[ClaimReview]] fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date.
-     *
-     * @param fExpires java.time.LocalDate value to set.
-     */
-    void setExpires(java.time.LocalDate fExpires);
+    void setExpires(Date expires);
 
     /**
      * The specific time described by a creative work, for works (e.g. articles, video objects etc.) that emphasise a particular moment within an Event.
@@ -230,19 +184,11 @@ public interface CreativeWork extends Thing {
     /**
      * The specific time described by a creative work, for works (e.g. articles, video objects etc.) that emphasise a particular moment within an Event.
      *
-     * @param fContentReferenceTime DateTime value to set.
+     * @param contentReferenceTime DateTime value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1050">https://github.com/schemaorg/schemaorg/issues/1050</a>
      */
-    void setContentReferenceTime(DateTime fContentReferenceTime);
-    /**
-     * The specific time described by a creative work, for works (e.g. articles, video objects etc.) that emphasise a particular moment within an Event.
-     *
-     * @param fContentReferenceTime java.time.LocalDateTime value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1050">https://github.com/schemaorg/schemaorg/issues/1050</a>
-     */
-    void setContentReferenceTime(java.time.LocalDateTime fContentReferenceTime);
+    void setContentReferenceTime(DateTime contentReferenceTime);
 
     /**
      * A material that something is made from, e.g. leather, wool, cotton, paper.
@@ -254,33 +200,21 @@ public interface CreativeWork extends Thing {
     /**
      * A material that something is made from, e.g. leather, wool, cotton, paper.
      *
-     * @param fMaterial Text value to set.
+     * @param material Text value to set.
      */
-    void setMaterial(Text fMaterial);
+    void setMaterial(Text material);
     /**
      * A material that something is made from, e.g. leather, wool, cotton, paper.
      *
-     * @param fMaterial java.lang.String value to set.
+     * @param material URL value to set.
      */
-    void setMaterial(java.lang.String fMaterial);
+    void setMaterial(URL material);
     /**
      * A material that something is made from, e.g. leather, wool, cotton, paper.
      *
-     * @param fMaterial URL value to set.
+     * @param material Product value to set.
      */
-    void setMaterial(URL fMaterial);
-    /**
-     * A material that something is made from, e.g. leather, wool, cotton, paper.
-     *
-     * @param fMaterial java.net.URL value to set.
-     */
-    void setMaterial(java.net.URL fMaterial);
-    /**
-     * A material that something is made from, e.g. leather, wool, cotton, paper.
-     *
-     * @param fMaterial Product value to set.
-     */
-    void setMaterial(Product fMaterial);
+    void setMaterial(Product material);
 
     /**
      * A review of the item.
@@ -292,9 +226,9 @@ public interface CreativeWork extends Thing {
     /**
      * A review of the item.
      *
-     * @param fReview Review value to set.
+     * @param review Review value to set.
      */
-    void setReview(Review fReview);
+    void setReview(Review review);
 
     /**
      * Media type, typically MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml)) of the content e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.
@@ -306,27 +240,15 @@ public interface CreativeWork extends Thing {
     /**
      * Media type, typically MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml)) of the content e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.
      *
-     * @param fFileFormat URL value to set.
+     * @param fileFormat URL value to set.
      */
-    void setFileFormat(URL fFileFormat);
+    void setFileFormat(URL fileFormat);
     /**
      * Media type, typically MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml)) of the content e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.
      *
-     * @param fFileFormat java.net.URL value to set.
+     * @param fileFormat Text value to set.
      */
-    void setFileFormat(java.net.URL fFileFormat);
-    /**
-     * Media type, typically MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml)) of the content e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.
-     *
-     * @param fFileFormat Text value to set.
-     */
-    void setFileFormat(Text fFileFormat);
-    /**
-     * Media type, typically MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml)) of the content e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.
-     *
-     * @param fFileFormat java.lang.String value to set.
-     */
-    void setFileFormat(java.lang.String fFileFormat);
+    void setFileFormat(Text fileFormat);
 
     /**
      * The textual content of this CreativeWork.
@@ -338,15 +260,9 @@ public interface CreativeWork extends Thing {
     /**
      * The textual content of this CreativeWork.
      *
-     * @param fText Text value to set.
+     * @param text Text value to set.
      */
-    void setText(Text fText);
-    /**
-     * The textual content of this CreativeWork.
-     *
-     * @param fText java.lang.String value to set.
-     */
-    void setText(java.lang.String fText);
+    void setText(Text text);
 
     /**
      * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
@@ -358,15 +274,15 @@ public interface CreativeWork extends Thing {
     /**
      * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
      *
-     * @param fTranslator Person value to set.
+     * @param translator Person value to set.
      */
-    void setTranslator(Person fTranslator);
+    void setTranslator(Person translator);
     /**
      * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
      *
-     * @param fTranslator Organization value to set.
+     * @param translator Organization value to set.
      */
-    void setTranslator(Organization fTranslator);
+    void setTranslator(Organization translator);
 
     /**
      * An award won by or for this item.
@@ -378,15 +294,9 @@ public interface CreativeWork extends Thing {
     /**
      * An award won by or for this item.
      *
-     * @param fAward Text value to set.
+     * @param award Text value to set.
      */
-    void setAward(Text fAward);
-    /**
-     * An award won by or for this item.
-     *
-     * @param fAward java.lang.String value to set.
-     */
-    void setAward(java.lang.String fAward);
+    void setAward(Text award);
 
     /**
      * The item being described is intended to assess the competency or learning outcome defined by the referenced term.
@@ -400,27 +310,19 @@ public interface CreativeWork extends Thing {
     /**
      * The item being described is intended to assess the competency or learning outcome defined by the referenced term.
      *
-     * @param fAssesses Text value to set.
+     * @param assesses Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
      */
-    void setAssesses(Text fAssesses);
+    void setAssesses(Text assesses);
     /**
      * The item being described is intended to assess the competency or learning outcome defined by the referenced term.
      *
-     * @param fAssesses java.lang.String value to set.
+     * @param assesses DefinedTerm value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
      */
-    void setAssesses(java.lang.String fAssesses);
-    /**
-     * The item being described is intended to assess the competency or learning outcome defined by the referenced term.
-     *
-     * @param fAssesses DefinedTerm value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
-     */
-    void setAssesses(DefinedTerm fAssesses);
+    void setAssesses(DefinedTerm assesses);
 
     /**
      * Text of a notice appropriate for describing the copyright aspects of this Creative Work, ideally indicating the owner of the copyright for the Work.
@@ -434,19 +336,11 @@ public interface CreativeWork extends Thing {
     /**
      * Text of a notice appropriate for describing the copyright aspects of this Creative Work, ideally indicating the owner of the copyright for the Work.
      *
-     * @param fCopyrightNotice Text value to set.
+     * @param copyrightNotice Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2659">https://github.com/schemaorg/schemaorg/issues/2659</a>
      */
-    void setCopyrightNotice(Text fCopyrightNotice);
-    /**
-     * Text of a notice appropriate for describing the copyright aspects of this Creative Work, ideally indicating the owner of the copyright for the Work.
-     *
-     * @param fCopyrightNotice java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2659">https://github.com/schemaorg/schemaorg/issues/2659</a>
-     */
-    void setCopyrightNotice(java.lang.String fCopyrightNotice);
+    void setCopyrightNotice(Text copyrightNotice);
 
     /**
      * Indicates (by URL or string) a particular version of a schema used in some CreativeWork. This property was created primarily to
@@ -460,30 +354,16 @@ public interface CreativeWork extends Thing {
      * Indicates (by URL or string) a particular version of a schema used in some CreativeWork. This property was created primarily to
      *     indicate the use of a specific schema.org release, e.g. ```10.0``` as a simple string, or more explicitly via URL, ```https://schema.org/docs/releases.html#v10.0```. There may be situations in which other schemas might usefully be referenced this way, e.g. ```http://dublincore.org/specifications/dublin-core/dces/1999-07-02/``` but this has not been carefully explored in the community.
      *
-     * @param fSchemaVersion Text value to set.
+     * @param schemaVersion Text value to set.
      */
-    void setSchemaVersion(Text fSchemaVersion);
+    void setSchemaVersion(Text schemaVersion);
     /**
      * Indicates (by URL or string) a particular version of a schema used in some CreativeWork. This property was created primarily to
      *     indicate the use of a specific schema.org release, e.g. ```10.0``` as a simple string, or more explicitly via URL, ```https://schema.org/docs/releases.html#v10.0```. There may be situations in which other schemas might usefully be referenced this way, e.g. ```http://dublincore.org/specifications/dublin-core/dces/1999-07-02/``` but this has not been carefully explored in the community.
      *
-     * @param fSchemaVersion java.lang.String value to set.
+     * @param schemaVersion URL value to set.
      */
-    void setSchemaVersion(java.lang.String fSchemaVersion);
-    /**
-     * Indicates (by URL or string) a particular version of a schema used in some CreativeWork. This property was created primarily to
-     *     indicate the use of a specific schema.org release, e.g. ```10.0``` as a simple string, or more explicitly via URL, ```https://schema.org/docs/releases.html#v10.0```. There may be situations in which other schemas might usefully be referenced this way, e.g. ```http://dublincore.org/specifications/dublin-core/dces/1999-07-02/``` but this has not been carefully explored in the community.
-     *
-     * @param fSchemaVersion URL value to set.
-     */
-    void setSchemaVersion(URL fSchemaVersion);
-    /**
-     * Indicates (by URL or string) a particular version of a schema used in some CreativeWork. This property was created primarily to
-     *     indicate the use of a specific schema.org release, e.g. ```10.0``` as a simple string, or more explicitly via URL, ```https://schema.org/docs/releases.html#v10.0```. There may be situations in which other schemas might usefully be referenced this way, e.g. ```http://dublincore.org/specifications/dublin-core/dces/1999-07-02/``` but this has not been carefully explored in the community.
-     *
-     * @param fSchemaVersion java.net.URL value to set.
-     */
-    void setSchemaVersion(java.net.URL fSchemaVersion);
+    void setSchemaVersion(URL schemaVersion);
 
     /**
      * The country of origin of something, including products as well as creative  works such as movie and TV content.
@@ -503,9 +383,9 @@ public interface CreativeWork extends Thing {
      * 
      * In the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.
      *
-     * @param fCountryOfOrigin Country value to set.
+     * @param countryOfOrigin Country value to set.
      */
-    void setCountryOfOrigin(Country fCountryOfOrigin);
+    void setCountryOfOrigin(Country countryOfOrigin);
 
     /**
      * A pattern that something has, for example 'polka dot', 'striped', 'Canadian flag'. Values are typically expressed as text, although links to controlled value schemes are also supported.
@@ -519,27 +399,19 @@ public interface CreativeWork extends Thing {
     /**
      * A pattern that something has, for example 'polka dot', 'striped', 'Canadian flag'. Values are typically expressed as text, although links to controlled value schemes are also supported.
      *
-     * @param fPattern DefinedTerm value to set.
+     * @param pattern DefinedTerm value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
-    void setPattern(DefinedTerm fPattern);
+    void setPattern(DefinedTerm pattern);
     /**
      * A pattern that something has, for example 'polka dot', 'striped', 'Canadian flag'. Values are typically expressed as text, although links to controlled value schemes are also supported.
      *
-     * @param fPattern Text value to set.
+     * @param pattern Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
-    void setPattern(Text fPattern);
-    /**
-     * A pattern that something has, for example 'polka dot', 'striped', 'Canadian flag'. Values are typically expressed as text, although links to controlled value schemes are also supported.
-     *
-     * @param fPattern java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
-     */
-    void setPattern(java.lang.String fPattern);
+    void setPattern(Text pattern);
 
     /**
      * Specifies the Person that is legally accountable for the CreativeWork.
@@ -551,9 +423,9 @@ public interface CreativeWork extends Thing {
     /**
      * Specifies the Person that is legally accountable for the CreativeWork.
      *
-     * @param fAccountablePerson Person value to set.
+     * @param accountablePerson Person value to set.
      */
-    void setAccountablePerson(Person fAccountablePerson);
+    void setAccountablePerson(Person accountablePerson);
 
     /**
      * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
@@ -568,12 +440,12 @@ public interface CreativeWork extends Thing {
     /**
      * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
      *
-     * @param fFunding Grant value to set.
+     * @param funding Grant value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
-    void setFunding(Grant fFunding);
+    void setFunding(Grant funding);
 
     /**
      * The purpose of a work in the context of education; for example, 'assignment', 'group work'.
@@ -585,21 +457,15 @@ public interface CreativeWork extends Thing {
     /**
      * The purpose of a work in the context of education; for example, 'assignment', 'group work'.
      *
-     * @param fEducationalUse DefinedTerm value to set.
+     * @param educationalUse DefinedTerm value to set.
      */
-    void setEducationalUse(DefinedTerm fEducationalUse);
+    void setEducationalUse(DefinedTerm educationalUse);
     /**
      * The purpose of a work in the context of education; for example, 'assignment', 'group work'.
      *
-     * @param fEducationalUse Text value to set.
+     * @param educationalUse Text value to set.
      */
-    void setEducationalUse(Text fEducationalUse);
-    /**
-     * The purpose of a work in the context of education; for example, 'assignment', 'group work'.
-     *
-     * @param fEducationalUse java.lang.String value to set.
-     */
-    void setEducationalUse(java.lang.String fEducationalUse);
+    void setEducationalUse(Text educationalUse);
 
     /**
      * Genre of the creative work, broadcast channel or group.
@@ -611,27 +477,15 @@ public interface CreativeWork extends Thing {
     /**
      * Genre of the creative work, broadcast channel or group.
      *
-     * @param fGenre URL value to set.
+     * @param genre URL value to set.
      */
-    void setGenre(URL fGenre);
+    void setGenre(URL genre);
     /**
      * Genre of the creative work, broadcast channel or group.
      *
-     * @param fGenre java.net.URL value to set.
+     * @param genre Text value to set.
      */
-    void setGenre(java.net.URL fGenre);
-    /**
-     * Genre of the creative work, broadcast channel or group.
-     *
-     * @param fGenre Text value to set.
-     */
-    void setGenre(Text fGenre);
-    /**
-     * Genre of the creative work, broadcast channel or group.
-     *
-     * @param fGenre java.lang.String value to set.
-     */
-    void setGenre(java.lang.String fGenre);
+    void setGenre(Text genre);
 
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
@@ -643,33 +497,21 @@ public interface CreativeWork extends Thing {
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
      *
-     * @param fKeywords DefinedTerm value to set.
+     * @param keywords DefinedTerm value to set.
      */
-    void setKeywords(DefinedTerm fKeywords);
+    void setKeywords(DefinedTerm keywords);
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
      *
-     * @param fKeywords Text value to set.
+     * @param keywords Text value to set.
      */
-    void setKeywords(Text fKeywords);
+    void setKeywords(Text keywords);
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
      *
-     * @param fKeywords java.lang.String value to set.
+     * @param keywords URL value to set.
      */
-    void setKeywords(java.lang.String fKeywords);
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     * @param fKeywords URL value to set.
-     */
-    void setKeywords(URL fKeywords);
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     * @param fKeywords java.net.URL value to set.
-     */
-    void setKeywords(java.net.URL fKeywords);
+    void setKeywords(URL keywords);
 
     /**
      * The position of an item in a series or sequence of items.
@@ -681,27 +523,15 @@ public interface CreativeWork extends Thing {
     /**
      * The position of an item in a series or sequence of items.
      *
-     * @param fPosition Integer value to set.
+     * @param position Integer value to set.
      */
-    void setPosition(Integer fPosition);
+    void setPosition(Integer position);
     /**
      * The position of an item in a series or sequence of items.
      *
-     * @param fPosition java.lang.Integer value to set.
+     * @param position Text value to set.
      */
-    void setPosition(java.lang.Integer fPosition);
-    /**
-     * The position of an item in a series or sequence of items.
-     *
-     * @param fPosition Text value to set.
-     */
-    void setPosition(Text fPosition);
-    /**
-     * The position of an item in a series or sequence of items.
-     *
-     * @param fPosition java.lang.String value to set.
-     */
-    void setPosition(java.lang.String fPosition);
+    void setPosition(Text position);
 
     /**
      * A characteristic of the described resource that is physiologically dangerous to some users. Related to WCAG 2.0 guideline 2.3. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityHazard-vocabulary).
@@ -713,15 +543,9 @@ public interface CreativeWork extends Thing {
     /**
      * A characteristic of the described resource that is physiologically dangerous to some users. Related to WCAG 2.0 guideline 2.3. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityHazard-vocabulary).
      *
-     * @param fAccessibilityHazard Text value to set.
+     * @param accessibilityHazard Text value to set.
      */
-    void setAccessibilityHazard(Text fAccessibilityHazard);
-    /**
-     * A characteristic of the described resource that is physiologically dangerous to some users. Related to WCAG 2.0 guideline 2.3. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityHazard-vocabulary).
-     *
-     * @param fAccessibilityHazard java.lang.String value to set.
-     */
-    void setAccessibilityHazard(java.lang.String fAccessibilityHazard);
+    void setAccessibilityHazard(Text accessibilityHazard);
 
     /**
      * A secondary title of the CreativeWork.
@@ -733,15 +557,9 @@ public interface CreativeWork extends Thing {
     /**
      * A secondary title of the CreativeWork.
      *
-     * @param fAlternativeHeadline Text value to set.
+     * @param alternativeHeadline Text value to set.
      */
-    void setAlternativeHeadline(Text fAlternativeHeadline);
-    /**
-     * A secondary title of the CreativeWork.
-     *
-     * @param fAlternativeHeadline java.lang.String value to set.
-     */
-    void setAlternativeHeadline(java.lang.String fAlternativeHeadline);
+    void setAlternativeHeadline(Text alternativeHeadline);
 
     /**
      * An intended audience, i.e. a group for whom something was created.
@@ -753,9 +571,9 @@ public interface CreativeWork extends Thing {
     /**
      * An intended audience, i.e. a group for whom something was created.
      *
-     * @param fAudience Audience value to set.
+     * @param audience Audience value to set.
      */
-    void setAudience(Audience fAudience);
+    void setAudience(Audience audience);
 
     /**
      * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
@@ -770,18 +588,18 @@ public interface CreativeWork extends Thing {
      * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      *
-     * @param fOffers Offer value to set.
+     * @param offers Offer value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
-    void setOffers(Offer fOffers);
+    void setOffers(Offer offers);
     /**
      * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      *
-     * @param fOffers Demand value to set.
+     * @param offers Demand value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
-    void setOffers(Demand fOffers);
+    void setOffers(Demand offers);
 
     /**
      * The location where the CreativeWork was created, which may not be the same as the location depicted in the CreativeWork.
@@ -793,9 +611,9 @@ public interface CreativeWork extends Thing {
     /**
      * The location where the CreativeWork was created, which may not be the same as the location depicted in the CreativeWork.
      *
-     * @param fLocationCreated Place value to set.
+     * @param locationCreated Place value to set.
      */
-    void setLocationCreated(Place fLocationCreated);
+    void setLocationCreated(Place locationCreated);
 
     /**
      * A media object that encodes this CreativeWork. This property is a synonym for encoding.
@@ -807,9 +625,9 @@ public interface CreativeWork extends Thing {
     /**
      * A media object that encodes this CreativeWork. This property is a synonym for encoding.
      *
-     * @param fAssociatedMedia MediaObject value to set.
+     * @param associatedMedia MediaObject value to set.
      */
-    void setAssociatedMedia(MediaObject fAssociatedMedia);
+    void setAssociatedMedia(MediaObject associatedMedia);
 
     /**
      * The quantity of the materials being described or an expression of the physical space they occupy.
@@ -823,27 +641,19 @@ public interface CreativeWork extends Thing {
     /**
      * The quantity of the materials being described or an expression of the physical space they occupy.
      *
-     * @param fMaterialExtent QuantitativeValue value to set.
+     * @param materialExtent QuantitativeValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1759">https://github.com/schemaorg/schemaorg/issues/1759</a>
      */
-    void setMaterialExtent(QuantitativeValue fMaterialExtent);
+    void setMaterialExtent(QuantitativeValue materialExtent);
     /**
      * The quantity of the materials being described or an expression of the physical space they occupy.
      *
-     * @param fMaterialExtent Text value to set.
+     * @param materialExtent Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1759">https://github.com/schemaorg/schemaorg/issues/1759</a>
      */
-    void setMaterialExtent(Text fMaterialExtent);
-    /**
-     * The quantity of the materials being described or an expression of the physical space they occupy.
-     *
-     * @param fMaterialExtent java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1759">https://github.com/schemaorg/schemaorg/issues/1759</a>
-     */
-    void setMaterialExtent(java.lang.String fMaterialExtent);
+    void setMaterialExtent(Text materialExtent);
 
     /**
      * Indicates the primary entity described in some page or other CreativeWork.
@@ -855,9 +665,9 @@ public interface CreativeWork extends Thing {
     /**
      * Indicates the primary entity described in some page or other CreativeWork.
      *
-     * @param fMainEntity Thing value to set.
+     * @param mainEntity Thing value to set.
      */
-    void setMainEntity(Thing fMainEntity);
+    void setMainEntity(Thing mainEntity);
 
     /**
      * The party holding the legal copyright to the CreativeWork.
@@ -869,15 +679,15 @@ public interface CreativeWork extends Thing {
     /**
      * The party holding the legal copyright to the CreativeWork.
      *
-     * @param fCopyrightHolder Organization value to set.
+     * @param copyrightHolder Organization value to set.
      */
-    void setCopyrightHolder(Organization fCopyrightHolder);
+    void setCopyrightHolder(Organization copyrightHolder);
     /**
      * The party holding the legal copyright to the CreativeWork.
      *
-     * @param fCopyrightHolder Person value to set.
+     * @param copyrightHolder Person value to set.
      */
-    void setCopyrightHolder(Person fCopyrightHolder);
+    void setCopyrightHolder(Person copyrightHolder);
 
     /**
      * Awards won by or for this item.
@@ -889,15 +699,9 @@ public interface CreativeWork extends Thing {
     /**
      * Awards won by or for this item.
      *
-     * @param fAwards Text value to set.
+     * @param awards Text value to set.
      */
-    void setAwards(Text fAwards);
-    /**
-     * Awards won by or for this item.
-     *
-     * @param fAwards java.lang.String value to set.
-     */
-    void setAwards(java.lang.String fAwards);
+    void setAwards(Text awards);
 
     /**
      * The location depicted or described in the content. For example, the location in a photograph or painting.
@@ -909,9 +713,9 @@ public interface CreativeWork extends Thing {
     /**
      * The location depicted or described in the content. For example, the location in a photograph or painting.
      *
-     * @param fContentLocation Place value to set.
+     * @param contentLocation Place value to set.
      */
-    void setContentLocation(Place fContentLocation);
+    void setContentLocation(Place contentLocation);
 
     /**
      * Indicates the date on which the current structured data was generated / published. Typically used alongside [[sdPublisher]]
@@ -925,19 +729,11 @@ public interface CreativeWork extends Thing {
     /**
      * Indicates the date on which the current structured data was generated / published. Typically used alongside [[sdPublisher]]
      *
-     * @param fSdDatePublished Date value to set.
+     * @param sdDatePublished Date value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
      */
-    void setSdDatePublished(Date fSdDatePublished);
-    /**
-     * Indicates the date on which the current structured data was generated / published. Typically used alongside [[sdPublisher]]
-     *
-     * @param fSdDatePublished java.time.LocalDate value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
-     */
-    void setSdDatePublished(java.time.LocalDate fSdDatePublished);
+    void setSdDatePublished(Date sdDatePublished);
 
     /**
      * The person or organization who produced the work (e.g. music album, movie, tv/radio series etc.).
@@ -949,15 +745,15 @@ public interface CreativeWork extends Thing {
     /**
      * The person or organization who produced the work (e.g. music album, movie, tv/radio series etc.).
      *
-     * @param fProducer Organization value to set.
+     * @param producer Organization value to set.
      */
-    void setProducer(Organization fProducer);
+    void setProducer(Organization producer);
     /**
      * The person or organization who produced the work (e.g. music album, movie, tv/radio series etc.).
      *
-     * @param fProducer Person value to set.
+     * @param producer Person value to set.
      */
-    void setProducer(Person fProducer);
+    void setProducer(Person producer);
 
     /**
      * The "spatial" property can be used in cases when more specific properties
@@ -971,9 +767,9 @@ public interface CreativeWork extends Thing {
      * The "spatial" property can be used in cases when more specific properties
      * (e.g. [[locationCreated]], [[spatialCoverage]], [[contentLocation]]) are not known to be appropriate.
      *
-     * @param fSpatial Place value to set.
+     * @param spatial Place value to set.
      */
-    void setSpatial(Place fSpatial);
+    void setSpatial(Place spatial);
 
     /**
      * The publisher of the creative work.
@@ -985,15 +781,15 @@ public interface CreativeWork extends Thing {
     /**
      * The publisher of the creative work.
      *
-     * @param fPublisher Person value to set.
+     * @param publisher Person value to set.
      */
-    void setPublisher(Person fPublisher);
+    void setPublisher(Person publisher);
     /**
      * The publisher of the creative work.
      *
-     * @param fPublisher Organization value to set.
+     * @param publisher Organization value to set.
      */
-    void setPublisher(Organization fPublisher);
+    void setPublisher(Organization publisher);
 
     /**
      * The Organization on whose behalf the creator was working.
@@ -1005,9 +801,9 @@ public interface CreativeWork extends Thing {
     /**
      * The Organization on whose behalf the creator was working.
      *
-     * @param fSourceOrganization Organization value to set.
+     * @param sourceOrganization Organization value to set.
      */
-    void setSourceOrganization(Organization fSourceOrganization);
+    void setSourceOrganization(Organization sourceOrganization);
 
     /**
      * Fictional person connected with a creative work.
@@ -1019,9 +815,9 @@ public interface CreativeWork extends Thing {
     /**
      * Fictional person connected with a creative work.
      *
-     * @param fCharacter Person value to set.
+     * @param character Person value to set.
      */
-    void setCharacter(Person fCharacter);
+    void setCharacter(Person character);
 
     /**
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
@@ -1033,15 +829,15 @@ public interface CreativeWork extends Thing {
     /**
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
-     * @param fFunder Organization value to set.
+     * @param funder Organization value to set.
      */
-    void setFunder(Organization fFunder);
+    void setFunder(Organization funder);
     /**
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
-     * @param fFunder Person value to set.
+     * @param funder Person value to set.
      */
-    void setFunder(Person fFunder);
+    void setFunder(Person funder);
 
     /**
      * A creative work that this work is an example/instance/realization/derivation of.
@@ -1054,10 +850,10 @@ public interface CreativeWork extends Thing {
     /**
      * A creative work that this work is an example/instance/realization/derivation of.
      *
-     * @param fExampleOfWork CreativeWork value to set.
+     * @param exampleOfWork CreativeWork value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
-    void setExampleOfWork(CreativeWork fExampleOfWork);
+    void setExampleOfWork(CreativeWork exampleOfWork);
 
     /**
      * The schema.org [[usageInfo]] property indicates further information about a [[CreativeWork]]. This property is applicable both to works that are freely available and to those that require payment or other transactions. It can reference additional information e.g. community expectations on preferred linking and citation conventions, as well as purchasing details. For something that can be commercially licensed, usageInfo can provide detailed, resource-specific information about licensing options.
@@ -1075,31 +871,21 @@ public interface CreativeWork extends Thing {
      * 
      * This property can be used alongside the license property which indicates license(s) applicable to some piece of content. The usageInfo property can provide information about other licensing options, e.g. acquiring commercial usage rights for an image that is also available under non-commercial creative commons licenses.
      *
-     * @param fUsageInfo CreativeWork value to set.
+     * @param usageInfo CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
      */
-    void setUsageInfo(CreativeWork fUsageInfo);
+    void setUsageInfo(CreativeWork usageInfo);
     /**
      * The schema.org [[usageInfo]] property indicates further information about a [[CreativeWork]]. This property is applicable both to works that are freely available and to those that require payment or other transactions. It can reference additional information e.g. community expectations on preferred linking and citation conventions, as well as purchasing details. For something that can be commercially licensed, usageInfo can provide detailed, resource-specific information about licensing options.
      * 
      * This property can be used alongside the license property which indicates license(s) applicable to some piece of content. The usageInfo property can provide information about other licensing options, e.g. acquiring commercial usage rights for an image that is also available under non-commercial creative commons licenses.
      *
-     * @param fUsageInfo URL value to set.
+     * @param usageInfo URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
      */
-    void setUsageInfo(URL fUsageInfo);
-    /**
-     * The schema.org [[usageInfo]] property indicates further information about a [[CreativeWork]]. This property is applicable both to works that are freely available and to those that require payment or other transactions. It can reference additional information e.g. community expectations on preferred linking and citation conventions, as well as purchasing details. For something that can be commercially licensed, usageInfo can provide detailed, resource-specific information about licensing options.
-     * 
-     * This property can be used alongside the license property which indicates license(s) applicable to some piece of content. The usageInfo property can provide information about other licensing options, e.g. acquiring commercial usage rights for an image that is also available under non-commercial creative commons licenses.
-     *
-     * @param fUsageInfo java.net.URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
-     */
-    void setUsageInfo(java.net.URL fUsageInfo);
+    void setUsageInfo(URL usageInfo);
 
     /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
@@ -1114,21 +900,21 @@ public interface CreativeWork extends Thing {
     /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
      *
-     * @param fProvider Organization value to set.
+     * @param provider Organization value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
      */
-    void setProvider(Organization fProvider);
+    void setProvider(Organization provider);
     /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
      *
-     * @param fProvider Person value to set.
+     * @param provider Person value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
      */
-    void setProvider(Person fProvider);
+    void setProvider(Person provider);
 
     /**
      * Indicates the party responsible for generating and publishing the current structured data markup, typically in cases where the structured data is derived automatically from existing published content but published on a different site. For example, student projects and open data initiatives often re-publish existing content with more explicitly structured metadata. The
@@ -1144,20 +930,20 @@ public interface CreativeWork extends Thing {
      * Indicates the party responsible for generating and publishing the current structured data markup, typically in cases where the structured data is derived automatically from existing published content but published on a different site. For example, student projects and open data initiatives often re-publish existing content with more explicitly structured metadata. The
      * [[sdPublisher]] property helps make such practices more explicit.
      *
-     * @param fSdPublisher Organization value to set.
+     * @param sdPublisher Organization value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
      */
-    void setSdPublisher(Organization fSdPublisher);
+    void setSdPublisher(Organization sdPublisher);
     /**
      * Indicates the party responsible for generating and publishing the current structured data markup, typically in cases where the structured data is derived automatically from existing published content but published on a different site. For example, student projects and open data initiatives often re-publish existing content with more explicitly structured metadata. The
      * [[sdPublisher]] property helps make such practices more explicit.
      *
-     * @param fSdPublisher Person value to set.
+     * @param sdPublisher Person value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
      */
-    void setSdPublisher(Person fSdPublisher);
+    void setSdPublisher(Person sdPublisher);
 
     /**
      * Comments, typically from users.
@@ -1169,9 +955,9 @@ public interface CreativeWork extends Thing {
     /**
      * Comments, typically from users.
      *
-     * @param fComment Comment value to set.
+     * @param comment Comment value to set.
      */
-    void setComment(Comment fComment);
+    void setComment(Comment comment);
 
     /**
      * Content features of the resource, such as accessible media, alternatives and supported enhancements for accessibility. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityFeature-vocabulary).
@@ -1183,15 +969,9 @@ public interface CreativeWork extends Thing {
     /**
      * Content features of the resource, such as accessible media, alternatives and supported enhancements for accessibility. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityFeature-vocabulary).
      *
-     * @param fAccessibilityFeature Text value to set.
+     * @param accessibilityFeature Text value to set.
      */
-    void setAccessibilityFeature(Text fAccessibilityFeature);
-    /**
-     * Content features of the resource, such as accessible media, alternatives and supported enhancements for accessibility. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityFeature-vocabulary).
-     *
-     * @param fAccessibilityFeature java.lang.String value to set.
-     */
-    void setAccessibilityFeature(java.lang.String fAccessibilityFeature);
+    void setAccessibilityFeature(Text accessibilityFeature);
 
     /**
      * A publication event associated with the item.
@@ -1203,9 +983,9 @@ public interface CreativeWork extends Thing {
     /**
      * A publication event associated with the item.
      *
-     * @param fPublication PublicationEvent value to set.
+     * @param publication PublicationEvent value to set.
      */
-    void setPublication(PublicationEvent fPublication);
+    void setPublication(PublicationEvent publication);
 
     /**
      * The work that this work has been translated from. e.g. 物种起源 is a translationOf “On the Origin of Species”
@@ -1218,10 +998,10 @@ public interface CreativeWork extends Thing {
     /**
      * The work that this work has been translated from. e.g. 物种起源 is a translationOf “On the Origin of Species”
      *
-     * @param fTranslationOfWork CreativeWork value to set.
+     * @param translationOfWork CreativeWork value to set.
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
-    void setTranslationOfWork(CreativeWork fTranslationOfWork);
+    void setTranslationOfWork(CreativeWork translationOfWork);
 
     /**
      * The predominant mode of learning supported by the learning resource. Acceptable values are 'active', 'expositive', or 'mixed'.
@@ -1233,15 +1013,9 @@ public interface CreativeWork extends Thing {
     /**
      * The predominant mode of learning supported by the learning resource. Acceptable values are 'active', 'expositive', or 'mixed'.
      *
-     * @param fInteractivityType Text value to set.
+     * @param interactivityType Text value to set.
      */
-    void setInteractivityType(Text fInteractivityType);
-    /**
-     * The predominant mode of learning supported by the learning resource. Acceptable values are 'active', 'expositive', or 'mixed'.
-     *
-     * @param fInteractivityType java.lang.String value to set.
-     */
-    void setInteractivityType(java.lang.String fInteractivityType);
+    void setInteractivityType(Text interactivityType);
 
     /**
      * The number of comments this CreativeWork (e.g. Article, Question or Answer) has received. This is most applicable to works published in Web sites with commenting system; additional comments may exist elsewhere.
@@ -1253,15 +1027,9 @@ public interface CreativeWork extends Thing {
     /**
      * The number of comments this CreativeWork (e.g. Article, Question or Answer) has received. This is most applicable to works published in Web sites with commenting system; additional comments may exist elsewhere.
      *
-     * @param fCommentCount Integer value to set.
+     * @param commentCount Integer value to set.
      */
-    void setCommentCount(Integer fCommentCount);
-    /**
-     * The number of comments this CreativeWork (e.g. Article, Question or Answer) has received. This is most applicable to works published in Web sites with commenting system; additional comments may exist elsewhere.
-     *
-     * @param fCommentCount java.lang.Integer value to set.
-     */
-    void setCommentCount(java.lang.Integer fCommentCount);
+    void setCommentCount(Integer commentCount);
 
     /**
      * The human sensory perceptual system or cognitive faculty through which a person may process or perceive information. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessMode-vocabulary).
@@ -1274,17 +1042,10 @@ public interface CreativeWork extends Thing {
     /**
      * The human sensory perceptual system or cognitive faculty through which a person may process or perceive information. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessMode-vocabulary).
      *
-     * @param fAccessMode Text value to set.
+     * @param accessMode Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
      */
-    void setAccessMode(Text fAccessMode);
-    /**
-     * The human sensory perceptual system or cognitive faculty through which a person may process or perceive information. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessMode-vocabulary).
-     *
-     * @param fAccessMode java.lang.String value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
-     */
-    void setAccessMode(java.lang.String fAccessMode);
+    void setAccessMode(Text accessMode);
 
     /**
      * The overall rating, based on a collection of reviews or ratings, of the item.
@@ -1296,9 +1057,9 @@ public interface CreativeWork extends Thing {
     /**
      * The overall rating, based on a collection of reviews or ratings, of the item.
      *
-     * @param fAggregateRating AggregateRating value to set.
+     * @param aggregateRating AggregateRating value to set.
      */
-    void setAggregateRating(AggregateRating fAggregateRating);
+    void setAggregateRating(AggregateRating aggregateRating);
 
     /**
      * Approximate or typical time it takes to work with or through this learning resource for the typical intended target audience, e.g. 'PT30M', 'PT1H25M'.
@@ -1310,9 +1071,9 @@ public interface CreativeWork extends Thing {
     /**
      * Approximate or typical time it takes to work with or through this learning resource for the typical intended target audience, e.g. 'PT30M', 'PT1H25M'.
      *
-     * @param fTimeRequired Duration value to set.
+     * @param timeRequired Duration value to set.
      */
-    void setTimeRequired(Duration fTimeRequired);
+    void setTimeRequired(Duration timeRequired);
 
     /**
      * The typical expected age range, e.g. '7-9', '11-'.
@@ -1324,15 +1085,9 @@ public interface CreativeWork extends Thing {
     /**
      * The typical expected age range, e.g. '7-9', '11-'.
      *
-     * @param fTypicalAgeRange Text value to set.
+     * @param typicalAgeRange Text value to set.
      */
-    void setTypicalAgeRange(Text fTypicalAgeRange);
-    /**
-     * The typical expected age range, e.g. '7-9', '11-'.
-     *
-     * @param fTypicalAgeRange java.lang.String value to set.
-     */
-    void setTypicalAgeRange(java.lang.String fTypicalAgeRange);
+    void setTypicalAgeRange(Text typicalAgeRange);
 
     /**
      * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
@@ -1345,10 +1100,10 @@ public interface CreativeWork extends Thing {
     /**
      * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
      *
-     * @param fInteractionStatistic InteractionCounter value to set.
+     * @param interactionStatistic InteractionCounter value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
      */
-    void setInteractionStatistic(InteractionCounter fInteractionStatistic);
+    void setInteractionStatistic(InteractionCounter interactionStatistic);
 
     /**
      * The year during which the claimed copyright for the CreativeWork was first asserted.
@@ -1360,15 +1115,9 @@ public interface CreativeWork extends Thing {
     /**
      * The year during which the claimed copyright for the CreativeWork was first asserted.
      *
-     * @param fCopyrightYear Number value to set.
+     * @param copyrightYear Number value to set.
      */
-    void setCopyrightYear(Number fCopyrightYear);
-    /**
-     * The year during which the claimed copyright for the CreativeWork was first asserted.
-     *
-     * @param fCopyrightYear java.lang.Number value to set.
-     */
-    void setCopyrightYear(java.lang.Number fCopyrightYear);
+    void setCopyrightYear(Number copyrightYear);
 
     /**
      * A resource from which this work is derived or from which it is a modification or adaption.
@@ -1380,27 +1129,21 @@ public interface CreativeWork extends Thing {
     /**
      * A resource from which this work is derived or from which it is a modification or adaption.
      *
-     * @param fIsBasedOn CreativeWork value to set.
+     * @param isBasedOn CreativeWork value to set.
      */
-    void setIsBasedOn(CreativeWork fIsBasedOn);
+    void setIsBasedOn(CreativeWork isBasedOn);
     /**
      * A resource from which this work is derived or from which it is a modification or adaption.
      *
-     * @param fIsBasedOn URL value to set.
+     * @param isBasedOn URL value to set.
      */
-    void setIsBasedOn(URL fIsBasedOn);
+    void setIsBasedOn(URL isBasedOn);
     /**
      * A resource from which this work is derived or from which it is a modification or adaption.
      *
-     * @param fIsBasedOn java.net.URL value to set.
+     * @param isBasedOn Product value to set.
      */
-    void setIsBasedOn(java.net.URL fIsBasedOn);
-    /**
-     * A resource from which this work is derived or from which it is a modification or adaption.
-     *
-     * @param fIsBasedOn Product value to set.
-     */
-    void setIsBasedOn(Product fIsBasedOn);
+    void setIsBasedOn(Product isBasedOn);
 
     /**
      * Example/instance/realization/derivation of the concept of this creative work. eg. The paperback edition, first edition, or eBook.
@@ -1413,10 +1156,10 @@ public interface CreativeWork extends Thing {
     /**
      * Example/instance/realization/derivation of the concept of this creative work. eg. The paperback edition, first edition, or eBook.
      *
-     * @param fWorkExample CreativeWork value to set.
+     * @param workExample CreativeWork value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
-    void setWorkExample(CreativeWork fWorkExample);
+    void setWorkExample(CreativeWork workExample);
 
     /**
      * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
@@ -1432,25 +1175,17 @@ public interface CreativeWork extends Thing {
      * 
      * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
      *
-     * @param fPublishingPrinciples URL value to set.
+     * @param publishingPrinciples URL value to set.
      */
-    void setPublishingPrinciples(URL fPublishingPrinciples);
+    void setPublishingPrinciples(URL publishingPrinciples);
     /**
      * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
      * 
      * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
      *
-     * @param fPublishingPrinciples java.net.URL value to set.
+     * @param publishingPrinciples CreativeWork value to set.
      */
-    void setPublishingPrinciples(java.net.URL fPublishingPrinciples);
-    /**
-     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
-     * 
-     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
-     *
-     * @param fPublishingPrinciples CreativeWork value to set.
-     */
-    void setPublishingPrinciples(CreativeWork fPublishingPrinciples);
+    void setPublishingPrinciples(CreativeWork publishingPrinciples);
 
     /**
      * A link to the page containing the comments of the CreativeWork.
@@ -1462,15 +1197,9 @@ public interface CreativeWork extends Thing {
     /**
      * A link to the page containing the comments of the CreativeWork.
      *
-     * @param fDiscussionUrl URL value to set.
+     * @param discussionUrl URL value to set.
      */
-    void setDiscussionUrl(URL fDiscussionUrl);
-    /**
-     * A link to the page containing the comments of the CreativeWork.
-     *
-     * @param fDiscussionUrl java.net.URL value to set.
-     */
-    void setDiscussionUrl(java.net.URL fDiscussionUrl);
+    void setDiscussionUrl(URL discussionUrl);
 
     /**
      * The place and time the release was issued, expressed as a PublicationEvent.
@@ -1482,9 +1211,9 @@ public interface CreativeWork extends Thing {
     /**
      * The place and time the release was issued, expressed as a PublicationEvent.
      *
-     * @param fReleasedEvent PublicationEvent value to set.
+     * @param releasedEvent PublicationEvent value to set.
      */
-    void setReleasedEvent(PublicationEvent fReleasedEvent);
+    void setReleasedEvent(PublicationEvent releasedEvent);
 
     /**
      * The date on which the CreativeWork was created or the item was added to a DataFeed.
@@ -1496,27 +1225,15 @@ public interface CreativeWork extends Thing {
     /**
      * The date on which the CreativeWork was created or the item was added to a DataFeed.
      *
-     * @param fDateCreated Date value to set.
+     * @param dateCreated Date value to set.
      */
-    void setDateCreated(Date fDateCreated);
+    void setDateCreated(Date dateCreated);
     /**
      * The date on which the CreativeWork was created or the item was added to a DataFeed.
      *
-     * @param fDateCreated java.time.LocalDate value to set.
+     * @param dateCreated DateTime value to set.
      */
-    void setDateCreated(java.time.LocalDate fDateCreated);
-    /**
-     * The date on which the CreativeWork was created or the item was added to a DataFeed.
-     *
-     * @param fDateCreated DateTime value to set.
-     */
-    void setDateCreated(DateTime fDateCreated);
-    /**
-     * The date on which the CreativeWork was created or the item was added to a DataFeed.
-     *
-     * @param fDateCreated java.time.LocalDateTime value to set.
-     */
-    void setDateCreated(java.time.LocalDateTime fDateCreated);
+    void setDateCreated(DateTime dateCreated);
 
     /**
      * A work that is a translation of the content of this work. e.g. 西遊記 has an English workTranslation “Journey to the West”,a German workTranslation “Monkeys Pilgerfahrt” and a Vietnamese  translation Tây du ký bình khảo.
@@ -1529,10 +1246,10 @@ public interface CreativeWork extends Thing {
     /**
      * A work that is a translation of the content of this work. e.g. 西遊記 has an English workTranslation “Journey to the West”,a German workTranslation “Monkeys Pilgerfahrt” and a Vietnamese  translation Tây du ký bình khảo.
      *
-     * @param fWorkTranslation CreativeWork value to set.
+     * @param workTranslation CreativeWork value to set.
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
-    void setWorkTranslation(CreativeWork fWorkTranslation);
+    void setWorkTranslation(CreativeWork workTranslation);
 
     /**
      * Specifies the Person who edited the CreativeWork.
@@ -1544,9 +1261,9 @@ public interface CreativeWork extends Thing {
     /**
      * Specifies the Person who edited the CreativeWork.
      *
-     * @param fEditor Person value to set.
+     * @param editor Person value to set.
      */
-    void setEditor(Person fEditor);
+    void setEditor(Person editor);
 
     /**
      * Text that can be used to credit person(s) and/or organization(s) associated with a published Creative Work.
@@ -1560,19 +1277,11 @@ public interface CreativeWork extends Thing {
     /**
      * Text that can be used to credit person(s) and/or organization(s) associated with a published Creative Work.
      *
-     * @param fCreditText Text value to set.
+     * @param creditText Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2659">https://github.com/schemaorg/schemaorg/issues/2659</a>
      */
-    void setCreditText(Text fCreditText);
-    /**
-     * Text that can be used to credit person(s) and/or organization(s) associated with a published Creative Work.
-     *
-     * @param fCreditText java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2659">https://github.com/schemaorg/schemaorg/issues/2659</a>
-     */
-    void setCreditText(java.lang.String fCreditText);
+    void setCreditText(Text creditText);
 
     /**
      * The Event where the CreativeWork was recorded. The CreativeWork may capture all or part of the event.
@@ -1584,9 +1293,9 @@ public interface CreativeWork extends Thing {
     /**
      * The Event where the CreativeWork was recorded. The CreativeWork may capture all or part of the event.
      *
-     * @param fRecordedAt Event value to set.
+     * @param recordedAt Event value to set.
      */
-    void setRecordedAt(Event fRecordedAt);
+    void setRecordedAt(Event recordedAt);
 
     /**
      * An [EIDR](https://eidr.org/) (Entertainment Identifier Registry) [[identifier]] representing a specific edit / edition for a work of film or television.
@@ -1608,11 +1317,11 @@ public interface CreativeWork extends Thing {
      * 
      * Since schema.org types like [[Movie]] and [[TVEpisode]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.
      *
-     * @param fEditEIDR URL value to set.
+     * @param editEIDR URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2469">https://github.com/schemaorg/schemaorg/issues/2469</a>
      */
-    void setEditEIDR(URL fEditEIDR);
+    void setEditEIDR(URL editEIDR);
     /**
      * An [EIDR](https://eidr.org/) (Entertainment Identifier Registry) [[identifier]] representing a specific edit / edition for a work of film or television.
      * 
@@ -1620,35 +1329,11 @@ public interface CreativeWork extends Thing {
      * 
      * Since schema.org types like [[Movie]] and [[TVEpisode]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.
      *
-     * @param fEditEIDR java.net.URL value to set.
+     * @param editEIDR Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2469">https://github.com/schemaorg/schemaorg/issues/2469</a>
      */
-    void setEditEIDR(java.net.URL fEditEIDR);
-    /**
-     * An [EIDR](https://eidr.org/) (Entertainment Identifier Registry) [[identifier]] representing a specific edit / edition for a work of film or television.
-     * 
-     * For example, the motion picture known as "Ghostbusters" whose [[titleEIDR]] is "10.5240/7EC7-228A-510A-053E-CBB8-J", has several edits e.g. "10.5240/1F2A-E1C5-680A-14C6-E76B-I" and "10.5240/8A35-3BEE-6497-5D12-9E4F-3".
-     * 
-     * Since schema.org types like [[Movie]] and [[TVEpisode]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.
-     *
-     * @param fEditEIDR Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2469">https://github.com/schemaorg/schemaorg/issues/2469</a>
-     */
-    void setEditEIDR(Text fEditEIDR);
-    /**
-     * An [EIDR](https://eidr.org/) (Entertainment Identifier Registry) [[identifier]] representing a specific edit / edition for a work of film or television.
-     * 
-     * For example, the motion picture known as "Ghostbusters" whose [[titleEIDR]] is "10.5240/7EC7-228A-510A-053E-CBB8-J", has several edits e.g. "10.5240/1F2A-E1C5-680A-14C6-E76B-I" and "10.5240/8A35-3BEE-6497-5D12-9E4F-3".
-     * 
-     * Since schema.org types like [[Movie]] and [[TVEpisode]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.
-     *
-     * @param fEditEIDR java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2469">https://github.com/schemaorg/schemaorg/issues/2469</a>
-     */
-    void setEditEIDR(java.lang.String fEditEIDR);
+    void setEditEIDR(Text editEIDR);
 
     /**
      * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
@@ -1660,15 +1345,15 @@ public interface CreativeWork extends Thing {
     /**
      * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
      *
-     * @param fAuthor Person value to set.
+     * @param author Person value to set.
      */
-    void setAuthor(Person fAuthor);
+    void setAuthor(Person author);
     /**
      * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
      *
-     * @param fAuthor Organization value to set.
+     * @param author Organization value to set.
      */
-    void setAuthor(Organization fAuthor);
+    void setAuthor(Organization author);
 
     /**
      * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
@@ -1680,27 +1365,15 @@ public interface CreativeWork extends Thing {
     /**
      * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
      *
-     * @param fDateModified DateTime value to set.
+     * @param dateModified DateTime value to set.
      */
-    void setDateModified(DateTime fDateModified);
+    void setDateModified(DateTime dateModified);
     /**
      * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
      *
-     * @param fDateModified java.time.LocalDateTime value to set.
+     * @param dateModified Date value to set.
      */
-    void setDateModified(java.time.LocalDateTime fDateModified);
-    /**
-     * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
-     *
-     * @param fDateModified Date value to set.
-     */
-    void setDateModified(Date fDateModified);
-    /**
-     * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
-     *
-     * @param fDateModified java.time.LocalDate value to set.
-     */
-    void setDateModified(java.time.LocalDate fDateModified);
+    void setDateModified(Date dateModified);
 
     /**
      * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
@@ -1712,15 +1385,15 @@ public interface CreativeWork extends Thing {
     /**
      * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
      *
-     * @param fSponsor Organization value to set.
+     * @param sponsor Organization value to set.
      */
-    void setSponsor(Organization fSponsor);
+    void setSponsor(Organization sponsor);
     /**
      * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
      *
-     * @param fSponsor Person value to set.
+     * @param sponsor Person value to set.
      */
-    void setSponsor(Person fSponsor);
+    void setSponsor(Person sponsor);
 
     /**
      * A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as "short descriptions are present but long descriptions will be needed for non-visual users" or "short descriptions are present and no long descriptions are needed."
@@ -1733,17 +1406,10 @@ public interface CreativeWork extends Thing {
     /**
      * A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as "short descriptions are present but long descriptions will be needed for non-visual users" or "short descriptions are present and no long descriptions are needed."
      *
-     * @param fAccessibilitySummary Text value to set.
+     * @param accessibilitySummary Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
      */
-    void setAccessibilitySummary(Text fAccessibilitySummary);
-    /**
-     * A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as "short descriptions are present but long descriptions will be needed for non-visual users" or "short descriptions are present and no long descriptions are needed."
-     *
-     * @param fAccessibilitySummary java.lang.String value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
-     */
-    void setAccessibilitySummary(java.lang.String fAccessibilitySummary);
+    void setAccessibilitySummary(Text accessibilitySummary);
 
     /**
      * Media type typically expressed using a MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml) and [MDN reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)) e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc.).
@@ -1763,9 +1429,9 @@ public interface CreativeWork extends Thing {
      * 
      * Unregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.
      *
-     * @param fEncodingFormat Text value to set.
+     * @param encodingFormat Text value to set.
      */
-    void setEncodingFormat(Text fEncodingFormat);
+    void setEncodingFormat(Text encodingFormat);
     /**
      * Media type typically expressed using a MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml) and [MDN reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)) e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc.).
      * 
@@ -1773,29 +1439,9 @@ public interface CreativeWork extends Thing {
      * 
      * Unregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.
      *
-     * @param fEncodingFormat java.lang.String value to set.
+     * @param encodingFormat URL value to set.
      */
-    void setEncodingFormat(java.lang.String fEncodingFormat);
-    /**
-     * Media type typically expressed using a MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml) and [MDN reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)) e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc.).
-     * 
-     * In cases where a [[CreativeWork]] has several media type representations, [[encoding]] can be used to indicate each [[MediaObject]] alongside particular [[encodingFormat]] information.
-     * 
-     * Unregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.
-     *
-     * @param fEncodingFormat URL value to set.
-     */
-    void setEncodingFormat(URL fEncodingFormat);
-    /**
-     * Media type typically expressed using a MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml) and [MDN reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)) e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc.).
-     * 
-     * In cases where a [[CreativeWork]] has several media type representations, [[encoding]] can be used to indicate each [[MediaObject]] alongside particular [[encodingFormat]] information.
-     * 
-     * Unregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.
-     *
-     * @param fEncodingFormat java.net.URL value to set.
-     */
-    void setEncodingFormat(java.net.URL fEncodingFormat);
+    void setEncodingFormat(URL encodingFormat);
 
     /**
      * A maintainer of a [[Dataset]], software package ([[SoftwareApplication]]), or other [[Project]]. A maintainer is a [[Person]] or [[Organization]] that manages contributions to, and/or publication of, some (typically complex) artifact. It is common for distributions of software and data to be based on "upstream" sources. When [[maintainer]] is applied to a specific version of something e.g. a particular version or packaging of a [[Dataset]], it is always  possible that the upstream source has a different maintainer. The [[isBasedOn]] property can be used to indicate such relationships between datasets to make the different maintenance roles clear. Similarly in the case of software, a package may have dedicated maintainers working on integration into software distributions such as Ubuntu, as well as upstream maintainers of the underlying work.
@@ -1811,20 +1457,20 @@ public interface CreativeWork extends Thing {
      * A maintainer of a [[Dataset]], software package ([[SoftwareApplication]]), or other [[Project]]. A maintainer is a [[Person]] or [[Organization]] that manages contributions to, and/or publication of, some (typically complex) artifact. It is common for distributions of software and data to be based on "upstream" sources. When [[maintainer]] is applied to a specific version of something e.g. a particular version or packaging of a [[Dataset]], it is always  possible that the upstream source has a different maintainer. The [[isBasedOn]] property can be used to indicate such relationships between datasets to make the different maintenance roles clear. Similarly in the case of software, a package may have dedicated maintainers working on integration into software distributions such as Ubuntu, as well as upstream maintainers of the underlying work.
      *       
      *
-     * @param fMaintainer Person value to set.
+     * @param maintainer Person value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2311">https://github.com/schemaorg/schemaorg/issues/2311</a>
      */
-    void setMaintainer(Person fMaintainer);
+    void setMaintainer(Person maintainer);
     /**
      * A maintainer of a [[Dataset]], software package ([[SoftwareApplication]]), or other [[Project]]. A maintainer is a [[Person]] or [[Organization]] that manages contributions to, and/or publication of, some (typically complex) artifact. It is common for distributions of software and data to be based on "upstream" sources. When [[maintainer]] is applied to a specific version of something e.g. a particular version or packaging of a [[Dataset]], it is always  possible that the upstream source has a different maintainer. The [[isBasedOn]] property can be used to indicate such relationships between datasets to make the different maintenance roles clear. Similarly in the case of software, a package may have dedicated maintainers working on integration into software distributions such as Ubuntu, as well as upstream maintainers of the underlying work.
      *       
      *
-     * @param fMaintainer Organization value to set.
+     * @param maintainer Organization value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2311">https://github.com/schemaorg/schemaorg/issues/2311</a>
      */
-    void setMaintainer(Organization fMaintainer);
+    void setMaintainer(Organization maintainer);
 
     /**
      * An alignment to an established educational framework.
@@ -1840,9 +1486,9 @@ public interface CreativeWork extends Thing {
      * 
      * This property should not be used where the nature of the alignment can be described using a simple property, for example to express that a resource [[teaches]] or [[assesses]] a competency.
      *
-     * @param fEducationalAlignment AlignmentObject value to set.
+     * @param educationalAlignment AlignmentObject value to set.
      */
-    void setEducationalAlignment(AlignmentObject fEducationalAlignment);
+    void setEducationalAlignment(AlignmentObject educationalAlignment);
 
     /**
      * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
@@ -1856,27 +1502,19 @@ public interface CreativeWork extends Thing {
     /**
      * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
      *
-     * @param fAcquireLicensePage CreativeWork value to set.
+     * @param acquireLicensePage CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
      */
-    void setAcquireLicensePage(CreativeWork fAcquireLicensePage);
+    void setAcquireLicensePage(CreativeWork acquireLicensePage);
     /**
      * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
      *
-     * @param fAcquireLicensePage URL value to set.
+     * @param acquireLicensePage URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
      */
-    void setAcquireLicensePage(URL fAcquireLicensePage);
-    /**
-     * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
-     *
-     * @param fAcquireLicensePage java.net.URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
-     */
-    void setAcquireLicensePage(java.net.URL fAcquireLicensePage);
+    void setAcquireLicensePage(URL acquireLicensePage);
 
     /**
      * A flag to signal that the item, event, or place is accessible for free.
@@ -1888,15 +1526,9 @@ public interface CreativeWork extends Thing {
     /**
      * A flag to signal that the item, event, or place is accessible for free.
      *
-     * @param fIsAccessibleForFree Boolean value to set.
+     * @param isAccessibleForFree Boolean value to set.
      */
-    void setIsAccessibleForFree(Boolean fIsAccessibleForFree);
-    /**
-     * A flag to signal that the item, event, or place is accessible for free.
-     *
-     * @param fIsAccessibleForFree java.lang.Boolean value to set.
-     */
-    void setIsAccessibleForFree(java.lang.Boolean fIsAccessibleForFree);
+    void setIsAccessibleForFree(Boolean isAccessibleForFree);
 
     /**
      * Date of first broadcast/publication.
@@ -1908,27 +1540,15 @@ public interface CreativeWork extends Thing {
     /**
      * Date of first broadcast/publication.
      *
-     * @param fDatePublished Date value to set.
+     * @param datePublished Date value to set.
      */
-    void setDatePublished(Date fDatePublished);
+    void setDatePublished(Date datePublished);
     /**
      * Date of first broadcast/publication.
      *
-     * @param fDatePublished java.time.LocalDate value to set.
+     * @param datePublished DateTime value to set.
      */
-    void setDatePublished(java.time.LocalDate fDatePublished);
-    /**
-     * Date of first broadcast/publication.
-     *
-     * @param fDatePublished DateTime value to set.
-     */
-    void setDatePublished(DateTime fDatePublished);
-    /**
-     * Date of first broadcast/publication.
-     *
-     * @param fDatePublished java.time.LocalDateTime value to set.
-     */
-    void setDatePublished(java.time.LocalDateTime fDatePublished);
+    void setDatePublished(DateTime datePublished);
 
     /**
      * The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of
@@ -1944,9 +1564,9 @@ public interface CreativeWork extends Thing {
      *       contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates
      *       areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.
      *
-     * @param fSpatialCoverage Place value to set.
+     * @param spatialCoverage Place value to set.
      */
-    void setSpatialCoverage(Place fSpatialCoverage);
+    void setSpatialCoverage(Place spatialCoverage);
 
     /**
      * A license document that applies to this structured data, typically indicated by URL.
@@ -1960,27 +1580,19 @@ public interface CreativeWork extends Thing {
     /**
      * A license document that applies to this structured data, typically indicated by URL.
      *
-     * @param fSdLicense CreativeWork value to set.
+     * @param sdLicense CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
      */
-    void setSdLicense(CreativeWork fSdLicense);
+    void setSdLicense(CreativeWork sdLicense);
     /**
      * A license document that applies to this structured data, typically indicated by URL.
      *
-     * @param fSdLicense URL value to set.
+     * @param sdLicense URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
      */
-    void setSdLicense(URL fSdLicense);
-    /**
-     * A license document that applies to this structured data, typically indicated by URL.
-     *
-     * @param fSdLicense java.net.URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
-     */
-    void setSdLicense(java.net.URL fSdLicense);
+    void setSdLicense(URL sdLicense);
 
     /**
      * Conditions that affect the availability of, or method(s) of access to, an item. Typically used for real world items such as an [[ArchiveComponent]] held by an [[ArchiveOrganization]]. This property is not suitable for use as a general Web access control mechanism. It is expressed only in natural language.<br/><br/>For example "Available by appointment from the Reading Room" or "Accessible only from logged-in accounts ". 
@@ -1994,19 +1606,11 @@ public interface CreativeWork extends Thing {
     /**
      * Conditions that affect the availability of, or method(s) of access to, an item. Typically used for real world items such as an [[ArchiveComponent]] held by an [[ArchiveOrganization]]. This property is not suitable for use as a general Web access control mechanism. It is expressed only in natural language.<br/><br/>For example "Available by appointment from the Reading Room" or "Accessible only from logged-in accounts ". 
      *
-     * @param fConditionsOfAccess Text value to set.
+     * @param conditionsOfAccess Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2173">https://github.com/schemaorg/schemaorg/issues/2173</a>
      */
-    void setConditionsOfAccess(Text fConditionsOfAccess);
-    /**
-     * Conditions that affect the availability of, or method(s) of access to, an item. Typically used for real world items such as an [[ArchiveComponent]] held by an [[ArchiveOrganization]]. This property is not suitable for use as a general Web access control mechanism. It is expressed only in natural language.<br/><br/>For example "Available by appointment from the Reading Room" or "Accessible only from logged-in accounts ". 
-     *
-     * @param fConditionsOfAccess java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2173">https://github.com/schemaorg/schemaorg/issues/2173</a>
-     */
-    void setConditionsOfAccess(java.lang.String fConditionsOfAccess);
+    void setConditionsOfAccess(Text conditionsOfAccess);
 
     /**
      * Indicates a correction to a [[CreativeWork]], either via a [[CorrectionComment]], textually or in another document.
@@ -2021,48 +1625,30 @@ public interface CreativeWork extends Thing {
     /**
      * Indicates a correction to a [[CreativeWork]], either via a [[CorrectionComment]], textually or in another document.
      *
-     * @param fCorrection URL value to set.
+     * @param correction URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
      */
-    void setCorrection(URL fCorrection);
+    void setCorrection(URL correction);
     /**
      * Indicates a correction to a [[CreativeWork]], either via a [[CorrectionComment]], textually or in another document.
      *
-     * @param fCorrection java.net.URL value to set.
+     * @param correction Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
      */
-    void setCorrection(java.net.URL fCorrection);
+    void setCorrection(Text correction);
     /**
      * Indicates a correction to a [[CreativeWork]], either via a [[CorrectionComment]], textually or in another document.
      *
-     * @param fCorrection Text value to set.
+     * @param correction CorrectionComment value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
      */
-    void setCorrection(Text fCorrection);
-    /**
-     * Indicates a correction to a [[CreativeWork]], either via a [[CorrectionComment]], textually or in another document.
-     *
-     * @param fCorrection java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
-     */
-    void setCorrection(java.lang.String fCorrection);
-    /**
-     * Indicates a correction to a [[CreativeWork]], either via a [[CorrectionComment]], textually or in another document.
-     *
-     * @param fCorrection CorrectionComment value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
-     */
-    void setCorrection(CorrectionComment fCorrection);
+    void setCorrection(CorrectionComment correction);
 
     /**
      * Official rating of a piece of content&#x2014;for example,'MPAA PG-13'.
@@ -2074,21 +1660,15 @@ public interface CreativeWork extends Thing {
     /**
      * Official rating of a piece of content&#x2014;for example,'MPAA PG-13'.
      *
-     * @param fContentRating Text value to set.
+     * @param contentRating Text value to set.
      */
-    void setContentRating(Text fContentRating);
+    void setContentRating(Text contentRating);
     /**
      * Official rating of a piece of content&#x2014;for example,'MPAA PG-13'.
      *
-     * @param fContentRating java.lang.String value to set.
+     * @param contentRating Rating value to set.
      */
-    void setContentRating(java.lang.String fContentRating);
-    /**
-     * Official rating of a piece of content&#x2014;for example,'MPAA PG-13'.
-     *
-     * @param fContentRating Rating value to set.
-     */
-    void setContentRating(Rating fContentRating);
+    void setContentRating(Rating contentRating);
 
     /**
      * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
@@ -2102,43 +1682,35 @@ public interface CreativeWork extends Thing {
     /**
      * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
      *
-     * @param fSize QuantitativeValue value to set.
+     * @param size QuantitativeValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
-    void setSize(QuantitativeValue fSize);
+    void setSize(QuantitativeValue size);
     /**
      * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
      *
-     * @param fSize DefinedTerm value to set.
+     * @param size DefinedTerm value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
-    void setSize(DefinedTerm fSize);
+    void setSize(DefinedTerm size);
     /**
      * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
      *
-     * @param fSize Text value to set.
+     * @param size Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
-    void setSize(Text fSize);
+    void setSize(Text size);
     /**
      * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
      *
-     * @param fSize java.lang.String value to set.
+     * @param size SizeSpecification value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
-    void setSize(java.lang.String fSize);
-    /**
-     * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
-     *
-     * @param fSize SizeSpecification value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
-     */
-    void setSize(SizeSpecification fSize);
+    void setSize(SizeSpecification size);
 
     /**
      * Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.
@@ -2150,21 +1722,15 @@ public interface CreativeWork extends Thing {
     /**
      * Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.
      *
-     * @param fIsPartOf URL value to set.
+     * @param isPartOf URL value to set.
      */
-    void setIsPartOf(URL fIsPartOf);
+    void setIsPartOf(URL isPartOf);
     /**
      * Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.
      *
-     * @param fIsPartOf java.net.URL value to set.
+     * @param isPartOf CreativeWork value to set.
      */
-    void setIsPartOf(java.net.URL fIsPartOf);
-    /**
-     * Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.
-     *
-     * @param fIsPartOf CreativeWork value to set.
-     */
-    void setIsPartOf(CreativeWork fIsPartOf);
+    void setIsPartOf(CreativeWork isPartOf);
 
     /**
      * The "temporal" property can be used in cases where more specific properties
@@ -2178,30 +1744,16 @@ public interface CreativeWork extends Thing {
      * The "temporal" property can be used in cases where more specific properties
      * (e.g. [[temporalCoverage]], [[dateCreated]], [[dateModified]], [[datePublished]]) are not known to be appropriate.
      *
-     * @param fTemporal DateTime value to set.
+     * @param temporal DateTime value to set.
      */
-    void setTemporal(DateTime fTemporal);
+    void setTemporal(DateTime temporal);
     /**
      * The "temporal" property can be used in cases where more specific properties
      * (e.g. [[temporalCoverage]], [[dateCreated]], [[dateModified]], [[datePublished]]) are not known to be appropriate.
      *
-     * @param fTemporal java.time.LocalDateTime value to set.
+     * @param temporal Text value to set.
      */
-    void setTemporal(java.time.LocalDateTime fTemporal);
-    /**
-     * The "temporal" property can be used in cases where more specific properties
-     * (e.g. [[temporalCoverage]], [[dateCreated]], [[dateModified]], [[datePublished]]) are not known to be appropriate.
-     *
-     * @param fTemporal Text value to set.
-     */
-    void setTemporal(Text fTemporal);
-    /**
-     * The "temporal" property can be used in cases where more specific properties
-     * (e.g. [[temporalCoverage]], [[dateCreated]], [[dateModified]], [[datePublished]]) are not known to be appropriate.
-     *
-     * @param fTemporal java.lang.String value to set.
-     */
-    void setTemporal(java.lang.String fTemporal);
+    void setTemporal(Text temporal);
 
     /**
      * A thumbnail image relevant to the Thing.
@@ -2213,15 +1765,9 @@ public interface CreativeWork extends Thing {
     /**
      * A thumbnail image relevant to the Thing.
      *
-     * @param fThumbnailUrl URL value to set.
+     * @param thumbnailUrl URL value to set.
      */
-    void setThumbnailUrl(URL fThumbnailUrl);
-    /**
-     * A thumbnail image relevant to the Thing.
-     *
-     * @param fThumbnailUrl java.net.URL value to set.
-     */
-    void setThumbnailUrl(java.net.URL fThumbnailUrl);
+    void setThumbnailUrl(URL thumbnailUrl);
 
     /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
@@ -2234,24 +1780,17 @@ public interface CreativeWork extends Thing {
     /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
      *
-     * @param fInLanguage Text value to set.
+     * @param inLanguage Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
      */
-    void setInLanguage(Text fInLanguage);
+    void setInLanguage(Text inLanguage);
     /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
      *
-     * @param fInLanguage java.lang.String value to set.
+     * @param inLanguage Language value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
      */
-    void setInLanguage(java.lang.String fInLanguage);
-    /**
-     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
-     *
-     * @param fInLanguage Language value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
-     */
-    void setInLanguage(Language fInLanguage);
+    void setInLanguage(Language inLanguage);
 
     /**
      * A license document that applies to this content, typically indicated by URL.
@@ -2263,21 +1802,15 @@ public interface CreativeWork extends Thing {
     /**
      * A license document that applies to this content, typically indicated by URL.
      *
-     * @param fLicense URL value to set.
+     * @param license URL value to set.
      */
-    void setLicense(URL fLicense);
+    void setLicense(URL license);
     /**
      * A license document that applies to this content, typically indicated by URL.
      *
-     * @param fLicense java.net.URL value to set.
+     * @param license CreativeWork value to set.
      */
-    void setLicense(java.net.URL fLicense);
-    /**
-     * A license document that applies to this content, typically indicated by URL.
-     *
-     * @param fLicense CreativeWork value to set.
-     */
-    void setLicense(CreativeWork fLicense);
+    void setLicense(CreativeWork license);
 
     /**
      * The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.
@@ -2289,15 +1822,15 @@ public interface CreativeWork extends Thing {
     /**
      * The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.
      *
-     * @param fCreator Organization value to set.
+     * @param creator Organization value to set.
      */
-    void setCreator(Organization fCreator);
+    void setCreator(Organization creator);
     /**
      * The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.
      *
-     * @param fCreator Person value to set.
+     * @param creator Person value to set.
      */
-    void setCreator(Person fCreator);
+    void setCreator(Person creator);
 
     /**
      * Review of the item.
@@ -2309,9 +1842,9 @@ public interface CreativeWork extends Thing {
     /**
      * Review of the item.
      *
-     * @param fReviews Review value to set.
+     * @param reviews Review value to set.
      */
-    void setReviews(Review fReviews);
+    void setReviews(Review reviews);
 
     /**
      * The subject matter of the content.
@@ -2324,10 +1857,10 @@ public interface CreativeWork extends Thing {
     /**
      * The subject matter of the content.
      *
-     * @param fAbout Thing value to set.
+     * @param about Thing value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
-    void setAbout(Thing fAbout);
+    void setAbout(Thing about);
 
     /**
      * Indicates whether this content is family friendly.
@@ -2339,15 +1872,9 @@ public interface CreativeWork extends Thing {
     /**
      * Indicates whether this content is family friendly.
      *
-     * @param fIsFamilyFriendly Boolean value to set.
+     * @param isFamilyFriendly Boolean value to set.
      */
-    void setIsFamilyFriendly(Boolean fIsFamilyFriendly);
-    /**
-     * Indicates whether this content is family friendly.
-     *
-     * @param fIsFamilyFriendly java.lang.Boolean value to set.
-     */
-    void setIsFamilyFriendly(java.lang.Boolean fIsFamilyFriendly);
+    void setIsFamilyFriendly(Boolean isFamilyFriendly);
 
     /**
      * Headline of the article.
@@ -2359,15 +1886,9 @@ public interface CreativeWork extends Thing {
     /**
      * Headline of the article.
      *
-     * @param fHeadline Text value to set.
+     * @param headline Text value to set.
      */
-    void setHeadline(Text fHeadline);
-    /**
-     * Headline of the article.
-     *
-     * @param fHeadline java.lang.String value to set.
-     */
-    void setHeadline(java.lang.String fHeadline);
+    void setHeadline(Text headline);
 
     /**
      * Indicates that the resource is compatible with the referenced accessibility API. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityAPI-vocabulary).
@@ -2379,15 +1900,9 @@ public interface CreativeWork extends Thing {
     /**
      * Indicates that the resource is compatible with the referenced accessibility API. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityAPI-vocabulary).
      *
-     * @param fAccessibilityAPI Text value to set.
+     * @param accessibilityAPI Text value to set.
      */
-    void setAccessibilityAPI(Text fAccessibilityAPI);
-    /**
-     * Indicates that the resource is compatible with the referenced accessibility API. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityAPI-vocabulary).
-     *
-     * @param fAccessibilityAPI java.lang.String value to set.
-     */
-    void setAccessibilityAPI(java.lang.String fAccessibilityAPI);
+    void setAccessibilityAPI(Text accessibilityAPI);
 
     /**
      * The publishing division which published the comic.
@@ -2400,10 +1915,10 @@ public interface CreativeWork extends Thing {
     /**
      * The publishing division which published the comic.
      *
-     * @param fPublisherImprint Organization value to set.
+     * @param publisherImprint Organization value to set.
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
-    void setPublisherImprint(Organization fPublisherImprint);
+    void setPublisherImprint(Organization publisherImprint);
 
     /**
      * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
@@ -2415,27 +1930,21 @@ public interface CreativeWork extends Thing {
     /**
      * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
      *
-     * @param fIsBasedOnUrl URL value to set.
+     * @param isBasedOnUrl URL value to set.
      */
-    void setIsBasedOnUrl(URL fIsBasedOnUrl);
+    void setIsBasedOnUrl(URL isBasedOnUrl);
     /**
      * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
      *
-     * @param fIsBasedOnUrl java.net.URL value to set.
+     * @param isBasedOnUrl CreativeWork value to set.
      */
-    void setIsBasedOnUrl(java.net.URL fIsBasedOnUrl);
+    void setIsBasedOnUrl(CreativeWork isBasedOnUrl);
     /**
      * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
      *
-     * @param fIsBasedOnUrl CreativeWork value to set.
+     * @param isBasedOnUrl Product value to set.
      */
-    void setIsBasedOnUrl(CreativeWork fIsBasedOnUrl);
-    /**
-     * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
-     *
-     * @param fIsBasedOnUrl Product value to set.
-     */
-    void setIsBasedOnUrl(Product fIsBasedOnUrl);
+    void setIsBasedOnUrl(Product isBasedOnUrl);
 
     /**
      * A media object that encodes this CreativeWork.
@@ -2447,9 +1956,9 @@ public interface CreativeWork extends Thing {
     /**
      * A media object that encodes this CreativeWork.
      *
-     * @param fEncodings MediaObject value to set.
+     * @param encodings MediaObject value to set.
      */
-    void setEncodings(MediaObject fEncodings);
+    void setEncodings(MediaObject encodings);
 
     /**
      * Used to indicate a specific claim contained, implied, translated or refined from the content of a [[MediaObject]] or other [[CreativeWork]]. The interpreting party can be indicated using [[claimInterpreter]].
@@ -2463,11 +1972,11 @@ public interface CreativeWork extends Thing {
     /**
      * Used to indicate a specific claim contained, implied, translated or refined from the content of a [[MediaObject]] or other [[CreativeWork]]. The interpreting party can be indicated using [[claimInterpreter]].
      *
-     * @param fInterpretedAsClaim Claim value to set.
+     * @param interpretedAsClaim Claim value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
-    void setInterpretedAsClaim(Claim fInterpretedAsClaim);
+    void setInterpretedAsClaim(Claim interpretedAsClaim);
 
     /**
      * Identifies input methods that are sufficient to fully control the described resource. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityControl-vocabulary).
@@ -2479,15 +1988,9 @@ public interface CreativeWork extends Thing {
     /**
      * Identifies input methods that are sufficient to fully control the described resource. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityControl-vocabulary).
      *
-     * @param fAccessibilityControl Text value to set.
+     * @param accessibilityControl Text value to set.
      */
-    void setAccessibilityControl(Text fAccessibilityControl);
-    /**
-     * Identifies input methods that are sufficient to fully control the described resource. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityControl-vocabulary).
-     *
-     * @param fAccessibilityControl java.lang.String value to set.
-     */
-    void setAccessibilityControl(java.lang.String fAccessibilityControl);
+    void setAccessibilityControl(Text accessibilityControl);
 
     /**
      * A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.
@@ -2499,21 +2002,15 @@ public interface CreativeWork extends Thing {
     /**
      * A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.
      *
-     * @param fCitation CreativeWork value to set.
+     * @param citation CreativeWork value to set.
      */
-    void setCitation(CreativeWork fCitation);
+    void setCitation(CreativeWork citation);
     /**
      * A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.
      *
-     * @param fCitation Text value to set.
+     * @param citation Text value to set.
      */
-    void setCitation(Text fCitation);
-    /**
-     * A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.
-     *
-     * @param fCitation java.lang.String value to set.
-     */
-    void setCitation(java.lang.String fCitation);
+    void setCitation(Text citation);
 
     /**
      * The version of the CreativeWork embodied by a specified resource.
@@ -2525,27 +2022,15 @@ public interface CreativeWork extends Thing {
     /**
      * The version of the CreativeWork embodied by a specified resource.
      *
-     * @param fVersion Number value to set.
+     * @param version Number value to set.
      */
-    void setVersion(Number fVersion);
+    void setVersion(Number version);
     /**
      * The version of the CreativeWork embodied by a specified resource.
      *
-     * @param fVersion java.lang.Number value to set.
+     * @param version Text value to set.
      */
-    void setVersion(java.lang.Number fVersion);
-    /**
-     * The version of the CreativeWork embodied by a specified resource.
-     *
-     * @param fVersion Text value to set.
-     */
-    void setVersion(Text fVersion);
-    /**
-     * The version of the CreativeWork embodied by a specified resource.
-     *
-     * @param fVersion java.lang.String value to set.
-     */
-    void setVersion(java.lang.String fVersion);
+    void setVersion(Text version);
 
     /**
      * Indicates a page or other link involved in archival of a [[CreativeWork]]. In the case of [[MediaReview]], the items in a [[MediaReviewItem]] may often become inaccessible, but be archived by archival, journalistic, activist, or law enforcement organizations. In such cases, the referenced page may not directly publish the content.
@@ -2559,27 +2044,19 @@ public interface CreativeWork extends Thing {
     /**
      * Indicates a page or other link involved in archival of a [[CreativeWork]]. In the case of [[MediaReview]], the items in a [[MediaReviewItem]] may often become inaccessible, but be archived by archival, journalistic, activist, or law enforcement organizations. In such cases, the referenced page may not directly publish the content.
      *
-     * @param fArchivedAt WebPage value to set.
+     * @param archivedAt WebPage value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
-    void setArchivedAt(WebPage fArchivedAt);
+    void setArchivedAt(WebPage archivedAt);
     /**
      * Indicates a page or other link involved in archival of a [[CreativeWork]]. In the case of [[MediaReview]], the items in a [[MediaReviewItem]] may often become inaccessible, but be archived by archival, journalistic, activist, or law enforcement organizations. In such cases, the referenced page may not directly publish the content.
      *
-     * @param fArchivedAt URL value to set.
+     * @param archivedAt URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
-    void setArchivedAt(URL fArchivedAt);
-    /**
-     * Indicates a page or other link involved in archival of a [[CreativeWork]]. In the case of [[MediaReview]], the items in a [[MediaReviewItem]] may often become inaccessible, but be archived by archival, journalistic, activist, or law enforcement organizations. In such cases, the referenced page may not directly publish the content.
-     *
-     * @param fArchivedAt java.net.URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
-     */
-    void setArchivedAt(java.net.URL fArchivedAt);
+    void setArchivedAt(URL archivedAt);
 
     /**
      * The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.
@@ -2591,21 +2068,15 @@ public interface CreativeWork extends Thing {
     /**
      * The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.
      *
-     * @param fLearningResourceType DefinedTerm value to set.
+     * @param learningResourceType DefinedTerm value to set.
      */
-    void setLearningResourceType(DefinedTerm fLearningResourceType);
+    void setLearningResourceType(DefinedTerm learningResourceType);
     /**
      * The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.
      *
-     * @param fLearningResourceType Text value to set.
+     * @param learningResourceType Text value to set.
      */
-    void setLearningResourceType(Text fLearningResourceType);
-    /**
-     * The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.
-     *
-     * @param fLearningResourceType java.lang.String value to set.
-     */
-    void setLearningResourceType(java.lang.String fLearningResourceType);
+    void setLearningResourceType(Text learningResourceType);
 
     /**
      * A media object that encodes this CreativeWork. This property is a synonym for associatedMedia.
@@ -2617,9 +2088,9 @@ public interface CreativeWork extends Thing {
     /**
      * A media object that encodes this CreativeWork. This property is a synonym for associatedMedia.
      *
-     * @param fEncoding MediaObject value to set.
+     * @param encoding MediaObject value to set.
      */
-    void setEncoding(MediaObject fEncoding);
+    void setEncoding(MediaObject encoding);
 
     /**
      * An embedded audio object.
@@ -2632,24 +2103,24 @@ public interface CreativeWork extends Thing {
     /**
      * An embedded audio object.
      *
-     * @param fAudio AudioObject value to set.
+     * @param audio AudioObject value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2420">https://github.com/schemaorg/schemaorg/issues/2420</a>
      */
-    void setAudio(AudioObject fAudio);
+    void setAudio(AudioObject audio);
     /**
      * An embedded audio object.
      *
-     * @param fAudio MusicRecording value to set.
+     * @param audio MusicRecording value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2420">https://github.com/schemaorg/schemaorg/issues/2420</a>
      */
-    void setAudio(MusicRecording fAudio);
+    void setAudio(MusicRecording audio);
     /**
      * An embedded audio object.
      *
-     * @param fAudio Clip value to set.
+     * @param audio Clip value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2420">https://github.com/schemaorg/schemaorg/issues/2420</a>
      */
-    void setAudio(Clip fAudio);
+    void setAudio(Clip audio);
 
     /**
      * Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept.
@@ -2661,9 +2132,9 @@ public interface CreativeWork extends Thing {
     /**
      * Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept.
      *
-     * @param fMentions Thing value to set.
+     * @param mentions Thing value to set.
      */
-    void setMentions(Thing fMentions);
+    void setMentions(Thing mentions);
 
     /**
      * A list of single or combined accessModes that are sufficient to understand all the intellectual content of a resource. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessModeSufficient-vocabulary).
@@ -2676,10 +2147,10 @@ public interface CreativeWork extends Thing {
     /**
      * A list of single or combined accessModes that are sufficient to understand all the intellectual content of a resource. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessModeSufficient-vocabulary).
      *
-     * @param fAccessModeSufficient ItemList value to set.
+     * @param accessModeSufficient ItemList value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
      */
-    void setAccessModeSufficient(ItemList fAccessModeSufficient);
+    void setAccessModeSufficient(ItemList accessModeSufficient);
 
     /**
      * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
@@ -2692,10 +2163,10 @@ public interface CreativeWork extends Thing {
     /**
      * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
      *
-     * @param fHasPart CreativeWork value to set.
+     * @param hasPart CreativeWork value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
-    void setHasPart(CreativeWork fHasPart);
+    void setHasPart(CreativeWork hasPart);
 
     /**
      * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
@@ -2715,9 +2186,9 @@ public interface CreativeWork extends Thing {
      * 
      * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
      *
-     * @param fTemporalCoverage URL value to set.
+     * @param temporalCoverage URL value to set.
      */
-    void setTemporalCoverage(URL fTemporalCoverage);
+    void setTemporalCoverage(URL temporalCoverage);
     /**
      * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
      *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content e.g. ScholarlyArticle, Book, TVSeries or TVEpisode may indicate their temporalCoverage in broader terms - textually or via well-known URL.
@@ -2725,9 +2196,9 @@ public interface CreativeWork extends Thing {
      * 
      * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
      *
-     * @param fTemporalCoverage java.net.URL value to set.
+     * @param temporalCoverage DateTime value to set.
      */
-    void setTemporalCoverage(java.net.URL fTemporalCoverage);
+    void setTemporalCoverage(DateTime temporalCoverage);
     /**
      * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
      *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content e.g. ScholarlyArticle, Book, TVSeries or TVEpisode may indicate their temporalCoverage in broader terms - textually or via well-known URL.
@@ -2735,39 +2206,9 @@ public interface CreativeWork extends Thing {
      * 
      * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
      *
-     * @param fTemporalCoverage DateTime value to set.
+     * @param temporalCoverage Text value to set.
      */
-    void setTemporalCoverage(DateTime fTemporalCoverage);
-    /**
-     * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
-     *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content e.g. ScholarlyArticle, Book, TVSeries or TVEpisode may indicate their temporalCoverage in broader terms - textually or via well-known URL.
-     *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945".
-     * 
-     * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
-     *
-     * @param fTemporalCoverage java.time.LocalDateTime value to set.
-     */
-    void setTemporalCoverage(java.time.LocalDateTime fTemporalCoverage);
-    /**
-     * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
-     *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content e.g. ScholarlyArticle, Book, TVSeries or TVEpisode may indicate their temporalCoverage in broader terms - textually or via well-known URL.
-     *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945".
-     * 
-     * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
-     *
-     * @param fTemporalCoverage Text value to set.
-     */
-    void setTemporalCoverage(Text fTemporalCoverage);
-    /**
-     * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
-     *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content e.g. ScholarlyArticle, Book, TVSeries or TVEpisode may indicate their temporalCoverage in broader terms - textually or via well-known URL.
-     *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945".
-     * 
-     * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
-     *
-     * @param fTemporalCoverage java.lang.String value to set.
-     */
-    void setTemporalCoverage(java.lang.String fTemporalCoverage);
+    void setTemporalCoverage(Text temporalCoverage);
 
     /**
      * A secondary contributor to the CreativeWork or Event.
@@ -2779,15 +2220,15 @@ public interface CreativeWork extends Thing {
     /**
      * A secondary contributor to the CreativeWork or Event.
      *
-     * @param fContributor Organization value to set.
+     * @param contributor Organization value to set.
      */
-    void setContributor(Organization fContributor);
+    void setContributor(Organization contributor);
     /**
      * A secondary contributor to the CreativeWork or Event.
      *
-     * @param fContributor Person value to set.
+     * @param contributor Person value to set.
      */
-    void setContributor(Person fContributor);
+    void setContributor(Person contributor);
 
     /**
      * An embedded video object.
@@ -2799,13 +2240,13 @@ public interface CreativeWork extends Thing {
     /**
      * An embedded video object.
      *
-     * @param fVideo Clip value to set.
+     * @param video Clip value to set.
      */
-    void setVideo(Clip fVideo);
+    void setVideo(Clip video);
     /**
      * An embedded video object.
      *
-     * @param fVideo VideoObject value to set.
+     * @param video VideoObject value to set.
      */
-    void setVideo(VideoObject fVideo);
+    void setVideo(VideoObject video);
 }

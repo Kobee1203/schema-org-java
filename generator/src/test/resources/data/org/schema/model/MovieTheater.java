@@ -24,13 +24,7 @@ public interface MovieTheater extends CivicStructure, EntertainmentBusiness {
     /**
      * The number of screens in the movie theater.
      *
-     * @param fScreenCount Number value to set.
+     * @param screenCount Number value to set.
      */
-    void setScreenCount(Number fScreenCount);
-    /**
-     * The number of screens in the movie theater.
-     *
-     * @param fScreenCount java.lang.Number value to set.
-     */
-    void setScreenCount(java.lang.Number fScreenCount);
+    void setScreenCount(Number screenCount);
 }

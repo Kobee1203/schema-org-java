@@ -26,8 +26,8 @@ public interface DrugLegalStatus extends MedicalIntangible {
     /**
      * The location in which the status applies.
      *
-     * @param fApplicableLocation AdministrativeArea value to set.
+     * @param applicableLocation AdministrativeArea value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setApplicableLocation(AdministrativeArea fApplicableLocation);
+    void setApplicableLocation(AdministrativeArea applicableLocation);
 }

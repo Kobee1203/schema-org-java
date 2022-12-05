@@ -33,30 +33,21 @@ public interface MoneyTransfer extends TransferAction {
     /**
      * A bank or bank’s branch, financial institution or international financial institution operating the beneficiary’s bank account or releasing funds for the beneficiary.
      *
-     * @param fBeneficiaryBank BankOrCreditUnion value to set.
+     * @param beneficiaryBank BankOrCreditUnion value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
      */
-    void setBeneficiaryBank(BankOrCreditUnion fBeneficiaryBank);
+    void setBeneficiaryBank(BankOrCreditUnion beneficiaryBank);
     /**
      * A bank or bank’s branch, financial institution or international financial institution operating the beneficiary’s bank account or releasing funds for the beneficiary.
      *
-     * @param fBeneficiaryBank Text value to set.
+     * @param beneficiaryBank Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
      */
-    void setBeneficiaryBank(Text fBeneficiaryBank);
-    /**
-     * A bank or bank’s branch, financial institution or international financial institution operating the beneficiary’s bank account or releasing funds for the beneficiary.
-     *
-     * @param fBeneficiaryBank java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
-     */
-    void setBeneficiaryBank(java.lang.String fBeneficiaryBank);
+    void setBeneficiaryBank(Text beneficiaryBank);
 
     /**
      * The amount of money.
@@ -70,25 +61,17 @@ public interface MoneyTransfer extends TransferAction {
     /**
      * The amount of money.
      *
-     * @param fAmount Number value to set.
+     * @param amount Number value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
      */
-    void setAmount(Number fAmount);
+    void setAmount(Number amount);
     /**
      * The amount of money.
      *
-     * @param fAmount java.lang.Number value to set.
+     * @param amount MonetaryAmount value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
      */
-    void setAmount(java.lang.Number fAmount);
-    /**
-     * The amount of money.
-     *
-     * @param fAmount MonetaryAmount value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
-     */
-    void setAmount(MonetaryAmount fAmount);
+    void setAmount(MonetaryAmount amount);
 }

@@ -6,6 +6,7 @@ import com.weedow.schemaorg.generator.model.jsonld.PartOf;
 import com.weedow.schemaorg.generator.model.jsonld.RangeIncludes;
 import com.weedow.schemaorg.generator.model.jsonld.Source;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -27,6 +28,8 @@ public final class ModelUtils {
             "schema:Time", "java.time.LocalTime",
             "schema:DateTime", "java.time.LocalDateTime"
     );
+
+    private static final String[] JAVA_KEYWORDS = {"abstract"};
 
     private ModelUtils() {
     }
@@ -69,6 +72,14 @@ public final class ModelUtils {
     public static List<String> getPartOf(GraphItem graphItem) {
         final List<PartOf> partOf = graphItem.getPartOf();
         return partOf != null ? partOf.stream().map(PartOf::getId).collect(Collectors.toList()) : Collections.emptyList();
+    }
+
+    public static String getFieldName(String name) {
+        return isJavaKeyword(name) ? name + "_" : name;
+    }
+
+    private static boolean isJavaKeyword(String keyword) {
+        return keyword != null && Arrays.binarySearch(JAVA_KEYWORDS, keyword) >= 0;
     }
 
     public static String capitalize(String str) {

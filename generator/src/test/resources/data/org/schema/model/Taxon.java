@@ -30,38 +30,24 @@ public interface Taxon extends Thing {
     /**
      * Closest parent taxon of the taxon in question.
      *
-     * @param fParentTaxon URL value to set.
+     * @param parentTaxon URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    void setParentTaxon(URL fParentTaxon);
+    void setParentTaxon(URL parentTaxon);
     /**
      * Closest parent taxon of the taxon in question.
      *
-     * @param fParentTaxon java.net.URL value to set.
+     * @param parentTaxon Taxon value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    void setParentTaxon(java.net.URL fParentTaxon);
+    void setParentTaxon(Taxon parentTaxon);
     /**
      * Closest parent taxon of the taxon in question.
      *
-     * @param fParentTaxon Taxon value to set.
+     * @param parentTaxon Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    void setParentTaxon(Taxon fParentTaxon);
-    /**
-     * Closest parent taxon of the taxon in question.
-     *
-     * @param fParentTaxon Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     */
-    void setParentTaxon(Text fParentTaxon);
-    /**
-     * Closest parent taxon of the taxon in question.
-     *
-     * @param fParentTaxon java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     */
-    void setParentTaxon(java.lang.String fParentTaxon);
+    void setParentTaxon(Text parentTaxon);
 
     /**
      * The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary – (typically the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs).
@@ -74,38 +60,24 @@ public interface Taxon extends Thing {
     /**
      * The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary – (typically the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs).
      *
-     * @param fTaxonRank PropertyValue value to set.
+     * @param taxonRank PropertyValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    void setTaxonRank(PropertyValue fTaxonRank);
+    void setTaxonRank(PropertyValue taxonRank);
     /**
      * The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary – (typically the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs).
      *
-     * @param fTaxonRank URL value to set.
+     * @param taxonRank URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    void setTaxonRank(URL fTaxonRank);
+    void setTaxonRank(URL taxonRank);
     /**
      * The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary – (typically the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs).
      *
-     * @param fTaxonRank java.net.URL value to set.
+     * @param taxonRank Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    void setTaxonRank(java.net.URL fTaxonRank);
-    /**
-     * The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary – (typically the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs).
-     *
-     * @param fTaxonRank Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     */
-    void setTaxonRank(Text fTaxonRank);
-    /**
-     * The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary – (typically the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs).
-     *
-     * @param fTaxonRank java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     */
-    void setTaxonRank(java.lang.String fTaxonRank);
+    void setTaxonRank(Text taxonRank);
 
     /**
      * Closest child taxa of the taxon in question.
@@ -118,38 +90,24 @@ public interface Taxon extends Thing {
     /**
      * Closest child taxa of the taxon in question.
      *
-     * @param fChildTaxon Text value to set.
+     * @param childTaxon Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    void setChildTaxon(Text fChildTaxon);
+    void setChildTaxon(Text childTaxon);
     /**
      * Closest child taxa of the taxon in question.
      *
-     * @param fChildTaxon java.lang.String value to set.
+     * @param childTaxon Taxon value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    void setChildTaxon(java.lang.String fChildTaxon);
+    void setChildTaxon(Taxon childTaxon);
     /**
      * Closest child taxa of the taxon in question.
      *
-     * @param fChildTaxon Taxon value to set.
+     * @param childTaxon URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    void setChildTaxon(Taxon fChildTaxon);
-    /**
-     * Closest child taxa of the taxon in question.
-     *
-     * @param fChildTaxon URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     */
-    void setChildTaxon(URL fChildTaxon);
-    /**
-     * Closest child taxa of the taxon in question.
-     *
-     * @param fChildTaxon java.net.URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     */
-    void setChildTaxon(java.net.URL fChildTaxon);
+    void setChildTaxon(URL childTaxon);
 
     /**
      * A Defined Term contained in this term set.
@@ -163,9 +121,9 @@ public interface Taxon extends Thing {
     /**
      * A Defined Term contained in this term set.
      *
-     * @param fHasDefinedTerm DefinedTerm value to set.
+     * @param hasDefinedTerm DefinedTerm value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
      */
-    void setHasDefinedTerm(DefinedTerm fHasDefinedTerm);
+    void setHasDefinedTerm(DefinedTerm hasDefinedTerm);
 }

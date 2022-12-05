@@ -55,10 +55,10 @@ public interface Product extends Thing {
     /**
      * A pointer to another product (or multiple products) for which this product is an accessory or spare part.
      *
-     * @param fIsAccessoryOrSparePartFor Product value to set.
+     * @param isAccessoryOrSparePartFor Product value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setIsAccessoryOrSparePartFor(Product fIsAccessoryOrSparePartFor);
+    void setIsAccessoryOrSparePartFor(Product isAccessoryOrSparePartFor);
 
     /**
      * Used to tag an item to be intended or suitable for consumption or use by adults only.
@@ -72,11 +72,11 @@ public interface Product extends Thing {
     /**
      * Used to tag an item to be intended or suitable for consumption or use by adults only.
      *
-     * @param fHasAdultConsideration AdultOrientedEnumeration value to set.
+     * @param hasAdultConsideration AdultOrientedEnumeration value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2989">https://github.com/schemaorg/schemaorg/issues/2989</a>
      */
-    void setHasAdultConsideration(AdultOrientedEnumeration fHasAdultConsideration);
+    void setHasAdultConsideration(AdultOrientedEnumeration hasAdultConsideration);
 
     /**
      * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
@@ -88,15 +88,9 @@ public interface Product extends Thing {
     /**
      * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
-     * @param fGtin12 Text value to set.
+     * @param gtin12 Text value to set.
      */
-    void setGtin12(Text fGtin12);
-    /**
-     * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
-     *
-     * @param fGtin12 java.lang.String value to set.
-     */
-    void setGtin12(java.lang.String fGtin12);
+    void setGtin12(Text gtin12);
 
     /**
      * Indicates the [NATO stock number](https://en.wikipedia.org/wiki/NATO_Stock_Number) (nsn) of a [[Product]]. 
@@ -110,19 +104,11 @@ public interface Product extends Thing {
     /**
      * Indicates the [NATO stock number](https://en.wikipedia.org/wiki/NATO_Stock_Number) (nsn) of a [[Product]]. 
      *
-     * @param fNsn Text value to set.
+     * @param nsn Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2126">https://github.com/schemaorg/schemaorg/issues/2126</a>
      */
-    void setNsn(Text fNsn);
-    /**
-     * Indicates the [NATO stock number](https://en.wikipedia.org/wiki/NATO_Stock_Number) (nsn) of a [[Product]]. 
-     *
-     * @param fNsn java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2126">https://github.com/schemaorg/schemaorg/issues/2126</a>
-     */
-    void setNsn(java.lang.String fNsn);
+    void setNsn(Text nsn);
 
     /**
      * A material that something is made from, e.g. leather, wool, cotton, paper.
@@ -134,33 +120,21 @@ public interface Product extends Thing {
     /**
      * A material that something is made from, e.g. leather, wool, cotton, paper.
      *
-     * @param fMaterial Text value to set.
+     * @param material Text value to set.
      */
-    void setMaterial(Text fMaterial);
+    void setMaterial(Text material);
     /**
      * A material that something is made from, e.g. leather, wool, cotton, paper.
      *
-     * @param fMaterial java.lang.String value to set.
+     * @param material URL value to set.
      */
-    void setMaterial(java.lang.String fMaterial);
+    void setMaterial(URL material);
     /**
      * A material that something is made from, e.g. leather, wool, cotton, paper.
      *
-     * @param fMaterial URL value to set.
+     * @param material Product value to set.
      */
-    void setMaterial(URL fMaterial);
-    /**
-     * A material that something is made from, e.g. leather, wool, cotton, paper.
-     *
-     * @param fMaterial java.net.URL value to set.
-     */
-    void setMaterial(java.net.URL fMaterial);
-    /**
-     * A material that something is made from, e.g. leather, wool, cotton, paper.
-     *
-     * @param fMaterial Product value to set.
-     */
-    void setMaterial(Product fMaterial);
+    void setMaterial(Product material);
 
     /**
      * A review of the item.
@@ -172,9 +146,9 @@ public interface Product extends Thing {
     /**
      * A review of the item.
      *
-     * @param fReview Review value to set.
+     * @param review Review value to set.
      */
-    void setReview(Review fReview);
+    void setReview(Review review);
 
     /**
      * An award won by or for this item.
@@ -186,15 +160,9 @@ public interface Product extends Thing {
     /**
      * An award won by or for this item.
      *
-     * @param fAward Text value to set.
+     * @param award Text value to set.
      */
-    void setAward(Text fAward);
-    /**
-     * An award won by or for this item.
-     *
-     * @param fAward java.lang.String value to set.
-     */
-    void setAward(java.lang.String fAward);
+    void setAward(Text award);
 
     /**
      * The width of the item.
@@ -206,15 +174,15 @@ public interface Product extends Thing {
     /**
      * The width of the item.
      *
-     * @param fWidth QuantitativeValue value to set.
+     * @param width QuantitativeValue value to set.
      */
-    void setWidth(QuantitativeValue fWidth);
+    void setWidth(QuantitativeValue width);
     /**
      * The width of the item.
      *
-     * @param fWidth Distance value to set.
+     * @param width Distance value to set.
      */
-    void setWidth(Distance fWidth);
+    void setWidth(Distance width);
 
     /**
      * The country of origin of something, including products as well as creative  works such as movie and TV content.
@@ -234,9 +202,9 @@ public interface Product extends Thing {
      * 
      * In the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.
      *
-     * @param fCountryOfOrigin Country value to set.
+     * @param countryOfOrigin Country value to set.
      */
-    void setCountryOfOrigin(Country fCountryOfOrigin);
+    void setCountryOfOrigin(Country countryOfOrigin);
 
     /**
      * A pattern that something has, for example 'polka dot', 'striped', 'Canadian flag'. Values are typically expressed as text, although links to controlled value schemes are also supported.
@@ -250,27 +218,19 @@ public interface Product extends Thing {
     /**
      * A pattern that something has, for example 'polka dot', 'striped', 'Canadian flag'. Values are typically expressed as text, although links to controlled value schemes are also supported.
      *
-     * @param fPattern DefinedTerm value to set.
+     * @param pattern DefinedTerm value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
-    void setPattern(DefinedTerm fPattern);
+    void setPattern(DefinedTerm pattern);
     /**
      * A pattern that something has, for example 'polka dot', 'striped', 'Canadian flag'. Values are typically expressed as text, although links to controlled value schemes are also supported.
      *
-     * @param fPattern Text value to set.
+     * @param pattern Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
-    void setPattern(Text fPattern);
-    /**
-     * A pattern that something has, for example 'polka dot', 'striped', 'Canadian flag'. Values are typically expressed as text, although links to controlled value schemes are also supported.
-     *
-     * @param fPattern java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
-     */
-    void setPattern(java.lang.String fPattern);
+    void setPattern(Text pattern);
 
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
@@ -284,59 +244,43 @@ public interface Product extends Thing {
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
-     * @param fCategory URL value to set.
+     * @param category URL value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
-    void setCategory(URL fCategory);
+    void setCategory(URL category);
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
-     * @param fCategory java.net.URL value to set.
+     * @param category Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
-    void setCategory(java.net.URL fCategory);
+    void setCategory(Text category);
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
-     * @param fCategory Text value to set.
+     * @param category PhysicalActivityCategory value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
-    void setCategory(Text fCategory);
+    void setCategory(PhysicalActivityCategory category);
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
-     * @param fCategory java.lang.String value to set.
+     * @param category Thing value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
-    void setCategory(java.lang.String fCategory);
+    void setCategory(Thing category);
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
-     * @param fCategory PhysicalActivityCategory value to set.
+     * @param category CategoryCode value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
-    void setCategory(PhysicalActivityCategory fCategory);
-    /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-     *
-     * @param fCategory Thing value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     */
-    void setCategory(Thing fCategory);
-    /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-     *
-     * @param fCategory CategoryCode value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     */
-    void setCategory(CategoryCode fCategory);
+    void setCategory(CategoryCode category);
 
     /**
      * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
@@ -351,12 +295,12 @@ public interface Product extends Thing {
     /**
      * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
      *
-     * @param fFunding Grant value to set.
+     * @param funding Grant value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
-    void setFunding(Grant fFunding);
+    void setFunding(Grant funding);
 
     /**
      * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
@@ -369,17 +313,10 @@ public interface Product extends Thing {
     /**
      * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
      *
-     * @param fMpn Text value to set.
+     * @param mpn Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setMpn(Text fMpn);
-    /**
-     * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
-     *
-     * @param fMpn java.lang.String value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void setMpn(java.lang.String fMpn);
+    void setMpn(Text mpn);
 
     /**
      * The height of the item.
@@ -391,15 +328,15 @@ public interface Product extends Thing {
     /**
      * The height of the item.
      *
-     * @param fHeight Distance value to set.
+     * @param height Distance value to set.
      */
-    void setHeight(Distance fHeight);
+    void setHeight(Distance height);
     /**
      * The height of the item.
      *
-     * @param fHeight QuantitativeValue value to set.
+     * @param height QuantitativeValue value to set.
      */
-    void setHeight(QuantitativeValue fHeight);
+    void setHeight(QuantitativeValue height);
 
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
@@ -411,33 +348,21 @@ public interface Product extends Thing {
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
      *
-     * @param fKeywords DefinedTerm value to set.
+     * @param keywords DefinedTerm value to set.
      */
-    void setKeywords(DefinedTerm fKeywords);
+    void setKeywords(DefinedTerm keywords);
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
      *
-     * @param fKeywords Text value to set.
+     * @param keywords Text value to set.
      */
-    void setKeywords(Text fKeywords);
+    void setKeywords(Text keywords);
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
      *
-     * @param fKeywords java.lang.String value to set.
+     * @param keywords URL value to set.
      */
-    void setKeywords(java.lang.String fKeywords);
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     * @param fKeywords URL value to set.
-     */
-    void setKeywords(URL fKeywords);
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     * @param fKeywords java.net.URL value to set.
-     */
-    void setKeywords(java.net.URL fKeywords);
+    void setKeywords(URL keywords);
 
     /**
      * The date the item e.g. vehicle was purchased by the current owner.
@@ -450,17 +375,10 @@ public interface Product extends Thing {
     /**
      * The date the item e.g. vehicle was purchased by the current owner.
      *
-     * @param fPurchaseDate Date value to set.
+     * @param purchaseDate Date value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
-    void setPurchaseDate(Date fPurchaseDate);
-    /**
-     * The date the item e.g. vehicle was purchased by the current owner.
-     *
-     * @param fPurchaseDate java.time.LocalDate value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    void setPurchaseDate(java.time.LocalDate fPurchaseDate);
+    void setPurchaseDate(Date purchaseDate);
 
     /**
      * Defines the energy efficiency Category (also known as "class" or "rating") for a product according to an international energy efficiency standard.
@@ -474,11 +392,11 @@ public interface Product extends Thing {
     /**
      * Defines the energy efficiency Category (also known as "class" or "rating") for a product according to an international energy efficiency standard.
      *
-     * @param fHasEnergyConsumptionDetails EnergyConsumptionDetails value to set.
+     * @param hasEnergyConsumptionDetails EnergyConsumptionDetails value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2670">https://github.com/schemaorg/schemaorg/issues/2670</a>
      */
-    void setHasEnergyConsumptionDetails(EnergyConsumptionDetails fHasEnergyConsumptionDetails);
+    void setHasEnergyConsumptionDetails(EnergyConsumptionDetails hasEnergyConsumptionDetails);
 
     /**
      * An intended audience, i.e. a group for whom something was created.
@@ -490,9 +408,9 @@ public interface Product extends Thing {
     /**
      * An intended audience, i.e. a group for whom something was created.
      *
-     * @param fAudience Audience value to set.
+     * @param audience Audience value to set.
      */
-    void setAudience(Audience fAudience);
+    void setAudience(Audience audience);
 
     /**
      * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
@@ -507,18 +425,18 @@ public interface Product extends Thing {
      * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      *
-     * @param fOffers Offer value to set.
+     * @param offers Offer value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
-    void setOffers(Offer fOffers);
+    void setOffers(Offer offers);
     /**
      * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      *
-     * @param fOffers Demand value to set.
+     * @param offers Demand value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
-    void setOffers(Demand fOffers);
+    void setOffers(Demand offers);
 
     /**
      * The date of production of the item, e.g. vehicle.
@@ -531,17 +449,10 @@ public interface Product extends Thing {
     /**
      * The date of production of the item, e.g. vehicle.
      *
-     * @param fProductionDate Date value to set.
+     * @param productionDate Date value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
-    void setProductionDate(Date fProductionDate);
-    /**
-     * The date of production of the item, e.g. vehicle.
-     *
-     * @param fProductionDate java.time.LocalDate value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    void setProductionDate(java.time.LocalDate fProductionDate);
+    void setProductionDate(Date productionDate);
 
     /**
      * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
@@ -553,9 +464,9 @@ public interface Product extends Thing {
     /**
      * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
      *
-     * @param fItemCondition OfferItemCondition value to set.
+     * @param itemCondition OfferItemCondition value to set.
      */
-    void setItemCondition(OfferItemCondition fItemCondition);
+    void setItemCondition(OfferItemCondition itemCondition);
 
     /**
      * Awards won by or for this item.
@@ -567,15 +478,9 @@ public interface Product extends Thing {
     /**
      * Awards won by or for this item.
      *
-     * @param fAwards Text value to set.
+     * @param awards Text value to set.
      */
-    void setAwards(Text fAwards);
-    /**
-     * Awards won by or for this item.
-     *
-     * @param fAwards java.lang.String value to set.
-     */
-    void setAwards(java.lang.String fAwards);
+    void setAwards(Text awards);
 
     /**
      * A Global Trade Item Number ([GTIN](https://www.gs1.org/standards/id-keys/gtin)). GTINs identify trade items, including products and services, using numeric identification codes. The [[gtin]] property generalizes the earlier [[gtin8]], [[gtin12]], [[gtin13]], and [[gtin14]] properties. The GS1 [digital link specifications](https://www.gs1.org/standards/Digital-Link/) express GTINs as URLs. A correct [[gtin]] value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a "GS1 Digital Link" URL based on such a string. The numeric component should also have a [valid GS1 check digit](https://www.gs1.org/services/check-digit-calculator) and meet the other rules for valid GTINs. See also [GS1's GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) and [Wikipedia](https://en.wikipedia.org/wiki/Global_Trade_Item_Number) for more details. Left-padding of the gtin values is not required or encouraged.
@@ -591,20 +496,11 @@ public interface Product extends Thing {
      * A Global Trade Item Number ([GTIN](https://www.gs1.org/standards/id-keys/gtin)). GTINs identify trade items, including products and services, using numeric identification codes. The [[gtin]] property generalizes the earlier [[gtin8]], [[gtin12]], [[gtin13]], and [[gtin14]] properties. The GS1 [digital link specifications](https://www.gs1.org/standards/Digital-Link/) express GTINs as URLs. A correct [[gtin]] value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a "GS1 Digital Link" URL based on such a string. The numeric component should also have a [valid GS1 check digit](https://www.gs1.org/services/check-digit-calculator) and meet the other rules for valid GTINs. See also [GS1's GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) and [Wikipedia](https://en.wikipedia.org/wiki/Global_Trade_Item_Number) for more details. Left-padding of the gtin values is not required or encouraged.
      *    
      *
-     * @param fGtin Text value to set.
+     * @param gtin Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
      */
-    void setGtin(Text fGtin);
-    /**
-     * A Global Trade Item Number ([GTIN](https://www.gs1.org/standards/id-keys/gtin)). GTINs identify trade items, including products and services, using numeric identification codes. The [[gtin]] property generalizes the earlier [[gtin8]], [[gtin12]], [[gtin13]], and [[gtin14]] properties. The GS1 [digital link specifications](https://www.gs1.org/standards/Digital-Link/) express GTINs as URLs. A correct [[gtin]] value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a "GS1 Digital Link" URL based on such a string. The numeric component should also have a [valid GS1 check digit](https://www.gs1.org/services/check-digit-calculator) and meet the other rules for valid GTINs. See also [GS1's GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) and [Wikipedia](https://en.wikipedia.org/wiki/Global_Trade_Item_Number) for more details. Left-padding of the gtin values is not required or encouraged.
-     *    
-     *
-     * @param fGtin java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    void setGtin(java.lang.String fGtin);
+    void setGtin(Text gtin);
 
     /**
      * The product identifier, such as ISBN. For example: ``` meta itemprop="productID" content="isbn:123-456-789" ```.
@@ -616,15 +512,9 @@ public interface Product extends Thing {
     /**
      * The product identifier, such as ISBN. For example: ``` meta itemprop="productID" content="isbn:123-456-789" ```.
      *
-     * @param fProductID Text value to set.
+     * @param productID Text value to set.
      */
-    void setProductID(Text fProductID);
-    /**
-     * The product identifier, such as ISBN. For example: ``` meta itemprop="productID" content="isbn:123-456-789" ```.
-     *
-     * @param fProductID java.lang.String value to set.
-     */
-    void setProductID(java.lang.String fProductID);
+    void setProductID(Text productID);
 
     /**
      * The place where the product was assembled.
@@ -638,19 +528,11 @@ public interface Product extends Thing {
     /**
      * The place where the product was assembled.
      *
-     * @param fCountryOfAssembly Text value to set.
+     * @param countryOfAssembly Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/991">https://github.com/schemaorg/schemaorg/issues/991</a>
      */
-    void setCountryOfAssembly(Text fCountryOfAssembly);
-    /**
-     * The place where the product was assembled.
-     *
-     * @param fCountryOfAssembly java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/991">https://github.com/schemaorg/schemaorg/issues/991</a>
-     */
-    void setCountryOfAssembly(java.lang.String fCountryOfAssembly);
+    void setCountryOfAssembly(Text countryOfAssembly);
 
     /**
      * The color of the product.
@@ -663,17 +545,10 @@ public interface Product extends Thing {
     /**
      * The color of the product.
      *
-     * @param fColor Text value to set.
+     * @param color Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setColor(Text fColor);
-    /**
-     * The color of the product.
-     *
-     * @param fColor java.lang.String value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void setColor(java.lang.String fColor);
+    void setColor(Text color);
 
     /**
      * The overall rating, based on a collection of reviews or ratings, of the item.
@@ -685,9 +560,9 @@ public interface Product extends Thing {
     /**
      * The overall rating, based on a collection of reviews or ratings, of the item.
      *
-     * @param fAggregateRating AggregateRating value to set.
+     * @param aggregateRating AggregateRating value to set.
      */
-    void setAggregateRating(AggregateRating fAggregateRating);
+    void setAggregateRating(AggregateRating aggregateRating);
 
     /**
      * A pointer to another, functionally similar product (or multiple products).
@@ -700,17 +575,17 @@ public interface Product extends Thing {
     /**
      * A pointer to another, functionally similar product (or multiple products).
      *
-     * @param fIsSimilarTo Service value to set.
+     * @param isSimilarTo Service value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setIsSimilarTo(Service fIsSimilarTo);
+    void setIsSimilarTo(Service isSimilarTo);
     /**
      * A pointer to another, functionally similar product (or multiple products).
      *
-     * @param fIsSimilarTo Product value to set.
+     * @param isSimilarTo Product value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setIsSimilarTo(Product fIsSimilarTo);
+    void setIsSimilarTo(Product isSimilarTo);
 
     /**
      * The depth of the item.
@@ -723,17 +598,17 @@ public interface Product extends Thing {
     /**
      * The depth of the item.
      *
-     * @param fDepth Distance value to set.
+     * @param depth Distance value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setDepth(Distance fDepth);
+    void setDepth(Distance depth);
     /**
      * The depth of the item.
      *
-     * @param fDepth QuantitativeValue value to set.
+     * @param depth QuantitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setDepth(QuantitativeValue fDepth);
+    void setDepth(QuantitativeValue depth);
 
     /**
      * The place where the item (typically [[Product]]) was last processed and tested before importation.
@@ -747,19 +622,11 @@ public interface Product extends Thing {
     /**
      * The place where the item (typically [[Product]]) was last processed and tested before importation.
      *
-     * @param fCountryOfLastProcessing Text value to set.
+     * @param countryOfLastProcessing Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/991">https://github.com/schemaorg/schemaorg/issues/991</a>
      */
-    void setCountryOfLastProcessing(Text fCountryOfLastProcessing);
-    /**
-     * The place where the item (typically [[Product]]) was last processed and tested before importation.
-     *
-     * @param fCountryOfLastProcessing java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/991">https://github.com/schemaorg/schemaorg/issues/991</a>
-     */
-    void setCountryOfLastProcessing(java.lang.String fCountryOfLastProcessing);
+    void setCountryOfLastProcessing(Text countryOfLastProcessing);
 
     /**
      * Indicates the kind of product that this is a variant of. In the case of [[ProductModel]], this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a [[ProductGroup]], the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with [[ProductGroup]], this property can apply to any [[Product]] included in the group.
@@ -772,17 +639,17 @@ public interface Product extends Thing {
     /**
      * Indicates the kind of product that this is a variant of. In the case of [[ProductModel]], this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a [[ProductGroup]], the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with [[ProductGroup]], this property can apply to any [[Product]] included in the group.
      *
-     * @param fIsVariantOf ProductModel value to set.
+     * @param isVariantOf ProductModel value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setIsVariantOf(ProductModel fIsVariantOf);
+    void setIsVariantOf(ProductModel isVariantOf);
     /**
      * Indicates the kind of product that this is a variant of. In the case of [[ProductModel]], this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a [[ProductGroup]], the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with [[ProductGroup]], this property can apply to any [[Product]] included in the group.
      *
-     * @param fIsVariantOf ProductGroup value to set.
+     * @param isVariantOf ProductGroup value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setIsVariantOf(ProductGroup fIsVariantOf);
+    void setIsVariantOf(ProductGroup isVariantOf);
 
     /**
      * A slogan or motto associated with the item.
@@ -794,15 +661,9 @@ public interface Product extends Thing {
     /**
      * A slogan or motto associated with the item.
      *
-     * @param fSlogan Text value to set.
+     * @param slogan Text value to set.
      */
-    void setSlogan(Text fSlogan);
-    /**
-     * A slogan or motto associated with the item.
-     *
-     * @param fSlogan java.lang.String value to set.
-     */
-    void setSlogan(java.lang.String fSlogan);
+    void setSlogan(Text slogan);
 
     /**
      * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
@@ -814,15 +675,15 @@ public interface Product extends Thing {
     /**
      * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
      *
-     * @param fBrand Organization value to set.
+     * @param brand Organization value to set.
      */
-    void setBrand(Organization fBrand);
+    void setBrand(Organization brand);
     /**
      * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
      *
-     * @param fBrand Brand value to set.
+     * @param brand Brand value to set.
      */
-    void setBrand(Brand fBrand);
+    void setBrand(Brand brand);
 
     /**
      * The manufacturer of the product.
@@ -834,9 +695,9 @@ public interface Product extends Thing {
     /**
      * The manufacturer of the product.
      *
-     * @param fManufacturer Organization value to set.
+     * @param manufacturer Organization value to set.
      */
-    void setManufacturer(Organization fManufacturer);
+    void setManufacturer(Organization manufacturer);
 
     /**
      * A product measurement, for example the inseam of pants, the wheel size of a bicycle, or the gauge of a screw. Usually an exact measurement, but can also be a range of measurements for adjustable products, for example belts and ski bindings.
@@ -850,11 +711,11 @@ public interface Product extends Thing {
     /**
      * A product measurement, for example the inseam of pants, the wheel size of a bicycle, or the gauge of a screw. Usually an exact measurement, but can also be a range of measurements for adjustable products, for example belts and ski bindings.
      *
-     * @param fHasMeasurement QuantitativeValue value to set.
+     * @param hasMeasurement QuantitativeValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
      */
-    void setHasMeasurement(QuantitativeValue fHasMeasurement);
+    void setHasMeasurement(QuantitativeValue hasMeasurement);
 
     /**
      * A pointer to another product (or multiple products) for which this product is a consumable.
@@ -867,10 +728,10 @@ public interface Product extends Thing {
     /**
      * A pointer to another product (or multiple products) for which this product is a consumable.
      *
-     * @param fIsConsumableFor Product value to set.
+     * @param isConsumableFor Product value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setIsConsumableFor(Product fIsConsumableFor);
+    void setIsConsumableFor(Product isConsumableFor);
 
     /**
      * An associated logo.
@@ -883,24 +744,17 @@ public interface Product extends Thing {
     /**
      * An associated logo.
      *
-     * @param fLogo URL value to set.
+     * @param logo URL value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setLogo(URL fLogo);
+    void setLogo(URL logo);
     /**
      * An associated logo.
      *
-     * @param fLogo java.net.URL value to set.
+     * @param logo ImageObject value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setLogo(java.net.URL fLogo);
-    /**
-     * An associated logo.
-     *
-     * @param fLogo ImageObject value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void setLogo(ImageObject fLogo);
+    void setLogo(ImageObject logo);
 
     /**
      * The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
@@ -913,17 +767,10 @@ public interface Product extends Thing {
     /**
      * The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
-     * @param fGtin8 Text value to set.
+     * @param gtin8 Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setGtin8(Text fGtin8);
-    /**
-     * The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
-     *
-     * @param fGtin8 java.lang.String value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void setGtin8(java.lang.String fGtin8);
+    void setGtin8(Text gtin8);
 
     /**
      * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
@@ -936,17 +783,10 @@ public interface Product extends Thing {
     /**
      * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
      *
-     * @param fSku Text value to set.
+     * @param sku Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setSku(Text fSku);
-    /**
-     * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
-     *
-     * @param fSku java.lang.String value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void setSku(java.lang.String fSku);
+    void setSku(Text sku);
 
     /**
      * Indicates the [[productGroupID]] for a [[ProductGroup]] that this product [[isVariantOf]]. 
@@ -960,19 +800,11 @@ public interface Product extends Thing {
     /**
      * Indicates the [[productGroupID]] for a [[ProductGroup]] that this product [[isVariantOf]]. 
      *
-     * @param fInProductGroupWithID Text value to set.
+     * @param inProductGroupWithID Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
-    void setInProductGroupWithID(Text fInProductGroupWithID);
-    /**
-     * Indicates the [[productGroupID]] for a [[ProductGroup]] that this product [[isVariantOf]]. 
-     *
-     * @param fInProductGroupWithID java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
-     */
-    void setInProductGroupWithID(java.lang.String fInProductGroupWithID);
+    void setInProductGroupWithID(Text inProductGroupWithID);
 
     /**
      * The model of the product. Use with the URL of a ProductModel or a textual representation of the model identifier. The URL of the ProductModel can be from an external source. It is recommended to additionally provide strong product identifiers via the gtin8/gtin13/gtin14 and mpn properties.
@@ -984,21 +816,15 @@ public interface Product extends Thing {
     /**
      * The model of the product. Use with the URL of a ProductModel or a textual representation of the model identifier. The URL of the ProductModel can be from an external source. It is recommended to additionally provide strong product identifiers via the gtin8/gtin13/gtin14 and mpn properties.
      *
-     * @param fModel ProductModel value to set.
+     * @param model ProductModel value to set.
      */
-    void setModel(ProductModel fModel);
+    void setModel(ProductModel model);
     /**
      * The model of the product. Use with the URL of a ProductModel or a textual representation of the model identifier. The URL of the ProductModel can be from an external source. It is recommended to additionally provide strong product identifiers via the gtin8/gtin13/gtin14 and mpn properties.
      *
-     * @param fModel Text value to set.
+     * @param model Text value to set.
      */
-    void setModel(Text fModel);
-    /**
-     * The model of the product. Use with the URL of a ProductModel or a textual representation of the model identifier. The URL of the ProductModel can be from an external source. It is recommended to additionally provide strong product identifiers via the gtin8/gtin13/gtin14 and mpn properties.
-     *
-     * @param fModel java.lang.String value to set.
-     */
-    void setModel(java.lang.String fModel);
+    void setModel(Text model);
 
     /**
      * Specifies a MerchantReturnPolicy that may be applicable.
@@ -1012,11 +838,11 @@ public interface Product extends Thing {
     /**
      * Specifies a MerchantReturnPolicy that may be applicable.
      *
-     * @param fHasMerchantReturnPolicy MerchantReturnPolicy value to set.
+     * @param hasMerchantReturnPolicy MerchantReturnPolicy value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
      */
-    void setHasMerchantReturnPolicy(MerchantReturnPolicy fHasMerchantReturnPolicy);
+    void setHasMerchantReturnPolicy(MerchantReturnPolicy hasMerchantReturnPolicy);
 
     /**
      * The release date of a product or product model. This can be used to distinguish the exact variant of a product.
@@ -1029,17 +855,10 @@ public interface Product extends Thing {
     /**
      * The release date of a product or product model. This can be used to distinguish the exact variant of a product.
      *
-     * @param fReleaseDate Date value to set.
+     * @param releaseDate Date value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setReleaseDate(Date fReleaseDate);
-    /**
-     * The release date of a product or product model. This can be used to distinguish the exact variant of a product.
-     *
-     * @param fReleaseDate java.time.LocalDate value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void setReleaseDate(java.time.LocalDate fReleaseDate);
+    void setReleaseDate(Date releaseDate);
 
     /**
      * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
@@ -1052,17 +871,10 @@ public interface Product extends Thing {
     /**
      * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
-     * @param fGtin14 Text value to set.
+     * @param gtin14 Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setGtin14(Text fGtin14);
-    /**
-     * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
-     *
-     * @param fGtin14 java.lang.String value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void setGtin14(java.lang.String fGtin14);
+    void setGtin14(Text gtin14);
 
     /**
      * The weight of the product or person.
@@ -1075,10 +887,10 @@ public interface Product extends Thing {
     /**
      * The weight of the product or person.
      *
-     * @param fWeight QuantitativeValue value to set.
+     * @param weight QuantitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setWeight(QuantitativeValue fWeight);
+    void setWeight(QuantitativeValue weight);
 
     /**
      * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
@@ -1092,43 +904,35 @@ public interface Product extends Thing {
     /**
      * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
      *
-     * @param fSize QuantitativeValue value to set.
+     * @param size QuantitativeValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
-    void setSize(QuantitativeValue fSize);
+    void setSize(QuantitativeValue size);
     /**
      * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
      *
-     * @param fSize DefinedTerm value to set.
+     * @param size DefinedTerm value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
-    void setSize(DefinedTerm fSize);
+    void setSize(DefinedTerm size);
     /**
      * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
      *
-     * @param fSize Text value to set.
+     * @param size Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
-    void setSize(Text fSize);
+    void setSize(Text size);
     /**
      * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
      *
-     * @param fSize java.lang.String value to set.
+     * @param size SizeSpecification value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
-    void setSize(java.lang.String fSize);
-    /**
-     * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
-     *
-     * @param fSize SizeSpecification value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
-     */
-    void setSize(SizeSpecification fSize);
+    void setSize(SizeSpecification size);
 
     /**
      * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
@@ -1140,9 +944,9 @@ public interface Product extends Thing {
     /**
      * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
      *
-     * @param fAdditionalProperty PropertyValue value to set.
+     * @param additionalProperty PropertyValue value to set.
      */
-    void setAdditionalProperty(PropertyValue fAdditionalProperty);
+    void setAdditionalProperty(PropertyValue additionalProperty);
 
     /**
      * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
@@ -1155,17 +959,10 @@ public interface Product extends Thing {
     /**
      * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
-     * @param fGtin13 Text value to set.
+     * @param gtin13 Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setGtin13(Text fGtin13);
-    /**
-     * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
-     *
-     * @param fGtin13 java.lang.String value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void setGtin13(java.lang.String fGtin13);
+    void setGtin13(Text gtin13);
 
     /**
      * Review of the item.
@@ -1177,9 +974,9 @@ public interface Product extends Thing {
     /**
      * Review of the item.
      *
-     * @param fReviews Review value to set.
+     * @param reviews Review value to set.
      */
-    void setReviews(Review fReviews);
+    void setReviews(Review reviews);
 
     /**
      * Indicates whether this content is family friendly.
@@ -1191,15 +988,9 @@ public interface Product extends Thing {
     /**
      * Indicates whether this content is family friendly.
      *
-     * @param fIsFamilyFriendly Boolean value to set.
+     * @param isFamilyFriendly Boolean value to set.
      */
-    void setIsFamilyFriendly(Boolean fIsFamilyFriendly);
-    /**
-     * Indicates whether this content is family friendly.
-     *
-     * @param fIsFamilyFriendly java.lang.Boolean value to set.
-     */
-    void setIsFamilyFriendly(java.lang.Boolean fIsFamilyFriendly);
+    void setIsFamilyFriendly(Boolean isFamilyFriendly);
 
     /**
      * A pointer to another, somehow related product (or multiple products).
@@ -1212,15 +1003,15 @@ public interface Product extends Thing {
     /**
      * A pointer to another, somehow related product (or multiple products).
      *
-     * @param fIsRelatedTo Service value to set.
+     * @param isRelatedTo Service value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setIsRelatedTo(Service fIsRelatedTo);
+    void setIsRelatedTo(Service isRelatedTo);
     /**
      * A pointer to another, somehow related product (or multiple products).
      *
-     * @param fIsRelatedTo Product value to set.
+     * @param isRelatedTo Product value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setIsRelatedTo(Product fIsRelatedTo);
+    void setIsRelatedTo(Product isRelatedTo);
 }

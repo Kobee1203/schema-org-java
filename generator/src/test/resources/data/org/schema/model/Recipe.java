@@ -30,27 +30,21 @@ public interface Recipe extends HowTo {
     /**
      * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
      *
-     * @param fRecipeInstructions Text value to set.
+     * @param recipeInstructions Text value to set.
      */
-    void setRecipeInstructions(Text fRecipeInstructions);
+    void setRecipeInstructions(Text recipeInstructions);
     /**
      * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
      *
-     * @param fRecipeInstructions java.lang.String value to set.
+     * @param recipeInstructions CreativeWork value to set.
      */
-    void setRecipeInstructions(java.lang.String fRecipeInstructions);
+    void setRecipeInstructions(CreativeWork recipeInstructions);
     /**
      * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
      *
-     * @param fRecipeInstructions CreativeWork value to set.
+     * @param recipeInstructions ItemList value to set.
      */
-    void setRecipeInstructions(CreativeWork fRecipeInstructions);
-    /**
-     * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
-     *
-     * @param fRecipeInstructions ItemList value to set.
-     */
-    void setRecipeInstructions(ItemList fRecipeInstructions);
+    void setRecipeInstructions(ItemList recipeInstructions);
 
     /**
      * A single ingredient used in the recipe, e.g. sugar, flour or garlic.
@@ -62,15 +56,9 @@ public interface Recipe extends HowTo {
     /**
      * A single ingredient used in the recipe, e.g. sugar, flour or garlic.
      *
-     * @param fIngredients Text value to set.
+     * @param ingredients Text value to set.
      */
-    void setIngredients(Text fIngredients);
-    /**
-     * A single ingredient used in the recipe, e.g. sugar, flour or garlic.
-     *
-     * @param fIngredients java.lang.String value to set.
-     */
-    void setIngredients(java.lang.String fIngredients);
+    void setIngredients(Text ingredients);
 
     /**
      * The cuisine of the recipe (for example, French or Ethiopian).
@@ -82,15 +70,9 @@ public interface Recipe extends HowTo {
     /**
      * The cuisine of the recipe (for example, French or Ethiopian).
      *
-     * @param fRecipeCuisine Text value to set.
+     * @param recipeCuisine Text value to set.
      */
-    void setRecipeCuisine(Text fRecipeCuisine);
-    /**
-     * The cuisine of the recipe (for example, French or Ethiopian).
-     *
-     * @param fRecipeCuisine java.lang.String value to set.
-     */
-    void setRecipeCuisine(java.lang.String fRecipeCuisine);
+    void setRecipeCuisine(Text recipeCuisine);
 
     /**
      * Indicates a dietary restriction or guideline for which this recipe or menu item is suitable, e.g. diabetic, halal etc.
@@ -102,9 +84,9 @@ public interface Recipe extends HowTo {
     /**
      * Indicates a dietary restriction or guideline for which this recipe or menu item is suitable, e.g. diabetic, halal etc.
      *
-     * @param fSuitableForDiet RestrictedDiet value to set.
+     * @param suitableForDiet RestrictedDiet value to set.
      */
-    void setSuitableForDiet(RestrictedDiet fSuitableForDiet);
+    void setSuitableForDiet(RestrictedDiet suitableForDiet);
 
     /**
      * Nutrition information about the recipe or menu item.
@@ -116,9 +98,9 @@ public interface Recipe extends HowTo {
     /**
      * Nutrition information about the recipe or menu item.
      *
-     * @param fNutrition NutritionInformation value to set.
+     * @param nutrition NutritionInformation value to set.
      */
-    void setNutrition(NutritionInformation fNutrition);
+    void setNutrition(NutritionInformation nutrition);
 
     /**
      * The method of cooking, such as Frying, Steaming, ...
@@ -130,15 +112,9 @@ public interface Recipe extends HowTo {
     /**
      * The method of cooking, such as Frying, Steaming, ...
      *
-     * @param fCookingMethod Text value to set.
+     * @param cookingMethod Text value to set.
      */
-    void setCookingMethod(Text fCookingMethod);
-    /**
-     * The method of cooking, such as Frying, Steaming, ...
-     *
-     * @param fCookingMethod java.lang.String value to set.
-     */
-    void setCookingMethod(java.lang.String fCookingMethod);
+    void setCookingMethod(Text cookingMethod);
 
     /**
      * A single ingredient used in the recipe, e.g. sugar, flour or garlic.
@@ -150,15 +126,9 @@ public interface Recipe extends HowTo {
     /**
      * A single ingredient used in the recipe, e.g. sugar, flour or garlic.
      *
-     * @param fRecipeIngredient Text value to set.
+     * @param recipeIngredient Text value to set.
      */
-    void setRecipeIngredient(Text fRecipeIngredient);
-    /**
-     * A single ingredient used in the recipe, e.g. sugar, flour or garlic.
-     *
-     * @param fRecipeIngredient java.lang.String value to set.
-     */
-    void setRecipeIngredient(java.lang.String fRecipeIngredient);
+    void setRecipeIngredient(Text recipeIngredient);
 
     /**
      * The quantity produced by the recipe (for example, number of people served, number of servings, etc).
@@ -170,21 +140,15 @@ public interface Recipe extends HowTo {
     /**
      * The quantity produced by the recipe (for example, number of people served, number of servings, etc).
      *
-     * @param fRecipeYield Text value to set.
+     * @param recipeYield Text value to set.
      */
-    void setRecipeYield(Text fRecipeYield);
+    void setRecipeYield(Text recipeYield);
     /**
      * The quantity produced by the recipe (for example, number of people served, number of servings, etc).
      *
-     * @param fRecipeYield java.lang.String value to set.
+     * @param recipeYield QuantitativeValue value to set.
      */
-    void setRecipeYield(java.lang.String fRecipeYield);
-    /**
-     * The quantity produced by the recipe (for example, number of people served, number of servings, etc).
-     *
-     * @param fRecipeYield QuantitativeValue value to set.
-     */
-    void setRecipeYield(QuantitativeValue fRecipeYield);
+    void setRecipeYield(QuantitativeValue recipeYield);
 
     /**
      * The time it takes to actually cook the dish, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
@@ -196,9 +160,9 @@ public interface Recipe extends HowTo {
     /**
      * The time it takes to actually cook the dish, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
      *
-     * @param fCookTime Duration value to set.
+     * @param cookTime Duration value to set.
      */
-    void setCookTime(Duration fCookTime);
+    void setCookTime(Duration cookTime);
 
     /**
      * The category of the recipe—for example, appetizer, entree, etc.
@@ -210,13 +174,7 @@ public interface Recipe extends HowTo {
     /**
      * The category of the recipe—for example, appetizer, entree, etc.
      *
-     * @param fRecipeCategory Text value to set.
+     * @param recipeCategory Text value to set.
      */
-    void setRecipeCategory(Text fRecipeCategory);
-    /**
-     * The category of the recipe—for example, appetizer, entree, etc.
-     *
-     * @param fRecipeCategory java.lang.String value to set.
-     */
-    void setRecipeCategory(java.lang.String fRecipeCategory);
+    void setRecipeCategory(Text recipeCategory);
 }

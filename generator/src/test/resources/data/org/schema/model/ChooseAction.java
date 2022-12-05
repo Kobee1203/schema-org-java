@@ -25,21 +25,15 @@ public interface ChooseAction extends AssessAction {
     /**
      * A sub property of object. The options subject to this action.
      *
-     * @param fOption Text value to set.
+     * @param option Text value to set.
      */
-    void setOption(Text fOption);
+    void setOption(Text option);
     /**
      * A sub property of object. The options subject to this action.
      *
-     * @param fOption java.lang.String value to set.
+     * @param option Thing value to set.
      */
-    void setOption(java.lang.String fOption);
-    /**
-     * A sub property of object. The options subject to this action.
-     *
-     * @param fOption Thing value to set.
-     */
-    void setOption(Thing fOption);
+    void setOption(Thing option);
 
     /**
      * A sub property of object. The options subject to this action.
@@ -51,19 +45,13 @@ public interface ChooseAction extends AssessAction {
     /**
      * A sub property of object. The options subject to this action.
      *
-     * @param fActionOption Thing value to set.
+     * @param actionOption Thing value to set.
      */
-    void setActionOption(Thing fActionOption);
+    void setActionOption(Thing actionOption);
     /**
      * A sub property of object. The options subject to this action.
      *
-     * @param fActionOption Text value to set.
+     * @param actionOption Text value to set.
      */
-    void setActionOption(Text fActionOption);
-    /**
-     * A sub property of object. The options subject to this action.
-     *
-     * @param fActionOption java.lang.String value to set.
-     */
-    void setActionOption(java.lang.String fActionOption);
+    void setActionOption(Text actionOption);
 }

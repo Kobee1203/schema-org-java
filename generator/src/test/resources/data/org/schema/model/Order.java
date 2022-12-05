@@ -40,9 +40,9 @@ public interface Order extends Intangible {
     /**
      * The delivery of the parcel related to this order or order item.
      *
-     * @param fOrderDelivery ParcelDelivery value to set.
+     * @param orderDelivery ParcelDelivery value to set.
      */
-    void setOrderDelivery(ParcelDelivery fOrderDelivery);
+    void setOrderDelivery(ParcelDelivery orderDelivery);
 
     /**
      * The billing address for the order.
@@ -54,9 +54,9 @@ public interface Order extends Intangible {
     /**
      * The billing address for the order.
      *
-     * @param fBillingAddress PostalAddress value to set.
+     * @param billingAddress PostalAddress value to set.
      */
-    void setBillingAddress(PostalAddress fBillingAddress);
+    void setBillingAddress(PostalAddress billingAddress);
 
     /**
      * The offer(s) -- e.g., product, quantity and price combinations -- included in the order.
@@ -68,9 +68,9 @@ public interface Order extends Intangible {
     /**
      * The offer(s) -- e.g., product, quantity and price combinations -- included in the order.
      *
-     * @param fAcceptedOffer Offer value to set.
+     * @param acceptedOffer Offer value to set.
      */
-    void setAcceptedOffer(Offer fAcceptedOffer);
+    void setAcceptedOffer(Offer acceptedOffer);
 
     /**
      * 'merchant' is an out-dated term for 'seller'.
@@ -82,15 +82,15 @@ public interface Order extends Intangible {
     /**
      * 'merchant' is an out-dated term for 'seller'.
      *
-     * @param fMerchant Organization value to set.
+     * @param merchant Organization value to set.
      */
-    void setMerchant(Organization fMerchant);
+    void setMerchant(Organization merchant);
     /**
      * 'merchant' is an out-dated term for 'seller'.
      *
-     * @param fMerchant Person value to set.
+     * @param merchant Person value to set.
      */
-    void setMerchant(Person fMerchant);
+    void setMerchant(Person merchant);
 
     /**
      * The current status of the order.
@@ -102,9 +102,9 @@ public interface Order extends Intangible {
     /**
      * The current status of the order.
      *
-     * @param fOrderStatus OrderStatus value to set.
+     * @param orderStatus OrderStatus value to set.
      */
-    void setOrderStatus(OrderStatus fOrderStatus);
+    void setOrderStatus(OrderStatus orderStatus);
 
     /**
      * A number that confirms the given order or payment has been received.
@@ -116,15 +116,9 @@ public interface Order extends Intangible {
     /**
      * A number that confirms the given order or payment has been received.
      *
-     * @param fConfirmationNumber Text value to set.
+     * @param confirmationNumber Text value to set.
      */
-    void setConfirmationNumber(Text fConfirmationNumber);
-    /**
-     * A number that confirms the given order or payment has been received.
-     *
-     * @param fConfirmationNumber java.lang.String value to set.
-     */
-    void setConfirmationNumber(java.lang.String fConfirmationNumber);
+    void setConfirmationNumber(Text confirmationNumber);
 
     /**
      * The order is being paid as part of the referenced Invoice.
@@ -136,9 +130,9 @@ public interface Order extends Intangible {
     /**
      * The order is being paid as part of the referenced Invoice.
      *
-     * @param fPartOfInvoice Invoice value to set.
+     * @param partOfInvoice Invoice value to set.
      */
-    void setPartOfInvoice(Invoice fPartOfInvoice);
+    void setPartOfInvoice(Invoice partOfInvoice);
 
     /**
      * The identifier of the transaction.
@@ -150,15 +144,9 @@ public interface Order extends Intangible {
     /**
      * The identifier of the transaction.
      *
-     * @param fOrderNumber Text value to set.
+     * @param orderNumber Text value to set.
      */
-    void setOrderNumber(Text fOrderNumber);
-    /**
-     * The identifier of the transaction.
-     *
-     * @param fOrderNumber java.lang.String value to set.
-     */
-    void setOrderNumber(java.lang.String fOrderNumber);
+    void setOrderNumber(Text orderNumber);
 
     /**
      * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
@@ -170,15 +158,15 @@ public interface Order extends Intangible {
     /**
      * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
      *
-     * @param fSeller Organization value to set.
+     * @param seller Organization value to set.
      */
-    void setSeller(Organization fSeller);
+    void setSeller(Organization seller);
     /**
      * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
      *
-     * @param fSeller Person value to set.
+     * @param seller Person value to set.
      */
-    void setSeller(Person fSeller);
+    void setSeller(Person seller);
 
     /**
      * Party placing the order or paying the invoice.
@@ -190,15 +178,15 @@ public interface Order extends Intangible {
     /**
      * Party placing the order or paying the invoice.
      *
-     * @param fCustomer Organization value to set.
+     * @param customer Organization value to set.
      */
-    void setCustomer(Organization fCustomer);
+    void setCustomer(Organization customer);
     /**
      * Party placing the order or paying the invoice.
      *
-     * @param fCustomer Person value to set.
+     * @param customer Person value to set.
      */
-    void setCustomer(Person fCustomer);
+    void setCustomer(Person customer);
 
     /**
      * The date that payment is due.
@@ -210,27 +198,15 @@ public interface Order extends Intangible {
     /**
      * The date that payment is due.
      *
-     * @param fPaymentDueDate DateTime value to set.
+     * @param paymentDueDate DateTime value to set.
      */
-    void setPaymentDueDate(DateTime fPaymentDueDate);
+    void setPaymentDueDate(DateTime paymentDueDate);
     /**
      * The date that payment is due.
      *
-     * @param fPaymentDueDate java.time.LocalDateTime value to set.
+     * @param paymentDueDate Date value to set.
      */
-    void setPaymentDueDate(java.time.LocalDateTime fPaymentDueDate);
-    /**
-     * The date that payment is due.
-     *
-     * @param fPaymentDueDate Date value to set.
-     */
-    void setPaymentDueDate(Date fPaymentDueDate);
-    /**
-     * The date that payment is due.
-     *
-     * @param fPaymentDueDate java.time.LocalDate value to set.
-     */
-    void setPaymentDueDate(java.time.LocalDate fPaymentDueDate);
+    void setPaymentDueDate(Date paymentDueDate);
 
     /**
      * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
@@ -242,15 +218,15 @@ public interface Order extends Intangible {
     /**
      * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
      *
-     * @param fBroker Person value to set.
+     * @param broker Person value to set.
      */
-    void setBroker(Person fBroker);
+    void setBroker(Person broker);
     /**
      * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
      *
-     * @param fBroker Organization value to set.
+     * @param broker Organization value to set.
      */
-    void setBroker(Organization fBroker);
+    void setBroker(Organization broker);
 
     /**
      * Code used to redeem a discount.
@@ -262,15 +238,9 @@ public interface Order extends Intangible {
     /**
      * Code used to redeem a discount.
      *
-     * @param fDiscountCode Text value to set.
+     * @param discountCode Text value to set.
      */
-    void setDiscountCode(Text fDiscountCode);
-    /**
-     * Code used to redeem a discount.
-     *
-     * @param fDiscountCode java.lang.String value to set.
-     */
-    void setDiscountCode(java.lang.String fDiscountCode);
+    void setDiscountCode(Text discountCode);
 
     /**
      * Any discount applied (to an Order).
@@ -282,27 +252,15 @@ public interface Order extends Intangible {
     /**
      * Any discount applied (to an Order).
      *
-     * @param fDiscount Text value to set.
+     * @param discount Text value to set.
      */
-    void setDiscount(Text fDiscount);
+    void setDiscount(Text discount);
     /**
      * Any discount applied (to an Order).
      *
-     * @param fDiscount java.lang.String value to set.
+     * @param discount Number value to set.
      */
-    void setDiscount(java.lang.String fDiscount);
-    /**
-     * Any discount applied (to an Order).
-     *
-     * @param fDiscount Number value to set.
-     */
-    void setDiscount(Number fDiscount);
-    /**
-     * Any discount applied (to an Order).
-     *
-     * @param fDiscount java.lang.Number value to set.
-     */
-    void setDiscount(java.lang.Number fDiscount);
+    void setDiscount(Number discount);
 
     /**
      * An identifier for the method of payment used (e.g. the last 4 digits of the credit card).
@@ -314,15 +272,9 @@ public interface Order extends Intangible {
     /**
      * An identifier for the method of payment used (e.g. the last 4 digits of the credit card).
      *
-     * @param fPaymentMethodId Text value to set.
+     * @param paymentMethodId Text value to set.
      */
-    void setPaymentMethodId(Text fPaymentMethodId);
-    /**
-     * An identifier for the method of payment used (e.g. the last 4 digits of the credit card).
-     *
-     * @param fPaymentMethodId java.lang.String value to set.
-     */
-    void setPaymentMethodId(java.lang.String fPaymentMethodId);
+    void setPaymentMethodId(Text paymentMethodId);
 
     /**
      * The URL for sending a payment.
@@ -334,15 +286,9 @@ public interface Order extends Intangible {
     /**
      * The URL for sending a payment.
      *
-     * @param fPaymentUrl URL value to set.
+     * @param paymentUrl URL value to set.
      */
-    void setPaymentUrl(URL fPaymentUrl);
-    /**
-     * The URL for sending a payment.
-     *
-     * @param fPaymentUrl java.net.URL value to set.
-     */
-    void setPaymentUrl(java.net.URL fPaymentUrl);
+    void setPaymentUrl(URL paymentUrl);
 
     /**
      * The currency of the discount.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
@@ -354,15 +300,9 @@ public interface Order extends Intangible {
     /**
      * The currency of the discount.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
      *
-     * @param fDiscountCurrency Text value to set.
+     * @param discountCurrency Text value to set.
      */
-    void setDiscountCurrency(Text fDiscountCurrency);
-    /**
-     * The currency of the discount.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
-     *
-     * @param fDiscountCurrency java.lang.String value to set.
-     */
-    void setDiscountCurrency(java.lang.String fDiscountCurrency);
+    void setDiscountCurrency(Text discountCurrency);
 
     /**
      * The date that payment is due.
@@ -374,15 +314,9 @@ public interface Order extends Intangible {
     /**
      * The date that payment is due.
      *
-     * @param fPaymentDue DateTime value to set.
+     * @param paymentDue DateTime value to set.
      */
-    void setPaymentDue(DateTime fPaymentDue);
-    /**
-     * The date that payment is due.
-     *
-     * @param fPaymentDue java.time.LocalDateTime value to set.
-     */
-    void setPaymentDue(java.time.LocalDateTime fPaymentDue);
+    void setPaymentDue(DateTime paymentDue);
 
     /**
      * Date order was placed.
@@ -394,27 +328,15 @@ public interface Order extends Intangible {
     /**
      * Date order was placed.
      *
-     * @param fOrderDate Date value to set.
+     * @param orderDate Date value to set.
      */
-    void setOrderDate(Date fOrderDate);
+    void setOrderDate(Date orderDate);
     /**
      * Date order was placed.
      *
-     * @param fOrderDate java.time.LocalDate value to set.
+     * @param orderDate DateTime value to set.
      */
-    void setOrderDate(java.time.LocalDate fOrderDate);
-    /**
-     * Date order was placed.
-     *
-     * @param fOrderDate DateTime value to set.
-     */
-    void setOrderDate(DateTime fOrderDate);
-    /**
-     * Date order was placed.
-     *
-     * @param fOrderDate java.time.LocalDateTime value to set.
-     */
-    void setOrderDate(java.time.LocalDateTime fOrderDate);
+    void setOrderDate(DateTime orderDate);
 
     /**
      * Was the offer accepted as a gift for someone other than the buyer.
@@ -426,15 +348,9 @@ public interface Order extends Intangible {
     /**
      * Was the offer accepted as a gift for someone other than the buyer.
      *
-     * @param fIsGift Boolean value to set.
+     * @param isGift Boolean value to set.
      */
-    void setIsGift(Boolean fIsGift);
-    /**
-     * Was the offer accepted as a gift for someone other than the buyer.
-     *
-     * @param fIsGift java.lang.Boolean value to set.
-     */
-    void setIsGift(java.lang.Boolean fIsGift);
+    void setIsGift(Boolean isGift);
 
     /**
      * The item ordered.
@@ -446,21 +362,21 @@ public interface Order extends Intangible {
     /**
      * The item ordered.
      *
-     * @param fOrderedItem Service value to set.
+     * @param orderedItem Service value to set.
      */
-    void setOrderedItem(Service fOrderedItem);
+    void setOrderedItem(Service orderedItem);
     /**
      * The item ordered.
      *
-     * @param fOrderedItem OrderItem value to set.
+     * @param orderedItem OrderItem value to set.
      */
-    void setOrderedItem(OrderItem fOrderedItem);
+    void setOrderedItem(OrderItem orderedItem);
     /**
      * The item ordered.
      *
-     * @param fOrderedItem Product value to set.
+     * @param orderedItem Product value to set.
      */
-    void setOrderedItem(Product fOrderedItem);
+    void setOrderedItem(Product orderedItem);
 
     /**
      * The name of the credit card or other method of payment for the order.
@@ -472,7 +388,7 @@ public interface Order extends Intangible {
     /**
      * The name of the credit card or other method of payment for the order.
      *
-     * @param fPaymentMethod PaymentMethod value to set.
+     * @param paymentMethod PaymentMethod value to set.
      */
-    void setPaymentMethod(PaymentMethod fPaymentMethod);
+    void setPaymentMethod(PaymentMethod paymentMethod);
 }

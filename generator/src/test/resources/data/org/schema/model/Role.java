@@ -27,27 +27,15 @@ public interface Role extends Intangible {
     /**
      * A position played, performed or filled by a person or organization, as part of an organization. For example, an athlete in a SportsTeam might play in the position named 'Quarterback'.
      *
-     * @param fNamedPosition Text value to set.
+     * @param namedPosition Text value to set.
      */
-    void setNamedPosition(Text fNamedPosition);
+    void setNamedPosition(Text namedPosition);
     /**
      * A position played, performed or filled by a person or organization, as part of an organization. For example, an athlete in a SportsTeam might play in the position named 'Quarterback'.
      *
-     * @param fNamedPosition java.lang.String value to set.
+     * @param namedPosition URL value to set.
      */
-    void setNamedPosition(java.lang.String fNamedPosition);
-    /**
-     * A position played, performed or filled by a person or organization, as part of an organization. For example, an athlete in a SportsTeam might play in the position named 'Quarterback'.
-     *
-     * @param fNamedPosition URL value to set.
-     */
-    void setNamedPosition(URL fNamedPosition);
-    /**
-     * A position played, performed or filled by a person or organization, as part of an organization. For example, an athlete in a SportsTeam might play in the position named 'Quarterback'.
-     *
-     * @param fNamedPosition java.net.URL value to set.
-     */
-    void setNamedPosition(java.net.URL fNamedPosition);
+    void setNamedPosition(URL namedPosition);
 
     /**
      * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
@@ -60,31 +48,17 @@ public interface Role extends Intangible {
     /**
      * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
      *
-     * @param fStartDate DateTime value to set.
+     * @param startDate DateTime value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
-    void setStartDate(DateTime fStartDate);
+    void setStartDate(DateTime startDate);
     /**
      * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
      *
-     * @param fStartDate java.time.LocalDateTime value to set.
+     * @param startDate Date value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
-    void setStartDate(java.time.LocalDateTime fStartDate);
-    /**
-     * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
-     *
-     * @param fStartDate Date value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
-     */
-    void setStartDate(Date fStartDate);
-    /**
-     * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
-     *
-     * @param fStartDate java.time.LocalDate value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
-     */
-    void setStartDate(java.time.LocalDate fStartDate);
+    void setStartDate(Date startDate);
 
     /**
      * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
@@ -97,31 +71,17 @@ public interface Role extends Intangible {
     /**
      * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
      *
-     * @param fEndDate Date value to set.
+     * @param endDate Date value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
-    void setEndDate(Date fEndDate);
+    void setEndDate(Date endDate);
     /**
      * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
      *
-     * @param fEndDate java.time.LocalDate value to set.
+     * @param endDate DateTime value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
-    void setEndDate(java.time.LocalDate fEndDate);
-    /**
-     * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
-     *
-     * @param fEndDate DateTime value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
-     */
-    void setEndDate(DateTime fEndDate);
-    /**
-     * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
-     *
-     * @param fEndDate java.time.LocalDateTime value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
-     */
-    void setEndDate(java.time.LocalDateTime fEndDate);
+    void setEndDate(DateTime endDate);
 
     /**
      * A role played, performed or filled by a person or organization. For example, the team of creators for a comic book might fill the roles named 'inker', 'penciller', and 'letterer'; or an athlete in a SportsTeam might play in the position named 'Quarterback'.
@@ -133,25 +93,13 @@ public interface Role extends Intangible {
     /**
      * A role played, performed or filled by a person or organization. For example, the team of creators for a comic book might fill the roles named 'inker', 'penciller', and 'letterer'; or an athlete in a SportsTeam might play in the position named 'Quarterback'.
      *
-     * @param fRoleName URL value to set.
+     * @param roleName URL value to set.
      */
-    void setRoleName(URL fRoleName);
+    void setRoleName(URL roleName);
     /**
      * A role played, performed or filled by a person or organization. For example, the team of creators for a comic book might fill the roles named 'inker', 'penciller', and 'letterer'; or an athlete in a SportsTeam might play in the position named 'Quarterback'.
      *
-     * @param fRoleName java.net.URL value to set.
+     * @param roleName Text value to set.
      */
-    void setRoleName(java.net.URL fRoleName);
-    /**
-     * A role played, performed or filled by a person or organization. For example, the team of creators for a comic book might fill the roles named 'inker', 'penciller', and 'letterer'; or an athlete in a SportsTeam might play in the position named 'Quarterback'.
-     *
-     * @param fRoleName Text value to set.
-     */
-    void setRoleName(Text fRoleName);
-    /**
-     * A role played, performed or filled by a person or organization. For example, the team of creators for a comic book might fill the roles named 'inker', 'penciller', and 'letterer'; or an athlete in a SportsTeam might play in the position named 'Quarterback'.
-     *
-     * @param fRoleName java.lang.String value to set.
-     */
-    void setRoleName(java.lang.String fRoleName);
+    void setRoleName(Text roleName);
 }

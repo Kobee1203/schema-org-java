@@ -26,25 +26,19 @@ public interface HowToSection extends ListItem, CreativeWork, ItemList {
     /**
      * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection (originally misnamed 'steps'; 'step' is preferred).
      *
-     * @param fSteps ItemList value to set.
+     * @param steps ItemList value to set.
      */
-    void setSteps(ItemList fSteps);
+    void setSteps(ItemList steps);
     /**
      * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection (originally misnamed 'steps'; 'step' is preferred).
      *
-     * @param fSteps CreativeWork value to set.
+     * @param steps CreativeWork value to set.
      */
-    void setSteps(CreativeWork fSteps);
+    void setSteps(CreativeWork steps);
     /**
      * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection (originally misnamed 'steps'; 'step' is preferred).
      *
-     * @param fSteps Text value to set.
+     * @param steps Text value to set.
      */
-    void setSteps(Text fSteps);
-    /**
-     * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection (originally misnamed 'steps'; 'step' is preferred).
-     *
-     * @param fSteps java.lang.String value to set.
-     */
-    void setSteps(java.lang.String fSteps);
+    void setSteps(Text steps);
 }

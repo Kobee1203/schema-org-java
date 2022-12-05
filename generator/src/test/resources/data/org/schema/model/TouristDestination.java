@@ -33,27 +33,19 @@ public interface TouristDestination extends Place {
     /**
      * Attraction suitable for type(s) of tourist. eg. Children, visitors from a particular country, etc. 
      *
-     * @param fTouristType Audience value to set.
+     * @param touristType Audience value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#IIT-CNR.it">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#IIT-CNR.it</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism</a>
      */
-    void setTouristType(Audience fTouristType);
+    void setTouristType(Audience touristType);
     /**
      * Attraction suitable for type(s) of tourist. eg. Children, visitors from a particular country, etc. 
      *
-     * @param fTouristType Text value to set.
+     * @param touristType Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#IIT-CNR.it">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#IIT-CNR.it</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism</a>
      */
-    void setTouristType(Text fTouristType);
-    /**
-     * Attraction suitable for type(s) of tourist. eg. Children, visitors from a particular country, etc. 
-     *
-     * @param fTouristType java.lang.String value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#IIT-CNR.it">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#IIT-CNR.it</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism</a>
-     */
-    void setTouristType(java.lang.String fTouristType);
+    void setTouristType(Text touristType);
 
     /**
      * Attraction located at destination.
@@ -69,11 +61,11 @@ public interface TouristDestination extends Place {
     /**
      * Attraction located at destination.
      *
-     * @param fIncludesAttraction TouristAttraction value to set.
+     * @param includesAttraction TouristAttraction value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#IIT-CNR.it">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#IIT-CNR.it</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
      */
-    void setIncludesAttraction(TouristAttraction fIncludesAttraction);
+    void setIncludesAttraction(TouristAttraction includesAttraction);
 }

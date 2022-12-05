@@ -27,10 +27,10 @@ public interface MedicalSign extends MedicalSignOrSymptom {
     /**
      * A diagnostic test that can identify this sign.
      *
-     * @param fIdentifyingTest MedicalTest value to set.
+     * @param identifyingTest MedicalTest value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setIdentifyingTest(MedicalTest fIdentifyingTest);
+    void setIdentifyingTest(MedicalTest identifyingTest);
 
     /**
      * A physical examination that can identify this sign.
@@ -43,8 +43,8 @@ public interface MedicalSign extends MedicalSignOrSymptom {
     /**
      * A physical examination that can identify this sign.
      *
-     * @param fIdentifyingExam PhysicalExam value to set.
+     * @param identifyingExam PhysicalExam value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setIdentifyingExam(PhysicalExam fIdentifyingExam);
+    void setIdentifyingExam(PhysicalExam identifyingExam);
 }

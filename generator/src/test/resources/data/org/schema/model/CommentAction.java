@@ -24,7 +24,7 @@ public interface CommentAction extends CommunicateAction {
     /**
      * A sub property of result. The Comment created or sent as a result of this action.
      *
-     * @param fResultComment Comment value to set.
+     * @param resultComment Comment value to set.
      */
-    void setResultComment(Comment fResultComment);
+    void setResultComment(Comment resultComment);
 }

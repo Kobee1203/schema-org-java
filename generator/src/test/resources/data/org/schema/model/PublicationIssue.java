@@ -27,31 +27,17 @@ public interface PublicationIssue extends CreativeWork {
     /**
      * The page on which the work starts; for example "135" or "xiii".
      *
-     * @param fPageStart Text value to set.
+     * @param pageStart Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
-    void setPageStart(Text fPageStart);
+    void setPageStart(Text pageStart);
     /**
      * The page on which the work starts; for example "135" or "xiii".
      *
-     * @param fPageStart java.lang.String value to set.
+     * @param pageStart Integer value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
-    void setPageStart(java.lang.String fPageStart);
-    /**
-     * The page on which the work starts; for example "135" or "xiii".
-     *
-     * @param fPageStart Integer value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
-     */
-    void setPageStart(Integer fPageStart);
-    /**
-     * The page on which the work starts; for example "135" or "xiii".
-     *
-     * @param fPageStart java.lang.Integer value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
-     */
-    void setPageStart(java.lang.Integer fPageStart);
+    void setPageStart(Integer pageStart);
 
     /**
      * The page on which the work ends; for example "138" or "xvi".
@@ -64,31 +50,17 @@ public interface PublicationIssue extends CreativeWork {
     /**
      * The page on which the work ends; for example "138" or "xvi".
      *
-     * @param fPageEnd Text value to set.
+     * @param pageEnd Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
-    void setPageEnd(Text fPageEnd);
+    void setPageEnd(Text pageEnd);
     /**
      * The page on which the work ends; for example "138" or "xvi".
      *
-     * @param fPageEnd java.lang.String value to set.
+     * @param pageEnd Integer value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
-    void setPageEnd(java.lang.String fPageEnd);
-    /**
-     * The page on which the work ends; for example "138" or "xvi".
-     *
-     * @param fPageEnd Integer value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
-     */
-    void setPageEnd(Integer fPageEnd);
-    /**
-     * The page on which the work ends; for example "138" or "xvi".
-     *
-     * @param fPageEnd java.lang.Integer value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
-     */
-    void setPageEnd(java.lang.Integer fPageEnd);
+    void setPageEnd(Integer pageEnd);
 
     /**
      * Identifies the issue of publication; for example, "iii" or "2".
@@ -101,31 +73,17 @@ public interface PublicationIssue extends CreativeWork {
     /**
      * Identifies the issue of publication; for example, "iii" or "2".
      *
-     * @param fIssueNumber Integer value to set.
+     * @param issueNumber Integer value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
-    void setIssueNumber(Integer fIssueNumber);
+    void setIssueNumber(Integer issueNumber);
     /**
      * Identifies the issue of publication; for example, "iii" or "2".
      *
-     * @param fIssueNumber java.lang.Integer value to set.
+     * @param issueNumber Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
-    void setIssueNumber(java.lang.Integer fIssueNumber);
-    /**
-     * Identifies the issue of publication; for example, "iii" or "2".
-     *
-     * @param fIssueNumber Text value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
-     */
-    void setIssueNumber(Text fIssueNumber);
-    /**
-     * Identifies the issue of publication; for example, "iii" or "2".
-     *
-     * @param fIssueNumber java.lang.String value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
-     */
-    void setIssueNumber(java.lang.String fIssueNumber);
+    void setIssueNumber(Text issueNumber);
 
     /**
      * Any description of pages that is not separated into pageStart and pageEnd; for example, "1-6, 9, 55" or "10-12, 46-49".
@@ -138,15 +96,8 @@ public interface PublicationIssue extends CreativeWork {
     /**
      * Any description of pages that is not separated into pageStart and pageEnd; for example, "1-6, 9, 55" or "10-12, 46-49".
      *
-     * @param fPagination Text value to set.
+     * @param pagination Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
-    void setPagination(Text fPagination);
-    /**
-     * Any description of pages that is not separated into pageStart and pageEnd; for example, "1-6, 9, 55" or "10-12, 46-49".
-     *
-     * @param fPagination java.lang.String value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
-     */
-    void setPagination(java.lang.String fPagination);
+    void setPagination(Text pagination);
 }

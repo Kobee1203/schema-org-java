@@ -29,21 +29,15 @@ public interface LodgingReservation extends Reservation {
     /**
      * Textual description of the unit type (including suite vs. room, size of bed, etc.).
      *
-     * @param fLodgingUnitType QualitativeValue value to set.
+     * @param lodgingUnitType QualitativeValue value to set.
      */
-    void setLodgingUnitType(QualitativeValue fLodgingUnitType);
+    void setLodgingUnitType(QualitativeValue lodgingUnitType);
     /**
      * Textual description of the unit type (including suite vs. room, size of bed, etc.).
      *
-     * @param fLodgingUnitType Text value to set.
+     * @param lodgingUnitType Text value to set.
      */
-    void setLodgingUnitType(Text fLodgingUnitType);
-    /**
-     * Textual description of the unit type (including suite vs. room, size of bed, etc.).
-     *
-     * @param fLodgingUnitType java.lang.String value to set.
-     */
-    void setLodgingUnitType(java.lang.String fLodgingUnitType);
+    void setLodgingUnitType(Text lodgingUnitType);
 
     /**
      * A full description of the lodging unit.
@@ -55,15 +49,9 @@ public interface LodgingReservation extends Reservation {
     /**
      * A full description of the lodging unit.
      *
-     * @param fLodgingUnitDescription Text value to set.
+     * @param lodgingUnitDescription Text value to set.
      */
-    void setLodgingUnitDescription(Text fLodgingUnitDescription);
-    /**
-     * A full description of the lodging unit.
-     *
-     * @param fLodgingUnitDescription java.lang.String value to set.
-     */
-    void setLodgingUnitDescription(java.lang.String fLodgingUnitDescription);
+    void setLodgingUnitDescription(Text lodgingUnitDescription);
 
     /**
      * The latest someone may check out of a lodging establishment.
@@ -75,27 +63,15 @@ public interface LodgingReservation extends Reservation {
     /**
      * The latest someone may check out of a lodging establishment.
      *
-     * @param fCheckoutTime DateTime value to set.
+     * @param checkoutTime DateTime value to set.
      */
-    void setCheckoutTime(DateTime fCheckoutTime);
+    void setCheckoutTime(DateTime checkoutTime);
     /**
      * The latest someone may check out of a lodging establishment.
      *
-     * @param fCheckoutTime java.time.LocalDateTime value to set.
+     * @param checkoutTime Time value to set.
      */
-    void setCheckoutTime(java.time.LocalDateTime fCheckoutTime);
-    /**
-     * The latest someone may check out of a lodging establishment.
-     *
-     * @param fCheckoutTime Time value to set.
-     */
-    void setCheckoutTime(Time fCheckoutTime);
-    /**
-     * The latest someone may check out of a lodging establishment.
-     *
-     * @param fCheckoutTime java.time.LocalTime value to set.
-     */
-    void setCheckoutTime(java.time.LocalTime fCheckoutTime);
+    void setCheckoutTime(Time checkoutTime);
 
     /**
      * The number of adults staying in the unit.
@@ -107,21 +83,15 @@ public interface LodgingReservation extends Reservation {
     /**
      * The number of adults staying in the unit.
      *
-     * @param fNumAdults Integer value to set.
+     * @param numAdults Integer value to set.
      */
-    void setNumAdults(Integer fNumAdults);
+    void setNumAdults(Integer numAdults);
     /**
      * The number of adults staying in the unit.
      *
-     * @param fNumAdults java.lang.Integer value to set.
+     * @param numAdults QuantitativeValue value to set.
      */
-    void setNumAdults(java.lang.Integer fNumAdults);
-    /**
-     * The number of adults staying in the unit.
-     *
-     * @param fNumAdults QuantitativeValue value to set.
-     */
-    void setNumAdults(QuantitativeValue fNumAdults);
+    void setNumAdults(QuantitativeValue numAdults);
 
     /**
      * The earliest someone may check into a lodging establishment.
@@ -133,27 +103,15 @@ public interface LodgingReservation extends Reservation {
     /**
      * The earliest someone may check into a lodging establishment.
      *
-     * @param fCheckinTime DateTime value to set.
+     * @param checkinTime DateTime value to set.
      */
-    void setCheckinTime(DateTime fCheckinTime);
+    void setCheckinTime(DateTime checkinTime);
     /**
      * The earliest someone may check into a lodging establishment.
      *
-     * @param fCheckinTime java.time.LocalDateTime value to set.
+     * @param checkinTime Time value to set.
      */
-    void setCheckinTime(java.time.LocalDateTime fCheckinTime);
-    /**
-     * The earliest someone may check into a lodging establishment.
-     *
-     * @param fCheckinTime Time value to set.
-     */
-    void setCheckinTime(Time fCheckinTime);
-    /**
-     * The earliest someone may check into a lodging establishment.
-     *
-     * @param fCheckinTime java.time.LocalTime value to set.
-     */
-    void setCheckinTime(java.time.LocalTime fCheckinTime);
+    void setCheckinTime(Time checkinTime);
 
     /**
      * The number of children staying in the unit.
@@ -165,19 +123,13 @@ public interface LodgingReservation extends Reservation {
     /**
      * The number of children staying in the unit.
      *
-     * @param fNumChildren Integer value to set.
+     * @param numChildren Integer value to set.
      */
-    void setNumChildren(Integer fNumChildren);
+    void setNumChildren(Integer numChildren);
     /**
      * The number of children staying in the unit.
      *
-     * @param fNumChildren java.lang.Integer value to set.
+     * @param numChildren QuantitativeValue value to set.
      */
-    void setNumChildren(java.lang.Integer fNumChildren);
-    /**
-     * The number of children staying in the unit.
-     *
-     * @param fNumChildren QuantitativeValue value to set.
-     */
-    void setNumChildren(QuantitativeValue fNumChildren);
+    void setNumChildren(QuantitativeValue numChildren);
 }

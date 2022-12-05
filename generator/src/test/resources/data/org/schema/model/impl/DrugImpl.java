@@ -44,7 +44,7 @@ import org.schema.model.Substance;
 @JsonLdTypeName("Drug")
 public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Drug {
 
-    private DrugPregnancyCategory fPregnancyCategory;
+    private DrugPregnancyCategory pregnancyCategory;
 
     /**
      * Pregnancy category of this drug.
@@ -54,21 +54,21 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public DrugPregnancyCategory getPregnancyCategory() {
-        return fPregnancyCategory;
+        return pregnancyCategory;
     }
 
     /**
      * Pregnancy category of this drug.
      *
-     * @param fPregnancyCategory DrugPregnancyCategory value to set.
+     * @param pregnancyCategory DrugPregnancyCategory value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setPregnancyCategory(DrugPregnancyCategory fPregnancyCategory) {
-        this.fPregnancyCategory = fPregnancyCategory;
+    public void setPregnancyCategory(DrugPregnancyCategory pregnancyCategory) {
+        this.pregnancyCategory = pregnancyCategory;
     }
 
-    private Text fOverdosage;
+    private Text overdosage;
 
     /**
      * Any information related to overdose on a drug, including signs or symptoms, treatments, contact information for emergency response.
@@ -78,31 +78,21 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Text getOverdosage() {
-        return fOverdosage;
+        return overdosage;
     }
 
     /**
      * Any information related to overdose on a drug, including signs or symptoms, treatments, contact information for emergency response.
      *
-     * @param fOverdosage Text value to set.
+     * @param overdosage Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setOverdosage(Text fOverdosage) {
-        this.fOverdosage = fOverdosage;
-    }
-    /**
-     * Any information related to overdose on a drug, including signs or symptoms, treatments, contact information for emergency response.
-     *
-     * @param fOverdosage java.lang.String value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setOverdosage(java.lang.String fOverdosage) {
-        this.fOverdosage = Text.of(fOverdosage);
+    public void setOverdosage(Text overdosage) {
+        this.overdosage = overdosage;
     }
 
-    private Object fLegalStatus;
+    private Object legalStatus;
 
     /**
      * The drug or supplement's legal status, including any controlled substance schedules that apply.
@@ -112,51 +102,41 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public <T> T getLegalStatus() {
-        return (T) fLegalStatus;
+        return (T) legalStatus;
     }
 
     /**
      * The drug or supplement's legal status, including any controlled substance schedules that apply.
      *
-     * @param fLegalStatus DrugLegalStatus value to set.
+     * @param legalStatus DrugLegalStatus value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setLegalStatus(DrugLegalStatus fLegalStatus) {
-        this.fLegalStatus = fLegalStatus;
+    public void setLegalStatus(DrugLegalStatus legalStatus) {
+        this.legalStatus = legalStatus;
     }
     /**
      * The drug or supplement's legal status, including any controlled substance schedules that apply.
      *
-     * @param fLegalStatus Text value to set.
+     * @param legalStatus Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setLegalStatus(Text fLegalStatus) {
-        this.fLegalStatus = fLegalStatus;
+    public void setLegalStatus(Text legalStatus) {
+        this.legalStatus = legalStatus;
     }
     /**
      * The drug or supplement's legal status, including any controlled substance schedules that apply.
      *
-     * @param fLegalStatus java.lang.String value to set.
+     * @param legalStatus MedicalEnumeration value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setLegalStatus(java.lang.String fLegalStatus) {
-        this.fLegalStatus = Text.of(fLegalStatus);
-    }
-    /**
-     * The drug or supplement's legal status, including any controlled substance schedules that apply.
-     *
-     * @param fLegalStatus MedicalEnumeration value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setLegalStatus(MedicalEnumeration fLegalStatus) {
-        this.fLegalStatus = fLegalStatus;
+    public void setLegalStatus(MedicalEnumeration legalStatus) {
+        this.legalStatus = legalStatus;
     }
 
-    private Text fMechanismOfAction;
+    private Text mechanismOfAction;
 
     /**
      * The specific biochemical interaction through which this drug or supplement produces its pharmacological effect.
@@ -166,31 +146,21 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Text getMechanismOfAction() {
-        return fMechanismOfAction;
+        return mechanismOfAction;
     }
 
     /**
      * The specific biochemical interaction through which this drug or supplement produces its pharmacological effect.
      *
-     * @param fMechanismOfAction Text value to set.
+     * @param mechanismOfAction Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setMechanismOfAction(Text fMechanismOfAction) {
-        this.fMechanismOfAction = fMechanismOfAction;
-    }
-    /**
-     * The specific biochemical interaction through which this drug or supplement produces its pharmacological effect.
-     *
-     * @param fMechanismOfAction java.lang.String value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setMechanismOfAction(java.lang.String fMechanismOfAction) {
-        this.fMechanismOfAction = Text.of(fMechanismOfAction);
+    public void setMechanismOfAction(Text mechanismOfAction) {
+        this.mechanismOfAction = mechanismOfAction;
     }
 
-    private Text fClinicalPharmacology;
+    private Text clinicalPharmacology;
 
     /**
      * Description of the absorption and elimination of drugs, including their concentration (pharmacokinetics, pK) and biological effects (pharmacodynamics, pD).
@@ -200,31 +170,21 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Text getClinicalPharmacology() {
-        return fClinicalPharmacology;
+        return clinicalPharmacology;
     }
 
     /**
      * Description of the absorption and elimination of drugs, including their concentration (pharmacokinetics, pK) and biological effects (pharmacodynamics, pD).
      *
-     * @param fClinicalPharmacology Text value to set.
+     * @param clinicalPharmacology Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setClinicalPharmacology(Text fClinicalPharmacology) {
-        this.fClinicalPharmacology = fClinicalPharmacology;
-    }
-    /**
-     * Description of the absorption and elimination of drugs, including their concentration (pharmacokinetics, pK) and biological effects (pharmacodynamics, pD).
-     *
-     * @param fClinicalPharmacology java.lang.String value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setClinicalPharmacology(java.lang.String fClinicalPharmacology) {
-        this.fClinicalPharmacology = Text.of(fClinicalPharmacology);
+    public void setClinicalPharmacology(Text clinicalPharmacology) {
+        this.clinicalPharmacology = clinicalPharmacology;
     }
 
-    private Text fRxcui;
+    private Text rxcui;
 
     /**
      * The RxCUI drug identifier from RXNORM.
@@ -235,33 +195,22 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Text getRxcui() {
-        return fRxcui;
+        return rxcui;
     }
 
     /**
      * The RxCUI drug identifier from RXNORM.
      *
-     * @param fRxcui Text value to set.
+     * @param rxcui Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
     @Override
-    public void setRxcui(Text fRxcui) {
-        this.fRxcui = fRxcui;
-    }
-    /**
-     * The RxCUI drug identifier from RXNORM.
-     *
-     * @param fRxcui java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
-    @Override
-    public void setRxcui(java.lang.String fRxcui) {
-        this.fRxcui = Text.of(fRxcui);
+    public void setRxcui(Text rxcui) {
+        this.rxcui = rxcui;
     }
 
-    private Drug fInteractingDrug;
+    private Drug interactingDrug;
 
     /**
      * Another drug that is known to interact with this drug in a way that impacts the effect of this drug or causes a risk to the patient. Note: disease interactions are typically captured as contraindications.
@@ -271,21 +220,21 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Drug getInteractingDrug() {
-        return fInteractingDrug;
+        return interactingDrug;
     }
 
     /**
      * Another drug that is known to interact with this drug in a way that impacts the effect of this drug or causes a risk to the patient. Note: disease interactions are typically captured as contraindications.
      *
-     * @param fInteractingDrug Drug value to set.
+     * @param interactingDrug Drug value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setInteractingDrug(Drug fInteractingDrug) {
-        this.fInteractingDrug = fInteractingDrug;
+    public void setInteractingDrug(Drug interactingDrug) {
+        this.interactingDrug = interactingDrug;
     }
 
-    private Text fDosageForm;
+    private Text dosageForm;
 
     /**
      * A dosage form in which this drug/supplement is available, e.g. 'tablet', 'suspension', 'injection'.
@@ -295,31 +244,21 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Text getDosageForm() {
-        return fDosageForm;
+        return dosageForm;
     }
 
     /**
      * A dosage form in which this drug/supplement is available, e.g. 'tablet', 'suspension', 'injection'.
      *
-     * @param fDosageForm Text value to set.
+     * @param dosageForm Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setDosageForm(Text fDosageForm) {
-        this.fDosageForm = fDosageForm;
-    }
-    /**
-     * A dosage form in which this drug/supplement is available, e.g. 'tablet', 'suspension', 'injection'.
-     *
-     * @param fDosageForm java.lang.String value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setDosageForm(java.lang.String fDosageForm) {
-        this.fDosageForm = Text.of(fDosageForm);
+    public void setDosageForm(Text dosageForm) {
+        this.dosageForm = dosageForm;
     }
 
-    private URL fLabelDetails;
+    private URL labelDetails;
 
     /**
      * Link to the drug's label details.
@@ -329,31 +268,21 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public URL getLabelDetails() {
-        return fLabelDetails;
+        return labelDetails;
     }
 
     /**
      * Link to the drug's label details.
      *
-     * @param fLabelDetails URL value to set.
+     * @param labelDetails URL value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setLabelDetails(URL fLabelDetails) {
-        this.fLabelDetails = fLabelDetails;
-    }
-    /**
-     * Link to the drug's label details.
-     *
-     * @param fLabelDetails java.net.URL value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setLabelDetails(java.net.URL fLabelDetails) {
-        this.fLabelDetails = URL.of(fLabelDetails);
+    public void setLabelDetails(URL labelDetails) {
+        this.labelDetails = labelDetails;
     }
 
-    private MaximumDoseSchedule fMaximumIntake;
+    private MaximumDoseSchedule maximumIntake;
 
     /**
      * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
@@ -363,21 +292,21 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public MaximumDoseSchedule getMaximumIntake() {
-        return fMaximumIntake;
+        return maximumIntake;
     }
 
     /**
      * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
      *
-     * @param fMaximumIntake MaximumDoseSchedule value to set.
+     * @param maximumIntake MaximumDoseSchedule value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setMaximumIntake(MaximumDoseSchedule fMaximumIntake) {
-        this.fMaximumIntake = fMaximumIntake;
+    public void setMaximumIntake(MaximumDoseSchedule maximumIntake) {
+        this.maximumIntake = maximumIntake;
     }
 
-    private Text fActiveIngredient;
+    private Text activeIngredient;
 
     /**
      * An active ingredient, typically chemical compounds and/or biologic substances.
@@ -387,31 +316,21 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Text getActiveIngredient() {
-        return fActiveIngredient;
+        return activeIngredient;
     }
 
     /**
      * An active ingredient, typically chemical compounds and/or biologic substances.
      *
-     * @param fActiveIngredient Text value to set.
+     * @param activeIngredient Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setActiveIngredient(Text fActiveIngredient) {
-        this.fActiveIngredient = fActiveIngredient;
-    }
-    /**
-     * An active ingredient, typically chemical compounds and/or biologic substances.
-     *
-     * @param fActiveIngredient java.lang.String value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setActiveIngredient(java.lang.String fActiveIngredient) {
-        this.fActiveIngredient = Text.of(fActiveIngredient);
+    public void setActiveIngredient(Text activeIngredient) {
+        this.activeIngredient = activeIngredient;
     }
 
-    private Drug fRelatedDrug;
+    private Drug relatedDrug;
 
     /**
      * Any other drug related to this one, for example commonly-prescribed alternatives.
@@ -421,21 +340,21 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Drug getRelatedDrug() {
-        return fRelatedDrug;
+        return relatedDrug;
     }
 
     /**
      * Any other drug related to this one, for example commonly-prescribed alternatives.
      *
-     * @param fRelatedDrug Drug value to set.
+     * @param relatedDrug Drug value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setRelatedDrug(Drug fRelatedDrug) {
-        this.fRelatedDrug = fRelatedDrug;
+    public void setRelatedDrug(Drug relatedDrug) {
+        this.relatedDrug = relatedDrug;
     }
 
-    private Text fAdministrationRoute;
+    private Text administrationRoute;
 
     /**
      * A route by which this drug may be administered, e.g. 'oral'.
@@ -445,31 +364,21 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Text getAdministrationRoute() {
-        return fAdministrationRoute;
+        return administrationRoute;
     }
 
     /**
      * A route by which this drug may be administered, e.g. 'oral'.
      *
-     * @param fAdministrationRoute Text value to set.
+     * @param administrationRoute Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setAdministrationRoute(Text fAdministrationRoute) {
-        this.fAdministrationRoute = fAdministrationRoute;
-    }
-    /**
-     * A route by which this drug may be administered, e.g. 'oral'.
-     *
-     * @param fAdministrationRoute java.lang.String value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setAdministrationRoute(java.lang.String fAdministrationRoute) {
-        this.fAdministrationRoute = Text.of(fAdministrationRoute);
+    public void setAdministrationRoute(Text administrationRoute) {
+        this.administrationRoute = administrationRoute;
     }
 
-    private Text fDrugUnit;
+    private Text drugUnit;
 
     /**
      * The unit in which the drug is measured, e.g. '5 mg tablet'.
@@ -479,31 +388,21 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Text getDrugUnit() {
-        return fDrugUnit;
+        return drugUnit;
     }
 
     /**
      * The unit in which the drug is measured, e.g. '5 mg tablet'.
      *
-     * @param fDrugUnit Text value to set.
+     * @param drugUnit Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setDrugUnit(Text fDrugUnit) {
-        this.fDrugUnit = fDrugUnit;
-    }
-    /**
-     * The unit in which the drug is measured, e.g. '5 mg tablet'.
-     *
-     * @param fDrugUnit java.lang.String value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setDrugUnit(java.lang.String fDrugUnit) {
-        this.fDrugUnit = Text.of(fDrugUnit);
+    public void setDrugUnit(Text drugUnit) {
+        this.drugUnit = drugUnit;
     }
 
-    private Text fFoodWarning;
+    private Text foodWarning;
 
     /**
      * Any precaution, guidance, contraindication, etc. related to consumption of specific foods while taking this drug.
@@ -513,31 +412,21 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Text getFoodWarning() {
-        return fFoodWarning;
+        return foodWarning;
     }
 
     /**
      * Any precaution, guidance, contraindication, etc. related to consumption of specific foods while taking this drug.
      *
-     * @param fFoodWarning Text value to set.
+     * @param foodWarning Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setFoodWarning(Text fFoodWarning) {
-        this.fFoodWarning = fFoodWarning;
-    }
-    /**
-     * Any precaution, guidance, contraindication, etc. related to consumption of specific foods while taking this drug.
-     *
-     * @param fFoodWarning java.lang.String value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setFoodWarning(java.lang.String fFoodWarning) {
-        this.fFoodWarning = Text.of(fFoodWarning);
+    public void setFoodWarning(Text foodWarning) {
+        this.foodWarning = foodWarning;
     }
 
-    private Object fWarning;
+    private Object warning;
 
     /**
      * Any FDA or other warnings about the drug (text or URL).
@@ -547,51 +436,31 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public <T> T getWarning() {
-        return (T) fWarning;
+        return (T) warning;
     }
 
     /**
      * Any FDA or other warnings about the drug (text or URL).
      *
-     * @param fWarning URL value to set.
+     * @param warning URL value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setWarning(URL fWarning) {
-        this.fWarning = fWarning;
+    public void setWarning(URL warning) {
+        this.warning = warning;
     }
     /**
      * Any FDA or other warnings about the drug (text or URL).
      *
-     * @param fWarning java.net.URL value to set.
+     * @param warning Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setWarning(java.net.URL fWarning) {
-        this.fWarning = URL.of(fWarning);
-    }
-    /**
-     * Any FDA or other warnings about the drug (text or URL).
-     *
-     * @param fWarning Text value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setWarning(Text fWarning) {
-        this.fWarning = fWarning;
-    }
-    /**
-     * Any FDA or other warnings about the drug (text or URL).
-     *
-     * @param fWarning java.lang.String value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setWarning(java.lang.String fWarning) {
-        this.fWarning = Text.of(fWarning);
+    public void setWarning(Text warning) {
+        this.warning = warning;
     }
 
-    private Object fPrescriptionStatus;
+    private Object prescriptionStatus;
 
     /**
      * Indicates the status of drug prescription eg. local catalogs classifications or whether the drug is available by prescription or over-the-counter, etc.
@@ -601,41 +470,31 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public <T> T getPrescriptionStatus() {
-        return (T) fPrescriptionStatus;
+        return (T) prescriptionStatus;
     }
 
     /**
      * Indicates the status of drug prescription eg. local catalogs classifications or whether the drug is available by prescription or over-the-counter, etc.
      *
-     * @param fPrescriptionStatus DrugPrescriptionStatus value to set.
+     * @param prescriptionStatus DrugPrescriptionStatus value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setPrescriptionStatus(DrugPrescriptionStatus fPrescriptionStatus) {
-        this.fPrescriptionStatus = fPrescriptionStatus;
+    public void setPrescriptionStatus(DrugPrescriptionStatus prescriptionStatus) {
+        this.prescriptionStatus = prescriptionStatus;
     }
     /**
      * Indicates the status of drug prescription eg. local catalogs classifications or whether the drug is available by prescription or over-the-counter, etc.
      *
-     * @param fPrescriptionStatus Text value to set.
+     * @param prescriptionStatus Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setPrescriptionStatus(Text fPrescriptionStatus) {
-        this.fPrescriptionStatus = fPrescriptionStatus;
-    }
-    /**
-     * Indicates the status of drug prescription eg. local catalogs classifications or whether the drug is available by prescription or over-the-counter, etc.
-     *
-     * @param fPrescriptionStatus java.lang.String value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setPrescriptionStatus(java.lang.String fPrescriptionStatus) {
-        this.fPrescriptionStatus = Text.of(fPrescriptionStatus);
+    public void setPrescriptionStatus(Text prescriptionStatus) {
+        this.prescriptionStatus = prescriptionStatus;
     }
 
-    private Text fProprietaryName;
+    private Text proprietaryName;
 
     /**
      * Proprietary name given to the diet plan, typically by its originator or creator.
@@ -645,31 +504,21 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Text getProprietaryName() {
-        return fProprietaryName;
+        return proprietaryName;
     }
 
     /**
      * Proprietary name given to the diet plan, typically by its originator or creator.
      *
-     * @param fProprietaryName Text value to set.
+     * @param proprietaryName Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setProprietaryName(Text fProprietaryName) {
-        this.fProprietaryName = fProprietaryName;
-    }
-    /**
-     * Proprietary name given to the diet plan, typically by its originator or creator.
-     *
-     * @param fProprietaryName java.lang.String value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setProprietaryName(java.lang.String fProprietaryName) {
-        this.fProprietaryName = Text.of(fProprietaryName);
+    public void setProprietaryName(Text proprietaryName) {
+        this.proprietaryName = proprietaryName;
     }
 
-    private DrugClass fDrugClass;
+    private DrugClass drugClass;
 
     /**
      * The class of drug this belongs to (e.g., statins).
@@ -679,21 +528,21 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public DrugClass getDrugClass() {
-        return fDrugClass;
+        return drugClass;
     }
 
     /**
      * The class of drug this belongs to (e.g., statins).
      *
-     * @param fDrugClass DrugClass value to set.
+     * @param drugClass DrugClass value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setDrugClass(DrugClass fDrugClass) {
-        this.fDrugClass = fDrugClass;
+    public void setDrugClass(DrugClass drugClass) {
+        this.drugClass = drugClass;
     }
 
-    private URL fPrescribingInfo;
+    private URL prescribingInfo;
 
     /**
      * Link to prescribing information for the drug.
@@ -703,31 +552,21 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public URL getPrescribingInfo() {
-        return fPrescribingInfo;
+        return prescribingInfo;
     }
 
     /**
      * Link to prescribing information for the drug.
      *
-     * @param fPrescribingInfo URL value to set.
+     * @param prescribingInfo URL value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setPrescribingInfo(URL fPrescribingInfo) {
-        this.fPrescribingInfo = fPrescribingInfo;
-    }
-    /**
-     * Link to prescribing information for the drug.
-     *
-     * @param fPrescribingInfo java.net.URL value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setPrescribingInfo(java.net.URL fPrescribingInfo) {
-        this.fPrescribingInfo = URL.of(fPrescribingInfo);
+    public void setPrescribingInfo(URL prescribingInfo) {
+        this.prescribingInfo = prescribingInfo;
     }
 
-    private HealthInsurancePlan fIncludedInHealthInsurancePlan;
+    private HealthInsurancePlan includedInHealthInsurancePlan;
 
     /**
      * The insurance plans that cover this drug.
@@ -738,22 +577,22 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public HealthInsurancePlan getIncludedInHealthInsurancePlan() {
-        return fIncludedInHealthInsurancePlan;
+        return includedInHealthInsurancePlan;
     }
 
     /**
      * The insurance plans that cover this drug.
      *
-     * @param fIncludedInHealthInsurancePlan HealthInsurancePlan value to set.
+     * @param includedInHealthInsurancePlan HealthInsurancePlan value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
     @Override
-    public void setIncludedInHealthInsurancePlan(HealthInsurancePlan fIncludedInHealthInsurancePlan) {
-        this.fIncludedInHealthInsurancePlan = fIncludedInHealthInsurancePlan;
+    public void setIncludedInHealthInsurancePlan(HealthInsurancePlan includedInHealthInsurancePlan) {
+        this.includedInHealthInsurancePlan = includedInHealthInsurancePlan;
     }
 
-    private Text fNonProprietaryName;
+    private Text nonProprietaryName;
 
     /**
      * The generic name of this drug or supplement.
@@ -763,31 +602,21 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Text getNonProprietaryName() {
-        return fNonProprietaryName;
+        return nonProprietaryName;
     }
 
     /**
      * The generic name of this drug or supplement.
      *
-     * @param fNonProprietaryName Text value to set.
+     * @param nonProprietaryName Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setNonProprietaryName(Text fNonProprietaryName) {
-        this.fNonProprietaryName = fNonProprietaryName;
-    }
-    /**
-     * The generic name of this drug or supplement.
-     *
-     * @param fNonProprietaryName java.lang.String value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setNonProprietaryName(java.lang.String fNonProprietaryName) {
-        this.fNonProprietaryName = Text.of(fNonProprietaryName);
+    public void setNonProprietaryName(Text nonProprietaryName) {
+        this.nonProprietaryName = nonProprietaryName;
     }
 
-    private Organization fManufacturer;
+    private Organization manufacturer;
 
     /**
      * The manufacturer of the product.
@@ -796,20 +625,20 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Organization getManufacturer() {
-        return fManufacturer;
+        return manufacturer;
     }
 
     /**
      * The manufacturer of the product.
      *
-     * @param fManufacturer Organization value to set.
+     * @param manufacturer Organization value to set.
      */
     @Override
-    public void setManufacturer(Organization fManufacturer) {
-        this.fManufacturer = fManufacturer;
+    public void setManufacturer(Organization manufacturer) {
+        this.manufacturer = manufacturer;
     }
 
-    private Boolean fIsProprietary;
+    private Boolean isProprietary;
 
     /**
      * True if this item's name is a proprietary/brand name (vs. generic name).
@@ -819,31 +648,21 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Boolean getIsProprietary() {
-        return fIsProprietary;
+        return isProprietary;
     }
 
     /**
      * True if this item's name is a proprietary/brand name (vs. generic name).
      *
-     * @param fIsProprietary Boolean value to set.
+     * @param isProprietary Boolean value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setIsProprietary(Boolean fIsProprietary) {
-        this.fIsProprietary = fIsProprietary;
-    }
-    /**
-     * True if this item's name is a proprietary/brand name (vs. generic name).
-     *
-     * @param fIsProprietary java.lang.Boolean value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setIsProprietary(java.lang.Boolean fIsProprietary) {
-        this.fIsProprietary = Boolean.of(fIsProprietary);
+    public void setIsProprietary(Boolean isProprietary) {
+        this.isProprietary = isProprietary;
     }
 
-    private Text fClincalPharmacology;
+    private Text clincalPharmacology;
 
     /**
      * Description of the absorption and elimination of drugs, including their concentration (pharmacokinetics, pK) and biological effects (pharmacodynamics, pD).
@@ -853,31 +672,21 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Text getClincalPharmacology() {
-        return fClincalPharmacology;
+        return clincalPharmacology;
     }
 
     /**
      * Description of the absorption and elimination of drugs, including their concentration (pharmacokinetics, pK) and biological effects (pharmacodynamics, pD).
      *
-     * @param fClincalPharmacology Text value to set.
+     * @param clincalPharmacology Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setClincalPharmacology(Text fClincalPharmacology) {
-        this.fClincalPharmacology = fClincalPharmacology;
-    }
-    /**
-     * Description of the absorption and elimination of drugs, including their concentration (pharmacokinetics, pK) and biological effects (pharmacodynamics, pD).
-     *
-     * @param fClincalPharmacology java.lang.String value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setClincalPharmacology(java.lang.String fClincalPharmacology) {
-        this.fClincalPharmacology = Text.of(fClincalPharmacology);
+    public void setClincalPharmacology(Text clincalPharmacology) {
+        this.clincalPharmacology = clincalPharmacology;
     }
 
-    private Boolean fIsAvailableGenerically;
+    private Boolean isAvailableGenerically;
 
     /**
      * True if the drug is available in a generic form (regardless of name).
@@ -887,31 +696,21 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Boolean getIsAvailableGenerically() {
-        return fIsAvailableGenerically;
+        return isAvailableGenerically;
     }
 
     /**
      * True if the drug is available in a generic form (regardless of name).
      *
-     * @param fIsAvailableGenerically Boolean value to set.
+     * @param isAvailableGenerically Boolean value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setIsAvailableGenerically(Boolean fIsAvailableGenerically) {
-        this.fIsAvailableGenerically = fIsAvailableGenerically;
-    }
-    /**
-     * True if the drug is available in a generic form (regardless of name).
-     *
-     * @param fIsAvailableGenerically java.lang.Boolean value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setIsAvailableGenerically(java.lang.Boolean fIsAvailableGenerically) {
-        this.fIsAvailableGenerically = Boolean.of(fIsAvailableGenerically);
+    public void setIsAvailableGenerically(Boolean isAvailableGenerically) {
+        this.isAvailableGenerically = isAvailableGenerically;
     }
 
-    private Text fBreastfeedingWarning;
+    private Text breastfeedingWarning;
 
     /**
      * Any precaution, guidance, contraindication, etc. related to this drug's use by breastfeeding mothers.
@@ -921,31 +720,21 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Text getBreastfeedingWarning() {
-        return fBreastfeedingWarning;
+        return breastfeedingWarning;
     }
 
     /**
      * Any precaution, guidance, contraindication, etc. related to this drug's use by breastfeeding mothers.
      *
-     * @param fBreastfeedingWarning Text value to set.
+     * @param breastfeedingWarning Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setBreastfeedingWarning(Text fBreastfeedingWarning) {
-        this.fBreastfeedingWarning = fBreastfeedingWarning;
-    }
-    /**
-     * Any precaution, guidance, contraindication, etc. related to this drug's use by breastfeeding mothers.
-     *
-     * @param fBreastfeedingWarning java.lang.String value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setBreastfeedingWarning(java.lang.String fBreastfeedingWarning) {
-        this.fBreastfeedingWarning = Text.of(fBreastfeedingWarning);
+    public void setBreastfeedingWarning(Text breastfeedingWarning) {
+        this.breastfeedingWarning = breastfeedingWarning;
     }
 
-    private Text fPregnancyWarning;
+    private Text pregnancyWarning;
 
     /**
      * Any precaution, guidance, contraindication, etc. related to this drug's use during pregnancy.
@@ -955,31 +744,21 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Text getPregnancyWarning() {
-        return fPregnancyWarning;
+        return pregnancyWarning;
     }
 
     /**
      * Any precaution, guidance, contraindication, etc. related to this drug's use during pregnancy.
      *
-     * @param fPregnancyWarning Text value to set.
+     * @param pregnancyWarning Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setPregnancyWarning(Text fPregnancyWarning) {
-        this.fPregnancyWarning = fPregnancyWarning;
-    }
-    /**
-     * Any precaution, guidance, contraindication, etc. related to this drug's use during pregnancy.
-     *
-     * @param fPregnancyWarning java.lang.String value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setPregnancyWarning(java.lang.String fPregnancyWarning) {
-        this.fPregnancyWarning = Text.of(fPregnancyWarning);
+    public void setPregnancyWarning(Text pregnancyWarning) {
+        this.pregnancyWarning = pregnancyWarning;
     }
 
-    private Text fAlcoholWarning;
+    private Text alcoholWarning;
 
     /**
      * Any precaution, guidance, contraindication, etc. related to consumption of alcohol while taking this drug.
@@ -989,31 +768,21 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Text getAlcoholWarning() {
-        return fAlcoholWarning;
+        return alcoholWarning;
     }
 
     /**
      * Any precaution, guidance, contraindication, etc. related to consumption of alcohol while taking this drug.
      *
-     * @param fAlcoholWarning Text value to set.
+     * @param alcoholWarning Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setAlcoholWarning(Text fAlcoholWarning) {
-        this.fAlcoholWarning = fAlcoholWarning;
-    }
-    /**
-     * Any precaution, guidance, contraindication, etc. related to consumption of alcohol while taking this drug.
-     *
-     * @param fAlcoholWarning java.lang.String value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setAlcoholWarning(java.lang.String fAlcoholWarning) {
-        this.fAlcoholWarning = Text.of(fAlcoholWarning);
+    public void setAlcoholWarning(Text alcoholWarning) {
+        this.alcoholWarning = alcoholWarning;
     }
 
-    private DoseSchedule fDoseSchedule;
+    private DoseSchedule doseSchedule;
 
     /**
      * A dosing schedule for the drug for a given population, either observed, recommended, or maximum dose based on the type used.
@@ -1023,21 +792,21 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public DoseSchedule getDoseSchedule() {
-        return fDoseSchedule;
+        return doseSchedule;
     }
 
     /**
      * A dosing schedule for the drug for a given population, either observed, recommended, or maximum dose based on the type used.
      *
-     * @param fDoseSchedule DoseSchedule value to set.
+     * @param doseSchedule DoseSchedule value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setDoseSchedule(DoseSchedule fDoseSchedule) {
-        this.fDoseSchedule = fDoseSchedule;
+    public void setDoseSchedule(DoseSchedule doseSchedule) {
+        this.doseSchedule = doseSchedule;
     }
 
-    private DrugStrength fAvailableStrength;
+    private DrugStrength availableStrength;
 
     /**
      * An available dosage strength for the drug.
@@ -1047,21 +816,21 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public DrugStrength getAvailableStrength() {
-        return fAvailableStrength;
+        return availableStrength;
     }
 
     /**
      * An available dosage strength for the drug.
      *
-     * @param fAvailableStrength DrugStrength value to set.
+     * @param availableStrength DrugStrength value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setAvailableStrength(DrugStrength fAvailableStrength) {
-        this.fAvailableStrength = fAvailableStrength;
+    public void setAvailableStrength(DrugStrength availableStrength) {
+        this.availableStrength = availableStrength;
     }
 
-    private Grant fFunding;
+    private Grant funding;
 
     /**
      * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
@@ -1073,23 +842,23 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Grant getFunding() {
-        return fFunding;
+        return funding;
     }
 
     /**
      * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
      *
-     * @param fFunding Grant value to set.
+     * @param funding Grant value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
     @Override
-    public void setFunding(Grant fFunding) {
-        this.fFunding = fFunding;
+    public void setFunding(Grant funding) {
+        this.funding = funding;
     }
 
-    private MedicalStudy fStudy;
+    private MedicalStudy study;
 
     /**
      * A medical study or trial related to this entity.
@@ -1099,21 +868,21 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public MedicalStudy getStudy() {
-        return fStudy;
+        return study;
     }
 
     /**
      * A medical study or trial related to this entity.
      *
-     * @param fStudy MedicalStudy value to set.
+     * @param study MedicalStudy value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setStudy(MedicalStudy fStudy) {
-        this.fStudy = fStudy;
+    public void setStudy(MedicalStudy study) {
+        this.study = study;
     }
 
-    private MedicalCode fCode;
+    private MedicalCode code;
 
     /**
      * A medical code for the entity, taken from a controlled vocabulary or ontology such as ICD-9, DiseasesDB, MeSH, SNOMED-CT, RxNorm, etc.
@@ -1123,21 +892,21 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public MedicalCode getCode() {
-        return fCode;
+        return code;
     }
 
     /**
      * A medical code for the entity, taken from a controlled vocabulary or ontology such as ICD-9, DiseasesDB, MeSH, SNOMED-CT, RxNorm, etc.
      *
-     * @param fCode MedicalCode value to set.
+     * @param code MedicalCode value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setCode(MedicalCode fCode) {
-        this.fCode = fCode;
+    public void setCode(MedicalCode code) {
+        this.code = code;
     }
 
-    private MedicalGuideline fGuideline;
+    private MedicalGuideline guideline;
 
     /**
      * A medical guideline related to this entity.
@@ -1147,21 +916,21 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public MedicalGuideline getGuideline() {
-        return fGuideline;
+        return guideline;
     }
 
     /**
      * A medical guideline related to this entity.
      *
-     * @param fGuideline MedicalGuideline value to set.
+     * @param guideline MedicalGuideline value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setGuideline(MedicalGuideline fGuideline) {
-        this.fGuideline = fGuideline;
+    public void setGuideline(MedicalGuideline guideline) {
+        this.guideline = guideline;
     }
 
-    private Organization fRecognizingAuthority;
+    private Organization recognizingAuthority;
 
     /**
      * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
@@ -1171,21 +940,21 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Organization getRecognizingAuthority() {
-        return fRecognizingAuthority;
+        return recognizingAuthority;
     }
 
     /**
      * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
      *
-     * @param fRecognizingAuthority Organization value to set.
+     * @param recognizingAuthority Organization value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setRecognizingAuthority(Organization fRecognizingAuthority) {
-        this.fRecognizingAuthority = fRecognizingAuthority;
+    public void setRecognizingAuthority(Organization recognizingAuthority) {
+        this.recognizingAuthority = recognizingAuthority;
     }
 
-    private MedicineSystem fMedicineSystem;
+    private MedicineSystem medicineSystem;
 
     /**
      * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
@@ -1195,21 +964,21 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public MedicineSystem getMedicineSystem() {
-        return fMedicineSystem;
+        return medicineSystem;
     }
 
     /**
      * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
      *
-     * @param fMedicineSystem MedicineSystem value to set.
+     * @param medicineSystem MedicineSystem value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setMedicineSystem(MedicineSystem fMedicineSystem) {
-        this.fMedicineSystem = fMedicineSystem;
+    public void setMedicineSystem(MedicineSystem medicineSystem) {
+        this.medicineSystem = medicineSystem;
     }
 
-    private MedicalSpecialty fRelevantSpecialty;
+    private MedicalSpecialty relevantSpecialty;
 
     /**
      * If applicable, a medical specialty in which this entity is relevant.
@@ -1219,21 +988,21 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public MedicalSpecialty getRelevantSpecialty() {
-        return fRelevantSpecialty;
+        return relevantSpecialty;
     }
 
     /**
      * If applicable, a medical specialty in which this entity is relevant.
      *
-     * @param fRelevantSpecialty MedicalSpecialty value to set.
+     * @param relevantSpecialty MedicalSpecialty value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setRelevantSpecialty(MedicalSpecialty fRelevantSpecialty) {
-        this.fRelevantSpecialty = fRelevantSpecialty;
+    public void setRelevantSpecialty(MedicalSpecialty relevantSpecialty) {
+        this.relevantSpecialty = relevantSpecialty;
     }
 
-    private Object fMainEntityOfPage;
+    private Object mainEntityOfPage;
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -1242,38 +1011,29 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
+        return (T) mainEntityOfPage;
     }
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param fMainEntityOfPage CreativeWork value to set.
+     * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(CreativeWork fMainEntityOfPage) {
-        this.fMainEntityOfPage = fMainEntityOfPage;
+    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
     }
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param fMainEntityOfPage URL value to set.
+     * @param mainEntityOfPage URL value to set.
      */
     @Override
-    public void setMainEntityOfPage(URL fMainEntityOfPage) {
-        this.fMainEntityOfPage = fMainEntityOfPage;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param fMainEntityOfPage java.net.URL value to set.
-     */
-    @Override
-    public void setMainEntityOfPage(java.net.URL fMainEntityOfPage) {
-        this.fMainEntityOfPage = URL.of(fMainEntityOfPage);
+    public void setMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
     }
 
-    private Text fAlternateName;
+    private Text alternateName;
 
     /**
      * An alias for the item.
@@ -1282,29 +1042,20 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Text getAlternateName() {
-        return fAlternateName;
+        return alternateName;
     }
 
     /**
      * An alias for the item.
      *
-     * @param fAlternateName Text value to set.
+     * @param alternateName Text value to set.
      */
     @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
-    }
-    /**
-     * An alias for the item.
-     *
-     * @param fAlternateName java.lang.String value to set.
-     */
-    @Override
-    public void setAlternateName(java.lang.String fAlternateName) {
-        this.fAlternateName = Text.of(fAlternateName);
+    public void setAlternateName(Text alternateName) {
+        this.alternateName = alternateName;
     }
 
-    private Text fName;
+    private Text name;
 
     /**
      * The name of the item.
@@ -1313,29 +1064,20 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Text getName() {
-        return fName;
+        return name;
     }
 
     /**
      * The name of the item.
      *
-     * @param fName Text value to set.
+     * @param name Text value to set.
      */
     @Override
-    public void setName(Text fName) {
-        this.fName = fName;
-    }
-    /**
-     * The name of the item.
-     *
-     * @param fName java.lang.String value to set.
-     */
-    @Override
-    public void setName(java.lang.String fName) {
-        this.fName = Text.of(fName);
+    public void setName(Text name) {
+        this.name = name;
     }
 
-    private Action fPotentialAction;
+    private Action potentialAction;
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -1344,20 +1086,20 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Action getPotentialAction() {
-        return fPotentialAction;
+        return potentialAction;
     }
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      *
-     * @param fPotentialAction Action value to set.
+     * @param potentialAction Action value to set.
      */
     @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
+    public void setPotentialAction(Action potentialAction) {
+        this.potentialAction = potentialAction;
     }
 
-    private Object fImage;
+    private Object image;
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -1366,38 +1108,29 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public <T> T getImage() {
-        return (T) fImage;
+        return (T) image;
     }
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param fImage URL value to set.
+     * @param image URL value to set.
      */
     @Override
-    public void setImage(URL fImage) {
-        this.fImage = fImage;
+    public void setImage(URL image) {
+        this.image = image;
     }
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param fImage java.net.URL value to set.
+     * @param image ImageObject value to set.
      */
     @Override
-    public void setImage(java.net.URL fImage) {
-        this.fImage = URL.of(fImage);
-    }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param fImage ImageObject value to set.
-     */
-    @Override
-    public void setImage(ImageObject fImage) {
-        this.fImage = fImage;
+    public void setImage(ImageObject image) {
+        this.image = image;
     }
 
-    private URL fUrl;
+    private URL url;
 
     /**
      * URL of the item.
@@ -1406,29 +1139,20 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public URL getUrl() {
-        return fUrl;
+        return url;
     }
 
     /**
      * URL of the item.
      *
-     * @param fUrl URL value to set.
+     * @param url URL value to set.
      */
     @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
-    }
-    /**
-     * URL of the item.
-     *
-     * @param fUrl java.net.URL value to set.
-     */
-    @Override
-    public void setUrl(java.net.URL fUrl) {
-        this.fUrl = URL.of(fUrl);
+    public void setUrl(URL url) {
+        this.url = url;
     }
 
-    private Text fDescription;
+    private Text description;
 
     /**
      * A description of the item.
@@ -1437,29 +1161,20 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Text getDescription() {
-        return fDescription;
+        return description;
     }
 
     /**
      * A description of the item.
      *
-     * @param fDescription Text value to set.
+     * @param description Text value to set.
      */
     @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
-    }
-    /**
-     * A description of the item.
-     *
-     * @param fDescription java.lang.String value to set.
-     */
-    @Override
-    public void setDescription(java.lang.String fDescription) {
-        this.fDescription = Text.of(fDescription);
+    public void setDescription(Text description) {
+        this.description = description;
     }
 
-    private Object fSubjectOf;
+    private Object subjectOf;
 
     /**
      * A CreativeWork or Event about this Thing.
@@ -1469,31 +1184,31 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public <T> T getSubjectOf() {
-        return (T) fSubjectOf;
+        return (T) subjectOf;
     }
 
     /**
      * A CreativeWork or Event about this Thing.
      *
-     * @param fSubjectOf Event value to set.
+     * @param subjectOf Event value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Event fSubjectOf) {
-        this.fSubjectOf = fSubjectOf;
+    public void setSubjectOf(Event subjectOf) {
+        this.subjectOf = subjectOf;
     }
     /**
      * A CreativeWork or Event about this Thing.
      *
-     * @param fSubjectOf CreativeWork value to set.
+     * @param subjectOf CreativeWork value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(CreativeWork fSubjectOf) {
-        this.fSubjectOf = fSubjectOf;
+    public void setSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = subjectOf;
     }
 
-    private URL fAdditionalType;
+    private URL additionalType;
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
@@ -1502,29 +1217,20 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public URL getAdditionalType() {
-        return fAdditionalType;
+        return additionalType;
     }
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
-     * @param fAdditionalType URL value to set.
+     * @param additionalType URL value to set.
      */
     @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
-    }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @param fAdditionalType java.net.URL value to set.
-     */
-    @Override
-    public void setAdditionalType(java.net.URL fAdditionalType) {
-        this.fAdditionalType = URL.of(fAdditionalType);
+    public void setAdditionalType(URL additionalType) {
+        this.additionalType = additionalType;
     }
 
-    private Text fDisambiguatingDescription;
+    private Text disambiguatingDescription;
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
@@ -1533,29 +1239,20 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Text getDisambiguatingDescription() {
-        return fDisambiguatingDescription;
+        return disambiguatingDescription;
     }
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
-     * @param fDisambiguatingDescription Text value to set.
+     * @param disambiguatingDescription Text value to set.
      */
     @Override
-    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = fDisambiguatingDescription;
-    }
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @param fDisambiguatingDescription java.lang.String value to set.
-     */
-    @Override
-    public void setDisambiguatingDescription(java.lang.String fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = Text.of(fDisambiguatingDescription);
+    public void setDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = disambiguatingDescription;
     }
 
-    private URL fSameAs;
+    private URL sameAs;
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
@@ -1564,29 +1261,20 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public URL getSameAs() {
-        return fSameAs;
+        return sameAs;
     }
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
-     * @param fSameAs URL value to set.
+     * @param sameAs URL value to set.
      */
     @Override
-    public void setSameAs(URL fSameAs) {
-        this.fSameAs = fSameAs;
-    }
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @param fSameAs java.net.URL value to set.
-     */
-    @Override
-    public void setSameAs(java.net.URL fSameAs) {
-        this.fSameAs = URL.of(fSameAs);
+    public void setSameAs(URL sameAs) {
+        this.sameAs = sameAs;
     }
 
-    private Object fIdentifier;
+    private Object identifier;
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -1596,57 +1284,37 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public <T> T getIdentifier() {
-        return (T) fIdentifier;
+        return (T) identifier;
     }
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier URL value to set.
+     * @param identifier URL value to set.
      */
     @Override
-    public void setIdentifier(URL fIdentifier) {
-        this.fIdentifier = fIdentifier;
+    public void setIdentifier(URL identifier) {
+        this.identifier = identifier;
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier java.net.URL value to set.
+     * @param identifier Text value to set.
      */
     @Override
-    public void setIdentifier(java.net.URL fIdentifier) {
-        this.fIdentifier = URL.of(fIdentifier);
+    public void setIdentifier(Text identifier) {
+        this.identifier = identifier;
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier Text value to set.
+     * @param identifier PropertyValue value to set.
      */
     @Override
-    public void setIdentifier(Text fIdentifier) {
-        this.fIdentifier = fIdentifier;
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param fIdentifier java.lang.String value to set.
-     */
-    @Override
-    public void setIdentifier(java.lang.String fIdentifier) {
-        this.fIdentifier = Text.of(fIdentifier);
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param fIdentifier PropertyValue value to set.
-     */
-    @Override
-    public void setIdentifier(PropertyValue fIdentifier) {
-        this.fIdentifier = fIdentifier;
+    public void setIdentifier(PropertyValue identifier) {
+        this.identifier = identifier;
     }
 }

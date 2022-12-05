@@ -30,19 +30,11 @@ public interface BroadcastFrequencySpecification extends Intangible {
     /**
      * The subchannel used for the broadcast.
      *
-     * @param fBroadcastSubChannel Text value to set.
+     * @param broadcastSubChannel Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2111">https://github.com/schemaorg/schemaorg/issues/2111</a>
      */
-    void setBroadcastSubChannel(Text fBroadcastSubChannel);
-    /**
-     * The subchannel used for the broadcast.
-     *
-     * @param fBroadcastSubChannel java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2111">https://github.com/schemaorg/schemaorg/issues/2111</a>
-     */
-    void setBroadcastSubChannel(java.lang.String fBroadcastSubChannel);
+    void setBroadcastSubChannel(Text broadcastSubChannel);
 
     /**
      * The modulation (e.g. FM, AM, etc) used by a particular broadcast service.
@@ -56,27 +48,19 @@ public interface BroadcastFrequencySpecification extends Intangible {
     /**
      * The modulation (e.g. FM, AM, etc) used by a particular broadcast service.
      *
-     * @param fBroadcastSignalModulation QualitativeValue value to set.
+     * @param broadcastSignalModulation QualitativeValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2111">https://github.com/schemaorg/schemaorg/issues/2111</a>
      */
-    void setBroadcastSignalModulation(QualitativeValue fBroadcastSignalModulation);
+    void setBroadcastSignalModulation(QualitativeValue broadcastSignalModulation);
     /**
      * The modulation (e.g. FM, AM, etc) used by a particular broadcast service.
      *
-     * @param fBroadcastSignalModulation Text value to set.
+     * @param broadcastSignalModulation Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2111">https://github.com/schemaorg/schemaorg/issues/2111</a>
      */
-    void setBroadcastSignalModulation(Text fBroadcastSignalModulation);
-    /**
-     * The modulation (e.g. FM, AM, etc) used by a particular broadcast service.
-     *
-     * @param fBroadcastSignalModulation java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2111">https://github.com/schemaorg/schemaorg/issues/2111</a>
-     */
-    void setBroadcastSignalModulation(java.lang.String fBroadcastSignalModulation);
+    void setBroadcastSignalModulation(Text broadcastSignalModulation);
 
     /**
      * The frequency in MHz for a particular broadcast.
@@ -89,22 +73,15 @@ public interface BroadcastFrequencySpecification extends Intangible {
     /**
      * The frequency in MHz for a particular broadcast.
      *
-     * @param fBroadcastFrequencyValue Number value to set.
+     * @param broadcastFrequencyValue Number value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
      */
-    void setBroadcastFrequencyValue(Number fBroadcastFrequencyValue);
+    void setBroadcastFrequencyValue(Number broadcastFrequencyValue);
     /**
      * The frequency in MHz for a particular broadcast.
      *
-     * @param fBroadcastFrequencyValue java.lang.Number value to set.
+     * @param broadcastFrequencyValue QuantitativeValue value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
      */
-    void setBroadcastFrequencyValue(java.lang.Number fBroadcastFrequencyValue);
-    /**
-     * The frequency in MHz for a particular broadcast.
-     *
-     * @param fBroadcastFrequencyValue QuantitativeValue value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
-     */
-    void setBroadcastFrequencyValue(QuantitativeValue fBroadcastFrequencyValue);
+    void setBroadcastFrequencyValue(QuantitativeValue broadcastFrequencyValue);
 }

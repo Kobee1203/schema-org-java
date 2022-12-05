@@ -26,9 +26,9 @@ public interface RsvpAction extends InformAction {
     /**
      * The response (yes, no, maybe) to the RSVP.
      *
-     * @param fRsvpResponse RsvpResponseType value to set.
+     * @param rsvpResponse RsvpResponseType value to set.
      */
-    void setRsvpResponse(RsvpResponseType fRsvpResponse);
+    void setRsvpResponse(RsvpResponseType rsvpResponse);
 
     /**
      * Comments, typically from users.
@@ -40,9 +40,9 @@ public interface RsvpAction extends InformAction {
     /**
      * Comments, typically from users.
      *
-     * @param fComment Comment value to set.
+     * @param comment Comment value to set.
      */
-    void setComment(Comment fComment);
+    void setComment(Comment comment);
 
     /**
      * If responding yes, the number of guests who will attend in addition to the invitee.
@@ -54,13 +54,7 @@ public interface RsvpAction extends InformAction {
     /**
      * If responding yes, the number of guests who will attend in addition to the invitee.
      *
-     * @param fAdditionalNumberOfGuests Number value to set.
+     * @param additionalNumberOfGuests Number value to set.
      */
-    void setAdditionalNumberOfGuests(Number fAdditionalNumberOfGuests);
-    /**
-     * If responding yes, the number of guests who will attend in addition to the invitee.
-     *
-     * @param fAdditionalNumberOfGuests java.lang.Number value to set.
-     */
-    void setAdditionalNumberOfGuests(java.lang.Number fAdditionalNumberOfGuests);
+    void setAdditionalNumberOfGuests(Number additionalNumberOfGuests);
 }

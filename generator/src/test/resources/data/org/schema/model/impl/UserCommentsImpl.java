@@ -48,7 +48,7 @@ import org.schema.model.UserComments;
 @JsonLdTypeName("UserComments")
 public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements UserComments {
 
-    private URL fReplyToUrl;
+    private URL replyToUrl;
 
     /**
      * The URL at which a reply may be posted to the specified UserComment.
@@ -57,29 +57,20 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public URL getReplyToUrl() {
-        return fReplyToUrl;
+        return replyToUrl;
     }
 
     /**
      * The URL at which a reply may be posted to the specified UserComment.
      *
-     * @param fReplyToUrl URL value to set.
+     * @param replyToUrl URL value to set.
      */
     @Override
-    public void setReplyToUrl(URL fReplyToUrl) {
-        this.fReplyToUrl = fReplyToUrl;
-    }
-    /**
-     * The URL at which a reply may be posted to the specified UserComment.
-     *
-     * @param fReplyToUrl java.net.URL value to set.
-     */
-    @Override
-    public void setReplyToUrl(java.net.URL fReplyToUrl) {
-        this.fReplyToUrl = URL.of(fReplyToUrl);
+    public void setReplyToUrl(URL replyToUrl) {
+        this.replyToUrl = replyToUrl;
     }
 
-    private CreativeWork fDiscusses;
+    private CreativeWork discusses;
 
     /**
      * Specifies the CreativeWork associated with the UserComment.
@@ -88,20 +79,20 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public CreativeWork getDiscusses() {
-        return fDiscusses;
+        return discusses;
     }
 
     /**
      * Specifies the CreativeWork associated with the UserComment.
      *
-     * @param fDiscusses CreativeWork value to set.
+     * @param discusses CreativeWork value to set.
      */
     @Override
-    public void setDiscusses(CreativeWork fDiscusses) {
-        this.fDiscusses = fDiscusses;
+    public void setDiscusses(CreativeWork discusses) {
+        this.discusses = discusses;
     }
 
-    private Object fCommentTime;
+    private Object commentTime;
 
     /**
      * The time at which the UserComment was made.
@@ -110,47 +101,29 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getCommentTime() {
-        return (T) fCommentTime;
+        return (T) commentTime;
     }
 
     /**
      * The time at which the UserComment was made.
      *
-     * @param fCommentTime DateTime value to set.
+     * @param commentTime DateTime value to set.
      */
     @Override
-    public void setCommentTime(DateTime fCommentTime) {
-        this.fCommentTime = fCommentTime;
+    public void setCommentTime(DateTime commentTime) {
+        this.commentTime = commentTime;
     }
     /**
      * The time at which the UserComment was made.
      *
-     * @param fCommentTime java.time.LocalDateTime value to set.
+     * @param commentTime Date value to set.
      */
     @Override
-    public void setCommentTime(java.time.LocalDateTime fCommentTime) {
-        this.fCommentTime = DateTime.of(fCommentTime);
-    }
-    /**
-     * The time at which the UserComment was made.
-     *
-     * @param fCommentTime Date value to set.
-     */
-    @Override
-    public void setCommentTime(Date fCommentTime) {
-        this.fCommentTime = fCommentTime;
-    }
-    /**
-     * The time at which the UserComment was made.
-     *
-     * @param fCommentTime java.time.LocalDate value to set.
-     */
-    @Override
-    public void setCommentTime(java.time.LocalDate fCommentTime) {
-        this.fCommentTime = Date.of(fCommentTime);
+    public void setCommentTime(Date commentTime) {
+        this.commentTime = commentTime;
     }
 
-    private Text fCommentText;
+    private Text commentText;
 
     /**
      * The text of the UserComment.
@@ -159,29 +132,20 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Text getCommentText() {
-        return fCommentText;
+        return commentText;
     }
 
     /**
      * The text of the UserComment.
      *
-     * @param fCommentText Text value to set.
+     * @param commentText Text value to set.
      */
     @Override
-    public void setCommentText(Text fCommentText) {
-        this.fCommentText = fCommentText;
-    }
-    /**
-     * The text of the UserComment.
-     *
-     * @param fCommentText java.lang.String value to set.
-     */
-    @Override
-    public void setCommentText(java.lang.String fCommentText) {
-        this.fCommentText = Text.of(fCommentText);
+    public void setCommentText(Text commentText) {
+        this.commentText = commentText;
     }
 
-    private Object fCreator;
+    private Object creator;
 
     /**
      * The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.
@@ -190,29 +154,29 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getCreator() {
-        return (T) fCreator;
+        return (T) creator;
     }
 
     /**
      * The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.
      *
-     * @param fCreator Organization value to set.
+     * @param creator Organization value to set.
      */
     @Override
-    public void setCreator(Organization fCreator) {
-        this.fCreator = fCreator;
+    public void setCreator(Organization creator) {
+        this.creator = creator;
     }
     /**
      * The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.
      *
-     * @param fCreator Person value to set.
+     * @param creator Person value to set.
      */
     @Override
-    public void setCreator(Person fCreator) {
-        this.fCreator = fCreator;
+    public void setCreator(Person creator) {
+        this.creator = creator;
     }
 
-    private Event fSuperEvent;
+    private Event superEvent;
 
     /**
      * An event that this event is a part of. For example, a collection of individual music performances might each have a music festival as their superEvent.
@@ -221,20 +185,20 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Event getSuperEvent() {
-        return fSuperEvent;
+        return superEvent;
     }
 
     /**
      * An event that this event is a part of. For example, a collection of individual music performances might each have a music festival as their superEvent.
      *
-     * @param fSuperEvent Event value to set.
+     * @param superEvent Event value to set.
      */
     @Override
-    public void setSuperEvent(Event fSuperEvent) {
-        this.fSuperEvent = fSuperEvent;
+    public void setSuperEvent(Event superEvent) {
+        this.superEvent = superEvent;
     }
 
-    private EventAttendanceModeEnumeration fEventAttendanceMode;
+    private EventAttendanceModeEnumeration eventAttendanceMode;
 
     /**
      * The eventAttendanceMode of an event indicates whether it occurs online, offline, or a mix.
@@ -245,22 +209,22 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public EventAttendanceModeEnumeration getEventAttendanceMode() {
-        return fEventAttendanceMode;
+        return eventAttendanceMode;
     }
 
     /**
      * The eventAttendanceMode of an event indicates whether it occurs online, offline, or a mix.
      *
-     * @param fEventAttendanceMode EventAttendanceModeEnumeration value to set.
+     * @param eventAttendanceMode EventAttendanceModeEnumeration value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1842">https://github.com/schemaorg/schemaorg/issues/1842</a>
      */
     @Override
-    public void setEventAttendanceMode(EventAttendanceModeEnumeration fEventAttendanceMode) {
-        this.fEventAttendanceMode = fEventAttendanceMode;
+    public void setEventAttendanceMode(EventAttendanceModeEnumeration eventAttendanceMode) {
+        this.eventAttendanceMode = eventAttendanceMode;
     }
 
-    private Review fReview;
+    private Review review;
 
     /**
      * A review of the item.
@@ -269,20 +233,20 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Review getReview() {
-        return fReview;
+        return review;
     }
 
     /**
      * A review of the item.
      *
-     * @param fReview Review value to set.
+     * @param review Review value to set.
      */
     @Override
-    public void setReview(Review fReview) {
-        this.fReview = fReview;
+    public void setReview(Review review) {
+        this.review = review;
     }
 
-    private Object fTranslator;
+    private Object translator;
 
     /**
      * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
@@ -291,29 +255,29 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getTranslator() {
-        return (T) fTranslator;
+        return (T) translator;
     }
 
     /**
      * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
      *
-     * @param fTranslator Person value to set.
+     * @param translator Person value to set.
      */
     @Override
-    public void setTranslator(Person fTranslator) {
-        this.fTranslator = fTranslator;
+    public void setTranslator(Person translator) {
+        this.translator = translator;
     }
     /**
      * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
      *
-     * @param fTranslator Organization value to set.
+     * @param translator Organization value to set.
      */
     @Override
-    public void setTranslator(Organization fTranslator) {
-        this.fTranslator = fTranslator;
+    public void setTranslator(Organization translator) {
+        this.translator = translator;
     }
 
-    private Object fStartDate;
+    private Object startDate;
 
     /**
      * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
@@ -323,51 +287,31 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getStartDate() {
-        return (T) fStartDate;
+        return (T) startDate;
     }
 
     /**
      * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
      *
-     * @param fStartDate DateTime value to set.
+     * @param startDate DateTime value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
     @Override
-    public void setStartDate(DateTime fStartDate) {
-        this.fStartDate = fStartDate;
+    public void setStartDate(DateTime startDate) {
+        this.startDate = startDate;
     }
     /**
      * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
      *
-     * @param fStartDate java.time.LocalDateTime value to set.
+     * @param startDate Date value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
     @Override
-    public void setStartDate(java.time.LocalDateTime fStartDate) {
-        this.fStartDate = DateTime.of(fStartDate);
-    }
-    /**
-     * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
-     *
-     * @param fStartDate Date value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
-     */
-    @Override
-    public void setStartDate(Date fStartDate) {
-        this.fStartDate = fStartDate;
-    }
-    /**
-     * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
-     *
-     * @param fStartDate java.time.LocalDate value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
-     */
-    @Override
-    public void setStartDate(java.time.LocalDate fStartDate) {
-        this.fStartDate = Date.of(fStartDate);
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
     }
 
-    private Object fComposer;
+    private Object composer;
 
     /**
      * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
@@ -377,31 +321,31 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getComposer() {
-        return (T) fComposer;
+        return (T) composer;
     }
 
     /**
      * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
      *
-     * @param fComposer Organization value to set.
+     * @param composer Organization value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
     @Override
-    public void setComposer(Organization fComposer) {
-        this.fComposer = fComposer;
+    public void setComposer(Organization composer) {
+        this.composer = composer;
     }
     /**
      * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
      *
-     * @param fComposer Person value to set.
+     * @param composer Person value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
     @Override
-    public void setComposer(Person fComposer) {
-        this.fComposer = fComposer;
+    public void setComposer(Person composer) {
+        this.composer = composer;
     }
 
-    private Integer fMaximumAttendeeCapacity;
+    private Integer maximumAttendeeCapacity;
 
     /**
      * The total number of individuals that may attend an event or venue.
@@ -410,29 +354,20 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Integer getMaximumAttendeeCapacity() {
-        return fMaximumAttendeeCapacity;
+        return maximumAttendeeCapacity;
     }
 
     /**
      * The total number of individuals that may attend an event or venue.
      *
-     * @param fMaximumAttendeeCapacity Integer value to set.
+     * @param maximumAttendeeCapacity Integer value to set.
      */
     @Override
-    public void setMaximumAttendeeCapacity(Integer fMaximumAttendeeCapacity) {
-        this.fMaximumAttendeeCapacity = fMaximumAttendeeCapacity;
-    }
-    /**
-     * The total number of individuals that may attend an event or venue.
-     *
-     * @param fMaximumAttendeeCapacity java.lang.Integer value to set.
-     */
-    @Override
-    public void setMaximumAttendeeCapacity(java.lang.Integer fMaximumAttendeeCapacity) {
-        this.fMaximumAttendeeCapacity = Integer.of(fMaximumAttendeeCapacity);
+    public void setMaximumAttendeeCapacity(Integer maximumAttendeeCapacity) {
+        this.maximumAttendeeCapacity = maximumAttendeeCapacity;
     }
 
-    private Integer fMaximumVirtualAttendeeCapacity;
+    private Integer maximumVirtualAttendeeCapacity;
 
     /**
      * The maximum physical attendee capacity of an [[Event]] whose [[eventAttendanceMode]] is [[OnlineEventAttendanceMode]] (or the online aspects, in the case of a [[MixedEventAttendanceMode]]). 
@@ -443,33 +378,22 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Integer getMaximumVirtualAttendeeCapacity() {
-        return fMaximumVirtualAttendeeCapacity;
+        return maximumVirtualAttendeeCapacity;
     }
 
     /**
      * The maximum physical attendee capacity of an [[Event]] whose [[eventAttendanceMode]] is [[OnlineEventAttendanceMode]] (or the online aspects, in the case of a [[MixedEventAttendanceMode]]). 
      *
-     * @param fMaximumVirtualAttendeeCapacity Integer value to set.
+     * @param maximumVirtualAttendeeCapacity Integer value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1842">https://github.com/schemaorg/schemaorg/issues/1842</a>
      */
     @Override
-    public void setMaximumVirtualAttendeeCapacity(Integer fMaximumVirtualAttendeeCapacity) {
-        this.fMaximumVirtualAttendeeCapacity = fMaximumVirtualAttendeeCapacity;
-    }
-    /**
-     * The maximum physical attendee capacity of an [[Event]] whose [[eventAttendanceMode]] is [[OnlineEventAttendanceMode]] (or the online aspects, in the case of a [[MixedEventAttendanceMode]]). 
-     *
-     * @param fMaximumVirtualAttendeeCapacity java.lang.Integer value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1842">https://github.com/schemaorg/schemaorg/issues/1842</a>
-     */
-    @Override
-    public void setMaximumVirtualAttendeeCapacity(java.lang.Integer fMaximumVirtualAttendeeCapacity) {
-        this.fMaximumVirtualAttendeeCapacity = Integer.of(fMaximumVirtualAttendeeCapacity);
+    public void setMaximumVirtualAttendeeCapacity(Integer maximumVirtualAttendeeCapacity) {
+        this.maximumVirtualAttendeeCapacity = maximumVirtualAttendeeCapacity;
     }
 
-    private Person fDirector;
+    private Person director;
 
     /**
      * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
@@ -478,20 +402,20 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Person getDirector() {
-        return fDirector;
+        return director;
     }
 
     /**
      * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
      *
-     * @param fDirector Person value to set.
+     * @param director Person value to set.
      */
     @Override
-    public void setDirector(Person fDirector) {
-        this.fDirector = fDirector;
+    public void setDirector(Person director) {
+        this.director = director;
     }
 
-    private Grant fFunding;
+    private Grant funding;
 
     /**
      * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
@@ -503,23 +427,23 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Grant getFunding() {
-        return fFunding;
+        return funding;
     }
 
     /**
      * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
      *
-     * @param fFunding Grant value to set.
+     * @param funding Grant value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
     @Override
-    public void setFunding(Grant fFunding) {
-        this.fFunding = fFunding;
+    public void setFunding(Grant funding) {
+        this.funding = funding;
     }
 
-    private Object fKeywords;
+    private Object keywords;
 
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
@@ -528,56 +452,38 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getKeywords() {
-        return (T) fKeywords;
+        return (T) keywords;
     }
 
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
      *
-     * @param fKeywords DefinedTerm value to set.
+     * @param keywords DefinedTerm value to set.
      */
     @Override
-    public void setKeywords(DefinedTerm fKeywords) {
-        this.fKeywords = fKeywords;
+    public void setKeywords(DefinedTerm keywords) {
+        this.keywords = keywords;
     }
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
      *
-     * @param fKeywords Text value to set.
+     * @param keywords Text value to set.
      */
     @Override
-    public void setKeywords(Text fKeywords) {
-        this.fKeywords = fKeywords;
+    public void setKeywords(Text keywords) {
+        this.keywords = keywords;
     }
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
      *
-     * @param fKeywords java.lang.String value to set.
+     * @param keywords URL value to set.
      */
     @Override
-    public void setKeywords(java.lang.String fKeywords) {
-        this.fKeywords = Text.of(fKeywords);
-    }
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     * @param fKeywords URL value to set.
-     */
-    @Override
-    public void setKeywords(URL fKeywords) {
-        this.fKeywords = fKeywords;
-    }
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     * @param fKeywords java.net.URL value to set.
-     */
-    @Override
-    public void setKeywords(java.net.URL fKeywords) {
-        this.fKeywords = URL.of(fKeywords);
+    public void setKeywords(URL keywords) {
+        this.keywords = keywords;
     }
 
-    private Audience fAudience;
+    private Audience audience;
 
     /**
      * An intended audience, i.e. a group for whom something was created.
@@ -586,20 +492,20 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Audience getAudience() {
-        return fAudience;
+        return audience;
     }
 
     /**
      * An intended audience, i.e. a group for whom something was created.
      *
-     * @param fAudience Audience value to set.
+     * @param audience Audience value to set.
      */
     @Override
-    public void setAudience(Audience fAudience) {
-        this.fAudience = fAudience;
+    public void setAudience(Audience audience) {
+        this.audience = audience;
     }
 
-    private Object fOffers;
+    private Object offers;
 
     /**
      * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
@@ -610,33 +516,33 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getOffers() {
-        return (T) fOffers;
+        return (T) offers;
     }
 
     /**
      * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      *
-     * @param fOffers Offer value to set.
+     * @param offers Offer value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
     @Override
-    public void setOffers(Offer fOffers) {
-        this.fOffers = fOffers;
+    public void setOffers(Offer offers) {
+        this.offers = offers;
     }
     /**
      * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      *
-     * @param fOffers Demand value to set.
+     * @param offers Demand value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
     @Override
-    public void setOffers(Demand fOffers) {
-        this.fOffers = fOffers;
+    public void setOffers(Demand offers) {
+        this.offers = offers;
     }
 
-    private Event fSubEvent;
+    private Event subEvent;
 
     /**
      * An Event that is part of this event. For example, a conference event includes many presentations, each of which is a subEvent of the conference.
@@ -645,20 +551,20 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Event getSubEvent() {
-        return fSubEvent;
+        return subEvent;
     }
 
     /**
      * An Event that is part of this event. For example, a conference event includes many presentations, each of which is a subEvent of the conference.
      *
-     * @param fSubEvent Event value to set.
+     * @param subEvent Event value to set.
      */
     @Override
-    public void setSubEvent(Event fSubEvent) {
-        this.fSubEvent = fSubEvent;
+    public void setSubEvent(Event subEvent) {
+        this.subEvent = subEvent;
     }
 
-    private Person fActor;
+    private Person actor;
 
     /**
      * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
@@ -667,20 +573,20 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Person getActor() {
-        return fActor;
+        return actor;
     }
 
     /**
      * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
      *
-     * @param fActor Person value to set.
+     * @param actor Person value to set.
      */
     @Override
-    public void setActor(Person fActor) {
-        this.fActor = fActor;
+    public void setActor(Person actor) {
+        this.actor = actor;
     }
 
-    private EventStatusType fEventStatus;
+    private EventStatusType eventStatus;
 
     /**
      * An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled.
@@ -689,20 +595,20 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public EventStatusType getEventStatus() {
-        return fEventStatus;
+        return eventStatus;
     }
 
     /**
      * An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled.
      *
-     * @param fEventStatus EventStatusType value to set.
+     * @param eventStatus EventStatusType value to set.
      */
     @Override
-    public void setEventStatus(EventStatusType fEventStatus) {
-        this.fEventStatus = fEventStatus;
+    public void setEventStatus(EventStatusType eventStatus) {
+        this.eventStatus = eventStatus;
     }
 
-    private Object fEndDate;
+    private Object endDate;
 
     /**
      * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
@@ -712,51 +618,31 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getEndDate() {
-        return (T) fEndDate;
+        return (T) endDate;
     }
 
     /**
      * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
      *
-     * @param fEndDate Date value to set.
+     * @param endDate Date value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
     @Override
-    public void setEndDate(Date fEndDate) {
-        this.fEndDate = fEndDate;
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
     }
     /**
      * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
      *
-     * @param fEndDate java.time.LocalDate value to set.
+     * @param endDate DateTime value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
     @Override
-    public void setEndDate(java.time.LocalDate fEndDate) {
-        this.fEndDate = Date.of(fEndDate);
-    }
-    /**
-     * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
-     *
-     * @param fEndDate DateTime value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
-     */
-    @Override
-    public void setEndDate(DateTime fEndDate) {
-        this.fEndDate = fEndDate;
-    }
-    /**
-     * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
-     *
-     * @param fEndDate java.time.LocalDateTime value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
-     */
-    @Override
-    public void setEndDate(java.time.LocalDateTime fEndDate) {
-        this.fEndDate = DateTime.of(fEndDate);
+    public void setEndDate(DateTime endDate) {
+        this.endDate = endDate;
     }
 
-    private Object fFunder;
+    private Object funder;
 
     /**
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
@@ -765,29 +651,29 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getFunder() {
-        return (T) fFunder;
+        return (T) funder;
     }
 
     /**
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
-     * @param fFunder Organization value to set.
+     * @param funder Organization value to set.
      */
     @Override
-    public void setFunder(Organization fFunder) {
-        this.fFunder = fFunder;
+    public void setFunder(Organization funder) {
+        this.funder = funder;
     }
     /**
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
-     * @param fFunder Person value to set.
+     * @param funder Person value to set.
      */
     @Override
-    public void setFunder(Person fFunder) {
-        this.fFunder = fFunder;
+    public void setFunder(Person funder) {
+        this.funder = funder;
     }
 
-    private Object fPerformer;
+    private Object performer;
 
     /**
      * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
@@ -796,29 +682,29 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getPerformer() {
-        return (T) fPerformer;
+        return (T) performer;
     }
 
     /**
      * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
      *
-     * @param fPerformer Organization value to set.
+     * @param performer Organization value to set.
      */
     @Override
-    public void setPerformer(Organization fPerformer) {
-        this.fPerformer = fPerformer;
+    public void setPerformer(Organization performer) {
+        this.performer = performer;
     }
     /**
      * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
      *
-     * @param fPerformer Person value to set.
+     * @param performer Person value to set.
      */
     @Override
-    public void setPerformer(Person fPerformer) {
-        this.fPerformer = fPerformer;
+    public void setPerformer(Person performer) {
+        this.performer = performer;
     }
 
-    private AggregateRating fAggregateRating;
+    private AggregateRating aggregateRating;
 
     /**
      * The overall rating, based on a collection of reviews or ratings, of the item.
@@ -827,20 +713,20 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public AggregateRating getAggregateRating() {
-        return fAggregateRating;
+        return aggregateRating;
     }
 
     /**
      * The overall rating, based on a collection of reviews or ratings, of the item.
      *
-     * @param fAggregateRating AggregateRating value to set.
+     * @param aggregateRating AggregateRating value to set.
      */
     @Override
-    public void setAggregateRating(AggregateRating fAggregateRating) {
-        this.fAggregateRating = fAggregateRating;
+    public void setAggregateRating(AggregateRating aggregateRating) {
+        this.aggregateRating = aggregateRating;
     }
 
-    private Text fTypicalAgeRange;
+    private Text typicalAgeRange;
 
     /**
      * The typical expected age range, e.g. '7-9', '11-'.
@@ -849,29 +735,20 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Text getTypicalAgeRange() {
-        return fTypicalAgeRange;
+        return typicalAgeRange;
     }
 
     /**
      * The typical expected age range, e.g. '7-9', '11-'.
      *
-     * @param fTypicalAgeRange Text value to set.
+     * @param typicalAgeRange Text value to set.
      */
     @Override
-    public void setTypicalAgeRange(Text fTypicalAgeRange) {
-        this.fTypicalAgeRange = fTypicalAgeRange;
-    }
-    /**
-     * The typical expected age range, e.g. '7-9', '11-'.
-     *
-     * @param fTypicalAgeRange java.lang.String value to set.
-     */
-    @Override
-    public void setTypicalAgeRange(java.lang.String fTypicalAgeRange) {
-        this.fTypicalAgeRange = Text.of(fTypicalAgeRange);
+    public void setTypicalAgeRange(Text typicalAgeRange) {
+        this.typicalAgeRange = typicalAgeRange;
     }
 
-    private Object fLocation;
+    private Object location;
 
     /**
      * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
@@ -880,56 +757,47 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getLocation() {
-        return (T) fLocation;
+        return (T) location;
     }
 
     /**
      * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
      *
-     * @param fLocation PostalAddress value to set.
+     * @param location PostalAddress value to set.
      */
     @Override
-    public void setLocation(PostalAddress fLocation) {
-        this.fLocation = fLocation;
+    public void setLocation(PostalAddress location) {
+        this.location = location;
     }
     /**
      * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
      *
-     * @param fLocation Text value to set.
+     * @param location Text value to set.
      */
     @Override
-    public void setLocation(Text fLocation) {
-        this.fLocation = fLocation;
+    public void setLocation(Text location) {
+        this.location = location;
     }
     /**
      * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
      *
-     * @param fLocation java.lang.String value to set.
+     * @param location Place value to set.
      */
     @Override
-    public void setLocation(java.lang.String fLocation) {
-        this.fLocation = Text.of(fLocation);
+    public void setLocation(Place location) {
+        this.location = location;
     }
     /**
      * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
      *
-     * @param fLocation Place value to set.
+     * @param location VirtualLocation value to set.
      */
     @Override
-    public void setLocation(Place fLocation) {
-        this.fLocation = fLocation;
-    }
-    /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-     *
-     * @param fLocation VirtualLocation value to set.
-     */
-    @Override
-    public void setLocation(VirtualLocation fLocation) {
-        this.fLocation = fLocation;
+    public void setLocation(VirtualLocation location) {
+        this.location = location;
     }
 
-    private Object fPerformers;
+    private Object performers;
 
     /**
      * The main performer or performers of the event&#x2014;for example, a presenter, musician, or actor.
@@ -938,29 +806,29 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getPerformers() {
-        return (T) fPerformers;
+        return (T) performers;
     }
 
     /**
      * The main performer or performers of the event&#x2014;for example, a presenter, musician, or actor.
      *
-     * @param fPerformers Person value to set.
+     * @param performers Person value to set.
      */
     @Override
-    public void setPerformers(Person fPerformers) {
-        this.fPerformers = fPerformers;
+    public void setPerformers(Person performers) {
+        this.performers = performers;
     }
     /**
      * The main performer or performers of the event&#x2014;for example, a presenter, musician, or actor.
      *
-     * @param fPerformers Organization value to set.
+     * @param performers Organization value to set.
      */
     @Override
-    public void setPerformers(Organization fPerformers) {
-        this.fPerformers = fPerformers;
+    public void setPerformers(Organization performers) {
+        this.performers = performers;
     }
 
-    private Duration fDuration;
+    private Duration duration;
 
     /**
      * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
@@ -971,22 +839,22 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Duration getDuration() {
-        return fDuration;
+        return duration;
     }
 
     /**
      * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
      *
-     * @param fDuration Duration value to set.
+     * @param duration Duration value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
      */
     @Override
-    public void setDuration(Duration fDuration) {
-        this.fDuration = fDuration;
+    public void setDuration(Duration duration) {
+        this.duration = duration;
     }
 
-    private Object fOrganizer;
+    private Object organizer;
 
     /**
      * An organizer of an Event.
@@ -995,29 +863,29 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getOrganizer() {
-        return (T) fOrganizer;
+        return (T) organizer;
     }
 
     /**
      * An organizer of an Event.
      *
-     * @param fOrganizer Person value to set.
+     * @param organizer Person value to set.
      */
     @Override
-    public void setOrganizer(Person fOrganizer) {
-        this.fOrganizer = fOrganizer;
+    public void setOrganizer(Person organizer) {
+        this.organizer = organizer;
     }
     /**
      * An organizer of an Event.
      *
-     * @param fOrganizer Organization value to set.
+     * @param organizer Organization value to set.
      */
     @Override
-    public void setOrganizer(Organization fOrganizer) {
-        this.fOrganizer = fOrganizer;
+    public void setOrganizer(Organization organizer) {
+        this.organizer = organizer;
     }
 
-    private Object fSponsor;
+    private Object sponsor;
 
     /**
      * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
@@ -1026,29 +894,29 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getSponsor() {
-        return (T) fSponsor;
+        return (T) sponsor;
     }
 
     /**
      * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
      *
-     * @param fSponsor Organization value to set.
+     * @param sponsor Organization value to set.
      */
     @Override
-    public void setSponsor(Organization fSponsor) {
-        this.fSponsor = fSponsor;
+    public void setSponsor(Organization sponsor) {
+        this.sponsor = sponsor;
     }
     /**
      * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
      *
-     * @param fSponsor Person value to set.
+     * @param sponsor Person value to set.
      */
     @Override
-    public void setSponsor(Person fSponsor) {
-        this.fSponsor = fSponsor;
+    public void setSponsor(Person sponsor) {
+        this.sponsor = sponsor;
     }
 
-    private Date fPreviousStartDate;
+    private Date previousStartDate;
 
     /**
      * Used in conjunction with eventStatus for rescheduled or cancelled events. This property contains the previously scheduled start date. For rescheduled events, the startDate property should be used for the newly scheduled start date. In the (rare) case of an event that has been postponed and rescheduled multiple times, this field may be repeated.
@@ -1057,29 +925,20 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Date getPreviousStartDate() {
-        return fPreviousStartDate;
+        return previousStartDate;
     }
 
     /**
      * Used in conjunction with eventStatus for rescheduled or cancelled events. This property contains the previously scheduled start date. For rescheduled events, the startDate property should be used for the newly scheduled start date. In the (rare) case of an event that has been postponed and rescheduled multiple times, this field may be repeated.
      *
-     * @param fPreviousStartDate Date value to set.
+     * @param previousStartDate Date value to set.
      */
     @Override
-    public void setPreviousStartDate(Date fPreviousStartDate) {
-        this.fPreviousStartDate = fPreviousStartDate;
-    }
-    /**
-     * Used in conjunction with eventStatus for rescheduled or cancelled events. This property contains the previously scheduled start date. For rescheduled events, the startDate property should be used for the newly scheduled start date. In the (rare) case of an event that has been postponed and rescheduled multiple times, this field may be repeated.
-     *
-     * @param fPreviousStartDate java.time.LocalDate value to set.
-     */
-    @Override
-    public void setPreviousStartDate(java.time.LocalDate fPreviousStartDate) {
-        this.fPreviousStartDate = Date.of(fPreviousStartDate);
+    public void setPreviousStartDate(Date previousStartDate) {
+        this.previousStartDate = previousStartDate;
     }
 
-    private Boolean fIsAccessibleForFree;
+    private Boolean isAccessibleForFree;
 
     /**
      * A flag to signal that the item, event, or place is accessible for free.
@@ -1088,29 +947,20 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Boolean getIsAccessibleForFree() {
-        return fIsAccessibleForFree;
+        return isAccessibleForFree;
     }
 
     /**
      * A flag to signal that the item, event, or place is accessible for free.
      *
-     * @param fIsAccessibleForFree Boolean value to set.
+     * @param isAccessibleForFree Boolean value to set.
      */
     @Override
-    public void setIsAccessibleForFree(Boolean fIsAccessibleForFree) {
-        this.fIsAccessibleForFree = fIsAccessibleForFree;
-    }
-    /**
-     * A flag to signal that the item, event, or place is accessible for free.
-     *
-     * @param fIsAccessibleForFree java.lang.Boolean value to set.
-     */
-    @Override
-    public void setIsAccessibleForFree(java.lang.Boolean fIsAccessibleForFree) {
-        this.fIsAccessibleForFree = Boolean.of(fIsAccessibleForFree);
+    public void setIsAccessibleForFree(Boolean isAccessibleForFree) {
+        this.isAccessibleForFree = isAccessibleForFree;
     }
 
-    private Integer fRemainingAttendeeCapacity;
+    private Integer remainingAttendeeCapacity;
 
     /**
      * The number of attendee places for an event that remain unallocated.
@@ -1119,29 +969,20 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Integer getRemainingAttendeeCapacity() {
-        return fRemainingAttendeeCapacity;
+        return remainingAttendeeCapacity;
     }
 
     /**
      * The number of attendee places for an event that remain unallocated.
      *
-     * @param fRemainingAttendeeCapacity Integer value to set.
+     * @param remainingAttendeeCapacity Integer value to set.
      */
     @Override
-    public void setRemainingAttendeeCapacity(Integer fRemainingAttendeeCapacity) {
-        this.fRemainingAttendeeCapacity = fRemainingAttendeeCapacity;
-    }
-    /**
-     * The number of attendee places for an event that remain unallocated.
-     *
-     * @param fRemainingAttendeeCapacity java.lang.Integer value to set.
-     */
-    @Override
-    public void setRemainingAttendeeCapacity(java.lang.Integer fRemainingAttendeeCapacity) {
-        this.fRemainingAttendeeCapacity = Integer.of(fRemainingAttendeeCapacity);
+    public void setRemainingAttendeeCapacity(Integer remainingAttendeeCapacity) {
+        this.remainingAttendeeCapacity = remainingAttendeeCapacity;
     }
 
-    private Event fSubEvents;
+    private Event subEvents;
 
     /**
      * Events that are a part of this event. For example, a conference event includes many presentations, each subEvents of the conference.
@@ -1150,20 +991,20 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Event getSubEvents() {
-        return fSubEvents;
+        return subEvents;
     }
 
     /**
      * Events that are a part of this event. For example, a conference event includes many presentations, each subEvents of the conference.
      *
-     * @param fSubEvents Event value to set.
+     * @param subEvents Event value to set.
      */
     @Override
-    public void setSubEvents(Event fSubEvents) {
-        this.fSubEvents = fSubEvents;
+    public void setSubEvents(Event subEvents) {
+        this.subEvents = subEvents;
     }
 
-    private CreativeWork fWorkPerformed;
+    private CreativeWork workPerformed;
 
     /**
      * A work performed in some event, for example a play performed in a TheaterEvent.
@@ -1172,20 +1013,20 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public CreativeWork getWorkPerformed() {
-        return fWorkPerformed;
+        return workPerformed;
     }
 
     /**
      * A work performed in some event, for example a play performed in a TheaterEvent.
      *
-     * @param fWorkPerformed CreativeWork value to set.
+     * @param workPerformed CreativeWork value to set.
      */
     @Override
-    public void setWorkPerformed(CreativeWork fWorkPerformed) {
-        this.fWorkPerformed = fWorkPerformed;
+    public void setWorkPerformed(CreativeWork workPerformed) {
+        this.workPerformed = workPerformed;
     }
 
-    private Object fDoorTime;
+    private Object doorTime;
 
     /**
      * The time admission will commence.
@@ -1194,47 +1035,29 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getDoorTime() {
-        return (T) fDoorTime;
+        return (T) doorTime;
     }
 
     /**
      * The time admission will commence.
      *
-     * @param fDoorTime Time value to set.
+     * @param doorTime Time value to set.
      */
     @Override
-    public void setDoorTime(Time fDoorTime) {
-        this.fDoorTime = fDoorTime;
+    public void setDoorTime(Time doorTime) {
+        this.doorTime = doorTime;
     }
     /**
      * The time admission will commence.
      *
-     * @param fDoorTime java.time.LocalTime value to set.
+     * @param doorTime DateTime value to set.
      */
     @Override
-    public void setDoorTime(java.time.LocalTime fDoorTime) {
-        this.fDoorTime = Time.of(fDoorTime);
-    }
-    /**
-     * The time admission will commence.
-     *
-     * @param fDoorTime DateTime value to set.
-     */
-    @Override
-    public void setDoorTime(DateTime fDoorTime) {
-        this.fDoorTime = fDoorTime;
-    }
-    /**
-     * The time admission will commence.
-     *
-     * @param fDoorTime java.time.LocalDateTime value to set.
-     */
-    @Override
-    public void setDoorTime(java.time.LocalDateTime fDoorTime) {
-        this.fDoorTime = DateTime.of(fDoorTime);
+    public void setDoorTime(DateTime doorTime) {
+        this.doorTime = doorTime;
     }
 
-    private Object fInLanguage;
+    private Object inLanguage;
 
     /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
@@ -1244,41 +1067,31 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getInLanguage() {
-        return (T) fInLanguage;
+        return (T) inLanguage;
     }
 
     /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
      *
-     * @param fInLanguage Text value to set.
+     * @param inLanguage Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
      */
     @Override
-    public void setInLanguage(Text fInLanguage) {
-        this.fInLanguage = fInLanguage;
+    public void setInLanguage(Text inLanguage) {
+        this.inLanguage = inLanguage;
     }
     /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
      *
-     * @param fInLanguage java.lang.String value to set.
+     * @param inLanguage Language value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
      */
     @Override
-    public void setInLanguage(java.lang.String fInLanguage) {
-        this.fInLanguage = Text.of(fInLanguage);
-    }
-    /**
-     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
-     *
-     * @param fInLanguage Language value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
-     */
-    @Override
-    public void setInLanguage(Language fInLanguage) {
-        this.fInLanguage = fInLanguage;
+    public void setInLanguage(Language inLanguage) {
+        this.inLanguage = inLanguage;
     }
 
-    private Thing fAbout;
+    private Thing about;
 
     /**
      * The subject matter of the content.
@@ -1288,21 +1101,21 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Thing getAbout() {
-        return fAbout;
+        return about;
     }
 
     /**
      * The subject matter of the content.
      *
-     * @param fAbout Thing value to set.
+     * @param about Thing value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setAbout(Thing fAbout) {
-        this.fAbout = fAbout;
+    public void setAbout(Thing about) {
+        this.about = about;
     }
 
-    private CreativeWork fRecordedIn;
+    private CreativeWork recordedIn;
 
     /**
      * The CreativeWork that captured all or part of this Event.
@@ -1311,20 +1124,20 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public CreativeWork getRecordedIn() {
-        return fRecordedIn;
+        return recordedIn;
     }
 
     /**
      * The CreativeWork that captured all or part of this Event.
      *
-     * @param fRecordedIn CreativeWork value to set.
+     * @param recordedIn CreativeWork value to set.
      */
     @Override
-    public void setRecordedIn(CreativeWork fRecordedIn) {
-        this.fRecordedIn = fRecordedIn;
+    public void setRecordedIn(CreativeWork recordedIn) {
+        this.recordedIn = recordedIn;
     }
 
-    private Integer fMaximumPhysicalAttendeeCapacity;
+    private Integer maximumPhysicalAttendeeCapacity;
 
     /**
      * The maximum physical attendee capacity of an [[Event]] whose [[eventAttendanceMode]] is [[OfflineEventAttendanceMode]] (or the offline aspects, in the case of a [[MixedEventAttendanceMode]]). 
@@ -1335,33 +1148,22 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Integer getMaximumPhysicalAttendeeCapacity() {
-        return fMaximumPhysicalAttendeeCapacity;
+        return maximumPhysicalAttendeeCapacity;
     }
 
     /**
      * The maximum physical attendee capacity of an [[Event]] whose [[eventAttendanceMode]] is [[OfflineEventAttendanceMode]] (or the offline aspects, in the case of a [[MixedEventAttendanceMode]]). 
      *
-     * @param fMaximumPhysicalAttendeeCapacity Integer value to set.
+     * @param maximumPhysicalAttendeeCapacity Integer value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1842">https://github.com/schemaorg/schemaorg/issues/1842</a>
      */
     @Override
-    public void setMaximumPhysicalAttendeeCapacity(Integer fMaximumPhysicalAttendeeCapacity) {
-        this.fMaximumPhysicalAttendeeCapacity = fMaximumPhysicalAttendeeCapacity;
-    }
-    /**
-     * The maximum physical attendee capacity of an [[Event]] whose [[eventAttendanceMode]] is [[OfflineEventAttendanceMode]] (or the offline aspects, in the case of a [[MixedEventAttendanceMode]]). 
-     *
-     * @param fMaximumPhysicalAttendeeCapacity java.lang.Integer value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1842">https://github.com/schemaorg/schemaorg/issues/1842</a>
-     */
-    @Override
-    public void setMaximumPhysicalAttendeeCapacity(java.lang.Integer fMaximumPhysicalAttendeeCapacity) {
-        this.fMaximumPhysicalAttendeeCapacity = Integer.of(fMaximumPhysicalAttendeeCapacity);
+    public void setMaximumPhysicalAttendeeCapacity(Integer maximumPhysicalAttendeeCapacity) {
+        this.maximumPhysicalAttendeeCapacity = maximumPhysicalAttendeeCapacity;
     }
 
-    private Object fAttendee;
+    private Object attendee;
 
     /**
      * A person or organization attending the event.
@@ -1370,29 +1172,29 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getAttendee() {
-        return (T) fAttendee;
+        return (T) attendee;
     }
 
     /**
      * A person or organization attending the event.
      *
-     * @param fAttendee Person value to set.
+     * @param attendee Person value to set.
      */
     @Override
-    public void setAttendee(Person fAttendee) {
-        this.fAttendee = fAttendee;
+    public void setAttendee(Person attendee) {
+        this.attendee = attendee;
     }
     /**
      * A person or organization attending the event.
      *
-     * @param fAttendee Organization value to set.
+     * @param attendee Organization value to set.
      */
     @Override
-    public void setAttendee(Organization fAttendee) {
-        this.fAttendee = fAttendee;
+    public void setAttendee(Organization attendee) {
+        this.attendee = attendee;
     }
 
-    private CreativeWork fWorkFeatured;
+    private CreativeWork workFeatured;
 
     /**
      * A work featured in some event, e.g. exhibited in an ExhibitionEvent.
@@ -1402,21 +1204,21 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public CreativeWork getWorkFeatured() {
-        return fWorkFeatured;
+        return workFeatured;
     }
 
     /**
      * A work featured in some event, e.g. exhibited in an ExhibitionEvent.
      *        Specific subproperties are available for workPerformed (e.g. a play), or a workPresented (a Movie at a ScreeningEvent).
      *
-     * @param fWorkFeatured CreativeWork value to set.
+     * @param workFeatured CreativeWork value to set.
      */
     @Override
-    public void setWorkFeatured(CreativeWork fWorkFeatured) {
-        this.fWorkFeatured = fWorkFeatured;
+    public void setWorkFeatured(CreativeWork workFeatured) {
+        this.workFeatured = workFeatured;
     }
 
-    private Schedule fEventSchedule;
+    private Schedule eventSchedule;
 
     /**
      * Associates an [[Event]] with a [[Schedule]]. There are circumstances where it is preferable to share a schedule for a series of
@@ -1432,7 +1234,7 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Schedule getEventSchedule() {
-        return fEventSchedule;
+        return eventSchedule;
     }
 
     /**
@@ -1443,16 +1245,16 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      *       [[Schedule]], this avoids any ambiguity for clients using the data. The property might have repeated values to specify different schedules, e.g. for different months
      *       or seasons.
      *
-     * @param fEventSchedule Schedule value to set.
+     * @param eventSchedule Schedule value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
      */
     @Override
-    public void setEventSchedule(Schedule fEventSchedule) {
-        this.fEventSchedule = fEventSchedule;
+    public void setEventSchedule(Schedule eventSchedule) {
+        this.eventSchedule = eventSchedule;
     }
 
-    private Object fContributor;
+    private Object contributor;
 
     /**
      * A secondary contributor to the CreativeWork or Event.
@@ -1461,29 +1263,29 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getContributor() {
-        return (T) fContributor;
+        return (T) contributor;
     }
 
     /**
      * A secondary contributor to the CreativeWork or Event.
      *
-     * @param fContributor Organization value to set.
+     * @param contributor Organization value to set.
      */
     @Override
-    public void setContributor(Organization fContributor) {
-        this.fContributor = fContributor;
+    public void setContributor(Organization contributor) {
+        this.contributor = contributor;
     }
     /**
      * A secondary contributor to the CreativeWork or Event.
      *
-     * @param fContributor Person value to set.
+     * @param contributor Person value to set.
      */
     @Override
-    public void setContributor(Person fContributor) {
-        this.fContributor = fContributor;
+    public void setContributor(Person contributor) {
+        this.contributor = contributor;
     }
 
-    private Object fAttendees;
+    private Object attendees;
 
     /**
      * A person attending the event.
@@ -1492,29 +1294,29 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getAttendees() {
-        return (T) fAttendees;
+        return (T) attendees;
     }
 
     /**
      * A person attending the event.
      *
-     * @param fAttendees Person value to set.
+     * @param attendees Person value to set.
      */
     @Override
-    public void setAttendees(Person fAttendees) {
-        this.fAttendees = fAttendees;
+    public void setAttendees(Person attendees) {
+        this.attendees = attendees;
     }
     /**
      * A person attending the event.
      *
-     * @param fAttendees Organization value to set.
+     * @param attendees Organization value to set.
      */
     @Override
-    public void setAttendees(Organization fAttendees) {
-        this.fAttendees = fAttendees;
+    public void setAttendees(Organization attendees) {
+        this.attendees = attendees;
     }
 
-    private Object fMainEntityOfPage;
+    private Object mainEntityOfPage;
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -1523,38 +1325,29 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
+        return (T) mainEntityOfPage;
     }
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param fMainEntityOfPage CreativeWork value to set.
+     * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(CreativeWork fMainEntityOfPage) {
-        this.fMainEntityOfPage = fMainEntityOfPage;
+    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
     }
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param fMainEntityOfPage URL value to set.
+     * @param mainEntityOfPage URL value to set.
      */
     @Override
-    public void setMainEntityOfPage(URL fMainEntityOfPage) {
-        this.fMainEntityOfPage = fMainEntityOfPage;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param fMainEntityOfPage java.net.URL value to set.
-     */
-    @Override
-    public void setMainEntityOfPage(java.net.URL fMainEntityOfPage) {
-        this.fMainEntityOfPage = URL.of(fMainEntityOfPage);
+    public void setMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
     }
 
-    private Text fAlternateName;
+    private Text alternateName;
 
     /**
      * An alias for the item.
@@ -1563,29 +1356,20 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Text getAlternateName() {
-        return fAlternateName;
+        return alternateName;
     }
 
     /**
      * An alias for the item.
      *
-     * @param fAlternateName Text value to set.
+     * @param alternateName Text value to set.
      */
     @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
-    }
-    /**
-     * An alias for the item.
-     *
-     * @param fAlternateName java.lang.String value to set.
-     */
-    @Override
-    public void setAlternateName(java.lang.String fAlternateName) {
-        this.fAlternateName = Text.of(fAlternateName);
+    public void setAlternateName(Text alternateName) {
+        this.alternateName = alternateName;
     }
 
-    private Text fName;
+    private Text name;
 
     /**
      * The name of the item.
@@ -1594,29 +1378,20 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Text getName() {
-        return fName;
+        return name;
     }
 
     /**
      * The name of the item.
      *
-     * @param fName Text value to set.
+     * @param name Text value to set.
      */
     @Override
-    public void setName(Text fName) {
-        this.fName = fName;
-    }
-    /**
-     * The name of the item.
-     *
-     * @param fName java.lang.String value to set.
-     */
-    @Override
-    public void setName(java.lang.String fName) {
-        this.fName = Text.of(fName);
+    public void setName(Text name) {
+        this.name = name;
     }
 
-    private Action fPotentialAction;
+    private Action potentialAction;
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -1625,20 +1400,20 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Action getPotentialAction() {
-        return fPotentialAction;
+        return potentialAction;
     }
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      *
-     * @param fPotentialAction Action value to set.
+     * @param potentialAction Action value to set.
      */
     @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
+    public void setPotentialAction(Action potentialAction) {
+        this.potentialAction = potentialAction;
     }
 
-    private Object fImage;
+    private Object image;
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -1647,38 +1422,29 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getImage() {
-        return (T) fImage;
+        return (T) image;
     }
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param fImage URL value to set.
+     * @param image URL value to set.
      */
     @Override
-    public void setImage(URL fImage) {
-        this.fImage = fImage;
+    public void setImage(URL image) {
+        this.image = image;
     }
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param fImage java.net.URL value to set.
+     * @param image ImageObject value to set.
      */
     @Override
-    public void setImage(java.net.URL fImage) {
-        this.fImage = URL.of(fImage);
-    }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param fImage ImageObject value to set.
-     */
-    @Override
-    public void setImage(ImageObject fImage) {
-        this.fImage = fImage;
+    public void setImage(ImageObject image) {
+        this.image = image;
     }
 
-    private URL fUrl;
+    private URL url;
 
     /**
      * URL of the item.
@@ -1687,29 +1453,20 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public URL getUrl() {
-        return fUrl;
+        return url;
     }
 
     /**
      * URL of the item.
      *
-     * @param fUrl URL value to set.
+     * @param url URL value to set.
      */
     @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
-    }
-    /**
-     * URL of the item.
-     *
-     * @param fUrl java.net.URL value to set.
-     */
-    @Override
-    public void setUrl(java.net.URL fUrl) {
-        this.fUrl = URL.of(fUrl);
+    public void setUrl(URL url) {
+        this.url = url;
     }
 
-    private Text fDescription;
+    private Text description;
 
     /**
      * A description of the item.
@@ -1718,29 +1475,20 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Text getDescription() {
-        return fDescription;
+        return description;
     }
 
     /**
      * A description of the item.
      *
-     * @param fDescription Text value to set.
+     * @param description Text value to set.
      */
     @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
-    }
-    /**
-     * A description of the item.
-     *
-     * @param fDescription java.lang.String value to set.
-     */
-    @Override
-    public void setDescription(java.lang.String fDescription) {
-        this.fDescription = Text.of(fDescription);
+    public void setDescription(Text description) {
+        this.description = description;
     }
 
-    private Object fSubjectOf;
+    private Object subjectOf;
 
     /**
      * A CreativeWork or Event about this Thing.
@@ -1750,31 +1498,31 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getSubjectOf() {
-        return (T) fSubjectOf;
+        return (T) subjectOf;
     }
 
     /**
      * A CreativeWork or Event about this Thing.
      *
-     * @param fSubjectOf Event value to set.
+     * @param subjectOf Event value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Event fSubjectOf) {
-        this.fSubjectOf = fSubjectOf;
+    public void setSubjectOf(Event subjectOf) {
+        this.subjectOf = subjectOf;
     }
     /**
      * A CreativeWork or Event about this Thing.
      *
-     * @param fSubjectOf CreativeWork value to set.
+     * @param subjectOf CreativeWork value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(CreativeWork fSubjectOf) {
-        this.fSubjectOf = fSubjectOf;
+    public void setSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = subjectOf;
     }
 
-    private URL fAdditionalType;
+    private URL additionalType;
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
@@ -1783,29 +1531,20 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public URL getAdditionalType() {
-        return fAdditionalType;
+        return additionalType;
     }
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
-     * @param fAdditionalType URL value to set.
+     * @param additionalType URL value to set.
      */
     @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
-    }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @param fAdditionalType java.net.URL value to set.
-     */
-    @Override
-    public void setAdditionalType(java.net.URL fAdditionalType) {
-        this.fAdditionalType = URL.of(fAdditionalType);
+    public void setAdditionalType(URL additionalType) {
+        this.additionalType = additionalType;
     }
 
-    private Text fDisambiguatingDescription;
+    private Text disambiguatingDescription;
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
@@ -1814,29 +1553,20 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Text getDisambiguatingDescription() {
-        return fDisambiguatingDescription;
+        return disambiguatingDescription;
     }
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
-     * @param fDisambiguatingDescription Text value to set.
+     * @param disambiguatingDescription Text value to set.
      */
     @Override
-    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = fDisambiguatingDescription;
-    }
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @param fDisambiguatingDescription java.lang.String value to set.
-     */
-    @Override
-    public void setDisambiguatingDescription(java.lang.String fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = Text.of(fDisambiguatingDescription);
+    public void setDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = disambiguatingDescription;
     }
 
-    private URL fSameAs;
+    private URL sameAs;
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
@@ -1845,29 +1575,20 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public URL getSameAs() {
-        return fSameAs;
+        return sameAs;
     }
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
-     * @param fSameAs URL value to set.
+     * @param sameAs URL value to set.
      */
     @Override
-    public void setSameAs(URL fSameAs) {
-        this.fSameAs = fSameAs;
-    }
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @param fSameAs java.net.URL value to set.
-     */
-    @Override
-    public void setSameAs(java.net.URL fSameAs) {
-        this.fSameAs = URL.of(fSameAs);
+    public void setSameAs(URL sameAs) {
+        this.sameAs = sameAs;
     }
 
-    private Object fIdentifier;
+    private Object identifier;
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -1877,57 +1598,37 @@ public class UserCommentsImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getIdentifier() {
-        return (T) fIdentifier;
+        return (T) identifier;
     }
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier URL value to set.
+     * @param identifier URL value to set.
      */
     @Override
-    public void setIdentifier(URL fIdentifier) {
-        this.fIdentifier = fIdentifier;
+    public void setIdentifier(URL identifier) {
+        this.identifier = identifier;
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier java.net.URL value to set.
+     * @param identifier Text value to set.
      */
     @Override
-    public void setIdentifier(java.net.URL fIdentifier) {
-        this.fIdentifier = URL.of(fIdentifier);
+    public void setIdentifier(Text identifier) {
+        this.identifier = identifier;
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier Text value to set.
+     * @param identifier PropertyValue value to set.
      */
     @Override
-    public void setIdentifier(Text fIdentifier) {
-        this.fIdentifier = fIdentifier;
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param fIdentifier java.lang.String value to set.
-     */
-    @Override
-    public void setIdentifier(java.lang.String fIdentifier) {
-        this.fIdentifier = Text.of(fIdentifier);
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param fIdentifier PropertyValue value to set.
-     */
-    @Override
-    public void setIdentifier(PropertyValue fIdentifier) {
-        this.fIdentifier = fIdentifier;
+    public void setIdentifier(PropertyValue identifier) {
+        this.identifier = identifier;
     }
 }

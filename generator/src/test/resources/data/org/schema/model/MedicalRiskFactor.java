@@ -26,8 +26,8 @@ public interface MedicalRiskFactor extends MedicalEntity {
     /**
      * The condition, complication, etc. influenced by this factor.
      *
-     * @param fIncreasesRiskOf MedicalEntity value to set.
+     * @param increasesRiskOf MedicalEntity value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setIncreasesRiskOf(MedicalEntity fIncreasesRiskOf);
+    void setIncreasesRiskOf(MedicalEntity increasesRiskOf);
 }

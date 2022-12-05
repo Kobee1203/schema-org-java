@@ -30,10 +30,10 @@ public interface MedicalProcedure extends MedicalEntity {
     /**
      * The type of procedure, for example Surgical, Noninvasive, or Percutaneous.
      *
-     * @param fProcedureType MedicalProcedureType value to set.
+     * @param procedureType MedicalProcedureType value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setProcedureType(MedicalProcedureType fProcedureType);
+    void setProcedureType(MedicalProcedureType procedureType);
 
     /**
      * Typical preparation that a patient must undergo before having the procedure performed.
@@ -46,24 +46,17 @@ public interface MedicalProcedure extends MedicalEntity {
     /**
      * Typical preparation that a patient must undergo before having the procedure performed.
      *
-     * @param fPreparation MedicalEntity value to set.
+     * @param preparation MedicalEntity value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setPreparation(MedicalEntity fPreparation);
+    void setPreparation(MedicalEntity preparation);
     /**
      * Typical preparation that a patient must undergo before having the procedure performed.
      *
-     * @param fPreparation Text value to set.
+     * @param preparation Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setPreparation(Text fPreparation);
-    /**
-     * Typical preparation that a patient must undergo before having the procedure performed.
-     *
-     * @param fPreparation java.lang.String value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void setPreparation(java.lang.String fPreparation);
+    void setPreparation(Text preparation);
 
     /**
      * Location in the body of the anatomical structure.
@@ -76,17 +69,10 @@ public interface MedicalProcedure extends MedicalEntity {
     /**
      * Location in the body of the anatomical structure.
      *
-     * @param fBodyLocation Text value to set.
+     * @param bodyLocation Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setBodyLocation(Text fBodyLocation);
-    /**
-     * Location in the body of the anatomical structure.
-     *
-     * @param fBodyLocation java.lang.String value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void setBodyLocation(java.lang.String fBodyLocation);
+    void setBodyLocation(Text bodyLocation);
 
     /**
      * The status of the study (enumerated).
@@ -99,31 +85,24 @@ public interface MedicalProcedure extends MedicalEntity {
     /**
      * The status of the study (enumerated).
      *
-     * @param fStatus Text value to set.
+     * @param status Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setStatus(Text fStatus);
+    void setStatus(Text status);
     /**
      * The status of the study (enumerated).
      *
-     * @param fStatus java.lang.String value to set.
+     * @param status EventStatusType value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setStatus(java.lang.String fStatus);
+    void setStatus(EventStatusType status);
     /**
      * The status of the study (enumerated).
      *
-     * @param fStatus EventStatusType value to set.
+     * @param status MedicalStudyStatus value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setStatus(EventStatusType fStatus);
-    /**
-     * The status of the study (enumerated).
-     *
-     * @param fStatus MedicalStudyStatus value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void setStatus(MedicalStudyStatus fStatus);
+    void setStatus(MedicalStudyStatus status);
 
     /**
      * How the procedure is performed.
@@ -136,17 +115,10 @@ public interface MedicalProcedure extends MedicalEntity {
     /**
      * How the procedure is performed.
      *
-     * @param fHowPerformed Text value to set.
+     * @param howPerformed Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setHowPerformed(Text fHowPerformed);
-    /**
-     * How the procedure is performed.
-     *
-     * @param fHowPerformed java.lang.String value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void setHowPerformed(java.lang.String fHowPerformed);
+    void setHowPerformed(Text howPerformed);
 
     /**
      * Typical or recommended followup care after the procedure is performed.
@@ -159,15 +131,8 @@ public interface MedicalProcedure extends MedicalEntity {
     /**
      * Typical or recommended followup care after the procedure is performed.
      *
-     * @param fFollowup Text value to set.
+     * @param followup Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setFollowup(Text fFollowup);
-    /**
-     * Typical or recommended followup care after the procedure is performed.
-     *
-     * @param fFollowup java.lang.String value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void setFollowup(java.lang.String fFollowup);
+    void setFollowup(Text followup);
 }

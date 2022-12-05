@@ -28,17 +28,10 @@ public interface Diet extends LifestyleModification, CreativeWork {
     /**
      * Medical expert advice related to the plan.
      *
-     * @param fExpertConsiderations Text value to set.
+     * @param expertConsiderations Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setExpertConsiderations(Text fExpertConsiderations);
-    /**
-     * Medical expert advice related to the plan.
-     *
-     * @param fExpertConsiderations java.lang.String value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void setExpertConsiderations(java.lang.String fExpertConsiderations);
+    void setExpertConsiderations(Text expertConsiderations);
 
     /**
      * Specific physiologic risks associated to the diet plan.
@@ -51,17 +44,10 @@ public interface Diet extends LifestyleModification, CreativeWork {
     /**
      * Specific physiologic risks associated to the diet plan.
      *
-     * @param fRisks Text value to set.
+     * @param risks Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setRisks(Text fRisks);
-    /**
-     * Specific physiologic risks associated to the diet plan.
-     *
-     * @param fRisks java.lang.String value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void setRisks(java.lang.String fRisks);
+    void setRisks(Text risks);
 
     /**
      * Specific physiologic benefits associated to the plan.
@@ -74,17 +60,10 @@ public interface Diet extends LifestyleModification, CreativeWork {
     /**
      * Specific physiologic benefits associated to the plan.
      *
-     * @param fPhysiologicalBenefits Text value to set.
+     * @param physiologicalBenefits Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setPhysiologicalBenefits(Text fPhysiologicalBenefits);
-    /**
-     * Specific physiologic benefits associated to the plan.
-     *
-     * @param fPhysiologicalBenefits java.lang.String value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void setPhysiologicalBenefits(java.lang.String fPhysiologicalBenefits);
+    void setPhysiologicalBenefits(Text physiologicalBenefits);
 
     /**
      * People or organizations that endorse the plan.
@@ -97,17 +76,17 @@ public interface Diet extends LifestyleModification, CreativeWork {
     /**
      * People or organizations that endorse the plan.
      *
-     * @param fEndorsers Person value to set.
+     * @param endorsers Person value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setEndorsers(Person fEndorsers);
+    void setEndorsers(Person endorsers);
     /**
      * People or organizations that endorse the plan.
      *
-     * @param fEndorsers Organization value to set.
+     * @param endorsers Organization value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setEndorsers(Organization fEndorsers);
+    void setEndorsers(Organization endorsers);
 
     /**
      * Nutritional information specific to the dietary plan. May include dietary recommendations on what foods to avoid, what foods to consume, and specific alterations/deviations from the USDA or other regulatory body's approved dietary guidelines.
@@ -120,15 +99,8 @@ public interface Diet extends LifestyleModification, CreativeWork {
     /**
      * Nutritional information specific to the dietary plan. May include dietary recommendations on what foods to avoid, what foods to consume, and specific alterations/deviations from the USDA or other regulatory body's approved dietary guidelines.
      *
-     * @param fDietFeatures Text value to set.
+     * @param dietFeatures Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setDietFeatures(Text fDietFeatures);
-    /**
-     * Nutritional information specific to the dietary plan. May include dietary recommendations on what foods to avoid, what foods to consume, and specific alterations/deviations from the USDA or other regulatory body's approved dietary guidelines.
-     *
-     * @param fDietFeatures java.lang.String value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void setDietFeatures(java.lang.String fDietFeatures);
+    void setDietFeatures(Text dietFeatures);
 }

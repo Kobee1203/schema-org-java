@@ -33,19 +33,19 @@ public interface RealEstateListing extends WebPage {
     /**
      * Length of the lease for some [[Accommodation]], either particular to some [[Offer]] or in some cases intrinsic to the property.
      *
-     * @param fLeaseLength QuantitativeValue value to set.
+     * @param leaseLength QuantitativeValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
-    void setLeaseLength(QuantitativeValue fLeaseLength);
+    void setLeaseLength(QuantitativeValue leaseLength);
     /**
      * Length of the lease for some [[Accommodation]], either particular to some [[Offer]] or in some cases intrinsic to the property.
      *
-     * @param fLeaseLength Duration value to set.
+     * @param leaseLength Duration value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
-    void setLeaseLength(Duration fLeaseLength);
+    void setLeaseLength(Duration leaseLength);
 
     /**
      * Publication date of an online listing.
@@ -59,33 +59,17 @@ public interface RealEstateListing extends WebPage {
     /**
      * Publication date of an online listing.
      *
-     * @param fDatePosted Date value to set.
+     * @param datePosted Date value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
-    void setDatePosted(Date fDatePosted);
+    void setDatePosted(Date datePosted);
     /**
      * Publication date of an online listing.
      *
-     * @param fDatePosted java.time.LocalDate value to set.
+     * @param datePosted DateTime value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
-    void setDatePosted(java.time.LocalDate fDatePosted);
-    /**
-     * Publication date of an online listing.
-     *
-     * @param fDatePosted DateTime value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    void setDatePosted(DateTime fDatePosted);
-    /**
-     * Publication date of an online listing.
-     *
-     * @param fDatePosted java.time.LocalDateTime value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    void setDatePosted(java.time.LocalDateTime fDatePosted);
+    void setDatePosted(DateTime datePosted);
 }

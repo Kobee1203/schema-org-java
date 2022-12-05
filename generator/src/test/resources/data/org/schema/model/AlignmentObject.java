@@ -28,15 +28,9 @@ public interface AlignmentObject extends Intangible {
     /**
      * A category of alignment between the learning resource and the framework node. Recommended values include: 'requires', 'textComplexity', 'readingLevel', and 'educationalSubject'.
      *
-     * @param fAlignmentType Text value to set.
+     * @param alignmentType Text value to set.
      */
-    void setAlignmentType(Text fAlignmentType);
-    /**
-     * A category of alignment between the learning resource and the framework node. Recommended values include: 'requires', 'textComplexity', 'readingLevel', and 'educationalSubject'.
-     *
-     * @param fAlignmentType java.lang.String value to set.
-     */
-    void setAlignmentType(java.lang.String fAlignmentType);
+    void setAlignmentType(Text alignmentType);
 
     /**
      * The framework to which the resource being described is aligned.
@@ -48,15 +42,9 @@ public interface AlignmentObject extends Intangible {
     /**
      * The framework to which the resource being described is aligned.
      *
-     * @param fEducationalFramework Text value to set.
+     * @param educationalFramework Text value to set.
      */
-    void setEducationalFramework(Text fEducationalFramework);
-    /**
-     * The framework to which the resource being described is aligned.
-     *
-     * @param fEducationalFramework java.lang.String value to set.
-     */
-    void setEducationalFramework(java.lang.String fEducationalFramework);
+    void setEducationalFramework(Text educationalFramework);
 
     /**
      * The description of a node in an established educational framework.
@@ -68,15 +56,9 @@ public interface AlignmentObject extends Intangible {
     /**
      * The description of a node in an established educational framework.
      *
-     * @param fTargetDescription Text value to set.
+     * @param targetDescription Text value to set.
      */
-    void setTargetDescription(Text fTargetDescription);
-    /**
-     * The description of a node in an established educational framework.
-     *
-     * @param fTargetDescription java.lang.String value to set.
-     */
-    void setTargetDescription(java.lang.String fTargetDescription);
+    void setTargetDescription(Text targetDescription);
 
     /**
      * The name of a node in an established educational framework.
@@ -88,15 +70,9 @@ public interface AlignmentObject extends Intangible {
     /**
      * The name of a node in an established educational framework.
      *
-     * @param fTargetName Text value to set.
+     * @param targetName Text value to set.
      */
-    void setTargetName(Text fTargetName);
-    /**
-     * The name of a node in an established educational framework.
-     *
-     * @param fTargetName java.lang.String value to set.
-     */
-    void setTargetName(java.lang.String fTargetName);
+    void setTargetName(Text targetName);
 
     /**
      * The URL of a node in an established educational framework.
@@ -108,13 +84,7 @@ public interface AlignmentObject extends Intangible {
     /**
      * The URL of a node in an established educational framework.
      *
-     * @param fTargetUrl URL value to set.
+     * @param targetUrl URL value to set.
      */
-    void setTargetUrl(URL fTargetUrl);
-    /**
-     * The URL of a node in an established educational framework.
-     *
-     * @param fTargetUrl java.net.URL value to set.
-     */
-    void setTargetUrl(java.net.URL fTargetUrl);
+    void setTargetUrl(URL targetUrl);
 }

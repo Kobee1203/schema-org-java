@@ -29,24 +29,17 @@ public interface GeoShape extends StructuredValue {
     /**
      * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
      *
-     * @param fAddressCountry Country value to set.
+     * @param addressCountry Country value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
-    void setAddressCountry(Country fAddressCountry);
+    void setAddressCountry(Country addressCountry);
     /**
      * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
      *
-     * @param fAddressCountry Text value to set.
+     * @param addressCountry Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
-    void setAddressCountry(Text fAddressCountry);
-    /**
-     * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
-     *
-     * @param fAddressCountry java.lang.String value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     */
-    void setAddressCountry(java.lang.String fAddressCountry);
+    void setAddressCountry(Text addressCountry);
 
     /**
      * A circle is the circular region of a specified radius centered at a specified latitude and longitude. A circle is expressed as a pair followed by a radius in meters.
@@ -58,15 +51,9 @@ public interface GeoShape extends StructuredValue {
     /**
      * A circle is the circular region of a specified radius centered at a specified latitude and longitude. A circle is expressed as a pair followed by a radius in meters.
      *
-     * @param fCircle Text value to set.
+     * @param circle Text value to set.
      */
-    void setCircle(Text fCircle);
-    /**
-     * A circle is the circular region of a specified radius centered at a specified latitude and longitude. A circle is expressed as a pair followed by a radius in meters.
-     *
-     * @param fCircle java.lang.String value to set.
-     */
-    void setCircle(java.lang.String fCircle);
+    void setCircle(Text circle);
 
     /**
      * A line is a point-to-point path consisting of two or more points. A line is expressed as a series of two or more point objects separated by space.
@@ -78,15 +65,9 @@ public interface GeoShape extends StructuredValue {
     /**
      * A line is a point-to-point path consisting of two or more points. A line is expressed as a series of two or more point objects separated by space.
      *
-     * @param fLine Text value to set.
+     * @param line Text value to set.
      */
-    void setLine(Text fLine);
-    /**
-     * A line is a point-to-point path consisting of two or more points. A line is expressed as a series of two or more point objects separated by space.
-     *
-     * @param fLine java.lang.String value to set.
-     */
-    void setLine(java.lang.String fLine);
+    void setLine(Text line);
 
     /**
      * A polygon is the area enclosed by a point-to-point path for which the starting and ending points are the same. A polygon is expressed as a series of four or more space delimited points where the first and final points are identical.
@@ -98,15 +79,9 @@ public interface GeoShape extends StructuredValue {
     /**
      * A polygon is the area enclosed by a point-to-point path for which the starting and ending points are the same. A polygon is expressed as a series of four or more space delimited points where the first and final points are identical.
      *
-     * @param fPolygon Text value to set.
+     * @param polygon Text value to set.
      */
-    void setPolygon(Text fPolygon);
-    /**
-     * A polygon is the area enclosed by a point-to-point path for which the starting and ending points are the same. A polygon is expressed as a series of four or more space delimited points where the first and final points are identical.
-     *
-     * @param fPolygon java.lang.String value to set.
-     */
-    void setPolygon(java.lang.String fPolygon);
+    void setPolygon(Text polygon);
 
     /**
      * Physical address of the item.
@@ -118,21 +93,15 @@ public interface GeoShape extends StructuredValue {
     /**
      * Physical address of the item.
      *
-     * @param fAddress Text value to set.
+     * @param address Text value to set.
      */
-    void setAddress(Text fAddress);
+    void setAddress(Text address);
     /**
      * Physical address of the item.
      *
-     * @param fAddress java.lang.String value to set.
+     * @param address PostalAddress value to set.
      */
-    void setAddress(java.lang.String fAddress);
-    /**
-     * Physical address of the item.
-     *
-     * @param fAddress PostalAddress value to set.
-     */
-    void setAddress(PostalAddress fAddress);
+    void setAddress(PostalAddress address);
 
     /**
      * The postal code. For example, 94043.
@@ -145,17 +114,10 @@ public interface GeoShape extends StructuredValue {
     /**
      * The postal code. For example, 94043.
      *
-     * @param fPostalCode Text value to set.
+     * @param postalCode Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
-    void setPostalCode(Text fPostalCode);
-    /**
-     * The postal code. For example, 94043.
-     *
-     * @param fPostalCode java.lang.String value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     */
-    void setPostalCode(java.lang.String fPostalCode);
+    void setPostalCode(Text postalCode);
 
     /**
      * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
@@ -167,27 +129,15 @@ public interface GeoShape extends StructuredValue {
     /**
      * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
      *
-     * @param fElevation Text value to set.
+     * @param elevation Text value to set.
      */
-    void setElevation(Text fElevation);
+    void setElevation(Text elevation);
     /**
      * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
      *
-     * @param fElevation java.lang.String value to set.
+     * @param elevation Number value to set.
      */
-    void setElevation(java.lang.String fElevation);
-    /**
-     * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
-     *
-     * @param fElevation Number value to set.
-     */
-    void setElevation(Number fElevation);
-    /**
-     * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
-     *
-     * @param fElevation java.lang.Number value to set.
-     */
-    void setElevation(java.lang.Number fElevation);
+    void setElevation(Number elevation);
 
     /**
      * A box is the area enclosed by the rectangle formed by two points. The first point is the lower corner, the second point is the upper corner. A box is expressed as two points separated by a space character.
@@ -199,13 +149,7 @@ public interface GeoShape extends StructuredValue {
     /**
      * A box is the area enclosed by the rectangle formed by two points. The first point is the lower corner, the second point is the upper corner. A box is expressed as two points separated by a space character.
      *
-     * @param fBox Text value to set.
+     * @param box Text value to set.
      */
-    void setBox(Text fBox);
-    /**
-     * A box is the area enclosed by the rectangle formed by two points. The first point is the lower corner, the second point is the upper corner. A box is expressed as two points separated by a space character.
-     *
-     * @param fBox java.lang.String value to set.
-     */
-    void setBox(java.lang.String fBox);
+    void setBox(Text box);
 }

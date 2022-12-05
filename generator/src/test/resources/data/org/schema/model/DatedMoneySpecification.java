@@ -29,31 +29,17 @@ public interface DatedMoneySpecification extends StructuredValue {
     /**
      * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
      *
-     * @param fStartDate DateTime value to set.
+     * @param startDate DateTime value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
-    void setStartDate(DateTime fStartDate);
+    void setStartDate(DateTime startDate);
     /**
      * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
      *
-     * @param fStartDate java.time.LocalDateTime value to set.
+     * @param startDate Date value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
-    void setStartDate(java.time.LocalDateTime fStartDate);
-    /**
-     * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
-     *
-     * @param fStartDate Date value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
-     */
-    void setStartDate(Date fStartDate);
-    /**
-     * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
-     *
-     * @param fStartDate java.time.LocalDate value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
-     */
-    void setStartDate(java.time.LocalDate fStartDate);
+    void setStartDate(Date startDate);
 
     /**
      * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
@@ -66,31 +52,17 @@ public interface DatedMoneySpecification extends StructuredValue {
     /**
      * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
      *
-     * @param fEndDate Date value to set.
+     * @param endDate Date value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
-    void setEndDate(Date fEndDate);
+    void setEndDate(Date endDate);
     /**
      * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
      *
-     * @param fEndDate java.time.LocalDate value to set.
+     * @param endDate DateTime value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
-    void setEndDate(java.time.LocalDate fEndDate);
-    /**
-     * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
-     *
-     * @param fEndDate DateTime value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
-     */
-    void setEndDate(DateTime fEndDate);
-    /**
-     * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
-     *
-     * @param fEndDate java.time.LocalDateTime value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
-     */
-    void setEndDate(java.time.LocalDateTime fEndDate);
+    void setEndDate(DateTime endDate);
 
     /**
      * The currency in which the monetary amount is expressed.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
@@ -103,17 +75,10 @@ public interface DatedMoneySpecification extends StructuredValue {
     /**
      * The currency in which the monetary amount is expressed.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
      *
-     * @param fCurrency Text value to set.
+     * @param currency Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
      */
-    void setCurrency(Text fCurrency);
-    /**
-     * The currency in which the monetary amount is expressed.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
-     *
-     * @param fCurrency java.lang.String value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
-     */
-    void setCurrency(java.lang.String fCurrency);
+    void setCurrency(Text currency);
 
     /**
      * The amount of money.
@@ -127,25 +92,17 @@ public interface DatedMoneySpecification extends StructuredValue {
     /**
      * The amount of money.
      *
-     * @param fAmount Number value to set.
+     * @param amount Number value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
      */
-    void setAmount(Number fAmount);
+    void setAmount(Number amount);
     /**
      * The amount of money.
      *
-     * @param fAmount java.lang.Number value to set.
+     * @param amount MonetaryAmount value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
      */
-    void setAmount(java.lang.Number fAmount);
-    /**
-     * The amount of money.
-     *
-     * @param fAmount MonetaryAmount value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
-     */
-    void setAmount(MonetaryAmount fAmount);
+    void setAmount(MonetaryAmount amount);
 }

@@ -30,7 +30,7 @@ import org.schema.model.GeoShape;
 @JsonLdTypeName("GeoShape")
 public class GeoShapeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements GeoShape {
 
-    private Object fAddressCountry;
+    private Object addressCountry;
 
     /**
      * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
@@ -40,41 +40,31 @@ public class GeoShapeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public <T> T getAddressCountry() {
-        return (T) fAddressCountry;
+        return (T) addressCountry;
     }
 
     /**
      * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
      *
-     * @param fAddressCountry Country value to set.
+     * @param addressCountry Country value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
     @Override
-    public void setAddressCountry(Country fAddressCountry) {
-        this.fAddressCountry = fAddressCountry;
+    public void setAddressCountry(Country addressCountry) {
+        this.addressCountry = addressCountry;
     }
     /**
      * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
      *
-     * @param fAddressCountry Text value to set.
+     * @param addressCountry Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
     @Override
-    public void setAddressCountry(Text fAddressCountry) {
-        this.fAddressCountry = fAddressCountry;
-    }
-    /**
-     * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
-     *
-     * @param fAddressCountry java.lang.String value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     */
-    @Override
-    public void setAddressCountry(java.lang.String fAddressCountry) {
-        this.fAddressCountry = Text.of(fAddressCountry);
+    public void setAddressCountry(Text addressCountry) {
+        this.addressCountry = addressCountry;
     }
 
-    private Text fCircle;
+    private Text circle;
 
     /**
      * A circle is the circular region of a specified radius centered at a specified latitude and longitude. A circle is expressed as a pair followed by a radius in meters.
@@ -83,29 +73,20 @@ public class GeoShapeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Text getCircle() {
-        return fCircle;
+        return circle;
     }
 
     /**
      * A circle is the circular region of a specified radius centered at a specified latitude and longitude. A circle is expressed as a pair followed by a radius in meters.
      *
-     * @param fCircle Text value to set.
+     * @param circle Text value to set.
      */
     @Override
-    public void setCircle(Text fCircle) {
-        this.fCircle = fCircle;
-    }
-    /**
-     * A circle is the circular region of a specified radius centered at a specified latitude and longitude. A circle is expressed as a pair followed by a radius in meters.
-     *
-     * @param fCircle java.lang.String value to set.
-     */
-    @Override
-    public void setCircle(java.lang.String fCircle) {
-        this.fCircle = Text.of(fCircle);
+    public void setCircle(Text circle) {
+        this.circle = circle;
     }
 
-    private Text fLine;
+    private Text line;
 
     /**
      * A line is a point-to-point path consisting of two or more points. A line is expressed as a series of two or more point objects separated by space.
@@ -114,29 +95,20 @@ public class GeoShapeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Text getLine() {
-        return fLine;
+        return line;
     }
 
     /**
      * A line is a point-to-point path consisting of two or more points. A line is expressed as a series of two or more point objects separated by space.
      *
-     * @param fLine Text value to set.
+     * @param line Text value to set.
      */
     @Override
-    public void setLine(Text fLine) {
-        this.fLine = fLine;
-    }
-    /**
-     * A line is a point-to-point path consisting of two or more points. A line is expressed as a series of two or more point objects separated by space.
-     *
-     * @param fLine java.lang.String value to set.
-     */
-    @Override
-    public void setLine(java.lang.String fLine) {
-        this.fLine = Text.of(fLine);
+    public void setLine(Text line) {
+        this.line = line;
     }
 
-    private Text fPolygon;
+    private Text polygon;
 
     /**
      * A polygon is the area enclosed by a point-to-point path for which the starting and ending points are the same. A polygon is expressed as a series of four or more space delimited points where the first and final points are identical.
@@ -145,29 +117,20 @@ public class GeoShapeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Text getPolygon() {
-        return fPolygon;
+        return polygon;
     }
 
     /**
      * A polygon is the area enclosed by a point-to-point path for which the starting and ending points are the same. A polygon is expressed as a series of four or more space delimited points where the first and final points are identical.
      *
-     * @param fPolygon Text value to set.
+     * @param polygon Text value to set.
      */
     @Override
-    public void setPolygon(Text fPolygon) {
-        this.fPolygon = fPolygon;
-    }
-    /**
-     * A polygon is the area enclosed by a point-to-point path for which the starting and ending points are the same. A polygon is expressed as a series of four or more space delimited points where the first and final points are identical.
-     *
-     * @param fPolygon java.lang.String value to set.
-     */
-    @Override
-    public void setPolygon(java.lang.String fPolygon) {
-        this.fPolygon = Text.of(fPolygon);
+    public void setPolygon(Text polygon) {
+        this.polygon = polygon;
     }
 
-    private Object fAddress;
+    private Object address;
 
     /**
      * Physical address of the item.
@@ -176,38 +139,29 @@ public class GeoShapeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public <T> T getAddress() {
-        return (T) fAddress;
+        return (T) address;
     }
 
     /**
      * Physical address of the item.
      *
-     * @param fAddress Text value to set.
+     * @param address Text value to set.
      */
     @Override
-    public void setAddress(Text fAddress) {
-        this.fAddress = fAddress;
+    public void setAddress(Text address) {
+        this.address = address;
     }
     /**
      * Physical address of the item.
      *
-     * @param fAddress java.lang.String value to set.
+     * @param address PostalAddress value to set.
      */
     @Override
-    public void setAddress(java.lang.String fAddress) {
-        this.fAddress = Text.of(fAddress);
-    }
-    /**
-     * Physical address of the item.
-     *
-     * @param fAddress PostalAddress value to set.
-     */
-    @Override
-    public void setAddress(PostalAddress fAddress) {
-        this.fAddress = fAddress;
+    public void setAddress(PostalAddress address) {
+        this.address = address;
     }
 
-    private Text fPostalCode;
+    private Text postalCode;
 
     /**
      * The postal code. For example, 94043.
@@ -217,31 +171,21 @@ public class GeoShapeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Text getPostalCode() {
-        return fPostalCode;
+        return postalCode;
     }
 
     /**
      * The postal code. For example, 94043.
      *
-     * @param fPostalCode Text value to set.
+     * @param postalCode Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
     @Override
-    public void setPostalCode(Text fPostalCode) {
-        this.fPostalCode = fPostalCode;
-    }
-    /**
-     * The postal code. For example, 94043.
-     *
-     * @param fPostalCode java.lang.String value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     */
-    @Override
-    public void setPostalCode(java.lang.String fPostalCode) {
-        this.fPostalCode = Text.of(fPostalCode);
+    public void setPostalCode(Text postalCode) {
+        this.postalCode = postalCode;
     }
 
-    private Object fElevation;
+    private Object elevation;
 
     /**
      * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
@@ -250,47 +194,29 @@ public class GeoShapeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public <T> T getElevation() {
-        return (T) fElevation;
+        return (T) elevation;
     }
 
     /**
      * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
      *
-     * @param fElevation Text value to set.
+     * @param elevation Text value to set.
      */
     @Override
-    public void setElevation(Text fElevation) {
-        this.fElevation = fElevation;
+    public void setElevation(Text elevation) {
+        this.elevation = elevation;
     }
     /**
      * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
      *
-     * @param fElevation java.lang.String value to set.
+     * @param elevation Number value to set.
      */
     @Override
-    public void setElevation(java.lang.String fElevation) {
-        this.fElevation = Text.of(fElevation);
-    }
-    /**
-     * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
-     *
-     * @param fElevation Number value to set.
-     */
-    @Override
-    public void setElevation(Number fElevation) {
-        this.fElevation = fElevation;
-    }
-    /**
-     * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
-     *
-     * @param fElevation java.lang.Number value to set.
-     */
-    @Override
-    public void setElevation(java.lang.Number fElevation) {
-        this.fElevation = Number.of(fElevation);
+    public void setElevation(Number elevation) {
+        this.elevation = elevation;
     }
 
-    private Text fBox;
+    private Text box;
 
     /**
      * A box is the area enclosed by the rectangle formed by two points. The first point is the lower corner, the second point is the upper corner. A box is expressed as two points separated by a space character.
@@ -299,29 +225,20 @@ public class GeoShapeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Text getBox() {
-        return fBox;
+        return box;
     }
 
     /**
      * A box is the area enclosed by the rectangle formed by two points. The first point is the lower corner, the second point is the upper corner. A box is expressed as two points separated by a space character.
      *
-     * @param fBox Text value to set.
+     * @param box Text value to set.
      */
     @Override
-    public void setBox(Text fBox) {
-        this.fBox = fBox;
-    }
-    /**
-     * A box is the area enclosed by the rectangle formed by two points. The first point is the lower corner, the second point is the upper corner. A box is expressed as two points separated by a space character.
-     *
-     * @param fBox java.lang.String value to set.
-     */
-    @Override
-    public void setBox(java.lang.String fBox) {
-        this.fBox = Text.of(fBox);
+    public void setBox(Text box) {
+        this.box = box;
     }
 
-    private Object fMainEntityOfPage;
+    private Object mainEntityOfPage;
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -330,38 +247,29 @@ public class GeoShapeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
+        return (T) mainEntityOfPage;
     }
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param fMainEntityOfPage CreativeWork value to set.
+     * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(CreativeWork fMainEntityOfPage) {
-        this.fMainEntityOfPage = fMainEntityOfPage;
+    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
     }
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param fMainEntityOfPage URL value to set.
+     * @param mainEntityOfPage URL value to set.
      */
     @Override
-    public void setMainEntityOfPage(URL fMainEntityOfPage) {
-        this.fMainEntityOfPage = fMainEntityOfPage;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param fMainEntityOfPage java.net.URL value to set.
-     */
-    @Override
-    public void setMainEntityOfPage(java.net.URL fMainEntityOfPage) {
-        this.fMainEntityOfPage = URL.of(fMainEntityOfPage);
+    public void setMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
     }
 
-    private Text fAlternateName;
+    private Text alternateName;
 
     /**
      * An alias for the item.
@@ -370,29 +278,20 @@ public class GeoShapeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Text getAlternateName() {
-        return fAlternateName;
+        return alternateName;
     }
 
     /**
      * An alias for the item.
      *
-     * @param fAlternateName Text value to set.
+     * @param alternateName Text value to set.
      */
     @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
-    }
-    /**
-     * An alias for the item.
-     *
-     * @param fAlternateName java.lang.String value to set.
-     */
-    @Override
-    public void setAlternateName(java.lang.String fAlternateName) {
-        this.fAlternateName = Text.of(fAlternateName);
+    public void setAlternateName(Text alternateName) {
+        this.alternateName = alternateName;
     }
 
-    private Text fName;
+    private Text name;
 
     /**
      * The name of the item.
@@ -401,29 +300,20 @@ public class GeoShapeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Text getName() {
-        return fName;
+        return name;
     }
 
     /**
      * The name of the item.
      *
-     * @param fName Text value to set.
+     * @param name Text value to set.
      */
     @Override
-    public void setName(Text fName) {
-        this.fName = fName;
-    }
-    /**
-     * The name of the item.
-     *
-     * @param fName java.lang.String value to set.
-     */
-    @Override
-    public void setName(java.lang.String fName) {
-        this.fName = Text.of(fName);
+    public void setName(Text name) {
+        this.name = name;
     }
 
-    private Action fPotentialAction;
+    private Action potentialAction;
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -432,20 +322,20 @@ public class GeoShapeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Action getPotentialAction() {
-        return fPotentialAction;
+        return potentialAction;
     }
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      *
-     * @param fPotentialAction Action value to set.
+     * @param potentialAction Action value to set.
      */
     @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
+    public void setPotentialAction(Action potentialAction) {
+        this.potentialAction = potentialAction;
     }
 
-    private Object fImage;
+    private Object image;
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -454,38 +344,29 @@ public class GeoShapeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public <T> T getImage() {
-        return (T) fImage;
+        return (T) image;
     }
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param fImage URL value to set.
+     * @param image URL value to set.
      */
     @Override
-    public void setImage(URL fImage) {
-        this.fImage = fImage;
+    public void setImage(URL image) {
+        this.image = image;
     }
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param fImage java.net.URL value to set.
+     * @param image ImageObject value to set.
      */
     @Override
-    public void setImage(java.net.URL fImage) {
-        this.fImage = URL.of(fImage);
-    }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param fImage ImageObject value to set.
-     */
-    @Override
-    public void setImage(ImageObject fImage) {
-        this.fImage = fImage;
+    public void setImage(ImageObject image) {
+        this.image = image;
     }
 
-    private URL fUrl;
+    private URL url;
 
     /**
      * URL of the item.
@@ -494,29 +375,20 @@ public class GeoShapeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public URL getUrl() {
-        return fUrl;
+        return url;
     }
 
     /**
      * URL of the item.
      *
-     * @param fUrl URL value to set.
+     * @param url URL value to set.
      */
     @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
-    }
-    /**
-     * URL of the item.
-     *
-     * @param fUrl java.net.URL value to set.
-     */
-    @Override
-    public void setUrl(java.net.URL fUrl) {
-        this.fUrl = URL.of(fUrl);
+    public void setUrl(URL url) {
+        this.url = url;
     }
 
-    private Text fDescription;
+    private Text description;
 
     /**
      * A description of the item.
@@ -525,29 +397,20 @@ public class GeoShapeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Text getDescription() {
-        return fDescription;
+        return description;
     }
 
     /**
      * A description of the item.
      *
-     * @param fDescription Text value to set.
+     * @param description Text value to set.
      */
     @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
-    }
-    /**
-     * A description of the item.
-     *
-     * @param fDescription java.lang.String value to set.
-     */
-    @Override
-    public void setDescription(java.lang.String fDescription) {
-        this.fDescription = Text.of(fDescription);
+    public void setDescription(Text description) {
+        this.description = description;
     }
 
-    private Object fSubjectOf;
+    private Object subjectOf;
 
     /**
      * A CreativeWork or Event about this Thing.
@@ -557,31 +420,31 @@ public class GeoShapeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public <T> T getSubjectOf() {
-        return (T) fSubjectOf;
+        return (T) subjectOf;
     }
 
     /**
      * A CreativeWork or Event about this Thing.
      *
-     * @param fSubjectOf Event value to set.
+     * @param subjectOf Event value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Event fSubjectOf) {
-        this.fSubjectOf = fSubjectOf;
+    public void setSubjectOf(Event subjectOf) {
+        this.subjectOf = subjectOf;
     }
     /**
      * A CreativeWork or Event about this Thing.
      *
-     * @param fSubjectOf CreativeWork value to set.
+     * @param subjectOf CreativeWork value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(CreativeWork fSubjectOf) {
-        this.fSubjectOf = fSubjectOf;
+    public void setSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = subjectOf;
     }
 
-    private URL fAdditionalType;
+    private URL additionalType;
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
@@ -590,29 +453,20 @@ public class GeoShapeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public URL getAdditionalType() {
-        return fAdditionalType;
+        return additionalType;
     }
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
-     * @param fAdditionalType URL value to set.
+     * @param additionalType URL value to set.
      */
     @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
-    }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @param fAdditionalType java.net.URL value to set.
-     */
-    @Override
-    public void setAdditionalType(java.net.URL fAdditionalType) {
-        this.fAdditionalType = URL.of(fAdditionalType);
+    public void setAdditionalType(URL additionalType) {
+        this.additionalType = additionalType;
     }
 
-    private Text fDisambiguatingDescription;
+    private Text disambiguatingDescription;
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
@@ -621,29 +475,20 @@ public class GeoShapeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Text getDisambiguatingDescription() {
-        return fDisambiguatingDescription;
+        return disambiguatingDescription;
     }
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
-     * @param fDisambiguatingDescription Text value to set.
+     * @param disambiguatingDescription Text value to set.
      */
     @Override
-    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = fDisambiguatingDescription;
-    }
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @param fDisambiguatingDescription java.lang.String value to set.
-     */
-    @Override
-    public void setDisambiguatingDescription(java.lang.String fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = Text.of(fDisambiguatingDescription);
+    public void setDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = disambiguatingDescription;
     }
 
-    private URL fSameAs;
+    private URL sameAs;
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
@@ -652,29 +497,20 @@ public class GeoShapeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public URL getSameAs() {
-        return fSameAs;
+        return sameAs;
     }
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
-     * @param fSameAs URL value to set.
+     * @param sameAs URL value to set.
      */
     @Override
-    public void setSameAs(URL fSameAs) {
-        this.fSameAs = fSameAs;
-    }
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @param fSameAs java.net.URL value to set.
-     */
-    @Override
-    public void setSameAs(java.net.URL fSameAs) {
-        this.fSameAs = URL.of(fSameAs);
+    public void setSameAs(URL sameAs) {
+        this.sameAs = sameAs;
     }
 
-    private Object fIdentifier;
+    private Object identifier;
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -684,57 +520,37 @@ public class GeoShapeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public <T> T getIdentifier() {
-        return (T) fIdentifier;
+        return (T) identifier;
     }
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier URL value to set.
+     * @param identifier URL value to set.
      */
     @Override
-    public void setIdentifier(URL fIdentifier) {
-        this.fIdentifier = fIdentifier;
+    public void setIdentifier(URL identifier) {
+        this.identifier = identifier;
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier java.net.URL value to set.
+     * @param identifier Text value to set.
      */
     @Override
-    public void setIdentifier(java.net.URL fIdentifier) {
-        this.fIdentifier = URL.of(fIdentifier);
+    public void setIdentifier(Text identifier) {
+        this.identifier = identifier;
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier Text value to set.
+     * @param identifier PropertyValue value to set.
      */
     @Override
-    public void setIdentifier(Text fIdentifier) {
-        this.fIdentifier = fIdentifier;
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param fIdentifier java.lang.String value to set.
-     */
-    @Override
-    public void setIdentifier(java.lang.String fIdentifier) {
-        this.fIdentifier = Text.of(fIdentifier);
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param fIdentifier PropertyValue value to set.
-     */
-    @Override
-    public void setIdentifier(PropertyValue fIdentifier) {
-        this.fIdentifier = fIdentifier;
+    public void setIdentifier(PropertyValue identifier) {
+        this.identifier = identifier;
     }
 }

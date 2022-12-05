@@ -42,7 +42,7 @@ import org.schema.model.JobPosting;
 @JsonLdTypeName("JobPosting")
 public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements JobPosting {
 
-    private Text fEmployerOverview;
+    private Text employerOverview;
 
     /**
      * A description of the employer, career opportunities and work environment for this position.
@@ -53,33 +53,22 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getEmployerOverview() {
-        return fEmployerOverview;
+        return employerOverview;
     }
 
     /**
      * A description of the employer, career opportunities and work environment for this position.
      *
-     * @param fEmployerOverview Text value to set.
+     * @param employerOverview Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2396">https://github.com/schemaorg/schemaorg/issues/2396</a>
      */
     @Override
-    public void setEmployerOverview(Text fEmployerOverview) {
-        this.fEmployerOverview = fEmployerOverview;
-    }
-    /**
-     * A description of the employer, career opportunities and work environment for this position.
-     *
-     * @param fEmployerOverview java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2396">https://github.com/schemaorg/schemaorg/issues/2396</a>
-     */
-    @Override
-    public void setEmployerOverview(java.lang.String fEmployerOverview) {
-        this.fEmployerOverview = Text.of(fEmployerOverview);
+    public void setEmployerOverview(Text employerOverview) {
+        this.employerOverview = employerOverview;
     }
 
-    private Object fEstimatedSalary;
+    private Object estimatedSalary;
 
     /**
      * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
@@ -89,51 +78,41 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getEstimatedSalary() {
-        return (T) fEstimatedSalary;
+        return (T) estimatedSalary;
     }
 
     /**
      * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
      *
-     * @param fEstimatedSalary MonetaryAmountDistribution value to set.
+     * @param estimatedSalary MonetaryAmountDistribution value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
     @Override
-    public void setEstimatedSalary(MonetaryAmountDistribution fEstimatedSalary) {
-        this.fEstimatedSalary = fEstimatedSalary;
+    public void setEstimatedSalary(MonetaryAmountDistribution estimatedSalary) {
+        this.estimatedSalary = estimatedSalary;
     }
     /**
      * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
      *
-     * @param fEstimatedSalary MonetaryAmount value to set.
+     * @param estimatedSalary MonetaryAmount value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
     @Override
-    public void setEstimatedSalary(MonetaryAmount fEstimatedSalary) {
-        this.fEstimatedSalary = fEstimatedSalary;
+    public void setEstimatedSalary(MonetaryAmount estimatedSalary) {
+        this.estimatedSalary = estimatedSalary;
     }
     /**
      * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
      *
-     * @param fEstimatedSalary Number value to set.
+     * @param estimatedSalary Number value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
     @Override
-    public void setEstimatedSalary(Number fEstimatedSalary) {
-        this.fEstimatedSalary = fEstimatedSalary;
-    }
-    /**
-     * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
-     *
-     * @param fEstimatedSalary java.lang.Number value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    @Override
-    public void setEstimatedSalary(java.lang.Number fEstimatedSalary) {
-        this.fEstimatedSalary = Number.of(fEstimatedSalary);
+    public void setEstimatedSalary(Number estimatedSalary) {
+        this.estimatedSalary = estimatedSalary;
     }
 
-    private Text fJobLocationType;
+    private Text jobLocationType;
 
     /**
      * A description of the job location (e.g TELECOMMUTE for telecommute jobs).
@@ -144,33 +123,22 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getJobLocationType() {
-        return fJobLocationType;
+        return jobLocationType;
     }
 
     /**
      * A description of the job location (e.g TELECOMMUTE for telecommute jobs).
      *
-     * @param fJobLocationType Text value to set.
+     * @param jobLocationType Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1591">https://github.com/schemaorg/schemaorg/issues/1591</a>
      */
     @Override
-    public void setJobLocationType(Text fJobLocationType) {
-        this.fJobLocationType = fJobLocationType;
-    }
-    /**
-     * A description of the job location (e.g TELECOMMUTE for telecommute jobs).
-     *
-     * @param fJobLocationType java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1591">https://github.com/schemaorg/schemaorg/issues/1591</a>
-     */
-    @Override
-    public void setJobLocationType(java.lang.String fJobLocationType) {
-        this.fJobLocationType = Text.of(fJobLocationType);
+    public void setJobLocationType(Text jobLocationType) {
+        this.jobLocationType = jobLocationType;
     }
 
-    private Text fResponsibilities;
+    private Text responsibilities;
 
     /**
      * Responsibilities associated with this role or Occupation.
@@ -180,31 +148,21 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getResponsibilities() {
-        return fResponsibilities;
+        return responsibilities;
     }
 
     /**
      * Responsibilities associated with this role or Occupation.
      *
-     * @param fResponsibilities Text value to set.
+     * @param responsibilities Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
     @Override
-    public void setResponsibilities(Text fResponsibilities) {
-        this.fResponsibilities = fResponsibilities;
-    }
-    /**
-     * Responsibilities associated with this role or Occupation.
-     *
-     * @param fResponsibilities java.lang.String value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    @Override
-    public void setResponsibilities(java.lang.String fResponsibilities) {
-        this.fResponsibilities = Text.of(fResponsibilities);
+    public void setResponsibilities(Text responsibilities) {
+        this.responsibilities = responsibilities;
     }
 
-    private Place fJobLocation;
+    private Place jobLocation;
 
     /**
      * A (typically single) geographic location associated with the job position.
@@ -213,20 +171,20 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Place getJobLocation() {
-        return fJobLocation;
+        return jobLocation;
     }
 
     /**
      * A (typically single) geographic location associated with the job position.
      *
-     * @param fJobLocation Place value to set.
+     * @param jobLocation Place value to set.
      */
     @Override
-    public void setJobLocation(Place fJobLocation) {
-        this.fJobLocation = fJobLocation;
+    public void setJobLocation(Place jobLocation) {
+        this.jobLocation = jobLocation;
     }
 
-    private Object fPhysicalRequirement;
+    private Object physicalRequirement;
 
     /**
      * A description of the types of physical activity associated with the job. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
@@ -237,66 +195,44 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getPhysicalRequirement() {
-        return (T) fPhysicalRequirement;
+        return (T) physicalRequirement;
     }
 
     /**
      * A description of the types of physical activity associated with the job. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
      *
-     * @param fPhysicalRequirement URL value to set.
+     * @param physicalRequirement URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
      */
     @Override
-    public void setPhysicalRequirement(URL fPhysicalRequirement) {
-        this.fPhysicalRequirement = fPhysicalRequirement;
+    public void setPhysicalRequirement(URL physicalRequirement) {
+        this.physicalRequirement = physicalRequirement;
     }
     /**
      * A description of the types of physical activity associated with the job. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
      *
-     * @param fPhysicalRequirement java.net.URL value to set.
+     * @param physicalRequirement Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
      */
     @Override
-    public void setPhysicalRequirement(java.net.URL fPhysicalRequirement) {
-        this.fPhysicalRequirement = URL.of(fPhysicalRequirement);
+    public void setPhysicalRequirement(Text physicalRequirement) {
+        this.physicalRequirement = physicalRequirement;
     }
     /**
      * A description of the types of physical activity associated with the job. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
      *
-     * @param fPhysicalRequirement Text value to set.
+     * @param physicalRequirement DefinedTerm value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
      */
     @Override
-    public void setPhysicalRequirement(Text fPhysicalRequirement) {
-        this.fPhysicalRequirement = fPhysicalRequirement;
-    }
-    /**
-     * A description of the types of physical activity associated with the job. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
-     *
-     * @param fPhysicalRequirement java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
-     */
-    @Override
-    public void setPhysicalRequirement(java.lang.String fPhysicalRequirement) {
-        this.fPhysicalRequirement = Text.of(fPhysicalRequirement);
-    }
-    /**
-     * A description of the types of physical activity associated with the job. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
-     *
-     * @param fPhysicalRequirement DefinedTerm value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
-     */
-    @Override
-    public void setPhysicalRequirement(DefinedTerm fPhysicalRequirement) {
-        this.fPhysicalRequirement = fPhysicalRequirement;
+    public void setPhysicalRequirement(DefinedTerm physicalRequirement) {
+        this.physicalRequirement = physicalRequirement;
     }
 
-    private Text fIncentives;
+    private Text incentives;
 
     /**
      * Description of bonus and commission compensation aspects of the job.
@@ -305,29 +241,20 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getIncentives() {
-        return fIncentives;
+        return incentives;
     }
 
     /**
      * Description of bonus and commission compensation aspects of the job.
      *
-     * @param fIncentives Text value to set.
+     * @param incentives Text value to set.
      */
     @Override
-    public void setIncentives(Text fIncentives) {
-        this.fIncentives = fIncentives;
-    }
-    /**
-     * Description of bonus and commission compensation aspects of the job.
-     *
-     * @param fIncentives java.lang.String value to set.
-     */
-    @Override
-    public void setIncentives(java.lang.String fIncentives) {
-        this.fIncentives = Text.of(fIncentives);
+    public void setIncentives(Text incentives) {
+        this.incentives = incentives;
     }
 
-    private Boolean fDirectApply;
+    private Boolean directApply;
 
     /**
      * Indicates whether an [[url]] that is associated with a [[JobPosting]] enables direct application for the job, via the posting website. A job posting is considered to have directApply of [[True]] if an application process for the specified job can be directly initiated via the url(s) given (noting that e.g. multiple internet domains might nevertheless be involved at an implementation level). A value of [[False]] is appropriate if there is no clear path to applying directly online for the specified job, navigating directly from the JobPosting url(s) supplied.
@@ -338,33 +265,22 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Boolean getDirectApply() {
-        return fDirectApply;
+        return directApply;
     }
 
     /**
      * Indicates whether an [[url]] that is associated with a [[JobPosting]] enables direct application for the job, via the posting website. A job posting is considered to have directApply of [[True]] if an application process for the specified job can be directly initiated via the url(s) given (noting that e.g. multiple internet domains might nevertheless be involved at an implementation level). A value of [[False]] is appropriate if there is no clear path to applying directly online for the specified job, navigating directly from the JobPosting url(s) supplied.
      *
-     * @param fDirectApply Boolean value to set.
+     * @param directApply Boolean value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2907">https://github.com/schemaorg/schemaorg/issues/2907</a>
      */
     @Override
-    public void setDirectApply(Boolean fDirectApply) {
-        this.fDirectApply = fDirectApply;
-    }
-    /**
-     * Indicates whether an [[url]] that is associated with a [[JobPosting]] enables direct application for the job, via the posting website. A job posting is considered to have directApply of [[True]] if an application process for the specified job can be directly initiated via the url(s) given (noting that e.g. multiple internet domains might nevertheless be involved at an implementation level). A value of [[False]] is appropriate if there is no clear path to applying directly online for the specified job, navigating directly from the JobPosting url(s) supplied.
-     *
-     * @param fDirectApply java.lang.Boolean value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2907">https://github.com/schemaorg/schemaorg/issues/2907</a>
-     */
-    @Override
-    public void setDirectApply(java.lang.Boolean fDirectApply) {
-        this.fDirectApply = Boolean.of(fDirectApply);
+    public void setDirectApply(Boolean directApply) {
+        this.directApply = directApply;
     }
 
-    private Object fSensoryRequirement;
+    private Object sensoryRequirement;
 
     /**
      * A description of any sensory requirements and levels necessary to function on the job, including hearing and vision. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
@@ -375,66 +291,44 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getSensoryRequirement() {
-        return (T) fSensoryRequirement;
+        return (T) sensoryRequirement;
     }
 
     /**
      * A description of any sensory requirements and levels necessary to function on the job, including hearing and vision. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
      *
-     * @param fSensoryRequirement DefinedTerm value to set.
+     * @param sensoryRequirement DefinedTerm value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
      */
     @Override
-    public void setSensoryRequirement(DefinedTerm fSensoryRequirement) {
-        this.fSensoryRequirement = fSensoryRequirement;
+    public void setSensoryRequirement(DefinedTerm sensoryRequirement) {
+        this.sensoryRequirement = sensoryRequirement;
     }
     /**
      * A description of any sensory requirements and levels necessary to function on the job, including hearing and vision. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
      *
-     * @param fSensoryRequirement URL value to set.
+     * @param sensoryRequirement URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
      */
     @Override
-    public void setSensoryRequirement(URL fSensoryRequirement) {
-        this.fSensoryRequirement = fSensoryRequirement;
+    public void setSensoryRequirement(URL sensoryRequirement) {
+        this.sensoryRequirement = sensoryRequirement;
     }
     /**
      * A description of any sensory requirements and levels necessary to function on the job, including hearing and vision. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
      *
-     * @param fSensoryRequirement java.net.URL value to set.
+     * @param sensoryRequirement Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
      */
     @Override
-    public void setSensoryRequirement(java.net.URL fSensoryRequirement) {
-        this.fSensoryRequirement = URL.of(fSensoryRequirement);
-    }
-    /**
-     * A description of any sensory requirements and levels necessary to function on the job, including hearing and vision. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
-     *
-     * @param fSensoryRequirement Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
-     */
-    @Override
-    public void setSensoryRequirement(Text fSensoryRequirement) {
-        this.fSensoryRequirement = fSensoryRequirement;
-    }
-    /**
-     * A description of any sensory requirements and levels necessary to function on the job, including hearing and vision. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
-     *
-     * @param fSensoryRequirement java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
-     */
-    @Override
-    public void setSensoryRequirement(java.lang.String fSensoryRequirement) {
-        this.fSensoryRequirement = Text.of(fSensoryRequirement);
+    public void setSensoryRequirement(Text sensoryRequirement) {
+        this.sensoryRequirement = sensoryRequirement;
     }
 
-    private AdministrativeArea fApplicantLocationRequirements;
+    private AdministrativeArea applicantLocationRequirements;
 
     /**
      * The location(s) applicants can apply from. This is usually used for telecommuting jobs where the applicant does not need to be in a physical office. Note: This should not be used for citizenship or work visa requirements.
@@ -445,22 +339,22 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public AdministrativeArea getApplicantLocationRequirements() {
-        return fApplicantLocationRequirements;
+        return applicantLocationRequirements;
     }
 
     /**
      * The location(s) applicants can apply from. This is usually used for telecommuting jobs where the applicant does not need to be in a physical office. Note: This should not be used for citizenship or work visa requirements.
      *
-     * @param fApplicantLocationRequirements AdministrativeArea value to set.
+     * @param applicantLocationRequirements AdministrativeArea value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2083">https://github.com/schemaorg/schemaorg/issues/2083</a>
      */
     @Override
-    public void setApplicantLocationRequirements(AdministrativeArea fApplicantLocationRequirements) {
-        this.fApplicantLocationRequirements = fApplicantLocationRequirements;
+    public void setApplicantLocationRequirements(AdministrativeArea applicantLocationRequirements) {
+        this.applicantLocationRequirements = applicantLocationRequirements;
     }
 
-    private Text fWorkHours;
+    private Text workHours;
 
     /**
      * The typical working hours for this job (e.g. 1st shift, night shift, 8am-5pm).
@@ -469,29 +363,20 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getWorkHours() {
-        return fWorkHours;
+        return workHours;
     }
 
     /**
      * The typical working hours for this job (e.g. 1st shift, night shift, 8am-5pm).
      *
-     * @param fWorkHours Text value to set.
+     * @param workHours Text value to set.
      */
     @Override
-    public void setWorkHours(Text fWorkHours) {
-        this.fWorkHours = fWorkHours;
-    }
-    /**
-     * The typical working hours for this job (e.g. 1st shift, night shift, 8am-5pm).
-     *
-     * @param fWorkHours java.lang.String value to set.
-     */
-    @Override
-    public void setWorkHours(java.lang.String fWorkHours) {
-        this.fWorkHours = Text.of(fWorkHours);
+    public void setWorkHours(Text workHours) {
+        this.workHours = workHours;
     }
 
-    private Object fJobStartDate;
+    private Object jobStartDate;
 
     /**
      * The date on which a successful applicant for this job would be expected to start work. Choose a specific date in the future or use the jobImmediateStart property to indicate the position is to be filled as soon as possible.
@@ -502,55 +387,33 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getJobStartDate() {
-        return (T) fJobStartDate;
+        return (T) jobStartDate;
     }
 
     /**
      * The date on which a successful applicant for this job would be expected to start work. Choose a specific date in the future or use the jobImmediateStart property to indicate the position is to be filled as soon as possible.
      *
-     * @param fJobStartDate Date value to set.
+     * @param jobStartDate Date value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2244">https://github.com/schemaorg/schemaorg/issues/2244</a>
      */
     @Override
-    public void setJobStartDate(Date fJobStartDate) {
-        this.fJobStartDate = fJobStartDate;
+    public void setJobStartDate(Date jobStartDate) {
+        this.jobStartDate = jobStartDate;
     }
     /**
      * The date on which a successful applicant for this job would be expected to start work. Choose a specific date in the future or use the jobImmediateStart property to indicate the position is to be filled as soon as possible.
      *
-     * @param fJobStartDate java.time.LocalDate value to set.
+     * @param jobStartDate Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2244">https://github.com/schemaorg/schemaorg/issues/2244</a>
      */
     @Override
-    public void setJobStartDate(java.time.LocalDate fJobStartDate) {
-        this.fJobStartDate = Date.of(fJobStartDate);
-    }
-    /**
-     * The date on which a successful applicant for this job would be expected to start work. Choose a specific date in the future or use the jobImmediateStart property to indicate the position is to be filled as soon as possible.
-     *
-     * @param fJobStartDate Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2244">https://github.com/schemaorg/schemaorg/issues/2244</a>
-     */
-    @Override
-    public void setJobStartDate(Text fJobStartDate) {
-        this.fJobStartDate = fJobStartDate;
-    }
-    /**
-     * The date on which a successful applicant for this job would be expected to start work. Choose a specific date in the future or use the jobImmediateStart property to indicate the position is to be filled as soon as possible.
-     *
-     * @param fJobStartDate java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2244">https://github.com/schemaorg/schemaorg/issues/2244</a>
-     */
-    @Override
-    public void setJobStartDate(java.lang.String fJobStartDate) {
-        this.fJobStartDate = Text.of(fJobStartDate);
+    public void setJobStartDate(Text jobStartDate) {
+        this.jobStartDate = jobStartDate;
     }
 
-    private Text fEmploymentType;
+    private Text employmentType;
 
     /**
      * Type of employment (e.g. full-time, part-time, contract, temporary, seasonal, internship).
@@ -559,29 +422,20 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getEmploymentType() {
-        return fEmploymentType;
+        return employmentType;
     }
 
     /**
      * Type of employment (e.g. full-time, part-time, contract, temporary, seasonal, internship).
      *
-     * @param fEmploymentType Text value to set.
+     * @param employmentType Text value to set.
      */
     @Override
-    public void setEmploymentType(Text fEmploymentType) {
-        this.fEmploymentType = fEmploymentType;
-    }
-    /**
-     * Type of employment (e.g. full-time, part-time, contract, temporary, seasonal, internship).
-     *
-     * @param fEmploymentType java.lang.String value to set.
-     */
-    @Override
-    public void setEmploymentType(java.lang.String fEmploymentType) {
-        this.fEmploymentType = Text.of(fEmploymentType);
+    public void setEmploymentType(Text employmentType) {
+        this.employmentType = employmentType;
     }
 
-    private Text fSpecialCommitments;
+    private Text specialCommitments;
 
     /**
      * Any special commitments associated with this job posting. Valid entries include VeteranCommit, MilitarySpouseCommit, etc.
@@ -590,29 +444,20 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getSpecialCommitments() {
-        return fSpecialCommitments;
+        return specialCommitments;
     }
 
     /**
      * Any special commitments associated with this job posting. Valid entries include VeteranCommit, MilitarySpouseCommit, etc.
      *
-     * @param fSpecialCommitments Text value to set.
+     * @param specialCommitments Text value to set.
      */
     @Override
-    public void setSpecialCommitments(Text fSpecialCommitments) {
-        this.fSpecialCommitments = fSpecialCommitments;
-    }
-    /**
-     * Any special commitments associated with this job posting. Valid entries include VeteranCommit, MilitarySpouseCommit, etc.
-     *
-     * @param fSpecialCommitments java.lang.String value to set.
-     */
-    @Override
-    public void setSpecialCommitments(java.lang.String fSpecialCommitments) {
-        this.fSpecialCommitments = Text.of(fSpecialCommitments);
+    public void setSpecialCommitments(Text specialCommitments) {
+        this.specialCommitments = specialCommitments;
     }
 
-    private ContactPoint fApplicationContact;
+    private ContactPoint applicationContact;
 
     /**
      * Contact details for further information relevant to this job posting.
@@ -623,22 +468,22 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public ContactPoint getApplicationContact() {
-        return fApplicationContact;
+        return applicationContact;
     }
 
     /**
      * Contact details for further information relevant to this job posting.
      *
-     * @param fApplicationContact ContactPoint value to set.
+     * @param applicationContact ContactPoint value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2396">https://github.com/schemaorg/schemaorg/issues/2396</a>
      */
     @Override
-    public void setApplicationContact(ContactPoint fApplicationContact) {
-        this.fApplicationContact = fApplicationContact;
+    public void setApplicationContact(ContactPoint applicationContact) {
+        this.applicationContact = applicationContact;
     }
 
-    private Text fIncentiveCompensation;
+    private Text incentiveCompensation;
 
     /**
      * Description of bonus and commission compensation aspects of the job.
@@ -647,29 +492,20 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getIncentiveCompensation() {
-        return fIncentiveCompensation;
+        return incentiveCompensation;
     }
 
     /**
      * Description of bonus and commission compensation aspects of the job.
      *
-     * @param fIncentiveCompensation Text value to set.
+     * @param incentiveCompensation Text value to set.
      */
     @Override
-    public void setIncentiveCompensation(Text fIncentiveCompensation) {
-        this.fIncentiveCompensation = fIncentiveCompensation;
-    }
-    /**
-     * Description of bonus and commission compensation aspects of the job.
-     *
-     * @param fIncentiveCompensation java.lang.String value to set.
-     */
-    @Override
-    public void setIncentiveCompensation(java.lang.String fIncentiveCompensation) {
-        this.fIncentiveCompensation = Text.of(fIncentiveCompensation);
+    public void setIncentiveCompensation(Text incentiveCompensation) {
+        this.incentiveCompensation = incentiveCompensation;
     }
 
-    private Occupation fRelevantOccupation;
+    private Occupation relevantOccupation;
 
     /**
      * The Occupation for the JobPosting.
@@ -679,21 +515,21 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Occupation getRelevantOccupation() {
-        return fRelevantOccupation;
+        return relevantOccupation;
     }
 
     /**
      * The Occupation for the JobPosting.
      *
-     * @param fRelevantOccupation Occupation value to set.
+     * @param relevantOccupation Occupation value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
     @Override
-    public void setRelevantOccupation(Occupation fRelevantOccupation) {
-        this.fRelevantOccupation = fRelevantOccupation;
+    public void setRelevantOccupation(Occupation relevantOccupation) {
+        this.relevantOccupation = relevantOccupation;
     }
 
-    private Integer fTotalJobOpenings;
+    private Integer totalJobOpenings;
 
     /**
      * The number of positions open for this job posting. Use a positive integer. Do not use if the number of positions is unclear or not known.
@@ -704,33 +540,22 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Integer getTotalJobOpenings() {
-        return fTotalJobOpenings;
+        return totalJobOpenings;
     }
 
     /**
      * The number of positions open for this job posting. Use a positive integer. Do not use if the number of positions is unclear or not known.
      *
-     * @param fTotalJobOpenings Integer value to set.
+     * @param totalJobOpenings Integer value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2329">https://github.com/schemaorg/schemaorg/issues/2329</a>
      */
     @Override
-    public void setTotalJobOpenings(Integer fTotalJobOpenings) {
-        this.fTotalJobOpenings = fTotalJobOpenings;
-    }
-    /**
-     * The number of positions open for this job posting. Use a positive integer. Do not use if the number of positions is unclear or not known.
-     *
-     * @param fTotalJobOpenings java.lang.Integer value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2329">https://github.com/schemaorg/schemaorg/issues/2329</a>
-     */
-    @Override
-    public void setTotalJobOpenings(java.lang.Integer fTotalJobOpenings) {
-        this.fTotalJobOpenings = Integer.of(fTotalJobOpenings);
+    public void setTotalJobOpenings(Integer totalJobOpenings) {
+        this.totalJobOpenings = totalJobOpenings;
     }
 
-    private Object fExperienceRequirements;
+    private Object experienceRequirements;
 
     /**
      * Description of skills and experience needed for the position or Occupation.
@@ -740,41 +565,31 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getExperienceRequirements() {
-        return (T) fExperienceRequirements;
+        return (T) experienceRequirements;
     }
 
     /**
      * Description of skills and experience needed for the position or Occupation.
      *
-     * @param fExperienceRequirements Text value to set.
+     * @param experienceRequirements Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
     @Override
-    public void setExperienceRequirements(Text fExperienceRequirements) {
-        this.fExperienceRequirements = fExperienceRequirements;
+    public void setExperienceRequirements(Text experienceRequirements) {
+        this.experienceRequirements = experienceRequirements;
     }
     /**
      * Description of skills and experience needed for the position or Occupation.
      *
-     * @param fExperienceRequirements java.lang.String value to set.
+     * @param experienceRequirements OccupationalExperienceRequirements value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
     @Override
-    public void setExperienceRequirements(java.lang.String fExperienceRequirements) {
-        this.fExperienceRequirements = Text.of(fExperienceRequirements);
-    }
-    /**
-     * Description of skills and experience needed for the position or Occupation.
-     *
-     * @param fExperienceRequirements OccupationalExperienceRequirements value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    @Override
-    public void setExperienceRequirements(OccupationalExperienceRequirements fExperienceRequirements) {
-        this.fExperienceRequirements = fExperienceRequirements;
+    public void setExperienceRequirements(OccupationalExperienceRequirements experienceRequirements) {
+        this.experienceRequirements = experienceRequirements;
     }
 
-    private Text fJobBenefits;
+    private Text jobBenefits;
 
     /**
      * Description of benefits associated with the job.
@@ -783,29 +598,20 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getJobBenefits() {
-        return fJobBenefits;
+        return jobBenefits;
     }
 
     /**
      * Description of benefits associated with the job.
      *
-     * @param fJobBenefits Text value to set.
+     * @param jobBenefits Text value to set.
      */
     @Override
-    public void setJobBenefits(Text fJobBenefits) {
-        this.fJobBenefits = fJobBenefits;
-    }
-    /**
-     * Description of benefits associated with the job.
-     *
-     * @param fJobBenefits java.lang.String value to set.
-     */
-    @Override
-    public void setJobBenefits(java.lang.String fJobBenefits) {
-        this.fJobBenefits = Text.of(fJobBenefits);
+    public void setJobBenefits(Text jobBenefits) {
+        this.jobBenefits = jobBenefits;
     }
 
-    private Text fSalaryCurrency;
+    private Text salaryCurrency;
 
     /**
      * The currency (coded using [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217) ) used for the main salary information in this job posting or for this employee.
@@ -814,29 +620,20 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getSalaryCurrency() {
-        return fSalaryCurrency;
+        return salaryCurrency;
     }
 
     /**
      * The currency (coded using [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217) ) used for the main salary information in this job posting or for this employee.
      *
-     * @param fSalaryCurrency Text value to set.
+     * @param salaryCurrency Text value to set.
      */
     @Override
-    public void setSalaryCurrency(Text fSalaryCurrency) {
-        this.fSalaryCurrency = fSalaryCurrency;
-    }
-    /**
-     * The currency (coded using [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217) ) used for the main salary information in this job posting or for this employee.
-     *
-     * @param fSalaryCurrency java.lang.String value to set.
-     */
-    @Override
-    public void setSalaryCurrency(java.lang.String fSalaryCurrency) {
-        this.fSalaryCurrency = Text.of(fSalaryCurrency);
+    public void setSalaryCurrency(Text salaryCurrency) {
+        this.salaryCurrency = salaryCurrency;
     }
 
-    private Boolean fExperienceInPlaceOfEducation;
+    private Boolean experienceInPlaceOfEducation;
 
     /**
      * Indicates whether a [[JobPosting]] will accept experience (as indicated by [[OccupationalExperienceRequirements]]) in place of its formal educational qualifications (as indicated by [[educationRequirements]]). If true, indicates that satisfying one of these requirements is sufficient.
@@ -847,33 +644,22 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Boolean getExperienceInPlaceOfEducation() {
-        return fExperienceInPlaceOfEducation;
+        return experienceInPlaceOfEducation;
     }
 
     /**
      * Indicates whether a [[JobPosting]] will accept experience (as indicated by [[OccupationalExperienceRequirements]]) in place of its formal educational qualifications (as indicated by [[educationRequirements]]). If true, indicates that satisfying one of these requirements is sufficient.
      *
-     * @param fExperienceInPlaceOfEducation Boolean value to set.
+     * @param experienceInPlaceOfEducation Boolean value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2681">https://github.com/schemaorg/schemaorg/issues/2681</a>
      */
     @Override
-    public void setExperienceInPlaceOfEducation(Boolean fExperienceInPlaceOfEducation) {
-        this.fExperienceInPlaceOfEducation = fExperienceInPlaceOfEducation;
-    }
-    /**
-     * Indicates whether a [[JobPosting]] will accept experience (as indicated by [[OccupationalExperienceRequirements]]) in place of its formal educational qualifications (as indicated by [[educationRequirements]]). If true, indicates that satisfying one of these requirements is sufficient.
-     *
-     * @param fExperienceInPlaceOfEducation java.lang.Boolean value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2681">https://github.com/schemaorg/schemaorg/issues/2681</a>
-     */
-    @Override
-    public void setExperienceInPlaceOfEducation(java.lang.Boolean fExperienceInPlaceOfEducation) {
-        this.fExperienceInPlaceOfEducation = Boolean.of(fExperienceInPlaceOfEducation);
+    public void setExperienceInPlaceOfEducation(Boolean experienceInPlaceOfEducation) {
+        this.experienceInPlaceOfEducation = experienceInPlaceOfEducation;
     }
 
-    private Object fSecurityClearanceRequirement;
+    private Object securityClearanceRequirement;
 
     /**
      * A description of any security clearance requirements of the job.
@@ -884,55 +670,33 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getSecurityClearanceRequirement() {
-        return (T) fSecurityClearanceRequirement;
+        return (T) securityClearanceRequirement;
     }
 
     /**
      * A description of any security clearance requirements of the job.
      *
-     * @param fSecurityClearanceRequirement URL value to set.
+     * @param securityClearanceRequirement URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
      */
     @Override
-    public void setSecurityClearanceRequirement(URL fSecurityClearanceRequirement) {
-        this.fSecurityClearanceRequirement = fSecurityClearanceRequirement;
+    public void setSecurityClearanceRequirement(URL securityClearanceRequirement) {
+        this.securityClearanceRequirement = securityClearanceRequirement;
     }
     /**
      * A description of any security clearance requirements of the job.
      *
-     * @param fSecurityClearanceRequirement java.net.URL value to set.
+     * @param securityClearanceRequirement Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
      */
     @Override
-    public void setSecurityClearanceRequirement(java.net.URL fSecurityClearanceRequirement) {
-        this.fSecurityClearanceRequirement = URL.of(fSecurityClearanceRequirement);
-    }
-    /**
-     * A description of any security clearance requirements of the job.
-     *
-     * @param fSecurityClearanceRequirement Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
-     */
-    @Override
-    public void setSecurityClearanceRequirement(Text fSecurityClearanceRequirement) {
-        this.fSecurityClearanceRequirement = fSecurityClearanceRequirement;
-    }
-    /**
-     * A description of any security clearance requirements of the job.
-     *
-     * @param fSecurityClearanceRequirement java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
-     */
-    @Override
-    public void setSecurityClearanceRequirement(java.lang.String fSecurityClearanceRequirement) {
-        this.fSecurityClearanceRequirement = Text.of(fSecurityClearanceRequirement);
+    public void setSecurityClearanceRequirement(Text securityClearanceRequirement) {
+        this.securityClearanceRequirement = securityClearanceRequirement;
     }
 
-    private Text fEligibilityToWorkRequirement;
+    private Text eligibilityToWorkRequirement;
 
     /**
      * The legal requirements such as citizenship, visa and other documentation required for an applicant to this job.
@@ -943,33 +707,22 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getEligibilityToWorkRequirement() {
-        return fEligibilityToWorkRequirement;
+        return eligibilityToWorkRequirement;
     }
 
     /**
      * The legal requirements such as citizenship, visa and other documentation required for an applicant to this job.
      *
-     * @param fEligibilityToWorkRequirement Text value to set.
+     * @param eligibilityToWorkRequirement Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
      */
     @Override
-    public void setEligibilityToWorkRequirement(Text fEligibilityToWorkRequirement) {
-        this.fEligibilityToWorkRequirement = fEligibilityToWorkRequirement;
-    }
-    /**
-     * The legal requirements such as citizenship, visa and other documentation required for an applicant to this job.
-     *
-     * @param fEligibilityToWorkRequirement java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
-     */
-    @Override
-    public void setEligibilityToWorkRequirement(java.lang.String fEligibilityToWorkRequirement) {
-        this.fEligibilityToWorkRequirement = Text.of(fEligibilityToWorkRequirement);
+    public void setEligibilityToWorkRequirement(Text eligibilityToWorkRequirement) {
+        this.eligibilityToWorkRequirement = eligibilityToWorkRequirement;
     }
 
-    private Object fEducationRequirements;
+    private Object educationRequirements;
 
     /**
      * Educational background needed for the position or Occupation.
@@ -981,47 +734,35 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getEducationRequirements() {
-        return (T) fEducationRequirements;
+        return (T) educationRequirements;
     }
 
     /**
      * Educational background needed for the position or Occupation.
      *
-     * @param fEducationRequirements EducationalOccupationalCredential value to set.
+     * @param educationRequirements EducationalOccupationalCredential value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
     @Override
-    public void setEducationRequirements(EducationalOccupationalCredential fEducationRequirements) {
-        this.fEducationRequirements = fEducationRequirements;
+    public void setEducationRequirements(EducationalOccupationalCredential educationRequirements) {
+        this.educationRequirements = educationRequirements;
     }
     /**
      * Educational background needed for the position or Occupation.
      *
-     * @param fEducationRequirements Text value to set.
+     * @param educationRequirements Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
     @Override
-    public void setEducationRequirements(Text fEducationRequirements) {
-        this.fEducationRequirements = fEducationRequirements;
-    }
-    /**
-     * Educational background needed for the position or Occupation.
-     *
-     * @param fEducationRequirements java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
-     */
-    @Override
-    public void setEducationRequirements(java.lang.String fEducationRequirements) {
-        this.fEducationRequirements = Text.of(fEducationRequirements);
+    public void setEducationRequirements(Text educationRequirements) {
+        this.educationRequirements = educationRequirements;
     }
 
-    private Text fBenefits;
+    private Text benefits;
 
     /**
      * Description of benefits associated with the job.
@@ -1030,29 +771,20 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getBenefits() {
-        return fBenefits;
+        return benefits;
     }
 
     /**
      * Description of benefits associated with the job.
      *
-     * @param fBenefits Text value to set.
+     * @param benefits Text value to set.
      */
     @Override
-    public void setBenefits(Text fBenefits) {
-        this.fBenefits = fBenefits;
-    }
-    /**
-     * Description of benefits associated with the job.
-     *
-     * @param fBenefits java.lang.String value to set.
-     */
-    @Override
-    public void setBenefits(java.lang.String fBenefits) {
-        this.fBenefits = Text.of(fBenefits);
+    public void setBenefits(Text benefits) {
+        this.benefits = benefits;
     }
 
-    private Object fIndustry;
+    private Object industry;
 
     /**
      * The industry associated with the job position.
@@ -1061,38 +793,29 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getIndustry() {
-        return (T) fIndustry;
+        return (T) industry;
     }
 
     /**
      * The industry associated with the job position.
      *
-     * @param fIndustry DefinedTerm value to set.
+     * @param industry DefinedTerm value to set.
      */
     @Override
-    public void setIndustry(DefinedTerm fIndustry) {
-        this.fIndustry = fIndustry;
+    public void setIndustry(DefinedTerm industry) {
+        this.industry = industry;
     }
     /**
      * The industry associated with the job position.
      *
-     * @param fIndustry Text value to set.
+     * @param industry Text value to set.
      */
     @Override
-    public void setIndustry(Text fIndustry) {
-        this.fIndustry = fIndustry;
-    }
-    /**
-     * The industry associated with the job position.
-     *
-     * @param fIndustry java.lang.String value to set.
-     */
-    @Override
-    public void setIndustry(java.lang.String fIndustry) {
-        this.fIndustry = Text.of(fIndustry);
+    public void setIndustry(Text industry) {
+        this.industry = industry;
     }
 
-    private Object fBaseSalary;
+    private Object baseSalary;
 
     /**
      * The base salary of the job or of an employee in an EmployeeRole.
@@ -1101,47 +824,38 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getBaseSalary() {
-        return (T) fBaseSalary;
+        return (T) baseSalary;
     }
 
     /**
      * The base salary of the job or of an employee in an EmployeeRole.
      *
-     * @param fBaseSalary Number value to set.
+     * @param baseSalary Number value to set.
      */
     @Override
-    public void setBaseSalary(Number fBaseSalary) {
-        this.fBaseSalary = fBaseSalary;
+    public void setBaseSalary(Number baseSalary) {
+        this.baseSalary = baseSalary;
     }
     /**
      * The base salary of the job or of an employee in an EmployeeRole.
      *
-     * @param fBaseSalary java.lang.Number value to set.
+     * @param baseSalary PriceSpecification value to set.
      */
     @Override
-    public void setBaseSalary(java.lang.Number fBaseSalary) {
-        this.fBaseSalary = Number.of(fBaseSalary);
+    public void setBaseSalary(PriceSpecification baseSalary) {
+        this.baseSalary = baseSalary;
     }
     /**
      * The base salary of the job or of an employee in an EmployeeRole.
      *
-     * @param fBaseSalary PriceSpecification value to set.
+     * @param baseSalary MonetaryAmount value to set.
      */
     @Override
-    public void setBaseSalary(PriceSpecification fBaseSalary) {
-        this.fBaseSalary = fBaseSalary;
-    }
-    /**
-     * The base salary of the job or of an employee in an EmployeeRole.
-     *
-     * @param fBaseSalary MonetaryAmount value to set.
-     */
-    @Override
-    public void setBaseSalary(MonetaryAmount fBaseSalary) {
-        this.fBaseSalary = fBaseSalary;
+    public void setBaseSalary(MonetaryAmount baseSalary) {
+        this.baseSalary = baseSalary;
     }
 
-    private Object fDatePosted;
+    private Object datePosted;
 
     /**
      * Publication date of an online listing.
@@ -1152,55 +866,33 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getDatePosted() {
-        return (T) fDatePosted;
+        return (T) datePosted;
     }
 
     /**
      * Publication date of an online listing.
      *
-     * @param fDatePosted Date value to set.
+     * @param datePosted Date value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
     @Override
-    public void setDatePosted(Date fDatePosted) {
-        this.fDatePosted = fDatePosted;
+    public void setDatePosted(Date datePosted) {
+        this.datePosted = datePosted;
     }
     /**
      * Publication date of an online listing.
      *
-     * @param fDatePosted java.time.LocalDate value to set.
+     * @param datePosted DateTime value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
     @Override
-    public void setDatePosted(java.time.LocalDate fDatePosted) {
-        this.fDatePosted = Date.of(fDatePosted);
-    }
-    /**
-     * Publication date of an online listing.
-     *
-     * @param fDatePosted DateTime value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public void setDatePosted(DateTime fDatePosted) {
-        this.fDatePosted = fDatePosted;
-    }
-    /**
-     * Publication date of an online listing.
-     *
-     * @param fDatePosted java.time.LocalDateTime value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public void setDatePosted(java.time.LocalDateTime fDatePosted) {
-        this.fDatePosted = DateTime.of(fDatePosted);
+    public void setDatePosted(DateTime datePosted) {
+        this.datePosted = datePosted;
     }
 
-    private Object fSkills;
+    private Object skills;
 
     /**
      * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is desired or required to fulfill this role or to work in this occupation.
@@ -1211,44 +903,33 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getSkills() {
-        return (T) fSkills;
+        return (T) skills;
     }
 
     /**
      * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is desired or required to fulfill this role or to work in this occupation.
      *
-     * @param fSkills Text value to set.
+     * @param skills Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
     @Override
-    public void setSkills(Text fSkills) {
-        this.fSkills = fSkills;
+    public void setSkills(Text skills) {
+        this.skills = skills;
     }
     /**
      * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is desired or required to fulfill this role or to work in this occupation.
      *
-     * @param fSkills java.lang.String value to set.
+     * @param skills DefinedTerm value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
     @Override
-    public void setSkills(java.lang.String fSkills) {
-        this.fSkills = Text.of(fSkills);
-    }
-    /**
-     * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is desired or required to fulfill this role or to work in this occupation.
-     *
-     * @param fSkills DefinedTerm value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    @Override
-    public void setSkills(DefinedTerm fSkills) {
-        this.fSkills = fSkills;
+    public void setSkills(DefinedTerm skills) {
+        this.skills = skills;
     }
 
-    private Text fTitle;
+    private Text title;
 
     /**
      * The title of the job.
@@ -1257,29 +938,20 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getTitle() {
-        return fTitle;
+        return title;
     }
 
     /**
      * The title of the job.
      *
-     * @param fTitle Text value to set.
+     * @param title Text value to set.
      */
     @Override
-    public void setTitle(Text fTitle) {
-        this.fTitle = fTitle;
-    }
-    /**
-     * The title of the job.
-     *
-     * @param fTitle java.lang.String value to set.
-     */
-    @Override
-    public void setTitle(java.lang.String fTitle) {
-        this.fTitle = Text.of(fTitle);
+    public void setTitle(Text title) {
+        this.title = title;
     }
 
-    private Organization fHiringOrganization;
+    private Organization hiringOrganization;
 
     /**
      * Organization offering the job position.
@@ -1288,20 +960,20 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Organization getHiringOrganization() {
-        return fHiringOrganization;
+        return hiringOrganization;
     }
 
     /**
      * Organization offering the job position.
      *
-     * @param fHiringOrganization Organization value to set.
+     * @param hiringOrganization Organization value to set.
      */
     @Override
-    public void setHiringOrganization(Organization fHiringOrganization) {
-        this.fHiringOrganization = fHiringOrganization;
+    public void setHiringOrganization(Organization hiringOrganization) {
+        this.hiringOrganization = hiringOrganization;
     }
 
-    private Boolean fJobImmediateStart;
+    private Boolean jobImmediateStart;
 
     /**
      * An indicator as to whether a position is available for an immediate start.
@@ -1312,33 +984,22 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Boolean getJobImmediateStart() {
-        return fJobImmediateStart;
+        return jobImmediateStart;
     }
 
     /**
      * An indicator as to whether a position is available for an immediate start.
      *
-     * @param fJobImmediateStart Boolean value to set.
+     * @param jobImmediateStart Boolean value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2244">https://github.com/schemaorg/schemaorg/issues/2244</a>
      */
     @Override
-    public void setJobImmediateStart(Boolean fJobImmediateStart) {
-        this.fJobImmediateStart = fJobImmediateStart;
-    }
-    /**
-     * An indicator as to whether a position is available for an immediate start.
-     *
-     * @param fJobImmediateStart java.lang.Boolean value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2244">https://github.com/schemaorg/schemaorg/issues/2244</a>
-     */
-    @Override
-    public void setJobImmediateStart(java.lang.Boolean fJobImmediateStart) {
-        this.fJobImmediateStart = Boolean.of(fJobImmediateStart);
+    public void setJobImmediateStart(Boolean jobImmediateStart) {
+        this.jobImmediateStart = jobImmediateStart;
     }
 
-    private Object fValidThrough;
+    private Object validThrough;
 
     /**
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
@@ -1348,51 +1009,31 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getValidThrough() {
-        return (T) fValidThrough;
+        return (T) validThrough;
     }
 
     /**
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
      *
-     * @param fValidThrough DateTime value to set.
+     * @param validThrough DateTime value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setValidThrough(DateTime fValidThrough) {
-        this.fValidThrough = fValidThrough;
+    public void setValidThrough(DateTime validThrough) {
+        this.validThrough = validThrough;
     }
     /**
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
      *
-     * @param fValidThrough java.time.LocalDateTime value to set.
+     * @param validThrough Date value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setValidThrough(java.time.LocalDateTime fValidThrough) {
-        this.fValidThrough = DateTime.of(fValidThrough);
-    }
-    /**
-     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
-     *
-     * @param fValidThrough Date value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setValidThrough(Date fValidThrough) {
-        this.fValidThrough = fValidThrough;
-    }
-    /**
-     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
-     *
-     * @param fValidThrough java.time.LocalDate value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setValidThrough(java.time.LocalDate fValidThrough) {
-        this.fValidThrough = Date.of(fValidThrough);
+    public void setValidThrough(Date validThrough) {
+        this.validThrough = validThrough;
     }
 
-    private Organization fEmploymentUnit;
+    private Organization employmentUnit;
 
     /**
      * Indicates the department, unit and/or facility where the employee reports and/or in which the job is to be performed.
@@ -1403,22 +1044,22 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Organization getEmploymentUnit() {
-        return fEmploymentUnit;
+        return employmentUnit;
     }
 
     /**
      * Indicates the department, unit and/or facility where the employee reports and/or in which the job is to be performed.
      *
-     * @param fEmploymentUnit Organization value to set.
+     * @param employmentUnit Organization value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2296">https://github.com/schemaorg/schemaorg/issues/2296</a>
      */
     @Override
-    public void setEmploymentUnit(Organization fEmploymentUnit) {
-        this.fEmploymentUnit = fEmploymentUnit;
+    public void setEmploymentUnit(Organization employmentUnit) {
+        this.employmentUnit = employmentUnit;
     }
 
-    private Object fQualifications;
+    private Object qualifications;
 
     /**
      * Specific qualifications required for this role or Occupation.
@@ -1430,47 +1071,35 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getQualifications() {
-        return (T) fQualifications;
+        return (T) qualifications;
     }
 
     /**
      * Specific qualifications required for this role or Occupation.
      *
-     * @param fQualifications Text value to set.
+     * @param qualifications Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
     @Override
-    public void setQualifications(Text fQualifications) {
-        this.fQualifications = fQualifications;
+    public void setQualifications(Text qualifications) {
+        this.qualifications = qualifications;
     }
     /**
      * Specific qualifications required for this role or Occupation.
      *
-     * @param fQualifications java.lang.String value to set.
+     * @param qualifications EducationalOccupationalCredential value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
     @Override
-    public void setQualifications(java.lang.String fQualifications) {
-        this.fQualifications = Text.of(fQualifications);
-    }
-    /**
-     * Specific qualifications required for this role or Occupation.
-     *
-     * @param fQualifications EducationalOccupationalCredential value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
-     */
-    @Override
-    public void setQualifications(EducationalOccupationalCredential fQualifications) {
-        this.fQualifications = fQualifications;
+    public void setQualifications(EducationalOccupationalCredential qualifications) {
+        this.qualifications = qualifications;
     }
 
-    private Object fOccupationalCategory;
+    private Object occupationalCategory;
 
     /**
      * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.<br/>
@@ -1485,14 +1114,14 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getOccupationalCategory() {
-        return (T) fOccupationalCategory;
+        return (T) occupationalCategory;
     }
 
     /**
      * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.<br/>
      * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
      *
-     * @param fOccupationalCategory CategoryCode value to set.
+     * @param occupationalCategory CategoryCode value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
@@ -1500,14 +1129,14 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
     @Override
-    public void setOccupationalCategory(CategoryCode fOccupationalCategory) {
-        this.fOccupationalCategory = fOccupationalCategory;
+    public void setOccupationalCategory(CategoryCode occupationalCategory) {
+        this.occupationalCategory = occupationalCategory;
     }
     /**
      * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.<br/>
      * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
      *
-     * @param fOccupationalCategory Text value to set.
+     * @param occupationalCategory Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
@@ -1515,26 +1144,11 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
     @Override
-    public void setOccupationalCategory(Text fOccupationalCategory) {
-        this.fOccupationalCategory = fOccupationalCategory;
-    }
-    /**
-     * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.<br/>
-     * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
-     *
-     * @param fOccupationalCategory java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    @Override
-    public void setOccupationalCategory(java.lang.String fOccupationalCategory) {
-        this.fOccupationalCategory = Text.of(fOccupationalCategory);
+    public void setOccupationalCategory(Text occupationalCategory) {
+        this.occupationalCategory = occupationalCategory;
     }
 
-    private Object fMainEntityOfPage;
+    private Object mainEntityOfPage;
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -1543,38 +1157,29 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
+        return (T) mainEntityOfPage;
     }
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param fMainEntityOfPage CreativeWork value to set.
+     * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(CreativeWork fMainEntityOfPage) {
-        this.fMainEntityOfPage = fMainEntityOfPage;
+    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
     }
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param fMainEntityOfPage URL value to set.
+     * @param mainEntityOfPage URL value to set.
      */
     @Override
-    public void setMainEntityOfPage(URL fMainEntityOfPage) {
-        this.fMainEntityOfPage = fMainEntityOfPage;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param fMainEntityOfPage java.net.URL value to set.
-     */
-    @Override
-    public void setMainEntityOfPage(java.net.URL fMainEntityOfPage) {
-        this.fMainEntityOfPage = URL.of(fMainEntityOfPage);
+    public void setMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
     }
 
-    private Text fAlternateName;
+    private Text alternateName;
 
     /**
      * An alias for the item.
@@ -1583,29 +1188,20 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getAlternateName() {
-        return fAlternateName;
+        return alternateName;
     }
 
     /**
      * An alias for the item.
      *
-     * @param fAlternateName Text value to set.
+     * @param alternateName Text value to set.
      */
     @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
-    }
-    /**
-     * An alias for the item.
-     *
-     * @param fAlternateName java.lang.String value to set.
-     */
-    @Override
-    public void setAlternateName(java.lang.String fAlternateName) {
-        this.fAlternateName = Text.of(fAlternateName);
+    public void setAlternateName(Text alternateName) {
+        this.alternateName = alternateName;
     }
 
-    private Text fName;
+    private Text name;
 
     /**
      * The name of the item.
@@ -1614,29 +1210,20 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getName() {
-        return fName;
+        return name;
     }
 
     /**
      * The name of the item.
      *
-     * @param fName Text value to set.
+     * @param name Text value to set.
      */
     @Override
-    public void setName(Text fName) {
-        this.fName = fName;
-    }
-    /**
-     * The name of the item.
-     *
-     * @param fName java.lang.String value to set.
-     */
-    @Override
-    public void setName(java.lang.String fName) {
-        this.fName = Text.of(fName);
+    public void setName(Text name) {
+        this.name = name;
     }
 
-    private Action fPotentialAction;
+    private Action potentialAction;
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -1645,20 +1232,20 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Action getPotentialAction() {
-        return fPotentialAction;
+        return potentialAction;
     }
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      *
-     * @param fPotentialAction Action value to set.
+     * @param potentialAction Action value to set.
      */
     @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
+    public void setPotentialAction(Action potentialAction) {
+        this.potentialAction = potentialAction;
     }
 
-    private Object fImage;
+    private Object image;
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -1667,38 +1254,29 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getImage() {
-        return (T) fImage;
+        return (T) image;
     }
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param fImage URL value to set.
+     * @param image URL value to set.
      */
     @Override
-    public void setImage(URL fImage) {
-        this.fImage = fImage;
+    public void setImage(URL image) {
+        this.image = image;
     }
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param fImage java.net.URL value to set.
+     * @param image ImageObject value to set.
      */
     @Override
-    public void setImage(java.net.URL fImage) {
-        this.fImage = URL.of(fImage);
-    }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param fImage ImageObject value to set.
-     */
-    @Override
-    public void setImage(ImageObject fImage) {
-        this.fImage = fImage;
+    public void setImage(ImageObject image) {
+        this.image = image;
     }
 
-    private URL fUrl;
+    private URL url;
 
     /**
      * URL of the item.
@@ -1707,29 +1285,20 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public URL getUrl() {
-        return fUrl;
+        return url;
     }
 
     /**
      * URL of the item.
      *
-     * @param fUrl URL value to set.
+     * @param url URL value to set.
      */
     @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
-    }
-    /**
-     * URL of the item.
-     *
-     * @param fUrl java.net.URL value to set.
-     */
-    @Override
-    public void setUrl(java.net.URL fUrl) {
-        this.fUrl = URL.of(fUrl);
+    public void setUrl(URL url) {
+        this.url = url;
     }
 
-    private Text fDescription;
+    private Text description;
 
     /**
      * A description of the item.
@@ -1738,29 +1307,20 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getDescription() {
-        return fDescription;
+        return description;
     }
 
     /**
      * A description of the item.
      *
-     * @param fDescription Text value to set.
+     * @param description Text value to set.
      */
     @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
-    }
-    /**
-     * A description of the item.
-     *
-     * @param fDescription java.lang.String value to set.
-     */
-    @Override
-    public void setDescription(java.lang.String fDescription) {
-        this.fDescription = Text.of(fDescription);
+    public void setDescription(Text description) {
+        this.description = description;
     }
 
-    private Object fSubjectOf;
+    private Object subjectOf;
 
     /**
      * A CreativeWork or Event about this Thing.
@@ -1770,31 +1330,31 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getSubjectOf() {
-        return (T) fSubjectOf;
+        return (T) subjectOf;
     }
 
     /**
      * A CreativeWork or Event about this Thing.
      *
-     * @param fSubjectOf Event value to set.
+     * @param subjectOf Event value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Event fSubjectOf) {
-        this.fSubjectOf = fSubjectOf;
+    public void setSubjectOf(Event subjectOf) {
+        this.subjectOf = subjectOf;
     }
     /**
      * A CreativeWork or Event about this Thing.
      *
-     * @param fSubjectOf CreativeWork value to set.
+     * @param subjectOf CreativeWork value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(CreativeWork fSubjectOf) {
-        this.fSubjectOf = fSubjectOf;
+    public void setSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = subjectOf;
     }
 
-    private URL fAdditionalType;
+    private URL additionalType;
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
@@ -1803,29 +1363,20 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public URL getAdditionalType() {
-        return fAdditionalType;
+        return additionalType;
     }
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
-     * @param fAdditionalType URL value to set.
+     * @param additionalType URL value to set.
      */
     @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
-    }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @param fAdditionalType java.net.URL value to set.
-     */
-    @Override
-    public void setAdditionalType(java.net.URL fAdditionalType) {
-        this.fAdditionalType = URL.of(fAdditionalType);
+    public void setAdditionalType(URL additionalType) {
+        this.additionalType = additionalType;
     }
 
-    private Text fDisambiguatingDescription;
+    private Text disambiguatingDescription;
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
@@ -1834,29 +1385,20 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getDisambiguatingDescription() {
-        return fDisambiguatingDescription;
+        return disambiguatingDescription;
     }
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
-     * @param fDisambiguatingDescription Text value to set.
+     * @param disambiguatingDescription Text value to set.
      */
     @Override
-    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = fDisambiguatingDescription;
-    }
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @param fDisambiguatingDescription java.lang.String value to set.
-     */
-    @Override
-    public void setDisambiguatingDescription(java.lang.String fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = Text.of(fDisambiguatingDescription);
+    public void setDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = disambiguatingDescription;
     }
 
-    private URL fSameAs;
+    private URL sameAs;
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
@@ -1865,29 +1407,20 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public URL getSameAs() {
-        return fSameAs;
+        return sameAs;
     }
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
-     * @param fSameAs URL value to set.
+     * @param sameAs URL value to set.
      */
     @Override
-    public void setSameAs(URL fSameAs) {
-        this.fSameAs = fSameAs;
-    }
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @param fSameAs java.net.URL value to set.
-     */
-    @Override
-    public void setSameAs(java.net.URL fSameAs) {
-        this.fSameAs = URL.of(fSameAs);
+    public void setSameAs(URL sameAs) {
+        this.sameAs = sameAs;
     }
 
-    private Object fIdentifier;
+    private Object identifier;
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -1897,57 +1430,37 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getIdentifier() {
-        return (T) fIdentifier;
+        return (T) identifier;
     }
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier URL value to set.
+     * @param identifier URL value to set.
      */
     @Override
-    public void setIdentifier(URL fIdentifier) {
-        this.fIdentifier = fIdentifier;
+    public void setIdentifier(URL identifier) {
+        this.identifier = identifier;
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier java.net.URL value to set.
+     * @param identifier Text value to set.
      */
     @Override
-    public void setIdentifier(java.net.URL fIdentifier) {
-        this.fIdentifier = URL.of(fIdentifier);
+    public void setIdentifier(Text identifier) {
+        this.identifier = identifier;
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier Text value to set.
+     * @param identifier PropertyValue value to set.
      */
     @Override
-    public void setIdentifier(Text fIdentifier) {
-        this.fIdentifier = fIdentifier;
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param fIdentifier java.lang.String value to set.
-     */
-    @Override
-    public void setIdentifier(java.lang.String fIdentifier) {
-        this.fIdentifier = Text.of(fIdentifier);
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param fIdentifier PropertyValue value to set.
-     */
-    @Override
-    public void setIdentifier(PropertyValue fIdentifier) {
-        this.fIdentifier = fIdentifier;
+    public void setIdentifier(PropertyValue identifier) {
+        this.identifier = identifier;
     }
 }

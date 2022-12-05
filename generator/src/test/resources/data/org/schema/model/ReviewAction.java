@@ -24,7 +24,7 @@ public interface ReviewAction extends AssessAction {
     /**
      * A sub property of result. The review that resulted in the performing of the action.
      *
-     * @param fResultReview Review value to set.
+     * @param resultReview Review value to set.
      */
-    void setResultReview(Review fResultReview);
+    void setResultReview(Review resultReview);
 }

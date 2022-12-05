@@ -28,15 +28,9 @@ public interface PropertyValueSpecification extends Intangible {
     /**
      * Specifies the allowed range for number of characters in a literal value.
      *
-     * @param fValueMaxLength Number value to set.
+     * @param valueMaxLength Number value to set.
      */
-    void setValueMaxLength(Number fValueMaxLength);
-    /**
-     * Specifies the allowed range for number of characters in a literal value.
-     *
-     * @param fValueMaxLength java.lang.Number value to set.
-     */
-    void setValueMaxLength(java.lang.Number fValueMaxLength);
+    void setValueMaxLength(Number valueMaxLength);
 
     /**
      * Whether or not a property is mutable.  Default is false. Specifying this for a property that also has a value makes it act similar to a "hidden" input in an HTML form.
@@ -48,15 +42,9 @@ public interface PropertyValueSpecification extends Intangible {
     /**
      * Whether or not a property is mutable.  Default is false. Specifying this for a property that also has a value makes it act similar to a "hidden" input in an HTML form.
      *
-     * @param fReadonlyValue Boolean value to set.
+     * @param readonlyValue Boolean value to set.
      */
-    void setReadonlyValue(Boolean fReadonlyValue);
-    /**
-     * Whether or not a property is mutable.  Default is false. Specifying this for a property that also has a value makes it act similar to a "hidden" input in an HTML form.
-     *
-     * @param fReadonlyValue java.lang.Boolean value to set.
-     */
-    void setReadonlyValue(java.lang.Boolean fReadonlyValue);
+    void setReadonlyValue(Boolean readonlyValue);
 
     /**
      * The upper value of some characteristic or property.
@@ -69,17 +57,10 @@ public interface PropertyValueSpecification extends Intangible {
     /**
      * The upper value of some characteristic or property.
      *
-     * @param fMaxValue Number value to set.
+     * @param maxValue Number value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setMaxValue(Number fMaxValue);
-    /**
-     * The upper value of some characteristic or property.
-     *
-     * @param fMaxValue java.lang.Number value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void setMaxValue(java.lang.Number fMaxValue);
+    void setMaxValue(Number maxValue);
 
     /**
      * Indicates the name of the PropertyValueSpecification to be used in URL templates and form encoding in a manner analogous to HTML's input@name.
@@ -91,15 +72,9 @@ public interface PropertyValueSpecification extends Intangible {
     /**
      * Indicates the name of the PropertyValueSpecification to be used in URL templates and form encoding in a manner analogous to HTML's input@name.
      *
-     * @param fValueName Text value to set.
+     * @param valueName Text value to set.
      */
-    void setValueName(Text fValueName);
-    /**
-     * Indicates the name of the PropertyValueSpecification to be used in URL templates and form encoding in a manner analogous to HTML's input@name.
-     *
-     * @param fValueName java.lang.String value to set.
-     */
-    void setValueName(java.lang.String fValueName);
+    void setValueName(Text valueName);
 
     /**
      * The default value of the input.  For properties that expect a literal, the default is a literal value, for properties that expect an object, it's an ID reference to one of the current values.
@@ -111,21 +86,15 @@ public interface PropertyValueSpecification extends Intangible {
     /**
      * The default value of the input.  For properties that expect a literal, the default is a literal value, for properties that expect an object, it's an ID reference to one of the current values.
      *
-     * @param fDefaultValue Text value to set.
+     * @param defaultValue Text value to set.
      */
-    void setDefaultValue(Text fDefaultValue);
+    void setDefaultValue(Text defaultValue);
     /**
      * The default value of the input.  For properties that expect a literal, the default is a literal value, for properties that expect an object, it's an ID reference to one of the current values.
      *
-     * @param fDefaultValue java.lang.String value to set.
+     * @param defaultValue Thing value to set.
      */
-    void setDefaultValue(java.lang.String fDefaultValue);
-    /**
-     * The default value of the input.  For properties that expect a literal, the default is a literal value, for properties that expect an object, it's an ID reference to one of the current values.
-     *
-     * @param fDefaultValue Thing value to set.
-     */
-    void setDefaultValue(Thing fDefaultValue);
+    void setDefaultValue(Thing defaultValue);
 
     /**
      * Specifies the minimum allowed range for number of characters in a literal value.
@@ -137,15 +106,9 @@ public interface PropertyValueSpecification extends Intangible {
     /**
      * Specifies the minimum allowed range for number of characters in a literal value.
      *
-     * @param fValueMinLength Number value to set.
+     * @param valueMinLength Number value to set.
      */
-    void setValueMinLength(Number fValueMinLength);
-    /**
-     * Specifies the minimum allowed range for number of characters in a literal value.
-     *
-     * @param fValueMinLength java.lang.Number value to set.
-     */
-    void setValueMinLength(java.lang.Number fValueMinLength);
+    void setValueMinLength(Number valueMinLength);
 
     /**
      * Whether the property must be filled in to complete the action.  Default is false.
@@ -157,15 +120,9 @@ public interface PropertyValueSpecification extends Intangible {
     /**
      * Whether the property must be filled in to complete the action.  Default is false.
      *
-     * @param fValueRequired Boolean value to set.
+     * @param valueRequired Boolean value to set.
      */
-    void setValueRequired(Boolean fValueRequired);
-    /**
-     * Whether the property must be filled in to complete the action.  Default is false.
-     *
-     * @param fValueRequired java.lang.Boolean value to set.
-     */
-    void setValueRequired(java.lang.Boolean fValueRequired);
+    void setValueRequired(Boolean valueRequired);
 
     /**
      * The lower value of some characteristic or property.
@@ -178,17 +135,10 @@ public interface PropertyValueSpecification extends Intangible {
     /**
      * The lower value of some characteristic or property.
      *
-     * @param fMinValue Number value to set.
+     * @param minValue Number value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setMinValue(Number fMinValue);
-    /**
-     * The lower value of some characteristic or property.
-     *
-     * @param fMinValue java.lang.Number value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void setMinValue(java.lang.Number fMinValue);
+    void setMinValue(Number minValue);
 
     /**
      * Specifies a regular expression for testing literal values according to the HTML spec.
@@ -200,15 +150,9 @@ public interface PropertyValueSpecification extends Intangible {
     /**
      * Specifies a regular expression for testing literal values according to the HTML spec.
      *
-     * @param fValuePattern Text value to set.
+     * @param valuePattern Text value to set.
      */
-    void setValuePattern(Text fValuePattern);
-    /**
-     * Specifies a regular expression for testing literal values according to the HTML spec.
-     *
-     * @param fValuePattern java.lang.String value to set.
-     */
-    void setValuePattern(java.lang.String fValuePattern);
+    void setValuePattern(Text valuePattern);
 
     /**
      * The stepValue attribute indicates the granularity that is expected (and required) of the value in a PropertyValueSpecification.
@@ -220,15 +164,9 @@ public interface PropertyValueSpecification extends Intangible {
     /**
      * The stepValue attribute indicates the granularity that is expected (and required) of the value in a PropertyValueSpecification.
      *
-     * @param fStepValue Number value to set.
+     * @param stepValue Number value to set.
      */
-    void setStepValue(Number fStepValue);
-    /**
-     * The stepValue attribute indicates the granularity that is expected (and required) of the value in a PropertyValueSpecification.
-     *
-     * @param fStepValue java.lang.Number value to set.
-     */
-    void setStepValue(java.lang.Number fStepValue);
+    void setStepValue(Number stepValue);
 
     /**
      * Whether multiple values are allowed for the property.  Default is false.
@@ -240,13 +178,7 @@ public interface PropertyValueSpecification extends Intangible {
     /**
      * Whether multiple values are allowed for the property.  Default is false.
      *
-     * @param fMultipleValues Boolean value to set.
+     * @param multipleValues Boolean value to set.
      */
-    void setMultipleValues(Boolean fMultipleValues);
-    /**
-     * Whether multiple values are allowed for the property.  Default is false.
-     *
-     * @param fMultipleValues java.lang.Boolean value to set.
-     */
-    void setMultipleValues(java.lang.Boolean fMultipleValues);
+    void setMultipleValues(Boolean multipleValues);
 }

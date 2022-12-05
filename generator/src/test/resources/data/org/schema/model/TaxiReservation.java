@@ -27,21 +27,15 @@ public interface TaxiReservation extends Reservation {
     /**
      * Number of people the reservation should accommodate.
      *
-     * @param fPartySize Integer value to set.
+     * @param partySize Integer value to set.
      */
-    void setPartySize(Integer fPartySize);
+    void setPartySize(Integer partySize);
     /**
      * Number of people the reservation should accommodate.
      *
-     * @param fPartySize java.lang.Integer value to set.
+     * @param partySize QuantitativeValue value to set.
      */
-    void setPartySize(java.lang.Integer fPartySize);
-    /**
-     * Number of people the reservation should accommodate.
-     *
-     * @param fPartySize QuantitativeValue value to set.
-     */
-    void setPartySize(QuantitativeValue fPartySize);
+    void setPartySize(QuantitativeValue partySize);
 
     /**
      * When a taxi will pickup a passenger or a rental car can be picked up.
@@ -53,15 +47,9 @@ public interface TaxiReservation extends Reservation {
     /**
      * When a taxi will pickup a passenger or a rental car can be picked up.
      *
-     * @param fPickupTime DateTime value to set.
+     * @param pickupTime DateTime value to set.
      */
-    void setPickupTime(DateTime fPickupTime);
-    /**
-     * When a taxi will pickup a passenger or a rental car can be picked up.
-     *
-     * @param fPickupTime java.time.LocalDateTime value to set.
-     */
-    void setPickupTime(java.time.LocalDateTime fPickupTime);
+    void setPickupTime(DateTime pickupTime);
 
     /**
      * Where a taxi will pick up a passenger or a rental car can be picked up.
@@ -73,7 +61,7 @@ public interface TaxiReservation extends Reservation {
     /**
      * Where a taxi will pick up a passenger or a rental car can be picked up.
      *
-     * @param fPickupLocation Place value to set.
+     * @param pickupLocation Place value to set.
      */
-    void setPickupLocation(Place fPickupLocation);
+    void setPickupLocation(Place pickupLocation);
 }

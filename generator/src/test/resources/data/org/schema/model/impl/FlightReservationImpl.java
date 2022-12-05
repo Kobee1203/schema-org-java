@@ -35,7 +35,7 @@ import org.schema.model.FlightReservation;
 @JsonLdTypeName("FlightReservation")
 public class FlightReservationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements FlightReservation {
 
-    private Object fPassengerPriorityStatus;
+    private Object passengerPriorityStatus;
 
     /**
      * The priority status assigned to a passenger for security or boarding (e.g. FastTrack or Priority).
@@ -44,38 +44,29 @@ public class FlightReservationImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getPassengerPriorityStatus() {
-        return (T) fPassengerPriorityStatus;
+        return (T) passengerPriorityStatus;
     }
 
     /**
      * The priority status assigned to a passenger for security or boarding (e.g. FastTrack or Priority).
      *
-     * @param fPassengerPriorityStatus QualitativeValue value to set.
+     * @param passengerPriorityStatus QualitativeValue value to set.
      */
     @Override
-    public void setPassengerPriorityStatus(QualitativeValue fPassengerPriorityStatus) {
-        this.fPassengerPriorityStatus = fPassengerPriorityStatus;
+    public void setPassengerPriorityStatus(QualitativeValue passengerPriorityStatus) {
+        this.passengerPriorityStatus = passengerPriorityStatus;
     }
     /**
      * The priority status assigned to a passenger for security or boarding (e.g. FastTrack or Priority).
      *
-     * @param fPassengerPriorityStatus Text value to set.
+     * @param passengerPriorityStatus Text value to set.
      */
     @Override
-    public void setPassengerPriorityStatus(Text fPassengerPriorityStatus) {
-        this.fPassengerPriorityStatus = fPassengerPriorityStatus;
-    }
-    /**
-     * The priority status assigned to a passenger for security or boarding (e.g. FastTrack or Priority).
-     *
-     * @param fPassengerPriorityStatus java.lang.String value to set.
-     */
-    @Override
-    public void setPassengerPriorityStatus(java.lang.String fPassengerPriorityStatus) {
-        this.fPassengerPriorityStatus = Text.of(fPassengerPriorityStatus);
+    public void setPassengerPriorityStatus(Text passengerPriorityStatus) {
+        this.passengerPriorityStatus = passengerPriorityStatus;
     }
 
-    private Text fBoardingGroup;
+    private Text boardingGroup;
 
     /**
      * The airline-specific indicator of boarding order / preference.
@@ -84,29 +75,20 @@ public class FlightReservationImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getBoardingGroup() {
-        return fBoardingGroup;
+        return boardingGroup;
     }
 
     /**
      * The airline-specific indicator of boarding order / preference.
      *
-     * @param fBoardingGroup Text value to set.
+     * @param boardingGroup Text value to set.
      */
     @Override
-    public void setBoardingGroup(Text fBoardingGroup) {
-        this.fBoardingGroup = fBoardingGroup;
-    }
-    /**
-     * The airline-specific indicator of boarding order / preference.
-     *
-     * @param fBoardingGroup java.lang.String value to set.
-     */
-    @Override
-    public void setBoardingGroup(java.lang.String fBoardingGroup) {
-        this.fBoardingGroup = Text.of(fBoardingGroup);
+    public void setBoardingGroup(Text boardingGroup) {
+        this.boardingGroup = boardingGroup;
     }
 
-    private Text fSecurityScreening;
+    private Text securityScreening;
 
     /**
      * The type of security screening the passenger is subject to.
@@ -115,29 +97,20 @@ public class FlightReservationImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getSecurityScreening() {
-        return fSecurityScreening;
+        return securityScreening;
     }
 
     /**
      * The type of security screening the passenger is subject to.
      *
-     * @param fSecurityScreening Text value to set.
+     * @param securityScreening Text value to set.
      */
     @Override
-    public void setSecurityScreening(Text fSecurityScreening) {
-        this.fSecurityScreening = fSecurityScreening;
-    }
-    /**
-     * The type of security screening the passenger is subject to.
-     *
-     * @param fSecurityScreening java.lang.String value to set.
-     */
-    @Override
-    public void setSecurityScreening(java.lang.String fSecurityScreening) {
-        this.fSecurityScreening = Text.of(fSecurityScreening);
+    public void setSecurityScreening(Text securityScreening) {
+        this.securityScreening = securityScreening;
     }
 
-    private Text fPassengerSequenceNumber;
+    private Text passengerSequenceNumber;
 
     /**
      * The passenger's sequence number as assigned by the airline.
@@ -146,29 +119,20 @@ public class FlightReservationImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getPassengerSequenceNumber() {
-        return fPassengerSequenceNumber;
+        return passengerSequenceNumber;
     }
 
     /**
      * The passenger's sequence number as assigned by the airline.
      *
-     * @param fPassengerSequenceNumber Text value to set.
+     * @param passengerSequenceNumber Text value to set.
      */
     @Override
-    public void setPassengerSequenceNumber(Text fPassengerSequenceNumber) {
-        this.fPassengerSequenceNumber = fPassengerSequenceNumber;
-    }
-    /**
-     * The passenger's sequence number as assigned by the airline.
-     *
-     * @param fPassengerSequenceNumber java.lang.String value to set.
-     */
-    @Override
-    public void setPassengerSequenceNumber(java.lang.String fPassengerSequenceNumber) {
-        this.fPassengerSequenceNumber = Text.of(fPassengerSequenceNumber);
+    public void setPassengerSequenceNumber(Text passengerSequenceNumber) {
+        this.passengerSequenceNumber = passengerSequenceNumber;
     }
 
-    private DateTime fModifiedTime;
+    private DateTime modifiedTime;
 
     /**
      * The date and time the reservation was modified.
@@ -177,29 +141,20 @@ public class FlightReservationImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public DateTime getModifiedTime() {
-        return fModifiedTime;
+        return modifiedTime;
     }
 
     /**
      * The date and time the reservation was modified.
      *
-     * @param fModifiedTime DateTime value to set.
+     * @param modifiedTime DateTime value to set.
      */
     @Override
-    public void setModifiedTime(DateTime fModifiedTime) {
-        this.fModifiedTime = fModifiedTime;
-    }
-    /**
-     * The date and time the reservation was modified.
-     *
-     * @param fModifiedTime java.time.LocalDateTime value to set.
-     */
-    @Override
-    public void setModifiedTime(java.time.LocalDateTime fModifiedTime) {
-        this.fModifiedTime = DateTime.of(fModifiedTime);
+    public void setModifiedTime(DateTime modifiedTime) {
+        this.modifiedTime = modifiedTime;
     }
 
-    private Object fTotalPrice;
+    private Object totalPrice;
 
     /**
      * The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
@@ -208,56 +163,38 @@ public class FlightReservationImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getTotalPrice() {
-        return (T) fTotalPrice;
+        return (T) totalPrice;
     }
 
     /**
      * The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      *
-     * @param fTotalPrice PriceSpecification value to set.
+     * @param totalPrice PriceSpecification value to set.
      */
     @Override
-    public void setTotalPrice(PriceSpecification fTotalPrice) {
-        this.fTotalPrice = fTotalPrice;
+    public void setTotalPrice(PriceSpecification totalPrice) {
+        this.totalPrice = totalPrice;
     }
     /**
      * The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      *
-     * @param fTotalPrice Number value to set.
+     * @param totalPrice Number value to set.
      */
     @Override
-    public void setTotalPrice(Number fTotalPrice) {
-        this.fTotalPrice = fTotalPrice;
+    public void setTotalPrice(Number totalPrice) {
+        this.totalPrice = totalPrice;
     }
     /**
      * The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      *
-     * @param fTotalPrice java.lang.Number value to set.
+     * @param totalPrice Text value to set.
      */
     @Override
-    public void setTotalPrice(java.lang.Number fTotalPrice) {
-        this.fTotalPrice = Number.of(fTotalPrice);
-    }
-    /**
-     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-     *
-     * @param fTotalPrice Text value to set.
-     */
-    @Override
-    public void setTotalPrice(Text fTotalPrice) {
-        this.fTotalPrice = fTotalPrice;
-    }
-    /**
-     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-     *
-     * @param fTotalPrice java.lang.String value to set.
-     */
-    @Override
-    public void setTotalPrice(java.lang.String fTotalPrice) {
-        this.fTotalPrice = Text.of(fTotalPrice);
+    public void setTotalPrice(Text totalPrice) {
+        this.totalPrice = totalPrice;
     }
 
-    private Ticket fReservedTicket;
+    private Ticket reservedTicket;
 
     /**
      * A ticket associated with the reservation.
@@ -266,20 +203,20 @@ public class FlightReservationImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Ticket getReservedTicket() {
-        return fReservedTicket;
+        return reservedTicket;
     }
 
     /**
      * A ticket associated with the reservation.
      *
-     * @param fReservedTicket Ticket value to set.
+     * @param reservedTicket Ticket value to set.
      */
     @Override
-    public void setReservedTicket(Ticket fReservedTicket) {
-        this.fReservedTicket = fReservedTicket;
+    public void setReservedTicket(Ticket reservedTicket) {
+        this.reservedTicket = reservedTicket;
     }
 
-    private ReservationStatusType fReservationStatus;
+    private ReservationStatusType reservationStatus;
 
     /**
      * The current status of the reservation.
@@ -288,20 +225,20 @@ public class FlightReservationImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public ReservationStatusType getReservationStatus() {
-        return fReservationStatus;
+        return reservationStatus;
     }
 
     /**
      * The current status of the reservation.
      *
-     * @param fReservationStatus ReservationStatusType value to set.
+     * @param reservationStatus ReservationStatusType value to set.
      */
     @Override
-    public void setReservationStatus(ReservationStatusType fReservationStatus) {
-        this.fReservationStatus = fReservationStatus;
+    public void setReservationStatus(ReservationStatusType reservationStatus) {
+        this.reservationStatus = reservationStatus;
     }
 
-    private Object fProvider;
+    private Object provider;
 
     /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
@@ -313,35 +250,35 @@ public class FlightReservationImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getProvider() {
-        return (T) fProvider;
+        return (T) provider;
     }
 
     /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
      *
-     * @param fProvider Organization value to set.
+     * @param provider Organization value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
      */
     @Override
-    public void setProvider(Organization fProvider) {
-        this.fProvider = fProvider;
+    public void setProvider(Organization provider) {
+        this.provider = provider;
     }
     /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
      *
-     * @param fProvider Person value to set.
+     * @param provider Person value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
      */
     @Override
-    public void setProvider(Person fProvider) {
-        this.fProvider = fProvider;
+    public void setProvider(Person provider) {
+        this.provider = provider;
     }
 
-    private Object fBroker;
+    private Object broker;
 
     /**
      * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
@@ -350,29 +287,29 @@ public class FlightReservationImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getBroker() {
-        return (T) fBroker;
+        return (T) broker;
     }
 
     /**
      * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
      *
-     * @param fBroker Person value to set.
+     * @param broker Person value to set.
      */
     @Override
-    public void setBroker(Person fBroker) {
-        this.fBroker = fBroker;
+    public void setBroker(Person broker) {
+        this.broker = broker;
     }
     /**
      * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
      *
-     * @param fBroker Organization value to set.
+     * @param broker Organization value to set.
      */
     @Override
-    public void setBroker(Organization fBroker) {
-        this.fBroker = fBroker;
+    public void setBroker(Organization broker) {
+        this.broker = broker;
     }
 
-    private DateTime fBookingTime;
+    private DateTime bookingTime;
 
     /**
      * The date and time the reservation was booked.
@@ -381,29 +318,20 @@ public class FlightReservationImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public DateTime getBookingTime() {
-        return fBookingTime;
+        return bookingTime;
     }
 
     /**
      * The date and time the reservation was booked.
      *
-     * @param fBookingTime DateTime value to set.
+     * @param bookingTime DateTime value to set.
      */
     @Override
-    public void setBookingTime(DateTime fBookingTime) {
-        this.fBookingTime = fBookingTime;
-    }
-    /**
-     * The date and time the reservation was booked.
-     *
-     * @param fBookingTime java.time.LocalDateTime value to set.
-     */
-    @Override
-    public void setBookingTime(java.time.LocalDateTime fBookingTime) {
-        this.fBookingTime = DateTime.of(fBookingTime);
+    public void setBookingTime(DateTime bookingTime) {
+        this.bookingTime = bookingTime;
     }
 
-    private ProgramMembership fProgramMembershipUsed;
+    private ProgramMembership programMembershipUsed;
 
     /**
      * Any membership in a frequent flyer, hotel loyalty program, etc. being applied to the reservation.
@@ -412,20 +340,20 @@ public class FlightReservationImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public ProgramMembership getProgramMembershipUsed() {
-        return fProgramMembershipUsed;
+        return programMembershipUsed;
     }
 
     /**
      * Any membership in a frequent flyer, hotel loyalty program, etc. being applied to the reservation.
      *
-     * @param fProgramMembershipUsed ProgramMembership value to set.
+     * @param programMembershipUsed ProgramMembership value to set.
      */
     @Override
-    public void setProgramMembershipUsed(ProgramMembership fProgramMembershipUsed) {
-        this.fProgramMembershipUsed = fProgramMembershipUsed;
+    public void setProgramMembershipUsed(ProgramMembership programMembershipUsed) {
+        this.programMembershipUsed = programMembershipUsed;
     }
 
-    private Object fBookingAgent;
+    private Object bookingAgent;
 
     /**
      * 'bookingAgent' is an out-dated term indicating a 'broker' that serves as a booking agent.
@@ -434,29 +362,29 @@ public class FlightReservationImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getBookingAgent() {
-        return (T) fBookingAgent;
+        return (T) bookingAgent;
     }
 
     /**
      * 'bookingAgent' is an out-dated term indicating a 'broker' that serves as a booking agent.
      *
-     * @param fBookingAgent Person value to set.
+     * @param bookingAgent Person value to set.
      */
     @Override
-    public void setBookingAgent(Person fBookingAgent) {
-        this.fBookingAgent = fBookingAgent;
+    public void setBookingAgent(Person bookingAgent) {
+        this.bookingAgent = bookingAgent;
     }
     /**
      * 'bookingAgent' is an out-dated term indicating a 'broker' that serves as a booking agent.
      *
-     * @param fBookingAgent Organization value to set.
+     * @param bookingAgent Organization value to set.
      */
     @Override
-    public void setBookingAgent(Organization fBookingAgent) {
-        this.fBookingAgent = fBookingAgent;
+    public void setBookingAgent(Organization bookingAgent) {
+        this.bookingAgent = bookingAgent;
     }
 
-    private Text fPriceCurrency;
+    private Text priceCurrency;
 
     /**
      * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
@@ -465,29 +393,20 @@ public class FlightReservationImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getPriceCurrency() {
-        return fPriceCurrency;
+        return priceCurrency;
     }
 
     /**
      * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
      *
-     * @param fPriceCurrency Text value to set.
+     * @param priceCurrency Text value to set.
      */
     @Override
-    public void setPriceCurrency(Text fPriceCurrency) {
-        this.fPriceCurrency = fPriceCurrency;
-    }
-    /**
-     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
-     *
-     * @param fPriceCurrency java.lang.String value to set.
-     */
-    @Override
-    public void setPriceCurrency(java.lang.String fPriceCurrency) {
-        this.fPriceCurrency = Text.of(fPriceCurrency);
+    public void setPriceCurrency(Text priceCurrency) {
+        this.priceCurrency = priceCurrency;
     }
 
-    private Text fReservationId;
+    private Text reservationId;
 
     /**
      * A unique identifier for the reservation.
@@ -496,29 +415,20 @@ public class FlightReservationImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getReservationId() {
-        return fReservationId;
+        return reservationId;
     }
 
     /**
      * A unique identifier for the reservation.
      *
-     * @param fReservationId Text value to set.
+     * @param reservationId Text value to set.
      */
     @Override
-    public void setReservationId(Text fReservationId) {
-        this.fReservationId = fReservationId;
-    }
-    /**
-     * A unique identifier for the reservation.
-     *
-     * @param fReservationId java.lang.String value to set.
-     */
-    @Override
-    public void setReservationId(java.lang.String fReservationId) {
-        this.fReservationId = Text.of(fReservationId);
+    public void setReservationId(Text reservationId) {
+        this.reservationId = reservationId;
     }
 
-    private Object fUnderName;
+    private Object underName;
 
     /**
      * The person or organization the reservation or ticket is for.
@@ -527,29 +437,29 @@ public class FlightReservationImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getUnderName() {
-        return (T) fUnderName;
+        return (T) underName;
     }
 
     /**
      * The person or organization the reservation or ticket is for.
      *
-     * @param fUnderName Organization value to set.
+     * @param underName Organization value to set.
      */
     @Override
-    public void setUnderName(Organization fUnderName) {
-        this.fUnderName = fUnderName;
+    public void setUnderName(Organization underName) {
+        this.underName = underName;
     }
     /**
      * The person or organization the reservation or ticket is for.
      *
-     * @param fUnderName Person value to set.
+     * @param underName Person value to set.
      */
     @Override
-    public void setUnderName(Person fUnderName) {
-        this.fUnderName = fUnderName;
+    public void setUnderName(Person underName) {
+        this.underName = underName;
     }
 
-    private Thing fReservationFor;
+    private Thing reservationFor;
 
     /**
      * The thing -- flight, event, restaurant,etc. being reserved.
@@ -558,20 +468,20 @@ public class FlightReservationImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Thing getReservationFor() {
-        return fReservationFor;
+        return reservationFor;
     }
 
     /**
      * The thing -- flight, event, restaurant,etc. being reserved.
      *
-     * @param fReservationFor Thing value to set.
+     * @param reservationFor Thing value to set.
      */
     @Override
-    public void setReservationFor(Thing fReservationFor) {
-        this.fReservationFor = fReservationFor;
+    public void setReservationFor(Thing reservationFor) {
+        this.reservationFor = reservationFor;
     }
 
-    private Object fMainEntityOfPage;
+    private Object mainEntityOfPage;
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -580,38 +490,29 @@ public class FlightReservationImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
+        return (T) mainEntityOfPage;
     }
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param fMainEntityOfPage CreativeWork value to set.
+     * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(CreativeWork fMainEntityOfPage) {
-        this.fMainEntityOfPage = fMainEntityOfPage;
+    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
     }
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param fMainEntityOfPage URL value to set.
+     * @param mainEntityOfPage URL value to set.
      */
     @Override
-    public void setMainEntityOfPage(URL fMainEntityOfPage) {
-        this.fMainEntityOfPage = fMainEntityOfPage;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param fMainEntityOfPage java.net.URL value to set.
-     */
-    @Override
-    public void setMainEntityOfPage(java.net.URL fMainEntityOfPage) {
-        this.fMainEntityOfPage = URL.of(fMainEntityOfPage);
+    public void setMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
     }
 
-    private Text fAlternateName;
+    private Text alternateName;
 
     /**
      * An alias for the item.
@@ -620,29 +521,20 @@ public class FlightReservationImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getAlternateName() {
-        return fAlternateName;
+        return alternateName;
     }
 
     /**
      * An alias for the item.
      *
-     * @param fAlternateName Text value to set.
+     * @param alternateName Text value to set.
      */
     @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
-    }
-    /**
-     * An alias for the item.
-     *
-     * @param fAlternateName java.lang.String value to set.
-     */
-    @Override
-    public void setAlternateName(java.lang.String fAlternateName) {
-        this.fAlternateName = Text.of(fAlternateName);
+    public void setAlternateName(Text alternateName) {
+        this.alternateName = alternateName;
     }
 
-    private Text fName;
+    private Text name;
 
     /**
      * The name of the item.
@@ -651,29 +543,20 @@ public class FlightReservationImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getName() {
-        return fName;
+        return name;
     }
 
     /**
      * The name of the item.
      *
-     * @param fName Text value to set.
+     * @param name Text value to set.
      */
     @Override
-    public void setName(Text fName) {
-        this.fName = fName;
-    }
-    /**
-     * The name of the item.
-     *
-     * @param fName java.lang.String value to set.
-     */
-    @Override
-    public void setName(java.lang.String fName) {
-        this.fName = Text.of(fName);
+    public void setName(Text name) {
+        this.name = name;
     }
 
-    private Action fPotentialAction;
+    private Action potentialAction;
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -682,20 +565,20 @@ public class FlightReservationImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Action getPotentialAction() {
-        return fPotentialAction;
+        return potentialAction;
     }
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      *
-     * @param fPotentialAction Action value to set.
+     * @param potentialAction Action value to set.
      */
     @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
+    public void setPotentialAction(Action potentialAction) {
+        this.potentialAction = potentialAction;
     }
 
-    private Object fImage;
+    private Object image;
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -704,38 +587,29 @@ public class FlightReservationImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getImage() {
-        return (T) fImage;
+        return (T) image;
     }
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param fImage URL value to set.
+     * @param image URL value to set.
      */
     @Override
-    public void setImage(URL fImage) {
-        this.fImage = fImage;
+    public void setImage(URL image) {
+        this.image = image;
     }
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param fImage java.net.URL value to set.
+     * @param image ImageObject value to set.
      */
     @Override
-    public void setImage(java.net.URL fImage) {
-        this.fImage = URL.of(fImage);
-    }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param fImage ImageObject value to set.
-     */
-    @Override
-    public void setImage(ImageObject fImage) {
-        this.fImage = fImage;
+    public void setImage(ImageObject image) {
+        this.image = image;
     }
 
-    private URL fUrl;
+    private URL url;
 
     /**
      * URL of the item.
@@ -744,29 +618,20 @@ public class FlightReservationImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public URL getUrl() {
-        return fUrl;
+        return url;
     }
 
     /**
      * URL of the item.
      *
-     * @param fUrl URL value to set.
+     * @param url URL value to set.
      */
     @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
-    }
-    /**
-     * URL of the item.
-     *
-     * @param fUrl java.net.URL value to set.
-     */
-    @Override
-    public void setUrl(java.net.URL fUrl) {
-        this.fUrl = URL.of(fUrl);
+    public void setUrl(URL url) {
+        this.url = url;
     }
 
-    private Text fDescription;
+    private Text description;
 
     /**
      * A description of the item.
@@ -775,29 +640,20 @@ public class FlightReservationImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getDescription() {
-        return fDescription;
+        return description;
     }
 
     /**
      * A description of the item.
      *
-     * @param fDescription Text value to set.
+     * @param description Text value to set.
      */
     @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
-    }
-    /**
-     * A description of the item.
-     *
-     * @param fDescription java.lang.String value to set.
-     */
-    @Override
-    public void setDescription(java.lang.String fDescription) {
-        this.fDescription = Text.of(fDescription);
+    public void setDescription(Text description) {
+        this.description = description;
     }
 
-    private Object fSubjectOf;
+    private Object subjectOf;
 
     /**
      * A CreativeWork or Event about this Thing.
@@ -807,31 +663,31 @@ public class FlightReservationImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getSubjectOf() {
-        return (T) fSubjectOf;
+        return (T) subjectOf;
     }
 
     /**
      * A CreativeWork or Event about this Thing.
      *
-     * @param fSubjectOf Event value to set.
+     * @param subjectOf Event value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Event fSubjectOf) {
-        this.fSubjectOf = fSubjectOf;
+    public void setSubjectOf(Event subjectOf) {
+        this.subjectOf = subjectOf;
     }
     /**
      * A CreativeWork or Event about this Thing.
      *
-     * @param fSubjectOf CreativeWork value to set.
+     * @param subjectOf CreativeWork value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(CreativeWork fSubjectOf) {
-        this.fSubjectOf = fSubjectOf;
+    public void setSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = subjectOf;
     }
 
-    private URL fAdditionalType;
+    private URL additionalType;
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
@@ -840,29 +696,20 @@ public class FlightReservationImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public URL getAdditionalType() {
-        return fAdditionalType;
+        return additionalType;
     }
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
-     * @param fAdditionalType URL value to set.
+     * @param additionalType URL value to set.
      */
     @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
-    }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @param fAdditionalType java.net.URL value to set.
-     */
-    @Override
-    public void setAdditionalType(java.net.URL fAdditionalType) {
-        this.fAdditionalType = URL.of(fAdditionalType);
+    public void setAdditionalType(URL additionalType) {
+        this.additionalType = additionalType;
     }
 
-    private Text fDisambiguatingDescription;
+    private Text disambiguatingDescription;
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
@@ -871,29 +718,20 @@ public class FlightReservationImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getDisambiguatingDescription() {
-        return fDisambiguatingDescription;
+        return disambiguatingDescription;
     }
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
-     * @param fDisambiguatingDescription Text value to set.
+     * @param disambiguatingDescription Text value to set.
      */
     @Override
-    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = fDisambiguatingDescription;
-    }
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @param fDisambiguatingDescription java.lang.String value to set.
-     */
-    @Override
-    public void setDisambiguatingDescription(java.lang.String fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = Text.of(fDisambiguatingDescription);
+    public void setDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = disambiguatingDescription;
     }
 
-    private URL fSameAs;
+    private URL sameAs;
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
@@ -902,29 +740,20 @@ public class FlightReservationImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public URL getSameAs() {
-        return fSameAs;
+        return sameAs;
     }
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
-     * @param fSameAs URL value to set.
+     * @param sameAs URL value to set.
      */
     @Override
-    public void setSameAs(URL fSameAs) {
-        this.fSameAs = fSameAs;
-    }
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @param fSameAs java.net.URL value to set.
-     */
-    @Override
-    public void setSameAs(java.net.URL fSameAs) {
-        this.fSameAs = URL.of(fSameAs);
+    public void setSameAs(URL sameAs) {
+        this.sameAs = sameAs;
     }
 
-    private Object fIdentifier;
+    private Object identifier;
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -934,57 +763,37 @@ public class FlightReservationImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getIdentifier() {
-        return (T) fIdentifier;
+        return (T) identifier;
     }
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier URL value to set.
+     * @param identifier URL value to set.
      */
     @Override
-    public void setIdentifier(URL fIdentifier) {
-        this.fIdentifier = fIdentifier;
+    public void setIdentifier(URL identifier) {
+        this.identifier = identifier;
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier java.net.URL value to set.
+     * @param identifier Text value to set.
      */
     @Override
-    public void setIdentifier(java.net.URL fIdentifier) {
-        this.fIdentifier = URL.of(fIdentifier);
+    public void setIdentifier(Text identifier) {
+        this.identifier = identifier;
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier Text value to set.
+     * @param identifier PropertyValue value to set.
      */
     @Override
-    public void setIdentifier(Text fIdentifier) {
-        this.fIdentifier = fIdentifier;
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param fIdentifier java.lang.String value to set.
-     */
-    @Override
-    public void setIdentifier(java.lang.String fIdentifier) {
-        this.fIdentifier = Text.of(fIdentifier);
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param fIdentifier PropertyValue value to set.
-     */
-    @Override
-    public void setIdentifier(PropertyValue fIdentifier) {
-        this.fIdentifier = fIdentifier;
+    public void setIdentifier(PropertyValue identifier) {
+        this.identifier = identifier;
     }
 }

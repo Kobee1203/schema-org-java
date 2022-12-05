@@ -28,22 +28,22 @@ public interface Class extends Intangible {
     /**
      * Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
      *
-     * @param fSupersededBy Enumeration value to set.
+     * @param supersededBy Enumeration value to set.
      * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
      */
-    void setSupersededBy(Enumeration fSupersededBy);
+    void setSupersededBy(Enumeration supersededBy);
     /**
      * Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
      *
-     * @param fSupersededBy Class value to set.
+     * @param supersededBy Class value to set.
      * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
      */
-    void setSupersededBy(Class fSupersededBy);
+    void setSupersededBy(Class supersededBy);
     /**
      * Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
      *
-     * @param fSupersededBy Property value to set.
+     * @param supersededBy Property value to set.
      * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
      */
-    void setSupersededBy(Property fSupersededBy);
+    void setSupersededBy(Property supersededBy);
 }

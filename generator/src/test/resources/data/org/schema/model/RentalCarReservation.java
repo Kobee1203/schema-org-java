@@ -25,9 +25,9 @@ public interface RentalCarReservation extends Reservation {
     /**
      * Where a rental car can be dropped off.
      *
-     * @param fDropoffLocation Place value to set.
+     * @param dropoffLocation Place value to set.
      */
-    void setDropoffLocation(Place fDropoffLocation);
+    void setDropoffLocation(Place dropoffLocation);
 
     /**
      * When a rental car can be dropped off.
@@ -39,15 +39,9 @@ public interface RentalCarReservation extends Reservation {
     /**
      * When a rental car can be dropped off.
      *
-     * @param fDropoffTime DateTime value to set.
+     * @param dropoffTime DateTime value to set.
      */
-    void setDropoffTime(DateTime fDropoffTime);
-    /**
-     * When a rental car can be dropped off.
-     *
-     * @param fDropoffTime java.time.LocalDateTime value to set.
-     */
-    void setDropoffTime(java.time.LocalDateTime fDropoffTime);
+    void setDropoffTime(DateTime dropoffTime);
 
     /**
      * When a taxi will pickup a passenger or a rental car can be picked up.
@@ -59,15 +53,9 @@ public interface RentalCarReservation extends Reservation {
     /**
      * When a taxi will pickup a passenger or a rental car can be picked up.
      *
-     * @param fPickupTime DateTime value to set.
+     * @param pickupTime DateTime value to set.
      */
-    void setPickupTime(DateTime fPickupTime);
-    /**
-     * When a taxi will pickup a passenger or a rental car can be picked up.
-     *
-     * @param fPickupTime java.time.LocalDateTime value to set.
-     */
-    void setPickupTime(java.time.LocalDateTime fPickupTime);
+    void setPickupTime(DateTime pickupTime);
 
     /**
      * Where a taxi will pick up a passenger or a rental car can be picked up.
@@ -79,7 +67,7 @@ public interface RentalCarReservation extends Reservation {
     /**
      * Where a taxi will pick up a passenger or a rental car can be picked up.
      *
-     * @param fPickupLocation Place value to set.
+     * @param pickupLocation Place value to set.
      */
-    void setPickupLocation(Place fPickupLocation);
+    void setPickupLocation(Place pickupLocation);
 }

@@ -27,17 +27,10 @@ public interface Joint extends AnatomicalStructure {
     /**
      * The name given to how bone physically connects to each other.
      *
-     * @param fStructuralClass Text value to set.
+     * @param structuralClass Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setStructuralClass(Text fStructuralClass);
-    /**
-     * The name given to how bone physically connects to each other.
-     *
-     * @param fStructuralClass java.lang.String value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void setStructuralClass(java.lang.String fStructuralClass);
+    void setStructuralClass(Text structuralClass);
 
     /**
      * The biomechanical properties of the bone.
@@ -50,17 +43,10 @@ public interface Joint extends AnatomicalStructure {
     /**
      * The biomechanical properties of the bone.
      *
-     * @param fBiomechnicalClass Text value to set.
+     * @param biomechnicalClass Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setBiomechnicalClass(Text fBiomechnicalClass);
-    /**
-     * The biomechanical properties of the bone.
-     *
-     * @param fBiomechnicalClass java.lang.String value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void setBiomechnicalClass(java.lang.String fBiomechnicalClass);
+    void setBiomechnicalClass(Text biomechnicalClass);
 
     /**
      * The degree of mobility the joint allows.
@@ -73,22 +59,15 @@ public interface Joint extends AnatomicalStructure {
     /**
      * The degree of mobility the joint allows.
      *
-     * @param fFunctionalClass Text value to set.
+     * @param functionalClass Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setFunctionalClass(Text fFunctionalClass);
+    void setFunctionalClass(Text functionalClass);
     /**
      * The degree of mobility the joint allows.
      *
-     * @param fFunctionalClass java.lang.String value to set.
+     * @param functionalClass MedicalEntity value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setFunctionalClass(java.lang.String fFunctionalClass);
-    /**
-     * The degree of mobility the joint allows.
-     *
-     * @param fFunctionalClass MedicalEntity value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void setFunctionalClass(MedicalEntity fFunctionalClass);
+    void setFunctionalClass(MedicalEntity functionalClass);
 }

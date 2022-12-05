@@ -26,8 +26,8 @@ public interface MedicalTrial extends MedicalStudy {
     /**
      * Specifics about the trial design (enumerated).
      *
-     * @param fTrialDesign MedicalTrialDesign value to set.
+     * @param trialDesign MedicalTrialDesign value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setTrialDesign(MedicalTrialDesign fTrialDesign);
+    void setTrialDesign(MedicalTrialDesign trialDesign);
 }

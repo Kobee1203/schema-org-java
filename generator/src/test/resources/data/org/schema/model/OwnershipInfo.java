@@ -30,17 +30,10 @@ public interface OwnershipInfo extends StructuredValue {
     /**
      * The date and time of obtaining the product.
      *
-     * @param fOwnedFrom DateTime value to set.
+     * @param ownedFrom DateTime value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setOwnedFrom(DateTime fOwnedFrom);
-    /**
-     * The date and time of obtaining the product.
-     *
-     * @param fOwnedFrom java.time.LocalDateTime value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void setOwnedFrom(java.time.LocalDateTime fOwnedFrom);
+    void setOwnedFrom(DateTime ownedFrom);
 
     /**
      * The product that this structured value is referring to.
@@ -53,17 +46,17 @@ public interface OwnershipInfo extends StructuredValue {
     /**
      * The product that this structured value is referring to.
      *
-     * @param fTypeOfGood Product value to set.
+     * @param typeOfGood Product value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setTypeOfGood(Product fTypeOfGood);
+    void setTypeOfGood(Product typeOfGood);
     /**
      * The product that this structured value is referring to.
      *
-     * @param fTypeOfGood Service value to set.
+     * @param typeOfGood Service value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setTypeOfGood(Service fTypeOfGood);
+    void setTypeOfGood(Service typeOfGood);
 
     /**
      * The organization or person from which the product was acquired.
@@ -76,17 +69,17 @@ public interface OwnershipInfo extends StructuredValue {
     /**
      * The organization or person from which the product was acquired.
      *
-     * @param fAcquiredFrom Organization value to set.
+     * @param acquiredFrom Organization value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setAcquiredFrom(Organization fAcquiredFrom);
+    void setAcquiredFrom(Organization acquiredFrom);
     /**
      * The organization or person from which the product was acquired.
      *
-     * @param fAcquiredFrom Person value to set.
+     * @param acquiredFrom Person value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setAcquiredFrom(Person fAcquiredFrom);
+    void setAcquiredFrom(Person acquiredFrom);
 
     /**
      * The date and time of giving up ownership on the product.
@@ -99,15 +92,8 @@ public interface OwnershipInfo extends StructuredValue {
     /**
      * The date and time of giving up ownership on the product.
      *
-     * @param fOwnedThrough DateTime value to set.
+     * @param ownedThrough DateTime value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setOwnedThrough(DateTime fOwnedThrough);
-    /**
-     * The date and time of giving up ownership on the product.
-     *
-     * @param fOwnedThrough java.time.LocalDateTime value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void setOwnedThrough(java.time.LocalDateTime fOwnedThrough);
+    void setOwnedThrough(DateTime ownedThrough);
 }

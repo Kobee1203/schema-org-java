@@ -35,11 +35,11 @@ public interface Vehicle extends Product {
     /**
      * The capacity of the fuel tank or in the case of electric cars, the battery. If there are multiple components for storage, this should indicate the total of all storage of the same type.<br/><br/>Typical unit code(s): LTR for liters, GLL of US gallons, GLI for UK / imperial gallons, AMH for ampere-hours (for electrical vehicles).
      *
-     * @param fFuelCapacity QuantitativeValue value to set.
+     * @param fuelCapacity QuantitativeValue value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
-    void setFuelCapacity(QuantitativeValue fFuelCapacity);
+    void setFuelCapacity(QuantitativeValue fuelCapacity);
 
     /**
      * The time needed to accelerate the vehicle from a given start velocity to a given target velocity.<br/><br/>Typical unit code(s): SEC for seconds<br/><br/>* Note: There are unfortunately no standard unit codes for seconds/0..100 km/h or seconds/0..60 mph. Simply use "SEC" for seconds and indicate the velocities in the [[name]] of the [[QuantitativeValue]], or use [[valueReference]] with a [[QuantitativeValue]] of 0..60 mph or 0..100 km/h to specify the reference speeds.
@@ -53,11 +53,11 @@ public interface Vehicle extends Product {
     /**
      * The time needed to accelerate the vehicle from a given start velocity to a given target velocity.<br/><br/>Typical unit code(s): SEC for seconds<br/><br/>* Note: There are unfortunately no standard unit codes for seconds/0..100 km/h or seconds/0..60 mph. Simply use "SEC" for seconds and indicate the velocities in the [[name]] of the [[QuantitativeValue]], or use [[valueReference]] with a [[QuantitativeValue]] of 0..60 mph or 0..100 km/h to specify the reference speeds.
      *
-     * @param fAccelerationTime QuantitativeValue value to set.
+     * @param accelerationTime QuantitativeValue value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
-    void setAccelerationTime(QuantitativeValue fAccelerationTime);
+    void setAccelerationTime(QuantitativeValue accelerationTime);
 
     /**
      * The speed range of the vehicle. If the vehicle is powered by an engine, the upper limit of the speed range (indicated by [[maxValue]] should be the maximum speed achievable under regular conditions.<br/><br/>Typical unit code(s): KMH for km/h, HM for mile per hour (0.447 04 m/s), KNT for knot<br/><br/>*Note 1: Use [[minValue]] and [[maxValue]] to indicate the range. Typically, the minimal value is zero.<br/>* Note 2: There are many different ways of measuring the speed range. You can link to information about how the given value has been determined using the [[valueReference]] property.
@@ -71,11 +71,11 @@ public interface Vehicle extends Product {
     /**
      * The speed range of the vehicle. If the vehicle is powered by an engine, the upper limit of the speed range (indicated by [[maxValue]] should be the maximum speed achievable under regular conditions.<br/><br/>Typical unit code(s): KMH for km/h, HM for mile per hour (0.447 04 m/s), KNT for knot<br/><br/>*Note 1: Use [[minValue]] and [[maxValue]] to indicate the range. Typically, the minimal value is zero.<br/>* Note 2: There are many different ways of measuring the speed range. You can link to information about how the given value has been determined using the [[valueReference]] property.
      *
-     * @param fSpeed QuantitativeValue value to set.
+     * @param speed QuantitativeValue value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
-    void setSpeed(QuantitativeValue fSpeed);
+    void setSpeed(QuantitativeValue speed);
 
     /**
      * The permitted weight of a trailer attached to the vehicle.<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/>* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
@@ -89,11 +89,11 @@ public interface Vehicle extends Product {
     /**
      * The permitted weight of a trailer attached to the vehicle.<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/>* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
      *
-     * @param fTrailerWeight QuantitativeValue value to set.
+     * @param trailerWeight QuantitativeValue value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
-    void setTrailerWeight(QuantitativeValue fTrailerWeight);
+    void setTrailerWeight(QuantitativeValue trailerWeight);
 
     /**
      * Information about the engine or engines of the vehicle.
@@ -106,10 +106,10 @@ public interface Vehicle extends Product {
     /**
      * Information about the engine or engines of the vehicle.
      *
-     * @param fVehicleEngine EngineSpecification value to set.
+     * @param vehicleEngine EngineSpecification value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
-    void setVehicleEngine(EngineSpecification fVehicleEngine);
+    void setVehicleEngine(EngineSpecification vehicleEngine);
 
     /**
      * The CO2 emissions in g/km. When used in combination with a QuantitativeValue, put "g/km" into the unitText property of that value, since there is no UN/CEFACT Common Code for "g/km".
@@ -123,19 +123,11 @@ public interface Vehicle extends Product {
     /**
      * The CO2 emissions in g/km. When used in combination with a QuantitativeValue, put "g/km" into the unitText property of that value, since there is no UN/CEFACT Common Code for "g/km".
      *
-     * @param fEmissionsCO2 Number value to set.
+     * @param emissionsCO2 Number value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
-    void setEmissionsCO2(Number fEmissionsCO2);
-    /**
-     * The CO2 emissions in g/km. When used in combination with a QuantitativeValue, put "g/km" into the unitText property of that value, since there is no UN/CEFACT Common Code for "g/km".
-     *
-     * @param fEmissionsCO2 java.lang.Number value to set.
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    void setEmissionsCO2(java.lang.Number fEmissionsCO2);
+    void setEmissionsCO2(Number emissionsCO2);
 
     /**
      * The date the item e.g. vehicle was purchased by the current owner.
@@ -148,17 +140,10 @@ public interface Vehicle extends Product {
     /**
      * The date the item e.g. vehicle was purchased by the current owner.
      *
-     * @param fPurchaseDate Date value to set.
+     * @param purchaseDate Date value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
-    void setPurchaseDate(Date fPurchaseDate);
-    /**
-     * The date the item e.g. vehicle was purchased by the current owner.
-     *
-     * @param fPurchaseDate java.time.LocalDate value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    void setPurchaseDate(java.time.LocalDate fPurchaseDate);
+    void setPurchaseDate(Date purchaseDate);
 
     /**
      * The total number of forward gears available for the transmission system of the vehicle.<br/><br/>Typical unit code(s): C62
@@ -171,24 +156,17 @@ public interface Vehicle extends Product {
     /**
      * The total number of forward gears available for the transmission system of the vehicle.<br/><br/>Typical unit code(s): C62
      *
-     * @param fNumberOfForwardGears QuantitativeValue value to set.
+     * @param numberOfForwardGears QuantitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
-    void setNumberOfForwardGears(QuantitativeValue fNumberOfForwardGears);
+    void setNumberOfForwardGears(QuantitativeValue numberOfForwardGears);
     /**
      * The total number of forward gears available for the transmission system of the vehicle.<br/><br/>Typical unit code(s): C62
      *
-     * @param fNumberOfForwardGears Number value to set.
+     * @param numberOfForwardGears Number value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
-    void setNumberOfForwardGears(Number fNumberOfForwardGears);
-    /**
-     * The total number of forward gears available for the transmission system of the vehicle.<br/><br/>Typical unit code(s): C62
-     *
-     * @param fNumberOfForwardGears java.lang.Number value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    void setNumberOfForwardGears(java.lang.Number fNumberOfForwardGears);
+    void setNumberOfForwardGears(Number numberOfForwardGears);
 
     /**
      * The permitted total weight of the loaded vehicle, including passengers and cargo and the weight of the empty vehicle.<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
@@ -202,11 +180,11 @@ public interface Vehicle extends Product {
     /**
      * The permitted total weight of the loaded vehicle, including passengers and cargo and the weight of the empty vehicle.<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
      *
-     * @param fWeightTotal QuantitativeValue value to set.
+     * @param weightTotal QuantitativeValue value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
-    void setWeightTotal(QuantitativeValue fWeightTotal);
+    void setWeightTotal(QuantitativeValue weightTotal);
 
     /**
      * The date of production of the item, e.g. vehicle.
@@ -219,17 +197,10 @@ public interface Vehicle extends Product {
     /**
      * The date of production of the item, e.g. vehicle.
      *
-     * @param fProductionDate Date value to set.
+     * @param productionDate Date value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
-    void setProductionDate(Date fProductionDate);
-    /**
-     * The date of production of the item, e.g. vehicle.
-     *
-     * @param fProductionDate java.time.LocalDate value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    void setProductionDate(java.time.LocalDate fProductionDate);
+    void setProductionDate(Date productionDate);
 
     /**
      * The number of owners of the vehicle, including the current one.<br/><br/>Typical unit code(s): C62
@@ -242,24 +213,17 @@ public interface Vehicle extends Product {
     /**
      * The number of owners of the vehicle, including the current one.<br/><br/>Typical unit code(s): C62
      *
-     * @param fNumberOfPreviousOwners Number value to set.
+     * @param numberOfPreviousOwners Number value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
-    void setNumberOfPreviousOwners(Number fNumberOfPreviousOwners);
+    void setNumberOfPreviousOwners(Number numberOfPreviousOwners);
     /**
      * The number of owners of the vehicle, including the current one.<br/><br/>Typical unit code(s): C62
      *
-     * @param fNumberOfPreviousOwners java.lang.Number value to set.
+     * @param numberOfPreviousOwners QuantitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
-    void setNumberOfPreviousOwners(java.lang.Number fNumberOfPreviousOwners);
-    /**
-     * The number of owners of the vehicle, including the current one.<br/><br/>Typical unit code(s): C62
-     *
-     * @param fNumberOfPreviousOwners QuantitativeValue value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    void setNumberOfPreviousOwners(QuantitativeValue fNumberOfPreviousOwners);
+    void setNumberOfPreviousOwners(QuantitativeValue numberOfPreviousOwners);
 
     /**
      * The position of the steering wheel or similar device (mostly for cars).
@@ -272,10 +236,10 @@ public interface Vehicle extends Product {
     /**
      * The position of the steering wheel or similar device (mostly for cars).
      *
-     * @param fSteeringPosition SteeringPositionValue value to set.
+     * @param steeringPosition SteeringPositionValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
-    void setSteeringPosition(SteeringPositionValue fSteeringPosition);
+    void setSteeringPosition(SteeringPositionValue steeringPosition);
 
     /**
      * The distance between the centers of the front and rear wheels.<br/><br/>Typical unit code(s): CMT for centimeters, MTR for meters, INH for inches, FOT for foot/feet
@@ -289,11 +253,11 @@ public interface Vehicle extends Product {
     /**
      * The distance between the centers of the front and rear wheels.<br/><br/>Typical unit code(s): CMT for centimeters, MTR for meters, INH for inches, FOT for foot/feet
      *
-     * @param fWheelbase QuantitativeValue value to set.
+     * @param wheelbase QuantitativeValue value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
-    void setWheelbase(QuantitativeValue fWheelbase);
+    void setWheelbase(QuantitativeValue wheelbase);
 
     /**
      * The type or material of the interior of the vehicle (e.g. synthetic fabric, leather, wood, etc.). While most interior types are characterized by the material used, an interior type can also be based on vehicle usage or target audience.
@@ -306,17 +270,10 @@ public interface Vehicle extends Product {
     /**
      * The type or material of the interior of the vehicle (e.g. synthetic fabric, leather, wood, etc.). While most interior types are characterized by the material used, an interior type can also be based on vehicle usage or target audience.
      *
-     * @param fVehicleInteriorType Text value to set.
+     * @param vehicleInteriorType Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
-    void setVehicleInteriorType(Text fVehicleInteriorType);
-    /**
-     * The type or material of the interior of the vehicle (e.g. synthetic fabric, leather, wood, etc.). While most interior types are characterized by the material used, an interior type can also be based on vehicle usage or target audience.
-     *
-     * @param fVehicleInteriorType java.lang.String value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    void setVehicleInteriorType(java.lang.String fVehicleInteriorType);
+    void setVehicleInteriorType(Text vehicleInteriorType);
 
     /**
      * The number or type of airbags in the vehicle.
@@ -329,31 +286,17 @@ public interface Vehicle extends Product {
     /**
      * The number or type of airbags in the vehicle.
      *
-     * @param fNumberOfAirbags Text value to set.
+     * @param numberOfAirbags Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
-    void setNumberOfAirbags(Text fNumberOfAirbags);
+    void setNumberOfAirbags(Text numberOfAirbags);
     /**
      * The number or type of airbags in the vehicle.
      *
-     * @param fNumberOfAirbags java.lang.String value to set.
+     * @param numberOfAirbags Number value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
-    void setNumberOfAirbags(java.lang.String fNumberOfAirbags);
-    /**
-     * The number or type of airbags in the vehicle.
-     *
-     * @param fNumberOfAirbags Number value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    void setNumberOfAirbags(Number fNumberOfAirbags);
-    /**
-     * The number or type of airbags in the vehicle.
-     *
-     * @param fNumberOfAirbags java.lang.Number value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    void setNumberOfAirbags(java.lang.Number fNumberOfAirbags);
+    void setNumberOfAirbags(Number numberOfAirbags);
 
     /**
      * The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.
@@ -366,38 +309,24 @@ public interface Vehicle extends Product {
     /**
      * The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.
      *
-     * @param fFuelType Text value to set.
+     * @param fuelType Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
-    void setFuelType(Text fFuelType);
+    void setFuelType(Text fuelType);
     /**
      * The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.
      *
-     * @param fFuelType java.lang.String value to set.
+     * @param fuelType URL value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
-    void setFuelType(java.lang.String fFuelType);
+    void setFuelType(URL fuelType);
     /**
      * The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.
      *
-     * @param fFuelType URL value to set.
+     * @param fuelType QualitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
-    void setFuelType(URL fFuelType);
-    /**
-     * The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.
-     *
-     * @param fFuelType java.net.URL value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    void setFuelType(java.net.URL fFuelType);
-    /**
-     * The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.
-     *
-     * @param fFuelType QualitativeValue value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    void setFuelType(QualitativeValue fFuelType);
+    void setFuelType(QualitativeValue fuelType);
 
     /**
      * The available volume for cargo or luggage. For automobiles, this is usually the trunk volume.<br/><br/>Typical unit code(s): LTR for liters, FTQ for cubic foot/feet<br/><br/>Note: You can use [[minValue]] and [[maxValue]] to indicate ranges.
@@ -410,10 +339,10 @@ public interface Vehicle extends Product {
     /**
      * The available volume for cargo or luggage. For automobiles, this is usually the trunk volume.<br/><br/>Typical unit code(s): LTR for liters, FTQ for cubic foot/feet<br/><br/>Note: You can use [[minValue]] and [[maxValue]] to indicate ranges.
      *
-     * @param fCargoVolume QuantitativeValue value to set.
+     * @param cargoVolume QuantitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
-    void setCargoVolume(QuantitativeValue fCargoVolume);
+    void setCargoVolume(QuantitativeValue cargoVolume);
 
     /**
      * The type of component used for transmitting the power from a rotating power source to the wheels or other relevant component(s) ("gearbox" for cars).
@@ -426,38 +355,24 @@ public interface Vehicle extends Product {
     /**
      * The type of component used for transmitting the power from a rotating power source to the wheels or other relevant component(s) ("gearbox" for cars).
      *
-     * @param fVehicleTransmission Text value to set.
+     * @param vehicleTransmission Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
-    void setVehicleTransmission(Text fVehicleTransmission);
+    void setVehicleTransmission(Text vehicleTransmission);
     /**
      * The type of component used for transmitting the power from a rotating power source to the wheels or other relevant component(s) ("gearbox" for cars).
      *
-     * @param fVehicleTransmission java.lang.String value to set.
+     * @param vehicleTransmission QualitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
-    void setVehicleTransmission(java.lang.String fVehicleTransmission);
+    void setVehicleTransmission(QualitativeValue vehicleTransmission);
     /**
      * The type of component used for transmitting the power from a rotating power source to the wheels or other relevant component(s) ("gearbox" for cars).
      *
-     * @param fVehicleTransmission QualitativeValue value to set.
+     * @param vehicleTransmission URL value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
-    void setVehicleTransmission(QualitativeValue fVehicleTransmission);
-    /**
-     * The type of component used for transmitting the power from a rotating power source to the wheels or other relevant component(s) ("gearbox" for cars).
-     *
-     * @param fVehicleTransmission URL value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    void setVehicleTransmission(URL fVehicleTransmission);
-    /**
-     * The type of component used for transmitting the power from a rotating power source to the wheels or other relevant component(s) ("gearbox" for cars).
-     *
-     * @param fVehicleTransmission java.net.URL value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    void setVehicleTransmission(java.net.URL fVehicleTransmission);
+    void setVehicleTransmission(URL vehicleTransmission);
 
     /**
      * The permitted weight of passengers and cargo, EXCLUDING the weight of the empty vehicle.<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>* Note 1: Many databases specify the permitted TOTAL weight instead, which is the sum of [[weight]] and [[payload]]<br/>* Note 2: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 3: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 4: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
@@ -471,11 +386,11 @@ public interface Vehicle extends Product {
     /**
      * The permitted weight of passengers and cargo, EXCLUDING the weight of the empty vehicle.<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>* Note 1: Many databases specify the permitted TOTAL weight instead, which is the sum of [[weight]] and [[payload]]<br/>* Note 2: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 3: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 4: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
      *
-     * @param fPayload QuantitativeValue value to set.
+     * @param payload QuantitativeValue value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
-    void setPayload(QuantitativeValue fPayload);
+    void setPayload(QuantitativeValue payload);
 
     /**
      * The drive wheel configuration, i.e. which roadwheels will receive torque from the vehicle's engine via the drivetrain.
@@ -488,24 +403,17 @@ public interface Vehicle extends Product {
     /**
      * The drive wheel configuration, i.e. which roadwheels will receive torque from the vehicle's engine via the drivetrain.
      *
-     * @param fDriveWheelConfiguration Text value to set.
+     * @param driveWheelConfiguration Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
-    void setDriveWheelConfiguration(Text fDriveWheelConfiguration);
+    void setDriveWheelConfiguration(Text driveWheelConfiguration);
     /**
      * The drive wheel configuration, i.e. which roadwheels will receive torque from the vehicle's engine via the drivetrain.
      *
-     * @param fDriveWheelConfiguration java.lang.String value to set.
+     * @param driveWheelConfiguration DriveWheelConfigurationValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
-    void setDriveWheelConfiguration(java.lang.String fDriveWheelConfiguration);
-    /**
-     * The drive wheel configuration, i.e. which roadwheels will receive torque from the vehicle's engine via the drivetrain.
-     *
-     * @param fDriveWheelConfiguration DriveWheelConfigurationValue value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    void setDriveWheelConfiguration(DriveWheelConfigurationValue fDriveWheelConfiguration);
+    void setDriveWheelConfiguration(DriveWheelConfigurationValue driveWheelConfiguration);
 
     /**
      * A textual description of known damages, both repaired and unrepaired.
@@ -518,17 +426,10 @@ public interface Vehicle extends Product {
     /**
      * A textual description of known damages, both repaired and unrepaired.
      *
-     * @param fKnownVehicleDamages Text value to set.
+     * @param knownVehicleDamages Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
-    void setKnownVehicleDamages(Text fKnownVehicleDamages);
-    /**
-     * A textual description of known damages, both repaired and unrepaired.
-     *
-     * @param fKnownVehicleDamages java.lang.String value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    void setKnownVehicleDamages(java.lang.String fKnownVehicleDamages);
+    void setKnownVehicleDamages(Text knownVehicleDamages);
 
     /**
      * The amount of fuel consumed for traveling a particular distance or temporal duration with the given vehicle (e.g. liters per 100 km).<br/><br/>* Note 1: There are unfortunately no standard unit codes for liters per 100 km.  Use [[unitText]] to indicate the unit of measurement, e.g. L/100 km.<br/>* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.<br/>* Note 3: Often, the absolute value is useful only when related to driving speed ("at 80 km/h") or usage pattern ("city traffic"). You can use [[valueReference]] to link the value for the fuel consumption to another value.
@@ -541,10 +442,10 @@ public interface Vehicle extends Product {
     /**
      * The amount of fuel consumed for traveling a particular distance or temporal duration with the given vehicle (e.g. liters per 100 km).<br/><br/>* Note 1: There are unfortunately no standard unit codes for liters per 100 km.  Use [[unitText]] to indicate the unit of measurement, e.g. L/100 km.<br/>* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.<br/>* Note 3: Often, the absolute value is useful only when related to driving speed ("at 80 km/h") or usage pattern ("city traffic"). You can use [[valueReference]] to link the value for the fuel consumption to another value.
      *
-     * @param fFuelConsumption QuantitativeValue value to set.
+     * @param fuelConsumption QuantitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
-    void setFuelConsumption(QuantitativeValue fFuelConsumption);
+    void setFuelConsumption(QuantitativeValue fuelConsumption);
 
     /**
      * The color or color combination of the interior of the vehicle.
@@ -557,17 +458,10 @@ public interface Vehicle extends Product {
     /**
      * The color or color combination of the interior of the vehicle.
      *
-     * @param fVehicleInteriorColor Text value to set.
+     * @param vehicleInteriorColor Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
-    void setVehicleInteriorColor(Text fVehicleInteriorColor);
-    /**
-     * The color or color combination of the interior of the vehicle.
-     *
-     * @param fVehicleInteriorColor java.lang.String value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    void setVehicleInteriorColor(java.lang.String fVehicleInteriorColor);
+    void setVehicleInteriorColor(Text vehicleInteriorColor);
 
     /**
      * The number of axles.<br/><br/>Typical unit code(s): C62
@@ -580,24 +474,17 @@ public interface Vehicle extends Product {
     /**
      * The number of axles.<br/><br/>Typical unit code(s): C62
      *
-     * @param fNumberOfAxles Number value to set.
+     * @param numberOfAxles Number value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
-    void setNumberOfAxles(Number fNumberOfAxles);
+    void setNumberOfAxles(Number numberOfAxles);
     /**
      * The number of axles.<br/><br/>Typical unit code(s): C62
      *
-     * @param fNumberOfAxles java.lang.Number value to set.
+     * @param numberOfAxles QuantitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
-    void setNumberOfAxles(java.lang.Number fNumberOfAxles);
-    /**
-     * The number of axles.<br/><br/>Typical unit code(s): C62
-     *
-     * @param fNumberOfAxles QuantitativeValue value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    void setNumberOfAxles(QuantitativeValue fNumberOfAxles);
+    void setNumberOfAxles(QuantitativeValue numberOfAxles);
 
     /**
      * The release date of a vehicle model (often used to differentiate versions of the same make and model).
@@ -611,19 +498,11 @@ public interface Vehicle extends Product {
     /**
      * The release date of a vehicle model (often used to differentiate versions of the same make and model).
      *
-     * @param fModelDate Date value to set.
+     * @param modelDate Date value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
-    void setModelDate(Date fModelDate);
-    /**
-     * The release date of a vehicle model (often used to differentiate versions of the same make and model).
-     *
-     * @param fModelDate java.time.LocalDate value to set.
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    void setModelDate(java.time.LocalDate fModelDate);
+    void setModelDate(Date modelDate);
 
     /**
      * The number of doors.<br/><br/>Typical unit code(s): C62
@@ -636,24 +515,17 @@ public interface Vehicle extends Product {
     /**
      * The number of doors.<br/><br/>Typical unit code(s): C62
      *
-     * @param fNumberOfDoors QuantitativeValue value to set.
+     * @param numberOfDoors QuantitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
-    void setNumberOfDoors(QuantitativeValue fNumberOfDoors);
+    void setNumberOfDoors(QuantitativeValue numberOfDoors);
     /**
      * The number of doors.<br/><br/>Typical unit code(s): C62
      *
-     * @param fNumberOfDoors Number value to set.
+     * @param numberOfDoors Number value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
-    void setNumberOfDoors(Number fNumberOfDoors);
-    /**
-     * The number of doors.<br/><br/>Typical unit code(s): C62
-     *
-     * @param fNumberOfDoors java.lang.Number value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    void setNumberOfDoors(java.lang.Number fNumberOfDoors);
+    void setNumberOfDoors(Number numberOfDoors);
 
     /**
      * The number of passengers that can be seated in the vehicle, both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>Typical unit code(s): C62 for persons.
@@ -666,24 +538,17 @@ public interface Vehicle extends Product {
     /**
      * The number of passengers that can be seated in the vehicle, both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>Typical unit code(s): C62 for persons.
      *
-     * @param fVehicleSeatingCapacity QuantitativeValue value to set.
+     * @param vehicleSeatingCapacity QuantitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
-    void setVehicleSeatingCapacity(QuantitativeValue fVehicleSeatingCapacity);
+    void setVehicleSeatingCapacity(QuantitativeValue vehicleSeatingCapacity);
     /**
      * The number of passengers that can be seated in the vehicle, both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>Typical unit code(s): C62 for persons.
      *
-     * @param fVehicleSeatingCapacity Number value to set.
+     * @param vehicleSeatingCapacity Number value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
-    void setVehicleSeatingCapacity(Number fVehicleSeatingCapacity);
-    /**
-     * The number of passengers that can be seated in the vehicle, both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>Typical unit code(s): C62 for persons.
-     *
-     * @param fVehicleSeatingCapacity java.lang.Number value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    void setVehicleSeatingCapacity(java.lang.Number fVehicleSeatingCapacity);
+    void setVehicleSeatingCapacity(Number vehicleSeatingCapacity);
 
     /**
      * A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.
@@ -697,19 +562,11 @@ public interface Vehicle extends Product {
     /**
      * A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.
      *
-     * @param fCallSign Text value to set.
+     * @param callSign Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2109">https://github.com/schemaorg/schemaorg/issues/2109</a>
      */
-    void setCallSign(Text fCallSign);
-    /**
-     * A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.
-     *
-     * @param fCallSign java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2109">https://github.com/schemaorg/schemaorg/issues/2109</a>
-     */
-    void setCallSign(java.lang.String fCallSign);
+    void setCallSign(Text callSign);
 
     /**
      * The permitted vertical load (TWR) of a trailer attached to the vehicle. Also referred to as Tongue Load Rating (TLR) or Vertical Load Rating (VLR)<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
@@ -723,11 +580,11 @@ public interface Vehicle extends Product {
     /**
      * The permitted vertical load (TWR) of a trailer attached to the vehicle. Also referred to as Tongue Load Rating (TLR) or Vertical Load Rating (VLR)<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
      *
-     * @param fTongueWeight QuantitativeValue value to set.
+     * @param tongueWeight QuantitativeValue value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
-    void setTongueWeight(QuantitativeValue fTongueWeight);
+    void setTongueWeight(QuantitativeValue tongueWeight);
 
     /**
      * The distance traveled per unit of fuel used; most commonly miles per gallon (mpg) or kilometers per liter (km/L).<br/><br/>* Note 1: There are unfortunately no standard unit codes for miles per gallon or kilometers per liter. Use [[unitText]] to indicate the unit of measurement, e.g. mpg or km/L.<br/>* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.<br/>* Note 3: Often, the absolute value is useful only when related to driving speed ("at 80 km/h") or usage pattern ("city traffic"). You can use [[valueReference]] to link the value for the fuel economy to another value.
@@ -740,10 +597,10 @@ public interface Vehicle extends Product {
     /**
      * The distance traveled per unit of fuel used; most commonly miles per gallon (mpg) or kilometers per liter (km/L).<br/><br/>* Note 1: There are unfortunately no standard unit codes for miles per gallon or kilometers per liter. Use [[unitText]] to indicate the unit of measurement, e.g. mpg or km/L.<br/>* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.<br/>* Note 3: Often, the absolute value is useful only when related to driving speed ("at 80 km/h") or usage pattern ("city traffic"). You can use [[valueReference]] to link the value for the fuel economy to another value.
      *
-     * @param fFuelEfficiency QuantitativeValue value to set.
+     * @param fuelEfficiency QuantitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
-    void setFuelEfficiency(QuantitativeValue fFuelEfficiency);
+    void setFuelEfficiency(QuantitativeValue fuelEfficiency);
 
     /**
      * The release date of a vehicle model (often used to differentiate versions of the same make and model).
@@ -756,17 +613,10 @@ public interface Vehicle extends Product {
     /**
      * The release date of a vehicle model (often used to differentiate versions of the same make and model).
      *
-     * @param fVehicleModelDate Date value to set.
+     * @param vehicleModelDate Date value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
-    void setVehicleModelDate(Date fVehicleModelDate);
-    /**
-     * The release date of a vehicle model (often used to differentiate versions of the same make and model).
-     *
-     * @param fVehicleModelDate java.time.LocalDate value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    void setVehicleModelDate(java.time.LocalDate fVehicleModelDate);
+    void setVehicleModelDate(Date vehicleModelDate);
 
     /**
      * A short text indicating the configuration of the vehicle, e.g. '5dr hatchback ST 2.5 MT 225 hp' or 'limited edition'.
@@ -779,17 +629,10 @@ public interface Vehicle extends Product {
     /**
      * A short text indicating the configuration of the vehicle, e.g. '5dr hatchback ST 2.5 MT 225 hp' or 'limited edition'.
      *
-     * @param fVehicleConfiguration Text value to set.
+     * @param vehicleConfiguration Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
-    void setVehicleConfiguration(Text fVehicleConfiguration);
-    /**
-     * A short text indicating the configuration of the vehicle, e.g. '5dr hatchback ST 2.5 MT 225 hp' or 'limited edition'.
-     *
-     * @param fVehicleConfiguration java.lang.String value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    void setVehicleConfiguration(java.lang.String fVehicleConfiguration);
+    void setVehicleConfiguration(Text vehicleConfiguration);
 
     /**
      * The total distance travelled by the particular vehicle since its initial production, as read from its odometer.<br/><br/>Typical unit code(s): KMT for kilometers, SMI for statute miles
@@ -802,10 +645,10 @@ public interface Vehicle extends Product {
     /**
      * The total distance travelled by the particular vehicle since its initial production, as read from its odometer.<br/><br/>Typical unit code(s): KMT for kilometers, SMI for statute miles
      *
-     * @param fMileageFromOdometer QuantitativeValue value to set.
+     * @param mileageFromOdometer QuantitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
-    void setMileageFromOdometer(QuantitativeValue fMileageFromOdometer);
+    void setMileageFromOdometer(QuantitativeValue mileageFromOdometer);
 
     /**
      * The number of persons that can be seated (e.g. in a vehicle), both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>Typical unit code(s): C62 for persons 
@@ -819,27 +662,19 @@ public interface Vehicle extends Product {
     /**
      * The number of persons that can be seated (e.g. in a vehicle), both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>Typical unit code(s): C62 for persons 
      *
-     * @param fSeatingCapacity QuantitativeValue value to set.
+     * @param seatingCapacity QuantitativeValue value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
-    void setSeatingCapacity(QuantitativeValue fSeatingCapacity);
+    void setSeatingCapacity(QuantitativeValue seatingCapacity);
     /**
      * The number of persons that can be seated (e.g. in a vehicle), both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>Typical unit code(s): C62 for persons 
      *
-     * @param fSeatingCapacity Number value to set.
+     * @param seatingCapacity Number value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
-    void setSeatingCapacity(Number fSeatingCapacity);
-    /**
-     * The number of persons that can be seated (e.g. in a vehicle), both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>Typical unit code(s): C62 for persons 
-     *
-     * @param fSeatingCapacity java.lang.Number value to set.
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    void setSeatingCapacity(java.lang.Number fSeatingCapacity);
+    void setSeatingCapacity(Number seatingCapacity);
 
     /**
      * Indicates the design and body style of the vehicle (e.g. station wagon, hatchback, etc.).
@@ -853,43 +688,27 @@ public interface Vehicle extends Product {
     /**
      * Indicates the design and body style of the vehicle (e.g. station wagon, hatchback, etc.).
      *
-     * @param fBodyType QualitativeValue value to set.
+     * @param bodyType QualitativeValue value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
-    void setBodyType(QualitativeValue fBodyType);
+    void setBodyType(QualitativeValue bodyType);
     /**
      * Indicates the design and body style of the vehicle (e.g. station wagon, hatchback, etc.).
      *
-     * @param fBodyType Text value to set.
+     * @param bodyType Text value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
-    void setBodyType(Text fBodyType);
+    void setBodyType(Text bodyType);
     /**
      * Indicates the design and body style of the vehicle (e.g. station wagon, hatchback, etc.).
      *
-     * @param fBodyType java.lang.String value to set.
+     * @param bodyType URL value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
-    void setBodyType(java.lang.String fBodyType);
-    /**
-     * Indicates the design and body style of the vehicle (e.g. station wagon, hatchback, etc.).
-     *
-     * @param fBodyType URL value to set.
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    void setBodyType(URL fBodyType);
-    /**
-     * Indicates the design and body style of the vehicle (e.g. station wagon, hatchback, etc.).
-     *
-     * @param fBodyType java.net.URL value to set.
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    void setBodyType(java.net.URL fBodyType);
+    void setBodyType(URL bodyType);
 
     /**
      * The date of the first registration of the vehicle with the respective public authorities.
@@ -902,17 +721,10 @@ public interface Vehicle extends Product {
     /**
      * The date of the first registration of the vehicle with the respective public authorities.
      *
-     * @param fDateVehicleFirstRegistered Date value to set.
+     * @param dateVehicleFirstRegistered Date value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
-    void setDateVehicleFirstRegistered(Date fDateVehicleFirstRegistered);
-    /**
-     * The date of the first registration of the vehicle with the respective public authorities.
-     *
-     * @param fDateVehicleFirstRegistered java.time.LocalDate value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    void setDateVehicleFirstRegistered(java.time.LocalDate fDateVehicleFirstRegistered);
+    void setDateVehicleFirstRegistered(Date dateVehicleFirstRegistered);
 
     /**
      * The Vehicle Identification Number (VIN) is a unique serial number used by the automotive industry to identify individual motor vehicles.
@@ -925,17 +737,10 @@ public interface Vehicle extends Product {
     /**
      * The Vehicle Identification Number (VIN) is a unique serial number used by the automotive industry to identify individual motor vehicles.
      *
-     * @param fVehicleIdentificationNumber Text value to set.
+     * @param vehicleIdentificationNumber Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
-    void setVehicleIdentificationNumber(Text fVehicleIdentificationNumber);
-    /**
-     * The Vehicle Identification Number (VIN) is a unique serial number used by the automotive industry to identify individual motor vehicles.
-     *
-     * @param fVehicleIdentificationNumber java.lang.String value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    void setVehicleIdentificationNumber(java.lang.String fVehicleIdentificationNumber);
+    void setVehicleIdentificationNumber(Text vehicleIdentificationNumber);
 
     /**
      * Indicates that the vehicle meets the respective emission standard.
@@ -949,43 +754,27 @@ public interface Vehicle extends Product {
     /**
      * Indicates that the vehicle meets the respective emission standard.
      *
-     * @param fMeetsEmissionStandard Text value to set.
+     * @param meetsEmissionStandard Text value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
-    void setMeetsEmissionStandard(Text fMeetsEmissionStandard);
+    void setMeetsEmissionStandard(Text meetsEmissionStandard);
     /**
      * Indicates that the vehicle meets the respective emission standard.
      *
-     * @param fMeetsEmissionStandard java.lang.String value to set.
+     * @param meetsEmissionStandard URL value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
-    void setMeetsEmissionStandard(java.lang.String fMeetsEmissionStandard);
+    void setMeetsEmissionStandard(URL meetsEmissionStandard);
     /**
      * Indicates that the vehicle meets the respective emission standard.
      *
-     * @param fMeetsEmissionStandard URL value to set.
+     * @param meetsEmissionStandard QualitativeValue value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
-    void setMeetsEmissionStandard(URL fMeetsEmissionStandard);
-    /**
-     * Indicates that the vehicle meets the respective emission standard.
-     *
-     * @param fMeetsEmissionStandard java.net.URL value to set.
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    void setMeetsEmissionStandard(java.net.URL fMeetsEmissionStandard);
-    /**
-     * Indicates that the vehicle meets the respective emission standard.
-     *
-     * @param fMeetsEmissionStandard QualitativeValue value to set.
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    void setMeetsEmissionStandard(QualitativeValue fMeetsEmissionStandard);
+    void setMeetsEmissionStandard(QualitativeValue meetsEmissionStandard);
 
     /**
      * Indicates whether the vehicle has been used for special purposes, like commercial rental, driving school, or as a taxi. The legislation in many countries requires this information to be revealed when offering a car for sale.
@@ -999,25 +788,17 @@ public interface Vehicle extends Product {
     /**
      * Indicates whether the vehicle has been used for special purposes, like commercial rental, driving school, or as a taxi. The legislation in many countries requires this information to be revealed when offering a car for sale.
      *
-     * @param fVehicleSpecialUsage CarUsageType value to set.
+     * @param vehicleSpecialUsage CarUsageType value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
-    void setVehicleSpecialUsage(CarUsageType fVehicleSpecialUsage);
+    void setVehicleSpecialUsage(CarUsageType vehicleSpecialUsage);
     /**
      * Indicates whether the vehicle has been used for special purposes, like commercial rental, driving school, or as a taxi. The legislation in many countries requires this information to be revealed when offering a car for sale.
      *
-     * @param fVehicleSpecialUsage Text value to set.
+     * @param vehicleSpecialUsage Text value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
-    void setVehicleSpecialUsage(Text fVehicleSpecialUsage);
-    /**
-     * Indicates whether the vehicle has been used for special purposes, like commercial rental, driving school, or as a taxi. The legislation in many countries requires this information to be revealed when offering a car for sale.
-     *
-     * @param fVehicleSpecialUsage java.lang.String value to set.
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    void setVehicleSpecialUsage(java.lang.String fVehicleSpecialUsage);
+    void setVehicleSpecialUsage(Text vehicleSpecialUsage);
 }

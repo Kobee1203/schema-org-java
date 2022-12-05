@@ -27,10 +27,10 @@ public interface WarrantyPromise extends StructuredValue {
     /**
      * The scope of the warranty promise.
      *
-     * @param fWarrantyScope WarrantyScope value to set.
+     * @param warrantyScope WarrantyScope value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setWarrantyScope(WarrantyScope fWarrantyScope);
+    void setWarrantyScope(WarrantyScope warrantyScope);
 
     /**
      * The duration of the warranty promise. Common unitCode values are ANN for year, MON for months, or DAY for days.
@@ -43,8 +43,8 @@ public interface WarrantyPromise extends StructuredValue {
     /**
      * The duration of the warranty promise. Common unitCode values are ANN for year, MON for months, or DAY for days.
      *
-     * @param fDurationOfWarranty QuantitativeValue value to set.
+     * @param durationOfWarranty QuantitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setDurationOfWarranty(QuantitativeValue fDurationOfWarranty);
+    void setDurationOfWarranty(QuantitativeValue durationOfWarranty);
 }

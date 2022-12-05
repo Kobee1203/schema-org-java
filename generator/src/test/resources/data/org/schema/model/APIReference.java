@@ -24,15 +24,9 @@ public interface APIReference extends TechArticle {
     /**
      * Library file name e.g., mscorlib.dll, system.web.dll.
      *
-     * @param fAssembly Text value to set.
+     * @param assembly Text value to set.
      */
-    void setAssembly(Text fAssembly);
-    /**
-     * Library file name e.g., mscorlib.dll, system.web.dll.
-     *
-     * @param fAssembly java.lang.String value to set.
-     */
-    void setAssembly(java.lang.String fAssembly);
+    void setAssembly(Text assembly);
 
     /**
      * Type of app development: phone, Metro style, desktop, XBox, etc.
@@ -44,15 +38,9 @@ public interface APIReference extends TechArticle {
     /**
      * Type of app development: phone, Metro style, desktop, XBox, etc.
      *
-     * @param fTargetPlatform Text value to set.
+     * @param targetPlatform Text value to set.
      */
-    void setTargetPlatform(Text fTargetPlatform);
-    /**
-     * Type of app development: phone, Metro style, desktop, XBox, etc.
-     *
-     * @param fTargetPlatform java.lang.String value to set.
-     */
-    void setTargetPlatform(java.lang.String fTargetPlatform);
+    void setTargetPlatform(Text targetPlatform);
 
     /**
      * Library file name e.g., mscorlib.dll, system.web.dll.
@@ -64,15 +52,9 @@ public interface APIReference extends TechArticle {
     /**
      * Library file name e.g., mscorlib.dll, system.web.dll.
      *
-     * @param fExecutableLibraryName Text value to set.
+     * @param executableLibraryName Text value to set.
      */
-    void setExecutableLibraryName(Text fExecutableLibraryName);
-    /**
-     * Library file name e.g., mscorlib.dll, system.web.dll.
-     *
-     * @param fExecutableLibraryName java.lang.String value to set.
-     */
-    void setExecutableLibraryName(java.lang.String fExecutableLibraryName);
+    void setExecutableLibraryName(Text executableLibraryName);
 
     /**
      * Indicates whether API is managed or unmanaged.
@@ -84,15 +66,9 @@ public interface APIReference extends TechArticle {
     /**
      * Indicates whether API is managed or unmanaged.
      *
-     * @param fProgrammingModel Text value to set.
+     * @param programmingModel Text value to set.
      */
-    void setProgrammingModel(Text fProgrammingModel);
-    /**
-     * Indicates whether API is managed or unmanaged.
-     *
-     * @param fProgrammingModel java.lang.String value to set.
-     */
-    void setProgrammingModel(java.lang.String fProgrammingModel);
+    void setProgrammingModel(Text programmingModel);
 
     /**
      * Associated product/technology version. e.g., .NET Framework 4.5.
@@ -104,13 +80,7 @@ public interface APIReference extends TechArticle {
     /**
      * Associated product/technology version. e.g., .NET Framework 4.5.
      *
-     * @param fAssemblyVersion Text value to set.
+     * @param assemblyVersion Text value to set.
      */
-    void setAssemblyVersion(Text fAssemblyVersion);
-    /**
-     * Associated product/technology version. e.g., .NET Framework 4.5.
-     *
-     * @param fAssemblyVersion java.lang.String value to set.
-     */
-    void setAssemblyVersion(java.lang.String fAssemblyVersion);
+    void setAssemblyVersion(Text assemblyVersion);
 }

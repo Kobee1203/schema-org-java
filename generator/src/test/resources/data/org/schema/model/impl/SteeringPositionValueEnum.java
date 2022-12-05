@@ -86,47 +86,42 @@ public enum SteeringPositionValueEnum implements SteeringPositionValue {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setValueReference(Enumeration fValueReference) {
+    public void setValueReference(Enumeration valueReference) {
         throw new java.lang.IllegalAccessError("Unable to set property 'valueReference': method not allowed for enum Enum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setValueReference(DefinedTerm fValueReference) {
+    public void setValueReference(DefinedTerm valueReference) {
         throw new java.lang.IllegalAccessError("Unable to set property 'valueReference': method not allowed for enum Enum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setValueReference(Text fValueReference) {
+    public void setValueReference(Text valueReference) {
         throw new java.lang.IllegalAccessError("Unable to set property 'valueReference': method not allowed for enum Enum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setValueReference(java.lang.String fValueReference) {
+    public void setValueReference(MeasurementTypeEnumeration valueReference) {
         throw new java.lang.IllegalAccessError("Unable to set property 'valueReference': method not allowed for enum Enum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setValueReference(MeasurementTypeEnumeration fValueReference) {
+    public void setValueReference(QualitativeValue valueReference) {
         throw new java.lang.IllegalAccessError("Unable to set property 'valueReference': method not allowed for enum Enum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setValueReference(QualitativeValue fValueReference) {
+    public void setValueReference(StructuredValue valueReference) {
         throw new java.lang.IllegalAccessError("Unable to set property 'valueReference': method not allowed for enum Enum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setValueReference(StructuredValue fValueReference) {
+    public void setValueReference(PropertyValue valueReference) {
         throw new java.lang.IllegalAccessError("Unable to set property 'valueReference': method not allowed for enum Enum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setValueReference(PropertyValue fValueReference) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'valueReference': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void setValueReference(QuantitativeValue fValueReference) {
+    public void setValueReference(QuantitativeValue valueReference) {
         throw new java.lang.IllegalAccessError("Unable to set property 'valueReference': method not allowed for enum Enum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
@@ -137,7 +132,7 @@ public enum SteeringPositionValueEnum implements SteeringPositionValue {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setGreaterOrEqual(QualitativeValue fGreaterOrEqual) {
+    public void setGreaterOrEqual(QualitativeValue greaterOrEqual) {
         throw new java.lang.IllegalAccessError("Unable to set property 'greaterOrEqual': method not allowed for enum Enum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
@@ -148,7 +143,7 @@ public enum SteeringPositionValueEnum implements SteeringPositionValue {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setNonEqual(QualitativeValue fNonEqual) {
+    public void setNonEqual(QualitativeValue nonEqual) {
         throw new java.lang.IllegalAccessError("Unable to set property 'nonEqual': method not allowed for enum Enum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
@@ -159,7 +154,7 @@ public enum SteeringPositionValueEnum implements SteeringPositionValue {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setEqual(QualitativeValue fEqual) {
+    public void setEqual(QualitativeValue equal) {
         throw new java.lang.IllegalAccessError("Unable to set property 'equal': method not allowed for enum Enum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
@@ -170,7 +165,7 @@ public enum SteeringPositionValueEnum implements SteeringPositionValue {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setLesser(QualitativeValue fLesser) {
+    public void setLesser(QualitativeValue lesser) {
         throw new java.lang.IllegalAccessError("Unable to set property 'lesser': method not allowed for enum Enum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
@@ -181,7 +176,7 @@ public enum SteeringPositionValueEnum implements SteeringPositionValue {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setGreater(QualitativeValue fGreater) {
+    public void setGreater(QualitativeValue greater) {
         throw new java.lang.IllegalAccessError("Unable to set property 'greater': method not allowed for enum Enum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
@@ -192,7 +187,7 @@ public enum SteeringPositionValueEnum implements SteeringPositionValue {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setAdditionalProperty(PropertyValue fAdditionalProperty) {
+    public void setAdditionalProperty(PropertyValue additionalProperty) {
         throw new java.lang.IllegalAccessError("Unable to set property 'additionalProperty': method not allowed for enum Enum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
@@ -203,7 +198,7 @@ public enum SteeringPositionValueEnum implements SteeringPositionValue {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setLesserOrEqual(QualitativeValue fLesserOrEqual) {
+    public void setLesserOrEqual(QualitativeValue lesserOrEqual) {
         throw new java.lang.IllegalAccessError("Unable to set property 'lesserOrEqual': method not allowed for enum Enum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
@@ -214,17 +209,17 @@ public enum SteeringPositionValueEnum implements SteeringPositionValue {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setSupersededBy(Enumeration fSupersededBy) {
+    public void setSupersededBy(Enumeration supersededBy) {
         throw new java.lang.IllegalAccessError("Unable to set property 'supersededBy': method not allowed for enum Enum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setSupersededBy(Class fSupersededBy) {
+    public void setSupersededBy(Class supersededBy) {
         throw new java.lang.IllegalAccessError("Unable to set property 'supersededBy': method not allowed for enum Enum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setSupersededBy(Property fSupersededBy) {
+    public void setSupersededBy(Property supersededBy) {
         throw new java.lang.IllegalAccessError("Unable to set property 'supersededBy': method not allowed for enum Enum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
@@ -235,17 +230,12 @@ public enum SteeringPositionValueEnum implements SteeringPositionValue {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setMainEntityOfPage(CreativeWork fMainEntityOfPage) {
+    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
         throw new java.lang.IllegalAccessError("Unable to set property 'mainEntityOfPage': method not allowed for enum Enum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setMainEntityOfPage(URL fMainEntityOfPage) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'mainEntityOfPage': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void setMainEntityOfPage(java.net.URL fMainEntityOfPage) {
+    public void setMainEntityOfPage(URL mainEntityOfPage) {
         throw new java.lang.IllegalAccessError("Unable to set property 'mainEntityOfPage': method not allowed for enum Enum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
@@ -256,12 +246,7 @@ public enum SteeringPositionValueEnum implements SteeringPositionValue {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setAlternateName(Text fAlternateName) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'alternateName': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void setAlternateName(java.lang.String fAlternateName) {
+    public void setAlternateName(Text alternateName) {
         throw new java.lang.IllegalAccessError("Unable to set property 'alternateName': method not allowed for enum Enum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
@@ -272,12 +257,7 @@ public enum SteeringPositionValueEnum implements SteeringPositionValue {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setName(Text fName) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'name': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void setName(java.lang.String fName) {
+    public void setName(Text name) {
         throw new java.lang.IllegalAccessError("Unable to set property 'name': method not allowed for enum Enum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
@@ -288,7 +268,7 @@ public enum SteeringPositionValueEnum implements SteeringPositionValue {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setPotentialAction(Action fPotentialAction) {
+    public void setPotentialAction(Action potentialAction) {
         throw new java.lang.IllegalAccessError("Unable to set property 'potentialAction': method not allowed for enum Enum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
@@ -299,17 +279,12 @@ public enum SteeringPositionValueEnum implements SteeringPositionValue {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setImage(URL fImage) {
+    public void setImage(URL image) {
         throw new java.lang.IllegalAccessError("Unable to set property 'image': method not allowed for enum Enum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setImage(java.net.URL fImage) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'image': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void setImage(ImageObject fImage) {
+    public void setImage(ImageObject image) {
         throw new java.lang.IllegalAccessError("Unable to set property 'image': method not allowed for enum Enum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
@@ -320,12 +295,7 @@ public enum SteeringPositionValueEnum implements SteeringPositionValue {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setUrl(URL fUrl) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'url': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void setUrl(java.net.URL fUrl) {
+    public void setUrl(URL url) {
         throw new java.lang.IllegalAccessError("Unable to set property 'url': method not allowed for enum Enum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
@@ -336,12 +306,7 @@ public enum SteeringPositionValueEnum implements SteeringPositionValue {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setDescription(Text fDescription) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'description': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void setDescription(java.lang.String fDescription) {
+    public void setDescription(Text description) {
         throw new java.lang.IllegalAccessError("Unable to set property 'description': method not allowed for enum Enum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
@@ -352,12 +317,12 @@ public enum SteeringPositionValueEnum implements SteeringPositionValue {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setSubjectOf(Event fSubjectOf) {
+    public void setSubjectOf(Event subjectOf) {
         throw new java.lang.IllegalAccessError("Unable to set property 'subjectOf': method not allowed for enum Enum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setSubjectOf(CreativeWork fSubjectOf) {
+    public void setSubjectOf(CreativeWork subjectOf) {
         throw new java.lang.IllegalAccessError("Unable to set property 'subjectOf': method not allowed for enum Enum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
@@ -368,12 +333,7 @@ public enum SteeringPositionValueEnum implements SteeringPositionValue {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'additionalType': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void setAdditionalType(java.net.URL fAdditionalType) {
+    public void setAdditionalType(URL additionalType) {
         throw new java.lang.IllegalAccessError("Unable to set property 'additionalType': method not allowed for enum Enum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
@@ -384,12 +344,7 @@ public enum SteeringPositionValueEnum implements SteeringPositionValue {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'disambiguatingDescription': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void setDisambiguatingDescription(java.lang.String fDisambiguatingDescription) {
+    public void setDisambiguatingDescription(Text disambiguatingDescription) {
         throw new java.lang.IllegalAccessError("Unable to set property 'disambiguatingDescription': method not allowed for enum Enum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
@@ -400,12 +355,7 @@ public enum SteeringPositionValueEnum implements SteeringPositionValue {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setSameAs(URL fSameAs) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'sameAs': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void setSameAs(java.net.URL fSameAs) {
+    public void setSameAs(URL sameAs) {
         throw new java.lang.IllegalAccessError("Unable to set property 'sameAs': method not allowed for enum Enum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
@@ -416,27 +366,17 @@ public enum SteeringPositionValueEnum implements SteeringPositionValue {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setIdentifier(URL fIdentifier) {
+    public void setIdentifier(URL identifier) {
         throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum Enum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setIdentifier(java.net.URL fIdentifier) {
+    public void setIdentifier(Text identifier) {
         throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum Enum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setIdentifier(Text fIdentifier) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void setIdentifier(java.lang.String fIdentifier) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void setIdentifier(PropertyValue fIdentifier) {
+    public void setIdentifier(PropertyValue identifier) {
         throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum Enum");
     }
 }

@@ -25,9 +25,9 @@ public interface PlayAction extends Action {
     /**
      * An intended audience, i.e. a group for whom something was created.
      *
-     * @param fAudience Audience value to set.
+     * @param audience Audience value to set.
      */
-    void setAudience(Audience fAudience);
+    void setAudience(Audience audience);
 
     /**
      * Upcoming or past event associated with this place, organization, or action.
@@ -39,7 +39,7 @@ public interface PlayAction extends Action {
     /**
      * Upcoming or past event associated with this place, organization, or action.
      *
-     * @param fEvent Event value to set.
+     * @param event Event value to set.
      */
-    void setEvent(Event fEvent);
+    void setEvent(Event event);
 }

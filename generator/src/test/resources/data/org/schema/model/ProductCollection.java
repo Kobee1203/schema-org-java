@@ -27,8 +27,8 @@ public interface ProductCollection extends Product, Collection {
     /**
      * This links to a node or nodes indicating the exact quantity of the products included in  an [[Offer]] or [[ProductCollection]].
      *
-     * @param fIncludesObject TypeAndQuantityNode value to set.
+     * @param includesObject TypeAndQuantityNode value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setIncludesObject(TypeAndQuantityNode fIncludesObject);
+    void setIncludesObject(TypeAndQuantityNode includesObject);
 }

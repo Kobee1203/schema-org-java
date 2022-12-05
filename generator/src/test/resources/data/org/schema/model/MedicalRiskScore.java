@@ -26,15 +26,8 @@ public interface MedicalRiskScore extends MedicalRiskEstimator {
     /**
      * The algorithm or rules to follow to compute the score.
      *
-     * @param fAlgorithm Text value to set.
+     * @param algorithm Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setAlgorithm(Text fAlgorithm);
-    /**
-     * The algorithm or rules to follow to compute the score.
-     *
-     * @param fAlgorithm java.lang.String value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void setAlgorithm(java.lang.String fAlgorithm);
+    void setAlgorithm(Text algorithm);
 }

@@ -33,7 +33,7 @@ import org.schema.model.Intangible;
 @JsonLdTypeName("QuantitativeValue")
 public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements QuantitativeValue {
 
-    private Object fValueReference;
+    private Object valueReference;
 
     /**
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
@@ -43,101 +43,91 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getValueReference() {
-        return (T) fValueReference;
+        return (T) valueReference;
     }
 
     /**
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
      *
-     * @param fValueReference Enumeration value to set.
+     * @param valueReference Enumeration value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setValueReference(Enumeration fValueReference) {
-        this.fValueReference = fValueReference;
+    public void setValueReference(Enumeration valueReference) {
+        this.valueReference = valueReference;
     }
     /**
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
      *
-     * @param fValueReference DefinedTerm value to set.
+     * @param valueReference DefinedTerm value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setValueReference(DefinedTerm fValueReference) {
-        this.fValueReference = fValueReference;
+    public void setValueReference(DefinedTerm valueReference) {
+        this.valueReference = valueReference;
     }
     /**
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
      *
-     * @param fValueReference Text value to set.
+     * @param valueReference Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setValueReference(Text fValueReference) {
-        this.fValueReference = fValueReference;
+    public void setValueReference(Text valueReference) {
+        this.valueReference = valueReference;
     }
     /**
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
      *
-     * @param fValueReference java.lang.String value to set.
+     * @param valueReference MeasurementTypeEnumeration value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setValueReference(java.lang.String fValueReference) {
-        this.fValueReference = Text.of(fValueReference);
+    public void setValueReference(MeasurementTypeEnumeration valueReference) {
+        this.valueReference = valueReference;
     }
     /**
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
      *
-     * @param fValueReference MeasurementTypeEnumeration value to set.
+     * @param valueReference QualitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setValueReference(MeasurementTypeEnumeration fValueReference) {
-        this.fValueReference = fValueReference;
+    public void setValueReference(QualitativeValue valueReference) {
+        this.valueReference = valueReference;
     }
     /**
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
      *
-     * @param fValueReference QualitativeValue value to set.
+     * @param valueReference StructuredValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setValueReference(QualitativeValue fValueReference) {
-        this.fValueReference = fValueReference;
+    public void setValueReference(StructuredValue valueReference) {
+        this.valueReference = valueReference;
     }
     /**
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
      *
-     * @param fValueReference StructuredValue value to set.
+     * @param valueReference PropertyValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setValueReference(StructuredValue fValueReference) {
-        this.fValueReference = fValueReference;
+    public void setValueReference(PropertyValue valueReference) {
+        this.valueReference = valueReference;
     }
     /**
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
      *
-     * @param fValueReference PropertyValue value to set.
+     * @param valueReference QuantitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setValueReference(PropertyValue fValueReference) {
-        this.fValueReference = fValueReference;
-    }
-    /**
-     * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
-     *
-     * @param fValueReference QuantitativeValue value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setValueReference(QuantitativeValue fValueReference) {
-        this.fValueReference = fValueReference;
+    public void setValueReference(QuantitativeValue valueReference) {
+        this.valueReference = valueReference;
     }
 
-    private Number fMaxValue;
+    private Number maxValue;
 
     /**
      * The upper value of some characteristic or property.
@@ -147,31 +137,21 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Number getMaxValue() {
-        return fMaxValue;
+        return maxValue;
     }
 
     /**
      * The upper value of some characteristic or property.
      *
-     * @param fMaxValue Number value to set.
+     * @param maxValue Number value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setMaxValue(Number fMaxValue) {
-        this.fMaxValue = fMaxValue;
-    }
-    /**
-     * The upper value of some characteristic or property.
-     *
-     * @param fMaxValue java.lang.Number value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setMaxValue(java.lang.Number fMaxValue) {
-        this.fMaxValue = Number.of(fMaxValue);
+    public void setMaxValue(Number maxValue) {
+        this.maxValue = maxValue;
     }
 
-    private Text fUnitText;
+    private Text unitText;
 
     /**
      * A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
@@ -181,31 +161,21 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getUnitText() {
-        return fUnitText;
+        return unitText;
     }
 
     /**
      * A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
      * <a href='unitCode'>unitCode</a>.
      *
-     * @param fUnitText Text value to set.
+     * @param unitText Text value to set.
      */
     @Override
-    public void setUnitText(Text fUnitText) {
-        this.fUnitText = fUnitText;
-    }
-    /**
-     * A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
-     * <a href='unitCode'>unitCode</a>.
-     *
-     * @param fUnitText java.lang.String value to set.
-     */
-    @Override
-    public void setUnitText(java.lang.String fUnitText) {
-        this.fUnitText = Text.of(fUnitText);
+    public void setUnitText(Text unitText) {
+        this.unitText = unitText;
     }
 
-    private Number fMinValue;
+    private Number minValue;
 
     /**
      * The lower value of some characteristic or property.
@@ -215,31 +185,21 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Number getMinValue() {
-        return fMinValue;
+        return minValue;
     }
 
     /**
      * The lower value of some characteristic or property.
      *
-     * @param fMinValue Number value to set.
+     * @param minValue Number value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setMinValue(Number fMinValue) {
-        this.fMinValue = fMinValue;
-    }
-    /**
-     * The lower value of some characteristic or property.
-     *
-     * @param fMinValue java.lang.Number value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setMinValue(java.lang.Number fMinValue) {
-        this.fMinValue = Number.of(fMinValue);
+    public void setMinValue(Number minValue) {
+        this.minValue = minValue;
     }
 
-    private Object fValue;
+    private Object value;
 
     /**
      * The value of the quantitative value or property value node.<br/><br/>* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.<br/>* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
@@ -249,81 +209,51 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getValue() {
-        return (T) fValue;
+        return (T) value;
     }
 
     /**
      * The value of the quantitative value or property value node.<br/><br/>* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.<br/>* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      *
-     * @param fValue Text value to set.
+     * @param value Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setValue(Text fValue) {
-        this.fValue = fValue;
+    public void setValue(Text value) {
+        this.value = value;
     }
     /**
      * The value of the quantitative value or property value node.<br/><br/>* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.<br/>* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      *
-     * @param fValue java.lang.String value to set.
+     * @param value Number value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setValue(java.lang.String fValue) {
-        this.fValue = Text.of(fValue);
+    public void setValue(Number value) {
+        this.value = value;
     }
     /**
      * The value of the quantitative value or property value node.<br/><br/>* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.<br/>* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      *
-     * @param fValue Number value to set.
+     * @param value StructuredValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setValue(Number fValue) {
-        this.fValue = fValue;
+    public void setValue(StructuredValue value) {
+        this.value = value;
     }
     /**
      * The value of the quantitative value or property value node.<br/><br/>* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.<br/>* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      *
-     * @param fValue java.lang.Number value to set.
+     * @param value Boolean value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setValue(java.lang.Number fValue) {
-        this.fValue = Number.of(fValue);
-    }
-    /**
-     * The value of the quantitative value or property value node.<br/><br/>* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.<br/>* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-     *
-     * @param fValue StructuredValue value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setValue(StructuredValue fValue) {
-        this.fValue = fValue;
-    }
-    /**
-     * The value of the quantitative value or property value node.<br/><br/>* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.<br/>* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-     *
-     * @param fValue Boolean value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setValue(Boolean fValue) {
-        this.fValue = fValue;
-    }
-    /**
-     * The value of the quantitative value or property value node.<br/><br/>* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.<br/>* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-     *
-     * @param fValue java.lang.Boolean value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setValue(java.lang.Boolean fValue) {
-        this.fValue = Boolean.of(fValue);
+    public void setValue(Boolean value) {
+        this.value = value;
     }
 
-    private Object fUnitCode;
+    private Object unitCode;
 
     /**
      * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
@@ -333,51 +263,31 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getUnitCode() {
-        return (T) fUnitCode;
+        return (T) unitCode;
     }
 
     /**
      * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
      *
-     * @param fUnitCode Text value to set.
+     * @param unitCode Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setUnitCode(Text fUnitCode) {
-        this.fUnitCode = fUnitCode;
+    public void setUnitCode(Text unitCode) {
+        this.unitCode = unitCode;
     }
     /**
      * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
      *
-     * @param fUnitCode java.lang.String value to set.
+     * @param unitCode URL value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setUnitCode(java.lang.String fUnitCode) {
-        this.fUnitCode = Text.of(fUnitCode);
-    }
-    /**
-     * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
-     *
-     * @param fUnitCode URL value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setUnitCode(URL fUnitCode) {
-        this.fUnitCode = fUnitCode;
-    }
-    /**
-     * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
-     *
-     * @param fUnitCode java.net.URL value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setUnitCode(java.net.URL fUnitCode) {
-        this.fUnitCode = URL.of(fUnitCode);
+    public void setUnitCode(URL unitCode) {
+        this.unitCode = unitCode;
     }
 
-    private PropertyValue fAdditionalProperty;
+    private PropertyValue additionalProperty;
 
     /**
      * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
@@ -386,20 +296,20 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public PropertyValue getAdditionalProperty() {
-        return fAdditionalProperty;
+        return additionalProperty;
     }
 
     /**
      * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
      *
-     * @param fAdditionalProperty PropertyValue value to set.
+     * @param additionalProperty PropertyValue value to set.
      */
     @Override
-    public void setAdditionalProperty(PropertyValue fAdditionalProperty) {
-        this.fAdditionalProperty = fAdditionalProperty;
+    public void setAdditionalProperty(PropertyValue additionalProperty) {
+        this.additionalProperty = additionalProperty;
     }
 
-    private Object fMainEntityOfPage;
+    private Object mainEntityOfPage;
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -408,38 +318,29 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
+        return (T) mainEntityOfPage;
     }
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param fMainEntityOfPage CreativeWork value to set.
+     * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(CreativeWork fMainEntityOfPage) {
-        this.fMainEntityOfPage = fMainEntityOfPage;
+    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
     }
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param fMainEntityOfPage URL value to set.
+     * @param mainEntityOfPage URL value to set.
      */
     @Override
-    public void setMainEntityOfPage(URL fMainEntityOfPage) {
-        this.fMainEntityOfPage = fMainEntityOfPage;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param fMainEntityOfPage java.net.URL value to set.
-     */
-    @Override
-    public void setMainEntityOfPage(java.net.URL fMainEntityOfPage) {
-        this.fMainEntityOfPage = URL.of(fMainEntityOfPage);
+    public void setMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
     }
 
-    private Text fAlternateName;
+    private Text alternateName;
 
     /**
      * An alias for the item.
@@ -448,29 +349,20 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getAlternateName() {
-        return fAlternateName;
+        return alternateName;
     }
 
     /**
      * An alias for the item.
      *
-     * @param fAlternateName Text value to set.
+     * @param alternateName Text value to set.
      */
     @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
-    }
-    /**
-     * An alias for the item.
-     *
-     * @param fAlternateName java.lang.String value to set.
-     */
-    @Override
-    public void setAlternateName(java.lang.String fAlternateName) {
-        this.fAlternateName = Text.of(fAlternateName);
+    public void setAlternateName(Text alternateName) {
+        this.alternateName = alternateName;
     }
 
-    private Text fName;
+    private Text name;
 
     /**
      * The name of the item.
@@ -479,29 +371,20 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getName() {
-        return fName;
+        return name;
     }
 
     /**
      * The name of the item.
      *
-     * @param fName Text value to set.
+     * @param name Text value to set.
      */
     @Override
-    public void setName(Text fName) {
-        this.fName = fName;
-    }
-    /**
-     * The name of the item.
-     *
-     * @param fName java.lang.String value to set.
-     */
-    @Override
-    public void setName(java.lang.String fName) {
-        this.fName = Text.of(fName);
+    public void setName(Text name) {
+        this.name = name;
     }
 
-    private Action fPotentialAction;
+    private Action potentialAction;
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -510,20 +393,20 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Action getPotentialAction() {
-        return fPotentialAction;
+        return potentialAction;
     }
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      *
-     * @param fPotentialAction Action value to set.
+     * @param potentialAction Action value to set.
      */
     @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
+    public void setPotentialAction(Action potentialAction) {
+        this.potentialAction = potentialAction;
     }
 
-    private Object fImage;
+    private Object image;
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -532,38 +415,29 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getImage() {
-        return (T) fImage;
+        return (T) image;
     }
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param fImage URL value to set.
+     * @param image URL value to set.
      */
     @Override
-    public void setImage(URL fImage) {
-        this.fImage = fImage;
+    public void setImage(URL image) {
+        this.image = image;
     }
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param fImage java.net.URL value to set.
+     * @param image ImageObject value to set.
      */
     @Override
-    public void setImage(java.net.URL fImage) {
-        this.fImage = URL.of(fImage);
-    }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param fImage ImageObject value to set.
-     */
-    @Override
-    public void setImage(ImageObject fImage) {
-        this.fImage = fImage;
+    public void setImage(ImageObject image) {
+        this.image = image;
     }
 
-    private URL fUrl;
+    private URL url;
 
     /**
      * URL of the item.
@@ -572,29 +446,20 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public URL getUrl() {
-        return fUrl;
+        return url;
     }
 
     /**
      * URL of the item.
      *
-     * @param fUrl URL value to set.
+     * @param url URL value to set.
      */
     @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
-    }
-    /**
-     * URL of the item.
-     *
-     * @param fUrl java.net.URL value to set.
-     */
-    @Override
-    public void setUrl(java.net.URL fUrl) {
-        this.fUrl = URL.of(fUrl);
+    public void setUrl(URL url) {
+        this.url = url;
     }
 
-    private Text fDescription;
+    private Text description;
 
     /**
      * A description of the item.
@@ -603,29 +468,20 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getDescription() {
-        return fDescription;
+        return description;
     }
 
     /**
      * A description of the item.
      *
-     * @param fDescription Text value to set.
+     * @param description Text value to set.
      */
     @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
-    }
-    /**
-     * A description of the item.
-     *
-     * @param fDescription java.lang.String value to set.
-     */
-    @Override
-    public void setDescription(java.lang.String fDescription) {
-        this.fDescription = Text.of(fDescription);
+    public void setDescription(Text description) {
+        this.description = description;
     }
 
-    private Object fSubjectOf;
+    private Object subjectOf;
 
     /**
      * A CreativeWork or Event about this Thing.
@@ -635,31 +491,31 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getSubjectOf() {
-        return (T) fSubjectOf;
+        return (T) subjectOf;
     }
 
     /**
      * A CreativeWork or Event about this Thing.
      *
-     * @param fSubjectOf Event value to set.
+     * @param subjectOf Event value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Event fSubjectOf) {
-        this.fSubjectOf = fSubjectOf;
+    public void setSubjectOf(Event subjectOf) {
+        this.subjectOf = subjectOf;
     }
     /**
      * A CreativeWork or Event about this Thing.
      *
-     * @param fSubjectOf CreativeWork value to set.
+     * @param subjectOf CreativeWork value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(CreativeWork fSubjectOf) {
-        this.fSubjectOf = fSubjectOf;
+    public void setSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = subjectOf;
     }
 
-    private URL fAdditionalType;
+    private URL additionalType;
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
@@ -668,29 +524,20 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public URL getAdditionalType() {
-        return fAdditionalType;
+        return additionalType;
     }
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
-     * @param fAdditionalType URL value to set.
+     * @param additionalType URL value to set.
      */
     @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
-    }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @param fAdditionalType java.net.URL value to set.
-     */
-    @Override
-    public void setAdditionalType(java.net.URL fAdditionalType) {
-        this.fAdditionalType = URL.of(fAdditionalType);
+    public void setAdditionalType(URL additionalType) {
+        this.additionalType = additionalType;
     }
 
-    private Text fDisambiguatingDescription;
+    private Text disambiguatingDescription;
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
@@ -699,29 +546,20 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getDisambiguatingDescription() {
-        return fDisambiguatingDescription;
+        return disambiguatingDescription;
     }
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
-     * @param fDisambiguatingDescription Text value to set.
+     * @param disambiguatingDescription Text value to set.
      */
     @Override
-    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = fDisambiguatingDescription;
-    }
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @param fDisambiguatingDescription java.lang.String value to set.
-     */
-    @Override
-    public void setDisambiguatingDescription(java.lang.String fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = Text.of(fDisambiguatingDescription);
+    public void setDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = disambiguatingDescription;
     }
 
-    private URL fSameAs;
+    private URL sameAs;
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
@@ -730,29 +568,20 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public URL getSameAs() {
-        return fSameAs;
+        return sameAs;
     }
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
-     * @param fSameAs URL value to set.
+     * @param sameAs URL value to set.
      */
     @Override
-    public void setSameAs(URL fSameAs) {
-        this.fSameAs = fSameAs;
-    }
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @param fSameAs java.net.URL value to set.
-     */
-    @Override
-    public void setSameAs(java.net.URL fSameAs) {
-        this.fSameAs = URL.of(fSameAs);
+    public void setSameAs(URL sameAs) {
+        this.sameAs = sameAs;
     }
 
-    private Object fIdentifier;
+    private Object identifier;
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -762,57 +591,37 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getIdentifier() {
-        return (T) fIdentifier;
+        return (T) identifier;
     }
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier URL value to set.
+     * @param identifier URL value to set.
      */
     @Override
-    public void setIdentifier(URL fIdentifier) {
-        this.fIdentifier = fIdentifier;
+    public void setIdentifier(URL identifier) {
+        this.identifier = identifier;
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier java.net.URL value to set.
+     * @param identifier Text value to set.
      */
     @Override
-    public void setIdentifier(java.net.URL fIdentifier) {
-        this.fIdentifier = URL.of(fIdentifier);
+    public void setIdentifier(Text identifier) {
+        this.identifier = identifier;
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier Text value to set.
+     * @param identifier PropertyValue value to set.
      */
     @Override
-    public void setIdentifier(Text fIdentifier) {
-        this.fIdentifier = fIdentifier;
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param fIdentifier java.lang.String value to set.
-     */
-    @Override
-    public void setIdentifier(java.lang.String fIdentifier) {
-        this.fIdentifier = Text.of(fIdentifier);
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param fIdentifier PropertyValue value to set.
-     */
-    @Override
-    public void setIdentifier(PropertyValue fIdentifier) {
-        this.fIdentifier = fIdentifier;
+    public void setIdentifier(PropertyValue identifier) {
+        this.identifier = identifier;
     }
 }

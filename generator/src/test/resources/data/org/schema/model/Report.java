@@ -24,13 +24,7 @@ public interface Report extends Article {
     /**
      * The number or other unique designator assigned to a Report by the publishing organization.
      *
-     * @param fReportNumber Text value to set.
+     * @param reportNumber Text value to set.
      */
-    void setReportNumber(Text fReportNumber);
-    /**
-     * The number or other unique designator assigned to a Report by the publishing organization.
-     *
-     * @param fReportNumber java.lang.String value to set.
-     */
-    void setReportNumber(java.lang.String fReportNumber);
+    void setReportNumber(Text reportNumber);
 }

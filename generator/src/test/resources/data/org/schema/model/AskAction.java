@@ -24,7 +24,7 @@ public interface AskAction extends CommunicateAction {
     /**
      * A sub property of object. A question.
      *
-     * @param fQuestion Question value to set.
+     * @param question Question value to set.
      */
-    void setQuestion(Question fQuestion);
+    void setQuestion(Question question);
 }

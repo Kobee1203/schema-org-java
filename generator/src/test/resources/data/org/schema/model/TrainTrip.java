@@ -25,15 +25,9 @@ public interface TrainTrip extends Trip {
     /**
      * The name of the train (e.g. The Orient Express).
      *
-     * @param fTrainName Text value to set.
+     * @param trainName Text value to set.
      */
-    void setTrainName(Text fTrainName);
-    /**
-     * The name of the train (e.g. The Orient Express).
-     *
-     * @param fTrainName java.lang.String value to set.
-     */
-    void setTrainName(java.lang.String fTrainName);
+    void setTrainName(Text trainName);
 
     /**
      * The station from which the train departs.
@@ -45,9 +39,9 @@ public interface TrainTrip extends Trip {
     /**
      * The station from which the train departs.
      *
-     * @param fDepartureStation TrainStation value to set.
+     * @param departureStation TrainStation value to set.
      */
-    void setDepartureStation(TrainStation fDepartureStation);
+    void setDepartureStation(TrainStation departureStation);
 
     /**
      * The platform from which the train departs.
@@ -59,15 +53,9 @@ public interface TrainTrip extends Trip {
     /**
      * The platform from which the train departs.
      *
-     * @param fDeparturePlatform Text value to set.
+     * @param departurePlatform Text value to set.
      */
-    void setDeparturePlatform(Text fDeparturePlatform);
-    /**
-     * The platform from which the train departs.
-     *
-     * @param fDeparturePlatform java.lang.String value to set.
-     */
-    void setDeparturePlatform(java.lang.String fDeparturePlatform);
+    void setDeparturePlatform(Text departurePlatform);
 
     /**
      * The unique identifier for the train.
@@ -79,15 +67,9 @@ public interface TrainTrip extends Trip {
     /**
      * The unique identifier for the train.
      *
-     * @param fTrainNumber Text value to set.
+     * @param trainNumber Text value to set.
      */
-    void setTrainNumber(Text fTrainNumber);
-    /**
-     * The unique identifier for the train.
-     *
-     * @param fTrainNumber java.lang.String value to set.
-     */
-    void setTrainNumber(java.lang.String fTrainNumber);
+    void setTrainNumber(Text trainNumber);
 
     /**
      * The platform where the train arrives.
@@ -99,15 +81,9 @@ public interface TrainTrip extends Trip {
     /**
      * The platform where the train arrives.
      *
-     * @param fArrivalPlatform Text value to set.
+     * @param arrivalPlatform Text value to set.
      */
-    void setArrivalPlatform(Text fArrivalPlatform);
-    /**
-     * The platform where the train arrives.
-     *
-     * @param fArrivalPlatform java.lang.String value to set.
-     */
-    void setArrivalPlatform(java.lang.String fArrivalPlatform);
+    void setArrivalPlatform(Text arrivalPlatform);
 
     /**
      * The station where the train trip ends.
@@ -119,7 +95,7 @@ public interface TrainTrip extends Trip {
     /**
      * The station where the train trip ends.
      *
-     * @param fArrivalStation TrainStation value to set.
+     * @param arrivalStation TrainStation value to set.
      */
-    void setArrivalStation(TrainStation fArrivalStation);
+    void setArrivalStation(TrainStation arrivalStation);
 }

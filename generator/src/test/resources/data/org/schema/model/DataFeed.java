@@ -26,25 +26,19 @@ public interface DataFeed extends Dataset {
     /**
      * An item within in a data feed. Data feeds may have many elements.
      *
-     * @param fDataFeedElement Thing value to set.
+     * @param dataFeedElement Thing value to set.
      */
-    void setDataFeedElement(Thing fDataFeedElement);
+    void setDataFeedElement(Thing dataFeedElement);
     /**
      * An item within in a data feed. Data feeds may have many elements.
      *
-     * @param fDataFeedElement DataFeedItem value to set.
+     * @param dataFeedElement DataFeedItem value to set.
      */
-    void setDataFeedElement(DataFeedItem fDataFeedElement);
+    void setDataFeedElement(DataFeedItem dataFeedElement);
     /**
      * An item within in a data feed. Data feeds may have many elements.
      *
-     * @param fDataFeedElement Text value to set.
+     * @param dataFeedElement Text value to set.
      */
-    void setDataFeedElement(Text fDataFeedElement);
-    /**
-     * An item within in a data feed. Data feeds may have many elements.
-     *
-     * @param fDataFeedElement java.lang.String value to set.
-     */
-    void setDataFeedElement(java.lang.String fDataFeedElement);
+    void setDataFeedElement(Text dataFeedElement);
 }

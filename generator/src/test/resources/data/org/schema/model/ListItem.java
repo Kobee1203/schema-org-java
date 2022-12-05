@@ -27,27 +27,15 @@ public interface ListItem extends Intangible {
     /**
      * The position of an item in a series or sequence of items.
      *
-     * @param fPosition Integer value to set.
+     * @param position Integer value to set.
      */
-    void setPosition(Integer fPosition);
+    void setPosition(Integer position);
     /**
      * The position of an item in a series or sequence of items.
      *
-     * @param fPosition java.lang.Integer value to set.
+     * @param position Text value to set.
      */
-    void setPosition(java.lang.Integer fPosition);
-    /**
-     * The position of an item in a series or sequence of items.
-     *
-     * @param fPosition Text value to set.
-     */
-    void setPosition(Text fPosition);
-    /**
-     * The position of an item in a series or sequence of items.
-     *
-     * @param fPosition java.lang.String value to set.
-     */
-    void setPosition(java.lang.String fPosition);
+    void setPosition(Text position);
 
     /**
      * A link to the ListItem that follows the current one.
@@ -59,9 +47,9 @@ public interface ListItem extends Intangible {
     /**
      * A link to the ListItem that follows the current one.
      *
-     * @param fNextItem ListItem value to set.
+     * @param nextItem ListItem value to set.
      */
-    void setNextItem(ListItem fNextItem);
+    void setNextItem(ListItem nextItem);
 
     /**
      * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')’.
@@ -73,9 +61,9 @@ public interface ListItem extends Intangible {
     /**
      * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')’.
      *
-     * @param fItem Thing value to set.
+     * @param item Thing value to set.
      */
-    void setItem(Thing fItem);
+    void setItem(Thing item);
 
     /**
      * A link to the ListItem that preceeds the current one.
@@ -87,7 +75,7 @@ public interface ListItem extends Intangible {
     /**
      * A link to the ListItem that preceeds the current one.
      *
-     * @param fPreviousItem ListItem value to set.
+     * @param previousItem ListItem value to set.
      */
-    void setPreviousItem(ListItem fPreviousItem);
+    void setPreviousItem(ListItem previousItem);
 }

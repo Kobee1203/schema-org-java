@@ -30,27 +30,27 @@ public interface CommunicateAction extends InteractAction {
     /**
      * A sub property of participant. The participant who is at the receiving end of the action.
      *
-     * @param fRecipient Person value to set.
+     * @param recipient Person value to set.
      */
-    void setRecipient(Person fRecipient);
+    void setRecipient(Person recipient);
     /**
      * A sub property of participant. The participant who is at the receiving end of the action.
      *
-     * @param fRecipient Audience value to set.
+     * @param recipient Audience value to set.
      */
-    void setRecipient(Audience fRecipient);
+    void setRecipient(Audience recipient);
     /**
      * A sub property of participant. The participant who is at the receiving end of the action.
      *
-     * @param fRecipient ContactPoint value to set.
+     * @param recipient ContactPoint value to set.
      */
-    void setRecipient(ContactPoint fRecipient);
+    void setRecipient(ContactPoint recipient);
     /**
      * A sub property of participant. The participant who is at the receiving end of the action.
      *
-     * @param fRecipient Organization value to set.
+     * @param recipient Organization value to set.
      */
-    void setRecipient(Organization fRecipient);
+    void setRecipient(Organization recipient);
 
     /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
@@ -63,24 +63,17 @@ public interface CommunicateAction extends InteractAction {
     /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
      *
-     * @param fInLanguage Text value to set.
+     * @param inLanguage Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
      */
-    void setInLanguage(Text fInLanguage);
+    void setInLanguage(Text inLanguage);
     /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
      *
-     * @param fInLanguage java.lang.String value to set.
+     * @param inLanguage Language value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
      */
-    void setInLanguage(java.lang.String fInLanguage);
-    /**
-     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
-     *
-     * @param fInLanguage Language value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
-     */
-    void setInLanguage(Language fInLanguage);
+    void setInLanguage(Language inLanguage);
 
     /**
      * A sub property of instrument. The language used on this action.
@@ -92,9 +85,9 @@ public interface CommunicateAction extends InteractAction {
     /**
      * A sub property of instrument. The language used on this action.
      *
-     * @param fLanguage Language value to set.
+     * @param language Language value to set.
      */
-    void setLanguage(Language fLanguage);
+    void setLanguage(Language language);
 
     /**
      * The subject matter of the content.
@@ -107,8 +100,8 @@ public interface CommunicateAction extends InteractAction {
     /**
      * The subject matter of the content.
      *
-     * @param fAbout Thing value to set.
+     * @param about Thing value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
-    void setAbout(Thing fAbout);
+    void setAbout(Thing about);
 }

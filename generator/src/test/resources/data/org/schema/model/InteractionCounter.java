@@ -34,31 +34,17 @@ public interface InteractionCounter extends StructuredValue {
     /**
      * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
      *
-     * @param fStartTime DateTime value to set.
+     * @param startTime DateTime value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
      */
-    void setStartTime(DateTime fStartTime);
+    void setStartTime(DateTime startTime);
     /**
      * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
      *
-     * @param fStartTime java.time.LocalDateTime value to set.
+     * @param startTime Time value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
      */
-    void setStartTime(java.time.LocalDateTime fStartTime);
-    /**
-     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     *
-     * @param fStartTime Time value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
-     */
-    void setStartTime(Time fStartTime);
-    /**
-     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     *
-     * @param fStartTime java.time.LocalTime value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
-     */
-    void setStartTime(java.time.LocalTime fStartTime);
+    void setStartTime(Time startTime);
 
     /**
      * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication.
@@ -70,15 +56,9 @@ public interface InteractionCounter extends StructuredValue {
     /**
      * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication.
      *
-     * @param fUserInteractionCount Integer value to set.
+     * @param userInteractionCount Integer value to set.
      */
-    void setUserInteractionCount(Integer fUserInteractionCount);
-    /**
-     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication.
-     *
-     * @param fUserInteractionCount java.lang.Integer value to set.
-     */
-    void setUserInteractionCount(java.lang.Integer fUserInteractionCount);
+    void setUserInteractionCount(Integer userInteractionCount);
 
     /**
      * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
@@ -90,33 +70,27 @@ public interface InteractionCounter extends StructuredValue {
     /**
      * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
      *
-     * @param fLocation PostalAddress value to set.
+     * @param location PostalAddress value to set.
      */
-    void setLocation(PostalAddress fLocation);
+    void setLocation(PostalAddress location);
     /**
      * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
      *
-     * @param fLocation Text value to set.
+     * @param location Text value to set.
      */
-    void setLocation(Text fLocation);
+    void setLocation(Text location);
     /**
      * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
      *
-     * @param fLocation java.lang.String value to set.
+     * @param location Place value to set.
      */
-    void setLocation(java.lang.String fLocation);
+    void setLocation(Place location);
     /**
      * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
      *
-     * @param fLocation Place value to set.
+     * @param location VirtualLocation value to set.
      */
-    void setLocation(Place fLocation);
-    /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-     *
-     * @param fLocation VirtualLocation value to set.
-     */
-    void setLocation(VirtualLocation fLocation);
+    void setLocation(VirtualLocation location);
 
     /**
      * The Action representing the type of interaction. For up votes, +1s, etc. use [[LikeAction]]. For down votes use [[DislikeAction]]. Otherwise, use the most specific Action.
@@ -128,9 +102,9 @@ public interface InteractionCounter extends StructuredValue {
     /**
      * The Action representing the type of interaction. For up votes, +1s, etc. use [[LikeAction]]. For down votes use [[DislikeAction]]. Otherwise, use the most specific Action.
      *
-     * @param fInteractionType Action value to set.
+     * @param interactionType Action value to set.
      */
-    void setInteractionType(Action fInteractionType);
+    void setInteractionType(Action interactionType);
 
     /**
      * The WebSite or SoftwareApplication where the interactions took place.
@@ -142,15 +116,15 @@ public interface InteractionCounter extends StructuredValue {
     /**
      * The WebSite or SoftwareApplication where the interactions took place.
      *
-     * @param fInteractionService SoftwareApplication value to set.
+     * @param interactionService SoftwareApplication value to set.
      */
-    void setInteractionService(SoftwareApplication fInteractionService);
+    void setInteractionService(SoftwareApplication interactionService);
     /**
      * The WebSite or SoftwareApplication where the interactions took place.
      *
-     * @param fInteractionService WebSite value to set.
+     * @param interactionService WebSite value to set.
      */
-    void setInteractionService(WebSite fInteractionService);
+    void setInteractionService(WebSite interactionService);
 
     /**
      * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
@@ -163,29 +137,15 @@ public interface InteractionCounter extends StructuredValue {
     /**
      * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
      *
-     * @param fEndTime DateTime value to set.
+     * @param endTime DateTime value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
      */
-    void setEndTime(DateTime fEndTime);
+    void setEndTime(DateTime endTime);
     /**
      * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
      *
-     * @param fEndTime java.time.LocalDateTime value to set.
+     * @param endTime Time value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
      */
-    void setEndTime(java.time.LocalDateTime fEndTime);
-    /**
-     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     *
-     * @param fEndTime Time value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
-     */
-    void setEndTime(Time fEndTime);
-    /**
-     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     *
-     * @param fEndTime java.time.LocalTime value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
-     */
-    void setEndTime(java.time.LocalTime fEndTime);
+    void setEndTime(Time endTime);
 }

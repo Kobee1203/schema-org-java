@@ -28,17 +28,17 @@ public interface PublicationEvent extends Event {
     /**
      * An agent associated with the publication event.
      *
-     * @param fPublishedBy Organization value to set.
+     * @param publishedBy Organization value to set.
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
-    void setPublishedBy(Organization fPublishedBy);
+    void setPublishedBy(Organization publishedBy);
     /**
      * An agent associated with the publication event.
      *
-     * @param fPublishedBy Person value to set.
+     * @param publishedBy Person value to set.
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
-    void setPublishedBy(Person fPublishedBy);
+    void setPublishedBy(Person publishedBy);
 
     /**
      * A flag to signal that the item, event, or place is accessible for free.
@@ -50,15 +50,9 @@ public interface PublicationEvent extends Event {
     /**
      * A flag to signal that the item, event, or place is accessible for free.
      *
-     * @param fFree Boolean value to set.
+     * @param free Boolean value to set.
      */
-    void setFree(Boolean fFree);
-    /**
-     * A flag to signal that the item, event, or place is accessible for free.
-     *
-     * @param fFree java.lang.Boolean value to set.
-     */
-    void setFree(java.lang.Boolean fFree);
+    void setFree(Boolean free);
 
     /**
      * A broadcast service associated with the publication event.
@@ -70,7 +64,7 @@ public interface PublicationEvent extends Event {
     /**
      * A broadcast service associated with the publication event.
      *
-     * @param fPublishedOn BroadcastService value to set.
+     * @param publishedOn BroadcastService value to set.
      */
-    void setPublishedOn(BroadcastService fPublishedOn);
+    void setPublishedOn(BroadcastService publishedOn);
 }

@@ -24,7 +24,7 @@ public interface OrderAction extends TradeAction {
     /**
      * A sub property of instrument. The method of delivery.
      *
-     * @param fDeliveryMethod DeliveryMethod value to set.
+     * @param deliveryMethod DeliveryMethod value to set.
      */
-    void setDeliveryMethod(DeliveryMethod fDeliveryMethod);
+    void setDeliveryMethod(DeliveryMethod deliveryMethod);
 }

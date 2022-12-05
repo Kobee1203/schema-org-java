@@ -33,15 +33,9 @@ public interface WebPage extends CreativeWork {
     /**
      * Date on which the content on this web page was last reviewed for accuracy and/or completeness.
      *
-     * @param fLastReviewed Date value to set.
+     * @param lastReviewed Date value to set.
      */
-    void setLastReviewed(Date fLastReviewed);
-    /**
-     * Date on which the content on this web page was last reviewed for accuracy and/or completeness.
-     *
-     * @param fLastReviewed java.time.LocalDate value to set.
-     */
-    void setLastReviewed(java.time.LocalDate fLastReviewed);
+    void setLastReviewed(Date lastReviewed);
 
     /**
      * One of the domain specialities to which this web page's content applies.
@@ -53,9 +47,9 @@ public interface WebPage extends CreativeWork {
     /**
      * One of the domain specialities to which this web page's content applies.
      *
-     * @param fSpecialty Specialty value to set.
+     * @param specialty Specialty value to set.
      */
-    void setSpecialty(Specialty fSpecialty);
+    void setSpecialty(Specialty specialty);
 
     /**
      * Indicates the main image on the page.
@@ -67,9 +61,9 @@ public interface WebPage extends CreativeWork {
     /**
      * Indicates the main image on the page.
      *
-     * @param fPrimaryImageOfPage ImageObject value to set.
+     * @param primaryImageOfPage ImageObject value to set.
      */
-    void setPrimaryImageOfPage(ImageObject fPrimaryImageOfPage);
+    void setPrimaryImageOfPage(ImageObject primaryImageOfPage);
 
     /**
      * One of the more significant URLs on the page. Typically, these are the non-navigation links that are clicked on the most.
@@ -81,15 +75,9 @@ public interface WebPage extends CreativeWork {
     /**
      * One of the more significant URLs on the page. Typically, these are the non-navigation links that are clicked on the most.
      *
-     * @param fSignificantLink URL value to set.
+     * @param significantLink URL value to set.
      */
-    void setSignificantLink(URL fSignificantLink);
-    /**
-     * One of the more significant URLs on the page. Typically, these are the non-navigation links that are clicked on the most.
-     *
-     * @param fSignificantLink java.net.URL value to set.
-     */
-    void setSignificantLink(java.net.URL fSignificantLink);
+    void setSignificantLink(URL significantLink);
 
     /**
      * People or organizations that have reviewed the content on this web page for accuracy and/or completeness.
@@ -101,15 +89,15 @@ public interface WebPage extends CreativeWork {
     /**
      * People or organizations that have reviewed the content on this web page for accuracy and/or completeness.
      *
-     * @param fReviewedBy Organization value to set.
+     * @param reviewedBy Organization value to set.
      */
-    void setReviewedBy(Organization fReviewedBy);
+    void setReviewedBy(Organization reviewedBy);
     /**
      * People or organizations that have reviewed the content on this web page for accuracy and/or completeness.
      *
-     * @param fReviewedBy Person value to set.
+     * @param reviewedBy Person value to set.
      */
-    void setReviewedBy(Person fReviewedBy);
+    void setReviewedBy(Person reviewedBy);
 
     /**
      * Indicates if this web page element is the main subject of the page.
@@ -121,9 +109,9 @@ public interface WebPage extends CreativeWork {
     /**
      * Indicates if this web page element is the main subject of the page.
      *
-     * @param fMainContentOfPage WebPageElement value to set.
+     * @param mainContentOfPage WebPageElement value to set.
      */
-    void setMainContentOfPage(WebPageElement fMainContentOfPage);
+    void setMainContentOfPage(WebPageElement mainContentOfPage);
 
     /**
      * A link related to this web page, for example to other related web pages.
@@ -135,15 +123,9 @@ public interface WebPage extends CreativeWork {
     /**
      * A link related to this web page, for example to other related web pages.
      *
-     * @param fRelatedLink URL value to set.
+     * @param relatedLink URL value to set.
      */
-    void setRelatedLink(URL fRelatedLink);
-    /**
-     * A link related to this web page, for example to other related web pages.
-     *
-     * @param fRelatedLink java.net.URL value to set.
-     */
-    void setRelatedLink(java.net.URL fRelatedLink);
+    void setRelatedLink(URL relatedLink);
 
     /**
      * Indicates sections of a Web page that are particularly 'speakable' in the sense of being highlighted as being especially appropriate for text-to-speech conversion. Other sections of a page may also be usefully spoken in particular circumstances; the 'speakable' property serves to indicate the parts most likely to be generally useful for speech.
@@ -182,10 +164,10 @@ public interface WebPage extends CreativeWork {
      * we define a supporting type, [[SpeakableSpecification]]  which is defined to be a possible value of the *speakable* property.
      *          
      *
-     * @param fSpeakable URL value to set.
+     * @param speakable URL value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1389">https://github.com/schemaorg/schemaorg/issues/1389</a>
      */
-    void setSpeakable(URL fSpeakable);
+    void setSpeakable(URL speakable);
     /**
      * Indicates sections of a Web page that are particularly 'speakable' in the sense of being highlighted as being especially appropriate for text-to-speech conversion. Other sections of a page may also be usefully spoken in particular circumstances; the 'speakable' property serves to indicate the parts most likely to be generally useful for speech.
      * 
@@ -202,30 +184,10 @@ public interface WebPage extends CreativeWork {
      * we define a supporting type, [[SpeakableSpecification]]  which is defined to be a possible value of the *speakable* property.
      *          
      *
-     * @param fSpeakable java.net.URL value to set.
+     * @param speakable SpeakableSpecification value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1389">https://github.com/schemaorg/schemaorg/issues/1389</a>
      */
-    void setSpeakable(java.net.URL fSpeakable);
-    /**
-     * Indicates sections of a Web page that are particularly 'speakable' in the sense of being highlighted as being especially appropriate for text-to-speech conversion. Other sections of a page may also be usefully spoken in particular circumstances; the 'speakable' property serves to indicate the parts most likely to be generally useful for speech.
-     * 
-     * The *speakable* property can be repeated an arbitrary number of times, with three kinds of possible 'content-locator' values:
-     * 
-     * 1.) *id-value* URL references - uses *id-value* of an element in the page being annotated. The simplest use of *speakable* has (potentially relative) URL values, referencing identified sections of the document concerned.
-     * 
-     * 2.) CSS Selectors - addresses content in the annotated page, eg. via class attribute. Use the [[cssSelector]] property.
-     * 
-     * 3.)  XPaths - addresses content via XPaths (assuming an XML view of the content). Use the [[xpath]] property.
-     * 
-     * 
-     * For more sophisticated markup of speakable sections beyond simple ID references, either CSS selectors or XPath expressions to pick out document section(s) as speakable. For this
-     * we define a supporting type, [[SpeakableSpecification]]  which is defined to be a possible value of the *speakable* property.
-     *          
-     *
-     * @param fSpeakable SpeakableSpecification value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1389">https://github.com/schemaorg/schemaorg/issues/1389</a>
-     */
-    void setSpeakable(SpeakableSpecification fSpeakable);
+    void setSpeakable(SpeakableSpecification speakable);
 
     /**
      * A set of links that can help a user understand and navigate a website hierarchy.
@@ -237,21 +199,15 @@ public interface WebPage extends CreativeWork {
     /**
      * A set of links that can help a user understand and navigate a website hierarchy.
      *
-     * @param fBreadcrumb BreadcrumbList value to set.
+     * @param breadcrumb BreadcrumbList value to set.
      */
-    void setBreadcrumb(BreadcrumbList fBreadcrumb);
+    void setBreadcrumb(BreadcrumbList breadcrumb);
     /**
      * A set of links that can help a user understand and navigate a website hierarchy.
      *
-     * @param fBreadcrumb Text value to set.
+     * @param breadcrumb Text value to set.
      */
-    void setBreadcrumb(Text fBreadcrumb);
-    /**
-     * A set of links that can help a user understand and navigate a website hierarchy.
-     *
-     * @param fBreadcrumb java.lang.String value to set.
-     */
-    void setBreadcrumb(java.lang.String fBreadcrumb);
+    void setBreadcrumb(Text breadcrumb);
 
     /**
      * The most significant URLs on the page. Typically, these are the non-navigation links that are clicked on the most.
@@ -263,13 +219,7 @@ public interface WebPage extends CreativeWork {
     /**
      * The most significant URLs on the page. Typically, these are the non-navigation links that are clicked on the most.
      *
-     * @param fSignificantLinks URL value to set.
+     * @param significantLinks URL value to set.
      */
-    void setSignificantLinks(URL fSignificantLinks);
-    /**
-     * The most significant URLs on the page. Typically, these are the non-navigation links that are clicked on the most.
-     *
-     * @param fSignificantLinks java.net.URL value to set.
-     */
-    void setSignificantLinks(java.net.URL fSignificantLinks);
+    void setSignificantLinks(URL significantLinks);
 }

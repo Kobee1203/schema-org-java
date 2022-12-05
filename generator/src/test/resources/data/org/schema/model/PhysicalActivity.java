@@ -34,59 +34,43 @@ public interface PhysicalActivity extends LifestyleModification {
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
-     * @param fCategory URL value to set.
+     * @param category URL value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
-    void setCategory(URL fCategory);
+    void setCategory(URL category);
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
-     * @param fCategory java.net.URL value to set.
+     * @param category Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
-    void setCategory(java.net.URL fCategory);
+    void setCategory(Text category);
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
-     * @param fCategory Text value to set.
+     * @param category PhysicalActivityCategory value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
-    void setCategory(Text fCategory);
+    void setCategory(PhysicalActivityCategory category);
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
-     * @param fCategory java.lang.String value to set.
+     * @param category Thing value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
-    void setCategory(java.lang.String fCategory);
+    void setCategory(Thing category);
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
-     * @param fCategory PhysicalActivityCategory value to set.
+     * @param category CategoryCode value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
-    void setCategory(PhysicalActivityCategory fCategory);
-    /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-     *
-     * @param fCategory Thing value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     */
-    void setCategory(Thing fCategory);
-    /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-     *
-     * @param fCategory CategoryCode value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     */
-    void setCategory(CategoryCode fCategory);
+    void setCategory(CategoryCode category);
 
     /**
      * Changes in the normal mechanical, physical, and biochemical functions that are associated with this activity or condition.
@@ -99,17 +83,10 @@ public interface PhysicalActivity extends LifestyleModification {
     /**
      * Changes in the normal mechanical, physical, and biochemical functions that are associated with this activity or condition.
      *
-     * @param fPathophysiology Text value to set.
+     * @param pathophysiology Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setPathophysiology(Text fPathophysiology);
-    /**
-     * Changes in the normal mechanical, physical, and biochemical functions that are associated with this activity or condition.
-     *
-     * @param fPathophysiology java.lang.String value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void setPathophysiology(java.lang.String fPathophysiology);
+    void setPathophysiology(Text pathophysiology);
 
     /**
      * The anatomy of the underlying organ system or structures associated with this entity.
@@ -122,24 +99,24 @@ public interface PhysicalActivity extends LifestyleModification {
     /**
      * The anatomy of the underlying organ system or structures associated with this entity.
      *
-     * @param fAssociatedAnatomy AnatomicalStructure value to set.
+     * @param associatedAnatomy AnatomicalStructure value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setAssociatedAnatomy(AnatomicalStructure fAssociatedAnatomy);
+    void setAssociatedAnatomy(AnatomicalStructure associatedAnatomy);
     /**
      * The anatomy of the underlying organ system or structures associated with this entity.
      *
-     * @param fAssociatedAnatomy AnatomicalSystem value to set.
+     * @param associatedAnatomy AnatomicalSystem value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setAssociatedAnatomy(AnatomicalSystem fAssociatedAnatomy);
+    void setAssociatedAnatomy(AnatomicalSystem associatedAnatomy);
     /**
      * The anatomy of the underlying organ system or structures associated with this entity.
      *
-     * @param fAssociatedAnatomy SuperficialAnatomy value to set.
+     * @param associatedAnatomy SuperficialAnatomy value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setAssociatedAnatomy(SuperficialAnatomy fAssociatedAnatomy);
+    void setAssociatedAnatomy(SuperficialAnatomy associatedAnatomy);
 
     /**
      * The characteristics of associated patients, such as age, gender, race etc.
@@ -152,15 +129,8 @@ public interface PhysicalActivity extends LifestyleModification {
     /**
      * The characteristics of associated patients, such as age, gender, race etc.
      *
-     * @param fEpidemiology Text value to set.
+     * @param epidemiology Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setEpidemiology(Text fEpidemiology);
-    /**
-     * The characteristics of associated patients, such as age, gender, race etc.
-     *
-     * @param fEpidemiology java.lang.String value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void setEpidemiology(java.lang.String fEpidemiology);
+    void setEpidemiology(Text epidemiology);
 }

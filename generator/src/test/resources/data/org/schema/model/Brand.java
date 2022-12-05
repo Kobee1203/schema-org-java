@@ -29,9 +29,9 @@ public interface Brand extends Intangible {
     /**
      * A review of the item.
      *
-     * @param fReview Review value to set.
+     * @param review Review value to set.
      */
-    void setReview(Review fReview);
+    void setReview(Review review);
 
     /**
      * The overall rating, based on a collection of reviews or ratings, of the item.
@@ -43,9 +43,9 @@ public interface Brand extends Intangible {
     /**
      * The overall rating, based on a collection of reviews or ratings, of the item.
      *
-     * @param fAggregateRating AggregateRating value to set.
+     * @param aggregateRating AggregateRating value to set.
      */
-    void setAggregateRating(AggregateRating fAggregateRating);
+    void setAggregateRating(AggregateRating aggregateRating);
 
     /**
      * A slogan or motto associated with the item.
@@ -57,15 +57,9 @@ public interface Brand extends Intangible {
     /**
      * A slogan or motto associated with the item.
      *
-     * @param fSlogan Text value to set.
+     * @param slogan Text value to set.
      */
-    void setSlogan(Text fSlogan);
-    /**
-     * A slogan or motto associated with the item.
-     *
-     * @param fSlogan java.lang.String value to set.
-     */
-    void setSlogan(java.lang.String fSlogan);
+    void setSlogan(Text slogan);
 
     /**
      * An associated logo.
@@ -78,22 +72,15 @@ public interface Brand extends Intangible {
     /**
      * An associated logo.
      *
-     * @param fLogo URL value to set.
+     * @param logo URL value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setLogo(URL fLogo);
+    void setLogo(URL logo);
     /**
      * An associated logo.
      *
-     * @param fLogo java.net.URL value to set.
+     * @param logo ImageObject value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setLogo(java.net.URL fLogo);
-    /**
-     * An associated logo.
-     *
-     * @param fLogo ImageObject value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void setLogo(ImageObject fLogo);
+    void setLogo(ImageObject logo);
 }

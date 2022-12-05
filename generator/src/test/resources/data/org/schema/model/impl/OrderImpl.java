@@ -40,7 +40,7 @@ import org.schema.model.Order;
 @JsonLdTypeName("Order")
 public class OrderImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Order {
 
-    private ParcelDelivery fOrderDelivery;
+    private ParcelDelivery orderDelivery;
 
     /**
      * The delivery of the parcel related to this order or order item.
@@ -49,20 +49,20 @@ public class OrderImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      */
     @Override
     public ParcelDelivery getOrderDelivery() {
-        return fOrderDelivery;
+        return orderDelivery;
     }
 
     /**
      * The delivery of the parcel related to this order or order item.
      *
-     * @param fOrderDelivery ParcelDelivery value to set.
+     * @param orderDelivery ParcelDelivery value to set.
      */
     @Override
-    public void setOrderDelivery(ParcelDelivery fOrderDelivery) {
-        this.fOrderDelivery = fOrderDelivery;
+    public void setOrderDelivery(ParcelDelivery orderDelivery) {
+        this.orderDelivery = orderDelivery;
     }
 
-    private PostalAddress fBillingAddress;
+    private PostalAddress billingAddress;
 
     /**
      * The billing address for the order.
@@ -71,20 +71,20 @@ public class OrderImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      */
     @Override
     public PostalAddress getBillingAddress() {
-        return fBillingAddress;
+        return billingAddress;
     }
 
     /**
      * The billing address for the order.
      *
-     * @param fBillingAddress PostalAddress value to set.
+     * @param billingAddress PostalAddress value to set.
      */
     @Override
-    public void setBillingAddress(PostalAddress fBillingAddress) {
-        this.fBillingAddress = fBillingAddress;
+    public void setBillingAddress(PostalAddress billingAddress) {
+        this.billingAddress = billingAddress;
     }
 
-    private Offer fAcceptedOffer;
+    private Offer acceptedOffer;
 
     /**
      * The offer(s) -- e.g., product, quantity and price combinations -- included in the order.
@@ -93,20 +93,20 @@ public class OrderImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      */
     @Override
     public Offer getAcceptedOffer() {
-        return fAcceptedOffer;
+        return acceptedOffer;
     }
 
     /**
      * The offer(s) -- e.g., product, quantity and price combinations -- included in the order.
      *
-     * @param fAcceptedOffer Offer value to set.
+     * @param acceptedOffer Offer value to set.
      */
     @Override
-    public void setAcceptedOffer(Offer fAcceptedOffer) {
-        this.fAcceptedOffer = fAcceptedOffer;
+    public void setAcceptedOffer(Offer acceptedOffer) {
+        this.acceptedOffer = acceptedOffer;
     }
 
-    private Object fMerchant;
+    private Object merchant;
 
     /**
      * 'merchant' is an out-dated term for 'seller'.
@@ -115,29 +115,29 @@ public class OrderImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      */
     @Override
     public <T> T getMerchant() {
-        return (T) fMerchant;
+        return (T) merchant;
     }
 
     /**
      * 'merchant' is an out-dated term for 'seller'.
      *
-     * @param fMerchant Organization value to set.
+     * @param merchant Organization value to set.
      */
     @Override
-    public void setMerchant(Organization fMerchant) {
-        this.fMerchant = fMerchant;
+    public void setMerchant(Organization merchant) {
+        this.merchant = merchant;
     }
     /**
      * 'merchant' is an out-dated term for 'seller'.
      *
-     * @param fMerchant Person value to set.
+     * @param merchant Person value to set.
      */
     @Override
-    public void setMerchant(Person fMerchant) {
-        this.fMerchant = fMerchant;
+    public void setMerchant(Person merchant) {
+        this.merchant = merchant;
     }
 
-    private OrderStatus fOrderStatus;
+    private OrderStatus orderStatus;
 
     /**
      * The current status of the order.
@@ -146,20 +146,20 @@ public class OrderImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      */
     @Override
     public OrderStatus getOrderStatus() {
-        return fOrderStatus;
+        return orderStatus;
     }
 
     /**
      * The current status of the order.
      *
-     * @param fOrderStatus OrderStatus value to set.
+     * @param orderStatus OrderStatus value to set.
      */
     @Override
-    public void setOrderStatus(OrderStatus fOrderStatus) {
-        this.fOrderStatus = fOrderStatus;
+    public void setOrderStatus(OrderStatus orderStatus) {
+        this.orderStatus = orderStatus;
     }
 
-    private Text fConfirmationNumber;
+    private Text confirmationNumber;
 
     /**
      * A number that confirms the given order or payment has been received.
@@ -168,29 +168,20 @@ public class OrderImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      */
     @Override
     public Text getConfirmationNumber() {
-        return fConfirmationNumber;
+        return confirmationNumber;
     }
 
     /**
      * A number that confirms the given order or payment has been received.
      *
-     * @param fConfirmationNumber Text value to set.
+     * @param confirmationNumber Text value to set.
      */
     @Override
-    public void setConfirmationNumber(Text fConfirmationNumber) {
-        this.fConfirmationNumber = fConfirmationNumber;
-    }
-    /**
-     * A number that confirms the given order or payment has been received.
-     *
-     * @param fConfirmationNumber java.lang.String value to set.
-     */
-    @Override
-    public void setConfirmationNumber(java.lang.String fConfirmationNumber) {
-        this.fConfirmationNumber = Text.of(fConfirmationNumber);
+    public void setConfirmationNumber(Text confirmationNumber) {
+        this.confirmationNumber = confirmationNumber;
     }
 
-    private Invoice fPartOfInvoice;
+    private Invoice partOfInvoice;
 
     /**
      * The order is being paid as part of the referenced Invoice.
@@ -199,20 +190,20 @@ public class OrderImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      */
     @Override
     public Invoice getPartOfInvoice() {
-        return fPartOfInvoice;
+        return partOfInvoice;
     }
 
     /**
      * The order is being paid as part of the referenced Invoice.
      *
-     * @param fPartOfInvoice Invoice value to set.
+     * @param partOfInvoice Invoice value to set.
      */
     @Override
-    public void setPartOfInvoice(Invoice fPartOfInvoice) {
-        this.fPartOfInvoice = fPartOfInvoice;
+    public void setPartOfInvoice(Invoice partOfInvoice) {
+        this.partOfInvoice = partOfInvoice;
     }
 
-    private Text fOrderNumber;
+    private Text orderNumber;
 
     /**
      * The identifier of the transaction.
@@ -221,29 +212,20 @@ public class OrderImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      */
     @Override
     public Text getOrderNumber() {
-        return fOrderNumber;
+        return orderNumber;
     }
 
     /**
      * The identifier of the transaction.
      *
-     * @param fOrderNumber Text value to set.
+     * @param orderNumber Text value to set.
      */
     @Override
-    public void setOrderNumber(Text fOrderNumber) {
-        this.fOrderNumber = fOrderNumber;
-    }
-    /**
-     * The identifier of the transaction.
-     *
-     * @param fOrderNumber java.lang.String value to set.
-     */
-    @Override
-    public void setOrderNumber(java.lang.String fOrderNumber) {
-        this.fOrderNumber = Text.of(fOrderNumber);
+    public void setOrderNumber(Text orderNumber) {
+        this.orderNumber = orderNumber;
     }
 
-    private Object fSeller;
+    private Object seller;
 
     /**
      * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
@@ -252,29 +234,29 @@ public class OrderImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      */
     @Override
     public <T> T getSeller() {
-        return (T) fSeller;
+        return (T) seller;
     }
 
     /**
      * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
      *
-     * @param fSeller Organization value to set.
+     * @param seller Organization value to set.
      */
     @Override
-    public void setSeller(Organization fSeller) {
-        this.fSeller = fSeller;
+    public void setSeller(Organization seller) {
+        this.seller = seller;
     }
     /**
      * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
      *
-     * @param fSeller Person value to set.
+     * @param seller Person value to set.
      */
     @Override
-    public void setSeller(Person fSeller) {
-        this.fSeller = fSeller;
+    public void setSeller(Person seller) {
+        this.seller = seller;
     }
 
-    private Object fCustomer;
+    private Object customer;
 
     /**
      * Party placing the order or paying the invoice.
@@ -283,29 +265,29 @@ public class OrderImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      */
     @Override
     public <T> T getCustomer() {
-        return (T) fCustomer;
+        return (T) customer;
     }
 
     /**
      * Party placing the order or paying the invoice.
      *
-     * @param fCustomer Organization value to set.
+     * @param customer Organization value to set.
      */
     @Override
-    public void setCustomer(Organization fCustomer) {
-        this.fCustomer = fCustomer;
+    public void setCustomer(Organization customer) {
+        this.customer = customer;
     }
     /**
      * Party placing the order or paying the invoice.
      *
-     * @param fCustomer Person value to set.
+     * @param customer Person value to set.
      */
     @Override
-    public void setCustomer(Person fCustomer) {
-        this.fCustomer = fCustomer;
+    public void setCustomer(Person customer) {
+        this.customer = customer;
     }
 
-    private Object fPaymentDueDate;
+    private Object paymentDueDate;
 
     /**
      * The date that payment is due.
@@ -314,47 +296,29 @@ public class OrderImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      */
     @Override
     public <T> T getPaymentDueDate() {
-        return (T) fPaymentDueDate;
+        return (T) paymentDueDate;
     }
 
     /**
      * The date that payment is due.
      *
-     * @param fPaymentDueDate DateTime value to set.
+     * @param paymentDueDate DateTime value to set.
      */
     @Override
-    public void setPaymentDueDate(DateTime fPaymentDueDate) {
-        this.fPaymentDueDate = fPaymentDueDate;
+    public void setPaymentDueDate(DateTime paymentDueDate) {
+        this.paymentDueDate = paymentDueDate;
     }
     /**
      * The date that payment is due.
      *
-     * @param fPaymentDueDate java.time.LocalDateTime value to set.
+     * @param paymentDueDate Date value to set.
      */
     @Override
-    public void setPaymentDueDate(java.time.LocalDateTime fPaymentDueDate) {
-        this.fPaymentDueDate = DateTime.of(fPaymentDueDate);
-    }
-    /**
-     * The date that payment is due.
-     *
-     * @param fPaymentDueDate Date value to set.
-     */
-    @Override
-    public void setPaymentDueDate(Date fPaymentDueDate) {
-        this.fPaymentDueDate = fPaymentDueDate;
-    }
-    /**
-     * The date that payment is due.
-     *
-     * @param fPaymentDueDate java.time.LocalDate value to set.
-     */
-    @Override
-    public void setPaymentDueDate(java.time.LocalDate fPaymentDueDate) {
-        this.fPaymentDueDate = Date.of(fPaymentDueDate);
+    public void setPaymentDueDate(Date paymentDueDate) {
+        this.paymentDueDate = paymentDueDate;
     }
 
-    private Object fBroker;
+    private Object broker;
 
     /**
      * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
@@ -363,29 +327,29 @@ public class OrderImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      */
     @Override
     public <T> T getBroker() {
-        return (T) fBroker;
+        return (T) broker;
     }
 
     /**
      * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
      *
-     * @param fBroker Person value to set.
+     * @param broker Person value to set.
      */
     @Override
-    public void setBroker(Person fBroker) {
-        this.fBroker = fBroker;
+    public void setBroker(Person broker) {
+        this.broker = broker;
     }
     /**
      * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
      *
-     * @param fBroker Organization value to set.
+     * @param broker Organization value to set.
      */
     @Override
-    public void setBroker(Organization fBroker) {
-        this.fBroker = fBroker;
+    public void setBroker(Organization broker) {
+        this.broker = broker;
     }
 
-    private Text fDiscountCode;
+    private Text discountCode;
 
     /**
      * Code used to redeem a discount.
@@ -394,29 +358,20 @@ public class OrderImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      */
     @Override
     public Text getDiscountCode() {
-        return fDiscountCode;
+        return discountCode;
     }
 
     /**
      * Code used to redeem a discount.
      *
-     * @param fDiscountCode Text value to set.
+     * @param discountCode Text value to set.
      */
     @Override
-    public void setDiscountCode(Text fDiscountCode) {
-        this.fDiscountCode = fDiscountCode;
-    }
-    /**
-     * Code used to redeem a discount.
-     *
-     * @param fDiscountCode java.lang.String value to set.
-     */
-    @Override
-    public void setDiscountCode(java.lang.String fDiscountCode) {
-        this.fDiscountCode = Text.of(fDiscountCode);
+    public void setDiscountCode(Text discountCode) {
+        this.discountCode = discountCode;
     }
 
-    private Object fDiscount;
+    private Object discount;
 
     /**
      * Any discount applied (to an Order).
@@ -425,47 +380,29 @@ public class OrderImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      */
     @Override
     public <T> T getDiscount() {
-        return (T) fDiscount;
+        return (T) discount;
     }
 
     /**
      * Any discount applied (to an Order).
      *
-     * @param fDiscount Text value to set.
+     * @param discount Text value to set.
      */
     @Override
-    public void setDiscount(Text fDiscount) {
-        this.fDiscount = fDiscount;
+    public void setDiscount(Text discount) {
+        this.discount = discount;
     }
     /**
      * Any discount applied (to an Order).
      *
-     * @param fDiscount java.lang.String value to set.
+     * @param discount Number value to set.
      */
     @Override
-    public void setDiscount(java.lang.String fDiscount) {
-        this.fDiscount = Text.of(fDiscount);
-    }
-    /**
-     * Any discount applied (to an Order).
-     *
-     * @param fDiscount Number value to set.
-     */
-    @Override
-    public void setDiscount(Number fDiscount) {
-        this.fDiscount = fDiscount;
-    }
-    /**
-     * Any discount applied (to an Order).
-     *
-     * @param fDiscount java.lang.Number value to set.
-     */
-    @Override
-    public void setDiscount(java.lang.Number fDiscount) {
-        this.fDiscount = Number.of(fDiscount);
+    public void setDiscount(Number discount) {
+        this.discount = discount;
     }
 
-    private Text fPaymentMethodId;
+    private Text paymentMethodId;
 
     /**
      * An identifier for the method of payment used (e.g. the last 4 digits of the credit card).
@@ -474,29 +411,20 @@ public class OrderImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      */
     @Override
     public Text getPaymentMethodId() {
-        return fPaymentMethodId;
+        return paymentMethodId;
     }
 
     /**
      * An identifier for the method of payment used (e.g. the last 4 digits of the credit card).
      *
-     * @param fPaymentMethodId Text value to set.
+     * @param paymentMethodId Text value to set.
      */
     @Override
-    public void setPaymentMethodId(Text fPaymentMethodId) {
-        this.fPaymentMethodId = fPaymentMethodId;
-    }
-    /**
-     * An identifier for the method of payment used (e.g. the last 4 digits of the credit card).
-     *
-     * @param fPaymentMethodId java.lang.String value to set.
-     */
-    @Override
-    public void setPaymentMethodId(java.lang.String fPaymentMethodId) {
-        this.fPaymentMethodId = Text.of(fPaymentMethodId);
+    public void setPaymentMethodId(Text paymentMethodId) {
+        this.paymentMethodId = paymentMethodId;
     }
 
-    private URL fPaymentUrl;
+    private URL paymentUrl;
 
     /**
      * The URL for sending a payment.
@@ -505,29 +433,20 @@ public class OrderImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      */
     @Override
     public URL getPaymentUrl() {
-        return fPaymentUrl;
+        return paymentUrl;
     }
 
     /**
      * The URL for sending a payment.
      *
-     * @param fPaymentUrl URL value to set.
+     * @param paymentUrl URL value to set.
      */
     @Override
-    public void setPaymentUrl(URL fPaymentUrl) {
-        this.fPaymentUrl = fPaymentUrl;
-    }
-    /**
-     * The URL for sending a payment.
-     *
-     * @param fPaymentUrl java.net.URL value to set.
-     */
-    @Override
-    public void setPaymentUrl(java.net.URL fPaymentUrl) {
-        this.fPaymentUrl = URL.of(fPaymentUrl);
+    public void setPaymentUrl(URL paymentUrl) {
+        this.paymentUrl = paymentUrl;
     }
 
-    private Text fDiscountCurrency;
+    private Text discountCurrency;
 
     /**
      * The currency of the discount.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
@@ -536,29 +455,20 @@ public class OrderImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      */
     @Override
     public Text getDiscountCurrency() {
-        return fDiscountCurrency;
+        return discountCurrency;
     }
 
     /**
      * The currency of the discount.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
      *
-     * @param fDiscountCurrency Text value to set.
+     * @param discountCurrency Text value to set.
      */
     @Override
-    public void setDiscountCurrency(Text fDiscountCurrency) {
-        this.fDiscountCurrency = fDiscountCurrency;
-    }
-    /**
-     * The currency of the discount.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
-     *
-     * @param fDiscountCurrency java.lang.String value to set.
-     */
-    @Override
-    public void setDiscountCurrency(java.lang.String fDiscountCurrency) {
-        this.fDiscountCurrency = Text.of(fDiscountCurrency);
+    public void setDiscountCurrency(Text discountCurrency) {
+        this.discountCurrency = discountCurrency;
     }
 
-    private DateTime fPaymentDue;
+    private DateTime paymentDue;
 
     /**
      * The date that payment is due.
@@ -567,29 +477,20 @@ public class OrderImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      */
     @Override
     public DateTime getPaymentDue() {
-        return fPaymentDue;
+        return paymentDue;
     }
 
     /**
      * The date that payment is due.
      *
-     * @param fPaymentDue DateTime value to set.
+     * @param paymentDue DateTime value to set.
      */
     @Override
-    public void setPaymentDue(DateTime fPaymentDue) {
-        this.fPaymentDue = fPaymentDue;
-    }
-    /**
-     * The date that payment is due.
-     *
-     * @param fPaymentDue java.time.LocalDateTime value to set.
-     */
-    @Override
-    public void setPaymentDue(java.time.LocalDateTime fPaymentDue) {
-        this.fPaymentDue = DateTime.of(fPaymentDue);
+    public void setPaymentDue(DateTime paymentDue) {
+        this.paymentDue = paymentDue;
     }
 
-    private Object fOrderDate;
+    private Object orderDate;
 
     /**
      * Date order was placed.
@@ -598,47 +499,29 @@ public class OrderImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      */
     @Override
     public <T> T getOrderDate() {
-        return (T) fOrderDate;
+        return (T) orderDate;
     }
 
     /**
      * Date order was placed.
      *
-     * @param fOrderDate Date value to set.
+     * @param orderDate Date value to set.
      */
     @Override
-    public void setOrderDate(Date fOrderDate) {
-        this.fOrderDate = fOrderDate;
+    public void setOrderDate(Date orderDate) {
+        this.orderDate = orderDate;
     }
     /**
      * Date order was placed.
      *
-     * @param fOrderDate java.time.LocalDate value to set.
+     * @param orderDate DateTime value to set.
      */
     @Override
-    public void setOrderDate(java.time.LocalDate fOrderDate) {
-        this.fOrderDate = Date.of(fOrderDate);
-    }
-    /**
-     * Date order was placed.
-     *
-     * @param fOrderDate DateTime value to set.
-     */
-    @Override
-    public void setOrderDate(DateTime fOrderDate) {
-        this.fOrderDate = fOrderDate;
-    }
-    /**
-     * Date order was placed.
-     *
-     * @param fOrderDate java.time.LocalDateTime value to set.
-     */
-    @Override
-    public void setOrderDate(java.time.LocalDateTime fOrderDate) {
-        this.fOrderDate = DateTime.of(fOrderDate);
+    public void setOrderDate(DateTime orderDate) {
+        this.orderDate = orderDate;
     }
 
-    private Boolean fIsGift;
+    private Boolean isGift;
 
     /**
      * Was the offer accepted as a gift for someone other than the buyer.
@@ -647,29 +530,20 @@ public class OrderImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      */
     @Override
     public Boolean getIsGift() {
-        return fIsGift;
+        return isGift;
     }
 
     /**
      * Was the offer accepted as a gift for someone other than the buyer.
      *
-     * @param fIsGift Boolean value to set.
+     * @param isGift Boolean value to set.
      */
     @Override
-    public void setIsGift(Boolean fIsGift) {
-        this.fIsGift = fIsGift;
-    }
-    /**
-     * Was the offer accepted as a gift for someone other than the buyer.
-     *
-     * @param fIsGift java.lang.Boolean value to set.
-     */
-    @Override
-    public void setIsGift(java.lang.Boolean fIsGift) {
-        this.fIsGift = Boolean.of(fIsGift);
+    public void setIsGift(Boolean isGift) {
+        this.isGift = isGift;
     }
 
-    private Object fOrderedItem;
+    private Object orderedItem;
 
     /**
      * The item ordered.
@@ -678,38 +552,38 @@ public class OrderImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      */
     @Override
     public <T> T getOrderedItem() {
-        return (T) fOrderedItem;
+        return (T) orderedItem;
     }
 
     /**
      * The item ordered.
      *
-     * @param fOrderedItem Service value to set.
+     * @param orderedItem Service value to set.
      */
     @Override
-    public void setOrderedItem(Service fOrderedItem) {
-        this.fOrderedItem = fOrderedItem;
+    public void setOrderedItem(Service orderedItem) {
+        this.orderedItem = orderedItem;
     }
     /**
      * The item ordered.
      *
-     * @param fOrderedItem OrderItem value to set.
+     * @param orderedItem OrderItem value to set.
      */
     @Override
-    public void setOrderedItem(OrderItem fOrderedItem) {
-        this.fOrderedItem = fOrderedItem;
+    public void setOrderedItem(OrderItem orderedItem) {
+        this.orderedItem = orderedItem;
     }
     /**
      * The item ordered.
      *
-     * @param fOrderedItem Product value to set.
+     * @param orderedItem Product value to set.
      */
     @Override
-    public void setOrderedItem(Product fOrderedItem) {
-        this.fOrderedItem = fOrderedItem;
+    public void setOrderedItem(Product orderedItem) {
+        this.orderedItem = orderedItem;
     }
 
-    private PaymentMethod fPaymentMethod;
+    private PaymentMethod paymentMethod;
 
     /**
      * The name of the credit card or other method of payment for the order.
@@ -718,20 +592,20 @@ public class OrderImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      */
     @Override
     public PaymentMethod getPaymentMethod() {
-        return fPaymentMethod;
+        return paymentMethod;
     }
 
     /**
      * The name of the credit card or other method of payment for the order.
      *
-     * @param fPaymentMethod PaymentMethod value to set.
+     * @param paymentMethod PaymentMethod value to set.
      */
     @Override
-    public void setPaymentMethod(PaymentMethod fPaymentMethod) {
-        this.fPaymentMethod = fPaymentMethod;
+    public void setPaymentMethod(PaymentMethod paymentMethod) {
+        this.paymentMethod = paymentMethod;
     }
 
-    private Object fMainEntityOfPage;
+    private Object mainEntityOfPage;
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -740,38 +614,29 @@ public class OrderImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      */
     @Override
     public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
+        return (T) mainEntityOfPage;
     }
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param fMainEntityOfPage CreativeWork value to set.
+     * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(CreativeWork fMainEntityOfPage) {
-        this.fMainEntityOfPage = fMainEntityOfPage;
+    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
     }
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param fMainEntityOfPage URL value to set.
+     * @param mainEntityOfPage URL value to set.
      */
     @Override
-    public void setMainEntityOfPage(URL fMainEntityOfPage) {
-        this.fMainEntityOfPage = fMainEntityOfPage;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param fMainEntityOfPage java.net.URL value to set.
-     */
-    @Override
-    public void setMainEntityOfPage(java.net.URL fMainEntityOfPage) {
-        this.fMainEntityOfPage = URL.of(fMainEntityOfPage);
+    public void setMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
     }
 
-    private Text fAlternateName;
+    private Text alternateName;
 
     /**
      * An alias for the item.
@@ -780,29 +645,20 @@ public class OrderImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      */
     @Override
     public Text getAlternateName() {
-        return fAlternateName;
+        return alternateName;
     }
 
     /**
      * An alias for the item.
      *
-     * @param fAlternateName Text value to set.
+     * @param alternateName Text value to set.
      */
     @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
-    }
-    /**
-     * An alias for the item.
-     *
-     * @param fAlternateName java.lang.String value to set.
-     */
-    @Override
-    public void setAlternateName(java.lang.String fAlternateName) {
-        this.fAlternateName = Text.of(fAlternateName);
+    public void setAlternateName(Text alternateName) {
+        this.alternateName = alternateName;
     }
 
-    private Text fName;
+    private Text name;
 
     /**
      * The name of the item.
@@ -811,29 +667,20 @@ public class OrderImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      */
     @Override
     public Text getName() {
-        return fName;
+        return name;
     }
 
     /**
      * The name of the item.
      *
-     * @param fName Text value to set.
+     * @param name Text value to set.
      */
     @Override
-    public void setName(Text fName) {
-        this.fName = fName;
-    }
-    /**
-     * The name of the item.
-     *
-     * @param fName java.lang.String value to set.
-     */
-    @Override
-    public void setName(java.lang.String fName) {
-        this.fName = Text.of(fName);
+    public void setName(Text name) {
+        this.name = name;
     }
 
-    private Action fPotentialAction;
+    private Action potentialAction;
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -842,20 +689,20 @@ public class OrderImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      */
     @Override
     public Action getPotentialAction() {
-        return fPotentialAction;
+        return potentialAction;
     }
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      *
-     * @param fPotentialAction Action value to set.
+     * @param potentialAction Action value to set.
      */
     @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
+    public void setPotentialAction(Action potentialAction) {
+        this.potentialAction = potentialAction;
     }
 
-    private Object fImage;
+    private Object image;
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -864,38 +711,29 @@ public class OrderImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      */
     @Override
     public <T> T getImage() {
-        return (T) fImage;
+        return (T) image;
     }
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param fImage URL value to set.
+     * @param image URL value to set.
      */
     @Override
-    public void setImage(URL fImage) {
-        this.fImage = fImage;
+    public void setImage(URL image) {
+        this.image = image;
     }
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param fImage java.net.URL value to set.
+     * @param image ImageObject value to set.
      */
     @Override
-    public void setImage(java.net.URL fImage) {
-        this.fImage = URL.of(fImage);
-    }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param fImage ImageObject value to set.
-     */
-    @Override
-    public void setImage(ImageObject fImage) {
-        this.fImage = fImage;
+    public void setImage(ImageObject image) {
+        this.image = image;
     }
 
-    private URL fUrl;
+    private URL url;
 
     /**
      * URL of the item.
@@ -904,29 +742,20 @@ public class OrderImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      */
     @Override
     public URL getUrl() {
-        return fUrl;
+        return url;
     }
 
     /**
      * URL of the item.
      *
-     * @param fUrl URL value to set.
+     * @param url URL value to set.
      */
     @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
-    }
-    /**
-     * URL of the item.
-     *
-     * @param fUrl java.net.URL value to set.
-     */
-    @Override
-    public void setUrl(java.net.URL fUrl) {
-        this.fUrl = URL.of(fUrl);
+    public void setUrl(URL url) {
+        this.url = url;
     }
 
-    private Text fDescription;
+    private Text description;
 
     /**
      * A description of the item.
@@ -935,29 +764,20 @@ public class OrderImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      */
     @Override
     public Text getDescription() {
-        return fDescription;
+        return description;
     }
 
     /**
      * A description of the item.
      *
-     * @param fDescription Text value to set.
+     * @param description Text value to set.
      */
     @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
-    }
-    /**
-     * A description of the item.
-     *
-     * @param fDescription java.lang.String value to set.
-     */
-    @Override
-    public void setDescription(java.lang.String fDescription) {
-        this.fDescription = Text.of(fDescription);
+    public void setDescription(Text description) {
+        this.description = description;
     }
 
-    private Object fSubjectOf;
+    private Object subjectOf;
 
     /**
      * A CreativeWork or Event about this Thing.
@@ -967,31 +787,31 @@ public class OrderImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      */
     @Override
     public <T> T getSubjectOf() {
-        return (T) fSubjectOf;
+        return (T) subjectOf;
     }
 
     /**
      * A CreativeWork or Event about this Thing.
      *
-     * @param fSubjectOf Event value to set.
+     * @param subjectOf Event value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Event fSubjectOf) {
-        this.fSubjectOf = fSubjectOf;
+    public void setSubjectOf(Event subjectOf) {
+        this.subjectOf = subjectOf;
     }
     /**
      * A CreativeWork or Event about this Thing.
      *
-     * @param fSubjectOf CreativeWork value to set.
+     * @param subjectOf CreativeWork value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(CreativeWork fSubjectOf) {
-        this.fSubjectOf = fSubjectOf;
+    public void setSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = subjectOf;
     }
 
-    private URL fAdditionalType;
+    private URL additionalType;
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
@@ -1000,29 +820,20 @@ public class OrderImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      */
     @Override
     public URL getAdditionalType() {
-        return fAdditionalType;
+        return additionalType;
     }
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
-     * @param fAdditionalType URL value to set.
+     * @param additionalType URL value to set.
      */
     @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
-    }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @param fAdditionalType java.net.URL value to set.
-     */
-    @Override
-    public void setAdditionalType(java.net.URL fAdditionalType) {
-        this.fAdditionalType = URL.of(fAdditionalType);
+    public void setAdditionalType(URL additionalType) {
+        this.additionalType = additionalType;
     }
 
-    private Text fDisambiguatingDescription;
+    private Text disambiguatingDescription;
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
@@ -1031,29 +842,20 @@ public class OrderImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      */
     @Override
     public Text getDisambiguatingDescription() {
-        return fDisambiguatingDescription;
+        return disambiguatingDescription;
     }
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
-     * @param fDisambiguatingDescription Text value to set.
+     * @param disambiguatingDescription Text value to set.
      */
     @Override
-    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = fDisambiguatingDescription;
-    }
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @param fDisambiguatingDescription java.lang.String value to set.
-     */
-    @Override
-    public void setDisambiguatingDescription(java.lang.String fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = Text.of(fDisambiguatingDescription);
+    public void setDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = disambiguatingDescription;
     }
 
-    private URL fSameAs;
+    private URL sameAs;
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
@@ -1062,29 +864,20 @@ public class OrderImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      */
     @Override
     public URL getSameAs() {
-        return fSameAs;
+        return sameAs;
     }
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
-     * @param fSameAs URL value to set.
+     * @param sameAs URL value to set.
      */
     @Override
-    public void setSameAs(URL fSameAs) {
-        this.fSameAs = fSameAs;
-    }
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @param fSameAs java.net.URL value to set.
-     */
-    @Override
-    public void setSameAs(java.net.URL fSameAs) {
-        this.fSameAs = URL.of(fSameAs);
+    public void setSameAs(URL sameAs) {
+        this.sameAs = sameAs;
     }
 
-    private Object fIdentifier;
+    private Object identifier;
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -1094,57 +887,37 @@ public class OrderImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
      */
     @Override
     public <T> T getIdentifier() {
-        return (T) fIdentifier;
+        return (T) identifier;
     }
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier URL value to set.
+     * @param identifier URL value to set.
      */
     @Override
-    public void setIdentifier(URL fIdentifier) {
-        this.fIdentifier = fIdentifier;
+    public void setIdentifier(URL identifier) {
+        this.identifier = identifier;
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier java.net.URL value to set.
+     * @param identifier Text value to set.
      */
     @Override
-    public void setIdentifier(java.net.URL fIdentifier) {
-        this.fIdentifier = URL.of(fIdentifier);
+    public void setIdentifier(Text identifier) {
+        this.identifier = identifier;
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier Text value to set.
+     * @param identifier PropertyValue value to set.
      */
     @Override
-    public void setIdentifier(Text fIdentifier) {
-        this.fIdentifier = fIdentifier;
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param fIdentifier java.lang.String value to set.
-     */
-    @Override
-    public void setIdentifier(java.lang.String fIdentifier) {
-        this.fIdentifier = Text.of(fIdentifier);
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param fIdentifier PropertyValue value to set.
-     */
-    @Override
-    public void setIdentifier(PropertyValue fIdentifier) {
-        this.fIdentifier = fIdentifier;
+    public void setIdentifier(PropertyValue identifier) {
+        this.identifier = identifier;
     }
 }

@@ -27,10 +27,10 @@ public interface MedicalRiskEstimator extends MedicalEntity {
     /**
      * The condition, complication, or symptom whose risk is being estimated.
      *
-     * @param fEstimatesRiskOf MedicalEntity value to set.
+     * @param estimatesRiskOf MedicalEntity value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setEstimatesRiskOf(MedicalEntity fEstimatesRiskOf);
+    void setEstimatesRiskOf(MedicalEntity estimatesRiskOf);
 
     /**
      * A modifiable or non-modifiable risk factor included in the calculation, e.g. age, coexisting condition.
@@ -43,8 +43,8 @@ public interface MedicalRiskEstimator extends MedicalEntity {
     /**
      * A modifiable or non-modifiable risk factor included in the calculation, e.g. age, coexisting condition.
      *
-     * @param fIncludedRiskFactor MedicalRiskFactor value to set.
+     * @param includedRiskFactor MedicalRiskFactor value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setIncludedRiskFactor(MedicalRiskFactor fIncludedRiskFactor);
+    void setIncludedRiskFactor(MedicalRiskFactor includedRiskFactor);
 }

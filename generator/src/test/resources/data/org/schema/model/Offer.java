@@ -66,11 +66,11 @@ public interface Offer extends Intangible {
     /**
      * Used to tag an item to be intended or suitable for consumption or use by adults only.
      *
-     * @param fHasAdultConsideration AdultOrientedEnumeration value to set.
+     * @param hasAdultConsideration AdultOrientedEnumeration value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2989">https://github.com/schemaorg/schemaorg/issues/2989</a>
      */
-    void setHasAdultConsideration(AdultOrientedEnumeration fHasAdultConsideration);
+    void setHasAdultConsideration(AdultOrientedEnumeration hasAdultConsideration);
 
     /**
      * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
@@ -82,15 +82,9 @@ public interface Offer extends Intangible {
     /**
      * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
-     * @param fGtin12 Text value to set.
+     * @param gtin12 Text value to set.
      */
-    void setGtin12(Text fGtin12);
-    /**
-     * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
-     *
-     * @param fGtin12 java.lang.String value to set.
-     */
-    void setGtin12(java.lang.String fGtin12);
+    void setGtin12(Text gtin12);
 
     /**
      * A review of the item.
@@ -102,9 +96,9 @@ public interface Offer extends Intangible {
     /**
      * A review of the item.
      *
-     * @param fReview Review value to set.
+     * @param review Review value to set.
      */
-    void setReview(Review fReview);
+    void setReview(Review review);
 
     /**
      * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
@@ -116,45 +110,45 @@ public interface Offer extends Intangible {
     /**
      * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *
-     * @param fItemOffered Trip value to set.
+     * @param itemOffered Trip value to set.
      */
-    void setItemOffered(Trip fItemOffered);
+    void setItemOffered(Trip itemOffered);
     /**
      * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *
-     * @param fItemOffered Event value to set.
+     * @param itemOffered Event value to set.
      */
-    void setItemOffered(Event fItemOffered);
+    void setItemOffered(Event itemOffered);
     /**
      * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *
-     * @param fItemOffered Product value to set.
+     * @param itemOffered Product value to set.
      */
-    void setItemOffered(Product fItemOffered);
+    void setItemOffered(Product itemOffered);
     /**
      * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *
-     * @param fItemOffered AggregateOffer value to set.
+     * @param itemOffered AggregateOffer value to set.
      */
-    void setItemOffered(AggregateOffer fItemOffered);
+    void setItemOffered(AggregateOffer itemOffered);
     /**
      * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *
-     * @param fItemOffered CreativeWork value to set.
+     * @param itemOffered CreativeWork value to set.
      */
-    void setItemOffered(CreativeWork fItemOffered);
+    void setItemOffered(CreativeWork itemOffered);
     /**
      * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *
-     * @param fItemOffered MenuItem value to set.
+     * @param itemOffered MenuItem value to set.
      */
-    void setItemOffered(MenuItem fItemOffered);
+    void setItemOffered(MenuItem itemOffered);
     /**
      * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *
-     * @param fItemOffered Service value to set.
+     * @param itemOffered Service value to set.
      */
-    void setItemOffered(Service fItemOffered);
+    void setItemOffered(Service itemOffered);
 
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
@@ -168,59 +162,43 @@ public interface Offer extends Intangible {
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
-     * @param fCategory URL value to set.
+     * @param category URL value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
-    void setCategory(URL fCategory);
+    void setCategory(URL category);
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
-     * @param fCategory java.net.URL value to set.
+     * @param category Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
-    void setCategory(java.net.URL fCategory);
+    void setCategory(Text category);
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
-     * @param fCategory Text value to set.
+     * @param category PhysicalActivityCategory value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
-    void setCategory(Text fCategory);
+    void setCategory(PhysicalActivityCategory category);
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
-     * @param fCategory java.lang.String value to set.
+     * @param category Thing value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
-    void setCategory(java.lang.String fCategory);
+    void setCategory(Thing category);
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
-     * @param fCategory PhysicalActivityCategory value to set.
+     * @param category CategoryCode value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
-    void setCategory(PhysicalActivityCategory fCategory);
-    /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-     *
-     * @param fCategory Thing value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     */
-    void setCategory(Thing fCategory);
-    /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-     *
-     * @param fCategory CategoryCode value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     */
-    void setCategory(CategoryCode fCategory);
+    void setCategory(CategoryCode category);
 
     /**
      * The date after which the price is no longer available.
@@ -232,15 +210,9 @@ public interface Offer extends Intangible {
     /**
      * The date after which the price is no longer available.
      *
-     * @param fPriceValidUntil Date value to set.
+     * @param priceValidUntil Date value to set.
      */
-    void setPriceValidUntil(Date fPriceValidUntil);
-    /**
-     * The date after which the price is no longer available.
-     *
-     * @param fPriceValidUntil java.time.LocalDate value to set.
-     */
-    void setPriceValidUntil(java.time.LocalDate fPriceValidUntil);
+    void setPriceValidUntil(Date priceValidUntil);
 
     /**
      * Indicates information about the shipping policies and options associated with an [[Offer]].
@@ -254,11 +226,11 @@ public interface Offer extends Intangible {
     /**
      * Indicates information about the shipping policies and options associated with an [[Offer]].
      *
-     * @param fShippingDetails OfferShippingDetails value to set.
+     * @param shippingDetails OfferShippingDetails value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
-    void setShippingDetails(OfferShippingDetails fShippingDetails);
+    void setShippingDetails(OfferShippingDetails shippingDetails);
 
     /**
      * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
@@ -271,17 +243,10 @@ public interface Offer extends Intangible {
     /**
      * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
      *
-     * @param fMpn Text value to set.
+     * @param mpn Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setMpn(Text fMpn);
-    /**
-     * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
-     *
-     * @param fMpn java.lang.String value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void setMpn(java.lang.String fMpn);
+    void setMpn(Text mpn);
 
     /**
      * This links to a node or nodes indicating the exact quantity of the products included in  an [[Offer]] or [[ProductCollection]].
@@ -294,10 +259,10 @@ public interface Offer extends Intangible {
     /**
      * This links to a node or nodes indicating the exact quantity of the products included in  an [[Offer]] or [[ProductCollection]].
      *
-     * @param fIncludesObject TypeAndQuantityNode value to set.
+     * @param includesObject TypeAndQuantityNode value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setIncludesObject(TypeAndQuantityNode fIncludesObject);
+    void setIncludesObject(TypeAndQuantityNode includesObject);
 
     /**
      * The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.
@@ -310,10 +275,10 @@ public interface Offer extends Intangible {
     /**
      * The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.
      *
-     * @param fBusinessFunction BusinessFunction value to set.
+     * @param businessFunction BusinessFunction value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setBusinessFunction(BusinessFunction fBusinessFunction);
+    void setBusinessFunction(BusinessFunction businessFunction);
 
     /**
      * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
@@ -325,9 +290,9 @@ public interface Offer extends Intangible {
     /**
      * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
      *
-     * @param fItemCondition OfferItemCondition value to set.
+     * @param itemCondition OfferItemCondition value to set.
      */
-    void setItemCondition(OfferItemCondition fItemCondition);
+    void setItemCondition(OfferItemCondition itemCondition);
 
     /**
      * A Global Trade Item Number ([GTIN](https://www.gs1.org/standards/id-keys/gtin)). GTINs identify trade items, including products and services, using numeric identification codes. The [[gtin]] property generalizes the earlier [[gtin8]], [[gtin12]], [[gtin13]], and [[gtin14]] properties. The GS1 [digital link specifications](https://www.gs1.org/standards/Digital-Link/) express GTINs as URLs. A correct [[gtin]] value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a "GS1 Digital Link" URL based on such a string. The numeric component should also have a [valid GS1 check digit](https://www.gs1.org/services/check-digit-calculator) and meet the other rules for valid GTINs. See also [GS1's GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) and [Wikipedia](https://en.wikipedia.org/wiki/Global_Trade_Item_Number) for more details. Left-padding of the gtin values is not required or encouraged.
@@ -343,20 +308,11 @@ public interface Offer extends Intangible {
      * A Global Trade Item Number ([GTIN](https://www.gs1.org/standards/id-keys/gtin)). GTINs identify trade items, including products and services, using numeric identification codes. The [[gtin]] property generalizes the earlier [[gtin8]], [[gtin12]], [[gtin13]], and [[gtin14]] properties. The GS1 [digital link specifications](https://www.gs1.org/standards/Digital-Link/) express GTINs as URLs. A correct [[gtin]] value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a "GS1 Digital Link" URL based on such a string. The numeric component should also have a [valid GS1 check digit](https://www.gs1.org/services/check-digit-calculator) and meet the other rules for valid GTINs. See also [GS1's GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) and [Wikipedia](https://en.wikipedia.org/wiki/Global_Trade_Item_Number) for more details. Left-padding of the gtin values is not required or encouraged.
      *    
      *
-     * @param fGtin Text value to set.
+     * @param gtin Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
      */
-    void setGtin(Text fGtin);
-    /**
-     * A Global Trade Item Number ([GTIN](https://www.gs1.org/standards/id-keys/gtin)). GTINs identify trade items, including products and services, using numeric identification codes. The [[gtin]] property generalizes the earlier [[gtin8]], [[gtin12]], [[gtin13]], and [[gtin14]] properties. The GS1 [digital link specifications](https://www.gs1.org/standards/Digital-Link/) express GTINs as URLs. A correct [[gtin]] value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a "GS1 Digital Link" URL based on such a string. The numeric component should also have a [valid GS1 check digit](https://www.gs1.org/services/check-digit-calculator) and meet the other rules for valid GTINs. See also [GS1's GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) and [Wikipedia](https://en.wikipedia.org/wiki/Global_Trade_Item_Number) for more details. Left-padding of the gtin values is not required or encouraged.
-     *    
-     *
-     * @param fGtin java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    void setGtin(java.lang.String fGtin);
+    void setGtin(Text gtin);
 
     /**
      * The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.
@@ -369,10 +325,10 @@ public interface Offer extends Intangible {
     /**
      * The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.
      *
-     * @param fEligibleQuantity QuantitativeValue value to set.
+     * @param eligibleQuantity QuantitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setEligibleQuantity(QuantitativeValue fEligibleQuantity);
+    void setEligibleQuantity(QuantitativeValue eligibleQuantity);
 
     /**
      * The payment method(s) accepted by seller for this offer.
@@ -385,17 +341,17 @@ public interface Offer extends Intangible {
     /**
      * The payment method(s) accepted by seller for this offer.
      *
-     * @param fAcceptedPaymentMethod LoanOrCredit value to set.
+     * @param acceptedPaymentMethod LoanOrCredit value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setAcceptedPaymentMethod(LoanOrCredit fAcceptedPaymentMethod);
+    void setAcceptedPaymentMethod(LoanOrCredit acceptedPaymentMethod);
     /**
      * The payment method(s) accepted by seller for this offer.
      *
-     * @param fAcceptedPaymentMethod PaymentMethod value to set.
+     * @param acceptedPaymentMethod PaymentMethod value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setAcceptedPaymentMethod(PaymentMethod fAcceptedPaymentMethod);
+    void setAcceptedPaymentMethod(PaymentMethod acceptedPaymentMethod);
 
     /**
      * The warranty promise(s) included in the offer.
@@ -408,10 +364,10 @@ public interface Offer extends Intangible {
     /**
      * The warranty promise(s) included in the offer.
      *
-     * @param fWarranty WarrantyPromise value to set.
+     * @param warranty WarrantyPromise value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setWarranty(WarrantyPromise fWarranty);
+    void setWarranty(WarrantyPromise warranty);
 
     /**
      * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
@@ -423,15 +379,15 @@ public interface Offer extends Intangible {
     /**
      * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
      *
-     * @param fSeller Organization value to set.
+     * @param seller Organization value to set.
      */
-    void setSeller(Organization fSeller);
+    void setSeller(Organization seller);
     /**
      * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
      *
-     * @param fSeller Person value to set.
+     * @param seller Person value to set.
      */
-    void setSeller(Person fSeller);
+    void setSeller(Person seller);
 
     /**
      * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>See also [[eligibleRegion]].
@@ -447,38 +403,29 @@ public interface Offer extends Intangible {
      * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>See also [[eligibleRegion]].
      *       
      *
-     * @param fIneligibleRegion Place value to set.
+     * @param ineligibleRegion Place value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2242">https://github.com/schemaorg/schemaorg/issues/2242</a>
      */
-    void setIneligibleRegion(Place fIneligibleRegion);
+    void setIneligibleRegion(Place ineligibleRegion);
     /**
      * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>See also [[eligibleRegion]].
      *       
      *
-     * @param fIneligibleRegion Text value to set.
+     * @param ineligibleRegion Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2242">https://github.com/schemaorg/schemaorg/issues/2242</a>
      */
-    void setIneligibleRegion(Text fIneligibleRegion);
+    void setIneligibleRegion(Text ineligibleRegion);
     /**
      * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>See also [[eligibleRegion]].
      *       
      *
-     * @param fIneligibleRegion java.lang.String value to set.
+     * @param ineligibleRegion GeoShape value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2242">https://github.com/schemaorg/schemaorg/issues/2242</a>
      */
-    void setIneligibleRegion(java.lang.String fIneligibleRegion);
-    /**
-     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>See also [[eligibleRegion]].
-     *       
-     *
-     * @param fIneligibleRegion GeoShape value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2242">https://github.com/schemaorg/schemaorg/issues/2242</a>
-     */
-    void setIneligibleRegion(GeoShape fIneligibleRegion);
+    void setIneligibleRegion(GeoShape ineligibleRegion);
 
     /**
      * Length of the lease for some [[Accommodation]], either particular to some [[Offer]] or in some cases intrinsic to the property.
@@ -492,19 +439,19 @@ public interface Offer extends Intangible {
     /**
      * Length of the lease for some [[Accommodation]], either particular to some [[Offer]] or in some cases intrinsic to the property.
      *
-     * @param fLeaseLength QuantitativeValue value to set.
+     * @param leaseLength QuantitativeValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
-    void setLeaseLength(QuantitativeValue fLeaseLength);
+    void setLeaseLength(QuantitativeValue leaseLength);
     /**
      * Length of the lease for some [[Accommodation]], either particular to some [[Offer]] or in some cases intrinsic to the property.
      *
-     * @param fLeaseLength Duration value to set.
+     * @param leaseLength Duration value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
-    void setLeaseLength(Duration fLeaseLength);
+    void setLeaseLength(Duration leaseLength);
 
     /**
      * The overall rating, based on a collection of reviews or ratings, of the item.
@@ -516,9 +463,9 @@ public interface Offer extends Intangible {
     /**
      * The overall rating, based on a collection of reviews or ratings, of the item.
      *
-     * @param fAggregateRating AggregateRating value to set.
+     * @param aggregateRating AggregateRating value to set.
      */
-    void setAggregateRating(AggregateRating fAggregateRating);
+    void setAggregateRating(AggregateRating aggregateRating);
 
     /**
      * A pointer to the organization or person making the offer.
@@ -530,15 +477,15 @@ public interface Offer extends Intangible {
     /**
      * A pointer to the organization or person making the offer.
      *
-     * @param fOfferedBy Person value to set.
+     * @param offeredBy Person value to set.
      */
-    void setOfferedBy(Person fOfferedBy);
+    void setOfferedBy(Person offeredBy);
     /**
      * A pointer to the organization or person making the offer.
      *
-     * @param fOfferedBy Organization value to set.
+     * @param offeredBy Organization value to set.
      */
-    void setOfferedBy(Organization fOfferedBy);
+    void setOfferedBy(Organization offeredBy);
 
     /**
      * The typical delay between the receipt of the order and the goods either leaving the warehouse or being prepared for pickup, in case the delivery method is on site pickup.
@@ -551,10 +498,10 @@ public interface Offer extends Intangible {
     /**
      * The typical delay between the receipt of the order and the goods either leaving the warehouse or being prepared for pickup, in case the delivery method is on site pickup.
      *
-     * @param fDeliveryLeadTime QuantitativeValue value to set.
+     * @param deliveryLeadTime QuantitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setDeliveryLeadTime(QuantitativeValue fDeliveryLeadTime);
+    void setDeliveryLeadTime(QuantitativeValue deliveryLeadTime);
 
     /**
      * The delivery method(s) available for this offer.
@@ -567,10 +514,10 @@ public interface Offer extends Intangible {
     /**
      * The delivery method(s) available for this offer.
      *
-     * @param fAvailableDeliveryMethod DeliveryMethod value to set.
+     * @param availableDeliveryMethod DeliveryMethod value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setAvailableDeliveryMethod(DeliveryMethod fAvailableDeliveryMethod);
+    void setAvailableDeliveryMethod(DeliveryMethod availableDeliveryMethod);
 
     /**
      * The date when the item becomes valid.
@@ -583,31 +530,17 @@ public interface Offer extends Intangible {
     /**
      * The date when the item becomes valid.
      *
-     * @param fValidFrom DateTime value to set.
+     * @param validFrom DateTime value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setValidFrom(DateTime fValidFrom);
+    void setValidFrom(DateTime validFrom);
     /**
      * The date when the item becomes valid.
      *
-     * @param fValidFrom java.time.LocalDateTime value to set.
+     * @param validFrom Date value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setValidFrom(java.time.LocalDateTime fValidFrom);
-    /**
-     * The date when the item becomes valid.
-     *
-     * @param fValidFrom Date value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void setValidFrom(Date fValidFrom);
-    /**
-     * The date when the item becomes valid.
-     *
-     * @param fValidFrom java.time.LocalDate value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void setValidFrom(java.time.LocalDate fValidFrom);
+    void setValidFrom(Date validFrom);
 
     /**
      * The end of the availability of the product or service included in the offer.
@@ -621,51 +554,27 @@ public interface Offer extends Intangible {
     /**
      * The end of the availability of the product or service included in the offer.
      *
-     * @param fAvailabilityEnds Date value to set.
+     * @param availabilityEnds Date value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setAvailabilityEnds(Date fAvailabilityEnds);
+    void setAvailabilityEnds(Date availabilityEnds);
     /**
      * The end of the availability of the product or service included in the offer.
      *
-     * @param fAvailabilityEnds java.time.LocalDate value to set.
+     * @param availabilityEnds DateTime value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setAvailabilityEnds(java.time.LocalDate fAvailabilityEnds);
+    void setAvailabilityEnds(DateTime availabilityEnds);
     /**
      * The end of the availability of the product or service included in the offer.
      *
-     * @param fAvailabilityEnds DateTime value to set.
+     * @param availabilityEnds Time value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setAvailabilityEnds(DateTime fAvailabilityEnds);
-    /**
-     * The end of the availability of the product or service included in the offer.
-     *
-     * @param fAvailabilityEnds java.time.LocalDateTime value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void setAvailabilityEnds(java.time.LocalDateTime fAvailabilityEnds);
-    /**
-     * The end of the availability of the product or service included in the offer.
-     *
-     * @param fAvailabilityEnds Time value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void setAvailabilityEnds(Time fAvailabilityEnds);
-    /**
-     * The end of the availability of the product or service included in the offer.
-     *
-     * @param fAvailabilityEnds java.time.LocalTime value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void setAvailabilityEnds(java.time.LocalTime fAvailabilityEnds);
+    void setAvailabilityEnds(Time availabilityEnds);
 
     /**
      * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.<br/><br/>See also [[ineligibleRegion]].
@@ -681,38 +590,29 @@ public interface Offer extends Intangible {
      * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.<br/><br/>See also [[ineligibleRegion]].
      *     
      *
-     * @param fEligibleRegion GeoShape value to set.
+     * @param eligibleRegion GeoShape value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
-    void setEligibleRegion(GeoShape fEligibleRegion);
+    void setEligibleRegion(GeoShape eligibleRegion);
     /**
      * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.<br/><br/>See also [[ineligibleRegion]].
      *     
      *
-     * @param fEligibleRegion Text value to set.
+     * @param eligibleRegion Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
-    void setEligibleRegion(Text fEligibleRegion);
+    void setEligibleRegion(Text eligibleRegion);
     /**
      * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.<br/><br/>See also [[ineligibleRegion]].
      *     
      *
-     * @param fEligibleRegion java.lang.String value to set.
+     * @param eligibleRegion Place value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
-    void setEligibleRegion(java.lang.String fEligibleRegion);
-    /**
-     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.<br/><br/>See also [[ineligibleRegion]].
-     *     
-     *
-     * @param fEligibleRegion Place value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     */
-    void setEligibleRegion(Place fEligibleRegion);
+    void setEligibleRegion(Place eligibleRegion);
 
     /**
      * A product measurement, for example the inseam of pants, the wheel size of a bicycle, or the gauge of a screw. Usually an exact measurement, but can also be a range of measurements for adjustable products, for example belts and ski bindings.
@@ -726,11 +626,11 @@ public interface Offer extends Intangible {
     /**
      * A product measurement, for example the inseam of pants, the wheel size of a bicycle, or the gauge of a screw. Usually an exact measurement, but can also be a range of measurements for adjustable products, for example belts and ski bindings.
      *
-     * @param fHasMeasurement QuantitativeValue value to set.
+     * @param hasMeasurement QuantitativeValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
      */
-    void setHasMeasurement(QuantitativeValue fHasMeasurement);
+    void setHasMeasurement(QuantitativeValue hasMeasurement);
 
     /**
      * The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
@@ -743,17 +643,10 @@ public interface Offer extends Intangible {
     /**
      * The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
-     * @param fGtin8 Text value to set.
+     * @param gtin8 Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setGtin8(Text fGtin8);
-    /**
-     * The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
-     *
-     * @param fGtin8 java.lang.String value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void setGtin8(java.lang.String fGtin8);
+    void setGtin8(Text gtin8);
 
     /**
      * The current approximate inventory level for the item or items.
@@ -766,10 +659,10 @@ public interface Offer extends Intangible {
     /**
      * The current approximate inventory level for the item or items.
      *
-     * @param fInventoryLevel QuantitativeValue value to set.
+     * @param inventoryLevel QuantitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setInventoryLevel(QuantitativeValue fInventoryLevel);
+    void setInventoryLevel(QuantitativeValue inventoryLevel);
 
     /**
      * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
@@ -782,17 +675,10 @@ public interface Offer extends Intangible {
     /**
      * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
      *
-     * @param fSku Text value to set.
+     * @param sku Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setSku(Text fSku);
-    /**
-     * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
-     *
-     * @param fSku java.lang.String value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void setSku(java.lang.String fSku);
+    void setSku(Text sku);
 
     /**
      * An additional offer that can only be obtained in combination with the first base offer (e.g. supplements and extensions that are available for a surcharge).
@@ -805,10 +691,10 @@ public interface Offer extends Intangible {
     /**
      * An additional offer that can only be obtained in combination with the first base offer (e.g. supplements and extensions that are available for a surcharge).
      *
-     * @param fAddOn Offer value to set.
+     * @param addOn Offer value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setAddOn(Offer fAddOn);
+    void setAddOn(Offer addOn);
 
     /**
      * Specifies a MerchantReturnPolicy that may be applicable.
@@ -822,11 +708,11 @@ public interface Offer extends Intangible {
     /**
      * Specifies a MerchantReturnPolicy that may be applicable.
      *
-     * @param fHasMerchantReturnPolicy MerchantReturnPolicy value to set.
+     * @param hasMerchantReturnPolicy MerchantReturnPolicy value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
      */
-    void setHasMerchantReturnPolicy(MerchantReturnPolicy fHasMerchantReturnPolicy);
+    void setHasMerchantReturnPolicy(MerchantReturnPolicy hasMerchantReturnPolicy);
 
     /**
      * The amount of time that is required between accepting the offer and the actual usage of the resource or service.
@@ -839,10 +725,10 @@ public interface Offer extends Intangible {
     /**
      * The amount of time that is required between accepting the offer and the actual usage of the resource or service.
      *
-     * @param fAdvanceBookingRequirement QuantitativeValue value to set.
+     * @param advanceBookingRequirement QuantitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setAdvanceBookingRequirement(QuantitativeValue fAdvanceBookingRequirement);
+    void setAdvanceBookingRequirement(QuantitativeValue advanceBookingRequirement);
 
     /**
      * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
@@ -855,17 +741,10 @@ public interface Offer extends Intangible {
     /**
      * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
-     * @param fGtin14 Text value to set.
+     * @param gtin14 Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setGtin14(Text fGtin14);
-    /**
-     * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
-     *
-     * @param fGtin14 java.lang.String value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void setGtin14(java.lang.String fGtin14);
+    void setGtin14(Text gtin14);
 
     /**
      * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
@@ -877,15 +756,9 @@ public interface Offer extends Intangible {
     /**
      * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
      *
-     * @param fPriceCurrency Text value to set.
+     * @param priceCurrency Text value to set.
      */
-    void setPriceCurrency(Text fPriceCurrency);
-    /**
-     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
-     *
-     * @param fPriceCurrency java.lang.String value to set.
-     */
-    void setPriceCurrency(java.lang.String fPriceCurrency);
+    void setPriceCurrency(Text priceCurrency);
 
     /**
      * The transaction volume, in a monetary unit, for which the offer or price specification is valid, e.g. for indicating a minimal purchasing volume, to express free shipping above a certain order volume, or to limit the acceptance of credit cards to purchases to a certain minimal amount.
@@ -898,10 +771,10 @@ public interface Offer extends Intangible {
     /**
      * The transaction volume, in a monetary unit, for which the offer or price specification is valid, e.g. for indicating a minimal purchasing volume, to express free shipping above a certain order volume, or to limit the acceptance of credit cards to purchases to a certain minimal amount.
      *
-     * @param fEligibleTransactionVolume PriceSpecification value to set.
+     * @param eligibleTransactionVolume PriceSpecification value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setEligibleTransactionVolume(PriceSpecification fEligibleTransactionVolume);
+    void setEligibleTransactionVolume(PriceSpecification eligibleTransactionVolume);
 
     /**
      * The geographic area where a service or offered item is provided.
@@ -913,33 +786,27 @@ public interface Offer extends Intangible {
     /**
      * The geographic area where a service or offered item is provided.
      *
-     * @param fAreaServed AdministrativeArea value to set.
+     * @param areaServed AdministrativeArea value to set.
      */
-    void setAreaServed(AdministrativeArea fAreaServed);
+    void setAreaServed(AdministrativeArea areaServed);
     /**
      * The geographic area where a service or offered item is provided.
      *
-     * @param fAreaServed GeoShape value to set.
+     * @param areaServed GeoShape value to set.
      */
-    void setAreaServed(GeoShape fAreaServed);
+    void setAreaServed(GeoShape areaServed);
     /**
      * The geographic area where a service or offered item is provided.
      *
-     * @param fAreaServed Text value to set.
+     * @param areaServed Text value to set.
      */
-    void setAreaServed(Text fAreaServed);
+    void setAreaServed(Text areaServed);
     /**
      * The geographic area where a service or offered item is provided.
      *
-     * @param fAreaServed java.lang.String value to set.
+     * @param areaServed Place value to set.
      */
-    void setAreaServed(java.lang.String fAreaServed);
-    /**
-     * The geographic area where a service or offered item is provided.
-     *
-     * @param fAreaServed Place value to set.
-     */
-    void setAreaServed(Place fAreaServed);
+    void setAreaServed(Place areaServed);
 
     /**
      * The type(s) of customers for which the given offer is valid.
@@ -952,10 +819,10 @@ public interface Offer extends Intangible {
     /**
      * The type(s) of customers for which the given offer is valid.
      *
-     * @param fEligibleCustomerType BusinessEntityType value to set.
+     * @param eligibleCustomerType BusinessEntityType value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setEligibleCustomerType(BusinessEntityType fEligibleCustomerType);
+    void setEligibleCustomerType(BusinessEntityType eligibleCustomerType);
 
     /**
      * The availability of this item&#x2014;for example In stock, Out of stock, Pre-order, etc.
@@ -967,9 +834,9 @@ public interface Offer extends Intangible {
     /**
      * The availability of this item&#x2014;for example In stock, Out of stock, Pre-order, etc.
      *
-     * @param fAvailability ItemAvailability value to set.
+     * @param availability ItemAvailability value to set.
      */
-    void setAvailability(ItemAvailability fAvailability);
+    void setAvailability(ItemAvailability availability);
 
     /**
      * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
@@ -982,17 +849,10 @@ public interface Offer extends Intangible {
     /**
      * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
-     * @param fGtin13 Text value to set.
+     * @param gtin13 Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setGtin13(Text fGtin13);
-    /**
-     * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
-     *
-     * @param fGtin13 java.lang.String value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void setGtin13(java.lang.String fGtin13);
+    void setGtin13(Text gtin13);
 
     /**
      * Review of the item.
@@ -1004,9 +864,9 @@ public interface Offer extends Intangible {
     /**
      * Review of the item.
      *
-     * @param fReviews Review value to set.
+     * @param reviews Review value to set.
      */
-    void setReviews(Review fReviews);
+    void setReviews(Review reviews);
 
     /**
      * Indicates whether this content is family friendly.
@@ -1018,15 +878,9 @@ public interface Offer extends Intangible {
     /**
      * Indicates whether this content is family friendly.
      *
-     * @param fIsFamilyFriendly Boolean value to set.
+     * @param isFamilyFriendly Boolean value to set.
      */
-    void setIsFamilyFriendly(Boolean fIsFamilyFriendly);
-    /**
-     * Indicates whether this content is family friendly.
-     *
-     * @param fIsFamilyFriendly java.lang.Boolean value to set.
-     */
-    void setIsFamilyFriendly(java.lang.Boolean fIsFamilyFriendly);
+    void setIsFamilyFriendly(Boolean isFamilyFriendly);
 
     /**
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
@@ -1039,31 +893,17 @@ public interface Offer extends Intangible {
     /**
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
      *
-     * @param fValidThrough DateTime value to set.
+     * @param validThrough DateTime value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setValidThrough(DateTime fValidThrough);
+    void setValidThrough(DateTime validThrough);
     /**
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
      *
-     * @param fValidThrough java.time.LocalDateTime value to set.
+     * @param validThrough Date value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setValidThrough(java.time.LocalDateTime fValidThrough);
-    /**
-     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
-     *
-     * @param fValidThrough Date value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void setValidThrough(Date fValidThrough);
-    /**
-     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
-     *
-     * @param fValidThrough java.time.LocalDate value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void setValidThrough(java.time.LocalDate fValidThrough);
+    void setValidThrough(Date validThrough);
 
     /**
      * One or more detailed price specifications, indicating the unit price and delivery or payment charges.
@@ -1076,10 +916,10 @@ public interface Offer extends Intangible {
     /**
      * One or more detailed price specifications, indicating the unit price and delivery or payment charges.
      *
-     * @param fPriceSpecification PriceSpecification value to set.
+     * @param priceSpecification PriceSpecification value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setPriceSpecification(PriceSpecification fPriceSpecification);
+    void setPriceSpecification(PriceSpecification priceSpecification);
 
     /**
      * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.<br/><br/>Usage guidelines:<br/><br/>* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR") instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.<br/>* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a "content=" attribute for publishing simple machine-readable values alongside more human-friendly formatting.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
@@ -1093,30 +933,16 @@ public interface Offer extends Intangible {
      * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.<br/><br/>Usage guidelines:<br/><br/>* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR") instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.<br/>* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a "content=" attribute for publishing simple machine-readable values alongside more human-friendly formatting.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
      *       
      *
-     * @param fPrice Number value to set.
+     * @param price Number value to set.
      */
-    void setPrice(Number fPrice);
+    void setPrice(Number price);
     /**
      * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.<br/><br/>Usage guidelines:<br/><br/>* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR") instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.<br/>* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a "content=" attribute for publishing simple machine-readable values alongside more human-friendly formatting.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
      *       
      *
-     * @param fPrice java.lang.Number value to set.
+     * @param price Text value to set.
      */
-    void setPrice(java.lang.Number fPrice);
-    /**
-     * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.<br/><br/>Usage guidelines:<br/><br/>* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR") instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.<br/>* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a "content=" attribute for publishing simple machine-readable values alongside more human-friendly formatting.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
-     *       
-     *
-     * @param fPrice Text value to set.
-     */
-    void setPrice(Text fPrice);
-    /**
-     * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.<br/><br/>Usage guidelines:<br/><br/>* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR") instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.<br/>* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a "content=" attribute for publishing simple machine-readable values alongside more human-friendly formatting.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
-     *       
-     *
-     * @param fPrice java.lang.String value to set.
-     */
-    void setPrice(java.lang.String fPrice);
+    void setPrice(Text price);
 
     /**
      * The beginning of the availability of the product or service included in the offer.
@@ -1130,51 +956,27 @@ public interface Offer extends Intangible {
     /**
      * The beginning of the availability of the product or service included in the offer.
      *
-     * @param fAvailabilityStarts Time value to set.
+     * @param availabilityStarts Time value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setAvailabilityStarts(Time fAvailabilityStarts);
+    void setAvailabilityStarts(Time availabilityStarts);
     /**
      * The beginning of the availability of the product or service included in the offer.
      *
-     * @param fAvailabilityStarts java.time.LocalTime value to set.
+     * @param availabilityStarts DateTime value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setAvailabilityStarts(java.time.LocalTime fAvailabilityStarts);
+    void setAvailabilityStarts(DateTime availabilityStarts);
     /**
      * The beginning of the availability of the product or service included in the offer.
      *
-     * @param fAvailabilityStarts DateTime value to set.
+     * @param availabilityStarts Date value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setAvailabilityStarts(DateTime fAvailabilityStarts);
-    /**
-     * The beginning of the availability of the product or service included in the offer.
-     *
-     * @param fAvailabilityStarts java.time.LocalDateTime value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void setAvailabilityStarts(java.time.LocalDateTime fAvailabilityStarts);
-    /**
-     * The beginning of the availability of the product or service included in the offer.
-     *
-     * @param fAvailabilityStarts Date value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void setAvailabilityStarts(Date fAvailabilityStarts);
-    /**
-     * The beginning of the availability of the product or service included in the offer.
-     *
-     * @param fAvailabilityStarts java.time.LocalDate value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void setAvailabilityStarts(java.time.LocalDate fAvailabilityStarts);
+    void setAvailabilityStarts(Date availabilityStarts);
 
     /**
      * The duration for which the given offer is valid.
@@ -1187,10 +989,10 @@ public interface Offer extends Intangible {
     /**
      * The duration for which the given offer is valid.
      *
-     * @param fEligibleDuration QuantitativeValue value to set.
+     * @param eligibleDuration QuantitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setEligibleDuration(QuantitativeValue fEligibleDuration);
+    void setEligibleDuration(QuantitativeValue eligibleDuration);
 
     /**
      * The place(s) from which the offer can be obtained (e.g. store locations).
@@ -1203,10 +1005,10 @@ public interface Offer extends Intangible {
     /**
      * The place(s) from which the offer can be obtained (e.g. store locations).
      *
-     * @param fAvailableAtOrFrom Place value to set.
+     * @param availableAtOrFrom Place value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setAvailableAtOrFrom(Place fAvailableAtOrFrom);
+    void setAvailableAtOrFrom(Place availableAtOrFrom);
 
     /**
      * The serial number or any alphanumeric identifier of a particular product. When attached to an offer, it is a shortcut for the serial number of the product included in the offer.
@@ -1219,15 +1021,8 @@ public interface Offer extends Intangible {
     /**
      * The serial number or any alphanumeric identifier of a particular product. When attached to an offer, it is a shortcut for the serial number of the product included in the offer.
      *
-     * @param fSerialNumber Text value to set.
+     * @param serialNumber Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setSerialNumber(Text fSerialNumber);
-    /**
-     * The serial number or any alphanumeric identifier of a particular product. When attached to an offer, it is a shortcut for the serial number of the product included in the offer.
-     *
-     * @param fSerialNumber java.lang.String value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void setSerialNumber(java.lang.String fSerialNumber);
+    void setSerialNumber(Text serialNumber);
 }

@@ -39,15 +39,9 @@ public interface MediaObject extends CreativeWork {
     /**
      * File size in (mega/kilo) bytes.
      *
-     * @param fContentSize Text value to set.
+     * @param contentSize Text value to set.
      */
-    void setContentSize(Text fContentSize);
-    /**
-     * File size in (mega/kilo) bytes.
-     *
-     * @param fContentSize java.lang.String value to set.
-     */
-    void setContentSize(java.lang.String fContentSize);
+    void setContentSize(Text contentSize);
 
     /**
      * Actual bytes of the media object, for example the image file or video file.
@@ -59,15 +53,9 @@ public interface MediaObject extends CreativeWork {
     /**
      * Actual bytes of the media object, for example the image file or video file.
      *
-     * @param fContentUrl URL value to set.
+     * @param contentUrl URL value to set.
      */
-    void setContentUrl(URL fContentUrl);
-    /**
-     * Actual bytes of the media object, for example the image file or video file.
-     *
-     * @param fContentUrl java.net.URL value to set.
-     */
-    void setContentUrl(java.net.URL fContentUrl);
+    void setContentUrl(URL contentUrl);
 
     /**
      * The width of the item.
@@ -79,15 +67,15 @@ public interface MediaObject extends CreativeWork {
     /**
      * The width of the item.
      *
-     * @param fWidth QuantitativeValue value to set.
+     * @param width QuantitativeValue value to set.
      */
-    void setWidth(QuantitativeValue fWidth);
+    void setWidth(QuantitativeValue width);
     /**
      * The width of the item.
      *
-     * @param fWidth Distance value to set.
+     * @param width Distance value to set.
      */
-    void setWidth(Distance fWidth);
+    void setWidth(Distance width);
 
     /**
      * The height of the item.
@@ -99,15 +87,15 @@ public interface MediaObject extends CreativeWork {
     /**
      * The height of the item.
      *
-     * @param fHeight Distance value to set.
+     * @param height Distance value to set.
      */
-    void setHeight(Distance fHeight);
+    void setHeight(Distance height);
     /**
      * The height of the item.
      *
-     * @param fHeight QuantitativeValue value to set.
+     * @param height QuantitativeValue value to set.
      */
-    void setHeight(QuantitativeValue fHeight);
+    void setHeight(QuantitativeValue height);
 
     /**
      * The regions where the media is allowed. If not specified, then it's assumed to be allowed everywhere. Specify the countries in [ISO 3166 format](http://en.wikipedia.org/wiki/ISO_3166).
@@ -119,9 +107,9 @@ public interface MediaObject extends CreativeWork {
     /**
      * The regions where the media is allowed. If not specified, then it's assumed to be allowed everywhere. Specify the countries in [ISO 3166 format](http://en.wikipedia.org/wiki/ISO_3166).
      *
-     * @param fRegionsAllowed Place value to set.
+     * @param regionsAllowed Place value to set.
      */
-    void setRegionsAllowed(Place fRegionsAllowed);
+    void setRegionsAllowed(Place regionsAllowed);
 
     /**
      * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
@@ -134,31 +122,17 @@ public interface MediaObject extends CreativeWork {
     /**
      * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
      *
-     * @param fStartTime DateTime value to set.
+     * @param startTime DateTime value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
      */
-    void setStartTime(DateTime fStartTime);
+    void setStartTime(DateTime startTime);
     /**
      * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
      *
-     * @param fStartTime java.time.LocalDateTime value to set.
+     * @param startTime Time value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
      */
-    void setStartTime(java.time.LocalDateTime fStartTime);
-    /**
-     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     *
-     * @param fStartTime Time value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
-     */
-    void setStartTime(Time fStartTime);
-    /**
-     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     *
-     * @param fStartTime java.time.LocalTime value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
-     */
-    void setStartTime(java.time.LocalTime fStartTime);
+    void setStartTime(Time startTime);
 
     /**
      * A NewsArticle associated with the Media Object.
@@ -170,9 +144,9 @@ public interface MediaObject extends CreativeWork {
     /**
      * A NewsArticle associated with the Media Object.
      *
-     * @param fAssociatedArticle NewsArticle value to set.
+     * @param associatedArticle NewsArticle value to set.
      */
-    void setAssociatedArticle(NewsArticle fAssociatedArticle);
+    void setAssociatedArticle(NewsArticle associatedArticle);
 
     /**
      * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>See also [[eligibleRegion]].
@@ -188,38 +162,29 @@ public interface MediaObject extends CreativeWork {
      * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>See also [[eligibleRegion]].
      *       
      *
-     * @param fIneligibleRegion Place value to set.
+     * @param ineligibleRegion Place value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2242">https://github.com/schemaorg/schemaorg/issues/2242</a>
      */
-    void setIneligibleRegion(Place fIneligibleRegion);
+    void setIneligibleRegion(Place ineligibleRegion);
     /**
      * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>See also [[eligibleRegion]].
      *       
      *
-     * @param fIneligibleRegion Text value to set.
+     * @param ineligibleRegion Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2242">https://github.com/schemaorg/schemaorg/issues/2242</a>
      */
-    void setIneligibleRegion(Text fIneligibleRegion);
+    void setIneligibleRegion(Text ineligibleRegion);
     /**
      * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>See also [[eligibleRegion]].
      *       
      *
-     * @param fIneligibleRegion java.lang.String value to set.
+     * @param ineligibleRegion GeoShape value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2242">https://github.com/schemaorg/schemaorg/issues/2242</a>
      */
-    void setIneligibleRegion(java.lang.String fIneligibleRegion);
-    /**
-     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>See also [[eligibleRegion]].
-     *       
-     *
-     * @param fIneligibleRegion GeoShape value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2242">https://github.com/schemaorg/schemaorg/issues/2242</a>
-     */
-    void setIneligibleRegion(GeoShape fIneligibleRegion);
+    void setIneligibleRegion(GeoShape ineligibleRegion);
 
     /**
      * Indicates if use of the media require a subscription  (either paid or free). Allowed values are ```true``` or ```false``` (note that an earlier version had 'yes', 'no').
@@ -232,24 +197,17 @@ public interface MediaObject extends CreativeWork {
     /**
      * Indicates if use of the media require a subscription  (either paid or free). Allowed values are ```true``` or ```false``` (note that an earlier version had 'yes', 'no').
      *
-     * @param fRequiresSubscription MediaSubscription value to set.
+     * @param requiresSubscription MediaSubscription value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
-    void setRequiresSubscription(MediaSubscription fRequiresSubscription);
+    void setRequiresSubscription(MediaSubscription requiresSubscription);
     /**
      * Indicates if use of the media require a subscription  (either paid or free). Allowed values are ```true``` or ```false``` (note that an earlier version had 'yes', 'no').
      *
-     * @param fRequiresSubscription Boolean value to set.
+     * @param requiresSubscription Boolean value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
-    void setRequiresSubscription(Boolean fRequiresSubscription);
-    /**
-     * Indicates if use of the media require a subscription  (either paid or free). Allowed values are ```true``` or ```false``` (note that an earlier version had 'yes', 'no').
-     *
-     * @param fRequiresSubscription java.lang.Boolean value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     */
-    void setRequiresSubscription(java.lang.Boolean fRequiresSubscription);
+    void setRequiresSubscription(Boolean requiresSubscription);
 
     /**
      * Player type required&#x2014;for example, Flash or Silverlight.
@@ -261,15 +219,9 @@ public interface MediaObject extends CreativeWork {
     /**
      * Player type required&#x2014;for example, Flash or Silverlight.
      *
-     * @param fPlayerType Text value to set.
+     * @param playerType Text value to set.
      */
-    void setPlayerType(Text fPlayerType);
-    /**
-     * Player type required&#x2014;for example, Flash or Silverlight.
-     *
-     * @param fPlayerType java.lang.String value to set.
-     */
-    void setPlayerType(java.lang.String fPlayerType);
+    void setPlayerType(Text playerType);
 
     /**
      * The CreativeWork encoded by this media object.
@@ -281,9 +233,9 @@ public interface MediaObject extends CreativeWork {
     /**
      * The CreativeWork encoded by this media object.
      *
-     * @param fEncodesCreativeWork CreativeWork value to set.
+     * @param encodesCreativeWork CreativeWork value to set.
      */
-    void setEncodesCreativeWork(CreativeWork fEncodesCreativeWork);
+    void setEncodesCreativeWork(CreativeWork encodesCreativeWork);
 
     /**
      * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
@@ -297,11 +249,11 @@ public interface MediaObject extends CreativeWork {
     /**
      * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
      *
-     * @param fDuration Duration value to set.
+     * @param duration Duration value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
      */
-    void setDuration(Duration fDuration);
+    void setDuration(Duration duration);
 
     /**
      * Media type typically expressed using a MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml) and [MDN reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)) e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc.).
@@ -321,9 +273,9 @@ public interface MediaObject extends CreativeWork {
      * 
      * Unregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.
      *
-     * @param fEncodingFormat Text value to set.
+     * @param encodingFormat Text value to set.
      */
-    void setEncodingFormat(Text fEncodingFormat);
+    void setEncodingFormat(Text encodingFormat);
     /**
      * Media type typically expressed using a MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml) and [MDN reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)) e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc.).
      * 
@@ -331,29 +283,9 @@ public interface MediaObject extends CreativeWork {
      * 
      * Unregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.
      *
-     * @param fEncodingFormat java.lang.String value to set.
+     * @param encodingFormat URL value to set.
      */
-    void setEncodingFormat(java.lang.String fEncodingFormat);
-    /**
-     * Media type typically expressed using a MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml) and [MDN reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)) e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc.).
-     * 
-     * In cases where a [[CreativeWork]] has several media type representations, [[encoding]] can be used to indicate each [[MediaObject]] alongside particular [[encodingFormat]] information.
-     * 
-     * Unregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.
-     *
-     * @param fEncodingFormat URL value to set.
-     */
-    void setEncodingFormat(URL fEncodingFormat);
-    /**
-     * Media type typically expressed using a MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml) and [MDN reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)) e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc.).
-     * 
-     * In cases where a [[CreativeWork]] has several media type representations, [[encoding]] can be used to indicate each [[MediaObject]] alongside particular [[encodingFormat]] information.
-     * 
-     * Unregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.
-     *
-     * @param fEncodingFormat java.net.URL value to set.
-     */
-    void setEncodingFormat(java.net.URL fEncodingFormat);
+    void setEncodingFormat(URL encodingFormat);
 
     /**
      * Date when this media object was uploaded to this site.
@@ -365,15 +297,9 @@ public interface MediaObject extends CreativeWork {
     /**
      * Date when this media object was uploaded to this site.
      *
-     * @param fUploadDate Date value to set.
+     * @param uploadDate Date value to set.
      */
-    void setUploadDate(Date fUploadDate);
-    /**
-     * Date when this media object was uploaded to this site.
-     *
-     * @param fUploadDate java.time.LocalDate value to set.
-     */
-    void setUploadDate(java.time.LocalDate fUploadDate);
+    void setUploadDate(Date uploadDate);
 
     /**
      * A URL pointing to a player for a specific video. In general, this is the information in the ```src``` element of an ```embed``` tag and should not be the same as the content of the ```loc``` tag.
@@ -385,15 +311,9 @@ public interface MediaObject extends CreativeWork {
     /**
      * A URL pointing to a player for a specific video. In general, this is the information in the ```src``` element of an ```embed``` tag and should not be the same as the content of the ```loc``` tag.
      *
-     * @param fEmbedUrl URL value to set.
+     * @param embedUrl URL value to set.
      */
-    void setEmbedUrl(URL fEmbedUrl);
-    /**
-     * A URL pointing to a player for a specific video. In general, this is the information in the ```src``` element of an ```embed``` tag and should not be the same as the content of the ```loc``` tag.
-     *
-     * @param fEmbedUrl java.net.URL value to set.
-     */
-    void setEmbedUrl(java.net.URL fEmbedUrl);
+    void setEmbedUrl(URL embedUrl);
 
     /**
      * The bitrate of the media object.
@@ -405,15 +325,9 @@ public interface MediaObject extends CreativeWork {
     /**
      * The bitrate of the media object.
      *
-     * @param fBitrate Text value to set.
+     * @param bitrate Text value to set.
      */
-    void setBitrate(Text fBitrate);
-    /**
-     * The bitrate of the media object.
-     *
-     * @param fBitrate java.lang.String value to set.
-     */
-    void setBitrate(java.lang.String fBitrate);
+    void setBitrate(Text bitrate);
 
     /**
      * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
@@ -426,31 +340,17 @@ public interface MediaObject extends CreativeWork {
     /**
      * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
      *
-     * @param fEndTime DateTime value to set.
+     * @param endTime DateTime value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
      */
-    void setEndTime(DateTime fEndTime);
+    void setEndTime(DateTime endTime);
     /**
      * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
      *
-     * @param fEndTime java.time.LocalDateTime value to set.
+     * @param endTime Time value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
      */
-    void setEndTime(java.time.LocalDateTime fEndTime);
-    /**
-     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     *
-     * @param fEndTime Time value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
-     */
-    void setEndTime(Time fEndTime);
-    /**
-     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     *
-     * @param fEndTime java.time.LocalTime value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
-     */
-    void setEndTime(java.time.LocalTime fEndTime);
+    void setEndTime(Time endTime);
 
     /**
      * The production company or studio responsible for the item e.g. series, video game, episode etc.
@@ -462,9 +362,9 @@ public interface MediaObject extends CreativeWork {
     /**
      * The production company or studio responsible for the item e.g. series, video game, episode etc.
      *
-     * @param fProductionCompany Organization value to set.
+     * @param productionCompany Organization value to set.
      */
-    void setProductionCompany(Organization fProductionCompany);
+    void setProductionCompany(Organization productionCompany);
 
     /**
      * The [SHA-2](https://en.wikipedia.org/wiki/SHA-2) SHA256 hash of the content of the item. For example, a zero-length input has value 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
@@ -478,19 +378,11 @@ public interface MediaObject extends CreativeWork {
     /**
      * The [SHA-2](https://en.wikipedia.org/wiki/SHA-2) SHA256 hash of the content of the item. For example, a zero-length input has value 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
      *
-     * @param fSha256 Text value to set.
+     * @param sha256 Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
-    void setSha256(Text fSha256);
-    /**
-     * The [SHA-2](https://en.wikipedia.org/wiki/SHA-2) SHA256 hash of the content of the item. For example, a zero-length input has value 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
-     *
-     * @param fSha256 java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
-     */
-    void setSha256(java.lang.String fSha256);
+    void setSha256(Text sha256);
 
     /**
      * Used to indicate a specific claim contained, implied, translated or refined from the content of a [[MediaObject]] or other [[CreativeWork]]. The interpreting party can be indicated using [[claimInterpreter]].
@@ -504,9 +396,9 @@ public interface MediaObject extends CreativeWork {
     /**
      * Used to indicate a specific claim contained, implied, translated or refined from the content of a [[MediaObject]] or other [[CreativeWork]]. The interpreting party can be indicated using [[claimInterpreter]].
      *
-     * @param fInterpretedAsClaim Claim value to set.
+     * @param interpretedAsClaim Claim value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
-    void setInterpretedAsClaim(Claim fInterpretedAsClaim);
+    void setInterpretedAsClaim(Claim interpretedAsClaim);
 }

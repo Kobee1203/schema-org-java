@@ -29,19 +29,11 @@ public interface HealthPlanFormulary extends Intangible {
     /**
      * Whether prescriptions can be delivered by mail.
      *
-     * @param fOffersPrescriptionByMail Boolean value to set.
+     * @param offersPrescriptionByMail Boolean value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
-    void setOffersPrescriptionByMail(Boolean fOffersPrescriptionByMail);
-    /**
-     * Whether prescriptions can be delivered by mail.
-     *
-     * @param fOffersPrescriptionByMail java.lang.Boolean value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
-    void setOffersPrescriptionByMail(java.lang.Boolean fOffersPrescriptionByMail);
+    void setOffersPrescriptionByMail(Boolean offersPrescriptionByMail);
 
     /**
      * The tier(s) of drugs offered by this formulary or insurance plan.
@@ -55,19 +47,11 @@ public interface HealthPlanFormulary extends Intangible {
     /**
      * The tier(s) of drugs offered by this formulary or insurance plan.
      *
-     * @param fHealthPlanDrugTier Text value to set.
+     * @param healthPlanDrugTier Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
-    void setHealthPlanDrugTier(Text fHealthPlanDrugTier);
-    /**
-     * The tier(s) of drugs offered by this formulary or insurance plan.
-     *
-     * @param fHealthPlanDrugTier java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
-    void setHealthPlanDrugTier(java.lang.String fHealthPlanDrugTier);
+    void setHealthPlanDrugTier(Text healthPlanDrugTier);
 
     /**
      * Whether The costs to the patient for services under this network or formulary.
@@ -81,17 +65,9 @@ public interface HealthPlanFormulary extends Intangible {
     /**
      * Whether The costs to the patient for services under this network or formulary.
      *
-     * @param fHealthPlanCostSharing Boolean value to set.
+     * @param healthPlanCostSharing Boolean value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
-    void setHealthPlanCostSharing(Boolean fHealthPlanCostSharing);
-    /**
-     * Whether The costs to the patient for services under this network or formulary.
-     *
-     * @param fHealthPlanCostSharing java.lang.Boolean value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
-    void setHealthPlanCostSharing(java.lang.Boolean fHealthPlanCostSharing);
+    void setHealthPlanCostSharing(Boolean healthPlanCostSharing);
 }

@@ -29,10 +29,10 @@ public interface DrugStrength extends MedicalIntangible {
     /**
      * The location in which the strength is available.
      *
-     * @param fAvailableIn AdministrativeArea value to set.
+     * @param availableIn AdministrativeArea value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setAvailableIn(AdministrativeArea fAvailableIn);
+    void setAvailableIn(AdministrativeArea availableIn);
 
     /**
      * The units of an active ingredient's strength, e.g. mg.
@@ -45,17 +45,10 @@ public interface DrugStrength extends MedicalIntangible {
     /**
      * The units of an active ingredient's strength, e.g. mg.
      *
-     * @param fStrengthUnit Text value to set.
+     * @param strengthUnit Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setStrengthUnit(Text fStrengthUnit);
-    /**
-     * The units of an active ingredient's strength, e.g. mg.
-     *
-     * @param fStrengthUnit java.lang.String value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void setStrengthUnit(java.lang.String fStrengthUnit);
+    void setStrengthUnit(Text strengthUnit);
 
     /**
      * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
@@ -68,10 +61,10 @@ public interface DrugStrength extends MedicalIntangible {
     /**
      * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
      *
-     * @param fMaximumIntake MaximumDoseSchedule value to set.
+     * @param maximumIntake MaximumDoseSchedule value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setMaximumIntake(MaximumDoseSchedule fMaximumIntake);
+    void setMaximumIntake(MaximumDoseSchedule maximumIntake);
 
     /**
      * An active ingredient, typically chemical compounds and/or biologic substances.
@@ -84,17 +77,10 @@ public interface DrugStrength extends MedicalIntangible {
     /**
      * An active ingredient, typically chemical compounds and/or biologic substances.
      *
-     * @param fActiveIngredient Text value to set.
+     * @param activeIngredient Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setActiveIngredient(Text fActiveIngredient);
-    /**
-     * An active ingredient, typically chemical compounds and/or biologic substances.
-     *
-     * @param fActiveIngredient java.lang.String value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void setActiveIngredient(java.lang.String fActiveIngredient);
+    void setActiveIngredient(Text activeIngredient);
 
     /**
      * The value of an active ingredient's strength, e.g. 325.
@@ -107,15 +93,8 @@ public interface DrugStrength extends MedicalIntangible {
     /**
      * The value of an active ingredient's strength, e.g. 325.
      *
-     * @param fStrengthValue Number value to set.
+     * @param strengthValue Number value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setStrengthValue(Number fStrengthValue);
-    /**
-     * The value of an active ingredient's strength, e.g. 325.
-     *
-     * @param fStrengthValue java.lang.Number value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void setStrengthValue(java.lang.Number fStrengthValue);
+    void setStrengthValue(Number strengthValue);
 }

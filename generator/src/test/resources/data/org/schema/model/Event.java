@@ -50,9 +50,9 @@ public interface Event extends Thing {
     /**
      * An event that this event is a part of. For example, a collection of individual music performances might each have a music festival as their superEvent.
      *
-     * @param fSuperEvent Event value to set.
+     * @param superEvent Event value to set.
      */
-    void setSuperEvent(Event fSuperEvent);
+    void setSuperEvent(Event superEvent);
 
     /**
      * The eventAttendanceMode of an event indicates whether it occurs online, offline, or a mix.
@@ -66,11 +66,11 @@ public interface Event extends Thing {
     /**
      * The eventAttendanceMode of an event indicates whether it occurs online, offline, or a mix.
      *
-     * @param fEventAttendanceMode EventAttendanceModeEnumeration value to set.
+     * @param eventAttendanceMode EventAttendanceModeEnumeration value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1842">https://github.com/schemaorg/schemaorg/issues/1842</a>
      */
-    void setEventAttendanceMode(EventAttendanceModeEnumeration fEventAttendanceMode);
+    void setEventAttendanceMode(EventAttendanceModeEnumeration eventAttendanceMode);
 
     /**
      * A review of the item.
@@ -82,9 +82,9 @@ public interface Event extends Thing {
     /**
      * A review of the item.
      *
-     * @param fReview Review value to set.
+     * @param review Review value to set.
      */
-    void setReview(Review fReview);
+    void setReview(Review review);
 
     /**
      * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
@@ -96,15 +96,15 @@ public interface Event extends Thing {
     /**
      * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
      *
-     * @param fTranslator Person value to set.
+     * @param translator Person value to set.
      */
-    void setTranslator(Person fTranslator);
+    void setTranslator(Person translator);
     /**
      * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
      *
-     * @param fTranslator Organization value to set.
+     * @param translator Organization value to set.
      */
-    void setTranslator(Organization fTranslator);
+    void setTranslator(Organization translator);
 
     /**
      * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
@@ -117,31 +117,17 @@ public interface Event extends Thing {
     /**
      * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
      *
-     * @param fStartDate DateTime value to set.
+     * @param startDate DateTime value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
-    void setStartDate(DateTime fStartDate);
+    void setStartDate(DateTime startDate);
     /**
      * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
      *
-     * @param fStartDate java.time.LocalDateTime value to set.
+     * @param startDate Date value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
-    void setStartDate(java.time.LocalDateTime fStartDate);
-    /**
-     * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
-     *
-     * @param fStartDate Date value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
-     */
-    void setStartDate(Date fStartDate);
-    /**
-     * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
-     *
-     * @param fStartDate java.time.LocalDate value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
-     */
-    void setStartDate(java.time.LocalDate fStartDate);
+    void setStartDate(Date startDate);
 
     /**
      * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
@@ -154,17 +140,17 @@ public interface Event extends Thing {
     /**
      * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
      *
-     * @param fComposer Organization value to set.
+     * @param composer Organization value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
-    void setComposer(Organization fComposer);
+    void setComposer(Organization composer);
     /**
      * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
      *
-     * @param fComposer Person value to set.
+     * @param composer Person value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
-    void setComposer(Person fComposer);
+    void setComposer(Person composer);
 
     /**
      * The total number of individuals that may attend an event or venue.
@@ -176,15 +162,9 @@ public interface Event extends Thing {
     /**
      * The total number of individuals that may attend an event or venue.
      *
-     * @param fMaximumAttendeeCapacity Integer value to set.
+     * @param maximumAttendeeCapacity Integer value to set.
      */
-    void setMaximumAttendeeCapacity(Integer fMaximumAttendeeCapacity);
-    /**
-     * The total number of individuals that may attend an event or venue.
-     *
-     * @param fMaximumAttendeeCapacity java.lang.Integer value to set.
-     */
-    void setMaximumAttendeeCapacity(java.lang.Integer fMaximumAttendeeCapacity);
+    void setMaximumAttendeeCapacity(Integer maximumAttendeeCapacity);
 
     /**
      * The maximum physical attendee capacity of an [[Event]] whose [[eventAttendanceMode]] is [[OnlineEventAttendanceMode]] (or the online aspects, in the case of a [[MixedEventAttendanceMode]]). 
@@ -198,19 +178,11 @@ public interface Event extends Thing {
     /**
      * The maximum physical attendee capacity of an [[Event]] whose [[eventAttendanceMode]] is [[OnlineEventAttendanceMode]] (or the online aspects, in the case of a [[MixedEventAttendanceMode]]). 
      *
-     * @param fMaximumVirtualAttendeeCapacity Integer value to set.
+     * @param maximumVirtualAttendeeCapacity Integer value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1842">https://github.com/schemaorg/schemaorg/issues/1842</a>
      */
-    void setMaximumVirtualAttendeeCapacity(Integer fMaximumVirtualAttendeeCapacity);
-    /**
-     * The maximum physical attendee capacity of an [[Event]] whose [[eventAttendanceMode]] is [[OnlineEventAttendanceMode]] (or the online aspects, in the case of a [[MixedEventAttendanceMode]]). 
-     *
-     * @param fMaximumVirtualAttendeeCapacity java.lang.Integer value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1842">https://github.com/schemaorg/schemaorg/issues/1842</a>
-     */
-    void setMaximumVirtualAttendeeCapacity(java.lang.Integer fMaximumVirtualAttendeeCapacity);
+    void setMaximumVirtualAttendeeCapacity(Integer maximumVirtualAttendeeCapacity);
 
     /**
      * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
@@ -222,9 +194,9 @@ public interface Event extends Thing {
     /**
      * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
      *
-     * @param fDirector Person value to set.
+     * @param director Person value to set.
      */
-    void setDirector(Person fDirector);
+    void setDirector(Person director);
 
     /**
      * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
@@ -239,12 +211,12 @@ public interface Event extends Thing {
     /**
      * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
      *
-     * @param fFunding Grant value to set.
+     * @param funding Grant value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
-    void setFunding(Grant fFunding);
+    void setFunding(Grant funding);
 
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
@@ -256,33 +228,21 @@ public interface Event extends Thing {
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
      *
-     * @param fKeywords DefinedTerm value to set.
+     * @param keywords DefinedTerm value to set.
      */
-    void setKeywords(DefinedTerm fKeywords);
+    void setKeywords(DefinedTerm keywords);
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
      *
-     * @param fKeywords Text value to set.
+     * @param keywords Text value to set.
      */
-    void setKeywords(Text fKeywords);
+    void setKeywords(Text keywords);
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
      *
-     * @param fKeywords java.lang.String value to set.
+     * @param keywords URL value to set.
      */
-    void setKeywords(java.lang.String fKeywords);
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     * @param fKeywords URL value to set.
-     */
-    void setKeywords(URL fKeywords);
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     * @param fKeywords java.net.URL value to set.
-     */
-    void setKeywords(java.net.URL fKeywords);
+    void setKeywords(URL keywords);
 
     /**
      * An intended audience, i.e. a group for whom something was created.
@@ -294,9 +254,9 @@ public interface Event extends Thing {
     /**
      * An intended audience, i.e. a group for whom something was created.
      *
-     * @param fAudience Audience value to set.
+     * @param audience Audience value to set.
      */
-    void setAudience(Audience fAudience);
+    void setAudience(Audience audience);
 
     /**
      * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
@@ -311,18 +271,18 @@ public interface Event extends Thing {
      * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      *
-     * @param fOffers Offer value to set.
+     * @param offers Offer value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
-    void setOffers(Offer fOffers);
+    void setOffers(Offer offers);
     /**
      * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      *
-     * @param fOffers Demand value to set.
+     * @param offers Demand value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
-    void setOffers(Demand fOffers);
+    void setOffers(Demand offers);
 
     /**
      * An Event that is part of this event. For example, a conference event includes many presentations, each of which is a subEvent of the conference.
@@ -334,9 +294,9 @@ public interface Event extends Thing {
     /**
      * An Event that is part of this event. For example, a conference event includes many presentations, each of which is a subEvent of the conference.
      *
-     * @param fSubEvent Event value to set.
+     * @param subEvent Event value to set.
      */
-    void setSubEvent(Event fSubEvent);
+    void setSubEvent(Event subEvent);
 
     /**
      * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
@@ -348,9 +308,9 @@ public interface Event extends Thing {
     /**
      * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
      *
-     * @param fActor Person value to set.
+     * @param actor Person value to set.
      */
-    void setActor(Person fActor);
+    void setActor(Person actor);
 
     /**
      * An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled.
@@ -362,9 +322,9 @@ public interface Event extends Thing {
     /**
      * An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled.
      *
-     * @param fEventStatus EventStatusType value to set.
+     * @param eventStatus EventStatusType value to set.
      */
-    void setEventStatus(EventStatusType fEventStatus);
+    void setEventStatus(EventStatusType eventStatus);
 
     /**
      * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
@@ -377,31 +337,17 @@ public interface Event extends Thing {
     /**
      * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
      *
-     * @param fEndDate Date value to set.
+     * @param endDate Date value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
-    void setEndDate(Date fEndDate);
+    void setEndDate(Date endDate);
     /**
      * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
      *
-     * @param fEndDate java.time.LocalDate value to set.
+     * @param endDate DateTime value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
-    void setEndDate(java.time.LocalDate fEndDate);
-    /**
-     * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
-     *
-     * @param fEndDate DateTime value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
-     */
-    void setEndDate(DateTime fEndDate);
-    /**
-     * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
-     *
-     * @param fEndDate java.time.LocalDateTime value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
-     */
-    void setEndDate(java.time.LocalDateTime fEndDate);
+    void setEndDate(DateTime endDate);
 
     /**
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
@@ -413,15 +359,15 @@ public interface Event extends Thing {
     /**
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
-     * @param fFunder Organization value to set.
+     * @param funder Organization value to set.
      */
-    void setFunder(Organization fFunder);
+    void setFunder(Organization funder);
     /**
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
-     * @param fFunder Person value to set.
+     * @param funder Person value to set.
      */
-    void setFunder(Person fFunder);
+    void setFunder(Person funder);
 
     /**
      * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
@@ -433,15 +379,15 @@ public interface Event extends Thing {
     /**
      * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
      *
-     * @param fPerformer Organization value to set.
+     * @param performer Organization value to set.
      */
-    void setPerformer(Organization fPerformer);
+    void setPerformer(Organization performer);
     /**
      * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
      *
-     * @param fPerformer Person value to set.
+     * @param performer Person value to set.
      */
-    void setPerformer(Person fPerformer);
+    void setPerformer(Person performer);
 
     /**
      * The overall rating, based on a collection of reviews or ratings, of the item.
@@ -453,9 +399,9 @@ public interface Event extends Thing {
     /**
      * The overall rating, based on a collection of reviews or ratings, of the item.
      *
-     * @param fAggregateRating AggregateRating value to set.
+     * @param aggregateRating AggregateRating value to set.
      */
-    void setAggregateRating(AggregateRating fAggregateRating);
+    void setAggregateRating(AggregateRating aggregateRating);
 
     /**
      * The typical expected age range, e.g. '7-9', '11-'.
@@ -467,15 +413,9 @@ public interface Event extends Thing {
     /**
      * The typical expected age range, e.g. '7-9', '11-'.
      *
-     * @param fTypicalAgeRange Text value to set.
+     * @param typicalAgeRange Text value to set.
      */
-    void setTypicalAgeRange(Text fTypicalAgeRange);
-    /**
-     * The typical expected age range, e.g. '7-9', '11-'.
-     *
-     * @param fTypicalAgeRange java.lang.String value to set.
-     */
-    void setTypicalAgeRange(java.lang.String fTypicalAgeRange);
+    void setTypicalAgeRange(Text typicalAgeRange);
 
     /**
      * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
@@ -487,33 +427,27 @@ public interface Event extends Thing {
     /**
      * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
      *
-     * @param fLocation PostalAddress value to set.
+     * @param location PostalAddress value to set.
      */
-    void setLocation(PostalAddress fLocation);
+    void setLocation(PostalAddress location);
     /**
      * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
      *
-     * @param fLocation Text value to set.
+     * @param location Text value to set.
      */
-    void setLocation(Text fLocation);
+    void setLocation(Text location);
     /**
      * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
      *
-     * @param fLocation java.lang.String value to set.
+     * @param location Place value to set.
      */
-    void setLocation(java.lang.String fLocation);
+    void setLocation(Place location);
     /**
      * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
      *
-     * @param fLocation Place value to set.
+     * @param location VirtualLocation value to set.
      */
-    void setLocation(Place fLocation);
-    /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-     *
-     * @param fLocation VirtualLocation value to set.
-     */
-    void setLocation(VirtualLocation fLocation);
+    void setLocation(VirtualLocation location);
 
     /**
      * The main performer or performers of the event&#x2014;for example, a presenter, musician, or actor.
@@ -525,15 +459,15 @@ public interface Event extends Thing {
     /**
      * The main performer or performers of the event&#x2014;for example, a presenter, musician, or actor.
      *
-     * @param fPerformers Person value to set.
+     * @param performers Person value to set.
      */
-    void setPerformers(Person fPerformers);
+    void setPerformers(Person performers);
     /**
      * The main performer or performers of the event&#x2014;for example, a presenter, musician, or actor.
      *
-     * @param fPerformers Organization value to set.
+     * @param performers Organization value to set.
      */
-    void setPerformers(Organization fPerformers);
+    void setPerformers(Organization performers);
 
     /**
      * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
@@ -547,11 +481,11 @@ public interface Event extends Thing {
     /**
      * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
      *
-     * @param fDuration Duration value to set.
+     * @param duration Duration value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
      */
-    void setDuration(Duration fDuration);
+    void setDuration(Duration duration);
 
     /**
      * An organizer of an Event.
@@ -563,15 +497,15 @@ public interface Event extends Thing {
     /**
      * An organizer of an Event.
      *
-     * @param fOrganizer Person value to set.
+     * @param organizer Person value to set.
      */
-    void setOrganizer(Person fOrganizer);
+    void setOrganizer(Person organizer);
     /**
      * An organizer of an Event.
      *
-     * @param fOrganizer Organization value to set.
+     * @param organizer Organization value to set.
      */
-    void setOrganizer(Organization fOrganizer);
+    void setOrganizer(Organization organizer);
 
     /**
      * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
@@ -583,15 +517,15 @@ public interface Event extends Thing {
     /**
      * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
      *
-     * @param fSponsor Organization value to set.
+     * @param sponsor Organization value to set.
      */
-    void setSponsor(Organization fSponsor);
+    void setSponsor(Organization sponsor);
     /**
      * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
      *
-     * @param fSponsor Person value to set.
+     * @param sponsor Person value to set.
      */
-    void setSponsor(Person fSponsor);
+    void setSponsor(Person sponsor);
 
     /**
      * Used in conjunction with eventStatus for rescheduled or cancelled events. This property contains the previously scheduled start date. For rescheduled events, the startDate property should be used for the newly scheduled start date. In the (rare) case of an event that has been postponed and rescheduled multiple times, this field may be repeated.
@@ -603,15 +537,9 @@ public interface Event extends Thing {
     /**
      * Used in conjunction with eventStatus for rescheduled or cancelled events. This property contains the previously scheduled start date. For rescheduled events, the startDate property should be used for the newly scheduled start date. In the (rare) case of an event that has been postponed and rescheduled multiple times, this field may be repeated.
      *
-     * @param fPreviousStartDate Date value to set.
+     * @param previousStartDate Date value to set.
      */
-    void setPreviousStartDate(Date fPreviousStartDate);
-    /**
-     * Used in conjunction with eventStatus for rescheduled or cancelled events. This property contains the previously scheduled start date. For rescheduled events, the startDate property should be used for the newly scheduled start date. In the (rare) case of an event that has been postponed and rescheduled multiple times, this field may be repeated.
-     *
-     * @param fPreviousStartDate java.time.LocalDate value to set.
-     */
-    void setPreviousStartDate(java.time.LocalDate fPreviousStartDate);
+    void setPreviousStartDate(Date previousStartDate);
 
     /**
      * A flag to signal that the item, event, or place is accessible for free.
@@ -623,15 +551,9 @@ public interface Event extends Thing {
     /**
      * A flag to signal that the item, event, or place is accessible for free.
      *
-     * @param fIsAccessibleForFree Boolean value to set.
+     * @param isAccessibleForFree Boolean value to set.
      */
-    void setIsAccessibleForFree(Boolean fIsAccessibleForFree);
-    /**
-     * A flag to signal that the item, event, or place is accessible for free.
-     *
-     * @param fIsAccessibleForFree java.lang.Boolean value to set.
-     */
-    void setIsAccessibleForFree(java.lang.Boolean fIsAccessibleForFree);
+    void setIsAccessibleForFree(Boolean isAccessibleForFree);
 
     /**
      * The number of attendee places for an event that remain unallocated.
@@ -643,15 +565,9 @@ public interface Event extends Thing {
     /**
      * The number of attendee places for an event that remain unallocated.
      *
-     * @param fRemainingAttendeeCapacity Integer value to set.
+     * @param remainingAttendeeCapacity Integer value to set.
      */
-    void setRemainingAttendeeCapacity(Integer fRemainingAttendeeCapacity);
-    /**
-     * The number of attendee places for an event that remain unallocated.
-     *
-     * @param fRemainingAttendeeCapacity java.lang.Integer value to set.
-     */
-    void setRemainingAttendeeCapacity(java.lang.Integer fRemainingAttendeeCapacity);
+    void setRemainingAttendeeCapacity(Integer remainingAttendeeCapacity);
 
     /**
      * Events that are a part of this event. For example, a conference event includes many presentations, each subEvents of the conference.
@@ -663,9 +579,9 @@ public interface Event extends Thing {
     /**
      * Events that are a part of this event. For example, a conference event includes many presentations, each subEvents of the conference.
      *
-     * @param fSubEvents Event value to set.
+     * @param subEvents Event value to set.
      */
-    void setSubEvents(Event fSubEvents);
+    void setSubEvents(Event subEvents);
 
     /**
      * A work performed in some event, for example a play performed in a TheaterEvent.
@@ -677,9 +593,9 @@ public interface Event extends Thing {
     /**
      * A work performed in some event, for example a play performed in a TheaterEvent.
      *
-     * @param fWorkPerformed CreativeWork value to set.
+     * @param workPerformed CreativeWork value to set.
      */
-    void setWorkPerformed(CreativeWork fWorkPerformed);
+    void setWorkPerformed(CreativeWork workPerformed);
 
     /**
      * The time admission will commence.
@@ -691,27 +607,15 @@ public interface Event extends Thing {
     /**
      * The time admission will commence.
      *
-     * @param fDoorTime Time value to set.
+     * @param doorTime Time value to set.
      */
-    void setDoorTime(Time fDoorTime);
+    void setDoorTime(Time doorTime);
     /**
      * The time admission will commence.
      *
-     * @param fDoorTime java.time.LocalTime value to set.
+     * @param doorTime DateTime value to set.
      */
-    void setDoorTime(java.time.LocalTime fDoorTime);
-    /**
-     * The time admission will commence.
-     *
-     * @param fDoorTime DateTime value to set.
-     */
-    void setDoorTime(DateTime fDoorTime);
-    /**
-     * The time admission will commence.
-     *
-     * @param fDoorTime java.time.LocalDateTime value to set.
-     */
-    void setDoorTime(java.time.LocalDateTime fDoorTime);
+    void setDoorTime(DateTime doorTime);
 
     /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
@@ -724,24 +628,17 @@ public interface Event extends Thing {
     /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
      *
-     * @param fInLanguage Text value to set.
+     * @param inLanguage Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
      */
-    void setInLanguage(Text fInLanguage);
+    void setInLanguage(Text inLanguage);
     /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
      *
-     * @param fInLanguage java.lang.String value to set.
+     * @param inLanguage Language value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
      */
-    void setInLanguage(java.lang.String fInLanguage);
-    /**
-     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
-     *
-     * @param fInLanguage Language value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
-     */
-    void setInLanguage(Language fInLanguage);
+    void setInLanguage(Language inLanguage);
 
     /**
      * The subject matter of the content.
@@ -754,10 +651,10 @@ public interface Event extends Thing {
     /**
      * The subject matter of the content.
      *
-     * @param fAbout Thing value to set.
+     * @param about Thing value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
-    void setAbout(Thing fAbout);
+    void setAbout(Thing about);
 
     /**
      * The CreativeWork that captured all or part of this Event.
@@ -769,9 +666,9 @@ public interface Event extends Thing {
     /**
      * The CreativeWork that captured all or part of this Event.
      *
-     * @param fRecordedIn CreativeWork value to set.
+     * @param recordedIn CreativeWork value to set.
      */
-    void setRecordedIn(CreativeWork fRecordedIn);
+    void setRecordedIn(CreativeWork recordedIn);
 
     /**
      * The maximum physical attendee capacity of an [[Event]] whose [[eventAttendanceMode]] is [[OfflineEventAttendanceMode]] (or the offline aspects, in the case of a [[MixedEventAttendanceMode]]). 
@@ -785,19 +682,11 @@ public interface Event extends Thing {
     /**
      * The maximum physical attendee capacity of an [[Event]] whose [[eventAttendanceMode]] is [[OfflineEventAttendanceMode]] (or the offline aspects, in the case of a [[MixedEventAttendanceMode]]). 
      *
-     * @param fMaximumPhysicalAttendeeCapacity Integer value to set.
+     * @param maximumPhysicalAttendeeCapacity Integer value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1842">https://github.com/schemaorg/schemaorg/issues/1842</a>
      */
-    void setMaximumPhysicalAttendeeCapacity(Integer fMaximumPhysicalAttendeeCapacity);
-    /**
-     * The maximum physical attendee capacity of an [[Event]] whose [[eventAttendanceMode]] is [[OfflineEventAttendanceMode]] (or the offline aspects, in the case of a [[MixedEventAttendanceMode]]). 
-     *
-     * @param fMaximumPhysicalAttendeeCapacity java.lang.Integer value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1842">https://github.com/schemaorg/schemaorg/issues/1842</a>
-     */
-    void setMaximumPhysicalAttendeeCapacity(java.lang.Integer fMaximumPhysicalAttendeeCapacity);
+    void setMaximumPhysicalAttendeeCapacity(Integer maximumPhysicalAttendeeCapacity);
 
     /**
      * A person or organization attending the event.
@@ -809,15 +698,15 @@ public interface Event extends Thing {
     /**
      * A person or organization attending the event.
      *
-     * @param fAttendee Person value to set.
+     * @param attendee Person value to set.
      */
-    void setAttendee(Person fAttendee);
+    void setAttendee(Person attendee);
     /**
      * A person or organization attending the event.
      *
-     * @param fAttendee Organization value to set.
+     * @param attendee Organization value to set.
      */
-    void setAttendee(Organization fAttendee);
+    void setAttendee(Organization attendee);
 
     /**
      * A work featured in some event, e.g. exhibited in an ExhibitionEvent.
@@ -831,9 +720,9 @@ public interface Event extends Thing {
      * A work featured in some event, e.g. exhibited in an ExhibitionEvent.
      *        Specific subproperties are available for workPerformed (e.g. a play), or a workPresented (a Movie at a ScreeningEvent).
      *
-     * @param fWorkFeatured CreativeWork value to set.
+     * @param workFeatured CreativeWork value to set.
      */
-    void setWorkFeatured(CreativeWork fWorkFeatured);
+    void setWorkFeatured(CreativeWork workFeatured);
 
     /**
      * Associates an [[Event]] with a [[Schedule]]. There are circumstances where it is preferable to share a schedule for a series of
@@ -857,11 +746,11 @@ public interface Event extends Thing {
      *       [[Schedule]], this avoids any ambiguity for clients using the data. The property might have repeated values to specify different schedules, e.g. for different months
      *       or seasons.
      *
-     * @param fEventSchedule Schedule value to set.
+     * @param eventSchedule Schedule value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
      */
-    void setEventSchedule(Schedule fEventSchedule);
+    void setEventSchedule(Schedule eventSchedule);
 
     /**
      * A secondary contributor to the CreativeWork or Event.
@@ -873,15 +762,15 @@ public interface Event extends Thing {
     /**
      * A secondary contributor to the CreativeWork or Event.
      *
-     * @param fContributor Organization value to set.
+     * @param contributor Organization value to set.
      */
-    void setContributor(Organization fContributor);
+    void setContributor(Organization contributor);
     /**
      * A secondary contributor to the CreativeWork or Event.
      *
-     * @param fContributor Person value to set.
+     * @param contributor Person value to set.
      */
-    void setContributor(Person fContributor);
+    void setContributor(Person contributor);
 
     /**
      * A person attending the event.
@@ -893,13 +782,13 @@ public interface Event extends Thing {
     /**
      * A person attending the event.
      *
-     * @param fAttendees Person value to set.
+     * @param attendees Person value to set.
      */
-    void setAttendees(Person fAttendees);
+    void setAttendees(Person attendees);
     /**
      * A person attending the event.
      *
-     * @param fAttendees Organization value to set.
+     * @param attendees Organization value to set.
      */
-    void setAttendees(Organization fAttendees);
+    void setAttendees(Organization attendees);
 }

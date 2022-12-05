@@ -32,10 +32,10 @@ public interface ComicIssue extends PublicationIssue {
     /**
      * The individual who adds lettering, including speech balloons and sound effects, to artwork.
      *
-     * @param fLetterer Person value to set.
+     * @param letterer Person value to set.
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
-    void setLetterer(Person fLetterer);
+    void setLetterer(Person letterer);
 
     /**
      * The individual who adds color to inked drawings.
@@ -48,10 +48,10 @@ public interface ComicIssue extends PublicationIssue {
     /**
      * The individual who adds color to inked drawings.
      *
-     * @param fColorist Person value to set.
+     * @param colorist Person value to set.
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
-    void setColorist(Person fColorist);
+    void setColorist(Person colorist);
 
     /**
      * A description of the variant cover
@@ -68,19 +68,10 @@ public interface ComicIssue extends PublicationIssue {
      *     	for the issue, if the issue is a variant printing. For example, "Bryan Hitch
      *     	Variant Cover" or "2nd Printing Variant".
      *
-     * @param fVariantCover Text value to set.
+     * @param variantCover Text value to set.
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
-    void setVariantCover(Text fVariantCover);
-    /**
-     * A description of the variant cover
-     *     	for the issue, if the issue is a variant printing. For example, "Bryan Hitch
-     *     	Variant Cover" or "2nd Printing Variant".
-     *
-     * @param fVariantCover java.lang.String value to set.
-     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
-     */
-    void setVariantCover(java.lang.String fVariantCover);
+    void setVariantCover(Text variantCover);
 
     /**
      * The individual who traces over the pencil drawings in ink after pencils are complete.
@@ -93,10 +84,10 @@ public interface ComicIssue extends PublicationIssue {
     /**
      * The individual who traces over the pencil drawings in ink after pencils are complete.
      *
-     * @param fInker Person value to set.
+     * @param inker Person value to set.
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
-    void setInker(Person fInker);
+    void setInker(Person inker);
 
     /**
      * The individual who draws the primary narrative artwork.
@@ -109,10 +100,10 @@ public interface ComicIssue extends PublicationIssue {
     /**
      * The individual who draws the primary narrative artwork.
      *
-     * @param fPenciler Person value to set.
+     * @param penciler Person value to set.
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
-    void setPenciler(Person fPenciler);
+    void setPenciler(Person penciler);
 
     /**
      * The primary artist for a work
@@ -129,8 +120,8 @@ public interface ComicIssue extends PublicationIssue {
      *     	in a medium other than pencils or digital line art--for example, if the
      *     	primary artwork is done in watercolors or digital paints.
      *
-     * @param fArtist Person value to set.
+     * @param artist Person value to set.
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
-    void setArtist(Person fArtist);
+    void setArtist(Person artist);
 }

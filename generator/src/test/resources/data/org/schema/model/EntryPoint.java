@@ -28,9 +28,9 @@ public interface EntryPoint extends Intangible {
     /**
      * An application that can complete the request.
      *
-     * @param fActionApplication SoftwareApplication value to set.
+     * @param actionApplication SoftwareApplication value to set.
      */
-    void setActionApplication(SoftwareApplication fActionApplication);
+    void setActionApplication(SoftwareApplication actionApplication);
 
     /**
      * An application that can complete the request.
@@ -42,9 +42,9 @@ public interface EntryPoint extends Intangible {
     /**
      * An application that can complete the request.
      *
-     * @param fApplication SoftwareApplication value to set.
+     * @param application SoftwareApplication value to set.
      */
-    void setApplication(SoftwareApplication fApplication);
+    void setApplication(SoftwareApplication application);
 
     /**
      * The high level platform(s) where the Action can be performed for the given URL. To specify a specific application or operating system instance, use actionApplication.
@@ -56,33 +56,21 @@ public interface EntryPoint extends Intangible {
     /**
      * The high level platform(s) where the Action can be performed for the given URL. To specify a specific application or operating system instance, use actionApplication.
      *
-     * @param fActionPlatform Text value to set.
+     * @param actionPlatform Text value to set.
      */
-    void setActionPlatform(Text fActionPlatform);
+    void setActionPlatform(Text actionPlatform);
     /**
      * The high level platform(s) where the Action can be performed for the given URL. To specify a specific application or operating system instance, use actionApplication.
      *
-     * @param fActionPlatform java.lang.String value to set.
+     * @param actionPlatform URL value to set.
      */
-    void setActionPlatform(java.lang.String fActionPlatform);
+    void setActionPlatform(URL actionPlatform);
     /**
      * The high level platform(s) where the Action can be performed for the given URL. To specify a specific application or operating system instance, use actionApplication.
      *
-     * @param fActionPlatform URL value to set.
+     * @param actionPlatform DigitalPlatformEnumeration value to set.
      */
-    void setActionPlatform(URL fActionPlatform);
-    /**
-     * The high level platform(s) where the Action can be performed for the given URL. To specify a specific application or operating system instance, use actionApplication.
-     *
-     * @param fActionPlatform java.net.URL value to set.
-     */
-    void setActionPlatform(java.net.URL fActionPlatform);
-    /**
-     * The high level platform(s) where the Action can be performed for the given URL. To specify a specific application or operating system instance, use actionApplication.
-     *
-     * @param fActionPlatform DigitalPlatformEnumeration value to set.
-     */
-    void setActionPlatform(DigitalPlatformEnumeration fActionPlatform);
+    void setActionPlatform(DigitalPlatformEnumeration actionPlatform);
 
     /**
      * An HTTP method that specifies the appropriate HTTP method for a request to an HTTP EntryPoint. Values are capitalized strings as used in HTTP.
@@ -94,15 +82,9 @@ public interface EntryPoint extends Intangible {
     /**
      * An HTTP method that specifies the appropriate HTTP method for a request to an HTTP EntryPoint. Values are capitalized strings as used in HTTP.
      *
-     * @param fHttpMethod Text value to set.
+     * @param httpMethod Text value to set.
      */
-    void setHttpMethod(Text fHttpMethod);
-    /**
-     * An HTTP method that specifies the appropriate HTTP method for a request to an HTTP EntryPoint. Values are capitalized strings as used in HTTP.
-     *
-     * @param fHttpMethod java.lang.String value to set.
-     */
-    void setHttpMethod(java.lang.String fHttpMethod);
+    void setHttpMethod(Text httpMethod);
 
     /**
      * An url template (RFC6570) that will be used to construct the target of the execution of the action.
@@ -114,15 +96,9 @@ public interface EntryPoint extends Intangible {
     /**
      * An url template (RFC6570) that will be used to construct the target of the execution of the action.
      *
-     * @param fUrlTemplate Text value to set.
+     * @param urlTemplate Text value to set.
      */
-    void setUrlTemplate(Text fUrlTemplate);
-    /**
-     * An url template (RFC6570) that will be used to construct the target of the execution of the action.
-     *
-     * @param fUrlTemplate java.lang.String value to set.
-     */
-    void setUrlTemplate(java.lang.String fUrlTemplate);
+    void setUrlTemplate(Text urlTemplate);
 
     /**
      * The supported encoding type(s) for an EntryPoint request.
@@ -134,15 +110,9 @@ public interface EntryPoint extends Intangible {
     /**
      * The supported encoding type(s) for an EntryPoint request.
      *
-     * @param fEncodingType Text value to set.
+     * @param encodingType Text value to set.
      */
-    void setEncodingType(Text fEncodingType);
-    /**
-     * The supported encoding type(s) for an EntryPoint request.
-     *
-     * @param fEncodingType java.lang.String value to set.
-     */
-    void setEncodingType(java.lang.String fEncodingType);
+    void setEncodingType(Text encodingType);
 
     /**
      * The supported content type(s) for an EntryPoint response.
@@ -154,13 +124,7 @@ public interface EntryPoint extends Intangible {
     /**
      * The supported content type(s) for an EntryPoint response.
      *
-     * @param fContentType Text value to set.
+     * @param contentType Text value to set.
      */
-    void setContentType(Text fContentType);
-    /**
-     * The supported content type(s) for an EntryPoint response.
-     *
-     * @param fContentType java.lang.String value to set.
-     */
-    void setContentType(java.lang.String fContentType);
+    void setContentType(Text contentType);
 }

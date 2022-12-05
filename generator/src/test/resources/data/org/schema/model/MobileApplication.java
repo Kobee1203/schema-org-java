@@ -24,13 +24,7 @@ public interface MobileApplication extends SoftwareApplication {
     /**
      * Specifies specific carrier(s) requirements for the application (e.g. an application may only work on a specific carrier network).
      *
-     * @param fCarrierRequirements Text value to set.
+     * @param carrierRequirements Text value to set.
      */
-    void setCarrierRequirements(Text fCarrierRequirements);
-    /**
-     * Specifies specific carrier(s) requirements for the application (e.g. an application may only work on a specific carrier network).
-     *
-     * @param fCarrierRequirements java.lang.String value to set.
-     */
-    void setCarrierRequirements(java.lang.String fCarrierRequirements);
+    void setCarrierRequirements(Text carrierRequirements);
 }

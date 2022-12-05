@@ -46,7 +46,7 @@ import org.schema.model.WebAPI;
 @JsonLdTypeName("WebAPI")
 public class WebAPIImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements WebAPI {
 
-    private Object fDocumentation;
+    private Object documentation;
 
     /**
      * Further documentation describing the Web API in more detail.
@@ -57,44 +57,33 @@ public class WebAPIImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public <T> T getDocumentation() {
-        return (T) fDocumentation;
+        return (T) documentation;
     }
 
     /**
      * Further documentation describing the Web API in more detail.
      *
-     * @param fDocumentation CreativeWork value to set.
+     * @param documentation CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1423">https://github.com/schemaorg/schemaorg/issues/1423</a>
      */
     @Override
-    public void setDocumentation(CreativeWork fDocumentation) {
-        this.fDocumentation = fDocumentation;
+    public void setDocumentation(CreativeWork documentation) {
+        this.documentation = documentation;
     }
     /**
      * Further documentation describing the Web API in more detail.
      *
-     * @param fDocumentation URL value to set.
+     * @param documentation URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1423">https://github.com/schemaorg/schemaorg/issues/1423</a>
      */
     @Override
-    public void setDocumentation(URL fDocumentation) {
-        this.fDocumentation = fDocumentation;
-    }
-    /**
-     * Further documentation describing the Web API in more detail.
-     *
-     * @param fDocumentation java.net.URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1423">https://github.com/schemaorg/schemaorg/issues/1423</a>
-     */
-    @Override
-    public void setDocumentation(java.net.URL fDocumentation) {
-        this.fDocumentation = URL.of(fDocumentation);
+    public void setDocumentation(URL documentation) {
+        this.documentation = documentation;
     }
 
-    private Review fReview;
+    private Review review;
 
     /**
      * A review of the item.
@@ -103,20 +92,20 @@ public class WebAPIImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public Review getReview() {
-        return fReview;
+        return review;
     }
 
     /**
      * A review of the item.
      *
-     * @param fReview Review value to set.
+     * @param review Review value to set.
      */
     @Override
-    public void setReview(Review fReview) {
-        this.fReview = fReview;
+    public void setReview(Review review) {
+        this.review = review;
     }
 
-    private Text fAward;
+    private Text award;
 
     /**
      * An award won by or for this item.
@@ -125,29 +114,20 @@ public class WebAPIImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public Text getAward() {
-        return fAward;
+        return award;
     }
 
     /**
      * An award won by or for this item.
      *
-     * @param fAward Text value to set.
+     * @param award Text value to set.
      */
     @Override
-    public void setAward(Text fAward) {
-        this.fAward = fAward;
-    }
-    /**
-     * An award won by or for this item.
-     *
-     * @param fAward java.lang.String value to set.
-     */
-    @Override
-    public void setAward(java.lang.String fAward) {
-        this.fAward = Text.of(fAward);
+    public void setAward(Text award) {
+        this.award = award;
     }
 
-    private Audience fServiceAudience;
+    private Audience serviceAudience;
 
     /**
      * The audience eligible for this service.
@@ -156,20 +136,20 @@ public class WebAPIImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public Audience getServiceAudience() {
-        return fServiceAudience;
+        return serviceAudience;
     }
 
     /**
      * The audience eligible for this service.
      *
-     * @param fServiceAudience Audience value to set.
+     * @param serviceAudience Audience value to set.
      */
     @Override
-    public void setServiceAudience(Audience fServiceAudience) {
-        this.fServiceAudience = fServiceAudience;
+    public void setServiceAudience(Audience serviceAudience) {
+        this.serviceAudience = serviceAudience;
     }
 
-    private Object fCategory;
+    private Object category;
 
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
@@ -180,88 +160,66 @@ public class WebAPIImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public <T> T getCategory() {
-        return (T) fCategory;
+        return (T) category;
     }
 
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
-     * @param fCategory URL value to set.
+     * @param category URL value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
     @Override
-    public void setCategory(URL fCategory) {
-        this.fCategory = fCategory;
+    public void setCategory(URL category) {
+        this.category = category;
     }
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
-     * @param fCategory java.net.URL value to set.
+     * @param category Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
     @Override
-    public void setCategory(java.net.URL fCategory) {
-        this.fCategory = URL.of(fCategory);
+    public void setCategory(Text category) {
+        this.category = category;
     }
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
-     * @param fCategory Text value to set.
+     * @param category PhysicalActivityCategory value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
     @Override
-    public void setCategory(Text fCategory) {
-        this.fCategory = fCategory;
+    public void setCategory(PhysicalActivityCategory category) {
+        this.category = category;
     }
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
-     * @param fCategory java.lang.String value to set.
+     * @param category Thing value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
     @Override
-    public void setCategory(java.lang.String fCategory) {
-        this.fCategory = Text.of(fCategory);
+    public void setCategory(Thing category) {
+        this.category = category;
     }
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
-     * @param fCategory PhysicalActivityCategory value to set.
+     * @param category CategoryCode value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
     @Override
-    public void setCategory(PhysicalActivityCategory fCategory) {
-        this.fCategory = fCategory;
-    }
-    /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-     *
-     * @param fCategory Thing value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     */
-    @Override
-    public void setCategory(Thing fCategory) {
-        this.fCategory = fCategory;
-    }
-    /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-     *
-     * @param fCategory CategoryCode value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     */
-    @Override
-    public void setCategory(CategoryCode fCategory) {
-        this.fCategory = fCategory;
+    public void setCategory(CategoryCode category) {
+        this.category = category;
     }
 
-    private OpeningHoursSpecification fHoursAvailable;
+    private OpeningHoursSpecification hoursAvailable;
 
     /**
      * The hours during which this service or contact is available.
@@ -270,20 +228,20 @@ public class WebAPIImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public OpeningHoursSpecification getHoursAvailable() {
-        return fHoursAvailable;
+        return hoursAvailable;
     }
 
     /**
      * The hours during which this service or contact is available.
      *
-     * @param fHoursAvailable OpeningHoursSpecification value to set.
+     * @param hoursAvailable OpeningHoursSpecification value to set.
      */
     @Override
-    public void setHoursAvailable(OpeningHoursSpecification fHoursAvailable) {
-        this.fHoursAvailable = fHoursAvailable;
+    public void setHoursAvailable(OpeningHoursSpecification hoursAvailable) {
+        this.hoursAvailable = hoursAvailable;
     }
 
-    private Audience fAudience;
+    private Audience audience;
 
     /**
      * An intended audience, i.e. a group for whom something was created.
@@ -292,20 +250,20 @@ public class WebAPIImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public Audience getAudience() {
-        return fAudience;
+        return audience;
     }
 
     /**
      * An intended audience, i.e. a group for whom something was created.
      *
-     * @param fAudience Audience value to set.
+     * @param audience Audience value to set.
      */
     @Override
-    public void setAudience(Audience fAudience) {
-        this.fAudience = fAudience;
+    public void setAudience(Audience audience) {
+        this.audience = audience;
     }
 
-    private Object fOffers;
+    private Object offers;
 
     /**
      * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
@@ -316,33 +274,33 @@ public class WebAPIImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public <T> T getOffers() {
-        return (T) fOffers;
+        return (T) offers;
     }
 
     /**
      * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      *
-     * @param fOffers Offer value to set.
+     * @param offers Offer value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
     @Override
-    public void setOffers(Offer fOffers) {
-        this.fOffers = fOffers;
+    public void setOffers(Offer offers) {
+        this.offers = offers;
     }
     /**
      * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      *
-     * @param fOffers Demand value to set.
+     * @param offers Demand value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
     @Override
-    public void setOffers(Demand fOffers) {
-        this.fOffers = fOffers;
+    public void setOffers(Demand offers) {
+        this.offers = offers;
     }
 
-    private Thing fServiceOutput;
+    private Thing serviceOutput;
 
     /**
      * The tangible thing generated by the service, e.g. a passport, permit, etc.
@@ -351,20 +309,20 @@ public class WebAPIImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public Thing getServiceOutput() {
-        return fServiceOutput;
+        return serviceOutput;
     }
 
     /**
      * The tangible thing generated by the service, e.g. a passport, permit, etc.
      *
-     * @param fServiceOutput Thing value to set.
+     * @param serviceOutput Thing value to set.
      */
     @Override
-    public void setServiceOutput(Thing fServiceOutput) {
-        this.fServiceOutput = fServiceOutput;
+    public void setServiceOutput(Thing serviceOutput) {
+        this.serviceOutput = serviceOutput;
     }
 
-    private Object fProvider;
+    private Object provider;
 
     /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
@@ -376,35 +334,35 @@ public class WebAPIImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public <T> T getProvider() {
-        return (T) fProvider;
+        return (T) provider;
     }
 
     /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
      *
-     * @param fProvider Organization value to set.
+     * @param provider Organization value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
      */
     @Override
-    public void setProvider(Organization fProvider) {
-        this.fProvider = fProvider;
+    public void setProvider(Organization provider) {
+        this.provider = provider;
     }
     /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
      *
-     * @param fProvider Person value to set.
+     * @param provider Person value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
      */
     @Override
-    public void setProvider(Person fProvider) {
-        this.fProvider = fProvider;
+    public void setProvider(Person provider) {
+        this.provider = provider;
     }
 
-    private Object fTermsOfService;
+    private Object termsOfService;
 
     /**
      * Human-readable terms of service documentation.
@@ -415,55 +373,33 @@ public class WebAPIImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public <T> T getTermsOfService() {
-        return (T) fTermsOfService;
+        return (T) termsOfService;
     }
 
     /**
      * Human-readable terms of service documentation.
      *
-     * @param fTermsOfService URL value to set.
+     * @param termsOfService URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1423">https://github.com/schemaorg/schemaorg/issues/1423</a>
      */
     @Override
-    public void setTermsOfService(URL fTermsOfService) {
-        this.fTermsOfService = fTermsOfService;
+    public void setTermsOfService(URL termsOfService) {
+        this.termsOfService = termsOfService;
     }
     /**
      * Human-readable terms of service documentation.
      *
-     * @param fTermsOfService java.net.URL value to set.
+     * @param termsOfService Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1423">https://github.com/schemaorg/schemaorg/issues/1423</a>
      */
     @Override
-    public void setTermsOfService(java.net.URL fTermsOfService) {
-        this.fTermsOfService = URL.of(fTermsOfService);
-    }
-    /**
-     * Human-readable terms of service documentation.
-     *
-     * @param fTermsOfService Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1423">https://github.com/schemaorg/schemaorg/issues/1423</a>
-     */
-    @Override
-    public void setTermsOfService(Text fTermsOfService) {
-        this.fTermsOfService = fTermsOfService;
-    }
-    /**
-     * Human-readable terms of service documentation.
-     *
-     * @param fTermsOfService java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1423">https://github.com/schemaorg/schemaorg/issues/1423</a>
-     */
-    @Override
-    public void setTermsOfService(java.lang.String fTermsOfService) {
-        this.fTermsOfService = Text.of(fTermsOfService);
+    public void setTermsOfService(Text termsOfService) {
+        this.termsOfService = termsOfService;
     }
 
-    private Text fProviderMobility;
+    private Text providerMobility;
 
     /**
      * Indicates the mobility of a provided service (e.g. 'static', 'dynamic').
@@ -472,29 +408,20 @@ public class WebAPIImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public Text getProviderMobility() {
-        return fProviderMobility;
+        return providerMobility;
     }
 
     /**
      * Indicates the mobility of a provided service (e.g. 'static', 'dynamic').
      *
-     * @param fProviderMobility Text value to set.
+     * @param providerMobility Text value to set.
      */
     @Override
-    public void setProviderMobility(Text fProviderMobility) {
-        this.fProviderMobility = fProviderMobility;
-    }
-    /**
-     * Indicates the mobility of a provided service (e.g. 'static', 'dynamic').
-     *
-     * @param fProviderMobility java.lang.String value to set.
-     */
-    @Override
-    public void setProviderMobility(java.lang.String fProviderMobility) {
-        this.fProviderMobility = Text.of(fProviderMobility);
+    public void setProviderMobility(Text providerMobility) {
+        this.providerMobility = providerMobility;
     }
 
-    private Object fBroker;
+    private Object broker;
 
     /**
      * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
@@ -503,29 +430,29 @@ public class WebAPIImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public <T> T getBroker() {
-        return (T) fBroker;
+        return (T) broker;
     }
 
     /**
      * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
      *
-     * @param fBroker Person value to set.
+     * @param broker Person value to set.
      */
     @Override
-    public void setBroker(Person fBroker) {
-        this.fBroker = fBroker;
+    public void setBroker(Person broker) {
+        this.broker = broker;
     }
     /**
      * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
      *
-     * @param fBroker Organization value to set.
+     * @param broker Organization value to set.
      */
     @Override
-    public void setBroker(Organization fBroker) {
-        this.fBroker = fBroker;
+    public void setBroker(Organization broker) {
+        this.broker = broker;
     }
 
-    private AggregateRating fAggregateRating;
+    private AggregateRating aggregateRating;
 
     /**
      * The overall rating, based on a collection of reviews or ratings, of the item.
@@ -534,20 +461,20 @@ public class WebAPIImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public AggregateRating getAggregateRating() {
-        return fAggregateRating;
+        return aggregateRating;
     }
 
     /**
      * The overall rating, based on a collection of reviews or ratings, of the item.
      *
-     * @param fAggregateRating AggregateRating value to set.
+     * @param aggregateRating AggregateRating value to set.
      */
     @Override
-    public void setAggregateRating(AggregateRating fAggregateRating) {
-        this.fAggregateRating = fAggregateRating;
+    public void setAggregateRating(AggregateRating aggregateRating) {
+        this.aggregateRating = aggregateRating;
     }
 
-    private Object fIsSimilarTo;
+    private Object isSimilarTo;
 
     /**
      * A pointer to another, functionally similar product (or multiple products).
@@ -557,31 +484,31 @@ public class WebAPIImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public <T> T getIsSimilarTo() {
-        return (T) fIsSimilarTo;
+        return (T) isSimilarTo;
     }
 
     /**
      * A pointer to another, functionally similar product (or multiple products).
      *
-     * @param fIsSimilarTo Service value to set.
+     * @param isSimilarTo Service value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setIsSimilarTo(Service fIsSimilarTo) {
-        this.fIsSimilarTo = fIsSimilarTo;
+    public void setIsSimilarTo(Service isSimilarTo) {
+        this.isSimilarTo = isSimilarTo;
     }
     /**
      * A pointer to another, functionally similar product (or multiple products).
      *
-     * @param fIsSimilarTo Product value to set.
+     * @param isSimilarTo Product value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setIsSimilarTo(Product fIsSimilarTo) {
-        this.fIsSimilarTo = fIsSimilarTo;
+    public void setIsSimilarTo(Product isSimilarTo) {
+        this.isSimilarTo = isSimilarTo;
     }
 
-    private ServiceChannel fAvailableChannel;
+    private ServiceChannel availableChannel;
 
     /**
      * A means of accessing the service (e.g. a phone bank, a web site, a location, etc.).
@@ -590,20 +517,20 @@ public class WebAPIImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public ServiceChannel getAvailableChannel() {
-        return fAvailableChannel;
+        return availableChannel;
     }
 
     /**
      * A means of accessing the service (e.g. a phone bank, a web site, a location, etc.).
      *
-     * @param fAvailableChannel ServiceChannel value to set.
+     * @param availableChannel ServiceChannel value to set.
      */
     @Override
-    public void setAvailableChannel(ServiceChannel fAvailableChannel) {
-        this.fAvailableChannel = fAvailableChannel;
+    public void setAvailableChannel(ServiceChannel availableChannel) {
+        this.availableChannel = availableChannel;
     }
 
-    private Text fSlogan;
+    private Text slogan;
 
     /**
      * A slogan or motto associated with the item.
@@ -612,29 +539,20 @@ public class WebAPIImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public Text getSlogan() {
-        return fSlogan;
+        return slogan;
     }
 
     /**
      * A slogan or motto associated with the item.
      *
-     * @param fSlogan Text value to set.
+     * @param slogan Text value to set.
      */
     @Override
-    public void setSlogan(Text fSlogan) {
-        this.fSlogan = fSlogan;
-    }
-    /**
-     * A slogan or motto associated with the item.
-     *
-     * @param fSlogan java.lang.String value to set.
-     */
-    @Override
-    public void setSlogan(java.lang.String fSlogan) {
-        this.fSlogan = Text.of(fSlogan);
+    public void setSlogan(Text slogan) {
+        this.slogan = slogan;
     }
 
-    private Object fBrand;
+    private Object brand;
 
     /**
      * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
@@ -643,29 +561,29 @@ public class WebAPIImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public <T> T getBrand() {
-        return (T) fBrand;
+        return (T) brand;
     }
 
     /**
      * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
      *
-     * @param fBrand Organization value to set.
+     * @param brand Organization value to set.
      */
     @Override
-    public void setBrand(Organization fBrand) {
-        this.fBrand = fBrand;
+    public void setBrand(Organization brand) {
+        this.brand = brand;
     }
     /**
      * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
      *
-     * @param fBrand Brand value to set.
+     * @param brand Brand value to set.
      */
     @Override
-    public void setBrand(Brand fBrand) {
-        this.fBrand = fBrand;
+    public void setBrand(Brand brand) {
+        this.brand = brand;
     }
 
-    private Object fLogo;
+    private Object logo;
 
     /**
      * An associated logo.
@@ -675,41 +593,31 @@ public class WebAPIImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public <T> T getLogo() {
-        return (T) fLogo;
+        return (T) logo;
     }
 
     /**
      * An associated logo.
      *
-     * @param fLogo URL value to set.
+     * @param logo URL value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setLogo(URL fLogo) {
-        this.fLogo = fLogo;
+    public void setLogo(URL logo) {
+        this.logo = logo;
     }
     /**
      * An associated logo.
      *
-     * @param fLogo java.net.URL value to set.
+     * @param logo ImageObject value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setLogo(java.net.URL fLogo) {
-        this.fLogo = URL.of(fLogo);
-    }
-    /**
-     * An associated logo.
-     *
-     * @param fLogo ImageObject value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setLogo(ImageObject fLogo) {
-        this.fLogo = fLogo;
+    public void setLogo(ImageObject logo) {
+        this.logo = logo;
     }
 
-    private Thing fProduces;
+    private Thing produces;
 
     /**
      * The tangible thing generated by the service, e.g. a passport, permit, etc.
@@ -718,20 +626,20 @@ public class WebAPIImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public Thing getProduces() {
-        return fProduces;
+        return produces;
     }
 
     /**
      * The tangible thing generated by the service, e.g. a passport, permit, etc.
      *
-     * @param fProduces Thing value to set.
+     * @param produces Thing value to set.
      */
     @Override
-    public void setProduces(Thing fProduces) {
-        this.fProduces = fProduces;
+    public void setProduces(Thing produces) {
+        this.produces = produces;
     }
 
-    private Object fServiceArea;
+    private Object serviceArea;
 
     /**
      * The geographic area where the service is provided.
@@ -740,38 +648,38 @@ public class WebAPIImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public <T> T getServiceArea() {
-        return (T) fServiceArea;
+        return (T) serviceArea;
     }
 
     /**
      * The geographic area where the service is provided.
      *
-     * @param fServiceArea GeoShape value to set.
+     * @param serviceArea GeoShape value to set.
      */
     @Override
-    public void setServiceArea(GeoShape fServiceArea) {
-        this.fServiceArea = fServiceArea;
+    public void setServiceArea(GeoShape serviceArea) {
+        this.serviceArea = serviceArea;
     }
     /**
      * The geographic area where the service is provided.
      *
-     * @param fServiceArea AdministrativeArea value to set.
+     * @param serviceArea AdministrativeArea value to set.
      */
     @Override
-    public void setServiceArea(AdministrativeArea fServiceArea) {
-        this.fServiceArea = fServiceArea;
+    public void setServiceArea(AdministrativeArea serviceArea) {
+        this.serviceArea = serviceArea;
     }
     /**
      * The geographic area where the service is provided.
      *
-     * @param fServiceArea Place value to set.
+     * @param serviceArea Place value to set.
      */
     @Override
-    public void setServiceArea(Place fServiceArea) {
-        this.fServiceArea = fServiceArea;
+    public void setServiceArea(Place serviceArea) {
+        this.serviceArea = serviceArea;
     }
 
-    private Object fServiceType;
+    private Object serviceType;
 
     /**
      * The type of service being offered, e.g. veterans' benefits, emergency relief, etc.
@@ -780,38 +688,29 @@ public class WebAPIImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public <T> T getServiceType() {
-        return (T) fServiceType;
+        return (T) serviceType;
     }
 
     /**
      * The type of service being offered, e.g. veterans' benefits, emergency relief, etc.
      *
-     * @param fServiceType GovernmentBenefitsType value to set.
+     * @param serviceType GovernmentBenefitsType value to set.
      */
     @Override
-    public void setServiceType(GovernmentBenefitsType fServiceType) {
-        this.fServiceType = fServiceType;
+    public void setServiceType(GovernmentBenefitsType serviceType) {
+        this.serviceType = serviceType;
     }
     /**
      * The type of service being offered, e.g. veterans' benefits, emergency relief, etc.
      *
-     * @param fServiceType Text value to set.
+     * @param serviceType Text value to set.
      */
     @Override
-    public void setServiceType(Text fServiceType) {
-        this.fServiceType = fServiceType;
-    }
-    /**
-     * The type of service being offered, e.g. veterans' benefits, emergency relief, etc.
-     *
-     * @param fServiceType java.lang.String value to set.
-     */
-    @Override
-    public void setServiceType(java.lang.String fServiceType) {
-        this.fServiceType = Text.of(fServiceType);
+    public void setServiceType(Text serviceType) {
+        this.serviceType = serviceType;
     }
 
-    private Object fAreaServed;
+    private Object areaServed;
 
     /**
      * The geographic area where a service or offered item is provided.
@@ -820,56 +719,47 @@ public class WebAPIImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public <T> T getAreaServed() {
-        return (T) fAreaServed;
+        return (T) areaServed;
     }
 
     /**
      * The geographic area where a service or offered item is provided.
      *
-     * @param fAreaServed AdministrativeArea value to set.
+     * @param areaServed AdministrativeArea value to set.
      */
     @Override
-    public void setAreaServed(AdministrativeArea fAreaServed) {
-        this.fAreaServed = fAreaServed;
+    public void setAreaServed(AdministrativeArea areaServed) {
+        this.areaServed = areaServed;
     }
     /**
      * The geographic area where a service or offered item is provided.
      *
-     * @param fAreaServed GeoShape value to set.
+     * @param areaServed GeoShape value to set.
      */
     @Override
-    public void setAreaServed(GeoShape fAreaServed) {
-        this.fAreaServed = fAreaServed;
+    public void setAreaServed(GeoShape areaServed) {
+        this.areaServed = areaServed;
     }
     /**
      * The geographic area where a service or offered item is provided.
      *
-     * @param fAreaServed Text value to set.
+     * @param areaServed Text value to set.
      */
     @Override
-    public void setAreaServed(Text fAreaServed) {
-        this.fAreaServed = fAreaServed;
+    public void setAreaServed(Text areaServed) {
+        this.areaServed = areaServed;
     }
     /**
      * The geographic area where a service or offered item is provided.
      *
-     * @param fAreaServed java.lang.String value to set.
+     * @param areaServed Place value to set.
      */
     @Override
-    public void setAreaServed(java.lang.String fAreaServed) {
-        this.fAreaServed = Text.of(fAreaServed);
-    }
-    /**
-     * The geographic area where a service or offered item is provided.
-     *
-     * @param fAreaServed Place value to set.
-     */
-    @Override
-    public void setAreaServed(Place fAreaServed) {
-        this.fAreaServed = fAreaServed;
+    public void setAreaServed(Place areaServed) {
+        this.areaServed = areaServed;
     }
 
-    private Object fIsRelatedTo;
+    private Object isRelatedTo;
 
     /**
      * A pointer to another, somehow related product (or multiple products).
@@ -879,31 +769,31 @@ public class WebAPIImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public <T> T getIsRelatedTo() {
-        return (T) fIsRelatedTo;
+        return (T) isRelatedTo;
     }
 
     /**
      * A pointer to another, somehow related product (or multiple products).
      *
-     * @param fIsRelatedTo Service value to set.
+     * @param isRelatedTo Service value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setIsRelatedTo(Service fIsRelatedTo) {
-        this.fIsRelatedTo = fIsRelatedTo;
+    public void setIsRelatedTo(Service isRelatedTo) {
+        this.isRelatedTo = isRelatedTo;
     }
     /**
      * A pointer to another, somehow related product (or multiple products).
      *
-     * @param fIsRelatedTo Product value to set.
+     * @param isRelatedTo Product value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setIsRelatedTo(Product fIsRelatedTo) {
-        this.fIsRelatedTo = fIsRelatedTo;
+    public void setIsRelatedTo(Product isRelatedTo) {
+        this.isRelatedTo = isRelatedTo;
     }
 
-    private OfferCatalog fHasOfferCatalog;
+    private OfferCatalog hasOfferCatalog;
 
     /**
      * Indicates an OfferCatalog listing for this Organization, Person, or Service.
@@ -912,20 +802,20 @@ public class WebAPIImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public OfferCatalog getHasOfferCatalog() {
-        return fHasOfferCatalog;
+        return hasOfferCatalog;
     }
 
     /**
      * Indicates an OfferCatalog listing for this Organization, Person, or Service.
      *
-     * @param fHasOfferCatalog OfferCatalog value to set.
+     * @param hasOfferCatalog OfferCatalog value to set.
      */
     @Override
-    public void setHasOfferCatalog(OfferCatalog fHasOfferCatalog) {
-        this.fHasOfferCatalog = fHasOfferCatalog;
+    public void setHasOfferCatalog(OfferCatalog hasOfferCatalog) {
+        this.hasOfferCatalog = hasOfferCatalog;
     }
 
-    private Object fMainEntityOfPage;
+    private Object mainEntityOfPage;
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -934,38 +824,29 @@ public class WebAPIImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
+        return (T) mainEntityOfPage;
     }
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param fMainEntityOfPage CreativeWork value to set.
+     * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(CreativeWork fMainEntityOfPage) {
-        this.fMainEntityOfPage = fMainEntityOfPage;
+    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
     }
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param fMainEntityOfPage URL value to set.
+     * @param mainEntityOfPage URL value to set.
      */
     @Override
-    public void setMainEntityOfPage(URL fMainEntityOfPage) {
-        this.fMainEntityOfPage = fMainEntityOfPage;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param fMainEntityOfPage java.net.URL value to set.
-     */
-    @Override
-    public void setMainEntityOfPage(java.net.URL fMainEntityOfPage) {
-        this.fMainEntityOfPage = URL.of(fMainEntityOfPage);
+    public void setMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
     }
 
-    private Text fAlternateName;
+    private Text alternateName;
 
     /**
      * An alias for the item.
@@ -974,29 +855,20 @@ public class WebAPIImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public Text getAlternateName() {
-        return fAlternateName;
+        return alternateName;
     }
 
     /**
      * An alias for the item.
      *
-     * @param fAlternateName Text value to set.
+     * @param alternateName Text value to set.
      */
     @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
-    }
-    /**
-     * An alias for the item.
-     *
-     * @param fAlternateName java.lang.String value to set.
-     */
-    @Override
-    public void setAlternateName(java.lang.String fAlternateName) {
-        this.fAlternateName = Text.of(fAlternateName);
+    public void setAlternateName(Text alternateName) {
+        this.alternateName = alternateName;
     }
 
-    private Text fName;
+    private Text name;
 
     /**
      * The name of the item.
@@ -1005,29 +877,20 @@ public class WebAPIImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public Text getName() {
-        return fName;
+        return name;
     }
 
     /**
      * The name of the item.
      *
-     * @param fName Text value to set.
+     * @param name Text value to set.
      */
     @Override
-    public void setName(Text fName) {
-        this.fName = fName;
-    }
-    /**
-     * The name of the item.
-     *
-     * @param fName java.lang.String value to set.
-     */
-    @Override
-    public void setName(java.lang.String fName) {
-        this.fName = Text.of(fName);
+    public void setName(Text name) {
+        this.name = name;
     }
 
-    private Action fPotentialAction;
+    private Action potentialAction;
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -1036,20 +899,20 @@ public class WebAPIImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public Action getPotentialAction() {
-        return fPotentialAction;
+        return potentialAction;
     }
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      *
-     * @param fPotentialAction Action value to set.
+     * @param potentialAction Action value to set.
      */
     @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
+    public void setPotentialAction(Action potentialAction) {
+        this.potentialAction = potentialAction;
     }
 
-    private Object fImage;
+    private Object image;
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -1058,38 +921,29 @@ public class WebAPIImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public <T> T getImage() {
-        return (T) fImage;
+        return (T) image;
     }
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param fImage URL value to set.
+     * @param image URL value to set.
      */
     @Override
-    public void setImage(URL fImage) {
-        this.fImage = fImage;
+    public void setImage(URL image) {
+        this.image = image;
     }
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param fImage java.net.URL value to set.
+     * @param image ImageObject value to set.
      */
     @Override
-    public void setImage(java.net.URL fImage) {
-        this.fImage = URL.of(fImage);
-    }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param fImage ImageObject value to set.
-     */
-    @Override
-    public void setImage(ImageObject fImage) {
-        this.fImage = fImage;
+    public void setImage(ImageObject image) {
+        this.image = image;
     }
 
-    private URL fUrl;
+    private URL url;
 
     /**
      * URL of the item.
@@ -1098,29 +952,20 @@ public class WebAPIImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public URL getUrl() {
-        return fUrl;
+        return url;
     }
 
     /**
      * URL of the item.
      *
-     * @param fUrl URL value to set.
+     * @param url URL value to set.
      */
     @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
-    }
-    /**
-     * URL of the item.
-     *
-     * @param fUrl java.net.URL value to set.
-     */
-    @Override
-    public void setUrl(java.net.URL fUrl) {
-        this.fUrl = URL.of(fUrl);
+    public void setUrl(URL url) {
+        this.url = url;
     }
 
-    private Text fDescription;
+    private Text description;
 
     /**
      * A description of the item.
@@ -1129,29 +974,20 @@ public class WebAPIImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public Text getDescription() {
-        return fDescription;
+        return description;
     }
 
     /**
      * A description of the item.
      *
-     * @param fDescription Text value to set.
+     * @param description Text value to set.
      */
     @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
-    }
-    /**
-     * A description of the item.
-     *
-     * @param fDescription java.lang.String value to set.
-     */
-    @Override
-    public void setDescription(java.lang.String fDescription) {
-        this.fDescription = Text.of(fDescription);
+    public void setDescription(Text description) {
+        this.description = description;
     }
 
-    private Object fSubjectOf;
+    private Object subjectOf;
 
     /**
      * A CreativeWork or Event about this Thing.
@@ -1161,31 +997,31 @@ public class WebAPIImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public <T> T getSubjectOf() {
-        return (T) fSubjectOf;
+        return (T) subjectOf;
     }
 
     /**
      * A CreativeWork or Event about this Thing.
      *
-     * @param fSubjectOf Event value to set.
+     * @param subjectOf Event value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Event fSubjectOf) {
-        this.fSubjectOf = fSubjectOf;
+    public void setSubjectOf(Event subjectOf) {
+        this.subjectOf = subjectOf;
     }
     /**
      * A CreativeWork or Event about this Thing.
      *
-     * @param fSubjectOf CreativeWork value to set.
+     * @param subjectOf CreativeWork value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(CreativeWork fSubjectOf) {
-        this.fSubjectOf = fSubjectOf;
+    public void setSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = subjectOf;
     }
 
-    private URL fAdditionalType;
+    private URL additionalType;
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
@@ -1194,29 +1030,20 @@ public class WebAPIImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public URL getAdditionalType() {
-        return fAdditionalType;
+        return additionalType;
     }
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
-     * @param fAdditionalType URL value to set.
+     * @param additionalType URL value to set.
      */
     @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
-    }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @param fAdditionalType java.net.URL value to set.
-     */
-    @Override
-    public void setAdditionalType(java.net.URL fAdditionalType) {
-        this.fAdditionalType = URL.of(fAdditionalType);
+    public void setAdditionalType(URL additionalType) {
+        this.additionalType = additionalType;
     }
 
-    private Text fDisambiguatingDescription;
+    private Text disambiguatingDescription;
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
@@ -1225,29 +1052,20 @@ public class WebAPIImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public Text getDisambiguatingDescription() {
-        return fDisambiguatingDescription;
+        return disambiguatingDescription;
     }
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
-     * @param fDisambiguatingDescription Text value to set.
+     * @param disambiguatingDescription Text value to set.
      */
     @Override
-    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = fDisambiguatingDescription;
-    }
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @param fDisambiguatingDescription java.lang.String value to set.
-     */
-    @Override
-    public void setDisambiguatingDescription(java.lang.String fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = Text.of(fDisambiguatingDescription);
+    public void setDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = disambiguatingDescription;
     }
 
-    private URL fSameAs;
+    private URL sameAs;
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
@@ -1256,29 +1074,20 @@ public class WebAPIImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public URL getSameAs() {
-        return fSameAs;
+        return sameAs;
     }
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
-     * @param fSameAs URL value to set.
+     * @param sameAs URL value to set.
      */
     @Override
-    public void setSameAs(URL fSameAs) {
-        this.fSameAs = fSameAs;
-    }
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @param fSameAs java.net.URL value to set.
-     */
-    @Override
-    public void setSameAs(java.net.URL fSameAs) {
-        this.fSameAs = URL.of(fSameAs);
+    public void setSameAs(URL sameAs) {
+        this.sameAs = sameAs;
     }
 
-    private Object fIdentifier;
+    private Object identifier;
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -1288,57 +1097,37 @@ public class WebAPIImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public <T> T getIdentifier() {
-        return (T) fIdentifier;
+        return (T) identifier;
     }
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier URL value to set.
+     * @param identifier URL value to set.
      */
     @Override
-    public void setIdentifier(URL fIdentifier) {
-        this.fIdentifier = fIdentifier;
+    public void setIdentifier(URL identifier) {
+        this.identifier = identifier;
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier java.net.URL value to set.
+     * @param identifier Text value to set.
      */
     @Override
-    public void setIdentifier(java.net.URL fIdentifier) {
-        this.fIdentifier = URL.of(fIdentifier);
+    public void setIdentifier(Text identifier) {
+        this.identifier = identifier;
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier Text value to set.
+     * @param identifier PropertyValue value to set.
      */
     @Override
-    public void setIdentifier(Text fIdentifier) {
-        this.fIdentifier = fIdentifier;
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param fIdentifier java.lang.String value to set.
-     */
-    @Override
-    public void setIdentifier(java.lang.String fIdentifier) {
-        this.fIdentifier = Text.of(fIdentifier);
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param fIdentifier PropertyValue value to set.
-     */
-    @Override
-    public void setIdentifier(PropertyValue fIdentifier) {
-        this.fIdentifier = fIdentifier;
+    public void setIdentifier(PropertyValue identifier) {
+        this.identifier = identifier;
     }
 }

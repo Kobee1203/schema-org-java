@@ -27,15 +27,15 @@ public interface SportsEvent extends Event {
     /**
      * The home team in a sports event.
      *
-     * @param fHomeTeam Person value to set.
+     * @param homeTeam Person value to set.
      */
-    void setHomeTeam(Person fHomeTeam);
+    void setHomeTeam(Person homeTeam);
     /**
      * The home team in a sports event.
      *
-     * @param fHomeTeam SportsTeam value to set.
+     * @param homeTeam SportsTeam value to set.
      */
-    void setHomeTeam(SportsTeam fHomeTeam);
+    void setHomeTeam(SportsTeam homeTeam);
 
     /**
      * The away team in a sports event.
@@ -47,15 +47,15 @@ public interface SportsEvent extends Event {
     /**
      * The away team in a sports event.
      *
-     * @param fAwayTeam SportsTeam value to set.
+     * @param awayTeam SportsTeam value to set.
      */
-    void setAwayTeam(SportsTeam fAwayTeam);
+    void setAwayTeam(SportsTeam awayTeam);
     /**
      * The away team in a sports event.
      *
-     * @param fAwayTeam Person value to set.
+     * @param awayTeam Person value to set.
      */
-    void setAwayTeam(Person fAwayTeam);
+    void setAwayTeam(Person awayTeam);
 
     /**
      * A competitor in a sports event.
@@ -67,15 +67,15 @@ public interface SportsEvent extends Event {
     /**
      * A competitor in a sports event.
      *
-     * @param fCompetitor Person value to set.
+     * @param competitor Person value to set.
      */
-    void setCompetitor(Person fCompetitor);
+    void setCompetitor(Person competitor);
     /**
      * A competitor in a sports event.
      *
-     * @param fCompetitor SportsTeam value to set.
+     * @param competitor SportsTeam value to set.
      */
-    void setCompetitor(SportsTeam fCompetitor);
+    void setCompetitor(SportsTeam competitor);
 
     /**
      * A type of sport (e.g. Baseball).
@@ -89,33 +89,17 @@ public interface SportsEvent extends Event {
     /**
      * A type of sport (e.g. Baseball).
      *
-     * @param fSport Text value to set.
+     * @param sport Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1951">https://github.com/schemaorg/schemaorg/issues/1951</a>
      */
-    void setSport(Text fSport);
+    void setSport(Text sport);
     /**
      * A type of sport (e.g. Baseball).
      *
-     * @param fSport java.lang.String value to set.
+     * @param sport URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1951">https://github.com/schemaorg/schemaorg/issues/1951</a>
      */
-    void setSport(java.lang.String fSport);
-    /**
-     * A type of sport (e.g. Baseball).
-     *
-     * @param fSport URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1951">https://github.com/schemaorg/schemaorg/issues/1951</a>
-     */
-    void setSport(URL fSport);
-    /**
-     * A type of sport (e.g. Baseball).
-     *
-     * @param fSport java.net.URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1951">https://github.com/schemaorg/schemaorg/issues/1951</a>
-     */
-    void setSport(java.net.URL fSport);
+    void setSport(URL sport);
 }

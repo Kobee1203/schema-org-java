@@ -25,15 +25,9 @@ public interface Airline extends Organization {
     /**
      * IATA identifier for an airline or airport.
      *
-     * @param fIataCode Text value to set.
+     * @param iataCode Text value to set.
      */
-    void setIataCode(Text fIataCode);
-    /**
-     * IATA identifier for an airline or airport.
-     *
-     * @param fIataCode java.lang.String value to set.
-     */
-    void setIataCode(java.lang.String fIataCode);
+    void setIataCode(Text iataCode);
 
     /**
      * The type of boarding policy used by the airline (e.g. zone-based or group-based).
@@ -45,7 +39,7 @@ public interface Airline extends Organization {
     /**
      * The type of boarding policy used by the airline (e.g. zone-based or group-based).
      *
-     * @param fBoardingPolicy BoardingPolicyType value to set.
+     * @param boardingPolicy BoardingPolicyType value to set.
      */
-    void setBoardingPolicy(BoardingPolicyType fBoardingPolicy);
+    void setBoardingPolicy(BoardingPolicyType boardingPolicy);
 }

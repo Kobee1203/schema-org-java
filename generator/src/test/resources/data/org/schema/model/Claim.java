@@ -37,20 +37,20 @@ public interface Claim extends CreativeWork {
      * For a [[Claim]] interpreted from [[MediaObject]] content
      *     sed to indicate a claim contained, implied or refined from the content of a [[MediaObject]].
      *
-     * @param fClaimInterpreter Person value to set.
+     * @param claimInterpreter Person value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
-    void setClaimInterpreter(Person fClaimInterpreter);
+    void setClaimInterpreter(Person claimInterpreter);
     /**
      * For a [[Claim]] interpreted from [[MediaObject]] content
      *     sed to indicate a claim contained, implied or refined from the content of a [[MediaObject]].
      *
-     * @param fClaimInterpreter Organization value to set.
+     * @param claimInterpreter Organization value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
-    void setClaimInterpreter(Organization fClaimInterpreter);
+    void setClaimInterpreter(Organization claimInterpreter);
 
     /**
      * Indicates the first known occurence of a [[Claim]] in some [[CreativeWork]].
@@ -64,11 +64,11 @@ public interface Claim extends CreativeWork {
     /**
      * Indicates the first known occurence of a [[Claim]] in some [[CreativeWork]].
      *
-     * @param fFirstAppearance CreativeWork value to set.
+     * @param firstAppearance CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1828">https://github.com/schemaorg/schemaorg/issues/1828</a>
      */
-    void setFirstAppearance(CreativeWork fFirstAppearance);
+    void setFirstAppearance(CreativeWork firstAppearance);
 
     /**
      * Indicates an occurence of a [[Claim]] in some [[CreativeWork]].
@@ -82,9 +82,9 @@ public interface Claim extends CreativeWork {
     /**
      * Indicates an occurence of a [[Claim]] in some [[CreativeWork]].
      *
-     * @param fAppearance CreativeWork value to set.
+     * @param appearance CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1828">https://github.com/schemaorg/schemaorg/issues/1828</a>
      */
-    void setAppearance(CreativeWork fAppearance);
+    void setAppearance(CreativeWork appearance);
 }

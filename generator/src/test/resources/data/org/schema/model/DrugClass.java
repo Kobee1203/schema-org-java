@@ -26,8 +26,8 @@ public interface DrugClass extends MedicalEntity {
     /**
      * Specifying a drug or medicine used in a medication procedure.
      *
-     * @param fDrug Drug value to set.
+     * @param drug Drug value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setDrug(Drug fDrug);
+    void setDrug(Drug drug);
 }

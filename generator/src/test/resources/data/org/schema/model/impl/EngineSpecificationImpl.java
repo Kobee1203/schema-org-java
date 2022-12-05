@@ -29,7 +29,7 @@ import org.schema.model.EngineSpecification;
 @JsonLdTypeName("EngineSpecification")
 public class EngineSpecificationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements EngineSpecification {
 
-    private Object fFuelType;
+    private Object fuelType;
 
     /**
      * The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.
@@ -39,61 +39,41 @@ public class EngineSpecificationImpl extends com.weedow.schemaorg.commons.model.
      */
     @Override
     public <T> T getFuelType() {
-        return (T) fFuelType;
+        return (T) fuelType;
     }
 
     /**
      * The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.
      *
-     * @param fFuelType Text value to set.
+     * @param fuelType Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setFuelType(Text fFuelType) {
-        this.fFuelType = fFuelType;
+    public void setFuelType(Text fuelType) {
+        this.fuelType = fuelType;
     }
     /**
      * The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.
      *
-     * @param fFuelType java.lang.String value to set.
+     * @param fuelType URL value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setFuelType(java.lang.String fFuelType) {
-        this.fFuelType = Text.of(fFuelType);
+    public void setFuelType(URL fuelType) {
+        this.fuelType = fuelType;
     }
     /**
      * The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.
      *
-     * @param fFuelType URL value to set.
+     * @param fuelType QualitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setFuelType(URL fFuelType) {
-        this.fFuelType = fFuelType;
-    }
-    /**
-     * The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.
-     *
-     * @param fFuelType java.net.URL value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void setFuelType(java.net.URL fFuelType) {
-        this.fFuelType = URL.of(fFuelType);
-    }
-    /**
-     * The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.
-     *
-     * @param fFuelType QualitativeValue value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void setFuelType(QualitativeValue fFuelType) {
-        this.fFuelType = fFuelType;
+    public void setFuelType(QualitativeValue fuelType) {
+        this.fuelType = fuelType;
     }
 
-    private QuantitativeValue fTorque;
+    private QuantitativeValue torque;
 
     /**
      * The torque (turning force) of the vehicle's engine.<br/><br/>Typical unit code(s): NU for newton metre (N m), F17 for pound-force per foot, or F48 for pound-force per inch<br/><br/>* Note 1: You can link to information about how the given value has been determined (e.g. reference RPM) using the [[valueReference]] property.<br/>* Note 2: You can use [[minValue]] and [[maxValue]] to indicate ranges.
@@ -104,22 +84,22 @@ public class EngineSpecificationImpl extends com.weedow.schemaorg.commons.model.
      */
     @Override
     public QuantitativeValue getTorque() {
-        return fTorque;
+        return torque;
     }
 
     /**
      * The torque (turning force) of the vehicle's engine.<br/><br/>Typical unit code(s): NU for newton metre (N m), F17 for pound-force per foot, or F48 for pound-force per inch<br/><br/>* Note 1: You can link to information about how the given value has been determined (e.g. reference RPM) using the [[valueReference]] property.<br/>* Note 2: You can use [[minValue]] and [[maxValue]] to indicate ranges.
      *
-     * @param fTorque QuantitativeValue value to set.
+     * @param torque QuantitativeValue value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setTorque(QuantitativeValue fTorque) {
-        this.fTorque = fTorque;
+    public void setTorque(QuantitativeValue torque) {
+        this.torque = torque;
     }
 
-    private QuantitativeValue fEngineDisplacement;
+    private QuantitativeValue engineDisplacement;
 
     /**
      * The volume swept by all of the pistons inside the cylinders of an internal combustion engine in a single movement. <br/><br/>Typical unit code(s): CMQ for cubic centimeter, LTR for liters, INQ for cubic inches<br/>* Note 1: You can link to information about how the given value has been determined using the [[valueReference]] property.<br/>* Note 2: You can use [[minValue]] and [[maxValue]] to indicate ranges.
@@ -130,22 +110,22 @@ public class EngineSpecificationImpl extends com.weedow.schemaorg.commons.model.
      */
     @Override
     public QuantitativeValue getEngineDisplacement() {
-        return fEngineDisplacement;
+        return engineDisplacement;
     }
 
     /**
      * The volume swept by all of the pistons inside the cylinders of an internal combustion engine in a single movement. <br/><br/>Typical unit code(s): CMQ for cubic centimeter, LTR for liters, INQ for cubic inches<br/>* Note 1: You can link to information about how the given value has been determined using the [[valueReference]] property.<br/>* Note 2: You can use [[minValue]] and [[maxValue]] to indicate ranges.
      *
-     * @param fEngineDisplacement QuantitativeValue value to set.
+     * @param engineDisplacement QuantitativeValue value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setEngineDisplacement(QuantitativeValue fEngineDisplacement) {
-        this.fEngineDisplacement = fEngineDisplacement;
+    public void setEngineDisplacement(QuantitativeValue engineDisplacement) {
+        this.engineDisplacement = engineDisplacement;
     }
 
-    private QuantitativeValue fEnginePower;
+    private QuantitativeValue enginePower;
 
     /**
      * The power of the vehicle's engine.
@@ -157,23 +137,23 @@ public class EngineSpecificationImpl extends com.weedow.schemaorg.commons.model.
      */
     @Override
     public QuantitativeValue getEnginePower() {
-        return fEnginePower;
+        return enginePower;
     }
 
     /**
      * The power of the vehicle's engine.
      *     Typical unit code(s): KWT for kilowatt, BHP for brake horsepower, N12 for metric horsepower (PS, with 1 PS = 735,49875 W)<br/><br/>* Note 1: There are many different ways of measuring an engine's power. For an overview, see  [http://en.wikipedia.org/wiki/Horsepower#Engine_power_test_codes](http://en.wikipedia.org/wiki/Horsepower#Engine_power_test_codes).<br/>* Note 2: You can link to information about how the given value has been determined using the [[valueReference]] property.<br/>* Note 3: You can use [[minValue]] and [[maxValue]] to indicate ranges.
      *
-     * @param fEnginePower QuantitativeValue value to set.
+     * @param enginePower QuantitativeValue value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setEnginePower(QuantitativeValue fEnginePower) {
-        this.fEnginePower = fEnginePower;
+    public void setEnginePower(QuantitativeValue enginePower) {
+        this.enginePower = enginePower;
     }
 
-    private Object fEngineType;
+    private Object engineType;
 
     /**
      * The type of engine or engines powering the vehicle.
@@ -184,66 +164,44 @@ public class EngineSpecificationImpl extends com.weedow.schemaorg.commons.model.
      */
     @Override
     public <T> T getEngineType() {
-        return (T) fEngineType;
+        return (T) engineType;
     }
 
     /**
      * The type of engine or engines powering the vehicle.
      *
-     * @param fEngineType QualitativeValue value to set.
+     * @param engineType QualitativeValue value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setEngineType(QualitativeValue fEngineType) {
-        this.fEngineType = fEngineType;
+    public void setEngineType(QualitativeValue engineType) {
+        this.engineType = engineType;
     }
     /**
      * The type of engine or engines powering the vehicle.
      *
-     * @param fEngineType URL value to set.
+     * @param engineType URL value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setEngineType(URL fEngineType) {
-        this.fEngineType = fEngineType;
+    public void setEngineType(URL engineType) {
+        this.engineType = engineType;
     }
     /**
      * The type of engine or engines powering the vehicle.
      *
-     * @param fEngineType java.net.URL value to set.
+     * @param engineType Text value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setEngineType(java.net.URL fEngineType) {
-        this.fEngineType = URL.of(fEngineType);
-    }
-    /**
-     * The type of engine or engines powering the vehicle.
-     *
-     * @param fEngineType Text value to set.
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void setEngineType(Text fEngineType) {
-        this.fEngineType = fEngineType;
-    }
-    /**
-     * The type of engine or engines powering the vehicle.
-     *
-     * @param fEngineType java.lang.String value to set.
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void setEngineType(java.lang.String fEngineType) {
-        this.fEngineType = Text.of(fEngineType);
+    public void setEngineType(Text engineType) {
+        this.engineType = engineType;
     }
 
-    private Object fMainEntityOfPage;
+    private Object mainEntityOfPage;
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -252,38 +210,29 @@ public class EngineSpecificationImpl extends com.weedow.schemaorg.commons.model.
      */
     @Override
     public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
+        return (T) mainEntityOfPage;
     }
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param fMainEntityOfPage CreativeWork value to set.
+     * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(CreativeWork fMainEntityOfPage) {
-        this.fMainEntityOfPage = fMainEntityOfPage;
+    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
     }
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param fMainEntityOfPage URL value to set.
+     * @param mainEntityOfPage URL value to set.
      */
     @Override
-    public void setMainEntityOfPage(URL fMainEntityOfPage) {
-        this.fMainEntityOfPage = fMainEntityOfPage;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param fMainEntityOfPage java.net.URL value to set.
-     */
-    @Override
-    public void setMainEntityOfPage(java.net.URL fMainEntityOfPage) {
-        this.fMainEntityOfPage = URL.of(fMainEntityOfPage);
+    public void setMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
     }
 
-    private Text fAlternateName;
+    private Text alternateName;
 
     /**
      * An alias for the item.
@@ -292,29 +241,20 @@ public class EngineSpecificationImpl extends com.weedow.schemaorg.commons.model.
      */
     @Override
     public Text getAlternateName() {
-        return fAlternateName;
+        return alternateName;
     }
 
     /**
      * An alias for the item.
      *
-     * @param fAlternateName Text value to set.
+     * @param alternateName Text value to set.
      */
     @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
-    }
-    /**
-     * An alias for the item.
-     *
-     * @param fAlternateName java.lang.String value to set.
-     */
-    @Override
-    public void setAlternateName(java.lang.String fAlternateName) {
-        this.fAlternateName = Text.of(fAlternateName);
+    public void setAlternateName(Text alternateName) {
+        this.alternateName = alternateName;
     }
 
-    private Text fName;
+    private Text name;
 
     /**
      * The name of the item.
@@ -323,29 +263,20 @@ public class EngineSpecificationImpl extends com.weedow.schemaorg.commons.model.
      */
     @Override
     public Text getName() {
-        return fName;
+        return name;
     }
 
     /**
      * The name of the item.
      *
-     * @param fName Text value to set.
+     * @param name Text value to set.
      */
     @Override
-    public void setName(Text fName) {
-        this.fName = fName;
-    }
-    /**
-     * The name of the item.
-     *
-     * @param fName java.lang.String value to set.
-     */
-    @Override
-    public void setName(java.lang.String fName) {
-        this.fName = Text.of(fName);
+    public void setName(Text name) {
+        this.name = name;
     }
 
-    private Action fPotentialAction;
+    private Action potentialAction;
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -354,20 +285,20 @@ public class EngineSpecificationImpl extends com.weedow.schemaorg.commons.model.
      */
     @Override
     public Action getPotentialAction() {
-        return fPotentialAction;
+        return potentialAction;
     }
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      *
-     * @param fPotentialAction Action value to set.
+     * @param potentialAction Action value to set.
      */
     @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
+    public void setPotentialAction(Action potentialAction) {
+        this.potentialAction = potentialAction;
     }
 
-    private Object fImage;
+    private Object image;
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -376,38 +307,29 @@ public class EngineSpecificationImpl extends com.weedow.schemaorg.commons.model.
      */
     @Override
     public <T> T getImage() {
-        return (T) fImage;
+        return (T) image;
     }
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param fImage URL value to set.
+     * @param image URL value to set.
      */
     @Override
-    public void setImage(URL fImage) {
-        this.fImage = fImage;
+    public void setImage(URL image) {
+        this.image = image;
     }
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param fImage java.net.URL value to set.
+     * @param image ImageObject value to set.
      */
     @Override
-    public void setImage(java.net.URL fImage) {
-        this.fImage = URL.of(fImage);
-    }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param fImage ImageObject value to set.
-     */
-    @Override
-    public void setImage(ImageObject fImage) {
-        this.fImage = fImage;
+    public void setImage(ImageObject image) {
+        this.image = image;
     }
 
-    private URL fUrl;
+    private URL url;
 
     /**
      * URL of the item.
@@ -416,29 +338,20 @@ public class EngineSpecificationImpl extends com.weedow.schemaorg.commons.model.
      */
     @Override
     public URL getUrl() {
-        return fUrl;
+        return url;
     }
 
     /**
      * URL of the item.
      *
-     * @param fUrl URL value to set.
+     * @param url URL value to set.
      */
     @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
-    }
-    /**
-     * URL of the item.
-     *
-     * @param fUrl java.net.URL value to set.
-     */
-    @Override
-    public void setUrl(java.net.URL fUrl) {
-        this.fUrl = URL.of(fUrl);
+    public void setUrl(URL url) {
+        this.url = url;
     }
 
-    private Text fDescription;
+    private Text description;
 
     /**
      * A description of the item.
@@ -447,29 +360,20 @@ public class EngineSpecificationImpl extends com.weedow.schemaorg.commons.model.
      */
     @Override
     public Text getDescription() {
-        return fDescription;
+        return description;
     }
 
     /**
      * A description of the item.
      *
-     * @param fDescription Text value to set.
+     * @param description Text value to set.
      */
     @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
-    }
-    /**
-     * A description of the item.
-     *
-     * @param fDescription java.lang.String value to set.
-     */
-    @Override
-    public void setDescription(java.lang.String fDescription) {
-        this.fDescription = Text.of(fDescription);
+    public void setDescription(Text description) {
+        this.description = description;
     }
 
-    private Object fSubjectOf;
+    private Object subjectOf;
 
     /**
      * A CreativeWork or Event about this Thing.
@@ -479,31 +383,31 @@ public class EngineSpecificationImpl extends com.weedow.schemaorg.commons.model.
      */
     @Override
     public <T> T getSubjectOf() {
-        return (T) fSubjectOf;
+        return (T) subjectOf;
     }
 
     /**
      * A CreativeWork or Event about this Thing.
      *
-     * @param fSubjectOf Event value to set.
+     * @param subjectOf Event value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Event fSubjectOf) {
-        this.fSubjectOf = fSubjectOf;
+    public void setSubjectOf(Event subjectOf) {
+        this.subjectOf = subjectOf;
     }
     /**
      * A CreativeWork or Event about this Thing.
      *
-     * @param fSubjectOf CreativeWork value to set.
+     * @param subjectOf CreativeWork value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(CreativeWork fSubjectOf) {
-        this.fSubjectOf = fSubjectOf;
+    public void setSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = subjectOf;
     }
 
-    private URL fAdditionalType;
+    private URL additionalType;
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
@@ -512,29 +416,20 @@ public class EngineSpecificationImpl extends com.weedow.schemaorg.commons.model.
      */
     @Override
     public URL getAdditionalType() {
-        return fAdditionalType;
+        return additionalType;
     }
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
-     * @param fAdditionalType URL value to set.
+     * @param additionalType URL value to set.
      */
     @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
-    }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @param fAdditionalType java.net.URL value to set.
-     */
-    @Override
-    public void setAdditionalType(java.net.URL fAdditionalType) {
-        this.fAdditionalType = URL.of(fAdditionalType);
+    public void setAdditionalType(URL additionalType) {
+        this.additionalType = additionalType;
     }
 
-    private Text fDisambiguatingDescription;
+    private Text disambiguatingDescription;
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
@@ -543,29 +438,20 @@ public class EngineSpecificationImpl extends com.weedow.schemaorg.commons.model.
      */
     @Override
     public Text getDisambiguatingDescription() {
-        return fDisambiguatingDescription;
+        return disambiguatingDescription;
     }
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
-     * @param fDisambiguatingDescription Text value to set.
+     * @param disambiguatingDescription Text value to set.
      */
     @Override
-    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = fDisambiguatingDescription;
-    }
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @param fDisambiguatingDescription java.lang.String value to set.
-     */
-    @Override
-    public void setDisambiguatingDescription(java.lang.String fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = Text.of(fDisambiguatingDescription);
+    public void setDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = disambiguatingDescription;
     }
 
-    private URL fSameAs;
+    private URL sameAs;
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
@@ -574,29 +460,20 @@ public class EngineSpecificationImpl extends com.weedow.schemaorg.commons.model.
      */
     @Override
     public URL getSameAs() {
-        return fSameAs;
+        return sameAs;
     }
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
-     * @param fSameAs URL value to set.
+     * @param sameAs URL value to set.
      */
     @Override
-    public void setSameAs(URL fSameAs) {
-        this.fSameAs = fSameAs;
-    }
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @param fSameAs java.net.URL value to set.
-     */
-    @Override
-    public void setSameAs(java.net.URL fSameAs) {
-        this.fSameAs = URL.of(fSameAs);
+    public void setSameAs(URL sameAs) {
+        this.sameAs = sameAs;
     }
 
-    private Object fIdentifier;
+    private Object identifier;
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -606,57 +483,37 @@ public class EngineSpecificationImpl extends com.weedow.schemaorg.commons.model.
      */
     @Override
     public <T> T getIdentifier() {
-        return (T) fIdentifier;
+        return (T) identifier;
     }
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier URL value to set.
+     * @param identifier URL value to set.
      */
     @Override
-    public void setIdentifier(URL fIdentifier) {
-        this.fIdentifier = fIdentifier;
+    public void setIdentifier(URL identifier) {
+        this.identifier = identifier;
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier java.net.URL value to set.
+     * @param identifier Text value to set.
      */
     @Override
-    public void setIdentifier(java.net.URL fIdentifier) {
-        this.fIdentifier = URL.of(fIdentifier);
+    public void setIdentifier(Text identifier) {
+        this.identifier = identifier;
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier Text value to set.
+     * @param identifier PropertyValue value to set.
      */
     @Override
-    public void setIdentifier(Text fIdentifier) {
-        this.fIdentifier = fIdentifier;
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param fIdentifier java.lang.String value to set.
-     */
-    @Override
-    public void setIdentifier(java.lang.String fIdentifier) {
-        this.fIdentifier = Text.of(fIdentifier);
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param fIdentifier PropertyValue value to set.
-     */
-    @Override
-    public void setIdentifier(PropertyValue fIdentifier) {
-        this.fIdentifier = fIdentifier;
+    public void setIdentifier(PropertyValue identifier) {
+        this.identifier = identifier;
     }
 }

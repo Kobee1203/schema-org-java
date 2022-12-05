@@ -31,17 +31,10 @@ public interface AnatomicalStructure extends MedicalEntity {
     /**
      * Location in the body of the anatomical structure.
      *
-     * @param fBodyLocation Text value to set.
+     * @param bodyLocation Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setBodyLocation(Text fBodyLocation);
-    /**
-     * Location in the body of the anatomical structure.
-     *
-     * @param fBodyLocation java.lang.String value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void setBodyLocation(java.lang.String fBodyLocation);
+    void setBodyLocation(Text bodyLocation);
 
     /**
      * Other anatomical structures to which this structure is connected.
@@ -54,10 +47,10 @@ public interface AnatomicalStructure extends MedicalEntity {
     /**
      * Other anatomical structures to which this structure is connected.
      *
-     * @param fConnectedTo AnatomicalStructure value to set.
+     * @param connectedTo AnatomicalStructure value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setConnectedTo(AnatomicalStructure fConnectedTo);
+    void setConnectedTo(AnatomicalStructure connectedTo);
 
     /**
      * The anatomical or organ system that this structure is part of.
@@ -70,10 +63,10 @@ public interface AnatomicalStructure extends MedicalEntity {
     /**
      * The anatomical or organ system that this structure is part of.
      *
-     * @param fPartOfSystem AnatomicalSystem value to set.
+     * @param partOfSystem AnatomicalSystem value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setPartOfSystem(AnatomicalSystem fPartOfSystem);
+    void setPartOfSystem(AnatomicalSystem partOfSystem);
 
     /**
      * A medical therapy related to this anatomy.
@@ -86,10 +79,10 @@ public interface AnatomicalStructure extends MedicalEntity {
     /**
      * A medical therapy related to this anatomy.
      *
-     * @param fRelatedTherapy MedicalTherapy value to set.
+     * @param relatedTherapy MedicalTherapy value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setRelatedTherapy(MedicalTherapy fRelatedTherapy);
+    void setRelatedTherapy(MedicalTherapy relatedTherapy);
 
     /**
      * An image containing a diagram that illustrates the structure and/or its component substructures and/or connections with other structures.
@@ -102,10 +95,10 @@ public interface AnatomicalStructure extends MedicalEntity {
     /**
      * An image containing a diagram that illustrates the structure and/or its component substructures and/or connections with other structures.
      *
-     * @param fDiagram ImageObject value to set.
+     * @param diagram ImageObject value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setDiagram(ImageObject fDiagram);
+    void setDiagram(ImageObject diagram);
 
     /**
      * A medical condition associated with this anatomy.
@@ -118,10 +111,10 @@ public interface AnatomicalStructure extends MedicalEntity {
     /**
      * A medical condition associated with this anatomy.
      *
-     * @param fRelatedCondition MedicalCondition value to set.
+     * @param relatedCondition MedicalCondition value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setRelatedCondition(MedicalCondition fRelatedCondition);
+    void setRelatedCondition(MedicalCondition relatedCondition);
 
     /**
      * Component (sub-)structure(s) that comprise this anatomical structure.
@@ -134,10 +127,10 @@ public interface AnatomicalStructure extends MedicalEntity {
     /**
      * Component (sub-)structure(s) that comprise this anatomical structure.
      *
-     * @param fSubStructure AnatomicalStructure value to set.
+     * @param subStructure AnatomicalStructure value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setSubStructure(AnatomicalStructure fSubStructure);
+    void setSubStructure(AnatomicalStructure subStructure);
 
     /**
      * If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.
@@ -150,15 +143,8 @@ public interface AnatomicalStructure extends MedicalEntity {
     /**
      * If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.
      *
-     * @param fAssociatedPathophysiology Text value to set.
+     * @param associatedPathophysiology Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setAssociatedPathophysiology(Text fAssociatedPathophysiology);
-    /**
-     * If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.
-     *
-     * @param fAssociatedPathophysiology java.lang.String value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void setAssociatedPathophysiology(java.lang.String fAssociatedPathophysiology);
+    void setAssociatedPathophysiology(Text associatedPathophysiology);
 }

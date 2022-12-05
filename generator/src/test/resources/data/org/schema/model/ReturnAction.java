@@ -27,25 +27,25 @@ public interface ReturnAction extends TransferAction {
     /**
      * A sub property of participant. The participant who is at the receiving end of the action.
      *
-     * @param fRecipient Person value to set.
+     * @param recipient Person value to set.
      */
-    void setRecipient(Person fRecipient);
+    void setRecipient(Person recipient);
     /**
      * A sub property of participant. The participant who is at the receiving end of the action.
      *
-     * @param fRecipient Audience value to set.
+     * @param recipient Audience value to set.
      */
-    void setRecipient(Audience fRecipient);
+    void setRecipient(Audience recipient);
     /**
      * A sub property of participant. The participant who is at the receiving end of the action.
      *
-     * @param fRecipient ContactPoint value to set.
+     * @param recipient ContactPoint value to set.
      */
-    void setRecipient(ContactPoint fRecipient);
+    void setRecipient(ContactPoint recipient);
     /**
      * A sub property of participant. The participant who is at the receiving end of the action.
      *
-     * @param fRecipient Organization value to set.
+     * @param recipient Organization value to set.
      */
-    void setRecipient(Organization fRecipient);
+    void setRecipient(Organization recipient);
 }

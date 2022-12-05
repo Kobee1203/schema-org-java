@@ -40,20 +40,11 @@ public interface Accommodation extends Place {
      * The floor level for an [[Accommodation]] in a multi-storey building. Since counting
      *   systems [vary internationally](https://en.wikipedia.org/wiki/Storey#Consecutive_number_floor_designations), the local system should be used where possible.
      *
-     * @param fFloorLevel Text value to set.
+     * @param floorLevel Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
-    void setFloorLevel(Text fFloorLevel);
-    /**
-     * The floor level for an [[Accommodation]] in a multi-storey building. Since counting
-     *   systems [vary internationally](https://en.wikipedia.org/wiki/Storey#Consecutive_number_floor_designations), the local system should be used where possible.
-     *
-     * @param fFloorLevel java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
-     */
-    void setFloorLevel(java.lang.String fFloorLevel);
+    void setFloorLevel(Text floorLevel);
 
     /**
      * The total integer number of bathrooms in a some [[Accommodation]], following real estate conventions as [documented in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsTotalInteger+Field): "The simple sum of the number of bathrooms. For example for a property with two Full Bathrooms and one Half Bathroom, the Bathrooms Total Integer will be 3.". See also [[numberOfRooms]].
@@ -67,19 +58,11 @@ public interface Accommodation extends Place {
     /**
      * The total integer number of bathrooms in a some [[Accommodation]], following real estate conventions as [documented in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsTotalInteger+Field): "The simple sum of the number of bathrooms. For example for a property with two Full Bathrooms and one Half Bathroom, the Bathrooms Total Integer will be 3.". See also [[numberOfRooms]].
      *
-     * @param fNumberOfBathroomsTotal Integer value to set.
+     * @param numberOfBathroomsTotal Integer value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
-    void setNumberOfBathroomsTotal(Integer fNumberOfBathroomsTotal);
-    /**
-     * The total integer number of bathrooms in a some [[Accommodation]], following real estate conventions as [documented in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsTotalInteger+Field): "The simple sum of the number of bathrooms. For example for a property with two Full Bathrooms and one Half Bathroom, the Bathrooms Total Integer will be 3.". See also [[numberOfRooms]].
-     *
-     * @param fNumberOfBathroomsTotal java.lang.Integer value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
-     */
-    void setNumberOfBathroomsTotal(java.lang.Integer fNumberOfBathroomsTotal);
+    void setNumberOfBathroomsTotal(Integer numberOfBathroomsTotal);
 
     /**
      * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
@@ -94,26 +77,18 @@ public interface Accommodation extends Place {
      * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
      * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
      *
-     * @param fNumberOfRooms QuantitativeValue value to set.
+     * @param numberOfRooms QuantitativeValue value to set.
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
-    void setNumberOfRooms(QuantitativeValue fNumberOfRooms);
+    void setNumberOfRooms(QuantitativeValue numberOfRooms);
     /**
      * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
      * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
      *
-     * @param fNumberOfRooms Number value to set.
+     * @param numberOfRooms Number value to set.
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
-    void setNumberOfRooms(Number fNumberOfRooms);
-    /**
-     * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
-     * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
-     *
-     * @param fNumberOfRooms java.lang.Number value to set.
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
-     */
-    void setNumberOfRooms(java.lang.Number fNumberOfRooms);
+    void setNumberOfRooms(Number numberOfRooms);
 
     /**
      * Length of the lease for some [[Accommodation]], either particular to some [[Offer]] or in some cases intrinsic to the property.
@@ -127,19 +102,19 @@ public interface Accommodation extends Place {
     /**
      * Length of the lease for some [[Accommodation]], either particular to some [[Offer]] or in some cases intrinsic to the property.
      *
-     * @param fLeaseLength QuantitativeValue value to set.
+     * @param leaseLength QuantitativeValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
-    void setLeaseLength(QuantitativeValue fLeaseLength);
+    void setLeaseLength(QuantitativeValue leaseLength);
     /**
      * Length of the lease for some [[Accommodation]], either particular to some [[Offer]] or in some cases intrinsic to the property.
      *
-     * @param fLeaseLength Duration value to set.
+     * @param leaseLength Duration value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
-    void setLeaseLength(Duration fLeaseLength);
+    void setLeaseLength(Duration leaseLength);
 
     /**
      * The year an [[Accommodation]] was constructed. This corresponds to the [YearBuilt field in RESO](https://ddwiki.reso.org/display/DDW17/YearBuilt+Field). 
@@ -153,19 +128,11 @@ public interface Accommodation extends Place {
     /**
      * The year an [[Accommodation]] was constructed. This corresponds to the [YearBuilt field in RESO](https://ddwiki.reso.org/display/DDW17/YearBuilt+Field). 
      *
-     * @param fYearBuilt Number value to set.
+     * @param yearBuilt Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
-    void setYearBuilt(Number fYearBuilt);
-    /**
-     * The year an [[Accommodation]] was constructed. This corresponds to the [YearBuilt field in RESO](https://ddwiki.reso.org/display/DDW17/YearBuilt+Field). 
-     *
-     * @param fYearBuilt java.lang.Number value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
-     */
-    void setYearBuilt(java.lang.Number fYearBuilt);
+    void setYearBuilt(Number yearBuilt);
 
     /**
      * Category of an [[Accommodation]], following real estate conventions e.g. RESO (see [PropertySubType](https://ddwiki.reso.org/display/DDW17/PropertySubType+Field), and [PropertyType](https://ddwiki.reso.org/display/DDW17/PropertyType+Field) fields  for suggested values).
@@ -179,19 +146,11 @@ public interface Accommodation extends Place {
     /**
      * Category of an [[Accommodation]], following real estate conventions e.g. RESO (see [PropertySubType](https://ddwiki.reso.org/display/DDW17/PropertySubType+Field), and [PropertyType](https://ddwiki.reso.org/display/DDW17/PropertyType+Field) fields  for suggested values).
      *
-     * @param fAccommodationCategory Text value to set.
+     * @param accommodationCategory Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
-    void setAccommodationCategory(Text fAccommodationCategory);
-    /**
-     * Category of an [[Accommodation]], following real estate conventions e.g. RESO (see [PropertySubType](https://ddwiki.reso.org/display/DDW17/PropertySubType+Field), and [PropertyType](https://ddwiki.reso.org/display/DDW17/PropertyType+Field) fields  for suggested values).
-     *
-     * @param fAccommodationCategory java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
-     */
-    void setAccommodationCategory(java.lang.String fAccommodationCategory);
+    void setAccommodationCategory(Text accommodationCategory);
 
     /**
      * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
@@ -204,10 +163,10 @@ public interface Accommodation extends Place {
     /**
      * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
      *
-     * @param fAmenityFeature LocationFeatureSpecification value to set.
+     * @param amenityFeature LocationFeatureSpecification value to set.
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
-    void setAmenityFeature(LocationFeatureSpecification fAmenityFeature);
+    void setAmenityFeature(LocationFeatureSpecification amenityFeature);
 
     /**
      * A page providing information on how to book a tour of some [[Place]], such as an [[Accommodation]] or [[ApartmentComplex]] in a real estate setting, as well as other kinds of tours as appropriate.
@@ -221,19 +180,11 @@ public interface Accommodation extends Place {
     /**
      * A page providing information on how to book a tour of some [[Place]], such as an [[Accommodation]] or [[ApartmentComplex]] in a real estate setting, as well as other kinds of tours as appropriate.
      *
-     * @param fTourBookingPage URL value to set.
+     * @param tourBookingPage URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
-    void setTourBookingPage(URL fTourBookingPage);
-    /**
-     * A page providing information on how to book a tour of some [[Place]], such as an [[Accommodation]] or [[ApartmentComplex]] in a real estate setting, as well as other kinds of tours as appropriate.
-     *
-     * @param fTourBookingPage java.net.URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
-     */
-    void setTourBookingPage(java.net.URL fTourBookingPage);
+    void setTourBookingPage(URL tourBookingPage);
 
     /**
      * The total integer number of bedrooms in a some [[Accommodation]], [[ApartmentComplex]] or [[FloorPlan]].
@@ -247,27 +198,19 @@ public interface Accommodation extends Place {
     /**
      * The total integer number of bedrooms in a some [[Accommodation]], [[ApartmentComplex]] or [[FloorPlan]].
      *
-     * @param fNumberOfBedrooms Number value to set.
+     * @param numberOfBedrooms Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
-    void setNumberOfBedrooms(Number fNumberOfBedrooms);
+    void setNumberOfBedrooms(Number numberOfBedrooms);
     /**
      * The total integer number of bedrooms in a some [[Accommodation]], [[ApartmentComplex]] or [[FloorPlan]].
      *
-     * @param fNumberOfBedrooms java.lang.Number value to set.
+     * @param numberOfBedrooms QuantitativeValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
-    void setNumberOfBedrooms(java.lang.Number fNumberOfBedrooms);
-    /**
-     * The total integer number of bedrooms in a some [[Accommodation]], [[ApartmentComplex]] or [[FloorPlan]].
-     *
-     * @param fNumberOfBedrooms QuantitativeValue value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
-     */
-    void setNumberOfBedrooms(QuantitativeValue fNumberOfBedrooms);
+    void setNumberOfBedrooms(QuantitativeValue numberOfBedrooms);
 
     /**
      * Number of partial bathrooms - The total number of half and ¼ bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsPartial field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsPartial+Field). 
@@ -281,19 +224,11 @@ public interface Accommodation extends Place {
     /**
      * Number of partial bathrooms - The total number of half and ¼ bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsPartial field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsPartial+Field). 
      *
-     * @param fNumberOfPartialBathrooms Number value to set.
+     * @param numberOfPartialBathrooms Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
-    void setNumberOfPartialBathrooms(Number fNumberOfPartialBathrooms);
-    /**
-     * Number of partial bathrooms - The total number of half and ¼ bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsPartial field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsPartial+Field). 
-     *
-     * @param fNumberOfPartialBathrooms java.lang.Number value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
-     */
-    void setNumberOfPartialBathrooms(java.lang.Number fNumberOfPartialBathrooms);
+    void setNumberOfPartialBathrooms(Number numberOfPartialBathrooms);
 
     /**
      * The size of the accommodation, e.g. in square meter or squarefoot.
@@ -308,10 +243,10 @@ public interface Accommodation extends Place {
      * The size of the accommodation, e.g. in square meter or squarefoot.
      * Typical unit code(s): MTK for square meter, FTK for square foot, or YDK for square yard 
      *
-     * @param fFloorSize QuantitativeValue value to set.
+     * @param floorSize QuantitativeValue value to set.
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
-    void setFloorSize(QuantitativeValue fFloorSize);
+    void setFloorSize(QuantitativeValue floorSize);
 
     /**
      * A floorplan of some [[Accommodation]].
@@ -325,11 +260,11 @@ public interface Accommodation extends Place {
     /**
      * A floorplan of some [[Accommodation]].
      *
-     * @param fAccommodationFloorPlan FloorPlan value to set.
+     * @param accommodationFloorPlan FloorPlan value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
-    void setAccommodationFloorPlan(FloorPlan fAccommodationFloorPlan);
+    void setAccommodationFloorPlan(FloorPlan accommodationFloorPlan);
 
     /**
      * Number of full bathrooms - The total number of full and ¾ bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsFull field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsFull+Field).
@@ -343,19 +278,11 @@ public interface Accommodation extends Place {
     /**
      * Number of full bathrooms - The total number of full and ¾ bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsFull field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsFull+Field).
      *
-     * @param fNumberOfFullBathrooms Number value to set.
+     * @param numberOfFullBathrooms Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
-    void setNumberOfFullBathrooms(Number fNumberOfFullBathrooms);
-    /**
-     * Number of full bathrooms - The total number of full and ¾ bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsFull field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsFull+Field).
-     *
-     * @param fNumberOfFullBathrooms java.lang.Number value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
-     */
-    void setNumberOfFullBathrooms(java.lang.Number fNumberOfFullBathrooms);
+    void setNumberOfFullBathrooms(Number numberOfFullBathrooms);
 
     /**
      * Indications regarding the permitted usage of the accommodation.
@@ -368,17 +295,10 @@ public interface Accommodation extends Place {
     /**
      * Indications regarding the permitted usage of the accommodation.
      *
-     * @param fPermittedUsage Text value to set.
+     * @param permittedUsage Text value to set.
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
-    void setPermittedUsage(Text fPermittedUsage);
-    /**
-     * Indications regarding the permitted usage of the accommodation.
-     *
-     * @param fPermittedUsage java.lang.String value to set.
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
-     */
-    void setPermittedUsage(java.lang.String fPermittedUsage);
+    void setPermittedUsage(Text permittedUsage);
 
     /**
      * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
@@ -391,29 +311,15 @@ public interface Accommodation extends Place {
     /**
      * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
      *
-     * @param fPetsAllowed Text value to set.
+     * @param petsAllowed Text value to set.
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
-    void setPetsAllowed(Text fPetsAllowed);
+    void setPetsAllowed(Text petsAllowed);
     /**
      * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
      *
-     * @param fPetsAllowed java.lang.String value to set.
+     * @param petsAllowed Boolean value to set.
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
-    void setPetsAllowed(java.lang.String fPetsAllowed);
-    /**
-     * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
-     *
-     * @param fPetsAllowed Boolean value to set.
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
-     */
-    void setPetsAllowed(Boolean fPetsAllowed);
-    /**
-     * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
-     *
-     * @param fPetsAllowed java.lang.Boolean value to set.
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
-     */
-    void setPetsAllowed(java.lang.Boolean fPetsAllowed);
+    void setPetsAllowed(Boolean petsAllowed);
 }

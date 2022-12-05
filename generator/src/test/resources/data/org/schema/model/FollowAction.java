@@ -25,13 +25,13 @@ public interface FollowAction extends InteractAction {
     /**
      * A sub property of object. The person or organization being followed.
      *
-     * @param fFollowee Organization value to set.
+     * @param followee Organization value to set.
      */
-    void setFollowee(Organization fFollowee);
+    void setFollowee(Organization followee);
     /**
      * A sub property of object. The person or organization being followed.
      *
-     * @param fFollowee Person value to set.
+     * @param followee Person value to set.
      */
-    void setFollowee(Person fFollowee);
+    void setFollowee(Person followee);
 }

@@ -28,7 +28,7 @@ import org.schema.model.Rating;
 @JsonLdTypeName("Rating")
 public class RatingImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Rating {
 
-    private Text fReviewAspect;
+    private Text reviewAspect;
 
     /**
      * This Review or Rating is relevant to this part or facet of the itemReviewed.
@@ -38,31 +38,21 @@ public class RatingImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public Text getReviewAspect() {
-        return fReviewAspect;
+        return reviewAspect;
     }
 
     /**
      * This Review or Rating is relevant to this part or facet of the itemReviewed.
      *
-     * @param fReviewAspect Text value to set.
+     * @param reviewAspect Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1689">https://github.com/schemaorg/schemaorg/issues/1689</a>
      */
     @Override
-    public void setReviewAspect(Text fReviewAspect) {
-        this.fReviewAspect = fReviewAspect;
-    }
-    /**
-     * This Review or Rating is relevant to this part or facet of the itemReviewed.
-     *
-     * @param fReviewAspect java.lang.String value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1689">https://github.com/schemaorg/schemaorg/issues/1689</a>
-     */
-    @Override
-    public void setReviewAspect(java.lang.String fReviewAspect) {
-        this.fReviewAspect = Text.of(fReviewAspect);
+    public void setReviewAspect(Text reviewAspect) {
+        this.reviewAspect = reviewAspect;
     }
 
-    private Object fWorstRating;
+    private Object worstRating;
 
     /**
      * The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.
@@ -71,47 +61,29 @@ public class RatingImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public <T> T getWorstRating() {
-        return (T) fWorstRating;
+        return (T) worstRating;
     }
 
     /**
      * The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.
      *
-     * @param fWorstRating Text value to set.
+     * @param worstRating Text value to set.
      */
     @Override
-    public void setWorstRating(Text fWorstRating) {
-        this.fWorstRating = fWorstRating;
+    public void setWorstRating(Text worstRating) {
+        this.worstRating = worstRating;
     }
     /**
      * The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.
      *
-     * @param fWorstRating java.lang.String value to set.
+     * @param worstRating Number value to set.
      */
     @Override
-    public void setWorstRating(java.lang.String fWorstRating) {
-        this.fWorstRating = Text.of(fWorstRating);
-    }
-    /**
-     * The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.
-     *
-     * @param fWorstRating Number value to set.
-     */
-    @Override
-    public void setWorstRating(Number fWorstRating) {
-        this.fWorstRating = fWorstRating;
-    }
-    /**
-     * The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.
-     *
-     * @param fWorstRating java.lang.Number value to set.
-     */
-    @Override
-    public void setWorstRating(java.lang.Number fWorstRating) {
-        this.fWorstRating = Number.of(fWorstRating);
+    public void setWorstRating(Number worstRating) {
+        this.worstRating = worstRating;
     }
 
-    private Object fAuthor;
+    private Object author;
 
     /**
      * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
@@ -120,29 +92,29 @@ public class RatingImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public <T> T getAuthor() {
-        return (T) fAuthor;
+        return (T) author;
     }
 
     /**
      * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
      *
-     * @param fAuthor Person value to set.
+     * @param author Person value to set.
      */
     @Override
-    public void setAuthor(Person fAuthor) {
-        this.fAuthor = fAuthor;
+    public void setAuthor(Person author) {
+        this.author = author;
     }
     /**
      * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
      *
-     * @param fAuthor Organization value to set.
+     * @param author Organization value to set.
      */
     @Override
-    public void setAuthor(Organization fAuthor) {
-        this.fAuthor = fAuthor;
+    public void setAuthor(Organization author) {
+        this.author = author;
     }
 
-    private Object fBestRating;
+    private Object bestRating;
 
     /**
      * The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
@@ -151,47 +123,29 @@ public class RatingImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public <T> T getBestRating() {
-        return (T) fBestRating;
+        return (T) bestRating;
     }
 
     /**
      * The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
      *
-     * @param fBestRating Text value to set.
+     * @param bestRating Text value to set.
      */
     @Override
-    public void setBestRating(Text fBestRating) {
-        this.fBestRating = fBestRating;
+    public void setBestRating(Text bestRating) {
+        this.bestRating = bestRating;
     }
     /**
      * The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
      *
-     * @param fBestRating java.lang.String value to set.
+     * @param bestRating Number value to set.
      */
     @Override
-    public void setBestRating(java.lang.String fBestRating) {
-        this.fBestRating = Text.of(fBestRating);
-    }
-    /**
-     * The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
-     *
-     * @param fBestRating Number value to set.
-     */
-    @Override
-    public void setBestRating(Number fBestRating) {
-        this.fBestRating = fBestRating;
-    }
-    /**
-     * The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
-     *
-     * @param fBestRating java.lang.Number value to set.
-     */
-    @Override
-    public void setBestRating(java.lang.Number fBestRating) {
-        this.fBestRating = Number.of(fBestRating);
+    public void setBestRating(Number bestRating) {
+        this.bestRating = bestRating;
     }
 
-    private Object fRatingValue;
+    private Object ratingValue;
 
     /**
      * The rating for the content.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
@@ -200,47 +154,29 @@ public class RatingImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public <T> T getRatingValue() {
-        return (T) fRatingValue;
+        return (T) ratingValue;
     }
 
     /**
      * The rating for the content.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      *
-     * @param fRatingValue Number value to set.
+     * @param ratingValue Number value to set.
      */
     @Override
-    public void setRatingValue(Number fRatingValue) {
-        this.fRatingValue = fRatingValue;
+    public void setRatingValue(Number ratingValue) {
+        this.ratingValue = ratingValue;
     }
     /**
      * The rating for the content.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      *
-     * @param fRatingValue java.lang.Number value to set.
+     * @param ratingValue Text value to set.
      */
     @Override
-    public void setRatingValue(java.lang.Number fRatingValue) {
-        this.fRatingValue = Number.of(fRatingValue);
-    }
-    /**
-     * The rating for the content.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-     *
-     * @param fRatingValue Text value to set.
-     */
-    @Override
-    public void setRatingValue(Text fRatingValue) {
-        this.fRatingValue = fRatingValue;
-    }
-    /**
-     * The rating for the content.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-     *
-     * @param fRatingValue java.lang.String value to set.
-     */
-    @Override
-    public void setRatingValue(java.lang.String fRatingValue) {
-        this.fRatingValue = Text.of(fRatingValue);
+    public void setRatingValue(Text ratingValue) {
+        this.ratingValue = ratingValue;
     }
 
-    private Text fRatingExplanation;
+    private Text ratingExplanation;
 
     /**
      * A short explanation (e.g. one to two sentences) providing background context and other information that led to the conclusion expressed in the rating. This is particularly applicable to ratings associated with "fact check" markup using [[ClaimReview]].
@@ -251,33 +187,22 @@ public class RatingImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public Text getRatingExplanation() {
-        return fRatingExplanation;
+        return ratingExplanation;
     }
 
     /**
      * A short explanation (e.g. one to two sentences) providing background context and other information that led to the conclusion expressed in the rating. This is particularly applicable to ratings associated with "fact check" markup using [[ClaimReview]].
      *
-     * @param fRatingExplanation Text value to set.
+     * @param ratingExplanation Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2300">https://github.com/schemaorg/schemaorg/issues/2300</a>
      */
     @Override
-    public void setRatingExplanation(Text fRatingExplanation) {
-        this.fRatingExplanation = fRatingExplanation;
-    }
-    /**
-     * A short explanation (e.g. one to two sentences) providing background context and other information that led to the conclusion expressed in the rating. This is particularly applicable to ratings associated with "fact check" markup using [[ClaimReview]].
-     *
-     * @param fRatingExplanation java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2300">https://github.com/schemaorg/schemaorg/issues/2300</a>
-     */
-    @Override
-    public void setRatingExplanation(java.lang.String fRatingExplanation) {
-        this.fRatingExplanation = Text.of(fRatingExplanation);
+    public void setRatingExplanation(Text ratingExplanation) {
+        this.ratingExplanation = ratingExplanation;
     }
 
-    private Object fMainEntityOfPage;
+    private Object mainEntityOfPage;
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -286,38 +211,29 @@ public class RatingImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
+        return (T) mainEntityOfPage;
     }
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param fMainEntityOfPage CreativeWork value to set.
+     * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(CreativeWork fMainEntityOfPage) {
-        this.fMainEntityOfPage = fMainEntityOfPage;
+    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
     }
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param fMainEntityOfPage URL value to set.
+     * @param mainEntityOfPage URL value to set.
      */
     @Override
-    public void setMainEntityOfPage(URL fMainEntityOfPage) {
-        this.fMainEntityOfPage = fMainEntityOfPage;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param fMainEntityOfPage java.net.URL value to set.
-     */
-    @Override
-    public void setMainEntityOfPage(java.net.URL fMainEntityOfPage) {
-        this.fMainEntityOfPage = URL.of(fMainEntityOfPage);
+    public void setMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
     }
 
-    private Text fAlternateName;
+    private Text alternateName;
 
     /**
      * An alias for the item.
@@ -326,29 +242,20 @@ public class RatingImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public Text getAlternateName() {
-        return fAlternateName;
+        return alternateName;
     }
 
     /**
      * An alias for the item.
      *
-     * @param fAlternateName Text value to set.
+     * @param alternateName Text value to set.
      */
     @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
-    }
-    /**
-     * An alias for the item.
-     *
-     * @param fAlternateName java.lang.String value to set.
-     */
-    @Override
-    public void setAlternateName(java.lang.String fAlternateName) {
-        this.fAlternateName = Text.of(fAlternateName);
+    public void setAlternateName(Text alternateName) {
+        this.alternateName = alternateName;
     }
 
-    private Text fName;
+    private Text name;
 
     /**
      * The name of the item.
@@ -357,29 +264,20 @@ public class RatingImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public Text getName() {
-        return fName;
+        return name;
     }
 
     /**
      * The name of the item.
      *
-     * @param fName Text value to set.
+     * @param name Text value to set.
      */
     @Override
-    public void setName(Text fName) {
-        this.fName = fName;
-    }
-    /**
-     * The name of the item.
-     *
-     * @param fName java.lang.String value to set.
-     */
-    @Override
-    public void setName(java.lang.String fName) {
-        this.fName = Text.of(fName);
+    public void setName(Text name) {
+        this.name = name;
     }
 
-    private Action fPotentialAction;
+    private Action potentialAction;
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -388,20 +286,20 @@ public class RatingImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public Action getPotentialAction() {
-        return fPotentialAction;
+        return potentialAction;
     }
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      *
-     * @param fPotentialAction Action value to set.
+     * @param potentialAction Action value to set.
      */
     @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
+    public void setPotentialAction(Action potentialAction) {
+        this.potentialAction = potentialAction;
     }
 
-    private Object fImage;
+    private Object image;
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -410,38 +308,29 @@ public class RatingImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public <T> T getImage() {
-        return (T) fImage;
+        return (T) image;
     }
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param fImage URL value to set.
+     * @param image URL value to set.
      */
     @Override
-    public void setImage(URL fImage) {
-        this.fImage = fImage;
+    public void setImage(URL image) {
+        this.image = image;
     }
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param fImage java.net.URL value to set.
+     * @param image ImageObject value to set.
      */
     @Override
-    public void setImage(java.net.URL fImage) {
-        this.fImage = URL.of(fImage);
-    }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param fImage ImageObject value to set.
-     */
-    @Override
-    public void setImage(ImageObject fImage) {
-        this.fImage = fImage;
+    public void setImage(ImageObject image) {
+        this.image = image;
     }
 
-    private URL fUrl;
+    private URL url;
 
     /**
      * URL of the item.
@@ -450,29 +339,20 @@ public class RatingImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public URL getUrl() {
-        return fUrl;
+        return url;
     }
 
     /**
      * URL of the item.
      *
-     * @param fUrl URL value to set.
+     * @param url URL value to set.
      */
     @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
-    }
-    /**
-     * URL of the item.
-     *
-     * @param fUrl java.net.URL value to set.
-     */
-    @Override
-    public void setUrl(java.net.URL fUrl) {
-        this.fUrl = URL.of(fUrl);
+    public void setUrl(URL url) {
+        this.url = url;
     }
 
-    private Text fDescription;
+    private Text description;
 
     /**
      * A description of the item.
@@ -481,29 +361,20 @@ public class RatingImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public Text getDescription() {
-        return fDescription;
+        return description;
     }
 
     /**
      * A description of the item.
      *
-     * @param fDescription Text value to set.
+     * @param description Text value to set.
      */
     @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
-    }
-    /**
-     * A description of the item.
-     *
-     * @param fDescription java.lang.String value to set.
-     */
-    @Override
-    public void setDescription(java.lang.String fDescription) {
-        this.fDescription = Text.of(fDescription);
+    public void setDescription(Text description) {
+        this.description = description;
     }
 
-    private Object fSubjectOf;
+    private Object subjectOf;
 
     /**
      * A CreativeWork or Event about this Thing.
@@ -513,31 +384,31 @@ public class RatingImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public <T> T getSubjectOf() {
-        return (T) fSubjectOf;
+        return (T) subjectOf;
     }
 
     /**
      * A CreativeWork or Event about this Thing.
      *
-     * @param fSubjectOf Event value to set.
+     * @param subjectOf Event value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Event fSubjectOf) {
-        this.fSubjectOf = fSubjectOf;
+    public void setSubjectOf(Event subjectOf) {
+        this.subjectOf = subjectOf;
     }
     /**
      * A CreativeWork or Event about this Thing.
      *
-     * @param fSubjectOf CreativeWork value to set.
+     * @param subjectOf CreativeWork value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(CreativeWork fSubjectOf) {
-        this.fSubjectOf = fSubjectOf;
+    public void setSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = subjectOf;
     }
 
-    private URL fAdditionalType;
+    private URL additionalType;
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
@@ -546,29 +417,20 @@ public class RatingImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public URL getAdditionalType() {
-        return fAdditionalType;
+        return additionalType;
     }
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
-     * @param fAdditionalType URL value to set.
+     * @param additionalType URL value to set.
      */
     @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
-    }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @param fAdditionalType java.net.URL value to set.
-     */
-    @Override
-    public void setAdditionalType(java.net.URL fAdditionalType) {
-        this.fAdditionalType = URL.of(fAdditionalType);
+    public void setAdditionalType(URL additionalType) {
+        this.additionalType = additionalType;
     }
 
-    private Text fDisambiguatingDescription;
+    private Text disambiguatingDescription;
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
@@ -577,29 +439,20 @@ public class RatingImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public Text getDisambiguatingDescription() {
-        return fDisambiguatingDescription;
+        return disambiguatingDescription;
     }
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
-     * @param fDisambiguatingDescription Text value to set.
+     * @param disambiguatingDescription Text value to set.
      */
     @Override
-    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = fDisambiguatingDescription;
-    }
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @param fDisambiguatingDescription java.lang.String value to set.
-     */
-    @Override
-    public void setDisambiguatingDescription(java.lang.String fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = Text.of(fDisambiguatingDescription);
+    public void setDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = disambiguatingDescription;
     }
 
-    private URL fSameAs;
+    private URL sameAs;
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
@@ -608,29 +461,20 @@ public class RatingImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public URL getSameAs() {
-        return fSameAs;
+        return sameAs;
     }
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
-     * @param fSameAs URL value to set.
+     * @param sameAs URL value to set.
      */
     @Override
-    public void setSameAs(URL fSameAs) {
-        this.fSameAs = fSameAs;
-    }
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @param fSameAs java.net.URL value to set.
-     */
-    @Override
-    public void setSameAs(java.net.URL fSameAs) {
-        this.fSameAs = URL.of(fSameAs);
+    public void setSameAs(URL sameAs) {
+        this.sameAs = sameAs;
     }
 
-    private Object fIdentifier;
+    private Object identifier;
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -640,57 +484,37 @@ public class RatingImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public <T> T getIdentifier() {
-        return (T) fIdentifier;
+        return (T) identifier;
     }
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier URL value to set.
+     * @param identifier URL value to set.
      */
     @Override
-    public void setIdentifier(URL fIdentifier) {
-        this.fIdentifier = fIdentifier;
+    public void setIdentifier(URL identifier) {
+        this.identifier = identifier;
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier java.net.URL value to set.
+     * @param identifier Text value to set.
      */
     @Override
-    public void setIdentifier(java.net.URL fIdentifier) {
-        this.fIdentifier = URL.of(fIdentifier);
+    public void setIdentifier(Text identifier) {
+        this.identifier = identifier;
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier Text value to set.
+     * @param identifier PropertyValue value to set.
      */
     @Override
-    public void setIdentifier(Text fIdentifier) {
-        this.fIdentifier = fIdentifier;
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param fIdentifier java.lang.String value to set.
-     */
-    @Override
-    public void setIdentifier(java.lang.String fIdentifier) {
-        this.fIdentifier = Text.of(fIdentifier);
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param fIdentifier PropertyValue value to set.
-     */
-    @Override
-    public void setIdentifier(PropertyValue fIdentifier) {
-        this.fIdentifier = fIdentifier;
+    public void setIdentifier(PropertyValue identifier) {
+        this.identifier = identifier;
     }
 }

@@ -27,31 +27,17 @@ public interface PublicationVolume extends CreativeWork {
     /**
      * The page on which the work starts; for example "135" or "xiii".
      *
-     * @param fPageStart Text value to set.
+     * @param pageStart Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
-    void setPageStart(Text fPageStart);
+    void setPageStart(Text pageStart);
     /**
      * The page on which the work starts; for example "135" or "xiii".
      *
-     * @param fPageStart java.lang.String value to set.
+     * @param pageStart Integer value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
-    void setPageStart(java.lang.String fPageStart);
-    /**
-     * The page on which the work starts; for example "135" or "xiii".
-     *
-     * @param fPageStart Integer value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
-     */
-    void setPageStart(Integer fPageStart);
-    /**
-     * The page on which the work starts; for example "135" or "xiii".
-     *
-     * @param fPageStart java.lang.Integer value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
-     */
-    void setPageStart(java.lang.Integer fPageStart);
+    void setPageStart(Integer pageStart);
 
     /**
      * The page on which the work ends; for example "138" or "xvi".
@@ -64,31 +50,17 @@ public interface PublicationVolume extends CreativeWork {
     /**
      * The page on which the work ends; for example "138" or "xvi".
      *
-     * @param fPageEnd Text value to set.
+     * @param pageEnd Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
-    void setPageEnd(Text fPageEnd);
+    void setPageEnd(Text pageEnd);
     /**
      * The page on which the work ends; for example "138" or "xvi".
      *
-     * @param fPageEnd java.lang.String value to set.
+     * @param pageEnd Integer value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
-    void setPageEnd(java.lang.String fPageEnd);
-    /**
-     * The page on which the work ends; for example "138" or "xvi".
-     *
-     * @param fPageEnd Integer value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
-     */
-    void setPageEnd(Integer fPageEnd);
-    /**
-     * The page on which the work ends; for example "138" or "xvi".
-     *
-     * @param fPageEnd java.lang.Integer value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
-     */
-    void setPageEnd(java.lang.Integer fPageEnd);
+    void setPageEnd(Integer pageEnd);
 
     /**
      * Identifies the volume of publication or multi-part work; for example, "iii" or "2".
@@ -101,31 +73,17 @@ public interface PublicationVolume extends CreativeWork {
     /**
      * Identifies the volume of publication or multi-part work; for example, "iii" or "2".
      *
-     * @param fVolumeNumber Integer value to set.
+     * @param volumeNumber Integer value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
-    void setVolumeNumber(Integer fVolumeNumber);
+    void setVolumeNumber(Integer volumeNumber);
     /**
      * Identifies the volume of publication or multi-part work; for example, "iii" or "2".
      *
-     * @param fVolumeNumber java.lang.Integer value to set.
+     * @param volumeNumber Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
-    void setVolumeNumber(java.lang.Integer fVolumeNumber);
-    /**
-     * Identifies the volume of publication or multi-part work; for example, "iii" or "2".
-     *
-     * @param fVolumeNumber Text value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
-     */
-    void setVolumeNumber(Text fVolumeNumber);
-    /**
-     * Identifies the volume of publication or multi-part work; for example, "iii" or "2".
-     *
-     * @param fVolumeNumber java.lang.String value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
-     */
-    void setVolumeNumber(java.lang.String fVolumeNumber);
+    void setVolumeNumber(Text volumeNumber);
 
     /**
      * Any description of pages that is not separated into pageStart and pageEnd; for example, "1-6, 9, 55" or "10-12, 46-49".
@@ -138,15 +96,8 @@ public interface PublicationVolume extends CreativeWork {
     /**
      * Any description of pages that is not separated into pageStart and pageEnd; for example, "1-6, 9, 55" or "10-12, 46-49".
      *
-     * @param fPagination Text value to set.
+     * @param pagination Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
-    void setPagination(Text fPagination);
-    /**
-     * Any description of pages that is not separated into pageStart and pageEnd; for example, "1-6, 9, 55" or "10-12, 46-49".
-     *
-     * @param fPagination java.lang.String value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
-     */
-    void setPagination(java.lang.String fPagination);
+    void setPagination(Text pagination);
 }

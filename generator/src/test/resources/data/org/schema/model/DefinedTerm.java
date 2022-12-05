@@ -30,19 +30,11 @@ public interface DefinedTerm extends Intangible {
     /**
      * A code that identifies this [[DefinedTerm]] within a [[DefinedTermSet]]
      *
-     * @param fTermCode Text value to set.
+     * @param termCode Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
      */
-    void setTermCode(Text fTermCode);
-    /**
-     * A code that identifies this [[DefinedTerm]] within a [[DefinedTermSet]]
-     *
-     * @param fTermCode java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
-     */
-    void setTermCode(java.lang.String fTermCode);
+    void setTermCode(Text termCode);
 
     /**
      * A [[DefinedTermSet]] that contains this term.
@@ -56,25 +48,17 @@ public interface DefinedTerm extends Intangible {
     /**
      * A [[DefinedTermSet]] that contains this term.
      *
-     * @param fInDefinedTermSet URL value to set.
+     * @param inDefinedTermSet URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
      */
-    void setInDefinedTermSet(URL fInDefinedTermSet);
+    void setInDefinedTermSet(URL inDefinedTermSet);
     /**
      * A [[DefinedTermSet]] that contains this term.
      *
-     * @param fInDefinedTermSet java.net.URL value to set.
+     * @param inDefinedTermSet DefinedTermSet value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
      */
-    void setInDefinedTermSet(java.net.URL fInDefinedTermSet);
-    /**
-     * A [[DefinedTermSet]] that contains this term.
-     *
-     * @param fInDefinedTermSet DefinedTermSet value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
-     */
-    void setInDefinedTermSet(DefinedTermSet fInDefinedTermSet);
+    void setInDefinedTermSet(DefinedTermSet inDefinedTermSet);
 }

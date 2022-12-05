@@ -28,10 +28,10 @@ public interface MedicalDevice extends MedicalEntity {
     /**
      * A possible complication and/or side effect of this therapy. If it is known that an adverse outcome is serious (resulting in death, disability, or permanent damage; requiring hospitalization; or is otherwise life-threatening or requires immediate medical attention), tag it as a seriouseAdverseOutcome instead.
      *
-     * @param fAdverseOutcome MedicalEntity value to set.
+     * @param adverseOutcome MedicalEntity value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setAdverseOutcome(MedicalEntity fAdverseOutcome);
+    void setAdverseOutcome(MedicalEntity adverseOutcome);
 
     /**
      * A description of the workup, testing, and other preparations required before implanting this device.
@@ -44,17 +44,10 @@ public interface MedicalDevice extends MedicalEntity {
     /**
      * A description of the workup, testing, and other preparations required before implanting this device.
      *
-     * @param fPreOp Text value to set.
+     * @param preOp Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setPreOp(Text fPreOp);
-    /**
-     * A description of the workup, testing, and other preparations required before implanting this device.
-     *
-     * @param fPreOp java.lang.String value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void setPreOp(java.lang.String fPreOp);
+    void setPreOp(Text preOp);
 
     /**
      * A possible serious complication and/or serious side effect of this therapy. Serious adverse outcomes include those that are life-threatening; result in death, disability, or permanent damage; require hospitalization or prolong existing hospitalization; cause congenital anomalies or birth defects; or jeopardize the patient and may require medical or surgical intervention to prevent one of the outcomes in this definition.
@@ -67,10 +60,10 @@ public interface MedicalDevice extends MedicalEntity {
     /**
      * A possible serious complication and/or serious side effect of this therapy. Serious adverse outcomes include those that are life-threatening; result in death, disability, or permanent damage; require hospitalization or prolong existing hospitalization; cause congenital anomalies or birth defects; or jeopardize the patient and may require medical or surgical intervention to prevent one of the outcomes in this definition.
      *
-     * @param fSeriousAdverseOutcome MedicalEntity value to set.
+     * @param seriousAdverseOutcome MedicalEntity value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setSeriousAdverseOutcome(MedicalEntity fSeriousAdverseOutcome);
+    void setSeriousAdverseOutcome(MedicalEntity seriousAdverseOutcome);
 
     /**
      * A description of the postoperative procedures, care, and/or followups for this device.
@@ -83,17 +76,10 @@ public interface MedicalDevice extends MedicalEntity {
     /**
      * A description of the postoperative procedures, care, and/or followups for this device.
      *
-     * @param fPostOp Text value to set.
+     * @param postOp Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setPostOp(Text fPostOp);
-    /**
-     * A description of the postoperative procedures, care, and/or followups for this device.
-     *
-     * @param fPostOp java.lang.String value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void setPostOp(java.lang.String fPostOp);
+    void setPostOp(Text postOp);
 
     /**
      * A description of the procedure involved in setting up, using, and/or installing the device.
@@ -106,17 +92,10 @@ public interface MedicalDevice extends MedicalEntity {
     /**
      * A description of the procedure involved in setting up, using, and/or installing the device.
      *
-     * @param fProcedure Text value to set.
+     * @param procedure Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setProcedure(Text fProcedure);
-    /**
-     * A description of the procedure involved in setting up, using, and/or installing the device.
-     *
-     * @param fProcedure java.lang.String value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void setProcedure(java.lang.String fProcedure);
+    void setProcedure(Text procedure);
 
     /**
      * A contraindication for this therapy.
@@ -129,22 +108,15 @@ public interface MedicalDevice extends MedicalEntity {
     /**
      * A contraindication for this therapy.
      *
-     * @param fContraindication Text value to set.
+     * @param contraindication Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setContraindication(Text fContraindication);
+    void setContraindication(Text contraindication);
     /**
      * A contraindication for this therapy.
      *
-     * @param fContraindication java.lang.String value to set.
+     * @param contraindication MedicalContraindication value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setContraindication(java.lang.String fContraindication);
-    /**
-     * A contraindication for this therapy.
-     *
-     * @param fContraindication MedicalContraindication value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void setContraindication(MedicalContraindication fContraindication);
+    void setContraindication(MedicalContraindication contraindication);
 }

@@ -31,15 +31,9 @@ public interface ContactPoint extends StructuredValue {
     /**
      * The telephone number.
      *
-     * @param fTelephone Text value to set.
+     * @param telephone Text value to set.
      */
-    void setTelephone(Text fTelephone);
-    /**
-     * The telephone number.
-     *
-     * @param fTelephone java.lang.String value to set.
-     */
-    void setTelephone(java.lang.String fTelephone);
+    void setTelephone(Text telephone);
 
     /**
      * The hours during which this service or contact is available.
@@ -51,9 +45,9 @@ public interface ContactPoint extends StructuredValue {
     /**
      * The hours during which this service or contact is available.
      *
-     * @param fHoursAvailable OpeningHoursSpecification value to set.
+     * @param hoursAvailable OpeningHoursSpecification value to set.
      */
-    void setHoursAvailable(OpeningHoursSpecification fHoursAvailable);
+    void setHoursAvailable(OpeningHoursSpecification hoursAvailable);
 
     /**
      * Email address.
@@ -65,15 +59,9 @@ public interface ContactPoint extends StructuredValue {
     /**
      * Email address.
      *
-     * @param fEmail Text value to set.
+     * @param email Text value to set.
      */
-    void setEmail(Text fEmail);
-    /**
-     * Email address.
-     *
-     * @param fEmail java.lang.String value to set.
-     */
-    void setEmail(java.lang.String fEmail);
+    void setEmail(Text email);
 
     /**
      * An option available on this contact point (e.g. a toll-free number or support for hearing-impaired callers).
@@ -85,9 +73,9 @@ public interface ContactPoint extends StructuredValue {
     /**
      * An option available on this contact point (e.g. a toll-free number or support for hearing-impaired callers).
      *
-     * @param fContactOption ContactPointOption value to set.
+     * @param contactOption ContactPointOption value to set.
      */
-    void setContactOption(ContactPointOption fContactOption);
+    void setContactOption(ContactPointOption contactOption);
 
     /**
      * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
@@ -99,21 +87,15 @@ public interface ContactPoint extends StructuredValue {
     /**
      * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
      *
-     * @param fAvailableLanguage Text value to set.
+     * @param availableLanguage Text value to set.
      */
-    void setAvailableLanguage(Text fAvailableLanguage);
+    void setAvailableLanguage(Text availableLanguage);
     /**
      * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
      *
-     * @param fAvailableLanguage java.lang.String value to set.
+     * @param availableLanguage Language value to set.
      */
-    void setAvailableLanguage(java.lang.String fAvailableLanguage);
-    /**
-     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
-     *
-     * @param fAvailableLanguage Language value to set.
-     */
-    void setAvailableLanguage(Language fAvailableLanguage);
+    void setAvailableLanguage(Language availableLanguage);
 
     /**
      * The geographic area where the service is provided.
@@ -125,21 +107,21 @@ public interface ContactPoint extends StructuredValue {
     /**
      * The geographic area where the service is provided.
      *
-     * @param fServiceArea GeoShape value to set.
+     * @param serviceArea GeoShape value to set.
      */
-    void setServiceArea(GeoShape fServiceArea);
+    void setServiceArea(GeoShape serviceArea);
     /**
      * The geographic area where the service is provided.
      *
-     * @param fServiceArea AdministrativeArea value to set.
+     * @param serviceArea AdministrativeArea value to set.
      */
-    void setServiceArea(AdministrativeArea fServiceArea);
+    void setServiceArea(AdministrativeArea serviceArea);
     /**
      * The geographic area where the service is provided.
      *
-     * @param fServiceArea Place value to set.
+     * @param serviceArea Place value to set.
      */
-    void setServiceArea(Place fServiceArea);
+    void setServiceArea(Place serviceArea);
 
     /**
      * The geographic area where a service or offered item is provided.
@@ -151,33 +133,27 @@ public interface ContactPoint extends StructuredValue {
     /**
      * The geographic area where a service or offered item is provided.
      *
-     * @param fAreaServed AdministrativeArea value to set.
+     * @param areaServed AdministrativeArea value to set.
      */
-    void setAreaServed(AdministrativeArea fAreaServed);
+    void setAreaServed(AdministrativeArea areaServed);
     /**
      * The geographic area where a service or offered item is provided.
      *
-     * @param fAreaServed GeoShape value to set.
+     * @param areaServed GeoShape value to set.
      */
-    void setAreaServed(GeoShape fAreaServed);
+    void setAreaServed(GeoShape areaServed);
     /**
      * The geographic area where a service or offered item is provided.
      *
-     * @param fAreaServed Text value to set.
+     * @param areaServed Text value to set.
      */
-    void setAreaServed(Text fAreaServed);
+    void setAreaServed(Text areaServed);
     /**
      * The geographic area where a service or offered item is provided.
      *
-     * @param fAreaServed java.lang.String value to set.
+     * @param areaServed Place value to set.
      */
-    void setAreaServed(java.lang.String fAreaServed);
-    /**
-     * The geographic area where a service or offered item is provided.
-     *
-     * @param fAreaServed Place value to set.
-     */
-    void setAreaServed(Place fAreaServed);
+    void setAreaServed(Place areaServed);
 
     /**
      * A person or organization can have different contact points, for different purposes. For example, a sales contact point, a PR contact point and so on. This property is used to specify the kind of contact point.
@@ -189,15 +165,9 @@ public interface ContactPoint extends StructuredValue {
     /**
      * A person or organization can have different contact points, for different purposes. For example, a sales contact point, a PR contact point and so on. This property is used to specify the kind of contact point.
      *
-     * @param fContactType Text value to set.
+     * @param contactType Text value to set.
      */
-    void setContactType(Text fContactType);
-    /**
-     * A person or organization can have different contact points, for different purposes. For example, a sales contact point, a PR contact point and so on. This property is used to specify the kind of contact point.
-     *
-     * @param fContactType java.lang.String value to set.
-     */
-    void setContactType(java.lang.String fContactType);
+    void setContactType(Text contactType);
 
     /**
      * The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. "iPhone") or a general category of products or services (e.g. "smartphones").
@@ -209,21 +179,15 @@ public interface ContactPoint extends StructuredValue {
     /**
      * The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. "iPhone") or a general category of products or services (e.g. "smartphones").
      *
-     * @param fProductSupported Text value to set.
+     * @param productSupported Text value to set.
      */
-    void setProductSupported(Text fProductSupported);
+    void setProductSupported(Text productSupported);
     /**
      * The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. "iPhone") or a general category of products or services (e.g. "smartphones").
      *
-     * @param fProductSupported java.lang.String value to set.
+     * @param productSupported Product value to set.
      */
-    void setProductSupported(java.lang.String fProductSupported);
-    /**
-     * The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. "iPhone") or a general category of products or services (e.g. "smartphones").
-     *
-     * @param fProductSupported Product value to set.
-     */
-    void setProductSupported(Product fProductSupported);
+    void setProductSupported(Product productSupported);
 
     /**
      * The fax number.
@@ -235,13 +199,7 @@ public interface ContactPoint extends StructuredValue {
     /**
      * The fax number.
      *
-     * @param fFaxNumber Text value to set.
+     * @param faxNumber Text value to set.
      */
-    void setFaxNumber(Text fFaxNumber);
-    /**
-     * The fax number.
-     *
-     * @param fFaxNumber java.lang.String value to set.
-     */
-    void setFaxNumber(java.lang.String fFaxNumber);
+    void setFaxNumber(Text faxNumber);
 }

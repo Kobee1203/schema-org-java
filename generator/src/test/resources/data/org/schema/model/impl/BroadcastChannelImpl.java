@@ -28,7 +28,7 @@ import org.schema.model.BroadcastChannel;
 @JsonLdTypeName("BroadcastChannel")
 public class BroadcastChannelImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements BroadcastChannel {
 
-    private Object fGenre;
+    private Object genre;
 
     /**
      * Genre of the creative work, broadcast channel or group.
@@ -37,47 +37,29 @@ public class BroadcastChannelImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public <T> T getGenre() {
-        return (T) fGenre;
+        return (T) genre;
     }
 
     /**
      * Genre of the creative work, broadcast channel or group.
      *
-     * @param fGenre URL value to set.
+     * @param genre URL value to set.
      */
     @Override
-    public void setGenre(URL fGenre) {
-        this.fGenre = fGenre;
+    public void setGenre(URL genre) {
+        this.genre = genre;
     }
     /**
      * Genre of the creative work, broadcast channel or group.
      *
-     * @param fGenre java.net.URL value to set.
+     * @param genre Text value to set.
      */
     @Override
-    public void setGenre(java.net.URL fGenre) {
-        this.fGenre = URL.of(fGenre);
-    }
-    /**
-     * Genre of the creative work, broadcast channel or group.
-     *
-     * @param fGenre Text value to set.
-     */
-    @Override
-    public void setGenre(Text fGenre) {
-        this.fGenre = fGenre;
-    }
-    /**
-     * Genre of the creative work, broadcast channel or group.
-     *
-     * @param fGenre java.lang.String value to set.
-     */
-    @Override
-    public void setGenre(java.lang.String fGenre) {
-        this.fGenre = Text.of(fGenre);
+    public void setGenre(Text genre) {
+        this.genre = genre;
     }
 
-    private Object fBroadcastFrequency;
+    private Object broadcastFrequency;
 
     /**
      * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
@@ -87,41 +69,31 @@ public class BroadcastChannelImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public <T> T getBroadcastFrequency() {
-        return (T) fBroadcastFrequency;
+        return (T) broadcastFrequency;
     }
 
     /**
      * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
      *
-     * @param fBroadcastFrequency BroadcastFrequencySpecification value to set.
+     * @param broadcastFrequency BroadcastFrequencySpecification value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
      */
     @Override
-    public void setBroadcastFrequency(BroadcastFrequencySpecification fBroadcastFrequency) {
-        this.fBroadcastFrequency = fBroadcastFrequency;
+    public void setBroadcastFrequency(BroadcastFrequencySpecification broadcastFrequency) {
+        this.broadcastFrequency = broadcastFrequency;
     }
     /**
      * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
      *
-     * @param fBroadcastFrequency Text value to set.
+     * @param broadcastFrequency Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
      */
     @Override
-    public void setBroadcastFrequency(Text fBroadcastFrequency) {
-        this.fBroadcastFrequency = fBroadcastFrequency;
-    }
-    /**
-     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
-     *
-     * @param fBroadcastFrequency java.lang.String value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
-     */
-    @Override
-    public void setBroadcastFrequency(java.lang.String fBroadcastFrequency) {
-        this.fBroadcastFrequency = Text.of(fBroadcastFrequency);
+    public void setBroadcastFrequency(Text broadcastFrequency) {
+        this.broadcastFrequency = broadcastFrequency;
     }
 
-    private BroadcastService fProvidesBroadcastService;
+    private BroadcastService providesBroadcastService;
 
     /**
      * The BroadcastService offered on this channel.
@@ -130,20 +102,20 @@ public class BroadcastChannelImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public BroadcastService getProvidesBroadcastService() {
-        return fProvidesBroadcastService;
+        return providesBroadcastService;
     }
 
     /**
      * The BroadcastService offered on this channel.
      *
-     * @param fProvidesBroadcastService BroadcastService value to set.
+     * @param providesBroadcastService BroadcastService value to set.
      */
     @Override
-    public void setProvidesBroadcastService(BroadcastService fProvidesBroadcastService) {
-        this.fProvidesBroadcastService = fProvidesBroadcastService;
+    public void setProvidesBroadcastService(BroadcastService providesBroadcastService) {
+        this.providesBroadcastService = providesBroadcastService;
     }
 
-    private Text fBroadcastChannelId;
+    private Text broadcastChannelId;
 
     /**
      * The unique address by which the BroadcastService can be identified in a provider lineup. In US, this is typically a number.
@@ -152,29 +124,20 @@ public class BroadcastChannelImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public Text getBroadcastChannelId() {
-        return fBroadcastChannelId;
+        return broadcastChannelId;
     }
 
     /**
      * The unique address by which the BroadcastService can be identified in a provider lineup. In US, this is typically a number.
      *
-     * @param fBroadcastChannelId Text value to set.
+     * @param broadcastChannelId Text value to set.
      */
     @Override
-    public void setBroadcastChannelId(Text fBroadcastChannelId) {
-        this.fBroadcastChannelId = fBroadcastChannelId;
-    }
-    /**
-     * The unique address by which the BroadcastService can be identified in a provider lineup. In US, this is typically a number.
-     *
-     * @param fBroadcastChannelId java.lang.String value to set.
-     */
-    @Override
-    public void setBroadcastChannelId(java.lang.String fBroadcastChannelId) {
-        this.fBroadcastChannelId = Text.of(fBroadcastChannelId);
+    public void setBroadcastChannelId(Text broadcastChannelId) {
+        this.broadcastChannelId = broadcastChannelId;
     }
 
-    private CableOrSatelliteService fInBroadcastLineup;
+    private CableOrSatelliteService inBroadcastLineup;
 
     /**
      * The CableOrSatelliteService offering the channel.
@@ -183,20 +146,20 @@ public class BroadcastChannelImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public CableOrSatelliteService getInBroadcastLineup() {
-        return fInBroadcastLineup;
+        return inBroadcastLineup;
     }
 
     /**
      * The CableOrSatelliteService offering the channel.
      *
-     * @param fInBroadcastLineup CableOrSatelliteService value to set.
+     * @param inBroadcastLineup CableOrSatelliteService value to set.
      */
     @Override
-    public void setInBroadcastLineup(CableOrSatelliteService fInBroadcastLineup) {
-        this.fInBroadcastLineup = fInBroadcastLineup;
+    public void setInBroadcastLineup(CableOrSatelliteService inBroadcastLineup) {
+        this.inBroadcastLineup = inBroadcastLineup;
     }
 
-    private Text fBroadcastServiceTier;
+    private Text broadcastServiceTier;
 
     /**
      * The type of service required to have access to the channel (e.g. Standard or Premium).
@@ -205,29 +168,20 @@ public class BroadcastChannelImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public Text getBroadcastServiceTier() {
-        return fBroadcastServiceTier;
+        return broadcastServiceTier;
     }
 
     /**
      * The type of service required to have access to the channel (e.g. Standard or Premium).
      *
-     * @param fBroadcastServiceTier Text value to set.
+     * @param broadcastServiceTier Text value to set.
      */
     @Override
-    public void setBroadcastServiceTier(Text fBroadcastServiceTier) {
-        this.fBroadcastServiceTier = fBroadcastServiceTier;
-    }
-    /**
-     * The type of service required to have access to the channel (e.g. Standard or Premium).
-     *
-     * @param fBroadcastServiceTier java.lang.String value to set.
-     */
-    @Override
-    public void setBroadcastServiceTier(java.lang.String fBroadcastServiceTier) {
-        this.fBroadcastServiceTier = Text.of(fBroadcastServiceTier);
+    public void setBroadcastServiceTier(Text broadcastServiceTier) {
+        this.broadcastServiceTier = broadcastServiceTier;
     }
 
-    private Object fMainEntityOfPage;
+    private Object mainEntityOfPage;
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -236,38 +190,29 @@ public class BroadcastChannelImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
+        return (T) mainEntityOfPage;
     }
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param fMainEntityOfPage CreativeWork value to set.
+     * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(CreativeWork fMainEntityOfPage) {
-        this.fMainEntityOfPage = fMainEntityOfPage;
+    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
     }
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param fMainEntityOfPage URL value to set.
+     * @param mainEntityOfPage URL value to set.
      */
     @Override
-    public void setMainEntityOfPage(URL fMainEntityOfPage) {
-        this.fMainEntityOfPage = fMainEntityOfPage;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param fMainEntityOfPage java.net.URL value to set.
-     */
-    @Override
-    public void setMainEntityOfPage(java.net.URL fMainEntityOfPage) {
-        this.fMainEntityOfPage = URL.of(fMainEntityOfPage);
+    public void setMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
     }
 
-    private Text fAlternateName;
+    private Text alternateName;
 
     /**
      * An alias for the item.
@@ -276,29 +221,20 @@ public class BroadcastChannelImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public Text getAlternateName() {
-        return fAlternateName;
+        return alternateName;
     }
 
     /**
      * An alias for the item.
      *
-     * @param fAlternateName Text value to set.
+     * @param alternateName Text value to set.
      */
     @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
-    }
-    /**
-     * An alias for the item.
-     *
-     * @param fAlternateName java.lang.String value to set.
-     */
-    @Override
-    public void setAlternateName(java.lang.String fAlternateName) {
-        this.fAlternateName = Text.of(fAlternateName);
+    public void setAlternateName(Text alternateName) {
+        this.alternateName = alternateName;
     }
 
-    private Text fName;
+    private Text name;
 
     /**
      * The name of the item.
@@ -307,29 +243,20 @@ public class BroadcastChannelImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public Text getName() {
-        return fName;
+        return name;
     }
 
     /**
      * The name of the item.
      *
-     * @param fName Text value to set.
+     * @param name Text value to set.
      */
     @Override
-    public void setName(Text fName) {
-        this.fName = fName;
-    }
-    /**
-     * The name of the item.
-     *
-     * @param fName java.lang.String value to set.
-     */
-    @Override
-    public void setName(java.lang.String fName) {
-        this.fName = Text.of(fName);
+    public void setName(Text name) {
+        this.name = name;
     }
 
-    private Action fPotentialAction;
+    private Action potentialAction;
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -338,20 +265,20 @@ public class BroadcastChannelImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public Action getPotentialAction() {
-        return fPotentialAction;
+        return potentialAction;
     }
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      *
-     * @param fPotentialAction Action value to set.
+     * @param potentialAction Action value to set.
      */
     @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
+    public void setPotentialAction(Action potentialAction) {
+        this.potentialAction = potentialAction;
     }
 
-    private Object fImage;
+    private Object image;
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -360,38 +287,29 @@ public class BroadcastChannelImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public <T> T getImage() {
-        return (T) fImage;
+        return (T) image;
     }
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param fImage URL value to set.
+     * @param image URL value to set.
      */
     @Override
-    public void setImage(URL fImage) {
-        this.fImage = fImage;
+    public void setImage(URL image) {
+        this.image = image;
     }
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param fImage java.net.URL value to set.
+     * @param image ImageObject value to set.
      */
     @Override
-    public void setImage(java.net.URL fImage) {
-        this.fImage = URL.of(fImage);
-    }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param fImage ImageObject value to set.
-     */
-    @Override
-    public void setImage(ImageObject fImage) {
-        this.fImage = fImage;
+    public void setImage(ImageObject image) {
+        this.image = image;
     }
 
-    private URL fUrl;
+    private URL url;
 
     /**
      * URL of the item.
@@ -400,29 +318,20 @@ public class BroadcastChannelImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public URL getUrl() {
-        return fUrl;
+        return url;
     }
 
     /**
      * URL of the item.
      *
-     * @param fUrl URL value to set.
+     * @param url URL value to set.
      */
     @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
-    }
-    /**
-     * URL of the item.
-     *
-     * @param fUrl java.net.URL value to set.
-     */
-    @Override
-    public void setUrl(java.net.URL fUrl) {
-        this.fUrl = URL.of(fUrl);
+    public void setUrl(URL url) {
+        this.url = url;
     }
 
-    private Text fDescription;
+    private Text description;
 
     /**
      * A description of the item.
@@ -431,29 +340,20 @@ public class BroadcastChannelImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public Text getDescription() {
-        return fDescription;
+        return description;
     }
 
     /**
      * A description of the item.
      *
-     * @param fDescription Text value to set.
+     * @param description Text value to set.
      */
     @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
-    }
-    /**
-     * A description of the item.
-     *
-     * @param fDescription java.lang.String value to set.
-     */
-    @Override
-    public void setDescription(java.lang.String fDescription) {
-        this.fDescription = Text.of(fDescription);
+    public void setDescription(Text description) {
+        this.description = description;
     }
 
-    private Object fSubjectOf;
+    private Object subjectOf;
 
     /**
      * A CreativeWork or Event about this Thing.
@@ -463,31 +363,31 @@ public class BroadcastChannelImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public <T> T getSubjectOf() {
-        return (T) fSubjectOf;
+        return (T) subjectOf;
     }
 
     /**
      * A CreativeWork or Event about this Thing.
      *
-     * @param fSubjectOf Event value to set.
+     * @param subjectOf Event value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Event fSubjectOf) {
-        this.fSubjectOf = fSubjectOf;
+    public void setSubjectOf(Event subjectOf) {
+        this.subjectOf = subjectOf;
     }
     /**
      * A CreativeWork or Event about this Thing.
      *
-     * @param fSubjectOf CreativeWork value to set.
+     * @param subjectOf CreativeWork value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(CreativeWork fSubjectOf) {
-        this.fSubjectOf = fSubjectOf;
+    public void setSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = subjectOf;
     }
 
-    private URL fAdditionalType;
+    private URL additionalType;
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
@@ -496,29 +396,20 @@ public class BroadcastChannelImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public URL getAdditionalType() {
-        return fAdditionalType;
+        return additionalType;
     }
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
-     * @param fAdditionalType URL value to set.
+     * @param additionalType URL value to set.
      */
     @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
-    }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @param fAdditionalType java.net.URL value to set.
-     */
-    @Override
-    public void setAdditionalType(java.net.URL fAdditionalType) {
-        this.fAdditionalType = URL.of(fAdditionalType);
+    public void setAdditionalType(URL additionalType) {
+        this.additionalType = additionalType;
     }
 
-    private Text fDisambiguatingDescription;
+    private Text disambiguatingDescription;
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
@@ -527,29 +418,20 @@ public class BroadcastChannelImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public Text getDisambiguatingDescription() {
-        return fDisambiguatingDescription;
+        return disambiguatingDescription;
     }
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
-     * @param fDisambiguatingDescription Text value to set.
+     * @param disambiguatingDescription Text value to set.
      */
     @Override
-    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = fDisambiguatingDescription;
-    }
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @param fDisambiguatingDescription java.lang.String value to set.
-     */
-    @Override
-    public void setDisambiguatingDescription(java.lang.String fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = Text.of(fDisambiguatingDescription);
+    public void setDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = disambiguatingDescription;
     }
 
-    private URL fSameAs;
+    private URL sameAs;
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
@@ -558,29 +440,20 @@ public class BroadcastChannelImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public URL getSameAs() {
-        return fSameAs;
+        return sameAs;
     }
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
-     * @param fSameAs URL value to set.
+     * @param sameAs URL value to set.
      */
     @Override
-    public void setSameAs(URL fSameAs) {
-        this.fSameAs = fSameAs;
-    }
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @param fSameAs java.net.URL value to set.
-     */
-    @Override
-    public void setSameAs(java.net.URL fSameAs) {
-        this.fSameAs = URL.of(fSameAs);
+    public void setSameAs(URL sameAs) {
+        this.sameAs = sameAs;
     }
 
-    private Object fIdentifier;
+    private Object identifier;
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -590,57 +463,37 @@ public class BroadcastChannelImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public <T> T getIdentifier() {
-        return (T) fIdentifier;
+        return (T) identifier;
     }
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier URL value to set.
+     * @param identifier URL value to set.
      */
     @Override
-    public void setIdentifier(URL fIdentifier) {
-        this.fIdentifier = fIdentifier;
+    public void setIdentifier(URL identifier) {
+        this.identifier = identifier;
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier java.net.URL value to set.
+     * @param identifier Text value to set.
      */
     @Override
-    public void setIdentifier(java.net.URL fIdentifier) {
-        this.fIdentifier = URL.of(fIdentifier);
+    public void setIdentifier(Text identifier) {
+        this.identifier = identifier;
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier Text value to set.
+     * @param identifier PropertyValue value to set.
      */
     @Override
-    public void setIdentifier(Text fIdentifier) {
-        this.fIdentifier = fIdentifier;
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param fIdentifier java.lang.String value to set.
-     */
-    @Override
-    public void setIdentifier(java.lang.String fIdentifier) {
-        this.fIdentifier = Text.of(fIdentifier);
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param fIdentifier PropertyValue value to set.
-     */
-    @Override
-    public void setIdentifier(PropertyValue fIdentifier) {
-        this.fIdentifier = fIdentifier;
+    public void setIdentifier(PropertyValue identifier) {
+        this.identifier = identifier;
     }
 }

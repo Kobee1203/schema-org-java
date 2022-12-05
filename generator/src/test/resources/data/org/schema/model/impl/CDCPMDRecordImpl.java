@@ -34,7 +34,7 @@ import org.schema.model.CDCPMDRecord;
 @JsonLdTypeName("CDCPMDRecord")
 public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements CDCPMDRecord {
 
-    private Number fCvdNumBedsOcc;
+    private Number cvdNumBedsOcc;
 
     /**
      * numbedsocc - HOSPITAL INPATIENT BED OCCUPANCY: Total number of staffed inpatient beds that are occupied.
@@ -45,33 +45,22 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Number getCvdNumBedsOcc() {
-        return fCvdNumBedsOcc;
+        return cvdNumBedsOcc;
     }
 
     /**
      * numbedsocc - HOSPITAL INPATIENT BED OCCUPANCY: Total number of staffed inpatient beds that are occupied.
      *
-     * @param fCvdNumBedsOcc Number value to set.
+     * @param cvdNumBedsOcc Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
     @Override
-    public void setCvdNumBedsOcc(Number fCvdNumBedsOcc) {
-        this.fCvdNumBedsOcc = fCvdNumBedsOcc;
-    }
-    /**
-     * numbedsocc - HOSPITAL INPATIENT BED OCCUPANCY: Total number of staffed inpatient beds that are occupied.
-     *
-     * @param fCvdNumBedsOcc java.lang.Number value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public void setCvdNumBedsOcc(java.lang.Number fCvdNumBedsOcc) {
-        this.fCvdNumBedsOcc = Number.of(fCvdNumBedsOcc);
+    public void setCvdNumBedsOcc(Number cvdNumBedsOcc) {
+        this.cvdNumBedsOcc = cvdNumBedsOcc;
     }
 
-    private Number fCvdNumICUBedsOcc;
+    private Number cvdNumICUBedsOcc;
 
     /**
      * numicubedsocc - ICU BED OCCUPANCY: Total number of staffed inpatient ICU beds that are occupied.
@@ -82,33 +71,22 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Number getCvdNumICUBedsOcc() {
-        return fCvdNumICUBedsOcc;
+        return cvdNumICUBedsOcc;
     }
 
     /**
      * numicubedsocc - ICU BED OCCUPANCY: Total number of staffed inpatient ICU beds that are occupied.
      *
-     * @param fCvdNumICUBedsOcc Number value to set.
+     * @param cvdNumICUBedsOcc Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
     @Override
-    public void setCvdNumICUBedsOcc(Number fCvdNumICUBedsOcc) {
-        this.fCvdNumICUBedsOcc = fCvdNumICUBedsOcc;
-    }
-    /**
-     * numicubedsocc - ICU BED OCCUPANCY: Total number of staffed inpatient ICU beds that are occupied.
-     *
-     * @param fCvdNumICUBedsOcc java.lang.Number value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public void setCvdNumICUBedsOcc(java.lang.Number fCvdNumICUBedsOcc) {
-        this.fCvdNumICUBedsOcc = Number.of(fCvdNumICUBedsOcc);
+    public void setCvdNumICUBedsOcc(Number cvdNumICUBedsOcc) {
+        this.cvdNumICUBedsOcc = cvdNumICUBedsOcc;
     }
 
-    private Number fCvdNumVent;
+    private Number cvdNumVent;
 
     /**
      * numvent - MECHANICAL VENTILATORS: Total number of ventilators available.
@@ -119,33 +97,22 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Number getCvdNumVent() {
-        return fCvdNumVent;
+        return cvdNumVent;
     }
 
     /**
      * numvent - MECHANICAL VENTILATORS: Total number of ventilators available.
      *
-     * @param fCvdNumVent Number value to set.
+     * @param cvdNumVent Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
     @Override
-    public void setCvdNumVent(Number fCvdNumVent) {
-        this.fCvdNumVent = fCvdNumVent;
-    }
-    /**
-     * numvent - MECHANICAL VENTILATORS: Total number of ventilators available.
-     *
-     * @param fCvdNumVent java.lang.Number value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public void setCvdNumVent(java.lang.Number fCvdNumVent) {
-        this.fCvdNumVent = Number.of(fCvdNumVent);
+    public void setCvdNumVent(Number cvdNumVent) {
+        this.cvdNumVent = cvdNumVent;
     }
 
-    private Number fCvdNumC19Died;
+    private Number cvdNumC19Died;
 
     /**
      * numc19died - DEATHS: Patients with suspected or confirmed COVID-19 who died in the hospital, ED, or any overflow location.
@@ -156,33 +123,22 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Number getCvdNumC19Died() {
-        return fCvdNumC19Died;
+        return cvdNumC19Died;
     }
 
     /**
      * numc19died - DEATHS: Patients with suspected or confirmed COVID-19 who died in the hospital, ED, or any overflow location.
      *
-     * @param fCvdNumC19Died Number value to set.
+     * @param cvdNumC19Died Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
     @Override
-    public void setCvdNumC19Died(Number fCvdNumC19Died) {
-        this.fCvdNumC19Died = fCvdNumC19Died;
-    }
-    /**
-     * numc19died - DEATHS: Patients with suspected or confirmed COVID-19 who died in the hospital, ED, or any overflow location.
-     *
-     * @param fCvdNumC19Died java.lang.Number value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public void setCvdNumC19Died(java.lang.Number fCvdNumC19Died) {
-        this.fCvdNumC19Died = Number.of(fCvdNumC19Died);
+    public void setCvdNumC19Died(Number cvdNumC19Died) {
+        this.cvdNumC19Died = cvdNumC19Died;
     }
 
-    private Number fCvdNumTotBeds;
+    private Number cvdNumTotBeds;
 
     /**
      * numtotbeds - ALL HOSPITAL BEDS: Total number of all Inpatient and outpatient beds, including all staffed,ICU, licensed, and overflow (surge) beds used for inpatients or outpatients.
@@ -193,33 +149,22 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Number getCvdNumTotBeds() {
-        return fCvdNumTotBeds;
+        return cvdNumTotBeds;
     }
 
     /**
      * numtotbeds - ALL HOSPITAL BEDS: Total number of all Inpatient and outpatient beds, including all staffed,ICU, licensed, and overflow (surge) beds used for inpatients or outpatients.
      *
-     * @param fCvdNumTotBeds Number value to set.
+     * @param cvdNumTotBeds Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
     @Override
-    public void setCvdNumTotBeds(Number fCvdNumTotBeds) {
-        this.fCvdNumTotBeds = fCvdNumTotBeds;
-    }
-    /**
-     * numtotbeds - ALL HOSPITAL BEDS: Total number of all Inpatient and outpatient beds, including all staffed,ICU, licensed, and overflow (surge) beds used for inpatients or outpatients.
-     *
-     * @param fCvdNumTotBeds java.lang.Number value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public void setCvdNumTotBeds(java.lang.Number fCvdNumTotBeds) {
-        this.fCvdNumTotBeds = Number.of(fCvdNumTotBeds);
+    public void setCvdNumTotBeds(Number cvdNumTotBeds) {
+        this.cvdNumTotBeds = cvdNumTotBeds;
     }
 
-    private Text fCvdFacilityCounty;
+    private Text cvdFacilityCounty;
 
     /**
      * Name of the County of the NHSN facility that this data record applies to. Use [[cvdFacilityId]] to identify the facility. To provide other details, [[healthcareReportingData]] can be used on a [[Hospital]] entry.
@@ -230,33 +175,22 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Text getCvdFacilityCounty() {
-        return fCvdFacilityCounty;
+        return cvdFacilityCounty;
     }
 
     /**
      * Name of the County of the NHSN facility that this data record applies to. Use [[cvdFacilityId]] to identify the facility. To provide other details, [[healthcareReportingData]] can be used on a [[Hospital]] entry.
      *
-     * @param fCvdFacilityCounty Text value to set.
+     * @param cvdFacilityCounty Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
     @Override
-    public void setCvdFacilityCounty(Text fCvdFacilityCounty) {
-        this.fCvdFacilityCounty = fCvdFacilityCounty;
-    }
-    /**
-     * Name of the County of the NHSN facility that this data record applies to. Use [[cvdFacilityId]] to identify the facility. To provide other details, [[healthcareReportingData]] can be used on a [[Hospital]] entry.
-     *
-     * @param fCvdFacilityCounty java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public void setCvdFacilityCounty(java.lang.String fCvdFacilityCounty) {
-        this.fCvdFacilityCounty = Text.of(fCvdFacilityCounty);
+    public void setCvdFacilityCounty(Text cvdFacilityCounty) {
+        this.cvdFacilityCounty = cvdFacilityCounty;
     }
 
-    private Number fCvdNumICUBeds;
+    private Number cvdNumICUBeds;
 
     /**
      * numicubeds - ICU BEDS: Total number of staffed inpatient intensive care unit (ICU) beds.
@@ -267,33 +201,22 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Number getCvdNumICUBeds() {
-        return fCvdNumICUBeds;
+        return cvdNumICUBeds;
     }
 
     /**
      * numicubeds - ICU BEDS: Total number of staffed inpatient intensive care unit (ICU) beds.
      *
-     * @param fCvdNumICUBeds Number value to set.
+     * @param cvdNumICUBeds Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
     @Override
-    public void setCvdNumICUBeds(Number fCvdNumICUBeds) {
-        this.fCvdNumICUBeds = fCvdNumICUBeds;
-    }
-    /**
-     * numicubeds - ICU BEDS: Total number of staffed inpatient intensive care unit (ICU) beds.
-     *
-     * @param fCvdNumICUBeds java.lang.Number value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public void setCvdNumICUBeds(java.lang.Number fCvdNumICUBeds) {
-        this.fCvdNumICUBeds = Number.of(fCvdNumICUBeds);
+    public void setCvdNumICUBeds(Number cvdNumICUBeds) {
+        this.cvdNumICUBeds = cvdNumICUBeds;
     }
 
-    private Object fCvdCollectionDate;
+    private Object cvdCollectionDate;
 
     /**
      * collectiondate - Date for which patient counts are reported.
@@ -304,55 +227,33 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getCvdCollectionDate() {
-        return (T) fCvdCollectionDate;
+        return (T) cvdCollectionDate;
     }
 
     /**
      * collectiondate - Date for which patient counts are reported.
      *
-     * @param fCvdCollectionDate DateTime value to set.
+     * @param cvdCollectionDate DateTime value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
     @Override
-    public void setCvdCollectionDate(DateTime fCvdCollectionDate) {
-        this.fCvdCollectionDate = fCvdCollectionDate;
+    public void setCvdCollectionDate(DateTime cvdCollectionDate) {
+        this.cvdCollectionDate = cvdCollectionDate;
     }
     /**
      * collectiondate - Date for which patient counts are reported.
      *
-     * @param fCvdCollectionDate java.time.LocalDateTime value to set.
+     * @param cvdCollectionDate Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
     @Override
-    public void setCvdCollectionDate(java.time.LocalDateTime fCvdCollectionDate) {
-        this.fCvdCollectionDate = DateTime.of(fCvdCollectionDate);
-    }
-    /**
-     * collectiondate - Date for which patient counts are reported.
-     *
-     * @param fCvdCollectionDate Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public void setCvdCollectionDate(Text fCvdCollectionDate) {
-        this.fCvdCollectionDate = fCvdCollectionDate;
-    }
-    /**
-     * collectiondate - Date for which patient counts are reported.
-     *
-     * @param fCvdCollectionDate java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public void setCvdCollectionDate(java.lang.String fCvdCollectionDate) {
-        this.fCvdCollectionDate = Text.of(fCvdCollectionDate);
+    public void setCvdCollectionDate(Text cvdCollectionDate) {
+        this.cvdCollectionDate = cvdCollectionDate;
     }
 
-    private Number fCvdNumC19HOPats;
+    private Number cvdNumC19HOPats;
 
     /**
      * numc19hopats - HOSPITAL ONSET: Patients hospitalized in an NHSN inpatient care location with onset of suspected or confirmed COVID-19 14 or more days after hospitalization.
@@ -363,33 +264,22 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Number getCvdNumC19HOPats() {
-        return fCvdNumC19HOPats;
+        return cvdNumC19HOPats;
     }
 
     /**
      * numc19hopats - HOSPITAL ONSET: Patients hospitalized in an NHSN inpatient care location with onset of suspected or confirmed COVID-19 14 or more days after hospitalization.
      *
-     * @param fCvdNumC19HOPats Number value to set.
+     * @param cvdNumC19HOPats Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
     @Override
-    public void setCvdNumC19HOPats(Number fCvdNumC19HOPats) {
-        this.fCvdNumC19HOPats = fCvdNumC19HOPats;
-    }
-    /**
-     * numc19hopats - HOSPITAL ONSET: Patients hospitalized in an NHSN inpatient care location with onset of suspected or confirmed COVID-19 14 or more days after hospitalization.
-     *
-     * @param fCvdNumC19HOPats java.lang.Number value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public void setCvdNumC19HOPats(java.lang.Number fCvdNumC19HOPats) {
-        this.fCvdNumC19HOPats = Number.of(fCvdNumC19HOPats);
+    public void setCvdNumC19HOPats(Number cvdNumC19HOPats) {
+        this.cvdNumC19HOPats = cvdNumC19HOPats;
     }
 
-    private Number fCvdNumC19OFMechVentPats;
+    private Number cvdNumC19OFMechVentPats;
 
     /**
      * numc19ofmechventpats - ED/OVERFLOW and VENTILATED: Patients with suspected or confirmed COVID-19 who are in the ED or any overflow location awaiting an inpatient bed and on a mechanical ventilator.
@@ -400,33 +290,22 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Number getCvdNumC19OFMechVentPats() {
-        return fCvdNumC19OFMechVentPats;
+        return cvdNumC19OFMechVentPats;
     }
 
     /**
      * numc19ofmechventpats - ED/OVERFLOW and VENTILATED: Patients with suspected or confirmed COVID-19 who are in the ED or any overflow location awaiting an inpatient bed and on a mechanical ventilator.
      *
-     * @param fCvdNumC19OFMechVentPats Number value to set.
+     * @param cvdNumC19OFMechVentPats Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
     @Override
-    public void setCvdNumC19OFMechVentPats(Number fCvdNumC19OFMechVentPats) {
-        this.fCvdNumC19OFMechVentPats = fCvdNumC19OFMechVentPats;
-    }
-    /**
-     * numc19ofmechventpats - ED/OVERFLOW and VENTILATED: Patients with suspected or confirmed COVID-19 who are in the ED or any overflow location awaiting an inpatient bed and on a mechanical ventilator.
-     *
-     * @param fCvdNumC19OFMechVentPats java.lang.Number value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public void setCvdNumC19OFMechVentPats(java.lang.Number fCvdNumC19OFMechVentPats) {
-        this.fCvdNumC19OFMechVentPats = Number.of(fCvdNumC19OFMechVentPats);
+    public void setCvdNumC19OFMechVentPats(Number cvdNumC19OFMechVentPats) {
+        this.cvdNumC19OFMechVentPats = cvdNumC19OFMechVentPats;
     }
 
-    private Text fCvdFacilityId;
+    private Text cvdFacilityId;
 
     /**
      * Identifier of the NHSN facility that this data record applies to. Use [[cvdFacilityCounty]] to indicate the county. To provide other details, [[healthcareReportingData]] can be used on a [[Hospital]] entry.
@@ -437,33 +316,22 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Text getCvdFacilityId() {
-        return fCvdFacilityId;
+        return cvdFacilityId;
     }
 
     /**
      * Identifier of the NHSN facility that this data record applies to. Use [[cvdFacilityCounty]] to indicate the county. To provide other details, [[healthcareReportingData]] can be used on a [[Hospital]] entry.
      *
-     * @param fCvdFacilityId Text value to set.
+     * @param cvdFacilityId Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
     @Override
-    public void setCvdFacilityId(Text fCvdFacilityId) {
-        this.fCvdFacilityId = fCvdFacilityId;
-    }
-    /**
-     * Identifier of the NHSN facility that this data record applies to. Use [[cvdFacilityCounty]] to indicate the county. To provide other details, [[healthcareReportingData]] can be used on a [[Hospital]] entry.
-     *
-     * @param fCvdFacilityId java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public void setCvdFacilityId(java.lang.String fCvdFacilityId) {
-        this.fCvdFacilityId = Text.of(fCvdFacilityId);
+    public void setCvdFacilityId(Text cvdFacilityId) {
+        this.cvdFacilityId = cvdFacilityId;
     }
 
-    private Number fCvdNumVentUse;
+    private Number cvdNumVentUse;
 
     /**
      * numventuse - MECHANICAL VENTILATORS IN USE: Total number of ventilators in use.
@@ -474,33 +342,22 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Number getCvdNumVentUse() {
-        return fCvdNumVentUse;
+        return cvdNumVentUse;
     }
 
     /**
      * numventuse - MECHANICAL VENTILATORS IN USE: Total number of ventilators in use.
      *
-     * @param fCvdNumVentUse Number value to set.
+     * @param cvdNumVentUse Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
     @Override
-    public void setCvdNumVentUse(Number fCvdNumVentUse) {
-        this.fCvdNumVentUse = fCvdNumVentUse;
-    }
-    /**
-     * numventuse - MECHANICAL VENTILATORS IN USE: Total number of ventilators in use.
-     *
-     * @param fCvdNumVentUse java.lang.Number value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public void setCvdNumVentUse(java.lang.Number fCvdNumVentUse) {
-        this.fCvdNumVentUse = Number.of(fCvdNumVentUse);
+    public void setCvdNumVentUse(Number cvdNumVentUse) {
+        this.cvdNumVentUse = cvdNumVentUse;
     }
 
-    private Number fCvdNumBeds;
+    private Number cvdNumBeds;
 
     /**
      * numbeds - HOSPITAL INPATIENT BEDS: Inpatient beds, including all staffed, licensed, and overflow (surge) beds used for inpatients.
@@ -511,33 +368,22 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Number getCvdNumBeds() {
-        return fCvdNumBeds;
+        return cvdNumBeds;
     }
 
     /**
      * numbeds - HOSPITAL INPATIENT BEDS: Inpatient beds, including all staffed, licensed, and overflow (surge) beds used for inpatients.
      *
-     * @param fCvdNumBeds Number value to set.
+     * @param cvdNumBeds Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
     @Override
-    public void setCvdNumBeds(Number fCvdNumBeds) {
-        this.fCvdNumBeds = fCvdNumBeds;
-    }
-    /**
-     * numbeds - HOSPITAL INPATIENT BEDS: Inpatient beds, including all staffed, licensed, and overflow (surge) beds used for inpatients.
-     *
-     * @param fCvdNumBeds java.lang.Number value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public void setCvdNumBeds(java.lang.Number fCvdNumBeds) {
-        this.fCvdNumBeds = Number.of(fCvdNumBeds);
+    public void setCvdNumBeds(Number cvdNumBeds) {
+        this.cvdNumBeds = cvdNumBeds;
     }
 
-    private Number fCvdNumC19MechVentPats;
+    private Number cvdNumC19MechVentPats;
 
     /**
      * numc19mechventpats - HOSPITALIZED and VENTILATED: Patients hospitalized in an NHSN inpatient care location who have suspected or confirmed COVID-19 and are on a mechanical ventilator.
@@ -548,33 +394,22 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Number getCvdNumC19MechVentPats() {
-        return fCvdNumC19MechVentPats;
+        return cvdNumC19MechVentPats;
     }
 
     /**
      * numc19mechventpats - HOSPITALIZED and VENTILATED: Patients hospitalized in an NHSN inpatient care location who have suspected or confirmed COVID-19 and are on a mechanical ventilator.
      *
-     * @param fCvdNumC19MechVentPats Number value to set.
+     * @param cvdNumC19MechVentPats Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
     @Override
-    public void setCvdNumC19MechVentPats(Number fCvdNumC19MechVentPats) {
-        this.fCvdNumC19MechVentPats = fCvdNumC19MechVentPats;
-    }
-    /**
-     * numc19mechventpats - HOSPITALIZED and VENTILATED: Patients hospitalized in an NHSN inpatient care location who have suspected or confirmed COVID-19 and are on a mechanical ventilator.
-     *
-     * @param fCvdNumC19MechVentPats java.lang.Number value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public void setCvdNumC19MechVentPats(java.lang.Number fCvdNumC19MechVentPats) {
-        this.fCvdNumC19MechVentPats = Number.of(fCvdNumC19MechVentPats);
+    public void setCvdNumC19MechVentPats(Number cvdNumC19MechVentPats) {
+        this.cvdNumC19MechVentPats = cvdNumC19MechVentPats;
     }
 
-    private Object fDatePosted;
+    private Object datePosted;
 
     /**
      * Publication date of an online listing.
@@ -585,55 +420,33 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getDatePosted() {
-        return (T) fDatePosted;
+        return (T) datePosted;
     }
 
     /**
      * Publication date of an online listing.
      *
-     * @param fDatePosted Date value to set.
+     * @param datePosted Date value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
     @Override
-    public void setDatePosted(Date fDatePosted) {
-        this.fDatePosted = fDatePosted;
+    public void setDatePosted(Date datePosted) {
+        this.datePosted = datePosted;
     }
     /**
      * Publication date of an online listing.
      *
-     * @param fDatePosted java.time.LocalDate value to set.
+     * @param datePosted DateTime value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
     @Override
-    public void setDatePosted(java.time.LocalDate fDatePosted) {
-        this.fDatePosted = Date.of(fDatePosted);
-    }
-    /**
-     * Publication date of an online listing.
-     *
-     * @param fDatePosted DateTime value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public void setDatePosted(DateTime fDatePosted) {
-        this.fDatePosted = fDatePosted;
-    }
-    /**
-     * Publication date of an online listing.
-     *
-     * @param fDatePosted java.time.LocalDateTime value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public void setDatePosted(java.time.LocalDateTime fDatePosted) {
-        this.fDatePosted = DateTime.of(fDatePosted);
+    public void setDatePosted(DateTime datePosted) {
+        this.datePosted = datePosted;
     }
 
-    private Number fCvdNumC19OverflowPats;
+    private Number cvdNumC19OverflowPats;
 
     /**
      * numc19overflowpats - ED/OVERFLOW: Patients with suspected or confirmed COVID-19 who are in the ED or any overflow location awaiting an inpatient bed.
@@ -644,33 +457,22 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Number getCvdNumC19OverflowPats() {
-        return fCvdNumC19OverflowPats;
+        return cvdNumC19OverflowPats;
     }
 
     /**
      * numc19overflowpats - ED/OVERFLOW: Patients with suspected or confirmed COVID-19 who are in the ED or any overflow location awaiting an inpatient bed.
      *
-     * @param fCvdNumC19OverflowPats Number value to set.
+     * @param cvdNumC19OverflowPats Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
     @Override
-    public void setCvdNumC19OverflowPats(Number fCvdNumC19OverflowPats) {
-        this.fCvdNumC19OverflowPats = fCvdNumC19OverflowPats;
-    }
-    /**
-     * numc19overflowpats - ED/OVERFLOW: Patients with suspected or confirmed COVID-19 who are in the ED or any overflow location awaiting an inpatient bed.
-     *
-     * @param fCvdNumC19OverflowPats java.lang.Number value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public void setCvdNumC19OverflowPats(java.lang.Number fCvdNumC19OverflowPats) {
-        this.fCvdNumC19OverflowPats = Number.of(fCvdNumC19OverflowPats);
+    public void setCvdNumC19OverflowPats(Number cvdNumC19OverflowPats) {
+        this.cvdNumC19OverflowPats = cvdNumC19OverflowPats;
     }
 
-    private Number fCvdNumC19HospPats;
+    private Number cvdNumC19HospPats;
 
     /**
      * numc19hosppats - HOSPITALIZED: Patients currently hospitalized in an inpatient care location who have suspected or confirmed COVID-19.
@@ -681,33 +483,22 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Number getCvdNumC19HospPats() {
-        return fCvdNumC19HospPats;
+        return cvdNumC19HospPats;
     }
 
     /**
      * numc19hosppats - HOSPITALIZED: Patients currently hospitalized in an inpatient care location who have suspected or confirmed COVID-19.
      *
-     * @param fCvdNumC19HospPats Number value to set.
+     * @param cvdNumC19HospPats Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
     @Override
-    public void setCvdNumC19HospPats(Number fCvdNumC19HospPats) {
-        this.fCvdNumC19HospPats = fCvdNumC19HospPats;
-    }
-    /**
-     * numc19hosppats - HOSPITALIZED: Patients currently hospitalized in an inpatient care location who have suspected or confirmed COVID-19.
-     *
-     * @param fCvdNumC19HospPats java.lang.Number value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
-     */
-    @Override
-    public void setCvdNumC19HospPats(java.lang.Number fCvdNumC19HospPats) {
-        this.fCvdNumC19HospPats = Number.of(fCvdNumC19HospPats);
+    public void setCvdNumC19HospPats(Number cvdNumC19HospPats) {
+        this.cvdNumC19HospPats = cvdNumC19HospPats;
     }
 
-    private Object fMainEntityOfPage;
+    private Object mainEntityOfPage;
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -716,38 +507,29 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
+        return (T) mainEntityOfPage;
     }
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param fMainEntityOfPage CreativeWork value to set.
+     * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(CreativeWork fMainEntityOfPage) {
-        this.fMainEntityOfPage = fMainEntityOfPage;
+    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
     }
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param fMainEntityOfPage URL value to set.
+     * @param mainEntityOfPage URL value to set.
      */
     @Override
-    public void setMainEntityOfPage(URL fMainEntityOfPage) {
-        this.fMainEntityOfPage = fMainEntityOfPage;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param fMainEntityOfPage java.net.URL value to set.
-     */
-    @Override
-    public void setMainEntityOfPage(java.net.URL fMainEntityOfPage) {
-        this.fMainEntityOfPage = URL.of(fMainEntityOfPage);
+    public void setMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
     }
 
-    private Text fAlternateName;
+    private Text alternateName;
 
     /**
      * An alias for the item.
@@ -756,29 +538,20 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Text getAlternateName() {
-        return fAlternateName;
+        return alternateName;
     }
 
     /**
      * An alias for the item.
      *
-     * @param fAlternateName Text value to set.
+     * @param alternateName Text value to set.
      */
     @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
-    }
-    /**
-     * An alias for the item.
-     *
-     * @param fAlternateName java.lang.String value to set.
-     */
-    @Override
-    public void setAlternateName(java.lang.String fAlternateName) {
-        this.fAlternateName = Text.of(fAlternateName);
+    public void setAlternateName(Text alternateName) {
+        this.alternateName = alternateName;
     }
 
-    private Text fName;
+    private Text name;
 
     /**
      * The name of the item.
@@ -787,29 +560,20 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Text getName() {
-        return fName;
+        return name;
     }
 
     /**
      * The name of the item.
      *
-     * @param fName Text value to set.
+     * @param name Text value to set.
      */
     @Override
-    public void setName(Text fName) {
-        this.fName = fName;
-    }
-    /**
-     * The name of the item.
-     *
-     * @param fName java.lang.String value to set.
-     */
-    @Override
-    public void setName(java.lang.String fName) {
-        this.fName = Text.of(fName);
+    public void setName(Text name) {
+        this.name = name;
     }
 
-    private Action fPotentialAction;
+    private Action potentialAction;
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -818,20 +582,20 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Action getPotentialAction() {
-        return fPotentialAction;
+        return potentialAction;
     }
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      *
-     * @param fPotentialAction Action value to set.
+     * @param potentialAction Action value to set.
      */
     @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
+    public void setPotentialAction(Action potentialAction) {
+        this.potentialAction = potentialAction;
     }
 
-    private Object fImage;
+    private Object image;
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -840,38 +604,29 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getImage() {
-        return (T) fImage;
+        return (T) image;
     }
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param fImage URL value to set.
+     * @param image URL value to set.
      */
     @Override
-    public void setImage(URL fImage) {
-        this.fImage = fImage;
+    public void setImage(URL image) {
+        this.image = image;
     }
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param fImage java.net.URL value to set.
+     * @param image ImageObject value to set.
      */
     @Override
-    public void setImage(java.net.URL fImage) {
-        this.fImage = URL.of(fImage);
-    }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param fImage ImageObject value to set.
-     */
-    @Override
-    public void setImage(ImageObject fImage) {
-        this.fImage = fImage;
+    public void setImage(ImageObject image) {
+        this.image = image;
     }
 
-    private URL fUrl;
+    private URL url;
 
     /**
      * URL of the item.
@@ -880,29 +635,20 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public URL getUrl() {
-        return fUrl;
+        return url;
     }
 
     /**
      * URL of the item.
      *
-     * @param fUrl URL value to set.
+     * @param url URL value to set.
      */
     @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
-    }
-    /**
-     * URL of the item.
-     *
-     * @param fUrl java.net.URL value to set.
-     */
-    @Override
-    public void setUrl(java.net.URL fUrl) {
-        this.fUrl = URL.of(fUrl);
+    public void setUrl(URL url) {
+        this.url = url;
     }
 
-    private Text fDescription;
+    private Text description;
 
     /**
      * A description of the item.
@@ -911,29 +657,20 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Text getDescription() {
-        return fDescription;
+        return description;
     }
 
     /**
      * A description of the item.
      *
-     * @param fDescription Text value to set.
+     * @param description Text value to set.
      */
     @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
-    }
-    /**
-     * A description of the item.
-     *
-     * @param fDescription java.lang.String value to set.
-     */
-    @Override
-    public void setDescription(java.lang.String fDescription) {
-        this.fDescription = Text.of(fDescription);
+    public void setDescription(Text description) {
+        this.description = description;
     }
 
-    private Object fSubjectOf;
+    private Object subjectOf;
 
     /**
      * A CreativeWork or Event about this Thing.
@@ -943,31 +680,31 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getSubjectOf() {
-        return (T) fSubjectOf;
+        return (T) subjectOf;
     }
 
     /**
      * A CreativeWork or Event about this Thing.
      *
-     * @param fSubjectOf Event value to set.
+     * @param subjectOf Event value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Event fSubjectOf) {
-        this.fSubjectOf = fSubjectOf;
+    public void setSubjectOf(Event subjectOf) {
+        this.subjectOf = subjectOf;
     }
     /**
      * A CreativeWork or Event about this Thing.
      *
-     * @param fSubjectOf CreativeWork value to set.
+     * @param subjectOf CreativeWork value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(CreativeWork fSubjectOf) {
-        this.fSubjectOf = fSubjectOf;
+    public void setSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = subjectOf;
     }
 
-    private URL fAdditionalType;
+    private URL additionalType;
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
@@ -976,29 +713,20 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public URL getAdditionalType() {
-        return fAdditionalType;
+        return additionalType;
     }
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
-     * @param fAdditionalType URL value to set.
+     * @param additionalType URL value to set.
      */
     @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
-    }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @param fAdditionalType java.net.URL value to set.
-     */
-    @Override
-    public void setAdditionalType(java.net.URL fAdditionalType) {
-        this.fAdditionalType = URL.of(fAdditionalType);
+    public void setAdditionalType(URL additionalType) {
+        this.additionalType = additionalType;
     }
 
-    private Text fDisambiguatingDescription;
+    private Text disambiguatingDescription;
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
@@ -1007,29 +735,20 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Text getDisambiguatingDescription() {
-        return fDisambiguatingDescription;
+        return disambiguatingDescription;
     }
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
-     * @param fDisambiguatingDescription Text value to set.
+     * @param disambiguatingDescription Text value to set.
      */
     @Override
-    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = fDisambiguatingDescription;
-    }
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @param fDisambiguatingDescription java.lang.String value to set.
-     */
-    @Override
-    public void setDisambiguatingDescription(java.lang.String fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = Text.of(fDisambiguatingDescription);
+    public void setDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = disambiguatingDescription;
     }
 
-    private URL fSameAs;
+    private URL sameAs;
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
@@ -1038,29 +757,20 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public URL getSameAs() {
-        return fSameAs;
+        return sameAs;
     }
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
-     * @param fSameAs URL value to set.
+     * @param sameAs URL value to set.
      */
     @Override
-    public void setSameAs(URL fSameAs) {
-        this.fSameAs = fSameAs;
-    }
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @param fSameAs java.net.URL value to set.
-     */
-    @Override
-    public void setSameAs(java.net.URL fSameAs) {
-        this.fSameAs = URL.of(fSameAs);
+    public void setSameAs(URL sameAs) {
+        this.sameAs = sameAs;
     }
 
-    private Object fIdentifier;
+    private Object identifier;
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -1070,57 +780,37 @@ public class CDCPMDRecordImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getIdentifier() {
-        return (T) fIdentifier;
+        return (T) identifier;
     }
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier URL value to set.
+     * @param identifier URL value to set.
      */
     @Override
-    public void setIdentifier(URL fIdentifier) {
-        this.fIdentifier = fIdentifier;
+    public void setIdentifier(URL identifier) {
+        this.identifier = identifier;
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier java.net.URL value to set.
+     * @param identifier Text value to set.
      */
     @Override
-    public void setIdentifier(java.net.URL fIdentifier) {
-        this.fIdentifier = URL.of(fIdentifier);
+    public void setIdentifier(Text identifier) {
+        this.identifier = identifier;
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier Text value to set.
+     * @param identifier PropertyValue value to set.
      */
     @Override
-    public void setIdentifier(Text fIdentifier) {
-        this.fIdentifier = fIdentifier;
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param fIdentifier java.lang.String value to set.
-     */
-    @Override
-    public void setIdentifier(java.lang.String fIdentifier) {
-        this.fIdentifier = Text.of(fIdentifier);
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param fIdentifier PropertyValue value to set.
-     */
-    @Override
-    public void setIdentifier(PropertyValue fIdentifier) {
-        this.fIdentifier = fIdentifier;
+    public void setIdentifier(PropertyValue identifier) {
+        this.identifier = identifier;
     }
 }

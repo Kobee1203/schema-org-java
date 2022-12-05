@@ -30,31 +30,17 @@ public interface Article extends CreativeWork {
     /**
      * The page on which the work starts; for example "135" or "xiii".
      *
-     * @param fPageStart Text value to set.
+     * @param pageStart Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
-    void setPageStart(Text fPageStart);
+    void setPageStart(Text pageStart);
     /**
      * The page on which the work starts; for example "135" or "xiii".
      *
-     * @param fPageStart java.lang.String value to set.
+     * @param pageStart Integer value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
-    void setPageStart(java.lang.String fPageStart);
-    /**
-     * The page on which the work starts; for example "135" or "xiii".
-     *
-     * @param fPageStart Integer value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
-     */
-    void setPageStart(Integer fPageStart);
-    /**
-     * The page on which the work starts; for example "135" or "xiii".
-     *
-     * @param fPageStart java.lang.Integer value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
-     */
-    void setPageStart(java.lang.Integer fPageStart);
+    void setPageStart(Integer pageStart);
 
     /**
      * Articles may belong to one or more 'sections' in a magazine or newspaper, such as Sports, Lifestyle, etc.
@@ -66,15 +52,9 @@ public interface Article extends CreativeWork {
     /**
      * Articles may belong to one or more 'sections' in a magazine or newspaper, such as Sports, Lifestyle, etc.
      *
-     * @param fArticleSection Text value to set.
+     * @param articleSection Text value to set.
      */
-    void setArticleSection(Text fArticleSection);
-    /**
-     * Articles may belong to one or more 'sections' in a magazine or newspaper, such as Sports, Lifestyle, etc.
-     *
-     * @param fArticleSection java.lang.String value to set.
-     */
-    void setArticleSection(java.lang.String fArticleSection);
+    void setArticleSection(Text articleSection);
 
     /**
      * The page on which the work ends; for example "138" or "xvi".
@@ -87,31 +67,17 @@ public interface Article extends CreativeWork {
     /**
      * The page on which the work ends; for example "138" or "xvi".
      *
-     * @param fPageEnd Text value to set.
+     * @param pageEnd Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
-    void setPageEnd(Text fPageEnd);
+    void setPageEnd(Text pageEnd);
     /**
      * The page on which the work ends; for example "138" or "xvi".
      *
-     * @param fPageEnd java.lang.String value to set.
+     * @param pageEnd Integer value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
-    void setPageEnd(java.lang.String fPageEnd);
-    /**
-     * The page on which the work ends; for example "138" or "xvi".
-     *
-     * @param fPageEnd Integer value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
-     */
-    void setPageEnd(Integer fPageEnd);
-    /**
-     * The page on which the work ends; for example "138" or "xvi".
-     *
-     * @param fPageEnd java.lang.Integer value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
-     */
-    void setPageEnd(java.lang.Integer fPageEnd);
+    void setPageEnd(Integer pageEnd);
 
     /**
      * For an [[Article]], typically a [[NewsArticle]], the backstory property provides a textual summary giving a brief explanation of why and how an article was created. In a journalistic setting this could include information about reporting process, methods, interviews, data sources, etc.
@@ -126,30 +92,21 @@ public interface Article extends CreativeWork {
     /**
      * For an [[Article]], typically a [[NewsArticle]], the backstory property provides a textual summary giving a brief explanation of why and how an article was created. In a journalistic setting this could include information about reporting process, methods, interviews, data sources, etc.
      *
-     * @param fBackstory Text value to set.
+     * @param backstory Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
      */
-    void setBackstory(Text fBackstory);
+    void setBackstory(Text backstory);
     /**
      * For an [[Article]], typically a [[NewsArticle]], the backstory property provides a textual summary giving a brief explanation of why and how an article was created. In a journalistic setting this could include information about reporting process, methods, interviews, data sources, etc.
      *
-     * @param fBackstory java.lang.String value to set.
+     * @param backstory CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
      */
-    void setBackstory(java.lang.String fBackstory);
-    /**
-     * For an [[Article]], typically a [[NewsArticle]], the backstory property provides a textual summary giving a brief explanation of why and how an article was created. In a journalistic setting this could include information about reporting process, methods, interviews, data sources, etc.
-     *
-     * @param fBackstory CreativeWork value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
-     */
-    void setBackstory(CreativeWork fBackstory);
+    void setBackstory(CreativeWork backstory);
 
     /**
      * The number of words in the text of the Article.
@@ -161,15 +118,9 @@ public interface Article extends CreativeWork {
     /**
      * The number of words in the text of the Article.
      *
-     * @param fWordCount Integer value to set.
+     * @param wordCount Integer value to set.
      */
-    void setWordCount(Integer fWordCount);
-    /**
-     * The number of words in the text of the Article.
-     *
-     * @param fWordCount java.lang.Integer value to set.
-     */
-    void setWordCount(java.lang.Integer fWordCount);
+    void setWordCount(Integer wordCount);
 
     /**
      * The actual body of the article.
@@ -181,15 +132,9 @@ public interface Article extends CreativeWork {
     /**
      * The actual body of the article.
      *
-     * @param fArticleBody Text value to set.
+     * @param articleBody Text value to set.
      */
-    void setArticleBody(Text fArticleBody);
-    /**
-     * The actual body of the article.
-     *
-     * @param fArticleBody java.lang.String value to set.
-     */
-    void setArticleBody(java.lang.String fArticleBody);
+    void setArticleBody(Text articleBody);
 
     /**
      * Indicates sections of a Web page that are particularly 'speakable' in the sense of being highlighted as being especially appropriate for text-to-speech conversion. Other sections of a page may also be usefully spoken in particular circumstances; the 'speakable' property serves to indicate the parts most likely to be generally useful for speech.
@@ -228,10 +173,10 @@ public interface Article extends CreativeWork {
      * we define a supporting type, [[SpeakableSpecification]]  which is defined to be a possible value of the *speakable* property.
      *          
      *
-     * @param fSpeakable URL value to set.
+     * @param speakable URL value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1389">https://github.com/schemaorg/schemaorg/issues/1389</a>
      */
-    void setSpeakable(URL fSpeakable);
+    void setSpeakable(URL speakable);
     /**
      * Indicates sections of a Web page that are particularly 'speakable' in the sense of being highlighted as being especially appropriate for text-to-speech conversion. Other sections of a page may also be usefully spoken in particular circumstances; the 'speakable' property serves to indicate the parts most likely to be generally useful for speech.
      * 
@@ -248,30 +193,10 @@ public interface Article extends CreativeWork {
      * we define a supporting type, [[SpeakableSpecification]]  which is defined to be a possible value of the *speakable* property.
      *          
      *
-     * @param fSpeakable java.net.URL value to set.
+     * @param speakable SpeakableSpecification value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1389">https://github.com/schemaorg/schemaorg/issues/1389</a>
      */
-    void setSpeakable(java.net.URL fSpeakable);
-    /**
-     * Indicates sections of a Web page that are particularly 'speakable' in the sense of being highlighted as being especially appropriate for text-to-speech conversion. Other sections of a page may also be usefully spoken in particular circumstances; the 'speakable' property serves to indicate the parts most likely to be generally useful for speech.
-     * 
-     * The *speakable* property can be repeated an arbitrary number of times, with three kinds of possible 'content-locator' values:
-     * 
-     * 1.) *id-value* URL references - uses *id-value* of an element in the page being annotated. The simplest use of *speakable* has (potentially relative) URL values, referencing identified sections of the document concerned.
-     * 
-     * 2.) CSS Selectors - addresses content in the annotated page, eg. via class attribute. Use the [[cssSelector]] property.
-     * 
-     * 3.)  XPaths - addresses content via XPaths (assuming an XML view of the content). Use the [[xpath]] property.
-     * 
-     * 
-     * For more sophisticated markup of speakable sections beyond simple ID references, either CSS selectors or XPath expressions to pick out document section(s) as speakable. For this
-     * we define a supporting type, [[SpeakableSpecification]]  which is defined to be a possible value of the *speakable* property.
-     *          
-     *
-     * @param fSpeakable SpeakableSpecification value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1389">https://github.com/schemaorg/schemaorg/issues/1389</a>
-     */
-    void setSpeakable(SpeakableSpecification fSpeakable);
+    void setSpeakable(SpeakableSpecification speakable);
 
     /**
      * Any description of pages that is not separated into pageStart and pageEnd; for example, "1-6, 9, 55" or "10-12, 46-49".
@@ -284,15 +209,8 @@ public interface Article extends CreativeWork {
     /**
      * Any description of pages that is not separated into pageStart and pageEnd; for example, "1-6, 9, 55" or "10-12, 46-49".
      *
-     * @param fPagination Text value to set.
+     * @param pagination Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
-    void setPagination(Text fPagination);
-    /**
-     * Any description of pages that is not separated into pageStart and pageEnd; for example, "1-6, 9, 55" or "10-12, 46-49".
-     *
-     * @param fPagination java.lang.String value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
-     */
-    void setPagination(java.lang.String fPagination);
+    void setPagination(Text pagination);
 }

@@ -38,10 +38,10 @@ public interface ActionAccessSpecification extends Intangible {
     /**
      * An Offer which must be accepted before the user can perform the Action. For example, the user may need to buy a movie before being able to watch it.
      *
-     * @param fExpectsAcceptanceOf Offer value to set.
+     * @param expectsAcceptanceOf Offer value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
-    void setExpectsAcceptanceOf(Offer fExpectsAcceptanceOf);
+    void setExpectsAcceptanceOf(Offer expectsAcceptanceOf);
 
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
@@ -55,59 +55,43 @@ public interface ActionAccessSpecification extends Intangible {
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
-     * @param fCategory URL value to set.
+     * @param category URL value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
-    void setCategory(URL fCategory);
+    void setCategory(URL category);
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
-     * @param fCategory java.net.URL value to set.
+     * @param category Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
-    void setCategory(java.net.URL fCategory);
+    void setCategory(Text category);
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
-     * @param fCategory Text value to set.
+     * @param category PhysicalActivityCategory value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
-    void setCategory(Text fCategory);
+    void setCategory(PhysicalActivityCategory category);
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
-     * @param fCategory java.lang.String value to set.
+     * @param category Thing value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
-    void setCategory(java.lang.String fCategory);
+    void setCategory(Thing category);
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
-     * @param fCategory PhysicalActivityCategory value to set.
+     * @param category CategoryCode value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
-    void setCategory(PhysicalActivityCategory fCategory);
-    /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-     *
-     * @param fCategory Thing value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     */
-    void setCategory(Thing fCategory);
-    /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-     *
-     * @param fCategory CategoryCode value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     */
-    void setCategory(CategoryCode fCategory);
+    void setCategory(CategoryCode category);
 
     /**
      * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>See also [[eligibleRegion]].
@@ -123,38 +107,29 @@ public interface ActionAccessSpecification extends Intangible {
      * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>See also [[eligibleRegion]].
      *       
      *
-     * @param fIneligibleRegion Place value to set.
+     * @param ineligibleRegion Place value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2242">https://github.com/schemaorg/schemaorg/issues/2242</a>
      */
-    void setIneligibleRegion(Place fIneligibleRegion);
+    void setIneligibleRegion(Place ineligibleRegion);
     /**
      * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>See also [[eligibleRegion]].
      *       
      *
-     * @param fIneligibleRegion Text value to set.
+     * @param ineligibleRegion Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2242">https://github.com/schemaorg/schemaorg/issues/2242</a>
      */
-    void setIneligibleRegion(Text fIneligibleRegion);
+    void setIneligibleRegion(Text ineligibleRegion);
     /**
      * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>See also [[eligibleRegion]].
      *       
      *
-     * @param fIneligibleRegion java.lang.String value to set.
+     * @param ineligibleRegion GeoShape value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2242">https://github.com/schemaorg/schemaorg/issues/2242</a>
      */
-    void setIneligibleRegion(java.lang.String fIneligibleRegion);
-    /**
-     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>See also [[eligibleRegion]].
-     *       
-     *
-     * @param fIneligibleRegion GeoShape value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2242">https://github.com/schemaorg/schemaorg/issues/2242</a>
-     */
-    void setIneligibleRegion(GeoShape fIneligibleRegion);
+    void setIneligibleRegion(GeoShape ineligibleRegion);
 
     /**
      * Indicates if use of the media require a subscription  (either paid or free). Allowed values are ```true``` or ```false``` (note that an earlier version had 'yes', 'no').
@@ -167,24 +142,17 @@ public interface ActionAccessSpecification extends Intangible {
     /**
      * Indicates if use of the media require a subscription  (either paid or free). Allowed values are ```true``` or ```false``` (note that an earlier version had 'yes', 'no').
      *
-     * @param fRequiresSubscription MediaSubscription value to set.
+     * @param requiresSubscription MediaSubscription value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
-    void setRequiresSubscription(MediaSubscription fRequiresSubscription);
+    void setRequiresSubscription(MediaSubscription requiresSubscription);
     /**
      * Indicates if use of the media require a subscription  (either paid or free). Allowed values are ```true``` or ```false``` (note that an earlier version had 'yes', 'no').
      *
-     * @param fRequiresSubscription Boolean value to set.
+     * @param requiresSubscription Boolean value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
-    void setRequiresSubscription(Boolean fRequiresSubscription);
-    /**
-     * Indicates if use of the media require a subscription  (either paid or free). Allowed values are ```true``` or ```false``` (note that an earlier version had 'yes', 'no').
-     *
-     * @param fRequiresSubscription java.lang.Boolean value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     */
-    void setRequiresSubscription(java.lang.Boolean fRequiresSubscription);
+    void setRequiresSubscription(Boolean requiresSubscription);
 
     /**
      * The end of the availability of the product or service included in the offer.
@@ -198,51 +166,27 @@ public interface ActionAccessSpecification extends Intangible {
     /**
      * The end of the availability of the product or service included in the offer.
      *
-     * @param fAvailabilityEnds Date value to set.
+     * @param availabilityEnds Date value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setAvailabilityEnds(Date fAvailabilityEnds);
+    void setAvailabilityEnds(Date availabilityEnds);
     /**
      * The end of the availability of the product or service included in the offer.
      *
-     * @param fAvailabilityEnds java.time.LocalDate value to set.
+     * @param availabilityEnds DateTime value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setAvailabilityEnds(java.time.LocalDate fAvailabilityEnds);
+    void setAvailabilityEnds(DateTime availabilityEnds);
     /**
      * The end of the availability of the product or service included in the offer.
      *
-     * @param fAvailabilityEnds DateTime value to set.
+     * @param availabilityEnds Time value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setAvailabilityEnds(DateTime fAvailabilityEnds);
-    /**
-     * The end of the availability of the product or service included in the offer.
-     *
-     * @param fAvailabilityEnds java.time.LocalDateTime value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void setAvailabilityEnds(java.time.LocalDateTime fAvailabilityEnds);
-    /**
-     * The end of the availability of the product or service included in the offer.
-     *
-     * @param fAvailabilityEnds Time value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void setAvailabilityEnds(Time fAvailabilityEnds);
-    /**
-     * The end of the availability of the product or service included in the offer.
-     *
-     * @param fAvailabilityEnds java.time.LocalTime value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void setAvailabilityEnds(java.time.LocalTime fAvailabilityEnds);
+    void setAvailabilityEnds(Time availabilityEnds);
 
     /**
      * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.<br/><br/>See also [[ineligibleRegion]].
@@ -258,38 +202,29 @@ public interface ActionAccessSpecification extends Intangible {
      * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.<br/><br/>See also [[ineligibleRegion]].
      *     
      *
-     * @param fEligibleRegion GeoShape value to set.
+     * @param eligibleRegion GeoShape value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
-    void setEligibleRegion(GeoShape fEligibleRegion);
+    void setEligibleRegion(GeoShape eligibleRegion);
     /**
      * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.<br/><br/>See also [[ineligibleRegion]].
      *     
      *
-     * @param fEligibleRegion Text value to set.
+     * @param eligibleRegion Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
-    void setEligibleRegion(Text fEligibleRegion);
+    void setEligibleRegion(Text eligibleRegion);
     /**
      * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.<br/><br/>See also [[ineligibleRegion]].
      *     
      *
-     * @param fEligibleRegion java.lang.String value to set.
+     * @param eligibleRegion Place value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
-    void setEligibleRegion(java.lang.String fEligibleRegion);
-    /**
-     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.<br/><br/>See also [[ineligibleRegion]].
-     *     
-     *
-     * @param fEligibleRegion Place value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     */
-    void setEligibleRegion(Place fEligibleRegion);
+    void setEligibleRegion(Place eligibleRegion);
 
     /**
      * The beginning of the availability of the product or service included in the offer.
@@ -303,49 +238,25 @@ public interface ActionAccessSpecification extends Intangible {
     /**
      * The beginning of the availability of the product or service included in the offer.
      *
-     * @param fAvailabilityStarts Time value to set.
+     * @param availabilityStarts Time value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setAvailabilityStarts(Time fAvailabilityStarts);
+    void setAvailabilityStarts(Time availabilityStarts);
     /**
      * The beginning of the availability of the product or service included in the offer.
      *
-     * @param fAvailabilityStarts java.time.LocalTime value to set.
+     * @param availabilityStarts DateTime value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setAvailabilityStarts(java.time.LocalTime fAvailabilityStarts);
+    void setAvailabilityStarts(DateTime availabilityStarts);
     /**
      * The beginning of the availability of the product or service included in the offer.
      *
-     * @param fAvailabilityStarts DateTime value to set.
+     * @param availabilityStarts Date value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setAvailabilityStarts(DateTime fAvailabilityStarts);
-    /**
-     * The beginning of the availability of the product or service included in the offer.
-     *
-     * @param fAvailabilityStarts java.time.LocalDateTime value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void setAvailabilityStarts(java.time.LocalDateTime fAvailabilityStarts);
-    /**
-     * The beginning of the availability of the product or service included in the offer.
-     *
-     * @param fAvailabilityStarts Date value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void setAvailabilityStarts(Date fAvailabilityStarts);
-    /**
-     * The beginning of the availability of the product or service included in the offer.
-     *
-     * @param fAvailabilityStarts java.time.LocalDate value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void setAvailabilityStarts(java.time.LocalDate fAvailabilityStarts);
+    void setAvailabilityStarts(Date availabilityStarts);
 }

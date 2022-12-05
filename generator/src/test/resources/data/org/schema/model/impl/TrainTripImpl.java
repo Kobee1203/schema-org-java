@@ -35,7 +35,7 @@ import org.schema.model.TrainTrip;
 @JsonLdTypeName("TrainTrip")
 public class TrainTripImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements TrainTrip {
 
-    private Text fTrainName;
+    private Text trainName;
 
     /**
      * The name of the train (e.g. The Orient Express).
@@ -44,29 +44,20 @@ public class TrainTripImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Text getTrainName() {
-        return fTrainName;
+        return trainName;
     }
 
     /**
      * The name of the train (e.g. The Orient Express).
      *
-     * @param fTrainName Text value to set.
+     * @param trainName Text value to set.
      */
     @Override
-    public void setTrainName(Text fTrainName) {
-        this.fTrainName = fTrainName;
-    }
-    /**
-     * The name of the train (e.g. The Orient Express).
-     *
-     * @param fTrainName java.lang.String value to set.
-     */
-    @Override
-    public void setTrainName(java.lang.String fTrainName) {
-        this.fTrainName = Text.of(fTrainName);
+    public void setTrainName(Text trainName) {
+        this.trainName = trainName;
     }
 
-    private TrainStation fDepartureStation;
+    private TrainStation departureStation;
 
     /**
      * The station from which the train departs.
@@ -75,20 +66,20 @@ public class TrainTripImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public TrainStation getDepartureStation() {
-        return fDepartureStation;
+        return departureStation;
     }
 
     /**
      * The station from which the train departs.
      *
-     * @param fDepartureStation TrainStation value to set.
+     * @param departureStation TrainStation value to set.
      */
     @Override
-    public void setDepartureStation(TrainStation fDepartureStation) {
-        this.fDepartureStation = fDepartureStation;
+    public void setDepartureStation(TrainStation departureStation) {
+        this.departureStation = departureStation;
     }
 
-    private Text fDeparturePlatform;
+    private Text departurePlatform;
 
     /**
      * The platform from which the train departs.
@@ -97,29 +88,20 @@ public class TrainTripImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Text getDeparturePlatform() {
-        return fDeparturePlatform;
+        return departurePlatform;
     }
 
     /**
      * The platform from which the train departs.
      *
-     * @param fDeparturePlatform Text value to set.
+     * @param departurePlatform Text value to set.
      */
     @Override
-    public void setDeparturePlatform(Text fDeparturePlatform) {
-        this.fDeparturePlatform = fDeparturePlatform;
-    }
-    /**
-     * The platform from which the train departs.
-     *
-     * @param fDeparturePlatform java.lang.String value to set.
-     */
-    @Override
-    public void setDeparturePlatform(java.lang.String fDeparturePlatform) {
-        this.fDeparturePlatform = Text.of(fDeparturePlatform);
+    public void setDeparturePlatform(Text departurePlatform) {
+        this.departurePlatform = departurePlatform;
     }
 
-    private Text fTrainNumber;
+    private Text trainNumber;
 
     /**
      * The unique identifier for the train.
@@ -128,29 +110,20 @@ public class TrainTripImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Text getTrainNumber() {
-        return fTrainNumber;
+        return trainNumber;
     }
 
     /**
      * The unique identifier for the train.
      *
-     * @param fTrainNumber Text value to set.
+     * @param trainNumber Text value to set.
      */
     @Override
-    public void setTrainNumber(Text fTrainNumber) {
-        this.fTrainNumber = fTrainNumber;
-    }
-    /**
-     * The unique identifier for the train.
-     *
-     * @param fTrainNumber java.lang.String value to set.
-     */
-    @Override
-    public void setTrainNumber(java.lang.String fTrainNumber) {
-        this.fTrainNumber = Text.of(fTrainNumber);
+    public void setTrainNumber(Text trainNumber) {
+        this.trainNumber = trainNumber;
     }
 
-    private Text fArrivalPlatform;
+    private Text arrivalPlatform;
 
     /**
      * The platform where the train arrives.
@@ -159,29 +132,20 @@ public class TrainTripImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Text getArrivalPlatform() {
-        return fArrivalPlatform;
+        return arrivalPlatform;
     }
 
     /**
      * The platform where the train arrives.
      *
-     * @param fArrivalPlatform Text value to set.
+     * @param arrivalPlatform Text value to set.
      */
     @Override
-    public void setArrivalPlatform(Text fArrivalPlatform) {
-        this.fArrivalPlatform = fArrivalPlatform;
-    }
-    /**
-     * The platform where the train arrives.
-     *
-     * @param fArrivalPlatform java.lang.String value to set.
-     */
-    @Override
-    public void setArrivalPlatform(java.lang.String fArrivalPlatform) {
-        this.fArrivalPlatform = Text.of(fArrivalPlatform);
+    public void setArrivalPlatform(Text arrivalPlatform) {
+        this.arrivalPlatform = arrivalPlatform;
     }
 
-    private TrainStation fArrivalStation;
+    private TrainStation arrivalStation;
 
     /**
      * The station where the train trip ends.
@@ -190,20 +154,20 @@ public class TrainTripImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public TrainStation getArrivalStation() {
-        return fArrivalStation;
+        return arrivalStation;
     }
 
     /**
      * The station where the train trip ends.
      *
-     * @param fArrivalStation TrainStation value to set.
+     * @param arrivalStation TrainStation value to set.
      */
     @Override
-    public void setArrivalStation(TrainStation fArrivalStation) {
-        this.fArrivalStation = fArrivalStation;
+    public void setArrivalStation(TrainStation arrivalStation) {
+        this.arrivalStation = arrivalStation;
     }
 
-    private Object fArrivalTime;
+    private Object arrivalTime;
 
     /**
      * The expected arrival time.
@@ -212,47 +176,29 @@ public class TrainTripImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getArrivalTime() {
-        return (T) fArrivalTime;
+        return (T) arrivalTime;
     }
 
     /**
      * The expected arrival time.
      *
-     * @param fArrivalTime Time value to set.
+     * @param arrivalTime Time value to set.
      */
     @Override
-    public void setArrivalTime(Time fArrivalTime) {
-        this.fArrivalTime = fArrivalTime;
+    public void setArrivalTime(Time arrivalTime) {
+        this.arrivalTime = arrivalTime;
     }
     /**
      * The expected arrival time.
      *
-     * @param fArrivalTime java.time.LocalTime value to set.
+     * @param arrivalTime DateTime value to set.
      */
     @Override
-    public void setArrivalTime(java.time.LocalTime fArrivalTime) {
-        this.fArrivalTime = Time.of(fArrivalTime);
-    }
-    /**
-     * The expected arrival time.
-     *
-     * @param fArrivalTime DateTime value to set.
-     */
-    @Override
-    public void setArrivalTime(DateTime fArrivalTime) {
-        this.fArrivalTime = fArrivalTime;
-    }
-    /**
-     * The expected arrival time.
-     *
-     * @param fArrivalTime java.time.LocalDateTime value to set.
-     */
-    @Override
-    public void setArrivalTime(java.time.LocalDateTime fArrivalTime) {
-        this.fArrivalTime = DateTime.of(fArrivalTime);
+    public void setArrivalTime(DateTime arrivalTime) {
+        this.arrivalTime = arrivalTime;
     }
 
-    private Object fOffers;
+    private Object offers;
 
     /**
      * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
@@ -263,33 +209,33 @@ public class TrainTripImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getOffers() {
-        return (T) fOffers;
+        return (T) offers;
     }
 
     /**
      * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      *
-     * @param fOffers Offer value to set.
+     * @param offers Offer value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
     @Override
-    public void setOffers(Offer fOffers) {
-        this.fOffers = fOffers;
+    public void setOffers(Offer offers) {
+        this.offers = offers;
     }
     /**
      * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      *
-     * @param fOffers Demand value to set.
+     * @param offers Demand value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
     @Override
-    public void setOffers(Demand fOffers) {
-        this.fOffers = fOffers;
+    public void setOffers(Demand offers) {
+        this.offers = offers;
     }
 
-    private Object fDepartureTime;
+    private Object departureTime;
 
     /**
      * The expected departure time.
@@ -298,47 +244,29 @@ public class TrainTripImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getDepartureTime() {
-        return (T) fDepartureTime;
+        return (T) departureTime;
     }
 
     /**
      * The expected departure time.
      *
-     * @param fDepartureTime Time value to set.
+     * @param departureTime Time value to set.
      */
     @Override
-    public void setDepartureTime(Time fDepartureTime) {
-        this.fDepartureTime = fDepartureTime;
+    public void setDepartureTime(Time departureTime) {
+        this.departureTime = departureTime;
     }
     /**
      * The expected departure time.
      *
-     * @param fDepartureTime java.time.LocalTime value to set.
+     * @param departureTime DateTime value to set.
      */
     @Override
-    public void setDepartureTime(java.time.LocalTime fDepartureTime) {
-        this.fDepartureTime = Time.of(fDepartureTime);
-    }
-    /**
-     * The expected departure time.
-     *
-     * @param fDepartureTime DateTime value to set.
-     */
-    @Override
-    public void setDepartureTime(DateTime fDepartureTime) {
-        this.fDepartureTime = fDepartureTime;
-    }
-    /**
-     * The expected departure time.
-     *
-     * @param fDepartureTime java.time.LocalDateTime value to set.
-     */
-    @Override
-    public void setDepartureTime(java.time.LocalDateTime fDepartureTime) {
-        this.fDepartureTime = DateTime.of(fDepartureTime);
+    public void setDepartureTime(DateTime departureTime) {
+        this.departureTime = departureTime;
     }
 
-    private Object fProvider;
+    private Object provider;
 
     /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
@@ -350,35 +278,35 @@ public class TrainTripImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getProvider() {
-        return (T) fProvider;
+        return (T) provider;
     }
 
     /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
      *
-     * @param fProvider Organization value to set.
+     * @param provider Organization value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
      */
     @Override
-    public void setProvider(Organization fProvider) {
-        this.fProvider = fProvider;
+    public void setProvider(Organization provider) {
+        this.provider = provider;
     }
     /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
      *
-     * @param fProvider Person value to set.
+     * @param provider Person value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
      */
     @Override
-    public void setProvider(Person fProvider) {
-        this.fProvider = fProvider;
+    public void setProvider(Person provider) {
+        this.provider = provider;
     }
 
-    private Trip fSubTrip;
+    private Trip subTrip;
 
     /**
      * Identifies a [[Trip]] that is a subTrip of this Trip.  For example Day 1, Day 2, etc. of a multi-day trip.
@@ -390,23 +318,23 @@ public class TrainTripImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Trip getSubTrip() {
-        return fSubTrip;
+        return subTrip;
     }
 
     /**
      * Identifies a [[Trip]] that is a subTrip of this Trip.  For example Day 1, Day 2, etc. of a multi-day trip.
      *
-     * @param fSubTrip Trip value to set.
+     * @param subTrip Trip value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism</a>
      */
     @Override
-    public void setSubTrip(Trip fSubTrip) {
-        this.fSubTrip = fSubTrip;
+    public void setSubTrip(Trip subTrip) {
+        this.subTrip = subTrip;
     }
 
-    private Object fItinerary;
+    private Object itinerary;
 
     /**
      * Destination(s) ( [[Place]] ) that make up a trip. For a trip where destination order is important use [[ItemList]] to specify that order (see examples).
@@ -418,35 +346,35 @@ public class TrainTripImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getItinerary() {
-        return (T) fItinerary;
+        return (T) itinerary;
     }
 
     /**
      * Destination(s) ( [[Place]] ) that make up a trip. For a trip where destination order is important use [[ItemList]] to specify that order (see examples).
      *
-     * @param fItinerary ItemList value to set.
+     * @param itinerary ItemList value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism</a>
      */
     @Override
-    public void setItinerary(ItemList fItinerary) {
-        this.fItinerary = fItinerary;
+    public void setItinerary(ItemList itinerary) {
+        this.itinerary = itinerary;
     }
     /**
      * Destination(s) ( [[Place]] ) that make up a trip. For a trip where destination order is important use [[ItemList]] to specify that order (see examples).
      *
-     * @param fItinerary Place value to set.
+     * @param itinerary Place value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism</a>
      */
     @Override
-    public void setItinerary(Place fItinerary) {
-        this.fItinerary = fItinerary;
+    public void setItinerary(Place itinerary) {
+        this.itinerary = itinerary;
     }
 
-    private Trip fPartOfTrip;
+    private Trip partOfTrip;
 
     /**
      * Identifies that this [[Trip]] is a subTrip of another Trip.  For example Day 1, Day 2, etc. of a multi-day trip.
@@ -458,23 +386,23 @@ public class TrainTripImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Trip getPartOfTrip() {
-        return fPartOfTrip;
+        return partOfTrip;
     }
 
     /**
      * Identifies that this [[Trip]] is a subTrip of another Trip.  For example Day 1, Day 2, etc. of a multi-day trip.
      *
-     * @param fPartOfTrip Trip value to set.
+     * @param partOfTrip Trip value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1810">https://github.com/schemaorg/schemaorg/issues/1810</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism</a>
      */
     @Override
-    public void setPartOfTrip(Trip fPartOfTrip) {
-        this.fPartOfTrip = fPartOfTrip;
+    public void setPartOfTrip(Trip partOfTrip) {
+        this.partOfTrip = partOfTrip;
     }
 
-    private Object fMainEntityOfPage;
+    private Object mainEntityOfPage;
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -483,38 +411,29 @@ public class TrainTripImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
+        return (T) mainEntityOfPage;
     }
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param fMainEntityOfPage CreativeWork value to set.
+     * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(CreativeWork fMainEntityOfPage) {
-        this.fMainEntityOfPage = fMainEntityOfPage;
+    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
     }
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param fMainEntityOfPage URL value to set.
+     * @param mainEntityOfPage URL value to set.
      */
     @Override
-    public void setMainEntityOfPage(URL fMainEntityOfPage) {
-        this.fMainEntityOfPage = fMainEntityOfPage;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param fMainEntityOfPage java.net.URL value to set.
-     */
-    @Override
-    public void setMainEntityOfPage(java.net.URL fMainEntityOfPage) {
-        this.fMainEntityOfPage = URL.of(fMainEntityOfPage);
+    public void setMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
     }
 
-    private Text fAlternateName;
+    private Text alternateName;
 
     /**
      * An alias for the item.
@@ -523,29 +442,20 @@ public class TrainTripImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Text getAlternateName() {
-        return fAlternateName;
+        return alternateName;
     }
 
     /**
      * An alias for the item.
      *
-     * @param fAlternateName Text value to set.
+     * @param alternateName Text value to set.
      */
     @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
-    }
-    /**
-     * An alias for the item.
-     *
-     * @param fAlternateName java.lang.String value to set.
-     */
-    @Override
-    public void setAlternateName(java.lang.String fAlternateName) {
-        this.fAlternateName = Text.of(fAlternateName);
+    public void setAlternateName(Text alternateName) {
+        this.alternateName = alternateName;
     }
 
-    private Text fName;
+    private Text name;
 
     /**
      * The name of the item.
@@ -554,29 +464,20 @@ public class TrainTripImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Text getName() {
-        return fName;
+        return name;
     }
 
     /**
      * The name of the item.
      *
-     * @param fName Text value to set.
+     * @param name Text value to set.
      */
     @Override
-    public void setName(Text fName) {
-        this.fName = fName;
-    }
-    /**
-     * The name of the item.
-     *
-     * @param fName java.lang.String value to set.
-     */
-    @Override
-    public void setName(java.lang.String fName) {
-        this.fName = Text.of(fName);
+    public void setName(Text name) {
+        this.name = name;
     }
 
-    private Action fPotentialAction;
+    private Action potentialAction;
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -585,20 +486,20 @@ public class TrainTripImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Action getPotentialAction() {
-        return fPotentialAction;
+        return potentialAction;
     }
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      *
-     * @param fPotentialAction Action value to set.
+     * @param potentialAction Action value to set.
      */
     @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
+    public void setPotentialAction(Action potentialAction) {
+        this.potentialAction = potentialAction;
     }
 
-    private Object fImage;
+    private Object image;
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -607,38 +508,29 @@ public class TrainTripImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getImage() {
-        return (T) fImage;
+        return (T) image;
     }
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param fImage URL value to set.
+     * @param image URL value to set.
      */
     @Override
-    public void setImage(URL fImage) {
-        this.fImage = fImage;
+    public void setImage(URL image) {
+        this.image = image;
     }
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param fImage java.net.URL value to set.
+     * @param image ImageObject value to set.
      */
     @Override
-    public void setImage(java.net.URL fImage) {
-        this.fImage = URL.of(fImage);
-    }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param fImage ImageObject value to set.
-     */
-    @Override
-    public void setImage(ImageObject fImage) {
-        this.fImage = fImage;
+    public void setImage(ImageObject image) {
+        this.image = image;
     }
 
-    private URL fUrl;
+    private URL url;
 
     /**
      * URL of the item.
@@ -647,29 +539,20 @@ public class TrainTripImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public URL getUrl() {
-        return fUrl;
+        return url;
     }
 
     /**
      * URL of the item.
      *
-     * @param fUrl URL value to set.
+     * @param url URL value to set.
      */
     @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
-    }
-    /**
-     * URL of the item.
-     *
-     * @param fUrl java.net.URL value to set.
-     */
-    @Override
-    public void setUrl(java.net.URL fUrl) {
-        this.fUrl = URL.of(fUrl);
+    public void setUrl(URL url) {
+        this.url = url;
     }
 
-    private Text fDescription;
+    private Text description;
 
     /**
      * A description of the item.
@@ -678,29 +561,20 @@ public class TrainTripImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Text getDescription() {
-        return fDescription;
+        return description;
     }
 
     /**
      * A description of the item.
      *
-     * @param fDescription Text value to set.
+     * @param description Text value to set.
      */
     @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
-    }
-    /**
-     * A description of the item.
-     *
-     * @param fDescription java.lang.String value to set.
-     */
-    @Override
-    public void setDescription(java.lang.String fDescription) {
-        this.fDescription = Text.of(fDescription);
+    public void setDescription(Text description) {
+        this.description = description;
     }
 
-    private Object fSubjectOf;
+    private Object subjectOf;
 
     /**
      * A CreativeWork or Event about this Thing.
@@ -710,31 +584,31 @@ public class TrainTripImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getSubjectOf() {
-        return (T) fSubjectOf;
+        return (T) subjectOf;
     }
 
     /**
      * A CreativeWork or Event about this Thing.
      *
-     * @param fSubjectOf Event value to set.
+     * @param subjectOf Event value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Event fSubjectOf) {
-        this.fSubjectOf = fSubjectOf;
+    public void setSubjectOf(Event subjectOf) {
+        this.subjectOf = subjectOf;
     }
     /**
      * A CreativeWork or Event about this Thing.
      *
-     * @param fSubjectOf CreativeWork value to set.
+     * @param subjectOf CreativeWork value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(CreativeWork fSubjectOf) {
-        this.fSubjectOf = fSubjectOf;
+    public void setSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = subjectOf;
     }
 
-    private URL fAdditionalType;
+    private URL additionalType;
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
@@ -743,29 +617,20 @@ public class TrainTripImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public URL getAdditionalType() {
-        return fAdditionalType;
+        return additionalType;
     }
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
-     * @param fAdditionalType URL value to set.
+     * @param additionalType URL value to set.
      */
     @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
-    }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @param fAdditionalType java.net.URL value to set.
-     */
-    @Override
-    public void setAdditionalType(java.net.URL fAdditionalType) {
-        this.fAdditionalType = URL.of(fAdditionalType);
+    public void setAdditionalType(URL additionalType) {
+        this.additionalType = additionalType;
     }
 
-    private Text fDisambiguatingDescription;
+    private Text disambiguatingDescription;
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
@@ -774,29 +639,20 @@ public class TrainTripImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Text getDisambiguatingDescription() {
-        return fDisambiguatingDescription;
+        return disambiguatingDescription;
     }
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
-     * @param fDisambiguatingDescription Text value to set.
+     * @param disambiguatingDescription Text value to set.
      */
     @Override
-    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = fDisambiguatingDescription;
-    }
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @param fDisambiguatingDescription java.lang.String value to set.
-     */
-    @Override
-    public void setDisambiguatingDescription(java.lang.String fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = Text.of(fDisambiguatingDescription);
+    public void setDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = disambiguatingDescription;
     }
 
-    private URL fSameAs;
+    private URL sameAs;
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
@@ -805,29 +661,20 @@ public class TrainTripImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public URL getSameAs() {
-        return fSameAs;
+        return sameAs;
     }
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
-     * @param fSameAs URL value to set.
+     * @param sameAs URL value to set.
      */
     @Override
-    public void setSameAs(URL fSameAs) {
-        this.fSameAs = fSameAs;
-    }
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @param fSameAs java.net.URL value to set.
-     */
-    @Override
-    public void setSameAs(java.net.URL fSameAs) {
-        this.fSameAs = URL.of(fSameAs);
+    public void setSameAs(URL sameAs) {
+        this.sameAs = sameAs;
     }
 
-    private Object fIdentifier;
+    private Object identifier;
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -837,57 +684,37 @@ public class TrainTripImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getIdentifier() {
-        return (T) fIdentifier;
+        return (T) identifier;
     }
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier URL value to set.
+     * @param identifier URL value to set.
      */
     @Override
-    public void setIdentifier(URL fIdentifier) {
-        this.fIdentifier = fIdentifier;
+    public void setIdentifier(URL identifier) {
+        this.identifier = identifier;
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier java.net.URL value to set.
+     * @param identifier Text value to set.
      */
     @Override
-    public void setIdentifier(java.net.URL fIdentifier) {
-        this.fIdentifier = URL.of(fIdentifier);
+    public void setIdentifier(Text identifier) {
+        this.identifier = identifier;
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier Text value to set.
+     * @param identifier PropertyValue value to set.
      */
     @Override
-    public void setIdentifier(Text fIdentifier) {
-        this.fIdentifier = fIdentifier;
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param fIdentifier java.lang.String value to set.
-     */
-    @Override
-    public void setIdentifier(java.lang.String fIdentifier) {
-        this.fIdentifier = Text.of(fIdentifier);
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param fIdentifier PropertyValue value to set.
-     */
-    @Override
-    public void setIdentifier(PropertyValue fIdentifier) {
-        this.fIdentifier = fIdentifier;
+    public void setIdentifier(PropertyValue identifier) {
+        this.identifier = identifier;
     }
 }

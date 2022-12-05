@@ -30,19 +30,11 @@ public interface ImageObject extends MediaObject {
     /**
      * Represents textual captioning from a [[MediaObject]], e.g. text of a 'meme'.
      *
-     * @param fEmbeddedTextCaption Text value to set.
+     * @param embeddedTextCaption Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
-    void setEmbeddedTextCaption(Text fEmbeddedTextCaption);
-    /**
-     * Represents textual captioning from a [[MediaObject]], e.g. text of a 'meme'.
-     *
-     * @param fEmbeddedTextCaption java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
-     */
-    void setEmbeddedTextCaption(java.lang.String fEmbeddedTextCaption);
+    void setEmbeddedTextCaption(Text embeddedTextCaption);
 
     /**
      * Indicates whether this image is representative of the content of the page.
@@ -54,15 +46,9 @@ public interface ImageObject extends MediaObject {
     /**
      * Indicates whether this image is representative of the content of the page.
      *
-     * @param fRepresentativeOfPage Boolean value to set.
+     * @param representativeOfPage Boolean value to set.
      */
-    void setRepresentativeOfPage(Boolean fRepresentativeOfPage);
-    /**
-     * Indicates whether this image is representative of the content of the page.
-     *
-     * @param fRepresentativeOfPage java.lang.Boolean value to set.
-     */
-    void setRepresentativeOfPage(java.lang.Boolean fRepresentativeOfPage);
+    void setRepresentativeOfPage(Boolean representativeOfPage);
 
     /**
      * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
@@ -74,21 +60,15 @@ public interface ImageObject extends MediaObject {
     /**
      * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
      *
-     * @param fCaption Text value to set.
+     * @param caption Text value to set.
      */
-    void setCaption(Text fCaption);
+    void setCaption(Text caption);
     /**
      * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
      *
-     * @param fCaption java.lang.String value to set.
+     * @param caption MediaObject value to set.
      */
-    void setCaption(java.lang.String fCaption);
-    /**
-     * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
-     *
-     * @param fCaption MediaObject value to set.
-     */
-    void setCaption(MediaObject fCaption);
+    void setCaption(MediaObject caption);
 
     /**
      * Thumbnail image for an image or video.
@@ -100,9 +80,9 @@ public interface ImageObject extends MediaObject {
     /**
      * Thumbnail image for an image or video.
      *
-     * @param fThumbnail ImageObject value to set.
+     * @param thumbnail ImageObject value to set.
      */
-    void setThumbnail(ImageObject fThumbnail);
+    void setThumbnail(ImageObject thumbnail);
 
     /**
      * exif data for this object.
@@ -114,19 +94,13 @@ public interface ImageObject extends MediaObject {
     /**
      * exif data for this object.
      *
-     * @param fExifData PropertyValue value to set.
+     * @param exifData PropertyValue value to set.
      */
-    void setExifData(PropertyValue fExifData);
+    void setExifData(PropertyValue exifData);
     /**
      * exif data for this object.
      *
-     * @param fExifData Text value to set.
+     * @param exifData Text value to set.
      */
-    void setExifData(Text fExifData);
-    /**
-     * exif data for this object.
-     *
-     * @param fExifData java.lang.String value to set.
-     */
-    void setExifData(java.lang.String fExifData);
+    void setExifData(Text exifData);
 }

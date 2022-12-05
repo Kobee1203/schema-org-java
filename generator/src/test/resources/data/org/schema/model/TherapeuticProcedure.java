@@ -28,10 +28,10 @@ public interface TherapeuticProcedure extends MedicalProcedure {
     /**
      * A possible complication and/or side effect of this therapy. If it is known that an adverse outcome is serious (resulting in death, disability, or permanent damage; requiring hospitalization; or is otherwise life-threatening or requires immediate medical attention), tag it as a seriouseAdverseOutcome instead.
      *
-     * @param fAdverseOutcome MedicalEntity value to set.
+     * @param adverseOutcome MedicalEntity value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setAdverseOutcome(MedicalEntity fAdverseOutcome);
+    void setAdverseOutcome(MedicalEntity adverseOutcome);
 
     /**
      * Specifying a drug or medicine used in a medication procedure.
@@ -44,10 +44,10 @@ public interface TherapeuticProcedure extends MedicalProcedure {
     /**
      * Specifying a drug or medicine used in a medication procedure.
      *
-     * @param fDrug Drug value to set.
+     * @param drug Drug value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setDrug(Drug fDrug);
+    void setDrug(Drug drug);
 
     /**
      * A dosing schedule for the drug for a given population, either observed, recommended, or maximum dose based on the type used.
@@ -60,8 +60,8 @@ public interface TherapeuticProcedure extends MedicalProcedure {
     /**
      * A dosing schedule for the drug for a given population, either observed, recommended, or maximum dose based on the type used.
      *
-     * @param fDoseSchedule DoseSchedule value to set.
+     * @param doseSchedule DoseSchedule value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setDoseSchedule(DoseSchedule fDoseSchedule);
+    void setDoseSchedule(DoseSchedule doseSchedule);
 }

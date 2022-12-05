@@ -28,19 +28,11 @@ public interface AudioObject extends MediaObject {
     /**
      * Represents textual captioning from a [[MediaObject]], e.g. text of a 'meme'.
      *
-     * @param fEmbeddedTextCaption Text value to set.
+     * @param embeddedTextCaption Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
-    void setEmbeddedTextCaption(Text fEmbeddedTextCaption);
-    /**
-     * Represents textual captioning from a [[MediaObject]], e.g. text of a 'meme'.
-     *
-     * @param fEmbeddedTextCaption java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
-     */
-    void setEmbeddedTextCaption(java.lang.String fEmbeddedTextCaption);
+    void setEmbeddedTextCaption(Text embeddedTextCaption);
 
     /**
      * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
@@ -52,21 +44,15 @@ public interface AudioObject extends MediaObject {
     /**
      * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
      *
-     * @param fCaption Text value to set.
+     * @param caption Text value to set.
      */
-    void setCaption(Text fCaption);
+    void setCaption(Text caption);
     /**
      * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
      *
-     * @param fCaption java.lang.String value to set.
+     * @param caption MediaObject value to set.
      */
-    void setCaption(java.lang.String fCaption);
-    /**
-     * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
-     *
-     * @param fCaption MediaObject value to set.
-     */
-    void setCaption(MediaObject fCaption);
+    void setCaption(MediaObject caption);
 
     /**
      * If this MediaObject is an AudioObject or VideoObject, the transcript of that object.
@@ -78,13 +64,7 @@ public interface AudioObject extends MediaObject {
     /**
      * If this MediaObject is an AudioObject or VideoObject, the transcript of that object.
      *
-     * @param fTranscript Text value to set.
+     * @param transcript Text value to set.
      */
-    void setTranscript(Text fTranscript);
-    /**
-     * If this MediaObject is an AudioObject or VideoObject, the transcript of that object.
-     *
-     * @param fTranscript java.lang.String value to set.
-     */
-    void setTranscript(java.lang.String fTranscript);
+    void setTranscript(Text transcript);
 }

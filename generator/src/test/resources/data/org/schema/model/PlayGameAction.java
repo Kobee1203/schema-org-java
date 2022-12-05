@@ -29,25 +29,17 @@ public interface PlayGameAction extends ConsumeAction {
     /**
      * Indicates the availability type of the game content associated with this action, such as whether it is a full version or a demo.
      *
-     * @param fGameAvailabilityType GameAvailabilityEnumeration value to set.
+     * @param gameAvailabilityType GameAvailabilityEnumeration value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3058">https://github.com/schemaorg/schemaorg/issues/3058</a>
      */
-    void setGameAvailabilityType(GameAvailabilityEnumeration fGameAvailabilityType);
+    void setGameAvailabilityType(GameAvailabilityEnumeration gameAvailabilityType);
     /**
      * Indicates the availability type of the game content associated with this action, such as whether it is a full version or a demo.
      *
-     * @param fGameAvailabilityType Text value to set.
+     * @param gameAvailabilityType Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3058">https://github.com/schemaorg/schemaorg/issues/3058</a>
      */
-    void setGameAvailabilityType(Text fGameAvailabilityType);
-    /**
-     * Indicates the availability type of the game content associated with this action, such as whether it is a full version or a demo.
-     *
-     * @param fGameAvailabilityType java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3058">https://github.com/schemaorg/schemaorg/issues/3058</a>
-     */
-    void setGameAvailabilityType(java.lang.String fGameAvailabilityType);
+    void setGameAvailabilityType(Text gameAvailabilityType);
 }

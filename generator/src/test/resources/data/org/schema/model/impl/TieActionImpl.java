@@ -34,7 +34,7 @@ import org.schema.model.TieAction;
 @JsonLdTypeName("TieAction")
 public class TieActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements TieAction {
 
-    private Object fAgent;
+    private Object agent;
 
     /**
      * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
@@ -43,29 +43,29 @@ public class TieActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getAgent() {
-        return (T) fAgent;
+        return (T) agent;
     }
 
     /**
      * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
      *
-     * @param fAgent Organization value to set.
+     * @param agent Organization value to set.
      */
     @Override
-    public void setAgent(Organization fAgent) {
-        this.fAgent = fAgent;
+    public void setAgent(Organization agent) {
+        this.agent = agent;
     }
     /**
      * The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
      *
-     * @param fAgent Person value to set.
+     * @param agent Person value to set.
      */
     @Override
-    public void setAgent(Person fAgent) {
-        this.fAgent = fAgent;
+    public void setAgent(Person agent) {
+        this.agent = agent;
     }
 
-    private Object fStartTime;
+    private Object startTime;
 
     /**
      * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
@@ -75,51 +75,31 @@ public class TieActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getStartTime() {
-        return (T) fStartTime;
+        return (T) startTime;
     }
 
     /**
      * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
      *
-     * @param fStartTime DateTime value to set.
+     * @param startTime DateTime value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
      */
     @Override
-    public void setStartTime(DateTime fStartTime) {
-        this.fStartTime = fStartTime;
+    public void setStartTime(DateTime startTime) {
+        this.startTime = startTime;
     }
     /**
      * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
      *
-     * @param fStartTime java.time.LocalDateTime value to set.
+     * @param startTime Time value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
      */
     @Override
-    public void setStartTime(java.time.LocalDateTime fStartTime) {
-        this.fStartTime = DateTime.of(fStartTime);
-    }
-    /**
-     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     *
-     * @param fStartTime Time value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
-     */
-    @Override
-    public void setStartTime(Time fStartTime) {
-        this.fStartTime = fStartTime;
-    }
-    /**
-     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     *
-     * @param fStartTime java.time.LocalTime value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
-     */
-    @Override
-    public void setStartTime(java.time.LocalTime fStartTime) {
-        this.fStartTime = Time.of(fStartTime);
+    public void setStartTime(Time startTime) {
+        this.startTime = startTime;
     }
 
-    private ActionStatusType fActionStatus;
+    private ActionStatusType actionStatus;
 
     /**
      * Indicates the current disposition of the Action.
@@ -128,20 +108,20 @@ public class TieActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public ActionStatusType getActionStatus() {
-        return fActionStatus;
+        return actionStatus;
     }
 
     /**
      * Indicates the current disposition of the Action.
      *
-     * @param fActionStatus ActionStatusType value to set.
+     * @param actionStatus ActionStatusType value to set.
      */
     @Override
-    public void setActionStatus(ActionStatusType fActionStatus) {
-        this.fActionStatus = fActionStatus;
+    public void setActionStatus(ActionStatusType actionStatus) {
+        this.actionStatus = actionStatus;
     }
 
-    private Object fProvider;
+    private Object provider;
 
     /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
@@ -153,35 +133,35 @@ public class TieActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getProvider() {
-        return (T) fProvider;
+        return (T) provider;
     }
 
     /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
      *
-     * @param fProvider Organization value to set.
+     * @param provider Organization value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
      */
     @Override
-    public void setProvider(Organization fProvider) {
-        this.fProvider = fProvider;
+    public void setProvider(Organization provider) {
+        this.provider = provider;
     }
     /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
      *
-     * @param fProvider Person value to set.
+     * @param provider Person value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
      */
     @Override
-    public void setProvider(Person fProvider) {
-        this.fProvider = fProvider;
+    public void setProvider(Person provider) {
+        this.provider = provider;
     }
 
-    private Thing fResult;
+    private Thing result;
 
     /**
      * The result produced in the action. e.g. John wrote *a book*.
@@ -190,20 +170,20 @@ public class TieActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Thing getResult() {
-        return fResult;
+        return result;
     }
 
     /**
      * The result produced in the action. e.g. John wrote *a book*.
      *
-     * @param fResult Thing value to set.
+     * @param result Thing value to set.
      */
     @Override
-    public void setResult(Thing fResult) {
-        this.fResult = fResult;
+    public void setResult(Thing result) {
+        this.result = result;
     }
 
-    private Object fLocation;
+    private Object location;
 
     /**
      * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
@@ -212,56 +192,47 @@ public class TieActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getLocation() {
-        return (T) fLocation;
+        return (T) location;
     }
 
     /**
      * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
      *
-     * @param fLocation PostalAddress value to set.
+     * @param location PostalAddress value to set.
      */
     @Override
-    public void setLocation(PostalAddress fLocation) {
-        this.fLocation = fLocation;
+    public void setLocation(PostalAddress location) {
+        this.location = location;
     }
     /**
      * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
      *
-     * @param fLocation Text value to set.
+     * @param location Text value to set.
      */
     @Override
-    public void setLocation(Text fLocation) {
-        this.fLocation = fLocation;
+    public void setLocation(Text location) {
+        this.location = location;
     }
     /**
      * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
      *
-     * @param fLocation java.lang.String value to set.
+     * @param location Place value to set.
      */
     @Override
-    public void setLocation(java.lang.String fLocation) {
-        this.fLocation = Text.of(fLocation);
+    public void setLocation(Place location) {
+        this.location = location;
     }
     /**
      * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
      *
-     * @param fLocation Place value to set.
+     * @param location VirtualLocation value to set.
      */
     @Override
-    public void setLocation(Place fLocation) {
-        this.fLocation = fLocation;
-    }
-    /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-     *
-     * @param fLocation VirtualLocation value to set.
-     */
-    @Override
-    public void setLocation(VirtualLocation fLocation) {
-        this.fLocation = fLocation;
+    public void setLocation(VirtualLocation location) {
+        this.location = location;
     }
 
-    private Thing fObject;
+    private Thing object;
 
     /**
      * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read *a book*.
@@ -270,20 +241,20 @@ public class TieActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Thing getObject() {
-        return fObject;
+        return object;
     }
 
     /**
      * The object upon which the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read *a book*.
      *
-     * @param fObject Thing value to set.
+     * @param object Thing value to set.
      */
     @Override
-    public void setObject(Thing fObject) {
-        this.fObject = fObject;
+    public void setObject(Thing object) {
+        this.object = object;
     }
 
-    private EntryPoint fTarget;
+    private EntryPoint target;
 
     /**
      * Indicates a target EntryPoint for an Action.
@@ -292,20 +263,20 @@ public class TieActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public EntryPoint getTarget() {
-        return fTarget;
+        return target;
     }
 
     /**
      * Indicates a target EntryPoint for an Action.
      *
-     * @param fTarget EntryPoint value to set.
+     * @param target EntryPoint value to set.
      */
     @Override
-    public void setTarget(EntryPoint fTarget) {
-        this.fTarget = fTarget;
+    public void setTarget(EntryPoint target) {
+        this.target = target;
     }
 
-    private Object fEndTime;
+    private Object endTime;
 
     /**
      * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
@@ -315,51 +286,31 @@ public class TieActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getEndTime() {
-        return (T) fEndTime;
+        return (T) endTime;
     }
 
     /**
      * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
      *
-     * @param fEndTime DateTime value to set.
+     * @param endTime DateTime value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
      */
     @Override
-    public void setEndTime(DateTime fEndTime) {
-        this.fEndTime = fEndTime;
+    public void setEndTime(DateTime endTime) {
+        this.endTime = endTime;
     }
     /**
      * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
      *
-     * @param fEndTime java.time.LocalDateTime value to set.
+     * @param endTime Time value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
      */
     @Override
-    public void setEndTime(java.time.LocalDateTime fEndTime) {
-        this.fEndTime = DateTime.of(fEndTime);
-    }
-    /**
-     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     *
-     * @param fEndTime Time value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
-     */
-    @Override
-    public void setEndTime(Time fEndTime) {
-        this.fEndTime = fEndTime;
-    }
-    /**
-     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     *
-     * @param fEndTime java.time.LocalTime value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
-     */
-    @Override
-    public void setEndTime(java.time.LocalTime fEndTime) {
-        this.fEndTime = Time.of(fEndTime);
+    public void setEndTime(Time endTime) {
+        this.endTime = endTime;
     }
 
-    private Object fParticipant;
+    private Object participant;
 
     /**
      * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
@@ -368,29 +319,29 @@ public class TieActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getParticipant() {
-        return (T) fParticipant;
+        return (T) participant;
     }
 
     /**
      * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
      *
-     * @param fParticipant Organization value to set.
+     * @param participant Organization value to set.
      */
     @Override
-    public void setParticipant(Organization fParticipant) {
-        this.fParticipant = fParticipant;
+    public void setParticipant(Organization participant) {
+        this.participant = participant;
     }
     /**
      * Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
      *
-     * @param fParticipant Person value to set.
+     * @param participant Person value to set.
      */
     @Override
-    public void setParticipant(Person fParticipant) {
-        this.fParticipant = fParticipant;
+    public void setParticipant(Person participant) {
+        this.participant = participant;
     }
 
-    private Thing fInstrument;
+    private Thing instrument;
 
     /**
      * The object that helped the agent perform the action. e.g. John wrote a book with *a pen*.
@@ -399,20 +350,20 @@ public class TieActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Thing getInstrument() {
-        return fInstrument;
+        return instrument;
     }
 
     /**
      * The object that helped the agent perform the action. e.g. John wrote a book with *a pen*.
      *
-     * @param fInstrument Thing value to set.
+     * @param instrument Thing value to set.
      */
     @Override
-    public void setInstrument(Thing fInstrument) {
-        this.fInstrument = fInstrument;
+    public void setInstrument(Thing instrument) {
+        this.instrument = instrument;
     }
 
-    private Thing fError;
+    private Thing error;
 
     /**
      * For failed actions, more information on the cause of the failure.
@@ -421,20 +372,20 @@ public class TieActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Thing getError() {
-        return fError;
+        return error;
     }
 
     /**
      * For failed actions, more information on the cause of the failure.
      *
-     * @param fError Thing value to set.
+     * @param error Thing value to set.
      */
     @Override
-    public void setError(Thing fError) {
-        this.fError = fError;
+    public void setError(Thing error) {
+        this.error = error;
     }
 
-    private Object fMainEntityOfPage;
+    private Object mainEntityOfPage;
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -443,38 +394,29 @@ public class TieActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
+        return (T) mainEntityOfPage;
     }
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param fMainEntityOfPage CreativeWork value to set.
+     * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(CreativeWork fMainEntityOfPage) {
-        this.fMainEntityOfPage = fMainEntityOfPage;
+    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
     }
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param fMainEntityOfPage URL value to set.
+     * @param mainEntityOfPage URL value to set.
      */
     @Override
-    public void setMainEntityOfPage(URL fMainEntityOfPage) {
-        this.fMainEntityOfPage = fMainEntityOfPage;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param fMainEntityOfPage java.net.URL value to set.
-     */
-    @Override
-    public void setMainEntityOfPage(java.net.URL fMainEntityOfPage) {
-        this.fMainEntityOfPage = URL.of(fMainEntityOfPage);
+    public void setMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
     }
 
-    private Text fAlternateName;
+    private Text alternateName;
 
     /**
      * An alias for the item.
@@ -483,29 +425,20 @@ public class TieActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Text getAlternateName() {
-        return fAlternateName;
+        return alternateName;
     }
 
     /**
      * An alias for the item.
      *
-     * @param fAlternateName Text value to set.
+     * @param alternateName Text value to set.
      */
     @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
-    }
-    /**
-     * An alias for the item.
-     *
-     * @param fAlternateName java.lang.String value to set.
-     */
-    @Override
-    public void setAlternateName(java.lang.String fAlternateName) {
-        this.fAlternateName = Text.of(fAlternateName);
+    public void setAlternateName(Text alternateName) {
+        this.alternateName = alternateName;
     }
 
-    private Text fName;
+    private Text name;
 
     /**
      * The name of the item.
@@ -514,29 +447,20 @@ public class TieActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Text getName() {
-        return fName;
+        return name;
     }
 
     /**
      * The name of the item.
      *
-     * @param fName Text value to set.
+     * @param name Text value to set.
      */
     @Override
-    public void setName(Text fName) {
-        this.fName = fName;
-    }
-    /**
-     * The name of the item.
-     *
-     * @param fName java.lang.String value to set.
-     */
-    @Override
-    public void setName(java.lang.String fName) {
-        this.fName = Text.of(fName);
+    public void setName(Text name) {
+        this.name = name;
     }
 
-    private Action fPotentialAction;
+    private Action potentialAction;
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -545,20 +469,20 @@ public class TieActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Action getPotentialAction() {
-        return fPotentialAction;
+        return potentialAction;
     }
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      *
-     * @param fPotentialAction Action value to set.
+     * @param potentialAction Action value to set.
      */
     @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
+    public void setPotentialAction(Action potentialAction) {
+        this.potentialAction = potentialAction;
     }
 
-    private Object fImage;
+    private Object image;
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -567,38 +491,29 @@ public class TieActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getImage() {
-        return (T) fImage;
+        return (T) image;
     }
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param fImage URL value to set.
+     * @param image URL value to set.
      */
     @Override
-    public void setImage(URL fImage) {
-        this.fImage = fImage;
+    public void setImage(URL image) {
+        this.image = image;
     }
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param fImage java.net.URL value to set.
+     * @param image ImageObject value to set.
      */
     @Override
-    public void setImage(java.net.URL fImage) {
-        this.fImage = URL.of(fImage);
-    }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param fImage ImageObject value to set.
-     */
-    @Override
-    public void setImage(ImageObject fImage) {
-        this.fImage = fImage;
+    public void setImage(ImageObject image) {
+        this.image = image;
     }
 
-    private URL fUrl;
+    private URL url;
 
     /**
      * URL of the item.
@@ -607,29 +522,20 @@ public class TieActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public URL getUrl() {
-        return fUrl;
+        return url;
     }
 
     /**
      * URL of the item.
      *
-     * @param fUrl URL value to set.
+     * @param url URL value to set.
      */
     @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
-    }
-    /**
-     * URL of the item.
-     *
-     * @param fUrl java.net.URL value to set.
-     */
-    @Override
-    public void setUrl(java.net.URL fUrl) {
-        this.fUrl = URL.of(fUrl);
+    public void setUrl(URL url) {
+        this.url = url;
     }
 
-    private Text fDescription;
+    private Text description;
 
     /**
      * A description of the item.
@@ -638,29 +544,20 @@ public class TieActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Text getDescription() {
-        return fDescription;
+        return description;
     }
 
     /**
      * A description of the item.
      *
-     * @param fDescription Text value to set.
+     * @param description Text value to set.
      */
     @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
-    }
-    /**
-     * A description of the item.
-     *
-     * @param fDescription java.lang.String value to set.
-     */
-    @Override
-    public void setDescription(java.lang.String fDescription) {
-        this.fDescription = Text.of(fDescription);
+    public void setDescription(Text description) {
+        this.description = description;
     }
 
-    private Object fSubjectOf;
+    private Object subjectOf;
 
     /**
      * A CreativeWork or Event about this Thing.
@@ -670,31 +567,31 @@ public class TieActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getSubjectOf() {
-        return (T) fSubjectOf;
+        return (T) subjectOf;
     }
 
     /**
      * A CreativeWork or Event about this Thing.
      *
-     * @param fSubjectOf Event value to set.
+     * @param subjectOf Event value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Event fSubjectOf) {
-        this.fSubjectOf = fSubjectOf;
+    public void setSubjectOf(Event subjectOf) {
+        this.subjectOf = subjectOf;
     }
     /**
      * A CreativeWork or Event about this Thing.
      *
-     * @param fSubjectOf CreativeWork value to set.
+     * @param subjectOf CreativeWork value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(CreativeWork fSubjectOf) {
-        this.fSubjectOf = fSubjectOf;
+    public void setSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = subjectOf;
     }
 
-    private URL fAdditionalType;
+    private URL additionalType;
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
@@ -703,29 +600,20 @@ public class TieActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public URL getAdditionalType() {
-        return fAdditionalType;
+        return additionalType;
     }
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
-     * @param fAdditionalType URL value to set.
+     * @param additionalType URL value to set.
      */
     @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
-    }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @param fAdditionalType java.net.URL value to set.
-     */
-    @Override
-    public void setAdditionalType(java.net.URL fAdditionalType) {
-        this.fAdditionalType = URL.of(fAdditionalType);
+    public void setAdditionalType(URL additionalType) {
+        this.additionalType = additionalType;
     }
 
-    private Text fDisambiguatingDescription;
+    private Text disambiguatingDescription;
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
@@ -734,29 +622,20 @@ public class TieActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Text getDisambiguatingDescription() {
-        return fDisambiguatingDescription;
+        return disambiguatingDescription;
     }
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
-     * @param fDisambiguatingDescription Text value to set.
+     * @param disambiguatingDescription Text value to set.
      */
     @Override
-    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = fDisambiguatingDescription;
-    }
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @param fDisambiguatingDescription java.lang.String value to set.
-     */
-    @Override
-    public void setDisambiguatingDescription(java.lang.String fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = Text.of(fDisambiguatingDescription);
+    public void setDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = disambiguatingDescription;
     }
 
-    private URL fSameAs;
+    private URL sameAs;
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
@@ -765,29 +644,20 @@ public class TieActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public URL getSameAs() {
-        return fSameAs;
+        return sameAs;
     }
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
-     * @param fSameAs URL value to set.
+     * @param sameAs URL value to set.
      */
     @Override
-    public void setSameAs(URL fSameAs) {
-        this.fSameAs = fSameAs;
-    }
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @param fSameAs java.net.URL value to set.
-     */
-    @Override
-    public void setSameAs(java.net.URL fSameAs) {
-        this.fSameAs = URL.of(fSameAs);
+    public void setSameAs(URL sameAs) {
+        this.sameAs = sameAs;
     }
 
-    private Object fIdentifier;
+    private Object identifier;
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -797,57 +667,37 @@ public class TieActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getIdentifier() {
-        return (T) fIdentifier;
+        return (T) identifier;
     }
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier URL value to set.
+     * @param identifier URL value to set.
      */
     @Override
-    public void setIdentifier(URL fIdentifier) {
-        this.fIdentifier = fIdentifier;
+    public void setIdentifier(URL identifier) {
+        this.identifier = identifier;
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier java.net.URL value to set.
+     * @param identifier Text value to set.
      */
     @Override
-    public void setIdentifier(java.net.URL fIdentifier) {
-        this.fIdentifier = URL.of(fIdentifier);
+    public void setIdentifier(Text identifier) {
+        this.identifier = identifier;
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier Text value to set.
+     * @param identifier PropertyValue value to set.
      */
     @Override
-    public void setIdentifier(Text fIdentifier) {
-        this.fIdentifier = fIdentifier;
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param fIdentifier java.lang.String value to set.
-     */
-    @Override
-    public void setIdentifier(java.lang.String fIdentifier) {
-        this.fIdentifier = Text.of(fIdentifier);
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param fIdentifier PropertyValue value to set.
-     */
-    @Override
-    public void setIdentifier(PropertyValue fIdentifier) {
-        this.fIdentifier = fIdentifier;
+    public void setIdentifier(PropertyValue identifier) {
+        this.identifier = identifier;
     }
 }

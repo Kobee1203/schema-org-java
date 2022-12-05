@@ -33,34 +33,26 @@ public interface HotelRoom extends Room {
      * The type of bed or beds included in the accommodation. For the single case of just one bed of a certain type, you use bed directly with a text.
      *       If you want to indicate the quantity of a certain kind of bed, use an instance of BedDetails. For more detailed information, use the amenityFeature property.
      *
-     * @param fBed BedDetails value to set.
+     * @param bed BedDetails value to set.
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
-    void setBed(BedDetails fBed);
+    void setBed(BedDetails bed);
     /**
      * The type of bed or beds included in the accommodation. For the single case of just one bed of a certain type, you use bed directly with a text.
      *       If you want to indicate the quantity of a certain kind of bed, use an instance of BedDetails. For more detailed information, use the amenityFeature property.
      *
-     * @param fBed Text value to set.
+     * @param bed Text value to set.
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
-    void setBed(Text fBed);
+    void setBed(Text bed);
     /**
      * The type of bed or beds included in the accommodation. For the single case of just one bed of a certain type, you use bed directly with a text.
      *       If you want to indicate the quantity of a certain kind of bed, use an instance of BedDetails. For more detailed information, use the amenityFeature property.
      *
-     * @param fBed java.lang.String value to set.
+     * @param bed BedType value to set.
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
-    void setBed(java.lang.String fBed);
-    /**
-     * The type of bed or beds included in the accommodation. For the single case of just one bed of a certain type, you use bed directly with a text.
-     *       If you want to indicate the quantity of a certain kind of bed, use an instance of BedDetails. For more detailed information, use the amenityFeature property.
-     *
-     * @param fBed BedType value to set.
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
-     */
-    void setBed(BedType fBed);
+    void setBed(BedType bed);
 
     /**
      * The allowed total occupancy for the accommodation in persons (including infants etc). For individual accommodations, this is not necessarily the legal maximum but defines the permitted usage as per the contractual agreement (e.g. a double room used by a single person).
@@ -75,8 +67,8 @@ public interface HotelRoom extends Room {
      * The allowed total occupancy for the accommodation in persons (including infants etc). For individual accommodations, this is not necessarily the legal maximum but defines the permitted usage as per the contractual agreement (e.g. a double room used by a single person).
      * Typical unit code(s): C62 for person
      *
-     * @param fOccupancy QuantitativeValue value to set.
+     * @param occupancy QuantitativeValue value to set.
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
-    void setOccupancy(QuantitativeValue fOccupancy);
+    void setOccupancy(QuantitativeValue occupancy);
 }

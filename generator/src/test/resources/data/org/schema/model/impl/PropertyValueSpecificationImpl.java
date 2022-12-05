@@ -28,7 +28,7 @@ import org.schema.model.PropertyValueSpecification;
 @JsonLdTypeName("PropertyValueSpecification")
 public class PropertyValueSpecificationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PropertyValueSpecification {
 
-    private Number fValueMaxLength;
+    private Number valueMaxLength;
 
     /**
      * Specifies the allowed range for number of characters in a literal value.
@@ -37,29 +37,20 @@ public class PropertyValueSpecificationImpl extends com.weedow.schemaorg.commons
      */
     @Override
     public Number getValueMaxLength() {
-        return fValueMaxLength;
+        return valueMaxLength;
     }
 
     /**
      * Specifies the allowed range for number of characters in a literal value.
      *
-     * @param fValueMaxLength Number value to set.
+     * @param valueMaxLength Number value to set.
      */
     @Override
-    public void setValueMaxLength(Number fValueMaxLength) {
-        this.fValueMaxLength = fValueMaxLength;
-    }
-    /**
-     * Specifies the allowed range for number of characters in a literal value.
-     *
-     * @param fValueMaxLength java.lang.Number value to set.
-     */
-    @Override
-    public void setValueMaxLength(java.lang.Number fValueMaxLength) {
-        this.fValueMaxLength = Number.of(fValueMaxLength);
+    public void setValueMaxLength(Number valueMaxLength) {
+        this.valueMaxLength = valueMaxLength;
     }
 
-    private Boolean fReadonlyValue;
+    private Boolean readonlyValue;
 
     /**
      * Whether or not a property is mutable.  Default is false. Specifying this for a property that also has a value makes it act similar to a "hidden" input in an HTML form.
@@ -68,29 +59,20 @@ public class PropertyValueSpecificationImpl extends com.weedow.schemaorg.commons
      */
     @Override
     public Boolean getReadonlyValue() {
-        return fReadonlyValue;
+        return readonlyValue;
     }
 
     /**
      * Whether or not a property is mutable.  Default is false. Specifying this for a property that also has a value makes it act similar to a "hidden" input in an HTML form.
      *
-     * @param fReadonlyValue Boolean value to set.
+     * @param readonlyValue Boolean value to set.
      */
     @Override
-    public void setReadonlyValue(Boolean fReadonlyValue) {
-        this.fReadonlyValue = fReadonlyValue;
-    }
-    /**
-     * Whether or not a property is mutable.  Default is false. Specifying this for a property that also has a value makes it act similar to a "hidden" input in an HTML form.
-     *
-     * @param fReadonlyValue java.lang.Boolean value to set.
-     */
-    @Override
-    public void setReadonlyValue(java.lang.Boolean fReadonlyValue) {
-        this.fReadonlyValue = Boolean.of(fReadonlyValue);
+    public void setReadonlyValue(Boolean readonlyValue) {
+        this.readonlyValue = readonlyValue;
     }
 
-    private Number fMaxValue;
+    private Number maxValue;
 
     /**
      * The upper value of some characteristic or property.
@@ -100,31 +82,21 @@ public class PropertyValueSpecificationImpl extends com.weedow.schemaorg.commons
      */
     @Override
     public Number getMaxValue() {
-        return fMaxValue;
+        return maxValue;
     }
 
     /**
      * The upper value of some characteristic or property.
      *
-     * @param fMaxValue Number value to set.
+     * @param maxValue Number value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setMaxValue(Number fMaxValue) {
-        this.fMaxValue = fMaxValue;
-    }
-    /**
-     * The upper value of some characteristic or property.
-     *
-     * @param fMaxValue java.lang.Number value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setMaxValue(java.lang.Number fMaxValue) {
-        this.fMaxValue = Number.of(fMaxValue);
+    public void setMaxValue(Number maxValue) {
+        this.maxValue = maxValue;
     }
 
-    private Text fValueName;
+    private Text valueName;
 
     /**
      * Indicates the name of the PropertyValueSpecification to be used in URL templates and form encoding in a manner analogous to HTML's input@name.
@@ -133,29 +105,20 @@ public class PropertyValueSpecificationImpl extends com.weedow.schemaorg.commons
      */
     @Override
     public Text getValueName() {
-        return fValueName;
+        return valueName;
     }
 
     /**
      * Indicates the name of the PropertyValueSpecification to be used in URL templates and form encoding in a manner analogous to HTML's input@name.
      *
-     * @param fValueName Text value to set.
+     * @param valueName Text value to set.
      */
     @Override
-    public void setValueName(Text fValueName) {
-        this.fValueName = fValueName;
-    }
-    /**
-     * Indicates the name of the PropertyValueSpecification to be used in URL templates and form encoding in a manner analogous to HTML's input@name.
-     *
-     * @param fValueName java.lang.String value to set.
-     */
-    @Override
-    public void setValueName(java.lang.String fValueName) {
-        this.fValueName = Text.of(fValueName);
+    public void setValueName(Text valueName) {
+        this.valueName = valueName;
     }
 
-    private Object fDefaultValue;
+    private Object defaultValue;
 
     /**
      * The default value of the input.  For properties that expect a literal, the default is a literal value, for properties that expect an object, it's an ID reference to one of the current values.
@@ -164,38 +127,29 @@ public class PropertyValueSpecificationImpl extends com.weedow.schemaorg.commons
      */
     @Override
     public <T> T getDefaultValue() {
-        return (T) fDefaultValue;
+        return (T) defaultValue;
     }
 
     /**
      * The default value of the input.  For properties that expect a literal, the default is a literal value, for properties that expect an object, it's an ID reference to one of the current values.
      *
-     * @param fDefaultValue Text value to set.
+     * @param defaultValue Text value to set.
      */
     @Override
-    public void setDefaultValue(Text fDefaultValue) {
-        this.fDefaultValue = fDefaultValue;
+    public void setDefaultValue(Text defaultValue) {
+        this.defaultValue = defaultValue;
     }
     /**
      * The default value of the input.  For properties that expect a literal, the default is a literal value, for properties that expect an object, it's an ID reference to one of the current values.
      *
-     * @param fDefaultValue java.lang.String value to set.
+     * @param defaultValue Thing value to set.
      */
     @Override
-    public void setDefaultValue(java.lang.String fDefaultValue) {
-        this.fDefaultValue = Text.of(fDefaultValue);
-    }
-    /**
-     * The default value of the input.  For properties that expect a literal, the default is a literal value, for properties that expect an object, it's an ID reference to one of the current values.
-     *
-     * @param fDefaultValue Thing value to set.
-     */
-    @Override
-    public void setDefaultValue(Thing fDefaultValue) {
-        this.fDefaultValue = fDefaultValue;
+    public void setDefaultValue(Thing defaultValue) {
+        this.defaultValue = defaultValue;
     }
 
-    private Number fValueMinLength;
+    private Number valueMinLength;
 
     /**
      * Specifies the minimum allowed range for number of characters in a literal value.
@@ -204,29 +158,20 @@ public class PropertyValueSpecificationImpl extends com.weedow.schemaorg.commons
      */
     @Override
     public Number getValueMinLength() {
-        return fValueMinLength;
+        return valueMinLength;
     }
 
     /**
      * Specifies the minimum allowed range for number of characters in a literal value.
      *
-     * @param fValueMinLength Number value to set.
+     * @param valueMinLength Number value to set.
      */
     @Override
-    public void setValueMinLength(Number fValueMinLength) {
-        this.fValueMinLength = fValueMinLength;
-    }
-    /**
-     * Specifies the minimum allowed range for number of characters in a literal value.
-     *
-     * @param fValueMinLength java.lang.Number value to set.
-     */
-    @Override
-    public void setValueMinLength(java.lang.Number fValueMinLength) {
-        this.fValueMinLength = Number.of(fValueMinLength);
+    public void setValueMinLength(Number valueMinLength) {
+        this.valueMinLength = valueMinLength;
     }
 
-    private Boolean fValueRequired;
+    private Boolean valueRequired;
 
     /**
      * Whether the property must be filled in to complete the action.  Default is false.
@@ -235,29 +180,20 @@ public class PropertyValueSpecificationImpl extends com.weedow.schemaorg.commons
      */
     @Override
     public Boolean getValueRequired() {
-        return fValueRequired;
+        return valueRequired;
     }
 
     /**
      * Whether the property must be filled in to complete the action.  Default is false.
      *
-     * @param fValueRequired Boolean value to set.
+     * @param valueRequired Boolean value to set.
      */
     @Override
-    public void setValueRequired(Boolean fValueRequired) {
-        this.fValueRequired = fValueRequired;
-    }
-    /**
-     * Whether the property must be filled in to complete the action.  Default is false.
-     *
-     * @param fValueRequired java.lang.Boolean value to set.
-     */
-    @Override
-    public void setValueRequired(java.lang.Boolean fValueRequired) {
-        this.fValueRequired = Boolean.of(fValueRequired);
+    public void setValueRequired(Boolean valueRequired) {
+        this.valueRequired = valueRequired;
     }
 
-    private Number fMinValue;
+    private Number minValue;
 
     /**
      * The lower value of some characteristic or property.
@@ -267,31 +203,21 @@ public class PropertyValueSpecificationImpl extends com.weedow.schemaorg.commons
      */
     @Override
     public Number getMinValue() {
-        return fMinValue;
+        return minValue;
     }
 
     /**
      * The lower value of some characteristic or property.
      *
-     * @param fMinValue Number value to set.
+     * @param minValue Number value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setMinValue(Number fMinValue) {
-        this.fMinValue = fMinValue;
-    }
-    /**
-     * The lower value of some characteristic or property.
-     *
-     * @param fMinValue java.lang.Number value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setMinValue(java.lang.Number fMinValue) {
-        this.fMinValue = Number.of(fMinValue);
+    public void setMinValue(Number minValue) {
+        this.minValue = minValue;
     }
 
-    private Text fValuePattern;
+    private Text valuePattern;
 
     /**
      * Specifies a regular expression for testing literal values according to the HTML spec.
@@ -300,29 +226,20 @@ public class PropertyValueSpecificationImpl extends com.weedow.schemaorg.commons
      */
     @Override
     public Text getValuePattern() {
-        return fValuePattern;
+        return valuePattern;
     }
 
     /**
      * Specifies a regular expression for testing literal values according to the HTML spec.
      *
-     * @param fValuePattern Text value to set.
+     * @param valuePattern Text value to set.
      */
     @Override
-    public void setValuePattern(Text fValuePattern) {
-        this.fValuePattern = fValuePattern;
-    }
-    /**
-     * Specifies a regular expression for testing literal values according to the HTML spec.
-     *
-     * @param fValuePattern java.lang.String value to set.
-     */
-    @Override
-    public void setValuePattern(java.lang.String fValuePattern) {
-        this.fValuePattern = Text.of(fValuePattern);
+    public void setValuePattern(Text valuePattern) {
+        this.valuePattern = valuePattern;
     }
 
-    private Number fStepValue;
+    private Number stepValue;
 
     /**
      * The stepValue attribute indicates the granularity that is expected (and required) of the value in a PropertyValueSpecification.
@@ -331,29 +248,20 @@ public class PropertyValueSpecificationImpl extends com.weedow.schemaorg.commons
      */
     @Override
     public Number getStepValue() {
-        return fStepValue;
+        return stepValue;
     }
 
     /**
      * The stepValue attribute indicates the granularity that is expected (and required) of the value in a PropertyValueSpecification.
      *
-     * @param fStepValue Number value to set.
+     * @param stepValue Number value to set.
      */
     @Override
-    public void setStepValue(Number fStepValue) {
-        this.fStepValue = fStepValue;
-    }
-    /**
-     * The stepValue attribute indicates the granularity that is expected (and required) of the value in a PropertyValueSpecification.
-     *
-     * @param fStepValue java.lang.Number value to set.
-     */
-    @Override
-    public void setStepValue(java.lang.Number fStepValue) {
-        this.fStepValue = Number.of(fStepValue);
+    public void setStepValue(Number stepValue) {
+        this.stepValue = stepValue;
     }
 
-    private Boolean fMultipleValues;
+    private Boolean multipleValues;
 
     /**
      * Whether multiple values are allowed for the property.  Default is false.
@@ -362,29 +270,20 @@ public class PropertyValueSpecificationImpl extends com.weedow.schemaorg.commons
      */
     @Override
     public Boolean getMultipleValues() {
-        return fMultipleValues;
+        return multipleValues;
     }
 
     /**
      * Whether multiple values are allowed for the property.  Default is false.
      *
-     * @param fMultipleValues Boolean value to set.
+     * @param multipleValues Boolean value to set.
      */
     @Override
-    public void setMultipleValues(Boolean fMultipleValues) {
-        this.fMultipleValues = fMultipleValues;
-    }
-    /**
-     * Whether multiple values are allowed for the property.  Default is false.
-     *
-     * @param fMultipleValues java.lang.Boolean value to set.
-     */
-    @Override
-    public void setMultipleValues(java.lang.Boolean fMultipleValues) {
-        this.fMultipleValues = Boolean.of(fMultipleValues);
+    public void setMultipleValues(Boolean multipleValues) {
+        this.multipleValues = multipleValues;
     }
 
-    private Object fMainEntityOfPage;
+    private Object mainEntityOfPage;
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -393,38 +292,29 @@ public class PropertyValueSpecificationImpl extends com.weedow.schemaorg.commons
      */
     @Override
     public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
+        return (T) mainEntityOfPage;
     }
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param fMainEntityOfPage CreativeWork value to set.
+     * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(CreativeWork fMainEntityOfPage) {
-        this.fMainEntityOfPage = fMainEntityOfPage;
+    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
     }
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param fMainEntityOfPage URL value to set.
+     * @param mainEntityOfPage URL value to set.
      */
     @Override
-    public void setMainEntityOfPage(URL fMainEntityOfPage) {
-        this.fMainEntityOfPage = fMainEntityOfPage;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param fMainEntityOfPage java.net.URL value to set.
-     */
-    @Override
-    public void setMainEntityOfPage(java.net.URL fMainEntityOfPage) {
-        this.fMainEntityOfPage = URL.of(fMainEntityOfPage);
+    public void setMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
     }
 
-    private Text fAlternateName;
+    private Text alternateName;
 
     /**
      * An alias for the item.
@@ -433,29 +323,20 @@ public class PropertyValueSpecificationImpl extends com.weedow.schemaorg.commons
      */
     @Override
     public Text getAlternateName() {
-        return fAlternateName;
+        return alternateName;
     }
 
     /**
      * An alias for the item.
      *
-     * @param fAlternateName Text value to set.
+     * @param alternateName Text value to set.
      */
     @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
-    }
-    /**
-     * An alias for the item.
-     *
-     * @param fAlternateName java.lang.String value to set.
-     */
-    @Override
-    public void setAlternateName(java.lang.String fAlternateName) {
-        this.fAlternateName = Text.of(fAlternateName);
+    public void setAlternateName(Text alternateName) {
+        this.alternateName = alternateName;
     }
 
-    private Text fName;
+    private Text name;
 
     /**
      * The name of the item.
@@ -464,29 +345,20 @@ public class PropertyValueSpecificationImpl extends com.weedow.schemaorg.commons
      */
     @Override
     public Text getName() {
-        return fName;
+        return name;
     }
 
     /**
      * The name of the item.
      *
-     * @param fName Text value to set.
+     * @param name Text value to set.
      */
     @Override
-    public void setName(Text fName) {
-        this.fName = fName;
-    }
-    /**
-     * The name of the item.
-     *
-     * @param fName java.lang.String value to set.
-     */
-    @Override
-    public void setName(java.lang.String fName) {
-        this.fName = Text.of(fName);
+    public void setName(Text name) {
+        this.name = name;
     }
 
-    private Action fPotentialAction;
+    private Action potentialAction;
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -495,20 +367,20 @@ public class PropertyValueSpecificationImpl extends com.weedow.schemaorg.commons
      */
     @Override
     public Action getPotentialAction() {
-        return fPotentialAction;
+        return potentialAction;
     }
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      *
-     * @param fPotentialAction Action value to set.
+     * @param potentialAction Action value to set.
      */
     @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
+    public void setPotentialAction(Action potentialAction) {
+        this.potentialAction = potentialAction;
     }
 
-    private Object fImage;
+    private Object image;
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -517,38 +389,29 @@ public class PropertyValueSpecificationImpl extends com.weedow.schemaorg.commons
      */
     @Override
     public <T> T getImage() {
-        return (T) fImage;
+        return (T) image;
     }
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param fImage URL value to set.
+     * @param image URL value to set.
      */
     @Override
-    public void setImage(URL fImage) {
-        this.fImage = fImage;
+    public void setImage(URL image) {
+        this.image = image;
     }
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param fImage java.net.URL value to set.
+     * @param image ImageObject value to set.
      */
     @Override
-    public void setImage(java.net.URL fImage) {
-        this.fImage = URL.of(fImage);
-    }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param fImage ImageObject value to set.
-     */
-    @Override
-    public void setImage(ImageObject fImage) {
-        this.fImage = fImage;
+    public void setImage(ImageObject image) {
+        this.image = image;
     }
 
-    private URL fUrl;
+    private URL url;
 
     /**
      * URL of the item.
@@ -557,29 +420,20 @@ public class PropertyValueSpecificationImpl extends com.weedow.schemaorg.commons
      */
     @Override
     public URL getUrl() {
-        return fUrl;
+        return url;
     }
 
     /**
      * URL of the item.
      *
-     * @param fUrl URL value to set.
+     * @param url URL value to set.
      */
     @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
-    }
-    /**
-     * URL of the item.
-     *
-     * @param fUrl java.net.URL value to set.
-     */
-    @Override
-    public void setUrl(java.net.URL fUrl) {
-        this.fUrl = URL.of(fUrl);
+    public void setUrl(URL url) {
+        this.url = url;
     }
 
-    private Text fDescription;
+    private Text description;
 
     /**
      * A description of the item.
@@ -588,29 +442,20 @@ public class PropertyValueSpecificationImpl extends com.weedow.schemaorg.commons
      */
     @Override
     public Text getDescription() {
-        return fDescription;
+        return description;
     }
 
     /**
      * A description of the item.
      *
-     * @param fDescription Text value to set.
+     * @param description Text value to set.
      */
     @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
-    }
-    /**
-     * A description of the item.
-     *
-     * @param fDescription java.lang.String value to set.
-     */
-    @Override
-    public void setDescription(java.lang.String fDescription) {
-        this.fDescription = Text.of(fDescription);
+    public void setDescription(Text description) {
+        this.description = description;
     }
 
-    private Object fSubjectOf;
+    private Object subjectOf;
 
     /**
      * A CreativeWork or Event about this Thing.
@@ -620,31 +465,31 @@ public class PropertyValueSpecificationImpl extends com.weedow.schemaorg.commons
      */
     @Override
     public <T> T getSubjectOf() {
-        return (T) fSubjectOf;
+        return (T) subjectOf;
     }
 
     /**
      * A CreativeWork or Event about this Thing.
      *
-     * @param fSubjectOf Event value to set.
+     * @param subjectOf Event value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Event fSubjectOf) {
-        this.fSubjectOf = fSubjectOf;
+    public void setSubjectOf(Event subjectOf) {
+        this.subjectOf = subjectOf;
     }
     /**
      * A CreativeWork or Event about this Thing.
      *
-     * @param fSubjectOf CreativeWork value to set.
+     * @param subjectOf CreativeWork value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(CreativeWork fSubjectOf) {
-        this.fSubjectOf = fSubjectOf;
+    public void setSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = subjectOf;
     }
 
-    private URL fAdditionalType;
+    private URL additionalType;
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
@@ -653,29 +498,20 @@ public class PropertyValueSpecificationImpl extends com.weedow.schemaorg.commons
      */
     @Override
     public URL getAdditionalType() {
-        return fAdditionalType;
+        return additionalType;
     }
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
-     * @param fAdditionalType URL value to set.
+     * @param additionalType URL value to set.
      */
     @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
-    }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @param fAdditionalType java.net.URL value to set.
-     */
-    @Override
-    public void setAdditionalType(java.net.URL fAdditionalType) {
-        this.fAdditionalType = URL.of(fAdditionalType);
+    public void setAdditionalType(URL additionalType) {
+        this.additionalType = additionalType;
     }
 
-    private Text fDisambiguatingDescription;
+    private Text disambiguatingDescription;
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
@@ -684,29 +520,20 @@ public class PropertyValueSpecificationImpl extends com.weedow.schemaorg.commons
      */
     @Override
     public Text getDisambiguatingDescription() {
-        return fDisambiguatingDescription;
+        return disambiguatingDescription;
     }
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
-     * @param fDisambiguatingDescription Text value to set.
+     * @param disambiguatingDescription Text value to set.
      */
     @Override
-    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = fDisambiguatingDescription;
-    }
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @param fDisambiguatingDescription java.lang.String value to set.
-     */
-    @Override
-    public void setDisambiguatingDescription(java.lang.String fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = Text.of(fDisambiguatingDescription);
+    public void setDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = disambiguatingDescription;
     }
 
-    private URL fSameAs;
+    private URL sameAs;
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
@@ -715,29 +542,20 @@ public class PropertyValueSpecificationImpl extends com.weedow.schemaorg.commons
      */
     @Override
     public URL getSameAs() {
-        return fSameAs;
+        return sameAs;
     }
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
-     * @param fSameAs URL value to set.
+     * @param sameAs URL value to set.
      */
     @Override
-    public void setSameAs(URL fSameAs) {
-        this.fSameAs = fSameAs;
-    }
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @param fSameAs java.net.URL value to set.
-     */
-    @Override
-    public void setSameAs(java.net.URL fSameAs) {
-        this.fSameAs = URL.of(fSameAs);
+    public void setSameAs(URL sameAs) {
+        this.sameAs = sameAs;
     }
 
-    private Object fIdentifier;
+    private Object identifier;
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -747,57 +565,37 @@ public class PropertyValueSpecificationImpl extends com.weedow.schemaorg.commons
      */
     @Override
     public <T> T getIdentifier() {
-        return (T) fIdentifier;
+        return (T) identifier;
     }
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier URL value to set.
+     * @param identifier URL value to set.
      */
     @Override
-    public void setIdentifier(URL fIdentifier) {
-        this.fIdentifier = fIdentifier;
+    public void setIdentifier(URL identifier) {
+        this.identifier = identifier;
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier java.net.URL value to set.
+     * @param identifier Text value to set.
      */
     @Override
-    public void setIdentifier(java.net.URL fIdentifier) {
-        this.fIdentifier = URL.of(fIdentifier);
+    public void setIdentifier(Text identifier) {
+        this.identifier = identifier;
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier Text value to set.
+     * @param identifier PropertyValue value to set.
      */
     @Override
-    public void setIdentifier(Text fIdentifier) {
-        this.fIdentifier = fIdentifier;
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param fIdentifier java.lang.String value to set.
-     */
-    @Override
-    public void setIdentifier(java.lang.String fIdentifier) {
-        this.fIdentifier = Text.of(fIdentifier);
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param fIdentifier PropertyValue value to set.
-     */
-    @Override
-    public void setIdentifier(PropertyValue fIdentifier) {
-        this.fIdentifier = fIdentifier;
+    public void setIdentifier(PropertyValue identifier) {
+        this.identifier = identifier;
     }
 }

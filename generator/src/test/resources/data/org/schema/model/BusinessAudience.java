@@ -24,9 +24,9 @@ public interface BusinessAudience extends Audience {
     /**
      * The size of the business in annual revenue.
      *
-     * @param fYearlyRevenue QuantitativeValue value to set.
+     * @param yearlyRevenue QuantitativeValue value to set.
      */
-    void setYearlyRevenue(QuantitativeValue fYearlyRevenue);
+    void setYearlyRevenue(QuantitativeValue yearlyRevenue);
 
     /**
      * The number of employees in an organization e.g. business.
@@ -38,9 +38,9 @@ public interface BusinessAudience extends Audience {
     /**
      * The number of employees in an organization e.g. business.
      *
-     * @param fNumberOfEmployees QuantitativeValue value to set.
+     * @param numberOfEmployees QuantitativeValue value to set.
      */
-    void setNumberOfEmployees(QuantitativeValue fNumberOfEmployees);
+    void setNumberOfEmployees(QuantitativeValue numberOfEmployees);
 
     /**
      * The age of the business.
@@ -52,7 +52,7 @@ public interface BusinessAudience extends Audience {
     /**
      * The age of the business.
      *
-     * @param fYearsInOperation QuantitativeValue value to set.
+     * @param yearsInOperation QuantitativeValue value to set.
      */
-    void setYearsInOperation(QuantitativeValue fYearsInOperation);
+    void setYearsInOperation(QuantitativeValue yearsInOperation);
 }

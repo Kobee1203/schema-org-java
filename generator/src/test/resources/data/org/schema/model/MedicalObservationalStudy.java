@@ -26,8 +26,8 @@ public interface MedicalObservationalStudy extends MedicalStudy {
     /**
      * Specifics about the observational study design (enumerated).
      *
-     * @param fStudyDesign MedicalObservationalStudyDesign value to set.
+     * @param studyDesign MedicalObservationalStudyDesign value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setStudyDesign(MedicalObservationalStudyDesign fStudyDesign);
+    void setStudyDesign(MedicalObservationalStudyDesign studyDesign);
 }

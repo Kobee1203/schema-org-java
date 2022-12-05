@@ -29,10 +29,10 @@ public interface MusicAlbum extends MusicPlaylist {
     /**
      * Classification of the album by it's type of content: soundtrack, live album, studio album, etc.
      *
-     * @param fAlbumProductionType MusicAlbumProductionType value to set.
+     * @param albumProductionType MusicAlbumProductionType value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
-    void setAlbumProductionType(MusicAlbumProductionType fAlbumProductionType);
+    void setAlbumProductionType(MusicAlbumProductionType albumProductionType);
 
     /**
      * The kind of release which this album is: single, EP or album.
@@ -45,10 +45,10 @@ public interface MusicAlbum extends MusicPlaylist {
     /**
      * The kind of release which this album is: single, EP or album.
      *
-     * @param fAlbumReleaseType MusicAlbumReleaseType value to set.
+     * @param albumReleaseType MusicAlbumReleaseType value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
-    void setAlbumReleaseType(MusicAlbumReleaseType fAlbumReleaseType);
+    void setAlbumReleaseType(MusicAlbumReleaseType albumReleaseType);
 
     /**
      * A release of this album.
@@ -60,9 +60,9 @@ public interface MusicAlbum extends MusicPlaylist {
     /**
      * A release of this album.
      *
-     * @param fAlbumRelease MusicRelease value to set.
+     * @param albumRelease MusicRelease value to set.
      */
-    void setAlbumRelease(MusicRelease fAlbumRelease);
+    void setAlbumRelease(MusicRelease albumRelease);
 
     /**
      * The artist that performed this album or recording.
@@ -74,13 +74,13 @@ public interface MusicAlbum extends MusicPlaylist {
     /**
      * The artist that performed this album or recording.
      *
-     * @param fByArtist Person value to set.
+     * @param byArtist Person value to set.
      */
-    void setByArtist(Person fByArtist);
+    void setByArtist(Person byArtist);
     /**
      * The artist that performed this album or recording.
      *
-     * @param fByArtist MusicGroup value to set.
+     * @param byArtist MusicGroup value to set.
      */
-    void setByArtist(MusicGroup fByArtist);
+    void setByArtist(MusicGroup byArtist);
 }

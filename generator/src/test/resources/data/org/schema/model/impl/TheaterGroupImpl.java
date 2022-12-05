@@ -53,7 +53,7 @@ import org.schema.model.TheaterGroup;
 @JsonLdTypeName("TheaterGroup")
 public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements TheaterGroup {
 
-    private Object fOwnershipFundingInfo;
+    private Object ownershipFundingInfo;
 
     /**
      * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.
@@ -65,83 +65,59 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getOwnershipFundingInfo() {
-        return (T) fOwnershipFundingInfo;
+        return (T) ownershipFundingInfo;
     }
 
     /**
      * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.
      *
-     * @param fOwnershipFundingInfo URL value to set.
+     * @param ownershipFundingInfo URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
     @Override
-    public void setOwnershipFundingInfo(URL fOwnershipFundingInfo) {
-        this.fOwnershipFundingInfo = fOwnershipFundingInfo;
+    public void setOwnershipFundingInfo(URL ownershipFundingInfo) {
+        this.ownershipFundingInfo = ownershipFundingInfo;
     }
     /**
      * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.
      *
-     * @param fOwnershipFundingInfo java.net.URL value to set.
+     * @param ownershipFundingInfo AboutPage value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
     @Override
-    public void setOwnershipFundingInfo(java.net.URL fOwnershipFundingInfo) {
-        this.fOwnershipFundingInfo = URL.of(fOwnershipFundingInfo);
+    public void setOwnershipFundingInfo(AboutPage ownershipFundingInfo) {
+        this.ownershipFundingInfo = ownershipFundingInfo;
     }
     /**
      * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.
      *
-     * @param fOwnershipFundingInfo AboutPage value to set.
+     * @param ownershipFundingInfo Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
     @Override
-    public void setOwnershipFundingInfo(AboutPage fOwnershipFundingInfo) {
-        this.fOwnershipFundingInfo = fOwnershipFundingInfo;
+    public void setOwnershipFundingInfo(Text ownershipFundingInfo) {
+        this.ownershipFundingInfo = ownershipFundingInfo;
     }
     /**
      * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.
      *
-     * @param fOwnershipFundingInfo Text value to set.
+     * @param ownershipFundingInfo CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
     @Override
-    public void setOwnershipFundingInfo(Text fOwnershipFundingInfo) {
-        this.fOwnershipFundingInfo = fOwnershipFundingInfo;
-    }
-    /**
-     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.
-     *
-     * @param fOwnershipFundingInfo java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     */
-    @Override
-    public void setOwnershipFundingInfo(java.lang.String fOwnershipFundingInfo) {
-        this.fOwnershipFundingInfo = Text.of(fOwnershipFundingInfo);
-    }
-    /**
-     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.
-     *
-     * @param fOwnershipFundingInfo CreativeWork value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     */
-    @Override
-    public void setOwnershipFundingInfo(CreativeWork fOwnershipFundingInfo) {
-        this.fOwnershipFundingInfo = fOwnershipFundingInfo;
+    public void setOwnershipFundingInfo(CreativeWork ownershipFundingInfo) {
+        this.ownershipFundingInfo = ownershipFundingInfo;
     }
 
-    private EducationalOccupationalCredential fHasCredential;
+    private EducationalOccupationalCredential hasCredential;
 
     /**
      * A credential awarded to the Person or Organization.
@@ -152,22 +128,22 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public EducationalOccupationalCredential getHasCredential() {
-        return fHasCredential;
+        return hasCredential;
     }
 
     /**
      * A credential awarded to the Person or Organization.
      *
-     * @param fHasCredential EducationalOccupationalCredential value to set.
+     * @param hasCredential EducationalOccupationalCredential value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
     @Override
-    public void setHasCredential(EducationalOccupationalCredential fHasCredential) {
-        this.fHasCredential = fHasCredential;
+    public void setHasCredential(EducationalOccupationalCredential hasCredential) {
+        this.hasCredential = hasCredential;
     }
 
-    private Person fFounders;
+    private Person founders;
 
     /**
      * A person who founded this organization.
@@ -176,20 +152,20 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Person getFounders() {
-        return fFounders;
+        return founders;
     }
 
     /**
      * A person who founded this organization.
      *
-     * @param fFounders Person value to set.
+     * @param founders Person value to set.
      */
     @Override
-    public void setFounders(Person fFounders) {
-        this.fFounders = fFounders;
+    public void setFounders(Person founders) {
+        this.founders = founders;
     }
 
-    private Text fTelephone;
+    private Text telephone;
 
     /**
      * The telephone number.
@@ -198,29 +174,20 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Text getTelephone() {
-        return fTelephone;
+        return telephone;
     }
 
     /**
      * The telephone number.
      *
-     * @param fTelephone Text value to set.
+     * @param telephone Text value to set.
      */
     @Override
-    public void setTelephone(Text fTelephone) {
-        this.fTelephone = fTelephone;
-    }
-    /**
-     * The telephone number.
-     *
-     * @param fTelephone java.lang.String value to set.
-     */
-    @Override
-    public void setTelephone(java.lang.String fTelephone) {
-        this.fTelephone = Text.of(fTelephone);
+    public void setTelephone(Text telephone) {
+        this.telephone = telephone;
     }
 
-    private Review fReview;
+    private Review review;
 
     /**
      * A review of the item.
@@ -229,20 +196,20 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Review getReview() {
-        return fReview;
+        return review;
     }
 
     /**
      * A review of the item.
      *
-     * @param fReview Review value to set.
+     * @param review Review value to set.
      */
     @Override
-    public void setReview(Review fReview) {
-        this.fReview = fReview;
+    public void setReview(Review review) {
+        this.review = review;
     }
 
-    private Object fKnowsAbout;
+    private Object knowsAbout;
 
     /**
      * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
@@ -254,71 +221,47 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getKnowsAbout() {
-        return (T) fKnowsAbout;
+        return (T) knowsAbout;
     }
 
     /**
      * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
      *
-     * @param fKnowsAbout URL value to set.
+     * @param knowsAbout URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
      */
     @Override
-    public void setKnowsAbout(URL fKnowsAbout) {
-        this.fKnowsAbout = fKnowsAbout;
+    public void setKnowsAbout(URL knowsAbout) {
+        this.knowsAbout = knowsAbout;
     }
     /**
      * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
      *
-     * @param fKnowsAbout java.net.URL value to set.
+     * @param knowsAbout Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
      */
     @Override
-    public void setKnowsAbout(java.net.URL fKnowsAbout) {
-        this.fKnowsAbout = URL.of(fKnowsAbout);
+    public void setKnowsAbout(Text knowsAbout) {
+        this.knowsAbout = knowsAbout;
     }
     /**
      * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
      *
-     * @param fKnowsAbout Text value to set.
+     * @param knowsAbout Thing value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
      */
     @Override
-    public void setKnowsAbout(Text fKnowsAbout) {
-        this.fKnowsAbout = fKnowsAbout;
-    }
-    /**
-     * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
-     *
-     * @param fKnowsAbout java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
-     */
-    @Override
-    public void setKnowsAbout(java.lang.String fKnowsAbout) {
-        this.fKnowsAbout = Text.of(fKnowsAbout);
-    }
-    /**
-     * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
-     *
-     * @param fKnowsAbout Thing value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
-     */
-    @Override
-    public void setKnowsAbout(Thing fKnowsAbout) {
-        this.fKnowsAbout = fKnowsAbout;
+    public void setKnowsAbout(Thing knowsAbout) {
+        this.knowsAbout = knowsAbout;
     }
 
-    private Text fAward;
+    private Text award;
 
     /**
      * An award won by or for this item.
@@ -327,29 +270,20 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Text getAward() {
-        return fAward;
+        return award;
     }
 
     /**
      * An award won by or for this item.
      *
-     * @param fAward Text value to set.
+     * @param award Text value to set.
      */
     @Override
-    public void setAward(Text fAward) {
-        this.fAward = fAward;
-    }
-    /**
-     * An award won by or for this item.
-     *
-     * @param fAward java.lang.String value to set.
-     */
-    @Override
-    public void setAward(java.lang.String fAward) {
-        this.fAward = Text.of(fAward);
+    public void setAward(Text award) {
+        this.award = award;
     }
 
-    private Object fMember;
+    private Object member;
 
     /**
      * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
@@ -358,29 +292,29 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getMember() {
-        return (T) fMember;
+        return (T) member;
     }
 
     /**
      * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
      *
-     * @param fMember Organization value to set.
+     * @param member Organization value to set.
      */
     @Override
-    public void setMember(Organization fMember) {
-        this.fMember = fMember;
+    public void setMember(Organization member) {
+        this.member = member;
     }
     /**
      * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
      *
-     * @param fMember Person value to set.
+     * @param member Person value to set.
      */
     @Override
-    public void setMember(Person fMember) {
-        this.fMember = fMember;
+    public void setMember(Person member) {
+        this.member = member;
     }
 
-    private Person fEmployee;
+    private Person employee;
 
     /**
      * Someone working for this organization.
@@ -389,20 +323,20 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Person getEmployee() {
-        return fEmployee;
+        return employee;
     }
 
     /**
      * Someone working for this organization.
      *
-     * @param fEmployee Person value to set.
+     * @param employee Person value to set.
      */
     @Override
-    public void setEmployee(Person fEmployee) {
-        this.fEmployee = fEmployee;
+    public void setEmployee(Person employee) {
+        this.employee = employee;
     }
 
-    private Date fDissolutionDate;
+    private Date dissolutionDate;
 
     /**
      * The date that this organization was dissolved.
@@ -411,29 +345,20 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Date getDissolutionDate() {
-        return fDissolutionDate;
+        return dissolutionDate;
     }
 
     /**
      * The date that this organization was dissolved.
      *
-     * @param fDissolutionDate Date value to set.
+     * @param dissolutionDate Date value to set.
      */
     @Override
-    public void setDissolutionDate(Date fDissolutionDate) {
-        this.fDissolutionDate = fDissolutionDate;
-    }
-    /**
-     * The date that this organization was dissolved.
-     *
-     * @param fDissolutionDate java.time.LocalDate value to set.
-     */
-    @Override
-    public void setDissolutionDate(java.time.LocalDate fDissolutionDate) {
-        this.fDissolutionDate = Date.of(fDissolutionDate);
+    public void setDissolutionDate(Date dissolutionDate) {
+        this.dissolutionDate = dissolutionDate;
     }
 
-    private Grant fFunding;
+    private Grant funding;
 
     /**
      * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
@@ -445,23 +370,23 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Grant getFunding() {
-        return fFunding;
+        return funding;
     }
 
     /**
      * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
      *
-     * @param fFunding Grant value to set.
+     * @param funding Grant value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
     @Override
-    public void setFunding(Grant fFunding) {
-        this.fFunding = fFunding;
+    public void setFunding(Grant funding) {
+        this.funding = funding;
     }
 
-    private Text fVatID;
+    private Text vatID;
 
     /**
      * The Value-added Tax ID of the organization or person.
@@ -471,31 +396,21 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Text getVatID() {
-        return fVatID;
+        return vatID;
     }
 
     /**
      * The Value-added Tax ID of the organization or person.
      *
-     * @param fVatID Text value to set.
+     * @param vatID Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setVatID(Text fVatID) {
-        this.fVatID = fVatID;
-    }
-    /**
-     * The Value-added Tax ID of the organization or person.
-     *
-     * @param fVatID java.lang.String value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setVatID(java.lang.String fVatID) {
-        this.fVatID = Text.of(fVatID);
+    public void setVatID(Text vatID) {
+        this.vatID = vatID;
     }
 
-    private Text fGlobalLocationNumber;
+    private Text globalLocationNumber;
 
     /**
      * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
@@ -505,31 +420,21 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Text getGlobalLocationNumber() {
-        return fGlobalLocationNumber;
+        return globalLocationNumber;
     }
 
     /**
      * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
      *
-     * @param fGlobalLocationNumber Text value to set.
+     * @param globalLocationNumber Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setGlobalLocationNumber(Text fGlobalLocationNumber) {
-        this.fGlobalLocationNumber = fGlobalLocationNumber;
-    }
-    /**
-     * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
-     *
-     * @param fGlobalLocationNumber java.lang.String value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setGlobalLocationNumber(java.lang.String fGlobalLocationNumber) {
-        this.fGlobalLocationNumber = Text.of(fGlobalLocationNumber);
+    public void setGlobalLocationNumber(Text globalLocationNumber) {
+        this.globalLocationNumber = globalLocationNumber;
     }
 
-    private Object fKeywords;
+    private Object keywords;
 
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
@@ -538,56 +443,38 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getKeywords() {
-        return (T) fKeywords;
+        return (T) keywords;
     }
 
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
      *
-     * @param fKeywords DefinedTerm value to set.
+     * @param keywords DefinedTerm value to set.
      */
     @Override
-    public void setKeywords(DefinedTerm fKeywords) {
-        this.fKeywords = fKeywords;
+    public void setKeywords(DefinedTerm keywords) {
+        this.keywords = keywords;
     }
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
      *
-     * @param fKeywords Text value to set.
+     * @param keywords Text value to set.
      */
     @Override
-    public void setKeywords(Text fKeywords) {
-        this.fKeywords = fKeywords;
+    public void setKeywords(Text keywords) {
+        this.keywords = keywords;
     }
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
      *
-     * @param fKeywords java.lang.String value to set.
+     * @param keywords URL value to set.
      */
     @Override
-    public void setKeywords(java.lang.String fKeywords) {
-        this.fKeywords = Text.of(fKeywords);
-    }
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     * @param fKeywords URL value to set.
-     */
-    @Override
-    public void setKeywords(URL fKeywords) {
-        this.fKeywords = fKeywords;
-    }
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     * @param fKeywords java.net.URL value to set.
-     */
-    @Override
-    public void setKeywords(java.net.URL fKeywords) {
-        this.fKeywords = URL.of(fKeywords);
+    public void setKeywords(URL keywords) {
+        this.keywords = keywords;
     }
 
-    private ContactPoint fContactPoints;
+    private ContactPoint contactPoints;
 
     /**
      * A contact point for a person or organization.
@@ -596,20 +483,20 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public ContactPoint getContactPoints() {
-        return fContactPoints;
+        return contactPoints;
     }
 
     /**
      * A contact point for a person or organization.
      *
-     * @param fContactPoints ContactPoint value to set.
+     * @param contactPoints ContactPoint value to set.
      */
     @Override
-    public void setContactPoints(ContactPoint fContactPoints) {
-        this.fContactPoints = fContactPoints;
+    public void setContactPoints(ContactPoint contactPoints) {
+        this.contactPoints = contactPoints;
     }
 
-    private Organization fSubOrganization;
+    private Organization subOrganization;
 
     /**
      * A relationship between two organizations where the first includes the second, e.g., as a subsidiary. See also: the more specific 'department' property.
@@ -618,20 +505,20 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Organization getSubOrganization() {
-        return fSubOrganization;
+        return subOrganization;
     }
 
     /**
      * A relationship between two organizations where the first includes the second, e.g., as a subsidiary. See also: the more specific 'department' property.
      *
-     * @param fSubOrganization Organization value to set.
+     * @param subOrganization Organization value to set.
      */
     @Override
-    public void setSubOrganization(Organization fSubOrganization) {
-        this.fSubOrganization = fSubOrganization;
+    public void setSubOrganization(Organization subOrganization) {
+        this.subOrganization = subOrganization;
     }
 
-    private Text fAwards;
+    private Text awards;
 
     /**
      * Awards won by or for this item.
@@ -640,29 +527,20 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Text getAwards() {
-        return fAwards;
+        return awards;
     }
 
     /**
      * Awards won by or for this item.
      *
-     * @param fAwards Text value to set.
+     * @param awards Text value to set.
      */
     @Override
-    public void setAwards(Text fAwards) {
-        this.fAwards = fAwards;
-    }
-    /**
-     * Awards won by or for this item.
-     *
-     * @param fAwards java.lang.String value to set.
-     */
-    @Override
-    public void setAwards(java.lang.String fAwards) {
-        this.fAwards = Text.of(fAwards);
+    public void setAwards(Text awards) {
+        this.awards = awards;
     }
 
-    private QuantitativeValue fNumberOfEmployees;
+    private QuantitativeValue numberOfEmployees;
 
     /**
      * The number of employees in an organization e.g. business.
@@ -671,20 +549,20 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public QuantitativeValue getNumberOfEmployees() {
-        return fNumberOfEmployees;
+        return numberOfEmployees;
     }
 
     /**
      * The number of employees in an organization e.g. business.
      *
-     * @param fNumberOfEmployees QuantitativeValue value to set.
+     * @param numberOfEmployees QuantitativeValue value to set.
      */
     @Override
-    public void setNumberOfEmployees(QuantitativeValue fNumberOfEmployees) {
-        this.fNumberOfEmployees = fNumberOfEmployees;
+    public void setNumberOfEmployees(QuantitativeValue numberOfEmployees) {
+        this.numberOfEmployees = numberOfEmployees;
     }
 
-    private Object fFunder;
+    private Object funder;
 
     /**
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
@@ -693,29 +571,29 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getFunder() {
-        return (T) fFunder;
+        return (T) funder;
     }
 
     /**
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
-     * @param fFunder Organization value to set.
+     * @param funder Organization value to set.
      */
     @Override
-    public void setFunder(Organization fFunder) {
-        this.fFunder = fFunder;
+    public void setFunder(Organization funder) {
+        this.funder = funder;
     }
     /**
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
-     * @param fFunder Person value to set.
+     * @param funder Person value to set.
      */
     @Override
-    public void setFunder(Person fFunder) {
-        this.fFunder = fFunder;
+    public void setFunder(Person funder) {
+        this.funder = funder;
     }
 
-    private Offer fMakesOffer;
+    private Offer makesOffer;
 
     /**
      * A pointer to products or services offered by the organization or person.
@@ -725,21 +603,21 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Offer getMakesOffer() {
-        return fMakesOffer;
+        return makesOffer;
     }
 
     /**
      * A pointer to products or services offered by the organization or person.
      *
-     * @param fMakesOffer Offer value to set.
+     * @param makesOffer Offer value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setMakesOffer(Offer fMakesOffer) {
-        this.fMakesOffer = fMakesOffer;
+    public void setMakesOffer(Offer makesOffer) {
+        this.makesOffer = makesOffer;
     }
 
-    private Text fLegalName;
+    private Text legalName;
 
     /**
      * The official name of the organization, e.g. the registered company name.
@@ -749,31 +627,21 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Text getLegalName() {
-        return fLegalName;
+        return legalName;
     }
 
     /**
      * The official name of the organization, e.g. the registered company name.
      *
-     * @param fLegalName Text value to set.
+     * @param legalName Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setLegalName(Text fLegalName) {
-        this.fLegalName = fLegalName;
-    }
-    /**
-     * The official name of the organization, e.g. the registered company name.
-     *
-     * @param fLegalName java.lang.String value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setLegalName(java.lang.String fLegalName) {
-        this.fLegalName = Text.of(fLegalName);
+    public void setLegalName(Text legalName) {
+        this.legalName = legalName;
     }
 
-    private Object fCorrectionsPolicy;
+    private Object correctionsPolicy;
 
     /**
      * For an [[Organization]] (e.g. [[NewsMediaOrganization]]), a statement describing (in news media, the newsroom’s) disclosure and correction policy for errors.
@@ -785,47 +653,35 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getCorrectionsPolicy() {
-        return (T) fCorrectionsPolicy;
+        return (T) correctionsPolicy;
     }
 
     /**
      * For an [[Organization]] (e.g. [[NewsMediaOrganization]]), a statement describing (in news media, the newsroom’s) disclosure and correction policy for errors.
      *
-     * @param fCorrectionsPolicy URL value to set.
+     * @param correctionsPolicy URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
     @Override
-    public void setCorrectionsPolicy(URL fCorrectionsPolicy) {
-        this.fCorrectionsPolicy = fCorrectionsPolicy;
+    public void setCorrectionsPolicy(URL correctionsPolicy) {
+        this.correctionsPolicy = correctionsPolicy;
     }
     /**
      * For an [[Organization]] (e.g. [[NewsMediaOrganization]]), a statement describing (in news media, the newsroom’s) disclosure and correction policy for errors.
      *
-     * @param fCorrectionsPolicy java.net.URL value to set.
+     * @param correctionsPolicy CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
     @Override
-    public void setCorrectionsPolicy(java.net.URL fCorrectionsPolicy) {
-        this.fCorrectionsPolicy = URL.of(fCorrectionsPolicy);
-    }
-    /**
-     * For an [[Organization]] (e.g. [[NewsMediaOrganization]]), a statement describing (in news media, the newsroom’s) disclosure and correction policy for errors.
-     *
-     * @param fCorrectionsPolicy CreativeWork value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     */
-    @Override
-    public void setCorrectionsPolicy(CreativeWork fCorrectionsPolicy) {
-        this.fCorrectionsPolicy = fCorrectionsPolicy;
+    public void setCorrectionsPolicy(CreativeWork correctionsPolicy) {
+        this.correctionsPolicy = correctionsPolicy;
     }
 
-    private AggregateRating fAggregateRating;
+    private AggregateRating aggregateRating;
 
     /**
      * The overall rating, based on a collection of reviews or ratings, of the item.
@@ -834,20 +690,20 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public AggregateRating getAggregateRating() {
-        return fAggregateRating;
+        return aggregateRating;
     }
 
     /**
      * The overall rating, based on a collection of reviews or ratings, of the item.
      *
-     * @param fAggregateRating AggregateRating value to set.
+     * @param aggregateRating AggregateRating value to set.
      */
     @Override
-    public void setAggregateRating(AggregateRating fAggregateRating) {
-        this.fAggregateRating = fAggregateRating;
+    public void setAggregateRating(AggregateRating aggregateRating) {
+        this.aggregateRating = aggregateRating;
     }
 
-    private InteractionCounter fInteractionStatistic;
+    private InteractionCounter interactionStatistic;
 
     /**
      * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
@@ -857,21 +713,21 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public InteractionCounter getInteractionStatistic() {
-        return fInteractionStatistic;
+        return interactionStatistic;
     }
 
     /**
      * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
      *
-     * @param fInteractionStatistic InteractionCounter value to set.
+     * @param interactionStatistic InteractionCounter value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
      */
     @Override
-    public void setInteractionStatistic(InteractionCounter fInteractionStatistic) {
-        this.fInteractionStatistic = fInteractionStatistic;
+    public void setInteractionStatistic(InteractionCounter interactionStatistic) {
+        this.interactionStatistic = interactionStatistic;
     }
 
-    private Object fLocation;
+    private Object location;
 
     /**
      * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
@@ -880,56 +736,47 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getLocation() {
-        return (T) fLocation;
+        return (T) location;
     }
 
     /**
      * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
      *
-     * @param fLocation PostalAddress value to set.
+     * @param location PostalAddress value to set.
      */
     @Override
-    public void setLocation(PostalAddress fLocation) {
-        this.fLocation = fLocation;
+    public void setLocation(PostalAddress location) {
+        this.location = location;
     }
     /**
      * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
      *
-     * @param fLocation Text value to set.
+     * @param location Text value to set.
      */
     @Override
-    public void setLocation(Text fLocation) {
-        this.fLocation = fLocation;
+    public void setLocation(Text location) {
+        this.location = location;
     }
     /**
      * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
      *
-     * @param fLocation java.lang.String value to set.
+     * @param location Place value to set.
      */
     @Override
-    public void setLocation(java.lang.String fLocation) {
-        this.fLocation = Text.of(fLocation);
+    public void setLocation(Place location) {
+        this.location = location;
     }
     /**
      * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
      *
-     * @param fLocation Place value to set.
+     * @param location VirtualLocation value to set.
      */
     @Override
-    public void setLocation(Place fLocation) {
-        this.fLocation = fLocation;
-    }
-    /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-     *
-     * @param fLocation VirtualLocation value to set.
-     */
-    @Override
-    public void setLocation(VirtualLocation fLocation) {
-        this.fLocation = fLocation;
+    public void setLocation(VirtualLocation location) {
+        this.location = location;
     }
 
-    private Object fAddress;
+    private Object address;
 
     /**
      * Physical address of the item.
@@ -938,38 +785,29 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getAddress() {
-        return (T) fAddress;
+        return (T) address;
     }
 
     /**
      * Physical address of the item.
      *
-     * @param fAddress Text value to set.
+     * @param address Text value to set.
      */
     @Override
-    public void setAddress(Text fAddress) {
-        this.fAddress = fAddress;
+    public void setAddress(Text address) {
+        this.address = address;
     }
     /**
      * Physical address of the item.
      *
-     * @param fAddress java.lang.String value to set.
+     * @param address PostalAddress value to set.
      */
     @Override
-    public void setAddress(java.lang.String fAddress) {
-        this.fAddress = Text.of(fAddress);
-    }
-    /**
-     * Physical address of the item.
-     *
-     * @param fAddress PostalAddress value to set.
-     */
-    @Override
-    public void setAddress(PostalAddress fAddress) {
-        this.fAddress = fAddress;
+    public void setAddress(PostalAddress address) {
+        this.address = address;
     }
 
-    private Object fMemberOf;
+    private Object memberOf;
 
     /**
      * An Organization (or ProgramMembership) to which this Person or Organization belongs.
@@ -978,29 +816,29 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getMemberOf() {
-        return (T) fMemberOf;
+        return (T) memberOf;
     }
 
     /**
      * An Organization (or ProgramMembership) to which this Person or Organization belongs.
      *
-     * @param fMemberOf ProgramMembership value to set.
+     * @param memberOf ProgramMembership value to set.
      */
     @Override
-    public void setMemberOf(ProgramMembership fMemberOf) {
-        this.fMemberOf = fMemberOf;
+    public void setMemberOf(ProgramMembership memberOf) {
+        this.memberOf = memberOf;
     }
     /**
      * An Organization (or ProgramMembership) to which this Person or Organization belongs.
      *
-     * @param fMemberOf Organization value to set.
+     * @param memberOf Organization value to set.
      */
     @Override
-    public void setMemberOf(Organization fMemberOf) {
-        this.fMemberOf = fMemberOf;
+    public void setMemberOf(Organization memberOf) {
+        this.memberOf = memberOf;
     }
 
-    private Object fPublishingPrinciples;
+    private Object publishingPrinciples;
 
     /**
      * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
@@ -1011,7 +849,7 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getPublishingPrinciples() {
-        return (T) fPublishingPrinciples;
+        return (T) publishingPrinciples;
     }
 
     /**
@@ -1019,36 +857,25 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * 
      * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
      *
-     * @param fPublishingPrinciples URL value to set.
+     * @param publishingPrinciples URL value to set.
      */
     @Override
-    public void setPublishingPrinciples(URL fPublishingPrinciples) {
-        this.fPublishingPrinciples = fPublishingPrinciples;
+    public void setPublishingPrinciples(URL publishingPrinciples) {
+        this.publishingPrinciples = publishingPrinciples;
     }
     /**
      * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
      * 
      * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
      *
-     * @param fPublishingPrinciples java.net.URL value to set.
+     * @param publishingPrinciples CreativeWork value to set.
      */
     @Override
-    public void setPublishingPrinciples(java.net.URL fPublishingPrinciples) {
-        this.fPublishingPrinciples = URL.of(fPublishingPrinciples);
-    }
-    /**
-     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
-     * 
-     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
-     *
-     * @param fPublishingPrinciples CreativeWork value to set.
-     */
-    @Override
-    public void setPublishingPrinciples(CreativeWork fPublishingPrinciples) {
-        this.fPublishingPrinciples = fPublishingPrinciples;
+    public void setPublishingPrinciples(CreativeWork publishingPrinciples) {
+        this.publishingPrinciples = publishingPrinciples;
     }
 
-    private Object fDiversityStaffingReport;
+    private Object diversityStaffingReport;
 
     /**
      * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.
@@ -1060,47 +887,35 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getDiversityStaffingReport() {
-        return (T) fDiversityStaffingReport;
+        return (T) diversityStaffingReport;
     }
 
     /**
      * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.
      *
-     * @param fDiversityStaffingReport URL value to set.
+     * @param diversityStaffingReport URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
     @Override
-    public void setDiversityStaffingReport(URL fDiversityStaffingReport) {
-        this.fDiversityStaffingReport = fDiversityStaffingReport;
+    public void setDiversityStaffingReport(URL diversityStaffingReport) {
+        this.diversityStaffingReport = diversityStaffingReport;
     }
     /**
      * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.
      *
-     * @param fDiversityStaffingReport java.net.URL value to set.
+     * @param diversityStaffingReport Article value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
     @Override
-    public void setDiversityStaffingReport(java.net.URL fDiversityStaffingReport) {
-        this.fDiversityStaffingReport = URL.of(fDiversityStaffingReport);
-    }
-    /**
-     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.
-     *
-     * @param fDiversityStaffingReport Article value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     */
-    @Override
-    public void setDiversityStaffingReport(Article fDiversityStaffingReport) {
-        this.fDiversityStaffingReport = fDiversityStaffingReport;
+    public void setDiversityStaffingReport(Article diversityStaffingReport) {
+        this.diversityStaffingReport = diversityStaffingReport;
     }
 
-    private Object fDiversityPolicy;
+    private Object diversityPolicy;
 
     /**
      * Statement on diversity policy by an [[Organization]] e.g. a [[NewsMediaOrganization]]. For a [[NewsMediaOrganization]], a statement describing the newsroom’s diversity policy on both staffing and sources, typically providing staffing data.
@@ -1112,47 +927,35 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getDiversityPolicy() {
-        return (T) fDiversityPolicy;
+        return (T) diversityPolicy;
     }
 
     /**
      * Statement on diversity policy by an [[Organization]] e.g. a [[NewsMediaOrganization]]. For a [[NewsMediaOrganization]], a statement describing the newsroom’s diversity policy on both staffing and sources, typically providing staffing data.
      *
-     * @param fDiversityPolicy CreativeWork value to set.
+     * @param diversityPolicy CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
     @Override
-    public void setDiversityPolicy(CreativeWork fDiversityPolicy) {
-        this.fDiversityPolicy = fDiversityPolicy;
+    public void setDiversityPolicy(CreativeWork diversityPolicy) {
+        this.diversityPolicy = diversityPolicy;
     }
     /**
      * Statement on diversity policy by an [[Organization]] e.g. a [[NewsMediaOrganization]]. For a [[NewsMediaOrganization]], a statement describing the newsroom’s diversity policy on both staffing and sources, typically providing staffing data.
      *
-     * @param fDiversityPolicy URL value to set.
+     * @param diversityPolicy URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
     @Override
-    public void setDiversityPolicy(URL fDiversityPolicy) {
-        this.fDiversityPolicy = fDiversityPolicy;
-    }
-    /**
-     * Statement on diversity policy by an [[Organization]] e.g. a [[NewsMediaOrganization]]. For a [[NewsMediaOrganization]], a statement describing the newsroom’s diversity policy on both staffing and sources, typically providing staffing data.
-     *
-     * @param fDiversityPolicy java.net.URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     */
-    @Override
-    public void setDiversityPolicy(java.net.URL fDiversityPolicy) {
-        this.fDiversityPolicy = URL.of(fDiversityPolicy);
+    public void setDiversityPolicy(URL diversityPolicy) {
+        this.diversityPolicy = diversityPolicy;
     }
 
-    private Text fEmail;
+    private Text email;
 
     /**
      * Email address.
@@ -1161,29 +964,20 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Text getEmail() {
-        return fEmail;
+        return email;
     }
 
     /**
      * Email address.
      *
-     * @param fEmail Text value to set.
+     * @param email Text value to set.
      */
     @Override
-    public void setEmail(Text fEmail) {
-        this.fEmail = fEmail;
-    }
-    /**
-     * Email address.
-     *
-     * @param fEmail java.lang.String value to set.
-     */
-    @Override
-    public void setEmail(java.lang.String fEmail) {
-        this.fEmail = Text.of(fEmail);
+    public void setEmail(Text email) {
+        this.email = email;
     }
 
-    private Person fEmployees;
+    private Person employees;
 
     /**
      * People working for this organization.
@@ -1192,20 +986,20 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Person getEmployees() {
-        return fEmployees;
+        return employees;
     }
 
     /**
      * People working for this organization.
      *
-     * @param fEmployees Person value to set.
+     * @param employees Person value to set.
      */
     @Override
-    public void setEmployees(Person fEmployees) {
-        this.fEmployees = fEmployees;
+    public void setEmployees(Person employees) {
+        this.employees = employees;
     }
 
-    private NonprofitType fNonprofitStatus;
+    private NonprofitType nonprofitStatus;
 
     /**
      * nonprofit Status indicates the legal status of a non-profit organization in its primary place of business.
@@ -1216,22 +1010,22 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public NonprofitType getNonprofitStatus() {
-        return fNonprofitStatus;
+        return nonprofitStatus;
     }
 
     /**
      * nonprofit Status indicates the legal status of a non-profit organization in its primary place of business.
      *
-     * @param fNonprofitStatus NonprofitType value to set.
+     * @param nonprofitStatus NonprofitType value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2543">https://github.com/schemaorg/schemaorg/issues/2543</a>
      */
     @Override
-    public void setNonprofitStatus(NonprofitType fNonprofitStatus) {
-        this.fNonprofitStatus = fNonprofitStatus;
+    public void setNonprofitStatus(NonprofitType nonprofitStatus) {
+        this.nonprofitStatus = nonprofitStatus;
     }
 
-    private Text fSlogan;
+    private Text slogan;
 
     /**
      * A slogan or motto associated with the item.
@@ -1240,29 +1034,20 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Text getSlogan() {
-        return fSlogan;
+        return slogan;
     }
 
     /**
      * A slogan or motto associated with the item.
      *
-     * @param fSlogan Text value to set.
+     * @param slogan Text value to set.
      */
     @Override
-    public void setSlogan(Text fSlogan) {
-        this.fSlogan = fSlogan;
-    }
-    /**
-     * A slogan or motto associated with the item.
-     *
-     * @param fSlogan java.lang.String value to set.
-     */
-    @Override
-    public void setSlogan(java.lang.String fSlogan) {
-        this.fSlogan = Text.of(fSlogan);
+    public void setSlogan(Text slogan) {
+        this.slogan = slogan;
     }
 
-    private Object fEthicsPolicy;
+    private Object ethicsPolicy;
 
     /**
      * Statement about ethics policy, e.g. of a [[NewsMediaOrganization]] regarding journalistic and publishing practices, or of a [[Restaurant]], a page describing food source policies. In the case of a [[NewsMediaOrganization]], an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization.
@@ -1273,44 +1058,33 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getEthicsPolicy() {
-        return (T) fEthicsPolicy;
+        return (T) ethicsPolicy;
     }
 
     /**
      * Statement about ethics policy, e.g. of a [[NewsMediaOrganization]] regarding journalistic and publishing practices, or of a [[Restaurant]], a page describing food source policies. In the case of a [[NewsMediaOrganization]], an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization.
      *
-     * @param fEthicsPolicy URL value to set.
+     * @param ethicsPolicy URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      */
     @Override
-    public void setEthicsPolicy(URL fEthicsPolicy) {
-        this.fEthicsPolicy = fEthicsPolicy;
+    public void setEthicsPolicy(URL ethicsPolicy) {
+        this.ethicsPolicy = ethicsPolicy;
     }
     /**
      * Statement about ethics policy, e.g. of a [[NewsMediaOrganization]] regarding journalistic and publishing practices, or of a [[Restaurant]], a page describing food source policies. In the case of a [[NewsMediaOrganization]], an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization.
      *
-     * @param fEthicsPolicy java.net.URL value to set.
+     * @param ethicsPolicy CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      */
     @Override
-    public void setEthicsPolicy(java.net.URL fEthicsPolicy) {
-        this.fEthicsPolicy = URL.of(fEthicsPolicy);
-    }
-    /**
-     * Statement about ethics policy, e.g. of a [[NewsMediaOrganization]] regarding journalistic and publishing practices, or of a [[Restaurant]], a page describing food source policies. In the case of a [[NewsMediaOrganization]], an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization.
-     *
-     * @param fEthicsPolicy CreativeWork value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     */
-    @Override
-    public void setEthicsPolicy(CreativeWork fEthicsPolicy) {
-        this.fEthicsPolicy = fEthicsPolicy;
+    public void setEthicsPolicy(CreativeWork ethicsPolicy) {
+        this.ethicsPolicy = ethicsPolicy;
     }
 
-    private Object fBrand;
+    private Object brand;
 
     /**
      * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
@@ -1319,29 +1093,29 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getBrand() {
-        return (T) fBrand;
+        return (T) brand;
     }
 
     /**
      * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
      *
-     * @param fBrand Organization value to set.
+     * @param brand Organization value to set.
      */
     @Override
-    public void setBrand(Organization fBrand) {
-        this.fBrand = fBrand;
+    public void setBrand(Organization brand) {
+        this.brand = brand;
     }
     /**
      * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
      *
-     * @param fBrand Brand value to set.
+     * @param brand Brand value to set.
      */
     @Override
-    public void setBrand(Brand fBrand) {
-        this.fBrand = fBrand;
+    public void setBrand(Brand brand) {
+        this.brand = brand;
     }
 
-    private Object fSponsor;
+    private Object sponsor;
 
     /**
      * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
@@ -1350,29 +1124,29 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getSponsor() {
-        return (T) fSponsor;
+        return (T) sponsor;
     }
 
     /**
      * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
      *
-     * @param fSponsor Organization value to set.
+     * @param sponsor Organization value to set.
      */
     @Override
-    public void setSponsor(Organization fSponsor) {
-        this.fSponsor = fSponsor;
+    public void setSponsor(Organization sponsor) {
+        this.sponsor = sponsor;
     }
     /**
      * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
      *
-     * @param fSponsor Person value to set.
+     * @param sponsor Person value to set.
      */
     @Override
-    public void setSponsor(Person fSponsor) {
-        this.fSponsor = fSponsor;
+    public void setSponsor(Person sponsor) {
+        this.sponsor = sponsor;
     }
 
-    private Object fLogo;
+    private Object logo;
 
     /**
      * An associated logo.
@@ -1382,41 +1156,31 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getLogo() {
-        return (T) fLogo;
+        return (T) logo;
     }
 
     /**
      * An associated logo.
      *
-     * @param fLogo URL value to set.
+     * @param logo URL value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setLogo(URL fLogo) {
-        this.fLogo = fLogo;
+    public void setLogo(URL logo) {
+        this.logo = logo;
     }
     /**
      * An associated logo.
      *
-     * @param fLogo java.net.URL value to set.
+     * @param logo ImageObject value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setLogo(java.net.URL fLogo) {
-        this.fLogo = URL.of(fLogo);
-    }
-    /**
-     * An associated logo.
-     *
-     * @param fLogo ImageObject value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setLogo(ImageObject fLogo) {
-        this.fLogo = fLogo;
+    public void setLogo(ImageObject logo) {
+        this.logo = logo;
     }
 
-    private Object fActionableFeedbackPolicy;
+    private Object actionableFeedbackPolicy;
 
     /**
      * For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement about public engagement activities (for news media, the newsroom’s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.
@@ -1428,47 +1192,35 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getActionableFeedbackPolicy() {
-        return (T) fActionableFeedbackPolicy;
+        return (T) actionableFeedbackPolicy;
     }
 
     /**
      * For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement about public engagement activities (for news media, the newsroom’s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.
      *
-     * @param fActionableFeedbackPolicy URL value to set.
+     * @param actionableFeedbackPolicy URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      */
     @Override
-    public void setActionableFeedbackPolicy(URL fActionableFeedbackPolicy) {
-        this.fActionableFeedbackPolicy = fActionableFeedbackPolicy;
+    public void setActionableFeedbackPolicy(URL actionableFeedbackPolicy) {
+        this.actionableFeedbackPolicy = actionableFeedbackPolicy;
     }
     /**
      * For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement about public engagement activities (for news media, the newsroom’s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.
      *
-     * @param fActionableFeedbackPolicy java.net.URL value to set.
+     * @param actionableFeedbackPolicy CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      */
     @Override
-    public void setActionableFeedbackPolicy(java.net.URL fActionableFeedbackPolicy) {
-        this.fActionableFeedbackPolicy = URL.of(fActionableFeedbackPolicy);
-    }
-    /**
-     * For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement about public engagement activities (for news media, the newsroom’s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.
-     *
-     * @param fActionableFeedbackPolicy CreativeWork value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     */
-    @Override
-    public void setActionableFeedbackPolicy(CreativeWork fActionableFeedbackPolicy) {
-        this.fActionableFeedbackPolicy = fActionableFeedbackPolicy;
+    public void setActionableFeedbackPolicy(CreativeWork actionableFeedbackPolicy) {
+        this.actionableFeedbackPolicy = actionableFeedbackPolicy;
     }
 
-    private Text fNaics;
+    private Text naics;
 
     /**
      * The North American Industry Classification System (NAICS) code for a particular organization or business person.
@@ -1478,31 +1230,21 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Text getNaics() {
-        return fNaics;
+        return naics;
     }
 
     /**
      * The North American Industry Classification System (NAICS) code for a particular organization or business person.
      *
-     * @param fNaics Text value to set.
+     * @param naics Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setNaics(Text fNaics) {
-        this.fNaics = fNaics;
-    }
-    /**
-     * The North American Industry Classification System (NAICS) code for a particular organization or business person.
-     *
-     * @param fNaics java.lang.String value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setNaics(java.lang.String fNaics) {
-        this.fNaics = Text.of(fNaics);
+    public void setNaics(Text naics) {
+        this.naics = naics;
     }
 
-    private ContactPoint fContactPoint;
+    private ContactPoint contactPoint;
 
     /**
      * A contact point for a person or organization.
@@ -1511,20 +1253,20 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public ContactPoint getContactPoint() {
-        return fContactPoint;
+        return contactPoint;
     }
 
     /**
      * A contact point for a person or organization.
      *
-     * @param fContactPoint ContactPoint value to set.
+     * @param contactPoint ContactPoint value to set.
      */
     @Override
-    public void setContactPoint(ContactPoint fContactPoint) {
-        this.fContactPoint = fContactPoint;
+    public void setContactPoint(ContactPoint contactPoint) {
+        this.contactPoint = contactPoint;
     }
 
-    private Object fServiceArea;
+    private Object serviceArea;
 
     /**
      * The geographic area where the service is provided.
@@ -1533,38 +1275,38 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getServiceArea() {
-        return (T) fServiceArea;
+        return (T) serviceArea;
     }
 
     /**
      * The geographic area where the service is provided.
      *
-     * @param fServiceArea GeoShape value to set.
+     * @param serviceArea GeoShape value to set.
      */
     @Override
-    public void setServiceArea(GeoShape fServiceArea) {
-        this.fServiceArea = fServiceArea;
+    public void setServiceArea(GeoShape serviceArea) {
+        this.serviceArea = serviceArea;
     }
     /**
      * The geographic area where the service is provided.
      *
-     * @param fServiceArea AdministrativeArea value to set.
+     * @param serviceArea AdministrativeArea value to set.
      */
     @Override
-    public void setServiceArea(AdministrativeArea fServiceArea) {
-        this.fServiceArea = fServiceArea;
+    public void setServiceArea(AdministrativeArea serviceArea) {
+        this.serviceArea = serviceArea;
     }
     /**
      * The geographic area where the service is provided.
      *
-     * @param fServiceArea Place value to set.
+     * @param serviceArea Place value to set.
      */
     @Override
-    public void setServiceArea(Place fServiceArea) {
-        this.fServiceArea = fServiceArea;
+    public void setServiceArea(Place serviceArea) {
+        this.serviceArea = serviceArea;
     }
 
-    private Text fIsicV4;
+    private Text isicV4;
 
     /**
      * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
@@ -1574,31 +1316,21 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Text getIsicV4() {
-        return fIsicV4;
+        return isicV4;
     }
 
     /**
      * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
      *
-     * @param fIsicV4 Text value to set.
+     * @param isicV4 Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setIsicV4(Text fIsicV4) {
-        this.fIsicV4 = fIsicV4;
-    }
-    /**
-     * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
-     *
-     * @param fIsicV4 java.lang.String value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setIsicV4(java.lang.String fIsicV4) {
-        this.fIsicV4 = Text.of(fIsicV4);
+    public void setIsicV4(Text isicV4) {
+        this.isicV4 = isicV4;
     }
 
-    private MerchantReturnPolicy fHasMerchantReturnPolicy;
+    private MerchantReturnPolicy hasMerchantReturnPolicy;
 
     /**
      * Specifies a MerchantReturnPolicy that may be applicable.
@@ -1609,22 +1341,22 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public MerchantReturnPolicy getHasMerchantReturnPolicy() {
-        return fHasMerchantReturnPolicy;
+        return hasMerchantReturnPolicy;
     }
 
     /**
      * Specifies a MerchantReturnPolicy that may be applicable.
      *
-     * @param fHasMerchantReturnPolicy MerchantReturnPolicy value to set.
+     * @param hasMerchantReturnPolicy MerchantReturnPolicy value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
      */
     @Override
-    public void setHasMerchantReturnPolicy(MerchantReturnPolicy fHasMerchantReturnPolicy) {
-        this.fHasMerchantReturnPolicy = fHasMerchantReturnPolicy;
+    public void setHasMerchantReturnPolicy(MerchantReturnPolicy hasMerchantReturnPolicy) {
+        this.hasMerchantReturnPolicy = hasMerchantReturnPolicy;
     }
 
-    private Place fHasPOS;
+    private Place hasPOS;
 
     /**
      * Points-of-Sales operated by the organization or person.
@@ -1634,21 +1366,21 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Place getHasPOS() {
-        return fHasPOS;
+        return hasPOS;
     }
 
     /**
      * Points-of-Sales operated by the organization or person.
      *
-     * @param fHasPOS Place value to set.
+     * @param hasPOS Place value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setHasPOS(Place fHasPOS) {
-        this.fHasPOS = fHasPOS;
+    public void setHasPOS(Place hasPOS) {
+        this.hasPOS = hasPOS;
     }
 
-    private Person fFounder;
+    private Person founder;
 
     /**
      * A person who founded this organization.
@@ -1657,20 +1389,20 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Person getFounder() {
-        return fFounder;
+        return founder;
     }
 
     /**
      * A person who founded this organization.
      *
-     * @param fFounder Person value to set.
+     * @param founder Person value to set.
      */
     @Override
-    public void setFounder(Person fFounder) {
-        this.fFounder = fFounder;
+    public void setFounder(Person founder) {
+        this.founder = founder;
     }
 
-    private Object fUnnamedSourcesPolicy;
+    private Object unnamedSourcesPolicy;
 
     /**
      * For an [[Organization]] (typically a [[NewsMediaOrganization]]), a statement about policy on use of unnamed sources and the decision process required.
@@ -1682,47 +1414,35 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getUnnamedSourcesPolicy() {
-        return (T) fUnnamedSourcesPolicy;
+        return (T) unnamedSourcesPolicy;
     }
 
     /**
      * For an [[Organization]] (typically a [[NewsMediaOrganization]]), a statement about policy on use of unnamed sources and the decision process required.
      *
-     * @param fUnnamedSourcesPolicy CreativeWork value to set.
+     * @param unnamedSourcesPolicy CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      */
     @Override
-    public void setUnnamedSourcesPolicy(CreativeWork fUnnamedSourcesPolicy) {
-        this.fUnnamedSourcesPolicy = fUnnamedSourcesPolicy;
+    public void setUnnamedSourcesPolicy(CreativeWork unnamedSourcesPolicy) {
+        this.unnamedSourcesPolicy = unnamedSourcesPolicy;
     }
     /**
      * For an [[Organization]] (typically a [[NewsMediaOrganization]]), a statement about policy on use of unnamed sources and the decision process required.
      *
-     * @param fUnnamedSourcesPolicy URL value to set.
+     * @param unnamedSourcesPolicy URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      */
     @Override
-    public void setUnnamedSourcesPolicy(URL fUnnamedSourcesPolicy) {
-        this.fUnnamedSourcesPolicy = fUnnamedSourcesPolicy;
-    }
-    /**
-     * For an [[Organization]] (typically a [[NewsMediaOrganization]]), a statement about policy on use of unnamed sources and the decision process required.
-     *
-     * @param fUnnamedSourcesPolicy java.net.URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     */
-    @Override
-    public void setUnnamedSourcesPolicy(java.net.URL fUnnamedSourcesPolicy) {
-        this.fUnnamedSourcesPolicy = URL.of(fUnnamedSourcesPolicy);
+    public void setUnnamedSourcesPolicy(URL unnamedSourcesPolicy) {
+        this.unnamedSourcesPolicy = unnamedSourcesPolicy;
     }
 
-    private Place fFoundingLocation;
+    private Place foundingLocation;
 
     /**
      * The place where the Organization was founded.
@@ -1731,20 +1451,20 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Place getFoundingLocation() {
-        return fFoundingLocation;
+        return foundingLocation;
     }
 
     /**
      * The place where the Organization was founded.
      *
-     * @param fFoundingLocation Place value to set.
+     * @param foundingLocation Place value to set.
      */
     @Override
-    public void setFoundingLocation(Place fFoundingLocation) {
-        this.fFoundingLocation = fFoundingLocation;
+    public void setFoundingLocation(Place foundingLocation) {
+        this.foundingLocation = foundingLocation;
     }
 
-    private Text fDuns;
+    private Text duns;
 
     /**
      * The Dun & Bradstreet DUNS number for identifying an organization or business person.
@@ -1754,31 +1474,21 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Text getDuns() {
-        return fDuns;
+        return duns;
     }
 
     /**
      * The Dun & Bradstreet DUNS number for identifying an organization or business person.
      *
-     * @param fDuns Text value to set.
+     * @param duns Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setDuns(Text fDuns) {
-        this.fDuns = fDuns;
-    }
-    /**
-     * The Dun & Bradstreet DUNS number for identifying an organization or business person.
-     *
-     * @param fDuns java.lang.String value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setDuns(java.lang.String fDuns) {
-        this.fDuns = Text.of(fDuns);
+    public void setDuns(Text duns) {
+        this.duns = duns;
     }
 
-    private Organization fParentOrganization;
+    private Organization parentOrganization;
 
     /**
      * The larger organization that this organization is a [[subOrganization]] of, if any.
@@ -1787,20 +1497,20 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Organization getParentOrganization() {
-        return fParentOrganization;
+        return parentOrganization;
     }
 
     /**
      * The larger organization that this organization is a [[subOrganization]] of, if any.
      *
-     * @param fParentOrganization Organization value to set.
+     * @param parentOrganization Organization value to set.
      */
     @Override
-    public void setParentOrganization(Organization fParentOrganization) {
-        this.fParentOrganization = fParentOrganization;
+    public void setParentOrganization(Organization parentOrganization) {
+        this.parentOrganization = parentOrganization;
     }
 
-    private Person fAlumni;
+    private Person alumni;
 
     /**
      * Alumni of an organization.
@@ -1809,20 +1519,20 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Person getAlumni() {
-        return fAlumni;
+        return alumni;
     }
 
     /**
      * Alumni of an organization.
      *
-     * @param fAlumni Person value to set.
+     * @param alumni Person value to set.
      */
     @Override
-    public void setAlumni(Person fAlumni) {
-        this.fAlumni = fAlumni;
+    public void setAlumni(Person alumni) {
+        this.alumni = alumni;
     }
 
-    private Text fLeiCode;
+    private Text leiCode;
 
     /**
      * An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.
@@ -1833,33 +1543,22 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Text getLeiCode() {
-        return fLeiCode;
+        return leiCode;
     }
 
     /**
      * An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.
      *
-     * @param fLeiCode Text value to set.
+     * @param leiCode Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#GLEIF">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#GLEIF</a>
      */
     @Override
-    public void setLeiCode(Text fLeiCode) {
-        this.fLeiCode = fLeiCode;
-    }
-    /**
-     * An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.
-     *
-     * @param fLeiCode java.lang.String value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#GLEIF">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#GLEIF</a>
-     */
-    @Override
-    public void setLeiCode(java.lang.String fLeiCode) {
-        this.fLeiCode = Text.of(fLeiCode);
+    public void setLeiCode(Text leiCode) {
+        this.leiCode = leiCode;
     }
 
-    private Object fAreaServed;
+    private Object areaServed;
 
     /**
      * The geographic area where a service or offered item is provided.
@@ -1868,56 +1567,47 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getAreaServed() {
-        return (T) fAreaServed;
+        return (T) areaServed;
     }
 
     /**
      * The geographic area where a service or offered item is provided.
      *
-     * @param fAreaServed AdministrativeArea value to set.
+     * @param areaServed AdministrativeArea value to set.
      */
     @Override
-    public void setAreaServed(AdministrativeArea fAreaServed) {
-        this.fAreaServed = fAreaServed;
+    public void setAreaServed(AdministrativeArea areaServed) {
+        this.areaServed = areaServed;
     }
     /**
      * The geographic area where a service or offered item is provided.
      *
-     * @param fAreaServed GeoShape value to set.
+     * @param areaServed GeoShape value to set.
      */
     @Override
-    public void setAreaServed(GeoShape fAreaServed) {
-        this.fAreaServed = fAreaServed;
+    public void setAreaServed(GeoShape areaServed) {
+        this.areaServed = areaServed;
     }
     /**
      * The geographic area where a service or offered item is provided.
      *
-     * @param fAreaServed Text value to set.
+     * @param areaServed Text value to set.
      */
     @Override
-    public void setAreaServed(Text fAreaServed) {
-        this.fAreaServed = fAreaServed;
+    public void setAreaServed(Text areaServed) {
+        this.areaServed = areaServed;
     }
     /**
      * The geographic area where a service or offered item is provided.
      *
-     * @param fAreaServed java.lang.String value to set.
+     * @param areaServed Place value to set.
      */
     @Override
-    public void setAreaServed(java.lang.String fAreaServed) {
-        this.fAreaServed = Text.of(fAreaServed);
-    }
-    /**
-     * The geographic area where a service or offered item is provided.
-     *
-     * @param fAreaServed Place value to set.
-     */
-    @Override
-    public void setAreaServed(Place fAreaServed) {
-        this.fAreaServed = fAreaServed;
+    public void setAreaServed(Place areaServed) {
+        this.areaServed = areaServed;
     }
 
-    private Date fFoundingDate;
+    private Date foundingDate;
 
     /**
      * The date that this organization was founded.
@@ -1926,29 +1616,20 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Date getFoundingDate() {
-        return fFoundingDate;
+        return foundingDate;
     }
 
     /**
      * The date that this organization was founded.
      *
-     * @param fFoundingDate Date value to set.
+     * @param foundingDate Date value to set.
      */
     @Override
-    public void setFoundingDate(Date fFoundingDate) {
-        this.fFoundingDate = fFoundingDate;
-    }
-    /**
-     * The date that this organization was founded.
-     *
-     * @param fFoundingDate java.time.LocalDate value to set.
-     */
-    @Override
-    public void setFoundingDate(java.time.LocalDate fFoundingDate) {
-        this.fFoundingDate = Date.of(fFoundingDate);
+    public void setFoundingDate(Date foundingDate) {
+        this.foundingDate = foundingDate;
     }
 
-    private Object fKnowsLanguage;
+    private Object knowsLanguage;
 
     /**
      * Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).
@@ -1960,47 +1641,35 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getKnowsLanguage() {
-        return (T) fKnowsLanguage;
+        return (T) knowsLanguage;
     }
 
     /**
      * Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).
      *
-     * @param fKnowsLanguage Language value to set.
+     * @param knowsLanguage Language value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
     @Override
-    public void setKnowsLanguage(Language fKnowsLanguage) {
-        this.fKnowsLanguage = fKnowsLanguage;
+    public void setKnowsLanguage(Language knowsLanguage) {
+        this.knowsLanguage = knowsLanguage;
     }
     /**
      * Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).
      *
-     * @param fKnowsLanguage Text value to set.
+     * @param knowsLanguage Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
     @Override
-    public void setKnowsLanguage(Text fKnowsLanguage) {
-        this.fKnowsLanguage = fKnowsLanguage;
-    }
-    /**
-     * Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).
-     *
-     * @param fKnowsLanguage java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     */
-    @Override
-    public void setKnowsLanguage(java.lang.String fKnowsLanguage) {
-        this.fKnowsLanguage = Text.of(fKnowsLanguage);
+    public void setKnowsLanguage(Text knowsLanguage) {
+        this.knowsLanguage = knowsLanguage;
     }
 
-    private Review fReviews;
+    private Review reviews;
 
     /**
      * Review of the item.
@@ -2009,20 +1678,20 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Review getReviews() {
-        return fReviews;
+        return reviews;
     }
 
     /**
      * Review of the item.
      *
-     * @param fReviews Review value to set.
+     * @param reviews Review value to set.
      */
     @Override
-    public void setReviews(Review fReviews) {
-        this.fReviews = fReviews;
+    public void setReviews(Review reviews) {
+        this.reviews = reviews;
     }
 
-    private Demand fSeeks;
+    private Demand seeks;
 
     /**
      * A pointer to products or services sought by the organization or person (demand).
@@ -2032,21 +1701,21 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Demand getSeeks() {
-        return fSeeks;
+        return seeks;
     }
 
     /**
      * A pointer to products or services sought by the organization or person (demand).
      *
-     * @param fSeeks Demand value to set.
+     * @param seeks Demand value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setSeeks(Demand fSeeks) {
-        this.fSeeks = fSeeks;
+    public void setSeeks(Demand seeks) {
+        this.seeks = seeks;
     }
 
-    private Text fTaxID;
+    private Text taxID;
 
     /**
      * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
@@ -2056,31 +1725,21 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Text getTaxID() {
-        return fTaxID;
+        return taxID;
     }
 
     /**
      * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
      *
-     * @param fTaxID Text value to set.
+     * @param taxID Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setTaxID(Text fTaxID) {
-        this.fTaxID = fTaxID;
-    }
-    /**
-     * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
-     *
-     * @param fTaxID java.lang.String value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setTaxID(java.lang.String fTaxID) {
-        this.fTaxID = Text.of(fTaxID);
+    public void setTaxID(Text taxID) {
+        this.taxID = taxID;
     }
 
-    private Object fOwns;
+    private Object owns;
 
     /**
      * Products owned by the organization or person.
@@ -2090,31 +1749,31 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getOwns() {
-        return (T) fOwns;
+        return (T) owns;
     }
 
     /**
      * Products owned by the organization or person.
      *
-     * @param fOwns Product value to set.
+     * @param owns Product value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setOwns(Product fOwns) {
-        this.fOwns = fOwns;
+    public void setOwns(Product owns) {
+        this.owns = owns;
     }
     /**
      * Products owned by the organization or person.
      *
-     * @param fOwns OwnershipInfo value to set.
+     * @param owns OwnershipInfo value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setOwns(OwnershipInfo fOwns) {
-        this.fOwns = fOwns;
+    public void setOwns(OwnershipInfo owns) {
+        this.owns = owns;
     }
 
-    private OfferCatalog fHasOfferCatalog;
+    private OfferCatalog hasOfferCatalog;
 
     /**
      * Indicates an OfferCatalog listing for this Organization, Person, or Service.
@@ -2123,20 +1782,20 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public OfferCatalog getHasOfferCatalog() {
-        return fHasOfferCatalog;
+        return hasOfferCatalog;
     }
 
     /**
      * Indicates an OfferCatalog listing for this Organization, Person, or Service.
      *
-     * @param fHasOfferCatalog OfferCatalog value to set.
+     * @param hasOfferCatalog OfferCatalog value to set.
      */
     @Override
-    public void setHasOfferCatalog(OfferCatalog fHasOfferCatalog) {
-        this.fHasOfferCatalog = fHasOfferCatalog;
+    public void setHasOfferCatalog(OfferCatalog hasOfferCatalog) {
+        this.hasOfferCatalog = hasOfferCatalog;
     }
 
-    private Object fMembers;
+    private Object members;
 
     /**
      * A member of this organization.
@@ -2145,29 +1804,29 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getMembers() {
-        return (T) fMembers;
+        return (T) members;
     }
 
     /**
      * A member of this organization.
      *
-     * @param fMembers Person value to set.
+     * @param members Person value to set.
      */
     @Override
-    public void setMembers(Person fMembers) {
-        this.fMembers = fMembers;
+    public void setMembers(Person members) {
+        this.members = members;
     }
     /**
      * A member of this organization.
      *
-     * @param fMembers Organization value to set.
+     * @param members Organization value to set.
      */
     @Override
-    public void setMembers(Organization fMembers) {
-        this.fMembers = fMembers;
+    public void setMembers(Organization members) {
+        this.members = members;
     }
 
-    private Event fEvents;
+    private Event events;
 
     /**
      * Upcoming or past events associated with this place or organization.
@@ -2176,20 +1835,20 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Event getEvents() {
-        return fEvents;
+        return events;
     }
 
     /**
      * Upcoming or past events associated with this place or organization.
      *
-     * @param fEvents Event value to set.
+     * @param events Event value to set.
      */
     @Override
-    public void setEvents(Event fEvents) {
-        this.fEvents = fEvents;
+    public void setEvents(Event events) {
+        this.events = events;
     }
 
-    private Text fIso6523Code;
+    private Text iso6523Code;
 
     /**
      * An organization identifier as defined in ISO 6523(-1). Note that many existing organization identifiers such as [leiCode](https://schema.org/leiCode), [duns](https://schema.org/duns) and [vatID](https://schema.org/vatID) can be expressed as an ISO 6523 identifier by setting the ICD part of the ISO 6523 identifier accordingly. 
@@ -2200,33 +1859,22 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Text getIso6523Code() {
-        return fIso6523Code;
+        return iso6523Code;
     }
 
     /**
      * An organization identifier as defined in ISO 6523(-1). Note that many existing organization identifiers such as [leiCode](https://schema.org/leiCode), [duns](https://schema.org/duns) and [vatID](https://schema.org/vatID) can be expressed as an ISO 6523 identifier by setting the ICD part of the ISO 6523 identifier accordingly. 
      *
-     * @param fIso6523Code Text value to set.
+     * @param iso6523Code Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2915">https://github.com/schemaorg/schemaorg/issues/2915</a>
      */
     @Override
-    public void setIso6523Code(Text fIso6523Code) {
-        this.fIso6523Code = fIso6523Code;
-    }
-    /**
-     * An organization identifier as defined in ISO 6523(-1). Note that many existing organization identifiers such as [leiCode](https://schema.org/leiCode), [duns](https://schema.org/duns) and [vatID](https://schema.org/vatID) can be expressed as an ISO 6523 identifier by setting the ICD part of the ISO 6523 identifier accordingly. 
-     *
-     * @param fIso6523Code java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2915">https://github.com/schemaorg/schemaorg/issues/2915</a>
-     */
-    @Override
-    public void setIso6523Code(java.lang.String fIso6523Code) {
-        this.fIso6523Code = Text.of(fIso6523Code);
+    public void setIso6523Code(Text iso6523Code) {
+        this.iso6523Code = iso6523Code;
     }
 
-    private Organization fDepartment;
+    private Organization department;
 
     /**
      * A relationship between an organization and a department of that organization, also described as an organization (allowing different urls, logos, opening hours). For example: a store with a pharmacy, or a bakery with a cafe.
@@ -2235,20 +1883,20 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Organization getDepartment() {
-        return fDepartment;
+        return department;
     }
 
     /**
      * A relationship between an organization and a department of that organization, also described as an organization (allowing different urls, logos, opening hours). For example: a store with a pharmacy, or a bakery with a cafe.
      *
-     * @param fDepartment Organization value to set.
+     * @param department Organization value to set.
      */
     @Override
-    public void setDepartment(Organization fDepartment) {
-        this.fDepartment = fDepartment;
+    public void setDepartment(Organization department) {
+        this.department = department;
     }
 
-    private Text fFaxNumber;
+    private Text faxNumber;
 
     /**
      * The fax number.
@@ -2257,29 +1905,20 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Text getFaxNumber() {
-        return fFaxNumber;
+        return faxNumber;
     }
 
     /**
      * The fax number.
      *
-     * @param fFaxNumber Text value to set.
+     * @param faxNumber Text value to set.
      */
     @Override
-    public void setFaxNumber(Text fFaxNumber) {
-        this.fFaxNumber = fFaxNumber;
-    }
-    /**
-     * The fax number.
-     *
-     * @param fFaxNumber java.lang.String value to set.
-     */
-    @Override
-    public void setFaxNumber(java.lang.String fFaxNumber) {
-        this.fFaxNumber = Text.of(fFaxNumber);
+    public void setFaxNumber(Text faxNumber) {
+        this.faxNumber = faxNumber;
     }
 
-    private Event fEvent;
+    private Event event;
 
     /**
      * Upcoming or past event associated with this place, organization, or action.
@@ -2288,20 +1927,20 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Event getEvent() {
-        return fEvent;
+        return event;
     }
 
     /**
      * Upcoming or past event associated with this place, organization, or action.
      *
-     * @param fEvent Event value to set.
+     * @param event Event value to set.
      */
     @Override
-    public void setEvent(Event fEvent) {
-        this.fEvent = fEvent;
+    public void setEvent(Event event) {
+        this.event = event;
     }
 
-    private Object fMainEntityOfPage;
+    private Object mainEntityOfPage;
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -2310,38 +1949,29 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
+        return (T) mainEntityOfPage;
     }
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param fMainEntityOfPage CreativeWork value to set.
+     * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(CreativeWork fMainEntityOfPage) {
-        this.fMainEntityOfPage = fMainEntityOfPage;
+    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
     }
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param fMainEntityOfPage URL value to set.
+     * @param mainEntityOfPage URL value to set.
      */
     @Override
-    public void setMainEntityOfPage(URL fMainEntityOfPage) {
-        this.fMainEntityOfPage = fMainEntityOfPage;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param fMainEntityOfPage java.net.URL value to set.
-     */
-    @Override
-    public void setMainEntityOfPage(java.net.URL fMainEntityOfPage) {
-        this.fMainEntityOfPage = URL.of(fMainEntityOfPage);
+    public void setMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
     }
 
-    private Text fAlternateName;
+    private Text alternateName;
 
     /**
      * An alias for the item.
@@ -2350,29 +1980,20 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Text getAlternateName() {
-        return fAlternateName;
+        return alternateName;
     }
 
     /**
      * An alias for the item.
      *
-     * @param fAlternateName Text value to set.
+     * @param alternateName Text value to set.
      */
     @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
-    }
-    /**
-     * An alias for the item.
-     *
-     * @param fAlternateName java.lang.String value to set.
-     */
-    @Override
-    public void setAlternateName(java.lang.String fAlternateName) {
-        this.fAlternateName = Text.of(fAlternateName);
+    public void setAlternateName(Text alternateName) {
+        this.alternateName = alternateName;
     }
 
-    private Text fName;
+    private Text name;
 
     /**
      * The name of the item.
@@ -2381,29 +2002,20 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Text getName() {
-        return fName;
+        return name;
     }
 
     /**
      * The name of the item.
      *
-     * @param fName Text value to set.
+     * @param name Text value to set.
      */
     @Override
-    public void setName(Text fName) {
-        this.fName = fName;
-    }
-    /**
-     * The name of the item.
-     *
-     * @param fName java.lang.String value to set.
-     */
-    @Override
-    public void setName(java.lang.String fName) {
-        this.fName = Text.of(fName);
+    public void setName(Text name) {
+        this.name = name;
     }
 
-    private Action fPotentialAction;
+    private Action potentialAction;
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -2412,20 +2024,20 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Action getPotentialAction() {
-        return fPotentialAction;
+        return potentialAction;
     }
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      *
-     * @param fPotentialAction Action value to set.
+     * @param potentialAction Action value to set.
      */
     @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
+    public void setPotentialAction(Action potentialAction) {
+        this.potentialAction = potentialAction;
     }
 
-    private Object fImage;
+    private Object image;
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -2434,38 +2046,29 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getImage() {
-        return (T) fImage;
+        return (T) image;
     }
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param fImage URL value to set.
+     * @param image URL value to set.
      */
     @Override
-    public void setImage(URL fImage) {
-        this.fImage = fImage;
+    public void setImage(URL image) {
+        this.image = image;
     }
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param fImage java.net.URL value to set.
+     * @param image ImageObject value to set.
      */
     @Override
-    public void setImage(java.net.URL fImage) {
-        this.fImage = URL.of(fImage);
-    }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param fImage ImageObject value to set.
-     */
-    @Override
-    public void setImage(ImageObject fImage) {
-        this.fImage = fImage;
+    public void setImage(ImageObject image) {
+        this.image = image;
     }
 
-    private URL fUrl;
+    private URL url;
 
     /**
      * URL of the item.
@@ -2474,29 +2077,20 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public URL getUrl() {
-        return fUrl;
+        return url;
     }
 
     /**
      * URL of the item.
      *
-     * @param fUrl URL value to set.
+     * @param url URL value to set.
      */
     @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
-    }
-    /**
-     * URL of the item.
-     *
-     * @param fUrl java.net.URL value to set.
-     */
-    @Override
-    public void setUrl(java.net.URL fUrl) {
-        this.fUrl = URL.of(fUrl);
+    public void setUrl(URL url) {
+        this.url = url;
     }
 
-    private Text fDescription;
+    private Text description;
 
     /**
      * A description of the item.
@@ -2505,29 +2099,20 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Text getDescription() {
-        return fDescription;
+        return description;
     }
 
     /**
      * A description of the item.
      *
-     * @param fDescription Text value to set.
+     * @param description Text value to set.
      */
     @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
-    }
-    /**
-     * A description of the item.
-     *
-     * @param fDescription java.lang.String value to set.
-     */
-    @Override
-    public void setDescription(java.lang.String fDescription) {
-        this.fDescription = Text.of(fDescription);
+    public void setDescription(Text description) {
+        this.description = description;
     }
 
-    private Object fSubjectOf;
+    private Object subjectOf;
 
     /**
      * A CreativeWork or Event about this Thing.
@@ -2537,31 +2122,31 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getSubjectOf() {
-        return (T) fSubjectOf;
+        return (T) subjectOf;
     }
 
     /**
      * A CreativeWork or Event about this Thing.
      *
-     * @param fSubjectOf Event value to set.
+     * @param subjectOf Event value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Event fSubjectOf) {
-        this.fSubjectOf = fSubjectOf;
+    public void setSubjectOf(Event subjectOf) {
+        this.subjectOf = subjectOf;
     }
     /**
      * A CreativeWork or Event about this Thing.
      *
-     * @param fSubjectOf CreativeWork value to set.
+     * @param subjectOf CreativeWork value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(CreativeWork fSubjectOf) {
-        this.fSubjectOf = fSubjectOf;
+    public void setSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = subjectOf;
     }
 
-    private URL fAdditionalType;
+    private URL additionalType;
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
@@ -2570,29 +2155,20 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public URL getAdditionalType() {
-        return fAdditionalType;
+        return additionalType;
     }
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
-     * @param fAdditionalType URL value to set.
+     * @param additionalType URL value to set.
      */
     @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
-    }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @param fAdditionalType java.net.URL value to set.
-     */
-    @Override
-    public void setAdditionalType(java.net.URL fAdditionalType) {
-        this.fAdditionalType = URL.of(fAdditionalType);
+    public void setAdditionalType(URL additionalType) {
+        this.additionalType = additionalType;
     }
 
-    private Text fDisambiguatingDescription;
+    private Text disambiguatingDescription;
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
@@ -2601,29 +2177,20 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Text getDisambiguatingDescription() {
-        return fDisambiguatingDescription;
+        return disambiguatingDescription;
     }
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
-     * @param fDisambiguatingDescription Text value to set.
+     * @param disambiguatingDescription Text value to set.
      */
     @Override
-    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = fDisambiguatingDescription;
-    }
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @param fDisambiguatingDescription java.lang.String value to set.
-     */
-    @Override
-    public void setDisambiguatingDescription(java.lang.String fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = Text.of(fDisambiguatingDescription);
+    public void setDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = disambiguatingDescription;
     }
 
-    private URL fSameAs;
+    private URL sameAs;
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
@@ -2632,29 +2199,20 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public URL getSameAs() {
-        return fSameAs;
+        return sameAs;
     }
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
-     * @param fSameAs URL value to set.
+     * @param sameAs URL value to set.
      */
     @Override
-    public void setSameAs(URL fSameAs) {
-        this.fSameAs = fSameAs;
-    }
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @param fSameAs java.net.URL value to set.
-     */
-    @Override
-    public void setSameAs(java.net.URL fSameAs) {
-        this.fSameAs = URL.of(fSameAs);
+    public void setSameAs(URL sameAs) {
+        this.sameAs = sameAs;
     }
 
-    private Object fIdentifier;
+    private Object identifier;
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -2664,57 +2222,37 @@ public class TheaterGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getIdentifier() {
-        return (T) fIdentifier;
+        return (T) identifier;
     }
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier URL value to set.
+     * @param identifier URL value to set.
      */
     @Override
-    public void setIdentifier(URL fIdentifier) {
-        this.fIdentifier = fIdentifier;
+    public void setIdentifier(URL identifier) {
+        this.identifier = identifier;
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier java.net.URL value to set.
+     * @param identifier Text value to set.
      */
     @Override
-    public void setIdentifier(java.net.URL fIdentifier) {
-        this.fIdentifier = URL.of(fIdentifier);
+    public void setIdentifier(Text identifier) {
+        this.identifier = identifier;
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier Text value to set.
+     * @param identifier PropertyValue value to set.
      */
     @Override
-    public void setIdentifier(Text fIdentifier) {
-        this.fIdentifier = fIdentifier;
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param fIdentifier java.lang.String value to set.
-     */
-    @Override
-    public void setIdentifier(java.lang.String fIdentifier) {
-        this.fIdentifier = Text.of(fIdentifier);
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param fIdentifier PropertyValue value to set.
-     */
-    @Override
-    public void setIdentifier(PropertyValue fIdentifier) {
-        this.fIdentifier = fIdentifier;
+    public void setIdentifier(PropertyValue identifier) {
+        this.identifier = identifier;
     }
 }

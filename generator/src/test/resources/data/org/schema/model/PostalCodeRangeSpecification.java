@@ -28,19 +28,11 @@ public interface PostalCodeRangeSpecification extends StructuredValue {
     /**
      * Last postal code in the range (included). Needs to be after [[postalCodeBegin]].
      *
-     * @param fPostalCodeEnd Text value to set.
+     * @param postalCodeEnd Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
-    void setPostalCodeEnd(Text fPostalCodeEnd);
-    /**
-     * Last postal code in the range (included). Needs to be after [[postalCodeBegin]].
-     *
-     * @param fPostalCodeEnd java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     */
-    void setPostalCodeEnd(java.lang.String fPostalCodeEnd);
+    void setPostalCodeEnd(Text postalCodeEnd);
 
     /**
      * First postal code in a range (included).
@@ -54,17 +46,9 @@ public interface PostalCodeRangeSpecification extends StructuredValue {
     /**
      * First postal code in a range (included).
      *
-     * @param fPostalCodeBegin Text value to set.
+     * @param postalCodeBegin Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
-    void setPostalCodeBegin(Text fPostalCodeBegin);
-    /**
-     * First postal code in a range (included).
-     *
-     * @param fPostalCodeBegin java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     */
-    void setPostalCodeBegin(java.lang.String fPostalCodeBegin);
+    void setPostalCodeBegin(Text postalCodeBegin);
 }

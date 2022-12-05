@@ -30,19 +30,11 @@ public interface CategoryCode extends DefinedTerm {
     /**
      * A short textual code that uniquely identifies the value.
      *
-     * @param fCodeValue Text value to set.
+     * @param codeValue Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
      */
-    void setCodeValue(Text fCodeValue);
-    /**
-     * A short textual code that uniquely identifies the value.
-     *
-     * @param fCodeValue java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
-     */
-    void setCodeValue(java.lang.String fCodeValue);
+    void setCodeValue(Text codeValue);
 
     /**
      * A [[CategoryCodeSet]] that contains this category code.
@@ -56,25 +48,17 @@ public interface CategoryCode extends DefinedTerm {
     /**
      * A [[CategoryCodeSet]] that contains this category code.
      *
-     * @param fInCodeSet CategoryCodeSet value to set.
+     * @param inCodeSet CategoryCodeSet value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
      */
-    void setInCodeSet(CategoryCodeSet fInCodeSet);
+    void setInCodeSet(CategoryCodeSet inCodeSet);
     /**
      * A [[CategoryCodeSet]] that contains this category code.
      *
-     * @param fInCodeSet URL value to set.
+     * @param inCodeSet URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
      */
-    void setInCodeSet(URL fInCodeSet);
-    /**
-     * A [[CategoryCodeSet]] that contains this category code.
-     *
-     * @param fInCodeSet java.net.URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
-     */
-    void setInCodeSet(java.net.URL fInCodeSet);
+    void setInCodeSet(URL inCodeSet);
 }

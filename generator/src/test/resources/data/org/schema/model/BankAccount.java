@@ -30,39 +30,21 @@ public interface BankAccount extends FinancialProduct {
     /**
      * The type of a bank account.
      *
-     * @param fBankAccountType Text value to set.
+     * @param bankAccountType Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
      */
-    void setBankAccountType(Text fBankAccountType);
+    void setBankAccountType(Text bankAccountType);
     /**
      * The type of a bank account.
      *
-     * @param fBankAccountType java.lang.String value to set.
+     * @param bankAccountType URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
      */
-    void setBankAccountType(java.lang.String fBankAccountType);
-    /**
-     * The type of a bank account.
-     *
-     * @param fBankAccountType URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
-     */
-    void setBankAccountType(URL fBankAccountType);
-    /**
-     * The type of a bank account.
-     *
-     * @param fBankAccountType java.net.URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
-     */
-    void setBankAccountType(java.net.URL fBankAccountType);
+    void setBankAccountType(URL bankAccountType);
 
     /**
      * A minimum amount that has to be paid in every month.
@@ -77,12 +59,12 @@ public interface BankAccount extends FinancialProduct {
     /**
      * A minimum amount that has to be paid in every month.
      *
-     * @param fAccountMinimumInflow MonetaryAmount value to set.
+     * @param accountMinimumInflow MonetaryAmount value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
      */
-    void setAccountMinimumInflow(MonetaryAmount fAccountMinimumInflow);
+    void setAccountMinimumInflow(MonetaryAmount accountMinimumInflow);
 
     /**
      * An overdraft is an extension of credit from a lending institution when an account reaches zero. An overdraft allows the individual to continue withdrawing money even if the account has no funds in it. Basically the bank allows people to borrow a set amount of money.
@@ -97,10 +79,10 @@ public interface BankAccount extends FinancialProduct {
     /**
      * An overdraft is an extension of credit from a lending institution when an account reaches zero. An overdraft allows the individual to continue withdrawing money even if the account has no funds in it. Basically the bank allows people to borrow a set amount of money.
      *
-     * @param fAccountOverdraftLimit MonetaryAmount value to set.
+     * @param accountOverdraftLimit MonetaryAmount value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
      */
-    void setAccountOverdraftLimit(MonetaryAmount fAccountOverdraftLimit);
+    void setAccountOverdraftLimit(MonetaryAmount accountOverdraftLimit);
 }

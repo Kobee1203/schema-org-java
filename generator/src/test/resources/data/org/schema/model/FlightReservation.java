@@ -25,21 +25,15 @@ public interface FlightReservation extends Reservation {
     /**
      * The priority status assigned to a passenger for security or boarding (e.g. FastTrack or Priority).
      *
-     * @param fPassengerPriorityStatus QualitativeValue value to set.
+     * @param passengerPriorityStatus QualitativeValue value to set.
      */
-    void setPassengerPriorityStatus(QualitativeValue fPassengerPriorityStatus);
+    void setPassengerPriorityStatus(QualitativeValue passengerPriorityStatus);
     /**
      * The priority status assigned to a passenger for security or boarding (e.g. FastTrack or Priority).
      *
-     * @param fPassengerPriorityStatus Text value to set.
+     * @param passengerPriorityStatus Text value to set.
      */
-    void setPassengerPriorityStatus(Text fPassengerPriorityStatus);
-    /**
-     * The priority status assigned to a passenger for security or boarding (e.g. FastTrack or Priority).
-     *
-     * @param fPassengerPriorityStatus java.lang.String value to set.
-     */
-    void setPassengerPriorityStatus(java.lang.String fPassengerPriorityStatus);
+    void setPassengerPriorityStatus(Text passengerPriorityStatus);
 
     /**
      * The airline-specific indicator of boarding order / preference.
@@ -51,15 +45,9 @@ public interface FlightReservation extends Reservation {
     /**
      * The airline-specific indicator of boarding order / preference.
      *
-     * @param fBoardingGroup Text value to set.
+     * @param boardingGroup Text value to set.
      */
-    void setBoardingGroup(Text fBoardingGroup);
-    /**
-     * The airline-specific indicator of boarding order / preference.
-     *
-     * @param fBoardingGroup java.lang.String value to set.
-     */
-    void setBoardingGroup(java.lang.String fBoardingGroup);
+    void setBoardingGroup(Text boardingGroup);
 
     /**
      * The type of security screening the passenger is subject to.
@@ -71,15 +59,9 @@ public interface FlightReservation extends Reservation {
     /**
      * The type of security screening the passenger is subject to.
      *
-     * @param fSecurityScreening Text value to set.
+     * @param securityScreening Text value to set.
      */
-    void setSecurityScreening(Text fSecurityScreening);
-    /**
-     * The type of security screening the passenger is subject to.
-     *
-     * @param fSecurityScreening java.lang.String value to set.
-     */
-    void setSecurityScreening(java.lang.String fSecurityScreening);
+    void setSecurityScreening(Text securityScreening);
 
     /**
      * The passenger's sequence number as assigned by the airline.
@@ -91,13 +73,7 @@ public interface FlightReservation extends Reservation {
     /**
      * The passenger's sequence number as assigned by the airline.
      *
-     * @param fPassengerSequenceNumber Text value to set.
+     * @param passengerSequenceNumber Text value to set.
      */
-    void setPassengerSequenceNumber(Text fPassengerSequenceNumber);
-    /**
-     * The passenger's sequence number as assigned by the airline.
-     *
-     * @param fPassengerSequenceNumber java.lang.String value to set.
-     */
-    void setPassengerSequenceNumber(java.lang.String fPassengerSequenceNumber);
+    void setPassengerSequenceNumber(Text passengerSequenceNumber);
 }

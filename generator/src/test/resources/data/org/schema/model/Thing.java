@@ -30,21 +30,15 @@ public interface Thing extends com.weedow.schemaorg.commons.model.JsonLdNode {
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param fMainEntityOfPage CreativeWork value to set.
+     * @param mainEntityOfPage CreativeWork value to set.
      */
-    void setMainEntityOfPage(CreativeWork fMainEntityOfPage);
+    void setMainEntityOfPage(CreativeWork mainEntityOfPage);
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param fMainEntityOfPage URL value to set.
+     * @param mainEntityOfPage URL value to set.
      */
-    void setMainEntityOfPage(URL fMainEntityOfPage);
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param fMainEntityOfPage java.net.URL value to set.
-     */
-    void setMainEntityOfPage(java.net.URL fMainEntityOfPage);
+    void setMainEntityOfPage(URL mainEntityOfPage);
 
     /**
      * An alias for the item.
@@ -56,15 +50,9 @@ public interface Thing extends com.weedow.schemaorg.commons.model.JsonLdNode {
     /**
      * An alias for the item.
      *
-     * @param fAlternateName Text value to set.
+     * @param alternateName Text value to set.
      */
-    void setAlternateName(Text fAlternateName);
-    /**
-     * An alias for the item.
-     *
-     * @param fAlternateName java.lang.String value to set.
-     */
-    void setAlternateName(java.lang.String fAlternateName);
+    void setAlternateName(Text alternateName);
 
     /**
      * The name of the item.
@@ -76,15 +64,9 @@ public interface Thing extends com.weedow.schemaorg.commons.model.JsonLdNode {
     /**
      * The name of the item.
      *
-     * @param fName Text value to set.
+     * @param name Text value to set.
      */
-    void setName(Text fName);
-    /**
-     * The name of the item.
-     *
-     * @param fName java.lang.String value to set.
-     */
-    void setName(java.lang.String fName);
+    void setName(Text name);
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -96,9 +78,9 @@ public interface Thing extends com.weedow.schemaorg.commons.model.JsonLdNode {
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      *
-     * @param fPotentialAction Action value to set.
+     * @param potentialAction Action value to set.
      */
-    void setPotentialAction(Action fPotentialAction);
+    void setPotentialAction(Action potentialAction);
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -110,21 +92,15 @@ public interface Thing extends com.weedow.schemaorg.commons.model.JsonLdNode {
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param fImage URL value to set.
+     * @param image URL value to set.
      */
-    void setImage(URL fImage);
+    void setImage(URL image);
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param fImage java.net.URL value to set.
+     * @param image ImageObject value to set.
      */
-    void setImage(java.net.URL fImage);
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param fImage ImageObject value to set.
-     */
-    void setImage(ImageObject fImage);
+    void setImage(ImageObject image);
 
     /**
      * URL of the item.
@@ -136,15 +112,9 @@ public interface Thing extends com.weedow.schemaorg.commons.model.JsonLdNode {
     /**
      * URL of the item.
      *
-     * @param fUrl URL value to set.
+     * @param url URL value to set.
      */
-    void setUrl(URL fUrl);
-    /**
-     * URL of the item.
-     *
-     * @param fUrl java.net.URL value to set.
-     */
-    void setUrl(java.net.URL fUrl);
+    void setUrl(URL url);
 
     /**
      * A description of the item.
@@ -156,15 +126,9 @@ public interface Thing extends com.weedow.schemaorg.commons.model.JsonLdNode {
     /**
      * A description of the item.
      *
-     * @param fDescription Text value to set.
+     * @param description Text value to set.
      */
-    void setDescription(Text fDescription);
-    /**
-     * A description of the item.
-     *
-     * @param fDescription java.lang.String value to set.
-     */
-    void setDescription(java.lang.String fDescription);
+    void setDescription(Text description);
 
     /**
      * A CreativeWork or Event about this Thing.
@@ -177,17 +141,17 @@ public interface Thing extends com.weedow.schemaorg.commons.model.JsonLdNode {
     /**
      * A CreativeWork or Event about this Thing.
      *
-     * @param fSubjectOf Event value to set.
+     * @param subjectOf Event value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
-    void setSubjectOf(Event fSubjectOf);
+    void setSubjectOf(Event subjectOf);
     /**
      * A CreativeWork or Event about this Thing.
      *
-     * @param fSubjectOf CreativeWork value to set.
+     * @param subjectOf CreativeWork value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
-    void setSubjectOf(CreativeWork fSubjectOf);
+    void setSubjectOf(CreativeWork subjectOf);
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
@@ -199,15 +163,9 @@ public interface Thing extends com.weedow.schemaorg.commons.model.JsonLdNode {
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
-     * @param fAdditionalType URL value to set.
+     * @param additionalType URL value to set.
      */
-    void setAdditionalType(URL fAdditionalType);
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @param fAdditionalType java.net.URL value to set.
-     */
-    void setAdditionalType(java.net.URL fAdditionalType);
+    void setAdditionalType(URL additionalType);
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
@@ -219,15 +177,9 @@ public interface Thing extends com.weedow.schemaorg.commons.model.JsonLdNode {
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
-     * @param fDisambiguatingDescription Text value to set.
+     * @param disambiguatingDescription Text value to set.
      */
-    void setDisambiguatingDescription(Text fDisambiguatingDescription);
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @param fDisambiguatingDescription java.lang.String value to set.
-     */
-    void setDisambiguatingDescription(java.lang.String fDisambiguatingDescription);
+    void setDisambiguatingDescription(Text disambiguatingDescription);
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
@@ -239,15 +191,9 @@ public interface Thing extends com.weedow.schemaorg.commons.model.JsonLdNode {
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
-     * @param fSameAs URL value to set.
+     * @param sameAs URL value to set.
      */
-    void setSameAs(URL fSameAs);
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @param fSameAs java.net.URL value to set.
-     */
-    void setSameAs(java.net.URL fSameAs);
+    void setSameAs(URL sameAs);
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -261,35 +207,21 @@ public interface Thing extends com.weedow.schemaorg.commons.model.JsonLdNode {
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier URL value to set.
+     * @param identifier URL value to set.
      */
-    void setIdentifier(URL fIdentifier);
+    void setIdentifier(URL identifier);
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier java.net.URL value to set.
+     * @param identifier Text value to set.
      */
-    void setIdentifier(java.net.URL fIdentifier);
+    void setIdentifier(Text identifier);
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier Text value to set.
+     * @param identifier PropertyValue value to set.
      */
-    void setIdentifier(Text fIdentifier);
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param fIdentifier java.lang.String value to set.
-     */
-    void setIdentifier(java.lang.String fIdentifier);
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param fIdentifier PropertyValue value to set.
-     */
-    void setIdentifier(PropertyValue fIdentifier);
+    void setIdentifier(PropertyValue identifier);
 }

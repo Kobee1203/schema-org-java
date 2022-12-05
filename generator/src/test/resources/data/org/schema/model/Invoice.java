@@ -38,15 +38,15 @@ public interface Invoice extends Intangible {
     /**
      * The total amount due.
      *
-     * @param fTotalPaymentDue MonetaryAmount value to set.
+     * @param totalPaymentDue MonetaryAmount value to set.
      */
-    void setTotalPaymentDue(MonetaryAmount fTotalPaymentDue);
+    void setTotalPaymentDue(MonetaryAmount totalPaymentDue);
     /**
      * The total amount due.
      *
-     * @param fTotalPaymentDue PriceSpecification value to set.
+     * @param totalPaymentDue PriceSpecification value to set.
      */
-    void setTotalPaymentDue(PriceSpecification fTotalPaymentDue);
+    void setTotalPaymentDue(PriceSpecification totalPaymentDue);
 
     /**
      * The time interval used to compute the invoice.
@@ -58,9 +58,9 @@ public interface Invoice extends Intangible {
     /**
      * The time interval used to compute the invoice.
      *
-     * @param fBillingPeriod Duration value to set.
+     * @param billingPeriod Duration value to set.
      */
-    void setBillingPeriod(Duration fBillingPeriod);
+    void setBillingPeriod(Duration billingPeriod);
 
     /**
      * The Order(s) related to this Invoice. One or more Orders may be combined into a single Invoice.
@@ -72,9 +72,9 @@ public interface Invoice extends Intangible {
     /**
      * The Order(s) related to this Invoice. One or more Orders may be combined into a single Invoice.
      *
-     * @param fReferencesOrder Order value to set.
+     * @param referencesOrder Order value to set.
      */
-    void setReferencesOrder(Order fReferencesOrder);
+    void setReferencesOrder(Order referencesOrder);
 
     /**
      * The identifier for the account the payment will be applied to.
@@ -86,15 +86,9 @@ public interface Invoice extends Intangible {
     /**
      * The identifier for the account the payment will be applied to.
      *
-     * @param fAccountId Text value to set.
+     * @param accountId Text value to set.
      */
-    void setAccountId(Text fAccountId);
-    /**
-     * The identifier for the account the payment will be applied to.
-     *
-     * @param fAccountId java.lang.String value to set.
-     */
-    void setAccountId(java.lang.String fAccountId);
+    void setAccountId(Text accountId);
 
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
@@ -108,59 +102,43 @@ public interface Invoice extends Intangible {
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
-     * @param fCategory URL value to set.
+     * @param category URL value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
-    void setCategory(URL fCategory);
+    void setCategory(URL category);
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
-     * @param fCategory java.net.URL value to set.
+     * @param category Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
-    void setCategory(java.net.URL fCategory);
+    void setCategory(Text category);
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
-     * @param fCategory Text value to set.
+     * @param category PhysicalActivityCategory value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
-    void setCategory(Text fCategory);
+    void setCategory(PhysicalActivityCategory category);
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
-     * @param fCategory java.lang.String value to set.
+     * @param category Thing value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
-    void setCategory(java.lang.String fCategory);
+    void setCategory(Thing category);
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
-     * @param fCategory PhysicalActivityCategory value to set.
+     * @param category CategoryCode value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
-    void setCategory(PhysicalActivityCategory fCategory);
-    /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-     *
-     * @param fCategory Thing value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     */
-    void setCategory(Thing fCategory);
-    /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-     *
-     * @param fCategory CategoryCode value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     */
-    void setCategory(CategoryCode fCategory);
+    void setCategory(CategoryCode category);
 
     /**
      * The date the invoice is scheduled to be paid.
@@ -172,15 +150,9 @@ public interface Invoice extends Intangible {
     /**
      * The date the invoice is scheduled to be paid.
      *
-     * @param fScheduledPaymentDate Date value to set.
+     * @param scheduledPaymentDate Date value to set.
      */
-    void setScheduledPaymentDate(Date fScheduledPaymentDate);
-    /**
-     * The date the invoice is scheduled to be paid.
-     *
-     * @param fScheduledPaymentDate java.time.LocalDate value to set.
-     */
-    void setScheduledPaymentDate(java.time.LocalDate fScheduledPaymentDate);
+    void setScheduledPaymentDate(Date scheduledPaymentDate);
 
     /**
      * A number that confirms the given order or payment has been received.
@@ -192,15 +164,9 @@ public interface Invoice extends Intangible {
     /**
      * A number that confirms the given order or payment has been received.
      *
-     * @param fConfirmationNumber Text value to set.
+     * @param confirmationNumber Text value to set.
      */
-    void setConfirmationNumber(Text fConfirmationNumber);
-    /**
-     * A number that confirms the given order or payment has been received.
-     *
-     * @param fConfirmationNumber java.lang.String value to set.
-     */
-    void setConfirmationNumber(java.lang.String fConfirmationNumber);
+    void setConfirmationNumber(Text confirmationNumber);
 
     /**
      * Party placing the order or paying the invoice.
@@ -212,15 +178,15 @@ public interface Invoice extends Intangible {
     /**
      * Party placing the order or paying the invoice.
      *
-     * @param fCustomer Organization value to set.
+     * @param customer Organization value to set.
      */
-    void setCustomer(Organization fCustomer);
+    void setCustomer(Organization customer);
     /**
      * Party placing the order or paying the invoice.
      *
-     * @param fCustomer Person value to set.
+     * @param customer Person value to set.
      */
-    void setCustomer(Person fCustomer);
+    void setCustomer(Person customer);
 
     /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
@@ -235,21 +201,21 @@ public interface Invoice extends Intangible {
     /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
      *
-     * @param fProvider Organization value to set.
+     * @param provider Organization value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
      */
-    void setProvider(Organization fProvider);
+    void setProvider(Organization provider);
     /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
      *
-     * @param fProvider Person value to set.
+     * @param provider Person value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
      */
-    void setProvider(Person fProvider);
+    void setProvider(Person provider);
 
     /**
      * The minimum payment required at this time.
@@ -261,15 +227,15 @@ public interface Invoice extends Intangible {
     /**
      * The minimum payment required at this time.
      *
-     * @param fMinimumPaymentDue MonetaryAmount value to set.
+     * @param minimumPaymentDue MonetaryAmount value to set.
      */
-    void setMinimumPaymentDue(MonetaryAmount fMinimumPaymentDue);
+    void setMinimumPaymentDue(MonetaryAmount minimumPaymentDue);
     /**
      * The minimum payment required at this time.
      *
-     * @param fMinimumPaymentDue PriceSpecification value to set.
+     * @param minimumPaymentDue PriceSpecification value to set.
      */
-    void setMinimumPaymentDue(PriceSpecification fMinimumPaymentDue);
+    void setMinimumPaymentDue(PriceSpecification minimumPaymentDue);
 
     /**
      * The date that payment is due.
@@ -281,27 +247,15 @@ public interface Invoice extends Intangible {
     /**
      * The date that payment is due.
      *
-     * @param fPaymentDueDate DateTime value to set.
+     * @param paymentDueDate DateTime value to set.
      */
-    void setPaymentDueDate(DateTime fPaymentDueDate);
+    void setPaymentDueDate(DateTime paymentDueDate);
     /**
      * The date that payment is due.
      *
-     * @param fPaymentDueDate java.time.LocalDateTime value to set.
+     * @param paymentDueDate Date value to set.
      */
-    void setPaymentDueDate(java.time.LocalDateTime fPaymentDueDate);
-    /**
-     * The date that payment is due.
-     *
-     * @param fPaymentDueDate Date value to set.
-     */
-    void setPaymentDueDate(Date fPaymentDueDate);
-    /**
-     * The date that payment is due.
-     *
-     * @param fPaymentDueDate java.time.LocalDate value to set.
-     */
-    void setPaymentDueDate(java.time.LocalDate fPaymentDueDate);
+    void setPaymentDueDate(Date paymentDueDate);
 
     /**
      * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
@@ -313,15 +267,15 @@ public interface Invoice extends Intangible {
     /**
      * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
      *
-     * @param fBroker Person value to set.
+     * @param broker Person value to set.
      */
-    void setBroker(Person fBroker);
+    void setBroker(Person broker);
     /**
      * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
      *
-     * @param fBroker Organization value to set.
+     * @param broker Organization value to set.
      */
-    void setBroker(Organization fBroker);
+    void setBroker(Organization broker);
 
     /**
      * The status of payment; whether the invoice has been paid or not.
@@ -333,21 +287,15 @@ public interface Invoice extends Intangible {
     /**
      * The status of payment; whether the invoice has been paid or not.
      *
-     * @param fPaymentStatus PaymentStatusType value to set.
+     * @param paymentStatus PaymentStatusType value to set.
      */
-    void setPaymentStatus(PaymentStatusType fPaymentStatus);
+    void setPaymentStatus(PaymentStatusType paymentStatus);
     /**
      * The status of payment; whether the invoice has been paid or not.
      *
-     * @param fPaymentStatus Text value to set.
+     * @param paymentStatus Text value to set.
      */
-    void setPaymentStatus(Text fPaymentStatus);
-    /**
-     * The status of payment; whether the invoice has been paid or not.
-     *
-     * @param fPaymentStatus java.lang.String value to set.
-     */
-    void setPaymentStatus(java.lang.String fPaymentStatus);
+    void setPaymentStatus(Text paymentStatus);
 
     /**
      * An identifier for the method of payment used (e.g. the last 4 digits of the credit card).
@@ -359,15 +307,9 @@ public interface Invoice extends Intangible {
     /**
      * An identifier for the method of payment used (e.g. the last 4 digits of the credit card).
      *
-     * @param fPaymentMethodId Text value to set.
+     * @param paymentMethodId Text value to set.
      */
-    void setPaymentMethodId(Text fPaymentMethodId);
-    /**
-     * An identifier for the method of payment used (e.g. the last 4 digits of the credit card).
-     *
-     * @param fPaymentMethodId java.lang.String value to set.
-     */
-    void setPaymentMethodId(java.lang.String fPaymentMethodId);
+    void setPaymentMethodId(Text paymentMethodId);
 
     /**
      * The date that payment is due.
@@ -379,15 +321,9 @@ public interface Invoice extends Intangible {
     /**
      * The date that payment is due.
      *
-     * @param fPaymentDue DateTime value to set.
+     * @param paymentDue DateTime value to set.
      */
-    void setPaymentDue(DateTime fPaymentDue);
-    /**
-     * The date that payment is due.
-     *
-     * @param fPaymentDue java.time.LocalDateTime value to set.
-     */
-    void setPaymentDue(java.time.LocalDateTime fPaymentDue);
+    void setPaymentDue(DateTime paymentDue);
 
     /**
      * The name of the credit card or other method of payment for the order.
@@ -399,7 +335,7 @@ public interface Invoice extends Intangible {
     /**
      * The name of the credit card or other method of payment for the order.
      *
-     * @param fPaymentMethod PaymentMethod value to set.
+     * @param paymentMethod PaymentMethod value to set.
      */
-    void setPaymentMethod(PaymentMethod fPaymentMethod);
+    void setPaymentMethod(PaymentMethod paymentMethod);
 }

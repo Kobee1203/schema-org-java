@@ -37,66 +37,59 @@ public interface PropertyValue extends StructuredValue {
     /**
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
      *
-     * @param fValueReference Enumeration value to set.
+     * @param valueReference Enumeration value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setValueReference(Enumeration fValueReference);
+    void setValueReference(Enumeration valueReference);
     /**
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
      *
-     * @param fValueReference DefinedTerm value to set.
+     * @param valueReference DefinedTerm value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setValueReference(DefinedTerm fValueReference);
+    void setValueReference(DefinedTerm valueReference);
     /**
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
      *
-     * @param fValueReference Text value to set.
+     * @param valueReference Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setValueReference(Text fValueReference);
+    void setValueReference(Text valueReference);
     /**
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
      *
-     * @param fValueReference java.lang.String value to set.
+     * @param valueReference MeasurementTypeEnumeration value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setValueReference(java.lang.String fValueReference);
+    void setValueReference(MeasurementTypeEnumeration valueReference);
     /**
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
      *
-     * @param fValueReference MeasurementTypeEnumeration value to set.
+     * @param valueReference QualitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setValueReference(MeasurementTypeEnumeration fValueReference);
+    void setValueReference(QualitativeValue valueReference);
     /**
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
      *
-     * @param fValueReference QualitativeValue value to set.
+     * @param valueReference StructuredValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setValueReference(QualitativeValue fValueReference);
+    void setValueReference(StructuredValue valueReference);
     /**
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
      *
-     * @param fValueReference StructuredValue value to set.
+     * @param valueReference PropertyValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setValueReference(StructuredValue fValueReference);
+    void setValueReference(PropertyValue valueReference);
     /**
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
      *
-     * @param fValueReference PropertyValue value to set.
+     * @param valueReference QuantitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setValueReference(PropertyValue fValueReference);
-    /**
-     * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
-     *
-     * @param fValueReference QuantitativeValue value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void setValueReference(QuantitativeValue fValueReference);
+    void setValueReference(QuantitativeValue valueReference);
 
     /**
      * A commonly used identifier for the characteristic represented by the property, e.g. a manufacturer or a standard code for a property. propertyID can be
@@ -114,36 +107,18 @@ public interface PropertyValue extends StructuredValue {
      * a URL indicating the type of the property, either pointing to an external vocabulary, or a Web resource that describes the property (e.g. a glossary entry).
      * Standards bodies should promote a standard prefix for the identifiers of properties from their standards.
      *
-     * @param fPropertyID Text value to set.
+     * @param propertyID Text value to set.
      */
-    void setPropertyID(Text fPropertyID);
+    void setPropertyID(Text propertyID);
     /**
      * A commonly used identifier for the characteristic represented by the property, e.g. a manufacturer or a standard code for a property. propertyID can be
      * (1) a prefixed string, mainly meant to be used with standards for product properties; (2) a site-specific, non-prefixed string (e.g. the primary key of the property or the vendor-specific id of the property), or (3)
      * a URL indicating the type of the property, either pointing to an external vocabulary, or a Web resource that describes the property (e.g. a glossary entry).
      * Standards bodies should promote a standard prefix for the identifiers of properties from their standards.
      *
-     * @param fPropertyID java.lang.String value to set.
+     * @param propertyID URL value to set.
      */
-    void setPropertyID(java.lang.String fPropertyID);
-    /**
-     * A commonly used identifier for the characteristic represented by the property, e.g. a manufacturer or a standard code for a property. propertyID can be
-     * (1) a prefixed string, mainly meant to be used with standards for product properties; (2) a site-specific, non-prefixed string (e.g. the primary key of the property or the vendor-specific id of the property), or (3)
-     * a URL indicating the type of the property, either pointing to an external vocabulary, or a Web resource that describes the property (e.g. a glossary entry).
-     * Standards bodies should promote a standard prefix for the identifiers of properties from their standards.
-     *
-     * @param fPropertyID URL value to set.
-     */
-    void setPropertyID(URL fPropertyID);
-    /**
-     * A commonly used identifier for the characteristic represented by the property, e.g. a manufacturer or a standard code for a property. propertyID can be
-     * (1) a prefixed string, mainly meant to be used with standards for product properties; (2) a site-specific, non-prefixed string (e.g. the primary key of the property or the vendor-specific id of the property), or (3)
-     * a URL indicating the type of the property, either pointing to an external vocabulary, or a Web resource that describes the property (e.g. a glossary entry).
-     * Standards bodies should promote a standard prefix for the identifiers of properties from their standards.
-     *
-     * @param fPropertyID java.net.URL value to set.
-     */
-    void setPropertyID(java.net.URL fPropertyID);
+    void setPropertyID(URL propertyID);
 
     /**
      * The upper value of some characteristic or property.
@@ -156,17 +131,10 @@ public interface PropertyValue extends StructuredValue {
     /**
      * The upper value of some characteristic or property.
      *
-     * @param fMaxValue Number value to set.
+     * @param maxValue Number value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setMaxValue(Number fMaxValue);
-    /**
-     * The upper value of some characteristic or property.
-     *
-     * @param fMaxValue java.lang.Number value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void setMaxValue(java.lang.Number fMaxValue);
+    void setMaxValue(Number maxValue);
 
     /**
      * A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
@@ -180,16 +148,9 @@ public interface PropertyValue extends StructuredValue {
      * A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
      * <a href='unitCode'>unitCode</a>.
      *
-     * @param fUnitText Text value to set.
+     * @param unitText Text value to set.
      */
-    void setUnitText(Text fUnitText);
-    /**
-     * A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
-     * <a href='unitCode'>unitCode</a>.
-     *
-     * @param fUnitText java.lang.String value to set.
-     */
-    void setUnitText(java.lang.String fUnitText);
+    void setUnitText(Text unitText);
 
     /**
      * A technique or technology used in a [[Dataset]] (or [[DataDownload]], [[DataCatalog]]),
@@ -219,11 +180,11 @@ public interface PropertyValue extends StructuredValue {
      * If there are several [[variableMeasured]] properties recorded for some given data object, use a [[PropertyValue]] for each [[variableMeasured]] and attach the corresponding [[measurementTechnique]].
      *       
      *
-     * @param fMeasurementTechnique Text value to set.
+     * @param measurementTechnique Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
      */
-    void setMeasurementTechnique(Text fMeasurementTechnique);
+    void setMeasurementTechnique(Text measurementTechnique);
     /**
      * A technique or technology used in a [[Dataset]] (or [[DataDownload]], [[DataCatalog]]),
      * corresponding to the method used for measuring the corresponding variable(s) (described using [[variableMeasured]]). This is oriented towards scientific and scholarly dataset publication but may have broader applicability; it is not intended as a full representation of measurement, but rather as a high level summary for dataset discovery.
@@ -235,43 +196,11 @@ public interface PropertyValue extends StructuredValue {
      * If there are several [[variableMeasured]] properties recorded for some given data object, use a [[PropertyValue]] for each [[variableMeasured]] and attach the corresponding [[measurementTechnique]].
      *       
      *
-     * @param fMeasurementTechnique java.lang.String value to set.
+     * @param measurementTechnique URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
      */
-    void setMeasurementTechnique(java.lang.String fMeasurementTechnique);
-    /**
-     * A technique or technology used in a [[Dataset]] (or [[DataDownload]], [[DataCatalog]]),
-     * corresponding to the method used for measuring the corresponding variable(s) (described using [[variableMeasured]]). This is oriented towards scientific and scholarly dataset publication but may have broader applicability; it is not intended as a full representation of measurement, but rather as a high level summary for dataset discovery.
-     * 
-     * For example, if [[variableMeasured]] is: molecule concentration, [[measurementTechnique]] could be: "mass spectrometry" or "nmr spectroscopy" or "colorimetry" or "immunofluorescence".
-     * 
-     * If the [[variableMeasured]] is "depression rating", the [[measurementTechnique]] could be "Zung Scale" or "HAM-D" or "Beck Depression Inventory".
-     * 
-     * If there are several [[variableMeasured]] properties recorded for some given data object, use a [[PropertyValue]] for each [[variableMeasured]] and attach the corresponding [[measurementTechnique]].
-     *       
-     *
-     * @param fMeasurementTechnique URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
-     */
-    void setMeasurementTechnique(URL fMeasurementTechnique);
-    /**
-     * A technique or technology used in a [[Dataset]] (or [[DataDownload]], [[DataCatalog]]),
-     * corresponding to the method used for measuring the corresponding variable(s) (described using [[variableMeasured]]). This is oriented towards scientific and scholarly dataset publication but may have broader applicability; it is not intended as a full representation of measurement, but rather as a high level summary for dataset discovery.
-     * 
-     * For example, if [[variableMeasured]] is: molecule concentration, [[measurementTechnique]] could be: "mass spectrometry" or "nmr spectroscopy" or "colorimetry" or "immunofluorescence".
-     * 
-     * If the [[variableMeasured]] is "depression rating", the [[measurementTechnique]] could be "Zung Scale" or "HAM-D" or "Beck Depression Inventory".
-     * 
-     * If there are several [[variableMeasured]] properties recorded for some given data object, use a [[PropertyValue]] for each [[variableMeasured]] and attach the corresponding [[measurementTechnique]].
-     *       
-     *
-     * @param fMeasurementTechnique java.net.URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
-     */
-    void setMeasurementTechnique(java.net.URL fMeasurementTechnique);
+    void setMeasurementTechnique(URL measurementTechnique);
 
     /**
      * The lower value of some characteristic or property.
@@ -284,17 +213,10 @@ public interface PropertyValue extends StructuredValue {
     /**
      * The lower value of some characteristic or property.
      *
-     * @param fMinValue Number value to set.
+     * @param minValue Number value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setMinValue(Number fMinValue);
-    /**
-     * The lower value of some characteristic or property.
-     *
-     * @param fMinValue java.lang.Number value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void setMinValue(java.lang.Number fMinValue);
+    void setMinValue(Number minValue);
 
     /**
      * The value of the quantitative value or property value node.<br/><br/>* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.<br/>* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
@@ -307,52 +229,31 @@ public interface PropertyValue extends StructuredValue {
     /**
      * The value of the quantitative value or property value node.<br/><br/>* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.<br/>* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      *
-     * @param fValue Text value to set.
+     * @param value Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setValue(Text fValue);
+    void setValue(Text value);
     /**
      * The value of the quantitative value or property value node.<br/><br/>* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.<br/>* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      *
-     * @param fValue java.lang.String value to set.
+     * @param value Number value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setValue(java.lang.String fValue);
+    void setValue(Number value);
     /**
      * The value of the quantitative value or property value node.<br/><br/>* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.<br/>* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      *
-     * @param fValue Number value to set.
+     * @param value StructuredValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setValue(Number fValue);
+    void setValue(StructuredValue value);
     /**
      * The value of the quantitative value or property value node.<br/><br/>* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.<br/>* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      *
-     * @param fValue java.lang.Number value to set.
+     * @param value Boolean value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setValue(java.lang.Number fValue);
-    /**
-     * The value of the quantitative value or property value node.<br/><br/>* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.<br/>* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-     *
-     * @param fValue StructuredValue value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void setValue(StructuredValue fValue);
-    /**
-     * The value of the quantitative value or property value node.<br/><br/>* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.<br/>* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-     *
-     * @param fValue Boolean value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void setValue(Boolean fValue);
-    /**
-     * The value of the quantitative value or property value node.<br/><br/>* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.<br/>* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-     *
-     * @param fValue java.lang.Boolean value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void setValue(java.lang.Boolean fValue);
+    void setValue(Boolean value);
 
     /**
      * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
@@ -365,29 +266,15 @@ public interface PropertyValue extends StructuredValue {
     /**
      * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
      *
-     * @param fUnitCode Text value to set.
+     * @param unitCode Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setUnitCode(Text fUnitCode);
+    void setUnitCode(Text unitCode);
     /**
      * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
      *
-     * @param fUnitCode java.lang.String value to set.
+     * @param unitCode URL value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setUnitCode(java.lang.String fUnitCode);
-    /**
-     * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
-     *
-     * @param fUnitCode URL value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void setUnitCode(URL fUnitCode);
-    /**
-     * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
-     *
-     * @param fUnitCode java.net.URL value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    void setUnitCode(java.net.URL fUnitCode);
+    void setUnitCode(URL unitCode);
 }

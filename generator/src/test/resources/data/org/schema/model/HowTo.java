@@ -33,21 +33,15 @@ public interface HowTo extends CreativeWork {
     /**
      * The quantity that results by performing instructions. For example, a paper airplane, 10 personalized candles.
      *
-     * @param fYield Text value to set.
+     * @param yield Text value to set.
      */
-    void setYield(Text fYield);
+    void setYield(Text yield);
     /**
      * The quantity that results by performing instructions. For example, a paper airplane, 10 personalized candles.
      *
-     * @param fYield java.lang.String value to set.
+     * @param yield QuantitativeValue value to set.
      */
-    void setYield(java.lang.String fYield);
-    /**
-     * The quantity that results by performing instructions. For example, a paper airplane, 10 personalized candles.
-     *
-     * @param fYield QuantitativeValue value to set.
-     */
-    void setYield(QuantitativeValue fYield);
+    void setYield(QuantitativeValue yield);
 
     /**
      * The estimated cost of the supply or supplies consumed when performing instructions.
@@ -59,21 +53,15 @@ public interface HowTo extends CreativeWork {
     /**
      * The estimated cost of the supply or supplies consumed when performing instructions.
      *
-     * @param fEstimatedCost Text value to set.
+     * @param estimatedCost Text value to set.
      */
-    void setEstimatedCost(Text fEstimatedCost);
+    void setEstimatedCost(Text estimatedCost);
     /**
      * The estimated cost of the supply or supplies consumed when performing instructions.
      *
-     * @param fEstimatedCost java.lang.String value to set.
+     * @param estimatedCost MonetaryAmount value to set.
      */
-    void setEstimatedCost(java.lang.String fEstimatedCost);
-    /**
-     * The estimated cost of the supply or supplies consumed when performing instructions.
-     *
-     * @param fEstimatedCost MonetaryAmount value to set.
-     */
-    void setEstimatedCost(MonetaryAmount fEstimatedCost);
+    void setEstimatedCost(MonetaryAmount estimatedCost);
 
     /**
      * A sub-property of instrument. A supply consumed when performing instructions or a direction.
@@ -85,21 +73,15 @@ public interface HowTo extends CreativeWork {
     /**
      * A sub-property of instrument. A supply consumed when performing instructions or a direction.
      *
-     * @param fSupply HowToSupply value to set.
+     * @param supply HowToSupply value to set.
      */
-    void setSupply(HowToSupply fSupply);
+    void setSupply(HowToSupply supply);
     /**
      * A sub-property of instrument. A supply consumed when performing instructions or a direction.
      *
-     * @param fSupply Text value to set.
+     * @param supply Text value to set.
      */
-    void setSupply(Text fSupply);
-    /**
-     * A sub-property of instrument. A supply consumed when performing instructions or a direction.
-     *
-     * @param fSupply java.lang.String value to set.
-     */
-    void setSupply(java.lang.String fSupply);
+    void setSupply(Text supply);
 
     /**
      * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection.
@@ -111,33 +93,27 @@ public interface HowTo extends CreativeWork {
     /**
      * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection.
      *
-     * @param fStep HowToStep value to set.
+     * @param step HowToStep value to set.
      */
-    void setStep(HowToStep fStep);
+    void setStep(HowToStep step);
     /**
      * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection.
      *
-     * @param fStep HowToSection value to set.
+     * @param step HowToSection value to set.
      */
-    void setStep(HowToSection fStep);
+    void setStep(HowToSection step);
     /**
      * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection.
      *
-     * @param fStep Text value to set.
+     * @param step Text value to set.
      */
-    void setStep(Text fStep);
+    void setStep(Text step);
     /**
      * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection.
      *
-     * @param fStep java.lang.String value to set.
+     * @param step CreativeWork value to set.
      */
-    void setStep(java.lang.String fStep);
-    /**
-     * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection.
-     *
-     * @param fStep CreativeWork value to set.
-     */
-    void setStep(CreativeWork fStep);
+    void setStep(CreativeWork step);
 
     /**
      * The total time required to perform instructions or a direction (including time to prepare the supplies), in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
@@ -149,9 +125,9 @@ public interface HowTo extends CreativeWork {
     /**
      * The total time required to perform instructions or a direction (including time to prepare the supplies), in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
      *
-     * @param fTotalTime Duration value to set.
+     * @param totalTime Duration value to set.
      */
-    void setTotalTime(Duration fTotalTime);
+    void setTotalTime(Duration totalTime);
 
     /**
      * A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.
@@ -163,21 +139,15 @@ public interface HowTo extends CreativeWork {
     /**
      * A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.
      *
-     * @param fTool HowToTool value to set.
+     * @param tool HowToTool value to set.
      */
-    void setTool(HowToTool fTool);
+    void setTool(HowToTool tool);
     /**
      * A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.
      *
-     * @param fTool Text value to set.
+     * @param tool Text value to set.
      */
-    void setTool(Text fTool);
-    /**
-     * A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.
-     *
-     * @param fTool java.lang.String value to set.
-     */
-    void setTool(java.lang.String fTool);
+    void setTool(Text tool);
 
     /**
      * The length of time it takes to prepare the items to be used in instructions or a direction, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
@@ -189,9 +159,9 @@ public interface HowTo extends CreativeWork {
     /**
      * The length of time it takes to prepare the items to be used in instructions or a direction, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
      *
-     * @param fPrepTime Duration value to set.
+     * @param prepTime Duration value to set.
      */
-    void setPrepTime(Duration fPrepTime);
+    void setPrepTime(Duration prepTime);
 
     /**
      * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection (originally misnamed 'steps'; 'step' is preferred).
@@ -203,27 +173,21 @@ public interface HowTo extends CreativeWork {
     /**
      * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection (originally misnamed 'steps'; 'step' is preferred).
      *
-     * @param fSteps ItemList value to set.
+     * @param steps ItemList value to set.
      */
-    void setSteps(ItemList fSteps);
+    void setSteps(ItemList steps);
     /**
      * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection (originally misnamed 'steps'; 'step' is preferred).
      *
-     * @param fSteps CreativeWork value to set.
+     * @param steps CreativeWork value to set.
      */
-    void setSteps(CreativeWork fSteps);
+    void setSteps(CreativeWork steps);
     /**
      * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection (originally misnamed 'steps'; 'step' is preferred).
      *
-     * @param fSteps Text value to set.
+     * @param steps Text value to set.
      */
-    void setSteps(Text fSteps);
-    /**
-     * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection (originally misnamed 'steps'; 'step' is preferred).
-     *
-     * @param fSteps java.lang.String value to set.
-     */
-    void setSteps(java.lang.String fSteps);
+    void setSteps(Text steps);
 
     /**
      * The length of time it takes to perform instructions or a direction (not including time to prepare the supplies), in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
@@ -235,7 +199,7 @@ public interface HowTo extends CreativeWork {
     /**
      * The length of time it takes to perform instructions or a direction (not including time to prepare the supplies), in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
      *
-     * @param fPerformTime Duration value to set.
+     * @param performTime Duration value to set.
      */
-    void setPerformTime(Duration fPerformTime);
+    void setPerformTime(Duration performTime);
 }

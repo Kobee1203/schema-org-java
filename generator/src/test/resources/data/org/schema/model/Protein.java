@@ -26,15 +26,8 @@ public interface Protein extends BioChemEntity {
     /**
      * A symbolic representation of a BioChemEnity. For example, a nucleotide sequence of a Gene or an amino acid sequence of a Protein.
      *
-     * @param fHasBioPolymerSequence Text value to set.
+     * @param hasBioPolymerSequence Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    void setHasBioPolymerSequence(Text fHasBioPolymerSequence);
-    /**
-     * A symbolic representation of a BioChemEnity. For example, a nucleotide sequence of a Gene or an amino acid sequence of a Protein.
-     *
-     * @param fHasBioPolymerSequence java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     */
-    void setHasBioPolymerSequence(java.lang.String fHasBioPolymerSequence);
+    void setHasBioPolymerSequence(Text hasBioPolymerSequence);
 }

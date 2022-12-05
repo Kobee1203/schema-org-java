@@ -35,19 +35,11 @@ public interface MediaReview extends Review {
     /**
      * Describes, in a [[MediaReview]] when dealing with [[DecontextualizedContent]], background information that can contribute to better interpretation of the [[MediaObject]].
      *
-     * @param fOriginalMediaContextDescription Text value to set.
+     * @param originalMediaContextDescription Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
-    void setOriginalMediaContextDescription(Text fOriginalMediaContextDescription);
-    /**
-     * Describes, in a [[MediaReview]] when dealing with [[DecontextualizedContent]], background information that can contribute to better interpretation of the [[MediaObject]].
-     *
-     * @param fOriginalMediaContextDescription java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
-     */
-    void setOriginalMediaContextDescription(java.lang.String fOriginalMediaContextDescription);
+    void setOriginalMediaContextDescription(Text originalMediaContextDescription);
 
     /**
      * Indicates a MediaManipulationRatingEnumeration classification of a media object (in the context of how it was published or shared).
@@ -61,11 +53,11 @@ public interface MediaReview extends Review {
     /**
      * Indicates a MediaManipulationRatingEnumeration classification of a media object (in the context of how it was published or shared).
      *
-     * @param fMediaAuthenticityCategory MediaManipulationRatingEnumeration value to set.
+     * @param mediaAuthenticityCategory MediaManipulationRatingEnumeration value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
-    void setMediaAuthenticityCategory(MediaManipulationRatingEnumeration fMediaAuthenticityCategory);
+    void setMediaAuthenticityCategory(MediaManipulationRatingEnumeration mediaAuthenticityCategory);
 
     /**
      * Link to the page containing an original version of the content, or directly to an online copy of the original [[MediaObject]] content, e.g. video file.
@@ -79,33 +71,25 @@ public interface MediaReview extends Review {
     /**
      * Link to the page containing an original version of the content, or directly to an online copy of the original [[MediaObject]] content, e.g. video file.
      *
-     * @param fOriginalMediaLink URL value to set.
+     * @param originalMediaLink URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
-    void setOriginalMediaLink(URL fOriginalMediaLink);
+    void setOriginalMediaLink(URL originalMediaLink);
     /**
      * Link to the page containing an original version of the content, or directly to an online copy of the original [[MediaObject]] content, e.g. video file.
      *
-     * @param fOriginalMediaLink java.net.URL value to set.
+     * @param originalMediaLink MediaObject value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
-    void setOriginalMediaLink(java.net.URL fOriginalMediaLink);
+    void setOriginalMediaLink(MediaObject originalMediaLink);
     /**
      * Link to the page containing an original version of the content, or directly to an online copy of the original [[MediaObject]] content, e.g. video file.
      *
-     * @param fOriginalMediaLink MediaObject value to set.
+     * @param originalMediaLink WebPage value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
-    void setOriginalMediaLink(MediaObject fOriginalMediaLink);
-    /**
-     * Link to the page containing an original version of the content, or directly to an online copy of the original [[MediaObject]] content, e.g. video file.
-     *
-     * @param fOriginalMediaLink WebPage value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
-     */
-    void setOriginalMediaLink(WebPage fOriginalMediaLink);
+    void setOriginalMediaLink(WebPage originalMediaLink);
 }

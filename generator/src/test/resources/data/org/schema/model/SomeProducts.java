@@ -26,8 +26,8 @@ public interface SomeProducts extends Product {
     /**
      * The current approximate inventory level for the item or items.
      *
-     * @param fInventoryLevel QuantitativeValue value to set.
+     * @param inventoryLevel QuantitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setInventoryLevel(QuantitativeValue fInventoryLevel);
+    void setInventoryLevel(QuantitativeValue inventoryLevel);
 }

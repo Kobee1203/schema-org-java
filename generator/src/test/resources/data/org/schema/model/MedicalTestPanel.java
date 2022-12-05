@@ -26,8 +26,8 @@ public interface MedicalTestPanel extends MedicalTest {
     /**
      * A component test of the panel.
      *
-     * @param fSubTest MedicalTest value to set.
+     * @param subTest MedicalTest value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setSubTest(MedicalTest fSubTest);
+    void setSubTest(MedicalTest subTest);
 }

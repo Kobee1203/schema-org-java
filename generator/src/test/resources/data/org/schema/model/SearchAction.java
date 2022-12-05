@@ -24,13 +24,7 @@ public interface SearchAction extends Action {
     /**
      * A sub property of instrument. The query used on this action.
      *
-     * @param fQuery Text value to set.
+     * @param query Text value to set.
      */
-    void setQuery(Text fQuery);
-    /**
-     * A sub property of instrument. The query used on this action.
-     *
-     * @param fQuery java.lang.String value to set.
-     */
-    void setQuery(java.lang.String fQuery);
+    void setQuery(Text query);
 }

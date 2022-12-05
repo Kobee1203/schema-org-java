@@ -1,6 +1,7 @@
 package com.weedow.schemaorg.generator.model.utils;
 
 import com.weedow.schemaorg.generator.model.Type;
+import com.weedow.schemaorg.generator.model.jsonld.GraphItem;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -16,6 +17,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
 
+import static com.weedow.schemaorg.generator.model.handler.ModelHandlerTestUtils.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -82,7 +84,24 @@ class ModelUtilsTest {
 
     @Test
     void getPropertyTypes() {
-        // TODO
+        Map<String, Type> schemaDefinitions = new HashMap<>();
+
+        GraphItem graphItem = mock(GraphItem.class);
+        when(graphItem.getRangeIncludes()).thenReturn(List.of(rangeInclude("id1"), rangeInclude("id2")));
+
+        Assertions.assertThat(ModelUtils.getPropertyTypes(schemaDefinitions, graphItem))
+                .extracting("id")
+                .containsExactly("id1", "id2");
+    }
+
+    @Test
+    void getPropertyTypes_when_rangeIncludes_is_null() {
+        Map<String, Type> schemaDefinitions = new HashMap<>();
+
+        GraphItem graphItem = mock(GraphItem.class);
+        when(graphItem.getRangeIncludes()).thenReturn(null);
+
+        Assertions.assertThat(ModelUtils.getPropertyTypes(schemaDefinitions, graphItem)).isEmpty();
     }
 
     @Test
@@ -107,12 +126,45 @@ class ModelUtilsTest {
 
     @Test
     void getSource() {
-        // TODO
+        GraphItem graphItem = mock(GraphItem.class);
+        when(graphItem.getSource()).thenReturn(List.of(source("source1"), source("source2")));
+
+        Assertions.assertThat(ModelUtils.getSource(graphItem)).containsExactly("source1", "source2");
+    }
+
+    @Test
+    void getSource_when_source_is_null() {
+        GraphItem graphItem = mock(GraphItem.class);
+        when(graphItem.getSource()).thenReturn(null);
+
+        Assertions.assertThat(ModelUtils.getSource(graphItem)).isEmpty();
     }
 
     @Test
     void getPartOf() {
-        // TODO
+        GraphItem graphItem = mock(GraphItem.class);
+        when(graphItem.getPartOf()).thenReturn(List.of(partOf("partOf1"), partOf("partOf2")));
+
+        Assertions.assertThat(ModelUtils.getPartOf(graphItem)).containsExactly("partOf1", "partOf2");
+    }
+
+    @Test
+    void getPartOf_when_partOf_is_null() {
+        GraphItem graphItem = mock(GraphItem.class);
+        when(graphItem.getPartOf()).thenReturn(null);
+
+        Assertions.assertThat(ModelUtils.getPartOf(graphItem)).isEmpty();
+    }
+
+    @ParameterizedTest
+    @CsvSource(value = {
+            "myField, myField",
+            "abstract, abstract_",
+            "'', ''",
+            "null, null"
+    }, nullValues = "null")
+    void getFieldName(String name, String expected) {
+        Assertions.assertThat(ModelUtils.getFieldName(name)).isEqualTo(expected);
     }
 
     @ParameterizedTest

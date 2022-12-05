@@ -39,7 +39,7 @@ import org.schema.model.DietarySupplement;
 @JsonLdTypeName("DietarySupplement")
 public class DietarySupplementImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements DietarySupplement {
 
-    private Text fTargetPopulation;
+    private Text targetPopulation;
 
     /**
      * Characteristics of the population for which this is intended, or which typically uses it, e.g. 'adults'.
@@ -49,31 +49,21 @@ public class DietarySupplementImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getTargetPopulation() {
-        return fTargetPopulation;
+        return targetPopulation;
     }
 
     /**
      * Characteristics of the population for which this is intended, or which typically uses it, e.g. 'adults'.
      *
-     * @param fTargetPopulation Text value to set.
+     * @param targetPopulation Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setTargetPopulation(Text fTargetPopulation) {
-        this.fTargetPopulation = fTargetPopulation;
-    }
-    /**
-     * Characteristics of the population for which this is intended, or which typically uses it, e.g. 'adults'.
-     *
-     * @param fTargetPopulation java.lang.String value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setTargetPopulation(java.lang.String fTargetPopulation) {
-        this.fTargetPopulation = Text.of(fTargetPopulation);
+    public void setTargetPopulation(Text targetPopulation) {
+        this.targetPopulation = targetPopulation;
     }
 
-    private RecommendedDoseSchedule fRecommendedIntake;
+    private RecommendedDoseSchedule recommendedIntake;
 
     /**
      * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
@@ -83,21 +73,21 @@ public class DietarySupplementImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public RecommendedDoseSchedule getRecommendedIntake() {
-        return fRecommendedIntake;
+        return recommendedIntake;
     }
 
     /**
      * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
      *
-     * @param fRecommendedIntake RecommendedDoseSchedule value to set.
+     * @param recommendedIntake RecommendedDoseSchedule value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setRecommendedIntake(RecommendedDoseSchedule fRecommendedIntake) {
-        this.fRecommendedIntake = fRecommendedIntake;
+    public void setRecommendedIntake(RecommendedDoseSchedule recommendedIntake) {
+        this.recommendedIntake = recommendedIntake;
     }
 
-    private Object fLegalStatus;
+    private Object legalStatus;
 
     /**
      * The drug or supplement's legal status, including any controlled substance schedules that apply.
@@ -107,51 +97,41 @@ public class DietarySupplementImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getLegalStatus() {
-        return (T) fLegalStatus;
+        return (T) legalStatus;
     }
 
     /**
      * The drug or supplement's legal status, including any controlled substance schedules that apply.
      *
-     * @param fLegalStatus DrugLegalStatus value to set.
+     * @param legalStatus DrugLegalStatus value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setLegalStatus(DrugLegalStatus fLegalStatus) {
-        this.fLegalStatus = fLegalStatus;
+    public void setLegalStatus(DrugLegalStatus legalStatus) {
+        this.legalStatus = legalStatus;
     }
     /**
      * The drug or supplement's legal status, including any controlled substance schedules that apply.
      *
-     * @param fLegalStatus Text value to set.
+     * @param legalStatus Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setLegalStatus(Text fLegalStatus) {
-        this.fLegalStatus = fLegalStatus;
+    public void setLegalStatus(Text legalStatus) {
+        this.legalStatus = legalStatus;
     }
     /**
      * The drug or supplement's legal status, including any controlled substance schedules that apply.
      *
-     * @param fLegalStatus java.lang.String value to set.
+     * @param legalStatus MedicalEnumeration value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setLegalStatus(java.lang.String fLegalStatus) {
-        this.fLegalStatus = Text.of(fLegalStatus);
-    }
-    /**
-     * The drug or supplement's legal status, including any controlled substance schedules that apply.
-     *
-     * @param fLegalStatus MedicalEnumeration value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setLegalStatus(MedicalEnumeration fLegalStatus) {
-        this.fLegalStatus = fLegalStatus;
+    public void setLegalStatus(MedicalEnumeration legalStatus) {
+        this.legalStatus = legalStatus;
     }
 
-    private Text fMechanismOfAction;
+    private Text mechanismOfAction;
 
     /**
      * The specific biochemical interaction through which this drug or supplement produces its pharmacological effect.
@@ -161,31 +141,21 @@ public class DietarySupplementImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getMechanismOfAction() {
-        return fMechanismOfAction;
+        return mechanismOfAction;
     }
 
     /**
      * The specific biochemical interaction through which this drug or supplement produces its pharmacological effect.
      *
-     * @param fMechanismOfAction Text value to set.
+     * @param mechanismOfAction Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setMechanismOfAction(Text fMechanismOfAction) {
-        this.fMechanismOfAction = fMechanismOfAction;
-    }
-    /**
-     * The specific biochemical interaction through which this drug or supplement produces its pharmacological effect.
-     *
-     * @param fMechanismOfAction java.lang.String value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setMechanismOfAction(java.lang.String fMechanismOfAction) {
-        this.fMechanismOfAction = Text.of(fMechanismOfAction);
+    public void setMechanismOfAction(Text mechanismOfAction) {
+        this.mechanismOfAction = mechanismOfAction;
     }
 
-    private MaximumDoseSchedule fMaximumIntake;
+    private MaximumDoseSchedule maximumIntake;
 
     /**
      * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
@@ -195,21 +165,21 @@ public class DietarySupplementImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public MaximumDoseSchedule getMaximumIntake() {
-        return fMaximumIntake;
+        return maximumIntake;
     }
 
     /**
      * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
      *
-     * @param fMaximumIntake MaximumDoseSchedule value to set.
+     * @param maximumIntake MaximumDoseSchedule value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setMaximumIntake(MaximumDoseSchedule fMaximumIntake) {
-        this.fMaximumIntake = fMaximumIntake;
+    public void setMaximumIntake(MaximumDoseSchedule maximumIntake) {
+        this.maximumIntake = maximumIntake;
     }
 
-    private Text fActiveIngredient;
+    private Text activeIngredient;
 
     /**
      * An active ingredient, typically chemical compounds and/or biologic substances.
@@ -219,31 +189,21 @@ public class DietarySupplementImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getActiveIngredient() {
-        return fActiveIngredient;
+        return activeIngredient;
     }
 
     /**
      * An active ingredient, typically chemical compounds and/or biologic substances.
      *
-     * @param fActiveIngredient Text value to set.
+     * @param activeIngredient Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setActiveIngredient(Text fActiveIngredient) {
-        this.fActiveIngredient = fActiveIngredient;
-    }
-    /**
-     * An active ingredient, typically chemical compounds and/or biologic substances.
-     *
-     * @param fActiveIngredient java.lang.String value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setActiveIngredient(java.lang.String fActiveIngredient) {
-        this.fActiveIngredient = Text.of(fActiveIngredient);
+    public void setActiveIngredient(Text activeIngredient) {
+        this.activeIngredient = activeIngredient;
     }
 
-    private Text fProprietaryName;
+    private Text proprietaryName;
 
     /**
      * Proprietary name given to the diet plan, typically by its originator or creator.
@@ -253,31 +213,21 @@ public class DietarySupplementImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getProprietaryName() {
-        return fProprietaryName;
+        return proprietaryName;
     }
 
     /**
      * Proprietary name given to the diet plan, typically by its originator or creator.
      *
-     * @param fProprietaryName Text value to set.
+     * @param proprietaryName Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setProprietaryName(Text fProprietaryName) {
-        this.fProprietaryName = fProprietaryName;
-    }
-    /**
-     * Proprietary name given to the diet plan, typically by its originator or creator.
-     *
-     * @param fProprietaryName java.lang.String value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setProprietaryName(java.lang.String fProprietaryName) {
-        this.fProprietaryName = Text.of(fProprietaryName);
+    public void setProprietaryName(Text proprietaryName) {
+        this.proprietaryName = proprietaryName;
     }
 
-    private Text fNonProprietaryName;
+    private Text nonProprietaryName;
 
     /**
      * The generic name of this drug or supplement.
@@ -287,31 +237,21 @@ public class DietarySupplementImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getNonProprietaryName() {
-        return fNonProprietaryName;
+        return nonProprietaryName;
     }
 
     /**
      * The generic name of this drug or supplement.
      *
-     * @param fNonProprietaryName Text value to set.
+     * @param nonProprietaryName Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setNonProprietaryName(Text fNonProprietaryName) {
-        this.fNonProprietaryName = fNonProprietaryName;
-    }
-    /**
-     * The generic name of this drug or supplement.
-     *
-     * @param fNonProprietaryName java.lang.String value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setNonProprietaryName(java.lang.String fNonProprietaryName) {
-        this.fNonProprietaryName = Text.of(fNonProprietaryName);
+    public void setNonProprietaryName(Text nonProprietaryName) {
+        this.nonProprietaryName = nonProprietaryName;
     }
 
-    private Organization fManufacturer;
+    private Organization manufacturer;
 
     /**
      * The manufacturer of the product.
@@ -320,20 +260,20 @@ public class DietarySupplementImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Organization getManufacturer() {
-        return fManufacturer;
+        return manufacturer;
     }
 
     /**
      * The manufacturer of the product.
      *
-     * @param fManufacturer Organization value to set.
+     * @param manufacturer Organization value to set.
      */
     @Override
-    public void setManufacturer(Organization fManufacturer) {
-        this.fManufacturer = fManufacturer;
+    public void setManufacturer(Organization manufacturer) {
+        this.manufacturer = manufacturer;
     }
 
-    private Boolean fIsProprietary;
+    private Boolean isProprietary;
 
     /**
      * True if this item's name is a proprietary/brand name (vs. generic name).
@@ -343,31 +283,21 @@ public class DietarySupplementImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Boolean getIsProprietary() {
-        return fIsProprietary;
+        return isProprietary;
     }
 
     /**
      * True if this item's name is a proprietary/brand name (vs. generic name).
      *
-     * @param fIsProprietary Boolean value to set.
+     * @param isProprietary Boolean value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setIsProprietary(Boolean fIsProprietary) {
-        this.fIsProprietary = fIsProprietary;
-    }
-    /**
-     * True if this item's name is a proprietary/brand name (vs. generic name).
-     *
-     * @param fIsProprietary java.lang.Boolean value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setIsProprietary(java.lang.Boolean fIsProprietary) {
-        this.fIsProprietary = Boolean.of(fIsProprietary);
+    public void setIsProprietary(Boolean isProprietary) {
+        this.isProprietary = isProprietary;
     }
 
-    private Text fSafetyConsideration;
+    private Text safetyConsideration;
 
     /**
      * Any potential safety concern associated with the supplement. May include interactions with other drugs and foods, pregnancy, breastfeeding, known adverse reactions, and documented efficacy of the supplement.
@@ -377,31 +307,21 @@ public class DietarySupplementImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getSafetyConsideration() {
-        return fSafetyConsideration;
+        return safetyConsideration;
     }
 
     /**
      * Any potential safety concern associated with the supplement. May include interactions with other drugs and foods, pregnancy, breastfeeding, known adverse reactions, and documented efficacy of the supplement.
      *
-     * @param fSafetyConsideration Text value to set.
+     * @param safetyConsideration Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setSafetyConsideration(Text fSafetyConsideration) {
-        this.fSafetyConsideration = fSafetyConsideration;
-    }
-    /**
-     * Any potential safety concern associated with the supplement. May include interactions with other drugs and foods, pregnancy, breastfeeding, known adverse reactions, and documented efficacy of the supplement.
-     *
-     * @param fSafetyConsideration java.lang.String value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    @Override
-    public void setSafetyConsideration(java.lang.String fSafetyConsideration) {
-        this.fSafetyConsideration = Text.of(fSafetyConsideration);
+    public void setSafetyConsideration(Text safetyConsideration) {
+        this.safetyConsideration = safetyConsideration;
     }
 
-    private Grant fFunding;
+    private Grant funding;
 
     /**
      * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
@@ -413,23 +333,23 @@ public class DietarySupplementImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Grant getFunding() {
-        return fFunding;
+        return funding;
     }
 
     /**
      * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
      *
-     * @param fFunding Grant value to set.
+     * @param funding Grant value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
     @Override
-    public void setFunding(Grant fFunding) {
-        this.fFunding = fFunding;
+    public void setFunding(Grant funding) {
+        this.funding = funding;
     }
 
-    private MedicalStudy fStudy;
+    private MedicalStudy study;
 
     /**
      * A medical study or trial related to this entity.
@@ -439,21 +359,21 @@ public class DietarySupplementImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public MedicalStudy getStudy() {
-        return fStudy;
+        return study;
     }
 
     /**
      * A medical study or trial related to this entity.
      *
-     * @param fStudy MedicalStudy value to set.
+     * @param study MedicalStudy value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setStudy(MedicalStudy fStudy) {
-        this.fStudy = fStudy;
+    public void setStudy(MedicalStudy study) {
+        this.study = study;
     }
 
-    private MedicalCode fCode;
+    private MedicalCode code;
 
     /**
      * A medical code for the entity, taken from a controlled vocabulary or ontology such as ICD-9, DiseasesDB, MeSH, SNOMED-CT, RxNorm, etc.
@@ -463,21 +383,21 @@ public class DietarySupplementImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public MedicalCode getCode() {
-        return fCode;
+        return code;
     }
 
     /**
      * A medical code for the entity, taken from a controlled vocabulary or ontology such as ICD-9, DiseasesDB, MeSH, SNOMED-CT, RxNorm, etc.
      *
-     * @param fCode MedicalCode value to set.
+     * @param code MedicalCode value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setCode(MedicalCode fCode) {
-        this.fCode = fCode;
+    public void setCode(MedicalCode code) {
+        this.code = code;
     }
 
-    private MedicalGuideline fGuideline;
+    private MedicalGuideline guideline;
 
     /**
      * A medical guideline related to this entity.
@@ -487,21 +407,21 @@ public class DietarySupplementImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public MedicalGuideline getGuideline() {
-        return fGuideline;
+        return guideline;
     }
 
     /**
      * A medical guideline related to this entity.
      *
-     * @param fGuideline MedicalGuideline value to set.
+     * @param guideline MedicalGuideline value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setGuideline(MedicalGuideline fGuideline) {
-        this.fGuideline = fGuideline;
+    public void setGuideline(MedicalGuideline guideline) {
+        this.guideline = guideline;
     }
 
-    private Organization fRecognizingAuthority;
+    private Organization recognizingAuthority;
 
     /**
      * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
@@ -511,21 +431,21 @@ public class DietarySupplementImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Organization getRecognizingAuthority() {
-        return fRecognizingAuthority;
+        return recognizingAuthority;
     }
 
     /**
      * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
      *
-     * @param fRecognizingAuthority Organization value to set.
+     * @param recognizingAuthority Organization value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setRecognizingAuthority(Organization fRecognizingAuthority) {
-        this.fRecognizingAuthority = fRecognizingAuthority;
+    public void setRecognizingAuthority(Organization recognizingAuthority) {
+        this.recognizingAuthority = recognizingAuthority;
     }
 
-    private MedicineSystem fMedicineSystem;
+    private MedicineSystem medicineSystem;
 
     /**
      * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
@@ -535,21 +455,21 @@ public class DietarySupplementImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public MedicineSystem getMedicineSystem() {
-        return fMedicineSystem;
+        return medicineSystem;
     }
 
     /**
      * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
      *
-     * @param fMedicineSystem MedicineSystem value to set.
+     * @param medicineSystem MedicineSystem value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setMedicineSystem(MedicineSystem fMedicineSystem) {
-        this.fMedicineSystem = fMedicineSystem;
+    public void setMedicineSystem(MedicineSystem medicineSystem) {
+        this.medicineSystem = medicineSystem;
     }
 
-    private MedicalSpecialty fRelevantSpecialty;
+    private MedicalSpecialty relevantSpecialty;
 
     /**
      * If applicable, a medical specialty in which this entity is relevant.
@@ -559,21 +479,21 @@ public class DietarySupplementImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public MedicalSpecialty getRelevantSpecialty() {
-        return fRelevantSpecialty;
+        return relevantSpecialty;
     }
 
     /**
      * If applicable, a medical specialty in which this entity is relevant.
      *
-     * @param fRelevantSpecialty MedicalSpecialty value to set.
+     * @param relevantSpecialty MedicalSpecialty value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setRelevantSpecialty(MedicalSpecialty fRelevantSpecialty) {
-        this.fRelevantSpecialty = fRelevantSpecialty;
+    public void setRelevantSpecialty(MedicalSpecialty relevantSpecialty) {
+        this.relevantSpecialty = relevantSpecialty;
     }
 
-    private Object fMainEntityOfPage;
+    private Object mainEntityOfPage;
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -582,38 +502,29 @@ public class DietarySupplementImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
+        return (T) mainEntityOfPage;
     }
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param fMainEntityOfPage CreativeWork value to set.
+     * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(CreativeWork fMainEntityOfPage) {
-        this.fMainEntityOfPage = fMainEntityOfPage;
+    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
     }
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param fMainEntityOfPage URL value to set.
+     * @param mainEntityOfPage URL value to set.
      */
     @Override
-    public void setMainEntityOfPage(URL fMainEntityOfPage) {
-        this.fMainEntityOfPage = fMainEntityOfPage;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param fMainEntityOfPage java.net.URL value to set.
-     */
-    @Override
-    public void setMainEntityOfPage(java.net.URL fMainEntityOfPage) {
-        this.fMainEntityOfPage = URL.of(fMainEntityOfPage);
+    public void setMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
     }
 
-    private Text fAlternateName;
+    private Text alternateName;
 
     /**
      * An alias for the item.
@@ -622,29 +533,20 @@ public class DietarySupplementImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getAlternateName() {
-        return fAlternateName;
+        return alternateName;
     }
 
     /**
      * An alias for the item.
      *
-     * @param fAlternateName Text value to set.
+     * @param alternateName Text value to set.
      */
     @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
-    }
-    /**
-     * An alias for the item.
-     *
-     * @param fAlternateName java.lang.String value to set.
-     */
-    @Override
-    public void setAlternateName(java.lang.String fAlternateName) {
-        this.fAlternateName = Text.of(fAlternateName);
+    public void setAlternateName(Text alternateName) {
+        this.alternateName = alternateName;
     }
 
-    private Text fName;
+    private Text name;
 
     /**
      * The name of the item.
@@ -653,29 +555,20 @@ public class DietarySupplementImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getName() {
-        return fName;
+        return name;
     }
 
     /**
      * The name of the item.
      *
-     * @param fName Text value to set.
+     * @param name Text value to set.
      */
     @Override
-    public void setName(Text fName) {
-        this.fName = fName;
-    }
-    /**
-     * The name of the item.
-     *
-     * @param fName java.lang.String value to set.
-     */
-    @Override
-    public void setName(java.lang.String fName) {
-        this.fName = Text.of(fName);
+    public void setName(Text name) {
+        this.name = name;
     }
 
-    private Action fPotentialAction;
+    private Action potentialAction;
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -684,20 +577,20 @@ public class DietarySupplementImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Action getPotentialAction() {
-        return fPotentialAction;
+        return potentialAction;
     }
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      *
-     * @param fPotentialAction Action value to set.
+     * @param potentialAction Action value to set.
      */
     @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
+    public void setPotentialAction(Action potentialAction) {
+        this.potentialAction = potentialAction;
     }
 
-    private Object fImage;
+    private Object image;
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -706,38 +599,29 @@ public class DietarySupplementImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getImage() {
-        return (T) fImage;
+        return (T) image;
     }
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param fImage URL value to set.
+     * @param image URL value to set.
      */
     @Override
-    public void setImage(URL fImage) {
-        this.fImage = fImage;
+    public void setImage(URL image) {
+        this.image = image;
     }
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param fImage java.net.URL value to set.
+     * @param image ImageObject value to set.
      */
     @Override
-    public void setImage(java.net.URL fImage) {
-        this.fImage = URL.of(fImage);
-    }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param fImage ImageObject value to set.
-     */
-    @Override
-    public void setImage(ImageObject fImage) {
-        this.fImage = fImage;
+    public void setImage(ImageObject image) {
+        this.image = image;
     }
 
-    private URL fUrl;
+    private URL url;
 
     /**
      * URL of the item.
@@ -746,29 +630,20 @@ public class DietarySupplementImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public URL getUrl() {
-        return fUrl;
+        return url;
     }
 
     /**
      * URL of the item.
      *
-     * @param fUrl URL value to set.
+     * @param url URL value to set.
      */
     @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
-    }
-    /**
-     * URL of the item.
-     *
-     * @param fUrl java.net.URL value to set.
-     */
-    @Override
-    public void setUrl(java.net.URL fUrl) {
-        this.fUrl = URL.of(fUrl);
+    public void setUrl(URL url) {
+        this.url = url;
     }
 
-    private Text fDescription;
+    private Text description;
 
     /**
      * A description of the item.
@@ -777,29 +652,20 @@ public class DietarySupplementImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getDescription() {
-        return fDescription;
+        return description;
     }
 
     /**
      * A description of the item.
      *
-     * @param fDescription Text value to set.
+     * @param description Text value to set.
      */
     @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
-    }
-    /**
-     * A description of the item.
-     *
-     * @param fDescription java.lang.String value to set.
-     */
-    @Override
-    public void setDescription(java.lang.String fDescription) {
-        this.fDescription = Text.of(fDescription);
+    public void setDescription(Text description) {
+        this.description = description;
     }
 
-    private Object fSubjectOf;
+    private Object subjectOf;
 
     /**
      * A CreativeWork or Event about this Thing.
@@ -809,31 +675,31 @@ public class DietarySupplementImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getSubjectOf() {
-        return (T) fSubjectOf;
+        return (T) subjectOf;
     }
 
     /**
      * A CreativeWork or Event about this Thing.
      *
-     * @param fSubjectOf Event value to set.
+     * @param subjectOf Event value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Event fSubjectOf) {
-        this.fSubjectOf = fSubjectOf;
+    public void setSubjectOf(Event subjectOf) {
+        this.subjectOf = subjectOf;
     }
     /**
      * A CreativeWork or Event about this Thing.
      *
-     * @param fSubjectOf CreativeWork value to set.
+     * @param subjectOf CreativeWork value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(CreativeWork fSubjectOf) {
-        this.fSubjectOf = fSubjectOf;
+    public void setSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = subjectOf;
     }
 
-    private URL fAdditionalType;
+    private URL additionalType;
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
@@ -842,29 +708,20 @@ public class DietarySupplementImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public URL getAdditionalType() {
-        return fAdditionalType;
+        return additionalType;
     }
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
-     * @param fAdditionalType URL value to set.
+     * @param additionalType URL value to set.
      */
     @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
-    }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @param fAdditionalType java.net.URL value to set.
-     */
-    @Override
-    public void setAdditionalType(java.net.URL fAdditionalType) {
-        this.fAdditionalType = URL.of(fAdditionalType);
+    public void setAdditionalType(URL additionalType) {
+        this.additionalType = additionalType;
     }
 
-    private Text fDisambiguatingDescription;
+    private Text disambiguatingDescription;
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
@@ -873,29 +730,20 @@ public class DietarySupplementImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getDisambiguatingDescription() {
-        return fDisambiguatingDescription;
+        return disambiguatingDescription;
     }
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
-     * @param fDisambiguatingDescription Text value to set.
+     * @param disambiguatingDescription Text value to set.
      */
     @Override
-    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = fDisambiguatingDescription;
-    }
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @param fDisambiguatingDescription java.lang.String value to set.
-     */
-    @Override
-    public void setDisambiguatingDescription(java.lang.String fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = Text.of(fDisambiguatingDescription);
+    public void setDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = disambiguatingDescription;
     }
 
-    private URL fSameAs;
+    private URL sameAs;
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
@@ -904,29 +752,20 @@ public class DietarySupplementImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public URL getSameAs() {
-        return fSameAs;
+        return sameAs;
     }
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
-     * @param fSameAs URL value to set.
+     * @param sameAs URL value to set.
      */
     @Override
-    public void setSameAs(URL fSameAs) {
-        this.fSameAs = fSameAs;
-    }
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @param fSameAs java.net.URL value to set.
-     */
-    @Override
-    public void setSameAs(java.net.URL fSameAs) {
-        this.fSameAs = URL.of(fSameAs);
+    public void setSameAs(URL sameAs) {
+        this.sameAs = sameAs;
     }
 
-    private Object fIdentifier;
+    private Object identifier;
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -936,57 +775,37 @@ public class DietarySupplementImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getIdentifier() {
-        return (T) fIdentifier;
+        return (T) identifier;
     }
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier URL value to set.
+     * @param identifier URL value to set.
      */
     @Override
-    public void setIdentifier(URL fIdentifier) {
-        this.fIdentifier = fIdentifier;
+    public void setIdentifier(URL identifier) {
+        this.identifier = identifier;
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier java.net.URL value to set.
+     * @param identifier Text value to set.
      */
     @Override
-    public void setIdentifier(java.net.URL fIdentifier) {
-        this.fIdentifier = URL.of(fIdentifier);
+    public void setIdentifier(Text identifier) {
+        this.identifier = identifier;
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier Text value to set.
+     * @param identifier PropertyValue value to set.
      */
     @Override
-    public void setIdentifier(Text fIdentifier) {
-        this.fIdentifier = fIdentifier;
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param fIdentifier java.lang.String value to set.
-     */
-    @Override
-    public void setIdentifier(java.lang.String fIdentifier) {
-        this.fIdentifier = Text.of(fIdentifier);
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param fIdentifier PropertyValue value to set.
-     */
-    @Override
-    public void setIdentifier(PropertyValue fIdentifier) {
-        this.fIdentifier = fIdentifier;
+    public void setIdentifier(PropertyValue identifier) {
+        this.identifier = identifier;
     }
 }

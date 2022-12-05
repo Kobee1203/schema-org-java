@@ -40,12 +40,8 @@ public class Property {
         String name;
         Supplier<String> fieldType;
 
-        private String getCapitalizedName() {
-            return ModelUtils.capitalize(name);
-        }
-
         public String getFieldName() {
-            return "f" + getCapitalizedName();
+            return ModelUtils.getFieldName(name);
         }
 
         public String getFieldType() {
@@ -64,16 +60,12 @@ public class Property {
         Supplier<String> returnFieldType;
         Supplier<String> cast;
 
-        private String getCapitalizedName() {
-            return ModelUtils.capitalize(name);
-        }
-
         public String getFieldName() {
-            return "f" + getCapitalizedName();
+            return ModelUtils.getFieldName(name);
         }
 
         public String getMethodName() {
-            return "get" + getCapitalizedName();
+            return "get" + ModelUtils.capitalize(name);
         }
 
         public String[] getSplitDescription() {
@@ -107,16 +99,12 @@ public class Property {
         @Getter(AccessLevel.NONE)
         Supplier<String> paramValue;
 
-        private String getCapitalizedName() {
-            return ModelUtils.capitalize(name);
-        }
-
         public String getFieldName() {
-            return "f" + getCapitalizedName();
+            return ModelUtils.getFieldName(name);
         }
 
         public String getMethodName() {
-            return "set" + getCapitalizedName();
+            return "set" + ModelUtils.capitalize(name);
         }
 
         public String[] getSplitDescription() {

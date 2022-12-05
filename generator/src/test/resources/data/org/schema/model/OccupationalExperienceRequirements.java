@@ -28,17 +28,9 @@ public interface OccupationalExperienceRequirements extends Intangible {
     /**
      * Indicates the minimal number of months of experience required for a position.
      *
-     * @param fMonthsOfExperience Number value to set.
+     * @param monthsOfExperience Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2681">https://github.com/schemaorg/schemaorg/issues/2681</a>
      */
-    void setMonthsOfExperience(Number fMonthsOfExperience);
-    /**
-     * Indicates the minimal number of months of experience required for a position.
-     *
-     * @param fMonthsOfExperience java.lang.Number value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2681">https://github.com/schemaorg/schemaorg/issues/2681</a>
-     */
-    void setMonthsOfExperience(java.lang.Number fMonthsOfExperience);
+    void setMonthsOfExperience(Number monthsOfExperience);
 }

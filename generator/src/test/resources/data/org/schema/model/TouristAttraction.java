@@ -30,27 +30,19 @@ public interface TouristAttraction extends Place {
     /**
      * Attraction suitable for type(s) of tourist. eg. Children, visitors from a particular country, etc. 
      *
-     * @param fTouristType Audience value to set.
+     * @param touristType Audience value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#IIT-CNR.it">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#IIT-CNR.it</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism</a>
      */
-    void setTouristType(Audience fTouristType);
+    void setTouristType(Audience touristType);
     /**
      * Attraction suitable for type(s) of tourist. eg. Children, visitors from a particular country, etc. 
      *
-     * @param fTouristType Text value to set.
+     * @param touristType Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#IIT-CNR.it">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#IIT-CNR.it</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism</a>
      */
-    void setTouristType(Text fTouristType);
-    /**
-     * Attraction suitable for type(s) of tourist. eg. Children, visitors from a particular country, etc. 
-     *
-     * @param fTouristType java.lang.String value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#IIT-CNR.it">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#IIT-CNR.it</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism</a>
-     */
-    void setTouristType(java.lang.String fTouristType);
+    void setTouristType(Text touristType);
 
     /**
      * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
@@ -62,19 +54,13 @@ public interface TouristAttraction extends Place {
     /**
      * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
      *
-     * @param fAvailableLanguage Text value to set.
+     * @param availableLanguage Text value to set.
      */
-    void setAvailableLanguage(Text fAvailableLanguage);
+    void setAvailableLanguage(Text availableLanguage);
     /**
      * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
      *
-     * @param fAvailableLanguage java.lang.String value to set.
+     * @param availableLanguage Language value to set.
      */
-    void setAvailableLanguage(java.lang.String fAvailableLanguage);
-    /**
-     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
-     *
-     * @param fAvailableLanguage Language value to set.
-     */
-    void setAvailableLanguage(Language fAvailableLanguage);
+    void setAvailableLanguage(Language availableLanguage);
 }

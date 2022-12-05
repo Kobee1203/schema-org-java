@@ -28,9 +28,9 @@ public interface CategoryCodeSet extends DefinedTermSet {
     /**
      * A Category code contained in this code set.
      *
-     * @param fHasCategoryCode CategoryCode value to set.
+     * @param hasCategoryCode CategoryCode value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
      */
-    void setHasCategoryCode(CategoryCode fHasCategoryCode);
+    void setHasCategoryCode(CategoryCode hasCategoryCode);
 }

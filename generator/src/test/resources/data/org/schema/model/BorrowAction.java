@@ -25,13 +25,13 @@ public interface BorrowAction extends TransferAction {
     /**
      * A sub property of participant. The person that lends the object being borrowed.
      *
-     * @param fLender Person value to set.
+     * @param lender Person value to set.
      */
-    void setLender(Person fLender);
+    void setLender(Person lender);
     /**
      * A sub property of participant. The person that lends the object being borrowed.
      *
-     * @param fLender Organization value to set.
+     * @param lender Organization value to set.
      */
-    void setLender(Organization fLender);
+    void setLender(Organization lender);
 }

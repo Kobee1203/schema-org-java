@@ -38,7 +38,7 @@ import org.schema.model.SizeSpecification;
 @JsonLdTypeName("SizeSpecification")
 public class SizeSpecificationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements SizeSpecification {
 
-    private Object fSizeGroup;
+    private Object sizeGroup;
 
     /**
      * The size group (also known as "size type") for a product's size. Size groups are common in the fashion industry to define size segments and suggested audiences for wearable products. Multiple values can be combined, for example "men's big and tall", "petite maternity" or "regular"
@@ -49,44 +49,33 @@ public class SizeSpecificationImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getSizeGroup() {
-        return (T) fSizeGroup;
+        return (T) sizeGroup;
     }
 
     /**
      * The size group (also known as "size type") for a product's size. Size groups are common in the fashion industry to define size segments and suggested audiences for wearable products. Multiple values can be combined, for example "men's big and tall", "petite maternity" or "regular"
      *
-     * @param fSizeGroup Text value to set.
+     * @param sizeGroup Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
      */
     @Override
-    public void setSizeGroup(Text fSizeGroup) {
-        this.fSizeGroup = fSizeGroup;
+    public void setSizeGroup(Text sizeGroup) {
+        this.sizeGroup = sizeGroup;
     }
     /**
      * The size group (also known as "size type") for a product's size. Size groups are common in the fashion industry to define size segments and suggested audiences for wearable products. Multiple values can be combined, for example "men's big and tall", "petite maternity" or "regular"
      *
-     * @param fSizeGroup java.lang.String value to set.
+     * @param sizeGroup SizeGroupEnumeration value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
      */
     @Override
-    public void setSizeGroup(java.lang.String fSizeGroup) {
-        this.fSizeGroup = Text.of(fSizeGroup);
-    }
-    /**
-     * The size group (also known as "size type") for a product's size. Size groups are common in the fashion industry to define size segments and suggested audiences for wearable products. Multiple values can be combined, for example "men's big and tall", "petite maternity" or "regular"
-     *
-     * @param fSizeGroup SizeGroupEnumeration value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
-     */
-    @Override
-    public void setSizeGroup(SizeGroupEnumeration fSizeGroup) {
-        this.fSizeGroup = fSizeGroup;
+    public void setSizeGroup(SizeGroupEnumeration sizeGroup) {
+        this.sizeGroup = sizeGroup;
     }
 
-    private QuantitativeValue fSuggestedMeasurement;
+    private QuantitativeValue suggestedMeasurement;
 
     /**
      * A suggested range of body measurements for the intended audience or person, for example inseam between 32 and 34 inches or height between 170 and 190 cm. Typically found on a size chart for wearable products.
@@ -97,22 +86,22 @@ public class SizeSpecificationImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public QuantitativeValue getSuggestedMeasurement() {
-        return fSuggestedMeasurement;
+        return suggestedMeasurement;
     }
 
     /**
      * A suggested range of body measurements for the intended audience or person, for example inseam between 32 and 34 inches or height between 170 and 190 cm. Typically found on a size chart for wearable products.
      *
-     * @param fSuggestedMeasurement QuantitativeValue value to set.
+     * @param suggestedMeasurement QuantitativeValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
      */
     @Override
-    public void setSuggestedMeasurement(QuantitativeValue fSuggestedMeasurement) {
-        this.fSuggestedMeasurement = fSuggestedMeasurement;
+    public void setSuggestedMeasurement(QuantitativeValue suggestedMeasurement) {
+        this.suggestedMeasurement = suggestedMeasurement;
     }
 
-    private QuantitativeValue fSuggestedAge;
+    private QuantitativeValue suggestedAge;
 
     /**
      * The age or age range for the intended audience or person, for example 3-12 months for infants, 1-5 years for toddlers.
@@ -123,22 +112,22 @@ public class SizeSpecificationImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public QuantitativeValue getSuggestedAge() {
-        return fSuggestedAge;
+        return suggestedAge;
     }
 
     /**
      * The age or age range for the intended audience or person, for example 3-12 months for infants, 1-5 years for toddlers.
      *
-     * @param fSuggestedAge QuantitativeValue value to set.
+     * @param suggestedAge QuantitativeValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
      */
     @Override
-    public void setSuggestedAge(QuantitativeValue fSuggestedAge) {
-        this.fSuggestedAge = fSuggestedAge;
+    public void setSuggestedAge(QuantitativeValue suggestedAge) {
+        this.suggestedAge = suggestedAge;
     }
 
-    private QuantitativeValue fHasMeasurement;
+    private QuantitativeValue hasMeasurement;
 
     /**
      * A product measurement, for example the inseam of pants, the wheel size of a bicycle, or the gauge of a screw. Usually an exact measurement, but can also be a range of measurements for adjustable products, for example belts and ski bindings.
@@ -149,22 +138,22 @@ public class SizeSpecificationImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public QuantitativeValue getHasMeasurement() {
-        return fHasMeasurement;
+        return hasMeasurement;
     }
 
     /**
      * A product measurement, for example the inseam of pants, the wheel size of a bicycle, or the gauge of a screw. Usually an exact measurement, but can also be a range of measurements for adjustable products, for example belts and ski bindings.
      *
-     * @param fHasMeasurement QuantitativeValue value to set.
+     * @param hasMeasurement QuantitativeValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
      */
     @Override
-    public void setHasMeasurement(QuantitativeValue fHasMeasurement) {
-        this.fHasMeasurement = fHasMeasurement;
+    public void setHasMeasurement(QuantitativeValue hasMeasurement) {
+        this.hasMeasurement = hasMeasurement;
     }
 
-    private Object fSizeSystem;
+    private Object sizeSystem;
 
     /**
      * The size system used to identify a product's size. Typically either a standard (for example, "GS1" or "ISO-EN13402"), country code (for example "US" or "JP"), or a measuring system (for example "Metric" or "Imperial").
@@ -175,44 +164,33 @@ public class SizeSpecificationImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getSizeSystem() {
-        return (T) fSizeSystem;
+        return (T) sizeSystem;
     }
 
     /**
      * The size system used to identify a product's size. Typically either a standard (for example, "GS1" or "ISO-EN13402"), country code (for example "US" or "JP"), or a measuring system (for example "Metric" or "Imperial").
      *
-     * @param fSizeSystem Text value to set.
+     * @param sizeSystem Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
      */
     @Override
-    public void setSizeSystem(Text fSizeSystem) {
-        this.fSizeSystem = fSizeSystem;
+    public void setSizeSystem(Text sizeSystem) {
+        this.sizeSystem = sizeSystem;
     }
     /**
      * The size system used to identify a product's size. Typically either a standard (for example, "GS1" or "ISO-EN13402"), country code (for example "US" or "JP"), or a measuring system (for example "Metric" or "Imperial").
      *
-     * @param fSizeSystem java.lang.String value to set.
+     * @param sizeSystem SizeSystemEnumeration value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
      */
     @Override
-    public void setSizeSystem(java.lang.String fSizeSystem) {
-        this.fSizeSystem = Text.of(fSizeSystem);
-    }
-    /**
-     * The size system used to identify a product's size. Typically either a standard (for example, "GS1" or "ISO-EN13402"), country code (for example "US" or "JP"), or a measuring system (for example "Metric" or "Imperial").
-     *
-     * @param fSizeSystem SizeSystemEnumeration value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
-     */
-    @Override
-    public void setSizeSystem(SizeSystemEnumeration fSizeSystem) {
-        this.fSizeSystem = fSizeSystem;
+    public void setSizeSystem(SizeSystemEnumeration sizeSystem) {
+        this.sizeSystem = sizeSystem;
     }
 
-    private Object fSuggestedGender;
+    private Object suggestedGender;
 
     /**
      * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
@@ -221,38 +199,29 @@ public class SizeSpecificationImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getSuggestedGender() {
-        return (T) fSuggestedGender;
+        return (T) suggestedGender;
     }
 
     /**
      * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
      *
-     * @param fSuggestedGender GenderType value to set.
+     * @param suggestedGender GenderType value to set.
      */
     @Override
-    public void setSuggestedGender(GenderType fSuggestedGender) {
-        this.fSuggestedGender = fSuggestedGender;
+    public void setSuggestedGender(GenderType suggestedGender) {
+        this.suggestedGender = suggestedGender;
     }
     /**
      * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
      *
-     * @param fSuggestedGender Text value to set.
+     * @param suggestedGender Text value to set.
      */
     @Override
-    public void setSuggestedGender(Text fSuggestedGender) {
-        this.fSuggestedGender = fSuggestedGender;
-    }
-    /**
-     * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
-     *
-     * @param fSuggestedGender java.lang.String value to set.
-     */
-    @Override
-    public void setSuggestedGender(java.lang.String fSuggestedGender) {
-        this.fSuggestedGender = Text.of(fSuggestedGender);
+    public void setSuggestedGender(Text suggestedGender) {
+        this.suggestedGender = suggestedGender;
     }
 
-    private Object fValueReference;
+    private Object valueReference;
 
     /**
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
@@ -262,101 +231,91 @@ public class SizeSpecificationImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getValueReference() {
-        return (T) fValueReference;
+        return (T) valueReference;
     }
 
     /**
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
      *
-     * @param fValueReference Enumeration value to set.
+     * @param valueReference Enumeration value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setValueReference(Enumeration fValueReference) {
-        this.fValueReference = fValueReference;
+    public void setValueReference(Enumeration valueReference) {
+        this.valueReference = valueReference;
     }
     /**
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
      *
-     * @param fValueReference DefinedTerm value to set.
+     * @param valueReference DefinedTerm value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setValueReference(DefinedTerm fValueReference) {
-        this.fValueReference = fValueReference;
+    public void setValueReference(DefinedTerm valueReference) {
+        this.valueReference = valueReference;
     }
     /**
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
      *
-     * @param fValueReference Text value to set.
+     * @param valueReference Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setValueReference(Text fValueReference) {
-        this.fValueReference = fValueReference;
+    public void setValueReference(Text valueReference) {
+        this.valueReference = valueReference;
     }
     /**
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
      *
-     * @param fValueReference java.lang.String value to set.
+     * @param valueReference MeasurementTypeEnumeration value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setValueReference(java.lang.String fValueReference) {
-        this.fValueReference = Text.of(fValueReference);
+    public void setValueReference(MeasurementTypeEnumeration valueReference) {
+        this.valueReference = valueReference;
     }
     /**
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
      *
-     * @param fValueReference MeasurementTypeEnumeration value to set.
+     * @param valueReference QualitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setValueReference(MeasurementTypeEnumeration fValueReference) {
-        this.fValueReference = fValueReference;
+    public void setValueReference(QualitativeValue valueReference) {
+        this.valueReference = valueReference;
     }
     /**
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
      *
-     * @param fValueReference QualitativeValue value to set.
+     * @param valueReference StructuredValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setValueReference(QualitativeValue fValueReference) {
-        this.fValueReference = fValueReference;
+    public void setValueReference(StructuredValue valueReference) {
+        this.valueReference = valueReference;
     }
     /**
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
      *
-     * @param fValueReference StructuredValue value to set.
+     * @param valueReference PropertyValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setValueReference(StructuredValue fValueReference) {
-        this.fValueReference = fValueReference;
+    public void setValueReference(PropertyValue valueReference) {
+        this.valueReference = valueReference;
     }
     /**
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
      *
-     * @param fValueReference PropertyValue value to set.
+     * @param valueReference QuantitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setValueReference(PropertyValue fValueReference) {
-        this.fValueReference = fValueReference;
-    }
-    /**
-     * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
-     *
-     * @param fValueReference QuantitativeValue value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setValueReference(QuantitativeValue fValueReference) {
-        this.fValueReference = fValueReference;
+    public void setValueReference(QuantitativeValue valueReference) {
+        this.valueReference = valueReference;
     }
 
-    private QualitativeValue fGreaterOrEqual;
+    private QualitativeValue greaterOrEqual;
 
     /**
      * This ordering relation for qualitative values indicates that the subject is greater than or equal to the object.
@@ -366,21 +325,21 @@ public class SizeSpecificationImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public QualitativeValue getGreaterOrEqual() {
-        return fGreaterOrEqual;
+        return greaterOrEqual;
     }
 
     /**
      * This ordering relation for qualitative values indicates that the subject is greater than or equal to the object.
      *
-     * @param fGreaterOrEqual QualitativeValue value to set.
+     * @param greaterOrEqual QualitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setGreaterOrEqual(QualitativeValue fGreaterOrEqual) {
-        this.fGreaterOrEqual = fGreaterOrEqual;
+    public void setGreaterOrEqual(QualitativeValue greaterOrEqual) {
+        this.greaterOrEqual = greaterOrEqual;
     }
 
-    private QualitativeValue fNonEqual;
+    private QualitativeValue nonEqual;
 
     /**
      * This ordering relation for qualitative values indicates that the subject is not equal to the object.
@@ -390,21 +349,21 @@ public class SizeSpecificationImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public QualitativeValue getNonEqual() {
-        return fNonEqual;
+        return nonEqual;
     }
 
     /**
      * This ordering relation for qualitative values indicates that the subject is not equal to the object.
      *
-     * @param fNonEqual QualitativeValue value to set.
+     * @param nonEqual QualitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setNonEqual(QualitativeValue fNonEqual) {
-        this.fNonEqual = fNonEqual;
+    public void setNonEqual(QualitativeValue nonEqual) {
+        this.nonEqual = nonEqual;
     }
 
-    private QualitativeValue fEqual;
+    private QualitativeValue equal;
 
     /**
      * This ordering relation for qualitative values indicates that the subject is equal to the object.
@@ -414,21 +373,21 @@ public class SizeSpecificationImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public QualitativeValue getEqual() {
-        return fEqual;
+        return equal;
     }
 
     /**
      * This ordering relation for qualitative values indicates that the subject is equal to the object.
      *
-     * @param fEqual QualitativeValue value to set.
+     * @param equal QualitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setEqual(QualitativeValue fEqual) {
-        this.fEqual = fEqual;
+    public void setEqual(QualitativeValue equal) {
+        this.equal = equal;
     }
 
-    private QualitativeValue fLesser;
+    private QualitativeValue lesser;
 
     /**
      * This ordering relation for qualitative values indicates that the subject is lesser than the object.
@@ -438,21 +397,21 @@ public class SizeSpecificationImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public QualitativeValue getLesser() {
-        return fLesser;
+        return lesser;
     }
 
     /**
      * This ordering relation for qualitative values indicates that the subject is lesser than the object.
      *
-     * @param fLesser QualitativeValue value to set.
+     * @param lesser QualitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setLesser(QualitativeValue fLesser) {
-        this.fLesser = fLesser;
+    public void setLesser(QualitativeValue lesser) {
+        this.lesser = lesser;
     }
 
-    private QualitativeValue fGreater;
+    private QualitativeValue greater;
 
     /**
      * This ordering relation for qualitative values indicates that the subject is greater than the object.
@@ -462,21 +421,21 @@ public class SizeSpecificationImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public QualitativeValue getGreater() {
-        return fGreater;
+        return greater;
     }
 
     /**
      * This ordering relation for qualitative values indicates that the subject is greater than the object.
      *
-     * @param fGreater QualitativeValue value to set.
+     * @param greater QualitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setGreater(QualitativeValue fGreater) {
-        this.fGreater = fGreater;
+    public void setGreater(QualitativeValue greater) {
+        this.greater = greater;
     }
 
-    private PropertyValue fAdditionalProperty;
+    private PropertyValue additionalProperty;
 
     /**
      * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
@@ -485,20 +444,20 @@ public class SizeSpecificationImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public PropertyValue getAdditionalProperty() {
-        return fAdditionalProperty;
+        return additionalProperty;
     }
 
     /**
      * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
      *
-     * @param fAdditionalProperty PropertyValue value to set.
+     * @param additionalProperty PropertyValue value to set.
      */
     @Override
-    public void setAdditionalProperty(PropertyValue fAdditionalProperty) {
-        this.fAdditionalProperty = fAdditionalProperty;
+    public void setAdditionalProperty(PropertyValue additionalProperty) {
+        this.additionalProperty = additionalProperty;
     }
 
-    private QualitativeValue fLesserOrEqual;
+    private QualitativeValue lesserOrEqual;
 
     /**
      * This ordering relation for qualitative values indicates that the subject is lesser than or equal to the object.
@@ -508,21 +467,21 @@ public class SizeSpecificationImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public QualitativeValue getLesserOrEqual() {
-        return fLesserOrEqual;
+        return lesserOrEqual;
     }
 
     /**
      * This ordering relation for qualitative values indicates that the subject is lesser than or equal to the object.
      *
-     * @param fLesserOrEqual QualitativeValue value to set.
+     * @param lesserOrEqual QualitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setLesserOrEqual(QualitativeValue fLesserOrEqual) {
-        this.fLesserOrEqual = fLesserOrEqual;
+    public void setLesserOrEqual(QualitativeValue lesserOrEqual) {
+        this.lesserOrEqual = lesserOrEqual;
     }
 
-    private Object fSupersededBy;
+    private Object supersededBy;
 
     /**
      * Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
@@ -532,41 +491,41 @@ public class SizeSpecificationImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getSupersededBy() {
-        return (T) fSupersededBy;
+        return (T) supersededBy;
     }
 
     /**
      * Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
      *
-     * @param fSupersededBy Enumeration value to set.
+     * @param supersededBy Enumeration value to set.
      * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
      */
     @Override
-    public void setSupersededBy(Enumeration fSupersededBy) {
-        this.fSupersededBy = fSupersededBy;
+    public void setSupersededBy(Enumeration supersededBy) {
+        this.supersededBy = supersededBy;
     }
     /**
      * Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
      *
-     * @param fSupersededBy Class value to set.
+     * @param supersededBy Class value to set.
      * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
      */
     @Override
-    public void setSupersededBy(Class fSupersededBy) {
-        this.fSupersededBy = fSupersededBy;
+    public void setSupersededBy(Class supersededBy) {
+        this.supersededBy = supersededBy;
     }
     /**
      * Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
      *
-     * @param fSupersededBy Property value to set.
+     * @param supersededBy Property value to set.
      * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
      */
     @Override
-    public void setSupersededBy(Property fSupersededBy) {
-        this.fSupersededBy = fSupersededBy;
+    public void setSupersededBy(Property supersededBy) {
+        this.supersededBy = supersededBy;
     }
 
-    private Object fMainEntityOfPage;
+    private Object mainEntityOfPage;
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -575,38 +534,29 @@ public class SizeSpecificationImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
+        return (T) mainEntityOfPage;
     }
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param fMainEntityOfPage CreativeWork value to set.
+     * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(CreativeWork fMainEntityOfPage) {
-        this.fMainEntityOfPage = fMainEntityOfPage;
+    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
     }
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param fMainEntityOfPage URL value to set.
+     * @param mainEntityOfPage URL value to set.
      */
     @Override
-    public void setMainEntityOfPage(URL fMainEntityOfPage) {
-        this.fMainEntityOfPage = fMainEntityOfPage;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param fMainEntityOfPage java.net.URL value to set.
-     */
-    @Override
-    public void setMainEntityOfPage(java.net.URL fMainEntityOfPage) {
-        this.fMainEntityOfPage = URL.of(fMainEntityOfPage);
+    public void setMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
     }
 
-    private Text fAlternateName;
+    private Text alternateName;
 
     /**
      * An alias for the item.
@@ -615,29 +565,20 @@ public class SizeSpecificationImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getAlternateName() {
-        return fAlternateName;
+        return alternateName;
     }
 
     /**
      * An alias for the item.
      *
-     * @param fAlternateName Text value to set.
+     * @param alternateName Text value to set.
      */
     @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
-    }
-    /**
-     * An alias for the item.
-     *
-     * @param fAlternateName java.lang.String value to set.
-     */
-    @Override
-    public void setAlternateName(java.lang.String fAlternateName) {
-        this.fAlternateName = Text.of(fAlternateName);
+    public void setAlternateName(Text alternateName) {
+        this.alternateName = alternateName;
     }
 
-    private Text fName;
+    private Text name;
 
     /**
      * The name of the item.
@@ -646,29 +587,20 @@ public class SizeSpecificationImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getName() {
-        return fName;
+        return name;
     }
 
     /**
      * The name of the item.
      *
-     * @param fName Text value to set.
+     * @param name Text value to set.
      */
     @Override
-    public void setName(Text fName) {
-        this.fName = fName;
-    }
-    /**
-     * The name of the item.
-     *
-     * @param fName java.lang.String value to set.
-     */
-    @Override
-    public void setName(java.lang.String fName) {
-        this.fName = Text.of(fName);
+    public void setName(Text name) {
+        this.name = name;
     }
 
-    private Action fPotentialAction;
+    private Action potentialAction;
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -677,20 +609,20 @@ public class SizeSpecificationImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Action getPotentialAction() {
-        return fPotentialAction;
+        return potentialAction;
     }
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      *
-     * @param fPotentialAction Action value to set.
+     * @param potentialAction Action value to set.
      */
     @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
+    public void setPotentialAction(Action potentialAction) {
+        this.potentialAction = potentialAction;
     }
 
-    private Object fImage;
+    private Object image;
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -699,38 +631,29 @@ public class SizeSpecificationImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getImage() {
-        return (T) fImage;
+        return (T) image;
     }
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param fImage URL value to set.
+     * @param image URL value to set.
      */
     @Override
-    public void setImage(URL fImage) {
-        this.fImage = fImage;
+    public void setImage(URL image) {
+        this.image = image;
     }
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param fImage java.net.URL value to set.
+     * @param image ImageObject value to set.
      */
     @Override
-    public void setImage(java.net.URL fImage) {
-        this.fImage = URL.of(fImage);
-    }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param fImage ImageObject value to set.
-     */
-    @Override
-    public void setImage(ImageObject fImage) {
-        this.fImage = fImage;
+    public void setImage(ImageObject image) {
+        this.image = image;
     }
 
-    private URL fUrl;
+    private URL url;
 
     /**
      * URL of the item.
@@ -739,29 +662,20 @@ public class SizeSpecificationImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public URL getUrl() {
-        return fUrl;
+        return url;
     }
 
     /**
      * URL of the item.
      *
-     * @param fUrl URL value to set.
+     * @param url URL value to set.
      */
     @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
-    }
-    /**
-     * URL of the item.
-     *
-     * @param fUrl java.net.URL value to set.
-     */
-    @Override
-    public void setUrl(java.net.URL fUrl) {
-        this.fUrl = URL.of(fUrl);
+    public void setUrl(URL url) {
+        this.url = url;
     }
 
-    private Text fDescription;
+    private Text description;
 
     /**
      * A description of the item.
@@ -770,29 +684,20 @@ public class SizeSpecificationImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getDescription() {
-        return fDescription;
+        return description;
     }
 
     /**
      * A description of the item.
      *
-     * @param fDescription Text value to set.
+     * @param description Text value to set.
      */
     @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
-    }
-    /**
-     * A description of the item.
-     *
-     * @param fDescription java.lang.String value to set.
-     */
-    @Override
-    public void setDescription(java.lang.String fDescription) {
-        this.fDescription = Text.of(fDescription);
+    public void setDescription(Text description) {
+        this.description = description;
     }
 
-    private Object fSubjectOf;
+    private Object subjectOf;
 
     /**
      * A CreativeWork or Event about this Thing.
@@ -802,31 +707,31 @@ public class SizeSpecificationImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getSubjectOf() {
-        return (T) fSubjectOf;
+        return (T) subjectOf;
     }
 
     /**
      * A CreativeWork or Event about this Thing.
      *
-     * @param fSubjectOf Event value to set.
+     * @param subjectOf Event value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Event fSubjectOf) {
-        this.fSubjectOf = fSubjectOf;
+    public void setSubjectOf(Event subjectOf) {
+        this.subjectOf = subjectOf;
     }
     /**
      * A CreativeWork or Event about this Thing.
      *
-     * @param fSubjectOf CreativeWork value to set.
+     * @param subjectOf CreativeWork value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(CreativeWork fSubjectOf) {
-        this.fSubjectOf = fSubjectOf;
+    public void setSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = subjectOf;
     }
 
-    private URL fAdditionalType;
+    private URL additionalType;
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
@@ -835,29 +740,20 @@ public class SizeSpecificationImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public URL getAdditionalType() {
-        return fAdditionalType;
+        return additionalType;
     }
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
-     * @param fAdditionalType URL value to set.
+     * @param additionalType URL value to set.
      */
     @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
-    }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @param fAdditionalType java.net.URL value to set.
-     */
-    @Override
-    public void setAdditionalType(java.net.URL fAdditionalType) {
-        this.fAdditionalType = URL.of(fAdditionalType);
+    public void setAdditionalType(URL additionalType) {
+        this.additionalType = additionalType;
     }
 
-    private Text fDisambiguatingDescription;
+    private Text disambiguatingDescription;
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
@@ -866,29 +762,20 @@ public class SizeSpecificationImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getDisambiguatingDescription() {
-        return fDisambiguatingDescription;
+        return disambiguatingDescription;
     }
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
-     * @param fDisambiguatingDescription Text value to set.
+     * @param disambiguatingDescription Text value to set.
      */
     @Override
-    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = fDisambiguatingDescription;
-    }
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @param fDisambiguatingDescription java.lang.String value to set.
-     */
-    @Override
-    public void setDisambiguatingDescription(java.lang.String fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = Text.of(fDisambiguatingDescription);
+    public void setDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = disambiguatingDescription;
     }
 
-    private URL fSameAs;
+    private URL sameAs;
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
@@ -897,29 +784,20 @@ public class SizeSpecificationImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public URL getSameAs() {
-        return fSameAs;
+        return sameAs;
     }
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
-     * @param fSameAs URL value to set.
+     * @param sameAs URL value to set.
      */
     @Override
-    public void setSameAs(URL fSameAs) {
-        this.fSameAs = fSameAs;
-    }
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @param fSameAs java.net.URL value to set.
-     */
-    @Override
-    public void setSameAs(java.net.URL fSameAs) {
-        this.fSameAs = URL.of(fSameAs);
+    public void setSameAs(URL sameAs) {
+        this.sameAs = sameAs;
     }
 
-    private Object fIdentifier;
+    private Object identifier;
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -929,57 +807,37 @@ public class SizeSpecificationImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getIdentifier() {
-        return (T) fIdentifier;
+        return (T) identifier;
     }
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier URL value to set.
+     * @param identifier URL value to set.
      */
     @Override
-    public void setIdentifier(URL fIdentifier) {
-        this.fIdentifier = fIdentifier;
+    public void setIdentifier(URL identifier) {
+        this.identifier = identifier;
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier java.net.URL value to set.
+     * @param identifier Text value to set.
      */
     @Override
-    public void setIdentifier(java.net.URL fIdentifier) {
-        this.fIdentifier = URL.of(fIdentifier);
+    public void setIdentifier(Text identifier) {
+        this.identifier = identifier;
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier Text value to set.
+     * @param identifier PropertyValue value to set.
      */
     @Override
-    public void setIdentifier(Text fIdentifier) {
-        this.fIdentifier = fIdentifier;
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param fIdentifier java.lang.String value to set.
-     */
-    @Override
-    public void setIdentifier(java.lang.String fIdentifier) {
-        this.fIdentifier = Text.of(fIdentifier);
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param fIdentifier PropertyValue value to set.
-     */
-    @Override
-    public void setIdentifier(PropertyValue fIdentifier) {
-        this.fIdentifier = fIdentifier;
+    public void setIdentifier(PropertyValue identifier) {
+        this.identifier = identifier;
     }
 }

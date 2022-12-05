@@ -89,17 +89,17 @@ public enum RestrictedDietEnum implements RestrictedDiet {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setSupersededBy(Enumeration fSupersededBy) {
+    public void setSupersededBy(Enumeration supersededBy) {
         throw new java.lang.IllegalAccessError("Unable to set property 'supersededBy': method not allowed for enum Enum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setSupersededBy(Class fSupersededBy) {
+    public void setSupersededBy(Class supersededBy) {
         throw new java.lang.IllegalAccessError("Unable to set property 'supersededBy': method not allowed for enum Enum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setSupersededBy(Property fSupersededBy) {
+    public void setSupersededBy(Property supersededBy) {
         throw new java.lang.IllegalAccessError("Unable to set property 'supersededBy': method not allowed for enum Enum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
@@ -110,17 +110,12 @@ public enum RestrictedDietEnum implements RestrictedDiet {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setMainEntityOfPage(CreativeWork fMainEntityOfPage) {
+    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
         throw new java.lang.IllegalAccessError("Unable to set property 'mainEntityOfPage': method not allowed for enum Enum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setMainEntityOfPage(URL fMainEntityOfPage) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'mainEntityOfPage': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void setMainEntityOfPage(java.net.URL fMainEntityOfPage) {
+    public void setMainEntityOfPage(URL mainEntityOfPage) {
         throw new java.lang.IllegalAccessError("Unable to set property 'mainEntityOfPage': method not allowed for enum Enum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
@@ -131,12 +126,7 @@ public enum RestrictedDietEnum implements RestrictedDiet {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setAlternateName(Text fAlternateName) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'alternateName': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void setAlternateName(java.lang.String fAlternateName) {
+    public void setAlternateName(Text alternateName) {
         throw new java.lang.IllegalAccessError("Unable to set property 'alternateName': method not allowed for enum Enum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
@@ -147,12 +137,7 @@ public enum RestrictedDietEnum implements RestrictedDiet {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setName(Text fName) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'name': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void setName(java.lang.String fName) {
+    public void setName(Text name) {
         throw new java.lang.IllegalAccessError("Unable to set property 'name': method not allowed for enum Enum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
@@ -163,7 +148,7 @@ public enum RestrictedDietEnum implements RestrictedDiet {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setPotentialAction(Action fPotentialAction) {
+    public void setPotentialAction(Action potentialAction) {
         throw new java.lang.IllegalAccessError("Unable to set property 'potentialAction': method not allowed for enum Enum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
@@ -174,17 +159,12 @@ public enum RestrictedDietEnum implements RestrictedDiet {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setImage(URL fImage) {
+    public void setImage(URL image) {
         throw new java.lang.IllegalAccessError("Unable to set property 'image': method not allowed for enum Enum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setImage(java.net.URL fImage) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'image': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void setImage(ImageObject fImage) {
+    public void setImage(ImageObject image) {
         throw new java.lang.IllegalAccessError("Unable to set property 'image': method not allowed for enum Enum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
@@ -195,12 +175,7 @@ public enum RestrictedDietEnum implements RestrictedDiet {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setUrl(URL fUrl) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'url': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void setUrl(java.net.URL fUrl) {
+    public void setUrl(URL url) {
         throw new java.lang.IllegalAccessError("Unable to set property 'url': method not allowed for enum Enum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
@@ -211,12 +186,7 @@ public enum RestrictedDietEnum implements RestrictedDiet {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setDescription(Text fDescription) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'description': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void setDescription(java.lang.String fDescription) {
+    public void setDescription(Text description) {
         throw new java.lang.IllegalAccessError("Unable to set property 'description': method not allowed for enum Enum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
@@ -227,12 +197,12 @@ public enum RestrictedDietEnum implements RestrictedDiet {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setSubjectOf(Event fSubjectOf) {
+    public void setSubjectOf(Event subjectOf) {
         throw new java.lang.IllegalAccessError("Unable to set property 'subjectOf': method not allowed for enum Enum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setSubjectOf(CreativeWork fSubjectOf) {
+    public void setSubjectOf(CreativeWork subjectOf) {
         throw new java.lang.IllegalAccessError("Unable to set property 'subjectOf': method not allowed for enum Enum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
@@ -243,12 +213,7 @@ public enum RestrictedDietEnum implements RestrictedDiet {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'additionalType': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void setAdditionalType(java.net.URL fAdditionalType) {
+    public void setAdditionalType(URL additionalType) {
         throw new java.lang.IllegalAccessError("Unable to set property 'additionalType': method not allowed for enum Enum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
@@ -259,12 +224,7 @@ public enum RestrictedDietEnum implements RestrictedDiet {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'disambiguatingDescription': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void setDisambiguatingDescription(java.lang.String fDisambiguatingDescription) {
+    public void setDisambiguatingDescription(Text disambiguatingDescription) {
         throw new java.lang.IllegalAccessError("Unable to set property 'disambiguatingDescription': method not allowed for enum Enum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
@@ -275,12 +235,7 @@ public enum RestrictedDietEnum implements RestrictedDiet {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setSameAs(URL fSameAs) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'sameAs': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void setSameAs(java.net.URL fSameAs) {
+    public void setSameAs(URL sameAs) {
         throw new java.lang.IllegalAccessError("Unable to set property 'sameAs': method not allowed for enum Enum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
@@ -291,27 +246,17 @@ public enum RestrictedDietEnum implements RestrictedDiet {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setIdentifier(URL fIdentifier) {
+    public void setIdentifier(URL identifier) {
         throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum Enum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setIdentifier(java.net.URL fIdentifier) {
+    public void setIdentifier(Text identifier) {
         throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum Enum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setIdentifier(Text fIdentifier) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void setIdentifier(java.lang.String fIdentifier) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void setIdentifier(PropertyValue fIdentifier) {
+    public void setIdentifier(PropertyValue identifier) {
         throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum Enum");
     }
 }

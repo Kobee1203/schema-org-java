@@ -26,27 +26,15 @@ public interface DataFeedItem extends Intangible {
     /**
      * The datetime the item was removed from the DataFeed.
      *
-     * @param fDateDeleted DateTime value to set.
+     * @param dateDeleted DateTime value to set.
      */
-    void setDateDeleted(DateTime fDateDeleted);
+    void setDateDeleted(DateTime dateDeleted);
     /**
      * The datetime the item was removed from the DataFeed.
      *
-     * @param fDateDeleted java.time.LocalDateTime value to set.
+     * @param dateDeleted Date value to set.
      */
-    void setDateDeleted(java.time.LocalDateTime fDateDeleted);
-    /**
-     * The datetime the item was removed from the DataFeed.
-     *
-     * @param fDateDeleted Date value to set.
-     */
-    void setDateDeleted(Date fDateDeleted);
-    /**
-     * The datetime the item was removed from the DataFeed.
-     *
-     * @param fDateDeleted java.time.LocalDate value to set.
-     */
-    void setDateDeleted(java.time.LocalDate fDateDeleted);
+    void setDateDeleted(Date dateDeleted);
 
     /**
      * The date on which the CreativeWork was created or the item was added to a DataFeed.
@@ -58,27 +46,15 @@ public interface DataFeedItem extends Intangible {
     /**
      * The date on which the CreativeWork was created or the item was added to a DataFeed.
      *
-     * @param fDateCreated Date value to set.
+     * @param dateCreated Date value to set.
      */
-    void setDateCreated(Date fDateCreated);
+    void setDateCreated(Date dateCreated);
     /**
      * The date on which the CreativeWork was created or the item was added to a DataFeed.
      *
-     * @param fDateCreated java.time.LocalDate value to set.
+     * @param dateCreated DateTime value to set.
      */
-    void setDateCreated(java.time.LocalDate fDateCreated);
-    /**
-     * The date on which the CreativeWork was created or the item was added to a DataFeed.
-     *
-     * @param fDateCreated DateTime value to set.
-     */
-    void setDateCreated(DateTime fDateCreated);
-    /**
-     * The date on which the CreativeWork was created or the item was added to a DataFeed.
-     *
-     * @param fDateCreated java.time.LocalDateTime value to set.
-     */
-    void setDateCreated(java.time.LocalDateTime fDateCreated);
+    void setDateCreated(DateTime dateCreated);
 
     /**
      * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
@@ -90,27 +66,15 @@ public interface DataFeedItem extends Intangible {
     /**
      * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
      *
-     * @param fDateModified DateTime value to set.
+     * @param dateModified DateTime value to set.
      */
-    void setDateModified(DateTime fDateModified);
+    void setDateModified(DateTime dateModified);
     /**
      * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
      *
-     * @param fDateModified java.time.LocalDateTime value to set.
+     * @param dateModified Date value to set.
      */
-    void setDateModified(java.time.LocalDateTime fDateModified);
-    /**
-     * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
-     *
-     * @param fDateModified Date value to set.
-     */
-    void setDateModified(Date fDateModified);
-    /**
-     * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
-     *
-     * @param fDateModified java.time.LocalDate value to set.
-     */
-    void setDateModified(java.time.LocalDate fDateModified);
+    void setDateModified(Date dateModified);
 
     /**
      * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')’.
@@ -122,7 +86,7 @@ public interface DataFeedItem extends Intangible {
     /**
      * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')’.
      *
-     * @param fItem Thing value to set.
+     * @param item Thing value to set.
      */
-    void setItem(Thing fItem);
+    void setItem(Thing item);
 }

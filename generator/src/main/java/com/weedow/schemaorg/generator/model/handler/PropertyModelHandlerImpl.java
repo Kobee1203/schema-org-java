@@ -2,13 +2,12 @@ package com.weedow.schemaorg.generator.model.handler;
 
 import com.weedow.schemaorg.generator.logging.Logger;
 import com.weedow.schemaorg.generator.logging.LoggerFactory;
-import com.weedow.schemaorg.generator.model.utils.ModelUtils;
 import com.weedow.schemaorg.generator.model.Property;
 import com.weedow.schemaorg.generator.model.Type;
 import com.weedow.schemaorg.generator.model.jsonld.DomainIncludes;
 import com.weedow.schemaorg.generator.model.jsonld.GraphItem;
+import com.weedow.schemaorg.generator.model.utils.ModelUtils;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -52,32 +51,15 @@ public class PropertyModelHandlerImpl implements ModelHandler {
 
         List<Property.Mutator> mutators = propertyTypes
                 .stream()
-                .flatMap(type -> {
-                    List<Property.Mutator> list = new ArrayList<>();
-
-                    list.add(new Property.Mutator(
-                            name,
-                            description,
-                            partOf,
-                            source,
-                            type::getName,
-                            field::getFieldName
-                    ));
-
-                    String javaType = ModelUtils.getJavaType(type.getId(), null);
-                    if (javaType != null) {
-                        list.add(new Property.Mutator(
+                .map(type ->
+                        new Property.Mutator(
                                 name,
                                 description,
                                 partOf,
                                 source,
-                                () -> javaType,
-                                () -> type.getName() + ".of(" + field.getFieldName() + ")"
-                        ));
-                    }
-
-                    return list.stream();
-                })
+                                type::getName,
+                                field::getFieldName
+                        ))
                 .collect(Collectors.toList());
 
         final Property property = new Property(

@@ -29,15 +29,9 @@ public interface SoftwareApplication extends CreativeWork {
     /**
      * Countries for which the application is supported. You can also provide the two-letter ISO 3166-1 alpha-2 country code.
      *
-     * @param fCountriesSupported Text value to set.
+     * @param countriesSupported Text value to set.
      */
-    void setCountriesSupported(Text fCountriesSupported);
-    /**
-     * Countries for which the application is supported. You can also provide the two-letter ISO 3166-1 alpha-2 country code.
-     *
-     * @param fCountriesSupported java.lang.String value to set.
-     */
-    void setCountriesSupported(java.lang.String fCountriesSupported);
+    void setCountriesSupported(Text countriesSupported);
 
     /**
      * URL at which the app may be installed, if different from the URL of the item.
@@ -49,15 +43,9 @@ public interface SoftwareApplication extends CreativeWork {
     /**
      * URL at which the app may be installed, if different from the URL of the item.
      *
-     * @param fInstallUrl URL value to set.
+     * @param installUrl URL value to set.
      */
-    void setInstallUrl(URL fInstallUrl);
-    /**
-     * URL at which the app may be installed, if different from the URL of the item.
-     *
-     * @param fInstallUrl java.net.URL value to set.
-     */
-    void setInstallUrl(java.net.URL fInstallUrl);
+    void setInstallUrl(URL installUrl);
 
     /**
      * Operating systems supported (Windows 7, OSX 10.6, Android 1.6).
@@ -69,15 +57,9 @@ public interface SoftwareApplication extends CreativeWork {
     /**
      * Operating systems supported (Windows 7, OSX 10.6, Android 1.6).
      *
-     * @param fOperatingSystem Text value to set.
+     * @param operatingSystem Text value to set.
      */
-    void setOperatingSystem(Text fOperatingSystem);
-    /**
-     * Operating systems supported (Windows 7, OSX 10.6, Android 1.6).
-     *
-     * @param fOperatingSystem java.lang.String value to set.
-     */
-    void setOperatingSystem(java.lang.String fOperatingSystem);
+    void setOperatingSystem(Text operatingSystem);
 
     /**
      * Minimum memory requirements.
@@ -89,27 +71,15 @@ public interface SoftwareApplication extends CreativeWork {
     /**
      * Minimum memory requirements.
      *
-     * @param fMemoryRequirements Text value to set.
+     * @param memoryRequirements Text value to set.
      */
-    void setMemoryRequirements(Text fMemoryRequirements);
+    void setMemoryRequirements(Text memoryRequirements);
     /**
      * Minimum memory requirements.
      *
-     * @param fMemoryRequirements java.lang.String value to set.
+     * @param memoryRequirements URL value to set.
      */
-    void setMemoryRequirements(java.lang.String fMemoryRequirements);
-    /**
-     * Minimum memory requirements.
-     *
-     * @param fMemoryRequirements URL value to set.
-     */
-    void setMemoryRequirements(URL fMemoryRequirements);
-    /**
-     * Minimum memory requirements.
-     *
-     * @param fMemoryRequirements java.net.URL value to set.
-     */
-    void setMemoryRequirements(java.net.URL fMemoryRequirements);
+    void setMemoryRequirements(URL memoryRequirements);
 
     /**
      * Version of the software instance.
@@ -121,15 +91,9 @@ public interface SoftwareApplication extends CreativeWork {
     /**
      * Version of the software instance.
      *
-     * @param fSoftwareVersion Text value to set.
+     * @param softwareVersion Text value to set.
      */
-    void setSoftwareVersion(Text fSoftwareVersion);
-    /**
-     * Version of the software instance.
-     *
-     * @param fSoftwareVersion java.lang.String value to set.
-     */
-    void setSoftwareVersion(java.lang.String fSoftwareVersion);
+    void setSoftwareVersion(Text softwareVersion);
 
     /**
      * Storage requirements (free space required).
@@ -141,27 +105,15 @@ public interface SoftwareApplication extends CreativeWork {
     /**
      * Storage requirements (free space required).
      *
-     * @param fStorageRequirements URL value to set.
+     * @param storageRequirements URL value to set.
      */
-    void setStorageRequirements(URL fStorageRequirements);
+    void setStorageRequirements(URL storageRequirements);
     /**
      * Storage requirements (free space required).
      *
-     * @param fStorageRequirements java.net.URL value to set.
+     * @param storageRequirements Text value to set.
      */
-    void setStorageRequirements(java.net.URL fStorageRequirements);
-    /**
-     * Storage requirements (free space required).
-     *
-     * @param fStorageRequirements Text value to set.
-     */
-    void setStorageRequirements(Text fStorageRequirements);
-    /**
-     * Storage requirements (free space required).
-     *
-     * @param fStorageRequirements java.lang.String value to set.
-     */
-    void setStorageRequirements(java.lang.String fStorageRequirements);
+    void setStorageRequirements(Text storageRequirements);
 
     /**
      * Software application help.
@@ -173,9 +125,9 @@ public interface SoftwareApplication extends CreativeWork {
     /**
      * Software application help.
      *
-     * @param fSoftwareHelp CreativeWork value to set.
+     * @param softwareHelp CreativeWork value to set.
      */
-    void setSoftwareHelp(CreativeWork fSoftwareHelp);
+    void setSoftwareHelp(CreativeWork softwareHelp);
 
     /**
      * Subcategory of the application, e.g. 'Arcade Game'.
@@ -187,27 +139,15 @@ public interface SoftwareApplication extends CreativeWork {
     /**
      * Subcategory of the application, e.g. 'Arcade Game'.
      *
-     * @param fApplicationSubCategory URL value to set.
+     * @param applicationSubCategory URL value to set.
      */
-    void setApplicationSubCategory(URL fApplicationSubCategory);
+    void setApplicationSubCategory(URL applicationSubCategory);
     /**
      * Subcategory of the application, e.g. 'Arcade Game'.
      *
-     * @param fApplicationSubCategory java.net.URL value to set.
+     * @param applicationSubCategory Text value to set.
      */
-    void setApplicationSubCategory(java.net.URL fApplicationSubCategory);
-    /**
-     * Subcategory of the application, e.g. 'Arcade Game'.
-     *
-     * @param fApplicationSubCategory Text value to set.
-     */
-    void setApplicationSubCategory(Text fApplicationSubCategory);
-    /**
-     * Subcategory of the application, e.g. 'Arcade Game'.
-     *
-     * @param fApplicationSubCategory java.lang.String value to set.
-     */
-    void setApplicationSubCategory(java.lang.String fApplicationSubCategory);
+    void setApplicationSubCategory(Text applicationSubCategory);
 
     /**
      * If the file can be downloaded, URL to download the binary.
@@ -219,15 +159,9 @@ public interface SoftwareApplication extends CreativeWork {
     /**
      * If the file can be downloaded, URL to download the binary.
      *
-     * @param fDownloadUrl URL value to set.
+     * @param downloadUrl URL value to set.
      */
-    void setDownloadUrl(URL fDownloadUrl);
-    /**
-     * If the file can be downloaded, URL to download the binary.
-     *
-     * @param fDownloadUrl java.net.URL value to set.
-     */
-    void setDownloadUrl(java.net.URL fDownloadUrl);
+    void setDownloadUrl(URL downloadUrl);
 
     /**
      * Type of software application, e.g. 'Game, Multimedia'.
@@ -239,27 +173,15 @@ public interface SoftwareApplication extends CreativeWork {
     /**
      * Type of software application, e.g. 'Game, Multimedia'.
      *
-     * @param fApplicationCategory Text value to set.
+     * @param applicationCategory Text value to set.
      */
-    void setApplicationCategory(Text fApplicationCategory);
+    void setApplicationCategory(Text applicationCategory);
     /**
      * Type of software application, e.g. 'Game, Multimedia'.
      *
-     * @param fApplicationCategory java.lang.String value to set.
+     * @param applicationCategory URL value to set.
      */
-    void setApplicationCategory(java.lang.String fApplicationCategory);
-    /**
-     * Type of software application, e.g. 'Game, Multimedia'.
-     *
-     * @param fApplicationCategory URL value to set.
-     */
-    void setApplicationCategory(URL fApplicationCategory);
-    /**
-     * Type of software application, e.g. 'Game, Multimedia'.
-     *
-     * @param fApplicationCategory java.net.URL value to set.
-     */
-    void setApplicationCategory(java.net.URL fApplicationCategory);
+    void setApplicationCategory(URL applicationCategory);
 
     /**
      * Countries for which the application is not supported. You can also provide the two-letter ISO 3166-1 alpha-2 country code.
@@ -271,15 +193,9 @@ public interface SoftwareApplication extends CreativeWork {
     /**
      * Countries for which the application is not supported. You can also provide the two-letter ISO 3166-1 alpha-2 country code.
      *
-     * @param fCountriesNotSupported Text value to set.
+     * @param countriesNotSupported Text value to set.
      */
-    void setCountriesNotSupported(Text fCountriesNotSupported);
-    /**
-     * Countries for which the application is not supported. You can also provide the two-letter ISO 3166-1 alpha-2 country code.
-     *
-     * @param fCountriesNotSupported java.lang.String value to set.
-     */
-    void setCountriesNotSupported(java.lang.String fCountriesNotSupported);
+    void setCountriesNotSupported(Text countriesNotSupported);
 
     /**
      * Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (Examples: DirectX, Java or .NET runtime).
@@ -291,27 +207,15 @@ public interface SoftwareApplication extends CreativeWork {
     /**
      * Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (Examples: DirectX, Java or .NET runtime).
      *
-     * @param fSoftwareRequirements URL value to set.
+     * @param softwareRequirements URL value to set.
      */
-    void setSoftwareRequirements(URL fSoftwareRequirements);
+    void setSoftwareRequirements(URL softwareRequirements);
     /**
      * Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (Examples: DirectX, Java or .NET runtime).
      *
-     * @param fSoftwareRequirements java.net.URL value to set.
+     * @param softwareRequirements Text value to set.
      */
-    void setSoftwareRequirements(java.net.URL fSoftwareRequirements);
-    /**
-     * Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (Examples: DirectX, Java or .NET runtime).
-     *
-     * @param fSoftwareRequirements Text value to set.
-     */
-    void setSoftwareRequirements(Text fSoftwareRequirements);
-    /**
-     * Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (Examples: DirectX, Java or .NET runtime).
-     *
-     * @param fSoftwareRequirements java.lang.String value to set.
-     */
-    void setSoftwareRequirements(java.lang.String fSoftwareRequirements);
+    void setSoftwareRequirements(Text softwareRequirements);
 
     /**
      * Additional content for a software application.
@@ -323,9 +227,9 @@ public interface SoftwareApplication extends CreativeWork {
     /**
      * Additional content for a software application.
      *
-     * @param fSoftwareAddOn SoftwareApplication value to set.
+     * @param softwareAddOn SoftwareApplication value to set.
      */
-    void setSoftwareAddOn(SoftwareApplication fSoftwareAddOn);
+    void setSoftwareAddOn(SoftwareApplication softwareAddOn);
 
     /**
      * The name of the application suite to which the application belongs (e.g. Excel belongs to Office).
@@ -337,15 +241,9 @@ public interface SoftwareApplication extends CreativeWork {
     /**
      * The name of the application suite to which the application belongs (e.g. Excel belongs to Office).
      *
-     * @param fApplicationSuite Text value to set.
+     * @param applicationSuite Text value to set.
      */
-    void setApplicationSuite(Text fApplicationSuite);
-    /**
-     * The name of the application suite to which the application belongs (e.g. Excel belongs to Office).
-     *
-     * @param fApplicationSuite java.lang.String value to set.
-     */
-    void setApplicationSuite(java.lang.String fApplicationSuite);
+    void setApplicationSuite(Text applicationSuite);
 
     /**
      * Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (Examples: DirectX, Java or .NET runtime).
@@ -357,27 +255,15 @@ public interface SoftwareApplication extends CreativeWork {
     /**
      * Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (Examples: DirectX, Java or .NET runtime).
      *
-     * @param fRequirements URL value to set.
+     * @param requirements URL value to set.
      */
-    void setRequirements(URL fRequirements);
+    void setRequirements(URL requirements);
     /**
      * Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (Examples: DirectX, Java or .NET runtime).
      *
-     * @param fRequirements java.net.URL value to set.
+     * @param requirements Text value to set.
      */
-    void setRequirements(java.net.URL fRequirements);
-    /**
-     * Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (Examples: DirectX, Java or .NET runtime).
-     *
-     * @param fRequirements Text value to set.
-     */
-    void setRequirements(Text fRequirements);
-    /**
-     * Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (Examples: DirectX, Java or .NET runtime).
-     *
-     * @param fRequirements java.lang.String value to set.
-     */
-    void setRequirements(java.lang.String fRequirements);
+    void setRequirements(Text requirements);
 
     /**
      * Permission(s) required to run the app (for example, a mobile app may require full internet access or may run only on wifi).
@@ -389,15 +275,9 @@ public interface SoftwareApplication extends CreativeWork {
     /**
      * Permission(s) required to run the app (for example, a mobile app may require full internet access or may run only on wifi).
      *
-     * @param fPermissions Text value to set.
+     * @param permissions Text value to set.
      */
-    void setPermissions(Text fPermissions);
-    /**
-     * Permission(s) required to run the app (for example, a mobile app may require full internet access or may run only on wifi).
-     *
-     * @param fPermissions java.lang.String value to set.
-     */
-    void setPermissions(java.lang.String fPermissions);
+    void setPermissions(Text permissions);
 
     /**
      * Processor architecture required to run the application (e.g. IA64).
@@ -409,15 +289,9 @@ public interface SoftwareApplication extends CreativeWork {
     /**
      * Processor architecture required to run the application (e.g. IA64).
      *
-     * @param fProcessorRequirements Text value to set.
+     * @param processorRequirements Text value to set.
      */
-    void setProcessorRequirements(Text fProcessorRequirements);
-    /**
-     * Processor architecture required to run the application (e.g. IA64).
-     *
-     * @param fProcessorRequirements java.lang.String value to set.
-     */
-    void setProcessorRequirements(java.lang.String fProcessorRequirements);
+    void setProcessorRequirements(Text processorRequirements);
 
     /**
      * A link to a screenshot image of the app.
@@ -429,21 +303,15 @@ public interface SoftwareApplication extends CreativeWork {
     /**
      * A link to a screenshot image of the app.
      *
-     * @param fScreenshot ImageObject value to set.
+     * @param screenshot ImageObject value to set.
      */
-    void setScreenshot(ImageObject fScreenshot);
+    void setScreenshot(ImageObject screenshot);
     /**
      * A link to a screenshot image of the app.
      *
-     * @param fScreenshot URL value to set.
+     * @param screenshot URL value to set.
      */
-    void setScreenshot(URL fScreenshot);
-    /**
-     * A link to a screenshot image of the app.
-     *
-     * @param fScreenshot java.net.URL value to set.
-     */
-    void setScreenshot(java.net.URL fScreenshot);
+    void setScreenshot(URL screenshot);
 
     /**
      * Features or modules provided by this application (and possibly required by other applications).
@@ -455,27 +323,15 @@ public interface SoftwareApplication extends CreativeWork {
     /**
      * Features or modules provided by this application (and possibly required by other applications).
      *
-     * @param fFeatureList Text value to set.
+     * @param featureList Text value to set.
      */
-    void setFeatureList(Text fFeatureList);
+    void setFeatureList(Text featureList);
     /**
      * Features or modules provided by this application (and possibly required by other applications).
      *
-     * @param fFeatureList java.lang.String value to set.
+     * @param featureList URL value to set.
      */
-    void setFeatureList(java.lang.String fFeatureList);
-    /**
-     * Features or modules provided by this application (and possibly required by other applications).
-     *
-     * @param fFeatureList URL value to set.
-     */
-    void setFeatureList(URL fFeatureList);
-    /**
-     * Features or modules provided by this application (and possibly required by other applications).
-     *
-     * @param fFeatureList java.net.URL value to set.
-     */
-    void setFeatureList(java.net.URL fFeatureList);
+    void setFeatureList(URL featureList);
 
     /**
      * Description of what changed in this version.
@@ -487,27 +343,15 @@ public interface SoftwareApplication extends CreativeWork {
     /**
      * Description of what changed in this version.
      *
-     * @param fReleaseNotes URL value to set.
+     * @param releaseNotes URL value to set.
      */
-    void setReleaseNotes(URL fReleaseNotes);
+    void setReleaseNotes(URL releaseNotes);
     /**
      * Description of what changed in this version.
      *
-     * @param fReleaseNotes java.net.URL value to set.
+     * @param releaseNotes Text value to set.
      */
-    void setReleaseNotes(java.net.URL fReleaseNotes);
-    /**
-     * Description of what changed in this version.
-     *
-     * @param fReleaseNotes Text value to set.
-     */
-    void setReleaseNotes(Text fReleaseNotes);
-    /**
-     * Description of what changed in this version.
-     *
-     * @param fReleaseNotes java.lang.String value to set.
-     */
-    void setReleaseNotes(java.lang.String fReleaseNotes);
+    void setReleaseNotes(Text releaseNotes);
 
     /**
      * Supporting data for a SoftwareApplication.
@@ -519,9 +363,9 @@ public interface SoftwareApplication extends CreativeWork {
     /**
      * Supporting data for a SoftwareApplication.
      *
-     * @param fSupportingData DataFeed value to set.
+     * @param supportingData DataFeed value to set.
      */
-    void setSupportingData(DataFeed fSupportingData);
+    void setSupportingData(DataFeed supportingData);
 
     /**
      * Size of the application / package (e.g. 18MB). In the absence of a unit (MB, KB etc.), KB will be assumed.
@@ -533,15 +377,9 @@ public interface SoftwareApplication extends CreativeWork {
     /**
      * Size of the application / package (e.g. 18MB). In the absence of a unit (MB, KB etc.), KB will be assumed.
      *
-     * @param fFileSize Text value to set.
+     * @param fileSize Text value to set.
      */
-    void setFileSize(Text fFileSize);
-    /**
-     * Size of the application / package (e.g. 18MB). In the absence of a unit (MB, KB etc.), KB will be assumed.
-     *
-     * @param fFileSize java.lang.String value to set.
-     */
-    void setFileSize(java.lang.String fFileSize);
+    void setFileSize(Text fileSize);
 
     /**
      * Device required to run the application. Used in cases where a specific make/model is required to run the application.
@@ -553,15 +391,9 @@ public interface SoftwareApplication extends CreativeWork {
     /**
      * Device required to run the application. Used in cases where a specific make/model is required to run the application.
      *
-     * @param fDevice Text value to set.
+     * @param device Text value to set.
      */
-    void setDevice(Text fDevice);
-    /**
-     * Device required to run the application. Used in cases where a specific make/model is required to run the application.
-     *
-     * @param fDevice java.lang.String value to set.
-     */
-    void setDevice(java.lang.String fDevice);
+    void setDevice(Text device);
 
     /**
      * Device required to run the application. Used in cases where a specific make/model is required to run the application.
@@ -573,13 +405,7 @@ public interface SoftwareApplication extends CreativeWork {
     /**
      * Device required to run the application. Used in cases where a specific make/model is required to run the application.
      *
-     * @param fAvailableOnDevice Text value to set.
+     * @param availableOnDevice Text value to set.
      */
-    void setAvailableOnDevice(Text fAvailableOnDevice);
-    /**
-     * Device required to run the application. Used in cases where a specific make/model is required to run the application.
-     *
-     * @param fAvailableOnDevice java.lang.String value to set.
-     */
-    void setAvailableOnDevice(java.lang.String fAvailableOnDevice);
+    void setAvailableOnDevice(Text availableOnDevice);
 }

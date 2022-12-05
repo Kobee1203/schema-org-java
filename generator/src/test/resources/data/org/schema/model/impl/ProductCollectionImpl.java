@@ -74,7 +74,7 @@ import org.schema.model.ProductCollection;
 @JsonLdTypeName("ProductCollection")
 public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ProductCollection {
 
-    private TypeAndQuantityNode fIncludesObject;
+    private TypeAndQuantityNode includesObject;
 
     /**
      * This links to a node or nodes indicating the exact quantity of the products included in  an [[Offer]] or [[ProductCollection]].
@@ -84,21 +84,21 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public TypeAndQuantityNode getIncludesObject() {
-        return fIncludesObject;
+        return includesObject;
     }
 
     /**
      * This links to a node or nodes indicating the exact quantity of the products included in  an [[Offer]] or [[ProductCollection]].
      *
-     * @param fIncludesObject TypeAndQuantityNode value to set.
+     * @param includesObject TypeAndQuantityNode value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setIncludesObject(TypeAndQuantityNode fIncludesObject) {
-        this.fIncludesObject = fIncludesObject;
+    public void setIncludesObject(TypeAndQuantityNode includesObject) {
+        this.includesObject = includesObject;
     }
 
-    private Product fIsAccessoryOrSparePartFor;
+    private Product isAccessoryOrSparePartFor;
 
     /**
      * A pointer to another product (or multiple products) for which this product is an accessory or spare part.
@@ -108,21 +108,21 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Product getIsAccessoryOrSparePartFor() {
-        return fIsAccessoryOrSparePartFor;
+        return isAccessoryOrSparePartFor;
     }
 
     /**
      * A pointer to another product (or multiple products) for which this product is an accessory or spare part.
      *
-     * @param fIsAccessoryOrSparePartFor Product value to set.
+     * @param isAccessoryOrSparePartFor Product value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setIsAccessoryOrSparePartFor(Product fIsAccessoryOrSparePartFor) {
-        this.fIsAccessoryOrSparePartFor = fIsAccessoryOrSparePartFor;
+    public void setIsAccessoryOrSparePartFor(Product isAccessoryOrSparePartFor) {
+        this.isAccessoryOrSparePartFor = isAccessoryOrSparePartFor;
     }
 
-    private AdultOrientedEnumeration fHasAdultConsideration;
+    private AdultOrientedEnumeration hasAdultConsideration;
 
     /**
      * Used to tag an item to be intended or suitable for consumption or use by adults only.
@@ -133,22 +133,22 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public AdultOrientedEnumeration getHasAdultConsideration() {
-        return fHasAdultConsideration;
+        return hasAdultConsideration;
     }
 
     /**
      * Used to tag an item to be intended or suitable for consumption or use by adults only.
      *
-     * @param fHasAdultConsideration AdultOrientedEnumeration value to set.
+     * @param hasAdultConsideration AdultOrientedEnumeration value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2989">https://github.com/schemaorg/schemaorg/issues/2989</a>
      */
     @Override
-    public void setHasAdultConsideration(AdultOrientedEnumeration fHasAdultConsideration) {
-        this.fHasAdultConsideration = fHasAdultConsideration;
+    public void setHasAdultConsideration(AdultOrientedEnumeration hasAdultConsideration) {
+        this.hasAdultConsideration = hasAdultConsideration;
     }
 
-    private Text fGtin12;
+    private Text gtin12;
 
     /**
      * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
@@ -157,29 +157,20 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getGtin12() {
-        return fGtin12;
+        return gtin12;
     }
 
     /**
      * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
-     * @param fGtin12 Text value to set.
+     * @param gtin12 Text value to set.
      */
     @Override
-    public void setGtin12(Text fGtin12) {
-        this.fGtin12 = fGtin12;
-    }
-    /**
-     * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
-     *
-     * @param fGtin12 java.lang.String value to set.
-     */
-    @Override
-    public void setGtin12(java.lang.String fGtin12) {
-        this.fGtin12 = Text.of(fGtin12);
+    public void setGtin12(Text gtin12) {
+        this.gtin12 = gtin12;
     }
 
-    private Text fNsn;
+    private Text nsn;
 
     /**
      * Indicates the [NATO stock number](https://en.wikipedia.org/wiki/NATO_Stock_Number) (nsn) of a [[Product]]. 
@@ -190,33 +181,22 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getNsn() {
-        return fNsn;
+        return nsn;
     }
 
     /**
      * Indicates the [NATO stock number](https://en.wikipedia.org/wiki/NATO_Stock_Number) (nsn) of a [[Product]]. 
      *
-     * @param fNsn Text value to set.
+     * @param nsn Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2126">https://github.com/schemaorg/schemaorg/issues/2126</a>
      */
     @Override
-    public void setNsn(Text fNsn) {
-        this.fNsn = fNsn;
-    }
-    /**
-     * Indicates the [NATO stock number](https://en.wikipedia.org/wiki/NATO_Stock_Number) (nsn) of a [[Product]]. 
-     *
-     * @param fNsn java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2126">https://github.com/schemaorg/schemaorg/issues/2126</a>
-     */
-    @Override
-    public void setNsn(java.lang.String fNsn) {
-        this.fNsn = Text.of(fNsn);
+    public void setNsn(Text nsn) {
+        this.nsn = nsn;
     }
 
-    private Object fMaterial;
+    private Object material;
 
     /**
      * A material that something is made from, e.g. leather, wool, cotton, paper.
@@ -225,56 +205,38 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getMaterial() {
-        return (T) fMaterial;
+        return (T) material;
     }
 
     /**
      * A material that something is made from, e.g. leather, wool, cotton, paper.
      *
-     * @param fMaterial Text value to set.
+     * @param material Text value to set.
      */
     @Override
-    public void setMaterial(Text fMaterial) {
-        this.fMaterial = fMaterial;
+    public void setMaterial(Text material) {
+        this.material = material;
     }
     /**
      * A material that something is made from, e.g. leather, wool, cotton, paper.
      *
-     * @param fMaterial java.lang.String value to set.
+     * @param material URL value to set.
      */
     @Override
-    public void setMaterial(java.lang.String fMaterial) {
-        this.fMaterial = Text.of(fMaterial);
+    public void setMaterial(URL material) {
+        this.material = material;
     }
     /**
      * A material that something is made from, e.g. leather, wool, cotton, paper.
      *
-     * @param fMaterial URL value to set.
+     * @param material Product value to set.
      */
     @Override
-    public void setMaterial(URL fMaterial) {
-        this.fMaterial = fMaterial;
-    }
-    /**
-     * A material that something is made from, e.g. leather, wool, cotton, paper.
-     *
-     * @param fMaterial java.net.URL value to set.
-     */
-    @Override
-    public void setMaterial(java.net.URL fMaterial) {
-        this.fMaterial = URL.of(fMaterial);
-    }
-    /**
-     * A material that something is made from, e.g. leather, wool, cotton, paper.
-     *
-     * @param fMaterial Product value to set.
-     */
-    @Override
-    public void setMaterial(Product fMaterial) {
-        this.fMaterial = fMaterial;
+    public void setMaterial(Product material) {
+        this.material = material;
     }
 
-    private Review fReview;
+    private Review review;
 
     /**
      * A review of the item.
@@ -283,20 +245,20 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Review getReview() {
-        return fReview;
+        return review;
     }
 
     /**
      * A review of the item.
      *
-     * @param fReview Review value to set.
+     * @param review Review value to set.
      */
     @Override
-    public void setReview(Review fReview) {
-        this.fReview = fReview;
+    public void setReview(Review review) {
+        this.review = review;
     }
 
-    private Text fAward;
+    private Text award;
 
     /**
      * An award won by or for this item.
@@ -305,29 +267,20 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getAward() {
-        return fAward;
+        return award;
     }
 
     /**
      * An award won by or for this item.
      *
-     * @param fAward Text value to set.
+     * @param award Text value to set.
      */
     @Override
-    public void setAward(Text fAward) {
-        this.fAward = fAward;
-    }
-    /**
-     * An award won by or for this item.
-     *
-     * @param fAward java.lang.String value to set.
-     */
-    @Override
-    public void setAward(java.lang.String fAward) {
-        this.fAward = Text.of(fAward);
+    public void setAward(Text award) {
+        this.award = award;
     }
 
-    private Object fWidth;
+    private Object width;
 
     /**
      * The width of the item.
@@ -336,29 +289,29 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getWidth() {
-        return (T) fWidth;
+        return (T) width;
     }
 
     /**
      * The width of the item.
      *
-     * @param fWidth QuantitativeValue value to set.
+     * @param width QuantitativeValue value to set.
      */
     @Override
-    public void setWidth(QuantitativeValue fWidth) {
-        this.fWidth = fWidth;
+    public void setWidth(QuantitativeValue width) {
+        this.width = width;
     }
     /**
      * The width of the item.
      *
-     * @param fWidth Distance value to set.
+     * @param width Distance value to set.
      */
     @Override
-    public void setWidth(Distance fWidth) {
-        this.fWidth = fWidth;
+    public void setWidth(Distance width) {
+        this.width = width;
     }
 
-    private Country fCountryOfOrigin;
+    private Country countryOfOrigin;
 
     /**
      * The country of origin of something, including products as well as creative  works such as movie and TV content.
@@ -371,7 +324,7 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Country getCountryOfOrigin() {
-        return fCountryOfOrigin;
+        return countryOfOrigin;
     }
 
     /**
@@ -381,14 +334,14 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      * 
      * In the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.
      *
-     * @param fCountryOfOrigin Country value to set.
+     * @param countryOfOrigin Country value to set.
      */
     @Override
-    public void setCountryOfOrigin(Country fCountryOfOrigin) {
-        this.fCountryOfOrigin = fCountryOfOrigin;
+    public void setCountryOfOrigin(Country countryOfOrigin) {
+        this.countryOfOrigin = countryOfOrigin;
     }
 
-    private Object fPattern;
+    private Object pattern;
 
     /**
      * A pattern that something has, for example 'polka dot', 'striped', 'Canadian flag'. Values are typically expressed as text, although links to controlled value schemes are also supported.
@@ -399,44 +352,33 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getPattern() {
-        return (T) fPattern;
+        return (T) pattern;
     }
 
     /**
      * A pattern that something has, for example 'polka dot', 'striped', 'Canadian flag'. Values are typically expressed as text, although links to controlled value schemes are also supported.
      *
-     * @param fPattern DefinedTerm value to set.
+     * @param pattern DefinedTerm value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
     @Override
-    public void setPattern(DefinedTerm fPattern) {
-        this.fPattern = fPattern;
+    public void setPattern(DefinedTerm pattern) {
+        this.pattern = pattern;
     }
     /**
      * A pattern that something has, for example 'polka dot', 'striped', 'Canadian flag'. Values are typically expressed as text, although links to controlled value schemes are also supported.
      *
-     * @param fPattern Text value to set.
+     * @param pattern Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
     @Override
-    public void setPattern(Text fPattern) {
-        this.fPattern = fPattern;
-    }
-    /**
-     * A pattern that something has, for example 'polka dot', 'striped', 'Canadian flag'. Values are typically expressed as text, although links to controlled value schemes are also supported.
-     *
-     * @param fPattern java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
-     */
-    @Override
-    public void setPattern(java.lang.String fPattern) {
-        this.fPattern = Text.of(fPattern);
+    public void setPattern(Text pattern) {
+        this.pattern = pattern;
     }
 
-    private Object fCategory;
+    private Object category;
 
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
@@ -447,88 +389,66 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getCategory() {
-        return (T) fCategory;
+        return (T) category;
     }
 
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
-     * @param fCategory URL value to set.
+     * @param category URL value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
     @Override
-    public void setCategory(URL fCategory) {
-        this.fCategory = fCategory;
+    public void setCategory(URL category) {
+        this.category = category;
     }
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
-     * @param fCategory java.net.URL value to set.
+     * @param category Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
     @Override
-    public void setCategory(java.net.URL fCategory) {
-        this.fCategory = URL.of(fCategory);
+    public void setCategory(Text category) {
+        this.category = category;
     }
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
-     * @param fCategory Text value to set.
+     * @param category PhysicalActivityCategory value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
     @Override
-    public void setCategory(Text fCategory) {
-        this.fCategory = fCategory;
+    public void setCategory(PhysicalActivityCategory category) {
+        this.category = category;
     }
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
-     * @param fCategory java.lang.String value to set.
+     * @param category Thing value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
     @Override
-    public void setCategory(java.lang.String fCategory) {
-        this.fCategory = Text.of(fCategory);
+    public void setCategory(Thing category) {
+        this.category = category;
     }
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
-     * @param fCategory PhysicalActivityCategory value to set.
+     * @param category CategoryCode value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
     @Override
-    public void setCategory(PhysicalActivityCategory fCategory) {
-        this.fCategory = fCategory;
-    }
-    /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-     *
-     * @param fCategory Thing value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     */
-    @Override
-    public void setCategory(Thing fCategory) {
-        this.fCategory = fCategory;
-    }
-    /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-     *
-     * @param fCategory CategoryCode value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     */
-    @Override
-    public void setCategory(CategoryCode fCategory) {
-        this.fCategory = fCategory;
+    public void setCategory(CategoryCode category) {
+        this.category = category;
     }
 
-    private Grant fFunding;
+    private Grant funding;
 
     /**
      * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
@@ -540,23 +460,23 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Grant getFunding() {
-        return fFunding;
+        return funding;
     }
 
     /**
      * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
      *
-     * @param fFunding Grant value to set.
+     * @param funding Grant value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
     @Override
-    public void setFunding(Grant fFunding) {
-        this.fFunding = fFunding;
+    public void setFunding(Grant funding) {
+        this.funding = funding;
     }
 
-    private Text fMpn;
+    private Text mpn;
 
     /**
      * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
@@ -566,31 +486,21 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getMpn() {
-        return fMpn;
+        return mpn;
     }
 
     /**
      * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
      *
-     * @param fMpn Text value to set.
+     * @param mpn Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setMpn(Text fMpn) {
-        this.fMpn = fMpn;
-    }
-    /**
-     * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
-     *
-     * @param fMpn java.lang.String value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setMpn(java.lang.String fMpn) {
-        this.fMpn = Text.of(fMpn);
+    public void setMpn(Text mpn) {
+        this.mpn = mpn;
     }
 
-    private Object fHeight;
+    private Object height;
 
     /**
      * The height of the item.
@@ -599,29 +509,29 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getHeight() {
-        return (T) fHeight;
+        return (T) height;
     }
 
     /**
      * The height of the item.
      *
-     * @param fHeight Distance value to set.
+     * @param height Distance value to set.
      */
     @Override
-    public void setHeight(Distance fHeight) {
-        this.fHeight = fHeight;
+    public void setHeight(Distance height) {
+        this.height = height;
     }
     /**
      * The height of the item.
      *
-     * @param fHeight QuantitativeValue value to set.
+     * @param height QuantitativeValue value to set.
      */
     @Override
-    public void setHeight(QuantitativeValue fHeight) {
-        this.fHeight = fHeight;
+    public void setHeight(QuantitativeValue height) {
+        this.height = height;
     }
 
-    private Object fKeywords;
+    private Object keywords;
 
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
@@ -630,56 +540,38 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getKeywords() {
-        return (T) fKeywords;
+        return (T) keywords;
     }
 
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
      *
-     * @param fKeywords DefinedTerm value to set.
+     * @param keywords DefinedTerm value to set.
      */
     @Override
-    public void setKeywords(DefinedTerm fKeywords) {
-        this.fKeywords = fKeywords;
+    public void setKeywords(DefinedTerm keywords) {
+        this.keywords = keywords;
     }
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
      *
-     * @param fKeywords Text value to set.
+     * @param keywords Text value to set.
      */
     @Override
-    public void setKeywords(Text fKeywords) {
-        this.fKeywords = fKeywords;
+    public void setKeywords(Text keywords) {
+        this.keywords = keywords;
     }
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
      *
-     * @param fKeywords java.lang.String value to set.
+     * @param keywords URL value to set.
      */
     @Override
-    public void setKeywords(java.lang.String fKeywords) {
-        this.fKeywords = Text.of(fKeywords);
-    }
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     * @param fKeywords URL value to set.
-     */
-    @Override
-    public void setKeywords(URL fKeywords) {
-        this.fKeywords = fKeywords;
-    }
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     * @param fKeywords java.net.URL value to set.
-     */
-    @Override
-    public void setKeywords(java.net.URL fKeywords) {
-        this.fKeywords = URL.of(fKeywords);
+    public void setKeywords(URL keywords) {
+        this.keywords = keywords;
     }
 
-    private Date fPurchaseDate;
+    private Date purchaseDate;
 
     /**
      * The date the item e.g. vehicle was purchased by the current owner.
@@ -689,31 +581,21 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Date getPurchaseDate() {
-        return fPurchaseDate;
+        return purchaseDate;
     }
 
     /**
      * The date the item e.g. vehicle was purchased by the current owner.
      *
-     * @param fPurchaseDate Date value to set.
+     * @param purchaseDate Date value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setPurchaseDate(Date fPurchaseDate) {
-        this.fPurchaseDate = fPurchaseDate;
-    }
-    /**
-     * The date the item e.g. vehicle was purchased by the current owner.
-     *
-     * @param fPurchaseDate java.time.LocalDate value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void setPurchaseDate(java.time.LocalDate fPurchaseDate) {
-        this.fPurchaseDate = Date.of(fPurchaseDate);
+    public void setPurchaseDate(Date purchaseDate) {
+        this.purchaseDate = purchaseDate;
     }
 
-    private EnergyConsumptionDetails fHasEnergyConsumptionDetails;
+    private EnergyConsumptionDetails hasEnergyConsumptionDetails;
 
     /**
      * Defines the energy efficiency Category (also known as "class" or "rating") for a product according to an international energy efficiency standard.
@@ -724,22 +606,22 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public EnergyConsumptionDetails getHasEnergyConsumptionDetails() {
-        return fHasEnergyConsumptionDetails;
+        return hasEnergyConsumptionDetails;
     }
 
     /**
      * Defines the energy efficiency Category (also known as "class" or "rating") for a product according to an international energy efficiency standard.
      *
-     * @param fHasEnergyConsumptionDetails EnergyConsumptionDetails value to set.
+     * @param hasEnergyConsumptionDetails EnergyConsumptionDetails value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2670">https://github.com/schemaorg/schemaorg/issues/2670</a>
      */
     @Override
-    public void setHasEnergyConsumptionDetails(EnergyConsumptionDetails fHasEnergyConsumptionDetails) {
-        this.fHasEnergyConsumptionDetails = fHasEnergyConsumptionDetails;
+    public void setHasEnergyConsumptionDetails(EnergyConsumptionDetails hasEnergyConsumptionDetails) {
+        this.hasEnergyConsumptionDetails = hasEnergyConsumptionDetails;
     }
 
-    private Audience fAudience;
+    private Audience audience;
 
     /**
      * An intended audience, i.e. a group for whom something was created.
@@ -748,20 +630,20 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Audience getAudience() {
-        return fAudience;
+        return audience;
     }
 
     /**
      * An intended audience, i.e. a group for whom something was created.
      *
-     * @param fAudience Audience value to set.
+     * @param audience Audience value to set.
      */
     @Override
-    public void setAudience(Audience fAudience) {
-        this.fAudience = fAudience;
+    public void setAudience(Audience audience) {
+        this.audience = audience;
     }
 
-    private Object fOffers;
+    private Object offers;
 
     /**
      * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
@@ -772,33 +654,33 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getOffers() {
-        return (T) fOffers;
+        return (T) offers;
     }
 
     /**
      * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      *
-     * @param fOffers Offer value to set.
+     * @param offers Offer value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
     @Override
-    public void setOffers(Offer fOffers) {
-        this.fOffers = fOffers;
+    public void setOffers(Offer offers) {
+        this.offers = offers;
     }
     /**
      * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      *
-     * @param fOffers Demand value to set.
+     * @param offers Demand value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
     @Override
-    public void setOffers(Demand fOffers) {
-        this.fOffers = fOffers;
+    public void setOffers(Demand offers) {
+        this.offers = offers;
     }
 
-    private Date fProductionDate;
+    private Date productionDate;
 
     /**
      * The date of production of the item, e.g. vehicle.
@@ -808,31 +690,21 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Date getProductionDate() {
-        return fProductionDate;
+        return productionDate;
     }
 
     /**
      * The date of production of the item, e.g. vehicle.
      *
-     * @param fProductionDate Date value to set.
+     * @param productionDate Date value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setProductionDate(Date fProductionDate) {
-        this.fProductionDate = fProductionDate;
-    }
-    /**
-     * The date of production of the item, e.g. vehicle.
-     *
-     * @param fProductionDate java.time.LocalDate value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
-     */
-    @Override
-    public void setProductionDate(java.time.LocalDate fProductionDate) {
-        this.fProductionDate = Date.of(fProductionDate);
+    public void setProductionDate(Date productionDate) {
+        this.productionDate = productionDate;
     }
 
-    private OfferItemCondition fItemCondition;
+    private OfferItemCondition itemCondition;
 
     /**
      * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
@@ -841,20 +713,20 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public OfferItemCondition getItemCondition() {
-        return fItemCondition;
+        return itemCondition;
     }
 
     /**
      * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
      *
-     * @param fItemCondition OfferItemCondition value to set.
+     * @param itemCondition OfferItemCondition value to set.
      */
     @Override
-    public void setItemCondition(OfferItemCondition fItemCondition) {
-        this.fItemCondition = fItemCondition;
+    public void setItemCondition(OfferItemCondition itemCondition) {
+        this.itemCondition = itemCondition;
     }
 
-    private Text fAwards;
+    private Text awards;
 
     /**
      * Awards won by or for this item.
@@ -863,29 +735,20 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getAwards() {
-        return fAwards;
+        return awards;
     }
 
     /**
      * Awards won by or for this item.
      *
-     * @param fAwards Text value to set.
+     * @param awards Text value to set.
      */
     @Override
-    public void setAwards(Text fAwards) {
-        this.fAwards = fAwards;
-    }
-    /**
-     * Awards won by or for this item.
-     *
-     * @param fAwards java.lang.String value to set.
-     */
-    @Override
-    public void setAwards(java.lang.String fAwards) {
-        this.fAwards = Text.of(fAwards);
+    public void setAwards(Text awards) {
+        this.awards = awards;
     }
 
-    private Text fGtin;
+    private Text gtin;
 
     /**
      * A Global Trade Item Number ([GTIN](https://www.gs1.org/standards/id-keys/gtin)). GTINs identify trade items, including products and services, using numeric identification codes. The [[gtin]] property generalizes the earlier [[gtin8]], [[gtin12]], [[gtin13]], and [[gtin14]] properties. The GS1 [digital link specifications](https://www.gs1.org/standards/Digital-Link/) express GTINs as URLs. A correct [[gtin]] value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a "GS1 Digital Link" URL based on such a string. The numeric component should also have a [valid GS1 check digit](https://www.gs1.org/services/check-digit-calculator) and meet the other rules for valid GTINs. See also [GS1's GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) and [Wikipedia](https://en.wikipedia.org/wiki/Global_Trade_Item_Number) for more details. Left-padding of the gtin values is not required or encouraged.
@@ -897,35 +760,23 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getGtin() {
-        return fGtin;
+        return gtin;
     }
 
     /**
      * A Global Trade Item Number ([GTIN](https://www.gs1.org/standards/id-keys/gtin)). GTINs identify trade items, including products and services, using numeric identification codes. The [[gtin]] property generalizes the earlier [[gtin8]], [[gtin12]], [[gtin13]], and [[gtin14]] properties. The GS1 [digital link specifications](https://www.gs1.org/standards/Digital-Link/) express GTINs as URLs. A correct [[gtin]] value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a "GS1 Digital Link" URL based on such a string. The numeric component should also have a [valid GS1 check digit](https://www.gs1.org/services/check-digit-calculator) and meet the other rules for valid GTINs. See also [GS1's GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) and [Wikipedia](https://en.wikipedia.org/wiki/Global_Trade_Item_Number) for more details. Left-padding of the gtin values is not required or encouraged.
      *    
      *
-     * @param fGtin Text value to set.
+     * @param gtin Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
      */
     @Override
-    public void setGtin(Text fGtin) {
-        this.fGtin = fGtin;
-    }
-    /**
-     * A Global Trade Item Number ([GTIN](https://www.gs1.org/standards/id-keys/gtin)). GTINs identify trade items, including products and services, using numeric identification codes. The [[gtin]] property generalizes the earlier [[gtin8]], [[gtin12]], [[gtin13]], and [[gtin14]] properties. The GS1 [digital link specifications](https://www.gs1.org/standards/Digital-Link/) express GTINs as URLs. A correct [[gtin]] value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a "GS1 Digital Link" URL based on such a string. The numeric component should also have a [valid GS1 check digit](https://www.gs1.org/services/check-digit-calculator) and meet the other rules for valid GTINs. See also [GS1's GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) and [Wikipedia](https://en.wikipedia.org/wiki/Global_Trade_Item_Number) for more details. Left-padding of the gtin values is not required or encouraged.
-     *    
-     *
-     * @param fGtin java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    @Override
-    public void setGtin(java.lang.String fGtin) {
-        this.fGtin = Text.of(fGtin);
+    public void setGtin(Text gtin) {
+        this.gtin = gtin;
     }
 
-    private Text fProductID;
+    private Text productID;
 
     /**
      * The product identifier, such as ISBN. For example: ``` meta itemprop="productID" content="isbn:123-456-789" ```.
@@ -934,29 +785,20 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getProductID() {
-        return fProductID;
+        return productID;
     }
 
     /**
      * The product identifier, such as ISBN. For example: ``` meta itemprop="productID" content="isbn:123-456-789" ```.
      *
-     * @param fProductID Text value to set.
+     * @param productID Text value to set.
      */
     @Override
-    public void setProductID(Text fProductID) {
-        this.fProductID = fProductID;
-    }
-    /**
-     * The product identifier, such as ISBN. For example: ``` meta itemprop="productID" content="isbn:123-456-789" ```.
-     *
-     * @param fProductID java.lang.String value to set.
-     */
-    @Override
-    public void setProductID(java.lang.String fProductID) {
-        this.fProductID = Text.of(fProductID);
+    public void setProductID(Text productID) {
+        this.productID = productID;
     }
 
-    private Text fCountryOfAssembly;
+    private Text countryOfAssembly;
 
     /**
      * The place where the product was assembled.
@@ -967,33 +809,22 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getCountryOfAssembly() {
-        return fCountryOfAssembly;
+        return countryOfAssembly;
     }
 
     /**
      * The place where the product was assembled.
      *
-     * @param fCountryOfAssembly Text value to set.
+     * @param countryOfAssembly Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/991">https://github.com/schemaorg/schemaorg/issues/991</a>
      */
     @Override
-    public void setCountryOfAssembly(Text fCountryOfAssembly) {
-        this.fCountryOfAssembly = fCountryOfAssembly;
-    }
-    /**
-     * The place where the product was assembled.
-     *
-     * @param fCountryOfAssembly java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/991">https://github.com/schemaorg/schemaorg/issues/991</a>
-     */
-    @Override
-    public void setCountryOfAssembly(java.lang.String fCountryOfAssembly) {
-        this.fCountryOfAssembly = Text.of(fCountryOfAssembly);
+    public void setCountryOfAssembly(Text countryOfAssembly) {
+        this.countryOfAssembly = countryOfAssembly;
     }
 
-    private Text fColor;
+    private Text color;
 
     /**
      * The color of the product.
@@ -1003,31 +834,21 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getColor() {
-        return fColor;
+        return color;
     }
 
     /**
      * The color of the product.
      *
-     * @param fColor Text value to set.
+     * @param color Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setColor(Text fColor) {
-        this.fColor = fColor;
-    }
-    /**
-     * The color of the product.
-     *
-     * @param fColor java.lang.String value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setColor(java.lang.String fColor) {
-        this.fColor = Text.of(fColor);
+    public void setColor(Text color) {
+        this.color = color;
     }
 
-    private AggregateRating fAggregateRating;
+    private AggregateRating aggregateRating;
 
     /**
      * The overall rating, based on a collection of reviews or ratings, of the item.
@@ -1036,20 +857,20 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public AggregateRating getAggregateRating() {
-        return fAggregateRating;
+        return aggregateRating;
     }
 
     /**
      * The overall rating, based on a collection of reviews or ratings, of the item.
      *
-     * @param fAggregateRating AggregateRating value to set.
+     * @param aggregateRating AggregateRating value to set.
      */
     @Override
-    public void setAggregateRating(AggregateRating fAggregateRating) {
-        this.fAggregateRating = fAggregateRating;
+    public void setAggregateRating(AggregateRating aggregateRating) {
+        this.aggregateRating = aggregateRating;
     }
 
-    private Object fIsSimilarTo;
+    private Object isSimilarTo;
 
     /**
      * A pointer to another, functionally similar product (or multiple products).
@@ -1059,31 +880,31 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getIsSimilarTo() {
-        return (T) fIsSimilarTo;
+        return (T) isSimilarTo;
     }
 
     /**
      * A pointer to another, functionally similar product (or multiple products).
      *
-     * @param fIsSimilarTo Service value to set.
+     * @param isSimilarTo Service value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setIsSimilarTo(Service fIsSimilarTo) {
-        this.fIsSimilarTo = fIsSimilarTo;
+    public void setIsSimilarTo(Service isSimilarTo) {
+        this.isSimilarTo = isSimilarTo;
     }
     /**
      * A pointer to another, functionally similar product (or multiple products).
      *
-     * @param fIsSimilarTo Product value to set.
+     * @param isSimilarTo Product value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setIsSimilarTo(Product fIsSimilarTo) {
-        this.fIsSimilarTo = fIsSimilarTo;
+    public void setIsSimilarTo(Product isSimilarTo) {
+        this.isSimilarTo = isSimilarTo;
     }
 
-    private Object fDepth;
+    private Object depth;
 
     /**
      * The depth of the item.
@@ -1093,31 +914,31 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getDepth() {
-        return (T) fDepth;
+        return (T) depth;
     }
 
     /**
      * The depth of the item.
      *
-     * @param fDepth Distance value to set.
+     * @param depth Distance value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setDepth(Distance fDepth) {
-        this.fDepth = fDepth;
+    public void setDepth(Distance depth) {
+        this.depth = depth;
     }
     /**
      * The depth of the item.
      *
-     * @param fDepth QuantitativeValue value to set.
+     * @param depth QuantitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setDepth(QuantitativeValue fDepth) {
-        this.fDepth = fDepth;
+    public void setDepth(QuantitativeValue depth) {
+        this.depth = depth;
     }
 
-    private Text fCountryOfLastProcessing;
+    private Text countryOfLastProcessing;
 
     /**
      * The place where the item (typically [[Product]]) was last processed and tested before importation.
@@ -1128,33 +949,22 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getCountryOfLastProcessing() {
-        return fCountryOfLastProcessing;
+        return countryOfLastProcessing;
     }
 
     /**
      * The place where the item (typically [[Product]]) was last processed and tested before importation.
      *
-     * @param fCountryOfLastProcessing Text value to set.
+     * @param countryOfLastProcessing Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/991">https://github.com/schemaorg/schemaorg/issues/991</a>
      */
     @Override
-    public void setCountryOfLastProcessing(Text fCountryOfLastProcessing) {
-        this.fCountryOfLastProcessing = fCountryOfLastProcessing;
-    }
-    /**
-     * The place where the item (typically [[Product]]) was last processed and tested before importation.
-     *
-     * @param fCountryOfLastProcessing java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/991">https://github.com/schemaorg/schemaorg/issues/991</a>
-     */
-    @Override
-    public void setCountryOfLastProcessing(java.lang.String fCountryOfLastProcessing) {
-        this.fCountryOfLastProcessing = Text.of(fCountryOfLastProcessing);
+    public void setCountryOfLastProcessing(Text countryOfLastProcessing) {
+        this.countryOfLastProcessing = countryOfLastProcessing;
     }
 
-    private Object fIsVariantOf;
+    private Object isVariantOf;
 
     /**
      * Indicates the kind of product that this is a variant of. In the case of [[ProductModel]], this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a [[ProductGroup]], the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with [[ProductGroup]], this property can apply to any [[Product]] included in the group.
@@ -1164,31 +974,31 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getIsVariantOf() {
-        return (T) fIsVariantOf;
+        return (T) isVariantOf;
     }
 
     /**
      * Indicates the kind of product that this is a variant of. In the case of [[ProductModel]], this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a [[ProductGroup]], the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with [[ProductGroup]], this property can apply to any [[Product]] included in the group.
      *
-     * @param fIsVariantOf ProductModel value to set.
+     * @param isVariantOf ProductModel value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setIsVariantOf(ProductModel fIsVariantOf) {
-        this.fIsVariantOf = fIsVariantOf;
+    public void setIsVariantOf(ProductModel isVariantOf) {
+        this.isVariantOf = isVariantOf;
     }
     /**
      * Indicates the kind of product that this is a variant of. In the case of [[ProductModel]], this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a [[ProductGroup]], the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with [[ProductGroup]], this property can apply to any [[Product]] included in the group.
      *
-     * @param fIsVariantOf ProductGroup value to set.
+     * @param isVariantOf ProductGroup value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setIsVariantOf(ProductGroup fIsVariantOf) {
-        this.fIsVariantOf = fIsVariantOf;
+    public void setIsVariantOf(ProductGroup isVariantOf) {
+        this.isVariantOf = isVariantOf;
     }
 
-    private Text fSlogan;
+    private Text slogan;
 
     /**
      * A slogan or motto associated with the item.
@@ -1197,29 +1007,20 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getSlogan() {
-        return fSlogan;
+        return slogan;
     }
 
     /**
      * A slogan or motto associated with the item.
      *
-     * @param fSlogan Text value to set.
+     * @param slogan Text value to set.
      */
     @Override
-    public void setSlogan(Text fSlogan) {
-        this.fSlogan = fSlogan;
-    }
-    /**
-     * A slogan or motto associated with the item.
-     *
-     * @param fSlogan java.lang.String value to set.
-     */
-    @Override
-    public void setSlogan(java.lang.String fSlogan) {
-        this.fSlogan = Text.of(fSlogan);
+    public void setSlogan(Text slogan) {
+        this.slogan = slogan;
     }
 
-    private Object fBrand;
+    private Object brand;
 
     /**
      * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
@@ -1228,29 +1029,29 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getBrand() {
-        return (T) fBrand;
+        return (T) brand;
     }
 
     /**
      * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
      *
-     * @param fBrand Organization value to set.
+     * @param brand Organization value to set.
      */
     @Override
-    public void setBrand(Organization fBrand) {
-        this.fBrand = fBrand;
+    public void setBrand(Organization brand) {
+        this.brand = brand;
     }
     /**
      * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
      *
-     * @param fBrand Brand value to set.
+     * @param brand Brand value to set.
      */
     @Override
-    public void setBrand(Brand fBrand) {
-        this.fBrand = fBrand;
+    public void setBrand(Brand brand) {
+        this.brand = brand;
     }
 
-    private Organization fManufacturer;
+    private Organization manufacturer;
 
     /**
      * The manufacturer of the product.
@@ -1259,20 +1060,20 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Organization getManufacturer() {
-        return fManufacturer;
+        return manufacturer;
     }
 
     /**
      * The manufacturer of the product.
      *
-     * @param fManufacturer Organization value to set.
+     * @param manufacturer Organization value to set.
      */
     @Override
-    public void setManufacturer(Organization fManufacturer) {
-        this.fManufacturer = fManufacturer;
+    public void setManufacturer(Organization manufacturer) {
+        this.manufacturer = manufacturer;
     }
 
-    private QuantitativeValue fHasMeasurement;
+    private QuantitativeValue hasMeasurement;
 
     /**
      * A product measurement, for example the inseam of pants, the wheel size of a bicycle, or the gauge of a screw. Usually an exact measurement, but can also be a range of measurements for adjustable products, for example belts and ski bindings.
@@ -1283,22 +1084,22 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public QuantitativeValue getHasMeasurement() {
-        return fHasMeasurement;
+        return hasMeasurement;
     }
 
     /**
      * A product measurement, for example the inseam of pants, the wheel size of a bicycle, or the gauge of a screw. Usually an exact measurement, but can also be a range of measurements for adjustable products, for example belts and ski bindings.
      *
-     * @param fHasMeasurement QuantitativeValue value to set.
+     * @param hasMeasurement QuantitativeValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
      */
     @Override
-    public void setHasMeasurement(QuantitativeValue fHasMeasurement) {
-        this.fHasMeasurement = fHasMeasurement;
+    public void setHasMeasurement(QuantitativeValue hasMeasurement) {
+        this.hasMeasurement = hasMeasurement;
     }
 
-    private Product fIsConsumableFor;
+    private Product isConsumableFor;
 
     /**
      * A pointer to another product (or multiple products) for which this product is a consumable.
@@ -1308,21 +1109,21 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Product getIsConsumableFor() {
-        return fIsConsumableFor;
+        return isConsumableFor;
     }
 
     /**
      * A pointer to another product (or multiple products) for which this product is a consumable.
      *
-     * @param fIsConsumableFor Product value to set.
+     * @param isConsumableFor Product value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setIsConsumableFor(Product fIsConsumableFor) {
-        this.fIsConsumableFor = fIsConsumableFor;
+    public void setIsConsumableFor(Product isConsumableFor) {
+        this.isConsumableFor = isConsumableFor;
     }
 
-    private Object fLogo;
+    private Object logo;
 
     /**
      * An associated logo.
@@ -1332,41 +1133,31 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getLogo() {
-        return (T) fLogo;
+        return (T) logo;
     }
 
     /**
      * An associated logo.
      *
-     * @param fLogo URL value to set.
+     * @param logo URL value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setLogo(URL fLogo) {
-        this.fLogo = fLogo;
+    public void setLogo(URL logo) {
+        this.logo = logo;
     }
     /**
      * An associated logo.
      *
-     * @param fLogo java.net.URL value to set.
+     * @param logo ImageObject value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setLogo(java.net.URL fLogo) {
-        this.fLogo = URL.of(fLogo);
-    }
-    /**
-     * An associated logo.
-     *
-     * @param fLogo ImageObject value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setLogo(ImageObject fLogo) {
-        this.fLogo = fLogo;
+    public void setLogo(ImageObject logo) {
+        this.logo = logo;
     }
 
-    private Text fGtin8;
+    private Text gtin8;
 
     /**
      * The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
@@ -1376,31 +1167,21 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getGtin8() {
-        return fGtin8;
+        return gtin8;
     }
 
     /**
      * The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
-     * @param fGtin8 Text value to set.
+     * @param gtin8 Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setGtin8(Text fGtin8) {
-        this.fGtin8 = fGtin8;
-    }
-    /**
-     * The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
-     *
-     * @param fGtin8 java.lang.String value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setGtin8(java.lang.String fGtin8) {
-        this.fGtin8 = Text.of(fGtin8);
+    public void setGtin8(Text gtin8) {
+        this.gtin8 = gtin8;
     }
 
-    private Text fSku;
+    private Text sku;
 
     /**
      * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
@@ -1410,31 +1191,21 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getSku() {
-        return fSku;
+        return sku;
     }
 
     /**
      * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
      *
-     * @param fSku Text value to set.
+     * @param sku Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setSku(Text fSku) {
-        this.fSku = fSku;
-    }
-    /**
-     * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
-     *
-     * @param fSku java.lang.String value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setSku(java.lang.String fSku) {
-        this.fSku = Text.of(fSku);
+    public void setSku(Text sku) {
+        this.sku = sku;
     }
 
-    private Text fInProductGroupWithID;
+    private Text inProductGroupWithID;
 
     /**
      * Indicates the [[productGroupID]] for a [[ProductGroup]] that this product [[isVariantOf]]. 
@@ -1445,33 +1216,22 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getInProductGroupWithID() {
-        return fInProductGroupWithID;
+        return inProductGroupWithID;
     }
 
     /**
      * Indicates the [[productGroupID]] for a [[ProductGroup]] that this product [[isVariantOf]]. 
      *
-     * @param fInProductGroupWithID Text value to set.
+     * @param inProductGroupWithID Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
     @Override
-    public void setInProductGroupWithID(Text fInProductGroupWithID) {
-        this.fInProductGroupWithID = fInProductGroupWithID;
-    }
-    /**
-     * Indicates the [[productGroupID]] for a [[ProductGroup]] that this product [[isVariantOf]]. 
-     *
-     * @param fInProductGroupWithID java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
-     */
-    @Override
-    public void setInProductGroupWithID(java.lang.String fInProductGroupWithID) {
-        this.fInProductGroupWithID = Text.of(fInProductGroupWithID);
+    public void setInProductGroupWithID(Text inProductGroupWithID) {
+        this.inProductGroupWithID = inProductGroupWithID;
     }
 
-    private Object fModel;
+    private Object model;
 
     /**
      * The model of the product. Use with the URL of a ProductModel or a textual representation of the model identifier. The URL of the ProductModel can be from an external source. It is recommended to additionally provide strong product identifiers via the gtin8/gtin13/gtin14 and mpn properties.
@@ -1480,38 +1240,29 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getModel() {
-        return (T) fModel;
+        return (T) model;
     }
 
     /**
      * The model of the product. Use with the URL of a ProductModel or a textual representation of the model identifier. The URL of the ProductModel can be from an external source. It is recommended to additionally provide strong product identifiers via the gtin8/gtin13/gtin14 and mpn properties.
      *
-     * @param fModel ProductModel value to set.
+     * @param model ProductModel value to set.
      */
     @Override
-    public void setModel(ProductModel fModel) {
-        this.fModel = fModel;
+    public void setModel(ProductModel model) {
+        this.model = model;
     }
     /**
      * The model of the product. Use with the URL of a ProductModel or a textual representation of the model identifier. The URL of the ProductModel can be from an external source. It is recommended to additionally provide strong product identifiers via the gtin8/gtin13/gtin14 and mpn properties.
      *
-     * @param fModel Text value to set.
+     * @param model Text value to set.
      */
     @Override
-    public void setModel(Text fModel) {
-        this.fModel = fModel;
-    }
-    /**
-     * The model of the product. Use with the URL of a ProductModel or a textual representation of the model identifier. The URL of the ProductModel can be from an external source. It is recommended to additionally provide strong product identifiers via the gtin8/gtin13/gtin14 and mpn properties.
-     *
-     * @param fModel java.lang.String value to set.
-     */
-    @Override
-    public void setModel(java.lang.String fModel) {
-        this.fModel = Text.of(fModel);
+    public void setModel(Text model) {
+        this.model = model;
     }
 
-    private MerchantReturnPolicy fHasMerchantReturnPolicy;
+    private MerchantReturnPolicy hasMerchantReturnPolicy;
 
     /**
      * Specifies a MerchantReturnPolicy that may be applicable.
@@ -1522,22 +1273,22 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public MerchantReturnPolicy getHasMerchantReturnPolicy() {
-        return fHasMerchantReturnPolicy;
+        return hasMerchantReturnPolicy;
     }
 
     /**
      * Specifies a MerchantReturnPolicy that may be applicable.
      *
-     * @param fHasMerchantReturnPolicy MerchantReturnPolicy value to set.
+     * @param hasMerchantReturnPolicy MerchantReturnPolicy value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
      */
     @Override
-    public void setHasMerchantReturnPolicy(MerchantReturnPolicy fHasMerchantReturnPolicy) {
-        this.fHasMerchantReturnPolicy = fHasMerchantReturnPolicy;
+    public void setHasMerchantReturnPolicy(MerchantReturnPolicy hasMerchantReturnPolicy) {
+        this.hasMerchantReturnPolicy = hasMerchantReturnPolicy;
     }
 
-    private Date fReleaseDate;
+    private Date releaseDate;
 
     /**
      * The release date of a product or product model. This can be used to distinguish the exact variant of a product.
@@ -1547,31 +1298,21 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Date getReleaseDate() {
-        return fReleaseDate;
+        return releaseDate;
     }
 
     /**
      * The release date of a product or product model. This can be used to distinguish the exact variant of a product.
      *
-     * @param fReleaseDate Date value to set.
+     * @param releaseDate Date value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setReleaseDate(Date fReleaseDate) {
-        this.fReleaseDate = fReleaseDate;
-    }
-    /**
-     * The release date of a product or product model. This can be used to distinguish the exact variant of a product.
-     *
-     * @param fReleaseDate java.time.LocalDate value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setReleaseDate(java.time.LocalDate fReleaseDate) {
-        this.fReleaseDate = Date.of(fReleaseDate);
+    public void setReleaseDate(Date releaseDate) {
+        this.releaseDate = releaseDate;
     }
 
-    private Text fGtin14;
+    private Text gtin14;
 
     /**
      * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
@@ -1581,31 +1322,21 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getGtin14() {
-        return fGtin14;
+        return gtin14;
     }
 
     /**
      * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
-     * @param fGtin14 Text value to set.
+     * @param gtin14 Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setGtin14(Text fGtin14) {
-        this.fGtin14 = fGtin14;
-    }
-    /**
-     * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
-     *
-     * @param fGtin14 java.lang.String value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setGtin14(java.lang.String fGtin14) {
-        this.fGtin14 = Text.of(fGtin14);
+    public void setGtin14(Text gtin14) {
+        this.gtin14 = gtin14;
     }
 
-    private QuantitativeValue fWeight;
+    private QuantitativeValue weight;
 
     /**
      * The weight of the product or person.
@@ -1615,21 +1346,21 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public QuantitativeValue getWeight() {
-        return fWeight;
+        return weight;
     }
 
     /**
      * The weight of the product or person.
      *
-     * @param fWeight QuantitativeValue value to set.
+     * @param weight QuantitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setWeight(QuantitativeValue fWeight) {
-        this.fWeight = fWeight;
+    public void setWeight(QuantitativeValue weight) {
+        this.weight = weight;
     }
 
-    private Object fSize;
+    private Object size;
 
     /**
      * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
@@ -1640,66 +1371,55 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getSize() {
-        return (T) fSize;
+        return (T) size;
     }
 
     /**
      * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
      *
-     * @param fSize QuantitativeValue value to set.
+     * @param size QuantitativeValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
     @Override
-    public void setSize(QuantitativeValue fSize) {
-        this.fSize = fSize;
+    public void setSize(QuantitativeValue size) {
+        this.size = size;
     }
     /**
      * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
      *
-     * @param fSize DefinedTerm value to set.
+     * @param size DefinedTerm value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
     @Override
-    public void setSize(DefinedTerm fSize) {
-        this.fSize = fSize;
+    public void setSize(DefinedTerm size) {
+        this.size = size;
     }
     /**
      * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
      *
-     * @param fSize Text value to set.
+     * @param size Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
     @Override
-    public void setSize(Text fSize) {
-        this.fSize = fSize;
+    public void setSize(Text size) {
+        this.size = size;
     }
     /**
      * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
      *
-     * @param fSize java.lang.String value to set.
+     * @param size SizeSpecification value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
     @Override
-    public void setSize(java.lang.String fSize) {
-        this.fSize = Text.of(fSize);
-    }
-    /**
-     * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
-     *
-     * @param fSize SizeSpecification value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
-     */
-    @Override
-    public void setSize(SizeSpecification fSize) {
-        this.fSize = fSize;
+    public void setSize(SizeSpecification size) {
+        this.size = size;
     }
 
-    private PropertyValue fAdditionalProperty;
+    private PropertyValue additionalProperty;
 
     /**
      * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
@@ -1708,20 +1428,20 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public PropertyValue getAdditionalProperty() {
-        return fAdditionalProperty;
+        return additionalProperty;
     }
 
     /**
      * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
      *
-     * @param fAdditionalProperty PropertyValue value to set.
+     * @param additionalProperty PropertyValue value to set.
      */
     @Override
-    public void setAdditionalProperty(PropertyValue fAdditionalProperty) {
-        this.fAdditionalProperty = fAdditionalProperty;
+    public void setAdditionalProperty(PropertyValue additionalProperty) {
+        this.additionalProperty = additionalProperty;
     }
 
-    private Text fGtin13;
+    private Text gtin13;
 
     /**
      * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
@@ -1731,31 +1451,21 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getGtin13() {
-        return fGtin13;
+        return gtin13;
     }
 
     /**
      * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
-     * @param fGtin13 Text value to set.
+     * @param gtin13 Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setGtin13(Text fGtin13) {
-        this.fGtin13 = fGtin13;
-    }
-    /**
-     * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
-     *
-     * @param fGtin13 java.lang.String value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setGtin13(java.lang.String fGtin13) {
-        this.fGtin13 = Text.of(fGtin13);
+    public void setGtin13(Text gtin13) {
+        this.gtin13 = gtin13;
     }
 
-    private Review fReviews;
+    private Review reviews;
 
     /**
      * Review of the item.
@@ -1764,20 +1474,20 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Review getReviews() {
-        return fReviews;
+        return reviews;
     }
 
     /**
      * Review of the item.
      *
-     * @param fReviews Review value to set.
+     * @param reviews Review value to set.
      */
     @Override
-    public void setReviews(Review fReviews) {
-        this.fReviews = fReviews;
+    public void setReviews(Review reviews) {
+        this.reviews = reviews;
     }
 
-    private Boolean fIsFamilyFriendly;
+    private Boolean isFamilyFriendly;
 
     /**
      * Indicates whether this content is family friendly.
@@ -1786,29 +1496,20 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Boolean getIsFamilyFriendly() {
-        return fIsFamilyFriendly;
+        return isFamilyFriendly;
     }
 
     /**
      * Indicates whether this content is family friendly.
      *
-     * @param fIsFamilyFriendly Boolean value to set.
+     * @param isFamilyFriendly Boolean value to set.
      */
     @Override
-    public void setIsFamilyFriendly(Boolean fIsFamilyFriendly) {
-        this.fIsFamilyFriendly = fIsFamilyFriendly;
-    }
-    /**
-     * Indicates whether this content is family friendly.
-     *
-     * @param fIsFamilyFriendly java.lang.Boolean value to set.
-     */
-    @Override
-    public void setIsFamilyFriendly(java.lang.Boolean fIsFamilyFriendly) {
-        this.fIsFamilyFriendly = Boolean.of(fIsFamilyFriendly);
+    public void setIsFamilyFriendly(Boolean isFamilyFriendly) {
+        this.isFamilyFriendly = isFamilyFriendly;
     }
 
-    private Object fIsRelatedTo;
+    private Object isRelatedTo;
 
     /**
      * A pointer to another, somehow related product (or multiple products).
@@ -1818,31 +1519,31 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getIsRelatedTo() {
-        return (T) fIsRelatedTo;
+        return (T) isRelatedTo;
     }
 
     /**
      * A pointer to another, somehow related product (or multiple products).
      *
-     * @param fIsRelatedTo Service value to set.
+     * @param isRelatedTo Service value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setIsRelatedTo(Service fIsRelatedTo) {
-        this.fIsRelatedTo = fIsRelatedTo;
+    public void setIsRelatedTo(Service isRelatedTo) {
+        this.isRelatedTo = isRelatedTo;
     }
     /**
      * A pointer to another, somehow related product (or multiple products).
      *
-     * @param fIsRelatedTo Product value to set.
+     * @param isRelatedTo Product value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setIsRelatedTo(Product fIsRelatedTo) {
-        this.fIsRelatedTo = fIsRelatedTo;
+    public void setIsRelatedTo(Product isRelatedTo) {
+        this.isRelatedTo = isRelatedTo;
     }
 
-    private Object fMainEntityOfPage;
+    private Object mainEntityOfPage;
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -1851,38 +1552,29 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
+        return (T) mainEntityOfPage;
     }
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param fMainEntityOfPage CreativeWork value to set.
+     * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(CreativeWork fMainEntityOfPage) {
-        this.fMainEntityOfPage = fMainEntityOfPage;
+    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
     }
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param fMainEntityOfPage URL value to set.
+     * @param mainEntityOfPage URL value to set.
      */
     @Override
-    public void setMainEntityOfPage(URL fMainEntityOfPage) {
-        this.fMainEntityOfPage = fMainEntityOfPage;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param fMainEntityOfPage java.net.URL value to set.
-     */
-    @Override
-    public void setMainEntityOfPage(java.net.URL fMainEntityOfPage) {
-        this.fMainEntityOfPage = URL.of(fMainEntityOfPage);
+    public void setMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
     }
 
-    private Text fAlternateName;
+    private Text alternateName;
 
     /**
      * An alias for the item.
@@ -1891,29 +1583,20 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getAlternateName() {
-        return fAlternateName;
+        return alternateName;
     }
 
     /**
      * An alias for the item.
      *
-     * @param fAlternateName Text value to set.
+     * @param alternateName Text value to set.
      */
     @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
-    }
-    /**
-     * An alias for the item.
-     *
-     * @param fAlternateName java.lang.String value to set.
-     */
-    @Override
-    public void setAlternateName(java.lang.String fAlternateName) {
-        this.fAlternateName = Text.of(fAlternateName);
+    public void setAlternateName(Text alternateName) {
+        this.alternateName = alternateName;
     }
 
-    private Text fName;
+    private Text name;
 
     /**
      * The name of the item.
@@ -1922,29 +1605,20 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getName() {
-        return fName;
+        return name;
     }
 
     /**
      * The name of the item.
      *
-     * @param fName Text value to set.
+     * @param name Text value to set.
      */
     @Override
-    public void setName(Text fName) {
-        this.fName = fName;
-    }
-    /**
-     * The name of the item.
-     *
-     * @param fName java.lang.String value to set.
-     */
-    @Override
-    public void setName(java.lang.String fName) {
-        this.fName = Text.of(fName);
+    public void setName(Text name) {
+        this.name = name;
     }
 
-    private Action fPotentialAction;
+    private Action potentialAction;
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -1953,20 +1627,20 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Action getPotentialAction() {
-        return fPotentialAction;
+        return potentialAction;
     }
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      *
-     * @param fPotentialAction Action value to set.
+     * @param potentialAction Action value to set.
      */
     @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
+    public void setPotentialAction(Action potentialAction) {
+        this.potentialAction = potentialAction;
     }
 
-    private Object fImage;
+    private Object image;
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -1975,38 +1649,29 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getImage() {
-        return (T) fImage;
+        return (T) image;
     }
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param fImage URL value to set.
+     * @param image URL value to set.
      */
     @Override
-    public void setImage(URL fImage) {
-        this.fImage = fImage;
+    public void setImage(URL image) {
+        this.image = image;
     }
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param fImage java.net.URL value to set.
+     * @param image ImageObject value to set.
      */
     @Override
-    public void setImage(java.net.URL fImage) {
-        this.fImage = URL.of(fImage);
-    }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param fImage ImageObject value to set.
-     */
-    @Override
-    public void setImage(ImageObject fImage) {
-        this.fImage = fImage;
+    public void setImage(ImageObject image) {
+        this.image = image;
     }
 
-    private URL fUrl;
+    private URL url;
 
     /**
      * URL of the item.
@@ -2015,29 +1680,20 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public URL getUrl() {
-        return fUrl;
+        return url;
     }
 
     /**
      * URL of the item.
      *
-     * @param fUrl URL value to set.
+     * @param url URL value to set.
      */
     @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
-    }
-    /**
-     * URL of the item.
-     *
-     * @param fUrl java.net.URL value to set.
-     */
-    @Override
-    public void setUrl(java.net.URL fUrl) {
-        this.fUrl = URL.of(fUrl);
+    public void setUrl(URL url) {
+        this.url = url;
     }
 
-    private Text fDescription;
+    private Text description;
 
     /**
      * A description of the item.
@@ -2046,29 +1702,20 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getDescription() {
-        return fDescription;
+        return description;
     }
 
     /**
      * A description of the item.
      *
-     * @param fDescription Text value to set.
+     * @param description Text value to set.
      */
     @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
-    }
-    /**
-     * A description of the item.
-     *
-     * @param fDescription java.lang.String value to set.
-     */
-    @Override
-    public void setDescription(java.lang.String fDescription) {
-        this.fDescription = Text.of(fDescription);
+    public void setDescription(Text description) {
+        this.description = description;
     }
 
-    private Object fSubjectOf;
+    private Object subjectOf;
 
     /**
      * A CreativeWork or Event about this Thing.
@@ -2078,31 +1725,31 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getSubjectOf() {
-        return (T) fSubjectOf;
+        return (T) subjectOf;
     }
 
     /**
      * A CreativeWork or Event about this Thing.
      *
-     * @param fSubjectOf Event value to set.
+     * @param subjectOf Event value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Event fSubjectOf) {
-        this.fSubjectOf = fSubjectOf;
+    public void setSubjectOf(Event subjectOf) {
+        this.subjectOf = subjectOf;
     }
     /**
      * A CreativeWork or Event about this Thing.
      *
-     * @param fSubjectOf CreativeWork value to set.
+     * @param subjectOf CreativeWork value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(CreativeWork fSubjectOf) {
-        this.fSubjectOf = fSubjectOf;
+    public void setSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = subjectOf;
     }
 
-    private URL fAdditionalType;
+    private URL additionalType;
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
@@ -2111,29 +1758,20 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public URL getAdditionalType() {
-        return fAdditionalType;
+        return additionalType;
     }
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
-     * @param fAdditionalType URL value to set.
+     * @param additionalType URL value to set.
      */
     @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
-    }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @param fAdditionalType java.net.URL value to set.
-     */
-    @Override
-    public void setAdditionalType(java.net.URL fAdditionalType) {
-        this.fAdditionalType = URL.of(fAdditionalType);
+    public void setAdditionalType(URL additionalType) {
+        this.additionalType = additionalType;
     }
 
-    private Text fDisambiguatingDescription;
+    private Text disambiguatingDescription;
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
@@ -2142,29 +1780,20 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getDisambiguatingDescription() {
-        return fDisambiguatingDescription;
+        return disambiguatingDescription;
     }
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
-     * @param fDisambiguatingDescription Text value to set.
+     * @param disambiguatingDescription Text value to set.
      */
     @Override
-    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = fDisambiguatingDescription;
-    }
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @param fDisambiguatingDescription java.lang.String value to set.
-     */
-    @Override
-    public void setDisambiguatingDescription(java.lang.String fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = Text.of(fDisambiguatingDescription);
+    public void setDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = disambiguatingDescription;
     }
 
-    private URL fSameAs;
+    private URL sameAs;
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
@@ -2173,29 +1802,20 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public URL getSameAs() {
-        return fSameAs;
+        return sameAs;
     }
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
-     * @param fSameAs URL value to set.
+     * @param sameAs URL value to set.
      */
     @Override
-    public void setSameAs(URL fSameAs) {
-        this.fSameAs = fSameAs;
-    }
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @param fSameAs java.net.URL value to set.
-     */
-    @Override
-    public void setSameAs(java.net.URL fSameAs) {
-        this.fSameAs = URL.of(fSameAs);
+    public void setSameAs(URL sameAs) {
+        this.sameAs = sameAs;
     }
 
-    private Object fIdentifier;
+    private Object identifier;
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -2205,61 +1825,41 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getIdentifier() {
-        return (T) fIdentifier;
+        return (T) identifier;
     }
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier URL value to set.
+     * @param identifier URL value to set.
      */
     @Override
-    public void setIdentifier(URL fIdentifier) {
-        this.fIdentifier = fIdentifier;
+    public void setIdentifier(URL identifier) {
+        this.identifier = identifier;
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier java.net.URL value to set.
+     * @param identifier Text value to set.
      */
     @Override
-    public void setIdentifier(java.net.URL fIdentifier) {
-        this.fIdentifier = URL.of(fIdentifier);
+    public void setIdentifier(Text identifier) {
+        this.identifier = identifier;
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier Text value to set.
+     * @param identifier PropertyValue value to set.
      */
     @Override
-    public void setIdentifier(Text fIdentifier) {
-        this.fIdentifier = fIdentifier;
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param fIdentifier java.lang.String value to set.
-     */
-    @Override
-    public void setIdentifier(java.lang.String fIdentifier) {
-        this.fIdentifier = Text.of(fIdentifier);
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param fIdentifier PropertyValue value to set.
-     */
-    @Override
-    public void setIdentifier(PropertyValue fIdentifier) {
-        this.fIdentifier = fIdentifier;
+    public void setIdentifier(PropertyValue identifier) {
+        this.identifier = identifier;
     }
 
-    private Integer fCollectionSize;
+    private Integer collectionSize;
 
     /**
      * The number of items in the [[Collection]].
@@ -2270,33 +1870,22 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Integer getCollectionSize() {
-        return fCollectionSize;
+        return collectionSize;
     }
 
     /**
      * The number of items in the [[Collection]].
      *
-     * @param fCollectionSize Integer value to set.
+     * @param collectionSize Integer value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1759">https://github.com/schemaorg/schemaorg/issues/1759</a>
      */
     @Override
-    public void setCollectionSize(Integer fCollectionSize) {
-        this.fCollectionSize = fCollectionSize;
-    }
-    /**
-     * The number of items in the [[Collection]].
-     *
-     * @param fCollectionSize java.lang.Integer value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1759">https://github.com/schemaorg/schemaorg/issues/1759</a>
-     */
-    @Override
-    public void setCollectionSize(java.lang.Integer fCollectionSize) {
-        this.fCollectionSize = Integer.of(fCollectionSize);
+    public void setCollectionSize(Integer collectionSize) {
+        this.collectionSize = collectionSize;
     }
 
-    private Object fTeaches;
+    private Object teaches;
 
     /**
      * The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.
@@ -2307,44 +1896,33 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getTeaches() {
-        return (T) fTeaches;
+        return (T) teaches;
     }
 
     /**
      * The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.
      *
-     * @param fTeaches DefinedTerm value to set.
+     * @param teaches DefinedTerm value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
      */
     @Override
-    public void setTeaches(DefinedTerm fTeaches) {
-        this.fTeaches = fTeaches;
+    public void setTeaches(DefinedTerm teaches) {
+        this.teaches = teaches;
     }
     /**
      * The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.
      *
-     * @param fTeaches Text value to set.
+     * @param teaches Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
      */
     @Override
-    public void setTeaches(Text fTeaches) {
-        this.fTeaches = fTeaches;
-    }
-    /**
-     * The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.
-     *
-     * @param fTeaches java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
-     */
-    @Override
-    public void setTeaches(java.lang.String fTeaches) {
-        this.fTeaches = Text.of(fTeaches);
+    public void setTeaches(Text teaches) {
+        this.teaches = teaches;
     }
 
-    private Object fEducationalLevel;
+    private Object educationalLevel;
 
     /**
      * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
@@ -2355,66 +1933,44 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getEducationalLevel() {
-        return (T) fEducationalLevel;
+        return (T) educationalLevel;
     }
 
     /**
      * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
      *
-     * @param fEducationalLevel URL value to set.
+     * @param educationalLevel URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
     @Override
-    public void setEducationalLevel(URL fEducationalLevel) {
-        this.fEducationalLevel = fEducationalLevel;
+    public void setEducationalLevel(URL educationalLevel) {
+        this.educationalLevel = educationalLevel;
     }
     /**
      * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
      *
-     * @param fEducationalLevel java.net.URL value to set.
+     * @param educationalLevel DefinedTerm value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
     @Override
-    public void setEducationalLevel(java.net.URL fEducationalLevel) {
-        this.fEducationalLevel = URL.of(fEducationalLevel);
+    public void setEducationalLevel(DefinedTerm educationalLevel) {
+        this.educationalLevel = educationalLevel;
     }
     /**
      * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
      *
-     * @param fEducationalLevel DefinedTerm value to set.
+     * @param educationalLevel Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
     @Override
-    public void setEducationalLevel(DefinedTerm fEducationalLevel) {
-        this.fEducationalLevel = fEducationalLevel;
-    }
-    /**
-     * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
-     *
-     * @param fEducationalLevel Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
-     */
-    @Override
-    public void setEducationalLevel(Text fEducationalLevel) {
-        this.fEducationalLevel = fEducationalLevel;
-    }
-    /**
-     * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
-     *
-     * @param fEducationalLevel java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
-     */
-    @Override
-    public void setEducationalLevel(java.lang.String fEducationalLevel) {
-        this.fEducationalLevel = Text.of(fEducationalLevel);
+    public void setEducationalLevel(Text educationalLevel) {
+        this.educationalLevel = educationalLevel;
     }
 
-    private Text fAbstract;
+    private Text abstract_;
 
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
@@ -2425,33 +1981,22 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getAbstract() {
-        return fAbstract;
+        return abstract_;
     }
 
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      *
-     * @param fAbstract Text value to set.
+     * @param abstract_ Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/276">https://github.com/schemaorg/schemaorg/issues/276</a>
      */
     @Override
-    public void setAbstract(Text fAbstract) {
-        this.fAbstract = fAbstract;
-    }
-    /**
-     * An abstract is a short description that summarizes a [[CreativeWork]].
-     *
-     * @param fAbstract java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/276">https://github.com/schemaorg/schemaorg/issues/276</a>
-     */
-    @Override
-    public void setAbstract(java.lang.String fAbstract) {
-        this.fAbstract = Text.of(fAbstract);
+    public void setAbstract(Text abstract_) {
+        this.abstract_ = abstract_;
     }
 
-    private Object fCreativeWorkStatus;
+    private Object creativeWorkStatus;
 
     /**
      * The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle.
@@ -2462,44 +2007,33 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getCreativeWorkStatus() {
-        return (T) fCreativeWorkStatus;
+        return (T) creativeWorkStatus;
     }
 
     /**
      * The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle.
      *
-     * @param fCreativeWorkStatus Text value to set.
+     * @param creativeWorkStatus Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/987">https://github.com/schemaorg/schemaorg/issues/987</a>
      */
     @Override
-    public void setCreativeWorkStatus(Text fCreativeWorkStatus) {
-        this.fCreativeWorkStatus = fCreativeWorkStatus;
+    public void setCreativeWorkStatus(Text creativeWorkStatus) {
+        this.creativeWorkStatus = creativeWorkStatus;
     }
     /**
      * The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle.
      *
-     * @param fCreativeWorkStatus java.lang.String value to set.
+     * @param creativeWorkStatus DefinedTerm value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/987">https://github.com/schemaorg/schemaorg/issues/987</a>
      */
     @Override
-    public void setCreativeWorkStatus(java.lang.String fCreativeWorkStatus) {
-        this.fCreativeWorkStatus = Text.of(fCreativeWorkStatus);
-    }
-    /**
-     * The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle.
-     *
-     * @param fCreativeWorkStatus DefinedTerm value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/987">https://github.com/schemaorg/schemaorg/issues/987</a>
-     */
-    @Override
-    public void setCreativeWorkStatus(DefinedTerm fCreativeWorkStatus) {
-        this.fCreativeWorkStatus = fCreativeWorkStatus;
+    public void setCreativeWorkStatus(DefinedTerm creativeWorkStatus) {
+        this.creativeWorkStatus = creativeWorkStatus;
     }
 
-    private Date fExpires;
+    private Date expires;
 
     /**
      * Date the content expires and is no longer useful or available. For example a [[VideoObject]] or [[NewsArticle]] whose availability or relevance is time-limited, or a [[ClaimReview]] fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date.
@@ -2508,29 +2042,20 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Date getExpires() {
-        return fExpires;
+        return expires;
     }
 
     /**
      * Date the content expires and is no longer useful or available. For example a [[VideoObject]] or [[NewsArticle]] whose availability or relevance is time-limited, or a [[ClaimReview]] fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date.
      *
-     * @param fExpires Date value to set.
+     * @param expires Date value to set.
      */
     @Override
-    public void setExpires(Date fExpires) {
-        this.fExpires = fExpires;
-    }
-    /**
-     * Date the content expires and is no longer useful or available. For example a [[VideoObject]] or [[NewsArticle]] whose availability or relevance is time-limited, or a [[ClaimReview]] fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date.
-     *
-     * @param fExpires java.time.LocalDate value to set.
-     */
-    @Override
-    public void setExpires(java.time.LocalDate fExpires) {
-        this.fExpires = Date.of(fExpires);
+    public void setExpires(Date expires) {
+        this.expires = expires;
     }
 
-    private DateTime fContentReferenceTime;
+    private DateTime contentReferenceTime;
 
     /**
      * The specific time described by a creative work, for works (e.g. articles, video objects etc.) that emphasise a particular moment within an Event.
@@ -2541,33 +2066,22 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public DateTime getContentReferenceTime() {
-        return fContentReferenceTime;
+        return contentReferenceTime;
     }
 
     /**
      * The specific time described by a creative work, for works (e.g. articles, video objects etc.) that emphasise a particular moment within an Event.
      *
-     * @param fContentReferenceTime DateTime value to set.
+     * @param contentReferenceTime DateTime value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1050">https://github.com/schemaorg/schemaorg/issues/1050</a>
      */
     @Override
-    public void setContentReferenceTime(DateTime fContentReferenceTime) {
-        this.fContentReferenceTime = fContentReferenceTime;
-    }
-    /**
-     * The specific time described by a creative work, for works (e.g. articles, video objects etc.) that emphasise a particular moment within an Event.
-     *
-     * @param fContentReferenceTime java.time.LocalDateTime value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1050">https://github.com/schemaorg/schemaorg/issues/1050</a>
-     */
-    @Override
-    public void setContentReferenceTime(java.time.LocalDateTime fContentReferenceTime) {
-        this.fContentReferenceTime = DateTime.of(fContentReferenceTime);
+    public void setContentReferenceTime(DateTime contentReferenceTime) {
+        this.contentReferenceTime = contentReferenceTime;
     }
 
-    private Object fFileFormat;
+    private Object fileFormat;
 
     /**
      * Media type, typically MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml)) of the content e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.
@@ -2576,47 +2090,29 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getFileFormat() {
-        return (T) fFileFormat;
+        return (T) fileFormat;
     }
 
     /**
      * Media type, typically MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml)) of the content e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.
      *
-     * @param fFileFormat URL value to set.
+     * @param fileFormat URL value to set.
      */
     @Override
-    public void setFileFormat(URL fFileFormat) {
-        this.fFileFormat = fFileFormat;
+    public void setFileFormat(URL fileFormat) {
+        this.fileFormat = fileFormat;
     }
     /**
      * Media type, typically MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml)) of the content e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.
      *
-     * @param fFileFormat java.net.URL value to set.
+     * @param fileFormat Text value to set.
      */
     @Override
-    public void setFileFormat(java.net.URL fFileFormat) {
-        this.fFileFormat = URL.of(fFileFormat);
-    }
-    /**
-     * Media type, typically MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml)) of the content e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.
-     *
-     * @param fFileFormat Text value to set.
-     */
-    @Override
-    public void setFileFormat(Text fFileFormat) {
-        this.fFileFormat = fFileFormat;
-    }
-    /**
-     * Media type, typically MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml)) of the content e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.
-     *
-     * @param fFileFormat java.lang.String value to set.
-     */
-    @Override
-    public void setFileFormat(java.lang.String fFileFormat) {
-        this.fFileFormat = Text.of(fFileFormat);
+    public void setFileFormat(Text fileFormat) {
+        this.fileFormat = fileFormat;
     }
 
-    private Text fText;
+    private Text text;
 
     /**
      * The textual content of this CreativeWork.
@@ -2625,29 +2121,20 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getText() {
-        return fText;
+        return text;
     }
 
     /**
      * The textual content of this CreativeWork.
      *
-     * @param fText Text value to set.
+     * @param text Text value to set.
      */
     @Override
-    public void setText(Text fText) {
-        this.fText = fText;
-    }
-    /**
-     * The textual content of this CreativeWork.
-     *
-     * @param fText java.lang.String value to set.
-     */
-    @Override
-    public void setText(java.lang.String fText) {
-        this.fText = Text.of(fText);
+    public void setText(Text text) {
+        this.text = text;
     }
 
-    private Object fTranslator;
+    private Object translator;
 
     /**
      * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
@@ -2656,29 +2143,29 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getTranslator() {
-        return (T) fTranslator;
+        return (T) translator;
     }
 
     /**
      * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
      *
-     * @param fTranslator Person value to set.
+     * @param translator Person value to set.
      */
     @Override
-    public void setTranslator(Person fTranslator) {
-        this.fTranslator = fTranslator;
+    public void setTranslator(Person translator) {
+        this.translator = translator;
     }
     /**
      * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
      *
-     * @param fTranslator Organization value to set.
+     * @param translator Organization value to set.
      */
     @Override
-    public void setTranslator(Organization fTranslator) {
-        this.fTranslator = fTranslator;
+    public void setTranslator(Organization translator) {
+        this.translator = translator;
     }
 
-    private Object fAssesses;
+    private Object assesses;
 
     /**
      * The item being described is intended to assess the competency or learning outcome defined by the referenced term.
@@ -2689,44 +2176,33 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getAssesses() {
-        return (T) fAssesses;
+        return (T) assesses;
     }
 
     /**
      * The item being described is intended to assess the competency or learning outcome defined by the referenced term.
      *
-     * @param fAssesses Text value to set.
+     * @param assesses Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
      */
     @Override
-    public void setAssesses(Text fAssesses) {
-        this.fAssesses = fAssesses;
+    public void setAssesses(Text assesses) {
+        this.assesses = assesses;
     }
     /**
      * The item being described is intended to assess the competency or learning outcome defined by the referenced term.
      *
-     * @param fAssesses java.lang.String value to set.
+     * @param assesses DefinedTerm value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
      */
     @Override
-    public void setAssesses(java.lang.String fAssesses) {
-        this.fAssesses = Text.of(fAssesses);
-    }
-    /**
-     * The item being described is intended to assess the competency or learning outcome defined by the referenced term.
-     *
-     * @param fAssesses DefinedTerm value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
-     */
-    @Override
-    public void setAssesses(DefinedTerm fAssesses) {
-        this.fAssesses = fAssesses;
+    public void setAssesses(DefinedTerm assesses) {
+        this.assesses = assesses;
     }
 
-    private Text fCopyrightNotice;
+    private Text copyrightNotice;
 
     /**
      * Text of a notice appropriate for describing the copyright aspects of this Creative Work, ideally indicating the owner of the copyright for the Work.
@@ -2737,33 +2213,22 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getCopyrightNotice() {
-        return fCopyrightNotice;
+        return copyrightNotice;
     }
 
     /**
      * Text of a notice appropriate for describing the copyright aspects of this Creative Work, ideally indicating the owner of the copyright for the Work.
      *
-     * @param fCopyrightNotice Text value to set.
+     * @param copyrightNotice Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2659">https://github.com/schemaorg/schemaorg/issues/2659</a>
      */
     @Override
-    public void setCopyrightNotice(Text fCopyrightNotice) {
-        this.fCopyrightNotice = fCopyrightNotice;
-    }
-    /**
-     * Text of a notice appropriate for describing the copyright aspects of this Creative Work, ideally indicating the owner of the copyright for the Work.
-     *
-     * @param fCopyrightNotice java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2659">https://github.com/schemaorg/schemaorg/issues/2659</a>
-     */
-    @Override
-    public void setCopyrightNotice(java.lang.String fCopyrightNotice) {
-        this.fCopyrightNotice = Text.of(fCopyrightNotice);
+    public void setCopyrightNotice(Text copyrightNotice) {
+        this.copyrightNotice = copyrightNotice;
     }
 
-    private Object fSchemaVersion;
+    private Object schemaVersion;
 
     /**
      * Indicates (by URL or string) a particular version of a schema used in some CreativeWork. This property was created primarily to
@@ -2773,51 +2238,31 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getSchemaVersion() {
-        return (T) fSchemaVersion;
+        return (T) schemaVersion;
     }
 
     /**
      * Indicates (by URL or string) a particular version of a schema used in some CreativeWork. This property was created primarily to
      *     indicate the use of a specific schema.org release, e.g. ```10.0``` as a simple string, or more explicitly via URL, ```https://schema.org/docs/releases.html#v10.0```. There may be situations in which other schemas might usefully be referenced this way, e.g. ```http://dublincore.org/specifications/dublin-core/dces/1999-07-02/``` but this has not been carefully explored in the community.
      *
-     * @param fSchemaVersion Text value to set.
+     * @param schemaVersion Text value to set.
      */
     @Override
-    public void setSchemaVersion(Text fSchemaVersion) {
-        this.fSchemaVersion = fSchemaVersion;
+    public void setSchemaVersion(Text schemaVersion) {
+        this.schemaVersion = schemaVersion;
     }
     /**
      * Indicates (by URL or string) a particular version of a schema used in some CreativeWork. This property was created primarily to
      *     indicate the use of a specific schema.org release, e.g. ```10.0``` as a simple string, or more explicitly via URL, ```https://schema.org/docs/releases.html#v10.0```. There may be situations in which other schemas might usefully be referenced this way, e.g. ```http://dublincore.org/specifications/dublin-core/dces/1999-07-02/``` but this has not been carefully explored in the community.
      *
-     * @param fSchemaVersion java.lang.String value to set.
+     * @param schemaVersion URL value to set.
      */
     @Override
-    public void setSchemaVersion(java.lang.String fSchemaVersion) {
-        this.fSchemaVersion = Text.of(fSchemaVersion);
-    }
-    /**
-     * Indicates (by URL or string) a particular version of a schema used in some CreativeWork. This property was created primarily to
-     *     indicate the use of a specific schema.org release, e.g. ```10.0``` as a simple string, or more explicitly via URL, ```https://schema.org/docs/releases.html#v10.0```. There may be situations in which other schemas might usefully be referenced this way, e.g. ```http://dublincore.org/specifications/dublin-core/dces/1999-07-02/``` but this has not been carefully explored in the community.
-     *
-     * @param fSchemaVersion URL value to set.
-     */
-    @Override
-    public void setSchemaVersion(URL fSchemaVersion) {
-        this.fSchemaVersion = fSchemaVersion;
-    }
-    /**
-     * Indicates (by URL or string) a particular version of a schema used in some CreativeWork. This property was created primarily to
-     *     indicate the use of a specific schema.org release, e.g. ```10.0``` as a simple string, or more explicitly via URL, ```https://schema.org/docs/releases.html#v10.0```. There may be situations in which other schemas might usefully be referenced this way, e.g. ```http://dublincore.org/specifications/dublin-core/dces/1999-07-02/``` but this has not been carefully explored in the community.
-     *
-     * @param fSchemaVersion java.net.URL value to set.
-     */
-    @Override
-    public void setSchemaVersion(java.net.URL fSchemaVersion) {
-        this.fSchemaVersion = URL.of(fSchemaVersion);
+    public void setSchemaVersion(URL schemaVersion) {
+        this.schemaVersion = schemaVersion;
     }
 
-    private Person fAccountablePerson;
+    private Person accountablePerson;
 
     /**
      * Specifies the Person that is legally accountable for the CreativeWork.
@@ -2826,20 +2271,20 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Person getAccountablePerson() {
-        return fAccountablePerson;
+        return accountablePerson;
     }
 
     /**
      * Specifies the Person that is legally accountable for the CreativeWork.
      *
-     * @param fAccountablePerson Person value to set.
+     * @param accountablePerson Person value to set.
      */
     @Override
-    public void setAccountablePerson(Person fAccountablePerson) {
-        this.fAccountablePerson = fAccountablePerson;
+    public void setAccountablePerson(Person accountablePerson) {
+        this.accountablePerson = accountablePerson;
     }
 
-    private Object fEducationalUse;
+    private Object educationalUse;
 
     /**
      * The purpose of a work in the context of education; for example, 'assignment', 'group work'.
@@ -2848,38 +2293,29 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getEducationalUse() {
-        return (T) fEducationalUse;
+        return (T) educationalUse;
     }
 
     /**
      * The purpose of a work in the context of education; for example, 'assignment', 'group work'.
      *
-     * @param fEducationalUse DefinedTerm value to set.
+     * @param educationalUse DefinedTerm value to set.
      */
     @Override
-    public void setEducationalUse(DefinedTerm fEducationalUse) {
-        this.fEducationalUse = fEducationalUse;
+    public void setEducationalUse(DefinedTerm educationalUse) {
+        this.educationalUse = educationalUse;
     }
     /**
      * The purpose of a work in the context of education; for example, 'assignment', 'group work'.
      *
-     * @param fEducationalUse Text value to set.
+     * @param educationalUse Text value to set.
      */
     @Override
-    public void setEducationalUse(Text fEducationalUse) {
-        this.fEducationalUse = fEducationalUse;
-    }
-    /**
-     * The purpose of a work in the context of education; for example, 'assignment', 'group work'.
-     *
-     * @param fEducationalUse java.lang.String value to set.
-     */
-    @Override
-    public void setEducationalUse(java.lang.String fEducationalUse) {
-        this.fEducationalUse = Text.of(fEducationalUse);
+    public void setEducationalUse(Text educationalUse) {
+        this.educationalUse = educationalUse;
     }
 
-    private Object fGenre;
+    private Object genre;
 
     /**
      * Genre of the creative work, broadcast channel or group.
@@ -2888,47 +2324,29 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getGenre() {
-        return (T) fGenre;
+        return (T) genre;
     }
 
     /**
      * Genre of the creative work, broadcast channel or group.
      *
-     * @param fGenre URL value to set.
+     * @param genre URL value to set.
      */
     @Override
-    public void setGenre(URL fGenre) {
-        this.fGenre = fGenre;
+    public void setGenre(URL genre) {
+        this.genre = genre;
     }
     /**
      * Genre of the creative work, broadcast channel or group.
      *
-     * @param fGenre java.net.URL value to set.
+     * @param genre Text value to set.
      */
     @Override
-    public void setGenre(java.net.URL fGenre) {
-        this.fGenre = URL.of(fGenre);
-    }
-    /**
-     * Genre of the creative work, broadcast channel or group.
-     *
-     * @param fGenre Text value to set.
-     */
-    @Override
-    public void setGenre(Text fGenre) {
-        this.fGenre = fGenre;
-    }
-    /**
-     * Genre of the creative work, broadcast channel or group.
-     *
-     * @param fGenre java.lang.String value to set.
-     */
-    @Override
-    public void setGenre(java.lang.String fGenre) {
-        this.fGenre = Text.of(fGenre);
+    public void setGenre(Text genre) {
+        this.genre = genre;
     }
 
-    private Object fPosition;
+    private Object position;
 
     /**
      * The position of an item in a series or sequence of items.
@@ -2937,47 +2355,29 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getPosition() {
-        return (T) fPosition;
+        return (T) position;
     }
 
     /**
      * The position of an item in a series or sequence of items.
      *
-     * @param fPosition Integer value to set.
+     * @param position Integer value to set.
      */
     @Override
-    public void setPosition(Integer fPosition) {
-        this.fPosition = fPosition;
+    public void setPosition(Integer position) {
+        this.position = position;
     }
     /**
      * The position of an item in a series or sequence of items.
      *
-     * @param fPosition java.lang.Integer value to set.
+     * @param position Text value to set.
      */
     @Override
-    public void setPosition(java.lang.Integer fPosition) {
-        this.fPosition = Integer.of(fPosition);
-    }
-    /**
-     * The position of an item in a series or sequence of items.
-     *
-     * @param fPosition Text value to set.
-     */
-    @Override
-    public void setPosition(Text fPosition) {
-        this.fPosition = fPosition;
-    }
-    /**
-     * The position of an item in a series or sequence of items.
-     *
-     * @param fPosition java.lang.String value to set.
-     */
-    @Override
-    public void setPosition(java.lang.String fPosition) {
-        this.fPosition = Text.of(fPosition);
+    public void setPosition(Text position) {
+        this.position = position;
     }
 
-    private Text fAccessibilityHazard;
+    private Text accessibilityHazard;
 
     /**
      * A characteristic of the described resource that is physiologically dangerous to some users. Related to WCAG 2.0 guideline 2.3. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityHazard-vocabulary).
@@ -2986,29 +2386,20 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getAccessibilityHazard() {
-        return fAccessibilityHazard;
+        return accessibilityHazard;
     }
 
     /**
      * A characteristic of the described resource that is physiologically dangerous to some users. Related to WCAG 2.0 guideline 2.3. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityHazard-vocabulary).
      *
-     * @param fAccessibilityHazard Text value to set.
+     * @param accessibilityHazard Text value to set.
      */
     @Override
-    public void setAccessibilityHazard(Text fAccessibilityHazard) {
-        this.fAccessibilityHazard = fAccessibilityHazard;
-    }
-    /**
-     * A characteristic of the described resource that is physiologically dangerous to some users. Related to WCAG 2.0 guideline 2.3. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityHazard-vocabulary).
-     *
-     * @param fAccessibilityHazard java.lang.String value to set.
-     */
-    @Override
-    public void setAccessibilityHazard(java.lang.String fAccessibilityHazard) {
-        this.fAccessibilityHazard = Text.of(fAccessibilityHazard);
+    public void setAccessibilityHazard(Text accessibilityHazard) {
+        this.accessibilityHazard = accessibilityHazard;
     }
 
-    private Text fAlternativeHeadline;
+    private Text alternativeHeadline;
 
     /**
      * A secondary title of the CreativeWork.
@@ -3017,29 +2408,20 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getAlternativeHeadline() {
-        return fAlternativeHeadline;
+        return alternativeHeadline;
     }
 
     /**
      * A secondary title of the CreativeWork.
      *
-     * @param fAlternativeHeadline Text value to set.
+     * @param alternativeHeadline Text value to set.
      */
     @Override
-    public void setAlternativeHeadline(Text fAlternativeHeadline) {
-        this.fAlternativeHeadline = fAlternativeHeadline;
-    }
-    /**
-     * A secondary title of the CreativeWork.
-     *
-     * @param fAlternativeHeadline java.lang.String value to set.
-     */
-    @Override
-    public void setAlternativeHeadline(java.lang.String fAlternativeHeadline) {
-        this.fAlternativeHeadline = Text.of(fAlternativeHeadline);
+    public void setAlternativeHeadline(Text alternativeHeadline) {
+        this.alternativeHeadline = alternativeHeadline;
     }
 
-    private Place fLocationCreated;
+    private Place locationCreated;
 
     /**
      * The location where the CreativeWork was created, which may not be the same as the location depicted in the CreativeWork.
@@ -3048,20 +2430,20 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Place getLocationCreated() {
-        return fLocationCreated;
+        return locationCreated;
     }
 
     /**
      * The location where the CreativeWork was created, which may not be the same as the location depicted in the CreativeWork.
      *
-     * @param fLocationCreated Place value to set.
+     * @param locationCreated Place value to set.
      */
     @Override
-    public void setLocationCreated(Place fLocationCreated) {
-        this.fLocationCreated = fLocationCreated;
+    public void setLocationCreated(Place locationCreated) {
+        this.locationCreated = locationCreated;
     }
 
-    private MediaObject fAssociatedMedia;
+    private MediaObject associatedMedia;
 
     /**
      * A media object that encodes this CreativeWork. This property is a synonym for encoding.
@@ -3070,20 +2452,20 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public MediaObject getAssociatedMedia() {
-        return fAssociatedMedia;
+        return associatedMedia;
     }
 
     /**
      * A media object that encodes this CreativeWork. This property is a synonym for encoding.
      *
-     * @param fAssociatedMedia MediaObject value to set.
+     * @param associatedMedia MediaObject value to set.
      */
     @Override
-    public void setAssociatedMedia(MediaObject fAssociatedMedia) {
-        this.fAssociatedMedia = fAssociatedMedia;
+    public void setAssociatedMedia(MediaObject associatedMedia) {
+        this.associatedMedia = associatedMedia;
     }
 
-    private Object fMaterialExtent;
+    private Object materialExtent;
 
     /**
      * The quantity of the materials being described or an expression of the physical space they occupy.
@@ -3094,44 +2476,33 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getMaterialExtent() {
-        return (T) fMaterialExtent;
+        return (T) materialExtent;
     }
 
     /**
      * The quantity of the materials being described or an expression of the physical space they occupy.
      *
-     * @param fMaterialExtent QuantitativeValue value to set.
+     * @param materialExtent QuantitativeValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1759">https://github.com/schemaorg/schemaorg/issues/1759</a>
      */
     @Override
-    public void setMaterialExtent(QuantitativeValue fMaterialExtent) {
-        this.fMaterialExtent = fMaterialExtent;
+    public void setMaterialExtent(QuantitativeValue materialExtent) {
+        this.materialExtent = materialExtent;
     }
     /**
      * The quantity of the materials being described or an expression of the physical space they occupy.
      *
-     * @param fMaterialExtent Text value to set.
+     * @param materialExtent Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1759">https://github.com/schemaorg/schemaorg/issues/1759</a>
      */
     @Override
-    public void setMaterialExtent(Text fMaterialExtent) {
-        this.fMaterialExtent = fMaterialExtent;
-    }
-    /**
-     * The quantity of the materials being described or an expression of the physical space they occupy.
-     *
-     * @param fMaterialExtent java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1759">https://github.com/schemaorg/schemaorg/issues/1759</a>
-     */
-    @Override
-    public void setMaterialExtent(java.lang.String fMaterialExtent) {
-        this.fMaterialExtent = Text.of(fMaterialExtent);
+    public void setMaterialExtent(Text materialExtent) {
+        this.materialExtent = materialExtent;
     }
 
-    private Thing fMainEntity;
+    private Thing mainEntity;
 
     /**
      * Indicates the primary entity described in some page or other CreativeWork.
@@ -3140,20 +2511,20 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Thing getMainEntity() {
-        return fMainEntity;
+        return mainEntity;
     }
 
     /**
      * Indicates the primary entity described in some page or other CreativeWork.
      *
-     * @param fMainEntity Thing value to set.
+     * @param mainEntity Thing value to set.
      */
     @Override
-    public void setMainEntity(Thing fMainEntity) {
-        this.fMainEntity = fMainEntity;
+    public void setMainEntity(Thing mainEntity) {
+        this.mainEntity = mainEntity;
     }
 
-    private Object fCopyrightHolder;
+    private Object copyrightHolder;
 
     /**
      * The party holding the legal copyright to the CreativeWork.
@@ -3162,29 +2533,29 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getCopyrightHolder() {
-        return (T) fCopyrightHolder;
+        return (T) copyrightHolder;
     }
 
     /**
      * The party holding the legal copyright to the CreativeWork.
      *
-     * @param fCopyrightHolder Organization value to set.
+     * @param copyrightHolder Organization value to set.
      */
     @Override
-    public void setCopyrightHolder(Organization fCopyrightHolder) {
-        this.fCopyrightHolder = fCopyrightHolder;
+    public void setCopyrightHolder(Organization copyrightHolder) {
+        this.copyrightHolder = copyrightHolder;
     }
     /**
      * The party holding the legal copyright to the CreativeWork.
      *
-     * @param fCopyrightHolder Person value to set.
+     * @param copyrightHolder Person value to set.
      */
     @Override
-    public void setCopyrightHolder(Person fCopyrightHolder) {
-        this.fCopyrightHolder = fCopyrightHolder;
+    public void setCopyrightHolder(Person copyrightHolder) {
+        this.copyrightHolder = copyrightHolder;
     }
 
-    private Place fContentLocation;
+    private Place contentLocation;
 
     /**
      * The location depicted or described in the content. For example, the location in a photograph or painting.
@@ -3193,20 +2564,20 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Place getContentLocation() {
-        return fContentLocation;
+        return contentLocation;
     }
 
     /**
      * The location depicted or described in the content. For example, the location in a photograph or painting.
      *
-     * @param fContentLocation Place value to set.
+     * @param contentLocation Place value to set.
      */
     @Override
-    public void setContentLocation(Place fContentLocation) {
-        this.fContentLocation = fContentLocation;
+    public void setContentLocation(Place contentLocation) {
+        this.contentLocation = contentLocation;
     }
 
-    private Date fSdDatePublished;
+    private Date sdDatePublished;
 
     /**
      * Indicates the date on which the current structured data was generated / published. Typically used alongside [[sdPublisher]]
@@ -3217,33 +2588,22 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Date getSdDatePublished() {
-        return fSdDatePublished;
+        return sdDatePublished;
     }
 
     /**
      * Indicates the date on which the current structured data was generated / published. Typically used alongside [[sdPublisher]]
      *
-     * @param fSdDatePublished Date value to set.
+     * @param sdDatePublished Date value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
      */
     @Override
-    public void setSdDatePublished(Date fSdDatePublished) {
-        this.fSdDatePublished = fSdDatePublished;
-    }
-    /**
-     * Indicates the date on which the current structured data was generated / published. Typically used alongside [[sdPublisher]]
-     *
-     * @param fSdDatePublished java.time.LocalDate value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
-     */
-    @Override
-    public void setSdDatePublished(java.time.LocalDate fSdDatePublished) {
-        this.fSdDatePublished = Date.of(fSdDatePublished);
+    public void setSdDatePublished(Date sdDatePublished) {
+        this.sdDatePublished = sdDatePublished;
     }
 
-    private Object fProducer;
+    private Object producer;
 
     /**
      * The person or organization who produced the work (e.g. music album, movie, tv/radio series etc.).
@@ -3252,29 +2612,29 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getProducer() {
-        return (T) fProducer;
+        return (T) producer;
     }
 
     /**
      * The person or organization who produced the work (e.g. music album, movie, tv/radio series etc.).
      *
-     * @param fProducer Organization value to set.
+     * @param producer Organization value to set.
      */
     @Override
-    public void setProducer(Organization fProducer) {
-        this.fProducer = fProducer;
+    public void setProducer(Organization producer) {
+        this.producer = producer;
     }
     /**
      * The person or organization who produced the work (e.g. music album, movie, tv/radio series etc.).
      *
-     * @param fProducer Person value to set.
+     * @param producer Person value to set.
      */
     @Override
-    public void setProducer(Person fProducer) {
-        this.fProducer = fProducer;
+    public void setProducer(Person producer) {
+        this.producer = producer;
     }
 
-    private Place fSpatial;
+    private Place spatial;
 
     /**
      * The "spatial" property can be used in cases when more specific properties
@@ -3284,21 +2644,21 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Place getSpatial() {
-        return fSpatial;
+        return spatial;
     }
 
     /**
      * The "spatial" property can be used in cases when more specific properties
      * (e.g. [[locationCreated]], [[spatialCoverage]], [[contentLocation]]) are not known to be appropriate.
      *
-     * @param fSpatial Place value to set.
+     * @param spatial Place value to set.
      */
     @Override
-    public void setSpatial(Place fSpatial) {
-        this.fSpatial = fSpatial;
+    public void setSpatial(Place spatial) {
+        this.spatial = spatial;
     }
 
-    private Object fPublisher;
+    private Object publisher;
 
     /**
      * The publisher of the creative work.
@@ -3307,29 +2667,29 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getPublisher() {
-        return (T) fPublisher;
+        return (T) publisher;
     }
 
     /**
      * The publisher of the creative work.
      *
-     * @param fPublisher Person value to set.
+     * @param publisher Person value to set.
      */
     @Override
-    public void setPublisher(Person fPublisher) {
-        this.fPublisher = fPublisher;
+    public void setPublisher(Person publisher) {
+        this.publisher = publisher;
     }
     /**
      * The publisher of the creative work.
      *
-     * @param fPublisher Organization value to set.
+     * @param publisher Organization value to set.
      */
     @Override
-    public void setPublisher(Organization fPublisher) {
-        this.fPublisher = fPublisher;
+    public void setPublisher(Organization publisher) {
+        this.publisher = publisher;
     }
 
-    private Organization fSourceOrganization;
+    private Organization sourceOrganization;
 
     /**
      * The Organization on whose behalf the creator was working.
@@ -3338,20 +2698,20 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Organization getSourceOrganization() {
-        return fSourceOrganization;
+        return sourceOrganization;
     }
 
     /**
      * The Organization on whose behalf the creator was working.
      *
-     * @param fSourceOrganization Organization value to set.
+     * @param sourceOrganization Organization value to set.
      */
     @Override
-    public void setSourceOrganization(Organization fSourceOrganization) {
-        this.fSourceOrganization = fSourceOrganization;
+    public void setSourceOrganization(Organization sourceOrganization) {
+        this.sourceOrganization = sourceOrganization;
     }
 
-    private Person fCharacter;
+    private Person character;
 
     /**
      * Fictional person connected with a creative work.
@@ -3360,20 +2720,20 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Person getCharacter() {
-        return fCharacter;
+        return character;
     }
 
     /**
      * Fictional person connected with a creative work.
      *
-     * @param fCharacter Person value to set.
+     * @param character Person value to set.
      */
     @Override
-    public void setCharacter(Person fCharacter) {
-        this.fCharacter = fCharacter;
+    public void setCharacter(Person character) {
+        this.character = character;
     }
 
-    private Object fFunder;
+    private Object funder;
 
     /**
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
@@ -3382,29 +2742,29 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getFunder() {
-        return (T) fFunder;
+        return (T) funder;
     }
 
     /**
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
-     * @param fFunder Organization value to set.
+     * @param funder Organization value to set.
      */
     @Override
-    public void setFunder(Organization fFunder) {
-        this.fFunder = fFunder;
+    public void setFunder(Organization funder) {
+        this.funder = funder;
     }
     /**
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
-     * @param fFunder Person value to set.
+     * @param funder Person value to set.
      */
     @Override
-    public void setFunder(Person fFunder) {
-        this.fFunder = fFunder;
+    public void setFunder(Person funder) {
+        this.funder = funder;
     }
 
-    private CreativeWork fExampleOfWork;
+    private CreativeWork exampleOfWork;
 
     /**
      * A creative work that this work is an example/instance/realization/derivation of.
@@ -3414,21 +2774,21 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public CreativeWork getExampleOfWork() {
-        return fExampleOfWork;
+        return exampleOfWork;
     }
 
     /**
      * A creative work that this work is an example/instance/realization/derivation of.
      *
-     * @param fExampleOfWork CreativeWork value to set.
+     * @param exampleOfWork CreativeWork value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
     @Override
-    public void setExampleOfWork(CreativeWork fExampleOfWork) {
-        this.fExampleOfWork = fExampleOfWork;
+    public void setExampleOfWork(CreativeWork exampleOfWork) {
+        this.exampleOfWork = exampleOfWork;
     }
 
-    private Object fUsageInfo;
+    private Object usageInfo;
 
     /**
      * The schema.org [[usageInfo]] property indicates further information about a [[CreativeWork]]. This property is applicable both to works that are freely available and to those that require payment or other transactions. It can reference additional information e.g. community expectations on preferred linking and citation conventions, as well as purchasing details. For something that can be commercially licensed, usageInfo can provide detailed, resource-specific information about licensing options.
@@ -3441,7 +2801,7 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getUsageInfo() {
-        return (T) fUsageInfo;
+        return (T) usageInfo;
     }
 
     /**
@@ -3449,42 +2809,29 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      * 
      * This property can be used alongside the license property which indicates license(s) applicable to some piece of content. The usageInfo property can provide information about other licensing options, e.g. acquiring commercial usage rights for an image that is also available under non-commercial creative commons licenses.
      *
-     * @param fUsageInfo CreativeWork value to set.
+     * @param usageInfo CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
      */
     @Override
-    public void setUsageInfo(CreativeWork fUsageInfo) {
-        this.fUsageInfo = fUsageInfo;
+    public void setUsageInfo(CreativeWork usageInfo) {
+        this.usageInfo = usageInfo;
     }
     /**
      * The schema.org [[usageInfo]] property indicates further information about a [[CreativeWork]]. This property is applicable both to works that are freely available and to those that require payment or other transactions. It can reference additional information e.g. community expectations on preferred linking and citation conventions, as well as purchasing details. For something that can be commercially licensed, usageInfo can provide detailed, resource-specific information about licensing options.
      * 
      * This property can be used alongside the license property which indicates license(s) applicable to some piece of content. The usageInfo property can provide information about other licensing options, e.g. acquiring commercial usage rights for an image that is also available under non-commercial creative commons licenses.
      *
-     * @param fUsageInfo URL value to set.
+     * @param usageInfo URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
      */
     @Override
-    public void setUsageInfo(URL fUsageInfo) {
-        this.fUsageInfo = fUsageInfo;
-    }
-    /**
-     * The schema.org [[usageInfo]] property indicates further information about a [[CreativeWork]]. This property is applicable both to works that are freely available and to those that require payment or other transactions. It can reference additional information e.g. community expectations on preferred linking and citation conventions, as well as purchasing details. For something that can be commercially licensed, usageInfo can provide detailed, resource-specific information about licensing options.
-     * 
-     * This property can be used alongside the license property which indicates license(s) applicable to some piece of content. The usageInfo property can provide information about other licensing options, e.g. acquiring commercial usage rights for an image that is also available under non-commercial creative commons licenses.
-     *
-     * @param fUsageInfo java.net.URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
-     */
-    @Override
-    public void setUsageInfo(java.net.URL fUsageInfo) {
-        this.fUsageInfo = URL.of(fUsageInfo);
+    public void setUsageInfo(URL usageInfo) {
+        this.usageInfo = usageInfo;
     }
 
-    private Object fProvider;
+    private Object provider;
 
     /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
@@ -3496,35 +2843,35 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getProvider() {
-        return (T) fProvider;
+        return (T) provider;
     }
 
     /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
      *
-     * @param fProvider Organization value to set.
+     * @param provider Organization value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
      */
     @Override
-    public void setProvider(Organization fProvider) {
-        this.fProvider = fProvider;
+    public void setProvider(Organization provider) {
+        this.provider = provider;
     }
     /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
      *
-     * @param fProvider Person value to set.
+     * @param provider Person value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
      */
     @Override
-    public void setProvider(Person fProvider) {
-        this.fProvider = fProvider;
+    public void setProvider(Person provider) {
+        this.provider = provider;
     }
 
-    private Object fSdPublisher;
+    private Object sdPublisher;
 
     /**
      * Indicates the party responsible for generating and publishing the current structured data markup, typically in cases where the structured data is derived automatically from existing published content but published on a different site. For example, student projects and open data initiatives often re-publish existing content with more explicitly structured metadata. The
@@ -3536,35 +2883,35 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getSdPublisher() {
-        return (T) fSdPublisher;
+        return (T) sdPublisher;
     }
 
     /**
      * Indicates the party responsible for generating and publishing the current structured data markup, typically in cases where the structured data is derived automatically from existing published content but published on a different site. For example, student projects and open data initiatives often re-publish existing content with more explicitly structured metadata. The
      * [[sdPublisher]] property helps make such practices more explicit.
      *
-     * @param fSdPublisher Organization value to set.
+     * @param sdPublisher Organization value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
      */
     @Override
-    public void setSdPublisher(Organization fSdPublisher) {
-        this.fSdPublisher = fSdPublisher;
+    public void setSdPublisher(Organization sdPublisher) {
+        this.sdPublisher = sdPublisher;
     }
     /**
      * Indicates the party responsible for generating and publishing the current structured data markup, typically in cases where the structured data is derived automatically from existing published content but published on a different site. For example, student projects and open data initiatives often re-publish existing content with more explicitly structured metadata. The
      * [[sdPublisher]] property helps make such practices more explicit.
      *
-     * @param fSdPublisher Person value to set.
+     * @param sdPublisher Person value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
      */
     @Override
-    public void setSdPublisher(Person fSdPublisher) {
-        this.fSdPublisher = fSdPublisher;
+    public void setSdPublisher(Person sdPublisher) {
+        this.sdPublisher = sdPublisher;
     }
 
-    private Comment fComment;
+    private Comment comment;
 
     /**
      * Comments, typically from users.
@@ -3573,20 +2920,20 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Comment getComment() {
-        return fComment;
+        return comment;
     }
 
     /**
      * Comments, typically from users.
      *
-     * @param fComment Comment value to set.
+     * @param comment Comment value to set.
      */
     @Override
-    public void setComment(Comment fComment) {
-        this.fComment = fComment;
+    public void setComment(Comment comment) {
+        this.comment = comment;
     }
 
-    private Text fAccessibilityFeature;
+    private Text accessibilityFeature;
 
     /**
      * Content features of the resource, such as accessible media, alternatives and supported enhancements for accessibility. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityFeature-vocabulary).
@@ -3595,29 +2942,20 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getAccessibilityFeature() {
-        return fAccessibilityFeature;
+        return accessibilityFeature;
     }
 
     /**
      * Content features of the resource, such as accessible media, alternatives and supported enhancements for accessibility. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityFeature-vocabulary).
      *
-     * @param fAccessibilityFeature Text value to set.
+     * @param accessibilityFeature Text value to set.
      */
     @Override
-    public void setAccessibilityFeature(Text fAccessibilityFeature) {
-        this.fAccessibilityFeature = fAccessibilityFeature;
-    }
-    /**
-     * Content features of the resource, such as accessible media, alternatives and supported enhancements for accessibility. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityFeature-vocabulary).
-     *
-     * @param fAccessibilityFeature java.lang.String value to set.
-     */
-    @Override
-    public void setAccessibilityFeature(java.lang.String fAccessibilityFeature) {
-        this.fAccessibilityFeature = Text.of(fAccessibilityFeature);
+    public void setAccessibilityFeature(Text accessibilityFeature) {
+        this.accessibilityFeature = accessibilityFeature;
     }
 
-    private PublicationEvent fPublication;
+    private PublicationEvent publication;
 
     /**
      * A publication event associated with the item.
@@ -3626,20 +2964,20 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public PublicationEvent getPublication() {
-        return fPublication;
+        return publication;
     }
 
     /**
      * A publication event associated with the item.
      *
-     * @param fPublication PublicationEvent value to set.
+     * @param publication PublicationEvent value to set.
      */
     @Override
-    public void setPublication(PublicationEvent fPublication) {
-        this.fPublication = fPublication;
+    public void setPublication(PublicationEvent publication) {
+        this.publication = publication;
     }
 
-    private CreativeWork fTranslationOfWork;
+    private CreativeWork translationOfWork;
 
     /**
      * The work that this work has been translated from. e.g. 物种起源 is a translationOf “On the Origin of Species”
@@ -3649,21 +2987,21 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public CreativeWork getTranslationOfWork() {
-        return fTranslationOfWork;
+        return translationOfWork;
     }
 
     /**
      * The work that this work has been translated from. e.g. 物种起源 is a translationOf “On the Origin of Species”
      *
-     * @param fTranslationOfWork CreativeWork value to set.
+     * @param translationOfWork CreativeWork value to set.
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
     @Override
-    public void setTranslationOfWork(CreativeWork fTranslationOfWork) {
-        this.fTranslationOfWork = fTranslationOfWork;
+    public void setTranslationOfWork(CreativeWork translationOfWork) {
+        this.translationOfWork = translationOfWork;
     }
 
-    private Text fInteractivityType;
+    private Text interactivityType;
 
     /**
      * The predominant mode of learning supported by the learning resource. Acceptable values are 'active', 'expositive', or 'mixed'.
@@ -3672,29 +3010,20 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getInteractivityType() {
-        return fInteractivityType;
+        return interactivityType;
     }
 
     /**
      * The predominant mode of learning supported by the learning resource. Acceptable values are 'active', 'expositive', or 'mixed'.
      *
-     * @param fInteractivityType Text value to set.
+     * @param interactivityType Text value to set.
      */
     @Override
-    public void setInteractivityType(Text fInteractivityType) {
-        this.fInteractivityType = fInteractivityType;
-    }
-    /**
-     * The predominant mode of learning supported by the learning resource. Acceptable values are 'active', 'expositive', or 'mixed'.
-     *
-     * @param fInteractivityType java.lang.String value to set.
-     */
-    @Override
-    public void setInteractivityType(java.lang.String fInteractivityType) {
-        this.fInteractivityType = Text.of(fInteractivityType);
+    public void setInteractivityType(Text interactivityType) {
+        this.interactivityType = interactivityType;
     }
 
-    private Integer fCommentCount;
+    private Integer commentCount;
 
     /**
      * The number of comments this CreativeWork (e.g. Article, Question or Answer) has received. This is most applicable to works published in Web sites with commenting system; additional comments may exist elsewhere.
@@ -3703,29 +3032,20 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Integer getCommentCount() {
-        return fCommentCount;
+        return commentCount;
     }
 
     /**
      * The number of comments this CreativeWork (e.g. Article, Question or Answer) has received. This is most applicable to works published in Web sites with commenting system; additional comments may exist elsewhere.
      *
-     * @param fCommentCount Integer value to set.
+     * @param commentCount Integer value to set.
      */
     @Override
-    public void setCommentCount(Integer fCommentCount) {
-        this.fCommentCount = fCommentCount;
-    }
-    /**
-     * The number of comments this CreativeWork (e.g. Article, Question or Answer) has received. This is most applicable to works published in Web sites with commenting system; additional comments may exist elsewhere.
-     *
-     * @param fCommentCount java.lang.Integer value to set.
-     */
-    @Override
-    public void setCommentCount(java.lang.Integer fCommentCount) {
-        this.fCommentCount = Integer.of(fCommentCount);
+    public void setCommentCount(Integer commentCount) {
+        this.commentCount = commentCount;
     }
 
-    private Text fAccessMode;
+    private Text accessMode;
 
     /**
      * The human sensory perceptual system or cognitive faculty through which a person may process or perceive information. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessMode-vocabulary).
@@ -3735,31 +3055,21 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getAccessMode() {
-        return fAccessMode;
+        return accessMode;
     }
 
     /**
      * The human sensory perceptual system or cognitive faculty through which a person may process or perceive information. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessMode-vocabulary).
      *
-     * @param fAccessMode Text value to set.
+     * @param accessMode Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
      */
     @Override
-    public void setAccessMode(Text fAccessMode) {
-        this.fAccessMode = fAccessMode;
-    }
-    /**
-     * The human sensory perceptual system or cognitive faculty through which a person may process or perceive information. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessMode-vocabulary).
-     *
-     * @param fAccessMode java.lang.String value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
-     */
-    @Override
-    public void setAccessMode(java.lang.String fAccessMode) {
-        this.fAccessMode = Text.of(fAccessMode);
+    public void setAccessMode(Text accessMode) {
+        this.accessMode = accessMode;
     }
 
-    private Duration fTimeRequired;
+    private Duration timeRequired;
 
     /**
      * Approximate or typical time it takes to work with or through this learning resource for the typical intended target audience, e.g. 'PT30M', 'PT1H25M'.
@@ -3768,20 +3078,20 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Duration getTimeRequired() {
-        return fTimeRequired;
+        return timeRequired;
     }
 
     /**
      * Approximate or typical time it takes to work with or through this learning resource for the typical intended target audience, e.g. 'PT30M', 'PT1H25M'.
      *
-     * @param fTimeRequired Duration value to set.
+     * @param timeRequired Duration value to set.
      */
     @Override
-    public void setTimeRequired(Duration fTimeRequired) {
-        this.fTimeRequired = fTimeRequired;
+    public void setTimeRequired(Duration timeRequired) {
+        this.timeRequired = timeRequired;
     }
 
-    private Text fTypicalAgeRange;
+    private Text typicalAgeRange;
 
     /**
      * The typical expected age range, e.g. '7-9', '11-'.
@@ -3790,29 +3100,20 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getTypicalAgeRange() {
-        return fTypicalAgeRange;
+        return typicalAgeRange;
     }
 
     /**
      * The typical expected age range, e.g. '7-9', '11-'.
      *
-     * @param fTypicalAgeRange Text value to set.
+     * @param typicalAgeRange Text value to set.
      */
     @Override
-    public void setTypicalAgeRange(Text fTypicalAgeRange) {
-        this.fTypicalAgeRange = fTypicalAgeRange;
-    }
-    /**
-     * The typical expected age range, e.g. '7-9', '11-'.
-     *
-     * @param fTypicalAgeRange java.lang.String value to set.
-     */
-    @Override
-    public void setTypicalAgeRange(java.lang.String fTypicalAgeRange) {
-        this.fTypicalAgeRange = Text.of(fTypicalAgeRange);
+    public void setTypicalAgeRange(Text typicalAgeRange) {
+        this.typicalAgeRange = typicalAgeRange;
     }
 
-    private InteractionCounter fInteractionStatistic;
+    private InteractionCounter interactionStatistic;
 
     /**
      * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
@@ -3822,21 +3123,21 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public InteractionCounter getInteractionStatistic() {
-        return fInteractionStatistic;
+        return interactionStatistic;
     }
 
     /**
      * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
      *
-     * @param fInteractionStatistic InteractionCounter value to set.
+     * @param interactionStatistic InteractionCounter value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
      */
     @Override
-    public void setInteractionStatistic(InteractionCounter fInteractionStatistic) {
-        this.fInteractionStatistic = fInteractionStatistic;
+    public void setInteractionStatistic(InteractionCounter interactionStatistic) {
+        this.interactionStatistic = interactionStatistic;
     }
 
-    private Number fCopyrightYear;
+    private Number copyrightYear;
 
     /**
      * The year during which the claimed copyright for the CreativeWork was first asserted.
@@ -3845,29 +3146,20 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Number getCopyrightYear() {
-        return fCopyrightYear;
+        return copyrightYear;
     }
 
     /**
      * The year during which the claimed copyright for the CreativeWork was first asserted.
      *
-     * @param fCopyrightYear Number value to set.
+     * @param copyrightYear Number value to set.
      */
     @Override
-    public void setCopyrightYear(Number fCopyrightYear) {
-        this.fCopyrightYear = fCopyrightYear;
-    }
-    /**
-     * The year during which the claimed copyright for the CreativeWork was first asserted.
-     *
-     * @param fCopyrightYear java.lang.Number value to set.
-     */
-    @Override
-    public void setCopyrightYear(java.lang.Number fCopyrightYear) {
-        this.fCopyrightYear = Number.of(fCopyrightYear);
+    public void setCopyrightYear(Number copyrightYear) {
+        this.copyrightYear = copyrightYear;
     }
 
-    private Object fIsBasedOn;
+    private Object isBasedOn;
 
     /**
      * A resource from which this work is derived or from which it is a modification or adaption.
@@ -3876,47 +3168,38 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getIsBasedOn() {
-        return (T) fIsBasedOn;
+        return (T) isBasedOn;
     }
 
     /**
      * A resource from which this work is derived or from which it is a modification or adaption.
      *
-     * @param fIsBasedOn CreativeWork value to set.
+     * @param isBasedOn CreativeWork value to set.
      */
     @Override
-    public void setIsBasedOn(CreativeWork fIsBasedOn) {
-        this.fIsBasedOn = fIsBasedOn;
+    public void setIsBasedOn(CreativeWork isBasedOn) {
+        this.isBasedOn = isBasedOn;
     }
     /**
      * A resource from which this work is derived or from which it is a modification or adaption.
      *
-     * @param fIsBasedOn URL value to set.
+     * @param isBasedOn URL value to set.
      */
     @Override
-    public void setIsBasedOn(URL fIsBasedOn) {
-        this.fIsBasedOn = fIsBasedOn;
+    public void setIsBasedOn(URL isBasedOn) {
+        this.isBasedOn = isBasedOn;
     }
     /**
      * A resource from which this work is derived or from which it is a modification or adaption.
      *
-     * @param fIsBasedOn java.net.URL value to set.
+     * @param isBasedOn Product value to set.
      */
     @Override
-    public void setIsBasedOn(java.net.URL fIsBasedOn) {
-        this.fIsBasedOn = URL.of(fIsBasedOn);
-    }
-    /**
-     * A resource from which this work is derived or from which it is a modification or adaption.
-     *
-     * @param fIsBasedOn Product value to set.
-     */
-    @Override
-    public void setIsBasedOn(Product fIsBasedOn) {
-        this.fIsBasedOn = fIsBasedOn;
+    public void setIsBasedOn(Product isBasedOn) {
+        this.isBasedOn = isBasedOn;
     }
 
-    private CreativeWork fWorkExample;
+    private CreativeWork workExample;
 
     /**
      * Example/instance/realization/derivation of the concept of this creative work. eg. The paperback edition, first edition, or eBook.
@@ -3926,21 +3209,21 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public CreativeWork getWorkExample() {
-        return fWorkExample;
+        return workExample;
     }
 
     /**
      * Example/instance/realization/derivation of the concept of this creative work. eg. The paperback edition, first edition, or eBook.
      *
-     * @param fWorkExample CreativeWork value to set.
+     * @param workExample CreativeWork value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
     @Override
-    public void setWorkExample(CreativeWork fWorkExample) {
-        this.fWorkExample = fWorkExample;
+    public void setWorkExample(CreativeWork workExample) {
+        this.workExample = workExample;
     }
 
-    private Object fPublishingPrinciples;
+    private Object publishingPrinciples;
 
     /**
      * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
@@ -3951,7 +3234,7 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getPublishingPrinciples() {
-        return (T) fPublishingPrinciples;
+        return (T) publishingPrinciples;
     }
 
     /**
@@ -3959,36 +3242,25 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      * 
      * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
      *
-     * @param fPublishingPrinciples URL value to set.
+     * @param publishingPrinciples URL value to set.
      */
     @Override
-    public void setPublishingPrinciples(URL fPublishingPrinciples) {
-        this.fPublishingPrinciples = fPublishingPrinciples;
+    public void setPublishingPrinciples(URL publishingPrinciples) {
+        this.publishingPrinciples = publishingPrinciples;
     }
     /**
      * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
      * 
      * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
      *
-     * @param fPublishingPrinciples java.net.URL value to set.
+     * @param publishingPrinciples CreativeWork value to set.
      */
     @Override
-    public void setPublishingPrinciples(java.net.URL fPublishingPrinciples) {
-        this.fPublishingPrinciples = URL.of(fPublishingPrinciples);
-    }
-    /**
-     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
-     * 
-     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
-     *
-     * @param fPublishingPrinciples CreativeWork value to set.
-     */
-    @Override
-    public void setPublishingPrinciples(CreativeWork fPublishingPrinciples) {
-        this.fPublishingPrinciples = fPublishingPrinciples;
+    public void setPublishingPrinciples(CreativeWork publishingPrinciples) {
+        this.publishingPrinciples = publishingPrinciples;
     }
 
-    private URL fDiscussionUrl;
+    private URL discussionUrl;
 
     /**
      * A link to the page containing the comments of the CreativeWork.
@@ -3997,29 +3269,20 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public URL getDiscussionUrl() {
-        return fDiscussionUrl;
+        return discussionUrl;
     }
 
     /**
      * A link to the page containing the comments of the CreativeWork.
      *
-     * @param fDiscussionUrl URL value to set.
+     * @param discussionUrl URL value to set.
      */
     @Override
-    public void setDiscussionUrl(URL fDiscussionUrl) {
-        this.fDiscussionUrl = fDiscussionUrl;
-    }
-    /**
-     * A link to the page containing the comments of the CreativeWork.
-     *
-     * @param fDiscussionUrl java.net.URL value to set.
-     */
-    @Override
-    public void setDiscussionUrl(java.net.URL fDiscussionUrl) {
-        this.fDiscussionUrl = URL.of(fDiscussionUrl);
+    public void setDiscussionUrl(URL discussionUrl) {
+        this.discussionUrl = discussionUrl;
     }
 
-    private PublicationEvent fReleasedEvent;
+    private PublicationEvent releasedEvent;
 
     /**
      * The place and time the release was issued, expressed as a PublicationEvent.
@@ -4028,20 +3291,20 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public PublicationEvent getReleasedEvent() {
-        return fReleasedEvent;
+        return releasedEvent;
     }
 
     /**
      * The place and time the release was issued, expressed as a PublicationEvent.
      *
-     * @param fReleasedEvent PublicationEvent value to set.
+     * @param releasedEvent PublicationEvent value to set.
      */
     @Override
-    public void setReleasedEvent(PublicationEvent fReleasedEvent) {
-        this.fReleasedEvent = fReleasedEvent;
+    public void setReleasedEvent(PublicationEvent releasedEvent) {
+        this.releasedEvent = releasedEvent;
     }
 
-    private Object fDateCreated;
+    private Object dateCreated;
 
     /**
      * The date on which the CreativeWork was created or the item was added to a DataFeed.
@@ -4050,47 +3313,29 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getDateCreated() {
-        return (T) fDateCreated;
+        return (T) dateCreated;
     }
 
     /**
      * The date on which the CreativeWork was created or the item was added to a DataFeed.
      *
-     * @param fDateCreated Date value to set.
+     * @param dateCreated Date value to set.
      */
     @Override
-    public void setDateCreated(Date fDateCreated) {
-        this.fDateCreated = fDateCreated;
+    public void setDateCreated(Date dateCreated) {
+        this.dateCreated = dateCreated;
     }
     /**
      * The date on which the CreativeWork was created or the item was added to a DataFeed.
      *
-     * @param fDateCreated java.time.LocalDate value to set.
+     * @param dateCreated DateTime value to set.
      */
     @Override
-    public void setDateCreated(java.time.LocalDate fDateCreated) {
-        this.fDateCreated = Date.of(fDateCreated);
-    }
-    /**
-     * The date on which the CreativeWork was created or the item was added to a DataFeed.
-     *
-     * @param fDateCreated DateTime value to set.
-     */
-    @Override
-    public void setDateCreated(DateTime fDateCreated) {
-        this.fDateCreated = fDateCreated;
-    }
-    /**
-     * The date on which the CreativeWork was created or the item was added to a DataFeed.
-     *
-     * @param fDateCreated java.time.LocalDateTime value to set.
-     */
-    @Override
-    public void setDateCreated(java.time.LocalDateTime fDateCreated) {
-        this.fDateCreated = DateTime.of(fDateCreated);
+    public void setDateCreated(DateTime dateCreated) {
+        this.dateCreated = dateCreated;
     }
 
-    private CreativeWork fWorkTranslation;
+    private CreativeWork workTranslation;
 
     /**
      * A work that is a translation of the content of this work. e.g. 西遊記 has an English workTranslation “Journey to the West”,a German workTranslation “Monkeys Pilgerfahrt” and a Vietnamese  translation Tây du ký bình khảo.
@@ -4100,21 +3345,21 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public CreativeWork getWorkTranslation() {
-        return fWorkTranslation;
+        return workTranslation;
     }
 
     /**
      * A work that is a translation of the content of this work. e.g. 西遊記 has an English workTranslation “Journey to the West”,a German workTranslation “Monkeys Pilgerfahrt” and a Vietnamese  translation Tây du ký bình khảo.
      *
-     * @param fWorkTranslation CreativeWork value to set.
+     * @param workTranslation CreativeWork value to set.
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
     @Override
-    public void setWorkTranslation(CreativeWork fWorkTranslation) {
-        this.fWorkTranslation = fWorkTranslation;
+    public void setWorkTranslation(CreativeWork workTranslation) {
+        this.workTranslation = workTranslation;
     }
 
-    private Person fEditor;
+    private Person editor;
 
     /**
      * Specifies the Person who edited the CreativeWork.
@@ -4123,20 +3368,20 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Person getEditor() {
-        return fEditor;
+        return editor;
     }
 
     /**
      * Specifies the Person who edited the CreativeWork.
      *
-     * @param fEditor Person value to set.
+     * @param editor Person value to set.
      */
     @Override
-    public void setEditor(Person fEditor) {
-        this.fEditor = fEditor;
+    public void setEditor(Person editor) {
+        this.editor = editor;
     }
 
-    private Text fCreditText;
+    private Text creditText;
 
     /**
      * Text that can be used to credit person(s) and/or organization(s) associated with a published Creative Work.
@@ -4147,33 +3392,22 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getCreditText() {
-        return fCreditText;
+        return creditText;
     }
 
     /**
      * Text that can be used to credit person(s) and/or organization(s) associated with a published Creative Work.
      *
-     * @param fCreditText Text value to set.
+     * @param creditText Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2659">https://github.com/schemaorg/schemaorg/issues/2659</a>
      */
     @Override
-    public void setCreditText(Text fCreditText) {
-        this.fCreditText = fCreditText;
-    }
-    /**
-     * Text that can be used to credit person(s) and/or organization(s) associated with a published Creative Work.
-     *
-     * @param fCreditText java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2659">https://github.com/schemaorg/schemaorg/issues/2659</a>
-     */
-    @Override
-    public void setCreditText(java.lang.String fCreditText) {
-        this.fCreditText = Text.of(fCreditText);
+    public void setCreditText(Text creditText) {
+        this.creditText = creditText;
     }
 
-    private Event fRecordedAt;
+    private Event recordedAt;
 
     /**
      * The Event where the CreativeWork was recorded. The CreativeWork may capture all or part of the event.
@@ -4182,20 +3416,20 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Event getRecordedAt() {
-        return fRecordedAt;
+        return recordedAt;
     }
 
     /**
      * The Event where the CreativeWork was recorded. The CreativeWork may capture all or part of the event.
      *
-     * @param fRecordedAt Event value to set.
+     * @param recordedAt Event value to set.
      */
     @Override
-    public void setRecordedAt(Event fRecordedAt) {
-        this.fRecordedAt = fRecordedAt;
+    public void setRecordedAt(Event recordedAt) {
+        this.recordedAt = recordedAt;
     }
 
-    private Object fEditEIDR;
+    private Object editEIDR;
 
     /**
      * An [EIDR](https://eidr.org/) (Entertainment Identifier Registry) [[identifier]] representing a specific edit / edition for a work of film or television.
@@ -4210,7 +3444,7 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getEditEIDR() {
-        return (T) fEditEIDR;
+        return (T) editEIDR;
     }
 
     /**
@@ -4220,13 +3454,13 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      * 
      * Since schema.org types like [[Movie]] and [[TVEpisode]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.
      *
-     * @param fEditEIDR URL value to set.
+     * @param editEIDR URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2469">https://github.com/schemaorg/schemaorg/issues/2469</a>
      */
     @Override
-    public void setEditEIDR(URL fEditEIDR) {
-        this.fEditEIDR = fEditEIDR;
+    public void setEditEIDR(URL editEIDR) {
+        this.editEIDR = editEIDR;
     }
     /**
      * An [EIDR](https://eidr.org/) (Entertainment Identifier Registry) [[identifier]] representing a specific edit / edition for a work of film or television.
@@ -4235,46 +3469,16 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      * 
      * Since schema.org types like [[Movie]] and [[TVEpisode]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.
      *
-     * @param fEditEIDR java.net.URL value to set.
+     * @param editEIDR Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2469">https://github.com/schemaorg/schemaorg/issues/2469</a>
      */
     @Override
-    public void setEditEIDR(java.net.URL fEditEIDR) {
-        this.fEditEIDR = URL.of(fEditEIDR);
-    }
-    /**
-     * An [EIDR](https://eidr.org/) (Entertainment Identifier Registry) [[identifier]] representing a specific edit / edition for a work of film or television.
-     * 
-     * For example, the motion picture known as "Ghostbusters" whose [[titleEIDR]] is "10.5240/7EC7-228A-510A-053E-CBB8-J", has several edits e.g. "10.5240/1F2A-E1C5-680A-14C6-E76B-I" and "10.5240/8A35-3BEE-6497-5D12-9E4F-3".
-     * 
-     * Since schema.org types like [[Movie]] and [[TVEpisode]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.
-     *
-     * @param fEditEIDR Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2469">https://github.com/schemaorg/schemaorg/issues/2469</a>
-     */
-    @Override
-    public void setEditEIDR(Text fEditEIDR) {
-        this.fEditEIDR = fEditEIDR;
-    }
-    /**
-     * An [EIDR](https://eidr.org/) (Entertainment Identifier Registry) [[identifier]] representing a specific edit / edition for a work of film or television.
-     * 
-     * For example, the motion picture known as "Ghostbusters" whose [[titleEIDR]] is "10.5240/7EC7-228A-510A-053E-CBB8-J", has several edits e.g. "10.5240/1F2A-E1C5-680A-14C6-E76B-I" and "10.5240/8A35-3BEE-6497-5D12-9E4F-3".
-     * 
-     * Since schema.org types like [[Movie]] and [[TVEpisode]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.
-     *
-     * @param fEditEIDR java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2469">https://github.com/schemaorg/schemaorg/issues/2469</a>
-     */
-    @Override
-    public void setEditEIDR(java.lang.String fEditEIDR) {
-        this.fEditEIDR = Text.of(fEditEIDR);
+    public void setEditEIDR(Text editEIDR) {
+        this.editEIDR = editEIDR;
     }
 
-    private Object fAuthor;
+    private Object author;
 
     /**
      * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
@@ -4283,29 +3487,29 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getAuthor() {
-        return (T) fAuthor;
+        return (T) author;
     }
 
     /**
      * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
      *
-     * @param fAuthor Person value to set.
+     * @param author Person value to set.
      */
     @Override
-    public void setAuthor(Person fAuthor) {
-        this.fAuthor = fAuthor;
+    public void setAuthor(Person author) {
+        this.author = author;
     }
     /**
      * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
      *
-     * @param fAuthor Organization value to set.
+     * @param author Organization value to set.
      */
     @Override
-    public void setAuthor(Organization fAuthor) {
-        this.fAuthor = fAuthor;
+    public void setAuthor(Organization author) {
+        this.author = author;
     }
 
-    private Object fDateModified;
+    private Object dateModified;
 
     /**
      * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
@@ -4314,47 +3518,29 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getDateModified() {
-        return (T) fDateModified;
+        return (T) dateModified;
     }
 
     /**
      * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
      *
-     * @param fDateModified DateTime value to set.
+     * @param dateModified DateTime value to set.
      */
     @Override
-    public void setDateModified(DateTime fDateModified) {
-        this.fDateModified = fDateModified;
+    public void setDateModified(DateTime dateModified) {
+        this.dateModified = dateModified;
     }
     /**
      * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
      *
-     * @param fDateModified java.time.LocalDateTime value to set.
+     * @param dateModified Date value to set.
      */
     @Override
-    public void setDateModified(java.time.LocalDateTime fDateModified) {
-        this.fDateModified = DateTime.of(fDateModified);
-    }
-    /**
-     * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
-     *
-     * @param fDateModified Date value to set.
-     */
-    @Override
-    public void setDateModified(Date fDateModified) {
-        this.fDateModified = fDateModified;
-    }
-    /**
-     * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
-     *
-     * @param fDateModified java.time.LocalDate value to set.
-     */
-    @Override
-    public void setDateModified(java.time.LocalDate fDateModified) {
-        this.fDateModified = Date.of(fDateModified);
+    public void setDateModified(Date dateModified) {
+        this.dateModified = dateModified;
     }
 
-    private Object fSponsor;
+    private Object sponsor;
 
     /**
      * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
@@ -4363,29 +3549,29 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getSponsor() {
-        return (T) fSponsor;
+        return (T) sponsor;
     }
 
     /**
      * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
      *
-     * @param fSponsor Organization value to set.
+     * @param sponsor Organization value to set.
      */
     @Override
-    public void setSponsor(Organization fSponsor) {
-        this.fSponsor = fSponsor;
+    public void setSponsor(Organization sponsor) {
+        this.sponsor = sponsor;
     }
     /**
      * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
      *
-     * @param fSponsor Person value to set.
+     * @param sponsor Person value to set.
      */
     @Override
-    public void setSponsor(Person fSponsor) {
-        this.fSponsor = fSponsor;
+    public void setSponsor(Person sponsor) {
+        this.sponsor = sponsor;
     }
 
-    private Text fAccessibilitySummary;
+    private Text accessibilitySummary;
 
     /**
      * A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as "short descriptions are present but long descriptions will be needed for non-visual users" or "short descriptions are present and no long descriptions are needed."
@@ -4395,31 +3581,21 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getAccessibilitySummary() {
-        return fAccessibilitySummary;
+        return accessibilitySummary;
     }
 
     /**
      * A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as "short descriptions are present but long descriptions will be needed for non-visual users" or "short descriptions are present and no long descriptions are needed."
      *
-     * @param fAccessibilitySummary Text value to set.
+     * @param accessibilitySummary Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
      */
     @Override
-    public void setAccessibilitySummary(Text fAccessibilitySummary) {
-        this.fAccessibilitySummary = fAccessibilitySummary;
-    }
-    /**
-     * A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as "short descriptions are present but long descriptions will be needed for non-visual users" or "short descriptions are present and no long descriptions are needed."
-     *
-     * @param fAccessibilitySummary java.lang.String value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
-     */
-    @Override
-    public void setAccessibilitySummary(java.lang.String fAccessibilitySummary) {
-        this.fAccessibilitySummary = Text.of(fAccessibilitySummary);
+    public void setAccessibilitySummary(Text accessibilitySummary) {
+        this.accessibilitySummary = accessibilitySummary;
     }
 
-    private Object fEncodingFormat;
+    private Object encodingFormat;
 
     /**
      * Media type typically expressed using a MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml) and [MDN reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)) e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc.).
@@ -4432,7 +3608,7 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getEncodingFormat() {
-        return (T) fEncodingFormat;
+        return (T) encodingFormat;
     }
 
     /**
@@ -4442,11 +3618,11 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      * 
      * Unregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.
      *
-     * @param fEncodingFormat Text value to set.
+     * @param encodingFormat Text value to set.
      */
     @Override
-    public void setEncodingFormat(Text fEncodingFormat) {
-        this.fEncodingFormat = fEncodingFormat;
+    public void setEncodingFormat(Text encodingFormat) {
+        this.encodingFormat = encodingFormat;
     }
     /**
      * Media type typically expressed using a MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml) and [MDN reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)) e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc.).
@@ -4455,40 +3631,14 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      * 
      * Unregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.
      *
-     * @param fEncodingFormat java.lang.String value to set.
+     * @param encodingFormat URL value to set.
      */
     @Override
-    public void setEncodingFormat(java.lang.String fEncodingFormat) {
-        this.fEncodingFormat = Text.of(fEncodingFormat);
-    }
-    /**
-     * Media type typically expressed using a MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml) and [MDN reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)) e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc.).
-     * 
-     * In cases where a [[CreativeWork]] has several media type representations, [[encoding]] can be used to indicate each [[MediaObject]] alongside particular [[encodingFormat]] information.
-     * 
-     * Unregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.
-     *
-     * @param fEncodingFormat URL value to set.
-     */
-    @Override
-    public void setEncodingFormat(URL fEncodingFormat) {
-        this.fEncodingFormat = fEncodingFormat;
-    }
-    /**
-     * Media type typically expressed using a MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml) and [MDN reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)) e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc.).
-     * 
-     * In cases where a [[CreativeWork]] has several media type representations, [[encoding]] can be used to indicate each [[MediaObject]] alongside particular [[encodingFormat]] information.
-     * 
-     * Unregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.
-     *
-     * @param fEncodingFormat java.net.URL value to set.
-     */
-    @Override
-    public void setEncodingFormat(java.net.URL fEncodingFormat) {
-        this.fEncodingFormat = URL.of(fEncodingFormat);
+    public void setEncodingFormat(URL encodingFormat) {
+        this.encodingFormat = encodingFormat;
     }
 
-    private Object fMaintainer;
+    private Object maintainer;
 
     /**
      * A maintainer of a [[Dataset]], software package ([[SoftwareApplication]]), or other [[Project]]. A maintainer is a [[Person]] or [[Organization]] that manages contributions to, and/or publication of, some (typically complex) artifact. It is common for distributions of software and data to be based on "upstream" sources. When [[maintainer]] is applied to a specific version of something e.g. a particular version or packaging of a [[Dataset]], it is always  possible that the upstream source has a different maintainer. The [[isBasedOn]] property can be used to indicate such relationships between datasets to make the different maintenance roles clear. Similarly in the case of software, a package may have dedicated maintainers working on integration into software distributions such as Ubuntu, as well as upstream maintainers of the underlying work.
@@ -4500,35 +3650,35 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getMaintainer() {
-        return (T) fMaintainer;
+        return (T) maintainer;
     }
 
     /**
      * A maintainer of a [[Dataset]], software package ([[SoftwareApplication]]), or other [[Project]]. A maintainer is a [[Person]] or [[Organization]] that manages contributions to, and/or publication of, some (typically complex) artifact. It is common for distributions of software and data to be based on "upstream" sources. When [[maintainer]] is applied to a specific version of something e.g. a particular version or packaging of a [[Dataset]], it is always  possible that the upstream source has a different maintainer. The [[isBasedOn]] property can be used to indicate such relationships between datasets to make the different maintenance roles clear. Similarly in the case of software, a package may have dedicated maintainers working on integration into software distributions such as Ubuntu, as well as upstream maintainers of the underlying work.
      *       
      *
-     * @param fMaintainer Person value to set.
+     * @param maintainer Person value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2311">https://github.com/schemaorg/schemaorg/issues/2311</a>
      */
     @Override
-    public void setMaintainer(Person fMaintainer) {
-        this.fMaintainer = fMaintainer;
+    public void setMaintainer(Person maintainer) {
+        this.maintainer = maintainer;
     }
     /**
      * A maintainer of a [[Dataset]], software package ([[SoftwareApplication]]), or other [[Project]]. A maintainer is a [[Person]] or [[Organization]] that manages contributions to, and/or publication of, some (typically complex) artifact. It is common for distributions of software and data to be based on "upstream" sources. When [[maintainer]] is applied to a specific version of something e.g. a particular version or packaging of a [[Dataset]], it is always  possible that the upstream source has a different maintainer. The [[isBasedOn]] property can be used to indicate such relationships between datasets to make the different maintenance roles clear. Similarly in the case of software, a package may have dedicated maintainers working on integration into software distributions such as Ubuntu, as well as upstream maintainers of the underlying work.
      *       
      *
-     * @param fMaintainer Organization value to set.
+     * @param maintainer Organization value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2311">https://github.com/schemaorg/schemaorg/issues/2311</a>
      */
     @Override
-    public void setMaintainer(Organization fMaintainer) {
-        this.fMaintainer = fMaintainer;
+    public void setMaintainer(Organization maintainer) {
+        this.maintainer = maintainer;
     }
 
-    private AlignmentObject fEducationalAlignment;
+    private AlignmentObject educationalAlignment;
 
     /**
      * An alignment to an established educational framework.
@@ -4539,7 +3689,7 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public AlignmentObject getEducationalAlignment() {
-        return fEducationalAlignment;
+        return educationalAlignment;
     }
 
     /**
@@ -4547,14 +3697,14 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      * 
      * This property should not be used where the nature of the alignment can be described using a simple property, for example to express that a resource [[teaches]] or [[assesses]] a competency.
      *
-     * @param fEducationalAlignment AlignmentObject value to set.
+     * @param educationalAlignment AlignmentObject value to set.
      */
     @Override
-    public void setEducationalAlignment(AlignmentObject fEducationalAlignment) {
-        this.fEducationalAlignment = fEducationalAlignment;
+    public void setEducationalAlignment(AlignmentObject educationalAlignment) {
+        this.educationalAlignment = educationalAlignment;
     }
 
-    private Object fAcquireLicensePage;
+    private Object acquireLicensePage;
 
     /**
      * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
@@ -4565,44 +3715,33 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getAcquireLicensePage() {
-        return (T) fAcquireLicensePage;
+        return (T) acquireLicensePage;
     }
 
     /**
      * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
      *
-     * @param fAcquireLicensePage CreativeWork value to set.
+     * @param acquireLicensePage CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
      */
     @Override
-    public void setAcquireLicensePage(CreativeWork fAcquireLicensePage) {
-        this.fAcquireLicensePage = fAcquireLicensePage;
+    public void setAcquireLicensePage(CreativeWork acquireLicensePage) {
+        this.acquireLicensePage = acquireLicensePage;
     }
     /**
      * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
      *
-     * @param fAcquireLicensePage URL value to set.
+     * @param acquireLicensePage URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
      */
     @Override
-    public void setAcquireLicensePage(URL fAcquireLicensePage) {
-        this.fAcquireLicensePage = fAcquireLicensePage;
-    }
-    /**
-     * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
-     *
-     * @param fAcquireLicensePage java.net.URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
-     */
-    @Override
-    public void setAcquireLicensePage(java.net.URL fAcquireLicensePage) {
-        this.fAcquireLicensePage = URL.of(fAcquireLicensePage);
+    public void setAcquireLicensePage(URL acquireLicensePage) {
+        this.acquireLicensePage = acquireLicensePage;
     }
 
-    private Boolean fIsAccessibleForFree;
+    private Boolean isAccessibleForFree;
 
     /**
      * A flag to signal that the item, event, or place is accessible for free.
@@ -4611,29 +3750,20 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Boolean getIsAccessibleForFree() {
-        return fIsAccessibleForFree;
+        return isAccessibleForFree;
     }
 
     /**
      * A flag to signal that the item, event, or place is accessible for free.
      *
-     * @param fIsAccessibleForFree Boolean value to set.
+     * @param isAccessibleForFree Boolean value to set.
      */
     @Override
-    public void setIsAccessibleForFree(Boolean fIsAccessibleForFree) {
-        this.fIsAccessibleForFree = fIsAccessibleForFree;
-    }
-    /**
-     * A flag to signal that the item, event, or place is accessible for free.
-     *
-     * @param fIsAccessibleForFree java.lang.Boolean value to set.
-     */
-    @Override
-    public void setIsAccessibleForFree(java.lang.Boolean fIsAccessibleForFree) {
-        this.fIsAccessibleForFree = Boolean.of(fIsAccessibleForFree);
+    public void setIsAccessibleForFree(Boolean isAccessibleForFree) {
+        this.isAccessibleForFree = isAccessibleForFree;
     }
 
-    private Object fDatePublished;
+    private Object datePublished;
 
     /**
      * Date of first broadcast/publication.
@@ -4642,47 +3772,29 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getDatePublished() {
-        return (T) fDatePublished;
+        return (T) datePublished;
     }
 
     /**
      * Date of first broadcast/publication.
      *
-     * @param fDatePublished Date value to set.
+     * @param datePublished Date value to set.
      */
     @Override
-    public void setDatePublished(Date fDatePublished) {
-        this.fDatePublished = fDatePublished;
+    public void setDatePublished(Date datePublished) {
+        this.datePublished = datePublished;
     }
     /**
      * Date of first broadcast/publication.
      *
-     * @param fDatePublished java.time.LocalDate value to set.
+     * @param datePublished DateTime value to set.
      */
     @Override
-    public void setDatePublished(java.time.LocalDate fDatePublished) {
-        this.fDatePublished = Date.of(fDatePublished);
-    }
-    /**
-     * Date of first broadcast/publication.
-     *
-     * @param fDatePublished DateTime value to set.
-     */
-    @Override
-    public void setDatePublished(DateTime fDatePublished) {
-        this.fDatePublished = fDatePublished;
-    }
-    /**
-     * Date of first broadcast/publication.
-     *
-     * @param fDatePublished java.time.LocalDateTime value to set.
-     */
-    @Override
-    public void setDatePublished(java.time.LocalDateTime fDatePublished) {
-        this.fDatePublished = DateTime.of(fDatePublished);
+    public void setDatePublished(DateTime datePublished) {
+        this.datePublished = datePublished;
     }
 
-    private Place fSpatialCoverage;
+    private Place spatialCoverage;
 
     /**
      * The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of
@@ -4693,7 +3805,7 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Place getSpatialCoverage() {
-        return fSpatialCoverage;
+        return spatialCoverage;
     }
 
     /**
@@ -4701,14 +3813,14 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      *       contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates
      *       areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.
      *
-     * @param fSpatialCoverage Place value to set.
+     * @param spatialCoverage Place value to set.
      */
     @Override
-    public void setSpatialCoverage(Place fSpatialCoverage) {
-        this.fSpatialCoverage = fSpatialCoverage;
+    public void setSpatialCoverage(Place spatialCoverage) {
+        this.spatialCoverage = spatialCoverage;
     }
 
-    private Object fSdLicense;
+    private Object sdLicense;
 
     /**
      * A license document that applies to this structured data, typically indicated by URL.
@@ -4719,44 +3831,33 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getSdLicense() {
-        return (T) fSdLicense;
+        return (T) sdLicense;
     }
 
     /**
      * A license document that applies to this structured data, typically indicated by URL.
      *
-     * @param fSdLicense CreativeWork value to set.
+     * @param sdLicense CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
      */
     @Override
-    public void setSdLicense(CreativeWork fSdLicense) {
-        this.fSdLicense = fSdLicense;
+    public void setSdLicense(CreativeWork sdLicense) {
+        this.sdLicense = sdLicense;
     }
     /**
      * A license document that applies to this structured data, typically indicated by URL.
      *
-     * @param fSdLicense URL value to set.
+     * @param sdLicense URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
      */
     @Override
-    public void setSdLicense(URL fSdLicense) {
-        this.fSdLicense = fSdLicense;
-    }
-    /**
-     * A license document that applies to this structured data, typically indicated by URL.
-     *
-     * @param fSdLicense java.net.URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
-     */
-    @Override
-    public void setSdLicense(java.net.URL fSdLicense) {
-        this.fSdLicense = URL.of(fSdLicense);
+    public void setSdLicense(URL sdLicense) {
+        this.sdLicense = sdLicense;
     }
 
-    private Text fConditionsOfAccess;
+    private Text conditionsOfAccess;
 
     /**
      * Conditions that affect the availability of, or method(s) of access to, an item. Typically used for real world items such as an [[ArchiveComponent]] held by an [[ArchiveOrganization]]. This property is not suitable for use as a general Web access control mechanism. It is expressed only in natural language.<br/><br/>For example "Available by appointment from the Reading Room" or "Accessible only from logged-in accounts ". 
@@ -4767,33 +3868,22 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getConditionsOfAccess() {
-        return fConditionsOfAccess;
+        return conditionsOfAccess;
     }
 
     /**
      * Conditions that affect the availability of, or method(s) of access to, an item. Typically used for real world items such as an [[ArchiveComponent]] held by an [[ArchiveOrganization]]. This property is not suitable for use as a general Web access control mechanism. It is expressed only in natural language.<br/><br/>For example "Available by appointment from the Reading Room" or "Accessible only from logged-in accounts ". 
      *
-     * @param fConditionsOfAccess Text value to set.
+     * @param conditionsOfAccess Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2173">https://github.com/schemaorg/schemaorg/issues/2173</a>
      */
     @Override
-    public void setConditionsOfAccess(Text fConditionsOfAccess) {
-        this.fConditionsOfAccess = fConditionsOfAccess;
-    }
-    /**
-     * Conditions that affect the availability of, or method(s) of access to, an item. Typically used for real world items such as an [[ArchiveComponent]] held by an [[ArchiveOrganization]]. This property is not suitable for use as a general Web access control mechanism. It is expressed only in natural language.<br/><br/>For example "Available by appointment from the Reading Room" or "Accessible only from logged-in accounts ". 
-     *
-     * @param fConditionsOfAccess java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2173">https://github.com/schemaorg/schemaorg/issues/2173</a>
-     */
-    @Override
-    public void setConditionsOfAccess(java.lang.String fConditionsOfAccess) {
-        this.fConditionsOfAccess = Text.of(fConditionsOfAccess);
+    public void setConditionsOfAccess(Text conditionsOfAccess) {
+        this.conditionsOfAccess = conditionsOfAccess;
     }
 
-    private Object fCorrection;
+    private Object correction;
 
     /**
      * Indicates a correction to a [[CreativeWork]], either via a [[CorrectionComment]], textually or in another document.
@@ -4805,71 +3895,47 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getCorrection() {
-        return (T) fCorrection;
+        return (T) correction;
     }
 
     /**
      * Indicates a correction to a [[CreativeWork]], either via a [[CorrectionComment]], textually or in another document.
      *
-     * @param fCorrection URL value to set.
+     * @param correction URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
      */
     @Override
-    public void setCorrection(URL fCorrection) {
-        this.fCorrection = fCorrection;
+    public void setCorrection(URL correction) {
+        this.correction = correction;
     }
     /**
      * Indicates a correction to a [[CreativeWork]], either via a [[CorrectionComment]], textually or in another document.
      *
-     * @param fCorrection java.net.URL value to set.
+     * @param correction Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
      */
     @Override
-    public void setCorrection(java.net.URL fCorrection) {
-        this.fCorrection = URL.of(fCorrection);
+    public void setCorrection(Text correction) {
+        this.correction = correction;
     }
     /**
      * Indicates a correction to a [[CreativeWork]], either via a [[CorrectionComment]], textually or in another document.
      *
-     * @param fCorrection Text value to set.
+     * @param correction CorrectionComment value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
      */
     @Override
-    public void setCorrection(Text fCorrection) {
-        this.fCorrection = fCorrection;
-    }
-    /**
-     * Indicates a correction to a [[CreativeWork]], either via a [[CorrectionComment]], textually or in another document.
-     *
-     * @param fCorrection java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
-     */
-    @Override
-    public void setCorrection(java.lang.String fCorrection) {
-        this.fCorrection = Text.of(fCorrection);
-    }
-    /**
-     * Indicates a correction to a [[CreativeWork]], either via a [[CorrectionComment]], textually or in another document.
-     *
-     * @param fCorrection CorrectionComment value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
-     */
-    @Override
-    public void setCorrection(CorrectionComment fCorrection) {
-        this.fCorrection = fCorrection;
+    public void setCorrection(CorrectionComment correction) {
+        this.correction = correction;
     }
 
-    private Object fContentRating;
+    private Object contentRating;
 
     /**
      * Official rating of a piece of content&#x2014;for example,'MPAA PG-13'.
@@ -4878,38 +3944,29 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getContentRating() {
-        return (T) fContentRating;
+        return (T) contentRating;
     }
 
     /**
      * Official rating of a piece of content&#x2014;for example,'MPAA PG-13'.
      *
-     * @param fContentRating Text value to set.
+     * @param contentRating Text value to set.
      */
     @Override
-    public void setContentRating(Text fContentRating) {
-        this.fContentRating = fContentRating;
+    public void setContentRating(Text contentRating) {
+        this.contentRating = contentRating;
     }
     /**
      * Official rating of a piece of content&#x2014;for example,'MPAA PG-13'.
      *
-     * @param fContentRating java.lang.String value to set.
+     * @param contentRating Rating value to set.
      */
     @Override
-    public void setContentRating(java.lang.String fContentRating) {
-        this.fContentRating = Text.of(fContentRating);
-    }
-    /**
-     * Official rating of a piece of content&#x2014;for example,'MPAA PG-13'.
-     *
-     * @param fContentRating Rating value to set.
-     */
-    @Override
-    public void setContentRating(Rating fContentRating) {
-        this.fContentRating = fContentRating;
+    public void setContentRating(Rating contentRating) {
+        this.contentRating = contentRating;
     }
 
-    private Object fIsPartOf;
+    private Object isPartOf;
 
     /**
      * Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.
@@ -4918,38 +3975,29 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getIsPartOf() {
-        return (T) fIsPartOf;
+        return (T) isPartOf;
     }
 
     /**
      * Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.
      *
-     * @param fIsPartOf URL value to set.
+     * @param isPartOf URL value to set.
      */
     @Override
-    public void setIsPartOf(URL fIsPartOf) {
-        this.fIsPartOf = fIsPartOf;
+    public void setIsPartOf(URL isPartOf) {
+        this.isPartOf = isPartOf;
     }
     /**
      * Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.
      *
-     * @param fIsPartOf java.net.URL value to set.
+     * @param isPartOf CreativeWork value to set.
      */
     @Override
-    public void setIsPartOf(java.net.URL fIsPartOf) {
-        this.fIsPartOf = URL.of(fIsPartOf);
-    }
-    /**
-     * Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.
-     *
-     * @param fIsPartOf CreativeWork value to set.
-     */
-    @Override
-    public void setIsPartOf(CreativeWork fIsPartOf) {
-        this.fIsPartOf = fIsPartOf;
+    public void setIsPartOf(CreativeWork isPartOf) {
+        this.isPartOf = isPartOf;
     }
 
-    private Object fTemporal;
+    private Object temporal;
 
     /**
      * The "temporal" property can be used in cases where more specific properties
@@ -4959,51 +4007,31 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getTemporal() {
-        return (T) fTemporal;
+        return (T) temporal;
     }
 
     /**
      * The "temporal" property can be used in cases where more specific properties
      * (e.g. [[temporalCoverage]], [[dateCreated]], [[dateModified]], [[datePublished]]) are not known to be appropriate.
      *
-     * @param fTemporal DateTime value to set.
+     * @param temporal DateTime value to set.
      */
     @Override
-    public void setTemporal(DateTime fTemporal) {
-        this.fTemporal = fTemporal;
+    public void setTemporal(DateTime temporal) {
+        this.temporal = temporal;
     }
     /**
      * The "temporal" property can be used in cases where more specific properties
      * (e.g. [[temporalCoverage]], [[dateCreated]], [[dateModified]], [[datePublished]]) are not known to be appropriate.
      *
-     * @param fTemporal java.time.LocalDateTime value to set.
+     * @param temporal Text value to set.
      */
     @Override
-    public void setTemporal(java.time.LocalDateTime fTemporal) {
-        this.fTemporal = DateTime.of(fTemporal);
-    }
-    /**
-     * The "temporal" property can be used in cases where more specific properties
-     * (e.g. [[temporalCoverage]], [[dateCreated]], [[dateModified]], [[datePublished]]) are not known to be appropriate.
-     *
-     * @param fTemporal Text value to set.
-     */
-    @Override
-    public void setTemporal(Text fTemporal) {
-        this.fTemporal = fTemporal;
-    }
-    /**
-     * The "temporal" property can be used in cases where more specific properties
-     * (e.g. [[temporalCoverage]], [[dateCreated]], [[dateModified]], [[datePublished]]) are not known to be appropriate.
-     *
-     * @param fTemporal java.lang.String value to set.
-     */
-    @Override
-    public void setTemporal(java.lang.String fTemporal) {
-        this.fTemporal = Text.of(fTemporal);
+    public void setTemporal(Text temporal) {
+        this.temporal = temporal;
     }
 
-    private URL fThumbnailUrl;
+    private URL thumbnailUrl;
 
     /**
      * A thumbnail image relevant to the Thing.
@@ -5012,29 +4040,20 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public URL getThumbnailUrl() {
-        return fThumbnailUrl;
+        return thumbnailUrl;
     }
 
     /**
      * A thumbnail image relevant to the Thing.
      *
-     * @param fThumbnailUrl URL value to set.
+     * @param thumbnailUrl URL value to set.
      */
     @Override
-    public void setThumbnailUrl(URL fThumbnailUrl) {
-        this.fThumbnailUrl = fThumbnailUrl;
-    }
-    /**
-     * A thumbnail image relevant to the Thing.
-     *
-     * @param fThumbnailUrl java.net.URL value to set.
-     */
-    @Override
-    public void setThumbnailUrl(java.net.URL fThumbnailUrl) {
-        this.fThumbnailUrl = URL.of(fThumbnailUrl);
+    public void setThumbnailUrl(URL thumbnailUrl) {
+        this.thumbnailUrl = thumbnailUrl;
     }
 
-    private Object fInLanguage;
+    private Object inLanguage;
 
     /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
@@ -5044,41 +4063,31 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getInLanguage() {
-        return (T) fInLanguage;
+        return (T) inLanguage;
     }
 
     /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
      *
-     * @param fInLanguage Text value to set.
+     * @param inLanguage Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
      */
     @Override
-    public void setInLanguage(Text fInLanguage) {
-        this.fInLanguage = fInLanguage;
+    public void setInLanguage(Text inLanguage) {
+        this.inLanguage = inLanguage;
     }
     /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
      *
-     * @param fInLanguage java.lang.String value to set.
+     * @param inLanguage Language value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
      */
     @Override
-    public void setInLanguage(java.lang.String fInLanguage) {
-        this.fInLanguage = Text.of(fInLanguage);
-    }
-    /**
-     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
-     *
-     * @param fInLanguage Language value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
-     */
-    @Override
-    public void setInLanguage(Language fInLanguage) {
-        this.fInLanguage = fInLanguage;
+    public void setInLanguage(Language inLanguage) {
+        this.inLanguage = inLanguage;
     }
 
-    private Object fLicense;
+    private Object license;
 
     /**
      * A license document that applies to this content, typically indicated by URL.
@@ -5087,38 +4096,29 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getLicense() {
-        return (T) fLicense;
+        return (T) license;
     }
 
     /**
      * A license document that applies to this content, typically indicated by URL.
      *
-     * @param fLicense URL value to set.
+     * @param license URL value to set.
      */
     @Override
-    public void setLicense(URL fLicense) {
-        this.fLicense = fLicense;
+    public void setLicense(URL license) {
+        this.license = license;
     }
     /**
      * A license document that applies to this content, typically indicated by URL.
      *
-     * @param fLicense java.net.URL value to set.
+     * @param license CreativeWork value to set.
      */
     @Override
-    public void setLicense(java.net.URL fLicense) {
-        this.fLicense = URL.of(fLicense);
-    }
-    /**
-     * A license document that applies to this content, typically indicated by URL.
-     *
-     * @param fLicense CreativeWork value to set.
-     */
-    @Override
-    public void setLicense(CreativeWork fLicense) {
-        this.fLicense = fLicense;
+    public void setLicense(CreativeWork license) {
+        this.license = license;
     }
 
-    private Object fCreator;
+    private Object creator;
 
     /**
      * The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.
@@ -5127,29 +4127,29 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getCreator() {
-        return (T) fCreator;
+        return (T) creator;
     }
 
     /**
      * The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.
      *
-     * @param fCreator Organization value to set.
+     * @param creator Organization value to set.
      */
     @Override
-    public void setCreator(Organization fCreator) {
-        this.fCreator = fCreator;
+    public void setCreator(Organization creator) {
+        this.creator = creator;
     }
     /**
      * The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.
      *
-     * @param fCreator Person value to set.
+     * @param creator Person value to set.
      */
     @Override
-    public void setCreator(Person fCreator) {
-        this.fCreator = fCreator;
+    public void setCreator(Person creator) {
+        this.creator = creator;
     }
 
-    private Thing fAbout;
+    private Thing about;
 
     /**
      * The subject matter of the content.
@@ -5159,21 +4159,21 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Thing getAbout() {
-        return fAbout;
+        return about;
     }
 
     /**
      * The subject matter of the content.
      *
-     * @param fAbout Thing value to set.
+     * @param about Thing value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setAbout(Thing fAbout) {
-        this.fAbout = fAbout;
+    public void setAbout(Thing about) {
+        this.about = about;
     }
 
-    private Text fHeadline;
+    private Text headline;
 
     /**
      * Headline of the article.
@@ -5182,29 +4182,20 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getHeadline() {
-        return fHeadline;
+        return headline;
     }
 
     /**
      * Headline of the article.
      *
-     * @param fHeadline Text value to set.
+     * @param headline Text value to set.
      */
     @Override
-    public void setHeadline(Text fHeadline) {
-        this.fHeadline = fHeadline;
-    }
-    /**
-     * Headline of the article.
-     *
-     * @param fHeadline java.lang.String value to set.
-     */
-    @Override
-    public void setHeadline(java.lang.String fHeadline) {
-        this.fHeadline = Text.of(fHeadline);
+    public void setHeadline(Text headline) {
+        this.headline = headline;
     }
 
-    private Text fAccessibilityAPI;
+    private Text accessibilityAPI;
 
     /**
      * Indicates that the resource is compatible with the referenced accessibility API. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityAPI-vocabulary).
@@ -5213,29 +4204,20 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getAccessibilityAPI() {
-        return fAccessibilityAPI;
+        return accessibilityAPI;
     }
 
     /**
      * Indicates that the resource is compatible with the referenced accessibility API. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityAPI-vocabulary).
      *
-     * @param fAccessibilityAPI Text value to set.
+     * @param accessibilityAPI Text value to set.
      */
     @Override
-    public void setAccessibilityAPI(Text fAccessibilityAPI) {
-        this.fAccessibilityAPI = fAccessibilityAPI;
-    }
-    /**
-     * Indicates that the resource is compatible with the referenced accessibility API. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityAPI-vocabulary).
-     *
-     * @param fAccessibilityAPI java.lang.String value to set.
-     */
-    @Override
-    public void setAccessibilityAPI(java.lang.String fAccessibilityAPI) {
-        this.fAccessibilityAPI = Text.of(fAccessibilityAPI);
+    public void setAccessibilityAPI(Text accessibilityAPI) {
+        this.accessibilityAPI = accessibilityAPI;
     }
 
-    private Organization fPublisherImprint;
+    private Organization publisherImprint;
 
     /**
      * The publishing division which published the comic.
@@ -5245,21 +4227,21 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Organization getPublisherImprint() {
-        return fPublisherImprint;
+        return publisherImprint;
     }
 
     /**
      * The publishing division which published the comic.
      *
-     * @param fPublisherImprint Organization value to set.
+     * @param publisherImprint Organization value to set.
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
     @Override
-    public void setPublisherImprint(Organization fPublisherImprint) {
-        this.fPublisherImprint = fPublisherImprint;
+    public void setPublisherImprint(Organization publisherImprint) {
+        this.publisherImprint = publisherImprint;
     }
 
-    private Object fIsBasedOnUrl;
+    private Object isBasedOnUrl;
 
     /**
      * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
@@ -5268,47 +4250,38 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getIsBasedOnUrl() {
-        return (T) fIsBasedOnUrl;
+        return (T) isBasedOnUrl;
     }
 
     /**
      * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
      *
-     * @param fIsBasedOnUrl URL value to set.
+     * @param isBasedOnUrl URL value to set.
      */
     @Override
-    public void setIsBasedOnUrl(URL fIsBasedOnUrl) {
-        this.fIsBasedOnUrl = fIsBasedOnUrl;
+    public void setIsBasedOnUrl(URL isBasedOnUrl) {
+        this.isBasedOnUrl = isBasedOnUrl;
     }
     /**
      * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
      *
-     * @param fIsBasedOnUrl java.net.URL value to set.
+     * @param isBasedOnUrl CreativeWork value to set.
      */
     @Override
-    public void setIsBasedOnUrl(java.net.URL fIsBasedOnUrl) {
-        this.fIsBasedOnUrl = URL.of(fIsBasedOnUrl);
+    public void setIsBasedOnUrl(CreativeWork isBasedOnUrl) {
+        this.isBasedOnUrl = isBasedOnUrl;
     }
     /**
      * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
      *
-     * @param fIsBasedOnUrl CreativeWork value to set.
+     * @param isBasedOnUrl Product value to set.
      */
     @Override
-    public void setIsBasedOnUrl(CreativeWork fIsBasedOnUrl) {
-        this.fIsBasedOnUrl = fIsBasedOnUrl;
-    }
-    /**
-     * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
-     *
-     * @param fIsBasedOnUrl Product value to set.
-     */
-    @Override
-    public void setIsBasedOnUrl(Product fIsBasedOnUrl) {
-        this.fIsBasedOnUrl = fIsBasedOnUrl;
+    public void setIsBasedOnUrl(Product isBasedOnUrl) {
+        this.isBasedOnUrl = isBasedOnUrl;
     }
 
-    private MediaObject fEncodings;
+    private MediaObject encodings;
 
     /**
      * A media object that encodes this CreativeWork.
@@ -5317,20 +4290,20 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public MediaObject getEncodings() {
-        return fEncodings;
+        return encodings;
     }
 
     /**
      * A media object that encodes this CreativeWork.
      *
-     * @param fEncodings MediaObject value to set.
+     * @param encodings MediaObject value to set.
      */
     @Override
-    public void setEncodings(MediaObject fEncodings) {
-        this.fEncodings = fEncodings;
+    public void setEncodings(MediaObject encodings) {
+        this.encodings = encodings;
     }
 
-    private Claim fInterpretedAsClaim;
+    private Claim interpretedAsClaim;
 
     /**
      * Used to indicate a specific claim contained, implied, translated or refined from the content of a [[MediaObject]] or other [[CreativeWork]]. The interpreting party can be indicated using [[claimInterpreter]].
@@ -5341,22 +4314,22 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Claim getInterpretedAsClaim() {
-        return fInterpretedAsClaim;
+        return interpretedAsClaim;
     }
 
     /**
      * Used to indicate a specific claim contained, implied, translated or refined from the content of a [[MediaObject]] or other [[CreativeWork]]. The interpreting party can be indicated using [[claimInterpreter]].
      *
-     * @param fInterpretedAsClaim Claim value to set.
+     * @param interpretedAsClaim Claim value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
     @Override
-    public void setInterpretedAsClaim(Claim fInterpretedAsClaim) {
-        this.fInterpretedAsClaim = fInterpretedAsClaim;
+    public void setInterpretedAsClaim(Claim interpretedAsClaim) {
+        this.interpretedAsClaim = interpretedAsClaim;
     }
 
-    private Text fAccessibilityControl;
+    private Text accessibilityControl;
 
     /**
      * Identifies input methods that are sufficient to fully control the described resource. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityControl-vocabulary).
@@ -5365,29 +4338,20 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getAccessibilityControl() {
-        return fAccessibilityControl;
+        return accessibilityControl;
     }
 
     /**
      * Identifies input methods that are sufficient to fully control the described resource. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityControl-vocabulary).
      *
-     * @param fAccessibilityControl Text value to set.
+     * @param accessibilityControl Text value to set.
      */
     @Override
-    public void setAccessibilityControl(Text fAccessibilityControl) {
-        this.fAccessibilityControl = fAccessibilityControl;
-    }
-    /**
-     * Identifies input methods that are sufficient to fully control the described resource. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityControl-vocabulary).
-     *
-     * @param fAccessibilityControl java.lang.String value to set.
-     */
-    @Override
-    public void setAccessibilityControl(java.lang.String fAccessibilityControl) {
-        this.fAccessibilityControl = Text.of(fAccessibilityControl);
+    public void setAccessibilityControl(Text accessibilityControl) {
+        this.accessibilityControl = accessibilityControl;
     }
 
-    private Object fCitation;
+    private Object citation;
 
     /**
      * A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.
@@ -5396,38 +4360,29 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getCitation() {
-        return (T) fCitation;
+        return (T) citation;
     }
 
     /**
      * A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.
      *
-     * @param fCitation CreativeWork value to set.
+     * @param citation CreativeWork value to set.
      */
     @Override
-    public void setCitation(CreativeWork fCitation) {
-        this.fCitation = fCitation;
+    public void setCitation(CreativeWork citation) {
+        this.citation = citation;
     }
     /**
      * A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.
      *
-     * @param fCitation Text value to set.
+     * @param citation Text value to set.
      */
     @Override
-    public void setCitation(Text fCitation) {
-        this.fCitation = fCitation;
-    }
-    /**
-     * A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.
-     *
-     * @param fCitation java.lang.String value to set.
-     */
-    @Override
-    public void setCitation(java.lang.String fCitation) {
-        this.fCitation = Text.of(fCitation);
+    public void setCitation(Text citation) {
+        this.citation = citation;
     }
 
-    private Object fVersion;
+    private Object version;
 
     /**
      * The version of the CreativeWork embodied by a specified resource.
@@ -5436,47 +4391,29 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getVersion() {
-        return (T) fVersion;
+        return (T) version;
     }
 
     /**
      * The version of the CreativeWork embodied by a specified resource.
      *
-     * @param fVersion Number value to set.
+     * @param version Number value to set.
      */
     @Override
-    public void setVersion(Number fVersion) {
-        this.fVersion = fVersion;
+    public void setVersion(Number version) {
+        this.version = version;
     }
     /**
      * The version of the CreativeWork embodied by a specified resource.
      *
-     * @param fVersion java.lang.Number value to set.
+     * @param version Text value to set.
      */
     @Override
-    public void setVersion(java.lang.Number fVersion) {
-        this.fVersion = Number.of(fVersion);
-    }
-    /**
-     * The version of the CreativeWork embodied by a specified resource.
-     *
-     * @param fVersion Text value to set.
-     */
-    @Override
-    public void setVersion(Text fVersion) {
-        this.fVersion = fVersion;
-    }
-    /**
-     * The version of the CreativeWork embodied by a specified resource.
-     *
-     * @param fVersion java.lang.String value to set.
-     */
-    @Override
-    public void setVersion(java.lang.String fVersion) {
-        this.fVersion = Text.of(fVersion);
+    public void setVersion(Text version) {
+        this.version = version;
     }
 
-    private Object fArchivedAt;
+    private Object archivedAt;
 
     /**
      * Indicates a page or other link involved in archival of a [[CreativeWork]]. In the case of [[MediaReview]], the items in a [[MediaReviewItem]] may often become inaccessible, but be archived by archival, journalistic, activist, or law enforcement organizations. In such cases, the referenced page may not directly publish the content.
@@ -5487,44 +4424,33 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getArchivedAt() {
-        return (T) fArchivedAt;
+        return (T) archivedAt;
     }
 
     /**
      * Indicates a page or other link involved in archival of a [[CreativeWork]]. In the case of [[MediaReview]], the items in a [[MediaReviewItem]] may often become inaccessible, but be archived by archival, journalistic, activist, or law enforcement organizations. In such cases, the referenced page may not directly publish the content.
      *
-     * @param fArchivedAt WebPage value to set.
+     * @param archivedAt WebPage value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
     @Override
-    public void setArchivedAt(WebPage fArchivedAt) {
-        this.fArchivedAt = fArchivedAt;
+    public void setArchivedAt(WebPage archivedAt) {
+        this.archivedAt = archivedAt;
     }
     /**
      * Indicates a page or other link involved in archival of a [[CreativeWork]]. In the case of [[MediaReview]], the items in a [[MediaReviewItem]] may often become inaccessible, but be archived by archival, journalistic, activist, or law enforcement organizations. In such cases, the referenced page may not directly publish the content.
      *
-     * @param fArchivedAt URL value to set.
+     * @param archivedAt URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
     @Override
-    public void setArchivedAt(URL fArchivedAt) {
-        this.fArchivedAt = fArchivedAt;
-    }
-    /**
-     * Indicates a page or other link involved in archival of a [[CreativeWork]]. In the case of [[MediaReview]], the items in a [[MediaReviewItem]] may often become inaccessible, but be archived by archival, journalistic, activist, or law enforcement organizations. In such cases, the referenced page may not directly publish the content.
-     *
-     * @param fArchivedAt java.net.URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
-     */
-    @Override
-    public void setArchivedAt(java.net.URL fArchivedAt) {
-        this.fArchivedAt = URL.of(fArchivedAt);
+    public void setArchivedAt(URL archivedAt) {
+        this.archivedAt = archivedAt;
     }
 
-    private Object fLearningResourceType;
+    private Object learningResourceType;
 
     /**
      * The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.
@@ -5533,38 +4459,29 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getLearningResourceType() {
-        return (T) fLearningResourceType;
+        return (T) learningResourceType;
     }
 
     /**
      * The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.
      *
-     * @param fLearningResourceType DefinedTerm value to set.
+     * @param learningResourceType DefinedTerm value to set.
      */
     @Override
-    public void setLearningResourceType(DefinedTerm fLearningResourceType) {
-        this.fLearningResourceType = fLearningResourceType;
+    public void setLearningResourceType(DefinedTerm learningResourceType) {
+        this.learningResourceType = learningResourceType;
     }
     /**
      * The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.
      *
-     * @param fLearningResourceType Text value to set.
+     * @param learningResourceType Text value to set.
      */
     @Override
-    public void setLearningResourceType(Text fLearningResourceType) {
-        this.fLearningResourceType = fLearningResourceType;
-    }
-    /**
-     * The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.
-     *
-     * @param fLearningResourceType java.lang.String value to set.
-     */
-    @Override
-    public void setLearningResourceType(java.lang.String fLearningResourceType) {
-        this.fLearningResourceType = Text.of(fLearningResourceType);
+    public void setLearningResourceType(Text learningResourceType) {
+        this.learningResourceType = learningResourceType;
     }
 
-    private MediaObject fEncoding;
+    private MediaObject encoding;
 
     /**
      * A media object that encodes this CreativeWork. This property is a synonym for associatedMedia.
@@ -5573,20 +4490,20 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public MediaObject getEncoding() {
-        return fEncoding;
+        return encoding;
     }
 
     /**
      * A media object that encodes this CreativeWork. This property is a synonym for associatedMedia.
      *
-     * @param fEncoding MediaObject value to set.
+     * @param encoding MediaObject value to set.
      */
     @Override
-    public void setEncoding(MediaObject fEncoding) {
-        this.fEncoding = fEncoding;
+    public void setEncoding(MediaObject encoding) {
+        this.encoding = encoding;
     }
 
-    private Object fAudio;
+    private Object audio;
 
     /**
      * An embedded audio object.
@@ -5596,41 +4513,41 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getAudio() {
-        return (T) fAudio;
+        return (T) audio;
     }
 
     /**
      * An embedded audio object.
      *
-     * @param fAudio AudioObject value to set.
+     * @param audio AudioObject value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2420">https://github.com/schemaorg/schemaorg/issues/2420</a>
      */
     @Override
-    public void setAudio(AudioObject fAudio) {
-        this.fAudio = fAudio;
+    public void setAudio(AudioObject audio) {
+        this.audio = audio;
     }
     /**
      * An embedded audio object.
      *
-     * @param fAudio MusicRecording value to set.
+     * @param audio MusicRecording value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2420">https://github.com/schemaorg/schemaorg/issues/2420</a>
      */
     @Override
-    public void setAudio(MusicRecording fAudio) {
-        this.fAudio = fAudio;
+    public void setAudio(MusicRecording audio) {
+        this.audio = audio;
     }
     /**
      * An embedded audio object.
      *
-     * @param fAudio Clip value to set.
+     * @param audio Clip value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2420">https://github.com/schemaorg/schemaorg/issues/2420</a>
      */
     @Override
-    public void setAudio(Clip fAudio) {
-        this.fAudio = fAudio;
+    public void setAudio(Clip audio) {
+        this.audio = audio;
     }
 
-    private Thing fMentions;
+    private Thing mentions;
 
     /**
      * Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept.
@@ -5639,20 +4556,20 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Thing getMentions() {
-        return fMentions;
+        return mentions;
     }
 
     /**
      * Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept.
      *
-     * @param fMentions Thing value to set.
+     * @param mentions Thing value to set.
      */
     @Override
-    public void setMentions(Thing fMentions) {
-        this.fMentions = fMentions;
+    public void setMentions(Thing mentions) {
+        this.mentions = mentions;
     }
 
-    private ItemList fAccessModeSufficient;
+    private ItemList accessModeSufficient;
 
     /**
      * A list of single or combined accessModes that are sufficient to understand all the intellectual content of a resource. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessModeSufficient-vocabulary).
@@ -5662,21 +4579,21 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public ItemList getAccessModeSufficient() {
-        return fAccessModeSufficient;
+        return accessModeSufficient;
     }
 
     /**
      * A list of single or combined accessModes that are sufficient to understand all the intellectual content of a resource. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessModeSufficient-vocabulary).
      *
-     * @param fAccessModeSufficient ItemList value to set.
+     * @param accessModeSufficient ItemList value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
      */
     @Override
-    public void setAccessModeSufficient(ItemList fAccessModeSufficient) {
-        this.fAccessModeSufficient = fAccessModeSufficient;
+    public void setAccessModeSufficient(ItemList accessModeSufficient) {
+        this.accessModeSufficient = accessModeSufficient;
     }
 
-    private CreativeWork fHasPart;
+    private CreativeWork hasPart;
 
     /**
      * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
@@ -5686,21 +4603,21 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public CreativeWork getHasPart() {
-        return fHasPart;
+        return hasPart;
     }
 
     /**
      * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
      *
-     * @param fHasPart CreativeWork value to set.
+     * @param hasPart CreativeWork value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
     @Override
-    public void setHasPart(CreativeWork fHasPart) {
-        this.fHasPart = fHasPart;
+    public void setHasPart(CreativeWork hasPart) {
+        this.hasPart = hasPart;
     }
 
-    private Object fTemporalCoverage;
+    private Object temporalCoverage;
 
     /**
      * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
@@ -5713,7 +4630,7 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getTemporalCoverage() {
-        return (T) fTemporalCoverage;
+        return (T) temporalCoverage;
     }
 
     /**
@@ -5723,11 +4640,11 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      * 
      * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
      *
-     * @param fTemporalCoverage URL value to set.
+     * @param temporalCoverage URL value to set.
      */
     @Override
-    public void setTemporalCoverage(URL fTemporalCoverage) {
-        this.fTemporalCoverage = fTemporalCoverage;
+    public void setTemporalCoverage(URL temporalCoverage) {
+        this.temporalCoverage = temporalCoverage;
     }
     /**
      * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
@@ -5736,11 +4653,11 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      * 
      * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
      *
-     * @param fTemporalCoverage java.net.URL value to set.
+     * @param temporalCoverage DateTime value to set.
      */
     @Override
-    public void setTemporalCoverage(java.net.URL fTemporalCoverage) {
-        this.fTemporalCoverage = URL.of(fTemporalCoverage);
+    public void setTemporalCoverage(DateTime temporalCoverage) {
+        this.temporalCoverage = temporalCoverage;
     }
     /**
      * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
@@ -5749,53 +4666,14 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      * 
      * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
      *
-     * @param fTemporalCoverage DateTime value to set.
+     * @param temporalCoverage Text value to set.
      */
     @Override
-    public void setTemporalCoverage(DateTime fTemporalCoverage) {
-        this.fTemporalCoverage = fTemporalCoverage;
-    }
-    /**
-     * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
-     *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content e.g. ScholarlyArticle, Book, TVSeries or TVEpisode may indicate their temporalCoverage in broader terms - textually or via well-known URL.
-     *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945".
-     * 
-     * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
-     *
-     * @param fTemporalCoverage java.time.LocalDateTime value to set.
-     */
-    @Override
-    public void setTemporalCoverage(java.time.LocalDateTime fTemporalCoverage) {
-        this.fTemporalCoverage = DateTime.of(fTemporalCoverage);
-    }
-    /**
-     * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
-     *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content e.g. ScholarlyArticle, Book, TVSeries or TVEpisode may indicate their temporalCoverage in broader terms - textually or via well-known URL.
-     *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945".
-     * 
-     * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
-     *
-     * @param fTemporalCoverage Text value to set.
-     */
-    @Override
-    public void setTemporalCoverage(Text fTemporalCoverage) {
-        this.fTemporalCoverage = fTemporalCoverage;
-    }
-    /**
-     * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
-     *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content e.g. ScholarlyArticle, Book, TVSeries or TVEpisode may indicate their temporalCoverage in broader terms - textually or via well-known URL.
-     *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945".
-     * 
-     * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
-     *
-     * @param fTemporalCoverage java.lang.String value to set.
-     */
-    @Override
-    public void setTemporalCoverage(java.lang.String fTemporalCoverage) {
-        this.fTemporalCoverage = Text.of(fTemporalCoverage);
+    public void setTemporalCoverage(Text temporalCoverage) {
+        this.temporalCoverage = temporalCoverage;
     }
 
-    private Object fContributor;
+    private Object contributor;
 
     /**
      * A secondary contributor to the CreativeWork or Event.
@@ -5804,29 +4682,29 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getContributor() {
-        return (T) fContributor;
+        return (T) contributor;
     }
 
     /**
      * A secondary contributor to the CreativeWork or Event.
      *
-     * @param fContributor Organization value to set.
+     * @param contributor Organization value to set.
      */
     @Override
-    public void setContributor(Organization fContributor) {
-        this.fContributor = fContributor;
+    public void setContributor(Organization contributor) {
+        this.contributor = contributor;
     }
     /**
      * A secondary contributor to the CreativeWork or Event.
      *
-     * @param fContributor Person value to set.
+     * @param contributor Person value to set.
      */
     @Override
-    public void setContributor(Person fContributor) {
-        this.fContributor = fContributor;
+    public void setContributor(Person contributor) {
+        this.contributor = contributor;
     }
 
-    private Object fVideo;
+    private Object video;
 
     /**
      * An embedded video object.
@@ -5835,25 +4713,25 @@ public class ProductCollectionImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getVideo() {
-        return (T) fVideo;
+        return (T) video;
     }
 
     /**
      * An embedded video object.
      *
-     * @param fVideo Clip value to set.
+     * @param video Clip value to set.
      */
     @Override
-    public void setVideo(Clip fVideo) {
-        this.fVideo = fVideo;
+    public void setVideo(Clip video) {
+        this.video = video;
     }
     /**
      * An embedded video object.
      *
-     * @param fVideo VideoObject value to set.
+     * @param video VideoObject value to set.
      */
     @Override
-    public void setVideo(VideoObject fVideo) {
-        this.fVideo = fVideo;
+    public void setVideo(VideoObject video) {
+        this.video = video;
     }
 }

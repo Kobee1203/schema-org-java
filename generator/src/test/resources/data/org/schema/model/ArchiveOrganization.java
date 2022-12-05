@@ -28,9 +28,9 @@ public interface ArchiveOrganization extends LocalBusiness {
     /**
      * Collection, [fonds](https://en.wikipedia.org/wiki/Fonds), or item held, kept or maintained by an [[ArchiveOrganization]].
      *
-     * @param fArchiveHeld ArchiveComponent value to set.
+     * @param archiveHeld ArchiveComponent value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1758">https://github.com/schemaorg/schemaorg/issues/1758</a>
      */
-    void setArchiveHeld(ArchiveComponent fArchiveHeld);
+    void setArchiveHeld(ArchiveComponent archiveHeld);
 }

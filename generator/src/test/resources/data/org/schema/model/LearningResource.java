@@ -35,27 +35,19 @@ public interface LearningResource extends CreativeWork {
     /**
      * The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.
      *
-     * @param fTeaches DefinedTerm value to set.
+     * @param teaches DefinedTerm value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
      */
-    void setTeaches(DefinedTerm fTeaches);
+    void setTeaches(DefinedTerm teaches);
     /**
      * The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.
      *
-     * @param fTeaches Text value to set.
+     * @param teaches Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
      */
-    void setTeaches(Text fTeaches);
-    /**
-     * The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.
-     *
-     * @param fTeaches java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
-     */
-    void setTeaches(java.lang.String fTeaches);
+    void setTeaches(Text teaches);
 
     /**
      * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
@@ -69,43 +61,27 @@ public interface LearningResource extends CreativeWork {
     /**
      * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
      *
-     * @param fEducationalLevel URL value to set.
+     * @param educationalLevel URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    void setEducationalLevel(URL fEducationalLevel);
+    void setEducationalLevel(URL educationalLevel);
     /**
      * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
      *
-     * @param fEducationalLevel java.net.URL value to set.
+     * @param educationalLevel DefinedTerm value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    void setEducationalLevel(java.net.URL fEducationalLevel);
+    void setEducationalLevel(DefinedTerm educationalLevel);
     /**
      * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
      *
-     * @param fEducationalLevel DefinedTerm value to set.
+     * @param educationalLevel Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    void setEducationalLevel(DefinedTerm fEducationalLevel);
-    /**
-     * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
-     *
-     * @param fEducationalLevel Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
-     */
-    void setEducationalLevel(Text fEducationalLevel);
-    /**
-     * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
-     *
-     * @param fEducationalLevel java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
-     */
-    void setEducationalLevel(java.lang.String fEducationalLevel);
+    void setEducationalLevel(Text educationalLevel);
 
     /**
      * The item being described is intended to assess the competency or learning outcome defined by the referenced term.
@@ -119,27 +95,19 @@ public interface LearningResource extends CreativeWork {
     /**
      * The item being described is intended to assess the competency or learning outcome defined by the referenced term.
      *
-     * @param fAssesses Text value to set.
+     * @param assesses Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
      */
-    void setAssesses(Text fAssesses);
+    void setAssesses(Text assesses);
     /**
      * The item being described is intended to assess the competency or learning outcome defined by the referenced term.
      *
-     * @param fAssesses java.lang.String value to set.
+     * @param assesses DefinedTerm value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
      */
-    void setAssesses(java.lang.String fAssesses);
-    /**
-     * The item being described is intended to assess the competency or learning outcome defined by the referenced term.
-     *
-     * @param fAssesses DefinedTerm value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
-     */
-    void setAssesses(DefinedTerm fAssesses);
+    void setAssesses(DefinedTerm assesses);
 
     /**
      * The purpose of a work in the context of education; for example, 'assignment', 'group work'.
@@ -151,21 +119,15 @@ public interface LearningResource extends CreativeWork {
     /**
      * The purpose of a work in the context of education; for example, 'assignment', 'group work'.
      *
-     * @param fEducationalUse DefinedTerm value to set.
+     * @param educationalUse DefinedTerm value to set.
      */
-    void setEducationalUse(DefinedTerm fEducationalUse);
+    void setEducationalUse(DefinedTerm educationalUse);
     /**
      * The purpose of a work in the context of education; for example, 'assignment', 'group work'.
      *
-     * @param fEducationalUse Text value to set.
+     * @param educationalUse Text value to set.
      */
-    void setEducationalUse(Text fEducationalUse);
-    /**
-     * The purpose of a work in the context of education; for example, 'assignment', 'group work'.
-     *
-     * @param fEducationalUse java.lang.String value to set.
-     */
-    void setEducationalUse(java.lang.String fEducationalUse);
+    void setEducationalUse(Text educationalUse);
 
     /**
      * An alignment to an established educational framework.
@@ -181,9 +143,9 @@ public interface LearningResource extends CreativeWork {
      * 
      * This property should not be used where the nature of the alignment can be described using a simple property, for example to express that a resource [[teaches]] or [[assesses]] a competency.
      *
-     * @param fEducationalAlignment AlignmentObject value to set.
+     * @param educationalAlignment AlignmentObject value to set.
      */
-    void setEducationalAlignment(AlignmentObject fEducationalAlignment);
+    void setEducationalAlignment(AlignmentObject educationalAlignment);
 
     /**
      * Knowledge, skill, ability or personal attribute that must be demonstrated by a person or other entity in order to do something such as earn an Educational Occupational Credential or understand a LearningResource.
@@ -197,43 +159,27 @@ public interface LearningResource extends CreativeWork {
     /**
      * Knowledge, skill, ability or personal attribute that must be demonstrated by a person or other entity in order to do something such as earn an Educational Occupational Credential or understand a LearningResource.
      *
-     * @param fCompetencyRequired Text value to set.
+     * @param competencyRequired Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    void setCompetencyRequired(Text fCompetencyRequired);
+    void setCompetencyRequired(Text competencyRequired);
     /**
      * Knowledge, skill, ability or personal attribute that must be demonstrated by a person or other entity in order to do something such as earn an Educational Occupational Credential or understand a LearningResource.
      *
-     * @param fCompetencyRequired java.lang.String value to set.
+     * @param competencyRequired DefinedTerm value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    void setCompetencyRequired(java.lang.String fCompetencyRequired);
+    void setCompetencyRequired(DefinedTerm competencyRequired);
     /**
      * Knowledge, skill, ability or personal attribute that must be demonstrated by a person or other entity in order to do something such as earn an Educational Occupational Credential or understand a LearningResource.
      *
-     * @param fCompetencyRequired DefinedTerm value to set.
+     * @param competencyRequired URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    void setCompetencyRequired(DefinedTerm fCompetencyRequired);
-    /**
-     * Knowledge, skill, ability or personal attribute that must be demonstrated by a person or other entity in order to do something such as earn an Educational Occupational Credential or understand a LearningResource.
-     *
-     * @param fCompetencyRequired URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
-     */
-    void setCompetencyRequired(URL fCompetencyRequired);
-    /**
-     * Knowledge, skill, ability or personal attribute that must be demonstrated by a person or other entity in order to do something such as earn an Educational Occupational Credential or understand a LearningResource.
-     *
-     * @param fCompetencyRequired java.net.URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
-     */
-    void setCompetencyRequired(java.net.URL fCompetencyRequired);
+    void setCompetencyRequired(URL competencyRequired);
 
     /**
      * The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.
@@ -245,19 +191,13 @@ public interface LearningResource extends CreativeWork {
     /**
      * The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.
      *
-     * @param fLearningResourceType DefinedTerm value to set.
+     * @param learningResourceType DefinedTerm value to set.
      */
-    void setLearningResourceType(DefinedTerm fLearningResourceType);
+    void setLearningResourceType(DefinedTerm learningResourceType);
     /**
      * The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.
      *
-     * @param fLearningResourceType Text value to set.
+     * @param learningResourceType Text value to set.
      */
-    void setLearningResourceType(Text fLearningResourceType);
-    /**
-     * The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.
-     *
-     * @param fLearningResourceType java.lang.String value to set.
-     */
-    void setLearningResourceType(java.lang.String fLearningResourceType);
+    void setLearningResourceType(Text learningResourceType);
 }

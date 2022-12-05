@@ -39,15 +39,15 @@ public interface Grant extends Intangible {
     /**
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
-     * @param fFunder Organization value to set.
+     * @param funder Organization value to set.
      */
-    void setFunder(Organization fFunder);
+    void setFunder(Organization funder);
     /**
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
-     * @param fFunder Person value to set.
+     * @param funder Person value to set.
      */
-    void setFunder(Person fFunder);
+    void setFunder(Person funder);
 
     /**
      * Indicates something directly or indirectly funded or sponsored through a [[Grant]]. See also [[ownershipFundingInfo]].
@@ -63,73 +63,73 @@ public interface Grant extends Intangible {
     /**
      * Indicates something directly or indirectly funded or sponsored through a [[Grant]]. See also [[ownershipFundingInfo]].
      *
-     * @param fFundedItem Product value to set.
+     * @param fundedItem Product value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
      */
-    void setFundedItem(Product fFundedItem);
+    void setFundedItem(Product fundedItem);
     /**
      * Indicates something directly or indirectly funded or sponsored through a [[Grant]]. See also [[ownershipFundingInfo]].
      *
-     * @param fFundedItem Person value to set.
+     * @param fundedItem Person value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
      */
-    void setFundedItem(Person fFundedItem);
+    void setFundedItem(Person fundedItem);
     /**
      * Indicates something directly or indirectly funded or sponsored through a [[Grant]]. See also [[ownershipFundingInfo]].
      *
-     * @param fFundedItem BioChemEntity value to set.
+     * @param fundedItem BioChemEntity value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
      */
-    void setFundedItem(BioChemEntity fFundedItem);
+    void setFundedItem(BioChemEntity fundedItem);
     /**
      * Indicates something directly or indirectly funded or sponsored through a [[Grant]]. See also [[ownershipFundingInfo]].
      *
-     * @param fFundedItem Event value to set.
+     * @param fundedItem Event value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
      */
-    void setFundedItem(Event fFundedItem);
+    void setFundedItem(Event fundedItem);
     /**
      * Indicates something directly or indirectly funded or sponsored through a [[Grant]]. See also [[ownershipFundingInfo]].
      *
-     * @param fFundedItem MedicalEntity value to set.
+     * @param fundedItem MedicalEntity value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
      */
-    void setFundedItem(MedicalEntity fFundedItem);
+    void setFundedItem(MedicalEntity fundedItem);
     /**
      * Indicates something directly or indirectly funded or sponsored through a [[Grant]]. See also [[ownershipFundingInfo]].
      *
-     * @param fFundedItem CreativeWork value to set.
+     * @param fundedItem CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
      */
-    void setFundedItem(CreativeWork fFundedItem);
+    void setFundedItem(CreativeWork fundedItem);
     /**
      * Indicates something directly or indirectly funded or sponsored through a [[Grant]]. See also [[ownershipFundingInfo]].
      *
-     * @param fFundedItem Organization value to set.
+     * @param fundedItem Organization value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
      */
-    void setFundedItem(Organization fFundedItem);
+    void setFundedItem(Organization fundedItem);
 
     /**
      * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
@@ -141,13 +141,13 @@ public interface Grant extends Intangible {
     /**
      * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
      *
-     * @param fSponsor Organization value to set.
+     * @param sponsor Organization value to set.
      */
-    void setSponsor(Organization fSponsor);
+    void setSponsor(Organization sponsor);
     /**
      * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
      *
-     * @param fSponsor Person value to set.
+     * @param sponsor Person value to set.
      */
-    void setSponsor(Person fSponsor);
+    void setSponsor(Person sponsor);
 }

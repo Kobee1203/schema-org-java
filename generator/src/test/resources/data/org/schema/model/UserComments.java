@@ -31,15 +31,9 @@ public interface UserComments extends UserInteraction {
     /**
      * The URL at which a reply may be posted to the specified UserComment.
      *
-     * @param fReplyToUrl URL value to set.
+     * @param replyToUrl URL value to set.
      */
-    void setReplyToUrl(URL fReplyToUrl);
-    /**
-     * The URL at which a reply may be posted to the specified UserComment.
-     *
-     * @param fReplyToUrl java.net.URL value to set.
-     */
-    void setReplyToUrl(java.net.URL fReplyToUrl);
+    void setReplyToUrl(URL replyToUrl);
 
     /**
      * Specifies the CreativeWork associated with the UserComment.
@@ -51,9 +45,9 @@ public interface UserComments extends UserInteraction {
     /**
      * Specifies the CreativeWork associated with the UserComment.
      *
-     * @param fDiscusses CreativeWork value to set.
+     * @param discusses CreativeWork value to set.
      */
-    void setDiscusses(CreativeWork fDiscusses);
+    void setDiscusses(CreativeWork discusses);
 
     /**
      * The time at which the UserComment was made.
@@ -65,27 +59,15 @@ public interface UserComments extends UserInteraction {
     /**
      * The time at which the UserComment was made.
      *
-     * @param fCommentTime DateTime value to set.
+     * @param commentTime DateTime value to set.
      */
-    void setCommentTime(DateTime fCommentTime);
+    void setCommentTime(DateTime commentTime);
     /**
      * The time at which the UserComment was made.
      *
-     * @param fCommentTime java.time.LocalDateTime value to set.
+     * @param commentTime Date value to set.
      */
-    void setCommentTime(java.time.LocalDateTime fCommentTime);
-    /**
-     * The time at which the UserComment was made.
-     *
-     * @param fCommentTime Date value to set.
-     */
-    void setCommentTime(Date fCommentTime);
-    /**
-     * The time at which the UserComment was made.
-     *
-     * @param fCommentTime java.time.LocalDate value to set.
-     */
-    void setCommentTime(java.time.LocalDate fCommentTime);
+    void setCommentTime(Date commentTime);
 
     /**
      * The text of the UserComment.
@@ -97,15 +79,9 @@ public interface UserComments extends UserInteraction {
     /**
      * The text of the UserComment.
      *
-     * @param fCommentText Text value to set.
+     * @param commentText Text value to set.
      */
-    void setCommentText(Text fCommentText);
-    /**
-     * The text of the UserComment.
-     *
-     * @param fCommentText java.lang.String value to set.
-     */
-    void setCommentText(java.lang.String fCommentText);
+    void setCommentText(Text commentText);
 
     /**
      * The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.
@@ -117,13 +93,13 @@ public interface UserComments extends UserInteraction {
     /**
      * The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.
      *
-     * @param fCreator Organization value to set.
+     * @param creator Organization value to set.
      */
-    void setCreator(Organization fCreator);
+    void setCreator(Organization creator);
     /**
      * The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.
      *
-     * @param fCreator Person value to set.
+     * @param creator Person value to set.
      */
-    void setCreator(Person fCreator);
+    void setCreator(Person creator);
 }

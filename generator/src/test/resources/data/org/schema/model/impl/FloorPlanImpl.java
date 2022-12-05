@@ -33,7 +33,7 @@ import org.schema.model.FloorPlan;
 @JsonLdTypeName("FloorPlan")
 public class FloorPlanImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements FloorPlan {
 
-    private Accommodation fIsPlanForApartment;
+    private Accommodation isPlanForApartment;
 
     /**
      * Indicates some accommodation that this floor plan describes.
@@ -44,22 +44,22 @@ public class FloorPlanImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Accommodation getIsPlanForApartment() {
-        return fIsPlanForApartment;
+        return isPlanForApartment;
     }
 
     /**
      * Indicates some accommodation that this floor plan describes.
      *
-     * @param fIsPlanForApartment Accommodation value to set.
+     * @param isPlanForApartment Accommodation value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
     @Override
-    public void setIsPlanForApartment(Accommodation fIsPlanForApartment) {
-        this.fIsPlanForApartment = fIsPlanForApartment;
+    public void setIsPlanForApartment(Accommodation isPlanForApartment) {
+        this.isPlanForApartment = isPlanForApartment;
     }
 
-    private Integer fNumberOfBathroomsTotal;
+    private Integer numberOfBathroomsTotal;
 
     /**
      * The total integer number of bathrooms in a some [[Accommodation]], following real estate conventions as [documented in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsTotalInteger+Field): "The simple sum of the number of bathrooms. For example for a property with two Full Bathrooms and one Half Bathroom, the Bathrooms Total Integer will be 3.". See also [[numberOfRooms]].
@@ -70,33 +70,22 @@ public class FloorPlanImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Integer getNumberOfBathroomsTotal() {
-        return fNumberOfBathroomsTotal;
+        return numberOfBathroomsTotal;
     }
 
     /**
      * The total integer number of bathrooms in a some [[Accommodation]], following real estate conventions as [documented in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsTotalInteger+Field): "The simple sum of the number of bathrooms. For example for a property with two Full Bathrooms and one Half Bathroom, the Bathrooms Total Integer will be 3.". See also [[numberOfRooms]].
      *
-     * @param fNumberOfBathroomsTotal Integer value to set.
+     * @param numberOfBathroomsTotal Integer value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
     @Override
-    public void setNumberOfBathroomsTotal(Integer fNumberOfBathroomsTotal) {
-        this.fNumberOfBathroomsTotal = fNumberOfBathroomsTotal;
-    }
-    /**
-     * The total integer number of bathrooms in a some [[Accommodation]], following real estate conventions as [documented in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsTotalInteger+Field): "The simple sum of the number of bathrooms. For example for a property with two Full Bathrooms and one Half Bathroom, the Bathrooms Total Integer will be 3.". See also [[numberOfRooms]].
-     *
-     * @param fNumberOfBathroomsTotal java.lang.Integer value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
-     */
-    @Override
-    public void setNumberOfBathroomsTotal(java.lang.Integer fNumberOfBathroomsTotal) {
-        this.fNumberOfBathroomsTotal = Integer.of(fNumberOfBathroomsTotal);
+    public void setNumberOfBathroomsTotal(Integer numberOfBathroomsTotal) {
+        this.numberOfBathroomsTotal = numberOfBathroomsTotal;
     }
 
-    private Object fNumberOfRooms;
+    private Object numberOfRooms;
 
     /**
      * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
@@ -107,44 +96,33 @@ public class FloorPlanImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getNumberOfRooms() {
-        return (T) fNumberOfRooms;
+        return (T) numberOfRooms;
     }
 
     /**
      * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
      * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
      *
-     * @param fNumberOfRooms QuantitativeValue value to set.
+     * @param numberOfRooms QuantitativeValue value to set.
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
     @Override
-    public void setNumberOfRooms(QuantitativeValue fNumberOfRooms) {
-        this.fNumberOfRooms = fNumberOfRooms;
+    public void setNumberOfRooms(QuantitativeValue numberOfRooms) {
+        this.numberOfRooms = numberOfRooms;
     }
     /**
      * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
      * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
      *
-     * @param fNumberOfRooms Number value to set.
+     * @param numberOfRooms Number value to set.
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
     @Override
-    public void setNumberOfRooms(Number fNumberOfRooms) {
-        this.fNumberOfRooms = fNumberOfRooms;
-    }
-    /**
-     * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
-     * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
-     *
-     * @param fNumberOfRooms java.lang.Number value to set.
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
-     */
-    @Override
-    public void setNumberOfRooms(java.lang.Number fNumberOfRooms) {
-        this.fNumberOfRooms = Number.of(fNumberOfRooms);
+    public void setNumberOfRooms(Number numberOfRooms) {
+        this.numberOfRooms = numberOfRooms;
     }
 
-    private QuantitativeValue fNumberOfAccommodationUnits;
+    private QuantitativeValue numberOfAccommodationUnits;
 
     /**
      * Indicates the total (available plus unavailable) number of accommodation units in an [[ApartmentComplex]], or the number of accommodation units for a specific [[FloorPlan]] (within its specific [[ApartmentComplex]]). See also [[numberOfAvailableAccommodationUnits]].
@@ -155,22 +133,22 @@ public class FloorPlanImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public QuantitativeValue getNumberOfAccommodationUnits() {
-        return fNumberOfAccommodationUnits;
+        return numberOfAccommodationUnits;
     }
 
     /**
      * Indicates the total (available plus unavailable) number of accommodation units in an [[ApartmentComplex]], or the number of accommodation units for a specific [[FloorPlan]] (within its specific [[ApartmentComplex]]). See also [[numberOfAvailableAccommodationUnits]].
      *
-     * @param fNumberOfAccommodationUnits QuantitativeValue value to set.
+     * @param numberOfAccommodationUnits QuantitativeValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
     @Override
-    public void setNumberOfAccommodationUnits(QuantitativeValue fNumberOfAccommodationUnits) {
-        this.fNumberOfAccommodationUnits = fNumberOfAccommodationUnits;
+    public void setNumberOfAccommodationUnits(QuantitativeValue numberOfAccommodationUnits) {
+        this.numberOfAccommodationUnits = numberOfAccommodationUnits;
     }
 
-    private QuantitativeValue fNumberOfAvailableAccommodationUnits;
+    private QuantitativeValue numberOfAvailableAccommodationUnits;
 
     /**
      * Indicates the number of available accommodation units in an [[ApartmentComplex]], or the number of accommodation units for a specific [[FloorPlan]] (within its specific [[ApartmentComplex]]). See also [[numberOfAccommodationUnits]].
@@ -181,22 +159,22 @@ public class FloorPlanImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public QuantitativeValue getNumberOfAvailableAccommodationUnits() {
-        return fNumberOfAvailableAccommodationUnits;
+        return numberOfAvailableAccommodationUnits;
     }
 
     /**
      * Indicates the number of available accommodation units in an [[ApartmentComplex]], or the number of accommodation units for a specific [[FloorPlan]] (within its specific [[ApartmentComplex]]). See also [[numberOfAccommodationUnits]].
      *
-     * @param fNumberOfAvailableAccommodationUnits QuantitativeValue value to set.
+     * @param numberOfAvailableAccommodationUnits QuantitativeValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
     @Override
-    public void setNumberOfAvailableAccommodationUnits(QuantitativeValue fNumberOfAvailableAccommodationUnits) {
-        this.fNumberOfAvailableAccommodationUnits = fNumberOfAvailableAccommodationUnits;
+    public void setNumberOfAvailableAccommodationUnits(QuantitativeValue numberOfAvailableAccommodationUnits) {
+        this.numberOfAvailableAccommodationUnits = numberOfAvailableAccommodationUnits;
     }
 
-    private LocationFeatureSpecification fAmenityFeature;
+    private LocationFeatureSpecification amenityFeature;
 
     /**
      * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
@@ -206,21 +184,21 @@ public class FloorPlanImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public LocationFeatureSpecification getAmenityFeature() {
-        return fAmenityFeature;
+        return amenityFeature;
     }
 
     /**
      * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
      *
-     * @param fAmenityFeature LocationFeatureSpecification value to set.
+     * @param amenityFeature LocationFeatureSpecification value to set.
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
     @Override
-    public void setAmenityFeature(LocationFeatureSpecification fAmenityFeature) {
-        this.fAmenityFeature = fAmenityFeature;
+    public void setAmenityFeature(LocationFeatureSpecification amenityFeature) {
+        this.amenityFeature = amenityFeature;
     }
 
-    private Object fNumberOfBedrooms;
+    private Object numberOfBedrooms;
 
     /**
      * The total integer number of bedrooms in a some [[Accommodation]], [[ApartmentComplex]] or [[FloorPlan]].
@@ -231,44 +209,33 @@ public class FloorPlanImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getNumberOfBedrooms() {
-        return (T) fNumberOfBedrooms;
+        return (T) numberOfBedrooms;
     }
 
     /**
      * The total integer number of bedrooms in a some [[Accommodation]], [[ApartmentComplex]] or [[FloorPlan]].
      *
-     * @param fNumberOfBedrooms Number value to set.
+     * @param numberOfBedrooms Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
     @Override
-    public void setNumberOfBedrooms(Number fNumberOfBedrooms) {
-        this.fNumberOfBedrooms = fNumberOfBedrooms;
+    public void setNumberOfBedrooms(Number numberOfBedrooms) {
+        this.numberOfBedrooms = numberOfBedrooms;
     }
     /**
      * The total integer number of bedrooms in a some [[Accommodation]], [[ApartmentComplex]] or [[FloorPlan]].
      *
-     * @param fNumberOfBedrooms java.lang.Number value to set.
+     * @param numberOfBedrooms QuantitativeValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
     @Override
-    public void setNumberOfBedrooms(java.lang.Number fNumberOfBedrooms) {
-        this.fNumberOfBedrooms = Number.of(fNumberOfBedrooms);
-    }
-    /**
-     * The total integer number of bedrooms in a some [[Accommodation]], [[ApartmentComplex]] or [[FloorPlan]].
-     *
-     * @param fNumberOfBedrooms QuantitativeValue value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
-     */
-    @Override
-    public void setNumberOfBedrooms(QuantitativeValue fNumberOfBedrooms) {
-        this.fNumberOfBedrooms = fNumberOfBedrooms;
+    public void setNumberOfBedrooms(QuantitativeValue numberOfBedrooms) {
+        this.numberOfBedrooms = numberOfBedrooms;
     }
 
-    private Number fNumberOfPartialBathrooms;
+    private Number numberOfPartialBathrooms;
 
     /**
      * Number of partial bathrooms - The total number of half and ¼ bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsPartial field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsPartial+Field). 
@@ -279,33 +246,22 @@ public class FloorPlanImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Number getNumberOfPartialBathrooms() {
-        return fNumberOfPartialBathrooms;
+        return numberOfPartialBathrooms;
     }
 
     /**
      * Number of partial bathrooms - The total number of half and ¼ bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsPartial field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsPartial+Field). 
      *
-     * @param fNumberOfPartialBathrooms Number value to set.
+     * @param numberOfPartialBathrooms Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
     @Override
-    public void setNumberOfPartialBathrooms(Number fNumberOfPartialBathrooms) {
-        this.fNumberOfPartialBathrooms = fNumberOfPartialBathrooms;
-    }
-    /**
-     * Number of partial bathrooms - The total number of half and ¼ bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsPartial field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsPartial+Field). 
-     *
-     * @param fNumberOfPartialBathrooms java.lang.Number value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
-     */
-    @Override
-    public void setNumberOfPartialBathrooms(java.lang.Number fNumberOfPartialBathrooms) {
-        this.fNumberOfPartialBathrooms = Number.of(fNumberOfPartialBathrooms);
+    public void setNumberOfPartialBathrooms(Number numberOfPartialBathrooms) {
+        this.numberOfPartialBathrooms = numberOfPartialBathrooms;
     }
 
-    private QuantitativeValue fFloorSize;
+    private QuantitativeValue floorSize;
 
     /**
      * The size of the accommodation, e.g. in square meter or squarefoot.
@@ -316,22 +272,22 @@ public class FloorPlanImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public QuantitativeValue getFloorSize() {
-        return fFloorSize;
+        return floorSize;
     }
 
     /**
      * The size of the accommodation, e.g. in square meter or squarefoot.
      * Typical unit code(s): MTK for square meter, FTK for square foot, or YDK for square yard 
      *
-     * @param fFloorSize QuantitativeValue value to set.
+     * @param floorSize QuantitativeValue value to set.
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
     @Override
-    public void setFloorSize(QuantitativeValue fFloorSize) {
-        this.fFloorSize = fFloorSize;
+    public void setFloorSize(QuantitativeValue floorSize) {
+        this.floorSize = floorSize;
     }
 
-    private Number fNumberOfFullBathrooms;
+    private Number numberOfFullBathrooms;
 
     /**
      * Number of full bathrooms - The total number of full and ¾ bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsFull field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsFull+Field).
@@ -342,33 +298,22 @@ public class FloorPlanImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Number getNumberOfFullBathrooms() {
-        return fNumberOfFullBathrooms;
+        return numberOfFullBathrooms;
     }
 
     /**
      * Number of full bathrooms - The total number of full and ¾ bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsFull field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsFull+Field).
      *
-     * @param fNumberOfFullBathrooms Number value to set.
+     * @param numberOfFullBathrooms Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
     @Override
-    public void setNumberOfFullBathrooms(Number fNumberOfFullBathrooms) {
-        this.fNumberOfFullBathrooms = fNumberOfFullBathrooms;
-    }
-    /**
-     * Number of full bathrooms - The total number of full and ¾ bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsFull field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsFull+Field).
-     *
-     * @param fNumberOfFullBathrooms java.lang.Number value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
-     */
-    @Override
-    public void setNumberOfFullBathrooms(java.lang.Number fNumberOfFullBathrooms) {
-        this.fNumberOfFullBathrooms = Number.of(fNumberOfFullBathrooms);
+    public void setNumberOfFullBathrooms(Number numberOfFullBathrooms) {
+        this.numberOfFullBathrooms = numberOfFullBathrooms;
     }
 
-    private Object fPetsAllowed;
+    private Object petsAllowed;
 
     /**
      * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
@@ -378,51 +323,31 @@ public class FloorPlanImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getPetsAllowed() {
-        return (T) fPetsAllowed;
+        return (T) petsAllowed;
     }
 
     /**
      * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
      *
-     * @param fPetsAllowed Text value to set.
+     * @param petsAllowed Text value to set.
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
     @Override
-    public void setPetsAllowed(Text fPetsAllowed) {
-        this.fPetsAllowed = fPetsAllowed;
+    public void setPetsAllowed(Text petsAllowed) {
+        this.petsAllowed = petsAllowed;
     }
     /**
      * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
      *
-     * @param fPetsAllowed java.lang.String value to set.
+     * @param petsAllowed Boolean value to set.
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
     @Override
-    public void setPetsAllowed(java.lang.String fPetsAllowed) {
-        this.fPetsAllowed = Text.of(fPetsAllowed);
-    }
-    /**
-     * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
-     *
-     * @param fPetsAllowed Boolean value to set.
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
-     */
-    @Override
-    public void setPetsAllowed(Boolean fPetsAllowed) {
-        this.fPetsAllowed = fPetsAllowed;
-    }
-    /**
-     * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
-     *
-     * @param fPetsAllowed java.lang.Boolean value to set.
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
-     */
-    @Override
-    public void setPetsAllowed(java.lang.Boolean fPetsAllowed) {
-        this.fPetsAllowed = Boolean.of(fPetsAllowed);
+    public void setPetsAllowed(Boolean petsAllowed) {
+        this.petsAllowed = petsAllowed;
     }
 
-    private Object fLayoutImage;
+    private Object layoutImage;
 
     /**
      * A schematic image showing the floorplan layout.
@@ -433,44 +358,33 @@ public class FloorPlanImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getLayoutImage() {
-        return (T) fLayoutImage;
+        return (T) layoutImage;
     }
 
     /**
      * A schematic image showing the floorplan layout.
      *
-     * @param fLayoutImage ImageObject value to set.
+     * @param layoutImage ImageObject value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2690">https://github.com/schemaorg/schemaorg/issues/2690</a>
      */
     @Override
-    public void setLayoutImage(ImageObject fLayoutImage) {
-        this.fLayoutImage = fLayoutImage;
+    public void setLayoutImage(ImageObject layoutImage) {
+        this.layoutImage = layoutImage;
     }
     /**
      * A schematic image showing the floorplan layout.
      *
-     * @param fLayoutImage URL value to set.
+     * @param layoutImage URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2690">https://github.com/schemaorg/schemaorg/issues/2690</a>
      */
     @Override
-    public void setLayoutImage(URL fLayoutImage) {
-        this.fLayoutImage = fLayoutImage;
-    }
-    /**
-     * A schematic image showing the floorplan layout.
-     *
-     * @param fLayoutImage java.net.URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2690">https://github.com/schemaorg/schemaorg/issues/2690</a>
-     */
-    @Override
-    public void setLayoutImage(java.net.URL fLayoutImage) {
-        this.fLayoutImage = URL.of(fLayoutImage);
+    public void setLayoutImage(URL layoutImage) {
+        this.layoutImage = layoutImage;
     }
 
-    private Object fMainEntityOfPage;
+    private Object mainEntityOfPage;
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -479,38 +393,29 @@ public class FloorPlanImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
+        return (T) mainEntityOfPage;
     }
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param fMainEntityOfPage CreativeWork value to set.
+     * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(CreativeWork fMainEntityOfPage) {
-        this.fMainEntityOfPage = fMainEntityOfPage;
+    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
     }
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param fMainEntityOfPage URL value to set.
+     * @param mainEntityOfPage URL value to set.
      */
     @Override
-    public void setMainEntityOfPage(URL fMainEntityOfPage) {
-        this.fMainEntityOfPage = fMainEntityOfPage;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param fMainEntityOfPage java.net.URL value to set.
-     */
-    @Override
-    public void setMainEntityOfPage(java.net.URL fMainEntityOfPage) {
-        this.fMainEntityOfPage = URL.of(fMainEntityOfPage);
+    public void setMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
     }
 
-    private Text fAlternateName;
+    private Text alternateName;
 
     /**
      * An alias for the item.
@@ -519,29 +424,20 @@ public class FloorPlanImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Text getAlternateName() {
-        return fAlternateName;
+        return alternateName;
     }
 
     /**
      * An alias for the item.
      *
-     * @param fAlternateName Text value to set.
+     * @param alternateName Text value to set.
      */
     @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
-    }
-    /**
-     * An alias for the item.
-     *
-     * @param fAlternateName java.lang.String value to set.
-     */
-    @Override
-    public void setAlternateName(java.lang.String fAlternateName) {
-        this.fAlternateName = Text.of(fAlternateName);
+    public void setAlternateName(Text alternateName) {
+        this.alternateName = alternateName;
     }
 
-    private Text fName;
+    private Text name;
 
     /**
      * The name of the item.
@@ -550,29 +446,20 @@ public class FloorPlanImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Text getName() {
-        return fName;
+        return name;
     }
 
     /**
      * The name of the item.
      *
-     * @param fName Text value to set.
+     * @param name Text value to set.
      */
     @Override
-    public void setName(Text fName) {
-        this.fName = fName;
-    }
-    /**
-     * The name of the item.
-     *
-     * @param fName java.lang.String value to set.
-     */
-    @Override
-    public void setName(java.lang.String fName) {
-        this.fName = Text.of(fName);
+    public void setName(Text name) {
+        this.name = name;
     }
 
-    private Action fPotentialAction;
+    private Action potentialAction;
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -581,20 +468,20 @@ public class FloorPlanImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Action getPotentialAction() {
-        return fPotentialAction;
+        return potentialAction;
     }
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      *
-     * @param fPotentialAction Action value to set.
+     * @param potentialAction Action value to set.
      */
     @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
+    public void setPotentialAction(Action potentialAction) {
+        this.potentialAction = potentialAction;
     }
 
-    private Object fImage;
+    private Object image;
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -603,38 +490,29 @@ public class FloorPlanImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getImage() {
-        return (T) fImage;
+        return (T) image;
     }
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param fImage URL value to set.
+     * @param image URL value to set.
      */
     @Override
-    public void setImage(URL fImage) {
-        this.fImage = fImage;
+    public void setImage(URL image) {
+        this.image = image;
     }
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param fImage java.net.URL value to set.
+     * @param image ImageObject value to set.
      */
     @Override
-    public void setImage(java.net.URL fImage) {
-        this.fImage = URL.of(fImage);
-    }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param fImage ImageObject value to set.
-     */
-    @Override
-    public void setImage(ImageObject fImage) {
-        this.fImage = fImage;
+    public void setImage(ImageObject image) {
+        this.image = image;
     }
 
-    private URL fUrl;
+    private URL url;
 
     /**
      * URL of the item.
@@ -643,29 +521,20 @@ public class FloorPlanImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public URL getUrl() {
-        return fUrl;
+        return url;
     }
 
     /**
      * URL of the item.
      *
-     * @param fUrl URL value to set.
+     * @param url URL value to set.
      */
     @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
-    }
-    /**
-     * URL of the item.
-     *
-     * @param fUrl java.net.URL value to set.
-     */
-    @Override
-    public void setUrl(java.net.URL fUrl) {
-        this.fUrl = URL.of(fUrl);
+    public void setUrl(URL url) {
+        this.url = url;
     }
 
-    private Text fDescription;
+    private Text description;
 
     /**
      * A description of the item.
@@ -674,29 +543,20 @@ public class FloorPlanImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Text getDescription() {
-        return fDescription;
+        return description;
     }
 
     /**
      * A description of the item.
      *
-     * @param fDescription Text value to set.
+     * @param description Text value to set.
      */
     @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
-    }
-    /**
-     * A description of the item.
-     *
-     * @param fDescription java.lang.String value to set.
-     */
-    @Override
-    public void setDescription(java.lang.String fDescription) {
-        this.fDescription = Text.of(fDescription);
+    public void setDescription(Text description) {
+        this.description = description;
     }
 
-    private Object fSubjectOf;
+    private Object subjectOf;
 
     /**
      * A CreativeWork or Event about this Thing.
@@ -706,31 +566,31 @@ public class FloorPlanImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getSubjectOf() {
-        return (T) fSubjectOf;
+        return (T) subjectOf;
     }
 
     /**
      * A CreativeWork or Event about this Thing.
      *
-     * @param fSubjectOf Event value to set.
+     * @param subjectOf Event value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Event fSubjectOf) {
-        this.fSubjectOf = fSubjectOf;
+    public void setSubjectOf(Event subjectOf) {
+        this.subjectOf = subjectOf;
     }
     /**
      * A CreativeWork or Event about this Thing.
      *
-     * @param fSubjectOf CreativeWork value to set.
+     * @param subjectOf CreativeWork value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(CreativeWork fSubjectOf) {
-        this.fSubjectOf = fSubjectOf;
+    public void setSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = subjectOf;
     }
 
-    private URL fAdditionalType;
+    private URL additionalType;
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
@@ -739,29 +599,20 @@ public class FloorPlanImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public URL getAdditionalType() {
-        return fAdditionalType;
+        return additionalType;
     }
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
-     * @param fAdditionalType URL value to set.
+     * @param additionalType URL value to set.
      */
     @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
-    }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @param fAdditionalType java.net.URL value to set.
-     */
-    @Override
-    public void setAdditionalType(java.net.URL fAdditionalType) {
-        this.fAdditionalType = URL.of(fAdditionalType);
+    public void setAdditionalType(URL additionalType) {
+        this.additionalType = additionalType;
     }
 
-    private Text fDisambiguatingDescription;
+    private Text disambiguatingDescription;
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
@@ -770,29 +621,20 @@ public class FloorPlanImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Text getDisambiguatingDescription() {
-        return fDisambiguatingDescription;
+        return disambiguatingDescription;
     }
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
-     * @param fDisambiguatingDescription Text value to set.
+     * @param disambiguatingDescription Text value to set.
      */
     @Override
-    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = fDisambiguatingDescription;
-    }
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @param fDisambiguatingDescription java.lang.String value to set.
-     */
-    @Override
-    public void setDisambiguatingDescription(java.lang.String fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = Text.of(fDisambiguatingDescription);
+    public void setDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = disambiguatingDescription;
     }
 
-    private URL fSameAs;
+    private URL sameAs;
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
@@ -801,29 +643,20 @@ public class FloorPlanImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public URL getSameAs() {
-        return fSameAs;
+        return sameAs;
     }
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
-     * @param fSameAs URL value to set.
+     * @param sameAs URL value to set.
      */
     @Override
-    public void setSameAs(URL fSameAs) {
-        this.fSameAs = fSameAs;
-    }
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @param fSameAs java.net.URL value to set.
-     */
-    @Override
-    public void setSameAs(java.net.URL fSameAs) {
-        this.fSameAs = URL.of(fSameAs);
+    public void setSameAs(URL sameAs) {
+        this.sameAs = sameAs;
     }
 
-    private Object fIdentifier;
+    private Object identifier;
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -833,57 +666,37 @@ public class FloorPlanImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getIdentifier() {
-        return (T) fIdentifier;
+        return (T) identifier;
     }
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier URL value to set.
+     * @param identifier URL value to set.
      */
     @Override
-    public void setIdentifier(URL fIdentifier) {
-        this.fIdentifier = fIdentifier;
+    public void setIdentifier(URL identifier) {
+        this.identifier = identifier;
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier java.net.URL value to set.
+     * @param identifier Text value to set.
      */
     @Override
-    public void setIdentifier(java.net.URL fIdentifier) {
-        this.fIdentifier = URL.of(fIdentifier);
+    public void setIdentifier(Text identifier) {
+        this.identifier = identifier;
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier Text value to set.
+     * @param identifier PropertyValue value to set.
      */
     @Override
-    public void setIdentifier(Text fIdentifier) {
-        this.fIdentifier = fIdentifier;
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param fIdentifier java.lang.String value to set.
-     */
-    @Override
-    public void setIdentifier(java.lang.String fIdentifier) {
-        this.fIdentifier = Text.of(fIdentifier);
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param fIdentifier PropertyValue value to set.
-     */
-    @Override
-    public void setIdentifier(PropertyValue fIdentifier) {
-        this.fIdentifier = fIdentifier;
+    public void setIdentifier(PropertyValue identifier) {
+        this.identifier = identifier;
     }
 }

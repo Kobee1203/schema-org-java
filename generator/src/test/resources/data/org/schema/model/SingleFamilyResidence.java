@@ -28,26 +28,18 @@ public interface SingleFamilyResidence extends House {
      * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
      * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
      *
-     * @param fNumberOfRooms QuantitativeValue value to set.
+     * @param numberOfRooms QuantitativeValue value to set.
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
-    void setNumberOfRooms(QuantitativeValue fNumberOfRooms);
+    void setNumberOfRooms(QuantitativeValue numberOfRooms);
     /**
      * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
      * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
      *
-     * @param fNumberOfRooms Number value to set.
+     * @param numberOfRooms Number value to set.
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
-    void setNumberOfRooms(Number fNumberOfRooms);
-    /**
-     * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
-     * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
-     *
-     * @param fNumberOfRooms java.lang.Number value to set.
-     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
-     */
-    void setNumberOfRooms(java.lang.Number fNumberOfRooms);
+    void setNumberOfRooms(Number numberOfRooms);
 
     /**
      * The allowed total occupancy for the accommodation in persons (including infants etc). For individual accommodations, this is not necessarily the legal maximum but defines the permitted usage as per the contractual agreement (e.g. a double room used by a single person).
@@ -62,8 +54,8 @@ public interface SingleFamilyResidence extends House {
      * The allowed total occupancy for the accommodation in persons (including infants etc). For individual accommodations, this is not necessarily the legal maximum but defines the permitted usage as per the contractual agreement (e.g. a double room used by a single person).
      * Typical unit code(s): C62 for person
      *
-     * @param fOccupancy QuantitativeValue value to set.
+     * @param occupancy QuantitativeValue value to set.
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
-    void setOccupancy(QuantitativeValue fOccupancy);
+    void setOccupancy(QuantitativeValue occupancy);
 }

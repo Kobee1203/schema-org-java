@@ -31,10 +31,10 @@ public interface MedicalTest extends MedicalEntity {
     /**
      * A condition the test is used to diagnose.
      *
-     * @param fUsedToDiagnose MedicalCondition value to set.
+     * @param usedToDiagnose MedicalCondition value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setUsedToDiagnose(MedicalCondition fUsedToDiagnose);
+    void setUsedToDiagnose(MedicalCondition usedToDiagnose);
 
     /**
      * Drugs that affect the test's results.
@@ -47,10 +47,10 @@ public interface MedicalTest extends MedicalEntity {
     /**
      * Drugs that affect the test's results.
      *
-     * @param fAffectedBy Drug value to set.
+     * @param affectedBy Drug value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setAffectedBy(Drug fAffectedBy);
+    void setAffectedBy(Drug affectedBy);
 
     /**
      * Range of acceptable values for a typical patient, when applicable.
@@ -63,24 +63,17 @@ public interface MedicalTest extends MedicalEntity {
     /**
      * Range of acceptable values for a typical patient, when applicable.
      *
-     * @param fNormalRange Text value to set.
+     * @param normalRange Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setNormalRange(Text fNormalRange);
+    void setNormalRange(Text normalRange);
     /**
      * Range of acceptable values for a typical patient, when applicable.
      *
-     * @param fNormalRange java.lang.String value to set.
+     * @param normalRange MedicalEnumeration value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setNormalRange(java.lang.String fNormalRange);
-    /**
-     * Range of acceptable values for a typical patient, when applicable.
-     *
-     * @param fNormalRange MedicalEnumeration value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void setNormalRange(MedicalEnumeration fNormalRange);
+    void setNormalRange(MedicalEnumeration normalRange);
 
     /**
      * A sign detected by the test.
@@ -93,10 +86,10 @@ public interface MedicalTest extends MedicalEntity {
     /**
      * A sign detected by the test.
      *
-     * @param fSignDetected MedicalSign value to set.
+     * @param signDetected MedicalSign value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setSignDetected(MedicalSign fSignDetected);
+    void setSignDetected(MedicalSign signDetected);
 
     /**
      * Device used to perform the test.
@@ -109,8 +102,8 @@ public interface MedicalTest extends MedicalEntity {
     /**
      * Device used to perform the test.
      *
-     * @param fUsesDevice MedicalDevice value to set.
+     * @param usesDevice MedicalDevice value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setUsesDevice(MedicalDevice fUsesDevice);
+    void setUsesDevice(MedicalDevice usesDevice);
 }

@@ -27,10 +27,10 @@ public interface InfectiousDisease extends MedicalCondition {
     /**
      * The class of infectious agent (bacteria, prion, etc.) that causes the disease.
      *
-     * @param fInfectiousAgentClass InfectiousAgentClass value to set.
+     * @param infectiousAgentClass InfectiousAgentClass value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setInfectiousAgentClass(InfectiousAgentClass fInfectiousAgentClass);
+    void setInfectiousAgentClass(InfectiousAgentClass infectiousAgentClass);
 
     /**
      * The actual infectious agent, such as a specific bacterium.
@@ -43,17 +43,10 @@ public interface InfectiousDisease extends MedicalCondition {
     /**
      * The actual infectious agent, such as a specific bacterium.
      *
-     * @param fInfectiousAgent Text value to set.
+     * @param infectiousAgent Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setInfectiousAgent(Text fInfectiousAgent);
-    /**
-     * The actual infectious agent, such as a specific bacterium.
-     *
-     * @param fInfectiousAgent java.lang.String value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void setInfectiousAgent(java.lang.String fInfectiousAgent);
+    void setInfectiousAgent(Text infectiousAgent);
 
     /**
      * How the disease spreads, either as a route or vector, for example 'direct contact', 'Aedes aegypti', etc.
@@ -66,15 +59,8 @@ public interface InfectiousDisease extends MedicalCondition {
     /**
      * How the disease spreads, either as a route or vector, for example 'direct contact', 'Aedes aegypti', etc.
      *
-     * @param fTransmissionMethod Text value to set.
+     * @param transmissionMethod Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setTransmissionMethod(Text fTransmissionMethod);
-    /**
-     * How the disease spreads, either as a route or vector, for example 'direct contact', 'Aedes aegypti', etc.
-     *
-     * @param fTransmissionMethod java.lang.String value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void setTransmissionMethod(java.lang.String fTransmissionMethod);
+    void setTransmissionMethod(Text transmissionMethod);
 }

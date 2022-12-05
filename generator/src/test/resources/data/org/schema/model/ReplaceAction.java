@@ -24,9 +24,9 @@ public interface ReplaceAction extends UpdateAction {
     /**
      * A sub property of object. The object that is being replaced.
      *
-     * @param fReplacee Thing value to set.
+     * @param replacee Thing value to set.
      */
-    void setReplacee(Thing fReplacee);
+    void setReplacee(Thing replacee);
 
     /**
      * A sub property of object. The object that replaces.
@@ -38,7 +38,7 @@ public interface ReplaceAction extends UpdateAction {
     /**
      * A sub property of object. The object that replaces.
      *
-     * @param fReplacer Thing value to set.
+     * @param replacer Thing value to set.
      */
-    void setReplacer(Thing fReplacer);
+    void setReplacer(Thing replacer);
 }

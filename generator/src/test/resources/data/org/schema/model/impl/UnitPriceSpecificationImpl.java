@@ -36,7 +36,7 @@ import org.schema.model.UnitPriceSpecification;
 @JsonLdTypeName("UnitPriceSpecification")
 public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements UnitPriceSpecification {
 
-    private Object fPriceType;
+    private Object priceType;
 
     /**
      * Defines the type of a price specified for an offered product, for example a list price, a (temporary) sale price or a manufacturer suggested retail price. If multiple prices are specified for an offer the [[priceType]] property can be used to identify the type of each such specified price. The value of priceType can be specified as a value from enumeration PriceTypeEnumeration or as a free form text string for price types that are not already predefined in PriceTypeEnumeration.
@@ -46,41 +46,31 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      */
     @Override
     public <T> T getPriceType() {
-        return (T) fPriceType;
+        return (T) priceType;
     }
 
     /**
      * Defines the type of a price specified for an offered product, for example a list price, a (temporary) sale price or a manufacturer suggested retail price. If multiple prices are specified for an offer the [[priceType]] property can be used to identify the type of each such specified price. The value of priceType can be specified as a value from enumeration PriceTypeEnumeration or as a free form text string for price types that are not already predefined in PriceTypeEnumeration.
      *
-     * @param fPriceType PriceTypeEnumeration value to set.
+     * @param priceType PriceTypeEnumeration value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setPriceType(PriceTypeEnumeration fPriceType) {
-        this.fPriceType = fPriceType;
+    public void setPriceType(PriceTypeEnumeration priceType) {
+        this.priceType = priceType;
     }
     /**
      * Defines the type of a price specified for an offered product, for example a list price, a (temporary) sale price or a manufacturer suggested retail price. If multiple prices are specified for an offer the [[priceType]] property can be used to identify the type of each such specified price. The value of priceType can be specified as a value from enumeration PriceTypeEnumeration or as a free form text string for price types that are not already predefined in PriceTypeEnumeration.
      *
-     * @param fPriceType Text value to set.
+     * @param priceType Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setPriceType(Text fPriceType) {
-        this.fPriceType = fPriceType;
-    }
-    /**
-     * Defines the type of a price specified for an offered product, for example a list price, a (temporary) sale price or a manufacturer suggested retail price. If multiple prices are specified for an offer the [[priceType]] property can be used to identify the type of each such specified price. The value of priceType can be specified as a value from enumeration PriceTypeEnumeration or as a free form text string for price types that are not already predefined in PriceTypeEnumeration.
-     *
-     * @param fPriceType java.lang.String value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setPriceType(java.lang.String fPriceType) {
-        this.fPriceType = Text.of(fPriceType);
+    public void setPriceType(Text priceType) {
+        this.priceType = priceType;
     }
 
-    private Text fUnitText;
+    private Text unitText;
 
     /**
      * A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
@@ -90,31 +80,21 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      */
     @Override
     public Text getUnitText() {
-        return fUnitText;
+        return unitText;
     }
 
     /**
      * A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
      * <a href='unitCode'>unitCode</a>.
      *
-     * @param fUnitText Text value to set.
+     * @param unitText Text value to set.
      */
     @Override
-    public void setUnitText(Text fUnitText) {
-        this.fUnitText = fUnitText;
-    }
-    /**
-     * A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
-     * <a href='unitCode'>unitCode</a>.
-     *
-     * @param fUnitText java.lang.String value to set.
-     */
-    @Override
-    public void setUnitText(java.lang.String fUnitText) {
-        this.fUnitText = Text.of(fUnitText);
+    public void setUnitText(Text unitText) {
+        this.unitText = unitText;
     }
 
-    private Number fBillingIncrement;
+    private Number billingIncrement;
 
     /**
      * This property specifies the minimal quantity and rounding increment that will be the basis for the billing. The unit of measurement is specified by the unitCode property.
@@ -124,31 +104,21 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      */
     @Override
     public Number getBillingIncrement() {
-        return fBillingIncrement;
+        return billingIncrement;
     }
 
     /**
      * This property specifies the minimal quantity and rounding increment that will be the basis for the billing. The unit of measurement is specified by the unitCode property.
      *
-     * @param fBillingIncrement Number value to set.
+     * @param billingIncrement Number value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setBillingIncrement(Number fBillingIncrement) {
-        this.fBillingIncrement = fBillingIncrement;
-    }
-    /**
-     * This property specifies the minimal quantity and rounding increment that will be the basis for the billing. The unit of measurement is specified by the unitCode property.
-     *
-     * @param fBillingIncrement java.lang.Number value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setBillingIncrement(java.lang.Number fBillingIncrement) {
-        this.fBillingIncrement = Number.of(fBillingIncrement);
+    public void setBillingIncrement(Number billingIncrement) {
+        this.billingIncrement = billingIncrement;
     }
 
-    private Object fUnitCode;
+    private Object unitCode;
 
     /**
      * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
@@ -158,51 +128,31 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      */
     @Override
     public <T> T getUnitCode() {
-        return (T) fUnitCode;
+        return (T) unitCode;
     }
 
     /**
      * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
      *
-     * @param fUnitCode Text value to set.
+     * @param unitCode Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setUnitCode(Text fUnitCode) {
-        this.fUnitCode = fUnitCode;
+    public void setUnitCode(Text unitCode) {
+        this.unitCode = unitCode;
     }
     /**
      * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
      *
-     * @param fUnitCode java.lang.String value to set.
+     * @param unitCode URL value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setUnitCode(java.lang.String fUnitCode) {
-        this.fUnitCode = Text.of(fUnitCode);
-    }
-    /**
-     * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
-     *
-     * @param fUnitCode URL value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setUnitCode(URL fUnitCode) {
-        this.fUnitCode = fUnitCode;
-    }
-    /**
-     * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
-     *
-     * @param fUnitCode java.net.URL value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setUnitCode(java.net.URL fUnitCode) {
-        this.fUnitCode = URL.of(fUnitCode);
+    public void setUnitCode(URL unitCode) {
+        this.unitCode = unitCode;
     }
 
-    private Object fBillingDuration;
+    private Object billingDuration;
 
     /**
      * Specifies for how long this price (or price component) will be billed. Can be used, for example, to model the contractual duration of a subscription or payment plan. Type can be either a Duration or a Number (in which case the unit of measurement, for example month, is specified by the unitCode property).
@@ -213,55 +163,44 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      */
     @Override
     public <T> T getBillingDuration() {
-        return (T) fBillingDuration;
+        return (T) billingDuration;
     }
 
     /**
      * Specifies for how long this price (or price component) will be billed. Can be used, for example, to model the contractual duration of a subscription or payment plan. Type can be either a Duration or a Number (in which case the unit of measurement, for example month, is specified by the unitCode property).
      *
-     * @param fBillingDuration Duration value to set.
+     * @param billingDuration Duration value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2689">https://github.com/schemaorg/schemaorg/issues/2689</a>
      */
     @Override
-    public void setBillingDuration(Duration fBillingDuration) {
-        this.fBillingDuration = fBillingDuration;
+    public void setBillingDuration(Duration billingDuration) {
+        this.billingDuration = billingDuration;
     }
     /**
      * Specifies for how long this price (or price component) will be billed. Can be used, for example, to model the contractual duration of a subscription or payment plan. Type can be either a Duration or a Number (in which case the unit of measurement, for example month, is specified by the unitCode property).
      *
-     * @param fBillingDuration QuantitativeValue value to set.
+     * @param billingDuration QuantitativeValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2689">https://github.com/schemaorg/schemaorg/issues/2689</a>
      */
     @Override
-    public void setBillingDuration(QuantitativeValue fBillingDuration) {
-        this.fBillingDuration = fBillingDuration;
+    public void setBillingDuration(QuantitativeValue billingDuration) {
+        this.billingDuration = billingDuration;
     }
     /**
      * Specifies for how long this price (or price component) will be billed. Can be used, for example, to model the contractual duration of a subscription or payment plan. Type can be either a Duration or a Number (in which case the unit of measurement, for example month, is specified by the unitCode property).
      *
-     * @param fBillingDuration Number value to set.
+     * @param billingDuration Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2689">https://github.com/schemaorg/schemaorg/issues/2689</a>
      */
     @Override
-    public void setBillingDuration(Number fBillingDuration) {
-        this.fBillingDuration = fBillingDuration;
-    }
-    /**
-     * Specifies for how long this price (or price component) will be billed. Can be used, for example, to model the contractual duration of a subscription or payment plan. Type can be either a Duration or a Number (in which case the unit of measurement, for example month, is specified by the unitCode property).
-     *
-     * @param fBillingDuration java.lang.Number value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2689">https://github.com/schemaorg/schemaorg/issues/2689</a>
-     */
-    @Override
-    public void setBillingDuration(java.lang.Number fBillingDuration) {
-        this.fBillingDuration = Number.of(fBillingDuration);
+    public void setBillingDuration(Number billingDuration) {
+        this.billingDuration = billingDuration;
     }
 
-    private QuantitativeValue fReferenceQuantity;
+    private QuantitativeValue referenceQuantity;
 
     /**
      * The reference quantity for which a certain price applies, e.g. 1 EUR per 4 kWh of electricity. This property is a replacement for unitOfMeasurement for the advanced cases where the price does not relate to a standard unit.
@@ -272,22 +211,22 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      */
     @Override
     public QuantitativeValue getReferenceQuantity() {
-        return fReferenceQuantity;
+        return referenceQuantity;
     }
 
     /**
      * The reference quantity for which a certain price applies, e.g. 1 EUR per 4 kWh of electricity. This property is a replacement for unitOfMeasurement for the advanced cases where the price does not relate to a standard unit.
      *
-     * @param fReferenceQuantity QuantitativeValue value to set.
+     * @param referenceQuantity QuantitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsProperties">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsProperties</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setReferenceQuantity(QuantitativeValue fReferenceQuantity) {
-        this.fReferenceQuantity = fReferenceQuantity;
+    public void setReferenceQuantity(QuantitativeValue referenceQuantity) {
+        this.referenceQuantity = referenceQuantity;
     }
 
-    private PriceComponentTypeEnumeration fPriceComponentType;
+    private PriceComponentTypeEnumeration priceComponentType;
 
     /**
      * Identifies a price component (for example, a line item on an invoice), part of the total price for an offer.
@@ -298,22 +237,22 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      */
     @Override
     public PriceComponentTypeEnumeration getPriceComponentType() {
-        return fPriceComponentType;
+        return priceComponentType;
     }
 
     /**
      * Identifies a price component (for example, a line item on an invoice), part of the total price for an offer.
      *
-     * @param fPriceComponentType PriceComponentTypeEnumeration value to set.
+     * @param priceComponentType PriceComponentTypeEnumeration value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2689">https://github.com/schemaorg/schemaorg/issues/2689</a>
      */
     @Override
-    public void setPriceComponentType(PriceComponentTypeEnumeration fPriceComponentType) {
-        this.fPriceComponentType = fPriceComponentType;
+    public void setPriceComponentType(PriceComponentTypeEnumeration priceComponentType) {
+        this.priceComponentType = priceComponentType;
     }
 
-    private Number fBillingStart;
+    private Number billingStart;
 
     /**
      * Specifies after how much time this price (or price component) becomes valid and billing starts. Can be used, for example, to model a price increase after the first year of a subscription. The unit of measurement is specified by the unitCode property.
@@ -324,33 +263,22 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      */
     @Override
     public Number getBillingStart() {
-        return fBillingStart;
+        return billingStart;
     }
 
     /**
      * Specifies after how much time this price (or price component) becomes valid and billing starts. Can be used, for example, to model a price increase after the first year of a subscription. The unit of measurement is specified by the unitCode property.
      *
-     * @param fBillingStart Number value to set.
+     * @param billingStart Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2689">https://github.com/schemaorg/schemaorg/issues/2689</a>
      */
     @Override
-    public void setBillingStart(Number fBillingStart) {
-        this.fBillingStart = fBillingStart;
-    }
-    /**
-     * Specifies after how much time this price (or price component) becomes valid and billing starts. Can be used, for example, to model a price increase after the first year of a subscription. The unit of measurement is specified by the unitCode property.
-     *
-     * @param fBillingStart java.lang.Number value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2689">https://github.com/schemaorg/schemaorg/issues/2689</a>
-     */
-    @Override
-    public void setBillingStart(java.lang.Number fBillingStart) {
-        this.fBillingStart = Number.of(fBillingStart);
+    public void setBillingStart(Number billingStart) {
+        this.billingStart = billingStart;
     }
 
-    private Number fMinPrice;
+    private Number minPrice;
 
     /**
      * The lowest price if the price is a range.
@@ -360,31 +288,21 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      */
     @Override
     public Number getMinPrice() {
-        return fMinPrice;
+        return minPrice;
     }
 
     /**
      * The lowest price if the price is a range.
      *
-     * @param fMinPrice Number value to set.
+     * @param minPrice Number value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setMinPrice(Number fMinPrice) {
-        this.fMinPrice = fMinPrice;
-    }
-    /**
-     * The lowest price if the price is a range.
-     *
-     * @param fMinPrice java.lang.Number value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setMinPrice(java.lang.Number fMinPrice) {
-        this.fMinPrice = Number.of(fMinPrice);
+    public void setMinPrice(Number minPrice) {
+        this.minPrice = minPrice;
     }
 
-    private QuantitativeValue fEligibleQuantity;
+    private QuantitativeValue eligibleQuantity;
 
     /**
      * The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.
@@ -394,21 +312,21 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      */
     @Override
     public QuantitativeValue getEligibleQuantity() {
-        return fEligibleQuantity;
+        return eligibleQuantity;
     }
 
     /**
      * The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.
      *
-     * @param fEligibleQuantity QuantitativeValue value to set.
+     * @param eligibleQuantity QuantitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setEligibleQuantity(QuantitativeValue fEligibleQuantity) {
-        this.fEligibleQuantity = fEligibleQuantity;
+    public void setEligibleQuantity(QuantitativeValue eligibleQuantity) {
+        this.eligibleQuantity = eligibleQuantity;
     }
 
-    private Object fValidFrom;
+    private Object validFrom;
 
     /**
      * The date when the item becomes valid.
@@ -418,51 +336,31 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      */
     @Override
     public <T> T getValidFrom() {
-        return (T) fValidFrom;
+        return (T) validFrom;
     }
 
     /**
      * The date when the item becomes valid.
      *
-     * @param fValidFrom DateTime value to set.
+     * @param validFrom DateTime value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setValidFrom(DateTime fValidFrom) {
-        this.fValidFrom = fValidFrom;
+    public void setValidFrom(DateTime validFrom) {
+        this.validFrom = validFrom;
     }
     /**
      * The date when the item becomes valid.
      *
-     * @param fValidFrom java.time.LocalDateTime value to set.
+     * @param validFrom Date value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setValidFrom(java.time.LocalDateTime fValidFrom) {
-        this.fValidFrom = DateTime.of(fValidFrom);
-    }
-    /**
-     * The date when the item becomes valid.
-     *
-     * @param fValidFrom Date value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setValidFrom(Date fValidFrom) {
-        this.fValidFrom = fValidFrom;
-    }
-    /**
-     * The date when the item becomes valid.
-     *
-     * @param fValidFrom java.time.LocalDate value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setValidFrom(java.time.LocalDate fValidFrom) {
-        this.fValidFrom = Date.of(fValidFrom);
+    public void setValidFrom(Date validFrom) {
+        this.validFrom = validFrom;
     }
 
-    private Number fMaxPrice;
+    private Number maxPrice;
 
     /**
      * The highest price if the price is a range.
@@ -472,31 +370,21 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      */
     @Override
     public Number getMaxPrice() {
-        return fMaxPrice;
+        return maxPrice;
     }
 
     /**
      * The highest price if the price is a range.
      *
-     * @param fMaxPrice Number value to set.
+     * @param maxPrice Number value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setMaxPrice(Number fMaxPrice) {
-        this.fMaxPrice = fMaxPrice;
-    }
-    /**
-     * The highest price if the price is a range.
-     *
-     * @param fMaxPrice java.lang.Number value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setMaxPrice(java.lang.Number fMaxPrice) {
-        this.fMaxPrice = Number.of(fMaxPrice);
+    public void setMaxPrice(Number maxPrice) {
+        this.maxPrice = maxPrice;
     }
 
-    private Text fPriceCurrency;
+    private Text priceCurrency;
 
     /**
      * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
@@ -505,29 +393,20 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      */
     @Override
     public Text getPriceCurrency() {
-        return fPriceCurrency;
+        return priceCurrency;
     }
 
     /**
      * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
      *
-     * @param fPriceCurrency Text value to set.
+     * @param priceCurrency Text value to set.
      */
     @Override
-    public void setPriceCurrency(Text fPriceCurrency) {
-        this.fPriceCurrency = fPriceCurrency;
-    }
-    /**
-     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
-     *
-     * @param fPriceCurrency java.lang.String value to set.
-     */
-    @Override
-    public void setPriceCurrency(java.lang.String fPriceCurrency) {
-        this.fPriceCurrency = Text.of(fPriceCurrency);
+    public void setPriceCurrency(Text priceCurrency) {
+        this.priceCurrency = priceCurrency;
     }
 
-    private Boolean fValueAddedTaxIncluded;
+    private Boolean valueAddedTaxIncluded;
 
     /**
      * Specifies whether the applicable value-added tax (VAT) is included in the price specification or not.
@@ -537,31 +416,21 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      */
     @Override
     public Boolean getValueAddedTaxIncluded() {
-        return fValueAddedTaxIncluded;
+        return valueAddedTaxIncluded;
     }
 
     /**
      * Specifies whether the applicable value-added tax (VAT) is included in the price specification or not.
      *
-     * @param fValueAddedTaxIncluded Boolean value to set.
+     * @param valueAddedTaxIncluded Boolean value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setValueAddedTaxIncluded(Boolean fValueAddedTaxIncluded) {
-        this.fValueAddedTaxIncluded = fValueAddedTaxIncluded;
-    }
-    /**
-     * Specifies whether the applicable value-added tax (VAT) is included in the price specification or not.
-     *
-     * @param fValueAddedTaxIncluded java.lang.Boolean value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setValueAddedTaxIncluded(java.lang.Boolean fValueAddedTaxIncluded) {
-        this.fValueAddedTaxIncluded = Boolean.of(fValueAddedTaxIncluded);
+    public void setValueAddedTaxIncluded(Boolean valueAddedTaxIncluded) {
+        this.valueAddedTaxIncluded = valueAddedTaxIncluded;
     }
 
-    private PriceSpecification fEligibleTransactionVolume;
+    private PriceSpecification eligibleTransactionVolume;
 
     /**
      * The transaction volume, in a monetary unit, for which the offer or price specification is valid, e.g. for indicating a minimal purchasing volume, to express free shipping above a certain order volume, or to limit the acceptance of credit cards to purchases to a certain minimal amount.
@@ -571,21 +440,21 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      */
     @Override
     public PriceSpecification getEligibleTransactionVolume() {
-        return fEligibleTransactionVolume;
+        return eligibleTransactionVolume;
     }
 
     /**
      * The transaction volume, in a monetary unit, for which the offer or price specification is valid, e.g. for indicating a minimal purchasing volume, to express free shipping above a certain order volume, or to limit the acceptance of credit cards to purchases to a certain minimal amount.
      *
-     * @param fEligibleTransactionVolume PriceSpecification value to set.
+     * @param eligibleTransactionVolume PriceSpecification value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setEligibleTransactionVolume(PriceSpecification fEligibleTransactionVolume) {
-        this.fEligibleTransactionVolume = fEligibleTransactionVolume;
+    public void setEligibleTransactionVolume(PriceSpecification eligibleTransactionVolume) {
+        this.eligibleTransactionVolume = eligibleTransactionVolume;
     }
 
-    private Object fValidThrough;
+    private Object validThrough;
 
     /**
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
@@ -595,51 +464,31 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      */
     @Override
     public <T> T getValidThrough() {
-        return (T) fValidThrough;
+        return (T) validThrough;
     }
 
     /**
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
      *
-     * @param fValidThrough DateTime value to set.
+     * @param validThrough DateTime value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setValidThrough(DateTime fValidThrough) {
-        this.fValidThrough = fValidThrough;
+    public void setValidThrough(DateTime validThrough) {
+        this.validThrough = validThrough;
     }
     /**
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
      *
-     * @param fValidThrough java.time.LocalDateTime value to set.
+     * @param validThrough Date value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setValidThrough(java.time.LocalDateTime fValidThrough) {
-        this.fValidThrough = DateTime.of(fValidThrough);
-    }
-    /**
-     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
-     *
-     * @param fValidThrough Date value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setValidThrough(Date fValidThrough) {
-        this.fValidThrough = fValidThrough;
-    }
-    /**
-     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
-     *
-     * @param fValidThrough java.time.LocalDate value to set.
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
-     */
-    @Override
-    public void setValidThrough(java.time.LocalDate fValidThrough) {
-        this.fValidThrough = Date.of(fValidThrough);
+    public void setValidThrough(Date validThrough) {
+        this.validThrough = validThrough;
     }
 
-    private Object fPrice;
+    private Object price;
 
     /**
      * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.<br/><br/>Usage guidelines:<br/><br/>* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR") instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.<br/>* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a "content=" attribute for publishing simple machine-readable values alongside more human-friendly formatting.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
@@ -649,51 +498,31 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      */
     @Override
     public <T> T getPrice() {
-        return (T) fPrice;
+        return (T) price;
     }
 
     /**
      * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.<br/><br/>Usage guidelines:<br/><br/>* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR") instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.<br/>* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a "content=" attribute for publishing simple machine-readable values alongside more human-friendly formatting.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
      *       
      *
-     * @param fPrice Number value to set.
+     * @param price Number value to set.
      */
     @Override
-    public void setPrice(Number fPrice) {
-        this.fPrice = fPrice;
+    public void setPrice(Number price) {
+        this.price = price;
     }
     /**
      * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.<br/><br/>Usage guidelines:<br/><br/>* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR") instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.<br/>* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a "content=" attribute for publishing simple machine-readable values alongside more human-friendly formatting.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
      *       
      *
-     * @param fPrice java.lang.Number value to set.
+     * @param price Text value to set.
      */
     @Override
-    public void setPrice(java.lang.Number fPrice) {
-        this.fPrice = Number.of(fPrice);
-    }
-    /**
-     * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.<br/><br/>Usage guidelines:<br/><br/>* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR") instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.<br/>* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a "content=" attribute for publishing simple machine-readable values alongside more human-friendly formatting.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
-     *       
-     *
-     * @param fPrice Text value to set.
-     */
-    @Override
-    public void setPrice(Text fPrice) {
-        this.fPrice = fPrice;
-    }
-    /**
-     * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.<br/><br/>Usage guidelines:<br/><br/>* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR") instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.<br/>* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a "content=" attribute for publishing simple machine-readable values alongside more human-friendly formatting.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
-     *       
-     *
-     * @param fPrice java.lang.String value to set.
-     */
-    @Override
-    public void setPrice(java.lang.String fPrice) {
-        this.fPrice = Text.of(fPrice);
+    public void setPrice(Text price) {
+        this.price = price;
     }
 
-    private Object fMainEntityOfPage;
+    private Object mainEntityOfPage;
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -702,38 +531,29 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      */
     @Override
     public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
+        return (T) mainEntityOfPage;
     }
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param fMainEntityOfPage CreativeWork value to set.
+     * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(CreativeWork fMainEntityOfPage) {
-        this.fMainEntityOfPage = fMainEntityOfPage;
+    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
     }
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param fMainEntityOfPage URL value to set.
+     * @param mainEntityOfPage URL value to set.
      */
     @Override
-    public void setMainEntityOfPage(URL fMainEntityOfPage) {
-        this.fMainEntityOfPage = fMainEntityOfPage;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param fMainEntityOfPage java.net.URL value to set.
-     */
-    @Override
-    public void setMainEntityOfPage(java.net.URL fMainEntityOfPage) {
-        this.fMainEntityOfPage = URL.of(fMainEntityOfPage);
+    public void setMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
     }
 
-    private Text fAlternateName;
+    private Text alternateName;
 
     /**
      * An alias for the item.
@@ -742,29 +562,20 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      */
     @Override
     public Text getAlternateName() {
-        return fAlternateName;
+        return alternateName;
     }
 
     /**
      * An alias for the item.
      *
-     * @param fAlternateName Text value to set.
+     * @param alternateName Text value to set.
      */
     @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
-    }
-    /**
-     * An alias for the item.
-     *
-     * @param fAlternateName java.lang.String value to set.
-     */
-    @Override
-    public void setAlternateName(java.lang.String fAlternateName) {
-        this.fAlternateName = Text.of(fAlternateName);
+    public void setAlternateName(Text alternateName) {
+        this.alternateName = alternateName;
     }
 
-    private Text fName;
+    private Text name;
 
     /**
      * The name of the item.
@@ -773,29 +584,20 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      */
     @Override
     public Text getName() {
-        return fName;
+        return name;
     }
 
     /**
      * The name of the item.
      *
-     * @param fName Text value to set.
+     * @param name Text value to set.
      */
     @Override
-    public void setName(Text fName) {
-        this.fName = fName;
-    }
-    /**
-     * The name of the item.
-     *
-     * @param fName java.lang.String value to set.
-     */
-    @Override
-    public void setName(java.lang.String fName) {
-        this.fName = Text.of(fName);
+    public void setName(Text name) {
+        this.name = name;
     }
 
-    private Action fPotentialAction;
+    private Action potentialAction;
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -804,20 +606,20 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      */
     @Override
     public Action getPotentialAction() {
-        return fPotentialAction;
+        return potentialAction;
     }
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      *
-     * @param fPotentialAction Action value to set.
+     * @param potentialAction Action value to set.
      */
     @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
+    public void setPotentialAction(Action potentialAction) {
+        this.potentialAction = potentialAction;
     }
 
-    private Object fImage;
+    private Object image;
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -826,38 +628,29 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      */
     @Override
     public <T> T getImage() {
-        return (T) fImage;
+        return (T) image;
     }
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param fImage URL value to set.
+     * @param image URL value to set.
      */
     @Override
-    public void setImage(URL fImage) {
-        this.fImage = fImage;
+    public void setImage(URL image) {
+        this.image = image;
     }
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param fImage java.net.URL value to set.
+     * @param image ImageObject value to set.
      */
     @Override
-    public void setImage(java.net.URL fImage) {
-        this.fImage = URL.of(fImage);
-    }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param fImage ImageObject value to set.
-     */
-    @Override
-    public void setImage(ImageObject fImage) {
-        this.fImage = fImage;
+    public void setImage(ImageObject image) {
+        this.image = image;
     }
 
-    private URL fUrl;
+    private URL url;
 
     /**
      * URL of the item.
@@ -866,29 +659,20 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      */
     @Override
     public URL getUrl() {
-        return fUrl;
+        return url;
     }
 
     /**
      * URL of the item.
      *
-     * @param fUrl URL value to set.
+     * @param url URL value to set.
      */
     @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
-    }
-    /**
-     * URL of the item.
-     *
-     * @param fUrl java.net.URL value to set.
-     */
-    @Override
-    public void setUrl(java.net.URL fUrl) {
-        this.fUrl = URL.of(fUrl);
+    public void setUrl(URL url) {
+        this.url = url;
     }
 
-    private Text fDescription;
+    private Text description;
 
     /**
      * A description of the item.
@@ -897,29 +681,20 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      */
     @Override
     public Text getDescription() {
-        return fDescription;
+        return description;
     }
 
     /**
      * A description of the item.
      *
-     * @param fDescription Text value to set.
+     * @param description Text value to set.
      */
     @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
-    }
-    /**
-     * A description of the item.
-     *
-     * @param fDescription java.lang.String value to set.
-     */
-    @Override
-    public void setDescription(java.lang.String fDescription) {
-        this.fDescription = Text.of(fDescription);
+    public void setDescription(Text description) {
+        this.description = description;
     }
 
-    private Object fSubjectOf;
+    private Object subjectOf;
 
     /**
      * A CreativeWork or Event about this Thing.
@@ -929,31 +704,31 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      */
     @Override
     public <T> T getSubjectOf() {
-        return (T) fSubjectOf;
+        return (T) subjectOf;
     }
 
     /**
      * A CreativeWork or Event about this Thing.
      *
-     * @param fSubjectOf Event value to set.
+     * @param subjectOf Event value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Event fSubjectOf) {
-        this.fSubjectOf = fSubjectOf;
+    public void setSubjectOf(Event subjectOf) {
+        this.subjectOf = subjectOf;
     }
     /**
      * A CreativeWork or Event about this Thing.
      *
-     * @param fSubjectOf CreativeWork value to set.
+     * @param subjectOf CreativeWork value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(CreativeWork fSubjectOf) {
-        this.fSubjectOf = fSubjectOf;
+    public void setSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = subjectOf;
     }
 
-    private URL fAdditionalType;
+    private URL additionalType;
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
@@ -962,29 +737,20 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      */
     @Override
     public URL getAdditionalType() {
-        return fAdditionalType;
+        return additionalType;
     }
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
-     * @param fAdditionalType URL value to set.
+     * @param additionalType URL value to set.
      */
     @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
-    }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @param fAdditionalType java.net.URL value to set.
-     */
-    @Override
-    public void setAdditionalType(java.net.URL fAdditionalType) {
-        this.fAdditionalType = URL.of(fAdditionalType);
+    public void setAdditionalType(URL additionalType) {
+        this.additionalType = additionalType;
     }
 
-    private Text fDisambiguatingDescription;
+    private Text disambiguatingDescription;
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
@@ -993,29 +759,20 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      */
     @Override
     public Text getDisambiguatingDescription() {
-        return fDisambiguatingDescription;
+        return disambiguatingDescription;
     }
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
-     * @param fDisambiguatingDescription Text value to set.
+     * @param disambiguatingDescription Text value to set.
      */
     @Override
-    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = fDisambiguatingDescription;
-    }
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @param fDisambiguatingDescription java.lang.String value to set.
-     */
-    @Override
-    public void setDisambiguatingDescription(java.lang.String fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = Text.of(fDisambiguatingDescription);
+    public void setDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = disambiguatingDescription;
     }
 
-    private URL fSameAs;
+    private URL sameAs;
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
@@ -1024,29 +781,20 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      */
     @Override
     public URL getSameAs() {
-        return fSameAs;
+        return sameAs;
     }
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
-     * @param fSameAs URL value to set.
+     * @param sameAs URL value to set.
      */
     @Override
-    public void setSameAs(URL fSameAs) {
-        this.fSameAs = fSameAs;
-    }
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @param fSameAs java.net.URL value to set.
-     */
-    @Override
-    public void setSameAs(java.net.URL fSameAs) {
-        this.fSameAs = URL.of(fSameAs);
+    public void setSameAs(URL sameAs) {
+        this.sameAs = sameAs;
     }
 
-    private Object fIdentifier;
+    private Object identifier;
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -1056,57 +804,37 @@ public class UnitPriceSpecificationImpl extends com.weedow.schemaorg.commons.mod
      */
     @Override
     public <T> T getIdentifier() {
-        return (T) fIdentifier;
+        return (T) identifier;
     }
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier URL value to set.
+     * @param identifier URL value to set.
      */
     @Override
-    public void setIdentifier(URL fIdentifier) {
-        this.fIdentifier = fIdentifier;
+    public void setIdentifier(URL identifier) {
+        this.identifier = identifier;
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier java.net.URL value to set.
+     * @param identifier Text value to set.
      */
     @Override
-    public void setIdentifier(java.net.URL fIdentifier) {
-        this.fIdentifier = URL.of(fIdentifier);
+    public void setIdentifier(Text identifier) {
+        this.identifier = identifier;
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier Text value to set.
+     * @param identifier PropertyValue value to set.
      */
     @Override
-    public void setIdentifier(Text fIdentifier) {
-        this.fIdentifier = fIdentifier;
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param fIdentifier java.lang.String value to set.
-     */
-    @Override
-    public void setIdentifier(java.lang.String fIdentifier) {
-        this.fIdentifier = Text.of(fIdentifier);
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param fIdentifier PropertyValue value to set.
-     */
-    @Override
-    public void setIdentifier(PropertyValue fIdentifier) {
-        this.fIdentifier = fIdentifier;
+    public void setIdentifier(PropertyValue identifier) {
+        this.identifier = identifier;
     }
 }

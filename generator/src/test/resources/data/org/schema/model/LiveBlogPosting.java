@@ -25,15 +25,9 @@ public interface LiveBlogPosting extends BlogPosting {
     /**
      * The time when the live blog will stop covering the Event. Note that coverage may continue after the Event concludes.
      *
-     * @param fCoverageEndTime DateTime value to set.
+     * @param coverageEndTime DateTime value to set.
      */
-    void setCoverageEndTime(DateTime fCoverageEndTime);
-    /**
-     * The time when the live blog will stop covering the Event. Note that coverage may continue after the Event concludes.
-     *
-     * @param fCoverageEndTime java.time.LocalDateTime value to set.
-     */
-    void setCoverageEndTime(java.time.LocalDateTime fCoverageEndTime);
+    void setCoverageEndTime(DateTime coverageEndTime);
 
     /**
      * The time when the live blog will begin covering the Event. Note that coverage may begin before the Event's start time. The LiveBlogPosting may also be created before coverage begins.
@@ -45,15 +39,9 @@ public interface LiveBlogPosting extends BlogPosting {
     /**
      * The time when the live blog will begin covering the Event. Note that coverage may begin before the Event's start time. The LiveBlogPosting may also be created before coverage begins.
      *
-     * @param fCoverageStartTime DateTime value to set.
+     * @param coverageStartTime DateTime value to set.
      */
-    void setCoverageStartTime(DateTime fCoverageStartTime);
-    /**
-     * The time when the live blog will begin covering the Event. Note that coverage may begin before the Event's start time. The LiveBlogPosting may also be created before coverage begins.
-     *
-     * @param fCoverageStartTime java.time.LocalDateTime value to set.
-     */
-    void setCoverageStartTime(java.time.LocalDateTime fCoverageStartTime);
+    void setCoverageStartTime(DateTime coverageStartTime);
 
     /**
      * An update to the LiveBlog.
@@ -65,7 +53,7 @@ public interface LiveBlogPosting extends BlogPosting {
     /**
      * An update to the LiveBlog.
      *
-     * @param fLiveBlogUpdate BlogPosting value to set.
+     * @param liveBlogUpdate BlogPosting value to set.
      */
-    void setLiveBlogUpdate(BlogPosting fLiveBlogUpdate);
+    void setLiveBlogUpdate(BlogPosting liveBlogUpdate);
 }

@@ -30,39 +30,21 @@ public interface PaymentCard extends PaymentMethod, FinancialProduct {
     /**
      * A cardholder benefit that pays the cardholder a small percentage of their net expenditures.
      *
-     * @param fCashBack Number value to set.
+     * @param cashBack Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      */
-    void setCashBack(Number fCashBack);
+    void setCashBack(Number cashBack);
     /**
      * A cardholder benefit that pays the cardholder a small percentage of their net expenditures.
      *
-     * @param fCashBack java.lang.Number value to set.
+     * @param cashBack Boolean value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      */
-    void setCashBack(java.lang.Number fCashBack);
-    /**
-     * A cardholder benefit that pays the cardholder a small percentage of their net expenditures.
-     *
-     * @param fCashBack Boolean value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
-     */
-    void setCashBack(Boolean fCashBack);
-    /**
-     * A cardholder benefit that pays the cardholder a small percentage of their net expenditures.
-     *
-     * @param fCashBack java.lang.Boolean value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
-     */
-    void setCashBack(java.lang.Boolean fCashBack);
+    void setCashBack(Boolean cashBack);
 
     /**
      * The minimum payment is the lowest amount of money that one is required to pay on a credit card statement each month.
@@ -77,30 +59,21 @@ public interface PaymentCard extends PaymentMethod, FinancialProduct {
     /**
      * The minimum payment is the lowest amount of money that one is required to pay on a credit card statement each month.
      *
-     * @param fMonthlyMinimumRepaymentAmount MonetaryAmount value to set.
+     * @param monthlyMinimumRepaymentAmount MonetaryAmount value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      */
-    void setMonthlyMinimumRepaymentAmount(MonetaryAmount fMonthlyMinimumRepaymentAmount);
+    void setMonthlyMinimumRepaymentAmount(MonetaryAmount monthlyMinimumRepaymentAmount);
     /**
      * The minimum payment is the lowest amount of money that one is required to pay on a credit card statement each month.
      *
-     * @param fMonthlyMinimumRepaymentAmount Number value to set.
+     * @param monthlyMinimumRepaymentAmount Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      */
-    void setMonthlyMinimumRepaymentAmount(Number fMonthlyMinimumRepaymentAmount);
-    /**
-     * The minimum payment is the lowest amount of money that one is required to pay on a credit card statement each month.
-     *
-     * @param fMonthlyMinimumRepaymentAmount java.lang.Number value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
-     */
-    void setMonthlyMinimumRepaymentAmount(java.lang.Number fMonthlyMinimumRepaymentAmount);
+    void setMonthlyMinimumRepaymentAmount(Number monthlyMinimumRepaymentAmount);
 
     /**
      * A floor limit is the amount of money above which credit card transactions must be authorized.
@@ -115,12 +88,12 @@ public interface PaymentCard extends PaymentMethod, FinancialProduct {
     /**
      * A floor limit is the amount of money above which credit card transactions must be authorized.
      *
-     * @param fFloorLimit MonetaryAmount value to set.
+     * @param floorLimit MonetaryAmount value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
      */
-    void setFloorLimit(MonetaryAmount fFloorLimit);
+    void setFloorLimit(MonetaryAmount floorLimit);
 
     /**
      * A secure method for consumers to purchase products or services via debit, credit or smartcards by using RFID or NFC technology.
@@ -135,19 +108,10 @@ public interface PaymentCard extends PaymentMethod, FinancialProduct {
     /**
      * A secure method for consumers to purchase products or services via debit, credit or smartcards by using RFID or NFC technology.
      *
-     * @param fContactlessPayment Boolean value to set.
+     * @param contactlessPayment Boolean value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      */
-    void setContactlessPayment(Boolean fContactlessPayment);
-    /**
-     * A secure method for consumers to purchase products or services via debit, credit or smartcards by using RFID or NFC technology.
-     *
-     * @param fContactlessPayment java.lang.Boolean value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
-     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
-     */
-    void setContactlessPayment(java.lang.Boolean fContactlessPayment);
+    void setContactlessPayment(Boolean contactlessPayment);
 }

@@ -40,9 +40,9 @@ public interface Movie extends CreativeWork {
      * 
      * In the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.
      *
-     * @param fCountryOfOrigin Country value to set.
+     * @param countryOfOrigin Country value to set.
      */
-    void setCountryOfOrigin(Country fCountryOfOrigin);
+    void setCountryOfOrigin(Country countryOfOrigin);
 
     /**
      * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
@@ -54,9 +54,9 @@ public interface Movie extends CreativeWork {
     /**
      * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
      *
-     * @param fDirector Person value to set.
+     * @param director Person value to set.
      */
-    void setDirector(Person fDirector);
+    void setDirector(Person director);
 
     /**
      * An [EIDR](https://eidr.org/) (Entertainment Identifier Registry) [[identifier]] representing at the most general/abstract level, a work of film or television.
@@ -78,11 +78,11 @@ public interface Movie extends CreativeWork {
      * 
      * Since schema.org types like [[Movie]] and [[TVEpisode]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.
      *
-     * @param fTitleEIDR URL value to set.
+     * @param titleEIDR URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2469">https://github.com/schemaorg/schemaorg/issues/2469</a>
      */
-    void setTitleEIDR(URL fTitleEIDR);
+    void setTitleEIDR(URL titleEIDR);
     /**
      * An [EIDR](https://eidr.org/) (Entertainment Identifier Registry) [[identifier]] representing at the most general/abstract level, a work of film or television.
      * 
@@ -90,35 +90,11 @@ public interface Movie extends CreativeWork {
      * 
      * Since schema.org types like [[Movie]] and [[TVEpisode]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.
      *
-     * @param fTitleEIDR java.net.URL value to set.
+     * @param titleEIDR Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2469">https://github.com/schemaorg/schemaorg/issues/2469</a>
      */
-    void setTitleEIDR(java.net.URL fTitleEIDR);
-    /**
-     * An [EIDR](https://eidr.org/) (Entertainment Identifier Registry) [[identifier]] representing at the most general/abstract level, a work of film or television.
-     * 
-     * For example, the motion picture known as "Ghostbusters" has a titleEIDR of  "10.5240/7EC7-228A-510A-053E-CBB8-J". This title (or work) may have several variants, which EIDR calls "edits". See [[editEIDR]].
-     * 
-     * Since schema.org types like [[Movie]] and [[TVEpisode]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.
-     *
-     * @param fTitleEIDR Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2469">https://github.com/schemaorg/schemaorg/issues/2469</a>
-     */
-    void setTitleEIDR(Text fTitleEIDR);
-    /**
-     * An [EIDR](https://eidr.org/) (Entertainment Identifier Registry) [[identifier]] representing at the most general/abstract level, a work of film or television.
-     * 
-     * For example, the motion picture known as "Ghostbusters" has a titleEIDR of  "10.5240/7EC7-228A-510A-053E-CBB8-J". This title (or work) may have several variants, which EIDR calls "edits". See [[editEIDR]].
-     * 
-     * Since schema.org types like [[Movie]] and [[TVEpisode]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.
-     *
-     * @param fTitleEIDR java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2469">https://github.com/schemaorg/schemaorg/issues/2469</a>
-     */
-    void setTitleEIDR(java.lang.String fTitleEIDR);
+    void setTitleEIDR(Text titleEIDR);
 
     /**
      * Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).
@@ -132,27 +108,19 @@ public interface Movie extends CreativeWork {
     /**
      * Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).
      *
-     * @param fSubtitleLanguage Language value to set.
+     * @param subtitleLanguage Language value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2110">https://github.com/schemaorg/schemaorg/issues/2110</a>
      */
-    void setSubtitleLanguage(Language fSubtitleLanguage);
+    void setSubtitleLanguage(Language subtitleLanguage);
     /**
      * Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).
      *
-     * @param fSubtitleLanguage Text value to set.
+     * @param subtitleLanguage Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2110">https://github.com/schemaorg/schemaorg/issues/2110</a>
      */
-    void setSubtitleLanguage(Text fSubtitleLanguage);
-    /**
-     * Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).
-     *
-     * @param fSubtitleLanguage java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2110">https://github.com/schemaorg/schemaorg/issues/2110</a>
-     */
-    void setSubtitleLanguage(java.lang.String fSubtitleLanguage);
+    void setSubtitleLanguage(Text subtitleLanguage);
 
     /**
      * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
@@ -164,9 +132,9 @@ public interface Movie extends CreativeWork {
     /**
      * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
      *
-     * @param fActor Person value to set.
+     * @param actor Person value to set.
      */
-    void setActor(Person fActor);
+    void setActor(Person actor);
 
     /**
      * The trailer of a movie or tv/radio series, season, episode, etc.
@@ -178,9 +146,9 @@ public interface Movie extends CreativeWork {
     /**
      * The trailer of a movie or tv/radio series, season, episode, etc.
      *
-     * @param fTrailer VideoObject value to set.
+     * @param trailer VideoObject value to set.
      */
-    void setTrailer(VideoObject fTrailer);
+    void setTrailer(VideoObject trailer);
 
     /**
      * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
@@ -194,11 +162,11 @@ public interface Movie extends CreativeWork {
     /**
      * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
      *
-     * @param fDuration Duration value to set.
+     * @param duration Duration value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
      */
-    void setDuration(Duration fDuration);
+    void setDuration(Duration duration);
 
     /**
      * The production company or studio responsible for the item e.g. series, video game, episode etc.
@@ -210,9 +178,9 @@ public interface Movie extends CreativeWork {
     /**
      * The production company or studio responsible for the item e.g. series, video game, episode etc.
      *
-     * @param fProductionCompany Organization value to set.
+     * @param productionCompany Organization value to set.
      */
-    void setProductionCompany(Organization fProductionCompany);
+    void setProductionCompany(Organization productionCompany);
 
     /**
      * An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
@@ -224,9 +192,9 @@ public interface Movie extends CreativeWork {
     /**
      * An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
      *
-     * @param fActors Person value to set.
+     * @param actors Person value to set.
      */
-    void setActors(Person fActors);
+    void setActors(Person actors);
 
     /**
      * The composer of the soundtrack.
@@ -238,15 +206,15 @@ public interface Movie extends CreativeWork {
     /**
      * The composer of the soundtrack.
      *
-     * @param fMusicBy Person value to set.
+     * @param musicBy Person value to set.
      */
-    void setMusicBy(Person fMusicBy);
+    void setMusicBy(Person musicBy);
     /**
      * The composer of the soundtrack.
      *
-     * @param fMusicBy MusicGroup value to set.
+     * @param musicBy MusicGroup value to set.
      */
-    void setMusicBy(MusicGroup fMusicBy);
+    void setMusicBy(MusicGroup musicBy);
 
     /**
      * A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
@@ -258,7 +226,7 @@ public interface Movie extends CreativeWork {
     /**
      * A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
      *
-     * @param fDirectors Person value to set.
+     * @param directors Person value to set.
      */
-    void setDirectors(Person fDirectors);
+    void setDirectors(Person directors);
 }

@@ -30,9 +30,9 @@ public interface OrderItem extends Intangible {
     /**
      * The delivery of the parcel related to this order or order item.
      *
-     * @param fOrderDelivery ParcelDelivery value to set.
+     * @param orderDelivery ParcelDelivery value to set.
      */
-    void setOrderDelivery(ParcelDelivery fOrderDelivery);
+    void setOrderDelivery(ParcelDelivery orderDelivery);
 
     /**
      * The current status of the order item.
@@ -44,9 +44,9 @@ public interface OrderItem extends Intangible {
     /**
      * The current status of the order item.
      *
-     * @param fOrderItemStatus OrderStatus value to set.
+     * @param orderItemStatus OrderStatus value to set.
      */
-    void setOrderItemStatus(OrderStatus fOrderItemStatus);
+    void setOrderItemStatus(OrderStatus orderItemStatus);
 
     /**
      * The number of the item ordered. If the property is not set, assume the quantity is one.
@@ -58,15 +58,9 @@ public interface OrderItem extends Intangible {
     /**
      * The number of the item ordered. If the property is not set, assume the quantity is one.
      *
-     * @param fOrderQuantity Number value to set.
+     * @param orderQuantity Number value to set.
      */
-    void setOrderQuantity(Number fOrderQuantity);
-    /**
-     * The number of the item ordered. If the property is not set, assume the quantity is one.
-     *
-     * @param fOrderQuantity java.lang.Number value to set.
-     */
-    void setOrderQuantity(java.lang.Number fOrderQuantity);
+    void setOrderQuantity(Number orderQuantity);
 
     /**
      * The identifier of the order item.
@@ -78,15 +72,9 @@ public interface OrderItem extends Intangible {
     /**
      * The identifier of the order item.
      *
-     * @param fOrderItemNumber Text value to set.
+     * @param orderItemNumber Text value to set.
      */
-    void setOrderItemNumber(Text fOrderItemNumber);
-    /**
-     * The identifier of the order item.
-     *
-     * @param fOrderItemNumber java.lang.String value to set.
-     */
-    void setOrderItemNumber(java.lang.String fOrderItemNumber);
+    void setOrderItemNumber(Text orderItemNumber);
 
     /**
      * The item ordered.
@@ -98,19 +86,19 @@ public interface OrderItem extends Intangible {
     /**
      * The item ordered.
      *
-     * @param fOrderedItem Service value to set.
+     * @param orderedItem Service value to set.
      */
-    void setOrderedItem(Service fOrderedItem);
+    void setOrderedItem(Service orderedItem);
     /**
      * The item ordered.
      *
-     * @param fOrderedItem OrderItem value to set.
+     * @param orderedItem OrderItem value to set.
      */
-    void setOrderedItem(OrderItem fOrderedItem);
+    void setOrderedItem(OrderItem orderedItem);
     /**
      * The item ordered.
      *
-     * @param fOrderedItem Product value to set.
+     * @param orderedItem Product value to set.
      */
-    void setOrderedItem(Product fOrderedItem);
+    void setOrderedItem(Product orderedItem);
 }

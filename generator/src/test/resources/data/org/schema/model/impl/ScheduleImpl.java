@@ -35,7 +35,7 @@ import org.schema.model.Schedule;
 @JsonLdTypeName("Schedule")
 public class ScheduleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Schedule {
 
-    private Text fScheduleTimezone;
+    private Text scheduleTimezone;
 
     /**
      * Indicates the timezone for which the time(s) indicated in the [[Schedule]] are given. The value provided should be among those listed in the IANA Time Zone Database.
@@ -46,33 +46,22 @@ public class ScheduleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Text getScheduleTimezone() {
-        return fScheduleTimezone;
+        return scheduleTimezone;
     }
 
     /**
      * Indicates the timezone for which the time(s) indicated in the [[Schedule]] are given. The value provided should be among those listed in the IANA Time Zone Database.
      *
-     * @param fScheduleTimezone Text value to set.
+     * @param scheduleTimezone Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
      */
     @Override
-    public void setScheduleTimezone(Text fScheduleTimezone) {
-        this.fScheduleTimezone = fScheduleTimezone;
-    }
-    /**
-     * Indicates the timezone for which the time(s) indicated in the [[Schedule]] are given. The value provided should be among those listed in the IANA Time Zone Database.
-     *
-     * @param fScheduleTimezone java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
-     */
-    @Override
-    public void setScheduleTimezone(java.lang.String fScheduleTimezone) {
-        this.fScheduleTimezone = Text.of(fScheduleTimezone);
+    public void setScheduleTimezone(Text scheduleTimezone) {
+        this.scheduleTimezone = scheduleTimezone;
     }
 
-    private Object fStartDate;
+    private Object startDate;
 
     /**
      * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
@@ -82,51 +71,31 @@ public class ScheduleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public <T> T getStartDate() {
-        return (T) fStartDate;
+        return (T) startDate;
     }
 
     /**
      * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
      *
-     * @param fStartDate DateTime value to set.
+     * @param startDate DateTime value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
     @Override
-    public void setStartDate(DateTime fStartDate) {
-        this.fStartDate = fStartDate;
+    public void setStartDate(DateTime startDate) {
+        this.startDate = startDate;
     }
     /**
      * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
      *
-     * @param fStartDate java.time.LocalDateTime value to set.
+     * @param startDate Date value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
     @Override
-    public void setStartDate(java.time.LocalDateTime fStartDate) {
-        this.fStartDate = DateTime.of(fStartDate);
-    }
-    /**
-     * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
-     *
-     * @param fStartDate Date value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
-     */
-    @Override
-    public void setStartDate(Date fStartDate) {
-        this.fStartDate = fStartDate;
-    }
-    /**
-     * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
-     *
-     * @param fStartDate java.time.LocalDate value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
-     */
-    @Override
-    public void setStartDate(java.time.LocalDate fStartDate) {
-        this.fStartDate = Date.of(fStartDate);
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
     }
 
-    private Object fExceptDate;
+    private Object exceptDate;
 
     /**
      * Defines a [[Date]] or [[DateTime]] during which a scheduled [[Event]] will not take place. The property allows exceptions to
@@ -140,7 +109,7 @@ public class ScheduleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public <T> T getExceptDate() {
-        return (T) fExceptDate;
+        return (T) exceptDate;
     }
 
     /**
@@ -149,13 +118,13 @@ public class ScheduleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      *       should be excluded from the schedule. If an exception is specified as a [[Date]] then any event that is scheduled for that 24 hour period should be
      *       excluded from the schedule. This allows a whole day to be excluded from the schedule without having to itemise every scheduled event.
      *
-     * @param fExceptDate DateTime value to set.
+     * @param exceptDate DateTime value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
      */
     @Override
-    public void setExceptDate(DateTime fExceptDate) {
-        this.fExceptDate = fExceptDate;
+    public void setExceptDate(DateTime exceptDate) {
+        this.exceptDate = exceptDate;
     }
     /**
      * Defines a [[Date]] or [[DateTime]] during which a scheduled [[Event]] will not take place. The property allows exceptions to
@@ -163,44 +132,16 @@ public class ScheduleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      *       should be excluded from the schedule. If an exception is specified as a [[Date]] then any event that is scheduled for that 24 hour period should be
      *       excluded from the schedule. This allows a whole day to be excluded from the schedule without having to itemise every scheduled event.
      *
-     * @param fExceptDate java.time.LocalDateTime value to set.
+     * @param exceptDate Date value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
      */
     @Override
-    public void setExceptDate(java.time.LocalDateTime fExceptDate) {
-        this.fExceptDate = DateTime.of(fExceptDate);
-    }
-    /**
-     * Defines a [[Date]] or [[DateTime]] during which a scheduled [[Event]] will not take place. The property allows exceptions to
-     *       a [[Schedule]] to be specified. If an exception is specified as a [[DateTime]] then only the event that would have started at that specific date and time
-     *       should be excluded from the schedule. If an exception is specified as a [[Date]] then any event that is scheduled for that 24 hour period should be
-     *       excluded from the schedule. This allows a whole day to be excluded from the schedule without having to itemise every scheduled event.
-     *
-     * @param fExceptDate Date value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
-     */
-    @Override
-    public void setExceptDate(Date fExceptDate) {
-        this.fExceptDate = fExceptDate;
-    }
-    /**
-     * Defines a [[Date]] or [[DateTime]] during which a scheduled [[Event]] will not take place. The property allows exceptions to
-     *       a [[Schedule]] to be specified. If an exception is specified as a [[DateTime]] then only the event that would have started at that specific date and time
-     *       should be excluded from the schedule. If an exception is specified as a [[Date]] then any event that is scheduled for that 24 hour period should be
-     *       excluded from the schedule. This allows a whole day to be excluded from the schedule without having to itemise every scheduled event.
-     *
-     * @param fExceptDate java.time.LocalDate value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
-     */
-    @Override
-    public void setExceptDate(java.time.LocalDate fExceptDate) {
-        this.fExceptDate = Date.of(fExceptDate);
+    public void setExceptDate(Date exceptDate) {
+        this.exceptDate = exceptDate;
     }
 
-    private Object fStartTime;
+    private Object startTime;
 
     /**
      * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
@@ -210,51 +151,31 @@ public class ScheduleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public <T> T getStartTime() {
-        return (T) fStartTime;
+        return (T) startTime;
     }
 
     /**
      * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
      *
-     * @param fStartTime DateTime value to set.
+     * @param startTime DateTime value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
      */
     @Override
-    public void setStartTime(DateTime fStartTime) {
-        this.fStartTime = fStartTime;
+    public void setStartTime(DateTime startTime) {
+        this.startTime = startTime;
     }
     /**
      * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
      *
-     * @param fStartTime java.time.LocalDateTime value to set.
+     * @param startTime Time value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
      */
     @Override
-    public void setStartTime(java.time.LocalDateTime fStartTime) {
-        this.fStartTime = DateTime.of(fStartTime);
-    }
-    /**
-     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     *
-     * @param fStartTime Time value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
-     */
-    @Override
-    public void setStartTime(Time fStartTime) {
-        this.fStartTime = fStartTime;
-    }
-    /**
-     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     *
-     * @param fStartTime java.time.LocalTime value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
-     */
-    @Override
-    public void setStartTime(java.time.LocalTime fStartTime) {
-        this.fStartTime = Time.of(fStartTime);
+    public void setStartTime(Time startTime) {
+        this.startTime = startTime;
     }
 
-    private Integer fRepeatCount;
+    private Integer repeatCount;
 
     /**
      * Defines the number of times a recurring [[Event]] will take place
@@ -265,33 +186,22 @@ public class ScheduleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Integer getRepeatCount() {
-        return fRepeatCount;
+        return repeatCount;
     }
 
     /**
      * Defines the number of times a recurring [[Event]] will take place
      *
-     * @param fRepeatCount Integer value to set.
+     * @param repeatCount Integer value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
      */
     @Override
-    public void setRepeatCount(Integer fRepeatCount) {
-        this.fRepeatCount = fRepeatCount;
-    }
-    /**
-     * Defines the number of times a recurring [[Event]] will take place
-     *
-     * @param fRepeatCount java.lang.Integer value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
-     */
-    @Override
-    public void setRepeatCount(java.lang.Integer fRepeatCount) {
-        this.fRepeatCount = Integer.of(fRepeatCount);
+    public void setRepeatCount(Integer repeatCount) {
+        this.repeatCount = repeatCount;
     }
 
-    private Object fEndDate;
+    private Object endDate;
 
     /**
      * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
@@ -301,51 +211,31 @@ public class ScheduleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public <T> T getEndDate() {
-        return (T) fEndDate;
+        return (T) endDate;
     }
 
     /**
      * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
      *
-     * @param fEndDate Date value to set.
+     * @param endDate Date value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
     @Override
-    public void setEndDate(Date fEndDate) {
-        this.fEndDate = fEndDate;
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
     }
     /**
      * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
      *
-     * @param fEndDate java.time.LocalDate value to set.
+     * @param endDate DateTime value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
     @Override
-    public void setEndDate(java.time.LocalDate fEndDate) {
-        this.fEndDate = Date.of(fEndDate);
-    }
-    /**
-     * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
-     *
-     * @param fEndDate DateTime value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
-     */
-    @Override
-    public void setEndDate(DateTime fEndDate) {
-        this.fEndDate = fEndDate;
-    }
-    /**
-     * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
-     *
-     * @param fEndDate java.time.LocalDateTime value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
-     */
-    @Override
-    public void setEndDate(java.time.LocalDateTime fEndDate) {
-        this.fEndDate = DateTime.of(fEndDate);
+    public void setEndDate(DateTime endDate) {
+        this.endDate = endDate;
     }
 
-    private Object fRepeatFrequency;
+    private Object repeatFrequency;
 
     /**
      * Defines the frequency at which [[Event]]s will occur according to a schedule [[Schedule]]. The intervals between
@@ -357,47 +247,35 @@ public class ScheduleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public <T> T getRepeatFrequency() {
-        return (T) fRepeatFrequency;
+        return (T) repeatFrequency;
     }
 
     /**
      * Defines the frequency at which [[Event]]s will occur according to a schedule [[Schedule]]. The intervals between
      *       events should be defined as a [[Duration]] of time.
      *
-     * @param fRepeatFrequency Text value to set.
+     * @param repeatFrequency Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
      */
     @Override
-    public void setRepeatFrequency(Text fRepeatFrequency) {
-        this.fRepeatFrequency = fRepeatFrequency;
+    public void setRepeatFrequency(Text repeatFrequency) {
+        this.repeatFrequency = repeatFrequency;
     }
     /**
      * Defines the frequency at which [[Event]]s will occur according to a schedule [[Schedule]]. The intervals between
      *       events should be defined as a [[Duration]] of time.
      *
-     * @param fRepeatFrequency java.lang.String value to set.
+     * @param repeatFrequency Duration value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
      */
     @Override
-    public void setRepeatFrequency(java.lang.String fRepeatFrequency) {
-        this.fRepeatFrequency = Text.of(fRepeatFrequency);
-    }
-    /**
-     * Defines the frequency at which [[Event]]s will occur according to a schedule [[Schedule]]. The intervals between
-     *       events should be defined as a [[Duration]] of time.
-     *
-     * @param fRepeatFrequency Duration value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
-     */
-    @Override
-    public void setRepeatFrequency(Duration fRepeatFrequency) {
-        this.fRepeatFrequency = fRepeatFrequency;
+    public void setRepeatFrequency(Duration repeatFrequency) {
+        this.repeatFrequency = repeatFrequency;
     }
 
-    private Duration fDuration;
+    private Duration duration;
 
     /**
      * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
@@ -408,22 +286,22 @@ public class ScheduleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Duration getDuration() {
-        return fDuration;
+        return duration;
     }
 
     /**
      * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
      *
-     * @param fDuration Duration value to set.
+     * @param duration Duration value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
      */
     @Override
-    public void setDuration(Duration fDuration) {
-        this.fDuration = fDuration;
+    public void setDuration(Duration duration) {
+        this.duration = duration;
     }
 
-    private Integer fByMonthDay;
+    private Integer byMonthDay;
 
     /**
      * Defines the day(s) of the month on which a recurring [[Event]] takes place. Specified as an [[Integer]] between 1-31.
@@ -434,33 +312,22 @@ public class ScheduleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Integer getByMonthDay() {
-        return fByMonthDay;
+        return byMonthDay;
     }
 
     /**
      * Defines the day(s) of the month on which a recurring [[Event]] takes place. Specified as an [[Integer]] between 1-31.
      *
-     * @param fByMonthDay Integer value to set.
+     * @param byMonthDay Integer value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
      */
     @Override
-    public void setByMonthDay(Integer fByMonthDay) {
-        this.fByMonthDay = fByMonthDay;
-    }
-    /**
-     * Defines the day(s) of the month on which a recurring [[Event]] takes place. Specified as an [[Integer]] between 1-31.
-     *
-     * @param fByMonthDay java.lang.Integer value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
-     */
-    @Override
-    public void setByMonthDay(java.lang.Integer fByMonthDay) {
-        this.fByMonthDay = Integer.of(fByMonthDay);
+    public void setByMonthDay(Integer byMonthDay) {
+        this.byMonthDay = byMonthDay;
     }
 
-    private Object fEndTime;
+    private Object endTime;
 
     /**
      * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
@@ -470,51 +337,31 @@ public class ScheduleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public <T> T getEndTime() {
-        return (T) fEndTime;
+        return (T) endTime;
     }
 
     /**
      * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
      *
-     * @param fEndTime DateTime value to set.
+     * @param endTime DateTime value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
      */
     @Override
-    public void setEndTime(DateTime fEndTime) {
-        this.fEndTime = fEndTime;
+    public void setEndTime(DateTime endTime) {
+        this.endTime = endTime;
     }
     /**
      * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
      *
-     * @param fEndTime java.time.LocalDateTime value to set.
+     * @param endTime Time value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
      */
     @Override
-    public void setEndTime(java.time.LocalDateTime fEndTime) {
-        this.fEndTime = DateTime.of(fEndTime);
-    }
-    /**
-     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     *
-     * @param fEndTime Time value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
-     */
-    @Override
-    public void setEndTime(Time fEndTime) {
-        this.fEndTime = fEndTime;
-    }
-    /**
-     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     *
-     * @param fEndTime java.time.LocalTime value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
-     */
-    @Override
-    public void setEndTime(java.time.LocalTime fEndTime) {
-        this.fEndTime = Time.of(fEndTime);
+    public void setEndTime(Time endTime) {
+        this.endTime = endTime;
     }
 
-    private Integer fByMonth;
+    private Integer byMonth;
 
     /**
      * Defines the month(s) of the year on which a recurring [[Event]] takes place. Specified as an [[Integer]] between 1-12. January is 1.
@@ -525,33 +372,22 @@ public class ScheduleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Integer getByMonth() {
-        return fByMonth;
+        return byMonth;
     }
 
     /**
      * Defines the month(s) of the year on which a recurring [[Event]] takes place. Specified as an [[Integer]] between 1-12. January is 1.
      *
-     * @param fByMonth Integer value to set.
+     * @param byMonth Integer value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
      */
     @Override
-    public void setByMonth(Integer fByMonth) {
-        this.fByMonth = fByMonth;
-    }
-    /**
-     * Defines the month(s) of the year on which a recurring [[Event]] takes place. Specified as an [[Integer]] between 1-12. January is 1.
-     *
-     * @param fByMonth java.lang.Integer value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
-     */
-    @Override
-    public void setByMonth(java.lang.Integer fByMonth) {
-        this.fByMonth = Integer.of(fByMonth);
+    public void setByMonth(Integer byMonth) {
+        this.byMonth = byMonth;
     }
 
-    private Object fByDay;
+    private Object byDay;
 
     /**
      * Defines the day(s) of the week on which a recurring [[Event]] takes place. May be specified using either [[DayOfWeek]], or alternatively [[Text]] conforming to iCal's syntax for byDay recurrence rules.
@@ -562,44 +398,33 @@ public class ScheduleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public <T> T getByDay() {
-        return (T) fByDay;
+        return (T) byDay;
     }
 
     /**
      * Defines the day(s) of the week on which a recurring [[Event]] takes place. May be specified using either [[DayOfWeek]], or alternatively [[Text]] conforming to iCal's syntax for byDay recurrence rules.
      *
-     * @param fByDay DayOfWeek value to set.
+     * @param byDay DayOfWeek value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
      */
     @Override
-    public void setByDay(DayOfWeek fByDay) {
-        this.fByDay = fByDay;
+    public void setByDay(DayOfWeek byDay) {
+        this.byDay = byDay;
     }
     /**
      * Defines the day(s) of the week on which a recurring [[Event]] takes place. May be specified using either [[DayOfWeek]], or alternatively [[Text]] conforming to iCal's syntax for byDay recurrence rules.
      *
-     * @param fByDay Text value to set.
+     * @param byDay Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
      */
     @Override
-    public void setByDay(Text fByDay) {
-        this.fByDay = fByDay;
-    }
-    /**
-     * Defines the day(s) of the week on which a recurring [[Event]] takes place. May be specified using either [[DayOfWeek]], or alternatively [[Text]] conforming to iCal's syntax for byDay recurrence rules.
-     *
-     * @param fByDay java.lang.String value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
-     */
-    @Override
-    public void setByDay(java.lang.String fByDay) {
-        this.fByDay = Text.of(fByDay);
+    public void setByDay(Text byDay) {
+        this.byDay = byDay;
     }
 
-    private Integer fByMonthWeek;
+    private Integer byMonthWeek;
 
     /**
      * Defines the week(s) of the month on which a recurring Event takes place. Specified as an Integer between 1-5. For clarity, byMonthWeek is best used in conjunction with byDay to indicate concepts like the first and third Mondays of a month.
@@ -610,33 +435,22 @@ public class ScheduleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Integer getByMonthWeek() {
-        return fByMonthWeek;
+        return byMonthWeek;
     }
 
     /**
      * Defines the week(s) of the month on which a recurring Event takes place. Specified as an Integer between 1-5. For clarity, byMonthWeek is best used in conjunction with byDay to indicate concepts like the first and third Mondays of a month.
      *
-     * @param fByMonthWeek Integer value to set.
+     * @param byMonthWeek Integer value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2599">https://github.com/schemaorg/schemaorg/issues/2599</a>
      */
     @Override
-    public void setByMonthWeek(Integer fByMonthWeek) {
-        this.fByMonthWeek = fByMonthWeek;
-    }
-    /**
-     * Defines the week(s) of the month on which a recurring Event takes place. Specified as an Integer between 1-5. For clarity, byMonthWeek is best used in conjunction with byDay to indicate concepts like the first and third Mondays of a month.
-     *
-     * @param fByMonthWeek java.lang.Integer value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2599">https://github.com/schemaorg/schemaorg/issues/2599</a>
-     */
-    @Override
-    public void setByMonthWeek(java.lang.Integer fByMonthWeek) {
-        this.fByMonthWeek = Integer.of(fByMonthWeek);
+    public void setByMonthWeek(Integer byMonthWeek) {
+        this.byMonthWeek = byMonthWeek;
     }
 
-    private Object fMainEntityOfPage;
+    private Object mainEntityOfPage;
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -645,38 +459,29 @@ public class ScheduleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
+        return (T) mainEntityOfPage;
     }
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param fMainEntityOfPage CreativeWork value to set.
+     * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(CreativeWork fMainEntityOfPage) {
-        this.fMainEntityOfPage = fMainEntityOfPage;
+    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
     }
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param fMainEntityOfPage URL value to set.
+     * @param mainEntityOfPage URL value to set.
      */
     @Override
-    public void setMainEntityOfPage(URL fMainEntityOfPage) {
-        this.fMainEntityOfPage = fMainEntityOfPage;
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param fMainEntityOfPage java.net.URL value to set.
-     */
-    @Override
-    public void setMainEntityOfPage(java.net.URL fMainEntityOfPage) {
-        this.fMainEntityOfPage = URL.of(fMainEntityOfPage);
+    public void setMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
     }
 
-    private Text fAlternateName;
+    private Text alternateName;
 
     /**
      * An alias for the item.
@@ -685,29 +490,20 @@ public class ScheduleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Text getAlternateName() {
-        return fAlternateName;
+        return alternateName;
     }
 
     /**
      * An alias for the item.
      *
-     * @param fAlternateName Text value to set.
+     * @param alternateName Text value to set.
      */
     @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
-    }
-    /**
-     * An alias for the item.
-     *
-     * @param fAlternateName java.lang.String value to set.
-     */
-    @Override
-    public void setAlternateName(java.lang.String fAlternateName) {
-        this.fAlternateName = Text.of(fAlternateName);
+    public void setAlternateName(Text alternateName) {
+        this.alternateName = alternateName;
     }
 
-    private Text fName;
+    private Text name;
 
     /**
      * The name of the item.
@@ -716,29 +512,20 @@ public class ScheduleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Text getName() {
-        return fName;
+        return name;
     }
 
     /**
      * The name of the item.
      *
-     * @param fName Text value to set.
+     * @param name Text value to set.
      */
     @Override
-    public void setName(Text fName) {
-        this.fName = fName;
-    }
-    /**
-     * The name of the item.
-     *
-     * @param fName java.lang.String value to set.
-     */
-    @Override
-    public void setName(java.lang.String fName) {
-        this.fName = Text.of(fName);
+    public void setName(Text name) {
+        this.name = name;
     }
 
-    private Action fPotentialAction;
+    private Action potentialAction;
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -747,20 +534,20 @@ public class ScheduleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Action getPotentialAction() {
-        return fPotentialAction;
+        return potentialAction;
     }
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      *
-     * @param fPotentialAction Action value to set.
+     * @param potentialAction Action value to set.
      */
     @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
+    public void setPotentialAction(Action potentialAction) {
+        this.potentialAction = potentialAction;
     }
 
-    private Object fImage;
+    private Object image;
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -769,38 +556,29 @@ public class ScheduleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public <T> T getImage() {
-        return (T) fImage;
+        return (T) image;
     }
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param fImage URL value to set.
+     * @param image URL value to set.
      */
     @Override
-    public void setImage(URL fImage) {
-        this.fImage = fImage;
+    public void setImage(URL image) {
+        this.image = image;
     }
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param fImage java.net.URL value to set.
+     * @param image ImageObject value to set.
      */
     @Override
-    public void setImage(java.net.URL fImage) {
-        this.fImage = URL.of(fImage);
-    }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param fImage ImageObject value to set.
-     */
-    @Override
-    public void setImage(ImageObject fImage) {
-        this.fImage = fImage;
+    public void setImage(ImageObject image) {
+        this.image = image;
     }
 
-    private URL fUrl;
+    private URL url;
 
     /**
      * URL of the item.
@@ -809,29 +587,20 @@ public class ScheduleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public URL getUrl() {
-        return fUrl;
+        return url;
     }
 
     /**
      * URL of the item.
      *
-     * @param fUrl URL value to set.
+     * @param url URL value to set.
      */
     @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
-    }
-    /**
-     * URL of the item.
-     *
-     * @param fUrl java.net.URL value to set.
-     */
-    @Override
-    public void setUrl(java.net.URL fUrl) {
-        this.fUrl = URL.of(fUrl);
+    public void setUrl(URL url) {
+        this.url = url;
     }
 
-    private Text fDescription;
+    private Text description;
 
     /**
      * A description of the item.
@@ -840,29 +609,20 @@ public class ScheduleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Text getDescription() {
-        return fDescription;
+        return description;
     }
 
     /**
      * A description of the item.
      *
-     * @param fDescription Text value to set.
+     * @param description Text value to set.
      */
     @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
-    }
-    /**
-     * A description of the item.
-     *
-     * @param fDescription java.lang.String value to set.
-     */
-    @Override
-    public void setDescription(java.lang.String fDescription) {
-        this.fDescription = Text.of(fDescription);
+    public void setDescription(Text description) {
+        this.description = description;
     }
 
-    private Object fSubjectOf;
+    private Object subjectOf;
 
     /**
      * A CreativeWork or Event about this Thing.
@@ -872,31 +632,31 @@ public class ScheduleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public <T> T getSubjectOf() {
-        return (T) fSubjectOf;
+        return (T) subjectOf;
     }
 
     /**
      * A CreativeWork or Event about this Thing.
      *
-     * @param fSubjectOf Event value to set.
+     * @param subjectOf Event value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Event fSubjectOf) {
-        this.fSubjectOf = fSubjectOf;
+    public void setSubjectOf(Event subjectOf) {
+        this.subjectOf = subjectOf;
     }
     /**
      * A CreativeWork or Event about this Thing.
      *
-     * @param fSubjectOf CreativeWork value to set.
+     * @param subjectOf CreativeWork value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(CreativeWork fSubjectOf) {
-        this.fSubjectOf = fSubjectOf;
+    public void setSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = subjectOf;
     }
 
-    private URL fAdditionalType;
+    private URL additionalType;
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
@@ -905,29 +665,20 @@ public class ScheduleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public URL getAdditionalType() {
-        return fAdditionalType;
+        return additionalType;
     }
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
-     * @param fAdditionalType URL value to set.
+     * @param additionalType URL value to set.
      */
     @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
-    }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
-     *
-     * @param fAdditionalType java.net.URL value to set.
-     */
-    @Override
-    public void setAdditionalType(java.net.URL fAdditionalType) {
-        this.fAdditionalType = URL.of(fAdditionalType);
+    public void setAdditionalType(URL additionalType) {
+        this.additionalType = additionalType;
     }
 
-    private Text fDisambiguatingDescription;
+    private Text disambiguatingDescription;
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
@@ -936,29 +687,20 @@ public class ScheduleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public Text getDisambiguatingDescription() {
-        return fDisambiguatingDescription;
+        return disambiguatingDescription;
     }
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
-     * @param fDisambiguatingDescription Text value to set.
+     * @param disambiguatingDescription Text value to set.
      */
     @Override
-    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = fDisambiguatingDescription;
-    }
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @param fDisambiguatingDescription java.lang.String value to set.
-     */
-    @Override
-    public void setDisambiguatingDescription(java.lang.String fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = Text.of(fDisambiguatingDescription);
+    public void setDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = disambiguatingDescription;
     }
 
-    private URL fSameAs;
+    private URL sameAs;
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
@@ -967,29 +709,20 @@ public class ScheduleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public URL getSameAs() {
-        return fSameAs;
+        return sameAs;
     }
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
-     * @param fSameAs URL value to set.
+     * @param sameAs URL value to set.
      */
     @Override
-    public void setSameAs(URL fSameAs) {
-        this.fSameAs = fSameAs;
-    }
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @param fSameAs java.net.URL value to set.
-     */
-    @Override
-    public void setSameAs(java.net.URL fSameAs) {
-        this.fSameAs = URL.of(fSameAs);
+    public void setSameAs(URL sameAs) {
+        this.sameAs = sameAs;
     }
 
-    private Object fIdentifier;
+    private Object identifier;
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -999,57 +732,37 @@ public class ScheduleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
      */
     @Override
     public <T> T getIdentifier() {
-        return (T) fIdentifier;
+        return (T) identifier;
     }
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier URL value to set.
+     * @param identifier URL value to set.
      */
     @Override
-    public void setIdentifier(URL fIdentifier) {
-        this.fIdentifier = fIdentifier;
+    public void setIdentifier(URL identifier) {
+        this.identifier = identifier;
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier java.net.URL value to set.
+     * @param identifier Text value to set.
      */
     @Override
-    public void setIdentifier(java.net.URL fIdentifier) {
-        this.fIdentifier = URL.of(fIdentifier);
+    public void setIdentifier(Text identifier) {
+        this.identifier = identifier;
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
-     * @param fIdentifier Text value to set.
+     * @param identifier PropertyValue value to set.
      */
     @Override
-    public void setIdentifier(Text fIdentifier) {
-        this.fIdentifier = fIdentifier;
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param fIdentifier java.lang.String value to set.
-     */
-    @Override
-    public void setIdentifier(java.lang.String fIdentifier) {
-        this.fIdentifier = Text.of(fIdentifier);
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param fIdentifier PropertyValue value to set.
-     */
-    @Override
-    public void setIdentifier(PropertyValue fIdentifier) {
-        this.fIdentifier = fIdentifier;
+    public void setIdentifier(PropertyValue identifier) {
+        this.identifier = identifier;
     }
 }

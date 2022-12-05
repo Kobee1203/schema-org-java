@@ -24,7 +24,7 @@ public interface VoteAction extends ChooseAction {
     /**
      * A sub property of object. The candidate subject of this action.
      *
-     * @param fCandidate Person value to set.
+     * @param candidate Person value to set.
      */
-    void setCandidate(Person fCandidate);
+    void setCandidate(Person candidate);
 }

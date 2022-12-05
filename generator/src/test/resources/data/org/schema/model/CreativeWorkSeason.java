@@ -33,31 +33,17 @@ public interface CreativeWorkSeason extends CreativeWork {
     /**
      * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
      *
-     * @param fStartDate DateTime value to set.
+     * @param startDate DateTime value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
-    void setStartDate(DateTime fStartDate);
+    void setStartDate(DateTime startDate);
     /**
      * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
      *
-     * @param fStartDate java.time.LocalDateTime value to set.
+     * @param startDate Date value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
-    void setStartDate(java.time.LocalDateTime fStartDate);
-    /**
-     * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
-     *
-     * @param fStartDate Date value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
-     */
-    void setStartDate(Date fStartDate);
-    /**
-     * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
-     *
-     * @param fStartDate java.time.LocalDate value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
-     */
-    void setStartDate(java.time.LocalDate fStartDate);
+    void setStartDate(Date startDate);
 
     /**
      * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
@@ -69,9 +55,9 @@ public interface CreativeWorkSeason extends CreativeWork {
     /**
      * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
      *
-     * @param fDirector Person value to set.
+     * @param director Person value to set.
      */
-    void setDirector(Person fDirector);
+    void setDirector(Person director);
 
     /**
      * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
@@ -83,9 +69,9 @@ public interface CreativeWorkSeason extends CreativeWork {
     /**
      * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
      *
-     * @param fActor Person value to set.
+     * @param actor Person value to set.
      */
-    void setActor(Person fActor);
+    void setActor(Person actor);
 
     /**
      * The trailer of a movie or tv/radio series, season, episode, etc.
@@ -97,9 +83,9 @@ public interface CreativeWorkSeason extends CreativeWork {
     /**
      * The trailer of a movie or tv/radio series, season, episode, etc.
      *
-     * @param fTrailer VideoObject value to set.
+     * @param trailer VideoObject value to set.
      */
-    void setTrailer(VideoObject fTrailer);
+    void setTrailer(VideoObject trailer);
 
     /**
      * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
@@ -112,31 +98,17 @@ public interface CreativeWorkSeason extends CreativeWork {
     /**
      * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
      *
-     * @param fEndDate Date value to set.
+     * @param endDate Date value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
-    void setEndDate(Date fEndDate);
+    void setEndDate(Date endDate);
     /**
      * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
      *
-     * @param fEndDate java.time.LocalDate value to set.
+     * @param endDate DateTime value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
-    void setEndDate(java.time.LocalDate fEndDate);
-    /**
-     * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
-     *
-     * @param fEndDate DateTime value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
-     */
-    void setEndDate(DateTime fEndDate);
-    /**
-     * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
-     *
-     * @param fEndDate java.time.LocalDateTime value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
-     */
-    void setEndDate(java.time.LocalDateTime fEndDate);
+    void setEndDate(DateTime endDate);
 
     /**
      * An episode of a TV/radio series or season.
@@ -148,9 +120,9 @@ public interface CreativeWorkSeason extends CreativeWork {
     /**
      * An episode of a TV/radio series or season.
      *
-     * @param fEpisodes Episode value to set.
+     * @param episodes Episode value to set.
      */
-    void setEpisodes(Episode fEpisodes);
+    void setEpisodes(Episode episodes);
 
     /**
      * The number of episodes in this season or series.
@@ -162,15 +134,9 @@ public interface CreativeWorkSeason extends CreativeWork {
     /**
      * The number of episodes in this season or series.
      *
-     * @param fNumberOfEpisodes Integer value to set.
+     * @param numberOfEpisodes Integer value to set.
      */
-    void setNumberOfEpisodes(Integer fNumberOfEpisodes);
-    /**
-     * The number of episodes in this season or series.
-     *
-     * @param fNumberOfEpisodes java.lang.Integer value to set.
-     */
-    void setNumberOfEpisodes(java.lang.Integer fNumberOfEpisodes);
+    void setNumberOfEpisodes(Integer numberOfEpisodes);
 
     /**
      * The series to which this episode or season belongs.
@@ -182,9 +148,9 @@ public interface CreativeWorkSeason extends CreativeWork {
     /**
      * The series to which this episode or season belongs.
      *
-     * @param fPartOfSeries CreativeWorkSeries value to set.
+     * @param partOfSeries CreativeWorkSeries value to set.
      */
-    void setPartOfSeries(CreativeWorkSeries fPartOfSeries);
+    void setPartOfSeries(CreativeWorkSeries partOfSeries);
 
     /**
      * The production company or studio responsible for the item e.g. series, video game, episode etc.
@@ -196,9 +162,9 @@ public interface CreativeWorkSeason extends CreativeWork {
     /**
      * The production company or studio responsible for the item e.g. series, video game, episode etc.
      *
-     * @param fProductionCompany Organization value to set.
+     * @param productionCompany Organization value to set.
      */
-    void setProductionCompany(Organization fProductionCompany);
+    void setProductionCompany(Organization productionCompany);
 
     /**
      * Position of the season within an ordered group of seasons.
@@ -210,27 +176,15 @@ public interface CreativeWorkSeason extends CreativeWork {
     /**
      * Position of the season within an ordered group of seasons.
      *
-     * @param fSeasonNumber Text value to set.
+     * @param seasonNumber Text value to set.
      */
-    void setSeasonNumber(Text fSeasonNumber);
+    void setSeasonNumber(Text seasonNumber);
     /**
      * Position of the season within an ordered group of seasons.
      *
-     * @param fSeasonNumber java.lang.String value to set.
+     * @param seasonNumber Integer value to set.
      */
-    void setSeasonNumber(java.lang.String fSeasonNumber);
-    /**
-     * Position of the season within an ordered group of seasons.
-     *
-     * @param fSeasonNumber Integer value to set.
-     */
-    void setSeasonNumber(Integer fSeasonNumber);
-    /**
-     * Position of the season within an ordered group of seasons.
-     *
-     * @param fSeasonNumber java.lang.Integer value to set.
-     */
-    void setSeasonNumber(java.lang.Integer fSeasonNumber);
+    void setSeasonNumber(Integer seasonNumber);
 
     /**
      * An episode of a tv, radio or game media within a series or season.
@@ -242,7 +196,7 @@ public interface CreativeWorkSeason extends CreativeWork {
     /**
      * An episode of a tv, radio or game media within a series or season.
      *
-     * @param fEpisode Episode value to set.
+     * @param episode Episode value to set.
      */
-    void setEpisode(Episode fEpisode);
+    void setEpisode(Episode episode);
 }
