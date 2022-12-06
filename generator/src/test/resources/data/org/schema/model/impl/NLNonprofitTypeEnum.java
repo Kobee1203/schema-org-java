@@ -31,12 +31,22 @@ import org.schema.model.NLNonprofitType;
 @JsonLdTypeName("NLNonprofitType")
 public enum NLNonprofitTypeEnum implements NLNonprofitType {
     NONPROFIT_ANBI("NonprofitANBI"),
-    NONPROFIT_SBBI("NonprofitSBBI");
+    NONPROFIT_SBBI("NonprofitSBBI")
+    ;
 
     private final String enumValue;
 
     NLNonprofitTypeEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static NLNonprofitTypeEnum from(String value) {
+        for (NLNonprofitTypeEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

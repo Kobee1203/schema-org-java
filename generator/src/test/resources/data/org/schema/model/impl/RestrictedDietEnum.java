@@ -37,12 +37,22 @@ public enum RestrictedDietEnum implements RestrictedDiet {
     LOW_CALORIE_DIET("LowCalorieDiet"),
     LOW_LACTOSE_DIET("LowLactoseDiet"),
     GLUTEN_FREE_DIET("GlutenFreeDiet"),
-    DIABETIC_DIET("DiabeticDiet");
+    DIABETIC_DIET("DiabeticDiet")
+    ;
 
     private final String enumValue;
 
     RestrictedDietEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static RestrictedDietEnum from(String value) {
+        for (RestrictedDietEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

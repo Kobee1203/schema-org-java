@@ -35,12 +35,22 @@ public enum OrderStatusEnum implements OrderStatus {
     ORDER_PAYMENT_DUE("OrderPaymentDue"),
     ORDER_IN_TRANSIT("OrderInTransit"),
     ORDER_PROCESSING("OrderProcessing"),
-    ORDER_PICKUP_AVAILABLE("OrderPickupAvailable");
+    ORDER_PICKUP_AVAILABLE("OrderPickupAvailable")
+    ;
 
     private final String enumValue;
 
     OrderStatusEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static OrderStatusEnum from(String value) {
+        for (OrderStatusEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

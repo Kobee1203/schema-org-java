@@ -34,12 +34,22 @@ public enum DrugPregnancyCategoryEnum implements DrugPregnancyCategory {
     FD_ACATEGORY_X("FDAcategoryX"),
     FD_ACATEGORY_B("FDAcategoryB"),
     FD_ACATEGORY_D("FDAcategoryD"),
-    FD_ANOT_EVALUATED("FDAnotEvaluated");
+    FD_ANOT_EVALUATED("FDAnotEvaluated")
+    ;
 
     private final String enumValue;
 
     DrugPregnancyCategoryEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static DrugPregnancyCategoryEnum from(String value) {
+        for (DrugPregnancyCategoryEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

@@ -41,12 +41,22 @@ public enum WearableMeasurementTypeEnumerationEnum implements WearableMeasuremen
     WEARABLE_MEASUREMENT_BACK("WearableMeasurementBack"),
     WEARABLE_MEASUREMENT_LENGTH("WearableMeasurementLength"),
     WEARABLE_MEASUREMENT_HEIGHT("WearableMeasurementHeight"),
-    WEARABLE_MEASUREMENT_INSEAM("WearableMeasurementInseam");
+    WEARABLE_MEASUREMENT_INSEAM("WearableMeasurementInseam")
+    ;
 
     private final String enumValue;
 
     WearableMeasurementTypeEnumerationEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static WearableMeasurementTypeEnumerationEnum from(String value) {
+        for (WearableMeasurementTypeEnumerationEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

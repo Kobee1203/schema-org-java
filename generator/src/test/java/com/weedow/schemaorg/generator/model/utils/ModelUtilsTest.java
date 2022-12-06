@@ -70,14 +70,13 @@ class ModelUtilsTest {
     }
 
     @ParameterizedTest
-    @MethodSource
-    void isEnumeration(boolean enumerationType, List<String> enumerationMembers, boolean expected) {
+    @CsvSource(value = {
+            "true, true",
+            "false, false"
+    }, nullValues = "null")
+    void isEnumeration(boolean enumerationType, boolean expected) {
         Type type = mock(Type.class);
         when(type.isEnumerationType()).thenReturn(enumerationType);
-        if (enumerationType) {
-            // Method not called if enumerationType is false
-            when(type.getEnumerationMembers()).thenReturn(enumerationMembers);
-        }
 
         Assertions.assertThat(ModelUtils.isEnumeration(type)).isEqualTo(expected);
     }
@@ -201,14 +200,6 @@ class ModelUtilsTest {
                 Arguments.of(List.of(new Type("unknown")), false),
                 Arguments.of(Collections.emptyList(), false),
                 Arguments.of(List.of(new Type("schema:Boolean"), new Type("schema:Text")), false)
-        );
-    }
-
-    private static Stream<Arguments> isEnumeration() {
-        return Stream.of(
-                Arguments.of(true, List.of("enum"), true),
-                Arguments.of(true, Collections.emptyList(), false),
-                Arguments.of(false, List.of("enum"), false)
         );
     }
 

@@ -34,12 +34,22 @@ public enum MedicalObservationalStudyDesignEnum implements MedicalObservationalS
     OBSERVATIONAL("Observational"),
     CROSS_SECTIONAL("CrossSectional"),
     CASE_SERIES("CaseSeries"),
-    LONGITUDINAL("Longitudinal");
+    LONGITUDINAL("Longitudinal")
+    ;
 
     private final String enumValue;
 
     MedicalObservationalStudyDesignEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static MedicalObservationalStudyDesignEnum from(String value) {
+        for (MedicalObservationalStudyDesignEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

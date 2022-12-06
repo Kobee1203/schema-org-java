@@ -33,12 +33,22 @@ public enum ReturnFeesEnumerationEnum implements ReturnFeesEnumeration {
     ORIGINAL_SHIPPING_FEES("OriginalShippingFees"),
     RETURN_SHIPPING_FEES("ReturnShippingFees"),
     FREE_RETURN("FreeReturn"),
-    RESTOCKING_FEES("RestockingFees");
+    RESTOCKING_FEES("RestockingFees")
+    ;
 
     private final String enumValue;
 
     ReturnFeesEnumerationEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static ReturnFeesEnumerationEnum from(String value) {
+        for (ReturnFeesEnumerationEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

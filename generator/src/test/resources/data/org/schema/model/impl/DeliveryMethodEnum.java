@@ -31,12 +31,22 @@ import org.schema.model.DeliveryMethod;
 public enum DeliveryMethodEnum implements DeliveryMethod {
     PARCEL_SERVICE("ParcelService"),
     ON_SITE_PICKUP("OnSitePickup"),
-    LOCKER_DELIVERY("LockerDelivery");
+    LOCKER_DELIVERY("LockerDelivery")
+    ;
 
     private final String enumValue;
 
     DeliveryMethodEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static DeliveryMethodEnum from(String value) {
+        for (DeliveryMethodEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

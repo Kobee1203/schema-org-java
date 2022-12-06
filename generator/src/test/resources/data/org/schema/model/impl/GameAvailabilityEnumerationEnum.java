@@ -30,12 +30,22 @@ import org.schema.model.GameAvailabilityEnumeration;
 @JsonLdTypeName("GameAvailabilityEnumeration")
 public enum GameAvailabilityEnumerationEnum implements GameAvailabilityEnumeration {
     FULL_GAME_AVAILABILITY("FullGameAvailability"),
-    DEMO_GAME_AVAILABILITY("DemoGameAvailability");
+    DEMO_GAME_AVAILABILITY("DemoGameAvailability")
+    ;
 
     private final String enumValue;
 
     GameAvailabilityEnumerationEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static GameAvailabilityEnumerationEnum from(String value) {
+        for (GameAvailabilityEnumerationEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

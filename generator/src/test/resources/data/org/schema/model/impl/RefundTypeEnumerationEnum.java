@@ -31,12 +31,22 @@ import org.schema.model.RefundTypeEnumeration;
 public enum RefundTypeEnumerationEnum implements RefundTypeEnumeration {
     STORE_CREDIT_REFUND("StoreCreditRefund"),
     EXCHANGE_REFUND("ExchangeRefund"),
-    FULL_REFUND("FullRefund");
+    FULL_REFUND("FullRefund")
+    ;
 
     private final String enumValue;
 
     RefundTypeEnumerationEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static RefundTypeEnumerationEnum from(String value) {
+        for (RefundTypeEnumerationEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

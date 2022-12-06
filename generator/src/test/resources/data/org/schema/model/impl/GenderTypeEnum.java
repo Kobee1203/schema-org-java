@@ -28,12 +28,22 @@ import org.schema.model.GenderType;
 @JsonLdTypeName("GenderType")
 public enum GenderTypeEnum implements GenderType {
     MALE("Male"),
-    FEMALE("Female");
+    FEMALE("Female")
+    ;
 
     private final String enumValue;
 
     GenderTypeEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static GenderTypeEnum from(String value) {
+        for (GenderTypeEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

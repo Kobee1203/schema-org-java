@@ -34,12 +34,22 @@ public enum MedicineSystemEnum implements MedicineSystem {
     CHIROPRACTIC("Chiropractic"),
     OSTEOPATHIC("Osteopathic"),
     WESTERN_CONVENTIONAL("WesternConventional"),
-    AYURVEDIC("Ayurvedic");
+    AYURVEDIC("Ayurvedic")
+    ;
 
     private final String enumValue;
 
     MedicineSystemEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static MedicineSystemEnum from(String value) {
+        for (MedicineSystemEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

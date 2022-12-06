@@ -28,12 +28,22 @@ import org.schema.model.ContactPointOption;
 @JsonLdTypeName("ContactPointOption")
 public enum ContactPointOptionEnum implements ContactPointOption {
     HEARING_IMPAIRED_SUPPORTED("HearingImpairedSupported"),
-    TOLL_FREE("TollFree");
+    TOLL_FREE("TollFree")
+    ;
 
     private final String enumValue;
 
     ContactPointOptionEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static ContactPointOptionEnum from(String value) {
+        for (ContactPointOptionEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

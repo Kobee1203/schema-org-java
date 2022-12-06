@@ -30,12 +30,22 @@ public enum OfferItemConditionEnum implements OfferItemCondition {
     DAMAGED_CONDITION("DamagedCondition"),
     REFURBISHED_CONDITION("RefurbishedCondition"),
     USED_CONDITION("UsedCondition"),
-    NEW_CONDITION("NewCondition");
+    NEW_CONDITION("NewCondition")
+    ;
 
     private final String enumValue;
 
     OfferItemConditionEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static OfferItemConditionEnum from(String value) {
+        for (OfferItemConditionEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

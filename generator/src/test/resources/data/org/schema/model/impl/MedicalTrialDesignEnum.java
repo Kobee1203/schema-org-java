@@ -38,12 +38,22 @@ public enum MedicalTrialDesignEnum implements MedicalTrialDesign {
     OPEN_TRIAL("OpenTrial"),
     RANDOMIZED_TRIAL("RandomizedTrial"),
     SINGLE_BLINDED_TRIAL("SingleBlindedTrial"),
-    SINGLE_CENTER_TRIAL("SingleCenterTrial");
+    SINGLE_CENTER_TRIAL("SingleCenterTrial")
+    ;
 
     private final String enumValue;
 
     MedicalTrialDesignEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static MedicalTrialDesignEnum from(String value) {
+        for (MedicalTrialDesignEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

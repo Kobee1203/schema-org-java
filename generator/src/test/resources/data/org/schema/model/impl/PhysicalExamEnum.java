@@ -55,12 +55,22 @@ public enum PhysicalExamEnum implements PhysicalExam {
     EYE("Eye"),
     THROAT("Throat"),
     NEURO("Neuro"),
-    NOSE("Nose");
+    NOSE("Nose")
+    ;
 
     private final String enumValue;
 
     PhysicalExamEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static PhysicalExamEnum from(String value) {
+        for (PhysicalExamEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

@@ -29,12 +29,22 @@ import org.schema.model.GamePlayMode;
 public enum GamePlayModeEnum implements GamePlayMode {
     MULTI_PLAYER("MultiPlayer"),
     CO_OP("CoOp"),
-    SINGLE_PLAYER("SinglePlayer");
+    SINGLE_PLAYER("SinglePlayer")
+    ;
 
     private final String enumValue;
 
     GamePlayModeEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static GamePlayModeEnum from(String value) {
+        for (GamePlayModeEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

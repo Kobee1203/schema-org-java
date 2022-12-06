@@ -38,12 +38,22 @@ public enum MedicalStudyStatusEnum implements MedicalStudyStatus {
     COMPLETED("Completed"),
     RESULTS_AVAILABLE("ResultsAvailable"),
     TERMINATED("Terminated"),
-    WITHDRAWN("Withdrawn");
+    WITHDRAWN("Withdrawn")
+    ;
 
     private final String enumValue;
 
     MedicalStudyStatusEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static MedicalStudyStatusEnum from(String value) {
+        for (MedicalStudyStatusEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

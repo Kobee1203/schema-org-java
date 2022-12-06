@@ -30,12 +30,22 @@ import org.schema.model.MedicalDevicePurpose;
 @JsonLdTypeName("MedicalDevicePurpose")
 public enum MedicalDevicePurposeEnum implements MedicalDevicePurpose {
     THERAPEUTIC("Therapeutic"),
-    DIAGNOSTIC("Diagnostic");
+    DIAGNOSTIC("Diagnostic")
+    ;
 
     private final String enumValue;
 
     MedicalDevicePurposeEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static MedicalDevicePurposeEnum from(String value) {
+        for (MedicalDevicePurposeEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

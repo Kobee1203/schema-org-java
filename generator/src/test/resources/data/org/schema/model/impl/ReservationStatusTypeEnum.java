@@ -31,12 +31,22 @@ public enum ReservationStatusTypeEnum implements ReservationStatusType {
     RESERVATION_PENDING("ReservationPending"),
     RESERVATION_CONFIRMED("ReservationConfirmed"),
     RESERVATION_CANCELLED("ReservationCancelled"),
-    RESERVATION_HOLD("ReservationHold");
+    RESERVATION_HOLD("ReservationHold")
+    ;
 
     private final String enumValue;
 
     ReservationStatusTypeEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static ReservationStatusTypeEnum from(String value) {
+        for (ReservationStatusTypeEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

@@ -31,12 +31,22 @@ import org.schema.model.MedicalEvidenceLevel;
 public enum MedicalEvidenceLevelEnum implements MedicalEvidenceLevel {
     EVIDENCE_LEVEL_A("EvidenceLevelA"),
     EVIDENCE_LEVEL_B("EvidenceLevelB"),
-    EVIDENCE_LEVEL_C("EvidenceLevelC");
+    EVIDENCE_LEVEL_C("EvidenceLevelC")
+    ;
 
     private final String enumValue;
 
     MedicalEvidenceLevelEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static MedicalEvidenceLevelEnum from(String value) {
+        for (MedicalEvidenceLevelEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

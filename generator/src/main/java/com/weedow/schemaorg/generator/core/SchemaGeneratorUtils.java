@@ -29,7 +29,7 @@ public final class SchemaGeneratorUtils {
     private static final Map<Type, Set<String>> ALL_IMPORTS_BY_TYPE_CACHE = new ConcurrentSkipListMap<>(Comparator.comparing(Type::getId));
 
     public static Set<String> getAllImports(String modelPackage, String dataTypePackage, Type type) {
-        return ALL_IMPORTS_BY_TYPE_CACHE.computeIfAbsent(type, t -> {
+        Set<String> allImports = ALL_IMPORTS_BY_TYPE_CACHE.computeIfAbsent(type, t -> {
             final Set<String> imports = getImports(modelPackage, dataTypePackage, t, Collections.emptyList());
             if (!t.getParents().isEmpty()) {
                 t.getParents().stream()
@@ -40,6 +40,8 @@ public final class SchemaGeneratorUtils {
             imports.add(JsonLdTypeName.class.getName());
             return imports;
         });
+        // Copy the Set to prevent the modifications in the cached Set
+        return new LinkedHashSet<>(allImports);
     }
 
     public static void clearCache() {

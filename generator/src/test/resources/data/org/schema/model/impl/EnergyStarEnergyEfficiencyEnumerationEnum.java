@@ -30,12 +30,22 @@ import org.schema.model.EnergyStarEnergyEfficiencyEnumeration;
  */
 @JsonLdTypeName("EnergyStarEnergyEfficiencyEnumeration")
 public enum EnergyStarEnergyEfficiencyEnumerationEnum implements EnergyStarEnergyEfficiencyEnumeration {
-    ENERGY_STAR_CERTIFIED("EnergyStarCertified");
+    ENERGY_STAR_CERTIFIED("EnergyStarCertified")
+    ;
 
     private final String enumValue;
 
     EnergyStarEnergyEfficiencyEnumerationEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static EnergyStarEnergyEfficiencyEnumerationEnum from(String value) {
+        for (EnergyStarEnergyEfficiencyEnumerationEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

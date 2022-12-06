@@ -36,12 +36,22 @@ public enum GovernmentBenefitsTypeEnum implements GovernmentBenefitsType {
     PARENTAL_SUPPORT("ParentalSupport"),
     UNEMPLOYMENT_SUPPORT("UnemploymentSupport"),
     PAID_LEAVE("PaidLeave"),
-    BASIC_INCOME("BasicIncome");
+    BASIC_INCOME("BasicIncome")
+    ;
 
     private final String enumValue;
 
     GovernmentBenefitsTypeEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static GovernmentBenefitsTypeEnum from(String value) {
+        for (GovernmentBenefitsTypeEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

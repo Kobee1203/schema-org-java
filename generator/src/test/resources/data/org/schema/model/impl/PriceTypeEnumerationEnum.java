@@ -34,12 +34,22 @@ public enum PriceTypeEnumerationEnum implements PriceTypeEnumeration {
     LIST_PRICE("ListPrice"),
     INVOICE_PRICE("InvoicePrice"),
     MINIMUM_ADVERTISED_PRICE("MinimumAdvertisedPrice"),
-    MSRP("MSRP");
+    MSRP("MSRP")
+    ;
 
     private final String enumValue;
 
     PriceTypeEnumerationEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static PriceTypeEnumerationEnum from(String value) {
+        for (PriceTypeEnumerationEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

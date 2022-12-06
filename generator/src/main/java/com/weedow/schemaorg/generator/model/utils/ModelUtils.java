@@ -48,7 +48,7 @@ public final class ModelUtils {
     }
 
     public static boolean isEnumeration(Type type) {
-        return type.isEnumerationType() && !type.getEnumerationMembers().isEmpty();
+        return type.isEnumerationType();
     }
 
     public static List<Type> getPropertyTypes(Map<String, Type> schemaDefinitions, GraphItem graphItem) {

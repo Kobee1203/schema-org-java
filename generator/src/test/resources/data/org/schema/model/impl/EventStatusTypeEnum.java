@@ -32,12 +32,22 @@ public enum EventStatusTypeEnum implements EventStatusType {
     EVENT_SCHEDULED("EventScheduled"),
     EVENT_RESCHEDULED("EventRescheduled"),
     EVENT_POSTPONED("EventPostponed"),
-    EVENT_MOVED_ONLINE("EventMovedOnline");
+    EVENT_MOVED_ONLINE("EventMovedOnline")
+    ;
 
     private final String enumValue;
 
     EventStatusTypeEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static EventStatusTypeEnum from(String value) {
+        for (EventStatusTypeEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

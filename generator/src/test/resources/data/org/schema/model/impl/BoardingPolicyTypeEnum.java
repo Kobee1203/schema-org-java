@@ -28,12 +28,22 @@ import org.schema.model.BoardingPolicyType;
 @JsonLdTypeName("BoardingPolicyType")
 public enum BoardingPolicyTypeEnum implements BoardingPolicyType {
     GROUP_BOARDING_POLICY("GroupBoardingPolicy"),
-    ZONE_BOARDING_POLICY("ZoneBoardingPolicy");
+    ZONE_BOARDING_POLICY("ZoneBoardingPolicy")
+    ;
 
     private final String enumValue;
 
     BoardingPolicyTypeEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static BoardingPolicyTypeEnum from(String value) {
+        for (BoardingPolicyTypeEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

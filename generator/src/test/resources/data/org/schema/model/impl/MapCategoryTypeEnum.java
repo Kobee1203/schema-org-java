@@ -30,12 +30,22 @@ public enum MapCategoryTypeEnum implements MapCategoryType {
     SEATING_MAP("SeatingMap"),
     VENUE_MAP("VenueMap"),
     PARKING_MAP("ParkingMap"),
-    TRANSIT_MAP("TransitMap");
+    TRANSIT_MAP("TransitMap")
+    ;
 
     private final String enumValue;
 
     MapCategoryTypeEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static MapCategoryTypeEnum from(String value) {
+        for (MapCategoryTypeEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

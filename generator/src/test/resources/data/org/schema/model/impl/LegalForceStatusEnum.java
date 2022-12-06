@@ -33,12 +33,22 @@ import org.schema.model.LegalForceStatus;
 public enum LegalForceStatusEnum implements LegalForceStatus {
     NOT_IN_FORCE("NotInForce"),
     IN_FORCE("InForce"),
-    PARTIALLY_IN_FORCE("PartiallyInForce");
+    PARTIALLY_IN_FORCE("PartiallyInForce")
+    ;
 
     private final String enumValue;
 
     LegalForceStatusEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static LegalForceStatusEnum from(String value) {
+        for (LegalForceStatusEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

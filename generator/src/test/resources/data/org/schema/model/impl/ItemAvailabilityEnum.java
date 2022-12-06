@@ -36,12 +36,22 @@ public enum ItemAvailabilityEnum implements ItemAvailability {
     PRE_SALE("PreSale"),
     BACK_ORDER("BackOrder"),
     PRE_ORDER("PreOrder"),
-    LIMITED_AVAILABILITY("LimitedAvailability");
+    LIMITED_AVAILABILITY("LimitedAvailability")
+    ;
 
     private final String enumValue;
 
     ItemAvailabilityEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static ItemAvailabilityEnum from(String value) {
+        for (ItemAvailabilityEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

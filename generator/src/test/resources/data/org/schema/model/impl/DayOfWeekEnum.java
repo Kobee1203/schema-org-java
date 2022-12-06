@@ -38,12 +38,22 @@ public enum DayOfWeekEnum implements DayOfWeek {
     MONDAY("Monday"),
     WEDNESDAY("Wednesday"),
     PUBLIC_HOLIDAYS("PublicHolidays"),
-    SUNDAY("Sunday");
+    SUNDAY("Sunday")
+    ;
 
     private final String enumValue;
 
     DayOfWeekEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static DayOfWeekEnum from(String value) {
+        for (DayOfWeekEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

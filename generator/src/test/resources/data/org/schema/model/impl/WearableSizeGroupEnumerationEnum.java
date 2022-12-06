@@ -46,12 +46,22 @@ public enum WearableSizeGroupEnumerationEnum implements WearableSizeGroupEnumera
     WEARABLE_SIZE_GROUP_JUNIORS("WearableSizeGroupJuniors"),
     WEARABLE_SIZE_GROUP_TALL("WearableSizeGroupTall"),
     WEARABLE_SIZE_GROUP_EXTRA_SHORT("WearableSizeGroupExtraShort"),
-    WEARABLE_SIZE_GROUP_BOYS("WearableSizeGroupBoys");
+    WEARABLE_SIZE_GROUP_BOYS("WearableSizeGroupBoys")
+    ;
 
     private final String enumValue;
 
     WearableSizeGroupEnumerationEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static WearableSizeGroupEnumerationEnum from(String value) {
+        for (WearableSizeGroupEnumerationEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

@@ -31,12 +31,22 @@ public enum ActionStatusTypeEnum implements ActionStatusType {
     POTENTIAL_ACTION_STATUS("PotentialActionStatus"),
     ACTIVE_ACTION_STATUS("ActiveActionStatus"),
     FAILED_ACTION_STATUS("FailedActionStatus"),
-    COMPLETED_ACTION_STATUS("CompletedActionStatus");
+    COMPLETED_ACTION_STATUS("CompletedActionStatus")
+    ;
 
     private final String enumValue;
 
     ActionStatusTypeEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static ActionStatusTypeEnum from(String value) {
+        for (ActionStatusTypeEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

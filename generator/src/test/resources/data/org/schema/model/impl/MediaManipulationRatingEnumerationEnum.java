@@ -34,12 +34,22 @@ public enum MediaManipulationRatingEnumerationEnum implements MediaManipulationR
     EDITED_OR_CROPPED_CONTENT("EditedOrCroppedContent"),
     DECONTEXTUALIZED_CONTENT("DecontextualizedContent"),
     STAGED_CONTENT("StagedContent"),
-    TRANSFORMED_CONTENT("TransformedContent");
+    TRANSFORMED_CONTENT("TransformedContent")
+    ;
 
     private final String enumValue;
 
     MediaManipulationRatingEnumerationEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static MediaManipulationRatingEnumerationEnum from(String value) {
+        for (MediaManipulationRatingEnumerationEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

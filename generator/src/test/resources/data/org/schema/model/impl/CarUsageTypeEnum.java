@@ -31,12 +31,22 @@ import org.schema.model.CarUsageType;
 public enum CarUsageTypeEnum implements CarUsageType {
     TAXI_VEHICLE_USAGE("TaxiVehicleUsage"),
     DRIVING_SCHOOL_VEHICLE_USAGE("DrivingSchoolVehicleUsage"),
-    RENTAL_VEHICLE_USAGE("RentalVehicleUsage");
+    RENTAL_VEHICLE_USAGE("RentalVehicleUsage")
+    ;
 
     private final String enumValue;
 
     CarUsageTypeEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static CarUsageTypeEnum from(String value) {
+        for (CarUsageTypeEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

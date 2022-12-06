@@ -32,12 +32,22 @@ public enum MerchantReturnEnumerationEnum implements MerchantReturnEnumeration {
     MERCHANT_RETURN_NOT_PERMITTED("MerchantReturnNotPermitted"),
     MERCHANT_RETURN_UNLIMITED_WINDOW("MerchantReturnUnlimitedWindow"),
     MERCHANT_RETURN_FINITE_RETURN_WINDOW("MerchantReturnFiniteReturnWindow"),
-    MERCHANT_RETURN_UNSPECIFIED("MerchantReturnUnspecified");
+    MERCHANT_RETURN_UNSPECIFIED("MerchantReturnUnspecified")
+    ;
 
     private final String enumValue;
 
     MerchantReturnEnumerationEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static MerchantReturnEnumerationEnum from(String value) {
+        for (MerchantReturnEnumerationEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

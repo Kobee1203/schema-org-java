@@ -34,12 +34,22 @@ public enum PriceComponentTypeEnumerationEnum implements PriceComponentTypeEnume
     ACTIVATION_FEE("ActivationFee"),
     DOWNPAYMENT("Downpayment"),
     CLEANING_FEE("CleaningFee"),
-    DISTANCE_FEE("DistanceFee");
+    DISTANCE_FEE("DistanceFee")
+    ;
 
     private final String enumValue;
 
     PriceComponentTypeEnumerationEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static PriceComponentTypeEnumerationEnum from(String value) {
+        for (PriceComponentTypeEnumerationEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

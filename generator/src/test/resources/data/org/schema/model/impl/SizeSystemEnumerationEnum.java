@@ -19,6 +19,7 @@ import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import org.schema.model.Intangible;
 import org.schema.model.SizeSystemEnumeration;
+import com.weedow.schemaorg.commons.model.JsonLdSubTypes;
 
 /**
  * Enumerates common size systems for different categories of products, for example "EN-13402" or "UK" for wearables or "Imperial" for screws.
@@ -28,14 +29,25 @@ import org.schema.model.SizeSystemEnumeration;
  * @see <a href="https://schema.org/SizeSystemEnumeration">https://schema.org/SizeSystemEnumeration</a>
  */
 @JsonLdTypeName("SizeSystemEnumeration")
+@JsonLdSubTypes({ "WearableSizeSystemEnumerationEnum" })
 public enum SizeSystemEnumerationEnum implements SizeSystemEnumeration {
     SIZE_SYSTEM_METRIC("SizeSystemMetric"),
-    SIZE_SYSTEM_IMPERIAL("SizeSystemImperial");
+    SIZE_SYSTEM_IMPERIAL("SizeSystemImperial")
+    ;
 
     private final String enumValue;
 
     SizeSystemEnumerationEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static SizeSystemEnumerationEnum from(String value) {
+        for (SizeSystemEnumerationEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

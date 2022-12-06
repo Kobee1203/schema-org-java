@@ -33,12 +33,22 @@ public enum MedicalImagingTechniqueEnum implements MedicalImagingTechnique {
     PET("PET"),
     MRI("MRI"),
     ULTRASOUND("Ultrasound"),
-    CT("CT");
+    CT("CT")
+    ;
 
     private final String enumValue;
 
     MedicalImagingTechniqueEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static MedicalImagingTechniqueEnum from(String value) {
+        for (MedicalImagingTechniqueEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

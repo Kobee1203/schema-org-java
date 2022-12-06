@@ -31,12 +31,22 @@ import org.schema.model.DrugCostCategory;
 public enum DrugCostCategoryEnum implements DrugCostCategory {
     WHOLESALE("Wholesale"),
     REIMBURSEMENT_CAP("ReimbursementCap"),
-    RETAIL("Retail");
+    RETAIL("Retail")
+    ;
 
     private final String enumValue;
 
     DrugCostCategoryEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static DrugCostCategoryEnum from(String value) {
+        for (DrugCostCategoryEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

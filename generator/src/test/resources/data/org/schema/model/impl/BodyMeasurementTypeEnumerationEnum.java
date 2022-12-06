@@ -42,12 +42,22 @@ public enum BodyMeasurementTypeEnumerationEnum implements BodyMeasurementTypeEnu
     BODY_MEASUREMENT_BUST("BodyMeasurementBust"),
     BODY_MEASUREMENT_INSIDE_LEG("BodyMeasurementInsideLeg"),
     BODY_MEASUREMENT_WAIST("BodyMeasurementWaist"),
-    BODY_MEASUREMENT_ARM("BodyMeasurementArm");
+    BODY_MEASUREMENT_ARM("BodyMeasurementArm")
+    ;
 
     private final String enumValue;
 
     BodyMeasurementTypeEnumerationEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static BodyMeasurementTypeEnumerationEnum from(String value) {
+        for (BodyMeasurementTypeEnumerationEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

@@ -34,12 +34,22 @@ public enum InfectiousAgentClassEnum implements InfectiousAgentClass {
     FUNGUS("Fungus"),
     VIRUS("Virus"),
     PRION("Prion"),
-    MULTICELLULAR_PARASITE("MulticellularParasite");
+    MULTICELLULAR_PARASITE("MulticellularParasite")
+    ;
 
     private final String enumValue;
 
     InfectiousAgentClassEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static InfectiousAgentClassEnum from(String value) {
+        for (InfectiousAgentClassEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

@@ -31,12 +31,22 @@ public enum MusicAlbumReleaseTypeEnum implements MusicAlbumReleaseType {
     EP_RELEASE("EPRelease"),
     BROADCAST_RELEASE("BroadcastRelease"),
     SINGLE_RELEASE("SingleRelease"),
-    ALBUM_RELEASE("AlbumRelease");
+    ALBUM_RELEASE("AlbumRelease")
+    ;
 
     private final String enumValue;
 
     MusicAlbumReleaseTypeEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static MusicAlbumReleaseTypeEnum from(String value) {
+        for (MusicAlbumReleaseTypeEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

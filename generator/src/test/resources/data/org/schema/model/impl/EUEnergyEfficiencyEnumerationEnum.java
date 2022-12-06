@@ -39,12 +39,22 @@ public enum EUEnergyEfficiencyEnumerationEnum implements EUEnergyEfficiencyEnume
     EU_ENERGY_EFFICIENCY_CATEGORY_B("EUEnergyEfficiencyCategoryB"),
     EU_ENERGY_EFFICIENCY_CATEGORY_F("EUEnergyEfficiencyCategoryF"),
     EU_ENERGY_EFFICIENCY_CATEGORY_C("EUEnergyEfficiencyCategoryC"),
-    EU_ENERGY_EFFICIENCY_CATEGORY_G("EUEnergyEfficiencyCategoryG");
+    EU_ENERGY_EFFICIENCY_CATEGORY_G("EUEnergyEfficiencyCategoryG")
+    ;
 
     private final String enumValue;
 
     EUEnergyEfficiencyEnumerationEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static EUEnergyEfficiencyEnumerationEnum from(String value) {
+        for (EUEnergyEfficiencyEnumerationEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

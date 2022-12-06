@@ -38,12 +38,22 @@ public enum AdultOrientedEnumerationEnum implements AdultOrientedEnumeration {
     TOBACCO_NICOTINE_CONSIDERATION("TobaccoNicotineConsideration"),
     ALCOHOL_CONSIDERATION("AlcoholConsideration"),
     DANGEROUS_GOOD_CONSIDERATION("DangerousGoodConsideration"),
-    VIOLENCE_CONSIDERATION("ViolenceConsideration");
+    VIOLENCE_CONSIDERATION("ViolenceConsideration")
+    ;
 
     private final String enumValue;
 
     AdultOrientedEnumerationEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static AdultOrientedEnumerationEnum from(String value) {
+        for (AdultOrientedEnumerationEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

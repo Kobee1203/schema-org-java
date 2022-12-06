@@ -34,12 +34,22 @@ public enum PhysicalActivityCategoryEnum implements PhysicalActivityCategory {
     OCCUPATIONAL_ACTIVITY("OccupationalActivity"),
     LEISURE_TIME_ACTIVITY("LeisureTimeActivity"),
     AEROBIC_ACTIVITY("AerobicActivity"),
-    STRENGTH_TRAINING("StrengthTraining");
+    STRENGTH_TRAINING("StrengthTraining")
+    ;
 
     private final String enumValue;
 
     PhysicalActivityCategoryEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static PhysicalActivityCategoryEnum from(String value) {
+        for (PhysicalActivityCategoryEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

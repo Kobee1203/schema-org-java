@@ -31,12 +31,22 @@ public enum GameServerStatusEnum implements GameServerStatus {
     ONLINE_FULL("OnlineFull"),
     OFFLINE_PERMANENTLY("OfflinePermanently"),
     ONLINE("Online"),
-    OFFLINE_TEMPORARILY("OfflineTemporarily");
+    OFFLINE_TEMPORARILY("OfflineTemporarily")
+    ;
 
     private final String enumValue;
 
     GameServerStatusEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static GameServerStatusEnum from(String value) {
+        for (GameServerStatusEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

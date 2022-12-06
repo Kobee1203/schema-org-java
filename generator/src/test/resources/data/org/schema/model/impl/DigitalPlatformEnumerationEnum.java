@@ -33,12 +33,22 @@ public enum DigitalPlatformEnumerationEnum implements DigitalPlatformEnumeration
     ANDROID_PLATFORM("AndroidPlatform"),
     GENERIC_WEB_PLATFORM("GenericWebPlatform"),
     DESKTOP_WEB_PLATFORM("DesktopWebPlatform"),
-    IOS_PLATFORM("IOSPlatform");
+    IOS_PLATFORM("IOSPlatform")
+    ;
 
     private final String enumValue;
 
     DigitalPlatformEnumerationEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static DigitalPlatformEnumerationEnum from(String value) {
+        for (DigitalPlatformEnumerationEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

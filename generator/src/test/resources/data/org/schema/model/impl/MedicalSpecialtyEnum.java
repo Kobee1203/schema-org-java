@@ -70,12 +70,22 @@ public enum MedicalSpecialtyEnum implements MedicalSpecialty {
     UROLOGIC("Urologic"),
     NEUROLOGIC("Neurologic"),
     OTOLARYNGOLOGIC("Otolaryngologic"),
-    SURGICAL("Surgical");
+    SURGICAL("Surgical")
+    ;
 
     private final String enumValue;
 
     MedicalSpecialtyEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static MedicalSpecialtyEnum from(String value) {
+        for (MedicalSpecialtyEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

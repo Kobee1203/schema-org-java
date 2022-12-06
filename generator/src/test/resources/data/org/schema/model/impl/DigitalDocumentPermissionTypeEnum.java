@@ -29,12 +29,22 @@ import org.schema.model.DigitalDocumentPermissionType;
 public enum DigitalDocumentPermissionTypeEnum implements DigitalDocumentPermissionType {
     COMMENT_PERMISSION("CommentPermission"),
     READ_PERMISSION("ReadPermission"),
-    WRITE_PERMISSION("WritePermission");
+    WRITE_PERMISSION("WritePermission")
+    ;
 
     private final String enumValue;
 
     DigitalDocumentPermissionTypeEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static DigitalDocumentPermissionTypeEnum from(String value) {
+        for (DigitalDocumentPermissionTypeEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

@@ -36,12 +36,22 @@ public enum MusicAlbumProductionTypeEnum implements MusicAlbumProductionType {
     DJ_MIX_ALBUM("DJMixAlbum"),
     LIVE_ALBUM("LiveAlbum"),
     DEMO_ALBUM("DemoAlbum"),
-    STUDIO_ALBUM("StudioAlbum");
+    STUDIO_ALBUM("StudioAlbum")
+    ;
 
     private final String enumValue;
 
     MusicAlbumProductionTypeEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static MusicAlbumProductionTypeEnum from(String value) {
+        for (MusicAlbumProductionTypeEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

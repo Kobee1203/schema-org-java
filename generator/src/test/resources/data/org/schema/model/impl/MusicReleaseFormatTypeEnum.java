@@ -34,12 +34,22 @@ public enum MusicReleaseFormatTypeEnum implements MusicReleaseFormatType {
     LASER_DISC_FORMAT("LaserDiscFormat"),
     VINYL_FORMAT("VinylFormat"),
     CASSETTE_FORMAT("CassetteFormat"),
-    DVD_FORMAT("DVDFormat");
+    DVD_FORMAT("DVDFormat")
+    ;
 
     private final String enumValue;
 
     MusicReleaseFormatTypeEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static MusicReleaseFormatTypeEnum from(String value) {
+        for (MusicReleaseFormatTypeEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

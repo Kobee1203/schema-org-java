@@ -29,12 +29,22 @@ import org.schema.model.ItemListOrderType;
 public enum ItemListOrderTypeEnum implements ItemListOrderType {
     ITEM_LIST_UNORDERED("ItemListUnordered"),
     ITEM_LIST_ORDER_DESCENDING("ItemListOrderDescending"),
-    ITEM_LIST_ORDER_ASCENDING("ItemListOrderAscending");
+    ITEM_LIST_ORDER_ASCENDING("ItemListOrderAscending")
+    ;
 
     private final String enumValue;
 
     ItemListOrderTypeEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static ItemListOrderTypeEnum from(String value) {
+        for (ItemListOrderTypeEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

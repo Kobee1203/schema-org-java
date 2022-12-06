@@ -33,6 +33,11 @@ public final class Type {
     @ToString.Exclude
     private final List<Type> parents = new ArrayList<>();
 
+    @Setter(AccessLevel.NONE)
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
+    private final List<Type> subTypes = new ArrayList<>();
+
     private List<String> partOf = new ArrayList<>();
 
     private List<String> source = new ArrayList<>();
@@ -72,6 +77,12 @@ public final class Type {
 
     public Type addParent(Type parent) {
         this.parents.add(parent);
+        parent.addSubType(this);
+        return this;
+    }
+
+    private Type addSubType(Type subType) {
+        this.subTypes.add(subType);
         return this;
     }
 
@@ -110,11 +121,17 @@ public final class Type {
         return "[" + parents.stream().filter(Objects::nonNull).map(Type::getId).collect(Collectors.joining(", ")) + "]";
     }
 
+    @ToString.Include
+    private String subTypes() {
+        return "[" + subTypes.stream().filter(Objects::nonNull).map(Type::getId).collect(Collectors.joining(", ")) + "]";
+    }
+
     public String toFormattedString() {
         return "---------- " + id + " ----------\n" +
                 "name          = " + name + "\n" +
                 "description   = " + description() + "\n" +
                 "parents       = " + parents() + "\n" +
+                "subTypes      = " + subTypes() + "\n" +
                 "partOf        = " + String.join(", ", partOf) + "\n" +
                 "source        = " + String.join(", ", source) + "\n" +
                 "properties    = " + toFormattedString(properties) + "\n" +

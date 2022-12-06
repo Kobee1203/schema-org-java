@@ -1,10 +1,7 @@
 package com.weedow.schemaorg.generator.core;
 
 import com.weedow.schemaorg.commons.generator.GeneratorConstants;
-import com.weedow.schemaorg.commons.model.JsonLdDataType;
-import com.weedow.schemaorg.commons.model.JsonLdNode;
-import com.weedow.schemaorg.commons.model.JsonLdNodeImpl;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.*;
 import com.weedow.schemaorg.generator.core.copy.CopyService;
 import com.weedow.schemaorg.generator.core.filter.SchemaDefinitionFilter;
 import com.weedow.schemaorg.generator.core.stream.StreamService;
@@ -19,10 +16,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
-import java.util.Properties;
+import java.util.*;
 import java.util.stream.Stream;
 
 public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
@@ -89,6 +83,7 @@ public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
         if (options.isCopyCommonModels()) {
             LOG.info("Copying common models...");
             copyJavaFile(JsonLdTypeName.class);
+            copyJavaFile(JsonLdSubTypes.class);
             copyJavaFile(JsonLdNode.class);
             copyJavaFile(JsonLdNodeImpl.class);
             copyJavaFile(JsonLdDataType.class);
@@ -157,10 +152,14 @@ public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
                 new Context(type, modelPackage, SchemaGeneratorUtils.getImports(modelPackage, dataTypePackage, type, Collections.emptyList()))
         );
 
+        Set<String> allImports = SchemaGeneratorUtils.getAllImports(modelPackage, dataTypePackage, type);
+        if(!type.getSubTypes().isEmpty()) {
+            allImports.add(JsonLdSubTypes.class.getName());
+        }
         applyTemplate(
                 "templates/type_enumeration",
                 modelImplFolder.resolve(type.getName() + "Enum" + JAVA_EXTENSION),
-                new Context(type, modelImplPackage, SchemaGeneratorUtils.getAllImports(modelPackage, dataTypePackage, type))
+                new Context(type, modelImplPackage, allImports)
         );
     }
 

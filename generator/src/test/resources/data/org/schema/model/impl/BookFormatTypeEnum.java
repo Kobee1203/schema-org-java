@@ -31,12 +31,22 @@ public enum BookFormatTypeEnum implements BookFormatType {
     GRAPHIC_NOVEL("GraphicNovel"),
     PAPERBACK("Paperback"),
     HARDCOVER("Hardcover"),
-    E_BOOK("EBook");
+    E_BOOK("EBook")
+    ;
 
     private final String enumValue;
 
     BookFormatTypeEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static BookFormatTypeEnum from(String value) {
+        for (BookFormatTypeEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

@@ -34,12 +34,22 @@ import org.schema.model.SteeringPositionValue;
 @JsonLdTypeName("SteeringPositionValue")
 public enum SteeringPositionValueEnum implements SteeringPositionValue {
     LEFT_HAND_DRIVING("LeftHandDriving"),
-    RIGHT_HAND_DRIVING("RightHandDriving");
+    RIGHT_HAND_DRIVING("RightHandDriving")
+    ;
 
     private final String enumValue;
 
     SteeringPositionValueEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static SteeringPositionValueEnum from(String value) {
+        for (SteeringPositionValueEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

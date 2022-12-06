@@ -31,12 +31,22 @@ import org.schema.model.EventAttendanceModeEnumeration;
 public enum EventAttendanceModeEnumerationEnum implements EventAttendanceModeEnumeration {
     OFFLINE_EVENT_ATTENDANCE_MODE("OfflineEventAttendanceMode"),
     MIXED_EVENT_ATTENDANCE_MODE("MixedEventAttendanceMode"),
-    ONLINE_EVENT_ATTENDANCE_MODE("OnlineEventAttendanceMode");
+    ONLINE_EVENT_ATTENDANCE_MODE("OnlineEventAttendanceMode")
+    ;
 
     private final String enumValue;
 
     EventAttendanceModeEnumerationEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static EventAttendanceModeEnumerationEnum from(String value) {
+        for (EventAttendanceModeEnumerationEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

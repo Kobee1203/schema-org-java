@@ -43,12 +43,22 @@ public enum WearableSizeSystemEnumerationEnum implements WearableSizeSystemEnume
     WEARABLE_SIZE_SYSTEM_US("WearableSizeSystemUS"),
     WEARABLE_SIZE_SYSTEM_IT("WearableSizeSystemIT"),
     WEARABLE_SIZE_SYSTEM_FR("WearableSizeSystemFR"),
-    WEARABLE_SIZE_SYSTEM_CONTINENTAL("WearableSizeSystemContinental");
+    WEARABLE_SIZE_SYSTEM_CONTINENTAL("WearableSizeSystemContinental")
+    ;
 
     private final String enumValue;
 
     WearableSizeSystemEnumerationEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static WearableSizeSystemEnumerationEnum from(String value) {
+        for (WearableSizeSystemEnumerationEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

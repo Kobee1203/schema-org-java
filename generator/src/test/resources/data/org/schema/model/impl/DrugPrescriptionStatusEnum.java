@@ -30,12 +30,22 @@ import org.schema.model.DrugPrescriptionStatus;
 @JsonLdTypeName("DrugPrescriptionStatus")
 public enum DrugPrescriptionStatusEnum implements DrugPrescriptionStatus {
     OTC("OTC"),
-    PRESCRIPTION_ONLY("PrescriptionOnly");
+    PRESCRIPTION_ONLY("PrescriptionOnly")
+    ;
 
     private final String enumValue;
 
     DrugPrescriptionStatusEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static DrugPrescriptionStatusEnum from(String value) {
+        for (DrugPrescriptionStatusEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

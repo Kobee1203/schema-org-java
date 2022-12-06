@@ -57,12 +57,22 @@ public enum HealthAspectEnumerationEnum implements HealthAspectEnumeration {
     GETTING_ACCESS_HEALTH_ASPECT("GettingAccessHealthAspect"),
     PATIENT_EXPERIENCE_HEALTH_ASPECT("PatientExperienceHealthAspect"),
     RELATED_TOPICS_HEALTH_ASPECT("RelatedTopicsHealthAspect"),
-    MISCONCEPTIONS_HEALTH_ASPECT("MisconceptionsHealthAspect");
+    MISCONCEPTIONS_HEALTH_ASPECT("MisconceptionsHealthAspect")
+    ;
 
     private final String enumValue;
 
     HealthAspectEnumerationEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static HealthAspectEnumerationEnum from(String value) {
+        for (HealthAspectEnumerationEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

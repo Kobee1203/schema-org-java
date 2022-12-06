@@ -65,12 +65,22 @@ public enum USNonprofitTypeEnum implements USNonprofitType {
     NONPROFIT_501C24("Nonprofit501c24"),
     NONPROFIT_501Q("Nonprofit501q"),
     NONPROFIT_501C22("Nonprofit501c22"),
-    NONPROFIT_501C17("Nonprofit501c17");
+    NONPROFIT_501C17("Nonprofit501c17")
+    ;
 
     private final String enumValue;
 
     USNonprofitTypeEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static USNonprofitTypeEnum from(String value) {
+        for (USNonprofitTypeEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

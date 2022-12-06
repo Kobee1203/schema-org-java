@@ -32,12 +32,22 @@ public enum PaymentStatusTypeEnum implements PaymentStatusType {
     PAYMENT_DECLINED("PaymentDeclined"),
     PAYMENT_AUTOMATICALLY_APPLIED("PaymentAutomaticallyApplied"),
     PAYMENT_COMPLETE("PaymentComplete"),
-    PAYMENT_PAST_DUE("PaymentPastDue");
+    PAYMENT_PAST_DUE("PaymentPastDue")
+    ;
 
     private final String enumValue;
 
     PaymentStatusTypeEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static PaymentStatusTypeEnum from(String value) {
+        for (PaymentStatusTypeEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

@@ -31,12 +31,22 @@ import org.schema.model.ReturnMethodEnumeration;
 public enum ReturnMethodEnumerationEnum implements ReturnMethodEnumeration {
     RETURN_BY_MAIL("ReturnByMail"),
     RETURN_AT_KIOSK("ReturnAtKiosk"),
-    RETURN_IN_STORE("ReturnInStore");
+    RETURN_IN_STORE("ReturnInStore")
+    ;
 
     private final String enumValue;
 
     ReturnMethodEnumerationEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static ReturnMethodEnumerationEnum from(String value) {
+        for (ReturnMethodEnumerationEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

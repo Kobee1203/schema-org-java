@@ -31,12 +31,22 @@ import org.schema.model.ReturnLabelSourceEnumeration;
 public enum ReturnLabelSourceEnumerationEnum implements ReturnLabelSourceEnumeration {
     RETURN_LABEL_CUSTOMER_RESPONSIBILITY("ReturnLabelCustomerResponsibility"),
     RETURN_LABEL_DOWNLOAD_AND_PRINT("ReturnLabelDownloadAndPrint"),
-    RETURN_LABEL_IN_BOX("ReturnLabelInBox");
+    RETURN_LABEL_IN_BOX("ReturnLabelInBox")
+    ;
 
     private final String enumValue;
 
     ReturnLabelSourceEnumerationEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static ReturnLabelSourceEnumerationEnum from(String value) {
+        for (ReturnLabelSourceEnumerationEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

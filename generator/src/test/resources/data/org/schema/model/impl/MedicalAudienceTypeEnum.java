@@ -30,12 +30,22 @@ import org.schema.model.MedicalAudienceType;
 @JsonLdTypeName("MedicalAudienceType")
 public enum MedicalAudienceTypeEnum implements MedicalAudienceType {
     MEDICAL_RESEARCHER("MedicalResearcher"),
-    CLINICIAN("Clinician");
+    CLINICIAN("Clinician")
+    ;
 
     private final String enumValue;
 
     MedicalAudienceTypeEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static MedicalAudienceTypeEnum from(String value) {
+        for (MedicalAudienceTypeEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

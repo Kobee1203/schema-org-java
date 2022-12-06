@@ -29,12 +29,22 @@ import org.schema.model.RsvpResponseType;
 public enum RsvpResponseTypeEnum implements RsvpResponseType {
     RSVP_RESPONSE_NO("RsvpResponseNo"),
     RSVP_RESPONSE_MAYBE("RsvpResponseMaybe"),
-    RSVP_RESPONSE_YES("RsvpResponseYes");
+    RSVP_RESPONSE_YES("RsvpResponseYes")
+    ;
 
     private final String enumValue;
 
     RsvpResponseTypeEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static RsvpResponseTypeEnum from(String value) {
+        for (RsvpResponseTypeEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

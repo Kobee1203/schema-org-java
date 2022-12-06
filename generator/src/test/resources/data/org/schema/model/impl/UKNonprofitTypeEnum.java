@@ -33,12 +33,22 @@ public enum UKNonprofitTypeEnum implements UKNonprofitType {
     UNINCORPORATED_ASSOCIATION_CHARITY("UnincorporatedAssociationCharity"),
     UK_TRUST("UKTrust"),
     CHARITABLE_INCORPORATED_ORGANIZATION("CharitableIncorporatedOrganization"),
-    LIMITED_BY_GUARANTEE_CHARITY("LimitedByGuaranteeCharity");
+    LIMITED_BY_GUARANTEE_CHARITY("LimitedByGuaranteeCharity")
+    ;
 
     private final String enumValue;
 
     UKNonprofitTypeEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static UKNonprofitTypeEnum from(String value) {
+        for (UKNonprofitTypeEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

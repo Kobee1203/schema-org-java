@@ -33,12 +33,22 @@ public enum LegalValueLevelEnum implements LegalValueLevel {
     DEFINITIVE_LEGAL_VALUE("DefinitiveLegalValue"),
     UNOFFICIAL_LEGAL_VALUE("UnofficialLegalValue"),
     OFFICIAL_LEGAL_VALUE("OfficialLegalValue"),
-    AUTHORITATIVE_LEGAL_VALUE("AuthoritativeLegalValue");
+    AUTHORITATIVE_LEGAL_VALUE("AuthoritativeLegalValue")
+    ;
 
     private final String enumValue;
 
     LegalValueLevelEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static LegalValueLevelEnum from(String value) {
+        for (LegalValueLevelEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

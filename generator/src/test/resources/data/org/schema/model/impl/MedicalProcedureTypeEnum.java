@@ -30,12 +30,22 @@ import org.schema.model.MedicalProcedureType;
 @JsonLdTypeName("MedicalProcedureType")
 public enum MedicalProcedureTypeEnum implements MedicalProcedureType {
     PERCUTANEOUS_PROCEDURE("PercutaneousProcedure"),
-    NONINVASIVE_PROCEDURE("NoninvasiveProcedure");
+    NONINVASIVE_PROCEDURE("NoninvasiveProcedure")
+    ;
 
     private final String enumValue;
 
     MedicalProcedureTypeEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static MedicalProcedureTypeEnum from(String value) {
+        for (MedicalProcedureTypeEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override

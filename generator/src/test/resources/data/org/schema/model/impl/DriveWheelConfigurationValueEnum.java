@@ -36,12 +36,22 @@ public enum DriveWheelConfigurationValueEnum implements DriveWheelConfigurationV
     FRONT_WHEEL_DRIVE_CONFIGURATION("FrontWheelDriveConfiguration"),
     FOUR_WHEEL_DRIVE_CONFIGURATION("FourWheelDriveConfiguration"),
     ALL_WHEEL_DRIVE_CONFIGURATION("AllWheelDriveConfiguration"),
-    REAR_WHEEL_DRIVE_CONFIGURATION("RearWheelDriveConfiguration");
+    REAR_WHEEL_DRIVE_CONFIGURATION("RearWheelDriveConfiguration")
+    ;
 
     private final String enumValue;
 
     DriveWheelConfigurationValueEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static DriveWheelConfigurationValueEnum from(String value) {
+        for (DriveWheelConfigurationValueEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override
