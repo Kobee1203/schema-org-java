@@ -10,7 +10,7 @@
   {
     "@context" : "https://schema.org",
     "@type" : "Example",
-    "afloat" : 12345.67,
+    "aFloat" : 12345.67,
     "bool" : true,
     "cssSelectorType" : ".css-selector-type",
     "date" : "2022-03-12",
@@ -19,8 +19,8 @@
     "number" : 12345.67,
     "pronounceableText" : "This is my thing.",
     "text" : "My Thing",
-   "time" : "10:36:30",
+    "time" : "10:36:30",
     "url" : "https://github.com/Kobee1203/schema-org-java",
-    "xpathType" : "/xpath/example/title"
+    "xPathType" : "/xpath/example/title"
   }
 ]

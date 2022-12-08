@@ -2,6 +2,7 @@ package com.weedow.schemaorg.serializer.serialization;
 
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.SerializerProvider;
+import com.fasterxml.jackson.databind.jsontype.TypeSerializer;
 import com.fasterxml.jackson.databind.ser.std.StdSerializer;
 import com.weedow.schemaorg.commons.model.JsonLdDataType;
 
@@ -37,6 +38,11 @@ public class JsonLdDataTypeSerializer extends StdSerializer<JsonLdDataType<?>> {
         } else { // Handle String type and unknown types as String value
             gen.writeString(dataTypeValue.toString());
         }
+    }
+
+    @Override
+    public void serializeWithType(JsonLdDataType<?> value, JsonGenerator gen, SerializerProvider provider, TypeSerializer typeSer) throws IOException {
+        serialize(value, gen, provider);
     }
 
     @SuppressWarnings("unchecked")

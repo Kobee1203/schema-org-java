@@ -27,6 +27,7 @@
     "name" : "Funny Party"
   },
   "name" : "Sunny Hotel",
+  "nonprofitStatus": "NonprofitANBI",
   "openingHoursSpecification" : {
     "@type" : "OpeningHoursSpecification",
     "closes" : "23:00:00",

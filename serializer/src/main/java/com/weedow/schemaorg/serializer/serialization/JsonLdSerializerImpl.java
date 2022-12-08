@@ -1,14 +1,21 @@
 package com.weedow.schemaorg.serializer.serialization;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.PropertyAccessor;
+import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.json.JsonMapper;
+import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.weedow.schemaorg.commons.model.JsonLdNode;
+import com.weedow.schemaorg.commons.model.JsonLdNodeImpl;
 import com.weedow.schemaorg.serializer.JsonLdConstants;
 import com.weedow.schemaorg.serializer.JsonLdException;
+import com.weedow.schemaorg.serializer.JsonLdNodeMixIn;
 import com.weedow.schemaorg.serializer.JsonLdSerializerOptions;
-import com.weedow.schemaorg.serializer.JsonMapperUtils;
 
 import java.util.List;
 import java.util.Optional;
@@ -26,7 +33,24 @@ public class JsonLdSerializerImpl implements JsonLdSerializer {
     }
 
     private static ObjectMapper objectMapper(JsonLdSerializerOptions options) {
-        JsonMapper.Builder builder = JsonMapperUtils.getJsonMapperBuilder();
+        JsonMapper.Builder builder = JsonMapper.builder()
+                // Register support for Java 8 date/time types (specified in JSR-310 specification)
+                .findAndAddModules()
+                .enable(JsonGenerator.Feature.IGNORE_UNKNOWN)
+                .enable(MapperFeature.SORT_PROPERTIES_ALPHABETICALLY)
+                //.propertyNamingStrategy(PropertyNamingStrategies.LOWER_CAMEL_CASE)
+                //.enable(MapperFeature.USE_STD_BEAN_NAMING)
+                .visibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.NONE)
+                .visibility(PropertyAccessor.FIELD, JsonAutoDetect.Visibility.ANY)
+                .addMixIn(JsonLdNodeImpl.class, JsonLdNodeMixIn.class)
+                .serializationInclusion(JsonInclude.Include.NON_NULL)
+                .enable(SerializationFeature.WRITE_SINGLE_ELEM_ARRAYS_UNWRAPPED)
+                .enable(SerializationFeature.WRITE_ENUMS_USING_TO_STRING)
+                .disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
+
+        SimpleModule dataTypeModule = new SimpleModule("JsonLdDataType Module")
+                .addSerializer(new JsonLdDataTypeSerializer());
+        builder.addModule(dataTypeModule);
 
         if (options.isPrettyPrint()) {
             builder.enable(SerializationFeature.INDENT_OUTPUT);
