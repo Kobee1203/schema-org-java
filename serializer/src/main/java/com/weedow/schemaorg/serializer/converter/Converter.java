@@ -15,6 +15,7 @@ public interface Converter<S, T> {
     /**
      * Whether the given jsonLdDataType is supported by the current converter.
      *
+     * @param sourceType     Source type
      * @param jsonLdDataType JsonLdDataType class
      * @param javaType       Java type related to the JsonLdDataType class
      * @return {@code true} if the converter supports the given jsonLdDataType, {@code false} instead.
