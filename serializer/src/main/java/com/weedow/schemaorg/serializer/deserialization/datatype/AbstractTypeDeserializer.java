@@ -37,8 +37,6 @@ public abstract class AbstractTypeDeserializer<T> extends StdDelegatingDeseriali
 
     @Override
     public Object deserializeWithType(JsonParser p, DeserializationContext ctxt, TypeDeserializer typeDeserializer) throws IOException {
-        //String baseType = typeDeserializer.getTypeIdResolver().idFromBaseType();
-        //TreeNode treeNode = p.getCodec().readTree(p);
         return deserialize(p, ctxt);
     }
 }

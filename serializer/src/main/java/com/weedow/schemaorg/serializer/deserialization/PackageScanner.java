@@ -90,8 +90,9 @@ public final class PackageScanner {
      * @param packageName The package name for classes found inside the base directory
      * @param regex       an optional class name pattern.  e.g. .*Test
      * @return The classes
+     * @throws IOException if an I/O exception occurs.
      */
-    private static Set<Class<?>> findClasses(String path, String packageName, Pattern regex) throws Exception {
+    private static Set<Class<?>> findClasses(String path, String packageName, Pattern regex) throws IOException {
         Set<Class<?>> classes = new TreeSet<>(CLASS_COMPARATOR);
 
         findClassesInJar(classes, path, packageName, regex);
@@ -118,6 +119,17 @@ public final class PackageScanner {
         return classes;
     }
 
+    /**
+     * Check if the given path corresponds to a JAR file and read all jar entries to get classes belonging to the given package.
+     * All found classes are added to the given Set of classes.
+     *
+     * @param classes     Set of classes to fill with the classes found in the package
+     * @param path        PAth of the JAR file
+     * @param packageName The package name for classes found inside the base directory
+     * @param regex       an optional class name pattern.  e.g. .*Test
+     * @throws IOException if an I/O exception occurs.
+     */
+    @SuppressWarnings("java:S5042") // The method doesn't extract files from ZIP, it reads all entries to get classes present in the given package
     private static void findClassesInJar(Set<Class<?>> classes, String path, String packageName, Pattern regex) throws IOException {
         if (path.startsWith("file:") && path.contains("!")) {
             String[] split = path.split("!");
@@ -134,6 +146,7 @@ public final class PackageScanner {
                             classes.add(forName(className));
                         }
                     }
+                    zip.closeEntry();
                 }
             }
         }
