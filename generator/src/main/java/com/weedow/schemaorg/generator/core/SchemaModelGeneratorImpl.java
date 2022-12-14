@@ -83,6 +83,7 @@ public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
         if (options.isCopyCommonModels()) {
             LOG.info("Copying common models...");
             copyJavaFile(JsonLdTypeName.class);
+            copyJavaFile(JsonLdFieldTypes.class);
             copyJavaFile(JsonLdSubTypes.class);
             copyJavaFile(JsonLdNode.class);
             copyJavaFile(JsonLdNodeImpl.class);
@@ -153,7 +154,8 @@ public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
         );
 
         Set<String> allImports = SchemaGeneratorUtils.getAllImports(modelPackage, dataTypePackage, type);
-        if(!type.getSubTypes().isEmpty()) {
+        if (!type.getSubTypes().isEmpty()) {
+            // Add JsonLdSubTypes as import but not cached in SchemaGeneratorUtils.getAllImports method to prevent to be added for enumerations that extend this current Enumeration
             allImports.add(JsonLdSubTypes.class.getName());
         }
         applyTemplate(
@@ -187,6 +189,7 @@ public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
         }
     }
 
+    @SuppressWarnings("BooleanMethodIsAlwaysInverted")
     private static boolean createFolderIfNotExists(Path folder) {
         try {
             return Files.exists(Files.createDirectories(folder));

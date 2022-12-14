@@ -27,6 +27,7 @@ import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.MedicalEntity;
 
 /**
@@ -134,6 +135,7 @@ public class AnatomicalSystemImpl extends com.weedow.schemaorg.commons.model.Jso
         this.associatedPathophysiology = associatedPathophysiology;
     }
 
+    @JsonLdFieldTypes({ AnatomicalStructure.class, AnatomicalSystem.class })
     private Object comprisedOf;
 
     /**
@@ -168,6 +170,7 @@ public class AnatomicalSystemImpl extends com.weedow.schemaorg.commons.model.Jso
         this.comprisedOf = comprisedOf;
     }
 
+    @JsonLdFieldTypes({ DrugLegalStatus.class, Text.class, MedicalEnumeration.class })
     private Object legalStatus;
 
     /**
@@ -384,6 +387,7 @@ public class AnatomicalSystemImpl extends com.weedow.schemaorg.commons.model.Jso
         this.relevantSpecialty = relevantSpecialty;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -481,6 +485,7 @@ public class AnatomicalSystemImpl extends com.weedow.schemaorg.commons.model.Jso
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -556,6 +561,7 @@ public class AnatomicalSystemImpl extends com.weedow.schemaorg.commons.model.Jso
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -656,6 +662,7 @@ public class AnatomicalSystemImpl extends com.weedow.schemaorg.commons.model.Jso
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

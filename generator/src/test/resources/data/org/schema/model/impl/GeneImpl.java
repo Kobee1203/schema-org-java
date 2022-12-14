@@ -22,6 +22,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 
 /**
  * A discrete unit of inheritance which affects one or more biological traits (Source: [https://en.wikipedia.org/wiki/Gene](https://en.wikipedia.org/wiki/Gene)). Examples include FOXP2 (Forkhead box protein P2), SCARNA21 (small Cajal body-specific RNA 21), A- (agouti genotype).
@@ -104,6 +105,7 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
         this.encodesBioChemEntity = encodesBioChemEntity;
     }
 
+    @JsonLdFieldTypes({ AnatomicalStructure.class, BioChemEntity.class, DefinedTerm.class, AnatomicalSystem.class })
     private Object expressedIn;
 
     /**
@@ -234,6 +236,7 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
         this.isPartOfBioChemEntity = isPartOfBioChemEntity;
     }
 
+    @JsonLdFieldTypes({ URL.class, DefinedTerm.class, Text.class, Taxon.class })
     private Object taxonomicRange;
 
     /**
@@ -288,6 +291,7 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
         this.taxonomicRange = taxonomicRange;
     }
 
+    @JsonLdFieldTypes({ PropertyValue.class, URL.class, DefinedTerm.class })
     private Object isInvolvedInBiologicalProcess;
 
     /**
@@ -332,6 +336,7 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
         this.isInvolvedInBiologicalProcess = isInvolvedInBiologicalProcess;
     }
 
+    @JsonLdFieldTypes({ PropertyValue.class, DefinedTerm.class, URL.class })
     private Object isLocatedInSubcellularLocation;
 
     /**
@@ -376,6 +381,7 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
         this.isLocatedInSubcellularLocation = isLocatedInSubcellularLocation;
     }
 
+    @JsonLdFieldTypes({ URL.class, PropertyValue.class, MedicalCondition.class })
     private Object associatedDisease;
 
     /**
@@ -420,6 +426,7 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
         this.associatedDisease = associatedDisease;
     }
 
+    @JsonLdFieldTypes({ PropertyValue.class, DefinedTerm.class, URL.class })
     private Object hasMolecularFunction;
 
     /**
@@ -512,6 +519,7 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
         this.bioChemInteraction = bioChemInteraction;
     }
 
+    @JsonLdFieldTypes({ Text.class, PropertyValue.class, URL.class })
     private Object hasRepresentation;
 
     /**
@@ -604,6 +612,7 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
         this.biologicalRole = biologicalRole;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -701,6 +710,7 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -776,6 +786,7 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -876,6 +887,7 @@ public class GeneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

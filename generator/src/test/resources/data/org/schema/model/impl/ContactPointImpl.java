@@ -21,6 +21,7 @@ import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.Intangible;
 import org.schema.model.StructuredValue;
 import org.schema.model.ContactPoint;
@@ -121,6 +122,7 @@ public class ContactPointImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.contactOption = contactOption;
     }
 
+    @JsonLdFieldTypes({ Text.class, Language.class })
     private Object availableLanguage;
 
     /**
@@ -152,6 +154,7 @@ public class ContactPointImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.availableLanguage = availableLanguage;
     }
 
+    @JsonLdFieldTypes({ GeoShape.class, AdministrativeArea.class, Place.class })
     private Object serviceArea;
 
     /**
@@ -192,6 +195,7 @@ public class ContactPointImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.serviceArea = serviceArea;
     }
 
+    @JsonLdFieldTypes({ AdministrativeArea.class, GeoShape.class, Text.class, Place.class })
     private Object areaServed;
 
     /**
@@ -263,6 +267,7 @@ public class ContactPointImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.contactType = contactType;
     }
 
+    @JsonLdFieldTypes({ Text.class, Product.class })
     private Object productSupported;
 
     /**
@@ -316,6 +321,7 @@ public class ContactPointImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.faxNumber = faxNumber;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -413,6 +419,7 @@ public class ContactPointImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -488,6 +495,7 @@ public class ContactPointImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -588,6 +596,7 @@ public class ContactPointImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

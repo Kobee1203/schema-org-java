@@ -16,6 +16,7 @@ import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.Intangible;
 import org.schema.model.StructuredValue;
 import org.schema.model.DefinedRegion;
@@ -42,6 +43,7 @@ import org.schema.model.DefinedRegion;
 @JsonLdTypeName("DefinedRegion")
 public class DefinedRegionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements DefinedRegion {
 
+    @JsonLdFieldTypes({ Country.class, Text.class })
     private Object addressCountry;
 
     /**
@@ -176,6 +178,7 @@ public class DefinedRegionImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.postalCode = postalCode;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -273,6 +276,7 @@ public class DefinedRegionImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -348,6 +352,7 @@ public class DefinedRegionImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -448,6 +453,7 @@ public class DefinedRegionImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

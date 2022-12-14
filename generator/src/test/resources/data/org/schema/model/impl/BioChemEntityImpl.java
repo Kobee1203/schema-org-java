@@ -20,6 +20,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 
 /**
  * Any biological, chemical, or biochemical thing. For example: a protein; a gene; a chemical; a synthetic chemical.
@@ -106,6 +107,7 @@ public class BioChemEntityImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.isPartOfBioChemEntity = isPartOfBioChemEntity;
     }
 
+    @JsonLdFieldTypes({ URL.class, DefinedTerm.class, Text.class, Taxon.class })
     private Object taxonomicRange;
 
     /**
@@ -160,6 +162,7 @@ public class BioChemEntityImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.taxonomicRange = taxonomicRange;
     }
 
+    @JsonLdFieldTypes({ PropertyValue.class, URL.class, DefinedTerm.class })
     private Object isInvolvedInBiologicalProcess;
 
     /**
@@ -204,6 +207,7 @@ public class BioChemEntityImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.isInvolvedInBiologicalProcess = isInvolvedInBiologicalProcess;
     }
 
+    @JsonLdFieldTypes({ PropertyValue.class, DefinedTerm.class, URL.class })
     private Object isLocatedInSubcellularLocation;
 
     /**
@@ -248,6 +252,7 @@ public class BioChemEntityImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.isLocatedInSubcellularLocation = isLocatedInSubcellularLocation;
     }
 
+    @JsonLdFieldTypes({ URL.class, PropertyValue.class, MedicalCondition.class })
     private Object associatedDisease;
 
     /**
@@ -292,6 +297,7 @@ public class BioChemEntityImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.associatedDisease = associatedDisease;
     }
 
+    @JsonLdFieldTypes({ PropertyValue.class, DefinedTerm.class, URL.class })
     private Object hasMolecularFunction;
 
     /**
@@ -384,6 +390,7 @@ public class BioChemEntityImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.bioChemInteraction = bioChemInteraction;
     }
 
+    @JsonLdFieldTypes({ Text.class, PropertyValue.class, URL.class })
     private Object hasRepresentation;
 
     /**
@@ -476,6 +483,7 @@ public class BioChemEntityImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.biologicalRole = biologicalRole;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -573,6 +581,7 @@ public class BioChemEntityImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -648,6 +657,7 @@ public class BioChemEntityImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -748,6 +758,7 @@ public class BioChemEntityImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

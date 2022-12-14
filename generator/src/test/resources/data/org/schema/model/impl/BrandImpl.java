@@ -16,6 +16,7 @@ import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.Intangible;
 import org.schema.model.Brand;
 
@@ -94,6 +95,7 @@ public class BrandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
         this.slogan = slogan;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object logo;
 
     /**
@@ -128,6 +130,7 @@ public class BrandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
         this.logo = logo;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -225,6 +228,7 @@ public class BrandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -300,6 +304,7 @@ public class BrandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -400,6 +405,7 @@ public class BrandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

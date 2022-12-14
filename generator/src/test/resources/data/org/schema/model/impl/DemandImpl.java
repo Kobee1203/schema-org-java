@@ -38,6 +38,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.Intangible;
 import org.schema.model.Demand;
 
@@ -72,6 +73,7 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.gtin12 = gtin12;
     }
 
+    @JsonLdFieldTypes({ Trip.class, Event.class, Product.class, AggregateOffer.class, CreativeWork.class, MenuItem.class, Service.class })
     private Object itemOffered;
 
     /**
@@ -294,6 +296,7 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.eligibleQuantity = eligibleQuantity;
     }
 
+    @JsonLdFieldTypes({ LoanOrCredit.class, PaymentMethod.class })
     private Object acceptedPaymentMethod;
 
     /**
@@ -352,6 +355,7 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.warranty = warranty;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object seller;
 
     /**
@@ -383,6 +387,7 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.seller = seller;
     }
 
+    @JsonLdFieldTypes({ Place.class, Text.class, GeoShape.class })
     private Object ineligibleRegion;
 
     /**
@@ -483,6 +488,7 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.availableDeliveryMethod = availableDeliveryMethod;
     }
 
+    @JsonLdFieldTypes({ DateTime.class, Date.class })
     private Object validFrom;
 
     /**
@@ -517,6 +523,7 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.validFrom = validFrom;
     }
 
+    @JsonLdFieldTypes({ Date.class, DateTime.class, Time.class })
     private Object availabilityEnds;
 
     /**
@@ -565,6 +572,7 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.availabilityEnds = availabilityEnds;
     }
 
+    @JsonLdFieldTypes({ GeoShape.class, Text.class, Place.class })
     private Object eligibleRegion;
 
     /**
@@ -761,6 +769,7 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.eligibleTransactionVolume = eligibleTransactionVolume;
     }
 
+    @JsonLdFieldTypes({ AdministrativeArea.class, GeoShape.class, Text.class, Place.class })
     private Object areaServed;
 
     /**
@@ -880,6 +889,7 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.gtin13 = gtin13;
     }
 
+    @JsonLdFieldTypes({ DateTime.class, Date.class })
     private Object validThrough;
 
     /**
@@ -938,6 +948,7 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.priceSpecification = priceSpecification;
     }
 
+    @JsonLdFieldTypes({ Time.class, DateTime.class, Date.class })
     private Object availabilityStarts;
 
     /**
@@ -1058,6 +1069,7 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.serialNumber = serialNumber;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -1155,6 +1167,7 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -1230,6 +1243,7 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -1330,6 +1344,7 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

@@ -17,6 +17,7 @@ import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.Intangible;
 import org.schema.model.StructuredValue;
 import org.schema.model.GeoCoordinates;
@@ -29,6 +30,7 @@ import org.schema.model.GeoCoordinates;
 @JsonLdTypeName("GeoCoordinates")
 public class GeoCoordinatesImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements GeoCoordinates {
 
+    @JsonLdFieldTypes({ Country.class, Text.class })
     private Object addressCountry;
 
     /**
@@ -63,6 +65,7 @@ public class GeoCoordinatesImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.addressCountry = addressCountry;
     }
 
+    @JsonLdFieldTypes({ Text.class, Number.class })
     private Object latitude;
 
     /**
@@ -94,6 +97,7 @@ public class GeoCoordinatesImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.latitude = latitude;
     }
 
+    @JsonLdFieldTypes({ Text.class, PostalAddress.class })
     private Object address;
 
     /**
@@ -149,6 +153,7 @@ public class GeoCoordinatesImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.postalCode = postalCode;
     }
 
+    @JsonLdFieldTypes({ Text.class, Number.class })
     private Object elevation;
 
     /**
@@ -180,6 +185,7 @@ public class GeoCoordinatesImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.elevation = elevation;
     }
 
+    @JsonLdFieldTypes({ Number.class, Text.class })
     private Object longitude;
 
     /**
@@ -211,6 +217,7 @@ public class GeoCoordinatesImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.longitude = longitude;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -308,6 +315,7 @@ public class GeoCoordinatesImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -383,6 +391,7 @@ public class GeoCoordinatesImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -483,6 +492,7 @@ public class GeoCoordinatesImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

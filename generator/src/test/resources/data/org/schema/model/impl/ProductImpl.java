@@ -39,6 +39,7 @@ import org.schema.model.CreativeWork;
 import org.schema.model.Action;
 import org.schema.model.Event;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 
 /**
  * Any offered product or service. For example: a pair of shoes; a concert ticket; the rental of a car; a haircut; or an episode of a TV show streamed online.
@@ -147,6 +148,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.nsn = nsn;
     }
 
+    @JsonLdFieldTypes({ Text.class, URL.class, Product.class })
     private Object material;
 
     /**
@@ -231,6 +233,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.award = award;
     }
 
+    @JsonLdFieldTypes({ QuantitativeValue.class, Distance.class })
     private Object width;
 
     /**
@@ -292,6 +295,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.countryOfOrigin = countryOfOrigin;
     }
 
+    @JsonLdFieldTypes({ DefinedTerm.class, Text.class })
     private Object pattern;
 
     /**
@@ -329,6 +333,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.pattern = pattern;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PhysicalActivityCategory.class, Thing.class, CategoryCode.class })
     private Object category;
 
     /**
@@ -451,6 +456,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.mpn = mpn;
     }
 
+    @JsonLdFieldTypes({ Distance.class, QuantitativeValue.class })
     private Object height;
 
     /**
@@ -482,6 +488,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.height = height;
     }
 
+    @JsonLdFieldTypes({ DefinedTerm.class, Text.class, URL.class })
     private Object keywords;
 
     /**
@@ -594,6 +601,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.audience = audience;
     }
 
+    @JsonLdFieldTypes({ Offer.class, Demand.class })
     private Object offers;
 
     /**
@@ -821,6 +829,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.aggregateRating = aggregateRating;
     }
 
+    @JsonLdFieldTypes({ Service.class, Product.class })
     private Object isSimilarTo;
 
     /**
@@ -855,6 +864,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.isSimilarTo = isSimilarTo;
     }
 
+    @JsonLdFieldTypes({ Distance.class, QuantitativeValue.class })
     private Object depth;
 
     /**
@@ -915,6 +925,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.countryOfLastProcessing = countryOfLastProcessing;
     }
 
+    @JsonLdFieldTypes({ ProductModel.class, ProductGroup.class })
     private Object isVariantOf;
 
     /**
@@ -971,6 +982,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.slogan = slogan;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Brand.class })
     private Object brand;
 
     /**
@@ -1074,6 +1086,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.isConsumableFor = isConsumableFor;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object logo;
 
     /**
@@ -1182,6 +1195,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.inProductGroupWithID = inProductGroupWithID;
     }
 
+    @JsonLdFieldTypes({ ProductModel.class, Text.class })
     private Object model;
 
     /**
@@ -1311,6 +1325,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.weight = weight;
     }
 
+    @JsonLdFieldTypes({ QuantitativeValue.class, DefinedTerm.class, Text.class, SizeSpecification.class })
     private Object size;
 
     /**
@@ -1460,6 +1475,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.isFamilyFriendly = isFamilyFriendly;
     }
 
+    @JsonLdFieldTypes({ Service.class, Product.class })
     private Object isRelatedTo;
 
     /**
@@ -1494,6 +1510,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.isRelatedTo = isRelatedTo;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -1591,6 +1608,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -1666,6 +1684,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -1766,6 +1785,7 @@ public class ProductImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

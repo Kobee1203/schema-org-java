@@ -18,6 +18,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.Intangible;
 import org.schema.model.Rating;
 import org.schema.model.AggregateRating;
@@ -120,6 +121,7 @@ public class AggregateRatingImpl extends com.weedow.schemaorg.commons.model.Json
         this.reviewAspect = reviewAspect;
     }
 
+    @JsonLdFieldTypes({ Text.class, Number.class })
     private Object worstRating;
 
     /**
@@ -151,6 +153,7 @@ public class AggregateRatingImpl extends com.weedow.schemaorg.commons.model.Json
         this.worstRating = worstRating;
     }
 
+    @JsonLdFieldTypes({ Person.class, Organization.class })
     private Object author;
 
     /**
@@ -182,6 +185,7 @@ public class AggregateRatingImpl extends com.weedow.schemaorg.commons.model.Json
         this.author = author;
     }
 
+    @JsonLdFieldTypes({ Text.class, Number.class })
     private Object bestRating;
 
     /**
@@ -213,6 +217,7 @@ public class AggregateRatingImpl extends com.weedow.schemaorg.commons.model.Json
         this.bestRating = bestRating;
     }
 
+    @JsonLdFieldTypes({ Number.class, Text.class })
     private Object ratingValue;
 
     /**
@@ -270,6 +275,7 @@ public class AggregateRatingImpl extends com.weedow.schemaorg.commons.model.Json
         this.ratingExplanation = ratingExplanation;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -367,6 +373,7 @@ public class AggregateRatingImpl extends com.weedow.schemaorg.commons.model.Json
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -442,6 +449,7 @@ public class AggregateRatingImpl extends com.weedow.schemaorg.commons.model.Json
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -542,6 +550,7 @@ public class AggregateRatingImpl extends com.weedow.schemaorg.commons.model.Json
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

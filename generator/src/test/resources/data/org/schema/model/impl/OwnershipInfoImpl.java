@@ -19,6 +19,7 @@ import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.Intangible;
 import org.schema.model.StructuredValue;
 import org.schema.model.OwnershipInfo;
@@ -56,6 +57,7 @@ public class OwnershipInfoImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.ownedFrom = ownedFrom;
     }
 
+    @JsonLdFieldTypes({ Product.class, Service.class })
     private Object typeOfGood;
 
     /**
@@ -90,6 +92,7 @@ public class OwnershipInfoImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.typeOfGood = typeOfGood;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object acquiredFrom;
 
     /**
@@ -148,6 +151,7 @@ public class OwnershipInfoImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.ownedThrough = ownedThrough;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -245,6 +249,7 @@ public class OwnershipInfoImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -320,6 +325,7 @@ public class OwnershipInfoImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -420,6 +426,7 @@ public class OwnershipInfoImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

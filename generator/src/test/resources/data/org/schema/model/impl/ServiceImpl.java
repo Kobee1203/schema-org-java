@@ -33,6 +33,7 @@ import org.schema.model.Action;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.Intangible;
 
 /**
@@ -109,6 +110,7 @@ public class ServiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.serviceAudience = serviceAudience;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PhysicalActivityCategory.class, Thing.class, CategoryCode.class })
     private Object category;
 
     /**
@@ -223,6 +225,7 @@ public class ServiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.audience = audience;
     }
 
+    @JsonLdFieldTypes({ Offer.class, Demand.class })
     private Object offers;
 
     /**
@@ -282,6 +285,7 @@ public class ServiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.serviceOutput = serviceOutput;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object provider;
 
     /**
@@ -322,6 +326,7 @@ public class ServiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.provider = provider;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class })
     private Object termsOfService;
 
     /**
@@ -381,6 +386,7 @@ public class ServiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.providerMobility = providerMobility;
     }
 
+    @JsonLdFieldTypes({ Person.class, Organization.class })
     private Object broker;
 
     /**
@@ -434,6 +440,7 @@ public class ServiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.aggregateRating = aggregateRating;
     }
 
+    @JsonLdFieldTypes({ Service.class, Product.class })
     private Object isSimilarTo;
 
     /**
@@ -512,6 +519,7 @@ public class ServiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.slogan = slogan;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Brand.class })
     private Object brand;
 
     /**
@@ -543,6 +551,7 @@ public class ServiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.brand = brand;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object logo;
 
     /**
@@ -599,6 +608,7 @@ public class ServiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.produces = produces;
     }
 
+    @JsonLdFieldTypes({ GeoShape.class, AdministrativeArea.class, Place.class })
     private Object serviceArea;
 
     /**
@@ -639,6 +649,7 @@ public class ServiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.serviceArea = serviceArea;
     }
 
+    @JsonLdFieldTypes({ GovernmentBenefitsType.class, Text.class })
     private Object serviceType;
 
     /**
@@ -670,6 +681,7 @@ public class ServiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.serviceType = serviceType;
     }
 
+    @JsonLdFieldTypes({ AdministrativeArea.class, GeoShape.class, Text.class, Place.class })
     private Object areaServed;
 
     /**
@@ -719,6 +731,7 @@ public class ServiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.areaServed = areaServed;
     }
 
+    @JsonLdFieldTypes({ Service.class, Product.class })
     private Object isRelatedTo;
 
     /**
@@ -775,6 +788,7 @@ public class ServiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.hasOfferCatalog = hasOfferCatalog;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -872,6 +886,7 @@ public class ServiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -947,6 +962,7 @@ public class ServiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -1047,6 +1063,7 @@ public class ServiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

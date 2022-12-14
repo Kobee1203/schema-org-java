@@ -17,6 +17,7 @@ import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.Intangible;
 import org.schema.model.StructuredValue;
 import org.schema.model.GeoShape;
@@ -30,6 +31,7 @@ import org.schema.model.GeoShape;
 @JsonLdTypeName("GeoShape")
 public class GeoShapeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements GeoShape {
 
+    @JsonLdFieldTypes({ Country.class, Text.class })
     private Object addressCountry;
 
     /**
@@ -130,6 +132,7 @@ public class GeoShapeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.polygon = polygon;
     }
 
+    @JsonLdFieldTypes({ Text.class, PostalAddress.class })
     private Object address;
 
     /**
@@ -185,6 +188,7 @@ public class GeoShapeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.postalCode = postalCode;
     }
 
+    @JsonLdFieldTypes({ Text.class, Number.class })
     private Object elevation;
 
     /**
@@ -238,6 +242,7 @@ public class GeoShapeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.box = box;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -335,6 +340,7 @@ public class GeoShapeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -410,6 +416,7 @@ public class GeoShapeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -510,6 +517,7 @@ public class GeoShapeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

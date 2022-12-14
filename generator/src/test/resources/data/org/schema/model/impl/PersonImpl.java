@@ -40,6 +40,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 
 /**
  * A person (alive, dead, undead, or fictional).
@@ -230,6 +231,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.givenName = givenName;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, Thing.class })
     private Object knowsAbout;
 
     /**
@@ -304,6 +306,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.performerIn = performerIn;
     }
 
+    @JsonLdFieldTypes({ MonetaryAmount.class, PriceSpecification.class })
     private Object netWorth;
 
     /**
@@ -357,6 +360,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.award = award;
     }
 
+    @JsonLdFieldTypes({ Place.class, ContactPoint.class })
     private Object workLocation;
 
     /**
@@ -432,6 +436,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.deathPlace = deathPlace;
     }
 
+    @JsonLdFieldTypes({ Place.class, ContactPoint.class })
     private Object homeLocation;
 
     /**
@@ -515,6 +520,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.vatID = vatID;
     }
 
+    @JsonLdFieldTypes({ Distance.class, QuantitativeValue.class })
     private Object height;
 
     /**
@@ -616,6 +622,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.hasOccupation = hasOccupation;
     }
 
+    @JsonLdFieldTypes({ GenderType.class, Text.class })
     private Object gender;
 
     /**
@@ -719,6 +726,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.sibling = sibling;
     }
 
+    @JsonLdFieldTypes({ Text.class, DefinedTerm.class })
     private Object jobTitle;
 
     /**
@@ -778,6 +786,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.birthDate = birthDate;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object funder;
 
     /**
@@ -923,6 +932,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.interactionStatistic = interactionStatistic;
     }
 
+    @JsonLdFieldTypes({ Text.class, PostalAddress.class })
     private Object address;
 
     /**
@@ -954,6 +964,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.address = address;
     }
 
+    @JsonLdFieldTypes({ ProgramMembership.class, Organization.class })
     private Object memberOf;
 
     /**
@@ -985,6 +996,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.memberOf = memberOf;
     }
 
+    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
     private Object publishingPrinciples;
 
     /**
@@ -1154,6 +1166,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.birthPlace = birthPlace;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Brand.class })
     private Object brand;
 
     /**
@@ -1185,6 +1198,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.brand = brand;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object sponsor;
 
     /**
@@ -1336,6 +1350,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.hasPOS = hasPOS;
     }
 
+    @JsonLdFieldTypes({ EducationalOrganization.class, Organization.class })
     private Object alumniOf;
 
     /**
@@ -1415,6 +1430,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.weight = weight;
     }
 
+    @JsonLdFieldTypes({ Language.class, Text.class })
     private Object knowsLanguage;
 
     /**
@@ -1477,6 +1493,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.relatedTo = relatedTo;
     }
 
+    @JsonLdFieldTypes({ Person.class, URL.class })
     private Object colleague;
 
     /**
@@ -1556,6 +1573,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.taxID = taxID;
     }
 
+    @JsonLdFieldTypes({ Product.class, OwnershipInfo.class })
     private Object owns;
 
     /**
@@ -1678,6 +1696,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.faxNumber = faxNumber;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -1775,6 +1794,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -1850,6 +1870,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -1950,6 +1971,7 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

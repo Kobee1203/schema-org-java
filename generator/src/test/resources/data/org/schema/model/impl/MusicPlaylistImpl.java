@@ -49,6 +49,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.MusicPlaylist;
 
 /**
@@ -103,6 +104,7 @@ public class MusicPlaylistImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.numTracks = numTracks;
     }
 
+    @JsonLdFieldTypes({ ItemList.class, MusicRecording.class })
     private Object track;
 
     /**
@@ -137,6 +139,7 @@ public class MusicPlaylistImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.track = track;
     }
 
+    @JsonLdFieldTypes({ DefinedTerm.class, Text.class })
     private Object teaches;
 
     /**
@@ -174,6 +177,7 @@ public class MusicPlaylistImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.teaches = teaches;
     }
 
+    @JsonLdFieldTypes({ URL.class, DefinedTerm.class, Text.class })
     private Object educationalLevel;
 
     /**
@@ -248,6 +252,7 @@ public class MusicPlaylistImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.abstract_ = abstract_;
     }
 
+    @JsonLdFieldTypes({ Text.class, DefinedTerm.class })
     private Object creativeWorkStatus;
 
     /**
@@ -333,6 +338,7 @@ public class MusicPlaylistImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.contentReferenceTime = contentReferenceTime;
     }
 
+    @JsonLdFieldTypes({ Text.class, URL.class, Product.class })
     private Object material;
 
     /**
@@ -395,6 +401,7 @@ public class MusicPlaylistImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.review = review;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class })
     private Object fileFormat;
 
     /**
@@ -448,6 +455,7 @@ public class MusicPlaylistImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.text = text;
     }
 
+    @JsonLdFieldTypes({ Person.class, Organization.class })
     private Object translator;
 
     /**
@@ -501,6 +509,7 @@ public class MusicPlaylistImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.award = award;
     }
 
+    @JsonLdFieldTypes({ Text.class, DefinedTerm.class })
     private Object assesses;
 
     /**
@@ -564,6 +573,7 @@ public class MusicPlaylistImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.copyrightNotice = copyrightNotice;
     }
 
+    @JsonLdFieldTypes({ Text.class, URL.class })
     private Object schemaVersion;
 
     /**
@@ -628,6 +638,7 @@ public class MusicPlaylistImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.countryOfOrigin = countryOfOrigin;
     }
 
+    @JsonLdFieldTypes({ DefinedTerm.class, Text.class })
     private Object pattern;
 
     /**
@@ -715,6 +726,7 @@ public class MusicPlaylistImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.funding = funding;
     }
 
+    @JsonLdFieldTypes({ DefinedTerm.class, Text.class })
     private Object educationalUse;
 
     /**
@@ -746,6 +758,7 @@ public class MusicPlaylistImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.educationalUse = educationalUse;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class })
     private Object genre;
 
     /**
@@ -777,6 +790,7 @@ public class MusicPlaylistImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.genre = genre;
     }
 
+    @JsonLdFieldTypes({ DefinedTerm.class, Text.class, URL.class })
     private Object keywords;
 
     /**
@@ -817,6 +831,7 @@ public class MusicPlaylistImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.keywords = keywords;
     }
 
+    @JsonLdFieldTypes({ Integer.class, Text.class })
     private Object position;
 
     /**
@@ -914,6 +929,7 @@ public class MusicPlaylistImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.audience = audience;
     }
 
+    @JsonLdFieldTypes({ Offer.class, Demand.class })
     private Object offers;
 
     /**
@@ -995,6 +1011,7 @@ public class MusicPlaylistImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.associatedMedia = associatedMedia;
     }
 
+    @JsonLdFieldTypes({ QuantitativeValue.class, Text.class })
     private Object materialExtent;
 
     /**
@@ -1054,6 +1071,7 @@ public class MusicPlaylistImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.mainEntity = mainEntity;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object copyrightHolder;
 
     /**
@@ -1155,6 +1173,7 @@ public class MusicPlaylistImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.sdDatePublished = sdDatePublished;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object producer;
 
     /**
@@ -1210,6 +1229,7 @@ public class MusicPlaylistImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.spatial = spatial;
     }
 
+    @JsonLdFieldTypes({ Person.class, Organization.class })
     private Object publisher;
 
     /**
@@ -1285,6 +1305,7 @@ public class MusicPlaylistImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.character = character;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object funder;
 
     /**
@@ -1340,6 +1361,7 @@ public class MusicPlaylistImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.exampleOfWork = exampleOfWork;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object usageInfo;
 
     /**
@@ -1383,6 +1405,7 @@ public class MusicPlaylistImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.usageInfo = usageInfo;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object provider;
 
     /**
@@ -1423,6 +1446,7 @@ public class MusicPlaylistImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.provider = provider;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object sdPublisher;
 
     /**
@@ -1733,6 +1757,7 @@ public class MusicPlaylistImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.copyrightYear = copyrightYear;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class, Product.class })
     private Object isBasedOn;
 
     /**
@@ -1797,6 +1822,7 @@ public class MusicPlaylistImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.workExample = workExample;
     }
 
+    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
     private Object publishingPrinciples;
 
     /**
@@ -1878,6 +1904,7 @@ public class MusicPlaylistImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.releasedEvent = releasedEvent;
     }
 
+    @JsonLdFieldTypes({ Date.class, DateTime.class })
     private Object dateCreated;
 
     /**
@@ -2003,6 +2030,7 @@ public class MusicPlaylistImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.recordedAt = recordedAt;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class })
     private Object editEIDR;
 
     /**
@@ -2052,6 +2080,7 @@ public class MusicPlaylistImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.editEIDR = editEIDR;
     }
 
+    @JsonLdFieldTypes({ Person.class, Organization.class })
     private Object author;
 
     /**
@@ -2083,6 +2112,7 @@ public class MusicPlaylistImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.author = author;
     }
 
+    @JsonLdFieldTypes({ DateTime.class, Date.class })
     private Object dateModified;
 
     /**
@@ -2114,6 +2144,7 @@ public class MusicPlaylistImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.dateModified = dateModified;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object sponsor;
 
     /**
@@ -2169,6 +2200,7 @@ public class MusicPlaylistImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.accessibilitySummary = accessibilitySummary;
     }
 
+    @JsonLdFieldTypes({ Text.class, URL.class })
     private Object encodingFormat;
 
     /**
@@ -2212,6 +2244,7 @@ public class MusicPlaylistImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.encodingFormat = encodingFormat;
     }
 
+    @JsonLdFieldTypes({ Person.class, Organization.class })
     private Object maintainer;
 
     /**
@@ -2278,6 +2311,7 @@ public class MusicPlaylistImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.educationalAlignment = educationalAlignment;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object acquireLicensePage;
 
     /**
@@ -2337,6 +2371,7 @@ public class MusicPlaylistImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.isAccessibleForFree = isAccessibleForFree;
     }
 
+    @JsonLdFieldTypes({ Date.class, DateTime.class })
     private Object datePublished;
 
     /**
@@ -2394,6 +2429,7 @@ public class MusicPlaylistImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.spatialCoverage = spatialCoverage;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object sdLicense;
 
     /**
@@ -2457,6 +2493,7 @@ public class MusicPlaylistImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.conditionsOfAccess = conditionsOfAccess;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, CorrectionComment.class })
     private Object correction;
 
     /**
@@ -2509,6 +2546,7 @@ public class MusicPlaylistImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.correction = correction;
     }
 
+    @JsonLdFieldTypes({ Text.class, Rating.class })
     private Object contentRating;
 
     /**
@@ -2540,6 +2578,7 @@ public class MusicPlaylistImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.contentRating = contentRating;
     }
 
+    @JsonLdFieldTypes({ QuantitativeValue.class, DefinedTerm.class, Text.class, SizeSpecification.class })
     private Object size;
 
     /**
@@ -2599,6 +2638,7 @@ public class MusicPlaylistImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.size = size;
     }
 
+    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
     private Object isPartOf;
 
     /**
@@ -2630,6 +2670,7 @@ public class MusicPlaylistImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.isPartOf = isPartOf;
     }
 
+    @JsonLdFieldTypes({ DateTime.class, Text.class })
     private Object temporal;
 
     /**
@@ -2686,6 +2727,7 @@ public class MusicPlaylistImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.thumbnailUrl = thumbnailUrl;
     }
 
+    @JsonLdFieldTypes({ Text.class, Language.class })
     private Object inLanguage;
 
     /**
@@ -2720,6 +2762,7 @@ public class MusicPlaylistImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.inLanguage = inLanguage;
     }
 
+    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
     private Object license;
 
     /**
@@ -2751,6 +2794,7 @@ public class MusicPlaylistImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.license = license;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object creator;
 
     /**
@@ -2918,6 +2962,7 @@ public class MusicPlaylistImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.publisherImprint = publisherImprint;
     }
 
+    @JsonLdFieldTypes({ URL.class, CreativeWork.class, Product.class })
     private Object isBasedOnUrl;
 
     /**
@@ -3028,6 +3073,7 @@ public class MusicPlaylistImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.accessibilityControl = accessibilityControl;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, Text.class })
     private Object citation;
 
     /**
@@ -3059,6 +3105,7 @@ public class MusicPlaylistImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.citation = citation;
     }
 
+    @JsonLdFieldTypes({ Number.class, Text.class })
     private Object version;
 
     /**
@@ -3090,6 +3137,7 @@ public class MusicPlaylistImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.version = version;
     }
 
+    @JsonLdFieldTypes({ WebPage.class, URL.class })
     private Object archivedAt;
 
     /**
@@ -3127,6 +3175,7 @@ public class MusicPlaylistImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.archivedAt = archivedAt;
     }
 
+    @JsonLdFieldTypes({ DefinedTerm.class, Text.class })
     private Object learningResourceType;
 
     /**
@@ -3180,6 +3229,7 @@ public class MusicPlaylistImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.encoding = encoding;
     }
 
+    @JsonLdFieldTypes({ AudioObject.class, MusicRecording.class, Clip.class })
     private Object audio;
 
     /**
@@ -3294,6 +3344,7 @@ public class MusicPlaylistImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.hasPart = hasPart;
     }
 
+    @JsonLdFieldTypes({ URL.class, DateTime.class, Text.class })
     private Object temporalCoverage;
 
     /**
@@ -3350,6 +3401,7 @@ public class MusicPlaylistImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.temporalCoverage = temporalCoverage;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object contributor;
 
     /**
@@ -3381,6 +3433,7 @@ public class MusicPlaylistImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.contributor = contributor;
     }
 
+    @JsonLdFieldTypes({ Clip.class, VideoObject.class })
     private Object video;
 
     /**
@@ -3412,6 +3465,7 @@ public class MusicPlaylistImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.video = video;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -3509,6 +3563,7 @@ public class MusicPlaylistImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -3584,6 +3639,7 @@ public class MusicPlaylistImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -3684,6 +3740,7 @@ public class MusicPlaylistImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

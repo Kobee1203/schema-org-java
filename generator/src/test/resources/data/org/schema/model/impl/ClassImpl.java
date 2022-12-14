@@ -17,6 +17,7 @@ import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.Intangible;
 
 /**
@@ -28,6 +29,7 @@ import org.schema.model.Intangible;
 @JsonLdTypeName("Class")
 public class ClassImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Class {
 
+    @JsonLdFieldTypes({ Enumeration.class, Class.class, Property.class })
     private Object supersededBy;
 
     /**
@@ -72,6 +74,7 @@ public class ClassImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
         this.supersededBy = supersededBy;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -169,6 +172,7 @@ public class ClassImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -244,6 +248,7 @@ public class ClassImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -344,6 +349,7 @@ public class ClassImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

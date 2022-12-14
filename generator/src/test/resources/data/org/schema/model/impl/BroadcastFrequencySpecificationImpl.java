@@ -17,6 +17,7 @@ import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.Intangible;
 import org.schema.model.BroadcastFrequencySpecification;
 
@@ -55,6 +56,7 @@ public class BroadcastFrequencySpecificationImpl extends com.weedow.schemaorg.co
         this.broadcastSubChannel = broadcastSubChannel;
     }
 
+    @JsonLdFieldTypes({ QualitativeValue.class, Text.class })
     private Object broadcastSignalModulation;
 
     /**
@@ -92,6 +94,7 @@ public class BroadcastFrequencySpecificationImpl extends com.weedow.schemaorg.co
         this.broadcastSignalModulation = broadcastSignalModulation;
     }
 
+    @JsonLdFieldTypes({ Number.class, QuantitativeValue.class })
     private Object broadcastFrequencyValue;
 
     /**
@@ -126,6 +129,7 @@ public class BroadcastFrequencySpecificationImpl extends com.weedow.schemaorg.co
         this.broadcastFrequencyValue = broadcastFrequencyValue;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -223,6 +227,7 @@ public class BroadcastFrequencySpecificationImpl extends com.weedow.schemaorg.co
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -298,6 +303,7 @@ public class BroadcastFrequencySpecificationImpl extends com.weedow.schemaorg.co
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -398,6 +404,7 @@ public class BroadcastFrequencySpecificationImpl extends com.weedow.schemaorg.co
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

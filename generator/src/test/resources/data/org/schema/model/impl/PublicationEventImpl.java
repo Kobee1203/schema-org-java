@@ -37,6 +37,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.PublicationEvent;
 
 /**
@@ -47,6 +48,7 @@ import org.schema.model.PublicationEvent;
 @JsonLdTypeName("PublicationEvent")
 public class PublicationEventImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PublicationEvent {
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object publishedBy;
 
     /**
@@ -195,6 +197,7 @@ public class PublicationEventImpl extends com.weedow.schemaorg.commons.model.Jso
         this.review = review;
     }
 
+    @JsonLdFieldTypes({ Person.class, Organization.class })
     private Object translator;
 
     /**
@@ -226,6 +229,7 @@ public class PublicationEventImpl extends com.weedow.schemaorg.commons.model.Jso
         this.translator = translator;
     }
 
+    @JsonLdFieldTypes({ DateTime.class, Date.class })
     private Object startDate;
 
     /**
@@ -260,6 +264,7 @@ public class PublicationEventImpl extends com.weedow.schemaorg.commons.model.Jso
         this.startDate = startDate;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object composer;
 
     /**
@@ -392,6 +397,7 @@ public class PublicationEventImpl extends com.weedow.schemaorg.commons.model.Jso
         this.funding = funding;
     }
 
+    @JsonLdFieldTypes({ DefinedTerm.class, Text.class, URL.class })
     private Object keywords;
 
     /**
@@ -454,6 +460,7 @@ public class PublicationEventImpl extends com.weedow.schemaorg.commons.model.Jso
         this.audience = audience;
     }
 
+    @JsonLdFieldTypes({ Offer.class, Demand.class })
     private Object offers;
 
     /**
@@ -557,6 +564,7 @@ public class PublicationEventImpl extends com.weedow.schemaorg.commons.model.Jso
         this.eventStatus = eventStatus;
     }
 
+    @JsonLdFieldTypes({ Date.class, DateTime.class })
     private Object endDate;
 
     /**
@@ -591,6 +599,7 @@ public class PublicationEventImpl extends com.weedow.schemaorg.commons.model.Jso
         this.endDate = endDate;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object funder;
 
     /**
@@ -622,6 +631,7 @@ public class PublicationEventImpl extends com.weedow.schemaorg.commons.model.Jso
         this.funder = funder;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object performer;
 
     /**
@@ -697,6 +707,7 @@ public class PublicationEventImpl extends com.weedow.schemaorg.commons.model.Jso
         this.typicalAgeRange = typicalAgeRange;
     }
 
+    @JsonLdFieldTypes({ PostalAddress.class, Text.class, Place.class, VirtualLocation.class })
     private Object location;
 
     /**
@@ -746,6 +757,7 @@ public class PublicationEventImpl extends com.weedow.schemaorg.commons.model.Jso
         this.location = location;
     }
 
+    @JsonLdFieldTypes({ Person.class, Organization.class })
     private Object performers;
 
     /**
@@ -803,6 +815,7 @@ public class PublicationEventImpl extends com.weedow.schemaorg.commons.model.Jso
         this.duration = duration;
     }
 
+    @JsonLdFieldTypes({ Person.class, Organization.class })
     private Object organizer;
 
     /**
@@ -834,6 +847,7 @@ public class PublicationEventImpl extends com.weedow.schemaorg.commons.model.Jso
         this.organizer = organizer;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object sponsor;
 
     /**
@@ -975,6 +989,7 @@ public class PublicationEventImpl extends com.weedow.schemaorg.commons.model.Jso
         this.workPerformed = workPerformed;
     }
 
+    @JsonLdFieldTypes({ Time.class, DateTime.class })
     private Object doorTime;
 
     /**
@@ -1006,6 +1021,7 @@ public class PublicationEventImpl extends com.weedow.schemaorg.commons.model.Jso
         this.doorTime = doorTime;
     }
 
+    @JsonLdFieldTypes({ Text.class, Language.class })
     private Object inLanguage;
 
     /**
@@ -1112,6 +1128,7 @@ public class PublicationEventImpl extends com.weedow.schemaorg.commons.model.Jso
         this.maximumPhysicalAttendeeCapacity = maximumPhysicalAttendeeCapacity;
     }
 
+    @JsonLdFieldTypes({ Person.class, Organization.class })
     private Object attendee;
 
     /**
@@ -1203,6 +1220,7 @@ public class PublicationEventImpl extends com.weedow.schemaorg.commons.model.Jso
         this.eventSchedule = eventSchedule;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object contributor;
 
     /**
@@ -1234,6 +1252,7 @@ public class PublicationEventImpl extends com.weedow.schemaorg.commons.model.Jso
         this.contributor = contributor;
     }
 
+    @JsonLdFieldTypes({ Person.class, Organization.class })
     private Object attendees;
 
     /**
@@ -1265,6 +1284,7 @@ public class PublicationEventImpl extends com.weedow.schemaorg.commons.model.Jso
         this.attendees = attendees;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -1362,6 +1382,7 @@ public class PublicationEventImpl extends com.weedow.schemaorg.commons.model.Jso
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -1437,6 +1458,7 @@ public class PublicationEventImpl extends com.weedow.schemaorg.commons.model.Jso
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -1537,6 +1559,7 @@ public class PublicationEventImpl extends com.weedow.schemaorg.commons.model.Jso
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

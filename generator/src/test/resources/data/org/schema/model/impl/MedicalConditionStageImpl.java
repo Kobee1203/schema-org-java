@@ -24,6 +24,7 @@ import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.MedicalEntity;
 import org.schema.model.MedicalIntangible;
 import org.schema.model.MedicalConditionStage;
@@ -85,6 +86,7 @@ public class MedicalConditionStageImpl extends com.weedow.schemaorg.commons.mode
         this.stageAsNumber = stageAsNumber;
     }
 
+    @JsonLdFieldTypes({ DrugLegalStatus.class, Text.class, MedicalEnumeration.class })
     private Object legalStatus;
 
     /**
@@ -301,6 +303,7 @@ public class MedicalConditionStageImpl extends com.weedow.schemaorg.commons.mode
         this.relevantSpecialty = relevantSpecialty;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -398,6 +401,7 @@ public class MedicalConditionStageImpl extends com.weedow.schemaorg.commons.mode
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -473,6 +477,7 @@ public class MedicalConditionStageImpl extends com.weedow.schemaorg.commons.mode
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -573,6 +578,7 @@ public class MedicalConditionStageImpl extends com.weedow.schemaorg.commons.mode
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

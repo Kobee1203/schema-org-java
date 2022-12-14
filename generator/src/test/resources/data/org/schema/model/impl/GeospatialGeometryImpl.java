@@ -16,6 +16,7 @@ import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.Intangible;
 
 /**
@@ -28,6 +29,7 @@ import org.schema.model.Intangible;
 @JsonLdTypeName("GeospatialGeometry")
 public class GeospatialGeometryImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements GeospatialGeometry {
 
+    @JsonLdFieldTypes({ Place.class, GeospatialGeometry.class })
     private Object geoContains;
 
     /**
@@ -59,6 +61,7 @@ public class GeospatialGeometryImpl extends com.weedow.schemaorg.commons.model.J
         this.geoContains = geoContains;
     }
 
+    @JsonLdFieldTypes({ GeospatialGeometry.class, Place.class })
     private Object geoIntersects;
 
     /**
@@ -90,6 +93,7 @@ public class GeospatialGeometryImpl extends com.weedow.schemaorg.commons.model.J
         this.geoIntersects = geoIntersects;
     }
 
+    @JsonLdFieldTypes({ Place.class, GeospatialGeometry.class })
     private Object geoTouches;
 
     /**
@@ -121,6 +125,7 @@ public class GeospatialGeometryImpl extends com.weedow.schemaorg.commons.model.J
         this.geoTouches = geoTouches;
     }
 
+    @JsonLdFieldTypes({ Place.class, GeospatialGeometry.class })
     private Object geoCoveredBy;
 
     /**
@@ -152,6 +157,7 @@ public class GeospatialGeometryImpl extends com.weedow.schemaorg.commons.model.J
         this.geoCoveredBy = geoCoveredBy;
     }
 
+    @JsonLdFieldTypes({ Place.class, GeospatialGeometry.class })
     private Object geoEquals;
 
     /**
@@ -183,6 +189,7 @@ public class GeospatialGeometryImpl extends com.weedow.schemaorg.commons.model.J
         this.geoEquals = geoEquals;
     }
 
+    @JsonLdFieldTypes({ GeospatialGeometry.class, Place.class })
     private Object geoCrosses;
 
     /**
@@ -214,6 +221,7 @@ public class GeospatialGeometryImpl extends com.weedow.schemaorg.commons.model.J
         this.geoCrosses = geoCrosses;
     }
 
+    @JsonLdFieldTypes({ GeospatialGeometry.class, Place.class })
     private Object geoCovers;
 
     /**
@@ -245,6 +253,7 @@ public class GeospatialGeometryImpl extends com.weedow.schemaorg.commons.model.J
         this.geoCovers = geoCovers;
     }
 
+    @JsonLdFieldTypes({ Place.class, GeospatialGeometry.class })
     private Object geoWithin;
 
     /**
@@ -276,6 +285,7 @@ public class GeospatialGeometryImpl extends com.weedow.schemaorg.commons.model.J
         this.geoWithin = geoWithin;
     }
 
+    @JsonLdFieldTypes({ GeospatialGeometry.class, Place.class })
     private Object geoDisjoint;
 
     /**
@@ -307,6 +317,7 @@ public class GeospatialGeometryImpl extends com.weedow.schemaorg.commons.model.J
         this.geoDisjoint = geoDisjoint;
     }
 
+    @JsonLdFieldTypes({ GeospatialGeometry.class, Place.class })
     private Object geoOverlaps;
 
     /**
@@ -338,6 +349,7 @@ public class GeospatialGeometryImpl extends com.weedow.schemaorg.commons.model.J
         this.geoOverlaps = geoOverlaps;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -435,6 +447,7 @@ public class GeospatialGeometryImpl extends com.weedow.schemaorg.commons.model.J
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -510,6 +523,7 @@ public class GeospatialGeometryImpl extends com.weedow.schemaorg.commons.model.J
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -610,6 +624,7 @@ public class GeospatialGeometryImpl extends com.weedow.schemaorg.commons.model.J
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

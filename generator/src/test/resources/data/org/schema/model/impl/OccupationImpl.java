@@ -22,6 +22,7 @@ import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.Intangible;
 import org.schema.model.Occupation;
 
@@ -34,6 +35,7 @@ import org.schema.model.Occupation;
 @JsonLdTypeName("Occupation")
 public class OccupationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Occupation {
 
+    @JsonLdFieldTypes({ MonetaryAmountDistribution.class, MonetaryAmount.class, Number.class })
     private Object estimatedSalary;
 
     /**
@@ -126,6 +128,7 @@ public class OccupationImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.occupationLocation = occupationLocation;
     }
 
+    @JsonLdFieldTypes({ Text.class, OccupationalExperienceRequirements.class })
     private Object experienceRequirements;
 
     /**
@@ -160,6 +163,7 @@ public class OccupationImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.experienceRequirements = experienceRequirements;
     }
 
+    @JsonLdFieldTypes({ EducationalOccupationalCredential.class, Text.class })
     private Object educationRequirements;
 
     /**
@@ -200,6 +204,7 @@ public class OccupationImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.educationRequirements = educationRequirements;
     }
 
+    @JsonLdFieldTypes({ Text.class, DefinedTerm.class })
     private Object skills;
 
     /**
@@ -237,6 +242,7 @@ public class OccupationImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.skills = skills;
     }
 
+    @JsonLdFieldTypes({ Text.class, EducationalOccupationalCredential.class })
     private Object qualifications;
 
     /**
@@ -277,6 +283,7 @@ public class OccupationImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.qualifications = qualifications;
     }
 
+    @JsonLdFieldTypes({ CategoryCode.class, Text.class })
     private Object occupationalCategory;
 
     /**
@@ -326,6 +333,7 @@ public class OccupationImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.occupationalCategory = occupationalCategory;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -423,6 +431,7 @@ public class OccupationImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -498,6 +507,7 @@ public class OccupationImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -598,6 +608,7 @@ public class OccupationImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

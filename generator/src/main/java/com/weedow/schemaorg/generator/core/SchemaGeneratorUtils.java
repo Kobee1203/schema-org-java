@@ -1,5 +1,6 @@
 package com.weedow.schemaorg.generator.core;
 
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.generator.model.Type;
 import com.weedow.schemaorg.generator.model.utils.ModelUtils;
@@ -38,6 +39,9 @@ public final class SchemaGeneratorUtils {
             }
             imports.add(resolveClassName(modelPackage, dataTypePackage, type));
             imports.add(JsonLdTypeName.class.getName());
+            if (type.getAllProperties().stream().anyMatch(property -> property.getTypes().size() > 1)) {
+                imports.add(JsonLdFieldTypes.class.getName());
+            }
             return imports;
         });
         // Copy the Set to prevent the modifications in the cached Set

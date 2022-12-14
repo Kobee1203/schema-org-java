@@ -16,6 +16,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.Intangible;
 import org.schema.model.DataFeedItem;
 
@@ -27,6 +28,7 @@ import org.schema.model.DataFeedItem;
 @JsonLdTypeName("DataFeedItem")
 public class DataFeedItemImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements DataFeedItem {
 
+    @JsonLdFieldTypes({ DateTime.class, Date.class })
     private Object dateDeleted;
 
     /**
@@ -58,6 +60,7 @@ public class DataFeedItemImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.dateDeleted = dateDeleted;
     }
 
+    @JsonLdFieldTypes({ Date.class, DateTime.class })
     private Object dateCreated;
 
     /**
@@ -89,6 +92,7 @@ public class DataFeedItemImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.dateCreated = dateCreated;
     }
 
+    @JsonLdFieldTypes({ DateTime.class, Date.class })
     private Object dateModified;
 
     /**
@@ -142,6 +146,7 @@ public class DataFeedItemImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.item = item;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -239,6 +244,7 @@ public class DataFeedItemImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -314,6 +320,7 @@ public class DataFeedItemImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -414,6 +421,7 @@ public class DataFeedItemImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

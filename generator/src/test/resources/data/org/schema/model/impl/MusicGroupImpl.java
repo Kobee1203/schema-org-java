@@ -45,6 +45,7 @@ import org.schema.model.Event;
 import org.schema.model.Action;
 import org.schema.model.PropertyValue;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.PerformingGroup;
 import org.schema.model.MusicGroup;
 
@@ -78,6 +79,7 @@ public class MusicGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.tracks = tracks;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class })
     private Object genre;
 
     /**
@@ -153,6 +155,7 @@ public class MusicGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.albums = albums;
     }
 
+    @JsonLdFieldTypes({ ItemList.class, MusicRecording.class })
     private Object track;
 
     /**
@@ -209,6 +212,7 @@ public class MusicGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.album = album;
     }
 
+    @JsonLdFieldTypes({ URL.class, AboutPage.class, Text.class, CreativeWork.class })
     private Object ownershipFundingInfo;
 
     /**
@@ -365,6 +369,7 @@ public class MusicGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.review = review;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, Thing.class })
     private Object knowsAbout;
 
     /**
@@ -439,6 +444,7 @@ public class MusicGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.award = award;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object member;
 
     /**
@@ -590,6 +596,7 @@ public class MusicGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.globalLocationNumber = globalLocationNumber;
     }
 
+    @JsonLdFieldTypes({ DefinedTerm.class, Text.class, URL.class })
     private Object keywords;
 
     /**
@@ -718,6 +725,7 @@ public class MusicGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.numberOfEmployees = numberOfEmployees;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object funder;
 
     /**
@@ -797,6 +805,7 @@ public class MusicGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.legalName = legalName;
     }
 
+    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
     private Object correctionsPolicy;
 
     /**
@@ -883,6 +892,7 @@ public class MusicGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.interactionStatistic = interactionStatistic;
     }
 
+    @JsonLdFieldTypes({ PostalAddress.class, Text.class, Place.class, VirtualLocation.class })
     private Object location;
 
     /**
@@ -932,6 +942,7 @@ public class MusicGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.location = location;
     }
 
+    @JsonLdFieldTypes({ Text.class, PostalAddress.class })
     private Object address;
 
     /**
@@ -963,6 +974,7 @@ public class MusicGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.address = address;
     }
 
+    @JsonLdFieldTypes({ ProgramMembership.class, Organization.class })
     private Object memberOf;
 
     /**
@@ -994,6 +1006,7 @@ public class MusicGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.memberOf = memberOf;
     }
 
+    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
     private Object publishingPrinciples;
 
     /**
@@ -1031,6 +1044,7 @@ public class MusicGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.publishingPrinciples = publishingPrinciples;
     }
 
+    @JsonLdFieldTypes({ URL.class, Article.class })
     private Object diversityStaffingReport;
 
     /**
@@ -1071,6 +1085,7 @@ public class MusicGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.diversityStaffingReport = diversityStaffingReport;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object diversityPolicy;
 
     /**
@@ -1203,6 +1218,7 @@ public class MusicGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.slogan = slogan;
     }
 
+    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
     private Object ethicsPolicy;
 
     /**
@@ -1240,6 +1256,7 @@ public class MusicGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.ethicsPolicy = ethicsPolicy;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Brand.class })
     private Object brand;
 
     /**
@@ -1271,6 +1288,7 @@ public class MusicGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.brand = brand;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object sponsor;
 
     /**
@@ -1302,6 +1320,7 @@ public class MusicGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.sponsor = sponsor;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object logo;
 
     /**
@@ -1336,6 +1355,7 @@ public class MusicGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.logo = logo;
     }
 
+    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
     private Object actionableFeedbackPolicy;
 
     /**
@@ -1422,6 +1442,7 @@ public class MusicGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.contactPoint = contactPoint;
     }
 
+    @JsonLdFieldTypes({ GeoShape.class, AdministrativeArea.class, Place.class })
     private Object serviceArea;
 
     /**
@@ -1558,6 +1579,7 @@ public class MusicGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.founder = founder;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object unnamedSourcesPolicy;
 
     /**
@@ -1714,6 +1736,7 @@ public class MusicGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.leiCode = leiCode;
     }
 
+    @JsonLdFieldTypes({ AdministrativeArea.class, GeoShape.class, Text.class, Place.class })
     private Object areaServed;
 
     /**
@@ -1785,6 +1808,7 @@ public class MusicGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.foundingDate = foundingDate;
     }
 
+    @JsonLdFieldTypes({ Language.class, Text.class })
     private Object knowsLanguage;
 
     /**
@@ -1895,6 +1919,7 @@ public class MusicGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.taxID = taxID;
     }
 
+    @JsonLdFieldTypes({ Product.class, OwnershipInfo.class })
     private Object owns;
 
     /**
@@ -1951,6 +1976,7 @@ public class MusicGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.hasOfferCatalog = hasOfferCatalog;
     }
 
+    @JsonLdFieldTypes({ Person.class, Organization.class })
     private Object members;
 
     /**
@@ -2096,6 +2122,7 @@ public class MusicGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.event = event;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -2193,6 +2220,7 @@ public class MusicGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -2268,6 +2296,7 @@ public class MusicGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -2368,6 +2397,7 @@ public class MusicGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

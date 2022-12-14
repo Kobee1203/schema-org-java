@@ -23,6 +23,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 
 /**
  * An action performed by a direct agent and indirect participants upon a direct object. Optionally happens at a location with the help of an inanimate instrument. The execution of the action may produce a result. Specific action sub-type documentation specifies the exact expectation of each argument/role.<br/><br/>See also [blog post](http://blog.schema.org/2014/04/announcing-schemaorg-actions.html) and [Actions overview document](https://schema.org/docs/actions.html).
@@ -33,6 +34,7 @@ import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 @JsonLdTypeName("Action")
 public class ActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Action {
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object agent;
 
     /**
@@ -64,6 +66,7 @@ public class ActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.agent = agent;
     }
 
+    @JsonLdFieldTypes({ DateTime.class, Time.class })
     private Object startTime;
 
     /**
@@ -120,6 +123,7 @@ public class ActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.actionStatus = actionStatus;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object provider;
 
     /**
@@ -182,6 +186,7 @@ public class ActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.result = result;
     }
 
+    @JsonLdFieldTypes({ PostalAddress.class, Text.class, Place.class, VirtualLocation.class })
     private Object location;
 
     /**
@@ -275,6 +280,7 @@ public class ActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.target = target;
     }
 
+    @JsonLdFieldTypes({ DateTime.class, Time.class })
     private Object endTime;
 
     /**
@@ -309,6 +315,7 @@ public class ActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.endTime = endTime;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object participant;
 
     /**
@@ -384,6 +391,7 @@ public class ActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.error = error;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -481,6 +489,7 @@ public class ActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -556,6 +565,7 @@ public class ActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -656,6 +666,7 @@ public class ActionImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

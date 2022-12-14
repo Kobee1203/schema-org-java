@@ -14,6 +14,7 @@ import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 
 /**
  * The most generic type of item.
@@ -23,6 +24,7 @@ import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 @JsonLdTypeName("Thing")
 public class ThingImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Thing {
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -120,6 +122,7 @@ public class ThingImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -195,6 +198,7 @@ public class ThingImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -295,6 +299,7 @@ public class ThingImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

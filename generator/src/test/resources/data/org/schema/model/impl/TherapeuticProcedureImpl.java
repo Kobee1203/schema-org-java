@@ -29,6 +29,7 @@ import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.MedicalProcedure;
 import org.schema.model.TherapeuticProcedure;
 
@@ -137,6 +138,7 @@ public class TherapeuticProcedureImpl extends com.weedow.schemaorg.commons.model
         this.procedureType = procedureType;
     }
 
+    @JsonLdFieldTypes({ MedicalEntity.class, Text.class })
     private Object preparation;
 
     /**
@@ -195,6 +197,7 @@ public class TherapeuticProcedureImpl extends com.weedow.schemaorg.commons.model
         this.bodyLocation = bodyLocation;
     }
 
+    @JsonLdFieldTypes({ Text.class, EventStatusType.class, MedicalStudyStatus.class })
     private Object status;
 
     /**
@@ -287,6 +290,7 @@ public class TherapeuticProcedureImpl extends com.weedow.schemaorg.commons.model
         this.followup = followup;
     }
 
+    @JsonLdFieldTypes({ DrugLegalStatus.class, Text.class, MedicalEnumeration.class })
     private Object legalStatus;
 
     /**
@@ -503,6 +507,7 @@ public class TherapeuticProcedureImpl extends com.weedow.schemaorg.commons.model
         this.relevantSpecialty = relevantSpecialty;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -600,6 +605,7 @@ public class TherapeuticProcedureImpl extends com.weedow.schemaorg.commons.model
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -675,6 +681,7 @@ public class TherapeuticProcedureImpl extends com.weedow.schemaorg.commons.model
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -775,6 +782,7 @@ public class TherapeuticProcedureImpl extends com.weedow.schemaorg.commons.model
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

@@ -25,6 +25,7 @@ import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.MedicalEntity;
 import org.schema.model.MedicalIntangible;
 import org.schema.model.DoseSchedule;
@@ -110,6 +111,7 @@ public class DoseScheduleImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.doseUnit = doseUnit;
     }
 
+    @JsonLdFieldTypes({ Number.class, QualitativeValue.class })
     private Object doseValue;
 
     /**
@@ -144,6 +146,7 @@ public class DoseScheduleImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.doseValue = doseValue;
     }
 
+    @JsonLdFieldTypes({ DrugLegalStatus.class, Text.class, MedicalEnumeration.class })
     private Object legalStatus;
 
     /**
@@ -360,6 +363,7 @@ public class DoseScheduleImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.relevantSpecialty = relevantSpecialty;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -457,6 +461,7 @@ public class DoseScheduleImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -532,6 +537,7 @@ public class DoseScheduleImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -632,6 +638,7 @@ public class DoseScheduleImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

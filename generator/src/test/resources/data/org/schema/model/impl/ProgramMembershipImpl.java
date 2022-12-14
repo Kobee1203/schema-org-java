@@ -18,6 +18,7 @@ import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.Intangible;
 import org.schema.model.ProgramMembership;
 
@@ -29,6 +30,7 @@ import org.schema.model.ProgramMembership;
 @JsonLdTypeName("ProgramMembership")
 public class ProgramMembershipImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ProgramMembership {
 
+    @JsonLdFieldTypes({ Number.class, QuantitativeValue.class })
     private Object membershipPointsEarned;
 
     /**
@@ -66,6 +68,7 @@ public class ProgramMembershipImpl extends com.weedow.schemaorg.commons.model.Js
         this.membershipPointsEarned = membershipPointsEarned;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object member;
 
     /**
@@ -163,6 +166,7 @@ public class ProgramMembershipImpl extends com.weedow.schemaorg.commons.model.Js
         this.programName = programName;
     }
 
+    @JsonLdFieldTypes({ Person.class, Organization.class })
     private Object members;
 
     /**
@@ -194,6 +198,7 @@ public class ProgramMembershipImpl extends com.weedow.schemaorg.commons.model.Js
         this.members = members;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -291,6 +296,7 @@ public class ProgramMembershipImpl extends com.weedow.schemaorg.commons.model.Js
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -366,6 +372,7 @@ public class ProgramMembershipImpl extends com.weedow.schemaorg.commons.model.Js
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -466,6 +473,7 @@ public class ProgramMembershipImpl extends com.weedow.schemaorg.commons.model.Js
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

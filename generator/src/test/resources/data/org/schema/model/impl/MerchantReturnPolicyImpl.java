@@ -28,6 +28,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.Intangible;
 import org.schema.model.MerchantReturnPolicy;
 
@@ -67,6 +68,7 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
         this.returnPolicyCategory = returnPolicyCategory;
     }
 
+    @JsonLdFieldTypes({ Country.class, Text.class })
     private Object returnPolicyCountry;
 
     /**
@@ -130,6 +132,7 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
         this.merchantReturnLink = merchantReturnLink;
     }
 
+    @JsonLdFieldTypes({ MonetaryAmount.class, Number.class })
     private Object restockingFee;
 
     /**
@@ -397,6 +400,7 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
         this.returnShippingFeesAmount = returnShippingFeesAmount;
     }
 
+    @JsonLdFieldTypes({ DateTime.class, Integer.class, Date.class })
     private Object merchantReturnDays;
 
     /**
@@ -571,6 +575,7 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
         this.returnPolicySeasonalOverride = returnPolicySeasonalOverride;
     }
 
+    @JsonLdFieldTypes({ Text.class, Country.class })
     private Object applicableCountry;
 
     /**
@@ -634,6 +639,7 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
         this.returnFees = returnFees;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -731,6 +737,7 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -806,6 +813,7 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -906,6 +914,7 @@ public class MerchantReturnPolicyImpl extends com.weedow.schemaorg.commons.model
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

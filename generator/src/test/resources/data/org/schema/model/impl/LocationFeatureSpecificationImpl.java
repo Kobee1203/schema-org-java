@@ -25,6 +25,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.Intangible;
 import org.schema.model.LocationFeatureSpecification;
 
@@ -59,6 +60,7 @@ public class LocationFeatureSpecificationImpl extends com.weedow.schemaorg.commo
         this.hoursAvailable = hoursAvailable;
     }
 
+    @JsonLdFieldTypes({ DateTime.class, Date.class })
     private Object validFrom;
 
     /**
@@ -93,6 +95,7 @@ public class LocationFeatureSpecificationImpl extends com.weedow.schemaorg.commo
         this.validFrom = validFrom;
     }
 
+    @JsonLdFieldTypes({ DateTime.class, Date.class })
     private Object validThrough;
 
     /**
@@ -127,6 +130,7 @@ public class LocationFeatureSpecificationImpl extends com.weedow.schemaorg.commo
         this.validThrough = validThrough;
     }
 
+    @JsonLdFieldTypes({ Enumeration.class, DefinedTerm.class, Text.class, MeasurementTypeEnumeration.class, QualitativeValue.class, StructuredValue.class, PropertyValue.class, QuantitativeValue.class })
     private Object valueReference;
 
     /**
@@ -221,6 +225,7 @@ public class LocationFeatureSpecificationImpl extends com.weedow.schemaorg.commo
         this.valueReference = valueReference;
     }
 
+    @JsonLdFieldTypes({ Text.class, URL.class })
     private Object propertyID;
 
     /**
@@ -309,6 +314,7 @@ public class LocationFeatureSpecificationImpl extends com.weedow.schemaorg.commo
         this.unitText = unitText;
     }
 
+    @JsonLdFieldTypes({ Text.class, URL.class })
     private Object measurementTechnique;
 
     /**
@@ -394,6 +400,7 @@ public class LocationFeatureSpecificationImpl extends com.weedow.schemaorg.commo
         this.minValue = minValue;
     }
 
+    @JsonLdFieldTypes({ Text.class, Number.class, StructuredValue.class, Boolean.class })
     private Object value;
 
     /**
@@ -448,6 +455,7 @@ public class LocationFeatureSpecificationImpl extends com.weedow.schemaorg.commo
         this.value = value;
     }
 
+    @JsonLdFieldTypes({ Text.class, URL.class })
     private Object unitCode;
 
     /**
@@ -482,6 +490,7 @@ public class LocationFeatureSpecificationImpl extends com.weedow.schemaorg.commo
         this.unitCode = unitCode;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -579,6 +588,7 @@ public class LocationFeatureSpecificationImpl extends com.weedow.schemaorg.commo
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -654,6 +664,7 @@ public class LocationFeatureSpecificationImpl extends com.weedow.schemaorg.commo
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -754,6 +765,7 @@ public class LocationFeatureSpecificationImpl extends com.weedow.schemaorg.commo
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

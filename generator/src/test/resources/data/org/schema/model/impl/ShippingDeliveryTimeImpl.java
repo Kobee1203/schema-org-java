@@ -17,6 +17,7 @@ import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.Intangible;
 import org.schema.model.StructuredValue;
 import org.schema.model.ShippingDeliveryTime;
@@ -135,6 +136,7 @@ public class ShippingDeliveryTimeImpl extends com.weedow.schemaorg.commons.model
         this.cutoffTime = cutoffTime;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -232,6 +234,7 @@ public class ShippingDeliveryTimeImpl extends com.weedow.schemaorg.commons.model
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -307,6 +310,7 @@ public class ShippingDeliveryTimeImpl extends com.weedow.schemaorg.commons.model
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -407,6 +411,7 @@ public class ShippingDeliveryTimeImpl extends com.weedow.schemaorg.commons.model
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

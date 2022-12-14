@@ -18,6 +18,7 @@ import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.Intangible;
 import org.schema.model.StructuredValue;
 import org.schema.model.OpeningHoursSpecification;
@@ -81,6 +82,7 @@ public class OpeningHoursSpecificationImpl extends com.weedow.schemaorg.commons.
         this.dayOfWeek = dayOfWeek;
     }
 
+    @JsonLdFieldTypes({ DateTime.class, Date.class })
     private Object validFrom;
 
     /**
@@ -139,6 +141,7 @@ public class OpeningHoursSpecificationImpl extends com.weedow.schemaorg.commons.
         this.opens = opens;
     }
 
+    @JsonLdFieldTypes({ DateTime.class, Date.class })
     private Object validThrough;
 
     /**
@@ -173,6 +176,7 @@ public class OpeningHoursSpecificationImpl extends com.weedow.schemaorg.commons.
         this.validThrough = validThrough;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -270,6 +274,7 @@ public class OpeningHoursSpecificationImpl extends com.weedow.schemaorg.commons.
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -345,6 +350,7 @@ public class OpeningHoursSpecificationImpl extends com.weedow.schemaorg.commons.
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -445,6 +451,7 @@ public class OpeningHoursSpecificationImpl extends com.weedow.schemaorg.commons.
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

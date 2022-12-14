@@ -16,6 +16,7 @@ import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.Intangible;
 import org.schema.model.StructuredValue;
 import org.schema.model.RepaymentSpecification;
@@ -143,6 +144,7 @@ public class RepaymentSpecificationImpl extends com.weedow.schemaorg.commons.mod
         this.loanPaymentFrequency = loanPaymentFrequency;
     }
 
+    @JsonLdFieldTypes({ Number.class, MonetaryAmount.class })
     private Object downPayment;
 
     /**
@@ -183,6 +185,7 @@ public class RepaymentSpecificationImpl extends com.weedow.schemaorg.commons.mod
         this.downPayment = downPayment;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -280,6 +283,7 @@ public class RepaymentSpecificationImpl extends com.weedow.schemaorg.commons.mod
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -355,6 +359,7 @@ public class RepaymentSpecificationImpl extends com.weedow.schemaorg.commons.mod
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -455,6 +460,7 @@ public class RepaymentSpecificationImpl extends com.weedow.schemaorg.commons.mod
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

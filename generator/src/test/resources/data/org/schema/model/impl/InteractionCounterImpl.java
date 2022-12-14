@@ -22,6 +22,7 @@ import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.Intangible;
 import org.schema.model.StructuredValue;
 import org.schema.model.InteractionCounter;
@@ -34,6 +35,7 @@ import org.schema.model.InteractionCounter;
 @JsonLdTypeName("InteractionCounter")
 public class InteractionCounterImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements InteractionCounter {
 
+    @JsonLdFieldTypes({ DateTime.class, Time.class })
     private Object startTime;
 
     /**
@@ -90,6 +92,7 @@ public class InteractionCounterImpl extends com.weedow.schemaorg.commons.model.J
         this.userInteractionCount = userInteractionCount;
     }
 
+    @JsonLdFieldTypes({ PostalAddress.class, Text.class, Place.class, VirtualLocation.class })
     private Object location;
 
     /**
@@ -161,6 +164,7 @@ public class InteractionCounterImpl extends com.weedow.schemaorg.commons.model.J
         this.interactionType = interactionType;
     }
 
+    @JsonLdFieldTypes({ SoftwareApplication.class, WebSite.class })
     private Object interactionService;
 
     /**
@@ -192,6 +196,7 @@ public class InteractionCounterImpl extends com.weedow.schemaorg.commons.model.J
         this.interactionService = interactionService;
     }
 
+    @JsonLdFieldTypes({ DateTime.class, Time.class })
     private Object endTime;
 
     /**
@@ -226,6 +231,7 @@ public class InteractionCounterImpl extends com.weedow.schemaorg.commons.model.J
         this.endTime = endTime;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -323,6 +329,7 @@ public class InteractionCounterImpl extends com.weedow.schemaorg.commons.model.J
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -398,6 +405,7 @@ public class InteractionCounterImpl extends com.weedow.schemaorg.commons.model.J
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -498,6 +506,7 @@ public class InteractionCounterImpl extends com.weedow.schemaorg.commons.model.J
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

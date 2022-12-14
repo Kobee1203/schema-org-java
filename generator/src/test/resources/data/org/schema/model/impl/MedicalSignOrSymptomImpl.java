@@ -35,6 +35,7 @@ import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.MedicalEntity;
 import org.schema.model.MedicalCondition;
 
@@ -143,6 +144,7 @@ public class MedicalSignOrSymptomImpl extends com.weedow.schemaorg.commons.model
         this.primaryPrevention = primaryPrevention;
     }
 
+    @JsonLdFieldTypes({ Text.class, EventStatusType.class, MedicalStudyStatus.class })
     private Object status;
 
     /**
@@ -307,6 +309,7 @@ public class MedicalSignOrSymptomImpl extends com.weedow.schemaorg.commons.model
         this.secondaryPrevention = secondaryPrevention;
     }
 
+    @JsonLdFieldTypes({ AnatomicalStructure.class, AnatomicalSystem.class, SuperficialAnatomy.class })
     private Object associatedAnatomy;
 
     /**
@@ -471,6 +474,7 @@ public class MedicalSignOrSymptomImpl extends com.weedow.schemaorg.commons.model
         this.expectedPrognosis = expectedPrognosis;
     }
 
+    @JsonLdFieldTypes({ DrugLegalStatus.class, Text.class, MedicalEnumeration.class })
     private Object legalStatus;
 
     /**
@@ -687,6 +691,7 @@ public class MedicalSignOrSymptomImpl extends com.weedow.schemaorg.commons.model
         this.relevantSpecialty = relevantSpecialty;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -784,6 +789,7 @@ public class MedicalSignOrSymptomImpl extends com.weedow.schemaorg.commons.model
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -859,6 +865,7 @@ public class MedicalSignOrSymptomImpl extends com.weedow.schemaorg.commons.model
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -959,6 +966,7 @@ public class MedicalSignOrSymptomImpl extends com.weedow.schemaorg.commons.model
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

@@ -20,6 +20,7 @@ import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.Intangible;
 import org.schema.model.StructuredValue;
 
@@ -80,6 +81,7 @@ public class PriceSpecificationImpl extends com.weedow.schemaorg.commons.model.J
         this.eligibleQuantity = eligibleQuantity;
     }
 
+    @JsonLdFieldTypes({ DateTime.class, Date.class })
     private Object validFrom;
 
     /**
@@ -208,6 +210,7 @@ public class PriceSpecificationImpl extends com.weedow.schemaorg.commons.model.J
         this.eligibleTransactionVolume = eligibleTransactionVolume;
     }
 
+    @JsonLdFieldTypes({ DateTime.class, Date.class })
     private Object validThrough;
 
     /**
@@ -242,6 +245,7 @@ public class PriceSpecificationImpl extends com.weedow.schemaorg.commons.model.J
         this.validThrough = validThrough;
     }
 
+    @JsonLdFieldTypes({ Number.class, Text.class })
     private Object price;
 
     /**
@@ -276,6 +280,7 @@ public class PriceSpecificationImpl extends com.weedow.schemaorg.commons.model.J
         this.price = price;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -373,6 +378,7 @@ public class PriceSpecificationImpl extends com.weedow.schemaorg.commons.model.J
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -448,6 +454,7 @@ public class PriceSpecificationImpl extends com.weedow.schemaorg.commons.model.J
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -548,6 +555,7 @@ public class PriceSpecificationImpl extends com.weedow.schemaorg.commons.model.J
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

@@ -54,6 +54,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.DataDownload;
 
 /**
@@ -65,6 +66,7 @@ import org.schema.model.DataDownload;
 @JsonLdTypeName("DataDownload")
 public class DataDownloadImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements DataDownload {
 
+    @JsonLdFieldTypes({ Text.class, URL.class })
     private Object measurementTechnique;
 
     /**
@@ -170,6 +172,7 @@ public class DataDownloadImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.contentUrl = contentUrl;
     }
 
+    @JsonLdFieldTypes({ QuantitativeValue.class, Distance.class })
     private Object width;
 
     /**
@@ -201,6 +204,7 @@ public class DataDownloadImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.width = width;
     }
 
+    @JsonLdFieldTypes({ Distance.class, QuantitativeValue.class })
     private Object height;
 
     /**
@@ -254,6 +258,7 @@ public class DataDownloadImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.regionsAllowed = regionsAllowed;
     }
 
+    @JsonLdFieldTypes({ DateTime.class, Time.class })
     private Object startTime;
 
     /**
@@ -310,6 +315,7 @@ public class DataDownloadImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.associatedArticle = associatedArticle;
     }
 
+    @JsonLdFieldTypes({ Place.class, Text.class, GeoShape.class })
     private Object ineligibleRegion;
 
     /**
@@ -362,6 +368,7 @@ public class DataDownloadImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.ineligibleRegion = ineligibleRegion;
     }
 
+    @JsonLdFieldTypes({ MediaSubscription.class, Boolean.class })
     private Object requiresSubscription;
 
     /**
@@ -466,6 +473,7 @@ public class DataDownloadImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.duration = duration;
     }
 
+    @JsonLdFieldTypes({ Text.class, URL.class })
     private Object encodingFormat;
 
     /**
@@ -575,6 +583,7 @@ public class DataDownloadImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.bitrate = bitrate;
     }
 
+    @JsonLdFieldTypes({ DateTime.class, Time.class })
     private Object endTime;
 
     /**
@@ -683,6 +692,7 @@ public class DataDownloadImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.interpretedAsClaim = interpretedAsClaim;
     }
 
+    @JsonLdFieldTypes({ DefinedTerm.class, Text.class })
     private Object teaches;
 
     /**
@@ -720,6 +730,7 @@ public class DataDownloadImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.teaches = teaches;
     }
 
+    @JsonLdFieldTypes({ URL.class, DefinedTerm.class, Text.class })
     private Object educationalLevel;
 
     /**
@@ -794,6 +805,7 @@ public class DataDownloadImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.abstract_ = abstract_;
     }
 
+    @JsonLdFieldTypes({ Text.class, DefinedTerm.class })
     private Object creativeWorkStatus;
 
     /**
@@ -879,6 +891,7 @@ public class DataDownloadImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.contentReferenceTime = contentReferenceTime;
     }
 
+    @JsonLdFieldTypes({ Text.class, URL.class, Product.class })
     private Object material;
 
     /**
@@ -941,6 +954,7 @@ public class DataDownloadImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.review = review;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class })
     private Object fileFormat;
 
     /**
@@ -994,6 +1008,7 @@ public class DataDownloadImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.text = text;
     }
 
+    @JsonLdFieldTypes({ Person.class, Organization.class })
     private Object translator;
 
     /**
@@ -1047,6 +1062,7 @@ public class DataDownloadImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.award = award;
     }
 
+    @JsonLdFieldTypes({ Text.class, DefinedTerm.class })
     private Object assesses;
 
     /**
@@ -1110,6 +1126,7 @@ public class DataDownloadImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.copyrightNotice = copyrightNotice;
     }
 
+    @JsonLdFieldTypes({ Text.class, URL.class })
     private Object schemaVersion;
 
     /**
@@ -1174,6 +1191,7 @@ public class DataDownloadImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.countryOfOrigin = countryOfOrigin;
     }
 
+    @JsonLdFieldTypes({ DefinedTerm.class, Text.class })
     private Object pattern;
 
     /**
@@ -1261,6 +1279,7 @@ public class DataDownloadImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.funding = funding;
     }
 
+    @JsonLdFieldTypes({ DefinedTerm.class, Text.class })
     private Object educationalUse;
 
     /**
@@ -1292,6 +1311,7 @@ public class DataDownloadImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.educationalUse = educationalUse;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class })
     private Object genre;
 
     /**
@@ -1323,6 +1343,7 @@ public class DataDownloadImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.genre = genre;
     }
 
+    @JsonLdFieldTypes({ DefinedTerm.class, Text.class, URL.class })
     private Object keywords;
 
     /**
@@ -1363,6 +1384,7 @@ public class DataDownloadImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.keywords = keywords;
     }
 
+    @JsonLdFieldTypes({ Integer.class, Text.class })
     private Object position;
 
     /**
@@ -1460,6 +1482,7 @@ public class DataDownloadImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.audience = audience;
     }
 
+    @JsonLdFieldTypes({ Offer.class, Demand.class })
     private Object offers;
 
     /**
@@ -1541,6 +1564,7 @@ public class DataDownloadImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.associatedMedia = associatedMedia;
     }
 
+    @JsonLdFieldTypes({ QuantitativeValue.class, Text.class })
     private Object materialExtent;
 
     /**
@@ -1600,6 +1624,7 @@ public class DataDownloadImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.mainEntity = mainEntity;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object copyrightHolder;
 
     /**
@@ -1701,6 +1726,7 @@ public class DataDownloadImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.sdDatePublished = sdDatePublished;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object producer;
 
     /**
@@ -1756,6 +1782,7 @@ public class DataDownloadImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.spatial = spatial;
     }
 
+    @JsonLdFieldTypes({ Person.class, Organization.class })
     private Object publisher;
 
     /**
@@ -1831,6 +1858,7 @@ public class DataDownloadImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.character = character;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object funder;
 
     /**
@@ -1886,6 +1914,7 @@ public class DataDownloadImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.exampleOfWork = exampleOfWork;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object usageInfo;
 
     /**
@@ -1929,6 +1958,7 @@ public class DataDownloadImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.usageInfo = usageInfo;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object provider;
 
     /**
@@ -1969,6 +1999,7 @@ public class DataDownloadImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.provider = provider;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object sdPublisher;
 
     /**
@@ -2279,6 +2310,7 @@ public class DataDownloadImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.copyrightYear = copyrightYear;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class, Product.class })
     private Object isBasedOn;
 
     /**
@@ -2343,6 +2375,7 @@ public class DataDownloadImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.workExample = workExample;
     }
 
+    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
     private Object publishingPrinciples;
 
     /**
@@ -2424,6 +2457,7 @@ public class DataDownloadImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.releasedEvent = releasedEvent;
     }
 
+    @JsonLdFieldTypes({ Date.class, DateTime.class })
     private Object dateCreated;
 
     /**
@@ -2549,6 +2583,7 @@ public class DataDownloadImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.recordedAt = recordedAt;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class })
     private Object editEIDR;
 
     /**
@@ -2598,6 +2633,7 @@ public class DataDownloadImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.editEIDR = editEIDR;
     }
 
+    @JsonLdFieldTypes({ Person.class, Organization.class })
     private Object author;
 
     /**
@@ -2629,6 +2665,7 @@ public class DataDownloadImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.author = author;
     }
 
+    @JsonLdFieldTypes({ DateTime.class, Date.class })
     private Object dateModified;
 
     /**
@@ -2660,6 +2697,7 @@ public class DataDownloadImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.dateModified = dateModified;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object sponsor;
 
     /**
@@ -2715,6 +2753,7 @@ public class DataDownloadImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.accessibilitySummary = accessibilitySummary;
     }
 
+    @JsonLdFieldTypes({ Person.class, Organization.class })
     private Object maintainer;
 
     /**
@@ -2781,6 +2820,7 @@ public class DataDownloadImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.educationalAlignment = educationalAlignment;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object acquireLicensePage;
 
     /**
@@ -2840,6 +2880,7 @@ public class DataDownloadImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.isAccessibleForFree = isAccessibleForFree;
     }
 
+    @JsonLdFieldTypes({ Date.class, DateTime.class })
     private Object datePublished;
 
     /**
@@ -2897,6 +2938,7 @@ public class DataDownloadImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.spatialCoverage = spatialCoverage;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object sdLicense;
 
     /**
@@ -2960,6 +3002,7 @@ public class DataDownloadImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.conditionsOfAccess = conditionsOfAccess;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, CorrectionComment.class })
     private Object correction;
 
     /**
@@ -3012,6 +3055,7 @@ public class DataDownloadImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.correction = correction;
     }
 
+    @JsonLdFieldTypes({ Text.class, Rating.class })
     private Object contentRating;
 
     /**
@@ -3043,6 +3087,7 @@ public class DataDownloadImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.contentRating = contentRating;
     }
 
+    @JsonLdFieldTypes({ QuantitativeValue.class, DefinedTerm.class, Text.class, SizeSpecification.class })
     private Object size;
 
     /**
@@ -3102,6 +3147,7 @@ public class DataDownloadImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.size = size;
     }
 
+    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
     private Object isPartOf;
 
     /**
@@ -3133,6 +3179,7 @@ public class DataDownloadImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.isPartOf = isPartOf;
     }
 
+    @JsonLdFieldTypes({ DateTime.class, Text.class })
     private Object temporal;
 
     /**
@@ -3189,6 +3236,7 @@ public class DataDownloadImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.thumbnailUrl = thumbnailUrl;
     }
 
+    @JsonLdFieldTypes({ Text.class, Language.class })
     private Object inLanguage;
 
     /**
@@ -3223,6 +3271,7 @@ public class DataDownloadImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.inLanguage = inLanguage;
     }
 
+    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
     private Object license;
 
     /**
@@ -3254,6 +3303,7 @@ public class DataDownloadImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.license = license;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object creator;
 
     /**
@@ -3421,6 +3471,7 @@ public class DataDownloadImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.publisherImprint = publisherImprint;
     }
 
+    @JsonLdFieldTypes({ URL.class, CreativeWork.class, Product.class })
     private Object isBasedOnUrl;
 
     /**
@@ -3505,6 +3556,7 @@ public class DataDownloadImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.accessibilityControl = accessibilityControl;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, Text.class })
     private Object citation;
 
     /**
@@ -3536,6 +3588,7 @@ public class DataDownloadImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.citation = citation;
     }
 
+    @JsonLdFieldTypes({ Number.class, Text.class })
     private Object version;
 
     /**
@@ -3567,6 +3620,7 @@ public class DataDownloadImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.version = version;
     }
 
+    @JsonLdFieldTypes({ WebPage.class, URL.class })
     private Object archivedAt;
 
     /**
@@ -3604,6 +3658,7 @@ public class DataDownloadImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.archivedAt = archivedAt;
     }
 
+    @JsonLdFieldTypes({ DefinedTerm.class, Text.class })
     private Object learningResourceType;
 
     /**
@@ -3657,6 +3712,7 @@ public class DataDownloadImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.encoding = encoding;
     }
 
+    @JsonLdFieldTypes({ AudioObject.class, MusicRecording.class, Clip.class })
     private Object audio;
 
     /**
@@ -3771,6 +3827,7 @@ public class DataDownloadImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.hasPart = hasPart;
     }
 
+    @JsonLdFieldTypes({ URL.class, DateTime.class, Text.class })
     private Object temporalCoverage;
 
     /**
@@ -3827,6 +3884,7 @@ public class DataDownloadImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.temporalCoverage = temporalCoverage;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object contributor;
 
     /**
@@ -3858,6 +3916,7 @@ public class DataDownloadImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.contributor = contributor;
     }
 
+    @JsonLdFieldTypes({ Clip.class, VideoObject.class })
     private Object video;
 
     /**
@@ -3889,6 +3948,7 @@ public class DataDownloadImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.video = video;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -3986,6 +4046,7 @@ public class DataDownloadImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -4061,6 +4122,7 @@ public class DataDownloadImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -4161,6 +4223,7 @@ public class DataDownloadImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

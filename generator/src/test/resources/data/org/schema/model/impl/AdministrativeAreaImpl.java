@@ -29,6 +29,7 @@ import org.schema.model.CreativeWork;
 import org.schema.model.Action;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.AdministrativeArea;
 
 /**
@@ -105,6 +106,7 @@ public class AdministrativeAreaImpl extends com.weedow.schemaorg.commons.model.J
         this.maps = maps;
     }
 
+    @JsonLdFieldTypes({ Place.class, GeospatialGeometry.class })
     private Object geoContains;
 
     /**
@@ -228,6 +230,7 @@ public class AdministrativeAreaImpl extends com.weedow.schemaorg.commons.model.J
         this.globalLocationNumber = globalLocationNumber;
     }
 
+    @JsonLdFieldTypes({ DefinedTerm.class, Text.class, URL.class })
     private Object keywords;
 
     /**
@@ -268,6 +271,7 @@ public class AdministrativeAreaImpl extends com.weedow.schemaorg.commons.model.J
         this.keywords = keywords;
     }
 
+    @JsonLdFieldTypes({ GeospatialGeometry.class, Place.class })
     private Object geoIntersects;
 
     /**
@@ -299,6 +303,7 @@ public class AdministrativeAreaImpl extends com.weedow.schemaorg.commons.model.J
         this.geoIntersects = geoIntersects;
     }
 
+    @JsonLdFieldTypes({ Text.class, Number.class })
     private Object latitude;
 
     /**
@@ -330,6 +335,7 @@ public class AdministrativeAreaImpl extends com.weedow.schemaorg.commons.model.J
         this.latitude = latitude;
     }
 
+    @JsonLdFieldTypes({ Place.class, GeospatialGeometry.class })
     private Object geoTouches;
 
     /**
@@ -361,6 +367,7 @@ public class AdministrativeAreaImpl extends com.weedow.schemaorg.commons.model.J
         this.geoTouches = geoTouches;
     }
 
+    @JsonLdFieldTypes({ Place.class, GeospatialGeometry.class })
     private Object geoCoveredBy;
 
     /**
@@ -414,6 +421,7 @@ public class AdministrativeAreaImpl extends com.weedow.schemaorg.commons.model.J
         this.aggregateRating = aggregateRating;
     }
 
+    @JsonLdFieldTypes({ Text.class, PostalAddress.class })
     private Object address;
 
     /**
@@ -445,6 +453,7 @@ public class AdministrativeAreaImpl extends com.weedow.schemaorg.commons.model.J
         this.address = address;
     }
 
+    @JsonLdFieldTypes({ Place.class, GeospatialGeometry.class })
     private Object geoEquals;
 
     /**
@@ -520,6 +529,7 @@ public class AdministrativeAreaImpl extends com.weedow.schemaorg.commons.model.J
         this.publicAccess = publicAccess;
     }
 
+    @JsonLdFieldTypes({ GeospatialGeometry.class, Place.class })
     private Object geoCrosses;
 
     /**
@@ -619,6 +629,7 @@ public class AdministrativeAreaImpl extends com.weedow.schemaorg.commons.model.J
         this.slogan = slogan;
     }
 
+    @JsonLdFieldTypes({ ImageObject.class, Photograph.class })
     private Object photos;
 
     /**
@@ -650,6 +661,7 @@ public class AdministrativeAreaImpl extends com.weedow.schemaorg.commons.model.J
         this.photos = photos;
     }
 
+    @JsonLdFieldTypes({ GeospatialGeometry.class, Place.class })
     private Object geoCovers;
 
     /**
@@ -729,6 +741,7 @@ public class AdministrativeAreaImpl extends com.weedow.schemaorg.commons.model.J
         this.hasDriveThroughService = hasDriveThroughService;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object logo;
 
     /**
@@ -785,6 +798,7 @@ public class AdministrativeAreaImpl extends com.weedow.schemaorg.commons.model.J
         this.isAccessibleForFree = isAccessibleForFree;
     }
 
+    @JsonLdFieldTypes({ Place.class, GeospatialGeometry.class })
     private Object geoWithin;
 
     /**
@@ -816,6 +830,7 @@ public class AdministrativeAreaImpl extends com.weedow.schemaorg.commons.model.J
         this.geoWithin = geoWithin;
     }
 
+    @JsonLdFieldTypes({ GeospatialGeometry.class, Place.class })
     private Object geoDisjoint;
 
     /**
@@ -897,6 +912,7 @@ public class AdministrativeAreaImpl extends com.weedow.schemaorg.commons.model.J
         this.isicV4 = isicV4;
     }
 
+    @JsonLdFieldTypes({ GeospatialGeometry.class, Place.class })
     private Object geoOverlaps;
 
     /**
@@ -1020,6 +1036,7 @@ public class AdministrativeAreaImpl extends com.weedow.schemaorg.commons.model.J
         this.reviews = reviews;
     }
 
+    @JsonLdFieldTypes({ Photograph.class, ImageObject.class })
     private Object photo;
 
     /**
@@ -1075,6 +1092,7 @@ public class AdministrativeAreaImpl extends com.weedow.schemaorg.commons.model.J
         this.specialOpeningHoursSpecification = specialOpeningHoursSpecification;
     }
 
+    @JsonLdFieldTypes({ URL.class, Map.class })
     private Object hasMap;
 
     /**
@@ -1106,6 +1124,7 @@ public class AdministrativeAreaImpl extends com.weedow.schemaorg.commons.model.J
         this.hasMap = hasMap;
     }
 
+    @JsonLdFieldTypes({ Number.class, Text.class })
     private Object longitude;
 
     /**
@@ -1137,6 +1156,7 @@ public class AdministrativeAreaImpl extends com.weedow.schemaorg.commons.model.J
         this.longitude = longitude;
     }
 
+    @JsonLdFieldTypes({ GeoCoordinates.class, GeoShape.class })
     private Object geo;
 
     /**
@@ -1234,6 +1254,7 @@ public class AdministrativeAreaImpl extends com.weedow.schemaorg.commons.model.J
         this.event = event;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -1331,6 +1352,7 @@ public class AdministrativeAreaImpl extends com.weedow.schemaorg.commons.model.J
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -1406,6 +1428,7 @@ public class AdministrativeAreaImpl extends com.weedow.schemaorg.commons.model.J
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -1506,6 +1529,7 @@ public class AdministrativeAreaImpl extends com.weedow.schemaorg.commons.model.J
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

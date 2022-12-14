@@ -20,6 +20,7 @@ import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.Intangible;
 import org.schema.model.Schedule;
 
@@ -61,6 +62,7 @@ public class ScheduleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.scheduleTimezone = scheduleTimezone;
     }
 
+    @JsonLdFieldTypes({ DateTime.class, Date.class })
     private Object startDate;
 
     /**
@@ -95,6 +97,7 @@ public class ScheduleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.startDate = startDate;
     }
 
+    @JsonLdFieldTypes({ DateTime.class, Date.class })
     private Object exceptDate;
 
     /**
@@ -141,6 +144,7 @@ public class ScheduleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.exceptDate = exceptDate;
     }
 
+    @JsonLdFieldTypes({ DateTime.class, Time.class })
     private Object startTime;
 
     /**
@@ -201,6 +205,7 @@ public class ScheduleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.repeatCount = repeatCount;
     }
 
+    @JsonLdFieldTypes({ Date.class, DateTime.class })
     private Object endDate;
 
     /**
@@ -235,6 +240,7 @@ public class ScheduleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.endDate = endDate;
     }
 
+    @JsonLdFieldTypes({ Text.class, Duration.class })
     private Object repeatFrequency;
 
     /**
@@ -327,6 +333,7 @@ public class ScheduleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.byMonthDay = byMonthDay;
     }
 
+    @JsonLdFieldTypes({ DateTime.class, Time.class })
     private Object endTime;
 
     /**
@@ -387,6 +394,7 @@ public class ScheduleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.byMonth = byMonth;
     }
 
+    @JsonLdFieldTypes({ DayOfWeek.class, Text.class })
     private Object byDay;
 
     /**
@@ -450,6 +458,7 @@ public class ScheduleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.byMonthWeek = byMonthWeek;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -547,6 +556,7 @@ public class ScheduleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -622,6 +632,7 @@ public class ScheduleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -722,6 +733,7 @@ public class ScheduleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

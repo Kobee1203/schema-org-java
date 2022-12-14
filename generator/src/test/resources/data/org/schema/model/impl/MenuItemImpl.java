@@ -20,6 +20,7 @@ import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.Intangible;
 
 /**
@@ -30,6 +31,7 @@ import org.schema.model.Intangible;
 @JsonLdTypeName("MenuItem")
 public class MenuItemImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MenuItem {
 
+    @JsonLdFieldTypes({ MenuItem.class, MenuSection.class })
     private Object menuAddOn;
 
     /**
@@ -64,6 +66,7 @@ public class MenuItemImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.menuAddOn = menuAddOn;
     }
 
+    @JsonLdFieldTypes({ Offer.class, Demand.class })
     private Object offers;
 
     /**
@@ -145,6 +148,7 @@ public class MenuItemImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.nutrition = nutrition;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -242,6 +246,7 @@ public class MenuItemImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -317,6 +322,7 @@ public class MenuItemImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -417,6 +423,7 @@ public class MenuItemImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

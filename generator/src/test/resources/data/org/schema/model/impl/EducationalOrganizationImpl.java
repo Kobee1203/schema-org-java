@@ -30,6 +30,7 @@ import org.schema.model.CreativeWork;
 import org.schema.model.Action;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.CivicStructure;
 import org.schema.model.AboutPage;
 import org.schema.model.EducationalOccupationalCredential;
@@ -172,6 +173,7 @@ public class EducationalOrganizationImpl extends com.weedow.schemaorg.commons.mo
         this.maps = maps;
     }
 
+    @JsonLdFieldTypes({ Place.class, GeospatialGeometry.class })
     private Object geoContains;
 
     /**
@@ -295,6 +297,7 @@ public class EducationalOrganizationImpl extends com.weedow.schemaorg.commons.mo
         this.globalLocationNumber = globalLocationNumber;
     }
 
+    @JsonLdFieldTypes({ DefinedTerm.class, Text.class, URL.class })
     private Object keywords;
 
     /**
@@ -335,6 +338,7 @@ public class EducationalOrganizationImpl extends com.weedow.schemaorg.commons.mo
         this.keywords = keywords;
     }
 
+    @JsonLdFieldTypes({ GeospatialGeometry.class, Place.class })
     private Object geoIntersects;
 
     /**
@@ -366,6 +370,7 @@ public class EducationalOrganizationImpl extends com.weedow.schemaorg.commons.mo
         this.geoIntersects = geoIntersects;
     }
 
+    @JsonLdFieldTypes({ Text.class, Number.class })
     private Object latitude;
 
     /**
@@ -397,6 +402,7 @@ public class EducationalOrganizationImpl extends com.weedow.schemaorg.commons.mo
         this.latitude = latitude;
     }
 
+    @JsonLdFieldTypes({ Place.class, GeospatialGeometry.class })
     private Object geoTouches;
 
     /**
@@ -428,6 +434,7 @@ public class EducationalOrganizationImpl extends com.weedow.schemaorg.commons.mo
         this.geoTouches = geoTouches;
     }
 
+    @JsonLdFieldTypes({ Place.class, GeospatialGeometry.class })
     private Object geoCoveredBy;
 
     /**
@@ -481,6 +488,7 @@ public class EducationalOrganizationImpl extends com.weedow.schemaorg.commons.mo
         this.aggregateRating = aggregateRating;
     }
 
+    @JsonLdFieldTypes({ Text.class, PostalAddress.class })
     private Object address;
 
     /**
@@ -512,6 +520,7 @@ public class EducationalOrganizationImpl extends com.weedow.schemaorg.commons.mo
         this.address = address;
     }
 
+    @JsonLdFieldTypes({ Place.class, GeospatialGeometry.class })
     private Object geoEquals;
 
     /**
@@ -587,6 +596,7 @@ public class EducationalOrganizationImpl extends com.weedow.schemaorg.commons.mo
         this.publicAccess = publicAccess;
     }
 
+    @JsonLdFieldTypes({ GeospatialGeometry.class, Place.class })
     private Object geoCrosses;
 
     /**
@@ -686,6 +696,7 @@ public class EducationalOrganizationImpl extends com.weedow.schemaorg.commons.mo
         this.slogan = slogan;
     }
 
+    @JsonLdFieldTypes({ ImageObject.class, Photograph.class })
     private Object photos;
 
     /**
@@ -717,6 +728,7 @@ public class EducationalOrganizationImpl extends com.weedow.schemaorg.commons.mo
         this.photos = photos;
     }
 
+    @JsonLdFieldTypes({ GeospatialGeometry.class, Place.class })
     private Object geoCovers;
 
     /**
@@ -796,6 +808,7 @@ public class EducationalOrganizationImpl extends com.weedow.schemaorg.commons.mo
         this.hasDriveThroughService = hasDriveThroughService;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object logo;
 
     /**
@@ -852,6 +865,7 @@ public class EducationalOrganizationImpl extends com.weedow.schemaorg.commons.mo
         this.isAccessibleForFree = isAccessibleForFree;
     }
 
+    @JsonLdFieldTypes({ Place.class, GeospatialGeometry.class })
     private Object geoWithin;
 
     /**
@@ -883,6 +897,7 @@ public class EducationalOrganizationImpl extends com.weedow.schemaorg.commons.mo
         this.geoWithin = geoWithin;
     }
 
+    @JsonLdFieldTypes({ GeospatialGeometry.class, Place.class })
     private Object geoDisjoint;
 
     /**
@@ -964,6 +979,7 @@ public class EducationalOrganizationImpl extends com.weedow.schemaorg.commons.mo
         this.isicV4 = isicV4;
     }
 
+    @JsonLdFieldTypes({ GeospatialGeometry.class, Place.class })
     private Object geoOverlaps;
 
     /**
@@ -1087,6 +1103,7 @@ public class EducationalOrganizationImpl extends com.weedow.schemaorg.commons.mo
         this.reviews = reviews;
     }
 
+    @JsonLdFieldTypes({ Photograph.class, ImageObject.class })
     private Object photo;
 
     /**
@@ -1142,6 +1159,7 @@ public class EducationalOrganizationImpl extends com.weedow.schemaorg.commons.mo
         this.specialOpeningHoursSpecification = specialOpeningHoursSpecification;
     }
 
+    @JsonLdFieldTypes({ URL.class, Map.class })
     private Object hasMap;
 
     /**
@@ -1173,6 +1191,7 @@ public class EducationalOrganizationImpl extends com.weedow.schemaorg.commons.mo
         this.hasMap = hasMap;
     }
 
+    @JsonLdFieldTypes({ Number.class, Text.class })
     private Object longitude;
 
     /**
@@ -1204,6 +1223,7 @@ public class EducationalOrganizationImpl extends com.weedow.schemaorg.commons.mo
         this.longitude = longitude;
     }
 
+    @JsonLdFieldTypes({ GeoCoordinates.class, GeoShape.class })
     private Object geo;
 
     /**
@@ -1301,6 +1321,7 @@ public class EducationalOrganizationImpl extends com.weedow.schemaorg.commons.mo
         this.event = event;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -1398,6 +1419,7 @@ public class EducationalOrganizationImpl extends com.weedow.schemaorg.commons.mo
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -1473,6 +1495,7 @@ public class EducationalOrganizationImpl extends com.weedow.schemaorg.commons.mo
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -1573,6 +1596,7 @@ public class EducationalOrganizationImpl extends com.weedow.schemaorg.commons.mo
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**
@@ -1617,6 +1641,7 @@ public class EducationalOrganizationImpl extends com.weedow.schemaorg.commons.mo
         this.identifier = identifier;
     }
 
+    @JsonLdFieldTypes({ URL.class, AboutPage.class, Text.class, CreativeWork.class })
     private Object ownershipFundingInfo;
 
     /**
@@ -1729,6 +1754,7 @@ public class EducationalOrganizationImpl extends com.weedow.schemaorg.commons.mo
         this.founders = founders;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, Thing.class })
     private Object knowsAbout;
 
     /**
@@ -1803,6 +1829,7 @@ public class EducationalOrganizationImpl extends com.weedow.schemaorg.commons.mo
         this.award = award;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object member;
 
     /**
@@ -2018,6 +2045,7 @@ public class EducationalOrganizationImpl extends com.weedow.schemaorg.commons.mo
         this.numberOfEmployees = numberOfEmployees;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object funder;
 
     /**
@@ -2097,6 +2125,7 @@ public class EducationalOrganizationImpl extends com.weedow.schemaorg.commons.mo
         this.legalName = legalName;
     }
 
+    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
     private Object correctionsPolicy;
 
     /**
@@ -2161,6 +2190,7 @@ public class EducationalOrganizationImpl extends com.weedow.schemaorg.commons.mo
         this.interactionStatistic = interactionStatistic;
     }
 
+    @JsonLdFieldTypes({ PostalAddress.class, Text.class, Place.class, VirtualLocation.class })
     private Object location;
 
     /**
@@ -2210,6 +2240,7 @@ public class EducationalOrganizationImpl extends com.weedow.schemaorg.commons.mo
         this.location = location;
     }
 
+    @JsonLdFieldTypes({ ProgramMembership.class, Organization.class })
     private Object memberOf;
 
     /**
@@ -2241,6 +2272,7 @@ public class EducationalOrganizationImpl extends com.weedow.schemaorg.commons.mo
         this.memberOf = memberOf;
     }
 
+    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
     private Object publishingPrinciples;
 
     /**
@@ -2278,6 +2310,7 @@ public class EducationalOrganizationImpl extends com.weedow.schemaorg.commons.mo
         this.publishingPrinciples = publishingPrinciples;
     }
 
+    @JsonLdFieldTypes({ URL.class, Article.class })
     private Object diversityStaffingReport;
 
     /**
@@ -2318,6 +2351,7 @@ public class EducationalOrganizationImpl extends com.weedow.schemaorg.commons.mo
         this.diversityStaffingReport = diversityStaffingReport;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object diversityPolicy;
 
     /**
@@ -2428,6 +2462,7 @@ public class EducationalOrganizationImpl extends com.weedow.schemaorg.commons.mo
         this.nonprofitStatus = nonprofitStatus;
     }
 
+    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
     private Object ethicsPolicy;
 
     /**
@@ -2465,6 +2500,7 @@ public class EducationalOrganizationImpl extends com.weedow.schemaorg.commons.mo
         this.ethicsPolicy = ethicsPolicy;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Brand.class })
     private Object brand;
 
     /**
@@ -2496,6 +2532,7 @@ public class EducationalOrganizationImpl extends com.weedow.schemaorg.commons.mo
         this.brand = brand;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object sponsor;
 
     /**
@@ -2527,6 +2564,7 @@ public class EducationalOrganizationImpl extends com.weedow.schemaorg.commons.mo
         this.sponsor = sponsor;
     }
 
+    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
     private Object actionableFeedbackPolicy;
 
     /**
@@ -2613,6 +2651,7 @@ public class EducationalOrganizationImpl extends com.weedow.schemaorg.commons.mo
         this.contactPoint = contactPoint;
     }
 
+    @JsonLdFieldTypes({ GeoShape.class, AdministrativeArea.class, Place.class })
     private Object serviceArea;
 
     /**
@@ -2725,6 +2764,7 @@ public class EducationalOrganizationImpl extends com.weedow.schemaorg.commons.mo
         this.founder = founder;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object unnamedSourcesPolicy;
 
     /**
@@ -2859,6 +2899,7 @@ public class EducationalOrganizationImpl extends com.weedow.schemaorg.commons.mo
         this.leiCode = leiCode;
     }
 
+    @JsonLdFieldTypes({ AdministrativeArea.class, GeoShape.class, Text.class, Place.class })
     private Object areaServed;
 
     /**
@@ -2930,6 +2971,7 @@ public class EducationalOrganizationImpl extends com.weedow.schemaorg.commons.mo
         this.foundingDate = foundingDate;
     }
 
+    @JsonLdFieldTypes({ Language.class, Text.class })
     private Object knowsLanguage;
 
     /**
@@ -3018,6 +3060,7 @@ public class EducationalOrganizationImpl extends com.weedow.schemaorg.commons.mo
         this.taxID = taxID;
     }
 
+    @JsonLdFieldTypes({ Product.class, OwnershipInfo.class })
     private Object owns;
 
     /**
@@ -3074,6 +3117,7 @@ public class EducationalOrganizationImpl extends com.weedow.schemaorg.commons.mo
         this.hasOfferCatalog = hasOfferCatalog;
     }
 
+    @JsonLdFieldTypes({ Person.class, Organization.class })
     private Object members;
 
     /**

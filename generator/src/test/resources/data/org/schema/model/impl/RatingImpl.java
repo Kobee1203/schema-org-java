@@ -17,6 +17,7 @@ import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.Intangible;
 import org.schema.model.Rating;
 
@@ -52,6 +53,7 @@ public class RatingImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.reviewAspect = reviewAspect;
     }
 
+    @JsonLdFieldTypes({ Text.class, Number.class })
     private Object worstRating;
 
     /**
@@ -83,6 +85,7 @@ public class RatingImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.worstRating = worstRating;
     }
 
+    @JsonLdFieldTypes({ Person.class, Organization.class })
     private Object author;
 
     /**
@@ -114,6 +117,7 @@ public class RatingImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.author = author;
     }
 
+    @JsonLdFieldTypes({ Text.class, Number.class })
     private Object bestRating;
 
     /**
@@ -145,6 +149,7 @@ public class RatingImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.bestRating = bestRating;
     }
 
+    @JsonLdFieldTypes({ Number.class, Text.class })
     private Object ratingValue;
 
     /**
@@ -202,6 +207,7 @@ public class RatingImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.ratingExplanation = ratingExplanation;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -299,6 +305,7 @@ public class RatingImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -374,6 +381,7 @@ public class RatingImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -474,6 +482,7 @@ public class RatingImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

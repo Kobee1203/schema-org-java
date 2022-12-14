@@ -32,6 +32,7 @@ import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.MedicalEntity;
 import org.schema.model.Substance;
 
@@ -92,6 +93,7 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
         this.overdosage = overdosage;
     }
 
+    @JsonLdFieldTypes({ DrugLegalStatus.class, Text.class, MedicalEnumeration.class })
     private Object legalStatus;
 
     /**
@@ -426,6 +428,7 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
         this.foodWarning = foodWarning;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class })
     private Object warning;
 
     /**
@@ -460,6 +463,7 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
         this.warning = warning;
     }
 
+    @JsonLdFieldTypes({ DrugPrescriptionStatus.class, Text.class })
     private Object prescriptionStatus;
 
     /**
@@ -1002,6 +1006,7 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
         this.relevantSpecialty = relevantSpecialty;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -1099,6 +1104,7 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -1174,6 +1180,7 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -1274,6 +1281,7 @@ public class DrugImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

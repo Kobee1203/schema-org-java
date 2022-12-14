@@ -49,6 +49,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.Intangible;
 import org.schema.model.Series;
 import org.schema.model.CreativeWorkSeries;
@@ -62,6 +63,7 @@ import org.schema.model.CreativeWorkSeries;
 @JsonLdTypeName("CreativeWorkSeries")
 public class CreativeWorkSeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements CreativeWorkSeries {
 
+    @JsonLdFieldTypes({ DateTime.class, Date.class })
     private Object startDate;
 
     /**
@@ -96,6 +98,7 @@ public class CreativeWorkSeriesImpl extends com.weedow.schemaorg.commons.model.J
         this.startDate = startDate;
     }
 
+    @JsonLdFieldTypes({ Date.class, DateTime.class })
     private Object endDate;
 
     /**
@@ -154,6 +157,7 @@ public class CreativeWorkSeriesImpl extends com.weedow.schemaorg.commons.model.J
         this.issn = issn;
     }
 
+    @JsonLdFieldTypes({ DefinedTerm.class, Text.class })
     private Object teaches;
 
     /**
@@ -191,6 +195,7 @@ public class CreativeWorkSeriesImpl extends com.weedow.schemaorg.commons.model.J
         this.teaches = teaches;
     }
 
+    @JsonLdFieldTypes({ URL.class, DefinedTerm.class, Text.class })
     private Object educationalLevel;
 
     /**
@@ -265,6 +270,7 @@ public class CreativeWorkSeriesImpl extends com.weedow.schemaorg.commons.model.J
         this.abstract_ = abstract_;
     }
 
+    @JsonLdFieldTypes({ Text.class, DefinedTerm.class })
     private Object creativeWorkStatus;
 
     /**
@@ -350,6 +356,7 @@ public class CreativeWorkSeriesImpl extends com.weedow.schemaorg.commons.model.J
         this.contentReferenceTime = contentReferenceTime;
     }
 
+    @JsonLdFieldTypes({ Text.class, URL.class, Product.class })
     private Object material;
 
     /**
@@ -412,6 +419,7 @@ public class CreativeWorkSeriesImpl extends com.weedow.schemaorg.commons.model.J
         this.review = review;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class })
     private Object fileFormat;
 
     /**
@@ -465,6 +473,7 @@ public class CreativeWorkSeriesImpl extends com.weedow.schemaorg.commons.model.J
         this.text = text;
     }
 
+    @JsonLdFieldTypes({ Person.class, Organization.class })
     private Object translator;
 
     /**
@@ -518,6 +527,7 @@ public class CreativeWorkSeriesImpl extends com.weedow.schemaorg.commons.model.J
         this.award = award;
     }
 
+    @JsonLdFieldTypes({ Text.class, DefinedTerm.class })
     private Object assesses;
 
     /**
@@ -581,6 +591,7 @@ public class CreativeWorkSeriesImpl extends com.weedow.schemaorg.commons.model.J
         this.copyrightNotice = copyrightNotice;
     }
 
+    @JsonLdFieldTypes({ Text.class, URL.class })
     private Object schemaVersion;
 
     /**
@@ -645,6 +656,7 @@ public class CreativeWorkSeriesImpl extends com.weedow.schemaorg.commons.model.J
         this.countryOfOrigin = countryOfOrigin;
     }
 
+    @JsonLdFieldTypes({ DefinedTerm.class, Text.class })
     private Object pattern;
 
     /**
@@ -732,6 +744,7 @@ public class CreativeWorkSeriesImpl extends com.weedow.schemaorg.commons.model.J
         this.funding = funding;
     }
 
+    @JsonLdFieldTypes({ DefinedTerm.class, Text.class })
     private Object educationalUse;
 
     /**
@@ -763,6 +776,7 @@ public class CreativeWorkSeriesImpl extends com.weedow.schemaorg.commons.model.J
         this.educationalUse = educationalUse;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class })
     private Object genre;
 
     /**
@@ -794,6 +808,7 @@ public class CreativeWorkSeriesImpl extends com.weedow.schemaorg.commons.model.J
         this.genre = genre;
     }
 
+    @JsonLdFieldTypes({ DefinedTerm.class, Text.class, URL.class })
     private Object keywords;
 
     /**
@@ -834,6 +849,7 @@ public class CreativeWorkSeriesImpl extends com.weedow.schemaorg.commons.model.J
         this.keywords = keywords;
     }
 
+    @JsonLdFieldTypes({ Integer.class, Text.class })
     private Object position;
 
     /**
@@ -931,6 +947,7 @@ public class CreativeWorkSeriesImpl extends com.weedow.schemaorg.commons.model.J
         this.audience = audience;
     }
 
+    @JsonLdFieldTypes({ Offer.class, Demand.class })
     private Object offers;
 
     /**
@@ -1012,6 +1029,7 @@ public class CreativeWorkSeriesImpl extends com.weedow.schemaorg.commons.model.J
         this.associatedMedia = associatedMedia;
     }
 
+    @JsonLdFieldTypes({ QuantitativeValue.class, Text.class })
     private Object materialExtent;
 
     /**
@@ -1071,6 +1089,7 @@ public class CreativeWorkSeriesImpl extends com.weedow.schemaorg.commons.model.J
         this.mainEntity = mainEntity;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object copyrightHolder;
 
     /**
@@ -1172,6 +1191,7 @@ public class CreativeWorkSeriesImpl extends com.weedow.schemaorg.commons.model.J
         this.sdDatePublished = sdDatePublished;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object producer;
 
     /**
@@ -1227,6 +1247,7 @@ public class CreativeWorkSeriesImpl extends com.weedow.schemaorg.commons.model.J
         this.spatial = spatial;
     }
 
+    @JsonLdFieldTypes({ Person.class, Organization.class })
     private Object publisher;
 
     /**
@@ -1302,6 +1323,7 @@ public class CreativeWorkSeriesImpl extends com.weedow.schemaorg.commons.model.J
         this.character = character;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object funder;
 
     /**
@@ -1357,6 +1379,7 @@ public class CreativeWorkSeriesImpl extends com.weedow.schemaorg.commons.model.J
         this.exampleOfWork = exampleOfWork;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object usageInfo;
 
     /**
@@ -1400,6 +1423,7 @@ public class CreativeWorkSeriesImpl extends com.weedow.schemaorg.commons.model.J
         this.usageInfo = usageInfo;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object provider;
 
     /**
@@ -1440,6 +1464,7 @@ public class CreativeWorkSeriesImpl extends com.weedow.schemaorg.commons.model.J
         this.provider = provider;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object sdPublisher;
 
     /**
@@ -1750,6 +1775,7 @@ public class CreativeWorkSeriesImpl extends com.weedow.schemaorg.commons.model.J
         this.copyrightYear = copyrightYear;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class, Product.class })
     private Object isBasedOn;
 
     /**
@@ -1814,6 +1840,7 @@ public class CreativeWorkSeriesImpl extends com.weedow.schemaorg.commons.model.J
         this.workExample = workExample;
     }
 
+    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
     private Object publishingPrinciples;
 
     /**
@@ -1895,6 +1922,7 @@ public class CreativeWorkSeriesImpl extends com.weedow.schemaorg.commons.model.J
         this.releasedEvent = releasedEvent;
     }
 
+    @JsonLdFieldTypes({ Date.class, DateTime.class })
     private Object dateCreated;
 
     /**
@@ -2020,6 +2048,7 @@ public class CreativeWorkSeriesImpl extends com.weedow.schemaorg.commons.model.J
         this.recordedAt = recordedAt;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class })
     private Object editEIDR;
 
     /**
@@ -2069,6 +2098,7 @@ public class CreativeWorkSeriesImpl extends com.weedow.schemaorg.commons.model.J
         this.editEIDR = editEIDR;
     }
 
+    @JsonLdFieldTypes({ Person.class, Organization.class })
     private Object author;
 
     /**
@@ -2100,6 +2130,7 @@ public class CreativeWorkSeriesImpl extends com.weedow.schemaorg.commons.model.J
         this.author = author;
     }
 
+    @JsonLdFieldTypes({ DateTime.class, Date.class })
     private Object dateModified;
 
     /**
@@ -2131,6 +2162,7 @@ public class CreativeWorkSeriesImpl extends com.weedow.schemaorg.commons.model.J
         this.dateModified = dateModified;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object sponsor;
 
     /**
@@ -2186,6 +2218,7 @@ public class CreativeWorkSeriesImpl extends com.weedow.schemaorg.commons.model.J
         this.accessibilitySummary = accessibilitySummary;
     }
 
+    @JsonLdFieldTypes({ Text.class, URL.class })
     private Object encodingFormat;
 
     /**
@@ -2229,6 +2262,7 @@ public class CreativeWorkSeriesImpl extends com.weedow.schemaorg.commons.model.J
         this.encodingFormat = encodingFormat;
     }
 
+    @JsonLdFieldTypes({ Person.class, Organization.class })
     private Object maintainer;
 
     /**
@@ -2295,6 +2329,7 @@ public class CreativeWorkSeriesImpl extends com.weedow.schemaorg.commons.model.J
         this.educationalAlignment = educationalAlignment;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object acquireLicensePage;
 
     /**
@@ -2354,6 +2389,7 @@ public class CreativeWorkSeriesImpl extends com.weedow.schemaorg.commons.model.J
         this.isAccessibleForFree = isAccessibleForFree;
     }
 
+    @JsonLdFieldTypes({ Date.class, DateTime.class })
     private Object datePublished;
 
     /**
@@ -2411,6 +2447,7 @@ public class CreativeWorkSeriesImpl extends com.weedow.schemaorg.commons.model.J
         this.spatialCoverage = spatialCoverage;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object sdLicense;
 
     /**
@@ -2474,6 +2511,7 @@ public class CreativeWorkSeriesImpl extends com.weedow.schemaorg.commons.model.J
         this.conditionsOfAccess = conditionsOfAccess;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, CorrectionComment.class })
     private Object correction;
 
     /**
@@ -2526,6 +2564,7 @@ public class CreativeWorkSeriesImpl extends com.weedow.schemaorg.commons.model.J
         this.correction = correction;
     }
 
+    @JsonLdFieldTypes({ Text.class, Rating.class })
     private Object contentRating;
 
     /**
@@ -2557,6 +2596,7 @@ public class CreativeWorkSeriesImpl extends com.weedow.schemaorg.commons.model.J
         this.contentRating = contentRating;
     }
 
+    @JsonLdFieldTypes({ QuantitativeValue.class, DefinedTerm.class, Text.class, SizeSpecification.class })
     private Object size;
 
     /**
@@ -2616,6 +2656,7 @@ public class CreativeWorkSeriesImpl extends com.weedow.schemaorg.commons.model.J
         this.size = size;
     }
 
+    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
     private Object isPartOf;
 
     /**
@@ -2647,6 +2688,7 @@ public class CreativeWorkSeriesImpl extends com.weedow.schemaorg.commons.model.J
         this.isPartOf = isPartOf;
     }
 
+    @JsonLdFieldTypes({ DateTime.class, Text.class })
     private Object temporal;
 
     /**
@@ -2703,6 +2745,7 @@ public class CreativeWorkSeriesImpl extends com.weedow.schemaorg.commons.model.J
         this.thumbnailUrl = thumbnailUrl;
     }
 
+    @JsonLdFieldTypes({ Text.class, Language.class })
     private Object inLanguage;
 
     /**
@@ -2737,6 +2780,7 @@ public class CreativeWorkSeriesImpl extends com.weedow.schemaorg.commons.model.J
         this.inLanguage = inLanguage;
     }
 
+    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
     private Object license;
 
     /**
@@ -2768,6 +2812,7 @@ public class CreativeWorkSeriesImpl extends com.weedow.schemaorg.commons.model.J
         this.license = license;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object creator;
 
     /**
@@ -2935,6 +2980,7 @@ public class CreativeWorkSeriesImpl extends com.weedow.schemaorg.commons.model.J
         this.publisherImprint = publisherImprint;
     }
 
+    @JsonLdFieldTypes({ URL.class, CreativeWork.class, Product.class })
     private Object isBasedOnUrl;
 
     /**
@@ -3045,6 +3091,7 @@ public class CreativeWorkSeriesImpl extends com.weedow.schemaorg.commons.model.J
         this.accessibilityControl = accessibilityControl;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, Text.class })
     private Object citation;
 
     /**
@@ -3076,6 +3123,7 @@ public class CreativeWorkSeriesImpl extends com.weedow.schemaorg.commons.model.J
         this.citation = citation;
     }
 
+    @JsonLdFieldTypes({ Number.class, Text.class })
     private Object version;
 
     /**
@@ -3107,6 +3155,7 @@ public class CreativeWorkSeriesImpl extends com.weedow.schemaorg.commons.model.J
         this.version = version;
     }
 
+    @JsonLdFieldTypes({ WebPage.class, URL.class })
     private Object archivedAt;
 
     /**
@@ -3144,6 +3193,7 @@ public class CreativeWorkSeriesImpl extends com.weedow.schemaorg.commons.model.J
         this.archivedAt = archivedAt;
     }
 
+    @JsonLdFieldTypes({ DefinedTerm.class, Text.class })
     private Object learningResourceType;
 
     /**
@@ -3197,6 +3247,7 @@ public class CreativeWorkSeriesImpl extends com.weedow.schemaorg.commons.model.J
         this.encoding = encoding;
     }
 
+    @JsonLdFieldTypes({ AudioObject.class, MusicRecording.class, Clip.class })
     private Object audio;
 
     /**
@@ -3311,6 +3362,7 @@ public class CreativeWorkSeriesImpl extends com.weedow.schemaorg.commons.model.J
         this.hasPart = hasPart;
     }
 
+    @JsonLdFieldTypes({ URL.class, DateTime.class, Text.class })
     private Object temporalCoverage;
 
     /**
@@ -3367,6 +3419,7 @@ public class CreativeWorkSeriesImpl extends com.weedow.schemaorg.commons.model.J
         this.temporalCoverage = temporalCoverage;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object contributor;
 
     /**
@@ -3398,6 +3451,7 @@ public class CreativeWorkSeriesImpl extends com.weedow.schemaorg.commons.model.J
         this.contributor = contributor;
     }
 
+    @JsonLdFieldTypes({ Clip.class, VideoObject.class })
     private Object video;
 
     /**
@@ -3429,6 +3483,7 @@ public class CreativeWorkSeriesImpl extends com.weedow.schemaorg.commons.model.J
         this.video = video;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -3526,6 +3581,7 @@ public class CreativeWorkSeriesImpl extends com.weedow.schemaorg.commons.model.J
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -3601,6 +3657,7 @@ public class CreativeWorkSeriesImpl extends com.weedow.schemaorg.commons.model.J
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -3701,6 +3758,7 @@ public class CreativeWorkSeriesImpl extends com.weedow.schemaorg.commons.model.J
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

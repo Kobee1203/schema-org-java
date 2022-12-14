@@ -49,6 +49,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 
 /**
  * A [[comment]] that corrects [[CreativeWork]].
@@ -126,6 +127,7 @@ public class CorrectionCommentImpl extends com.weedow.schemaorg.commons.model.Js
         this.upvoteCount = upvoteCount;
     }
 
+    @JsonLdFieldTypes({ DefinedTerm.class, Text.class })
     private Object teaches;
 
     /**
@@ -163,6 +165,7 @@ public class CorrectionCommentImpl extends com.weedow.schemaorg.commons.model.Js
         this.teaches = teaches;
     }
 
+    @JsonLdFieldTypes({ URL.class, DefinedTerm.class, Text.class })
     private Object educationalLevel;
 
     /**
@@ -237,6 +240,7 @@ public class CorrectionCommentImpl extends com.weedow.schemaorg.commons.model.Js
         this.abstract_ = abstract_;
     }
 
+    @JsonLdFieldTypes({ Text.class, DefinedTerm.class })
     private Object creativeWorkStatus;
 
     /**
@@ -322,6 +326,7 @@ public class CorrectionCommentImpl extends com.weedow.schemaorg.commons.model.Js
         this.contentReferenceTime = contentReferenceTime;
     }
 
+    @JsonLdFieldTypes({ Text.class, URL.class, Product.class })
     private Object material;
 
     /**
@@ -384,6 +389,7 @@ public class CorrectionCommentImpl extends com.weedow.schemaorg.commons.model.Js
         this.review = review;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class })
     private Object fileFormat;
 
     /**
@@ -437,6 +443,7 @@ public class CorrectionCommentImpl extends com.weedow.schemaorg.commons.model.Js
         this.text = text;
     }
 
+    @JsonLdFieldTypes({ Person.class, Organization.class })
     private Object translator;
 
     /**
@@ -490,6 +497,7 @@ public class CorrectionCommentImpl extends com.weedow.schemaorg.commons.model.Js
         this.award = award;
     }
 
+    @JsonLdFieldTypes({ Text.class, DefinedTerm.class })
     private Object assesses;
 
     /**
@@ -553,6 +561,7 @@ public class CorrectionCommentImpl extends com.weedow.schemaorg.commons.model.Js
         this.copyrightNotice = copyrightNotice;
     }
 
+    @JsonLdFieldTypes({ Text.class, URL.class })
     private Object schemaVersion;
 
     /**
@@ -617,6 +626,7 @@ public class CorrectionCommentImpl extends com.weedow.schemaorg.commons.model.Js
         this.countryOfOrigin = countryOfOrigin;
     }
 
+    @JsonLdFieldTypes({ DefinedTerm.class, Text.class })
     private Object pattern;
 
     /**
@@ -704,6 +714,7 @@ public class CorrectionCommentImpl extends com.weedow.schemaorg.commons.model.Js
         this.funding = funding;
     }
 
+    @JsonLdFieldTypes({ DefinedTerm.class, Text.class })
     private Object educationalUse;
 
     /**
@@ -735,6 +746,7 @@ public class CorrectionCommentImpl extends com.weedow.schemaorg.commons.model.Js
         this.educationalUse = educationalUse;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class })
     private Object genre;
 
     /**
@@ -766,6 +778,7 @@ public class CorrectionCommentImpl extends com.weedow.schemaorg.commons.model.Js
         this.genre = genre;
     }
 
+    @JsonLdFieldTypes({ DefinedTerm.class, Text.class, URL.class })
     private Object keywords;
 
     /**
@@ -806,6 +819,7 @@ public class CorrectionCommentImpl extends com.weedow.schemaorg.commons.model.Js
         this.keywords = keywords;
     }
 
+    @JsonLdFieldTypes({ Integer.class, Text.class })
     private Object position;
 
     /**
@@ -903,6 +917,7 @@ public class CorrectionCommentImpl extends com.weedow.schemaorg.commons.model.Js
         this.audience = audience;
     }
 
+    @JsonLdFieldTypes({ Offer.class, Demand.class })
     private Object offers;
 
     /**
@@ -984,6 +999,7 @@ public class CorrectionCommentImpl extends com.weedow.schemaorg.commons.model.Js
         this.associatedMedia = associatedMedia;
     }
 
+    @JsonLdFieldTypes({ QuantitativeValue.class, Text.class })
     private Object materialExtent;
 
     /**
@@ -1043,6 +1059,7 @@ public class CorrectionCommentImpl extends com.weedow.schemaorg.commons.model.Js
         this.mainEntity = mainEntity;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object copyrightHolder;
 
     /**
@@ -1144,6 +1161,7 @@ public class CorrectionCommentImpl extends com.weedow.schemaorg.commons.model.Js
         this.sdDatePublished = sdDatePublished;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object producer;
 
     /**
@@ -1199,6 +1217,7 @@ public class CorrectionCommentImpl extends com.weedow.schemaorg.commons.model.Js
         this.spatial = spatial;
     }
 
+    @JsonLdFieldTypes({ Person.class, Organization.class })
     private Object publisher;
 
     /**
@@ -1274,6 +1293,7 @@ public class CorrectionCommentImpl extends com.weedow.schemaorg.commons.model.Js
         this.character = character;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object funder;
 
     /**
@@ -1329,6 +1349,7 @@ public class CorrectionCommentImpl extends com.weedow.schemaorg.commons.model.Js
         this.exampleOfWork = exampleOfWork;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object usageInfo;
 
     /**
@@ -1372,6 +1393,7 @@ public class CorrectionCommentImpl extends com.weedow.schemaorg.commons.model.Js
         this.usageInfo = usageInfo;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object provider;
 
     /**
@@ -1412,6 +1434,7 @@ public class CorrectionCommentImpl extends com.weedow.schemaorg.commons.model.Js
         this.provider = provider;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object sdPublisher;
 
     /**
@@ -1722,6 +1745,7 @@ public class CorrectionCommentImpl extends com.weedow.schemaorg.commons.model.Js
         this.copyrightYear = copyrightYear;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class, Product.class })
     private Object isBasedOn;
 
     /**
@@ -1786,6 +1810,7 @@ public class CorrectionCommentImpl extends com.weedow.schemaorg.commons.model.Js
         this.workExample = workExample;
     }
 
+    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
     private Object publishingPrinciples;
 
     /**
@@ -1867,6 +1892,7 @@ public class CorrectionCommentImpl extends com.weedow.schemaorg.commons.model.Js
         this.releasedEvent = releasedEvent;
     }
 
+    @JsonLdFieldTypes({ Date.class, DateTime.class })
     private Object dateCreated;
 
     /**
@@ -1992,6 +2018,7 @@ public class CorrectionCommentImpl extends com.weedow.schemaorg.commons.model.Js
         this.recordedAt = recordedAt;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class })
     private Object editEIDR;
 
     /**
@@ -2041,6 +2068,7 @@ public class CorrectionCommentImpl extends com.weedow.schemaorg.commons.model.Js
         this.editEIDR = editEIDR;
     }
 
+    @JsonLdFieldTypes({ Person.class, Organization.class })
     private Object author;
 
     /**
@@ -2072,6 +2100,7 @@ public class CorrectionCommentImpl extends com.weedow.schemaorg.commons.model.Js
         this.author = author;
     }
 
+    @JsonLdFieldTypes({ DateTime.class, Date.class })
     private Object dateModified;
 
     /**
@@ -2103,6 +2132,7 @@ public class CorrectionCommentImpl extends com.weedow.schemaorg.commons.model.Js
         this.dateModified = dateModified;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object sponsor;
 
     /**
@@ -2158,6 +2188,7 @@ public class CorrectionCommentImpl extends com.weedow.schemaorg.commons.model.Js
         this.accessibilitySummary = accessibilitySummary;
     }
 
+    @JsonLdFieldTypes({ Text.class, URL.class })
     private Object encodingFormat;
 
     /**
@@ -2201,6 +2232,7 @@ public class CorrectionCommentImpl extends com.weedow.schemaorg.commons.model.Js
         this.encodingFormat = encodingFormat;
     }
 
+    @JsonLdFieldTypes({ Person.class, Organization.class })
     private Object maintainer;
 
     /**
@@ -2267,6 +2299,7 @@ public class CorrectionCommentImpl extends com.weedow.schemaorg.commons.model.Js
         this.educationalAlignment = educationalAlignment;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object acquireLicensePage;
 
     /**
@@ -2326,6 +2359,7 @@ public class CorrectionCommentImpl extends com.weedow.schemaorg.commons.model.Js
         this.isAccessibleForFree = isAccessibleForFree;
     }
 
+    @JsonLdFieldTypes({ Date.class, DateTime.class })
     private Object datePublished;
 
     /**
@@ -2383,6 +2417,7 @@ public class CorrectionCommentImpl extends com.weedow.schemaorg.commons.model.Js
         this.spatialCoverage = spatialCoverage;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object sdLicense;
 
     /**
@@ -2446,6 +2481,7 @@ public class CorrectionCommentImpl extends com.weedow.schemaorg.commons.model.Js
         this.conditionsOfAccess = conditionsOfAccess;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, CorrectionComment.class })
     private Object correction;
 
     /**
@@ -2498,6 +2534,7 @@ public class CorrectionCommentImpl extends com.weedow.schemaorg.commons.model.Js
         this.correction = correction;
     }
 
+    @JsonLdFieldTypes({ Text.class, Rating.class })
     private Object contentRating;
 
     /**
@@ -2529,6 +2566,7 @@ public class CorrectionCommentImpl extends com.weedow.schemaorg.commons.model.Js
         this.contentRating = contentRating;
     }
 
+    @JsonLdFieldTypes({ QuantitativeValue.class, DefinedTerm.class, Text.class, SizeSpecification.class })
     private Object size;
 
     /**
@@ -2588,6 +2626,7 @@ public class CorrectionCommentImpl extends com.weedow.schemaorg.commons.model.Js
         this.size = size;
     }
 
+    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
     private Object isPartOf;
 
     /**
@@ -2619,6 +2658,7 @@ public class CorrectionCommentImpl extends com.weedow.schemaorg.commons.model.Js
         this.isPartOf = isPartOf;
     }
 
+    @JsonLdFieldTypes({ DateTime.class, Text.class })
     private Object temporal;
 
     /**
@@ -2675,6 +2715,7 @@ public class CorrectionCommentImpl extends com.weedow.schemaorg.commons.model.Js
         this.thumbnailUrl = thumbnailUrl;
     }
 
+    @JsonLdFieldTypes({ Text.class, Language.class })
     private Object inLanguage;
 
     /**
@@ -2709,6 +2750,7 @@ public class CorrectionCommentImpl extends com.weedow.schemaorg.commons.model.Js
         this.inLanguage = inLanguage;
     }
 
+    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
     private Object license;
 
     /**
@@ -2740,6 +2782,7 @@ public class CorrectionCommentImpl extends com.weedow.schemaorg.commons.model.Js
         this.license = license;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object creator;
 
     /**
@@ -2907,6 +2950,7 @@ public class CorrectionCommentImpl extends com.weedow.schemaorg.commons.model.Js
         this.publisherImprint = publisherImprint;
     }
 
+    @JsonLdFieldTypes({ URL.class, CreativeWork.class, Product.class })
     private Object isBasedOnUrl;
 
     /**
@@ -3017,6 +3061,7 @@ public class CorrectionCommentImpl extends com.weedow.schemaorg.commons.model.Js
         this.accessibilityControl = accessibilityControl;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, Text.class })
     private Object citation;
 
     /**
@@ -3048,6 +3093,7 @@ public class CorrectionCommentImpl extends com.weedow.schemaorg.commons.model.Js
         this.citation = citation;
     }
 
+    @JsonLdFieldTypes({ Number.class, Text.class })
     private Object version;
 
     /**
@@ -3079,6 +3125,7 @@ public class CorrectionCommentImpl extends com.weedow.schemaorg.commons.model.Js
         this.version = version;
     }
 
+    @JsonLdFieldTypes({ WebPage.class, URL.class })
     private Object archivedAt;
 
     /**
@@ -3116,6 +3163,7 @@ public class CorrectionCommentImpl extends com.weedow.schemaorg.commons.model.Js
         this.archivedAt = archivedAt;
     }
 
+    @JsonLdFieldTypes({ DefinedTerm.class, Text.class })
     private Object learningResourceType;
 
     /**
@@ -3169,6 +3217,7 @@ public class CorrectionCommentImpl extends com.weedow.schemaorg.commons.model.Js
         this.encoding = encoding;
     }
 
+    @JsonLdFieldTypes({ AudioObject.class, MusicRecording.class, Clip.class })
     private Object audio;
 
     /**
@@ -3283,6 +3332,7 @@ public class CorrectionCommentImpl extends com.weedow.schemaorg.commons.model.Js
         this.hasPart = hasPart;
     }
 
+    @JsonLdFieldTypes({ URL.class, DateTime.class, Text.class })
     private Object temporalCoverage;
 
     /**
@@ -3339,6 +3389,7 @@ public class CorrectionCommentImpl extends com.weedow.schemaorg.commons.model.Js
         this.temporalCoverage = temporalCoverage;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object contributor;
 
     /**
@@ -3370,6 +3421,7 @@ public class CorrectionCommentImpl extends com.weedow.schemaorg.commons.model.Js
         this.contributor = contributor;
     }
 
+    @JsonLdFieldTypes({ Clip.class, VideoObject.class })
     private Object video;
 
     /**
@@ -3401,6 +3453,7 @@ public class CorrectionCommentImpl extends com.weedow.schemaorg.commons.model.Js
         this.video = video;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -3498,6 +3551,7 @@ public class CorrectionCommentImpl extends com.weedow.schemaorg.commons.model.Js
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -3573,6 +3627,7 @@ public class CorrectionCommentImpl extends com.weedow.schemaorg.commons.model.Js
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -3673,6 +3728,7 @@ public class CorrectionCommentImpl extends com.weedow.schemaorg.commons.model.Js
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

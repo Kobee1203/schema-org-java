@@ -16,6 +16,7 @@ import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.Intangible;
 import org.schema.model.DefinedTerm;
 import org.schema.model.CategoryCode;
@@ -56,6 +57,7 @@ public class CategoryCodeImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.codeValue = codeValue;
     }
 
+    @JsonLdFieldTypes({ CategoryCodeSet.class, URL.class })
     private Object inCodeSet;
 
     /**
@@ -119,6 +121,7 @@ public class CategoryCodeImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.termCode = termCode;
     }
 
+    @JsonLdFieldTypes({ URL.class, DefinedTermSet.class })
     private Object inDefinedTermSet;
 
     /**
@@ -156,6 +159,7 @@ public class CategoryCodeImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.inDefinedTermSet = inDefinedTermSet;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -253,6 +257,7 @@ public class CategoryCodeImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -328,6 +333,7 @@ public class CategoryCodeImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -428,6 +434,7 @@ public class CategoryCodeImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

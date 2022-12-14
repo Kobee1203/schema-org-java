@@ -33,6 +33,7 @@ import org.schema.model.Action;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.Intangible;
 import org.schema.model.CableOrSatelliteService;
 
@@ -110,6 +111,7 @@ public class CableOrSatelliteServiceImpl extends com.weedow.schemaorg.commons.mo
         this.serviceAudience = serviceAudience;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PhysicalActivityCategory.class, Thing.class, CategoryCode.class })
     private Object category;
 
     /**
@@ -224,6 +226,7 @@ public class CableOrSatelliteServiceImpl extends com.weedow.schemaorg.commons.mo
         this.audience = audience;
     }
 
+    @JsonLdFieldTypes({ Offer.class, Demand.class })
     private Object offers;
 
     /**
@@ -283,6 +286,7 @@ public class CableOrSatelliteServiceImpl extends com.weedow.schemaorg.commons.mo
         this.serviceOutput = serviceOutput;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object provider;
 
     /**
@@ -323,6 +327,7 @@ public class CableOrSatelliteServiceImpl extends com.weedow.schemaorg.commons.mo
         this.provider = provider;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class })
     private Object termsOfService;
 
     /**
@@ -382,6 +387,7 @@ public class CableOrSatelliteServiceImpl extends com.weedow.schemaorg.commons.mo
         this.providerMobility = providerMobility;
     }
 
+    @JsonLdFieldTypes({ Person.class, Organization.class })
     private Object broker;
 
     /**
@@ -435,6 +441,7 @@ public class CableOrSatelliteServiceImpl extends com.weedow.schemaorg.commons.mo
         this.aggregateRating = aggregateRating;
     }
 
+    @JsonLdFieldTypes({ Service.class, Product.class })
     private Object isSimilarTo;
 
     /**
@@ -513,6 +520,7 @@ public class CableOrSatelliteServiceImpl extends com.weedow.schemaorg.commons.mo
         this.slogan = slogan;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Brand.class })
     private Object brand;
 
     /**
@@ -544,6 +552,7 @@ public class CableOrSatelliteServiceImpl extends com.weedow.schemaorg.commons.mo
         this.brand = brand;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object logo;
 
     /**
@@ -600,6 +609,7 @@ public class CableOrSatelliteServiceImpl extends com.weedow.schemaorg.commons.mo
         this.produces = produces;
     }
 
+    @JsonLdFieldTypes({ GeoShape.class, AdministrativeArea.class, Place.class })
     private Object serviceArea;
 
     /**
@@ -640,6 +650,7 @@ public class CableOrSatelliteServiceImpl extends com.weedow.schemaorg.commons.mo
         this.serviceArea = serviceArea;
     }
 
+    @JsonLdFieldTypes({ GovernmentBenefitsType.class, Text.class })
     private Object serviceType;
 
     /**
@@ -671,6 +682,7 @@ public class CableOrSatelliteServiceImpl extends com.weedow.schemaorg.commons.mo
         this.serviceType = serviceType;
     }
 
+    @JsonLdFieldTypes({ AdministrativeArea.class, GeoShape.class, Text.class, Place.class })
     private Object areaServed;
 
     /**
@@ -720,6 +732,7 @@ public class CableOrSatelliteServiceImpl extends com.weedow.schemaorg.commons.mo
         this.areaServed = areaServed;
     }
 
+    @JsonLdFieldTypes({ Service.class, Product.class })
     private Object isRelatedTo;
 
     /**
@@ -776,6 +789,7 @@ public class CableOrSatelliteServiceImpl extends com.weedow.schemaorg.commons.mo
         this.hasOfferCatalog = hasOfferCatalog;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -873,6 +887,7 @@ public class CableOrSatelliteServiceImpl extends com.weedow.schemaorg.commons.mo
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -948,6 +963,7 @@ public class CableOrSatelliteServiceImpl extends com.weedow.schemaorg.commons.mo
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -1048,6 +1064,7 @@ public class CableOrSatelliteServiceImpl extends com.weedow.schemaorg.commons.mo
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

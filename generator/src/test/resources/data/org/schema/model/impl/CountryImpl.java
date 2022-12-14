@@ -29,6 +29,7 @@ import org.schema.model.CreativeWork;
 import org.schema.model.Action;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.AdministrativeArea;
 import org.schema.model.Country;
 
@@ -106,6 +107,7 @@ public class CountryImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.maps = maps;
     }
 
+    @JsonLdFieldTypes({ Place.class, GeospatialGeometry.class })
     private Object geoContains;
 
     /**
@@ -229,6 +231,7 @@ public class CountryImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.globalLocationNumber = globalLocationNumber;
     }
 
+    @JsonLdFieldTypes({ DefinedTerm.class, Text.class, URL.class })
     private Object keywords;
 
     /**
@@ -269,6 +272,7 @@ public class CountryImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.keywords = keywords;
     }
 
+    @JsonLdFieldTypes({ GeospatialGeometry.class, Place.class })
     private Object geoIntersects;
 
     /**
@@ -300,6 +304,7 @@ public class CountryImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.geoIntersects = geoIntersects;
     }
 
+    @JsonLdFieldTypes({ Text.class, Number.class })
     private Object latitude;
 
     /**
@@ -331,6 +336,7 @@ public class CountryImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.latitude = latitude;
     }
 
+    @JsonLdFieldTypes({ Place.class, GeospatialGeometry.class })
     private Object geoTouches;
 
     /**
@@ -362,6 +368,7 @@ public class CountryImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.geoTouches = geoTouches;
     }
 
+    @JsonLdFieldTypes({ Place.class, GeospatialGeometry.class })
     private Object geoCoveredBy;
 
     /**
@@ -415,6 +422,7 @@ public class CountryImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.aggregateRating = aggregateRating;
     }
 
+    @JsonLdFieldTypes({ Text.class, PostalAddress.class })
     private Object address;
 
     /**
@@ -446,6 +454,7 @@ public class CountryImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.address = address;
     }
 
+    @JsonLdFieldTypes({ Place.class, GeospatialGeometry.class })
     private Object geoEquals;
 
     /**
@@ -521,6 +530,7 @@ public class CountryImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.publicAccess = publicAccess;
     }
 
+    @JsonLdFieldTypes({ GeospatialGeometry.class, Place.class })
     private Object geoCrosses;
 
     /**
@@ -620,6 +630,7 @@ public class CountryImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.slogan = slogan;
     }
 
+    @JsonLdFieldTypes({ ImageObject.class, Photograph.class })
     private Object photos;
 
     /**
@@ -651,6 +662,7 @@ public class CountryImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.photos = photos;
     }
 
+    @JsonLdFieldTypes({ GeospatialGeometry.class, Place.class })
     private Object geoCovers;
 
     /**
@@ -730,6 +742,7 @@ public class CountryImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.hasDriveThroughService = hasDriveThroughService;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object logo;
 
     /**
@@ -786,6 +799,7 @@ public class CountryImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.isAccessibleForFree = isAccessibleForFree;
     }
 
+    @JsonLdFieldTypes({ Place.class, GeospatialGeometry.class })
     private Object geoWithin;
 
     /**
@@ -817,6 +831,7 @@ public class CountryImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.geoWithin = geoWithin;
     }
 
+    @JsonLdFieldTypes({ GeospatialGeometry.class, Place.class })
     private Object geoDisjoint;
 
     /**
@@ -898,6 +913,7 @@ public class CountryImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.isicV4 = isicV4;
     }
 
+    @JsonLdFieldTypes({ GeospatialGeometry.class, Place.class })
     private Object geoOverlaps;
 
     /**
@@ -1021,6 +1037,7 @@ public class CountryImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.reviews = reviews;
     }
 
+    @JsonLdFieldTypes({ Photograph.class, ImageObject.class })
     private Object photo;
 
     /**
@@ -1076,6 +1093,7 @@ public class CountryImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.specialOpeningHoursSpecification = specialOpeningHoursSpecification;
     }
 
+    @JsonLdFieldTypes({ URL.class, Map.class })
     private Object hasMap;
 
     /**
@@ -1107,6 +1125,7 @@ public class CountryImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.hasMap = hasMap;
     }
 
+    @JsonLdFieldTypes({ Number.class, Text.class })
     private Object longitude;
 
     /**
@@ -1138,6 +1157,7 @@ public class CountryImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.longitude = longitude;
     }
 
+    @JsonLdFieldTypes({ GeoCoordinates.class, GeoShape.class })
     private Object geo;
 
     /**
@@ -1235,6 +1255,7 @@ public class CountryImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.event = event;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -1332,6 +1353,7 @@ public class CountryImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -1407,6 +1429,7 @@ public class CountryImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -1507,6 +1530,7 @@ public class CountryImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

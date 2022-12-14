@@ -50,6 +50,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.Map;
 
 /**
@@ -82,6 +83,7 @@ public class MapImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl i
         this.mapType = mapType;
     }
 
+    @JsonLdFieldTypes({ DefinedTerm.class, Text.class })
     private Object teaches;
 
     /**
@@ -119,6 +121,7 @@ public class MapImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl i
         this.teaches = teaches;
     }
 
+    @JsonLdFieldTypes({ URL.class, DefinedTerm.class, Text.class })
     private Object educationalLevel;
 
     /**
@@ -193,6 +196,7 @@ public class MapImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl i
         this.abstract_ = abstract_;
     }
 
+    @JsonLdFieldTypes({ Text.class, DefinedTerm.class })
     private Object creativeWorkStatus;
 
     /**
@@ -278,6 +282,7 @@ public class MapImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl i
         this.contentReferenceTime = contentReferenceTime;
     }
 
+    @JsonLdFieldTypes({ Text.class, URL.class, Product.class })
     private Object material;
 
     /**
@@ -340,6 +345,7 @@ public class MapImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl i
         this.review = review;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class })
     private Object fileFormat;
 
     /**
@@ -393,6 +399,7 @@ public class MapImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl i
         this.text = text;
     }
 
+    @JsonLdFieldTypes({ Person.class, Organization.class })
     private Object translator;
 
     /**
@@ -446,6 +453,7 @@ public class MapImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl i
         this.award = award;
     }
 
+    @JsonLdFieldTypes({ Text.class, DefinedTerm.class })
     private Object assesses;
 
     /**
@@ -509,6 +517,7 @@ public class MapImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl i
         this.copyrightNotice = copyrightNotice;
     }
 
+    @JsonLdFieldTypes({ Text.class, URL.class })
     private Object schemaVersion;
 
     /**
@@ -573,6 +582,7 @@ public class MapImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl i
         this.countryOfOrigin = countryOfOrigin;
     }
 
+    @JsonLdFieldTypes({ DefinedTerm.class, Text.class })
     private Object pattern;
 
     /**
@@ -660,6 +670,7 @@ public class MapImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl i
         this.funding = funding;
     }
 
+    @JsonLdFieldTypes({ DefinedTerm.class, Text.class })
     private Object educationalUse;
 
     /**
@@ -691,6 +702,7 @@ public class MapImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl i
         this.educationalUse = educationalUse;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class })
     private Object genre;
 
     /**
@@ -722,6 +734,7 @@ public class MapImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl i
         this.genre = genre;
     }
 
+    @JsonLdFieldTypes({ DefinedTerm.class, Text.class, URL.class })
     private Object keywords;
 
     /**
@@ -762,6 +775,7 @@ public class MapImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl i
         this.keywords = keywords;
     }
 
+    @JsonLdFieldTypes({ Integer.class, Text.class })
     private Object position;
 
     /**
@@ -859,6 +873,7 @@ public class MapImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl i
         this.audience = audience;
     }
 
+    @JsonLdFieldTypes({ Offer.class, Demand.class })
     private Object offers;
 
     /**
@@ -940,6 +955,7 @@ public class MapImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl i
         this.associatedMedia = associatedMedia;
     }
 
+    @JsonLdFieldTypes({ QuantitativeValue.class, Text.class })
     private Object materialExtent;
 
     /**
@@ -999,6 +1015,7 @@ public class MapImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl i
         this.mainEntity = mainEntity;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object copyrightHolder;
 
     /**
@@ -1100,6 +1117,7 @@ public class MapImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl i
         this.sdDatePublished = sdDatePublished;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object producer;
 
     /**
@@ -1155,6 +1173,7 @@ public class MapImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl i
         this.spatial = spatial;
     }
 
+    @JsonLdFieldTypes({ Person.class, Organization.class })
     private Object publisher;
 
     /**
@@ -1230,6 +1249,7 @@ public class MapImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl i
         this.character = character;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object funder;
 
     /**
@@ -1285,6 +1305,7 @@ public class MapImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl i
         this.exampleOfWork = exampleOfWork;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object usageInfo;
 
     /**
@@ -1328,6 +1349,7 @@ public class MapImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl i
         this.usageInfo = usageInfo;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object provider;
 
     /**
@@ -1368,6 +1390,7 @@ public class MapImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl i
         this.provider = provider;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object sdPublisher;
 
     /**
@@ -1678,6 +1701,7 @@ public class MapImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl i
         this.copyrightYear = copyrightYear;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class, Product.class })
     private Object isBasedOn;
 
     /**
@@ -1742,6 +1766,7 @@ public class MapImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl i
         this.workExample = workExample;
     }
 
+    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
     private Object publishingPrinciples;
 
     /**
@@ -1823,6 +1848,7 @@ public class MapImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl i
         this.releasedEvent = releasedEvent;
     }
 
+    @JsonLdFieldTypes({ Date.class, DateTime.class })
     private Object dateCreated;
 
     /**
@@ -1948,6 +1974,7 @@ public class MapImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl i
         this.recordedAt = recordedAt;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class })
     private Object editEIDR;
 
     /**
@@ -1997,6 +2024,7 @@ public class MapImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl i
         this.editEIDR = editEIDR;
     }
 
+    @JsonLdFieldTypes({ Person.class, Organization.class })
     private Object author;
 
     /**
@@ -2028,6 +2056,7 @@ public class MapImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl i
         this.author = author;
     }
 
+    @JsonLdFieldTypes({ DateTime.class, Date.class })
     private Object dateModified;
 
     /**
@@ -2059,6 +2088,7 @@ public class MapImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl i
         this.dateModified = dateModified;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object sponsor;
 
     /**
@@ -2114,6 +2144,7 @@ public class MapImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl i
         this.accessibilitySummary = accessibilitySummary;
     }
 
+    @JsonLdFieldTypes({ Text.class, URL.class })
     private Object encodingFormat;
 
     /**
@@ -2157,6 +2188,7 @@ public class MapImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl i
         this.encodingFormat = encodingFormat;
     }
 
+    @JsonLdFieldTypes({ Person.class, Organization.class })
     private Object maintainer;
 
     /**
@@ -2223,6 +2255,7 @@ public class MapImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl i
         this.educationalAlignment = educationalAlignment;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object acquireLicensePage;
 
     /**
@@ -2282,6 +2315,7 @@ public class MapImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl i
         this.isAccessibleForFree = isAccessibleForFree;
     }
 
+    @JsonLdFieldTypes({ Date.class, DateTime.class })
     private Object datePublished;
 
     /**
@@ -2339,6 +2373,7 @@ public class MapImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl i
         this.spatialCoverage = spatialCoverage;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object sdLicense;
 
     /**
@@ -2402,6 +2437,7 @@ public class MapImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl i
         this.conditionsOfAccess = conditionsOfAccess;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, CorrectionComment.class })
     private Object correction;
 
     /**
@@ -2454,6 +2490,7 @@ public class MapImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl i
         this.correction = correction;
     }
 
+    @JsonLdFieldTypes({ Text.class, Rating.class })
     private Object contentRating;
 
     /**
@@ -2485,6 +2522,7 @@ public class MapImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl i
         this.contentRating = contentRating;
     }
 
+    @JsonLdFieldTypes({ QuantitativeValue.class, DefinedTerm.class, Text.class, SizeSpecification.class })
     private Object size;
 
     /**
@@ -2544,6 +2582,7 @@ public class MapImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl i
         this.size = size;
     }
 
+    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
     private Object isPartOf;
 
     /**
@@ -2575,6 +2614,7 @@ public class MapImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl i
         this.isPartOf = isPartOf;
     }
 
+    @JsonLdFieldTypes({ DateTime.class, Text.class })
     private Object temporal;
 
     /**
@@ -2631,6 +2671,7 @@ public class MapImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl i
         this.thumbnailUrl = thumbnailUrl;
     }
 
+    @JsonLdFieldTypes({ Text.class, Language.class })
     private Object inLanguage;
 
     /**
@@ -2665,6 +2706,7 @@ public class MapImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl i
         this.inLanguage = inLanguage;
     }
 
+    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
     private Object license;
 
     /**
@@ -2696,6 +2738,7 @@ public class MapImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl i
         this.license = license;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object creator;
 
     /**
@@ -2863,6 +2906,7 @@ public class MapImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl i
         this.publisherImprint = publisherImprint;
     }
 
+    @JsonLdFieldTypes({ URL.class, CreativeWork.class, Product.class })
     private Object isBasedOnUrl;
 
     /**
@@ -2973,6 +3017,7 @@ public class MapImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl i
         this.accessibilityControl = accessibilityControl;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, Text.class })
     private Object citation;
 
     /**
@@ -3004,6 +3049,7 @@ public class MapImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl i
         this.citation = citation;
     }
 
+    @JsonLdFieldTypes({ Number.class, Text.class })
     private Object version;
 
     /**
@@ -3035,6 +3081,7 @@ public class MapImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl i
         this.version = version;
     }
 
+    @JsonLdFieldTypes({ WebPage.class, URL.class })
     private Object archivedAt;
 
     /**
@@ -3072,6 +3119,7 @@ public class MapImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl i
         this.archivedAt = archivedAt;
     }
 
+    @JsonLdFieldTypes({ DefinedTerm.class, Text.class })
     private Object learningResourceType;
 
     /**
@@ -3125,6 +3173,7 @@ public class MapImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl i
         this.encoding = encoding;
     }
 
+    @JsonLdFieldTypes({ AudioObject.class, MusicRecording.class, Clip.class })
     private Object audio;
 
     /**
@@ -3239,6 +3288,7 @@ public class MapImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl i
         this.hasPart = hasPart;
     }
 
+    @JsonLdFieldTypes({ URL.class, DateTime.class, Text.class })
     private Object temporalCoverage;
 
     /**
@@ -3295,6 +3345,7 @@ public class MapImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl i
         this.temporalCoverage = temporalCoverage;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object contributor;
 
     /**
@@ -3326,6 +3377,7 @@ public class MapImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl i
         this.contributor = contributor;
     }
 
+    @JsonLdFieldTypes({ Clip.class, VideoObject.class })
     private Object video;
 
     /**
@@ -3357,6 +3409,7 @@ public class MapImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl i
         this.video = video;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -3454,6 +3507,7 @@ public class MapImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl i
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -3529,6 +3583,7 @@ public class MapImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl i
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -3629,6 +3684,7 @@ public class MapImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl i
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

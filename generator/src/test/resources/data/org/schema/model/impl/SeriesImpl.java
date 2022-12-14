@@ -14,6 +14,7 @@ import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.Intangible;
 import org.schema.model.Series;
 
@@ -25,6 +26,7 @@ import org.schema.model.Series;
 @JsonLdTypeName("Series")
 public class SeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Series {
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -122,6 +124,7 @@ public class SeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -197,6 +200,7 @@ public class SeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -297,6 +301,7 @@ public class SeriesImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

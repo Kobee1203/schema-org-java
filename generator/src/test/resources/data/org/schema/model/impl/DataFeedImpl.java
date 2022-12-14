@@ -52,6 +52,7 @@ import org.schema.model.VideoObject;
 import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.Dataset;
 import org.schema.model.DataFeed;
 
@@ -63,6 +64,7 @@ import org.schema.model.DataFeed;
 @JsonLdTypeName("DataFeed")
 public class DataFeedImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements DataFeed {
 
+    @JsonLdFieldTypes({ Thing.class, DataFeedItem.class, Text.class })
     private Object dataFeedElement;
 
     /**
@@ -147,6 +149,7 @@ public class DataFeedImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.includedDataCatalog = includedDataCatalog;
     }
 
+    @JsonLdFieldTypes({ PropertyValue.class, Text.class })
     private Object variableMeasured;
 
     /**
@@ -184,6 +187,7 @@ public class DataFeedImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.variableMeasured = variableMeasured;
     }
 
+    @JsonLdFieldTypes({ Text.class, URL.class })
     private Object measurementTechnique;
 
     /**
@@ -335,6 +339,7 @@ public class DataFeedImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.includedInDataCatalog = includedInDataCatalog;
     }
 
+    @JsonLdFieldTypes({ DefinedTerm.class, Text.class })
     private Object teaches;
 
     /**
@@ -372,6 +377,7 @@ public class DataFeedImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.teaches = teaches;
     }
 
+    @JsonLdFieldTypes({ URL.class, DefinedTerm.class, Text.class })
     private Object educationalLevel;
 
     /**
@@ -446,6 +452,7 @@ public class DataFeedImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.abstract_ = abstract_;
     }
 
+    @JsonLdFieldTypes({ Text.class, DefinedTerm.class })
     private Object creativeWorkStatus;
 
     /**
@@ -531,6 +538,7 @@ public class DataFeedImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.contentReferenceTime = contentReferenceTime;
     }
 
+    @JsonLdFieldTypes({ Text.class, URL.class, Product.class })
     private Object material;
 
     /**
@@ -593,6 +601,7 @@ public class DataFeedImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.review = review;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class })
     private Object fileFormat;
 
     /**
@@ -646,6 +655,7 @@ public class DataFeedImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.text = text;
     }
 
+    @JsonLdFieldTypes({ Person.class, Organization.class })
     private Object translator;
 
     /**
@@ -699,6 +709,7 @@ public class DataFeedImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.award = award;
     }
 
+    @JsonLdFieldTypes({ Text.class, DefinedTerm.class })
     private Object assesses;
 
     /**
@@ -762,6 +773,7 @@ public class DataFeedImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.copyrightNotice = copyrightNotice;
     }
 
+    @JsonLdFieldTypes({ Text.class, URL.class })
     private Object schemaVersion;
 
     /**
@@ -826,6 +838,7 @@ public class DataFeedImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.countryOfOrigin = countryOfOrigin;
     }
 
+    @JsonLdFieldTypes({ DefinedTerm.class, Text.class })
     private Object pattern;
 
     /**
@@ -913,6 +926,7 @@ public class DataFeedImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.funding = funding;
     }
 
+    @JsonLdFieldTypes({ DefinedTerm.class, Text.class })
     private Object educationalUse;
 
     /**
@@ -944,6 +958,7 @@ public class DataFeedImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.educationalUse = educationalUse;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class })
     private Object genre;
 
     /**
@@ -975,6 +990,7 @@ public class DataFeedImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.genre = genre;
     }
 
+    @JsonLdFieldTypes({ DefinedTerm.class, Text.class, URL.class })
     private Object keywords;
 
     /**
@@ -1015,6 +1031,7 @@ public class DataFeedImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.keywords = keywords;
     }
 
+    @JsonLdFieldTypes({ Integer.class, Text.class })
     private Object position;
 
     /**
@@ -1112,6 +1129,7 @@ public class DataFeedImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.audience = audience;
     }
 
+    @JsonLdFieldTypes({ Offer.class, Demand.class })
     private Object offers;
 
     /**
@@ -1193,6 +1211,7 @@ public class DataFeedImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.associatedMedia = associatedMedia;
     }
 
+    @JsonLdFieldTypes({ QuantitativeValue.class, Text.class })
     private Object materialExtent;
 
     /**
@@ -1252,6 +1271,7 @@ public class DataFeedImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.mainEntity = mainEntity;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object copyrightHolder;
 
     /**
@@ -1353,6 +1373,7 @@ public class DataFeedImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.sdDatePublished = sdDatePublished;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object producer;
 
     /**
@@ -1408,6 +1429,7 @@ public class DataFeedImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.spatial = spatial;
     }
 
+    @JsonLdFieldTypes({ Person.class, Organization.class })
     private Object publisher;
 
     /**
@@ -1483,6 +1505,7 @@ public class DataFeedImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.character = character;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object funder;
 
     /**
@@ -1538,6 +1561,7 @@ public class DataFeedImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.exampleOfWork = exampleOfWork;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object usageInfo;
 
     /**
@@ -1581,6 +1605,7 @@ public class DataFeedImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.usageInfo = usageInfo;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object provider;
 
     /**
@@ -1621,6 +1646,7 @@ public class DataFeedImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.provider = provider;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object sdPublisher;
 
     /**
@@ -1931,6 +1957,7 @@ public class DataFeedImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.copyrightYear = copyrightYear;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class, Product.class })
     private Object isBasedOn;
 
     /**
@@ -1995,6 +2022,7 @@ public class DataFeedImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.workExample = workExample;
     }
 
+    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
     private Object publishingPrinciples;
 
     /**
@@ -2076,6 +2104,7 @@ public class DataFeedImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.releasedEvent = releasedEvent;
     }
 
+    @JsonLdFieldTypes({ Date.class, DateTime.class })
     private Object dateCreated;
 
     /**
@@ -2201,6 +2230,7 @@ public class DataFeedImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.recordedAt = recordedAt;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class })
     private Object editEIDR;
 
     /**
@@ -2250,6 +2280,7 @@ public class DataFeedImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.editEIDR = editEIDR;
     }
 
+    @JsonLdFieldTypes({ Person.class, Organization.class })
     private Object author;
 
     /**
@@ -2281,6 +2312,7 @@ public class DataFeedImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.author = author;
     }
 
+    @JsonLdFieldTypes({ DateTime.class, Date.class })
     private Object dateModified;
 
     /**
@@ -2312,6 +2344,7 @@ public class DataFeedImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.dateModified = dateModified;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object sponsor;
 
     /**
@@ -2367,6 +2400,7 @@ public class DataFeedImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.accessibilitySummary = accessibilitySummary;
     }
 
+    @JsonLdFieldTypes({ Text.class, URL.class })
     private Object encodingFormat;
 
     /**
@@ -2410,6 +2444,7 @@ public class DataFeedImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.encodingFormat = encodingFormat;
     }
 
+    @JsonLdFieldTypes({ Person.class, Organization.class })
     private Object maintainer;
 
     /**
@@ -2476,6 +2511,7 @@ public class DataFeedImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.educationalAlignment = educationalAlignment;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object acquireLicensePage;
 
     /**
@@ -2535,6 +2571,7 @@ public class DataFeedImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.isAccessibleForFree = isAccessibleForFree;
     }
 
+    @JsonLdFieldTypes({ Date.class, DateTime.class })
     private Object datePublished;
 
     /**
@@ -2592,6 +2629,7 @@ public class DataFeedImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.spatialCoverage = spatialCoverage;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object sdLicense;
 
     /**
@@ -2655,6 +2693,7 @@ public class DataFeedImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.conditionsOfAccess = conditionsOfAccess;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, CorrectionComment.class })
     private Object correction;
 
     /**
@@ -2707,6 +2746,7 @@ public class DataFeedImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.correction = correction;
     }
 
+    @JsonLdFieldTypes({ Text.class, Rating.class })
     private Object contentRating;
 
     /**
@@ -2738,6 +2778,7 @@ public class DataFeedImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.contentRating = contentRating;
     }
 
+    @JsonLdFieldTypes({ QuantitativeValue.class, DefinedTerm.class, Text.class, SizeSpecification.class })
     private Object size;
 
     /**
@@ -2797,6 +2838,7 @@ public class DataFeedImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.size = size;
     }
 
+    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
     private Object isPartOf;
 
     /**
@@ -2828,6 +2870,7 @@ public class DataFeedImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.isPartOf = isPartOf;
     }
 
+    @JsonLdFieldTypes({ DateTime.class, Text.class })
     private Object temporal;
 
     /**
@@ -2884,6 +2927,7 @@ public class DataFeedImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.thumbnailUrl = thumbnailUrl;
     }
 
+    @JsonLdFieldTypes({ Text.class, Language.class })
     private Object inLanguage;
 
     /**
@@ -2918,6 +2962,7 @@ public class DataFeedImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.inLanguage = inLanguage;
     }
 
+    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
     private Object license;
 
     /**
@@ -2949,6 +2994,7 @@ public class DataFeedImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.license = license;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object creator;
 
     /**
@@ -3116,6 +3162,7 @@ public class DataFeedImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.publisherImprint = publisherImprint;
     }
 
+    @JsonLdFieldTypes({ URL.class, CreativeWork.class, Product.class })
     private Object isBasedOnUrl;
 
     /**
@@ -3226,6 +3273,7 @@ public class DataFeedImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.accessibilityControl = accessibilityControl;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, Text.class })
     private Object citation;
 
     /**
@@ -3257,6 +3305,7 @@ public class DataFeedImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.citation = citation;
     }
 
+    @JsonLdFieldTypes({ Number.class, Text.class })
     private Object version;
 
     /**
@@ -3288,6 +3337,7 @@ public class DataFeedImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.version = version;
     }
 
+    @JsonLdFieldTypes({ WebPage.class, URL.class })
     private Object archivedAt;
 
     /**
@@ -3325,6 +3375,7 @@ public class DataFeedImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.archivedAt = archivedAt;
     }
 
+    @JsonLdFieldTypes({ DefinedTerm.class, Text.class })
     private Object learningResourceType;
 
     /**
@@ -3378,6 +3429,7 @@ public class DataFeedImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.encoding = encoding;
     }
 
+    @JsonLdFieldTypes({ AudioObject.class, MusicRecording.class, Clip.class })
     private Object audio;
 
     /**
@@ -3492,6 +3544,7 @@ public class DataFeedImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.hasPart = hasPart;
     }
 
+    @JsonLdFieldTypes({ URL.class, DateTime.class, Text.class })
     private Object temporalCoverage;
 
     /**
@@ -3548,6 +3601,7 @@ public class DataFeedImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.temporalCoverage = temporalCoverage;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object contributor;
 
     /**
@@ -3579,6 +3633,7 @@ public class DataFeedImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.contributor = contributor;
     }
 
+    @JsonLdFieldTypes({ Clip.class, VideoObject.class })
     private Object video;
 
     /**
@@ -3610,6 +3665,7 @@ public class DataFeedImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.video = video;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -3707,6 +3763,7 @@ public class DataFeedImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -3782,6 +3839,7 @@ public class DataFeedImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -3882,6 +3940,7 @@ public class DataFeedImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

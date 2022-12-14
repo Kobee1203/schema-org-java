@@ -98,6 +98,20 @@ class SchemaGeneratorUtilsTest {
         Assertions.assertThat(result2).containsExactly("model.NewType", "com.weedow.schemaorg.commons.model.JsonLdTypeName");
     }
 
+    @Test
+    void getAllImports_with_field_with_multiple_types() {
+        String modelPackage = "model";
+        String dataTypePackage = "datatype";
+        Type type = type("schema:NewType", "NewType");
+        type.addProperty(new Property("schema:property", null, null, null, List.of(type("schema:Type1", "Type1"), type("schema:Type2", "Type2"))));
+        Set<String> result = SchemaGeneratorUtils.getAllImports(modelPackage, dataTypePackage, type);
+        Assertions.assertThat(result).containsExactly("model.Type1", "model.Type2", "model.NewType", "com.weedow.schemaorg.commons.model.JsonLdTypeName", "com.weedow.schemaorg.commons.model.JsonLdFieldTypes");
+
+        // Test cache
+        Set<String> result2 = SchemaGeneratorUtils.getAllImports(modelPackage, dataTypePackage, type);
+        Assertions.assertThat(result2).containsExactly("model.Type1", "model.Type2", "model.NewType", "com.weedow.schemaorg.commons.model.JsonLdTypeName", "com.weedow.schemaorg.commons.model.JsonLdFieldTypes");
+    }
+
     private static Type type(String id, String name) {
         Type type = new Type(id);
         type.setName(name);

@@ -22,6 +22,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.Intangible;
 
 /**
@@ -33,6 +34,7 @@ import org.schema.model.Intangible;
 @JsonLdTypeName("QuantitativeValue")
 public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements QuantitativeValue {
 
+    @JsonLdFieldTypes({ Enumeration.class, DefinedTerm.class, Text.class, MeasurementTypeEnumeration.class, QualitativeValue.class, StructuredValue.class, PropertyValue.class, QuantitativeValue.class })
     private Object valueReference;
 
     /**
@@ -199,6 +201,7 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
         this.minValue = minValue;
     }
 
+    @JsonLdFieldTypes({ Text.class, Number.class, StructuredValue.class, Boolean.class })
     private Object value;
 
     /**
@@ -253,6 +256,7 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
         this.value = value;
     }
 
+    @JsonLdFieldTypes({ Text.class, URL.class })
     private Object unitCode;
 
     /**
@@ -309,6 +313,7 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
         this.additionalProperty = additionalProperty;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -406,6 +411,7 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -481,6 +487,7 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -581,6 +588,7 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

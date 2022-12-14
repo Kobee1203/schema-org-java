@@ -27,6 +27,7 @@ import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.MedicalEntity;
 import org.schema.model.MedicalTest;
 
@@ -87,6 +88,7 @@ public class MedicalTestImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
         this.affectedBy = affectedBy;
     }
 
+    @JsonLdFieldTypes({ Text.class, MedicalEnumeration.class })
     private Object normalRange;
 
     /**
@@ -169,6 +171,7 @@ public class MedicalTestImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
         this.usesDevice = usesDevice;
     }
 
+    @JsonLdFieldTypes({ DrugLegalStatus.class, Text.class, MedicalEnumeration.class })
     private Object legalStatus;
 
     /**
@@ -385,6 +388,7 @@ public class MedicalTestImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
         this.relevantSpecialty = relevantSpecialty;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -482,6 +486,7 @@ public class MedicalTestImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -557,6 +562,7 @@ public class MedicalTestImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -657,6 +663,7 @@ public class MedicalTestImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

@@ -17,6 +17,7 @@ import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.Intangible;
 import org.schema.model.BroadcastChannel;
 
@@ -28,6 +29,7 @@ import org.schema.model.BroadcastChannel;
 @JsonLdTypeName("BroadcastChannel")
 public class BroadcastChannelImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements BroadcastChannel {
 
+    @JsonLdFieldTypes({ URL.class, Text.class })
     private Object genre;
 
     /**
@@ -59,6 +61,7 @@ public class BroadcastChannelImpl extends com.weedow.schemaorg.commons.model.Jso
         this.genre = genre;
     }
 
+    @JsonLdFieldTypes({ BroadcastFrequencySpecification.class, Text.class })
     private Object broadcastFrequency;
 
     /**
@@ -181,6 +184,7 @@ public class BroadcastChannelImpl extends com.weedow.schemaorg.commons.model.Jso
         this.broadcastServiceTier = broadcastServiceTier;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -278,6 +282,7 @@ public class BroadcastChannelImpl extends com.weedow.schemaorg.commons.model.Jso
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -353,6 +358,7 @@ public class BroadcastChannelImpl extends com.weedow.schemaorg.commons.model.Jso
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -453,6 +459,7 @@ public class BroadcastChannelImpl extends com.weedow.schemaorg.commons.model.Jso
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

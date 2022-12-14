@@ -36,6 +36,7 @@ import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.MedicalEntity;
 import org.schema.model.MedicalCondition;
 import org.schema.model.MedicalSign;
@@ -193,6 +194,7 @@ public class MedicalSignImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
         this.primaryPrevention = primaryPrevention;
     }
 
+    @JsonLdFieldTypes({ Text.class, EventStatusType.class, MedicalStudyStatus.class })
     private Object status;
 
     /**
@@ -357,6 +359,7 @@ public class MedicalSignImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
         this.secondaryPrevention = secondaryPrevention;
     }
 
+    @JsonLdFieldTypes({ AnatomicalStructure.class, AnatomicalSystem.class, SuperficialAnatomy.class })
     private Object associatedAnatomy;
 
     /**
@@ -521,6 +524,7 @@ public class MedicalSignImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
         this.expectedPrognosis = expectedPrognosis;
     }
 
+    @JsonLdFieldTypes({ DrugLegalStatus.class, Text.class, MedicalEnumeration.class })
     private Object legalStatus;
 
     /**
@@ -737,6 +741,7 @@ public class MedicalSignImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
         this.relevantSpecialty = relevantSpecialty;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -834,6 +839,7 @@ public class MedicalSignImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -909,6 +915,7 @@ public class MedicalSignImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -1009,6 +1016,7 @@ public class MedicalSignImpl extends com.weedow.schemaorg.commons.model.JsonLdNo
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

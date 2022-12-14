@@ -27,6 +27,7 @@ import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.MedicalProcedure;
 
 /**
@@ -62,6 +63,7 @@ public class MedicalProcedureImpl extends com.weedow.schemaorg.commons.model.Jso
         this.procedureType = procedureType;
     }
 
+    @JsonLdFieldTypes({ MedicalEntity.class, Text.class })
     private Object preparation;
 
     /**
@@ -120,6 +122,7 @@ public class MedicalProcedureImpl extends com.weedow.schemaorg.commons.model.Jso
         this.bodyLocation = bodyLocation;
     }
 
+    @JsonLdFieldTypes({ Text.class, EventStatusType.class, MedicalStudyStatus.class })
     private Object status;
 
     /**
@@ -212,6 +215,7 @@ public class MedicalProcedureImpl extends com.weedow.schemaorg.commons.model.Jso
         this.followup = followup;
     }
 
+    @JsonLdFieldTypes({ DrugLegalStatus.class, Text.class, MedicalEnumeration.class })
     private Object legalStatus;
 
     /**
@@ -428,6 +432,7 @@ public class MedicalProcedureImpl extends com.weedow.schemaorg.commons.model.Jso
         this.relevantSpecialty = relevantSpecialty;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -525,6 +530,7 @@ public class MedicalProcedureImpl extends com.weedow.schemaorg.commons.model.Jso
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -600,6 +606,7 @@ public class MedicalProcedureImpl extends com.weedow.schemaorg.commons.model.Jso
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -700,6 +707,7 @@ public class MedicalProcedureImpl extends com.weedow.schemaorg.commons.model.Jso
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

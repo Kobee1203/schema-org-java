@@ -49,6 +49,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.DefinedTermSet;
 
 /**
@@ -87,6 +88,7 @@ public class DefinedTermSetImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.hasDefinedTerm = hasDefinedTerm;
     }
 
+    @JsonLdFieldTypes({ DefinedTerm.class, Text.class })
     private Object teaches;
 
     /**
@@ -124,6 +126,7 @@ public class DefinedTermSetImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.teaches = teaches;
     }
 
+    @JsonLdFieldTypes({ URL.class, DefinedTerm.class, Text.class })
     private Object educationalLevel;
 
     /**
@@ -198,6 +201,7 @@ public class DefinedTermSetImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.abstract_ = abstract_;
     }
 
+    @JsonLdFieldTypes({ Text.class, DefinedTerm.class })
     private Object creativeWorkStatus;
 
     /**
@@ -283,6 +287,7 @@ public class DefinedTermSetImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.contentReferenceTime = contentReferenceTime;
     }
 
+    @JsonLdFieldTypes({ Text.class, URL.class, Product.class })
     private Object material;
 
     /**
@@ -345,6 +350,7 @@ public class DefinedTermSetImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.review = review;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class })
     private Object fileFormat;
 
     /**
@@ -398,6 +404,7 @@ public class DefinedTermSetImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.text = text;
     }
 
+    @JsonLdFieldTypes({ Person.class, Organization.class })
     private Object translator;
 
     /**
@@ -451,6 +458,7 @@ public class DefinedTermSetImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.award = award;
     }
 
+    @JsonLdFieldTypes({ Text.class, DefinedTerm.class })
     private Object assesses;
 
     /**
@@ -514,6 +522,7 @@ public class DefinedTermSetImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.copyrightNotice = copyrightNotice;
     }
 
+    @JsonLdFieldTypes({ Text.class, URL.class })
     private Object schemaVersion;
 
     /**
@@ -578,6 +587,7 @@ public class DefinedTermSetImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.countryOfOrigin = countryOfOrigin;
     }
 
+    @JsonLdFieldTypes({ DefinedTerm.class, Text.class })
     private Object pattern;
 
     /**
@@ -665,6 +675,7 @@ public class DefinedTermSetImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.funding = funding;
     }
 
+    @JsonLdFieldTypes({ DefinedTerm.class, Text.class })
     private Object educationalUse;
 
     /**
@@ -696,6 +707,7 @@ public class DefinedTermSetImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.educationalUse = educationalUse;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class })
     private Object genre;
 
     /**
@@ -727,6 +739,7 @@ public class DefinedTermSetImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.genre = genre;
     }
 
+    @JsonLdFieldTypes({ DefinedTerm.class, Text.class, URL.class })
     private Object keywords;
 
     /**
@@ -767,6 +780,7 @@ public class DefinedTermSetImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.keywords = keywords;
     }
 
+    @JsonLdFieldTypes({ Integer.class, Text.class })
     private Object position;
 
     /**
@@ -864,6 +878,7 @@ public class DefinedTermSetImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.audience = audience;
     }
 
+    @JsonLdFieldTypes({ Offer.class, Demand.class })
     private Object offers;
 
     /**
@@ -945,6 +960,7 @@ public class DefinedTermSetImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.associatedMedia = associatedMedia;
     }
 
+    @JsonLdFieldTypes({ QuantitativeValue.class, Text.class })
     private Object materialExtent;
 
     /**
@@ -1004,6 +1020,7 @@ public class DefinedTermSetImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.mainEntity = mainEntity;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object copyrightHolder;
 
     /**
@@ -1105,6 +1122,7 @@ public class DefinedTermSetImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.sdDatePublished = sdDatePublished;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object producer;
 
     /**
@@ -1160,6 +1178,7 @@ public class DefinedTermSetImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.spatial = spatial;
     }
 
+    @JsonLdFieldTypes({ Person.class, Organization.class })
     private Object publisher;
 
     /**
@@ -1235,6 +1254,7 @@ public class DefinedTermSetImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.character = character;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object funder;
 
     /**
@@ -1290,6 +1310,7 @@ public class DefinedTermSetImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.exampleOfWork = exampleOfWork;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object usageInfo;
 
     /**
@@ -1333,6 +1354,7 @@ public class DefinedTermSetImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.usageInfo = usageInfo;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object provider;
 
     /**
@@ -1373,6 +1395,7 @@ public class DefinedTermSetImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.provider = provider;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object sdPublisher;
 
     /**
@@ -1683,6 +1706,7 @@ public class DefinedTermSetImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.copyrightYear = copyrightYear;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class, Product.class })
     private Object isBasedOn;
 
     /**
@@ -1747,6 +1771,7 @@ public class DefinedTermSetImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.workExample = workExample;
     }
 
+    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
     private Object publishingPrinciples;
 
     /**
@@ -1828,6 +1853,7 @@ public class DefinedTermSetImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.releasedEvent = releasedEvent;
     }
 
+    @JsonLdFieldTypes({ Date.class, DateTime.class })
     private Object dateCreated;
 
     /**
@@ -1953,6 +1979,7 @@ public class DefinedTermSetImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.recordedAt = recordedAt;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class })
     private Object editEIDR;
 
     /**
@@ -2002,6 +2029,7 @@ public class DefinedTermSetImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.editEIDR = editEIDR;
     }
 
+    @JsonLdFieldTypes({ Person.class, Organization.class })
     private Object author;
 
     /**
@@ -2033,6 +2061,7 @@ public class DefinedTermSetImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.author = author;
     }
 
+    @JsonLdFieldTypes({ DateTime.class, Date.class })
     private Object dateModified;
 
     /**
@@ -2064,6 +2093,7 @@ public class DefinedTermSetImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.dateModified = dateModified;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object sponsor;
 
     /**
@@ -2119,6 +2149,7 @@ public class DefinedTermSetImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.accessibilitySummary = accessibilitySummary;
     }
 
+    @JsonLdFieldTypes({ Text.class, URL.class })
     private Object encodingFormat;
 
     /**
@@ -2162,6 +2193,7 @@ public class DefinedTermSetImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.encodingFormat = encodingFormat;
     }
 
+    @JsonLdFieldTypes({ Person.class, Organization.class })
     private Object maintainer;
 
     /**
@@ -2228,6 +2260,7 @@ public class DefinedTermSetImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.educationalAlignment = educationalAlignment;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object acquireLicensePage;
 
     /**
@@ -2287,6 +2320,7 @@ public class DefinedTermSetImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.isAccessibleForFree = isAccessibleForFree;
     }
 
+    @JsonLdFieldTypes({ Date.class, DateTime.class })
     private Object datePublished;
 
     /**
@@ -2344,6 +2378,7 @@ public class DefinedTermSetImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.spatialCoverage = spatialCoverage;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object sdLicense;
 
     /**
@@ -2407,6 +2442,7 @@ public class DefinedTermSetImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.conditionsOfAccess = conditionsOfAccess;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, CorrectionComment.class })
     private Object correction;
 
     /**
@@ -2459,6 +2495,7 @@ public class DefinedTermSetImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.correction = correction;
     }
 
+    @JsonLdFieldTypes({ Text.class, Rating.class })
     private Object contentRating;
 
     /**
@@ -2490,6 +2527,7 @@ public class DefinedTermSetImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.contentRating = contentRating;
     }
 
+    @JsonLdFieldTypes({ QuantitativeValue.class, DefinedTerm.class, Text.class, SizeSpecification.class })
     private Object size;
 
     /**
@@ -2549,6 +2587,7 @@ public class DefinedTermSetImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.size = size;
     }
 
+    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
     private Object isPartOf;
 
     /**
@@ -2580,6 +2619,7 @@ public class DefinedTermSetImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.isPartOf = isPartOf;
     }
 
+    @JsonLdFieldTypes({ DateTime.class, Text.class })
     private Object temporal;
 
     /**
@@ -2636,6 +2676,7 @@ public class DefinedTermSetImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.thumbnailUrl = thumbnailUrl;
     }
 
+    @JsonLdFieldTypes({ Text.class, Language.class })
     private Object inLanguage;
 
     /**
@@ -2670,6 +2711,7 @@ public class DefinedTermSetImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.inLanguage = inLanguage;
     }
 
+    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
     private Object license;
 
     /**
@@ -2701,6 +2743,7 @@ public class DefinedTermSetImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.license = license;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object creator;
 
     /**
@@ -2868,6 +2911,7 @@ public class DefinedTermSetImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.publisherImprint = publisherImprint;
     }
 
+    @JsonLdFieldTypes({ URL.class, CreativeWork.class, Product.class })
     private Object isBasedOnUrl;
 
     /**
@@ -2978,6 +3022,7 @@ public class DefinedTermSetImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.accessibilityControl = accessibilityControl;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, Text.class })
     private Object citation;
 
     /**
@@ -3009,6 +3054,7 @@ public class DefinedTermSetImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.citation = citation;
     }
 
+    @JsonLdFieldTypes({ Number.class, Text.class })
     private Object version;
 
     /**
@@ -3040,6 +3086,7 @@ public class DefinedTermSetImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.version = version;
     }
 
+    @JsonLdFieldTypes({ WebPage.class, URL.class })
     private Object archivedAt;
 
     /**
@@ -3077,6 +3124,7 @@ public class DefinedTermSetImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.archivedAt = archivedAt;
     }
 
+    @JsonLdFieldTypes({ DefinedTerm.class, Text.class })
     private Object learningResourceType;
 
     /**
@@ -3130,6 +3178,7 @@ public class DefinedTermSetImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.encoding = encoding;
     }
 
+    @JsonLdFieldTypes({ AudioObject.class, MusicRecording.class, Clip.class })
     private Object audio;
 
     /**
@@ -3244,6 +3293,7 @@ public class DefinedTermSetImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.hasPart = hasPart;
     }
 
+    @JsonLdFieldTypes({ URL.class, DateTime.class, Text.class })
     private Object temporalCoverage;
 
     /**
@@ -3300,6 +3350,7 @@ public class DefinedTermSetImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.temporalCoverage = temporalCoverage;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object contributor;
 
     /**
@@ -3331,6 +3382,7 @@ public class DefinedTermSetImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.contributor = contributor;
     }
 
+    @JsonLdFieldTypes({ Clip.class, VideoObject.class })
     private Object video;
 
     /**
@@ -3362,6 +3414,7 @@ public class DefinedTermSetImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.video = video;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -3459,6 +3512,7 @@ public class DefinedTermSetImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -3534,6 +3588,7 @@ public class DefinedTermSetImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -3634,6 +3689,7 @@ public class DefinedTermSetImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

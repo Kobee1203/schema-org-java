@@ -22,6 +22,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.Intangible;
 
 /**
@@ -34,6 +35,7 @@ import org.schema.model.Intangible;
 @JsonLdTypeName("PropertyValue")
 public class PropertyValueImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PropertyValue {
 
+    @JsonLdFieldTypes({ Enumeration.class, DefinedTerm.class, Text.class, MeasurementTypeEnumeration.class, QualitativeValue.class, StructuredValue.class, PropertyValue.class, QuantitativeValue.class })
     private Object valueReference;
 
     /**
@@ -128,6 +130,7 @@ public class PropertyValueImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.valueReference = valueReference;
     }
 
+    @JsonLdFieldTypes({ Text.class, URL.class })
     private Object propertyID;
 
     /**
@@ -216,6 +219,7 @@ public class PropertyValueImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.unitText = unitText;
     }
 
+    @JsonLdFieldTypes({ Text.class, URL.class })
     private Object measurementTechnique;
 
     /**
@@ -301,6 +305,7 @@ public class PropertyValueImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.minValue = minValue;
     }
 
+    @JsonLdFieldTypes({ Text.class, Number.class, StructuredValue.class, Boolean.class })
     private Object value;
 
     /**
@@ -355,6 +360,7 @@ public class PropertyValueImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.value = value;
     }
 
+    @JsonLdFieldTypes({ Text.class, URL.class })
     private Object unitCode;
 
     /**
@@ -389,6 +395,7 @@ public class PropertyValueImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.unitCode = unitCode;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -486,6 +493,7 @@ public class PropertyValueImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -561,6 +569,7 @@ public class PropertyValueImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -661,6 +670,7 @@ public class PropertyValueImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

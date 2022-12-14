@@ -17,6 +17,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.Intangible;
 import org.schema.model.ItemList;
 import org.schema.model.BreadcrumbList;
@@ -52,6 +53,7 @@ public class BreadcrumbListImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.numberOfItems = numberOfItems;
     }
 
+    @JsonLdFieldTypes({ Thing.class, ListItem.class, Text.class })
     private Object itemListElement;
 
     /**
@@ -92,6 +94,7 @@ public class BreadcrumbListImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.itemListElement = itemListElement;
     }
 
+    @JsonLdFieldTypes({ Text.class, ItemListOrderType.class })
     private Object itemListOrder;
 
     /**
@@ -123,6 +126,7 @@ public class BreadcrumbListImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.itemListOrder = itemListOrder;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -220,6 +224,7 @@ public class BreadcrumbListImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -295,6 +300,7 @@ public class BreadcrumbListImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -395,6 +401,7 @@ public class BreadcrumbListImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

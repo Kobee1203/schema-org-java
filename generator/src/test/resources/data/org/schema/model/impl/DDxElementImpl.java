@@ -25,6 +25,7 @@ import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.MedicalEntity;
 import org.schema.model.MedicalIntangible;
 import org.schema.model.DDxElement;
@@ -86,6 +87,7 @@ public class DDxElementImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.diagnosis = diagnosis;
     }
 
+    @JsonLdFieldTypes({ DrugLegalStatus.class, Text.class, MedicalEnumeration.class })
     private Object legalStatus;
 
     /**
@@ -302,6 +304,7 @@ public class DDxElementImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.relevantSpecialty = relevantSpecialty;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -399,6 +402,7 @@ public class DDxElementImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -474,6 +478,7 @@ public class DDxElementImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -574,6 +579,7 @@ public class DDxElementImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

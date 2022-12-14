@@ -50,6 +50,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 
 /**
  * A HyperToEntry is an item within a [[HyperToc]], which represents a hypertext table of contents for complex media objects, such as [[VideoObject]], [[AudioObject]]. The media object itself is indicated using [[associatedMedia]]. Each section of interest within that content can be described with a [[HyperTocEntry]], with associated [[startOffset]] and [[endOffset]]. When several entries are all from the same file, [[associatedMedia]] is used on the overarching [[HyperTocEntry]]; if the content has been split into multiple files, they can be referenced using [[associatedMedia]] on each [[HyperTocEntry]].
@@ -135,6 +136,7 @@ public class HyperTocEntryImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.utterances = utterances;
     }
 
+    @JsonLdFieldTypes({ DefinedTerm.class, Text.class })
     private Object teaches;
 
     /**
@@ -172,6 +174,7 @@ public class HyperTocEntryImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.teaches = teaches;
     }
 
+    @JsonLdFieldTypes({ URL.class, DefinedTerm.class, Text.class })
     private Object educationalLevel;
 
     /**
@@ -246,6 +249,7 @@ public class HyperTocEntryImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.abstract_ = abstract_;
     }
 
+    @JsonLdFieldTypes({ Text.class, DefinedTerm.class })
     private Object creativeWorkStatus;
 
     /**
@@ -331,6 +335,7 @@ public class HyperTocEntryImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.contentReferenceTime = contentReferenceTime;
     }
 
+    @JsonLdFieldTypes({ Text.class, URL.class, Product.class })
     private Object material;
 
     /**
@@ -393,6 +398,7 @@ public class HyperTocEntryImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.review = review;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class })
     private Object fileFormat;
 
     /**
@@ -446,6 +452,7 @@ public class HyperTocEntryImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.text = text;
     }
 
+    @JsonLdFieldTypes({ Person.class, Organization.class })
     private Object translator;
 
     /**
@@ -499,6 +506,7 @@ public class HyperTocEntryImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.award = award;
     }
 
+    @JsonLdFieldTypes({ Text.class, DefinedTerm.class })
     private Object assesses;
 
     /**
@@ -562,6 +570,7 @@ public class HyperTocEntryImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.copyrightNotice = copyrightNotice;
     }
 
+    @JsonLdFieldTypes({ Text.class, URL.class })
     private Object schemaVersion;
 
     /**
@@ -626,6 +635,7 @@ public class HyperTocEntryImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.countryOfOrigin = countryOfOrigin;
     }
 
+    @JsonLdFieldTypes({ DefinedTerm.class, Text.class })
     private Object pattern;
 
     /**
@@ -713,6 +723,7 @@ public class HyperTocEntryImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.funding = funding;
     }
 
+    @JsonLdFieldTypes({ DefinedTerm.class, Text.class })
     private Object educationalUse;
 
     /**
@@ -744,6 +755,7 @@ public class HyperTocEntryImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.educationalUse = educationalUse;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class })
     private Object genre;
 
     /**
@@ -775,6 +787,7 @@ public class HyperTocEntryImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.genre = genre;
     }
 
+    @JsonLdFieldTypes({ DefinedTerm.class, Text.class, URL.class })
     private Object keywords;
 
     /**
@@ -815,6 +828,7 @@ public class HyperTocEntryImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.keywords = keywords;
     }
 
+    @JsonLdFieldTypes({ Integer.class, Text.class })
     private Object position;
 
     /**
@@ -912,6 +926,7 @@ public class HyperTocEntryImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.audience = audience;
     }
 
+    @JsonLdFieldTypes({ Offer.class, Demand.class })
     private Object offers;
 
     /**
@@ -971,6 +986,7 @@ public class HyperTocEntryImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.locationCreated = locationCreated;
     }
 
+    @JsonLdFieldTypes({ QuantitativeValue.class, Text.class })
     private Object materialExtent;
 
     /**
@@ -1030,6 +1046,7 @@ public class HyperTocEntryImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.mainEntity = mainEntity;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object copyrightHolder;
 
     /**
@@ -1131,6 +1148,7 @@ public class HyperTocEntryImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.sdDatePublished = sdDatePublished;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object producer;
 
     /**
@@ -1186,6 +1204,7 @@ public class HyperTocEntryImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.spatial = spatial;
     }
 
+    @JsonLdFieldTypes({ Person.class, Organization.class })
     private Object publisher;
 
     /**
@@ -1261,6 +1280,7 @@ public class HyperTocEntryImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.character = character;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object funder;
 
     /**
@@ -1316,6 +1336,7 @@ public class HyperTocEntryImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.exampleOfWork = exampleOfWork;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object usageInfo;
 
     /**
@@ -1359,6 +1380,7 @@ public class HyperTocEntryImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.usageInfo = usageInfo;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object provider;
 
     /**
@@ -1399,6 +1421,7 @@ public class HyperTocEntryImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.provider = provider;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object sdPublisher;
 
     /**
@@ -1709,6 +1732,7 @@ public class HyperTocEntryImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.copyrightYear = copyrightYear;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class, Product.class })
     private Object isBasedOn;
 
     /**
@@ -1773,6 +1797,7 @@ public class HyperTocEntryImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.workExample = workExample;
     }
 
+    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
     private Object publishingPrinciples;
 
     /**
@@ -1854,6 +1879,7 @@ public class HyperTocEntryImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.releasedEvent = releasedEvent;
     }
 
+    @JsonLdFieldTypes({ Date.class, DateTime.class })
     private Object dateCreated;
 
     /**
@@ -1979,6 +2005,7 @@ public class HyperTocEntryImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.recordedAt = recordedAt;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class })
     private Object editEIDR;
 
     /**
@@ -2028,6 +2055,7 @@ public class HyperTocEntryImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.editEIDR = editEIDR;
     }
 
+    @JsonLdFieldTypes({ Person.class, Organization.class })
     private Object author;
 
     /**
@@ -2059,6 +2087,7 @@ public class HyperTocEntryImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.author = author;
     }
 
+    @JsonLdFieldTypes({ DateTime.class, Date.class })
     private Object dateModified;
 
     /**
@@ -2090,6 +2119,7 @@ public class HyperTocEntryImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.dateModified = dateModified;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object sponsor;
 
     /**
@@ -2145,6 +2175,7 @@ public class HyperTocEntryImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.accessibilitySummary = accessibilitySummary;
     }
 
+    @JsonLdFieldTypes({ Text.class, URL.class })
     private Object encodingFormat;
 
     /**
@@ -2188,6 +2219,7 @@ public class HyperTocEntryImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.encodingFormat = encodingFormat;
     }
 
+    @JsonLdFieldTypes({ Person.class, Organization.class })
     private Object maintainer;
 
     /**
@@ -2254,6 +2286,7 @@ public class HyperTocEntryImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.educationalAlignment = educationalAlignment;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object acquireLicensePage;
 
     /**
@@ -2313,6 +2346,7 @@ public class HyperTocEntryImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.isAccessibleForFree = isAccessibleForFree;
     }
 
+    @JsonLdFieldTypes({ Date.class, DateTime.class })
     private Object datePublished;
 
     /**
@@ -2370,6 +2404,7 @@ public class HyperTocEntryImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.spatialCoverage = spatialCoverage;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object sdLicense;
 
     /**
@@ -2433,6 +2468,7 @@ public class HyperTocEntryImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.conditionsOfAccess = conditionsOfAccess;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, CorrectionComment.class })
     private Object correction;
 
     /**
@@ -2485,6 +2521,7 @@ public class HyperTocEntryImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.correction = correction;
     }
 
+    @JsonLdFieldTypes({ Text.class, Rating.class })
     private Object contentRating;
 
     /**
@@ -2516,6 +2553,7 @@ public class HyperTocEntryImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.contentRating = contentRating;
     }
 
+    @JsonLdFieldTypes({ QuantitativeValue.class, DefinedTerm.class, Text.class, SizeSpecification.class })
     private Object size;
 
     /**
@@ -2575,6 +2613,7 @@ public class HyperTocEntryImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.size = size;
     }
 
+    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
     private Object isPartOf;
 
     /**
@@ -2606,6 +2645,7 @@ public class HyperTocEntryImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.isPartOf = isPartOf;
     }
 
+    @JsonLdFieldTypes({ DateTime.class, Text.class })
     private Object temporal;
 
     /**
@@ -2662,6 +2702,7 @@ public class HyperTocEntryImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.thumbnailUrl = thumbnailUrl;
     }
 
+    @JsonLdFieldTypes({ Text.class, Language.class })
     private Object inLanguage;
 
     /**
@@ -2696,6 +2737,7 @@ public class HyperTocEntryImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.inLanguage = inLanguage;
     }
 
+    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
     private Object license;
 
     /**
@@ -2727,6 +2769,7 @@ public class HyperTocEntryImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.license = license;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object creator;
 
     /**
@@ -2894,6 +2937,7 @@ public class HyperTocEntryImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.publisherImprint = publisherImprint;
     }
 
+    @JsonLdFieldTypes({ URL.class, CreativeWork.class, Product.class })
     private Object isBasedOnUrl;
 
     /**
@@ -3004,6 +3048,7 @@ public class HyperTocEntryImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.accessibilityControl = accessibilityControl;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, Text.class })
     private Object citation;
 
     /**
@@ -3035,6 +3080,7 @@ public class HyperTocEntryImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.citation = citation;
     }
 
+    @JsonLdFieldTypes({ Number.class, Text.class })
     private Object version;
 
     /**
@@ -3066,6 +3112,7 @@ public class HyperTocEntryImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.version = version;
     }
 
+    @JsonLdFieldTypes({ WebPage.class, URL.class })
     private Object archivedAt;
 
     /**
@@ -3103,6 +3150,7 @@ public class HyperTocEntryImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.archivedAt = archivedAt;
     }
 
+    @JsonLdFieldTypes({ DefinedTerm.class, Text.class })
     private Object learningResourceType;
 
     /**
@@ -3156,6 +3204,7 @@ public class HyperTocEntryImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.encoding = encoding;
     }
 
+    @JsonLdFieldTypes({ AudioObject.class, MusicRecording.class, Clip.class })
     private Object audio;
 
     /**
@@ -3270,6 +3319,7 @@ public class HyperTocEntryImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.hasPart = hasPart;
     }
 
+    @JsonLdFieldTypes({ URL.class, DateTime.class, Text.class })
     private Object temporalCoverage;
 
     /**
@@ -3326,6 +3376,7 @@ public class HyperTocEntryImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.temporalCoverage = temporalCoverage;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object contributor;
 
     /**
@@ -3357,6 +3408,7 @@ public class HyperTocEntryImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.contributor = contributor;
     }
 
+    @JsonLdFieldTypes({ Clip.class, VideoObject.class })
     private Object video;
 
     /**
@@ -3388,6 +3440,7 @@ public class HyperTocEntryImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.video = video;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -3485,6 +3538,7 @@ public class HyperTocEntryImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -3560,6 +3614,7 @@ public class HyperTocEntryImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -3660,6 +3715,7 @@ public class HyperTocEntryImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

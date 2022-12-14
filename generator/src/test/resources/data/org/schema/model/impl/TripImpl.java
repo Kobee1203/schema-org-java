@@ -23,6 +23,7 @@ import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.Intangible;
 
 /**
@@ -34,6 +35,7 @@ import org.schema.model.Intangible;
 @JsonLdTypeName("Trip")
 public class TripImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Trip {
 
+    @JsonLdFieldTypes({ Time.class, DateTime.class })
     private Object arrivalTime;
 
     /**
@@ -65,6 +67,7 @@ public class TripImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
         this.arrivalTime = arrivalTime;
     }
 
+    @JsonLdFieldTypes({ Offer.class, Demand.class })
     private Object offers;
 
     /**
@@ -102,6 +105,7 @@ public class TripImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
         this.offers = offers;
     }
 
+    @JsonLdFieldTypes({ Time.class, DateTime.class })
     private Object departureTime;
 
     /**
@@ -133,6 +137,7 @@ public class TripImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
         this.departureTime = departureTime;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object provider;
 
     /**
@@ -201,6 +206,7 @@ public class TripImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
         this.subTrip = subTrip;
     }
 
+    @JsonLdFieldTypes({ ItemList.class, Place.class })
     private Object itinerary;
 
     /**
@@ -269,6 +275,7 @@ public class TripImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
         this.partOfTrip = partOfTrip;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -366,6 +373,7 @@ public class TripImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -441,6 +449,7 @@ public class TripImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -541,6 +550,7 @@ public class TripImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

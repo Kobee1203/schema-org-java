@@ -42,6 +42,7 @@ import org.schema.model.Event;
 import org.schema.model.Action;
 import org.schema.model.PropertyValue;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.PerformingGroup;
 
 /**
@@ -52,6 +53,7 @@ import org.schema.model.PerformingGroup;
 @JsonLdTypeName("PerformingGroup")
 public class PerformingGroupImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PerformingGroup {
 
+    @JsonLdFieldTypes({ URL.class, AboutPage.class, Text.class, CreativeWork.class })
     private Object ownershipFundingInfo;
 
     /**
@@ -208,6 +210,7 @@ public class PerformingGroupImpl extends com.weedow.schemaorg.commons.model.Json
         this.review = review;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, Thing.class })
     private Object knowsAbout;
 
     /**
@@ -282,6 +285,7 @@ public class PerformingGroupImpl extends com.weedow.schemaorg.commons.model.Json
         this.award = award;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object member;
 
     /**
@@ -433,6 +437,7 @@ public class PerformingGroupImpl extends com.weedow.schemaorg.commons.model.Json
         this.globalLocationNumber = globalLocationNumber;
     }
 
+    @JsonLdFieldTypes({ DefinedTerm.class, Text.class, URL.class })
     private Object keywords;
 
     /**
@@ -561,6 +566,7 @@ public class PerformingGroupImpl extends com.weedow.schemaorg.commons.model.Json
         this.numberOfEmployees = numberOfEmployees;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object funder;
 
     /**
@@ -640,6 +646,7 @@ public class PerformingGroupImpl extends com.weedow.schemaorg.commons.model.Json
         this.legalName = legalName;
     }
 
+    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
     private Object correctionsPolicy;
 
     /**
@@ -726,6 +733,7 @@ public class PerformingGroupImpl extends com.weedow.schemaorg.commons.model.Json
         this.interactionStatistic = interactionStatistic;
     }
 
+    @JsonLdFieldTypes({ PostalAddress.class, Text.class, Place.class, VirtualLocation.class })
     private Object location;
 
     /**
@@ -775,6 +783,7 @@ public class PerformingGroupImpl extends com.weedow.schemaorg.commons.model.Json
         this.location = location;
     }
 
+    @JsonLdFieldTypes({ Text.class, PostalAddress.class })
     private Object address;
 
     /**
@@ -806,6 +815,7 @@ public class PerformingGroupImpl extends com.weedow.schemaorg.commons.model.Json
         this.address = address;
     }
 
+    @JsonLdFieldTypes({ ProgramMembership.class, Organization.class })
     private Object memberOf;
 
     /**
@@ -837,6 +847,7 @@ public class PerformingGroupImpl extends com.weedow.schemaorg.commons.model.Json
         this.memberOf = memberOf;
     }
 
+    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
     private Object publishingPrinciples;
 
     /**
@@ -874,6 +885,7 @@ public class PerformingGroupImpl extends com.weedow.schemaorg.commons.model.Json
         this.publishingPrinciples = publishingPrinciples;
     }
 
+    @JsonLdFieldTypes({ URL.class, Article.class })
     private Object diversityStaffingReport;
 
     /**
@@ -914,6 +926,7 @@ public class PerformingGroupImpl extends com.weedow.schemaorg.commons.model.Json
         this.diversityStaffingReport = diversityStaffingReport;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object diversityPolicy;
 
     /**
@@ -1046,6 +1059,7 @@ public class PerformingGroupImpl extends com.weedow.schemaorg.commons.model.Json
         this.slogan = slogan;
     }
 
+    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
     private Object ethicsPolicy;
 
     /**
@@ -1083,6 +1097,7 @@ public class PerformingGroupImpl extends com.weedow.schemaorg.commons.model.Json
         this.ethicsPolicy = ethicsPolicy;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Brand.class })
     private Object brand;
 
     /**
@@ -1114,6 +1129,7 @@ public class PerformingGroupImpl extends com.weedow.schemaorg.commons.model.Json
         this.brand = brand;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object sponsor;
 
     /**
@@ -1145,6 +1161,7 @@ public class PerformingGroupImpl extends com.weedow.schemaorg.commons.model.Json
         this.sponsor = sponsor;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object logo;
 
     /**
@@ -1179,6 +1196,7 @@ public class PerformingGroupImpl extends com.weedow.schemaorg.commons.model.Json
         this.logo = logo;
     }
 
+    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
     private Object actionableFeedbackPolicy;
 
     /**
@@ -1265,6 +1283,7 @@ public class PerformingGroupImpl extends com.weedow.schemaorg.commons.model.Json
         this.contactPoint = contactPoint;
     }
 
+    @JsonLdFieldTypes({ GeoShape.class, AdministrativeArea.class, Place.class })
     private Object serviceArea;
 
     /**
@@ -1401,6 +1420,7 @@ public class PerformingGroupImpl extends com.weedow.schemaorg.commons.model.Json
         this.founder = founder;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object unnamedSourcesPolicy;
 
     /**
@@ -1557,6 +1577,7 @@ public class PerformingGroupImpl extends com.weedow.schemaorg.commons.model.Json
         this.leiCode = leiCode;
     }
 
+    @JsonLdFieldTypes({ AdministrativeArea.class, GeoShape.class, Text.class, Place.class })
     private Object areaServed;
 
     /**
@@ -1628,6 +1649,7 @@ public class PerformingGroupImpl extends com.weedow.schemaorg.commons.model.Json
         this.foundingDate = foundingDate;
     }
 
+    @JsonLdFieldTypes({ Language.class, Text.class })
     private Object knowsLanguage;
 
     /**
@@ -1738,6 +1760,7 @@ public class PerformingGroupImpl extends com.weedow.schemaorg.commons.model.Json
         this.taxID = taxID;
     }
 
+    @JsonLdFieldTypes({ Product.class, OwnershipInfo.class })
     private Object owns;
 
     /**
@@ -1794,6 +1817,7 @@ public class PerformingGroupImpl extends com.weedow.schemaorg.commons.model.Json
         this.hasOfferCatalog = hasOfferCatalog;
     }
 
+    @JsonLdFieldTypes({ Person.class, Organization.class })
     private Object members;
 
     /**
@@ -1939,6 +1963,7 @@ public class PerformingGroupImpl extends com.weedow.schemaorg.commons.model.Json
         this.event = event;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -2036,6 +2061,7 @@ public class PerformingGroupImpl extends com.weedow.schemaorg.commons.model.Json
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -2111,6 +2137,7 @@ public class PerformingGroupImpl extends com.weedow.schemaorg.commons.model.Json
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -2211,6 +2238,7 @@ public class PerformingGroupImpl extends com.weedow.schemaorg.commons.model.Json
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

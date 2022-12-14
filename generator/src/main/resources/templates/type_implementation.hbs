@@ -12,6 +12,9 @@ import {{this}};
 public class {{this.name}}Impl{{#if this.baseParent}} extends {{this.baseParent.implementationClassName}}{{/if}} implements {{this.name}} {
 {{#each this.allProperties}}
 
+    {{#if this.types.[1]}}
+    @JsonLdFieldTypes({ {{#each this.types}}{{this.name}}.class{{#not @last}}, {{/not}}{{/each}} })
+    {{/if}}
     private {{this.field.fieldType}} {{this.field.fieldName}};
 
 {{#with this.accessor}}

@@ -18,6 +18,7 @@ import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.Intangible;
 import org.schema.model.MerchantReturnPolicySeasonalOverride;
 
@@ -57,6 +58,7 @@ public class MerchantReturnPolicySeasonalOverrideImpl extends com.weedow.schemao
         this.returnPolicyCategory = returnPolicyCategory;
     }
 
+    @JsonLdFieldTypes({ DateTime.class, Date.class })
     private Object startDate;
 
     /**
@@ -91,6 +93,7 @@ public class MerchantReturnPolicySeasonalOverrideImpl extends com.weedow.schemao
         this.startDate = startDate;
     }
 
+    @JsonLdFieldTypes({ Date.class, DateTime.class })
     private Object endDate;
 
     /**
@@ -125,6 +128,7 @@ public class MerchantReturnPolicySeasonalOverrideImpl extends com.weedow.schemao
         this.endDate = endDate;
     }
 
+    @JsonLdFieldTypes({ DateTime.class, Integer.class, Date.class })
     private Object merchantReturnDays;
 
     /**
@@ -173,6 +177,7 @@ public class MerchantReturnPolicySeasonalOverrideImpl extends com.weedow.schemao
         this.merchantReturnDays = merchantReturnDays;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -270,6 +275,7 @@ public class MerchantReturnPolicySeasonalOverrideImpl extends com.weedow.schemao
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -345,6 +351,7 @@ public class MerchantReturnPolicySeasonalOverrideImpl extends com.weedow.schemao
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -445,6 +452,7 @@ public class MerchantReturnPolicySeasonalOverrideImpl extends com.weedow.schemao
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

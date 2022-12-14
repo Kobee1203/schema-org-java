@@ -49,6 +49,7 @@ import org.schema.model.Action;
 import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.Intangible;
 
 /**
@@ -130,6 +131,7 @@ public class OfferImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
         this.review = review;
     }
 
+    @JsonLdFieldTypes({ Trip.class, Event.class, Product.class, AggregateOffer.class, CreativeWork.class, MenuItem.class, Service.class })
     private Object itemOffered;
 
     /**
@@ -206,6 +208,7 @@ public class OfferImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
         this.itemOffered = itemOffered;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PhysicalActivityCategory.class, Thing.class, CategoryCode.class })
     private Object category;
 
     /**
@@ -470,6 +473,7 @@ public class OfferImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
         this.eligibleQuantity = eligibleQuantity;
     }
 
+    @JsonLdFieldTypes({ LoanOrCredit.class, PaymentMethod.class })
     private Object acceptedPaymentMethod;
 
     /**
@@ -528,6 +532,7 @@ public class OfferImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
         this.warranty = warranty;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object seller;
 
     /**
@@ -559,6 +564,7 @@ public class OfferImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
         this.seller = seller;
     }
 
+    @JsonLdFieldTypes({ Place.class, Text.class, GeoShape.class })
     private Object ineligibleRegion;
 
     /**
@@ -611,6 +617,7 @@ public class OfferImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
         this.ineligibleRegion = ineligibleRegion;
     }
 
+    @JsonLdFieldTypes({ QuantitativeValue.class, Duration.class })
     private Object leaseLength;
 
     /**
@@ -670,6 +677,7 @@ public class OfferImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
         this.aggregateRating = aggregateRating;
     }
 
+    @JsonLdFieldTypes({ Person.class, Organization.class })
     private Object offeredBy;
 
     /**
@@ -749,6 +757,7 @@ public class OfferImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
         this.availableDeliveryMethod = availableDeliveryMethod;
     }
 
+    @JsonLdFieldTypes({ DateTime.class, Date.class })
     private Object validFrom;
 
     /**
@@ -783,6 +792,7 @@ public class OfferImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
         this.validFrom = validFrom;
     }
 
+    @JsonLdFieldTypes({ Date.class, DateTime.class, Time.class })
     private Object availabilityEnds;
 
     /**
@@ -831,6 +841,7 @@ public class OfferImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
         this.availabilityEnds = availabilityEnds;
     }
 
+    @JsonLdFieldTypes({ GeoShape.class, Text.class, Place.class })
     private Object eligibleRegion;
 
     /**
@@ -1125,6 +1136,7 @@ public class OfferImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
         this.eligibleTransactionVolume = eligibleTransactionVolume;
     }
 
+    @JsonLdFieldTypes({ AdministrativeArea.class, GeoShape.class, Text.class, Place.class })
     private Object areaServed;
 
     /**
@@ -1288,6 +1300,7 @@ public class OfferImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
         this.isFamilyFriendly = isFamilyFriendly;
     }
 
+    @JsonLdFieldTypes({ DateTime.class, Date.class })
     private Object validThrough;
 
     /**
@@ -1346,6 +1359,7 @@ public class OfferImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
         this.priceSpecification = priceSpecification;
     }
 
+    @JsonLdFieldTypes({ Number.class, Text.class })
     private Object price;
 
     /**
@@ -1380,6 +1394,7 @@ public class OfferImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
         this.price = price;
     }
 
+    @JsonLdFieldTypes({ Time.class, DateTime.class, Date.class })
     private Object availabilityStarts;
 
     /**
@@ -1500,6 +1515,7 @@ public class OfferImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
         this.serialNumber = serialNumber;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -1597,6 +1613,7 @@ public class OfferImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -1672,6 +1689,7 @@ public class OfferImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -1772,6 +1790,7 @@ public class OfferImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

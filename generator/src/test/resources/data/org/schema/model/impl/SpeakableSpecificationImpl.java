@@ -16,6 +16,7 @@ import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.Intangible;
 import org.schema.model.SpeakableSpecification;
 
@@ -76,6 +77,7 @@ public class SpeakableSpecificationImpl extends com.weedow.schemaorg.commons.mod
         this.xpath = xpath;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -173,6 +175,7 @@ public class SpeakableSpecificationImpl extends com.weedow.schemaorg.commons.mod
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -248,6 +251,7 @@ public class SpeakableSpecificationImpl extends com.weedow.schemaorg.commons.mod
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -348,6 +352,7 @@ public class SpeakableSpecificationImpl extends com.weedow.schemaorg.commons.mod
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

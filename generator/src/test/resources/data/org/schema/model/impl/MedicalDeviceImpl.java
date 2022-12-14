@@ -25,6 +25,7 @@ import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.MedicalDevice;
 
 /**
@@ -156,6 +157,7 @@ public class MedicalDeviceImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.procedure = procedure;
     }
 
+    @JsonLdFieldTypes({ Text.class, MedicalContraindication.class })
     private Object contraindication;
 
     /**
@@ -190,6 +192,7 @@ public class MedicalDeviceImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.contraindication = contraindication;
     }
 
+    @JsonLdFieldTypes({ DrugLegalStatus.class, Text.class, MedicalEnumeration.class })
     private Object legalStatus;
 
     /**
@@ -406,6 +409,7 @@ public class MedicalDeviceImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.relevantSpecialty = relevantSpecialty;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -503,6 +507,7 @@ public class MedicalDeviceImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -578,6 +583,7 @@ public class MedicalDeviceImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -678,6 +684,7 @@ public class MedicalDeviceImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

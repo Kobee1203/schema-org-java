@@ -39,6 +39,7 @@ import org.schema.model.Action;
 import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.Intangible;
 import org.schema.model.FinancialProduct;
 import org.schema.model.LoanOrCredit;
@@ -80,6 +81,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.renegotiableLoan = renegotiableLoan;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class })
     private Object loanType;
 
     /**
@@ -200,6 +202,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.gracePeriod = gracePeriod;
     }
 
+    @JsonLdFieldTypes({ Text.class, Thing.class })
     private Object requiredCollateral;
 
     /**
@@ -258,6 +261,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.currency = currency;
     }
 
+    @JsonLdFieldTypes({ Number.class, MonetaryAmount.class })
     private Object amount;
 
     /**
@@ -323,6 +327,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.loanRepaymentForm = loanRepaymentForm;
     }
 
+    @JsonLdFieldTypes({ Number.class, QuantitativeValue.class })
     private Object annualPercentageRate;
 
     /**
@@ -357,6 +362,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.annualPercentageRate = annualPercentageRate;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class })
     private Object feesAndCommissionsSpecification;
 
     /**
@@ -391,6 +397,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.feesAndCommissionsSpecification = feesAndCommissionsSpecification;
     }
 
+    @JsonLdFieldTypes({ Number.class, QuantitativeValue.class })
     private Object interestRate;
 
     /**
@@ -491,6 +498,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.serviceAudience = serviceAudience;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PhysicalActivityCategory.class, Thing.class, CategoryCode.class })
     private Object category;
 
     /**
@@ -605,6 +613,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.audience = audience;
     }
 
+    @JsonLdFieldTypes({ Offer.class, Demand.class })
     private Object offers;
 
     /**
@@ -664,6 +673,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.serviceOutput = serviceOutput;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object provider;
 
     /**
@@ -704,6 +714,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.provider = provider;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class })
     private Object termsOfService;
 
     /**
@@ -763,6 +774,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.providerMobility = providerMobility;
     }
 
+    @JsonLdFieldTypes({ Person.class, Organization.class })
     private Object broker;
 
     /**
@@ -816,6 +828,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.aggregateRating = aggregateRating;
     }
 
+    @JsonLdFieldTypes({ Service.class, Product.class })
     private Object isSimilarTo;
 
     /**
@@ -894,6 +907,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.slogan = slogan;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Brand.class })
     private Object brand;
 
     /**
@@ -925,6 +939,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.brand = brand;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object logo;
 
     /**
@@ -981,6 +996,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.produces = produces;
     }
 
+    @JsonLdFieldTypes({ GeoShape.class, AdministrativeArea.class, Place.class })
     private Object serviceArea;
 
     /**
@@ -1021,6 +1037,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.serviceArea = serviceArea;
     }
 
+    @JsonLdFieldTypes({ GovernmentBenefitsType.class, Text.class })
     private Object serviceType;
 
     /**
@@ -1052,6 +1069,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.serviceType = serviceType;
     }
 
+    @JsonLdFieldTypes({ AdministrativeArea.class, GeoShape.class, Text.class, Place.class })
     private Object areaServed;
 
     /**
@@ -1101,6 +1119,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.areaServed = areaServed;
     }
 
+    @JsonLdFieldTypes({ Service.class, Product.class })
     private Object isRelatedTo;
 
     /**
@@ -1157,6 +1176,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.hasOfferCatalog = hasOfferCatalog;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -1254,6 +1274,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -1329,6 +1350,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -1429,6 +1451,7 @@ public class LoanOrCreditImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**

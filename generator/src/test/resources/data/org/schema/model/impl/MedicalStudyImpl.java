@@ -29,6 +29,7 @@ import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 
 /**
  * A medical study is an umbrella type covering all kinds of research studies relating to human medicine or health, including observational studies and interventional trials and registries, randomized, controlled or not. When the specific type of study is known, use one of the extensions of this type, such as MedicalTrial or MedicalObservationalStudy. Also, note that this type should be used to mark up data that describes the study itself; to tag an article that publishes the results of a study, use MedicalScholarlyArticle. Note: use the code property of MedicalEntity to store study IDs, e.g. clinicaltrials.gov ID.
@@ -63,6 +64,7 @@ public class MedicalStudyImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.healthCondition = healthCondition;
     }
 
+    @JsonLdFieldTypes({ Text.class, EventStatusType.class, MedicalStudyStatus.class })
     private Object status;
 
     /**
@@ -155,6 +157,7 @@ public class MedicalStudyImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.studyLocation = studyLocation;
     }
 
+    @JsonLdFieldTypes({ Organization.class, Person.class })
     private Object sponsor;
 
     /**
@@ -186,6 +189,7 @@ public class MedicalStudyImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.sponsor = sponsor;
     }
 
+    @JsonLdFieldTypes({ DrugLegalStatus.class, Text.class, MedicalEnumeration.class })
     private Object legalStatus;
 
     /**
@@ -402,6 +406,7 @@ public class MedicalStudyImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.relevantSpecialty = relevantSpecialty;
     }
 
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private Object mainEntityOfPage;
 
     /**
@@ -499,6 +504,7 @@ public class MedicalStudyImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.potentialAction = potentialAction;
     }
 
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
     private Object image;
 
     /**
@@ -574,6 +580,7 @@ public class MedicalStudyImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.description = description;
     }
 
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private Object subjectOf;
 
     /**
@@ -674,6 +681,7 @@ public class MedicalStudyImpl extends com.weedow.schemaorg.commons.model.JsonLdN
         this.sameAs = sameAs;
     }
 
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
     private Object identifier;
 
     /**
