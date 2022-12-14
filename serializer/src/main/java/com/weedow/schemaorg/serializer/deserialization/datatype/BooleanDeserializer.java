@@ -7,6 +7,7 @@ import com.fasterxml.jackson.databind.JsonDeserializer;
 
 import java.io.IOException;
 
+@SuppressWarnings("java:S110")
 public class BooleanDeserializer extends AbstractDataTypeDeserializer {
 
     public BooleanDeserializer(JavaType delegateType, JsonDeserializer<?> defaultDeserializer) {
@@ -15,6 +16,6 @@ public class BooleanDeserializer extends AbstractDataTypeDeserializer {
 
     @Override
     protected Object getValue(JsonParser p, DeserializationContext ctxt) throws IOException {
-        return p.getBooleanValue(); // p.getValueAsBoolean();
+        return p.getBooleanValue();
     }
 }

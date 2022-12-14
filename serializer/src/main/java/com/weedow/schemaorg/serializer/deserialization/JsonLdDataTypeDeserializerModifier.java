@@ -7,32 +7,18 @@ import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.annotation.NoClass;
 import com.fasterxml.jackson.databind.deser.BeanDeserializerModifier;
 import com.weedow.schemaorg.commons.model.JsonLdDataType;
-import com.weedow.schemaorg.serializer.deserialization.datatype.*;
+import com.weedow.schemaorg.serializer.deserialization.datatype.EnumDeserializer;
+import com.weedow.schemaorg.serializer.deserialization.spec.DataTypeSpecificationService;
+import com.weedow.schemaorg.serializer.utils.SerializerUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.BiFunction;
 
 public class JsonLdDataTypeDeserializerModifier extends BeanDeserializerModifier {
 
     private static final Logger LOG = LoggerFactory.getLogger(JsonLdDataTypeDeserializerModifier.class);
-
-    private static final Map<String, BiFunction<JavaType, JsonDeserializer<?>, JsonDeserializer<JsonLdDataType<?>>>> JSON_LD_DATATYPE_DESERIALIZERS = Map.ofEntries(
-            Map.entry("Boolean", BooleanDeserializer::new),
-            Map.entry("Text", TextDeserializer::new),
-            Map.entry("URL", URLDeserializer::new),
-            Map.entry("CssSelectorType", CssSelectorTypeDeserializer::new),
-            Map.entry("PronounceableText", PronounceableTextDeserializer::new),
-            Map.entry("XPathType", XPathTypeDeserializer::new),
-            Map.entry("Number", NumberDeserializer::new),
-            Map.entry("Float", FloatDeserializer::new),
-            Map.entry("Integer", IntegerDeserializer::new),
-            Map.entry("Date", DateDeserializer::new),
-            Map.entry("Time", TimeDeserializer::new),
-            Map.entry("DateTime", DateTimeDeserializer::new)
-    );
 
     private final Map<Class<?>, JsonDeserializer<?>> cache = new HashMap<>();
 
@@ -44,7 +30,7 @@ public class JsonLdDataTypeDeserializerModifier extends BeanDeserializerModifier
         final Class<?> rawClass = type.getRawClass();
         if (JsonLdDataType.class.isAssignableFrom(rawClass)) {
             return cache.computeIfAbsent(rawClass, clazz -> {
-                JsonDeserializer<?> des = JSON_LD_DATATYPE_DESERIALIZERS.get(rawClass.getSimpleName()).apply(type, deserializer);
+                JsonDeserializer<?> des = DataTypeSpecificationService.getInstance().getDeserializer(rawClass).apply(type, deserializer);
                 if (des == null) {
                     LOG.warn("Could not find the Json-LD DataType Deserializer for class {}", rawClass);
                     des = deserializer;
@@ -52,7 +38,7 @@ public class JsonLdDataTypeDeserializerModifier extends BeanDeserializerModifier
                 return des;
             });
         } else if (getEnumerationClass(config).isAssignableFrom(rawClass)) {
-            Class<?> enumClass = DeserializationUtils.findClass(rawClass.getSimpleName(), config.getTypeFactory());
+            Class<?> enumClass = SerializerUtils.findClass(rawClass.getSimpleName(), config.getTypeFactory());
             if (enumClass != null) {
                 return cache.computeIfAbsent(rawClass, clazz -> new EnumDeserializer(enumClass, type, deserializer));
             } else {
@@ -64,7 +50,7 @@ public class JsonLdDataTypeDeserializerModifier extends BeanDeserializerModifier
 
     private Class<?> getEnumerationClass(DeserializationConfig config) {
         if (this.enumerationClass == null) {
-            this.enumerationClass = DeserializationUtils.findClass("interface.Enumeration", config.getTypeFactory());
+            this.enumerationClass = SerializerUtils.findClass("interface.Enumeration", config.getTypeFactory());
             if (this.enumerationClass == null) {
                 LOG.debug("Enumeration interface is not found: it is assumed that there is no schema.org Enumerations available.");
                 this.enumerationClass = NoClass.class;

@@ -7,6 +7,7 @@ import com.fasterxml.jackson.databind.JsonDeserializer;
 
 import java.io.IOException;
 
+@SuppressWarnings("java:S110")
 public class CssSelectorTypeDeserializer extends AbstractDataTypeDeserializer {
 
     public CssSelectorTypeDeserializer(JavaType delegateType, JsonDeserializer<?> defaultDeserializer) {

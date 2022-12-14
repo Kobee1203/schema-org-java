@@ -8,7 +8,9 @@ import com.weedow.schemaorg.commons.model.JsonLdNodeImpl;
 import com.weedow.schemaorg.serializer.JsonLdException;
 import com.weedow.schemaorg.serializer.JsonLdSerializerOptions;
 import com.weedow.schemaorg.serializer.data.Example;
+import com.weedow.schemaorg.serializer.data.ExampleUtils;
 import com.weedow.schemaorg.serializer.data.InvalidData;
+import com.weedow.schemaorg.serializer.data.ObjectDataTypeExample;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -55,22 +57,10 @@ class JsonLdSerializerImplTest {
     }
 
     @Test
-    void serialize_all_data_types(@GivenTextResource("/data/Example.json") String expected) throws JsonLdException, MalformedURLException {
+    void serialize_all_data_types(@GivenTextResource("/data/Example.json") String expected) throws JsonLdException {
         final JsonLdSerializer jsonLdSerializer = new JsonLdSerializerImpl(JsonLdSerializerOptions.builder().prettyPrint(true).build());
 
-        Example example = new Example();
-        example.setBool(Boolean.of(true));
-        example.setCssSelectorType(CssSelectorType.of(".css-selector-type"));
-        example.setDate(Date.of(LocalDate.of(2022, Month.MARCH, 12)));
-        example.setDateTime(DateTime.of(LocalDateTime.of(2022, Month.MARCH, 12, 10, 36, 30)));
-        example.setAFloat(Float.of(12345.67f));
-        example.setInteger(Integer.of(12345));
-        example.setNumber(Number.of(12345.67d));
-        example.setPronounceableText(PronounceableText.of("This is my thing."));
-        example.setText(Text.of("My Thing"));
-        example.setTime(Time.of(LocalTime.of(10, 36, 30)));
-        example.setUrl(URL.of(new java.net.URL("https://github.com/Kobee1203/schema-org-java")));
-        example.setXPathType(XPathType.of("/xpath/example/title"));
+        Example example = ExampleUtils.createExample();
 
         String result = jsonLdSerializer.serialize(example);
 
@@ -140,6 +130,34 @@ class JsonLdSerializerImplTest {
         hotel.setNonprofitStatus(NLNonprofitTypeEnum.NONPROFIT_ANBI);
 
         String result = jsonLdSerializer.serialize(hotel);
+
+        assertThatJson(result).isEqualTo(expected);
+    }
+
+    @Test
+    void serialize_complex_datatype_object(@GivenTextResource("/data/ObjectTypeExample.json") String expected) throws JsonLdException {
+        final JsonLdSerializer jsonLdSerializer = new JsonLdSerializerImpl(JsonLdSerializerOptions.builder().prettyPrint(true).build());
+
+        ObjectDataTypeExample example = new ObjectDataTypeExample();
+        example.setObj(ExampleUtils.createExample());
+        example.setBool(true);
+        example.setCssSelectorType(CssSelectorType.of(".css-selector-type"));
+        example.setDate(Date.of(LocalDate.of(2022, Month.MARCH, 12)));
+        example.setDateTime(DateTime.of(LocalDateTime.of(2022, Month.MARCH, 12, 10, 36, 30)));
+        example.setAFloat(org.schema.model.datatype.Float.of(12345.67f));
+        example.setInteger(org.schema.model.datatype.Integer.of(12345));
+        example.setNumber(Number.of(12345.67d));
+        example.setPronounceableText(PronounceableText.of("This is my thing."));
+        example.setText(Text.of("My Thing"));
+        example.setTime(Time.of(LocalTime.of(10, 36, 30)));
+        try {
+            example.setUrl(URL.of(new java.net.URL("https://github.com/Kobee1203/schema-org-java")));
+        } catch (MalformedURLException e) {
+            throw new RuntimeException(e);
+        }
+        example.setXPathType(XPathType.of("/xpath/example/title"));
+
+        String result = jsonLdSerializer.serialize(example);
 
         assertThatJson(result).isEqualTo(expected);
     }

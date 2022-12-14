@@ -6,17 +6,16 @@ import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.JsonDeserializer;
 
 import java.io.IOException;
-import java.net.URL;
 
+@SuppressWarnings("java:S110")
 public class URLDeserializer extends AbstractDataTypeDeserializer {
 
     public URLDeserializer(JavaType delegateType, JsonDeserializer<?> defaultDeserializer) {
         super(delegateType, defaultDeserializer);
     }
 
-
     @Override
     protected Object getValue(JsonParser p, DeserializationContext ctxt) throws IOException {
-        return new URL(p.getValueAsString());
+        return p.getValueAsString();
     }
 }

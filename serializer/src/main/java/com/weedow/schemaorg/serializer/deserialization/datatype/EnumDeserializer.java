@@ -7,7 +7,7 @@ import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.deser.std.StdDelegatingDeserializer;
 import com.fasterxml.jackson.databind.util.Converter;
 import com.weedow.schemaorg.commons.model.JsonLdSubTypes;
-import com.weedow.schemaorg.serializer.deserialization.DeserializationUtils;
+import com.weedow.schemaorg.serializer.utils.SerializerUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -64,7 +64,7 @@ public class EnumDeserializer extends AbstractTypeDeserializer<Enum<?>> {
         if (jsonLdSubTypes != null) {
             String[] subTypes = jsonLdSubTypes.value();
             for (String subType : subTypes) {
-                Class<?> subClass = DeserializationUtils.findClass(subType, ctxt.getTypeFactory());
+                Class<?> subClass = SerializerUtils.findClass(subType, ctxt.getTypeFactory());
                 T value = subClass != null ? getValue(subClass, v) : null;
                 if (value != null) {
                     return value;

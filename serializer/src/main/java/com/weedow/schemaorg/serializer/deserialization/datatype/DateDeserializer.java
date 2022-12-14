@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+@SuppressWarnings("java:S110")
 public class DateDeserializer extends AbstractDataTypeDeserializer {
 
     public DateDeserializer(JavaType delegateType, JsonDeserializer<?> defaultDeserializer) {

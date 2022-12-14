@@ -15,11 +15,13 @@ public abstract class AbstractTypeDeserializer<T> extends StdDelegatingDeseriali
 
     private final Class<T> clazz;
 
+    @SuppressWarnings("unchecked")
     protected AbstractTypeDeserializer(JavaType delegateType, JsonDeserializer<?> defaultDeserializer) {
         super(getConverter(), delegateType, defaultDeserializer);
         this.clazz = (Class<T>) delegateType.getRawClass();
     }
 
+    @SuppressWarnings("unchecked")
     private static <T> Converter<Object, T> getConverter() {
         return new StdConverter<>() {
             @Override

@@ -7,6 +7,7 @@ import com.fasterxml.jackson.databind.JsonDeserializer;
 
 import java.io.IOException;
 
+@SuppressWarnings("java:S110")
 public class NumberDeserializer extends AbstractDataTypeDeserializer {
 
     public NumberDeserializer(JavaType delegateType, JsonDeserializer<?> defaultDeserializer) {

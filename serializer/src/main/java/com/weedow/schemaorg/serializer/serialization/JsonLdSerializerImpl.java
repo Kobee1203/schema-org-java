@@ -38,8 +38,6 @@ public class JsonLdSerializerImpl implements JsonLdSerializer {
                 .findAndAddModules()
                 .enable(JsonGenerator.Feature.IGNORE_UNKNOWN)
                 .enable(MapperFeature.SORT_PROPERTIES_ALPHABETICALLY)
-                //.propertyNamingStrategy(PropertyNamingStrategies.LOWER_CAMEL_CASE)
-                //.enable(MapperFeature.USE_STD_BEAN_NAMING)
                 .visibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.NONE)
                 .visibility(PropertyAccessor.FIELD, JsonAutoDetect.Visibility.ANY)
                 .addMixIn(JsonLdNodeImpl.class, JsonLdNodeMixIn.class)

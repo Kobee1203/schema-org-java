@@ -7,6 +7,7 @@ import com.fasterxml.jackson.databind.JsonDeserializer;
 
 import java.io.IOException;
 
+@SuppressWarnings("java:S110")
 public class IntegerDeserializer extends AbstractDataTypeDeserializer {
 
     public IntegerDeserializer(JavaType delegateType, JsonDeserializer<?> defaultDeserializer) {
@@ -15,6 +16,6 @@ public class IntegerDeserializer extends AbstractDataTypeDeserializer {
 
     @Override
     protected Object getValue(JsonParser p, DeserializationContext ctxt) throws IOException {
-        return p.getIntValue(); // p.getValueAsInt();
+        return p.getIntValue();
     }
 }
