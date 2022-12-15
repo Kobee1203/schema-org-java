@@ -26,7 +26,8 @@ public interface MedicalGuidelineRecommendation extends MedicalGuideline {
     /**
      * Strength of the guideline's recommendation (e.g. 'class I').
      *
+     * @param recommendationStrength Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setRecommendationStrength(Text fRecommendationStrength);
+    void setRecommendationStrength(Text recommendationStrength);
 }

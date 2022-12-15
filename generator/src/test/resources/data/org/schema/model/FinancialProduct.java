@@ -29,9 +29,17 @@ public interface FinancialProduct extends Service {
     /**
      * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
      *
+     * @param annualPercentageRate Number value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      */
-    void setAnnualPercentageRate(Object fAnnualPercentageRate);
+    void setAnnualPercentageRate(Number annualPercentageRate);
+    /**
+     * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
+     *
+     * @param annualPercentageRate QuantitativeValue value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     */
+    void setAnnualPercentageRate(QuantitativeValue annualPercentageRate);
 
     /**
      * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
@@ -44,9 +52,17 @@ public interface FinancialProduct extends Service {
     /**
      * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
      *
+     * @param feesAndCommissionsSpecification URL value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      */
-    void setFeesAndCommissionsSpecification(Object fFeesAndCommissionsSpecification);
+    void setFeesAndCommissionsSpecification(URL feesAndCommissionsSpecification);
+    /**
+     * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
+     *
+     * @param feesAndCommissionsSpecification Text value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     */
+    void setFeesAndCommissionsSpecification(Text feesAndCommissionsSpecification);
 
     /**
      * The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.
@@ -59,7 +75,15 @@ public interface FinancialProduct extends Service {
     /**
      * The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.
      *
+     * @param interestRate Number value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      */
-    void setInterestRate(Object fInterestRate);
+    void setInterestRate(Number interestRate);
+    /**
+     * The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.
+     *
+     * @param interestRate QuantitativeValue value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     */
+    void setInterestRate(QuantitativeValue interestRate);
 }

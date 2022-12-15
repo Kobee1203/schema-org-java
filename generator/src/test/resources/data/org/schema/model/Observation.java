@@ -34,10 +34,11 @@ public interface Observation extends Intangible {
     /**
      * The measuredValue of an [[Observation]].
      *
+     * @param measuredValue DataType value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
      */
-    void setMeasuredValue(DataType fMeasuredValue);
+    void setMeasuredValue(DataType measuredValue);
 
     /**
      * The observedNode of an [[Observation]], often a [[StatisticalPopulation]].
@@ -51,10 +52,11 @@ public interface Observation extends Intangible {
     /**
      * The observedNode of an [[Observation]], often a [[StatisticalPopulation]].
      *
+     * @param observedNode StatisticalPopulation value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
      */
-    void setObservedNode(StatisticalPopulation fObservedNode);
+    void setObservedNode(StatisticalPopulation observedNode);
 
     /**
      * The measuredProperty of an [[Observation]], either a schema.org property, a property from other RDF-compatible systems e.g. W3C RDF Data Cube, or schema.org extensions such as [GS1's](https://www.gs1.org/voc/?show=properties).
@@ -68,10 +70,11 @@ public interface Observation extends Intangible {
     /**
      * The measuredProperty of an [[Observation]], either a schema.org property, a property from other RDF-compatible systems e.g. W3C RDF Data Cube, or schema.org extensions such as [GS1's](https://www.gs1.org/voc/?show=properties).
      *
+     * @param measuredProperty Property value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
      */
-    void setMeasuredProperty(Property fMeasuredProperty);
+    void setMeasuredProperty(Property measuredProperty);
 
     /**
      * The observationDate of an [[Observation]].
@@ -85,10 +88,11 @@ public interface Observation extends Intangible {
     /**
      * The observationDate of an [[Observation]].
      *
+     * @param observationDate DateTime value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
      */
-    void setObservationDate(DateTime fObservationDate);
+    void setObservationDate(DateTime observationDate);
 
     /**
      * A marginOfError for an [[Observation]].
@@ -102,8 +106,9 @@ public interface Observation extends Intangible {
     /**
      * A marginOfError for an [[Observation]].
      *
+     * @param marginOfError QuantitativeValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
      */
-    void setMarginOfError(QuantitativeValue fMarginOfError);
+    void setMarginOfError(QuantitativeValue marginOfError);
 }

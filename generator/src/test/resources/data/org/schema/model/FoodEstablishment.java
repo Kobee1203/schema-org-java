@@ -29,9 +29,10 @@ public interface FoodEstablishment extends LocalBusiness {
     /**
      * An official rating for a lodging business or food establishment, e.g. from national associations or standards bodies. Use the author property to indicate the rating organization, e.g. as an Organization with name such as (e.g. HOTREC, DEHOGA, WHR, or Hotelstars).
      *
+     * @param starRating Rating value to set.
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
-    void setStarRating(Rating fStarRating);
+    void setStarRating(Rating starRating);
 
     /**
      * The cuisine of the restaurant.
@@ -43,8 +44,9 @@ public interface FoodEstablishment extends LocalBusiness {
     /**
      * The cuisine of the restaurant.
      *
+     * @param servesCuisine Text value to set.
      */
-    void setServesCuisine(Text fServesCuisine);
+    void setServesCuisine(Text servesCuisine);
 
     /**
      * Indicates whether a FoodEstablishment accepts reservations. Values can be Boolean, an URL at which reservations can be made or (for backwards compatibility) the strings ```Yes``` or ```No```.
@@ -56,8 +58,21 @@ public interface FoodEstablishment extends LocalBusiness {
     /**
      * Indicates whether a FoodEstablishment accepts reservations. Values can be Boolean, an URL at which reservations can be made or (for backwards compatibility) the strings ```Yes``` or ```No```.
      *
+     * @param acceptsReservations Text value to set.
      */
-    void setAcceptsReservations(Object fAcceptsReservations);
+    void setAcceptsReservations(Text acceptsReservations);
+    /**
+     * Indicates whether a FoodEstablishment accepts reservations. Values can be Boolean, an URL at which reservations can be made or (for backwards compatibility) the strings ```Yes``` or ```No```.
+     *
+     * @param acceptsReservations Boolean value to set.
+     */
+    void setAcceptsReservations(Boolean acceptsReservations);
+    /**
+     * Indicates whether a FoodEstablishment accepts reservations. Values can be Boolean, an URL at which reservations can be made or (for backwards compatibility) the strings ```Yes``` or ```No```.
+     *
+     * @param acceptsReservations URL value to set.
+     */
+    void setAcceptsReservations(URL acceptsReservations);
 
     /**
      * Either the actual menu as a structured representation, as text, or a URL of the menu.
@@ -69,8 +84,21 @@ public interface FoodEstablishment extends LocalBusiness {
     /**
      * Either the actual menu as a structured representation, as text, or a URL of the menu.
      *
+     * @param hasMenu URL value to set.
      */
-    void setHasMenu(Object fHasMenu);
+    void setHasMenu(URL hasMenu);
+    /**
+     * Either the actual menu as a structured representation, as text, or a URL of the menu.
+     *
+     * @param hasMenu Text value to set.
+     */
+    void setHasMenu(Text hasMenu);
+    /**
+     * Either the actual menu as a structured representation, as text, or a URL of the menu.
+     *
+     * @param hasMenu Menu value to set.
+     */
+    void setHasMenu(Menu hasMenu);
 
     /**
      * Either the actual menu as a structured representation, as text, or a URL of the menu.
@@ -82,6 +110,19 @@ public interface FoodEstablishment extends LocalBusiness {
     /**
      * Either the actual menu as a structured representation, as text, or a URL of the menu.
      *
+     * @param menu URL value to set.
      */
-    void setMenu(Object fMenu);
+    void setMenu(URL menu);
+    /**
+     * Either the actual menu as a structured representation, as text, or a URL of the menu.
+     *
+     * @param menu Menu value to set.
+     */
+    void setMenu(Menu menu);
+    /**
+     * Either the actual menu as a structured representation, as text, or a URL of the menu.
+     *
+     * @param menu Text value to set.
+     */
+    void setMenu(Text menu);
 }

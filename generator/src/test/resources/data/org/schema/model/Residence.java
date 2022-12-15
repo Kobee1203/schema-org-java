@@ -26,8 +26,9 @@ public interface Residence extends Place {
     /**
      * A floorplan of some [[Accommodation]].
      *
+     * @param accommodationFloorPlan FloorPlan value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
-    void setAccommodationFloorPlan(FloorPlan fAccommodationFloorPlan);
+    void setAccommodationFloorPlan(FloorPlan accommodationFloorPlan);
 }

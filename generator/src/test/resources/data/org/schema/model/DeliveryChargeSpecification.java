@@ -33,10 +33,29 @@ public interface DeliveryChargeSpecification extends PriceSpecification {
      * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>See also [[eligibleRegion]].
      *       
      *
+     * @param ineligibleRegion Place value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2242">https://github.com/schemaorg/schemaorg/issues/2242</a>
      */
-    void setIneligibleRegion(Object fIneligibleRegion);
+    void setIneligibleRegion(Place ineligibleRegion);
+    /**
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>See also [[eligibleRegion]].
+     *       
+     *
+     * @param ineligibleRegion Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2242">https://github.com/schemaorg/schemaorg/issues/2242</a>
+     */
+    void setIneligibleRegion(Text ineligibleRegion);
+    /**
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>See also [[eligibleRegion]].
+     *       
+     *
+     * @param ineligibleRegion GeoShape value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2242">https://github.com/schemaorg/schemaorg/issues/2242</a>
+     */
+    void setIneligibleRegion(GeoShape ineligibleRegion);
 
     /**
      * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.<br/><br/>See also [[ineligibleRegion]].
@@ -52,10 +71,29 @@ public interface DeliveryChargeSpecification extends PriceSpecification {
      * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.<br/><br/>See also [[ineligibleRegion]].
      *     
      *
+     * @param eligibleRegion GeoShape value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
-    void setEligibleRegion(Object fEligibleRegion);
+    void setEligibleRegion(GeoShape eligibleRegion);
+    /**
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.<br/><br/>See also [[ineligibleRegion]].
+     *     
+     *
+     * @param eligibleRegion Text value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    void setEligibleRegion(Text eligibleRegion);
+    /**
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.<br/><br/>See also [[ineligibleRegion]].
+     *     
+     *
+     * @param eligibleRegion Place value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    void setEligibleRegion(Place eligibleRegion);
 
     /**
      * The geographic area where a service or offered item is provided.
@@ -67,8 +105,27 @@ public interface DeliveryChargeSpecification extends PriceSpecification {
     /**
      * The geographic area where a service or offered item is provided.
      *
+     * @param areaServed AdministrativeArea value to set.
      */
-    void setAreaServed(Object fAreaServed);
+    void setAreaServed(AdministrativeArea areaServed);
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @param areaServed GeoShape value to set.
+     */
+    void setAreaServed(GeoShape areaServed);
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @param areaServed Text value to set.
+     */
+    void setAreaServed(Text areaServed);
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @param areaServed Place value to set.
+     */
+    void setAreaServed(Place areaServed);
 
     /**
      * The delivery method(s) to which the delivery charge or payment charge specification applies.
@@ -81,7 +138,8 @@ public interface DeliveryChargeSpecification extends PriceSpecification {
     /**
      * The delivery method(s) to which the delivery charge or payment charge specification applies.
      *
+     * @param appliesToDeliveryMethod DeliveryMethod value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setAppliesToDeliveryMethod(DeliveryMethod fAppliesToDeliveryMethod);
+    void setAppliesToDeliveryMethod(DeliveryMethod appliesToDeliveryMethod);
 }

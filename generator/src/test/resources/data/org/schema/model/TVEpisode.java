@@ -36,8 +36,9 @@ public interface TVEpisode extends Episode {
      * 
      * In the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.
      *
+     * @param countryOfOrigin Country value to set.
      */
-    void setCountryOfOrigin(Country fCountryOfOrigin);
+    void setCountryOfOrigin(Country countryOfOrigin);
 
     /**
      * An [EIDR](https://eidr.org/) (Entertainment Identifier Registry) [[identifier]] representing at the most general/abstract level, a work of film or television.
@@ -59,10 +60,23 @@ public interface TVEpisode extends Episode {
      * 
      * Since schema.org types like [[Movie]] and [[TVEpisode]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.
      *
+     * @param titleEIDR URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2469">https://github.com/schemaorg/schemaorg/issues/2469</a>
      */
-    void setTitleEIDR(Object fTitleEIDR);
+    void setTitleEIDR(URL titleEIDR);
+    /**
+     * An [EIDR](https://eidr.org/) (Entertainment Identifier Registry) [[identifier]] representing at the most general/abstract level, a work of film or television.
+     * 
+     * For example, the motion picture known as "Ghostbusters" has a titleEIDR of  "10.5240/7EC7-228A-510A-053E-CBB8-J". This title (or work) may have several variants, which EIDR calls "edits". See [[editEIDR]].
+     * 
+     * Since schema.org types like [[Movie]] and [[TVEpisode]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.
+     *
+     * @param titleEIDR Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2469">https://github.com/schemaorg/schemaorg/issues/2469</a>
+     */
+    void setTitleEIDR(Text titleEIDR);
 
     /**
      * Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).
@@ -76,10 +90,19 @@ public interface TVEpisode extends Episode {
     /**
      * Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).
      *
+     * @param subtitleLanguage Language value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2110">https://github.com/schemaorg/schemaorg/issues/2110</a>
      */
-    void setSubtitleLanguage(Object fSubtitleLanguage);
+    void setSubtitleLanguage(Language subtitleLanguage);
+    /**
+     * Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).
+     *
+     * @param subtitleLanguage Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2110">https://github.com/schemaorg/schemaorg/issues/2110</a>
+     */
+    void setSubtitleLanguage(Text subtitleLanguage);
 
     /**
      * The TV series to which this episode or season belongs.
@@ -91,6 +114,7 @@ public interface TVEpisode extends Episode {
     /**
      * The TV series to which this episode or season belongs.
      *
+     * @param partOfTVSeries TVSeries value to set.
      */
-    void setPartOfTVSeries(TVSeries fPartOfTVSeries);
+    void setPartOfTVSeries(TVSeries partOfTVSeries);
 }

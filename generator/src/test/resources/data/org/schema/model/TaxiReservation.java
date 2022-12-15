@@ -27,8 +27,15 @@ public interface TaxiReservation extends Reservation {
     /**
      * Number of people the reservation should accommodate.
      *
+     * @param partySize Integer value to set.
      */
-    void setPartySize(Object fPartySize);
+    void setPartySize(Integer partySize);
+    /**
+     * Number of people the reservation should accommodate.
+     *
+     * @param partySize QuantitativeValue value to set.
+     */
+    void setPartySize(QuantitativeValue partySize);
 
     /**
      * When a taxi will pickup a passenger or a rental car can be picked up.
@@ -40,8 +47,9 @@ public interface TaxiReservation extends Reservation {
     /**
      * When a taxi will pickup a passenger or a rental car can be picked up.
      *
+     * @param pickupTime DateTime value to set.
      */
-    void setPickupTime(DateTime fPickupTime);
+    void setPickupTime(DateTime pickupTime);
 
     /**
      * Where a taxi will pick up a passenger or a rental car can be picked up.
@@ -53,6 +61,7 @@ public interface TaxiReservation extends Reservation {
     /**
      * Where a taxi will pick up a passenger or a rental car can be picked up.
      *
+     * @param pickupLocation Place value to set.
      */
-    void setPickupLocation(Place fPickupLocation);
+    void setPickupLocation(Place pickupLocation);
 }

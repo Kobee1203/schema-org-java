@@ -30,10 +30,11 @@ public interface ImageObject extends MediaObject {
     /**
      * Represents textual captioning from a [[MediaObject]], e.g. text of a 'meme'.
      *
+     * @param embeddedTextCaption Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
-    void setEmbeddedTextCaption(Text fEmbeddedTextCaption);
+    void setEmbeddedTextCaption(Text embeddedTextCaption);
 
     /**
      * Indicates whether this image is representative of the content of the page.
@@ -45,8 +46,9 @@ public interface ImageObject extends MediaObject {
     /**
      * Indicates whether this image is representative of the content of the page.
      *
+     * @param representativeOfPage Boolean value to set.
      */
-    void setRepresentativeOfPage(Boolean fRepresentativeOfPage);
+    void setRepresentativeOfPage(Boolean representativeOfPage);
 
     /**
      * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
@@ -58,8 +60,15 @@ public interface ImageObject extends MediaObject {
     /**
      * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
      *
+     * @param caption Text value to set.
      */
-    void setCaption(Object fCaption);
+    void setCaption(Text caption);
+    /**
+     * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
+     *
+     * @param caption MediaObject value to set.
+     */
+    void setCaption(MediaObject caption);
 
     /**
      * Thumbnail image for an image or video.
@@ -71,8 +80,9 @@ public interface ImageObject extends MediaObject {
     /**
      * Thumbnail image for an image or video.
      *
+     * @param thumbnail ImageObject value to set.
      */
-    void setThumbnail(ImageObject fThumbnail);
+    void setThumbnail(ImageObject thumbnail);
 
     /**
      * exif data for this object.
@@ -84,6 +94,13 @@ public interface ImageObject extends MediaObject {
     /**
      * exif data for this object.
      *
+     * @param exifData PropertyValue value to set.
      */
-    void setExifData(Object fExifData);
+    void setExifData(PropertyValue exifData);
+    /**
+     * exif data for this object.
+     *
+     * @param exifData Text value to set.
+     */
+    void setExifData(Text exifData);
 }

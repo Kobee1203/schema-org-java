@@ -34,10 +34,10 @@ import org.schema.model.Invoice;
  *
  * @see <a href="https://schema.org/Invoice">https://schema.org/Invoice</a>
  */
-@JsonLdTypeName("schema:Invoice")
+@JsonLdTypeName("Invoice")
 public class InvoiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Invoice {
 
-    private Object fTotalPaymentDue;
+    private Object totalPaymentDue;
 
     /**
      * The total amount due.
@@ -46,22 +46,29 @@ public class InvoiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getTotalPaymentDue() {
-        return (T) fTotalPaymentDue;
+        return (T) totalPaymentDue;
     }
 
     /**
      * The total amount due.
      *
+     * @param totalPaymentDue MonetaryAmount value to set.
      */
     @Override
-    public void setTotalPaymentDue(Object fTotalPaymentDue) {
-        if(!(fTotalPaymentDue instanceof MonetaryAmount) && !(fTotalPaymentDue instanceof PriceSpecification)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'totalPaymentDue': " + fTotalPaymentDue);
-        }
-        this.fTotalPaymentDue = fTotalPaymentDue;
+    public void setTotalPaymentDue(MonetaryAmount totalPaymentDue) {
+        this.totalPaymentDue = totalPaymentDue;
+    }
+    /**
+     * The total amount due.
+     *
+     * @param totalPaymentDue PriceSpecification value to set.
+     */
+    @Override
+    public void setTotalPaymentDue(PriceSpecification totalPaymentDue) {
+        this.totalPaymentDue = totalPaymentDue;
     }
 
-    private Duration fBillingPeriod;
+    private Duration billingPeriod;
 
     /**
      * The time interval used to compute the invoice.
@@ -70,19 +77,20 @@ public class InvoiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Duration getBillingPeriod() {
-        return fBillingPeriod;
+        return billingPeriod;
     }
 
     /**
      * The time interval used to compute the invoice.
      *
+     * @param billingPeriod Duration value to set.
      */
     @Override
-    public void setBillingPeriod(Duration fBillingPeriod) {
-        this.fBillingPeriod = fBillingPeriod;
+    public void setBillingPeriod(Duration billingPeriod) {
+        this.billingPeriod = billingPeriod;
     }
 
-    private Order fReferencesOrder;
+    private Order referencesOrder;
 
     /**
      * The Order(s) related to this Invoice. One or more Orders may be combined into a single Invoice.
@@ -91,19 +99,20 @@ public class InvoiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Order getReferencesOrder() {
-        return fReferencesOrder;
+        return referencesOrder;
     }
 
     /**
      * The Order(s) related to this Invoice. One or more Orders may be combined into a single Invoice.
      *
+     * @param referencesOrder Order value to set.
      */
     @Override
-    public void setReferencesOrder(Order fReferencesOrder) {
-        this.fReferencesOrder = fReferencesOrder;
+    public void setReferencesOrder(Order referencesOrder) {
+        this.referencesOrder = referencesOrder;
     }
 
-    private Text fAccountId;
+    private Text accountId;
 
     /**
      * The identifier for the account the payment will be applied to.
@@ -112,19 +121,20 @@ public class InvoiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getAccountId() {
-        return fAccountId;
+        return accountId;
     }
 
     /**
      * The identifier for the account the payment will be applied to.
      *
+     * @param accountId Text value to set.
      */
     @Override
-    public void setAccountId(Text fAccountId) {
-        this.fAccountId = fAccountId;
+    public void setAccountId(Text accountId) {
+        this.accountId = accountId;
     }
 
-    private Object fCategory;
+    private Object category;
 
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
@@ -135,24 +145,66 @@ public class InvoiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getCategory() {
-        return (T) fCategory;
+        return (T) category;
     }
 
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
+     * @param category URL value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
     @Override
-    public void setCategory(Object fCategory) {
-        if(!(fCategory instanceof URL) && !(fCategory instanceof Text) && !(fCategory instanceof PhysicalActivityCategory) && !(fCategory instanceof Thing) && !(fCategory instanceof CategoryCode)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'category': " + fCategory);
-        }
-        this.fCategory = fCategory;
+    public void setCategory(URL category) {
+        this.category = category;
+    }
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @param category Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    @Override
+    public void setCategory(Text category) {
+        this.category = category;
+    }
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @param category PhysicalActivityCategory value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    @Override
+    public void setCategory(PhysicalActivityCategory category) {
+        this.category = category;
+    }
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @param category Thing value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    @Override
+    public void setCategory(Thing category) {
+        this.category = category;
+    }
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @param category CategoryCode value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    @Override
+    public void setCategory(CategoryCode category) {
+        this.category = category;
     }
 
-    private Date fScheduledPaymentDate;
+    private Date scheduledPaymentDate;
 
     /**
      * The date the invoice is scheduled to be paid.
@@ -161,19 +213,20 @@ public class InvoiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Date getScheduledPaymentDate() {
-        return fScheduledPaymentDate;
+        return scheduledPaymentDate;
     }
 
     /**
      * The date the invoice is scheduled to be paid.
      *
+     * @param scheduledPaymentDate Date value to set.
      */
     @Override
-    public void setScheduledPaymentDate(Date fScheduledPaymentDate) {
-        this.fScheduledPaymentDate = fScheduledPaymentDate;
+    public void setScheduledPaymentDate(Date scheduledPaymentDate) {
+        this.scheduledPaymentDate = scheduledPaymentDate;
     }
 
-    private Text fConfirmationNumber;
+    private Text confirmationNumber;
 
     /**
      * A number that confirms the given order or payment has been received.
@@ -182,19 +235,20 @@ public class InvoiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getConfirmationNumber() {
-        return fConfirmationNumber;
+        return confirmationNumber;
     }
 
     /**
      * A number that confirms the given order or payment has been received.
      *
+     * @param confirmationNumber Text value to set.
      */
     @Override
-    public void setConfirmationNumber(Text fConfirmationNumber) {
-        this.fConfirmationNumber = fConfirmationNumber;
+    public void setConfirmationNumber(Text confirmationNumber) {
+        this.confirmationNumber = confirmationNumber;
     }
 
-    private Object fCustomer;
+    private Object customer;
 
     /**
      * Party placing the order or paying the invoice.
@@ -203,22 +257,29 @@ public class InvoiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getCustomer() {
-        return (T) fCustomer;
+        return (T) customer;
     }
 
     /**
      * Party placing the order or paying the invoice.
      *
+     * @param customer Organization value to set.
      */
     @Override
-    public void setCustomer(Object fCustomer) {
-        if(!(fCustomer instanceof Organization) && !(fCustomer instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'customer': " + fCustomer);
-        }
-        this.fCustomer = fCustomer;
+    public void setCustomer(Organization customer) {
+        this.customer = customer;
+    }
+    /**
+     * Party placing the order or paying the invoice.
+     *
+     * @param customer Person value to set.
+     */
+    @Override
+    public void setCustomer(Person customer) {
+        this.customer = customer;
     }
 
-    private Object fProvider;
+    private Object provider;
 
     /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
@@ -230,25 +291,35 @@ public class InvoiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getProvider() {
-        return (T) fProvider;
+        return (T) provider;
     }
 
     /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
      *
+     * @param provider Organization value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
      */
     @Override
-    public void setProvider(Object fProvider) {
-        if(!(fProvider instanceof Organization) && !(fProvider instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'provider': " + fProvider);
-        }
-        this.fProvider = fProvider;
+    public void setProvider(Organization provider) {
+        this.provider = provider;
+    }
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @param provider Person value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     */
+    @Override
+    public void setProvider(Person provider) {
+        this.provider = provider;
     }
 
-    private Object fMinimumPaymentDue;
+    private Object minimumPaymentDue;
 
     /**
      * The minimum payment required at this time.
@@ -257,22 +328,29 @@ public class InvoiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getMinimumPaymentDue() {
-        return (T) fMinimumPaymentDue;
+        return (T) minimumPaymentDue;
     }
 
     /**
      * The minimum payment required at this time.
      *
+     * @param minimumPaymentDue MonetaryAmount value to set.
      */
     @Override
-    public void setMinimumPaymentDue(Object fMinimumPaymentDue) {
-        if(!(fMinimumPaymentDue instanceof MonetaryAmount) && !(fMinimumPaymentDue instanceof PriceSpecification)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'minimumPaymentDue': " + fMinimumPaymentDue);
-        }
-        this.fMinimumPaymentDue = fMinimumPaymentDue;
+    public void setMinimumPaymentDue(MonetaryAmount minimumPaymentDue) {
+        this.minimumPaymentDue = minimumPaymentDue;
+    }
+    /**
+     * The minimum payment required at this time.
+     *
+     * @param minimumPaymentDue PriceSpecification value to set.
+     */
+    @Override
+    public void setMinimumPaymentDue(PriceSpecification minimumPaymentDue) {
+        this.minimumPaymentDue = minimumPaymentDue;
     }
 
-    private Object fPaymentDueDate;
+    private Object paymentDueDate;
 
     /**
      * The date that payment is due.
@@ -281,22 +359,29 @@ public class InvoiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getPaymentDueDate() {
-        return (T) fPaymentDueDate;
+        return (T) paymentDueDate;
     }
 
     /**
      * The date that payment is due.
      *
+     * @param paymentDueDate DateTime value to set.
      */
     @Override
-    public void setPaymentDueDate(Object fPaymentDueDate) {
-        if(!(fPaymentDueDate instanceof DateTime) && !(fPaymentDueDate instanceof Date)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'paymentDueDate': " + fPaymentDueDate);
-        }
-        this.fPaymentDueDate = fPaymentDueDate;
+    public void setPaymentDueDate(DateTime paymentDueDate) {
+        this.paymentDueDate = paymentDueDate;
+    }
+    /**
+     * The date that payment is due.
+     *
+     * @param paymentDueDate Date value to set.
+     */
+    @Override
+    public void setPaymentDueDate(Date paymentDueDate) {
+        this.paymentDueDate = paymentDueDate;
     }
 
-    private Object fBroker;
+    private Object broker;
 
     /**
      * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
@@ -305,22 +390,29 @@ public class InvoiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getBroker() {
-        return (T) fBroker;
+        return (T) broker;
     }
 
     /**
      * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
      *
+     * @param broker Person value to set.
      */
     @Override
-    public void setBroker(Object fBroker) {
-        if(!(fBroker instanceof Person) && !(fBroker instanceof Organization)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'broker': " + fBroker);
-        }
-        this.fBroker = fBroker;
+    public void setBroker(Person broker) {
+        this.broker = broker;
+    }
+    /**
+     * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
+     *
+     * @param broker Organization value to set.
+     */
+    @Override
+    public void setBroker(Organization broker) {
+        this.broker = broker;
     }
 
-    private Object fPaymentStatus;
+    private Object paymentStatus;
 
     /**
      * The status of payment; whether the invoice has been paid or not.
@@ -329,22 +421,29 @@ public class InvoiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getPaymentStatus() {
-        return (T) fPaymentStatus;
+        return (T) paymentStatus;
     }
 
     /**
      * The status of payment; whether the invoice has been paid or not.
      *
+     * @param paymentStatus PaymentStatusType value to set.
      */
     @Override
-    public void setPaymentStatus(Object fPaymentStatus) {
-        if(!(fPaymentStatus instanceof PaymentStatusType) && !(fPaymentStatus instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'paymentStatus': " + fPaymentStatus);
-        }
-        this.fPaymentStatus = fPaymentStatus;
+    public void setPaymentStatus(PaymentStatusType paymentStatus) {
+        this.paymentStatus = paymentStatus;
+    }
+    /**
+     * The status of payment; whether the invoice has been paid or not.
+     *
+     * @param paymentStatus Text value to set.
+     */
+    @Override
+    public void setPaymentStatus(Text paymentStatus) {
+        this.paymentStatus = paymentStatus;
     }
 
-    private Text fPaymentMethodId;
+    private Text paymentMethodId;
 
     /**
      * An identifier for the method of payment used (e.g. the last 4 digits of the credit card).
@@ -353,19 +452,20 @@ public class InvoiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getPaymentMethodId() {
-        return fPaymentMethodId;
+        return paymentMethodId;
     }
 
     /**
      * An identifier for the method of payment used (e.g. the last 4 digits of the credit card).
      *
+     * @param paymentMethodId Text value to set.
      */
     @Override
-    public void setPaymentMethodId(Text fPaymentMethodId) {
-        this.fPaymentMethodId = fPaymentMethodId;
+    public void setPaymentMethodId(Text paymentMethodId) {
+        this.paymentMethodId = paymentMethodId;
     }
 
-    private DateTime fPaymentDue;
+    private DateTime paymentDue;
 
     /**
      * The date that payment is due.
@@ -374,19 +474,20 @@ public class InvoiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public DateTime getPaymentDue() {
-        return fPaymentDue;
+        return paymentDue;
     }
 
     /**
      * The date that payment is due.
      *
+     * @param paymentDue DateTime value to set.
      */
     @Override
-    public void setPaymentDue(DateTime fPaymentDue) {
-        this.fPaymentDue = fPaymentDue;
+    public void setPaymentDue(DateTime paymentDue) {
+        this.paymentDue = paymentDue;
     }
 
-    private PaymentMethod fPaymentMethod;
+    private PaymentMethod paymentMethod;
 
     /**
      * The name of the credit card or other method of payment for the order.
@@ -395,19 +496,20 @@ public class InvoiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public PaymentMethod getPaymentMethod() {
-        return fPaymentMethod;
+        return paymentMethod;
     }
 
     /**
      * The name of the credit card or other method of payment for the order.
      *
+     * @param paymentMethod PaymentMethod value to set.
      */
     @Override
-    public void setPaymentMethod(PaymentMethod fPaymentMethod) {
-        this.fPaymentMethod = fPaymentMethod;
+    public void setPaymentMethod(PaymentMethod paymentMethod) {
+        this.paymentMethod = paymentMethod;
     }
 
-    private Object fMainEntityOfPage;
+    private Object mainEntityOfPage;
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -416,22 +518,29 @@ public class InvoiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
+        return (T) mainEntityOfPage;
     }
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
+     * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
-        }
-        this.fMainEntityOfPage = fMainEntityOfPage;
+    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param mainEntityOfPage URL value to set.
+     */
+    @Override
+    public void setMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
     }
 
-    private Text fAlternateName;
+    private Text alternateName;
 
     /**
      * An alias for the item.
@@ -440,19 +549,20 @@ public class InvoiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getAlternateName() {
-        return fAlternateName;
+        return alternateName;
     }
 
     /**
      * An alias for the item.
      *
+     * @param alternateName Text value to set.
      */
     @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
+    public void setAlternateName(Text alternateName) {
+        this.alternateName = alternateName;
     }
 
-    private Text fName;
+    private Text name;
 
     /**
      * The name of the item.
@@ -461,19 +571,20 @@ public class InvoiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getName() {
-        return fName;
+        return name;
     }
 
     /**
      * The name of the item.
      *
+     * @param name Text value to set.
      */
     @Override
-    public void setName(Text fName) {
-        this.fName = fName;
+    public void setName(Text name) {
+        this.name = name;
     }
 
-    private Action fPotentialAction;
+    private Action potentialAction;
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -482,19 +593,20 @@ public class InvoiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Action getPotentialAction() {
-        return fPotentialAction;
+        return potentialAction;
     }
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      *
+     * @param potentialAction Action value to set.
      */
     @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
+    public void setPotentialAction(Action potentialAction) {
+        this.potentialAction = potentialAction;
     }
 
-    private Object fImage;
+    private Object image;
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -503,22 +615,29 @@ public class InvoiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getImage() {
-        return (T) fImage;
+        return (T) image;
     }
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
+     * @param image URL value to set.
      */
     @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
-        this.fImage = fImage;
+    public void setImage(URL image) {
+        this.image = image;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image ImageObject value to set.
+     */
+    @Override
+    public void setImage(ImageObject image) {
+        this.image = image;
     }
 
-    private URL fUrl;
+    private URL url;
 
     /**
      * URL of the item.
@@ -527,19 +646,20 @@ public class InvoiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public URL getUrl() {
-        return fUrl;
+        return url;
     }
 
     /**
      * URL of the item.
      *
+     * @param url URL value to set.
      */
     @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
+    public void setUrl(URL url) {
+        this.url = url;
     }
 
-    private Text fDescription;
+    private Text description;
 
     /**
      * A description of the item.
@@ -548,19 +668,20 @@ public class InvoiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getDescription() {
-        return fDescription;
+        return description;
     }
 
     /**
      * A description of the item.
      *
+     * @param description Text value to set.
      */
     @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
+    public void setDescription(Text description) {
+        this.description = description;
     }
 
-    private Object fSubjectOf;
+    private Object subjectOf;
 
     /**
      * A CreativeWork or Event about this Thing.
@@ -570,23 +691,31 @@ public class InvoiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getSubjectOf() {
-        return (T) fSubjectOf;
+        return (T) subjectOf;
     }
 
     /**
      * A CreativeWork or Event about this Thing.
      *
+     * @param subjectOf Event value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Object fSubjectOf) {
-        if(!(fSubjectOf instanceof Event) && !(fSubjectOf instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'subjectOf': " + fSubjectOf);
-        }
-        this.fSubjectOf = fSubjectOf;
+    public void setSubjectOf(Event subjectOf) {
+        this.subjectOf = subjectOf;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @param subjectOf CreativeWork value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public void setSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = subjectOf;
     }
 
-    private URL fAdditionalType;
+    private URL additionalType;
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
@@ -595,19 +724,20 @@ public class InvoiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public URL getAdditionalType() {
-        return fAdditionalType;
+        return additionalType;
     }
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
+     * @param additionalType URL value to set.
      */
     @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
+    public void setAdditionalType(URL additionalType) {
+        this.additionalType = additionalType;
     }
 
-    private Text fDisambiguatingDescription;
+    private Text disambiguatingDescription;
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
@@ -616,19 +746,20 @@ public class InvoiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getDisambiguatingDescription() {
-        return fDisambiguatingDescription;
+        return disambiguatingDescription;
     }
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
+     * @param disambiguatingDescription Text value to set.
      */
     @Override
-    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = fDisambiguatingDescription;
+    public void setDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = disambiguatingDescription;
     }
 
-    private URL fSameAs;
+    private URL sameAs;
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
@@ -637,19 +768,20 @@ public class InvoiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public URL getSameAs() {
-        return fSameAs;
+        return sameAs;
     }
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
+     * @param sameAs URL value to set.
      */
     @Override
-    public void setSameAs(URL fSameAs) {
-        this.fSameAs = fSameAs;
+    public void setSameAs(URL sameAs) {
+        this.sameAs = sameAs;
     }
 
-    private Object fIdentifier;
+    private Object identifier;
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -659,19 +791,37 @@ public class InvoiceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getIdentifier() {
-        return (T) fIdentifier;
+        return (T) identifier;
     }
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
+     * @param identifier URL value to set.
      */
     @Override
-    public void setIdentifier(Object fIdentifier) {
-        if(!(fIdentifier instanceof URL) && !(fIdentifier instanceof Text) && !(fIdentifier instanceof PropertyValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
-        }
-        this.fIdentifier = fIdentifier;
+    public void setIdentifier(URL identifier) {
+        this.identifier = identifier;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier Text value to set.
+     */
+    @Override
+    public void setIdentifier(Text identifier) {
+        this.identifier = identifier;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier PropertyValue value to set.
+     */
+    @Override
+    public void setIdentifier(PropertyValue identifier) {
+        this.identifier = identifier;
     }
 }

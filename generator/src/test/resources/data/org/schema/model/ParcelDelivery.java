@@ -34,8 +34,9 @@ public interface ParcelDelivery extends Intangible {
     /**
      * Shipper's address.
      *
+     * @param originAddress PostalAddress value to set.
      */
-    void setOriginAddress(PostalAddress fOriginAddress);
+    void setOriginAddress(PostalAddress originAddress);
 
     /**
      * Shipper tracking number.
@@ -47,8 +48,9 @@ public interface ParcelDelivery extends Intangible {
     /**
      * Shipper tracking number.
      *
+     * @param trackingNumber Text value to set.
      */
-    void setTrackingNumber(Text fTrackingNumber);
+    void setTrackingNumber(Text trackingNumber);
 
     /**
      * Item(s) being shipped.
@@ -60,8 +62,9 @@ public interface ParcelDelivery extends Intangible {
     /**
      * Item(s) being shipped.
      *
+     * @param itemShipped Product value to set.
      */
-    void setItemShipped(Product fItemShipped);
+    void setItemShipped(Product itemShipped);
 
     /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
@@ -76,11 +79,21 @@ public interface ParcelDelivery extends Intangible {
     /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
      *
+     * @param provider Organization value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
      */
-    void setProvider(Object fProvider);
+    void setProvider(Organization provider);
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @param provider Person value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     */
+    void setProvider(Person provider);
 
     /**
      * Tracking url for the parcel delivery.
@@ -92,8 +105,9 @@ public interface ParcelDelivery extends Intangible {
     /**
      * Tracking url for the parcel delivery.
      *
+     * @param trackingUrl URL value to set.
      */
-    void setTrackingUrl(URL fTrackingUrl);
+    void setTrackingUrl(URL trackingUrl);
 
     /**
      * Destination address.
@@ -105,8 +119,9 @@ public interface ParcelDelivery extends Intangible {
     /**
      * Destination address.
      *
+     * @param deliveryAddress PostalAddress value to set.
      */
-    void setDeliveryAddress(PostalAddress fDeliveryAddress);
+    void setDeliveryAddress(PostalAddress deliveryAddress);
 
     /**
      * The latest date the package may arrive.
@@ -118,8 +133,15 @@ public interface ParcelDelivery extends Intangible {
     /**
      * The latest date the package may arrive.
      *
+     * @param expectedArrivalUntil Date value to set.
      */
-    void setExpectedArrivalUntil(Object fExpectedArrivalUntil);
+    void setExpectedArrivalUntil(Date expectedArrivalUntil);
+    /**
+     * The latest date the package may arrive.
+     *
+     * @param expectedArrivalUntil DateTime value to set.
+     */
+    void setExpectedArrivalUntil(DateTime expectedArrivalUntil);
 
     /**
      * New entry added as the package passes through each leg of its journey (from shipment to final delivery).
@@ -131,8 +153,9 @@ public interface ParcelDelivery extends Intangible {
     /**
      * New entry added as the package passes through each leg of its journey (from shipment to final delivery).
      *
+     * @param deliveryStatus DeliveryEvent value to set.
      */
-    void setDeliveryStatus(DeliveryEvent fDeliveryStatus);
+    void setDeliveryStatus(DeliveryEvent deliveryStatus);
 
     /**
      * The earliest date the package may arrive.
@@ -144,8 +167,15 @@ public interface ParcelDelivery extends Intangible {
     /**
      * The earliest date the package may arrive.
      *
+     * @param expectedArrivalFrom Date value to set.
      */
-    void setExpectedArrivalFrom(Object fExpectedArrivalFrom);
+    void setExpectedArrivalFrom(Date expectedArrivalFrom);
+    /**
+     * The earliest date the package may arrive.
+     *
+     * @param expectedArrivalFrom DateTime value to set.
+     */
+    void setExpectedArrivalFrom(DateTime expectedArrivalFrom);
 
     /**
      * 'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.
@@ -157,8 +187,9 @@ public interface ParcelDelivery extends Intangible {
     /**
      * 'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.
      *
+     * @param carrier Organization value to set.
      */
-    void setCarrier(Organization fCarrier);
+    void setCarrier(Organization carrier);
 
     /**
      * Method used for delivery or shipping.
@@ -170,8 +201,9 @@ public interface ParcelDelivery extends Intangible {
     /**
      * Method used for delivery or shipping.
      *
+     * @param hasDeliveryMethod DeliveryMethod value to set.
      */
-    void setHasDeliveryMethod(DeliveryMethod fHasDeliveryMethod);
+    void setHasDeliveryMethod(DeliveryMethod hasDeliveryMethod);
 
     /**
      * The overall order the items in this delivery were included in.
@@ -183,6 +215,7 @@ public interface ParcelDelivery extends Intangible {
     /**
      * The overall order the items in this delivery were included in.
      *
+     * @param partOfOrder Order value to set.
      */
-    void setPartOfOrder(Order fPartOfOrder);
+    void setPartOfOrder(Order partOfOrder);
 }

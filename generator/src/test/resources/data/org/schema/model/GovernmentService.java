@@ -28,10 +28,19 @@ public interface GovernmentService extends Service {
     /**
      * Indicates a legal jurisdiction, e.g. of some legislation, or where some government service is based.
      *
+     * @param jurisdiction Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2534">https://github.com/schemaorg/schemaorg/issues/2534</a>
      */
-    void setJurisdiction(Object fJurisdiction);
+    void setJurisdiction(Text jurisdiction);
+    /**
+     * Indicates a legal jurisdiction, e.g. of some legislation, or where some government service is based.
+     *
+     * @param jurisdiction AdministrativeArea value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2534">https://github.com/schemaorg/schemaorg/issues/2534</a>
+     */
+    void setJurisdiction(AdministrativeArea jurisdiction);
 
     /**
      * The operating organization, if different from the provider.  This enables the representation of services that are provided by an organization, but operated by another organization like a subcontractor.
@@ -43,6 +52,7 @@ public interface GovernmentService extends Service {
     /**
      * The operating organization, if different from the provider.  This enables the representation of services that are provided by an organization, but operated by another organization like a subcontractor.
      *
+     * @param serviceOperator Organization value to set.
      */
-    void setServiceOperator(Organization fServiceOperator);
+    void setServiceOperator(Organization serviceOperator);
 }

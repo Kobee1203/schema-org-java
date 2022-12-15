@@ -28,17 +28,27 @@ import org.schema.model.UKNonprofitType;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2543">https://github.com/schemaorg/schemaorg/issues/2543</a>
  * @see <a href="https://schema.org/UKNonprofitType">https://schema.org/UKNonprofitType</a>
  */
-@JsonLdTypeName("schema:UKNonprofitType")
+@JsonLdTypeName("UKNonprofitType")
 public enum UKNonprofitTypeEnum implements UKNonprofitType {
     UNINCORPORATED_ASSOCIATION_CHARITY("UnincorporatedAssociationCharity"),
     UK_TRUST("UKTrust"),
     CHARITABLE_INCORPORATED_ORGANIZATION("CharitableIncorporatedOrganization"),
-    LIMITED_BY_GUARANTEE_CHARITY("LimitedByGuaranteeCharity");
+    LIMITED_BY_GUARANTEE_CHARITY("LimitedByGuaranteeCharity")
+    ;
 
     private final String enumValue;
 
     UKNonprofitTypeEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static UKNonprofitTypeEnum from(String value) {
+        for (UKNonprofitTypeEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override
@@ -85,10 +95,19 @@ public enum UKNonprofitTypeEnum implements UKNonprofitType {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setSupersededBy(Object fSupersededBy) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'supersededBy': method not allowed for enum UKNonprofitTypeEnum");
+    public void setSupersededBy(Enumeration supersededBy) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'supersededBy': method not allowed for enum Enum");
     }
-
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void setSupersededBy(Class supersededBy) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'supersededBy': method not allowed for enum Enum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void setSupersededBy(Property supersededBy) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'supersededBy': method not allowed for enum Enum");
+    }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
     public <T> T getMainEntityOfPage() {
@@ -97,10 +116,14 @@ public enum UKNonprofitTypeEnum implements UKNonprofitType {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'mainEntityOfPage': method not allowed for enum UKNonprofitTypeEnum");
+    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'mainEntityOfPage': method not allowed for enum Enum");
     }
-
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void setMainEntityOfPage(URL mainEntityOfPage) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'mainEntityOfPage': method not allowed for enum Enum");
+    }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
     public Text getAlternateName() {
@@ -109,10 +132,9 @@ public enum UKNonprofitTypeEnum implements UKNonprofitType {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setAlternateName(Text fAlternateName) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'alternateName': method not allowed for enum UKNonprofitTypeEnum");
+    public void setAlternateName(Text alternateName) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'alternateName': method not allowed for enum Enum");
     }
-
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
     public Text getName() {
@@ -121,10 +143,9 @@ public enum UKNonprofitTypeEnum implements UKNonprofitType {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setName(Text fName) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'name': method not allowed for enum UKNonprofitTypeEnum");
+    public void setName(Text name) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'name': method not allowed for enum Enum");
     }
-
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
     public Action getPotentialAction() {
@@ -133,10 +154,9 @@ public enum UKNonprofitTypeEnum implements UKNonprofitType {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'potentialAction': method not allowed for enum UKNonprofitTypeEnum");
+    public void setPotentialAction(Action potentialAction) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'potentialAction': method not allowed for enum Enum");
     }
-
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
     public <T> T getImage() {
@@ -145,10 +165,14 @@ public enum UKNonprofitTypeEnum implements UKNonprofitType {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setImage(Object fImage) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'image': method not allowed for enum UKNonprofitTypeEnum");
+    public void setImage(URL image) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'image': method not allowed for enum Enum");
     }
-
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void setImage(ImageObject image) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'image': method not allowed for enum Enum");
+    }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
     public URL getUrl() {
@@ -157,10 +181,9 @@ public enum UKNonprofitTypeEnum implements UKNonprofitType {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setUrl(URL fUrl) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'url': method not allowed for enum UKNonprofitTypeEnum");
+    public void setUrl(URL url) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'url': method not allowed for enum Enum");
     }
-
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
     public Text getDescription() {
@@ -169,10 +192,9 @@ public enum UKNonprofitTypeEnum implements UKNonprofitType {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setDescription(Text fDescription) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'description': method not allowed for enum UKNonprofitTypeEnum");
+    public void setDescription(Text description) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'description': method not allowed for enum Enum");
     }
-
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
     public <T> T getSubjectOf() {
@@ -181,10 +203,14 @@ public enum UKNonprofitTypeEnum implements UKNonprofitType {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setSubjectOf(Object fSubjectOf) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'subjectOf': method not allowed for enum UKNonprofitTypeEnum");
+    public void setSubjectOf(Event subjectOf) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'subjectOf': method not allowed for enum Enum");
     }
-
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void setSubjectOf(CreativeWork subjectOf) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'subjectOf': method not allowed for enum Enum");
+    }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
     public URL getAdditionalType() {
@@ -193,10 +219,9 @@ public enum UKNonprofitTypeEnum implements UKNonprofitType {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'additionalType': method not allowed for enum UKNonprofitTypeEnum");
+    public void setAdditionalType(URL additionalType) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'additionalType': method not allowed for enum Enum");
     }
-
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
     public Text getDisambiguatingDescription() {
@@ -205,10 +230,9 @@ public enum UKNonprofitTypeEnum implements UKNonprofitType {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'disambiguatingDescription': method not allowed for enum UKNonprofitTypeEnum");
+    public void setDisambiguatingDescription(Text disambiguatingDescription) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'disambiguatingDescription': method not allowed for enum Enum");
     }
-
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
     public URL getSameAs() {
@@ -217,10 +241,9 @@ public enum UKNonprofitTypeEnum implements UKNonprofitType {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setSameAs(URL fSameAs) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'sameAs': method not allowed for enum UKNonprofitTypeEnum");
+    public void setSameAs(URL sameAs) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'sameAs': method not allowed for enum Enum");
     }
-
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
     public <T> T getIdentifier() {
@@ -229,8 +252,17 @@ public enum UKNonprofitTypeEnum implements UKNonprofitType {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setIdentifier(Object fIdentifier) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum UKNonprofitTypeEnum");
+    public void setIdentifier(URL identifier) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum Enum");
     }
-
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void setIdentifier(Text identifier) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum Enum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void setIdentifier(PropertyValue identifier) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum Enum");
+    }
 }

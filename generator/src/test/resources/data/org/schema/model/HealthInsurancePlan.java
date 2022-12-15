@@ -32,10 +32,11 @@ public interface HealthInsurancePlan extends Intangible {
     /**
      * Formularies covered by this plan.
      *
+     * @param includesHealthPlanFormulary HealthPlanFormulary value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
-    void setIncludesHealthPlanFormulary(HealthPlanFormulary fIncludesHealthPlanFormulary);
+    void setIncludesHealthPlanFormulary(HealthPlanFormulary includesHealthPlanFormulary);
 
     /**
      * The URL that goes directly to the summary of benefits and coverage for the specific standard plan or plan variation.
@@ -49,10 +50,11 @@ public interface HealthInsurancePlan extends Intangible {
     /**
      * The URL that goes directly to the summary of benefits and coverage for the specific standard plan or plan variation.
      *
+     * @param benefitsSummaryUrl URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
-    void setBenefitsSummaryUrl(URL fBenefitsSummaryUrl);
+    void setBenefitsSummaryUrl(URL benefitsSummaryUrl);
 
     /**
      * TODO.
@@ -66,10 +68,11 @@ public interface HealthInsurancePlan extends Intangible {
     /**
      * TODO.
      *
+     * @param healthPlanDrugOption Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
-    void setHealthPlanDrugOption(Text fHealthPlanDrugOption);
+    void setHealthPlanDrugOption(Text healthPlanDrugOption);
 
     /**
      * The tier(s) of drugs offered by this formulary or insurance plan.
@@ -83,10 +86,11 @@ public interface HealthInsurancePlan extends Intangible {
     /**
      * The tier(s) of drugs offered by this formulary or insurance plan.
      *
+     * @param healthPlanDrugTier Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
-    void setHealthPlanDrugTier(Text fHealthPlanDrugTier);
+    void setHealthPlanDrugTier(Text healthPlanDrugTier);
 
     /**
      * The 14-character, HIOS-generated Plan ID number. (Plan IDs must be unique, even across different markets.)
@@ -100,10 +104,11 @@ public interface HealthInsurancePlan extends Intangible {
     /**
      * The 14-character, HIOS-generated Plan ID number. (Plan IDs must be unique, even across different markets.)
      *
+     * @param healthPlanId Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
-    void setHealthPlanId(Text fHealthPlanId);
+    void setHealthPlanId(Text healthPlanId);
 
     /**
      * A contact point for a person or organization.
@@ -115,8 +120,9 @@ public interface HealthInsurancePlan extends Intangible {
     /**
      * A contact point for a person or organization.
      *
+     * @param contactPoint ContactPoint value to set.
      */
-    void setContactPoint(ContactPoint fContactPoint);
+    void setContactPoint(ContactPoint contactPoint);
 
     /**
      * The standard for interpreting thePlan ID. The preferred is "HIOS". See the Centers for Medicare & Medicaid Services for more details.
@@ -130,10 +136,19 @@ public interface HealthInsurancePlan extends Intangible {
     /**
      * The standard for interpreting thePlan ID. The preferred is "HIOS". See the Centers for Medicare & Medicaid Services for more details.
      *
+     * @param usesHealthPlanIdStandard URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
-    void setUsesHealthPlanIdStandard(Object fUsesHealthPlanIdStandard);
+    void setUsesHealthPlanIdStandard(URL usesHealthPlanIdStandard);
+    /**
+     * The standard for interpreting thePlan ID. The preferred is "HIOS". See the Centers for Medicare & Medicaid Services for more details.
+     *
+     * @param usesHealthPlanIdStandard Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    void setUsesHealthPlanIdStandard(Text usesHealthPlanIdStandard);
 
     /**
      * Networks covered by this plan.
@@ -147,10 +162,11 @@ public interface HealthInsurancePlan extends Intangible {
     /**
      * Networks covered by this plan.
      *
+     * @param includesHealthPlanNetwork HealthPlanNetwork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
-    void setIncludesHealthPlanNetwork(HealthPlanNetwork fIncludesHealthPlanNetwork);
+    void setIncludesHealthPlanNetwork(HealthPlanNetwork includesHealthPlanNetwork);
 
     /**
      * The URL that goes directly to the plan brochure for the specific standard plan or plan variation.
@@ -164,8 +180,9 @@ public interface HealthInsurancePlan extends Intangible {
     /**
      * The URL that goes directly to the plan brochure for the specific standard plan or plan variation.
      *
+     * @param healthPlanMarketingUrl URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
-    void setHealthPlanMarketingUrl(URL fHealthPlanMarketingUrl);
+    void setHealthPlanMarketingUrl(URL healthPlanMarketingUrl);
 }

@@ -28,9 +28,10 @@ public interface Diet extends LifestyleModification, CreativeWork {
     /**
      * Medical expert advice related to the plan.
      *
+     * @param expertConsiderations Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setExpertConsiderations(Text fExpertConsiderations);
+    void setExpertConsiderations(Text expertConsiderations);
 
     /**
      * Specific physiologic risks associated to the diet plan.
@@ -43,9 +44,10 @@ public interface Diet extends LifestyleModification, CreativeWork {
     /**
      * Specific physiologic risks associated to the diet plan.
      *
+     * @param risks Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setRisks(Text fRisks);
+    void setRisks(Text risks);
 
     /**
      * Specific physiologic benefits associated to the plan.
@@ -58,9 +60,10 @@ public interface Diet extends LifestyleModification, CreativeWork {
     /**
      * Specific physiologic benefits associated to the plan.
      *
+     * @param physiologicalBenefits Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setPhysiologicalBenefits(Text fPhysiologicalBenefits);
+    void setPhysiologicalBenefits(Text physiologicalBenefits);
 
     /**
      * People or organizations that endorse the plan.
@@ -73,9 +76,17 @@ public interface Diet extends LifestyleModification, CreativeWork {
     /**
      * People or organizations that endorse the plan.
      *
+     * @param endorsers Person value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setEndorsers(Object fEndorsers);
+    void setEndorsers(Person endorsers);
+    /**
+     * People or organizations that endorse the plan.
+     *
+     * @param endorsers Organization value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setEndorsers(Organization endorsers);
 
     /**
      * Nutritional information specific to the dietary plan. May include dietary recommendations on what foods to avoid, what foods to consume, and specific alterations/deviations from the USDA or other regulatory body's approved dietary guidelines.
@@ -88,7 +99,8 @@ public interface Diet extends LifestyleModification, CreativeWork {
     /**
      * Nutritional information specific to the dietary plan. May include dietary recommendations on what foods to avoid, what foods to consume, and specific alterations/deviations from the USDA or other regulatory body's approved dietary guidelines.
      *
+     * @param dietFeatures Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setDietFeatures(Text fDietFeatures);
+    void setDietFeatures(Text dietFeatures);
 }

@@ -26,9 +26,10 @@ public interface WebPageElement extends CreativeWork {
     /**
      * A CSS selector, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual "Web page element".
      *
+     * @param cssSelector CssSelectorType value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1389">https://github.com/schemaorg/schemaorg/issues/1389</a>
      */
-    void setCssSelector(CssSelectorType fCssSelector);
+    void setCssSelector(CssSelectorType cssSelector);
 
     /**
      * An XPath, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual "Web page element".
@@ -41,7 +42,8 @@ public interface WebPageElement extends CreativeWork {
     /**
      * An XPath, e.g. of a [[SpeakableSpecification]] or [[WebPageElement]]. In the latter case, multiple matches within a page can constitute a single conceptual "Web page element".
      *
+     * @param xpath XPathType value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1389">https://github.com/schemaorg/schemaorg/issues/1389</a>
      */
-    void setXpath(XPathType fXpath);
+    void setXpath(XPathType xpath);
 }

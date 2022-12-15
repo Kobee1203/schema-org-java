@@ -31,9 +31,10 @@ public interface Permit extends Intangible {
     /**
      * The duration of validity of a permit or similar thing.
      *
+     * @param validFor Duration value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    void setValidFor(Duration fValidFor);
+    void setValidFor(Duration validFor);
 
     /**
      * The organization issuing the ticket or permit.
@@ -45,8 +46,9 @@ public interface Permit extends Intangible {
     /**
      * The organization issuing the ticket or permit.
      *
+     * @param issuedBy Organization value to set.
      */
-    void setIssuedBy(Organization fIssuedBy);
+    void setIssuedBy(Organization issuedBy);
 
     /**
      * The date when the item is no longer valid.
@@ -58,8 +60,9 @@ public interface Permit extends Intangible {
     /**
      * The date when the item is no longer valid.
      *
+     * @param validUntil Date value to set.
      */
-    void setValidUntil(Date fValidUntil);
+    void setValidUntil(Date validUntil);
 
     /**
      * The date when the item becomes valid.
@@ -72,9 +75,17 @@ public interface Permit extends Intangible {
     /**
      * The date when the item becomes valid.
      *
+     * @param validFrom DateTime value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setValidFrom(Object fValidFrom);
+    void setValidFrom(DateTime validFrom);
+    /**
+     * The date when the item becomes valid.
+     *
+     * @param validFrom Date value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    void setValidFrom(Date validFrom);
 
     /**
      * The service through with the permit was granted.
@@ -86,8 +97,9 @@ public interface Permit extends Intangible {
     /**
      * The service through with the permit was granted.
      *
+     * @param issuedThrough Service value to set.
      */
-    void setIssuedThrough(Service fIssuedThrough);
+    void setIssuedThrough(Service issuedThrough);
 
     /**
      * The geographic area where a permit or similar thing is valid.
@@ -100,9 +112,10 @@ public interface Permit extends Intangible {
     /**
      * The geographic area where a permit or similar thing is valid.
      *
+     * @param validIn AdministrativeArea value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    void setValidIn(AdministrativeArea fValidIn);
+    void setValidIn(AdministrativeArea validIn);
 
     /**
      * The target audience for this permit.
@@ -114,6 +127,7 @@ public interface Permit extends Intangible {
     /**
      * The target audience for this permit.
      *
+     * @param permitAudience Audience value to set.
      */
-    void setPermitAudience(Audience fPermitAudience);
+    void setPermitAudience(Audience permitAudience);
 }

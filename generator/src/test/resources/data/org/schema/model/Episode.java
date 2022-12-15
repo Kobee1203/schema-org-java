@@ -32,8 +32,15 @@ public interface Episode extends CreativeWork {
     /**
      * Position of the episode within an ordered group of episodes.
      *
+     * @param episodeNumber Integer value to set.
      */
-    void setEpisodeNumber(Object fEpisodeNumber);
+    void setEpisodeNumber(Integer episodeNumber);
+    /**
+     * Position of the episode within an ordered group of episodes.
+     *
+     * @param episodeNumber Text value to set.
+     */
+    void setEpisodeNumber(Text episodeNumber);
 
     /**
      * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
@@ -45,8 +52,9 @@ public interface Episode extends CreativeWork {
     /**
      * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
      *
+     * @param director Person value to set.
      */
-    void setDirector(Person fDirector);
+    void setDirector(Person director);
 
     /**
      * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
@@ -58,8 +66,9 @@ public interface Episode extends CreativeWork {
     /**
      * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
      *
+     * @param actor Person value to set.
      */
-    void setActor(Person fActor);
+    void setActor(Person actor);
 
     /**
      * The trailer of a movie or tv/radio series, season, episode, etc.
@@ -71,8 +80,9 @@ public interface Episode extends CreativeWork {
     /**
      * The trailer of a movie or tv/radio series, season, episode, etc.
      *
+     * @param trailer VideoObject value to set.
      */
-    void setTrailer(VideoObject fTrailer);
+    void setTrailer(VideoObject trailer);
 
     /**
      * The series to which this episode or season belongs.
@@ -84,8 +94,9 @@ public interface Episode extends CreativeWork {
     /**
      * The series to which this episode or season belongs.
      *
+     * @param partOfSeries CreativeWorkSeries value to set.
      */
-    void setPartOfSeries(CreativeWorkSeries fPartOfSeries);
+    void setPartOfSeries(CreativeWorkSeries partOfSeries);
 
     /**
      * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
@@ -99,10 +110,11 @@ public interface Episode extends CreativeWork {
     /**
      * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
      *
+     * @param duration Duration value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
      */
-    void setDuration(Duration fDuration);
+    void setDuration(Duration duration);
 
     /**
      * The season to which this episode belongs.
@@ -114,8 +126,9 @@ public interface Episode extends CreativeWork {
     /**
      * The season to which this episode belongs.
      *
+     * @param partOfSeason CreativeWorkSeason value to set.
      */
-    void setPartOfSeason(CreativeWorkSeason fPartOfSeason);
+    void setPartOfSeason(CreativeWorkSeason partOfSeason);
 
     /**
      * The production company or studio responsible for the item e.g. series, video game, episode etc.
@@ -127,8 +140,9 @@ public interface Episode extends CreativeWork {
     /**
      * The production company or studio responsible for the item e.g. series, video game, episode etc.
      *
+     * @param productionCompany Organization value to set.
      */
-    void setProductionCompany(Organization fProductionCompany);
+    void setProductionCompany(Organization productionCompany);
 
     /**
      * An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
@@ -140,8 +154,9 @@ public interface Episode extends CreativeWork {
     /**
      * An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
      *
+     * @param actors Person value to set.
      */
-    void setActors(Person fActors);
+    void setActors(Person actors);
 
     /**
      * The composer of the soundtrack.
@@ -153,8 +168,15 @@ public interface Episode extends CreativeWork {
     /**
      * The composer of the soundtrack.
      *
+     * @param musicBy Person value to set.
      */
-    void setMusicBy(Object fMusicBy);
+    void setMusicBy(Person musicBy);
+    /**
+     * The composer of the soundtrack.
+     *
+     * @param musicBy MusicGroup value to set.
+     */
+    void setMusicBy(MusicGroup musicBy);
 
     /**
      * A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
@@ -166,6 +188,7 @@ public interface Episode extends CreativeWork {
     /**
      * A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
      *
+     * @param directors Person value to set.
      */
-    void setDirectors(Person fDirectors);
+    void setDirectors(Person directors);
 }

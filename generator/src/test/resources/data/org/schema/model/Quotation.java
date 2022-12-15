@@ -29,8 +29,17 @@ public interface Quotation extends CreativeWork {
     /**
      * The (e.g. fictional) character, Person or Organization to whom the quotation is attributed within the containing CreativeWork.
      *
+     * @param spokenByCharacter Person value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/271">https://github.com/schemaorg/schemaorg/issues/271</a>
      */
-    void setSpokenByCharacter(Object fSpokenByCharacter);
+    void setSpokenByCharacter(Person spokenByCharacter);
+    /**
+     * The (e.g. fictional) character, Person or Organization to whom the quotation is attributed within the containing CreativeWork.
+     *
+     * @param spokenByCharacter Organization value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/271">https://github.com/schemaorg/schemaorg/issues/271</a>
+     */
+    void setSpokenByCharacter(Organization spokenByCharacter);
 }

@@ -28,9 +28,17 @@ public interface GeoCoordinates extends StructuredValue {
     /**
      * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
      *
+     * @param addressCountry Country value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
-    void setAddressCountry(Object fAddressCountry);
+    void setAddressCountry(Country addressCountry);
+    /**
+     * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
+     *
+     * @param addressCountry Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    void setAddressCountry(Text addressCountry);
 
     /**
      * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
@@ -42,8 +50,15 @@ public interface GeoCoordinates extends StructuredValue {
     /**
      * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
      *
+     * @param latitude Text value to set.
      */
-    void setLatitude(Object fLatitude);
+    void setLatitude(Text latitude);
+    /**
+     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     *
+     * @param latitude Number value to set.
+     */
+    void setLatitude(Number latitude);
 
     /**
      * Physical address of the item.
@@ -55,8 +70,15 @@ public interface GeoCoordinates extends StructuredValue {
     /**
      * Physical address of the item.
      *
+     * @param address Text value to set.
      */
-    void setAddress(Object fAddress);
+    void setAddress(Text address);
+    /**
+     * Physical address of the item.
+     *
+     * @param address PostalAddress value to set.
+     */
+    void setAddress(PostalAddress address);
 
     /**
      * The postal code. For example, 94043.
@@ -69,9 +91,10 @@ public interface GeoCoordinates extends StructuredValue {
     /**
      * The postal code. For example, 94043.
      *
+     * @param postalCode Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
-    void setPostalCode(Text fPostalCode);
+    void setPostalCode(Text postalCode);
 
     /**
      * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
@@ -83,8 +106,15 @@ public interface GeoCoordinates extends StructuredValue {
     /**
      * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
      *
+     * @param elevation Text value to set.
      */
-    void setElevation(Object fElevation);
+    void setElevation(Text elevation);
+    /**
+     * The elevation of a location ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)). Values may be of the form 'NUMBER UNIT_OF_MEASUREMENT' (e.g., '1,000 m', '3,200 ft') while numbers alone should be assumed to be a value in meters.
+     *
+     * @param elevation Number value to set.
+     */
+    void setElevation(Number elevation);
 
     /**
      * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
@@ -96,6 +126,13 @@ public interface GeoCoordinates extends StructuredValue {
     /**
      * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
      *
+     * @param longitude Number value to set.
      */
-    void setLongitude(Object fLongitude);
+    void setLongitude(Number longitude);
+    /**
+     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     *
+     * @param longitude Text value to set.
+     */
+    void setLongitude(Text longitude);
 }

@@ -29,10 +29,11 @@ public interface HyperToc extends CreativeWork {
     /**
      * Indicates a [[HyperTocEntry]] in a [[HyperToc]].
      *
+     * @param tocEntry HyperTocEntry value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2766">https://github.com/schemaorg/schemaorg/issues/2766</a>
      */
-    void setTocEntry(HyperTocEntry fTocEntry);
+    void setTocEntry(HyperTocEntry tocEntry);
 
     /**
      * A media object that encodes this CreativeWork. This property is a synonym for encoding.
@@ -44,6 +45,7 @@ public interface HyperToc extends CreativeWork {
     /**
      * A media object that encodes this CreativeWork. This property is a synonym for encoding.
      *
+     * @param associatedMedia MediaObject value to set.
      */
-    void setAssociatedMedia(MediaObject fAssociatedMedia);
+    void setAssociatedMedia(MediaObject associatedMedia);
 }

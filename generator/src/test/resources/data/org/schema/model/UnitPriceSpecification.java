@@ -32,9 +32,17 @@ public interface UnitPriceSpecification extends PriceSpecification {
     /**
      * Defines the type of a price specified for an offered product, for example a list price, a (temporary) sale price or a manufacturer suggested retail price. If multiple prices are specified for an offer the [[priceType]] property can be used to identify the type of each such specified price. The value of priceType can be specified as a value from enumeration PriceTypeEnumeration or as a free form text string for price types that are not already predefined in PriceTypeEnumeration.
      *
+     * @param priceType PriceTypeEnumeration value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setPriceType(Object fPriceType);
+    void setPriceType(PriceTypeEnumeration priceType);
+    /**
+     * Defines the type of a price specified for an offered product, for example a list price, a (temporary) sale price or a manufacturer suggested retail price. If multiple prices are specified for an offer the [[priceType]] property can be used to identify the type of each such specified price. The value of priceType can be specified as a value from enumeration PriceTypeEnumeration or as a free form text string for price types that are not already predefined in PriceTypeEnumeration.
+     *
+     * @param priceType Text value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    void setPriceType(Text priceType);
 
     /**
      * A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
@@ -48,8 +56,9 @@ public interface UnitPriceSpecification extends PriceSpecification {
      * A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
      * <a href='unitCode'>unitCode</a>.
      *
+     * @param unitText Text value to set.
      */
-    void setUnitText(Text fUnitText);
+    void setUnitText(Text unitText);
 
     /**
      * This property specifies the minimal quantity and rounding increment that will be the basis for the billing. The unit of measurement is specified by the unitCode property.
@@ -62,9 +71,10 @@ public interface UnitPriceSpecification extends PriceSpecification {
     /**
      * This property specifies the minimal quantity and rounding increment that will be the basis for the billing. The unit of measurement is specified by the unitCode property.
      *
+     * @param billingIncrement Number value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setBillingIncrement(Number fBillingIncrement);
+    void setBillingIncrement(Number billingIncrement);
 
     /**
      * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
@@ -77,9 +87,17 @@ public interface UnitPriceSpecification extends PriceSpecification {
     /**
      * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
      *
+     * @param unitCode Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setUnitCode(Object fUnitCode);
+    void setUnitCode(Text unitCode);
+    /**
+     * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
+     *
+     * @param unitCode URL value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    void setUnitCode(URL unitCode);
 
     /**
      * Specifies for how long this price (or price component) will be billed. Can be used, for example, to model the contractual duration of a subscription or payment plan. Type can be either a Duration or a Number (in which case the unit of measurement, for example month, is specified by the unitCode property).
@@ -93,10 +111,27 @@ public interface UnitPriceSpecification extends PriceSpecification {
     /**
      * Specifies for how long this price (or price component) will be billed. Can be used, for example, to model the contractual duration of a subscription or payment plan. Type can be either a Duration or a Number (in which case the unit of measurement, for example month, is specified by the unitCode property).
      *
+     * @param billingDuration Duration value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2689">https://github.com/schemaorg/schemaorg/issues/2689</a>
      */
-    void setBillingDuration(Object fBillingDuration);
+    void setBillingDuration(Duration billingDuration);
+    /**
+     * Specifies for how long this price (or price component) will be billed. Can be used, for example, to model the contractual duration of a subscription or payment plan. Type can be either a Duration or a Number (in which case the unit of measurement, for example month, is specified by the unitCode property).
+     *
+     * @param billingDuration QuantitativeValue value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2689">https://github.com/schemaorg/schemaorg/issues/2689</a>
+     */
+    void setBillingDuration(QuantitativeValue billingDuration);
+    /**
+     * Specifies for how long this price (or price component) will be billed. Can be used, for example, to model the contractual duration of a subscription or payment plan. Type can be either a Duration or a Number (in which case the unit of measurement, for example month, is specified by the unitCode property).
+     *
+     * @param billingDuration Number value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2689">https://github.com/schemaorg/schemaorg/issues/2689</a>
+     */
+    void setBillingDuration(Number billingDuration);
 
     /**
      * The reference quantity for which a certain price applies, e.g. 1 EUR per 4 kWh of electricity. This property is a replacement for unitOfMeasurement for the advanced cases where the price does not relate to a standard unit.
@@ -110,10 +145,11 @@ public interface UnitPriceSpecification extends PriceSpecification {
     /**
      * The reference quantity for which a certain price applies, e.g. 1 EUR per 4 kWh of electricity. This property is a replacement for unitOfMeasurement for the advanced cases where the price does not relate to a standard unit.
      *
+     * @param referenceQuantity QuantitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsProperties">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsProperties</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setReferenceQuantity(QuantitativeValue fReferenceQuantity);
+    void setReferenceQuantity(QuantitativeValue referenceQuantity);
 
     /**
      * Identifies a price component (for example, a line item on an invoice), part of the total price for an offer.
@@ -127,10 +163,11 @@ public interface UnitPriceSpecification extends PriceSpecification {
     /**
      * Identifies a price component (for example, a line item on an invoice), part of the total price for an offer.
      *
+     * @param priceComponentType PriceComponentTypeEnumeration value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2689">https://github.com/schemaorg/schemaorg/issues/2689</a>
      */
-    void setPriceComponentType(PriceComponentTypeEnumeration fPriceComponentType);
+    void setPriceComponentType(PriceComponentTypeEnumeration priceComponentType);
 
     /**
      * Specifies after how much time this price (or price component) becomes valid and billing starts. Can be used, for example, to model a price increase after the first year of a subscription. The unit of measurement is specified by the unitCode property.
@@ -144,8 +181,9 @@ public interface UnitPriceSpecification extends PriceSpecification {
     /**
      * Specifies after how much time this price (or price component) becomes valid and billing starts. Can be used, for example, to model a price increase after the first year of a subscription. The unit of measurement is specified by the unitCode property.
      *
+     * @param billingStart Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2689">https://github.com/schemaorg/schemaorg/issues/2689</a>
      */
-    void setBillingStart(Number fBillingStart);
+    void setBillingStart(Number billingStart);
 }

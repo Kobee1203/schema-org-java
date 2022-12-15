@@ -25,8 +25,9 @@ public interface Blog extends CreativeWork {
     /**
      * Indicates a post that is part of a [[Blog]]. Note that historically, what we term a "Blog" was once known as a "weblog", and that what we term a "BlogPosting" is now often colloquially referred to as a "blog".
      *
+     * @param blogPosts BlogPosting value to set.
      */
-    void setBlogPosts(BlogPosting fBlogPosts);
+    void setBlogPosts(BlogPosting blogPosts);
 
     /**
      * The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.
@@ -39,9 +40,10 @@ public interface Blog extends CreativeWork {
     /**
      * The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.
      *
+     * @param issn Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
-    void setIssn(Text fIssn);
+    void setIssn(Text issn);
 
     /**
      * A posting that is part of this blog.
@@ -53,6 +55,7 @@ public interface Blog extends CreativeWork {
     /**
      * A posting that is part of this blog.
      *
+     * @param blogPost BlogPosting value to set.
      */
-    void setBlogPost(BlogPosting fBlogPost);
+    void setBlogPost(BlogPosting blogPost);
 }

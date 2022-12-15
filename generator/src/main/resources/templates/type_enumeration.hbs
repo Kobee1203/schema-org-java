@@ -8,16 +8,29 @@ import {{this}};
 
 {{#with this.type}}
 {{> templates/fragment/javadoc_class}}
-@JsonLdTypeName("{{this.id}}")
+@JsonLdTypeName("{{this.typeId}}")
+{{#and this.enumerationType this.subTypes}}
+@JsonLdSubTypes({ {{#each this.subTypes}}"{{this.name}}Enum"{{#not @last}}, {{/not}}{{/each}} })
+{{/and}}
 public enum {{this.name}}Enum implements {{this.name}} {
 {{#each this.enumerationMembers}}
-    {{capitalizeWithUnderscore this}}("{{this}}"){{#not @last}},{{else}};{{/not}}
+    {{capitalizeWithUnderscore this}}("{{this}}"){{#not @last}},{{else}}{{/not}}
 {{/each}}
+    ;
 
     private final String enumValue;
 
     {{this.name}}Enum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static {{this.name}}Enum from(String value) {
+        for ({{this.name}}Enum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override
@@ -39,18 +52,21 @@ public enum {{this.name}}Enum implements {{this.name}} {
 {{/each}}
 
 {{#each this.allProperties}}
+{{#with this.accessor}}
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public {{&this.returnFieldType}} get{{capitalizeFirst this.name}}() {
+    public {{&this.returnFieldType}} {{this.methodName}}() {
         return null;
     }
+{{/with}}
 
+{{#each this.mutators}}
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void set{{capitalizeFirst this.name}}({{&this.paramFieldType}} {{this.fieldName}}) {
+    public void {{this.methodName}}({{this.paramType}} {{../this.field.fieldName}}) {
         throw new java.lang.IllegalAccessError("Unable to set property '{{this.name}}': method not allowed for enum {{../this.name}}Enum");
     }
-
+{{/each}}
 {{/each}}
 }
 {{/with}}

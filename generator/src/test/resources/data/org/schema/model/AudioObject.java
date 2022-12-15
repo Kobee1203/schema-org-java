@@ -28,10 +28,11 @@ public interface AudioObject extends MediaObject {
     /**
      * Represents textual captioning from a [[MediaObject]], e.g. text of a 'meme'.
      *
+     * @param embeddedTextCaption Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
-    void setEmbeddedTextCaption(Text fEmbeddedTextCaption);
+    void setEmbeddedTextCaption(Text embeddedTextCaption);
 
     /**
      * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
@@ -43,8 +44,15 @@ public interface AudioObject extends MediaObject {
     /**
      * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
      *
+     * @param caption Text value to set.
      */
-    void setCaption(Object fCaption);
+    void setCaption(Text caption);
+    /**
+     * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
+     *
+     * @param caption MediaObject value to set.
+     */
+    void setCaption(MediaObject caption);
 
     /**
      * If this MediaObject is an AudioObject or VideoObject, the transcript of that object.
@@ -56,6 +64,7 @@ public interface AudioObject extends MediaObject {
     /**
      * If this MediaObject is an AudioObject or VideoObject, the transcript of that object.
      *
+     * @param transcript Text value to set.
      */
-    void setTranscript(Text fTranscript);
+    void setTranscript(Text transcript);
 }

@@ -28,8 +28,9 @@ public interface AlignmentObject extends Intangible {
     /**
      * A category of alignment between the learning resource and the framework node. Recommended values include: 'requires', 'textComplexity', 'readingLevel', and 'educationalSubject'.
      *
+     * @param alignmentType Text value to set.
      */
-    void setAlignmentType(Text fAlignmentType);
+    void setAlignmentType(Text alignmentType);
 
     /**
      * The framework to which the resource being described is aligned.
@@ -41,8 +42,9 @@ public interface AlignmentObject extends Intangible {
     /**
      * The framework to which the resource being described is aligned.
      *
+     * @param educationalFramework Text value to set.
      */
-    void setEducationalFramework(Text fEducationalFramework);
+    void setEducationalFramework(Text educationalFramework);
 
     /**
      * The description of a node in an established educational framework.
@@ -54,8 +56,9 @@ public interface AlignmentObject extends Intangible {
     /**
      * The description of a node in an established educational framework.
      *
+     * @param targetDescription Text value to set.
      */
-    void setTargetDescription(Text fTargetDescription);
+    void setTargetDescription(Text targetDescription);
 
     /**
      * The name of a node in an established educational framework.
@@ -67,8 +70,9 @@ public interface AlignmentObject extends Intangible {
     /**
      * The name of a node in an established educational framework.
      *
+     * @param targetName Text value to set.
      */
-    void setTargetName(Text fTargetName);
+    void setTargetName(Text targetName);
 
     /**
      * The URL of a node in an established educational framework.
@@ -80,6 +84,7 @@ public interface AlignmentObject extends Intangible {
     /**
      * The URL of a node in an established educational framework.
      *
+     * @param targetUrl URL value to set.
      */
-    void setTargetUrl(URL fTargetUrl);
+    void setTargetUrl(URL targetUrl);
 }

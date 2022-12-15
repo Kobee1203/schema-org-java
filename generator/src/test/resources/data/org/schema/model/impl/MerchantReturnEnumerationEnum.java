@@ -17,6 +17,7 @@ import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.Intangible;
 import org.schema.model.MerchantReturnEnumeration;
 
@@ -27,17 +28,27 @@ import org.schema.model.MerchantReturnEnumeration;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
  * @see <a href="https://schema.org/MerchantReturnEnumeration">https://schema.org/MerchantReturnEnumeration</a>
  */
-@JsonLdTypeName("schema:MerchantReturnEnumeration")
+@JsonLdTypeName("MerchantReturnEnumeration")
 public enum MerchantReturnEnumerationEnum implements MerchantReturnEnumeration {
     MERCHANT_RETURN_NOT_PERMITTED("MerchantReturnNotPermitted"),
     MERCHANT_RETURN_UNLIMITED_WINDOW("MerchantReturnUnlimitedWindow"),
     MERCHANT_RETURN_FINITE_RETURN_WINDOW("MerchantReturnFiniteReturnWindow"),
-    MERCHANT_RETURN_UNSPECIFIED("MerchantReturnUnspecified");
+    MERCHANT_RETURN_UNSPECIFIED("MerchantReturnUnspecified")
+    ;
 
     private final String enumValue;
 
     MerchantReturnEnumerationEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static MerchantReturnEnumerationEnum from(String value) {
+        for (MerchantReturnEnumerationEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override
@@ -84,10 +95,19 @@ public enum MerchantReturnEnumerationEnum implements MerchantReturnEnumeration {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setSupersededBy(Object fSupersededBy) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'supersededBy': method not allowed for enum MerchantReturnEnumerationEnum");
+    public void setSupersededBy(Enumeration supersededBy) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'supersededBy': method not allowed for enum Enum");
     }
-
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void setSupersededBy(Class supersededBy) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'supersededBy': method not allowed for enum Enum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void setSupersededBy(Property supersededBy) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'supersededBy': method not allowed for enum Enum");
+    }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
     public <T> T getMainEntityOfPage() {
@@ -96,10 +116,14 @@ public enum MerchantReturnEnumerationEnum implements MerchantReturnEnumeration {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'mainEntityOfPage': method not allowed for enum MerchantReturnEnumerationEnum");
+    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'mainEntityOfPage': method not allowed for enum Enum");
     }
-
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void setMainEntityOfPage(URL mainEntityOfPage) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'mainEntityOfPage': method not allowed for enum Enum");
+    }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
     public Text getAlternateName() {
@@ -108,10 +132,9 @@ public enum MerchantReturnEnumerationEnum implements MerchantReturnEnumeration {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setAlternateName(Text fAlternateName) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'alternateName': method not allowed for enum MerchantReturnEnumerationEnum");
+    public void setAlternateName(Text alternateName) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'alternateName': method not allowed for enum Enum");
     }
-
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
     public Text getName() {
@@ -120,10 +143,9 @@ public enum MerchantReturnEnumerationEnum implements MerchantReturnEnumeration {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setName(Text fName) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'name': method not allowed for enum MerchantReturnEnumerationEnum");
+    public void setName(Text name) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'name': method not allowed for enum Enum");
     }
-
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
     public Action getPotentialAction() {
@@ -132,10 +154,9 @@ public enum MerchantReturnEnumerationEnum implements MerchantReturnEnumeration {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'potentialAction': method not allowed for enum MerchantReturnEnumerationEnum");
+    public void setPotentialAction(Action potentialAction) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'potentialAction': method not allowed for enum Enum");
     }
-
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
     public <T> T getImage() {
@@ -144,10 +165,14 @@ public enum MerchantReturnEnumerationEnum implements MerchantReturnEnumeration {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setImage(Object fImage) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'image': method not allowed for enum MerchantReturnEnumerationEnum");
+    public void setImage(URL image) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'image': method not allowed for enum Enum");
     }
-
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void setImage(ImageObject image) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'image': method not allowed for enum Enum");
+    }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
     public URL getUrl() {
@@ -156,10 +181,9 @@ public enum MerchantReturnEnumerationEnum implements MerchantReturnEnumeration {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setUrl(URL fUrl) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'url': method not allowed for enum MerchantReturnEnumerationEnum");
+    public void setUrl(URL url) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'url': method not allowed for enum Enum");
     }
-
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
     public Text getDescription() {
@@ -168,10 +192,9 @@ public enum MerchantReturnEnumerationEnum implements MerchantReturnEnumeration {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setDescription(Text fDescription) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'description': method not allowed for enum MerchantReturnEnumerationEnum");
+    public void setDescription(Text description) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'description': method not allowed for enum Enum");
     }
-
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
     public <T> T getSubjectOf() {
@@ -180,10 +203,14 @@ public enum MerchantReturnEnumerationEnum implements MerchantReturnEnumeration {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setSubjectOf(Object fSubjectOf) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'subjectOf': method not allowed for enum MerchantReturnEnumerationEnum");
+    public void setSubjectOf(Event subjectOf) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'subjectOf': method not allowed for enum Enum");
     }
-
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void setSubjectOf(CreativeWork subjectOf) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'subjectOf': method not allowed for enum Enum");
+    }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
     public URL getAdditionalType() {
@@ -192,10 +219,9 @@ public enum MerchantReturnEnumerationEnum implements MerchantReturnEnumeration {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'additionalType': method not allowed for enum MerchantReturnEnumerationEnum");
+    public void setAdditionalType(URL additionalType) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'additionalType': method not allowed for enum Enum");
     }
-
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
     public Text getDisambiguatingDescription() {
@@ -204,10 +230,9 @@ public enum MerchantReturnEnumerationEnum implements MerchantReturnEnumeration {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'disambiguatingDescription': method not allowed for enum MerchantReturnEnumerationEnum");
+    public void setDisambiguatingDescription(Text disambiguatingDescription) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'disambiguatingDescription': method not allowed for enum Enum");
     }
-
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
     public URL getSameAs() {
@@ -216,10 +241,9 @@ public enum MerchantReturnEnumerationEnum implements MerchantReturnEnumeration {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setSameAs(URL fSameAs) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'sameAs': method not allowed for enum MerchantReturnEnumerationEnum");
+    public void setSameAs(URL sameAs) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'sameAs': method not allowed for enum Enum");
     }
-
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
     public <T> T getIdentifier() {
@@ -228,8 +252,17 @@ public enum MerchantReturnEnumerationEnum implements MerchantReturnEnumeration {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setIdentifier(Object fIdentifier) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum MerchantReturnEnumerationEnum");
+    public void setIdentifier(URL identifier) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum Enum");
     }
-
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void setIdentifier(Text identifier) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum Enum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void setIdentifier(PropertyValue identifier) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum Enum");
+    }
 }

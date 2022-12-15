@@ -44,10 +44,10 @@ import org.schema.model.UserTweets;
  *
  * @see <a href="https://schema.org/UserTweets">https://schema.org/UserTweets</a>
  */
-@JsonLdTypeName("schema:UserTweets")
+@JsonLdTypeName("UserTweets")
 public class UserTweetsImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements UserTweets {
 
-    private Event fSuperEvent;
+    private Event superEvent;
 
     /**
      * An event that this event is a part of. For example, a collection of individual music performances might each have a music festival as their superEvent.
@@ -56,19 +56,20 @@ public class UserTweetsImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Event getSuperEvent() {
-        return fSuperEvent;
+        return superEvent;
     }
 
     /**
      * An event that this event is a part of. For example, a collection of individual music performances might each have a music festival as their superEvent.
      *
+     * @param superEvent Event value to set.
      */
     @Override
-    public void setSuperEvent(Event fSuperEvent) {
-        this.fSuperEvent = fSuperEvent;
+    public void setSuperEvent(Event superEvent) {
+        this.superEvent = superEvent;
     }
 
-    private EventAttendanceModeEnumeration fEventAttendanceMode;
+    private EventAttendanceModeEnumeration eventAttendanceMode;
 
     /**
      * The eventAttendanceMode of an event indicates whether it occurs online, offline, or a mix.
@@ -79,21 +80,22 @@ public class UserTweetsImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public EventAttendanceModeEnumeration getEventAttendanceMode() {
-        return fEventAttendanceMode;
+        return eventAttendanceMode;
     }
 
     /**
      * The eventAttendanceMode of an event indicates whether it occurs online, offline, or a mix.
      *
+     * @param eventAttendanceMode EventAttendanceModeEnumeration value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1842">https://github.com/schemaorg/schemaorg/issues/1842</a>
      */
     @Override
-    public void setEventAttendanceMode(EventAttendanceModeEnumeration fEventAttendanceMode) {
-        this.fEventAttendanceMode = fEventAttendanceMode;
+    public void setEventAttendanceMode(EventAttendanceModeEnumeration eventAttendanceMode) {
+        this.eventAttendanceMode = eventAttendanceMode;
     }
 
-    private Review fReview;
+    private Review review;
 
     /**
      * A review of the item.
@@ -102,19 +104,20 @@ public class UserTweetsImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Review getReview() {
-        return fReview;
+        return review;
     }
 
     /**
      * A review of the item.
      *
+     * @param review Review value to set.
      */
     @Override
-    public void setReview(Review fReview) {
-        this.fReview = fReview;
+    public void setReview(Review review) {
+        this.review = review;
     }
 
-    private Object fTranslator;
+    private Object translator;
 
     /**
      * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
@@ -123,22 +126,29 @@ public class UserTweetsImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getTranslator() {
-        return (T) fTranslator;
+        return (T) translator;
     }
 
     /**
      * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
      *
+     * @param translator Person value to set.
      */
     @Override
-    public void setTranslator(Object fTranslator) {
-        if(!(fTranslator instanceof Person) && !(fTranslator instanceof Organization)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'translator': " + fTranslator);
-        }
-        this.fTranslator = fTranslator;
+    public void setTranslator(Person translator) {
+        this.translator = translator;
+    }
+    /**
+     * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
+     *
+     * @param translator Organization value to set.
+     */
+    @Override
+    public void setTranslator(Organization translator) {
+        this.translator = translator;
     }
 
-    private Object fStartDate;
+    private Object startDate;
 
     /**
      * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
@@ -148,23 +158,31 @@ public class UserTweetsImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getStartDate() {
-        return (T) fStartDate;
+        return (T) startDate;
     }
 
     /**
      * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
      *
+     * @param startDate DateTime value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
     @Override
-    public void setStartDate(Object fStartDate) {
-        if(!(fStartDate instanceof DateTime) && !(fStartDate instanceof Date)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'startDate': " + fStartDate);
-        }
-        this.fStartDate = fStartDate;
+    public void setStartDate(DateTime startDate) {
+        this.startDate = startDate;
+    }
+    /**
+     * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
+     *
+     * @param startDate Date value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
+     */
+    @Override
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
     }
 
-    private Object fComposer;
+    private Object composer;
 
     /**
      * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
@@ -174,23 +192,31 @@ public class UserTweetsImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getComposer() {
-        return (T) fComposer;
+        return (T) composer;
     }
 
     /**
      * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
      *
+     * @param composer Organization value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
     @Override
-    public void setComposer(Object fComposer) {
-        if(!(fComposer instanceof Organization) && !(fComposer instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'composer': " + fComposer);
-        }
-        this.fComposer = fComposer;
+    public void setComposer(Organization composer) {
+        this.composer = composer;
+    }
+    /**
+     * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
+     *
+     * @param composer Person value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
+     */
+    @Override
+    public void setComposer(Person composer) {
+        this.composer = composer;
     }
 
-    private Integer fMaximumAttendeeCapacity;
+    private Integer maximumAttendeeCapacity;
 
     /**
      * The total number of individuals that may attend an event or venue.
@@ -199,19 +225,20 @@ public class UserTweetsImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Integer getMaximumAttendeeCapacity() {
-        return fMaximumAttendeeCapacity;
+        return maximumAttendeeCapacity;
     }
 
     /**
      * The total number of individuals that may attend an event or venue.
      *
+     * @param maximumAttendeeCapacity Integer value to set.
      */
     @Override
-    public void setMaximumAttendeeCapacity(Integer fMaximumAttendeeCapacity) {
-        this.fMaximumAttendeeCapacity = fMaximumAttendeeCapacity;
+    public void setMaximumAttendeeCapacity(Integer maximumAttendeeCapacity) {
+        this.maximumAttendeeCapacity = maximumAttendeeCapacity;
     }
 
-    private Integer fMaximumVirtualAttendeeCapacity;
+    private Integer maximumVirtualAttendeeCapacity;
 
     /**
      * The maximum physical attendee capacity of an [[Event]] whose [[eventAttendanceMode]] is [[OnlineEventAttendanceMode]] (or the online aspects, in the case of a [[MixedEventAttendanceMode]]). 
@@ -222,21 +249,22 @@ public class UserTweetsImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Integer getMaximumVirtualAttendeeCapacity() {
-        return fMaximumVirtualAttendeeCapacity;
+        return maximumVirtualAttendeeCapacity;
     }
 
     /**
      * The maximum physical attendee capacity of an [[Event]] whose [[eventAttendanceMode]] is [[OnlineEventAttendanceMode]] (or the online aspects, in the case of a [[MixedEventAttendanceMode]]). 
      *
+     * @param maximumVirtualAttendeeCapacity Integer value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1842">https://github.com/schemaorg/schemaorg/issues/1842</a>
      */
     @Override
-    public void setMaximumVirtualAttendeeCapacity(Integer fMaximumVirtualAttendeeCapacity) {
-        this.fMaximumVirtualAttendeeCapacity = fMaximumVirtualAttendeeCapacity;
+    public void setMaximumVirtualAttendeeCapacity(Integer maximumVirtualAttendeeCapacity) {
+        this.maximumVirtualAttendeeCapacity = maximumVirtualAttendeeCapacity;
     }
 
-    private Person fDirector;
+    private Person director;
 
     /**
      * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
@@ -245,19 +273,20 @@ public class UserTweetsImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Person getDirector() {
-        return fDirector;
+        return director;
     }
 
     /**
      * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
      *
+     * @param director Person value to set.
      */
     @Override
-    public void setDirector(Person fDirector) {
-        this.fDirector = fDirector;
+    public void setDirector(Person director) {
+        this.director = director;
     }
 
-    private Grant fFunding;
+    private Grant funding;
 
     /**
      * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
@@ -269,22 +298,23 @@ public class UserTweetsImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Grant getFunding() {
-        return fFunding;
+        return funding;
     }
 
     /**
      * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
      *
+     * @param funding Grant value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
     @Override
-    public void setFunding(Grant fFunding) {
-        this.fFunding = fFunding;
+    public void setFunding(Grant funding) {
+        this.funding = funding;
     }
 
-    private Object fKeywords;
+    private Object keywords;
 
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
@@ -293,22 +323,38 @@ public class UserTweetsImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getKeywords() {
-        return (T) fKeywords;
+        return (T) keywords;
     }
 
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
      *
+     * @param keywords DefinedTerm value to set.
      */
     @Override
-    public void setKeywords(Object fKeywords) {
-        if(!(fKeywords instanceof DefinedTerm) && !(fKeywords instanceof Text) && !(fKeywords instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'keywords': " + fKeywords);
-        }
-        this.fKeywords = fKeywords;
+    public void setKeywords(DefinedTerm keywords) {
+        this.keywords = keywords;
+    }
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     * @param keywords Text value to set.
+     */
+    @Override
+    public void setKeywords(Text keywords) {
+        this.keywords = keywords;
+    }
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     * @param keywords URL value to set.
+     */
+    @Override
+    public void setKeywords(URL keywords) {
+        this.keywords = keywords;
     }
 
-    private Audience fAudience;
+    private Audience audience;
 
     /**
      * An intended audience, i.e. a group for whom something was created.
@@ -317,19 +363,20 @@ public class UserTweetsImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Audience getAudience() {
-        return fAudience;
+        return audience;
     }
 
     /**
      * An intended audience, i.e. a group for whom something was created.
      *
+     * @param audience Audience value to set.
      */
     @Override
-    public void setAudience(Audience fAudience) {
-        this.fAudience = fAudience;
+    public void setAudience(Audience audience) {
+        this.audience = audience;
     }
 
-    private Object fOffers;
+    private Object offers;
 
     /**
      * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
@@ -340,24 +387,33 @@ public class UserTweetsImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getOffers() {
-        return (T) fOffers;
+        return (T) offers;
     }
 
     /**
      * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      *
+     * @param offers Offer value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
     @Override
-    public void setOffers(Object fOffers) {
-        if(!(fOffers instanceof Offer) && !(fOffers instanceof Demand)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'offers': " + fOffers);
-        }
-        this.fOffers = fOffers;
+    public void setOffers(Offer offers) {
+        this.offers = offers;
+    }
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     *
+     * @param offers Demand value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public void setOffers(Demand offers) {
+        this.offers = offers;
     }
 
-    private Event fSubEvent;
+    private Event subEvent;
 
     /**
      * An Event that is part of this event. For example, a conference event includes many presentations, each of which is a subEvent of the conference.
@@ -366,19 +422,20 @@ public class UserTweetsImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Event getSubEvent() {
-        return fSubEvent;
+        return subEvent;
     }
 
     /**
      * An Event that is part of this event. For example, a conference event includes many presentations, each of which is a subEvent of the conference.
      *
+     * @param subEvent Event value to set.
      */
     @Override
-    public void setSubEvent(Event fSubEvent) {
-        this.fSubEvent = fSubEvent;
+    public void setSubEvent(Event subEvent) {
+        this.subEvent = subEvent;
     }
 
-    private Person fActor;
+    private Person actor;
 
     /**
      * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
@@ -387,19 +444,20 @@ public class UserTweetsImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Person getActor() {
-        return fActor;
+        return actor;
     }
 
     /**
      * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
      *
+     * @param actor Person value to set.
      */
     @Override
-    public void setActor(Person fActor) {
-        this.fActor = fActor;
+    public void setActor(Person actor) {
+        this.actor = actor;
     }
 
-    private EventStatusType fEventStatus;
+    private EventStatusType eventStatus;
 
     /**
      * An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled.
@@ -408,19 +466,20 @@ public class UserTweetsImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public EventStatusType getEventStatus() {
-        return fEventStatus;
+        return eventStatus;
     }
 
     /**
      * An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled.
      *
+     * @param eventStatus EventStatusType value to set.
      */
     @Override
-    public void setEventStatus(EventStatusType fEventStatus) {
-        this.fEventStatus = fEventStatus;
+    public void setEventStatus(EventStatusType eventStatus) {
+        this.eventStatus = eventStatus;
     }
 
-    private Object fEndDate;
+    private Object endDate;
 
     /**
      * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
@@ -430,23 +489,31 @@ public class UserTweetsImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getEndDate() {
-        return (T) fEndDate;
+        return (T) endDate;
     }
 
     /**
      * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
      *
+     * @param endDate Date value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
     @Override
-    public void setEndDate(Object fEndDate) {
-        if(!(fEndDate instanceof Date) && !(fEndDate instanceof DateTime)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'endDate': " + fEndDate);
-        }
-        this.fEndDate = fEndDate;
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
+    }
+    /**
+     * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
+     *
+     * @param endDate DateTime value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
+     */
+    @Override
+    public void setEndDate(DateTime endDate) {
+        this.endDate = endDate;
     }
 
-    private Object fFunder;
+    private Object funder;
 
     /**
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
@@ -455,22 +522,29 @@ public class UserTweetsImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getFunder() {
-        return (T) fFunder;
+        return (T) funder;
     }
 
     /**
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
+     * @param funder Organization value to set.
      */
     @Override
-    public void setFunder(Object fFunder) {
-        if(!(fFunder instanceof Organization) && !(fFunder instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'funder': " + fFunder);
-        }
-        this.fFunder = fFunder;
+    public void setFunder(Organization funder) {
+        this.funder = funder;
+    }
+    /**
+     * A person or organization that supports (sponsors) something through some kind of financial contribution.
+     *
+     * @param funder Person value to set.
+     */
+    @Override
+    public void setFunder(Person funder) {
+        this.funder = funder;
     }
 
-    private Object fPerformer;
+    private Object performer;
 
     /**
      * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
@@ -479,22 +553,29 @@ public class UserTweetsImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getPerformer() {
-        return (T) fPerformer;
+        return (T) performer;
     }
 
     /**
      * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
      *
+     * @param performer Organization value to set.
      */
     @Override
-    public void setPerformer(Object fPerformer) {
-        if(!(fPerformer instanceof Organization) && !(fPerformer instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'performer': " + fPerformer);
-        }
-        this.fPerformer = fPerformer;
+    public void setPerformer(Organization performer) {
+        this.performer = performer;
+    }
+    /**
+     * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
+     *
+     * @param performer Person value to set.
+     */
+    @Override
+    public void setPerformer(Person performer) {
+        this.performer = performer;
     }
 
-    private AggregateRating fAggregateRating;
+    private AggregateRating aggregateRating;
 
     /**
      * The overall rating, based on a collection of reviews or ratings, of the item.
@@ -503,19 +584,20 @@ public class UserTweetsImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public AggregateRating getAggregateRating() {
-        return fAggregateRating;
+        return aggregateRating;
     }
 
     /**
      * The overall rating, based on a collection of reviews or ratings, of the item.
      *
+     * @param aggregateRating AggregateRating value to set.
      */
     @Override
-    public void setAggregateRating(AggregateRating fAggregateRating) {
-        this.fAggregateRating = fAggregateRating;
+    public void setAggregateRating(AggregateRating aggregateRating) {
+        this.aggregateRating = aggregateRating;
     }
 
-    private Text fTypicalAgeRange;
+    private Text typicalAgeRange;
 
     /**
      * The typical expected age range, e.g. '7-9', '11-'.
@@ -524,19 +606,20 @@ public class UserTweetsImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getTypicalAgeRange() {
-        return fTypicalAgeRange;
+        return typicalAgeRange;
     }
 
     /**
      * The typical expected age range, e.g. '7-9', '11-'.
      *
+     * @param typicalAgeRange Text value to set.
      */
     @Override
-    public void setTypicalAgeRange(Text fTypicalAgeRange) {
-        this.fTypicalAgeRange = fTypicalAgeRange;
+    public void setTypicalAgeRange(Text typicalAgeRange) {
+        this.typicalAgeRange = typicalAgeRange;
     }
 
-    private Object fLocation;
+    private Object location;
 
     /**
      * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
@@ -545,22 +628,47 @@ public class UserTweetsImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getLocation() {
-        return (T) fLocation;
+        return (T) location;
     }
 
     /**
      * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
      *
+     * @param location PostalAddress value to set.
      */
     @Override
-    public void setLocation(Object fLocation) {
-        if(!(fLocation instanceof PostalAddress) && !(fLocation instanceof Text) && !(fLocation instanceof Place) && !(fLocation instanceof VirtualLocation)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'location': " + fLocation);
-        }
-        this.fLocation = fLocation;
+    public void setLocation(PostalAddress location) {
+        this.location = location;
+    }
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @param location Text value to set.
+     */
+    @Override
+    public void setLocation(Text location) {
+        this.location = location;
+    }
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @param location Place value to set.
+     */
+    @Override
+    public void setLocation(Place location) {
+        this.location = location;
+    }
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @param location VirtualLocation value to set.
+     */
+    @Override
+    public void setLocation(VirtualLocation location) {
+        this.location = location;
     }
 
-    private Object fPerformers;
+    private Object performers;
 
     /**
      * The main performer or performers of the event&#x2014;for example, a presenter, musician, or actor.
@@ -569,22 +677,29 @@ public class UserTweetsImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getPerformers() {
-        return (T) fPerformers;
+        return (T) performers;
     }
 
     /**
      * The main performer or performers of the event&#x2014;for example, a presenter, musician, or actor.
      *
+     * @param performers Person value to set.
      */
     @Override
-    public void setPerformers(Object fPerformers) {
-        if(!(fPerformers instanceof Person) && !(fPerformers instanceof Organization)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'performers': " + fPerformers);
-        }
-        this.fPerformers = fPerformers;
+    public void setPerformers(Person performers) {
+        this.performers = performers;
+    }
+    /**
+     * The main performer or performers of the event&#x2014;for example, a presenter, musician, or actor.
+     *
+     * @param performers Organization value to set.
+     */
+    @Override
+    public void setPerformers(Organization performers) {
+        this.performers = performers;
     }
 
-    private Duration fDuration;
+    private Duration duration;
 
     /**
      * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
@@ -595,21 +710,22 @@ public class UserTweetsImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Duration getDuration() {
-        return fDuration;
+        return duration;
     }
 
     /**
      * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
      *
+     * @param duration Duration value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
      */
     @Override
-    public void setDuration(Duration fDuration) {
-        this.fDuration = fDuration;
+    public void setDuration(Duration duration) {
+        this.duration = duration;
     }
 
-    private Object fOrganizer;
+    private Object organizer;
 
     /**
      * An organizer of an Event.
@@ -618,22 +734,29 @@ public class UserTweetsImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getOrganizer() {
-        return (T) fOrganizer;
+        return (T) organizer;
     }
 
     /**
      * An organizer of an Event.
      *
+     * @param organizer Person value to set.
      */
     @Override
-    public void setOrganizer(Object fOrganizer) {
-        if(!(fOrganizer instanceof Person) && !(fOrganizer instanceof Organization)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'organizer': " + fOrganizer);
-        }
-        this.fOrganizer = fOrganizer;
+    public void setOrganizer(Person organizer) {
+        this.organizer = organizer;
+    }
+    /**
+     * An organizer of an Event.
+     *
+     * @param organizer Organization value to set.
+     */
+    @Override
+    public void setOrganizer(Organization organizer) {
+        this.organizer = organizer;
     }
 
-    private Object fSponsor;
+    private Object sponsor;
 
     /**
      * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
@@ -642,22 +765,29 @@ public class UserTweetsImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getSponsor() {
-        return (T) fSponsor;
+        return (T) sponsor;
     }
 
     /**
      * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
      *
+     * @param sponsor Organization value to set.
      */
     @Override
-    public void setSponsor(Object fSponsor) {
-        if(!(fSponsor instanceof Organization) && !(fSponsor instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'sponsor': " + fSponsor);
-        }
-        this.fSponsor = fSponsor;
+    public void setSponsor(Organization sponsor) {
+        this.sponsor = sponsor;
+    }
+    /**
+     * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
+     *
+     * @param sponsor Person value to set.
+     */
+    @Override
+    public void setSponsor(Person sponsor) {
+        this.sponsor = sponsor;
     }
 
-    private Date fPreviousStartDate;
+    private Date previousStartDate;
 
     /**
      * Used in conjunction with eventStatus for rescheduled or cancelled events. This property contains the previously scheduled start date. For rescheduled events, the startDate property should be used for the newly scheduled start date. In the (rare) case of an event that has been postponed and rescheduled multiple times, this field may be repeated.
@@ -666,19 +796,20 @@ public class UserTweetsImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Date getPreviousStartDate() {
-        return fPreviousStartDate;
+        return previousStartDate;
     }
 
     /**
      * Used in conjunction with eventStatus for rescheduled or cancelled events. This property contains the previously scheduled start date. For rescheduled events, the startDate property should be used for the newly scheduled start date. In the (rare) case of an event that has been postponed and rescheduled multiple times, this field may be repeated.
      *
+     * @param previousStartDate Date value to set.
      */
     @Override
-    public void setPreviousStartDate(Date fPreviousStartDate) {
-        this.fPreviousStartDate = fPreviousStartDate;
+    public void setPreviousStartDate(Date previousStartDate) {
+        this.previousStartDate = previousStartDate;
     }
 
-    private Boolean fIsAccessibleForFree;
+    private Boolean isAccessibleForFree;
 
     /**
      * A flag to signal that the item, event, or place is accessible for free.
@@ -687,19 +818,20 @@ public class UserTweetsImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Boolean getIsAccessibleForFree() {
-        return fIsAccessibleForFree;
+        return isAccessibleForFree;
     }
 
     /**
      * A flag to signal that the item, event, or place is accessible for free.
      *
+     * @param isAccessibleForFree Boolean value to set.
      */
     @Override
-    public void setIsAccessibleForFree(Boolean fIsAccessibleForFree) {
-        this.fIsAccessibleForFree = fIsAccessibleForFree;
+    public void setIsAccessibleForFree(Boolean isAccessibleForFree) {
+        this.isAccessibleForFree = isAccessibleForFree;
     }
 
-    private Integer fRemainingAttendeeCapacity;
+    private Integer remainingAttendeeCapacity;
 
     /**
      * The number of attendee places for an event that remain unallocated.
@@ -708,19 +840,20 @@ public class UserTweetsImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Integer getRemainingAttendeeCapacity() {
-        return fRemainingAttendeeCapacity;
+        return remainingAttendeeCapacity;
     }
 
     /**
      * The number of attendee places for an event that remain unallocated.
      *
+     * @param remainingAttendeeCapacity Integer value to set.
      */
     @Override
-    public void setRemainingAttendeeCapacity(Integer fRemainingAttendeeCapacity) {
-        this.fRemainingAttendeeCapacity = fRemainingAttendeeCapacity;
+    public void setRemainingAttendeeCapacity(Integer remainingAttendeeCapacity) {
+        this.remainingAttendeeCapacity = remainingAttendeeCapacity;
     }
 
-    private Event fSubEvents;
+    private Event subEvents;
 
     /**
      * Events that are a part of this event. For example, a conference event includes many presentations, each subEvents of the conference.
@@ -729,19 +862,20 @@ public class UserTweetsImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Event getSubEvents() {
-        return fSubEvents;
+        return subEvents;
     }
 
     /**
      * Events that are a part of this event. For example, a conference event includes many presentations, each subEvents of the conference.
      *
+     * @param subEvents Event value to set.
      */
     @Override
-    public void setSubEvents(Event fSubEvents) {
-        this.fSubEvents = fSubEvents;
+    public void setSubEvents(Event subEvents) {
+        this.subEvents = subEvents;
     }
 
-    private CreativeWork fWorkPerformed;
+    private CreativeWork workPerformed;
 
     /**
      * A work performed in some event, for example a play performed in a TheaterEvent.
@@ -750,19 +884,20 @@ public class UserTweetsImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public CreativeWork getWorkPerformed() {
-        return fWorkPerformed;
+        return workPerformed;
     }
 
     /**
      * A work performed in some event, for example a play performed in a TheaterEvent.
      *
+     * @param workPerformed CreativeWork value to set.
      */
     @Override
-    public void setWorkPerformed(CreativeWork fWorkPerformed) {
-        this.fWorkPerformed = fWorkPerformed;
+    public void setWorkPerformed(CreativeWork workPerformed) {
+        this.workPerformed = workPerformed;
     }
 
-    private Object fDoorTime;
+    private Object doorTime;
 
     /**
      * The time admission will commence.
@@ -771,22 +906,29 @@ public class UserTweetsImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getDoorTime() {
-        return (T) fDoorTime;
+        return (T) doorTime;
     }
 
     /**
      * The time admission will commence.
      *
+     * @param doorTime Time value to set.
      */
     @Override
-    public void setDoorTime(Object fDoorTime) {
-        if(!(fDoorTime instanceof Time) && !(fDoorTime instanceof DateTime)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'doorTime': " + fDoorTime);
-        }
-        this.fDoorTime = fDoorTime;
+    public void setDoorTime(Time doorTime) {
+        this.doorTime = doorTime;
+    }
+    /**
+     * The time admission will commence.
+     *
+     * @param doorTime DateTime value to set.
+     */
+    @Override
+    public void setDoorTime(DateTime doorTime) {
+        this.doorTime = doorTime;
     }
 
-    private Object fInLanguage;
+    private Object inLanguage;
 
     /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
@@ -796,23 +938,31 @@ public class UserTweetsImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getInLanguage() {
-        return (T) fInLanguage;
+        return (T) inLanguage;
     }
 
     /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
      *
+     * @param inLanguage Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
      */
     @Override
-    public void setInLanguage(Object fInLanguage) {
-        if(!(fInLanguage instanceof Text) && !(fInLanguage instanceof Language)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'inLanguage': " + fInLanguage);
-        }
-        this.fInLanguage = fInLanguage;
+    public void setInLanguage(Text inLanguage) {
+        this.inLanguage = inLanguage;
+    }
+    /**
+     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     *
+     * @param inLanguage Language value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
+     */
+    @Override
+    public void setInLanguage(Language inLanguage) {
+        this.inLanguage = inLanguage;
     }
 
-    private Thing fAbout;
+    private Thing about;
 
     /**
      * The subject matter of the content.
@@ -822,20 +972,21 @@ public class UserTweetsImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Thing getAbout() {
-        return fAbout;
+        return about;
     }
 
     /**
      * The subject matter of the content.
      *
+     * @param about Thing value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setAbout(Thing fAbout) {
-        this.fAbout = fAbout;
+    public void setAbout(Thing about) {
+        this.about = about;
     }
 
-    private CreativeWork fRecordedIn;
+    private CreativeWork recordedIn;
 
     /**
      * The CreativeWork that captured all or part of this Event.
@@ -844,19 +995,20 @@ public class UserTweetsImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public CreativeWork getRecordedIn() {
-        return fRecordedIn;
+        return recordedIn;
     }
 
     /**
      * The CreativeWork that captured all or part of this Event.
      *
+     * @param recordedIn CreativeWork value to set.
      */
     @Override
-    public void setRecordedIn(CreativeWork fRecordedIn) {
-        this.fRecordedIn = fRecordedIn;
+    public void setRecordedIn(CreativeWork recordedIn) {
+        this.recordedIn = recordedIn;
     }
 
-    private Integer fMaximumPhysicalAttendeeCapacity;
+    private Integer maximumPhysicalAttendeeCapacity;
 
     /**
      * The maximum physical attendee capacity of an [[Event]] whose [[eventAttendanceMode]] is [[OfflineEventAttendanceMode]] (or the offline aspects, in the case of a [[MixedEventAttendanceMode]]). 
@@ -867,21 +1019,22 @@ public class UserTweetsImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Integer getMaximumPhysicalAttendeeCapacity() {
-        return fMaximumPhysicalAttendeeCapacity;
+        return maximumPhysicalAttendeeCapacity;
     }
 
     /**
      * The maximum physical attendee capacity of an [[Event]] whose [[eventAttendanceMode]] is [[OfflineEventAttendanceMode]] (or the offline aspects, in the case of a [[MixedEventAttendanceMode]]). 
      *
+     * @param maximumPhysicalAttendeeCapacity Integer value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1842">https://github.com/schemaorg/schemaorg/issues/1842</a>
      */
     @Override
-    public void setMaximumPhysicalAttendeeCapacity(Integer fMaximumPhysicalAttendeeCapacity) {
-        this.fMaximumPhysicalAttendeeCapacity = fMaximumPhysicalAttendeeCapacity;
+    public void setMaximumPhysicalAttendeeCapacity(Integer maximumPhysicalAttendeeCapacity) {
+        this.maximumPhysicalAttendeeCapacity = maximumPhysicalAttendeeCapacity;
     }
 
-    private Object fAttendee;
+    private Object attendee;
 
     /**
      * A person or organization attending the event.
@@ -890,22 +1043,29 @@ public class UserTweetsImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getAttendee() {
-        return (T) fAttendee;
+        return (T) attendee;
     }
 
     /**
      * A person or organization attending the event.
      *
+     * @param attendee Person value to set.
      */
     @Override
-    public void setAttendee(Object fAttendee) {
-        if(!(fAttendee instanceof Person) && !(fAttendee instanceof Organization)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'attendee': " + fAttendee);
-        }
-        this.fAttendee = fAttendee;
+    public void setAttendee(Person attendee) {
+        this.attendee = attendee;
+    }
+    /**
+     * A person or organization attending the event.
+     *
+     * @param attendee Organization value to set.
+     */
+    @Override
+    public void setAttendee(Organization attendee) {
+        this.attendee = attendee;
     }
 
-    private CreativeWork fWorkFeatured;
+    private CreativeWork workFeatured;
 
     /**
      * A work featured in some event, e.g. exhibited in an ExhibitionEvent.
@@ -915,20 +1075,21 @@ public class UserTweetsImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public CreativeWork getWorkFeatured() {
-        return fWorkFeatured;
+        return workFeatured;
     }
 
     /**
      * A work featured in some event, e.g. exhibited in an ExhibitionEvent.
      *        Specific subproperties are available for workPerformed (e.g. a play), or a workPresented (a Movie at a ScreeningEvent).
      *
+     * @param workFeatured CreativeWork value to set.
      */
     @Override
-    public void setWorkFeatured(CreativeWork fWorkFeatured) {
-        this.fWorkFeatured = fWorkFeatured;
+    public void setWorkFeatured(CreativeWork workFeatured) {
+        this.workFeatured = workFeatured;
     }
 
-    private Schedule fEventSchedule;
+    private Schedule eventSchedule;
 
     /**
      * Associates an [[Event]] with a [[Schedule]]. There are circumstances where it is preferable to share a schedule for a series of
@@ -944,7 +1105,7 @@ public class UserTweetsImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Schedule getEventSchedule() {
-        return fEventSchedule;
+        return eventSchedule;
     }
 
     /**
@@ -955,15 +1116,16 @@ public class UserTweetsImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      *       [[Schedule]], this avoids any ambiguity for clients using the data. The property might have repeated values to specify different schedules, e.g. for different months
      *       or seasons.
      *
+     * @param eventSchedule Schedule value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
      */
     @Override
-    public void setEventSchedule(Schedule fEventSchedule) {
-        this.fEventSchedule = fEventSchedule;
+    public void setEventSchedule(Schedule eventSchedule) {
+        this.eventSchedule = eventSchedule;
     }
 
-    private Object fContributor;
+    private Object contributor;
 
     /**
      * A secondary contributor to the CreativeWork or Event.
@@ -972,22 +1134,29 @@ public class UserTweetsImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getContributor() {
-        return (T) fContributor;
+        return (T) contributor;
     }
 
     /**
      * A secondary contributor to the CreativeWork or Event.
      *
+     * @param contributor Organization value to set.
      */
     @Override
-    public void setContributor(Object fContributor) {
-        if(!(fContributor instanceof Organization) && !(fContributor instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'contributor': " + fContributor);
-        }
-        this.fContributor = fContributor;
+    public void setContributor(Organization contributor) {
+        this.contributor = contributor;
+    }
+    /**
+     * A secondary contributor to the CreativeWork or Event.
+     *
+     * @param contributor Person value to set.
+     */
+    @Override
+    public void setContributor(Person contributor) {
+        this.contributor = contributor;
     }
 
-    private Object fAttendees;
+    private Object attendees;
 
     /**
      * A person attending the event.
@@ -996,22 +1165,29 @@ public class UserTweetsImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getAttendees() {
-        return (T) fAttendees;
+        return (T) attendees;
     }
 
     /**
      * A person attending the event.
      *
+     * @param attendees Person value to set.
      */
     @Override
-    public void setAttendees(Object fAttendees) {
-        if(!(fAttendees instanceof Person) && !(fAttendees instanceof Organization)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'attendees': " + fAttendees);
-        }
-        this.fAttendees = fAttendees;
+    public void setAttendees(Person attendees) {
+        this.attendees = attendees;
+    }
+    /**
+     * A person attending the event.
+     *
+     * @param attendees Organization value to set.
+     */
+    @Override
+    public void setAttendees(Organization attendees) {
+        this.attendees = attendees;
     }
 
-    private Object fMainEntityOfPage;
+    private Object mainEntityOfPage;
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -1020,22 +1196,29 @@ public class UserTweetsImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
+        return (T) mainEntityOfPage;
     }
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
+     * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
-        }
-        this.fMainEntityOfPage = fMainEntityOfPage;
+    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param mainEntityOfPage URL value to set.
+     */
+    @Override
+    public void setMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
     }
 
-    private Text fAlternateName;
+    private Text alternateName;
 
     /**
      * An alias for the item.
@@ -1044,19 +1227,20 @@ public class UserTweetsImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getAlternateName() {
-        return fAlternateName;
+        return alternateName;
     }
 
     /**
      * An alias for the item.
      *
+     * @param alternateName Text value to set.
      */
     @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
+    public void setAlternateName(Text alternateName) {
+        this.alternateName = alternateName;
     }
 
-    private Text fName;
+    private Text name;
 
     /**
      * The name of the item.
@@ -1065,19 +1249,20 @@ public class UserTweetsImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getName() {
-        return fName;
+        return name;
     }
 
     /**
      * The name of the item.
      *
+     * @param name Text value to set.
      */
     @Override
-    public void setName(Text fName) {
-        this.fName = fName;
+    public void setName(Text name) {
+        this.name = name;
     }
 
-    private Action fPotentialAction;
+    private Action potentialAction;
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -1086,19 +1271,20 @@ public class UserTweetsImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Action getPotentialAction() {
-        return fPotentialAction;
+        return potentialAction;
     }
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      *
+     * @param potentialAction Action value to set.
      */
     @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
+    public void setPotentialAction(Action potentialAction) {
+        this.potentialAction = potentialAction;
     }
 
-    private Object fImage;
+    private Object image;
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -1107,22 +1293,29 @@ public class UserTweetsImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getImage() {
-        return (T) fImage;
+        return (T) image;
     }
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
+     * @param image URL value to set.
      */
     @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
-        this.fImage = fImage;
+    public void setImage(URL image) {
+        this.image = image;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image ImageObject value to set.
+     */
+    @Override
+    public void setImage(ImageObject image) {
+        this.image = image;
     }
 
-    private URL fUrl;
+    private URL url;
 
     /**
      * URL of the item.
@@ -1131,19 +1324,20 @@ public class UserTweetsImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public URL getUrl() {
-        return fUrl;
+        return url;
     }
 
     /**
      * URL of the item.
      *
+     * @param url URL value to set.
      */
     @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
+    public void setUrl(URL url) {
+        this.url = url;
     }
 
-    private Text fDescription;
+    private Text description;
 
     /**
      * A description of the item.
@@ -1152,19 +1346,20 @@ public class UserTweetsImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getDescription() {
-        return fDescription;
+        return description;
     }
 
     /**
      * A description of the item.
      *
+     * @param description Text value to set.
      */
     @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
+    public void setDescription(Text description) {
+        this.description = description;
     }
 
-    private Object fSubjectOf;
+    private Object subjectOf;
 
     /**
      * A CreativeWork or Event about this Thing.
@@ -1174,23 +1369,31 @@ public class UserTweetsImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getSubjectOf() {
-        return (T) fSubjectOf;
+        return (T) subjectOf;
     }
 
     /**
      * A CreativeWork or Event about this Thing.
      *
+     * @param subjectOf Event value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Object fSubjectOf) {
-        if(!(fSubjectOf instanceof Event) && !(fSubjectOf instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'subjectOf': " + fSubjectOf);
-        }
-        this.fSubjectOf = fSubjectOf;
+    public void setSubjectOf(Event subjectOf) {
+        this.subjectOf = subjectOf;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @param subjectOf CreativeWork value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public void setSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = subjectOf;
     }
 
-    private URL fAdditionalType;
+    private URL additionalType;
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
@@ -1199,19 +1402,20 @@ public class UserTweetsImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public URL getAdditionalType() {
-        return fAdditionalType;
+        return additionalType;
     }
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
+     * @param additionalType URL value to set.
      */
     @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
+    public void setAdditionalType(URL additionalType) {
+        this.additionalType = additionalType;
     }
 
-    private Text fDisambiguatingDescription;
+    private Text disambiguatingDescription;
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
@@ -1220,19 +1424,20 @@ public class UserTweetsImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getDisambiguatingDescription() {
-        return fDisambiguatingDescription;
+        return disambiguatingDescription;
     }
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
+     * @param disambiguatingDescription Text value to set.
      */
     @Override
-    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = fDisambiguatingDescription;
+    public void setDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = disambiguatingDescription;
     }
 
-    private URL fSameAs;
+    private URL sameAs;
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
@@ -1241,19 +1446,20 @@ public class UserTweetsImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public URL getSameAs() {
-        return fSameAs;
+        return sameAs;
     }
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
+     * @param sameAs URL value to set.
      */
     @Override
-    public void setSameAs(URL fSameAs) {
-        this.fSameAs = fSameAs;
+    public void setSameAs(URL sameAs) {
+        this.sameAs = sameAs;
     }
 
-    private Object fIdentifier;
+    private Object identifier;
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -1263,19 +1469,37 @@ public class UserTweetsImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getIdentifier() {
-        return (T) fIdentifier;
+        return (T) identifier;
     }
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
+     * @param identifier URL value to set.
      */
     @Override
-    public void setIdentifier(Object fIdentifier) {
-        if(!(fIdentifier instanceof URL) && !(fIdentifier instanceof Text) && !(fIdentifier instanceof PropertyValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
-        }
-        this.fIdentifier = fIdentifier;
+    public void setIdentifier(URL identifier) {
+        this.identifier = identifier;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier Text value to set.
+     */
+    @Override
+    public void setIdentifier(Text identifier) {
+        this.identifier = identifier;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier PropertyValue value to set.
+     */
+    @Override
+    public void setIdentifier(PropertyValue identifier) {
+        this.identifier = identifier;
     }
 }

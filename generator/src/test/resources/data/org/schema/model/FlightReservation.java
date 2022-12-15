@@ -25,8 +25,15 @@ public interface FlightReservation extends Reservation {
     /**
      * The priority status assigned to a passenger for security or boarding (e.g. FastTrack or Priority).
      *
+     * @param passengerPriorityStatus QualitativeValue value to set.
      */
-    void setPassengerPriorityStatus(Object fPassengerPriorityStatus);
+    void setPassengerPriorityStatus(QualitativeValue passengerPriorityStatus);
+    /**
+     * The priority status assigned to a passenger for security or boarding (e.g. FastTrack or Priority).
+     *
+     * @param passengerPriorityStatus Text value to set.
+     */
+    void setPassengerPriorityStatus(Text passengerPriorityStatus);
 
     /**
      * The airline-specific indicator of boarding order / preference.
@@ -38,8 +45,9 @@ public interface FlightReservation extends Reservation {
     /**
      * The airline-specific indicator of boarding order / preference.
      *
+     * @param boardingGroup Text value to set.
      */
-    void setBoardingGroup(Text fBoardingGroup);
+    void setBoardingGroup(Text boardingGroup);
 
     /**
      * The type of security screening the passenger is subject to.
@@ -51,8 +59,9 @@ public interface FlightReservation extends Reservation {
     /**
      * The type of security screening the passenger is subject to.
      *
+     * @param securityScreening Text value to set.
      */
-    void setSecurityScreening(Text fSecurityScreening);
+    void setSecurityScreening(Text securityScreening);
 
     /**
      * The passenger's sequence number as assigned by the airline.
@@ -64,6 +73,7 @@ public interface FlightReservation extends Reservation {
     /**
      * The passenger's sequence number as assigned by the airline.
      *
+     * @param passengerSequenceNumber Text value to set.
      */
-    void setPassengerSequenceNumber(Text fPassengerSequenceNumber);
+    void setPassengerSequenceNumber(Text passengerSequenceNumber);
 }

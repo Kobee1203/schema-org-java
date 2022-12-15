@@ -29,8 +29,17 @@ public interface SeekToAction extends Action {
     /**
      * The start time of the clip expressed as the number of seconds from the beginning of the work.
      *
+     * @param startOffset Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2021">https://github.com/schemaorg/schemaorg/issues/2021</a>
      */
-    void setStartOffset(Object fStartOffset);
+    void setStartOffset(Number startOffset);
+    /**
+     * The start time of the clip expressed as the number of seconds from the beginning of the work.
+     *
+     * @param startOffset HyperTocEntry value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2021">https://github.com/schemaorg/schemaorg/issues/2021</a>
+     */
+    void setStartOffset(HyperTocEntry startOffset);
 }

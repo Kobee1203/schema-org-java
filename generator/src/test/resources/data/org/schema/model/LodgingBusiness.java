@@ -36,9 +36,18 @@ public interface LodgingBusiness extends LocalBusiness {
      * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
      * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
      *
+     * @param numberOfRooms QuantitativeValue value to set.
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
-    void setNumberOfRooms(Object fNumberOfRooms);
+    void setNumberOfRooms(QuantitativeValue numberOfRooms);
+    /**
+     * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
+     * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
+     *
+     * @param numberOfRooms Number value to set.
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
+     */
+    void setNumberOfRooms(Number numberOfRooms);
 
     /**
      * An intended audience, i.e. a group for whom something was created.
@@ -50,8 +59,9 @@ public interface LodgingBusiness extends LocalBusiness {
     /**
      * An intended audience, i.e. a group for whom something was created.
      *
+     * @param audience Audience value to set.
      */
-    void setAudience(Audience fAudience);
+    void setAudience(Audience audience);
 
     /**
      * An official rating for a lodging business or food establishment, e.g. from national associations or standards bodies. Use the author property to indicate the rating organization, e.g. as an Organization with name such as (e.g. HOTREC, DEHOGA, WHR, or Hotelstars).
@@ -64,9 +74,10 @@ public interface LodgingBusiness extends LocalBusiness {
     /**
      * An official rating for a lodging business or food establishment, e.g. from national associations or standards bodies. Use the author property to indicate the rating organization, e.g. as an Organization with name such as (e.g. HOTREC, DEHOGA, WHR, or Hotelstars).
      *
+     * @param starRating Rating value to set.
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
-    void setStarRating(Rating fStarRating);
+    void setStarRating(Rating starRating);
 
     /**
      * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
@@ -79,9 +90,10 @@ public interface LodgingBusiness extends LocalBusiness {
     /**
      * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
      *
+     * @param amenityFeature LocationFeatureSpecification value to set.
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
-    void setAmenityFeature(LocationFeatureSpecification fAmenityFeature);
+    void setAmenityFeature(LocationFeatureSpecification amenityFeature);
 
     /**
      * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
@@ -93,8 +105,15 @@ public interface LodgingBusiness extends LocalBusiness {
     /**
      * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
      *
+     * @param availableLanguage Text value to set.
      */
-    void setAvailableLanguage(Object fAvailableLanguage);
+    void setAvailableLanguage(Text availableLanguage);
+    /**
+     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
+     *
+     * @param availableLanguage Language value to set.
+     */
+    void setAvailableLanguage(Language availableLanguage);
 
     /**
      * The latest someone may check out of a lodging establishment.
@@ -106,8 +125,15 @@ public interface LodgingBusiness extends LocalBusiness {
     /**
      * The latest someone may check out of a lodging establishment.
      *
+     * @param checkoutTime DateTime value to set.
      */
-    void setCheckoutTime(Object fCheckoutTime);
+    void setCheckoutTime(DateTime checkoutTime);
+    /**
+     * The latest someone may check out of a lodging establishment.
+     *
+     * @param checkoutTime Time value to set.
+     */
+    void setCheckoutTime(Time checkoutTime);
 
     /**
      * The earliest someone may check into a lodging establishment.
@@ -119,8 +145,15 @@ public interface LodgingBusiness extends LocalBusiness {
     /**
      * The earliest someone may check into a lodging establishment.
      *
+     * @param checkinTime DateTime value to set.
      */
-    void setCheckinTime(Object fCheckinTime);
+    void setCheckinTime(DateTime checkinTime);
+    /**
+     * The earliest someone may check into a lodging establishment.
+     *
+     * @param checkinTime Time value to set.
+     */
+    void setCheckinTime(Time checkinTime);
 
     /**
      * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
@@ -133,7 +166,15 @@ public interface LodgingBusiness extends LocalBusiness {
     /**
      * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
      *
+     * @param petsAllowed Text value to set.
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
-    void setPetsAllowed(Object fPetsAllowed);
+    void setPetsAllowed(Text petsAllowed);
+    /**
+     * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
+     *
+     * @param petsAllowed Boolean value to set.
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
+     */
+    void setPetsAllowed(Boolean petsAllowed);
 }

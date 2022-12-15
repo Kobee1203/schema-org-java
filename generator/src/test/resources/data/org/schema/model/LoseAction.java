@@ -24,6 +24,7 @@ public interface LoseAction extends AchieveAction {
     /**
      * A sub property of participant. The winner of the action.
      *
+     * @param winner Person value to set.
      */
-    void setWinner(Person fWinner);
+    void setWinner(Person winner);
 }

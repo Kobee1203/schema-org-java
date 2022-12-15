@@ -29,9 +29,10 @@ public interface MedicalTherapy extends TherapeuticProcedure {
     /**
      * A therapy that duplicates or overlaps this one.
      *
+     * @param duplicateTherapy MedicalTherapy value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setDuplicateTherapy(MedicalTherapy fDuplicateTherapy);
+    void setDuplicateTherapy(MedicalTherapy duplicateTherapy);
 
     /**
      * A possible serious complication and/or serious side effect of this therapy. Serious adverse outcomes include those that are life-threatening; result in death, disability, or permanent damage; require hospitalization or prolong existing hospitalization; cause congenital anomalies or birth defects; or jeopardize the patient and may require medical or surgical intervention to prevent one of the outcomes in this definition.
@@ -44,9 +45,10 @@ public interface MedicalTherapy extends TherapeuticProcedure {
     /**
      * A possible serious complication and/or serious side effect of this therapy. Serious adverse outcomes include those that are life-threatening; result in death, disability, or permanent damage; require hospitalization or prolong existing hospitalization; cause congenital anomalies or birth defects; or jeopardize the patient and may require medical or surgical intervention to prevent one of the outcomes in this definition.
      *
+     * @param seriousAdverseOutcome MedicalEntity value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setSeriousAdverseOutcome(MedicalEntity fSeriousAdverseOutcome);
+    void setSeriousAdverseOutcome(MedicalEntity seriousAdverseOutcome);
 
     /**
      * A contraindication for this therapy.
@@ -59,7 +61,15 @@ public interface MedicalTherapy extends TherapeuticProcedure {
     /**
      * A contraindication for this therapy.
      *
+     * @param contraindication Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setContraindication(Object fContraindication);
+    void setContraindication(Text contraindication);
+    /**
+     * A contraindication for this therapy.
+     *
+     * @param contraindication MedicalContraindication value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setContraindication(MedicalContraindication contraindication);
 }

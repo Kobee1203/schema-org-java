@@ -32,8 +32,9 @@ public interface ExerciseAction extends PlayAction {
     /**
      * A sub property of participant. The sports team that participated on this action.
      *
+     * @param sportsTeam SportsTeam value to set.
      */
-    void setSportsTeam(SportsTeam fSportsTeam);
+    void setSportsTeam(SportsTeam sportsTeam);
 
     /**
      * A sub property of location. The course where this action was taken.
@@ -45,8 +46,9 @@ public interface ExerciseAction extends PlayAction {
     /**
      * A sub property of location. The course where this action was taken.
      *
+     * @param course Place value to set.
      */
-    void setCourse(Place fCourse);
+    void setCourse(Place course);
 
     /**
      * A sub property of location. The original location of the object or the agent before the action.
@@ -58,8 +60,9 @@ public interface ExerciseAction extends PlayAction {
     /**
      * A sub property of location. The original location of the object or the agent before the action.
      *
+     * @param fromLocation Place value to set.
      */
-    void setFromLocation(Place fFromLocation);
+    void setFromLocation(Place fromLocation);
 
     /**
      * A sub property of instrument. The diet used in this action.
@@ -72,9 +75,10 @@ public interface ExerciseAction extends PlayAction {
     /**
      * A sub property of instrument. The diet used in this action.
      *
+     * @param diet Diet value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setDiet(Diet fDiet);
+    void setDiet(Diet diet);
 
     /**
      * A sub property of location. The sports activity location where this action occurred.
@@ -86,8 +90,9 @@ public interface ExerciseAction extends PlayAction {
     /**
      * A sub property of location. The sports activity location where this action occurred.
      *
+     * @param sportsActivityLocation SportsActivityLocation value to set.
      */
-    void setSportsActivityLocation(SportsActivityLocation fSportsActivityLocation);
+    void setSportsActivityLocation(SportsActivityLocation sportsActivityLocation);
 
     /**
      * The distance travelled, e.g. exercising or travelling.
@@ -99,8 +104,9 @@ public interface ExerciseAction extends PlayAction {
     /**
      * The distance travelled, e.g. exercising or travelling.
      *
+     * @param distance Distance value to set.
      */
-    void setDistance(Distance fDistance);
+    void setDistance(Distance distance);
 
     /**
      * A sub property of instrument. The exercise plan used on this action.
@@ -113,9 +119,10 @@ public interface ExerciseAction extends PlayAction {
     /**
      * A sub property of instrument. The exercise plan used on this action.
      *
+     * @param exercisePlan ExercisePlan value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setExercisePlan(ExercisePlan fExercisePlan);
+    void setExercisePlan(ExercisePlan exercisePlan);
 
     /**
      * A sub property of location. The sports event where this action occurred.
@@ -127,8 +134,9 @@ public interface ExerciseAction extends PlayAction {
     /**
      * A sub property of location. The sports event where this action occurred.
      *
+     * @param sportsEvent SportsEvent value to set.
      */
-    void setSportsEvent(SportsEvent fSportsEvent);
+    void setSportsEvent(SportsEvent sportsEvent);
 
     /**
      * A sub property of instrument. The diet used in this action.
@@ -141,9 +149,10 @@ public interface ExerciseAction extends PlayAction {
     /**
      * A sub property of instrument. The diet used in this action.
      *
+     * @param exerciseRelatedDiet Diet value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setExerciseRelatedDiet(Diet fExerciseRelatedDiet);
+    void setExerciseRelatedDiet(Diet exerciseRelatedDiet);
 
     /**
      * A sub property of participant. The opponent on this action.
@@ -155,8 +164,9 @@ public interface ExerciseAction extends PlayAction {
     /**
      * A sub property of participant. The opponent on this action.
      *
+     * @param opponent Person value to set.
      */
-    void setOpponent(Person fOpponent);
+    void setOpponent(Person opponent);
 
     /**
      * A sub property of location. The course where this action was taken.
@@ -168,8 +178,9 @@ public interface ExerciseAction extends PlayAction {
     /**
      * A sub property of location. The course where this action was taken.
      *
+     * @param exerciseCourse Place value to set.
      */
-    void setExerciseCourse(Place fExerciseCourse);
+    void setExerciseCourse(Place exerciseCourse);
 
     /**
      * A sub property of location. The final location of the object or the agent after the action.
@@ -181,8 +192,9 @@ public interface ExerciseAction extends PlayAction {
     /**
      * A sub property of location. The final location of the object or the agent after the action.
      *
+     * @param toLocation Place value to set.
      */
-    void setToLocation(Place fToLocation);
+    void setToLocation(Place toLocation);
 
     /**
      * Type(s) of exercise or activity, such as strength training, flexibility training, aerobics, cardiac rehabilitation, etc.
@@ -195,7 +207,8 @@ public interface ExerciseAction extends PlayAction {
     /**
      * Type(s) of exercise or activity, such as strength training, flexibility training, aerobics, cardiac rehabilitation, etc.
      *
+     * @param exerciseType Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setExerciseType(Text fExerciseType);
+    void setExerciseType(Text exerciseType);
 }

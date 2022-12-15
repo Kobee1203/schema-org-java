@@ -28,10 +28,11 @@ public interface MedicalOrganization extends Organization {
     /**
      * Whether the provider is accepting new patients.
      *
+     * @param isAcceptingNewPatients Boolean value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
-    void setIsAcceptingNewPatients(Boolean fIsAcceptingNewPatients);
+    void setIsAcceptingNewPatients(Boolean isAcceptingNewPatients);
 
     /**
      * Name or unique ID of network. (Networks are often reused across different insurance plans).
@@ -45,10 +46,11 @@ public interface MedicalOrganization extends Organization {
     /**
      * Name or unique ID of network. (Networks are often reused across different insurance plans).
      *
+     * @param healthPlanNetworkId Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
-    void setHealthPlanNetworkId(Text fHealthPlanNetworkId);
+    void setHealthPlanNetworkId(Text healthPlanNetworkId);
 
     /**
      * A medical specialty of the provider.
@@ -61,7 +63,8 @@ public interface MedicalOrganization extends Organization {
     /**
      * A medical specialty of the provider.
      *
+     * @param medicalSpecialty MedicalSpecialty value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setMedicalSpecialty(MedicalSpecialty fMedicalSpecialty);
+    void setMedicalSpecialty(MedicalSpecialty medicalSpecialty);
 }

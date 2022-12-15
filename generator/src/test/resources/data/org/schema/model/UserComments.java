@@ -31,8 +31,9 @@ public interface UserComments extends UserInteraction {
     /**
      * The URL at which a reply may be posted to the specified UserComment.
      *
+     * @param replyToUrl URL value to set.
      */
-    void setReplyToUrl(URL fReplyToUrl);
+    void setReplyToUrl(URL replyToUrl);
 
     /**
      * Specifies the CreativeWork associated with the UserComment.
@@ -44,8 +45,9 @@ public interface UserComments extends UserInteraction {
     /**
      * Specifies the CreativeWork associated with the UserComment.
      *
+     * @param discusses CreativeWork value to set.
      */
-    void setDiscusses(CreativeWork fDiscusses);
+    void setDiscusses(CreativeWork discusses);
 
     /**
      * The time at which the UserComment was made.
@@ -57,8 +59,15 @@ public interface UserComments extends UserInteraction {
     /**
      * The time at which the UserComment was made.
      *
+     * @param commentTime DateTime value to set.
      */
-    void setCommentTime(Object fCommentTime);
+    void setCommentTime(DateTime commentTime);
+    /**
+     * The time at which the UserComment was made.
+     *
+     * @param commentTime Date value to set.
+     */
+    void setCommentTime(Date commentTime);
 
     /**
      * The text of the UserComment.
@@ -70,8 +79,9 @@ public interface UserComments extends UserInteraction {
     /**
      * The text of the UserComment.
      *
+     * @param commentText Text value to set.
      */
-    void setCommentText(Text fCommentText);
+    void setCommentText(Text commentText);
 
     /**
      * The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.
@@ -83,6 +93,13 @@ public interface UserComments extends UserInteraction {
     /**
      * The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.
      *
+     * @param creator Organization value to set.
      */
-    void setCreator(Object fCreator);
+    void setCreator(Organization creator);
+    /**
+     * The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.
+     *
+     * @param creator Person value to set.
+     */
+    void setCreator(Person creator);
 }

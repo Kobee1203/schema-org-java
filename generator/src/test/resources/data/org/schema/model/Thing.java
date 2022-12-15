@@ -30,8 +30,15 @@ public interface Thing extends com.weedow.schemaorg.commons.model.JsonLdNode {
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
+     * @param mainEntityOfPage CreativeWork value to set.
      */
-    void setMainEntityOfPage(Object fMainEntityOfPage);
+    void setMainEntityOfPage(CreativeWork mainEntityOfPage);
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param mainEntityOfPage URL value to set.
+     */
+    void setMainEntityOfPage(URL mainEntityOfPage);
 
     /**
      * An alias for the item.
@@ -43,8 +50,9 @@ public interface Thing extends com.weedow.schemaorg.commons.model.JsonLdNode {
     /**
      * An alias for the item.
      *
+     * @param alternateName Text value to set.
      */
-    void setAlternateName(Text fAlternateName);
+    void setAlternateName(Text alternateName);
 
     /**
      * The name of the item.
@@ -56,8 +64,9 @@ public interface Thing extends com.weedow.schemaorg.commons.model.JsonLdNode {
     /**
      * The name of the item.
      *
+     * @param name Text value to set.
      */
-    void setName(Text fName);
+    void setName(Text name);
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -69,8 +78,9 @@ public interface Thing extends com.weedow.schemaorg.commons.model.JsonLdNode {
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      *
+     * @param potentialAction Action value to set.
      */
-    void setPotentialAction(Action fPotentialAction);
+    void setPotentialAction(Action potentialAction);
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -82,8 +92,15 @@ public interface Thing extends com.weedow.schemaorg.commons.model.JsonLdNode {
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
+     * @param image URL value to set.
      */
-    void setImage(Object fImage);
+    void setImage(URL image);
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image ImageObject value to set.
+     */
+    void setImage(ImageObject image);
 
     /**
      * URL of the item.
@@ -95,8 +112,9 @@ public interface Thing extends com.weedow.schemaorg.commons.model.JsonLdNode {
     /**
      * URL of the item.
      *
+     * @param url URL value to set.
      */
-    void setUrl(URL fUrl);
+    void setUrl(URL url);
 
     /**
      * A description of the item.
@@ -108,8 +126,9 @@ public interface Thing extends com.weedow.schemaorg.commons.model.JsonLdNode {
     /**
      * A description of the item.
      *
+     * @param description Text value to set.
      */
-    void setDescription(Text fDescription);
+    void setDescription(Text description);
 
     /**
      * A CreativeWork or Event about this Thing.
@@ -122,9 +141,17 @@ public interface Thing extends com.weedow.schemaorg.commons.model.JsonLdNode {
     /**
      * A CreativeWork or Event about this Thing.
      *
+     * @param subjectOf Event value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
-    void setSubjectOf(Object fSubjectOf);
+    void setSubjectOf(Event subjectOf);
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @param subjectOf CreativeWork value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    void setSubjectOf(CreativeWork subjectOf);
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
@@ -136,8 +163,9 @@ public interface Thing extends com.weedow.schemaorg.commons.model.JsonLdNode {
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
+     * @param additionalType URL value to set.
      */
-    void setAdditionalType(URL fAdditionalType);
+    void setAdditionalType(URL additionalType);
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
@@ -149,8 +177,9 @@ public interface Thing extends com.weedow.schemaorg.commons.model.JsonLdNode {
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
+     * @param disambiguatingDescription Text value to set.
      */
-    void setDisambiguatingDescription(Text fDisambiguatingDescription);
+    void setDisambiguatingDescription(Text disambiguatingDescription);
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
@@ -162,8 +191,9 @@ public interface Thing extends com.weedow.schemaorg.commons.model.JsonLdNode {
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
+     * @param sameAs URL value to set.
      */
-    void setSameAs(URL fSameAs);
+    void setSameAs(URL sameAs);
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -177,6 +207,21 @@ public interface Thing extends com.weedow.schemaorg.commons.model.JsonLdNode {
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
+     * @param identifier URL value to set.
      */
-    void setIdentifier(Object fIdentifier);
+    void setIdentifier(URL identifier);
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier Text value to set.
+     */
+    void setIdentifier(Text identifier);
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier PropertyValue value to set.
+     */
+    void setIdentifier(PropertyValue identifier);
 }

@@ -17,6 +17,7 @@ import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.Intangible;
 import org.schema.model.ItemAvailability;
 
@@ -25,7 +26,7 @@ import org.schema.model.ItemAvailability;
  *
  * @see <a href="https://schema.org/ItemAvailability">https://schema.org/ItemAvailability</a>
  */
-@JsonLdTypeName("schema:ItemAvailability")
+@JsonLdTypeName("ItemAvailability")
 public enum ItemAvailabilityEnum implements ItemAvailability {
     OUT_OF_STOCK("OutOfStock"),
     DISCONTINUED("Discontinued"),
@@ -36,12 +37,22 @@ public enum ItemAvailabilityEnum implements ItemAvailability {
     PRE_SALE("PreSale"),
     BACK_ORDER("BackOrder"),
     PRE_ORDER("PreOrder"),
-    LIMITED_AVAILABILITY("LimitedAvailability");
+    LIMITED_AVAILABILITY("LimitedAvailability")
+    ;
 
     private final String enumValue;
 
     ItemAvailabilityEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static ItemAvailabilityEnum from(String value) {
+        for (ItemAvailabilityEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override
@@ -88,10 +99,19 @@ public enum ItemAvailabilityEnum implements ItemAvailability {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setSupersededBy(Object fSupersededBy) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'supersededBy': method not allowed for enum ItemAvailabilityEnum");
+    public void setSupersededBy(Enumeration supersededBy) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'supersededBy': method not allowed for enum Enum");
     }
-
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void setSupersededBy(Class supersededBy) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'supersededBy': method not allowed for enum Enum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void setSupersededBy(Property supersededBy) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'supersededBy': method not allowed for enum Enum");
+    }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
     public <T> T getMainEntityOfPage() {
@@ -100,10 +120,14 @@ public enum ItemAvailabilityEnum implements ItemAvailability {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'mainEntityOfPage': method not allowed for enum ItemAvailabilityEnum");
+    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'mainEntityOfPage': method not allowed for enum Enum");
     }
-
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void setMainEntityOfPage(URL mainEntityOfPage) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'mainEntityOfPage': method not allowed for enum Enum");
+    }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
     public Text getAlternateName() {
@@ -112,10 +136,9 @@ public enum ItemAvailabilityEnum implements ItemAvailability {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setAlternateName(Text fAlternateName) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'alternateName': method not allowed for enum ItemAvailabilityEnum");
+    public void setAlternateName(Text alternateName) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'alternateName': method not allowed for enum Enum");
     }
-
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
     public Text getName() {
@@ -124,10 +147,9 @@ public enum ItemAvailabilityEnum implements ItemAvailability {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setName(Text fName) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'name': method not allowed for enum ItemAvailabilityEnum");
+    public void setName(Text name) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'name': method not allowed for enum Enum");
     }
-
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
     public Action getPotentialAction() {
@@ -136,10 +158,9 @@ public enum ItemAvailabilityEnum implements ItemAvailability {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'potentialAction': method not allowed for enum ItemAvailabilityEnum");
+    public void setPotentialAction(Action potentialAction) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'potentialAction': method not allowed for enum Enum");
     }
-
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
     public <T> T getImage() {
@@ -148,10 +169,14 @@ public enum ItemAvailabilityEnum implements ItemAvailability {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setImage(Object fImage) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'image': method not allowed for enum ItemAvailabilityEnum");
+    public void setImage(URL image) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'image': method not allowed for enum Enum");
     }
-
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void setImage(ImageObject image) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'image': method not allowed for enum Enum");
+    }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
     public URL getUrl() {
@@ -160,10 +185,9 @@ public enum ItemAvailabilityEnum implements ItemAvailability {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setUrl(URL fUrl) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'url': method not allowed for enum ItemAvailabilityEnum");
+    public void setUrl(URL url) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'url': method not allowed for enum Enum");
     }
-
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
     public Text getDescription() {
@@ -172,10 +196,9 @@ public enum ItemAvailabilityEnum implements ItemAvailability {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setDescription(Text fDescription) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'description': method not allowed for enum ItemAvailabilityEnum");
+    public void setDescription(Text description) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'description': method not allowed for enum Enum");
     }
-
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
     public <T> T getSubjectOf() {
@@ -184,10 +207,14 @@ public enum ItemAvailabilityEnum implements ItemAvailability {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setSubjectOf(Object fSubjectOf) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'subjectOf': method not allowed for enum ItemAvailabilityEnum");
+    public void setSubjectOf(Event subjectOf) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'subjectOf': method not allowed for enum Enum");
     }
-
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void setSubjectOf(CreativeWork subjectOf) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'subjectOf': method not allowed for enum Enum");
+    }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
     public URL getAdditionalType() {
@@ -196,10 +223,9 @@ public enum ItemAvailabilityEnum implements ItemAvailability {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'additionalType': method not allowed for enum ItemAvailabilityEnum");
+    public void setAdditionalType(URL additionalType) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'additionalType': method not allowed for enum Enum");
     }
-
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
     public Text getDisambiguatingDescription() {
@@ -208,10 +234,9 @@ public enum ItemAvailabilityEnum implements ItemAvailability {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'disambiguatingDescription': method not allowed for enum ItemAvailabilityEnum");
+    public void setDisambiguatingDescription(Text disambiguatingDescription) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'disambiguatingDescription': method not allowed for enum Enum");
     }
-
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
     public URL getSameAs() {
@@ -220,10 +245,9 @@ public enum ItemAvailabilityEnum implements ItemAvailability {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setSameAs(URL fSameAs) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'sameAs': method not allowed for enum ItemAvailabilityEnum");
+    public void setSameAs(URL sameAs) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'sameAs': method not allowed for enum Enum");
     }
-
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
     public <T> T getIdentifier() {
@@ -232,8 +256,17 @@ public enum ItemAvailabilityEnum implements ItemAvailability {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setIdentifier(Object fIdentifier) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum ItemAvailabilityEnum");
+    public void setIdentifier(URL identifier) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum Enum");
     }
-
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void setIdentifier(Text identifier) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum Enum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void setIdentifier(PropertyValue identifier) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum Enum");
+    }
 }

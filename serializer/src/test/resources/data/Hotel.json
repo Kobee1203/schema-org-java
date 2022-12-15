@@ -1,10 +1,10 @@
 {
   "@context" : "https://schema.org",
-  "@type" : "schema:Hotel",
+  "@type" : "Hotel",
   "address" : {
-    "@type" : "schema:PostalAddress",
+    "@type" : "PostalAddress",
     "addressCountry" : {
-      "@type" : "schema:Country",
+      "@type" : "Country",
       "map" : "https://goo.gl/maps/tvsDMhfk3yah43Mm6",
       "name" : "United States Of America"
     },
@@ -13,22 +13,23 @@
   },
   "description" : "This is a hotel where every day is sunny",
   "employee" : {
-    "@type" : "schema:Person",
+    "@type" : "Person",
     "birthDate" : "1981-03-12",
     "email" : "john.doe@sunnyhotel.com",
     "familyName" : "Doe",
     "givenName" : "John"
   },
   "event" : {
-    "@type" : "schema:Event",
+    "@type" : "Event",
     "eventAttendanceMode" : "MixedEventAttendanceMode",
     "isAccessibleForFree" : true,
     "maximumAttendeeCapacity" : 654,
     "name" : "Funny Party"
   },
   "name" : "Sunny Hotel",
+  "nonprofitStatus": "NonprofitANBI",
   "openingHoursSpecification" : {
-    "@type" : "schema:OpeningHoursSpecification",
+    "@type" : "OpeningHoursSpecification",
     "closes" : "23:00:00",
     "dayOfWeek" : "Saturday",
     "opens" : "09:00:00",
@@ -36,7 +37,7 @@
     "validThrough" : "2024-12-31"
   },
   "starRating" : {
-    "@type" : "schema:Rating",
+    "@type" : "Rating",
     "bestRating" : 5,
     "ratingValue" : 4.5,
     "worstRating" : 3.5

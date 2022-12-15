@@ -30,8 +30,21 @@ public interface Recipe extends HowTo {
     /**
      * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
      *
+     * @param recipeInstructions Text value to set.
      */
-    void setRecipeInstructions(Object fRecipeInstructions);
+    void setRecipeInstructions(Text recipeInstructions);
+    /**
+     * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
+     *
+     * @param recipeInstructions CreativeWork value to set.
+     */
+    void setRecipeInstructions(CreativeWork recipeInstructions);
+    /**
+     * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
+     *
+     * @param recipeInstructions ItemList value to set.
+     */
+    void setRecipeInstructions(ItemList recipeInstructions);
 
     /**
      * A single ingredient used in the recipe, e.g. sugar, flour or garlic.
@@ -43,8 +56,9 @@ public interface Recipe extends HowTo {
     /**
      * A single ingredient used in the recipe, e.g. sugar, flour or garlic.
      *
+     * @param ingredients Text value to set.
      */
-    void setIngredients(Text fIngredients);
+    void setIngredients(Text ingredients);
 
     /**
      * The cuisine of the recipe (for example, French or Ethiopian).
@@ -56,8 +70,9 @@ public interface Recipe extends HowTo {
     /**
      * The cuisine of the recipe (for example, French or Ethiopian).
      *
+     * @param recipeCuisine Text value to set.
      */
-    void setRecipeCuisine(Text fRecipeCuisine);
+    void setRecipeCuisine(Text recipeCuisine);
 
     /**
      * Indicates a dietary restriction or guideline for which this recipe or menu item is suitable, e.g. diabetic, halal etc.
@@ -69,8 +84,9 @@ public interface Recipe extends HowTo {
     /**
      * Indicates a dietary restriction or guideline for which this recipe or menu item is suitable, e.g. diabetic, halal etc.
      *
+     * @param suitableForDiet RestrictedDiet value to set.
      */
-    void setSuitableForDiet(RestrictedDiet fSuitableForDiet);
+    void setSuitableForDiet(RestrictedDiet suitableForDiet);
 
     /**
      * Nutrition information about the recipe or menu item.
@@ -82,8 +98,9 @@ public interface Recipe extends HowTo {
     /**
      * Nutrition information about the recipe or menu item.
      *
+     * @param nutrition NutritionInformation value to set.
      */
-    void setNutrition(NutritionInformation fNutrition);
+    void setNutrition(NutritionInformation nutrition);
 
     /**
      * The method of cooking, such as Frying, Steaming, ...
@@ -95,8 +112,9 @@ public interface Recipe extends HowTo {
     /**
      * The method of cooking, such as Frying, Steaming, ...
      *
+     * @param cookingMethod Text value to set.
      */
-    void setCookingMethod(Text fCookingMethod);
+    void setCookingMethod(Text cookingMethod);
 
     /**
      * A single ingredient used in the recipe, e.g. sugar, flour or garlic.
@@ -108,8 +126,9 @@ public interface Recipe extends HowTo {
     /**
      * A single ingredient used in the recipe, e.g. sugar, flour or garlic.
      *
+     * @param recipeIngredient Text value to set.
      */
-    void setRecipeIngredient(Text fRecipeIngredient);
+    void setRecipeIngredient(Text recipeIngredient);
 
     /**
      * The quantity produced by the recipe (for example, number of people served, number of servings, etc).
@@ -121,8 +140,15 @@ public interface Recipe extends HowTo {
     /**
      * The quantity produced by the recipe (for example, number of people served, number of servings, etc).
      *
+     * @param recipeYield Text value to set.
      */
-    void setRecipeYield(Object fRecipeYield);
+    void setRecipeYield(Text recipeYield);
+    /**
+     * The quantity produced by the recipe (for example, number of people served, number of servings, etc).
+     *
+     * @param recipeYield QuantitativeValue value to set.
+     */
+    void setRecipeYield(QuantitativeValue recipeYield);
 
     /**
      * The time it takes to actually cook the dish, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
@@ -134,8 +160,9 @@ public interface Recipe extends HowTo {
     /**
      * The time it takes to actually cook the dish, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
      *
+     * @param cookTime Duration value to set.
      */
-    void setCookTime(Duration fCookTime);
+    void setCookTime(Duration cookTime);
 
     /**
      * The category of the recipe—for example, appetizer, entree, etc.
@@ -147,6 +174,7 @@ public interface Recipe extends HowTo {
     /**
      * The category of the recipe—for example, appetizer, entree, etc.
      *
+     * @param recipeCategory Text value to set.
      */
-    void setRecipeCategory(Text fRecipeCategory);
+    void setRecipeCategory(Text recipeCategory);
 }

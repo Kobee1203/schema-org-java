@@ -27,8 +27,15 @@ public interface SoftwareSourceCode extends CreativeWork {
     /**
      * The computer programming language.
      *
+     * @param programmingLanguage Text value to set.
      */
-    void setProgrammingLanguage(Object fProgrammingLanguage);
+    void setProgrammingLanguage(Text programmingLanguage);
+    /**
+     * The computer programming language.
+     *
+     * @param programmingLanguage ComputerLanguage value to set.
+     */
+    void setProgrammingLanguage(ComputerLanguage programmingLanguage);
 
     /**
      * What type of code sample: full (compile ready) solution, code snippet, inline code, scripts, template.
@@ -40,8 +47,9 @@ public interface SoftwareSourceCode extends CreativeWork {
     /**
      * What type of code sample: full (compile ready) solution, code snippet, inline code, scripts, template.
      *
+     * @param sampleType Text value to set.
      */
-    void setSampleType(Text fSampleType);
+    void setSampleType(Text sampleType);
 
     /**
      * Runtime platform or script interpreter dependencies (Example - Java v1, Python2.3, .Net Framework 3.0).
@@ -53,8 +61,9 @@ public interface SoftwareSourceCode extends CreativeWork {
     /**
      * Runtime platform or script interpreter dependencies (Example - Java v1, Python2.3, .Net Framework 3.0).
      *
+     * @param runtimePlatform Text value to set.
      */
-    void setRuntimePlatform(Text fRuntimePlatform);
+    void setRuntimePlatform(Text runtimePlatform);
 
     /**
      * Runtime platform or script interpreter dependencies (Example - Java v1, Python2.3, .Net Framework 3.0).
@@ -66,8 +75,9 @@ public interface SoftwareSourceCode extends CreativeWork {
     /**
      * Runtime platform or script interpreter dependencies (Example - Java v1, Python2.3, .Net Framework 3.0).
      *
+     * @param runtime Text value to set.
      */
-    void setRuntime(Text fRuntime);
+    void setRuntime(Text runtime);
 
     /**
      * Target Operating System / Product to which the code applies.  If applies to several versions, just the product name can be used.
@@ -79,8 +89,9 @@ public interface SoftwareSourceCode extends CreativeWork {
     /**
      * Target Operating System / Product to which the code applies.  If applies to several versions, just the product name can be used.
      *
+     * @param targetProduct SoftwareApplication value to set.
      */
-    void setTargetProduct(SoftwareApplication fTargetProduct);
+    void setTargetProduct(SoftwareApplication targetProduct);
 
     /**
      * Link to the repository where the un-compiled, human readable code and related code is located (SVN, github, CodePlex).
@@ -92,8 +103,9 @@ public interface SoftwareSourceCode extends CreativeWork {
     /**
      * Link to the repository where the un-compiled, human readable code and related code is located (SVN, github, CodePlex).
      *
+     * @param codeRepository URL value to set.
      */
-    void setCodeRepository(URL fCodeRepository);
+    void setCodeRepository(URL codeRepository);
 
     /**
      * What type of code sample: full (compile ready) solution, code snippet, inline code, scripts, template.
@@ -105,6 +117,7 @@ public interface SoftwareSourceCode extends CreativeWork {
     /**
      * What type of code sample: full (compile ready) solution, code snippet, inline code, scripts, template.
      *
+     * @param codeSampleType Text value to set.
      */
-    void setCodeSampleType(Text fCodeSampleType);
+    void setCodeSampleType(Text codeSampleType);
 }

@@ -28,10 +28,19 @@ public interface ScreeningEvent extends Event {
     /**
      * Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).
      *
+     * @param subtitleLanguage Language value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2110">https://github.com/schemaorg/schemaorg/issues/2110</a>
      */
-    void setSubtitleLanguage(Object fSubtitleLanguage);
+    void setSubtitleLanguage(Language subtitleLanguage);
+    /**
+     * Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).
+     *
+     * @param subtitleLanguage Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2110">https://github.com/schemaorg/schemaorg/issues/2110</a>
+     */
+    void setSubtitleLanguage(Text subtitleLanguage);
 
     /**
      * The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).
@@ -43,8 +52,9 @@ public interface ScreeningEvent extends Event {
     /**
      * The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).
      *
+     * @param videoFormat Text value to set.
      */
-    void setVideoFormat(Text fVideoFormat);
+    void setVideoFormat(Text videoFormat);
 
     /**
      * The movie presented during this event.
@@ -56,6 +66,7 @@ public interface ScreeningEvent extends Event {
     /**
      * The movie presented during this event.
      *
+     * @param workPresented Movie value to set.
      */
-    void setWorkPresented(Movie fWorkPresented);
+    void setWorkPresented(Movie workPresented);
 }

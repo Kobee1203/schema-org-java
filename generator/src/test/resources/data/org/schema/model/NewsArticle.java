@@ -28,8 +28,9 @@ public interface NewsArticle extends Article {
     /**
      * The edition of the print product in which the NewsArticle appears.
      *
+     * @param printEdition Text value to set.
      */
-    void setPrintEdition(Text fPrintEdition);
+    void setPrintEdition(Text printEdition);
 
     /**
      * The number of the column in which the NewsArticle appears in the print edition.
@@ -41,8 +42,9 @@ public interface NewsArticle extends Article {
     /**
      * The number of the column in which the NewsArticle appears in the print edition.
      *
+     * @param printColumn Text value to set.
      */
-    void setPrintColumn(Text fPrintColumn);
+    void setPrintColumn(Text printColumn);
 
     /**
      * If this NewsArticle appears in print, this field indicates the name of the page on which the article is found. Please note that this field is intended for the exact page name (e.g. A5, B18).
@@ -54,8 +56,9 @@ public interface NewsArticle extends Article {
     /**
      * If this NewsArticle appears in print, this field indicates the name of the page on which the article is found. Please note that this field is intended for the exact page name (e.g. A5, B18).
      *
+     * @param printPage Text value to set.
      */
-    void setPrintPage(Text fPrintPage);
+    void setPrintPage(Text printPage);
 
     /**
      * If this NewsArticle appears in print, this field indicates the print section in which the article appeared.
@@ -67,8 +70,9 @@ public interface NewsArticle extends Article {
     /**
      * If this NewsArticle appears in print, this field indicates the print section in which the article appeared.
      *
+     * @param printSection Text value to set.
      */
-    void setPrintSection(Text fPrintSection);
+    void setPrintSection(Text printSection);
 
     /**
      * A [dateline](https://en.wikipedia.org/wiki/Dateline) is a brief piece of text included in news articles that describes where and when the story was written or filed though the date is often omitted. Sometimes only a placename is provided.
@@ -90,6 +94,7 @@ public interface NewsArticle extends Article {
      * Dateline summaries are oriented more towards human readers than towards automated processing, and can vary substantially. Some examples: "BEIRUT, Lebanon, June 2.", "Paris, France", "December 19, 2017 11:43AM Reporting from Washington", "Beijing/Moscow", "QUEZON CITY, Philippines".
      *       
      *
+     * @param dateline Text value to set.
      */
-    void setDateline(Text fDateline);
+    void setDateline(Text dateline);
 }

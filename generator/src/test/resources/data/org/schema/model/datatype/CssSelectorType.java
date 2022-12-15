@@ -14,7 +14,7 @@ import com.weedow.schemaorg.commons.model.JsonLdTypeName;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1672">https://github.com/schemaorg/schemaorg/issues/1672</a>
  * @see <a href="https://schema.org/CssSelectorType">https://schema.org/CssSelectorType</a>
  */
-@JsonLdTypeName("schema:CssSelectorType")
+@JsonLdTypeName("CssSelectorType")
 public class CssSelectorType extends Text {
 
     CssSelectorType(java.lang.String value) {

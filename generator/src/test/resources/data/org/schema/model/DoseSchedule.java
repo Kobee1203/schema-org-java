@@ -28,9 +28,10 @@ public interface DoseSchedule extends MedicalIntangible {
     /**
      * Characteristics of the population for which this is intended, or which typically uses it, e.g. 'adults'.
      *
+     * @param targetPopulation Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setTargetPopulation(Text fTargetPopulation);
+    void setTargetPopulation(Text targetPopulation);
 
     /**
      * How often the dose is taken, e.g. 'daily'.
@@ -43,9 +44,10 @@ public interface DoseSchedule extends MedicalIntangible {
     /**
      * How often the dose is taken, e.g. 'daily'.
      *
+     * @param frequency Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setFrequency(Text fFrequency);
+    void setFrequency(Text frequency);
 
     /**
      * The unit of the dose, e.g. 'mg'.
@@ -58,9 +60,10 @@ public interface DoseSchedule extends MedicalIntangible {
     /**
      * The unit of the dose, e.g. 'mg'.
      *
+     * @param doseUnit Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setDoseUnit(Text fDoseUnit);
+    void setDoseUnit(Text doseUnit);
 
     /**
      * The value of the dose, e.g. 500.
@@ -73,7 +76,15 @@ public interface DoseSchedule extends MedicalIntangible {
     /**
      * The value of the dose, e.g. 500.
      *
+     * @param doseValue Number value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setDoseValue(Object fDoseValue);
+    void setDoseValue(Number doseValue);
+    /**
+     * The value of the dose, e.g. 500.
+     *
+     * @param doseValue QualitativeValue value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setDoseValue(QualitativeValue doseValue);
 }

@@ -34,9 +34,17 @@ public interface InteractionCounter extends StructuredValue {
     /**
      * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
      *
+     * @param startTime DateTime value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
      */
-    void setStartTime(Object fStartTime);
+    void setStartTime(DateTime startTime);
+    /**
+     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @param startTime Time value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    void setStartTime(Time startTime);
 
     /**
      * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication.
@@ -48,8 +56,9 @@ public interface InteractionCounter extends StructuredValue {
     /**
      * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication.
      *
+     * @param userInteractionCount Integer value to set.
      */
-    void setUserInteractionCount(Integer fUserInteractionCount);
+    void setUserInteractionCount(Integer userInteractionCount);
 
     /**
      * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
@@ -61,8 +70,27 @@ public interface InteractionCounter extends StructuredValue {
     /**
      * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
      *
+     * @param location PostalAddress value to set.
      */
-    void setLocation(Object fLocation);
+    void setLocation(PostalAddress location);
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @param location Text value to set.
+     */
+    void setLocation(Text location);
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @param location Place value to set.
+     */
+    void setLocation(Place location);
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @param location VirtualLocation value to set.
+     */
+    void setLocation(VirtualLocation location);
 
     /**
      * The Action representing the type of interaction. For up votes, +1s, etc. use [[LikeAction]]. For down votes use [[DislikeAction]]. Otherwise, use the most specific Action.
@@ -74,8 +102,9 @@ public interface InteractionCounter extends StructuredValue {
     /**
      * The Action representing the type of interaction. For up votes, +1s, etc. use [[LikeAction]]. For down votes use [[DislikeAction]]. Otherwise, use the most specific Action.
      *
+     * @param interactionType Action value to set.
      */
-    void setInteractionType(Action fInteractionType);
+    void setInteractionType(Action interactionType);
 
     /**
      * The WebSite or SoftwareApplication where the interactions took place.
@@ -87,8 +116,15 @@ public interface InteractionCounter extends StructuredValue {
     /**
      * The WebSite or SoftwareApplication where the interactions took place.
      *
+     * @param interactionService SoftwareApplication value to set.
      */
-    void setInteractionService(Object fInteractionService);
+    void setInteractionService(SoftwareApplication interactionService);
+    /**
+     * The WebSite or SoftwareApplication where the interactions took place.
+     *
+     * @param interactionService WebSite value to set.
+     */
+    void setInteractionService(WebSite interactionService);
 
     /**
      * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
@@ -101,7 +137,15 @@ public interface InteractionCounter extends StructuredValue {
     /**
      * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
      *
+     * @param endTime DateTime value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
      */
-    void setEndTime(Object fEndTime);
+    void setEndTime(DateTime endTime);
+    /**
+     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @param endTime Time value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    void setEndTime(Time endTime);
 }

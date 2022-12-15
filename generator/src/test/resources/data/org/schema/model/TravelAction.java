@@ -24,6 +24,7 @@ public interface TravelAction extends MoveAction {
     /**
      * The distance travelled, e.g. exercising or travelling.
      *
+     * @param distance Distance value to set.
      */
-    void setDistance(Distance fDistance);
+    void setDistance(Distance distance);
 }

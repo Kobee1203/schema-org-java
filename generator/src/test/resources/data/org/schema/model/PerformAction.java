@@ -24,6 +24,7 @@ public interface PerformAction extends PlayAction {
     /**
      * A sub property of location. The entertainment business where the action occurred.
      *
+     * @param entertainmentBusiness EntertainmentBusiness value to set.
      */
-    void setEntertainmentBusiness(EntertainmentBusiness fEntertainmentBusiness);
+    void setEntertainmentBusiness(EntertainmentBusiness entertainmentBusiness);
 }

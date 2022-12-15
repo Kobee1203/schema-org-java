@@ -30,8 +30,21 @@ public interface GeoCircle extends GeoShape {
     /**
      * Indicates the approximate radius of a GeoCircle (metres unless indicated otherwise via Distance notation).
      *
+     * @param geoRadius Number value to set.
      */
-    void setGeoRadius(Object fGeoRadius);
+    void setGeoRadius(Number geoRadius);
+    /**
+     * Indicates the approximate radius of a GeoCircle (metres unless indicated otherwise via Distance notation).
+     *
+     * @param geoRadius Text value to set.
+     */
+    void setGeoRadius(Text geoRadius);
+    /**
+     * Indicates the approximate radius of a GeoCircle (metres unless indicated otherwise via Distance notation).
+     *
+     * @param geoRadius Distance value to set.
+     */
+    void setGeoRadius(Distance geoRadius);
 
     /**
      * Indicates the GeoCoordinates at the centre of a GeoShape e.g. GeoCircle.
@@ -43,6 +56,7 @@ public interface GeoCircle extends GeoShape {
     /**
      * Indicates the GeoCoordinates at the centre of a GeoShape e.g. GeoCircle.
      *
+     * @param geoMidpoint GeoCoordinates value to set.
      */
-    void setGeoMidpoint(GeoCoordinates fGeoMidpoint);
+    void setGeoMidpoint(GeoCoordinates geoMidpoint);
 }

@@ -31,8 +31,21 @@ public interface Course extends LearningResource, CreativeWork {
     /**
      * Requirements for taking the Course. May be completion of another [[Course]] or a textual description like "permission of instructor". Requirements may be a pre-requisite competency, referenced using [[AlignmentObject]].
      *
+     * @param coursePrerequisites Text value to set.
      */
-    void setCoursePrerequisites(Object fCoursePrerequisites);
+    void setCoursePrerequisites(Text coursePrerequisites);
+    /**
+     * Requirements for taking the Course. May be completion of another [[Course]] or a textual description like "permission of instructor". Requirements may be a pre-requisite competency, referenced using [[AlignmentObject]].
+     *
+     * @param coursePrerequisites AlignmentObject value to set.
+     */
+    void setCoursePrerequisites(AlignmentObject coursePrerequisites);
+    /**
+     * Requirements for taking the Course. May be completion of another [[Course]] or a textual description like "permission of instructor". Requirements may be a pre-requisite competency, referenced using [[AlignmentObject]].
+     *
+     * @param coursePrerequisites Course value to set.
+     */
+    void setCoursePrerequisites(Course coursePrerequisites);
 
     /**
      * A description of the qualification, award, certificate, diploma or other educational credential awarded as a consequence of successful completion of this course or program.
@@ -45,9 +58,24 @@ public interface Course extends LearningResource, CreativeWork {
     /**
      * A description of the qualification, award, certificate, diploma or other educational credential awarded as a consequence of successful completion of this course or program.
      *
+     * @param educationalCredentialAwarded URL value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
-    void setEducationalCredentialAwarded(Object fEducationalCredentialAwarded);
+    void setEducationalCredentialAwarded(URL educationalCredentialAwarded);
+    /**
+     * A description of the qualification, award, certificate, diploma or other educational credential awarded as a consequence of successful completion of this course or program.
+     *
+     * @param educationalCredentialAwarded EducationalOccupationalCredential value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    void setEducationalCredentialAwarded(EducationalOccupationalCredential educationalCredentialAwarded);
+    /**
+     * A description of the qualification, award, certificate, diploma or other educational credential awarded as a consequence of successful completion of this course or program.
+     *
+     * @param educationalCredentialAwarded Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    void setEducationalCredentialAwarded(Text educationalCredentialAwarded);
 
     /**
      * The number of credits or units awarded by a Course or required to complete an EducationalOccupationalProgram.
@@ -61,10 +89,19 @@ public interface Course extends LearningResource, CreativeWork {
     /**
      * The number of credits or units awarded by a Course or required to complete an EducationalOccupationalProgram.
      *
+     * @param numberOfCredits Integer value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
      */
-    void setNumberOfCredits(Object fNumberOfCredits);
+    void setNumberOfCredits(Integer numberOfCredits);
+    /**
+     * The number of credits or units awarded by a Course or required to complete an EducationalOccupationalProgram.
+     *
+     * @param numberOfCredits StructuredValue value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
+     */
+    void setNumberOfCredits(StructuredValue numberOfCredits);
 
     /**
      * A description of the qualification, award, certificate, diploma or other occupational credential awarded as a consequence of successful completion of this course or program.
@@ -78,10 +115,27 @@ public interface Course extends LearningResource, CreativeWork {
     /**
      * A description of the qualification, award, certificate, diploma or other occupational credential awarded as a consequence of successful completion of this course or program.
      *
+     * @param occupationalCredentialAwarded EducationalOccupationalCredential value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
-    void setOccupationalCredentialAwarded(Object fOccupationalCredentialAwarded);
+    void setOccupationalCredentialAwarded(EducationalOccupationalCredential occupationalCredentialAwarded);
+    /**
+     * A description of the qualification, award, certificate, diploma or other occupational credential awarded as a consequence of successful completion of this course or program.
+     *
+     * @param occupationalCredentialAwarded Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    void setOccupationalCredentialAwarded(Text occupationalCredentialAwarded);
+    /**
+     * A description of the qualification, award, certificate, diploma or other occupational credential awarded as a consequence of successful completion of this course or program.
+     *
+     * @param occupationalCredentialAwarded URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    void setOccupationalCredentialAwarded(URL occupationalCredentialAwarded);
 
     /**
      * The identifier for the [[Course]] used by the course [[provider]] (e.g. CS101 or 6.001).
@@ -93,8 +147,9 @@ public interface Course extends LearningResource, CreativeWork {
     /**
      * The identifier for the [[Course]] used by the course [[provider]] (e.g. CS101 or 6.001).
      *
+     * @param courseCode Text value to set.
      */
-    void setCourseCode(Text fCourseCode);
+    void setCourseCode(Text courseCode);
 
     /**
      * An offering of the course at a specific time and place or through specific media or mode of study or to a specific section of students.
@@ -106,6 +161,7 @@ public interface Course extends LearningResource, CreativeWork {
     /**
      * An offering of the course at a specific time and place or through specific media or mode of study or to a specific section of students.
      *
+     * @param hasCourseInstance CourseInstance value to set.
      */
-    void setHasCourseInstance(CourseInstance fHasCourseInstance);
+    void setHasCourseInstance(CourseInstance hasCourseInstance);
 }

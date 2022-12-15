@@ -26,9 +26,17 @@ public interface WriteAction extends CreateAction {
     /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
      *
+     * @param inLanguage Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
      */
-    void setInLanguage(Object fInLanguage);
+    void setInLanguage(Text inLanguage);
+    /**
+     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     *
+     * @param inLanguage Language value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
+     */
+    void setInLanguage(Language inLanguage);
 
     /**
      * A sub property of instrument. The language used on this action.
@@ -40,6 +48,7 @@ public interface WriteAction extends CreateAction {
     /**
      * A sub property of instrument. The language used on this action.
      *
+     * @param language Language value to set.
      */
-    void setLanguage(Language fLanguage);
+    void setLanguage(Language language);
 }

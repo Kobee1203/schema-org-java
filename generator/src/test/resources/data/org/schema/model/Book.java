@@ -28,8 +28,9 @@ public interface Book extends CreativeWork {
     /**
      * The ISBN of the book.
      *
+     * @param isbn Text value to set.
      */
-    void setIsbn(Text fIsbn);
+    void setIsbn(Text isbn);
 
     /**
      * The illustrator of the book.
@@ -41,8 +42,9 @@ public interface Book extends CreativeWork {
     /**
      * The illustrator of the book.
      *
+     * @param illustrator Person value to set.
      */
-    void setIllustrator(Person fIllustrator);
+    void setIllustrator(Person illustrator);
 
     /**
      * The number of pages in the book.
@@ -54,8 +56,9 @@ public interface Book extends CreativeWork {
     /**
      * The number of pages in the book.
      *
+     * @param numberOfPages Integer value to set.
      */
-    void setNumberOfPages(Integer fNumberOfPages);
+    void setNumberOfPages(Integer numberOfPages);
 
     /**
      * Indicates whether the book is an abridged edition.
@@ -68,9 +71,10 @@ public interface Book extends CreativeWork {
     /**
      * Indicates whether the book is an abridged edition.
      *
+     * @param abridged Boolean value to set.
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
-    void setAbridged(Boolean fAbridged);
+    void setAbridged(Boolean abridged);
 
     /**
      * The format of the book.
@@ -82,8 +86,9 @@ public interface Book extends CreativeWork {
     /**
      * The format of the book.
      *
+     * @param bookFormat BookFormatType value to set.
      */
-    void setBookFormat(BookFormatType fBookFormat);
+    void setBookFormat(BookFormatType bookFormat);
 
     /**
      * The edition of the book.
@@ -95,6 +100,7 @@ public interface Book extends CreativeWork {
     /**
      * The edition of the book.
      *
+     * @param bookEdition Text value to set.
      */
-    void setBookEdition(Text fBookEdition);
+    void setBookEdition(Text bookEdition);
 }

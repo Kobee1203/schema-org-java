@@ -27,8 +27,15 @@ public interface ListItem extends Intangible {
     /**
      * The position of an item in a series or sequence of items.
      *
+     * @param position Integer value to set.
      */
-    void setPosition(Object fPosition);
+    void setPosition(Integer position);
+    /**
+     * The position of an item in a series or sequence of items.
+     *
+     * @param position Text value to set.
+     */
+    void setPosition(Text position);
 
     /**
      * A link to the ListItem that follows the current one.
@@ -40,8 +47,9 @@ public interface ListItem extends Intangible {
     /**
      * A link to the ListItem that follows the current one.
      *
+     * @param nextItem ListItem value to set.
      */
-    void setNextItem(ListItem fNextItem);
+    void setNextItem(ListItem nextItem);
 
     /**
      * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')’.
@@ -53,8 +61,9 @@ public interface ListItem extends Intangible {
     /**
      * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')’.
      *
+     * @param item Thing value to set.
      */
-    void setItem(Thing fItem);
+    void setItem(Thing item);
 
     /**
      * A link to the ListItem that preceeds the current one.
@@ -66,6 +75,7 @@ public interface ListItem extends Intangible {
     /**
      * A link to the ListItem that preceeds the current one.
      *
+     * @param previousItem ListItem value to set.
      */
-    void setPreviousItem(ListItem fPreviousItem);
+    void setPreviousItem(ListItem previousItem);
 }

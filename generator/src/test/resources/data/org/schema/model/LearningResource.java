@@ -35,10 +35,19 @@ public interface LearningResource extends CreativeWork {
     /**
      * The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.
      *
+     * @param teaches DefinedTerm value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
      */
-    void setTeaches(Object fTeaches);
+    void setTeaches(DefinedTerm teaches);
+    /**
+     * The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.
+     *
+     * @param teaches Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
+     */
+    void setTeaches(Text teaches);
 
     /**
      * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
@@ -52,10 +61,27 @@ public interface LearningResource extends CreativeWork {
     /**
      * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
      *
+     * @param educationalLevel URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    void setEducationalLevel(Object fEducationalLevel);
+    void setEducationalLevel(URL educationalLevel);
+    /**
+     * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
+     *
+     * @param educationalLevel DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     */
+    void setEducationalLevel(DefinedTerm educationalLevel);
+    /**
+     * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
+     *
+     * @param educationalLevel Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     */
+    void setEducationalLevel(Text educationalLevel);
 
     /**
      * The item being described is intended to assess the competency or learning outcome defined by the referenced term.
@@ -69,10 +95,19 @@ public interface LearningResource extends CreativeWork {
     /**
      * The item being described is intended to assess the competency or learning outcome defined by the referenced term.
      *
+     * @param assesses Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
      */
-    void setAssesses(Object fAssesses);
+    void setAssesses(Text assesses);
+    /**
+     * The item being described is intended to assess the competency or learning outcome defined by the referenced term.
+     *
+     * @param assesses DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
+     */
+    void setAssesses(DefinedTerm assesses);
 
     /**
      * The purpose of a work in the context of education; for example, 'assignment', 'group work'.
@@ -84,8 +119,15 @@ public interface LearningResource extends CreativeWork {
     /**
      * The purpose of a work in the context of education; for example, 'assignment', 'group work'.
      *
+     * @param educationalUse DefinedTerm value to set.
      */
-    void setEducationalUse(Object fEducationalUse);
+    void setEducationalUse(DefinedTerm educationalUse);
+    /**
+     * The purpose of a work in the context of education; for example, 'assignment', 'group work'.
+     *
+     * @param educationalUse Text value to set.
+     */
+    void setEducationalUse(Text educationalUse);
 
     /**
      * An alignment to an established educational framework.
@@ -101,8 +143,9 @@ public interface LearningResource extends CreativeWork {
      * 
      * This property should not be used where the nature of the alignment can be described using a simple property, for example to express that a resource [[teaches]] or [[assesses]] a competency.
      *
+     * @param educationalAlignment AlignmentObject value to set.
      */
-    void setEducationalAlignment(AlignmentObject fEducationalAlignment);
+    void setEducationalAlignment(AlignmentObject educationalAlignment);
 
     /**
      * Knowledge, skill, ability or personal attribute that must be demonstrated by a person or other entity in order to do something such as earn an Educational Occupational Credential or understand a LearningResource.
@@ -116,10 +159,27 @@ public interface LearningResource extends CreativeWork {
     /**
      * Knowledge, skill, ability or personal attribute that must be demonstrated by a person or other entity in order to do something such as earn an Educational Occupational Credential or understand a LearningResource.
      *
+     * @param competencyRequired Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    void setCompetencyRequired(Object fCompetencyRequired);
+    void setCompetencyRequired(Text competencyRequired);
+    /**
+     * Knowledge, skill, ability or personal attribute that must be demonstrated by a person or other entity in order to do something such as earn an Educational Occupational Credential or understand a LearningResource.
+     *
+     * @param competencyRequired DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     */
+    void setCompetencyRequired(DefinedTerm competencyRequired);
+    /**
+     * Knowledge, skill, ability or personal attribute that must be demonstrated by a person or other entity in order to do something such as earn an Educational Occupational Credential or understand a LearningResource.
+     *
+     * @param competencyRequired URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     */
+    void setCompetencyRequired(URL competencyRequired);
 
     /**
      * The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.
@@ -131,6 +191,13 @@ public interface LearningResource extends CreativeWork {
     /**
      * The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.
      *
+     * @param learningResourceType DefinedTerm value to set.
      */
-    void setLearningResourceType(Object fLearningResourceType);
+    void setLearningResourceType(DefinedTerm learningResourceType);
+    /**
+     * The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.
+     *
+     * @param learningResourceType Text value to set.
+     */
+    void setLearningResourceType(Text learningResourceType);
 }

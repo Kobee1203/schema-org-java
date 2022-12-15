@@ -27,9 +27,10 @@ public interface ProductModel extends Product {
     /**
      * A pointer from a newer variant of a product  to its previous, often discontinued predecessor.
      *
+     * @param successorOf ProductModel value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setSuccessorOf(ProductModel fSuccessorOf);
+    void setSuccessorOf(ProductModel successorOf);
 
     /**
      * A pointer from a previous, often discontinued variant of the product to its newer variant.
@@ -42,9 +43,10 @@ public interface ProductModel extends Product {
     /**
      * A pointer from a previous, often discontinued variant of the product to its newer variant.
      *
+     * @param predecessorOf ProductModel value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setPredecessorOf(ProductModel fPredecessorOf);
+    void setPredecessorOf(ProductModel predecessorOf);
 
     /**
      * Indicates the kind of product that this is a variant of. In the case of [[ProductModel]], this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a [[ProductGroup]], the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with [[ProductGroup]], this property can apply to any [[Product]] included in the group.
@@ -57,7 +59,15 @@ public interface ProductModel extends Product {
     /**
      * Indicates the kind of product that this is a variant of. In the case of [[ProductModel]], this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a [[ProductGroup]], the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with [[ProductGroup]], this property can apply to any [[Product]] included in the group.
      *
+     * @param isVariantOf ProductModel value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setIsVariantOf(Object fIsVariantOf);
+    void setIsVariantOf(ProductModel isVariantOf);
+    /**
+     * Indicates the kind of product that this is a variant of. In the case of [[ProductModel]], this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a [[ProductGroup]], the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with [[ProductGroup]], this property can apply to any [[Product]] included in the group.
+     *
+     * @param isVariantOf ProductGroup value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    void setIsVariantOf(ProductGroup isVariantOf);
 }

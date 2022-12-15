@@ -29,8 +29,17 @@ public interface WebAPI extends Service {
     /**
      * Further documentation describing the Web API in more detail.
      *
+     * @param documentation CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1423">https://github.com/schemaorg/schemaorg/issues/1423</a>
      */
-    void setDocumentation(Object fDocumentation);
+    void setDocumentation(CreativeWork documentation);
+    /**
+     * Further documentation describing the Web API in more detail.
+     *
+     * @param documentation URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1423">https://github.com/schemaorg/schemaorg/issues/1423</a>
+     */
+    void setDocumentation(URL documentation);
 }

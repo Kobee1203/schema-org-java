@@ -27,9 +27,10 @@ public interface Substance extends MedicalEntity {
     /**
      * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
      *
+     * @param maximumIntake MaximumDoseSchedule value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setMaximumIntake(MaximumDoseSchedule fMaximumIntake);
+    void setMaximumIntake(MaximumDoseSchedule maximumIntake);
 
     /**
      * An active ingredient, typically chemical compounds and/or biologic substances.
@@ -42,7 +43,8 @@ public interface Substance extends MedicalEntity {
     /**
      * An active ingredient, typically chemical compounds and/or biologic substances.
      *
+     * @param activeIngredient Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setActiveIngredient(Text fActiveIngredient);
+    void setActiveIngredient(Text activeIngredient);
 }

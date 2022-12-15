@@ -32,9 +32,10 @@ public interface MusicComposition extends CreativeWork {
     /**
      * The International Standard Musical Work Code for the composition.
      *
+     * @param iswcCode Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
-    void setIswcCode(Text fIswcCode);
+    void setIswcCode(Text iswcCode);
 
     /**
      * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
@@ -47,9 +48,17 @@ public interface MusicComposition extends CreativeWork {
     /**
      * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
      *
+     * @param composer Organization value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
-    void setComposer(Object fComposer);
+    void setComposer(Organization composer);
+    /**
+     * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
+     *
+     * @param composer Person value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
+     */
+    void setComposer(Person composer);
 
     /**
      * The type of composition (e.g. overture, sonata, symphony, etc.).
@@ -62,9 +71,10 @@ public interface MusicComposition extends CreativeWork {
     /**
      * The type of composition (e.g. overture, sonata, symphony, etc.).
      *
+     * @param musicCompositionForm Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
-    void setMusicCompositionForm(Text fMusicCompositionForm);
+    void setMusicCompositionForm(Text musicCompositionForm);
 
     /**
      * Smaller compositions included in this work (e.g. a movement in a symphony).
@@ -77,9 +87,10 @@ public interface MusicComposition extends CreativeWork {
     /**
      * Smaller compositions included in this work (e.g. a movement in a symphony).
      *
+     * @param includedComposition MusicComposition value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
-    void setIncludedComposition(MusicComposition fIncludedComposition);
+    void setIncludedComposition(MusicComposition includedComposition);
 
     /**
      * An audio recording of the work.
@@ -92,9 +103,10 @@ public interface MusicComposition extends CreativeWork {
     /**
      * An audio recording of the work.
      *
+     * @param recordedAs MusicRecording value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
-    void setRecordedAs(MusicRecording fRecordedAs);
+    void setRecordedAs(MusicRecording recordedAs);
 
     /**
      * The date and place the work was first performed.
@@ -107,9 +119,10 @@ public interface MusicComposition extends CreativeWork {
     /**
      * The date and place the work was first performed.
      *
+     * @param firstPerformance Event value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
-    void setFirstPerformance(Event fFirstPerformance);
+    void setFirstPerformance(Event firstPerformance);
 
     /**
      * An arrangement derived from the composition.
@@ -122,9 +135,10 @@ public interface MusicComposition extends CreativeWork {
     /**
      * An arrangement derived from the composition.
      *
+     * @param musicArrangement MusicComposition value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
-    void setMusicArrangement(MusicComposition fMusicArrangement);
+    void setMusicArrangement(MusicComposition musicArrangement);
 
     /**
      * The words in the song.
@@ -137,9 +151,10 @@ public interface MusicComposition extends CreativeWork {
     /**
      * The words in the song.
      *
+     * @param lyrics CreativeWork value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
-    void setLyrics(CreativeWork fLyrics);
+    void setLyrics(CreativeWork lyrics);
 
     /**
      * The key, mode, or scale this composition uses.
@@ -152,9 +167,10 @@ public interface MusicComposition extends CreativeWork {
     /**
      * The key, mode, or scale this composition uses.
      *
+     * @param musicalKey Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
-    void setMusicalKey(Text fMusicalKey);
+    void setMusicalKey(Text musicalKey);
 
     /**
      * The person who wrote the words.
@@ -167,7 +183,8 @@ public interface MusicComposition extends CreativeWork {
     /**
      * The person who wrote the words.
      *
+     * @param lyricist Person value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
-    void setLyricist(Person fLyricist);
+    void setLyricist(Person lyricist);
 }

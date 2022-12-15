@@ -32,8 +32,15 @@ public interface Flight extends Trip {
     /**
      * The distance of the flight.
      *
+     * @param flightDistance Distance value to set.
      */
-    void setFlightDistance(Object fFlightDistance);
+    void setFlightDistance(Distance flightDistance);
+    /**
+     * The distance of the flight.
+     *
+     * @param flightDistance Text value to set.
+     */
+    void setFlightDistance(Text flightDistance);
 
     /**
      * The time when a passenger can check into the flight online.
@@ -45,8 +52,9 @@ public interface Flight extends Trip {
     /**
      * The time when a passenger can check into the flight online.
      *
+     * @param webCheckinTime DateTime value to set.
      */
-    void setWebCheckinTime(DateTime fWebCheckinTime);
+    void setWebCheckinTime(DateTime webCheckinTime);
 
     /**
      * The kind of aircraft (e.g., "Boeing 747").
@@ -58,8 +66,15 @@ public interface Flight extends Trip {
     /**
      * The kind of aircraft (e.g., "Boeing 747").
      *
+     * @param aircraft Vehicle value to set.
      */
-    void setAircraft(Object fAircraft);
+    void setAircraft(Vehicle aircraft);
+    /**
+     * The kind of aircraft (e.g., "Boeing 747").
+     *
+     * @param aircraft Text value to set.
+     */
+    void setAircraft(Text aircraft);
 
     /**
      * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
@@ -71,8 +86,15 @@ public interface Flight extends Trip {
     /**
      * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
      *
+     * @param seller Organization value to set.
      */
-    void setSeller(Object fSeller);
+    void setSeller(Organization seller);
+    /**
+     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+     *
+     * @param seller Person value to set.
+     */
+    void setSeller(Person seller);
 
     /**
      * The airport where the flight terminates.
@@ -84,8 +106,9 @@ public interface Flight extends Trip {
     /**
      * The airport where the flight terminates.
      *
+     * @param arrivalAirport Airport value to set.
      */
-    void setArrivalAirport(Airport fArrivalAirport);
+    void setArrivalAirport(Airport arrivalAirport);
 
     /**
      * Identifier of the flight's arrival terminal.
@@ -97,8 +120,9 @@ public interface Flight extends Trip {
     /**
      * Identifier of the flight's arrival terminal.
      *
+     * @param arrivalTerminal Text value to set.
      */
-    void setArrivalTerminal(Text fArrivalTerminal);
+    void setArrivalTerminal(Text arrivalTerminal);
 
     /**
      * The airport where the flight originates.
@@ -110,8 +134,9 @@ public interface Flight extends Trip {
     /**
      * The airport where the flight originates.
      *
+     * @param departureAirport Airport value to set.
      */
-    void setDepartureAirport(Airport fDepartureAirport);
+    void setDepartureAirport(Airport departureAirport);
 
     /**
      * Identifier of the flight's arrival gate.
@@ -123,8 +148,9 @@ public interface Flight extends Trip {
     /**
      * Identifier of the flight's arrival gate.
      *
+     * @param arrivalGate Text value to set.
      */
-    void setArrivalGate(Text fArrivalGate);
+    void setArrivalGate(Text arrivalGate);
 
     /**
      * Identifier of the flight's departure terminal.
@@ -136,8 +162,9 @@ public interface Flight extends Trip {
     /**
      * Identifier of the flight's departure terminal.
      *
+     * @param departureTerminal Text value to set.
      */
-    void setDepartureTerminal(Text fDepartureTerminal);
+    void setDepartureTerminal(Text departureTerminal);
 
     /**
      * 'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.
@@ -149,8 +176,9 @@ public interface Flight extends Trip {
     /**
      * 'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.
      *
+     * @param carrier Organization value to set.
      */
-    void setCarrier(Organization fCarrier);
+    void setCarrier(Organization carrier);
 
     /**
      * The estimated time the flight will take.
@@ -162,8 +190,15 @@ public interface Flight extends Trip {
     /**
      * The estimated time the flight will take.
      *
+     * @param estimatedFlightDuration Text value to set.
      */
-    void setEstimatedFlightDuration(Object fEstimatedFlightDuration);
+    void setEstimatedFlightDuration(Text estimatedFlightDuration);
+    /**
+     * The estimated time the flight will take.
+     *
+     * @param estimatedFlightDuration Duration value to set.
+     */
+    void setEstimatedFlightDuration(Duration estimatedFlightDuration);
 
     /**
      * Identifier of the flight's departure gate.
@@ -175,8 +210,9 @@ public interface Flight extends Trip {
     /**
      * Identifier of the flight's departure gate.
      *
+     * @param departureGate Text value to set.
      */
-    void setDepartureGate(Text fDepartureGate);
+    void setDepartureGate(Text departureGate);
 
     /**
      * The unique identifier for a flight including the airline IATA code. For example, if describing United flight 110, where the IATA code for United is 'UA', the flightNumber is 'UA110'.
@@ -188,8 +224,9 @@ public interface Flight extends Trip {
     /**
      * The unique identifier for a flight including the airline IATA code. For example, if describing United flight 110, where the IATA code for United is 'UA', the flightNumber is 'UA110'.
      *
+     * @param flightNumber Text value to set.
      */
-    void setFlightNumber(Text fFlightNumber);
+    void setFlightNumber(Text flightNumber);
 
     /**
      * Description of the meals that will be provided or available for purchase.
@@ -201,8 +238,9 @@ public interface Flight extends Trip {
     /**
      * Description of the meals that will be provided or available for purchase.
      *
+     * @param mealService Text value to set.
      */
-    void setMealService(Text fMealService);
+    void setMealService(Text mealService);
 
     /**
      * The type of boarding policy used by the airline (e.g. zone-based or group-based).
@@ -214,6 +252,7 @@ public interface Flight extends Trip {
     /**
      * The type of boarding policy used by the airline (e.g. zone-based or group-based).
      *
+     * @param boardingPolicy BoardingPolicyType value to set.
      */
-    void setBoardingPolicy(BoardingPolicyType fBoardingPolicy);
+    void setBoardingPolicy(BoardingPolicyType boardingPolicy);
 }

@@ -26,7 +26,8 @@ public interface MedicalScholarlyArticle extends ScholarlyArticle {
     /**
      * The type of the medical article, taken from the US NLM MeSH publication type catalog. See also [MeSH documentation](http://www.nlm.nih.gov/mesh/pubtypes.html).
      *
+     * @param publicationType Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setPublicationType(Text fPublicationType);
+    void setPublicationType(Text publicationType);
 }

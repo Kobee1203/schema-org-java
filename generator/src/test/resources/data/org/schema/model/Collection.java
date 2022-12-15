@@ -27,8 +27,9 @@ public interface Collection extends CreativeWork {
     /**
      * The number of items in the [[Collection]].
      *
+     * @param collectionSize Integer value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1759">https://github.com/schemaorg/schemaorg/issues/1759</a>
      */
-    void setCollectionSize(Integer fCollectionSize);
+    void setCollectionSize(Integer collectionSize);
 }

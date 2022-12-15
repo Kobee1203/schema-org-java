@@ -41,9 +41,17 @@ public interface DefinedRegion extends StructuredValue {
     /**
      * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
      *
+     * @param addressCountry Country value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
-    void setAddressCountry(Object fAddressCountry);
+    void setAddressCountry(Country addressCountry);
+    /**
+     * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
+     *
+     * @param addressCountry Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    void setAddressCountry(Text addressCountry);
 
     /**
      * The region in which the locality is, and which is in the country. For example, California or another appropriate first-level [Administrative division](https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country) 
@@ -56,9 +64,10 @@ public interface DefinedRegion extends StructuredValue {
     /**
      * The region in which the locality is, and which is in the country. For example, California or another appropriate first-level [Administrative division](https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country) 
      *
+     * @param addressRegion Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
-    void setAddressRegion(Text fAddressRegion);
+    void setAddressRegion(Text addressRegion);
 
     /**
      * A defined range of postal codes.
@@ -72,10 +81,11 @@ public interface DefinedRegion extends StructuredValue {
     /**
      * A defined range of postal codes.
      *
+     * @param postalCodeRange PostalCodeRangeSpecification value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
-    void setPostalCodeRange(PostalCodeRangeSpecification fPostalCodeRange);
+    void setPostalCodeRange(PostalCodeRangeSpecification postalCodeRange);
 
     /**
      * A defined range of postal codes indicated by a common textual prefix. Used for non-numeric systems such as UK.
@@ -89,10 +99,11 @@ public interface DefinedRegion extends StructuredValue {
     /**
      * A defined range of postal codes indicated by a common textual prefix. Used for non-numeric systems such as UK.
      *
+     * @param postalCodePrefix Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
-    void setPostalCodePrefix(Text fPostalCodePrefix);
+    void setPostalCodePrefix(Text postalCodePrefix);
 
     /**
      * The postal code. For example, 94043.
@@ -105,7 +116,8 @@ public interface DefinedRegion extends StructuredValue {
     /**
      * The postal code. For example, 94043.
      *
+     * @param postalCode Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
-    void setPostalCode(Text fPostalCode);
+    void setPostalCode(Text postalCode);
 }

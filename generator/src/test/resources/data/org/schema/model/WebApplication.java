@@ -24,6 +24,7 @@ public interface WebApplication extends SoftwareApplication {
     /**
      * Specifies browser requirements in human-readable text. For example, 'requires HTML5 support'.
      *
+     * @param browserRequirements Text value to set.
      */
-    void setBrowserRequirements(Text fBrowserRequirements);
+    void setBrowserRequirements(Text browserRequirements);
 }

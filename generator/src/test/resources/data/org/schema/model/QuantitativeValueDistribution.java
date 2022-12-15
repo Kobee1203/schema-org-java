@@ -27,9 +27,10 @@ public interface QuantitativeValueDistribution extends StructuredValue {
     /**
      * The 75th percentile value.
      *
+     * @param percentile75 Number value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
-    void setPercentile75(Number fPercentile75);
+    void setPercentile75(Number percentile75);
 
     /**
      * The median value.
@@ -42,9 +43,10 @@ public interface QuantitativeValueDistribution extends StructuredValue {
     /**
      * The median value.
      *
+     * @param median Number value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
-    void setMedian(Number fMedian);
+    void setMedian(Number median);
 
     /**
      * The 10th percentile value.
@@ -57,9 +59,10 @@ public interface QuantitativeValueDistribution extends StructuredValue {
     /**
      * The 10th percentile value.
      *
+     * @param percentile10 Number value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
-    void setPercentile10(Number fPercentile10);
+    void setPercentile10(Number percentile10);
 
     /**
      * The 25th percentile value.
@@ -72,9 +75,10 @@ public interface QuantitativeValueDistribution extends StructuredValue {
     /**
      * The 25th percentile value.
      *
+     * @param percentile25 Number value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
-    void setPercentile25(Number fPercentile25);
+    void setPercentile25(Number percentile25);
 
     /**
      * The 90th percentile value.
@@ -87,9 +91,10 @@ public interface QuantitativeValueDistribution extends StructuredValue {
     /**
      * The 90th percentile value.
      *
+     * @param percentile90 Number value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
-    void setPercentile90(Number fPercentile90);
+    void setPercentile90(Number percentile90);
 
     /**
      * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
@@ -103,8 +108,9 @@ public interface QuantitativeValueDistribution extends StructuredValue {
     /**
      * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
      *
+     * @param duration Duration value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
      */
-    void setDuration(Duration fDuration);
+    void setDuration(Duration duration);
 }

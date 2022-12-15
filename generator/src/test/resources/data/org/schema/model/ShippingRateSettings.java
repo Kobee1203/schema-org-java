@@ -32,10 +32,11 @@ public interface ShippingRateSettings extends StructuredValue {
     /**
      * indicates (possibly multiple) shipping destinations. These can be defined in several ways e.g. postalCode ranges.
      *
+     * @param shippingDestination DefinedRegion value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
-    void setShippingDestination(DefinedRegion fShippingDestination);
+    void setShippingDestination(DefinedRegion shippingDestination);
 
     /**
      * Indicates when shipping to a particular [[shippingDestination]] is not available.
@@ -49,10 +50,11 @@ public interface ShippingRateSettings extends StructuredValue {
     /**
      * Indicates when shipping to a particular [[shippingDestination]] is not available.
      *
+     * @param doesNotShip Boolean value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
-    void setDoesNotShip(Boolean fDoesNotShip);
+    void setDoesNotShip(Boolean doesNotShip);
 
     /**
      * Label to match an [[OfferShippingDetails]] with a [[ShippingRateSettings]] (within the context of a [[shippingSettingsLink]] cross-reference).
@@ -66,10 +68,11 @@ public interface ShippingRateSettings extends StructuredValue {
     /**
      * Label to match an [[OfferShippingDetails]] with a [[ShippingRateSettings]] (within the context of a [[shippingSettingsLink]] cross-reference).
      *
+     * @param shippingLabel Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
-    void setShippingLabel(Text fShippingLabel);
+    void setShippingLabel(Text shippingLabel);
 
     /**
      * This can be marked 'true' to indicate that some published [[DeliveryTimeSettings]] or [[ShippingRateSettings]] are intended to apply to all [[OfferShippingDetails]] published by the same merchant, when referenced by a [[shippingSettingsLink]] in those settings. It is not meaningful to use a 'true' value for this property alongside a transitTimeLabel (for [[DeliveryTimeSettings]]) or shippingLabel (for [[ShippingRateSettings]]), since this property is for use with unlabelled settings.
@@ -83,10 +86,11 @@ public interface ShippingRateSettings extends StructuredValue {
     /**
      * This can be marked 'true' to indicate that some published [[DeliveryTimeSettings]] or [[ShippingRateSettings]] are intended to apply to all [[OfferShippingDetails]] published by the same merchant, when referenced by a [[shippingSettingsLink]] in those settings. It is not meaningful to use a 'true' value for this property alongside a transitTimeLabel (for [[DeliveryTimeSettings]]) or shippingLabel (for [[ShippingRateSettings]]), since this property is for use with unlabelled settings.
      *
+     * @param isUnlabelledFallback Boolean value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
-    void setIsUnlabelledFallback(Boolean fIsUnlabelledFallback);
+    void setIsUnlabelledFallback(Boolean isUnlabelledFallback);
 
     /**
      * The shipping rate is the cost of shipping to the specified destination. Typically, the maxValue and currency values (of the [[MonetaryAmount]]) are most appropriate.
@@ -100,10 +104,11 @@ public interface ShippingRateSettings extends StructuredValue {
     /**
      * The shipping rate is the cost of shipping to the specified destination. Typically, the maxValue and currency values (of the [[MonetaryAmount]]) are most appropriate.
      *
+     * @param shippingRate MonetaryAmount value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
-    void setShippingRate(MonetaryAmount fShippingRate);
+    void setShippingRate(MonetaryAmount shippingRate);
 
     /**
      * A monetary value above which (or equal to) the shipping rate becomes free. Intended to be used via an [[OfferShippingDetails]] with [[shippingSettingsLink]] matching this [[ShippingRateSettings]].
@@ -117,8 +122,17 @@ public interface ShippingRateSettings extends StructuredValue {
     /**
      * A monetary value above which (or equal to) the shipping rate becomes free. Intended to be used via an [[OfferShippingDetails]] with [[shippingSettingsLink]] matching this [[ShippingRateSettings]].
      *
+     * @param freeShippingThreshold MonetaryAmount value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
-    void setFreeShippingThreshold(Object fFreeShippingThreshold);
+    void setFreeShippingThreshold(MonetaryAmount freeShippingThreshold);
+    /**
+     * A monetary value above which (or equal to) the shipping rate becomes free. Intended to be used via an [[OfferShippingDetails]] with [[shippingSettingsLink]] matching this [[ShippingRateSettings]].
+     *
+     * @param freeShippingThreshold DeliveryChargeSpecification value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    void setFreeShippingThreshold(DeliveryChargeSpecification freeShippingThreshold);
 }

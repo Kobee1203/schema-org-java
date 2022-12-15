@@ -12,7 +12,7 @@ import com.weedow.schemaorg.commons.model.JsonLdTypeName;
  *
  * @see <a href="https://schema.org/Float">https://schema.org/Float</a>
  */
-@JsonLdTypeName("schema:Float")
+@JsonLdTypeName("Float")
 public class Float extends Number {
 
     Float(java.lang.Float value) {

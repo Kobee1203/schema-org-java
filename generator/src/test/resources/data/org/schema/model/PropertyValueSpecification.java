@@ -28,8 +28,9 @@ public interface PropertyValueSpecification extends Intangible {
     /**
      * Specifies the allowed range for number of characters in a literal value.
      *
+     * @param valueMaxLength Number value to set.
      */
-    void setValueMaxLength(Number fValueMaxLength);
+    void setValueMaxLength(Number valueMaxLength);
 
     /**
      * Whether or not a property is mutable.  Default is false. Specifying this for a property that also has a value makes it act similar to a "hidden" input in an HTML form.
@@ -41,8 +42,9 @@ public interface PropertyValueSpecification extends Intangible {
     /**
      * Whether or not a property is mutable.  Default is false. Specifying this for a property that also has a value makes it act similar to a "hidden" input in an HTML form.
      *
+     * @param readonlyValue Boolean value to set.
      */
-    void setReadonlyValue(Boolean fReadonlyValue);
+    void setReadonlyValue(Boolean readonlyValue);
 
     /**
      * The upper value of some characteristic or property.
@@ -55,9 +57,10 @@ public interface PropertyValueSpecification extends Intangible {
     /**
      * The upper value of some characteristic or property.
      *
+     * @param maxValue Number value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setMaxValue(Number fMaxValue);
+    void setMaxValue(Number maxValue);
 
     /**
      * Indicates the name of the PropertyValueSpecification to be used in URL templates and form encoding in a manner analogous to HTML's input@name.
@@ -69,8 +72,9 @@ public interface PropertyValueSpecification extends Intangible {
     /**
      * Indicates the name of the PropertyValueSpecification to be used in URL templates and form encoding in a manner analogous to HTML's input@name.
      *
+     * @param valueName Text value to set.
      */
-    void setValueName(Text fValueName);
+    void setValueName(Text valueName);
 
     /**
      * The default value of the input.  For properties that expect a literal, the default is a literal value, for properties that expect an object, it's an ID reference to one of the current values.
@@ -82,8 +86,15 @@ public interface PropertyValueSpecification extends Intangible {
     /**
      * The default value of the input.  For properties that expect a literal, the default is a literal value, for properties that expect an object, it's an ID reference to one of the current values.
      *
+     * @param defaultValue Text value to set.
      */
-    void setDefaultValue(Object fDefaultValue);
+    void setDefaultValue(Text defaultValue);
+    /**
+     * The default value of the input.  For properties that expect a literal, the default is a literal value, for properties that expect an object, it's an ID reference to one of the current values.
+     *
+     * @param defaultValue Thing value to set.
+     */
+    void setDefaultValue(Thing defaultValue);
 
     /**
      * Specifies the minimum allowed range for number of characters in a literal value.
@@ -95,8 +106,9 @@ public interface PropertyValueSpecification extends Intangible {
     /**
      * Specifies the minimum allowed range for number of characters in a literal value.
      *
+     * @param valueMinLength Number value to set.
      */
-    void setValueMinLength(Number fValueMinLength);
+    void setValueMinLength(Number valueMinLength);
 
     /**
      * Whether the property must be filled in to complete the action.  Default is false.
@@ -108,8 +120,9 @@ public interface PropertyValueSpecification extends Intangible {
     /**
      * Whether the property must be filled in to complete the action.  Default is false.
      *
+     * @param valueRequired Boolean value to set.
      */
-    void setValueRequired(Boolean fValueRequired);
+    void setValueRequired(Boolean valueRequired);
 
     /**
      * The lower value of some characteristic or property.
@@ -122,9 +135,10 @@ public interface PropertyValueSpecification extends Intangible {
     /**
      * The lower value of some characteristic or property.
      *
+     * @param minValue Number value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setMinValue(Number fMinValue);
+    void setMinValue(Number minValue);
 
     /**
      * Specifies a regular expression for testing literal values according to the HTML spec.
@@ -136,8 +150,9 @@ public interface PropertyValueSpecification extends Intangible {
     /**
      * Specifies a regular expression for testing literal values according to the HTML spec.
      *
+     * @param valuePattern Text value to set.
      */
-    void setValuePattern(Text fValuePattern);
+    void setValuePattern(Text valuePattern);
 
     /**
      * The stepValue attribute indicates the granularity that is expected (and required) of the value in a PropertyValueSpecification.
@@ -149,8 +164,9 @@ public interface PropertyValueSpecification extends Intangible {
     /**
      * The stepValue attribute indicates the granularity that is expected (and required) of the value in a PropertyValueSpecification.
      *
+     * @param stepValue Number value to set.
      */
-    void setStepValue(Number fStepValue);
+    void setStepValue(Number stepValue);
 
     /**
      * Whether multiple values are allowed for the property.  Default is false.
@@ -162,6 +178,7 @@ public interface PropertyValueSpecification extends Intangible {
     /**
      * Whether multiple values are allowed for the property.  Default is false.
      *
+     * @param multipleValues Boolean value to set.
      */
-    void setMultipleValues(Boolean fMultipleValues);
+    void setMultipleValues(Boolean multipleValues);
 }

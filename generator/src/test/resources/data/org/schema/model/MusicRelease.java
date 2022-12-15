@@ -31,9 +31,10 @@ public interface MusicRelease extends MusicPlaylist {
     /**
      * The album this is a release of.
      *
+     * @param releaseOf MusicAlbum value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
-    void setReleaseOf(MusicAlbum fReleaseOf);
+    void setReleaseOf(MusicAlbum releaseOf);
 
     /**
      * Format of this release (the type of recording media used, ie. compact disc, digital media, LP, etc.).
@@ -46,9 +47,10 @@ public interface MusicRelease extends MusicPlaylist {
     /**
      * Format of this release (the type of recording media used, ie. compact disc, digital media, LP, etc.).
      *
+     * @param musicReleaseFormat MusicReleaseFormatType value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
-    void setMusicReleaseFormat(MusicReleaseFormatType fMusicReleaseFormat);
+    void setMusicReleaseFormat(MusicReleaseFormatType musicReleaseFormat);
 
     /**
      * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
@@ -62,10 +64,11 @@ public interface MusicRelease extends MusicPlaylist {
     /**
      * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
      *
+     * @param duration Duration value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
      */
-    void setDuration(Duration fDuration);
+    void setDuration(Duration duration);
 
     /**
      * The group the release is credited to if different than the byArtist. For example, Red and Blue is credited to "Stefani Germanotta Band", but by Lady Gaga.
@@ -78,9 +81,17 @@ public interface MusicRelease extends MusicPlaylist {
     /**
      * The group the release is credited to if different than the byArtist. For example, Red and Blue is credited to "Stefani Germanotta Band", but by Lady Gaga.
      *
+     * @param creditedTo Person value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
-    void setCreditedTo(Object fCreditedTo);
+    void setCreditedTo(Person creditedTo);
+    /**
+     * The group the release is credited to if different than the byArtist. For example, Red and Blue is credited to "Stefani Germanotta Band", but by Lady Gaga.
+     *
+     * @param creditedTo Organization value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
+     */
+    void setCreditedTo(Organization creditedTo);
 
     /**
      * The label that issued the release.
@@ -93,9 +104,10 @@ public interface MusicRelease extends MusicPlaylist {
     /**
      * The label that issued the release.
      *
+     * @param recordLabel Organization value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
-    void setRecordLabel(Organization fRecordLabel);
+    void setRecordLabel(Organization recordLabel);
 
     /**
      * The catalog number for the release.
@@ -108,7 +120,8 @@ public interface MusicRelease extends MusicPlaylist {
     /**
      * The catalog number for the release.
      *
+     * @param catalogNumber Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
-    void setCatalogNumber(Text fCatalogNumber);
+    void setCatalogNumber(Text catalogNumber);
 }

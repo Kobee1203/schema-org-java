@@ -24,6 +24,7 @@ public interface TrackAction extends FindAction {
     /**
      * A sub property of instrument. The method of delivery.
      *
+     * @param deliveryMethod DeliveryMethod value to set.
      */
-    void setDeliveryMethod(DeliveryMethod fDeliveryMethod);
+    void setDeliveryMethod(DeliveryMethod deliveryMethod);
 }

@@ -30,8 +30,9 @@ public interface OrderItem extends Intangible {
     /**
      * The delivery of the parcel related to this order or order item.
      *
+     * @param orderDelivery ParcelDelivery value to set.
      */
-    void setOrderDelivery(ParcelDelivery fOrderDelivery);
+    void setOrderDelivery(ParcelDelivery orderDelivery);
 
     /**
      * The current status of the order item.
@@ -43,8 +44,9 @@ public interface OrderItem extends Intangible {
     /**
      * The current status of the order item.
      *
+     * @param orderItemStatus OrderStatus value to set.
      */
-    void setOrderItemStatus(OrderStatus fOrderItemStatus);
+    void setOrderItemStatus(OrderStatus orderItemStatus);
 
     /**
      * The number of the item ordered. If the property is not set, assume the quantity is one.
@@ -56,8 +58,9 @@ public interface OrderItem extends Intangible {
     /**
      * The number of the item ordered. If the property is not set, assume the quantity is one.
      *
+     * @param orderQuantity Number value to set.
      */
-    void setOrderQuantity(Number fOrderQuantity);
+    void setOrderQuantity(Number orderQuantity);
 
     /**
      * The identifier of the order item.
@@ -69,8 +72,9 @@ public interface OrderItem extends Intangible {
     /**
      * The identifier of the order item.
      *
+     * @param orderItemNumber Text value to set.
      */
-    void setOrderItemNumber(Text fOrderItemNumber);
+    void setOrderItemNumber(Text orderItemNumber);
 
     /**
      * The item ordered.
@@ -82,6 +86,19 @@ public interface OrderItem extends Intangible {
     /**
      * The item ordered.
      *
+     * @param orderedItem Service value to set.
      */
-    void setOrderedItem(Object fOrderedItem);
+    void setOrderedItem(Service orderedItem);
+    /**
+     * The item ordered.
+     *
+     * @param orderedItem OrderItem value to set.
+     */
+    void setOrderedItem(OrderItem orderedItem);
+    /**
+     * The item ordered.
+     *
+     * @param orderedItem Product value to set.
+     */
+    void setOrderedItem(Product orderedItem);
 }

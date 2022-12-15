@@ -24,6 +24,7 @@ public interface ReservationPackage extends Reservation {
     /**
      * The individual reservations included in the package. Typically a repeated property.
      *
+     * @param subReservation Reservation value to set.
      */
-    void setSubReservation(Reservation fSubReservation);
+    void setSubReservation(Reservation subReservation);
 }

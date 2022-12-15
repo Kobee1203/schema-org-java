@@ -44,10 +44,11 @@ public interface OfferShippingDetails extends StructuredValue {
     /**
      * indicates (possibly multiple) shipping destinations. These can be defined in several ways e.g. postalCode ranges.
      *
+     * @param shippingDestination DefinedRegion value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
-    void setShippingDestination(DefinedRegion fShippingDestination);
+    void setShippingDestination(DefinedRegion shippingDestination);
 
     /**
      * Indicates when shipping to a particular [[shippingDestination]] is not available.
@@ -61,10 +62,11 @@ public interface OfferShippingDetails extends StructuredValue {
     /**
      * Indicates when shipping to a particular [[shippingDestination]] is not available.
      *
+     * @param doesNotShip Boolean value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
-    void setDoesNotShip(Boolean fDoesNotShip);
+    void setDoesNotShip(Boolean doesNotShip);
 
     /**
      * Link to a page containing [[ShippingRateSettings]] and [[DeliveryTimeSettings]] details.
@@ -78,10 +80,11 @@ public interface OfferShippingDetails extends StructuredValue {
     /**
      * Link to a page containing [[ShippingRateSettings]] and [[DeliveryTimeSettings]] details.
      *
+     * @param shippingSettingsLink URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
-    void setShippingSettingsLink(URL fShippingSettingsLink);
+    void setShippingSettingsLink(URL shippingSettingsLink);
 
     /**
      * Label to match an [[OfferShippingDetails]] with a [[DeliveryTimeSettings]] (within the context of a [[shippingSettingsLink]] cross-reference).
@@ -95,10 +98,11 @@ public interface OfferShippingDetails extends StructuredValue {
     /**
      * Label to match an [[OfferShippingDetails]] with a [[DeliveryTimeSettings]] (within the context of a [[shippingSettingsLink]] cross-reference).
      *
+     * @param transitTimeLabel Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
-    void setTransitTimeLabel(Text fTransitTimeLabel);
+    void setTransitTimeLabel(Text transitTimeLabel);
 
     /**
      * Label to match an [[OfferShippingDetails]] with a [[ShippingRateSettings]] (within the context of a [[shippingSettingsLink]] cross-reference).
@@ -112,10 +116,11 @@ public interface OfferShippingDetails extends StructuredValue {
     /**
      * Label to match an [[OfferShippingDetails]] with a [[ShippingRateSettings]] (within the context of a [[shippingSettingsLink]] cross-reference).
      *
+     * @param shippingLabel Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
-    void setShippingLabel(Text fShippingLabel);
+    void setShippingLabel(Text shippingLabel);
 
     /**
      * The total delay between the receipt of the order and the goods reaching the final customer.
@@ -129,10 +134,11 @@ public interface OfferShippingDetails extends StructuredValue {
     /**
      * The total delay between the receipt of the order and the goods reaching the final customer.
      *
+     * @param deliveryTime ShippingDeliveryTime value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
-    void setDeliveryTime(ShippingDeliveryTime fDeliveryTime);
+    void setDeliveryTime(ShippingDeliveryTime deliveryTime);
 
     /**
      * The shipping rate is the cost of shipping to the specified destination. Typically, the maxValue and currency values (of the [[MonetaryAmount]]) are most appropriate.
@@ -146,8 +152,9 @@ public interface OfferShippingDetails extends StructuredValue {
     /**
      * The shipping rate is the cost of shipping to the specified destination. Typically, the maxValue and currency values (of the [[MonetaryAmount]]) are most appropriate.
      *
+     * @param shippingRate MonetaryAmount value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
-    void setShippingRate(MonetaryAmount fShippingRate);
+    void setShippingRate(MonetaryAmount shippingRate);
 }

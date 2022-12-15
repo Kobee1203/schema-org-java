@@ -24,6 +24,7 @@ public interface TVClip extends Clip {
     /**
      * The TV series to which this episode or season belongs.
      *
+     * @param partOfTVSeries TVSeries value to set.
      */
-    void setPartOfTVSeries(TVSeries fPartOfTVSeries);
+    void setPartOfTVSeries(TVSeries partOfTVSeries);
 }

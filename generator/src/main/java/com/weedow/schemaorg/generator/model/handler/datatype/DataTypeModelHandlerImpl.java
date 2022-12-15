@@ -2,7 +2,7 @@ package com.weedow.schemaorg.generator.model.handler.datatype;
 
 import com.weedow.schemaorg.generator.model.Type;
 import com.weedow.schemaorg.generator.model.handler.AbstractTypeModelHandler;
-import com.weedow.schemaorg.generator.model.handler.ModelHandlerUtils;
+import com.weedow.schemaorg.generator.model.utils.ModelUtils;
 import com.weedow.schemaorg.generator.model.jsonld.GraphItem;
 
 import java.util.List;
@@ -22,7 +22,7 @@ public class DataTypeModelHandlerImpl extends AbstractTypeModelHandler {
 
         final Type type = getType(schemaDefinitions, graphItem);
 
-        type.setJavaType(ModelHandlerUtils.getJavaType(type.getId(), null));
-        type.addParent(ModelHandlerUtils.getType(schemaDefinitions, ModelHandlerUtils.getTypeId("schema:DataType")));
+        type.setJavaType(ModelUtils.getJavaType(type.getId(), null));
+        type.addParent(ModelUtils.getType(schemaDefinitions, ModelUtils.getTypeId("schema:DataType")));
     }
 }

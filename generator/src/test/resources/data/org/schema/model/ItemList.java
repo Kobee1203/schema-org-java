@@ -28,8 +28,9 @@ public interface ItemList extends Intangible {
     /**
      * The number of items in an ItemList. Note that some descriptions might not fully describe all items in a list (e.g., multi-page pagination); in such cases, the numberOfItems would be for the entire list.
      *
+     * @param numberOfItems Integer value to set.
      */
-    void setNumberOfItems(Integer fNumberOfItems);
+    void setNumberOfItems(Integer numberOfItems);
 
     /**
      * For itemListElement values, you can use simple strings (e.g. "Peter", "Paul", "Mary"), existing entities, or use ListItem.<br/><br/>Text values are best if the elements in the list are plain strings. Existing entities are best for a simple, unordered list of existing things in your data. ListItem is used with ordered lists when you want to provide additional context about the element in that list or when the same item might be in different places in different lists.<br/><br/>Note: The order of elements in your mark-up is not sufficient for indicating the order or elements.  Use ListItem with a 'position' property in such cases.
@@ -41,8 +42,21 @@ public interface ItemList extends Intangible {
     /**
      * For itemListElement values, you can use simple strings (e.g. "Peter", "Paul", "Mary"), existing entities, or use ListItem.<br/><br/>Text values are best if the elements in the list are plain strings. Existing entities are best for a simple, unordered list of existing things in your data. ListItem is used with ordered lists when you want to provide additional context about the element in that list or when the same item might be in different places in different lists.<br/><br/>Note: The order of elements in your mark-up is not sufficient for indicating the order or elements.  Use ListItem with a 'position' property in such cases.
      *
+     * @param itemListElement Thing value to set.
      */
-    void setItemListElement(Object fItemListElement);
+    void setItemListElement(Thing itemListElement);
+    /**
+     * For itemListElement values, you can use simple strings (e.g. "Peter", "Paul", "Mary"), existing entities, or use ListItem.<br/><br/>Text values are best if the elements in the list are plain strings. Existing entities are best for a simple, unordered list of existing things in your data. ListItem is used with ordered lists when you want to provide additional context about the element in that list or when the same item might be in different places in different lists.<br/><br/>Note: The order of elements in your mark-up is not sufficient for indicating the order or elements.  Use ListItem with a 'position' property in such cases.
+     *
+     * @param itemListElement ListItem value to set.
+     */
+    void setItemListElement(ListItem itemListElement);
+    /**
+     * For itemListElement values, you can use simple strings (e.g. "Peter", "Paul", "Mary"), existing entities, or use ListItem.<br/><br/>Text values are best if the elements in the list are plain strings. Existing entities are best for a simple, unordered list of existing things in your data. ListItem is used with ordered lists when you want to provide additional context about the element in that list or when the same item might be in different places in different lists.<br/><br/>Note: The order of elements in your mark-up is not sufficient for indicating the order or elements.  Use ListItem with a 'position' property in such cases.
+     *
+     * @param itemListElement Text value to set.
+     */
+    void setItemListElement(Text itemListElement);
 
     /**
      * Type of ordering (e.g. Ascending, Descending, Unordered).
@@ -54,6 +68,13 @@ public interface ItemList extends Intangible {
     /**
      * Type of ordering (e.g. Ascending, Descending, Unordered).
      *
+     * @param itemListOrder Text value to set.
      */
-    void setItemListOrder(Object fItemListOrder);
+    void setItemListOrder(Text itemListOrder);
+    /**
+     * Type of ordering (e.g. Ascending, Descending, Unordered).
+     *
+     * @param itemListOrder ItemListOrderType value to set.
+     */
+    void setItemListOrder(ItemListOrderType itemListOrder);
 }

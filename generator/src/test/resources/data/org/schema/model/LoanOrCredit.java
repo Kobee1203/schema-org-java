@@ -36,11 +36,12 @@ public interface LoanOrCredit extends FinancialProduct {
     /**
      * Whether the terms for payment of interest can be renegotiated during the life of the loan.
      *
+     * @param renegotiableLoan Boolean value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      */
-    void setRenegotiableLoan(Boolean fRenegotiableLoan);
+    void setRenegotiableLoan(Boolean renegotiableLoan);
 
     /**
      * The type of a loan or credit.
@@ -55,11 +56,21 @@ public interface LoanOrCredit extends FinancialProduct {
     /**
      * The type of a loan or credit.
      *
+     * @param loanType URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      */
-    void setLoanType(Object fLoanType);
+    void setLoanType(URL loanType);
+    /**
+     * The type of a loan or credit.
+     *
+     * @param loanType Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     */
+    void setLoanType(Text loanType);
 
     /**
      * The only way you get the money back in the event of default is the security. Recourse is where you still have the opportunity to go back to the borrower for the rest of the money.
@@ -74,11 +85,12 @@ public interface LoanOrCredit extends FinancialProduct {
     /**
      * The only way you get the money back in the event of default is the security. Recourse is where you still have the opportunity to go back to the borrower for the rest of the money.
      *
+     * @param recourseLoan Boolean value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
      */
-    void setRecourseLoan(Boolean fRecourseLoan);
+    void setRecourseLoan(Boolean recourseLoan);
 
     /**
      * The duration of the loan or credit agreement.
@@ -91,9 +103,10 @@ public interface LoanOrCredit extends FinancialProduct {
     /**
      * The duration of the loan or credit agreement.
      *
+     * @param loanTerm QuantitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      */
-    void setLoanTerm(QuantitativeValue fLoanTerm);
+    void setLoanTerm(QuantitativeValue loanTerm);
 
     /**
      * The period of time after any due date that the borrower has to fulfil its obligations before a default (failure to pay) is deemed to have occurred.
@@ -108,11 +121,12 @@ public interface LoanOrCredit extends FinancialProduct {
     /**
      * The period of time after any due date that the borrower has to fulfil its obligations before a default (failure to pay) is deemed to have occurred.
      *
+     * @param gracePeriod Duration value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      */
-    void setGracePeriod(Duration fGracePeriod);
+    void setGracePeriod(Duration gracePeriod);
 
     /**
      * Assets required to secure loan or credit repayments. It may take form of third party pledge, goods, financial instruments (cash, securities, etc.)
@@ -125,9 +139,17 @@ public interface LoanOrCredit extends FinancialProduct {
     /**
      * Assets required to secure loan or credit repayments. It may take form of third party pledge, goods, financial instruments (cash, securities, etc.)
      *
+     * @param requiredCollateral Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      */
-    void setRequiredCollateral(Object fRequiredCollateral);
+    void setRequiredCollateral(Text requiredCollateral);
+    /**
+     * Assets required to secure loan or credit repayments. It may take form of third party pledge, goods, financial instruments (cash, securities, etc.)
+     *
+     * @param requiredCollateral Thing value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     */
+    void setRequiredCollateral(Thing requiredCollateral);
 
     /**
      * The currency in which the monetary amount is expressed.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
@@ -140,9 +162,10 @@ public interface LoanOrCredit extends FinancialProduct {
     /**
      * The currency in which the monetary amount is expressed.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
      *
+     * @param currency Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
      */
-    void setCurrency(Text fCurrency);
+    void setCurrency(Text currency);
 
     /**
      * The amount of money.
@@ -156,10 +179,19 @@ public interface LoanOrCredit extends FinancialProduct {
     /**
      * The amount of money.
      *
+     * @param amount Number value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
      */
-    void setAmount(Object fAmount);
+    void setAmount(Number amount);
+    /**
+     * The amount of money.
+     *
+     * @param amount MonetaryAmount value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     */
+    void setAmount(MonetaryAmount amount);
 
     /**
      * A form of paying back money previously borrowed from a lender. Repayment usually takes the form of periodic payments that normally include part principal plus interest in each payment.
@@ -174,9 +206,10 @@ public interface LoanOrCredit extends FinancialProduct {
     /**
      * A form of paying back money previously borrowed from a lender. Repayment usually takes the form of periodic payments that normally include part principal plus interest in each payment.
      *
+     * @param loanRepaymentForm RepaymentSpecification value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      */
-    void setLoanRepaymentForm(RepaymentSpecification fLoanRepaymentForm);
+    void setLoanRepaymentForm(RepaymentSpecification loanRepaymentForm);
 }

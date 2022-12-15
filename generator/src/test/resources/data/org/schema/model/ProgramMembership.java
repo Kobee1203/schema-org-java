@@ -30,10 +30,19 @@ public interface ProgramMembership extends Intangible {
     /**
      * The number of membership points earned by the member. If necessary, the unitText can be used to express the units the points are issued in. (e.g. stars, miles, etc.)
      *
+     * @param membershipPointsEarned Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2085">https://github.com/schemaorg/schemaorg/issues/2085</a>
      */
-    void setMembershipPointsEarned(Object fMembershipPointsEarned);
+    void setMembershipPointsEarned(Number membershipPointsEarned);
+    /**
+     * The number of membership points earned by the member. If necessary, the unitText can be used to express the units the points are issued in. (e.g. stars, miles, etc.)
+     *
+     * @param membershipPointsEarned QuantitativeValue value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2085">https://github.com/schemaorg/schemaorg/issues/2085</a>
+     */
+    void setMembershipPointsEarned(QuantitativeValue membershipPointsEarned);
 
     /**
      * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
@@ -45,8 +54,15 @@ public interface ProgramMembership extends Intangible {
     /**
      * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
      *
+     * @param member Organization value to set.
      */
-    void setMember(Object fMember);
+    void setMember(Organization member);
+    /**
+     * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
+     *
+     * @param member Person value to set.
+     */
+    void setMember(Person member);
 
     /**
      * A unique identifier for the membership.
@@ -58,8 +74,9 @@ public interface ProgramMembership extends Intangible {
     /**
      * A unique identifier for the membership.
      *
+     * @param membershipNumber Text value to set.
      */
-    void setMembershipNumber(Text fMembershipNumber);
+    void setMembershipNumber(Text membershipNumber);
 
     /**
      * The organization (airline, travelers' club, etc.) the membership is made with.
@@ -71,8 +88,9 @@ public interface ProgramMembership extends Intangible {
     /**
      * The organization (airline, travelers' club, etc.) the membership is made with.
      *
+     * @param hostingOrganization Organization value to set.
      */
-    void setHostingOrganization(Organization fHostingOrganization);
+    void setHostingOrganization(Organization hostingOrganization);
 
     /**
      * The program providing the membership.
@@ -84,8 +102,9 @@ public interface ProgramMembership extends Intangible {
     /**
      * The program providing the membership.
      *
+     * @param programName Text value to set.
      */
-    void setProgramName(Text fProgramName);
+    void setProgramName(Text programName);
 
     /**
      * A member of this organization.
@@ -97,6 +116,13 @@ public interface ProgramMembership extends Intangible {
     /**
      * A member of this organization.
      *
+     * @param members Person value to set.
      */
-    void setMembers(Object fMembers);
+    void setMembers(Person members);
+    /**
+     * A member of this organization.
+     *
+     * @param members Organization value to set.
+     */
+    void setMembers(Organization members);
 }

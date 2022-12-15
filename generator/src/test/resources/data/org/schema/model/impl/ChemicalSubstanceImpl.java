@@ -28,10 +28,10 @@ import org.schema.model.ChemicalSubstance;
  * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
  * @see <a href="https://schema.org/ChemicalSubstance">https://schema.org/ChemicalSubstance</a>
  */
-@JsonLdTypeName("schema:ChemicalSubstance")
+@JsonLdTypeName("ChemicalSubstance")
 public class ChemicalSubstanceImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ChemicalSubstance {
 
-    private Text fChemicalComposition;
+    private Text chemicalComposition;
 
     /**
      * The chemical composition describes the identity and relative ratio of the chemical elements that make up the substance.
@@ -41,20 +41,21 @@ public class ChemicalSubstanceImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getChemicalComposition() {
-        return fChemicalComposition;
+        return chemicalComposition;
     }
 
     /**
      * The chemical composition describes the identity and relative ratio of the chemical elements that make up the substance.
      *
+     * @param chemicalComposition Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
     @Override
-    public void setChemicalComposition(Text fChemicalComposition) {
-        this.fChemicalComposition = fChemicalComposition;
+    public void setChemicalComposition(Text chemicalComposition) {
+        this.chemicalComposition = chemicalComposition;
     }
 
-    private DefinedTerm fPotentialUse;
+    private DefinedTerm potentialUse;
 
     /**
      * Intended use of the BioChemEntity by humans.
@@ -64,20 +65,21 @@ public class ChemicalSubstanceImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public DefinedTerm getPotentialUse() {
-        return fPotentialUse;
+        return potentialUse;
     }
 
     /**
      * Intended use of the BioChemEntity by humans.
      *
+     * @param potentialUse DefinedTerm value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
     @Override
-    public void setPotentialUse(DefinedTerm fPotentialUse) {
-        this.fPotentialUse = fPotentialUse;
+    public void setPotentialUse(DefinedTerm potentialUse) {
+        this.potentialUse = potentialUse;
     }
 
-    private DefinedTerm fChemicalRole;
+    private DefinedTerm chemicalRole;
 
     /**
      * A role played by the BioChemEntity within a chemical context.
@@ -87,20 +89,21 @@ public class ChemicalSubstanceImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public DefinedTerm getChemicalRole() {
-        return fChemicalRole;
+        return chemicalRole;
     }
 
     /**
      * A role played by the BioChemEntity within a chemical context.
      *
+     * @param chemicalRole DefinedTerm value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
     @Override
-    public void setChemicalRole(DefinedTerm fChemicalRole) {
-        this.fChemicalRole = fChemicalRole;
+    public void setChemicalRole(DefinedTerm chemicalRole) {
+        this.chemicalRole = chemicalRole;
     }
 
-    private Grant fFunding;
+    private Grant funding;
 
     /**
      * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
@@ -112,22 +115,23 @@ public class ChemicalSubstanceImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Grant getFunding() {
-        return fFunding;
+        return funding;
     }
 
     /**
      * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
      *
+     * @param funding Grant value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
     @Override
-    public void setFunding(Grant fFunding) {
-        this.fFunding = fFunding;
+    public void setFunding(Grant funding) {
+        this.funding = funding;
     }
 
-    private Gene fIsEncodedByBioChemEntity;
+    private Gene isEncodedByBioChemEntity;
 
     /**
      * Another BioChemEntity encoding by this one.
@@ -137,20 +141,21 @@ public class ChemicalSubstanceImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Gene getIsEncodedByBioChemEntity() {
-        return fIsEncodedByBioChemEntity;
+        return isEncodedByBioChemEntity;
     }
 
     /**
      * Another BioChemEntity encoding by this one.
      *
+     * @param isEncodedByBioChemEntity Gene value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
     @Override
-    public void setIsEncodedByBioChemEntity(Gene fIsEncodedByBioChemEntity) {
-        this.fIsEncodedByBioChemEntity = fIsEncodedByBioChemEntity;
+    public void setIsEncodedByBioChemEntity(Gene isEncodedByBioChemEntity) {
+        this.isEncodedByBioChemEntity = isEncodedByBioChemEntity;
     }
 
-    private BioChemEntity fIsPartOfBioChemEntity;
+    private BioChemEntity isPartOfBioChemEntity;
 
     /**
      * Indicates a BioChemEntity that is (in some sense) a part of this BioChemEntity. 
@@ -160,20 +165,21 @@ public class ChemicalSubstanceImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public BioChemEntity getIsPartOfBioChemEntity() {
-        return fIsPartOfBioChemEntity;
+        return isPartOfBioChemEntity;
     }
 
     /**
      * Indicates a BioChemEntity that is (in some sense) a part of this BioChemEntity. 
      *
+     * @param isPartOfBioChemEntity BioChemEntity value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
     @Override
-    public void setIsPartOfBioChemEntity(BioChemEntity fIsPartOfBioChemEntity) {
-        this.fIsPartOfBioChemEntity = fIsPartOfBioChemEntity;
+    public void setIsPartOfBioChemEntity(BioChemEntity isPartOfBioChemEntity) {
+        this.isPartOfBioChemEntity = isPartOfBioChemEntity;
     }
 
-    private Object fTaxonomicRange;
+    private Object taxonomicRange;
 
     /**
      * The taxonomic grouping of the organism that expresses, encodes, or in someway related to the BioChemEntity.
@@ -183,23 +189,51 @@ public class ChemicalSubstanceImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getTaxonomicRange() {
-        return (T) fTaxonomicRange;
+        return (T) taxonomicRange;
     }
 
     /**
      * The taxonomic grouping of the organism that expresses, encodes, or in someway related to the BioChemEntity.
      *
+     * @param taxonomicRange URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
     @Override
-    public void setTaxonomicRange(Object fTaxonomicRange) {
-        if(!(fTaxonomicRange instanceof URL) && !(fTaxonomicRange instanceof DefinedTerm) && !(fTaxonomicRange instanceof Text) && !(fTaxonomicRange instanceof Taxon)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'taxonomicRange': " + fTaxonomicRange);
-        }
-        this.fTaxonomicRange = fTaxonomicRange;
+    public void setTaxonomicRange(URL taxonomicRange) {
+        this.taxonomicRange = taxonomicRange;
+    }
+    /**
+     * The taxonomic grouping of the organism that expresses, encodes, or in someway related to the BioChemEntity.
+     *
+     * @param taxonomicRange DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    @Override
+    public void setTaxonomicRange(DefinedTerm taxonomicRange) {
+        this.taxonomicRange = taxonomicRange;
+    }
+    /**
+     * The taxonomic grouping of the organism that expresses, encodes, or in someway related to the BioChemEntity.
+     *
+     * @param taxonomicRange Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    @Override
+    public void setTaxonomicRange(Text taxonomicRange) {
+        this.taxonomicRange = taxonomicRange;
+    }
+    /**
+     * The taxonomic grouping of the organism that expresses, encodes, or in someway related to the BioChemEntity.
+     *
+     * @param taxonomicRange Taxon value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    @Override
+    public void setTaxonomicRange(Taxon taxonomicRange) {
+        this.taxonomicRange = taxonomicRange;
     }
 
-    private Object fIsInvolvedInBiologicalProcess;
+    private Object isInvolvedInBiologicalProcess;
 
     /**
      * Biological process this BioChemEntity is involved in; please use PropertyValue if you want to include any evidence.
@@ -209,23 +243,41 @@ public class ChemicalSubstanceImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getIsInvolvedInBiologicalProcess() {
-        return (T) fIsInvolvedInBiologicalProcess;
+        return (T) isInvolvedInBiologicalProcess;
     }
 
     /**
      * Biological process this BioChemEntity is involved in; please use PropertyValue if you want to include any evidence.
      *
+     * @param isInvolvedInBiologicalProcess PropertyValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
     @Override
-    public void setIsInvolvedInBiologicalProcess(Object fIsInvolvedInBiologicalProcess) {
-        if(!(fIsInvolvedInBiologicalProcess instanceof PropertyValue) && !(fIsInvolvedInBiologicalProcess instanceof URL) && !(fIsInvolvedInBiologicalProcess instanceof DefinedTerm)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'isInvolvedInBiologicalProcess': " + fIsInvolvedInBiologicalProcess);
-        }
-        this.fIsInvolvedInBiologicalProcess = fIsInvolvedInBiologicalProcess;
+    public void setIsInvolvedInBiologicalProcess(PropertyValue isInvolvedInBiologicalProcess) {
+        this.isInvolvedInBiologicalProcess = isInvolvedInBiologicalProcess;
+    }
+    /**
+     * Biological process this BioChemEntity is involved in; please use PropertyValue if you want to include any evidence.
+     *
+     * @param isInvolvedInBiologicalProcess URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    @Override
+    public void setIsInvolvedInBiologicalProcess(URL isInvolvedInBiologicalProcess) {
+        this.isInvolvedInBiologicalProcess = isInvolvedInBiologicalProcess;
+    }
+    /**
+     * Biological process this BioChemEntity is involved in; please use PropertyValue if you want to include any evidence.
+     *
+     * @param isInvolvedInBiologicalProcess DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    @Override
+    public void setIsInvolvedInBiologicalProcess(DefinedTerm isInvolvedInBiologicalProcess) {
+        this.isInvolvedInBiologicalProcess = isInvolvedInBiologicalProcess;
     }
 
-    private Object fIsLocatedInSubcellularLocation;
+    private Object isLocatedInSubcellularLocation;
 
     /**
      * Subcellular location where this BioChemEntity is located; please use PropertyValue if you want to include any evidence.
@@ -235,23 +287,41 @@ public class ChemicalSubstanceImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getIsLocatedInSubcellularLocation() {
-        return (T) fIsLocatedInSubcellularLocation;
+        return (T) isLocatedInSubcellularLocation;
     }
 
     /**
      * Subcellular location where this BioChemEntity is located; please use PropertyValue if you want to include any evidence.
      *
+     * @param isLocatedInSubcellularLocation PropertyValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
     @Override
-    public void setIsLocatedInSubcellularLocation(Object fIsLocatedInSubcellularLocation) {
-        if(!(fIsLocatedInSubcellularLocation instanceof PropertyValue) && !(fIsLocatedInSubcellularLocation instanceof DefinedTerm) && !(fIsLocatedInSubcellularLocation instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'isLocatedInSubcellularLocation': " + fIsLocatedInSubcellularLocation);
-        }
-        this.fIsLocatedInSubcellularLocation = fIsLocatedInSubcellularLocation;
+    public void setIsLocatedInSubcellularLocation(PropertyValue isLocatedInSubcellularLocation) {
+        this.isLocatedInSubcellularLocation = isLocatedInSubcellularLocation;
+    }
+    /**
+     * Subcellular location where this BioChemEntity is located; please use PropertyValue if you want to include any evidence.
+     *
+     * @param isLocatedInSubcellularLocation DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    @Override
+    public void setIsLocatedInSubcellularLocation(DefinedTerm isLocatedInSubcellularLocation) {
+        this.isLocatedInSubcellularLocation = isLocatedInSubcellularLocation;
+    }
+    /**
+     * Subcellular location where this BioChemEntity is located; please use PropertyValue if you want to include any evidence.
+     *
+     * @param isLocatedInSubcellularLocation URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    @Override
+    public void setIsLocatedInSubcellularLocation(URL isLocatedInSubcellularLocation) {
+        this.isLocatedInSubcellularLocation = isLocatedInSubcellularLocation;
     }
 
-    private Object fAssociatedDisease;
+    private Object associatedDisease;
 
     /**
      * Disease associated to this BioChemEntity. Such disease can be a MedicalCondition or a URL. If you want to add an evidence supporting the association, please use PropertyValue.
@@ -261,23 +331,41 @@ public class ChemicalSubstanceImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getAssociatedDisease() {
-        return (T) fAssociatedDisease;
+        return (T) associatedDisease;
     }
 
     /**
      * Disease associated to this BioChemEntity. Such disease can be a MedicalCondition or a URL. If you want to add an evidence supporting the association, please use PropertyValue.
      *
+     * @param associatedDisease URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
     @Override
-    public void setAssociatedDisease(Object fAssociatedDisease) {
-        if(!(fAssociatedDisease instanceof URL) && !(fAssociatedDisease instanceof PropertyValue) && !(fAssociatedDisease instanceof MedicalCondition)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'associatedDisease': " + fAssociatedDisease);
-        }
-        this.fAssociatedDisease = fAssociatedDisease;
+    public void setAssociatedDisease(URL associatedDisease) {
+        this.associatedDisease = associatedDisease;
+    }
+    /**
+     * Disease associated to this BioChemEntity. Such disease can be a MedicalCondition or a URL. If you want to add an evidence supporting the association, please use PropertyValue.
+     *
+     * @param associatedDisease PropertyValue value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    @Override
+    public void setAssociatedDisease(PropertyValue associatedDisease) {
+        this.associatedDisease = associatedDisease;
+    }
+    /**
+     * Disease associated to this BioChemEntity. Such disease can be a MedicalCondition or a URL. If you want to add an evidence supporting the association, please use PropertyValue.
+     *
+     * @param associatedDisease MedicalCondition value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    @Override
+    public void setAssociatedDisease(MedicalCondition associatedDisease) {
+        this.associatedDisease = associatedDisease;
     }
 
-    private Object fHasMolecularFunction;
+    private Object hasMolecularFunction;
 
     /**
      * Molecular function performed by this BioChemEntity; please use PropertyValue if you want to include any evidence.
@@ -287,23 +375,41 @@ public class ChemicalSubstanceImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getHasMolecularFunction() {
-        return (T) fHasMolecularFunction;
+        return (T) hasMolecularFunction;
     }
 
     /**
      * Molecular function performed by this BioChemEntity; please use PropertyValue if you want to include any evidence.
      *
+     * @param hasMolecularFunction PropertyValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
     @Override
-    public void setHasMolecularFunction(Object fHasMolecularFunction) {
-        if(!(fHasMolecularFunction instanceof PropertyValue) && !(fHasMolecularFunction instanceof DefinedTerm) && !(fHasMolecularFunction instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'hasMolecularFunction': " + fHasMolecularFunction);
-        }
-        this.fHasMolecularFunction = fHasMolecularFunction;
+    public void setHasMolecularFunction(PropertyValue hasMolecularFunction) {
+        this.hasMolecularFunction = hasMolecularFunction;
+    }
+    /**
+     * Molecular function performed by this BioChemEntity; please use PropertyValue if you want to include any evidence.
+     *
+     * @param hasMolecularFunction DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    @Override
+    public void setHasMolecularFunction(DefinedTerm hasMolecularFunction) {
+        this.hasMolecularFunction = hasMolecularFunction;
+    }
+    /**
+     * Molecular function performed by this BioChemEntity; please use PropertyValue if you want to include any evidence.
+     *
+     * @param hasMolecularFunction URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    @Override
+    public void setHasMolecularFunction(URL hasMolecularFunction) {
+        this.hasMolecularFunction = hasMolecularFunction;
     }
 
-    private BioChemEntity fHasBioChemEntityPart;
+    private BioChemEntity hasBioChemEntityPart;
 
     /**
      * Indicates a BioChemEntity that (in some sense) has this BioChemEntity as a part. 
@@ -313,20 +419,21 @@ public class ChemicalSubstanceImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public BioChemEntity getHasBioChemEntityPart() {
-        return fHasBioChemEntityPart;
+        return hasBioChemEntityPart;
     }
 
     /**
      * Indicates a BioChemEntity that (in some sense) has this BioChemEntity as a part. 
      *
+     * @param hasBioChemEntityPart BioChemEntity value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
     @Override
-    public void setHasBioChemEntityPart(BioChemEntity fHasBioChemEntityPart) {
-        this.fHasBioChemEntityPart = fHasBioChemEntityPart;
+    public void setHasBioChemEntityPart(BioChemEntity hasBioChemEntityPart) {
+        this.hasBioChemEntityPart = hasBioChemEntityPart;
     }
 
-    private BioChemEntity fBioChemInteraction;
+    private BioChemEntity bioChemInteraction;
 
     /**
      * A BioChemEntity that is known to interact with this item.
@@ -336,20 +443,21 @@ public class ChemicalSubstanceImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public BioChemEntity getBioChemInteraction() {
-        return fBioChemInteraction;
+        return bioChemInteraction;
     }
 
     /**
      * A BioChemEntity that is known to interact with this item.
      *
+     * @param bioChemInteraction BioChemEntity value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
     @Override
-    public void setBioChemInteraction(BioChemEntity fBioChemInteraction) {
-        this.fBioChemInteraction = fBioChemInteraction;
+    public void setBioChemInteraction(BioChemEntity bioChemInteraction) {
+        this.bioChemInteraction = bioChemInteraction;
     }
 
-    private Object fHasRepresentation;
+    private Object hasRepresentation;
 
     /**
      * A common representation such as a protein sequence or chemical structure for this entity. For images use schema.org/image.
@@ -359,23 +467,41 @@ public class ChemicalSubstanceImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getHasRepresentation() {
-        return (T) fHasRepresentation;
+        return (T) hasRepresentation;
     }
 
     /**
      * A common representation such as a protein sequence or chemical structure for this entity. For images use schema.org/image.
      *
+     * @param hasRepresentation Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
     @Override
-    public void setHasRepresentation(Object fHasRepresentation) {
-        if(!(fHasRepresentation instanceof Text) && !(fHasRepresentation instanceof PropertyValue) && !(fHasRepresentation instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'hasRepresentation': " + fHasRepresentation);
-        }
-        this.fHasRepresentation = fHasRepresentation;
+    public void setHasRepresentation(Text hasRepresentation) {
+        this.hasRepresentation = hasRepresentation;
+    }
+    /**
+     * A common representation such as a protein sequence or chemical structure for this entity. For images use schema.org/image.
+     *
+     * @param hasRepresentation PropertyValue value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    @Override
+    public void setHasRepresentation(PropertyValue hasRepresentation) {
+        this.hasRepresentation = hasRepresentation;
+    }
+    /**
+     * A common representation such as a protein sequence or chemical structure for this entity. For images use schema.org/image.
+     *
+     * @param hasRepresentation URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    @Override
+    public void setHasRepresentation(URL hasRepresentation) {
+        this.hasRepresentation = hasRepresentation;
     }
 
-    private BioChemEntity fBioChemSimilarity;
+    private BioChemEntity bioChemSimilarity;
 
     /**
      * A similar BioChemEntity, e.g., obtained by fingerprint similarity algorithms.
@@ -385,20 +511,21 @@ public class ChemicalSubstanceImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public BioChemEntity getBioChemSimilarity() {
-        return fBioChemSimilarity;
+        return bioChemSimilarity;
     }
 
     /**
      * A similar BioChemEntity, e.g., obtained by fingerprint similarity algorithms.
      *
+     * @param bioChemSimilarity BioChemEntity value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
     @Override
-    public void setBioChemSimilarity(BioChemEntity fBioChemSimilarity) {
-        this.fBioChemSimilarity = fBioChemSimilarity;
+    public void setBioChemSimilarity(BioChemEntity bioChemSimilarity) {
+        this.bioChemSimilarity = bioChemSimilarity;
     }
 
-    private DefinedTerm fBiologicalRole;
+    private DefinedTerm biologicalRole;
 
     /**
      * A role played by the BioChemEntity within a biological context.
@@ -408,20 +535,21 @@ public class ChemicalSubstanceImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public DefinedTerm getBiologicalRole() {
-        return fBiologicalRole;
+        return biologicalRole;
     }
 
     /**
      * A role played by the BioChemEntity within a biological context.
      *
+     * @param biologicalRole DefinedTerm value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
     @Override
-    public void setBiologicalRole(DefinedTerm fBiologicalRole) {
-        this.fBiologicalRole = fBiologicalRole;
+    public void setBiologicalRole(DefinedTerm biologicalRole) {
+        this.biologicalRole = biologicalRole;
     }
 
-    private Object fMainEntityOfPage;
+    private Object mainEntityOfPage;
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -430,22 +558,29 @@ public class ChemicalSubstanceImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
+        return (T) mainEntityOfPage;
     }
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
+     * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
-        }
-        this.fMainEntityOfPage = fMainEntityOfPage;
+    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param mainEntityOfPage URL value to set.
+     */
+    @Override
+    public void setMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
     }
 
-    private Text fAlternateName;
+    private Text alternateName;
 
     /**
      * An alias for the item.
@@ -454,19 +589,20 @@ public class ChemicalSubstanceImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getAlternateName() {
-        return fAlternateName;
+        return alternateName;
     }
 
     /**
      * An alias for the item.
      *
+     * @param alternateName Text value to set.
      */
     @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
+    public void setAlternateName(Text alternateName) {
+        this.alternateName = alternateName;
     }
 
-    private Text fName;
+    private Text name;
 
     /**
      * The name of the item.
@@ -475,19 +611,20 @@ public class ChemicalSubstanceImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getName() {
-        return fName;
+        return name;
     }
 
     /**
      * The name of the item.
      *
+     * @param name Text value to set.
      */
     @Override
-    public void setName(Text fName) {
-        this.fName = fName;
+    public void setName(Text name) {
+        this.name = name;
     }
 
-    private Action fPotentialAction;
+    private Action potentialAction;
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -496,19 +633,20 @@ public class ChemicalSubstanceImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Action getPotentialAction() {
-        return fPotentialAction;
+        return potentialAction;
     }
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      *
+     * @param potentialAction Action value to set.
      */
     @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
+    public void setPotentialAction(Action potentialAction) {
+        this.potentialAction = potentialAction;
     }
 
-    private Object fImage;
+    private Object image;
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -517,22 +655,29 @@ public class ChemicalSubstanceImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getImage() {
-        return (T) fImage;
+        return (T) image;
     }
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
+     * @param image URL value to set.
      */
     @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
-        this.fImage = fImage;
+    public void setImage(URL image) {
+        this.image = image;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image ImageObject value to set.
+     */
+    @Override
+    public void setImage(ImageObject image) {
+        this.image = image;
     }
 
-    private URL fUrl;
+    private URL url;
 
     /**
      * URL of the item.
@@ -541,19 +686,20 @@ public class ChemicalSubstanceImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public URL getUrl() {
-        return fUrl;
+        return url;
     }
 
     /**
      * URL of the item.
      *
+     * @param url URL value to set.
      */
     @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
+    public void setUrl(URL url) {
+        this.url = url;
     }
 
-    private Text fDescription;
+    private Text description;
 
     /**
      * A description of the item.
@@ -562,19 +708,20 @@ public class ChemicalSubstanceImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getDescription() {
-        return fDescription;
+        return description;
     }
 
     /**
      * A description of the item.
      *
+     * @param description Text value to set.
      */
     @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
+    public void setDescription(Text description) {
+        this.description = description;
     }
 
-    private Object fSubjectOf;
+    private Object subjectOf;
 
     /**
      * A CreativeWork or Event about this Thing.
@@ -584,23 +731,31 @@ public class ChemicalSubstanceImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getSubjectOf() {
-        return (T) fSubjectOf;
+        return (T) subjectOf;
     }
 
     /**
      * A CreativeWork or Event about this Thing.
      *
+     * @param subjectOf Event value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Object fSubjectOf) {
-        if(!(fSubjectOf instanceof Event) && !(fSubjectOf instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'subjectOf': " + fSubjectOf);
-        }
-        this.fSubjectOf = fSubjectOf;
+    public void setSubjectOf(Event subjectOf) {
+        this.subjectOf = subjectOf;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @param subjectOf CreativeWork value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public void setSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = subjectOf;
     }
 
-    private URL fAdditionalType;
+    private URL additionalType;
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
@@ -609,19 +764,20 @@ public class ChemicalSubstanceImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public URL getAdditionalType() {
-        return fAdditionalType;
+        return additionalType;
     }
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
+     * @param additionalType URL value to set.
      */
     @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
+    public void setAdditionalType(URL additionalType) {
+        this.additionalType = additionalType;
     }
 
-    private Text fDisambiguatingDescription;
+    private Text disambiguatingDescription;
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
@@ -630,19 +786,20 @@ public class ChemicalSubstanceImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getDisambiguatingDescription() {
-        return fDisambiguatingDescription;
+        return disambiguatingDescription;
     }
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
+     * @param disambiguatingDescription Text value to set.
      */
     @Override
-    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = fDisambiguatingDescription;
+    public void setDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = disambiguatingDescription;
     }
 
-    private URL fSameAs;
+    private URL sameAs;
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
@@ -651,19 +808,20 @@ public class ChemicalSubstanceImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public URL getSameAs() {
-        return fSameAs;
+        return sameAs;
     }
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
+     * @param sameAs URL value to set.
      */
     @Override
-    public void setSameAs(URL fSameAs) {
-        this.fSameAs = fSameAs;
+    public void setSameAs(URL sameAs) {
+        this.sameAs = sameAs;
     }
 
-    private Object fIdentifier;
+    private Object identifier;
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -673,19 +831,37 @@ public class ChemicalSubstanceImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getIdentifier() {
-        return (T) fIdentifier;
+        return (T) identifier;
     }
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
+     * @param identifier URL value to set.
      */
     @Override
-    public void setIdentifier(Object fIdentifier) {
-        if(!(fIdentifier instanceof URL) && !(fIdentifier instanceof Text) && !(fIdentifier instanceof PropertyValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
-        }
-        this.fIdentifier = fIdentifier;
+    public void setIdentifier(URL identifier) {
+        this.identifier = identifier;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier Text value to set.
+     */
+    @Override
+    public void setIdentifier(Text identifier) {
+        this.identifier = identifier;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier PropertyValue value to set.
+     */
+    @Override
+    public void setIdentifier(PropertyValue identifier) {
+        this.identifier = identifier;
     }
 }

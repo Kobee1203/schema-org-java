@@ -31,10 +31,10 @@ import org.schema.model.ParcelDelivery;
  *
  * @see <a href="https://schema.org/ParcelDelivery">https://schema.org/ParcelDelivery</a>
  */
-@JsonLdTypeName("schema:ParcelDelivery")
+@JsonLdTypeName("ParcelDelivery")
 public class ParcelDeliveryImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ParcelDelivery {
 
-    private PostalAddress fOriginAddress;
+    private PostalAddress originAddress;
 
     /**
      * Shipper's address.
@@ -43,19 +43,20 @@ public class ParcelDeliveryImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public PostalAddress getOriginAddress() {
-        return fOriginAddress;
+        return originAddress;
     }
 
     /**
      * Shipper's address.
      *
+     * @param originAddress PostalAddress value to set.
      */
     @Override
-    public void setOriginAddress(PostalAddress fOriginAddress) {
-        this.fOriginAddress = fOriginAddress;
+    public void setOriginAddress(PostalAddress originAddress) {
+        this.originAddress = originAddress;
     }
 
-    private Text fTrackingNumber;
+    private Text trackingNumber;
 
     /**
      * Shipper tracking number.
@@ -64,19 +65,20 @@ public class ParcelDeliveryImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public Text getTrackingNumber() {
-        return fTrackingNumber;
+        return trackingNumber;
     }
 
     /**
      * Shipper tracking number.
      *
+     * @param trackingNumber Text value to set.
      */
     @Override
-    public void setTrackingNumber(Text fTrackingNumber) {
-        this.fTrackingNumber = fTrackingNumber;
+    public void setTrackingNumber(Text trackingNumber) {
+        this.trackingNumber = trackingNumber;
     }
 
-    private Product fItemShipped;
+    private Product itemShipped;
 
     /**
      * Item(s) being shipped.
@@ -85,19 +87,20 @@ public class ParcelDeliveryImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public Product getItemShipped() {
-        return fItemShipped;
+        return itemShipped;
     }
 
     /**
      * Item(s) being shipped.
      *
+     * @param itemShipped Product value to set.
      */
     @Override
-    public void setItemShipped(Product fItemShipped) {
-        this.fItemShipped = fItemShipped;
+    public void setItemShipped(Product itemShipped) {
+        this.itemShipped = itemShipped;
     }
 
-    private Object fProvider;
+    private Object provider;
 
     /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
@@ -109,25 +112,35 @@ public class ParcelDeliveryImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public <T> T getProvider() {
-        return (T) fProvider;
+        return (T) provider;
     }
 
     /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
      *
+     * @param provider Organization value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
      */
     @Override
-    public void setProvider(Object fProvider) {
-        if(!(fProvider instanceof Organization) && !(fProvider instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'provider': " + fProvider);
-        }
-        this.fProvider = fProvider;
+    public void setProvider(Organization provider) {
+        this.provider = provider;
+    }
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @param provider Person value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     */
+    @Override
+    public void setProvider(Person provider) {
+        this.provider = provider;
     }
 
-    private URL fTrackingUrl;
+    private URL trackingUrl;
 
     /**
      * Tracking url for the parcel delivery.
@@ -136,19 +149,20 @@ public class ParcelDeliveryImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public URL getTrackingUrl() {
-        return fTrackingUrl;
+        return trackingUrl;
     }
 
     /**
      * Tracking url for the parcel delivery.
      *
+     * @param trackingUrl URL value to set.
      */
     @Override
-    public void setTrackingUrl(URL fTrackingUrl) {
-        this.fTrackingUrl = fTrackingUrl;
+    public void setTrackingUrl(URL trackingUrl) {
+        this.trackingUrl = trackingUrl;
     }
 
-    private PostalAddress fDeliveryAddress;
+    private PostalAddress deliveryAddress;
 
     /**
      * Destination address.
@@ -157,19 +171,20 @@ public class ParcelDeliveryImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public PostalAddress getDeliveryAddress() {
-        return fDeliveryAddress;
+        return deliveryAddress;
     }
 
     /**
      * Destination address.
      *
+     * @param deliveryAddress PostalAddress value to set.
      */
     @Override
-    public void setDeliveryAddress(PostalAddress fDeliveryAddress) {
-        this.fDeliveryAddress = fDeliveryAddress;
+    public void setDeliveryAddress(PostalAddress deliveryAddress) {
+        this.deliveryAddress = deliveryAddress;
     }
 
-    private Object fExpectedArrivalUntil;
+    private Object expectedArrivalUntil;
 
     /**
      * The latest date the package may arrive.
@@ -178,22 +193,29 @@ public class ParcelDeliveryImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public <T> T getExpectedArrivalUntil() {
-        return (T) fExpectedArrivalUntil;
+        return (T) expectedArrivalUntil;
     }
 
     /**
      * The latest date the package may arrive.
      *
+     * @param expectedArrivalUntil Date value to set.
      */
     @Override
-    public void setExpectedArrivalUntil(Object fExpectedArrivalUntil) {
-        if(!(fExpectedArrivalUntil instanceof Date) && !(fExpectedArrivalUntil instanceof DateTime)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'expectedArrivalUntil': " + fExpectedArrivalUntil);
-        }
-        this.fExpectedArrivalUntil = fExpectedArrivalUntil;
+    public void setExpectedArrivalUntil(Date expectedArrivalUntil) {
+        this.expectedArrivalUntil = expectedArrivalUntil;
+    }
+    /**
+     * The latest date the package may arrive.
+     *
+     * @param expectedArrivalUntil DateTime value to set.
+     */
+    @Override
+    public void setExpectedArrivalUntil(DateTime expectedArrivalUntil) {
+        this.expectedArrivalUntil = expectedArrivalUntil;
     }
 
-    private DeliveryEvent fDeliveryStatus;
+    private DeliveryEvent deliveryStatus;
 
     /**
      * New entry added as the package passes through each leg of its journey (from shipment to final delivery).
@@ -202,19 +224,20 @@ public class ParcelDeliveryImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public DeliveryEvent getDeliveryStatus() {
-        return fDeliveryStatus;
+        return deliveryStatus;
     }
 
     /**
      * New entry added as the package passes through each leg of its journey (from shipment to final delivery).
      *
+     * @param deliveryStatus DeliveryEvent value to set.
      */
     @Override
-    public void setDeliveryStatus(DeliveryEvent fDeliveryStatus) {
-        this.fDeliveryStatus = fDeliveryStatus;
+    public void setDeliveryStatus(DeliveryEvent deliveryStatus) {
+        this.deliveryStatus = deliveryStatus;
     }
 
-    private Object fExpectedArrivalFrom;
+    private Object expectedArrivalFrom;
 
     /**
      * The earliest date the package may arrive.
@@ -223,22 +246,29 @@ public class ParcelDeliveryImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public <T> T getExpectedArrivalFrom() {
-        return (T) fExpectedArrivalFrom;
+        return (T) expectedArrivalFrom;
     }
 
     /**
      * The earliest date the package may arrive.
      *
+     * @param expectedArrivalFrom Date value to set.
      */
     @Override
-    public void setExpectedArrivalFrom(Object fExpectedArrivalFrom) {
-        if(!(fExpectedArrivalFrom instanceof Date) && !(fExpectedArrivalFrom instanceof DateTime)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'expectedArrivalFrom': " + fExpectedArrivalFrom);
-        }
-        this.fExpectedArrivalFrom = fExpectedArrivalFrom;
+    public void setExpectedArrivalFrom(Date expectedArrivalFrom) {
+        this.expectedArrivalFrom = expectedArrivalFrom;
+    }
+    /**
+     * The earliest date the package may arrive.
+     *
+     * @param expectedArrivalFrom DateTime value to set.
+     */
+    @Override
+    public void setExpectedArrivalFrom(DateTime expectedArrivalFrom) {
+        this.expectedArrivalFrom = expectedArrivalFrom;
     }
 
-    private Organization fCarrier;
+    private Organization carrier;
 
     /**
      * 'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.
@@ -247,19 +277,20 @@ public class ParcelDeliveryImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public Organization getCarrier() {
-        return fCarrier;
+        return carrier;
     }
 
     /**
      * 'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.
      *
+     * @param carrier Organization value to set.
      */
     @Override
-    public void setCarrier(Organization fCarrier) {
-        this.fCarrier = fCarrier;
+    public void setCarrier(Organization carrier) {
+        this.carrier = carrier;
     }
 
-    private DeliveryMethod fHasDeliveryMethod;
+    private DeliveryMethod hasDeliveryMethod;
 
     /**
      * Method used for delivery or shipping.
@@ -268,19 +299,20 @@ public class ParcelDeliveryImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public DeliveryMethod getHasDeliveryMethod() {
-        return fHasDeliveryMethod;
+        return hasDeliveryMethod;
     }
 
     /**
      * Method used for delivery or shipping.
      *
+     * @param hasDeliveryMethod DeliveryMethod value to set.
      */
     @Override
-    public void setHasDeliveryMethod(DeliveryMethod fHasDeliveryMethod) {
-        this.fHasDeliveryMethod = fHasDeliveryMethod;
+    public void setHasDeliveryMethod(DeliveryMethod hasDeliveryMethod) {
+        this.hasDeliveryMethod = hasDeliveryMethod;
     }
 
-    private Order fPartOfOrder;
+    private Order partOfOrder;
 
     /**
      * The overall order the items in this delivery were included in.
@@ -289,19 +321,20 @@ public class ParcelDeliveryImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public Order getPartOfOrder() {
-        return fPartOfOrder;
+        return partOfOrder;
     }
 
     /**
      * The overall order the items in this delivery were included in.
      *
+     * @param partOfOrder Order value to set.
      */
     @Override
-    public void setPartOfOrder(Order fPartOfOrder) {
-        this.fPartOfOrder = fPartOfOrder;
+    public void setPartOfOrder(Order partOfOrder) {
+        this.partOfOrder = partOfOrder;
     }
 
-    private Object fMainEntityOfPage;
+    private Object mainEntityOfPage;
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -310,22 +343,29 @@ public class ParcelDeliveryImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
+        return (T) mainEntityOfPage;
     }
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
+     * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
-        }
-        this.fMainEntityOfPage = fMainEntityOfPage;
+    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param mainEntityOfPage URL value to set.
+     */
+    @Override
+    public void setMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
     }
 
-    private Text fAlternateName;
+    private Text alternateName;
 
     /**
      * An alias for the item.
@@ -334,19 +374,20 @@ public class ParcelDeliveryImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public Text getAlternateName() {
-        return fAlternateName;
+        return alternateName;
     }
 
     /**
      * An alias for the item.
      *
+     * @param alternateName Text value to set.
      */
     @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
+    public void setAlternateName(Text alternateName) {
+        this.alternateName = alternateName;
     }
 
-    private Text fName;
+    private Text name;
 
     /**
      * The name of the item.
@@ -355,19 +396,20 @@ public class ParcelDeliveryImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public Text getName() {
-        return fName;
+        return name;
     }
 
     /**
      * The name of the item.
      *
+     * @param name Text value to set.
      */
     @Override
-    public void setName(Text fName) {
-        this.fName = fName;
+    public void setName(Text name) {
+        this.name = name;
     }
 
-    private Action fPotentialAction;
+    private Action potentialAction;
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -376,19 +418,20 @@ public class ParcelDeliveryImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public Action getPotentialAction() {
-        return fPotentialAction;
+        return potentialAction;
     }
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      *
+     * @param potentialAction Action value to set.
      */
     @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
+    public void setPotentialAction(Action potentialAction) {
+        this.potentialAction = potentialAction;
     }
 
-    private Object fImage;
+    private Object image;
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -397,22 +440,29 @@ public class ParcelDeliveryImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public <T> T getImage() {
-        return (T) fImage;
+        return (T) image;
     }
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
+     * @param image URL value to set.
      */
     @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
-        this.fImage = fImage;
+    public void setImage(URL image) {
+        this.image = image;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image ImageObject value to set.
+     */
+    @Override
+    public void setImage(ImageObject image) {
+        this.image = image;
     }
 
-    private URL fUrl;
+    private URL url;
 
     /**
      * URL of the item.
@@ -421,19 +471,20 @@ public class ParcelDeliveryImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public URL getUrl() {
-        return fUrl;
+        return url;
     }
 
     /**
      * URL of the item.
      *
+     * @param url URL value to set.
      */
     @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
+    public void setUrl(URL url) {
+        this.url = url;
     }
 
-    private Text fDescription;
+    private Text description;
 
     /**
      * A description of the item.
@@ -442,19 +493,20 @@ public class ParcelDeliveryImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public Text getDescription() {
-        return fDescription;
+        return description;
     }
 
     /**
      * A description of the item.
      *
+     * @param description Text value to set.
      */
     @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
+    public void setDescription(Text description) {
+        this.description = description;
     }
 
-    private Object fSubjectOf;
+    private Object subjectOf;
 
     /**
      * A CreativeWork or Event about this Thing.
@@ -464,23 +516,31 @@ public class ParcelDeliveryImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public <T> T getSubjectOf() {
-        return (T) fSubjectOf;
+        return (T) subjectOf;
     }
 
     /**
      * A CreativeWork or Event about this Thing.
      *
+     * @param subjectOf Event value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Object fSubjectOf) {
-        if(!(fSubjectOf instanceof Event) && !(fSubjectOf instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'subjectOf': " + fSubjectOf);
-        }
-        this.fSubjectOf = fSubjectOf;
+    public void setSubjectOf(Event subjectOf) {
+        this.subjectOf = subjectOf;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @param subjectOf CreativeWork value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public void setSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = subjectOf;
     }
 
-    private URL fAdditionalType;
+    private URL additionalType;
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
@@ -489,19 +549,20 @@ public class ParcelDeliveryImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public URL getAdditionalType() {
-        return fAdditionalType;
+        return additionalType;
     }
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
+     * @param additionalType URL value to set.
      */
     @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
+    public void setAdditionalType(URL additionalType) {
+        this.additionalType = additionalType;
     }
 
-    private Text fDisambiguatingDescription;
+    private Text disambiguatingDescription;
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
@@ -510,19 +571,20 @@ public class ParcelDeliveryImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public Text getDisambiguatingDescription() {
-        return fDisambiguatingDescription;
+        return disambiguatingDescription;
     }
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
+     * @param disambiguatingDescription Text value to set.
      */
     @Override
-    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = fDisambiguatingDescription;
+    public void setDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = disambiguatingDescription;
     }
 
-    private URL fSameAs;
+    private URL sameAs;
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
@@ -531,19 +593,20 @@ public class ParcelDeliveryImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public URL getSameAs() {
-        return fSameAs;
+        return sameAs;
     }
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
+     * @param sameAs URL value to set.
      */
     @Override
-    public void setSameAs(URL fSameAs) {
-        this.fSameAs = fSameAs;
+    public void setSameAs(URL sameAs) {
+        this.sameAs = sameAs;
     }
 
-    private Object fIdentifier;
+    private Object identifier;
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -553,19 +616,37 @@ public class ParcelDeliveryImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public <T> T getIdentifier() {
-        return (T) fIdentifier;
+        return (T) identifier;
     }
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
+     * @param identifier URL value to set.
      */
     @Override
-    public void setIdentifier(Object fIdentifier) {
-        if(!(fIdentifier instanceof URL) && !(fIdentifier instanceof Text) && !(fIdentifier instanceof PropertyValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
-        }
-        this.fIdentifier = fIdentifier;
+    public void setIdentifier(URL identifier) {
+        this.identifier = identifier;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier Text value to set.
+     */
+    @Override
+    public void setIdentifier(Text identifier) {
+        this.identifier = identifier;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier PropertyValue value to set.
+     */
+    @Override
+    public void setIdentifier(PropertyValue identifier) {
+        this.identifier = identifier;
     }
 }

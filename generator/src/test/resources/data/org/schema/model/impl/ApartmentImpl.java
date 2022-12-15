@@ -41,10 +41,10 @@ import org.schema.model.Apartment;
  * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
  * @see <a href="https://schema.org/Apartment">https://schema.org/Apartment</a>
  */
-@JsonLdTypeName("schema:Apartment")
+@JsonLdTypeName("Apartment")
 public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Apartment {
 
-    private Object fNumberOfRooms;
+    private Object numberOfRooms;
 
     /**
      * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
@@ -55,24 +55,33 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getNumberOfRooms() {
-        return (T) fNumberOfRooms;
+        return (T) numberOfRooms;
     }
 
     /**
      * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
      * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
      *
+     * @param numberOfRooms QuantitativeValue value to set.
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
     @Override
-    public void setNumberOfRooms(Object fNumberOfRooms) {
-        if(!(fNumberOfRooms instanceof QuantitativeValue) && !(fNumberOfRooms instanceof Number)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'numberOfRooms': " + fNumberOfRooms);
-        }
-        this.fNumberOfRooms = fNumberOfRooms;
+    public void setNumberOfRooms(QuantitativeValue numberOfRooms) {
+        this.numberOfRooms = numberOfRooms;
+    }
+    /**
+     * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
+     * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
+     *
+     * @param numberOfRooms Number value to set.
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
+     */
+    @Override
+    public void setNumberOfRooms(Number numberOfRooms) {
+        this.numberOfRooms = numberOfRooms;
     }
 
-    private QuantitativeValue fOccupancy;
+    private QuantitativeValue occupancy;
 
     /**
      * The allowed total occupancy for the accommodation in persons (including infants etc). For individual accommodations, this is not necessarily the legal maximum but defines the permitted usage as per the contractual agreement (e.g. a double room used by a single person).
@@ -83,21 +92,22 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public QuantitativeValue getOccupancy() {
-        return fOccupancy;
+        return occupancy;
     }
 
     /**
      * The allowed total occupancy for the accommodation in persons (including infants etc). For individual accommodations, this is not necessarily the legal maximum but defines the permitted usage as per the contractual agreement (e.g. a double room used by a single person).
      * Typical unit code(s): C62 for person
      *
+     * @param occupancy QuantitativeValue value to set.
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
     @Override
-    public void setOccupancy(QuantitativeValue fOccupancy) {
-        this.fOccupancy = fOccupancy;
+    public void setOccupancy(QuantitativeValue occupancy) {
+        this.occupancy = occupancy;
     }
 
-    private Text fFloorLevel;
+    private Text floorLevel;
 
     /**
      * The floor level for an [[Accommodation]] in a multi-storey building. Since counting
@@ -109,22 +119,23 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Text getFloorLevel() {
-        return fFloorLevel;
+        return floorLevel;
     }
 
     /**
      * The floor level for an [[Accommodation]] in a multi-storey building. Since counting
      *   systems [vary internationally](https://en.wikipedia.org/wiki/Storey#Consecutive_number_floor_designations), the local system should be used where possible.
      *
+     * @param floorLevel Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
     @Override
-    public void setFloorLevel(Text fFloorLevel) {
-        this.fFloorLevel = fFloorLevel;
+    public void setFloorLevel(Text floorLevel) {
+        this.floorLevel = floorLevel;
     }
 
-    private Integer fNumberOfBathroomsTotal;
+    private Integer numberOfBathroomsTotal;
 
     /**
      * The total integer number of bathrooms in a some [[Accommodation]], following real estate conventions as [documented in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsTotalInteger+Field): "The simple sum of the number of bathrooms. For example for a property with two Full Bathrooms and one Half Bathroom, the Bathrooms Total Integer will be 3.". See also [[numberOfRooms]].
@@ -135,21 +146,22 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Integer getNumberOfBathroomsTotal() {
-        return fNumberOfBathroomsTotal;
+        return numberOfBathroomsTotal;
     }
 
     /**
      * The total integer number of bathrooms in a some [[Accommodation]], following real estate conventions as [documented in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsTotalInteger+Field): "The simple sum of the number of bathrooms. For example for a property with two Full Bathrooms and one Half Bathroom, the Bathrooms Total Integer will be 3.". See also [[numberOfRooms]].
      *
+     * @param numberOfBathroomsTotal Integer value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
     @Override
-    public void setNumberOfBathroomsTotal(Integer fNumberOfBathroomsTotal) {
-        this.fNumberOfBathroomsTotal = fNumberOfBathroomsTotal;
+    public void setNumberOfBathroomsTotal(Integer numberOfBathroomsTotal) {
+        this.numberOfBathroomsTotal = numberOfBathroomsTotal;
     }
 
-    private Object fLeaseLength;
+    private Object leaseLength;
 
     /**
      * Length of the lease for some [[Accommodation]], either particular to some [[Offer]] or in some cases intrinsic to the property.
@@ -160,24 +172,33 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getLeaseLength() {
-        return (T) fLeaseLength;
+        return (T) leaseLength;
     }
 
     /**
      * Length of the lease for some [[Accommodation]], either particular to some [[Offer]] or in some cases intrinsic to the property.
      *
+     * @param leaseLength QuantitativeValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
     @Override
-    public void setLeaseLength(Object fLeaseLength) {
-        if(!(fLeaseLength instanceof QuantitativeValue) && !(fLeaseLength instanceof Duration)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'leaseLength': " + fLeaseLength);
-        }
-        this.fLeaseLength = fLeaseLength;
+    public void setLeaseLength(QuantitativeValue leaseLength) {
+        this.leaseLength = leaseLength;
+    }
+    /**
+     * Length of the lease for some [[Accommodation]], either particular to some [[Offer]] or in some cases intrinsic to the property.
+     *
+     * @param leaseLength Duration value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     */
+    @Override
+    public void setLeaseLength(Duration leaseLength) {
+        this.leaseLength = leaseLength;
     }
 
-    private Number fYearBuilt;
+    private Number yearBuilt;
 
     /**
      * The year an [[Accommodation]] was constructed. This corresponds to the [YearBuilt field in RESO](https://ddwiki.reso.org/display/DDW17/YearBuilt+Field). 
@@ -188,21 +209,22 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Number getYearBuilt() {
-        return fYearBuilt;
+        return yearBuilt;
     }
 
     /**
      * The year an [[Accommodation]] was constructed. This corresponds to the [YearBuilt field in RESO](https://ddwiki.reso.org/display/DDW17/YearBuilt+Field). 
      *
+     * @param yearBuilt Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
     @Override
-    public void setYearBuilt(Number fYearBuilt) {
-        this.fYearBuilt = fYearBuilt;
+    public void setYearBuilt(Number yearBuilt) {
+        this.yearBuilt = yearBuilt;
     }
 
-    private Text fAccommodationCategory;
+    private Text accommodationCategory;
 
     /**
      * Category of an [[Accommodation]], following real estate conventions e.g. RESO (see [PropertySubType](https://ddwiki.reso.org/display/DDW17/PropertySubType+Field), and [PropertyType](https://ddwiki.reso.org/display/DDW17/PropertyType+Field) fields  for suggested values).
@@ -213,21 +235,22 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Text getAccommodationCategory() {
-        return fAccommodationCategory;
+        return accommodationCategory;
     }
 
     /**
      * Category of an [[Accommodation]], following real estate conventions e.g. RESO (see [PropertySubType](https://ddwiki.reso.org/display/DDW17/PropertySubType+Field), and [PropertyType](https://ddwiki.reso.org/display/DDW17/PropertyType+Field) fields  for suggested values).
      *
+     * @param accommodationCategory Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
     @Override
-    public void setAccommodationCategory(Text fAccommodationCategory) {
-        this.fAccommodationCategory = fAccommodationCategory;
+    public void setAccommodationCategory(Text accommodationCategory) {
+        this.accommodationCategory = accommodationCategory;
     }
 
-    private LocationFeatureSpecification fAmenityFeature;
+    private LocationFeatureSpecification amenityFeature;
 
     /**
      * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
@@ -237,20 +260,21 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public LocationFeatureSpecification getAmenityFeature() {
-        return fAmenityFeature;
+        return amenityFeature;
     }
 
     /**
      * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
      *
+     * @param amenityFeature LocationFeatureSpecification value to set.
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
     @Override
-    public void setAmenityFeature(LocationFeatureSpecification fAmenityFeature) {
-        this.fAmenityFeature = fAmenityFeature;
+    public void setAmenityFeature(LocationFeatureSpecification amenityFeature) {
+        this.amenityFeature = amenityFeature;
     }
 
-    private URL fTourBookingPage;
+    private URL tourBookingPage;
 
     /**
      * A page providing information on how to book a tour of some [[Place]], such as an [[Accommodation]] or [[ApartmentComplex]] in a real estate setting, as well as other kinds of tours as appropriate.
@@ -261,21 +285,22 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public URL getTourBookingPage() {
-        return fTourBookingPage;
+        return tourBookingPage;
     }
 
     /**
      * A page providing information on how to book a tour of some [[Place]], such as an [[Accommodation]] or [[ApartmentComplex]] in a real estate setting, as well as other kinds of tours as appropriate.
      *
+     * @param tourBookingPage URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
     @Override
-    public void setTourBookingPage(URL fTourBookingPage) {
-        this.fTourBookingPage = fTourBookingPage;
+    public void setTourBookingPage(URL tourBookingPage) {
+        this.tourBookingPage = tourBookingPage;
     }
 
-    private Object fNumberOfBedrooms;
+    private Object numberOfBedrooms;
 
     /**
      * The total integer number of bedrooms in a some [[Accommodation]], [[ApartmentComplex]] or [[FloorPlan]].
@@ -286,24 +311,33 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getNumberOfBedrooms() {
-        return (T) fNumberOfBedrooms;
+        return (T) numberOfBedrooms;
     }
 
     /**
      * The total integer number of bedrooms in a some [[Accommodation]], [[ApartmentComplex]] or [[FloorPlan]].
      *
+     * @param numberOfBedrooms Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
     @Override
-    public void setNumberOfBedrooms(Object fNumberOfBedrooms) {
-        if(!(fNumberOfBedrooms instanceof Number) && !(fNumberOfBedrooms instanceof QuantitativeValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'numberOfBedrooms': " + fNumberOfBedrooms);
-        }
-        this.fNumberOfBedrooms = fNumberOfBedrooms;
+    public void setNumberOfBedrooms(Number numberOfBedrooms) {
+        this.numberOfBedrooms = numberOfBedrooms;
+    }
+    /**
+     * The total integer number of bedrooms in a some [[Accommodation]], [[ApartmentComplex]] or [[FloorPlan]].
+     *
+     * @param numberOfBedrooms QuantitativeValue value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     */
+    @Override
+    public void setNumberOfBedrooms(QuantitativeValue numberOfBedrooms) {
+        this.numberOfBedrooms = numberOfBedrooms;
     }
 
-    private Number fNumberOfPartialBathrooms;
+    private Number numberOfPartialBathrooms;
 
     /**
      * Number of partial bathrooms - The total number of half and ¼ bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsPartial field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsPartial+Field). 
@@ -314,21 +348,22 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Number getNumberOfPartialBathrooms() {
-        return fNumberOfPartialBathrooms;
+        return numberOfPartialBathrooms;
     }
 
     /**
      * Number of partial bathrooms - The total number of half and ¼ bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsPartial field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsPartial+Field). 
      *
+     * @param numberOfPartialBathrooms Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
     @Override
-    public void setNumberOfPartialBathrooms(Number fNumberOfPartialBathrooms) {
-        this.fNumberOfPartialBathrooms = fNumberOfPartialBathrooms;
+    public void setNumberOfPartialBathrooms(Number numberOfPartialBathrooms) {
+        this.numberOfPartialBathrooms = numberOfPartialBathrooms;
     }
 
-    private QuantitativeValue fFloorSize;
+    private QuantitativeValue floorSize;
 
     /**
      * The size of the accommodation, e.g. in square meter or squarefoot.
@@ -339,21 +374,22 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public QuantitativeValue getFloorSize() {
-        return fFloorSize;
+        return floorSize;
     }
 
     /**
      * The size of the accommodation, e.g. in square meter or squarefoot.
      * Typical unit code(s): MTK for square meter, FTK for square foot, or YDK for square yard 
      *
+     * @param floorSize QuantitativeValue value to set.
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
     @Override
-    public void setFloorSize(QuantitativeValue fFloorSize) {
-        this.fFloorSize = fFloorSize;
+    public void setFloorSize(QuantitativeValue floorSize) {
+        this.floorSize = floorSize;
     }
 
-    private FloorPlan fAccommodationFloorPlan;
+    private FloorPlan accommodationFloorPlan;
 
     /**
      * A floorplan of some [[Accommodation]].
@@ -364,21 +400,22 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public FloorPlan getAccommodationFloorPlan() {
-        return fAccommodationFloorPlan;
+        return accommodationFloorPlan;
     }
 
     /**
      * A floorplan of some [[Accommodation]].
      *
+     * @param accommodationFloorPlan FloorPlan value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
     @Override
-    public void setAccommodationFloorPlan(FloorPlan fAccommodationFloorPlan) {
-        this.fAccommodationFloorPlan = fAccommodationFloorPlan;
+    public void setAccommodationFloorPlan(FloorPlan accommodationFloorPlan) {
+        this.accommodationFloorPlan = accommodationFloorPlan;
     }
 
-    private Number fNumberOfFullBathrooms;
+    private Number numberOfFullBathrooms;
 
     /**
      * Number of full bathrooms - The total number of full and ¾ bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsFull field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsFull+Field).
@@ -389,21 +426,22 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Number getNumberOfFullBathrooms() {
-        return fNumberOfFullBathrooms;
+        return numberOfFullBathrooms;
     }
 
     /**
      * Number of full bathrooms - The total number of full and ¾ bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsFull field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsFull+Field).
      *
+     * @param numberOfFullBathrooms Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
     @Override
-    public void setNumberOfFullBathrooms(Number fNumberOfFullBathrooms) {
-        this.fNumberOfFullBathrooms = fNumberOfFullBathrooms;
+    public void setNumberOfFullBathrooms(Number numberOfFullBathrooms) {
+        this.numberOfFullBathrooms = numberOfFullBathrooms;
     }
 
-    private Text fPermittedUsage;
+    private Text permittedUsage;
 
     /**
      * Indications regarding the permitted usage of the accommodation.
@@ -413,20 +451,21 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Text getPermittedUsage() {
-        return fPermittedUsage;
+        return permittedUsage;
     }
 
     /**
      * Indications regarding the permitted usage of the accommodation.
      *
+     * @param permittedUsage Text value to set.
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
     @Override
-    public void setPermittedUsage(Text fPermittedUsage) {
-        this.fPermittedUsage = fPermittedUsage;
+    public void setPermittedUsage(Text permittedUsage) {
+        this.permittedUsage = permittedUsage;
     }
 
-    private Object fPetsAllowed;
+    private Object petsAllowed;
 
     /**
      * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
@@ -436,23 +475,31 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getPetsAllowed() {
-        return (T) fPetsAllowed;
+        return (T) petsAllowed;
     }
 
     /**
      * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
      *
+     * @param petsAllowed Text value to set.
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
     @Override
-    public void setPetsAllowed(Object fPetsAllowed) {
-        if(!(fPetsAllowed instanceof Text) && !(fPetsAllowed instanceof Boolean)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'petsAllowed': " + fPetsAllowed);
-        }
-        this.fPetsAllowed = fPetsAllowed;
+    public void setPetsAllowed(Text petsAllowed) {
+        this.petsAllowed = petsAllowed;
+    }
+    /**
+     * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
+     *
+     * @param petsAllowed Boolean value to set.
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
+     */
+    @Override
+    public void setPetsAllowed(Boolean petsAllowed) {
+        this.petsAllowed = petsAllowed;
     }
 
-    private Text fTelephone;
+    private Text telephone;
 
     /**
      * The telephone number.
@@ -461,19 +508,20 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Text getTelephone() {
-        return fTelephone;
+        return telephone;
     }
 
     /**
      * The telephone number.
      *
+     * @param telephone Text value to set.
      */
     @Override
-    public void setTelephone(Text fTelephone) {
-        this.fTelephone = fTelephone;
+    public void setTelephone(Text telephone) {
+        this.telephone = telephone;
     }
 
-    private Review fReview;
+    private Review review;
 
     /**
      * A review of the item.
@@ -482,19 +530,20 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Review getReview() {
-        return fReview;
+        return review;
     }
 
     /**
      * A review of the item.
      *
+     * @param review Review value to set.
      */
     @Override
-    public void setReview(Review fReview) {
-        this.fReview = fReview;
+    public void setReview(Review review) {
+        this.review = review;
     }
 
-    private URL fMaps;
+    private URL maps;
 
     /**
      * A URL to a map of the place.
@@ -503,19 +552,20 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public URL getMaps() {
-        return fMaps;
+        return maps;
     }
 
     /**
      * A URL to a map of the place.
      *
+     * @param maps URL value to set.
      */
     @Override
-    public void setMaps(URL fMaps) {
-        this.fMaps = fMaps;
+    public void setMaps(URL maps) {
+        this.maps = maps;
     }
 
-    private Object fGeoContains;
+    private Object geoContains;
 
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. "a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
@@ -524,22 +574,29 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getGeoContains() {
-        return (T) fGeoContains;
+        return (T) geoContains;
     }
 
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. "a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
+     * @param geoContains Place value to set.
      */
     @Override
-    public void setGeoContains(Object fGeoContains) {
-        if(!(fGeoContains instanceof Place) && !(fGeoContains instanceof GeospatialGeometry)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoContains': " + fGeoContains);
-        }
-        this.fGeoContains = fGeoContains;
+    public void setGeoContains(Place geoContains) {
+        this.geoContains = geoContains;
+    }
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. "a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @param geoContains GeospatialGeometry value to set.
+     */
+    @Override
+    public void setGeoContains(GeospatialGeometry geoContains) {
+        this.geoContains = geoContains;
     }
 
-    private Integer fMaximumAttendeeCapacity;
+    private Integer maximumAttendeeCapacity;
 
     /**
      * The total number of individuals that may attend an event or venue.
@@ -548,19 +605,20 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Integer getMaximumAttendeeCapacity() {
-        return fMaximumAttendeeCapacity;
+        return maximumAttendeeCapacity;
     }
 
     /**
      * The total number of individuals that may attend an event or venue.
      *
+     * @param maximumAttendeeCapacity Integer value to set.
      */
     @Override
-    public void setMaximumAttendeeCapacity(Integer fMaximumAttendeeCapacity) {
-        this.fMaximumAttendeeCapacity = fMaximumAttendeeCapacity;
+    public void setMaximumAttendeeCapacity(Integer maximumAttendeeCapacity) {
+        this.maximumAttendeeCapacity = maximumAttendeeCapacity;
     }
 
-    private Place fContainsPlace;
+    private Place containsPlace;
 
     /**
      * The basic containment relation between a place and another that it contains.
@@ -569,19 +627,20 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Place getContainsPlace() {
-        return fContainsPlace;
+        return containsPlace;
     }
 
     /**
      * The basic containment relation between a place and another that it contains.
      *
+     * @param containsPlace Place value to set.
      */
     @Override
-    public void setContainsPlace(Place fContainsPlace) {
-        this.fContainsPlace = fContainsPlace;
+    public void setContainsPlace(Place containsPlace) {
+        this.containsPlace = containsPlace;
     }
 
-    private Boolean fSmokingAllowed;
+    private Boolean smokingAllowed;
 
     /**
      * Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.
@@ -591,20 +650,21 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Boolean getSmokingAllowed() {
-        return fSmokingAllowed;
+        return smokingAllowed;
     }
 
     /**
      * Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.
      *
+     * @param smokingAllowed Boolean value to set.
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
     @Override
-    public void setSmokingAllowed(Boolean fSmokingAllowed) {
-        this.fSmokingAllowed = fSmokingAllowed;
+    public void setSmokingAllowed(Boolean smokingAllowed) {
+        this.smokingAllowed = smokingAllowed;
     }
 
-    private Text fGlobalLocationNumber;
+    private Text globalLocationNumber;
 
     /**
      * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
@@ -614,20 +674,21 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Text getGlobalLocationNumber() {
-        return fGlobalLocationNumber;
+        return globalLocationNumber;
     }
 
     /**
      * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
      *
+     * @param globalLocationNumber Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setGlobalLocationNumber(Text fGlobalLocationNumber) {
-        this.fGlobalLocationNumber = fGlobalLocationNumber;
+    public void setGlobalLocationNumber(Text globalLocationNumber) {
+        this.globalLocationNumber = globalLocationNumber;
     }
 
-    private Object fKeywords;
+    private Object keywords;
 
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
@@ -636,22 +697,38 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getKeywords() {
-        return (T) fKeywords;
+        return (T) keywords;
     }
 
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
      *
+     * @param keywords DefinedTerm value to set.
      */
     @Override
-    public void setKeywords(Object fKeywords) {
-        if(!(fKeywords instanceof DefinedTerm) && !(fKeywords instanceof Text) && !(fKeywords instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'keywords': " + fKeywords);
-        }
-        this.fKeywords = fKeywords;
+    public void setKeywords(DefinedTerm keywords) {
+        this.keywords = keywords;
+    }
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     * @param keywords Text value to set.
+     */
+    @Override
+    public void setKeywords(Text keywords) {
+        this.keywords = keywords;
+    }
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     * @param keywords URL value to set.
+     */
+    @Override
+    public void setKeywords(URL keywords) {
+        this.keywords = keywords;
     }
 
-    private Object fGeoIntersects;
+    private Object geoIntersects;
 
     /**
      * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
@@ -660,22 +737,29 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getGeoIntersects() {
-        return (T) fGeoIntersects;
+        return (T) geoIntersects;
     }
 
     /**
      * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
+     * @param geoIntersects GeospatialGeometry value to set.
      */
     @Override
-    public void setGeoIntersects(Object fGeoIntersects) {
-        if(!(fGeoIntersects instanceof GeospatialGeometry) && !(fGeoIntersects instanceof Place)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoIntersects': " + fGeoIntersects);
-        }
-        this.fGeoIntersects = fGeoIntersects;
+    public void setGeoIntersects(GeospatialGeometry geoIntersects) {
+        this.geoIntersects = geoIntersects;
+    }
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @param geoIntersects Place value to set.
+     */
+    @Override
+    public void setGeoIntersects(Place geoIntersects) {
+        this.geoIntersects = geoIntersects;
     }
 
-    private Object fLatitude;
+    private Object latitude;
 
     /**
      * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
@@ -684,22 +768,29 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getLatitude() {
-        return (T) fLatitude;
+        return (T) latitude;
     }
 
     /**
      * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
      *
+     * @param latitude Text value to set.
      */
     @Override
-    public void setLatitude(Object fLatitude) {
-        if(!(fLatitude instanceof Text) && !(fLatitude instanceof Number)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'latitude': " + fLatitude);
-        }
-        this.fLatitude = fLatitude;
+    public void setLatitude(Text latitude) {
+        this.latitude = latitude;
+    }
+    /**
+     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     *
+     * @param latitude Number value to set.
+     */
+    @Override
+    public void setLatitude(Number latitude) {
+        this.latitude = latitude;
     }
 
-    private Object fGeoTouches;
+    private Object geoTouches;
 
     /**
      * Represents spatial relations in which two geometries (or the places they represent) touch: they have at least one boundary point in common, but no interior points." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM) )
@@ -708,22 +799,29 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getGeoTouches() {
-        return (T) fGeoTouches;
+        return (T) geoTouches;
     }
 
     /**
      * Represents spatial relations in which two geometries (or the places they represent) touch: they have at least one boundary point in common, but no interior points." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM) )
      *
+     * @param geoTouches Place value to set.
      */
     @Override
-    public void setGeoTouches(Object fGeoTouches) {
-        if(!(fGeoTouches instanceof Place) && !(fGeoTouches instanceof GeospatialGeometry)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoTouches': " + fGeoTouches);
-        }
-        this.fGeoTouches = fGeoTouches;
+    public void setGeoTouches(Place geoTouches) {
+        this.geoTouches = geoTouches;
+    }
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) touch: they have at least one boundary point in common, but no interior points." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM) )
+     *
+     * @param geoTouches GeospatialGeometry value to set.
+     */
+    @Override
+    public void setGeoTouches(GeospatialGeometry geoTouches) {
+        this.geoTouches = geoTouches;
     }
 
-    private Object fGeoCoveredBy;
+    private Object geoCoveredBy;
 
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
@@ -732,22 +830,29 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getGeoCoveredBy() {
-        return (T) fGeoCoveredBy;
+        return (T) geoCoveredBy;
     }
 
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
+     * @param geoCoveredBy Place value to set.
      */
     @Override
-    public void setGeoCoveredBy(Object fGeoCoveredBy) {
-        if(!(fGeoCoveredBy instanceof Place) && !(fGeoCoveredBy instanceof GeospatialGeometry)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoCoveredBy': " + fGeoCoveredBy);
-        }
-        this.fGeoCoveredBy = fGeoCoveredBy;
+    public void setGeoCoveredBy(Place geoCoveredBy) {
+        this.geoCoveredBy = geoCoveredBy;
+    }
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @param geoCoveredBy GeospatialGeometry value to set.
+     */
+    @Override
+    public void setGeoCoveredBy(GeospatialGeometry geoCoveredBy) {
+        this.geoCoveredBy = geoCoveredBy;
     }
 
-    private AggregateRating fAggregateRating;
+    private AggregateRating aggregateRating;
 
     /**
      * The overall rating, based on a collection of reviews or ratings, of the item.
@@ -756,19 +861,20 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public AggregateRating getAggregateRating() {
-        return fAggregateRating;
+        return aggregateRating;
     }
 
     /**
      * The overall rating, based on a collection of reviews or ratings, of the item.
      *
+     * @param aggregateRating AggregateRating value to set.
      */
     @Override
-    public void setAggregateRating(AggregateRating fAggregateRating) {
-        this.fAggregateRating = fAggregateRating;
+    public void setAggregateRating(AggregateRating aggregateRating) {
+        this.aggregateRating = aggregateRating;
     }
 
-    private Object fAddress;
+    private Object address;
 
     /**
      * Physical address of the item.
@@ -777,22 +883,29 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getAddress() {
-        return (T) fAddress;
+        return (T) address;
     }
 
     /**
      * Physical address of the item.
      *
+     * @param address Text value to set.
      */
     @Override
-    public void setAddress(Object fAddress) {
-        if(!(fAddress instanceof Text) && !(fAddress instanceof PostalAddress)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'address': " + fAddress);
-        }
-        this.fAddress = fAddress;
+    public void setAddress(Text address) {
+        this.address = address;
+    }
+    /**
+     * Physical address of the item.
+     *
+     * @param address PostalAddress value to set.
+     */
+    @Override
+    public void setAddress(PostalAddress address) {
+        this.address = address;
     }
 
-    private Object fGeoEquals;
+    private Object geoEquals;
 
     /**
      * Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). "Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other" (a symmetric relationship)
@@ -801,22 +914,29 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getGeoEquals() {
-        return (T) fGeoEquals;
+        return (T) geoEquals;
     }
 
     /**
      * Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). "Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other" (a symmetric relationship)
      *
+     * @param geoEquals Place value to set.
      */
     @Override
-    public void setGeoEquals(Object fGeoEquals) {
-        if(!(fGeoEquals instanceof Place) && !(fGeoEquals instanceof GeospatialGeometry)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoEquals': " + fGeoEquals);
-        }
-        this.fGeoEquals = fGeoEquals;
+    public void setGeoEquals(Place geoEquals) {
+        this.geoEquals = geoEquals;
+    }
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). "Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other" (a symmetric relationship)
+     *
+     * @param geoEquals GeospatialGeometry value to set.
+     */
+    @Override
+    public void setGeoEquals(GeospatialGeometry geoEquals) {
+        this.geoEquals = geoEquals;
     }
 
-    private URL fMap;
+    private URL map;
 
     /**
      * A URL to a map of the place.
@@ -825,19 +945,20 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public URL getMap() {
-        return fMap;
+        return map;
     }
 
     /**
      * A URL to a map of the place.
      *
+     * @param map URL value to set.
      */
     @Override
-    public void setMap(URL fMap) {
-        this.fMap = fMap;
+    public void setMap(URL map) {
+        this.map = map;
     }
 
-    private Boolean fPublicAccess;
+    private Boolean publicAccess;
 
     /**
      * A flag to signal that the [[Place]] is open to public visitors.  If this property is omitted there is no assumed default boolean value
@@ -846,19 +967,20 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Boolean getPublicAccess() {
-        return fPublicAccess;
+        return publicAccess;
     }
 
     /**
      * A flag to signal that the [[Place]] is open to public visitors.  If this property is omitted there is no assumed default boolean value
      *
+     * @param publicAccess Boolean value to set.
      */
     @Override
-    public void setPublicAccess(Boolean fPublicAccess) {
-        this.fPublicAccess = fPublicAccess;
+    public void setPublicAccess(Boolean publicAccess) {
+        this.publicAccess = publicAccess;
     }
 
-    private Object fGeoCrosses;
+    private Object geoCrosses;
 
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: "a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
@@ -867,22 +989,29 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getGeoCrosses() {
-        return (T) fGeoCrosses;
+        return (T) geoCrosses;
     }
 
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: "a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
+     * @param geoCrosses GeospatialGeometry value to set.
      */
     @Override
-    public void setGeoCrosses(Object fGeoCrosses) {
-        if(!(fGeoCrosses instanceof GeospatialGeometry) && !(fGeoCrosses instanceof Place)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoCrosses': " + fGeoCrosses);
-        }
-        this.fGeoCrosses = fGeoCrosses;
+    public void setGeoCrosses(GeospatialGeometry geoCrosses) {
+        this.geoCrosses = geoCrosses;
+    }
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: "a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @param geoCrosses Place value to set.
+     */
+    @Override
+    public void setGeoCrosses(Place geoCrosses) {
+        this.geoCrosses = geoCrosses;
     }
 
-    private Place fContainedInPlace;
+    private Place containedInPlace;
 
     /**
      * The basic containment relation between a place and one that contains it.
@@ -891,19 +1020,20 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Place getContainedInPlace() {
-        return fContainedInPlace;
+        return containedInPlace;
     }
 
     /**
      * The basic containment relation between a place and one that contains it.
      *
+     * @param containedInPlace Place value to set.
      */
     @Override
-    public void setContainedInPlace(Place fContainedInPlace) {
-        this.fContainedInPlace = fContainedInPlace;
+    public void setContainedInPlace(Place containedInPlace) {
+        this.containedInPlace = containedInPlace;
     }
 
-    private Text fSlogan;
+    private Text slogan;
 
     /**
      * A slogan or motto associated with the item.
@@ -912,19 +1042,20 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Text getSlogan() {
-        return fSlogan;
+        return slogan;
     }
 
     /**
      * A slogan or motto associated with the item.
      *
+     * @param slogan Text value to set.
      */
     @Override
-    public void setSlogan(Text fSlogan) {
-        this.fSlogan = fSlogan;
+    public void setSlogan(Text slogan) {
+        this.slogan = slogan;
     }
 
-    private Object fPhotos;
+    private Object photos;
 
     /**
      * Photographs of this place.
@@ -933,22 +1064,29 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getPhotos() {
-        return (T) fPhotos;
+        return (T) photos;
     }
 
     /**
      * Photographs of this place.
      *
+     * @param photos ImageObject value to set.
      */
     @Override
-    public void setPhotos(Object fPhotos) {
-        if(!(fPhotos instanceof ImageObject) && !(fPhotos instanceof Photograph)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'photos': " + fPhotos);
-        }
-        this.fPhotos = fPhotos;
+    public void setPhotos(ImageObject photos) {
+        this.photos = photos;
+    }
+    /**
+     * Photographs of this place.
+     *
+     * @param photos Photograph value to set.
+     */
+    @Override
+    public void setPhotos(Photograph photos) {
+        this.photos = photos;
     }
 
-    private Object fGeoCovers;
+    private Object geoCovers;
 
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. "Every point of b is a point of (the interior or boundary of) a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
@@ -957,22 +1095,29 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getGeoCovers() {
-        return (T) fGeoCovers;
+        return (T) geoCovers;
     }
 
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. "Every point of b is a point of (the interior or boundary of) a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
+     * @param geoCovers GeospatialGeometry value to set.
      */
     @Override
-    public void setGeoCovers(Object fGeoCovers) {
-        if(!(fGeoCovers instanceof GeospatialGeometry) && !(fGeoCovers instanceof Place)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoCovers': " + fGeoCovers);
-        }
-        this.fGeoCovers = fGeoCovers;
+    public void setGeoCovers(GeospatialGeometry geoCovers) {
+        this.geoCovers = geoCovers;
+    }
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. "Every point of b is a point of (the interior or boundary of) a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @param geoCovers Place value to set.
+     */
+    @Override
+    public void setGeoCovers(Place geoCovers) {
+        this.geoCovers = geoCovers;
     }
 
-    private Place fContainedIn;
+    private Place containedIn;
 
     /**
      * The basic containment relation between a place and one that contains it.
@@ -981,19 +1126,20 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Place getContainedIn() {
-        return fContainedIn;
+        return containedIn;
     }
 
     /**
      * The basic containment relation between a place and one that contains it.
      *
+     * @param containedIn Place value to set.
      */
     @Override
-    public void setContainedIn(Place fContainedIn) {
-        this.fContainedIn = fContainedIn;
+    public void setContainedIn(Place containedIn) {
+        this.containedIn = containedIn;
     }
 
-    private Boolean fHasDriveThroughService;
+    private Boolean hasDriveThroughService;
 
     /**
      * Indicates whether some facility (e.g. [[FoodEstablishment]], [[CovidTestingFacility]]) offers a service that can be used by driving through in a car. In the case of [[CovidTestingFacility]] such facilities could potentially help with social distancing from other potentially-infected users.
@@ -1004,21 +1150,22 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Boolean getHasDriveThroughService() {
-        return fHasDriveThroughService;
+        return hasDriveThroughService;
     }
 
     /**
      * Indicates whether some facility (e.g. [[FoodEstablishment]], [[CovidTestingFacility]]) offers a service that can be used by driving through in a car. In the case of [[CovidTestingFacility]] such facilities could potentially help with social distancing from other potentially-infected users.
      *
+     * @param hasDriveThroughService Boolean value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      */
     @Override
-    public void setHasDriveThroughService(Boolean fHasDriveThroughService) {
-        this.fHasDriveThroughService = fHasDriveThroughService;
+    public void setHasDriveThroughService(Boolean hasDriveThroughService) {
+        this.hasDriveThroughService = hasDriveThroughService;
     }
 
-    private Object fLogo;
+    private Object logo;
 
     /**
      * An associated logo.
@@ -1028,23 +1175,31 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getLogo() {
-        return (T) fLogo;
+        return (T) logo;
     }
 
     /**
      * An associated logo.
      *
+     * @param logo URL value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setLogo(Object fLogo) {
-        if(!(fLogo instanceof URL) && !(fLogo instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'logo': " + fLogo);
-        }
-        this.fLogo = fLogo;
+    public void setLogo(URL logo) {
+        this.logo = logo;
+    }
+    /**
+     * An associated logo.
+     *
+     * @param logo ImageObject value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setLogo(ImageObject logo) {
+        this.logo = logo;
     }
 
-    private Boolean fIsAccessibleForFree;
+    private Boolean isAccessibleForFree;
 
     /**
      * A flag to signal that the item, event, or place is accessible for free.
@@ -1053,19 +1208,20 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Boolean getIsAccessibleForFree() {
-        return fIsAccessibleForFree;
+        return isAccessibleForFree;
     }
 
     /**
      * A flag to signal that the item, event, or place is accessible for free.
      *
+     * @param isAccessibleForFree Boolean value to set.
      */
     @Override
-    public void setIsAccessibleForFree(Boolean fIsAccessibleForFree) {
-        this.fIsAccessibleForFree = fIsAccessibleForFree;
+    public void setIsAccessibleForFree(Boolean isAccessibleForFree) {
+        this.isAccessibleForFree = isAccessibleForFree;
     }
 
-    private Object fGeoWithin;
+    private Object geoWithin;
 
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
@@ -1074,22 +1230,29 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getGeoWithin() {
-        return (T) fGeoWithin;
+        return (T) geoWithin;
     }
 
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
+     * @param geoWithin Place value to set.
      */
     @Override
-    public void setGeoWithin(Object fGeoWithin) {
-        if(!(fGeoWithin instanceof Place) && !(fGeoWithin instanceof GeospatialGeometry)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoWithin': " + fGeoWithin);
-        }
-        this.fGeoWithin = fGeoWithin;
+    public void setGeoWithin(Place geoWithin) {
+        this.geoWithin = geoWithin;
+    }
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @param geoWithin GeospatialGeometry value to set.
+     */
+    @Override
+    public void setGeoWithin(GeospatialGeometry geoWithin) {
+        this.geoWithin = geoWithin;
     }
 
-    private Object fGeoDisjoint;
+    private Object geoDisjoint;
 
     /**
      * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM))
@@ -1098,22 +1261,29 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getGeoDisjoint() {
-        return (T) fGeoDisjoint;
+        return (T) geoDisjoint;
     }
 
     /**
      * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM))
      *
+     * @param geoDisjoint GeospatialGeometry value to set.
      */
     @Override
-    public void setGeoDisjoint(Object fGeoDisjoint) {
-        if(!(fGeoDisjoint instanceof GeospatialGeometry) && !(fGeoDisjoint instanceof Place)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoDisjoint': " + fGeoDisjoint);
-        }
-        this.fGeoDisjoint = fGeoDisjoint;
+    public void setGeoDisjoint(GeospatialGeometry geoDisjoint) {
+        this.geoDisjoint = geoDisjoint;
+    }
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM))
+     *
+     * @param geoDisjoint Place value to set.
+     */
+    @Override
+    public void setGeoDisjoint(Place geoDisjoint) {
+        this.geoDisjoint = geoDisjoint;
     }
 
-    private Text fIsicV4;
+    private Text isicV4;
 
     /**
      * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
@@ -1123,20 +1293,21 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Text getIsicV4() {
-        return fIsicV4;
+        return isicV4;
     }
 
     /**
      * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
      *
+     * @param isicV4 Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setIsicV4(Text fIsicV4) {
-        this.fIsicV4 = fIsicV4;
+    public void setIsicV4(Text isicV4) {
+        this.isicV4 = isicV4;
     }
 
-    private Object fGeoOverlaps;
+    private Object geoOverlaps;
 
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
@@ -1145,22 +1316,29 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getGeoOverlaps() {
-        return (T) fGeoOverlaps;
+        return (T) geoOverlaps;
     }
 
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
+     * @param geoOverlaps GeospatialGeometry value to set.
      */
     @Override
-    public void setGeoOverlaps(Object fGeoOverlaps) {
-        if(!(fGeoOverlaps instanceof GeospatialGeometry) && !(fGeoOverlaps instanceof Place)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoOverlaps': " + fGeoOverlaps);
-        }
-        this.fGeoOverlaps = fGeoOverlaps;
+    public void setGeoOverlaps(GeospatialGeometry geoOverlaps) {
+        this.geoOverlaps = geoOverlaps;
+    }
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @param geoOverlaps Place value to set.
+     */
+    @Override
+    public void setGeoOverlaps(Place geoOverlaps) {
+        this.geoOverlaps = geoOverlaps;
     }
 
-    private Text fBranchCode;
+    private Text branchCode;
 
     /**
      * A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.<br/><br/>For example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code "3047" is a branchCode for a particular branch.
@@ -1170,20 +1348,21 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Text getBranchCode() {
-        return fBranchCode;
+        return branchCode;
     }
 
     /**
      * A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.<br/><br/>For example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code "3047" is a branchCode for a particular branch.
      *       
      *
+     * @param branchCode Text value to set.
      */
     @Override
-    public void setBranchCode(Text fBranchCode) {
-        this.fBranchCode = fBranchCode;
+    public void setBranchCode(Text branchCode) {
+        this.branchCode = branchCode;
     }
 
-    private PropertyValue fAdditionalProperty;
+    private PropertyValue additionalProperty;
 
     /**
      * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
@@ -1192,19 +1371,20 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public PropertyValue getAdditionalProperty() {
-        return fAdditionalProperty;
+        return additionalProperty;
     }
 
     /**
      * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
      *
+     * @param additionalProperty PropertyValue value to set.
      */
     @Override
-    public void setAdditionalProperty(PropertyValue fAdditionalProperty) {
-        this.fAdditionalProperty = fAdditionalProperty;
+    public void setAdditionalProperty(PropertyValue additionalProperty) {
+        this.additionalProperty = additionalProperty;
     }
 
-    private OpeningHoursSpecification fOpeningHoursSpecification;
+    private OpeningHoursSpecification openingHoursSpecification;
 
     /**
      * The opening hours of a certain place.
@@ -1214,20 +1394,21 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public OpeningHoursSpecification getOpeningHoursSpecification() {
-        return fOpeningHoursSpecification;
+        return openingHoursSpecification;
     }
 
     /**
      * The opening hours of a certain place.
      *
+     * @param openingHoursSpecification OpeningHoursSpecification value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setOpeningHoursSpecification(OpeningHoursSpecification fOpeningHoursSpecification) {
-        this.fOpeningHoursSpecification = fOpeningHoursSpecification;
+    public void setOpeningHoursSpecification(OpeningHoursSpecification openingHoursSpecification) {
+        this.openingHoursSpecification = openingHoursSpecification;
     }
 
-    private Review fReviews;
+    private Review reviews;
 
     /**
      * Review of the item.
@@ -1236,19 +1417,20 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Review getReviews() {
-        return fReviews;
+        return reviews;
     }
 
     /**
      * Review of the item.
      *
+     * @param reviews Review value to set.
      */
     @Override
-    public void setReviews(Review fReviews) {
-        this.fReviews = fReviews;
+    public void setReviews(Review reviews) {
+        this.reviews = reviews;
     }
 
-    private Object fPhoto;
+    private Object photo;
 
     /**
      * A photograph of this place.
@@ -1257,22 +1439,29 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getPhoto() {
-        return (T) fPhoto;
+        return (T) photo;
     }
 
     /**
      * A photograph of this place.
      *
+     * @param photo Photograph value to set.
      */
     @Override
-    public void setPhoto(Object fPhoto) {
-        if(!(fPhoto instanceof Photograph) && !(fPhoto instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'photo': " + fPhoto);
-        }
-        this.fPhoto = fPhoto;
+    public void setPhoto(Photograph photo) {
+        this.photo = photo;
+    }
+    /**
+     * A photograph of this place.
+     *
+     * @param photo ImageObject value to set.
+     */
+    @Override
+    public void setPhoto(ImageObject photo) {
+        this.photo = photo;
     }
 
-    private OpeningHoursSpecification fSpecialOpeningHoursSpecification;
+    private OpeningHoursSpecification specialOpeningHoursSpecification;
 
     /**
      * The special opening hours of a certain place.<br/><br/>Use this to explicitly override general opening hours brought in scope by [[openingHoursSpecification]] or [[openingHours]].
@@ -1282,20 +1471,21 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public OpeningHoursSpecification getSpecialOpeningHoursSpecification() {
-        return fSpecialOpeningHoursSpecification;
+        return specialOpeningHoursSpecification;
     }
 
     /**
      * The special opening hours of a certain place.<br/><br/>Use this to explicitly override general opening hours brought in scope by [[openingHoursSpecification]] or [[openingHours]].
      *       
      *
+     * @param specialOpeningHoursSpecification OpeningHoursSpecification value to set.
      */
     @Override
-    public void setSpecialOpeningHoursSpecification(OpeningHoursSpecification fSpecialOpeningHoursSpecification) {
-        this.fSpecialOpeningHoursSpecification = fSpecialOpeningHoursSpecification;
+    public void setSpecialOpeningHoursSpecification(OpeningHoursSpecification specialOpeningHoursSpecification) {
+        this.specialOpeningHoursSpecification = specialOpeningHoursSpecification;
     }
 
-    private Object fHasMap;
+    private Object hasMap;
 
     /**
      * A URL to a map of the place.
@@ -1304,22 +1494,29 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getHasMap() {
-        return (T) fHasMap;
+        return (T) hasMap;
     }
 
     /**
      * A URL to a map of the place.
      *
+     * @param hasMap URL value to set.
      */
     @Override
-    public void setHasMap(Object fHasMap) {
-        if(!(fHasMap instanceof URL) && !(fHasMap instanceof Map)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'hasMap': " + fHasMap);
-        }
-        this.fHasMap = fHasMap;
+    public void setHasMap(URL hasMap) {
+        this.hasMap = hasMap;
+    }
+    /**
+     * A URL to a map of the place.
+     *
+     * @param hasMap Map value to set.
+     */
+    @Override
+    public void setHasMap(Map hasMap) {
+        this.hasMap = hasMap;
     }
 
-    private Object fLongitude;
+    private Object longitude;
 
     /**
      * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
@@ -1328,22 +1525,29 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getLongitude() {
-        return (T) fLongitude;
+        return (T) longitude;
     }
 
     /**
      * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
      *
+     * @param longitude Number value to set.
      */
     @Override
-    public void setLongitude(Object fLongitude) {
-        if(!(fLongitude instanceof Number) && !(fLongitude instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'longitude': " + fLongitude);
-        }
-        this.fLongitude = fLongitude;
+    public void setLongitude(Number longitude) {
+        this.longitude = longitude;
+    }
+    /**
+     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     *
+     * @param longitude Text value to set.
+     */
+    @Override
+    public void setLongitude(Text longitude) {
+        this.longitude = longitude;
     }
 
-    private Object fGeo;
+    private Object geo;
 
     /**
      * The geo coordinates of the place.
@@ -1352,22 +1556,29 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getGeo() {
-        return (T) fGeo;
+        return (T) geo;
     }
 
     /**
      * The geo coordinates of the place.
      *
+     * @param geo GeoCoordinates value to set.
      */
     @Override
-    public void setGeo(Object fGeo) {
-        if(!(fGeo instanceof GeoCoordinates) && !(fGeo instanceof GeoShape)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geo': " + fGeo);
-        }
-        this.fGeo = fGeo;
+    public void setGeo(GeoCoordinates geo) {
+        this.geo = geo;
+    }
+    /**
+     * The geo coordinates of the place.
+     *
+     * @param geo GeoShape value to set.
+     */
+    @Override
+    public void setGeo(GeoShape geo) {
+        this.geo = geo;
     }
 
-    private Event fEvents;
+    private Event events;
 
     /**
      * Upcoming or past events associated with this place or organization.
@@ -1376,19 +1587,20 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Event getEvents() {
-        return fEvents;
+        return events;
     }
 
     /**
      * Upcoming or past events associated with this place or organization.
      *
+     * @param events Event value to set.
      */
     @Override
-    public void setEvents(Event fEvents) {
-        this.fEvents = fEvents;
+    public void setEvents(Event events) {
+        this.events = events;
     }
 
-    private Text fFaxNumber;
+    private Text faxNumber;
 
     /**
      * The fax number.
@@ -1397,19 +1609,20 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Text getFaxNumber() {
-        return fFaxNumber;
+        return faxNumber;
     }
 
     /**
      * The fax number.
      *
+     * @param faxNumber Text value to set.
      */
     @Override
-    public void setFaxNumber(Text fFaxNumber) {
-        this.fFaxNumber = fFaxNumber;
+    public void setFaxNumber(Text faxNumber) {
+        this.faxNumber = faxNumber;
     }
 
-    private Event fEvent;
+    private Event event;
 
     /**
      * Upcoming or past event associated with this place, organization, or action.
@@ -1418,19 +1631,20 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Event getEvent() {
-        return fEvent;
+        return event;
     }
 
     /**
      * Upcoming or past event associated with this place, organization, or action.
      *
+     * @param event Event value to set.
      */
     @Override
-    public void setEvent(Event fEvent) {
-        this.fEvent = fEvent;
+    public void setEvent(Event event) {
+        this.event = event;
     }
 
-    private Object fMainEntityOfPage;
+    private Object mainEntityOfPage;
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -1439,22 +1653,29 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
+        return (T) mainEntityOfPage;
     }
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
+     * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
-        }
-        this.fMainEntityOfPage = fMainEntityOfPage;
+    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param mainEntityOfPage URL value to set.
+     */
+    @Override
+    public void setMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
     }
 
-    private Text fAlternateName;
+    private Text alternateName;
 
     /**
      * An alias for the item.
@@ -1463,19 +1684,20 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Text getAlternateName() {
-        return fAlternateName;
+        return alternateName;
     }
 
     /**
      * An alias for the item.
      *
+     * @param alternateName Text value to set.
      */
     @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
+    public void setAlternateName(Text alternateName) {
+        this.alternateName = alternateName;
     }
 
-    private Text fName;
+    private Text name;
 
     /**
      * The name of the item.
@@ -1484,19 +1706,20 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Text getName() {
-        return fName;
+        return name;
     }
 
     /**
      * The name of the item.
      *
+     * @param name Text value to set.
      */
     @Override
-    public void setName(Text fName) {
-        this.fName = fName;
+    public void setName(Text name) {
+        this.name = name;
     }
 
-    private Action fPotentialAction;
+    private Action potentialAction;
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -1505,19 +1728,20 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Action getPotentialAction() {
-        return fPotentialAction;
+        return potentialAction;
     }
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      *
+     * @param potentialAction Action value to set.
      */
     @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
+    public void setPotentialAction(Action potentialAction) {
+        this.potentialAction = potentialAction;
     }
 
-    private Object fImage;
+    private Object image;
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -1526,22 +1750,29 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getImage() {
-        return (T) fImage;
+        return (T) image;
     }
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
+     * @param image URL value to set.
      */
     @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
-        this.fImage = fImage;
+    public void setImage(URL image) {
+        this.image = image;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image ImageObject value to set.
+     */
+    @Override
+    public void setImage(ImageObject image) {
+        this.image = image;
     }
 
-    private URL fUrl;
+    private URL url;
 
     /**
      * URL of the item.
@@ -1550,19 +1781,20 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public URL getUrl() {
-        return fUrl;
+        return url;
     }
 
     /**
      * URL of the item.
      *
+     * @param url URL value to set.
      */
     @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
+    public void setUrl(URL url) {
+        this.url = url;
     }
 
-    private Text fDescription;
+    private Text description;
 
     /**
      * A description of the item.
@@ -1571,19 +1803,20 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Text getDescription() {
-        return fDescription;
+        return description;
     }
 
     /**
      * A description of the item.
      *
+     * @param description Text value to set.
      */
     @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
+    public void setDescription(Text description) {
+        this.description = description;
     }
 
-    private Object fSubjectOf;
+    private Object subjectOf;
 
     /**
      * A CreativeWork or Event about this Thing.
@@ -1593,23 +1826,31 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getSubjectOf() {
-        return (T) fSubjectOf;
+        return (T) subjectOf;
     }
 
     /**
      * A CreativeWork or Event about this Thing.
      *
+     * @param subjectOf Event value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Object fSubjectOf) {
-        if(!(fSubjectOf instanceof Event) && !(fSubjectOf instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'subjectOf': " + fSubjectOf);
-        }
-        this.fSubjectOf = fSubjectOf;
+    public void setSubjectOf(Event subjectOf) {
+        this.subjectOf = subjectOf;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @param subjectOf CreativeWork value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public void setSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = subjectOf;
     }
 
-    private URL fAdditionalType;
+    private URL additionalType;
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
@@ -1618,19 +1859,20 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public URL getAdditionalType() {
-        return fAdditionalType;
+        return additionalType;
     }
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
+     * @param additionalType URL value to set.
      */
     @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
+    public void setAdditionalType(URL additionalType) {
+        this.additionalType = additionalType;
     }
 
-    private Text fDisambiguatingDescription;
+    private Text disambiguatingDescription;
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
@@ -1639,19 +1881,20 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public Text getDisambiguatingDescription() {
-        return fDisambiguatingDescription;
+        return disambiguatingDescription;
     }
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
+     * @param disambiguatingDescription Text value to set.
      */
     @Override
-    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = fDisambiguatingDescription;
+    public void setDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = disambiguatingDescription;
     }
 
-    private URL fSameAs;
+    private URL sameAs;
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
@@ -1660,19 +1903,20 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public URL getSameAs() {
-        return fSameAs;
+        return sameAs;
     }
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
+     * @param sameAs URL value to set.
      */
     @Override
-    public void setSameAs(URL fSameAs) {
-        this.fSameAs = fSameAs;
+    public void setSameAs(URL sameAs) {
+        this.sameAs = sameAs;
     }
 
-    private Object fIdentifier;
+    private Object identifier;
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -1682,19 +1926,37 @@ public class ApartmentImpl extends com.weedow.schemaorg.commons.model.JsonLdNode
      */
     @Override
     public <T> T getIdentifier() {
-        return (T) fIdentifier;
+        return (T) identifier;
     }
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
+     * @param identifier URL value to set.
      */
     @Override
-    public void setIdentifier(Object fIdentifier) {
-        if(!(fIdentifier instanceof URL) && !(fIdentifier instanceof Text) && !(fIdentifier instanceof PropertyValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
-        }
-        this.fIdentifier = fIdentifier;
+    public void setIdentifier(URL identifier) {
+        this.identifier = identifier;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier Text value to set.
+     */
+    @Override
+    public void setIdentifier(Text identifier) {
+        this.identifier = identifier;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier PropertyValue value to set.
+     */
+    @Override
+    public void setIdentifier(PropertyValue identifier) {
+        this.identifier = identifier;
     }
 }

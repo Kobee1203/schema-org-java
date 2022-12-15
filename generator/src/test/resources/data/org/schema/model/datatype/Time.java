@@ -12,7 +12,7 @@ import com.weedow.schemaorg.commons.model.JsonLdTypeName;
  *
  * @see <a href="https://schema.org/Time">https://schema.org/Time</a>
  */
-@JsonLdTypeName("schema:Time")
+@JsonLdTypeName("Time")
 public class Time extends DataType<java.time.LocalTime> {
 
     Time(java.time.LocalTime value) {

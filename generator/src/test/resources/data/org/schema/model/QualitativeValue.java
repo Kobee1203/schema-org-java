@@ -33,9 +33,59 @@ public interface QualitativeValue extends Enumeration {
     /**
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
      *
+     * @param valueReference Enumeration value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setValueReference(Object fValueReference);
+    void setValueReference(Enumeration valueReference);
+    /**
+     * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+     *
+     * @param valueReference DefinedTerm value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    void setValueReference(DefinedTerm valueReference);
+    /**
+     * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+     *
+     * @param valueReference Text value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    void setValueReference(Text valueReference);
+    /**
+     * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+     *
+     * @param valueReference MeasurementTypeEnumeration value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    void setValueReference(MeasurementTypeEnumeration valueReference);
+    /**
+     * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+     *
+     * @param valueReference QualitativeValue value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    void setValueReference(QualitativeValue valueReference);
+    /**
+     * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+     *
+     * @param valueReference StructuredValue value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    void setValueReference(StructuredValue valueReference);
+    /**
+     * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+     *
+     * @param valueReference PropertyValue value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    void setValueReference(PropertyValue valueReference);
+    /**
+     * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+     *
+     * @param valueReference QuantitativeValue value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    void setValueReference(QuantitativeValue valueReference);
 
     /**
      * This ordering relation for qualitative values indicates that the subject is greater than or equal to the object.
@@ -48,9 +98,10 @@ public interface QualitativeValue extends Enumeration {
     /**
      * This ordering relation for qualitative values indicates that the subject is greater than or equal to the object.
      *
+     * @param greaterOrEqual QualitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setGreaterOrEqual(QualitativeValue fGreaterOrEqual);
+    void setGreaterOrEqual(QualitativeValue greaterOrEqual);
 
     /**
      * This ordering relation for qualitative values indicates that the subject is not equal to the object.
@@ -63,9 +114,10 @@ public interface QualitativeValue extends Enumeration {
     /**
      * This ordering relation for qualitative values indicates that the subject is not equal to the object.
      *
+     * @param nonEqual QualitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setNonEqual(QualitativeValue fNonEqual);
+    void setNonEqual(QualitativeValue nonEqual);
 
     /**
      * This ordering relation for qualitative values indicates that the subject is equal to the object.
@@ -78,9 +130,10 @@ public interface QualitativeValue extends Enumeration {
     /**
      * This ordering relation for qualitative values indicates that the subject is equal to the object.
      *
+     * @param equal QualitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setEqual(QualitativeValue fEqual);
+    void setEqual(QualitativeValue equal);
 
     /**
      * This ordering relation for qualitative values indicates that the subject is lesser than the object.
@@ -93,9 +146,10 @@ public interface QualitativeValue extends Enumeration {
     /**
      * This ordering relation for qualitative values indicates that the subject is lesser than the object.
      *
+     * @param lesser QualitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setLesser(QualitativeValue fLesser);
+    void setLesser(QualitativeValue lesser);
 
     /**
      * This ordering relation for qualitative values indicates that the subject is greater than the object.
@@ -108,9 +162,10 @@ public interface QualitativeValue extends Enumeration {
     /**
      * This ordering relation for qualitative values indicates that the subject is greater than the object.
      *
+     * @param greater QualitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setGreater(QualitativeValue fGreater);
+    void setGreater(QualitativeValue greater);
 
     /**
      * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
@@ -122,8 +177,9 @@ public interface QualitativeValue extends Enumeration {
     /**
      * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
      *
+     * @param additionalProperty PropertyValue value to set.
      */
-    void setAdditionalProperty(PropertyValue fAdditionalProperty);
+    void setAdditionalProperty(PropertyValue additionalProperty);
 
     /**
      * This ordering relation for qualitative values indicates that the subject is lesser than or equal to the object.
@@ -136,7 +192,8 @@ public interface QualitativeValue extends Enumeration {
     /**
      * This ordering relation for qualitative values indicates that the subject is lesser than or equal to the object.
      *
+     * @param lesserOrEqual QualitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setLesserOrEqual(QualitativeValue fLesserOrEqual);
+    void setLesserOrEqual(QualitativeValue lesserOrEqual);
 }

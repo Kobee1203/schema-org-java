@@ -31,10 +31,11 @@ public interface VideoObject extends MediaObject {
     /**
      * Represents textual captioning from a [[MediaObject]], e.g. text of a 'meme'.
      *
+     * @param embeddedTextCaption Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
-    void setEmbeddedTextCaption(Text fEmbeddedTextCaption);
+    void setEmbeddedTextCaption(Text embeddedTextCaption);
 
     /**
      * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
@@ -46,8 +47,9 @@ public interface VideoObject extends MediaObject {
     /**
      * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
      *
+     * @param director Person value to set.
      */
-    void setDirector(Person fDirector);
+    void setDirector(Person director);
 
     /**
      * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
@@ -59,8 +61,9 @@ public interface VideoObject extends MediaObject {
     /**
      * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
      *
+     * @param actor Person value to set.
      */
-    void setActor(Person fActor);
+    void setActor(Person actor);
 
     /**
      * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
@@ -72,8 +75,15 @@ public interface VideoObject extends MediaObject {
     /**
      * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
      *
+     * @param caption Text value to set.
      */
-    void setCaption(Object fCaption);
+    void setCaption(Text caption);
+    /**
+     * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
+     *
+     * @param caption MediaObject value to set.
+     */
+    void setCaption(MediaObject caption);
 
     /**
      * Thumbnail image for an image or video.
@@ -85,8 +95,9 @@ public interface VideoObject extends MediaObject {
     /**
      * Thumbnail image for an image or video.
      *
+     * @param thumbnail ImageObject value to set.
      */
-    void setThumbnail(ImageObject fThumbnail);
+    void setThumbnail(ImageObject thumbnail);
 
     /**
      * If this MediaObject is an AudioObject or VideoObject, the transcript of that object.
@@ -98,8 +109,9 @@ public interface VideoObject extends MediaObject {
     /**
      * If this MediaObject is an AudioObject or VideoObject, the transcript of that object.
      *
+     * @param transcript Text value to set.
      */
-    void setTranscript(Text fTranscript);
+    void setTranscript(Text transcript);
 
     /**
      * The quality of the video.
@@ -111,8 +123,9 @@ public interface VideoObject extends MediaObject {
     /**
      * The quality of the video.
      *
+     * @param videoQuality Text value to set.
      */
-    void setVideoQuality(Text fVideoQuality);
+    void setVideoQuality(Text videoQuality);
 
     /**
      * The frame size of the video.
@@ -124,8 +137,9 @@ public interface VideoObject extends MediaObject {
     /**
      * The frame size of the video.
      *
+     * @param videoFrameSize Text value to set.
      */
-    void setVideoFrameSize(Text fVideoFrameSize);
+    void setVideoFrameSize(Text videoFrameSize);
 
     /**
      * An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
@@ -137,8 +151,9 @@ public interface VideoObject extends MediaObject {
     /**
      * An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
      *
+     * @param actors Person value to set.
      */
-    void setActors(Person fActors);
+    void setActors(Person actors);
 
     /**
      * The composer of the soundtrack.
@@ -150,8 +165,15 @@ public interface VideoObject extends MediaObject {
     /**
      * The composer of the soundtrack.
      *
+     * @param musicBy Person value to set.
      */
-    void setMusicBy(Object fMusicBy);
+    void setMusicBy(Person musicBy);
+    /**
+     * The composer of the soundtrack.
+     *
+     * @param musicBy MusicGroup value to set.
+     */
+    void setMusicBy(MusicGroup musicBy);
 
     /**
      * A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
@@ -163,6 +185,7 @@ public interface VideoObject extends MediaObject {
     /**
      * A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
      *
+     * @param directors Person value to set.
      */
-    void setDirectors(Person fDirectors);
+    void setDirectors(Person directors);
 }

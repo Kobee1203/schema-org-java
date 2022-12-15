@@ -26,8 +26,15 @@ public interface DataFeedItem extends Intangible {
     /**
      * The datetime the item was removed from the DataFeed.
      *
+     * @param dateDeleted DateTime value to set.
      */
-    void setDateDeleted(Object fDateDeleted);
+    void setDateDeleted(DateTime dateDeleted);
+    /**
+     * The datetime the item was removed from the DataFeed.
+     *
+     * @param dateDeleted Date value to set.
+     */
+    void setDateDeleted(Date dateDeleted);
 
     /**
      * The date on which the CreativeWork was created or the item was added to a DataFeed.
@@ -39,8 +46,15 @@ public interface DataFeedItem extends Intangible {
     /**
      * The date on which the CreativeWork was created or the item was added to a DataFeed.
      *
+     * @param dateCreated Date value to set.
      */
-    void setDateCreated(Object fDateCreated);
+    void setDateCreated(Date dateCreated);
+    /**
+     * The date on which the CreativeWork was created or the item was added to a DataFeed.
+     *
+     * @param dateCreated DateTime value to set.
+     */
+    void setDateCreated(DateTime dateCreated);
 
     /**
      * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
@@ -52,8 +66,15 @@ public interface DataFeedItem extends Intangible {
     /**
      * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
      *
+     * @param dateModified DateTime value to set.
      */
-    void setDateModified(Object fDateModified);
+    void setDateModified(DateTime dateModified);
+    /**
+     * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
+     *
+     * @param dateModified Date value to set.
+     */
+    void setDateModified(Date dateModified);
 
     /**
      * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')’.
@@ -65,6 +86,7 @@ public interface DataFeedItem extends Intangible {
     /**
      * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')’.
      *
+     * @param item Thing value to set.
      */
-    void setItem(Thing fItem);
+    void setItem(Thing item);
 }

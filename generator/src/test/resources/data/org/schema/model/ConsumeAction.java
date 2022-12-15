@@ -26,9 +26,10 @@ public interface ConsumeAction extends Action {
     /**
      * An Offer which must be accepted before the user can perform the Action. For example, the user may need to buy a movie before being able to watch it.
      *
+     * @param expectsAcceptanceOf Offer value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
-    void setExpectsAcceptanceOf(Offer fExpectsAcceptanceOf);
+    void setExpectsAcceptanceOf(Offer expectsAcceptanceOf);
 
     /**
      * A set of requirements that a must be fulfilled in order to perform an Action. If more than one value is specied, fulfilling one set of requirements will allow the Action to be performed.
@@ -41,7 +42,8 @@ public interface ConsumeAction extends Action {
     /**
      * A set of requirements that a must be fulfilled in order to perform an Action. If more than one value is specied, fulfilling one set of requirements will allow the Action to be performed.
      *
+     * @param actionAccessibilityRequirement ActionAccessSpecification value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
-    void setActionAccessibilityRequirement(ActionAccessSpecification fActionAccessibilityRequirement);
+    void setActionAccessibilityRequirement(ActionAccessSpecification actionAccessibilityRequirement);
 }

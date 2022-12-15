@@ -27,9 +27,17 @@ public interface PublicationIssue extends CreativeWork {
     /**
      * The page on which the work starts; for example "135" or "xiii".
      *
+     * @param pageStart Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
-    void setPageStart(Object fPageStart);
+    void setPageStart(Text pageStart);
+    /**
+     * The page on which the work starts; for example "135" or "xiii".
+     *
+     * @param pageStart Integer value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
+     */
+    void setPageStart(Integer pageStart);
 
     /**
      * The page on which the work ends; for example "138" or "xvi".
@@ -42,9 +50,17 @@ public interface PublicationIssue extends CreativeWork {
     /**
      * The page on which the work ends; for example "138" or "xvi".
      *
+     * @param pageEnd Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
-    void setPageEnd(Object fPageEnd);
+    void setPageEnd(Text pageEnd);
+    /**
+     * The page on which the work ends; for example "138" or "xvi".
+     *
+     * @param pageEnd Integer value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
+     */
+    void setPageEnd(Integer pageEnd);
 
     /**
      * Identifies the issue of publication; for example, "iii" or "2".
@@ -57,9 +73,17 @@ public interface PublicationIssue extends CreativeWork {
     /**
      * Identifies the issue of publication; for example, "iii" or "2".
      *
+     * @param issueNumber Integer value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
-    void setIssueNumber(Object fIssueNumber);
+    void setIssueNumber(Integer issueNumber);
+    /**
+     * Identifies the issue of publication; for example, "iii" or "2".
+     *
+     * @param issueNumber Text value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
+     */
+    void setIssueNumber(Text issueNumber);
 
     /**
      * Any description of pages that is not separated into pageStart and pageEnd; for example, "1-6, 9, 55" or "10-12, 46-49".
@@ -72,7 +96,8 @@ public interface PublicationIssue extends CreativeWork {
     /**
      * Any description of pages that is not separated into pageStart and pageEnd; for example, "1-6, 9, 55" or "10-12, 46-49".
      *
+     * @param pagination Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
-    void setPagination(Text fPagination);
+    void setPagination(Text pagination);
 }

@@ -27,9 +27,10 @@ public interface Audiobook extends AudioObject, Book {
     /**
      * A person who reads (performs) the audiobook.
      *
+     * @param readBy Person value to set.
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
-    void setReadBy(Person fReadBy);
+    void setReadBy(Person readBy);
 
     /**
      * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
@@ -43,8 +44,9 @@ public interface Audiobook extends AudioObject, Book {
     /**
      * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
      *
+     * @param duration Duration value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
      */
-    void setDuration(Duration fDuration);
+    void setDuration(Duration duration);
 }

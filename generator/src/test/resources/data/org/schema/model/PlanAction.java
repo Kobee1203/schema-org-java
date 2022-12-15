@@ -24,6 +24,7 @@ public interface PlanAction extends OrganizeAction {
     /**
      * The time the object is scheduled to.
      *
+     * @param scheduledTime DateTime value to set.
      */
-    void setScheduledTime(DateTime fScheduledTime);
+    void setScheduledTime(DateTime scheduledTime);
 }

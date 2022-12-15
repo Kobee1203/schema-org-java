@@ -75,10 +75,11 @@ public interface SpecialAnnouncement extends CreativeWork {
     /**
      * governmentBenefitsInfo provides information about government benefits associated with a SpecialAnnouncement.
      *
+     * @param governmentBenefitsInfo GovernmentService value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2534">https://github.com/schemaorg/schemaorg/issues/2534</a>
      */
-    void setGovernmentBenefitsInfo(GovernmentService fGovernmentBenefitsInfo);
+    void setGovernmentBenefitsInfo(GovernmentService governmentBenefitsInfo);
 
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
@@ -92,10 +93,43 @@ public interface SpecialAnnouncement extends CreativeWork {
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
+     * @param category URL value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
-    void setCategory(Object fCategory);
+    void setCategory(URL category);
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @param category Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    void setCategory(Text category);
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @param category PhysicalActivityCategory value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    void setCategory(PhysicalActivityCategory category);
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @param category Thing value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    void setCategory(Thing category);
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @param category CategoryCode value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    void setCategory(CategoryCode category);
 
     /**
      * Statistical information about the spread of a disease, either as [[WebContent]], or
@@ -113,10 +147,41 @@ public interface SpecialAnnouncement extends CreativeWork {
      *   described directly as a [[Dataset]], or the specific [[Observation]]s in the dataset. When a [[WebContent]] URL is
      *   provided, the page indicated might also contain more such markup.
      *
+     * @param diseaseSpreadStatistics Dataset value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      */
-    void setDiseaseSpreadStatistics(Object fDiseaseSpreadStatistics);
+    void setDiseaseSpreadStatistics(Dataset diseaseSpreadStatistics);
+    /**
+     * Statistical information about the spread of a disease, either as [[WebContent]], or
+     *   described directly as a [[Dataset]], or the specific [[Observation]]s in the dataset. When a [[WebContent]] URL is
+     *   provided, the page indicated might also contain more such markup.
+     *
+     * @param diseaseSpreadStatistics Observation value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    void setDiseaseSpreadStatistics(Observation diseaseSpreadStatistics);
+    /**
+     * Statistical information about the spread of a disease, either as [[WebContent]], or
+     *   described directly as a [[Dataset]], or the specific [[Observation]]s in the dataset. When a [[WebContent]] URL is
+     *   provided, the page indicated might also contain more such markup.
+     *
+     * @param diseaseSpreadStatistics WebContent value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    void setDiseaseSpreadStatistics(WebContent diseaseSpreadStatistics);
+    /**
+     * Statistical information about the spread of a disease, either as [[WebContent]], or
+     *   described directly as a [[Dataset]], or the specific [[Observation]]s in the dataset. When a [[WebContent]] URL is
+     *   provided, the page indicated might also contain more such markup.
+     *
+     * @param diseaseSpreadStatistics URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    void setDiseaseSpreadStatistics(URL diseaseSpreadStatistics);
 
     /**
      * Information about getting tested (for a [[MedicalCondition]]), e.g. in the context of a pandemic.
@@ -130,10 +195,19 @@ public interface SpecialAnnouncement extends CreativeWork {
     /**
      * Information about getting tested (for a [[MedicalCondition]]), e.g. in the context of a pandemic.
      *
+     * @param gettingTestedInfo WebContent value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      */
-    void setGettingTestedInfo(Object fGettingTestedInfo);
+    void setGettingTestedInfo(WebContent gettingTestedInfo);
+    /**
+     * Information about getting tested (for a [[MedicalCondition]]), e.g. in the context of a pandemic.
+     *
+     * @param gettingTestedInfo URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    void setGettingTestedInfo(URL gettingTestedInfo);
 
     /**
      * Indicates a specific [[CivicStructure]] or [[LocalBusiness]] associated with the SpecialAnnouncement. For example, a specific testing facility or business with special opening hours. For a larger geographic region like a quarantine of an entire region, use [[spatialCoverage]].
@@ -147,10 +221,19 @@ public interface SpecialAnnouncement extends CreativeWork {
     /**
      * Indicates a specific [[CivicStructure]] or [[LocalBusiness]] associated with the SpecialAnnouncement. For example, a specific testing facility or business with special opening hours. For a larger geographic region like a quarantine of an entire region, use [[spatialCoverage]].
      *
+     * @param announcementLocation CivicStructure value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2514">https://github.com/schemaorg/schemaorg/issues/2514</a>
      */
-    void setAnnouncementLocation(Object fAnnouncementLocation);
+    void setAnnouncementLocation(CivicStructure announcementLocation);
+    /**
+     * Indicates a specific [[CivicStructure]] or [[LocalBusiness]] associated with the SpecialAnnouncement. For example, a specific testing facility or business with special opening hours. For a larger geographic region like a quarantine of an entire region, use [[spatialCoverage]].
+     *
+     * @param announcementLocation LocalBusiness value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2514">https://github.com/schemaorg/schemaorg/issues/2514</a>
+     */
+    void setAnnouncementLocation(LocalBusiness announcementLocation);
 
     /**
      * Information about travel bans, e.g. in the context of a pandemic.
@@ -164,10 +247,19 @@ public interface SpecialAnnouncement extends CreativeWork {
     /**
      * Information about travel bans, e.g. in the context of a pandemic.
      *
+     * @param travelBans URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      */
-    void setTravelBans(Object fTravelBans);
+    void setTravelBans(URL travelBans);
+    /**
+     * Information about travel bans, e.g. in the context of a pandemic.
+     *
+     * @param travelBans WebContent value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    void setTravelBans(WebContent travelBans);
 
     /**
      * Information about disease prevention.
@@ -181,10 +273,19 @@ public interface SpecialAnnouncement extends CreativeWork {
     /**
      * Information about disease prevention.
      *
+     * @param diseasePreventionInfo URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      */
-    void setDiseasePreventionInfo(Object fDiseasePreventionInfo);
+    void setDiseasePreventionInfo(URL diseasePreventionInfo);
+    /**
+     * Information about disease prevention.
+     *
+     * @param diseasePreventionInfo WebContent value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    void setDiseasePreventionInfo(WebContent diseasePreventionInfo);
 
     /**
      * Information about public transport closures.
@@ -198,10 +299,19 @@ public interface SpecialAnnouncement extends CreativeWork {
     /**
      * Information about public transport closures.
      *
+     * @param publicTransportClosuresInfo URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      */
-    void setPublicTransportClosuresInfo(Object fPublicTransportClosuresInfo);
+    void setPublicTransportClosuresInfo(URL publicTransportClosuresInfo);
+    /**
+     * Information about public transport closures.
+     *
+     * @param publicTransportClosuresInfo WebContent value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    void setPublicTransportClosuresInfo(WebContent publicTransportClosuresInfo);
 
     /**
      * Information about school closures.
@@ -215,10 +325,19 @@ public interface SpecialAnnouncement extends CreativeWork {
     /**
      * Information about school closures.
      *
+     * @param schoolClosuresInfo WebContent value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      */
-    void setSchoolClosuresInfo(Object fSchoolClosuresInfo);
+    void setSchoolClosuresInfo(WebContent schoolClosuresInfo);
+    /**
+     * Information about school closures.
+     *
+     * @param schoolClosuresInfo URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    void setSchoolClosuresInfo(URL schoolClosuresInfo);
 
     /**
      * Publication date of an online listing.
@@ -232,10 +351,19 @@ public interface SpecialAnnouncement extends CreativeWork {
     /**
      * Publication date of an online listing.
      *
+     * @param datePosted Date value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
-    void setDatePosted(Object fDatePosted);
+    void setDatePosted(Date datePosted);
+    /**
+     * Publication date of an online listing.
+     *
+     * @param datePosted DateTime value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
+     */
+    void setDatePosted(DateTime datePosted);
 
     /**
      * Indicates a page with news updates and guidelines. This could often be (but is not required to be) the main page containing [[SpecialAnnouncement]] markup on a site.
@@ -249,10 +377,19 @@ public interface SpecialAnnouncement extends CreativeWork {
     /**
      * Indicates a page with news updates and guidelines. This could often be (but is not required to be) the main page containing [[SpecialAnnouncement]] markup on a site.
      *
+     * @param newsUpdatesAndGuidelines URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      */
-    void setNewsUpdatesAndGuidelines(Object fNewsUpdatesAndGuidelines);
+    void setNewsUpdatesAndGuidelines(URL newsUpdatesAndGuidelines);
+    /**
+     * Indicates a page with news updates and guidelines. This could often be (but is not required to be) the main page containing [[SpecialAnnouncement]] markup on a site.
+     *
+     * @param newsUpdatesAndGuidelines WebContent value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    void setNewsUpdatesAndGuidelines(WebContent newsUpdatesAndGuidelines);
 
     /**
      * Guidelines about quarantine rules, e.g. in the context of a pandemic.
@@ -266,10 +403,19 @@ public interface SpecialAnnouncement extends CreativeWork {
     /**
      * Guidelines about quarantine rules, e.g. in the context of a pandemic.
      *
+     * @param quarantineGuidelines URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      */
-    void setQuarantineGuidelines(Object fQuarantineGuidelines);
+    void setQuarantineGuidelines(URL quarantineGuidelines);
+    /**
+     * Guidelines about quarantine rules, e.g. in the context of a pandemic.
+     *
+     * @param quarantineGuidelines WebContent value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     */
+    void setQuarantineGuidelines(WebContent quarantineGuidelines);
 
     /**
      * The URL for a feed, e.g. associated with a podcast series, blog, or series of date-stamped updates. This is usually RSS or Atom.
@@ -283,8 +429,17 @@ public interface SpecialAnnouncement extends CreativeWork {
     /**
      * The URL for a feed, e.g. associated with a podcast series, blog, or series of date-stamped updates. This is usually RSS or Atom.
      *
+     * @param webFeed DataFeed value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/373">https://github.com/schemaorg/schemaorg/issues/373</a>
      */
-    void setWebFeed(Object fWebFeed);
+    void setWebFeed(DataFeed webFeed);
+    /**
+     * The URL for a feed, e.g. associated with a podcast series, blog, or series of date-stamped updates. This is usually RSS or Atom.
+     *
+     * @param webFeed URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/373">https://github.com/schemaorg/schemaorg/issues/373</a>
+     */
+    void setWebFeed(URL webFeed);
 }

@@ -27,9 +27,10 @@ public interface DDxElement extends MedicalIntangible {
     /**
      * One of a set of signs and symptoms that can be used to distinguish this diagnosis from others in the differential diagnosis.
      *
+     * @param distinguishingSign MedicalSignOrSymptom value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setDistinguishingSign(MedicalSignOrSymptom fDistinguishingSign);
+    void setDistinguishingSign(MedicalSignOrSymptom distinguishingSign);
 
     /**
      * One or more alternative conditions considered in the differential diagnosis process as output of a diagnosis process.
@@ -42,7 +43,8 @@ public interface DDxElement extends MedicalIntangible {
     /**
      * One or more alternative conditions considered in the differential diagnosis process as output of a diagnosis process.
      *
+     * @param diagnosis MedicalCondition value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setDiagnosis(MedicalCondition fDiagnosis);
+    void setDiagnosis(MedicalCondition diagnosis);
 }

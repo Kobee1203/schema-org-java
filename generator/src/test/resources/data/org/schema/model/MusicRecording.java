@@ -31,9 +31,10 @@ public interface MusicRecording extends CreativeWork {
     /**
      * The International Standard Recording Code for the recording.
      *
+     * @param isrcCode Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
-    void setIsrcCode(Text fIsrcCode);
+    void setIsrcCode(Text isrcCode);
 
     /**
      * The playlist to which this recording belongs.
@@ -45,8 +46,9 @@ public interface MusicRecording extends CreativeWork {
     /**
      * The playlist to which this recording belongs.
      *
+     * @param inPlaylist MusicPlaylist value to set.
      */
-    void setInPlaylist(MusicPlaylist fInPlaylist);
+    void setInPlaylist(MusicPlaylist inPlaylist);
 
     /**
      * The album to which this recording belongs.
@@ -58,8 +60,9 @@ public interface MusicRecording extends CreativeWork {
     /**
      * The album to which this recording belongs.
      *
+     * @param inAlbum MusicAlbum value to set.
      */
-    void setInAlbum(MusicAlbum fInAlbum);
+    void setInAlbum(MusicAlbum inAlbum);
 
     /**
      * The composition this track is a recording of.
@@ -72,9 +75,10 @@ public interface MusicRecording extends CreativeWork {
     /**
      * The composition this track is a recording of.
      *
+     * @param recordingOf MusicComposition value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
-    void setRecordingOf(MusicComposition fRecordingOf);
+    void setRecordingOf(MusicComposition recordingOf);
 
     /**
      * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
@@ -88,10 +92,11 @@ public interface MusicRecording extends CreativeWork {
     /**
      * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
      *
+     * @param duration Duration value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
      */
-    void setDuration(Duration fDuration);
+    void setDuration(Duration duration);
 
     /**
      * The artist that performed this album or recording.
@@ -103,6 +108,13 @@ public interface MusicRecording extends CreativeWork {
     /**
      * The artist that performed this album or recording.
      *
+     * @param byArtist Person value to set.
      */
-    void setByArtist(Object fByArtist);
+    void setByArtist(Person byArtist);
+    /**
+     * The artist that performed this album or recording.
+     *
+     * @param byArtist MusicGroup value to set.
+     */
+    void setByArtist(MusicGroup byArtist);
 }

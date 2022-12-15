@@ -27,8 +27,9 @@ public interface EmployeeRole extends OrganizationRole {
     /**
      * The currency (coded using [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217) ) used for the main salary information in this job posting or for this employee.
      *
+     * @param salaryCurrency Text value to set.
      */
-    void setSalaryCurrency(Text fSalaryCurrency);
+    void setSalaryCurrency(Text salaryCurrency);
 
     /**
      * The base salary of the job or of an employee in an EmployeeRole.
@@ -40,6 +41,19 @@ public interface EmployeeRole extends OrganizationRole {
     /**
      * The base salary of the job or of an employee in an EmployeeRole.
      *
+     * @param baseSalary Number value to set.
      */
-    void setBaseSalary(Object fBaseSalary);
+    void setBaseSalary(Number baseSalary);
+    /**
+     * The base salary of the job or of an employee in an EmployeeRole.
+     *
+     * @param baseSalary PriceSpecification value to set.
+     */
+    void setBaseSalary(PriceSpecification baseSalary);
+    /**
+     * The base salary of the job or of an employee in an EmployeeRole.
+     *
+     * @param baseSalary MonetaryAmount value to set.
+     */
+    void setBaseSalary(MonetaryAmount baseSalary);
 }

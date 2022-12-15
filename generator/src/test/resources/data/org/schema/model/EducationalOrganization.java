@@ -24,6 +24,7 @@ public interface EducationalOrganization extends CivicStructure, Organization {
     /**
      * Alumni of an organization.
      *
+     * @param alumni Person value to set.
      */
-    void setAlumni(Person fAlumni);
+    void setAlumni(Person alumni);
 }

@@ -31,8 +31,15 @@ public interface RadioSeries extends CreativeWorkSeries {
     /**
      * A season in a media series.
      *
+     * @param season URL value to set.
      */
-    void setSeason(Object fSeason);
+    void setSeason(URL season);
+    /**
+     * A season in a media series.
+     *
+     * @param season CreativeWorkSeason value to set.
+     */
+    void setSeason(CreativeWorkSeason season);
 
     /**
      * A season that is part of the media series.
@@ -44,8 +51,9 @@ public interface RadioSeries extends CreativeWorkSeries {
     /**
      * A season that is part of the media series.
      *
+     * @param containsSeason CreativeWorkSeason value to set.
      */
-    void setContainsSeason(CreativeWorkSeason fContainsSeason);
+    void setContainsSeason(CreativeWorkSeason containsSeason);
 
     /**
      * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
@@ -57,8 +65,9 @@ public interface RadioSeries extends CreativeWorkSeries {
     /**
      * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
      *
+     * @param director Person value to set.
      */
-    void setDirector(Person fDirector);
+    void setDirector(Person director);
 
     /**
      * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
@@ -70,8 +79,9 @@ public interface RadioSeries extends CreativeWorkSeries {
     /**
      * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
      *
+     * @param actor Person value to set.
      */
-    void setActor(Person fActor);
+    void setActor(Person actor);
 
     /**
      * The trailer of a movie or tv/radio series, season, episode, etc.
@@ -83,8 +93,9 @@ public interface RadioSeries extends CreativeWorkSeries {
     /**
      * The trailer of a movie or tv/radio series, season, episode, etc.
      *
+     * @param trailer VideoObject value to set.
      */
-    void setTrailer(VideoObject fTrailer);
+    void setTrailer(VideoObject trailer);
 
     /**
      * An episode of a TV/radio series or season.
@@ -96,8 +107,9 @@ public interface RadioSeries extends CreativeWorkSeries {
     /**
      * An episode of a TV/radio series or season.
      *
+     * @param episodes Episode value to set.
      */
-    void setEpisodes(Episode fEpisodes);
+    void setEpisodes(Episode episodes);
 
     /**
      * The number of episodes in this season or series.
@@ -109,8 +121,9 @@ public interface RadioSeries extends CreativeWorkSeries {
     /**
      * The number of episodes in this season or series.
      *
+     * @param numberOfEpisodes Integer value to set.
      */
-    void setNumberOfEpisodes(Integer fNumberOfEpisodes);
+    void setNumberOfEpisodes(Integer numberOfEpisodes);
 
     /**
      * A season in a media series.
@@ -122,8 +135,9 @@ public interface RadioSeries extends CreativeWorkSeries {
     /**
      * A season in a media series.
      *
+     * @param seasons CreativeWorkSeason value to set.
      */
-    void setSeasons(CreativeWorkSeason fSeasons);
+    void setSeasons(CreativeWorkSeason seasons);
 
     /**
      * The production company or studio responsible for the item e.g. series, video game, episode etc.
@@ -135,8 +149,9 @@ public interface RadioSeries extends CreativeWorkSeries {
     /**
      * The production company or studio responsible for the item e.g. series, video game, episode etc.
      *
+     * @param productionCompany Organization value to set.
      */
-    void setProductionCompany(Organization fProductionCompany);
+    void setProductionCompany(Organization productionCompany);
 
     /**
      * An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
@@ -148,8 +163,9 @@ public interface RadioSeries extends CreativeWorkSeries {
     /**
      * An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
      *
+     * @param actors Person value to set.
      */
-    void setActors(Person fActors);
+    void setActors(Person actors);
 
     /**
      * The number of seasons in this series.
@@ -161,8 +177,9 @@ public interface RadioSeries extends CreativeWorkSeries {
     /**
      * The number of seasons in this series.
      *
+     * @param numberOfSeasons Integer value to set.
      */
-    void setNumberOfSeasons(Integer fNumberOfSeasons);
+    void setNumberOfSeasons(Integer numberOfSeasons);
 
     /**
      * The composer of the soundtrack.
@@ -174,8 +191,15 @@ public interface RadioSeries extends CreativeWorkSeries {
     /**
      * The composer of the soundtrack.
      *
+     * @param musicBy Person value to set.
      */
-    void setMusicBy(Object fMusicBy);
+    void setMusicBy(Person musicBy);
+    /**
+     * The composer of the soundtrack.
+     *
+     * @param musicBy MusicGroup value to set.
+     */
+    void setMusicBy(MusicGroup musicBy);
 
     /**
      * An episode of a tv, radio or game media within a series or season.
@@ -187,8 +211,9 @@ public interface RadioSeries extends CreativeWorkSeries {
     /**
      * An episode of a tv, radio or game media within a series or season.
      *
+     * @param episode Episode value to set.
      */
-    void setEpisode(Episode fEpisode);
+    void setEpisode(Episode episode);
 
     /**
      * A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
@@ -200,6 +225,7 @@ public interface RadioSeries extends CreativeWorkSeries {
     /**
      * A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
      *
+     * @param directors Person value to set.
      */
-    void setDirectors(Person fDirectors);
+    void setDirectors(Person directors);
 }

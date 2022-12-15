@@ -27,6 +27,25 @@ public interface DonateAction extends TradeAction {
     /**
      * A sub property of participant. The participant who is at the receiving end of the action.
      *
+     * @param recipient Person value to set.
      */
-    void setRecipient(Object fRecipient);
+    void setRecipient(Person recipient);
+    /**
+     * A sub property of participant. The participant who is at the receiving end of the action.
+     *
+     * @param recipient Audience value to set.
+     */
+    void setRecipient(Audience recipient);
+    /**
+     * A sub property of participant. The participant who is at the receiving end of the action.
+     *
+     * @param recipient ContactPoint value to set.
+     */
+    void setRecipient(ContactPoint recipient);
+    /**
+     * A sub property of participant. The participant who is at the receiving end of the action.
+     *
+     * @param recipient Organization value to set.
+     */
+    void setRecipient(Organization recipient);
 }

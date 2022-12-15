@@ -38,11 +38,12 @@ public interface Legislation extends CreativeWork {
     /**
      * Indicates that this legislation (or part of legislation) fulfills the objectives set by another legislation, by passing appropriate implementation measures. Typically, some legislations of European Union's member states or regions transpose European Directives. This indicates a legally binding link between the 2 legislations.
      *
+     * @param legislationTransposes Legislation value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="http://publications.europa.eu/mdr/eli/index.html">http://publications.europa.eu/mdr/eli/index.html</a>
      */
-    void setLegislationTransposes(Legislation fLegislationTransposes);
+    void setLegislationTransposes(Legislation legislationTransposes);
 
     /**
      * Whether the legislation is currently in force, not in force, or partially in force.
@@ -57,11 +58,12 @@ public interface Legislation extends CreativeWork {
     /**
      * Whether the legislation is currently in force, not in force, or partially in force.
      *
+     * @param legislationLegalForce LegalForceStatus value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="http://publications.europa.eu/mdr/eli/index.html">http://publications.europa.eu/mdr/eli/index.html</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      */
-    void setLegislationLegalForce(LegalForceStatus fLegislationLegalForce);
+    void setLegislationLegalForce(LegalForceStatus legislationLegalForce);
 
     /**
      * The type of the legislation. Examples of values are "law", "act", "directive", "decree", "regulation", "statutory instrument", "loi organique", "règlement grand-ducal", etc., depending on the country.
@@ -76,11 +78,21 @@ public interface Legislation extends CreativeWork {
     /**
      * The type of the legislation. Examples of values are "law", "act", "directive", "decree", "regulation", "statutory instrument", "loi organique", "règlement grand-ducal", etc., depending on the country.
      *
+     * @param legislationType CategoryCode value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="http://publications.europa.eu/mdr/eli/index.html">http://publications.europa.eu/mdr/eli/index.html</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      */
-    void setLegislationType(Object fLegislationType);
+    void setLegislationType(CategoryCode legislationType);
+    /**
+     * The type of the legislation. Examples of values are "law", "act", "directive", "decree", "regulation", "statutory instrument", "loi organique", "règlement grand-ducal", etc., depending on the country.
+     *
+     * @param legislationType Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="http://publications.europa.eu/mdr/eli/index.html">http://publications.europa.eu/mdr/eli/index.html</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     */
+    void setLegislationType(Text legislationType);
 
     /**
      * Indicates a legal jurisdiction, e.g. of some legislation, or where some government service is based.
@@ -94,10 +106,19 @@ public interface Legislation extends CreativeWork {
     /**
      * Indicates a legal jurisdiction, e.g. of some legislation, or where some government service is based.
      *
+     * @param jurisdiction Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2534">https://github.com/schemaorg/schemaorg/issues/2534</a>
      */
-    void setJurisdiction(Object fJurisdiction);
+    void setJurisdiction(Text jurisdiction);
+    /**
+     * Indicates a legal jurisdiction, e.g. of some legislation, or where some government service is based.
+     *
+     * @param jurisdiction AdministrativeArea value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2534">https://github.com/schemaorg/schemaorg/issues/2534</a>
+     */
+    void setJurisdiction(AdministrativeArea jurisdiction);
 
     /**
      * An identifier for the legislation. This can be either a string-based identifier, like the CELEX at EU level or the NOR in France, or a web-based, URL/URI identifier, like an ELI (European Legislation Identifier) or an URN-Lex.
@@ -112,11 +133,21 @@ public interface Legislation extends CreativeWork {
     /**
      * An identifier for the legislation. This can be either a string-based identifier, like the CELEX at EU level or the NOR in France, or a web-based, URL/URI identifier, like an ELI (European Legislation Identifier) or an URN-Lex.
      *
+     * @param legislationIdentifier Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="http://publications.europa.eu/mdr/eli/index.html">http://publications.europa.eu/mdr/eli/index.html</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      */
-    void setLegislationIdentifier(Object fLegislationIdentifier);
+    void setLegislationIdentifier(Text legislationIdentifier);
+    /**
+     * An identifier for the legislation. This can be either a string-based identifier, like the CELEX at EU level or the NOR in France, or a web-based, URL/URI identifier, like an ELI (European Legislation Identifier) or an URN-Lex.
+     *
+     * @param legislationIdentifier URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="http://publications.europa.eu/mdr/eli/index.html">http://publications.europa.eu/mdr/eli/index.html</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     */
+    void setLegislationIdentifier(URL legislationIdentifier);
 
     /**
      * Another legislation that this legislation changes. This encompasses the notions of amendment, replacement, correction, repeal, or other types of change. This may be a direct change (textual or non-textual amendment) or a consequential or indirect change. The property is to be used to express the existence of a change relationship between two acts rather than the existence of a consolidated version of the text that shows the result of the change. For consolidation relationships, use the <a href="/legislationConsolidates">legislationConsolidates</a> property.
@@ -131,11 +162,12 @@ public interface Legislation extends CreativeWork {
     /**
      * Another legislation that this legislation changes. This encompasses the notions of amendment, replacement, correction, repeal, or other types of change. This may be a direct change (textual or non-textual amendment) or a consequential or indirect change. The property is to be used to express the existence of a change relationship between two acts rather than the existence of a consolidated version of the text that shows the result of the change. For consolidation relationships, use the <a href="/legislationConsolidates">legislationConsolidates</a> property.
      *
+     * @param legislationChanges Legislation value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="http://publications.europa.eu/mdr/eli/index.html">http://publications.europa.eu/mdr/eli/index.html</a>
      */
-    void setLegislationChanges(Legislation fLegislationChanges);
+    void setLegislationChanges(Legislation legislationChanges);
 
     /**
      * An individual or organization that has some kind of responsibility for the legislation. Typically the ministry who is/was in charge of elaborating the legislation, or the adressee for potential questions about the legislation once it is published.
@@ -150,11 +182,21 @@ public interface Legislation extends CreativeWork {
     /**
      * An individual or organization that has some kind of responsibility for the legislation. Typically the ministry who is/was in charge of elaborating the legislation, or the adressee for potential questions about the legislation once it is published.
      *
+     * @param legislationResponsible Organization value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      * @see <a href="http://publications.europa.eu/mdr/eli/index.html">http://publications.europa.eu/mdr/eli/index.html</a>
      */
-    void setLegislationResponsible(Object fLegislationResponsible);
+    void setLegislationResponsible(Organization legislationResponsible);
+    /**
+     * An individual or organization that has some kind of responsibility for the legislation. Typically the ministry who is/was in charge of elaborating the legislation, or the adressee for potential questions about the legislation once it is published.
+     *
+     * @param legislationResponsible Person value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     * @see <a href="http://publications.europa.eu/mdr/eli/index.html">http://publications.europa.eu/mdr/eli/index.html</a>
+     */
+    void setLegislationResponsible(Person legislationResponsible);
 
     /**
      * The jurisdiction from which the legislation originates.
@@ -169,11 +211,21 @@ public interface Legislation extends CreativeWork {
     /**
      * The jurisdiction from which the legislation originates.
      *
+     * @param legislationJurisdiction AdministrativeArea value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="http://publications.europa.eu/mdr/eli/index.html">http://publications.europa.eu/mdr/eli/index.html</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      */
-    void setLegislationJurisdiction(Object fLegislationJurisdiction);
+    void setLegislationJurisdiction(AdministrativeArea legislationJurisdiction);
+    /**
+     * The jurisdiction from which the legislation originates.
+     *
+     * @param legislationJurisdiction Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="http://publications.europa.eu/mdr/eli/index.html">http://publications.europa.eu/mdr/eli/index.html</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     */
+    void setLegislationJurisdiction(Text legislationJurisdiction);
 
     /**
      * The date of adoption or signature of the legislation. This is the date at which the text is officially aknowledged to be a legislation, even though it might not even be published or in force.
@@ -188,11 +240,12 @@ public interface Legislation extends CreativeWork {
     /**
      * The date of adoption or signature of the legislation. This is the date at which the text is officially aknowledged to be a legislation, even though it might not even be published or in force.
      *
+     * @param legislationDate Date value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="http://publications.europa.eu/mdr/eli/index.html">http://publications.europa.eu/mdr/eli/index.html</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      */
-    void setLegislationDate(Date fLegislationDate);
+    void setLegislationDate(Date legislationDate);
 
     /**
      * The person or organization that originally passed or made the law : typically parliament (for primary legislation) or government (for secondary legislation). This indicates the "legal author" of the law, as opposed to its physical author.
@@ -207,11 +260,21 @@ public interface Legislation extends CreativeWork {
     /**
      * The person or organization that originally passed or made the law : typically parliament (for primary legislation) or government (for secondary legislation). This indicates the "legal author" of the law, as opposed to its physical author.
      *
+     * @param legislationPassedBy Person value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="http://publications.europa.eu/mdr/eli/index.html">http://publications.europa.eu/mdr/eli/index.html</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      */
-    void setLegislationPassedBy(Object fLegislationPassedBy);
+    void setLegislationPassedBy(Person legislationPassedBy);
+    /**
+     * The person or organization that originally passed or made the law : typically parliament (for primary legislation) or government (for secondary legislation). This indicates the "legal author" of the law, as opposed to its physical author.
+     *
+     * @param legislationPassedBy Organization value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="http://publications.europa.eu/mdr/eli/index.html">http://publications.europa.eu/mdr/eli/index.html</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
+     */
+    void setLegislationPassedBy(Organization legislationPassedBy);
 
     /**
      * Indicates another legislation taken into account in this consolidated legislation (which is usually the product of an editorial process that revises the legislation). This property should be used multiple times to refer to both the original version or the previous consolidated version, and to the legislations making the change.
@@ -226,11 +289,12 @@ public interface Legislation extends CreativeWork {
     /**
      * Indicates another legislation taken into account in this consolidated legislation (which is usually the product of an editorial process that revises the legislation). This property should be used multiple times to refer to both the original version or the previous consolidated version, and to the legislations making the change.
      *
+     * @param legislationConsolidates Legislation value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="http://publications.europa.eu/mdr/eli/index.html">http://publications.europa.eu/mdr/eli/index.html</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      */
-    void setLegislationConsolidates(Legislation fLegislationConsolidates);
+    void setLegislationConsolidates(Legislation legislationConsolidates);
 
     /**
      * Indicates that this legislation (or part of a legislation) somehow transfers another legislation in a different legislative context. This is an informative link, and it has no legal value. For legally-binding links of transposition, use the <a href="/legislationTransposes">legislationTransposes</a> property. For example an informative consolidated law of a European Union's member state "applies" the consolidated version of the European Directive implemented in it.
@@ -245,11 +309,12 @@ public interface Legislation extends CreativeWork {
     /**
      * Indicates that this legislation (or part of a legislation) somehow transfers another legislation in a different legislative context. This is an informative link, and it has no legal value. For legally-binding links of transposition, use the <a href="/legislationTransposes">legislationTransposes</a> property. For example an informative consolidated law of a European Union's member state "applies" the consolidated version of the European Directive implemented in it.
      *
+     * @param legislationApplies Legislation value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="http://publications.europa.eu/mdr/eli/index.html">http://publications.europa.eu/mdr/eli/index.html</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      */
-    void setLegislationApplies(Legislation fLegislationApplies);
+    void setLegislationApplies(Legislation legislationApplies);
 
     /**
      * The point-in-time at which the provided description of the legislation is valid (e.g. : when looking at the law on the 2016-04-07 (= dateVersion), I get the consolidation of 2015-04-12 of the "National Insurance Contributions Act 2015")
@@ -264,9 +329,10 @@ public interface Legislation extends CreativeWork {
     /**
      * The point-in-time at which the provided description of the legislation is valid (e.g. : when looking at the law on the 2016-04-07 (= dateVersion), I get the consolidation of 2015-04-12 of the "National Insurance Contributions Act 2015")
      *
+     * @param legislationDateVersion Date value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="http://publications.europa.eu/mdr/eli/index.html">http://publications.europa.eu/mdr/eli/index.html</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1156">https://github.com/schemaorg/schemaorg/issues/1156</a>
      */
-    void setLegislationDateVersion(Date fLegislationDateVersion);
+    void setLegislationDateVersion(Date legislationDateVersion);
 }

@@ -30,9 +30,24 @@ public interface Taxon extends Thing {
     /**
      * Closest parent taxon of the taxon in question.
      *
+     * @param parentTaxon URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    void setParentTaxon(Object fParentTaxon);
+    void setParentTaxon(URL parentTaxon);
+    /**
+     * Closest parent taxon of the taxon in question.
+     *
+     * @param parentTaxon Taxon value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    void setParentTaxon(Taxon parentTaxon);
+    /**
+     * Closest parent taxon of the taxon in question.
+     *
+     * @param parentTaxon Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    void setParentTaxon(Text parentTaxon);
 
     /**
      * The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary – (typically the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs).
@@ -45,9 +60,24 @@ public interface Taxon extends Thing {
     /**
      * The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary – (typically the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs).
      *
+     * @param taxonRank PropertyValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    void setTaxonRank(Object fTaxonRank);
+    void setTaxonRank(PropertyValue taxonRank);
+    /**
+     * The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary – (typically the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs).
+     *
+     * @param taxonRank URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    void setTaxonRank(URL taxonRank);
+    /**
+     * The taxonomic rank of this taxon given preferably as a URI from a controlled vocabulary – (typically the ranks from TDWG TaxonRank ontology or equivalent Wikidata URIs).
+     *
+     * @param taxonRank Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    void setTaxonRank(Text taxonRank);
 
     /**
      * Closest child taxa of the taxon in question.
@@ -60,9 +90,24 @@ public interface Taxon extends Thing {
     /**
      * Closest child taxa of the taxon in question.
      *
+     * @param childTaxon Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    void setChildTaxon(Object fChildTaxon);
+    void setChildTaxon(Text childTaxon);
+    /**
+     * Closest child taxa of the taxon in question.
+     *
+     * @param childTaxon Taxon value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    void setChildTaxon(Taxon childTaxon);
+    /**
+     * Closest child taxa of the taxon in question.
+     *
+     * @param childTaxon URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
+    void setChildTaxon(URL childTaxon);
 
     /**
      * A Defined Term contained in this term set.
@@ -76,8 +121,9 @@ public interface Taxon extends Thing {
     /**
      * A Defined Term contained in this term set.
      *
+     * @param hasDefinedTerm DefinedTerm value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
      */
-    void setHasDefinedTerm(DefinedTerm fHasDefinedTerm);
+    void setHasDefinedTerm(DefinedTerm hasDefinedTerm);
 }

@@ -26,7 +26,8 @@ public interface DiagnosticLab extends MedicalOrganization {
     /**
      * A diagnostic test or procedure offered by this lab.
      *
+     * @param availableTest MedicalTest value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setAvailableTest(MedicalTest fAvailableTest);
+    void setAvailableTest(MedicalTest availableTest);
 }

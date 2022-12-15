@@ -24,6 +24,7 @@ public interface InsertAction extends AddAction {
     /**
      * A sub property of location. The final location of the object or the agent after the action.
      *
+     * @param toLocation Place value to set.
      */
-    void setToLocation(Place fToLocation);
+    void setToLocation(Place toLocation);
 }

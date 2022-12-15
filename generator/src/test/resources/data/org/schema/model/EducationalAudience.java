@@ -25,6 +25,7 @@ public interface EducationalAudience extends Audience {
     /**
      * An educationalRole of an EducationalAudience.
      *
+     * @param educationalRole Text value to set.
      */
-    void setEducationalRole(Text fEducationalRole);
+    void setEducationalRole(Text educationalRole);
 }

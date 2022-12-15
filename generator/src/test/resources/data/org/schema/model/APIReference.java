@@ -24,8 +24,9 @@ public interface APIReference extends TechArticle {
     /**
      * Library file name e.g., mscorlib.dll, system.web.dll.
      *
+     * @param assembly Text value to set.
      */
-    void setAssembly(Text fAssembly);
+    void setAssembly(Text assembly);
 
     /**
      * Type of app development: phone, Metro style, desktop, XBox, etc.
@@ -37,8 +38,9 @@ public interface APIReference extends TechArticle {
     /**
      * Type of app development: phone, Metro style, desktop, XBox, etc.
      *
+     * @param targetPlatform Text value to set.
      */
-    void setTargetPlatform(Text fTargetPlatform);
+    void setTargetPlatform(Text targetPlatform);
 
     /**
      * Library file name e.g., mscorlib.dll, system.web.dll.
@@ -50,8 +52,9 @@ public interface APIReference extends TechArticle {
     /**
      * Library file name e.g., mscorlib.dll, system.web.dll.
      *
+     * @param executableLibraryName Text value to set.
      */
-    void setExecutableLibraryName(Text fExecutableLibraryName);
+    void setExecutableLibraryName(Text executableLibraryName);
 
     /**
      * Indicates whether API is managed or unmanaged.
@@ -63,8 +66,9 @@ public interface APIReference extends TechArticle {
     /**
      * Indicates whether API is managed or unmanaged.
      *
+     * @param programmingModel Text value to set.
      */
-    void setProgrammingModel(Text fProgrammingModel);
+    void setProgrammingModel(Text programmingModel);
 
     /**
      * Associated product/technology version. e.g., .NET Framework 4.5.
@@ -76,6 +80,7 @@ public interface APIReference extends TechArticle {
     /**
      * Associated product/technology version. e.g., .NET Framework 4.5.
      *
+     * @param assemblyVersion Text value to set.
      */
-    void setAssemblyVersion(Text fAssemblyVersion);
+    void setAssemblyVersion(Text assemblyVersion);
 }

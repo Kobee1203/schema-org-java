@@ -30,9 +30,17 @@ public interface MenuItem extends Intangible {
     /**
      * Additional menu item(s) such as a side dish of salad or side order of fries that can be added to this menu item. Additionally it can be a menu section containing allowed add-on menu items for this menu item.
      *
+     * @param menuAddOn MenuItem value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1541">https://github.com/schemaorg/schemaorg/issues/1541</a>
      */
-    void setMenuAddOn(Object fMenuAddOn);
+    void setMenuAddOn(MenuItem menuAddOn);
+    /**
+     * Additional menu item(s) such as a side dish of salad or side order of fries that can be added to this menu item. Additionally it can be a menu section containing allowed add-on menu items for this menu item.
+     *
+     * @param menuAddOn MenuSection value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1541">https://github.com/schemaorg/schemaorg/issues/1541</a>
+     */
+    void setMenuAddOn(MenuSection menuAddOn);
 
     /**
      * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
@@ -47,9 +55,18 @@ public interface MenuItem extends Intangible {
      * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      *
+     * @param offers Offer value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
-    void setOffers(Object fOffers);
+    void setOffers(Offer offers);
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     *
+     * @param offers Demand value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    void setOffers(Demand offers);
 
     /**
      * Indicates a dietary restriction or guideline for which this recipe or menu item is suitable, e.g. diabetic, halal etc.
@@ -61,8 +78,9 @@ public interface MenuItem extends Intangible {
     /**
      * Indicates a dietary restriction or guideline for which this recipe or menu item is suitable, e.g. diabetic, halal etc.
      *
+     * @param suitableForDiet RestrictedDiet value to set.
      */
-    void setSuitableForDiet(RestrictedDiet fSuitableForDiet);
+    void setSuitableForDiet(RestrictedDiet suitableForDiet);
 
     /**
      * Nutrition information about the recipe or menu item.
@@ -74,6 +92,7 @@ public interface MenuItem extends Intangible {
     /**
      * Nutrition information about the recipe or menu item.
      *
+     * @param nutrition NutritionInformation value to set.
      */
-    void setNutrition(NutritionInformation fNutrition);
+    void setNutrition(NutritionInformation nutrition);
 }

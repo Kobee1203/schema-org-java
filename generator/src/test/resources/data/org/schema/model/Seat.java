@@ -25,8 +25,15 @@ public interface Seat extends Intangible {
     /**
      * The type/class of the seat.
      *
+     * @param seatingType QualitativeValue value to set.
      */
-    void setSeatingType(Object fSeatingType);
+    void setSeatingType(QualitativeValue seatingType);
+    /**
+     * The type/class of the seat.
+     *
+     * @param seatingType Text value to set.
+     */
+    void setSeatingType(Text seatingType);
 
     /**
      * The section location of the reserved seat (e.g. Orchestra).
@@ -38,8 +45,9 @@ public interface Seat extends Intangible {
     /**
      * The section location of the reserved seat (e.g. Orchestra).
      *
+     * @param seatSection Text value to set.
      */
-    void setSeatSection(Text fSeatSection);
+    void setSeatSection(Text seatSection);
 
     /**
      * The row location of the reserved seat (e.g., B).
@@ -51,8 +59,9 @@ public interface Seat extends Intangible {
     /**
      * The row location of the reserved seat (e.g., B).
      *
+     * @param seatRow Text value to set.
      */
-    void setSeatRow(Text fSeatRow);
+    void setSeatRow(Text seatRow);
 
     /**
      * The location of the reserved seat (e.g., 27).
@@ -64,6 +73,7 @@ public interface Seat extends Intangible {
     /**
      * The location of the reserved seat (e.g., 27).
      *
+     * @param seatNumber Text value to set.
      */
-    void setSeatNumber(Text fSeatNumber);
+    void setSeatNumber(Text seatNumber);
 }

@@ -25,8 +25,9 @@ public interface LiveBlogPosting extends BlogPosting {
     /**
      * The time when the live blog will stop covering the Event. Note that coverage may continue after the Event concludes.
      *
+     * @param coverageEndTime DateTime value to set.
      */
-    void setCoverageEndTime(DateTime fCoverageEndTime);
+    void setCoverageEndTime(DateTime coverageEndTime);
 
     /**
      * The time when the live blog will begin covering the Event. Note that coverage may begin before the Event's start time. The LiveBlogPosting may also be created before coverage begins.
@@ -38,8 +39,9 @@ public interface LiveBlogPosting extends BlogPosting {
     /**
      * The time when the live blog will begin covering the Event. Note that coverage may begin before the Event's start time. The LiveBlogPosting may also be created before coverage begins.
      *
+     * @param coverageStartTime DateTime value to set.
      */
-    void setCoverageStartTime(DateTime fCoverageStartTime);
+    void setCoverageStartTime(DateTime coverageStartTime);
 
     /**
      * An update to the LiveBlog.
@@ -51,6 +53,7 @@ public interface LiveBlogPosting extends BlogPosting {
     /**
      * An update to the LiveBlog.
      *
+     * @param liveBlogUpdate BlogPosting value to set.
      */
-    void setLiveBlogUpdate(BlogPosting fLiveBlogUpdate);
+    void setLiveBlogUpdate(BlogPosting liveBlogUpdate);
 }

@@ -32,9 +32,10 @@ public interface DietarySupplement extends Substance {
     /**
      * Characteristics of the population for which this is intended, or which typically uses it, e.g. 'adults'.
      *
+     * @param targetPopulation Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setTargetPopulation(Text fTargetPopulation);
+    void setTargetPopulation(Text targetPopulation);
 
     /**
      * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
@@ -47,9 +48,10 @@ public interface DietarySupplement extends Substance {
     /**
      * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
      *
+     * @param recommendedIntake RecommendedDoseSchedule value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setRecommendedIntake(RecommendedDoseSchedule fRecommendedIntake);
+    void setRecommendedIntake(RecommendedDoseSchedule recommendedIntake);
 
     /**
      * The drug or supplement's legal status, including any controlled substance schedules that apply.
@@ -62,9 +64,24 @@ public interface DietarySupplement extends Substance {
     /**
      * The drug or supplement's legal status, including any controlled substance schedules that apply.
      *
+     * @param legalStatus DrugLegalStatus value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setLegalStatus(Object fLegalStatus);
+    void setLegalStatus(DrugLegalStatus legalStatus);
+    /**
+     * The drug or supplement's legal status, including any controlled substance schedules that apply.
+     *
+     * @param legalStatus Text value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setLegalStatus(Text legalStatus);
+    /**
+     * The drug or supplement's legal status, including any controlled substance schedules that apply.
+     *
+     * @param legalStatus MedicalEnumeration value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setLegalStatus(MedicalEnumeration legalStatus);
 
     /**
      * The specific biochemical interaction through which this drug or supplement produces its pharmacological effect.
@@ -77,9 +94,10 @@ public interface DietarySupplement extends Substance {
     /**
      * The specific biochemical interaction through which this drug or supplement produces its pharmacological effect.
      *
+     * @param mechanismOfAction Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setMechanismOfAction(Text fMechanismOfAction);
+    void setMechanismOfAction(Text mechanismOfAction);
 
     /**
      * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
@@ -92,9 +110,10 @@ public interface DietarySupplement extends Substance {
     /**
      * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
      *
+     * @param maximumIntake MaximumDoseSchedule value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setMaximumIntake(MaximumDoseSchedule fMaximumIntake);
+    void setMaximumIntake(MaximumDoseSchedule maximumIntake);
 
     /**
      * An active ingredient, typically chemical compounds and/or biologic substances.
@@ -107,9 +126,10 @@ public interface DietarySupplement extends Substance {
     /**
      * An active ingredient, typically chemical compounds and/or biologic substances.
      *
+     * @param activeIngredient Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setActiveIngredient(Text fActiveIngredient);
+    void setActiveIngredient(Text activeIngredient);
 
     /**
      * Proprietary name given to the diet plan, typically by its originator or creator.
@@ -122,9 +142,10 @@ public interface DietarySupplement extends Substance {
     /**
      * Proprietary name given to the diet plan, typically by its originator or creator.
      *
+     * @param proprietaryName Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setProprietaryName(Text fProprietaryName);
+    void setProprietaryName(Text proprietaryName);
 
     /**
      * The generic name of this drug or supplement.
@@ -137,9 +158,10 @@ public interface DietarySupplement extends Substance {
     /**
      * The generic name of this drug or supplement.
      *
+     * @param nonProprietaryName Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setNonProprietaryName(Text fNonProprietaryName);
+    void setNonProprietaryName(Text nonProprietaryName);
 
     /**
      * The manufacturer of the product.
@@ -151,8 +173,9 @@ public interface DietarySupplement extends Substance {
     /**
      * The manufacturer of the product.
      *
+     * @param manufacturer Organization value to set.
      */
-    void setManufacturer(Organization fManufacturer);
+    void setManufacturer(Organization manufacturer);
 
     /**
      * True if this item's name is a proprietary/brand name (vs. generic name).
@@ -165,9 +188,10 @@ public interface DietarySupplement extends Substance {
     /**
      * True if this item's name is a proprietary/brand name (vs. generic name).
      *
+     * @param isProprietary Boolean value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setIsProprietary(Boolean fIsProprietary);
+    void setIsProprietary(Boolean isProprietary);
 
     /**
      * Any potential safety concern associated with the supplement. May include interactions with other drugs and foods, pregnancy, breastfeeding, known adverse reactions, and documented efficacy of the supplement.
@@ -180,7 +204,8 @@ public interface DietarySupplement extends Substance {
     /**
      * Any potential safety concern associated with the supplement. May include interactions with other drugs and foods, pregnancy, breastfeeding, known adverse reactions, and documented efficacy of the supplement.
      *
+     * @param safetyConsideration Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setSafetyConsideration(Text fSafetyConsideration);
+    void setSafetyConsideration(Text safetyConsideration);
 }

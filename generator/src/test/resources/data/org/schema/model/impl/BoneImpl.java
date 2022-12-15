@@ -36,10 +36,10 @@ import org.schema.model.Bone;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/Bone">https://schema.org/Bone</a>
  */
-@JsonLdTypeName("schema:Bone")
+@JsonLdTypeName("Bone")
 public class BoneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Bone {
 
-    private Text fBodyLocation;
+    private Text bodyLocation;
 
     /**
      * Location in the body of the anatomical structure.
@@ -49,20 +49,21 @@ public class BoneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Text getBodyLocation() {
-        return fBodyLocation;
+        return bodyLocation;
     }
 
     /**
      * Location in the body of the anatomical structure.
      *
+     * @param bodyLocation Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setBodyLocation(Text fBodyLocation) {
-        this.fBodyLocation = fBodyLocation;
+    public void setBodyLocation(Text bodyLocation) {
+        this.bodyLocation = bodyLocation;
     }
 
-    private AnatomicalStructure fConnectedTo;
+    private AnatomicalStructure connectedTo;
 
     /**
      * Other anatomical structures to which this structure is connected.
@@ -72,20 +73,21 @@ public class BoneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public AnatomicalStructure getConnectedTo() {
-        return fConnectedTo;
+        return connectedTo;
     }
 
     /**
      * Other anatomical structures to which this structure is connected.
      *
+     * @param connectedTo AnatomicalStructure value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setConnectedTo(AnatomicalStructure fConnectedTo) {
-        this.fConnectedTo = fConnectedTo;
+    public void setConnectedTo(AnatomicalStructure connectedTo) {
+        this.connectedTo = connectedTo;
     }
 
-    private AnatomicalSystem fPartOfSystem;
+    private AnatomicalSystem partOfSystem;
 
     /**
      * The anatomical or organ system that this structure is part of.
@@ -95,20 +97,21 @@ public class BoneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public AnatomicalSystem getPartOfSystem() {
-        return fPartOfSystem;
+        return partOfSystem;
     }
 
     /**
      * The anatomical or organ system that this structure is part of.
      *
+     * @param partOfSystem AnatomicalSystem value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setPartOfSystem(AnatomicalSystem fPartOfSystem) {
-        this.fPartOfSystem = fPartOfSystem;
+    public void setPartOfSystem(AnatomicalSystem partOfSystem) {
+        this.partOfSystem = partOfSystem;
     }
 
-    private MedicalTherapy fRelatedTherapy;
+    private MedicalTherapy relatedTherapy;
 
     /**
      * A medical therapy related to this anatomy.
@@ -118,20 +121,21 @@ public class BoneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public MedicalTherapy getRelatedTherapy() {
-        return fRelatedTherapy;
+        return relatedTherapy;
     }
 
     /**
      * A medical therapy related to this anatomy.
      *
+     * @param relatedTherapy MedicalTherapy value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setRelatedTherapy(MedicalTherapy fRelatedTherapy) {
-        this.fRelatedTherapy = fRelatedTherapy;
+    public void setRelatedTherapy(MedicalTherapy relatedTherapy) {
+        this.relatedTherapy = relatedTherapy;
     }
 
-    private ImageObject fDiagram;
+    private ImageObject diagram;
 
     /**
      * An image containing a diagram that illustrates the structure and/or its component substructures and/or connections with other structures.
@@ -141,20 +145,21 @@ public class BoneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public ImageObject getDiagram() {
-        return fDiagram;
+        return diagram;
     }
 
     /**
      * An image containing a diagram that illustrates the structure and/or its component substructures and/or connections with other structures.
      *
+     * @param diagram ImageObject value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setDiagram(ImageObject fDiagram) {
-        this.fDiagram = fDiagram;
+    public void setDiagram(ImageObject diagram) {
+        this.diagram = diagram;
     }
 
-    private MedicalCondition fRelatedCondition;
+    private MedicalCondition relatedCondition;
 
     /**
      * A medical condition associated with this anatomy.
@@ -164,20 +169,21 @@ public class BoneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public MedicalCondition getRelatedCondition() {
-        return fRelatedCondition;
+        return relatedCondition;
     }
 
     /**
      * A medical condition associated with this anatomy.
      *
+     * @param relatedCondition MedicalCondition value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setRelatedCondition(MedicalCondition fRelatedCondition) {
-        this.fRelatedCondition = fRelatedCondition;
+    public void setRelatedCondition(MedicalCondition relatedCondition) {
+        this.relatedCondition = relatedCondition;
     }
 
-    private AnatomicalStructure fSubStructure;
+    private AnatomicalStructure subStructure;
 
     /**
      * Component (sub-)structure(s) that comprise this anatomical structure.
@@ -187,20 +193,21 @@ public class BoneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public AnatomicalStructure getSubStructure() {
-        return fSubStructure;
+        return subStructure;
     }
 
     /**
      * Component (sub-)structure(s) that comprise this anatomical structure.
      *
+     * @param subStructure AnatomicalStructure value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setSubStructure(AnatomicalStructure fSubStructure) {
-        this.fSubStructure = fSubStructure;
+    public void setSubStructure(AnatomicalStructure subStructure) {
+        this.subStructure = subStructure;
     }
 
-    private Text fAssociatedPathophysiology;
+    private Text associatedPathophysiology;
 
     /**
      * If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.
@@ -210,20 +217,21 @@ public class BoneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Text getAssociatedPathophysiology() {
-        return fAssociatedPathophysiology;
+        return associatedPathophysiology;
     }
 
     /**
      * If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.
      *
+     * @param associatedPathophysiology Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setAssociatedPathophysiology(Text fAssociatedPathophysiology) {
-        this.fAssociatedPathophysiology = fAssociatedPathophysiology;
+    public void setAssociatedPathophysiology(Text associatedPathophysiology) {
+        this.associatedPathophysiology = associatedPathophysiology;
     }
 
-    private Object fLegalStatus;
+    private Object legalStatus;
 
     /**
      * The drug or supplement's legal status, including any controlled substance schedules that apply.
@@ -233,23 +241,41 @@ public class BoneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public <T> T getLegalStatus() {
-        return (T) fLegalStatus;
+        return (T) legalStatus;
     }
 
     /**
      * The drug or supplement's legal status, including any controlled substance schedules that apply.
      *
+     * @param legalStatus DrugLegalStatus value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setLegalStatus(Object fLegalStatus) {
-        if(!(fLegalStatus instanceof DrugLegalStatus) && !(fLegalStatus instanceof Text) && !(fLegalStatus instanceof MedicalEnumeration)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'legalStatus': " + fLegalStatus);
-        }
-        this.fLegalStatus = fLegalStatus;
+    public void setLegalStatus(DrugLegalStatus legalStatus) {
+        this.legalStatus = legalStatus;
+    }
+    /**
+     * The drug or supplement's legal status, including any controlled substance schedules that apply.
+     *
+     * @param legalStatus Text value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void setLegalStatus(Text legalStatus) {
+        this.legalStatus = legalStatus;
+    }
+    /**
+     * The drug or supplement's legal status, including any controlled substance schedules that apply.
+     *
+     * @param legalStatus MedicalEnumeration value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void setLegalStatus(MedicalEnumeration legalStatus) {
+        this.legalStatus = legalStatus;
     }
 
-    private Grant fFunding;
+    private Grant funding;
 
     /**
      * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
@@ -261,22 +287,23 @@ public class BoneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Grant getFunding() {
-        return fFunding;
+        return funding;
     }
 
     /**
      * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
      *
+     * @param funding Grant value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
     @Override
-    public void setFunding(Grant fFunding) {
-        this.fFunding = fFunding;
+    public void setFunding(Grant funding) {
+        this.funding = funding;
     }
 
-    private MedicalStudy fStudy;
+    private MedicalStudy study;
 
     /**
      * A medical study or trial related to this entity.
@@ -286,20 +313,21 @@ public class BoneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public MedicalStudy getStudy() {
-        return fStudy;
+        return study;
     }
 
     /**
      * A medical study or trial related to this entity.
      *
+     * @param study MedicalStudy value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setStudy(MedicalStudy fStudy) {
-        this.fStudy = fStudy;
+    public void setStudy(MedicalStudy study) {
+        this.study = study;
     }
 
-    private MedicalCode fCode;
+    private MedicalCode code;
 
     /**
      * A medical code for the entity, taken from a controlled vocabulary or ontology such as ICD-9, DiseasesDB, MeSH, SNOMED-CT, RxNorm, etc.
@@ -309,20 +337,21 @@ public class BoneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public MedicalCode getCode() {
-        return fCode;
+        return code;
     }
 
     /**
      * A medical code for the entity, taken from a controlled vocabulary or ontology such as ICD-9, DiseasesDB, MeSH, SNOMED-CT, RxNorm, etc.
      *
+     * @param code MedicalCode value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setCode(MedicalCode fCode) {
-        this.fCode = fCode;
+    public void setCode(MedicalCode code) {
+        this.code = code;
     }
 
-    private MedicalGuideline fGuideline;
+    private MedicalGuideline guideline;
 
     /**
      * A medical guideline related to this entity.
@@ -332,20 +361,21 @@ public class BoneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public MedicalGuideline getGuideline() {
-        return fGuideline;
+        return guideline;
     }
 
     /**
      * A medical guideline related to this entity.
      *
+     * @param guideline MedicalGuideline value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setGuideline(MedicalGuideline fGuideline) {
-        this.fGuideline = fGuideline;
+    public void setGuideline(MedicalGuideline guideline) {
+        this.guideline = guideline;
     }
 
-    private Organization fRecognizingAuthority;
+    private Organization recognizingAuthority;
 
     /**
      * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
@@ -355,20 +385,21 @@ public class BoneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Organization getRecognizingAuthority() {
-        return fRecognizingAuthority;
+        return recognizingAuthority;
     }
 
     /**
      * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
      *
+     * @param recognizingAuthority Organization value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setRecognizingAuthority(Organization fRecognizingAuthority) {
-        this.fRecognizingAuthority = fRecognizingAuthority;
+    public void setRecognizingAuthority(Organization recognizingAuthority) {
+        this.recognizingAuthority = recognizingAuthority;
     }
 
-    private MedicineSystem fMedicineSystem;
+    private MedicineSystem medicineSystem;
 
     /**
      * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
@@ -378,20 +409,21 @@ public class BoneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public MedicineSystem getMedicineSystem() {
-        return fMedicineSystem;
+        return medicineSystem;
     }
 
     /**
      * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
      *
+     * @param medicineSystem MedicineSystem value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setMedicineSystem(MedicineSystem fMedicineSystem) {
-        this.fMedicineSystem = fMedicineSystem;
+    public void setMedicineSystem(MedicineSystem medicineSystem) {
+        this.medicineSystem = medicineSystem;
     }
 
-    private MedicalSpecialty fRelevantSpecialty;
+    private MedicalSpecialty relevantSpecialty;
 
     /**
      * If applicable, a medical specialty in which this entity is relevant.
@@ -401,20 +433,21 @@ public class BoneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public MedicalSpecialty getRelevantSpecialty() {
-        return fRelevantSpecialty;
+        return relevantSpecialty;
     }
 
     /**
      * If applicable, a medical specialty in which this entity is relevant.
      *
+     * @param relevantSpecialty MedicalSpecialty value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setRelevantSpecialty(MedicalSpecialty fRelevantSpecialty) {
-        this.fRelevantSpecialty = fRelevantSpecialty;
+    public void setRelevantSpecialty(MedicalSpecialty relevantSpecialty) {
+        this.relevantSpecialty = relevantSpecialty;
     }
 
-    private Object fMainEntityOfPage;
+    private Object mainEntityOfPage;
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -423,22 +456,29 @@ public class BoneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
+        return (T) mainEntityOfPage;
     }
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
+     * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
-        }
-        this.fMainEntityOfPage = fMainEntityOfPage;
+    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param mainEntityOfPage URL value to set.
+     */
+    @Override
+    public void setMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
     }
 
-    private Text fAlternateName;
+    private Text alternateName;
 
     /**
      * An alias for the item.
@@ -447,19 +487,20 @@ public class BoneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Text getAlternateName() {
-        return fAlternateName;
+        return alternateName;
     }
 
     /**
      * An alias for the item.
      *
+     * @param alternateName Text value to set.
      */
     @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
+    public void setAlternateName(Text alternateName) {
+        this.alternateName = alternateName;
     }
 
-    private Text fName;
+    private Text name;
 
     /**
      * The name of the item.
@@ -468,19 +509,20 @@ public class BoneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Text getName() {
-        return fName;
+        return name;
     }
 
     /**
      * The name of the item.
      *
+     * @param name Text value to set.
      */
     @Override
-    public void setName(Text fName) {
-        this.fName = fName;
+    public void setName(Text name) {
+        this.name = name;
     }
 
-    private Action fPotentialAction;
+    private Action potentialAction;
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -489,19 +531,20 @@ public class BoneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Action getPotentialAction() {
-        return fPotentialAction;
+        return potentialAction;
     }
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      *
+     * @param potentialAction Action value to set.
      */
     @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
+    public void setPotentialAction(Action potentialAction) {
+        this.potentialAction = potentialAction;
     }
 
-    private Object fImage;
+    private Object image;
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -510,22 +553,29 @@ public class BoneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public <T> T getImage() {
-        return (T) fImage;
+        return (T) image;
     }
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
+     * @param image URL value to set.
      */
     @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
-        this.fImage = fImage;
+    public void setImage(URL image) {
+        this.image = image;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image ImageObject value to set.
+     */
+    @Override
+    public void setImage(ImageObject image) {
+        this.image = image;
     }
 
-    private URL fUrl;
+    private URL url;
 
     /**
      * URL of the item.
@@ -534,19 +584,20 @@ public class BoneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public URL getUrl() {
-        return fUrl;
+        return url;
     }
 
     /**
      * URL of the item.
      *
+     * @param url URL value to set.
      */
     @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
+    public void setUrl(URL url) {
+        this.url = url;
     }
 
-    private Text fDescription;
+    private Text description;
 
     /**
      * A description of the item.
@@ -555,19 +606,20 @@ public class BoneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Text getDescription() {
-        return fDescription;
+        return description;
     }
 
     /**
      * A description of the item.
      *
+     * @param description Text value to set.
      */
     @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
+    public void setDescription(Text description) {
+        this.description = description;
     }
 
-    private Object fSubjectOf;
+    private Object subjectOf;
 
     /**
      * A CreativeWork or Event about this Thing.
@@ -577,23 +629,31 @@ public class BoneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public <T> T getSubjectOf() {
-        return (T) fSubjectOf;
+        return (T) subjectOf;
     }
 
     /**
      * A CreativeWork or Event about this Thing.
      *
+     * @param subjectOf Event value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Object fSubjectOf) {
-        if(!(fSubjectOf instanceof Event) && !(fSubjectOf instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'subjectOf': " + fSubjectOf);
-        }
-        this.fSubjectOf = fSubjectOf;
+    public void setSubjectOf(Event subjectOf) {
+        this.subjectOf = subjectOf;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @param subjectOf CreativeWork value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public void setSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = subjectOf;
     }
 
-    private URL fAdditionalType;
+    private URL additionalType;
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
@@ -602,19 +662,20 @@ public class BoneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public URL getAdditionalType() {
-        return fAdditionalType;
+        return additionalType;
     }
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
+     * @param additionalType URL value to set.
      */
     @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
+    public void setAdditionalType(URL additionalType) {
+        this.additionalType = additionalType;
     }
 
-    private Text fDisambiguatingDescription;
+    private Text disambiguatingDescription;
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
@@ -623,19 +684,20 @@ public class BoneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public Text getDisambiguatingDescription() {
-        return fDisambiguatingDescription;
+        return disambiguatingDescription;
     }
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
+     * @param disambiguatingDescription Text value to set.
      */
     @Override
-    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = fDisambiguatingDescription;
+    public void setDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = disambiguatingDescription;
     }
 
-    private URL fSameAs;
+    private URL sameAs;
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
@@ -644,19 +706,20 @@ public class BoneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public URL getSameAs() {
-        return fSameAs;
+        return sameAs;
     }
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
+     * @param sameAs URL value to set.
      */
     @Override
-    public void setSameAs(URL fSameAs) {
-        this.fSameAs = fSameAs;
+    public void setSameAs(URL sameAs) {
+        this.sameAs = sameAs;
     }
 
-    private Object fIdentifier;
+    private Object identifier;
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -666,19 +729,37 @@ public class BoneImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl 
      */
     @Override
     public <T> T getIdentifier() {
-        return (T) fIdentifier;
+        return (T) identifier;
     }
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
+     * @param identifier URL value to set.
      */
     @Override
-    public void setIdentifier(Object fIdentifier) {
-        if(!(fIdentifier instanceof URL) && !(fIdentifier instanceof Text) && !(fIdentifier instanceof PropertyValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
-        }
-        this.fIdentifier = fIdentifier;
+    public void setIdentifier(URL identifier) {
+        this.identifier = identifier;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier Text value to set.
+     */
+    @Override
+    public void setIdentifier(Text identifier) {
+        this.identifier = identifier;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier PropertyValue value to set.
+     */
+    @Override
+    public void setIdentifier(PropertyValue identifier) {
+        this.identifier = identifier;
     }
 }

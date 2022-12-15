@@ -27,8 +27,15 @@ public interface Role extends Intangible {
     /**
      * A position played, performed or filled by a person or organization, as part of an organization. For example, an athlete in a SportsTeam might play in the position named 'Quarterback'.
      *
+     * @param namedPosition Text value to set.
      */
-    void setNamedPosition(Object fNamedPosition);
+    void setNamedPosition(Text namedPosition);
+    /**
+     * A position played, performed or filled by a person or organization, as part of an organization. For example, an athlete in a SportsTeam might play in the position named 'Quarterback'.
+     *
+     * @param namedPosition URL value to set.
+     */
+    void setNamedPosition(URL namedPosition);
 
     /**
      * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
@@ -41,9 +48,17 @@ public interface Role extends Intangible {
     /**
      * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
      *
+     * @param startDate DateTime value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
-    void setStartDate(Object fStartDate);
+    void setStartDate(DateTime startDate);
+    /**
+     * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
+     *
+     * @param startDate Date value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
+     */
+    void setStartDate(Date startDate);
 
     /**
      * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
@@ -56,9 +71,17 @@ public interface Role extends Intangible {
     /**
      * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
      *
+     * @param endDate Date value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
-    void setEndDate(Object fEndDate);
+    void setEndDate(Date endDate);
+    /**
+     * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
+     *
+     * @param endDate DateTime value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
+     */
+    void setEndDate(DateTime endDate);
 
     /**
      * A role played, performed or filled by a person or organization. For example, the team of creators for a comic book might fill the roles named 'inker', 'penciller', and 'letterer'; or an athlete in a SportsTeam might play in the position named 'Quarterback'.
@@ -70,6 +93,13 @@ public interface Role extends Intangible {
     /**
      * A role played, performed or filled by a person or organization. For example, the team of creators for a comic book might fill the roles named 'inker', 'penciller', and 'letterer'; or an athlete in a SportsTeam might play in the position named 'Quarterback'.
      *
+     * @param roleName URL value to set.
      */
-    void setRoleName(Object fRoleName);
+    void setRoleName(URL roleName);
+    /**
+     * A role played, performed or filled by a person or organization. For example, the team of creators for a comic book might fill the roles named 'inker', 'penciller', and 'letterer'; or an athlete in a SportsTeam might play in the position named 'Quarterback'.
+     *
+     * @param roleName Text value to set.
+     */
+    void setRoleName(Text roleName);
 }

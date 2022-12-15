@@ -248,8 +248,8 @@ org/schema/model/impl/BreadcrumbListImpl.class
 org/schema/model/impl/BroadcastChannelImpl.class
 org/schema/model/impl/BroadcastFrequencySpecificationImpl.class
 org/schema/model/impl/BroadcastServiceImpl.class
-org/schema/model/impl/BusinessEntityTypeImpl.class
-org/schema/model/impl/BusinessFunctionImpl.class
+org/schema/model/impl/BusinessEntityTypeEnum.class
+org/schema/model/impl/BusinessFunctionEnum.class
 org/schema/model/impl/CableOrSatelliteServiceImpl.class
 org/schema/model/impl/CategoryCodeImpl.class
 org/schema/model/impl/CategoryCodeSetImpl.class
@@ -290,7 +290,7 @@ org/schema/model/impl/DurationImpl.class
 org/schema/model/impl/EducationalOccupationalCredentialImpl.class
 org/schema/model/impl/EducationalOrganizationImpl.class
 org/schema/model/impl/EnergyConsumptionDetailsImpl.class
-org/schema/model/impl/EnergyEfficiencyEnumerationImpl.class
+org/schema/model/impl/EnergyEfficiencyEnumerationEnum.class
 org/schema/model/impl/EnergyImpl.class
 org/schema/model/impl/EntryPointImpl.class
 org/schema/model/impl/EnumerationImpl.class
@@ -328,7 +328,7 @@ org/schema/model/impl/MapCategoryTypeEnum.class
 org/schema/model/impl/MapImpl.class
 org/schema/model/impl/MassImpl.class
 org/schema/model/impl/MaximumDoseScheduleImpl.class
-org/schema/model/impl/MeasurementTypeEnumerationImpl.class
+org/schema/model/impl/MeasurementTypeEnumerationEnum.class
 org/schema/model/impl/MediaObjectImpl.class
 org/schema/model/impl/MediaSubscriptionImpl.class
 org/schema/model/impl/MedicalCodeImpl.class
@@ -337,7 +337,7 @@ org/schema/model/impl/MedicalConditionStageImpl.class
 org/schema/model/impl/MedicalContraindicationImpl.class
 org/schema/model/impl/MedicalDeviceImpl.class
 org/schema/model/impl/MedicalEntityImpl.class
-org/schema/model/impl/MedicalEnumerationImpl.class
+org/schema/model/impl/MedicalEnumerationEnum.class
 org/schema/model/impl/MedicalEvidenceLevelEnum.class
 org/schema/model/impl/MedicalGuidelineImpl.class
 org/schema/model/impl/MedicalIntangibleImpl.class
@@ -369,7 +369,7 @@ org/schema/model/impl/MusicRecordingImpl.class
 org/schema/model/impl/MusicReleaseFormatTypeEnum.class
 org/schema/model/impl/MusicReleaseImpl.class
 org/schema/model/impl/NewsArticleImpl.class
-org/schema/model/impl/NonprofitTypeImpl.class
+org/schema/model/impl/NonprofitTypeEnum.class
 org/schema/model/impl/NutritionInformationImpl.class
 org/schema/model/impl/OccupationalExperienceRequirementsImpl.class
 org/schema/model/impl/OccupationImpl.class
@@ -380,7 +380,7 @@ org/schema/model/impl/OfferShippingDetailsImpl.class
 org/schema/model/impl/OpeningHoursSpecificationImpl.class
 org/schema/model/impl/OrganizationImpl.class
 org/schema/model/impl/OwnershipInfoImpl.class
-org/schema/model/impl/PaymentMethodImpl.class
+org/schema/model/impl/PaymentMethodEnum.class
 org/schema/model/impl/PerformingGroupImpl.class
 org/schema/model/impl/PersonImpl.class
 org/schema/model/impl/PhotographImpl.class
@@ -397,7 +397,7 @@ org/schema/model/impl/ProgramMembershipImpl.class
 org/schema/model/impl/PropertyImpl.class
 org/schema/model/impl/PropertyValueImpl.class
 org/schema/model/impl/PublicationEventImpl.class
-org/schema/model/impl/QualitativeValueImpl.class
+org/schema/model/impl/QualitativeValueEnum.class
 org/schema/model/impl/QuantitativeValueDistributionImpl.class
 org/schema/model/impl/QuantitativeValueImpl.class
 org/schema/model/impl/QuantityImpl.class
@@ -414,13 +414,13 @@ org/schema/model/impl/SeriesImpl.class
 org/schema/model/impl/ServiceChannelImpl.class
 org/schema/model/impl/ServiceImpl.class
 org/schema/model/impl/ShippingDeliveryTimeImpl.class
-org/schema/model/impl/SizeGroupEnumerationImpl.class
-org/schema/model/impl/SizeSpecificationImpl.class
+org/schema/model/impl/SizeGroupEnumerationEnum.class
+org/schema/model/impl/SizeSpecificationEnum.class
 org/schema/model/impl/SizeSystemEnumerationEnum.class
 org/schema/model/impl/SoftwareApplicationImpl.class
 org/schema/model/impl/SpeakableSpecificationImpl.class
-org/schema/model/impl/SpecialtyImpl.class
-org/schema/model/impl/StatusEnumerationImpl.class
+org/schema/model/impl/SpecialtyEnum.class
+org/schema/model/impl/StatusEnumerationEnum.class
 org/schema/model/impl/StructuredValueImpl.class
 org/schema/model/impl/SubstanceImpl.class
 org/schema/model/impl/SuperficialAnatomyImpl.class
@@ -432,8 +432,9 @@ org/schema/model/impl/TypeAndQuantityNodeImpl.class
 org/schema/model/impl/VideoObjectImpl.class
 org/schema/model/impl/VirtualLocationImpl.class
 org/schema/model/impl/WarrantyPromiseImpl.class
-org/schema/model/impl/WarrantyScopeImpl.class
+org/schema/model/impl/WarrantyScopeEnum.class
 org/schema/model/impl/WebContentImpl.class
 org/schema/model/impl/WebPageElementImpl.class
 org/schema/model/impl/WebPageImpl.class
 org/schema/model/impl/WebSiteImpl.class
+schema-org-java.properties

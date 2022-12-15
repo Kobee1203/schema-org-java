@@ -26,9 +26,17 @@ public interface PostalAddress extends ContactPoint {
     /**
      * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
      *
+     * @param addressCountry Country value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
-    void setAddressCountry(Object fAddressCountry);
+    void setAddressCountry(Country addressCountry);
+    /**
+     * The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1).
+     *
+     * @param addressCountry Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    void setAddressCountry(Text addressCountry);
 
     /**
      * The region in which the locality is, and which is in the country. For example, California or another appropriate first-level [Administrative division](https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country) 
@@ -41,9 +49,10 @@ public interface PostalAddress extends ContactPoint {
     /**
      * The region in which the locality is, and which is in the country. For example, California or another appropriate first-level [Administrative division](https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country) 
      *
+     * @param addressRegion Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
-    void setAddressRegion(Text fAddressRegion);
+    void setAddressRegion(Text addressRegion);
 
     /**
      * The locality in which the street address is, and which is in the region. For example, Mountain View.
@@ -55,8 +64,9 @@ public interface PostalAddress extends ContactPoint {
     /**
      * The locality in which the street address is, and which is in the region. For example, Mountain View.
      *
+     * @param addressLocality Text value to set.
      */
-    void setAddressLocality(Text fAddressLocality);
+    void setAddressLocality(Text addressLocality);
 
     /**
      * The postal code. For example, 94043.
@@ -69,9 +79,10 @@ public interface PostalAddress extends ContactPoint {
     /**
      * The postal code. For example, 94043.
      *
+     * @param postalCode Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
-    void setPostalCode(Text fPostalCode);
+    void setPostalCode(Text postalCode);
 
     /**
      * The post office box number for PO box addresses.
@@ -83,8 +94,9 @@ public interface PostalAddress extends ContactPoint {
     /**
      * The post office box number for PO box addresses.
      *
+     * @param postOfficeBoxNumber Text value to set.
      */
-    void setPostOfficeBoxNumber(Text fPostOfficeBoxNumber);
+    void setPostOfficeBoxNumber(Text postOfficeBoxNumber);
 
     /**
      * The street address. For example, 1600 Amphitheatre Pkwy.
@@ -96,6 +108,7 @@ public interface PostalAddress extends ContactPoint {
     /**
      * The street address. For example, 1600 Amphitheatre Pkwy.
      *
+     * @param streetAddress Text value to set.
      */
-    void setStreetAddress(Text fStreetAddress);
+    void setStreetAddress(Text streetAddress);
 }

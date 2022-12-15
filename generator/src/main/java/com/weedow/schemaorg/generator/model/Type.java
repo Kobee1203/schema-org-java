@@ -1,5 +1,6 @@
 package com.weedow.schemaorg.generator.model;
 
+import com.weedow.schemaorg.generator.model.utils.ModelUtils;
 import lombok.*;
 import lombok.experimental.Accessors;
 
@@ -29,7 +30,13 @@ public final class Type {
     private BaseType baseParent;
 
     @Setter(AccessLevel.NONE)
+    @ToString.Exclude
     private final List<Type> parents = new ArrayList<>();
+
+    @Setter(AccessLevel.NONE)
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
+    private final List<Type> subTypes = new ArrayList<>();
 
     private List<String> partOf = new ArrayList<>();
 
@@ -42,8 +49,12 @@ public final class Type {
     @Setter(AccessLevel.NONE)
     private final List<String> enumerationMembers = new ArrayList<>();
 
+    public String getTypeId() {
+        return id.substring(id.indexOf(':') + 1);
+    }
+
     public String[] getSplitDescription() {
-        return description != null ? description.replace("\\n", "<br/>").split("\\n") : null;
+        return ModelUtils.getSplitDescription(description);
     }
 
     public Set<Property> getAllProperties() {
@@ -66,6 +77,12 @@ public final class Type {
 
     public Type addParent(Type parent) {
         this.parents.add(parent);
+        parent.addSubType(this);
+        return this;
+    }
+
+    private Type addSubType(Type subType) {
+        this.subTypes.add(subType);
         return this;
     }
 
@@ -94,24 +111,39 @@ public final class Type {
         return this;
     }
 
-    @Override
-    public String toString() {
+    @ToString.Include
+    private String description() {
+        return Optional.ofNullable(description).map(s -> s.substring(0, Math.min(50, s.length()))).orElse(null);
+    }
+
+    @ToString.Include
+    private String parents() {
+        return "[" + parents.stream().filter(Objects::nonNull).map(Type::getId).collect(Collectors.joining(", ")) + "]";
+    }
+
+    @ToString.Include
+    private String subTypes() {
+        return "[" + subTypes.stream().filter(Objects::nonNull).map(Type::getId).collect(Collectors.joining(", ")) + "]";
+    }
+
+    public String toFormattedString() {
         return "---------- " + id + " ----------\n" +
                 "name          = " + name + "\n" +
-                "description   = " + Optional.ofNullable(description).map(s -> s.substring(0, Math.min(50, s.length()))).orElse(null) + "\n" +
-                "parents       = " + parents.stream().map(Type::getId).collect(Collectors.joining(", ")) + "\n" +
+                "description   = " + description() + "\n" +
+                "parents       = " + parents() + "\n" +
+                "subTypes      = " + subTypes() + "\n" +
                 "partOf        = " + String.join(", ", partOf) + "\n" +
                 "source        = " + String.join(", ", source) + "\n" +
-                "properties    = " + toString(properties) + "\n" +
+                "properties    = " + toFormattedString(properties) + "\n" +
                 "enum members  = " + String.join(", ", enumerationMembers) + "\n";
     }
 
-    private static String toString(Collection<Property> properties) {
+    private static String toFormattedString(Collection<Property> properties) {
         final StringBuilder sb = new StringBuilder();
         sb.append("[");
         if (properties != null && !properties.isEmpty()) {
             sb.append("\n");
-            properties.forEach(property -> sb.append("    ").append(property.toString()).append("\n"));
+            properties.forEach(property -> sb.append("    ").append(property.toFormattedString()).append("\n"));
         }
         sb.append("]");
         return sb.toString();

@@ -16,6 +16,7 @@ import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.Intangible;
 import org.schema.model.EntryPoint;
 
@@ -25,10 +26,10 @@ import org.schema.model.EntryPoint;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_ActionCollabClass">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_ActionCollabClass</a>
  * @see <a href="https://schema.org/EntryPoint">https://schema.org/EntryPoint</a>
  */
-@JsonLdTypeName("schema:EntryPoint")
+@JsonLdTypeName("EntryPoint")
 public class EntryPointImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements EntryPoint {
 
-    private SoftwareApplication fActionApplication;
+    private SoftwareApplication actionApplication;
 
     /**
      * An application that can complete the request.
@@ -37,19 +38,20 @@ public class EntryPointImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public SoftwareApplication getActionApplication() {
-        return fActionApplication;
+        return actionApplication;
     }
 
     /**
      * An application that can complete the request.
      *
+     * @param actionApplication SoftwareApplication value to set.
      */
     @Override
-    public void setActionApplication(SoftwareApplication fActionApplication) {
-        this.fActionApplication = fActionApplication;
+    public void setActionApplication(SoftwareApplication actionApplication) {
+        this.actionApplication = actionApplication;
     }
 
-    private SoftwareApplication fApplication;
+    private SoftwareApplication application;
 
     /**
      * An application that can complete the request.
@@ -58,19 +60,21 @@ public class EntryPointImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public SoftwareApplication getApplication() {
-        return fApplication;
+        return application;
     }
 
     /**
      * An application that can complete the request.
      *
+     * @param application SoftwareApplication value to set.
      */
     @Override
-    public void setApplication(SoftwareApplication fApplication) {
-        this.fApplication = fApplication;
+    public void setApplication(SoftwareApplication application) {
+        this.application = application;
     }
 
-    private Object fActionPlatform;
+    @JsonLdFieldTypes({ Text.class, URL.class, DigitalPlatformEnumeration.class })
+    private Object actionPlatform;
 
     /**
      * The high level platform(s) where the Action can be performed for the given URL. To specify a specific application or operating system instance, use actionApplication.
@@ -79,22 +83,38 @@ public class EntryPointImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getActionPlatform() {
-        return (T) fActionPlatform;
+        return (T) actionPlatform;
     }
 
     /**
      * The high level platform(s) where the Action can be performed for the given URL. To specify a specific application or operating system instance, use actionApplication.
      *
+     * @param actionPlatform Text value to set.
      */
     @Override
-    public void setActionPlatform(Object fActionPlatform) {
-        if(!(fActionPlatform instanceof Text) && !(fActionPlatform instanceof URL) && !(fActionPlatform instanceof DigitalPlatformEnumeration)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'actionPlatform': " + fActionPlatform);
-        }
-        this.fActionPlatform = fActionPlatform;
+    public void setActionPlatform(Text actionPlatform) {
+        this.actionPlatform = actionPlatform;
+    }
+    /**
+     * The high level platform(s) where the Action can be performed for the given URL. To specify a specific application or operating system instance, use actionApplication.
+     *
+     * @param actionPlatform URL value to set.
+     */
+    @Override
+    public void setActionPlatform(URL actionPlatform) {
+        this.actionPlatform = actionPlatform;
+    }
+    /**
+     * The high level platform(s) where the Action can be performed for the given URL. To specify a specific application or operating system instance, use actionApplication.
+     *
+     * @param actionPlatform DigitalPlatformEnumeration value to set.
+     */
+    @Override
+    public void setActionPlatform(DigitalPlatformEnumeration actionPlatform) {
+        this.actionPlatform = actionPlatform;
     }
 
-    private Text fHttpMethod;
+    private Text httpMethod;
 
     /**
      * An HTTP method that specifies the appropriate HTTP method for a request to an HTTP EntryPoint. Values are capitalized strings as used in HTTP.
@@ -103,19 +123,20 @@ public class EntryPointImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getHttpMethod() {
-        return fHttpMethod;
+        return httpMethod;
     }
 
     /**
      * An HTTP method that specifies the appropriate HTTP method for a request to an HTTP EntryPoint. Values are capitalized strings as used in HTTP.
      *
+     * @param httpMethod Text value to set.
      */
     @Override
-    public void setHttpMethod(Text fHttpMethod) {
-        this.fHttpMethod = fHttpMethod;
+    public void setHttpMethod(Text httpMethod) {
+        this.httpMethod = httpMethod;
     }
 
-    private Text fUrlTemplate;
+    private Text urlTemplate;
 
     /**
      * An url template (RFC6570) that will be used to construct the target of the execution of the action.
@@ -124,19 +145,20 @@ public class EntryPointImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getUrlTemplate() {
-        return fUrlTemplate;
+        return urlTemplate;
     }
 
     /**
      * An url template (RFC6570) that will be used to construct the target of the execution of the action.
      *
+     * @param urlTemplate Text value to set.
      */
     @Override
-    public void setUrlTemplate(Text fUrlTemplate) {
-        this.fUrlTemplate = fUrlTemplate;
+    public void setUrlTemplate(Text urlTemplate) {
+        this.urlTemplate = urlTemplate;
     }
 
-    private Text fEncodingType;
+    private Text encodingType;
 
     /**
      * The supported encoding type(s) for an EntryPoint request.
@@ -145,19 +167,20 @@ public class EntryPointImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getEncodingType() {
-        return fEncodingType;
+        return encodingType;
     }
 
     /**
      * The supported encoding type(s) for an EntryPoint request.
      *
+     * @param encodingType Text value to set.
      */
     @Override
-    public void setEncodingType(Text fEncodingType) {
-        this.fEncodingType = fEncodingType;
+    public void setEncodingType(Text encodingType) {
+        this.encodingType = encodingType;
     }
 
-    private Text fContentType;
+    private Text contentType;
 
     /**
      * The supported content type(s) for an EntryPoint response.
@@ -166,19 +189,21 @@ public class EntryPointImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getContentType() {
-        return fContentType;
+        return contentType;
     }
 
     /**
      * The supported content type(s) for an EntryPoint response.
      *
+     * @param contentType Text value to set.
      */
     @Override
-    public void setContentType(Text fContentType) {
-        this.fContentType = fContentType;
+    public void setContentType(Text contentType) {
+        this.contentType = contentType;
     }
 
-    private Object fMainEntityOfPage;
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
+    private Object mainEntityOfPage;
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -187,22 +212,29 @@ public class EntryPointImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
+        return (T) mainEntityOfPage;
     }
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
+     * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
-        }
-        this.fMainEntityOfPage = fMainEntityOfPage;
+    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param mainEntityOfPage URL value to set.
+     */
+    @Override
+    public void setMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
     }
 
-    private Text fAlternateName;
+    private Text alternateName;
 
     /**
      * An alias for the item.
@@ -211,19 +243,20 @@ public class EntryPointImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getAlternateName() {
-        return fAlternateName;
+        return alternateName;
     }
 
     /**
      * An alias for the item.
      *
+     * @param alternateName Text value to set.
      */
     @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
+    public void setAlternateName(Text alternateName) {
+        this.alternateName = alternateName;
     }
 
-    private Text fName;
+    private Text name;
 
     /**
      * The name of the item.
@@ -232,19 +265,20 @@ public class EntryPointImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getName() {
-        return fName;
+        return name;
     }
 
     /**
      * The name of the item.
      *
+     * @param name Text value to set.
      */
     @Override
-    public void setName(Text fName) {
-        this.fName = fName;
+    public void setName(Text name) {
+        this.name = name;
     }
 
-    private Action fPotentialAction;
+    private Action potentialAction;
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -253,19 +287,21 @@ public class EntryPointImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Action getPotentialAction() {
-        return fPotentialAction;
+        return potentialAction;
     }
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      *
+     * @param potentialAction Action value to set.
      */
     @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
+    public void setPotentialAction(Action potentialAction) {
+        this.potentialAction = potentialAction;
     }
 
-    private Object fImage;
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
+    private Object image;
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -274,22 +310,29 @@ public class EntryPointImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getImage() {
-        return (T) fImage;
+        return (T) image;
     }
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
+     * @param image URL value to set.
      */
     @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
-        this.fImage = fImage;
+    public void setImage(URL image) {
+        this.image = image;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image ImageObject value to set.
+     */
+    @Override
+    public void setImage(ImageObject image) {
+        this.image = image;
     }
 
-    private URL fUrl;
+    private URL url;
 
     /**
      * URL of the item.
@@ -298,19 +341,20 @@ public class EntryPointImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public URL getUrl() {
-        return fUrl;
+        return url;
     }
 
     /**
      * URL of the item.
      *
+     * @param url URL value to set.
      */
     @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
+    public void setUrl(URL url) {
+        this.url = url;
     }
 
-    private Text fDescription;
+    private Text description;
 
     /**
      * A description of the item.
@@ -319,19 +363,21 @@ public class EntryPointImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getDescription() {
-        return fDescription;
+        return description;
     }
 
     /**
      * A description of the item.
      *
+     * @param description Text value to set.
      */
     @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
+    public void setDescription(Text description) {
+        this.description = description;
     }
 
-    private Object fSubjectOf;
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
+    private Object subjectOf;
 
     /**
      * A CreativeWork or Event about this Thing.
@@ -341,23 +387,31 @@ public class EntryPointImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getSubjectOf() {
-        return (T) fSubjectOf;
+        return (T) subjectOf;
     }
 
     /**
      * A CreativeWork or Event about this Thing.
      *
+     * @param subjectOf Event value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Object fSubjectOf) {
-        if(!(fSubjectOf instanceof Event) && !(fSubjectOf instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'subjectOf': " + fSubjectOf);
-        }
-        this.fSubjectOf = fSubjectOf;
+    public void setSubjectOf(Event subjectOf) {
+        this.subjectOf = subjectOf;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @param subjectOf CreativeWork value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public void setSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = subjectOf;
     }
 
-    private URL fAdditionalType;
+    private URL additionalType;
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
@@ -366,19 +420,20 @@ public class EntryPointImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public URL getAdditionalType() {
-        return fAdditionalType;
+        return additionalType;
     }
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
+     * @param additionalType URL value to set.
      */
     @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
+    public void setAdditionalType(URL additionalType) {
+        this.additionalType = additionalType;
     }
 
-    private Text fDisambiguatingDescription;
+    private Text disambiguatingDescription;
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
@@ -387,19 +442,20 @@ public class EntryPointImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getDisambiguatingDescription() {
-        return fDisambiguatingDescription;
+        return disambiguatingDescription;
     }
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
+     * @param disambiguatingDescription Text value to set.
      */
     @Override
-    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = fDisambiguatingDescription;
+    public void setDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = disambiguatingDescription;
     }
 
-    private URL fSameAs;
+    private URL sameAs;
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
@@ -408,19 +464,21 @@ public class EntryPointImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public URL getSameAs() {
-        return fSameAs;
+        return sameAs;
     }
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
+     * @param sameAs URL value to set.
      */
     @Override
-    public void setSameAs(URL fSameAs) {
-        this.fSameAs = fSameAs;
+    public void setSameAs(URL sameAs) {
+        this.sameAs = sameAs;
     }
 
-    private Object fIdentifier;
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
+    private Object identifier;
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -430,19 +488,37 @@ public class EntryPointImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getIdentifier() {
-        return (T) fIdentifier;
+        return (T) identifier;
     }
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
+     * @param identifier URL value to set.
      */
     @Override
-    public void setIdentifier(Object fIdentifier) {
-        if(!(fIdentifier instanceof URL) && !(fIdentifier instanceof Text) && !(fIdentifier instanceof PropertyValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
-        }
-        this.fIdentifier = fIdentifier;
+    public void setIdentifier(URL identifier) {
+        this.identifier = identifier;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier Text value to set.
+     */
+    @Override
+    public void setIdentifier(Text identifier) {
+        this.identifier = identifier;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier PropertyValue value to set.
+     */
+    @Override
+    public void setIdentifier(PropertyValue identifier) {
+        this.identifier = identifier;
     }
 }

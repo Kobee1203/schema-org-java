@@ -26,8 +26,9 @@ public interface CourseInstance extends Event {
     /**
      * A person assigned to instruct or provide instructional assistance for the [[CourseInstance]].
      *
+     * @param instructor Person value to set.
      */
-    void setInstructor(Person fInstructor);
+    void setInstructor(Person instructor);
 
     /**
      * The amount of work expected of students taking the course, often provided as a figure per week or per month, and may be broken down by type. For example, "2 hours of lectures, 1 hour of lab work and 3 hours of independent study per week".
@@ -41,10 +42,11 @@ public interface CourseInstance extends Event {
     /**
      * The amount of work expected of students taking the course, often provided as a figure per week or per month, and may be broken down by type. For example, "2 hours of lectures, 1 hour of lab work and 3 hours of independent study per week".
      *
+     * @param courseWorkload Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1909">https://github.com/schemaorg/schemaorg/issues/1909</a>
      */
-    void setCourseWorkload(Text fCourseWorkload);
+    void setCourseWorkload(Text courseWorkload);
 
     /**
      * The medium or means of delivery of the course instance or the mode of study, either as a text label (e.g. "online", "onsite" or "blended"; "synchronous" or "asynchronous"; "full-time" or "part-time") or as a URL reference to a term from a controlled vocabulary (e.g. https://ceds.ed.gov/element/001311#Asynchronous ).
@@ -56,6 +58,13 @@ public interface CourseInstance extends Event {
     /**
      * The medium or means of delivery of the course instance or the mode of study, either as a text label (e.g. "online", "onsite" or "blended"; "synchronous" or "asynchronous"; "full-time" or "part-time") or as a URL reference to a term from a controlled vocabulary (e.g. https://ceds.ed.gov/element/001311#Asynchronous ).
      *
+     * @param courseMode URL value to set.
      */
-    void setCourseMode(Object fCourseMode);
+    void setCourseMode(URL courseMode);
+    /**
+     * The medium or means of delivery of the course instance or the mode of study, either as a text label (e.g. "online", "onsite" or "blended"; "synchronous" or "asynchronous"; "full-time" or "part-time") or as a URL reference to a term from a controlled vocabulary (e.g. https://ceds.ed.gov/element/001311#Asynchronous ).
+     *
+     * @param courseMode Text value to set.
+     */
+    void setCourseMode(Text courseMode);
 }

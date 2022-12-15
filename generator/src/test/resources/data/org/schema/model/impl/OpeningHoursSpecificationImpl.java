@@ -18,6 +18,7 @@ import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import org.schema.model.Intangible;
 import org.schema.model.StructuredValue;
 import org.schema.model.OpeningHoursSpecification;
@@ -30,10 +31,10 @@ import org.schema.model.OpeningHoursSpecification;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass</a>
  * @see <a href="https://schema.org/OpeningHoursSpecification">https://schema.org/OpeningHoursSpecification</a>
  */
-@JsonLdTypeName("schema:OpeningHoursSpecification")
+@JsonLdTypeName("OpeningHoursSpecification")
 public class OpeningHoursSpecificationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements OpeningHoursSpecification {
 
-    private Time fCloses;
+    private Time closes;
 
     /**
      * The closing hour of the place or service on the given day(s) of the week.
@@ -43,20 +44,21 @@ public class OpeningHoursSpecificationImpl extends com.weedow.schemaorg.commons.
      */
     @Override
     public Time getCloses() {
-        return fCloses;
+        return closes;
     }
 
     /**
      * The closing hour of the place or service on the given day(s) of the week.
      *
+     * @param closes Time value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setCloses(Time fCloses) {
-        this.fCloses = fCloses;
+    public void setCloses(Time closes) {
+        this.closes = closes;
     }
 
-    private DayOfWeek fDayOfWeek;
+    private DayOfWeek dayOfWeek;
 
     /**
      * The day of the week for which these opening hours are valid.
@@ -66,20 +68,22 @@ public class OpeningHoursSpecificationImpl extends com.weedow.schemaorg.commons.
      */
     @Override
     public DayOfWeek getDayOfWeek() {
-        return fDayOfWeek;
+        return dayOfWeek;
     }
 
     /**
      * The day of the week for which these opening hours are valid.
      *
+     * @param dayOfWeek DayOfWeek value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setDayOfWeek(DayOfWeek fDayOfWeek) {
-        this.fDayOfWeek = fDayOfWeek;
+    public void setDayOfWeek(DayOfWeek dayOfWeek) {
+        this.dayOfWeek = dayOfWeek;
     }
 
-    private Object fValidFrom;
+    @JsonLdFieldTypes({ DateTime.class, Date.class })
+    private Object validFrom;
 
     /**
      * The date when the item becomes valid.
@@ -89,23 +93,31 @@ public class OpeningHoursSpecificationImpl extends com.weedow.schemaorg.commons.
      */
     @Override
     public <T> T getValidFrom() {
-        return (T) fValidFrom;
+        return (T) validFrom;
     }
 
     /**
      * The date when the item becomes valid.
      *
+     * @param validFrom DateTime value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setValidFrom(Object fValidFrom) {
-        if(!(fValidFrom instanceof DateTime) && !(fValidFrom instanceof Date)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'validFrom': " + fValidFrom);
-        }
-        this.fValidFrom = fValidFrom;
+    public void setValidFrom(DateTime validFrom) {
+        this.validFrom = validFrom;
+    }
+    /**
+     * The date when the item becomes valid.
+     *
+     * @param validFrom Date value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setValidFrom(Date validFrom) {
+        this.validFrom = validFrom;
     }
 
-    private Time fOpens;
+    private Time opens;
 
     /**
      * The opening hour of the place or service on the given day(s) of the week.
@@ -115,20 +127,22 @@ public class OpeningHoursSpecificationImpl extends com.weedow.schemaorg.commons.
      */
     @Override
     public Time getOpens() {
-        return fOpens;
+        return opens;
     }
 
     /**
      * The opening hour of the place or service on the given day(s) of the week.
      *
+     * @param opens Time value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setOpens(Time fOpens) {
-        this.fOpens = fOpens;
+    public void setOpens(Time opens) {
+        this.opens = opens;
     }
 
-    private Object fValidThrough;
+    @JsonLdFieldTypes({ DateTime.class, Date.class })
+    private Object validThrough;
 
     /**
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
@@ -138,23 +152,32 @@ public class OpeningHoursSpecificationImpl extends com.weedow.schemaorg.commons.
      */
     @Override
     public <T> T getValidThrough() {
-        return (T) fValidThrough;
+        return (T) validThrough;
     }
 
     /**
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
      *
+     * @param validThrough DateTime value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setValidThrough(Object fValidThrough) {
-        if(!(fValidThrough instanceof DateTime) && !(fValidThrough instanceof Date)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'validThrough': " + fValidThrough);
-        }
-        this.fValidThrough = fValidThrough;
+    public void setValidThrough(DateTime validThrough) {
+        this.validThrough = validThrough;
+    }
+    /**
+     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
+     *
+     * @param validThrough Date value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setValidThrough(Date validThrough) {
+        this.validThrough = validThrough;
     }
 
-    private Object fMainEntityOfPage;
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
+    private Object mainEntityOfPage;
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -163,22 +186,29 @@ public class OpeningHoursSpecificationImpl extends com.weedow.schemaorg.commons.
      */
     @Override
     public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
+        return (T) mainEntityOfPage;
     }
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
+     * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
-        }
-        this.fMainEntityOfPage = fMainEntityOfPage;
+    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param mainEntityOfPage URL value to set.
+     */
+    @Override
+    public void setMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
     }
 
-    private Text fAlternateName;
+    private Text alternateName;
 
     /**
      * An alias for the item.
@@ -187,19 +217,20 @@ public class OpeningHoursSpecificationImpl extends com.weedow.schemaorg.commons.
      */
     @Override
     public Text getAlternateName() {
-        return fAlternateName;
+        return alternateName;
     }
 
     /**
      * An alias for the item.
      *
+     * @param alternateName Text value to set.
      */
     @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
+    public void setAlternateName(Text alternateName) {
+        this.alternateName = alternateName;
     }
 
-    private Text fName;
+    private Text name;
 
     /**
      * The name of the item.
@@ -208,19 +239,20 @@ public class OpeningHoursSpecificationImpl extends com.weedow.schemaorg.commons.
      */
     @Override
     public Text getName() {
-        return fName;
+        return name;
     }
 
     /**
      * The name of the item.
      *
+     * @param name Text value to set.
      */
     @Override
-    public void setName(Text fName) {
-        this.fName = fName;
+    public void setName(Text name) {
+        this.name = name;
     }
 
-    private Action fPotentialAction;
+    private Action potentialAction;
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -229,19 +261,21 @@ public class OpeningHoursSpecificationImpl extends com.weedow.schemaorg.commons.
      */
     @Override
     public Action getPotentialAction() {
-        return fPotentialAction;
+        return potentialAction;
     }
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      *
+     * @param potentialAction Action value to set.
      */
     @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
+    public void setPotentialAction(Action potentialAction) {
+        this.potentialAction = potentialAction;
     }
 
-    private Object fImage;
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
+    private Object image;
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -250,22 +284,29 @@ public class OpeningHoursSpecificationImpl extends com.weedow.schemaorg.commons.
      */
     @Override
     public <T> T getImage() {
-        return (T) fImage;
+        return (T) image;
     }
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
+     * @param image URL value to set.
      */
     @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
-        this.fImage = fImage;
+    public void setImage(URL image) {
+        this.image = image;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image ImageObject value to set.
+     */
+    @Override
+    public void setImage(ImageObject image) {
+        this.image = image;
     }
 
-    private URL fUrl;
+    private URL url;
 
     /**
      * URL of the item.
@@ -274,19 +315,20 @@ public class OpeningHoursSpecificationImpl extends com.weedow.schemaorg.commons.
      */
     @Override
     public URL getUrl() {
-        return fUrl;
+        return url;
     }
 
     /**
      * URL of the item.
      *
+     * @param url URL value to set.
      */
     @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
+    public void setUrl(URL url) {
+        this.url = url;
     }
 
-    private Text fDescription;
+    private Text description;
 
     /**
      * A description of the item.
@@ -295,19 +337,21 @@ public class OpeningHoursSpecificationImpl extends com.weedow.schemaorg.commons.
      */
     @Override
     public Text getDescription() {
-        return fDescription;
+        return description;
     }
 
     /**
      * A description of the item.
      *
+     * @param description Text value to set.
      */
     @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
+    public void setDescription(Text description) {
+        this.description = description;
     }
 
-    private Object fSubjectOf;
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
+    private Object subjectOf;
 
     /**
      * A CreativeWork or Event about this Thing.
@@ -317,23 +361,31 @@ public class OpeningHoursSpecificationImpl extends com.weedow.schemaorg.commons.
      */
     @Override
     public <T> T getSubjectOf() {
-        return (T) fSubjectOf;
+        return (T) subjectOf;
     }
 
     /**
      * A CreativeWork or Event about this Thing.
      *
+     * @param subjectOf Event value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Object fSubjectOf) {
-        if(!(fSubjectOf instanceof Event) && !(fSubjectOf instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'subjectOf': " + fSubjectOf);
-        }
-        this.fSubjectOf = fSubjectOf;
+    public void setSubjectOf(Event subjectOf) {
+        this.subjectOf = subjectOf;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @param subjectOf CreativeWork value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public void setSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = subjectOf;
     }
 
-    private URL fAdditionalType;
+    private URL additionalType;
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
@@ -342,19 +394,20 @@ public class OpeningHoursSpecificationImpl extends com.weedow.schemaorg.commons.
      */
     @Override
     public URL getAdditionalType() {
-        return fAdditionalType;
+        return additionalType;
     }
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
+     * @param additionalType URL value to set.
      */
     @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
+    public void setAdditionalType(URL additionalType) {
+        this.additionalType = additionalType;
     }
 
-    private Text fDisambiguatingDescription;
+    private Text disambiguatingDescription;
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
@@ -363,19 +416,20 @@ public class OpeningHoursSpecificationImpl extends com.weedow.schemaorg.commons.
      */
     @Override
     public Text getDisambiguatingDescription() {
-        return fDisambiguatingDescription;
+        return disambiguatingDescription;
     }
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
+     * @param disambiguatingDescription Text value to set.
      */
     @Override
-    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = fDisambiguatingDescription;
+    public void setDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = disambiguatingDescription;
     }
 
-    private URL fSameAs;
+    private URL sameAs;
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
@@ -384,19 +438,21 @@ public class OpeningHoursSpecificationImpl extends com.weedow.schemaorg.commons.
      */
     @Override
     public URL getSameAs() {
-        return fSameAs;
+        return sameAs;
     }
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
+     * @param sameAs URL value to set.
      */
     @Override
-    public void setSameAs(URL fSameAs) {
-        this.fSameAs = fSameAs;
+    public void setSameAs(URL sameAs) {
+        this.sameAs = sameAs;
     }
 
-    private Object fIdentifier;
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
+    private Object identifier;
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -406,19 +462,37 @@ public class OpeningHoursSpecificationImpl extends com.weedow.schemaorg.commons.
      */
     @Override
     public <T> T getIdentifier() {
-        return (T) fIdentifier;
+        return (T) identifier;
     }
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
+     * @param identifier URL value to set.
      */
     @Override
-    public void setIdentifier(Object fIdentifier) {
-        if(!(fIdentifier instanceof URL) && !(fIdentifier instanceof Text) && !(fIdentifier instanceof PropertyValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
-        }
-        this.fIdentifier = fIdentifier;
+    public void setIdentifier(URL identifier) {
+        this.identifier = identifier;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier Text value to set.
+     */
+    @Override
+    public void setIdentifier(Text identifier) {
+        this.identifier = identifier;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier PropertyValue value to set.
+     */
+    @Override
+    public void setIdentifier(PropertyValue identifier) {
+        this.identifier = identifier;
     }
 }

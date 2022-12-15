@@ -28,8 +28,27 @@ public interface DigitalDocumentPermission extends Intangible {
     /**
      * The person, organization, contact point, or audience that has been granted this permission.
      *
+     * @param grantee Person value to set.
      */
-    void setGrantee(Object fGrantee);
+    void setGrantee(Person grantee);
+    /**
+     * The person, organization, contact point, or audience that has been granted this permission.
+     *
+     * @param grantee Audience value to set.
+     */
+    void setGrantee(Audience grantee);
+    /**
+     * The person, organization, contact point, or audience that has been granted this permission.
+     *
+     * @param grantee ContactPoint value to set.
+     */
+    void setGrantee(ContactPoint grantee);
+    /**
+     * The person, organization, contact point, or audience that has been granted this permission.
+     *
+     * @param grantee Organization value to set.
+     */
+    void setGrantee(Organization grantee);
 
     /**
      * The type of permission granted the person, organization, or audience.
@@ -41,6 +60,7 @@ public interface DigitalDocumentPermission extends Intangible {
     /**
      * The type of permission granted the person, organization, or audience.
      *
+     * @param permissionType DigitalDocumentPermissionType value to set.
      */
-    void setPermissionType(DigitalDocumentPermissionType fPermissionType);
+    void setPermissionType(DigitalDocumentPermissionType permissionType);
 }

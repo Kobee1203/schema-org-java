@@ -1,24 +1,22 @@
 package com.weedow.schemaorg.generator.core;
 
-import com.weedow.schemaorg.commons.model.JsonLdDataType;
-import com.weedow.schemaorg.commons.model.JsonLdNode;
-import com.weedow.schemaorg.commons.model.JsonLdNodeImpl;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.generator.GeneratorConstants;
+import com.weedow.schemaorg.commons.model.*;
 import com.weedow.schemaorg.generator.core.copy.CopyService;
 import com.weedow.schemaorg.generator.core.filter.SchemaDefinitionFilter;
 import com.weedow.schemaorg.generator.core.stream.StreamService;
 import com.weedow.schemaorg.generator.logging.Logger;
 import com.weedow.schemaorg.generator.logging.LoggerFactory;
 import com.weedow.schemaorg.generator.model.Type;
-import com.weedow.schemaorg.generator.model.handler.ModelHandlerUtils;
+import com.weedow.schemaorg.generator.model.utils.ModelUtils;
 import com.weedow.schemaorg.generator.template.TemplateService;
 
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Stream;
 
 public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
@@ -74,6 +72,8 @@ public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
         final String dataTypePackage = options.getDataTypePackage();
         final List<String> models = options.getModels();
 
+        copyPropertyFile(options.getOutputFolder(), modelPackage, modelImplPackage, dataTypePackage);
+
         Map<String, Type> filteredSchemaDefinitions = schemaDefinitionFilter.filter(schemaDefinitions, models);
         if (filteredSchemaDefinitions.isEmpty()) {
             LOG.info("No schema model found to generate");
@@ -83,6 +83,8 @@ public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
         if (options.isCopyCommonModels()) {
             LOG.info("Copying common models...");
             copyJavaFile(JsonLdTypeName.class);
+            copyJavaFile(JsonLdFieldTypes.class);
+            copyJavaFile(JsonLdSubTypes.class);
             copyJavaFile(JsonLdNode.class);
             copyJavaFile(JsonLdNodeImpl.class);
             copyJavaFile(JsonLdDataType.class);
@@ -95,17 +97,32 @@ public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
         stream.forEach(type -> {
             if (type.getId().equals("schema:DataType")) {
                 generateAbstractDataType(dataTypeFolder, dataTypePackage, type);
-            } else if (ModelHandlerUtils.isDataType(type.getId())) {
+            } else if (ModelUtils.isDataType(type.getId())) {
                 generateDataType(dataTypeFolder, dataTypePackage, modelPackage, type);
-            } else if (ModelHandlerUtils.isSubDataType(type)) {
+            } else if (ModelUtils.isSubDataType(type)) {
                 generateDataType(dataTypeFolder, dataTypePackage, modelPackage, type);
-            } else if (ModelHandlerUtils.isEnumeration(type)) {
+            } else if (ModelUtils.isEnumeration(type)) {
                 generateEnumerationType(modelFolder, modelImplFolder, modelPackage, modelImplPackage, dataTypePackage, type);
             } else {
                 generateType(modelFolder, modelImplFolder, modelPackage, modelImplPackage, dataTypePackage, type);
             }
         });
         LOG.info("Model generation completed.");
+    }
+
+    private void copyPropertyFile(Path outputFolder, String modelPackage, String modelImplPackage, String dataTypePackage) {
+        try (OutputStream outputStream = new FileOutputStream(outputFolder.resolve(GeneratorConstants.SCHEMA_ORG_PROP_FILENAME).toFile())) {
+            Properties properties = new Properties();
+
+            properties.put(GeneratorConstants.SCHEMA_ORG_PROP_COMMONS, JsonLdNode.class.getPackageName());
+            properties.put(GeneratorConstants.SCHEMA_ORG_PROP_MODEL, modelPackage);
+            properties.put(GeneratorConstants.SCHEMA_ORG_PROP_MODEL_IMPL, modelImplPackage);
+            properties.put(GeneratorConstants.SCHEMA_ORG_PROP_DATA_TYPE, dataTypePackage);
+
+            properties.store(outputStream, "Schema.org Java properties");
+        } catch (IOException e) {
+            LOG.warn("Could not write the properties file to directory {}", outputFolder);
+        }
     }
 
     private void copyJavaFile(Class<?> clazz) {
@@ -136,10 +153,15 @@ public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
                 new Context(type, modelPackage, SchemaGeneratorUtils.getImports(modelPackage, dataTypePackage, type, Collections.emptyList()))
         );
 
+        Set<String> allImports = SchemaGeneratorUtils.getAllImports(modelPackage, dataTypePackage, type);
+        if (!type.getSubTypes().isEmpty()) {
+            // Add JsonLdSubTypes as import but not cached in SchemaGeneratorUtils.getAllImports method to prevent to be added for enumerations that extend this current Enumeration
+            allImports.add(JsonLdSubTypes.class.getName());
+        }
         applyTemplate(
                 "templates/type_enumeration",
                 modelImplFolder.resolve(type.getName() + "Enum" + JAVA_EXTENSION),
-                new Context(type, modelImplPackage, SchemaGeneratorUtils.getAllImports(modelPackage, dataTypePackage, type))
+                new Context(type, modelImplPackage, allImports)
         );
     }
 
@@ -167,6 +189,7 @@ public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
         }
     }
 
+    @SuppressWarnings("BooleanMethodIsAlwaysInverted")
     private static boolean createFolderIfNotExists(Path folder) {
         try {
             return Files.exists(Files.createDirectories(folder));

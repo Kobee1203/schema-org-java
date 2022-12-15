@@ -32,10 +32,11 @@ public interface ProductGroup extends Product {
     /**
      * Indicates a [[Product]] that is a member of this [[ProductGroup]] (or [[ProductModel]]).
      *
+     * @param hasVariant Product value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
-    void setHasVariant(Product fHasVariant);
+    void setHasVariant(Product hasVariant);
 
     /**
      * Indicates a textual identifier for a ProductGroup.
@@ -49,10 +50,11 @@ public interface ProductGroup extends Product {
     /**
      * Indicates a textual identifier for a ProductGroup.
      *
+     * @param productGroupID Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
-    void setProductGroupID(Text fProductGroupID);
+    void setProductGroupID(Text productGroupID);
 
     /**
      * Indicates the property or properties by which the variants in a [[ProductGroup]] vary, e.g. their size, color etc. Schema.org properties can be referenced by their short name e.g. "color"; terms defined elsewhere can be referenced with their URIs.
@@ -66,8 +68,17 @@ public interface ProductGroup extends Product {
     /**
      * Indicates the property or properties by which the variants in a [[ProductGroup]] vary, e.g. their size, color etc. Schema.org properties can be referenced by their short name e.g. "color"; terms defined elsewhere can be referenced with their URIs.
      *
+     * @param variesBy Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
-    void setVariesBy(Object fVariesBy);
+    void setVariesBy(Text variesBy);
+    /**
+     * Indicates the property or properties by which the variants in a [[ProductGroup]] vary, e.g. their size, color etc. Schema.org properties can be referenced by their short name e.g. "color"; terms defined elsewhere can be referenced with their URIs.
+     *
+     * @param variesBy DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     */
+    void setVariesBy(DefinedTerm variesBy);
 }

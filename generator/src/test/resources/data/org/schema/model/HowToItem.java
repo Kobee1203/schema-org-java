@@ -26,6 +26,19 @@ public interface HowToItem extends ListItem {
     /**
      * The required quantity of the item(s).
      *
+     * @param requiredQuantity QuantitativeValue value to set.
      */
-    void setRequiredQuantity(Object fRequiredQuantity);
+    void setRequiredQuantity(QuantitativeValue requiredQuantity);
+    /**
+     * The required quantity of the item(s).
+     *
+     * @param requiredQuantity Number value to set.
+     */
+    void setRequiredQuantity(Number requiredQuantity);
+    /**
+     * The required quantity of the item(s).
+     *
+     * @param requiredQuantity Text value to set.
+     */
+    void setRequiredQuantity(Text requiredQuantity);
 }

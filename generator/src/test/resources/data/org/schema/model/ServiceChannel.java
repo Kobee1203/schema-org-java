@@ -31,8 +31,9 @@ public interface ServiceChannel extends Intangible {
     /**
      * The service provided by this channel.
      *
+     * @param providesService Service value to set.
      */
-    void setProvidesService(Service fProvidesService);
+    void setProvidesService(Service providesService);
 
     /**
      * The number to access the service by text message.
@@ -44,8 +45,9 @@ public interface ServiceChannel extends Intangible {
     /**
      * The number to access the service by text message.
      *
+     * @param serviceSmsNumber ContactPoint value to set.
      */
-    void setServiceSmsNumber(ContactPoint fServiceSmsNumber);
+    void setServiceSmsNumber(ContactPoint serviceSmsNumber);
 
     /**
      * The address for accessing the service by mail.
@@ -57,8 +59,9 @@ public interface ServiceChannel extends Intangible {
     /**
      * The address for accessing the service by mail.
      *
+     * @param servicePostalAddress PostalAddress value to set.
      */
-    void setServicePostalAddress(PostalAddress fServicePostalAddress);
+    void setServicePostalAddress(PostalAddress servicePostalAddress);
 
     /**
      * The website to access the service.
@@ -70,8 +73,9 @@ public interface ServiceChannel extends Intangible {
     /**
      * The website to access the service.
      *
+     * @param serviceUrl URL value to set.
      */
-    void setServiceUrl(URL fServiceUrl);
+    void setServiceUrl(URL serviceUrl);
 
     /**
      * The phone number to use to access the service.
@@ -83,8 +87,9 @@ public interface ServiceChannel extends Intangible {
     /**
      * The phone number to use to access the service.
      *
+     * @param servicePhone ContactPoint value to set.
      */
-    void setServicePhone(ContactPoint fServicePhone);
+    void setServicePhone(ContactPoint servicePhone);
 
     /**
      * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
@@ -96,8 +101,15 @@ public interface ServiceChannel extends Intangible {
     /**
      * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
      *
+     * @param availableLanguage Text value to set.
      */
-    void setAvailableLanguage(Object fAvailableLanguage);
+    void setAvailableLanguage(Text availableLanguage);
+    /**
+     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
+     *
+     * @param availableLanguage Language value to set.
+     */
+    void setAvailableLanguage(Language availableLanguage);
 
     /**
      * Estimated processing time for the service using this channel.
@@ -109,8 +121,9 @@ public interface ServiceChannel extends Intangible {
     /**
      * Estimated processing time for the service using this channel.
      *
+     * @param processingTime Duration value to set.
      */
-    void setProcessingTime(Duration fProcessingTime);
+    void setProcessingTime(Duration processingTime);
 
     /**
      * The location (e.g. civic structure, local business, etc.) where a person can go to access the service.
@@ -122,6 +135,7 @@ public interface ServiceChannel extends Intangible {
     /**
      * The location (e.g. civic structure, local business, etc.) where a person can go to access the service.
      *
+     * @param serviceLocation Place value to set.
      */
-    void setServiceLocation(Place fServiceLocation);
+    void setServiceLocation(Place serviceLocation);
 }

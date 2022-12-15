@@ -29,10 +29,11 @@ public interface HealthPlanNetwork extends Intangible {
     /**
      * Name or unique ID of network. (Networks are often reused across different insurance plans).
      *
+     * @param healthPlanNetworkId Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
-    void setHealthPlanNetworkId(Text fHealthPlanNetworkId);
+    void setHealthPlanNetworkId(Text healthPlanNetworkId);
 
     /**
      * Whether The costs to the patient for services under this network or formulary.
@@ -46,10 +47,11 @@ public interface HealthPlanNetwork extends Intangible {
     /**
      * Whether The costs to the patient for services under this network or formulary.
      *
+     * @param healthPlanCostSharing Boolean value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
-    void setHealthPlanCostSharing(Boolean fHealthPlanCostSharing);
+    void setHealthPlanCostSharing(Boolean healthPlanCostSharing);
 
     /**
      * The tier(s) for this network.
@@ -63,8 +65,9 @@ public interface HealthPlanNetwork extends Intangible {
     /**
      * The tier(s) for this network.
      *
+     * @param healthPlanNetworkTier Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
-    void setHealthPlanNetworkTier(Text fHealthPlanNetworkTier);
+    void setHealthPlanNetworkTier(Text healthPlanNetworkTier);
 }

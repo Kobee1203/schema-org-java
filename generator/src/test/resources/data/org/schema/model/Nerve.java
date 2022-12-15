@@ -29,9 +29,17 @@ public interface Nerve extends AnatomicalStructure {
     /**
      * The neurological pathway extension that inputs and sends information to the brain or spinal cord.
      *
+     * @param sensoryUnit SuperficialAnatomy value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setSensoryUnit(Object fSensoryUnit);
+    void setSensoryUnit(SuperficialAnatomy sensoryUnit);
+    /**
+     * The neurological pathway extension that inputs and sends information to the brain or spinal cord.
+     *
+     * @param sensoryUnit AnatomicalStructure value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setSensoryUnit(AnatomicalStructure sensoryUnit);
 
     /**
      * The branches that delineate from the nerve bundle. Not to be confused with [[branchOf]].
@@ -44,9 +52,10 @@ public interface Nerve extends AnatomicalStructure {
     /**
      * The branches that delineate from the nerve bundle. Not to be confused with [[branchOf]].
      *
+     * @param branch AnatomicalStructure value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setBranch(AnatomicalStructure fBranch);
+    void setBranch(AnatomicalStructure branch);
 
     /**
      * The neurological pathway that originates the neurons.
@@ -59,9 +68,10 @@ public interface Nerve extends AnatomicalStructure {
     /**
      * The neurological pathway that originates the neurons.
      *
+     * @param sourcedFrom BrainStructure value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setSourcedFrom(BrainStructure fSourcedFrom);
+    void setSourcedFrom(BrainStructure sourcedFrom);
 
     /**
      * The neurological pathway extension that involves muscle control.
@@ -74,7 +84,8 @@ public interface Nerve extends AnatomicalStructure {
     /**
      * The neurological pathway extension that involves muscle control.
      *
+     * @param nerveMotor Muscle value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setNerveMotor(Muscle fNerveMotor);
+    void setNerveMotor(Muscle nerveMotor);
 }

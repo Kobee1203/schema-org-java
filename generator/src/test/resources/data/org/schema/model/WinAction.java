@@ -24,6 +24,7 @@ public interface WinAction extends AchieveAction {
     /**
      * A sub property of participant. The loser of the action.
      *
+     * @param loser Person value to set.
      */
-    void setLoser(Person fLoser);
+    void setLoser(Person loser);
 }

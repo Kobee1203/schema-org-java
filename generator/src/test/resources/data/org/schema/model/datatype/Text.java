@@ -12,7 +12,7 @@ import com.weedow.schemaorg.commons.model.JsonLdTypeName;
  *
  * @see <a href="https://schema.org/Text">https://schema.org/Text</a>
  */
-@JsonLdTypeName("schema:Text")
+@JsonLdTypeName("Text")
 public class Text extends DataType<java.lang.String> {
 
     Text(java.lang.String value) {

@@ -29,9 +29,10 @@ public interface DrugStrength extends MedicalIntangible {
     /**
      * The location in which the strength is available.
      *
+     * @param availableIn AdministrativeArea value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setAvailableIn(AdministrativeArea fAvailableIn);
+    void setAvailableIn(AdministrativeArea availableIn);
 
     /**
      * The units of an active ingredient's strength, e.g. mg.
@@ -44,9 +45,10 @@ public interface DrugStrength extends MedicalIntangible {
     /**
      * The units of an active ingredient's strength, e.g. mg.
      *
+     * @param strengthUnit Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setStrengthUnit(Text fStrengthUnit);
+    void setStrengthUnit(Text strengthUnit);
 
     /**
      * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
@@ -59,9 +61,10 @@ public interface DrugStrength extends MedicalIntangible {
     /**
      * Recommended intake of this supplement for a given population as defined by a specific recommending authority.
      *
+     * @param maximumIntake MaximumDoseSchedule value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setMaximumIntake(MaximumDoseSchedule fMaximumIntake);
+    void setMaximumIntake(MaximumDoseSchedule maximumIntake);
 
     /**
      * An active ingredient, typically chemical compounds and/or biologic substances.
@@ -74,9 +77,10 @@ public interface DrugStrength extends MedicalIntangible {
     /**
      * An active ingredient, typically chemical compounds and/or biologic substances.
      *
+     * @param activeIngredient Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setActiveIngredient(Text fActiveIngredient);
+    void setActiveIngredient(Text activeIngredient);
 
     /**
      * The value of an active ingredient's strength, e.g. 325.
@@ -89,7 +93,8 @@ public interface DrugStrength extends MedicalIntangible {
     /**
      * The value of an active ingredient's strength, e.g. 325.
      *
+     * @param strengthValue Number value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setStrengthValue(Number fStrengthValue);
+    void setStrengthValue(Number strengthValue);
 }

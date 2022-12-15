@@ -61,10 +61,10 @@ import org.schema.model.Barcode;
  *
  * @see <a href="https://schema.org/Barcode">https://schema.org/Barcode</a>
  */
-@JsonLdTypeName("schema:Barcode")
+@JsonLdTypeName("Barcode")
 public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Barcode {
 
-    private Text fEmbeddedTextCaption;
+    private Text embeddedTextCaption;
 
     /**
      * Represents textual captioning from a [[MediaObject]], e.g. text of a 'meme'.
@@ -75,21 +75,22 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getEmbeddedTextCaption() {
-        return fEmbeddedTextCaption;
+        return embeddedTextCaption;
     }
 
     /**
      * Represents textual captioning from a [[MediaObject]], e.g. text of a 'meme'.
      *
+     * @param embeddedTextCaption Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
     @Override
-    public void setEmbeddedTextCaption(Text fEmbeddedTextCaption) {
-        this.fEmbeddedTextCaption = fEmbeddedTextCaption;
+    public void setEmbeddedTextCaption(Text embeddedTextCaption) {
+        this.embeddedTextCaption = embeddedTextCaption;
     }
 
-    private Boolean fRepresentativeOfPage;
+    private Boolean representativeOfPage;
 
     /**
      * Indicates whether this image is representative of the content of the page.
@@ -98,19 +99,20 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Boolean getRepresentativeOfPage() {
-        return fRepresentativeOfPage;
+        return representativeOfPage;
     }
 
     /**
      * Indicates whether this image is representative of the content of the page.
      *
+     * @param representativeOfPage Boolean value to set.
      */
     @Override
-    public void setRepresentativeOfPage(Boolean fRepresentativeOfPage) {
-        this.fRepresentativeOfPage = fRepresentativeOfPage;
+    public void setRepresentativeOfPage(Boolean representativeOfPage) {
+        this.representativeOfPage = representativeOfPage;
     }
 
-    private Object fCaption;
+    private Object caption;
 
     /**
      * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
@@ -119,22 +121,29 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getCaption() {
-        return (T) fCaption;
+        return (T) caption;
     }
 
     /**
      * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
      *
+     * @param caption Text value to set.
      */
     @Override
-    public void setCaption(Object fCaption) {
-        if(!(fCaption instanceof Text) && !(fCaption instanceof MediaObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'caption': " + fCaption);
-        }
-        this.fCaption = fCaption;
+    public void setCaption(Text caption) {
+        this.caption = caption;
+    }
+    /**
+     * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
+     *
+     * @param caption MediaObject value to set.
+     */
+    @Override
+    public void setCaption(MediaObject caption) {
+        this.caption = caption;
     }
 
-    private ImageObject fThumbnail;
+    private ImageObject thumbnail;
 
     /**
      * Thumbnail image for an image or video.
@@ -143,19 +152,20 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public ImageObject getThumbnail() {
-        return fThumbnail;
+        return thumbnail;
     }
 
     /**
      * Thumbnail image for an image or video.
      *
+     * @param thumbnail ImageObject value to set.
      */
     @Override
-    public void setThumbnail(ImageObject fThumbnail) {
-        this.fThumbnail = fThumbnail;
+    public void setThumbnail(ImageObject thumbnail) {
+        this.thumbnail = thumbnail;
     }
 
-    private Object fExifData;
+    private Object exifData;
 
     /**
      * exif data for this object.
@@ -164,22 +174,29 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getExifData() {
-        return (T) fExifData;
+        return (T) exifData;
     }
 
     /**
      * exif data for this object.
      *
+     * @param exifData PropertyValue value to set.
      */
     @Override
-    public void setExifData(Object fExifData) {
-        if(!(fExifData instanceof PropertyValue) && !(fExifData instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'exifData': " + fExifData);
-        }
-        this.fExifData = fExifData;
+    public void setExifData(PropertyValue exifData) {
+        this.exifData = exifData;
+    }
+    /**
+     * exif data for this object.
+     *
+     * @param exifData Text value to set.
+     */
+    @Override
+    public void setExifData(Text exifData) {
+        this.exifData = exifData;
     }
 
-    private Text fContentSize;
+    private Text contentSize;
 
     /**
      * File size in (mega/kilo) bytes.
@@ -188,19 +205,20 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getContentSize() {
-        return fContentSize;
+        return contentSize;
     }
 
     /**
      * File size in (mega/kilo) bytes.
      *
+     * @param contentSize Text value to set.
      */
     @Override
-    public void setContentSize(Text fContentSize) {
-        this.fContentSize = fContentSize;
+    public void setContentSize(Text contentSize) {
+        this.contentSize = contentSize;
     }
 
-    private URL fContentUrl;
+    private URL contentUrl;
 
     /**
      * Actual bytes of the media object, for example the image file or video file.
@@ -209,19 +227,20 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public URL getContentUrl() {
-        return fContentUrl;
+        return contentUrl;
     }
 
     /**
      * Actual bytes of the media object, for example the image file or video file.
      *
+     * @param contentUrl URL value to set.
      */
     @Override
-    public void setContentUrl(URL fContentUrl) {
-        this.fContentUrl = fContentUrl;
+    public void setContentUrl(URL contentUrl) {
+        this.contentUrl = contentUrl;
     }
 
-    private Object fWidth;
+    private Object width;
 
     /**
      * The width of the item.
@@ -230,22 +249,29 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getWidth() {
-        return (T) fWidth;
+        return (T) width;
     }
 
     /**
      * The width of the item.
      *
+     * @param width QuantitativeValue value to set.
      */
     @Override
-    public void setWidth(Object fWidth) {
-        if(!(fWidth instanceof QuantitativeValue) && !(fWidth instanceof Distance)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'width': " + fWidth);
-        }
-        this.fWidth = fWidth;
+    public void setWidth(QuantitativeValue width) {
+        this.width = width;
+    }
+    /**
+     * The width of the item.
+     *
+     * @param width Distance value to set.
+     */
+    @Override
+    public void setWidth(Distance width) {
+        this.width = width;
     }
 
-    private Object fHeight;
+    private Object height;
 
     /**
      * The height of the item.
@@ -254,22 +280,29 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getHeight() {
-        return (T) fHeight;
+        return (T) height;
     }
 
     /**
      * The height of the item.
      *
+     * @param height Distance value to set.
      */
     @Override
-    public void setHeight(Object fHeight) {
-        if(!(fHeight instanceof Distance) && !(fHeight instanceof QuantitativeValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'height': " + fHeight);
-        }
-        this.fHeight = fHeight;
+    public void setHeight(Distance height) {
+        this.height = height;
+    }
+    /**
+     * The height of the item.
+     *
+     * @param height QuantitativeValue value to set.
+     */
+    @Override
+    public void setHeight(QuantitativeValue height) {
+        this.height = height;
     }
 
-    private Place fRegionsAllowed;
+    private Place regionsAllowed;
 
     /**
      * The regions where the media is allowed. If not specified, then it's assumed to be allowed everywhere. Specify the countries in [ISO 3166 format](http://en.wikipedia.org/wiki/ISO_3166).
@@ -278,19 +311,20 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Place getRegionsAllowed() {
-        return fRegionsAllowed;
+        return regionsAllowed;
     }
 
     /**
      * The regions where the media is allowed. If not specified, then it's assumed to be allowed everywhere. Specify the countries in [ISO 3166 format](http://en.wikipedia.org/wiki/ISO_3166).
      *
+     * @param regionsAllowed Place value to set.
      */
     @Override
-    public void setRegionsAllowed(Place fRegionsAllowed) {
-        this.fRegionsAllowed = fRegionsAllowed;
+    public void setRegionsAllowed(Place regionsAllowed) {
+        this.regionsAllowed = regionsAllowed;
     }
 
-    private Object fStartTime;
+    private Object startTime;
 
     /**
      * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
@@ -300,23 +334,31 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getStartTime() {
-        return (T) fStartTime;
+        return (T) startTime;
     }
 
     /**
      * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
      *
+     * @param startTime DateTime value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
      */
     @Override
-    public void setStartTime(Object fStartTime) {
-        if(!(fStartTime instanceof DateTime) && !(fStartTime instanceof Time)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'startTime': " + fStartTime);
-        }
-        this.fStartTime = fStartTime;
+    public void setStartTime(DateTime startTime) {
+        this.startTime = startTime;
+    }
+    /**
+     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @param startTime Time value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    @Override
+    public void setStartTime(Time startTime) {
+        this.startTime = startTime;
     }
 
-    private NewsArticle fAssociatedArticle;
+    private NewsArticle associatedArticle;
 
     /**
      * A NewsArticle associated with the Media Object.
@@ -325,19 +367,20 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public NewsArticle getAssociatedArticle() {
-        return fAssociatedArticle;
+        return associatedArticle;
     }
 
     /**
      * A NewsArticle associated with the Media Object.
      *
+     * @param associatedArticle NewsArticle value to set.
      */
     @Override
-    public void setAssociatedArticle(NewsArticle fAssociatedArticle) {
-        this.fAssociatedArticle = fAssociatedArticle;
+    public void setAssociatedArticle(NewsArticle associatedArticle) {
+        this.associatedArticle = associatedArticle;
     }
 
-    private Object fIneligibleRegion;
+    private Object ineligibleRegion;
 
     /**
      * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>See also [[eligibleRegion]].
@@ -349,25 +392,47 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getIneligibleRegion() {
-        return (T) fIneligibleRegion;
+        return (T) ineligibleRegion;
     }
 
     /**
      * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>See also [[eligibleRegion]].
      *       
      *
+     * @param ineligibleRegion Place value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2242">https://github.com/schemaorg/schemaorg/issues/2242</a>
      */
     @Override
-    public void setIneligibleRegion(Object fIneligibleRegion) {
-        if(!(fIneligibleRegion instanceof Place) && !(fIneligibleRegion instanceof Text) && !(fIneligibleRegion instanceof GeoShape)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'ineligibleRegion': " + fIneligibleRegion);
-        }
-        this.fIneligibleRegion = fIneligibleRegion;
+    public void setIneligibleRegion(Place ineligibleRegion) {
+        this.ineligibleRegion = ineligibleRegion;
+    }
+    /**
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>See also [[eligibleRegion]].
+     *       
+     *
+     * @param ineligibleRegion Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2242">https://github.com/schemaorg/schemaorg/issues/2242</a>
+     */
+    @Override
+    public void setIneligibleRegion(Text ineligibleRegion) {
+        this.ineligibleRegion = ineligibleRegion;
+    }
+    /**
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>See also [[eligibleRegion]].
+     *       
+     *
+     * @param ineligibleRegion GeoShape value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2242">https://github.com/schemaorg/schemaorg/issues/2242</a>
+     */
+    @Override
+    public void setIneligibleRegion(GeoShape ineligibleRegion) {
+        this.ineligibleRegion = ineligibleRegion;
     }
 
-    private Object fRequiresSubscription;
+    private Object requiresSubscription;
 
     /**
      * Indicates if use of the media require a subscription  (either paid or free). Allowed values are ```true``` or ```false``` (note that an earlier version had 'yes', 'no').
@@ -377,23 +442,31 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getRequiresSubscription() {
-        return (T) fRequiresSubscription;
+        return (T) requiresSubscription;
     }
 
     /**
      * Indicates if use of the media require a subscription  (either paid or free). Allowed values are ```true``` or ```false``` (note that an earlier version had 'yes', 'no').
      *
+     * @param requiresSubscription MediaSubscription value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
     @Override
-    public void setRequiresSubscription(Object fRequiresSubscription) {
-        if(!(fRequiresSubscription instanceof MediaSubscription) && !(fRequiresSubscription instanceof Boolean)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'requiresSubscription': " + fRequiresSubscription);
-        }
-        this.fRequiresSubscription = fRequiresSubscription;
+    public void setRequiresSubscription(MediaSubscription requiresSubscription) {
+        this.requiresSubscription = requiresSubscription;
+    }
+    /**
+     * Indicates if use of the media require a subscription  (either paid or free). Allowed values are ```true``` or ```false``` (note that an earlier version had 'yes', 'no').
+     *
+     * @param requiresSubscription Boolean value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    @Override
+    public void setRequiresSubscription(Boolean requiresSubscription) {
+        this.requiresSubscription = requiresSubscription;
     }
 
-    private Text fPlayerType;
+    private Text playerType;
 
     /**
      * Player type required&#x2014;for example, Flash or Silverlight.
@@ -402,19 +475,20 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getPlayerType() {
-        return fPlayerType;
+        return playerType;
     }
 
     /**
      * Player type required&#x2014;for example, Flash or Silverlight.
      *
+     * @param playerType Text value to set.
      */
     @Override
-    public void setPlayerType(Text fPlayerType) {
-        this.fPlayerType = fPlayerType;
+    public void setPlayerType(Text playerType) {
+        this.playerType = playerType;
     }
 
-    private CreativeWork fEncodesCreativeWork;
+    private CreativeWork encodesCreativeWork;
 
     /**
      * The CreativeWork encoded by this media object.
@@ -423,19 +497,20 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public CreativeWork getEncodesCreativeWork() {
-        return fEncodesCreativeWork;
+        return encodesCreativeWork;
     }
 
     /**
      * The CreativeWork encoded by this media object.
      *
+     * @param encodesCreativeWork CreativeWork value to set.
      */
     @Override
-    public void setEncodesCreativeWork(CreativeWork fEncodesCreativeWork) {
-        this.fEncodesCreativeWork = fEncodesCreativeWork;
+    public void setEncodesCreativeWork(CreativeWork encodesCreativeWork) {
+        this.encodesCreativeWork = encodesCreativeWork;
     }
 
-    private Duration fDuration;
+    private Duration duration;
 
     /**
      * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
@@ -446,21 +521,22 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Duration getDuration() {
-        return fDuration;
+        return duration;
     }
 
     /**
      * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
      *
+     * @param duration Duration value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
      */
     @Override
-    public void setDuration(Duration fDuration) {
-        this.fDuration = fDuration;
+    public void setDuration(Duration duration) {
+        this.duration = duration;
     }
 
-    private Object fEncodingFormat;
+    private Object encodingFormat;
 
     /**
      * Media type typically expressed using a MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml) and [MDN reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)) e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc.).
@@ -473,7 +549,7 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getEncodingFormat() {
-        return (T) fEncodingFormat;
+        return (T) encodingFormat;
     }
 
     /**
@@ -483,16 +559,27 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * 
      * Unregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.
      *
+     * @param encodingFormat Text value to set.
      */
     @Override
-    public void setEncodingFormat(Object fEncodingFormat) {
-        if(!(fEncodingFormat instanceof Text) && !(fEncodingFormat instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'encodingFormat': " + fEncodingFormat);
-        }
-        this.fEncodingFormat = fEncodingFormat;
+    public void setEncodingFormat(Text encodingFormat) {
+        this.encodingFormat = encodingFormat;
+    }
+    /**
+     * Media type typically expressed using a MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml) and [MDN reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)) e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc.).
+     * 
+     * In cases where a [[CreativeWork]] has several media type representations, [[encoding]] can be used to indicate each [[MediaObject]] alongside particular [[encodingFormat]] information.
+     * 
+     * Unregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.
+     *
+     * @param encodingFormat URL value to set.
+     */
+    @Override
+    public void setEncodingFormat(URL encodingFormat) {
+        this.encodingFormat = encodingFormat;
     }
 
-    private Date fUploadDate;
+    private Date uploadDate;
 
     /**
      * Date when this media object was uploaded to this site.
@@ -501,19 +588,20 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Date getUploadDate() {
-        return fUploadDate;
+        return uploadDate;
     }
 
     /**
      * Date when this media object was uploaded to this site.
      *
+     * @param uploadDate Date value to set.
      */
     @Override
-    public void setUploadDate(Date fUploadDate) {
-        this.fUploadDate = fUploadDate;
+    public void setUploadDate(Date uploadDate) {
+        this.uploadDate = uploadDate;
     }
 
-    private URL fEmbedUrl;
+    private URL embedUrl;
 
     /**
      * A URL pointing to a player for a specific video. In general, this is the information in the ```src``` element of an ```embed``` tag and should not be the same as the content of the ```loc``` tag.
@@ -522,19 +610,20 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public URL getEmbedUrl() {
-        return fEmbedUrl;
+        return embedUrl;
     }
 
     /**
      * A URL pointing to a player for a specific video. In general, this is the information in the ```src``` element of an ```embed``` tag and should not be the same as the content of the ```loc``` tag.
      *
+     * @param embedUrl URL value to set.
      */
     @Override
-    public void setEmbedUrl(URL fEmbedUrl) {
-        this.fEmbedUrl = fEmbedUrl;
+    public void setEmbedUrl(URL embedUrl) {
+        this.embedUrl = embedUrl;
     }
 
-    private Text fBitrate;
+    private Text bitrate;
 
     /**
      * The bitrate of the media object.
@@ -543,19 +632,20 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getBitrate() {
-        return fBitrate;
+        return bitrate;
     }
 
     /**
      * The bitrate of the media object.
      *
+     * @param bitrate Text value to set.
      */
     @Override
-    public void setBitrate(Text fBitrate) {
-        this.fBitrate = fBitrate;
+    public void setBitrate(Text bitrate) {
+        this.bitrate = bitrate;
     }
 
-    private Object fEndTime;
+    private Object endTime;
 
     /**
      * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
@@ -565,23 +655,31 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getEndTime() {
-        return (T) fEndTime;
+        return (T) endTime;
     }
 
     /**
      * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
      *
+     * @param endTime DateTime value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
      */
     @Override
-    public void setEndTime(Object fEndTime) {
-        if(!(fEndTime instanceof DateTime) && !(fEndTime instanceof Time)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'endTime': " + fEndTime);
-        }
-        this.fEndTime = fEndTime;
+    public void setEndTime(DateTime endTime) {
+        this.endTime = endTime;
+    }
+    /**
+     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @param endTime Time value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    @Override
+    public void setEndTime(Time endTime) {
+        this.endTime = endTime;
     }
 
-    private Organization fProductionCompany;
+    private Organization productionCompany;
 
     /**
      * The production company or studio responsible for the item e.g. series, video game, episode etc.
@@ -590,19 +688,20 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Organization getProductionCompany() {
-        return fProductionCompany;
+        return productionCompany;
     }
 
     /**
      * The production company or studio responsible for the item e.g. series, video game, episode etc.
      *
+     * @param productionCompany Organization value to set.
      */
     @Override
-    public void setProductionCompany(Organization fProductionCompany) {
-        this.fProductionCompany = fProductionCompany;
+    public void setProductionCompany(Organization productionCompany) {
+        this.productionCompany = productionCompany;
     }
 
-    private Text fSha256;
+    private Text sha256;
 
     /**
      * The [SHA-2](https://en.wikipedia.org/wiki/SHA-2) SHA256 hash of the content of the item. For example, a zero-length input has value 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
@@ -613,21 +712,22 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getSha256() {
-        return fSha256;
+        return sha256;
     }
 
     /**
      * The [SHA-2](https://en.wikipedia.org/wiki/SHA-2) SHA256 hash of the content of the item. For example, a zero-length input has value 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
      *
+     * @param sha256 Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
     @Override
-    public void setSha256(Text fSha256) {
-        this.fSha256 = fSha256;
+    public void setSha256(Text sha256) {
+        this.sha256 = sha256;
     }
 
-    private Claim fInterpretedAsClaim;
+    private Claim interpretedAsClaim;
 
     /**
      * Used to indicate a specific claim contained, implied, translated or refined from the content of a [[MediaObject]] or other [[CreativeWork]]. The interpreting party can be indicated using [[claimInterpreter]].
@@ -638,21 +738,22 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Claim getInterpretedAsClaim() {
-        return fInterpretedAsClaim;
+        return interpretedAsClaim;
     }
 
     /**
      * Used to indicate a specific claim contained, implied, translated or refined from the content of a [[MediaObject]] or other [[CreativeWork]]. The interpreting party can be indicated using [[claimInterpreter]].
      *
+     * @param interpretedAsClaim Claim value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
     @Override
-    public void setInterpretedAsClaim(Claim fInterpretedAsClaim) {
-        this.fInterpretedAsClaim = fInterpretedAsClaim;
+    public void setInterpretedAsClaim(Claim interpretedAsClaim) {
+        this.interpretedAsClaim = interpretedAsClaim;
     }
 
-    private Object fTeaches;
+    private Object teaches;
 
     /**
      * The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.
@@ -663,24 +764,33 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getTeaches() {
-        return (T) fTeaches;
+        return (T) teaches;
     }
 
     /**
      * The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.
      *
+     * @param teaches DefinedTerm value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
      */
     @Override
-    public void setTeaches(Object fTeaches) {
-        if(!(fTeaches instanceof DefinedTerm) && !(fTeaches instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'teaches': " + fTeaches);
-        }
-        this.fTeaches = fTeaches;
+    public void setTeaches(DefinedTerm teaches) {
+        this.teaches = teaches;
+    }
+    /**
+     * The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.
+     *
+     * @param teaches Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
+     */
+    @Override
+    public void setTeaches(Text teaches) {
+        this.teaches = teaches;
     }
 
-    private Object fEducationalLevel;
+    private Object educationalLevel;
 
     /**
      * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
@@ -691,24 +801,44 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getEducationalLevel() {
-        return (T) fEducationalLevel;
+        return (T) educationalLevel;
     }
 
     /**
      * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
      *
+     * @param educationalLevel URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
     @Override
-    public void setEducationalLevel(Object fEducationalLevel) {
-        if(!(fEducationalLevel instanceof URL) && !(fEducationalLevel instanceof DefinedTerm) && !(fEducationalLevel instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'educationalLevel': " + fEducationalLevel);
-        }
-        this.fEducationalLevel = fEducationalLevel;
+    public void setEducationalLevel(URL educationalLevel) {
+        this.educationalLevel = educationalLevel;
+    }
+    /**
+     * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
+     *
+     * @param educationalLevel DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     */
+    @Override
+    public void setEducationalLevel(DefinedTerm educationalLevel) {
+        this.educationalLevel = educationalLevel;
+    }
+    /**
+     * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
+     *
+     * @param educationalLevel Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     */
+    @Override
+    public void setEducationalLevel(Text educationalLevel) {
+        this.educationalLevel = educationalLevel;
     }
 
-    private Text fAbstract;
+    private Text abstract_;
 
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
@@ -719,21 +849,22 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getAbstract() {
-        return fAbstract;
+        return abstract_;
     }
 
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
      *
+     * @param abstract_ Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/276">https://github.com/schemaorg/schemaorg/issues/276</a>
      */
     @Override
-    public void setAbstract(Text fAbstract) {
-        this.fAbstract = fAbstract;
+    public void setAbstract(Text abstract_) {
+        this.abstract_ = abstract_;
     }
 
-    private Object fCreativeWorkStatus;
+    private Object creativeWorkStatus;
 
     /**
      * The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle.
@@ -744,24 +875,33 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getCreativeWorkStatus() {
-        return (T) fCreativeWorkStatus;
+        return (T) creativeWorkStatus;
     }
 
     /**
      * The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle.
      *
+     * @param creativeWorkStatus Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/987">https://github.com/schemaorg/schemaorg/issues/987</a>
      */
     @Override
-    public void setCreativeWorkStatus(Object fCreativeWorkStatus) {
-        if(!(fCreativeWorkStatus instanceof Text) && !(fCreativeWorkStatus instanceof DefinedTerm)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'creativeWorkStatus': " + fCreativeWorkStatus);
-        }
-        this.fCreativeWorkStatus = fCreativeWorkStatus;
+    public void setCreativeWorkStatus(Text creativeWorkStatus) {
+        this.creativeWorkStatus = creativeWorkStatus;
+    }
+    /**
+     * The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle.
+     *
+     * @param creativeWorkStatus DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/987">https://github.com/schemaorg/schemaorg/issues/987</a>
+     */
+    @Override
+    public void setCreativeWorkStatus(DefinedTerm creativeWorkStatus) {
+        this.creativeWorkStatus = creativeWorkStatus;
     }
 
-    private Date fExpires;
+    private Date expires;
 
     /**
      * Date the content expires and is no longer useful or available. For example a [[VideoObject]] or [[NewsArticle]] whose availability or relevance is time-limited, or a [[ClaimReview]] fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date.
@@ -770,19 +910,20 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Date getExpires() {
-        return fExpires;
+        return expires;
     }
 
     /**
      * Date the content expires and is no longer useful or available. For example a [[VideoObject]] or [[NewsArticle]] whose availability or relevance is time-limited, or a [[ClaimReview]] fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date.
      *
+     * @param expires Date value to set.
      */
     @Override
-    public void setExpires(Date fExpires) {
-        this.fExpires = fExpires;
+    public void setExpires(Date expires) {
+        this.expires = expires;
     }
 
-    private DateTime fContentReferenceTime;
+    private DateTime contentReferenceTime;
 
     /**
      * The specific time described by a creative work, for works (e.g. articles, video objects etc.) that emphasise a particular moment within an Event.
@@ -793,21 +934,22 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public DateTime getContentReferenceTime() {
-        return fContentReferenceTime;
+        return contentReferenceTime;
     }
 
     /**
      * The specific time described by a creative work, for works (e.g. articles, video objects etc.) that emphasise a particular moment within an Event.
      *
+     * @param contentReferenceTime DateTime value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1050">https://github.com/schemaorg/schemaorg/issues/1050</a>
      */
     @Override
-    public void setContentReferenceTime(DateTime fContentReferenceTime) {
-        this.fContentReferenceTime = fContentReferenceTime;
+    public void setContentReferenceTime(DateTime contentReferenceTime) {
+        this.contentReferenceTime = contentReferenceTime;
     }
 
-    private Object fMaterial;
+    private Object material;
 
     /**
      * A material that something is made from, e.g. leather, wool, cotton, paper.
@@ -816,22 +958,38 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getMaterial() {
-        return (T) fMaterial;
+        return (T) material;
     }
 
     /**
      * A material that something is made from, e.g. leather, wool, cotton, paper.
      *
+     * @param material Text value to set.
      */
     @Override
-    public void setMaterial(Object fMaterial) {
-        if(!(fMaterial instanceof Text) && !(fMaterial instanceof URL) && !(fMaterial instanceof Product)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'material': " + fMaterial);
-        }
-        this.fMaterial = fMaterial;
+    public void setMaterial(Text material) {
+        this.material = material;
+    }
+    /**
+     * A material that something is made from, e.g. leather, wool, cotton, paper.
+     *
+     * @param material URL value to set.
+     */
+    @Override
+    public void setMaterial(URL material) {
+        this.material = material;
+    }
+    /**
+     * A material that something is made from, e.g. leather, wool, cotton, paper.
+     *
+     * @param material Product value to set.
+     */
+    @Override
+    public void setMaterial(Product material) {
+        this.material = material;
     }
 
-    private Review fReview;
+    private Review review;
 
     /**
      * A review of the item.
@@ -840,19 +998,20 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Review getReview() {
-        return fReview;
+        return review;
     }
 
     /**
      * A review of the item.
      *
+     * @param review Review value to set.
      */
     @Override
-    public void setReview(Review fReview) {
-        this.fReview = fReview;
+    public void setReview(Review review) {
+        this.review = review;
     }
 
-    private Object fFileFormat;
+    private Object fileFormat;
 
     /**
      * Media type, typically MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml)) of the content e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.
@@ -861,22 +1020,29 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getFileFormat() {
-        return (T) fFileFormat;
+        return (T) fileFormat;
     }
 
     /**
      * Media type, typically MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml)) of the content e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.
      *
+     * @param fileFormat URL value to set.
      */
     @Override
-    public void setFileFormat(Object fFileFormat) {
-        if(!(fFileFormat instanceof URL) && !(fFileFormat instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'fileFormat': " + fFileFormat);
-        }
-        this.fFileFormat = fFileFormat;
+    public void setFileFormat(URL fileFormat) {
+        this.fileFormat = fileFormat;
+    }
+    /**
+     * Media type, typically MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml)) of the content e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.
+     *
+     * @param fileFormat Text value to set.
+     */
+    @Override
+    public void setFileFormat(Text fileFormat) {
+        this.fileFormat = fileFormat;
     }
 
-    private Text fText;
+    private Text text;
 
     /**
      * The textual content of this CreativeWork.
@@ -885,19 +1051,20 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getText() {
-        return fText;
+        return text;
     }
 
     /**
      * The textual content of this CreativeWork.
      *
+     * @param text Text value to set.
      */
     @Override
-    public void setText(Text fText) {
-        this.fText = fText;
+    public void setText(Text text) {
+        this.text = text;
     }
 
-    private Object fTranslator;
+    private Object translator;
 
     /**
      * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
@@ -906,22 +1073,29 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getTranslator() {
-        return (T) fTranslator;
+        return (T) translator;
     }
 
     /**
      * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
      *
+     * @param translator Person value to set.
      */
     @Override
-    public void setTranslator(Object fTranslator) {
-        if(!(fTranslator instanceof Person) && !(fTranslator instanceof Organization)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'translator': " + fTranslator);
-        }
-        this.fTranslator = fTranslator;
+    public void setTranslator(Person translator) {
+        this.translator = translator;
+    }
+    /**
+     * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
+     *
+     * @param translator Organization value to set.
+     */
+    @Override
+    public void setTranslator(Organization translator) {
+        this.translator = translator;
     }
 
-    private Text fAward;
+    private Text award;
 
     /**
      * An award won by or for this item.
@@ -930,19 +1104,20 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getAward() {
-        return fAward;
+        return award;
     }
 
     /**
      * An award won by or for this item.
      *
+     * @param award Text value to set.
      */
     @Override
-    public void setAward(Text fAward) {
-        this.fAward = fAward;
+    public void setAward(Text award) {
+        this.award = award;
     }
 
-    private Object fAssesses;
+    private Object assesses;
 
     /**
      * The item being described is intended to assess the competency or learning outcome defined by the referenced term.
@@ -953,24 +1128,33 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getAssesses() {
-        return (T) fAssesses;
+        return (T) assesses;
     }
 
     /**
      * The item being described is intended to assess the competency or learning outcome defined by the referenced term.
      *
+     * @param assesses Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
      */
     @Override
-    public void setAssesses(Object fAssesses) {
-        if(!(fAssesses instanceof Text) && !(fAssesses instanceof DefinedTerm)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'assesses': " + fAssesses);
-        }
-        this.fAssesses = fAssesses;
+    public void setAssesses(Text assesses) {
+        this.assesses = assesses;
+    }
+    /**
+     * The item being described is intended to assess the competency or learning outcome defined by the referenced term.
+     *
+     * @param assesses DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
+     */
+    @Override
+    public void setAssesses(DefinedTerm assesses) {
+        this.assesses = assesses;
     }
 
-    private Text fCopyrightNotice;
+    private Text copyrightNotice;
 
     /**
      * Text of a notice appropriate for describing the copyright aspects of this Creative Work, ideally indicating the owner of the copyright for the Work.
@@ -981,21 +1165,22 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getCopyrightNotice() {
-        return fCopyrightNotice;
+        return copyrightNotice;
     }
 
     /**
      * Text of a notice appropriate for describing the copyright aspects of this Creative Work, ideally indicating the owner of the copyright for the Work.
      *
+     * @param copyrightNotice Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2659">https://github.com/schemaorg/schemaorg/issues/2659</a>
      */
     @Override
-    public void setCopyrightNotice(Text fCopyrightNotice) {
-        this.fCopyrightNotice = fCopyrightNotice;
+    public void setCopyrightNotice(Text copyrightNotice) {
+        this.copyrightNotice = copyrightNotice;
     }
 
-    private Object fSchemaVersion;
+    private Object schemaVersion;
 
     /**
      * Indicates (by URL or string) a particular version of a schema used in some CreativeWork. This property was created primarily to
@@ -1005,23 +1190,31 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getSchemaVersion() {
-        return (T) fSchemaVersion;
+        return (T) schemaVersion;
     }
 
     /**
      * Indicates (by URL or string) a particular version of a schema used in some CreativeWork. This property was created primarily to
      *     indicate the use of a specific schema.org release, e.g. ```10.0``` as a simple string, or more explicitly via URL, ```https://schema.org/docs/releases.html#v10.0```. There may be situations in which other schemas might usefully be referenced this way, e.g. ```http://dublincore.org/specifications/dublin-core/dces/1999-07-02/``` but this has not been carefully explored in the community.
      *
+     * @param schemaVersion Text value to set.
      */
     @Override
-    public void setSchemaVersion(Object fSchemaVersion) {
-        if(!(fSchemaVersion instanceof Text) && !(fSchemaVersion instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'schemaVersion': " + fSchemaVersion);
-        }
-        this.fSchemaVersion = fSchemaVersion;
+    public void setSchemaVersion(Text schemaVersion) {
+        this.schemaVersion = schemaVersion;
+    }
+    /**
+     * Indicates (by URL or string) a particular version of a schema used in some CreativeWork. This property was created primarily to
+     *     indicate the use of a specific schema.org release, e.g. ```10.0``` as a simple string, or more explicitly via URL, ```https://schema.org/docs/releases.html#v10.0```. There may be situations in which other schemas might usefully be referenced this way, e.g. ```http://dublincore.org/specifications/dublin-core/dces/1999-07-02/``` but this has not been carefully explored in the community.
+     *
+     * @param schemaVersion URL value to set.
+     */
+    @Override
+    public void setSchemaVersion(URL schemaVersion) {
+        this.schemaVersion = schemaVersion;
     }
 
-    private Country fCountryOfOrigin;
+    private Country countryOfOrigin;
 
     /**
      * The country of origin of something, including products as well as creative  works such as movie and TV content.
@@ -1034,7 +1227,7 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Country getCountryOfOrigin() {
-        return fCountryOfOrigin;
+        return countryOfOrigin;
     }
 
     /**
@@ -1044,13 +1237,14 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * 
      * In the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.
      *
+     * @param countryOfOrigin Country value to set.
      */
     @Override
-    public void setCountryOfOrigin(Country fCountryOfOrigin) {
-        this.fCountryOfOrigin = fCountryOfOrigin;
+    public void setCountryOfOrigin(Country countryOfOrigin) {
+        this.countryOfOrigin = countryOfOrigin;
     }
 
-    private Object fPattern;
+    private Object pattern;
 
     /**
      * A pattern that something has, for example 'polka dot', 'striped', 'Canadian flag'. Values are typically expressed as text, although links to controlled value schemes are also supported.
@@ -1061,24 +1255,33 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getPattern() {
-        return (T) fPattern;
+        return (T) pattern;
     }
 
     /**
      * A pattern that something has, for example 'polka dot', 'striped', 'Canadian flag'. Values are typically expressed as text, although links to controlled value schemes are also supported.
      *
+     * @param pattern DefinedTerm value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
     @Override
-    public void setPattern(Object fPattern) {
-        if(!(fPattern instanceof DefinedTerm) && !(fPattern instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'pattern': " + fPattern);
-        }
-        this.fPattern = fPattern;
+    public void setPattern(DefinedTerm pattern) {
+        this.pattern = pattern;
+    }
+    /**
+     * A pattern that something has, for example 'polka dot', 'striped', 'Canadian flag'. Values are typically expressed as text, although links to controlled value schemes are also supported.
+     *
+     * @param pattern Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     */
+    @Override
+    public void setPattern(Text pattern) {
+        this.pattern = pattern;
     }
 
-    private Person fAccountablePerson;
+    private Person accountablePerson;
 
     /**
      * Specifies the Person that is legally accountable for the CreativeWork.
@@ -1087,19 +1290,20 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Person getAccountablePerson() {
-        return fAccountablePerson;
+        return accountablePerson;
     }
 
     /**
      * Specifies the Person that is legally accountable for the CreativeWork.
      *
+     * @param accountablePerson Person value to set.
      */
     @Override
-    public void setAccountablePerson(Person fAccountablePerson) {
-        this.fAccountablePerson = fAccountablePerson;
+    public void setAccountablePerson(Person accountablePerson) {
+        this.accountablePerson = accountablePerson;
     }
 
-    private Grant fFunding;
+    private Grant funding;
 
     /**
      * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
@@ -1111,22 +1315,23 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Grant getFunding() {
-        return fFunding;
+        return funding;
     }
 
     /**
      * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
      *
+     * @param funding Grant value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
     @Override
-    public void setFunding(Grant fFunding) {
-        this.fFunding = fFunding;
+    public void setFunding(Grant funding) {
+        this.funding = funding;
     }
 
-    private Object fEducationalUse;
+    private Object educationalUse;
 
     /**
      * The purpose of a work in the context of education; for example, 'assignment', 'group work'.
@@ -1135,22 +1340,29 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getEducationalUse() {
-        return (T) fEducationalUse;
+        return (T) educationalUse;
     }
 
     /**
      * The purpose of a work in the context of education; for example, 'assignment', 'group work'.
      *
+     * @param educationalUse DefinedTerm value to set.
      */
     @Override
-    public void setEducationalUse(Object fEducationalUse) {
-        if(!(fEducationalUse instanceof DefinedTerm) && !(fEducationalUse instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'educationalUse': " + fEducationalUse);
-        }
-        this.fEducationalUse = fEducationalUse;
+    public void setEducationalUse(DefinedTerm educationalUse) {
+        this.educationalUse = educationalUse;
+    }
+    /**
+     * The purpose of a work in the context of education; for example, 'assignment', 'group work'.
+     *
+     * @param educationalUse Text value to set.
+     */
+    @Override
+    public void setEducationalUse(Text educationalUse) {
+        this.educationalUse = educationalUse;
     }
 
-    private Object fGenre;
+    private Object genre;
 
     /**
      * Genre of the creative work, broadcast channel or group.
@@ -1159,22 +1371,29 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getGenre() {
-        return (T) fGenre;
+        return (T) genre;
     }
 
     /**
      * Genre of the creative work, broadcast channel or group.
      *
+     * @param genre URL value to set.
      */
     @Override
-    public void setGenre(Object fGenre) {
-        if(!(fGenre instanceof URL) && !(fGenre instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'genre': " + fGenre);
-        }
-        this.fGenre = fGenre;
+    public void setGenre(URL genre) {
+        this.genre = genre;
+    }
+    /**
+     * Genre of the creative work, broadcast channel or group.
+     *
+     * @param genre Text value to set.
+     */
+    @Override
+    public void setGenre(Text genre) {
+        this.genre = genre;
     }
 
-    private Object fKeywords;
+    private Object keywords;
 
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
@@ -1183,22 +1402,38 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getKeywords() {
-        return (T) fKeywords;
+        return (T) keywords;
     }
 
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
      *
+     * @param keywords DefinedTerm value to set.
      */
     @Override
-    public void setKeywords(Object fKeywords) {
-        if(!(fKeywords instanceof DefinedTerm) && !(fKeywords instanceof Text) && !(fKeywords instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'keywords': " + fKeywords);
-        }
-        this.fKeywords = fKeywords;
+    public void setKeywords(DefinedTerm keywords) {
+        this.keywords = keywords;
+    }
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     * @param keywords Text value to set.
+     */
+    @Override
+    public void setKeywords(Text keywords) {
+        this.keywords = keywords;
+    }
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     * @param keywords URL value to set.
+     */
+    @Override
+    public void setKeywords(URL keywords) {
+        this.keywords = keywords;
     }
 
-    private Object fPosition;
+    private Object position;
 
     /**
      * The position of an item in a series or sequence of items.
@@ -1207,22 +1442,29 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getPosition() {
-        return (T) fPosition;
+        return (T) position;
     }
 
     /**
      * The position of an item in a series or sequence of items.
      *
+     * @param position Integer value to set.
      */
     @Override
-    public void setPosition(Object fPosition) {
-        if(!(fPosition instanceof Integer) && !(fPosition instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'position': " + fPosition);
-        }
-        this.fPosition = fPosition;
+    public void setPosition(Integer position) {
+        this.position = position;
+    }
+    /**
+     * The position of an item in a series or sequence of items.
+     *
+     * @param position Text value to set.
+     */
+    @Override
+    public void setPosition(Text position) {
+        this.position = position;
     }
 
-    private Text fAccessibilityHazard;
+    private Text accessibilityHazard;
 
     /**
      * A characteristic of the described resource that is physiologically dangerous to some users. Related to WCAG 2.0 guideline 2.3. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityHazard-vocabulary).
@@ -1231,19 +1473,20 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getAccessibilityHazard() {
-        return fAccessibilityHazard;
+        return accessibilityHazard;
     }
 
     /**
      * A characteristic of the described resource that is physiologically dangerous to some users. Related to WCAG 2.0 guideline 2.3. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityHazard-vocabulary).
      *
+     * @param accessibilityHazard Text value to set.
      */
     @Override
-    public void setAccessibilityHazard(Text fAccessibilityHazard) {
-        this.fAccessibilityHazard = fAccessibilityHazard;
+    public void setAccessibilityHazard(Text accessibilityHazard) {
+        this.accessibilityHazard = accessibilityHazard;
     }
 
-    private Text fAlternativeHeadline;
+    private Text alternativeHeadline;
 
     /**
      * A secondary title of the CreativeWork.
@@ -1252,19 +1495,20 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getAlternativeHeadline() {
-        return fAlternativeHeadline;
+        return alternativeHeadline;
     }
 
     /**
      * A secondary title of the CreativeWork.
      *
+     * @param alternativeHeadline Text value to set.
      */
     @Override
-    public void setAlternativeHeadline(Text fAlternativeHeadline) {
-        this.fAlternativeHeadline = fAlternativeHeadline;
+    public void setAlternativeHeadline(Text alternativeHeadline) {
+        this.alternativeHeadline = alternativeHeadline;
     }
 
-    private Audience fAudience;
+    private Audience audience;
 
     /**
      * An intended audience, i.e. a group for whom something was created.
@@ -1273,19 +1517,20 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Audience getAudience() {
-        return fAudience;
+        return audience;
     }
 
     /**
      * An intended audience, i.e. a group for whom something was created.
      *
+     * @param audience Audience value to set.
      */
     @Override
-    public void setAudience(Audience fAudience) {
-        this.fAudience = fAudience;
+    public void setAudience(Audience audience) {
+        this.audience = audience;
     }
 
-    private Object fOffers;
+    private Object offers;
 
     /**
      * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
@@ -1296,24 +1541,33 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getOffers() {
-        return (T) fOffers;
+        return (T) offers;
     }
 
     /**
      * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      *
+     * @param offers Offer value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
     @Override
-    public void setOffers(Object fOffers) {
-        if(!(fOffers instanceof Offer) && !(fOffers instanceof Demand)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'offers': " + fOffers);
-        }
-        this.fOffers = fOffers;
+    public void setOffers(Offer offers) {
+        this.offers = offers;
+    }
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     *
+     * @param offers Demand value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public void setOffers(Demand offers) {
+        this.offers = offers;
     }
 
-    private Place fLocationCreated;
+    private Place locationCreated;
 
     /**
      * The location where the CreativeWork was created, which may not be the same as the location depicted in the CreativeWork.
@@ -1322,19 +1576,20 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Place getLocationCreated() {
-        return fLocationCreated;
+        return locationCreated;
     }
 
     /**
      * The location where the CreativeWork was created, which may not be the same as the location depicted in the CreativeWork.
      *
+     * @param locationCreated Place value to set.
      */
     @Override
-    public void setLocationCreated(Place fLocationCreated) {
-        this.fLocationCreated = fLocationCreated;
+    public void setLocationCreated(Place locationCreated) {
+        this.locationCreated = locationCreated;
     }
 
-    private MediaObject fAssociatedMedia;
+    private MediaObject associatedMedia;
 
     /**
      * A media object that encodes this CreativeWork. This property is a synonym for encoding.
@@ -1343,19 +1598,20 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public MediaObject getAssociatedMedia() {
-        return fAssociatedMedia;
+        return associatedMedia;
     }
 
     /**
      * A media object that encodes this CreativeWork. This property is a synonym for encoding.
      *
+     * @param associatedMedia MediaObject value to set.
      */
     @Override
-    public void setAssociatedMedia(MediaObject fAssociatedMedia) {
-        this.fAssociatedMedia = fAssociatedMedia;
+    public void setAssociatedMedia(MediaObject associatedMedia) {
+        this.associatedMedia = associatedMedia;
     }
 
-    private Object fMaterialExtent;
+    private Object materialExtent;
 
     /**
      * The quantity of the materials being described or an expression of the physical space they occupy.
@@ -1366,24 +1622,33 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getMaterialExtent() {
-        return (T) fMaterialExtent;
+        return (T) materialExtent;
     }
 
     /**
      * The quantity of the materials being described or an expression of the physical space they occupy.
      *
+     * @param materialExtent QuantitativeValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1759">https://github.com/schemaorg/schemaorg/issues/1759</a>
      */
     @Override
-    public void setMaterialExtent(Object fMaterialExtent) {
-        if(!(fMaterialExtent instanceof QuantitativeValue) && !(fMaterialExtent instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'materialExtent': " + fMaterialExtent);
-        }
-        this.fMaterialExtent = fMaterialExtent;
+    public void setMaterialExtent(QuantitativeValue materialExtent) {
+        this.materialExtent = materialExtent;
+    }
+    /**
+     * The quantity of the materials being described or an expression of the physical space they occupy.
+     *
+     * @param materialExtent Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1759">https://github.com/schemaorg/schemaorg/issues/1759</a>
+     */
+    @Override
+    public void setMaterialExtent(Text materialExtent) {
+        this.materialExtent = materialExtent;
     }
 
-    private Thing fMainEntity;
+    private Thing mainEntity;
 
     /**
      * Indicates the primary entity described in some page or other CreativeWork.
@@ -1392,19 +1657,20 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Thing getMainEntity() {
-        return fMainEntity;
+        return mainEntity;
     }
 
     /**
      * Indicates the primary entity described in some page or other CreativeWork.
      *
+     * @param mainEntity Thing value to set.
      */
     @Override
-    public void setMainEntity(Thing fMainEntity) {
-        this.fMainEntity = fMainEntity;
+    public void setMainEntity(Thing mainEntity) {
+        this.mainEntity = mainEntity;
     }
 
-    private Object fCopyrightHolder;
+    private Object copyrightHolder;
 
     /**
      * The party holding the legal copyright to the CreativeWork.
@@ -1413,22 +1679,29 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getCopyrightHolder() {
-        return (T) fCopyrightHolder;
+        return (T) copyrightHolder;
     }
 
     /**
      * The party holding the legal copyright to the CreativeWork.
      *
+     * @param copyrightHolder Organization value to set.
      */
     @Override
-    public void setCopyrightHolder(Object fCopyrightHolder) {
-        if(!(fCopyrightHolder instanceof Organization) && !(fCopyrightHolder instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'copyrightHolder': " + fCopyrightHolder);
-        }
-        this.fCopyrightHolder = fCopyrightHolder;
+    public void setCopyrightHolder(Organization copyrightHolder) {
+        this.copyrightHolder = copyrightHolder;
+    }
+    /**
+     * The party holding the legal copyright to the CreativeWork.
+     *
+     * @param copyrightHolder Person value to set.
+     */
+    @Override
+    public void setCopyrightHolder(Person copyrightHolder) {
+        this.copyrightHolder = copyrightHolder;
     }
 
-    private Text fAwards;
+    private Text awards;
 
     /**
      * Awards won by or for this item.
@@ -1437,19 +1710,20 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getAwards() {
-        return fAwards;
+        return awards;
     }
 
     /**
      * Awards won by or for this item.
      *
+     * @param awards Text value to set.
      */
     @Override
-    public void setAwards(Text fAwards) {
-        this.fAwards = fAwards;
+    public void setAwards(Text awards) {
+        this.awards = awards;
     }
 
-    private Place fContentLocation;
+    private Place contentLocation;
 
     /**
      * The location depicted or described in the content. For example, the location in a photograph or painting.
@@ -1458,19 +1732,20 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Place getContentLocation() {
-        return fContentLocation;
+        return contentLocation;
     }
 
     /**
      * The location depicted or described in the content. For example, the location in a photograph or painting.
      *
+     * @param contentLocation Place value to set.
      */
     @Override
-    public void setContentLocation(Place fContentLocation) {
-        this.fContentLocation = fContentLocation;
+    public void setContentLocation(Place contentLocation) {
+        this.contentLocation = contentLocation;
     }
 
-    private Date fSdDatePublished;
+    private Date sdDatePublished;
 
     /**
      * Indicates the date on which the current structured data was generated / published. Typically used alongside [[sdPublisher]]
@@ -1481,21 +1756,22 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Date getSdDatePublished() {
-        return fSdDatePublished;
+        return sdDatePublished;
     }
 
     /**
      * Indicates the date on which the current structured data was generated / published. Typically used alongside [[sdPublisher]]
      *
+     * @param sdDatePublished Date value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
      */
     @Override
-    public void setSdDatePublished(Date fSdDatePublished) {
-        this.fSdDatePublished = fSdDatePublished;
+    public void setSdDatePublished(Date sdDatePublished) {
+        this.sdDatePublished = sdDatePublished;
     }
 
-    private Object fProducer;
+    private Object producer;
 
     /**
      * The person or organization who produced the work (e.g. music album, movie, tv/radio series etc.).
@@ -1504,22 +1780,29 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getProducer() {
-        return (T) fProducer;
+        return (T) producer;
     }
 
     /**
      * The person or organization who produced the work (e.g. music album, movie, tv/radio series etc.).
      *
+     * @param producer Organization value to set.
      */
     @Override
-    public void setProducer(Object fProducer) {
-        if(!(fProducer instanceof Organization) && !(fProducer instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'producer': " + fProducer);
-        }
-        this.fProducer = fProducer;
+    public void setProducer(Organization producer) {
+        this.producer = producer;
+    }
+    /**
+     * The person or organization who produced the work (e.g. music album, movie, tv/radio series etc.).
+     *
+     * @param producer Person value to set.
+     */
+    @Override
+    public void setProducer(Person producer) {
+        this.producer = producer;
     }
 
-    private Place fSpatial;
+    private Place spatial;
 
     /**
      * The "spatial" property can be used in cases when more specific properties
@@ -1529,20 +1812,21 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Place getSpatial() {
-        return fSpatial;
+        return spatial;
     }
 
     /**
      * The "spatial" property can be used in cases when more specific properties
      * (e.g. [[locationCreated]], [[spatialCoverage]], [[contentLocation]]) are not known to be appropriate.
      *
+     * @param spatial Place value to set.
      */
     @Override
-    public void setSpatial(Place fSpatial) {
-        this.fSpatial = fSpatial;
+    public void setSpatial(Place spatial) {
+        this.spatial = spatial;
     }
 
-    private Object fPublisher;
+    private Object publisher;
 
     /**
      * The publisher of the creative work.
@@ -1551,22 +1835,29 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getPublisher() {
-        return (T) fPublisher;
+        return (T) publisher;
     }
 
     /**
      * The publisher of the creative work.
      *
+     * @param publisher Person value to set.
      */
     @Override
-    public void setPublisher(Object fPublisher) {
-        if(!(fPublisher instanceof Person) && !(fPublisher instanceof Organization)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'publisher': " + fPublisher);
-        }
-        this.fPublisher = fPublisher;
+    public void setPublisher(Person publisher) {
+        this.publisher = publisher;
+    }
+    /**
+     * The publisher of the creative work.
+     *
+     * @param publisher Organization value to set.
+     */
+    @Override
+    public void setPublisher(Organization publisher) {
+        this.publisher = publisher;
     }
 
-    private Organization fSourceOrganization;
+    private Organization sourceOrganization;
 
     /**
      * The Organization on whose behalf the creator was working.
@@ -1575,19 +1866,20 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Organization getSourceOrganization() {
-        return fSourceOrganization;
+        return sourceOrganization;
     }
 
     /**
      * The Organization on whose behalf the creator was working.
      *
+     * @param sourceOrganization Organization value to set.
      */
     @Override
-    public void setSourceOrganization(Organization fSourceOrganization) {
-        this.fSourceOrganization = fSourceOrganization;
+    public void setSourceOrganization(Organization sourceOrganization) {
+        this.sourceOrganization = sourceOrganization;
     }
 
-    private Person fCharacter;
+    private Person character;
 
     /**
      * Fictional person connected with a creative work.
@@ -1596,19 +1888,20 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Person getCharacter() {
-        return fCharacter;
+        return character;
     }
 
     /**
      * Fictional person connected with a creative work.
      *
+     * @param character Person value to set.
      */
     @Override
-    public void setCharacter(Person fCharacter) {
-        this.fCharacter = fCharacter;
+    public void setCharacter(Person character) {
+        this.character = character;
     }
 
-    private Object fFunder;
+    private Object funder;
 
     /**
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
@@ -1617,22 +1910,29 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getFunder() {
-        return (T) fFunder;
+        return (T) funder;
     }
 
     /**
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
+     * @param funder Organization value to set.
      */
     @Override
-    public void setFunder(Object fFunder) {
-        if(!(fFunder instanceof Organization) && !(fFunder instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'funder': " + fFunder);
-        }
-        this.fFunder = fFunder;
+    public void setFunder(Organization funder) {
+        this.funder = funder;
+    }
+    /**
+     * A person or organization that supports (sponsors) something through some kind of financial contribution.
+     *
+     * @param funder Person value to set.
+     */
+    @Override
+    public void setFunder(Person funder) {
+        this.funder = funder;
     }
 
-    private CreativeWork fExampleOfWork;
+    private CreativeWork exampleOfWork;
 
     /**
      * A creative work that this work is an example/instance/realization/derivation of.
@@ -1642,20 +1942,21 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public CreativeWork getExampleOfWork() {
-        return fExampleOfWork;
+        return exampleOfWork;
     }
 
     /**
      * A creative work that this work is an example/instance/realization/derivation of.
      *
+     * @param exampleOfWork CreativeWork value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
     @Override
-    public void setExampleOfWork(CreativeWork fExampleOfWork) {
-        this.fExampleOfWork = fExampleOfWork;
+    public void setExampleOfWork(CreativeWork exampleOfWork) {
+        this.exampleOfWork = exampleOfWork;
     }
 
-    private Object fUsageInfo;
+    private Object usageInfo;
 
     /**
      * The schema.org [[usageInfo]] property indicates further information about a [[CreativeWork]]. This property is applicable both to works that are freely available and to those that require payment or other transactions. It can reference additional information e.g. community expectations on preferred linking and citation conventions, as well as purchasing details. For something that can be commercially licensed, usageInfo can provide detailed, resource-specific information about licensing options.
@@ -1668,7 +1969,7 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getUsageInfo() {
-        return (T) fUsageInfo;
+        return (T) usageInfo;
     }
 
     /**
@@ -1676,18 +1977,29 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * 
      * This property can be used alongside the license property which indicates license(s) applicable to some piece of content. The usageInfo property can provide information about other licensing options, e.g. acquiring commercial usage rights for an image that is also available under non-commercial creative commons licenses.
      *
+     * @param usageInfo CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
      */
     @Override
-    public void setUsageInfo(Object fUsageInfo) {
-        if(!(fUsageInfo instanceof CreativeWork) && !(fUsageInfo instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'usageInfo': " + fUsageInfo);
-        }
-        this.fUsageInfo = fUsageInfo;
+    public void setUsageInfo(CreativeWork usageInfo) {
+        this.usageInfo = usageInfo;
+    }
+    /**
+     * The schema.org [[usageInfo]] property indicates further information about a [[CreativeWork]]. This property is applicable both to works that are freely available and to those that require payment or other transactions. It can reference additional information e.g. community expectations on preferred linking and citation conventions, as well as purchasing details. For something that can be commercially licensed, usageInfo can provide detailed, resource-specific information about licensing options.
+     * 
+     * This property can be used alongside the license property which indicates license(s) applicable to some piece of content. The usageInfo property can provide information about other licensing options, e.g. acquiring commercial usage rights for an image that is also available under non-commercial creative commons licenses.
+     *
+     * @param usageInfo URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
+     */
+    @Override
+    public void setUsageInfo(URL usageInfo) {
+        this.usageInfo = usageInfo;
     }
 
-    private Object fProvider;
+    private Object provider;
 
     /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
@@ -1699,25 +2011,35 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getProvider() {
-        return (T) fProvider;
+        return (T) provider;
     }
 
     /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
      *
+     * @param provider Organization value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
      */
     @Override
-    public void setProvider(Object fProvider) {
-        if(!(fProvider instanceof Organization) && !(fProvider instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'provider': " + fProvider);
-        }
-        this.fProvider = fProvider;
+    public void setProvider(Organization provider) {
+        this.provider = provider;
+    }
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @param provider Person value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     */
+    @Override
+    public void setProvider(Person provider) {
+        this.provider = provider;
     }
 
-    private Object fSdPublisher;
+    private Object sdPublisher;
 
     /**
      * Indicates the party responsible for generating and publishing the current structured data markup, typically in cases where the structured data is derived automatically from existing published content but published on a different site. For example, student projects and open data initiatives often re-publish existing content with more explicitly structured metadata. The
@@ -1729,25 +2051,35 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getSdPublisher() {
-        return (T) fSdPublisher;
+        return (T) sdPublisher;
     }
 
     /**
      * Indicates the party responsible for generating and publishing the current structured data markup, typically in cases where the structured data is derived automatically from existing published content but published on a different site. For example, student projects and open data initiatives often re-publish existing content with more explicitly structured metadata. The
      * [[sdPublisher]] property helps make such practices more explicit.
      *
+     * @param sdPublisher Organization value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
      */
     @Override
-    public void setSdPublisher(Object fSdPublisher) {
-        if(!(fSdPublisher instanceof Organization) && !(fSdPublisher instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'sdPublisher': " + fSdPublisher);
-        }
-        this.fSdPublisher = fSdPublisher;
+    public void setSdPublisher(Organization sdPublisher) {
+        this.sdPublisher = sdPublisher;
+    }
+    /**
+     * Indicates the party responsible for generating and publishing the current structured data markup, typically in cases where the structured data is derived automatically from existing published content but published on a different site. For example, student projects and open data initiatives often re-publish existing content with more explicitly structured metadata. The
+     * [[sdPublisher]] property helps make such practices more explicit.
+     *
+     * @param sdPublisher Person value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
+     */
+    @Override
+    public void setSdPublisher(Person sdPublisher) {
+        this.sdPublisher = sdPublisher;
     }
 
-    private Comment fComment;
+    private Comment comment;
 
     /**
      * Comments, typically from users.
@@ -1756,19 +2088,20 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Comment getComment() {
-        return fComment;
+        return comment;
     }
 
     /**
      * Comments, typically from users.
      *
+     * @param comment Comment value to set.
      */
     @Override
-    public void setComment(Comment fComment) {
-        this.fComment = fComment;
+    public void setComment(Comment comment) {
+        this.comment = comment;
     }
 
-    private Text fAccessibilityFeature;
+    private Text accessibilityFeature;
 
     /**
      * Content features of the resource, such as accessible media, alternatives and supported enhancements for accessibility. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityFeature-vocabulary).
@@ -1777,19 +2110,20 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getAccessibilityFeature() {
-        return fAccessibilityFeature;
+        return accessibilityFeature;
     }
 
     /**
      * Content features of the resource, such as accessible media, alternatives and supported enhancements for accessibility. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityFeature-vocabulary).
      *
+     * @param accessibilityFeature Text value to set.
      */
     @Override
-    public void setAccessibilityFeature(Text fAccessibilityFeature) {
-        this.fAccessibilityFeature = fAccessibilityFeature;
+    public void setAccessibilityFeature(Text accessibilityFeature) {
+        this.accessibilityFeature = accessibilityFeature;
     }
 
-    private PublicationEvent fPublication;
+    private PublicationEvent publication;
 
     /**
      * A publication event associated with the item.
@@ -1798,19 +2132,20 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public PublicationEvent getPublication() {
-        return fPublication;
+        return publication;
     }
 
     /**
      * A publication event associated with the item.
      *
+     * @param publication PublicationEvent value to set.
      */
     @Override
-    public void setPublication(PublicationEvent fPublication) {
-        this.fPublication = fPublication;
+    public void setPublication(PublicationEvent publication) {
+        this.publication = publication;
     }
 
-    private CreativeWork fTranslationOfWork;
+    private CreativeWork translationOfWork;
 
     /**
      * The work that this work has been translated from. e.g. 物种起源 is a translationOf “On the Origin of Species”
@@ -1820,20 +2155,21 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public CreativeWork getTranslationOfWork() {
-        return fTranslationOfWork;
+        return translationOfWork;
     }
 
     /**
      * The work that this work has been translated from. e.g. 物种起源 is a translationOf “On the Origin of Species”
      *
+     * @param translationOfWork CreativeWork value to set.
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
     @Override
-    public void setTranslationOfWork(CreativeWork fTranslationOfWork) {
-        this.fTranslationOfWork = fTranslationOfWork;
+    public void setTranslationOfWork(CreativeWork translationOfWork) {
+        this.translationOfWork = translationOfWork;
     }
 
-    private Text fInteractivityType;
+    private Text interactivityType;
 
     /**
      * The predominant mode of learning supported by the learning resource. Acceptable values are 'active', 'expositive', or 'mixed'.
@@ -1842,19 +2178,20 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getInteractivityType() {
-        return fInteractivityType;
+        return interactivityType;
     }
 
     /**
      * The predominant mode of learning supported by the learning resource. Acceptable values are 'active', 'expositive', or 'mixed'.
      *
+     * @param interactivityType Text value to set.
      */
     @Override
-    public void setInteractivityType(Text fInteractivityType) {
-        this.fInteractivityType = fInteractivityType;
+    public void setInteractivityType(Text interactivityType) {
+        this.interactivityType = interactivityType;
     }
 
-    private Integer fCommentCount;
+    private Integer commentCount;
 
     /**
      * The number of comments this CreativeWork (e.g. Article, Question or Answer) has received. This is most applicable to works published in Web sites with commenting system; additional comments may exist elsewhere.
@@ -1863,19 +2200,20 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Integer getCommentCount() {
-        return fCommentCount;
+        return commentCount;
     }
 
     /**
      * The number of comments this CreativeWork (e.g. Article, Question or Answer) has received. This is most applicable to works published in Web sites with commenting system; additional comments may exist elsewhere.
      *
+     * @param commentCount Integer value to set.
      */
     @Override
-    public void setCommentCount(Integer fCommentCount) {
-        this.fCommentCount = fCommentCount;
+    public void setCommentCount(Integer commentCount) {
+        this.commentCount = commentCount;
     }
 
-    private Text fAccessMode;
+    private Text accessMode;
 
     /**
      * The human sensory perceptual system or cognitive faculty through which a person may process or perceive information. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessMode-vocabulary).
@@ -1885,20 +2223,21 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getAccessMode() {
-        return fAccessMode;
+        return accessMode;
     }
 
     /**
      * The human sensory perceptual system or cognitive faculty through which a person may process or perceive information. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessMode-vocabulary).
      *
+     * @param accessMode Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
      */
     @Override
-    public void setAccessMode(Text fAccessMode) {
-        this.fAccessMode = fAccessMode;
+    public void setAccessMode(Text accessMode) {
+        this.accessMode = accessMode;
     }
 
-    private AggregateRating fAggregateRating;
+    private AggregateRating aggregateRating;
 
     /**
      * The overall rating, based on a collection of reviews or ratings, of the item.
@@ -1907,19 +2246,20 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public AggregateRating getAggregateRating() {
-        return fAggregateRating;
+        return aggregateRating;
     }
 
     /**
      * The overall rating, based on a collection of reviews or ratings, of the item.
      *
+     * @param aggregateRating AggregateRating value to set.
      */
     @Override
-    public void setAggregateRating(AggregateRating fAggregateRating) {
-        this.fAggregateRating = fAggregateRating;
+    public void setAggregateRating(AggregateRating aggregateRating) {
+        this.aggregateRating = aggregateRating;
     }
 
-    private Duration fTimeRequired;
+    private Duration timeRequired;
 
     /**
      * Approximate or typical time it takes to work with or through this learning resource for the typical intended target audience, e.g. 'PT30M', 'PT1H25M'.
@@ -1928,19 +2268,20 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Duration getTimeRequired() {
-        return fTimeRequired;
+        return timeRequired;
     }
 
     /**
      * Approximate or typical time it takes to work with or through this learning resource for the typical intended target audience, e.g. 'PT30M', 'PT1H25M'.
      *
+     * @param timeRequired Duration value to set.
      */
     @Override
-    public void setTimeRequired(Duration fTimeRequired) {
-        this.fTimeRequired = fTimeRequired;
+    public void setTimeRequired(Duration timeRequired) {
+        this.timeRequired = timeRequired;
     }
 
-    private Text fTypicalAgeRange;
+    private Text typicalAgeRange;
 
     /**
      * The typical expected age range, e.g. '7-9', '11-'.
@@ -1949,19 +2290,20 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getTypicalAgeRange() {
-        return fTypicalAgeRange;
+        return typicalAgeRange;
     }
 
     /**
      * The typical expected age range, e.g. '7-9', '11-'.
      *
+     * @param typicalAgeRange Text value to set.
      */
     @Override
-    public void setTypicalAgeRange(Text fTypicalAgeRange) {
-        this.fTypicalAgeRange = fTypicalAgeRange;
+    public void setTypicalAgeRange(Text typicalAgeRange) {
+        this.typicalAgeRange = typicalAgeRange;
     }
 
-    private InteractionCounter fInteractionStatistic;
+    private InteractionCounter interactionStatistic;
 
     /**
      * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
@@ -1971,20 +2313,21 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public InteractionCounter getInteractionStatistic() {
-        return fInteractionStatistic;
+        return interactionStatistic;
     }
 
     /**
      * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
      *
+     * @param interactionStatistic InteractionCounter value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
      */
     @Override
-    public void setInteractionStatistic(InteractionCounter fInteractionStatistic) {
-        this.fInteractionStatistic = fInteractionStatistic;
+    public void setInteractionStatistic(InteractionCounter interactionStatistic) {
+        this.interactionStatistic = interactionStatistic;
     }
 
-    private Number fCopyrightYear;
+    private Number copyrightYear;
 
     /**
      * The year during which the claimed copyright for the CreativeWork was first asserted.
@@ -1993,19 +2336,20 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Number getCopyrightYear() {
-        return fCopyrightYear;
+        return copyrightYear;
     }
 
     /**
      * The year during which the claimed copyright for the CreativeWork was first asserted.
      *
+     * @param copyrightYear Number value to set.
      */
     @Override
-    public void setCopyrightYear(Number fCopyrightYear) {
-        this.fCopyrightYear = fCopyrightYear;
+    public void setCopyrightYear(Number copyrightYear) {
+        this.copyrightYear = copyrightYear;
     }
 
-    private Object fIsBasedOn;
+    private Object isBasedOn;
 
     /**
      * A resource from which this work is derived or from which it is a modification or adaption.
@@ -2014,22 +2358,38 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getIsBasedOn() {
-        return (T) fIsBasedOn;
+        return (T) isBasedOn;
     }
 
     /**
      * A resource from which this work is derived or from which it is a modification or adaption.
      *
+     * @param isBasedOn CreativeWork value to set.
      */
     @Override
-    public void setIsBasedOn(Object fIsBasedOn) {
-        if(!(fIsBasedOn instanceof CreativeWork) && !(fIsBasedOn instanceof URL) && !(fIsBasedOn instanceof Product)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'isBasedOn': " + fIsBasedOn);
-        }
-        this.fIsBasedOn = fIsBasedOn;
+    public void setIsBasedOn(CreativeWork isBasedOn) {
+        this.isBasedOn = isBasedOn;
+    }
+    /**
+     * A resource from which this work is derived or from which it is a modification or adaption.
+     *
+     * @param isBasedOn URL value to set.
+     */
+    @Override
+    public void setIsBasedOn(URL isBasedOn) {
+        this.isBasedOn = isBasedOn;
+    }
+    /**
+     * A resource from which this work is derived or from which it is a modification or adaption.
+     *
+     * @param isBasedOn Product value to set.
+     */
+    @Override
+    public void setIsBasedOn(Product isBasedOn) {
+        this.isBasedOn = isBasedOn;
     }
 
-    private CreativeWork fWorkExample;
+    private CreativeWork workExample;
 
     /**
      * Example/instance/realization/derivation of the concept of this creative work. eg. The paperback edition, first edition, or eBook.
@@ -2039,20 +2399,21 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public CreativeWork getWorkExample() {
-        return fWorkExample;
+        return workExample;
     }
 
     /**
      * Example/instance/realization/derivation of the concept of this creative work. eg. The paperback edition, first edition, or eBook.
      *
+     * @param workExample CreativeWork value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
     @Override
-    public void setWorkExample(CreativeWork fWorkExample) {
-        this.fWorkExample = fWorkExample;
+    public void setWorkExample(CreativeWork workExample) {
+        this.workExample = workExample;
     }
 
-    private Object fPublishingPrinciples;
+    private Object publishingPrinciples;
 
     /**
      * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
@@ -2063,7 +2424,7 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getPublishingPrinciples() {
-        return (T) fPublishingPrinciples;
+        return (T) publishingPrinciples;
     }
 
     /**
@@ -2071,16 +2432,25 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * 
      * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
      *
+     * @param publishingPrinciples URL value to set.
      */
     @Override
-    public void setPublishingPrinciples(Object fPublishingPrinciples) {
-        if(!(fPublishingPrinciples instanceof URL) && !(fPublishingPrinciples instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'publishingPrinciples': " + fPublishingPrinciples);
-        }
-        this.fPublishingPrinciples = fPublishingPrinciples;
+    public void setPublishingPrinciples(URL publishingPrinciples) {
+        this.publishingPrinciples = publishingPrinciples;
+    }
+    /**
+     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * 
+     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+     *
+     * @param publishingPrinciples CreativeWork value to set.
+     */
+    @Override
+    public void setPublishingPrinciples(CreativeWork publishingPrinciples) {
+        this.publishingPrinciples = publishingPrinciples;
     }
 
-    private URL fDiscussionUrl;
+    private URL discussionUrl;
 
     /**
      * A link to the page containing the comments of the CreativeWork.
@@ -2089,19 +2459,20 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public URL getDiscussionUrl() {
-        return fDiscussionUrl;
+        return discussionUrl;
     }
 
     /**
      * A link to the page containing the comments of the CreativeWork.
      *
+     * @param discussionUrl URL value to set.
      */
     @Override
-    public void setDiscussionUrl(URL fDiscussionUrl) {
-        this.fDiscussionUrl = fDiscussionUrl;
+    public void setDiscussionUrl(URL discussionUrl) {
+        this.discussionUrl = discussionUrl;
     }
 
-    private PublicationEvent fReleasedEvent;
+    private PublicationEvent releasedEvent;
 
     /**
      * The place and time the release was issued, expressed as a PublicationEvent.
@@ -2110,19 +2481,20 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public PublicationEvent getReleasedEvent() {
-        return fReleasedEvent;
+        return releasedEvent;
     }
 
     /**
      * The place and time the release was issued, expressed as a PublicationEvent.
      *
+     * @param releasedEvent PublicationEvent value to set.
      */
     @Override
-    public void setReleasedEvent(PublicationEvent fReleasedEvent) {
-        this.fReleasedEvent = fReleasedEvent;
+    public void setReleasedEvent(PublicationEvent releasedEvent) {
+        this.releasedEvent = releasedEvent;
     }
 
-    private Object fDateCreated;
+    private Object dateCreated;
 
     /**
      * The date on which the CreativeWork was created or the item was added to a DataFeed.
@@ -2131,22 +2503,29 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getDateCreated() {
-        return (T) fDateCreated;
+        return (T) dateCreated;
     }
 
     /**
      * The date on which the CreativeWork was created or the item was added to a DataFeed.
      *
+     * @param dateCreated Date value to set.
      */
     @Override
-    public void setDateCreated(Object fDateCreated) {
-        if(!(fDateCreated instanceof Date) && !(fDateCreated instanceof DateTime)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'dateCreated': " + fDateCreated);
-        }
-        this.fDateCreated = fDateCreated;
+    public void setDateCreated(Date dateCreated) {
+        this.dateCreated = dateCreated;
+    }
+    /**
+     * The date on which the CreativeWork was created or the item was added to a DataFeed.
+     *
+     * @param dateCreated DateTime value to set.
+     */
+    @Override
+    public void setDateCreated(DateTime dateCreated) {
+        this.dateCreated = dateCreated;
     }
 
-    private CreativeWork fWorkTranslation;
+    private CreativeWork workTranslation;
 
     /**
      * A work that is a translation of the content of this work. e.g. 西遊記 has an English workTranslation “Journey to the West”,a German workTranslation “Monkeys Pilgerfahrt” and a Vietnamese  translation Tây du ký bình khảo.
@@ -2156,20 +2535,21 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public CreativeWork getWorkTranslation() {
-        return fWorkTranslation;
+        return workTranslation;
     }
 
     /**
      * A work that is a translation of the content of this work. e.g. 西遊記 has an English workTranslation “Journey to the West”,a German workTranslation “Monkeys Pilgerfahrt” and a Vietnamese  translation Tây du ký bình khảo.
      *
+     * @param workTranslation CreativeWork value to set.
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
     @Override
-    public void setWorkTranslation(CreativeWork fWorkTranslation) {
-        this.fWorkTranslation = fWorkTranslation;
+    public void setWorkTranslation(CreativeWork workTranslation) {
+        this.workTranslation = workTranslation;
     }
 
-    private Person fEditor;
+    private Person editor;
 
     /**
      * Specifies the Person who edited the CreativeWork.
@@ -2178,19 +2558,20 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Person getEditor() {
-        return fEditor;
+        return editor;
     }
 
     /**
      * Specifies the Person who edited the CreativeWork.
      *
+     * @param editor Person value to set.
      */
     @Override
-    public void setEditor(Person fEditor) {
-        this.fEditor = fEditor;
+    public void setEditor(Person editor) {
+        this.editor = editor;
     }
 
-    private Text fCreditText;
+    private Text creditText;
 
     /**
      * Text that can be used to credit person(s) and/or organization(s) associated with a published Creative Work.
@@ -2201,21 +2582,22 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getCreditText() {
-        return fCreditText;
+        return creditText;
     }
 
     /**
      * Text that can be used to credit person(s) and/or organization(s) associated with a published Creative Work.
      *
+     * @param creditText Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2659">https://github.com/schemaorg/schemaorg/issues/2659</a>
      */
     @Override
-    public void setCreditText(Text fCreditText) {
-        this.fCreditText = fCreditText;
+    public void setCreditText(Text creditText) {
+        this.creditText = creditText;
     }
 
-    private Event fRecordedAt;
+    private Event recordedAt;
 
     /**
      * The Event where the CreativeWork was recorded. The CreativeWork may capture all or part of the event.
@@ -2224,19 +2606,20 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Event getRecordedAt() {
-        return fRecordedAt;
+        return recordedAt;
     }
 
     /**
      * The Event where the CreativeWork was recorded. The CreativeWork may capture all or part of the event.
      *
+     * @param recordedAt Event value to set.
      */
     @Override
-    public void setRecordedAt(Event fRecordedAt) {
-        this.fRecordedAt = fRecordedAt;
+    public void setRecordedAt(Event recordedAt) {
+        this.recordedAt = recordedAt;
     }
 
-    private Object fEditEIDR;
+    private Object editEIDR;
 
     /**
      * An [EIDR](https://eidr.org/) (Entertainment Identifier Registry) [[identifier]] representing a specific edit / edition for a work of film or television.
@@ -2251,7 +2634,7 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getEditEIDR() {
-        return (T) fEditEIDR;
+        return (T) editEIDR;
     }
 
     /**
@@ -2261,18 +2644,31 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * 
      * Since schema.org types like [[Movie]] and [[TVEpisode]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.
      *
+     * @param editEIDR URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2469">https://github.com/schemaorg/schemaorg/issues/2469</a>
      */
     @Override
-    public void setEditEIDR(Object fEditEIDR) {
-        if(!(fEditEIDR instanceof URL) && !(fEditEIDR instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'editEIDR': " + fEditEIDR);
-        }
-        this.fEditEIDR = fEditEIDR;
+    public void setEditEIDR(URL editEIDR) {
+        this.editEIDR = editEIDR;
+    }
+    /**
+     * An [EIDR](https://eidr.org/) (Entertainment Identifier Registry) [[identifier]] representing a specific edit / edition for a work of film or television.
+     * 
+     * For example, the motion picture known as "Ghostbusters" whose [[titleEIDR]] is "10.5240/7EC7-228A-510A-053E-CBB8-J", has several edits e.g. "10.5240/1F2A-E1C5-680A-14C6-E76B-I" and "10.5240/8A35-3BEE-6497-5D12-9E4F-3".
+     * 
+     * Since schema.org types like [[Movie]] and [[TVEpisode]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.
+     *
+     * @param editEIDR Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2469">https://github.com/schemaorg/schemaorg/issues/2469</a>
+     */
+    @Override
+    public void setEditEIDR(Text editEIDR) {
+        this.editEIDR = editEIDR;
     }
 
-    private Object fAuthor;
+    private Object author;
 
     /**
      * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
@@ -2281,22 +2677,29 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getAuthor() {
-        return (T) fAuthor;
+        return (T) author;
     }
 
     /**
      * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
      *
+     * @param author Person value to set.
      */
     @Override
-    public void setAuthor(Object fAuthor) {
-        if(!(fAuthor instanceof Person) && !(fAuthor instanceof Organization)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'author': " + fAuthor);
-        }
-        this.fAuthor = fAuthor;
+    public void setAuthor(Person author) {
+        this.author = author;
+    }
+    /**
+     * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
+     *
+     * @param author Organization value to set.
+     */
+    @Override
+    public void setAuthor(Organization author) {
+        this.author = author;
     }
 
-    private Object fDateModified;
+    private Object dateModified;
 
     /**
      * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
@@ -2305,22 +2708,29 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getDateModified() {
-        return (T) fDateModified;
+        return (T) dateModified;
     }
 
     /**
      * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
      *
+     * @param dateModified DateTime value to set.
      */
     @Override
-    public void setDateModified(Object fDateModified) {
-        if(!(fDateModified instanceof DateTime) && !(fDateModified instanceof Date)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'dateModified': " + fDateModified);
-        }
-        this.fDateModified = fDateModified;
+    public void setDateModified(DateTime dateModified) {
+        this.dateModified = dateModified;
+    }
+    /**
+     * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
+     *
+     * @param dateModified Date value to set.
+     */
+    @Override
+    public void setDateModified(Date dateModified) {
+        this.dateModified = dateModified;
     }
 
-    private Object fSponsor;
+    private Object sponsor;
 
     /**
      * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
@@ -2329,22 +2739,29 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getSponsor() {
-        return (T) fSponsor;
+        return (T) sponsor;
     }
 
     /**
      * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
      *
+     * @param sponsor Organization value to set.
      */
     @Override
-    public void setSponsor(Object fSponsor) {
-        if(!(fSponsor instanceof Organization) && !(fSponsor instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'sponsor': " + fSponsor);
-        }
-        this.fSponsor = fSponsor;
+    public void setSponsor(Organization sponsor) {
+        this.sponsor = sponsor;
+    }
+    /**
+     * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
+     *
+     * @param sponsor Person value to set.
+     */
+    @Override
+    public void setSponsor(Person sponsor) {
+        this.sponsor = sponsor;
     }
 
-    private Text fAccessibilitySummary;
+    private Text accessibilitySummary;
 
     /**
      * A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as "short descriptions are present but long descriptions will be needed for non-visual users" or "short descriptions are present and no long descriptions are needed."
@@ -2354,20 +2771,21 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getAccessibilitySummary() {
-        return fAccessibilitySummary;
+        return accessibilitySummary;
     }
 
     /**
      * A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as "short descriptions are present but long descriptions will be needed for non-visual users" or "short descriptions are present and no long descriptions are needed."
      *
+     * @param accessibilitySummary Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
      */
     @Override
-    public void setAccessibilitySummary(Text fAccessibilitySummary) {
-        this.fAccessibilitySummary = fAccessibilitySummary;
+    public void setAccessibilitySummary(Text accessibilitySummary) {
+        this.accessibilitySummary = accessibilitySummary;
     }
 
-    private Object fMaintainer;
+    private Object maintainer;
 
     /**
      * A maintainer of a [[Dataset]], software package ([[SoftwareApplication]]), or other [[Project]]. A maintainer is a [[Person]] or [[Organization]] that manages contributions to, and/or publication of, some (typically complex) artifact. It is common for distributions of software and data to be based on "upstream" sources. When [[maintainer]] is applied to a specific version of something e.g. a particular version or packaging of a [[Dataset]], it is always  possible that the upstream source has a different maintainer. The [[isBasedOn]] property can be used to indicate such relationships between datasets to make the different maintenance roles clear. Similarly in the case of software, a package may have dedicated maintainers working on integration into software distributions such as Ubuntu, as well as upstream maintainers of the underlying work.
@@ -2379,25 +2797,35 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getMaintainer() {
-        return (T) fMaintainer;
+        return (T) maintainer;
     }
 
     /**
      * A maintainer of a [[Dataset]], software package ([[SoftwareApplication]]), or other [[Project]]. A maintainer is a [[Person]] or [[Organization]] that manages contributions to, and/or publication of, some (typically complex) artifact. It is common for distributions of software and data to be based on "upstream" sources. When [[maintainer]] is applied to a specific version of something e.g. a particular version or packaging of a [[Dataset]], it is always  possible that the upstream source has a different maintainer. The [[isBasedOn]] property can be used to indicate such relationships between datasets to make the different maintenance roles clear. Similarly in the case of software, a package may have dedicated maintainers working on integration into software distributions such as Ubuntu, as well as upstream maintainers of the underlying work.
      *       
      *
+     * @param maintainer Person value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2311">https://github.com/schemaorg/schemaorg/issues/2311</a>
      */
     @Override
-    public void setMaintainer(Object fMaintainer) {
-        if(!(fMaintainer instanceof Person) && !(fMaintainer instanceof Organization)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'maintainer': " + fMaintainer);
-        }
-        this.fMaintainer = fMaintainer;
+    public void setMaintainer(Person maintainer) {
+        this.maintainer = maintainer;
+    }
+    /**
+     * A maintainer of a [[Dataset]], software package ([[SoftwareApplication]]), or other [[Project]]. A maintainer is a [[Person]] or [[Organization]] that manages contributions to, and/or publication of, some (typically complex) artifact. It is common for distributions of software and data to be based on "upstream" sources. When [[maintainer]] is applied to a specific version of something e.g. a particular version or packaging of a [[Dataset]], it is always  possible that the upstream source has a different maintainer. The [[isBasedOn]] property can be used to indicate such relationships between datasets to make the different maintenance roles clear. Similarly in the case of software, a package may have dedicated maintainers working on integration into software distributions such as Ubuntu, as well as upstream maintainers of the underlying work.
+     *       
+     *
+     * @param maintainer Organization value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2311">https://github.com/schemaorg/schemaorg/issues/2311</a>
+     */
+    @Override
+    public void setMaintainer(Organization maintainer) {
+        this.maintainer = maintainer;
     }
 
-    private AlignmentObject fEducationalAlignment;
+    private AlignmentObject educationalAlignment;
 
     /**
      * An alignment to an established educational framework.
@@ -2408,7 +2836,7 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public AlignmentObject getEducationalAlignment() {
-        return fEducationalAlignment;
+        return educationalAlignment;
     }
 
     /**
@@ -2416,13 +2844,14 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * 
      * This property should not be used where the nature of the alignment can be described using a simple property, for example to express that a resource [[teaches]] or [[assesses]] a competency.
      *
+     * @param educationalAlignment AlignmentObject value to set.
      */
     @Override
-    public void setEducationalAlignment(AlignmentObject fEducationalAlignment) {
-        this.fEducationalAlignment = fEducationalAlignment;
+    public void setEducationalAlignment(AlignmentObject educationalAlignment) {
+        this.educationalAlignment = educationalAlignment;
     }
 
-    private Object fAcquireLicensePage;
+    private Object acquireLicensePage;
 
     /**
      * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
@@ -2433,24 +2862,33 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getAcquireLicensePage() {
-        return (T) fAcquireLicensePage;
+        return (T) acquireLicensePage;
     }
 
     /**
      * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
      *
+     * @param acquireLicensePage CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
      */
     @Override
-    public void setAcquireLicensePage(Object fAcquireLicensePage) {
-        if(!(fAcquireLicensePage instanceof CreativeWork) && !(fAcquireLicensePage instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'acquireLicensePage': " + fAcquireLicensePage);
-        }
-        this.fAcquireLicensePage = fAcquireLicensePage;
+    public void setAcquireLicensePage(CreativeWork acquireLicensePage) {
+        this.acquireLicensePage = acquireLicensePage;
+    }
+    /**
+     * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
+     *
+     * @param acquireLicensePage URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
+     */
+    @Override
+    public void setAcquireLicensePage(URL acquireLicensePage) {
+        this.acquireLicensePage = acquireLicensePage;
     }
 
-    private Boolean fIsAccessibleForFree;
+    private Boolean isAccessibleForFree;
 
     /**
      * A flag to signal that the item, event, or place is accessible for free.
@@ -2459,19 +2897,20 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Boolean getIsAccessibleForFree() {
-        return fIsAccessibleForFree;
+        return isAccessibleForFree;
     }
 
     /**
      * A flag to signal that the item, event, or place is accessible for free.
      *
+     * @param isAccessibleForFree Boolean value to set.
      */
     @Override
-    public void setIsAccessibleForFree(Boolean fIsAccessibleForFree) {
-        this.fIsAccessibleForFree = fIsAccessibleForFree;
+    public void setIsAccessibleForFree(Boolean isAccessibleForFree) {
+        this.isAccessibleForFree = isAccessibleForFree;
     }
 
-    private Object fDatePublished;
+    private Object datePublished;
 
     /**
      * Date of first broadcast/publication.
@@ -2480,22 +2919,29 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getDatePublished() {
-        return (T) fDatePublished;
+        return (T) datePublished;
     }
 
     /**
      * Date of first broadcast/publication.
      *
+     * @param datePublished Date value to set.
      */
     @Override
-    public void setDatePublished(Object fDatePublished) {
-        if(!(fDatePublished instanceof Date) && !(fDatePublished instanceof DateTime)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'datePublished': " + fDatePublished);
-        }
-        this.fDatePublished = fDatePublished;
+    public void setDatePublished(Date datePublished) {
+        this.datePublished = datePublished;
+    }
+    /**
+     * Date of first broadcast/publication.
+     *
+     * @param datePublished DateTime value to set.
+     */
+    @Override
+    public void setDatePublished(DateTime datePublished) {
+        this.datePublished = datePublished;
     }
 
-    private Place fSpatialCoverage;
+    private Place spatialCoverage;
 
     /**
      * The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of
@@ -2506,7 +2952,7 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Place getSpatialCoverage() {
-        return fSpatialCoverage;
+        return spatialCoverage;
     }
 
     /**
@@ -2514,13 +2960,14 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      *       contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates
      *       areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.
      *
+     * @param spatialCoverage Place value to set.
      */
     @Override
-    public void setSpatialCoverage(Place fSpatialCoverage) {
-        this.fSpatialCoverage = fSpatialCoverage;
+    public void setSpatialCoverage(Place spatialCoverage) {
+        this.spatialCoverage = spatialCoverage;
     }
 
-    private Object fSdLicense;
+    private Object sdLicense;
 
     /**
      * A license document that applies to this structured data, typically indicated by URL.
@@ -2531,24 +2978,33 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getSdLicense() {
-        return (T) fSdLicense;
+        return (T) sdLicense;
     }
 
     /**
      * A license document that applies to this structured data, typically indicated by URL.
      *
+     * @param sdLicense CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
      */
     @Override
-    public void setSdLicense(Object fSdLicense) {
-        if(!(fSdLicense instanceof CreativeWork) && !(fSdLicense instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'sdLicense': " + fSdLicense);
-        }
-        this.fSdLicense = fSdLicense;
+    public void setSdLicense(CreativeWork sdLicense) {
+        this.sdLicense = sdLicense;
+    }
+    /**
+     * A license document that applies to this structured data, typically indicated by URL.
+     *
+     * @param sdLicense URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
+     */
+    @Override
+    public void setSdLicense(URL sdLicense) {
+        this.sdLicense = sdLicense;
     }
 
-    private Text fConditionsOfAccess;
+    private Text conditionsOfAccess;
 
     /**
      * Conditions that affect the availability of, or method(s) of access to, an item. Typically used for real world items such as an [[ArchiveComponent]] held by an [[ArchiveOrganization]]. This property is not suitable for use as a general Web access control mechanism. It is expressed only in natural language.<br/><br/>For example "Available by appointment from the Reading Room" or "Accessible only from logged-in accounts ". 
@@ -2559,21 +3015,22 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getConditionsOfAccess() {
-        return fConditionsOfAccess;
+        return conditionsOfAccess;
     }
 
     /**
      * Conditions that affect the availability of, or method(s) of access to, an item. Typically used for real world items such as an [[ArchiveComponent]] held by an [[ArchiveOrganization]]. This property is not suitable for use as a general Web access control mechanism. It is expressed only in natural language.<br/><br/>For example "Available by appointment from the Reading Room" or "Accessible only from logged-in accounts ". 
      *
+     * @param conditionsOfAccess Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2173">https://github.com/schemaorg/schemaorg/issues/2173</a>
      */
     @Override
-    public void setConditionsOfAccess(Text fConditionsOfAccess) {
-        this.fConditionsOfAccess = fConditionsOfAccess;
+    public void setConditionsOfAccess(Text conditionsOfAccess) {
+        this.conditionsOfAccess = conditionsOfAccess;
     }
 
-    private Object fCorrection;
+    private Object correction;
 
     /**
      * Indicates a correction to a [[CreativeWork]], either via a [[CorrectionComment]], textually or in another document.
@@ -2585,25 +3042,47 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getCorrection() {
-        return (T) fCorrection;
+        return (T) correction;
     }
 
     /**
      * Indicates a correction to a [[CreativeWork]], either via a [[CorrectionComment]], textually or in another document.
      *
+     * @param correction URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
      */
     @Override
-    public void setCorrection(Object fCorrection) {
-        if(!(fCorrection instanceof URL) && !(fCorrection instanceof Text) && !(fCorrection instanceof CorrectionComment)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'correction': " + fCorrection);
-        }
-        this.fCorrection = fCorrection;
+    public void setCorrection(URL correction) {
+        this.correction = correction;
+    }
+    /**
+     * Indicates a correction to a [[CreativeWork]], either via a [[CorrectionComment]], textually or in another document.
+     *
+     * @param correction Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
+     */
+    @Override
+    public void setCorrection(Text correction) {
+        this.correction = correction;
+    }
+    /**
+     * Indicates a correction to a [[CreativeWork]], either via a [[CorrectionComment]], textually or in another document.
+     *
+     * @param correction CorrectionComment value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
+     */
+    @Override
+    public void setCorrection(CorrectionComment correction) {
+        this.correction = correction;
     }
 
-    private Object fContentRating;
+    private Object contentRating;
 
     /**
      * Official rating of a piece of content&#x2014;for example,'MPAA PG-13'.
@@ -2612,22 +3091,29 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getContentRating() {
-        return (T) fContentRating;
+        return (T) contentRating;
     }
 
     /**
      * Official rating of a piece of content&#x2014;for example,'MPAA PG-13'.
      *
+     * @param contentRating Text value to set.
      */
     @Override
-    public void setContentRating(Object fContentRating) {
-        if(!(fContentRating instanceof Text) && !(fContentRating instanceof Rating)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'contentRating': " + fContentRating);
-        }
-        this.fContentRating = fContentRating;
+    public void setContentRating(Text contentRating) {
+        this.contentRating = contentRating;
+    }
+    /**
+     * Official rating of a piece of content&#x2014;for example,'MPAA PG-13'.
+     *
+     * @param contentRating Rating value to set.
+     */
+    @Override
+    public void setContentRating(Rating contentRating) {
+        this.contentRating = contentRating;
     }
 
-    private Object fSize;
+    private Object size;
 
     /**
      * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
@@ -2638,24 +3124,55 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getSize() {
-        return (T) fSize;
+        return (T) size;
     }
 
     /**
      * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
      *
+     * @param size QuantitativeValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
     @Override
-    public void setSize(Object fSize) {
-        if(!(fSize instanceof QuantitativeValue) && !(fSize instanceof DefinedTerm) && !(fSize instanceof Text) && !(fSize instanceof SizeSpecification)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'size': " + fSize);
-        }
-        this.fSize = fSize;
+    public void setSize(QuantitativeValue size) {
+        this.size = size;
+    }
+    /**
+     * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
+     *
+     * @param size DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     */
+    @Override
+    public void setSize(DefinedTerm size) {
+        this.size = size;
+    }
+    /**
+     * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
+     *
+     * @param size Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     */
+    @Override
+    public void setSize(Text size) {
+        this.size = size;
+    }
+    /**
+     * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
+     *
+     * @param size SizeSpecification value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     */
+    @Override
+    public void setSize(SizeSpecification size) {
+        this.size = size;
     }
 
-    private Object fIsPartOf;
+    private Object isPartOf;
 
     /**
      * Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.
@@ -2664,22 +3181,29 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getIsPartOf() {
-        return (T) fIsPartOf;
+        return (T) isPartOf;
     }
 
     /**
      * Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.
      *
+     * @param isPartOf URL value to set.
      */
     @Override
-    public void setIsPartOf(Object fIsPartOf) {
-        if(!(fIsPartOf instanceof URL) && !(fIsPartOf instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'isPartOf': " + fIsPartOf);
-        }
-        this.fIsPartOf = fIsPartOf;
+    public void setIsPartOf(URL isPartOf) {
+        this.isPartOf = isPartOf;
+    }
+    /**
+     * Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.
+     *
+     * @param isPartOf CreativeWork value to set.
+     */
+    @Override
+    public void setIsPartOf(CreativeWork isPartOf) {
+        this.isPartOf = isPartOf;
     }
 
-    private Object fTemporal;
+    private Object temporal;
 
     /**
      * The "temporal" property can be used in cases where more specific properties
@@ -2689,23 +3213,31 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getTemporal() {
-        return (T) fTemporal;
+        return (T) temporal;
     }
 
     /**
      * The "temporal" property can be used in cases where more specific properties
      * (e.g. [[temporalCoverage]], [[dateCreated]], [[dateModified]], [[datePublished]]) are not known to be appropriate.
      *
+     * @param temporal DateTime value to set.
      */
     @Override
-    public void setTemporal(Object fTemporal) {
-        if(!(fTemporal instanceof DateTime) && !(fTemporal instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'temporal': " + fTemporal);
-        }
-        this.fTemporal = fTemporal;
+    public void setTemporal(DateTime temporal) {
+        this.temporal = temporal;
+    }
+    /**
+     * The "temporal" property can be used in cases where more specific properties
+     * (e.g. [[temporalCoverage]], [[dateCreated]], [[dateModified]], [[datePublished]]) are not known to be appropriate.
+     *
+     * @param temporal Text value to set.
+     */
+    @Override
+    public void setTemporal(Text temporal) {
+        this.temporal = temporal;
     }
 
-    private URL fThumbnailUrl;
+    private URL thumbnailUrl;
 
     /**
      * A thumbnail image relevant to the Thing.
@@ -2714,19 +3246,20 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public URL getThumbnailUrl() {
-        return fThumbnailUrl;
+        return thumbnailUrl;
     }
 
     /**
      * A thumbnail image relevant to the Thing.
      *
+     * @param thumbnailUrl URL value to set.
      */
     @Override
-    public void setThumbnailUrl(URL fThumbnailUrl) {
-        this.fThumbnailUrl = fThumbnailUrl;
+    public void setThumbnailUrl(URL thumbnailUrl) {
+        this.thumbnailUrl = thumbnailUrl;
     }
 
-    private Object fInLanguage;
+    private Object inLanguage;
 
     /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
@@ -2736,23 +3269,31 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getInLanguage() {
-        return (T) fInLanguage;
+        return (T) inLanguage;
     }
 
     /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
      *
+     * @param inLanguage Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
      */
     @Override
-    public void setInLanguage(Object fInLanguage) {
-        if(!(fInLanguage instanceof Text) && !(fInLanguage instanceof Language)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'inLanguage': " + fInLanguage);
-        }
-        this.fInLanguage = fInLanguage;
+    public void setInLanguage(Text inLanguage) {
+        this.inLanguage = inLanguage;
+    }
+    /**
+     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     *
+     * @param inLanguage Language value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
+     */
+    @Override
+    public void setInLanguage(Language inLanguage) {
+        this.inLanguage = inLanguage;
     }
 
-    private Object fLicense;
+    private Object license;
 
     /**
      * A license document that applies to this content, typically indicated by URL.
@@ -2761,22 +3302,29 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getLicense() {
-        return (T) fLicense;
+        return (T) license;
     }
 
     /**
      * A license document that applies to this content, typically indicated by URL.
      *
+     * @param license URL value to set.
      */
     @Override
-    public void setLicense(Object fLicense) {
-        if(!(fLicense instanceof URL) && !(fLicense instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'license': " + fLicense);
-        }
-        this.fLicense = fLicense;
+    public void setLicense(URL license) {
+        this.license = license;
+    }
+    /**
+     * A license document that applies to this content, typically indicated by URL.
+     *
+     * @param license CreativeWork value to set.
+     */
+    @Override
+    public void setLicense(CreativeWork license) {
+        this.license = license;
     }
 
-    private Object fCreator;
+    private Object creator;
 
     /**
      * The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.
@@ -2785,22 +3333,29 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getCreator() {
-        return (T) fCreator;
+        return (T) creator;
     }
 
     /**
      * The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.
      *
+     * @param creator Organization value to set.
      */
     @Override
-    public void setCreator(Object fCreator) {
-        if(!(fCreator instanceof Organization) && !(fCreator instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'creator': " + fCreator);
-        }
-        this.fCreator = fCreator;
+    public void setCreator(Organization creator) {
+        this.creator = creator;
+    }
+    /**
+     * The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.
+     *
+     * @param creator Person value to set.
+     */
+    @Override
+    public void setCreator(Person creator) {
+        this.creator = creator;
     }
 
-    private Review fReviews;
+    private Review reviews;
 
     /**
      * Review of the item.
@@ -2809,19 +3364,20 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Review getReviews() {
-        return fReviews;
+        return reviews;
     }
 
     /**
      * Review of the item.
      *
+     * @param reviews Review value to set.
      */
     @Override
-    public void setReviews(Review fReviews) {
-        this.fReviews = fReviews;
+    public void setReviews(Review reviews) {
+        this.reviews = reviews;
     }
 
-    private Thing fAbout;
+    private Thing about;
 
     /**
      * The subject matter of the content.
@@ -2831,20 +3387,21 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Thing getAbout() {
-        return fAbout;
+        return about;
     }
 
     /**
      * The subject matter of the content.
      *
+     * @param about Thing value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setAbout(Thing fAbout) {
-        this.fAbout = fAbout;
+    public void setAbout(Thing about) {
+        this.about = about;
     }
 
-    private Boolean fIsFamilyFriendly;
+    private Boolean isFamilyFriendly;
 
     /**
      * Indicates whether this content is family friendly.
@@ -2853,19 +3410,20 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Boolean getIsFamilyFriendly() {
-        return fIsFamilyFriendly;
+        return isFamilyFriendly;
     }
 
     /**
      * Indicates whether this content is family friendly.
      *
+     * @param isFamilyFriendly Boolean value to set.
      */
     @Override
-    public void setIsFamilyFriendly(Boolean fIsFamilyFriendly) {
-        this.fIsFamilyFriendly = fIsFamilyFriendly;
+    public void setIsFamilyFriendly(Boolean isFamilyFriendly) {
+        this.isFamilyFriendly = isFamilyFriendly;
     }
 
-    private Text fHeadline;
+    private Text headline;
 
     /**
      * Headline of the article.
@@ -2874,19 +3432,20 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getHeadline() {
-        return fHeadline;
+        return headline;
     }
 
     /**
      * Headline of the article.
      *
+     * @param headline Text value to set.
      */
     @Override
-    public void setHeadline(Text fHeadline) {
-        this.fHeadline = fHeadline;
+    public void setHeadline(Text headline) {
+        this.headline = headline;
     }
 
-    private Text fAccessibilityAPI;
+    private Text accessibilityAPI;
 
     /**
      * Indicates that the resource is compatible with the referenced accessibility API. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityAPI-vocabulary).
@@ -2895,19 +3454,20 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getAccessibilityAPI() {
-        return fAccessibilityAPI;
+        return accessibilityAPI;
     }
 
     /**
      * Indicates that the resource is compatible with the referenced accessibility API. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityAPI-vocabulary).
      *
+     * @param accessibilityAPI Text value to set.
      */
     @Override
-    public void setAccessibilityAPI(Text fAccessibilityAPI) {
-        this.fAccessibilityAPI = fAccessibilityAPI;
+    public void setAccessibilityAPI(Text accessibilityAPI) {
+        this.accessibilityAPI = accessibilityAPI;
     }
 
-    private Organization fPublisherImprint;
+    private Organization publisherImprint;
 
     /**
      * The publishing division which published the comic.
@@ -2917,20 +3477,21 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Organization getPublisherImprint() {
-        return fPublisherImprint;
+        return publisherImprint;
     }
 
     /**
      * The publishing division which published the comic.
      *
+     * @param publisherImprint Organization value to set.
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
     @Override
-    public void setPublisherImprint(Organization fPublisherImprint) {
-        this.fPublisherImprint = fPublisherImprint;
+    public void setPublisherImprint(Organization publisherImprint) {
+        this.publisherImprint = publisherImprint;
     }
 
-    private Object fIsBasedOnUrl;
+    private Object isBasedOnUrl;
 
     /**
      * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
@@ -2939,22 +3500,38 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getIsBasedOnUrl() {
-        return (T) fIsBasedOnUrl;
+        return (T) isBasedOnUrl;
     }
 
     /**
      * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
      *
+     * @param isBasedOnUrl URL value to set.
      */
     @Override
-    public void setIsBasedOnUrl(Object fIsBasedOnUrl) {
-        if(!(fIsBasedOnUrl instanceof URL) && !(fIsBasedOnUrl instanceof CreativeWork) && !(fIsBasedOnUrl instanceof Product)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'isBasedOnUrl': " + fIsBasedOnUrl);
-        }
-        this.fIsBasedOnUrl = fIsBasedOnUrl;
+    public void setIsBasedOnUrl(URL isBasedOnUrl) {
+        this.isBasedOnUrl = isBasedOnUrl;
+    }
+    /**
+     * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
+     *
+     * @param isBasedOnUrl CreativeWork value to set.
+     */
+    @Override
+    public void setIsBasedOnUrl(CreativeWork isBasedOnUrl) {
+        this.isBasedOnUrl = isBasedOnUrl;
+    }
+    /**
+     * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
+     *
+     * @param isBasedOnUrl Product value to set.
+     */
+    @Override
+    public void setIsBasedOnUrl(Product isBasedOnUrl) {
+        this.isBasedOnUrl = isBasedOnUrl;
     }
 
-    private MediaObject fEncodings;
+    private MediaObject encodings;
 
     /**
      * A media object that encodes this CreativeWork.
@@ -2963,19 +3540,20 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public MediaObject getEncodings() {
-        return fEncodings;
+        return encodings;
     }
 
     /**
      * A media object that encodes this CreativeWork.
      *
+     * @param encodings MediaObject value to set.
      */
     @Override
-    public void setEncodings(MediaObject fEncodings) {
-        this.fEncodings = fEncodings;
+    public void setEncodings(MediaObject encodings) {
+        this.encodings = encodings;
     }
 
-    private Text fAccessibilityControl;
+    private Text accessibilityControl;
 
     /**
      * Identifies input methods that are sufficient to fully control the described resource. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityControl-vocabulary).
@@ -2984,19 +3562,20 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getAccessibilityControl() {
-        return fAccessibilityControl;
+        return accessibilityControl;
     }
 
     /**
      * Identifies input methods that are sufficient to fully control the described resource. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityControl-vocabulary).
      *
+     * @param accessibilityControl Text value to set.
      */
     @Override
-    public void setAccessibilityControl(Text fAccessibilityControl) {
-        this.fAccessibilityControl = fAccessibilityControl;
+    public void setAccessibilityControl(Text accessibilityControl) {
+        this.accessibilityControl = accessibilityControl;
     }
 
-    private Object fCitation;
+    private Object citation;
 
     /**
      * A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.
@@ -3005,22 +3584,29 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getCitation() {
-        return (T) fCitation;
+        return (T) citation;
     }
 
     /**
      * A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.
      *
+     * @param citation CreativeWork value to set.
      */
     @Override
-    public void setCitation(Object fCitation) {
-        if(!(fCitation instanceof CreativeWork) && !(fCitation instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'citation': " + fCitation);
-        }
-        this.fCitation = fCitation;
+    public void setCitation(CreativeWork citation) {
+        this.citation = citation;
+    }
+    /**
+     * A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.
+     *
+     * @param citation Text value to set.
+     */
+    @Override
+    public void setCitation(Text citation) {
+        this.citation = citation;
     }
 
-    private Object fVersion;
+    private Object version;
 
     /**
      * The version of the CreativeWork embodied by a specified resource.
@@ -3029,22 +3615,29 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getVersion() {
-        return (T) fVersion;
+        return (T) version;
     }
 
     /**
      * The version of the CreativeWork embodied by a specified resource.
      *
+     * @param version Number value to set.
      */
     @Override
-    public void setVersion(Object fVersion) {
-        if(!(fVersion instanceof Number) && !(fVersion instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'version': " + fVersion);
-        }
-        this.fVersion = fVersion;
+    public void setVersion(Number version) {
+        this.version = version;
+    }
+    /**
+     * The version of the CreativeWork embodied by a specified resource.
+     *
+     * @param version Text value to set.
+     */
+    @Override
+    public void setVersion(Text version) {
+        this.version = version;
     }
 
-    private Object fArchivedAt;
+    private Object archivedAt;
 
     /**
      * Indicates a page or other link involved in archival of a [[CreativeWork]]. In the case of [[MediaReview]], the items in a [[MediaReviewItem]] may often become inaccessible, but be archived by archival, journalistic, activist, or law enforcement organizations. In such cases, the referenced page may not directly publish the content.
@@ -3055,24 +3648,33 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getArchivedAt() {
-        return (T) fArchivedAt;
+        return (T) archivedAt;
     }
 
     /**
      * Indicates a page or other link involved in archival of a [[CreativeWork]]. In the case of [[MediaReview]], the items in a [[MediaReviewItem]] may often become inaccessible, but be archived by archival, journalistic, activist, or law enforcement organizations. In such cases, the referenced page may not directly publish the content.
      *
+     * @param archivedAt WebPage value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
     @Override
-    public void setArchivedAt(Object fArchivedAt) {
-        if(!(fArchivedAt instanceof WebPage) && !(fArchivedAt instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'archivedAt': " + fArchivedAt);
-        }
-        this.fArchivedAt = fArchivedAt;
+    public void setArchivedAt(WebPage archivedAt) {
+        this.archivedAt = archivedAt;
+    }
+    /**
+     * Indicates a page or other link involved in archival of a [[CreativeWork]]. In the case of [[MediaReview]], the items in a [[MediaReviewItem]] may often become inaccessible, but be archived by archival, journalistic, activist, or law enforcement organizations. In such cases, the referenced page may not directly publish the content.
+     *
+     * @param archivedAt URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     */
+    @Override
+    public void setArchivedAt(URL archivedAt) {
+        this.archivedAt = archivedAt;
     }
 
-    private Object fLearningResourceType;
+    private Object learningResourceType;
 
     /**
      * The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.
@@ -3081,22 +3683,29 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getLearningResourceType() {
-        return (T) fLearningResourceType;
+        return (T) learningResourceType;
     }
 
     /**
      * The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.
      *
+     * @param learningResourceType DefinedTerm value to set.
      */
     @Override
-    public void setLearningResourceType(Object fLearningResourceType) {
-        if(!(fLearningResourceType instanceof DefinedTerm) && !(fLearningResourceType instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'learningResourceType': " + fLearningResourceType);
-        }
-        this.fLearningResourceType = fLearningResourceType;
+    public void setLearningResourceType(DefinedTerm learningResourceType) {
+        this.learningResourceType = learningResourceType;
+    }
+    /**
+     * The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.
+     *
+     * @param learningResourceType Text value to set.
+     */
+    @Override
+    public void setLearningResourceType(Text learningResourceType) {
+        this.learningResourceType = learningResourceType;
     }
 
-    private MediaObject fEncoding;
+    private MediaObject encoding;
 
     /**
      * A media object that encodes this CreativeWork. This property is a synonym for associatedMedia.
@@ -3105,19 +3714,20 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public MediaObject getEncoding() {
-        return fEncoding;
+        return encoding;
     }
 
     /**
      * A media object that encodes this CreativeWork. This property is a synonym for associatedMedia.
      *
+     * @param encoding MediaObject value to set.
      */
     @Override
-    public void setEncoding(MediaObject fEncoding) {
-        this.fEncoding = fEncoding;
+    public void setEncoding(MediaObject encoding) {
+        this.encoding = encoding;
     }
 
-    private Object fAudio;
+    private Object audio;
 
     /**
      * An embedded audio object.
@@ -3127,23 +3737,41 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getAudio() {
-        return (T) fAudio;
+        return (T) audio;
     }
 
     /**
      * An embedded audio object.
      *
+     * @param audio AudioObject value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2420">https://github.com/schemaorg/schemaorg/issues/2420</a>
      */
     @Override
-    public void setAudio(Object fAudio) {
-        if(!(fAudio instanceof AudioObject) && !(fAudio instanceof MusicRecording) && !(fAudio instanceof Clip)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'audio': " + fAudio);
-        }
-        this.fAudio = fAudio;
+    public void setAudio(AudioObject audio) {
+        this.audio = audio;
+    }
+    /**
+     * An embedded audio object.
+     *
+     * @param audio MusicRecording value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2420">https://github.com/schemaorg/schemaorg/issues/2420</a>
+     */
+    @Override
+    public void setAudio(MusicRecording audio) {
+        this.audio = audio;
+    }
+    /**
+     * An embedded audio object.
+     *
+     * @param audio Clip value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2420">https://github.com/schemaorg/schemaorg/issues/2420</a>
+     */
+    @Override
+    public void setAudio(Clip audio) {
+        this.audio = audio;
     }
 
-    private Thing fMentions;
+    private Thing mentions;
 
     /**
      * Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept.
@@ -3152,19 +3780,20 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Thing getMentions() {
-        return fMentions;
+        return mentions;
     }
 
     /**
      * Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept.
      *
+     * @param mentions Thing value to set.
      */
     @Override
-    public void setMentions(Thing fMentions) {
-        this.fMentions = fMentions;
+    public void setMentions(Thing mentions) {
+        this.mentions = mentions;
     }
 
-    private ItemList fAccessModeSufficient;
+    private ItemList accessModeSufficient;
 
     /**
      * A list of single or combined accessModes that are sufficient to understand all the intellectual content of a resource. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessModeSufficient-vocabulary).
@@ -3174,20 +3803,21 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public ItemList getAccessModeSufficient() {
-        return fAccessModeSufficient;
+        return accessModeSufficient;
     }
 
     /**
      * A list of single or combined accessModes that are sufficient to understand all the intellectual content of a resource. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessModeSufficient-vocabulary).
      *
+     * @param accessModeSufficient ItemList value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
      */
     @Override
-    public void setAccessModeSufficient(ItemList fAccessModeSufficient) {
-        this.fAccessModeSufficient = fAccessModeSufficient;
+    public void setAccessModeSufficient(ItemList accessModeSufficient) {
+        this.accessModeSufficient = accessModeSufficient;
     }
 
-    private CreativeWork fHasPart;
+    private CreativeWork hasPart;
 
     /**
      * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
@@ -3197,20 +3827,21 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public CreativeWork getHasPart() {
-        return fHasPart;
+        return hasPart;
     }
 
     /**
      * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
      *
+     * @param hasPart CreativeWork value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
     @Override
-    public void setHasPart(CreativeWork fHasPart) {
-        this.fHasPart = fHasPart;
+    public void setHasPart(CreativeWork hasPart) {
+        this.hasPart = hasPart;
     }
 
-    private Object fTemporalCoverage;
+    private Object temporalCoverage;
 
     /**
      * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
@@ -3223,7 +3854,7 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getTemporalCoverage() {
-        return (T) fTemporalCoverage;
+        return (T) temporalCoverage;
     }
 
     /**
@@ -3233,16 +3864,40 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * 
      * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
      *
+     * @param temporalCoverage URL value to set.
      */
     @Override
-    public void setTemporalCoverage(Object fTemporalCoverage) {
-        if(!(fTemporalCoverage instanceof URL) && !(fTemporalCoverage instanceof DateTime) && !(fTemporalCoverage instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'temporalCoverage': " + fTemporalCoverage);
-        }
-        this.fTemporalCoverage = fTemporalCoverage;
+    public void setTemporalCoverage(URL temporalCoverage) {
+        this.temporalCoverage = temporalCoverage;
+    }
+    /**
+     * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
+     *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content e.g. ScholarlyArticle, Book, TVSeries or TVEpisode may indicate their temporalCoverage in broader terms - textually or via well-known URL.
+     *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945".
+     * 
+     * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
+     *
+     * @param temporalCoverage DateTime value to set.
+     */
+    @Override
+    public void setTemporalCoverage(DateTime temporalCoverage) {
+        this.temporalCoverage = temporalCoverage;
+    }
+    /**
+     * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
+     *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content e.g. ScholarlyArticle, Book, TVSeries or TVEpisode may indicate their temporalCoverage in broader terms - textually or via well-known URL.
+     *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945".
+     * 
+     * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
+     *
+     * @param temporalCoverage Text value to set.
+     */
+    @Override
+    public void setTemporalCoverage(Text temporalCoverage) {
+        this.temporalCoverage = temporalCoverage;
     }
 
-    private Object fContributor;
+    private Object contributor;
 
     /**
      * A secondary contributor to the CreativeWork or Event.
@@ -3251,22 +3906,29 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getContributor() {
-        return (T) fContributor;
+        return (T) contributor;
     }
 
     /**
      * A secondary contributor to the CreativeWork or Event.
      *
+     * @param contributor Organization value to set.
      */
     @Override
-    public void setContributor(Object fContributor) {
-        if(!(fContributor instanceof Organization) && !(fContributor instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'contributor': " + fContributor);
-        }
-        this.fContributor = fContributor;
+    public void setContributor(Organization contributor) {
+        this.contributor = contributor;
+    }
+    /**
+     * A secondary contributor to the CreativeWork or Event.
+     *
+     * @param contributor Person value to set.
+     */
+    @Override
+    public void setContributor(Person contributor) {
+        this.contributor = contributor;
     }
 
-    private Object fVideo;
+    private Object video;
 
     /**
      * An embedded video object.
@@ -3275,22 +3937,29 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getVideo() {
-        return (T) fVideo;
+        return (T) video;
     }
 
     /**
      * An embedded video object.
      *
+     * @param video Clip value to set.
      */
     @Override
-    public void setVideo(Object fVideo) {
-        if(!(fVideo instanceof Clip) && !(fVideo instanceof VideoObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'video': " + fVideo);
-        }
-        this.fVideo = fVideo;
+    public void setVideo(Clip video) {
+        this.video = video;
+    }
+    /**
+     * An embedded video object.
+     *
+     * @param video VideoObject value to set.
+     */
+    @Override
+    public void setVideo(VideoObject video) {
+        this.video = video;
     }
 
-    private Object fMainEntityOfPage;
+    private Object mainEntityOfPage;
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -3299,22 +3968,29 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
+        return (T) mainEntityOfPage;
     }
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
+     * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
-        }
-        this.fMainEntityOfPage = fMainEntityOfPage;
+    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param mainEntityOfPage URL value to set.
+     */
+    @Override
+    public void setMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
     }
 
-    private Text fAlternateName;
+    private Text alternateName;
 
     /**
      * An alias for the item.
@@ -3323,19 +3999,20 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getAlternateName() {
-        return fAlternateName;
+        return alternateName;
     }
 
     /**
      * An alias for the item.
      *
+     * @param alternateName Text value to set.
      */
     @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
+    public void setAlternateName(Text alternateName) {
+        this.alternateName = alternateName;
     }
 
-    private Text fName;
+    private Text name;
 
     /**
      * The name of the item.
@@ -3344,19 +4021,20 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getName() {
-        return fName;
+        return name;
     }
 
     /**
      * The name of the item.
      *
+     * @param name Text value to set.
      */
     @Override
-    public void setName(Text fName) {
-        this.fName = fName;
+    public void setName(Text name) {
+        this.name = name;
     }
 
-    private Action fPotentialAction;
+    private Action potentialAction;
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -3365,19 +4043,20 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Action getPotentialAction() {
-        return fPotentialAction;
+        return potentialAction;
     }
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      *
+     * @param potentialAction Action value to set.
      */
     @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
+    public void setPotentialAction(Action potentialAction) {
+        this.potentialAction = potentialAction;
     }
 
-    private Object fImage;
+    private Object image;
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -3386,22 +4065,29 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getImage() {
-        return (T) fImage;
+        return (T) image;
     }
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
+     * @param image URL value to set.
      */
     @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
-        this.fImage = fImage;
+    public void setImage(URL image) {
+        this.image = image;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image ImageObject value to set.
+     */
+    @Override
+    public void setImage(ImageObject image) {
+        this.image = image;
     }
 
-    private URL fUrl;
+    private URL url;
 
     /**
      * URL of the item.
@@ -3410,19 +4096,20 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public URL getUrl() {
-        return fUrl;
+        return url;
     }
 
     /**
      * URL of the item.
      *
+     * @param url URL value to set.
      */
     @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
+    public void setUrl(URL url) {
+        this.url = url;
     }
 
-    private Text fDescription;
+    private Text description;
 
     /**
      * A description of the item.
@@ -3431,19 +4118,20 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getDescription() {
-        return fDescription;
+        return description;
     }
 
     /**
      * A description of the item.
      *
+     * @param description Text value to set.
      */
     @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
+    public void setDescription(Text description) {
+        this.description = description;
     }
 
-    private Object fSubjectOf;
+    private Object subjectOf;
 
     /**
      * A CreativeWork or Event about this Thing.
@@ -3453,23 +4141,31 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getSubjectOf() {
-        return (T) fSubjectOf;
+        return (T) subjectOf;
     }
 
     /**
      * A CreativeWork or Event about this Thing.
      *
+     * @param subjectOf Event value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Object fSubjectOf) {
-        if(!(fSubjectOf instanceof Event) && !(fSubjectOf instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'subjectOf': " + fSubjectOf);
-        }
-        this.fSubjectOf = fSubjectOf;
+    public void setSubjectOf(Event subjectOf) {
+        this.subjectOf = subjectOf;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @param subjectOf CreativeWork value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public void setSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = subjectOf;
     }
 
-    private URL fAdditionalType;
+    private URL additionalType;
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
@@ -3478,19 +4174,20 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public URL getAdditionalType() {
-        return fAdditionalType;
+        return additionalType;
     }
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
+     * @param additionalType URL value to set.
      */
     @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
+    public void setAdditionalType(URL additionalType) {
+        this.additionalType = additionalType;
     }
 
-    private Text fDisambiguatingDescription;
+    private Text disambiguatingDescription;
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
@@ -3499,19 +4196,20 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getDisambiguatingDescription() {
-        return fDisambiguatingDescription;
+        return disambiguatingDescription;
     }
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
+     * @param disambiguatingDescription Text value to set.
      */
     @Override
-    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = fDisambiguatingDescription;
+    public void setDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = disambiguatingDescription;
     }
 
-    private URL fSameAs;
+    private URL sameAs;
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
@@ -3520,19 +4218,20 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public URL getSameAs() {
-        return fSameAs;
+        return sameAs;
     }
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
+     * @param sameAs URL value to set.
      */
     @Override
-    public void setSameAs(URL fSameAs) {
-        this.fSameAs = fSameAs;
+    public void setSameAs(URL sameAs) {
+        this.sameAs = sameAs;
     }
 
-    private Object fIdentifier;
+    private Object identifier;
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -3542,19 +4241,37 @@ public class BarcodeImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getIdentifier() {
-        return (T) fIdentifier;
+        return (T) identifier;
     }
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
+     * @param identifier URL value to set.
      */
     @Override
-    public void setIdentifier(Object fIdentifier) {
-        if(!(fIdentifier instanceof URL) && !(fIdentifier instanceof Text) && !(fIdentifier instanceof PropertyValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
-        }
-        this.fIdentifier = fIdentifier;
+    public void setIdentifier(URL identifier) {
+        this.identifier = identifier;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier Text value to set.
+     */
+    @Override
+    public void setIdentifier(Text identifier) {
+        this.identifier = identifier;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier PropertyValue value to set.
+     */
+    @Override
+    public void setIdentifier(PropertyValue identifier) {
+        this.identifier = identifier;
     }
 }

@@ -25,8 +25,9 @@ public interface RentalCarReservation extends Reservation {
     /**
      * Where a rental car can be dropped off.
      *
+     * @param dropoffLocation Place value to set.
      */
-    void setDropoffLocation(Place fDropoffLocation);
+    void setDropoffLocation(Place dropoffLocation);
 
     /**
      * When a rental car can be dropped off.
@@ -38,8 +39,9 @@ public interface RentalCarReservation extends Reservation {
     /**
      * When a rental car can be dropped off.
      *
+     * @param dropoffTime DateTime value to set.
      */
-    void setDropoffTime(DateTime fDropoffTime);
+    void setDropoffTime(DateTime dropoffTime);
 
     /**
      * When a taxi will pickup a passenger or a rental car can be picked up.
@@ -51,8 +53,9 @@ public interface RentalCarReservation extends Reservation {
     /**
      * When a taxi will pickup a passenger or a rental car can be picked up.
      *
+     * @param pickupTime DateTime value to set.
      */
-    void setPickupTime(DateTime fPickupTime);
+    void setPickupTime(DateTime pickupTime);
 
     /**
      * Where a taxi will pick up a passenger or a rental car can be picked up.
@@ -64,6 +67,7 @@ public interface RentalCarReservation extends Reservation {
     /**
      * Where a taxi will pick up a passenger or a rental car can be picked up.
      *
+     * @param pickupLocation Place value to set.
      */
-    void setPickupLocation(Place fPickupLocation);
+    void setPickupLocation(Place pickupLocation);
 }

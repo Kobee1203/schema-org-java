@@ -24,8 +24,9 @@ public interface Airport extends CivicStructure {
     /**
      * IATA identifier for an airline or airport.
      *
+     * @param iataCode Text value to set.
      */
-    void setIataCode(Text fIataCode);
+    void setIataCode(Text iataCode);
 
     /**
      * ICAO identifier for an airport.
@@ -37,6 +38,7 @@ public interface Airport extends CivicStructure {
     /**
      * ICAO identifier for an airport.
      *
+     * @param icaoCode Text value to set.
      */
-    void setIcaoCode(Text fIcaoCode);
+    void setIcaoCode(Text icaoCode);
 }

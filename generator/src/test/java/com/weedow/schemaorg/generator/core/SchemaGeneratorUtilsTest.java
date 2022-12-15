@@ -56,7 +56,7 @@ class SchemaGeneratorUtilsTest {
     void getImports_with_properties_and_additional_imports() {
         String dataTypePackage = "datatype";
         Type type = type("schema:Text", "MyType");
-        type.addProperty(new Property("schema:Boolean", "myProperty", "myProperty", "This is my property", Arrays.asList(type("schema:Text", "Type1"), type("schema:URL", "Type2")), Collections.emptyList(), Collections.emptyList()));
+        type.addProperty(new Property("schema:Boolean", null, null, null, Arrays.asList(type("schema:Text", "Type1"), type("schema:URL", "Type2"))));
         List<String> additionalImports = List.of("OtherImport");
         Set<String> result = SchemaGeneratorUtils.getImports(null, dataTypePackage, type, additionalImports);
         Assertions.assertThat(result).containsExactly("OtherImport", "datatype.Type1", "datatype.Type2");
@@ -66,7 +66,7 @@ class SchemaGeneratorUtilsTest {
     void getImports_with_properties_and_without_additional_imports() {
         String dataTypePackage = "datatype";
         Type type = type("schema:Text", "MyType");
-        type.addProperty(new Property("schema:Boolean", "myProperty", "myProperty", "This is my property", Arrays.asList(type("schema:Text", "Type1"), type("schema:URL", "Type2")), Collections.emptyList(), Collections.emptyList()));
+        type.addProperty(new Property("schema:Boolean", null, null, null, Arrays.asList(type("schema:Text", "Type1"), type("schema:URL", "Type2"))));
         Set<String> result = SchemaGeneratorUtils.getImports(null, dataTypePackage, type, Collections.emptyList());
         Assertions.assertThat(result).containsExactly("datatype.Type1", "datatype.Type2");
     }
@@ -96,6 +96,20 @@ class SchemaGeneratorUtilsTest {
         // Test cache
         Set<String> result2 = SchemaGeneratorUtils.getAllImports(modelPackage, dataTypePackage, type);
         Assertions.assertThat(result2).containsExactly("model.NewType", "com.weedow.schemaorg.commons.model.JsonLdTypeName");
+    }
+
+    @Test
+    void getAllImports_with_field_with_multiple_types() {
+        String modelPackage = "model";
+        String dataTypePackage = "datatype";
+        Type type = type("schema:NewType", "NewType");
+        type.addProperty(new Property("schema:property", null, null, null, List.of(type("schema:Type1", "Type1"), type("schema:Type2", "Type2"))));
+        Set<String> result = SchemaGeneratorUtils.getAllImports(modelPackage, dataTypePackage, type);
+        Assertions.assertThat(result).containsExactly("model.Type1", "model.Type2", "model.NewType", "com.weedow.schemaorg.commons.model.JsonLdTypeName", "com.weedow.schemaorg.commons.model.JsonLdFieldTypes");
+
+        // Test cache
+        Set<String> result2 = SchemaGeneratorUtils.getAllImports(modelPackage, dataTypePackage, type);
+        Assertions.assertThat(result2).containsExactly("model.Type1", "model.Type2", "model.NewType", "com.weedow.schemaorg.commons.model.JsonLdTypeName", "com.weedow.schemaorg.commons.model.JsonLdFieldTypes");
     }
 
     private static Type type(String id, String name) {

@@ -27,9 +27,10 @@ public interface MediaSubscription extends Intangible {
     /**
      * An Offer which must be accepted before the user can perform the Action. For example, the user may need to buy a movie before being able to watch it.
      *
+     * @param expectsAcceptanceOf Offer value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
-    void setExpectsAcceptanceOf(Offer fExpectsAcceptanceOf);
+    void setExpectsAcceptanceOf(Offer expectsAcceptanceOf);
 
     /**
      * The Organization responsible for authenticating the user's subscription. For example, many media apps require a cable/satellite provider to authenticate your subscription before playing media.
@@ -42,7 +43,8 @@ public interface MediaSubscription extends Intangible {
     /**
      * The Organization responsible for authenticating the user's subscription. For example, many media apps require a cable/satellite provider to authenticate your subscription before playing media.
      *
+     * @param authenticator Organization value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
-    void setAuthenticator(Organization fAuthenticator);
+    void setAuthenticator(Organization authenticator);
 }

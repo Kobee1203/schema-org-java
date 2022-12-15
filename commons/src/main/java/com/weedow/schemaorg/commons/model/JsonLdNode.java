@@ -33,7 +33,9 @@ public interface JsonLdNode {
 
     /**
      * Returns the value of {@literal @id}.
-     * Null value means either {@literal @id} value is null or current JSON-LD node doesn't contain {@literal @id} value.
+     * Null value means either {@literal @id} value is {@code null} or current JSON-LD node doesn't contain {@literal @id} value.
+     *
+     * @return the value of {@literal @id}
      */
     String getId();
 

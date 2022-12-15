@@ -29,8 +29,9 @@ public interface MusicGroup extends PerformingGroup {
     /**
      * A music recording (track)&#x2014;usually a single song.
      *
+     * @param tracks MusicRecording value to set.
      */
-    void setTracks(MusicRecording fTracks);
+    void setTracks(MusicRecording tracks);
 
     /**
      * Genre of the creative work, broadcast channel or group.
@@ -42,8 +43,15 @@ public interface MusicGroup extends PerformingGroup {
     /**
      * Genre of the creative work, broadcast channel or group.
      *
+     * @param genre URL value to set.
      */
-    void setGenre(Object fGenre);
+    void setGenre(URL genre);
+    /**
+     * Genre of the creative work, broadcast channel or group.
+     *
+     * @param genre Text value to set.
+     */
+    void setGenre(Text genre);
 
     /**
      * A member of a music group&#x2014;for example, John, Paul, George, or Ringo.
@@ -55,8 +63,9 @@ public interface MusicGroup extends PerformingGroup {
     /**
      * A member of a music group&#x2014;for example, John, Paul, George, or Ringo.
      *
+     * @param musicGroupMember Person value to set.
      */
-    void setMusicGroupMember(Person fMusicGroupMember);
+    void setMusicGroupMember(Person musicGroupMember);
 
     /**
      * A collection of music albums.
@@ -68,8 +77,9 @@ public interface MusicGroup extends PerformingGroup {
     /**
      * A collection of music albums.
      *
+     * @param albums MusicAlbum value to set.
      */
-    void setAlbums(MusicAlbum fAlbums);
+    void setAlbums(MusicAlbum albums);
 
     /**
      * A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
@@ -82,9 +92,17 @@ public interface MusicGroup extends PerformingGroup {
     /**
      * A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
      *
+     * @param track ItemList value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
-    void setTrack(Object fTrack);
+    void setTrack(ItemList track);
+    /**
+     * A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
+     *
+     * @param track MusicRecording value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
+     */
+    void setTrack(MusicRecording track);
 
     /**
      * A music album.
@@ -96,6 +114,7 @@ public interface MusicGroup extends PerformingGroup {
     /**
      * A music album.
      *
+     * @param album MusicAlbum value to set.
      */
-    void setAlbum(MusicAlbum fAlbum);
+    void setAlbum(MusicAlbum album);
 }

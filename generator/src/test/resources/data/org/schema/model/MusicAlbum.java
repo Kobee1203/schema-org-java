@@ -29,9 +29,10 @@ public interface MusicAlbum extends MusicPlaylist {
     /**
      * Classification of the album by it's type of content: soundtrack, live album, studio album, etc.
      *
+     * @param albumProductionType MusicAlbumProductionType value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
-    void setAlbumProductionType(MusicAlbumProductionType fAlbumProductionType);
+    void setAlbumProductionType(MusicAlbumProductionType albumProductionType);
 
     /**
      * The kind of release which this album is: single, EP or album.
@@ -44,9 +45,10 @@ public interface MusicAlbum extends MusicPlaylist {
     /**
      * The kind of release which this album is: single, EP or album.
      *
+     * @param albumReleaseType MusicAlbumReleaseType value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
-    void setAlbumReleaseType(MusicAlbumReleaseType fAlbumReleaseType);
+    void setAlbumReleaseType(MusicAlbumReleaseType albumReleaseType);
 
     /**
      * A release of this album.
@@ -58,8 +60,9 @@ public interface MusicAlbum extends MusicPlaylist {
     /**
      * A release of this album.
      *
+     * @param albumRelease MusicRelease value to set.
      */
-    void setAlbumRelease(MusicRelease fAlbumRelease);
+    void setAlbumRelease(MusicRelease albumRelease);
 
     /**
      * The artist that performed this album or recording.
@@ -71,6 +74,13 @@ public interface MusicAlbum extends MusicPlaylist {
     /**
      * The artist that performed this album or recording.
      *
+     * @param byArtist Person value to set.
      */
-    void setByArtist(Object fByArtist);
+    void setByArtist(Person byArtist);
+    /**
+     * The artist that performed this album or recording.
+     *
+     * @param byArtist MusicGroup value to set.
+     */
+    void setByArtist(MusicGroup byArtist);
 }

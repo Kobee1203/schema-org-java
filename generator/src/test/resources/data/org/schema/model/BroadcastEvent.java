@@ -29,10 +29,19 @@ public interface BroadcastEvent extends PublicationEvent {
     /**
      * Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).
      *
+     * @param subtitleLanguage Language value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2110">https://github.com/schemaorg/schemaorg/issues/2110</a>
      */
-    void setSubtitleLanguage(Object fSubtitleLanguage);
+    void setSubtitleLanguage(Language subtitleLanguage);
+    /**
+     * Languages in which subtitles/captions are available, in [IETF BCP 47 standard format](http://tools.ietf.org/html/bcp47).
+     *
+     * @param subtitleLanguage Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2110">https://github.com/schemaorg/schemaorg/issues/2110</a>
+     */
+    void setSubtitleLanguage(Text subtitleLanguage);
 
     /**
      * The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).
@@ -44,8 +53,9 @@ public interface BroadcastEvent extends PublicationEvent {
     /**
      * The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).
      *
+     * @param videoFormat Text value to set.
      */
-    void setVideoFormat(Text fVideoFormat);
+    void setVideoFormat(Text videoFormat);
 
     /**
      * The event being broadcast such as a sporting event or awards ceremony.
@@ -57,8 +67,9 @@ public interface BroadcastEvent extends PublicationEvent {
     /**
      * The event being broadcast such as a sporting event or awards ceremony.
      *
+     * @param broadcastOfEvent Event value to set.
      */
-    void setBroadcastOfEvent(Event fBroadcastOfEvent);
+    void setBroadcastOfEvent(Event broadcastOfEvent);
 
     /**
      * True if the broadcast is of a live event.
@@ -70,6 +81,7 @@ public interface BroadcastEvent extends PublicationEvent {
     /**
      * True if the broadcast is of a live event.
      *
+     * @param isLiveBroadcast Boolean value to set.
      */
-    void setIsLiveBroadcast(Boolean fIsLiveBroadcast);
+    void setIsLiveBroadcast(Boolean isLiveBroadcast);
 }

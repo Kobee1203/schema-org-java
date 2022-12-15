@@ -27,9 +27,10 @@ public interface PaymentChargeSpecification extends PriceSpecification {
     /**
      * The payment method(s) to which the payment charge specification applies.
      *
+     * @param appliesToPaymentMethod PaymentMethod value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setAppliesToPaymentMethod(PaymentMethod fAppliesToPaymentMethod);
+    void setAppliesToPaymentMethod(PaymentMethod appliesToPaymentMethod);
 
     /**
      * The delivery method(s) to which the delivery charge or payment charge specification applies.
@@ -42,7 +43,8 @@ public interface PaymentChargeSpecification extends PriceSpecification {
     /**
      * The delivery method(s) to which the delivery charge or payment charge specification applies.
      *
+     * @param appliesToDeliveryMethod DeliveryMethod value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setAppliesToDeliveryMethod(DeliveryMethod fAppliesToDeliveryMethod);
+    void setAppliesToDeliveryMethod(DeliveryMethod appliesToDeliveryMethod);
 }

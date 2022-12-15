@@ -32,10 +32,10 @@ import org.schema.model.PaymentChargeSpecification;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass</a>
  * @see <a href="https://schema.org/PaymentChargeSpecification">https://schema.org/PaymentChargeSpecification</a>
  */
-@JsonLdTypeName("schema:PaymentChargeSpecification")
+@JsonLdTypeName("PaymentChargeSpecification")
 public class PaymentChargeSpecificationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PaymentChargeSpecification {
 
-    private PaymentMethod fAppliesToPaymentMethod;
+    private PaymentMethod appliesToPaymentMethod;
 
     /**
      * The payment method(s) to which the payment charge specification applies.
@@ -45,20 +45,21 @@ public class PaymentChargeSpecificationImpl extends com.weedow.schemaorg.commons
      */
     @Override
     public PaymentMethod getAppliesToPaymentMethod() {
-        return fAppliesToPaymentMethod;
+        return appliesToPaymentMethod;
     }
 
     /**
      * The payment method(s) to which the payment charge specification applies.
      *
+     * @param appliesToPaymentMethod PaymentMethod value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setAppliesToPaymentMethod(PaymentMethod fAppliesToPaymentMethod) {
-        this.fAppliesToPaymentMethod = fAppliesToPaymentMethod;
+    public void setAppliesToPaymentMethod(PaymentMethod appliesToPaymentMethod) {
+        this.appliesToPaymentMethod = appliesToPaymentMethod;
     }
 
-    private DeliveryMethod fAppliesToDeliveryMethod;
+    private DeliveryMethod appliesToDeliveryMethod;
 
     /**
      * The delivery method(s) to which the delivery charge or payment charge specification applies.
@@ -68,20 +69,21 @@ public class PaymentChargeSpecificationImpl extends com.weedow.schemaorg.commons
      */
     @Override
     public DeliveryMethod getAppliesToDeliveryMethod() {
-        return fAppliesToDeliveryMethod;
+        return appliesToDeliveryMethod;
     }
 
     /**
      * The delivery method(s) to which the delivery charge or payment charge specification applies.
      *
+     * @param appliesToDeliveryMethod DeliveryMethod value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setAppliesToDeliveryMethod(DeliveryMethod fAppliesToDeliveryMethod) {
-        this.fAppliesToDeliveryMethod = fAppliesToDeliveryMethod;
+    public void setAppliesToDeliveryMethod(DeliveryMethod appliesToDeliveryMethod) {
+        this.appliesToDeliveryMethod = appliesToDeliveryMethod;
     }
 
-    private Number fMinPrice;
+    private Number minPrice;
 
     /**
      * The lowest price if the price is a range.
@@ -91,20 +93,21 @@ public class PaymentChargeSpecificationImpl extends com.weedow.schemaorg.commons
      */
     @Override
     public Number getMinPrice() {
-        return fMinPrice;
+        return minPrice;
     }
 
     /**
      * The lowest price if the price is a range.
      *
+     * @param minPrice Number value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setMinPrice(Number fMinPrice) {
-        this.fMinPrice = fMinPrice;
+    public void setMinPrice(Number minPrice) {
+        this.minPrice = minPrice;
     }
 
-    private QuantitativeValue fEligibleQuantity;
+    private QuantitativeValue eligibleQuantity;
 
     /**
      * The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.
@@ -114,20 +117,21 @@ public class PaymentChargeSpecificationImpl extends com.weedow.schemaorg.commons
      */
     @Override
     public QuantitativeValue getEligibleQuantity() {
-        return fEligibleQuantity;
+        return eligibleQuantity;
     }
 
     /**
      * The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.
      *
+     * @param eligibleQuantity QuantitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setEligibleQuantity(QuantitativeValue fEligibleQuantity) {
-        this.fEligibleQuantity = fEligibleQuantity;
+    public void setEligibleQuantity(QuantitativeValue eligibleQuantity) {
+        this.eligibleQuantity = eligibleQuantity;
     }
 
-    private Object fValidFrom;
+    private Object validFrom;
 
     /**
      * The date when the item becomes valid.
@@ -137,23 +141,31 @@ public class PaymentChargeSpecificationImpl extends com.weedow.schemaorg.commons
      */
     @Override
     public <T> T getValidFrom() {
-        return (T) fValidFrom;
+        return (T) validFrom;
     }
 
     /**
      * The date when the item becomes valid.
      *
+     * @param validFrom DateTime value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setValidFrom(Object fValidFrom) {
-        if(!(fValidFrom instanceof DateTime) && !(fValidFrom instanceof Date)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'validFrom': " + fValidFrom);
-        }
-        this.fValidFrom = fValidFrom;
+    public void setValidFrom(DateTime validFrom) {
+        this.validFrom = validFrom;
+    }
+    /**
+     * The date when the item becomes valid.
+     *
+     * @param validFrom Date value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setValidFrom(Date validFrom) {
+        this.validFrom = validFrom;
     }
 
-    private Number fMaxPrice;
+    private Number maxPrice;
 
     /**
      * The highest price if the price is a range.
@@ -163,20 +175,21 @@ public class PaymentChargeSpecificationImpl extends com.weedow.schemaorg.commons
      */
     @Override
     public Number getMaxPrice() {
-        return fMaxPrice;
+        return maxPrice;
     }
 
     /**
      * The highest price if the price is a range.
      *
+     * @param maxPrice Number value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setMaxPrice(Number fMaxPrice) {
-        this.fMaxPrice = fMaxPrice;
+    public void setMaxPrice(Number maxPrice) {
+        this.maxPrice = maxPrice;
     }
 
-    private Text fPriceCurrency;
+    private Text priceCurrency;
 
     /**
      * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
@@ -185,19 +198,20 @@ public class PaymentChargeSpecificationImpl extends com.weedow.schemaorg.commons
      */
     @Override
     public Text getPriceCurrency() {
-        return fPriceCurrency;
+        return priceCurrency;
     }
 
     /**
      * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
      *
+     * @param priceCurrency Text value to set.
      */
     @Override
-    public void setPriceCurrency(Text fPriceCurrency) {
-        this.fPriceCurrency = fPriceCurrency;
+    public void setPriceCurrency(Text priceCurrency) {
+        this.priceCurrency = priceCurrency;
     }
 
-    private Boolean fValueAddedTaxIncluded;
+    private Boolean valueAddedTaxIncluded;
 
     /**
      * Specifies whether the applicable value-added tax (VAT) is included in the price specification or not.
@@ -207,20 +221,21 @@ public class PaymentChargeSpecificationImpl extends com.weedow.schemaorg.commons
      */
     @Override
     public Boolean getValueAddedTaxIncluded() {
-        return fValueAddedTaxIncluded;
+        return valueAddedTaxIncluded;
     }
 
     /**
      * Specifies whether the applicable value-added tax (VAT) is included in the price specification or not.
      *
+     * @param valueAddedTaxIncluded Boolean value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setValueAddedTaxIncluded(Boolean fValueAddedTaxIncluded) {
-        this.fValueAddedTaxIncluded = fValueAddedTaxIncluded;
+    public void setValueAddedTaxIncluded(Boolean valueAddedTaxIncluded) {
+        this.valueAddedTaxIncluded = valueAddedTaxIncluded;
     }
 
-    private PriceSpecification fEligibleTransactionVolume;
+    private PriceSpecification eligibleTransactionVolume;
 
     /**
      * The transaction volume, in a monetary unit, for which the offer or price specification is valid, e.g. for indicating a minimal purchasing volume, to express free shipping above a certain order volume, or to limit the acceptance of credit cards to purchases to a certain minimal amount.
@@ -230,20 +245,21 @@ public class PaymentChargeSpecificationImpl extends com.weedow.schemaorg.commons
      */
     @Override
     public PriceSpecification getEligibleTransactionVolume() {
-        return fEligibleTransactionVolume;
+        return eligibleTransactionVolume;
     }
 
     /**
      * The transaction volume, in a monetary unit, for which the offer or price specification is valid, e.g. for indicating a minimal purchasing volume, to express free shipping above a certain order volume, or to limit the acceptance of credit cards to purchases to a certain minimal amount.
      *
+     * @param eligibleTransactionVolume PriceSpecification value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setEligibleTransactionVolume(PriceSpecification fEligibleTransactionVolume) {
-        this.fEligibleTransactionVolume = fEligibleTransactionVolume;
+    public void setEligibleTransactionVolume(PriceSpecification eligibleTransactionVolume) {
+        this.eligibleTransactionVolume = eligibleTransactionVolume;
     }
 
-    private Object fValidThrough;
+    private Object validThrough;
 
     /**
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
@@ -253,23 +269,31 @@ public class PaymentChargeSpecificationImpl extends com.weedow.schemaorg.commons
      */
     @Override
     public <T> T getValidThrough() {
-        return (T) fValidThrough;
+        return (T) validThrough;
     }
 
     /**
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
      *
+     * @param validThrough DateTime value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setValidThrough(Object fValidThrough) {
-        if(!(fValidThrough instanceof DateTime) && !(fValidThrough instanceof Date)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'validThrough': " + fValidThrough);
-        }
-        this.fValidThrough = fValidThrough;
+    public void setValidThrough(DateTime validThrough) {
+        this.validThrough = validThrough;
+    }
+    /**
+     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
+     *
+     * @param validThrough Date value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setValidThrough(Date validThrough) {
+        this.validThrough = validThrough;
     }
 
-    private Object fPrice;
+    private Object price;
 
     /**
      * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.<br/><br/>Usage guidelines:<br/><br/>* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR") instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.<br/>* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a "content=" attribute for publishing simple machine-readable values alongside more human-friendly formatting.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
@@ -279,23 +303,31 @@ public class PaymentChargeSpecificationImpl extends com.weedow.schemaorg.commons
      */
     @Override
     public <T> T getPrice() {
-        return (T) fPrice;
+        return (T) price;
     }
 
     /**
      * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.<br/><br/>Usage guidelines:<br/><br/>* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR") instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.<br/>* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a "content=" attribute for publishing simple machine-readable values alongside more human-friendly formatting.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
      *       
      *
+     * @param price Number value to set.
      */
     @Override
-    public void setPrice(Object fPrice) {
-        if(!(fPrice instanceof Number) && !(fPrice instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'price': " + fPrice);
-        }
-        this.fPrice = fPrice;
+    public void setPrice(Number price) {
+        this.price = price;
+    }
+    /**
+     * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.<br/><br/>Usage guidelines:<br/><br/>* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR") instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.<br/>* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a "content=" attribute for publishing simple machine-readable values alongside more human-friendly formatting.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
+     *       
+     *
+     * @param price Text value to set.
+     */
+    @Override
+    public void setPrice(Text price) {
+        this.price = price;
     }
 
-    private Object fMainEntityOfPage;
+    private Object mainEntityOfPage;
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -304,22 +336,29 @@ public class PaymentChargeSpecificationImpl extends com.weedow.schemaorg.commons
      */
     @Override
     public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
+        return (T) mainEntityOfPage;
     }
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
+     * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
-        }
-        this.fMainEntityOfPage = fMainEntityOfPage;
+    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param mainEntityOfPage URL value to set.
+     */
+    @Override
+    public void setMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
     }
 
-    private Text fAlternateName;
+    private Text alternateName;
 
     /**
      * An alias for the item.
@@ -328,19 +367,20 @@ public class PaymentChargeSpecificationImpl extends com.weedow.schemaorg.commons
      */
     @Override
     public Text getAlternateName() {
-        return fAlternateName;
+        return alternateName;
     }
 
     /**
      * An alias for the item.
      *
+     * @param alternateName Text value to set.
      */
     @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
+    public void setAlternateName(Text alternateName) {
+        this.alternateName = alternateName;
     }
 
-    private Text fName;
+    private Text name;
 
     /**
      * The name of the item.
@@ -349,19 +389,20 @@ public class PaymentChargeSpecificationImpl extends com.weedow.schemaorg.commons
      */
     @Override
     public Text getName() {
-        return fName;
+        return name;
     }
 
     /**
      * The name of the item.
      *
+     * @param name Text value to set.
      */
     @Override
-    public void setName(Text fName) {
-        this.fName = fName;
+    public void setName(Text name) {
+        this.name = name;
     }
 
-    private Action fPotentialAction;
+    private Action potentialAction;
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -370,19 +411,20 @@ public class PaymentChargeSpecificationImpl extends com.weedow.schemaorg.commons
      */
     @Override
     public Action getPotentialAction() {
-        return fPotentialAction;
+        return potentialAction;
     }
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      *
+     * @param potentialAction Action value to set.
      */
     @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
+    public void setPotentialAction(Action potentialAction) {
+        this.potentialAction = potentialAction;
     }
 
-    private Object fImage;
+    private Object image;
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -391,22 +433,29 @@ public class PaymentChargeSpecificationImpl extends com.weedow.schemaorg.commons
      */
     @Override
     public <T> T getImage() {
-        return (T) fImage;
+        return (T) image;
     }
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
+     * @param image URL value to set.
      */
     @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
-        this.fImage = fImage;
+    public void setImage(URL image) {
+        this.image = image;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image ImageObject value to set.
+     */
+    @Override
+    public void setImage(ImageObject image) {
+        this.image = image;
     }
 
-    private URL fUrl;
+    private URL url;
 
     /**
      * URL of the item.
@@ -415,19 +464,20 @@ public class PaymentChargeSpecificationImpl extends com.weedow.schemaorg.commons
      */
     @Override
     public URL getUrl() {
-        return fUrl;
+        return url;
     }
 
     /**
      * URL of the item.
      *
+     * @param url URL value to set.
      */
     @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
+    public void setUrl(URL url) {
+        this.url = url;
     }
 
-    private Text fDescription;
+    private Text description;
 
     /**
      * A description of the item.
@@ -436,19 +486,20 @@ public class PaymentChargeSpecificationImpl extends com.weedow.schemaorg.commons
      */
     @Override
     public Text getDescription() {
-        return fDescription;
+        return description;
     }
 
     /**
      * A description of the item.
      *
+     * @param description Text value to set.
      */
     @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
+    public void setDescription(Text description) {
+        this.description = description;
     }
 
-    private Object fSubjectOf;
+    private Object subjectOf;
 
     /**
      * A CreativeWork or Event about this Thing.
@@ -458,23 +509,31 @@ public class PaymentChargeSpecificationImpl extends com.weedow.schemaorg.commons
      */
     @Override
     public <T> T getSubjectOf() {
-        return (T) fSubjectOf;
+        return (T) subjectOf;
     }
 
     /**
      * A CreativeWork or Event about this Thing.
      *
+     * @param subjectOf Event value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Object fSubjectOf) {
-        if(!(fSubjectOf instanceof Event) && !(fSubjectOf instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'subjectOf': " + fSubjectOf);
-        }
-        this.fSubjectOf = fSubjectOf;
+    public void setSubjectOf(Event subjectOf) {
+        this.subjectOf = subjectOf;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @param subjectOf CreativeWork value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public void setSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = subjectOf;
     }
 
-    private URL fAdditionalType;
+    private URL additionalType;
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
@@ -483,19 +542,20 @@ public class PaymentChargeSpecificationImpl extends com.weedow.schemaorg.commons
      */
     @Override
     public URL getAdditionalType() {
-        return fAdditionalType;
+        return additionalType;
     }
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
+     * @param additionalType URL value to set.
      */
     @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
+    public void setAdditionalType(URL additionalType) {
+        this.additionalType = additionalType;
     }
 
-    private Text fDisambiguatingDescription;
+    private Text disambiguatingDescription;
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
@@ -504,19 +564,20 @@ public class PaymentChargeSpecificationImpl extends com.weedow.schemaorg.commons
      */
     @Override
     public Text getDisambiguatingDescription() {
-        return fDisambiguatingDescription;
+        return disambiguatingDescription;
     }
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
+     * @param disambiguatingDescription Text value to set.
      */
     @Override
-    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = fDisambiguatingDescription;
+    public void setDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = disambiguatingDescription;
     }
 
-    private URL fSameAs;
+    private URL sameAs;
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
@@ -525,19 +586,20 @@ public class PaymentChargeSpecificationImpl extends com.weedow.schemaorg.commons
      */
     @Override
     public URL getSameAs() {
-        return fSameAs;
+        return sameAs;
     }
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
+     * @param sameAs URL value to set.
      */
     @Override
-    public void setSameAs(URL fSameAs) {
-        this.fSameAs = fSameAs;
+    public void setSameAs(URL sameAs) {
+        this.sameAs = sameAs;
     }
 
-    private Object fIdentifier;
+    private Object identifier;
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -547,19 +609,37 @@ public class PaymentChargeSpecificationImpl extends com.weedow.schemaorg.commons
      */
     @Override
     public <T> T getIdentifier() {
-        return (T) fIdentifier;
+        return (T) identifier;
     }
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
+     * @param identifier URL value to set.
      */
     @Override
-    public void setIdentifier(Object fIdentifier) {
-        if(!(fIdentifier instanceof URL) && !(fIdentifier instanceof Text) && !(fIdentifier instanceof PropertyValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
-        }
-        this.fIdentifier = fIdentifier;
+    public void setIdentifier(URL identifier) {
+        this.identifier = identifier;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier Text value to set.
+     */
+    @Override
+    public void setIdentifier(Text identifier) {
+        this.identifier = identifier;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier PropertyValue value to set.
+     */
+    @Override
+    public void setIdentifier(PropertyValue identifier) {
+        this.identifier = identifier;
     }
 }

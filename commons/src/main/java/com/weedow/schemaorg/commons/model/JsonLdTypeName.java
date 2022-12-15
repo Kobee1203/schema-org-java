@@ -15,8 +15,10 @@ import java.lang.annotation.Target;
 public @interface JsonLdTypeName {
 
     /**
-     * Logical type name for annotated type. If missing (or defined as Empty String),
-     * defaults to using non-qualified class name as the type.
+     * Logical type name for annotated type.
+     * If missing (or defined as Empty String), defaults to using non-qualified class name as the type.
+     *
+     * @return logical type name
      */
     String value() default "";
 }

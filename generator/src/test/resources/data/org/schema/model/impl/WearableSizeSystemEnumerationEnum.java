@@ -28,7 +28,7 @@ import org.schema.model.WearableSizeSystemEnumeration;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
  * @see <a href="https://schema.org/WearableSizeSystemEnumeration">https://schema.org/WearableSizeSystemEnumeration</a>
  */
-@JsonLdTypeName("schema:WearableSizeSystemEnumeration")
+@JsonLdTypeName("WearableSizeSystemEnumeration")
 public enum WearableSizeSystemEnumerationEnum implements WearableSizeSystemEnumeration {
     WEARABLE_SIZE_SYSTEM_JP("WearableSizeSystemJP"),
     WEARABLE_SIZE_SYSTEM_CN("WearableSizeSystemCN"),
@@ -43,12 +43,22 @@ public enum WearableSizeSystemEnumerationEnum implements WearableSizeSystemEnume
     WEARABLE_SIZE_SYSTEM_US("WearableSizeSystemUS"),
     WEARABLE_SIZE_SYSTEM_IT("WearableSizeSystemIT"),
     WEARABLE_SIZE_SYSTEM_FR("WearableSizeSystemFR"),
-    WEARABLE_SIZE_SYSTEM_CONTINENTAL("WearableSizeSystemContinental");
+    WEARABLE_SIZE_SYSTEM_CONTINENTAL("WearableSizeSystemContinental")
+    ;
 
     private final String enumValue;
 
     WearableSizeSystemEnumerationEnum(String enumValue) {
         this.enumValue = enumValue;
+    }
+
+    public static WearableSizeSystemEnumerationEnum from(String value) {
+        for (WearableSizeSystemEnumerationEnum item : values()) {
+            if (item.enumValue.equals(value)) {
+                return item;
+            }
+        }
+        return null;
     }
 
     @Override
@@ -95,10 +105,19 @@ public enum WearableSizeSystemEnumerationEnum implements WearableSizeSystemEnume
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setSupersededBy(Object fSupersededBy) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'supersededBy': method not allowed for enum WearableSizeSystemEnumerationEnum");
+    public void setSupersededBy(Enumeration supersededBy) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'supersededBy': method not allowed for enum Enum");
     }
-
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void setSupersededBy(Class supersededBy) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'supersededBy': method not allowed for enum Enum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void setSupersededBy(Property supersededBy) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'supersededBy': method not allowed for enum Enum");
+    }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
     public <T> T getMainEntityOfPage() {
@@ -107,10 +126,14 @@ public enum WearableSizeSystemEnumerationEnum implements WearableSizeSystemEnume
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'mainEntityOfPage': method not allowed for enum WearableSizeSystemEnumerationEnum");
+    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'mainEntityOfPage': method not allowed for enum Enum");
     }
-
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void setMainEntityOfPage(URL mainEntityOfPage) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'mainEntityOfPage': method not allowed for enum Enum");
+    }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
     public Text getAlternateName() {
@@ -119,10 +142,9 @@ public enum WearableSizeSystemEnumerationEnum implements WearableSizeSystemEnume
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setAlternateName(Text fAlternateName) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'alternateName': method not allowed for enum WearableSizeSystemEnumerationEnum");
+    public void setAlternateName(Text alternateName) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'alternateName': method not allowed for enum Enum");
     }
-
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
     public Text getName() {
@@ -131,10 +153,9 @@ public enum WearableSizeSystemEnumerationEnum implements WearableSizeSystemEnume
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setName(Text fName) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'name': method not allowed for enum WearableSizeSystemEnumerationEnum");
+    public void setName(Text name) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'name': method not allowed for enum Enum");
     }
-
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
     public Action getPotentialAction() {
@@ -143,10 +164,9 @@ public enum WearableSizeSystemEnumerationEnum implements WearableSizeSystemEnume
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'potentialAction': method not allowed for enum WearableSizeSystemEnumerationEnum");
+    public void setPotentialAction(Action potentialAction) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'potentialAction': method not allowed for enum Enum");
     }
-
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
     public <T> T getImage() {
@@ -155,10 +175,14 @@ public enum WearableSizeSystemEnumerationEnum implements WearableSizeSystemEnume
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setImage(Object fImage) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'image': method not allowed for enum WearableSizeSystemEnumerationEnum");
+    public void setImage(URL image) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'image': method not allowed for enum Enum");
     }
-
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void setImage(ImageObject image) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'image': method not allowed for enum Enum");
+    }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
     public URL getUrl() {
@@ -167,10 +191,9 @@ public enum WearableSizeSystemEnumerationEnum implements WearableSizeSystemEnume
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setUrl(URL fUrl) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'url': method not allowed for enum WearableSizeSystemEnumerationEnum");
+    public void setUrl(URL url) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'url': method not allowed for enum Enum");
     }
-
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
     public Text getDescription() {
@@ -179,10 +202,9 @@ public enum WearableSizeSystemEnumerationEnum implements WearableSizeSystemEnume
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setDescription(Text fDescription) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'description': method not allowed for enum WearableSizeSystemEnumerationEnum");
+    public void setDescription(Text description) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'description': method not allowed for enum Enum");
     }
-
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
     public <T> T getSubjectOf() {
@@ -191,10 +213,14 @@ public enum WearableSizeSystemEnumerationEnum implements WearableSizeSystemEnume
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setSubjectOf(Object fSubjectOf) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'subjectOf': method not allowed for enum WearableSizeSystemEnumerationEnum");
+    public void setSubjectOf(Event subjectOf) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'subjectOf': method not allowed for enum Enum");
     }
-
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void setSubjectOf(CreativeWork subjectOf) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'subjectOf': method not allowed for enum Enum");
+    }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
     public URL getAdditionalType() {
@@ -203,10 +229,9 @@ public enum WearableSizeSystemEnumerationEnum implements WearableSizeSystemEnume
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'additionalType': method not allowed for enum WearableSizeSystemEnumerationEnum");
+    public void setAdditionalType(URL additionalType) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'additionalType': method not allowed for enum Enum");
     }
-
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
     public Text getDisambiguatingDescription() {
@@ -215,10 +240,9 @@ public enum WearableSizeSystemEnumerationEnum implements WearableSizeSystemEnume
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'disambiguatingDescription': method not allowed for enum WearableSizeSystemEnumerationEnum");
+    public void setDisambiguatingDescription(Text disambiguatingDescription) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'disambiguatingDescription': method not allowed for enum Enum");
     }
-
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
     public URL getSameAs() {
@@ -227,10 +251,9 @@ public enum WearableSizeSystemEnumerationEnum implements WearableSizeSystemEnume
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setSameAs(URL fSameAs) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'sameAs': method not allowed for enum WearableSizeSystemEnumerationEnum");
+    public void setSameAs(URL sameAs) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'sameAs': method not allowed for enum Enum");
     }
-
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
     public <T> T getIdentifier() {
@@ -239,8 +262,17 @@ public enum WearableSizeSystemEnumerationEnum implements WearableSizeSystemEnume
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setIdentifier(Object fIdentifier) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum WearableSizeSystemEnumerationEnum");
+    public void setIdentifier(URL identifier) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum Enum");
     }
-
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void setIdentifier(Text identifier) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum Enum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void setIdentifier(PropertyValue identifier) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum Enum");
+    }
 }

@@ -32,9 +32,10 @@ public interface EducationalOccupationalCredential extends CreativeWork {
     /**
      * The duration of validity of a permit or similar thing.
      *
+     * @param validFor Duration value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    void setValidFor(Duration fValidFor);
+    void setValidFor(Duration validFor);
 
     /**
      * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
@@ -48,10 +49,27 @@ public interface EducationalOccupationalCredential extends CreativeWork {
     /**
      * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
      *
+     * @param educationalLevel URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    void setEducationalLevel(Object fEducationalLevel);
+    void setEducationalLevel(URL educationalLevel);
+    /**
+     * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
+     *
+     * @param educationalLevel DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     */
+    void setEducationalLevel(DefinedTerm educationalLevel);
+    /**
+     * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
+     *
+     * @param educationalLevel Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     */
+    void setEducationalLevel(Text educationalLevel);
 
     /**
      * The category or type of credential being described, for example "degree”, “certificate”, “badge”, or more specific term.
@@ -65,10 +83,27 @@ public interface EducationalOccupationalCredential extends CreativeWork {
     /**
      * The category or type of credential being described, for example "degree”, “certificate”, “badge”, or more specific term.
      *
+     * @param credentialCategory URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    void setCredentialCategory(Object fCredentialCategory);
+    void setCredentialCategory(URL credentialCategory);
+    /**
+     * The category or type of credential being described, for example "degree”, “certificate”, “badge”, or more specific term.
+     *
+     * @param credentialCategory DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     */
+    void setCredentialCategory(DefinedTerm credentialCategory);
+    /**
+     * The category or type of credential being described, for example "degree”, “certificate”, “badge”, or more specific term.
+     *
+     * @param credentialCategory Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     */
+    void setCredentialCategory(Text credentialCategory);
 
     /**
      * An organization that acknowledges the validity, value or utility of a credential. Note: recognition may include a process of quality assurance or accreditation.
@@ -82,10 +117,11 @@ public interface EducationalOccupationalCredential extends CreativeWork {
     /**
      * An organization that acknowledges the validity, value or utility of a credential. Note: recognition may include a process of quality assurance or accreditation.
      *
+     * @param recognizedBy Organization value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    void setRecognizedBy(Organization fRecognizedBy);
+    void setRecognizedBy(Organization recognizedBy);
 
     /**
      * Knowledge, skill, ability or personal attribute that must be demonstrated by a person or other entity in order to do something such as earn an Educational Occupational Credential or understand a LearningResource.
@@ -99,10 +135,27 @@ public interface EducationalOccupationalCredential extends CreativeWork {
     /**
      * Knowledge, skill, ability or personal attribute that must be demonstrated by a person or other entity in order to do something such as earn an Educational Occupational Credential or understand a LearningResource.
      *
+     * @param competencyRequired Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    void setCompetencyRequired(Object fCompetencyRequired);
+    void setCompetencyRequired(Text competencyRequired);
+    /**
+     * Knowledge, skill, ability or personal attribute that must be demonstrated by a person or other entity in order to do something such as earn an Educational Occupational Credential or understand a LearningResource.
+     *
+     * @param competencyRequired DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     */
+    void setCompetencyRequired(DefinedTerm competencyRequired);
+    /**
+     * Knowledge, skill, ability or personal attribute that must be demonstrated by a person or other entity in order to do something such as earn an Educational Occupational Credential or understand a LearningResource.
+     *
+     * @param competencyRequired URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     */
+    void setCompetencyRequired(URL competencyRequired);
 
     /**
      * The geographic area where a permit or similar thing is valid.
@@ -115,7 +168,8 @@ public interface EducationalOccupationalCredential extends CreativeWork {
     /**
      * The geographic area where a permit or similar thing is valid.
      *
+     * @param validIn AdministrativeArea value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    void setValidIn(AdministrativeArea fValidIn);
+    void setValidIn(AdministrativeArea validIn);
 }

@@ -44,10 +44,11 @@ public interface MerchantReturnPolicy extends Intangible {
     /**
      * Specifies an applicable return policy (from an enumeration).
      *
+     * @param returnPolicyCategory MerchantReturnEnumeration value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
      */
-    void setReturnPolicyCategory(MerchantReturnEnumeration fReturnPolicyCategory);
+    void setReturnPolicyCategory(MerchantReturnEnumeration returnPolicyCategory);
 
     /**
      * The country where the product has to be sent to for returns, for example "Ireland" using the [[name]] property of [[Country]]. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1). Note that this can be different from the country where the product was originally shipped from or sent too.
@@ -61,10 +62,19 @@ public interface MerchantReturnPolicy extends Intangible {
     /**
      * The country where the product has to be sent to for returns, for example "Ireland" using the [[name]] property of [[Country]]. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1). Note that this can be different from the country where the product was originally shipped from or sent too.
      *
+     * @param returnPolicyCountry Country value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
      */
-    void setReturnPolicyCountry(Object fReturnPolicyCountry);
+    void setReturnPolicyCountry(Country returnPolicyCountry);
+    /**
+     * The country where the product has to be sent to for returns, for example "Ireland" using the [[name]] property of [[Country]]. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1). Note that this can be different from the country where the product was originally shipped from or sent too.
+     *
+     * @param returnPolicyCountry Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
+     */
+    void setReturnPolicyCountry(Text returnPolicyCountry);
 
     /**
      * Specifies a Web page or service by URL, for product returns.
@@ -78,10 +88,11 @@ public interface MerchantReturnPolicy extends Intangible {
     /**
      * Specifies a Web page or service by URL, for product returns.
      *
+     * @param merchantReturnLink URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
      */
-    void setMerchantReturnLink(URL fMerchantReturnLink);
+    void setMerchantReturnLink(URL merchantReturnLink);
 
     /**
      * Use [[MonetaryAmount]] to specify a fixed restocking fee for product returns, or use [[Number]] to specify a percentage of the product price paid by the customer.
@@ -95,10 +106,19 @@ public interface MerchantReturnPolicy extends Intangible {
     /**
      * Use [[MonetaryAmount]] to specify a fixed restocking fee for product returns, or use [[Number]] to specify a percentage of the product price paid by the customer.
      *
+     * @param restockingFee MonetaryAmount value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
      */
-    void setRestockingFee(Object fRestockingFee);
+    void setRestockingFee(MonetaryAmount restockingFee);
+    /**
+     * Use [[MonetaryAmount]] to specify a fixed restocking fee for product returns, or use [[Number]] to specify a percentage of the product price paid by the customer.
+     *
+     * @param restockingFee Number value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
+     */
+    void setRestockingFee(Number restockingFee);
 
     /**
      * Amount of shipping costs for defect product returns. Applicable when property [[itemDefectReturnFees]] equals [[ReturnShippingFees]].
@@ -112,10 +132,11 @@ public interface MerchantReturnPolicy extends Intangible {
     /**
      * Amount of shipping costs for defect product returns. Applicable when property [[itemDefectReturnFees]] equals [[ReturnShippingFees]].
      *
+     * @param itemDefectReturnShippingFeesAmount MonetaryAmount value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
      */
-    void setItemDefectReturnShippingFeesAmount(MonetaryAmount fItemDefectReturnShippingFeesAmount);
+    void setItemDefectReturnShippingFeesAmount(MonetaryAmount itemDefectReturnShippingFeesAmount);
 
     /**
      * The type of return fees for returns of defect products.
@@ -129,10 +150,11 @@ public interface MerchantReturnPolicy extends Intangible {
     /**
      * The type of return fees for returns of defect products.
      *
+     * @param itemDefectReturnFees ReturnFeesEnumeration value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
      */
-    void setItemDefectReturnFees(ReturnFeesEnumeration fItemDefectReturnFees);
+    void setItemDefectReturnFees(ReturnFeesEnumeration itemDefectReturnFees);
 
     /**
      * Are in-store returns offered? (for more advanced return methods use the [[returnMethod]] property)
@@ -146,10 +168,11 @@ public interface MerchantReturnPolicy extends Intangible {
     /**
      * Are in-store returns offered? (for more advanced return methods use the [[returnMethod]] property)
      *
+     * @param inStoreReturnsOffered Boolean value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
      */
-    void setInStoreReturnsOffered(Boolean fInStoreReturnsOffered);
+    void setInStoreReturnsOffered(Boolean inStoreReturnsOffered);
 
     /**
      * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
@@ -161,8 +184,9 @@ public interface MerchantReturnPolicy extends Intangible {
     /**
      * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
      *
+     * @param itemCondition OfferItemCondition value to set.
      */
-    void setItemCondition(OfferItemCondition fItemCondition);
+    void setItemCondition(OfferItemCondition itemCondition);
 
     /**
      * The method (from an enumeration) by which the customer obtains a return shipping label for a defect product.
@@ -176,10 +200,11 @@ public interface MerchantReturnPolicy extends Intangible {
     /**
      * The method (from an enumeration) by which the customer obtains a return shipping label for a defect product.
      *
+     * @param itemDefectReturnLabelSource ReturnLabelSourceEnumeration value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
      */
-    void setItemDefectReturnLabelSource(ReturnLabelSourceEnumeration fItemDefectReturnLabelSource);
+    void setItemDefectReturnLabelSource(ReturnLabelSourceEnumeration itemDefectReturnLabelSource);
 
     /**
      * The method (from an enumeration) by which the customer obtains a return shipping label for a product returned for any reason.
@@ -193,10 +218,11 @@ public interface MerchantReturnPolicy extends Intangible {
     /**
      * The method (from an enumeration) by which the customer obtains a return shipping label for a product returned for any reason.
      *
+     * @param returnLabelSource ReturnLabelSourceEnumeration value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
      */
-    void setReturnLabelSource(ReturnLabelSourceEnumeration fReturnLabelSource);
+    void setReturnLabelSource(ReturnLabelSourceEnumeration returnLabelSource);
 
     /**
      * The amount of shipping costs if a product is returned due to customer remorse. Applicable when property [[customerRemorseReturnFees]] equals [[ReturnShippingFees]].
@@ -210,10 +236,11 @@ public interface MerchantReturnPolicy extends Intangible {
     /**
      * The amount of shipping costs if a product is returned due to customer remorse. Applicable when property [[customerRemorseReturnFees]] equals [[ReturnShippingFees]].
      *
+     * @param customerRemorseReturnShippingFeesAmount MonetaryAmount value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
      */
-    void setCustomerRemorseReturnShippingFeesAmount(MonetaryAmount fCustomerRemorseReturnShippingFeesAmount);
+    void setCustomerRemorseReturnShippingFeesAmount(MonetaryAmount customerRemorseReturnShippingFeesAmount);
 
     /**
      * A refund type, from an enumerated list.
@@ -227,10 +254,11 @@ public interface MerchantReturnPolicy extends Intangible {
     /**
      * A refund type, from an enumerated list.
      *
+     * @param refundType RefundTypeEnumeration value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
      */
-    void setRefundType(RefundTypeEnumeration fRefundType);
+    void setRefundType(RefundTypeEnumeration refundType);
 
     /**
      * Amount of shipping costs for product returns (for any reason). Applicable when property [[returnFees]] equals [[ReturnShippingFees]].
@@ -244,10 +272,11 @@ public interface MerchantReturnPolicy extends Intangible {
     /**
      * Amount of shipping costs for product returns (for any reason). Applicable when property [[returnFees]] equals [[ReturnShippingFees]].
      *
+     * @param returnShippingFeesAmount MonetaryAmount value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
      */
-    void setReturnShippingFeesAmount(MonetaryAmount fReturnShippingFeesAmount);
+    void setReturnShippingFeesAmount(MonetaryAmount returnShippingFeesAmount);
 
     /**
      * Specifies either a fixed return date or the number of days (from the delivery date) that a product can be returned. Used when the [[returnPolicyCategory]] property is specified as [[MerchantReturnFiniteReturnWindow]].
@@ -261,10 +290,27 @@ public interface MerchantReturnPolicy extends Intangible {
     /**
      * Specifies either a fixed return date or the number of days (from the delivery date) that a product can be returned. Used when the [[returnPolicyCategory]] property is specified as [[MerchantReturnFiniteReturnWindow]].
      *
+     * @param merchantReturnDays DateTime value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
      */
-    void setMerchantReturnDays(Object fMerchantReturnDays);
+    void setMerchantReturnDays(DateTime merchantReturnDays);
+    /**
+     * Specifies either a fixed return date or the number of days (from the delivery date) that a product can be returned. Used when the [[returnPolicyCategory]] property is specified as [[MerchantReturnFiniteReturnWindow]].
+     *
+     * @param merchantReturnDays Integer value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     */
+    void setMerchantReturnDays(Integer merchantReturnDays);
+    /**
+     * Specifies either a fixed return date or the number of days (from the delivery date) that a product can be returned. Used when the [[returnPolicyCategory]] property is specified as [[MerchantReturnFiniteReturnWindow]].
+     *
+     * @param merchantReturnDays Date value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     */
+    void setMerchantReturnDays(Date merchantReturnDays);
 
     /**
      * The type of return method offered, specified from an enumeration.
@@ -278,10 +324,11 @@ public interface MerchantReturnPolicy extends Intangible {
     /**
      * The type of return method offered, specified from an enumeration.
      *
+     * @param returnMethod ReturnMethodEnumeration value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
      */
-    void setReturnMethod(ReturnMethodEnumeration fReturnMethod);
+    void setReturnMethod(ReturnMethodEnumeration returnMethod);
 
     /**
      * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
@@ -293,8 +340,9 @@ public interface MerchantReturnPolicy extends Intangible {
     /**
      * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
      *
+     * @param additionalProperty PropertyValue value to set.
      */
-    void setAdditionalProperty(PropertyValue fAdditionalProperty);
+    void setAdditionalProperty(PropertyValue additionalProperty);
 
     /**
      * The method (from an enumeration) by which the customer obtains a return shipping label for a product returned due to customer remorse.
@@ -308,10 +356,11 @@ public interface MerchantReturnPolicy extends Intangible {
     /**
      * The method (from an enumeration) by which the customer obtains a return shipping label for a product returned due to customer remorse.
      *
+     * @param customerRemorseReturnLabelSource ReturnLabelSourceEnumeration value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
      */
-    void setCustomerRemorseReturnLabelSource(ReturnLabelSourceEnumeration fCustomerRemorseReturnLabelSource);
+    void setCustomerRemorseReturnLabelSource(ReturnLabelSourceEnumeration customerRemorseReturnLabelSource);
 
     /**
      * The type of return fees if the product is returned due to customer remorse.
@@ -325,10 +374,11 @@ public interface MerchantReturnPolicy extends Intangible {
     /**
      * The type of return fees if the product is returned due to customer remorse.
      *
+     * @param customerRemorseReturnFees ReturnFeesEnumeration value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
      */
-    void setCustomerRemorseReturnFees(ReturnFeesEnumeration fCustomerRemorseReturnFees);
+    void setCustomerRemorseReturnFees(ReturnFeesEnumeration customerRemorseReturnFees);
 
     /**
      * Seasonal override of a return policy.
@@ -342,10 +392,11 @@ public interface MerchantReturnPolicy extends Intangible {
     /**
      * Seasonal override of a return policy.
      *
+     * @param returnPolicySeasonalOverride MerchantReturnPolicySeasonalOverride value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
      */
-    void setReturnPolicySeasonalOverride(MerchantReturnPolicySeasonalOverride fReturnPolicySeasonalOverride);
+    void setReturnPolicySeasonalOverride(MerchantReturnPolicySeasonalOverride returnPolicySeasonalOverride);
 
     /**
      * A country where a particular merchant return policy applies to, for example the two-letter ISO 3166-1 alpha-2 country code.
@@ -359,10 +410,19 @@ public interface MerchantReturnPolicy extends Intangible {
     /**
      * A country where a particular merchant return policy applies to, for example the two-letter ISO 3166-1 alpha-2 country code.
      *
+     * @param applicableCountry Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3001">https://github.com/schemaorg/schemaorg/issues/3001</a>
      */
-    void setApplicableCountry(Object fApplicableCountry);
+    void setApplicableCountry(Text applicableCountry);
+    /**
+     * A country where a particular merchant return policy applies to, for example the two-letter ISO 3166-1 alpha-2 country code.
+     *
+     * @param applicableCountry Country value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3001">https://github.com/schemaorg/schemaorg/issues/3001</a>
+     */
+    void setApplicableCountry(Country applicableCountry);
 
     /**
      * The type of return fees for purchased products (for any return reason)
@@ -376,8 +436,9 @@ public interface MerchantReturnPolicy extends Intangible {
     /**
      * The type of return fees for purchased products (for any return reason)
      *
+     * @param returnFees ReturnFeesEnumeration value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
      */
-    void setReturnFees(ReturnFeesEnumeration fReturnFees);
+    void setReturnFees(ReturnFeesEnumeration returnFees);
 }

@@ -2,7 +2,7 @@ package com.weedow.schemaorg.generator.model.handler.datatype;
 
 import com.weedow.schemaorg.generator.model.Type;
 import com.weedow.schemaorg.generator.model.handler.AbstractTypeModelHandler;
-import com.weedow.schemaorg.generator.model.handler.ModelHandlerUtils;
+import com.weedow.schemaorg.generator.model.utils.ModelUtils;
 import com.weedow.schemaorg.generator.model.jsonld.GraphItem;
 import com.weedow.schemaorg.generator.model.jsonld.SubClassOf;
 
@@ -16,7 +16,7 @@ public class SubDataTypeModelHandlerImpl extends AbstractTypeModelHandler {
         final List<String> types = graphItem.getTypes();
         final List<SubClassOf> subClassOf = graphItem.getSubClassOf();
         return types.contains("rdfs:Class") && !types.contains("schema:DataType")
-                && subClassOf != null && subClassOf.stream().anyMatch(subClass -> ModelHandlerUtils.isDataType(subClass.getId()));
+                && subClassOf != null && subClassOf.stream().anyMatch(subClass -> ModelUtils.isDataType(subClass.getId()));
     }
 
     @Override
@@ -25,7 +25,7 @@ public class SubDataTypeModelHandlerImpl extends AbstractTypeModelHandler {
 
         final Type type = getType(schemaDefinitions, graphItem);
 
-        final String parentJavaType = ModelHandlerUtils.getJavaType(type.getParents().get(0).getId(), null);
-        type.setJavaType(ModelHandlerUtils.getJavaType(type.getId(), parentJavaType));
+        final String parentJavaType = ModelUtils.getJavaType(type.getParents().get(0).getId(), null);
+        type.setJavaType(ModelUtils.getJavaType(type.getId(), parentJavaType));
     }
 }

@@ -26,8 +26,9 @@ public interface SellAction extends TradeAction {
     /**
      * The warranty promise(s) included in the offer.
      *
+     * @param warrantyPromise WarrantyPromise value to set.
      */
-    void setWarrantyPromise(WarrantyPromise fWarrantyPromise);
+    void setWarrantyPromise(WarrantyPromise warrantyPromise);
 
     /**
      * A sub property of participant. The participant/person/organization that bought the object.
@@ -39,6 +40,13 @@ public interface SellAction extends TradeAction {
     /**
      * A sub property of participant. The participant/person/organization that bought the object.
      *
+     * @param buyer Person value to set.
      */
-    void setBuyer(Object fBuyer);
+    void setBuyer(Person buyer);
+    /**
+     * A sub property of participant. The participant/person/organization that bought the object.
+     *
+     * @param buyer Organization value to set.
+     */
+    void setBuyer(Organization buyer);
 }

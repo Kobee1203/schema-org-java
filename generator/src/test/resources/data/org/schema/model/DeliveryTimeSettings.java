@@ -31,10 +31,11 @@ public interface DeliveryTimeSettings extends StructuredValue {
     /**
      * indicates (possibly multiple) shipping destinations. These can be defined in several ways e.g. postalCode ranges.
      *
+     * @param shippingDestination DefinedRegion value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
-    void setShippingDestination(DefinedRegion fShippingDestination);
+    void setShippingDestination(DefinedRegion shippingDestination);
 
     /**
      * Label to match an [[OfferShippingDetails]] with a [[DeliveryTimeSettings]] (within the context of a [[shippingSettingsLink]] cross-reference).
@@ -48,10 +49,11 @@ public interface DeliveryTimeSettings extends StructuredValue {
     /**
      * Label to match an [[OfferShippingDetails]] with a [[DeliveryTimeSettings]] (within the context of a [[shippingSettingsLink]] cross-reference).
      *
+     * @param transitTimeLabel Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
-    void setTransitTimeLabel(Text fTransitTimeLabel);
+    void setTransitTimeLabel(Text transitTimeLabel);
 
     /**
      * This can be marked 'true' to indicate that some published [[DeliveryTimeSettings]] or [[ShippingRateSettings]] are intended to apply to all [[OfferShippingDetails]] published by the same merchant, when referenced by a [[shippingSettingsLink]] in those settings. It is not meaningful to use a 'true' value for this property alongside a transitTimeLabel (for [[DeliveryTimeSettings]]) or shippingLabel (for [[ShippingRateSettings]]), since this property is for use with unlabelled settings.
@@ -65,10 +67,11 @@ public interface DeliveryTimeSettings extends StructuredValue {
     /**
      * This can be marked 'true' to indicate that some published [[DeliveryTimeSettings]] or [[ShippingRateSettings]] are intended to apply to all [[OfferShippingDetails]] published by the same merchant, when referenced by a [[shippingSettingsLink]] in those settings. It is not meaningful to use a 'true' value for this property alongside a transitTimeLabel (for [[DeliveryTimeSettings]]) or shippingLabel (for [[ShippingRateSettings]]), since this property is for use with unlabelled settings.
      *
+     * @param isUnlabelledFallback Boolean value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
-    void setIsUnlabelledFallback(Boolean fIsUnlabelledFallback);
+    void setIsUnlabelledFallback(Boolean isUnlabelledFallback);
 
     /**
      * The total delay between the receipt of the order and the goods reaching the final customer.
@@ -82,8 +85,9 @@ public interface DeliveryTimeSettings extends StructuredValue {
     /**
      * The total delay between the receipt of the order and the goods reaching the final customer.
      *
+     * @param deliveryTime ShippingDeliveryTime value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
-    void setDeliveryTime(ShippingDeliveryTime fDeliveryTime);
+    void setDeliveryTime(ShippingDeliveryTime deliveryTime);
 }

@@ -1,8 +1,9 @@
 package com.weedow.schemaorg.generator.core;
 
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.generator.model.Type;
-import com.weedow.schemaorg.generator.model.handler.ModelHandlerUtils;
+import com.weedow.schemaorg.generator.model.utils.ModelUtils;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentSkipListMap;
@@ -13,7 +14,7 @@ public final class SchemaGeneratorUtils {
     }
 
     public static String resolveClassName(String modelPackage, String dataTypePackage, Type type) {
-        final String resolvedPackage = ModelHandlerUtils.isDataType(type.getId()) || ModelHandlerUtils.isSubDataType(type) ? dataTypePackage : modelPackage;
+        final String resolvedPackage = ModelUtils.isDataType(type.getId()) || ModelUtils.isSubDataType(type) ? dataTypePackage : modelPackage;
         return resolvedPackage + "." + type.getName();
     }
 
@@ -29,7 +30,7 @@ public final class SchemaGeneratorUtils {
     private static final Map<Type, Set<String>> ALL_IMPORTS_BY_TYPE_CACHE = new ConcurrentSkipListMap<>(Comparator.comparing(Type::getId));
 
     public static Set<String> getAllImports(String modelPackage, String dataTypePackage, Type type) {
-        return ALL_IMPORTS_BY_TYPE_CACHE.computeIfAbsent(type, t -> {
+        Set<String> allImports = ALL_IMPORTS_BY_TYPE_CACHE.computeIfAbsent(type, t -> {
             final Set<String> imports = getImports(modelPackage, dataTypePackage, t, Collections.emptyList());
             if (!t.getParents().isEmpty()) {
                 t.getParents().stream()
@@ -38,8 +39,13 @@ public final class SchemaGeneratorUtils {
             }
             imports.add(resolveClassName(modelPackage, dataTypePackage, type));
             imports.add(JsonLdTypeName.class.getName());
+            if (type.getAllProperties().stream().anyMatch(property -> property.getTypes().size() > 1)) {
+                imports.add(JsonLdFieldTypes.class.getName());
+            }
             return imports;
         });
+        // Copy the Set to prevent the modifications in the cached Set
+        return new LinkedHashSet<>(allImports);
     }
 
     public static void clearCache() {

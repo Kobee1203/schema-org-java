@@ -31,11 +31,12 @@ public interface MortgageLoan extends LoanOrCredit {
     /**
      * Amount of mortgage mandate that can be converted into a proper mortgage at a later stage.
      *
+     * @param loanMortgageMandateAmount MonetaryAmount value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      */
-    void setLoanMortgageMandateAmount(MonetaryAmount fLoanMortgageMandateAmount);
+    void setLoanMortgageMandateAmount(MonetaryAmount loanMortgageMandateAmount);
 
     /**
      * Whether borrower is a resident of the jurisdiction where the property is located.
@@ -50,9 +51,10 @@ public interface MortgageLoan extends LoanOrCredit {
     /**
      * Whether borrower is a resident of the jurisdiction where the property is located.
      *
+     * @param domiciledMortgage Boolean value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      */
-    void setDomiciledMortgage(Boolean fDomiciledMortgage);
+    void setDomiciledMortgage(Boolean domiciledMortgage);
 }

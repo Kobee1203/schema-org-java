@@ -27,8 +27,17 @@ public interface SportsOrganization extends Organization {
     /**
      * A type of sport (e.g. Baseball).
      *
+     * @param sport Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1951">https://github.com/schemaorg/schemaorg/issues/1951</a>
      */
-    void setSport(Object fSport);
+    void setSport(Text sport);
+    /**
+     * A type of sport (e.g. Baseball).
+     *
+     * @param sport URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1951">https://github.com/schemaorg/schemaorg/issues/1951</a>
+     */
+    void setSport(URL sport);
 }

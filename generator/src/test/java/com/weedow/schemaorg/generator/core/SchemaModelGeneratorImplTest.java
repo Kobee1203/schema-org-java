@@ -151,7 +151,7 @@ class SchemaModelGeneratorImplTest {
         when(type.getId()).thenReturn("schema:ActionStatusType");
         when(type.getName()).thenReturn("ActionStatusType");
         when(type.isEnumerationType()).thenReturn(true);
-        when(type.getEnumerationMembers()).thenReturn(List.of("PotentialActionStatus", "ActiveActionStatus", "FailedActionStatus", "CompletedActionStatus"));
+        //when(type.getEnumerationMembers()).thenReturn(List.of("PotentialActionStatus", "ActiveActionStatus", "FailedActionStatus", "CompletedActionStatus"));
         when(type.getProperties()).thenReturn(Collections.emptySet());
 
         Map<String, Type> filteredSchemaDefinitions = Map.of("schema:ActionStatusType", type);

@@ -28,10 +28,11 @@ public interface PostalCodeRangeSpecification extends StructuredValue {
     /**
      * Last postal code in the range (included). Needs to be after [[postalCodeBegin]].
      *
+     * @param postalCodeEnd Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
-    void setPostalCodeEnd(Text fPostalCodeEnd);
+    void setPostalCodeEnd(Text postalCodeEnd);
 
     /**
      * First postal code in a range (included).
@@ -45,8 +46,9 @@ public interface PostalCodeRangeSpecification extends StructuredValue {
     /**
      * First postal code in a range (included).
      *
+     * @param postalCodeBegin Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
-    void setPostalCodeBegin(Text fPostalCodeBegin);
+    void setPostalCodeBegin(Text postalCodeBegin);
 }

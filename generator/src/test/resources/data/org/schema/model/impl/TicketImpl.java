@@ -29,10 +29,10 @@ import org.schema.model.Ticket;
  *
  * @see <a href="https://schema.org/Ticket">https://schema.org/Ticket</a>
  */
-@JsonLdTypeName("schema:Ticket")
+@JsonLdTypeName("Ticket")
 public class TicketImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Ticket {
 
-    private Object fTicketToken;
+    private Object ticketToken;
 
     /**
      * Reference to an asset (e.g., Barcode, QR code image or PDF) usable for entrance.
@@ -41,22 +41,29 @@ public class TicketImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public <T> T getTicketToken() {
-        return (T) fTicketToken;
+        return (T) ticketToken;
     }
 
     /**
      * Reference to an asset (e.g., Barcode, QR code image or PDF) usable for entrance.
      *
+     * @param ticketToken URL value to set.
      */
     @Override
-    public void setTicketToken(Object fTicketToken) {
-        if(!(fTicketToken instanceof URL) && !(fTicketToken instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'ticketToken': " + fTicketToken);
-        }
-        this.fTicketToken = fTicketToken;
+    public void setTicketToken(URL ticketToken) {
+        this.ticketToken = ticketToken;
+    }
+    /**
+     * Reference to an asset (e.g., Barcode, QR code image or PDF) usable for entrance.
+     *
+     * @param ticketToken Text value to set.
+     */
+    @Override
+    public void setTicketToken(Text ticketToken) {
+        this.ticketToken = ticketToken;
     }
 
-    private Seat fTicketedSeat;
+    private Seat ticketedSeat;
 
     /**
      * The seat associated with the ticket.
@@ -65,19 +72,20 @@ public class TicketImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public Seat getTicketedSeat() {
-        return fTicketedSeat;
+        return ticketedSeat;
     }
 
     /**
      * The seat associated with the ticket.
      *
+     * @param ticketedSeat Seat value to set.
      */
     @Override
-    public void setTicketedSeat(Seat fTicketedSeat) {
-        this.fTicketedSeat = fTicketedSeat;
+    public void setTicketedSeat(Seat ticketedSeat) {
+        this.ticketedSeat = ticketedSeat;
     }
 
-    private Object fTotalPrice;
+    private Object totalPrice;
 
     /**
      * The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
@@ -86,22 +94,38 @@ public class TicketImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public <T> T getTotalPrice() {
-        return (T) fTotalPrice;
+        return (T) totalPrice;
     }
 
     /**
      * The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      *
+     * @param totalPrice PriceSpecification value to set.
      */
     @Override
-    public void setTotalPrice(Object fTotalPrice) {
-        if(!(fTotalPrice instanceof PriceSpecification) && !(fTotalPrice instanceof Number) && !(fTotalPrice instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'totalPrice': " + fTotalPrice);
-        }
-        this.fTotalPrice = fTotalPrice;
+    public void setTotalPrice(PriceSpecification totalPrice) {
+        this.totalPrice = totalPrice;
+    }
+    /**
+     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+     *
+     * @param totalPrice Number value to set.
+     */
+    @Override
+    public void setTotalPrice(Number totalPrice) {
+        this.totalPrice = totalPrice;
+    }
+    /**
+     * The total price for the reservation or ticket, including applicable taxes, shipping, etc.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+     *
+     * @param totalPrice Text value to set.
+     */
+    @Override
+    public void setTotalPrice(Text totalPrice) {
+        this.totalPrice = totalPrice;
     }
 
-    private Organization fIssuedBy;
+    private Organization issuedBy;
 
     /**
      * The organization issuing the ticket or permit.
@@ -110,19 +134,20 @@ public class TicketImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public Organization getIssuedBy() {
-        return fIssuedBy;
+        return issuedBy;
     }
 
     /**
      * The organization issuing the ticket or permit.
      *
+     * @param issuedBy Organization value to set.
      */
     @Override
-    public void setIssuedBy(Organization fIssuedBy) {
-        this.fIssuedBy = fIssuedBy;
+    public void setIssuedBy(Organization issuedBy) {
+        this.issuedBy = issuedBy;
     }
 
-    private Text fTicketNumber;
+    private Text ticketNumber;
 
     /**
      * The unique identifier for the ticket.
@@ -131,19 +156,20 @@ public class TicketImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public Text getTicketNumber() {
-        return fTicketNumber;
+        return ticketNumber;
     }
 
     /**
      * The unique identifier for the ticket.
      *
+     * @param ticketNumber Text value to set.
      */
     @Override
-    public void setTicketNumber(Text fTicketNumber) {
-        this.fTicketNumber = fTicketNumber;
+    public void setTicketNumber(Text ticketNumber) {
+        this.ticketNumber = ticketNumber;
     }
 
-    private Object fDateIssued;
+    private Object dateIssued;
 
     /**
      * The date the ticket was issued.
@@ -152,22 +178,29 @@ public class TicketImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public <T> T getDateIssued() {
-        return (T) fDateIssued;
+        return (T) dateIssued;
     }
 
     /**
      * The date the ticket was issued.
      *
+     * @param dateIssued Date value to set.
      */
     @Override
-    public void setDateIssued(Object fDateIssued) {
-        if(!(fDateIssued instanceof Date) && !(fDateIssued instanceof DateTime)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'dateIssued': " + fDateIssued);
-        }
-        this.fDateIssued = fDateIssued;
+    public void setDateIssued(Date dateIssued) {
+        this.dateIssued = dateIssued;
+    }
+    /**
+     * The date the ticket was issued.
+     *
+     * @param dateIssued DateTime value to set.
+     */
+    @Override
+    public void setDateIssued(DateTime dateIssued) {
+        this.dateIssued = dateIssued;
     }
 
-    private Text fPriceCurrency;
+    private Text priceCurrency;
 
     /**
      * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
@@ -176,19 +209,20 @@ public class TicketImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public Text getPriceCurrency() {
-        return fPriceCurrency;
+        return priceCurrency;
     }
 
     /**
      * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
      *
+     * @param priceCurrency Text value to set.
      */
     @Override
-    public void setPriceCurrency(Text fPriceCurrency) {
-        this.fPriceCurrency = fPriceCurrency;
+    public void setPriceCurrency(Text priceCurrency) {
+        this.priceCurrency = priceCurrency;
     }
 
-    private Object fUnderName;
+    private Object underName;
 
     /**
      * The person or organization the reservation or ticket is for.
@@ -197,22 +231,29 @@ public class TicketImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public <T> T getUnderName() {
-        return (T) fUnderName;
+        return (T) underName;
     }
 
     /**
      * The person or organization the reservation or ticket is for.
      *
+     * @param underName Organization value to set.
      */
     @Override
-    public void setUnderName(Object fUnderName) {
-        if(!(fUnderName instanceof Organization) && !(fUnderName instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'underName': " + fUnderName);
-        }
-        this.fUnderName = fUnderName;
+    public void setUnderName(Organization underName) {
+        this.underName = underName;
+    }
+    /**
+     * The person or organization the reservation or ticket is for.
+     *
+     * @param underName Person value to set.
+     */
+    @Override
+    public void setUnderName(Person underName) {
+        this.underName = underName;
     }
 
-    private Object fMainEntityOfPage;
+    private Object mainEntityOfPage;
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -221,22 +262,29 @@ public class TicketImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
+        return (T) mainEntityOfPage;
     }
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
+     * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
-        }
-        this.fMainEntityOfPage = fMainEntityOfPage;
+    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param mainEntityOfPage URL value to set.
+     */
+    @Override
+    public void setMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
     }
 
-    private Text fAlternateName;
+    private Text alternateName;
 
     /**
      * An alias for the item.
@@ -245,19 +293,20 @@ public class TicketImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public Text getAlternateName() {
-        return fAlternateName;
+        return alternateName;
     }
 
     /**
      * An alias for the item.
      *
+     * @param alternateName Text value to set.
      */
     @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
+    public void setAlternateName(Text alternateName) {
+        this.alternateName = alternateName;
     }
 
-    private Text fName;
+    private Text name;
 
     /**
      * The name of the item.
@@ -266,19 +315,20 @@ public class TicketImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public Text getName() {
-        return fName;
+        return name;
     }
 
     /**
      * The name of the item.
      *
+     * @param name Text value to set.
      */
     @Override
-    public void setName(Text fName) {
-        this.fName = fName;
+    public void setName(Text name) {
+        this.name = name;
     }
 
-    private Action fPotentialAction;
+    private Action potentialAction;
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -287,19 +337,20 @@ public class TicketImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public Action getPotentialAction() {
-        return fPotentialAction;
+        return potentialAction;
     }
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      *
+     * @param potentialAction Action value to set.
      */
     @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
+    public void setPotentialAction(Action potentialAction) {
+        this.potentialAction = potentialAction;
     }
 
-    private Object fImage;
+    private Object image;
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -308,22 +359,29 @@ public class TicketImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public <T> T getImage() {
-        return (T) fImage;
+        return (T) image;
     }
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
+     * @param image URL value to set.
      */
     @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
-        this.fImage = fImage;
+    public void setImage(URL image) {
+        this.image = image;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image ImageObject value to set.
+     */
+    @Override
+    public void setImage(ImageObject image) {
+        this.image = image;
     }
 
-    private URL fUrl;
+    private URL url;
 
     /**
      * URL of the item.
@@ -332,19 +390,20 @@ public class TicketImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public URL getUrl() {
-        return fUrl;
+        return url;
     }
 
     /**
      * URL of the item.
      *
+     * @param url URL value to set.
      */
     @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
+    public void setUrl(URL url) {
+        this.url = url;
     }
 
-    private Text fDescription;
+    private Text description;
 
     /**
      * A description of the item.
@@ -353,19 +412,20 @@ public class TicketImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public Text getDescription() {
-        return fDescription;
+        return description;
     }
 
     /**
      * A description of the item.
      *
+     * @param description Text value to set.
      */
     @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
+    public void setDescription(Text description) {
+        this.description = description;
     }
 
-    private Object fSubjectOf;
+    private Object subjectOf;
 
     /**
      * A CreativeWork or Event about this Thing.
@@ -375,23 +435,31 @@ public class TicketImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public <T> T getSubjectOf() {
-        return (T) fSubjectOf;
+        return (T) subjectOf;
     }
 
     /**
      * A CreativeWork or Event about this Thing.
      *
+     * @param subjectOf Event value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Object fSubjectOf) {
-        if(!(fSubjectOf instanceof Event) && !(fSubjectOf instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'subjectOf': " + fSubjectOf);
-        }
-        this.fSubjectOf = fSubjectOf;
+    public void setSubjectOf(Event subjectOf) {
+        this.subjectOf = subjectOf;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @param subjectOf CreativeWork value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public void setSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = subjectOf;
     }
 
-    private URL fAdditionalType;
+    private URL additionalType;
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
@@ -400,19 +468,20 @@ public class TicketImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public URL getAdditionalType() {
-        return fAdditionalType;
+        return additionalType;
     }
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
+     * @param additionalType URL value to set.
      */
     @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
+    public void setAdditionalType(URL additionalType) {
+        this.additionalType = additionalType;
     }
 
-    private Text fDisambiguatingDescription;
+    private Text disambiguatingDescription;
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
@@ -421,19 +490,20 @@ public class TicketImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public Text getDisambiguatingDescription() {
-        return fDisambiguatingDescription;
+        return disambiguatingDescription;
     }
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
+     * @param disambiguatingDescription Text value to set.
      */
     @Override
-    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = fDisambiguatingDescription;
+    public void setDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = disambiguatingDescription;
     }
 
-    private URL fSameAs;
+    private URL sameAs;
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
@@ -442,19 +512,20 @@ public class TicketImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public URL getSameAs() {
-        return fSameAs;
+        return sameAs;
     }
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
+     * @param sameAs URL value to set.
      */
     @Override
-    public void setSameAs(URL fSameAs) {
-        this.fSameAs = fSameAs;
+    public void setSameAs(URL sameAs) {
+        this.sameAs = sameAs;
     }
 
-    private Object fIdentifier;
+    private Object identifier;
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -464,19 +535,37 @@ public class TicketImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
      */
     @Override
     public <T> T getIdentifier() {
-        return (T) fIdentifier;
+        return (T) identifier;
     }
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
+     * @param identifier URL value to set.
      */
     @Override
-    public void setIdentifier(Object fIdentifier) {
-        if(!(fIdentifier instanceof URL) && !(fIdentifier instanceof Text) && !(fIdentifier instanceof PropertyValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
-        }
-        this.fIdentifier = fIdentifier;
+    public void setIdentifier(URL identifier) {
+        this.identifier = identifier;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier Text value to set.
+     */
+    @Override
+    public void setIdentifier(Text identifier) {
+        this.identifier = identifier;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier PropertyValue value to set.
+     */
+    @Override
+    public void setIdentifier(PropertyValue identifier) {
+        this.identifier = identifier;
     }
 }

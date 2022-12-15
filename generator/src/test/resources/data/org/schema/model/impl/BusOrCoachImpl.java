@@ -55,10 +55,10 @@ import org.schema.model.BusOrCoach;
  * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
  * @see <a href="https://schema.org/BusOrCoach">https://schema.org/BusOrCoach</a>
  */
-@JsonLdTypeName("schema:BusOrCoach")
+@JsonLdTypeName("BusOrCoach")
 public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements BusOrCoach {
 
-    private QuantitativeValue fRoofLoad;
+    private QuantitativeValue roofLoad;
 
     /**
      * The permitted total weight of cargo and installations (e.g. a roof rack) on top of the vehicle.<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]]<br/>* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
@@ -69,21 +69,22 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public QuantitativeValue getRoofLoad() {
-        return fRoofLoad;
+        return roofLoad;
     }
 
     /**
      * The permitted total weight of cargo and installations (e.g. a roof rack) on top of the vehicle.<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]]<br/>* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
      *
+     * @param roofLoad QuantitativeValue value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setRoofLoad(QuantitativeValue fRoofLoad) {
-        this.fRoofLoad = fRoofLoad;
+    public void setRoofLoad(QuantitativeValue roofLoad) {
+        this.roofLoad = roofLoad;
     }
 
-    private Text fAcrissCode;
+    private Text acrissCode;
 
     /**
      * The ACRISS Car Classification Code is a code used by many car rental companies, for classifying vehicles. ACRISS stands for Association of Car Rental Industry Systems and Standards.
@@ -94,21 +95,22 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getAcrissCode() {
-        return fAcrissCode;
+        return acrissCode;
     }
 
     /**
      * The ACRISS Car Classification Code is a code used by many car rental companies, for classifying vehicles. ACRISS stands for Association of Car Rental Industry Systems and Standards.
      *
+     * @param acrissCode Text value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setAcrissCode(Text fAcrissCode) {
-        this.fAcrissCode = fAcrissCode;
+    public void setAcrissCode(Text acrissCode) {
+        this.acrissCode = acrissCode;
     }
 
-    private QuantitativeValue fFuelCapacity;
+    private QuantitativeValue fuelCapacity;
 
     /**
      * The capacity of the fuel tank or in the case of electric cars, the battery. If there are multiple components for storage, this should indicate the total of all storage of the same type.<br/><br/>Typical unit code(s): LTR for liters, GLL of US gallons, GLI for UK / imperial gallons, AMH for ampere-hours (for electrical vehicles).
@@ -119,21 +121,22 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public QuantitativeValue getFuelCapacity() {
-        return fFuelCapacity;
+        return fuelCapacity;
     }
 
     /**
      * The capacity of the fuel tank or in the case of electric cars, the battery. If there are multiple components for storage, this should indicate the total of all storage of the same type.<br/><br/>Typical unit code(s): LTR for liters, GLL of US gallons, GLI for UK / imperial gallons, AMH for ampere-hours (for electrical vehicles).
      *
+     * @param fuelCapacity QuantitativeValue value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setFuelCapacity(QuantitativeValue fFuelCapacity) {
-        this.fFuelCapacity = fFuelCapacity;
+    public void setFuelCapacity(QuantitativeValue fuelCapacity) {
+        this.fuelCapacity = fuelCapacity;
     }
 
-    private QuantitativeValue fAccelerationTime;
+    private QuantitativeValue accelerationTime;
 
     /**
      * The time needed to accelerate the vehicle from a given start velocity to a given target velocity.<br/><br/>Typical unit code(s): SEC for seconds<br/><br/>* Note: There are unfortunately no standard unit codes for seconds/0..100 km/h or seconds/0..60 mph. Simply use "SEC" for seconds and indicate the velocities in the [[name]] of the [[QuantitativeValue]], or use [[valueReference]] with a [[QuantitativeValue]] of 0..60 mph or 0..100 km/h to specify the reference speeds.
@@ -144,21 +147,22 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public QuantitativeValue getAccelerationTime() {
-        return fAccelerationTime;
+        return accelerationTime;
     }
 
     /**
      * The time needed to accelerate the vehicle from a given start velocity to a given target velocity.<br/><br/>Typical unit code(s): SEC for seconds<br/><br/>* Note: There are unfortunately no standard unit codes for seconds/0..100 km/h or seconds/0..60 mph. Simply use "SEC" for seconds and indicate the velocities in the [[name]] of the [[QuantitativeValue]], or use [[valueReference]] with a [[QuantitativeValue]] of 0..60 mph or 0..100 km/h to specify the reference speeds.
      *
+     * @param accelerationTime QuantitativeValue value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setAccelerationTime(QuantitativeValue fAccelerationTime) {
-        this.fAccelerationTime = fAccelerationTime;
+    public void setAccelerationTime(QuantitativeValue accelerationTime) {
+        this.accelerationTime = accelerationTime;
     }
 
-    private QuantitativeValue fSpeed;
+    private QuantitativeValue speed;
 
     /**
      * The speed range of the vehicle. If the vehicle is powered by an engine, the upper limit of the speed range (indicated by [[maxValue]] should be the maximum speed achievable under regular conditions.<br/><br/>Typical unit code(s): KMH for km/h, HM for mile per hour (0.447 04 m/s), KNT for knot<br/><br/>*Note 1: Use [[minValue]] and [[maxValue]] to indicate the range. Typically, the minimal value is zero.<br/>* Note 2: There are many different ways of measuring the speed range. You can link to information about how the given value has been determined using the [[valueReference]] property.
@@ -169,21 +173,22 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public QuantitativeValue getSpeed() {
-        return fSpeed;
+        return speed;
     }
 
     /**
      * The speed range of the vehicle. If the vehicle is powered by an engine, the upper limit of the speed range (indicated by [[maxValue]] should be the maximum speed achievable under regular conditions.<br/><br/>Typical unit code(s): KMH for km/h, HM for mile per hour (0.447 04 m/s), KNT for knot<br/><br/>*Note 1: Use [[minValue]] and [[maxValue]] to indicate the range. Typically, the minimal value is zero.<br/>* Note 2: There are many different ways of measuring the speed range. You can link to information about how the given value has been determined using the [[valueReference]] property.
      *
+     * @param speed QuantitativeValue value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setSpeed(QuantitativeValue fSpeed) {
-        this.fSpeed = fSpeed;
+    public void setSpeed(QuantitativeValue speed) {
+        this.speed = speed;
     }
 
-    private QuantitativeValue fTrailerWeight;
+    private QuantitativeValue trailerWeight;
 
     /**
      * The permitted weight of a trailer attached to the vehicle.<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/>* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
@@ -194,21 +199,22 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public QuantitativeValue getTrailerWeight() {
-        return fTrailerWeight;
+        return trailerWeight;
     }
 
     /**
      * The permitted weight of a trailer attached to the vehicle.<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/>* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
      *
+     * @param trailerWeight QuantitativeValue value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setTrailerWeight(QuantitativeValue fTrailerWeight) {
-        this.fTrailerWeight = fTrailerWeight;
+    public void setTrailerWeight(QuantitativeValue trailerWeight) {
+        this.trailerWeight = trailerWeight;
     }
 
-    private EngineSpecification fVehicleEngine;
+    private EngineSpecification vehicleEngine;
 
     /**
      * Information about the engine or engines of the vehicle.
@@ -218,20 +224,21 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public EngineSpecification getVehicleEngine() {
-        return fVehicleEngine;
+        return vehicleEngine;
     }
 
     /**
      * Information about the engine or engines of the vehicle.
      *
+     * @param vehicleEngine EngineSpecification value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setVehicleEngine(EngineSpecification fVehicleEngine) {
-        this.fVehicleEngine = fVehicleEngine;
+    public void setVehicleEngine(EngineSpecification vehicleEngine) {
+        this.vehicleEngine = vehicleEngine;
     }
 
-    private Number fEmissionsCO2;
+    private Number emissionsCO2;
 
     /**
      * The CO2 emissions in g/km. When used in combination with a QuantitativeValue, put "g/km" into the unitText property of that value, since there is no UN/CEFACT Common Code for "g/km".
@@ -242,21 +249,22 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Number getEmissionsCO2() {
-        return fEmissionsCO2;
+        return emissionsCO2;
     }
 
     /**
      * The CO2 emissions in g/km. When used in combination with a QuantitativeValue, put "g/km" into the unitText property of that value, since there is no UN/CEFACT Common Code for "g/km".
      *
+     * @param emissionsCO2 Number value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setEmissionsCO2(Number fEmissionsCO2) {
-        this.fEmissionsCO2 = fEmissionsCO2;
+    public void setEmissionsCO2(Number emissionsCO2) {
+        this.emissionsCO2 = emissionsCO2;
     }
 
-    private Date fPurchaseDate;
+    private Date purchaseDate;
 
     /**
      * The date the item e.g. vehicle was purchased by the current owner.
@@ -266,20 +274,21 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Date getPurchaseDate() {
-        return fPurchaseDate;
+        return purchaseDate;
     }
 
     /**
      * The date the item e.g. vehicle was purchased by the current owner.
      *
+     * @param purchaseDate Date value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setPurchaseDate(Date fPurchaseDate) {
-        this.fPurchaseDate = fPurchaseDate;
+    public void setPurchaseDate(Date purchaseDate) {
+        this.purchaseDate = purchaseDate;
     }
 
-    private Object fNumberOfForwardGears;
+    private Object numberOfForwardGears;
 
     /**
      * The total number of forward gears available for the transmission system of the vehicle.<br/><br/>Typical unit code(s): C62
@@ -289,23 +298,31 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getNumberOfForwardGears() {
-        return (T) fNumberOfForwardGears;
+        return (T) numberOfForwardGears;
     }
 
     /**
      * The total number of forward gears available for the transmission system of the vehicle.<br/><br/>Typical unit code(s): C62
      *
+     * @param numberOfForwardGears QuantitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setNumberOfForwardGears(Object fNumberOfForwardGears) {
-        if(!(fNumberOfForwardGears instanceof QuantitativeValue) && !(fNumberOfForwardGears instanceof Number)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'numberOfForwardGears': " + fNumberOfForwardGears);
-        }
-        this.fNumberOfForwardGears = fNumberOfForwardGears;
+    public void setNumberOfForwardGears(QuantitativeValue numberOfForwardGears) {
+        this.numberOfForwardGears = numberOfForwardGears;
+    }
+    /**
+     * The total number of forward gears available for the transmission system of the vehicle.<br/><br/>Typical unit code(s): C62
+     *
+     * @param numberOfForwardGears Number value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public void setNumberOfForwardGears(Number numberOfForwardGears) {
+        this.numberOfForwardGears = numberOfForwardGears;
     }
 
-    private QuantitativeValue fWeightTotal;
+    private QuantitativeValue weightTotal;
 
     /**
      * The permitted total weight of the loaded vehicle, including passengers and cargo and the weight of the empty vehicle.<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
@@ -316,21 +333,22 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public QuantitativeValue getWeightTotal() {
-        return fWeightTotal;
+        return weightTotal;
     }
 
     /**
      * The permitted total weight of the loaded vehicle, including passengers and cargo and the weight of the empty vehicle.<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
      *
+     * @param weightTotal QuantitativeValue value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setWeightTotal(QuantitativeValue fWeightTotal) {
-        this.fWeightTotal = fWeightTotal;
+    public void setWeightTotal(QuantitativeValue weightTotal) {
+        this.weightTotal = weightTotal;
     }
 
-    private Date fProductionDate;
+    private Date productionDate;
 
     /**
      * The date of production of the item, e.g. vehicle.
@@ -340,20 +358,21 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Date getProductionDate() {
-        return fProductionDate;
+        return productionDate;
     }
 
     /**
      * The date of production of the item, e.g. vehicle.
      *
+     * @param productionDate Date value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setProductionDate(Date fProductionDate) {
-        this.fProductionDate = fProductionDate;
+    public void setProductionDate(Date productionDate) {
+        this.productionDate = productionDate;
     }
 
-    private Object fNumberOfPreviousOwners;
+    private Object numberOfPreviousOwners;
 
     /**
      * The number of owners of the vehicle, including the current one.<br/><br/>Typical unit code(s): C62
@@ -363,23 +382,31 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getNumberOfPreviousOwners() {
-        return (T) fNumberOfPreviousOwners;
+        return (T) numberOfPreviousOwners;
     }
 
     /**
      * The number of owners of the vehicle, including the current one.<br/><br/>Typical unit code(s): C62
      *
+     * @param numberOfPreviousOwners Number value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setNumberOfPreviousOwners(Object fNumberOfPreviousOwners) {
-        if(!(fNumberOfPreviousOwners instanceof Number) && !(fNumberOfPreviousOwners instanceof QuantitativeValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'numberOfPreviousOwners': " + fNumberOfPreviousOwners);
-        }
-        this.fNumberOfPreviousOwners = fNumberOfPreviousOwners;
+    public void setNumberOfPreviousOwners(Number numberOfPreviousOwners) {
+        this.numberOfPreviousOwners = numberOfPreviousOwners;
+    }
+    /**
+     * The number of owners of the vehicle, including the current one.<br/><br/>Typical unit code(s): C62
+     *
+     * @param numberOfPreviousOwners QuantitativeValue value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public void setNumberOfPreviousOwners(QuantitativeValue numberOfPreviousOwners) {
+        this.numberOfPreviousOwners = numberOfPreviousOwners;
     }
 
-    private SteeringPositionValue fSteeringPosition;
+    private SteeringPositionValue steeringPosition;
 
     /**
      * The position of the steering wheel or similar device (mostly for cars).
@@ -389,20 +416,21 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public SteeringPositionValue getSteeringPosition() {
-        return fSteeringPosition;
+        return steeringPosition;
     }
 
     /**
      * The position of the steering wheel or similar device (mostly for cars).
      *
+     * @param steeringPosition SteeringPositionValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setSteeringPosition(SteeringPositionValue fSteeringPosition) {
-        this.fSteeringPosition = fSteeringPosition;
+    public void setSteeringPosition(SteeringPositionValue steeringPosition) {
+        this.steeringPosition = steeringPosition;
     }
 
-    private QuantitativeValue fWheelbase;
+    private QuantitativeValue wheelbase;
 
     /**
      * The distance between the centers of the front and rear wheels.<br/><br/>Typical unit code(s): CMT for centimeters, MTR for meters, INH for inches, FOT for foot/feet
@@ -413,21 +441,22 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public QuantitativeValue getWheelbase() {
-        return fWheelbase;
+        return wheelbase;
     }
 
     /**
      * The distance between the centers of the front and rear wheels.<br/><br/>Typical unit code(s): CMT for centimeters, MTR for meters, INH for inches, FOT for foot/feet
      *
+     * @param wheelbase QuantitativeValue value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setWheelbase(QuantitativeValue fWheelbase) {
-        this.fWheelbase = fWheelbase;
+    public void setWheelbase(QuantitativeValue wheelbase) {
+        this.wheelbase = wheelbase;
     }
 
-    private Text fVehicleInteriorType;
+    private Text vehicleInteriorType;
 
     /**
      * The type or material of the interior of the vehicle (e.g. synthetic fabric, leather, wood, etc.). While most interior types are characterized by the material used, an interior type can also be based on vehicle usage or target audience.
@@ -437,20 +466,21 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getVehicleInteriorType() {
-        return fVehicleInteriorType;
+        return vehicleInteriorType;
     }
 
     /**
      * The type or material of the interior of the vehicle (e.g. synthetic fabric, leather, wood, etc.). While most interior types are characterized by the material used, an interior type can also be based on vehicle usage or target audience.
      *
+     * @param vehicleInteriorType Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setVehicleInteriorType(Text fVehicleInteriorType) {
-        this.fVehicleInteriorType = fVehicleInteriorType;
+    public void setVehicleInteriorType(Text vehicleInteriorType) {
+        this.vehicleInteriorType = vehicleInteriorType;
     }
 
-    private Object fNumberOfAirbags;
+    private Object numberOfAirbags;
 
     /**
      * The number or type of airbags in the vehicle.
@@ -460,23 +490,31 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getNumberOfAirbags() {
-        return (T) fNumberOfAirbags;
+        return (T) numberOfAirbags;
     }
 
     /**
      * The number or type of airbags in the vehicle.
      *
+     * @param numberOfAirbags Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setNumberOfAirbags(Object fNumberOfAirbags) {
-        if(!(fNumberOfAirbags instanceof Text) && !(fNumberOfAirbags instanceof Number)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'numberOfAirbags': " + fNumberOfAirbags);
-        }
-        this.fNumberOfAirbags = fNumberOfAirbags;
+    public void setNumberOfAirbags(Text numberOfAirbags) {
+        this.numberOfAirbags = numberOfAirbags;
+    }
+    /**
+     * The number or type of airbags in the vehicle.
+     *
+     * @param numberOfAirbags Number value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public void setNumberOfAirbags(Number numberOfAirbags) {
+        this.numberOfAirbags = numberOfAirbags;
     }
 
-    private Object fFuelType;
+    private Object fuelType;
 
     /**
      * The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.
@@ -486,23 +524,41 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getFuelType() {
-        return (T) fFuelType;
+        return (T) fuelType;
     }
 
     /**
      * The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.
      *
+     * @param fuelType Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setFuelType(Object fFuelType) {
-        if(!(fFuelType instanceof Text) && !(fFuelType instanceof URL) && !(fFuelType instanceof QualitativeValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'fuelType': " + fFuelType);
-        }
-        this.fFuelType = fFuelType;
+    public void setFuelType(Text fuelType) {
+        this.fuelType = fuelType;
+    }
+    /**
+     * The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.
+     *
+     * @param fuelType URL value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public void setFuelType(URL fuelType) {
+        this.fuelType = fuelType;
+    }
+    /**
+     * The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.
+     *
+     * @param fuelType QualitativeValue value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public void setFuelType(QualitativeValue fuelType) {
+        this.fuelType = fuelType;
     }
 
-    private QuantitativeValue fCargoVolume;
+    private QuantitativeValue cargoVolume;
 
     /**
      * The available volume for cargo or luggage. For automobiles, this is usually the trunk volume.<br/><br/>Typical unit code(s): LTR for liters, FTQ for cubic foot/feet<br/><br/>Note: You can use [[minValue]] and [[maxValue]] to indicate ranges.
@@ -512,20 +568,21 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public QuantitativeValue getCargoVolume() {
-        return fCargoVolume;
+        return cargoVolume;
     }
 
     /**
      * The available volume for cargo or luggage. For automobiles, this is usually the trunk volume.<br/><br/>Typical unit code(s): LTR for liters, FTQ for cubic foot/feet<br/><br/>Note: You can use [[minValue]] and [[maxValue]] to indicate ranges.
      *
+     * @param cargoVolume QuantitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setCargoVolume(QuantitativeValue fCargoVolume) {
-        this.fCargoVolume = fCargoVolume;
+    public void setCargoVolume(QuantitativeValue cargoVolume) {
+        this.cargoVolume = cargoVolume;
     }
 
-    private Object fVehicleTransmission;
+    private Object vehicleTransmission;
 
     /**
      * The type of component used for transmitting the power from a rotating power source to the wheels or other relevant component(s) ("gearbox" for cars).
@@ -535,23 +592,41 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getVehicleTransmission() {
-        return (T) fVehicleTransmission;
+        return (T) vehicleTransmission;
     }
 
     /**
      * The type of component used for transmitting the power from a rotating power source to the wheels or other relevant component(s) ("gearbox" for cars).
      *
+     * @param vehicleTransmission Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setVehicleTransmission(Object fVehicleTransmission) {
-        if(!(fVehicleTransmission instanceof Text) && !(fVehicleTransmission instanceof QualitativeValue) && !(fVehicleTransmission instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'vehicleTransmission': " + fVehicleTransmission);
-        }
-        this.fVehicleTransmission = fVehicleTransmission;
+    public void setVehicleTransmission(Text vehicleTransmission) {
+        this.vehicleTransmission = vehicleTransmission;
+    }
+    /**
+     * The type of component used for transmitting the power from a rotating power source to the wheels or other relevant component(s) ("gearbox" for cars).
+     *
+     * @param vehicleTransmission QualitativeValue value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public void setVehicleTransmission(QualitativeValue vehicleTransmission) {
+        this.vehicleTransmission = vehicleTransmission;
+    }
+    /**
+     * The type of component used for transmitting the power from a rotating power source to the wheels or other relevant component(s) ("gearbox" for cars).
+     *
+     * @param vehicleTransmission URL value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public void setVehicleTransmission(URL vehicleTransmission) {
+        this.vehicleTransmission = vehicleTransmission;
     }
 
-    private QuantitativeValue fPayload;
+    private QuantitativeValue payload;
 
     /**
      * The permitted weight of passengers and cargo, EXCLUDING the weight of the empty vehicle.<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>* Note 1: Many databases specify the permitted TOTAL weight instead, which is the sum of [[weight]] and [[payload]]<br/>* Note 2: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 3: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 4: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
@@ -562,21 +637,22 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public QuantitativeValue getPayload() {
-        return fPayload;
+        return payload;
     }
 
     /**
      * The permitted weight of passengers and cargo, EXCLUDING the weight of the empty vehicle.<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>* Note 1: Many databases specify the permitted TOTAL weight instead, which is the sum of [[weight]] and [[payload]]<br/>* Note 2: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 3: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 4: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
      *
+     * @param payload QuantitativeValue value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setPayload(QuantitativeValue fPayload) {
-        this.fPayload = fPayload;
+    public void setPayload(QuantitativeValue payload) {
+        this.payload = payload;
     }
 
-    private Object fDriveWheelConfiguration;
+    private Object driveWheelConfiguration;
 
     /**
      * The drive wheel configuration, i.e. which roadwheels will receive torque from the vehicle's engine via the drivetrain.
@@ -586,23 +662,31 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getDriveWheelConfiguration() {
-        return (T) fDriveWheelConfiguration;
+        return (T) driveWheelConfiguration;
     }
 
     /**
      * The drive wheel configuration, i.e. which roadwheels will receive torque from the vehicle's engine via the drivetrain.
      *
+     * @param driveWheelConfiguration Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setDriveWheelConfiguration(Object fDriveWheelConfiguration) {
-        if(!(fDriveWheelConfiguration instanceof Text) && !(fDriveWheelConfiguration instanceof DriveWheelConfigurationValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'driveWheelConfiguration': " + fDriveWheelConfiguration);
-        }
-        this.fDriveWheelConfiguration = fDriveWheelConfiguration;
+    public void setDriveWheelConfiguration(Text driveWheelConfiguration) {
+        this.driveWheelConfiguration = driveWheelConfiguration;
+    }
+    /**
+     * The drive wheel configuration, i.e. which roadwheels will receive torque from the vehicle's engine via the drivetrain.
+     *
+     * @param driveWheelConfiguration DriveWheelConfigurationValue value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public void setDriveWheelConfiguration(DriveWheelConfigurationValue driveWheelConfiguration) {
+        this.driveWheelConfiguration = driveWheelConfiguration;
     }
 
-    private Text fKnownVehicleDamages;
+    private Text knownVehicleDamages;
 
     /**
      * A textual description of known damages, both repaired and unrepaired.
@@ -612,20 +696,21 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getKnownVehicleDamages() {
-        return fKnownVehicleDamages;
+        return knownVehicleDamages;
     }
 
     /**
      * A textual description of known damages, both repaired and unrepaired.
      *
+     * @param knownVehicleDamages Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setKnownVehicleDamages(Text fKnownVehicleDamages) {
-        this.fKnownVehicleDamages = fKnownVehicleDamages;
+    public void setKnownVehicleDamages(Text knownVehicleDamages) {
+        this.knownVehicleDamages = knownVehicleDamages;
     }
 
-    private QuantitativeValue fFuelConsumption;
+    private QuantitativeValue fuelConsumption;
 
     /**
      * The amount of fuel consumed for traveling a particular distance or temporal duration with the given vehicle (e.g. liters per 100 km).<br/><br/>* Note 1: There are unfortunately no standard unit codes for liters per 100 km.  Use [[unitText]] to indicate the unit of measurement, e.g. L/100 km.<br/>* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.<br/>* Note 3: Often, the absolute value is useful only when related to driving speed ("at 80 km/h") or usage pattern ("city traffic"). You can use [[valueReference]] to link the value for the fuel consumption to another value.
@@ -635,20 +720,21 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public QuantitativeValue getFuelConsumption() {
-        return fFuelConsumption;
+        return fuelConsumption;
     }
 
     /**
      * The amount of fuel consumed for traveling a particular distance or temporal duration with the given vehicle (e.g. liters per 100 km).<br/><br/>* Note 1: There are unfortunately no standard unit codes for liters per 100 km.  Use [[unitText]] to indicate the unit of measurement, e.g. L/100 km.<br/>* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.<br/>* Note 3: Often, the absolute value is useful only when related to driving speed ("at 80 km/h") or usage pattern ("city traffic"). You can use [[valueReference]] to link the value for the fuel consumption to another value.
      *
+     * @param fuelConsumption QuantitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setFuelConsumption(QuantitativeValue fFuelConsumption) {
-        this.fFuelConsumption = fFuelConsumption;
+    public void setFuelConsumption(QuantitativeValue fuelConsumption) {
+        this.fuelConsumption = fuelConsumption;
     }
 
-    private Text fVehicleInteriorColor;
+    private Text vehicleInteriorColor;
 
     /**
      * The color or color combination of the interior of the vehicle.
@@ -658,20 +744,21 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getVehicleInteriorColor() {
-        return fVehicleInteriorColor;
+        return vehicleInteriorColor;
     }
 
     /**
      * The color or color combination of the interior of the vehicle.
      *
+     * @param vehicleInteriorColor Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setVehicleInteriorColor(Text fVehicleInteriorColor) {
-        this.fVehicleInteriorColor = fVehicleInteriorColor;
+    public void setVehicleInteriorColor(Text vehicleInteriorColor) {
+        this.vehicleInteriorColor = vehicleInteriorColor;
     }
 
-    private Object fNumberOfAxles;
+    private Object numberOfAxles;
 
     /**
      * The number of axles.<br/><br/>Typical unit code(s): C62
@@ -681,23 +768,31 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getNumberOfAxles() {
-        return (T) fNumberOfAxles;
+        return (T) numberOfAxles;
     }
 
     /**
      * The number of axles.<br/><br/>Typical unit code(s): C62
      *
+     * @param numberOfAxles Number value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setNumberOfAxles(Object fNumberOfAxles) {
-        if(!(fNumberOfAxles instanceof Number) && !(fNumberOfAxles instanceof QuantitativeValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'numberOfAxles': " + fNumberOfAxles);
-        }
-        this.fNumberOfAxles = fNumberOfAxles;
+    public void setNumberOfAxles(Number numberOfAxles) {
+        this.numberOfAxles = numberOfAxles;
+    }
+    /**
+     * The number of axles.<br/><br/>Typical unit code(s): C62
+     *
+     * @param numberOfAxles QuantitativeValue value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public void setNumberOfAxles(QuantitativeValue numberOfAxles) {
+        this.numberOfAxles = numberOfAxles;
     }
 
-    private Date fModelDate;
+    private Date modelDate;
 
     /**
      * The release date of a vehicle model (often used to differentiate versions of the same make and model).
@@ -708,21 +803,22 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Date getModelDate() {
-        return fModelDate;
+        return modelDate;
     }
 
     /**
      * The release date of a vehicle model (often used to differentiate versions of the same make and model).
      *
+     * @param modelDate Date value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setModelDate(Date fModelDate) {
-        this.fModelDate = fModelDate;
+    public void setModelDate(Date modelDate) {
+        this.modelDate = modelDate;
     }
 
-    private Object fNumberOfDoors;
+    private Object numberOfDoors;
 
     /**
      * The number of doors.<br/><br/>Typical unit code(s): C62
@@ -732,23 +828,31 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getNumberOfDoors() {
-        return (T) fNumberOfDoors;
+        return (T) numberOfDoors;
     }
 
     /**
      * The number of doors.<br/><br/>Typical unit code(s): C62
      *
+     * @param numberOfDoors QuantitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setNumberOfDoors(Object fNumberOfDoors) {
-        if(!(fNumberOfDoors instanceof QuantitativeValue) && !(fNumberOfDoors instanceof Number)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'numberOfDoors': " + fNumberOfDoors);
-        }
-        this.fNumberOfDoors = fNumberOfDoors;
+    public void setNumberOfDoors(QuantitativeValue numberOfDoors) {
+        this.numberOfDoors = numberOfDoors;
+    }
+    /**
+     * The number of doors.<br/><br/>Typical unit code(s): C62
+     *
+     * @param numberOfDoors Number value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public void setNumberOfDoors(Number numberOfDoors) {
+        this.numberOfDoors = numberOfDoors;
     }
 
-    private Object fVehicleSeatingCapacity;
+    private Object vehicleSeatingCapacity;
 
     /**
      * The number of passengers that can be seated in the vehicle, both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>Typical unit code(s): C62 for persons.
@@ -758,23 +862,31 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getVehicleSeatingCapacity() {
-        return (T) fVehicleSeatingCapacity;
+        return (T) vehicleSeatingCapacity;
     }
 
     /**
      * The number of passengers that can be seated in the vehicle, both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>Typical unit code(s): C62 for persons.
      *
+     * @param vehicleSeatingCapacity QuantitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setVehicleSeatingCapacity(Object fVehicleSeatingCapacity) {
-        if(!(fVehicleSeatingCapacity instanceof QuantitativeValue) && !(fVehicleSeatingCapacity instanceof Number)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'vehicleSeatingCapacity': " + fVehicleSeatingCapacity);
-        }
-        this.fVehicleSeatingCapacity = fVehicleSeatingCapacity;
+    public void setVehicleSeatingCapacity(QuantitativeValue vehicleSeatingCapacity) {
+        this.vehicleSeatingCapacity = vehicleSeatingCapacity;
+    }
+    /**
+     * The number of passengers that can be seated in the vehicle, both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>Typical unit code(s): C62 for persons.
+     *
+     * @param vehicleSeatingCapacity Number value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public void setVehicleSeatingCapacity(Number vehicleSeatingCapacity) {
+        this.vehicleSeatingCapacity = vehicleSeatingCapacity;
     }
 
-    private Text fCallSign;
+    private Text callSign;
 
     /**
      * A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.
@@ -785,21 +897,22 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getCallSign() {
-        return fCallSign;
+        return callSign;
     }
 
     /**
      * A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.
      *
+     * @param callSign Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2109">https://github.com/schemaorg/schemaorg/issues/2109</a>
      */
     @Override
-    public void setCallSign(Text fCallSign) {
-        this.fCallSign = fCallSign;
+    public void setCallSign(Text callSign) {
+        this.callSign = callSign;
     }
 
-    private QuantitativeValue fTongueWeight;
+    private QuantitativeValue tongueWeight;
 
     /**
      * The permitted vertical load (TWR) of a trailer attached to the vehicle. Also referred to as Tongue Load Rating (TLR) or Vertical Load Rating (VLR)<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
@@ -810,21 +923,22 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public QuantitativeValue getTongueWeight() {
-        return fTongueWeight;
+        return tongueWeight;
     }
 
     /**
      * The permitted vertical load (TWR) of a trailer attached to the vehicle. Also referred to as Tongue Load Rating (TLR) or Vertical Load Rating (VLR)<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
      *
+     * @param tongueWeight QuantitativeValue value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setTongueWeight(QuantitativeValue fTongueWeight) {
-        this.fTongueWeight = fTongueWeight;
+    public void setTongueWeight(QuantitativeValue tongueWeight) {
+        this.tongueWeight = tongueWeight;
     }
 
-    private QuantitativeValue fFuelEfficiency;
+    private QuantitativeValue fuelEfficiency;
 
     /**
      * The distance traveled per unit of fuel used; most commonly miles per gallon (mpg) or kilometers per liter (km/L).<br/><br/>* Note 1: There are unfortunately no standard unit codes for miles per gallon or kilometers per liter. Use [[unitText]] to indicate the unit of measurement, e.g. mpg or km/L.<br/>* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.<br/>* Note 3: Often, the absolute value is useful only when related to driving speed ("at 80 km/h") or usage pattern ("city traffic"). You can use [[valueReference]] to link the value for the fuel economy to another value.
@@ -834,20 +948,21 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public QuantitativeValue getFuelEfficiency() {
-        return fFuelEfficiency;
+        return fuelEfficiency;
     }
 
     /**
      * The distance traveled per unit of fuel used; most commonly miles per gallon (mpg) or kilometers per liter (km/L).<br/><br/>* Note 1: There are unfortunately no standard unit codes for miles per gallon or kilometers per liter. Use [[unitText]] to indicate the unit of measurement, e.g. mpg or km/L.<br/>* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.<br/>* Note 3: Often, the absolute value is useful only when related to driving speed ("at 80 km/h") or usage pattern ("city traffic"). You can use [[valueReference]] to link the value for the fuel economy to another value.
      *
+     * @param fuelEfficiency QuantitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setFuelEfficiency(QuantitativeValue fFuelEfficiency) {
-        this.fFuelEfficiency = fFuelEfficiency;
+    public void setFuelEfficiency(QuantitativeValue fuelEfficiency) {
+        this.fuelEfficiency = fuelEfficiency;
     }
 
-    private Date fVehicleModelDate;
+    private Date vehicleModelDate;
 
     /**
      * The release date of a vehicle model (often used to differentiate versions of the same make and model).
@@ -857,20 +972,21 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Date getVehicleModelDate() {
-        return fVehicleModelDate;
+        return vehicleModelDate;
     }
 
     /**
      * The release date of a vehicle model (often used to differentiate versions of the same make and model).
      *
+     * @param vehicleModelDate Date value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setVehicleModelDate(Date fVehicleModelDate) {
-        this.fVehicleModelDate = fVehicleModelDate;
+    public void setVehicleModelDate(Date vehicleModelDate) {
+        this.vehicleModelDate = vehicleModelDate;
     }
 
-    private Text fVehicleConfiguration;
+    private Text vehicleConfiguration;
 
     /**
      * A short text indicating the configuration of the vehicle, e.g. '5dr hatchback ST 2.5 MT 225 hp' or 'limited edition'.
@@ -880,20 +996,21 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getVehicleConfiguration() {
-        return fVehicleConfiguration;
+        return vehicleConfiguration;
     }
 
     /**
      * A short text indicating the configuration of the vehicle, e.g. '5dr hatchback ST 2.5 MT 225 hp' or 'limited edition'.
      *
+     * @param vehicleConfiguration Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setVehicleConfiguration(Text fVehicleConfiguration) {
-        this.fVehicleConfiguration = fVehicleConfiguration;
+    public void setVehicleConfiguration(Text vehicleConfiguration) {
+        this.vehicleConfiguration = vehicleConfiguration;
     }
 
-    private QuantitativeValue fMileageFromOdometer;
+    private QuantitativeValue mileageFromOdometer;
 
     /**
      * The total distance travelled by the particular vehicle since its initial production, as read from its odometer.<br/><br/>Typical unit code(s): KMT for kilometers, SMI for statute miles
@@ -903,20 +1020,21 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public QuantitativeValue getMileageFromOdometer() {
-        return fMileageFromOdometer;
+        return mileageFromOdometer;
     }
 
     /**
      * The total distance travelled by the particular vehicle since its initial production, as read from its odometer.<br/><br/>Typical unit code(s): KMT for kilometers, SMI for statute miles
      *
+     * @param mileageFromOdometer QuantitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setMileageFromOdometer(QuantitativeValue fMileageFromOdometer) {
-        this.fMileageFromOdometer = fMileageFromOdometer;
+    public void setMileageFromOdometer(QuantitativeValue mileageFromOdometer) {
+        this.mileageFromOdometer = mileageFromOdometer;
     }
 
-    private Object fSeatingCapacity;
+    private Object seatingCapacity;
 
     /**
      * The number of persons that can be seated (e.g. in a vehicle), both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>Typical unit code(s): C62 for persons 
@@ -927,24 +1045,33 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getSeatingCapacity() {
-        return (T) fSeatingCapacity;
+        return (T) seatingCapacity;
     }
 
     /**
      * The number of persons that can be seated (e.g. in a vehicle), both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>Typical unit code(s): C62 for persons 
      *
+     * @param seatingCapacity QuantitativeValue value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setSeatingCapacity(Object fSeatingCapacity) {
-        if(!(fSeatingCapacity instanceof QuantitativeValue) && !(fSeatingCapacity instanceof Number)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'seatingCapacity': " + fSeatingCapacity);
-        }
-        this.fSeatingCapacity = fSeatingCapacity;
+    public void setSeatingCapacity(QuantitativeValue seatingCapacity) {
+        this.seatingCapacity = seatingCapacity;
+    }
+    /**
+     * The number of persons that can be seated (e.g. in a vehicle), both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>Typical unit code(s): C62 for persons 
+     *
+     * @param seatingCapacity Number value to set.
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public void setSeatingCapacity(Number seatingCapacity) {
+        this.seatingCapacity = seatingCapacity;
     }
 
-    private Object fBodyType;
+    private Object bodyType;
 
     /**
      * Indicates the design and body style of the vehicle (e.g. station wagon, hatchback, etc.).
@@ -955,24 +1082,44 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getBodyType() {
-        return (T) fBodyType;
+        return (T) bodyType;
     }
 
     /**
      * Indicates the design and body style of the vehicle (e.g. station wagon, hatchback, etc.).
      *
+     * @param bodyType QualitativeValue value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setBodyType(Object fBodyType) {
-        if(!(fBodyType instanceof QualitativeValue) && !(fBodyType instanceof Text) && !(fBodyType instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'bodyType': " + fBodyType);
-        }
-        this.fBodyType = fBodyType;
+    public void setBodyType(QualitativeValue bodyType) {
+        this.bodyType = bodyType;
+    }
+    /**
+     * Indicates the design and body style of the vehicle (e.g. station wagon, hatchback, etc.).
+     *
+     * @param bodyType Text value to set.
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public void setBodyType(Text bodyType) {
+        this.bodyType = bodyType;
+    }
+    /**
+     * Indicates the design and body style of the vehicle (e.g. station wagon, hatchback, etc.).
+     *
+     * @param bodyType URL value to set.
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public void setBodyType(URL bodyType) {
+        this.bodyType = bodyType;
     }
 
-    private Date fDateVehicleFirstRegistered;
+    private Date dateVehicleFirstRegistered;
 
     /**
      * The date of the first registration of the vehicle with the respective public authorities.
@@ -982,20 +1129,21 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Date getDateVehicleFirstRegistered() {
-        return fDateVehicleFirstRegistered;
+        return dateVehicleFirstRegistered;
     }
 
     /**
      * The date of the first registration of the vehicle with the respective public authorities.
      *
+     * @param dateVehicleFirstRegistered Date value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setDateVehicleFirstRegistered(Date fDateVehicleFirstRegistered) {
-        this.fDateVehicleFirstRegistered = fDateVehicleFirstRegistered;
+    public void setDateVehicleFirstRegistered(Date dateVehicleFirstRegistered) {
+        this.dateVehicleFirstRegistered = dateVehicleFirstRegistered;
     }
 
-    private Text fVehicleIdentificationNumber;
+    private Text vehicleIdentificationNumber;
 
     /**
      * The Vehicle Identification Number (VIN) is a unique serial number used by the automotive industry to identify individual motor vehicles.
@@ -1005,20 +1153,21 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getVehicleIdentificationNumber() {
-        return fVehicleIdentificationNumber;
+        return vehicleIdentificationNumber;
     }
 
     /**
      * The Vehicle Identification Number (VIN) is a unique serial number used by the automotive industry to identify individual motor vehicles.
      *
+     * @param vehicleIdentificationNumber Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setVehicleIdentificationNumber(Text fVehicleIdentificationNumber) {
-        this.fVehicleIdentificationNumber = fVehicleIdentificationNumber;
+    public void setVehicleIdentificationNumber(Text vehicleIdentificationNumber) {
+        this.vehicleIdentificationNumber = vehicleIdentificationNumber;
     }
 
-    private Object fMeetsEmissionStandard;
+    private Object meetsEmissionStandard;
 
     /**
      * Indicates that the vehicle meets the respective emission standard.
@@ -1029,24 +1178,44 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getMeetsEmissionStandard() {
-        return (T) fMeetsEmissionStandard;
+        return (T) meetsEmissionStandard;
     }
 
     /**
      * Indicates that the vehicle meets the respective emission standard.
      *
+     * @param meetsEmissionStandard Text value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setMeetsEmissionStandard(Object fMeetsEmissionStandard) {
-        if(!(fMeetsEmissionStandard instanceof Text) && !(fMeetsEmissionStandard instanceof URL) && !(fMeetsEmissionStandard instanceof QualitativeValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'meetsEmissionStandard': " + fMeetsEmissionStandard);
-        }
-        this.fMeetsEmissionStandard = fMeetsEmissionStandard;
+    public void setMeetsEmissionStandard(Text meetsEmissionStandard) {
+        this.meetsEmissionStandard = meetsEmissionStandard;
+    }
+    /**
+     * Indicates that the vehicle meets the respective emission standard.
+     *
+     * @param meetsEmissionStandard URL value to set.
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public void setMeetsEmissionStandard(URL meetsEmissionStandard) {
+        this.meetsEmissionStandard = meetsEmissionStandard;
+    }
+    /**
+     * Indicates that the vehicle meets the respective emission standard.
+     *
+     * @param meetsEmissionStandard QualitativeValue value to set.
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public void setMeetsEmissionStandard(QualitativeValue meetsEmissionStandard) {
+        this.meetsEmissionStandard = meetsEmissionStandard;
     }
 
-    private Object fVehicleSpecialUsage;
+    private Object vehicleSpecialUsage;
 
     /**
      * Indicates whether the vehicle has been used for special purposes, like commercial rental, driving school, or as a taxi. The legislation in many countries requires this information to be revealed when offering a car for sale.
@@ -1057,24 +1226,33 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getVehicleSpecialUsage() {
-        return (T) fVehicleSpecialUsage;
+        return (T) vehicleSpecialUsage;
     }
 
     /**
      * Indicates whether the vehicle has been used for special purposes, like commercial rental, driving school, or as a taxi. The legislation in many countries requires this information to be revealed when offering a car for sale.
      *
+     * @param vehicleSpecialUsage CarUsageType value to set.
      * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setVehicleSpecialUsage(Object fVehicleSpecialUsage) {
-        if(!(fVehicleSpecialUsage instanceof CarUsageType) && !(fVehicleSpecialUsage instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'vehicleSpecialUsage': " + fVehicleSpecialUsage);
-        }
-        this.fVehicleSpecialUsage = fVehicleSpecialUsage;
+    public void setVehicleSpecialUsage(CarUsageType vehicleSpecialUsage) {
+        this.vehicleSpecialUsage = vehicleSpecialUsage;
+    }
+    /**
+     * Indicates whether the vehicle has been used for special purposes, like commercial rental, driving school, or as a taxi. The legislation in many countries requires this information to be revealed when offering a car for sale.
+     *
+     * @param vehicleSpecialUsage Text value to set.
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public void setVehicleSpecialUsage(Text vehicleSpecialUsage) {
+        this.vehicleSpecialUsage = vehicleSpecialUsage;
     }
 
-    private Product fIsAccessoryOrSparePartFor;
+    private Product isAccessoryOrSparePartFor;
 
     /**
      * A pointer to another product (or multiple products) for which this product is an accessory or spare part.
@@ -1084,20 +1262,21 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Product getIsAccessoryOrSparePartFor() {
-        return fIsAccessoryOrSparePartFor;
+        return isAccessoryOrSparePartFor;
     }
 
     /**
      * A pointer to another product (or multiple products) for which this product is an accessory or spare part.
      *
+     * @param isAccessoryOrSparePartFor Product value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setIsAccessoryOrSparePartFor(Product fIsAccessoryOrSparePartFor) {
-        this.fIsAccessoryOrSparePartFor = fIsAccessoryOrSparePartFor;
+    public void setIsAccessoryOrSparePartFor(Product isAccessoryOrSparePartFor) {
+        this.isAccessoryOrSparePartFor = isAccessoryOrSparePartFor;
     }
 
-    private AdultOrientedEnumeration fHasAdultConsideration;
+    private AdultOrientedEnumeration hasAdultConsideration;
 
     /**
      * Used to tag an item to be intended or suitable for consumption or use by adults only.
@@ -1108,21 +1287,22 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public AdultOrientedEnumeration getHasAdultConsideration() {
-        return fHasAdultConsideration;
+        return hasAdultConsideration;
     }
 
     /**
      * Used to tag an item to be intended or suitable for consumption or use by adults only.
      *
+     * @param hasAdultConsideration AdultOrientedEnumeration value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2989">https://github.com/schemaorg/schemaorg/issues/2989</a>
      */
     @Override
-    public void setHasAdultConsideration(AdultOrientedEnumeration fHasAdultConsideration) {
-        this.fHasAdultConsideration = fHasAdultConsideration;
+    public void setHasAdultConsideration(AdultOrientedEnumeration hasAdultConsideration) {
+        this.hasAdultConsideration = hasAdultConsideration;
     }
 
-    private Text fGtin12;
+    private Text gtin12;
 
     /**
      * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
@@ -1131,19 +1311,20 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getGtin12() {
-        return fGtin12;
+        return gtin12;
     }
 
     /**
      * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
+     * @param gtin12 Text value to set.
      */
     @Override
-    public void setGtin12(Text fGtin12) {
-        this.fGtin12 = fGtin12;
+    public void setGtin12(Text gtin12) {
+        this.gtin12 = gtin12;
     }
 
-    private Text fNsn;
+    private Text nsn;
 
     /**
      * Indicates the [NATO stock number](https://en.wikipedia.org/wiki/NATO_Stock_Number) (nsn) of a [[Product]]. 
@@ -1154,21 +1335,22 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getNsn() {
-        return fNsn;
+        return nsn;
     }
 
     /**
      * Indicates the [NATO stock number](https://en.wikipedia.org/wiki/NATO_Stock_Number) (nsn) of a [[Product]]. 
      *
+     * @param nsn Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2126">https://github.com/schemaorg/schemaorg/issues/2126</a>
      */
     @Override
-    public void setNsn(Text fNsn) {
-        this.fNsn = fNsn;
+    public void setNsn(Text nsn) {
+        this.nsn = nsn;
     }
 
-    private Object fMaterial;
+    private Object material;
 
     /**
      * A material that something is made from, e.g. leather, wool, cotton, paper.
@@ -1177,22 +1359,38 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getMaterial() {
-        return (T) fMaterial;
+        return (T) material;
     }
 
     /**
      * A material that something is made from, e.g. leather, wool, cotton, paper.
      *
+     * @param material Text value to set.
      */
     @Override
-    public void setMaterial(Object fMaterial) {
-        if(!(fMaterial instanceof Text) && !(fMaterial instanceof URL) && !(fMaterial instanceof Product)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'material': " + fMaterial);
-        }
-        this.fMaterial = fMaterial;
+    public void setMaterial(Text material) {
+        this.material = material;
+    }
+    /**
+     * A material that something is made from, e.g. leather, wool, cotton, paper.
+     *
+     * @param material URL value to set.
+     */
+    @Override
+    public void setMaterial(URL material) {
+        this.material = material;
+    }
+    /**
+     * A material that something is made from, e.g. leather, wool, cotton, paper.
+     *
+     * @param material Product value to set.
+     */
+    @Override
+    public void setMaterial(Product material) {
+        this.material = material;
     }
 
-    private Review fReview;
+    private Review review;
 
     /**
      * A review of the item.
@@ -1201,19 +1399,20 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Review getReview() {
-        return fReview;
+        return review;
     }
 
     /**
      * A review of the item.
      *
+     * @param review Review value to set.
      */
     @Override
-    public void setReview(Review fReview) {
-        this.fReview = fReview;
+    public void setReview(Review review) {
+        this.review = review;
     }
 
-    private Text fAward;
+    private Text award;
 
     /**
      * An award won by or for this item.
@@ -1222,19 +1421,20 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getAward() {
-        return fAward;
+        return award;
     }
 
     /**
      * An award won by or for this item.
      *
+     * @param award Text value to set.
      */
     @Override
-    public void setAward(Text fAward) {
-        this.fAward = fAward;
+    public void setAward(Text award) {
+        this.award = award;
     }
 
-    private Object fWidth;
+    private Object width;
 
     /**
      * The width of the item.
@@ -1243,22 +1443,29 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getWidth() {
-        return (T) fWidth;
+        return (T) width;
     }
 
     /**
      * The width of the item.
      *
+     * @param width QuantitativeValue value to set.
      */
     @Override
-    public void setWidth(Object fWidth) {
-        if(!(fWidth instanceof QuantitativeValue) && !(fWidth instanceof Distance)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'width': " + fWidth);
-        }
-        this.fWidth = fWidth;
+    public void setWidth(QuantitativeValue width) {
+        this.width = width;
+    }
+    /**
+     * The width of the item.
+     *
+     * @param width Distance value to set.
+     */
+    @Override
+    public void setWidth(Distance width) {
+        this.width = width;
     }
 
-    private Country fCountryOfOrigin;
+    private Country countryOfOrigin;
 
     /**
      * The country of origin of something, including products as well as creative  works such as movie and TV content.
@@ -1271,7 +1478,7 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Country getCountryOfOrigin() {
-        return fCountryOfOrigin;
+        return countryOfOrigin;
     }
 
     /**
@@ -1281,13 +1488,14 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * 
      * In the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.
      *
+     * @param countryOfOrigin Country value to set.
      */
     @Override
-    public void setCountryOfOrigin(Country fCountryOfOrigin) {
-        this.fCountryOfOrigin = fCountryOfOrigin;
+    public void setCountryOfOrigin(Country countryOfOrigin) {
+        this.countryOfOrigin = countryOfOrigin;
     }
 
-    private Object fPattern;
+    private Object pattern;
 
     /**
      * A pattern that something has, for example 'polka dot', 'striped', 'Canadian flag'. Values are typically expressed as text, although links to controlled value schemes are also supported.
@@ -1298,24 +1506,33 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getPattern() {
-        return (T) fPattern;
+        return (T) pattern;
     }
 
     /**
      * A pattern that something has, for example 'polka dot', 'striped', 'Canadian flag'. Values are typically expressed as text, although links to controlled value schemes are also supported.
      *
+     * @param pattern DefinedTerm value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
     @Override
-    public void setPattern(Object fPattern) {
-        if(!(fPattern instanceof DefinedTerm) && !(fPattern instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'pattern': " + fPattern);
-        }
-        this.fPattern = fPattern;
+    public void setPattern(DefinedTerm pattern) {
+        this.pattern = pattern;
+    }
+    /**
+     * A pattern that something has, for example 'polka dot', 'striped', 'Canadian flag'. Values are typically expressed as text, although links to controlled value schemes are also supported.
+     *
+     * @param pattern Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     */
+    @Override
+    public void setPattern(Text pattern) {
+        this.pattern = pattern;
     }
 
-    private Object fCategory;
+    private Object category;
 
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
@@ -1326,24 +1543,66 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getCategory() {
-        return (T) fCategory;
+        return (T) category;
     }
 
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
+     * @param category URL value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
     @Override
-    public void setCategory(Object fCategory) {
-        if(!(fCategory instanceof URL) && !(fCategory instanceof Text) && !(fCategory instanceof PhysicalActivityCategory) && !(fCategory instanceof Thing) && !(fCategory instanceof CategoryCode)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'category': " + fCategory);
-        }
-        this.fCategory = fCategory;
+    public void setCategory(URL category) {
+        this.category = category;
+    }
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @param category Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    @Override
+    public void setCategory(Text category) {
+        this.category = category;
+    }
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @param category PhysicalActivityCategory value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    @Override
+    public void setCategory(PhysicalActivityCategory category) {
+        this.category = category;
+    }
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @param category Thing value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    @Override
+    public void setCategory(Thing category) {
+        this.category = category;
+    }
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @param category CategoryCode value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    @Override
+    public void setCategory(CategoryCode category) {
+        this.category = category;
     }
 
-    private Grant fFunding;
+    private Grant funding;
 
     /**
      * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
@@ -1355,22 +1614,23 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Grant getFunding() {
-        return fFunding;
+        return funding;
     }
 
     /**
      * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
      *
+     * @param funding Grant value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
     @Override
-    public void setFunding(Grant fFunding) {
-        this.fFunding = fFunding;
+    public void setFunding(Grant funding) {
+        this.funding = funding;
     }
 
-    private Text fMpn;
+    private Text mpn;
 
     /**
      * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
@@ -1380,20 +1640,21 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getMpn() {
-        return fMpn;
+        return mpn;
     }
 
     /**
      * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
      *
+     * @param mpn Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setMpn(Text fMpn) {
-        this.fMpn = fMpn;
+    public void setMpn(Text mpn) {
+        this.mpn = mpn;
     }
 
-    private Object fHeight;
+    private Object height;
 
     /**
      * The height of the item.
@@ -1402,22 +1663,29 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getHeight() {
-        return (T) fHeight;
+        return (T) height;
     }
 
     /**
      * The height of the item.
      *
+     * @param height Distance value to set.
      */
     @Override
-    public void setHeight(Object fHeight) {
-        if(!(fHeight instanceof Distance) && !(fHeight instanceof QuantitativeValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'height': " + fHeight);
-        }
-        this.fHeight = fHeight;
+    public void setHeight(Distance height) {
+        this.height = height;
+    }
+    /**
+     * The height of the item.
+     *
+     * @param height QuantitativeValue value to set.
+     */
+    @Override
+    public void setHeight(QuantitativeValue height) {
+        this.height = height;
     }
 
-    private Object fKeywords;
+    private Object keywords;
 
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
@@ -1426,22 +1694,38 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getKeywords() {
-        return (T) fKeywords;
+        return (T) keywords;
     }
 
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
      *
+     * @param keywords DefinedTerm value to set.
      */
     @Override
-    public void setKeywords(Object fKeywords) {
-        if(!(fKeywords instanceof DefinedTerm) && !(fKeywords instanceof Text) && !(fKeywords instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'keywords': " + fKeywords);
-        }
-        this.fKeywords = fKeywords;
+    public void setKeywords(DefinedTerm keywords) {
+        this.keywords = keywords;
+    }
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     * @param keywords Text value to set.
+     */
+    @Override
+    public void setKeywords(Text keywords) {
+        this.keywords = keywords;
+    }
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     * @param keywords URL value to set.
+     */
+    @Override
+    public void setKeywords(URL keywords) {
+        this.keywords = keywords;
     }
 
-    private EnergyConsumptionDetails fHasEnergyConsumptionDetails;
+    private EnergyConsumptionDetails hasEnergyConsumptionDetails;
 
     /**
      * Defines the energy efficiency Category (also known as "class" or "rating") for a product according to an international energy efficiency standard.
@@ -1452,21 +1736,22 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public EnergyConsumptionDetails getHasEnergyConsumptionDetails() {
-        return fHasEnergyConsumptionDetails;
+        return hasEnergyConsumptionDetails;
     }
 
     /**
      * Defines the energy efficiency Category (also known as "class" or "rating") for a product according to an international energy efficiency standard.
      *
+     * @param hasEnergyConsumptionDetails EnergyConsumptionDetails value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2670">https://github.com/schemaorg/schemaorg/issues/2670</a>
      */
     @Override
-    public void setHasEnergyConsumptionDetails(EnergyConsumptionDetails fHasEnergyConsumptionDetails) {
-        this.fHasEnergyConsumptionDetails = fHasEnergyConsumptionDetails;
+    public void setHasEnergyConsumptionDetails(EnergyConsumptionDetails hasEnergyConsumptionDetails) {
+        this.hasEnergyConsumptionDetails = hasEnergyConsumptionDetails;
     }
 
-    private Audience fAudience;
+    private Audience audience;
 
     /**
      * An intended audience, i.e. a group for whom something was created.
@@ -1475,19 +1760,20 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Audience getAudience() {
-        return fAudience;
+        return audience;
     }
 
     /**
      * An intended audience, i.e. a group for whom something was created.
      *
+     * @param audience Audience value to set.
      */
     @Override
-    public void setAudience(Audience fAudience) {
-        this.fAudience = fAudience;
+    public void setAudience(Audience audience) {
+        this.audience = audience;
     }
 
-    private Object fOffers;
+    private Object offers;
 
     /**
      * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
@@ -1498,24 +1784,33 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getOffers() {
-        return (T) fOffers;
+        return (T) offers;
     }
 
     /**
      * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      *
+     * @param offers Offer value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
     @Override
-    public void setOffers(Object fOffers) {
-        if(!(fOffers instanceof Offer) && !(fOffers instanceof Demand)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'offers': " + fOffers);
-        }
-        this.fOffers = fOffers;
+    public void setOffers(Offer offers) {
+        this.offers = offers;
+    }
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     *
+     * @param offers Demand value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public void setOffers(Demand offers) {
+        this.offers = offers;
     }
 
-    private OfferItemCondition fItemCondition;
+    private OfferItemCondition itemCondition;
 
     /**
      * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
@@ -1524,19 +1819,20 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public OfferItemCondition getItemCondition() {
-        return fItemCondition;
+        return itemCondition;
     }
 
     /**
      * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
      *
+     * @param itemCondition OfferItemCondition value to set.
      */
     @Override
-    public void setItemCondition(OfferItemCondition fItemCondition) {
-        this.fItemCondition = fItemCondition;
+    public void setItemCondition(OfferItemCondition itemCondition) {
+        this.itemCondition = itemCondition;
     }
 
-    private Text fAwards;
+    private Text awards;
 
     /**
      * Awards won by or for this item.
@@ -1545,19 +1841,20 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getAwards() {
-        return fAwards;
+        return awards;
     }
 
     /**
      * Awards won by or for this item.
      *
+     * @param awards Text value to set.
      */
     @Override
-    public void setAwards(Text fAwards) {
-        this.fAwards = fAwards;
+    public void setAwards(Text awards) {
+        this.awards = awards;
     }
 
-    private Text fGtin;
+    private Text gtin;
 
     /**
      * A Global Trade Item Number ([GTIN](https://www.gs1.org/standards/id-keys/gtin)). GTINs identify trade items, including products and services, using numeric identification codes. The [[gtin]] property generalizes the earlier [[gtin8]], [[gtin12]], [[gtin13]], and [[gtin14]] properties. The GS1 [digital link specifications](https://www.gs1.org/standards/Digital-Link/) express GTINs as URLs. A correct [[gtin]] value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a "GS1 Digital Link" URL based on such a string. The numeric component should also have a [valid GS1 check digit](https://www.gs1.org/services/check-digit-calculator) and meet the other rules for valid GTINs. See also [GS1's GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) and [Wikipedia](https://en.wikipedia.org/wiki/Global_Trade_Item_Number) for more details. Left-padding of the gtin values is not required or encouraged.
@@ -1569,22 +1866,23 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getGtin() {
-        return fGtin;
+        return gtin;
     }
 
     /**
      * A Global Trade Item Number ([GTIN](https://www.gs1.org/standards/id-keys/gtin)). GTINs identify trade items, including products and services, using numeric identification codes. The [[gtin]] property generalizes the earlier [[gtin8]], [[gtin12]], [[gtin13]], and [[gtin14]] properties. The GS1 [digital link specifications](https://www.gs1.org/standards/Digital-Link/) express GTINs as URLs. A correct [[gtin]] value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a "GS1 Digital Link" URL based on such a string. The numeric component should also have a [valid GS1 check digit](https://www.gs1.org/services/check-digit-calculator) and meet the other rules for valid GTINs. See also [GS1's GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) and [Wikipedia](https://en.wikipedia.org/wiki/Global_Trade_Item_Number) for more details. Left-padding of the gtin values is not required or encouraged.
      *    
      *
+     * @param gtin Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
      */
     @Override
-    public void setGtin(Text fGtin) {
-        this.fGtin = fGtin;
+    public void setGtin(Text gtin) {
+        this.gtin = gtin;
     }
 
-    private Text fProductID;
+    private Text productID;
 
     /**
      * The product identifier, such as ISBN. For example: ``` meta itemprop="productID" content="isbn:123-456-789" ```.
@@ -1593,19 +1891,20 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getProductID() {
-        return fProductID;
+        return productID;
     }
 
     /**
      * The product identifier, such as ISBN. For example: ``` meta itemprop="productID" content="isbn:123-456-789" ```.
      *
+     * @param productID Text value to set.
      */
     @Override
-    public void setProductID(Text fProductID) {
-        this.fProductID = fProductID;
+    public void setProductID(Text productID) {
+        this.productID = productID;
     }
 
-    private Text fCountryOfAssembly;
+    private Text countryOfAssembly;
 
     /**
      * The place where the product was assembled.
@@ -1616,21 +1915,22 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getCountryOfAssembly() {
-        return fCountryOfAssembly;
+        return countryOfAssembly;
     }
 
     /**
      * The place where the product was assembled.
      *
+     * @param countryOfAssembly Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/991">https://github.com/schemaorg/schemaorg/issues/991</a>
      */
     @Override
-    public void setCountryOfAssembly(Text fCountryOfAssembly) {
-        this.fCountryOfAssembly = fCountryOfAssembly;
+    public void setCountryOfAssembly(Text countryOfAssembly) {
+        this.countryOfAssembly = countryOfAssembly;
     }
 
-    private Text fColor;
+    private Text color;
 
     /**
      * The color of the product.
@@ -1640,20 +1940,21 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getColor() {
-        return fColor;
+        return color;
     }
 
     /**
      * The color of the product.
      *
+     * @param color Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setColor(Text fColor) {
-        this.fColor = fColor;
+    public void setColor(Text color) {
+        this.color = color;
     }
 
-    private AggregateRating fAggregateRating;
+    private AggregateRating aggregateRating;
 
     /**
      * The overall rating, based on a collection of reviews or ratings, of the item.
@@ -1662,19 +1963,20 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public AggregateRating getAggregateRating() {
-        return fAggregateRating;
+        return aggregateRating;
     }
 
     /**
      * The overall rating, based on a collection of reviews or ratings, of the item.
      *
+     * @param aggregateRating AggregateRating value to set.
      */
     @Override
-    public void setAggregateRating(AggregateRating fAggregateRating) {
-        this.fAggregateRating = fAggregateRating;
+    public void setAggregateRating(AggregateRating aggregateRating) {
+        this.aggregateRating = aggregateRating;
     }
 
-    private Object fIsSimilarTo;
+    private Object isSimilarTo;
 
     /**
      * A pointer to another, functionally similar product (or multiple products).
@@ -1684,23 +1986,31 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getIsSimilarTo() {
-        return (T) fIsSimilarTo;
+        return (T) isSimilarTo;
     }
 
     /**
      * A pointer to another, functionally similar product (or multiple products).
      *
+     * @param isSimilarTo Service value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setIsSimilarTo(Object fIsSimilarTo) {
-        if(!(fIsSimilarTo instanceof Service) && !(fIsSimilarTo instanceof Product)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'isSimilarTo': " + fIsSimilarTo);
-        }
-        this.fIsSimilarTo = fIsSimilarTo;
+    public void setIsSimilarTo(Service isSimilarTo) {
+        this.isSimilarTo = isSimilarTo;
+    }
+    /**
+     * A pointer to another, functionally similar product (or multiple products).
+     *
+     * @param isSimilarTo Product value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setIsSimilarTo(Product isSimilarTo) {
+        this.isSimilarTo = isSimilarTo;
     }
 
-    private Object fDepth;
+    private Object depth;
 
     /**
      * The depth of the item.
@@ -1710,23 +2020,31 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getDepth() {
-        return (T) fDepth;
+        return (T) depth;
     }
 
     /**
      * The depth of the item.
      *
+     * @param depth Distance value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setDepth(Object fDepth) {
-        if(!(fDepth instanceof Distance) && !(fDepth instanceof QuantitativeValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'depth': " + fDepth);
-        }
-        this.fDepth = fDepth;
+    public void setDepth(Distance depth) {
+        this.depth = depth;
+    }
+    /**
+     * The depth of the item.
+     *
+     * @param depth QuantitativeValue value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setDepth(QuantitativeValue depth) {
+        this.depth = depth;
     }
 
-    private Text fCountryOfLastProcessing;
+    private Text countryOfLastProcessing;
 
     /**
      * The place where the item (typically [[Product]]) was last processed and tested before importation.
@@ -1737,21 +2055,22 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getCountryOfLastProcessing() {
-        return fCountryOfLastProcessing;
+        return countryOfLastProcessing;
     }
 
     /**
      * The place where the item (typically [[Product]]) was last processed and tested before importation.
      *
+     * @param countryOfLastProcessing Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/991">https://github.com/schemaorg/schemaorg/issues/991</a>
      */
     @Override
-    public void setCountryOfLastProcessing(Text fCountryOfLastProcessing) {
-        this.fCountryOfLastProcessing = fCountryOfLastProcessing;
+    public void setCountryOfLastProcessing(Text countryOfLastProcessing) {
+        this.countryOfLastProcessing = countryOfLastProcessing;
     }
 
-    private Object fIsVariantOf;
+    private Object isVariantOf;
 
     /**
      * Indicates the kind of product that this is a variant of. In the case of [[ProductModel]], this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a [[ProductGroup]], the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with [[ProductGroup]], this property can apply to any [[Product]] included in the group.
@@ -1761,23 +2080,31 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getIsVariantOf() {
-        return (T) fIsVariantOf;
+        return (T) isVariantOf;
     }
 
     /**
      * Indicates the kind of product that this is a variant of. In the case of [[ProductModel]], this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a [[ProductGroup]], the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with [[ProductGroup]], this property can apply to any [[Product]] included in the group.
      *
+     * @param isVariantOf ProductModel value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setIsVariantOf(Object fIsVariantOf) {
-        if(!(fIsVariantOf instanceof ProductModel) && !(fIsVariantOf instanceof ProductGroup)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'isVariantOf': " + fIsVariantOf);
-        }
-        this.fIsVariantOf = fIsVariantOf;
+    public void setIsVariantOf(ProductModel isVariantOf) {
+        this.isVariantOf = isVariantOf;
+    }
+    /**
+     * Indicates the kind of product that this is a variant of. In the case of [[ProductModel]], this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a [[ProductGroup]], the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with [[ProductGroup]], this property can apply to any [[Product]] included in the group.
+     *
+     * @param isVariantOf ProductGroup value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setIsVariantOf(ProductGroup isVariantOf) {
+        this.isVariantOf = isVariantOf;
     }
 
-    private Text fSlogan;
+    private Text slogan;
 
     /**
      * A slogan or motto associated with the item.
@@ -1786,19 +2113,20 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getSlogan() {
-        return fSlogan;
+        return slogan;
     }
 
     /**
      * A slogan or motto associated with the item.
      *
+     * @param slogan Text value to set.
      */
     @Override
-    public void setSlogan(Text fSlogan) {
-        this.fSlogan = fSlogan;
+    public void setSlogan(Text slogan) {
+        this.slogan = slogan;
     }
 
-    private Object fBrand;
+    private Object brand;
 
     /**
      * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
@@ -1807,22 +2135,29 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getBrand() {
-        return (T) fBrand;
+        return (T) brand;
     }
 
     /**
      * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
      *
+     * @param brand Organization value to set.
      */
     @Override
-    public void setBrand(Object fBrand) {
-        if(!(fBrand instanceof Organization) && !(fBrand instanceof Brand)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'brand': " + fBrand);
-        }
-        this.fBrand = fBrand;
+    public void setBrand(Organization brand) {
+        this.brand = brand;
+    }
+    /**
+     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     *
+     * @param brand Brand value to set.
+     */
+    @Override
+    public void setBrand(Brand brand) {
+        this.brand = brand;
     }
 
-    private Organization fManufacturer;
+    private Organization manufacturer;
 
     /**
      * The manufacturer of the product.
@@ -1831,19 +2166,20 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Organization getManufacturer() {
-        return fManufacturer;
+        return manufacturer;
     }
 
     /**
      * The manufacturer of the product.
      *
+     * @param manufacturer Organization value to set.
      */
     @Override
-    public void setManufacturer(Organization fManufacturer) {
-        this.fManufacturer = fManufacturer;
+    public void setManufacturer(Organization manufacturer) {
+        this.manufacturer = manufacturer;
     }
 
-    private QuantitativeValue fHasMeasurement;
+    private QuantitativeValue hasMeasurement;
 
     /**
      * A product measurement, for example the inseam of pants, the wheel size of a bicycle, or the gauge of a screw. Usually an exact measurement, but can also be a range of measurements for adjustable products, for example belts and ski bindings.
@@ -1854,21 +2190,22 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public QuantitativeValue getHasMeasurement() {
-        return fHasMeasurement;
+        return hasMeasurement;
     }
 
     /**
      * A product measurement, for example the inseam of pants, the wheel size of a bicycle, or the gauge of a screw. Usually an exact measurement, but can also be a range of measurements for adjustable products, for example belts and ski bindings.
      *
+     * @param hasMeasurement QuantitativeValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
      */
     @Override
-    public void setHasMeasurement(QuantitativeValue fHasMeasurement) {
-        this.fHasMeasurement = fHasMeasurement;
+    public void setHasMeasurement(QuantitativeValue hasMeasurement) {
+        this.hasMeasurement = hasMeasurement;
     }
 
-    private Product fIsConsumableFor;
+    private Product isConsumableFor;
 
     /**
      * A pointer to another product (or multiple products) for which this product is a consumable.
@@ -1878,20 +2215,21 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Product getIsConsumableFor() {
-        return fIsConsumableFor;
+        return isConsumableFor;
     }
 
     /**
      * A pointer to another product (or multiple products) for which this product is a consumable.
      *
+     * @param isConsumableFor Product value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setIsConsumableFor(Product fIsConsumableFor) {
-        this.fIsConsumableFor = fIsConsumableFor;
+    public void setIsConsumableFor(Product isConsumableFor) {
+        this.isConsumableFor = isConsumableFor;
     }
 
-    private Object fLogo;
+    private Object logo;
 
     /**
      * An associated logo.
@@ -1901,23 +2239,31 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getLogo() {
-        return (T) fLogo;
+        return (T) logo;
     }
 
     /**
      * An associated logo.
      *
+     * @param logo URL value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setLogo(Object fLogo) {
-        if(!(fLogo instanceof URL) && !(fLogo instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'logo': " + fLogo);
-        }
-        this.fLogo = fLogo;
+    public void setLogo(URL logo) {
+        this.logo = logo;
+    }
+    /**
+     * An associated logo.
+     *
+     * @param logo ImageObject value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setLogo(ImageObject logo) {
+        this.logo = logo;
     }
 
-    private Text fGtin8;
+    private Text gtin8;
 
     /**
      * The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
@@ -1927,20 +2273,21 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getGtin8() {
-        return fGtin8;
+        return gtin8;
     }
 
     /**
      * The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
+     * @param gtin8 Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setGtin8(Text fGtin8) {
-        this.fGtin8 = fGtin8;
+    public void setGtin8(Text gtin8) {
+        this.gtin8 = gtin8;
     }
 
-    private Text fSku;
+    private Text sku;
 
     /**
      * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
@@ -1950,20 +2297,21 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getSku() {
-        return fSku;
+        return sku;
     }
 
     /**
      * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
      *
+     * @param sku Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setSku(Text fSku) {
-        this.fSku = fSku;
+    public void setSku(Text sku) {
+        this.sku = sku;
     }
 
-    private Text fInProductGroupWithID;
+    private Text inProductGroupWithID;
 
     /**
      * Indicates the [[productGroupID]] for a [[ProductGroup]] that this product [[isVariantOf]]. 
@@ -1974,21 +2322,22 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getInProductGroupWithID() {
-        return fInProductGroupWithID;
+        return inProductGroupWithID;
     }
 
     /**
      * Indicates the [[productGroupID]] for a [[ProductGroup]] that this product [[isVariantOf]]. 
      *
+     * @param inProductGroupWithID Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
     @Override
-    public void setInProductGroupWithID(Text fInProductGroupWithID) {
-        this.fInProductGroupWithID = fInProductGroupWithID;
+    public void setInProductGroupWithID(Text inProductGroupWithID) {
+        this.inProductGroupWithID = inProductGroupWithID;
     }
 
-    private Object fModel;
+    private Object model;
 
     /**
      * The model of the product. Use with the URL of a ProductModel or a textual representation of the model identifier. The URL of the ProductModel can be from an external source. It is recommended to additionally provide strong product identifiers via the gtin8/gtin13/gtin14 and mpn properties.
@@ -1997,22 +2346,29 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getModel() {
-        return (T) fModel;
+        return (T) model;
     }
 
     /**
      * The model of the product. Use with the URL of a ProductModel or a textual representation of the model identifier. The URL of the ProductModel can be from an external source. It is recommended to additionally provide strong product identifiers via the gtin8/gtin13/gtin14 and mpn properties.
      *
+     * @param model ProductModel value to set.
      */
     @Override
-    public void setModel(Object fModel) {
-        if(!(fModel instanceof ProductModel) && !(fModel instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'model': " + fModel);
-        }
-        this.fModel = fModel;
+    public void setModel(ProductModel model) {
+        this.model = model;
+    }
+    /**
+     * The model of the product. Use with the URL of a ProductModel or a textual representation of the model identifier. The URL of the ProductModel can be from an external source. It is recommended to additionally provide strong product identifiers via the gtin8/gtin13/gtin14 and mpn properties.
+     *
+     * @param model Text value to set.
+     */
+    @Override
+    public void setModel(Text model) {
+        this.model = model;
     }
 
-    private MerchantReturnPolicy fHasMerchantReturnPolicy;
+    private MerchantReturnPolicy hasMerchantReturnPolicy;
 
     /**
      * Specifies a MerchantReturnPolicy that may be applicable.
@@ -2023,21 +2379,22 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public MerchantReturnPolicy getHasMerchantReturnPolicy() {
-        return fHasMerchantReturnPolicy;
+        return hasMerchantReturnPolicy;
     }
 
     /**
      * Specifies a MerchantReturnPolicy that may be applicable.
      *
+     * @param hasMerchantReturnPolicy MerchantReturnPolicy value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
      */
     @Override
-    public void setHasMerchantReturnPolicy(MerchantReturnPolicy fHasMerchantReturnPolicy) {
-        this.fHasMerchantReturnPolicy = fHasMerchantReturnPolicy;
+    public void setHasMerchantReturnPolicy(MerchantReturnPolicy hasMerchantReturnPolicy) {
+        this.hasMerchantReturnPolicy = hasMerchantReturnPolicy;
     }
 
-    private Date fReleaseDate;
+    private Date releaseDate;
 
     /**
      * The release date of a product or product model. This can be used to distinguish the exact variant of a product.
@@ -2047,20 +2404,21 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Date getReleaseDate() {
-        return fReleaseDate;
+        return releaseDate;
     }
 
     /**
      * The release date of a product or product model. This can be used to distinguish the exact variant of a product.
      *
+     * @param releaseDate Date value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setReleaseDate(Date fReleaseDate) {
-        this.fReleaseDate = fReleaseDate;
+    public void setReleaseDate(Date releaseDate) {
+        this.releaseDate = releaseDate;
     }
 
-    private Text fGtin14;
+    private Text gtin14;
 
     /**
      * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
@@ -2070,20 +2428,21 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getGtin14() {
-        return fGtin14;
+        return gtin14;
     }
 
     /**
      * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
+     * @param gtin14 Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setGtin14(Text fGtin14) {
-        this.fGtin14 = fGtin14;
+    public void setGtin14(Text gtin14) {
+        this.gtin14 = gtin14;
     }
 
-    private QuantitativeValue fWeight;
+    private QuantitativeValue weight;
 
     /**
      * The weight of the product or person.
@@ -2093,20 +2452,21 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public QuantitativeValue getWeight() {
-        return fWeight;
+        return weight;
     }
 
     /**
      * The weight of the product or person.
      *
+     * @param weight QuantitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setWeight(QuantitativeValue fWeight) {
-        this.fWeight = fWeight;
+    public void setWeight(QuantitativeValue weight) {
+        this.weight = weight;
     }
 
-    private Object fSize;
+    private Object size;
 
     /**
      * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
@@ -2117,24 +2477,55 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getSize() {
-        return (T) fSize;
+        return (T) size;
     }
 
     /**
      * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
      *
+     * @param size QuantitativeValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
     @Override
-    public void setSize(Object fSize) {
-        if(!(fSize instanceof QuantitativeValue) && !(fSize instanceof DefinedTerm) && !(fSize instanceof Text) && !(fSize instanceof SizeSpecification)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'size': " + fSize);
-        }
-        this.fSize = fSize;
+    public void setSize(QuantitativeValue size) {
+        this.size = size;
+    }
+    /**
+     * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
+     *
+     * @param size DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     */
+    @Override
+    public void setSize(DefinedTerm size) {
+        this.size = size;
+    }
+    /**
+     * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
+     *
+     * @param size Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     */
+    @Override
+    public void setSize(Text size) {
+        this.size = size;
+    }
+    /**
+     * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
+     *
+     * @param size SizeSpecification value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     */
+    @Override
+    public void setSize(SizeSpecification size) {
+        this.size = size;
     }
 
-    private PropertyValue fAdditionalProperty;
+    private PropertyValue additionalProperty;
 
     /**
      * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
@@ -2143,19 +2534,20 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public PropertyValue getAdditionalProperty() {
-        return fAdditionalProperty;
+        return additionalProperty;
     }
 
     /**
      * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
      *
+     * @param additionalProperty PropertyValue value to set.
      */
     @Override
-    public void setAdditionalProperty(PropertyValue fAdditionalProperty) {
-        this.fAdditionalProperty = fAdditionalProperty;
+    public void setAdditionalProperty(PropertyValue additionalProperty) {
+        this.additionalProperty = additionalProperty;
     }
 
-    private Text fGtin13;
+    private Text gtin13;
 
     /**
      * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
@@ -2165,20 +2557,21 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getGtin13() {
-        return fGtin13;
+        return gtin13;
     }
 
     /**
      * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
+     * @param gtin13 Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setGtin13(Text fGtin13) {
-        this.fGtin13 = fGtin13;
+    public void setGtin13(Text gtin13) {
+        this.gtin13 = gtin13;
     }
 
-    private Review fReviews;
+    private Review reviews;
 
     /**
      * Review of the item.
@@ -2187,19 +2580,20 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Review getReviews() {
-        return fReviews;
+        return reviews;
     }
 
     /**
      * Review of the item.
      *
+     * @param reviews Review value to set.
      */
     @Override
-    public void setReviews(Review fReviews) {
-        this.fReviews = fReviews;
+    public void setReviews(Review reviews) {
+        this.reviews = reviews;
     }
 
-    private Boolean fIsFamilyFriendly;
+    private Boolean isFamilyFriendly;
 
     /**
      * Indicates whether this content is family friendly.
@@ -2208,19 +2602,20 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Boolean getIsFamilyFriendly() {
-        return fIsFamilyFriendly;
+        return isFamilyFriendly;
     }
 
     /**
      * Indicates whether this content is family friendly.
      *
+     * @param isFamilyFriendly Boolean value to set.
      */
     @Override
-    public void setIsFamilyFriendly(Boolean fIsFamilyFriendly) {
-        this.fIsFamilyFriendly = fIsFamilyFriendly;
+    public void setIsFamilyFriendly(Boolean isFamilyFriendly) {
+        this.isFamilyFriendly = isFamilyFriendly;
     }
 
-    private Object fIsRelatedTo;
+    private Object isRelatedTo;
 
     /**
      * A pointer to another, somehow related product (or multiple products).
@@ -2230,23 +2625,31 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getIsRelatedTo() {
-        return (T) fIsRelatedTo;
+        return (T) isRelatedTo;
     }
 
     /**
      * A pointer to another, somehow related product (or multiple products).
      *
+     * @param isRelatedTo Service value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setIsRelatedTo(Object fIsRelatedTo) {
-        if(!(fIsRelatedTo instanceof Service) && !(fIsRelatedTo instanceof Product)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'isRelatedTo': " + fIsRelatedTo);
-        }
-        this.fIsRelatedTo = fIsRelatedTo;
+    public void setIsRelatedTo(Service isRelatedTo) {
+        this.isRelatedTo = isRelatedTo;
+    }
+    /**
+     * A pointer to another, somehow related product (or multiple products).
+     *
+     * @param isRelatedTo Product value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setIsRelatedTo(Product isRelatedTo) {
+        this.isRelatedTo = isRelatedTo;
     }
 
-    private Object fMainEntityOfPage;
+    private Object mainEntityOfPage;
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -2255,22 +2658,29 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
+        return (T) mainEntityOfPage;
     }
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
+     * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
-        }
-        this.fMainEntityOfPage = fMainEntityOfPage;
+    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param mainEntityOfPage URL value to set.
+     */
+    @Override
+    public void setMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
     }
 
-    private Text fAlternateName;
+    private Text alternateName;
 
     /**
      * An alias for the item.
@@ -2279,19 +2689,20 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getAlternateName() {
-        return fAlternateName;
+        return alternateName;
     }
 
     /**
      * An alias for the item.
      *
+     * @param alternateName Text value to set.
      */
     @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
+    public void setAlternateName(Text alternateName) {
+        this.alternateName = alternateName;
     }
 
-    private Text fName;
+    private Text name;
 
     /**
      * The name of the item.
@@ -2300,19 +2711,20 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getName() {
-        return fName;
+        return name;
     }
 
     /**
      * The name of the item.
      *
+     * @param name Text value to set.
      */
     @Override
-    public void setName(Text fName) {
-        this.fName = fName;
+    public void setName(Text name) {
+        this.name = name;
     }
 
-    private Action fPotentialAction;
+    private Action potentialAction;
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -2321,19 +2733,20 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Action getPotentialAction() {
-        return fPotentialAction;
+        return potentialAction;
     }
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      *
+     * @param potentialAction Action value to set.
      */
     @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
+    public void setPotentialAction(Action potentialAction) {
+        this.potentialAction = potentialAction;
     }
 
-    private Object fImage;
+    private Object image;
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -2342,22 +2755,29 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getImage() {
-        return (T) fImage;
+        return (T) image;
     }
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
+     * @param image URL value to set.
      */
     @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
-        this.fImage = fImage;
+    public void setImage(URL image) {
+        this.image = image;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image ImageObject value to set.
+     */
+    @Override
+    public void setImage(ImageObject image) {
+        this.image = image;
     }
 
-    private URL fUrl;
+    private URL url;
 
     /**
      * URL of the item.
@@ -2366,19 +2786,20 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public URL getUrl() {
-        return fUrl;
+        return url;
     }
 
     /**
      * URL of the item.
      *
+     * @param url URL value to set.
      */
     @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
+    public void setUrl(URL url) {
+        this.url = url;
     }
 
-    private Text fDescription;
+    private Text description;
 
     /**
      * A description of the item.
@@ -2387,19 +2808,20 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getDescription() {
-        return fDescription;
+        return description;
     }
 
     /**
      * A description of the item.
      *
+     * @param description Text value to set.
      */
     @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
+    public void setDescription(Text description) {
+        this.description = description;
     }
 
-    private Object fSubjectOf;
+    private Object subjectOf;
 
     /**
      * A CreativeWork or Event about this Thing.
@@ -2409,23 +2831,31 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getSubjectOf() {
-        return (T) fSubjectOf;
+        return (T) subjectOf;
     }
 
     /**
      * A CreativeWork or Event about this Thing.
      *
+     * @param subjectOf Event value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Object fSubjectOf) {
-        if(!(fSubjectOf instanceof Event) && !(fSubjectOf instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'subjectOf': " + fSubjectOf);
-        }
-        this.fSubjectOf = fSubjectOf;
+    public void setSubjectOf(Event subjectOf) {
+        this.subjectOf = subjectOf;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @param subjectOf CreativeWork value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public void setSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = subjectOf;
     }
 
-    private URL fAdditionalType;
+    private URL additionalType;
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
@@ -2434,19 +2864,20 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public URL getAdditionalType() {
-        return fAdditionalType;
+        return additionalType;
     }
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
+     * @param additionalType URL value to set.
      */
     @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
+    public void setAdditionalType(URL additionalType) {
+        this.additionalType = additionalType;
     }
 
-    private Text fDisambiguatingDescription;
+    private Text disambiguatingDescription;
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
@@ -2455,19 +2886,20 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getDisambiguatingDescription() {
-        return fDisambiguatingDescription;
+        return disambiguatingDescription;
     }
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
+     * @param disambiguatingDescription Text value to set.
      */
     @Override
-    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = fDisambiguatingDescription;
+    public void setDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = disambiguatingDescription;
     }
 
-    private URL fSameAs;
+    private URL sameAs;
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
@@ -2476,19 +2908,20 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public URL getSameAs() {
-        return fSameAs;
+        return sameAs;
     }
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
+     * @param sameAs URL value to set.
      */
     @Override
-    public void setSameAs(URL fSameAs) {
-        this.fSameAs = fSameAs;
+    public void setSameAs(URL sameAs) {
+        this.sameAs = sameAs;
     }
 
-    private Object fIdentifier;
+    private Object identifier;
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -2498,19 +2931,37 @@ public class BusOrCoachImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getIdentifier() {
-        return (T) fIdentifier;
+        return (T) identifier;
     }
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
+     * @param identifier URL value to set.
      */
     @Override
-    public void setIdentifier(Object fIdentifier) {
-        if(!(fIdentifier instanceof URL) && !(fIdentifier instanceof Text) && !(fIdentifier instanceof PropertyValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
-        }
-        this.fIdentifier = fIdentifier;
+    public void setIdentifier(URL identifier) {
+        this.identifier = identifier;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier Text value to set.
+     */
+    @Override
+    public void setIdentifier(Text identifier) {
+        this.identifier = identifier;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier PropertyValue value to set.
+     */
+    @Override
+    public void setIdentifier(PropertyValue identifier) {
+        this.identifier = identifier;
     }
 }

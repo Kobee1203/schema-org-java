@@ -29,10 +29,11 @@ public interface HealthPlanFormulary extends Intangible {
     /**
      * Whether prescriptions can be delivered by mail.
      *
+     * @param offersPrescriptionByMail Boolean value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
-    void setOffersPrescriptionByMail(Boolean fOffersPrescriptionByMail);
+    void setOffersPrescriptionByMail(Boolean offersPrescriptionByMail);
 
     /**
      * The tier(s) of drugs offered by this formulary or insurance plan.
@@ -46,10 +47,11 @@ public interface HealthPlanFormulary extends Intangible {
     /**
      * The tier(s) of drugs offered by this formulary or insurance plan.
      *
+     * @param healthPlanDrugTier Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
-    void setHealthPlanDrugTier(Text fHealthPlanDrugTier);
+    void setHealthPlanDrugTier(Text healthPlanDrugTier);
 
     /**
      * Whether The costs to the patient for services under this network or formulary.
@@ -63,8 +65,9 @@ public interface HealthPlanFormulary extends Intangible {
     /**
      * Whether The costs to the patient for services under this network or formulary.
      *
+     * @param healthPlanCostSharing Boolean value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
-    void setHealthPlanCostSharing(Boolean fHealthPlanCostSharing);
+    void setHealthPlanCostSharing(Boolean healthPlanCostSharing);
 }

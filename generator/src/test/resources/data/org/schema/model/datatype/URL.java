@@ -12,7 +12,7 @@ import com.weedow.schemaorg.commons.model.JsonLdTypeName;
  *
  * @see <a href="https://schema.org/URL">https://schema.org/URL</a>
  */
-@JsonLdTypeName("schema:URL")
+@JsonLdTypeName("URL")
 public class URL extends Text {
 
     URL(java.net.URL value) {

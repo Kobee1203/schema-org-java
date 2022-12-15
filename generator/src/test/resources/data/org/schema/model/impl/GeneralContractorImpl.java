@@ -60,10 +60,10 @@ import org.schema.model.GeneralContractor;
  *
  * @see <a href="https://schema.org/GeneralContractor">https://schema.org/GeneralContractor</a>
  */
-@JsonLdTypeName("schema:GeneralContractor")
+@JsonLdTypeName("GeneralContractor")
 public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements GeneralContractor {
 
-    private Organization fBranchOf;
+    private Organization branchOf;
 
     /**
      * The larger organization that this local business is a branch of, if any. Not to be confused with (anatomical)[[branch]].
@@ -72,19 +72,20 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Organization getBranchOf() {
-        return fBranchOf;
+        return branchOf;
     }
 
     /**
      * The larger organization that this local business is a branch of, if any. Not to be confused with (anatomical)[[branch]].
      *
+     * @param branchOf Organization value to set.
      */
     @Override
-    public void setBranchOf(Organization fBranchOf) {
-        this.fBranchOf = fBranchOf;
+    public void setBranchOf(Organization branchOf) {
+        this.branchOf = branchOf;
     }
 
-    private Text fOpeningHours;
+    private Text openingHours;
 
     /**
      * The general opening hours for a business. Opening hours can be specified as a weekly time range, starting with days, then times per day. Multiple days can be listed with commas ',' separating each day. Day or time ranges are specified using a hyphen '-'.<br/><br/>* Days are specified using the following two-letter combinations: ```Mo```, ```Tu```, ```We```, ```Th```, ```Fr```, ```Sa```, ```Su```.<br/>* Times are specified using 24:00 format. For example, 3pm is specified as ```15:00```, 10am as ```10:00```. <br/>* Here is an example: <code>&lt;time itemprop="openingHours" datetime=&quot;Tu,Th 16:00-20:00&quot;&gt;Tuesdays and Thursdays 4-8pm&lt;/time&gt;</code>.<br/>* If a business is open 7 days a week, then it can be specified as <code>&lt;time itemprop=&quot;openingHours&quot; datetime=&quot;Mo-Su&quot;&gt;Monday through Sunday, all day&lt;/time&gt;</code>.
@@ -93,19 +94,20 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getOpeningHours() {
-        return fOpeningHours;
+        return openingHours;
     }
 
     /**
      * The general opening hours for a business. Opening hours can be specified as a weekly time range, starting with days, then times per day. Multiple days can be listed with commas ',' separating each day. Day or time ranges are specified using a hyphen '-'.<br/><br/>* Days are specified using the following two-letter combinations: ```Mo```, ```Tu```, ```We```, ```Th```, ```Fr```, ```Sa```, ```Su```.<br/>* Times are specified using 24:00 format. For example, 3pm is specified as ```15:00```, 10am as ```10:00```. <br/>* Here is an example: <code>&lt;time itemprop="openingHours" datetime=&quot;Tu,Th 16:00-20:00&quot;&gt;Tuesdays and Thursdays 4-8pm&lt;/time&gt;</code>.<br/>* If a business is open 7 days a week, then it can be specified as <code>&lt;time itemprop=&quot;openingHours&quot; datetime=&quot;Mo-Su&quot;&gt;Monday through Sunday, all day&lt;/time&gt;</code>.
      *
+     * @param openingHours Text value to set.
      */
     @Override
-    public void setOpeningHours(Text fOpeningHours) {
-        this.fOpeningHours = fOpeningHours;
+    public void setOpeningHours(Text openingHours) {
+        this.openingHours = openingHours;
     }
 
-    private Text fPriceRange;
+    private Text priceRange;
 
     /**
      * The price range of the business, for example ```$$$```.
@@ -114,19 +116,20 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getPriceRange() {
-        return fPriceRange;
+        return priceRange;
     }
 
     /**
      * The price range of the business, for example ```$$$```.
      *
+     * @param priceRange Text value to set.
      */
     @Override
-    public void setPriceRange(Text fPriceRange) {
-        this.fPriceRange = fPriceRange;
+    public void setPriceRange(Text priceRange) {
+        this.priceRange = priceRange;
     }
 
-    private Text fPaymentAccepted;
+    private Text paymentAccepted;
 
     /**
      * Cash, Credit Card, Cryptocurrency, Local Exchange Tradings System, etc.
@@ -135,19 +138,20 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getPaymentAccepted() {
-        return fPaymentAccepted;
+        return paymentAccepted;
     }
 
     /**
      * Cash, Credit Card, Cryptocurrency, Local Exchange Tradings System, etc.
      *
+     * @param paymentAccepted Text value to set.
      */
     @Override
-    public void setPaymentAccepted(Text fPaymentAccepted) {
-        this.fPaymentAccepted = fPaymentAccepted;
+    public void setPaymentAccepted(Text paymentAccepted) {
+        this.paymentAccepted = paymentAccepted;
     }
 
-    private Text fCurrenciesAccepted;
+    private Text currenciesAccepted;
 
     /**
      * The currency accepted.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
@@ -156,19 +160,20 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getCurrenciesAccepted() {
-        return fCurrenciesAccepted;
+        return currenciesAccepted;
     }
 
     /**
      * The currency accepted.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
      *
+     * @param currenciesAccepted Text value to set.
      */
     @Override
-    public void setCurrenciesAccepted(Text fCurrenciesAccepted) {
-        this.fCurrenciesAccepted = fCurrenciesAccepted;
+    public void setCurrenciesAccepted(Text currenciesAccepted) {
+        this.currenciesAccepted = currenciesAccepted;
     }
 
-    private Object fOwnershipFundingInfo;
+    private Object ownershipFundingInfo;
 
     /**
      * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.
@@ -180,25 +185,59 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getOwnershipFundingInfo() {
-        return (T) fOwnershipFundingInfo;
+        return (T) ownershipFundingInfo;
     }
 
     /**
      * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.
      *
+     * @param ownershipFundingInfo URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
     @Override
-    public void setOwnershipFundingInfo(Object fOwnershipFundingInfo) {
-        if(!(fOwnershipFundingInfo instanceof URL) && !(fOwnershipFundingInfo instanceof AboutPage) && !(fOwnershipFundingInfo instanceof Text) && !(fOwnershipFundingInfo instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'ownershipFundingInfo': " + fOwnershipFundingInfo);
-        }
-        this.fOwnershipFundingInfo = fOwnershipFundingInfo;
+    public void setOwnershipFundingInfo(URL ownershipFundingInfo) {
+        this.ownershipFundingInfo = ownershipFundingInfo;
+    }
+    /**
+     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.
+     *
+     * @param ownershipFundingInfo AboutPage value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    @Override
+    public void setOwnershipFundingInfo(AboutPage ownershipFundingInfo) {
+        this.ownershipFundingInfo = ownershipFundingInfo;
+    }
+    /**
+     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.
+     *
+     * @param ownershipFundingInfo Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    @Override
+    public void setOwnershipFundingInfo(Text ownershipFundingInfo) {
+        this.ownershipFundingInfo = ownershipFundingInfo;
+    }
+    /**
+     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.
+     *
+     * @param ownershipFundingInfo CreativeWork value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    @Override
+    public void setOwnershipFundingInfo(CreativeWork ownershipFundingInfo) {
+        this.ownershipFundingInfo = ownershipFundingInfo;
     }
 
-    private EducationalOccupationalCredential fHasCredential;
+    private EducationalOccupationalCredential hasCredential;
 
     /**
      * A credential awarded to the Person or Organization.
@@ -209,21 +248,22 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public EducationalOccupationalCredential getHasCredential() {
-        return fHasCredential;
+        return hasCredential;
     }
 
     /**
      * A credential awarded to the Person or Organization.
      *
+     * @param hasCredential EducationalOccupationalCredential value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
     @Override
-    public void setHasCredential(EducationalOccupationalCredential fHasCredential) {
-        this.fHasCredential = fHasCredential;
+    public void setHasCredential(EducationalOccupationalCredential hasCredential) {
+        this.hasCredential = hasCredential;
     }
 
-    private Person fFounders;
+    private Person founders;
 
     /**
      * A person who founded this organization.
@@ -232,19 +272,20 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Person getFounders() {
-        return fFounders;
+        return founders;
     }
 
     /**
      * A person who founded this organization.
      *
+     * @param founders Person value to set.
      */
     @Override
-    public void setFounders(Person fFounders) {
-        this.fFounders = fFounders;
+    public void setFounders(Person founders) {
+        this.founders = founders;
     }
 
-    private Text fTelephone;
+    private Text telephone;
 
     /**
      * The telephone number.
@@ -253,19 +294,20 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getTelephone() {
-        return fTelephone;
+        return telephone;
     }
 
     /**
      * The telephone number.
      *
+     * @param telephone Text value to set.
      */
     @Override
-    public void setTelephone(Text fTelephone) {
-        this.fTelephone = fTelephone;
+    public void setTelephone(Text telephone) {
+        this.telephone = telephone;
     }
 
-    private Review fReview;
+    private Review review;
 
     /**
      * A review of the item.
@@ -274,19 +316,20 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Review getReview() {
-        return fReview;
+        return review;
     }
 
     /**
      * A review of the item.
      *
+     * @param review Review value to set.
      */
     @Override
-    public void setReview(Review fReview) {
-        this.fReview = fReview;
+    public void setReview(Review review) {
+        this.review = review;
     }
 
-    private Object fKnowsAbout;
+    private Object knowsAbout;
 
     /**
      * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
@@ -298,25 +341,47 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getKnowsAbout() {
-        return (T) fKnowsAbout;
+        return (T) knowsAbout;
     }
 
     /**
      * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
      *
+     * @param knowsAbout URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
      */
     @Override
-    public void setKnowsAbout(Object fKnowsAbout) {
-        if(!(fKnowsAbout instanceof URL) && !(fKnowsAbout instanceof Text) && !(fKnowsAbout instanceof Thing)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'knowsAbout': " + fKnowsAbout);
-        }
-        this.fKnowsAbout = fKnowsAbout;
+    public void setKnowsAbout(URL knowsAbout) {
+        this.knowsAbout = knowsAbout;
+    }
+    /**
+     * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
+     *
+     * @param knowsAbout Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     */
+    @Override
+    public void setKnowsAbout(Text knowsAbout) {
+        this.knowsAbout = knowsAbout;
+    }
+    /**
+     * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
+     *
+     * @param knowsAbout Thing value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     */
+    @Override
+    public void setKnowsAbout(Thing knowsAbout) {
+        this.knowsAbout = knowsAbout;
     }
 
-    private Text fAward;
+    private Text award;
 
     /**
      * An award won by or for this item.
@@ -325,19 +390,20 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getAward() {
-        return fAward;
+        return award;
     }
 
     /**
      * An award won by or for this item.
      *
+     * @param award Text value to set.
      */
     @Override
-    public void setAward(Text fAward) {
-        this.fAward = fAward;
+    public void setAward(Text award) {
+        this.award = award;
     }
 
-    private Object fMember;
+    private Object member;
 
     /**
      * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
@@ -346,22 +412,29 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getMember() {
-        return (T) fMember;
+        return (T) member;
     }
 
     /**
      * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
      *
+     * @param member Organization value to set.
      */
     @Override
-    public void setMember(Object fMember) {
-        if(!(fMember instanceof Organization) && !(fMember instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'member': " + fMember);
-        }
-        this.fMember = fMember;
+    public void setMember(Organization member) {
+        this.member = member;
+    }
+    /**
+     * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
+     *
+     * @param member Person value to set.
+     */
+    @Override
+    public void setMember(Person member) {
+        this.member = member;
     }
 
-    private Person fEmployee;
+    private Person employee;
 
     /**
      * Someone working for this organization.
@@ -370,19 +443,20 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Person getEmployee() {
-        return fEmployee;
+        return employee;
     }
 
     /**
      * Someone working for this organization.
      *
+     * @param employee Person value to set.
      */
     @Override
-    public void setEmployee(Person fEmployee) {
-        this.fEmployee = fEmployee;
+    public void setEmployee(Person employee) {
+        this.employee = employee;
     }
 
-    private Date fDissolutionDate;
+    private Date dissolutionDate;
 
     /**
      * The date that this organization was dissolved.
@@ -391,19 +465,20 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Date getDissolutionDate() {
-        return fDissolutionDate;
+        return dissolutionDate;
     }
 
     /**
      * The date that this organization was dissolved.
      *
+     * @param dissolutionDate Date value to set.
      */
     @Override
-    public void setDissolutionDate(Date fDissolutionDate) {
-        this.fDissolutionDate = fDissolutionDate;
+    public void setDissolutionDate(Date dissolutionDate) {
+        this.dissolutionDate = dissolutionDate;
     }
 
-    private Grant fFunding;
+    private Grant funding;
 
     /**
      * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
@@ -415,22 +490,23 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Grant getFunding() {
-        return fFunding;
+        return funding;
     }
 
     /**
      * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
      *
+     * @param funding Grant value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
     @Override
-    public void setFunding(Grant fFunding) {
-        this.fFunding = fFunding;
+    public void setFunding(Grant funding) {
+        this.funding = funding;
     }
 
-    private Text fVatID;
+    private Text vatID;
 
     /**
      * The Value-added Tax ID of the organization or person.
@@ -440,20 +516,21 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getVatID() {
-        return fVatID;
+        return vatID;
     }
 
     /**
      * The Value-added Tax ID of the organization or person.
      *
+     * @param vatID Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setVatID(Text fVatID) {
-        this.fVatID = fVatID;
+    public void setVatID(Text vatID) {
+        this.vatID = vatID;
     }
 
-    private Text fGlobalLocationNumber;
+    private Text globalLocationNumber;
 
     /**
      * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
@@ -463,20 +540,21 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getGlobalLocationNumber() {
-        return fGlobalLocationNumber;
+        return globalLocationNumber;
     }
 
     /**
      * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
      *
+     * @param globalLocationNumber Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setGlobalLocationNumber(Text fGlobalLocationNumber) {
-        this.fGlobalLocationNumber = fGlobalLocationNumber;
+    public void setGlobalLocationNumber(Text globalLocationNumber) {
+        this.globalLocationNumber = globalLocationNumber;
     }
 
-    private Object fKeywords;
+    private Object keywords;
 
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
@@ -485,22 +563,38 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getKeywords() {
-        return (T) fKeywords;
+        return (T) keywords;
     }
 
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
      *
+     * @param keywords DefinedTerm value to set.
      */
     @Override
-    public void setKeywords(Object fKeywords) {
-        if(!(fKeywords instanceof DefinedTerm) && !(fKeywords instanceof Text) && !(fKeywords instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'keywords': " + fKeywords);
-        }
-        this.fKeywords = fKeywords;
+    public void setKeywords(DefinedTerm keywords) {
+        this.keywords = keywords;
+    }
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     * @param keywords Text value to set.
+     */
+    @Override
+    public void setKeywords(Text keywords) {
+        this.keywords = keywords;
+    }
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     * @param keywords URL value to set.
+     */
+    @Override
+    public void setKeywords(URL keywords) {
+        this.keywords = keywords;
     }
 
-    private ContactPoint fContactPoints;
+    private ContactPoint contactPoints;
 
     /**
      * A contact point for a person or organization.
@@ -509,19 +603,20 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public ContactPoint getContactPoints() {
-        return fContactPoints;
+        return contactPoints;
     }
 
     /**
      * A contact point for a person or organization.
      *
+     * @param contactPoints ContactPoint value to set.
      */
     @Override
-    public void setContactPoints(ContactPoint fContactPoints) {
-        this.fContactPoints = fContactPoints;
+    public void setContactPoints(ContactPoint contactPoints) {
+        this.contactPoints = contactPoints;
     }
 
-    private Organization fSubOrganization;
+    private Organization subOrganization;
 
     /**
      * A relationship between two organizations where the first includes the second, e.g., as a subsidiary. See also: the more specific 'department' property.
@@ -530,19 +625,20 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Organization getSubOrganization() {
-        return fSubOrganization;
+        return subOrganization;
     }
 
     /**
      * A relationship between two organizations where the first includes the second, e.g., as a subsidiary. See also: the more specific 'department' property.
      *
+     * @param subOrganization Organization value to set.
      */
     @Override
-    public void setSubOrganization(Organization fSubOrganization) {
-        this.fSubOrganization = fSubOrganization;
+    public void setSubOrganization(Organization subOrganization) {
+        this.subOrganization = subOrganization;
     }
 
-    private Text fAwards;
+    private Text awards;
 
     /**
      * Awards won by or for this item.
@@ -551,19 +647,20 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getAwards() {
-        return fAwards;
+        return awards;
     }
 
     /**
      * Awards won by or for this item.
      *
+     * @param awards Text value to set.
      */
     @Override
-    public void setAwards(Text fAwards) {
-        this.fAwards = fAwards;
+    public void setAwards(Text awards) {
+        this.awards = awards;
     }
 
-    private QuantitativeValue fNumberOfEmployees;
+    private QuantitativeValue numberOfEmployees;
 
     /**
      * The number of employees in an organization e.g. business.
@@ -572,19 +669,20 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public QuantitativeValue getNumberOfEmployees() {
-        return fNumberOfEmployees;
+        return numberOfEmployees;
     }
 
     /**
      * The number of employees in an organization e.g. business.
      *
+     * @param numberOfEmployees QuantitativeValue value to set.
      */
     @Override
-    public void setNumberOfEmployees(QuantitativeValue fNumberOfEmployees) {
-        this.fNumberOfEmployees = fNumberOfEmployees;
+    public void setNumberOfEmployees(QuantitativeValue numberOfEmployees) {
+        this.numberOfEmployees = numberOfEmployees;
     }
 
-    private Object fFunder;
+    private Object funder;
 
     /**
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
@@ -593,22 +691,29 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getFunder() {
-        return (T) fFunder;
+        return (T) funder;
     }
 
     /**
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
+     * @param funder Organization value to set.
      */
     @Override
-    public void setFunder(Object fFunder) {
-        if(!(fFunder instanceof Organization) && !(fFunder instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'funder': " + fFunder);
-        }
-        this.fFunder = fFunder;
+    public void setFunder(Organization funder) {
+        this.funder = funder;
+    }
+    /**
+     * A person or organization that supports (sponsors) something through some kind of financial contribution.
+     *
+     * @param funder Person value to set.
+     */
+    @Override
+    public void setFunder(Person funder) {
+        this.funder = funder;
     }
 
-    private Offer fMakesOffer;
+    private Offer makesOffer;
 
     /**
      * A pointer to products or services offered by the organization or person.
@@ -618,20 +723,21 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Offer getMakesOffer() {
-        return fMakesOffer;
+        return makesOffer;
     }
 
     /**
      * A pointer to products or services offered by the organization or person.
      *
+     * @param makesOffer Offer value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setMakesOffer(Offer fMakesOffer) {
-        this.fMakesOffer = fMakesOffer;
+    public void setMakesOffer(Offer makesOffer) {
+        this.makesOffer = makesOffer;
     }
 
-    private Text fLegalName;
+    private Text legalName;
 
     /**
      * The official name of the organization, e.g. the registered company name.
@@ -641,20 +747,21 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getLegalName() {
-        return fLegalName;
+        return legalName;
     }
 
     /**
      * The official name of the organization, e.g. the registered company name.
      *
+     * @param legalName Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setLegalName(Text fLegalName) {
-        this.fLegalName = fLegalName;
+    public void setLegalName(Text legalName) {
+        this.legalName = legalName;
     }
 
-    private Object fCorrectionsPolicy;
+    private Object correctionsPolicy;
 
     /**
      * For an [[Organization]] (e.g. [[NewsMediaOrganization]]), a statement describing (in news media, the newsroom’s) disclosure and correction policy for errors.
@@ -666,25 +773,35 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getCorrectionsPolicy() {
-        return (T) fCorrectionsPolicy;
+        return (T) correctionsPolicy;
     }
 
     /**
      * For an [[Organization]] (e.g. [[NewsMediaOrganization]]), a statement describing (in news media, the newsroom’s) disclosure and correction policy for errors.
      *
+     * @param correctionsPolicy URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
     @Override
-    public void setCorrectionsPolicy(Object fCorrectionsPolicy) {
-        if(!(fCorrectionsPolicy instanceof URL) && !(fCorrectionsPolicy instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'correctionsPolicy': " + fCorrectionsPolicy);
-        }
-        this.fCorrectionsPolicy = fCorrectionsPolicy;
+    public void setCorrectionsPolicy(URL correctionsPolicy) {
+        this.correctionsPolicy = correctionsPolicy;
+    }
+    /**
+     * For an [[Organization]] (e.g. [[NewsMediaOrganization]]), a statement describing (in news media, the newsroom’s) disclosure and correction policy for errors.
+     *
+     * @param correctionsPolicy CreativeWork value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    @Override
+    public void setCorrectionsPolicy(CreativeWork correctionsPolicy) {
+        this.correctionsPolicy = correctionsPolicy;
     }
 
-    private AggregateRating fAggregateRating;
+    private AggregateRating aggregateRating;
 
     /**
      * The overall rating, based on a collection of reviews or ratings, of the item.
@@ -693,19 +810,20 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public AggregateRating getAggregateRating() {
-        return fAggregateRating;
+        return aggregateRating;
     }
 
     /**
      * The overall rating, based on a collection of reviews or ratings, of the item.
      *
+     * @param aggregateRating AggregateRating value to set.
      */
     @Override
-    public void setAggregateRating(AggregateRating fAggregateRating) {
-        this.fAggregateRating = fAggregateRating;
+    public void setAggregateRating(AggregateRating aggregateRating) {
+        this.aggregateRating = aggregateRating;
     }
 
-    private InteractionCounter fInteractionStatistic;
+    private InteractionCounter interactionStatistic;
 
     /**
      * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
@@ -715,20 +833,21 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public InteractionCounter getInteractionStatistic() {
-        return fInteractionStatistic;
+        return interactionStatistic;
     }
 
     /**
      * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
      *
+     * @param interactionStatistic InteractionCounter value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
      */
     @Override
-    public void setInteractionStatistic(InteractionCounter fInteractionStatistic) {
-        this.fInteractionStatistic = fInteractionStatistic;
+    public void setInteractionStatistic(InteractionCounter interactionStatistic) {
+        this.interactionStatistic = interactionStatistic;
     }
 
-    private Object fLocation;
+    private Object location;
 
     /**
      * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
@@ -737,22 +856,47 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getLocation() {
-        return (T) fLocation;
+        return (T) location;
     }
 
     /**
      * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
      *
+     * @param location PostalAddress value to set.
      */
     @Override
-    public void setLocation(Object fLocation) {
-        if(!(fLocation instanceof PostalAddress) && !(fLocation instanceof Text) && !(fLocation instanceof Place) && !(fLocation instanceof VirtualLocation)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'location': " + fLocation);
-        }
-        this.fLocation = fLocation;
+    public void setLocation(PostalAddress location) {
+        this.location = location;
+    }
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @param location Text value to set.
+     */
+    @Override
+    public void setLocation(Text location) {
+        this.location = location;
+    }
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @param location Place value to set.
+     */
+    @Override
+    public void setLocation(Place location) {
+        this.location = location;
+    }
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @param location VirtualLocation value to set.
+     */
+    @Override
+    public void setLocation(VirtualLocation location) {
+        this.location = location;
     }
 
-    private Object fAddress;
+    private Object address;
 
     /**
      * Physical address of the item.
@@ -761,22 +905,29 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getAddress() {
-        return (T) fAddress;
+        return (T) address;
     }
 
     /**
      * Physical address of the item.
      *
+     * @param address Text value to set.
      */
     @Override
-    public void setAddress(Object fAddress) {
-        if(!(fAddress instanceof Text) && !(fAddress instanceof PostalAddress)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'address': " + fAddress);
-        }
-        this.fAddress = fAddress;
+    public void setAddress(Text address) {
+        this.address = address;
+    }
+    /**
+     * Physical address of the item.
+     *
+     * @param address PostalAddress value to set.
+     */
+    @Override
+    public void setAddress(PostalAddress address) {
+        this.address = address;
     }
 
-    private Object fMemberOf;
+    private Object memberOf;
 
     /**
      * An Organization (or ProgramMembership) to which this Person or Organization belongs.
@@ -785,22 +936,29 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getMemberOf() {
-        return (T) fMemberOf;
+        return (T) memberOf;
     }
 
     /**
      * An Organization (or ProgramMembership) to which this Person or Organization belongs.
      *
+     * @param memberOf ProgramMembership value to set.
      */
     @Override
-    public void setMemberOf(Object fMemberOf) {
-        if(!(fMemberOf instanceof ProgramMembership) && !(fMemberOf instanceof Organization)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'memberOf': " + fMemberOf);
-        }
-        this.fMemberOf = fMemberOf;
+    public void setMemberOf(ProgramMembership memberOf) {
+        this.memberOf = memberOf;
+    }
+    /**
+     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
+     *
+     * @param memberOf Organization value to set.
+     */
+    @Override
+    public void setMemberOf(Organization memberOf) {
+        this.memberOf = memberOf;
     }
 
-    private Object fPublishingPrinciples;
+    private Object publishingPrinciples;
 
     /**
      * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
@@ -811,7 +969,7 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getPublishingPrinciples() {
-        return (T) fPublishingPrinciples;
+        return (T) publishingPrinciples;
     }
 
     /**
@@ -819,16 +977,25 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      * 
      * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
      *
+     * @param publishingPrinciples URL value to set.
      */
     @Override
-    public void setPublishingPrinciples(Object fPublishingPrinciples) {
-        if(!(fPublishingPrinciples instanceof URL) && !(fPublishingPrinciples instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'publishingPrinciples': " + fPublishingPrinciples);
-        }
-        this.fPublishingPrinciples = fPublishingPrinciples;
+    public void setPublishingPrinciples(URL publishingPrinciples) {
+        this.publishingPrinciples = publishingPrinciples;
+    }
+    /**
+     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * 
+     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+     *
+     * @param publishingPrinciples CreativeWork value to set.
+     */
+    @Override
+    public void setPublishingPrinciples(CreativeWork publishingPrinciples) {
+        this.publishingPrinciples = publishingPrinciples;
     }
 
-    private Object fDiversityStaffingReport;
+    private Object diversityStaffingReport;
 
     /**
      * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.
@@ -840,25 +1007,35 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getDiversityStaffingReport() {
-        return (T) fDiversityStaffingReport;
+        return (T) diversityStaffingReport;
     }
 
     /**
      * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.
      *
+     * @param diversityStaffingReport URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
     @Override
-    public void setDiversityStaffingReport(Object fDiversityStaffingReport) {
-        if(!(fDiversityStaffingReport instanceof URL) && !(fDiversityStaffingReport instanceof Article)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'diversityStaffingReport': " + fDiversityStaffingReport);
-        }
-        this.fDiversityStaffingReport = fDiversityStaffingReport;
+    public void setDiversityStaffingReport(URL diversityStaffingReport) {
+        this.diversityStaffingReport = diversityStaffingReport;
+    }
+    /**
+     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.
+     *
+     * @param diversityStaffingReport Article value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    @Override
+    public void setDiversityStaffingReport(Article diversityStaffingReport) {
+        this.diversityStaffingReport = diversityStaffingReport;
     }
 
-    private Object fDiversityPolicy;
+    private Object diversityPolicy;
 
     /**
      * Statement on diversity policy by an [[Organization]] e.g. a [[NewsMediaOrganization]]. For a [[NewsMediaOrganization]], a statement describing the newsroom’s diversity policy on both staffing and sources, typically providing staffing data.
@@ -870,25 +1047,35 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getDiversityPolicy() {
-        return (T) fDiversityPolicy;
+        return (T) diversityPolicy;
     }
 
     /**
      * Statement on diversity policy by an [[Organization]] e.g. a [[NewsMediaOrganization]]. For a [[NewsMediaOrganization]], a statement describing the newsroom’s diversity policy on both staffing and sources, typically providing staffing data.
      *
+     * @param diversityPolicy CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
     @Override
-    public void setDiversityPolicy(Object fDiversityPolicy) {
-        if(!(fDiversityPolicy instanceof CreativeWork) && !(fDiversityPolicy instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'diversityPolicy': " + fDiversityPolicy);
-        }
-        this.fDiversityPolicy = fDiversityPolicy;
+    public void setDiversityPolicy(CreativeWork diversityPolicy) {
+        this.diversityPolicy = diversityPolicy;
+    }
+    /**
+     * Statement on diversity policy by an [[Organization]] e.g. a [[NewsMediaOrganization]]. For a [[NewsMediaOrganization]], a statement describing the newsroom’s diversity policy on both staffing and sources, typically providing staffing data.
+     *
+     * @param diversityPolicy URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    @Override
+    public void setDiversityPolicy(URL diversityPolicy) {
+        this.diversityPolicy = diversityPolicy;
     }
 
-    private Text fEmail;
+    private Text email;
 
     /**
      * Email address.
@@ -897,19 +1084,20 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getEmail() {
-        return fEmail;
+        return email;
     }
 
     /**
      * Email address.
      *
+     * @param email Text value to set.
      */
     @Override
-    public void setEmail(Text fEmail) {
-        this.fEmail = fEmail;
+    public void setEmail(Text email) {
+        this.email = email;
     }
 
-    private Person fEmployees;
+    private Person employees;
 
     /**
      * People working for this organization.
@@ -918,19 +1106,20 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Person getEmployees() {
-        return fEmployees;
+        return employees;
     }
 
     /**
      * People working for this organization.
      *
+     * @param employees Person value to set.
      */
     @Override
-    public void setEmployees(Person fEmployees) {
-        this.fEmployees = fEmployees;
+    public void setEmployees(Person employees) {
+        this.employees = employees;
     }
 
-    private NonprofitType fNonprofitStatus;
+    private NonprofitType nonprofitStatus;
 
     /**
      * nonprofit Status indicates the legal status of a non-profit organization in its primary place of business.
@@ -941,21 +1130,22 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public NonprofitType getNonprofitStatus() {
-        return fNonprofitStatus;
+        return nonprofitStatus;
     }
 
     /**
      * nonprofit Status indicates the legal status of a non-profit organization in its primary place of business.
      *
+     * @param nonprofitStatus NonprofitType value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2543">https://github.com/schemaorg/schemaorg/issues/2543</a>
      */
     @Override
-    public void setNonprofitStatus(NonprofitType fNonprofitStatus) {
-        this.fNonprofitStatus = fNonprofitStatus;
+    public void setNonprofitStatus(NonprofitType nonprofitStatus) {
+        this.nonprofitStatus = nonprofitStatus;
     }
 
-    private Text fSlogan;
+    private Text slogan;
 
     /**
      * A slogan or motto associated with the item.
@@ -964,19 +1154,20 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getSlogan() {
-        return fSlogan;
+        return slogan;
     }
 
     /**
      * A slogan or motto associated with the item.
      *
+     * @param slogan Text value to set.
      */
     @Override
-    public void setSlogan(Text fSlogan) {
-        this.fSlogan = fSlogan;
+    public void setSlogan(Text slogan) {
+        this.slogan = slogan;
     }
 
-    private Object fEthicsPolicy;
+    private Object ethicsPolicy;
 
     /**
      * Statement about ethics policy, e.g. of a [[NewsMediaOrganization]] regarding journalistic and publishing practices, or of a [[Restaurant]], a page describing food source policies. In the case of a [[NewsMediaOrganization]], an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization.
@@ -987,24 +1178,33 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getEthicsPolicy() {
-        return (T) fEthicsPolicy;
+        return (T) ethicsPolicy;
     }
 
     /**
      * Statement about ethics policy, e.g. of a [[NewsMediaOrganization]] regarding journalistic and publishing practices, or of a [[Restaurant]], a page describing food source policies. In the case of a [[NewsMediaOrganization]], an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization.
      *
+     * @param ethicsPolicy URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      */
     @Override
-    public void setEthicsPolicy(Object fEthicsPolicy) {
-        if(!(fEthicsPolicy instanceof URL) && !(fEthicsPolicy instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'ethicsPolicy': " + fEthicsPolicy);
-        }
-        this.fEthicsPolicy = fEthicsPolicy;
+    public void setEthicsPolicy(URL ethicsPolicy) {
+        this.ethicsPolicy = ethicsPolicy;
+    }
+    /**
+     * Statement about ethics policy, e.g. of a [[NewsMediaOrganization]] regarding journalistic and publishing practices, or of a [[Restaurant]], a page describing food source policies. In the case of a [[NewsMediaOrganization]], an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization.
+     *
+     * @param ethicsPolicy CreativeWork value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     */
+    @Override
+    public void setEthicsPolicy(CreativeWork ethicsPolicy) {
+        this.ethicsPolicy = ethicsPolicy;
     }
 
-    private Object fBrand;
+    private Object brand;
 
     /**
      * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
@@ -1013,22 +1213,29 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getBrand() {
-        return (T) fBrand;
+        return (T) brand;
     }
 
     /**
      * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
      *
+     * @param brand Organization value to set.
      */
     @Override
-    public void setBrand(Object fBrand) {
-        if(!(fBrand instanceof Organization) && !(fBrand instanceof Brand)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'brand': " + fBrand);
-        }
-        this.fBrand = fBrand;
+    public void setBrand(Organization brand) {
+        this.brand = brand;
+    }
+    /**
+     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     *
+     * @param brand Brand value to set.
+     */
+    @Override
+    public void setBrand(Brand brand) {
+        this.brand = brand;
     }
 
-    private Object fSponsor;
+    private Object sponsor;
 
     /**
      * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
@@ -1037,22 +1244,29 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getSponsor() {
-        return (T) fSponsor;
+        return (T) sponsor;
     }
 
     /**
      * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
      *
+     * @param sponsor Organization value to set.
      */
     @Override
-    public void setSponsor(Object fSponsor) {
-        if(!(fSponsor instanceof Organization) && !(fSponsor instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'sponsor': " + fSponsor);
-        }
-        this.fSponsor = fSponsor;
+    public void setSponsor(Organization sponsor) {
+        this.sponsor = sponsor;
+    }
+    /**
+     * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
+     *
+     * @param sponsor Person value to set.
+     */
+    @Override
+    public void setSponsor(Person sponsor) {
+        this.sponsor = sponsor;
     }
 
-    private Object fLogo;
+    private Object logo;
 
     /**
      * An associated logo.
@@ -1062,23 +1276,31 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getLogo() {
-        return (T) fLogo;
+        return (T) logo;
     }
 
     /**
      * An associated logo.
      *
+     * @param logo URL value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setLogo(Object fLogo) {
-        if(!(fLogo instanceof URL) && !(fLogo instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'logo': " + fLogo);
-        }
-        this.fLogo = fLogo;
+    public void setLogo(URL logo) {
+        this.logo = logo;
+    }
+    /**
+     * An associated logo.
+     *
+     * @param logo ImageObject value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setLogo(ImageObject logo) {
+        this.logo = logo;
     }
 
-    private Object fActionableFeedbackPolicy;
+    private Object actionableFeedbackPolicy;
 
     /**
      * For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement about public engagement activities (for news media, the newsroom’s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.
@@ -1090,25 +1312,35 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getActionableFeedbackPolicy() {
-        return (T) fActionableFeedbackPolicy;
+        return (T) actionableFeedbackPolicy;
     }
 
     /**
      * For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement about public engagement activities (for news media, the newsroom’s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.
      *
+     * @param actionableFeedbackPolicy URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      */
     @Override
-    public void setActionableFeedbackPolicy(Object fActionableFeedbackPolicy) {
-        if(!(fActionableFeedbackPolicy instanceof URL) && !(fActionableFeedbackPolicy instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'actionableFeedbackPolicy': " + fActionableFeedbackPolicy);
-        }
-        this.fActionableFeedbackPolicy = fActionableFeedbackPolicy;
+    public void setActionableFeedbackPolicy(URL actionableFeedbackPolicy) {
+        this.actionableFeedbackPolicy = actionableFeedbackPolicy;
+    }
+    /**
+     * For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement about public engagement activities (for news media, the newsroom’s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.
+     *
+     * @param actionableFeedbackPolicy CreativeWork value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     */
+    @Override
+    public void setActionableFeedbackPolicy(CreativeWork actionableFeedbackPolicy) {
+        this.actionableFeedbackPolicy = actionableFeedbackPolicy;
     }
 
-    private Text fNaics;
+    private Text naics;
 
     /**
      * The North American Industry Classification System (NAICS) code for a particular organization or business person.
@@ -1118,20 +1350,21 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getNaics() {
-        return fNaics;
+        return naics;
     }
 
     /**
      * The North American Industry Classification System (NAICS) code for a particular organization or business person.
      *
+     * @param naics Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setNaics(Text fNaics) {
-        this.fNaics = fNaics;
+    public void setNaics(Text naics) {
+        this.naics = naics;
     }
 
-    private ContactPoint fContactPoint;
+    private ContactPoint contactPoint;
 
     /**
      * A contact point for a person or organization.
@@ -1140,19 +1373,20 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public ContactPoint getContactPoint() {
-        return fContactPoint;
+        return contactPoint;
     }
 
     /**
      * A contact point for a person or organization.
      *
+     * @param contactPoint ContactPoint value to set.
      */
     @Override
-    public void setContactPoint(ContactPoint fContactPoint) {
-        this.fContactPoint = fContactPoint;
+    public void setContactPoint(ContactPoint contactPoint) {
+        this.contactPoint = contactPoint;
     }
 
-    private Object fServiceArea;
+    private Object serviceArea;
 
     /**
      * The geographic area where the service is provided.
@@ -1161,22 +1395,38 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getServiceArea() {
-        return (T) fServiceArea;
+        return (T) serviceArea;
     }
 
     /**
      * The geographic area where the service is provided.
      *
+     * @param serviceArea GeoShape value to set.
      */
     @Override
-    public void setServiceArea(Object fServiceArea) {
-        if(!(fServiceArea instanceof GeoShape) && !(fServiceArea instanceof AdministrativeArea) && !(fServiceArea instanceof Place)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'serviceArea': " + fServiceArea);
-        }
-        this.fServiceArea = fServiceArea;
+    public void setServiceArea(GeoShape serviceArea) {
+        this.serviceArea = serviceArea;
+    }
+    /**
+     * The geographic area where the service is provided.
+     *
+     * @param serviceArea AdministrativeArea value to set.
+     */
+    @Override
+    public void setServiceArea(AdministrativeArea serviceArea) {
+        this.serviceArea = serviceArea;
+    }
+    /**
+     * The geographic area where the service is provided.
+     *
+     * @param serviceArea Place value to set.
+     */
+    @Override
+    public void setServiceArea(Place serviceArea) {
+        this.serviceArea = serviceArea;
     }
 
-    private Text fIsicV4;
+    private Text isicV4;
 
     /**
      * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
@@ -1186,20 +1436,21 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getIsicV4() {
-        return fIsicV4;
+        return isicV4;
     }
 
     /**
      * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
      *
+     * @param isicV4 Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setIsicV4(Text fIsicV4) {
-        this.fIsicV4 = fIsicV4;
+    public void setIsicV4(Text isicV4) {
+        this.isicV4 = isicV4;
     }
 
-    private MerchantReturnPolicy fHasMerchantReturnPolicy;
+    private MerchantReturnPolicy hasMerchantReturnPolicy;
 
     /**
      * Specifies a MerchantReturnPolicy that may be applicable.
@@ -1210,21 +1461,22 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public MerchantReturnPolicy getHasMerchantReturnPolicy() {
-        return fHasMerchantReturnPolicy;
+        return hasMerchantReturnPolicy;
     }
 
     /**
      * Specifies a MerchantReturnPolicy that may be applicable.
      *
+     * @param hasMerchantReturnPolicy MerchantReturnPolicy value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
      */
     @Override
-    public void setHasMerchantReturnPolicy(MerchantReturnPolicy fHasMerchantReturnPolicy) {
-        this.fHasMerchantReturnPolicy = fHasMerchantReturnPolicy;
+    public void setHasMerchantReturnPolicy(MerchantReturnPolicy hasMerchantReturnPolicy) {
+        this.hasMerchantReturnPolicy = hasMerchantReturnPolicy;
     }
 
-    private Place fHasPOS;
+    private Place hasPOS;
 
     /**
      * Points-of-Sales operated by the organization or person.
@@ -1234,20 +1486,21 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Place getHasPOS() {
-        return fHasPOS;
+        return hasPOS;
     }
 
     /**
      * Points-of-Sales operated by the organization or person.
      *
+     * @param hasPOS Place value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setHasPOS(Place fHasPOS) {
-        this.fHasPOS = fHasPOS;
+    public void setHasPOS(Place hasPOS) {
+        this.hasPOS = hasPOS;
     }
 
-    private Person fFounder;
+    private Person founder;
 
     /**
      * A person who founded this organization.
@@ -1256,19 +1509,20 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Person getFounder() {
-        return fFounder;
+        return founder;
     }
 
     /**
      * A person who founded this organization.
      *
+     * @param founder Person value to set.
      */
     @Override
-    public void setFounder(Person fFounder) {
-        this.fFounder = fFounder;
+    public void setFounder(Person founder) {
+        this.founder = founder;
     }
 
-    private Object fUnnamedSourcesPolicy;
+    private Object unnamedSourcesPolicy;
 
     /**
      * For an [[Organization]] (typically a [[NewsMediaOrganization]]), a statement about policy on use of unnamed sources and the decision process required.
@@ -1280,25 +1534,35 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getUnnamedSourcesPolicy() {
-        return (T) fUnnamedSourcesPolicy;
+        return (T) unnamedSourcesPolicy;
     }
 
     /**
      * For an [[Organization]] (typically a [[NewsMediaOrganization]]), a statement about policy on use of unnamed sources and the decision process required.
      *
+     * @param unnamedSourcesPolicy CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      */
     @Override
-    public void setUnnamedSourcesPolicy(Object fUnnamedSourcesPolicy) {
-        if(!(fUnnamedSourcesPolicy instanceof CreativeWork) && !(fUnnamedSourcesPolicy instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'unnamedSourcesPolicy': " + fUnnamedSourcesPolicy);
-        }
-        this.fUnnamedSourcesPolicy = fUnnamedSourcesPolicy;
+    public void setUnnamedSourcesPolicy(CreativeWork unnamedSourcesPolicy) {
+        this.unnamedSourcesPolicy = unnamedSourcesPolicy;
+    }
+    /**
+     * For an [[Organization]] (typically a [[NewsMediaOrganization]]), a statement about policy on use of unnamed sources and the decision process required.
+     *
+     * @param unnamedSourcesPolicy URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     */
+    @Override
+    public void setUnnamedSourcesPolicy(URL unnamedSourcesPolicy) {
+        this.unnamedSourcesPolicy = unnamedSourcesPolicy;
     }
 
-    private Place fFoundingLocation;
+    private Place foundingLocation;
 
     /**
      * The place where the Organization was founded.
@@ -1307,19 +1571,20 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Place getFoundingLocation() {
-        return fFoundingLocation;
+        return foundingLocation;
     }
 
     /**
      * The place where the Organization was founded.
      *
+     * @param foundingLocation Place value to set.
      */
     @Override
-    public void setFoundingLocation(Place fFoundingLocation) {
-        this.fFoundingLocation = fFoundingLocation;
+    public void setFoundingLocation(Place foundingLocation) {
+        this.foundingLocation = foundingLocation;
     }
 
-    private Text fDuns;
+    private Text duns;
 
     /**
      * The Dun & Bradstreet DUNS number for identifying an organization or business person.
@@ -1329,20 +1594,21 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getDuns() {
-        return fDuns;
+        return duns;
     }
 
     /**
      * The Dun & Bradstreet DUNS number for identifying an organization or business person.
      *
+     * @param duns Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setDuns(Text fDuns) {
-        this.fDuns = fDuns;
+    public void setDuns(Text duns) {
+        this.duns = duns;
     }
 
-    private Organization fParentOrganization;
+    private Organization parentOrganization;
 
     /**
      * The larger organization that this organization is a [[subOrganization]] of, if any.
@@ -1351,19 +1617,20 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Organization getParentOrganization() {
-        return fParentOrganization;
+        return parentOrganization;
     }
 
     /**
      * The larger organization that this organization is a [[subOrganization]] of, if any.
      *
+     * @param parentOrganization Organization value to set.
      */
     @Override
-    public void setParentOrganization(Organization fParentOrganization) {
-        this.fParentOrganization = fParentOrganization;
+    public void setParentOrganization(Organization parentOrganization) {
+        this.parentOrganization = parentOrganization;
     }
 
-    private Person fAlumni;
+    private Person alumni;
 
     /**
      * Alumni of an organization.
@@ -1372,19 +1639,20 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Person getAlumni() {
-        return fAlumni;
+        return alumni;
     }
 
     /**
      * Alumni of an organization.
      *
+     * @param alumni Person value to set.
      */
     @Override
-    public void setAlumni(Person fAlumni) {
-        this.fAlumni = fAlumni;
+    public void setAlumni(Person alumni) {
+        this.alumni = alumni;
     }
 
-    private Text fLeiCode;
+    private Text leiCode;
 
     /**
      * An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.
@@ -1395,21 +1663,22 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getLeiCode() {
-        return fLeiCode;
+        return leiCode;
     }
 
     /**
      * An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.
      *
+     * @param leiCode Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#GLEIF">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#GLEIF</a>
      */
     @Override
-    public void setLeiCode(Text fLeiCode) {
-        this.fLeiCode = fLeiCode;
+    public void setLeiCode(Text leiCode) {
+        this.leiCode = leiCode;
     }
 
-    private Object fAreaServed;
+    private Object areaServed;
 
     /**
      * The geographic area where a service or offered item is provided.
@@ -1418,22 +1687,47 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getAreaServed() {
-        return (T) fAreaServed;
+        return (T) areaServed;
     }
 
     /**
      * The geographic area where a service or offered item is provided.
      *
+     * @param areaServed AdministrativeArea value to set.
      */
     @Override
-    public void setAreaServed(Object fAreaServed) {
-        if(!(fAreaServed instanceof AdministrativeArea) && !(fAreaServed instanceof GeoShape) && !(fAreaServed instanceof Text) && !(fAreaServed instanceof Place)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'areaServed': " + fAreaServed);
-        }
-        this.fAreaServed = fAreaServed;
+    public void setAreaServed(AdministrativeArea areaServed) {
+        this.areaServed = areaServed;
+    }
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @param areaServed GeoShape value to set.
+     */
+    @Override
+    public void setAreaServed(GeoShape areaServed) {
+        this.areaServed = areaServed;
+    }
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @param areaServed Text value to set.
+     */
+    @Override
+    public void setAreaServed(Text areaServed) {
+        this.areaServed = areaServed;
+    }
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @param areaServed Place value to set.
+     */
+    @Override
+    public void setAreaServed(Place areaServed) {
+        this.areaServed = areaServed;
     }
 
-    private Date fFoundingDate;
+    private Date foundingDate;
 
     /**
      * The date that this organization was founded.
@@ -1442,19 +1736,20 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Date getFoundingDate() {
-        return fFoundingDate;
+        return foundingDate;
     }
 
     /**
      * The date that this organization was founded.
      *
+     * @param foundingDate Date value to set.
      */
     @Override
-    public void setFoundingDate(Date fFoundingDate) {
-        this.fFoundingDate = fFoundingDate;
+    public void setFoundingDate(Date foundingDate) {
+        this.foundingDate = foundingDate;
     }
 
-    private Object fKnowsLanguage;
+    private Object knowsLanguage;
 
     /**
      * Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).
@@ -1466,25 +1761,35 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getKnowsLanguage() {
-        return (T) fKnowsLanguage;
+        return (T) knowsLanguage;
     }
 
     /**
      * Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).
      *
+     * @param knowsLanguage Language value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
     @Override
-    public void setKnowsLanguage(Object fKnowsLanguage) {
-        if(!(fKnowsLanguage instanceof Language) && !(fKnowsLanguage instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'knowsLanguage': " + fKnowsLanguage);
-        }
-        this.fKnowsLanguage = fKnowsLanguage;
+    public void setKnowsLanguage(Language knowsLanguage) {
+        this.knowsLanguage = knowsLanguage;
+    }
+    /**
+     * Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).
+     *
+     * @param knowsLanguage Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    @Override
+    public void setKnowsLanguage(Text knowsLanguage) {
+        this.knowsLanguage = knowsLanguage;
     }
 
-    private Review fReviews;
+    private Review reviews;
 
     /**
      * Review of the item.
@@ -1493,19 +1798,20 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Review getReviews() {
-        return fReviews;
+        return reviews;
     }
 
     /**
      * Review of the item.
      *
+     * @param reviews Review value to set.
      */
     @Override
-    public void setReviews(Review fReviews) {
-        this.fReviews = fReviews;
+    public void setReviews(Review reviews) {
+        this.reviews = reviews;
     }
 
-    private Demand fSeeks;
+    private Demand seeks;
 
     /**
      * A pointer to products or services sought by the organization or person (demand).
@@ -1515,20 +1821,21 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Demand getSeeks() {
-        return fSeeks;
+        return seeks;
     }
 
     /**
      * A pointer to products or services sought by the organization or person (demand).
      *
+     * @param seeks Demand value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setSeeks(Demand fSeeks) {
-        this.fSeeks = fSeeks;
+    public void setSeeks(Demand seeks) {
+        this.seeks = seeks;
     }
 
-    private Text fTaxID;
+    private Text taxID;
 
     /**
      * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
@@ -1538,20 +1845,21 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getTaxID() {
-        return fTaxID;
+        return taxID;
     }
 
     /**
      * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
      *
+     * @param taxID Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setTaxID(Text fTaxID) {
-        this.fTaxID = fTaxID;
+    public void setTaxID(Text taxID) {
+        this.taxID = taxID;
     }
 
-    private Object fOwns;
+    private Object owns;
 
     /**
      * Products owned by the organization or person.
@@ -1561,23 +1869,31 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getOwns() {
-        return (T) fOwns;
+        return (T) owns;
     }
 
     /**
      * Products owned by the organization or person.
      *
+     * @param owns Product value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setOwns(Object fOwns) {
-        if(!(fOwns instanceof Product) && !(fOwns instanceof OwnershipInfo)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'owns': " + fOwns);
-        }
-        this.fOwns = fOwns;
+    public void setOwns(Product owns) {
+        this.owns = owns;
+    }
+    /**
+     * Products owned by the organization or person.
+     *
+     * @param owns OwnershipInfo value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setOwns(OwnershipInfo owns) {
+        this.owns = owns;
     }
 
-    private OfferCatalog fHasOfferCatalog;
+    private OfferCatalog hasOfferCatalog;
 
     /**
      * Indicates an OfferCatalog listing for this Organization, Person, or Service.
@@ -1586,19 +1902,20 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public OfferCatalog getHasOfferCatalog() {
-        return fHasOfferCatalog;
+        return hasOfferCatalog;
     }
 
     /**
      * Indicates an OfferCatalog listing for this Organization, Person, or Service.
      *
+     * @param hasOfferCatalog OfferCatalog value to set.
      */
     @Override
-    public void setHasOfferCatalog(OfferCatalog fHasOfferCatalog) {
-        this.fHasOfferCatalog = fHasOfferCatalog;
+    public void setHasOfferCatalog(OfferCatalog hasOfferCatalog) {
+        this.hasOfferCatalog = hasOfferCatalog;
     }
 
-    private Object fMembers;
+    private Object members;
 
     /**
      * A member of this organization.
@@ -1607,22 +1924,29 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getMembers() {
-        return (T) fMembers;
+        return (T) members;
     }
 
     /**
      * A member of this organization.
      *
+     * @param members Person value to set.
      */
     @Override
-    public void setMembers(Object fMembers) {
-        if(!(fMembers instanceof Person) && !(fMembers instanceof Organization)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'members': " + fMembers);
-        }
-        this.fMembers = fMembers;
+    public void setMembers(Person members) {
+        this.members = members;
+    }
+    /**
+     * A member of this organization.
+     *
+     * @param members Organization value to set.
+     */
+    @Override
+    public void setMembers(Organization members) {
+        this.members = members;
     }
 
-    private Event fEvents;
+    private Event events;
 
     /**
      * Upcoming or past events associated with this place or organization.
@@ -1631,19 +1955,20 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Event getEvents() {
-        return fEvents;
+        return events;
     }
 
     /**
      * Upcoming or past events associated with this place or organization.
      *
+     * @param events Event value to set.
      */
     @Override
-    public void setEvents(Event fEvents) {
-        this.fEvents = fEvents;
+    public void setEvents(Event events) {
+        this.events = events;
     }
 
-    private Text fIso6523Code;
+    private Text iso6523Code;
 
     /**
      * An organization identifier as defined in ISO 6523(-1). Note that many existing organization identifiers such as [leiCode](https://schema.org/leiCode), [duns](https://schema.org/duns) and [vatID](https://schema.org/vatID) can be expressed as an ISO 6523 identifier by setting the ICD part of the ISO 6523 identifier accordingly. 
@@ -1654,21 +1979,22 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getIso6523Code() {
-        return fIso6523Code;
+        return iso6523Code;
     }
 
     /**
      * An organization identifier as defined in ISO 6523(-1). Note that many existing organization identifiers such as [leiCode](https://schema.org/leiCode), [duns](https://schema.org/duns) and [vatID](https://schema.org/vatID) can be expressed as an ISO 6523 identifier by setting the ICD part of the ISO 6523 identifier accordingly. 
      *
+     * @param iso6523Code Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2915">https://github.com/schemaorg/schemaorg/issues/2915</a>
      */
     @Override
-    public void setIso6523Code(Text fIso6523Code) {
-        this.fIso6523Code = fIso6523Code;
+    public void setIso6523Code(Text iso6523Code) {
+        this.iso6523Code = iso6523Code;
     }
 
-    private Organization fDepartment;
+    private Organization department;
 
     /**
      * A relationship between an organization and a department of that organization, also described as an organization (allowing different urls, logos, opening hours). For example: a store with a pharmacy, or a bakery with a cafe.
@@ -1677,19 +2003,20 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Organization getDepartment() {
-        return fDepartment;
+        return department;
     }
 
     /**
      * A relationship between an organization and a department of that organization, also described as an organization (allowing different urls, logos, opening hours). For example: a store with a pharmacy, or a bakery with a cafe.
      *
+     * @param department Organization value to set.
      */
     @Override
-    public void setDepartment(Organization fDepartment) {
-        this.fDepartment = fDepartment;
+    public void setDepartment(Organization department) {
+        this.department = department;
     }
 
-    private Text fFaxNumber;
+    private Text faxNumber;
 
     /**
      * The fax number.
@@ -1698,19 +2025,20 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getFaxNumber() {
-        return fFaxNumber;
+        return faxNumber;
     }
 
     /**
      * The fax number.
      *
+     * @param faxNumber Text value to set.
      */
     @Override
-    public void setFaxNumber(Text fFaxNumber) {
-        this.fFaxNumber = fFaxNumber;
+    public void setFaxNumber(Text faxNumber) {
+        this.faxNumber = faxNumber;
     }
 
-    private Event fEvent;
+    private Event event;
 
     /**
      * Upcoming or past event associated with this place, organization, or action.
@@ -1719,19 +2047,20 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Event getEvent() {
-        return fEvent;
+        return event;
     }
 
     /**
      * Upcoming or past event associated with this place, organization, or action.
      *
+     * @param event Event value to set.
      */
     @Override
-    public void setEvent(Event fEvent) {
-        this.fEvent = fEvent;
+    public void setEvent(Event event) {
+        this.event = event;
     }
 
-    private Object fMainEntityOfPage;
+    private Object mainEntityOfPage;
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -1740,22 +2069,29 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
+        return (T) mainEntityOfPage;
     }
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
+     * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
-        }
-        this.fMainEntityOfPage = fMainEntityOfPage;
+    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param mainEntityOfPage URL value to set.
+     */
+    @Override
+    public void setMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
     }
 
-    private Text fAlternateName;
+    private Text alternateName;
 
     /**
      * An alias for the item.
@@ -1764,19 +2100,20 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getAlternateName() {
-        return fAlternateName;
+        return alternateName;
     }
 
     /**
      * An alias for the item.
      *
+     * @param alternateName Text value to set.
      */
     @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
+    public void setAlternateName(Text alternateName) {
+        this.alternateName = alternateName;
     }
 
-    private Text fName;
+    private Text name;
 
     /**
      * The name of the item.
@@ -1785,19 +2122,20 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getName() {
-        return fName;
+        return name;
     }
 
     /**
      * The name of the item.
      *
+     * @param name Text value to set.
      */
     @Override
-    public void setName(Text fName) {
-        this.fName = fName;
+    public void setName(Text name) {
+        this.name = name;
     }
 
-    private Action fPotentialAction;
+    private Action potentialAction;
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -1806,19 +2144,20 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Action getPotentialAction() {
-        return fPotentialAction;
+        return potentialAction;
     }
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      *
+     * @param potentialAction Action value to set.
      */
     @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
+    public void setPotentialAction(Action potentialAction) {
+        this.potentialAction = potentialAction;
     }
 
-    private Object fImage;
+    private Object image;
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -1827,22 +2166,29 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getImage() {
-        return (T) fImage;
+        return (T) image;
     }
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
+     * @param image URL value to set.
      */
     @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
-        this.fImage = fImage;
+    public void setImage(URL image) {
+        this.image = image;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image ImageObject value to set.
+     */
+    @Override
+    public void setImage(ImageObject image) {
+        this.image = image;
     }
 
-    private URL fUrl;
+    private URL url;
 
     /**
      * URL of the item.
@@ -1851,19 +2197,20 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public URL getUrl() {
-        return fUrl;
+        return url;
     }
 
     /**
      * URL of the item.
      *
+     * @param url URL value to set.
      */
     @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
+    public void setUrl(URL url) {
+        this.url = url;
     }
 
-    private Text fDescription;
+    private Text description;
 
     /**
      * A description of the item.
@@ -1872,19 +2219,20 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getDescription() {
-        return fDescription;
+        return description;
     }
 
     /**
      * A description of the item.
      *
+     * @param description Text value to set.
      */
     @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
+    public void setDescription(Text description) {
+        this.description = description;
     }
 
-    private Object fSubjectOf;
+    private Object subjectOf;
 
     /**
      * A CreativeWork or Event about this Thing.
@@ -1894,23 +2242,31 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getSubjectOf() {
-        return (T) fSubjectOf;
+        return (T) subjectOf;
     }
 
     /**
      * A CreativeWork or Event about this Thing.
      *
+     * @param subjectOf Event value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Object fSubjectOf) {
-        if(!(fSubjectOf instanceof Event) && !(fSubjectOf instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'subjectOf': " + fSubjectOf);
-        }
-        this.fSubjectOf = fSubjectOf;
+    public void setSubjectOf(Event subjectOf) {
+        this.subjectOf = subjectOf;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @param subjectOf CreativeWork value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public void setSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = subjectOf;
     }
 
-    private URL fAdditionalType;
+    private URL additionalType;
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
@@ -1919,19 +2275,20 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public URL getAdditionalType() {
-        return fAdditionalType;
+        return additionalType;
     }
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
+     * @param additionalType URL value to set.
      */
     @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
+    public void setAdditionalType(URL additionalType) {
+        this.additionalType = additionalType;
     }
 
-    private Text fDisambiguatingDescription;
+    private Text disambiguatingDescription;
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
@@ -1940,19 +2297,20 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getDisambiguatingDescription() {
-        return fDisambiguatingDescription;
+        return disambiguatingDescription;
     }
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
+     * @param disambiguatingDescription Text value to set.
      */
     @Override
-    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = fDisambiguatingDescription;
+    public void setDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = disambiguatingDescription;
     }
 
-    private URL fSameAs;
+    private URL sameAs;
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
@@ -1961,19 +2319,20 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public URL getSameAs() {
-        return fSameAs;
+        return sameAs;
     }
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
+     * @param sameAs URL value to set.
      */
     @Override
-    public void setSameAs(URL fSameAs) {
-        this.fSameAs = fSameAs;
+    public void setSameAs(URL sameAs) {
+        this.sameAs = sameAs;
     }
 
-    private Object fIdentifier;
+    private Object identifier;
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -1983,23 +2342,41 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getIdentifier() {
-        return (T) fIdentifier;
+        return (T) identifier;
     }
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
+     * @param identifier URL value to set.
      */
     @Override
-    public void setIdentifier(Object fIdentifier) {
-        if(!(fIdentifier instanceof URL) && !(fIdentifier instanceof Text) && !(fIdentifier instanceof PropertyValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
-        }
-        this.fIdentifier = fIdentifier;
+    public void setIdentifier(URL identifier) {
+        this.identifier = identifier;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier Text value to set.
+     */
+    @Override
+    public void setIdentifier(Text identifier) {
+        this.identifier = identifier;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier PropertyValue value to set.
+     */
+    @Override
+    public void setIdentifier(PropertyValue identifier) {
+        this.identifier = identifier;
     }
 
-    private URL fMaps;
+    private URL maps;
 
     /**
      * A URL to a map of the place.
@@ -2008,19 +2385,20 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public URL getMaps() {
-        return fMaps;
+        return maps;
     }
 
     /**
      * A URL to a map of the place.
      *
+     * @param maps URL value to set.
      */
     @Override
-    public void setMaps(URL fMaps) {
-        this.fMaps = fMaps;
+    public void setMaps(URL maps) {
+        this.maps = maps;
     }
 
-    private Object fGeoContains;
+    private Object geoContains;
 
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. "a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
@@ -2029,22 +2407,29 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getGeoContains() {
-        return (T) fGeoContains;
+        return (T) geoContains;
     }
 
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. "a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
+     * @param geoContains Place value to set.
      */
     @Override
-    public void setGeoContains(Object fGeoContains) {
-        if(!(fGeoContains instanceof Place) && !(fGeoContains instanceof GeospatialGeometry)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoContains': " + fGeoContains);
-        }
-        this.fGeoContains = fGeoContains;
+    public void setGeoContains(Place geoContains) {
+        this.geoContains = geoContains;
+    }
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. "a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @param geoContains GeospatialGeometry value to set.
+     */
+    @Override
+    public void setGeoContains(GeospatialGeometry geoContains) {
+        this.geoContains = geoContains;
     }
 
-    private Integer fMaximumAttendeeCapacity;
+    private Integer maximumAttendeeCapacity;
 
     /**
      * The total number of individuals that may attend an event or venue.
@@ -2053,19 +2438,20 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Integer getMaximumAttendeeCapacity() {
-        return fMaximumAttendeeCapacity;
+        return maximumAttendeeCapacity;
     }
 
     /**
      * The total number of individuals that may attend an event or venue.
      *
+     * @param maximumAttendeeCapacity Integer value to set.
      */
     @Override
-    public void setMaximumAttendeeCapacity(Integer fMaximumAttendeeCapacity) {
-        this.fMaximumAttendeeCapacity = fMaximumAttendeeCapacity;
+    public void setMaximumAttendeeCapacity(Integer maximumAttendeeCapacity) {
+        this.maximumAttendeeCapacity = maximumAttendeeCapacity;
     }
 
-    private Place fContainsPlace;
+    private Place containsPlace;
 
     /**
      * The basic containment relation between a place and another that it contains.
@@ -2074,19 +2460,20 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Place getContainsPlace() {
-        return fContainsPlace;
+        return containsPlace;
     }
 
     /**
      * The basic containment relation between a place and another that it contains.
      *
+     * @param containsPlace Place value to set.
      */
     @Override
-    public void setContainsPlace(Place fContainsPlace) {
-        this.fContainsPlace = fContainsPlace;
+    public void setContainsPlace(Place containsPlace) {
+        this.containsPlace = containsPlace;
     }
 
-    private Boolean fSmokingAllowed;
+    private Boolean smokingAllowed;
 
     /**
      * Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.
@@ -2096,20 +2483,21 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Boolean getSmokingAllowed() {
-        return fSmokingAllowed;
+        return smokingAllowed;
     }
 
     /**
      * Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.
      *
+     * @param smokingAllowed Boolean value to set.
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
     @Override
-    public void setSmokingAllowed(Boolean fSmokingAllowed) {
-        this.fSmokingAllowed = fSmokingAllowed;
+    public void setSmokingAllowed(Boolean smokingAllowed) {
+        this.smokingAllowed = smokingAllowed;
     }
 
-    private Object fGeoIntersects;
+    private Object geoIntersects;
 
     /**
      * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
@@ -2118,22 +2506,29 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getGeoIntersects() {
-        return (T) fGeoIntersects;
+        return (T) geoIntersects;
     }
 
     /**
      * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
+     * @param geoIntersects GeospatialGeometry value to set.
      */
     @Override
-    public void setGeoIntersects(Object fGeoIntersects) {
-        if(!(fGeoIntersects instanceof GeospatialGeometry) && !(fGeoIntersects instanceof Place)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoIntersects': " + fGeoIntersects);
-        }
-        this.fGeoIntersects = fGeoIntersects;
+    public void setGeoIntersects(GeospatialGeometry geoIntersects) {
+        this.geoIntersects = geoIntersects;
+    }
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @param geoIntersects Place value to set.
+     */
+    @Override
+    public void setGeoIntersects(Place geoIntersects) {
+        this.geoIntersects = geoIntersects;
     }
 
-    private Object fLatitude;
+    private Object latitude;
 
     /**
      * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
@@ -2142,22 +2537,29 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getLatitude() {
-        return (T) fLatitude;
+        return (T) latitude;
     }
 
     /**
      * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
      *
+     * @param latitude Text value to set.
      */
     @Override
-    public void setLatitude(Object fLatitude) {
-        if(!(fLatitude instanceof Text) && !(fLatitude instanceof Number)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'latitude': " + fLatitude);
-        }
-        this.fLatitude = fLatitude;
+    public void setLatitude(Text latitude) {
+        this.latitude = latitude;
+    }
+    /**
+     * The latitude of a location. For example ```37.42242``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     *
+     * @param latitude Number value to set.
+     */
+    @Override
+    public void setLatitude(Number latitude) {
+        this.latitude = latitude;
     }
 
-    private Object fGeoTouches;
+    private Object geoTouches;
 
     /**
      * Represents spatial relations in which two geometries (or the places they represent) touch: they have at least one boundary point in common, but no interior points." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM) )
@@ -2166,22 +2568,29 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getGeoTouches() {
-        return (T) fGeoTouches;
+        return (T) geoTouches;
     }
 
     /**
      * Represents spatial relations in which two geometries (or the places they represent) touch: they have at least one boundary point in common, but no interior points." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM) )
      *
+     * @param geoTouches Place value to set.
      */
     @Override
-    public void setGeoTouches(Object fGeoTouches) {
-        if(!(fGeoTouches instanceof Place) && !(fGeoTouches instanceof GeospatialGeometry)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoTouches': " + fGeoTouches);
-        }
-        this.fGeoTouches = fGeoTouches;
+    public void setGeoTouches(Place geoTouches) {
+        this.geoTouches = geoTouches;
+    }
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) touch: they have at least one boundary point in common, but no interior points." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM) )
+     *
+     * @param geoTouches GeospatialGeometry value to set.
+     */
+    @Override
+    public void setGeoTouches(GeospatialGeometry geoTouches) {
+        this.geoTouches = geoTouches;
     }
 
-    private Object fGeoCoveredBy;
+    private Object geoCoveredBy;
 
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
@@ -2190,22 +2599,29 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getGeoCoveredBy() {
-        return (T) fGeoCoveredBy;
+        return (T) geoCoveredBy;
     }
 
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
+     * @param geoCoveredBy Place value to set.
      */
     @Override
-    public void setGeoCoveredBy(Object fGeoCoveredBy) {
-        if(!(fGeoCoveredBy instanceof Place) && !(fGeoCoveredBy instanceof GeospatialGeometry)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoCoveredBy': " + fGeoCoveredBy);
-        }
-        this.fGeoCoveredBy = fGeoCoveredBy;
+    public void setGeoCoveredBy(Place geoCoveredBy) {
+        this.geoCoveredBy = geoCoveredBy;
+    }
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @param geoCoveredBy GeospatialGeometry value to set.
+     */
+    @Override
+    public void setGeoCoveredBy(GeospatialGeometry geoCoveredBy) {
+        this.geoCoveredBy = geoCoveredBy;
     }
 
-    private Object fGeoEquals;
+    private Object geoEquals;
 
     /**
      * Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). "Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other" (a symmetric relationship)
@@ -2214,22 +2630,29 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getGeoEquals() {
-        return (T) fGeoEquals;
+        return (T) geoEquals;
     }
 
     /**
      * Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). "Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other" (a symmetric relationship)
      *
+     * @param geoEquals Place value to set.
      */
     @Override
-    public void setGeoEquals(Object fGeoEquals) {
-        if(!(fGeoEquals instanceof Place) && !(fGeoEquals instanceof GeospatialGeometry)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoEquals': " + fGeoEquals);
-        }
-        this.fGeoEquals = fGeoEquals;
+    public void setGeoEquals(Place geoEquals) {
+        this.geoEquals = geoEquals;
+    }
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). "Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other" (a symmetric relationship)
+     *
+     * @param geoEquals GeospatialGeometry value to set.
+     */
+    @Override
+    public void setGeoEquals(GeospatialGeometry geoEquals) {
+        this.geoEquals = geoEquals;
     }
 
-    private URL fMap;
+    private URL map;
 
     /**
      * A URL to a map of the place.
@@ -2238,19 +2661,20 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public URL getMap() {
-        return fMap;
+        return map;
     }
 
     /**
      * A URL to a map of the place.
      *
+     * @param map URL value to set.
      */
     @Override
-    public void setMap(URL fMap) {
-        this.fMap = fMap;
+    public void setMap(URL map) {
+        this.map = map;
     }
 
-    private Boolean fPublicAccess;
+    private Boolean publicAccess;
 
     /**
      * A flag to signal that the [[Place]] is open to public visitors.  If this property is omitted there is no assumed default boolean value
@@ -2259,19 +2683,20 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Boolean getPublicAccess() {
-        return fPublicAccess;
+        return publicAccess;
     }
 
     /**
      * A flag to signal that the [[Place]] is open to public visitors.  If this property is omitted there is no assumed default boolean value
      *
+     * @param publicAccess Boolean value to set.
      */
     @Override
-    public void setPublicAccess(Boolean fPublicAccess) {
-        this.fPublicAccess = fPublicAccess;
+    public void setPublicAccess(Boolean publicAccess) {
+        this.publicAccess = publicAccess;
     }
 
-    private Object fGeoCrosses;
+    private Object geoCrosses;
 
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: "a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
@@ -2280,22 +2705,29 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getGeoCrosses() {
-        return (T) fGeoCrosses;
+        return (T) geoCrosses;
     }
 
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: "a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
+     * @param geoCrosses GeospatialGeometry value to set.
      */
     @Override
-    public void setGeoCrosses(Object fGeoCrosses) {
-        if(!(fGeoCrosses instanceof GeospatialGeometry) && !(fGeoCrosses instanceof Place)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoCrosses': " + fGeoCrosses);
-        }
-        this.fGeoCrosses = fGeoCrosses;
+    public void setGeoCrosses(GeospatialGeometry geoCrosses) {
+        this.geoCrosses = geoCrosses;
+    }
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: "a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @param geoCrosses Place value to set.
+     */
+    @Override
+    public void setGeoCrosses(Place geoCrosses) {
+        this.geoCrosses = geoCrosses;
     }
 
-    private Place fContainedInPlace;
+    private Place containedInPlace;
 
     /**
      * The basic containment relation between a place and one that contains it.
@@ -2304,19 +2736,20 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Place getContainedInPlace() {
-        return fContainedInPlace;
+        return containedInPlace;
     }
 
     /**
      * The basic containment relation between a place and one that contains it.
      *
+     * @param containedInPlace Place value to set.
      */
     @Override
-    public void setContainedInPlace(Place fContainedInPlace) {
-        this.fContainedInPlace = fContainedInPlace;
+    public void setContainedInPlace(Place containedInPlace) {
+        this.containedInPlace = containedInPlace;
     }
 
-    private LocationFeatureSpecification fAmenityFeature;
+    private LocationFeatureSpecification amenityFeature;
 
     /**
      * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
@@ -2326,20 +2759,21 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public LocationFeatureSpecification getAmenityFeature() {
-        return fAmenityFeature;
+        return amenityFeature;
     }
 
     /**
      * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
      *
+     * @param amenityFeature LocationFeatureSpecification value to set.
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
     @Override
-    public void setAmenityFeature(LocationFeatureSpecification fAmenityFeature) {
-        this.fAmenityFeature = fAmenityFeature;
+    public void setAmenityFeature(LocationFeatureSpecification amenityFeature) {
+        this.amenityFeature = amenityFeature;
     }
 
-    private Object fPhotos;
+    private Object photos;
 
     /**
      * Photographs of this place.
@@ -2348,22 +2782,29 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getPhotos() {
-        return (T) fPhotos;
+        return (T) photos;
     }
 
     /**
      * Photographs of this place.
      *
+     * @param photos ImageObject value to set.
      */
     @Override
-    public void setPhotos(Object fPhotos) {
-        if(!(fPhotos instanceof ImageObject) && !(fPhotos instanceof Photograph)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'photos': " + fPhotos);
-        }
-        this.fPhotos = fPhotos;
+    public void setPhotos(ImageObject photos) {
+        this.photos = photos;
+    }
+    /**
+     * Photographs of this place.
+     *
+     * @param photos Photograph value to set.
+     */
+    @Override
+    public void setPhotos(Photograph photos) {
+        this.photos = photos;
     }
 
-    private Object fGeoCovers;
+    private Object geoCovers;
 
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. "Every point of b is a point of (the interior or boundary of) a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
@@ -2372,22 +2813,29 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getGeoCovers() {
-        return (T) fGeoCovers;
+        return (T) geoCovers;
     }
 
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. "Every point of b is a point of (the interior or boundary of) a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
+     * @param geoCovers GeospatialGeometry value to set.
      */
     @Override
-    public void setGeoCovers(Object fGeoCovers) {
-        if(!(fGeoCovers instanceof GeospatialGeometry) && !(fGeoCovers instanceof Place)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoCovers': " + fGeoCovers);
-        }
-        this.fGeoCovers = fGeoCovers;
+    public void setGeoCovers(GeospatialGeometry geoCovers) {
+        this.geoCovers = geoCovers;
+    }
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. "Every point of b is a point of (the interior or boundary of) a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @param geoCovers Place value to set.
+     */
+    @Override
+    public void setGeoCovers(Place geoCovers) {
+        this.geoCovers = geoCovers;
     }
 
-    private Place fContainedIn;
+    private Place containedIn;
 
     /**
      * The basic containment relation between a place and one that contains it.
@@ -2396,19 +2844,20 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Place getContainedIn() {
-        return fContainedIn;
+        return containedIn;
     }
 
     /**
      * The basic containment relation between a place and one that contains it.
      *
+     * @param containedIn Place value to set.
      */
     @Override
-    public void setContainedIn(Place fContainedIn) {
-        this.fContainedIn = fContainedIn;
+    public void setContainedIn(Place containedIn) {
+        this.containedIn = containedIn;
     }
 
-    private Boolean fHasDriveThroughService;
+    private Boolean hasDriveThroughService;
 
     /**
      * Indicates whether some facility (e.g. [[FoodEstablishment]], [[CovidTestingFacility]]) offers a service that can be used by driving through in a car. In the case of [[CovidTestingFacility]] such facilities could potentially help with social distancing from other potentially-infected users.
@@ -2419,21 +2868,22 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Boolean getHasDriveThroughService() {
-        return fHasDriveThroughService;
+        return hasDriveThroughService;
     }
 
     /**
      * Indicates whether some facility (e.g. [[FoodEstablishment]], [[CovidTestingFacility]]) offers a service that can be used by driving through in a car. In the case of [[CovidTestingFacility]] such facilities could potentially help with social distancing from other potentially-infected users.
      *
+     * @param hasDriveThroughService Boolean value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      */
     @Override
-    public void setHasDriveThroughService(Boolean fHasDriveThroughService) {
-        this.fHasDriveThroughService = fHasDriveThroughService;
+    public void setHasDriveThroughService(Boolean hasDriveThroughService) {
+        this.hasDriveThroughService = hasDriveThroughService;
     }
 
-    private Boolean fIsAccessibleForFree;
+    private Boolean isAccessibleForFree;
 
     /**
      * A flag to signal that the item, event, or place is accessible for free.
@@ -2442,19 +2892,20 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Boolean getIsAccessibleForFree() {
-        return fIsAccessibleForFree;
+        return isAccessibleForFree;
     }
 
     /**
      * A flag to signal that the item, event, or place is accessible for free.
      *
+     * @param isAccessibleForFree Boolean value to set.
      */
     @Override
-    public void setIsAccessibleForFree(Boolean fIsAccessibleForFree) {
-        this.fIsAccessibleForFree = fIsAccessibleForFree;
+    public void setIsAccessibleForFree(Boolean isAccessibleForFree) {
+        this.isAccessibleForFree = isAccessibleForFree;
     }
 
-    private Object fGeoWithin;
+    private Object geoWithin;
 
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
@@ -2463,22 +2914,29 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getGeoWithin() {
-        return (T) fGeoWithin;
+        return (T) geoWithin;
     }
 
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
+     * @param geoWithin Place value to set.
      */
     @Override
-    public void setGeoWithin(Object fGeoWithin) {
-        if(!(fGeoWithin instanceof Place) && !(fGeoWithin instanceof GeospatialGeometry)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoWithin': " + fGeoWithin);
-        }
-        this.fGeoWithin = fGeoWithin;
+    public void setGeoWithin(Place geoWithin) {
+        this.geoWithin = geoWithin;
+    }
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @param geoWithin GeospatialGeometry value to set.
+     */
+    @Override
+    public void setGeoWithin(GeospatialGeometry geoWithin) {
+        this.geoWithin = geoWithin;
     }
 
-    private Object fGeoDisjoint;
+    private Object geoDisjoint;
 
     /**
      * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM))
@@ -2487,22 +2945,29 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getGeoDisjoint() {
-        return (T) fGeoDisjoint;
+        return (T) geoDisjoint;
     }
 
     /**
      * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM))
      *
+     * @param geoDisjoint GeospatialGeometry value to set.
      */
     @Override
-    public void setGeoDisjoint(Object fGeoDisjoint) {
-        if(!(fGeoDisjoint instanceof GeospatialGeometry) && !(fGeoDisjoint instanceof Place)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoDisjoint': " + fGeoDisjoint);
-        }
-        this.fGeoDisjoint = fGeoDisjoint;
+    public void setGeoDisjoint(GeospatialGeometry geoDisjoint) {
+        this.geoDisjoint = geoDisjoint;
+    }
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries." (a symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM))
+     *
+     * @param geoDisjoint Place value to set.
+     */
+    @Override
+    public void setGeoDisjoint(Place geoDisjoint) {
+        this.geoDisjoint = geoDisjoint;
     }
 
-    private URL fTourBookingPage;
+    private URL tourBookingPage;
 
     /**
      * A page providing information on how to book a tour of some [[Place]], such as an [[Accommodation]] or [[ApartmentComplex]] in a real estate setting, as well as other kinds of tours as appropriate.
@@ -2513,21 +2978,22 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public URL getTourBookingPage() {
-        return fTourBookingPage;
+        return tourBookingPage;
     }
 
     /**
      * A page providing information on how to book a tour of some [[Place]], such as an [[Accommodation]] or [[ApartmentComplex]] in a real estate setting, as well as other kinds of tours as appropriate.
      *
+     * @param tourBookingPage URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
     @Override
-    public void setTourBookingPage(URL fTourBookingPage) {
-        this.fTourBookingPage = fTourBookingPage;
+    public void setTourBookingPage(URL tourBookingPage) {
+        this.tourBookingPage = tourBookingPage;
     }
 
-    private Object fGeoOverlaps;
+    private Object geoOverlaps;
 
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
@@ -2536,22 +3002,29 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getGeoOverlaps() {
-        return (T) fGeoOverlaps;
+        return (T) geoOverlaps;
     }
 
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
+     * @param geoOverlaps GeospatialGeometry value to set.
      */
     @Override
-    public void setGeoOverlaps(Object fGeoOverlaps) {
-        if(!(fGeoOverlaps instanceof GeospatialGeometry) && !(fGeoOverlaps instanceof Place)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geoOverlaps': " + fGeoOverlaps);
-        }
-        this.fGeoOverlaps = fGeoOverlaps;
+    public void setGeoOverlaps(GeospatialGeometry geoOverlaps) {
+        this.geoOverlaps = geoOverlaps;
+    }
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @param geoOverlaps Place value to set.
+     */
+    @Override
+    public void setGeoOverlaps(Place geoOverlaps) {
+        this.geoOverlaps = geoOverlaps;
     }
 
-    private Text fBranchCode;
+    private Text branchCode;
 
     /**
      * A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.<br/><br/>For example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code "3047" is a branchCode for a particular branch.
@@ -2561,20 +3034,21 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getBranchCode() {
-        return fBranchCode;
+        return branchCode;
     }
 
     /**
      * A short textual code (also called "store code") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.<br/><br/>For example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code "3047" is a branchCode for a particular branch.
      *       
      *
+     * @param branchCode Text value to set.
      */
     @Override
-    public void setBranchCode(Text fBranchCode) {
-        this.fBranchCode = fBranchCode;
+    public void setBranchCode(Text branchCode) {
+        this.branchCode = branchCode;
     }
 
-    private PropertyValue fAdditionalProperty;
+    private PropertyValue additionalProperty;
 
     /**
      * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
@@ -2583,19 +3057,20 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public PropertyValue getAdditionalProperty() {
-        return fAdditionalProperty;
+        return additionalProperty;
     }
 
     /**
      * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
      *
+     * @param additionalProperty PropertyValue value to set.
      */
     @Override
-    public void setAdditionalProperty(PropertyValue fAdditionalProperty) {
-        this.fAdditionalProperty = fAdditionalProperty;
+    public void setAdditionalProperty(PropertyValue additionalProperty) {
+        this.additionalProperty = additionalProperty;
     }
 
-    private OpeningHoursSpecification fOpeningHoursSpecification;
+    private OpeningHoursSpecification openingHoursSpecification;
 
     /**
      * The opening hours of a certain place.
@@ -2605,20 +3080,21 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public OpeningHoursSpecification getOpeningHoursSpecification() {
-        return fOpeningHoursSpecification;
+        return openingHoursSpecification;
     }
 
     /**
      * The opening hours of a certain place.
      *
+     * @param openingHoursSpecification OpeningHoursSpecification value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setOpeningHoursSpecification(OpeningHoursSpecification fOpeningHoursSpecification) {
-        this.fOpeningHoursSpecification = fOpeningHoursSpecification;
+    public void setOpeningHoursSpecification(OpeningHoursSpecification openingHoursSpecification) {
+        this.openingHoursSpecification = openingHoursSpecification;
     }
 
-    private Object fPhoto;
+    private Object photo;
 
     /**
      * A photograph of this place.
@@ -2627,22 +3103,29 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getPhoto() {
-        return (T) fPhoto;
+        return (T) photo;
     }
 
     /**
      * A photograph of this place.
      *
+     * @param photo Photograph value to set.
      */
     @Override
-    public void setPhoto(Object fPhoto) {
-        if(!(fPhoto instanceof Photograph) && !(fPhoto instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'photo': " + fPhoto);
-        }
-        this.fPhoto = fPhoto;
+    public void setPhoto(Photograph photo) {
+        this.photo = photo;
+    }
+    /**
+     * A photograph of this place.
+     *
+     * @param photo ImageObject value to set.
+     */
+    @Override
+    public void setPhoto(ImageObject photo) {
+        this.photo = photo;
     }
 
-    private OpeningHoursSpecification fSpecialOpeningHoursSpecification;
+    private OpeningHoursSpecification specialOpeningHoursSpecification;
 
     /**
      * The special opening hours of a certain place.<br/><br/>Use this to explicitly override general opening hours brought in scope by [[openingHoursSpecification]] or [[openingHours]].
@@ -2652,20 +3135,21 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public OpeningHoursSpecification getSpecialOpeningHoursSpecification() {
-        return fSpecialOpeningHoursSpecification;
+        return specialOpeningHoursSpecification;
     }
 
     /**
      * The special opening hours of a certain place.<br/><br/>Use this to explicitly override general opening hours brought in scope by [[openingHoursSpecification]] or [[openingHours]].
      *       
      *
+     * @param specialOpeningHoursSpecification OpeningHoursSpecification value to set.
      */
     @Override
-    public void setSpecialOpeningHoursSpecification(OpeningHoursSpecification fSpecialOpeningHoursSpecification) {
-        this.fSpecialOpeningHoursSpecification = fSpecialOpeningHoursSpecification;
+    public void setSpecialOpeningHoursSpecification(OpeningHoursSpecification specialOpeningHoursSpecification) {
+        this.specialOpeningHoursSpecification = specialOpeningHoursSpecification;
     }
 
-    private Object fHasMap;
+    private Object hasMap;
 
     /**
      * A URL to a map of the place.
@@ -2674,22 +3158,29 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getHasMap() {
-        return (T) fHasMap;
+        return (T) hasMap;
     }
 
     /**
      * A URL to a map of the place.
      *
+     * @param hasMap URL value to set.
      */
     @Override
-    public void setHasMap(Object fHasMap) {
-        if(!(fHasMap instanceof URL) && !(fHasMap instanceof Map)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'hasMap': " + fHasMap);
-        }
-        this.fHasMap = fHasMap;
+    public void setHasMap(URL hasMap) {
+        this.hasMap = hasMap;
+    }
+    /**
+     * A URL to a map of the place.
+     *
+     * @param hasMap Map value to set.
+     */
+    @Override
+    public void setHasMap(Map hasMap) {
+        this.hasMap = hasMap;
     }
 
-    private Object fLongitude;
+    private Object longitude;
 
     /**
      * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
@@ -2698,22 +3189,29 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getLongitude() {
-        return (T) fLongitude;
+        return (T) longitude;
     }
 
     /**
      * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
      *
+     * @param longitude Number value to set.
      */
     @Override
-    public void setLongitude(Object fLongitude) {
-        if(!(fLongitude instanceof Number) && !(fLongitude instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'longitude': " + fLongitude);
-        }
-        this.fLongitude = fLongitude;
+    public void setLongitude(Number longitude) {
+        this.longitude = longitude;
+    }
+    /**
+     * The longitude of a location. For example ```-122.08585``` ([WGS 84](https://en.wikipedia.org/wiki/World_Geodetic_System)).
+     *
+     * @param longitude Text value to set.
+     */
+    @Override
+    public void setLongitude(Text longitude) {
+        this.longitude = longitude;
     }
 
-    private Object fGeo;
+    private Object geo;
 
     /**
      * The geo coordinates of the place.
@@ -2722,18 +3220,25 @@ public class GeneralContractorImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getGeo() {
-        return (T) fGeo;
+        return (T) geo;
     }
 
     /**
      * The geo coordinates of the place.
      *
+     * @param geo GeoCoordinates value to set.
      */
     @Override
-    public void setGeo(Object fGeo) {
-        if(!(fGeo instanceof GeoCoordinates) && !(fGeo instanceof GeoShape)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'geo': " + fGeo);
-        }
-        this.fGeo = fGeo;
+    public void setGeo(GeoCoordinates geo) {
+        this.geo = geo;
+    }
+    /**
+     * The geo coordinates of the place.
+     *
+     * @param geo GeoShape value to set.
+     */
+    @Override
+    public void setGeo(GeoShape geo) {
+        this.geo = geo;
     }
 }

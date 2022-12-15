@@ -34,11 +34,39 @@ public interface NewsMediaOrganization extends Organization {
     /**
      * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.
      *
+     * @param ownershipFundingInfo URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
-    void setOwnershipFundingInfo(Object fOwnershipFundingInfo);
+    void setOwnershipFundingInfo(URL ownershipFundingInfo);
+    /**
+     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.
+     *
+     * @param ownershipFundingInfo AboutPage value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    void setOwnershipFundingInfo(AboutPage ownershipFundingInfo);
+    /**
+     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.
+     *
+     * @param ownershipFundingInfo Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    void setOwnershipFundingInfo(Text ownershipFundingInfo);
+    /**
+     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.
+     *
+     * @param ownershipFundingInfo CreativeWork value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    void setOwnershipFundingInfo(CreativeWork ownershipFundingInfo);
 
     /**
      * For an [[Organization]] (e.g. [[NewsMediaOrganization]]), a statement describing (in news media, the newsroom’s) disclosure and correction policy for errors.
@@ -53,11 +81,21 @@ public interface NewsMediaOrganization extends Organization {
     /**
      * For an [[Organization]] (e.g. [[NewsMediaOrganization]]), a statement describing (in news media, the newsroom’s) disclosure and correction policy for errors.
      *
+     * @param correctionsPolicy URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
-    void setCorrectionsPolicy(Object fCorrectionsPolicy);
+    void setCorrectionsPolicy(URL correctionsPolicy);
+    /**
+     * For an [[Organization]] (e.g. [[NewsMediaOrganization]]), a statement describing (in news media, the newsroom’s) disclosure and correction policy for errors.
+     *
+     * @param correctionsPolicy CreativeWork value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    void setCorrectionsPolicy(CreativeWork correctionsPolicy);
 
     /**
      * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.
@@ -72,11 +110,21 @@ public interface NewsMediaOrganization extends Organization {
     /**
      * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.
      *
+     * @param diversityStaffingReport URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
-    void setDiversityStaffingReport(Object fDiversityStaffingReport);
+    void setDiversityStaffingReport(URL diversityStaffingReport);
+    /**
+     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.
+     *
+     * @param diversityStaffingReport Article value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    void setDiversityStaffingReport(Article diversityStaffingReport);
 
     /**
      * Statement on diversity policy by an [[Organization]] e.g. a [[NewsMediaOrganization]]. For a [[NewsMediaOrganization]], a statement describing the newsroom’s diversity policy on both staffing and sources, typically providing staffing data.
@@ -91,11 +139,21 @@ public interface NewsMediaOrganization extends Organization {
     /**
      * Statement on diversity policy by an [[Organization]] e.g. a [[NewsMediaOrganization]]. For a [[NewsMediaOrganization]], a statement describing the newsroom’s diversity policy on both staffing and sources, typically providing staffing data.
      *
+     * @param diversityPolicy CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
-    void setDiversityPolicy(Object fDiversityPolicy);
+    void setDiversityPolicy(CreativeWork diversityPolicy);
+    /**
+     * Statement on diversity policy by an [[Organization]] e.g. a [[NewsMediaOrganization]]. For a [[NewsMediaOrganization]], a statement describing the newsroom’s diversity policy on both staffing and sources, typically providing staffing data.
+     *
+     * @param diversityPolicy URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    void setDiversityPolicy(URL diversityPolicy);
 
     /**
      * Statement about ethics policy, e.g. of a [[NewsMediaOrganization]] regarding journalistic and publishing practices, or of a [[Restaurant]], a page describing food source policies. In the case of a [[NewsMediaOrganization]], an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization.
@@ -109,10 +167,19 @@ public interface NewsMediaOrganization extends Organization {
     /**
      * Statement about ethics policy, e.g. of a [[NewsMediaOrganization]] regarding journalistic and publishing practices, or of a [[Restaurant]], a page describing food source policies. In the case of a [[NewsMediaOrganization]], an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization.
      *
+     * @param ethicsPolicy URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      */
-    void setEthicsPolicy(Object fEthicsPolicy);
+    void setEthicsPolicy(URL ethicsPolicy);
+    /**
+     * Statement about ethics policy, e.g. of a [[NewsMediaOrganization]] regarding journalistic and publishing practices, or of a [[Restaurant]], a page describing food source policies. In the case of a [[NewsMediaOrganization]], an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization.
+     *
+     * @param ethicsPolicy CreativeWork value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     */
+    void setEthicsPolicy(CreativeWork ethicsPolicy);
 
     /**
      * For a [[NewsMediaOrganization]], a statement on coverage priorities, including any public agenda or stance on issues.
@@ -127,11 +194,21 @@ public interface NewsMediaOrganization extends Organization {
     /**
      * For a [[NewsMediaOrganization]], a statement on coverage priorities, including any public agenda or stance on issues.
      *
+     * @param missionCoveragePrioritiesPolicy CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      */
-    void setMissionCoveragePrioritiesPolicy(Object fMissionCoveragePrioritiesPolicy);
+    void setMissionCoveragePrioritiesPolicy(CreativeWork missionCoveragePrioritiesPolicy);
+    /**
+     * For a [[NewsMediaOrganization]], a statement on coverage priorities, including any public agenda or stance on issues.
+     *
+     * @param missionCoveragePrioritiesPolicy URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     */
+    void setMissionCoveragePrioritiesPolicy(URL missionCoveragePrioritiesPolicy);
 
     /**
      * For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement about public engagement activities (for news media, the newsroom’s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.
@@ -146,11 +223,21 @@ public interface NewsMediaOrganization extends Organization {
     /**
      * For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement about public engagement activities (for news media, the newsroom’s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.
      *
+     * @param actionableFeedbackPolicy URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      */
-    void setActionableFeedbackPolicy(Object fActionableFeedbackPolicy);
+    void setActionableFeedbackPolicy(URL actionableFeedbackPolicy);
+    /**
+     * For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement about public engagement activities (for news media, the newsroom’s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.
+     *
+     * @param actionableFeedbackPolicy CreativeWork value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     */
+    void setActionableFeedbackPolicy(CreativeWork actionableFeedbackPolicy);
 
     /**
      * For a [[NewsMediaOrganization]], a link to the masthead page or a page listing top editorial management.
@@ -165,11 +252,21 @@ public interface NewsMediaOrganization extends Organization {
     /**
      * For a [[NewsMediaOrganization]], a link to the masthead page or a page listing top editorial management.
      *
+     * @param masthead URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      */
-    void setMasthead(Object fMasthead);
+    void setMasthead(URL masthead);
+    /**
+     * For a [[NewsMediaOrganization]], a link to the masthead page or a page listing top editorial management.
+     *
+     * @param masthead CreativeWork value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     */
+    void setMasthead(CreativeWork masthead);
 
     /**
      * For an [[Organization]] (typically a [[NewsMediaOrganization]]), a statement about policy on use of unnamed sources and the decision process required.
@@ -184,11 +281,21 @@ public interface NewsMediaOrganization extends Organization {
     /**
      * For an [[Organization]] (typically a [[NewsMediaOrganization]]), a statement about policy on use of unnamed sources and the decision process required.
      *
+     * @param unnamedSourcesPolicy CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      */
-    void setUnnamedSourcesPolicy(Object fUnnamedSourcesPolicy);
+    void setUnnamedSourcesPolicy(CreativeWork unnamedSourcesPolicy);
+    /**
+     * For an [[Organization]] (typically a [[NewsMediaOrganization]]), a statement about policy on use of unnamed sources and the decision process required.
+     *
+     * @param unnamedSourcesPolicy URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     */
+    void setUnnamedSourcesPolicy(URL unnamedSourcesPolicy);
 
     /**
      * Disclosure about verification and fact-checking processes for a [[NewsMediaOrganization]] or other fact-checking [[Organization]].
@@ -203,11 +310,21 @@ public interface NewsMediaOrganization extends Organization {
     /**
      * Disclosure about verification and fact-checking processes for a [[NewsMediaOrganization]] or other fact-checking [[Organization]].
      *
+     * @param verificationFactCheckingPolicy URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
-    void setVerificationFactCheckingPolicy(Object fVerificationFactCheckingPolicy);
+    void setVerificationFactCheckingPolicy(URL verificationFactCheckingPolicy);
+    /**
+     * Disclosure about verification and fact-checking processes for a [[NewsMediaOrganization]] or other fact-checking [[Organization]].
+     *
+     * @param verificationFactCheckingPolicy CreativeWork value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    void setVerificationFactCheckingPolicy(CreativeWork verificationFactCheckingPolicy);
 
     /**
      * For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement explaining when authors of articles are not named in bylines.
@@ -222,9 +339,19 @@ public interface NewsMediaOrganization extends Organization {
     /**
      * For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement explaining when authors of articles are not named in bylines.
      *
+     * @param noBylinesPolicy CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
      */
-    void setNoBylinesPolicy(Object fNoBylinesPolicy);
+    void setNoBylinesPolicy(CreativeWork noBylinesPolicy);
+    /**
+     * For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement explaining when authors of articles are not named in bylines.
+     *
+     * @param noBylinesPolicy URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     */
+    void setNoBylinesPolicy(URL noBylinesPolicy);
 }

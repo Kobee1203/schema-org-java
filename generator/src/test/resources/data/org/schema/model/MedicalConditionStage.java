@@ -27,9 +27,10 @@ public interface MedicalConditionStage extends MedicalIntangible {
     /**
      * The substage, e.g. 'a' for Stage IIIa.
      *
+     * @param subStageSuffix Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setSubStageSuffix(Text fSubStageSuffix);
+    void setSubStageSuffix(Text subStageSuffix);
 
     /**
      * The stage represented as a number, e.g. 3.
@@ -42,7 +43,8 @@ public interface MedicalConditionStage extends MedicalIntangible {
     /**
      * The stage represented as a number, e.g. 3.
      *
+     * @param stageAsNumber Number value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setStageAsNumber(Number fStageAsNumber);
+    void setStageAsNumber(Number stageAsNumber);
 }

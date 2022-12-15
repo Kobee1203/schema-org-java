@@ -29,9 +29,24 @@ public interface MedicalClinic extends MedicalOrganization, MedicalBusiness {
     /**
      * A medical service available from this provider.
      *
+     * @param availableService MedicalTest value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setAvailableService(Object fAvailableService);
+    void setAvailableService(MedicalTest availableService);
+    /**
+     * A medical service available from this provider.
+     *
+     * @param availableService MedicalProcedure value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setAvailableService(MedicalProcedure availableService);
+    /**
+     * A medical service available from this provider.
+     *
+     * @param availableService MedicalTherapy value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setAvailableService(MedicalTherapy availableService);
 
     /**
      * A medical specialty of the provider.
@@ -44,7 +59,8 @@ public interface MedicalClinic extends MedicalOrganization, MedicalBusiness {
     /**
      * A medical specialty of the provider.
      *
+     * @param medicalSpecialty MedicalSpecialty value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setMedicalSpecialty(MedicalSpecialty fMedicalSpecialty);
+    void setMedicalSpecialty(MedicalSpecialty medicalSpecialty);
 }

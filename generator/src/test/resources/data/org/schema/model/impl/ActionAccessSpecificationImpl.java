@@ -33,10 +33,10 @@ import org.schema.model.ActionAccessSpecification;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
  * @see <a href="https://schema.org/ActionAccessSpecification">https://schema.org/ActionAccessSpecification</a>
  */
-@JsonLdTypeName("schema:ActionAccessSpecification")
+@JsonLdTypeName("ActionAccessSpecification")
 public class ActionAccessSpecificationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ActionAccessSpecification {
 
-    private Offer fExpectsAcceptanceOf;
+    private Offer expectsAcceptanceOf;
 
     /**
      * An Offer which must be accepted before the user can perform the Action. For example, the user may need to buy a movie before being able to watch it.
@@ -46,20 +46,21 @@ public class ActionAccessSpecificationImpl extends com.weedow.schemaorg.commons.
      */
     @Override
     public Offer getExpectsAcceptanceOf() {
-        return fExpectsAcceptanceOf;
+        return expectsAcceptanceOf;
     }
 
     /**
      * An Offer which must be accepted before the user can perform the Action. For example, the user may need to buy a movie before being able to watch it.
      *
+     * @param expectsAcceptanceOf Offer value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
     @Override
-    public void setExpectsAcceptanceOf(Offer fExpectsAcceptanceOf) {
-        this.fExpectsAcceptanceOf = fExpectsAcceptanceOf;
+    public void setExpectsAcceptanceOf(Offer expectsAcceptanceOf) {
+        this.expectsAcceptanceOf = expectsAcceptanceOf;
     }
 
-    private Object fCategory;
+    private Object category;
 
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
@@ -70,24 +71,66 @@ public class ActionAccessSpecificationImpl extends com.weedow.schemaorg.commons.
      */
     @Override
     public <T> T getCategory() {
-        return (T) fCategory;
+        return (T) category;
     }
 
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
+     * @param category URL value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
     @Override
-    public void setCategory(Object fCategory) {
-        if(!(fCategory instanceof URL) && !(fCategory instanceof Text) && !(fCategory instanceof PhysicalActivityCategory) && !(fCategory instanceof Thing) && !(fCategory instanceof CategoryCode)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'category': " + fCategory);
-        }
-        this.fCategory = fCategory;
+    public void setCategory(URL category) {
+        this.category = category;
+    }
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @param category Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    @Override
+    public void setCategory(Text category) {
+        this.category = category;
+    }
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @param category PhysicalActivityCategory value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    @Override
+    public void setCategory(PhysicalActivityCategory category) {
+        this.category = category;
+    }
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @param category Thing value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    @Override
+    public void setCategory(Thing category) {
+        this.category = category;
+    }
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @param category CategoryCode value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    @Override
+    public void setCategory(CategoryCode category) {
+        this.category = category;
     }
 
-    private Object fIneligibleRegion;
+    private Object ineligibleRegion;
 
     /**
      * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>See also [[eligibleRegion]].
@@ -99,25 +142,47 @@ public class ActionAccessSpecificationImpl extends com.weedow.schemaorg.commons.
      */
     @Override
     public <T> T getIneligibleRegion() {
-        return (T) fIneligibleRegion;
+        return (T) ineligibleRegion;
     }
 
     /**
      * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>See also [[eligibleRegion]].
      *       
      *
+     * @param ineligibleRegion Place value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2242">https://github.com/schemaorg/schemaorg/issues/2242</a>
      */
     @Override
-    public void setIneligibleRegion(Object fIneligibleRegion) {
-        if(!(fIneligibleRegion instanceof Place) && !(fIneligibleRegion instanceof Text) && !(fIneligibleRegion instanceof GeoShape)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'ineligibleRegion': " + fIneligibleRegion);
-        }
-        this.fIneligibleRegion = fIneligibleRegion;
+    public void setIneligibleRegion(Place ineligibleRegion) {
+        this.ineligibleRegion = ineligibleRegion;
+    }
+    /**
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>See also [[eligibleRegion]].
+     *       
+     *
+     * @param ineligibleRegion Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2242">https://github.com/schemaorg/schemaorg/issues/2242</a>
+     */
+    @Override
+    public void setIneligibleRegion(Text ineligibleRegion) {
+        this.ineligibleRegion = ineligibleRegion;
+    }
+    /**
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>See also [[eligibleRegion]].
+     *       
+     *
+     * @param ineligibleRegion GeoShape value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2242">https://github.com/schemaorg/schemaorg/issues/2242</a>
+     */
+    @Override
+    public void setIneligibleRegion(GeoShape ineligibleRegion) {
+        this.ineligibleRegion = ineligibleRegion;
     }
 
-    private Object fRequiresSubscription;
+    private Object requiresSubscription;
 
     /**
      * Indicates if use of the media require a subscription  (either paid or free). Allowed values are ```true``` or ```false``` (note that an earlier version had 'yes', 'no').
@@ -127,23 +192,31 @@ public class ActionAccessSpecificationImpl extends com.weedow.schemaorg.commons.
      */
     @Override
     public <T> T getRequiresSubscription() {
-        return (T) fRequiresSubscription;
+        return (T) requiresSubscription;
     }
 
     /**
      * Indicates if use of the media require a subscription  (either paid or free). Allowed values are ```true``` or ```false``` (note that an earlier version had 'yes', 'no').
      *
+     * @param requiresSubscription MediaSubscription value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
     @Override
-    public void setRequiresSubscription(Object fRequiresSubscription) {
-        if(!(fRequiresSubscription instanceof MediaSubscription) && !(fRequiresSubscription instanceof Boolean)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'requiresSubscription': " + fRequiresSubscription);
-        }
-        this.fRequiresSubscription = fRequiresSubscription;
+    public void setRequiresSubscription(MediaSubscription requiresSubscription) {
+        this.requiresSubscription = requiresSubscription;
+    }
+    /**
+     * Indicates if use of the media require a subscription  (either paid or free). Allowed values are ```true``` or ```false``` (note that an earlier version had 'yes', 'no').
+     *
+     * @param requiresSubscription Boolean value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    @Override
+    public void setRequiresSubscription(Boolean requiresSubscription) {
+        this.requiresSubscription = requiresSubscription;
     }
 
-    private Object fAvailabilityEnds;
+    private Object availabilityEnds;
 
     /**
      * The end of the availability of the product or service included in the offer.
@@ -154,24 +227,44 @@ public class ActionAccessSpecificationImpl extends com.weedow.schemaorg.commons.
      */
     @Override
     public <T> T getAvailabilityEnds() {
-        return (T) fAvailabilityEnds;
+        return (T) availabilityEnds;
     }
 
     /**
      * The end of the availability of the product or service included in the offer.
      *
+     * @param availabilityEnds Date value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setAvailabilityEnds(Object fAvailabilityEnds) {
-        if(!(fAvailabilityEnds instanceof Date) && !(fAvailabilityEnds instanceof DateTime) && !(fAvailabilityEnds instanceof Time)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'availabilityEnds': " + fAvailabilityEnds);
-        }
-        this.fAvailabilityEnds = fAvailabilityEnds;
+    public void setAvailabilityEnds(Date availabilityEnds) {
+        this.availabilityEnds = availabilityEnds;
+    }
+    /**
+     * The end of the availability of the product or service included in the offer.
+     *
+     * @param availabilityEnds DateTime value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setAvailabilityEnds(DateTime availabilityEnds) {
+        this.availabilityEnds = availabilityEnds;
+    }
+    /**
+     * The end of the availability of the product or service included in the offer.
+     *
+     * @param availabilityEnds Time value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setAvailabilityEnds(Time availabilityEnds) {
+        this.availabilityEnds = availabilityEnds;
     }
 
-    private Object fEligibleRegion;
+    private Object eligibleRegion;
 
     /**
      * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.<br/><br/>See also [[ineligibleRegion]].
@@ -183,25 +276,47 @@ public class ActionAccessSpecificationImpl extends com.weedow.schemaorg.commons.
      */
     @Override
     public <T> T getEligibleRegion() {
-        return (T) fEligibleRegion;
+        return (T) eligibleRegion;
     }
 
     /**
      * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.<br/><br/>See also [[ineligibleRegion]].
      *     
      *
+     * @param eligibleRegion GeoShape value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
     @Override
-    public void setEligibleRegion(Object fEligibleRegion) {
-        if(!(fEligibleRegion instanceof GeoShape) && !(fEligibleRegion instanceof Text) && !(fEligibleRegion instanceof Place)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'eligibleRegion': " + fEligibleRegion);
-        }
-        this.fEligibleRegion = fEligibleRegion;
+    public void setEligibleRegion(GeoShape eligibleRegion) {
+        this.eligibleRegion = eligibleRegion;
+    }
+    /**
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.<br/><br/>See also [[ineligibleRegion]].
+     *     
+     *
+     * @param eligibleRegion Text value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    @Override
+    public void setEligibleRegion(Text eligibleRegion) {
+        this.eligibleRegion = eligibleRegion;
+    }
+    /**
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.<br/><br/>See also [[ineligibleRegion]].
+     *     
+     *
+     * @param eligibleRegion Place value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    @Override
+    public void setEligibleRegion(Place eligibleRegion) {
+        this.eligibleRegion = eligibleRegion;
     }
 
-    private Object fAvailabilityStarts;
+    private Object availabilityStarts;
 
     /**
      * The beginning of the availability of the product or service included in the offer.
@@ -212,24 +327,44 @@ public class ActionAccessSpecificationImpl extends com.weedow.schemaorg.commons.
      */
     @Override
     public <T> T getAvailabilityStarts() {
-        return (T) fAvailabilityStarts;
+        return (T) availabilityStarts;
     }
 
     /**
      * The beginning of the availability of the product or service included in the offer.
      *
+     * @param availabilityStarts Time value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setAvailabilityStarts(Object fAvailabilityStarts) {
-        if(!(fAvailabilityStarts instanceof Time) && !(fAvailabilityStarts instanceof DateTime) && !(fAvailabilityStarts instanceof Date)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'availabilityStarts': " + fAvailabilityStarts);
-        }
-        this.fAvailabilityStarts = fAvailabilityStarts;
+    public void setAvailabilityStarts(Time availabilityStarts) {
+        this.availabilityStarts = availabilityStarts;
+    }
+    /**
+     * The beginning of the availability of the product or service included in the offer.
+     *
+     * @param availabilityStarts DateTime value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setAvailabilityStarts(DateTime availabilityStarts) {
+        this.availabilityStarts = availabilityStarts;
+    }
+    /**
+     * The beginning of the availability of the product or service included in the offer.
+     *
+     * @param availabilityStarts Date value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public void setAvailabilityStarts(Date availabilityStarts) {
+        this.availabilityStarts = availabilityStarts;
     }
 
-    private Object fMainEntityOfPage;
+    private Object mainEntityOfPage;
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -238,22 +373,29 @@ public class ActionAccessSpecificationImpl extends com.weedow.schemaorg.commons.
      */
     @Override
     public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
+        return (T) mainEntityOfPage;
     }
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
+     * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
-        }
-        this.fMainEntityOfPage = fMainEntityOfPage;
+    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param mainEntityOfPage URL value to set.
+     */
+    @Override
+    public void setMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
     }
 
-    private Text fAlternateName;
+    private Text alternateName;
 
     /**
      * An alias for the item.
@@ -262,19 +404,20 @@ public class ActionAccessSpecificationImpl extends com.weedow.schemaorg.commons.
      */
     @Override
     public Text getAlternateName() {
-        return fAlternateName;
+        return alternateName;
     }
 
     /**
      * An alias for the item.
      *
+     * @param alternateName Text value to set.
      */
     @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
+    public void setAlternateName(Text alternateName) {
+        this.alternateName = alternateName;
     }
 
-    private Text fName;
+    private Text name;
 
     /**
      * The name of the item.
@@ -283,19 +426,20 @@ public class ActionAccessSpecificationImpl extends com.weedow.schemaorg.commons.
      */
     @Override
     public Text getName() {
-        return fName;
+        return name;
     }
 
     /**
      * The name of the item.
      *
+     * @param name Text value to set.
      */
     @Override
-    public void setName(Text fName) {
-        this.fName = fName;
+    public void setName(Text name) {
+        this.name = name;
     }
 
-    private Action fPotentialAction;
+    private Action potentialAction;
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -304,19 +448,20 @@ public class ActionAccessSpecificationImpl extends com.weedow.schemaorg.commons.
      */
     @Override
     public Action getPotentialAction() {
-        return fPotentialAction;
+        return potentialAction;
     }
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      *
+     * @param potentialAction Action value to set.
      */
     @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
+    public void setPotentialAction(Action potentialAction) {
+        this.potentialAction = potentialAction;
     }
 
-    private Object fImage;
+    private Object image;
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -325,22 +470,29 @@ public class ActionAccessSpecificationImpl extends com.weedow.schemaorg.commons.
      */
     @Override
     public <T> T getImage() {
-        return (T) fImage;
+        return (T) image;
     }
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
+     * @param image URL value to set.
      */
     @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
-        this.fImage = fImage;
+    public void setImage(URL image) {
+        this.image = image;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image ImageObject value to set.
+     */
+    @Override
+    public void setImage(ImageObject image) {
+        this.image = image;
     }
 
-    private URL fUrl;
+    private URL url;
 
     /**
      * URL of the item.
@@ -349,19 +501,20 @@ public class ActionAccessSpecificationImpl extends com.weedow.schemaorg.commons.
      */
     @Override
     public URL getUrl() {
-        return fUrl;
+        return url;
     }
 
     /**
      * URL of the item.
      *
+     * @param url URL value to set.
      */
     @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
+    public void setUrl(URL url) {
+        this.url = url;
     }
 
-    private Text fDescription;
+    private Text description;
 
     /**
      * A description of the item.
@@ -370,19 +523,20 @@ public class ActionAccessSpecificationImpl extends com.weedow.schemaorg.commons.
      */
     @Override
     public Text getDescription() {
-        return fDescription;
+        return description;
     }
 
     /**
      * A description of the item.
      *
+     * @param description Text value to set.
      */
     @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
+    public void setDescription(Text description) {
+        this.description = description;
     }
 
-    private Object fSubjectOf;
+    private Object subjectOf;
 
     /**
      * A CreativeWork or Event about this Thing.
@@ -392,23 +546,31 @@ public class ActionAccessSpecificationImpl extends com.weedow.schemaorg.commons.
      */
     @Override
     public <T> T getSubjectOf() {
-        return (T) fSubjectOf;
+        return (T) subjectOf;
     }
 
     /**
      * A CreativeWork or Event about this Thing.
      *
+     * @param subjectOf Event value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Object fSubjectOf) {
-        if(!(fSubjectOf instanceof Event) && !(fSubjectOf instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'subjectOf': " + fSubjectOf);
-        }
-        this.fSubjectOf = fSubjectOf;
+    public void setSubjectOf(Event subjectOf) {
+        this.subjectOf = subjectOf;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @param subjectOf CreativeWork value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public void setSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = subjectOf;
     }
 
-    private URL fAdditionalType;
+    private URL additionalType;
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
@@ -417,19 +579,20 @@ public class ActionAccessSpecificationImpl extends com.weedow.schemaorg.commons.
      */
     @Override
     public URL getAdditionalType() {
-        return fAdditionalType;
+        return additionalType;
     }
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
+     * @param additionalType URL value to set.
      */
     @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
+    public void setAdditionalType(URL additionalType) {
+        this.additionalType = additionalType;
     }
 
-    private Text fDisambiguatingDescription;
+    private Text disambiguatingDescription;
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
@@ -438,19 +601,20 @@ public class ActionAccessSpecificationImpl extends com.weedow.schemaorg.commons.
      */
     @Override
     public Text getDisambiguatingDescription() {
-        return fDisambiguatingDescription;
+        return disambiguatingDescription;
     }
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
+     * @param disambiguatingDescription Text value to set.
      */
     @Override
-    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = fDisambiguatingDescription;
+    public void setDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = disambiguatingDescription;
     }
 
-    private URL fSameAs;
+    private URL sameAs;
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
@@ -459,19 +623,20 @@ public class ActionAccessSpecificationImpl extends com.weedow.schemaorg.commons.
      */
     @Override
     public URL getSameAs() {
-        return fSameAs;
+        return sameAs;
     }
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
+     * @param sameAs URL value to set.
      */
     @Override
-    public void setSameAs(URL fSameAs) {
-        this.fSameAs = fSameAs;
+    public void setSameAs(URL sameAs) {
+        this.sameAs = sameAs;
     }
 
-    private Object fIdentifier;
+    private Object identifier;
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -481,19 +646,37 @@ public class ActionAccessSpecificationImpl extends com.weedow.schemaorg.commons.
      */
     @Override
     public <T> T getIdentifier() {
-        return (T) fIdentifier;
+        return (T) identifier;
     }
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
+     * @param identifier URL value to set.
      */
     @Override
-    public void setIdentifier(Object fIdentifier) {
-        if(!(fIdentifier instanceof URL) && !(fIdentifier instanceof Text) && !(fIdentifier instanceof PropertyValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
-        }
-        this.fIdentifier = fIdentifier;
+    public void setIdentifier(URL identifier) {
+        this.identifier = identifier;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier Text value to set.
+     */
+    @Override
+    public void setIdentifier(Text identifier) {
+        this.identifier = identifier;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier PropertyValue value to set.
+     */
+    @Override
+    public void setIdentifier(PropertyValue identifier) {
+        this.identifier = identifier;
     }
 }

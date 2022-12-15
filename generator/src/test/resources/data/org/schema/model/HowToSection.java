@@ -26,6 +26,19 @@ public interface HowToSection extends ListItem, CreativeWork, ItemList {
     /**
      * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection (originally misnamed 'steps'; 'step' is preferred).
      *
+     * @param steps ItemList value to set.
      */
-    void setSteps(Object fSteps);
+    void setSteps(ItemList steps);
+    /**
+     * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection (originally misnamed 'steps'; 'step' is preferred).
+     *
+     * @param steps CreativeWork value to set.
+     */
+    void setSteps(CreativeWork steps);
+    /**
+     * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection (originally misnamed 'steps'; 'step' is preferred).
+     *
+     * @param steps Text value to set.
+     */
+    void setSteps(Text steps);
 }

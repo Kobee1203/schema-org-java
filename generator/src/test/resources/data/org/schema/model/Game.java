@@ -28,8 +28,9 @@ public interface Game extends CreativeWork {
     /**
      * A piece of data that represents a particular aspect of a fictional character (skill, power, character points, advantage, disadvantage).
      *
+     * @param characterAttribute Thing value to set.
      */
-    void setCharacterAttribute(Thing fCharacterAttribute);
+    void setCharacterAttribute(Thing characterAttribute);
 
     /**
      * An item is an object within the game world that can be collected by a player or, occasionally, a non-player character.
@@ -41,8 +42,9 @@ public interface Game extends CreativeWork {
     /**
      * An item is an object within the game world that can be collected by a player or, occasionally, a non-player character.
      *
+     * @param gameItem Thing value to set.
      */
-    void setGameItem(Thing fGameItem);
+    void setGameItem(Thing gameItem);
 
     /**
      * Indicate how many people can play this game (minimum, maximum, or range).
@@ -54,8 +56,9 @@ public interface Game extends CreativeWork {
     /**
      * Indicate how many people can play this game (minimum, maximum, or range).
      *
+     * @param numberOfPlayers QuantitativeValue value to set.
      */
-    void setNumberOfPlayers(QuantitativeValue fNumberOfPlayers);
+    void setNumberOfPlayers(QuantitativeValue numberOfPlayers);
 
     /**
      * The task that a player-controlled character, or group of characters may complete in order to gain a reward.
@@ -67,8 +70,9 @@ public interface Game extends CreativeWork {
     /**
      * The task that a player-controlled character, or group of characters may complete in order to gain a reward.
      *
+     * @param quest Thing value to set.
      */
-    void setQuest(Thing fQuest);
+    void setQuest(Thing quest);
 
     /**
      * Real or fictional location of the game (or part of game).
@@ -80,6 +84,19 @@ public interface Game extends CreativeWork {
     /**
      * Real or fictional location of the game (or part of game).
      *
+     * @param gameLocation Place value to set.
      */
-    void setGameLocation(Object fGameLocation);
+    void setGameLocation(Place gameLocation);
+    /**
+     * Real or fictional location of the game (or part of game).
+     *
+     * @param gameLocation URL value to set.
+     */
+    void setGameLocation(URL gameLocation);
+    /**
+     * Real or fictional location of the game (or part of game).
+     *
+     * @param gameLocation PostalAddress value to set.
+     */
+    void setGameLocation(PostalAddress gameLocation);
 }

@@ -41,10 +41,10 @@ import org.schema.model.RadiationTherapy;
  * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
  * @see <a href="https://schema.org/RadiationTherapy">https://schema.org/RadiationTherapy</a>
  */
-@JsonLdTypeName("schema:RadiationTherapy")
+@JsonLdTypeName("RadiationTherapy")
 public class RadiationTherapyImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements RadiationTherapy {
 
-    private MedicalTherapy fDuplicateTherapy;
+    private MedicalTherapy duplicateTherapy;
 
     /**
      * A therapy that duplicates or overlaps this one.
@@ -54,20 +54,21 @@ public class RadiationTherapyImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public MedicalTherapy getDuplicateTherapy() {
-        return fDuplicateTherapy;
+        return duplicateTherapy;
     }
 
     /**
      * A therapy that duplicates or overlaps this one.
      *
+     * @param duplicateTherapy MedicalTherapy value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setDuplicateTherapy(MedicalTherapy fDuplicateTherapy) {
-        this.fDuplicateTherapy = fDuplicateTherapy;
+    public void setDuplicateTherapy(MedicalTherapy duplicateTherapy) {
+        this.duplicateTherapy = duplicateTherapy;
     }
 
-    private MedicalEntity fSeriousAdverseOutcome;
+    private MedicalEntity seriousAdverseOutcome;
 
     /**
      * A possible serious complication and/or serious side effect of this therapy. Serious adverse outcomes include those that are life-threatening; result in death, disability, or permanent damage; require hospitalization or prolong existing hospitalization; cause congenital anomalies or birth defects; or jeopardize the patient and may require medical or surgical intervention to prevent one of the outcomes in this definition.
@@ -77,20 +78,21 @@ public class RadiationTherapyImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public MedicalEntity getSeriousAdverseOutcome() {
-        return fSeriousAdverseOutcome;
+        return seriousAdverseOutcome;
     }
 
     /**
      * A possible serious complication and/or serious side effect of this therapy. Serious adverse outcomes include those that are life-threatening; result in death, disability, or permanent damage; require hospitalization or prolong existing hospitalization; cause congenital anomalies or birth defects; or jeopardize the patient and may require medical or surgical intervention to prevent one of the outcomes in this definition.
      *
+     * @param seriousAdverseOutcome MedicalEntity value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setSeriousAdverseOutcome(MedicalEntity fSeriousAdverseOutcome) {
-        this.fSeriousAdverseOutcome = fSeriousAdverseOutcome;
+    public void setSeriousAdverseOutcome(MedicalEntity seriousAdverseOutcome) {
+        this.seriousAdverseOutcome = seriousAdverseOutcome;
     }
 
-    private Object fContraindication;
+    private Object contraindication;
 
     /**
      * A contraindication for this therapy.
@@ -100,23 +102,31 @@ public class RadiationTherapyImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public <T> T getContraindication() {
-        return (T) fContraindication;
+        return (T) contraindication;
     }
 
     /**
      * A contraindication for this therapy.
      *
+     * @param contraindication Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setContraindication(Object fContraindication) {
-        if(!(fContraindication instanceof Text) && !(fContraindication instanceof MedicalContraindication)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'contraindication': " + fContraindication);
-        }
-        this.fContraindication = fContraindication;
+    public void setContraindication(Text contraindication) {
+        this.contraindication = contraindication;
+    }
+    /**
+     * A contraindication for this therapy.
+     *
+     * @param contraindication MedicalContraindication value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void setContraindication(MedicalContraindication contraindication) {
+        this.contraindication = contraindication;
     }
 
-    private MedicalEntity fAdverseOutcome;
+    private MedicalEntity adverseOutcome;
 
     /**
      * A possible complication and/or side effect of this therapy. If it is known that an adverse outcome is serious (resulting in death, disability, or permanent damage; requiring hospitalization; or is otherwise life-threatening or requires immediate medical attention), tag it as a seriouseAdverseOutcome instead.
@@ -126,20 +136,21 @@ public class RadiationTherapyImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public MedicalEntity getAdverseOutcome() {
-        return fAdverseOutcome;
+        return adverseOutcome;
     }
 
     /**
      * A possible complication and/or side effect of this therapy. If it is known that an adverse outcome is serious (resulting in death, disability, or permanent damage; requiring hospitalization; or is otherwise life-threatening or requires immediate medical attention), tag it as a seriouseAdverseOutcome instead.
      *
+     * @param adverseOutcome MedicalEntity value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setAdverseOutcome(MedicalEntity fAdverseOutcome) {
-        this.fAdverseOutcome = fAdverseOutcome;
+    public void setAdverseOutcome(MedicalEntity adverseOutcome) {
+        this.adverseOutcome = adverseOutcome;
     }
 
-    private Drug fDrug;
+    private Drug drug;
 
     /**
      * Specifying a drug or medicine used in a medication procedure.
@@ -149,20 +160,21 @@ public class RadiationTherapyImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public Drug getDrug() {
-        return fDrug;
+        return drug;
     }
 
     /**
      * Specifying a drug or medicine used in a medication procedure.
      *
+     * @param drug Drug value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setDrug(Drug fDrug) {
-        this.fDrug = fDrug;
+    public void setDrug(Drug drug) {
+        this.drug = drug;
     }
 
-    private DoseSchedule fDoseSchedule;
+    private DoseSchedule doseSchedule;
 
     /**
      * A dosing schedule for the drug for a given population, either observed, recommended, or maximum dose based on the type used.
@@ -172,20 +184,21 @@ public class RadiationTherapyImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public DoseSchedule getDoseSchedule() {
-        return fDoseSchedule;
+        return doseSchedule;
     }
 
     /**
      * A dosing schedule for the drug for a given population, either observed, recommended, or maximum dose based on the type used.
      *
+     * @param doseSchedule DoseSchedule value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setDoseSchedule(DoseSchedule fDoseSchedule) {
-        this.fDoseSchedule = fDoseSchedule;
+    public void setDoseSchedule(DoseSchedule doseSchedule) {
+        this.doseSchedule = doseSchedule;
     }
 
-    private MedicalProcedureType fProcedureType;
+    private MedicalProcedureType procedureType;
 
     /**
      * The type of procedure, for example Surgical, Noninvasive, or Percutaneous.
@@ -195,20 +208,21 @@ public class RadiationTherapyImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public MedicalProcedureType getProcedureType() {
-        return fProcedureType;
+        return procedureType;
     }
 
     /**
      * The type of procedure, for example Surgical, Noninvasive, or Percutaneous.
      *
+     * @param procedureType MedicalProcedureType value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setProcedureType(MedicalProcedureType fProcedureType) {
-        this.fProcedureType = fProcedureType;
+    public void setProcedureType(MedicalProcedureType procedureType) {
+        this.procedureType = procedureType;
     }
 
-    private Object fPreparation;
+    private Object preparation;
 
     /**
      * Typical preparation that a patient must undergo before having the procedure performed.
@@ -218,23 +232,31 @@ public class RadiationTherapyImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public <T> T getPreparation() {
-        return (T) fPreparation;
+        return (T) preparation;
     }
 
     /**
      * Typical preparation that a patient must undergo before having the procedure performed.
      *
+     * @param preparation MedicalEntity value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setPreparation(Object fPreparation) {
-        if(!(fPreparation instanceof MedicalEntity) && !(fPreparation instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'preparation': " + fPreparation);
-        }
-        this.fPreparation = fPreparation;
+    public void setPreparation(MedicalEntity preparation) {
+        this.preparation = preparation;
+    }
+    /**
+     * Typical preparation that a patient must undergo before having the procedure performed.
+     *
+     * @param preparation Text value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void setPreparation(Text preparation) {
+        this.preparation = preparation;
     }
 
-    private Text fBodyLocation;
+    private Text bodyLocation;
 
     /**
      * Location in the body of the anatomical structure.
@@ -244,20 +266,21 @@ public class RadiationTherapyImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public Text getBodyLocation() {
-        return fBodyLocation;
+        return bodyLocation;
     }
 
     /**
      * Location in the body of the anatomical structure.
      *
+     * @param bodyLocation Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setBodyLocation(Text fBodyLocation) {
-        this.fBodyLocation = fBodyLocation;
+    public void setBodyLocation(Text bodyLocation) {
+        this.bodyLocation = bodyLocation;
     }
 
-    private Object fStatus;
+    private Object status;
 
     /**
      * The status of the study (enumerated).
@@ -267,23 +290,41 @@ public class RadiationTherapyImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public <T> T getStatus() {
-        return (T) fStatus;
+        return (T) status;
     }
 
     /**
      * The status of the study (enumerated).
      *
+     * @param status Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setStatus(Object fStatus) {
-        if(!(fStatus instanceof Text) && !(fStatus instanceof EventStatusType) && !(fStatus instanceof MedicalStudyStatus)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'status': " + fStatus);
-        }
-        this.fStatus = fStatus;
+    public void setStatus(Text status) {
+        this.status = status;
+    }
+    /**
+     * The status of the study (enumerated).
+     *
+     * @param status EventStatusType value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void setStatus(EventStatusType status) {
+        this.status = status;
+    }
+    /**
+     * The status of the study (enumerated).
+     *
+     * @param status MedicalStudyStatus value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void setStatus(MedicalStudyStatus status) {
+        this.status = status;
     }
 
-    private Text fHowPerformed;
+    private Text howPerformed;
 
     /**
      * How the procedure is performed.
@@ -293,20 +334,21 @@ public class RadiationTherapyImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public Text getHowPerformed() {
-        return fHowPerformed;
+        return howPerformed;
     }
 
     /**
      * How the procedure is performed.
      *
+     * @param howPerformed Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setHowPerformed(Text fHowPerformed) {
-        this.fHowPerformed = fHowPerformed;
+    public void setHowPerformed(Text howPerformed) {
+        this.howPerformed = howPerformed;
     }
 
-    private Text fFollowup;
+    private Text followup;
 
     /**
      * Typical or recommended followup care after the procedure is performed.
@@ -316,20 +358,21 @@ public class RadiationTherapyImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public Text getFollowup() {
-        return fFollowup;
+        return followup;
     }
 
     /**
      * Typical or recommended followup care after the procedure is performed.
      *
+     * @param followup Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setFollowup(Text fFollowup) {
-        this.fFollowup = fFollowup;
+    public void setFollowup(Text followup) {
+        this.followup = followup;
     }
 
-    private Object fLegalStatus;
+    private Object legalStatus;
 
     /**
      * The drug or supplement's legal status, including any controlled substance schedules that apply.
@@ -339,23 +382,41 @@ public class RadiationTherapyImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public <T> T getLegalStatus() {
-        return (T) fLegalStatus;
+        return (T) legalStatus;
     }
 
     /**
      * The drug or supplement's legal status, including any controlled substance schedules that apply.
      *
+     * @param legalStatus DrugLegalStatus value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setLegalStatus(Object fLegalStatus) {
-        if(!(fLegalStatus instanceof DrugLegalStatus) && !(fLegalStatus instanceof Text) && !(fLegalStatus instanceof MedicalEnumeration)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'legalStatus': " + fLegalStatus);
-        }
-        this.fLegalStatus = fLegalStatus;
+    public void setLegalStatus(DrugLegalStatus legalStatus) {
+        this.legalStatus = legalStatus;
+    }
+    /**
+     * The drug or supplement's legal status, including any controlled substance schedules that apply.
+     *
+     * @param legalStatus Text value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void setLegalStatus(Text legalStatus) {
+        this.legalStatus = legalStatus;
+    }
+    /**
+     * The drug or supplement's legal status, including any controlled substance schedules that apply.
+     *
+     * @param legalStatus MedicalEnumeration value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    @Override
+    public void setLegalStatus(MedicalEnumeration legalStatus) {
+        this.legalStatus = legalStatus;
     }
 
-    private Grant fFunding;
+    private Grant funding;
 
     /**
      * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
@@ -367,22 +428,23 @@ public class RadiationTherapyImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public Grant getFunding() {
-        return fFunding;
+        return funding;
     }
 
     /**
      * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
      *
+     * @param funding Grant value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
     @Override
-    public void setFunding(Grant fFunding) {
-        this.fFunding = fFunding;
+    public void setFunding(Grant funding) {
+        this.funding = funding;
     }
 
-    private MedicalStudy fStudy;
+    private MedicalStudy study;
 
     /**
      * A medical study or trial related to this entity.
@@ -392,20 +454,21 @@ public class RadiationTherapyImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public MedicalStudy getStudy() {
-        return fStudy;
+        return study;
     }
 
     /**
      * A medical study or trial related to this entity.
      *
+     * @param study MedicalStudy value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setStudy(MedicalStudy fStudy) {
-        this.fStudy = fStudy;
+    public void setStudy(MedicalStudy study) {
+        this.study = study;
     }
 
-    private MedicalCode fCode;
+    private MedicalCode code;
 
     /**
      * A medical code for the entity, taken from a controlled vocabulary or ontology such as ICD-9, DiseasesDB, MeSH, SNOMED-CT, RxNorm, etc.
@@ -415,20 +478,21 @@ public class RadiationTherapyImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public MedicalCode getCode() {
-        return fCode;
+        return code;
     }
 
     /**
      * A medical code for the entity, taken from a controlled vocabulary or ontology such as ICD-9, DiseasesDB, MeSH, SNOMED-CT, RxNorm, etc.
      *
+     * @param code MedicalCode value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setCode(MedicalCode fCode) {
-        this.fCode = fCode;
+    public void setCode(MedicalCode code) {
+        this.code = code;
     }
 
-    private MedicalGuideline fGuideline;
+    private MedicalGuideline guideline;
 
     /**
      * A medical guideline related to this entity.
@@ -438,20 +502,21 @@ public class RadiationTherapyImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public MedicalGuideline getGuideline() {
-        return fGuideline;
+        return guideline;
     }
 
     /**
      * A medical guideline related to this entity.
      *
+     * @param guideline MedicalGuideline value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setGuideline(MedicalGuideline fGuideline) {
-        this.fGuideline = fGuideline;
+    public void setGuideline(MedicalGuideline guideline) {
+        this.guideline = guideline;
     }
 
-    private Organization fRecognizingAuthority;
+    private Organization recognizingAuthority;
 
     /**
      * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
@@ -461,20 +526,21 @@ public class RadiationTherapyImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public Organization getRecognizingAuthority() {
-        return fRecognizingAuthority;
+        return recognizingAuthority;
     }
 
     /**
      * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
      *
+     * @param recognizingAuthority Organization value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setRecognizingAuthority(Organization fRecognizingAuthority) {
-        this.fRecognizingAuthority = fRecognizingAuthority;
+    public void setRecognizingAuthority(Organization recognizingAuthority) {
+        this.recognizingAuthority = recognizingAuthority;
     }
 
-    private MedicineSystem fMedicineSystem;
+    private MedicineSystem medicineSystem;
 
     /**
      * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
@@ -484,20 +550,21 @@ public class RadiationTherapyImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public MedicineSystem getMedicineSystem() {
-        return fMedicineSystem;
+        return medicineSystem;
     }
 
     /**
      * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
      *
+     * @param medicineSystem MedicineSystem value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setMedicineSystem(MedicineSystem fMedicineSystem) {
-        this.fMedicineSystem = fMedicineSystem;
+    public void setMedicineSystem(MedicineSystem medicineSystem) {
+        this.medicineSystem = medicineSystem;
     }
 
-    private MedicalSpecialty fRelevantSpecialty;
+    private MedicalSpecialty relevantSpecialty;
 
     /**
      * If applicable, a medical specialty in which this entity is relevant.
@@ -507,20 +574,21 @@ public class RadiationTherapyImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public MedicalSpecialty getRelevantSpecialty() {
-        return fRelevantSpecialty;
+        return relevantSpecialty;
     }
 
     /**
      * If applicable, a medical specialty in which this entity is relevant.
      *
+     * @param relevantSpecialty MedicalSpecialty value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     @Override
-    public void setRelevantSpecialty(MedicalSpecialty fRelevantSpecialty) {
-        this.fRelevantSpecialty = fRelevantSpecialty;
+    public void setRelevantSpecialty(MedicalSpecialty relevantSpecialty) {
+        this.relevantSpecialty = relevantSpecialty;
     }
 
-    private Object fMainEntityOfPage;
+    private Object mainEntityOfPage;
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -529,22 +597,29 @@ public class RadiationTherapyImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
+        return (T) mainEntityOfPage;
     }
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
+     * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
-        }
-        this.fMainEntityOfPage = fMainEntityOfPage;
+    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param mainEntityOfPage URL value to set.
+     */
+    @Override
+    public void setMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
     }
 
-    private Text fAlternateName;
+    private Text alternateName;
 
     /**
      * An alias for the item.
@@ -553,19 +628,20 @@ public class RadiationTherapyImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public Text getAlternateName() {
-        return fAlternateName;
+        return alternateName;
     }
 
     /**
      * An alias for the item.
      *
+     * @param alternateName Text value to set.
      */
     @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
+    public void setAlternateName(Text alternateName) {
+        this.alternateName = alternateName;
     }
 
-    private Text fName;
+    private Text name;
 
     /**
      * The name of the item.
@@ -574,19 +650,20 @@ public class RadiationTherapyImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public Text getName() {
-        return fName;
+        return name;
     }
 
     /**
      * The name of the item.
      *
+     * @param name Text value to set.
      */
     @Override
-    public void setName(Text fName) {
-        this.fName = fName;
+    public void setName(Text name) {
+        this.name = name;
     }
 
-    private Action fPotentialAction;
+    private Action potentialAction;
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -595,19 +672,20 @@ public class RadiationTherapyImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public Action getPotentialAction() {
-        return fPotentialAction;
+        return potentialAction;
     }
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      *
+     * @param potentialAction Action value to set.
      */
     @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
+    public void setPotentialAction(Action potentialAction) {
+        this.potentialAction = potentialAction;
     }
 
-    private Object fImage;
+    private Object image;
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -616,22 +694,29 @@ public class RadiationTherapyImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public <T> T getImage() {
-        return (T) fImage;
+        return (T) image;
     }
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
+     * @param image URL value to set.
      */
     @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
-        this.fImage = fImage;
+    public void setImage(URL image) {
+        this.image = image;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image ImageObject value to set.
+     */
+    @Override
+    public void setImage(ImageObject image) {
+        this.image = image;
     }
 
-    private URL fUrl;
+    private URL url;
 
     /**
      * URL of the item.
@@ -640,19 +725,20 @@ public class RadiationTherapyImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public URL getUrl() {
-        return fUrl;
+        return url;
     }
 
     /**
      * URL of the item.
      *
+     * @param url URL value to set.
      */
     @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
+    public void setUrl(URL url) {
+        this.url = url;
     }
 
-    private Text fDescription;
+    private Text description;
 
     /**
      * A description of the item.
@@ -661,19 +747,20 @@ public class RadiationTherapyImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public Text getDescription() {
-        return fDescription;
+        return description;
     }
 
     /**
      * A description of the item.
      *
+     * @param description Text value to set.
      */
     @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
+    public void setDescription(Text description) {
+        this.description = description;
     }
 
-    private Object fSubjectOf;
+    private Object subjectOf;
 
     /**
      * A CreativeWork or Event about this Thing.
@@ -683,23 +770,31 @@ public class RadiationTherapyImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public <T> T getSubjectOf() {
-        return (T) fSubjectOf;
+        return (T) subjectOf;
     }
 
     /**
      * A CreativeWork or Event about this Thing.
      *
+     * @param subjectOf Event value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Object fSubjectOf) {
-        if(!(fSubjectOf instanceof Event) && !(fSubjectOf instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'subjectOf': " + fSubjectOf);
-        }
-        this.fSubjectOf = fSubjectOf;
+    public void setSubjectOf(Event subjectOf) {
+        this.subjectOf = subjectOf;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @param subjectOf CreativeWork value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public void setSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = subjectOf;
     }
 
-    private URL fAdditionalType;
+    private URL additionalType;
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
@@ -708,19 +803,20 @@ public class RadiationTherapyImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public URL getAdditionalType() {
-        return fAdditionalType;
+        return additionalType;
     }
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
+     * @param additionalType URL value to set.
      */
     @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
+    public void setAdditionalType(URL additionalType) {
+        this.additionalType = additionalType;
     }
 
-    private Text fDisambiguatingDescription;
+    private Text disambiguatingDescription;
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
@@ -729,19 +825,20 @@ public class RadiationTherapyImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public Text getDisambiguatingDescription() {
-        return fDisambiguatingDescription;
+        return disambiguatingDescription;
     }
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
+     * @param disambiguatingDescription Text value to set.
      */
     @Override
-    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = fDisambiguatingDescription;
+    public void setDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = disambiguatingDescription;
     }
 
-    private URL fSameAs;
+    private URL sameAs;
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
@@ -750,19 +847,20 @@ public class RadiationTherapyImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public URL getSameAs() {
-        return fSameAs;
+        return sameAs;
     }
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
+     * @param sameAs URL value to set.
      */
     @Override
-    public void setSameAs(URL fSameAs) {
-        this.fSameAs = fSameAs;
+    public void setSameAs(URL sameAs) {
+        this.sameAs = sameAs;
     }
 
-    private Object fIdentifier;
+    private Object identifier;
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -772,19 +870,37 @@ public class RadiationTherapyImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public <T> T getIdentifier() {
-        return (T) fIdentifier;
+        return (T) identifier;
     }
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
+     * @param identifier URL value to set.
      */
     @Override
-    public void setIdentifier(Object fIdentifier) {
-        if(!(fIdentifier instanceof URL) && !(fIdentifier instanceof Text) && !(fIdentifier instanceof PropertyValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
-        }
-        this.fIdentifier = fIdentifier;
+    public void setIdentifier(URL identifier) {
+        this.identifier = identifier;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier Text value to set.
+     */
+    @Override
+    public void setIdentifier(Text identifier) {
+        this.identifier = identifier;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier PropertyValue value to set.
+     */
+    @Override
+    public void setIdentifier(PropertyValue identifier) {
+        this.identifier = identifier;
     }
 }

@@ -30,10 +30,11 @@ public interface CategoryCode extends DefinedTerm {
     /**
      * A short textual code that uniquely identifies the value.
      *
+     * @param codeValue Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
      */
-    void setCodeValue(Text fCodeValue);
+    void setCodeValue(Text codeValue);
 
     /**
      * A [[CategoryCodeSet]] that contains this category code.
@@ -47,8 +48,17 @@ public interface CategoryCode extends DefinedTerm {
     /**
      * A [[CategoryCodeSet]] that contains this category code.
      *
+     * @param inCodeSet CategoryCodeSet value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
      */
-    void setInCodeSet(Object fInCodeSet);
+    void setInCodeSet(CategoryCodeSet inCodeSet);
+    /**
+     * A [[CategoryCodeSet]] that contains this category code.
+     *
+     * @param inCodeSet URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
+     */
+    void setInCodeSet(URL inCodeSet);
 }

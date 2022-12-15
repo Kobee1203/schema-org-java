@@ -34,10 +34,11 @@ public interface CDCPMDRecord extends StructuredValue {
     /**
      * numbedsocc - HOSPITAL INPATIENT BED OCCUPANCY: Total number of staffed inpatient beds that are occupied.
      *
+     * @param cvdNumBedsOcc Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
-    void setCvdNumBedsOcc(Number fCvdNumBedsOcc);
+    void setCvdNumBedsOcc(Number cvdNumBedsOcc);
 
     /**
      * numicubedsocc - ICU BED OCCUPANCY: Total number of staffed inpatient ICU beds that are occupied.
@@ -51,10 +52,11 @@ public interface CDCPMDRecord extends StructuredValue {
     /**
      * numicubedsocc - ICU BED OCCUPANCY: Total number of staffed inpatient ICU beds that are occupied.
      *
+     * @param cvdNumICUBedsOcc Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
-    void setCvdNumICUBedsOcc(Number fCvdNumICUBedsOcc);
+    void setCvdNumICUBedsOcc(Number cvdNumICUBedsOcc);
 
     /**
      * numvent - MECHANICAL VENTILATORS: Total number of ventilators available.
@@ -68,10 +70,11 @@ public interface CDCPMDRecord extends StructuredValue {
     /**
      * numvent - MECHANICAL VENTILATORS: Total number of ventilators available.
      *
+     * @param cvdNumVent Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
-    void setCvdNumVent(Number fCvdNumVent);
+    void setCvdNumVent(Number cvdNumVent);
 
     /**
      * numc19died - DEATHS: Patients with suspected or confirmed COVID-19 who died in the hospital, ED, or any overflow location.
@@ -85,10 +88,11 @@ public interface CDCPMDRecord extends StructuredValue {
     /**
      * numc19died - DEATHS: Patients with suspected or confirmed COVID-19 who died in the hospital, ED, or any overflow location.
      *
+     * @param cvdNumC19Died Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
-    void setCvdNumC19Died(Number fCvdNumC19Died);
+    void setCvdNumC19Died(Number cvdNumC19Died);
 
     /**
      * numtotbeds - ALL HOSPITAL BEDS: Total number of all Inpatient and outpatient beds, including all staffed,ICU, licensed, and overflow (surge) beds used for inpatients or outpatients.
@@ -102,10 +106,11 @@ public interface CDCPMDRecord extends StructuredValue {
     /**
      * numtotbeds - ALL HOSPITAL BEDS: Total number of all Inpatient and outpatient beds, including all staffed,ICU, licensed, and overflow (surge) beds used for inpatients or outpatients.
      *
+     * @param cvdNumTotBeds Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
-    void setCvdNumTotBeds(Number fCvdNumTotBeds);
+    void setCvdNumTotBeds(Number cvdNumTotBeds);
 
     /**
      * Name of the County of the NHSN facility that this data record applies to. Use [[cvdFacilityId]] to identify the facility. To provide other details, [[healthcareReportingData]] can be used on a [[Hospital]] entry.
@@ -119,10 +124,11 @@ public interface CDCPMDRecord extends StructuredValue {
     /**
      * Name of the County of the NHSN facility that this data record applies to. Use [[cvdFacilityId]] to identify the facility. To provide other details, [[healthcareReportingData]] can be used on a [[Hospital]] entry.
      *
+     * @param cvdFacilityCounty Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
-    void setCvdFacilityCounty(Text fCvdFacilityCounty);
+    void setCvdFacilityCounty(Text cvdFacilityCounty);
 
     /**
      * numicubeds - ICU BEDS: Total number of staffed inpatient intensive care unit (ICU) beds.
@@ -136,10 +142,11 @@ public interface CDCPMDRecord extends StructuredValue {
     /**
      * numicubeds - ICU BEDS: Total number of staffed inpatient intensive care unit (ICU) beds.
      *
+     * @param cvdNumICUBeds Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
-    void setCvdNumICUBeds(Number fCvdNumICUBeds);
+    void setCvdNumICUBeds(Number cvdNumICUBeds);
 
     /**
      * collectiondate - Date for which patient counts are reported.
@@ -153,10 +160,19 @@ public interface CDCPMDRecord extends StructuredValue {
     /**
      * collectiondate - Date for which patient counts are reported.
      *
+     * @param cvdCollectionDate DateTime value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
-    void setCvdCollectionDate(Object fCvdCollectionDate);
+    void setCvdCollectionDate(DateTime cvdCollectionDate);
+    /**
+     * collectiondate - Date for which patient counts are reported.
+     *
+     * @param cvdCollectionDate Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
+     */
+    void setCvdCollectionDate(Text cvdCollectionDate);
 
     /**
      * numc19hopats - HOSPITAL ONSET: Patients hospitalized in an NHSN inpatient care location with onset of suspected or confirmed COVID-19 14 or more days after hospitalization.
@@ -170,10 +186,11 @@ public interface CDCPMDRecord extends StructuredValue {
     /**
      * numc19hopats - HOSPITAL ONSET: Patients hospitalized in an NHSN inpatient care location with onset of suspected or confirmed COVID-19 14 or more days after hospitalization.
      *
+     * @param cvdNumC19HOPats Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
-    void setCvdNumC19HOPats(Number fCvdNumC19HOPats);
+    void setCvdNumC19HOPats(Number cvdNumC19HOPats);
 
     /**
      * numc19ofmechventpats - ED/OVERFLOW and VENTILATED: Patients with suspected or confirmed COVID-19 who are in the ED or any overflow location awaiting an inpatient bed and on a mechanical ventilator.
@@ -187,10 +204,11 @@ public interface CDCPMDRecord extends StructuredValue {
     /**
      * numc19ofmechventpats - ED/OVERFLOW and VENTILATED: Patients with suspected or confirmed COVID-19 who are in the ED or any overflow location awaiting an inpatient bed and on a mechanical ventilator.
      *
+     * @param cvdNumC19OFMechVentPats Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
-    void setCvdNumC19OFMechVentPats(Number fCvdNumC19OFMechVentPats);
+    void setCvdNumC19OFMechVentPats(Number cvdNumC19OFMechVentPats);
 
     /**
      * Identifier of the NHSN facility that this data record applies to. Use [[cvdFacilityCounty]] to indicate the county. To provide other details, [[healthcareReportingData]] can be used on a [[Hospital]] entry.
@@ -204,10 +222,11 @@ public interface CDCPMDRecord extends StructuredValue {
     /**
      * Identifier of the NHSN facility that this data record applies to. Use [[cvdFacilityCounty]] to indicate the county. To provide other details, [[healthcareReportingData]] can be used on a [[Hospital]] entry.
      *
+     * @param cvdFacilityId Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
-    void setCvdFacilityId(Text fCvdFacilityId);
+    void setCvdFacilityId(Text cvdFacilityId);
 
     /**
      * numventuse - MECHANICAL VENTILATORS IN USE: Total number of ventilators in use.
@@ -221,10 +240,11 @@ public interface CDCPMDRecord extends StructuredValue {
     /**
      * numventuse - MECHANICAL VENTILATORS IN USE: Total number of ventilators in use.
      *
+     * @param cvdNumVentUse Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
-    void setCvdNumVentUse(Number fCvdNumVentUse);
+    void setCvdNumVentUse(Number cvdNumVentUse);
 
     /**
      * numbeds - HOSPITAL INPATIENT BEDS: Inpatient beds, including all staffed, licensed, and overflow (surge) beds used for inpatients.
@@ -238,10 +258,11 @@ public interface CDCPMDRecord extends StructuredValue {
     /**
      * numbeds - HOSPITAL INPATIENT BEDS: Inpatient beds, including all staffed, licensed, and overflow (surge) beds used for inpatients.
      *
+     * @param cvdNumBeds Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
-    void setCvdNumBeds(Number fCvdNumBeds);
+    void setCvdNumBeds(Number cvdNumBeds);
 
     /**
      * numc19mechventpats - HOSPITALIZED and VENTILATED: Patients hospitalized in an NHSN inpatient care location who have suspected or confirmed COVID-19 and are on a mechanical ventilator.
@@ -255,10 +276,11 @@ public interface CDCPMDRecord extends StructuredValue {
     /**
      * numc19mechventpats - HOSPITALIZED and VENTILATED: Patients hospitalized in an NHSN inpatient care location who have suspected or confirmed COVID-19 and are on a mechanical ventilator.
      *
+     * @param cvdNumC19MechVentPats Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
-    void setCvdNumC19MechVentPats(Number fCvdNumC19MechVentPats);
+    void setCvdNumC19MechVentPats(Number cvdNumC19MechVentPats);
 
     /**
      * Publication date of an online listing.
@@ -272,10 +294,19 @@ public interface CDCPMDRecord extends StructuredValue {
     /**
      * Publication date of an online listing.
      *
+     * @param datePosted Date value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
-    void setDatePosted(Object fDatePosted);
+    void setDatePosted(Date datePosted);
+    /**
+     * Publication date of an online listing.
+     *
+     * @param datePosted DateTime value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
+     */
+    void setDatePosted(DateTime datePosted);
 
     /**
      * numc19overflowpats - ED/OVERFLOW: Patients with suspected or confirmed COVID-19 who are in the ED or any overflow location awaiting an inpatient bed.
@@ -289,10 +320,11 @@ public interface CDCPMDRecord extends StructuredValue {
     /**
      * numc19overflowpats - ED/OVERFLOW: Patients with suspected or confirmed COVID-19 who are in the ED or any overflow location awaiting an inpatient bed.
      *
+     * @param cvdNumC19OverflowPats Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
-    void setCvdNumC19OverflowPats(Number fCvdNumC19OverflowPats);
+    void setCvdNumC19OverflowPats(Number cvdNumC19OverflowPats);
 
     /**
      * numc19hosppats - HOSPITALIZED: Patients currently hospitalized in an inpatient care location who have suspected or confirmed COVID-19.
@@ -306,8 +338,9 @@ public interface CDCPMDRecord extends StructuredValue {
     /**
      * numc19hosppats - HOSPITALIZED: Patients currently hospitalized in an inpatient care location who have suspected or confirmed COVID-19.
      *
+     * @param cvdNumC19HospPats Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
-    void setCvdNumC19HospPats(Number fCvdNumC19HospPats);
+    void setCvdNumC19HospPats(Number cvdNumC19HospPats);
 }

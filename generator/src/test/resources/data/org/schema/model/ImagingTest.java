@@ -26,7 +26,8 @@ public interface ImagingTest extends MedicalTest {
     /**
      * Imaging technique used.
      *
+     * @param imagingTechnique MedicalImagingTechnique value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setImagingTechnique(MedicalImagingTechnique fImagingTechnique);
+    void setImagingTechnique(MedicalImagingTechnique imagingTechnique);
 }

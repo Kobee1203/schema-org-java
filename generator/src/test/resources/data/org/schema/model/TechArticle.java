@@ -24,8 +24,9 @@ public interface TechArticle extends Article {
     /**
      * Prerequisites needed to fulfill steps in article.
      *
+     * @param dependencies Text value to set.
      */
-    void setDependencies(Text fDependencies);
+    void setDependencies(Text dependencies);
 
     /**
      * Proficiency needed for this content; expected values: 'Beginner', 'Expert'.
@@ -37,6 +38,7 @@ public interface TechArticle extends Article {
     /**
      * Proficiency needed for this content; expected values: 'Beginner', 'Expert'.
      *
+     * @param proficiencyLevel Text value to set.
      */
-    void setProficiencyLevel(Text fProficiencyLevel);
+    void setProficiencyLevel(Text proficiencyLevel);
 }

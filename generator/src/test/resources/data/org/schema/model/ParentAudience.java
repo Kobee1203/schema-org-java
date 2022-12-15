@@ -24,8 +24,9 @@ public interface ParentAudience extends PeopleAudience {
     /**
      * Maximal age of the child.
      *
+     * @param childMaxAge Number value to set.
      */
-    void setChildMaxAge(Number fChildMaxAge);
+    void setChildMaxAge(Number childMaxAge);
 
     /**
      * Minimal age of the child.
@@ -37,6 +38,7 @@ public interface ParentAudience extends PeopleAudience {
     /**
      * Minimal age of the child.
      *
+     * @param childMinAge Number value to set.
      */
-    void setChildMinAge(Number fChildMinAge);
+    void setChildMinAge(Number childMinAge);
 }

@@ -5,6 +5,7 @@ import com.weedow.schemaorg.generator.core.GeneratorOptions;
 import com.weedow.schemaorg.generator.core.SchemaModelGenerator;
 import com.weedow.schemaorg.generator.parser.ParserOptions;
 import org.apache.maven.artifact.Artifact;
+import org.apache.maven.model.Resource;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
@@ -75,10 +76,17 @@ public class SchemaModelGeneratorMojo extends AbstractMojo {
     @Parameter(name = "skip", property = "weedow.schemaorg.generator.maven.plugin.skip", defaultValue = "false")
     private boolean skip;
 
-    /** Add the output directory to the project as a source root, so that the generated java types are compiled and included in the project artifact. */
-    @SuppressWarnings({"unused", "FieldCanBeLocal", "FieldMayBeFinal"})
-    @Parameter(defaultValue = "true")
-    private boolean addCompileSourceRoot = true;
+    /**
+     * Specify the behavior of the plugin with the generated java types and generated resources.
+     * <ul>
+     * <li>Add the output directory to the project as a source root: SOURCES_AND_RESOURCES</li>
+     * <li>Add the output directory to the project as a test source root: TEST_SOURCES_AND_RESOURCES</li>
+     * <li>Do nothing: NOTHING</li>
+     * </ul>
+     */
+    @SuppressWarnings("unused")
+    @Parameter(name = "sourcesAndResourcesProcessing", defaultValue = "SOURCES_AND_RESOURCES")
+    private SourcesAndResourcesProcessing sourcesAndResourcesProcessing;
 
     /** The project being built. */
     @SuppressWarnings("unused")
@@ -89,9 +97,8 @@ public class SchemaModelGeneratorMojo extends AbstractMojo {
     public void execute() throws MojoExecutionException, MojoFailureException {
         if (skip) {
             getLog().info("Code generation is skipped.");
-            // Even when no new sources are generated, the existing ones should
-            // still be compiled if needed.
-            addCompileSourceRootIfConfigured();
+            // Even when no new sources are generated, the existing ones should still be compiled if needed.
+            processSourcesAndResources();
             return;
         }
 
@@ -118,7 +125,7 @@ public class SchemaModelGeneratorMojo extends AbstractMojo {
                 .build();
         generator.generate();
 
-        addCompileSourceRootIfConfigured();
+        processSourcesAndResources();
 
         long end = System.currentTimeMillis();
         getLog().info(String.format("Finished: %s s", TimeUnit.SECONDS.convert(end - start, TimeUnit.MILLISECONDS)));
@@ -135,9 +142,21 @@ public class SchemaModelGeneratorMojo extends AbstractMojo {
         return schemaOrgJavaCommonsPresent;
     }
 
-    private void addCompileSourceRootIfConfigured() {
-        if (addCompileSourceRoot) {
-            project.addCompileSourceRoot(output.toString());
+    private void processSourcesAndResources() {
+        final String outputDirectory = output.toString();
+
+        final Resource resource = new Resource();
+        resource.setDirectory(outputDirectory);
+        resource.setExcludes(List.of("**/*.java"));
+
+        if (SourcesAndResourcesProcessing.SOURCES_AND_RESOURCES.equals(sourcesAndResourcesProcessing)) {
+            getLog().info("Adding the generated java types and generated resources as compiled source root.");
+            project.addCompileSourceRoot(outputDirectory);
+            project.addResource(resource);
+        } else if (SourcesAndResourcesProcessing.TEST_SOURCES_AND_RESOURCES.equals(sourcesAndResourcesProcessing)) {
+            getLog().info("Adding the generated java types and generated resources as compiled test-source root.");
+            project.addTestCompileSourceRoot(outputDirectory);
+            project.addTestResource(resource);
         }
     }
 

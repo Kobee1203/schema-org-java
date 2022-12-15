@@ -30,8 +30,15 @@ public interface MonetaryGrant extends Grant {
     /**
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
+     * @param funder Organization value to set.
      */
-    void setFunder(Object fFunder);
+    void setFunder(Organization funder);
+    /**
+     * A person or organization that supports (sponsors) something through some kind of financial contribution.
+     *
+     * @param funder Person value to set.
+     */
+    void setFunder(Person funder);
 
     /**
      * The amount of money.
@@ -45,8 +52,17 @@ public interface MonetaryGrant extends Grant {
     /**
      * The amount of money.
      *
+     * @param amount Number value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
      */
-    void setAmount(Object fAmount);
+    void setAmount(Number amount);
+    /**
+     * The amount of money.
+     *
+     * @param amount MonetaryAmount value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     */
+    void setAmount(MonetaryAmount amount);
 }

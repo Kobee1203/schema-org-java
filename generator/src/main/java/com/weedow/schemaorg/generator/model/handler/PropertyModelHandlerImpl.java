@@ -6,9 +6,11 @@ import com.weedow.schemaorg.generator.model.Property;
 import com.weedow.schemaorg.generator.model.Type;
 import com.weedow.schemaorg.generator.model.jsonld.DomainIncludes;
 import com.weedow.schemaorg.generator.model.jsonld.GraphItem;
+import com.weedow.schemaorg.generator.model.utils.ModelUtils;
 
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class PropertyModelHandlerImpl implements ModelHandler {
 
@@ -21,30 +23,56 @@ public class PropertyModelHandlerImpl implements ModelHandler {
 
     @Override
     public void handle(Map<String, Type> schemaDefinitions, GraphItem graphItem) {
-        final List<Type> propertyTypes = ModelHandlerUtils.getPropertyTypes(schemaDefinitions, graphItem);
+        final List<Type> propertyTypes = ModelUtils.getPropertyTypes(schemaDefinitions, graphItem);
         if (propertyTypes.isEmpty()) {
             LOG.info("** DEPRECATED ** superseded by {}", graphItem.getSupersededBy().getId());
             return;
         }
 
-        final List<String> partOf = ModelHandlerUtils.getPartOf(graphItem);
-
-        final List<String> source = ModelHandlerUtils.getSource(graphItem);
-
         final String name = graphItem.getLabel().getValue();
+        final String description = graphItem.getComment().getValue();
+        final List<String> partOf = ModelUtils.getPartOf(graphItem);
+        final List<String> source = ModelUtils.getSource(graphItem);
+
+        final Property.Field field = new Property.Field(
+                name,
+                () -> propertyTypes.size() > 1 ? "Object" : propertyTypes.get(0).getName()
+        );
+
+        final Property.Accessor accessor = new Property.Accessor(
+                name,
+                description,
+                partOf,
+                source,
+                () -> propertyTypes.stream().map(type -> "{@link " + type.getName() + "}").collect(Collectors.joining(" or ")),
+                () -> propertyTypes.size() > 1 ? "<T> T" : propertyTypes.get(0).getName(),
+                () -> propertyTypes.size() > 1 ? "(T)" : null
+        );
+
+        List<Property.Mutator> mutators = propertyTypes
+                .stream()
+                .map(type ->
+                        new Property.Mutator(
+                                name,
+                                description,
+                                partOf,
+                                source,
+                                type::getName,
+                                field::getFieldName
+                        ))
+                .collect(Collectors.toList());
+
         final Property property = new Property(
                 graphItem.getId(),
-                name,
-                "f" + ModelHandlerUtils.capitalize(name),
-                graphItem.getComment().getValue(),
-                propertyTypes,
-                partOf,
-                source
+                field,
+                accessor,
+                mutators,
+                propertyTypes
         );
 
         final List<DomainIncludes> domainIncludes = graphItem.getDomainIncludes();
         domainIncludes.stream().map(DomainIncludes::getId).forEach(id ->
-                ModelHandlerUtils.getType(schemaDefinitions, id).addProperty(property)
+                ModelUtils.getType(schemaDefinitions, id).addProperty(property)
         );
     }
 }

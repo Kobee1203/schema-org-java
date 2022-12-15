@@ -29,9 +29,10 @@ public interface MedicalGuideline extends MedicalEntity {
     /**
      * Strength of evidence of the data used to formulate the guideline (enumerated).
      *
+     * @param evidenceLevel MedicalEvidenceLevel value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setEvidenceLevel(MedicalEvidenceLevel fEvidenceLevel);
+    void setEvidenceLevel(MedicalEvidenceLevel evidenceLevel);
 
     /**
      * Source of the data used to formulate the guidance, e.g. RCT, consensus opinion, etc.
@@ -44,9 +45,10 @@ public interface MedicalGuideline extends MedicalEntity {
     /**
      * Source of the data used to formulate the guidance, e.g. RCT, consensus opinion, etc.
      *
+     * @param evidenceOrigin Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setEvidenceOrigin(Text fEvidenceOrigin);
+    void setEvidenceOrigin(Text evidenceOrigin);
 
     /**
      * The medical conditions, treatments, etc. that are the subject of the guideline.
@@ -59,9 +61,10 @@ public interface MedicalGuideline extends MedicalEntity {
     /**
      * The medical conditions, treatments, etc. that are the subject of the guideline.
      *
+     * @param guidelineSubject MedicalEntity value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setGuidelineSubject(MedicalEntity fGuidelineSubject);
+    void setGuidelineSubject(MedicalEntity guidelineSubject);
 
     /**
      * Date on which this guideline's recommendation was made.
@@ -74,7 +77,8 @@ public interface MedicalGuideline extends MedicalEntity {
     /**
      * Date on which this guideline's recommendation was made.
      *
+     * @param guidelineDate Date value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setGuidelineDate(Date fGuidelineDate);
+    void setGuidelineDate(Date guidelineDate);
 }

@@ -25,8 +25,9 @@ public interface TrainTrip extends Trip {
     /**
      * The name of the train (e.g. The Orient Express).
      *
+     * @param trainName Text value to set.
      */
-    void setTrainName(Text fTrainName);
+    void setTrainName(Text trainName);
 
     /**
      * The station from which the train departs.
@@ -38,8 +39,9 @@ public interface TrainTrip extends Trip {
     /**
      * The station from which the train departs.
      *
+     * @param departureStation TrainStation value to set.
      */
-    void setDepartureStation(TrainStation fDepartureStation);
+    void setDepartureStation(TrainStation departureStation);
 
     /**
      * The platform from which the train departs.
@@ -51,8 +53,9 @@ public interface TrainTrip extends Trip {
     /**
      * The platform from which the train departs.
      *
+     * @param departurePlatform Text value to set.
      */
-    void setDeparturePlatform(Text fDeparturePlatform);
+    void setDeparturePlatform(Text departurePlatform);
 
     /**
      * The unique identifier for the train.
@@ -64,8 +67,9 @@ public interface TrainTrip extends Trip {
     /**
      * The unique identifier for the train.
      *
+     * @param trainNumber Text value to set.
      */
-    void setTrainNumber(Text fTrainNumber);
+    void setTrainNumber(Text trainNumber);
 
     /**
      * The platform where the train arrives.
@@ -77,8 +81,9 @@ public interface TrainTrip extends Trip {
     /**
      * The platform where the train arrives.
      *
+     * @param arrivalPlatform Text value to set.
      */
-    void setArrivalPlatform(Text fArrivalPlatform);
+    void setArrivalPlatform(Text arrivalPlatform);
 
     /**
      * The station where the train trip ends.
@@ -90,6 +95,7 @@ public interface TrainTrip extends Trip {
     /**
      * The station where the train trip ends.
      *
+     * @param arrivalStation TrainStation value to set.
      */
-    void setArrivalStation(TrainStation fArrivalStation);
+    void setArrivalStation(TrainStation arrivalStation);
 }

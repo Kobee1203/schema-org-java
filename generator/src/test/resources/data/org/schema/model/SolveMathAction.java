@@ -28,8 +28,9 @@ public interface SolveMathAction extends Action {
     /**
      * For questions that are part of learning resources (e.g. Quiz), eduQuestionType indicates the format of question being given. Example: "Multiple choice", "Open ended", "Flashcard".
      *
+     * @param eduQuestionType Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2636">https://github.com/schemaorg/schemaorg/issues/2636</a>
      */
-    void setEduQuestionType(Text fEduQuestionType);
+    void setEduQuestionType(Text eduQuestionType);
 }

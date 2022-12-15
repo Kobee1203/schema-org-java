@@ -32,8 +32,17 @@ public interface TouristTrip extends Trip {
     /**
      * Attraction suitable for type(s) of tourist. eg. Children, visitors from a particular country, etc. 
      *
+     * @param touristType Audience value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#IIT-CNR.it">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#IIT-CNR.it</a>
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism</a>
      */
-    void setTouristType(Object fTouristType);
+    void setTouristType(Audience touristType);
+    /**
+     * Attraction suitable for type(s) of tourist. eg. Children, visitors from a particular country, etc. 
+     *
+     * @param touristType Text value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#IIT-CNR.it">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#IIT-CNR.it</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism</a>
+     */
+    void setTouristType(Text touristType);
 }

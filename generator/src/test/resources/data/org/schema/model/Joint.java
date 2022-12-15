@@ -27,9 +27,10 @@ public interface Joint extends AnatomicalStructure {
     /**
      * The name given to how bone physically connects to each other.
      *
+     * @param structuralClass Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setStructuralClass(Text fStructuralClass);
+    void setStructuralClass(Text structuralClass);
 
     /**
      * The biomechanical properties of the bone.
@@ -42,9 +43,10 @@ public interface Joint extends AnatomicalStructure {
     /**
      * The biomechanical properties of the bone.
      *
+     * @param biomechnicalClass Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setBiomechnicalClass(Text fBiomechnicalClass);
+    void setBiomechnicalClass(Text biomechnicalClass);
 
     /**
      * The degree of mobility the joint allows.
@@ -57,7 +59,15 @@ public interface Joint extends AnatomicalStructure {
     /**
      * The degree of mobility the joint allows.
      *
+     * @param functionalClass Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setFunctionalClass(Object fFunctionalClass);
+    void setFunctionalClass(Text functionalClass);
+    /**
+     * The degree of mobility the joint allows.
+     *
+     * @param functionalClass MedicalEntity value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setFunctionalClass(MedicalEntity functionalClass);
 }

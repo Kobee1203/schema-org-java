@@ -30,10 +30,11 @@ public interface BroadcastFrequencySpecification extends Intangible {
     /**
      * The subchannel used for the broadcast.
      *
+     * @param broadcastSubChannel Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2111">https://github.com/schemaorg/schemaorg/issues/2111</a>
      */
-    void setBroadcastSubChannel(Text fBroadcastSubChannel);
+    void setBroadcastSubChannel(Text broadcastSubChannel);
 
     /**
      * The modulation (e.g. FM, AM, etc) used by a particular broadcast service.
@@ -47,10 +48,19 @@ public interface BroadcastFrequencySpecification extends Intangible {
     /**
      * The modulation (e.g. FM, AM, etc) used by a particular broadcast service.
      *
+     * @param broadcastSignalModulation QualitativeValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2111">https://github.com/schemaorg/schemaorg/issues/2111</a>
      */
-    void setBroadcastSignalModulation(Object fBroadcastSignalModulation);
+    void setBroadcastSignalModulation(QualitativeValue broadcastSignalModulation);
+    /**
+     * The modulation (e.g. FM, AM, etc) used by a particular broadcast service.
+     *
+     * @param broadcastSignalModulation Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2111">https://github.com/schemaorg/schemaorg/issues/2111</a>
+     */
+    void setBroadcastSignalModulation(Text broadcastSignalModulation);
 
     /**
      * The frequency in MHz for a particular broadcast.
@@ -63,7 +73,15 @@ public interface BroadcastFrequencySpecification extends Intangible {
     /**
      * The frequency in MHz for a particular broadcast.
      *
+     * @param broadcastFrequencyValue Number value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
      */
-    void setBroadcastFrequencyValue(Object fBroadcastFrequencyValue);
+    void setBroadcastFrequencyValue(Number broadcastFrequencyValue);
+    /**
+     * The frequency in MHz for a particular broadcast.
+     *
+     * @param broadcastFrequencyValue QuantitativeValue value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
+     */
+    void setBroadcastFrequencyValue(QuantitativeValue broadcastFrequencyValue);
 }

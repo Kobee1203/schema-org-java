@@ -31,8 +31,9 @@ public interface ContactPoint extends StructuredValue {
     /**
      * The telephone number.
      *
+     * @param telephone Text value to set.
      */
-    void setTelephone(Text fTelephone);
+    void setTelephone(Text telephone);
 
     /**
      * The hours during which this service or contact is available.
@@ -44,8 +45,9 @@ public interface ContactPoint extends StructuredValue {
     /**
      * The hours during which this service or contact is available.
      *
+     * @param hoursAvailable OpeningHoursSpecification value to set.
      */
-    void setHoursAvailable(OpeningHoursSpecification fHoursAvailable);
+    void setHoursAvailable(OpeningHoursSpecification hoursAvailable);
 
     /**
      * Email address.
@@ -57,8 +59,9 @@ public interface ContactPoint extends StructuredValue {
     /**
      * Email address.
      *
+     * @param email Text value to set.
      */
-    void setEmail(Text fEmail);
+    void setEmail(Text email);
 
     /**
      * An option available on this contact point (e.g. a toll-free number or support for hearing-impaired callers).
@@ -70,8 +73,9 @@ public interface ContactPoint extends StructuredValue {
     /**
      * An option available on this contact point (e.g. a toll-free number or support for hearing-impaired callers).
      *
+     * @param contactOption ContactPointOption value to set.
      */
-    void setContactOption(ContactPointOption fContactOption);
+    void setContactOption(ContactPointOption contactOption);
 
     /**
      * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
@@ -83,8 +87,15 @@ public interface ContactPoint extends StructuredValue {
     /**
      * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
      *
+     * @param availableLanguage Text value to set.
      */
-    void setAvailableLanguage(Object fAvailableLanguage);
+    void setAvailableLanguage(Text availableLanguage);
+    /**
+     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
+     *
+     * @param availableLanguage Language value to set.
+     */
+    void setAvailableLanguage(Language availableLanguage);
 
     /**
      * The geographic area where the service is provided.
@@ -96,8 +107,21 @@ public interface ContactPoint extends StructuredValue {
     /**
      * The geographic area where the service is provided.
      *
+     * @param serviceArea GeoShape value to set.
      */
-    void setServiceArea(Object fServiceArea);
+    void setServiceArea(GeoShape serviceArea);
+    /**
+     * The geographic area where the service is provided.
+     *
+     * @param serviceArea AdministrativeArea value to set.
+     */
+    void setServiceArea(AdministrativeArea serviceArea);
+    /**
+     * The geographic area where the service is provided.
+     *
+     * @param serviceArea Place value to set.
+     */
+    void setServiceArea(Place serviceArea);
 
     /**
      * The geographic area where a service or offered item is provided.
@@ -109,8 +133,27 @@ public interface ContactPoint extends StructuredValue {
     /**
      * The geographic area where a service or offered item is provided.
      *
+     * @param areaServed AdministrativeArea value to set.
      */
-    void setAreaServed(Object fAreaServed);
+    void setAreaServed(AdministrativeArea areaServed);
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @param areaServed GeoShape value to set.
+     */
+    void setAreaServed(GeoShape areaServed);
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @param areaServed Text value to set.
+     */
+    void setAreaServed(Text areaServed);
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @param areaServed Place value to set.
+     */
+    void setAreaServed(Place areaServed);
 
     /**
      * A person or organization can have different contact points, for different purposes. For example, a sales contact point, a PR contact point and so on. This property is used to specify the kind of contact point.
@@ -122,8 +165,9 @@ public interface ContactPoint extends StructuredValue {
     /**
      * A person or organization can have different contact points, for different purposes. For example, a sales contact point, a PR contact point and so on. This property is used to specify the kind of contact point.
      *
+     * @param contactType Text value to set.
      */
-    void setContactType(Text fContactType);
+    void setContactType(Text contactType);
 
     /**
      * The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. "iPhone") or a general category of products or services (e.g. "smartphones").
@@ -135,8 +179,15 @@ public interface ContactPoint extends StructuredValue {
     /**
      * The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. "iPhone") or a general category of products or services (e.g. "smartphones").
      *
+     * @param productSupported Text value to set.
      */
-    void setProductSupported(Object fProductSupported);
+    void setProductSupported(Text productSupported);
+    /**
+     * The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. "iPhone") or a general category of products or services (e.g. "smartphones").
+     *
+     * @param productSupported Product value to set.
+     */
+    void setProductSupported(Product productSupported);
 
     /**
      * The fax number.
@@ -148,6 +199,7 @@ public interface ContactPoint extends StructuredValue {
     /**
      * The fax number.
      *
+     * @param faxNumber Text value to set.
      */
-    void setFaxNumber(Text fFaxNumber);
+    void setFaxNumber(Text faxNumber);
 }

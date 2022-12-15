@@ -27,8 +27,15 @@ public interface SportsEvent extends Event {
     /**
      * The home team in a sports event.
      *
+     * @param homeTeam Person value to set.
      */
-    void setHomeTeam(Object fHomeTeam);
+    void setHomeTeam(Person homeTeam);
+    /**
+     * The home team in a sports event.
+     *
+     * @param homeTeam SportsTeam value to set.
+     */
+    void setHomeTeam(SportsTeam homeTeam);
 
     /**
      * The away team in a sports event.
@@ -40,8 +47,15 @@ public interface SportsEvent extends Event {
     /**
      * The away team in a sports event.
      *
+     * @param awayTeam SportsTeam value to set.
      */
-    void setAwayTeam(Object fAwayTeam);
+    void setAwayTeam(SportsTeam awayTeam);
+    /**
+     * The away team in a sports event.
+     *
+     * @param awayTeam Person value to set.
+     */
+    void setAwayTeam(Person awayTeam);
 
     /**
      * A competitor in a sports event.
@@ -53,8 +67,15 @@ public interface SportsEvent extends Event {
     /**
      * A competitor in a sports event.
      *
+     * @param competitor Person value to set.
      */
-    void setCompetitor(Object fCompetitor);
+    void setCompetitor(Person competitor);
+    /**
+     * A competitor in a sports event.
+     *
+     * @param competitor SportsTeam value to set.
+     */
+    void setCompetitor(SportsTeam competitor);
 
     /**
      * A type of sport (e.g. Baseball).
@@ -68,8 +89,17 @@ public interface SportsEvent extends Event {
     /**
      * A type of sport (e.g. Baseball).
      *
+     * @param sport Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1951">https://github.com/schemaorg/schemaorg/issues/1951</a>
      */
-    void setSport(Object fSport);
+    void setSport(Text sport);
+    /**
+     * A type of sport (e.g. Baseball).
+     *
+     * @param sport URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1951">https://github.com/schemaorg/schemaorg/issues/1951</a>
+     */
+    void setSport(URL sport);
 }

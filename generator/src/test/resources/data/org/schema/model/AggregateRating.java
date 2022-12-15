@@ -25,8 +25,9 @@ public interface AggregateRating extends Rating {
     /**
      * The item that is being reviewed/rated.
      *
+     * @param itemReviewed Thing value to set.
      */
-    void setItemReviewed(Thing fItemReviewed);
+    void setItemReviewed(Thing itemReviewed);
 
     /**
      * The count of total number of reviews.
@@ -38,8 +39,9 @@ public interface AggregateRating extends Rating {
     /**
      * The count of total number of reviews.
      *
+     * @param reviewCount Integer value to set.
      */
-    void setReviewCount(Integer fReviewCount);
+    void setReviewCount(Integer reviewCount);
 
     /**
      * The count of total number of ratings.
@@ -51,6 +53,7 @@ public interface AggregateRating extends Rating {
     /**
      * The count of total number of ratings.
      *
+     * @param ratingCount Integer value to set.
      */
-    void setRatingCount(Integer fRatingCount);
+    void setRatingCount(Integer ratingCount);
 }

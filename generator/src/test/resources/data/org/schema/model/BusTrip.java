@@ -26,8 +26,15 @@ public interface BusTrip extends Trip {
     /**
      * The stop or station from which the bus departs.
      *
+     * @param departureBusStop BusStop value to set.
      */
-    void setDepartureBusStop(Object fDepartureBusStop);
+    void setDepartureBusStop(BusStop departureBusStop);
+    /**
+     * The stop or station from which the bus departs.
+     *
+     * @param departureBusStop BusStation value to set.
+     */
+    void setDepartureBusStop(BusStation departureBusStop);
 
     /**
      * The name of the bus (e.g. Bolt Express).
@@ -39,8 +46,9 @@ public interface BusTrip extends Trip {
     /**
      * The name of the bus (e.g. Bolt Express).
      *
+     * @param busName Text value to set.
      */
-    void setBusName(Text fBusName);
+    void setBusName(Text busName);
 
     /**
      * The stop or station from which the bus arrives.
@@ -52,8 +60,15 @@ public interface BusTrip extends Trip {
     /**
      * The stop or station from which the bus arrives.
      *
+     * @param arrivalBusStop BusStation value to set.
      */
-    void setArrivalBusStop(Object fArrivalBusStop);
+    void setArrivalBusStop(BusStation arrivalBusStop);
+    /**
+     * The stop or station from which the bus arrives.
+     *
+     * @param arrivalBusStop BusStop value to set.
+     */
+    void setArrivalBusStop(BusStop arrivalBusStop);
 
     /**
      * The unique identifier for the bus.
@@ -65,6 +80,7 @@ public interface BusTrip extends Trip {
     /**
      * The unique identifier for the bus.
      *
+     * @param busNumber Text value to set.
      */
-    void setBusNumber(Text fBusNumber);
+    void setBusNumber(Text busNumber);
 }

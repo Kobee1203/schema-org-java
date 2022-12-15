@@ -29,10 +29,11 @@ public interface LinkRole extends Role {
     /**
      * Indicates the relationship type of a Web link. 
      *
+     * @param linkRelationship Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1045">https://github.com/schemaorg/schemaorg/issues/1045</a>
      */
-    void setLinkRelationship(Text fLinkRelationship);
+    void setLinkRelationship(Text linkRelationship);
 
     /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
@@ -45,7 +46,15 @@ public interface LinkRole extends Role {
     /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
      *
+     * @param inLanguage Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
      */
-    void setInLanguage(Object fInLanguage);
+    void setInLanguage(Text inLanguage);
+    /**
+     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     *
+     * @param inLanguage Language value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
+     */
+    void setInLanguage(Language inLanguage);
 }

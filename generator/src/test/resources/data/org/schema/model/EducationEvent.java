@@ -28,10 +28,19 @@ public interface EducationEvent extends Event {
     /**
      * The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.
      *
+     * @param teaches DefinedTerm value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
      */
-    void setTeaches(Object fTeaches);
+    void setTeaches(DefinedTerm teaches);
+    /**
+     * The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.
+     *
+     * @param teaches Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
+     */
+    void setTeaches(Text teaches);
 
     /**
      * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
@@ -45,10 +54,27 @@ public interface EducationEvent extends Event {
     /**
      * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
      *
+     * @param educationalLevel URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    void setEducationalLevel(Object fEducationalLevel);
+    void setEducationalLevel(URL educationalLevel);
+    /**
+     * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
+     *
+     * @param educationalLevel DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     */
+    void setEducationalLevel(DefinedTerm educationalLevel);
+    /**
+     * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
+     *
+     * @param educationalLevel Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     */
+    void setEducationalLevel(Text educationalLevel);
 
     /**
      * The item being described is intended to assess the competency or learning outcome defined by the referenced term.
@@ -62,8 +88,17 @@ public interface EducationEvent extends Event {
     /**
      * The item being described is intended to assess the competency or learning outcome defined by the referenced term.
      *
+     * @param assesses Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
      */
-    void setAssesses(Object fAssesses);
+    void setAssesses(Text assesses);
+    /**
+     * The item being described is intended to assess the competency or learning outcome defined by the referenced term.
+     *
+     * @param assesses DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
+     */
+    void setAssesses(DefinedTerm assesses);
 }

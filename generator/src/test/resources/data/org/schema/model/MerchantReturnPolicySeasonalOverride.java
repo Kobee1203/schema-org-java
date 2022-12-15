@@ -31,10 +31,11 @@ public interface MerchantReturnPolicySeasonalOverride extends Intangible {
     /**
      * Specifies an applicable return policy (from an enumeration).
      *
+     * @param returnPolicyCategory MerchantReturnEnumeration value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
      */
-    void setReturnPolicyCategory(MerchantReturnEnumeration fReturnPolicyCategory);
+    void setReturnPolicyCategory(MerchantReturnEnumeration returnPolicyCategory);
 
     /**
      * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
@@ -47,9 +48,17 @@ public interface MerchantReturnPolicySeasonalOverride extends Intangible {
     /**
      * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
      *
+     * @param startDate DateTime value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
-    void setStartDate(Object fStartDate);
+    void setStartDate(DateTime startDate);
+    /**
+     * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
+     *
+     * @param startDate Date value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
+     */
+    void setStartDate(Date startDate);
 
     /**
      * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
@@ -62,9 +71,17 @@ public interface MerchantReturnPolicySeasonalOverride extends Intangible {
     /**
      * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
      *
+     * @param endDate Date value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
-    void setEndDate(Object fEndDate);
+    void setEndDate(Date endDate);
+    /**
+     * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
+     *
+     * @param endDate DateTime value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
+     */
+    void setEndDate(DateTime endDate);
 
     /**
      * Specifies either a fixed return date or the number of days (from the delivery date) that a product can be returned. Used when the [[returnPolicyCategory]] property is specified as [[MerchantReturnFiniteReturnWindow]].
@@ -78,8 +95,25 @@ public interface MerchantReturnPolicySeasonalOverride extends Intangible {
     /**
      * Specifies either a fixed return date or the number of days (from the delivery date) that a product can be returned. Used when the [[returnPolicyCategory]] property is specified as [[MerchantReturnFiniteReturnWindow]].
      *
+     * @param merchantReturnDays DateTime value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
      */
-    void setMerchantReturnDays(Object fMerchantReturnDays);
+    void setMerchantReturnDays(DateTime merchantReturnDays);
+    /**
+     * Specifies either a fixed return date or the number of days (from the delivery date) that a product can be returned. Used when the [[returnPolicyCategory]] property is specified as [[MerchantReturnFiniteReturnWindow]].
+     *
+     * @param merchantReturnDays Integer value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     */
+    void setMerchantReturnDays(Integer merchantReturnDays);
+    /**
+     * Specifies either a fixed return date or the number of days (from the delivery date) that a product can be returned. Used when the [[returnPolicyCategory]] property is specified as [[MerchantReturnFiniteReturnWindow]].
+     *
+     * @param merchantReturnDays Date value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     */
+    void setMerchantReturnDays(Date merchantReturnDays);
 }

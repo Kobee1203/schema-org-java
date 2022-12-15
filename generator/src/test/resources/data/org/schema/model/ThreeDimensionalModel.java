@@ -29,8 +29,9 @@ public interface ThreeDimensionalModel extends MediaObject {
     /**
      * Whether the 3DModel allows resizing. For example, room layout applications often do not allow 3DModel elements to be resized to reflect reality.
      *
+     * @param isResizable Boolean value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2394">https://github.com/schemaorg/schemaorg/issues/2394</a>
      */
-    void setIsResizable(Boolean fIsResizable);
+    void setIsResizable(Boolean isResizable);
 }

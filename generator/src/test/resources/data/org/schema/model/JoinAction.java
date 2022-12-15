@@ -24,6 +24,7 @@ public interface JoinAction extends InteractAction {
     /**
      * Upcoming or past event associated with this place, organization, or action.
      *
+     * @param event Event value to set.
      */
-    void setEvent(Event fEvent);
+    void setEvent(Event event);
 }

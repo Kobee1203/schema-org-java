@@ -30,10 +30,11 @@ public interface HealthPlanCostSharingSpecification extends Intangible {
     /**
      * Whether The rate of coinsurance expressed as a number between 0.0 and 1.0.
      *
+     * @param healthPlanCoinsuranceRate Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
-    void setHealthPlanCoinsuranceRate(Number fHealthPlanCoinsuranceRate);
+    void setHealthPlanCoinsuranceRate(Number healthPlanCoinsuranceRate);
 
     /**
      * Whether the coinsurance applies before or after deductible, etc. TODO: Is this a closed set?
@@ -47,10 +48,11 @@ public interface HealthPlanCostSharingSpecification extends Intangible {
     /**
      * Whether the coinsurance applies before or after deductible, etc. TODO: Is this a closed set?
      *
+     * @param healthPlanCoinsuranceOption Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
-    void setHealthPlanCoinsuranceOption(Text fHealthPlanCoinsuranceOption);
+    void setHealthPlanCoinsuranceOption(Text healthPlanCoinsuranceOption);
 
     /**
      * The category or type of pharmacy associated with this cost sharing.
@@ -64,10 +66,11 @@ public interface HealthPlanCostSharingSpecification extends Intangible {
     /**
      * The category or type of pharmacy associated with this cost sharing.
      *
+     * @param healthPlanPharmacyCategory Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
-    void setHealthPlanPharmacyCategory(Text fHealthPlanPharmacyCategory);
+    void setHealthPlanPharmacyCategory(Text healthPlanPharmacyCategory);
 
     /**
      * Whether The copay amount.
@@ -81,10 +84,11 @@ public interface HealthPlanCostSharingSpecification extends Intangible {
     /**
      * Whether The copay amount.
      *
+     * @param healthPlanCopay PriceSpecification value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
-    void setHealthPlanCopay(PriceSpecification fHealthPlanCopay);
+    void setHealthPlanCopay(PriceSpecification healthPlanCopay);
 
     /**
      * Whether the copay is before or after deductible, etc. TODO: Is this a closed set?
@@ -98,8 +102,9 @@ public interface HealthPlanCostSharingSpecification extends Intangible {
     /**
      * Whether the copay is before or after deductible, etc. TODO: Is this a closed set?
      *
+     * @param healthPlanCopayOption Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
-    void setHealthPlanCopayOption(Text fHealthPlanCopayOption);
+    void setHealthPlanCopayOption(Text healthPlanCopayOption);
 }

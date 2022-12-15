@@ -27,10 +27,11 @@ public interface MedicalCode extends MedicalIntangible, CategoryCode {
     /**
      * A short textual code that uniquely identifies the value.
      *
+     * @param codeValue Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
      */
-    void setCodeValue(Text fCodeValue);
+    void setCodeValue(Text codeValue);
 
     /**
      * The coding system, e.g. 'ICD-10'.
@@ -43,7 +44,8 @@ public interface MedicalCode extends MedicalIntangible, CategoryCode {
     /**
      * The coding system, e.g. 'ICD-10'.
      *
+     * @param codingSystem Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setCodingSystem(Text fCodingSystem);
+    void setCodingSystem(Text codingSystem);
 }

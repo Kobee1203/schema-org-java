@@ -251,8 +251,8 @@ Add the serializer module and the [Maven Plugin](#Maven-Plugin) to serialize/des
 ### <a name="Serialization">Serialization</a>
 
 ```java
-import com.weedow.schemaorg.serializer.JsonLdSerializer;
-import com.weedow.schemaorg.serializer.JsonLdSerializerImpl;
+import com.weedow.schemaorg.serializer.serialization.JsonLdSerializer;
+import com.weedow.schemaorg.serializer.serialization.JsonLdSerializerImpl;
 import org.schema.model.Thing;
 import org.schema.model.impl.ThingImpl;
 
@@ -284,15 +284,15 @@ final class SerializerUtils {
 This example will give the following result:
 
 ```json
-{"@context":"https://schema.org","@id":"my_id","@type":"schema:Thing","description":"This is my thing.","name":"My Thing","url":"https://github.com/Kobee1203/schema-org-java"}
+{"@context":"https://schema.org","@id":"my_id","@type":"Thing","description":"This is my thing.","name":"My Thing","url":"https://github.com/Kobee1203/schema-org-java"}
 ```
 
 There is another constructor that receives options as parameters.\
 Here is an example to serialize the Schema.org object with a pretty printed result:
 
 ```java
-import com.weedow.schemaorg.serializer.JsonLdSerializer;
-import com.weedow.schemaorg.serializer.JsonLdSerializerImpl;
+import com.weedow.schemaorg.serializer.serialization.JsonLdSerializer;
+import com.weedow.schemaorg.serializer.serialization.JsonLdSerializerImpl;
 import org.schema.model.Thing;
 import org.schema.model.impl.ThingImpl;
 
@@ -330,7 +330,7 @@ This example will give the following result:
 {
   "@context" : "https://schema.org",
   "@id" : "my_id",
-  "@type" : "schema:Thing",
+  "@type" : "Thing",
   "description" : "This is my thing.",
   "name" : "My Thing",
   "url" : "https://github.com/Kobee1203/schema-org-java"

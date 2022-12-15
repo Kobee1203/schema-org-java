@@ -1,5 +1,6 @@
 package com.weedow.schemaorg.generator.model.handler;
 
+import com.weedow.schemaorg.generator.model.utils.ModelUtils;
 import com.weedow.schemaorg.generator.model.Type;
 import com.weedow.schemaorg.generator.model.jsonld.GraphItem;
 
@@ -19,7 +20,7 @@ public class EnumerationMemberModelHandlerImpl implements ModelHandler {
     @Override
     public void handle(Map<String, Type> schemaDefinitions, GraphItem graphItem) {
         final String enumerationTypeId = graphItem.getTypes().get(0);
-        final Type type = ModelHandlerUtils.getType(schemaDefinitions, enumerationTypeId);
+        final Type type = ModelUtils.getType(schemaDefinitions, enumerationTypeId);
 
         type.addEnumerationMember(graphItem.getLabel().getValue());
     }

@@ -27,7 +27,8 @@ public interface Guide extends CreativeWork {
     /**
      * This Review or Rating is relevant to this part or facet of the itemReviewed.
      *
+     * @param reviewAspect Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1689">https://github.com/schemaorg/schemaorg/issues/1689</a>
      */
-    void setReviewAspect(Text fReviewAspect);
+    void setReviewAspect(Text reviewAspect);
 }

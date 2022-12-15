@@ -26,7 +26,8 @@ public interface PathologyTest extends MedicalTest {
     /**
      * The type of tissue sample required for the test.
      *
+     * @param tissueSample Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setTissueSample(Text fTissueSample);
+    void setTissueSample(Text tissueSample);
 }

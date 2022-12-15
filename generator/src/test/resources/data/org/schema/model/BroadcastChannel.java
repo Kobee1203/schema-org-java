@@ -28,8 +28,15 @@ public interface BroadcastChannel extends Intangible {
     /**
      * Genre of the creative work, broadcast channel or group.
      *
+     * @param genre URL value to set.
      */
-    void setGenre(Object fGenre);
+    void setGenre(URL genre);
+    /**
+     * Genre of the creative work, broadcast channel or group.
+     *
+     * @param genre Text value to set.
+     */
+    void setGenre(Text genre);
 
     /**
      * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
@@ -42,9 +49,17 @@ public interface BroadcastChannel extends Intangible {
     /**
      * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
      *
+     * @param broadcastFrequency BroadcastFrequencySpecification value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
      */
-    void setBroadcastFrequency(Object fBroadcastFrequency);
+    void setBroadcastFrequency(BroadcastFrequencySpecification broadcastFrequency);
+    /**
+     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
+     *
+     * @param broadcastFrequency Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
+     */
+    void setBroadcastFrequency(Text broadcastFrequency);
 
     /**
      * The BroadcastService offered on this channel.
@@ -56,8 +71,9 @@ public interface BroadcastChannel extends Intangible {
     /**
      * The BroadcastService offered on this channel.
      *
+     * @param providesBroadcastService BroadcastService value to set.
      */
-    void setProvidesBroadcastService(BroadcastService fProvidesBroadcastService);
+    void setProvidesBroadcastService(BroadcastService providesBroadcastService);
 
     /**
      * The unique address by which the BroadcastService can be identified in a provider lineup. In US, this is typically a number.
@@ -69,8 +85,9 @@ public interface BroadcastChannel extends Intangible {
     /**
      * The unique address by which the BroadcastService can be identified in a provider lineup. In US, this is typically a number.
      *
+     * @param broadcastChannelId Text value to set.
      */
-    void setBroadcastChannelId(Text fBroadcastChannelId);
+    void setBroadcastChannelId(Text broadcastChannelId);
 
     /**
      * The CableOrSatelliteService offering the channel.
@@ -82,8 +99,9 @@ public interface BroadcastChannel extends Intangible {
     /**
      * The CableOrSatelliteService offering the channel.
      *
+     * @param inBroadcastLineup CableOrSatelliteService value to set.
      */
-    void setInBroadcastLineup(CableOrSatelliteService fInBroadcastLineup);
+    void setInBroadcastLineup(CableOrSatelliteService inBroadcastLineup);
 
     /**
      * The type of service required to have access to the channel (e.g. Standard or Premium).
@@ -95,6 +113,7 @@ public interface BroadcastChannel extends Intangible {
     /**
      * The type of service required to have access to the channel (e.g. Standard or Premium).
      *
+     * @param broadcastServiceTier Text value to set.
      */
-    void setBroadcastServiceTier(Text fBroadcastServiceTier);
+    void setBroadcastServiceTier(Text broadcastServiceTier);
 }

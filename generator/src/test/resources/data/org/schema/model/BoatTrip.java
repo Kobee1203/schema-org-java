@@ -28,10 +28,11 @@ public interface BoatTrip extends Trip {
     /**
      * The terminal or port from which the boat arrives.
      *
+     * @param arrivalBoatTerminal BoatTerminal value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1755">https://github.com/schemaorg/schemaorg/issues/1755</a>
      */
-    void setArrivalBoatTerminal(BoatTerminal fArrivalBoatTerminal);
+    void setArrivalBoatTerminal(BoatTerminal arrivalBoatTerminal);
 
     /**
      * The terminal or port from which the boat departs.
@@ -45,8 +46,9 @@ public interface BoatTrip extends Trip {
     /**
      * The terminal or port from which the boat departs.
      *
+     * @param departureBoatTerminal BoatTerminal value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1755">https://github.com/schemaorg/schemaorg/issues/1755</a>
      */
-    void setDepartureBoatTerminal(BoatTerminal fDepartureBoatTerminal);
+    void setDepartureBoatTerminal(BoatTerminal departureBoatTerminal);
 }

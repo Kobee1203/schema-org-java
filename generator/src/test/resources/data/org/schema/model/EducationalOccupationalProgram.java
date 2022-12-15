@@ -46,10 +46,35 @@ public interface EducationalOccupationalProgram extends Intangible {
     /**
      * Prerequisites for enrolling in the program.
      *
+     * @param programPrerequisites AlignmentObject value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
-    void setProgramPrerequisites(Object fProgramPrerequisites);
+    void setProgramPrerequisites(AlignmentObject programPrerequisites);
+    /**
+     * Prerequisites for enrolling in the program.
+     *
+     * @param programPrerequisites Course value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    void setProgramPrerequisites(Course programPrerequisites);
+    /**
+     * Prerequisites for enrolling in the program.
+     *
+     * @param programPrerequisites EducationalOccupationalCredential value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    void setProgramPrerequisites(EducationalOccupationalCredential programPrerequisites);
+    /**
+     * Prerequisites for enrolling in the program.
+     *
+     * @param programPrerequisites Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    void setProgramPrerequisites(Text programPrerequisites);
 
     /**
      * A course or class that is one of the learning opportunities that constitute an educational / occupational program. No information is implied about whether the course is mandatory or optional; no guarantee is implied about whether the course will be available to everyone on the program.
@@ -63,10 +88,11 @@ public interface EducationalOccupationalProgram extends Intangible {
     /**
      * A course or class that is one of the learning opportunities that constitute an educational / occupational program. No information is implied about whether the course is mandatory or optional; no guarantee is implied about whether the course will be available to everyone on the program.
      *
+     * @param hasCourse Course value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2483">https://github.com/schemaorg/schemaorg/issues/2483</a>
      */
-    void setHasCourse(Course fHasCourse);
+    void setHasCourse(Course hasCourse);
 
     /**
      * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
@@ -79,9 +105,17 @@ public interface EducationalOccupationalProgram extends Intangible {
     /**
      * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
      *
+     * @param startDate DateTime value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
-    void setStartDate(Object fStartDate);
+    void setStartDate(DateTime startDate);
+    /**
+     * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
+     *
+     * @param startDate Date value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
+     */
+    void setStartDate(Date startDate);
 
     /**
      * The expected salary upon completing the training.
@@ -95,10 +129,11 @@ public interface EducationalOccupationalProgram extends Intangible {
     /**
      * The expected salary upon completing the training.
      *
+     * @param salaryUponCompletion MonetaryAmountDistribution value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
-    void setSalaryUponCompletion(MonetaryAmountDistribution fSalaryUponCompletion);
+    void setSalaryUponCompletion(MonetaryAmountDistribution salaryUponCompletion);
 
     /**
      * The number of times terms of study are offered per year. Semesters and quarters are common units for term. For example, if the student can only take 2 semesters for the program in one year, then termsPerYear should be 2.
@@ -112,10 +147,11 @@ public interface EducationalOccupationalProgram extends Intangible {
     /**
      * The number of times terms of study are offered per year. Semesters and quarters are common units for term. For example, if the student can only take 2 semesters for the program in one year, then termsPerYear should be 2.
      *
+     * @param termsPerYear Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
      */
-    void setTermsPerYear(Number fTermsPerYear);
+    void setTermsPerYear(Number termsPerYear);
 
     /**
      * The day of the week for which these opening hours are valid.
@@ -128,9 +164,10 @@ public interface EducationalOccupationalProgram extends Intangible {
     /**
      * The day of the week for which these opening hours are valid.
      *
+     * @param dayOfWeek DayOfWeek value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setDayOfWeek(DayOfWeek fDayOfWeek);
+    void setDayOfWeek(DayOfWeek dayOfWeek);
 
     /**
      * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
@@ -145,9 +182,18 @@ public interface EducationalOccupationalProgram extends Intangible {
      * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      *
+     * @param offers Offer value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
-    void setOffers(Object fOffers);
+    void setOffers(Offer offers);
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     *
+     * @param offers Demand value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    void setOffers(Demand offers);
 
     /**
      * The number of credits or units a full-time student would be expected to take in 1 term however 'term' is defined by the institution.
@@ -161,10 +207,19 @@ public interface EducationalOccupationalProgram extends Intangible {
     /**
      * The number of credits or units a full-time student would be expected to take in 1 term however 'term' is defined by the institution.
      *
+     * @param typicalCreditsPerTerm Integer value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
      */
-    void setTypicalCreditsPerTerm(Object fTypicalCreditsPerTerm);
+    void setTypicalCreditsPerTerm(Integer typicalCreditsPerTerm);
+    /**
+     * The number of credits or units a full-time student would be expected to take in 1 term however 'term' is defined by the institution.
+     *
+     * @param typicalCreditsPerTerm StructuredValue value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
+     */
+    void setTypicalCreditsPerTerm(StructuredValue typicalCreditsPerTerm);
 
     /**
      * The date at which the program begins collecting applications for the next enrollment cycle.
@@ -178,10 +233,11 @@ public interface EducationalOccupationalProgram extends Intangible {
     /**
      * The date at which the program begins collecting applications for the next enrollment cycle.
      *
+     * @param applicationStartDate Date value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
      */
-    void setApplicationStartDate(Date fApplicationStartDate);
+    void setApplicationStartDate(Date applicationStartDate);
 
     /**
      * The time of day the program normally runs. For example, "evenings".
@@ -195,10 +251,11 @@ public interface EducationalOccupationalProgram extends Intangible {
     /**
      * The time of day the program normally runs. For example, "evenings".
      *
+     * @param timeOfDay Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
      */
-    void setTimeOfDay(Text fTimeOfDay);
+    void setTimeOfDay(Text timeOfDay);
 
     /**
      * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
@@ -211,9 +268,17 @@ public interface EducationalOccupationalProgram extends Intangible {
     /**
      * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
      *
+     * @param endDate Date value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
-    void setEndDate(Object fEndDate);
+    void setEndDate(Date endDate);
+    /**
+     * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
+     *
+     * @param endDate DateTime value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
+     */
+    void setEndDate(DateTime endDate);
 
     /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
@@ -228,11 +293,21 @@ public interface EducationalOccupationalProgram extends Intangible {
     /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
      *
+     * @param provider Organization value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
      */
-    void setProvider(Object fProvider);
+    void setProvider(Organization provider);
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @param provider Person value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     */
+    void setProvider(Person provider);
 
     /**
      * The estimated salary earned while in the program.
@@ -247,11 +322,12 @@ public interface EducationalOccupationalProgram extends Intangible {
     /**
      * The estimated salary earned while in the program.
      *
+     * @param trainingSalary MonetaryAmountDistribution value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
      */
-    void setTrainingSalary(MonetaryAmountDistribution fTrainingSalary);
+    void setTrainingSalary(MonetaryAmountDistribution trainingSalary);
 
     /**
      * A description of the qualification, award, certificate, diploma or other educational credential awarded as a consequence of successful completion of this course or program.
@@ -264,9 +340,24 @@ public interface EducationalOccupationalProgram extends Intangible {
     /**
      * A description of the qualification, award, certificate, diploma or other educational credential awarded as a consequence of successful completion of this course or program.
      *
+     * @param educationalCredentialAwarded URL value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
-    void setEducationalCredentialAwarded(Object fEducationalCredentialAwarded);
+    void setEducationalCredentialAwarded(URL educationalCredentialAwarded);
+    /**
+     * A description of the qualification, award, certificate, diploma or other educational credential awarded as a consequence of successful completion of this course or program.
+     *
+     * @param educationalCredentialAwarded EducationalOccupationalCredential value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    void setEducationalCredentialAwarded(EducationalOccupationalCredential educationalCredentialAwarded);
+    /**
+     * A description of the qualification, award, certificate, diploma or other educational credential awarded as a consequence of successful completion of this course or program.
+     *
+     * @param educationalCredentialAwarded Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    void setEducationalCredentialAwarded(Text educationalCredentialAwarded);
 
     /**
      * The number of credits or units awarded by a Course or required to complete an EducationalOccupationalProgram.
@@ -280,10 +371,19 @@ public interface EducationalOccupationalProgram extends Intangible {
     /**
      * The number of credits or units awarded by a Course or required to complete an EducationalOccupationalProgram.
      *
+     * @param numberOfCredits Integer value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
      */
-    void setNumberOfCredits(Object fNumberOfCredits);
+    void setNumberOfCredits(Integer numberOfCredits);
+    /**
+     * The number of credits or units awarded by a Course or required to complete an EducationalOccupationalProgram.
+     *
+     * @param numberOfCredits StructuredValue value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
+     */
+    void setNumberOfCredits(StructuredValue numberOfCredits);
 
     /**
      * The expected length of time to complete the program if attending full-time.
@@ -297,10 +397,11 @@ public interface EducationalOccupationalProgram extends Intangible {
     /**
      * The expected length of time to complete the program if attending full-time.
      *
+     * @param timeToComplete Duration value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
-    void setTimeToComplete(Duration fTimeToComplete);
+    void setTimeToComplete(Duration timeToComplete);
 
     /**
      * A description of the qualification, award, certificate, diploma or other occupational credential awarded as a consequence of successful completion of this course or program.
@@ -314,10 +415,27 @@ public interface EducationalOccupationalProgram extends Intangible {
     /**
      * A description of the qualification, award, certificate, diploma or other occupational credential awarded as a consequence of successful completion of this course or program.
      *
+     * @param occupationalCredentialAwarded EducationalOccupationalCredential value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
-    void setOccupationalCredentialAwarded(Object fOccupationalCredentialAwarded);
+    void setOccupationalCredentialAwarded(EducationalOccupationalCredential occupationalCredentialAwarded);
+    /**
+     * A description of the qualification, award, certificate, diploma or other occupational credential awarded as a consequence of successful completion of this course or program.
+     *
+     * @param occupationalCredentialAwarded Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    void setOccupationalCredentialAwarded(Text occupationalCredentialAwarded);
+    /**
+     * A description of the qualification, award, certificate, diploma or other occupational credential awarded as a consequence of successful completion of this course or program.
+     *
+     * @param occupationalCredentialAwarded URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    void setOccupationalCredentialAwarded(URL occupationalCredentialAwarded);
 
     /**
      * The amount of time in a term as defined by the institution. A term is a length of time where students take one or more classes. Semesters and quarters are common units for term.
@@ -331,10 +449,11 @@ public interface EducationalOccupationalProgram extends Intangible {
     /**
      * The amount of time in a term as defined by the institution. A term is a length of time where students take one or more classes. Semesters and quarters are common units for term.
      *
+     * @param termDuration Duration value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
      */
-    void setTermDuration(Duration fTermDuration);
+    void setTermDuration(Duration termDuration);
 
     /**
      * Similar to courseMode, The medium or means of delivery of the program as a whole. The value may either be a text label (e.g. "online", "onsite" or "blended"; "synchronous" or "asynchronous"; "full-time" or "part-time") or a URL reference to a term from a controlled vocabulary (e.g. https://ceds.ed.gov/element/001311#Asynchronous ).
@@ -348,10 +467,19 @@ public interface EducationalOccupationalProgram extends Intangible {
     /**
      * Similar to courseMode, The medium or means of delivery of the program as a whole. The value may either be a text label (e.g. "online", "onsite" or "blended"; "synchronous" or "asynchronous"; "full-time" or "part-time") or a URL reference to a term from a controlled vocabulary (e.g. https://ceds.ed.gov/element/001311#Asynchronous ).
      *
+     * @param educationalProgramMode URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
      */
-    void setEducationalProgramMode(Object fEducationalProgramMode);
+    void setEducationalProgramMode(URL educationalProgramMode);
+    /**
+     * Similar to courseMode, The medium or means of delivery of the program as a whole. The value may either be a text label (e.g. "online", "onsite" or "blended"; "synchronous" or "asynchronous"; "full-time" or "part-time") or a URL reference to a term from a controlled vocabulary (e.g. https://ceds.ed.gov/element/001311#Asynchronous ).
+     *
+     * @param educationalProgramMode Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
+     */
+    void setEducationalProgramMode(Text educationalProgramMode);
 
     /**
      * The type of educational or occupational program. For example, classroom, internship, alternance, etc..
@@ -365,10 +493,19 @@ public interface EducationalOccupationalProgram extends Intangible {
     /**
      * The type of educational or occupational program. For example, classroom, internship, alternance, etc..
      *
+     * @param programType Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
      */
-    void setProgramType(Object fProgramType);
+    void setProgramType(Text programType);
+    /**
+     * The type of educational or occupational program. For example, classroom, internship, alternance, etc..
+     *
+     * @param programType DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
+     */
+    void setProgramType(DefinedTerm programType);
 
     /**
      * The maximum number of students who may be enrolled in the program.
@@ -382,10 +519,11 @@ public interface EducationalOccupationalProgram extends Intangible {
     /**
      * The maximum number of students who may be enrolled in the program.
      *
+     * @param maximumEnrollment Integer value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
      */
-    void setMaximumEnrollment(Integer fMaximumEnrollment);
+    void setMaximumEnrollment(Integer maximumEnrollment);
 
     /**
      * A financial aid type or program which students may use to pay for tuition or fees associated with the program.
@@ -399,10 +537,19 @@ public interface EducationalOccupationalProgram extends Intangible {
     /**
      * A financial aid type or program which students may use to pay for tuition or fees associated with the program.
      *
+     * @param financialAidEligible Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2418">https://github.com/schemaorg/schemaorg/issues/2418</a>
      */
-    void setFinancialAidEligible(Object fFinancialAidEligible);
+    void setFinancialAidEligible(Text financialAidEligible);
+    /**
+     * A financial aid type or program which students may use to pay for tuition or fees associated with the program.
+     *
+     * @param financialAidEligible DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2418">https://github.com/schemaorg/schemaorg/issues/2418</a>
+     */
+    void setFinancialAidEligible(DefinedTerm financialAidEligible);
 
     /**
      * The date at which the program stops collecting applications for the next enrollment cycle.
@@ -416,10 +563,11 @@ public interface EducationalOccupationalProgram extends Intangible {
     /**
      * The date at which the program stops collecting applications for the next enrollment cycle.
      *
+     * @param applicationDeadline Date value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
      */
-    void setApplicationDeadline(Date fApplicationDeadline);
+    void setApplicationDeadline(Date applicationDeadline);
 
     /**
      * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.<br/>
@@ -438,11 +586,24 @@ public interface EducationalOccupationalProgram extends Intangible {
      * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.<br/>
      * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
      *
+     * @param occupationalCategory CategoryCode value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
-    void setOccupationalCategory(Object fOccupationalCategory);
+    void setOccupationalCategory(CategoryCode occupationalCategory);
+    /**
+     * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.<br/>
+     * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
+     *
+     * @param occupationalCategory Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    void setOccupationalCategory(Text occupationalCategory);
 }

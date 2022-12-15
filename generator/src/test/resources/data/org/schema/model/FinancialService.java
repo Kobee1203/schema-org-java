@@ -26,7 +26,15 @@ public interface FinancialService extends LocalBusiness {
     /**
      * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
      *
+     * @param feesAndCommissionsSpecification URL value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
      */
-    void setFeesAndCommissionsSpecification(Object fFeesAndCommissionsSpecification);
+    void setFeesAndCommissionsSpecification(URL feesAndCommissionsSpecification);
+    /**
+     * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
+     *
+     * @param feesAndCommissionsSpecification Text value to set.
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO</a>
+     */
+    void setFeesAndCommissionsSpecification(Text feesAndCommissionsSpecification);
 }

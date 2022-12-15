@@ -33,10 +33,19 @@ public interface RealEstateListing extends WebPage {
     /**
      * Length of the lease for some [[Accommodation]], either particular to some [[Offer]] or in some cases intrinsic to the property.
      *
+     * @param leaseLength QuantitativeValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
-    void setLeaseLength(Object fLeaseLength);
+    void setLeaseLength(QuantitativeValue leaseLength);
+    /**
+     * Length of the lease for some [[Accommodation]], either particular to some [[Offer]] or in some cases intrinsic to the property.
+     *
+     * @param leaseLength Duration value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     */
+    void setLeaseLength(Duration leaseLength);
 
     /**
      * Publication date of an online listing.
@@ -50,8 +59,17 @@ public interface RealEstateListing extends WebPage {
     /**
      * Publication date of an online listing.
      *
+     * @param datePosted Date value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
-    void setDatePosted(Object fDatePosted);
+    void setDatePosted(Date datePosted);
+    /**
+     * Publication date of an online listing.
+     *
+     * @param datePosted DateTime value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
+     */
+    void setDatePosted(DateTime datePosted);
 }

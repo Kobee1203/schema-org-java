@@ -27,8 +27,9 @@ public interface MovieSeries extends CreativeWorkSeries {
     /**
      * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
      *
+     * @param director Person value to set.
      */
-    void setDirector(Person fDirector);
+    void setDirector(Person director);
 
     /**
      * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
@@ -40,8 +41,9 @@ public interface MovieSeries extends CreativeWorkSeries {
     /**
      * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
      *
+     * @param actor Person value to set.
      */
-    void setActor(Person fActor);
+    void setActor(Person actor);
 
     /**
      * The trailer of a movie or tv/radio series, season, episode, etc.
@@ -53,8 +55,9 @@ public interface MovieSeries extends CreativeWorkSeries {
     /**
      * The trailer of a movie or tv/radio series, season, episode, etc.
      *
+     * @param trailer VideoObject value to set.
      */
-    void setTrailer(VideoObject fTrailer);
+    void setTrailer(VideoObject trailer);
 
     /**
      * The production company or studio responsible for the item e.g. series, video game, episode etc.
@@ -66,8 +69,9 @@ public interface MovieSeries extends CreativeWorkSeries {
     /**
      * The production company or studio responsible for the item e.g. series, video game, episode etc.
      *
+     * @param productionCompany Organization value to set.
      */
-    void setProductionCompany(Organization fProductionCompany);
+    void setProductionCompany(Organization productionCompany);
 
     /**
      * An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
@@ -79,8 +83,9 @@ public interface MovieSeries extends CreativeWorkSeries {
     /**
      * An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
      *
+     * @param actors Person value to set.
      */
-    void setActors(Person fActors);
+    void setActors(Person actors);
 
     /**
      * The composer of the soundtrack.
@@ -92,8 +97,15 @@ public interface MovieSeries extends CreativeWorkSeries {
     /**
      * The composer of the soundtrack.
      *
+     * @param musicBy Person value to set.
      */
-    void setMusicBy(Object fMusicBy);
+    void setMusicBy(Person musicBy);
+    /**
+     * The composer of the soundtrack.
+     *
+     * @param musicBy MusicGroup value to set.
+     */
+    void setMusicBy(MusicGroup musicBy);
 
     /**
      * A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
@@ -105,6 +117,7 @@ public interface MovieSeries extends CreativeWorkSeries {
     /**
      * A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
      *
+     * @param directors Person value to set.
      */
-    void setDirectors(Person fDirectors);
+    void setDirectors(Person directors);
 }

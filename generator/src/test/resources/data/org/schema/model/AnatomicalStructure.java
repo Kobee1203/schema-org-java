@@ -31,9 +31,10 @@ public interface AnatomicalStructure extends MedicalEntity {
     /**
      * Location in the body of the anatomical structure.
      *
+     * @param bodyLocation Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setBodyLocation(Text fBodyLocation);
+    void setBodyLocation(Text bodyLocation);
 
     /**
      * Other anatomical structures to which this structure is connected.
@@ -46,9 +47,10 @@ public interface AnatomicalStructure extends MedicalEntity {
     /**
      * Other anatomical structures to which this structure is connected.
      *
+     * @param connectedTo AnatomicalStructure value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setConnectedTo(AnatomicalStructure fConnectedTo);
+    void setConnectedTo(AnatomicalStructure connectedTo);
 
     /**
      * The anatomical or organ system that this structure is part of.
@@ -61,9 +63,10 @@ public interface AnatomicalStructure extends MedicalEntity {
     /**
      * The anatomical or organ system that this structure is part of.
      *
+     * @param partOfSystem AnatomicalSystem value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setPartOfSystem(AnatomicalSystem fPartOfSystem);
+    void setPartOfSystem(AnatomicalSystem partOfSystem);
 
     /**
      * A medical therapy related to this anatomy.
@@ -76,9 +79,10 @@ public interface AnatomicalStructure extends MedicalEntity {
     /**
      * A medical therapy related to this anatomy.
      *
+     * @param relatedTherapy MedicalTherapy value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setRelatedTherapy(MedicalTherapy fRelatedTherapy);
+    void setRelatedTherapy(MedicalTherapy relatedTherapy);
 
     /**
      * An image containing a diagram that illustrates the structure and/or its component substructures and/or connections with other structures.
@@ -91,9 +95,10 @@ public interface AnatomicalStructure extends MedicalEntity {
     /**
      * An image containing a diagram that illustrates the structure and/or its component substructures and/or connections with other structures.
      *
+     * @param diagram ImageObject value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setDiagram(ImageObject fDiagram);
+    void setDiagram(ImageObject diagram);
 
     /**
      * A medical condition associated with this anatomy.
@@ -106,9 +111,10 @@ public interface AnatomicalStructure extends MedicalEntity {
     /**
      * A medical condition associated with this anatomy.
      *
+     * @param relatedCondition MedicalCondition value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setRelatedCondition(MedicalCondition fRelatedCondition);
+    void setRelatedCondition(MedicalCondition relatedCondition);
 
     /**
      * Component (sub-)structure(s) that comprise this anatomical structure.
@@ -121,9 +127,10 @@ public interface AnatomicalStructure extends MedicalEntity {
     /**
      * Component (sub-)structure(s) that comprise this anatomical structure.
      *
+     * @param subStructure AnatomicalStructure value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setSubStructure(AnatomicalStructure fSubStructure);
+    void setSubStructure(AnatomicalStructure subStructure);
 
     /**
      * If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.
@@ -136,7 +143,8 @@ public interface AnatomicalStructure extends MedicalEntity {
     /**
      * If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.
      *
+     * @param associatedPathophysiology Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setAssociatedPathophysiology(Text fAssociatedPathophysiology);
+    void setAssociatedPathophysiology(Text associatedPathophysiology);
 }

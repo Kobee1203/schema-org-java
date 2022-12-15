@@ -28,9 +28,17 @@ public interface Vein extends Vessel {
     /**
      * The anatomical or organ system drained by this vessel; generally refers to a specific part of an organ.
      *
+     * @param regionDrained AnatomicalSystem value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setRegionDrained(Object fRegionDrained);
+    void setRegionDrained(AnatomicalSystem regionDrained);
+    /**
+     * The anatomical or organ system drained by this vessel; generally refers to a specific part of an organ.
+     *
+     * @param regionDrained AnatomicalStructure value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void setRegionDrained(AnatomicalStructure regionDrained);
 
     /**
      * The anatomical or organ system that the vein flows into; a larger structure that the vein connects to.
@@ -43,9 +51,10 @@ public interface Vein extends Vessel {
     /**
      * The anatomical or organ system that the vein flows into; a larger structure that the vein connects to.
      *
+     * @param tributary AnatomicalStructure value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setTributary(AnatomicalStructure fTributary);
+    void setTributary(AnatomicalStructure tributary);
 
     /**
      * The vasculature that the vein drains into.
@@ -58,7 +67,8 @@ public interface Vein extends Vessel {
     /**
      * The vasculature that the vein drains into.
      *
+     * @param drainsTo Vessel value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setDrainsTo(Vessel fDrainsTo);
+    void setDrainsTo(Vessel drainsTo);
 }

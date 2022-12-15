@@ -29,8 +29,9 @@ public interface PeopleAudience extends Audience {
     /**
      * Audiences defined by a person's minimum age.
      *
+     * @param requiredMinAge Integer value to set.
      */
-    void setRequiredMinAge(Integer fRequiredMinAge);
+    void setRequiredMinAge(Integer requiredMinAge);
 
     /**
      * Maximum recommended age in years for the audience or user.
@@ -42,8 +43,9 @@ public interface PeopleAudience extends Audience {
     /**
      * Maximum recommended age in years for the audience or user.
      *
+     * @param suggestedMaxAge Number value to set.
      */
-    void setSuggestedMaxAge(Number fSuggestedMaxAge);
+    void setSuggestedMaxAge(Number suggestedMaxAge);
 
     /**
      * Specifying the health condition(s) of a patient, medical study, or other target audience.
@@ -56,9 +58,10 @@ public interface PeopleAudience extends Audience {
     /**
      * Specifying the health condition(s) of a patient, medical study, or other target audience.
      *
+     * @param healthCondition MedicalCondition value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setHealthCondition(MedicalCondition fHealthCondition);
+    void setHealthCondition(MedicalCondition healthCondition);
 
     /**
      * A suggested range of body measurements for the intended audience or person, for example inseam between 32 and 34 inches or height between 170 and 190 cm. Typically found on a size chart for wearable products.
@@ -72,10 +75,11 @@ public interface PeopleAudience extends Audience {
     /**
      * A suggested range of body measurements for the intended audience or person, for example inseam between 32 and 34 inches or height between 170 and 190 cm. Typically found on a size chart for wearable products.
      *
+     * @param suggestedMeasurement QuantitativeValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
      */
-    void setSuggestedMeasurement(QuantitativeValue fSuggestedMeasurement);
+    void setSuggestedMeasurement(QuantitativeValue suggestedMeasurement);
 
     /**
      * The age or age range for the intended audience or person, for example 3-12 months for infants, 1-5 years for toddlers.
@@ -89,10 +93,11 @@ public interface PeopleAudience extends Audience {
     /**
      * The age or age range for the intended audience or person, for example 3-12 months for infants, 1-5 years for toddlers.
      *
+     * @param suggestedAge QuantitativeValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
      */
-    void setSuggestedAge(QuantitativeValue fSuggestedAge);
+    void setSuggestedAge(QuantitativeValue suggestedAge);
 
     /**
      * Audiences defined by a person's maximum age.
@@ -104,8 +109,9 @@ public interface PeopleAudience extends Audience {
     /**
      * Audiences defined by a person's maximum age.
      *
+     * @param requiredMaxAge Integer value to set.
      */
-    void setRequiredMaxAge(Integer fRequiredMaxAge);
+    void setRequiredMaxAge(Integer requiredMaxAge);
 
     /**
      * Minimum recommended age in years for the audience or user.
@@ -117,8 +123,9 @@ public interface PeopleAudience extends Audience {
     /**
      * Minimum recommended age in years for the audience or user.
      *
+     * @param suggestedMinAge Number value to set.
      */
-    void setSuggestedMinAge(Number fSuggestedMinAge);
+    void setSuggestedMinAge(Number suggestedMinAge);
 
     /**
      * Audiences defined by a person's gender.
@@ -130,8 +137,9 @@ public interface PeopleAudience extends Audience {
     /**
      * Audiences defined by a person's gender.
      *
+     * @param requiredGender Text value to set.
      */
-    void setRequiredGender(Text fRequiredGender);
+    void setRequiredGender(Text requiredGender);
 
     /**
      * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
@@ -143,6 +151,13 @@ public interface PeopleAudience extends Audience {
     /**
      * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
      *
+     * @param suggestedGender GenderType value to set.
      */
-    void setSuggestedGender(Object fSuggestedGender);
+    void setSuggestedGender(GenderType suggestedGender);
+    /**
+     * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
+     *
+     * @param suggestedGender Text value to set.
+     */
+    void setSuggestedGender(Text suggestedGender);
 }

@@ -31,10 +31,11 @@ public interface ArchiveComponent extends CreativeWork {
     /**
      * [[ArchiveOrganization]] that holds, keeps or maintains the [[ArchiveComponent]].
      *
+     * @param holdingArchive ArchiveOrganization value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1758">https://github.com/schemaorg/schemaorg/issues/1758</a>
      */
-    void setHoldingArchive(ArchiveOrganization fHoldingArchive);
+    void setHoldingArchive(ArchiveOrganization holdingArchive);
 
     /**
      * Current location of the item.
@@ -48,8 +49,25 @@ public interface ArchiveComponent extends CreativeWork {
     /**
      * Current location of the item.
      *
+     * @param itemLocation Place value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1758">https://github.com/schemaorg/schemaorg/issues/1758</a>
      */
-    void setItemLocation(Object fItemLocation);
+    void setItemLocation(Place itemLocation);
+    /**
+     * Current location of the item.
+     *
+     * @param itemLocation Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1758">https://github.com/schemaorg/schemaorg/issues/1758</a>
+     */
+    void setItemLocation(Text itemLocation);
+    /**
+     * Current location of the item.
+     *
+     * @param itemLocation PostalAddress value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1758">https://github.com/schemaorg/schemaorg/issues/1758</a>
+     */
+    void setItemLocation(PostalAddress itemLocation);
 }

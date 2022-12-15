@@ -30,8 +30,9 @@ public interface BroadcastService extends Service {
     /**
      * A broadcast service to which the broadcast service may belong to such as regional variations of a national channel.
      *
+     * @param parentService BroadcastService value to set.
      */
-    void setParentService(BroadcastService fParentService);
+    void setParentService(BroadcastService parentService);
 
     /**
      * The name displayed in the channel guide. For many US affiliates, it is the network name.
@@ -43,8 +44,9 @@ public interface BroadcastService extends Service {
     /**
      * The name displayed in the channel guide. For many US affiliates, it is the network name.
      *
+     * @param broadcastDisplayName Text value to set.
      */
-    void setBroadcastDisplayName(Text fBroadcastDisplayName);
+    void setBroadcastDisplayName(Text broadcastDisplayName);
 
     /**
      * The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).
@@ -56,8 +58,9 @@ public interface BroadcastService extends Service {
     /**
      * The type of screening or video broadcast used (e.g. IMAX, 3D, SD, HD, etc.).
      *
+     * @param videoFormat Text value to set.
      */
-    void setVideoFormat(Text fVideoFormat);
+    void setVideoFormat(Text videoFormat);
 
     /**
      * The timezone in [ISO 8601 format](http://en.wikipedia.org/wiki/ISO_8601) for which the service bases its broadcasts
@@ -69,8 +72,9 @@ public interface BroadcastService extends Service {
     /**
      * The timezone in [ISO 8601 format](http://en.wikipedia.org/wiki/ISO_8601) for which the service bases its broadcasts
      *
+     * @param broadcastTimezone Text value to set.
      */
-    void setBroadcastTimezone(Text fBroadcastTimezone);
+    void setBroadcastTimezone(Text broadcastTimezone);
 
     /**
      * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
@@ -83,9 +87,17 @@ public interface BroadcastService extends Service {
     /**
      * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
      *
+     * @param broadcastFrequency BroadcastFrequencySpecification value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
      */
-    void setBroadcastFrequency(Object fBroadcastFrequency);
+    void setBroadcastFrequency(BroadcastFrequencySpecification broadcastFrequency);
+    /**
+     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges e.g. 87-99. In addition a shortcut idiom is supported for frequences of AM and FM radio channels, e.g. "87 FM".
+     *
+     * @param broadcastFrequency Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
+     */
+    void setBroadcastFrequency(Text broadcastFrequency);
 
     /**
      * A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.
@@ -99,10 +111,11 @@ public interface BroadcastService extends Service {
     /**
      * A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.
      *
+     * @param callSign Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2109">https://github.com/schemaorg/schemaorg/issues/2109</a>
      */
-    void setCallSign(Text fCallSign);
+    void setCallSign(Text callSign);
 
     /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
@@ -115,9 +128,17 @@ public interface BroadcastService extends Service {
     /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
      *
+     * @param inLanguage Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
      */
-    void setInLanguage(Object fInLanguage);
+    void setInLanguage(Text inLanguage);
+    /**
+     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     *
+     * @param inLanguage Language value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
+     */
+    void setInLanguage(Language inLanguage);
 
     /**
      * A broadcast channel of a broadcast service.
@@ -130,9 +151,10 @@ public interface BroadcastService extends Service {
     /**
      * A broadcast channel of a broadcast service.
      *
+     * @param hasBroadcastChannel BroadcastChannel value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
      */
-    void setHasBroadcastChannel(BroadcastChannel fHasBroadcastChannel);
+    void setHasBroadcastChannel(BroadcastChannel hasBroadcastChannel);
 
     /**
      * The organization owning or operating the broadcast service.
@@ -144,8 +166,9 @@ public interface BroadcastService extends Service {
     /**
      * The organization owning or operating the broadcast service.
      *
+     * @param broadcaster Organization value to set.
      */
-    void setBroadcaster(Organization fBroadcaster);
+    void setBroadcaster(Organization broadcaster);
 
     /**
      * The media network(s) whose content is broadcast on this station.
@@ -157,8 +180,9 @@ public interface BroadcastService extends Service {
     /**
      * The media network(s) whose content is broadcast on this station.
      *
+     * @param broadcastAffiliateOf Organization value to set.
      */
-    void setBroadcastAffiliateOf(Organization fBroadcastAffiliateOf);
+    void setBroadcastAffiliateOf(Organization broadcastAffiliateOf);
 
     /**
      * The area within which users can expect to reach the broadcast service.
@@ -170,6 +194,7 @@ public interface BroadcastService extends Service {
     /**
      * The area within which users can expect to reach the broadcast service.
      *
+     * @param area Place value to set.
      */
-    void setArea(Place fArea);
+    void setArea(Place area);
 }

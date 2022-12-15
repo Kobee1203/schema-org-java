@@ -42,10 +42,10 @@ import org.schema.model.WorkBasedProgram;
  * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
  * @see <a href="https://schema.org/WorkBasedProgram">https://schema.org/WorkBasedProgram</a>
  */
-@JsonLdTypeName("schema:WorkBasedProgram")
+@JsonLdTypeName("WorkBasedProgram")
 public class WorkBasedProgramImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements WorkBasedProgram {
 
-    private MonetaryAmountDistribution fTrainingSalary;
+    private MonetaryAmountDistribution trainingSalary;
 
     /**
      * The estimated salary earned while in the program.
@@ -57,22 +57,23 @@ public class WorkBasedProgramImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public MonetaryAmountDistribution getTrainingSalary() {
-        return fTrainingSalary;
+        return trainingSalary;
     }
 
     /**
      * The estimated salary earned while in the program.
      *
+     * @param trainingSalary MonetaryAmountDistribution value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
      */
     @Override
-    public void setTrainingSalary(MonetaryAmountDistribution fTrainingSalary) {
-        this.fTrainingSalary = fTrainingSalary;
+    public void setTrainingSalary(MonetaryAmountDistribution trainingSalary) {
+        this.trainingSalary = trainingSalary;
     }
 
-    private Object fOccupationalCategory;
+    private Object occupationalCategory;
 
     /**
      * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.<br/>
@@ -87,13 +88,14 @@ public class WorkBasedProgramImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public <T> T getOccupationalCategory() {
-        return (T) fOccupationalCategory;
+        return (T) occupationalCategory;
     }
 
     /**
      * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.<br/>
      * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
      *
+     * @param occupationalCategory CategoryCode value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
@@ -101,14 +103,26 @@ public class WorkBasedProgramImpl extends com.weedow.schemaorg.commons.model.Jso
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
     @Override
-    public void setOccupationalCategory(Object fOccupationalCategory) {
-        if(!(fOccupationalCategory instanceof CategoryCode) && !(fOccupationalCategory instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'occupationalCategory': " + fOccupationalCategory);
-        }
-        this.fOccupationalCategory = fOccupationalCategory;
+    public void setOccupationalCategory(CategoryCode occupationalCategory) {
+        this.occupationalCategory = occupationalCategory;
+    }
+    /**
+     * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.<br/>
+     * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
+     *
+     * @param occupationalCategory Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    @Override
+    public void setOccupationalCategory(Text occupationalCategory) {
+        this.occupationalCategory = occupationalCategory;
     }
 
-    private Object fProgramPrerequisites;
+    private Object programPrerequisites;
 
     /**
      * Prerequisites for enrolling in the program.
@@ -119,24 +133,55 @@ public class WorkBasedProgramImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public <T> T getProgramPrerequisites() {
-        return (T) fProgramPrerequisites;
+        return (T) programPrerequisites;
     }
 
     /**
      * Prerequisites for enrolling in the program.
      *
+     * @param programPrerequisites AlignmentObject value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
     @Override
-    public void setProgramPrerequisites(Object fProgramPrerequisites) {
-        if(!(fProgramPrerequisites instanceof AlignmentObject) && !(fProgramPrerequisites instanceof Course) && !(fProgramPrerequisites instanceof EducationalOccupationalCredential) && !(fProgramPrerequisites instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'programPrerequisites': " + fProgramPrerequisites);
-        }
-        this.fProgramPrerequisites = fProgramPrerequisites;
+    public void setProgramPrerequisites(AlignmentObject programPrerequisites) {
+        this.programPrerequisites = programPrerequisites;
+    }
+    /**
+     * Prerequisites for enrolling in the program.
+     *
+     * @param programPrerequisites Course value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public void setProgramPrerequisites(Course programPrerequisites) {
+        this.programPrerequisites = programPrerequisites;
+    }
+    /**
+     * Prerequisites for enrolling in the program.
+     *
+     * @param programPrerequisites EducationalOccupationalCredential value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public void setProgramPrerequisites(EducationalOccupationalCredential programPrerequisites) {
+        this.programPrerequisites = programPrerequisites;
+    }
+    /**
+     * Prerequisites for enrolling in the program.
+     *
+     * @param programPrerequisites Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public void setProgramPrerequisites(Text programPrerequisites) {
+        this.programPrerequisites = programPrerequisites;
     }
 
-    private Course fHasCourse;
+    private Course hasCourse;
 
     /**
      * A course or class that is one of the learning opportunities that constitute an educational / occupational program. No information is implied about whether the course is mandatory or optional; no guarantee is implied about whether the course will be available to everyone on the program.
@@ -147,21 +192,22 @@ public class WorkBasedProgramImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public Course getHasCourse() {
-        return fHasCourse;
+        return hasCourse;
     }
 
     /**
      * A course or class that is one of the learning opportunities that constitute an educational / occupational program. No information is implied about whether the course is mandatory or optional; no guarantee is implied about whether the course will be available to everyone on the program.
      *
+     * @param hasCourse Course value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2483">https://github.com/schemaorg/schemaorg/issues/2483</a>
      */
     @Override
-    public void setHasCourse(Course fHasCourse) {
-        this.fHasCourse = fHasCourse;
+    public void setHasCourse(Course hasCourse) {
+        this.hasCourse = hasCourse;
     }
 
-    private Object fStartDate;
+    private Object startDate;
 
     /**
      * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
@@ -171,23 +217,31 @@ public class WorkBasedProgramImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public <T> T getStartDate() {
-        return (T) fStartDate;
+        return (T) startDate;
     }
 
     /**
      * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
      *
+     * @param startDate DateTime value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
     @Override
-    public void setStartDate(Object fStartDate) {
-        if(!(fStartDate instanceof DateTime) && !(fStartDate instanceof Date)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'startDate': " + fStartDate);
-        }
-        this.fStartDate = fStartDate;
+    public void setStartDate(DateTime startDate) {
+        this.startDate = startDate;
+    }
+    /**
+     * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
+     *
+     * @param startDate Date value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
+     */
+    @Override
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
     }
 
-    private MonetaryAmountDistribution fSalaryUponCompletion;
+    private MonetaryAmountDistribution salaryUponCompletion;
 
     /**
      * The expected salary upon completing the training.
@@ -198,21 +252,22 @@ public class WorkBasedProgramImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public MonetaryAmountDistribution getSalaryUponCompletion() {
-        return fSalaryUponCompletion;
+        return salaryUponCompletion;
     }
 
     /**
      * The expected salary upon completing the training.
      *
+     * @param salaryUponCompletion MonetaryAmountDistribution value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
     @Override
-    public void setSalaryUponCompletion(MonetaryAmountDistribution fSalaryUponCompletion) {
-        this.fSalaryUponCompletion = fSalaryUponCompletion;
+    public void setSalaryUponCompletion(MonetaryAmountDistribution salaryUponCompletion) {
+        this.salaryUponCompletion = salaryUponCompletion;
     }
 
-    private Number fTermsPerYear;
+    private Number termsPerYear;
 
     /**
      * The number of times terms of study are offered per year. Semesters and quarters are common units for term. For example, if the student can only take 2 semesters for the program in one year, then termsPerYear should be 2.
@@ -223,21 +278,22 @@ public class WorkBasedProgramImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public Number getTermsPerYear() {
-        return fTermsPerYear;
+        return termsPerYear;
     }
 
     /**
      * The number of times terms of study are offered per year. Semesters and quarters are common units for term. For example, if the student can only take 2 semesters for the program in one year, then termsPerYear should be 2.
      *
+     * @param termsPerYear Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
      */
     @Override
-    public void setTermsPerYear(Number fTermsPerYear) {
-        this.fTermsPerYear = fTermsPerYear;
+    public void setTermsPerYear(Number termsPerYear) {
+        this.termsPerYear = termsPerYear;
     }
 
-    private DayOfWeek fDayOfWeek;
+    private DayOfWeek dayOfWeek;
 
     /**
      * The day of the week for which these opening hours are valid.
@@ -247,20 +303,21 @@ public class WorkBasedProgramImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public DayOfWeek getDayOfWeek() {
-        return fDayOfWeek;
+        return dayOfWeek;
     }
 
     /**
      * The day of the week for which these opening hours are valid.
      *
+     * @param dayOfWeek DayOfWeek value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setDayOfWeek(DayOfWeek fDayOfWeek) {
-        this.fDayOfWeek = fDayOfWeek;
+    public void setDayOfWeek(DayOfWeek dayOfWeek) {
+        this.dayOfWeek = dayOfWeek;
     }
 
-    private Object fOffers;
+    private Object offers;
 
     /**
      * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
@@ -271,24 +328,33 @@ public class WorkBasedProgramImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public <T> T getOffers() {
-        return (T) fOffers;
+        return (T) offers;
     }
 
     /**
      * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      *
+     * @param offers Offer value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
     @Override
-    public void setOffers(Object fOffers) {
-        if(!(fOffers instanceof Offer) && !(fOffers instanceof Demand)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'offers': " + fOffers);
-        }
-        this.fOffers = fOffers;
+    public void setOffers(Offer offers) {
+        this.offers = offers;
+    }
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     *
+     * @param offers Demand value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public void setOffers(Demand offers) {
+        this.offers = offers;
     }
 
-    private Object fTypicalCreditsPerTerm;
+    private Object typicalCreditsPerTerm;
 
     /**
      * The number of credits or units a full-time student would be expected to take in 1 term however 'term' is defined by the institution.
@@ -299,24 +365,33 @@ public class WorkBasedProgramImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public <T> T getTypicalCreditsPerTerm() {
-        return (T) fTypicalCreditsPerTerm;
+        return (T) typicalCreditsPerTerm;
     }
 
     /**
      * The number of credits or units a full-time student would be expected to take in 1 term however 'term' is defined by the institution.
      *
+     * @param typicalCreditsPerTerm Integer value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
      */
     @Override
-    public void setTypicalCreditsPerTerm(Object fTypicalCreditsPerTerm) {
-        if(!(fTypicalCreditsPerTerm instanceof Integer) && !(fTypicalCreditsPerTerm instanceof StructuredValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'typicalCreditsPerTerm': " + fTypicalCreditsPerTerm);
-        }
-        this.fTypicalCreditsPerTerm = fTypicalCreditsPerTerm;
+    public void setTypicalCreditsPerTerm(Integer typicalCreditsPerTerm) {
+        this.typicalCreditsPerTerm = typicalCreditsPerTerm;
+    }
+    /**
+     * The number of credits or units a full-time student would be expected to take in 1 term however 'term' is defined by the institution.
+     *
+     * @param typicalCreditsPerTerm StructuredValue value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
+     */
+    @Override
+    public void setTypicalCreditsPerTerm(StructuredValue typicalCreditsPerTerm) {
+        this.typicalCreditsPerTerm = typicalCreditsPerTerm;
     }
 
-    private Date fApplicationStartDate;
+    private Date applicationStartDate;
 
     /**
      * The date at which the program begins collecting applications for the next enrollment cycle.
@@ -327,21 +402,22 @@ public class WorkBasedProgramImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public Date getApplicationStartDate() {
-        return fApplicationStartDate;
+        return applicationStartDate;
     }
 
     /**
      * The date at which the program begins collecting applications for the next enrollment cycle.
      *
+     * @param applicationStartDate Date value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
      */
     @Override
-    public void setApplicationStartDate(Date fApplicationStartDate) {
-        this.fApplicationStartDate = fApplicationStartDate;
+    public void setApplicationStartDate(Date applicationStartDate) {
+        this.applicationStartDate = applicationStartDate;
     }
 
-    private Text fTimeOfDay;
+    private Text timeOfDay;
 
     /**
      * The time of day the program normally runs. For example, "evenings".
@@ -352,21 +428,22 @@ public class WorkBasedProgramImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public Text getTimeOfDay() {
-        return fTimeOfDay;
+        return timeOfDay;
     }
 
     /**
      * The time of day the program normally runs. For example, "evenings".
      *
+     * @param timeOfDay Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
      */
     @Override
-    public void setTimeOfDay(Text fTimeOfDay) {
-        this.fTimeOfDay = fTimeOfDay;
+    public void setTimeOfDay(Text timeOfDay) {
+        this.timeOfDay = timeOfDay;
     }
 
-    private Object fEndDate;
+    private Object endDate;
 
     /**
      * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
@@ -376,23 +453,31 @@ public class WorkBasedProgramImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public <T> T getEndDate() {
-        return (T) fEndDate;
+        return (T) endDate;
     }
 
     /**
      * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
      *
+     * @param endDate Date value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
     @Override
-    public void setEndDate(Object fEndDate) {
-        if(!(fEndDate instanceof Date) && !(fEndDate instanceof DateTime)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'endDate': " + fEndDate);
-        }
-        this.fEndDate = fEndDate;
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
+    }
+    /**
+     * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
+     *
+     * @param endDate DateTime value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
+     */
+    @Override
+    public void setEndDate(DateTime endDate) {
+        this.endDate = endDate;
     }
 
-    private Object fProvider;
+    private Object provider;
 
     /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
@@ -404,25 +489,35 @@ public class WorkBasedProgramImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public <T> T getProvider() {
-        return (T) fProvider;
+        return (T) provider;
     }
 
     /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
      *
+     * @param provider Organization value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
      */
     @Override
-    public void setProvider(Object fProvider) {
-        if(!(fProvider instanceof Organization) && !(fProvider instanceof Person)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'provider': " + fProvider);
-        }
-        this.fProvider = fProvider;
+    public void setProvider(Organization provider) {
+        this.provider = provider;
+    }
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @param provider Person value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     */
+    @Override
+    public void setProvider(Person provider) {
+        this.provider = provider;
     }
 
-    private Object fEducationalCredentialAwarded;
+    private Object educationalCredentialAwarded;
 
     /**
      * A description of the qualification, award, certificate, diploma or other educational credential awarded as a consequence of successful completion of this course or program.
@@ -432,23 +527,41 @@ public class WorkBasedProgramImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public <T> T getEducationalCredentialAwarded() {
-        return (T) fEducationalCredentialAwarded;
+        return (T) educationalCredentialAwarded;
     }
 
     /**
      * A description of the qualification, award, certificate, diploma or other educational credential awarded as a consequence of successful completion of this course or program.
      *
+     * @param educationalCredentialAwarded URL value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
     @Override
-    public void setEducationalCredentialAwarded(Object fEducationalCredentialAwarded) {
-        if(!(fEducationalCredentialAwarded instanceof URL) && !(fEducationalCredentialAwarded instanceof EducationalOccupationalCredential) && !(fEducationalCredentialAwarded instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'educationalCredentialAwarded': " + fEducationalCredentialAwarded);
-        }
-        this.fEducationalCredentialAwarded = fEducationalCredentialAwarded;
+    public void setEducationalCredentialAwarded(URL educationalCredentialAwarded) {
+        this.educationalCredentialAwarded = educationalCredentialAwarded;
+    }
+    /**
+     * A description of the qualification, award, certificate, diploma or other educational credential awarded as a consequence of successful completion of this course or program.
+     *
+     * @param educationalCredentialAwarded EducationalOccupationalCredential value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public void setEducationalCredentialAwarded(EducationalOccupationalCredential educationalCredentialAwarded) {
+        this.educationalCredentialAwarded = educationalCredentialAwarded;
+    }
+    /**
+     * A description of the qualification, award, certificate, diploma or other educational credential awarded as a consequence of successful completion of this course or program.
+     *
+     * @param educationalCredentialAwarded Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public void setEducationalCredentialAwarded(Text educationalCredentialAwarded) {
+        this.educationalCredentialAwarded = educationalCredentialAwarded;
     }
 
-    private Object fNumberOfCredits;
+    private Object numberOfCredits;
 
     /**
      * The number of credits or units awarded by a Course or required to complete an EducationalOccupationalProgram.
@@ -459,24 +572,33 @@ public class WorkBasedProgramImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public <T> T getNumberOfCredits() {
-        return (T) fNumberOfCredits;
+        return (T) numberOfCredits;
     }
 
     /**
      * The number of credits or units awarded by a Course or required to complete an EducationalOccupationalProgram.
      *
+     * @param numberOfCredits Integer value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
      */
     @Override
-    public void setNumberOfCredits(Object fNumberOfCredits) {
-        if(!(fNumberOfCredits instanceof Integer) && !(fNumberOfCredits instanceof StructuredValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'numberOfCredits': " + fNumberOfCredits);
-        }
-        this.fNumberOfCredits = fNumberOfCredits;
+    public void setNumberOfCredits(Integer numberOfCredits) {
+        this.numberOfCredits = numberOfCredits;
+    }
+    /**
+     * The number of credits or units awarded by a Course or required to complete an EducationalOccupationalProgram.
+     *
+     * @param numberOfCredits StructuredValue value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
+     */
+    @Override
+    public void setNumberOfCredits(StructuredValue numberOfCredits) {
+        this.numberOfCredits = numberOfCredits;
     }
 
-    private Duration fTimeToComplete;
+    private Duration timeToComplete;
 
     /**
      * The expected length of time to complete the program if attending full-time.
@@ -487,21 +609,22 @@ public class WorkBasedProgramImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public Duration getTimeToComplete() {
-        return fTimeToComplete;
+        return timeToComplete;
     }
 
     /**
      * The expected length of time to complete the program if attending full-time.
      *
+     * @param timeToComplete Duration value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
     @Override
-    public void setTimeToComplete(Duration fTimeToComplete) {
-        this.fTimeToComplete = fTimeToComplete;
+    public void setTimeToComplete(Duration timeToComplete) {
+        this.timeToComplete = timeToComplete;
     }
 
-    private Object fOccupationalCredentialAwarded;
+    private Object occupationalCredentialAwarded;
 
     /**
      * A description of the qualification, award, certificate, diploma or other occupational credential awarded as a consequence of successful completion of this course or program.
@@ -512,24 +635,44 @@ public class WorkBasedProgramImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public <T> T getOccupationalCredentialAwarded() {
-        return (T) fOccupationalCredentialAwarded;
+        return (T) occupationalCredentialAwarded;
     }
 
     /**
      * A description of the qualification, award, certificate, diploma or other occupational credential awarded as a consequence of successful completion of this course or program.
      *
+     * @param occupationalCredentialAwarded EducationalOccupationalCredential value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
     @Override
-    public void setOccupationalCredentialAwarded(Object fOccupationalCredentialAwarded) {
-        if(!(fOccupationalCredentialAwarded instanceof EducationalOccupationalCredential) && !(fOccupationalCredentialAwarded instanceof Text) && !(fOccupationalCredentialAwarded instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'occupationalCredentialAwarded': " + fOccupationalCredentialAwarded);
-        }
-        this.fOccupationalCredentialAwarded = fOccupationalCredentialAwarded;
+    public void setOccupationalCredentialAwarded(EducationalOccupationalCredential occupationalCredentialAwarded) {
+        this.occupationalCredentialAwarded = occupationalCredentialAwarded;
+    }
+    /**
+     * A description of the qualification, award, certificate, diploma or other occupational credential awarded as a consequence of successful completion of this course or program.
+     *
+     * @param occupationalCredentialAwarded Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public void setOccupationalCredentialAwarded(Text occupationalCredentialAwarded) {
+        this.occupationalCredentialAwarded = occupationalCredentialAwarded;
+    }
+    /**
+     * A description of the qualification, award, certificate, diploma or other occupational credential awarded as a consequence of successful completion of this course or program.
+     *
+     * @param occupationalCredentialAwarded URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public void setOccupationalCredentialAwarded(URL occupationalCredentialAwarded) {
+        this.occupationalCredentialAwarded = occupationalCredentialAwarded;
     }
 
-    private Duration fTermDuration;
+    private Duration termDuration;
 
     /**
      * The amount of time in a term as defined by the institution. A term is a length of time where students take one or more classes. Semesters and quarters are common units for term.
@@ -540,21 +683,22 @@ public class WorkBasedProgramImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public Duration getTermDuration() {
-        return fTermDuration;
+        return termDuration;
     }
 
     /**
      * The amount of time in a term as defined by the institution. A term is a length of time where students take one or more classes. Semesters and quarters are common units for term.
      *
+     * @param termDuration Duration value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
      */
     @Override
-    public void setTermDuration(Duration fTermDuration) {
-        this.fTermDuration = fTermDuration;
+    public void setTermDuration(Duration termDuration) {
+        this.termDuration = termDuration;
     }
 
-    private Object fEducationalProgramMode;
+    private Object educationalProgramMode;
 
     /**
      * Similar to courseMode, The medium or means of delivery of the program as a whole. The value may either be a text label (e.g. "online", "onsite" or "blended"; "synchronous" or "asynchronous"; "full-time" or "part-time") or a URL reference to a term from a controlled vocabulary (e.g. https://ceds.ed.gov/element/001311#Asynchronous ).
@@ -565,24 +709,33 @@ public class WorkBasedProgramImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public <T> T getEducationalProgramMode() {
-        return (T) fEducationalProgramMode;
+        return (T) educationalProgramMode;
     }
 
     /**
      * Similar to courseMode, The medium or means of delivery of the program as a whole. The value may either be a text label (e.g. "online", "onsite" or "blended"; "synchronous" or "asynchronous"; "full-time" or "part-time") or a URL reference to a term from a controlled vocabulary (e.g. https://ceds.ed.gov/element/001311#Asynchronous ).
      *
+     * @param educationalProgramMode URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
      */
     @Override
-    public void setEducationalProgramMode(Object fEducationalProgramMode) {
-        if(!(fEducationalProgramMode instanceof URL) && !(fEducationalProgramMode instanceof Text)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'educationalProgramMode': " + fEducationalProgramMode);
-        }
-        this.fEducationalProgramMode = fEducationalProgramMode;
+    public void setEducationalProgramMode(URL educationalProgramMode) {
+        this.educationalProgramMode = educationalProgramMode;
+    }
+    /**
+     * Similar to courseMode, The medium or means of delivery of the program as a whole. The value may either be a text label (e.g. "online", "onsite" or "blended"; "synchronous" or "asynchronous"; "full-time" or "part-time") or a URL reference to a term from a controlled vocabulary (e.g. https://ceds.ed.gov/element/001311#Asynchronous ).
+     *
+     * @param educationalProgramMode Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
+     */
+    @Override
+    public void setEducationalProgramMode(Text educationalProgramMode) {
+        this.educationalProgramMode = educationalProgramMode;
     }
 
-    private Object fProgramType;
+    private Object programType;
 
     /**
      * The type of educational or occupational program. For example, classroom, internship, alternance, etc..
@@ -593,24 +746,33 @@ public class WorkBasedProgramImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public <T> T getProgramType() {
-        return (T) fProgramType;
+        return (T) programType;
     }
 
     /**
      * The type of educational or occupational program. For example, classroom, internship, alternance, etc..
      *
+     * @param programType Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
      */
     @Override
-    public void setProgramType(Object fProgramType) {
-        if(!(fProgramType instanceof Text) && !(fProgramType instanceof DefinedTerm)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'programType': " + fProgramType);
-        }
-        this.fProgramType = fProgramType;
+    public void setProgramType(Text programType) {
+        this.programType = programType;
+    }
+    /**
+     * The type of educational or occupational program. For example, classroom, internship, alternance, etc..
+     *
+     * @param programType DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
+     */
+    @Override
+    public void setProgramType(DefinedTerm programType) {
+        this.programType = programType;
     }
 
-    private Integer fMaximumEnrollment;
+    private Integer maximumEnrollment;
 
     /**
      * The maximum number of students who may be enrolled in the program.
@@ -621,21 +783,22 @@ public class WorkBasedProgramImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public Integer getMaximumEnrollment() {
-        return fMaximumEnrollment;
+        return maximumEnrollment;
     }
 
     /**
      * The maximum number of students who may be enrolled in the program.
      *
+     * @param maximumEnrollment Integer value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
      */
     @Override
-    public void setMaximumEnrollment(Integer fMaximumEnrollment) {
-        this.fMaximumEnrollment = fMaximumEnrollment;
+    public void setMaximumEnrollment(Integer maximumEnrollment) {
+        this.maximumEnrollment = maximumEnrollment;
     }
 
-    private Object fFinancialAidEligible;
+    private Object financialAidEligible;
 
     /**
      * A financial aid type or program which students may use to pay for tuition or fees associated with the program.
@@ -646,24 +809,33 @@ public class WorkBasedProgramImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public <T> T getFinancialAidEligible() {
-        return (T) fFinancialAidEligible;
+        return (T) financialAidEligible;
     }
 
     /**
      * A financial aid type or program which students may use to pay for tuition or fees associated with the program.
      *
+     * @param financialAidEligible Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2418">https://github.com/schemaorg/schemaorg/issues/2418</a>
      */
     @Override
-    public void setFinancialAidEligible(Object fFinancialAidEligible) {
-        if(!(fFinancialAidEligible instanceof Text) && !(fFinancialAidEligible instanceof DefinedTerm)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'financialAidEligible': " + fFinancialAidEligible);
-        }
-        this.fFinancialAidEligible = fFinancialAidEligible;
+    public void setFinancialAidEligible(Text financialAidEligible) {
+        this.financialAidEligible = financialAidEligible;
+    }
+    /**
+     * A financial aid type or program which students may use to pay for tuition or fees associated with the program.
+     *
+     * @param financialAidEligible DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2418">https://github.com/schemaorg/schemaorg/issues/2418</a>
+     */
+    @Override
+    public void setFinancialAidEligible(DefinedTerm financialAidEligible) {
+        this.financialAidEligible = financialAidEligible;
     }
 
-    private Date fApplicationDeadline;
+    private Date applicationDeadline;
 
     /**
      * The date at which the program stops collecting applications for the next enrollment cycle.
@@ -674,21 +846,22 @@ public class WorkBasedProgramImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public Date getApplicationDeadline() {
-        return fApplicationDeadline;
+        return applicationDeadline;
     }
 
     /**
      * The date at which the program stops collecting applications for the next enrollment cycle.
      *
+     * @param applicationDeadline Date value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
      */
     @Override
-    public void setApplicationDeadline(Date fApplicationDeadline) {
-        this.fApplicationDeadline = fApplicationDeadline;
+    public void setApplicationDeadline(Date applicationDeadline) {
+        this.applicationDeadline = applicationDeadline;
     }
 
-    private Object fMainEntityOfPage;
+    private Object mainEntityOfPage;
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -697,22 +870,29 @@ public class WorkBasedProgramImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public <T> T getMainEntityOfPage() {
-        return (T) fMainEntityOfPage;
+        return (T) mainEntityOfPage;
     }
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
+     * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(Object fMainEntityOfPage) {
-        if(!(fMainEntityOfPage instanceof CreativeWork) && !(fMainEntityOfPage instanceof URL)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'mainEntityOfPage': " + fMainEntityOfPage);
-        }
-        this.fMainEntityOfPage = fMainEntityOfPage;
+    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param mainEntityOfPage URL value to set.
+     */
+    @Override
+    public void setMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = mainEntityOfPage;
     }
 
-    private Text fAlternateName;
+    private Text alternateName;
 
     /**
      * An alias for the item.
@@ -721,19 +901,20 @@ public class WorkBasedProgramImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public Text getAlternateName() {
-        return fAlternateName;
+        return alternateName;
     }
 
     /**
      * An alias for the item.
      *
+     * @param alternateName Text value to set.
      */
     @Override
-    public void setAlternateName(Text fAlternateName) {
-        this.fAlternateName = fAlternateName;
+    public void setAlternateName(Text alternateName) {
+        this.alternateName = alternateName;
     }
 
-    private Text fName;
+    private Text name;
 
     /**
      * The name of the item.
@@ -742,19 +923,20 @@ public class WorkBasedProgramImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public Text getName() {
-        return fName;
+        return name;
     }
 
     /**
      * The name of the item.
      *
+     * @param name Text value to set.
      */
     @Override
-    public void setName(Text fName) {
-        this.fName = fName;
+    public void setName(Text name) {
+        this.name = name;
     }
 
-    private Action fPotentialAction;
+    private Action potentialAction;
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -763,19 +945,20 @@ public class WorkBasedProgramImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public Action getPotentialAction() {
-        return fPotentialAction;
+        return potentialAction;
     }
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
      *
+     * @param potentialAction Action value to set.
      */
     @Override
-    public void setPotentialAction(Action fPotentialAction) {
-        this.fPotentialAction = fPotentialAction;
+    public void setPotentialAction(Action potentialAction) {
+        this.potentialAction = potentialAction;
     }
 
-    private Object fImage;
+    private Object image;
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -784,22 +967,29 @@ public class WorkBasedProgramImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public <T> T getImage() {
-        return (T) fImage;
+        return (T) image;
     }
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
+     * @param image URL value to set.
      */
     @Override
-    public void setImage(Object fImage) {
-        if(!(fImage instanceof URL) && !(fImage instanceof ImageObject)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'image': " + fImage);
-        }
-        this.fImage = fImage;
+    public void setImage(URL image) {
+        this.image = image;
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image ImageObject value to set.
+     */
+    @Override
+    public void setImage(ImageObject image) {
+        this.image = image;
     }
 
-    private URL fUrl;
+    private URL url;
 
     /**
      * URL of the item.
@@ -808,19 +998,20 @@ public class WorkBasedProgramImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public URL getUrl() {
-        return fUrl;
+        return url;
     }
 
     /**
      * URL of the item.
      *
+     * @param url URL value to set.
      */
     @Override
-    public void setUrl(URL fUrl) {
-        this.fUrl = fUrl;
+    public void setUrl(URL url) {
+        this.url = url;
     }
 
-    private Text fDescription;
+    private Text description;
 
     /**
      * A description of the item.
@@ -829,19 +1020,20 @@ public class WorkBasedProgramImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public Text getDescription() {
-        return fDescription;
+        return description;
     }
 
     /**
      * A description of the item.
      *
+     * @param description Text value to set.
      */
     @Override
-    public void setDescription(Text fDescription) {
-        this.fDescription = fDescription;
+    public void setDescription(Text description) {
+        this.description = description;
     }
 
-    private Object fSubjectOf;
+    private Object subjectOf;
 
     /**
      * A CreativeWork or Event about this Thing.
@@ -851,23 +1043,31 @@ public class WorkBasedProgramImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public <T> T getSubjectOf() {
-        return (T) fSubjectOf;
+        return (T) subjectOf;
     }
 
     /**
      * A CreativeWork or Event about this Thing.
      *
+     * @param subjectOf Event value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Object fSubjectOf) {
-        if(!(fSubjectOf instanceof Event) && !(fSubjectOf instanceof CreativeWork)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'subjectOf': " + fSubjectOf);
-        }
-        this.fSubjectOf = fSubjectOf;
+    public void setSubjectOf(Event subjectOf) {
+        this.subjectOf = subjectOf;
+    }
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @param subjectOf CreativeWork value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public void setSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = subjectOf;
     }
 
-    private URL fAdditionalType;
+    private URL additionalType;
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
@@ -876,19 +1076,20 @@ public class WorkBasedProgramImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public URL getAdditionalType() {
-        return fAdditionalType;
+        return additionalType;
     }
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
      *
+     * @param additionalType URL value to set.
      */
     @Override
-    public void setAdditionalType(URL fAdditionalType) {
-        this.fAdditionalType = fAdditionalType;
+    public void setAdditionalType(URL additionalType) {
+        this.additionalType = additionalType;
     }
 
-    private Text fDisambiguatingDescription;
+    private Text disambiguatingDescription;
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
@@ -897,19 +1098,20 @@ public class WorkBasedProgramImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public Text getDisambiguatingDescription() {
-        return fDisambiguatingDescription;
+        return disambiguatingDescription;
     }
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
+     * @param disambiguatingDescription Text value to set.
      */
     @Override
-    public void setDisambiguatingDescription(Text fDisambiguatingDescription) {
-        this.fDisambiguatingDescription = fDisambiguatingDescription;
+    public void setDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = disambiguatingDescription;
     }
 
-    private URL fSameAs;
+    private URL sameAs;
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
@@ -918,19 +1120,20 @@ public class WorkBasedProgramImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public URL getSameAs() {
-        return fSameAs;
+        return sameAs;
     }
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
+     * @param sameAs URL value to set.
      */
     @Override
-    public void setSameAs(URL fSameAs) {
-        this.fSameAs = fSameAs;
+    public void setSameAs(URL sameAs) {
+        this.sameAs = sameAs;
     }
 
-    private Object fIdentifier;
+    private Object identifier;
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -940,19 +1143,37 @@ public class WorkBasedProgramImpl extends com.weedow.schemaorg.commons.model.Jso
      */
     @Override
     public <T> T getIdentifier() {
-        return (T) fIdentifier;
+        return (T) identifier;
     }
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
      *         
      *
+     * @param identifier URL value to set.
      */
     @Override
-    public void setIdentifier(Object fIdentifier) {
-        if(!(fIdentifier instanceof URL) && !(fIdentifier instanceof Text) && !(fIdentifier instanceof PropertyValue)) {
-            throw new java.lang.IllegalArgumentException("Invalid value for property 'identifier': " + fIdentifier);
-        }
-        this.fIdentifier = fIdentifier;
+    public void setIdentifier(URL identifier) {
+        this.identifier = identifier;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier Text value to set.
+     */
+    @Override
+    public void setIdentifier(Text identifier) {
+        this.identifier = identifier;
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier PropertyValue value to set.
+     */
+    @Override
+    public void setIdentifier(PropertyValue identifier) {
+        this.identifier = identifier;
     }
 }

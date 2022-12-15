@@ -28,8 +28,9 @@ public interface PodcastSeries extends CreativeWorkSeries {
     /**
      * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
      *
+     * @param actor Person value to set.
      */
-    void setActor(Person fActor);
+    void setActor(Person actor);
 
     /**
      * The URL for a feed, e.g. associated with a podcast series, blog, or series of date-stamped updates. This is usually RSS or Atom.
@@ -43,8 +44,17 @@ public interface PodcastSeries extends CreativeWorkSeries {
     /**
      * The URL for a feed, e.g. associated with a podcast series, blog, or series of date-stamped updates. This is usually RSS or Atom.
      *
+     * @param webFeed DataFeed value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/373">https://github.com/schemaorg/schemaorg/issues/373</a>
      */
-    void setWebFeed(Object fWebFeed);
+    void setWebFeed(DataFeed webFeed);
+    /**
+     * The URL for a feed, e.g. associated with a podcast series, blog, or series of date-stamped updates. This is usually RSS or Atom.
+     *
+     * @param webFeed URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/373">https://github.com/schemaorg/schemaorg/issues/373</a>
+     */
+    void setWebFeed(URL webFeed);
 }

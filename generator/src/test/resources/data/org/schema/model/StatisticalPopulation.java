@@ -32,10 +32,11 @@ public interface StatisticalPopulation extends Intangible {
     /**
      * Indicates the populationType common to all members of a [[StatisticalPopulation]].
      *
+     * @param populationType Class value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
      */
-    void setPopulationType(Class fPopulationType);
+    void setPopulationType(Class populationType);
 
     /**
      * Indicates the number of constraints (not counting [[populationType]]) defined for a particular [[StatisticalPopulation]]. This helps applications understand if they have access to a sufficiently complete description of a [[StatisticalPopulation]].
@@ -49,10 +50,11 @@ public interface StatisticalPopulation extends Intangible {
     /**
      * Indicates the number of constraints (not counting [[populationType]]) defined for a particular [[StatisticalPopulation]]. This helps applications understand if they have access to a sufficiently complete description of a [[StatisticalPopulation]].
      *
+     * @param numConstraints Integer value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
      */
-    void setNumConstraints(Integer fNumConstraints);
+    void setNumConstraints(Integer numConstraints);
 
     /**
      * Indicates a property used as a constraint to define a [[StatisticalPopulation]] with respect to the set of entities
@@ -68,8 +70,9 @@ public interface StatisticalPopulation extends Intangible {
      * Indicates a property used as a constraint to define a [[StatisticalPopulation]] with respect to the set of entities
      *   corresponding to an indicated type (via [[populationType]]).
      *
+     * @param constrainingProperty Integer value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
      */
-    void setConstrainingProperty(Integer fConstrainingProperty);
+    void setConstrainingProperty(Integer constrainingProperty);
 }

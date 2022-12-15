@@ -28,8 +28,17 @@ public interface InvestmentOrDeposit extends FinancialProduct {
     /**
      * The amount of money.
      *
+     * @param amount Number value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
      */
-    void setAmount(Object fAmount);
+    void setAmount(Number amount);
+    /**
+     * The amount of money.
+     *
+     * @param amount MonetaryAmount value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1253">https://github.com/schemaorg/schemaorg/issues/1253</a>
+     */
+    void setAmount(MonetaryAmount amount);
 }

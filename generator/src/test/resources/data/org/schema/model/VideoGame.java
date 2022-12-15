@@ -32,8 +32,9 @@ public interface VideoGame extends SoftwareApplication, Game {
     /**
      * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
      *
+     * @param director Person value to set.
      */
-    void setDirector(Person fDirector);
+    void setDirector(Person director);
 
     /**
      * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
@@ -45,8 +46,9 @@ public interface VideoGame extends SoftwareApplication, Game {
     /**
      * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
      *
+     * @param actor Person value to set.
      */
-    void setActor(Person fActor);
+    void setActor(Person actor);
 
     /**
      * The trailer of a movie or tv/radio series, season, episode, etc.
@@ -58,8 +60,9 @@ public interface VideoGame extends SoftwareApplication, Game {
     /**
      * The trailer of a movie or tv/radio series, season, episode, etc.
      *
+     * @param trailer VideoObject value to set.
      */
-    void setTrailer(VideoObject fTrailer);
+    void setTrailer(VideoObject trailer);
 
     /**
      * The edition of a video game.
@@ -71,8 +74,9 @@ public interface VideoGame extends SoftwareApplication, Game {
     /**
      * The edition of a video game.
      *
+     * @param gameEdition Text value to set.
      */
-    void setGameEdition(Text fGameEdition);
+    void setGameEdition(Text gameEdition);
 
     /**
      * Cheat codes to the game.
@@ -84,8 +88,9 @@ public interface VideoGame extends SoftwareApplication, Game {
     /**
      * Cheat codes to the game.
      *
+     * @param cheatCode CreativeWork value to set.
      */
-    void setCheatCode(CreativeWork fCheatCode);
+    void setCheatCode(CreativeWork cheatCode);
 
     /**
      * The server on which  it is possible to play the game.
@@ -97,8 +102,9 @@ public interface VideoGame extends SoftwareApplication, Game {
     /**
      * The server on which  it is possible to play the game.
      *
+     * @param gameServer GameServer value to set.
      */
-    void setGameServer(GameServer fGameServer);
+    void setGameServer(GameServer gameServer);
 
     /**
      * Links to tips, tactics, etc.
@@ -110,8 +116,9 @@ public interface VideoGame extends SoftwareApplication, Game {
     /**
      * Links to tips, tactics, etc.
      *
+     * @param gameTip CreativeWork value to set.
      */
-    void setGameTip(CreativeWork fGameTip);
+    void setGameTip(CreativeWork gameTip);
 
     /**
      * An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
@@ -123,8 +130,9 @@ public interface VideoGame extends SoftwareApplication, Game {
     /**
      * An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
      *
+     * @param actors Person value to set.
      */
-    void setActors(Person fActors);
+    void setActors(Person actors);
 
     /**
      * Indicates whether this game is multi-player, co-op or single-player.  The game can be marked as multi-player, co-op and single-player at the same time.
@@ -136,8 +144,9 @@ public interface VideoGame extends SoftwareApplication, Game {
     /**
      * Indicates whether this game is multi-player, co-op or single-player.  The game can be marked as multi-player, co-op and single-player at the same time.
      *
+     * @param playMode GamePlayMode value to set.
      */
-    void setPlayMode(GamePlayMode fPlayMode);
+    void setPlayMode(GamePlayMode playMode);
 
     /**
      * The electronic systems used to play <a href="http://en.wikipedia.org/wiki/Category:Video_game_platforms">video games</a>.
@@ -149,8 +158,21 @@ public interface VideoGame extends SoftwareApplication, Game {
     /**
      * The electronic systems used to play <a href="http://en.wikipedia.org/wiki/Category:Video_game_platforms">video games</a>.
      *
+     * @param gamePlatform Text value to set.
      */
-    void setGamePlatform(Object fGamePlatform);
+    void setGamePlatform(Text gamePlatform);
+    /**
+     * The electronic systems used to play <a href="http://en.wikipedia.org/wiki/Category:Video_game_platforms">video games</a>.
+     *
+     * @param gamePlatform URL value to set.
+     */
+    void setGamePlatform(URL gamePlatform);
+    /**
+     * The electronic systems used to play <a href="http://en.wikipedia.org/wiki/Category:Video_game_platforms">video games</a>.
+     *
+     * @param gamePlatform Thing value to set.
+     */
+    void setGamePlatform(Thing gamePlatform);
 
     /**
      * The composer of the soundtrack.
@@ -162,8 +184,15 @@ public interface VideoGame extends SoftwareApplication, Game {
     /**
      * The composer of the soundtrack.
      *
+     * @param musicBy Person value to set.
      */
-    void setMusicBy(Object fMusicBy);
+    void setMusicBy(Person musicBy);
+    /**
+     * The composer of the soundtrack.
+     *
+     * @param musicBy MusicGroup value to set.
+     */
+    void setMusicBy(MusicGroup musicBy);
 
     /**
      * A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
@@ -175,6 +204,7 @@ public interface VideoGame extends SoftwareApplication, Game {
     /**
      * A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
      *
+     * @param directors Person value to set.
      */
-    void setDirectors(Person fDirectors);
+    void setDirectors(Person directors);
 }

@@ -29,8 +29,15 @@ public interface LodgingReservation extends Reservation {
     /**
      * Textual description of the unit type (including suite vs. room, size of bed, etc.).
      *
+     * @param lodgingUnitType QualitativeValue value to set.
      */
-    void setLodgingUnitType(Object fLodgingUnitType);
+    void setLodgingUnitType(QualitativeValue lodgingUnitType);
+    /**
+     * Textual description of the unit type (including suite vs. room, size of bed, etc.).
+     *
+     * @param lodgingUnitType Text value to set.
+     */
+    void setLodgingUnitType(Text lodgingUnitType);
 
     /**
      * A full description of the lodging unit.
@@ -42,8 +49,9 @@ public interface LodgingReservation extends Reservation {
     /**
      * A full description of the lodging unit.
      *
+     * @param lodgingUnitDescription Text value to set.
      */
-    void setLodgingUnitDescription(Text fLodgingUnitDescription);
+    void setLodgingUnitDescription(Text lodgingUnitDescription);
 
     /**
      * The latest someone may check out of a lodging establishment.
@@ -55,8 +63,15 @@ public interface LodgingReservation extends Reservation {
     /**
      * The latest someone may check out of a lodging establishment.
      *
+     * @param checkoutTime DateTime value to set.
      */
-    void setCheckoutTime(Object fCheckoutTime);
+    void setCheckoutTime(DateTime checkoutTime);
+    /**
+     * The latest someone may check out of a lodging establishment.
+     *
+     * @param checkoutTime Time value to set.
+     */
+    void setCheckoutTime(Time checkoutTime);
 
     /**
      * The number of adults staying in the unit.
@@ -68,8 +83,15 @@ public interface LodgingReservation extends Reservation {
     /**
      * The number of adults staying in the unit.
      *
+     * @param numAdults Integer value to set.
      */
-    void setNumAdults(Object fNumAdults);
+    void setNumAdults(Integer numAdults);
+    /**
+     * The number of adults staying in the unit.
+     *
+     * @param numAdults QuantitativeValue value to set.
+     */
+    void setNumAdults(QuantitativeValue numAdults);
 
     /**
      * The earliest someone may check into a lodging establishment.
@@ -81,8 +103,15 @@ public interface LodgingReservation extends Reservation {
     /**
      * The earliest someone may check into a lodging establishment.
      *
+     * @param checkinTime DateTime value to set.
      */
-    void setCheckinTime(Object fCheckinTime);
+    void setCheckinTime(DateTime checkinTime);
+    /**
+     * The earliest someone may check into a lodging establishment.
+     *
+     * @param checkinTime Time value to set.
+     */
+    void setCheckinTime(Time checkinTime);
 
     /**
      * The number of children staying in the unit.
@@ -94,6 +123,13 @@ public interface LodgingReservation extends Reservation {
     /**
      * The number of children staying in the unit.
      *
+     * @param numChildren Integer value to set.
      */
-    void setNumChildren(Object fNumChildren);
+    void setNumChildren(Integer numChildren);
+    /**
+     * The number of children staying in the unit.
+     *
+     * @param numChildren QuantitativeValue value to set.
+     */
+    void setNumChildren(QuantitativeValue numChildren);
 }

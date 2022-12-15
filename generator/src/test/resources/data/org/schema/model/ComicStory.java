@@ -28,9 +28,10 @@ public interface ComicStory extends CreativeWork {
     /**
      * The individual who adds lettering, including speech balloons and sound effects, to artwork.
      *
+     * @param letterer Person value to set.
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
-    void setLetterer(Person fLetterer);
+    void setLetterer(Person letterer);
 
     /**
      * The individual who adds color to inked drawings.
@@ -43,9 +44,10 @@ public interface ComicStory extends CreativeWork {
     /**
      * The individual who adds color to inked drawings.
      *
+     * @param colorist Person value to set.
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
-    void setColorist(Person fColorist);
+    void setColorist(Person colorist);
 
     /**
      * The individual who traces over the pencil drawings in ink after pencils are complete.
@@ -58,9 +60,10 @@ public interface ComicStory extends CreativeWork {
     /**
      * The individual who traces over the pencil drawings in ink after pencils are complete.
      *
+     * @param inker Person value to set.
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
-    void setInker(Person fInker);
+    void setInker(Person inker);
 
     /**
      * The individual who draws the primary narrative artwork.
@@ -73,9 +76,10 @@ public interface ComicStory extends CreativeWork {
     /**
      * The individual who draws the primary narrative artwork.
      *
+     * @param penciler Person value to set.
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
-    void setPenciler(Person fPenciler);
+    void setPenciler(Person penciler);
 
     /**
      * The primary artist for a work
@@ -92,7 +96,8 @@ public interface ComicStory extends CreativeWork {
      *     	in a medium other than pencils or digital line art--for example, if the
      *     	primary artwork is done in watercolors or digital paints.
      *
+     * @param artist Person value to set.
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
-    void setArtist(Person fArtist);
+    void setArtist(Person artist);
 }

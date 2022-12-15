@@ -26,7 +26,8 @@ public interface MedicalRiskScore extends MedicalRiskEstimator {
     /**
      * The algorithm or rules to follow to compute the score.
      *
+     * @param algorithm Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setAlgorithm(Text fAlgorithm);
+    void setAlgorithm(Text algorithm);
 }

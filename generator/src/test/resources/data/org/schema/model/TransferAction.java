@@ -24,8 +24,9 @@ public interface TransferAction extends Action {
     /**
      * A sub property of location. The original location of the object or the agent before the action.
      *
+     * @param fromLocation Place value to set.
      */
-    void setFromLocation(Place fFromLocation);
+    void setFromLocation(Place fromLocation);
 
     /**
      * A sub property of location. The final location of the object or the agent after the action.
@@ -37,6 +38,7 @@ public interface TransferAction extends Action {
     /**
      * A sub property of location. The final location of the object or the agent after the action.
      *
+     * @param toLocation Place value to set.
      */
-    void setToLocation(Place fToLocation);
+    void setToLocation(Place toLocation);
 }

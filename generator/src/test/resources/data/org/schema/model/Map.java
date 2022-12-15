@@ -24,6 +24,7 @@ public interface Map extends CreativeWork {
     /**
      * Indicates the kind of Map, from the MapCategoryType Enumeration.
      *
+     * @param mapType MapCategoryType value to set.
      */
-    void setMapType(MapCategoryType fMapType);
+    void setMapType(MapCategoryType mapType);
 }

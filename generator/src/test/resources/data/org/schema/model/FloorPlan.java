@@ -36,10 +36,11 @@ public interface FloorPlan extends Intangible {
     /**
      * Indicates some accommodation that this floor plan describes.
      *
+     * @param isPlanForApartment Accommodation value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
-    void setIsPlanForApartment(Accommodation fIsPlanForApartment);
+    void setIsPlanForApartment(Accommodation isPlanForApartment);
 
     /**
      * The total integer number of bathrooms in a some [[Accommodation]], following real estate conventions as [documented in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsTotalInteger+Field): "The simple sum of the number of bathrooms. For example for a property with two Full Bathrooms and one Half Bathroom, the Bathrooms Total Integer will be 3.". See also [[numberOfRooms]].
@@ -53,10 +54,11 @@ public interface FloorPlan extends Intangible {
     /**
      * The total integer number of bathrooms in a some [[Accommodation]], following real estate conventions as [documented in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsTotalInteger+Field): "The simple sum of the number of bathrooms. For example for a property with two Full Bathrooms and one Half Bathroom, the Bathrooms Total Integer will be 3.". See also [[numberOfRooms]].
      *
+     * @param numberOfBathroomsTotal Integer value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
-    void setNumberOfBathroomsTotal(Integer fNumberOfBathroomsTotal);
+    void setNumberOfBathroomsTotal(Integer numberOfBathroomsTotal);
 
     /**
      * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
@@ -71,9 +73,18 @@ public interface FloorPlan extends Intangible {
      * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
      * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
      *
+     * @param numberOfRooms QuantitativeValue value to set.
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
-    void setNumberOfRooms(Object fNumberOfRooms);
+    void setNumberOfRooms(QuantitativeValue numberOfRooms);
+    /**
+     * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
+     * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
+     *
+     * @param numberOfRooms Number value to set.
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
+     */
+    void setNumberOfRooms(Number numberOfRooms);
 
     /**
      * Indicates the total (available plus unavailable) number of accommodation units in an [[ApartmentComplex]], or the number of accommodation units for a specific [[FloorPlan]] (within its specific [[ApartmentComplex]]). See also [[numberOfAvailableAccommodationUnits]].
@@ -87,10 +98,11 @@ public interface FloorPlan extends Intangible {
     /**
      * Indicates the total (available plus unavailable) number of accommodation units in an [[ApartmentComplex]], or the number of accommodation units for a specific [[FloorPlan]] (within its specific [[ApartmentComplex]]). See also [[numberOfAvailableAccommodationUnits]].
      *
+     * @param numberOfAccommodationUnits QuantitativeValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
-    void setNumberOfAccommodationUnits(QuantitativeValue fNumberOfAccommodationUnits);
+    void setNumberOfAccommodationUnits(QuantitativeValue numberOfAccommodationUnits);
 
     /**
      * Indicates the number of available accommodation units in an [[ApartmentComplex]], or the number of accommodation units for a specific [[FloorPlan]] (within its specific [[ApartmentComplex]]). See also [[numberOfAccommodationUnits]].
@@ -104,10 +116,11 @@ public interface FloorPlan extends Intangible {
     /**
      * Indicates the number of available accommodation units in an [[ApartmentComplex]], or the number of accommodation units for a specific [[FloorPlan]] (within its specific [[ApartmentComplex]]). See also [[numberOfAccommodationUnits]].
      *
+     * @param numberOfAvailableAccommodationUnits QuantitativeValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
-    void setNumberOfAvailableAccommodationUnits(QuantitativeValue fNumberOfAvailableAccommodationUnits);
+    void setNumberOfAvailableAccommodationUnits(QuantitativeValue numberOfAvailableAccommodationUnits);
 
     /**
      * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
@@ -120,9 +133,10 @@ public interface FloorPlan extends Intangible {
     /**
      * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
      *
+     * @param amenityFeature LocationFeatureSpecification value to set.
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
-    void setAmenityFeature(LocationFeatureSpecification fAmenityFeature);
+    void setAmenityFeature(LocationFeatureSpecification amenityFeature);
 
     /**
      * The total integer number of bedrooms in a some [[Accommodation]], [[ApartmentComplex]] or [[FloorPlan]].
@@ -136,10 +150,19 @@ public interface FloorPlan extends Intangible {
     /**
      * The total integer number of bedrooms in a some [[Accommodation]], [[ApartmentComplex]] or [[FloorPlan]].
      *
+     * @param numberOfBedrooms Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
-    void setNumberOfBedrooms(Object fNumberOfBedrooms);
+    void setNumberOfBedrooms(Number numberOfBedrooms);
+    /**
+     * The total integer number of bedrooms in a some [[Accommodation]], [[ApartmentComplex]] or [[FloorPlan]].
+     *
+     * @param numberOfBedrooms QuantitativeValue value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     */
+    void setNumberOfBedrooms(QuantitativeValue numberOfBedrooms);
 
     /**
      * Number of partial bathrooms - The total number of half and ¼ bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsPartial field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsPartial+Field). 
@@ -153,10 +176,11 @@ public interface FloorPlan extends Intangible {
     /**
      * Number of partial bathrooms - The total number of half and ¼ bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsPartial field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsPartial+Field). 
      *
+     * @param numberOfPartialBathrooms Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
-    void setNumberOfPartialBathrooms(Number fNumberOfPartialBathrooms);
+    void setNumberOfPartialBathrooms(Number numberOfPartialBathrooms);
 
     /**
      * The size of the accommodation, e.g. in square meter or squarefoot.
@@ -171,9 +195,10 @@ public interface FloorPlan extends Intangible {
      * The size of the accommodation, e.g. in square meter or squarefoot.
      * Typical unit code(s): MTK for square meter, FTK for square foot, or YDK for square yard 
      *
+     * @param floorSize QuantitativeValue value to set.
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
-    void setFloorSize(QuantitativeValue fFloorSize);
+    void setFloorSize(QuantitativeValue floorSize);
 
     /**
      * Number of full bathrooms - The total number of full and ¾ bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsFull field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsFull+Field).
@@ -187,10 +212,11 @@ public interface FloorPlan extends Intangible {
     /**
      * Number of full bathrooms - The total number of full and ¾ bathrooms in an [[Accommodation]]. This corresponds to the [BathroomsFull field in RESO](https://ddwiki.reso.org/display/DDW17/BathroomsFull+Field).
      *
+     * @param numberOfFullBathrooms Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
-    void setNumberOfFullBathrooms(Number fNumberOfFullBathrooms);
+    void setNumberOfFullBathrooms(Number numberOfFullBathrooms);
 
     /**
      * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
@@ -203,9 +229,17 @@ public interface FloorPlan extends Intangible {
     /**
      * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
      *
+     * @param petsAllowed Text value to set.
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
-    void setPetsAllowed(Object fPetsAllowed);
+    void setPetsAllowed(Text petsAllowed);
+    /**
+     * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
+     *
+     * @param petsAllowed Boolean value to set.
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
+     */
+    void setPetsAllowed(Boolean petsAllowed);
 
     /**
      * A schematic image showing the floorplan layout.
@@ -219,8 +253,17 @@ public interface FloorPlan extends Intangible {
     /**
      * A schematic image showing the floorplan layout.
      *
+     * @param layoutImage ImageObject value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2690">https://github.com/schemaorg/schemaorg/issues/2690</a>
      */
-    void setLayoutImage(Object fLayoutImage);
+    void setLayoutImage(ImageObject layoutImage);
+    /**
+     * A schematic image showing the floorplan layout.
+     *
+     * @param layoutImage URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2690">https://github.com/schemaorg/schemaorg/issues/2690</a>
+     */
+    void setLayoutImage(URL layoutImage);
 }

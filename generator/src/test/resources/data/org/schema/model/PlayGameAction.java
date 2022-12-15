@@ -29,8 +29,17 @@ public interface PlayGameAction extends ConsumeAction {
     /**
      * Indicates the availability type of the game content associated with this action, such as whether it is a full version or a demo.
      *
+     * @param gameAvailabilityType GameAvailabilityEnumeration value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3058">https://github.com/schemaorg/schemaorg/issues/3058</a>
      */
-    void setGameAvailabilityType(Object fGameAvailabilityType);
+    void setGameAvailabilityType(GameAvailabilityEnumeration gameAvailabilityType);
+    /**
+     * Indicates the availability type of the game content associated with this action, such as whether it is a full version or a demo.
+     *
+     * @param gameAvailabilityType Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3058">https://github.com/schemaorg/schemaorg/issues/3058</a>
+     */
+    void setGameAvailabilityType(Text gameAvailabilityType);
 }

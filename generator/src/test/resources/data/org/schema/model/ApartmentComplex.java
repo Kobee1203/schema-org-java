@@ -30,10 +30,11 @@ public interface ApartmentComplex extends Residence {
     /**
      * Indicates the total (available plus unavailable) number of accommodation units in an [[ApartmentComplex]], or the number of accommodation units for a specific [[FloorPlan]] (within its specific [[ApartmentComplex]]). See also [[numberOfAvailableAccommodationUnits]].
      *
+     * @param numberOfAccommodationUnits QuantitativeValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
-    void setNumberOfAccommodationUnits(QuantitativeValue fNumberOfAccommodationUnits);
+    void setNumberOfAccommodationUnits(QuantitativeValue numberOfAccommodationUnits);
 
     /**
      * Indicates the number of available accommodation units in an [[ApartmentComplex]], or the number of accommodation units for a specific [[FloorPlan]] (within its specific [[ApartmentComplex]]). See also [[numberOfAccommodationUnits]].
@@ -47,10 +48,11 @@ public interface ApartmentComplex extends Residence {
     /**
      * Indicates the number of available accommodation units in an [[ApartmentComplex]], or the number of accommodation units for a specific [[FloorPlan]] (within its specific [[ApartmentComplex]]). See also [[numberOfAccommodationUnits]].
      *
+     * @param numberOfAvailableAccommodationUnits QuantitativeValue value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
-    void setNumberOfAvailableAccommodationUnits(QuantitativeValue fNumberOfAvailableAccommodationUnits);
+    void setNumberOfAvailableAccommodationUnits(QuantitativeValue numberOfAvailableAccommodationUnits);
 
     /**
      * A page providing information on how to book a tour of some [[Place]], such as an [[Accommodation]] or [[ApartmentComplex]] in a real estate setting, as well as other kinds of tours as appropriate.
@@ -64,10 +66,11 @@ public interface ApartmentComplex extends Residence {
     /**
      * A page providing information on how to book a tour of some [[Place]], such as an [[Accommodation]] or [[ApartmentComplex]] in a real estate setting, as well as other kinds of tours as appropriate.
      *
+     * @param tourBookingPage URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
-    void setTourBookingPage(URL fTourBookingPage);
+    void setTourBookingPage(URL tourBookingPage);
 
     /**
      * The total integer number of bedrooms in a some [[Accommodation]], [[ApartmentComplex]] or [[FloorPlan]].
@@ -81,10 +84,19 @@ public interface ApartmentComplex extends Residence {
     /**
      * The total integer number of bedrooms in a some [[Accommodation]], [[ApartmentComplex]] or [[FloorPlan]].
      *
+     * @param numberOfBedrooms Number value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
-    void setNumberOfBedrooms(Object fNumberOfBedrooms);
+    void setNumberOfBedrooms(Number numberOfBedrooms);
+    /**
+     * The total integer number of bedrooms in a some [[Accommodation]], [[ApartmentComplex]] or [[FloorPlan]].
+     *
+     * @param numberOfBedrooms QuantitativeValue value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     */
+    void setNumberOfBedrooms(QuantitativeValue numberOfBedrooms);
 
     /**
      * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
@@ -97,7 +109,15 @@ public interface ApartmentComplex extends Residence {
     /**
      * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
      *
+     * @param petsAllowed Text value to set.
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
-    void setPetsAllowed(Object fPetsAllowed);
+    void setPetsAllowed(Text petsAllowed);
+    /**
+     * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
+     *
+     * @param petsAllowed Boolean value to set.
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
+     */
+    void setPetsAllowed(Boolean petsAllowed);
 }

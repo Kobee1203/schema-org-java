@@ -27,9 +27,10 @@ public interface ChemicalSubstance extends BioChemEntity {
     /**
      * The chemical composition describes the identity and relative ratio of the chemical elements that make up the substance.
      *
+     * @param chemicalComposition Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    void setChemicalComposition(Text fChemicalComposition);
+    void setChemicalComposition(Text chemicalComposition);
 
     /**
      * Intended use of the BioChemEntity by humans.
@@ -42,9 +43,10 @@ public interface ChemicalSubstance extends BioChemEntity {
     /**
      * Intended use of the BioChemEntity by humans.
      *
+     * @param potentialUse DefinedTerm value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    void setPotentialUse(DefinedTerm fPotentialUse);
+    void setPotentialUse(DefinedTerm potentialUse);
 
     /**
      * A role played by the BioChemEntity within a chemical context.
@@ -57,7 +59,8 @@ public interface ChemicalSubstance extends BioChemEntity {
     /**
      * A role played by the BioChemEntity within a chemical context.
      *
+     * @param chemicalRole DefinedTerm value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    void setChemicalRole(DefinedTerm fChemicalRole);
+    void setChemicalRole(DefinedTerm chemicalRole);
 }
