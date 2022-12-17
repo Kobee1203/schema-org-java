@@ -4,7 +4,7 @@
 
     <groupId>com.weedow</groupId>
     <artifactId>schema-org-parent</artifactId>
-    <version>0.3.0-SNAPSHOT</version>
+    <version>0.3.0</version>
     <packaging>pom</packaging>
 
     <name>schema-org-java-parent</name>
@@ -12,7 +12,7 @@
     <url>https://github.com/Kobee1203/schema-org-java</url>
 
     <scm>
-        <tag>HEAD</tag>
+        <tag>0.3.0</tag>
         <url>https://github.com/Kobee1203/schema-org-java</url>
         <connection>scm:git:https://github.com/Kobee1203/schema-org-java.git</connection>
         <developerConnection>scm:git:https://github.com/Kobee1203/schema-org-java.git</developerConnection>
