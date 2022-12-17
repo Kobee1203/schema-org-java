@@ -4,8 +4,9 @@
 
     <groupId>com.weedow</groupId>
     <artifactId>schema-org-parent</artifactId>
-    <version>0.2.3-SNAPSHOT</version>
+    <version>0.3.0-SNAPSHOT</version>
     <packaging>pom</packaging>
+
     <name>schema-org-java-parent</name>
     <description>Java utilities for working with Schema.org data in JSON-LD format</description>
     <url>https://github.com/Kobee1203/schema-org-java</url>
