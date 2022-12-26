@@ -6,8 +6,6 @@ import org.junit.jupiter.api.Test;
 import java.io.FileNotFoundException;
 import java.net.URL;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class ResourceUtilsTest {
 
     @Test
@@ -42,7 +40,10 @@ class ResourceUtilsTest {
         URL url = ResourceUtils.getURL("C:/schema.org/docs/favicon.ico");
         Assertions.assertThat(url).isNotNull();
         Assertions.assertThat(url.getProtocol()).isEqualTo("file");
-        Assertions.assertThat(url.getFile()).isEqualTo("/C:/schema.org/docs/favicon.ico");
-        Assertions.assertThat(url.getPath()).isEqualTo("/C:/schema.org/docs/favicon.ico");
+        // Windows and linux have not the same behavior:
+        // - Windows is /C:/schema.org/docs/favicon.ico
+        // - Linux: path may be /home/runner/work/schema-org-java/schema-org-java/commons/C:/schema.org/docs/favicon.ico
+        Assertions.assertThat(url.getFile()).endsWith("/C:/schema.org/docs/favicon.ico");
+        Assertions.assertThat(url.getPath()).endsWith("/C:/schema.org/docs/favicon.ico");
     }
 }
