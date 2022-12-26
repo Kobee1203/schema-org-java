@@ -6,7 +6,7 @@ import com.weedow.schemaorg.generator.model.jsonld.PartOf;
 import com.weedow.schemaorg.generator.model.jsonld.RangeIncludes;
 import com.weedow.schemaorg.generator.model.jsonld.Source;
 
-import java.util.Arrays;
+import javax.lang.model.SourceVersion;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -28,8 +28,6 @@ public final class ModelUtils {
             "schema:Time", "java.time.LocalTime",
             "schema:DateTime", "java.time.LocalDateTime"
     );
-
-    private static final String[] JAVA_KEYWORDS = {"abstract"};
 
     private ModelUtils() {
     }
@@ -79,7 +77,7 @@ public final class ModelUtils {
     }
 
     private static boolean isJavaKeyword(String keyword) {
-        return keyword != null && Arrays.binarySearch(JAVA_KEYWORDS, keyword) >= 0;
+        return keyword != null && SourceVersion.isKeyword(keyword);
     }
 
     public static String capitalize(String str) {

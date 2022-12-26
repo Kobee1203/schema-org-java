@@ -41,7 +41,14 @@ public class SchemaModelGeneratorMojo extends AbstractMojo {
     @Parameter(name = "verbose", defaultValue = "false")
     private boolean verbose;
 
-    /** Schema version to be used for generation. If not defined, uses the local resource named `schemaorg-current-https.jsonld` present in the classpath. */
+    /**
+     * Schema resource location to be used for generation. If not defined, uses the 'schemaVersion' parameter.
+     */
+    @SuppressWarnings("unused")
+    @Parameter(name = "schemaResource", property = "weedow.schemaorg.generator.maven.plugin.schemaResource")
+    private String schemaResource;
+
+    /** Schema version to be used for generation. If not defined, uses the local default resource named `schemaorg-current-https.jsonld` present in the classpath. */
     @SuppressWarnings("unused")
     @Parameter(name = "schemaVersion", property = "weedow.schemaorg.generator.maven.plugin.schemaVersion")
     private String schemaVersion;
@@ -108,6 +115,7 @@ public class SchemaModelGeneratorMojo extends AbstractMojo {
         long start = System.currentTimeMillis();
 
         ParserOptions parserOptions = new ParserOptions();
+        parserOptions.setSchemaResource(schemaResource);
         parserOptions.setSchemaVersion(schemaVersion);
 
         GeneratorOptions generatorOptions = new GeneratorOptions()
