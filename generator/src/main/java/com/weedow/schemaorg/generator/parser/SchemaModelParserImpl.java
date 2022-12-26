@@ -1,6 +1,6 @@
 package com.weedow.schemaorg.generator.parser;
 
-import com.weedow.schemaorg.generator.SchemaModelGeneratorApp;
+import com.weedow.schemaorg.commons.utils.ResourceUtils;
 import com.weedow.schemaorg.generator.logging.Logger;
 import com.weedow.schemaorg.generator.logging.LoggerFactory;
 import com.weedow.schemaorg.generator.model.Type;
@@ -10,7 +10,6 @@ import com.weedow.schemaorg.generator.reader.SchemaDefinitionReader;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.URL;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -21,7 +20,7 @@ public class SchemaModelParserImpl implements SchemaModelParser {
 
     private static final String LATEST_SCHEMA_URL = "https://schema.org/version/latest/schemaorg-current-https.jsonld";
     private static final String VERSIONED_SCHEMA_URL = "https://raw.githubusercontent.com/schemaorg/schemaorg/main/data/releases/%s/schemaorg-current-https.jsonld";
-    private static final String SCHEMAORG_DEFINITION_LOCAL_RESOURCE = "/schemaorg-current-https.jsonld";
+    private static final String SCHEMAORG_DEFINITION_LOCAL_RESOURCE = "classpath:schemaorg-current-https.jsonld";
 
     private final SchemaDefinitionReader schemaDefinitionReader;
     private final List<ModelHandler> modelHandlers;
@@ -35,8 +34,9 @@ public class SchemaModelParserImpl implements SchemaModelParser {
     public Map<String, Type> parse(ParserOptions options) {
         Map<String, Type> schemaDefinitions = new HashMap<>();
 
+        final String schemaResource = options.getSchemaResource();
         final String schemaVersion = options.getSchemaVersion();
-        try (InputStream in = getInputStream(schemaVersion)) {
+        try (InputStream in = getInputStream(schemaResource, schemaVersion)) {
             LOG.info("Parsing the schema definitions...");
             final SchemaDefinition schemaDefinition = schemaDefinitionReader.read(in);
 
@@ -56,14 +56,17 @@ public class SchemaModelParserImpl implements SchemaModelParser {
         return schemaDefinitions;
     }
 
-    private static InputStream getInputStream(String version) throws IOException {
-        if (version != null) {
+    private static InputStream getInputStream(String resourceLocation, String version) throws IOException {
+        if (resourceLocation != null) {
+            LOG.info("Loading resource '{}'", resourceLocation);
+            return ResourceUtils.getURL(resourceLocation).openStream();
+        } else if (version != null) {
             LOG.info("Downloading version '{}'", version);
             final String url = getUrl(version);
-            return new URL(url).openStream();
+            return ResourceUtils.getURL(url).openStream();
         } else {
-            LOG.info("Loading local resource '{}'", SCHEMAORG_DEFINITION_LOCAL_RESOURCE);
-            return SchemaModelGeneratorApp.class.getResourceAsStream(SCHEMAORG_DEFINITION_LOCAL_RESOURCE);
+            LOG.info("Loading local default resource '{}'", SCHEMAORG_DEFINITION_LOCAL_RESOURCE);
+            return ResourceUtils.getURL(SCHEMAORG_DEFINITION_LOCAL_RESOURCE).openStream();
         }
     }
 

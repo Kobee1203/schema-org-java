@@ -16,6 +16,7 @@ public class SchemaModelGeneratorApp {
     private static final Logger LOG = LoggerFactory.getLogger(SchemaModelGeneratorApp.class);
 
     private static final String VERBOSE_OPTION = "verbose";
+    private static final String RESOURCE_OPTION = "resource";
     private static final String VERSION_OPTION = "version";
     private static final String MODELS_OPTION = "models";
     private static final String HELP_OPTION = "help";
@@ -42,19 +43,23 @@ public class SchemaModelGeneratorApp {
         // Models - if null all models will be generated
         List<String> models = line.hasOption(MODELS_OPTION) ? Arrays.asList(line.getOptionValues(MODELS_OPTION)) : null;
 
+        // Schema resource location - if null use the 'version' option
+        final String schemaResource = line.getOptionValue(RESOURCE_OPTION, null);
+
         // Schema version - if null the schema model resource into the JAR is used
         final String schemaVersion = line.getOptionValue(VERSION_OPTION, null);
 
         // Verbose
         final boolean verboseMode = line.hasOption(VERBOSE_OPTION);
 
-        generate(schemaVersion, models, verboseMode);
+        generate(schemaResource, schemaVersion, models, verboseMode);
     }
 
-    private static void generate(String schemaVersion, List<String> models, boolean verboseMode) {
+    private static void generate(String schemaResource, String schemaVersion, List<String> models, boolean verboseMode) {
         long start = System.currentTimeMillis();
 
         ParserOptions parserOptions = new ParserOptions();
+        parserOptions.setSchemaResource(schemaResource);
         parserOptions.setSchemaVersion(schemaVersion);
 
         GeneratorOptions generatorOptions = new GeneratorOptions();
@@ -93,6 +98,14 @@ public class SchemaModelGeneratorApp {
                 .required(false)
                 .build();
 
+        final Option resourceOption = Option.builder("R")
+                .longOpt(RESOURCE_OPTION)
+                .desc("Schema resource to be used: either a \"classpath:\" pseudo URL, a \"file:\" URL, an URL or a plain file path.")
+                .hasArg()
+                .argName(RESOURCE_OPTION)
+                .required(false)
+                .build();
+
         final Option versionOption = Option.builder("V")
                 .longOpt(VERSION_OPTION)
                 .desc("Schema version to be used: 'latest' to use the latest version, or specific version (eg. 13.0). If not specified, the generator uses the resource in the JAR. see https://github.com/schemaorg/schemaorg/tree/main/data/releases")
@@ -117,6 +130,7 @@ public class SchemaModelGeneratorApp {
 
         // All other options
         options.addOption(modelOption);
+        options.addOption(resourceOption);
         options.addOption(versionOption);
         options.addOption(verboseOption);
 

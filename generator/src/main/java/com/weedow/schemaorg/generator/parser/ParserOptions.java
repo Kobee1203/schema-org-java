@@ -7,5 +7,7 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 public final class ParserOptions {
 
-    private String schemaVersion = "latest";
+    private String schemaVersion;
+
+    private String schemaResource;
 }

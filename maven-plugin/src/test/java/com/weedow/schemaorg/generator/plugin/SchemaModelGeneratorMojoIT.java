@@ -68,6 +68,30 @@ class SchemaModelGeneratorMojoIT {
     }
 
     @MavenTest
+    void generate_with_schema_resource(MavenExecutionResult result) {
+        MavenITAssertions.assertThat(result).isSuccessful();
+
+        MavenITAssertions.assertThat(result)
+                .out()
+                .info()
+                .doesNotContain("VERBOSE MODE: ON.")
+                .contains("Adding the generated java types and generated resources as compiled source root.");
+
+        MavenITAssertions.assertThat(result)
+                .project()
+                .hasTarget()
+                .has("target/generated-sources/example/org/schema/model")
+                .has("target/generated-sources/example/org/schema/model/datatype")
+                .has("target/generated-sources/example/org/schema/model/impl");
+
+        final List<String> lines = readResourceLines("/generated-classes-generate_with_schema_resource.txt");
+        MavenITAssertions.assertThat(result)
+                .project()
+                .withJarFile()
+                .containsOnly(lines.toArray(new String[]{}));
+    }
+
+    @MavenTest
     void generate_with_skip_option(MavenExecutionResult result) {
         MavenITAssertions.assertThat(result).isSuccessful();
 
