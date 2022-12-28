@@ -60,7 +60,8 @@ final class GeneratorUtils {
 
   public static void generate(Path output, List<String> models, String schemaVersion, ...) {
     ParserOptions parserOptions = new ParserOptions();
-    // Default is 'latest'. Pass null to use local resource  named `schemaorg-current-https.jsonld` present in the classpath
+    // Default is `null`: uses local resource named `schemaorg-current-https.jsonld` present in the classpath.
+    // Pass 'latest' to use the latest Schema.org version.
     parserOptions.setSchemaVersion(schemaVersion);
 
     GeneratorOptions generatorOptions = new GeneratorOptions()

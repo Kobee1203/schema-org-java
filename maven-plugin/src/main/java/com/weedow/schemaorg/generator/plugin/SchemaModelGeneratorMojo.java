@@ -43,6 +43,7 @@ public class SchemaModelGeneratorMojo extends AbstractMojo {
 
     /**
      * Schema resource location to be used for generation. If not defined, uses the 'schemaVersion' parameter.
+     * The value can be either a "classpath:" pseudo URL, a "file:" URL, or a plain file path.
      */
     @SuppressWarnings("unused")
     @Parameter(name = "schemaResource", property = "weedow.schemaorg.generator.maven.plugin.schemaResource")
