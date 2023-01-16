@@ -26,7 +26,7 @@
         <maven-invoker-plugin.version>3.3.0</maven-invoker-plugin.version>
         <mrm-maven-plugin.version>1.4.1</mrm-maven-plugin.version>
         <maven-antrun-plugin.version>3.1.0</maven-antrun-plugin.version>
-        <maven-it-extension.version>0.11.0</maven-it-extension.version>
+        <maven-it-extension.version>0.12.0</maven-it-extension.version>
 
         <sonar.coverage.jacoco.xmlReportPaths>${project.basedir}/../report/target/site/jacoco-aggregate/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
     </properties>
