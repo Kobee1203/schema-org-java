@@ -21,7 +21,7 @@
         <maven-plugin-annotations.version>3.7.1</maven-plugin-annotations.version>
         <maven-project.version>2.2.1</maven-project.version>
 
-        <maven-plugin-plugin.version>3.7.0</maven-plugin-plugin.version>
+        <maven-plugin-plugin.version>3.7.1</maven-plugin-plugin.version>
         <maven-site-plugin.version>3.12.1</maven-site-plugin.version>
         <maven-invoker-plugin.version>3.3.0</maven-invoker-plugin.version>
         <mrm-maven-plugin.version>1.4.1</mrm-maven-plugin.version>
