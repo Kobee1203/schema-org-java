@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * A shop that sells alcoholic drinks such as wine, beer, whisky and other spirits.

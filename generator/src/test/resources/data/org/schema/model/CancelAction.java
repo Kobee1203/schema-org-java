@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * The act of asserting that a future event/action is no longer going to happen.<br/><br/>Related actions:<br/><br/>* [[ConfirmAction]]: The antonym of CancelAction.

@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * The act of starting or activating a device or application (e.g. starting a timer or turning on a flashlight).

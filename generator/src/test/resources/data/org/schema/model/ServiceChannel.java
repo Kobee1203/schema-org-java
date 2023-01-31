@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.Service;
 import org.schema.model.ContactPoint;
 import org.schema.model.PostalAddress;
@@ -26,6 +27,13 @@ public interface ServiceChannel extends Intangible {
      *
      * @return {@link Service}
      */
+    List<Service> getProvidesServiceList();
+
+    /**
+     * The service provided by this channel.
+     *
+     * @return {@link Service}
+     */
     Service getProvidesService();
 
     /**
@@ -33,7 +41,14 @@ public interface ServiceChannel extends Intangible {
      *
      * @param providesService Service value to set.
      */
-    void setProvidesService(Service providesService);
+    void addProvidesService(Service providesService);
+
+    /**
+     * The number to access the service by text message.
+     *
+     * @return {@link ContactPoint}
+     */
+    List<ContactPoint> getServiceSmsNumberList();
 
     /**
      * The number to access the service by text message.
@@ -47,7 +62,14 @@ public interface ServiceChannel extends Intangible {
      *
      * @param serviceSmsNumber ContactPoint value to set.
      */
-    void setServiceSmsNumber(ContactPoint serviceSmsNumber);
+    void addServiceSmsNumber(ContactPoint serviceSmsNumber);
+
+    /**
+     * The address for accessing the service by mail.
+     *
+     * @return {@link PostalAddress}
+     */
+    List<PostalAddress> getServicePostalAddressList();
 
     /**
      * The address for accessing the service by mail.
@@ -61,7 +83,14 @@ public interface ServiceChannel extends Intangible {
      *
      * @param servicePostalAddress PostalAddress value to set.
      */
-    void setServicePostalAddress(PostalAddress servicePostalAddress);
+    void addServicePostalAddress(PostalAddress servicePostalAddress);
+
+    /**
+     * The website to access the service.
+     *
+     * @return {@link URL}
+     */
+    List<URL> getServiceUrlList();
 
     /**
      * The website to access the service.
@@ -75,7 +104,14 @@ public interface ServiceChannel extends Intangible {
      *
      * @param serviceUrl URL value to set.
      */
-    void setServiceUrl(URL serviceUrl);
+    void addServiceUrl(URL serviceUrl);
+
+    /**
+     * The phone number to use to access the service.
+     *
+     * @return {@link ContactPoint}
+     */
+    List<ContactPoint> getServicePhoneList();
 
     /**
      * The phone number to use to access the service.
@@ -89,7 +125,14 @@ public interface ServiceChannel extends Intangible {
      *
      * @param servicePhone ContactPoint value to set.
      */
-    void setServicePhone(ContactPoint servicePhone);
+    void addServicePhone(ContactPoint servicePhone);
+
+    /**
+     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
+     *
+     * @return {@link Text} or {@link Language}
+     */
+    <T> List<T> getAvailableLanguageList();
 
     /**
      * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
@@ -103,13 +146,20 @@ public interface ServiceChannel extends Intangible {
      *
      * @param availableLanguage Text value to set.
      */
-    void setAvailableLanguage(Text availableLanguage);
+    void addAvailableLanguage(Text availableLanguage);
     /**
      * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]]
      *
      * @param availableLanguage Language value to set.
      */
-    void setAvailableLanguage(Language availableLanguage);
+    void addAvailableLanguage(Language availableLanguage);
+
+    /**
+     * Estimated processing time for the service using this channel.
+     *
+     * @return {@link Duration}
+     */
+    List<Duration> getProcessingTimeList();
 
     /**
      * Estimated processing time for the service using this channel.
@@ -123,7 +173,14 @@ public interface ServiceChannel extends Intangible {
      *
      * @param processingTime Duration value to set.
      */
-    void setProcessingTime(Duration processingTime);
+    void addProcessingTime(Duration processingTime);
+
+    /**
+     * The location (e.g. civic structure, local business, etc.) where a person can go to access the service.
+     *
+     * @return {@link Place}
+     */
+    List<Place> getServiceLocationList();
 
     /**
      * The location (e.g. civic structure, local business, etc.) where a person can go to access the service.
@@ -137,5 +194,5 @@ public interface ServiceChannel extends Intangible {
      *
      * @param serviceLocation Place value to set.
      */
-    void setServiceLocation(Place serviceLocation);
+    void addServiceLocation(Place serviceLocation);
 }

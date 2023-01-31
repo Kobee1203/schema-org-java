@@ -92,13 +92,13 @@ class PropertyModelHandlerImplTest {
                 );
         Assertions.assertThat(properties)
                 .extracting("accessor")
-                .extracting("name", "fieldName", "methodName", "description", "partOf", "source", "fieldTypeLinks", "returnFieldType", "cast")
+                .extracting("name", "fieldName", "getterMethod", "description", "partOf", "source", "fieldTypeLinks", "returnFieldType", "cast")
                 .containsExactly(
-                        Tuple.tuple("myProperty", "myProperty", "getMyProperty", "This is my Property", List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/2373"), "{@link null}", null, null)
+                        Tuple.tuple("myProperty", "myProperty", "getMyPropertyList", "This is my Property", List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/2373"), "{@link null}", null, null)
                 );
         Assertions.assertThat(properties)
                 .flatExtracting("mutators")
-                .extracting("name", "fieldName", "methodName", "description", "partOf", "source", "paramType", "paramValue")
+                .extracting("name", "fieldName", "setterMethod", "description", "partOf", "source", "paramType", "paramValue")
                 .containsExactly(
                         Tuple.tuple("myProperty", "myProperty", "setMyProperty", "This is my Property", List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/2373"), null, "myProperty")
                 );
@@ -111,13 +111,13 @@ class PropertyModelHandlerImplTest {
                 );
         Assertions.assertThat(allProperties)
                 .extracting("accessor")
-                .extracting("name", "fieldName", "methodName", "description", "partOf", "source", "fieldTypeLinks", "returnFieldType", "cast")
+                .extracting("name", "fieldName", "getterMethod", "description", "partOf", "source", "fieldTypeLinks", "returnFieldType", "cast")
                 .containsExactly(
-                        Tuple.tuple("myProperty", "myProperty", "getMyProperty", "This is my Property", List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/2373"), "{@link null}", null, null)
+                        Tuple.tuple("myProperty", "myProperty", "getMyPropertyList", "This is my Property", List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/2373"), "{@link null}", null, null)
                 );
         Assertions.assertThat(allProperties)
                 .flatExtracting("mutators")
-                .extracting("name", "fieldName", "methodName", "description", "partOf", "source", "paramType", "paramValue")
+                .extracting("name", "fieldName", "setterMethod", "description", "partOf", "source", "paramType", "paramValue")
                 .containsExactly(
                         Tuple.tuple("myProperty", "myProperty", "setMyProperty", "This is my Property", List.of("https://pending.schema.org"), List.of("https://github.com/schemaorg/schemaorg/issues/2373"), null, "myProperty")
                 );

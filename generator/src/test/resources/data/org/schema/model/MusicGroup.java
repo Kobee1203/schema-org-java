@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.MusicRecording;
 import org.schema.model.datatype.URL;
 import org.schema.model.datatype.Text;
@@ -24,6 +25,13 @@ public interface MusicGroup extends PerformingGroup {
      *
      * @return {@link MusicRecording}
      */
+    List<MusicRecording> getTracksList();
+
+    /**
+     * A music recording (track)&#x2014;usually a single song.
+     *
+     * @return {@link MusicRecording}
+     */
     MusicRecording getTracks();
 
     /**
@@ -31,7 +39,14 @@ public interface MusicGroup extends PerformingGroup {
      *
      * @param tracks MusicRecording value to set.
      */
-    void setTracks(MusicRecording tracks);
+    void addTracks(MusicRecording tracks);
+
+    /**
+     * Genre of the creative work, broadcast channel or group.
+     *
+     * @return {@link URL} or {@link Text}
+     */
+    <T> List<T> getGenreList();
 
     /**
      * Genre of the creative work, broadcast channel or group.
@@ -45,13 +60,20 @@ public interface MusicGroup extends PerformingGroup {
      *
      * @param genre URL value to set.
      */
-    void setGenre(URL genre);
+    void addGenre(URL genre);
     /**
      * Genre of the creative work, broadcast channel or group.
      *
      * @param genre Text value to set.
      */
-    void setGenre(Text genre);
+    void addGenre(Text genre);
+
+    /**
+     * A member of a music group&#x2014;for example, John, Paul, George, or Ringo.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getMusicGroupMemberList();
 
     /**
      * A member of a music group&#x2014;for example, John, Paul, George, or Ringo.
@@ -65,7 +87,14 @@ public interface MusicGroup extends PerformingGroup {
      *
      * @param musicGroupMember Person value to set.
      */
-    void setMusicGroupMember(Person musicGroupMember);
+    void addMusicGroupMember(Person musicGroupMember);
+
+    /**
+     * A collection of music albums.
+     *
+     * @return {@link MusicAlbum}
+     */
+    List<MusicAlbum> getAlbumsList();
 
     /**
      * A collection of music albums.
@@ -79,7 +108,15 @@ public interface MusicGroup extends PerformingGroup {
      *
      * @param albums MusicAlbum value to set.
      */
-    void setAlbums(MusicAlbum albums);
+    void addAlbums(MusicAlbum albums);
+
+    /**
+     * A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
+     *
+     * @return {@link ItemList} or {@link MusicRecording}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
+     */
+    <T> List<T> getTrackList();
 
     /**
      * A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
@@ -95,14 +132,21 @@ public interface MusicGroup extends PerformingGroup {
      * @param track ItemList value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
-    void setTrack(ItemList track);
+    void addTrack(ItemList track);
     /**
      * A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
      *
      * @param track MusicRecording value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
-    void setTrack(MusicRecording track);
+    void addTrack(MusicRecording track);
+
+    /**
+     * A music album.
+     *
+     * @return {@link MusicAlbum}
+     */
+    List<MusicAlbum> getAlbumList();
 
     /**
      * A music album.
@@ -116,5 +160,5 @@ public interface MusicGroup extends PerformingGroup {
      *
      * @param album MusicAlbum value to set.
      */
-    void setAlbum(MusicAlbum album);
+    void addAlbum(MusicAlbum album);
 }

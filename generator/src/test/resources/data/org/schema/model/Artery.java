@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.AnatomicalStructure;
 
 /**
@@ -21,6 +22,14 @@ public interface Artery extends Vessel {
      * @return {@link AnatomicalStructure}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
+    List<AnatomicalStructure> getSupplyToList();
+
+    /**
+     * The area to which the artery supplies blood.
+     *
+     * @return {@link AnatomicalStructure}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
     AnatomicalStructure getSupplyTo();
 
     /**
@@ -29,7 +38,15 @@ public interface Artery extends Vessel {
      * @param supplyTo AnatomicalStructure value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setSupplyTo(AnatomicalStructure supplyTo);
+    void addSupplyTo(AnatomicalStructure supplyTo);
+
+    /**
+     * The branches that comprise the arterial structure.
+     *
+     * @return {@link AnatomicalStructure}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<AnatomicalStructure> getArterialBranchList();
 
     /**
      * The branches that comprise the arterial structure.
@@ -45,5 +62,5 @@ public interface Artery extends Vessel {
      * @param arterialBranch AnatomicalStructure value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setArterialBranch(AnatomicalStructure arterialBranch);
+    void addArterialBranch(AnatomicalStructure arterialBranch);
 }

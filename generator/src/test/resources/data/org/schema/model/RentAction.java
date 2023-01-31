@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.Person;
 import org.schema.model.Organization;
 import org.schema.model.RealEstateAgent;
@@ -21,6 +22,13 @@ public interface RentAction extends TradeAction {
      *
      * @return {@link Person} or {@link Organization}
      */
+    <T> List<T> getLandlordList();
+
+    /**
+     * A sub property of participant. The owner of the real estate property.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
     <T> T getLandlord();
 
     /**
@@ -28,13 +36,20 @@ public interface RentAction extends TradeAction {
      *
      * @param landlord Person value to set.
      */
-    void setLandlord(Person landlord);
+    void addLandlord(Person landlord);
     /**
      * A sub property of participant. The owner of the real estate property.
      *
      * @param landlord Organization value to set.
      */
-    void setLandlord(Organization landlord);
+    void addLandlord(Organization landlord);
+
+    /**
+     * A sub property of participant. The real estate agent involved in the action.
+     *
+     * @return {@link RealEstateAgent}
+     */
+    List<RealEstateAgent> getRealEstateAgentList();
 
     /**
      * A sub property of participant. The real estate agent involved in the action.
@@ -48,5 +63,5 @@ public interface RentAction extends TradeAction {
      *
      * @param realEstateAgent RealEstateAgent value to set.
      */
-    void setRealEstateAgent(RealEstateAgent realEstateAgent);
+    void addRealEstateAgent(RealEstateAgent realEstateAgent);
 }

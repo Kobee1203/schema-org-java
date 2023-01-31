@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.InfectiousAgentClass;
 import org.schema.model.datatype.Text;
 
@@ -22,6 +23,14 @@ public interface InfectiousDisease extends MedicalCondition {
      * @return {@link InfectiousAgentClass}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
+    List<InfectiousAgentClass> getInfectiousAgentClassList();
+
+    /**
+     * The class of infectious agent (bacteria, prion, etc.) that causes the disease.
+     *
+     * @return {@link InfectiousAgentClass}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
     InfectiousAgentClass getInfectiousAgentClass();
 
     /**
@@ -30,7 +39,15 @@ public interface InfectiousDisease extends MedicalCondition {
      * @param infectiousAgentClass InfectiousAgentClass value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setInfectiousAgentClass(InfectiousAgentClass infectiousAgentClass);
+    void addInfectiousAgentClass(InfectiousAgentClass infectiousAgentClass);
+
+    /**
+     * The actual infectious agent, such as a specific bacterium.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Text> getInfectiousAgentList();
 
     /**
      * The actual infectious agent, such as a specific bacterium.
@@ -46,7 +63,15 @@ public interface InfectiousDisease extends MedicalCondition {
      * @param infectiousAgent Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setInfectiousAgent(Text infectiousAgent);
+    void addInfectiousAgent(Text infectiousAgent);
+
+    /**
+     * How the disease spreads, either as a route or vector, for example 'direct contact', 'Aedes aegypti', etc.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Text> getTransmissionMethodList();
 
     /**
      * How the disease spreads, either as a route or vector, for example 'direct contact', 'Aedes aegypti', etc.
@@ -62,5 +87,5 @@ public interface InfectiousDisease extends MedicalCondition {
      * @param transmissionMethod Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setTransmissionMethod(Text transmissionMethod);
+    void addTransmissionMethod(Text transmissionMethod);
 }

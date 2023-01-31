@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Text;
 import org.schema.model.QuantitativeValue;
 import org.schema.model.MonetaryAmount;
@@ -28,6 +29,13 @@ public interface HowTo extends CreativeWork {
      *
      * @return {@link Text} or {@link QuantitativeValue}
      */
+    <T> List<T> getYieldList();
+
+    /**
+     * The quantity that results by performing instructions. For example, a paper airplane, 10 personalized candles.
+     *
+     * @return {@link Text} or {@link QuantitativeValue}
+     */
     <T> T getYield();
 
     /**
@@ -35,13 +43,20 @@ public interface HowTo extends CreativeWork {
      *
      * @param yield Text value to set.
      */
-    void setYield(Text yield);
+    void addYield(Text yield);
     /**
      * The quantity that results by performing instructions. For example, a paper airplane, 10 personalized candles.
      *
      * @param yield QuantitativeValue value to set.
      */
-    void setYield(QuantitativeValue yield);
+    void addYield(QuantitativeValue yield);
+
+    /**
+     * The estimated cost of the supply or supplies consumed when performing instructions.
+     *
+     * @return {@link Text} or {@link MonetaryAmount}
+     */
+    <T> List<T> getEstimatedCostList();
 
     /**
      * The estimated cost of the supply or supplies consumed when performing instructions.
@@ -55,13 +70,20 @@ public interface HowTo extends CreativeWork {
      *
      * @param estimatedCost Text value to set.
      */
-    void setEstimatedCost(Text estimatedCost);
+    void addEstimatedCost(Text estimatedCost);
     /**
      * The estimated cost of the supply or supplies consumed when performing instructions.
      *
      * @param estimatedCost MonetaryAmount value to set.
      */
-    void setEstimatedCost(MonetaryAmount estimatedCost);
+    void addEstimatedCost(MonetaryAmount estimatedCost);
+
+    /**
+     * A sub-property of instrument. A supply consumed when performing instructions or a direction.
+     *
+     * @return {@link HowToSupply} or {@link Text}
+     */
+    <T> List<T> getSupplyList();
 
     /**
      * A sub-property of instrument. A supply consumed when performing instructions or a direction.
@@ -75,13 +97,20 @@ public interface HowTo extends CreativeWork {
      *
      * @param supply HowToSupply value to set.
      */
-    void setSupply(HowToSupply supply);
+    void addSupply(HowToSupply supply);
     /**
      * A sub-property of instrument. A supply consumed when performing instructions or a direction.
      *
      * @param supply Text value to set.
      */
-    void setSupply(Text supply);
+    void addSupply(Text supply);
+
+    /**
+     * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection.
+     *
+     * @return {@link HowToStep} or {@link HowToSection} or {@link Text} or {@link CreativeWork}
+     */
+    <T> List<T> getStepList();
 
     /**
      * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection.
@@ -95,25 +124,32 @@ public interface HowTo extends CreativeWork {
      *
      * @param step HowToStep value to set.
      */
-    void setStep(HowToStep step);
+    void addStep(HowToStep step);
     /**
      * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection.
      *
      * @param step HowToSection value to set.
      */
-    void setStep(HowToSection step);
+    void addStep(HowToSection step);
     /**
      * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection.
      *
      * @param step Text value to set.
      */
-    void setStep(Text step);
+    void addStep(Text step);
     /**
      * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection.
      *
      * @param step CreativeWork value to set.
      */
-    void setStep(CreativeWork step);
+    void addStep(CreativeWork step);
+
+    /**
+     * The total time required to perform instructions or a direction (including time to prepare the supplies), in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
+     *
+     * @return {@link Duration}
+     */
+    List<Duration> getTotalTimeList();
 
     /**
      * The total time required to perform instructions or a direction (including time to prepare the supplies), in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
@@ -127,7 +163,14 @@ public interface HowTo extends CreativeWork {
      *
      * @param totalTime Duration value to set.
      */
-    void setTotalTime(Duration totalTime);
+    void addTotalTime(Duration totalTime);
+
+    /**
+     * A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.
+     *
+     * @return {@link HowToTool} or {@link Text}
+     */
+    <T> List<T> getToolList();
 
     /**
      * A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.
@@ -141,13 +184,20 @@ public interface HowTo extends CreativeWork {
      *
      * @param tool HowToTool value to set.
      */
-    void setTool(HowToTool tool);
+    void addTool(HowToTool tool);
     /**
      * A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.
      *
      * @param tool Text value to set.
      */
-    void setTool(Text tool);
+    void addTool(Text tool);
+
+    /**
+     * The length of time it takes to prepare the items to be used in instructions or a direction, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
+     *
+     * @return {@link Duration}
+     */
+    List<Duration> getPrepTimeList();
 
     /**
      * The length of time it takes to prepare the items to be used in instructions or a direction, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
@@ -161,7 +211,14 @@ public interface HowTo extends CreativeWork {
      *
      * @param prepTime Duration value to set.
      */
-    void setPrepTime(Duration prepTime);
+    void addPrepTime(Duration prepTime);
+
+    /**
+     * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection (originally misnamed 'steps'; 'step' is preferred).
+     *
+     * @return {@link ItemList} or {@link CreativeWork} or {@link Text}
+     */
+    <T> List<T> getStepsList();
 
     /**
      * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection (originally misnamed 'steps'; 'step' is preferred).
@@ -175,19 +232,26 @@ public interface HowTo extends CreativeWork {
      *
      * @param steps ItemList value to set.
      */
-    void setSteps(ItemList steps);
+    void addSteps(ItemList steps);
     /**
      * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection (originally misnamed 'steps'; 'step' is preferred).
      *
      * @param steps CreativeWork value to set.
      */
-    void setSteps(CreativeWork steps);
+    void addSteps(CreativeWork steps);
     /**
      * A single step item (as HowToStep, text, document, video, etc.) or a HowToSection (originally misnamed 'steps'; 'step' is preferred).
      *
      * @param steps Text value to set.
      */
-    void setSteps(Text steps);
+    void addSteps(Text steps);
+
+    /**
+     * The length of time it takes to perform instructions or a direction (not including time to prepare the supplies), in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
+     *
+     * @return {@link Duration}
+     */
+    List<Duration> getPerformTimeList();
 
     /**
      * The length of time it takes to perform instructions or a direction (not including time to prepare the supplies), in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
@@ -201,5 +265,5 @@ public interface HowTo extends CreativeWork {
      *
      * @param performTime Duration value to set.
      */
-    void setPerformTime(Duration performTime);
+    void addPerformTime(Duration performTime);
 }

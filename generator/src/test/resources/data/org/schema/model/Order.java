@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.ParcelDelivery;
 import org.schema.model.PostalAddress;
 import org.schema.model.Offer;
@@ -35,6 +36,13 @@ public interface Order extends Intangible {
      *
      * @return {@link ParcelDelivery}
      */
+    List<ParcelDelivery> getOrderDeliveryList();
+
+    /**
+     * The delivery of the parcel related to this order or order item.
+     *
+     * @return {@link ParcelDelivery}
+     */
     ParcelDelivery getOrderDelivery();
 
     /**
@@ -42,7 +50,14 @@ public interface Order extends Intangible {
      *
      * @param orderDelivery ParcelDelivery value to set.
      */
-    void setOrderDelivery(ParcelDelivery orderDelivery);
+    void addOrderDelivery(ParcelDelivery orderDelivery);
+
+    /**
+     * The billing address for the order.
+     *
+     * @return {@link PostalAddress}
+     */
+    List<PostalAddress> getBillingAddressList();
 
     /**
      * The billing address for the order.
@@ -56,7 +71,14 @@ public interface Order extends Intangible {
      *
      * @param billingAddress PostalAddress value to set.
      */
-    void setBillingAddress(PostalAddress billingAddress);
+    void addBillingAddress(PostalAddress billingAddress);
+
+    /**
+     * The offer(s) -- e.g., product, quantity and price combinations -- included in the order.
+     *
+     * @return {@link Offer}
+     */
+    List<Offer> getAcceptedOfferList();
 
     /**
      * The offer(s) -- e.g., product, quantity and price combinations -- included in the order.
@@ -70,7 +92,14 @@ public interface Order extends Intangible {
      *
      * @param acceptedOffer Offer value to set.
      */
-    void setAcceptedOffer(Offer acceptedOffer);
+    void addAcceptedOffer(Offer acceptedOffer);
+
+    /**
+     * 'merchant' is an out-dated term for 'seller'.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    <T> List<T> getMerchantList();
 
     /**
      * 'merchant' is an out-dated term for 'seller'.
@@ -84,13 +113,20 @@ public interface Order extends Intangible {
      *
      * @param merchant Organization value to set.
      */
-    void setMerchant(Organization merchant);
+    void addMerchant(Organization merchant);
     /**
      * 'merchant' is an out-dated term for 'seller'.
      *
      * @param merchant Person value to set.
      */
-    void setMerchant(Person merchant);
+    void addMerchant(Person merchant);
+
+    /**
+     * The current status of the order.
+     *
+     * @return {@link OrderStatus}
+     */
+    List<OrderStatus> getOrderStatusList();
 
     /**
      * The current status of the order.
@@ -104,7 +140,14 @@ public interface Order extends Intangible {
      *
      * @param orderStatus OrderStatus value to set.
      */
-    void setOrderStatus(OrderStatus orderStatus);
+    void addOrderStatus(OrderStatus orderStatus);
+
+    /**
+     * A number that confirms the given order or payment has been received.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getConfirmationNumberList();
 
     /**
      * A number that confirms the given order or payment has been received.
@@ -118,7 +161,14 @@ public interface Order extends Intangible {
      *
      * @param confirmationNumber Text value to set.
      */
-    void setConfirmationNumber(Text confirmationNumber);
+    void addConfirmationNumber(Text confirmationNumber);
+
+    /**
+     * The order is being paid as part of the referenced Invoice.
+     *
+     * @return {@link Invoice}
+     */
+    List<Invoice> getPartOfInvoiceList();
 
     /**
      * The order is being paid as part of the referenced Invoice.
@@ -132,7 +182,14 @@ public interface Order extends Intangible {
      *
      * @param partOfInvoice Invoice value to set.
      */
-    void setPartOfInvoice(Invoice partOfInvoice);
+    void addPartOfInvoice(Invoice partOfInvoice);
+
+    /**
+     * The identifier of the transaction.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getOrderNumberList();
 
     /**
      * The identifier of the transaction.
@@ -146,7 +203,14 @@ public interface Order extends Intangible {
      *
      * @param orderNumber Text value to set.
      */
-    void setOrderNumber(Text orderNumber);
+    void addOrderNumber(Text orderNumber);
+
+    /**
+     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    <T> List<T> getSellerList();
 
     /**
      * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
@@ -160,13 +224,20 @@ public interface Order extends Intangible {
      *
      * @param seller Organization value to set.
      */
-    void setSeller(Organization seller);
+    void addSeller(Organization seller);
     /**
      * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
      *
      * @param seller Person value to set.
      */
-    void setSeller(Person seller);
+    void addSeller(Person seller);
+
+    /**
+     * Party placing the order or paying the invoice.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    <T> List<T> getCustomerList();
 
     /**
      * Party placing the order or paying the invoice.
@@ -180,13 +251,20 @@ public interface Order extends Intangible {
      *
      * @param customer Organization value to set.
      */
-    void setCustomer(Organization customer);
+    void addCustomer(Organization customer);
     /**
      * Party placing the order or paying the invoice.
      *
      * @param customer Person value to set.
      */
-    void setCustomer(Person customer);
+    void addCustomer(Person customer);
+
+    /**
+     * The date that payment is due.
+     *
+     * @return {@link DateTime} or {@link Date}
+     */
+    <T> List<T> getPaymentDueDateList();
 
     /**
      * The date that payment is due.
@@ -200,13 +278,20 @@ public interface Order extends Intangible {
      *
      * @param paymentDueDate DateTime value to set.
      */
-    void setPaymentDueDate(DateTime paymentDueDate);
+    void addPaymentDueDate(DateTime paymentDueDate);
     /**
      * The date that payment is due.
      *
      * @param paymentDueDate Date value to set.
      */
-    void setPaymentDueDate(Date paymentDueDate);
+    void addPaymentDueDate(Date paymentDueDate);
+
+    /**
+     * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    <T> List<T> getBrokerList();
 
     /**
      * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
@@ -220,13 +305,20 @@ public interface Order extends Intangible {
      *
      * @param broker Person value to set.
      */
-    void setBroker(Person broker);
+    void addBroker(Person broker);
     /**
      * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
      *
      * @param broker Organization value to set.
      */
-    void setBroker(Organization broker);
+    void addBroker(Organization broker);
+
+    /**
+     * Code used to redeem a discount.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getDiscountCodeList();
 
     /**
      * Code used to redeem a discount.
@@ -240,7 +332,14 @@ public interface Order extends Intangible {
      *
      * @param discountCode Text value to set.
      */
-    void setDiscountCode(Text discountCode);
+    void addDiscountCode(Text discountCode);
+
+    /**
+     * Any discount applied (to an Order).
+     *
+     * @return {@link Text} or {@link Number}
+     */
+    <T> List<T> getDiscountList();
 
     /**
      * Any discount applied (to an Order).
@@ -254,13 +353,20 @@ public interface Order extends Intangible {
      *
      * @param discount Text value to set.
      */
-    void setDiscount(Text discount);
+    void addDiscount(Text discount);
     /**
      * Any discount applied (to an Order).
      *
      * @param discount Number value to set.
      */
-    void setDiscount(Number discount);
+    void addDiscount(Number discount);
+
+    /**
+     * An identifier for the method of payment used (e.g. the last 4 digits of the credit card).
+     *
+     * @return {@link Text}
+     */
+    List<Text> getPaymentMethodIdList();
 
     /**
      * An identifier for the method of payment used (e.g. the last 4 digits of the credit card).
@@ -274,7 +380,14 @@ public interface Order extends Intangible {
      *
      * @param paymentMethodId Text value to set.
      */
-    void setPaymentMethodId(Text paymentMethodId);
+    void addPaymentMethodId(Text paymentMethodId);
+
+    /**
+     * The URL for sending a payment.
+     *
+     * @return {@link URL}
+     */
+    List<URL> getPaymentUrlList();
 
     /**
      * The URL for sending a payment.
@@ -288,7 +401,14 @@ public interface Order extends Intangible {
      *
      * @param paymentUrl URL value to set.
      */
-    void setPaymentUrl(URL paymentUrl);
+    void addPaymentUrl(URL paymentUrl);
+
+    /**
+     * The currency of the discount.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
+     *
+     * @return {@link Text}
+     */
+    List<Text> getDiscountCurrencyList();
 
     /**
      * The currency of the discount.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
@@ -302,7 +422,14 @@ public interface Order extends Intangible {
      *
      * @param discountCurrency Text value to set.
      */
-    void setDiscountCurrency(Text discountCurrency);
+    void addDiscountCurrency(Text discountCurrency);
+
+    /**
+     * The date that payment is due.
+     *
+     * @return {@link DateTime}
+     */
+    List<DateTime> getPaymentDueList();
 
     /**
      * The date that payment is due.
@@ -316,7 +443,14 @@ public interface Order extends Intangible {
      *
      * @param paymentDue DateTime value to set.
      */
-    void setPaymentDue(DateTime paymentDue);
+    void addPaymentDue(DateTime paymentDue);
+
+    /**
+     * Date order was placed.
+     *
+     * @return {@link Date} or {@link DateTime}
+     */
+    <T> List<T> getOrderDateList();
 
     /**
      * Date order was placed.
@@ -330,13 +464,20 @@ public interface Order extends Intangible {
      *
      * @param orderDate Date value to set.
      */
-    void setOrderDate(Date orderDate);
+    void addOrderDate(Date orderDate);
     /**
      * Date order was placed.
      *
      * @param orderDate DateTime value to set.
      */
-    void setOrderDate(DateTime orderDate);
+    void addOrderDate(DateTime orderDate);
+
+    /**
+     * Was the offer accepted as a gift for someone other than the buyer.
+     *
+     * @return {@link Boolean}
+     */
+    List<Boolean> getIsGiftList();
 
     /**
      * Was the offer accepted as a gift for someone other than the buyer.
@@ -350,7 +491,14 @@ public interface Order extends Intangible {
      *
      * @param isGift Boolean value to set.
      */
-    void setIsGift(Boolean isGift);
+    void addIsGift(Boolean isGift);
+
+    /**
+     * The item ordered.
+     *
+     * @return {@link Service} or {@link OrderItem} or {@link Product}
+     */
+    <T> List<T> getOrderedItemList();
 
     /**
      * The item ordered.
@@ -364,19 +512,26 @@ public interface Order extends Intangible {
      *
      * @param orderedItem Service value to set.
      */
-    void setOrderedItem(Service orderedItem);
+    void addOrderedItem(Service orderedItem);
     /**
      * The item ordered.
      *
      * @param orderedItem OrderItem value to set.
      */
-    void setOrderedItem(OrderItem orderedItem);
+    void addOrderedItem(OrderItem orderedItem);
     /**
      * The item ordered.
      *
      * @param orderedItem Product value to set.
      */
-    void setOrderedItem(Product orderedItem);
+    void addOrderedItem(Product orderedItem);
+
+    /**
+     * The name of the credit card or other method of payment for the order.
+     *
+     * @return {@link PaymentMethod}
+     */
+    List<PaymentMethod> getPaymentMethodList();
 
     /**
      * The name of the credit card or other method of payment for the order.
@@ -390,5 +545,5 @@ public interface Order extends Intangible {
      *
      * @param paymentMethod PaymentMethod value to set.
      */
-    void setPaymentMethod(PaymentMethod paymentMethod);
+    void addPaymentMethod(PaymentMethod paymentMethod);
 }

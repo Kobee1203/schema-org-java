@@ -45,6 +45,8 @@ import org.schema.model.CreativeWork;
 import org.schema.model.Action;
 import org.schema.model.Event;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import java.util.List;
 import org.schema.model.Vehicle;
 
 /**
@@ -55,7 +57,19 @@ import org.schema.model.Vehicle;
 @JsonLdTypeName("Vehicle")
 public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Vehicle {
 
-    private QuantitativeValue fuelCapacity;
+    private List<QuantitativeValue> fuelCapacity;
+
+    /**
+     * The capacity of the fuel tank or in the case of electric cars, the battery. If there are multiple components for storage, this should indicate the total of all storage of the same type.<br/><br/>Typical unit code(s): LTR for liters, GLL of US gallons, GLI for UK / imperial gallons, AMH for ampere-hours (for electrical vehicles).
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public List<QuantitativeValue> getFuelCapacityList() {
+        return fuelCapacity;
+    }
 
     /**
      * The capacity of the fuel tank or in the case of electric cars, the battery. If there are multiple components for storage, this should indicate the total of all storage of the same type.<br/><br/>Typical unit code(s): LTR for liters, GLL of US gallons, GLI for UK / imperial gallons, AMH for ampere-hours (for electrical vehicles).
@@ -66,7 +80,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public QuantitativeValue getFuelCapacity() {
-        return fuelCapacity;
+        return getFirst(fuelCapacity);
     }
 
     /**
@@ -77,11 +91,23 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setFuelCapacity(QuantitativeValue fuelCapacity) {
-        this.fuelCapacity = fuelCapacity;
+    public void addFuelCapacity(QuantitativeValue fuelCapacity) {
+        this.fuelCapacity = add(this.fuelCapacity, fuelCapacity);
     }
 
-    private QuantitativeValue accelerationTime;
+    private List<QuantitativeValue> accelerationTime;
+
+    /**
+     * The time needed to accelerate the vehicle from a given start velocity to a given target velocity.<br/><br/>Typical unit code(s): SEC for seconds<br/><br/>* Note: There are unfortunately no standard unit codes for seconds/0..100 km/h or seconds/0..60 mph. Simply use "SEC" for seconds and indicate the velocities in the [[name]] of the [[QuantitativeValue]], or use [[valueReference]] with a [[QuantitativeValue]] of 0..60 mph or 0..100 km/h to specify the reference speeds.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public List<QuantitativeValue> getAccelerationTimeList() {
+        return accelerationTime;
+    }
 
     /**
      * The time needed to accelerate the vehicle from a given start velocity to a given target velocity.<br/><br/>Typical unit code(s): SEC for seconds<br/><br/>* Note: There are unfortunately no standard unit codes for seconds/0..100 km/h or seconds/0..60 mph. Simply use "SEC" for seconds and indicate the velocities in the [[name]] of the [[QuantitativeValue]], or use [[valueReference]] with a [[QuantitativeValue]] of 0..60 mph or 0..100 km/h to specify the reference speeds.
@@ -92,7 +118,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public QuantitativeValue getAccelerationTime() {
-        return accelerationTime;
+        return getFirst(accelerationTime);
     }
 
     /**
@@ -103,11 +129,23 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setAccelerationTime(QuantitativeValue accelerationTime) {
-        this.accelerationTime = accelerationTime;
+    public void addAccelerationTime(QuantitativeValue accelerationTime) {
+        this.accelerationTime = add(this.accelerationTime, accelerationTime);
     }
 
-    private QuantitativeValue speed;
+    private List<QuantitativeValue> speed;
+
+    /**
+     * The speed range of the vehicle. If the vehicle is powered by an engine, the upper limit of the speed range (indicated by [[maxValue]] should be the maximum speed achievable under regular conditions.<br/><br/>Typical unit code(s): KMH for km/h, HM for mile per hour (0.447 04 m/s), KNT for knot<br/><br/>*Note 1: Use [[minValue]] and [[maxValue]] to indicate the range. Typically, the minimal value is zero.<br/>* Note 2: There are many different ways of measuring the speed range. You can link to information about how the given value has been determined using the [[valueReference]] property.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public List<QuantitativeValue> getSpeedList() {
+        return speed;
+    }
 
     /**
      * The speed range of the vehicle. If the vehicle is powered by an engine, the upper limit of the speed range (indicated by [[maxValue]] should be the maximum speed achievable under regular conditions.<br/><br/>Typical unit code(s): KMH for km/h, HM for mile per hour (0.447 04 m/s), KNT for knot<br/><br/>*Note 1: Use [[minValue]] and [[maxValue]] to indicate the range. Typically, the minimal value is zero.<br/>* Note 2: There are many different ways of measuring the speed range. You can link to information about how the given value has been determined using the [[valueReference]] property.
@@ -118,7 +156,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public QuantitativeValue getSpeed() {
-        return speed;
+        return getFirst(speed);
     }
 
     /**
@@ -129,11 +167,23 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setSpeed(QuantitativeValue speed) {
-        this.speed = speed;
+    public void addSpeed(QuantitativeValue speed) {
+        this.speed = add(this.speed, speed);
     }
 
-    private QuantitativeValue trailerWeight;
+    private List<QuantitativeValue> trailerWeight;
+
+    /**
+     * The permitted weight of a trailer attached to the vehicle.<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/>* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public List<QuantitativeValue> getTrailerWeightList() {
+        return trailerWeight;
+    }
 
     /**
      * The permitted weight of a trailer attached to the vehicle.<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/>* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
@@ -144,7 +194,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public QuantitativeValue getTrailerWeight() {
-        return trailerWeight;
+        return getFirst(trailerWeight);
     }
 
     /**
@@ -155,11 +205,22 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setTrailerWeight(QuantitativeValue trailerWeight) {
-        this.trailerWeight = trailerWeight;
+    public void addTrailerWeight(QuantitativeValue trailerWeight) {
+        this.trailerWeight = add(this.trailerWeight, trailerWeight);
     }
 
-    private EngineSpecification vehicleEngine;
+    private List<EngineSpecification> vehicleEngine;
+
+    /**
+     * Information about the engine or engines of the vehicle.
+     *
+     * @return {@link EngineSpecification}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public List<EngineSpecification> getVehicleEngineList() {
+        return vehicleEngine;
+    }
 
     /**
      * Information about the engine or engines of the vehicle.
@@ -169,7 +230,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public EngineSpecification getVehicleEngine() {
-        return vehicleEngine;
+        return getFirst(vehicleEngine);
     }
 
     /**
@@ -179,11 +240,23 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setVehicleEngine(EngineSpecification vehicleEngine) {
-        this.vehicleEngine = vehicleEngine;
+    public void addVehicleEngine(EngineSpecification vehicleEngine) {
+        this.vehicleEngine = add(this.vehicleEngine, vehicleEngine);
     }
 
-    private Number emissionsCO2;
+    private List<Number> emissionsCO2;
+
+    /**
+     * The CO2 emissions in g/km. When used in combination with a QuantitativeValue, put "g/km" into the unitText property of that value, since there is no UN/CEFACT Common Code for "g/km".
+     *
+     * @return {@link Number}
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public List<Number> getEmissionsCO2List() {
+        return emissionsCO2;
+    }
 
     /**
      * The CO2 emissions in g/km. When used in combination with a QuantitativeValue, put "g/km" into the unitText property of that value, since there is no UN/CEFACT Common Code for "g/km".
@@ -194,7 +267,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Number getEmissionsCO2() {
-        return emissionsCO2;
+        return getFirst(emissionsCO2);
     }
 
     /**
@@ -205,11 +278,22 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setEmissionsCO2(Number emissionsCO2) {
-        this.emissionsCO2 = emissionsCO2;
+    public void addEmissionsCO2(Number emissionsCO2) {
+        this.emissionsCO2 = add(this.emissionsCO2, emissionsCO2);
     }
 
-    private Date purchaseDate;
+    private List<Date> purchaseDate;
+
+    /**
+     * The date the item e.g. vehicle was purchased by the current owner.
+     *
+     * @return {@link Date}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public List<Date> getPurchaseDateList() {
+        return purchaseDate;
+    }
 
     /**
      * The date the item e.g. vehicle was purchased by the current owner.
@@ -219,7 +303,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Date getPurchaseDate() {
-        return purchaseDate;
+        return getFirst(purchaseDate);
     }
 
     /**
@@ -229,11 +313,23 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setPurchaseDate(Date purchaseDate) {
-        this.purchaseDate = purchaseDate;
+    public void addPurchaseDate(Date purchaseDate) {
+        this.purchaseDate = add(this.purchaseDate, purchaseDate);
     }
 
-    private Object numberOfForwardGears;
+    @JsonLdFieldTypes({ QuantitativeValue.class, Number.class })
+    private List<Object> numberOfForwardGears;
+
+    /**
+     * The total number of forward gears available for the transmission system of the vehicle.<br/><br/>Typical unit code(s): C62
+     *
+     * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public <T> List<T> getNumberOfForwardGearsList() {
+        return (List<T>) numberOfForwardGears;
+    }
 
     /**
      * The total number of forward gears available for the transmission system of the vehicle.<br/><br/>Typical unit code(s): C62
@@ -243,7 +339,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getNumberOfForwardGears() {
-        return (T) numberOfForwardGears;
+        return (T) getFirst(numberOfForwardGears);
     }
 
     /**
@@ -253,8 +349,8 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setNumberOfForwardGears(QuantitativeValue numberOfForwardGears) {
-        this.numberOfForwardGears = numberOfForwardGears;
+    public void addNumberOfForwardGears(QuantitativeValue numberOfForwardGears) {
+        this.numberOfForwardGears = add(this.numberOfForwardGears, numberOfForwardGears);
     }
     /**
      * The total number of forward gears available for the transmission system of the vehicle.<br/><br/>Typical unit code(s): C62
@@ -263,11 +359,23 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setNumberOfForwardGears(Number numberOfForwardGears) {
-        this.numberOfForwardGears = numberOfForwardGears;
+    public void addNumberOfForwardGears(Number numberOfForwardGears) {
+        this.numberOfForwardGears = add(this.numberOfForwardGears, numberOfForwardGears);
     }
 
-    private QuantitativeValue weightTotal;
+    private List<QuantitativeValue> weightTotal;
+
+    /**
+     * The permitted total weight of the loaded vehicle, including passengers and cargo and the weight of the empty vehicle.<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public List<QuantitativeValue> getWeightTotalList() {
+        return weightTotal;
+    }
 
     /**
      * The permitted total weight of the loaded vehicle, including passengers and cargo and the weight of the empty vehicle.<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
@@ -278,7 +386,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public QuantitativeValue getWeightTotal() {
-        return weightTotal;
+        return getFirst(weightTotal);
     }
 
     /**
@@ -289,11 +397,22 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setWeightTotal(QuantitativeValue weightTotal) {
-        this.weightTotal = weightTotal;
+    public void addWeightTotal(QuantitativeValue weightTotal) {
+        this.weightTotal = add(this.weightTotal, weightTotal);
     }
 
-    private Date productionDate;
+    private List<Date> productionDate;
+
+    /**
+     * The date of production of the item, e.g. vehicle.
+     *
+     * @return {@link Date}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public List<Date> getProductionDateList() {
+        return productionDate;
+    }
 
     /**
      * The date of production of the item, e.g. vehicle.
@@ -303,7 +422,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Date getProductionDate() {
-        return productionDate;
+        return getFirst(productionDate);
     }
 
     /**
@@ -313,11 +432,23 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setProductionDate(Date productionDate) {
-        this.productionDate = productionDate;
+    public void addProductionDate(Date productionDate) {
+        this.productionDate = add(this.productionDate, productionDate);
     }
 
-    private Object numberOfPreviousOwners;
+    @JsonLdFieldTypes({ Number.class, QuantitativeValue.class })
+    private List<Object> numberOfPreviousOwners;
+
+    /**
+     * The number of owners of the vehicle, including the current one.<br/><br/>Typical unit code(s): C62
+     *
+     * @return {@link Number} or {@link QuantitativeValue}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public <T> List<T> getNumberOfPreviousOwnersList() {
+        return (List<T>) numberOfPreviousOwners;
+    }
 
     /**
      * The number of owners of the vehicle, including the current one.<br/><br/>Typical unit code(s): C62
@@ -327,7 +458,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getNumberOfPreviousOwners() {
-        return (T) numberOfPreviousOwners;
+        return (T) getFirst(numberOfPreviousOwners);
     }
 
     /**
@@ -337,8 +468,8 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setNumberOfPreviousOwners(Number numberOfPreviousOwners) {
-        this.numberOfPreviousOwners = numberOfPreviousOwners;
+    public void addNumberOfPreviousOwners(Number numberOfPreviousOwners) {
+        this.numberOfPreviousOwners = add(this.numberOfPreviousOwners, numberOfPreviousOwners);
     }
     /**
      * The number of owners of the vehicle, including the current one.<br/><br/>Typical unit code(s): C62
@@ -347,11 +478,22 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setNumberOfPreviousOwners(QuantitativeValue numberOfPreviousOwners) {
-        this.numberOfPreviousOwners = numberOfPreviousOwners;
+    public void addNumberOfPreviousOwners(QuantitativeValue numberOfPreviousOwners) {
+        this.numberOfPreviousOwners = add(this.numberOfPreviousOwners, numberOfPreviousOwners);
     }
 
-    private SteeringPositionValue steeringPosition;
+    private List<SteeringPositionValue> steeringPosition;
+
+    /**
+     * The position of the steering wheel or similar device (mostly for cars).
+     *
+     * @return {@link SteeringPositionValue}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public List<SteeringPositionValue> getSteeringPositionList() {
+        return steeringPosition;
+    }
 
     /**
      * The position of the steering wheel or similar device (mostly for cars).
@@ -361,7 +503,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public SteeringPositionValue getSteeringPosition() {
-        return steeringPosition;
+        return getFirst(steeringPosition);
     }
 
     /**
@@ -371,11 +513,23 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setSteeringPosition(SteeringPositionValue steeringPosition) {
-        this.steeringPosition = steeringPosition;
+    public void addSteeringPosition(SteeringPositionValue steeringPosition) {
+        this.steeringPosition = add(this.steeringPosition, steeringPosition);
     }
 
-    private QuantitativeValue wheelbase;
+    private List<QuantitativeValue> wheelbase;
+
+    /**
+     * The distance between the centers of the front and rear wheels.<br/><br/>Typical unit code(s): CMT for centimeters, MTR for meters, INH for inches, FOT for foot/feet
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public List<QuantitativeValue> getWheelbaseList() {
+        return wheelbase;
+    }
 
     /**
      * The distance between the centers of the front and rear wheels.<br/><br/>Typical unit code(s): CMT for centimeters, MTR for meters, INH for inches, FOT for foot/feet
@@ -386,7 +540,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public QuantitativeValue getWheelbase() {
-        return wheelbase;
+        return getFirst(wheelbase);
     }
 
     /**
@@ -397,11 +551,22 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setWheelbase(QuantitativeValue wheelbase) {
-        this.wheelbase = wheelbase;
+    public void addWheelbase(QuantitativeValue wheelbase) {
+        this.wheelbase = add(this.wheelbase, wheelbase);
     }
 
-    private Text vehicleInteriorType;
+    private List<Text> vehicleInteriorType;
+
+    /**
+     * The type or material of the interior of the vehicle (e.g. synthetic fabric, leather, wood, etc.). While most interior types are characterized by the material used, an interior type can also be based on vehicle usage or target audience.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public List<Text> getVehicleInteriorTypeList() {
+        return vehicleInteriorType;
+    }
 
     /**
      * The type or material of the interior of the vehicle (e.g. synthetic fabric, leather, wood, etc.). While most interior types are characterized by the material used, an interior type can also be based on vehicle usage or target audience.
@@ -411,7 +576,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getVehicleInteriorType() {
-        return vehicleInteriorType;
+        return getFirst(vehicleInteriorType);
     }
 
     /**
@@ -421,11 +586,23 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setVehicleInteriorType(Text vehicleInteriorType) {
-        this.vehicleInteriorType = vehicleInteriorType;
+    public void addVehicleInteriorType(Text vehicleInteriorType) {
+        this.vehicleInteriorType = add(this.vehicleInteriorType, vehicleInteriorType);
     }
 
-    private Object numberOfAirbags;
+    @JsonLdFieldTypes({ Text.class, Number.class })
+    private List<Object> numberOfAirbags;
+
+    /**
+     * The number or type of airbags in the vehicle.
+     *
+     * @return {@link Text} or {@link Number}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public <T> List<T> getNumberOfAirbagsList() {
+        return (List<T>) numberOfAirbags;
+    }
 
     /**
      * The number or type of airbags in the vehicle.
@@ -435,7 +612,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getNumberOfAirbags() {
-        return (T) numberOfAirbags;
+        return (T) getFirst(numberOfAirbags);
     }
 
     /**
@@ -445,8 +622,8 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setNumberOfAirbags(Text numberOfAirbags) {
-        this.numberOfAirbags = numberOfAirbags;
+    public void addNumberOfAirbags(Text numberOfAirbags) {
+        this.numberOfAirbags = add(this.numberOfAirbags, numberOfAirbags);
     }
     /**
      * The number or type of airbags in the vehicle.
@@ -455,11 +632,23 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setNumberOfAirbags(Number numberOfAirbags) {
-        this.numberOfAirbags = numberOfAirbags;
+    public void addNumberOfAirbags(Number numberOfAirbags) {
+        this.numberOfAirbags = add(this.numberOfAirbags, numberOfAirbags);
     }
 
-    private Object fuelType;
+    @JsonLdFieldTypes({ Text.class, URL.class, QualitativeValue.class })
+    private List<Object> fuelType;
+
+    /**
+     * The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.
+     *
+     * @return {@link Text} or {@link URL} or {@link QualitativeValue}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public <T> List<T> getFuelTypeList() {
+        return (List<T>) fuelType;
+    }
 
     /**
      * The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.
@@ -469,7 +658,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getFuelType() {
-        return (T) fuelType;
+        return (T) getFirst(fuelType);
     }
 
     /**
@@ -479,8 +668,8 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setFuelType(Text fuelType) {
-        this.fuelType = fuelType;
+    public void addFuelType(Text fuelType) {
+        this.fuelType = add(this.fuelType, fuelType);
     }
     /**
      * The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.
@@ -489,8 +678,8 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setFuelType(URL fuelType) {
-        this.fuelType = fuelType;
+    public void addFuelType(URL fuelType) {
+        this.fuelType = add(this.fuelType, fuelType);
     }
     /**
      * The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.
@@ -499,11 +688,22 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setFuelType(QualitativeValue fuelType) {
-        this.fuelType = fuelType;
+    public void addFuelType(QualitativeValue fuelType) {
+        this.fuelType = add(this.fuelType, fuelType);
     }
 
-    private QuantitativeValue cargoVolume;
+    private List<QuantitativeValue> cargoVolume;
+
+    /**
+     * The available volume for cargo or luggage. For automobiles, this is usually the trunk volume.<br/><br/>Typical unit code(s): LTR for liters, FTQ for cubic foot/feet<br/><br/>Note: You can use [[minValue]] and [[maxValue]] to indicate ranges.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public List<QuantitativeValue> getCargoVolumeList() {
+        return cargoVolume;
+    }
 
     /**
      * The available volume for cargo or luggage. For automobiles, this is usually the trunk volume.<br/><br/>Typical unit code(s): LTR for liters, FTQ for cubic foot/feet<br/><br/>Note: You can use [[minValue]] and [[maxValue]] to indicate ranges.
@@ -513,7 +713,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public QuantitativeValue getCargoVolume() {
-        return cargoVolume;
+        return getFirst(cargoVolume);
     }
 
     /**
@@ -523,11 +723,23 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setCargoVolume(QuantitativeValue cargoVolume) {
-        this.cargoVolume = cargoVolume;
+    public void addCargoVolume(QuantitativeValue cargoVolume) {
+        this.cargoVolume = add(this.cargoVolume, cargoVolume);
     }
 
-    private Object vehicleTransmission;
+    @JsonLdFieldTypes({ Text.class, QualitativeValue.class, URL.class })
+    private List<Object> vehicleTransmission;
+
+    /**
+     * The type of component used for transmitting the power from a rotating power source to the wheels or other relevant component(s) ("gearbox" for cars).
+     *
+     * @return {@link Text} or {@link QualitativeValue} or {@link URL}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public <T> List<T> getVehicleTransmissionList() {
+        return (List<T>) vehicleTransmission;
+    }
 
     /**
      * The type of component used for transmitting the power from a rotating power source to the wheels or other relevant component(s) ("gearbox" for cars).
@@ -537,7 +749,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getVehicleTransmission() {
-        return (T) vehicleTransmission;
+        return (T) getFirst(vehicleTransmission);
     }
 
     /**
@@ -547,8 +759,8 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setVehicleTransmission(Text vehicleTransmission) {
-        this.vehicleTransmission = vehicleTransmission;
+    public void addVehicleTransmission(Text vehicleTransmission) {
+        this.vehicleTransmission = add(this.vehicleTransmission, vehicleTransmission);
     }
     /**
      * The type of component used for transmitting the power from a rotating power source to the wheels or other relevant component(s) ("gearbox" for cars).
@@ -557,8 +769,8 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setVehicleTransmission(QualitativeValue vehicleTransmission) {
-        this.vehicleTransmission = vehicleTransmission;
+    public void addVehicleTransmission(QualitativeValue vehicleTransmission) {
+        this.vehicleTransmission = add(this.vehicleTransmission, vehicleTransmission);
     }
     /**
      * The type of component used for transmitting the power from a rotating power source to the wheels or other relevant component(s) ("gearbox" for cars).
@@ -567,11 +779,23 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setVehicleTransmission(URL vehicleTransmission) {
-        this.vehicleTransmission = vehicleTransmission;
+    public void addVehicleTransmission(URL vehicleTransmission) {
+        this.vehicleTransmission = add(this.vehicleTransmission, vehicleTransmission);
     }
 
-    private QuantitativeValue payload;
+    private List<QuantitativeValue> payload;
+
+    /**
+     * The permitted weight of passengers and cargo, EXCLUDING the weight of the empty vehicle.<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>* Note 1: Many databases specify the permitted TOTAL weight instead, which is the sum of [[weight]] and [[payload]]<br/>* Note 2: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 3: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 4: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public List<QuantitativeValue> getPayloadList() {
+        return payload;
+    }
 
     /**
      * The permitted weight of passengers and cargo, EXCLUDING the weight of the empty vehicle.<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>* Note 1: Many databases specify the permitted TOTAL weight instead, which is the sum of [[weight]] and [[payload]]<br/>* Note 2: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 3: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 4: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
@@ -582,7 +806,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public QuantitativeValue getPayload() {
-        return payload;
+        return getFirst(payload);
     }
 
     /**
@@ -593,11 +817,23 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setPayload(QuantitativeValue payload) {
-        this.payload = payload;
+    public void addPayload(QuantitativeValue payload) {
+        this.payload = add(this.payload, payload);
     }
 
-    private Object driveWheelConfiguration;
+    @JsonLdFieldTypes({ Text.class, DriveWheelConfigurationValue.class })
+    private List<Object> driveWheelConfiguration;
+
+    /**
+     * The drive wheel configuration, i.e. which roadwheels will receive torque from the vehicle's engine via the drivetrain.
+     *
+     * @return {@link Text} or {@link DriveWheelConfigurationValue}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public <T> List<T> getDriveWheelConfigurationList() {
+        return (List<T>) driveWheelConfiguration;
+    }
 
     /**
      * The drive wheel configuration, i.e. which roadwheels will receive torque from the vehicle's engine via the drivetrain.
@@ -607,7 +843,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getDriveWheelConfiguration() {
-        return (T) driveWheelConfiguration;
+        return (T) getFirst(driveWheelConfiguration);
     }
 
     /**
@@ -617,8 +853,8 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setDriveWheelConfiguration(Text driveWheelConfiguration) {
-        this.driveWheelConfiguration = driveWheelConfiguration;
+    public void addDriveWheelConfiguration(Text driveWheelConfiguration) {
+        this.driveWheelConfiguration = add(this.driveWheelConfiguration, driveWheelConfiguration);
     }
     /**
      * The drive wheel configuration, i.e. which roadwheels will receive torque from the vehicle's engine via the drivetrain.
@@ -627,11 +863,22 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setDriveWheelConfiguration(DriveWheelConfigurationValue driveWheelConfiguration) {
-        this.driveWheelConfiguration = driveWheelConfiguration;
+    public void addDriveWheelConfiguration(DriveWheelConfigurationValue driveWheelConfiguration) {
+        this.driveWheelConfiguration = add(this.driveWheelConfiguration, driveWheelConfiguration);
     }
 
-    private Text knownVehicleDamages;
+    private List<Text> knownVehicleDamages;
+
+    /**
+     * A textual description of known damages, both repaired and unrepaired.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public List<Text> getKnownVehicleDamagesList() {
+        return knownVehicleDamages;
+    }
 
     /**
      * A textual description of known damages, both repaired and unrepaired.
@@ -641,7 +888,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getKnownVehicleDamages() {
-        return knownVehicleDamages;
+        return getFirst(knownVehicleDamages);
     }
 
     /**
@@ -651,11 +898,22 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setKnownVehicleDamages(Text knownVehicleDamages) {
-        this.knownVehicleDamages = knownVehicleDamages;
+    public void addKnownVehicleDamages(Text knownVehicleDamages) {
+        this.knownVehicleDamages = add(this.knownVehicleDamages, knownVehicleDamages);
     }
 
-    private QuantitativeValue fuelConsumption;
+    private List<QuantitativeValue> fuelConsumption;
+
+    /**
+     * The amount of fuel consumed for traveling a particular distance or temporal duration with the given vehicle (e.g. liters per 100 km).<br/><br/>* Note 1: There are unfortunately no standard unit codes for liters per 100 km.  Use [[unitText]] to indicate the unit of measurement, e.g. L/100 km.<br/>* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.<br/>* Note 3: Often, the absolute value is useful only when related to driving speed ("at 80 km/h") or usage pattern ("city traffic"). You can use [[valueReference]] to link the value for the fuel consumption to another value.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public List<QuantitativeValue> getFuelConsumptionList() {
+        return fuelConsumption;
+    }
 
     /**
      * The amount of fuel consumed for traveling a particular distance or temporal duration with the given vehicle (e.g. liters per 100 km).<br/><br/>* Note 1: There are unfortunately no standard unit codes for liters per 100 km.  Use [[unitText]] to indicate the unit of measurement, e.g. L/100 km.<br/>* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.<br/>* Note 3: Often, the absolute value is useful only when related to driving speed ("at 80 km/h") or usage pattern ("city traffic"). You can use [[valueReference]] to link the value for the fuel consumption to another value.
@@ -665,7 +923,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public QuantitativeValue getFuelConsumption() {
-        return fuelConsumption;
+        return getFirst(fuelConsumption);
     }
 
     /**
@@ -675,11 +933,22 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setFuelConsumption(QuantitativeValue fuelConsumption) {
-        this.fuelConsumption = fuelConsumption;
+    public void addFuelConsumption(QuantitativeValue fuelConsumption) {
+        this.fuelConsumption = add(this.fuelConsumption, fuelConsumption);
     }
 
-    private Text vehicleInteriorColor;
+    private List<Text> vehicleInteriorColor;
+
+    /**
+     * The color or color combination of the interior of the vehicle.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public List<Text> getVehicleInteriorColorList() {
+        return vehicleInteriorColor;
+    }
 
     /**
      * The color or color combination of the interior of the vehicle.
@@ -689,7 +958,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getVehicleInteriorColor() {
-        return vehicleInteriorColor;
+        return getFirst(vehicleInteriorColor);
     }
 
     /**
@@ -699,11 +968,23 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setVehicleInteriorColor(Text vehicleInteriorColor) {
-        this.vehicleInteriorColor = vehicleInteriorColor;
+    public void addVehicleInteriorColor(Text vehicleInteriorColor) {
+        this.vehicleInteriorColor = add(this.vehicleInteriorColor, vehicleInteriorColor);
     }
 
-    private Object numberOfAxles;
+    @JsonLdFieldTypes({ Number.class, QuantitativeValue.class })
+    private List<Object> numberOfAxles;
+
+    /**
+     * The number of axles.<br/><br/>Typical unit code(s): C62
+     *
+     * @return {@link Number} or {@link QuantitativeValue}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public <T> List<T> getNumberOfAxlesList() {
+        return (List<T>) numberOfAxles;
+    }
 
     /**
      * The number of axles.<br/><br/>Typical unit code(s): C62
@@ -713,7 +994,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getNumberOfAxles() {
-        return (T) numberOfAxles;
+        return (T) getFirst(numberOfAxles);
     }
 
     /**
@@ -723,8 +1004,8 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setNumberOfAxles(Number numberOfAxles) {
-        this.numberOfAxles = numberOfAxles;
+    public void addNumberOfAxles(Number numberOfAxles) {
+        this.numberOfAxles = add(this.numberOfAxles, numberOfAxles);
     }
     /**
      * The number of axles.<br/><br/>Typical unit code(s): C62
@@ -733,11 +1014,23 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setNumberOfAxles(QuantitativeValue numberOfAxles) {
-        this.numberOfAxles = numberOfAxles;
+    public void addNumberOfAxles(QuantitativeValue numberOfAxles) {
+        this.numberOfAxles = add(this.numberOfAxles, numberOfAxles);
     }
 
-    private Date modelDate;
+    private List<Date> modelDate;
+
+    /**
+     * The release date of a vehicle model (often used to differentiate versions of the same make and model).
+     *
+     * @return {@link Date}
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public List<Date> getModelDateList() {
+        return modelDate;
+    }
 
     /**
      * The release date of a vehicle model (often used to differentiate versions of the same make and model).
@@ -748,7 +1041,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Date getModelDate() {
-        return modelDate;
+        return getFirst(modelDate);
     }
 
     /**
@@ -759,11 +1052,23 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setModelDate(Date modelDate) {
-        this.modelDate = modelDate;
+    public void addModelDate(Date modelDate) {
+        this.modelDate = add(this.modelDate, modelDate);
     }
 
-    private Object numberOfDoors;
+    @JsonLdFieldTypes({ QuantitativeValue.class, Number.class })
+    private List<Object> numberOfDoors;
+
+    /**
+     * The number of doors.<br/><br/>Typical unit code(s): C62
+     *
+     * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public <T> List<T> getNumberOfDoorsList() {
+        return (List<T>) numberOfDoors;
+    }
 
     /**
      * The number of doors.<br/><br/>Typical unit code(s): C62
@@ -773,7 +1078,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getNumberOfDoors() {
-        return (T) numberOfDoors;
+        return (T) getFirst(numberOfDoors);
     }
 
     /**
@@ -783,8 +1088,8 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setNumberOfDoors(QuantitativeValue numberOfDoors) {
-        this.numberOfDoors = numberOfDoors;
+    public void addNumberOfDoors(QuantitativeValue numberOfDoors) {
+        this.numberOfDoors = add(this.numberOfDoors, numberOfDoors);
     }
     /**
      * The number of doors.<br/><br/>Typical unit code(s): C62
@@ -793,11 +1098,23 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setNumberOfDoors(Number numberOfDoors) {
-        this.numberOfDoors = numberOfDoors;
+    public void addNumberOfDoors(Number numberOfDoors) {
+        this.numberOfDoors = add(this.numberOfDoors, numberOfDoors);
     }
 
-    private Object vehicleSeatingCapacity;
+    @JsonLdFieldTypes({ QuantitativeValue.class, Number.class })
+    private List<Object> vehicleSeatingCapacity;
+
+    /**
+     * The number of passengers that can be seated in the vehicle, both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>Typical unit code(s): C62 for persons.
+     *
+     * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public <T> List<T> getVehicleSeatingCapacityList() {
+        return (List<T>) vehicleSeatingCapacity;
+    }
 
     /**
      * The number of passengers that can be seated in the vehicle, both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>Typical unit code(s): C62 for persons.
@@ -807,7 +1124,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getVehicleSeatingCapacity() {
-        return (T) vehicleSeatingCapacity;
+        return (T) getFirst(vehicleSeatingCapacity);
     }
 
     /**
@@ -817,8 +1134,8 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setVehicleSeatingCapacity(QuantitativeValue vehicleSeatingCapacity) {
-        this.vehicleSeatingCapacity = vehicleSeatingCapacity;
+    public void addVehicleSeatingCapacity(QuantitativeValue vehicleSeatingCapacity) {
+        this.vehicleSeatingCapacity = add(this.vehicleSeatingCapacity, vehicleSeatingCapacity);
     }
     /**
      * The number of passengers that can be seated in the vehicle, both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>Typical unit code(s): C62 for persons.
@@ -827,11 +1144,23 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setVehicleSeatingCapacity(Number vehicleSeatingCapacity) {
-        this.vehicleSeatingCapacity = vehicleSeatingCapacity;
+    public void addVehicleSeatingCapacity(Number vehicleSeatingCapacity) {
+        this.vehicleSeatingCapacity = add(this.vehicleSeatingCapacity, vehicleSeatingCapacity);
     }
 
-    private Text callSign;
+    private List<Text> callSign;
+
+    /**
+     * A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2109">https://github.com/schemaorg/schemaorg/issues/2109</a>
+     */
+    @Override
+    public List<Text> getCallSignList() {
+        return callSign;
+    }
 
     /**
      * A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.
@@ -842,7 +1171,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getCallSign() {
-        return callSign;
+        return getFirst(callSign);
     }
 
     /**
@@ -853,11 +1182,23 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2109">https://github.com/schemaorg/schemaorg/issues/2109</a>
      */
     @Override
-    public void setCallSign(Text callSign) {
-        this.callSign = callSign;
+    public void addCallSign(Text callSign) {
+        this.callSign = add(this.callSign, callSign);
     }
 
-    private QuantitativeValue tongueWeight;
+    private List<QuantitativeValue> tongueWeight;
+
+    /**
+     * The permitted vertical load (TWR) of a trailer attached to the vehicle. Also referred to as Tongue Load Rating (TLR) or Vertical Load Rating (VLR)<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public List<QuantitativeValue> getTongueWeightList() {
+        return tongueWeight;
+    }
 
     /**
      * The permitted vertical load (TWR) of a trailer attached to the vehicle. Also referred to as Tongue Load Rating (TLR) or Vertical Load Rating (VLR)<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
@@ -868,7 +1209,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public QuantitativeValue getTongueWeight() {
-        return tongueWeight;
+        return getFirst(tongueWeight);
     }
 
     /**
@@ -879,11 +1220,22 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setTongueWeight(QuantitativeValue tongueWeight) {
-        this.tongueWeight = tongueWeight;
+    public void addTongueWeight(QuantitativeValue tongueWeight) {
+        this.tongueWeight = add(this.tongueWeight, tongueWeight);
     }
 
-    private QuantitativeValue fuelEfficiency;
+    private List<QuantitativeValue> fuelEfficiency;
+
+    /**
+     * The distance traveled per unit of fuel used; most commonly miles per gallon (mpg) or kilometers per liter (km/L).<br/><br/>* Note 1: There are unfortunately no standard unit codes for miles per gallon or kilometers per liter. Use [[unitText]] to indicate the unit of measurement, e.g. mpg or km/L.<br/>* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.<br/>* Note 3: Often, the absolute value is useful only when related to driving speed ("at 80 km/h") or usage pattern ("city traffic"). You can use [[valueReference]] to link the value for the fuel economy to another value.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public List<QuantitativeValue> getFuelEfficiencyList() {
+        return fuelEfficiency;
+    }
 
     /**
      * The distance traveled per unit of fuel used; most commonly miles per gallon (mpg) or kilometers per liter (km/L).<br/><br/>* Note 1: There are unfortunately no standard unit codes for miles per gallon or kilometers per liter. Use [[unitText]] to indicate the unit of measurement, e.g. mpg or km/L.<br/>* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.<br/>* Note 3: Often, the absolute value is useful only when related to driving speed ("at 80 km/h") or usage pattern ("city traffic"). You can use [[valueReference]] to link the value for the fuel economy to another value.
@@ -893,7 +1245,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public QuantitativeValue getFuelEfficiency() {
-        return fuelEfficiency;
+        return getFirst(fuelEfficiency);
     }
 
     /**
@@ -903,11 +1255,22 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setFuelEfficiency(QuantitativeValue fuelEfficiency) {
-        this.fuelEfficiency = fuelEfficiency;
+    public void addFuelEfficiency(QuantitativeValue fuelEfficiency) {
+        this.fuelEfficiency = add(this.fuelEfficiency, fuelEfficiency);
     }
 
-    private Date vehicleModelDate;
+    private List<Date> vehicleModelDate;
+
+    /**
+     * The release date of a vehicle model (often used to differentiate versions of the same make and model).
+     *
+     * @return {@link Date}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public List<Date> getVehicleModelDateList() {
+        return vehicleModelDate;
+    }
 
     /**
      * The release date of a vehicle model (often used to differentiate versions of the same make and model).
@@ -917,7 +1280,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Date getVehicleModelDate() {
-        return vehicleModelDate;
+        return getFirst(vehicleModelDate);
     }
 
     /**
@@ -927,11 +1290,22 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setVehicleModelDate(Date vehicleModelDate) {
-        this.vehicleModelDate = vehicleModelDate;
+    public void addVehicleModelDate(Date vehicleModelDate) {
+        this.vehicleModelDate = add(this.vehicleModelDate, vehicleModelDate);
     }
 
-    private Text vehicleConfiguration;
+    private List<Text> vehicleConfiguration;
+
+    /**
+     * A short text indicating the configuration of the vehicle, e.g. '5dr hatchback ST 2.5 MT 225 hp' or 'limited edition'.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public List<Text> getVehicleConfigurationList() {
+        return vehicleConfiguration;
+    }
 
     /**
      * A short text indicating the configuration of the vehicle, e.g. '5dr hatchback ST 2.5 MT 225 hp' or 'limited edition'.
@@ -941,7 +1315,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getVehicleConfiguration() {
-        return vehicleConfiguration;
+        return getFirst(vehicleConfiguration);
     }
 
     /**
@@ -951,11 +1325,22 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setVehicleConfiguration(Text vehicleConfiguration) {
-        this.vehicleConfiguration = vehicleConfiguration;
+    public void addVehicleConfiguration(Text vehicleConfiguration) {
+        this.vehicleConfiguration = add(this.vehicleConfiguration, vehicleConfiguration);
     }
 
-    private QuantitativeValue mileageFromOdometer;
+    private List<QuantitativeValue> mileageFromOdometer;
+
+    /**
+     * The total distance travelled by the particular vehicle since its initial production, as read from its odometer.<br/><br/>Typical unit code(s): KMT for kilometers, SMI for statute miles
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public List<QuantitativeValue> getMileageFromOdometerList() {
+        return mileageFromOdometer;
+    }
 
     /**
      * The total distance travelled by the particular vehicle since its initial production, as read from its odometer.<br/><br/>Typical unit code(s): KMT for kilometers, SMI for statute miles
@@ -965,7 +1350,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public QuantitativeValue getMileageFromOdometer() {
-        return mileageFromOdometer;
+        return getFirst(mileageFromOdometer);
     }
 
     /**
@@ -975,11 +1360,24 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setMileageFromOdometer(QuantitativeValue mileageFromOdometer) {
-        this.mileageFromOdometer = mileageFromOdometer;
+    public void addMileageFromOdometer(QuantitativeValue mileageFromOdometer) {
+        this.mileageFromOdometer = add(this.mileageFromOdometer, mileageFromOdometer);
     }
 
-    private Object seatingCapacity;
+    @JsonLdFieldTypes({ QuantitativeValue.class, Number.class })
+    private List<Object> seatingCapacity;
+
+    /**
+     * The number of persons that can be seated (e.g. in a vehicle), both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>Typical unit code(s): C62 for persons 
+     *
+     * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public <T> List<T> getSeatingCapacityList() {
+        return (List<T>) seatingCapacity;
+    }
 
     /**
      * The number of persons that can be seated (e.g. in a vehicle), both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>Typical unit code(s): C62 for persons 
@@ -990,7 +1388,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getSeatingCapacity() {
-        return (T) seatingCapacity;
+        return (T) getFirst(seatingCapacity);
     }
 
     /**
@@ -1001,8 +1399,8 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setSeatingCapacity(QuantitativeValue seatingCapacity) {
-        this.seatingCapacity = seatingCapacity;
+    public void addSeatingCapacity(QuantitativeValue seatingCapacity) {
+        this.seatingCapacity = add(this.seatingCapacity, seatingCapacity);
     }
     /**
      * The number of persons that can be seated (e.g. in a vehicle), both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>Typical unit code(s): C62 for persons 
@@ -1012,11 +1410,24 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setSeatingCapacity(Number seatingCapacity) {
-        this.seatingCapacity = seatingCapacity;
+    public void addSeatingCapacity(Number seatingCapacity) {
+        this.seatingCapacity = add(this.seatingCapacity, seatingCapacity);
     }
 
-    private Object bodyType;
+    @JsonLdFieldTypes({ QualitativeValue.class, Text.class, URL.class })
+    private List<Object> bodyType;
+
+    /**
+     * Indicates the design and body style of the vehicle (e.g. station wagon, hatchback, etc.).
+     *
+     * @return {@link QualitativeValue} or {@link Text} or {@link URL}
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public <T> List<T> getBodyTypeList() {
+        return (List<T>) bodyType;
+    }
 
     /**
      * Indicates the design and body style of the vehicle (e.g. station wagon, hatchback, etc.).
@@ -1027,7 +1438,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getBodyType() {
-        return (T) bodyType;
+        return (T) getFirst(bodyType);
     }
 
     /**
@@ -1038,8 +1449,8 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setBodyType(QualitativeValue bodyType) {
-        this.bodyType = bodyType;
+    public void addBodyType(QualitativeValue bodyType) {
+        this.bodyType = add(this.bodyType, bodyType);
     }
     /**
      * Indicates the design and body style of the vehicle (e.g. station wagon, hatchback, etc.).
@@ -1049,8 +1460,8 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setBodyType(Text bodyType) {
-        this.bodyType = bodyType;
+    public void addBodyType(Text bodyType) {
+        this.bodyType = add(this.bodyType, bodyType);
     }
     /**
      * Indicates the design and body style of the vehicle (e.g. station wagon, hatchback, etc.).
@@ -1060,11 +1471,22 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setBodyType(URL bodyType) {
-        this.bodyType = bodyType;
+    public void addBodyType(URL bodyType) {
+        this.bodyType = add(this.bodyType, bodyType);
     }
 
-    private Date dateVehicleFirstRegistered;
+    private List<Date> dateVehicleFirstRegistered;
+
+    /**
+     * The date of the first registration of the vehicle with the respective public authorities.
+     *
+     * @return {@link Date}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public List<Date> getDateVehicleFirstRegisteredList() {
+        return dateVehicleFirstRegistered;
+    }
 
     /**
      * The date of the first registration of the vehicle with the respective public authorities.
@@ -1074,7 +1496,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Date getDateVehicleFirstRegistered() {
-        return dateVehicleFirstRegistered;
+        return getFirst(dateVehicleFirstRegistered);
     }
 
     /**
@@ -1084,11 +1506,22 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setDateVehicleFirstRegistered(Date dateVehicleFirstRegistered) {
-        this.dateVehicleFirstRegistered = dateVehicleFirstRegistered;
+    public void addDateVehicleFirstRegistered(Date dateVehicleFirstRegistered) {
+        this.dateVehicleFirstRegistered = add(this.dateVehicleFirstRegistered, dateVehicleFirstRegistered);
     }
 
-    private Text vehicleIdentificationNumber;
+    private List<Text> vehicleIdentificationNumber;
+
+    /**
+     * The Vehicle Identification Number (VIN) is a unique serial number used by the automotive industry to identify individual motor vehicles.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public List<Text> getVehicleIdentificationNumberList() {
+        return vehicleIdentificationNumber;
+    }
 
     /**
      * The Vehicle Identification Number (VIN) is a unique serial number used by the automotive industry to identify individual motor vehicles.
@@ -1098,7 +1531,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getVehicleIdentificationNumber() {
-        return vehicleIdentificationNumber;
+        return getFirst(vehicleIdentificationNumber);
     }
 
     /**
@@ -1108,11 +1541,24 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setVehicleIdentificationNumber(Text vehicleIdentificationNumber) {
-        this.vehicleIdentificationNumber = vehicleIdentificationNumber;
+    public void addVehicleIdentificationNumber(Text vehicleIdentificationNumber) {
+        this.vehicleIdentificationNumber = add(this.vehicleIdentificationNumber, vehicleIdentificationNumber);
     }
 
-    private Object meetsEmissionStandard;
+    @JsonLdFieldTypes({ Text.class, URL.class, QualitativeValue.class })
+    private List<Object> meetsEmissionStandard;
+
+    /**
+     * Indicates that the vehicle meets the respective emission standard.
+     *
+     * @return {@link Text} or {@link URL} or {@link QualitativeValue}
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public <T> List<T> getMeetsEmissionStandardList() {
+        return (List<T>) meetsEmissionStandard;
+    }
 
     /**
      * Indicates that the vehicle meets the respective emission standard.
@@ -1123,7 +1569,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getMeetsEmissionStandard() {
-        return (T) meetsEmissionStandard;
+        return (T) getFirst(meetsEmissionStandard);
     }
 
     /**
@@ -1134,8 +1580,8 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setMeetsEmissionStandard(Text meetsEmissionStandard) {
-        this.meetsEmissionStandard = meetsEmissionStandard;
+    public void addMeetsEmissionStandard(Text meetsEmissionStandard) {
+        this.meetsEmissionStandard = add(this.meetsEmissionStandard, meetsEmissionStandard);
     }
     /**
      * Indicates that the vehicle meets the respective emission standard.
@@ -1145,8 +1591,8 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setMeetsEmissionStandard(URL meetsEmissionStandard) {
-        this.meetsEmissionStandard = meetsEmissionStandard;
+    public void addMeetsEmissionStandard(URL meetsEmissionStandard) {
+        this.meetsEmissionStandard = add(this.meetsEmissionStandard, meetsEmissionStandard);
     }
     /**
      * Indicates that the vehicle meets the respective emission standard.
@@ -1156,11 +1602,24 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setMeetsEmissionStandard(QualitativeValue meetsEmissionStandard) {
-        this.meetsEmissionStandard = meetsEmissionStandard;
+    public void addMeetsEmissionStandard(QualitativeValue meetsEmissionStandard) {
+        this.meetsEmissionStandard = add(this.meetsEmissionStandard, meetsEmissionStandard);
     }
 
-    private Object vehicleSpecialUsage;
+    @JsonLdFieldTypes({ CarUsageType.class, Text.class })
+    private List<Object> vehicleSpecialUsage;
+
+    /**
+     * Indicates whether the vehicle has been used for special purposes, like commercial rental, driving school, or as a taxi. The legislation in many countries requires this information to be revealed when offering a car for sale.
+     *
+     * @return {@link CarUsageType} or {@link Text}
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
+     */
+    @Override
+    public <T> List<T> getVehicleSpecialUsageList() {
+        return (List<T>) vehicleSpecialUsage;
+    }
 
     /**
      * Indicates whether the vehicle has been used for special purposes, like commercial rental, driving school, or as a taxi. The legislation in many countries requires this information to be revealed when offering a car for sale.
@@ -1171,7 +1630,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getVehicleSpecialUsage() {
-        return (T) vehicleSpecialUsage;
+        return (T) getFirst(vehicleSpecialUsage);
     }
 
     /**
@@ -1182,8 +1641,8 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setVehicleSpecialUsage(CarUsageType vehicleSpecialUsage) {
-        this.vehicleSpecialUsage = vehicleSpecialUsage;
+    public void addVehicleSpecialUsage(CarUsageType vehicleSpecialUsage) {
+        this.vehicleSpecialUsage = add(this.vehicleSpecialUsage, vehicleSpecialUsage);
     }
     /**
      * Indicates whether the vehicle has been used for special purposes, like commercial rental, driving school, or as a taxi. The legislation in many countries requires this information to be revealed when offering a car for sale.
@@ -1193,11 +1652,22 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group</a>
      */
     @Override
-    public void setVehicleSpecialUsage(Text vehicleSpecialUsage) {
-        this.vehicleSpecialUsage = vehicleSpecialUsage;
+    public void addVehicleSpecialUsage(Text vehicleSpecialUsage) {
+        this.vehicleSpecialUsage = add(this.vehicleSpecialUsage, vehicleSpecialUsage);
     }
 
-    private Product isAccessoryOrSparePartFor;
+    private List<Product> isAccessoryOrSparePartFor;
+
+    /**
+     * A pointer to another product (or multiple products) for which this product is an accessory or spare part.
+     *
+     * @return {@link Product}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<Product> getIsAccessoryOrSparePartForList() {
+        return isAccessoryOrSparePartFor;
+    }
 
     /**
      * A pointer to another product (or multiple products) for which this product is an accessory or spare part.
@@ -1207,7 +1677,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Product getIsAccessoryOrSparePartFor() {
-        return isAccessoryOrSparePartFor;
+        return getFirst(isAccessoryOrSparePartFor);
     }
 
     /**
@@ -1217,11 +1687,23 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setIsAccessoryOrSparePartFor(Product isAccessoryOrSparePartFor) {
-        this.isAccessoryOrSparePartFor = isAccessoryOrSparePartFor;
+    public void addIsAccessoryOrSparePartFor(Product isAccessoryOrSparePartFor) {
+        this.isAccessoryOrSparePartFor = add(this.isAccessoryOrSparePartFor, isAccessoryOrSparePartFor);
     }
 
-    private AdultOrientedEnumeration hasAdultConsideration;
+    private List<AdultOrientedEnumeration> hasAdultConsideration;
+
+    /**
+     * Used to tag an item to be intended or suitable for consumption or use by adults only.
+     *
+     * @return {@link AdultOrientedEnumeration}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2989">https://github.com/schemaorg/schemaorg/issues/2989</a>
+     */
+    @Override
+    public List<AdultOrientedEnumeration> getHasAdultConsiderationList() {
+        return hasAdultConsideration;
+    }
 
     /**
      * Used to tag an item to be intended or suitable for consumption or use by adults only.
@@ -1232,7 +1714,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public AdultOrientedEnumeration getHasAdultConsideration() {
-        return hasAdultConsideration;
+        return getFirst(hasAdultConsideration);
     }
 
     /**
@@ -1243,11 +1725,21 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2989">https://github.com/schemaorg/schemaorg/issues/2989</a>
      */
     @Override
-    public void setHasAdultConsideration(AdultOrientedEnumeration hasAdultConsideration) {
-        this.hasAdultConsideration = hasAdultConsideration;
+    public void addHasAdultConsideration(AdultOrientedEnumeration hasAdultConsideration) {
+        this.hasAdultConsideration = add(this.hasAdultConsideration, hasAdultConsideration);
     }
 
-    private Text gtin12;
+    private List<Text> gtin12;
+
+    /**
+     * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getGtin12List() {
+        return gtin12;
+    }
 
     /**
      * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
@@ -1256,7 +1748,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getGtin12() {
-        return gtin12;
+        return getFirst(gtin12);
     }
 
     /**
@@ -1265,11 +1757,23 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param gtin12 Text value to set.
      */
     @Override
-    public void setGtin12(Text gtin12) {
-        this.gtin12 = gtin12;
+    public void addGtin12(Text gtin12) {
+        this.gtin12 = add(this.gtin12, gtin12);
     }
 
-    private Text nsn;
+    private List<Text> nsn;
+
+    /**
+     * Indicates the [NATO stock number](https://en.wikipedia.org/wiki/NATO_Stock_Number) (nsn) of a [[Product]]. 
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2126">https://github.com/schemaorg/schemaorg/issues/2126</a>
+     */
+    @Override
+    public List<Text> getNsnList() {
+        return nsn;
+    }
 
     /**
      * Indicates the [NATO stock number](https://en.wikipedia.org/wiki/NATO_Stock_Number) (nsn) of a [[Product]]. 
@@ -1280,7 +1784,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getNsn() {
-        return nsn;
+        return getFirst(nsn);
     }
 
     /**
@@ -1291,11 +1795,22 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2126">https://github.com/schemaorg/schemaorg/issues/2126</a>
      */
     @Override
-    public void setNsn(Text nsn) {
-        this.nsn = nsn;
+    public void addNsn(Text nsn) {
+        this.nsn = add(this.nsn, nsn);
     }
 
-    private Object material;
+    @JsonLdFieldTypes({ Text.class, URL.class, Product.class })
+    private List<Object> material;
+
+    /**
+     * A material that something is made from, e.g. leather, wool, cotton, paper.
+     *
+     * @return {@link Text} or {@link URL} or {@link Product}
+     */
+    @Override
+    public <T> List<T> getMaterialList() {
+        return (List<T>) material;
+    }
 
     /**
      * A material that something is made from, e.g. leather, wool, cotton, paper.
@@ -1304,7 +1819,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getMaterial() {
-        return (T) material;
+        return (T) getFirst(material);
     }
 
     /**
@@ -1313,8 +1828,8 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param material Text value to set.
      */
     @Override
-    public void setMaterial(Text material) {
-        this.material = material;
+    public void addMaterial(Text material) {
+        this.material = add(this.material, material);
     }
     /**
      * A material that something is made from, e.g. leather, wool, cotton, paper.
@@ -1322,8 +1837,8 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param material URL value to set.
      */
     @Override
-    public void setMaterial(URL material) {
-        this.material = material;
+    public void addMaterial(URL material) {
+        this.material = add(this.material, material);
     }
     /**
      * A material that something is made from, e.g. leather, wool, cotton, paper.
@@ -1331,11 +1846,21 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param material Product value to set.
      */
     @Override
-    public void setMaterial(Product material) {
-        this.material = material;
+    public void addMaterial(Product material) {
+        this.material = add(this.material, material);
     }
 
-    private Review review;
+    private List<Review> review;
+
+    /**
+     * A review of the item.
+     *
+     * @return {@link Review}
+     */
+    @Override
+    public List<Review> getReviewList() {
+        return review;
+    }
 
     /**
      * A review of the item.
@@ -1344,7 +1869,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Review getReview() {
-        return review;
+        return getFirst(review);
     }
 
     /**
@@ -1353,11 +1878,21 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param review Review value to set.
      */
     @Override
-    public void setReview(Review review) {
-        this.review = review;
+    public void addReview(Review review) {
+        this.review = add(this.review, review);
     }
 
-    private Text award;
+    private List<Text> award;
+
+    /**
+     * An award won by or for this item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getAwardList() {
+        return award;
+    }
 
     /**
      * An award won by or for this item.
@@ -1366,7 +1901,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getAward() {
-        return award;
+        return getFirst(award);
     }
 
     /**
@@ -1375,11 +1910,22 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param award Text value to set.
      */
     @Override
-    public void setAward(Text award) {
-        this.award = award;
+    public void addAward(Text award) {
+        this.award = add(this.award, award);
     }
 
-    private Object width;
+    @JsonLdFieldTypes({ QuantitativeValue.class, Distance.class })
+    private List<Object> width;
+
+    /**
+     * The width of the item.
+     *
+     * @return {@link QuantitativeValue} or {@link Distance}
+     */
+    @Override
+    public <T> List<T> getWidthList() {
+        return (List<T>) width;
+    }
 
     /**
      * The width of the item.
@@ -1388,7 +1934,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getWidth() {
-        return (T) width;
+        return (T) getFirst(width);
     }
 
     /**
@@ -1397,8 +1943,8 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param width QuantitativeValue value to set.
      */
     @Override
-    public void setWidth(QuantitativeValue width) {
-        this.width = width;
+    public void addWidth(QuantitativeValue width) {
+        this.width = add(this.width, width);
     }
     /**
      * The width of the item.
@@ -1406,11 +1952,25 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param width Distance value to set.
      */
     @Override
-    public void setWidth(Distance width) {
-        this.width = width;
+    public void addWidth(Distance width) {
+        this.width = add(this.width, width);
     }
 
-    private Country countryOfOrigin;
+    private List<Country> countryOfOrigin;
+
+    /**
+     * The country of origin of something, including products as well as creative  works such as movie and TV content.
+     * 
+     * In the case of TV and movie, this would be the country of the principle offices of the production company or individual responsible for the movie. For other kinds of [[CreativeWork]] it is difficult to provide fully general guidance, and properties such as [[contentLocation]] and [[locationCreated]] may be more applicable.
+     * 
+     * In the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.
+     *
+     * @return {@link Country}
+     */
+    @Override
+    public List<Country> getCountryOfOriginList() {
+        return countryOfOrigin;
+    }
 
     /**
      * The country of origin of something, including products as well as creative  works such as movie and TV content.
@@ -1423,7 +1983,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Country getCountryOfOrigin() {
-        return countryOfOrigin;
+        return getFirst(countryOfOrigin);
     }
 
     /**
@@ -1436,11 +1996,24 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param countryOfOrigin Country value to set.
      */
     @Override
-    public void setCountryOfOrigin(Country countryOfOrigin) {
-        this.countryOfOrigin = countryOfOrigin;
+    public void addCountryOfOrigin(Country countryOfOrigin) {
+        this.countryOfOrigin = add(this.countryOfOrigin, countryOfOrigin);
     }
 
-    private Object pattern;
+    @JsonLdFieldTypes({ DefinedTerm.class, Text.class })
+    private List<Object> pattern;
+
+    /**
+     * A pattern that something has, for example 'polka dot', 'striped', 'Canadian flag'. Values are typically expressed as text, although links to controlled value schemes are also supported.
+     *
+     * @return {@link DefinedTerm} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     */
+    @Override
+    public <T> List<T> getPatternList() {
+        return (List<T>) pattern;
+    }
 
     /**
      * A pattern that something has, for example 'polka dot', 'striped', 'Canadian flag'. Values are typically expressed as text, although links to controlled value schemes are also supported.
@@ -1451,7 +2024,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getPattern() {
-        return (T) pattern;
+        return (T) getFirst(pattern);
     }
 
     /**
@@ -1462,8 +2035,8 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
     @Override
-    public void setPattern(DefinedTerm pattern) {
-        this.pattern = pattern;
+    public void addPattern(DefinedTerm pattern) {
+        this.pattern = add(this.pattern, pattern);
     }
     /**
      * A pattern that something has, for example 'polka dot', 'striped', 'Canadian flag'. Values are typically expressed as text, although links to controlled value schemes are also supported.
@@ -1473,11 +2046,24 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
     @Override
-    public void setPattern(Text pattern) {
-        this.pattern = pattern;
+    public void addPattern(Text pattern) {
+        this.pattern = add(this.pattern, pattern);
     }
 
-    private Object category;
+    @JsonLdFieldTypes({ URL.class, Text.class, PhysicalActivityCategory.class, Thing.class, CategoryCode.class })
+    private List<Object> category;
+
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @return {@link URL} or {@link Text} or {@link PhysicalActivityCategory} or {@link Thing} or {@link CategoryCode}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    @Override
+    public <T> List<T> getCategoryList() {
+        return (List<T>) category;
+    }
 
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
@@ -1488,7 +2074,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getCategory() {
-        return (T) category;
+        return (T) getFirst(category);
     }
 
     /**
@@ -1499,8 +2085,8 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
     @Override
-    public void setCategory(URL category) {
-        this.category = category;
+    public void addCategory(URL category) {
+        this.category = add(this.category, category);
     }
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
@@ -1510,8 +2096,8 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
     @Override
-    public void setCategory(Text category) {
-        this.category = category;
+    public void addCategory(Text category) {
+        this.category = add(this.category, category);
     }
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
@@ -1521,8 +2107,8 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
     @Override
-    public void setCategory(PhysicalActivityCategory category) {
-        this.category = category;
+    public void addCategory(PhysicalActivityCategory category) {
+        this.category = add(this.category, category);
     }
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
@@ -1532,8 +2118,8 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
     @Override
-    public void setCategory(Thing category) {
-        this.category = category;
+    public void addCategory(Thing category) {
+        this.category = add(this.category, category);
     }
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
@@ -1543,11 +2129,24 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
     @Override
-    public void setCategory(CategoryCode category) {
-        this.category = category;
+    public void addCategory(CategoryCode category) {
+        this.category = add(this.category, category);
     }
 
-    private Grant funding;
+    private List<Grant> funding;
+
+    /**
+     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
+     *
+     * @return {@link Grant}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    @Override
+    public List<Grant> getFundingList() {
+        return funding;
+    }
 
     /**
      * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
@@ -1559,7 +2158,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Grant getFunding() {
-        return funding;
+        return getFirst(funding);
     }
 
     /**
@@ -1571,11 +2170,22 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
     @Override
-    public void setFunding(Grant funding) {
-        this.funding = funding;
+    public void addFunding(Grant funding) {
+        this.funding = add(this.funding, funding);
     }
 
-    private Text mpn;
+    private List<Text> mpn;
+
+    /**
+     * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<Text> getMpnList() {
+        return mpn;
+    }
 
     /**
      * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
@@ -1585,7 +2195,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getMpn() {
-        return mpn;
+        return getFirst(mpn);
     }
 
     /**
@@ -1595,11 +2205,22 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setMpn(Text mpn) {
-        this.mpn = mpn;
+    public void addMpn(Text mpn) {
+        this.mpn = add(this.mpn, mpn);
     }
 
-    private Object height;
+    @JsonLdFieldTypes({ Distance.class, QuantitativeValue.class })
+    private List<Object> height;
+
+    /**
+     * The height of the item.
+     *
+     * @return {@link Distance} or {@link QuantitativeValue}
+     */
+    @Override
+    public <T> List<T> getHeightList() {
+        return (List<T>) height;
+    }
 
     /**
      * The height of the item.
@@ -1608,7 +2229,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getHeight() {
-        return (T) height;
+        return (T) getFirst(height);
     }
 
     /**
@@ -1617,8 +2238,8 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param height Distance value to set.
      */
     @Override
-    public void setHeight(Distance height) {
-        this.height = height;
+    public void addHeight(Distance height) {
+        this.height = add(this.height, height);
     }
     /**
      * The height of the item.
@@ -1626,11 +2247,22 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param height QuantitativeValue value to set.
      */
     @Override
-    public void setHeight(QuantitativeValue height) {
-        this.height = height;
+    public void addHeight(QuantitativeValue height) {
+        this.height = add(this.height, height);
     }
 
-    private Object keywords;
+    @JsonLdFieldTypes({ DefinedTerm.class, Text.class, URL.class })
+    private List<Object> keywords;
+
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     * @return {@link DefinedTerm} or {@link Text} or {@link URL}
+     */
+    @Override
+    public <T> List<T> getKeywordsList() {
+        return (List<T>) keywords;
+    }
 
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
@@ -1639,7 +2271,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getKeywords() {
-        return (T) keywords;
+        return (T) getFirst(keywords);
     }
 
     /**
@@ -1648,8 +2280,8 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param keywords DefinedTerm value to set.
      */
     @Override
-    public void setKeywords(DefinedTerm keywords) {
-        this.keywords = keywords;
+    public void addKeywords(DefinedTerm keywords) {
+        this.keywords = add(this.keywords, keywords);
     }
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
@@ -1657,8 +2289,8 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param keywords Text value to set.
      */
     @Override
-    public void setKeywords(Text keywords) {
-        this.keywords = keywords;
+    public void addKeywords(Text keywords) {
+        this.keywords = add(this.keywords, keywords);
     }
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
@@ -1666,11 +2298,23 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param keywords URL value to set.
      */
     @Override
-    public void setKeywords(URL keywords) {
-        this.keywords = keywords;
+    public void addKeywords(URL keywords) {
+        this.keywords = add(this.keywords, keywords);
     }
 
-    private EnergyConsumptionDetails hasEnergyConsumptionDetails;
+    private List<EnergyConsumptionDetails> hasEnergyConsumptionDetails;
+
+    /**
+     * Defines the energy efficiency Category (also known as "class" or "rating") for a product according to an international energy efficiency standard.
+     *
+     * @return {@link EnergyConsumptionDetails}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2670">https://github.com/schemaorg/schemaorg/issues/2670</a>
+     */
+    @Override
+    public List<EnergyConsumptionDetails> getHasEnergyConsumptionDetailsList() {
+        return hasEnergyConsumptionDetails;
+    }
 
     /**
      * Defines the energy efficiency Category (also known as "class" or "rating") for a product according to an international energy efficiency standard.
@@ -1681,7 +2325,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public EnergyConsumptionDetails getHasEnergyConsumptionDetails() {
-        return hasEnergyConsumptionDetails;
+        return getFirst(hasEnergyConsumptionDetails);
     }
 
     /**
@@ -1692,11 +2336,21 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2670">https://github.com/schemaorg/schemaorg/issues/2670</a>
      */
     @Override
-    public void setHasEnergyConsumptionDetails(EnergyConsumptionDetails hasEnergyConsumptionDetails) {
-        this.hasEnergyConsumptionDetails = hasEnergyConsumptionDetails;
+    public void addHasEnergyConsumptionDetails(EnergyConsumptionDetails hasEnergyConsumptionDetails) {
+        this.hasEnergyConsumptionDetails = add(this.hasEnergyConsumptionDetails, hasEnergyConsumptionDetails);
     }
 
-    private Audience audience;
+    private List<Audience> audience;
+
+    /**
+     * An intended audience, i.e. a group for whom something was created.
+     *
+     * @return {@link Audience}
+     */
+    @Override
+    public List<Audience> getAudienceList() {
+        return audience;
+    }
 
     /**
      * An intended audience, i.e. a group for whom something was created.
@@ -1705,7 +2359,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Audience getAudience() {
-        return audience;
+        return getFirst(audience);
     }
 
     /**
@@ -1714,11 +2368,24 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param audience Audience value to set.
      */
     @Override
-    public void setAudience(Audience audience) {
-        this.audience = audience;
+    public void addAudience(Audience audience) {
+        this.audience = add(this.audience, audience);
     }
 
-    private Object offers;
+    @JsonLdFieldTypes({ Offer.class, Demand.class })
+    private List<Object> offers;
+
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     *
+     * @return {@link Offer} or {@link Demand}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public <T> List<T> getOffersList() {
+        return (List<T>) offers;
+    }
 
     /**
      * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
@@ -1729,7 +2396,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getOffers() {
-        return (T) offers;
+        return (T) getFirst(offers);
     }
 
     /**
@@ -1740,8 +2407,8 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
     @Override
-    public void setOffers(Offer offers) {
-        this.offers = offers;
+    public void addOffers(Offer offers) {
+        this.offers = add(this.offers, offers);
     }
     /**
      * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
@@ -1751,11 +2418,21 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
     @Override
-    public void setOffers(Demand offers) {
-        this.offers = offers;
+    public void addOffers(Demand offers) {
+        this.offers = add(this.offers, offers);
     }
 
-    private OfferItemCondition itemCondition;
+    private List<OfferItemCondition> itemCondition;
+
+    /**
+     * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
+     *
+     * @return {@link OfferItemCondition}
+     */
+    @Override
+    public List<OfferItemCondition> getItemConditionList() {
+        return itemCondition;
+    }
 
     /**
      * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
@@ -1764,7 +2441,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public OfferItemCondition getItemCondition() {
-        return itemCondition;
+        return getFirst(itemCondition);
     }
 
     /**
@@ -1773,11 +2450,21 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param itemCondition OfferItemCondition value to set.
      */
     @Override
-    public void setItemCondition(OfferItemCondition itemCondition) {
-        this.itemCondition = itemCondition;
+    public void addItemCondition(OfferItemCondition itemCondition) {
+        this.itemCondition = add(this.itemCondition, itemCondition);
     }
 
-    private Text awards;
+    private List<Text> awards;
+
+    /**
+     * Awards won by or for this item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getAwardsList() {
+        return awards;
+    }
 
     /**
      * Awards won by or for this item.
@@ -1786,7 +2473,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getAwards() {
-        return awards;
+        return getFirst(awards);
     }
 
     /**
@@ -1795,11 +2482,24 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param awards Text value to set.
      */
     @Override
-    public void setAwards(Text awards) {
-        this.awards = awards;
+    public void addAwards(Text awards) {
+        this.awards = add(this.awards, awards);
     }
 
-    private Text gtin;
+    private List<Text> gtin;
+
+    /**
+     * A Global Trade Item Number ([GTIN](https://www.gs1.org/standards/id-keys/gtin)). GTINs identify trade items, including products and services, using numeric identification codes. The [[gtin]] property generalizes the earlier [[gtin8]], [[gtin12]], [[gtin13]], and [[gtin14]] properties. The GS1 [digital link specifications](https://www.gs1.org/standards/Digital-Link/) express GTINs as URLs. A correct [[gtin]] value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a "GS1 Digital Link" URL based on such a string. The numeric component should also have a [valid GS1 check digit](https://www.gs1.org/services/check-digit-calculator) and meet the other rules for valid GTINs. See also [GS1's GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) and [Wikipedia](https://en.wikipedia.org/wiki/Global_Trade_Item_Number) for more details. Left-padding of the gtin values is not required or encouraged.
+     *    
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     */
+    @Override
+    public List<Text> getGtinList() {
+        return gtin;
+    }
 
     /**
      * A Global Trade Item Number ([GTIN](https://www.gs1.org/standards/id-keys/gtin)). GTINs identify trade items, including products and services, using numeric identification codes. The [[gtin]] property generalizes the earlier [[gtin8]], [[gtin12]], [[gtin13]], and [[gtin14]] properties. The GS1 [digital link specifications](https://www.gs1.org/standards/Digital-Link/) express GTINs as URLs. A correct [[gtin]] value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a "GS1 Digital Link" URL based on such a string. The numeric component should also have a [valid GS1 check digit](https://www.gs1.org/services/check-digit-calculator) and meet the other rules for valid GTINs. See also [GS1's GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) and [Wikipedia](https://en.wikipedia.org/wiki/Global_Trade_Item_Number) for more details. Left-padding of the gtin values is not required or encouraged.
@@ -1811,7 +2511,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getGtin() {
-        return gtin;
+        return getFirst(gtin);
     }
 
     /**
@@ -1823,11 +2523,21 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
      */
     @Override
-    public void setGtin(Text gtin) {
-        this.gtin = gtin;
+    public void addGtin(Text gtin) {
+        this.gtin = add(this.gtin, gtin);
     }
 
-    private Text productID;
+    private List<Text> productID;
+
+    /**
+     * The product identifier, such as ISBN. For example: ``` meta itemprop="productID" content="isbn:123-456-789" ```.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getProductIDList() {
+        return productID;
+    }
 
     /**
      * The product identifier, such as ISBN. For example: ``` meta itemprop="productID" content="isbn:123-456-789" ```.
@@ -1836,7 +2546,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getProductID() {
-        return productID;
+        return getFirst(productID);
     }
 
     /**
@@ -1845,11 +2555,23 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param productID Text value to set.
      */
     @Override
-    public void setProductID(Text productID) {
-        this.productID = productID;
+    public void addProductID(Text productID) {
+        this.productID = add(this.productID, productID);
     }
 
-    private Text countryOfAssembly;
+    private List<Text> countryOfAssembly;
+
+    /**
+     * The place where the product was assembled.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/991">https://github.com/schemaorg/schemaorg/issues/991</a>
+     */
+    @Override
+    public List<Text> getCountryOfAssemblyList() {
+        return countryOfAssembly;
+    }
 
     /**
      * The place where the product was assembled.
@@ -1860,7 +2582,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getCountryOfAssembly() {
-        return countryOfAssembly;
+        return getFirst(countryOfAssembly);
     }
 
     /**
@@ -1871,11 +2593,22 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/991">https://github.com/schemaorg/schemaorg/issues/991</a>
      */
     @Override
-    public void setCountryOfAssembly(Text countryOfAssembly) {
-        this.countryOfAssembly = countryOfAssembly;
+    public void addCountryOfAssembly(Text countryOfAssembly) {
+        this.countryOfAssembly = add(this.countryOfAssembly, countryOfAssembly);
     }
 
-    private Text color;
+    private List<Text> color;
+
+    /**
+     * The color of the product.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<Text> getColorList() {
+        return color;
+    }
 
     /**
      * The color of the product.
@@ -1885,7 +2618,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getColor() {
-        return color;
+        return getFirst(color);
     }
 
     /**
@@ -1895,11 +2628,21 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setColor(Text color) {
-        this.color = color;
+    public void addColor(Text color) {
+        this.color = add(this.color, color);
     }
 
-    private AggregateRating aggregateRating;
+    private List<AggregateRating> aggregateRating;
+
+    /**
+     * The overall rating, based on a collection of reviews or ratings, of the item.
+     *
+     * @return {@link AggregateRating}
+     */
+    @Override
+    public List<AggregateRating> getAggregateRatingList() {
+        return aggregateRating;
+    }
 
     /**
      * The overall rating, based on a collection of reviews or ratings, of the item.
@@ -1908,7 +2651,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public AggregateRating getAggregateRating() {
-        return aggregateRating;
+        return getFirst(aggregateRating);
     }
 
     /**
@@ -1917,11 +2660,23 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param aggregateRating AggregateRating value to set.
      */
     @Override
-    public void setAggregateRating(AggregateRating aggregateRating) {
-        this.aggregateRating = aggregateRating;
+    public void addAggregateRating(AggregateRating aggregateRating) {
+        this.aggregateRating = add(this.aggregateRating, aggregateRating);
     }
 
-    private Object isSimilarTo;
+    @JsonLdFieldTypes({ Service.class, Product.class })
+    private List<Object> isSimilarTo;
+
+    /**
+     * A pointer to another, functionally similar product (or multiple products).
+     *
+     * @return {@link Service} or {@link Product}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public <T> List<T> getIsSimilarToList() {
+        return (List<T>) isSimilarTo;
+    }
 
     /**
      * A pointer to another, functionally similar product (or multiple products).
@@ -1931,7 +2686,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getIsSimilarTo() {
-        return (T) isSimilarTo;
+        return (T) getFirst(isSimilarTo);
     }
 
     /**
@@ -1941,8 +2696,8 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setIsSimilarTo(Service isSimilarTo) {
-        this.isSimilarTo = isSimilarTo;
+    public void addIsSimilarTo(Service isSimilarTo) {
+        this.isSimilarTo = add(this.isSimilarTo, isSimilarTo);
     }
     /**
      * A pointer to another, functionally similar product (or multiple products).
@@ -1951,11 +2706,23 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setIsSimilarTo(Product isSimilarTo) {
-        this.isSimilarTo = isSimilarTo;
+    public void addIsSimilarTo(Product isSimilarTo) {
+        this.isSimilarTo = add(this.isSimilarTo, isSimilarTo);
     }
 
-    private Object depth;
+    @JsonLdFieldTypes({ Distance.class, QuantitativeValue.class })
+    private List<Object> depth;
+
+    /**
+     * The depth of the item.
+     *
+     * @return {@link Distance} or {@link QuantitativeValue}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public <T> List<T> getDepthList() {
+        return (List<T>) depth;
+    }
 
     /**
      * The depth of the item.
@@ -1965,7 +2732,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getDepth() {
-        return (T) depth;
+        return (T) getFirst(depth);
     }
 
     /**
@@ -1975,8 +2742,8 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setDepth(Distance depth) {
-        this.depth = depth;
+    public void addDepth(Distance depth) {
+        this.depth = add(this.depth, depth);
     }
     /**
      * The depth of the item.
@@ -1985,11 +2752,23 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setDepth(QuantitativeValue depth) {
-        this.depth = depth;
+    public void addDepth(QuantitativeValue depth) {
+        this.depth = add(this.depth, depth);
     }
 
-    private Text countryOfLastProcessing;
+    private List<Text> countryOfLastProcessing;
+
+    /**
+     * The place where the item (typically [[Product]]) was last processed and tested before importation.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/991">https://github.com/schemaorg/schemaorg/issues/991</a>
+     */
+    @Override
+    public List<Text> getCountryOfLastProcessingList() {
+        return countryOfLastProcessing;
+    }
 
     /**
      * The place where the item (typically [[Product]]) was last processed and tested before importation.
@@ -2000,7 +2779,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getCountryOfLastProcessing() {
-        return countryOfLastProcessing;
+        return getFirst(countryOfLastProcessing);
     }
 
     /**
@@ -2011,11 +2790,23 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/991">https://github.com/schemaorg/schemaorg/issues/991</a>
      */
     @Override
-    public void setCountryOfLastProcessing(Text countryOfLastProcessing) {
-        this.countryOfLastProcessing = countryOfLastProcessing;
+    public void addCountryOfLastProcessing(Text countryOfLastProcessing) {
+        this.countryOfLastProcessing = add(this.countryOfLastProcessing, countryOfLastProcessing);
     }
 
-    private Object isVariantOf;
+    @JsonLdFieldTypes({ ProductModel.class, ProductGroup.class })
+    private List<Object> isVariantOf;
+
+    /**
+     * Indicates the kind of product that this is a variant of. In the case of [[ProductModel]], this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a [[ProductGroup]], the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with [[ProductGroup]], this property can apply to any [[Product]] included in the group.
+     *
+     * @return {@link ProductModel} or {@link ProductGroup}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public <T> List<T> getIsVariantOfList() {
+        return (List<T>) isVariantOf;
+    }
 
     /**
      * Indicates the kind of product that this is a variant of. In the case of [[ProductModel]], this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a [[ProductGroup]], the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with [[ProductGroup]], this property can apply to any [[Product]] included in the group.
@@ -2025,7 +2816,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getIsVariantOf() {
-        return (T) isVariantOf;
+        return (T) getFirst(isVariantOf);
     }
 
     /**
@@ -2035,8 +2826,8 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setIsVariantOf(ProductModel isVariantOf) {
-        this.isVariantOf = isVariantOf;
+    public void addIsVariantOf(ProductModel isVariantOf) {
+        this.isVariantOf = add(this.isVariantOf, isVariantOf);
     }
     /**
      * Indicates the kind of product that this is a variant of. In the case of [[ProductModel]], this is a pointer (from a ProductModel) to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive. In the case of a [[ProductGroup]], the group description also serves as a template, representing a set of Products that vary on explicitly defined, specific dimensions only (so it defines both a set of variants, as well as which values distinguish amongst those variants). When used with [[ProductGroup]], this property can apply to any [[Product]] included in the group.
@@ -2045,11 +2836,21 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setIsVariantOf(ProductGroup isVariantOf) {
-        this.isVariantOf = isVariantOf;
+    public void addIsVariantOf(ProductGroup isVariantOf) {
+        this.isVariantOf = add(this.isVariantOf, isVariantOf);
     }
 
-    private Text slogan;
+    private List<Text> slogan;
+
+    /**
+     * A slogan or motto associated with the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getSloganList() {
+        return slogan;
+    }
 
     /**
      * A slogan or motto associated with the item.
@@ -2058,7 +2859,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getSlogan() {
-        return slogan;
+        return getFirst(slogan);
     }
 
     /**
@@ -2067,11 +2868,22 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param slogan Text value to set.
      */
     @Override
-    public void setSlogan(Text slogan) {
-        this.slogan = slogan;
+    public void addSlogan(Text slogan) {
+        this.slogan = add(this.slogan, slogan);
     }
 
-    private Object brand;
+    @JsonLdFieldTypes({ Organization.class, Brand.class })
+    private List<Object> brand;
+
+    /**
+     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     *
+     * @return {@link Organization} or {@link Brand}
+     */
+    @Override
+    public <T> List<T> getBrandList() {
+        return (List<T>) brand;
+    }
 
     /**
      * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
@@ -2080,7 +2892,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getBrand() {
-        return (T) brand;
+        return (T) getFirst(brand);
     }
 
     /**
@@ -2089,8 +2901,8 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param brand Organization value to set.
      */
     @Override
-    public void setBrand(Organization brand) {
-        this.brand = brand;
+    public void addBrand(Organization brand) {
+        this.brand = add(this.brand, brand);
     }
     /**
      * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
@@ -2098,11 +2910,21 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param brand Brand value to set.
      */
     @Override
-    public void setBrand(Brand brand) {
-        this.brand = brand;
+    public void addBrand(Brand brand) {
+        this.brand = add(this.brand, brand);
     }
 
-    private Organization manufacturer;
+    private List<Organization> manufacturer;
+
+    /**
+     * The manufacturer of the product.
+     *
+     * @return {@link Organization}
+     */
+    @Override
+    public List<Organization> getManufacturerList() {
+        return manufacturer;
+    }
 
     /**
      * The manufacturer of the product.
@@ -2111,7 +2933,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Organization getManufacturer() {
-        return manufacturer;
+        return getFirst(manufacturer);
     }
 
     /**
@@ -2120,11 +2942,23 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param manufacturer Organization value to set.
      */
     @Override
-    public void setManufacturer(Organization manufacturer) {
-        this.manufacturer = manufacturer;
+    public void addManufacturer(Organization manufacturer) {
+        this.manufacturer = add(this.manufacturer, manufacturer);
     }
 
-    private QuantitativeValue hasMeasurement;
+    private List<QuantitativeValue> hasMeasurement;
+
+    /**
+     * A product measurement, for example the inseam of pants, the wheel size of a bicycle, or the gauge of a screw. Usually an exact measurement, but can also be a range of measurements for adjustable products, for example belts and ski bindings.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
+     */
+    @Override
+    public List<QuantitativeValue> getHasMeasurementList() {
+        return hasMeasurement;
+    }
 
     /**
      * A product measurement, for example the inseam of pants, the wheel size of a bicycle, or the gauge of a screw. Usually an exact measurement, but can also be a range of measurements for adjustable products, for example belts and ski bindings.
@@ -2135,7 +2969,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public QuantitativeValue getHasMeasurement() {
-        return hasMeasurement;
+        return getFirst(hasMeasurement);
     }
 
     /**
@@ -2146,11 +2980,22 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
      */
     @Override
-    public void setHasMeasurement(QuantitativeValue hasMeasurement) {
-        this.hasMeasurement = hasMeasurement;
+    public void addHasMeasurement(QuantitativeValue hasMeasurement) {
+        this.hasMeasurement = add(this.hasMeasurement, hasMeasurement);
     }
 
-    private Product isConsumableFor;
+    private List<Product> isConsumableFor;
+
+    /**
+     * A pointer to another product (or multiple products) for which this product is a consumable.
+     *
+     * @return {@link Product}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<Product> getIsConsumableForList() {
+        return isConsumableFor;
+    }
 
     /**
      * A pointer to another product (or multiple products) for which this product is a consumable.
@@ -2160,7 +3005,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Product getIsConsumableFor() {
-        return isConsumableFor;
+        return getFirst(isConsumableFor);
     }
 
     /**
@@ -2170,11 +3015,23 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setIsConsumableFor(Product isConsumableFor) {
-        this.isConsumableFor = isConsumableFor;
+    public void addIsConsumableFor(Product isConsumableFor) {
+        this.isConsumableFor = add(this.isConsumableFor, isConsumableFor);
     }
 
-    private Object logo;
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
+    private List<Object> logo;
+
+    /**
+     * An associated logo.
+     *
+     * @return {@link URL} or {@link ImageObject}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public <T> List<T> getLogoList() {
+        return (List<T>) logo;
+    }
 
     /**
      * An associated logo.
@@ -2184,7 +3041,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getLogo() {
-        return (T) logo;
+        return (T) getFirst(logo);
     }
 
     /**
@@ -2194,8 +3051,8 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setLogo(URL logo) {
-        this.logo = logo;
+    public void addLogo(URL logo) {
+        this.logo = add(this.logo, logo);
     }
     /**
      * An associated logo.
@@ -2204,11 +3061,22 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setLogo(ImageObject logo) {
-        this.logo = logo;
+    public void addLogo(ImageObject logo) {
+        this.logo = add(this.logo, logo);
     }
 
-    private Text gtin8;
+    private List<Text> gtin8;
+
+    /**
+     * The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<Text> getGtin8List() {
+        return gtin8;
+    }
 
     /**
      * The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
@@ -2218,7 +3086,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getGtin8() {
-        return gtin8;
+        return getFirst(gtin8);
     }
 
     /**
@@ -2228,11 +3096,22 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setGtin8(Text gtin8) {
-        this.gtin8 = gtin8;
+    public void addGtin8(Text gtin8) {
+        this.gtin8 = add(this.gtin8, gtin8);
     }
 
-    private Text sku;
+    private List<Text> sku;
+
+    /**
+     * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<Text> getSkuList() {
+        return sku;
+    }
 
     /**
      * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
@@ -2242,7 +3121,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getSku() {
-        return sku;
+        return getFirst(sku);
     }
 
     /**
@@ -2252,11 +3131,23 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setSku(Text sku) {
-        this.sku = sku;
+    public void addSku(Text sku) {
+        this.sku = add(this.sku, sku);
     }
 
-    private Text inProductGroupWithID;
+    private List<Text> inProductGroupWithID;
+
+    /**
+     * Indicates the [[productGroupID]] for a [[ProductGroup]] that this product [[isVariantOf]]. 
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     */
+    @Override
+    public List<Text> getInProductGroupWithIDList() {
+        return inProductGroupWithID;
+    }
 
     /**
      * Indicates the [[productGroupID]] for a [[ProductGroup]] that this product [[isVariantOf]]. 
@@ -2267,7 +3158,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getInProductGroupWithID() {
-        return inProductGroupWithID;
+        return getFirst(inProductGroupWithID);
     }
 
     /**
@@ -2278,11 +3169,22 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
     @Override
-    public void setInProductGroupWithID(Text inProductGroupWithID) {
-        this.inProductGroupWithID = inProductGroupWithID;
+    public void addInProductGroupWithID(Text inProductGroupWithID) {
+        this.inProductGroupWithID = add(this.inProductGroupWithID, inProductGroupWithID);
     }
 
-    private Object model;
+    @JsonLdFieldTypes({ ProductModel.class, Text.class })
+    private List<Object> model;
+
+    /**
+     * The model of the product. Use with the URL of a ProductModel or a textual representation of the model identifier. The URL of the ProductModel can be from an external source. It is recommended to additionally provide strong product identifiers via the gtin8/gtin13/gtin14 and mpn properties.
+     *
+     * @return {@link ProductModel} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getModelList() {
+        return (List<T>) model;
+    }
 
     /**
      * The model of the product. Use with the URL of a ProductModel or a textual representation of the model identifier. The URL of the ProductModel can be from an external source. It is recommended to additionally provide strong product identifiers via the gtin8/gtin13/gtin14 and mpn properties.
@@ -2291,7 +3193,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getModel() {
-        return (T) model;
+        return (T) getFirst(model);
     }
 
     /**
@@ -2300,8 +3202,8 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param model ProductModel value to set.
      */
     @Override
-    public void setModel(ProductModel model) {
-        this.model = model;
+    public void addModel(ProductModel model) {
+        this.model = add(this.model, model);
     }
     /**
      * The model of the product. Use with the URL of a ProductModel or a textual representation of the model identifier. The URL of the ProductModel can be from an external source. It is recommended to additionally provide strong product identifiers via the gtin8/gtin13/gtin14 and mpn properties.
@@ -2309,11 +3211,23 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param model Text value to set.
      */
     @Override
-    public void setModel(Text model) {
-        this.model = model;
+    public void addModel(Text model) {
+        this.model = add(this.model, model);
     }
 
-    private MerchantReturnPolicy hasMerchantReturnPolicy;
+    private List<MerchantReturnPolicy> hasMerchantReturnPolicy;
+
+    /**
+     * Specifies a MerchantReturnPolicy that may be applicable.
+     *
+     * @return {@link MerchantReturnPolicy}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     */
+    @Override
+    public List<MerchantReturnPolicy> getHasMerchantReturnPolicyList() {
+        return hasMerchantReturnPolicy;
+    }
 
     /**
      * Specifies a MerchantReturnPolicy that may be applicable.
@@ -2324,7 +3238,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public MerchantReturnPolicy getHasMerchantReturnPolicy() {
-        return hasMerchantReturnPolicy;
+        return getFirst(hasMerchantReturnPolicy);
     }
 
     /**
@@ -2335,11 +3249,22 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
      */
     @Override
-    public void setHasMerchantReturnPolicy(MerchantReturnPolicy hasMerchantReturnPolicy) {
-        this.hasMerchantReturnPolicy = hasMerchantReturnPolicy;
+    public void addHasMerchantReturnPolicy(MerchantReturnPolicy hasMerchantReturnPolicy) {
+        this.hasMerchantReturnPolicy = add(this.hasMerchantReturnPolicy, hasMerchantReturnPolicy);
     }
 
-    private Date releaseDate;
+    private List<Date> releaseDate;
+
+    /**
+     * The release date of a product or product model. This can be used to distinguish the exact variant of a product.
+     *
+     * @return {@link Date}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<Date> getReleaseDateList() {
+        return releaseDate;
+    }
 
     /**
      * The release date of a product or product model. This can be used to distinguish the exact variant of a product.
@@ -2349,7 +3274,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Date getReleaseDate() {
-        return releaseDate;
+        return getFirst(releaseDate);
     }
 
     /**
@@ -2359,11 +3284,22 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setReleaseDate(Date releaseDate) {
-        this.releaseDate = releaseDate;
+    public void addReleaseDate(Date releaseDate) {
+        this.releaseDate = add(this.releaseDate, releaseDate);
     }
 
-    private Text gtin14;
+    private List<Text> gtin14;
+
+    /**
+     * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<Text> getGtin14List() {
+        return gtin14;
+    }
 
     /**
      * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
@@ -2373,7 +3309,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getGtin14() {
-        return gtin14;
+        return getFirst(gtin14);
     }
 
     /**
@@ -2383,11 +3319,22 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setGtin14(Text gtin14) {
-        this.gtin14 = gtin14;
+    public void addGtin14(Text gtin14) {
+        this.gtin14 = add(this.gtin14, gtin14);
     }
 
-    private QuantitativeValue weight;
+    private List<QuantitativeValue> weight;
+
+    /**
+     * The weight of the product or person.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<QuantitativeValue> getWeightList() {
+        return weight;
+    }
 
     /**
      * The weight of the product or person.
@@ -2397,7 +3344,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public QuantitativeValue getWeight() {
-        return weight;
+        return getFirst(weight);
     }
 
     /**
@@ -2407,11 +3354,24 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setWeight(QuantitativeValue weight) {
-        this.weight = weight;
+    public void addWeight(QuantitativeValue weight) {
+        this.weight = add(this.weight, weight);
     }
 
-    private Object size;
+    @JsonLdFieldTypes({ QuantitativeValue.class, DefinedTerm.class, Text.class, SizeSpecification.class })
+    private List<Object> size;
+
+    /**
+     * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
+     *
+     * @return {@link QuantitativeValue} or {@link DefinedTerm} or {@link Text} or {@link SizeSpecification}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     */
+    @Override
+    public <T> List<T> getSizeList() {
+        return (List<T>) size;
+    }
 
     /**
      * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
@@ -2422,7 +3382,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getSize() {
-        return (T) size;
+        return (T) getFirst(size);
     }
 
     /**
@@ -2433,8 +3393,8 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
     @Override
-    public void setSize(QuantitativeValue size) {
-        this.size = size;
+    public void addSize(QuantitativeValue size) {
+        this.size = add(this.size, size);
     }
     /**
      * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
@@ -2444,8 +3404,8 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
     @Override
-    public void setSize(DefinedTerm size) {
-        this.size = size;
+    public void addSize(DefinedTerm size) {
+        this.size = add(this.size, size);
     }
     /**
      * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
@@ -2455,8 +3415,8 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
     @Override
-    public void setSize(Text size) {
-        this.size = size;
+    public void addSize(Text size) {
+        this.size = add(this.size, size);
     }
     /**
      * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
@@ -2466,11 +3426,21 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
     @Override
-    public void setSize(SizeSpecification size) {
-        this.size = size;
+    public void addSize(SizeSpecification size) {
+        this.size = add(this.size, size);
     }
 
-    private PropertyValue additionalProperty;
+    private List<PropertyValue> additionalProperty;
+
+    /**
+     * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
+     *
+     * @return {@link PropertyValue}
+     */
+    @Override
+    public List<PropertyValue> getAdditionalPropertyList() {
+        return additionalProperty;
+    }
 
     /**
      * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
@@ -2479,7 +3449,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public PropertyValue getAdditionalProperty() {
-        return additionalProperty;
+        return getFirst(additionalProperty);
     }
 
     /**
@@ -2488,11 +3458,22 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param additionalProperty PropertyValue value to set.
      */
     @Override
-    public void setAdditionalProperty(PropertyValue additionalProperty) {
-        this.additionalProperty = additionalProperty;
+    public void addAdditionalProperty(PropertyValue additionalProperty) {
+        this.additionalProperty = add(this.additionalProperty, additionalProperty);
     }
 
-    private Text gtin13;
+    private List<Text> gtin13;
+
+    /**
+     * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<Text> getGtin13List() {
+        return gtin13;
+    }
 
     /**
      * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
@@ -2502,7 +3483,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getGtin13() {
-        return gtin13;
+        return getFirst(gtin13);
     }
 
     /**
@@ -2512,11 +3493,21 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setGtin13(Text gtin13) {
-        this.gtin13 = gtin13;
+    public void addGtin13(Text gtin13) {
+        this.gtin13 = add(this.gtin13, gtin13);
     }
 
-    private Review reviews;
+    private List<Review> reviews;
+
+    /**
+     * Review of the item.
+     *
+     * @return {@link Review}
+     */
+    @Override
+    public List<Review> getReviewsList() {
+        return reviews;
+    }
 
     /**
      * Review of the item.
@@ -2525,7 +3516,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Review getReviews() {
-        return reviews;
+        return getFirst(reviews);
     }
 
     /**
@@ -2534,11 +3525,21 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param reviews Review value to set.
      */
     @Override
-    public void setReviews(Review reviews) {
-        this.reviews = reviews;
+    public void addReviews(Review reviews) {
+        this.reviews = add(this.reviews, reviews);
     }
 
-    private Boolean isFamilyFriendly;
+    private List<Boolean> isFamilyFriendly;
+
+    /**
+     * Indicates whether this content is family friendly.
+     *
+     * @return {@link Boolean}
+     */
+    @Override
+    public List<Boolean> getIsFamilyFriendlyList() {
+        return isFamilyFriendly;
+    }
 
     /**
      * Indicates whether this content is family friendly.
@@ -2547,7 +3548,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Boolean getIsFamilyFriendly() {
-        return isFamilyFriendly;
+        return getFirst(isFamilyFriendly);
     }
 
     /**
@@ -2556,11 +3557,23 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param isFamilyFriendly Boolean value to set.
      */
     @Override
-    public void setIsFamilyFriendly(Boolean isFamilyFriendly) {
-        this.isFamilyFriendly = isFamilyFriendly;
+    public void addIsFamilyFriendly(Boolean isFamilyFriendly) {
+        this.isFamilyFriendly = add(this.isFamilyFriendly, isFamilyFriendly);
     }
 
-    private Object isRelatedTo;
+    @JsonLdFieldTypes({ Service.class, Product.class })
+    private List<Object> isRelatedTo;
+
+    /**
+     * A pointer to another, somehow related product (or multiple products).
+     *
+     * @return {@link Service} or {@link Product}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public <T> List<T> getIsRelatedToList() {
+        return (List<T>) isRelatedTo;
+    }
 
     /**
      * A pointer to another, somehow related product (or multiple products).
@@ -2570,7 +3583,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getIsRelatedTo() {
-        return (T) isRelatedTo;
+        return (T) getFirst(isRelatedTo);
     }
 
     /**
@@ -2580,8 +3593,8 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setIsRelatedTo(Service isRelatedTo) {
-        this.isRelatedTo = isRelatedTo;
+    public void addIsRelatedTo(Service isRelatedTo) {
+        this.isRelatedTo = add(this.isRelatedTo, isRelatedTo);
     }
     /**
      * A pointer to another, somehow related product (or multiple products).
@@ -2590,11 +3603,22 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setIsRelatedTo(Product isRelatedTo) {
-        this.isRelatedTo = isRelatedTo;
+    public void addIsRelatedTo(Product isRelatedTo) {
+        this.isRelatedTo = add(this.isRelatedTo, isRelatedTo);
     }
 
-    private Object mainEntityOfPage;
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
+    private List<Object> mainEntityOfPage;
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    @Override
+    public <T> List<T> getMainEntityOfPageList() {
+        return (List<T>) mainEntityOfPage;
+    }
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -2603,7 +3627,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getMainEntityOfPage() {
-        return (T) mainEntityOfPage;
+        return (T) getFirst(mainEntityOfPage);
     }
 
     /**
@@ -2612,8 +3636,8 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        this.mainEntityOfPage = mainEntityOfPage;
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -2621,11 +3645,21 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param mainEntityOfPage URL value to set.
      */
     @Override
-    public void setMainEntityOfPage(URL mainEntityOfPage) {
-        this.mainEntityOfPage = mainEntityOfPage;
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
 
-    private Text alternateName;
+    private List<Text> alternateName;
+
+    /**
+     * An alias for the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getAlternateNameList() {
+        return alternateName;
+    }
 
     /**
      * An alias for the item.
@@ -2634,7 +3668,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getAlternateName() {
-        return alternateName;
+        return getFirst(alternateName);
     }
 
     /**
@@ -2643,11 +3677,21 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param alternateName Text value to set.
      */
     @Override
-    public void setAlternateName(Text alternateName) {
-        this.alternateName = alternateName;
+    public void addAlternateName(Text alternateName) {
+        this.alternateName = add(this.alternateName, alternateName);
     }
 
-    private Text name;
+    private List<Text> name;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getNameList() {
+        return name;
+    }
 
     /**
      * The name of the item.
@@ -2656,7 +3700,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getName() {
-        return name;
+        return getFirst(name);
     }
 
     /**
@@ -2665,11 +3709,21 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param name Text value to set.
      */
     @Override
-    public void setName(Text name) {
-        this.name = name;
+    public void addName(Text name) {
+        this.name = add(this.name, name);
     }
 
-    private Action potentialAction;
+    private List<Action> potentialAction;
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public List<Action> getPotentialActionList() {
+        return potentialAction;
+    }
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -2678,7 +3732,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Action getPotentialAction() {
-        return potentialAction;
+        return getFirst(potentialAction);
     }
 
     /**
@@ -2687,11 +3741,22 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param potentialAction Action value to set.
      */
     @Override
-    public void setPotentialAction(Action potentialAction) {
-        this.potentialAction = potentialAction;
+    public void addPotentialAction(Action potentialAction) {
+        this.potentialAction = add(this.potentialAction, potentialAction);
     }
 
-    private Object image;
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
+    private List<Object> image;
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link URL} or {@link ImageObject}
+     */
+    @Override
+    public <T> List<T> getImageList() {
+        return (List<T>) image;
+    }
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -2700,7 +3765,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getImage() {
-        return (T) image;
+        return (T) getFirst(image);
     }
 
     /**
@@ -2709,8 +3774,8 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param image URL value to set.
      */
     @Override
-    public void setImage(URL image) {
-        this.image = image;
+    public void addImage(URL image) {
+        this.image = add(this.image, image);
     }
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -2718,11 +3783,21 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param image ImageObject value to set.
      */
     @Override
-    public void setImage(ImageObject image) {
-        this.image = image;
+    public void addImage(ImageObject image) {
+        this.image = add(this.image, image);
     }
 
-    private URL url;
+    private List<URL> url;
+
+    /**
+     * URL of the item.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getUrlList() {
+        return url;
+    }
 
     /**
      * URL of the item.
@@ -2731,7 +3806,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public URL getUrl() {
-        return url;
+        return getFirst(url);
     }
 
     /**
@@ -2740,11 +3815,21 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param url URL value to set.
      */
     @Override
-    public void setUrl(URL url) {
-        this.url = url;
+    public void addUrl(URL url) {
+        this.url = add(this.url, url);
     }
 
-    private Text description;
+    private List<Text> description;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDescriptionList() {
+        return description;
+    }
 
     /**
      * A description of the item.
@@ -2753,7 +3838,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getDescription() {
-        return description;
+        return getFirst(description);
     }
 
     /**
@@ -2762,11 +3847,23 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param description Text value to set.
      */
     @Override
-    public void setDescription(Text description) {
-        this.description = description;
+    public void addDescription(Text description) {
+        this.description = add(this.description, description);
     }
 
-    private Object subjectOf;
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
+    private List<Object> subjectOf;
+
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @return {@link Event} or {@link CreativeWork}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public <T> List<T> getSubjectOfList() {
+        return (List<T>) subjectOf;
+    }
 
     /**
      * A CreativeWork or Event about this Thing.
@@ -2776,7 +3873,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getSubjectOf() {
-        return (T) subjectOf;
+        return (T) getFirst(subjectOf);
     }
 
     /**
@@ -2786,8 +3883,8 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Event subjectOf) {
-        this.subjectOf = subjectOf;
+    public void addSubjectOf(Event subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
     }
     /**
      * A CreativeWork or Event about this Thing.
@@ -2796,11 +3893,21 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(CreativeWork subjectOf) {
-        this.subjectOf = subjectOf;
+    public void addSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
     }
 
-    private URL additionalType;
+    private List<URL> additionalType;
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getAdditionalTypeList() {
+        return additionalType;
+    }
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
@@ -2809,7 +3916,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public URL getAdditionalType() {
-        return additionalType;
+        return getFirst(additionalType);
     }
 
     /**
@@ -2818,11 +3925,21 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param additionalType URL value to set.
      */
     @Override
-    public void setAdditionalType(URL additionalType) {
-        this.additionalType = additionalType;
+    public void addAdditionalType(URL additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
     }
 
-    private Text disambiguatingDescription;
+    private List<Text> disambiguatingDescription;
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDisambiguatingDescriptionList() {
+        return disambiguatingDescription;
+    }
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
@@ -2831,7 +3948,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public Text getDisambiguatingDescription() {
-        return disambiguatingDescription;
+        return getFirst(disambiguatingDescription);
     }
 
     /**
@@ -2840,11 +3957,21 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param disambiguatingDescription Text value to set.
      */
     @Override
-    public void setDisambiguatingDescription(Text disambiguatingDescription) {
-        this.disambiguatingDescription = disambiguatingDescription;
+    public void addDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
     }
 
-    private URL sameAs;
+    private List<URL> sameAs;
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getSameAsList() {
+        return sameAs;
+    }
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
@@ -2853,7 +3980,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public URL getSameAs() {
-        return sameAs;
+        return getFirst(sameAs);
     }
 
     /**
@@ -2862,11 +3989,23 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param sameAs URL value to set.
      */
     @Override
-    public void setSameAs(URL sameAs) {
-        this.sameAs = sameAs;
+    public void addSameAs(URL sameAs) {
+        this.sameAs = add(this.sameAs, sameAs);
     }
 
-    private Object identifier;
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
+    private List<Object> identifier;
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @return {@link URL} or {@link Text} or {@link PropertyValue}
+     */
+    @Override
+    public <T> List<T> getIdentifierList() {
+        return (List<T>) identifier;
+    }
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -2876,7 +4015,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      */
     @Override
     public <T> T getIdentifier() {
-        return (T) identifier;
+        return (T) getFirst(identifier);
     }
 
     /**
@@ -2886,8 +4025,8 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param identifier URL value to set.
      */
     @Override
-    public void setIdentifier(URL identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(URL identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -2896,8 +4035,8 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param identifier Text value to set.
      */
     @Override
-    public void setIdentifier(Text identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(Text identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -2906,7 +4045,7 @@ public class VehicleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
      * @param identifier PropertyValue value to set.
      */
     @Override
-    public void setIdentifier(PropertyValue identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(PropertyValue identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
 }

@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.Rating;
 import org.schema.model.datatype.Text;
 import org.schema.model.datatype.Boolean;
@@ -24,6 +25,14 @@ public interface FoodEstablishment extends LocalBusiness {
      * @return {@link Rating}
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
+    List<Rating> getStarRatingList();
+
+    /**
+     * An official rating for a lodging business or food establishment, e.g. from national associations or standards bodies. Use the author property to indicate the rating organization, e.g. as an Organization with name such as (e.g. HOTREC, DEHOGA, WHR, or Hotelstars).
+     *
+     * @return {@link Rating}
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
+     */
     Rating getStarRating();
 
     /**
@@ -32,7 +41,14 @@ public interface FoodEstablishment extends LocalBusiness {
      * @param starRating Rating value to set.
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
-    void setStarRating(Rating starRating);
+    void addStarRating(Rating starRating);
+
+    /**
+     * The cuisine of the restaurant.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getServesCuisineList();
 
     /**
      * The cuisine of the restaurant.
@@ -46,7 +62,14 @@ public interface FoodEstablishment extends LocalBusiness {
      *
      * @param servesCuisine Text value to set.
      */
-    void setServesCuisine(Text servesCuisine);
+    void addServesCuisine(Text servesCuisine);
+
+    /**
+     * Indicates whether a FoodEstablishment accepts reservations. Values can be Boolean, an URL at which reservations can be made or (for backwards compatibility) the strings ```Yes``` or ```No```.
+     *
+     * @return {@link Text} or {@link Boolean} or {@link URL}
+     */
+    <T> List<T> getAcceptsReservationsList();
 
     /**
      * Indicates whether a FoodEstablishment accepts reservations. Values can be Boolean, an URL at which reservations can be made or (for backwards compatibility) the strings ```Yes``` or ```No```.
@@ -60,19 +83,26 @@ public interface FoodEstablishment extends LocalBusiness {
      *
      * @param acceptsReservations Text value to set.
      */
-    void setAcceptsReservations(Text acceptsReservations);
+    void addAcceptsReservations(Text acceptsReservations);
     /**
      * Indicates whether a FoodEstablishment accepts reservations. Values can be Boolean, an URL at which reservations can be made or (for backwards compatibility) the strings ```Yes``` or ```No```.
      *
      * @param acceptsReservations Boolean value to set.
      */
-    void setAcceptsReservations(Boolean acceptsReservations);
+    void addAcceptsReservations(Boolean acceptsReservations);
     /**
      * Indicates whether a FoodEstablishment accepts reservations. Values can be Boolean, an URL at which reservations can be made or (for backwards compatibility) the strings ```Yes``` or ```No```.
      *
      * @param acceptsReservations URL value to set.
      */
-    void setAcceptsReservations(URL acceptsReservations);
+    void addAcceptsReservations(URL acceptsReservations);
+
+    /**
+     * Either the actual menu as a structured representation, as text, or a URL of the menu.
+     *
+     * @return {@link URL} or {@link Text} or {@link Menu}
+     */
+    <T> List<T> getHasMenuList();
 
     /**
      * Either the actual menu as a structured representation, as text, or a URL of the menu.
@@ -86,19 +116,26 @@ public interface FoodEstablishment extends LocalBusiness {
      *
      * @param hasMenu URL value to set.
      */
-    void setHasMenu(URL hasMenu);
+    void addHasMenu(URL hasMenu);
     /**
      * Either the actual menu as a structured representation, as text, or a URL of the menu.
      *
      * @param hasMenu Text value to set.
      */
-    void setHasMenu(Text hasMenu);
+    void addHasMenu(Text hasMenu);
     /**
      * Either the actual menu as a structured representation, as text, or a URL of the menu.
      *
      * @param hasMenu Menu value to set.
      */
-    void setHasMenu(Menu hasMenu);
+    void addHasMenu(Menu hasMenu);
+
+    /**
+     * Either the actual menu as a structured representation, as text, or a URL of the menu.
+     *
+     * @return {@link URL} or {@link Menu} or {@link Text}
+     */
+    <T> List<T> getMenuList();
 
     /**
      * Either the actual menu as a structured representation, as text, or a URL of the menu.
@@ -112,17 +149,17 @@ public interface FoodEstablishment extends LocalBusiness {
      *
      * @param menu URL value to set.
      */
-    void setMenu(URL menu);
+    void addMenu(URL menu);
     /**
      * Either the actual menu as a structured representation, as text, or a URL of the menu.
      *
      * @param menu Menu value to set.
      */
-    void setMenu(Menu menu);
+    void addMenu(Menu menu);
     /**
      * Either the actual menu as a structured representation, as text, or a URL of the menu.
      *
      * @param menu Text value to set.
      */
-    void setMenu(Text menu);
+    void addMenu(Text menu);
 }

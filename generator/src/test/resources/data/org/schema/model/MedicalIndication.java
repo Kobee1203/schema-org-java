@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * A condition or factor that indicates use of a medical therapy, including signs, symptoms, risk factors, anatomical states, etc.

@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.Person;
 
 /**
@@ -19,6 +20,13 @@ public interface EducationalOrganization extends CivicStructure, Organization {
      *
      * @return {@link Person}
      */
+    List<Person> getAlumniList();
+
+    /**
+     * Alumni of an organization.
+     *
+     * @return {@link Person}
+     */
     Person getAlumni();
 
     /**
@@ -26,5 +34,5 @@ public interface EducationalOrganization extends CivicStructure, Organization {
      *
      * @param alumni Person value to set.
      */
-    void setAlumni(Person alumni);
+    void addAlumni(Person alumni);
 }

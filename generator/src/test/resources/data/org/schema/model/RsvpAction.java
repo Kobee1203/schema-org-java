@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.RsvpResponseType;
 import org.schema.model.Comment;
 import org.schema.model.datatype.Number;
@@ -21,6 +22,13 @@ public interface RsvpAction extends InformAction {
      *
      * @return {@link RsvpResponseType}
      */
+    List<RsvpResponseType> getRsvpResponseList();
+
+    /**
+     * The response (yes, no, maybe) to the RSVP.
+     *
+     * @return {@link RsvpResponseType}
+     */
     RsvpResponseType getRsvpResponse();
 
     /**
@@ -28,7 +36,14 @@ public interface RsvpAction extends InformAction {
      *
      * @param rsvpResponse RsvpResponseType value to set.
      */
-    void setRsvpResponse(RsvpResponseType rsvpResponse);
+    void addRsvpResponse(RsvpResponseType rsvpResponse);
+
+    /**
+     * Comments, typically from users.
+     *
+     * @return {@link Comment}
+     */
+    List<Comment> getCommentList();
 
     /**
      * Comments, typically from users.
@@ -42,7 +57,14 @@ public interface RsvpAction extends InformAction {
      *
      * @param comment Comment value to set.
      */
-    void setComment(Comment comment);
+    void addComment(Comment comment);
+
+    /**
+     * If responding yes, the number of guests who will attend in addition to the invitee.
+     *
+     * @return {@link Number}
+     */
+    List<Number> getAdditionalNumberOfGuestsList();
 
     /**
      * If responding yes, the number of guests who will attend in addition to the invitee.
@@ -56,5 +78,5 @@ public interface RsvpAction extends InformAction {
      *
      * @param additionalNumberOfGuests Number value to set.
      */
-    void setAdditionalNumberOfGuests(Number additionalNumberOfGuests);
+    void addAdditionalNumberOfGuests(Number additionalNumberOfGuests);
 }

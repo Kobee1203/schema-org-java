@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.QualitativeValue;
 import org.schema.model.datatype.Text;
 
@@ -20,6 +21,13 @@ public interface Seat extends Intangible {
      *
      * @return {@link QualitativeValue} or {@link Text}
      */
+    <T> List<T> getSeatingTypeList();
+
+    /**
+     * The type/class of the seat.
+     *
+     * @return {@link QualitativeValue} or {@link Text}
+     */
     <T> T getSeatingType();
 
     /**
@@ -27,13 +35,20 @@ public interface Seat extends Intangible {
      *
      * @param seatingType QualitativeValue value to set.
      */
-    void setSeatingType(QualitativeValue seatingType);
+    void addSeatingType(QualitativeValue seatingType);
     /**
      * The type/class of the seat.
      *
      * @param seatingType Text value to set.
      */
-    void setSeatingType(Text seatingType);
+    void addSeatingType(Text seatingType);
+
+    /**
+     * The section location of the reserved seat (e.g. Orchestra).
+     *
+     * @return {@link Text}
+     */
+    List<Text> getSeatSectionList();
 
     /**
      * The section location of the reserved seat (e.g. Orchestra).
@@ -47,7 +62,14 @@ public interface Seat extends Intangible {
      *
      * @param seatSection Text value to set.
      */
-    void setSeatSection(Text seatSection);
+    void addSeatSection(Text seatSection);
+
+    /**
+     * The row location of the reserved seat (e.g., B).
+     *
+     * @return {@link Text}
+     */
+    List<Text> getSeatRowList();
 
     /**
      * The row location of the reserved seat (e.g., B).
@@ -61,7 +83,14 @@ public interface Seat extends Intangible {
      *
      * @param seatRow Text value to set.
      */
-    void setSeatRow(Text seatRow);
+    void addSeatRow(Text seatRow);
+
+    /**
+     * The location of the reserved seat (e.g., 27).
+     *
+     * @return {@link Text}
+     */
+    List<Text> getSeatNumberList();
 
     /**
      * The location of the reserved seat (e.g., 27).
@@ -75,5 +104,5 @@ public interface Seat extends Intangible {
      *
      * @param seatNumber Text value to set.
      */
-    void setSeatNumber(Text seatNumber);
+    void addSeatNumber(Text seatNumber);
 }

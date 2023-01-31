@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * The act of notifying someone that a future event/action is going to happen as expected.<br/><br/>Related actions:<br/><br/>* [[CancelAction]]: The antonym of ConfirmAction.

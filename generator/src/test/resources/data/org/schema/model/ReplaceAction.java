@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.Thing;
 
 /**
@@ -19,6 +20,13 @@ public interface ReplaceAction extends UpdateAction {
      *
      * @return {@link Thing}
      */
+    List<Thing> getReplaceeList();
+
+    /**
+     * A sub property of object. The object that is being replaced.
+     *
+     * @return {@link Thing}
+     */
     Thing getReplacee();
 
     /**
@@ -26,7 +34,14 @@ public interface ReplaceAction extends UpdateAction {
      *
      * @param replacee Thing value to set.
      */
-    void setReplacee(Thing replacee);
+    void addReplacee(Thing replacee);
+
+    /**
+     * A sub property of object. The object that replaces.
+     *
+     * @return {@link Thing}
+     */
+    List<Thing> getReplacerList();
 
     /**
      * A sub property of object. The object that replaces.
@@ -40,5 +55,5 @@ public interface ReplaceAction extends UpdateAction {
      *
      * @param replacer Thing value to set.
      */
-    void setReplacer(Thing replacer);
+    void addReplacer(Thing replacer);
 }

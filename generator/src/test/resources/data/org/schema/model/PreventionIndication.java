@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * An indication for preventing an underlying condition, symptom, etc.

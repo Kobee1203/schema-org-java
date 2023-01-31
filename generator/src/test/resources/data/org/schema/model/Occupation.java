@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.MonetaryAmountDistribution;
 import org.schema.model.MonetaryAmount;
 import org.schema.model.datatype.Number;
@@ -29,6 +30,14 @@ public interface Occupation extends Intangible {
      * @return {@link MonetaryAmountDistribution} or {@link MonetaryAmount} or {@link Number}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
+    <T> List<T> getEstimatedSalaryList();
+
+    /**
+     * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
+     *
+     * @return {@link MonetaryAmountDistribution} or {@link MonetaryAmount} or {@link Number}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
     <T> T getEstimatedSalary();
 
     /**
@@ -37,21 +46,29 @@ public interface Occupation extends Intangible {
      * @param estimatedSalary MonetaryAmountDistribution value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
-    void setEstimatedSalary(MonetaryAmountDistribution estimatedSalary);
+    void addEstimatedSalary(MonetaryAmountDistribution estimatedSalary);
     /**
      * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
      *
      * @param estimatedSalary MonetaryAmount value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
-    void setEstimatedSalary(MonetaryAmount estimatedSalary);
+    void addEstimatedSalary(MonetaryAmount estimatedSalary);
     /**
      * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
      *
      * @param estimatedSalary Number value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
-    void setEstimatedSalary(Number estimatedSalary);
+    void addEstimatedSalary(Number estimatedSalary);
+
+    /**
+     * Responsibilities associated with this role or Occupation.
+     *
+     * @return {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    List<Text> getResponsibilitiesList();
 
     /**
      * Responsibilities associated with this role or Occupation.
@@ -67,7 +84,15 @@ public interface Occupation extends Intangible {
      * @param responsibilities Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
-    void setResponsibilities(Text responsibilities);
+    void addResponsibilities(Text responsibilities);
+
+    /**
+     *  The region/country for which this occupational description is appropriate. Note that educational requirements and qualifications can vary between jurisdictions.
+     *
+     * @return {@link AdministrativeArea}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    List<AdministrativeArea> getOccupationLocationList();
 
     /**
      *  The region/country for which this occupational description is appropriate. Note that educational requirements and qualifications can vary between jurisdictions.
@@ -83,7 +108,15 @@ public interface Occupation extends Intangible {
      * @param occupationLocation AdministrativeArea value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
-    void setOccupationLocation(AdministrativeArea occupationLocation);
+    void addOccupationLocation(AdministrativeArea occupationLocation);
+
+    /**
+     * Description of skills and experience needed for the position or Occupation.
+     *
+     * @return {@link Text} or {@link OccupationalExperienceRequirements}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    <T> List<T> getExperienceRequirementsList();
 
     /**
      * Description of skills and experience needed for the position or Occupation.
@@ -99,14 +132,24 @@ public interface Occupation extends Intangible {
      * @param experienceRequirements Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
-    void setExperienceRequirements(Text experienceRequirements);
+    void addExperienceRequirements(Text experienceRequirements);
     /**
      * Description of skills and experience needed for the position or Occupation.
      *
      * @param experienceRequirements OccupationalExperienceRequirements value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
-    void setExperienceRequirements(OccupationalExperienceRequirements experienceRequirements);
+    void addExperienceRequirements(OccupationalExperienceRequirements experienceRequirements);
+
+    /**
+     * Educational background needed for the position or Occupation.
+     *
+     * @return {@link EducationalOccupationalCredential} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     */
+    <T> List<T> getEducationRequirementsList();
 
     /**
      * Educational background needed for the position or Occupation.
@@ -126,7 +169,7 @@ public interface Occupation extends Intangible {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    void setEducationRequirements(EducationalOccupationalCredential educationRequirements);
+    void addEducationRequirements(EducationalOccupationalCredential educationRequirements);
     /**
      * Educational background needed for the position or Occupation.
      *
@@ -135,7 +178,16 @@ public interface Occupation extends Intangible {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    void setEducationRequirements(Text educationRequirements);
+    void addEducationRequirements(Text educationRequirements);
+
+    /**
+     * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is desired or required to fulfill this role or to work in this occupation.
+     *
+     * @return {@link Text} or {@link DefinedTerm}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    <T> List<T> getSkillsList();
 
     /**
      * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is desired or required to fulfill this role or to work in this occupation.
@@ -153,7 +205,7 @@ public interface Occupation extends Intangible {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
-    void setSkills(Text skills);
+    void addSkills(Text skills);
     /**
      * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is desired or required to fulfill this role or to work in this occupation.
      *
@@ -161,7 +213,17 @@ public interface Occupation extends Intangible {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
-    void setSkills(DefinedTerm skills);
+    void addSkills(DefinedTerm skills);
+
+    /**
+     * Specific qualifications required for this role or Occupation.
+     *
+     * @return {@link Text} or {@link EducationalOccupationalCredential}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     */
+    <T> List<T> getQualificationsList();
 
     /**
      * Specific qualifications required for this role or Occupation.
@@ -181,7 +243,7 @@ public interface Occupation extends Intangible {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    void setQualifications(Text qualifications);
+    void addQualifications(Text qualifications);
     /**
      * Specific qualifications required for this role or Occupation.
      *
@@ -190,7 +252,20 @@ public interface Occupation extends Intangible {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
-    void setQualifications(EducationalOccupationalCredential qualifications);
+    void addQualifications(EducationalOccupationalCredential qualifications);
+
+    /**
+     * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.<br/>
+     * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
+     *
+     * @return {@link CategoryCode} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    <T> List<T> getOccupationalCategoryList();
 
     /**
      * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.<br/>
@@ -216,7 +291,7 @@ public interface Occupation extends Intangible {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
-    void setOccupationalCategory(CategoryCode occupationalCategory);
+    void addOccupationalCategory(CategoryCode occupationalCategory);
     /**
      * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.<br/>
      * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
@@ -228,5 +303,5 @@ public interface Occupation extends Intangible {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
-    void setOccupationalCategory(Text occupationalCategory);
+    void addOccupationalCategory(Text occupationalCategory);
 }

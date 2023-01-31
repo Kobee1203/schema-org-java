@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.MedicalImagingTechnique;
 
 /**
@@ -21,6 +22,14 @@ public interface ImagingTest extends MedicalTest {
      * @return {@link MedicalImagingTechnique}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
+    List<MedicalImagingTechnique> getImagingTechniqueList();
+
+    /**
+     * Imaging technique used.
+     *
+     * @return {@link MedicalImagingTechnique}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
     MedicalImagingTechnique getImagingTechnique();
 
     /**
@@ -29,5 +38,5 @@ public interface ImagingTest extends MedicalTest {
      * @param imagingTechnique MedicalImagingTechnique value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setImagingTechnique(MedicalImagingTechnique imagingTechnique);
+    void addImagingTechnique(MedicalImagingTechnique imagingTechnique);
 }

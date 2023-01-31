@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.BedType;
 import org.schema.model.datatype.Text;
 import org.schema.model.datatype.Number;
@@ -23,6 +24,14 @@ public interface BedDetails extends Intangible {
      * @return {@link BedType} or {@link Text}
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
+    <T> List<T> getTypeOfBedList();
+
+    /**
+     * The type of bed to which the BedDetail refers, i.e. the type of bed available in the quantity indicated by quantity.
+     *
+     * @return {@link BedType} or {@link Text}
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
+     */
     <T> T getTypeOfBed();
 
     /**
@@ -31,14 +40,22 @@ public interface BedDetails extends Intangible {
      * @param typeOfBed BedType value to set.
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
-    void setTypeOfBed(BedType typeOfBed);
+    void addTypeOfBed(BedType typeOfBed);
     /**
      * The type of bed to which the BedDetail refers, i.e. the type of bed available in the quantity indicated by quantity.
      *
      * @param typeOfBed Text value to set.
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
-    void setTypeOfBed(Text typeOfBed);
+    void addTypeOfBed(Text typeOfBed);
+
+    /**
+     * The quantity of the given bed type available in the HotelRoom, Suite, House, or Apartment.
+     *
+     * @return {@link Number}
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
+     */
+    List<Number> getNumberOfBedsList();
 
     /**
      * The quantity of the given bed type available in the HotelRoom, Suite, House, or Apartment.
@@ -54,5 +71,5 @@ public interface BedDetails extends Intangible {
      * @param numberOfBeds Number value to set.
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology</a>
      */
-    void setNumberOfBeds(Number numberOfBeds);
+    void addNumberOfBeds(Number numberOfBeds);
 }

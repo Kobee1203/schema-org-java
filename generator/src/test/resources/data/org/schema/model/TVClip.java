@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.TVSeries;
 
 /**
@@ -19,6 +20,13 @@ public interface TVClip extends Clip {
      *
      * @return {@link TVSeries}
      */
+    List<TVSeries> getPartOfTVSeriesList();
+
+    /**
+     * The TV series to which this episode or season belongs.
+     *
+     * @return {@link TVSeries}
+     */
     TVSeries getPartOfTVSeries();
 
     /**
@@ -26,5 +34,5 @@ public interface TVClip extends Clip {
      *
      * @param partOfTVSeries TVSeries value to set.
      */
-    void setPartOfTVSeries(TVSeries partOfTVSeries);
+    void addPartOfTVSeries(TVSeries partOfTVSeries);
 }

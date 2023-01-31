@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.Drug;
 
 /**
@@ -21,6 +22,14 @@ public interface DrugClass extends MedicalEntity {
      * @return {@link Drug}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
+    List<Drug> getDrugList();
+
+    /**
+     * Specifying a drug or medicine used in a medication procedure.
+     *
+     * @return {@link Drug}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
     Drug getDrug();
 
     /**
@@ -29,5 +38,5 @@ public interface DrugClass extends MedicalEntity {
      * @param drug Drug value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setDrug(Drug drug);
+    void addDrug(Drug drug);
 }

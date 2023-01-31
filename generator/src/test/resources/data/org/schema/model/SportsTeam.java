@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.Person;
 import org.schema.model.GenderType;
 import org.schema.model.datatype.Text;
@@ -21,6 +22,13 @@ public interface SportsTeam extends SportsOrganization {
      *
      * @return {@link Person}
      */
+    List<Person> getAthleteList();
+
+    /**
+     * A person that acts as performing member of a sports team; a player as opposed to a coach.
+     *
+     * @return {@link Person}
+     */
     Person getAthlete();
 
     /**
@@ -28,7 +36,16 @@ public interface SportsTeam extends SportsOrganization {
      *
      * @param athlete Person value to set.
      */
-    void setAthlete(Person athlete);
+    void addAthlete(Person athlete);
+
+    /**
+     * Gender of something, typically a [[Person]], but possibly also fictional characters, animals, etc. While https://schema.org/Male and https://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender. The [[gender]] property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender [[SportsTeam]] can be indicated with a text value of "Mixed".
+     *
+     * @return {@link GenderType} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2341">https://github.com/schemaorg/schemaorg/issues/2341</a>
+     */
+    <T> List<T> getGenderList();
 
     /**
      * Gender of something, typically a [[Person]], but possibly also fictional characters, animals, etc. While https://schema.org/Male and https://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender. The [[gender]] property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender [[SportsTeam]] can be indicated with a text value of "Mixed".
@@ -46,7 +63,7 @@ public interface SportsTeam extends SportsOrganization {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2341">https://github.com/schemaorg/schemaorg/issues/2341</a>
      */
-    void setGender(GenderType gender);
+    void addGender(GenderType gender);
     /**
      * Gender of something, typically a [[Person]], but possibly also fictional characters, animals, etc. While https://schema.org/Male and https://schema.org/Female may be used, text strings are also acceptable for people who do not identify as a binary gender. The [[gender]] property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender [[SportsTeam]] can be indicated with a text value of "Mixed".
      *
@@ -54,7 +71,14 @@ public interface SportsTeam extends SportsOrganization {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2341">https://github.com/schemaorg/schemaorg/issues/2341</a>
      */
-    void setGender(Text gender);
+    void addGender(Text gender);
+
+    /**
+     * A person that acts in a coaching role for a sports team.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getCoachList();
 
     /**
      * A person that acts in a coaching role for a sports team.
@@ -68,5 +92,5 @@ public interface SportsTeam extends SportsOrganization {
      *
      * @param coach Person value to set.
      */
-    void setCoach(Person coach);
+    void addCoach(Person coach);
 }

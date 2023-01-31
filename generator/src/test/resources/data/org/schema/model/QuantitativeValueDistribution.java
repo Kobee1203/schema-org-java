@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Number;
 import org.schema.model.Duration;
 
@@ -22,6 +23,14 @@ public interface QuantitativeValueDistribution extends StructuredValue {
      * @return {@link Number}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
+    List<Number> getPercentile75List();
+
+    /**
+     * The 75th percentile value.
+     *
+     * @return {@link Number}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
     Number getPercentile75();
 
     /**
@@ -30,7 +39,15 @@ public interface QuantitativeValueDistribution extends StructuredValue {
      * @param percentile75 Number value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
-    void setPercentile75(Number percentile75);
+    void addPercentile75(Number percentile75);
+
+    /**
+     * The median value.
+     *
+     * @return {@link Number}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    List<Number> getMedianList();
 
     /**
      * The median value.
@@ -46,7 +63,15 @@ public interface QuantitativeValueDistribution extends StructuredValue {
      * @param median Number value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
-    void setMedian(Number median);
+    void addMedian(Number median);
+
+    /**
+     * The 10th percentile value.
+     *
+     * @return {@link Number}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    List<Number> getPercentile10List();
 
     /**
      * The 10th percentile value.
@@ -62,7 +87,15 @@ public interface QuantitativeValueDistribution extends StructuredValue {
      * @param percentile10 Number value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
-    void setPercentile10(Number percentile10);
+    void addPercentile10(Number percentile10);
+
+    /**
+     * The 25th percentile value.
+     *
+     * @return {@link Number}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    List<Number> getPercentile25List();
 
     /**
      * The 25th percentile value.
@@ -78,7 +111,15 @@ public interface QuantitativeValueDistribution extends StructuredValue {
      * @param percentile25 Number value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
-    void setPercentile25(Number percentile25);
+    void addPercentile25(Number percentile25);
+
+    /**
+     * The 90th percentile value.
+     *
+     * @return {@link Number}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    List<Number> getPercentile90List();
 
     /**
      * The 90th percentile value.
@@ -94,7 +135,16 @@ public interface QuantitativeValueDistribution extends StructuredValue {
      * @param percentile90 Number value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
-    void setPercentile90(Number percentile90);
+    void addPercentile90(Number percentile90);
+
+    /**
+     * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
+     *
+     * @return {@link Duration}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
+     */
+    List<Duration> getDurationList();
 
     /**
      * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
@@ -112,5 +162,5 @@ public interface QuantitativeValueDistribution extends StructuredValue {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
      */
-    void setDuration(Duration duration);
+    void addDuration(Duration duration);
 }

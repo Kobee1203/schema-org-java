@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Text;
 import org.schema.model.BoardingPolicyType;
 
@@ -20,6 +21,13 @@ public interface Airline extends Organization {
      *
      * @return {@link Text}
      */
+    List<Text> getIataCodeList();
+
+    /**
+     * IATA identifier for an airline or airport.
+     *
+     * @return {@link Text}
+     */
     Text getIataCode();
 
     /**
@@ -27,7 +35,14 @@ public interface Airline extends Organization {
      *
      * @param iataCode Text value to set.
      */
-    void setIataCode(Text iataCode);
+    void addIataCode(Text iataCode);
+
+    /**
+     * The type of boarding policy used by the airline (e.g. zone-based or group-based).
+     *
+     * @return {@link BoardingPolicyType}
+     */
+    List<BoardingPolicyType> getBoardingPolicyList();
 
     /**
      * The type of boarding policy used by the airline (e.g. zone-based or group-based).
@@ -41,5 +56,5 @@ public interface Airline extends Organization {
      *
      * @param boardingPolicy BoardingPolicyType value to set.
      */
-    void setBoardingPolicy(BoardingPolicyType boardingPolicy);
+    void addBoardingPolicy(BoardingPolicyType boardingPolicy);
 }

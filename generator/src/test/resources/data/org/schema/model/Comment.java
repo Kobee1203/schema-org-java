@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.Comment;
 import org.schema.model.datatype.Integer;
 
@@ -20,6 +21,13 @@ public interface Comment extends CreativeWork {
      *
      * @return {@link Comment}
      */
+    List<Comment> getParentItemList();
+
+    /**
+     * The parent of a question, answer or item in general.
+     *
+     * @return {@link Comment}
+     */
     Comment getParentItem();
 
     /**
@@ -27,7 +35,14 @@ public interface Comment extends CreativeWork {
      *
      * @param parentItem Comment value to set.
      */
-    void setParentItem(Comment parentItem);
+    void addParentItem(Comment parentItem);
+
+    /**
+     * The number of downvotes this question, answer or comment has received from the community.
+     *
+     * @return {@link Integer}
+     */
+    List<Integer> getDownvoteCountList();
 
     /**
      * The number of downvotes this question, answer or comment has received from the community.
@@ -41,7 +56,14 @@ public interface Comment extends CreativeWork {
      *
      * @param downvoteCount Integer value to set.
      */
-    void setDownvoteCount(Integer downvoteCount);
+    void addDownvoteCount(Integer downvoteCount);
+
+    /**
+     * The number of upvotes this question, answer or comment has received from the community.
+     *
+     * @return {@link Integer}
+     */
+    List<Integer> getUpvoteCountList();
 
     /**
      * The number of upvotes this question, answer or comment has received from the community.
@@ -55,5 +77,5 @@ public interface Comment extends CreativeWork {
      *
      * @param upvoteCount Integer value to set.
      */
-    void setUpvoteCount(Integer upvoteCount);
+    void addUpvoteCount(Integer upvoteCount);
 }

@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.DrugLegalStatus;
 import org.schema.model.datatype.Text;
 import org.schema.model.MedicalEnumeration;
@@ -30,6 +31,14 @@ public interface MedicalEntity extends Thing {
      * @return {@link DrugLegalStatus} or {@link Text} or {@link MedicalEnumeration}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
+    <T> List<T> getLegalStatusList();
+
+    /**
+     * The drug or supplement's legal status, including any controlled substance schedules that apply.
+     *
+     * @return {@link DrugLegalStatus} or {@link Text} or {@link MedicalEnumeration}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
     <T> T getLegalStatus();
 
     /**
@@ -38,21 +47,31 @@ public interface MedicalEntity extends Thing {
      * @param legalStatus DrugLegalStatus value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setLegalStatus(DrugLegalStatus legalStatus);
+    void addLegalStatus(DrugLegalStatus legalStatus);
     /**
      * The drug or supplement's legal status, including any controlled substance schedules that apply.
      *
      * @param legalStatus Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setLegalStatus(Text legalStatus);
+    void addLegalStatus(Text legalStatus);
     /**
      * The drug or supplement's legal status, including any controlled substance schedules that apply.
      *
      * @param legalStatus MedicalEnumeration value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setLegalStatus(MedicalEnumeration legalStatus);
+    void addLegalStatus(MedicalEnumeration legalStatus);
+
+    /**
+     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
+     *
+     * @return {@link Grant}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    List<Grant> getFundingList();
 
     /**
      * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
@@ -72,7 +91,15 @@ public interface MedicalEntity extends Thing {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
-    void setFunding(Grant funding);
+    void addFunding(Grant funding);
+
+    /**
+     * A medical study or trial related to this entity.
+     *
+     * @return {@link MedicalStudy}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<MedicalStudy> getStudyList();
 
     /**
      * A medical study or trial related to this entity.
@@ -88,7 +115,15 @@ public interface MedicalEntity extends Thing {
      * @param study MedicalStudy value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setStudy(MedicalStudy study);
+    void addStudy(MedicalStudy study);
+
+    /**
+     * A medical code for the entity, taken from a controlled vocabulary or ontology such as ICD-9, DiseasesDB, MeSH, SNOMED-CT, RxNorm, etc.
+     *
+     * @return {@link MedicalCode}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<MedicalCode> getCodeList();
 
     /**
      * A medical code for the entity, taken from a controlled vocabulary or ontology such as ICD-9, DiseasesDB, MeSH, SNOMED-CT, RxNorm, etc.
@@ -104,7 +139,15 @@ public interface MedicalEntity extends Thing {
      * @param code MedicalCode value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setCode(MedicalCode code);
+    void addCode(MedicalCode code);
+
+    /**
+     * A medical guideline related to this entity.
+     *
+     * @return {@link MedicalGuideline}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<MedicalGuideline> getGuidelineList();
 
     /**
      * A medical guideline related to this entity.
@@ -120,7 +163,15 @@ public interface MedicalEntity extends Thing {
      * @param guideline MedicalGuideline value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setGuideline(MedicalGuideline guideline);
+    void addGuideline(MedicalGuideline guideline);
+
+    /**
+     * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
+     *
+     * @return {@link Organization}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Organization> getRecognizingAuthorityList();
 
     /**
      * If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
@@ -136,7 +187,15 @@ public interface MedicalEntity extends Thing {
      * @param recognizingAuthority Organization value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setRecognizingAuthority(Organization recognizingAuthority);
+    void addRecognizingAuthority(Organization recognizingAuthority);
+
+    /**
+     * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
+     *
+     * @return {@link MedicineSystem}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<MedicineSystem> getMedicineSystemList();
 
     /**
      * The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.
@@ -152,7 +211,15 @@ public interface MedicalEntity extends Thing {
      * @param medicineSystem MedicineSystem value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setMedicineSystem(MedicineSystem medicineSystem);
+    void addMedicineSystem(MedicineSystem medicineSystem);
+
+    /**
+     * If applicable, a medical specialty in which this entity is relevant.
+     *
+     * @return {@link MedicalSpecialty}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<MedicalSpecialty> getRelevantSpecialtyList();
 
     /**
      * If applicable, a medical specialty in which this entity is relevant.
@@ -168,5 +235,5 @@ public interface MedicalEntity extends Thing {
      * @param relevantSpecialty MedicalSpecialty value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setRelevantSpecialty(MedicalSpecialty relevantSpecialty);
+    void addRelevantSpecialty(MedicalSpecialty relevantSpecialty);
 }

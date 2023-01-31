@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.MedicalEntity;
 
 /**
@@ -21,6 +22,14 @@ public interface MedicalCause extends MedicalEntity {
      * @return {@link MedicalEntity}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
+    List<MedicalEntity> getCauseOfList();
+
+    /**
+     * The condition, complication, symptom, sign, etc. caused.
+     *
+     * @return {@link MedicalEntity}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
     MedicalEntity getCauseOf();
 
     /**
@@ -29,5 +38,5 @@ public interface MedicalCause extends MedicalEntity {
      * @param causeOf MedicalEntity value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setCauseOf(MedicalEntity causeOf);
+    void addCauseOf(MedicalEntity causeOf);
 }

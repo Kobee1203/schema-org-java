@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * A middle school (typically for children aged around 11-14, although this varies somewhat).

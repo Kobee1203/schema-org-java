@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.MonetaryAmount;
 import org.schema.model.PriceSpecification;
 import org.schema.model.Duration;
@@ -33,6 +34,13 @@ public interface Invoice extends Intangible {
      *
      * @return {@link MonetaryAmount} or {@link PriceSpecification}
      */
+    <T> List<T> getTotalPaymentDueList();
+
+    /**
+     * The total amount due.
+     *
+     * @return {@link MonetaryAmount} or {@link PriceSpecification}
+     */
     <T> T getTotalPaymentDue();
 
     /**
@@ -40,13 +48,20 @@ public interface Invoice extends Intangible {
      *
      * @param totalPaymentDue MonetaryAmount value to set.
      */
-    void setTotalPaymentDue(MonetaryAmount totalPaymentDue);
+    void addTotalPaymentDue(MonetaryAmount totalPaymentDue);
     /**
      * The total amount due.
      *
      * @param totalPaymentDue PriceSpecification value to set.
      */
-    void setTotalPaymentDue(PriceSpecification totalPaymentDue);
+    void addTotalPaymentDue(PriceSpecification totalPaymentDue);
+
+    /**
+     * The time interval used to compute the invoice.
+     *
+     * @return {@link Duration}
+     */
+    List<Duration> getBillingPeriodList();
 
     /**
      * The time interval used to compute the invoice.
@@ -60,7 +75,14 @@ public interface Invoice extends Intangible {
      *
      * @param billingPeriod Duration value to set.
      */
-    void setBillingPeriod(Duration billingPeriod);
+    void addBillingPeriod(Duration billingPeriod);
+
+    /**
+     * The Order(s) related to this Invoice. One or more Orders may be combined into a single Invoice.
+     *
+     * @return {@link Order}
+     */
+    List<Order> getReferencesOrderList();
 
     /**
      * The Order(s) related to this Invoice. One or more Orders may be combined into a single Invoice.
@@ -74,7 +96,14 @@ public interface Invoice extends Intangible {
      *
      * @param referencesOrder Order value to set.
      */
-    void setReferencesOrder(Order referencesOrder);
+    void addReferencesOrder(Order referencesOrder);
+
+    /**
+     * The identifier for the account the payment will be applied to.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getAccountIdList();
 
     /**
      * The identifier for the account the payment will be applied to.
@@ -88,7 +117,16 @@ public interface Invoice extends Intangible {
      *
      * @param accountId Text value to set.
      */
-    void setAccountId(Text accountId);
+    void addAccountId(Text accountId);
+
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @return {@link URL} or {@link Text} or {@link PhysicalActivityCategory} or {@link Thing} or {@link CategoryCode}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    <T> List<T> getCategoryList();
 
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
@@ -106,7 +144,7 @@ public interface Invoice extends Intangible {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
-    void setCategory(URL category);
+    void addCategory(URL category);
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
@@ -114,7 +152,7 @@ public interface Invoice extends Intangible {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
-    void setCategory(Text category);
+    void addCategory(Text category);
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
@@ -122,7 +160,7 @@ public interface Invoice extends Intangible {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
-    void setCategory(PhysicalActivityCategory category);
+    void addCategory(PhysicalActivityCategory category);
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
@@ -130,7 +168,7 @@ public interface Invoice extends Intangible {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
-    void setCategory(Thing category);
+    void addCategory(Thing category);
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
      *
@@ -138,7 +176,14 @@ public interface Invoice extends Intangible {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
-    void setCategory(CategoryCode category);
+    void addCategory(CategoryCode category);
+
+    /**
+     * The date the invoice is scheduled to be paid.
+     *
+     * @return {@link Date}
+     */
+    List<Date> getScheduledPaymentDateList();
 
     /**
      * The date the invoice is scheduled to be paid.
@@ -152,7 +197,14 @@ public interface Invoice extends Intangible {
      *
      * @param scheduledPaymentDate Date value to set.
      */
-    void setScheduledPaymentDate(Date scheduledPaymentDate);
+    void addScheduledPaymentDate(Date scheduledPaymentDate);
+
+    /**
+     * A number that confirms the given order or payment has been received.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getConfirmationNumberList();
 
     /**
      * A number that confirms the given order or payment has been received.
@@ -166,7 +218,14 @@ public interface Invoice extends Intangible {
      *
      * @param confirmationNumber Text value to set.
      */
-    void setConfirmationNumber(Text confirmationNumber);
+    void addConfirmationNumber(Text confirmationNumber);
+
+    /**
+     * Party placing the order or paying the invoice.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    <T> List<T> getCustomerList();
 
     /**
      * Party placing the order or paying the invoice.
@@ -180,13 +239,23 @@ public interface Invoice extends Intangible {
      *
      * @param customer Organization value to set.
      */
-    void setCustomer(Organization customer);
+    void addCustomer(Organization customer);
     /**
      * Party placing the order or paying the invoice.
      *
      * @param customer Person value to set.
      */
-    void setCustomer(Person customer);
+    void addCustomer(Person customer);
+
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @return {@link Organization} or {@link Person}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     */
+    <T> List<T> getProviderList();
 
     /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
@@ -206,7 +275,7 @@ public interface Invoice extends Intangible {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
      */
-    void setProvider(Organization provider);
+    void addProvider(Organization provider);
     /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
      *
@@ -215,7 +284,14 @@ public interface Invoice extends Intangible {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
      */
-    void setProvider(Person provider);
+    void addProvider(Person provider);
+
+    /**
+     * The minimum payment required at this time.
+     *
+     * @return {@link MonetaryAmount} or {@link PriceSpecification}
+     */
+    <T> List<T> getMinimumPaymentDueList();
 
     /**
      * The minimum payment required at this time.
@@ -229,13 +305,20 @@ public interface Invoice extends Intangible {
      *
      * @param minimumPaymentDue MonetaryAmount value to set.
      */
-    void setMinimumPaymentDue(MonetaryAmount minimumPaymentDue);
+    void addMinimumPaymentDue(MonetaryAmount minimumPaymentDue);
     /**
      * The minimum payment required at this time.
      *
      * @param minimumPaymentDue PriceSpecification value to set.
      */
-    void setMinimumPaymentDue(PriceSpecification minimumPaymentDue);
+    void addMinimumPaymentDue(PriceSpecification minimumPaymentDue);
+
+    /**
+     * The date that payment is due.
+     *
+     * @return {@link DateTime} or {@link Date}
+     */
+    <T> List<T> getPaymentDueDateList();
 
     /**
      * The date that payment is due.
@@ -249,13 +332,20 @@ public interface Invoice extends Intangible {
      *
      * @param paymentDueDate DateTime value to set.
      */
-    void setPaymentDueDate(DateTime paymentDueDate);
+    void addPaymentDueDate(DateTime paymentDueDate);
     /**
      * The date that payment is due.
      *
      * @param paymentDueDate Date value to set.
      */
-    void setPaymentDueDate(Date paymentDueDate);
+    void addPaymentDueDate(Date paymentDueDate);
+
+    /**
+     * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    <T> List<T> getBrokerList();
 
     /**
      * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
@@ -269,13 +359,20 @@ public interface Invoice extends Intangible {
      *
      * @param broker Person value to set.
      */
-    void setBroker(Person broker);
+    void addBroker(Person broker);
     /**
      * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
      *
      * @param broker Organization value to set.
      */
-    void setBroker(Organization broker);
+    void addBroker(Organization broker);
+
+    /**
+     * The status of payment; whether the invoice has been paid or not.
+     *
+     * @return {@link PaymentStatusType} or {@link Text}
+     */
+    <T> List<T> getPaymentStatusList();
 
     /**
      * The status of payment; whether the invoice has been paid or not.
@@ -289,13 +386,20 @@ public interface Invoice extends Intangible {
      *
      * @param paymentStatus PaymentStatusType value to set.
      */
-    void setPaymentStatus(PaymentStatusType paymentStatus);
+    void addPaymentStatus(PaymentStatusType paymentStatus);
     /**
      * The status of payment; whether the invoice has been paid or not.
      *
      * @param paymentStatus Text value to set.
      */
-    void setPaymentStatus(Text paymentStatus);
+    void addPaymentStatus(Text paymentStatus);
+
+    /**
+     * An identifier for the method of payment used (e.g. the last 4 digits of the credit card).
+     *
+     * @return {@link Text}
+     */
+    List<Text> getPaymentMethodIdList();
 
     /**
      * An identifier for the method of payment used (e.g. the last 4 digits of the credit card).
@@ -309,7 +413,14 @@ public interface Invoice extends Intangible {
      *
      * @param paymentMethodId Text value to set.
      */
-    void setPaymentMethodId(Text paymentMethodId);
+    void addPaymentMethodId(Text paymentMethodId);
+
+    /**
+     * The date that payment is due.
+     *
+     * @return {@link DateTime}
+     */
+    List<DateTime> getPaymentDueList();
 
     /**
      * The date that payment is due.
@@ -323,7 +434,14 @@ public interface Invoice extends Intangible {
      *
      * @param paymentDue DateTime value to set.
      */
-    void setPaymentDue(DateTime paymentDue);
+    void addPaymentDue(DateTime paymentDue);
+
+    /**
+     * The name of the credit card or other method of payment for the order.
+     *
+     * @return {@link PaymentMethod}
+     */
+    List<PaymentMethod> getPaymentMethodList();
 
     /**
      * The name of the credit card or other method of payment for the order.
@@ -337,5 +455,5 @@ public interface Invoice extends Intangible {
      *
      * @param paymentMethod PaymentMethod value to set.
      */
-    void setPaymentMethod(PaymentMethod paymentMethod);
+    void addPaymentMethod(PaymentMethod paymentMethod);
 }

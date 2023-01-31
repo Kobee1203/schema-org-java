@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * A delivery method is a standardized procedure for transferring the product or service to the destination of fulfillment chosen by the customer. Delivery methods are characterized by the means of transportation used, and by the organization or group that is the contracting party for the sending organization or person.<br/><br/>Commonly used values:<br/><br/>* http://purl.org/goodrelations/v1#DeliveryModeDirectDownload<br/>* http://purl.org/goodrelations/v1#DeliveryModeFreight<br/>* http://purl.org/goodrelations/v1#DeliveryModeMail<br/>* http://purl.org/goodrelations/v1#DeliveryModeOwnFleet<br/>* http://purl.org/goodrelations/v1#DeliveryModePickUp<br/>* http://purl.org/goodrelations/v1#DHL<br/>* http://purl.org/goodrelations/v1#FederalExpress<br/>* http://purl.org/goodrelations/v1#UPS

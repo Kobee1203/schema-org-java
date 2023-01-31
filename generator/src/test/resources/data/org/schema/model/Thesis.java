@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Text;
 
 /**
@@ -22,6 +23,14 @@ public interface Thesis extends CreativeWork {
      * @return {@link Text}
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
+    List<Text> getInSupportOfList();
+
+    /**
+     * Qualification, candidature, degree, application that Thesis supports.
+     *
+     * @return {@link Text}
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
     Text getInSupportOf();
 
     /**
@@ -30,5 +39,5 @@ public interface Thesis extends CreativeWork {
      * @param inSupportOf Text value to set.
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
-    void setInSupportOf(Text inSupportOf);
+    void addInSupportOf(Text inSupportOf);
 }

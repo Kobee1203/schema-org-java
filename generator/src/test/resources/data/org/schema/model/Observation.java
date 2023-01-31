@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.DataType;
 import org.schema.model.StatisticalPopulation;
 import org.schema.model.Property;
@@ -29,6 +30,15 @@ public interface Observation extends Intangible {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
      */
+    List<DataType> getMeasuredValueList();
+
+    /**
+     * The measuredValue of an [[Observation]].
+     *
+     * @return {@link DataType}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
+     */
     DataType getMeasuredValue();
 
     /**
@@ -38,7 +48,16 @@ public interface Observation extends Intangible {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
      */
-    void setMeasuredValue(DataType measuredValue);
+    void addMeasuredValue(DataType measuredValue);
+
+    /**
+     * The observedNode of an [[Observation]], often a [[StatisticalPopulation]].
+     *
+     * @return {@link StatisticalPopulation}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
+     */
+    List<StatisticalPopulation> getObservedNodeList();
 
     /**
      * The observedNode of an [[Observation]], often a [[StatisticalPopulation]].
@@ -56,7 +75,16 @@ public interface Observation extends Intangible {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
      */
-    void setObservedNode(StatisticalPopulation observedNode);
+    void addObservedNode(StatisticalPopulation observedNode);
+
+    /**
+     * The measuredProperty of an [[Observation]], either a schema.org property, a property from other RDF-compatible systems e.g. W3C RDF Data Cube, or schema.org extensions such as [GS1's](https://www.gs1.org/voc/?show=properties).
+     *
+     * @return {@link Property}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
+     */
+    List<Property> getMeasuredPropertyList();
 
     /**
      * The measuredProperty of an [[Observation]], either a schema.org property, a property from other RDF-compatible systems e.g. W3C RDF Data Cube, or schema.org extensions such as [GS1's](https://www.gs1.org/voc/?show=properties).
@@ -74,7 +102,16 @@ public interface Observation extends Intangible {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
      */
-    void setMeasuredProperty(Property measuredProperty);
+    void addMeasuredProperty(Property measuredProperty);
+
+    /**
+     * The observationDate of an [[Observation]].
+     *
+     * @return {@link DateTime}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
+     */
+    List<DateTime> getObservationDateList();
 
     /**
      * The observationDate of an [[Observation]].
@@ -92,7 +129,16 @@ public interface Observation extends Intangible {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
      */
-    void setObservationDate(DateTime observationDate);
+    void addObservationDate(DateTime observationDate);
+
+    /**
+     * A marginOfError for an [[Observation]].
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
+     */
+    List<QuantitativeValue> getMarginOfErrorList();
 
     /**
      * A marginOfError for an [[Observation]].
@@ -110,5 +156,5 @@ public interface Observation extends Intangible {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
      */
-    void setMarginOfError(QuantitativeValue marginOfError);
+    void addMarginOfError(QuantitativeValue marginOfError);
 }

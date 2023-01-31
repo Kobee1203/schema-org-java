@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.Place;
 
 /**
@@ -19,6 +20,13 @@ public interface InsertAction extends AddAction {
      *
      * @return {@link Place}
      */
+    List<Place> getToLocationList();
+
+    /**
+     * A sub property of location. The final location of the object or the agent after the action.
+     *
+     * @return {@link Place}
+     */
     Place getToLocation();
 
     /**
@@ -26,5 +34,5 @@ public interface InsertAction extends AddAction {
      *
      * @param toLocation Place value to set.
      */
-    void setToLocation(Place toLocation);
+    void addToLocation(Place toLocation);
 }

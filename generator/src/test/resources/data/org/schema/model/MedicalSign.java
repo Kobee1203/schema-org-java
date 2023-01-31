@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.MedicalTest;
 import org.schema.model.PhysicalExam;
 
@@ -22,6 +23,14 @@ public interface MedicalSign extends MedicalSignOrSymptom {
      * @return {@link MedicalTest}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
+    List<MedicalTest> getIdentifyingTestList();
+
+    /**
+     * A diagnostic test that can identify this sign.
+     *
+     * @return {@link MedicalTest}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
     MedicalTest getIdentifyingTest();
 
     /**
@@ -30,7 +39,15 @@ public interface MedicalSign extends MedicalSignOrSymptom {
      * @param identifyingTest MedicalTest value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setIdentifyingTest(MedicalTest identifyingTest);
+    void addIdentifyingTest(MedicalTest identifyingTest);
+
+    /**
+     * A physical examination that can identify this sign.
+     *
+     * @return {@link PhysicalExam}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<PhysicalExam> getIdentifyingExamList();
 
     /**
      * A physical examination that can identify this sign.
@@ -46,5 +63,5 @@ public interface MedicalSign extends MedicalSignOrSymptom {
      * @param identifyingExam PhysicalExam value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setIdentifyingExam(PhysicalExam identifyingExam);
+    void addIdentifyingExam(PhysicalExam identifyingExam);
 }

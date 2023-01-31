@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * A creative work with a visual storytelling format intended to be viewed online, particularly on mobile devices.

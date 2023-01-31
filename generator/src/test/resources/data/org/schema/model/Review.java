@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.Rating;
 import org.schema.model.Thing;
 import org.schema.model.ListItem;
@@ -25,6 +26,13 @@ public interface Review extends CreativeWork {
      *
      * @return {@link Rating}
      */
+    List<Rating> getReviewRatingList();
+
+    /**
+     * The rating given in this review. Note that reviews can themselves be rated. The ```reviewRating``` applies to rating given by the review. The [[aggregateRating]] property applies to the review itself, as a creative work.
+     *
+     * @return {@link Rating}
+     */
     Rating getReviewRating();
 
     /**
@@ -32,7 +40,14 @@ public interface Review extends CreativeWork {
      *
      * @param reviewRating Rating value to set.
      */
-    void setReviewRating(Rating reviewRating);
+    void addReviewRating(Rating reviewRating);
+
+    /**
+     * The item that is being reviewed/rated.
+     *
+     * @return {@link Thing}
+     */
+    List<Thing> getItemReviewedList();
 
     /**
      * The item that is being reviewed/rated.
@@ -46,7 +61,16 @@ public interface Review extends CreativeWork {
      *
      * @param itemReviewed Thing value to set.
      */
-    void setItemReviewed(Thing itemReviewed);
+    void addItemReviewed(Thing itemReviewed);
+
+    /**
+     * Indicates, in the context of a [[Review]] (e.g. framed as 'pro' vs 'con' considerations), negative considerations - either as unstructured text, or a list.
+     *
+     * @return {@link ListItem} or {@link Text} or {@link WebContent} or {@link ItemList}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2832">https://github.com/schemaorg/schemaorg/issues/2832</a>
+     */
+    <T> List<T> getNegativeNotesList();
 
     /**
      * Indicates, in the context of a [[Review]] (e.g. framed as 'pro' vs 'con' considerations), negative considerations - either as unstructured text, or a list.
@@ -64,7 +88,7 @@ public interface Review extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2832">https://github.com/schemaorg/schemaorg/issues/2832</a>
      */
-    void setNegativeNotes(ListItem negativeNotes);
+    void addNegativeNotes(ListItem negativeNotes);
     /**
      * Indicates, in the context of a [[Review]] (e.g. framed as 'pro' vs 'con' considerations), negative considerations - either as unstructured text, or a list.
      *
@@ -72,7 +96,7 @@ public interface Review extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2832">https://github.com/schemaorg/schemaorg/issues/2832</a>
      */
-    void setNegativeNotes(Text negativeNotes);
+    void addNegativeNotes(Text negativeNotes);
     /**
      * Indicates, in the context of a [[Review]] (e.g. framed as 'pro' vs 'con' considerations), negative considerations - either as unstructured text, or a list.
      *
@@ -80,7 +104,7 @@ public interface Review extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2832">https://github.com/schemaorg/schemaorg/issues/2832</a>
      */
-    void setNegativeNotes(WebContent negativeNotes);
+    void addNegativeNotes(WebContent negativeNotes);
     /**
      * Indicates, in the context of a [[Review]] (e.g. framed as 'pro' vs 'con' considerations), negative considerations - either as unstructured text, or a list.
      *
@@ -88,7 +112,15 @@ public interface Review extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2832">https://github.com/schemaorg/schemaorg/issues/2832</a>
      */
-    void setNegativeNotes(ItemList negativeNotes);
+    void addNegativeNotes(ItemList negativeNotes);
+
+    /**
+     * This Review or Rating is relevant to this part or facet of the itemReviewed.
+     *
+     * @return {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1689">https://github.com/schemaorg/schemaorg/issues/1689</a>
+     */
+    List<Text> getReviewAspectList();
 
     /**
      * This Review or Rating is relevant to this part or facet of the itemReviewed.
@@ -104,7 +136,16 @@ public interface Review extends CreativeWork {
      * @param reviewAspect Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1689">https://github.com/schemaorg/schemaorg/issues/1689</a>
      */
-    void setReviewAspect(Text reviewAspect);
+    void addReviewAspect(Text reviewAspect);
+
+    /**
+     * An associated [[ClaimReview]], related by specific common content, topic or claim. The expectation is that this property would be most typically used in cases where a single activity is conducting both claim reviews and media reviews, in which case [[relatedMediaReview]] would commonly be used on a [[ClaimReview]], while [[relatedClaimReview]] would be used on [[MediaReview]].
+     *
+     * @return {@link Review}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     */
+    List<Review> getAssociatedClaimReviewList();
 
     /**
      * An associated [[ClaimReview]], related by specific common content, topic or claim. The expectation is that this property would be most typically used in cases where a single activity is conducting both claim reviews and media reviews, in which case [[relatedMediaReview]] would commonly be used on a [[ClaimReview]], while [[relatedClaimReview]] would be used on [[MediaReview]].
@@ -122,7 +163,16 @@ public interface Review extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
-    void setAssociatedClaimReview(Review associatedClaimReview);
+    void addAssociatedClaimReview(Review associatedClaimReview);
+
+    /**
+     * Indicates, in the context of a [[Review]] (e.g. framed as 'pro' vs 'con' considerations), positive considerations - either as unstructured text, or a list.
+     *
+     * @return {@link WebContent} or {@link Text} or {@link ListItem} or {@link ItemList}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2832">https://github.com/schemaorg/schemaorg/issues/2832</a>
+     */
+    <T> List<T> getPositiveNotesList();
 
     /**
      * Indicates, in the context of a [[Review]] (e.g. framed as 'pro' vs 'con' considerations), positive considerations - either as unstructured text, or a list.
@@ -140,7 +190,7 @@ public interface Review extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2832">https://github.com/schemaorg/schemaorg/issues/2832</a>
      */
-    void setPositiveNotes(WebContent positiveNotes);
+    void addPositiveNotes(WebContent positiveNotes);
     /**
      * Indicates, in the context of a [[Review]] (e.g. framed as 'pro' vs 'con' considerations), positive considerations - either as unstructured text, or a list.
      *
@@ -148,7 +198,7 @@ public interface Review extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2832">https://github.com/schemaorg/schemaorg/issues/2832</a>
      */
-    void setPositiveNotes(Text positiveNotes);
+    void addPositiveNotes(Text positiveNotes);
     /**
      * Indicates, in the context of a [[Review]] (e.g. framed as 'pro' vs 'con' considerations), positive considerations - either as unstructured text, or a list.
      *
@@ -156,7 +206,7 @@ public interface Review extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2832">https://github.com/schemaorg/schemaorg/issues/2832</a>
      */
-    void setPositiveNotes(ListItem positiveNotes);
+    void addPositiveNotes(ListItem positiveNotes);
     /**
      * Indicates, in the context of a [[Review]] (e.g. framed as 'pro' vs 'con' considerations), positive considerations - either as unstructured text, or a list.
      *
@@ -164,7 +214,16 @@ public interface Review extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2832">https://github.com/schemaorg/schemaorg/issues/2832</a>
      */
-    void setPositiveNotes(ItemList positiveNotes);
+    void addPositiveNotes(ItemList positiveNotes);
+
+    /**
+     * An associated [[Review]].
+     *
+     * @return {@link Review}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     */
+    List<Review> getAssociatedReviewList();
 
     /**
      * An associated [[Review]].
@@ -182,7 +241,16 @@ public interface Review extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
-    void setAssociatedReview(Review associatedReview);
+    void addAssociatedReview(Review associatedReview);
+
+    /**
+     * An associated [[MediaReview]], related by specific common content, topic or claim. The expectation is that this property would be most typically used in cases where a single activity is conducting both claim reviews and media reviews, in which case [[relatedMediaReview]] would commonly be used on a [[ClaimReview]], while [[relatedClaimReview]] would be used on [[MediaReview]].
+     *
+     * @return {@link Review}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     */
+    List<Review> getAssociatedMediaReviewList();
 
     /**
      * An associated [[MediaReview]], related by specific common content, topic or claim. The expectation is that this property would be most typically used in cases where a single activity is conducting both claim reviews and media reviews, in which case [[relatedMediaReview]] would commonly be used on a [[ClaimReview]], while [[relatedClaimReview]] would be used on [[MediaReview]].
@@ -200,7 +268,14 @@ public interface Review extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
-    void setAssociatedMediaReview(Review associatedMediaReview);
+    void addAssociatedMediaReview(Review associatedMediaReview);
+
+    /**
+     * The actual body of the review.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getReviewBodyList();
 
     /**
      * The actual body of the review.
@@ -214,5 +289,5 @@ public interface Review extends CreativeWork {
      *
      * @param reviewBody Text value to set.
      */
-    void setReviewBody(Text reviewBody);
+    void addReviewBody(Text reviewBody);
 }

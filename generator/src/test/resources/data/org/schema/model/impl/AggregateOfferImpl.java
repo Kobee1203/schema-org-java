@@ -52,6 +52,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import java.util.List;
 import org.schema.model.Intangible;
 
 /**
@@ -63,7 +64,17 @@ import org.schema.model.Intangible;
 public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements AggregateOffer {
 
     @JsonLdFieldTypes({ Text.class, Number.class })
-    private Object highPrice;
+    private List<Object> highPrice;
+
+    /**
+     * The highest price of all offers available.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+     *
+     * @return {@link Text} or {@link Number}
+     */
+    @Override
+    public <T> List<T> getHighPriceList() {
+        return (List<T>) highPrice;
+    }
 
     /**
      * The highest price of all offers available.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
@@ -72,7 +83,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public <T> T getHighPrice() {
-        return (T) highPrice;
+        return (T) getFirst(highPrice);
     }
 
     /**
@@ -81,8 +92,8 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param highPrice Text value to set.
      */
     @Override
-    public void setHighPrice(Text highPrice) {
-        this.highPrice = highPrice;
+    public void addHighPrice(Text highPrice) {
+        this.highPrice = add(this.highPrice, highPrice);
     }
     /**
      * The highest price of all offers available.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
@@ -90,12 +101,24 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param highPrice Number value to set.
      */
     @Override
-    public void setHighPrice(Number highPrice) {
-        this.highPrice = highPrice;
+    public void addHighPrice(Number highPrice) {
+        this.highPrice = add(this.highPrice, highPrice);
     }
 
     @JsonLdFieldTypes({ Offer.class, Demand.class })
-    private Object offers;
+    private List<Object> offers;
+
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     *
+     * @return {@link Offer} or {@link Demand}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public <T> List<T> getOffersList() {
+        return (List<T>) offers;
+    }
 
     /**
      * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
@@ -106,7 +129,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public <T> T getOffers() {
-        return (T) offers;
+        return (T) getFirst(offers);
     }
 
     /**
@@ -117,8 +140,8 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
     @Override
-    public void setOffers(Offer offers) {
-        this.offers = offers;
+    public void addOffers(Offer offers) {
+        this.offers = add(this.offers, offers);
     }
     /**
      * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
@@ -128,12 +151,22 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
     @Override
-    public void setOffers(Demand offers) {
-        this.offers = offers;
+    public void addOffers(Demand offers) {
+        this.offers = add(this.offers, offers);
     }
 
     @JsonLdFieldTypes({ Text.class, Number.class })
-    private Object lowPrice;
+    private List<Object> lowPrice;
+
+    /**
+     * The lowest price of all offers available.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+     *
+     * @return {@link Text} or {@link Number}
+     */
+    @Override
+    public <T> List<T> getLowPriceList() {
+        return (List<T>) lowPrice;
+    }
 
     /**
      * The lowest price of all offers available.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
@@ -142,7 +175,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public <T> T getLowPrice() {
-        return (T) lowPrice;
+        return (T) getFirst(lowPrice);
     }
 
     /**
@@ -151,8 +184,8 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param lowPrice Text value to set.
      */
     @Override
-    public void setLowPrice(Text lowPrice) {
-        this.lowPrice = lowPrice;
+    public void addLowPrice(Text lowPrice) {
+        this.lowPrice = add(this.lowPrice, lowPrice);
     }
     /**
      * The lowest price of all offers available.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
@@ -160,11 +193,21 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param lowPrice Number value to set.
      */
     @Override
-    public void setLowPrice(Number lowPrice) {
-        this.lowPrice = lowPrice;
+    public void addLowPrice(Number lowPrice) {
+        this.lowPrice = add(this.lowPrice, lowPrice);
     }
 
-    private Integer offerCount;
+    private List<Integer> offerCount;
+
+    /**
+     * The number of offers for the product.
+     *
+     * @return {@link Integer}
+     */
+    @Override
+    public List<Integer> getOfferCountList() {
+        return offerCount;
+    }
 
     /**
      * The number of offers for the product.
@@ -173,7 +216,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public Integer getOfferCount() {
-        return offerCount;
+        return getFirst(offerCount);
     }
 
     /**
@@ -182,11 +225,23 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param offerCount Integer value to set.
      */
     @Override
-    public void setOfferCount(Integer offerCount) {
-        this.offerCount = offerCount;
+    public void addOfferCount(Integer offerCount) {
+        this.offerCount = add(this.offerCount, offerCount);
     }
 
-    private AdultOrientedEnumeration hasAdultConsideration;
+    private List<AdultOrientedEnumeration> hasAdultConsideration;
+
+    /**
+     * Used to tag an item to be intended or suitable for consumption or use by adults only.
+     *
+     * @return {@link AdultOrientedEnumeration}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2989">https://github.com/schemaorg/schemaorg/issues/2989</a>
+     */
+    @Override
+    public List<AdultOrientedEnumeration> getHasAdultConsiderationList() {
+        return hasAdultConsideration;
+    }
 
     /**
      * Used to tag an item to be intended or suitable for consumption or use by adults only.
@@ -197,7 +252,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public AdultOrientedEnumeration getHasAdultConsideration() {
-        return hasAdultConsideration;
+        return getFirst(hasAdultConsideration);
     }
 
     /**
@@ -208,11 +263,21 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2989">https://github.com/schemaorg/schemaorg/issues/2989</a>
      */
     @Override
-    public void setHasAdultConsideration(AdultOrientedEnumeration hasAdultConsideration) {
-        this.hasAdultConsideration = hasAdultConsideration;
+    public void addHasAdultConsideration(AdultOrientedEnumeration hasAdultConsideration) {
+        this.hasAdultConsideration = add(this.hasAdultConsideration, hasAdultConsideration);
     }
 
-    private Text gtin12;
+    private List<Text> gtin12;
+
+    /**
+     * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getGtin12List() {
+        return gtin12;
+    }
 
     /**
      * The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
@@ -221,7 +286,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public Text getGtin12() {
-        return gtin12;
+        return getFirst(gtin12);
     }
 
     /**
@@ -230,11 +295,21 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param gtin12 Text value to set.
      */
     @Override
-    public void setGtin12(Text gtin12) {
-        this.gtin12 = gtin12;
+    public void addGtin12(Text gtin12) {
+        this.gtin12 = add(this.gtin12, gtin12);
     }
 
-    private Review review;
+    private List<Review> review;
+
+    /**
+     * A review of the item.
+     *
+     * @return {@link Review}
+     */
+    @Override
+    public List<Review> getReviewList() {
+        return review;
+    }
 
     /**
      * A review of the item.
@@ -243,7 +318,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public Review getReview() {
-        return review;
+        return getFirst(review);
     }
 
     /**
@@ -252,12 +327,22 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param review Review value to set.
      */
     @Override
-    public void setReview(Review review) {
-        this.review = review;
+    public void addReview(Review review) {
+        this.review = add(this.review, review);
     }
 
     @JsonLdFieldTypes({ Trip.class, Event.class, Product.class, AggregateOffer.class, CreativeWork.class, MenuItem.class, Service.class })
-    private Object itemOffered;
+    private List<Object> itemOffered;
+
+    /**
+     * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *
+     * @return {@link Trip} or {@link Event} or {@link Product} or {@link AggregateOffer} or {@link CreativeWork} or {@link MenuItem} or {@link Service}
+     */
+    @Override
+    public <T> List<T> getItemOfferedList() {
+        return (List<T>) itemOffered;
+    }
 
     /**
      * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
@@ -266,7 +351,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public <T> T getItemOffered() {
-        return (T) itemOffered;
+        return (T) getFirst(itemOffered);
     }
 
     /**
@@ -275,8 +360,8 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param itemOffered Trip value to set.
      */
     @Override
-    public void setItemOffered(Trip itemOffered) {
-        this.itemOffered = itemOffered;
+    public void addItemOffered(Trip itemOffered) {
+        this.itemOffered = add(this.itemOffered, itemOffered);
     }
     /**
      * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
@@ -284,8 +369,8 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param itemOffered Event value to set.
      */
     @Override
-    public void setItemOffered(Event itemOffered) {
-        this.itemOffered = itemOffered;
+    public void addItemOffered(Event itemOffered) {
+        this.itemOffered = add(this.itemOffered, itemOffered);
     }
     /**
      * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
@@ -293,8 +378,8 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param itemOffered Product value to set.
      */
     @Override
-    public void setItemOffered(Product itemOffered) {
-        this.itemOffered = itemOffered;
+    public void addItemOffered(Product itemOffered) {
+        this.itemOffered = add(this.itemOffered, itemOffered);
     }
     /**
      * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
@@ -302,8 +387,8 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param itemOffered AggregateOffer value to set.
      */
     @Override
-    public void setItemOffered(AggregateOffer itemOffered) {
-        this.itemOffered = itemOffered;
+    public void addItemOffered(AggregateOffer itemOffered) {
+        this.itemOffered = add(this.itemOffered, itemOffered);
     }
     /**
      * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
@@ -311,8 +396,8 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param itemOffered CreativeWork value to set.
      */
     @Override
-    public void setItemOffered(CreativeWork itemOffered) {
-        this.itemOffered = itemOffered;
+    public void addItemOffered(CreativeWork itemOffered) {
+        this.itemOffered = add(this.itemOffered, itemOffered);
     }
     /**
      * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
@@ -320,8 +405,8 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param itemOffered MenuItem value to set.
      */
     @Override
-    public void setItemOffered(MenuItem itemOffered) {
-        this.itemOffered = itemOffered;
+    public void addItemOffered(MenuItem itemOffered) {
+        this.itemOffered = add(this.itemOffered, itemOffered);
     }
     /**
      * An item being offered (or demanded). The transactional nature of the offer or demand is documented using [[businessFunction]], e.g. sell, lease etc. While several common expected types are listed explicitly in this definition, others can be used. Using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
@@ -329,12 +414,24 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param itemOffered Service value to set.
      */
     @Override
-    public void setItemOffered(Service itemOffered) {
-        this.itemOffered = itemOffered;
+    public void addItemOffered(Service itemOffered) {
+        this.itemOffered = add(this.itemOffered, itemOffered);
     }
 
     @JsonLdFieldTypes({ URL.class, Text.class, PhysicalActivityCategory.class, Thing.class, CategoryCode.class })
-    private Object category;
+    private List<Object> category;
+
+    /**
+     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+     *
+     * @return {@link URL} or {@link Text} or {@link PhysicalActivityCategory} or {@link Thing} or {@link CategoryCode}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    @Override
+    public <T> List<T> getCategoryList() {
+        return (List<T>) category;
+    }
 
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
@@ -345,7 +442,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public <T> T getCategory() {
-        return (T) category;
+        return (T) getFirst(category);
     }
 
     /**
@@ -356,8 +453,8 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
     @Override
-    public void setCategory(URL category) {
-        this.category = category;
+    public void addCategory(URL category) {
+        this.category = add(this.category, category);
     }
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
@@ -367,8 +464,8 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
     @Override
-    public void setCategory(Text category) {
-        this.category = category;
+    public void addCategory(Text category) {
+        this.category = add(this.category, category);
     }
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
@@ -378,8 +475,8 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
     @Override
-    public void setCategory(PhysicalActivityCategory category) {
-        this.category = category;
+    public void addCategory(PhysicalActivityCategory category) {
+        this.category = add(this.category, category);
     }
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
@@ -389,8 +486,8 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
     @Override
-    public void setCategory(Thing category) {
-        this.category = category;
+    public void addCategory(Thing category) {
+        this.category = add(this.category, category);
     }
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
@@ -400,11 +497,21 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
     @Override
-    public void setCategory(CategoryCode category) {
-        this.category = category;
+    public void addCategory(CategoryCode category) {
+        this.category = add(this.category, category);
     }
 
-    private Date priceValidUntil;
+    private List<Date> priceValidUntil;
+
+    /**
+     * The date after which the price is no longer available.
+     *
+     * @return {@link Date}
+     */
+    @Override
+    public List<Date> getPriceValidUntilList() {
+        return priceValidUntil;
+    }
 
     /**
      * The date after which the price is no longer available.
@@ -413,7 +520,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public Date getPriceValidUntil() {
-        return priceValidUntil;
+        return getFirst(priceValidUntil);
     }
 
     /**
@@ -422,11 +529,23 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param priceValidUntil Date value to set.
      */
     @Override
-    public void setPriceValidUntil(Date priceValidUntil) {
-        this.priceValidUntil = priceValidUntil;
+    public void addPriceValidUntil(Date priceValidUntil) {
+        this.priceValidUntil = add(this.priceValidUntil, priceValidUntil);
     }
 
-    private OfferShippingDetails shippingDetails;
+    private List<OfferShippingDetails> shippingDetails;
+
+    /**
+     * Indicates information about the shipping policies and options associated with an [[Offer]].
+     *
+     * @return {@link OfferShippingDetails}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    @Override
+    public List<OfferShippingDetails> getShippingDetailsList() {
+        return shippingDetails;
+    }
 
     /**
      * Indicates information about the shipping policies and options associated with an [[Offer]].
@@ -437,7 +556,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public OfferShippingDetails getShippingDetails() {
-        return shippingDetails;
+        return getFirst(shippingDetails);
     }
 
     /**
@@ -448,11 +567,22 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
     @Override
-    public void setShippingDetails(OfferShippingDetails shippingDetails) {
-        this.shippingDetails = shippingDetails;
+    public void addShippingDetails(OfferShippingDetails shippingDetails) {
+        this.shippingDetails = add(this.shippingDetails, shippingDetails);
     }
 
-    private Text mpn;
+    private List<Text> mpn;
+
+    /**
+     * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<Text> getMpnList() {
+        return mpn;
+    }
 
     /**
      * The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
@@ -462,7 +592,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public Text getMpn() {
-        return mpn;
+        return getFirst(mpn);
     }
 
     /**
@@ -472,11 +602,22 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setMpn(Text mpn) {
-        this.mpn = mpn;
+    public void addMpn(Text mpn) {
+        this.mpn = add(this.mpn, mpn);
     }
 
-    private TypeAndQuantityNode includesObject;
+    private List<TypeAndQuantityNode> includesObject;
+
+    /**
+     * This links to a node or nodes indicating the exact quantity of the products included in  an [[Offer]] or [[ProductCollection]].
+     *
+     * @return {@link TypeAndQuantityNode}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<TypeAndQuantityNode> getIncludesObjectList() {
+        return includesObject;
+    }
 
     /**
      * This links to a node or nodes indicating the exact quantity of the products included in  an [[Offer]] or [[ProductCollection]].
@@ -486,7 +627,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public TypeAndQuantityNode getIncludesObject() {
-        return includesObject;
+        return getFirst(includesObject);
     }
 
     /**
@@ -496,11 +637,22 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setIncludesObject(TypeAndQuantityNode includesObject) {
-        this.includesObject = includesObject;
+    public void addIncludesObject(TypeAndQuantityNode includesObject) {
+        this.includesObject = add(this.includesObject, includesObject);
     }
 
-    private BusinessFunction businessFunction;
+    private List<BusinessFunction> businessFunction;
+
+    /**
+     * The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.
+     *
+     * @return {@link BusinessFunction}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<BusinessFunction> getBusinessFunctionList() {
+        return businessFunction;
+    }
 
     /**
      * The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.
@@ -510,7 +662,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public BusinessFunction getBusinessFunction() {
-        return businessFunction;
+        return getFirst(businessFunction);
     }
 
     /**
@@ -520,11 +672,21 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setBusinessFunction(BusinessFunction businessFunction) {
-        this.businessFunction = businessFunction;
+    public void addBusinessFunction(BusinessFunction businessFunction) {
+        this.businessFunction = add(this.businessFunction, businessFunction);
     }
 
-    private OfferItemCondition itemCondition;
+    private List<OfferItemCondition> itemCondition;
+
+    /**
+     * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
+     *
+     * @return {@link OfferItemCondition}
+     */
+    @Override
+    public List<OfferItemCondition> getItemConditionList() {
+        return itemCondition;
+    }
 
     /**
      * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
@@ -533,7 +695,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public OfferItemCondition getItemCondition() {
-        return itemCondition;
+        return getFirst(itemCondition);
     }
 
     /**
@@ -542,11 +704,24 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param itemCondition OfferItemCondition value to set.
      */
     @Override
-    public void setItemCondition(OfferItemCondition itemCondition) {
-        this.itemCondition = itemCondition;
+    public void addItemCondition(OfferItemCondition itemCondition) {
+        this.itemCondition = add(this.itemCondition, itemCondition);
     }
 
-    private Text gtin;
+    private List<Text> gtin;
+
+    /**
+     * A Global Trade Item Number ([GTIN](https://www.gs1.org/standards/id-keys/gtin)). GTINs identify trade items, including products and services, using numeric identification codes. The [[gtin]] property generalizes the earlier [[gtin8]], [[gtin12]], [[gtin13]], and [[gtin14]] properties. The GS1 [digital link specifications](https://www.gs1.org/standards/Digital-Link/) express GTINs as URLs. A correct [[gtin]] value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a "GS1 Digital Link" URL based on such a string. The numeric component should also have a [valid GS1 check digit](https://www.gs1.org/services/check-digit-calculator) and meet the other rules for valid GTINs. See also [GS1's GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) and [Wikipedia](https://en.wikipedia.org/wiki/Global_Trade_Item_Number) for more details. Left-padding of the gtin values is not required or encouraged.
+     *    
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     */
+    @Override
+    public List<Text> getGtinList() {
+        return gtin;
+    }
 
     /**
      * A Global Trade Item Number ([GTIN](https://www.gs1.org/standards/id-keys/gtin)). GTINs identify trade items, including products and services, using numeric identification codes. The [[gtin]] property generalizes the earlier [[gtin8]], [[gtin12]], [[gtin13]], and [[gtin14]] properties. The GS1 [digital link specifications](https://www.gs1.org/standards/Digital-Link/) express GTINs as URLs. A correct [[gtin]] value should be a valid GTIN, which means that it should be an all-numeric string of either 8, 12, 13 or 14 digits, or a "GS1 Digital Link" URL based on such a string. The numeric component should also have a [valid GS1 check digit](https://www.gs1.org/services/check-digit-calculator) and meet the other rules for valid GTINs. See also [GS1's GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) and [Wikipedia](https://en.wikipedia.org/wiki/Global_Trade_Item_Number) for more details. Left-padding of the gtin values is not required or encouraged.
@@ -558,7 +733,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public Text getGtin() {
-        return gtin;
+        return getFirst(gtin);
     }
 
     /**
@@ -570,11 +745,22 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
      */
     @Override
-    public void setGtin(Text gtin) {
-        this.gtin = gtin;
+    public void addGtin(Text gtin) {
+        this.gtin = add(this.gtin, gtin);
     }
 
-    private QuantitativeValue eligibleQuantity;
+    private List<QuantitativeValue> eligibleQuantity;
+
+    /**
+     * The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<QuantitativeValue> getEligibleQuantityList() {
+        return eligibleQuantity;
+    }
 
     /**
      * The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.
@@ -584,7 +770,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public QuantitativeValue getEligibleQuantity() {
-        return eligibleQuantity;
+        return getFirst(eligibleQuantity);
     }
 
     /**
@@ -594,12 +780,23 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setEligibleQuantity(QuantitativeValue eligibleQuantity) {
-        this.eligibleQuantity = eligibleQuantity;
+    public void addEligibleQuantity(QuantitativeValue eligibleQuantity) {
+        this.eligibleQuantity = add(this.eligibleQuantity, eligibleQuantity);
     }
 
     @JsonLdFieldTypes({ LoanOrCredit.class, PaymentMethod.class })
-    private Object acceptedPaymentMethod;
+    private List<Object> acceptedPaymentMethod;
+
+    /**
+     * The payment method(s) accepted by seller for this offer.
+     *
+     * @return {@link LoanOrCredit} or {@link PaymentMethod}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public <T> List<T> getAcceptedPaymentMethodList() {
+        return (List<T>) acceptedPaymentMethod;
+    }
 
     /**
      * The payment method(s) accepted by seller for this offer.
@@ -609,7 +806,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public <T> T getAcceptedPaymentMethod() {
-        return (T) acceptedPaymentMethod;
+        return (T) getFirst(acceptedPaymentMethod);
     }
 
     /**
@@ -619,8 +816,8 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setAcceptedPaymentMethod(LoanOrCredit acceptedPaymentMethod) {
-        this.acceptedPaymentMethod = acceptedPaymentMethod;
+    public void addAcceptedPaymentMethod(LoanOrCredit acceptedPaymentMethod) {
+        this.acceptedPaymentMethod = add(this.acceptedPaymentMethod, acceptedPaymentMethod);
     }
     /**
      * The payment method(s) accepted by seller for this offer.
@@ -629,11 +826,22 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setAcceptedPaymentMethod(PaymentMethod acceptedPaymentMethod) {
-        this.acceptedPaymentMethod = acceptedPaymentMethod;
+    public void addAcceptedPaymentMethod(PaymentMethod acceptedPaymentMethod) {
+        this.acceptedPaymentMethod = add(this.acceptedPaymentMethod, acceptedPaymentMethod);
     }
 
-    private WarrantyPromise warranty;
+    private List<WarrantyPromise> warranty;
+
+    /**
+     * The warranty promise(s) included in the offer.
+     *
+     * @return {@link WarrantyPromise}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<WarrantyPromise> getWarrantyList() {
+        return warranty;
+    }
 
     /**
      * The warranty promise(s) included in the offer.
@@ -643,7 +851,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public WarrantyPromise getWarranty() {
-        return warranty;
+        return getFirst(warranty);
     }
 
     /**
@@ -653,12 +861,22 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setWarranty(WarrantyPromise warranty) {
-        this.warranty = warranty;
+    public void addWarranty(WarrantyPromise warranty) {
+        this.warranty = add(this.warranty, warranty);
     }
 
     @JsonLdFieldTypes({ Organization.class, Person.class })
-    private Object seller;
+    private List<Object> seller;
+
+    /**
+     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> List<T> getSellerList() {
+        return (List<T>) seller;
+    }
 
     /**
      * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
@@ -667,7 +885,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public <T> T getSeller() {
-        return (T) seller;
+        return (T) getFirst(seller);
     }
 
     /**
@@ -676,8 +894,8 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param seller Organization value to set.
      */
     @Override
-    public void setSeller(Organization seller) {
-        this.seller = seller;
+    public void addSeller(Organization seller) {
+        this.seller = add(this.seller, seller);
     }
     /**
      * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
@@ -685,12 +903,25 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param seller Person value to set.
      */
     @Override
-    public void setSeller(Person seller) {
-        this.seller = seller;
+    public void addSeller(Person seller) {
+        this.seller = add(this.seller, seller);
     }
 
     @JsonLdFieldTypes({ Place.class, Text.class, GeoShape.class })
-    private Object ineligibleRegion;
+    private List<Object> ineligibleRegion;
+
+    /**
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>See also [[eligibleRegion]].
+     *       
+     *
+     * @return {@link Place} or {@link Text} or {@link GeoShape}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2242">https://github.com/schemaorg/schemaorg/issues/2242</a>
+     */
+    @Override
+    public <T> List<T> getIneligibleRegionList() {
+        return (List<T>) ineligibleRegion;
+    }
 
     /**
      * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>See also [[eligibleRegion]].
@@ -702,7 +933,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public <T> T getIneligibleRegion() {
-        return (T) ineligibleRegion;
+        return (T) getFirst(ineligibleRegion);
     }
 
     /**
@@ -714,8 +945,8 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2242">https://github.com/schemaorg/schemaorg/issues/2242</a>
      */
     @Override
-    public void setIneligibleRegion(Place ineligibleRegion) {
-        this.ineligibleRegion = ineligibleRegion;
+    public void addIneligibleRegion(Place ineligibleRegion) {
+        this.ineligibleRegion = add(this.ineligibleRegion, ineligibleRegion);
     }
     /**
      * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>See also [[eligibleRegion]].
@@ -726,8 +957,8 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2242">https://github.com/schemaorg/schemaorg/issues/2242</a>
      */
     @Override
-    public void setIneligibleRegion(Text ineligibleRegion) {
-        this.ineligibleRegion = ineligibleRegion;
+    public void addIneligibleRegion(Text ineligibleRegion) {
+        this.ineligibleRegion = add(this.ineligibleRegion, ineligibleRegion);
     }
     /**
      * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>See also [[eligibleRegion]].
@@ -738,12 +969,24 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2242">https://github.com/schemaorg/schemaorg/issues/2242</a>
      */
     @Override
-    public void setIneligibleRegion(GeoShape ineligibleRegion) {
-        this.ineligibleRegion = ineligibleRegion;
+    public void addIneligibleRegion(GeoShape ineligibleRegion) {
+        this.ineligibleRegion = add(this.ineligibleRegion, ineligibleRegion);
     }
 
     @JsonLdFieldTypes({ QuantitativeValue.class, Duration.class })
-    private Object leaseLength;
+    private List<Object> leaseLength;
+
+    /**
+     * Length of the lease for some [[Accommodation]], either particular to some [[Offer]] or in some cases intrinsic to the property.
+     *
+     * @return {@link QuantitativeValue} or {@link Duration}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     */
+    @Override
+    public <T> List<T> getLeaseLengthList() {
+        return (List<T>) leaseLength;
+    }
 
     /**
      * Length of the lease for some [[Accommodation]], either particular to some [[Offer]] or in some cases intrinsic to the property.
@@ -754,7 +997,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public <T> T getLeaseLength() {
-        return (T) leaseLength;
+        return (T) getFirst(leaseLength);
     }
 
     /**
@@ -765,8 +1008,8 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
     @Override
-    public void setLeaseLength(QuantitativeValue leaseLength) {
-        this.leaseLength = leaseLength;
+    public void addLeaseLength(QuantitativeValue leaseLength) {
+        this.leaseLength = add(this.leaseLength, leaseLength);
     }
     /**
      * Length of the lease for some [[Accommodation]], either particular to some [[Offer]] or in some cases intrinsic to the property.
@@ -776,11 +1019,21 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
     @Override
-    public void setLeaseLength(Duration leaseLength) {
-        this.leaseLength = leaseLength;
+    public void addLeaseLength(Duration leaseLength) {
+        this.leaseLength = add(this.leaseLength, leaseLength);
     }
 
-    private AggregateRating aggregateRating;
+    private List<AggregateRating> aggregateRating;
+
+    /**
+     * The overall rating, based on a collection of reviews or ratings, of the item.
+     *
+     * @return {@link AggregateRating}
+     */
+    @Override
+    public List<AggregateRating> getAggregateRatingList() {
+        return aggregateRating;
+    }
 
     /**
      * The overall rating, based on a collection of reviews or ratings, of the item.
@@ -789,7 +1042,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public AggregateRating getAggregateRating() {
-        return aggregateRating;
+        return getFirst(aggregateRating);
     }
 
     /**
@@ -798,12 +1051,22 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param aggregateRating AggregateRating value to set.
      */
     @Override
-    public void setAggregateRating(AggregateRating aggregateRating) {
-        this.aggregateRating = aggregateRating;
+    public void addAggregateRating(AggregateRating aggregateRating) {
+        this.aggregateRating = add(this.aggregateRating, aggregateRating);
     }
 
     @JsonLdFieldTypes({ Person.class, Organization.class })
-    private Object offeredBy;
+    private List<Object> offeredBy;
+
+    /**
+     * A pointer to the organization or person making the offer.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    @Override
+    public <T> List<T> getOfferedByList() {
+        return (List<T>) offeredBy;
+    }
 
     /**
      * A pointer to the organization or person making the offer.
@@ -812,7 +1075,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public <T> T getOfferedBy() {
-        return (T) offeredBy;
+        return (T) getFirst(offeredBy);
     }
 
     /**
@@ -821,8 +1084,8 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param offeredBy Person value to set.
      */
     @Override
-    public void setOfferedBy(Person offeredBy) {
-        this.offeredBy = offeredBy;
+    public void addOfferedBy(Person offeredBy) {
+        this.offeredBy = add(this.offeredBy, offeredBy);
     }
     /**
      * A pointer to the organization or person making the offer.
@@ -830,11 +1093,22 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param offeredBy Organization value to set.
      */
     @Override
-    public void setOfferedBy(Organization offeredBy) {
-        this.offeredBy = offeredBy;
+    public void addOfferedBy(Organization offeredBy) {
+        this.offeredBy = add(this.offeredBy, offeredBy);
     }
 
-    private QuantitativeValue deliveryLeadTime;
+    private List<QuantitativeValue> deliveryLeadTime;
+
+    /**
+     * The typical delay between the receipt of the order and the goods either leaving the warehouse or being prepared for pickup, in case the delivery method is on site pickup.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<QuantitativeValue> getDeliveryLeadTimeList() {
+        return deliveryLeadTime;
+    }
 
     /**
      * The typical delay between the receipt of the order and the goods either leaving the warehouse or being prepared for pickup, in case the delivery method is on site pickup.
@@ -844,7 +1118,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public QuantitativeValue getDeliveryLeadTime() {
-        return deliveryLeadTime;
+        return getFirst(deliveryLeadTime);
     }
 
     /**
@@ -854,11 +1128,22 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setDeliveryLeadTime(QuantitativeValue deliveryLeadTime) {
-        this.deliveryLeadTime = deliveryLeadTime;
+    public void addDeliveryLeadTime(QuantitativeValue deliveryLeadTime) {
+        this.deliveryLeadTime = add(this.deliveryLeadTime, deliveryLeadTime);
     }
 
-    private DeliveryMethod availableDeliveryMethod;
+    private List<DeliveryMethod> availableDeliveryMethod;
+
+    /**
+     * The delivery method(s) available for this offer.
+     *
+     * @return {@link DeliveryMethod}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<DeliveryMethod> getAvailableDeliveryMethodList() {
+        return availableDeliveryMethod;
+    }
 
     /**
      * The delivery method(s) available for this offer.
@@ -868,7 +1153,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public DeliveryMethod getAvailableDeliveryMethod() {
-        return availableDeliveryMethod;
+        return getFirst(availableDeliveryMethod);
     }
 
     /**
@@ -878,12 +1163,23 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setAvailableDeliveryMethod(DeliveryMethod availableDeliveryMethod) {
-        this.availableDeliveryMethod = availableDeliveryMethod;
+    public void addAvailableDeliveryMethod(DeliveryMethod availableDeliveryMethod) {
+        this.availableDeliveryMethod = add(this.availableDeliveryMethod, availableDeliveryMethod);
     }
 
     @JsonLdFieldTypes({ DateTime.class, Date.class })
-    private Object validFrom;
+    private List<Object> validFrom;
+
+    /**
+     * The date when the item becomes valid.
+     *
+     * @return {@link DateTime} or {@link Date}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public <T> List<T> getValidFromList() {
+        return (List<T>) validFrom;
+    }
 
     /**
      * The date when the item becomes valid.
@@ -893,7 +1189,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public <T> T getValidFrom() {
-        return (T) validFrom;
+        return (T) getFirst(validFrom);
     }
 
     /**
@@ -903,8 +1199,8 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setValidFrom(DateTime validFrom) {
-        this.validFrom = validFrom;
+    public void addValidFrom(DateTime validFrom) {
+        this.validFrom = add(this.validFrom, validFrom);
     }
     /**
      * The date when the item becomes valid.
@@ -913,12 +1209,24 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setValidFrom(Date validFrom) {
-        this.validFrom = validFrom;
+    public void addValidFrom(Date validFrom) {
+        this.validFrom = add(this.validFrom, validFrom);
     }
 
     @JsonLdFieldTypes({ Date.class, DateTime.class, Time.class })
-    private Object availabilityEnds;
+    private List<Object> availabilityEnds;
+
+    /**
+     * The end of the availability of the product or service included in the offer.
+     *
+     * @return {@link Date} or {@link DateTime} or {@link Time}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public <T> List<T> getAvailabilityEndsList() {
+        return (List<T>) availabilityEnds;
+    }
 
     /**
      * The end of the availability of the product or service included in the offer.
@@ -929,7 +1237,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public <T> T getAvailabilityEnds() {
-        return (T) availabilityEnds;
+        return (T) getFirst(availabilityEnds);
     }
 
     /**
@@ -940,8 +1248,8 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setAvailabilityEnds(Date availabilityEnds) {
-        this.availabilityEnds = availabilityEnds;
+    public void addAvailabilityEnds(Date availabilityEnds) {
+        this.availabilityEnds = add(this.availabilityEnds, availabilityEnds);
     }
     /**
      * The end of the availability of the product or service included in the offer.
@@ -951,8 +1259,8 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setAvailabilityEnds(DateTime availabilityEnds) {
-        this.availabilityEnds = availabilityEnds;
+    public void addAvailabilityEnds(DateTime availabilityEnds) {
+        this.availabilityEnds = add(this.availabilityEnds, availabilityEnds);
     }
     /**
      * The end of the availability of the product or service included in the offer.
@@ -962,12 +1270,25 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setAvailabilityEnds(Time availabilityEnds) {
-        this.availabilityEnds = availabilityEnds;
+    public void addAvailabilityEnds(Time availabilityEnds) {
+        this.availabilityEnds = add(this.availabilityEnds, availabilityEnds);
     }
 
     @JsonLdFieldTypes({ GeoShape.class, Text.class, Place.class })
-    private Object eligibleRegion;
+    private List<Object> eligibleRegion;
+
+    /**
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.<br/><br/>See also [[ineligibleRegion]].
+     *     
+     *
+     * @return {@link GeoShape} or {@link Text} or {@link Place}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     */
+    @Override
+    public <T> List<T> getEligibleRegionList() {
+        return (List<T>) eligibleRegion;
+    }
 
     /**
      * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.<br/><br/>See also [[ineligibleRegion]].
@@ -979,7 +1300,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public <T> T getEligibleRegion() {
-        return (T) eligibleRegion;
+        return (T) getFirst(eligibleRegion);
     }
 
     /**
@@ -991,8 +1312,8 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
     @Override
-    public void setEligibleRegion(GeoShape eligibleRegion) {
-        this.eligibleRegion = eligibleRegion;
+    public void addEligibleRegion(GeoShape eligibleRegion) {
+        this.eligibleRegion = add(this.eligibleRegion, eligibleRegion);
     }
     /**
      * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.<br/><br/>See also [[ineligibleRegion]].
@@ -1003,8 +1324,8 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
     @Override
-    public void setEligibleRegion(Text eligibleRegion) {
-        this.eligibleRegion = eligibleRegion;
+    public void addEligibleRegion(Text eligibleRegion) {
+        this.eligibleRegion = add(this.eligibleRegion, eligibleRegion);
     }
     /**
      * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.<br/><br/>See also [[ineligibleRegion]].
@@ -1015,11 +1336,23 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
      */
     @Override
-    public void setEligibleRegion(Place eligibleRegion) {
-        this.eligibleRegion = eligibleRegion;
+    public void addEligibleRegion(Place eligibleRegion) {
+        this.eligibleRegion = add(this.eligibleRegion, eligibleRegion);
     }
 
-    private QuantitativeValue hasMeasurement;
+    private List<QuantitativeValue> hasMeasurement;
+
+    /**
+     * A product measurement, for example the inseam of pants, the wheel size of a bicycle, or the gauge of a screw. Usually an exact measurement, but can also be a range of measurements for adjustable products, for example belts and ski bindings.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
+     */
+    @Override
+    public List<QuantitativeValue> getHasMeasurementList() {
+        return hasMeasurement;
+    }
 
     /**
      * A product measurement, for example the inseam of pants, the wheel size of a bicycle, or the gauge of a screw. Usually an exact measurement, but can also be a range of measurements for adjustable products, for example belts and ski bindings.
@@ -1030,7 +1363,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public QuantitativeValue getHasMeasurement() {
-        return hasMeasurement;
+        return getFirst(hasMeasurement);
     }
 
     /**
@@ -1041,11 +1374,22 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
      */
     @Override
-    public void setHasMeasurement(QuantitativeValue hasMeasurement) {
-        this.hasMeasurement = hasMeasurement;
+    public void addHasMeasurement(QuantitativeValue hasMeasurement) {
+        this.hasMeasurement = add(this.hasMeasurement, hasMeasurement);
     }
 
-    private Text gtin8;
+    private List<Text> gtin8;
+
+    /**
+     * The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<Text> getGtin8List() {
+        return gtin8;
+    }
 
     /**
      * The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
@@ -1055,7 +1399,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public Text getGtin8() {
-        return gtin8;
+        return getFirst(gtin8);
     }
 
     /**
@@ -1065,11 +1409,22 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setGtin8(Text gtin8) {
-        this.gtin8 = gtin8;
+    public void addGtin8(Text gtin8) {
+        this.gtin8 = add(this.gtin8, gtin8);
     }
 
-    private QuantitativeValue inventoryLevel;
+    private List<QuantitativeValue> inventoryLevel;
+
+    /**
+     * The current approximate inventory level for the item or items.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<QuantitativeValue> getInventoryLevelList() {
+        return inventoryLevel;
+    }
 
     /**
      * The current approximate inventory level for the item or items.
@@ -1079,7 +1434,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public QuantitativeValue getInventoryLevel() {
-        return inventoryLevel;
+        return getFirst(inventoryLevel);
     }
 
     /**
@@ -1089,11 +1444,22 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setInventoryLevel(QuantitativeValue inventoryLevel) {
-        this.inventoryLevel = inventoryLevel;
+    public void addInventoryLevel(QuantitativeValue inventoryLevel) {
+        this.inventoryLevel = add(this.inventoryLevel, inventoryLevel);
     }
 
-    private Text sku;
+    private List<Text> sku;
+
+    /**
+     * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<Text> getSkuList() {
+        return sku;
+    }
 
     /**
      * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
@@ -1103,7 +1469,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public Text getSku() {
-        return sku;
+        return getFirst(sku);
     }
 
     /**
@@ -1113,11 +1479,22 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setSku(Text sku) {
-        this.sku = sku;
+    public void addSku(Text sku) {
+        this.sku = add(this.sku, sku);
     }
 
-    private Offer addOn;
+    private List<Offer> addOn;
+
+    /**
+     * An additional offer that can only be obtained in combination with the first base offer (e.g. supplements and extensions that are available for a surcharge).
+     *
+     * @return {@link Offer}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<Offer> getAddOnList() {
+        return addOn;
+    }
 
     /**
      * An additional offer that can only be obtained in combination with the first base offer (e.g. supplements and extensions that are available for a surcharge).
@@ -1127,7 +1504,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public Offer getAddOn() {
-        return addOn;
+        return getFirst(addOn);
     }
 
     /**
@@ -1137,11 +1514,23 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setAddOn(Offer addOn) {
-        this.addOn = addOn;
+    public void addAddOn(Offer addOn) {
+        this.addOn = add(this.addOn, addOn);
     }
 
-    private MerchantReturnPolicy hasMerchantReturnPolicy;
+    private List<MerchantReturnPolicy> hasMerchantReturnPolicy;
+
+    /**
+     * Specifies a MerchantReturnPolicy that may be applicable.
+     *
+     * @return {@link MerchantReturnPolicy}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     */
+    @Override
+    public List<MerchantReturnPolicy> getHasMerchantReturnPolicyList() {
+        return hasMerchantReturnPolicy;
+    }
 
     /**
      * Specifies a MerchantReturnPolicy that may be applicable.
@@ -1152,7 +1541,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public MerchantReturnPolicy getHasMerchantReturnPolicy() {
-        return hasMerchantReturnPolicy;
+        return getFirst(hasMerchantReturnPolicy);
     }
 
     /**
@@ -1163,11 +1552,22 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
      */
     @Override
-    public void setHasMerchantReturnPolicy(MerchantReturnPolicy hasMerchantReturnPolicy) {
-        this.hasMerchantReturnPolicy = hasMerchantReturnPolicy;
+    public void addHasMerchantReturnPolicy(MerchantReturnPolicy hasMerchantReturnPolicy) {
+        this.hasMerchantReturnPolicy = add(this.hasMerchantReturnPolicy, hasMerchantReturnPolicy);
     }
 
-    private QuantitativeValue advanceBookingRequirement;
+    private List<QuantitativeValue> advanceBookingRequirement;
+
+    /**
+     * The amount of time that is required between accepting the offer and the actual usage of the resource or service.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<QuantitativeValue> getAdvanceBookingRequirementList() {
+        return advanceBookingRequirement;
+    }
 
     /**
      * The amount of time that is required between accepting the offer and the actual usage of the resource or service.
@@ -1177,7 +1577,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public QuantitativeValue getAdvanceBookingRequirement() {
-        return advanceBookingRequirement;
+        return getFirst(advanceBookingRequirement);
     }
 
     /**
@@ -1187,11 +1587,22 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setAdvanceBookingRequirement(QuantitativeValue advanceBookingRequirement) {
-        this.advanceBookingRequirement = advanceBookingRequirement;
+    public void addAdvanceBookingRequirement(QuantitativeValue advanceBookingRequirement) {
+        this.advanceBookingRequirement = add(this.advanceBookingRequirement, advanceBookingRequirement);
     }
 
-    private Text gtin14;
+    private List<Text> gtin14;
+
+    /**
+     * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<Text> getGtin14List() {
+        return gtin14;
+    }
 
     /**
      * The GTIN-14 code of the product, or the product to which the offer refers. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
@@ -1201,7 +1612,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public Text getGtin14() {
-        return gtin14;
+        return getFirst(gtin14);
     }
 
     /**
@@ -1211,11 +1622,21 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setGtin14(Text gtin14) {
-        this.gtin14 = gtin14;
+    public void addGtin14(Text gtin14) {
+        this.gtin14 = add(this.gtin14, gtin14);
     }
 
-    private Text priceCurrency;
+    private List<Text> priceCurrency;
+
+    /**
+     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getPriceCurrencyList() {
+        return priceCurrency;
+    }
 
     /**
      * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR".
@@ -1224,7 +1645,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public Text getPriceCurrency() {
-        return priceCurrency;
+        return getFirst(priceCurrency);
     }
 
     /**
@@ -1233,11 +1654,22 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param priceCurrency Text value to set.
      */
     @Override
-    public void setPriceCurrency(Text priceCurrency) {
-        this.priceCurrency = priceCurrency;
+    public void addPriceCurrency(Text priceCurrency) {
+        this.priceCurrency = add(this.priceCurrency, priceCurrency);
     }
 
-    private PriceSpecification eligibleTransactionVolume;
+    private List<PriceSpecification> eligibleTransactionVolume;
+
+    /**
+     * The transaction volume, in a monetary unit, for which the offer or price specification is valid, e.g. for indicating a minimal purchasing volume, to express free shipping above a certain order volume, or to limit the acceptance of credit cards to purchases to a certain minimal amount.
+     *
+     * @return {@link PriceSpecification}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<PriceSpecification> getEligibleTransactionVolumeList() {
+        return eligibleTransactionVolume;
+    }
 
     /**
      * The transaction volume, in a monetary unit, for which the offer or price specification is valid, e.g. for indicating a minimal purchasing volume, to express free shipping above a certain order volume, or to limit the acceptance of credit cards to purchases to a certain minimal amount.
@@ -1247,7 +1679,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public PriceSpecification getEligibleTransactionVolume() {
-        return eligibleTransactionVolume;
+        return getFirst(eligibleTransactionVolume);
     }
 
     /**
@@ -1257,12 +1689,22 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setEligibleTransactionVolume(PriceSpecification eligibleTransactionVolume) {
-        this.eligibleTransactionVolume = eligibleTransactionVolume;
+    public void addEligibleTransactionVolume(PriceSpecification eligibleTransactionVolume) {
+        this.eligibleTransactionVolume = add(this.eligibleTransactionVolume, eligibleTransactionVolume);
     }
 
     @JsonLdFieldTypes({ AdministrativeArea.class, GeoShape.class, Text.class, Place.class })
-    private Object areaServed;
+    private List<Object> areaServed;
+
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @return {@link AdministrativeArea} or {@link GeoShape} or {@link Text} or {@link Place}
+     */
+    @Override
+    public <T> List<T> getAreaServedList() {
+        return (List<T>) areaServed;
+    }
 
     /**
      * The geographic area where a service or offered item is provided.
@@ -1271,7 +1713,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public <T> T getAreaServed() {
-        return (T) areaServed;
+        return (T) getFirst(areaServed);
     }
 
     /**
@@ -1280,8 +1722,8 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param areaServed AdministrativeArea value to set.
      */
     @Override
-    public void setAreaServed(AdministrativeArea areaServed) {
-        this.areaServed = areaServed;
+    public void addAreaServed(AdministrativeArea areaServed) {
+        this.areaServed = add(this.areaServed, areaServed);
     }
     /**
      * The geographic area where a service or offered item is provided.
@@ -1289,8 +1731,8 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param areaServed GeoShape value to set.
      */
     @Override
-    public void setAreaServed(GeoShape areaServed) {
-        this.areaServed = areaServed;
+    public void addAreaServed(GeoShape areaServed) {
+        this.areaServed = add(this.areaServed, areaServed);
     }
     /**
      * The geographic area where a service or offered item is provided.
@@ -1298,8 +1740,8 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param areaServed Text value to set.
      */
     @Override
-    public void setAreaServed(Text areaServed) {
-        this.areaServed = areaServed;
+    public void addAreaServed(Text areaServed) {
+        this.areaServed = add(this.areaServed, areaServed);
     }
     /**
      * The geographic area where a service or offered item is provided.
@@ -1307,11 +1749,22 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param areaServed Place value to set.
      */
     @Override
-    public void setAreaServed(Place areaServed) {
-        this.areaServed = areaServed;
+    public void addAreaServed(Place areaServed) {
+        this.areaServed = add(this.areaServed, areaServed);
     }
 
-    private BusinessEntityType eligibleCustomerType;
+    private List<BusinessEntityType> eligibleCustomerType;
+
+    /**
+     * The type(s) of customers for which the given offer is valid.
+     *
+     * @return {@link BusinessEntityType}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<BusinessEntityType> getEligibleCustomerTypeList() {
+        return eligibleCustomerType;
+    }
 
     /**
      * The type(s) of customers for which the given offer is valid.
@@ -1321,7 +1774,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public BusinessEntityType getEligibleCustomerType() {
-        return eligibleCustomerType;
+        return getFirst(eligibleCustomerType);
     }
 
     /**
@@ -1331,11 +1784,21 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setEligibleCustomerType(BusinessEntityType eligibleCustomerType) {
-        this.eligibleCustomerType = eligibleCustomerType;
+    public void addEligibleCustomerType(BusinessEntityType eligibleCustomerType) {
+        this.eligibleCustomerType = add(this.eligibleCustomerType, eligibleCustomerType);
     }
 
-    private ItemAvailability availability;
+    private List<ItemAvailability> availability;
+
+    /**
+     * The availability of this item&#x2014;for example In stock, Out of stock, Pre-order, etc.
+     *
+     * @return {@link ItemAvailability}
+     */
+    @Override
+    public List<ItemAvailability> getAvailabilityList() {
+        return availability;
+    }
 
     /**
      * The availability of this item&#x2014;for example In stock, Out of stock, Pre-order, etc.
@@ -1344,7 +1807,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public ItemAvailability getAvailability() {
-        return availability;
+        return getFirst(availability);
     }
 
     /**
@@ -1353,11 +1816,22 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param availability ItemAvailability value to set.
      */
     @Override
-    public void setAvailability(ItemAvailability availability) {
-        this.availability = availability;
+    public void addAvailability(ItemAvailability availability) {
+        this.availability = add(this.availability, availability);
     }
 
-    private Text gtin13;
+    private List<Text> gtin13;
+
+    /**
+     * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<Text> getGtin13List() {
+        return gtin13;
+    }
 
     /**
      * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
@@ -1367,7 +1841,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public Text getGtin13() {
-        return gtin13;
+        return getFirst(gtin13);
     }
 
     /**
@@ -1377,11 +1851,21 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setGtin13(Text gtin13) {
-        this.gtin13 = gtin13;
+    public void addGtin13(Text gtin13) {
+        this.gtin13 = add(this.gtin13, gtin13);
     }
 
-    private Review reviews;
+    private List<Review> reviews;
+
+    /**
+     * Review of the item.
+     *
+     * @return {@link Review}
+     */
+    @Override
+    public List<Review> getReviewsList() {
+        return reviews;
+    }
 
     /**
      * Review of the item.
@@ -1390,7 +1874,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public Review getReviews() {
-        return reviews;
+        return getFirst(reviews);
     }
 
     /**
@@ -1399,11 +1883,21 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param reviews Review value to set.
      */
     @Override
-    public void setReviews(Review reviews) {
-        this.reviews = reviews;
+    public void addReviews(Review reviews) {
+        this.reviews = add(this.reviews, reviews);
     }
 
-    private Boolean isFamilyFriendly;
+    private List<Boolean> isFamilyFriendly;
+
+    /**
+     * Indicates whether this content is family friendly.
+     *
+     * @return {@link Boolean}
+     */
+    @Override
+    public List<Boolean> getIsFamilyFriendlyList() {
+        return isFamilyFriendly;
+    }
 
     /**
      * Indicates whether this content is family friendly.
@@ -1412,7 +1906,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public Boolean getIsFamilyFriendly() {
-        return isFamilyFriendly;
+        return getFirst(isFamilyFriendly);
     }
 
     /**
@@ -1421,12 +1915,23 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param isFamilyFriendly Boolean value to set.
      */
     @Override
-    public void setIsFamilyFriendly(Boolean isFamilyFriendly) {
-        this.isFamilyFriendly = isFamilyFriendly;
+    public void addIsFamilyFriendly(Boolean isFamilyFriendly) {
+        this.isFamilyFriendly = add(this.isFamilyFriendly, isFamilyFriendly);
     }
 
     @JsonLdFieldTypes({ DateTime.class, Date.class })
-    private Object validThrough;
+    private List<Object> validThrough;
+
+    /**
+     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
+     *
+     * @return {@link DateTime} or {@link Date}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public <T> List<T> getValidThroughList() {
+        return (List<T>) validThrough;
+    }
 
     /**
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
@@ -1436,7 +1941,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public <T> T getValidThrough() {
-        return (T) validThrough;
+        return (T) getFirst(validThrough);
     }
 
     /**
@@ -1446,8 +1951,8 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setValidThrough(DateTime validThrough) {
-        this.validThrough = validThrough;
+    public void addValidThrough(DateTime validThrough) {
+        this.validThrough = add(this.validThrough, validThrough);
     }
     /**
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
@@ -1456,11 +1961,22 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setValidThrough(Date validThrough) {
-        this.validThrough = validThrough;
+    public void addValidThrough(Date validThrough) {
+        this.validThrough = add(this.validThrough, validThrough);
     }
 
-    private PriceSpecification priceSpecification;
+    private List<PriceSpecification> priceSpecification;
+
+    /**
+     * One or more detailed price specifications, indicating the unit price and delivery or payment charges.
+     *
+     * @return {@link PriceSpecification}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<PriceSpecification> getPriceSpecificationList() {
+        return priceSpecification;
+    }
 
     /**
      * One or more detailed price specifications, indicating the unit price and delivery or payment charges.
@@ -1470,7 +1986,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public PriceSpecification getPriceSpecification() {
-        return priceSpecification;
+        return getFirst(priceSpecification);
     }
 
     /**
@@ -1480,12 +1996,23 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setPriceSpecification(PriceSpecification priceSpecification) {
-        this.priceSpecification = priceSpecification;
+    public void addPriceSpecification(PriceSpecification priceSpecification) {
+        this.priceSpecification = add(this.priceSpecification, priceSpecification);
     }
 
     @JsonLdFieldTypes({ Number.class, Text.class })
-    private Object price;
+    private List<Object> price;
+
+    /**
+     * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.<br/><br/>Usage guidelines:<br/><br/>* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR") instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.<br/>* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a "content=" attribute for publishing simple machine-readable values alongside more human-friendly formatting.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
+     *       
+     *
+     * @return {@link Number} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getPriceList() {
+        return (List<T>) price;
+    }
 
     /**
      * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.<br/><br/>Usage guidelines:<br/><br/>* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR") instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.<br/>* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a "content=" attribute for publishing simple machine-readable values alongside more human-friendly formatting.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
@@ -1495,7 +2022,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public <T> T getPrice() {
-        return (T) price;
+        return (T) getFirst(price);
     }
 
     /**
@@ -1505,8 +2032,8 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param price Number value to set.
      */
     @Override
-    public void setPrice(Number price) {
-        this.price = price;
+    public void addPrice(Number price) {
+        this.price = add(this.price, price);
     }
     /**
      * The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.<br/><br/>Usage guidelines:<br/><br/>* Use the [[priceCurrency]] property (with standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217) e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies e.g. "BTC"; well known names for [Local Exchange Tradings Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types e.g. "Ithaca HOUR") instead of including [ambiguous symbols](http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign) such as '$' in the value.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.<br/>* Note that both [RDFa](http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute) and Microdata syntax allow the use of a "content=" attribute for publishing simple machine-readable values alongside more human-friendly formatting.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.
@@ -1515,12 +2042,24 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param price Text value to set.
      */
     @Override
-    public void setPrice(Text price) {
-        this.price = price;
+    public void addPrice(Text price) {
+        this.price = add(this.price, price);
     }
 
     @JsonLdFieldTypes({ Time.class, DateTime.class, Date.class })
-    private Object availabilityStarts;
+    private List<Object> availabilityStarts;
+
+    /**
+     * The beginning of the availability of the product or service included in the offer.
+     *
+     * @return {@link Time} or {@link DateTime} or {@link Date}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public <T> List<T> getAvailabilityStartsList() {
+        return (List<T>) availabilityStarts;
+    }
 
     /**
      * The beginning of the availability of the product or service included in the offer.
@@ -1531,7 +2070,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public <T> T getAvailabilityStarts() {
-        return (T) availabilityStarts;
+        return (T) getFirst(availabilityStarts);
     }
 
     /**
@@ -1542,8 +2081,8 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setAvailabilityStarts(Time availabilityStarts) {
-        this.availabilityStarts = availabilityStarts;
+    public void addAvailabilityStarts(Time availabilityStarts) {
+        this.availabilityStarts = add(this.availabilityStarts, availabilityStarts);
     }
     /**
      * The beginning of the availability of the product or service included in the offer.
@@ -1553,8 +2092,8 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setAvailabilityStarts(DateTime availabilityStarts) {
-        this.availabilityStarts = availabilityStarts;
+    public void addAvailabilityStarts(DateTime availabilityStarts) {
+        this.availabilityStarts = add(this.availabilityStarts, availabilityStarts);
     }
     /**
      * The beginning of the availability of the product or service included in the offer.
@@ -1564,11 +2103,22 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setAvailabilityStarts(Date availabilityStarts) {
-        this.availabilityStarts = availabilityStarts;
+    public void addAvailabilityStarts(Date availabilityStarts) {
+        this.availabilityStarts = add(this.availabilityStarts, availabilityStarts);
     }
 
-    private QuantitativeValue eligibleDuration;
+    private List<QuantitativeValue> eligibleDuration;
+
+    /**
+     * The duration for which the given offer is valid.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<QuantitativeValue> getEligibleDurationList() {
+        return eligibleDuration;
+    }
 
     /**
      * The duration for which the given offer is valid.
@@ -1578,7 +2128,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public QuantitativeValue getEligibleDuration() {
-        return eligibleDuration;
+        return getFirst(eligibleDuration);
     }
 
     /**
@@ -1588,11 +2138,22 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setEligibleDuration(QuantitativeValue eligibleDuration) {
-        this.eligibleDuration = eligibleDuration;
+    public void addEligibleDuration(QuantitativeValue eligibleDuration) {
+        this.eligibleDuration = add(this.eligibleDuration, eligibleDuration);
     }
 
-    private Place availableAtOrFrom;
+    private List<Place> availableAtOrFrom;
+
+    /**
+     * The place(s) from which the offer can be obtained (e.g. store locations).
+     *
+     * @return {@link Place}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<Place> getAvailableAtOrFromList() {
+        return availableAtOrFrom;
+    }
 
     /**
      * The place(s) from which the offer can be obtained (e.g. store locations).
@@ -1602,7 +2163,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public Place getAvailableAtOrFrom() {
-        return availableAtOrFrom;
+        return getFirst(availableAtOrFrom);
     }
 
     /**
@@ -1612,11 +2173,22 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setAvailableAtOrFrom(Place availableAtOrFrom) {
-        this.availableAtOrFrom = availableAtOrFrom;
+    public void addAvailableAtOrFrom(Place availableAtOrFrom) {
+        this.availableAtOrFrom = add(this.availableAtOrFrom, availableAtOrFrom);
     }
 
-    private Text serialNumber;
+    private List<Text> serialNumber;
+
+    /**
+     * The serial number or any alphanumeric identifier of a particular product. When attached to an offer, it is a shortcut for the serial number of the product included in the offer.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<Text> getSerialNumberList() {
+        return serialNumber;
+    }
 
     /**
      * The serial number or any alphanumeric identifier of a particular product. When attached to an offer, it is a shortcut for the serial number of the product included in the offer.
@@ -1626,7 +2198,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public Text getSerialNumber() {
-        return serialNumber;
+        return getFirst(serialNumber);
     }
 
     /**
@@ -1636,12 +2208,22 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setSerialNumber(Text serialNumber) {
-        this.serialNumber = serialNumber;
+    public void addSerialNumber(Text serialNumber) {
+        this.serialNumber = add(this.serialNumber, serialNumber);
     }
 
     @JsonLdFieldTypes({ CreativeWork.class, URL.class })
-    private Object mainEntityOfPage;
+    private List<Object> mainEntityOfPage;
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    @Override
+    public <T> List<T> getMainEntityOfPageList() {
+        return (List<T>) mainEntityOfPage;
+    }
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -1650,7 +2232,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public <T> T getMainEntityOfPage() {
-        return (T) mainEntityOfPage;
+        return (T) getFirst(mainEntityOfPage);
     }
 
     /**
@@ -1659,8 +2241,8 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        this.mainEntityOfPage = mainEntityOfPage;
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -1668,11 +2250,21 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param mainEntityOfPage URL value to set.
      */
     @Override
-    public void setMainEntityOfPage(URL mainEntityOfPage) {
-        this.mainEntityOfPage = mainEntityOfPage;
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
 
-    private Text alternateName;
+    private List<Text> alternateName;
+
+    /**
+     * An alias for the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getAlternateNameList() {
+        return alternateName;
+    }
 
     /**
      * An alias for the item.
@@ -1681,7 +2273,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public Text getAlternateName() {
-        return alternateName;
+        return getFirst(alternateName);
     }
 
     /**
@@ -1690,11 +2282,21 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param alternateName Text value to set.
      */
     @Override
-    public void setAlternateName(Text alternateName) {
-        this.alternateName = alternateName;
+    public void addAlternateName(Text alternateName) {
+        this.alternateName = add(this.alternateName, alternateName);
     }
 
-    private Text name;
+    private List<Text> name;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getNameList() {
+        return name;
+    }
 
     /**
      * The name of the item.
@@ -1703,7 +2305,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public Text getName() {
-        return name;
+        return getFirst(name);
     }
 
     /**
@@ -1712,11 +2314,21 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param name Text value to set.
      */
     @Override
-    public void setName(Text name) {
-        this.name = name;
+    public void addName(Text name) {
+        this.name = add(this.name, name);
     }
 
-    private Action potentialAction;
+    private List<Action> potentialAction;
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public List<Action> getPotentialActionList() {
+        return potentialAction;
+    }
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -1725,7 +2337,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public Action getPotentialAction() {
-        return potentialAction;
+        return getFirst(potentialAction);
     }
 
     /**
@@ -1734,12 +2346,22 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param potentialAction Action value to set.
      */
     @Override
-    public void setPotentialAction(Action potentialAction) {
-        this.potentialAction = potentialAction;
+    public void addPotentialAction(Action potentialAction) {
+        this.potentialAction = add(this.potentialAction, potentialAction);
     }
 
     @JsonLdFieldTypes({ URL.class, ImageObject.class })
-    private Object image;
+    private List<Object> image;
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link URL} or {@link ImageObject}
+     */
+    @Override
+    public <T> List<T> getImageList() {
+        return (List<T>) image;
+    }
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -1748,7 +2370,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public <T> T getImage() {
-        return (T) image;
+        return (T) getFirst(image);
     }
 
     /**
@@ -1757,8 +2379,8 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param image URL value to set.
      */
     @Override
-    public void setImage(URL image) {
-        this.image = image;
+    public void addImage(URL image) {
+        this.image = add(this.image, image);
     }
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -1766,11 +2388,21 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param image ImageObject value to set.
      */
     @Override
-    public void setImage(ImageObject image) {
-        this.image = image;
+    public void addImage(ImageObject image) {
+        this.image = add(this.image, image);
     }
 
-    private URL url;
+    private List<URL> url;
+
+    /**
+     * URL of the item.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getUrlList() {
+        return url;
+    }
 
     /**
      * URL of the item.
@@ -1779,7 +2411,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public URL getUrl() {
-        return url;
+        return getFirst(url);
     }
 
     /**
@@ -1788,11 +2420,21 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param url URL value to set.
      */
     @Override
-    public void setUrl(URL url) {
-        this.url = url;
+    public void addUrl(URL url) {
+        this.url = add(this.url, url);
     }
 
-    private Text description;
+    private List<Text> description;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDescriptionList() {
+        return description;
+    }
 
     /**
      * A description of the item.
@@ -1801,7 +2443,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public Text getDescription() {
-        return description;
+        return getFirst(description);
     }
 
     /**
@@ -1810,12 +2452,23 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param description Text value to set.
      */
     @Override
-    public void setDescription(Text description) {
-        this.description = description;
+    public void addDescription(Text description) {
+        this.description = add(this.description, description);
     }
 
     @JsonLdFieldTypes({ Event.class, CreativeWork.class })
-    private Object subjectOf;
+    private List<Object> subjectOf;
+
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @return {@link Event} or {@link CreativeWork}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public <T> List<T> getSubjectOfList() {
+        return (List<T>) subjectOf;
+    }
 
     /**
      * A CreativeWork or Event about this Thing.
@@ -1825,7 +2478,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public <T> T getSubjectOf() {
-        return (T) subjectOf;
+        return (T) getFirst(subjectOf);
     }
 
     /**
@@ -1835,8 +2488,8 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Event subjectOf) {
-        this.subjectOf = subjectOf;
+    public void addSubjectOf(Event subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
     }
     /**
      * A CreativeWork or Event about this Thing.
@@ -1845,11 +2498,21 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(CreativeWork subjectOf) {
-        this.subjectOf = subjectOf;
+    public void addSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
     }
 
-    private URL additionalType;
+    private List<URL> additionalType;
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getAdditionalTypeList() {
+        return additionalType;
+    }
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
@@ -1858,7 +2521,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public URL getAdditionalType() {
-        return additionalType;
+        return getFirst(additionalType);
     }
 
     /**
@@ -1867,11 +2530,21 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param additionalType URL value to set.
      */
     @Override
-    public void setAdditionalType(URL additionalType) {
-        this.additionalType = additionalType;
+    public void addAdditionalType(URL additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
     }
 
-    private Text disambiguatingDescription;
+    private List<Text> disambiguatingDescription;
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDisambiguatingDescriptionList() {
+        return disambiguatingDescription;
+    }
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
@@ -1880,7 +2553,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public Text getDisambiguatingDescription() {
-        return disambiguatingDescription;
+        return getFirst(disambiguatingDescription);
     }
 
     /**
@@ -1889,11 +2562,21 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param disambiguatingDescription Text value to set.
      */
     @Override
-    public void setDisambiguatingDescription(Text disambiguatingDescription) {
-        this.disambiguatingDescription = disambiguatingDescription;
+    public void addDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
     }
 
-    private URL sameAs;
+    private List<URL> sameAs;
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getSameAsList() {
+        return sameAs;
+    }
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
@@ -1902,7 +2585,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public URL getSameAs() {
-        return sameAs;
+        return getFirst(sameAs);
     }
 
     /**
@@ -1911,12 +2594,23 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param sameAs URL value to set.
      */
     @Override
-    public void setSameAs(URL sameAs) {
-        this.sameAs = sameAs;
+    public void addSameAs(URL sameAs) {
+        this.sameAs = add(this.sameAs, sameAs);
     }
 
     @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
-    private Object identifier;
+    private List<Object> identifier;
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @return {@link URL} or {@link Text} or {@link PropertyValue}
+     */
+    @Override
+    public <T> List<T> getIdentifierList() {
+        return (List<T>) identifier;
+    }
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -1926,7 +2620,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      */
     @Override
     public <T> T getIdentifier() {
-        return (T) identifier;
+        return (T) getFirst(identifier);
     }
 
     /**
@@ -1936,8 +2630,8 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param identifier URL value to set.
      */
     @Override
-    public void setIdentifier(URL identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(URL identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -1946,8 +2640,8 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param identifier Text value to set.
      */
     @Override
-    public void setIdentifier(Text identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(Text identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -1956,7 +2650,7 @@ public class AggregateOfferImpl extends com.weedow.schemaorg.commons.model.JsonL
      * @param identifier PropertyValue value to set.
      */
     @Override
-    public void setIdentifier(PropertyValue identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(PropertyValue identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
 }

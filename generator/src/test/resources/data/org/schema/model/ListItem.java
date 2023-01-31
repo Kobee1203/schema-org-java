@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Integer;
 import org.schema.model.datatype.Text;
 import org.schema.model.ListItem;
@@ -22,6 +23,13 @@ public interface ListItem extends Intangible {
      *
      * @return {@link Integer} or {@link Text}
      */
+    <T> List<T> getPositionList();
+
+    /**
+     * The position of an item in a series or sequence of items.
+     *
+     * @return {@link Integer} or {@link Text}
+     */
     <T> T getPosition();
 
     /**
@@ -29,13 +37,20 @@ public interface ListItem extends Intangible {
      *
      * @param position Integer value to set.
      */
-    void setPosition(Integer position);
+    void addPosition(Integer position);
     /**
      * The position of an item in a series or sequence of items.
      *
      * @param position Text value to set.
      */
-    void setPosition(Text position);
+    void addPosition(Text position);
+
+    /**
+     * A link to the ListItem that follows the current one.
+     *
+     * @return {@link ListItem}
+     */
+    List<ListItem> getNextItemList();
 
     /**
      * A link to the ListItem that follows the current one.
@@ -49,7 +64,14 @@ public interface ListItem extends Intangible {
      *
      * @param nextItem ListItem value to set.
      */
-    void setNextItem(ListItem nextItem);
+    void addNextItem(ListItem nextItem);
+
+    /**
+     * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')’.
+     *
+     * @return {@link Thing}
+     */
+    List<Thing> getItemList();
 
     /**
      * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')’.
@@ -63,7 +85,14 @@ public interface ListItem extends Intangible {
      *
      * @param item Thing value to set.
      */
-    void setItem(Thing item);
+    void addItem(Thing item);
+
+    /**
+     * A link to the ListItem that preceeds the current one.
+     *
+     * @return {@link ListItem}
+     */
+    List<ListItem> getPreviousItemList();
 
     /**
      * A link to the ListItem that preceeds the current one.
@@ -77,5 +106,5 @@ public interface ListItem extends Intangible {
      *
      * @param previousItem ListItem value to set.
      */
-    void setPreviousItem(ListItem previousItem);
+    void addPreviousItem(ListItem previousItem);
 }

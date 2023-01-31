@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Text;
 import org.schema.model.AdministrativeArea;
 
@@ -20,6 +21,13 @@ public interface Audience extends Intangible {
      *
      * @return {@link Text}
      */
+    List<Text> getAudienceTypeList();
+
+    /**
+     * The target group associated with a given audience (e.g. veterans, car owners, musicians, etc.).
+     *
+     * @return {@link Text}
+     */
     Text getAudienceType();
 
     /**
@@ -27,7 +35,14 @@ public interface Audience extends Intangible {
      *
      * @param audienceType Text value to set.
      */
-    void setAudienceType(Text audienceType);
+    void addAudienceType(Text audienceType);
+
+    /**
+     * The geographic area associated with the audience.
+     *
+     * @return {@link AdministrativeArea}
+     */
+    List<AdministrativeArea> getGeographicAreaList();
 
     /**
      * The geographic area associated with the audience.
@@ -41,5 +56,5 @@ public interface Audience extends Intangible {
      *
      * @param geographicArea AdministrativeArea value to set.
      */
-    void setGeographicArea(AdministrativeArea geographicArea);
+    void addGeographicArea(AdministrativeArea geographicArea);
 }

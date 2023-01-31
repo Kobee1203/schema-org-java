@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Text;
 import org.schema.model.Language;
 
@@ -21,6 +22,14 @@ public interface WriteAction extends CreateAction {
      * @return {@link Text} or {@link Language}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
      */
+    <T> List<T> getInLanguageList();
+
+    /**
+     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     *
+     * @return {@link Text} or {@link Language}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
+     */
     <T> T getInLanguage();
 
     /**
@@ -29,14 +38,21 @@ public interface WriteAction extends CreateAction {
      * @param inLanguage Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
      */
-    void setInLanguage(Text inLanguage);
+    void addInLanguage(Text inLanguage);
     /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
      *
      * @param inLanguage Language value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
      */
-    void setInLanguage(Language inLanguage);
+    void addInLanguage(Language inLanguage);
+
+    /**
+     * A sub property of instrument. The language used on this action.
+     *
+     * @return {@link Language}
+     */
+    List<Language> getLanguageList();
 
     /**
      * A sub property of instrument. The language used on this action.
@@ -50,5 +66,5 @@ public interface WriteAction extends CreateAction {
      *
      * @param language Language value to set.
      */
-    void setLanguage(Language language);
+    void addLanguage(Language language);
 }

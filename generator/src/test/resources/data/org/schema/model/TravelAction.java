@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.Distance;
 
 /**
@@ -19,6 +20,13 @@ public interface TravelAction extends MoveAction {
      *
      * @return {@link Distance}
      */
+    List<Distance> getDistanceList();
+
+    /**
+     * The distance travelled, e.g. exercising or travelling.
+     *
+     * @return {@link Distance}
+     */
     Distance getDistance();
 
     /**
@@ -26,5 +34,5 @@ public interface TravelAction extends MoveAction {
      *
      * @param distance Distance value to set.
      */
-    void setDistance(Distance distance);
+    void addDistance(Distance distance);
 }

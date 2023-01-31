@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Text;
 
 /**
@@ -19,6 +20,13 @@ public interface Airport extends CivicStructure {
      *
      * @return {@link Text}
      */
+    List<Text> getIataCodeList();
+
+    /**
+     * IATA identifier for an airline or airport.
+     *
+     * @return {@link Text}
+     */
     Text getIataCode();
 
     /**
@@ -26,7 +34,14 @@ public interface Airport extends CivicStructure {
      *
      * @param iataCode Text value to set.
      */
-    void setIataCode(Text iataCode);
+    void addIataCode(Text iataCode);
+
+    /**
+     * ICAO identifier for an airport.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getIcaoCodeList();
 
     /**
      * ICAO identifier for an airport.
@@ -40,5 +55,5 @@ public interface Airport extends CivicStructure {
      *
      * @param icaoCode Text value to set.
      */
-    void setIcaoCode(Text icaoCode);
+    void addIcaoCode(Text icaoCode);
 }

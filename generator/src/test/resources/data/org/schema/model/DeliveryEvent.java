@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Text;
 import org.schema.model.datatype.DateTime;
 import org.schema.model.DeliveryMethod;
@@ -21,6 +22,13 @@ public interface DeliveryEvent extends Event {
      *
      * @return {@link Text}
      */
+    List<Text> getAccessCodeList();
+
+    /**
+     * Password, PIN, or access code needed for delivery (e.g. from a locker).
+     *
+     * @return {@link Text}
+     */
     Text getAccessCode();
 
     /**
@@ -28,7 +36,14 @@ public interface DeliveryEvent extends Event {
      *
      * @param accessCode Text value to set.
      */
-    void setAccessCode(Text accessCode);
+    void addAccessCode(Text accessCode);
+
+    /**
+     * After this date, the item will no longer be available for pickup.
+     *
+     * @return {@link DateTime}
+     */
+    List<DateTime> getAvailableThroughList();
 
     /**
      * After this date, the item will no longer be available for pickup.
@@ -42,7 +57,14 @@ public interface DeliveryEvent extends Event {
      *
      * @param availableThrough DateTime value to set.
      */
-    void setAvailableThrough(DateTime availableThrough);
+    void addAvailableThrough(DateTime availableThrough);
+
+    /**
+     * Method used for delivery or shipping.
+     *
+     * @return {@link DeliveryMethod}
+     */
+    List<DeliveryMethod> getHasDeliveryMethodList();
 
     /**
      * Method used for delivery or shipping.
@@ -56,7 +78,14 @@ public interface DeliveryEvent extends Event {
      *
      * @param hasDeliveryMethod DeliveryMethod value to set.
      */
-    void setHasDeliveryMethod(DeliveryMethod hasDeliveryMethod);
+    void addHasDeliveryMethod(DeliveryMethod hasDeliveryMethod);
+
+    /**
+     * When the item is available for pickup from the store, locker, etc.
+     *
+     * @return {@link DateTime}
+     */
+    List<DateTime> getAvailableFromList();
 
     /**
      * When the item is available for pickup from the store, locker, etc.
@@ -70,5 +99,5 @@ public interface DeliveryEvent extends Event {
      *
      * @param availableFrom DateTime value to set.
      */
-    void setAvailableFrom(DateTime availableFrom);
+    void addAvailableFrom(DateTime availableFrom);
 }

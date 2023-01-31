@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.MedicalObservationalStudyDesign;
 
 /**
@@ -21,6 +22,14 @@ public interface MedicalObservationalStudy extends MedicalStudy {
      * @return {@link MedicalObservationalStudyDesign}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
+    List<MedicalObservationalStudyDesign> getStudyDesignList();
+
+    /**
+     * Specifics about the observational study design (enumerated).
+     *
+     * @return {@link MedicalObservationalStudyDesign}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
     MedicalObservationalStudyDesign getStudyDesign();
 
     /**
@@ -29,5 +38,5 @@ public interface MedicalObservationalStudy extends MedicalStudy {
      * @param studyDesign MedicalObservationalStudyDesign value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setStudyDesign(MedicalObservationalStudyDesign studyDesign);
+    void addStudyDesign(MedicalObservationalStudyDesign studyDesign);
 }

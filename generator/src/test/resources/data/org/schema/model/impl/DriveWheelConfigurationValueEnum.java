@@ -22,6 +22,8 @@ import org.schema.model.ImageObject;
 import org.schema.model.Event;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import java.util.List;
 import org.schema.model.Intangible;
 import org.schema.model.DriveWheelConfigurationValue;
 
@@ -92,303 +94,345 @@ public enum DriveWheelConfigurationValueEnum implements DriveWheelConfigurationV
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public <T> T getValueReference() {
-        return null;
-    }
+    public <T> List<T> getValueReferenceList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setValueReference(Enumeration valueReference) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'valueReference': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void setValueReference(DefinedTerm valueReference) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'valueReference': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void setValueReference(Text valueReference) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'valueReference': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void setValueReference(MeasurementTypeEnumeration valueReference) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'valueReference': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void setValueReference(QualitativeValue valueReference) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'valueReference': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void setValueReference(StructuredValue valueReference) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'valueReference': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void setValueReference(PropertyValue valueReference) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'valueReference': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void setValueReference(QuantitativeValue valueReference) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'valueReference': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public QualitativeValue getGreaterOrEqual() {
-        return null;
-    }
+    public <T> T getValueReference() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setGreaterOrEqual(QualitativeValue greaterOrEqual) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'greaterOrEqual': method not allowed for enum Enum");
+    public void addValueReference(Enumeration valueReference) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'valueReference': method not allowed for enum DriveWheelConfigurationValueEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public QualitativeValue getNonEqual() {
-        return null;
+    public void addValueReference(DefinedTerm valueReference) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'valueReference': method not allowed for enum DriveWheelConfigurationValueEnum");
     }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addValueReference(Text valueReference) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'valueReference': method not allowed for enum DriveWheelConfigurationValueEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addValueReference(MeasurementTypeEnumeration valueReference) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'valueReference': method not allowed for enum DriveWheelConfigurationValueEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addValueReference(QualitativeValue valueReference) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'valueReference': method not allowed for enum DriveWheelConfigurationValueEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addValueReference(StructuredValue valueReference) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'valueReference': method not allowed for enum DriveWheelConfigurationValueEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addValueReference(PropertyValue valueReference) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'valueReference': method not allowed for enum DriveWheelConfigurationValueEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addValueReference(QuantitativeValue valueReference) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'valueReference': method not allowed for enum DriveWheelConfigurationValueEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public List<QualitativeValue> getGreaterOrEqualList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setNonEqual(QualitativeValue nonEqual) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'nonEqual': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public QualitativeValue getEqual() {
-        return null;
-    }
+    public QualitativeValue getGreaterOrEqual() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setEqual(QualitativeValue equal) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'equal': method not allowed for enum Enum");
+    public void addGreaterOrEqual(QualitativeValue greaterOrEqual) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'greaterOrEqual': method not allowed for enum DriveWheelConfigurationValueEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public QualitativeValue getLesser() {
-        return null;
-    }
+    public List<QualitativeValue> getNonEqualList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setLesser(QualitativeValue lesser) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'lesser': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public QualitativeValue getGreater() {
-        return null;
-    }
+    public QualitativeValue getNonEqual() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setGreater(QualitativeValue greater) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'greater': method not allowed for enum Enum");
+    public void addNonEqual(QualitativeValue nonEqual) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'nonEqual': method not allowed for enum DriveWheelConfigurationValueEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public PropertyValue getAdditionalProperty() {
-        return null;
-    }
+    public List<QualitativeValue> getEqualList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setAdditionalProperty(PropertyValue additionalProperty) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'additionalProperty': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public QualitativeValue getLesserOrEqual() {
-        return null;
-    }
+    public QualitativeValue getEqual() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setLesserOrEqual(QualitativeValue lesserOrEqual) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'lesserOrEqual': method not allowed for enum Enum");
+    public void addEqual(QualitativeValue equal) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'equal': method not allowed for enum DriveWheelConfigurationValueEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public <T> T getSupersededBy() {
-        return null;
-    }
+    public List<QualitativeValue> getLesserList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setSupersededBy(Enumeration supersededBy) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'supersededBy': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void setSupersededBy(Class supersededBy) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'supersededBy': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void setSupersededBy(Property supersededBy) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'supersededBy': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public <T> T getMainEntityOfPage() {
-        return null;
-    }
+    public QualitativeValue getLesser() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'mainEntityOfPage': method not allowed for enum Enum");
+    public void addLesser(QualitativeValue lesser) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'lesser': method not allowed for enum DriveWheelConfigurationValueEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setMainEntityOfPage(URL mainEntityOfPage) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'mainEntityOfPage': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public Text getAlternateName() {
-        return null;
-    }
+    public List<QualitativeValue> getGreaterList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setAlternateName(Text alternateName) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'alternateName': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public Text getName() {
-        return null;
-    }
+    public QualitativeValue getGreater() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setName(Text name) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'name': method not allowed for enum Enum");
+    public void addGreater(QualitativeValue greater) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'greater': method not allowed for enum DriveWheelConfigurationValueEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public Action getPotentialAction() {
-        return null;
-    }
+    public List<PropertyValue> getAdditionalPropertyList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setPotentialAction(Action potentialAction) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'potentialAction': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public <T> T getImage() {
-        return null;
-    }
+    public PropertyValue getAdditionalProperty() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setImage(URL image) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'image': method not allowed for enum Enum");
+    public void addAdditionalProperty(PropertyValue additionalProperty) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'additionalProperty': method not allowed for enum DriveWheelConfigurationValueEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setImage(ImageObject image) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'image': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public URL getUrl() {
-        return null;
-    }
+    public List<QualitativeValue> getLesserOrEqualList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setUrl(URL url) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'url': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public Text getDescription() {
-        return null;
-    }
+    public QualitativeValue getLesserOrEqual() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setDescription(Text description) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'description': method not allowed for enum Enum");
+    public void addLesserOrEqual(QualitativeValue lesserOrEqual) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'lesserOrEqual': method not allowed for enum DriveWheelConfigurationValueEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public <T> T getSubjectOf() {
-        return null;
-    }
+    public <T> List<T> getSupersededByList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setSubjectOf(Event subjectOf) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'subjectOf': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void setSubjectOf(CreativeWork subjectOf) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'subjectOf': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public URL getAdditionalType() {
-        return null;
-    }
+    public <T> T getSupersededBy() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setAdditionalType(URL additionalType) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'additionalType': method not allowed for enum Enum");
+    public void addSupersededBy(Enumeration supersededBy) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'supersededBy': method not allowed for enum DriveWheelConfigurationValueEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public Text getDisambiguatingDescription() {
-        return null;
+    public void addSupersededBy(Class supersededBy) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'supersededBy': method not allowed for enum DriveWheelConfigurationValueEnum");
     }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addSupersededBy(Property supersededBy) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'supersededBy': method not allowed for enum DriveWheelConfigurationValueEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> List<T> getMainEntityOfPageList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setDisambiguatingDescription(Text disambiguatingDescription) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'disambiguatingDescription': method not allowed for enum Enum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public URL getSameAs() {
-        return null;
-    }
+    public <T> T getMainEntityOfPage() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setSameAs(URL sameAs) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'sameAs': method not allowed for enum Enum");
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'mainEntityOfPage': method not allowed for enum DriveWheelConfigurationValueEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public <T> T getIdentifier() {
-        return null;
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'mainEntityOfPage': method not allowed for enum DriveWheelConfigurationValueEnum");
     }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public List<Text> getAlternateNameList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setIdentifier(URL identifier) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum Enum");
+    public Text getAlternateName() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addAlternateName(Text alternateName) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'alternateName': method not allowed for enum DriveWheelConfigurationValueEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setIdentifier(Text identifier) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum Enum");
+    public List<Text> getNameList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public Text getName() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addName(Text name) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'name': method not allowed for enum DriveWheelConfigurationValueEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void setIdentifier(PropertyValue identifier) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum Enum");
+    public List<Action> getPotentialActionList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public Action getPotentialAction() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addPotentialAction(Action potentialAction) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'potentialAction': method not allowed for enum DriveWheelConfigurationValueEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> List<T> getImageList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> T getImage() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addImage(URL image) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'image': method not allowed for enum DriveWheelConfigurationValueEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addImage(ImageObject image) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'image': method not allowed for enum DriveWheelConfigurationValueEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public List<URL> getUrlList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public URL getUrl() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addUrl(URL url) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'url': method not allowed for enum DriveWheelConfigurationValueEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public List<Text> getDescriptionList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public Text getDescription() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addDescription(Text description) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'description': method not allowed for enum DriveWheelConfigurationValueEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> List<T> getSubjectOfList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> T getSubjectOf() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addSubjectOf(Event subjectOf) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'subjectOf': method not allowed for enum DriveWheelConfigurationValueEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addSubjectOf(CreativeWork subjectOf) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'subjectOf': method not allowed for enum DriveWheelConfigurationValueEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public List<URL> getAdditionalTypeList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public URL getAdditionalType() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addAdditionalType(URL additionalType) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'additionalType': method not allowed for enum DriveWheelConfigurationValueEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public List<Text> getDisambiguatingDescriptionList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public Text getDisambiguatingDescription() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addDisambiguatingDescription(Text disambiguatingDescription) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'disambiguatingDescription': method not allowed for enum DriveWheelConfigurationValueEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public List<URL> getSameAsList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public URL getSameAs() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addSameAs(URL sameAs) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'sameAs': method not allowed for enum DriveWheelConfigurationValueEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> List<T> getIdentifierList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> T getIdentifier() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addIdentifier(URL identifier) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum DriveWheelConfigurationValueEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addIdentifier(Text identifier) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum DriveWheelConfigurationValueEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addIdentifier(PropertyValue identifier) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'identifier': method not allowed for enum DriveWheelConfigurationValueEnum");
     }
 }

@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.Comment;
 
 /**
@@ -19,6 +20,13 @@ public interface ReplyAction extends CommunicateAction {
      *
      * @return {@link Comment}
      */
+    List<Comment> getResultCommentList();
+
+    /**
+     * A sub property of result. The Comment created or sent as a result of this action.
+     *
+     * @return {@link Comment}
+     */
     Comment getResultComment();
 
     /**
@@ -26,5 +34,5 @@ public interface ReplyAction extends CommunicateAction {
      *
      * @param resultComment Comment value to set.
      */
-    void setResultComment(Comment resultComment);
+    void addResultComment(Comment resultComment);
 }

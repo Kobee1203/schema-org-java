@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.QualitativeValue;
 import org.schema.model.datatype.Text;
 import org.schema.model.datatype.DateTime;
@@ -24,6 +25,13 @@ public interface LodgingReservation extends Reservation {
      *
      * @return {@link QualitativeValue} or {@link Text}
      */
+    <T> List<T> getLodgingUnitTypeList();
+
+    /**
+     * Textual description of the unit type (including suite vs. room, size of bed, etc.).
+     *
+     * @return {@link QualitativeValue} or {@link Text}
+     */
     <T> T getLodgingUnitType();
 
     /**
@@ -31,13 +39,20 @@ public interface LodgingReservation extends Reservation {
      *
      * @param lodgingUnitType QualitativeValue value to set.
      */
-    void setLodgingUnitType(QualitativeValue lodgingUnitType);
+    void addLodgingUnitType(QualitativeValue lodgingUnitType);
     /**
      * Textual description of the unit type (including suite vs. room, size of bed, etc.).
      *
      * @param lodgingUnitType Text value to set.
      */
-    void setLodgingUnitType(Text lodgingUnitType);
+    void addLodgingUnitType(Text lodgingUnitType);
+
+    /**
+     * A full description of the lodging unit.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getLodgingUnitDescriptionList();
 
     /**
      * A full description of the lodging unit.
@@ -51,7 +66,14 @@ public interface LodgingReservation extends Reservation {
      *
      * @param lodgingUnitDescription Text value to set.
      */
-    void setLodgingUnitDescription(Text lodgingUnitDescription);
+    void addLodgingUnitDescription(Text lodgingUnitDescription);
+
+    /**
+     * The latest someone may check out of a lodging establishment.
+     *
+     * @return {@link DateTime} or {@link Time}
+     */
+    <T> List<T> getCheckoutTimeList();
 
     /**
      * The latest someone may check out of a lodging establishment.
@@ -65,13 +87,20 @@ public interface LodgingReservation extends Reservation {
      *
      * @param checkoutTime DateTime value to set.
      */
-    void setCheckoutTime(DateTime checkoutTime);
+    void addCheckoutTime(DateTime checkoutTime);
     /**
      * The latest someone may check out of a lodging establishment.
      *
      * @param checkoutTime Time value to set.
      */
-    void setCheckoutTime(Time checkoutTime);
+    void addCheckoutTime(Time checkoutTime);
+
+    /**
+     * The number of adults staying in the unit.
+     *
+     * @return {@link Integer} or {@link QuantitativeValue}
+     */
+    <T> List<T> getNumAdultsList();
 
     /**
      * The number of adults staying in the unit.
@@ -85,13 +114,20 @@ public interface LodgingReservation extends Reservation {
      *
      * @param numAdults Integer value to set.
      */
-    void setNumAdults(Integer numAdults);
+    void addNumAdults(Integer numAdults);
     /**
      * The number of adults staying in the unit.
      *
      * @param numAdults QuantitativeValue value to set.
      */
-    void setNumAdults(QuantitativeValue numAdults);
+    void addNumAdults(QuantitativeValue numAdults);
+
+    /**
+     * The earliest someone may check into a lodging establishment.
+     *
+     * @return {@link DateTime} or {@link Time}
+     */
+    <T> List<T> getCheckinTimeList();
 
     /**
      * The earliest someone may check into a lodging establishment.
@@ -105,13 +141,20 @@ public interface LodgingReservation extends Reservation {
      *
      * @param checkinTime DateTime value to set.
      */
-    void setCheckinTime(DateTime checkinTime);
+    void addCheckinTime(DateTime checkinTime);
     /**
      * The earliest someone may check into a lodging establishment.
      *
      * @param checkinTime Time value to set.
      */
-    void setCheckinTime(Time checkinTime);
+    void addCheckinTime(Time checkinTime);
+
+    /**
+     * The number of children staying in the unit.
+     *
+     * @return {@link Integer} or {@link QuantitativeValue}
+     */
+    <T> List<T> getNumChildrenList();
 
     /**
      * The number of children staying in the unit.
@@ -125,11 +168,11 @@ public interface LodgingReservation extends Reservation {
      *
      * @param numChildren Integer value to set.
      */
-    void setNumChildren(Integer numChildren);
+    void addNumChildren(Integer numChildren);
     /**
      * The number of children staying in the unit.
      *
      * @param numChildren QuantitativeValue value to set.
      */
-    void setNumChildren(QuantitativeValue numChildren);
+    void addNumChildren(QuantitativeValue numChildren);
 }

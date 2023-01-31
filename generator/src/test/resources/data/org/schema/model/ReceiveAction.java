@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.Person;
 import org.schema.model.Audience;
 import org.schema.model.Organization;
@@ -22,6 +23,13 @@ public interface ReceiveAction extends TransferAction {
      *
      * @return {@link Person} or {@link Audience} or {@link Organization}
      */
+    <T> List<T> getSenderList();
+
+    /**
+     * A sub property of participant. The participant who is at the sending end of the action.
+     *
+     * @return {@link Person} or {@link Audience} or {@link Organization}
+     */
     <T> T getSender();
 
     /**
@@ -29,19 +37,26 @@ public interface ReceiveAction extends TransferAction {
      *
      * @param sender Person value to set.
      */
-    void setSender(Person sender);
+    void addSender(Person sender);
     /**
      * A sub property of participant. The participant who is at the sending end of the action.
      *
      * @param sender Audience value to set.
      */
-    void setSender(Audience sender);
+    void addSender(Audience sender);
     /**
      * A sub property of participant. The participant who is at the sending end of the action.
      *
      * @param sender Organization value to set.
      */
-    void setSender(Organization sender);
+    void addSender(Organization sender);
+
+    /**
+     * A sub property of instrument. The method of delivery.
+     *
+     * @return {@link DeliveryMethod}
+     */
+    List<DeliveryMethod> getDeliveryMethodList();
 
     /**
      * A sub property of instrument. The method of delivery.
@@ -55,5 +70,5 @@ public interface ReceiveAction extends TransferAction {
      *
      * @param deliveryMethod DeliveryMethod value to set.
      */
-    void setDeliveryMethod(DeliveryMethod deliveryMethod);
+    void addDeliveryMethod(DeliveryMethod deliveryMethod);
 }

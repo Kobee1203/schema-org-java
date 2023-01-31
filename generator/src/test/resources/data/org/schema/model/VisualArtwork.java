@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.QuantitativeValue;
 import org.schema.model.Distance;
 import org.schema.model.Person;
@@ -25,6 +26,13 @@ public interface VisualArtwork extends CreativeWork {
      *
      * @return {@link QuantitativeValue} or {@link Distance}
      */
+    <T> List<T> getWidthList();
+
+    /**
+     * The width of the item.
+     *
+     * @return {@link QuantitativeValue} or {@link Distance}
+     */
     <T> T getWidth();
 
     /**
@@ -32,13 +40,21 @@ public interface VisualArtwork extends CreativeWork {
      *
      * @param width QuantitativeValue value to set.
      */
-    void setWidth(QuantitativeValue width);
+    void addWidth(QuantitativeValue width);
     /**
      * The width of the item.
      *
      * @param width Distance value to set.
      */
-    void setWidth(Distance width);
+    void addWidth(Distance width);
+
+    /**
+     * The individual who adds lettering, including speech balloons and sound effects, to artwork.
+     *
+     * @return {@link Person}
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    List<Person> getLettererList();
 
     /**
      * The individual who adds lettering, including speech balloons and sound effects, to artwork.
@@ -54,7 +70,14 @@ public interface VisualArtwork extends CreativeWork {
      * @param letterer Person value to set.
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
-    void setLetterer(Person letterer);
+    void addLetterer(Person letterer);
+
+    /**
+     * The height of the item.
+     *
+     * @return {@link Distance} or {@link QuantitativeValue}
+     */
+    <T> List<T> getHeightList();
 
     /**
      * The height of the item.
@@ -68,13 +91,20 @@ public interface VisualArtwork extends CreativeWork {
      *
      * @param height Distance value to set.
      */
-    void setHeight(Distance height);
+    void addHeight(Distance height);
     /**
      * The height of the item.
      *
      * @param height QuantitativeValue value to set.
      */
-    void setHeight(QuantitativeValue height);
+    void addHeight(QuantitativeValue height);
+
+    /**
+     * A material used as a surface in some artwork, e.g. Canvas, Paper, Wood, Board, etc.
+     *
+     * @return {@link URL} or {@link Text}
+     */
+    <T> List<T> getSurfaceList();
 
     /**
      * A material used as a surface in some artwork, e.g. Canvas, Paper, Wood, Board, etc.
@@ -88,13 +118,21 @@ public interface VisualArtwork extends CreativeWork {
      *
      * @param surface URL value to set.
      */
-    void setSurface(URL surface);
+    void addSurface(URL surface);
     /**
      * A material used as a surface in some artwork, e.g. Canvas, Paper, Wood, Board, etc.
      *
      * @param surface Text value to set.
      */
-    void setSurface(Text surface);
+    void addSurface(Text surface);
+
+    /**
+     * The individual who adds color to inked drawings.
+     *
+     * @return {@link Person}
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    List<Person> getColoristList();
 
     /**
      * The individual who adds color to inked drawings.
@@ -110,7 +148,15 @@ public interface VisualArtwork extends CreativeWork {
      * @param colorist Person value to set.
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
-    void setColorist(Person colorist);
+    void addColorist(Person colorist);
+
+    /**
+     * The individual who traces over the pencil drawings in ink after pencils are complete.
+     *
+     * @return {@link Person}
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    List<Person> getInkerList();
 
     /**
      * The individual who traces over the pencil drawings in ink after pencils are complete.
@@ -126,7 +172,14 @@ public interface VisualArtwork extends CreativeWork {
      * @param inker Person value to set.
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
-    void setInker(Person inker);
+    void addInker(Person inker);
+
+    /**
+     * e.g. Painting, Drawing, Sculpture, Print, Photograph, Assemblage, Collage, etc.
+     *
+     * @return {@link Text} or {@link URL}
+     */
+    <T> List<T> getArtformList();
 
     /**
      * e.g. Painting, Drawing, Sculpture, Print, Photograph, Assemblage, Collage, etc.
@@ -140,13 +193,20 @@ public interface VisualArtwork extends CreativeWork {
      *
      * @param artform Text value to set.
      */
-    void setArtform(Text artform);
+    void addArtform(Text artform);
     /**
      * e.g. Painting, Drawing, Sculpture, Print, Photograph, Assemblage, Collage, etc.
      *
      * @param artform URL value to set.
      */
-    void setArtform(URL artform);
+    void addArtform(URL artform);
+
+    /**
+     * The supporting materials for the artwork, e.g. Canvas, Paper, Wood, Board, etc.
+     *
+     * @return {@link URL} or {@link Text}
+     */
+    <T> List<T> getArtworkSurfaceList();
 
     /**
      * The supporting materials for the artwork, e.g. Canvas, Paper, Wood, Board, etc.
@@ -160,13 +220,20 @@ public interface VisualArtwork extends CreativeWork {
      *
      * @param artworkSurface URL value to set.
      */
-    void setArtworkSurface(URL artworkSurface);
+    void addArtworkSurface(URL artworkSurface);
     /**
      * The supporting materials for the artwork, e.g. Canvas, Paper, Wood, Board, etc.
      *
      * @param artworkSurface Text value to set.
      */
-    void setArtworkSurface(Text artworkSurface);
+    void addArtworkSurface(Text artworkSurface);
+
+    /**
+     * The number of copies when multiple copies of a piece of artwork are produced - e.g. for a limited edition of 20 prints, 'artEdition' refers to the total number of copies (in this example "20").
+     *
+     * @return {@link Integer} or {@link Text}
+     */
+    <T> List<T> getArtEditionList();
 
     /**
      * The number of copies when multiple copies of a piece of artwork are produced - e.g. for a limited edition of 20 prints, 'artEdition' refers to the total number of copies (in this example "20").
@@ -180,13 +247,21 @@ public interface VisualArtwork extends CreativeWork {
      *
      * @param artEdition Integer value to set.
      */
-    void setArtEdition(Integer artEdition);
+    void addArtEdition(Integer artEdition);
     /**
      * The number of copies when multiple copies of a piece of artwork are produced - e.g. for a limited edition of 20 prints, 'artEdition' refers to the total number of copies (in this example "20").
      *
      * @param artEdition Text value to set.
      */
-    void setArtEdition(Text artEdition);
+    void addArtEdition(Text artEdition);
+
+    /**
+     * The depth of the item.
+     *
+     * @return {@link Distance} or {@link QuantitativeValue}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    <T> List<T> getDepthList();
 
     /**
      * The depth of the item.
@@ -202,14 +277,22 @@ public interface VisualArtwork extends CreativeWork {
      * @param depth Distance value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setDepth(Distance depth);
+    void addDepth(Distance depth);
     /**
      * The depth of the item.
      *
      * @param depth QuantitativeValue value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setDepth(QuantitativeValue depth);
+    void addDepth(QuantitativeValue depth);
+
+    /**
+     * The individual who draws the primary narrative artwork.
+     *
+     * @return {@link Person}
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    List<Person> getPencilerList();
 
     /**
      * The individual who draws the primary narrative artwork.
@@ -225,7 +308,17 @@ public interface VisualArtwork extends CreativeWork {
      * @param penciler Person value to set.
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
-    void setPenciler(Person penciler);
+    void addPenciler(Person penciler);
+
+    /**
+     * The primary artist for a work
+     *     	in a medium other than pencils or digital line art--for example, if the
+     *     	primary artwork is done in watercolors or digital paints.
+     *
+     * @return {@link Person}
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    List<Person> getArtistList();
 
     /**
      * The primary artist for a work
@@ -245,7 +338,14 @@ public interface VisualArtwork extends CreativeWork {
      * @param artist Person value to set.
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
-    void setArtist(Person artist);
+    void addArtist(Person artist);
+
+    /**
+     * The material used. (e.g. Oil, Watercolour, Acrylic, Linoprint, Marble, Cyanotype, Digital, Lithograph, DryPoint, Intaglio, Pastel, Woodcut, Pencil, Mixed Media, etc.)
+     *
+     * @return {@link URL} or {@link Text}
+     */
+    <T> List<T> getArtMediumList();
 
     /**
      * The material used. (e.g. Oil, Watercolour, Acrylic, Linoprint, Marble, Cyanotype, Digital, Lithograph, DryPoint, Intaglio, Pastel, Woodcut, Pencil, Mixed Media, etc.)
@@ -259,11 +359,11 @@ public interface VisualArtwork extends CreativeWork {
      *
      * @param artMedium URL value to set.
      */
-    void setArtMedium(URL artMedium);
+    void addArtMedium(URL artMedium);
     /**
      * The material used. (e.g. Oil, Watercolour, Acrylic, Linoprint, Marble, Cyanotype, Digital, Lithograph, DryPoint, Intaglio, Pastel, Woodcut, Pencil, Mixed Media, etc.)
      *
      * @param artMedium Text value to set.
      */
-    void setArtMedium(Text artMedium);
+    void addArtMedium(Text artMedium);
 }

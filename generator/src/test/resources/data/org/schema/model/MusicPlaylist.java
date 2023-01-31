@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.MusicRecording;
 import org.schema.model.datatype.Integer;
 import org.schema.model.ItemList;
@@ -21,6 +22,13 @@ public interface MusicPlaylist extends CreativeWork {
      *
      * @return {@link MusicRecording}
      */
+    List<MusicRecording> getTracksList();
+
+    /**
+     * A music recording (track)&#x2014;usually a single song.
+     *
+     * @return {@link MusicRecording}
+     */
     MusicRecording getTracks();
 
     /**
@@ -28,7 +36,14 @@ public interface MusicPlaylist extends CreativeWork {
      *
      * @param tracks MusicRecording value to set.
      */
-    void setTracks(MusicRecording tracks);
+    void addTracks(MusicRecording tracks);
+
+    /**
+     * The number of tracks in this album or playlist.
+     *
+     * @return {@link Integer}
+     */
+    List<Integer> getNumTracksList();
 
     /**
      * The number of tracks in this album or playlist.
@@ -42,7 +57,15 @@ public interface MusicPlaylist extends CreativeWork {
      *
      * @param numTracks Integer value to set.
      */
-    void setNumTracks(Integer numTracks);
+    void addNumTracks(Integer numTracks);
+
+    /**
+     * A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
+     *
+     * @return {@link ItemList} or {@link MusicRecording}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
+     */
+    <T> List<T> getTrackList();
 
     /**
      * A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
@@ -58,12 +81,12 @@ public interface MusicPlaylist extends CreativeWork {
      * @param track ItemList value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
-    void setTrack(ItemList track);
+    void addTrack(ItemList track);
     /**
      * A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
      *
      * @param track MusicRecording value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
-    void setTrack(MusicRecording track);
+    void addTrack(MusicRecording track);
 }

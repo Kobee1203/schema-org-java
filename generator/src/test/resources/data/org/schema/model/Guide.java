@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Text;
 
 /**
@@ -22,6 +23,14 @@ public interface Guide extends CreativeWork {
      * @return {@link Text}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1689">https://github.com/schemaorg/schemaorg/issues/1689</a>
      */
+    List<Text> getReviewAspectList();
+
+    /**
+     * This Review or Rating is relevant to this part or facet of the itemReviewed.
+     *
+     * @return {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1689">https://github.com/schemaorg/schemaorg/issues/1689</a>
+     */
     Text getReviewAspect();
 
     /**
@@ -30,5 +39,5 @@ public interface Guide extends CreativeWork {
      * @param reviewAspect Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1689">https://github.com/schemaorg/schemaorg/issues/1689</a>
      */
-    void setReviewAspect(Text reviewAspect);
+    void addReviewAspect(Text reviewAspect);
 }

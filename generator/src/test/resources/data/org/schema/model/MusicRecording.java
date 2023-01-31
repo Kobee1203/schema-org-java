@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Text;
 import org.schema.model.MusicPlaylist;
 import org.schema.model.MusicAlbum;
@@ -26,6 +27,14 @@ public interface MusicRecording extends CreativeWork {
      * @return {@link Text}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
+    List<Text> getIsrcCodeList();
+
+    /**
+     * The International Standard Recording Code for the recording.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
+     */
     Text getIsrcCode();
 
     /**
@@ -34,7 +43,14 @@ public interface MusicRecording extends CreativeWork {
      * @param isrcCode Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
-    void setIsrcCode(Text isrcCode);
+    void addIsrcCode(Text isrcCode);
+
+    /**
+     * The playlist to which this recording belongs.
+     *
+     * @return {@link MusicPlaylist}
+     */
+    List<MusicPlaylist> getInPlaylistList();
 
     /**
      * The playlist to which this recording belongs.
@@ -48,7 +64,14 @@ public interface MusicRecording extends CreativeWork {
      *
      * @param inPlaylist MusicPlaylist value to set.
      */
-    void setInPlaylist(MusicPlaylist inPlaylist);
+    void addInPlaylist(MusicPlaylist inPlaylist);
+
+    /**
+     * The album to which this recording belongs.
+     *
+     * @return {@link MusicAlbum}
+     */
+    List<MusicAlbum> getInAlbumList();
 
     /**
      * The album to which this recording belongs.
@@ -62,7 +85,15 @@ public interface MusicRecording extends CreativeWork {
      *
      * @param inAlbum MusicAlbum value to set.
      */
-    void setInAlbum(MusicAlbum inAlbum);
+    void addInAlbum(MusicAlbum inAlbum);
+
+    /**
+     * The composition this track is a recording of.
+     *
+     * @return {@link MusicComposition}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
+     */
+    List<MusicComposition> getRecordingOfList();
 
     /**
      * The composition this track is a recording of.
@@ -78,7 +109,16 @@ public interface MusicRecording extends CreativeWork {
      * @param recordingOf MusicComposition value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
-    void setRecordingOf(MusicComposition recordingOf);
+    void addRecordingOf(MusicComposition recordingOf);
+
+    /**
+     * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
+     *
+     * @return {@link Duration}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
+     */
+    List<Duration> getDurationList();
 
     /**
      * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
@@ -96,7 +136,14 @@ public interface MusicRecording extends CreativeWork {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
      */
-    void setDuration(Duration duration);
+    void addDuration(Duration duration);
+
+    /**
+     * The artist that performed this album or recording.
+     *
+     * @return {@link Person} or {@link MusicGroup}
+     */
+    <T> List<T> getByArtistList();
 
     /**
      * The artist that performed this album or recording.
@@ -110,11 +157,11 @@ public interface MusicRecording extends CreativeWork {
      *
      * @param byArtist Person value to set.
      */
-    void setByArtist(Person byArtist);
+    void addByArtist(Person byArtist);
     /**
      * The artist that performed this album or recording.
      *
      * @param byArtist MusicGroup value to set.
      */
-    void setByArtist(MusicGroup byArtist);
+    void addByArtist(MusicGroup byArtist);
 }

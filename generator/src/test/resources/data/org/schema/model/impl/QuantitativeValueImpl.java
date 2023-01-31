@@ -23,6 +23,7 @@ import org.schema.model.Event;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import java.util.List;
 import org.schema.model.Intangible;
 
 /**
@@ -35,7 +36,18 @@ import org.schema.model.Intangible;
 public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements QuantitativeValue {
 
     @JsonLdFieldTypes({ Enumeration.class, DefinedTerm.class, Text.class, MeasurementTypeEnumeration.class, QualitativeValue.class, StructuredValue.class, PropertyValue.class, QuantitativeValue.class })
-    private Object valueReference;
+    private List<Object> valueReference;
+
+    /**
+     * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
+     *
+     * @return {@link Enumeration} or {@link DefinedTerm} or {@link Text} or {@link MeasurementTypeEnumeration} or {@link QualitativeValue} or {@link StructuredValue} or {@link PropertyValue} or {@link QuantitativeValue}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public <T> List<T> getValueReferenceList() {
+        return (List<T>) valueReference;
+    }
 
     /**
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
@@ -45,7 +57,7 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getValueReference() {
-        return (T) valueReference;
+        return (T) getFirst(valueReference);
     }
 
     /**
@@ -55,8 +67,8 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setValueReference(Enumeration valueReference) {
-        this.valueReference = valueReference;
+    public void addValueReference(Enumeration valueReference) {
+        this.valueReference = add(this.valueReference, valueReference);
     }
     /**
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
@@ -65,8 +77,8 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setValueReference(DefinedTerm valueReference) {
-        this.valueReference = valueReference;
+    public void addValueReference(DefinedTerm valueReference) {
+        this.valueReference = add(this.valueReference, valueReference);
     }
     /**
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
@@ -75,8 +87,8 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setValueReference(Text valueReference) {
-        this.valueReference = valueReference;
+    public void addValueReference(Text valueReference) {
+        this.valueReference = add(this.valueReference, valueReference);
     }
     /**
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
@@ -85,8 +97,8 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setValueReference(MeasurementTypeEnumeration valueReference) {
-        this.valueReference = valueReference;
+    public void addValueReference(MeasurementTypeEnumeration valueReference) {
+        this.valueReference = add(this.valueReference, valueReference);
     }
     /**
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
@@ -95,8 +107,8 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setValueReference(QualitativeValue valueReference) {
-        this.valueReference = valueReference;
+    public void addValueReference(QualitativeValue valueReference) {
+        this.valueReference = add(this.valueReference, valueReference);
     }
     /**
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
@@ -105,8 +117,8 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setValueReference(StructuredValue valueReference) {
-        this.valueReference = valueReference;
+    public void addValueReference(StructuredValue valueReference) {
+        this.valueReference = add(this.valueReference, valueReference);
     }
     /**
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
@@ -115,8 +127,8 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setValueReference(PropertyValue valueReference) {
-        this.valueReference = valueReference;
+    public void addValueReference(PropertyValue valueReference) {
+        this.valueReference = add(this.valueReference, valueReference);
     }
     /**
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
@@ -125,11 +137,22 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setValueReference(QuantitativeValue valueReference) {
-        this.valueReference = valueReference;
+    public void addValueReference(QuantitativeValue valueReference) {
+        this.valueReference = add(this.valueReference, valueReference);
     }
 
-    private Number maxValue;
+    private List<Number> maxValue;
+
+    /**
+     * The upper value of some characteristic or property.
+     *
+     * @return {@link Number}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<Number> getMaxValueList() {
+        return maxValue;
+    }
 
     /**
      * The upper value of some characteristic or property.
@@ -139,7 +162,7 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Number getMaxValue() {
-        return maxValue;
+        return getFirst(maxValue);
     }
 
     /**
@@ -149,11 +172,22 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setMaxValue(Number maxValue) {
-        this.maxValue = maxValue;
+    public void addMaxValue(Number maxValue) {
+        this.maxValue = add(this.maxValue, maxValue);
     }
 
-    private Text unitText;
+    private List<Text> unitText;
+
+    /**
+     * A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
+     * <a href='unitCode'>unitCode</a>.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getUnitTextList() {
+        return unitText;
+    }
 
     /**
      * A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
@@ -163,7 +197,7 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getUnitText() {
-        return unitText;
+        return getFirst(unitText);
     }
 
     /**
@@ -173,11 +207,22 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      * @param unitText Text value to set.
      */
     @Override
-    public void setUnitText(Text unitText) {
-        this.unitText = unitText;
+    public void addUnitText(Text unitText) {
+        this.unitText = add(this.unitText, unitText);
     }
 
-    private Number minValue;
+    private List<Number> minValue;
+
+    /**
+     * The lower value of some characteristic or property.
+     *
+     * @return {@link Number}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public List<Number> getMinValueList() {
+        return minValue;
+    }
 
     /**
      * The lower value of some characteristic or property.
@@ -187,7 +232,7 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Number getMinValue() {
-        return minValue;
+        return getFirst(minValue);
     }
 
     /**
@@ -197,12 +242,23 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setMinValue(Number minValue) {
-        this.minValue = minValue;
+    public void addMinValue(Number minValue) {
+        this.minValue = add(this.minValue, minValue);
     }
 
     @JsonLdFieldTypes({ Text.class, Number.class, StructuredValue.class, Boolean.class })
-    private Object value;
+    private List<Object> value;
+
+    /**
+     * The value of the quantitative value or property value node.<br/><br/>* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.<br/>* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+     *
+     * @return {@link Text} or {@link Number} or {@link StructuredValue} or {@link Boolean}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public <T> List<T> getValueList() {
+        return (List<T>) value;
+    }
 
     /**
      * The value of the quantitative value or property value node.<br/><br/>* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.<br/>* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
@@ -212,7 +268,7 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getValue() {
-        return (T) value;
+        return (T) getFirst(value);
     }
 
     /**
@@ -222,8 +278,8 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setValue(Text value) {
-        this.value = value;
+    public void addValue(Text value) {
+        this.value = add(this.value, value);
     }
     /**
      * The value of the quantitative value or property value node.<br/><br/>* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.<br/>* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
@@ -232,8 +288,8 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setValue(Number value) {
-        this.value = value;
+    public void addValue(Number value) {
+        this.value = add(this.value, value);
     }
     /**
      * The value of the quantitative value or property value node.<br/><br/>* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.<br/>* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
@@ -242,8 +298,8 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setValue(StructuredValue value) {
-        this.value = value;
+    public void addValue(StructuredValue value) {
+        this.value = add(this.value, value);
     }
     /**
      * The value of the quantitative value or property value node.<br/><br/>* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.<br/>* For [[PropertyValue]], it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
@@ -252,12 +308,23 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setValue(Boolean value) {
-        this.value = value;
+    public void addValue(Boolean value) {
+        this.value = add(this.value, value);
     }
 
     @JsonLdFieldTypes({ Text.class, URL.class })
-    private Object unitCode;
+    private List<Object> unitCode;
+
+    /**
+     * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
+     *
+     * @return {@link Text} or {@link URL}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public <T> List<T> getUnitCodeList() {
+        return (List<T>) unitCode;
+    }
 
     /**
      * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
@@ -267,7 +334,7 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getUnitCode() {
-        return (T) unitCode;
+        return (T) getFirst(unitCode);
     }
 
     /**
@@ -277,8 +344,8 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setUnitCode(Text unitCode) {
-        this.unitCode = unitCode;
+    public void addUnitCode(Text unitCode) {
+        this.unitCode = add(this.unitCode, unitCode);
     }
     /**
      * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
@@ -287,11 +354,21 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setUnitCode(URL unitCode) {
-        this.unitCode = unitCode;
+    public void addUnitCode(URL unitCode) {
+        this.unitCode = add(this.unitCode, unitCode);
     }
 
-    private PropertyValue additionalProperty;
+    private List<PropertyValue> additionalProperty;
+
+    /**
+     * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
+     *
+     * @return {@link PropertyValue}
+     */
+    @Override
+    public List<PropertyValue> getAdditionalPropertyList() {
+        return additionalProperty;
+    }
 
     /**
      * A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
@@ -300,7 +377,7 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public PropertyValue getAdditionalProperty() {
-        return additionalProperty;
+        return getFirst(additionalProperty);
     }
 
     /**
@@ -309,12 +386,22 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      * @param additionalProperty PropertyValue value to set.
      */
     @Override
-    public void setAdditionalProperty(PropertyValue additionalProperty) {
-        this.additionalProperty = additionalProperty;
+    public void addAdditionalProperty(PropertyValue additionalProperty) {
+        this.additionalProperty = add(this.additionalProperty, additionalProperty);
     }
 
     @JsonLdFieldTypes({ CreativeWork.class, URL.class })
-    private Object mainEntityOfPage;
+    private List<Object> mainEntityOfPage;
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    @Override
+    public <T> List<T> getMainEntityOfPageList() {
+        return (List<T>) mainEntityOfPage;
+    }
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -323,7 +410,7 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getMainEntityOfPage() {
-        return (T) mainEntityOfPage;
+        return (T) getFirst(mainEntityOfPage);
     }
 
     /**
@@ -332,8 +419,8 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        this.mainEntityOfPage = mainEntityOfPage;
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -341,11 +428,21 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      * @param mainEntityOfPage URL value to set.
      */
     @Override
-    public void setMainEntityOfPage(URL mainEntityOfPage) {
-        this.mainEntityOfPage = mainEntityOfPage;
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
 
-    private Text alternateName;
+    private List<Text> alternateName;
+
+    /**
+     * An alias for the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getAlternateNameList() {
+        return alternateName;
+    }
 
     /**
      * An alias for the item.
@@ -354,7 +451,7 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getAlternateName() {
-        return alternateName;
+        return getFirst(alternateName);
     }
 
     /**
@@ -363,11 +460,21 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      * @param alternateName Text value to set.
      */
     @Override
-    public void setAlternateName(Text alternateName) {
-        this.alternateName = alternateName;
+    public void addAlternateName(Text alternateName) {
+        this.alternateName = add(this.alternateName, alternateName);
     }
 
-    private Text name;
+    private List<Text> name;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getNameList() {
+        return name;
+    }
 
     /**
      * The name of the item.
@@ -376,7 +483,7 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getName() {
-        return name;
+        return getFirst(name);
     }
 
     /**
@@ -385,11 +492,21 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      * @param name Text value to set.
      */
     @Override
-    public void setName(Text name) {
-        this.name = name;
+    public void addName(Text name) {
+        this.name = add(this.name, name);
     }
 
-    private Action potentialAction;
+    private List<Action> potentialAction;
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public List<Action> getPotentialActionList() {
+        return potentialAction;
+    }
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -398,7 +515,7 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Action getPotentialAction() {
-        return potentialAction;
+        return getFirst(potentialAction);
     }
 
     /**
@@ -407,12 +524,22 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      * @param potentialAction Action value to set.
      */
     @Override
-    public void setPotentialAction(Action potentialAction) {
-        this.potentialAction = potentialAction;
+    public void addPotentialAction(Action potentialAction) {
+        this.potentialAction = add(this.potentialAction, potentialAction);
     }
 
     @JsonLdFieldTypes({ URL.class, ImageObject.class })
-    private Object image;
+    private List<Object> image;
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link URL} or {@link ImageObject}
+     */
+    @Override
+    public <T> List<T> getImageList() {
+        return (List<T>) image;
+    }
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -421,7 +548,7 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getImage() {
-        return (T) image;
+        return (T) getFirst(image);
     }
 
     /**
@@ -430,8 +557,8 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      * @param image URL value to set.
      */
     @Override
-    public void setImage(URL image) {
-        this.image = image;
+    public void addImage(URL image) {
+        this.image = add(this.image, image);
     }
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -439,11 +566,21 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      * @param image ImageObject value to set.
      */
     @Override
-    public void setImage(ImageObject image) {
-        this.image = image;
+    public void addImage(ImageObject image) {
+        this.image = add(this.image, image);
     }
 
-    private URL url;
+    private List<URL> url;
+
+    /**
+     * URL of the item.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getUrlList() {
+        return url;
+    }
 
     /**
      * URL of the item.
@@ -452,7 +589,7 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public URL getUrl() {
-        return url;
+        return getFirst(url);
     }
 
     /**
@@ -461,11 +598,21 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      * @param url URL value to set.
      */
     @Override
-    public void setUrl(URL url) {
-        this.url = url;
+    public void addUrl(URL url) {
+        this.url = add(this.url, url);
     }
 
-    private Text description;
+    private List<Text> description;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDescriptionList() {
+        return description;
+    }
 
     /**
      * A description of the item.
@@ -474,7 +621,7 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getDescription() {
-        return description;
+        return getFirst(description);
     }
 
     /**
@@ -483,12 +630,23 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      * @param description Text value to set.
      */
     @Override
-    public void setDescription(Text description) {
-        this.description = description;
+    public void addDescription(Text description) {
+        this.description = add(this.description, description);
     }
 
     @JsonLdFieldTypes({ Event.class, CreativeWork.class })
-    private Object subjectOf;
+    private List<Object> subjectOf;
+
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @return {@link Event} or {@link CreativeWork}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public <T> List<T> getSubjectOfList() {
+        return (List<T>) subjectOf;
+    }
 
     /**
      * A CreativeWork or Event about this Thing.
@@ -498,7 +656,7 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getSubjectOf() {
-        return (T) subjectOf;
+        return (T) getFirst(subjectOf);
     }
 
     /**
@@ -508,8 +666,8 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Event subjectOf) {
-        this.subjectOf = subjectOf;
+    public void addSubjectOf(Event subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
     }
     /**
      * A CreativeWork or Event about this Thing.
@@ -518,11 +676,21 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(CreativeWork subjectOf) {
-        this.subjectOf = subjectOf;
+    public void addSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
     }
 
-    private URL additionalType;
+    private List<URL> additionalType;
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getAdditionalTypeList() {
+        return additionalType;
+    }
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
@@ -531,7 +699,7 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public URL getAdditionalType() {
-        return additionalType;
+        return getFirst(additionalType);
     }
 
     /**
@@ -540,11 +708,21 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      * @param additionalType URL value to set.
      */
     @Override
-    public void setAdditionalType(URL additionalType) {
-        this.additionalType = additionalType;
+    public void addAdditionalType(URL additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
     }
 
-    private Text disambiguatingDescription;
+    private List<Text> disambiguatingDescription;
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDisambiguatingDescriptionList() {
+        return disambiguatingDescription;
+    }
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
@@ -553,7 +731,7 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public Text getDisambiguatingDescription() {
-        return disambiguatingDescription;
+        return getFirst(disambiguatingDescription);
     }
 
     /**
@@ -562,11 +740,21 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      * @param disambiguatingDescription Text value to set.
      */
     @Override
-    public void setDisambiguatingDescription(Text disambiguatingDescription) {
-        this.disambiguatingDescription = disambiguatingDescription;
+    public void addDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
     }
 
-    private URL sameAs;
+    private List<URL> sameAs;
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getSameAsList() {
+        return sameAs;
+    }
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
@@ -575,7 +763,7 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public URL getSameAs() {
-        return sameAs;
+        return getFirst(sameAs);
     }
 
     /**
@@ -584,12 +772,23 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      * @param sameAs URL value to set.
      */
     @Override
-    public void setSameAs(URL sameAs) {
-        this.sameAs = sameAs;
+    public void addSameAs(URL sameAs) {
+        this.sameAs = add(this.sameAs, sameAs);
     }
 
     @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
-    private Object identifier;
+    private List<Object> identifier;
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @return {@link URL} or {@link Text} or {@link PropertyValue}
+     */
+    @Override
+    public <T> List<T> getIdentifierList() {
+        return (List<T>) identifier;
+    }
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -599,7 +798,7 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      */
     @Override
     public <T> T getIdentifier() {
-        return (T) identifier;
+        return (T) getFirst(identifier);
     }
 
     /**
@@ -609,8 +808,8 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      * @param identifier URL value to set.
      */
     @Override
-    public void setIdentifier(URL identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(URL identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -619,8 +818,8 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      * @param identifier Text value to set.
      */
     @Override
-    public void setIdentifier(Text identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(Text identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -629,7 +828,7 @@ public class QuantitativeValueImpl extends com.weedow.schemaorg.commons.model.Js
      * @param identifier PropertyValue value to set.
      */
     @Override
-    public void setIdentifier(PropertyValue identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(PropertyValue identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
 }

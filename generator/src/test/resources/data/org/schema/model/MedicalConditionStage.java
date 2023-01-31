@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Text;
 import org.schema.model.datatype.Number;
 
@@ -22,6 +23,14 @@ public interface MedicalConditionStage extends MedicalIntangible {
      * @return {@link Text}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
+    List<Text> getSubStageSuffixList();
+
+    /**
+     * The substage, e.g. 'a' for Stage IIIa.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
     Text getSubStageSuffix();
 
     /**
@@ -30,7 +39,15 @@ public interface MedicalConditionStage extends MedicalIntangible {
      * @param subStageSuffix Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setSubStageSuffix(Text subStageSuffix);
+    void addSubStageSuffix(Text subStageSuffix);
+
+    /**
+     * The stage represented as a number, e.g. 3.
+     *
+     * @return {@link Number}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Number> getStageAsNumberList();
 
     /**
      * The stage represented as a number, e.g. 3.
@@ -46,5 +63,5 @@ public interface MedicalConditionStage extends MedicalIntangible {
      * @param stageAsNumber Number value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setStageAsNumber(Number stageAsNumber);
+    void addStageAsNumber(Number stageAsNumber);
 }

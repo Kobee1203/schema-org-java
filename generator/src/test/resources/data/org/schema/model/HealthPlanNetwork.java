@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Text;
 import org.schema.model.datatype.Boolean;
 
@@ -24,6 +25,15 @@ public interface HealthPlanNetwork extends Intangible {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
+    List<Text> getHealthPlanNetworkIdList();
+
+    /**
+     * Name or unique ID of network. (Networks are often reused across different insurance plans).
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
     Text getHealthPlanNetworkId();
 
     /**
@@ -33,7 +43,16 @@ public interface HealthPlanNetwork extends Intangible {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
-    void setHealthPlanNetworkId(Text healthPlanNetworkId);
+    void addHealthPlanNetworkId(Text healthPlanNetworkId);
+
+    /**
+     * Whether The costs to the patient for services under this network or formulary.
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    List<Boolean> getHealthPlanCostSharingList();
 
     /**
      * Whether The costs to the patient for services under this network or formulary.
@@ -51,7 +70,16 @@ public interface HealthPlanNetwork extends Intangible {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
-    void setHealthPlanCostSharing(Boolean healthPlanCostSharing);
+    void addHealthPlanCostSharing(Boolean healthPlanCostSharing);
+
+    /**
+     * The tier(s) for this network.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    List<Text> getHealthPlanNetworkTierList();
 
     /**
      * The tier(s) for this network.
@@ -69,5 +97,5 @@ public interface HealthPlanNetwork extends Intangible {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
-    void setHealthPlanNetworkTier(Text healthPlanNetworkTier);
+    void addHealthPlanNetworkTier(Text healthPlanNetworkTier);
 }

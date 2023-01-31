@@ -1,6 +1,9 @@
 package com.weedow.schemaorg.generator.model;
 
 import com.jparams.verifier.tostring.ToStringVerifier;
+import com.weedow.schemaorg.generator.model.field.Accessor;
+import com.weedow.schemaorg.generator.model.field.Field;
+import com.weedow.schemaorg.generator.model.field.Mutator;
 import nl.jqno.equalsverifier.EqualsVerifier;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -67,24 +70,76 @@ class ModelVerifierTest {
                 .verify();
         Property property = newProperty("id", "name", "fieldName", "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", List.of(new Type("id1").setName("type name 1"), new Type("id2").setName("type name 2")), List.of("partOf1", "partOf2"), List.of("source1", "source2"));
         Assertions.assertThat(property).hasToString(
+                // @formatter:off
                 "Property(" +
-                        "id=id" +
-                        ", field=Property.Field(name=name, fieldType=Object)" +
-                        ", accessor=Property.Accessor(name=name, description=Lorem Ipsum is simply dummy text of the printing and typesetting industry., partOf=[partOf1, partOf2], source=[source1, source2], fieldTypeLinks={@link Type}, returnFieldType=<T> T, cast=(T))" +
-                        ", mutators=[Property.Mutator(name=name, description=Lorem Ipsum is simply dummy text of the printing and typesetting industry., partOf=[partOf1, partOf2], source=[source1, source2], paramType=Object, paramValue=fieldName)]" +
-                        ", types=[type name 1, type name 2]" +
-                        ")"
+                        "id=id, " +
+                        "field=Field(name=name, fieldName=name, fieldType=Object, fieldTypeAsList=List<Object>), " +
+                        "accessor=Accessor(" +
+                            "name=name, " +
+                            "description=Lorem Ipsum is simply dummy text of the printing and typesetting industry., " +
+                            "partOf=[partOf1, partOf2], " +
+                            "source=[source1, source2], " +
+                            "fieldTypeLinks={@link type name 1} or {@link type name 2}, " +
+                            "returnFieldType=<T> T, " +
+                            "returnFieldTypeAsList=<T> List<T>, " +
+                            "cast=(T), " +
+                            "castAsList=(List<T>), " +
+                            "fieldName=name, " +
+                            "getterMethod=getNameList, " +
+                            "firstGetterMethod=getName, " +
+                            "splitDescription=[Lorem Ipsum is simply dummy text of the printing and typesetting industry.]" +
+                        "), " +
+                        "mutators=[Mutator(" +
+                            "name=name, " +
+                            "description=Lorem Ipsum is simply dummy text of the printing and typesetting industry., " +
+                            "partOf=[partOf1, partOf2], " +
+                            "source=[source1, source2], " +
+                            "paramType=Object, " +
+                            "paramValue=fieldName, " +
+                            "fieldName=name, " +
+                            "setterMethod=setName, " +
+                            "addMethod=addName, " +
+                            "splitDescription=[Lorem Ipsum is simply dummy text of the printing and typesetting industry.])" +
+                        "], " +
+                        "types=[type name 1, type name 2])"
+                // @formatter:on
         );
 
         Property nullProperty = newProperty(null, null, null, null, null, null, null);
         Assertions.assertThat(nullProperty).hasToString(
+                // @formatter:off
                 "Property(" +
-                        "id=null" +
-                        ", field=Property.Field(name=null, fieldType=Object)" +
-                        ", accessor=Property.Accessor(name=null, description=null, partOf=null, source=null, fieldTypeLinks={@link Type}, returnFieldType=<T> T, cast=(T))" +
-                        ", mutators=[Property.Mutator(name=null, description=null, partOf=null, source=null, paramType=Object, paramValue=null)]" +
-                        ", types=null" +
-                        ")"
+                        "id=null, " +
+                        "field=Field(name=null, fieldName=null, fieldType=null, fieldTypeAsList=null), " +
+                        "accessor=Accessor(" +
+                                "name=null, " +
+                                "description=null, " +
+                                "partOf=null, " +
+                                "source=null, " +
+                                "fieldTypeLinks=null, " +
+                                "returnFieldType=null, " +
+                                "returnFieldTypeAsList=null, " +
+                                "cast=null, " +
+                                "castAsList=null, " +
+                                "fieldName=null, " +
+                                "getterMethod=getnullList, " +
+                                "firstGetterMethod=getnull, " +
+                                "splitDescription=null" +
+                        "), " +
+                        "mutators=[Mutator(" +
+                            "name=null, " +
+                            "description=null, " +
+                            "partOf=null, " +
+                            "source=null, " +
+                            "paramType=Object, " +
+                            "paramValue=null, " +
+                            "fieldName=null, " +
+                            "setterMethod=setnull, " +
+                            "addMethod=addnull, " +
+                            "splitDescription=null)" +
+                        "], " +
+                "types=null)"
+                // @formatter:on
         );
     }
 
@@ -161,9 +216,9 @@ class ModelVerifierTest {
     private static Property newProperty(String id, String name, String fieldName, String description, List<Type> types, List<String> partOf, List<String> source) {
         return new Property(
                 id,
-                new Property.Field(name, () -> "Object"),
-                new Property.Accessor(name, description, partOf, source, () -> "{@link Type}", () -> "<T> T", () -> "(T)"),
-                List.of(new Property.Mutator(name, description, partOf, source, () -> "Object", () -> fieldName)),
+                new Field(name, types),
+                new Accessor(name, description, partOf, source, types),
+                List.of(new Mutator(name, description, partOf, source, () -> "Object", () -> fieldName)),
                 types
         );
     }

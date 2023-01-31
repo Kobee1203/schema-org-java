@@ -55,16 +55,18 @@ public enum {{this.name}}Enum implements {{this.name}} {
 {{#with this.accessor}}
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public {{&this.returnFieldType}} {{this.methodName}}() {
-        return null;
-    }
+    public {{&this.returnFieldTypeAsList}} {{this.getterMethod}}() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public {{&this.returnFieldType}} {{this.firstGetterMethod}}() { return null; }
 {{/with}}
 
 {{#each this.mutators}}
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void {{this.methodName}}({{this.paramType}} {{../this.field.fieldName}}) {
-        throw new java.lang.IllegalAccessError("Unable to set property '{{this.name}}': method not allowed for enum {{../this.name}}Enum");
+    public void {{this.addMethod}}({{this.paramType}} {{../this.field.fieldName}}) {
+        throw new java.lang.IllegalAccessError("Unable to set property '{{this.name}}': method not allowed for enum {{../../this.name}}Enum");
     }
 {{/each}}
 {{/each}}

@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.Organization;
 import org.schema.model.Person;
 import org.schema.model.datatype.Boolean;
@@ -23,6 +24,14 @@ public interface PublicationEvent extends Event {
      * @return {@link Organization} or {@link Person}
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
+    <T> List<T> getPublishedByList();
+
+    /**
+     * An agent associated with the publication event.
+     *
+     * @return {@link Organization} or {@link Person}
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
     <T> T getPublishedBy();
 
     /**
@@ -31,14 +40,21 @@ public interface PublicationEvent extends Event {
      * @param publishedBy Organization value to set.
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
-    void setPublishedBy(Organization publishedBy);
+    void addPublishedBy(Organization publishedBy);
     /**
      * An agent associated with the publication event.
      *
      * @param publishedBy Person value to set.
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
-    void setPublishedBy(Person publishedBy);
+    void addPublishedBy(Person publishedBy);
+
+    /**
+     * A flag to signal that the item, event, or place is accessible for free.
+     *
+     * @return {@link Boolean}
+     */
+    List<Boolean> getFreeList();
 
     /**
      * A flag to signal that the item, event, or place is accessible for free.
@@ -52,7 +68,14 @@ public interface PublicationEvent extends Event {
      *
      * @param free Boolean value to set.
      */
-    void setFree(Boolean free);
+    void addFree(Boolean free);
+
+    /**
+     * A broadcast service associated with the publication event.
+     *
+     * @return {@link BroadcastService}
+     */
+    List<BroadcastService> getPublishedOnList();
 
     /**
      * A broadcast service associated with the publication event.
@@ -66,5 +89,5 @@ public interface PublicationEvent extends Event {
      *
      * @param publishedOn BroadcastService value to set.
      */
-    void setPublishedOn(BroadcastService publishedOn);
+    void addPublishedOn(BroadcastService publishedOn);
 }

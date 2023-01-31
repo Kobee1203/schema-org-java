@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * A geographical region, typically under the jurisdiction of a particular government.

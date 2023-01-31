@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Number;
 import org.schema.model.HyperTocEntry;
 import org.schema.model.Person;
@@ -29,6 +30,15 @@ public interface Clip extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2021">https://github.com/schemaorg/schemaorg/issues/2021</a>
      */
+    <T> List<T> getStartOffsetList();
+
+    /**
+     * The start time of the clip expressed as the number of seconds from the beginning of the work.
+     *
+     * @return {@link Number} or {@link HyperTocEntry}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2021">https://github.com/schemaorg/schemaorg/issues/2021</a>
+     */
     <T> T getStartOffset();
 
     /**
@@ -38,7 +48,7 @@ public interface Clip extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2021">https://github.com/schemaorg/schemaorg/issues/2021</a>
      */
-    void setStartOffset(Number startOffset);
+    void addStartOffset(Number startOffset);
     /**
      * The start time of the clip expressed as the number of seconds from the beginning of the work.
      *
@@ -46,7 +56,16 @@ public interface Clip extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2021">https://github.com/schemaorg/schemaorg/issues/2021</a>
      */
-    void setStartOffset(HyperTocEntry startOffset);
+    void addStartOffset(HyperTocEntry startOffset);
+
+    /**
+     * The end time of the clip expressed as the number of seconds from the beginning of the work.
+     *
+     * @return {@link Number} or {@link HyperTocEntry}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2021">https://github.com/schemaorg/schemaorg/issues/2021</a>
+     */
+    <T> List<T> getEndOffsetList();
 
     /**
      * The end time of the clip expressed as the number of seconds from the beginning of the work.
@@ -64,7 +83,7 @@ public interface Clip extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2021">https://github.com/schemaorg/schemaorg/issues/2021</a>
      */
-    void setEndOffset(Number endOffset);
+    void addEndOffset(Number endOffset);
     /**
      * The end time of the clip expressed as the number of seconds from the beginning of the work.
      *
@@ -72,7 +91,14 @@ public interface Clip extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2021">https://github.com/schemaorg/schemaorg/issues/2021</a>
      */
-    void setEndOffset(HyperTocEntry endOffset);
+    void addEndOffset(HyperTocEntry endOffset);
+
+    /**
+     * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getDirectorList();
 
     /**
      * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
@@ -86,7 +112,14 @@ public interface Clip extends CreativeWork {
      *
      * @param director Person value to set.
      */
-    void setDirector(Person director);
+    void addDirector(Person director);
+
+    /**
+     * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getActorList();
 
     /**
      * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
@@ -100,7 +133,14 @@ public interface Clip extends CreativeWork {
      *
      * @param actor Person value to set.
      */
-    void setActor(Person actor);
+    void addActor(Person actor);
+
+    /**
+     * The episode to which this clip belongs.
+     *
+     * @return {@link Episode}
+     */
+    List<Episode> getPartOfEpisodeList();
 
     /**
      * The episode to which this clip belongs.
@@ -114,7 +154,14 @@ public interface Clip extends CreativeWork {
      *
      * @param partOfEpisode Episode value to set.
      */
-    void setPartOfEpisode(Episode partOfEpisode);
+    void addPartOfEpisode(Episode partOfEpisode);
+
+    /**
+     * Position of the clip within an ordered group of clips.
+     *
+     * @return {@link Text} or {@link Integer}
+     */
+    <T> List<T> getClipNumberList();
 
     /**
      * Position of the clip within an ordered group of clips.
@@ -128,13 +175,20 @@ public interface Clip extends CreativeWork {
      *
      * @param clipNumber Text value to set.
      */
-    void setClipNumber(Text clipNumber);
+    void addClipNumber(Text clipNumber);
     /**
      * Position of the clip within an ordered group of clips.
      *
      * @param clipNumber Integer value to set.
      */
-    void setClipNumber(Integer clipNumber);
+    void addClipNumber(Integer clipNumber);
+
+    /**
+     * The series to which this episode or season belongs.
+     *
+     * @return {@link CreativeWorkSeries}
+     */
+    List<CreativeWorkSeries> getPartOfSeriesList();
 
     /**
      * The series to which this episode or season belongs.
@@ -148,7 +202,14 @@ public interface Clip extends CreativeWork {
      *
      * @param partOfSeries CreativeWorkSeries value to set.
      */
-    void setPartOfSeries(CreativeWorkSeries partOfSeries);
+    void addPartOfSeries(CreativeWorkSeries partOfSeries);
+
+    /**
+     * The season to which this episode belongs.
+     *
+     * @return {@link CreativeWorkSeason}
+     */
+    List<CreativeWorkSeason> getPartOfSeasonList();
 
     /**
      * The season to which this episode belongs.
@@ -162,7 +223,14 @@ public interface Clip extends CreativeWork {
      *
      * @param partOfSeason CreativeWorkSeason value to set.
      */
-    void setPartOfSeason(CreativeWorkSeason partOfSeason);
+    void addPartOfSeason(CreativeWorkSeason partOfSeason);
+
+    /**
+     * An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getActorsList();
 
     /**
      * An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
@@ -176,7 +244,14 @@ public interface Clip extends CreativeWork {
      *
      * @param actors Person value to set.
      */
-    void setActors(Person actors);
+    void addActors(Person actors);
+
+    /**
+     * The composer of the soundtrack.
+     *
+     * @return {@link Person} or {@link MusicGroup}
+     */
+    <T> List<T> getMusicByList();
 
     /**
      * The composer of the soundtrack.
@@ -190,13 +265,20 @@ public interface Clip extends CreativeWork {
      *
      * @param musicBy Person value to set.
      */
-    void setMusicBy(Person musicBy);
+    void addMusicBy(Person musicBy);
     /**
      * The composer of the soundtrack.
      *
      * @param musicBy MusicGroup value to set.
      */
-    void setMusicBy(MusicGroup musicBy);
+    void addMusicBy(MusicGroup musicBy);
+
+    /**
+     * A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getDirectorsList();
 
     /**
      * A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
@@ -210,5 +292,5 @@ public interface Clip extends CreativeWork {
      *
      * @param directors Person value to set.
      */
-    void setDirectors(Person directors);
+    void addDirectors(Person directors);
 }

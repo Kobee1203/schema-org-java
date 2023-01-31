@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Number;
 
 /**
@@ -19,6 +20,13 @@ public interface MovieTheater extends CivicStructure, EntertainmentBusiness {
      *
      * @return {@link Number}
      */
+    List<Number> getScreenCountList();
+
+    /**
+     * The number of screens in the movie theater.
+     *
+     * @return {@link Number}
+     */
     Number getScreenCount();
 
     /**
@@ -26,5 +34,5 @@ public interface MovieTheater extends CivicStructure, EntertainmentBusiness {
      *
      * @param screenCount Number value to set.
      */
-    void setScreenCount(Number screenCount);
+    void addScreenCount(Number screenCount);
 }

@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.MedicalSignOrSymptom;
 import org.schema.model.MedicalCondition;
 
@@ -22,6 +23,14 @@ public interface DDxElement extends MedicalIntangible {
      * @return {@link MedicalSignOrSymptom}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
+    List<MedicalSignOrSymptom> getDistinguishingSignList();
+
+    /**
+     * One of a set of signs and symptoms that can be used to distinguish this diagnosis from others in the differential diagnosis.
+     *
+     * @return {@link MedicalSignOrSymptom}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
     MedicalSignOrSymptom getDistinguishingSign();
 
     /**
@@ -30,7 +39,15 @@ public interface DDxElement extends MedicalIntangible {
      * @param distinguishingSign MedicalSignOrSymptom value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setDistinguishingSign(MedicalSignOrSymptom distinguishingSign);
+    void addDistinguishingSign(MedicalSignOrSymptom distinguishingSign);
+
+    /**
+     * One or more alternative conditions considered in the differential diagnosis process as output of a diagnosis process.
+     *
+     * @return {@link MedicalCondition}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<MedicalCondition> getDiagnosisList();
 
     /**
      * One or more alternative conditions considered in the differential diagnosis process as output of a diagnosis process.
@@ -46,5 +63,5 @@ public interface DDxElement extends MedicalIntangible {
      * @param diagnosis MedicalCondition value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setDiagnosis(MedicalCondition diagnosis);
+    void addDiagnosis(MedicalCondition diagnosis);
 }

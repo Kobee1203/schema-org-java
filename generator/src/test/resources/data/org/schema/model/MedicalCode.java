@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Text;
 
 /**
@@ -22,6 +23,15 @@ public interface MedicalCode extends MedicalIntangible, CategoryCode {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
      */
+    List<Text> getCodeValueList();
+
+    /**
+     * A short textual code that uniquely identifies the value.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
+     */
     Text getCodeValue();
 
     /**
@@ -31,7 +41,15 @@ public interface MedicalCode extends MedicalIntangible, CategoryCode {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
      */
-    void setCodeValue(Text codeValue);
+    void addCodeValue(Text codeValue);
+
+    /**
+     * The coding system, e.g. 'ICD-10'.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Text> getCodingSystemList();
 
     /**
      * The coding system, e.g. 'ICD-10'.
@@ -47,5 +65,5 @@ public interface MedicalCode extends MedicalIntangible, CategoryCode {
      * @param codingSystem Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setCodingSystem(Text codingSystem);
+    void addCodingSystem(Text codingSystem);
 }

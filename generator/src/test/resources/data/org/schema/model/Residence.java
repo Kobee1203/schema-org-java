@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.FloorPlan;
 
 /**
@@ -13,6 +14,15 @@ import org.schema.model.FloorPlan;
  * @see <a href="https://schema.org/Residence">https://schema.org/Residence</a>
  */
 public interface Residence extends Place {
+
+    /**
+     * A floorplan of some [[Accommodation]].
+     *
+     * @return {@link FloorPlan}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
+     */
+    List<FloorPlan> getAccommodationFloorPlanList();
 
     /**
      * A floorplan of some [[Accommodation]].
@@ -30,5 +40,5 @@ public interface Residence extends Place {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2373">https://github.com/schemaorg/schemaorg/issues/2373</a>
      */
-    void setAccommodationFloorPlan(FloorPlan accommodationFloorPlan);
+    void addAccommodationFloorPlan(FloorPlan accommodationFloorPlan);
 }

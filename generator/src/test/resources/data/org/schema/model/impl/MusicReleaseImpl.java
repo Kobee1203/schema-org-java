@@ -52,6 +52,7 @@ import org.schema.model.ImageObject;
 import org.schema.model.PropertyValue;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import java.util.List;
 import org.schema.model.MusicPlaylist;
 import org.schema.model.MusicRelease;
 
@@ -64,7 +65,18 @@ import org.schema.model.MusicRelease;
 @JsonLdTypeName("MusicRelease")
 public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements MusicRelease {
 
-    private MusicAlbum releaseOf;
+    private List<MusicAlbum> releaseOf;
+
+    /**
+     * The album this is a release of.
+     *
+     * @return {@link MusicAlbum}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
+     */
+    @Override
+    public List<MusicAlbum> getReleaseOfList() {
+        return releaseOf;
+    }
 
     /**
      * The album this is a release of.
@@ -74,7 +86,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public MusicAlbum getReleaseOf() {
-        return releaseOf;
+        return getFirst(releaseOf);
     }
 
     /**
@@ -84,11 +96,22 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
     @Override
-    public void setReleaseOf(MusicAlbum releaseOf) {
-        this.releaseOf = releaseOf;
+    public void addReleaseOf(MusicAlbum releaseOf) {
+        this.releaseOf = add(this.releaseOf, releaseOf);
     }
 
-    private MusicReleaseFormatType musicReleaseFormat;
+    private List<MusicReleaseFormatType> musicReleaseFormat;
+
+    /**
+     * Format of this release (the type of recording media used, ie. compact disc, digital media, LP, etc.).
+     *
+     * @return {@link MusicReleaseFormatType}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
+     */
+    @Override
+    public List<MusicReleaseFormatType> getMusicReleaseFormatList() {
+        return musicReleaseFormat;
+    }
 
     /**
      * Format of this release (the type of recording media used, ie. compact disc, digital media, LP, etc.).
@@ -98,7 +121,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public MusicReleaseFormatType getMusicReleaseFormat() {
-        return musicReleaseFormat;
+        return getFirst(musicReleaseFormat);
     }
 
     /**
@@ -108,11 +131,23 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
     @Override
-    public void setMusicReleaseFormat(MusicReleaseFormatType musicReleaseFormat) {
-        this.musicReleaseFormat = musicReleaseFormat;
+    public void addMusicReleaseFormat(MusicReleaseFormatType musicReleaseFormat) {
+        this.musicReleaseFormat = add(this.musicReleaseFormat, musicReleaseFormat);
     }
 
-    private Duration duration;
+    private List<Duration> duration;
+
+    /**
+     * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
+     *
+     * @return {@link Duration}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
+     */
+    @Override
+    public List<Duration> getDurationList() {
+        return duration;
+    }
 
     /**
      * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601).
@@ -123,7 +158,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Duration getDuration() {
-        return duration;
+        return getFirst(duration);
     }
 
     /**
@@ -134,12 +169,23 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
      */
     @Override
-    public void setDuration(Duration duration) {
-        this.duration = duration;
+    public void addDuration(Duration duration) {
+        this.duration = add(this.duration, duration);
     }
 
     @JsonLdFieldTypes({ Person.class, Organization.class })
-    private Object creditedTo;
+    private List<Object> creditedTo;
+
+    /**
+     * The group the release is credited to if different than the byArtist. For example, Red and Blue is credited to "Stefani Germanotta Band", but by Lady Gaga.
+     *
+     * @return {@link Person} or {@link Organization}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
+     */
+    @Override
+    public <T> List<T> getCreditedToList() {
+        return (List<T>) creditedTo;
+    }
 
     /**
      * The group the release is credited to if different than the byArtist. For example, Red and Blue is credited to "Stefani Germanotta Band", but by Lady Gaga.
@@ -149,7 +195,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getCreditedTo() {
-        return (T) creditedTo;
+        return (T) getFirst(creditedTo);
     }
 
     /**
@@ -159,8 +205,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
     @Override
-    public void setCreditedTo(Person creditedTo) {
-        this.creditedTo = creditedTo;
+    public void addCreditedTo(Person creditedTo) {
+        this.creditedTo = add(this.creditedTo, creditedTo);
     }
     /**
      * The group the release is credited to if different than the byArtist. For example, Red and Blue is credited to "Stefani Germanotta Band", but by Lady Gaga.
@@ -169,11 +215,22 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
     @Override
-    public void setCreditedTo(Organization creditedTo) {
-        this.creditedTo = creditedTo;
+    public void addCreditedTo(Organization creditedTo) {
+        this.creditedTo = add(this.creditedTo, creditedTo);
     }
 
-    private Organization recordLabel;
+    private List<Organization> recordLabel;
+
+    /**
+     * The label that issued the release.
+     *
+     * @return {@link Organization}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
+     */
+    @Override
+    public List<Organization> getRecordLabelList() {
+        return recordLabel;
+    }
 
     /**
      * The label that issued the release.
@@ -183,7 +240,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Organization getRecordLabel() {
-        return recordLabel;
+        return getFirst(recordLabel);
     }
 
     /**
@@ -193,11 +250,22 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
     @Override
-    public void setRecordLabel(Organization recordLabel) {
-        this.recordLabel = recordLabel;
+    public void addRecordLabel(Organization recordLabel) {
+        this.recordLabel = add(this.recordLabel, recordLabel);
     }
 
-    private Text catalogNumber;
+    private List<Text> catalogNumber;
+
+    /**
+     * The catalog number for the release.
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
+     */
+    @Override
+    public List<Text> getCatalogNumberList() {
+        return catalogNumber;
+    }
 
     /**
      * The catalog number for the release.
@@ -207,7 +275,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Text getCatalogNumber() {
-        return catalogNumber;
+        return getFirst(catalogNumber);
     }
 
     /**
@@ -217,11 +285,21 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
     @Override
-    public void setCatalogNumber(Text catalogNumber) {
-        this.catalogNumber = catalogNumber;
+    public void addCatalogNumber(Text catalogNumber) {
+        this.catalogNumber = add(this.catalogNumber, catalogNumber);
     }
 
-    private MusicRecording tracks;
+    private List<MusicRecording> tracks;
+
+    /**
+     * A music recording (track)&#x2014;usually a single song.
+     *
+     * @return {@link MusicRecording}
+     */
+    @Override
+    public List<MusicRecording> getTracksList() {
+        return tracks;
+    }
 
     /**
      * A music recording (track)&#x2014;usually a single song.
@@ -230,7 +308,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public MusicRecording getTracks() {
-        return tracks;
+        return getFirst(tracks);
     }
 
     /**
@@ -239,11 +317,21 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param tracks MusicRecording value to set.
      */
     @Override
-    public void setTracks(MusicRecording tracks) {
-        this.tracks = tracks;
+    public void addTracks(MusicRecording tracks) {
+        this.tracks = add(this.tracks, tracks);
     }
 
-    private Integer numTracks;
+    private List<Integer> numTracks;
+
+    /**
+     * The number of tracks in this album or playlist.
+     *
+     * @return {@link Integer}
+     */
+    @Override
+    public List<Integer> getNumTracksList() {
+        return numTracks;
+    }
 
     /**
      * The number of tracks in this album or playlist.
@@ -252,7 +340,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Integer getNumTracks() {
-        return numTracks;
+        return getFirst(numTracks);
     }
 
     /**
@@ -261,12 +349,23 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param numTracks Integer value to set.
      */
     @Override
-    public void setNumTracks(Integer numTracks) {
-        this.numTracks = numTracks;
+    public void addNumTracks(Integer numTracks) {
+        this.numTracks = add(this.numTracks, numTracks);
     }
 
     @JsonLdFieldTypes({ ItemList.class, MusicRecording.class })
-    private Object track;
+    private List<Object> track;
+
+    /**
+     * A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
+     *
+     * @return {@link ItemList} or {@link MusicRecording}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
+     */
+    @Override
+    public <T> List<T> getTrackList() {
+        return (List<T>) track;
+    }
 
     /**
      * A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
@@ -276,7 +375,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getTrack() {
-        return (T) track;
+        return (T) getFirst(track);
     }
 
     /**
@@ -286,8 +385,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
     @Override
-    public void setTrack(ItemList track) {
-        this.track = track;
+    public void addTrack(ItemList track) {
+        this.track = add(this.track, track);
     }
     /**
      * A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
@@ -296,12 +395,24 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ</a>
      */
     @Override
-    public void setTrack(MusicRecording track) {
-        this.track = track;
+    public void addTrack(MusicRecording track) {
+        this.track = add(this.track, track);
     }
 
     @JsonLdFieldTypes({ DefinedTerm.class, Text.class })
-    private Object teaches;
+    private List<Object> teaches;
+
+    /**
+     * The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.
+     *
+     * @return {@link DefinedTerm} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
+     */
+    @Override
+    public <T> List<T> getTeachesList() {
+        return (List<T>) teaches;
+    }
 
     /**
      * The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.
@@ -312,7 +423,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getTeaches() {
-        return (T) teaches;
+        return (T) getFirst(teaches);
     }
 
     /**
@@ -323,8 +434,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
      */
     @Override
-    public void setTeaches(DefinedTerm teaches) {
-        this.teaches = teaches;
+    public void addTeaches(DefinedTerm teaches) {
+        this.teaches = add(this.teaches, teaches);
     }
     /**
      * The item being described is intended to help a person learn the competency or learning outcome defined by the referenced term.
@@ -334,12 +445,24 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
      */
     @Override
-    public void setTeaches(Text teaches) {
-        this.teaches = teaches;
+    public void addTeaches(Text teaches) {
+        this.teaches = add(this.teaches, teaches);
     }
 
     @JsonLdFieldTypes({ URL.class, DefinedTerm.class, Text.class })
-    private Object educationalLevel;
+    private List<Object> educationalLevel;
+
+    /**
+     * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
+     *
+     * @return {@link URL} or {@link DefinedTerm} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     */
+    @Override
+    public <T> List<T> getEducationalLevelList() {
+        return (List<T>) educationalLevel;
+    }
 
     /**
      * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
@@ -350,7 +473,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getEducationalLevel() {
-        return (T) educationalLevel;
+        return (T) getFirst(educationalLevel);
     }
 
     /**
@@ -361,8 +484,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
     @Override
-    public void setEducationalLevel(URL educationalLevel) {
-        this.educationalLevel = educationalLevel;
+    public void addEducationalLevel(URL educationalLevel) {
+        this.educationalLevel = add(this.educationalLevel, educationalLevel);
     }
     /**
      * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
@@ -372,8 +495,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
     @Override
-    public void setEducationalLevel(DefinedTerm educationalLevel) {
-        this.educationalLevel = educationalLevel;
+    public void addEducationalLevel(DefinedTerm educationalLevel) {
+        this.educationalLevel = add(this.educationalLevel, educationalLevel);
     }
     /**
      * The level in terms of progression through an educational or training context. Examples of educational levels include 'beginner', 'intermediate' or 'advanced', and formal sets of level indicators.
@@ -383,11 +506,23 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
     @Override
-    public void setEducationalLevel(Text educationalLevel) {
-        this.educationalLevel = educationalLevel;
+    public void addEducationalLevel(Text educationalLevel) {
+        this.educationalLevel = add(this.educationalLevel, educationalLevel);
     }
 
-    private Text abstract_;
+    private List<Text> abstract_;
+
+    /**
+     * An abstract is a short description that summarizes a [[CreativeWork]].
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/276">https://github.com/schemaorg/schemaorg/issues/276</a>
+     */
+    @Override
+    public List<Text> getAbstractList() {
+        return abstract_;
+    }
 
     /**
      * An abstract is a short description that summarizes a [[CreativeWork]].
@@ -398,7 +533,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Text getAbstract() {
-        return abstract_;
+        return getFirst(abstract_);
     }
 
     /**
@@ -409,12 +544,24 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/276">https://github.com/schemaorg/schemaorg/issues/276</a>
      */
     @Override
-    public void setAbstract(Text abstract_) {
-        this.abstract_ = abstract_;
+    public void addAbstract(Text abstract_) {
+        this.abstract_ = add(this.abstract_, abstract_);
     }
 
     @JsonLdFieldTypes({ Text.class, DefinedTerm.class })
-    private Object creativeWorkStatus;
+    private List<Object> creativeWorkStatus;
+
+    /**
+     * The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle.
+     *
+     * @return {@link Text} or {@link DefinedTerm}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/987">https://github.com/schemaorg/schemaorg/issues/987</a>
+     */
+    @Override
+    public <T> List<T> getCreativeWorkStatusList() {
+        return (List<T>) creativeWorkStatus;
+    }
 
     /**
      * The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle.
@@ -425,7 +572,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getCreativeWorkStatus() {
-        return (T) creativeWorkStatus;
+        return (T) getFirst(creativeWorkStatus);
     }
 
     /**
@@ -436,8 +583,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/987">https://github.com/schemaorg/schemaorg/issues/987</a>
      */
     @Override
-    public void setCreativeWorkStatus(Text creativeWorkStatus) {
-        this.creativeWorkStatus = creativeWorkStatus;
+    public void addCreativeWorkStatus(Text creativeWorkStatus) {
+        this.creativeWorkStatus = add(this.creativeWorkStatus, creativeWorkStatus);
     }
     /**
      * The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle.
@@ -447,11 +594,21 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/987">https://github.com/schemaorg/schemaorg/issues/987</a>
      */
     @Override
-    public void setCreativeWorkStatus(DefinedTerm creativeWorkStatus) {
-        this.creativeWorkStatus = creativeWorkStatus;
+    public void addCreativeWorkStatus(DefinedTerm creativeWorkStatus) {
+        this.creativeWorkStatus = add(this.creativeWorkStatus, creativeWorkStatus);
     }
 
-    private Date expires;
+    private List<Date> expires;
+
+    /**
+     * Date the content expires and is no longer useful or available. For example a [[VideoObject]] or [[NewsArticle]] whose availability or relevance is time-limited, or a [[ClaimReview]] fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date.
+     *
+     * @return {@link Date}
+     */
+    @Override
+    public List<Date> getExpiresList() {
+        return expires;
+    }
 
     /**
      * Date the content expires and is no longer useful or available. For example a [[VideoObject]] or [[NewsArticle]] whose availability or relevance is time-limited, or a [[ClaimReview]] fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date.
@@ -460,7 +617,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Date getExpires() {
-        return expires;
+        return getFirst(expires);
     }
 
     /**
@@ -469,11 +626,23 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param expires Date value to set.
      */
     @Override
-    public void setExpires(Date expires) {
-        this.expires = expires;
+    public void addExpires(Date expires) {
+        this.expires = add(this.expires, expires);
     }
 
-    private DateTime contentReferenceTime;
+    private List<DateTime> contentReferenceTime;
+
+    /**
+     * The specific time described by a creative work, for works (e.g. articles, video objects etc.) that emphasise a particular moment within an Event.
+     *
+     * @return {@link DateTime}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1050">https://github.com/schemaorg/schemaorg/issues/1050</a>
+     */
+    @Override
+    public List<DateTime> getContentReferenceTimeList() {
+        return contentReferenceTime;
+    }
 
     /**
      * The specific time described by a creative work, for works (e.g. articles, video objects etc.) that emphasise a particular moment within an Event.
@@ -484,7 +653,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public DateTime getContentReferenceTime() {
-        return contentReferenceTime;
+        return getFirst(contentReferenceTime);
     }
 
     /**
@@ -495,12 +664,22 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1050">https://github.com/schemaorg/schemaorg/issues/1050</a>
      */
     @Override
-    public void setContentReferenceTime(DateTime contentReferenceTime) {
-        this.contentReferenceTime = contentReferenceTime;
+    public void addContentReferenceTime(DateTime contentReferenceTime) {
+        this.contentReferenceTime = add(this.contentReferenceTime, contentReferenceTime);
     }
 
     @JsonLdFieldTypes({ Text.class, URL.class, Product.class })
-    private Object material;
+    private List<Object> material;
+
+    /**
+     * A material that something is made from, e.g. leather, wool, cotton, paper.
+     *
+     * @return {@link Text} or {@link URL} or {@link Product}
+     */
+    @Override
+    public <T> List<T> getMaterialList() {
+        return (List<T>) material;
+    }
 
     /**
      * A material that something is made from, e.g. leather, wool, cotton, paper.
@@ -509,7 +688,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getMaterial() {
-        return (T) material;
+        return (T) getFirst(material);
     }
 
     /**
@@ -518,8 +697,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param material Text value to set.
      */
     @Override
-    public void setMaterial(Text material) {
-        this.material = material;
+    public void addMaterial(Text material) {
+        this.material = add(this.material, material);
     }
     /**
      * A material that something is made from, e.g. leather, wool, cotton, paper.
@@ -527,8 +706,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param material URL value to set.
      */
     @Override
-    public void setMaterial(URL material) {
-        this.material = material;
+    public void addMaterial(URL material) {
+        this.material = add(this.material, material);
     }
     /**
      * A material that something is made from, e.g. leather, wool, cotton, paper.
@@ -536,11 +715,21 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param material Product value to set.
      */
     @Override
-    public void setMaterial(Product material) {
-        this.material = material;
+    public void addMaterial(Product material) {
+        this.material = add(this.material, material);
     }
 
-    private Review review;
+    private List<Review> review;
+
+    /**
+     * A review of the item.
+     *
+     * @return {@link Review}
+     */
+    @Override
+    public List<Review> getReviewList() {
+        return review;
+    }
 
     /**
      * A review of the item.
@@ -549,7 +738,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Review getReview() {
-        return review;
+        return getFirst(review);
     }
 
     /**
@@ -558,12 +747,22 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param review Review value to set.
      */
     @Override
-    public void setReview(Review review) {
-        this.review = review;
+    public void addReview(Review review) {
+        this.review = add(this.review, review);
     }
 
     @JsonLdFieldTypes({ URL.class, Text.class })
-    private Object fileFormat;
+    private List<Object> fileFormat;
+
+    /**
+     * Media type, typically MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml)) of the content e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.
+     *
+     * @return {@link URL} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getFileFormatList() {
+        return (List<T>) fileFormat;
+    }
 
     /**
      * Media type, typically MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml)) of the content e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.
@@ -572,7 +771,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getFileFormat() {
-        return (T) fileFormat;
+        return (T) getFirst(fileFormat);
     }
 
     /**
@@ -581,8 +780,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param fileFormat URL value to set.
      */
     @Override
-    public void setFileFormat(URL fileFormat) {
-        this.fileFormat = fileFormat;
+    public void addFileFormat(URL fileFormat) {
+        this.fileFormat = add(this.fileFormat, fileFormat);
     }
     /**
      * Media type, typically MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml)) of the content e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.
@@ -590,11 +789,21 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param fileFormat Text value to set.
      */
     @Override
-    public void setFileFormat(Text fileFormat) {
-        this.fileFormat = fileFormat;
+    public void addFileFormat(Text fileFormat) {
+        this.fileFormat = add(this.fileFormat, fileFormat);
     }
 
-    private Text text;
+    private List<Text> text;
+
+    /**
+     * The textual content of this CreativeWork.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getTextList() {
+        return text;
+    }
 
     /**
      * The textual content of this CreativeWork.
@@ -603,7 +812,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Text getText() {
-        return text;
+        return getFirst(text);
     }
 
     /**
@@ -612,12 +821,22 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param text Text value to set.
      */
     @Override
-    public void setText(Text text) {
-        this.text = text;
+    public void addText(Text text) {
+        this.text = add(this.text, text);
     }
 
     @JsonLdFieldTypes({ Person.class, Organization.class })
-    private Object translator;
+    private List<Object> translator;
+
+    /**
+     * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    @Override
+    public <T> List<T> getTranslatorList() {
+        return (List<T>) translator;
+    }
 
     /**
      * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
@@ -626,7 +845,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getTranslator() {
-        return (T) translator;
+        return (T) getFirst(translator);
     }
 
     /**
@@ -635,8 +854,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param translator Person value to set.
      */
     @Override
-    public void setTranslator(Person translator) {
-        this.translator = translator;
+    public void addTranslator(Person translator) {
+        this.translator = add(this.translator, translator);
     }
     /**
      * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
@@ -644,11 +863,21 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param translator Organization value to set.
      */
     @Override
-    public void setTranslator(Organization translator) {
-        this.translator = translator;
+    public void addTranslator(Organization translator) {
+        this.translator = add(this.translator, translator);
     }
 
-    private Text award;
+    private List<Text> award;
+
+    /**
+     * An award won by or for this item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getAwardList() {
+        return award;
+    }
 
     /**
      * An award won by or for this item.
@@ -657,7 +886,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Text getAward() {
-        return award;
+        return getFirst(award);
     }
 
     /**
@@ -666,12 +895,24 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param award Text value to set.
      */
     @Override
-    public void setAward(Text award) {
-        this.award = award;
+    public void addAward(Text award) {
+        this.award = add(this.award, award);
     }
 
     @JsonLdFieldTypes({ Text.class, DefinedTerm.class })
-    private Object assesses;
+    private List<Object> assesses;
+
+    /**
+     * The item being described is intended to assess the competency or learning outcome defined by the referenced term.
+     *
+     * @return {@link Text} or {@link DefinedTerm}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
+     */
+    @Override
+    public <T> List<T> getAssessesList() {
+        return (List<T>) assesses;
+    }
 
     /**
      * The item being described is intended to assess the competency or learning outcome defined by the referenced term.
@@ -682,7 +923,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getAssesses() {
-        return (T) assesses;
+        return (T) getFirst(assesses);
     }
 
     /**
@@ -693,8 +934,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
      */
     @Override
-    public void setAssesses(Text assesses) {
-        this.assesses = assesses;
+    public void addAssesses(Text assesses) {
+        this.assesses = add(this.assesses, assesses);
     }
     /**
      * The item being described is intended to assess the competency or learning outcome defined by the referenced term.
@@ -704,11 +945,23 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2427">https://github.com/schemaorg/schemaorg/issues/2427</a>
      */
     @Override
-    public void setAssesses(DefinedTerm assesses) {
-        this.assesses = assesses;
+    public void addAssesses(DefinedTerm assesses) {
+        this.assesses = add(this.assesses, assesses);
     }
 
-    private Text copyrightNotice;
+    private List<Text> copyrightNotice;
+
+    /**
+     * Text of a notice appropriate for describing the copyright aspects of this Creative Work, ideally indicating the owner of the copyright for the Work.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2659">https://github.com/schemaorg/schemaorg/issues/2659</a>
+     */
+    @Override
+    public List<Text> getCopyrightNoticeList() {
+        return copyrightNotice;
+    }
 
     /**
      * Text of a notice appropriate for describing the copyright aspects of this Creative Work, ideally indicating the owner of the copyright for the Work.
@@ -719,7 +972,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Text getCopyrightNotice() {
-        return copyrightNotice;
+        return getFirst(copyrightNotice);
     }
 
     /**
@@ -730,12 +983,23 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2659">https://github.com/schemaorg/schemaorg/issues/2659</a>
      */
     @Override
-    public void setCopyrightNotice(Text copyrightNotice) {
-        this.copyrightNotice = copyrightNotice;
+    public void addCopyrightNotice(Text copyrightNotice) {
+        this.copyrightNotice = add(this.copyrightNotice, copyrightNotice);
     }
 
     @JsonLdFieldTypes({ Text.class, URL.class })
-    private Object schemaVersion;
+    private List<Object> schemaVersion;
+
+    /**
+     * Indicates (by URL or string) a particular version of a schema used in some CreativeWork. This property was created primarily to
+     *     indicate the use of a specific schema.org release, e.g. ```10.0``` as a simple string, or more explicitly via URL, ```https://schema.org/docs/releases.html#v10.0```. There may be situations in which other schemas might usefully be referenced this way, e.g. ```http://dublincore.org/specifications/dublin-core/dces/1999-07-02/``` but this has not been carefully explored in the community.
+     *
+     * @return {@link Text} or {@link URL}
+     */
+    @Override
+    public <T> List<T> getSchemaVersionList() {
+        return (List<T>) schemaVersion;
+    }
 
     /**
      * Indicates (by URL or string) a particular version of a schema used in some CreativeWork. This property was created primarily to
@@ -745,7 +1009,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getSchemaVersion() {
-        return (T) schemaVersion;
+        return (T) getFirst(schemaVersion);
     }
 
     /**
@@ -755,8 +1019,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param schemaVersion Text value to set.
      */
     @Override
-    public void setSchemaVersion(Text schemaVersion) {
-        this.schemaVersion = schemaVersion;
+    public void addSchemaVersion(Text schemaVersion) {
+        this.schemaVersion = add(this.schemaVersion, schemaVersion);
     }
     /**
      * Indicates (by URL or string) a particular version of a schema used in some CreativeWork. This property was created primarily to
@@ -765,11 +1029,25 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param schemaVersion URL value to set.
      */
     @Override
-    public void setSchemaVersion(URL schemaVersion) {
-        this.schemaVersion = schemaVersion;
+    public void addSchemaVersion(URL schemaVersion) {
+        this.schemaVersion = add(this.schemaVersion, schemaVersion);
     }
 
-    private Country countryOfOrigin;
+    private List<Country> countryOfOrigin;
+
+    /**
+     * The country of origin of something, including products as well as creative  works such as movie and TV content.
+     * 
+     * In the case of TV and movie, this would be the country of the principle offices of the production company or individual responsible for the movie. For other kinds of [[CreativeWork]] it is difficult to provide fully general guidance, and properties such as [[contentLocation]] and [[locationCreated]] may be more applicable.
+     * 
+     * In the case of products, the country of origin of the product. The exact interpretation of this may vary by context and product type, and cannot be fully enumerated here.
+     *
+     * @return {@link Country}
+     */
+    @Override
+    public List<Country> getCountryOfOriginList() {
+        return countryOfOrigin;
+    }
 
     /**
      * The country of origin of something, including products as well as creative  works such as movie and TV content.
@@ -782,7 +1060,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Country getCountryOfOrigin() {
-        return countryOfOrigin;
+        return getFirst(countryOfOrigin);
     }
 
     /**
@@ -795,12 +1073,24 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param countryOfOrigin Country value to set.
      */
     @Override
-    public void setCountryOfOrigin(Country countryOfOrigin) {
-        this.countryOfOrigin = countryOfOrigin;
+    public void addCountryOfOrigin(Country countryOfOrigin) {
+        this.countryOfOrigin = add(this.countryOfOrigin, countryOfOrigin);
     }
 
     @JsonLdFieldTypes({ DefinedTerm.class, Text.class })
-    private Object pattern;
+    private List<Object> pattern;
+
+    /**
+     * A pattern that something has, for example 'polka dot', 'striped', 'Canadian flag'. Values are typically expressed as text, although links to controlled value schemes are also supported.
+     *
+     * @return {@link DefinedTerm} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     */
+    @Override
+    public <T> List<T> getPatternList() {
+        return (List<T>) pattern;
+    }
 
     /**
      * A pattern that something has, for example 'polka dot', 'striped', 'Canadian flag'. Values are typically expressed as text, although links to controlled value schemes are also supported.
@@ -811,7 +1101,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getPattern() {
-        return (T) pattern;
+        return (T) getFirst(pattern);
     }
 
     /**
@@ -822,8 +1112,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
     @Override
-    public void setPattern(DefinedTerm pattern) {
-        this.pattern = pattern;
+    public void addPattern(DefinedTerm pattern) {
+        this.pattern = add(this.pattern, pattern);
     }
     /**
      * A pattern that something has, for example 'polka dot', 'striped', 'Canadian flag'. Values are typically expressed as text, although links to controlled value schemes are also supported.
@@ -833,11 +1123,21 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
     @Override
-    public void setPattern(Text pattern) {
-        this.pattern = pattern;
+    public void addPattern(Text pattern) {
+        this.pattern = add(this.pattern, pattern);
     }
 
-    private Person accountablePerson;
+    private List<Person> accountablePerson;
+
+    /**
+     * Specifies the Person that is legally accountable for the CreativeWork.
+     *
+     * @return {@link Person}
+     */
+    @Override
+    public List<Person> getAccountablePersonList() {
+        return accountablePerson;
+    }
 
     /**
      * Specifies the Person that is legally accountable for the CreativeWork.
@@ -846,7 +1146,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Person getAccountablePerson() {
-        return accountablePerson;
+        return getFirst(accountablePerson);
     }
 
     /**
@@ -855,11 +1155,24 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param accountablePerson Person value to set.
      */
     @Override
-    public void setAccountablePerson(Person accountablePerson) {
-        this.accountablePerson = accountablePerson;
+    public void addAccountablePerson(Person accountablePerson) {
+        this.accountablePerson = add(this.accountablePerson, accountablePerson);
     }
 
-    private Grant funding;
+    private List<Grant> funding;
+
+    /**
+     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
+     *
+     * @return {@link Grant}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     */
+    @Override
+    public List<Grant> getFundingList() {
+        return funding;
+    }
 
     /**
      * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
@@ -871,7 +1184,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Grant getFunding() {
-        return funding;
+        return getFirst(funding);
     }
 
     /**
@@ -883,12 +1196,22 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
      */
     @Override
-    public void setFunding(Grant funding) {
-        this.funding = funding;
+    public void addFunding(Grant funding) {
+        this.funding = add(this.funding, funding);
     }
 
     @JsonLdFieldTypes({ DefinedTerm.class, Text.class })
-    private Object educationalUse;
+    private List<Object> educationalUse;
+
+    /**
+     * The purpose of a work in the context of education; for example, 'assignment', 'group work'.
+     *
+     * @return {@link DefinedTerm} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getEducationalUseList() {
+        return (List<T>) educationalUse;
+    }
 
     /**
      * The purpose of a work in the context of education; for example, 'assignment', 'group work'.
@@ -897,7 +1220,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getEducationalUse() {
-        return (T) educationalUse;
+        return (T) getFirst(educationalUse);
     }
 
     /**
@@ -906,8 +1229,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param educationalUse DefinedTerm value to set.
      */
     @Override
-    public void setEducationalUse(DefinedTerm educationalUse) {
-        this.educationalUse = educationalUse;
+    public void addEducationalUse(DefinedTerm educationalUse) {
+        this.educationalUse = add(this.educationalUse, educationalUse);
     }
     /**
      * The purpose of a work in the context of education; for example, 'assignment', 'group work'.
@@ -915,12 +1238,22 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param educationalUse Text value to set.
      */
     @Override
-    public void setEducationalUse(Text educationalUse) {
-        this.educationalUse = educationalUse;
+    public void addEducationalUse(Text educationalUse) {
+        this.educationalUse = add(this.educationalUse, educationalUse);
     }
 
     @JsonLdFieldTypes({ URL.class, Text.class })
-    private Object genre;
+    private List<Object> genre;
+
+    /**
+     * Genre of the creative work, broadcast channel or group.
+     *
+     * @return {@link URL} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getGenreList() {
+        return (List<T>) genre;
+    }
 
     /**
      * Genre of the creative work, broadcast channel or group.
@@ -929,7 +1262,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getGenre() {
-        return (T) genre;
+        return (T) getFirst(genre);
     }
 
     /**
@@ -938,8 +1271,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param genre URL value to set.
      */
     @Override
-    public void setGenre(URL genre) {
-        this.genre = genre;
+    public void addGenre(URL genre) {
+        this.genre = add(this.genre, genre);
     }
     /**
      * Genre of the creative work, broadcast channel or group.
@@ -947,12 +1280,22 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param genre Text value to set.
      */
     @Override
-    public void setGenre(Text genre) {
-        this.genre = genre;
+    public void addGenre(Text genre) {
+        this.genre = add(this.genre, genre);
     }
 
     @JsonLdFieldTypes({ DefinedTerm.class, Text.class, URL.class })
-    private Object keywords;
+    private List<Object> keywords;
+
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     * @return {@link DefinedTerm} or {@link Text} or {@link URL}
+     */
+    @Override
+    public <T> List<T> getKeywordsList() {
+        return (List<T>) keywords;
+    }
 
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
@@ -961,7 +1304,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getKeywords() {
-        return (T) keywords;
+        return (T) getFirst(keywords);
     }
 
     /**
@@ -970,8 +1313,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param keywords DefinedTerm value to set.
      */
     @Override
-    public void setKeywords(DefinedTerm keywords) {
-        this.keywords = keywords;
+    public void addKeywords(DefinedTerm keywords) {
+        this.keywords = add(this.keywords, keywords);
     }
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
@@ -979,8 +1322,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param keywords Text value to set.
      */
     @Override
-    public void setKeywords(Text keywords) {
-        this.keywords = keywords;
+    public void addKeywords(Text keywords) {
+        this.keywords = add(this.keywords, keywords);
     }
     /**
      * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
@@ -988,12 +1331,22 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param keywords URL value to set.
      */
     @Override
-    public void setKeywords(URL keywords) {
-        this.keywords = keywords;
+    public void addKeywords(URL keywords) {
+        this.keywords = add(this.keywords, keywords);
     }
 
     @JsonLdFieldTypes({ Integer.class, Text.class })
-    private Object position;
+    private List<Object> position;
+
+    /**
+     * The position of an item in a series or sequence of items.
+     *
+     * @return {@link Integer} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getPositionList() {
+        return (List<T>) position;
+    }
 
     /**
      * The position of an item in a series or sequence of items.
@@ -1002,7 +1355,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getPosition() {
-        return (T) position;
+        return (T) getFirst(position);
     }
 
     /**
@@ -1011,8 +1364,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param position Integer value to set.
      */
     @Override
-    public void setPosition(Integer position) {
-        this.position = position;
+    public void addPosition(Integer position) {
+        this.position = add(this.position, position);
     }
     /**
      * The position of an item in a series or sequence of items.
@@ -1020,11 +1373,21 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param position Text value to set.
      */
     @Override
-    public void setPosition(Text position) {
-        this.position = position;
+    public void addPosition(Text position) {
+        this.position = add(this.position, position);
     }
 
-    private Text accessibilityHazard;
+    private List<Text> accessibilityHazard;
+
+    /**
+     * A characteristic of the described resource that is physiologically dangerous to some users. Related to WCAG 2.0 guideline 2.3. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityHazard-vocabulary).
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getAccessibilityHazardList() {
+        return accessibilityHazard;
+    }
 
     /**
      * A characteristic of the described resource that is physiologically dangerous to some users. Related to WCAG 2.0 guideline 2.3. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityHazard-vocabulary).
@@ -1033,7 +1396,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Text getAccessibilityHazard() {
-        return accessibilityHazard;
+        return getFirst(accessibilityHazard);
     }
 
     /**
@@ -1042,11 +1405,21 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param accessibilityHazard Text value to set.
      */
     @Override
-    public void setAccessibilityHazard(Text accessibilityHazard) {
-        this.accessibilityHazard = accessibilityHazard;
+    public void addAccessibilityHazard(Text accessibilityHazard) {
+        this.accessibilityHazard = add(this.accessibilityHazard, accessibilityHazard);
     }
 
-    private Text alternativeHeadline;
+    private List<Text> alternativeHeadline;
+
+    /**
+     * A secondary title of the CreativeWork.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getAlternativeHeadlineList() {
+        return alternativeHeadline;
+    }
 
     /**
      * A secondary title of the CreativeWork.
@@ -1055,7 +1428,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Text getAlternativeHeadline() {
-        return alternativeHeadline;
+        return getFirst(alternativeHeadline);
     }
 
     /**
@@ -1064,11 +1437,21 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param alternativeHeadline Text value to set.
      */
     @Override
-    public void setAlternativeHeadline(Text alternativeHeadline) {
-        this.alternativeHeadline = alternativeHeadline;
+    public void addAlternativeHeadline(Text alternativeHeadline) {
+        this.alternativeHeadline = add(this.alternativeHeadline, alternativeHeadline);
     }
 
-    private Audience audience;
+    private List<Audience> audience;
+
+    /**
+     * An intended audience, i.e. a group for whom something was created.
+     *
+     * @return {@link Audience}
+     */
+    @Override
+    public List<Audience> getAudienceList() {
+        return audience;
+    }
 
     /**
      * An intended audience, i.e. a group for whom something was created.
@@ -1077,7 +1460,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Audience getAudience() {
-        return audience;
+        return getFirst(audience);
     }
 
     /**
@@ -1086,12 +1469,24 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param audience Audience value to set.
      */
     @Override
-    public void setAudience(Audience audience) {
-        this.audience = audience;
+    public void addAudience(Audience audience) {
+        this.audience = add(this.audience, audience);
     }
 
     @JsonLdFieldTypes({ Offer.class, Demand.class })
-    private Object offers;
+    private List<Object> offers;
+
+    /**
+     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
+     *       
+     *
+     * @return {@link Offer} or {@link Demand}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public <T> List<T> getOffersList() {
+        return (List<T>) offers;
+    }
 
     /**
      * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
@@ -1102,7 +1497,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getOffers() {
-        return (T) offers;
+        return (T) getFirst(offers);
     }
 
     /**
@@ -1113,8 +1508,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
     @Override
-    public void setOffers(Offer offers) {
-        this.offers = offers;
+    public void addOffers(Offer offers) {
+        this.offers = add(this.offers, offers);
     }
     /**
      * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
@@ -1124,11 +1519,21 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
     @Override
-    public void setOffers(Demand offers) {
-        this.offers = offers;
+    public void addOffers(Demand offers) {
+        this.offers = add(this.offers, offers);
     }
 
-    private Place locationCreated;
+    private List<Place> locationCreated;
+
+    /**
+     * The location where the CreativeWork was created, which may not be the same as the location depicted in the CreativeWork.
+     *
+     * @return {@link Place}
+     */
+    @Override
+    public List<Place> getLocationCreatedList() {
+        return locationCreated;
+    }
 
     /**
      * The location where the CreativeWork was created, which may not be the same as the location depicted in the CreativeWork.
@@ -1137,7 +1542,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Place getLocationCreated() {
-        return locationCreated;
+        return getFirst(locationCreated);
     }
 
     /**
@@ -1146,11 +1551,21 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param locationCreated Place value to set.
      */
     @Override
-    public void setLocationCreated(Place locationCreated) {
-        this.locationCreated = locationCreated;
+    public void addLocationCreated(Place locationCreated) {
+        this.locationCreated = add(this.locationCreated, locationCreated);
     }
 
-    private MediaObject associatedMedia;
+    private List<MediaObject> associatedMedia;
+
+    /**
+     * A media object that encodes this CreativeWork. This property is a synonym for encoding.
+     *
+     * @return {@link MediaObject}
+     */
+    @Override
+    public List<MediaObject> getAssociatedMediaList() {
+        return associatedMedia;
+    }
 
     /**
      * A media object that encodes this CreativeWork. This property is a synonym for encoding.
@@ -1159,7 +1574,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public MediaObject getAssociatedMedia() {
-        return associatedMedia;
+        return getFirst(associatedMedia);
     }
 
     /**
@@ -1168,12 +1583,24 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param associatedMedia MediaObject value to set.
      */
     @Override
-    public void setAssociatedMedia(MediaObject associatedMedia) {
-        this.associatedMedia = associatedMedia;
+    public void addAssociatedMedia(MediaObject associatedMedia) {
+        this.associatedMedia = add(this.associatedMedia, associatedMedia);
     }
 
     @JsonLdFieldTypes({ QuantitativeValue.class, Text.class })
-    private Object materialExtent;
+    private List<Object> materialExtent;
+
+    /**
+     * The quantity of the materials being described or an expression of the physical space they occupy.
+     *
+     * @return {@link QuantitativeValue} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1759">https://github.com/schemaorg/schemaorg/issues/1759</a>
+     */
+    @Override
+    public <T> List<T> getMaterialExtentList() {
+        return (List<T>) materialExtent;
+    }
 
     /**
      * The quantity of the materials being described or an expression of the physical space they occupy.
@@ -1184,7 +1611,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getMaterialExtent() {
-        return (T) materialExtent;
+        return (T) getFirst(materialExtent);
     }
 
     /**
@@ -1195,8 +1622,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1759">https://github.com/schemaorg/schemaorg/issues/1759</a>
      */
     @Override
-    public void setMaterialExtent(QuantitativeValue materialExtent) {
-        this.materialExtent = materialExtent;
+    public void addMaterialExtent(QuantitativeValue materialExtent) {
+        this.materialExtent = add(this.materialExtent, materialExtent);
     }
     /**
      * The quantity of the materials being described or an expression of the physical space they occupy.
@@ -1206,11 +1633,21 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1759">https://github.com/schemaorg/schemaorg/issues/1759</a>
      */
     @Override
-    public void setMaterialExtent(Text materialExtent) {
-        this.materialExtent = materialExtent;
+    public void addMaterialExtent(Text materialExtent) {
+        this.materialExtent = add(this.materialExtent, materialExtent);
     }
 
-    private Thing mainEntity;
+    private List<Thing> mainEntity;
+
+    /**
+     * Indicates the primary entity described in some page or other CreativeWork.
+     *
+     * @return {@link Thing}
+     */
+    @Override
+    public List<Thing> getMainEntityList() {
+        return mainEntity;
+    }
 
     /**
      * Indicates the primary entity described in some page or other CreativeWork.
@@ -1219,7 +1656,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Thing getMainEntity() {
-        return mainEntity;
+        return getFirst(mainEntity);
     }
 
     /**
@@ -1228,12 +1665,22 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param mainEntity Thing value to set.
      */
     @Override
-    public void setMainEntity(Thing mainEntity) {
-        this.mainEntity = mainEntity;
+    public void addMainEntity(Thing mainEntity) {
+        this.mainEntity = add(this.mainEntity, mainEntity);
     }
 
     @JsonLdFieldTypes({ Organization.class, Person.class })
-    private Object copyrightHolder;
+    private List<Object> copyrightHolder;
+
+    /**
+     * The party holding the legal copyright to the CreativeWork.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> List<T> getCopyrightHolderList() {
+        return (List<T>) copyrightHolder;
+    }
 
     /**
      * The party holding the legal copyright to the CreativeWork.
@@ -1242,7 +1689,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getCopyrightHolder() {
-        return (T) copyrightHolder;
+        return (T) getFirst(copyrightHolder);
     }
 
     /**
@@ -1251,8 +1698,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param copyrightHolder Organization value to set.
      */
     @Override
-    public void setCopyrightHolder(Organization copyrightHolder) {
-        this.copyrightHolder = copyrightHolder;
+    public void addCopyrightHolder(Organization copyrightHolder) {
+        this.copyrightHolder = add(this.copyrightHolder, copyrightHolder);
     }
     /**
      * The party holding the legal copyright to the CreativeWork.
@@ -1260,11 +1707,21 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param copyrightHolder Person value to set.
      */
     @Override
-    public void setCopyrightHolder(Person copyrightHolder) {
-        this.copyrightHolder = copyrightHolder;
+    public void addCopyrightHolder(Person copyrightHolder) {
+        this.copyrightHolder = add(this.copyrightHolder, copyrightHolder);
     }
 
-    private Text awards;
+    private List<Text> awards;
+
+    /**
+     * Awards won by or for this item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getAwardsList() {
+        return awards;
+    }
 
     /**
      * Awards won by or for this item.
@@ -1273,7 +1730,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Text getAwards() {
-        return awards;
+        return getFirst(awards);
     }
 
     /**
@@ -1282,11 +1739,21 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param awards Text value to set.
      */
     @Override
-    public void setAwards(Text awards) {
-        this.awards = awards;
+    public void addAwards(Text awards) {
+        this.awards = add(this.awards, awards);
     }
 
-    private Place contentLocation;
+    private List<Place> contentLocation;
+
+    /**
+     * The location depicted or described in the content. For example, the location in a photograph or painting.
+     *
+     * @return {@link Place}
+     */
+    @Override
+    public List<Place> getContentLocationList() {
+        return contentLocation;
+    }
 
     /**
      * The location depicted or described in the content. For example, the location in a photograph or painting.
@@ -1295,7 +1762,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Place getContentLocation() {
-        return contentLocation;
+        return getFirst(contentLocation);
     }
 
     /**
@@ -1304,11 +1771,23 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param contentLocation Place value to set.
      */
     @Override
-    public void setContentLocation(Place contentLocation) {
-        this.contentLocation = contentLocation;
+    public void addContentLocation(Place contentLocation) {
+        this.contentLocation = add(this.contentLocation, contentLocation);
     }
 
-    private Date sdDatePublished;
+    private List<Date> sdDatePublished;
+
+    /**
+     * Indicates the date on which the current structured data was generated / published. Typically used alongside [[sdPublisher]]
+     *
+     * @return {@link Date}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
+     */
+    @Override
+    public List<Date> getSdDatePublishedList() {
+        return sdDatePublished;
+    }
 
     /**
      * Indicates the date on which the current structured data was generated / published. Typically used alongside [[sdPublisher]]
@@ -1319,7 +1798,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Date getSdDatePublished() {
-        return sdDatePublished;
+        return getFirst(sdDatePublished);
     }
 
     /**
@@ -1330,12 +1809,22 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
      */
     @Override
-    public void setSdDatePublished(Date sdDatePublished) {
-        this.sdDatePublished = sdDatePublished;
+    public void addSdDatePublished(Date sdDatePublished) {
+        this.sdDatePublished = add(this.sdDatePublished, sdDatePublished);
     }
 
     @JsonLdFieldTypes({ Organization.class, Person.class })
-    private Object producer;
+    private List<Object> producer;
+
+    /**
+     * The person or organization who produced the work (e.g. music album, movie, tv/radio series etc.).
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> List<T> getProducerList() {
+        return (List<T>) producer;
+    }
 
     /**
      * The person or organization who produced the work (e.g. music album, movie, tv/radio series etc.).
@@ -1344,7 +1833,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getProducer() {
-        return (T) producer;
+        return (T) getFirst(producer);
     }
 
     /**
@@ -1353,8 +1842,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param producer Organization value to set.
      */
     @Override
-    public void setProducer(Organization producer) {
-        this.producer = producer;
+    public void addProducer(Organization producer) {
+        this.producer = add(this.producer, producer);
     }
     /**
      * The person or organization who produced the work (e.g. music album, movie, tv/radio series etc.).
@@ -1362,11 +1851,22 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param producer Person value to set.
      */
     @Override
-    public void setProducer(Person producer) {
-        this.producer = producer;
+    public void addProducer(Person producer) {
+        this.producer = add(this.producer, producer);
     }
 
-    private Place spatial;
+    private List<Place> spatial;
+
+    /**
+     * The "spatial" property can be used in cases when more specific properties
+     * (e.g. [[locationCreated]], [[spatialCoverage]], [[contentLocation]]) are not known to be appropriate.
+     *
+     * @return {@link Place}
+     */
+    @Override
+    public List<Place> getSpatialList() {
+        return spatial;
+    }
 
     /**
      * The "spatial" property can be used in cases when more specific properties
@@ -1376,7 +1876,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Place getSpatial() {
-        return spatial;
+        return getFirst(spatial);
     }
 
     /**
@@ -1386,12 +1886,22 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param spatial Place value to set.
      */
     @Override
-    public void setSpatial(Place spatial) {
-        this.spatial = spatial;
+    public void addSpatial(Place spatial) {
+        this.spatial = add(this.spatial, spatial);
     }
 
     @JsonLdFieldTypes({ Person.class, Organization.class })
-    private Object publisher;
+    private List<Object> publisher;
+
+    /**
+     * The publisher of the creative work.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    @Override
+    public <T> List<T> getPublisherList() {
+        return (List<T>) publisher;
+    }
 
     /**
      * The publisher of the creative work.
@@ -1400,7 +1910,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getPublisher() {
-        return (T) publisher;
+        return (T) getFirst(publisher);
     }
 
     /**
@@ -1409,8 +1919,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param publisher Person value to set.
      */
     @Override
-    public void setPublisher(Person publisher) {
-        this.publisher = publisher;
+    public void addPublisher(Person publisher) {
+        this.publisher = add(this.publisher, publisher);
     }
     /**
      * The publisher of the creative work.
@@ -1418,11 +1928,21 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param publisher Organization value to set.
      */
     @Override
-    public void setPublisher(Organization publisher) {
-        this.publisher = publisher;
+    public void addPublisher(Organization publisher) {
+        this.publisher = add(this.publisher, publisher);
     }
 
-    private Organization sourceOrganization;
+    private List<Organization> sourceOrganization;
+
+    /**
+     * The Organization on whose behalf the creator was working.
+     *
+     * @return {@link Organization}
+     */
+    @Override
+    public List<Organization> getSourceOrganizationList() {
+        return sourceOrganization;
+    }
 
     /**
      * The Organization on whose behalf the creator was working.
@@ -1431,7 +1951,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Organization getSourceOrganization() {
-        return sourceOrganization;
+        return getFirst(sourceOrganization);
     }
 
     /**
@@ -1440,11 +1960,21 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param sourceOrganization Organization value to set.
      */
     @Override
-    public void setSourceOrganization(Organization sourceOrganization) {
-        this.sourceOrganization = sourceOrganization;
+    public void addSourceOrganization(Organization sourceOrganization) {
+        this.sourceOrganization = add(this.sourceOrganization, sourceOrganization);
     }
 
-    private Person character;
+    private List<Person> character;
+
+    /**
+     * Fictional person connected with a creative work.
+     *
+     * @return {@link Person}
+     */
+    @Override
+    public List<Person> getCharacterList() {
+        return character;
+    }
 
     /**
      * Fictional person connected with a creative work.
@@ -1453,7 +1983,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Person getCharacter() {
-        return character;
+        return getFirst(character);
     }
 
     /**
@@ -1462,12 +1992,22 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param character Person value to set.
      */
     @Override
-    public void setCharacter(Person character) {
-        this.character = character;
+    public void addCharacter(Person character) {
+        this.character = add(this.character, character);
     }
 
     @JsonLdFieldTypes({ Organization.class, Person.class })
-    private Object funder;
+    private List<Object> funder;
+
+    /**
+     * A person or organization that supports (sponsors) something through some kind of financial contribution.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> List<T> getFunderList() {
+        return (List<T>) funder;
+    }
 
     /**
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
@@ -1476,7 +2016,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getFunder() {
-        return (T) funder;
+        return (T) getFirst(funder);
     }
 
     /**
@@ -1485,8 +2025,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param funder Organization value to set.
      */
     @Override
-    public void setFunder(Organization funder) {
-        this.funder = funder;
+    public void addFunder(Organization funder) {
+        this.funder = add(this.funder, funder);
     }
     /**
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
@@ -1494,11 +2034,22 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param funder Person value to set.
      */
     @Override
-    public void setFunder(Person funder) {
-        this.funder = funder;
+    public void addFunder(Person funder) {
+        this.funder = add(this.funder, funder);
     }
 
-    private CreativeWork exampleOfWork;
+    private List<CreativeWork> exampleOfWork;
+
+    /**
+     * A creative work that this work is an example/instance/realization/derivation of.
+     *
+     * @return {@link CreativeWork}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
+     */
+    @Override
+    public List<CreativeWork> getExampleOfWorkList() {
+        return exampleOfWork;
+    }
 
     /**
      * A creative work that this work is an example/instance/realization/derivation of.
@@ -1508,7 +2059,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public CreativeWork getExampleOfWork() {
-        return exampleOfWork;
+        return getFirst(exampleOfWork);
     }
 
     /**
@@ -1518,12 +2069,26 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
     @Override
-    public void setExampleOfWork(CreativeWork exampleOfWork) {
-        this.exampleOfWork = exampleOfWork;
+    public void addExampleOfWork(CreativeWork exampleOfWork) {
+        this.exampleOfWork = add(this.exampleOfWork, exampleOfWork);
     }
 
     @JsonLdFieldTypes({ CreativeWork.class, URL.class })
-    private Object usageInfo;
+    private List<Object> usageInfo;
+
+    /**
+     * The schema.org [[usageInfo]] property indicates further information about a [[CreativeWork]]. This property is applicable both to works that are freely available and to those that require payment or other transactions. It can reference additional information e.g. community expectations on preferred linking and citation conventions, as well as purchasing details. For something that can be commercially licensed, usageInfo can provide detailed, resource-specific information about licensing options.
+     * 
+     * This property can be used alongside the license property which indicates license(s) applicable to some piece of content. The usageInfo property can provide information about other licensing options, e.g. acquiring commercial usage rights for an image that is also available under non-commercial creative commons licenses.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
+     */
+    @Override
+    public <T> List<T> getUsageInfoList() {
+        return (List<T>) usageInfo;
+    }
 
     /**
      * The schema.org [[usageInfo]] property indicates further information about a [[CreativeWork]]. This property is applicable both to works that are freely available and to those that require payment or other transactions. It can reference additional information e.g. community expectations on preferred linking and citation conventions, as well as purchasing details. For something that can be commercially licensed, usageInfo can provide detailed, resource-specific information about licensing options.
@@ -1536,7 +2101,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getUsageInfo() {
-        return (T) usageInfo;
+        return (T) getFirst(usageInfo);
     }
 
     /**
@@ -1549,8 +2114,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
      */
     @Override
-    public void setUsageInfo(CreativeWork usageInfo) {
-        this.usageInfo = usageInfo;
+    public void addUsageInfo(CreativeWork usageInfo) {
+        this.usageInfo = add(this.usageInfo, usageInfo);
     }
     /**
      * The schema.org [[usageInfo]] property indicates further information about a [[CreativeWork]]. This property is applicable both to works that are freely available and to those that require payment or other transactions. It can reference additional information e.g. community expectations on preferred linking and citation conventions, as well as purchasing details. For something that can be commercially licensed, usageInfo can provide detailed, resource-specific information about licensing options.
@@ -1562,12 +2127,25 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
      */
     @Override
-    public void setUsageInfo(URL usageInfo) {
-        this.usageInfo = usageInfo;
+    public void addUsageInfo(URL usageInfo) {
+        this.usageInfo = add(this.usageInfo, usageInfo);
     }
 
     @JsonLdFieldTypes({ Organization.class, Person.class })
-    private Object provider;
+    private List<Object> provider;
+
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @return {@link Organization} or {@link Person}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     */
+    @Override
+    public <T> List<T> getProviderList() {
+        return (List<T>) provider;
+    }
 
     /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
@@ -1579,7 +2157,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getProvider() {
-        return (T) provider;
+        return (T) getFirst(provider);
     }
 
     /**
@@ -1591,8 +2169,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
      */
     @Override
-    public void setProvider(Organization provider) {
-        this.provider = provider;
+    public void addProvider(Organization provider) {
+        this.provider = add(this.provider, provider);
     }
     /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
@@ -1603,12 +2181,25 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
      */
     @Override
-    public void setProvider(Person provider) {
-        this.provider = provider;
+    public void addProvider(Person provider) {
+        this.provider = add(this.provider, provider);
     }
 
     @JsonLdFieldTypes({ Organization.class, Person.class })
-    private Object sdPublisher;
+    private List<Object> sdPublisher;
+
+    /**
+     * Indicates the party responsible for generating and publishing the current structured data markup, typically in cases where the structured data is derived automatically from existing published content but published on a different site. For example, student projects and open data initiatives often re-publish existing content with more explicitly structured metadata. The
+     * [[sdPublisher]] property helps make such practices more explicit.
+     *
+     * @return {@link Organization} or {@link Person}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
+     */
+    @Override
+    public <T> List<T> getSdPublisherList() {
+        return (List<T>) sdPublisher;
+    }
 
     /**
      * Indicates the party responsible for generating and publishing the current structured data markup, typically in cases where the structured data is derived automatically from existing published content but published on a different site. For example, student projects and open data initiatives often re-publish existing content with more explicitly structured metadata. The
@@ -1620,7 +2211,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getSdPublisher() {
-        return (T) sdPublisher;
+        return (T) getFirst(sdPublisher);
     }
 
     /**
@@ -1632,8 +2223,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
      */
     @Override
-    public void setSdPublisher(Organization sdPublisher) {
-        this.sdPublisher = sdPublisher;
+    public void addSdPublisher(Organization sdPublisher) {
+        this.sdPublisher = add(this.sdPublisher, sdPublisher);
     }
     /**
      * Indicates the party responsible for generating and publishing the current structured data markup, typically in cases where the structured data is derived automatically from existing published content but published on a different site. For example, student projects and open data initiatives often re-publish existing content with more explicitly structured metadata. The
@@ -1644,11 +2235,21 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
      */
     @Override
-    public void setSdPublisher(Person sdPublisher) {
-        this.sdPublisher = sdPublisher;
+    public void addSdPublisher(Person sdPublisher) {
+        this.sdPublisher = add(this.sdPublisher, sdPublisher);
     }
 
-    private Comment comment;
+    private List<Comment> comment;
+
+    /**
+     * Comments, typically from users.
+     *
+     * @return {@link Comment}
+     */
+    @Override
+    public List<Comment> getCommentList() {
+        return comment;
+    }
 
     /**
      * Comments, typically from users.
@@ -1657,7 +2258,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Comment getComment() {
-        return comment;
+        return getFirst(comment);
     }
 
     /**
@@ -1666,11 +2267,21 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param comment Comment value to set.
      */
     @Override
-    public void setComment(Comment comment) {
-        this.comment = comment;
+    public void addComment(Comment comment) {
+        this.comment = add(this.comment, comment);
     }
 
-    private Text accessibilityFeature;
+    private List<Text> accessibilityFeature;
+
+    /**
+     * Content features of the resource, such as accessible media, alternatives and supported enhancements for accessibility. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityFeature-vocabulary).
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getAccessibilityFeatureList() {
+        return accessibilityFeature;
+    }
 
     /**
      * Content features of the resource, such as accessible media, alternatives and supported enhancements for accessibility. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityFeature-vocabulary).
@@ -1679,7 +2290,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Text getAccessibilityFeature() {
-        return accessibilityFeature;
+        return getFirst(accessibilityFeature);
     }
 
     /**
@@ -1688,11 +2299,21 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param accessibilityFeature Text value to set.
      */
     @Override
-    public void setAccessibilityFeature(Text accessibilityFeature) {
-        this.accessibilityFeature = accessibilityFeature;
+    public void addAccessibilityFeature(Text accessibilityFeature) {
+        this.accessibilityFeature = add(this.accessibilityFeature, accessibilityFeature);
     }
 
-    private PublicationEvent publication;
+    private List<PublicationEvent> publication;
+
+    /**
+     * A publication event associated with the item.
+     *
+     * @return {@link PublicationEvent}
+     */
+    @Override
+    public List<PublicationEvent> getPublicationList() {
+        return publication;
+    }
 
     /**
      * A publication event associated with the item.
@@ -1701,7 +2322,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public PublicationEvent getPublication() {
-        return publication;
+        return getFirst(publication);
     }
 
     /**
@@ -1710,11 +2331,22 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param publication PublicationEvent value to set.
      */
     @Override
-    public void setPublication(PublicationEvent publication) {
-        this.publication = publication;
+    public void addPublication(PublicationEvent publication) {
+        this.publication = add(this.publication, publication);
     }
 
-    private CreativeWork translationOfWork;
+    private List<CreativeWork> translationOfWork;
+
+    /**
+     * The work that this work has been translated from. e.g. 物种起源 is a translationOf “On the Origin of Species”
+     *
+     * @return {@link CreativeWork}
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    @Override
+    public List<CreativeWork> getTranslationOfWorkList() {
+        return translationOfWork;
+    }
 
     /**
      * The work that this work has been translated from. e.g. 物种起源 is a translationOf “On the Origin of Species”
@@ -1724,7 +2356,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public CreativeWork getTranslationOfWork() {
-        return translationOfWork;
+        return getFirst(translationOfWork);
     }
 
     /**
@@ -1734,11 +2366,21 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
     @Override
-    public void setTranslationOfWork(CreativeWork translationOfWork) {
-        this.translationOfWork = translationOfWork;
+    public void addTranslationOfWork(CreativeWork translationOfWork) {
+        this.translationOfWork = add(this.translationOfWork, translationOfWork);
     }
 
-    private Text interactivityType;
+    private List<Text> interactivityType;
+
+    /**
+     * The predominant mode of learning supported by the learning resource. Acceptable values are 'active', 'expositive', or 'mixed'.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getInteractivityTypeList() {
+        return interactivityType;
+    }
 
     /**
      * The predominant mode of learning supported by the learning resource. Acceptable values are 'active', 'expositive', or 'mixed'.
@@ -1747,7 +2389,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Text getInteractivityType() {
-        return interactivityType;
+        return getFirst(interactivityType);
     }
 
     /**
@@ -1756,11 +2398,21 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param interactivityType Text value to set.
      */
     @Override
-    public void setInteractivityType(Text interactivityType) {
-        this.interactivityType = interactivityType;
+    public void addInteractivityType(Text interactivityType) {
+        this.interactivityType = add(this.interactivityType, interactivityType);
     }
 
-    private Integer commentCount;
+    private List<Integer> commentCount;
+
+    /**
+     * The number of comments this CreativeWork (e.g. Article, Question or Answer) has received. This is most applicable to works published in Web sites with commenting system; additional comments may exist elsewhere.
+     *
+     * @return {@link Integer}
+     */
+    @Override
+    public List<Integer> getCommentCountList() {
+        return commentCount;
+    }
 
     /**
      * The number of comments this CreativeWork (e.g. Article, Question or Answer) has received. This is most applicable to works published in Web sites with commenting system; additional comments may exist elsewhere.
@@ -1769,7 +2421,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Integer getCommentCount() {
-        return commentCount;
+        return getFirst(commentCount);
     }
 
     /**
@@ -1778,11 +2430,22 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param commentCount Integer value to set.
      */
     @Override
-    public void setCommentCount(Integer commentCount) {
-        this.commentCount = commentCount;
+    public void addCommentCount(Integer commentCount) {
+        this.commentCount = add(this.commentCount, commentCount);
     }
 
-    private Text accessMode;
+    private List<Text> accessMode;
+
+    /**
+     * The human sensory perceptual system or cognitive faculty through which a person may process or perceive information. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessMode-vocabulary).
+     *
+     * @return {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
+     */
+    @Override
+    public List<Text> getAccessModeList() {
+        return accessMode;
+    }
 
     /**
      * The human sensory perceptual system or cognitive faculty through which a person may process or perceive information. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessMode-vocabulary).
@@ -1792,7 +2455,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Text getAccessMode() {
-        return accessMode;
+        return getFirst(accessMode);
     }
 
     /**
@@ -1802,11 +2465,21 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
      */
     @Override
-    public void setAccessMode(Text accessMode) {
-        this.accessMode = accessMode;
+    public void addAccessMode(Text accessMode) {
+        this.accessMode = add(this.accessMode, accessMode);
     }
 
-    private AggregateRating aggregateRating;
+    private List<AggregateRating> aggregateRating;
+
+    /**
+     * The overall rating, based on a collection of reviews or ratings, of the item.
+     *
+     * @return {@link AggregateRating}
+     */
+    @Override
+    public List<AggregateRating> getAggregateRatingList() {
+        return aggregateRating;
+    }
 
     /**
      * The overall rating, based on a collection of reviews or ratings, of the item.
@@ -1815,7 +2488,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public AggregateRating getAggregateRating() {
-        return aggregateRating;
+        return getFirst(aggregateRating);
     }
 
     /**
@@ -1824,11 +2497,21 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param aggregateRating AggregateRating value to set.
      */
     @Override
-    public void setAggregateRating(AggregateRating aggregateRating) {
-        this.aggregateRating = aggregateRating;
+    public void addAggregateRating(AggregateRating aggregateRating) {
+        this.aggregateRating = add(this.aggregateRating, aggregateRating);
     }
 
-    private Duration timeRequired;
+    private List<Duration> timeRequired;
+
+    /**
+     * Approximate or typical time it takes to work with or through this learning resource for the typical intended target audience, e.g. 'PT30M', 'PT1H25M'.
+     *
+     * @return {@link Duration}
+     */
+    @Override
+    public List<Duration> getTimeRequiredList() {
+        return timeRequired;
+    }
 
     /**
      * Approximate or typical time it takes to work with or through this learning resource for the typical intended target audience, e.g. 'PT30M', 'PT1H25M'.
@@ -1837,7 +2520,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Duration getTimeRequired() {
-        return timeRequired;
+        return getFirst(timeRequired);
     }
 
     /**
@@ -1846,11 +2529,21 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param timeRequired Duration value to set.
      */
     @Override
-    public void setTimeRequired(Duration timeRequired) {
-        this.timeRequired = timeRequired;
+    public void addTimeRequired(Duration timeRequired) {
+        this.timeRequired = add(this.timeRequired, timeRequired);
     }
 
-    private Text typicalAgeRange;
+    private List<Text> typicalAgeRange;
+
+    /**
+     * The typical expected age range, e.g. '7-9', '11-'.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getTypicalAgeRangeList() {
+        return typicalAgeRange;
+    }
 
     /**
      * The typical expected age range, e.g. '7-9', '11-'.
@@ -1859,7 +2552,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Text getTypicalAgeRange() {
-        return typicalAgeRange;
+        return getFirst(typicalAgeRange);
     }
 
     /**
@@ -1868,11 +2561,22 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param typicalAgeRange Text value to set.
      */
     @Override
-    public void setTypicalAgeRange(Text typicalAgeRange) {
-        this.typicalAgeRange = typicalAgeRange;
+    public void addTypicalAgeRange(Text typicalAgeRange) {
+        this.typicalAgeRange = add(this.typicalAgeRange, typicalAgeRange);
     }
 
-    private InteractionCounter interactionStatistic;
+    private List<InteractionCounter> interactionStatistic;
+
+    /**
+     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
+     *
+     * @return {@link InteractionCounter}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
+     */
+    @Override
+    public List<InteractionCounter> getInteractionStatisticList() {
+        return interactionStatistic;
+    }
 
     /**
      * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
@@ -1882,7 +2586,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public InteractionCounter getInteractionStatistic() {
-        return interactionStatistic;
+        return getFirst(interactionStatistic);
     }
 
     /**
@@ -1892,11 +2596,21 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
      */
     @Override
-    public void setInteractionStatistic(InteractionCounter interactionStatistic) {
-        this.interactionStatistic = interactionStatistic;
+    public void addInteractionStatistic(InteractionCounter interactionStatistic) {
+        this.interactionStatistic = add(this.interactionStatistic, interactionStatistic);
     }
 
-    private Number copyrightYear;
+    private List<Number> copyrightYear;
+
+    /**
+     * The year during which the claimed copyright for the CreativeWork was first asserted.
+     *
+     * @return {@link Number}
+     */
+    @Override
+    public List<Number> getCopyrightYearList() {
+        return copyrightYear;
+    }
 
     /**
      * The year during which the claimed copyright for the CreativeWork was first asserted.
@@ -1905,7 +2619,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Number getCopyrightYear() {
-        return copyrightYear;
+        return getFirst(copyrightYear);
     }
 
     /**
@@ -1914,12 +2628,22 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param copyrightYear Number value to set.
      */
     @Override
-    public void setCopyrightYear(Number copyrightYear) {
-        this.copyrightYear = copyrightYear;
+    public void addCopyrightYear(Number copyrightYear) {
+        this.copyrightYear = add(this.copyrightYear, copyrightYear);
     }
 
     @JsonLdFieldTypes({ CreativeWork.class, URL.class, Product.class })
-    private Object isBasedOn;
+    private List<Object> isBasedOn;
+
+    /**
+     * A resource from which this work is derived or from which it is a modification or adaption.
+     *
+     * @return {@link CreativeWork} or {@link URL} or {@link Product}
+     */
+    @Override
+    public <T> List<T> getIsBasedOnList() {
+        return (List<T>) isBasedOn;
+    }
 
     /**
      * A resource from which this work is derived or from which it is a modification or adaption.
@@ -1928,7 +2652,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getIsBasedOn() {
-        return (T) isBasedOn;
+        return (T) getFirst(isBasedOn);
     }
 
     /**
@@ -1937,8 +2661,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param isBasedOn CreativeWork value to set.
      */
     @Override
-    public void setIsBasedOn(CreativeWork isBasedOn) {
-        this.isBasedOn = isBasedOn;
+    public void addIsBasedOn(CreativeWork isBasedOn) {
+        this.isBasedOn = add(this.isBasedOn, isBasedOn);
     }
     /**
      * A resource from which this work is derived or from which it is a modification or adaption.
@@ -1946,8 +2670,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param isBasedOn URL value to set.
      */
     @Override
-    public void setIsBasedOn(URL isBasedOn) {
-        this.isBasedOn = isBasedOn;
+    public void addIsBasedOn(URL isBasedOn) {
+        this.isBasedOn = add(this.isBasedOn, isBasedOn);
     }
     /**
      * A resource from which this work is derived or from which it is a modification or adaption.
@@ -1955,11 +2679,22 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param isBasedOn Product value to set.
      */
     @Override
-    public void setIsBasedOn(Product isBasedOn) {
-        this.isBasedOn = isBasedOn;
+    public void addIsBasedOn(Product isBasedOn) {
+        this.isBasedOn = add(this.isBasedOn, isBasedOn);
     }
 
-    private CreativeWork workExample;
+    private List<CreativeWork> workExample;
+
+    /**
+     * Example/instance/realization/derivation of the concept of this creative work. eg. The paperback edition, first edition, or eBook.
+     *
+     * @return {@link CreativeWork}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
+     */
+    @Override
+    public List<CreativeWork> getWorkExampleList() {
+        return workExample;
+    }
 
     /**
      * Example/instance/realization/derivation of the concept of this creative work. eg. The paperback edition, first edition, or eBook.
@@ -1969,7 +2704,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public CreativeWork getWorkExample() {
-        return workExample;
+        return getFirst(workExample);
     }
 
     /**
@@ -1979,12 +2714,24 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
     @Override
-    public void setWorkExample(CreativeWork workExample) {
-        this.workExample = workExample;
+    public void addWorkExample(CreativeWork workExample) {
+        this.workExample = add(this.workExample, workExample);
     }
 
     @JsonLdFieldTypes({ URL.class, CreativeWork.class })
-    private Object publishingPrinciples;
+    private List<Object> publishingPrinciples;
+
+    /**
+     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * 
+     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+     *
+     * @return {@link URL} or {@link CreativeWork}
+     */
+    @Override
+    public <T> List<T> getPublishingPrinciplesList() {
+        return (List<T>) publishingPrinciples;
+    }
 
     /**
      * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
@@ -1995,7 +2742,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getPublishingPrinciples() {
-        return (T) publishingPrinciples;
+        return (T) getFirst(publishingPrinciples);
     }
 
     /**
@@ -2006,8 +2753,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param publishingPrinciples URL value to set.
      */
     @Override
-    public void setPublishingPrinciples(URL publishingPrinciples) {
-        this.publishingPrinciples = publishingPrinciples;
+    public void addPublishingPrinciples(URL publishingPrinciples) {
+        this.publishingPrinciples = add(this.publishingPrinciples, publishingPrinciples);
     }
     /**
      * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
@@ -2017,11 +2764,21 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param publishingPrinciples CreativeWork value to set.
      */
     @Override
-    public void setPublishingPrinciples(CreativeWork publishingPrinciples) {
-        this.publishingPrinciples = publishingPrinciples;
+    public void addPublishingPrinciples(CreativeWork publishingPrinciples) {
+        this.publishingPrinciples = add(this.publishingPrinciples, publishingPrinciples);
     }
 
-    private URL discussionUrl;
+    private List<URL> discussionUrl;
+
+    /**
+     * A link to the page containing the comments of the CreativeWork.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getDiscussionUrlList() {
+        return discussionUrl;
+    }
 
     /**
      * A link to the page containing the comments of the CreativeWork.
@@ -2030,7 +2787,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public URL getDiscussionUrl() {
-        return discussionUrl;
+        return getFirst(discussionUrl);
     }
 
     /**
@@ -2039,11 +2796,21 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param discussionUrl URL value to set.
      */
     @Override
-    public void setDiscussionUrl(URL discussionUrl) {
-        this.discussionUrl = discussionUrl;
+    public void addDiscussionUrl(URL discussionUrl) {
+        this.discussionUrl = add(this.discussionUrl, discussionUrl);
     }
 
-    private PublicationEvent releasedEvent;
+    private List<PublicationEvent> releasedEvent;
+
+    /**
+     * The place and time the release was issued, expressed as a PublicationEvent.
+     *
+     * @return {@link PublicationEvent}
+     */
+    @Override
+    public List<PublicationEvent> getReleasedEventList() {
+        return releasedEvent;
+    }
 
     /**
      * The place and time the release was issued, expressed as a PublicationEvent.
@@ -2052,7 +2819,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public PublicationEvent getReleasedEvent() {
-        return releasedEvent;
+        return getFirst(releasedEvent);
     }
 
     /**
@@ -2061,12 +2828,22 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param releasedEvent PublicationEvent value to set.
      */
     @Override
-    public void setReleasedEvent(PublicationEvent releasedEvent) {
-        this.releasedEvent = releasedEvent;
+    public void addReleasedEvent(PublicationEvent releasedEvent) {
+        this.releasedEvent = add(this.releasedEvent, releasedEvent);
     }
 
     @JsonLdFieldTypes({ Date.class, DateTime.class })
-    private Object dateCreated;
+    private List<Object> dateCreated;
+
+    /**
+     * The date on which the CreativeWork was created or the item was added to a DataFeed.
+     *
+     * @return {@link Date} or {@link DateTime}
+     */
+    @Override
+    public <T> List<T> getDateCreatedList() {
+        return (List<T>) dateCreated;
+    }
 
     /**
      * The date on which the CreativeWork was created or the item was added to a DataFeed.
@@ -2075,7 +2852,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getDateCreated() {
-        return (T) dateCreated;
+        return (T) getFirst(dateCreated);
     }
 
     /**
@@ -2084,8 +2861,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param dateCreated Date value to set.
      */
     @Override
-    public void setDateCreated(Date dateCreated) {
-        this.dateCreated = dateCreated;
+    public void addDateCreated(Date dateCreated) {
+        this.dateCreated = add(this.dateCreated, dateCreated);
     }
     /**
      * The date on which the CreativeWork was created or the item was added to a DataFeed.
@@ -2093,11 +2870,22 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param dateCreated DateTime value to set.
      */
     @Override
-    public void setDateCreated(DateTime dateCreated) {
-        this.dateCreated = dateCreated;
+    public void addDateCreated(DateTime dateCreated) {
+        this.dateCreated = add(this.dateCreated, dateCreated);
     }
 
-    private CreativeWork workTranslation;
+    private List<CreativeWork> workTranslation;
+
+    /**
+     * A work that is a translation of the content of this work. e.g. 西遊記 has an English workTranslation “Journey to the West”,a German workTranslation “Monkeys Pilgerfahrt” and a Vietnamese  translation Tây du ký bình khảo.
+     *
+     * @return {@link CreativeWork}
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    @Override
+    public List<CreativeWork> getWorkTranslationList() {
+        return workTranslation;
+    }
 
     /**
      * A work that is a translation of the content of this work. e.g. 西遊記 has an English workTranslation “Journey to the West”,a German workTranslation “Monkeys Pilgerfahrt” and a Vietnamese  translation Tây du ký bình khảo.
@@ -2107,7 +2895,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public CreativeWork getWorkTranslation() {
-        return workTranslation;
+        return getFirst(workTranslation);
     }
 
     /**
@@ -2117,11 +2905,21 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
     @Override
-    public void setWorkTranslation(CreativeWork workTranslation) {
-        this.workTranslation = workTranslation;
+    public void addWorkTranslation(CreativeWork workTranslation) {
+        this.workTranslation = add(this.workTranslation, workTranslation);
     }
 
-    private Person editor;
+    private List<Person> editor;
+
+    /**
+     * Specifies the Person who edited the CreativeWork.
+     *
+     * @return {@link Person}
+     */
+    @Override
+    public List<Person> getEditorList() {
+        return editor;
+    }
 
     /**
      * Specifies the Person who edited the CreativeWork.
@@ -2130,7 +2928,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Person getEditor() {
-        return editor;
+        return getFirst(editor);
     }
 
     /**
@@ -2139,11 +2937,23 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param editor Person value to set.
      */
     @Override
-    public void setEditor(Person editor) {
-        this.editor = editor;
+    public void addEditor(Person editor) {
+        this.editor = add(this.editor, editor);
     }
 
-    private Text creditText;
+    private List<Text> creditText;
+
+    /**
+     * Text that can be used to credit person(s) and/or organization(s) associated with a published Creative Work.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2659">https://github.com/schemaorg/schemaorg/issues/2659</a>
+     */
+    @Override
+    public List<Text> getCreditTextList() {
+        return creditText;
+    }
 
     /**
      * Text that can be used to credit person(s) and/or organization(s) associated with a published Creative Work.
@@ -2154,7 +2964,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Text getCreditText() {
-        return creditText;
+        return getFirst(creditText);
     }
 
     /**
@@ -2165,11 +2975,21 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2659">https://github.com/schemaorg/schemaorg/issues/2659</a>
      */
     @Override
-    public void setCreditText(Text creditText) {
-        this.creditText = creditText;
+    public void addCreditText(Text creditText) {
+        this.creditText = add(this.creditText, creditText);
     }
 
-    private Event recordedAt;
+    private List<Event> recordedAt;
+
+    /**
+     * The Event where the CreativeWork was recorded. The CreativeWork may capture all or part of the event.
+     *
+     * @return {@link Event}
+     */
+    @Override
+    public List<Event> getRecordedAtList() {
+        return recordedAt;
+    }
 
     /**
      * The Event where the CreativeWork was recorded. The CreativeWork may capture all or part of the event.
@@ -2178,7 +2998,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Event getRecordedAt() {
-        return recordedAt;
+        return getFirst(recordedAt);
     }
 
     /**
@@ -2187,12 +3007,28 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param recordedAt Event value to set.
      */
     @Override
-    public void setRecordedAt(Event recordedAt) {
-        this.recordedAt = recordedAt;
+    public void addRecordedAt(Event recordedAt) {
+        this.recordedAt = add(this.recordedAt, recordedAt);
     }
 
     @JsonLdFieldTypes({ URL.class, Text.class })
-    private Object editEIDR;
+    private List<Object> editEIDR;
+
+    /**
+     * An [EIDR](https://eidr.org/) (Entertainment Identifier Registry) [[identifier]] representing a specific edit / edition for a work of film or television.
+     * 
+     * For example, the motion picture known as "Ghostbusters" whose [[titleEIDR]] is "10.5240/7EC7-228A-510A-053E-CBB8-J", has several edits e.g. "10.5240/1F2A-E1C5-680A-14C6-E76B-I" and "10.5240/8A35-3BEE-6497-5D12-9E4F-3".
+     * 
+     * Since schema.org types like [[Movie]] and [[TVEpisode]] can be used for both works and their multiple expressions, it is possible to use [[titleEIDR]] alone (for a general description), or alongside [[editEIDR]] for a more edit-specific description.
+     *
+     * @return {@link URL} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2469">https://github.com/schemaorg/schemaorg/issues/2469</a>
+     */
+    @Override
+    public <T> List<T> getEditEIDRList() {
+        return (List<T>) editEIDR;
+    }
 
     /**
      * An [EIDR](https://eidr.org/) (Entertainment Identifier Registry) [[identifier]] representing a specific edit / edition for a work of film or television.
@@ -2207,7 +3043,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getEditEIDR() {
-        return (T) editEIDR;
+        return (T) getFirst(editEIDR);
     }
 
     /**
@@ -2222,8 +3058,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2469">https://github.com/schemaorg/schemaorg/issues/2469</a>
      */
     @Override
-    public void setEditEIDR(URL editEIDR) {
-        this.editEIDR = editEIDR;
+    public void addEditEIDR(URL editEIDR) {
+        this.editEIDR = add(this.editEIDR, editEIDR);
     }
     /**
      * An [EIDR](https://eidr.org/) (Entertainment Identifier Registry) [[identifier]] representing a specific edit / edition for a work of film or television.
@@ -2237,12 +3073,22 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2469">https://github.com/schemaorg/schemaorg/issues/2469</a>
      */
     @Override
-    public void setEditEIDR(Text editEIDR) {
-        this.editEIDR = editEIDR;
+    public void addEditEIDR(Text editEIDR) {
+        this.editEIDR = add(this.editEIDR, editEIDR);
     }
 
     @JsonLdFieldTypes({ Person.class, Organization.class })
-    private Object author;
+    private List<Object> author;
+
+    /**
+     * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    @Override
+    public <T> List<T> getAuthorList() {
+        return (List<T>) author;
+    }
 
     /**
      * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
@@ -2251,7 +3097,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getAuthor() {
-        return (T) author;
+        return (T) getFirst(author);
     }
 
     /**
@@ -2260,8 +3106,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param author Person value to set.
      */
     @Override
-    public void setAuthor(Person author) {
-        this.author = author;
+    public void addAuthor(Person author) {
+        this.author = add(this.author, author);
     }
     /**
      * The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.
@@ -2269,12 +3115,22 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param author Organization value to set.
      */
     @Override
-    public void setAuthor(Organization author) {
-        this.author = author;
+    public void addAuthor(Organization author) {
+        this.author = add(this.author, author);
     }
 
     @JsonLdFieldTypes({ DateTime.class, Date.class })
-    private Object dateModified;
+    private List<Object> dateModified;
+
+    /**
+     * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
+     *
+     * @return {@link DateTime} or {@link Date}
+     */
+    @Override
+    public <T> List<T> getDateModifiedList() {
+        return (List<T>) dateModified;
+    }
 
     /**
      * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
@@ -2283,7 +3139,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getDateModified() {
-        return (T) dateModified;
+        return (T) getFirst(dateModified);
     }
 
     /**
@@ -2292,8 +3148,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param dateModified DateTime value to set.
      */
     @Override
-    public void setDateModified(DateTime dateModified) {
-        this.dateModified = dateModified;
+    public void addDateModified(DateTime dateModified) {
+        this.dateModified = add(this.dateModified, dateModified);
     }
     /**
      * The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed.
@@ -2301,12 +3157,22 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param dateModified Date value to set.
      */
     @Override
-    public void setDateModified(Date dateModified) {
-        this.dateModified = dateModified;
+    public void addDateModified(Date dateModified) {
+        this.dateModified = add(this.dateModified, dateModified);
     }
 
     @JsonLdFieldTypes({ Organization.class, Person.class })
-    private Object sponsor;
+    private List<Object> sponsor;
+
+    /**
+     * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> List<T> getSponsorList() {
+        return (List<T>) sponsor;
+    }
 
     /**
      * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
@@ -2315,7 +3181,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getSponsor() {
-        return (T) sponsor;
+        return (T) getFirst(sponsor);
     }
 
     /**
@@ -2324,8 +3190,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param sponsor Organization value to set.
      */
     @Override
-    public void setSponsor(Organization sponsor) {
-        this.sponsor = sponsor;
+    public void addSponsor(Organization sponsor) {
+        this.sponsor = add(this.sponsor, sponsor);
     }
     /**
      * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
@@ -2333,11 +3199,22 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param sponsor Person value to set.
      */
     @Override
-    public void setSponsor(Person sponsor) {
-        this.sponsor = sponsor;
+    public void addSponsor(Person sponsor) {
+        this.sponsor = add(this.sponsor, sponsor);
     }
 
-    private Text accessibilitySummary;
+    private List<Text> accessibilitySummary;
+
+    /**
+     * A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as "short descriptions are present but long descriptions will be needed for non-visual users" or "short descriptions are present and no long descriptions are needed."
+     *
+     * @return {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
+     */
+    @Override
+    public List<Text> getAccessibilitySummaryList() {
+        return accessibilitySummary;
+    }
 
     /**
      * A human-readable summary of specific accessibility features or deficiencies, consistent with the other accessibility metadata but expressing subtleties such as "short descriptions are present but long descriptions will be needed for non-visual users" or "short descriptions are present and no long descriptions are needed."
@@ -2347,7 +3224,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Text getAccessibilitySummary() {
-        return accessibilitySummary;
+        return getFirst(accessibilitySummary);
     }
 
     /**
@@ -2357,12 +3234,26 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
      */
     @Override
-    public void setAccessibilitySummary(Text accessibilitySummary) {
-        this.accessibilitySummary = accessibilitySummary;
+    public void addAccessibilitySummary(Text accessibilitySummary) {
+        this.accessibilitySummary = add(this.accessibilitySummary, accessibilitySummary);
     }
 
     @JsonLdFieldTypes({ Text.class, URL.class })
-    private Object encodingFormat;
+    private List<Object> encodingFormat;
+
+    /**
+     * Media type typically expressed using a MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml) and [MDN reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)) e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc.).
+     * 
+     * In cases where a [[CreativeWork]] has several media type representations, [[encoding]] can be used to indicate each [[MediaObject]] alongside particular [[encodingFormat]] information.
+     * 
+     * Unregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.
+     *
+     * @return {@link Text} or {@link URL}
+     */
+    @Override
+    public <T> List<T> getEncodingFormatList() {
+        return (List<T>) encodingFormat;
+    }
 
     /**
      * Media type typically expressed using a MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml) and [MDN reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)) e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc.).
@@ -2375,7 +3266,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getEncodingFormat() {
-        return (T) encodingFormat;
+        return (T) getFirst(encodingFormat);
     }
 
     /**
@@ -2388,8 +3279,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param encodingFormat Text value to set.
      */
     @Override
-    public void setEncodingFormat(Text encodingFormat) {
-        this.encodingFormat = encodingFormat;
+    public void addEncodingFormat(Text encodingFormat) {
+        this.encodingFormat = add(this.encodingFormat, encodingFormat);
     }
     /**
      * Media type typically expressed using a MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml) and [MDN reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)) e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc.).
@@ -2401,12 +3292,25 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param encodingFormat URL value to set.
      */
     @Override
-    public void setEncodingFormat(URL encodingFormat) {
-        this.encodingFormat = encodingFormat;
+    public void addEncodingFormat(URL encodingFormat) {
+        this.encodingFormat = add(this.encodingFormat, encodingFormat);
     }
 
     @JsonLdFieldTypes({ Person.class, Organization.class })
-    private Object maintainer;
+    private List<Object> maintainer;
+
+    /**
+     * A maintainer of a [[Dataset]], software package ([[SoftwareApplication]]), or other [[Project]]. A maintainer is a [[Person]] or [[Organization]] that manages contributions to, and/or publication of, some (typically complex) artifact. It is common for distributions of software and data to be based on "upstream" sources. When [[maintainer]] is applied to a specific version of something e.g. a particular version or packaging of a [[Dataset]], it is always  possible that the upstream source has a different maintainer. The [[isBasedOn]] property can be used to indicate such relationships between datasets to make the different maintenance roles clear. Similarly in the case of software, a package may have dedicated maintainers working on integration into software distributions such as Ubuntu, as well as upstream maintainers of the underlying work.
+     *       
+     *
+     * @return {@link Person} or {@link Organization}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2311">https://github.com/schemaorg/schemaorg/issues/2311</a>
+     */
+    @Override
+    public <T> List<T> getMaintainerList() {
+        return (List<T>) maintainer;
+    }
 
     /**
      * A maintainer of a [[Dataset]], software package ([[SoftwareApplication]]), or other [[Project]]. A maintainer is a [[Person]] or [[Organization]] that manages contributions to, and/or publication of, some (typically complex) artifact. It is common for distributions of software and data to be based on "upstream" sources. When [[maintainer]] is applied to a specific version of something e.g. a particular version or packaging of a [[Dataset]], it is always  possible that the upstream source has a different maintainer. The [[isBasedOn]] property can be used to indicate such relationships between datasets to make the different maintenance roles clear. Similarly in the case of software, a package may have dedicated maintainers working on integration into software distributions such as Ubuntu, as well as upstream maintainers of the underlying work.
@@ -2418,7 +3322,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getMaintainer() {
-        return (T) maintainer;
+        return (T) getFirst(maintainer);
     }
 
     /**
@@ -2430,8 +3334,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2311">https://github.com/schemaorg/schemaorg/issues/2311</a>
      */
     @Override
-    public void setMaintainer(Person maintainer) {
-        this.maintainer = maintainer;
+    public void addMaintainer(Person maintainer) {
+        this.maintainer = add(this.maintainer, maintainer);
     }
     /**
      * A maintainer of a [[Dataset]], software package ([[SoftwareApplication]]), or other [[Project]]. A maintainer is a [[Person]] or [[Organization]] that manages contributions to, and/or publication of, some (typically complex) artifact. It is common for distributions of software and data to be based on "upstream" sources. When [[maintainer]] is applied to a specific version of something e.g. a particular version or packaging of a [[Dataset]], it is always  possible that the upstream source has a different maintainer. The [[isBasedOn]] property can be used to indicate such relationships between datasets to make the different maintenance roles clear. Similarly in the case of software, a package may have dedicated maintainers working on integration into software distributions such as Ubuntu, as well as upstream maintainers of the underlying work.
@@ -2442,11 +3346,23 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2311">https://github.com/schemaorg/schemaorg/issues/2311</a>
      */
     @Override
-    public void setMaintainer(Organization maintainer) {
-        this.maintainer = maintainer;
+    public void addMaintainer(Organization maintainer) {
+        this.maintainer = add(this.maintainer, maintainer);
     }
 
-    private AlignmentObject educationalAlignment;
+    private List<AlignmentObject> educationalAlignment;
+
+    /**
+     * An alignment to an established educational framework.
+     * 
+     * This property should not be used where the nature of the alignment can be described using a simple property, for example to express that a resource [[teaches]] or [[assesses]] a competency.
+     *
+     * @return {@link AlignmentObject}
+     */
+    @Override
+    public List<AlignmentObject> getEducationalAlignmentList() {
+        return educationalAlignment;
+    }
 
     /**
      * An alignment to an established educational framework.
@@ -2457,7 +3373,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public AlignmentObject getEducationalAlignment() {
-        return educationalAlignment;
+        return getFirst(educationalAlignment);
     }
 
     /**
@@ -2468,12 +3384,24 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param educationalAlignment AlignmentObject value to set.
      */
     @Override
-    public void setEducationalAlignment(AlignmentObject educationalAlignment) {
-        this.educationalAlignment = educationalAlignment;
+    public void addEducationalAlignment(AlignmentObject educationalAlignment) {
+        this.educationalAlignment = add(this.educationalAlignment, educationalAlignment);
     }
 
     @JsonLdFieldTypes({ CreativeWork.class, URL.class })
-    private Object acquireLicensePage;
+    private List<Object> acquireLicensePage;
+
+    /**
+     * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
+     */
+    @Override
+    public <T> List<T> getAcquireLicensePageList() {
+        return (List<T>) acquireLicensePage;
+    }
 
     /**
      * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
@@ -2484,7 +3412,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getAcquireLicensePage() {
-        return (T) acquireLicensePage;
+        return (T) getFirst(acquireLicensePage);
     }
 
     /**
@@ -2495,8 +3423,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
      */
     @Override
-    public void setAcquireLicensePage(CreativeWork acquireLicensePage) {
-        this.acquireLicensePage = acquireLicensePage;
+    public void addAcquireLicensePage(CreativeWork acquireLicensePage) {
+        this.acquireLicensePage = add(this.acquireLicensePage, acquireLicensePage);
     }
     /**
      * Indicates a page documenting how licenses can be purchased or otherwise acquired, for the current item.
@@ -2506,11 +3434,21 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2454">https://github.com/schemaorg/schemaorg/issues/2454</a>
      */
     @Override
-    public void setAcquireLicensePage(URL acquireLicensePage) {
-        this.acquireLicensePage = acquireLicensePage;
+    public void addAcquireLicensePage(URL acquireLicensePage) {
+        this.acquireLicensePage = add(this.acquireLicensePage, acquireLicensePage);
     }
 
-    private Boolean isAccessibleForFree;
+    private List<Boolean> isAccessibleForFree;
+
+    /**
+     * A flag to signal that the item, event, or place is accessible for free.
+     *
+     * @return {@link Boolean}
+     */
+    @Override
+    public List<Boolean> getIsAccessibleForFreeList() {
+        return isAccessibleForFree;
+    }
 
     /**
      * A flag to signal that the item, event, or place is accessible for free.
@@ -2519,7 +3457,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Boolean getIsAccessibleForFree() {
-        return isAccessibleForFree;
+        return getFirst(isAccessibleForFree);
     }
 
     /**
@@ -2528,12 +3466,22 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param isAccessibleForFree Boolean value to set.
      */
     @Override
-    public void setIsAccessibleForFree(Boolean isAccessibleForFree) {
-        this.isAccessibleForFree = isAccessibleForFree;
+    public void addIsAccessibleForFree(Boolean isAccessibleForFree) {
+        this.isAccessibleForFree = add(this.isAccessibleForFree, isAccessibleForFree);
     }
 
     @JsonLdFieldTypes({ Date.class, DateTime.class })
-    private Object datePublished;
+    private List<Object> datePublished;
+
+    /**
+     * Date of first broadcast/publication.
+     *
+     * @return {@link Date} or {@link DateTime}
+     */
+    @Override
+    public <T> List<T> getDatePublishedList() {
+        return (List<T>) datePublished;
+    }
 
     /**
      * Date of first broadcast/publication.
@@ -2542,7 +3490,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getDatePublished() {
-        return (T) datePublished;
+        return (T) getFirst(datePublished);
     }
 
     /**
@@ -2551,8 +3499,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param datePublished Date value to set.
      */
     @Override
-    public void setDatePublished(Date datePublished) {
-        this.datePublished = datePublished;
+    public void addDatePublished(Date datePublished) {
+        this.datePublished = add(this.datePublished, datePublished);
     }
     /**
      * Date of first broadcast/publication.
@@ -2560,11 +3508,23 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param datePublished DateTime value to set.
      */
     @Override
-    public void setDatePublished(DateTime datePublished) {
-        this.datePublished = datePublished;
+    public void addDatePublished(DateTime datePublished) {
+        this.datePublished = add(this.datePublished, datePublished);
     }
 
-    private Place spatialCoverage;
+    private List<Place> spatialCoverage;
+
+    /**
+     * The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of
+     *       contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates
+     *       areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.
+     *
+     * @return {@link Place}
+     */
+    @Override
+    public List<Place> getSpatialCoverageList() {
+        return spatialCoverage;
+    }
 
     /**
      * The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of
@@ -2575,7 +3535,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Place getSpatialCoverage() {
-        return spatialCoverage;
+        return getFirst(spatialCoverage);
     }
 
     /**
@@ -2586,12 +3546,24 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param spatialCoverage Place value to set.
      */
     @Override
-    public void setSpatialCoverage(Place spatialCoverage) {
-        this.spatialCoverage = spatialCoverage;
+    public void addSpatialCoverage(Place spatialCoverage) {
+        this.spatialCoverage = add(this.spatialCoverage, spatialCoverage);
     }
 
     @JsonLdFieldTypes({ CreativeWork.class, URL.class })
-    private Object sdLicense;
+    private List<Object> sdLicense;
+
+    /**
+     * A license document that applies to this structured data, typically indicated by URL.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
+     */
+    @Override
+    public <T> List<T> getSdLicenseList() {
+        return (List<T>) sdLicense;
+    }
 
     /**
      * A license document that applies to this structured data, typically indicated by URL.
@@ -2602,7 +3574,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getSdLicense() {
-        return (T) sdLicense;
+        return (T) getFirst(sdLicense);
     }
 
     /**
@@ -2613,8 +3585,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
      */
     @Override
-    public void setSdLicense(CreativeWork sdLicense) {
-        this.sdLicense = sdLicense;
+    public void addSdLicense(CreativeWork sdLicense) {
+        this.sdLicense = add(this.sdLicense, sdLicense);
     }
     /**
      * A license document that applies to this structured data, typically indicated by URL.
@@ -2624,11 +3596,23 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1886">https://github.com/schemaorg/schemaorg/issues/1886</a>
      */
     @Override
-    public void setSdLicense(URL sdLicense) {
-        this.sdLicense = sdLicense;
+    public void addSdLicense(URL sdLicense) {
+        this.sdLicense = add(this.sdLicense, sdLicense);
     }
 
-    private Text conditionsOfAccess;
+    private List<Text> conditionsOfAccess;
+
+    /**
+     * Conditions that affect the availability of, or method(s) of access to, an item. Typically used for real world items such as an [[ArchiveComponent]] held by an [[ArchiveOrganization]]. This property is not suitable for use as a general Web access control mechanism. It is expressed only in natural language.<br/><br/>For example "Available by appointment from the Reading Room" or "Accessible only from logged-in accounts ". 
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2173">https://github.com/schemaorg/schemaorg/issues/2173</a>
+     */
+    @Override
+    public List<Text> getConditionsOfAccessList() {
+        return conditionsOfAccess;
+    }
 
     /**
      * Conditions that affect the availability of, or method(s) of access to, an item. Typically used for real world items such as an [[ArchiveComponent]] held by an [[ArchiveOrganization]]. This property is not suitable for use as a general Web access control mechanism. It is expressed only in natural language.<br/><br/>For example "Available by appointment from the Reading Room" or "Accessible only from logged-in accounts ". 
@@ -2639,7 +3623,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Text getConditionsOfAccess() {
-        return conditionsOfAccess;
+        return getFirst(conditionsOfAccess);
     }
 
     /**
@@ -2650,12 +3634,25 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2173">https://github.com/schemaorg/schemaorg/issues/2173</a>
      */
     @Override
-    public void setConditionsOfAccess(Text conditionsOfAccess) {
-        this.conditionsOfAccess = conditionsOfAccess;
+    public void addConditionsOfAccess(Text conditionsOfAccess) {
+        this.conditionsOfAccess = add(this.conditionsOfAccess, conditionsOfAccess);
     }
 
     @JsonLdFieldTypes({ URL.class, Text.class, CorrectionComment.class })
-    private Object correction;
+    private List<Object> correction;
+
+    /**
+     * Indicates a correction to a [[CreativeWork]], either via a [[CorrectionComment]], textually or in another document.
+     *
+     * @return {@link URL} or {@link Text} or {@link CorrectionComment}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP">https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
+     */
+    @Override
+    public <T> List<T> getCorrectionList() {
+        return (List<T>) correction;
+    }
 
     /**
      * Indicates a correction to a [[CreativeWork]], either via a [[CorrectionComment]], textually or in another document.
@@ -2667,7 +3664,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getCorrection() {
-        return (T) correction;
+        return (T) getFirst(correction);
     }
 
     /**
@@ -2679,8 +3676,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
      */
     @Override
-    public void setCorrection(URL correction) {
-        this.correction = correction;
+    public void addCorrection(URL correction) {
+        this.correction = add(this.correction, correction);
     }
     /**
      * Indicates a correction to a [[CreativeWork]], either via a [[CorrectionComment]], textually or in another document.
@@ -2691,8 +3688,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
      */
     @Override
-    public void setCorrection(Text correction) {
-        this.correction = correction;
+    public void addCorrection(Text correction) {
+        this.correction = add(this.correction, correction);
     }
     /**
      * Indicates a correction to a [[CreativeWork]], either via a [[CorrectionComment]], textually or in another document.
@@ -2703,12 +3700,22 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1950">https://github.com/schemaorg/schemaorg/issues/1950</a>
      */
     @Override
-    public void setCorrection(CorrectionComment correction) {
-        this.correction = correction;
+    public void addCorrection(CorrectionComment correction) {
+        this.correction = add(this.correction, correction);
     }
 
     @JsonLdFieldTypes({ Text.class, Rating.class })
-    private Object contentRating;
+    private List<Object> contentRating;
+
+    /**
+     * Official rating of a piece of content&#x2014;for example,'MPAA PG-13'.
+     *
+     * @return {@link Text} or {@link Rating}
+     */
+    @Override
+    public <T> List<T> getContentRatingList() {
+        return (List<T>) contentRating;
+    }
 
     /**
      * Official rating of a piece of content&#x2014;for example,'MPAA PG-13'.
@@ -2717,7 +3724,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getContentRating() {
-        return (T) contentRating;
+        return (T) getFirst(contentRating);
     }
 
     /**
@@ -2726,8 +3733,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param contentRating Text value to set.
      */
     @Override
-    public void setContentRating(Text contentRating) {
-        this.contentRating = contentRating;
+    public void addContentRating(Text contentRating) {
+        this.contentRating = add(this.contentRating, contentRating);
     }
     /**
      * Official rating of a piece of content&#x2014;for example,'MPAA PG-13'.
@@ -2735,12 +3742,24 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param contentRating Rating value to set.
      */
     @Override
-    public void setContentRating(Rating contentRating) {
-        this.contentRating = contentRating;
+    public void addContentRating(Rating contentRating) {
+        this.contentRating = add(this.contentRating, contentRating);
     }
 
     @JsonLdFieldTypes({ QuantitativeValue.class, DefinedTerm.class, Text.class, SizeSpecification.class })
-    private Object size;
+    private List<Object> size;
+
+    /**
+     * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
+     *
+     * @return {@link QuantitativeValue} or {@link DefinedTerm} or {@link Text} or {@link SizeSpecification}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
+     */
+    @Override
+    public <T> List<T> getSizeList() {
+        return (List<T>) size;
+    }
 
     /**
      * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
@@ -2751,7 +3770,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getSize() {
-        return (T) size;
+        return (T) getFirst(size);
     }
 
     /**
@@ -2762,8 +3781,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
     @Override
-    public void setSize(QuantitativeValue size) {
-        this.size = size;
+    public void addSize(QuantitativeValue size) {
+        this.size = add(this.size, size);
     }
     /**
      * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
@@ -2773,8 +3792,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
     @Override
-    public void setSize(DefinedTerm size) {
-        this.size = size;
+    public void addSize(DefinedTerm size) {
+        this.size = add(this.size, size);
     }
     /**
      * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
@@ -2784,8 +3803,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
     @Override
-    public void setSize(Text size) {
-        this.size = size;
+    public void addSize(Text size) {
+        this.size = add(this.size, size);
     }
     /**
      * A standardized size of a product or creative work, specified either through a simple textual string (for example 'XL', '32Wx34L'), a  QuantitativeValue with a unitCode, or a comprehensive and structured [[SizeSpecification]]; in other cases, the [[width]], [[height]], [[depth]] and [[weight]] properties may be more applicable. 
@@ -2795,12 +3814,22 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1797">https://github.com/schemaorg/schemaorg/issues/1797</a>
      */
     @Override
-    public void setSize(SizeSpecification size) {
-        this.size = size;
+    public void addSize(SizeSpecification size) {
+        this.size = add(this.size, size);
     }
 
     @JsonLdFieldTypes({ URL.class, CreativeWork.class })
-    private Object isPartOf;
+    private List<Object> isPartOf;
+
+    /**
+     * Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.
+     *
+     * @return {@link URL} or {@link CreativeWork}
+     */
+    @Override
+    public <T> List<T> getIsPartOfList() {
+        return (List<T>) isPartOf;
+    }
 
     /**
      * Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.
@@ -2809,7 +3838,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getIsPartOf() {
-        return (T) isPartOf;
+        return (T) getFirst(isPartOf);
     }
 
     /**
@@ -2818,8 +3847,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param isPartOf URL value to set.
      */
     @Override
-    public void setIsPartOf(URL isPartOf) {
-        this.isPartOf = isPartOf;
+    public void addIsPartOf(URL isPartOf) {
+        this.isPartOf = add(this.isPartOf, isPartOf);
     }
     /**
      * Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of.
@@ -2827,12 +3856,23 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param isPartOf CreativeWork value to set.
      */
     @Override
-    public void setIsPartOf(CreativeWork isPartOf) {
-        this.isPartOf = isPartOf;
+    public void addIsPartOf(CreativeWork isPartOf) {
+        this.isPartOf = add(this.isPartOf, isPartOf);
     }
 
     @JsonLdFieldTypes({ DateTime.class, Text.class })
-    private Object temporal;
+    private List<Object> temporal;
+
+    /**
+     * The "temporal" property can be used in cases where more specific properties
+     * (e.g. [[temporalCoverage]], [[dateCreated]], [[dateModified]], [[datePublished]]) are not known to be appropriate.
+     *
+     * @return {@link DateTime} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getTemporalList() {
+        return (List<T>) temporal;
+    }
 
     /**
      * The "temporal" property can be used in cases where more specific properties
@@ -2842,7 +3882,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getTemporal() {
-        return (T) temporal;
+        return (T) getFirst(temporal);
     }
 
     /**
@@ -2852,8 +3892,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param temporal DateTime value to set.
      */
     @Override
-    public void setTemporal(DateTime temporal) {
-        this.temporal = temporal;
+    public void addTemporal(DateTime temporal) {
+        this.temporal = add(this.temporal, temporal);
     }
     /**
      * The "temporal" property can be used in cases where more specific properties
@@ -2862,11 +3902,21 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param temporal Text value to set.
      */
     @Override
-    public void setTemporal(Text temporal) {
-        this.temporal = temporal;
+    public void addTemporal(Text temporal) {
+        this.temporal = add(this.temporal, temporal);
     }
 
-    private URL thumbnailUrl;
+    private List<URL> thumbnailUrl;
+
+    /**
+     * A thumbnail image relevant to the Thing.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getThumbnailUrlList() {
+        return thumbnailUrl;
+    }
 
     /**
      * A thumbnail image relevant to the Thing.
@@ -2875,7 +3925,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public URL getThumbnailUrl() {
-        return thumbnailUrl;
+        return getFirst(thumbnailUrl);
     }
 
     /**
@@ -2884,12 +3934,23 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param thumbnailUrl URL value to set.
      */
     @Override
-    public void setThumbnailUrl(URL thumbnailUrl) {
-        this.thumbnailUrl = thumbnailUrl;
+    public void addThumbnailUrl(URL thumbnailUrl) {
+        this.thumbnailUrl = add(this.thumbnailUrl, thumbnailUrl);
     }
 
     @JsonLdFieldTypes({ Text.class, Language.class })
-    private Object inLanguage;
+    private List<Object> inLanguage;
+
+    /**
+     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     *
+     * @return {@link Text} or {@link Language}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
+     */
+    @Override
+    public <T> List<T> getInLanguageList() {
+        return (List<T>) inLanguage;
+    }
 
     /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
@@ -2899,7 +3960,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getInLanguage() {
-        return (T) inLanguage;
+        return (T) getFirst(inLanguage);
     }
 
     /**
@@ -2909,8 +3970,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
      */
     @Override
-    public void setInLanguage(Text inLanguage) {
-        this.inLanguage = inLanguage;
+    public void addInLanguage(Text inLanguage) {
+        this.inLanguage = add(this.inLanguage, inLanguage);
     }
     /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
@@ -2919,12 +3980,22 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
      */
     @Override
-    public void setInLanguage(Language inLanguage) {
-        this.inLanguage = inLanguage;
+    public void addInLanguage(Language inLanguage) {
+        this.inLanguage = add(this.inLanguage, inLanguage);
     }
 
     @JsonLdFieldTypes({ URL.class, CreativeWork.class })
-    private Object license;
+    private List<Object> license;
+
+    /**
+     * A license document that applies to this content, typically indicated by URL.
+     *
+     * @return {@link URL} or {@link CreativeWork}
+     */
+    @Override
+    public <T> List<T> getLicenseList() {
+        return (List<T>) license;
+    }
 
     /**
      * A license document that applies to this content, typically indicated by URL.
@@ -2933,7 +4004,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getLicense() {
-        return (T) license;
+        return (T) getFirst(license);
     }
 
     /**
@@ -2942,8 +4013,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param license URL value to set.
      */
     @Override
-    public void setLicense(URL license) {
-        this.license = license;
+    public void addLicense(URL license) {
+        this.license = add(this.license, license);
     }
     /**
      * A license document that applies to this content, typically indicated by URL.
@@ -2951,12 +4022,22 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param license CreativeWork value to set.
      */
     @Override
-    public void setLicense(CreativeWork license) {
-        this.license = license;
+    public void addLicense(CreativeWork license) {
+        this.license = add(this.license, license);
     }
 
     @JsonLdFieldTypes({ Organization.class, Person.class })
-    private Object creator;
+    private List<Object> creator;
+
+    /**
+     * The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> List<T> getCreatorList() {
+        return (List<T>) creator;
+    }
 
     /**
      * The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.
@@ -2965,7 +4046,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getCreator() {
-        return (T) creator;
+        return (T) getFirst(creator);
     }
 
     /**
@@ -2974,8 +4055,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param creator Organization value to set.
      */
     @Override
-    public void setCreator(Organization creator) {
-        this.creator = creator;
+    public void addCreator(Organization creator) {
+        this.creator = add(this.creator, creator);
     }
     /**
      * The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.
@@ -2983,11 +4064,21 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param creator Person value to set.
      */
     @Override
-    public void setCreator(Person creator) {
-        this.creator = creator;
+    public void addCreator(Person creator) {
+        this.creator = add(this.creator, creator);
     }
 
-    private Review reviews;
+    private List<Review> reviews;
+
+    /**
+     * Review of the item.
+     *
+     * @return {@link Review}
+     */
+    @Override
+    public List<Review> getReviewsList() {
+        return reviews;
+    }
 
     /**
      * Review of the item.
@@ -2996,7 +4087,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Review getReviews() {
-        return reviews;
+        return getFirst(reviews);
     }
 
     /**
@@ -3005,11 +4096,22 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param reviews Review value to set.
      */
     @Override
-    public void setReviews(Review reviews) {
-        this.reviews = reviews;
+    public void addReviews(Review reviews) {
+        this.reviews = add(this.reviews, reviews);
     }
 
-    private Thing about;
+    private List<Thing> about;
+
+    /**
+     * The subject matter of the content.
+     *
+     * @return {@link Thing}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public List<Thing> getAboutList() {
+        return about;
+    }
 
     /**
      * The subject matter of the content.
@@ -3019,7 +4121,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Thing getAbout() {
-        return about;
+        return getFirst(about);
     }
 
     /**
@@ -3029,11 +4131,21 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setAbout(Thing about) {
-        this.about = about;
+    public void addAbout(Thing about) {
+        this.about = add(this.about, about);
     }
 
-    private Boolean isFamilyFriendly;
+    private List<Boolean> isFamilyFriendly;
+
+    /**
+     * Indicates whether this content is family friendly.
+     *
+     * @return {@link Boolean}
+     */
+    @Override
+    public List<Boolean> getIsFamilyFriendlyList() {
+        return isFamilyFriendly;
+    }
 
     /**
      * Indicates whether this content is family friendly.
@@ -3042,7 +4154,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Boolean getIsFamilyFriendly() {
-        return isFamilyFriendly;
+        return getFirst(isFamilyFriendly);
     }
 
     /**
@@ -3051,11 +4163,21 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param isFamilyFriendly Boolean value to set.
      */
     @Override
-    public void setIsFamilyFriendly(Boolean isFamilyFriendly) {
-        this.isFamilyFriendly = isFamilyFriendly;
+    public void addIsFamilyFriendly(Boolean isFamilyFriendly) {
+        this.isFamilyFriendly = add(this.isFamilyFriendly, isFamilyFriendly);
     }
 
-    private Text headline;
+    private List<Text> headline;
+
+    /**
+     * Headline of the article.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getHeadlineList() {
+        return headline;
+    }
 
     /**
      * Headline of the article.
@@ -3064,7 +4186,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Text getHeadline() {
-        return headline;
+        return getFirst(headline);
     }
 
     /**
@@ -3073,11 +4195,21 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param headline Text value to set.
      */
     @Override
-    public void setHeadline(Text headline) {
-        this.headline = headline;
+    public void addHeadline(Text headline) {
+        this.headline = add(this.headline, headline);
     }
 
-    private Text accessibilityAPI;
+    private List<Text> accessibilityAPI;
+
+    /**
+     * Indicates that the resource is compatible with the referenced accessibility API. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityAPI-vocabulary).
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getAccessibilityAPIList() {
+        return accessibilityAPI;
+    }
 
     /**
      * Indicates that the resource is compatible with the referenced accessibility API. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityAPI-vocabulary).
@@ -3086,7 +4218,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Text getAccessibilityAPI() {
-        return accessibilityAPI;
+        return getFirst(accessibilityAPI);
     }
 
     /**
@@ -3095,11 +4227,22 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param accessibilityAPI Text value to set.
      */
     @Override
-    public void setAccessibilityAPI(Text accessibilityAPI) {
-        this.accessibilityAPI = accessibilityAPI;
+    public void addAccessibilityAPI(Text accessibilityAPI) {
+        this.accessibilityAPI = add(this.accessibilityAPI, accessibilityAPI);
     }
 
-    private Organization publisherImprint;
+    private List<Organization> publisherImprint;
+
+    /**
+     * The publishing division which published the comic.
+     *
+     * @return {@link Organization}
+     * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
+     */
+    @Override
+    public List<Organization> getPublisherImprintList() {
+        return publisherImprint;
+    }
 
     /**
      * The publishing division which published the comic.
@@ -3109,7 +4252,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Organization getPublisherImprint() {
-        return publisherImprint;
+        return getFirst(publisherImprint);
     }
 
     /**
@@ -3119,12 +4262,22 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://bib.schema.org">https://bib.schema.org</a>
      */
     @Override
-    public void setPublisherImprint(Organization publisherImprint) {
-        this.publisherImprint = publisherImprint;
+    public void addPublisherImprint(Organization publisherImprint) {
+        this.publisherImprint = add(this.publisherImprint, publisherImprint);
     }
 
     @JsonLdFieldTypes({ URL.class, CreativeWork.class, Product.class })
-    private Object isBasedOnUrl;
+    private List<Object> isBasedOnUrl;
+
+    /**
+     * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
+     *
+     * @return {@link URL} or {@link CreativeWork} or {@link Product}
+     */
+    @Override
+    public <T> List<T> getIsBasedOnUrlList() {
+        return (List<T>) isBasedOnUrl;
+    }
 
     /**
      * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
@@ -3133,7 +4286,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getIsBasedOnUrl() {
-        return (T) isBasedOnUrl;
+        return (T) getFirst(isBasedOnUrl);
     }
 
     /**
@@ -3142,8 +4295,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param isBasedOnUrl URL value to set.
      */
     @Override
-    public void setIsBasedOnUrl(URL isBasedOnUrl) {
-        this.isBasedOnUrl = isBasedOnUrl;
+    public void addIsBasedOnUrl(URL isBasedOnUrl) {
+        this.isBasedOnUrl = add(this.isBasedOnUrl, isBasedOnUrl);
     }
     /**
      * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
@@ -3151,8 +4304,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param isBasedOnUrl CreativeWork value to set.
      */
     @Override
-    public void setIsBasedOnUrl(CreativeWork isBasedOnUrl) {
-        this.isBasedOnUrl = isBasedOnUrl;
+    public void addIsBasedOnUrl(CreativeWork isBasedOnUrl) {
+        this.isBasedOnUrl = add(this.isBasedOnUrl, isBasedOnUrl);
     }
     /**
      * A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.
@@ -3160,11 +4313,21 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param isBasedOnUrl Product value to set.
      */
     @Override
-    public void setIsBasedOnUrl(Product isBasedOnUrl) {
-        this.isBasedOnUrl = isBasedOnUrl;
+    public void addIsBasedOnUrl(Product isBasedOnUrl) {
+        this.isBasedOnUrl = add(this.isBasedOnUrl, isBasedOnUrl);
     }
 
-    private MediaObject encodings;
+    private List<MediaObject> encodings;
+
+    /**
+     * A media object that encodes this CreativeWork.
+     *
+     * @return {@link MediaObject}
+     */
+    @Override
+    public List<MediaObject> getEncodingsList() {
+        return encodings;
+    }
 
     /**
      * A media object that encodes this CreativeWork.
@@ -3173,7 +4336,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public MediaObject getEncodings() {
-        return encodings;
+        return getFirst(encodings);
     }
 
     /**
@@ -3182,11 +4345,23 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param encodings MediaObject value to set.
      */
     @Override
-    public void setEncodings(MediaObject encodings) {
-        this.encodings = encodings;
+    public void addEncodings(MediaObject encodings) {
+        this.encodings = add(this.encodings, encodings);
     }
 
-    private Claim interpretedAsClaim;
+    private List<Claim> interpretedAsClaim;
+
+    /**
+     * Used to indicate a specific claim contained, implied, translated or refined from the content of a [[MediaObject]] or other [[CreativeWork]]. The interpreting party can be indicated using [[claimInterpreter]].
+     *
+     * @return {@link Claim}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     */
+    @Override
+    public List<Claim> getInterpretedAsClaimList() {
+        return interpretedAsClaim;
+    }
 
     /**
      * Used to indicate a specific claim contained, implied, translated or refined from the content of a [[MediaObject]] or other [[CreativeWork]]. The interpreting party can be indicated using [[claimInterpreter]].
@@ -3197,7 +4372,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Claim getInterpretedAsClaim() {
-        return interpretedAsClaim;
+        return getFirst(interpretedAsClaim);
     }
 
     /**
@@ -3208,11 +4383,21 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
     @Override
-    public void setInterpretedAsClaim(Claim interpretedAsClaim) {
-        this.interpretedAsClaim = interpretedAsClaim;
+    public void addInterpretedAsClaim(Claim interpretedAsClaim) {
+        this.interpretedAsClaim = add(this.interpretedAsClaim, interpretedAsClaim);
     }
 
-    private Text accessibilityControl;
+    private List<Text> accessibilityControl;
+
+    /**
+     * Identifies input methods that are sufficient to fully control the described resource. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityControl-vocabulary).
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getAccessibilityControlList() {
+        return accessibilityControl;
+    }
 
     /**
      * Identifies input methods that are sufficient to fully control the described resource. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessibilityControl-vocabulary).
@@ -3221,7 +4406,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Text getAccessibilityControl() {
-        return accessibilityControl;
+        return getFirst(accessibilityControl);
     }
 
     /**
@@ -3230,12 +4415,22 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param accessibilityControl Text value to set.
      */
     @Override
-    public void setAccessibilityControl(Text accessibilityControl) {
-        this.accessibilityControl = accessibilityControl;
+    public void addAccessibilityControl(Text accessibilityControl) {
+        this.accessibilityControl = add(this.accessibilityControl, accessibilityControl);
     }
 
     @JsonLdFieldTypes({ CreativeWork.class, Text.class })
-    private Object citation;
+    private List<Object> citation;
+
+    /**
+     * A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.
+     *
+     * @return {@link CreativeWork} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getCitationList() {
+        return (List<T>) citation;
+    }
 
     /**
      * A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.
@@ -3244,7 +4439,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getCitation() {
-        return (T) citation;
+        return (T) getFirst(citation);
     }
 
     /**
@@ -3253,8 +4448,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param citation CreativeWork value to set.
      */
     @Override
-    public void setCitation(CreativeWork citation) {
-        this.citation = citation;
+    public void addCitation(CreativeWork citation) {
+        this.citation = add(this.citation, citation);
     }
     /**
      * A citation or reference to another creative work, such as another publication, web page, scholarly article, etc.
@@ -3262,12 +4457,22 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param citation Text value to set.
      */
     @Override
-    public void setCitation(Text citation) {
-        this.citation = citation;
+    public void addCitation(Text citation) {
+        this.citation = add(this.citation, citation);
     }
 
     @JsonLdFieldTypes({ Number.class, Text.class })
-    private Object version;
+    private List<Object> version;
+
+    /**
+     * The version of the CreativeWork embodied by a specified resource.
+     *
+     * @return {@link Number} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getVersionList() {
+        return (List<T>) version;
+    }
 
     /**
      * The version of the CreativeWork embodied by a specified resource.
@@ -3276,7 +4481,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getVersion() {
-        return (T) version;
+        return (T) getFirst(version);
     }
 
     /**
@@ -3285,8 +4490,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param version Number value to set.
      */
     @Override
-    public void setVersion(Number version) {
-        this.version = version;
+    public void addVersion(Number version) {
+        this.version = add(this.version, version);
     }
     /**
      * The version of the CreativeWork embodied by a specified resource.
@@ -3294,12 +4499,24 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param version Text value to set.
      */
     @Override
-    public void setVersion(Text version) {
-        this.version = version;
+    public void addVersion(Text version) {
+        this.version = add(this.version, version);
     }
 
     @JsonLdFieldTypes({ WebPage.class, URL.class })
-    private Object archivedAt;
+    private List<Object> archivedAt;
+
+    /**
+     * Indicates a page or other link involved in archival of a [[CreativeWork]]. In the case of [[MediaReview]], the items in a [[MediaReviewItem]] may often become inaccessible, but be archived by archival, journalistic, activist, or law enforcement organizations. In such cases, the referenced page may not directly publish the content.
+     *
+     * @return {@link WebPage} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     */
+    @Override
+    public <T> List<T> getArchivedAtList() {
+        return (List<T>) archivedAt;
+    }
 
     /**
      * Indicates a page or other link involved in archival of a [[CreativeWork]]. In the case of [[MediaReview]], the items in a [[MediaReviewItem]] may often become inaccessible, but be archived by archival, journalistic, activist, or law enforcement organizations. In such cases, the referenced page may not directly publish the content.
@@ -3310,7 +4527,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getArchivedAt() {
-        return (T) archivedAt;
+        return (T) getFirst(archivedAt);
     }
 
     /**
@@ -3321,8 +4538,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
     @Override
-    public void setArchivedAt(WebPage archivedAt) {
-        this.archivedAt = archivedAt;
+    public void addArchivedAt(WebPage archivedAt) {
+        this.archivedAt = add(this.archivedAt, archivedAt);
     }
     /**
      * Indicates a page or other link involved in archival of a [[CreativeWork]]. In the case of [[MediaReview]], the items in a [[MediaReviewItem]] may often become inaccessible, but be archived by archival, journalistic, activist, or law enforcement organizations. In such cases, the referenced page may not directly publish the content.
@@ -3332,12 +4549,22 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
     @Override
-    public void setArchivedAt(URL archivedAt) {
-        this.archivedAt = archivedAt;
+    public void addArchivedAt(URL archivedAt) {
+        this.archivedAt = add(this.archivedAt, archivedAt);
     }
 
     @JsonLdFieldTypes({ DefinedTerm.class, Text.class })
-    private Object learningResourceType;
+    private List<Object> learningResourceType;
+
+    /**
+     * The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.
+     *
+     * @return {@link DefinedTerm} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getLearningResourceTypeList() {
+        return (List<T>) learningResourceType;
+    }
 
     /**
      * The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.
@@ -3346,7 +4573,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getLearningResourceType() {
-        return (T) learningResourceType;
+        return (T) getFirst(learningResourceType);
     }
 
     /**
@@ -3355,8 +4582,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param learningResourceType DefinedTerm value to set.
      */
     @Override
-    public void setLearningResourceType(DefinedTerm learningResourceType) {
-        this.learningResourceType = learningResourceType;
+    public void addLearningResourceType(DefinedTerm learningResourceType) {
+        this.learningResourceType = add(this.learningResourceType, learningResourceType);
     }
     /**
      * The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.
@@ -3364,11 +4591,21 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param learningResourceType Text value to set.
      */
     @Override
-    public void setLearningResourceType(Text learningResourceType) {
-        this.learningResourceType = learningResourceType;
+    public void addLearningResourceType(Text learningResourceType) {
+        this.learningResourceType = add(this.learningResourceType, learningResourceType);
     }
 
-    private MediaObject encoding;
+    private List<MediaObject> encoding;
+
+    /**
+     * A media object that encodes this CreativeWork. This property is a synonym for associatedMedia.
+     *
+     * @return {@link MediaObject}
+     */
+    @Override
+    public List<MediaObject> getEncodingList() {
+        return encoding;
+    }
 
     /**
      * A media object that encodes this CreativeWork. This property is a synonym for associatedMedia.
@@ -3377,7 +4614,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public MediaObject getEncoding() {
-        return encoding;
+        return getFirst(encoding);
     }
 
     /**
@@ -3386,12 +4623,23 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param encoding MediaObject value to set.
      */
     @Override
-    public void setEncoding(MediaObject encoding) {
-        this.encoding = encoding;
+    public void addEncoding(MediaObject encoding) {
+        this.encoding = add(this.encoding, encoding);
     }
 
     @JsonLdFieldTypes({ AudioObject.class, MusicRecording.class, Clip.class })
-    private Object audio;
+    private List<Object> audio;
+
+    /**
+     * An embedded audio object.
+     *
+     * @return {@link AudioObject} or {@link MusicRecording} or {@link Clip}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2420">https://github.com/schemaorg/schemaorg/issues/2420</a>
+     */
+    @Override
+    public <T> List<T> getAudioList() {
+        return (List<T>) audio;
+    }
 
     /**
      * An embedded audio object.
@@ -3401,7 +4649,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getAudio() {
-        return (T) audio;
+        return (T) getFirst(audio);
     }
 
     /**
@@ -3411,8 +4659,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2420">https://github.com/schemaorg/schemaorg/issues/2420</a>
      */
     @Override
-    public void setAudio(AudioObject audio) {
-        this.audio = audio;
+    public void addAudio(AudioObject audio) {
+        this.audio = add(this.audio, audio);
     }
     /**
      * An embedded audio object.
@@ -3421,8 +4669,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2420">https://github.com/schemaorg/schemaorg/issues/2420</a>
      */
     @Override
-    public void setAudio(MusicRecording audio) {
-        this.audio = audio;
+    public void addAudio(MusicRecording audio) {
+        this.audio = add(this.audio, audio);
     }
     /**
      * An embedded audio object.
@@ -3431,11 +4679,21 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2420">https://github.com/schemaorg/schemaorg/issues/2420</a>
      */
     @Override
-    public void setAudio(Clip audio) {
-        this.audio = audio;
+    public void addAudio(Clip audio) {
+        this.audio = add(this.audio, audio);
     }
 
-    private Thing mentions;
+    private List<Thing> mentions;
+
+    /**
+     * Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept.
+     *
+     * @return {@link Thing}
+     */
+    @Override
+    public List<Thing> getMentionsList() {
+        return mentions;
+    }
 
     /**
      * Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept.
@@ -3444,7 +4702,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Thing getMentions() {
-        return mentions;
+        return getFirst(mentions);
     }
 
     /**
@@ -3453,11 +4711,22 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param mentions Thing value to set.
      */
     @Override
-    public void setMentions(Thing mentions) {
-        this.mentions = mentions;
+    public void addMentions(Thing mentions) {
+        this.mentions = add(this.mentions, mentions);
     }
 
-    private ItemList accessModeSufficient;
+    private List<ItemList> accessModeSufficient;
+
+    /**
+     * A list of single or combined accessModes that are sufficient to understand all the intellectual content of a resource. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessModeSufficient-vocabulary).
+     *
+     * @return {@link ItemList}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
+     */
+    @Override
+    public List<ItemList> getAccessModeSufficientList() {
+        return accessModeSufficient;
+    }
 
     /**
      * A list of single or combined accessModes that are sufficient to understand all the intellectual content of a resource. Values should be drawn from the [approved vocabulary](https://www.w3.org/2021/a11y-discov-vocab/latest/#accessModeSufficient-vocabulary).
@@ -3467,7 +4736,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public ItemList getAccessModeSufficient() {
-        return accessModeSufficient;
+        return getFirst(accessModeSufficient);
     }
 
     /**
@@ -3477,11 +4746,22 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1100">https://github.com/schemaorg/schemaorg/issues/1100</a>
      */
     @Override
-    public void setAccessModeSufficient(ItemList accessModeSufficient) {
-        this.accessModeSufficient = accessModeSufficient;
+    public void addAccessModeSufficient(ItemList accessModeSufficient) {
+        this.accessModeSufficient = add(this.accessModeSufficient, accessModeSufficient);
     }
 
-    private CreativeWork hasPart;
+    private List<CreativeWork> hasPart;
+
+    /**
+     * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
+     *
+     * @return {@link CreativeWork}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
+     */
+    @Override
+    public List<CreativeWork> getHasPartList() {
+        return hasPart;
+    }
 
     /**
      * Indicates an item or CreativeWork that is part of this item, or CreativeWork (in some sense).
@@ -3491,7 +4771,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public CreativeWork getHasPart() {
-        return hasPart;
+        return getFirst(hasPart);
     }
 
     /**
@@ -3501,12 +4781,26 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
     @Override
-    public void setHasPart(CreativeWork hasPart) {
-        this.hasPart = hasPart;
+    public void addHasPart(CreativeWork hasPart) {
+        this.hasPart = add(this.hasPart, hasPart);
     }
 
     @JsonLdFieldTypes({ URL.class, DateTime.class, Text.class })
-    private Object temporalCoverage;
+    private List<Object> temporalCoverage;
+
+    /**
+     * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
+     *       the case of a Dataset it will typically indicate the relevant time period in a precise notation (e.g. for a 2011 census dataset, the year 2011 would be written "2011/2012"). Other forms of content e.g. ScholarlyArticle, Book, TVSeries or TVEpisode may indicate their temporalCoverage in broader terms - textually or via well-known URL.
+     *       Written works such as books may sometimes have precise temporal coverage too, e.g. a work set in 1939 - 1945 can be indicated in ISO 8601 interval format format via "1939/1945".
+     * 
+     * Open-ended date ranges can be written with ".." in place of the end date. For example, "2015-11/.." indicates a range beginning in November 2015 and with no specified final date. This is tentative and might be updated in future when ISO 8601 is officially updated.
+     *
+     * @return {@link URL} or {@link DateTime} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getTemporalCoverageList() {
+        return (List<T>) temporalCoverage;
+    }
 
     /**
      * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
@@ -3519,7 +4813,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getTemporalCoverage() {
-        return (T) temporalCoverage;
+        return (T) getFirst(temporalCoverage);
     }
 
     /**
@@ -3532,8 +4826,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param temporalCoverage URL value to set.
      */
     @Override
-    public void setTemporalCoverage(URL temporalCoverage) {
-        this.temporalCoverage = temporalCoverage;
+    public void addTemporalCoverage(URL temporalCoverage) {
+        this.temporalCoverage = add(this.temporalCoverage, temporalCoverage);
     }
     /**
      * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
@@ -3545,8 +4839,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param temporalCoverage DateTime value to set.
      */
     @Override
-    public void setTemporalCoverage(DateTime temporalCoverage) {
-        this.temporalCoverage = temporalCoverage;
+    public void addTemporalCoverage(DateTime temporalCoverage) {
+        this.temporalCoverage = add(this.temporalCoverage, temporalCoverage);
     }
     /**
      * The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in [ISO 8601 time interval format](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals). In
@@ -3558,12 +4852,22 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param temporalCoverage Text value to set.
      */
     @Override
-    public void setTemporalCoverage(Text temporalCoverage) {
-        this.temporalCoverage = temporalCoverage;
+    public void addTemporalCoverage(Text temporalCoverage) {
+        this.temporalCoverage = add(this.temporalCoverage, temporalCoverage);
     }
 
     @JsonLdFieldTypes({ Organization.class, Person.class })
-    private Object contributor;
+    private List<Object> contributor;
+
+    /**
+     * A secondary contributor to the CreativeWork or Event.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> List<T> getContributorList() {
+        return (List<T>) contributor;
+    }
 
     /**
      * A secondary contributor to the CreativeWork or Event.
@@ -3572,7 +4876,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getContributor() {
-        return (T) contributor;
+        return (T) getFirst(contributor);
     }
 
     /**
@@ -3581,8 +4885,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param contributor Organization value to set.
      */
     @Override
-    public void setContributor(Organization contributor) {
-        this.contributor = contributor;
+    public void addContributor(Organization contributor) {
+        this.contributor = add(this.contributor, contributor);
     }
     /**
      * A secondary contributor to the CreativeWork or Event.
@@ -3590,12 +4894,22 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param contributor Person value to set.
      */
     @Override
-    public void setContributor(Person contributor) {
-        this.contributor = contributor;
+    public void addContributor(Person contributor) {
+        this.contributor = add(this.contributor, contributor);
     }
 
     @JsonLdFieldTypes({ Clip.class, VideoObject.class })
-    private Object video;
+    private List<Object> video;
+
+    /**
+     * An embedded video object.
+     *
+     * @return {@link Clip} or {@link VideoObject}
+     */
+    @Override
+    public <T> List<T> getVideoList() {
+        return (List<T>) video;
+    }
 
     /**
      * An embedded video object.
@@ -3604,7 +4918,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getVideo() {
-        return (T) video;
+        return (T) getFirst(video);
     }
 
     /**
@@ -3613,8 +4927,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param video Clip value to set.
      */
     @Override
-    public void setVideo(Clip video) {
-        this.video = video;
+    public void addVideo(Clip video) {
+        this.video = add(this.video, video);
     }
     /**
      * An embedded video object.
@@ -3622,12 +4936,22 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param video VideoObject value to set.
      */
     @Override
-    public void setVideo(VideoObject video) {
-        this.video = video;
+    public void addVideo(VideoObject video) {
+        this.video = add(this.video, video);
     }
 
     @JsonLdFieldTypes({ CreativeWork.class, URL.class })
-    private Object mainEntityOfPage;
+    private List<Object> mainEntityOfPage;
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    @Override
+    public <T> List<T> getMainEntityOfPageList() {
+        return (List<T>) mainEntityOfPage;
+    }
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -3636,7 +4960,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getMainEntityOfPage() {
-        return (T) mainEntityOfPage;
+        return (T) getFirst(mainEntityOfPage);
     }
 
     /**
@@ -3645,8 +4969,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        this.mainEntityOfPage = mainEntityOfPage;
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -3654,11 +4978,21 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param mainEntityOfPage URL value to set.
      */
     @Override
-    public void setMainEntityOfPage(URL mainEntityOfPage) {
-        this.mainEntityOfPage = mainEntityOfPage;
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
 
-    private Text alternateName;
+    private List<Text> alternateName;
+
+    /**
+     * An alias for the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getAlternateNameList() {
+        return alternateName;
+    }
 
     /**
      * An alias for the item.
@@ -3667,7 +5001,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Text getAlternateName() {
-        return alternateName;
+        return getFirst(alternateName);
     }
 
     /**
@@ -3676,11 +5010,21 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param alternateName Text value to set.
      */
     @Override
-    public void setAlternateName(Text alternateName) {
-        this.alternateName = alternateName;
+    public void addAlternateName(Text alternateName) {
+        this.alternateName = add(this.alternateName, alternateName);
     }
 
-    private Text name;
+    private List<Text> name;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getNameList() {
+        return name;
+    }
 
     /**
      * The name of the item.
@@ -3689,7 +5033,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Text getName() {
-        return name;
+        return getFirst(name);
     }
 
     /**
@@ -3698,11 +5042,21 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param name Text value to set.
      */
     @Override
-    public void setName(Text name) {
-        this.name = name;
+    public void addName(Text name) {
+        this.name = add(this.name, name);
     }
 
-    private Action potentialAction;
+    private List<Action> potentialAction;
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public List<Action> getPotentialActionList() {
+        return potentialAction;
+    }
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -3711,7 +5065,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Action getPotentialAction() {
-        return potentialAction;
+        return getFirst(potentialAction);
     }
 
     /**
@@ -3720,12 +5074,22 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param potentialAction Action value to set.
      */
     @Override
-    public void setPotentialAction(Action potentialAction) {
-        this.potentialAction = potentialAction;
+    public void addPotentialAction(Action potentialAction) {
+        this.potentialAction = add(this.potentialAction, potentialAction);
     }
 
     @JsonLdFieldTypes({ URL.class, ImageObject.class })
-    private Object image;
+    private List<Object> image;
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link URL} or {@link ImageObject}
+     */
+    @Override
+    public <T> List<T> getImageList() {
+        return (List<T>) image;
+    }
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -3734,7 +5098,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getImage() {
-        return (T) image;
+        return (T) getFirst(image);
     }
 
     /**
@@ -3743,8 +5107,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param image URL value to set.
      */
     @Override
-    public void setImage(URL image) {
-        this.image = image;
+    public void addImage(URL image) {
+        this.image = add(this.image, image);
     }
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -3752,11 +5116,21 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param image ImageObject value to set.
      */
     @Override
-    public void setImage(ImageObject image) {
-        this.image = image;
+    public void addImage(ImageObject image) {
+        this.image = add(this.image, image);
     }
 
-    private URL url;
+    private List<URL> url;
+
+    /**
+     * URL of the item.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getUrlList() {
+        return url;
+    }
 
     /**
      * URL of the item.
@@ -3765,7 +5139,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public URL getUrl() {
-        return url;
+        return getFirst(url);
     }
 
     /**
@@ -3774,11 +5148,21 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param url URL value to set.
      */
     @Override
-    public void setUrl(URL url) {
-        this.url = url;
+    public void addUrl(URL url) {
+        this.url = add(this.url, url);
     }
 
-    private Text description;
+    private List<Text> description;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDescriptionList() {
+        return description;
+    }
 
     /**
      * A description of the item.
@@ -3787,7 +5171,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Text getDescription() {
-        return description;
+        return getFirst(description);
     }
 
     /**
@@ -3796,12 +5180,23 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param description Text value to set.
      */
     @Override
-    public void setDescription(Text description) {
-        this.description = description;
+    public void addDescription(Text description) {
+        this.description = add(this.description, description);
     }
 
     @JsonLdFieldTypes({ Event.class, CreativeWork.class })
-    private Object subjectOf;
+    private List<Object> subjectOf;
+
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @return {@link Event} or {@link CreativeWork}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public <T> List<T> getSubjectOfList() {
+        return (List<T>) subjectOf;
+    }
 
     /**
      * A CreativeWork or Event about this Thing.
@@ -3811,7 +5206,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getSubjectOf() {
-        return (T) subjectOf;
+        return (T) getFirst(subjectOf);
     }
 
     /**
@@ -3821,8 +5216,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Event subjectOf) {
-        this.subjectOf = subjectOf;
+    public void addSubjectOf(Event subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
     }
     /**
      * A CreativeWork or Event about this Thing.
@@ -3831,11 +5226,21 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(CreativeWork subjectOf) {
-        this.subjectOf = subjectOf;
+    public void addSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
     }
 
-    private URL additionalType;
+    private List<URL> additionalType;
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getAdditionalTypeList() {
+        return additionalType;
+    }
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
@@ -3844,7 +5249,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public URL getAdditionalType() {
-        return additionalType;
+        return getFirst(additionalType);
     }
 
     /**
@@ -3853,11 +5258,21 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param additionalType URL value to set.
      */
     @Override
-    public void setAdditionalType(URL additionalType) {
-        this.additionalType = additionalType;
+    public void addAdditionalType(URL additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
     }
 
-    private Text disambiguatingDescription;
+    private List<Text> disambiguatingDescription;
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDisambiguatingDescriptionList() {
+        return disambiguatingDescription;
+    }
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
@@ -3866,7 +5281,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public Text getDisambiguatingDescription() {
-        return disambiguatingDescription;
+        return getFirst(disambiguatingDescription);
     }
 
     /**
@@ -3875,11 +5290,21 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param disambiguatingDescription Text value to set.
      */
     @Override
-    public void setDisambiguatingDescription(Text disambiguatingDescription) {
-        this.disambiguatingDescription = disambiguatingDescription;
+    public void addDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
     }
 
-    private URL sameAs;
+    private List<URL> sameAs;
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getSameAsList() {
+        return sameAs;
+    }
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
@@ -3888,7 +5313,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public URL getSameAs() {
-        return sameAs;
+        return getFirst(sameAs);
     }
 
     /**
@@ -3897,12 +5322,23 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param sameAs URL value to set.
      */
     @Override
-    public void setSameAs(URL sameAs) {
-        this.sameAs = sameAs;
+    public void addSameAs(URL sameAs) {
+        this.sameAs = add(this.sameAs, sameAs);
     }
 
     @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
-    private Object identifier;
+    private List<Object> identifier;
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @return {@link URL} or {@link Text} or {@link PropertyValue}
+     */
+    @Override
+    public <T> List<T> getIdentifierList() {
+        return (List<T>) identifier;
+    }
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -3912,7 +5348,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      */
     @Override
     public <T> T getIdentifier() {
-        return (T) identifier;
+        return (T) getFirst(identifier);
     }
 
     /**
@@ -3922,8 +5358,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param identifier URL value to set.
      */
     @Override
-    public void setIdentifier(URL identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(URL identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -3932,8 +5368,8 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param identifier Text value to set.
      */
     @Override
-    public void setIdentifier(Text identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(Text identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -3942,7 +5378,7 @@ public class MusicReleaseImpl extends com.weedow.schemaorg.commons.model.JsonLdN
      * @param identifier PropertyValue value to set.
      */
     @Override
-    public void setIdentifier(PropertyValue identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(PropertyValue identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
 }

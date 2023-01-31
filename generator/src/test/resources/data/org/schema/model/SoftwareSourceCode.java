@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Text;
 import org.schema.model.ComputerLanguage;
 import org.schema.model.SoftwareApplication;
@@ -22,6 +23,13 @@ public interface SoftwareSourceCode extends CreativeWork {
      *
      * @return {@link Text} or {@link ComputerLanguage}
      */
+    <T> List<T> getProgrammingLanguageList();
+
+    /**
+     * The computer programming language.
+     *
+     * @return {@link Text} or {@link ComputerLanguage}
+     */
     <T> T getProgrammingLanguage();
 
     /**
@@ -29,13 +37,20 @@ public interface SoftwareSourceCode extends CreativeWork {
      *
      * @param programmingLanguage Text value to set.
      */
-    void setProgrammingLanguage(Text programmingLanguage);
+    void addProgrammingLanguage(Text programmingLanguage);
     /**
      * The computer programming language.
      *
      * @param programmingLanguage ComputerLanguage value to set.
      */
-    void setProgrammingLanguage(ComputerLanguage programmingLanguage);
+    void addProgrammingLanguage(ComputerLanguage programmingLanguage);
+
+    /**
+     * What type of code sample: full (compile ready) solution, code snippet, inline code, scripts, template.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getSampleTypeList();
 
     /**
      * What type of code sample: full (compile ready) solution, code snippet, inline code, scripts, template.
@@ -49,7 +64,14 @@ public interface SoftwareSourceCode extends CreativeWork {
      *
      * @param sampleType Text value to set.
      */
-    void setSampleType(Text sampleType);
+    void addSampleType(Text sampleType);
+
+    /**
+     * Runtime platform or script interpreter dependencies (Example - Java v1, Python2.3, .Net Framework 3.0).
+     *
+     * @return {@link Text}
+     */
+    List<Text> getRuntimePlatformList();
 
     /**
      * Runtime platform or script interpreter dependencies (Example - Java v1, Python2.3, .Net Framework 3.0).
@@ -63,7 +85,14 @@ public interface SoftwareSourceCode extends CreativeWork {
      *
      * @param runtimePlatform Text value to set.
      */
-    void setRuntimePlatform(Text runtimePlatform);
+    void addRuntimePlatform(Text runtimePlatform);
+
+    /**
+     * Runtime platform or script interpreter dependencies (Example - Java v1, Python2.3, .Net Framework 3.0).
+     *
+     * @return {@link Text}
+     */
+    List<Text> getRuntimeList();
 
     /**
      * Runtime platform or script interpreter dependencies (Example - Java v1, Python2.3, .Net Framework 3.0).
@@ -77,7 +106,14 @@ public interface SoftwareSourceCode extends CreativeWork {
      *
      * @param runtime Text value to set.
      */
-    void setRuntime(Text runtime);
+    void addRuntime(Text runtime);
+
+    /**
+     * Target Operating System / Product to which the code applies.  If applies to several versions, just the product name can be used.
+     *
+     * @return {@link SoftwareApplication}
+     */
+    List<SoftwareApplication> getTargetProductList();
 
     /**
      * Target Operating System / Product to which the code applies.  If applies to several versions, just the product name can be used.
@@ -91,7 +127,14 @@ public interface SoftwareSourceCode extends CreativeWork {
      *
      * @param targetProduct SoftwareApplication value to set.
      */
-    void setTargetProduct(SoftwareApplication targetProduct);
+    void addTargetProduct(SoftwareApplication targetProduct);
+
+    /**
+     * Link to the repository where the un-compiled, human readable code and related code is located (SVN, github, CodePlex).
+     *
+     * @return {@link URL}
+     */
+    List<URL> getCodeRepositoryList();
 
     /**
      * Link to the repository where the un-compiled, human readable code and related code is located (SVN, github, CodePlex).
@@ -105,7 +148,14 @@ public interface SoftwareSourceCode extends CreativeWork {
      *
      * @param codeRepository URL value to set.
      */
-    void setCodeRepository(URL codeRepository);
+    void addCodeRepository(URL codeRepository);
+
+    /**
+     * What type of code sample: full (compile ready) solution, code snippet, inline code, scripts, template.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getCodeSampleTypeList();
 
     /**
      * What type of code sample: full (compile ready) solution, code snippet, inline code, scripts, template.
@@ -119,5 +169,5 @@ public interface SoftwareSourceCode extends CreativeWork {
      *
      * @param codeSampleType Text value to set.
      */
-    void setCodeSampleType(Text codeSampleType);
+    void addCodeSampleType(Text codeSampleType);
 }

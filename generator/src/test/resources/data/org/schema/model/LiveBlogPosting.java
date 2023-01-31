@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.DateTime;
 import org.schema.model.BlogPosting;
 
@@ -20,6 +21,13 @@ public interface LiveBlogPosting extends BlogPosting {
      *
      * @return {@link DateTime}
      */
+    List<DateTime> getCoverageEndTimeList();
+
+    /**
+     * The time when the live blog will stop covering the Event. Note that coverage may continue after the Event concludes.
+     *
+     * @return {@link DateTime}
+     */
     DateTime getCoverageEndTime();
 
     /**
@@ -27,7 +35,14 @@ public interface LiveBlogPosting extends BlogPosting {
      *
      * @param coverageEndTime DateTime value to set.
      */
-    void setCoverageEndTime(DateTime coverageEndTime);
+    void addCoverageEndTime(DateTime coverageEndTime);
+
+    /**
+     * The time when the live blog will begin covering the Event. Note that coverage may begin before the Event's start time. The LiveBlogPosting may also be created before coverage begins.
+     *
+     * @return {@link DateTime}
+     */
+    List<DateTime> getCoverageStartTimeList();
 
     /**
      * The time when the live blog will begin covering the Event. Note that coverage may begin before the Event's start time. The LiveBlogPosting may also be created before coverage begins.
@@ -41,7 +56,14 @@ public interface LiveBlogPosting extends BlogPosting {
      *
      * @param coverageStartTime DateTime value to set.
      */
-    void setCoverageStartTime(DateTime coverageStartTime);
+    void addCoverageStartTime(DateTime coverageStartTime);
+
+    /**
+     * An update to the LiveBlog.
+     *
+     * @return {@link BlogPosting}
+     */
+    List<BlogPosting> getLiveBlogUpdateList();
 
     /**
      * An update to the LiveBlog.
@@ -55,5 +77,5 @@ public interface LiveBlogPosting extends BlogPosting {
      *
      * @param liveBlogUpdate BlogPosting value to set.
      */
-    void setLiveBlogUpdate(BlogPosting liveBlogUpdate);
+    void addLiveBlogUpdate(BlogPosting liveBlogUpdate);
 }

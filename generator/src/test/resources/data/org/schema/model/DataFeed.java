@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.Thing;
 import org.schema.model.DataFeedItem;
 import org.schema.model.datatype.Text;
@@ -21,6 +22,13 @@ public interface DataFeed extends Dataset {
      *
      * @return {@link Thing} or {@link DataFeedItem} or {@link Text}
      */
+    <T> List<T> getDataFeedElementList();
+
+    /**
+     * An item within in a data feed. Data feeds may have many elements.
+     *
+     * @return {@link Thing} or {@link DataFeedItem} or {@link Text}
+     */
     <T> T getDataFeedElement();
 
     /**
@@ -28,17 +36,17 @@ public interface DataFeed extends Dataset {
      *
      * @param dataFeedElement Thing value to set.
      */
-    void setDataFeedElement(Thing dataFeedElement);
+    void addDataFeedElement(Thing dataFeedElement);
     /**
      * An item within in a data feed. Data feeds may have many elements.
      *
      * @param dataFeedElement DataFeedItem value to set.
      */
-    void setDataFeedElement(DataFeedItem dataFeedElement);
+    void addDataFeedElement(DataFeedItem dataFeedElement);
     /**
      * An item within in a data feed. Data feeds may have many elements.
      *
      * @param dataFeedElement Text value to set.
      */
-    void setDataFeedElement(Text dataFeedElement);
+    void addDataFeedElement(Text dataFeedElement);
 }

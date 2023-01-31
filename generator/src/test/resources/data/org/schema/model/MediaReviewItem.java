@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.MediaObject;
 
 /**
@@ -23,6 +24,15 @@ public interface MediaReviewItem extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
+    List<MediaObject> getMediaItemAppearanceList();
+
+    /**
+     * In the context of a [[MediaReview]], indicates specific media item(s) that are grouped using a [[MediaReviewItem]].
+     *
+     * @return {@link MediaObject}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     */
     MediaObject getMediaItemAppearance();
 
     /**
@@ -32,5 +42,5 @@ public interface MediaReviewItem extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
-    void setMediaItemAppearance(MediaObject mediaItemAppearance);
+    void addMediaItemAppearance(MediaObject mediaItemAppearance);
 }

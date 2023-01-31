@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * A publication event e.g. catch-up TV or radio podcast, during which a program is available on-demand.

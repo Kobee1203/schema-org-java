@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Text;
 import org.schema.model.datatype.URL;
 
@@ -22,6 +23,15 @@ public interface SportsOrganization extends Organization {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1951">https://github.com/schemaorg/schemaorg/issues/1951</a>
      */
+    <T> List<T> getSportList();
+
+    /**
+     * A type of sport (e.g. Baseball).
+     *
+     * @return {@link Text} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1951">https://github.com/schemaorg/schemaorg/issues/1951</a>
+     */
     <T> T getSport();
 
     /**
@@ -31,7 +41,7 @@ public interface SportsOrganization extends Organization {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1951">https://github.com/schemaorg/schemaorg/issues/1951</a>
      */
-    void setSport(Text sport);
+    void addSport(Text sport);
     /**
      * A type of sport (e.g. Baseball).
      *
@@ -39,5 +49,5 @@ public interface SportsOrganization extends Organization {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1951">https://github.com/schemaorg/schemaorg/issues/1951</a>
      */
-    void setSport(URL sport);
+    void addSport(URL sport);
 }

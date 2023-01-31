@@ -31,6 +31,8 @@ import org.schema.model.Event;
 import org.schema.model.PropertyValue;
 import org.schema.model.Thing;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import java.util.List;
 import org.schema.model.Intangible;
 import org.schema.model.JobPosting;
 
@@ -42,7 +44,19 @@ import org.schema.model.JobPosting;
 @JsonLdTypeName("JobPosting")
 public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements JobPosting {
 
-    private Text employerOverview;
+    private List<Text> employerOverview;
+
+    /**
+     * A description of the employer, career opportunities and work environment for this position.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2396">https://github.com/schemaorg/schemaorg/issues/2396</a>
+     */
+    @Override
+    public List<Text> getEmployerOverviewList() {
+        return employerOverview;
+    }
 
     /**
      * A description of the employer, career opportunities and work environment for this position.
@@ -53,7 +67,7 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getEmployerOverview() {
-        return employerOverview;
+        return getFirst(employerOverview);
     }
 
     /**
@@ -64,11 +78,23 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2396">https://github.com/schemaorg/schemaorg/issues/2396</a>
      */
     @Override
-    public void setEmployerOverview(Text employerOverview) {
-        this.employerOverview = employerOverview;
+    public void addEmployerOverview(Text employerOverview) {
+        this.employerOverview = add(this.employerOverview, employerOverview);
     }
 
-    private Object estimatedSalary;
+    @JsonLdFieldTypes({ MonetaryAmountDistribution.class, MonetaryAmount.class, Number.class })
+    private List<Object> estimatedSalary;
+
+    /**
+     * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
+     *
+     * @return {@link MonetaryAmountDistribution} or {@link MonetaryAmount} or {@link Number}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    @Override
+    public <T> List<T> getEstimatedSalaryList() {
+        return (List<T>) estimatedSalary;
+    }
 
     /**
      * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
@@ -78,7 +104,7 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getEstimatedSalary() {
-        return (T) estimatedSalary;
+        return (T) getFirst(estimatedSalary);
     }
 
     /**
@@ -88,8 +114,8 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
     @Override
-    public void setEstimatedSalary(MonetaryAmountDistribution estimatedSalary) {
-        this.estimatedSalary = estimatedSalary;
+    public void addEstimatedSalary(MonetaryAmountDistribution estimatedSalary) {
+        this.estimatedSalary = add(this.estimatedSalary, estimatedSalary);
     }
     /**
      * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
@@ -98,8 +124,8 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
     @Override
-    public void setEstimatedSalary(MonetaryAmount estimatedSalary) {
-        this.estimatedSalary = estimatedSalary;
+    public void addEstimatedSalary(MonetaryAmount estimatedSalary) {
+        this.estimatedSalary = add(this.estimatedSalary, estimatedSalary);
     }
     /**
      * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
@@ -108,11 +134,23 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
     @Override
-    public void setEstimatedSalary(Number estimatedSalary) {
-        this.estimatedSalary = estimatedSalary;
+    public void addEstimatedSalary(Number estimatedSalary) {
+        this.estimatedSalary = add(this.estimatedSalary, estimatedSalary);
     }
 
-    private Text jobLocationType;
+    private List<Text> jobLocationType;
+
+    /**
+     * A description of the job location (e.g TELECOMMUTE for telecommute jobs).
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1591">https://github.com/schemaorg/schemaorg/issues/1591</a>
+     */
+    @Override
+    public List<Text> getJobLocationTypeList() {
+        return jobLocationType;
+    }
 
     /**
      * A description of the job location (e.g TELECOMMUTE for telecommute jobs).
@@ -123,7 +161,7 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getJobLocationType() {
-        return jobLocationType;
+        return getFirst(jobLocationType);
     }
 
     /**
@@ -134,11 +172,22 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1591">https://github.com/schemaorg/schemaorg/issues/1591</a>
      */
     @Override
-    public void setJobLocationType(Text jobLocationType) {
-        this.jobLocationType = jobLocationType;
+    public void addJobLocationType(Text jobLocationType) {
+        this.jobLocationType = add(this.jobLocationType, jobLocationType);
     }
 
-    private Text responsibilities;
+    private List<Text> responsibilities;
+
+    /**
+     * Responsibilities associated with this role or Occupation.
+     *
+     * @return {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    @Override
+    public List<Text> getResponsibilitiesList() {
+        return responsibilities;
+    }
 
     /**
      * Responsibilities associated with this role or Occupation.
@@ -148,7 +197,7 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getResponsibilities() {
-        return responsibilities;
+        return getFirst(responsibilities);
     }
 
     /**
@@ -158,11 +207,21 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
     @Override
-    public void setResponsibilities(Text responsibilities) {
-        this.responsibilities = responsibilities;
+    public void addResponsibilities(Text responsibilities) {
+        this.responsibilities = add(this.responsibilities, responsibilities);
     }
 
-    private Place jobLocation;
+    private List<Place> jobLocation;
+
+    /**
+     * A (typically single) geographic location associated with the job position.
+     *
+     * @return {@link Place}
+     */
+    @Override
+    public List<Place> getJobLocationList() {
+        return jobLocation;
+    }
 
     /**
      * A (typically single) geographic location associated with the job position.
@@ -171,7 +230,7 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Place getJobLocation() {
-        return jobLocation;
+        return getFirst(jobLocation);
     }
 
     /**
@@ -180,11 +239,24 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param jobLocation Place value to set.
      */
     @Override
-    public void setJobLocation(Place jobLocation) {
-        this.jobLocation = jobLocation;
+    public void addJobLocation(Place jobLocation) {
+        this.jobLocation = add(this.jobLocation, jobLocation);
     }
 
-    private Object physicalRequirement;
+    @JsonLdFieldTypes({ URL.class, Text.class, DefinedTerm.class })
+    private List<Object> physicalRequirement;
+
+    /**
+     * A description of the types of physical activity associated with the job. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
+     *
+     * @return {@link URL} or {@link Text} or {@link DefinedTerm}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
+     */
+    @Override
+    public <T> List<T> getPhysicalRequirementList() {
+        return (List<T>) physicalRequirement;
+    }
 
     /**
      * A description of the types of physical activity associated with the job. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
@@ -195,7 +267,7 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getPhysicalRequirement() {
-        return (T) physicalRequirement;
+        return (T) getFirst(physicalRequirement);
     }
 
     /**
@@ -206,8 +278,8 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
      */
     @Override
-    public void setPhysicalRequirement(URL physicalRequirement) {
-        this.physicalRequirement = physicalRequirement;
+    public void addPhysicalRequirement(URL physicalRequirement) {
+        this.physicalRequirement = add(this.physicalRequirement, physicalRequirement);
     }
     /**
      * A description of the types of physical activity associated with the job. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
@@ -217,8 +289,8 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
      */
     @Override
-    public void setPhysicalRequirement(Text physicalRequirement) {
-        this.physicalRequirement = physicalRequirement;
+    public void addPhysicalRequirement(Text physicalRequirement) {
+        this.physicalRequirement = add(this.physicalRequirement, physicalRequirement);
     }
     /**
      * A description of the types of physical activity associated with the job. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
@@ -228,11 +300,21 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
      */
     @Override
-    public void setPhysicalRequirement(DefinedTerm physicalRequirement) {
-        this.physicalRequirement = physicalRequirement;
+    public void addPhysicalRequirement(DefinedTerm physicalRequirement) {
+        this.physicalRequirement = add(this.physicalRequirement, physicalRequirement);
     }
 
-    private Text incentives;
+    private List<Text> incentives;
+
+    /**
+     * Description of bonus and commission compensation aspects of the job.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getIncentivesList() {
+        return incentives;
+    }
 
     /**
      * Description of bonus and commission compensation aspects of the job.
@@ -241,7 +323,7 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getIncentives() {
-        return incentives;
+        return getFirst(incentives);
     }
 
     /**
@@ -250,11 +332,23 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param incentives Text value to set.
      */
     @Override
-    public void setIncentives(Text incentives) {
-        this.incentives = incentives;
+    public void addIncentives(Text incentives) {
+        this.incentives = add(this.incentives, incentives);
     }
 
-    private Boolean directApply;
+    private List<Boolean> directApply;
+
+    /**
+     * Indicates whether an [[url]] that is associated with a [[JobPosting]] enables direct application for the job, via the posting website. A job posting is considered to have directApply of [[True]] if an application process for the specified job can be directly initiated via the url(s) given (noting that e.g. multiple internet domains might nevertheless be involved at an implementation level). A value of [[False]] is appropriate if there is no clear path to applying directly online for the specified job, navigating directly from the JobPosting url(s) supplied.
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2907">https://github.com/schemaorg/schemaorg/issues/2907</a>
+     */
+    @Override
+    public List<Boolean> getDirectApplyList() {
+        return directApply;
+    }
 
     /**
      * Indicates whether an [[url]] that is associated with a [[JobPosting]] enables direct application for the job, via the posting website. A job posting is considered to have directApply of [[True]] if an application process for the specified job can be directly initiated via the url(s) given (noting that e.g. multiple internet domains might nevertheless be involved at an implementation level). A value of [[False]] is appropriate if there is no clear path to applying directly online for the specified job, navigating directly from the JobPosting url(s) supplied.
@@ -265,7 +359,7 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Boolean getDirectApply() {
-        return directApply;
+        return getFirst(directApply);
     }
 
     /**
@@ -276,11 +370,24 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2907">https://github.com/schemaorg/schemaorg/issues/2907</a>
      */
     @Override
-    public void setDirectApply(Boolean directApply) {
-        this.directApply = directApply;
+    public void addDirectApply(Boolean directApply) {
+        this.directApply = add(this.directApply, directApply);
     }
 
-    private Object sensoryRequirement;
+    @JsonLdFieldTypes({ DefinedTerm.class, URL.class, Text.class })
+    private List<Object> sensoryRequirement;
+
+    /**
+     * A description of any sensory requirements and levels necessary to function on the job, including hearing and vision. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
+     *
+     * @return {@link DefinedTerm} or {@link URL} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
+     */
+    @Override
+    public <T> List<T> getSensoryRequirementList() {
+        return (List<T>) sensoryRequirement;
+    }
 
     /**
      * A description of any sensory requirements and levels necessary to function on the job, including hearing and vision. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
@@ -291,7 +398,7 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getSensoryRequirement() {
-        return (T) sensoryRequirement;
+        return (T) getFirst(sensoryRequirement);
     }
 
     /**
@@ -302,8 +409,8 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
      */
     @Override
-    public void setSensoryRequirement(DefinedTerm sensoryRequirement) {
-        this.sensoryRequirement = sensoryRequirement;
+    public void addSensoryRequirement(DefinedTerm sensoryRequirement) {
+        this.sensoryRequirement = add(this.sensoryRequirement, sensoryRequirement);
     }
     /**
      * A description of any sensory requirements and levels necessary to function on the job, including hearing and vision. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
@@ -313,8 +420,8 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
      */
     @Override
-    public void setSensoryRequirement(URL sensoryRequirement) {
-        this.sensoryRequirement = sensoryRequirement;
+    public void addSensoryRequirement(URL sensoryRequirement) {
+        this.sensoryRequirement = add(this.sensoryRequirement, sensoryRequirement);
     }
     /**
      * A description of any sensory requirements and levels necessary to function on the job, including hearing and vision. Defined terms such as those in O*net may be used, but note that there is no way to specify the level of ability as well as its nature when using a defined term.
@@ -324,11 +431,23 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
      */
     @Override
-    public void setSensoryRequirement(Text sensoryRequirement) {
-        this.sensoryRequirement = sensoryRequirement;
+    public void addSensoryRequirement(Text sensoryRequirement) {
+        this.sensoryRequirement = add(this.sensoryRequirement, sensoryRequirement);
     }
 
-    private AdministrativeArea applicantLocationRequirements;
+    private List<AdministrativeArea> applicantLocationRequirements;
+
+    /**
+     * The location(s) applicants can apply from. This is usually used for telecommuting jobs where the applicant does not need to be in a physical office. Note: This should not be used for citizenship or work visa requirements.
+     *
+     * @return {@link AdministrativeArea}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2083">https://github.com/schemaorg/schemaorg/issues/2083</a>
+     */
+    @Override
+    public List<AdministrativeArea> getApplicantLocationRequirementsList() {
+        return applicantLocationRequirements;
+    }
 
     /**
      * The location(s) applicants can apply from. This is usually used for telecommuting jobs where the applicant does not need to be in a physical office. Note: This should not be used for citizenship or work visa requirements.
@@ -339,7 +458,7 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public AdministrativeArea getApplicantLocationRequirements() {
-        return applicantLocationRequirements;
+        return getFirst(applicantLocationRequirements);
     }
 
     /**
@@ -350,11 +469,21 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2083">https://github.com/schemaorg/schemaorg/issues/2083</a>
      */
     @Override
-    public void setApplicantLocationRequirements(AdministrativeArea applicantLocationRequirements) {
-        this.applicantLocationRequirements = applicantLocationRequirements;
+    public void addApplicantLocationRequirements(AdministrativeArea applicantLocationRequirements) {
+        this.applicantLocationRequirements = add(this.applicantLocationRequirements, applicantLocationRequirements);
     }
 
-    private Text workHours;
+    private List<Text> workHours;
+
+    /**
+     * The typical working hours for this job (e.g. 1st shift, night shift, 8am-5pm).
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getWorkHoursList() {
+        return workHours;
+    }
 
     /**
      * The typical working hours for this job (e.g. 1st shift, night shift, 8am-5pm).
@@ -363,7 +492,7 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getWorkHours() {
-        return workHours;
+        return getFirst(workHours);
     }
 
     /**
@@ -372,11 +501,24 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param workHours Text value to set.
      */
     @Override
-    public void setWorkHours(Text workHours) {
-        this.workHours = workHours;
+    public void addWorkHours(Text workHours) {
+        this.workHours = add(this.workHours, workHours);
     }
 
-    private Object jobStartDate;
+    @JsonLdFieldTypes({ Date.class, Text.class })
+    private List<Object> jobStartDate;
+
+    /**
+     * The date on which a successful applicant for this job would be expected to start work. Choose a specific date in the future or use the jobImmediateStart property to indicate the position is to be filled as soon as possible.
+     *
+     * @return {@link Date} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2244">https://github.com/schemaorg/schemaorg/issues/2244</a>
+     */
+    @Override
+    public <T> List<T> getJobStartDateList() {
+        return (List<T>) jobStartDate;
+    }
 
     /**
      * The date on which a successful applicant for this job would be expected to start work. Choose a specific date in the future or use the jobImmediateStart property to indicate the position is to be filled as soon as possible.
@@ -387,7 +529,7 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getJobStartDate() {
-        return (T) jobStartDate;
+        return (T) getFirst(jobStartDate);
     }
 
     /**
@@ -398,8 +540,8 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2244">https://github.com/schemaorg/schemaorg/issues/2244</a>
      */
     @Override
-    public void setJobStartDate(Date jobStartDate) {
-        this.jobStartDate = jobStartDate;
+    public void addJobStartDate(Date jobStartDate) {
+        this.jobStartDate = add(this.jobStartDate, jobStartDate);
     }
     /**
      * The date on which a successful applicant for this job would be expected to start work. Choose a specific date in the future or use the jobImmediateStart property to indicate the position is to be filled as soon as possible.
@@ -409,11 +551,21 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2244">https://github.com/schemaorg/schemaorg/issues/2244</a>
      */
     @Override
-    public void setJobStartDate(Text jobStartDate) {
-        this.jobStartDate = jobStartDate;
+    public void addJobStartDate(Text jobStartDate) {
+        this.jobStartDate = add(this.jobStartDate, jobStartDate);
     }
 
-    private Text employmentType;
+    private List<Text> employmentType;
+
+    /**
+     * Type of employment (e.g. full-time, part-time, contract, temporary, seasonal, internship).
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getEmploymentTypeList() {
+        return employmentType;
+    }
 
     /**
      * Type of employment (e.g. full-time, part-time, contract, temporary, seasonal, internship).
@@ -422,7 +574,7 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getEmploymentType() {
-        return employmentType;
+        return getFirst(employmentType);
     }
 
     /**
@@ -431,11 +583,21 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param employmentType Text value to set.
      */
     @Override
-    public void setEmploymentType(Text employmentType) {
-        this.employmentType = employmentType;
+    public void addEmploymentType(Text employmentType) {
+        this.employmentType = add(this.employmentType, employmentType);
     }
 
-    private Text specialCommitments;
+    private List<Text> specialCommitments;
+
+    /**
+     * Any special commitments associated with this job posting. Valid entries include VeteranCommit, MilitarySpouseCommit, etc.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getSpecialCommitmentsList() {
+        return specialCommitments;
+    }
 
     /**
      * Any special commitments associated with this job posting. Valid entries include VeteranCommit, MilitarySpouseCommit, etc.
@@ -444,7 +606,7 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getSpecialCommitments() {
-        return specialCommitments;
+        return getFirst(specialCommitments);
     }
 
     /**
@@ -453,11 +615,23 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param specialCommitments Text value to set.
      */
     @Override
-    public void setSpecialCommitments(Text specialCommitments) {
-        this.specialCommitments = specialCommitments;
+    public void addSpecialCommitments(Text specialCommitments) {
+        this.specialCommitments = add(this.specialCommitments, specialCommitments);
     }
 
-    private ContactPoint applicationContact;
+    private List<ContactPoint> applicationContact;
+
+    /**
+     * Contact details for further information relevant to this job posting.
+     *
+     * @return {@link ContactPoint}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2396">https://github.com/schemaorg/schemaorg/issues/2396</a>
+     */
+    @Override
+    public List<ContactPoint> getApplicationContactList() {
+        return applicationContact;
+    }
 
     /**
      * Contact details for further information relevant to this job posting.
@@ -468,7 +642,7 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public ContactPoint getApplicationContact() {
-        return applicationContact;
+        return getFirst(applicationContact);
     }
 
     /**
@@ -479,11 +653,21 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2396">https://github.com/schemaorg/schemaorg/issues/2396</a>
      */
     @Override
-    public void setApplicationContact(ContactPoint applicationContact) {
-        this.applicationContact = applicationContact;
+    public void addApplicationContact(ContactPoint applicationContact) {
+        this.applicationContact = add(this.applicationContact, applicationContact);
     }
 
-    private Text incentiveCompensation;
+    private List<Text> incentiveCompensation;
+
+    /**
+     * Description of bonus and commission compensation aspects of the job.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getIncentiveCompensationList() {
+        return incentiveCompensation;
+    }
 
     /**
      * Description of bonus and commission compensation aspects of the job.
@@ -492,7 +676,7 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getIncentiveCompensation() {
-        return incentiveCompensation;
+        return getFirst(incentiveCompensation);
     }
 
     /**
@@ -501,11 +685,22 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param incentiveCompensation Text value to set.
      */
     @Override
-    public void setIncentiveCompensation(Text incentiveCompensation) {
-        this.incentiveCompensation = incentiveCompensation;
+    public void addIncentiveCompensation(Text incentiveCompensation) {
+        this.incentiveCompensation = add(this.incentiveCompensation, incentiveCompensation);
     }
 
-    private Occupation relevantOccupation;
+    private List<Occupation> relevantOccupation;
+
+    /**
+     * The Occupation for the JobPosting.
+     *
+     * @return {@link Occupation}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    @Override
+    public List<Occupation> getRelevantOccupationList() {
+        return relevantOccupation;
+    }
 
     /**
      * The Occupation for the JobPosting.
@@ -515,7 +710,7 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Occupation getRelevantOccupation() {
-        return relevantOccupation;
+        return getFirst(relevantOccupation);
     }
 
     /**
@@ -525,11 +720,23 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
     @Override
-    public void setRelevantOccupation(Occupation relevantOccupation) {
-        this.relevantOccupation = relevantOccupation;
+    public void addRelevantOccupation(Occupation relevantOccupation) {
+        this.relevantOccupation = add(this.relevantOccupation, relevantOccupation);
     }
 
-    private Integer totalJobOpenings;
+    private List<Integer> totalJobOpenings;
+
+    /**
+     * The number of positions open for this job posting. Use a positive integer. Do not use if the number of positions is unclear or not known.
+     *
+     * @return {@link Integer}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2329">https://github.com/schemaorg/schemaorg/issues/2329</a>
+     */
+    @Override
+    public List<Integer> getTotalJobOpeningsList() {
+        return totalJobOpenings;
+    }
 
     /**
      * The number of positions open for this job posting. Use a positive integer. Do not use if the number of positions is unclear or not known.
@@ -540,7 +747,7 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Integer getTotalJobOpenings() {
-        return totalJobOpenings;
+        return getFirst(totalJobOpenings);
     }
 
     /**
@@ -551,11 +758,23 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2329">https://github.com/schemaorg/schemaorg/issues/2329</a>
      */
     @Override
-    public void setTotalJobOpenings(Integer totalJobOpenings) {
-        this.totalJobOpenings = totalJobOpenings;
+    public void addTotalJobOpenings(Integer totalJobOpenings) {
+        this.totalJobOpenings = add(this.totalJobOpenings, totalJobOpenings);
     }
 
-    private Object experienceRequirements;
+    @JsonLdFieldTypes({ Text.class, OccupationalExperienceRequirements.class })
+    private List<Object> experienceRequirements;
+
+    /**
+     * Description of skills and experience needed for the position or Occupation.
+     *
+     * @return {@link Text} or {@link OccupationalExperienceRequirements}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    @Override
+    public <T> List<T> getExperienceRequirementsList() {
+        return (List<T>) experienceRequirements;
+    }
 
     /**
      * Description of skills and experience needed for the position or Occupation.
@@ -565,7 +784,7 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getExperienceRequirements() {
-        return (T) experienceRequirements;
+        return (T) getFirst(experienceRequirements);
     }
 
     /**
@@ -575,8 +794,8 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
     @Override
-    public void setExperienceRequirements(Text experienceRequirements) {
-        this.experienceRequirements = experienceRequirements;
+    public void addExperienceRequirements(Text experienceRequirements) {
+        this.experienceRequirements = add(this.experienceRequirements, experienceRequirements);
     }
     /**
      * Description of skills and experience needed for the position or Occupation.
@@ -585,11 +804,21 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
     @Override
-    public void setExperienceRequirements(OccupationalExperienceRequirements experienceRequirements) {
-        this.experienceRequirements = experienceRequirements;
+    public void addExperienceRequirements(OccupationalExperienceRequirements experienceRequirements) {
+        this.experienceRequirements = add(this.experienceRequirements, experienceRequirements);
     }
 
-    private Text jobBenefits;
+    private List<Text> jobBenefits;
+
+    /**
+     * Description of benefits associated with the job.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getJobBenefitsList() {
+        return jobBenefits;
+    }
 
     /**
      * Description of benefits associated with the job.
@@ -598,7 +827,7 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getJobBenefits() {
-        return jobBenefits;
+        return getFirst(jobBenefits);
     }
 
     /**
@@ -607,11 +836,21 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param jobBenefits Text value to set.
      */
     @Override
-    public void setJobBenefits(Text jobBenefits) {
-        this.jobBenefits = jobBenefits;
+    public void addJobBenefits(Text jobBenefits) {
+        this.jobBenefits = add(this.jobBenefits, jobBenefits);
     }
 
-    private Text salaryCurrency;
+    private List<Text> salaryCurrency;
+
+    /**
+     * The currency (coded using [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217) ) used for the main salary information in this job posting or for this employee.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getSalaryCurrencyList() {
+        return salaryCurrency;
+    }
 
     /**
      * The currency (coded using [ISO 4217](http://en.wikipedia.org/wiki/ISO_4217) ) used for the main salary information in this job posting or for this employee.
@@ -620,7 +859,7 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getSalaryCurrency() {
-        return salaryCurrency;
+        return getFirst(salaryCurrency);
     }
 
     /**
@@ -629,11 +868,23 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param salaryCurrency Text value to set.
      */
     @Override
-    public void setSalaryCurrency(Text salaryCurrency) {
-        this.salaryCurrency = salaryCurrency;
+    public void addSalaryCurrency(Text salaryCurrency) {
+        this.salaryCurrency = add(this.salaryCurrency, salaryCurrency);
     }
 
-    private Boolean experienceInPlaceOfEducation;
+    private List<Boolean> experienceInPlaceOfEducation;
+
+    /**
+     * Indicates whether a [[JobPosting]] will accept experience (as indicated by [[OccupationalExperienceRequirements]]) in place of its formal educational qualifications (as indicated by [[educationRequirements]]). If true, indicates that satisfying one of these requirements is sufficient.
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2681">https://github.com/schemaorg/schemaorg/issues/2681</a>
+     */
+    @Override
+    public List<Boolean> getExperienceInPlaceOfEducationList() {
+        return experienceInPlaceOfEducation;
+    }
 
     /**
      * Indicates whether a [[JobPosting]] will accept experience (as indicated by [[OccupationalExperienceRequirements]]) in place of its formal educational qualifications (as indicated by [[educationRequirements]]). If true, indicates that satisfying one of these requirements is sufficient.
@@ -644,7 +895,7 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Boolean getExperienceInPlaceOfEducation() {
-        return experienceInPlaceOfEducation;
+        return getFirst(experienceInPlaceOfEducation);
     }
 
     /**
@@ -655,11 +906,24 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2681">https://github.com/schemaorg/schemaorg/issues/2681</a>
      */
     @Override
-    public void setExperienceInPlaceOfEducation(Boolean experienceInPlaceOfEducation) {
-        this.experienceInPlaceOfEducation = experienceInPlaceOfEducation;
+    public void addExperienceInPlaceOfEducation(Boolean experienceInPlaceOfEducation) {
+        this.experienceInPlaceOfEducation = add(this.experienceInPlaceOfEducation, experienceInPlaceOfEducation);
     }
 
-    private Object securityClearanceRequirement;
+    @JsonLdFieldTypes({ URL.class, Text.class })
+    private List<Object> securityClearanceRequirement;
+
+    /**
+     * A description of any security clearance requirements of the job.
+     *
+     * @return {@link URL} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
+     */
+    @Override
+    public <T> List<T> getSecurityClearanceRequirementList() {
+        return (List<T>) securityClearanceRequirement;
+    }
 
     /**
      * A description of any security clearance requirements of the job.
@@ -670,7 +934,7 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getSecurityClearanceRequirement() {
-        return (T) securityClearanceRequirement;
+        return (T) getFirst(securityClearanceRequirement);
     }
 
     /**
@@ -681,8 +945,8 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
      */
     @Override
-    public void setSecurityClearanceRequirement(URL securityClearanceRequirement) {
-        this.securityClearanceRequirement = securityClearanceRequirement;
+    public void addSecurityClearanceRequirement(URL securityClearanceRequirement) {
+        this.securityClearanceRequirement = add(this.securityClearanceRequirement, securityClearanceRequirement);
     }
     /**
      * A description of any security clearance requirements of the job.
@@ -692,11 +956,23 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
      */
     @Override
-    public void setSecurityClearanceRequirement(Text securityClearanceRequirement) {
-        this.securityClearanceRequirement = securityClearanceRequirement;
+    public void addSecurityClearanceRequirement(Text securityClearanceRequirement) {
+        this.securityClearanceRequirement = add(this.securityClearanceRequirement, securityClearanceRequirement);
     }
 
-    private Text eligibilityToWorkRequirement;
+    private List<Text> eligibilityToWorkRequirement;
+
+    /**
+     * The legal requirements such as citizenship, visa and other documentation required for an applicant to this job.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
+     */
+    @Override
+    public List<Text> getEligibilityToWorkRequirementList() {
+        return eligibilityToWorkRequirement;
+    }
 
     /**
      * The legal requirements such as citizenship, visa and other documentation required for an applicant to this job.
@@ -707,7 +983,7 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getEligibilityToWorkRequirement() {
-        return eligibilityToWorkRequirement;
+        return getFirst(eligibilityToWorkRequirement);
     }
 
     /**
@@ -718,11 +994,25 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2384">https://github.com/schemaorg/schemaorg/issues/2384</a>
      */
     @Override
-    public void setEligibilityToWorkRequirement(Text eligibilityToWorkRequirement) {
-        this.eligibilityToWorkRequirement = eligibilityToWorkRequirement;
+    public void addEligibilityToWorkRequirement(Text eligibilityToWorkRequirement) {
+        this.eligibilityToWorkRequirement = add(this.eligibilityToWorkRequirement, eligibilityToWorkRequirement);
     }
 
-    private Object educationRequirements;
+    @JsonLdFieldTypes({ EducationalOccupationalCredential.class, Text.class })
+    private List<Object> educationRequirements;
+
+    /**
+     * Educational background needed for the position or Occupation.
+     *
+     * @return {@link EducationalOccupationalCredential} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     */
+    @Override
+    public <T> List<T> getEducationRequirementsList() {
+        return (List<T>) educationRequirements;
+    }
 
     /**
      * Educational background needed for the position or Occupation.
@@ -734,7 +1024,7 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getEducationRequirements() {
-        return (T) educationRequirements;
+        return (T) getFirst(educationRequirements);
     }
 
     /**
@@ -746,8 +1036,8 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
     @Override
-    public void setEducationRequirements(EducationalOccupationalCredential educationRequirements) {
-        this.educationRequirements = educationRequirements;
+    public void addEducationRequirements(EducationalOccupationalCredential educationRequirements) {
+        this.educationRequirements = add(this.educationRequirements, educationRequirements);
     }
     /**
      * Educational background needed for the position or Occupation.
@@ -758,11 +1048,21 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
     @Override
-    public void setEducationRequirements(Text educationRequirements) {
-        this.educationRequirements = educationRequirements;
+    public void addEducationRequirements(Text educationRequirements) {
+        this.educationRequirements = add(this.educationRequirements, educationRequirements);
     }
 
-    private Text benefits;
+    private List<Text> benefits;
+
+    /**
+     * Description of benefits associated with the job.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getBenefitsList() {
+        return benefits;
+    }
 
     /**
      * Description of benefits associated with the job.
@@ -771,7 +1071,7 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getBenefits() {
-        return benefits;
+        return getFirst(benefits);
     }
 
     /**
@@ -780,11 +1080,22 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param benefits Text value to set.
      */
     @Override
-    public void setBenefits(Text benefits) {
-        this.benefits = benefits;
+    public void addBenefits(Text benefits) {
+        this.benefits = add(this.benefits, benefits);
     }
 
-    private Object industry;
+    @JsonLdFieldTypes({ DefinedTerm.class, Text.class })
+    private List<Object> industry;
+
+    /**
+     * The industry associated with the job position.
+     *
+     * @return {@link DefinedTerm} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getIndustryList() {
+        return (List<T>) industry;
+    }
 
     /**
      * The industry associated with the job position.
@@ -793,7 +1104,7 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getIndustry() {
-        return (T) industry;
+        return (T) getFirst(industry);
     }
 
     /**
@@ -802,8 +1113,8 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param industry DefinedTerm value to set.
      */
     @Override
-    public void setIndustry(DefinedTerm industry) {
-        this.industry = industry;
+    public void addIndustry(DefinedTerm industry) {
+        this.industry = add(this.industry, industry);
     }
     /**
      * The industry associated with the job position.
@@ -811,11 +1122,22 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param industry Text value to set.
      */
     @Override
-    public void setIndustry(Text industry) {
-        this.industry = industry;
+    public void addIndustry(Text industry) {
+        this.industry = add(this.industry, industry);
     }
 
-    private Object baseSalary;
+    @JsonLdFieldTypes({ Number.class, PriceSpecification.class, MonetaryAmount.class })
+    private List<Object> baseSalary;
+
+    /**
+     * The base salary of the job or of an employee in an EmployeeRole.
+     *
+     * @return {@link Number} or {@link PriceSpecification} or {@link MonetaryAmount}
+     */
+    @Override
+    public <T> List<T> getBaseSalaryList() {
+        return (List<T>) baseSalary;
+    }
 
     /**
      * The base salary of the job or of an employee in an EmployeeRole.
@@ -824,7 +1146,7 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getBaseSalary() {
-        return (T) baseSalary;
+        return (T) getFirst(baseSalary);
     }
 
     /**
@@ -833,8 +1155,8 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param baseSalary Number value to set.
      */
     @Override
-    public void setBaseSalary(Number baseSalary) {
-        this.baseSalary = baseSalary;
+    public void addBaseSalary(Number baseSalary) {
+        this.baseSalary = add(this.baseSalary, baseSalary);
     }
     /**
      * The base salary of the job or of an employee in an EmployeeRole.
@@ -842,8 +1164,8 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param baseSalary PriceSpecification value to set.
      */
     @Override
-    public void setBaseSalary(PriceSpecification baseSalary) {
-        this.baseSalary = baseSalary;
+    public void addBaseSalary(PriceSpecification baseSalary) {
+        this.baseSalary = add(this.baseSalary, baseSalary);
     }
     /**
      * The base salary of the job or of an employee in an EmployeeRole.
@@ -851,11 +1173,24 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param baseSalary MonetaryAmount value to set.
      */
     @Override
-    public void setBaseSalary(MonetaryAmount baseSalary) {
-        this.baseSalary = baseSalary;
+    public void addBaseSalary(MonetaryAmount baseSalary) {
+        this.baseSalary = add(this.baseSalary, baseSalary);
     }
 
-    private Object datePosted;
+    @JsonLdFieldTypes({ Date.class, DateTime.class })
+    private List<Object> datePosted;
+
+    /**
+     * Publication date of an online listing.
+     *
+     * @return {@link Date} or {@link DateTime}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
+     */
+    @Override
+    public <T> List<T> getDatePostedList() {
+        return (List<T>) datePosted;
+    }
 
     /**
      * Publication date of an online listing.
@@ -866,7 +1201,7 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getDatePosted() {
-        return (T) datePosted;
+        return (T) getFirst(datePosted);
     }
 
     /**
@@ -877,8 +1212,8 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
     @Override
-    public void setDatePosted(Date datePosted) {
-        this.datePosted = datePosted;
+    public void addDatePosted(Date datePosted) {
+        this.datePosted = add(this.datePosted, datePosted);
     }
     /**
      * Publication date of an online listing.
@@ -888,11 +1223,24 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2521">https://github.com/schemaorg/schemaorg/issues/2521</a>
      */
     @Override
-    public void setDatePosted(DateTime datePosted) {
-        this.datePosted = datePosted;
+    public void addDatePosted(DateTime datePosted) {
+        this.datePosted = add(this.datePosted, datePosted);
     }
 
-    private Object skills;
+    @JsonLdFieldTypes({ Text.class, DefinedTerm.class })
+    private List<Object> skills;
+
+    /**
+     * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is desired or required to fulfill this role or to work in this occupation.
+     *
+     * @return {@link Text} or {@link DefinedTerm}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    @Override
+    public <T> List<T> getSkillsList() {
+        return (List<T>) skills;
+    }
 
     /**
      * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is desired or required to fulfill this role or to work in this occupation.
@@ -903,7 +1251,7 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getSkills() {
-        return (T) skills;
+        return (T) getFirst(skills);
     }
 
     /**
@@ -914,8 +1262,8 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
     @Override
-    public void setSkills(Text skills) {
-        this.skills = skills;
+    public void addSkills(Text skills) {
+        this.skills = add(this.skills, skills);
     }
     /**
      * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is desired or required to fulfill this role or to work in this occupation.
@@ -925,11 +1273,21 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
     @Override
-    public void setSkills(DefinedTerm skills) {
-        this.skills = skills;
+    public void addSkills(DefinedTerm skills) {
+        this.skills = add(this.skills, skills);
     }
 
-    private Text title;
+    private List<Text> title;
+
+    /**
+     * The title of the job.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getTitleList() {
+        return title;
+    }
 
     /**
      * The title of the job.
@@ -938,7 +1296,7 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getTitle() {
-        return title;
+        return getFirst(title);
     }
 
     /**
@@ -947,11 +1305,21 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param title Text value to set.
      */
     @Override
-    public void setTitle(Text title) {
-        this.title = title;
+    public void addTitle(Text title) {
+        this.title = add(this.title, title);
     }
 
-    private Organization hiringOrganization;
+    private List<Organization> hiringOrganization;
+
+    /**
+     * Organization offering the job position.
+     *
+     * @return {@link Organization}
+     */
+    @Override
+    public List<Organization> getHiringOrganizationList() {
+        return hiringOrganization;
+    }
 
     /**
      * Organization offering the job position.
@@ -960,7 +1328,7 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Organization getHiringOrganization() {
-        return hiringOrganization;
+        return getFirst(hiringOrganization);
     }
 
     /**
@@ -969,11 +1337,23 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param hiringOrganization Organization value to set.
      */
     @Override
-    public void setHiringOrganization(Organization hiringOrganization) {
-        this.hiringOrganization = hiringOrganization;
+    public void addHiringOrganization(Organization hiringOrganization) {
+        this.hiringOrganization = add(this.hiringOrganization, hiringOrganization);
     }
 
-    private Boolean jobImmediateStart;
+    private List<Boolean> jobImmediateStart;
+
+    /**
+     * An indicator as to whether a position is available for an immediate start.
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2244">https://github.com/schemaorg/schemaorg/issues/2244</a>
+     */
+    @Override
+    public List<Boolean> getJobImmediateStartList() {
+        return jobImmediateStart;
+    }
 
     /**
      * An indicator as to whether a position is available for an immediate start.
@@ -984,7 +1364,7 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Boolean getJobImmediateStart() {
-        return jobImmediateStart;
+        return getFirst(jobImmediateStart);
     }
 
     /**
@@ -995,11 +1375,23 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2244">https://github.com/schemaorg/schemaorg/issues/2244</a>
      */
     @Override
-    public void setJobImmediateStart(Boolean jobImmediateStart) {
-        this.jobImmediateStart = jobImmediateStart;
+    public void addJobImmediateStart(Boolean jobImmediateStart) {
+        this.jobImmediateStart = add(this.jobImmediateStart, jobImmediateStart);
     }
 
-    private Object validThrough;
+    @JsonLdFieldTypes({ DateTime.class, Date.class })
+    private List<Object> validThrough;
+
+    /**
+     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
+     *
+     * @return {@link DateTime} or {@link Date}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    @Override
+    public <T> List<T> getValidThroughList() {
+        return (List<T>) validThrough;
+    }
 
     /**
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
@@ -1009,7 +1401,7 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getValidThrough() {
-        return (T) validThrough;
+        return (T) getFirst(validThrough);
     }
 
     /**
@@ -1019,8 +1411,8 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setValidThrough(DateTime validThrough) {
-        this.validThrough = validThrough;
+    public void addValidThrough(DateTime validThrough) {
+        this.validThrough = add(this.validThrough, validThrough);
     }
     /**
      * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
@@ -1029,11 +1421,23 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
     @Override
-    public void setValidThrough(Date validThrough) {
-        this.validThrough = validThrough;
+    public void addValidThrough(Date validThrough) {
+        this.validThrough = add(this.validThrough, validThrough);
     }
 
-    private Organization employmentUnit;
+    private List<Organization> employmentUnit;
+
+    /**
+     * Indicates the department, unit and/or facility where the employee reports and/or in which the job is to be performed.
+     *
+     * @return {@link Organization}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2296">https://github.com/schemaorg/schemaorg/issues/2296</a>
+     */
+    @Override
+    public List<Organization> getEmploymentUnitList() {
+        return employmentUnit;
+    }
 
     /**
      * Indicates the department, unit and/or facility where the employee reports and/or in which the job is to be performed.
@@ -1044,7 +1448,7 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Organization getEmploymentUnit() {
-        return employmentUnit;
+        return getFirst(employmentUnit);
     }
 
     /**
@@ -1055,11 +1459,25 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2296">https://github.com/schemaorg/schemaorg/issues/2296</a>
      */
     @Override
-    public void setEmploymentUnit(Organization employmentUnit) {
-        this.employmentUnit = employmentUnit;
+    public void addEmploymentUnit(Organization employmentUnit) {
+        this.employmentUnit = add(this.employmentUnit, employmentUnit);
     }
 
-    private Object qualifications;
+    @JsonLdFieldTypes({ Text.class, EducationalOccupationalCredential.class })
+    private List<Object> qualifications;
+
+    /**
+     * Specific qualifications required for this role or Occupation.
+     *
+     * @return {@link Text} or {@link EducationalOccupationalCredential}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     */
+    @Override
+    public <T> List<T> getQualificationsList() {
+        return (List<T>) qualifications;
+    }
 
     /**
      * Specific qualifications required for this role or Occupation.
@@ -1071,7 +1489,7 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getQualifications() {
-        return (T) qualifications;
+        return (T) getFirst(qualifications);
     }
 
     /**
@@ -1083,8 +1501,8 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
     @Override
-    public void setQualifications(Text qualifications) {
-        this.qualifications = qualifications;
+    public void addQualifications(Text qualifications) {
+        this.qualifications = add(this.qualifications, qualifications);
     }
     /**
      * Specific qualifications required for this role or Occupation.
@@ -1095,11 +1513,28 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
      */
     @Override
-    public void setQualifications(EducationalOccupationalCredential qualifications) {
-        this.qualifications = qualifications;
+    public void addQualifications(EducationalOccupationalCredential qualifications) {
+        this.qualifications = add(this.qualifications, qualifications);
     }
 
-    private Object occupationalCategory;
+    @JsonLdFieldTypes({ CategoryCode.class, Text.class })
+    private List<Object> occupationalCategory;
+
+    /**
+     * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.<br/>
+     * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
+     *
+     * @return {@link CategoryCode} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    @Override
+    public <T> List<T> getOccupationalCategoryList() {
+        return (List<T>) occupationalCategory;
+    }
 
     /**
      * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.<br/>
@@ -1114,7 +1549,7 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getOccupationalCategory() {
-        return (T) occupationalCategory;
+        return (T) getFirst(occupationalCategory);
     }
 
     /**
@@ -1129,8 +1564,8 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
     @Override
-    public void setOccupationalCategory(CategoryCode occupationalCategory) {
-        this.occupationalCategory = occupationalCategory;
+    public void addOccupationalCategory(CategoryCode occupationalCategory) {
+        this.occupationalCategory = add(this.occupationalCategory, occupationalCategory);
     }
     /**
      * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.<br/>
@@ -1144,11 +1579,22 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
     @Override
-    public void setOccupationalCategory(Text occupationalCategory) {
-        this.occupationalCategory = occupationalCategory;
+    public void addOccupationalCategory(Text occupationalCategory) {
+        this.occupationalCategory = add(this.occupationalCategory, occupationalCategory);
     }
 
-    private Object mainEntityOfPage;
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
+    private List<Object> mainEntityOfPage;
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    @Override
+    public <T> List<T> getMainEntityOfPageList() {
+        return (List<T>) mainEntityOfPage;
+    }
 
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -1157,7 +1603,7 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getMainEntityOfPage() {
-        return (T) mainEntityOfPage;
+        return (T) getFirst(mainEntityOfPage);
     }
 
     /**
@@ -1166,8 +1612,8 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void setMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        this.mainEntityOfPage = mainEntityOfPage;
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
     /**
      * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
@@ -1175,11 +1621,21 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param mainEntityOfPage URL value to set.
      */
     @Override
-    public void setMainEntityOfPage(URL mainEntityOfPage) {
-        this.mainEntityOfPage = mainEntityOfPage;
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
 
-    private Text alternateName;
+    private List<Text> alternateName;
+
+    /**
+     * An alias for the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getAlternateNameList() {
+        return alternateName;
+    }
 
     /**
      * An alias for the item.
@@ -1188,7 +1644,7 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getAlternateName() {
-        return alternateName;
+        return getFirst(alternateName);
     }
 
     /**
@@ -1197,11 +1653,21 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param alternateName Text value to set.
      */
     @Override
-    public void setAlternateName(Text alternateName) {
-        this.alternateName = alternateName;
+    public void addAlternateName(Text alternateName) {
+        this.alternateName = add(this.alternateName, alternateName);
     }
 
-    private Text name;
+    private List<Text> name;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getNameList() {
+        return name;
+    }
 
     /**
      * The name of the item.
@@ -1210,7 +1676,7 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getName() {
-        return name;
+        return getFirst(name);
     }
 
     /**
@@ -1219,11 +1685,21 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param name Text value to set.
      */
     @Override
-    public void setName(Text name) {
-        this.name = name;
+    public void addName(Text name) {
+        this.name = add(this.name, name);
     }
 
-    private Action potentialAction;
+    private List<Action> potentialAction;
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public List<Action> getPotentialActionList() {
+        return potentialAction;
+    }
 
     /**
      * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
@@ -1232,7 +1708,7 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Action getPotentialAction() {
-        return potentialAction;
+        return getFirst(potentialAction);
     }
 
     /**
@@ -1241,11 +1717,22 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param potentialAction Action value to set.
      */
     @Override
-    public void setPotentialAction(Action potentialAction) {
-        this.potentialAction = potentialAction;
+    public void addPotentialAction(Action potentialAction) {
+        this.potentialAction = add(this.potentialAction, potentialAction);
     }
 
-    private Object image;
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
+    private List<Object> image;
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link URL} or {@link ImageObject}
+     */
+    @Override
+    public <T> List<T> getImageList() {
+        return (List<T>) image;
+    }
 
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -1254,7 +1741,7 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getImage() {
-        return (T) image;
+        return (T) getFirst(image);
     }
 
     /**
@@ -1263,8 +1750,8 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param image URL value to set.
      */
     @Override
-    public void setImage(URL image) {
-        this.image = image;
+    public void addImage(URL image) {
+        this.image = add(this.image, image);
     }
     /**
      * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
@@ -1272,11 +1759,21 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param image ImageObject value to set.
      */
     @Override
-    public void setImage(ImageObject image) {
-        this.image = image;
+    public void addImage(ImageObject image) {
+        this.image = add(this.image, image);
     }
 
-    private URL url;
+    private List<URL> url;
+
+    /**
+     * URL of the item.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getUrlList() {
+        return url;
+    }
 
     /**
      * URL of the item.
@@ -1285,7 +1782,7 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public URL getUrl() {
-        return url;
+        return getFirst(url);
     }
 
     /**
@@ -1294,11 +1791,21 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param url URL value to set.
      */
     @Override
-    public void setUrl(URL url) {
-        this.url = url;
+    public void addUrl(URL url) {
+        this.url = add(this.url, url);
     }
 
-    private Text description;
+    private List<Text> description;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDescriptionList() {
+        return description;
+    }
 
     /**
      * A description of the item.
@@ -1307,7 +1814,7 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getDescription() {
-        return description;
+        return getFirst(description);
     }
 
     /**
@@ -1316,11 +1823,23 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param description Text value to set.
      */
     @Override
-    public void setDescription(Text description) {
-        this.description = description;
+    public void addDescription(Text description) {
+        this.description = add(this.description, description);
     }
 
-    private Object subjectOf;
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
+    private List<Object> subjectOf;
+
+    /**
+     * A CreativeWork or Event about this Thing.
+     *
+     * @return {@link Event} or {@link CreativeWork}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
+     */
+    @Override
+    public <T> List<T> getSubjectOfList() {
+        return (List<T>) subjectOf;
+    }
 
     /**
      * A CreativeWork or Event about this Thing.
@@ -1330,7 +1849,7 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getSubjectOf() {
-        return (T) subjectOf;
+        return (T) getFirst(subjectOf);
     }
 
     /**
@@ -1340,8 +1859,8 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(Event subjectOf) {
-        this.subjectOf = subjectOf;
+    public void addSubjectOf(Event subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
     }
     /**
      * A CreativeWork or Event about this Thing.
@@ -1350,11 +1869,21 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
     @Override
-    public void setSubjectOf(CreativeWork subjectOf) {
-        this.subjectOf = subjectOf;
+    public void addSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
     }
 
-    private URL additionalType;
+    private List<URL> additionalType;
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getAdditionalTypeList() {
+        return additionalType;
+    }
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.
@@ -1363,7 +1892,7 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public URL getAdditionalType() {
-        return additionalType;
+        return getFirst(additionalType);
     }
 
     /**
@@ -1372,11 +1901,21 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param additionalType URL value to set.
      */
     @Override
-    public void setAdditionalType(URL additionalType) {
-        this.additionalType = additionalType;
+    public void addAdditionalType(URL additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
     }
 
-    private Text disambiguatingDescription;
+    private List<Text> disambiguatingDescription;
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDisambiguatingDescriptionList() {
+        return disambiguatingDescription;
+    }
 
     /**
      * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
@@ -1385,7 +1924,7 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public Text getDisambiguatingDescription() {
-        return disambiguatingDescription;
+        return getFirst(disambiguatingDescription);
     }
 
     /**
@@ -1394,11 +1933,21 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param disambiguatingDescription Text value to set.
      */
     @Override
-    public void setDisambiguatingDescription(Text disambiguatingDescription) {
-        this.disambiguatingDescription = disambiguatingDescription;
+    public void addDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
     }
 
-    private URL sameAs;
+    private List<URL> sameAs;
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getSameAsList() {
+        return sameAs;
+    }
 
     /**
      * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
@@ -1407,7 +1956,7 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public URL getSameAs() {
-        return sameAs;
+        return getFirst(sameAs);
     }
 
     /**
@@ -1416,11 +1965,23 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param sameAs URL value to set.
      */
     @Override
-    public void setSameAs(URL sameAs) {
-        this.sameAs = sameAs;
+    public void addSameAs(URL sameAs) {
+        this.sameAs = add(this.sameAs, sameAs);
     }
 
-    private Object identifier;
+    @JsonLdFieldTypes({ URL.class, Text.class, PropertyValue.class })
+    private List<Object> identifier;
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @return {@link URL} or {@link Text} or {@link PropertyValue}
+     */
+    @Override
+    public <T> List<T> getIdentifierList() {
+        return (List<T>) identifier;
+    }
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -1430,7 +1991,7 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      */
     @Override
     public <T> T getIdentifier() {
-        return (T) identifier;
+        return (T) getFirst(identifier);
     }
 
     /**
@@ -1440,8 +2001,8 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param identifier URL value to set.
      */
     @Override
-    public void setIdentifier(URL identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(URL identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -1450,8 +2011,8 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param identifier Text value to set.
      */
     @Override
-    public void setIdentifier(Text identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(Text identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -1460,7 +2021,7 @@ public class JobPostingImpl extends com.weedow.schemaorg.commons.model.JsonLdNod
      * @param identifier PropertyValue value to set.
      */
     @Override
-    public void setIdentifier(PropertyValue identifier) {
-        this.identifier = identifier;
+    public void addIdentifier(PropertyValue identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
 }

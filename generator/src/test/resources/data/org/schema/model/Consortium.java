@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * A Consortium is a membership [[Organization]] whose members are typically Organizations.

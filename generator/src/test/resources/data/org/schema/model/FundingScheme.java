@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * A FundingScheme combines organizational, project and policy aspects of grant-based funding

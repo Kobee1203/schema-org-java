@@ -13,12 +13,15 @@ public interface {{this.name}} extends {{#if this.parents}}{{#each this.parents}
 
 {{#with this.accessor}}
     {{> templates/fragment/javadoc_getter}}
-    {{&this.returnFieldType}} {{this.methodName}}();
+    {{&this.returnFieldTypeAsList}} {{this.getterMethod}}();
+
+    {{> templates/fragment/javadoc_getter}}
+    {{&this.returnFieldType}} {{this.firstGetterMethod}}();
 {{/with}}
 
 {{#each this.mutators}}
     {{> templates/fragment/javadoc_setter}}
-    void {{this.methodName}}({{&this.paramType}} {{../this.field.fieldName}});
+    void {{this.addMethod}}({{&this.paramType}} {{../this.field.fieldName}});
 {{/each}}
 {{/each}}
 }

@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.PostalAddress;
 import org.schema.model.datatype.Text;
 import org.schema.model.Product;
@@ -29,6 +30,13 @@ public interface ParcelDelivery extends Intangible {
      *
      * @return {@link PostalAddress}
      */
+    List<PostalAddress> getOriginAddressList();
+
+    /**
+     * Shipper's address.
+     *
+     * @return {@link PostalAddress}
+     */
     PostalAddress getOriginAddress();
 
     /**
@@ -36,7 +44,14 @@ public interface ParcelDelivery extends Intangible {
      *
      * @param originAddress PostalAddress value to set.
      */
-    void setOriginAddress(PostalAddress originAddress);
+    void addOriginAddress(PostalAddress originAddress);
+
+    /**
+     * Shipper tracking number.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getTrackingNumberList();
 
     /**
      * Shipper tracking number.
@@ -50,7 +65,14 @@ public interface ParcelDelivery extends Intangible {
      *
      * @param trackingNumber Text value to set.
      */
-    void setTrackingNumber(Text trackingNumber);
+    void addTrackingNumber(Text trackingNumber);
+
+    /**
+     * Item(s) being shipped.
+     *
+     * @return {@link Product}
+     */
+    List<Product> getItemShippedList();
 
     /**
      * Item(s) being shipped.
@@ -64,7 +86,17 @@ public interface ParcelDelivery extends Intangible {
      *
      * @param itemShipped Product value to set.
      */
-    void setItemShipped(Product itemShipped);
+    void addItemShipped(Product itemShipped);
+
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @return {@link Organization} or {@link Person}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     */
+    <T> List<T> getProviderList();
 
     /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
@@ -84,7 +116,7 @@ public interface ParcelDelivery extends Intangible {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
      */
-    void setProvider(Organization provider);
+    void addProvider(Organization provider);
     /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
      *
@@ -93,7 +125,14 @@ public interface ParcelDelivery extends Intangible {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
      */
-    void setProvider(Person provider);
+    void addProvider(Person provider);
+
+    /**
+     * Tracking url for the parcel delivery.
+     *
+     * @return {@link URL}
+     */
+    List<URL> getTrackingUrlList();
 
     /**
      * Tracking url for the parcel delivery.
@@ -107,7 +146,14 @@ public interface ParcelDelivery extends Intangible {
      *
      * @param trackingUrl URL value to set.
      */
-    void setTrackingUrl(URL trackingUrl);
+    void addTrackingUrl(URL trackingUrl);
+
+    /**
+     * Destination address.
+     *
+     * @return {@link PostalAddress}
+     */
+    List<PostalAddress> getDeliveryAddressList();
 
     /**
      * Destination address.
@@ -121,7 +167,14 @@ public interface ParcelDelivery extends Intangible {
      *
      * @param deliveryAddress PostalAddress value to set.
      */
-    void setDeliveryAddress(PostalAddress deliveryAddress);
+    void addDeliveryAddress(PostalAddress deliveryAddress);
+
+    /**
+     * The latest date the package may arrive.
+     *
+     * @return {@link Date} or {@link DateTime}
+     */
+    <T> List<T> getExpectedArrivalUntilList();
 
     /**
      * The latest date the package may arrive.
@@ -135,13 +188,20 @@ public interface ParcelDelivery extends Intangible {
      *
      * @param expectedArrivalUntil Date value to set.
      */
-    void setExpectedArrivalUntil(Date expectedArrivalUntil);
+    void addExpectedArrivalUntil(Date expectedArrivalUntil);
     /**
      * The latest date the package may arrive.
      *
      * @param expectedArrivalUntil DateTime value to set.
      */
-    void setExpectedArrivalUntil(DateTime expectedArrivalUntil);
+    void addExpectedArrivalUntil(DateTime expectedArrivalUntil);
+
+    /**
+     * New entry added as the package passes through each leg of its journey (from shipment to final delivery).
+     *
+     * @return {@link DeliveryEvent}
+     */
+    List<DeliveryEvent> getDeliveryStatusList();
 
     /**
      * New entry added as the package passes through each leg of its journey (from shipment to final delivery).
@@ -155,7 +215,14 @@ public interface ParcelDelivery extends Intangible {
      *
      * @param deliveryStatus DeliveryEvent value to set.
      */
-    void setDeliveryStatus(DeliveryEvent deliveryStatus);
+    void addDeliveryStatus(DeliveryEvent deliveryStatus);
+
+    /**
+     * The earliest date the package may arrive.
+     *
+     * @return {@link Date} or {@link DateTime}
+     */
+    <T> List<T> getExpectedArrivalFromList();
 
     /**
      * The earliest date the package may arrive.
@@ -169,13 +236,20 @@ public interface ParcelDelivery extends Intangible {
      *
      * @param expectedArrivalFrom Date value to set.
      */
-    void setExpectedArrivalFrom(Date expectedArrivalFrom);
+    void addExpectedArrivalFrom(Date expectedArrivalFrom);
     /**
      * The earliest date the package may arrive.
      *
      * @param expectedArrivalFrom DateTime value to set.
      */
-    void setExpectedArrivalFrom(DateTime expectedArrivalFrom);
+    void addExpectedArrivalFrom(DateTime expectedArrivalFrom);
+
+    /**
+     * 'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.
+     *
+     * @return {@link Organization}
+     */
+    List<Organization> getCarrierList();
 
     /**
      * 'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.
@@ -189,7 +263,14 @@ public interface ParcelDelivery extends Intangible {
      *
      * @param carrier Organization value to set.
      */
-    void setCarrier(Organization carrier);
+    void addCarrier(Organization carrier);
+
+    /**
+     * Method used for delivery or shipping.
+     *
+     * @return {@link DeliveryMethod}
+     */
+    List<DeliveryMethod> getHasDeliveryMethodList();
 
     /**
      * Method used for delivery or shipping.
@@ -203,7 +284,14 @@ public interface ParcelDelivery extends Intangible {
      *
      * @param hasDeliveryMethod DeliveryMethod value to set.
      */
-    void setHasDeliveryMethod(DeliveryMethod hasDeliveryMethod);
+    void addHasDeliveryMethod(DeliveryMethod hasDeliveryMethod);
+
+    /**
+     * The overall order the items in this delivery were included in.
+     *
+     * @return {@link Order}
+     */
+    List<Order> getPartOfOrderList();
 
     /**
      * The overall order the items in this delivery were included in.
@@ -217,5 +305,5 @@ public interface ParcelDelivery extends Intangible {
      *
      * @param partOfOrder Order value to set.
      */
-    void setPartOfOrder(Order partOfOrder);
+    void addPartOfOrder(Order partOfOrder);
 }

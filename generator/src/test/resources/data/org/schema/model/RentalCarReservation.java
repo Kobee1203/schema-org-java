@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.Place;
 import org.schema.model.datatype.DateTime;
 
@@ -20,6 +21,13 @@ public interface RentalCarReservation extends Reservation {
      *
      * @return {@link Place}
      */
+    List<Place> getDropoffLocationList();
+
+    /**
+     * Where a rental car can be dropped off.
+     *
+     * @return {@link Place}
+     */
     Place getDropoffLocation();
 
     /**
@@ -27,7 +35,14 @@ public interface RentalCarReservation extends Reservation {
      *
      * @param dropoffLocation Place value to set.
      */
-    void setDropoffLocation(Place dropoffLocation);
+    void addDropoffLocation(Place dropoffLocation);
+
+    /**
+     * When a rental car can be dropped off.
+     *
+     * @return {@link DateTime}
+     */
+    List<DateTime> getDropoffTimeList();
 
     /**
      * When a rental car can be dropped off.
@@ -41,7 +56,14 @@ public interface RentalCarReservation extends Reservation {
      *
      * @param dropoffTime DateTime value to set.
      */
-    void setDropoffTime(DateTime dropoffTime);
+    void addDropoffTime(DateTime dropoffTime);
+
+    /**
+     * When a taxi will pickup a passenger or a rental car can be picked up.
+     *
+     * @return {@link DateTime}
+     */
+    List<DateTime> getPickupTimeList();
 
     /**
      * When a taxi will pickup a passenger or a rental car can be picked up.
@@ -55,7 +77,14 @@ public interface RentalCarReservation extends Reservation {
      *
      * @param pickupTime DateTime value to set.
      */
-    void setPickupTime(DateTime pickupTime);
+    void addPickupTime(DateTime pickupTime);
+
+    /**
+     * Where a taxi will pick up a passenger or a rental car can be picked up.
+     *
+     * @return {@link Place}
+     */
+    List<Place> getPickupLocationList();
 
     /**
      * Where a taxi will pick up a passenger or a rental car can be picked up.
@@ -69,5 +98,5 @@ public interface RentalCarReservation extends Reservation {
      *
      * @param pickupLocation Place value to set.
      */
-    void setPickupLocation(Place pickupLocation);
+    void addPickupLocation(Place pickupLocation);
 }

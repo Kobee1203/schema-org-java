@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Text;
 
 /**
@@ -21,6 +22,14 @@ public interface Protein extends BioChemEntity {
      * @return {@link Text}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
+    List<Text> getHasBioPolymerSequenceList();
+
+    /**
+     * A symbolic representation of a BioChemEnity. For example, a nucleotide sequence of a Gene or an amino acid sequence of a Protein.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     */
     Text getHasBioPolymerSequence();
 
     /**
@@ -29,5 +38,5 @@ public interface Protein extends BioChemEntity {
      * @param hasBioPolymerSequence Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      */
-    void setHasBioPolymerSequence(Text hasBioPolymerSequence);
+    void addHasBioPolymerSequence(Text hasBioPolymerSequence);
 }

@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.DefinedTerm;
 
 /**
@@ -23,6 +24,15 @@ public interface DefinedTermSet extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
      */
+    List<DefinedTerm> getHasDefinedTermList();
+
+    /**
+     * A Defined Term contained in this term set.
+     *
+     * @return {@link DefinedTerm}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
+     */
     DefinedTerm getHasDefinedTerm();
 
     /**
@@ -32,5 +42,5 @@ public interface DefinedTermSet extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/894">https://github.com/schemaorg/schemaorg/issues/894</a>
      */
-    void setHasDefinedTerm(DefinedTerm hasDefinedTerm);
+    void addHasDefinedTerm(DefinedTerm hasDefinedTerm);
 }

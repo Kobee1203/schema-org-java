@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.SuperficialAnatomy;
 import org.schema.model.AnatomicalStructure;
 import org.schema.model.BrainStructure;
@@ -24,6 +25,14 @@ public interface Nerve extends AnatomicalStructure {
      * @return {@link SuperficialAnatomy} or {@link AnatomicalStructure}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
+    <T> List<T> getSensoryUnitList();
+
+    /**
+     * The neurological pathway extension that inputs and sends information to the brain or spinal cord.
+     *
+     * @return {@link SuperficialAnatomy} or {@link AnatomicalStructure}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
     <T> T getSensoryUnit();
 
     /**
@@ -32,14 +41,22 @@ public interface Nerve extends AnatomicalStructure {
      * @param sensoryUnit SuperficialAnatomy value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setSensoryUnit(SuperficialAnatomy sensoryUnit);
+    void addSensoryUnit(SuperficialAnatomy sensoryUnit);
     /**
      * The neurological pathway extension that inputs and sends information to the brain or spinal cord.
      *
      * @param sensoryUnit AnatomicalStructure value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setSensoryUnit(AnatomicalStructure sensoryUnit);
+    void addSensoryUnit(AnatomicalStructure sensoryUnit);
+
+    /**
+     * The branches that delineate from the nerve bundle. Not to be confused with [[branchOf]].
+     *
+     * @return {@link AnatomicalStructure}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<AnatomicalStructure> getBranchList();
 
     /**
      * The branches that delineate from the nerve bundle. Not to be confused with [[branchOf]].
@@ -55,7 +72,15 @@ public interface Nerve extends AnatomicalStructure {
      * @param branch AnatomicalStructure value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setBranch(AnatomicalStructure branch);
+    void addBranch(AnatomicalStructure branch);
+
+    /**
+     * The neurological pathway that originates the neurons.
+     *
+     * @return {@link BrainStructure}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<BrainStructure> getSourcedFromList();
 
     /**
      * The neurological pathway that originates the neurons.
@@ -71,7 +96,15 @@ public interface Nerve extends AnatomicalStructure {
      * @param sourcedFrom BrainStructure value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setSourcedFrom(BrainStructure sourcedFrom);
+    void addSourcedFrom(BrainStructure sourcedFrom);
+
+    /**
+     * The neurological pathway extension that involves muscle control.
+     *
+     * @return {@link Muscle}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Muscle> getNerveMotorList();
 
     /**
      * The neurological pathway extension that involves muscle control.
@@ -87,5 +120,5 @@ public interface Nerve extends AnatomicalStructure {
      * @param nerveMotor Muscle value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setNerveMotor(Muscle nerveMotor);
+    void addNerveMotor(Muscle nerveMotor);
 }

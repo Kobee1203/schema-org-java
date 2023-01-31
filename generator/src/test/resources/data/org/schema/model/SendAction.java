@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.Person;
 import org.schema.model.Audience;
 import org.schema.model.ContactPoint;
@@ -23,6 +24,13 @@ public interface SendAction extends TransferAction {
      *
      * @return {@link Person} or {@link Audience} or {@link ContactPoint} or {@link Organization}
      */
+    <T> List<T> getRecipientList();
+
+    /**
+     * A sub property of participant. The participant who is at the receiving end of the action.
+     *
+     * @return {@link Person} or {@link Audience} or {@link ContactPoint} or {@link Organization}
+     */
     <T> T getRecipient();
 
     /**
@@ -30,25 +38,32 @@ public interface SendAction extends TransferAction {
      *
      * @param recipient Person value to set.
      */
-    void setRecipient(Person recipient);
+    void addRecipient(Person recipient);
     /**
      * A sub property of participant. The participant who is at the receiving end of the action.
      *
      * @param recipient Audience value to set.
      */
-    void setRecipient(Audience recipient);
+    void addRecipient(Audience recipient);
     /**
      * A sub property of participant. The participant who is at the receiving end of the action.
      *
      * @param recipient ContactPoint value to set.
      */
-    void setRecipient(ContactPoint recipient);
+    void addRecipient(ContactPoint recipient);
     /**
      * A sub property of participant. The participant who is at the receiving end of the action.
      *
      * @param recipient Organization value to set.
      */
-    void setRecipient(Organization recipient);
+    void addRecipient(Organization recipient);
+
+    /**
+     * A sub property of instrument. The method of delivery.
+     *
+     * @return {@link DeliveryMethod}
+     */
+    List<DeliveryMethod> getDeliveryMethodList();
 
     /**
      * A sub property of instrument. The method of delivery.
@@ -62,5 +77,5 @@ public interface SendAction extends TransferAction {
      *
      * @param deliveryMethod DeliveryMethod value to set.
      */
-    void setDeliveryMethod(DeliveryMethod deliveryMethod);
+    void addDeliveryMethod(DeliveryMethod deliveryMethod);
 }

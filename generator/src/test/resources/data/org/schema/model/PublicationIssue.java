@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Text;
 import org.schema.model.datatype.Integer;
 
@@ -22,6 +23,14 @@ public interface PublicationIssue extends CreativeWork {
      * @return {@link Text} or {@link Integer}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
+    <T> List<T> getPageStartList();
+
+    /**
+     * The page on which the work starts; for example "135" or "xiii".
+     *
+     * @return {@link Text} or {@link Integer}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
+     */
     <T> T getPageStart();
 
     /**
@@ -30,14 +39,22 @@ public interface PublicationIssue extends CreativeWork {
      * @param pageStart Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
-    void setPageStart(Text pageStart);
+    void addPageStart(Text pageStart);
     /**
      * The page on which the work starts; for example "135" or "xiii".
      *
      * @param pageStart Integer value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
-    void setPageStart(Integer pageStart);
+    void addPageStart(Integer pageStart);
+
+    /**
+     * The page on which the work ends; for example "138" or "xvi".
+     *
+     * @return {@link Text} or {@link Integer}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
+     */
+    <T> List<T> getPageEndList();
 
     /**
      * The page on which the work ends; for example "138" or "xvi".
@@ -53,14 +70,22 @@ public interface PublicationIssue extends CreativeWork {
      * @param pageEnd Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
-    void setPageEnd(Text pageEnd);
+    void addPageEnd(Text pageEnd);
     /**
      * The page on which the work ends; for example "138" or "xvi".
      *
      * @param pageEnd Integer value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
-    void setPageEnd(Integer pageEnd);
+    void addPageEnd(Integer pageEnd);
+
+    /**
+     * Identifies the issue of publication; for example, "iii" or "2".
+     *
+     * @return {@link Integer} or {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
+     */
+    <T> List<T> getIssueNumberList();
 
     /**
      * Identifies the issue of publication; for example, "iii" or "2".
@@ -76,14 +101,22 @@ public interface PublicationIssue extends CreativeWork {
      * @param issueNumber Integer value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
-    void setIssueNumber(Integer issueNumber);
+    void addIssueNumber(Integer issueNumber);
     /**
      * Identifies the issue of publication; for example, "iii" or "2".
      *
      * @param issueNumber Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
-    void setIssueNumber(Text issueNumber);
+    void addIssueNumber(Text issueNumber);
+
+    /**
+     * Any description of pages that is not separated into pageStart and pageEnd; for example, "1-6, 9, 55" or "10-12, 46-49".
+     *
+     * @return {@link Text}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
+     */
+    List<Text> getPaginationList();
 
     /**
      * Any description of pages that is not separated into pageStart and pageEnd; for example, "1-6, 9, 55" or "10-12, 46-49".
@@ -99,5 +132,5 @@ public interface PublicationIssue extends CreativeWork {
      * @param pagination Text value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_bibex</a>
      */
-    void setPagination(Text pagination);
+    void addPagination(Text pagination);
 }

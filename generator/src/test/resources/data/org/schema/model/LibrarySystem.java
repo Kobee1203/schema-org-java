@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * A [[LibrarySystem]] is a collaborative system amongst several libraries.

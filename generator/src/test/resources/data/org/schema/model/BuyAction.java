@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.WarrantyPromise;
 import org.schema.model.Organization;
 import org.schema.model.Person;
@@ -21,6 +22,13 @@ public interface BuyAction extends TradeAction {
      *
      * @return {@link WarrantyPromise}
      */
+    List<WarrantyPromise> getWarrantyPromiseList();
+
+    /**
+     * The warranty promise(s) included in the offer.
+     *
+     * @return {@link WarrantyPromise}
+     */
     WarrantyPromise getWarrantyPromise();
 
     /**
@@ -28,7 +36,14 @@ public interface BuyAction extends TradeAction {
      *
      * @param warrantyPromise WarrantyPromise value to set.
      */
-    void setWarrantyPromise(WarrantyPromise warrantyPromise);
+    void addWarrantyPromise(WarrantyPromise warrantyPromise);
+
+    /**
+     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    <T> List<T> getSellerList();
 
     /**
      * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
@@ -42,13 +57,20 @@ public interface BuyAction extends TradeAction {
      *
      * @param seller Organization value to set.
      */
-    void setSeller(Organization seller);
+    void addSeller(Organization seller);
     /**
      * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
      *
      * @param seller Person value to set.
      */
-    void setSeller(Person seller);
+    void addSeller(Person seller);
+
+    /**
+     * 'vendor' is an earlier term for 'seller'.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    <T> List<T> getVendorList();
 
     /**
      * 'vendor' is an earlier term for 'seller'.
@@ -62,11 +84,11 @@ public interface BuyAction extends TradeAction {
      *
      * @param vendor Person value to set.
      */
-    void setVendor(Person vendor);
+    void addVendor(Person vendor);
     /**
      * 'vendor' is an earlier term for 'seller'.
      *
      * @param vendor Organization value to set.
      */
-    void setVendor(Organization vendor);
+    void addVendor(Organization vendor);
 }

@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Text;
 import org.schema.model.QualitativeValue;
 import org.schema.model.datatype.Number;
@@ -25,6 +26,15 @@ public interface BroadcastFrequencySpecification extends Intangible {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2111">https://github.com/schemaorg/schemaorg/issues/2111</a>
      */
+    List<Text> getBroadcastSubChannelList();
+
+    /**
+     * The subchannel used for the broadcast.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2111">https://github.com/schemaorg/schemaorg/issues/2111</a>
+     */
     Text getBroadcastSubChannel();
 
     /**
@@ -34,7 +44,16 @@ public interface BroadcastFrequencySpecification extends Intangible {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2111">https://github.com/schemaorg/schemaorg/issues/2111</a>
      */
-    void setBroadcastSubChannel(Text broadcastSubChannel);
+    void addBroadcastSubChannel(Text broadcastSubChannel);
+
+    /**
+     * The modulation (e.g. FM, AM, etc) used by a particular broadcast service.
+     *
+     * @return {@link QualitativeValue} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2111">https://github.com/schemaorg/schemaorg/issues/2111</a>
+     */
+    <T> List<T> getBroadcastSignalModulationList();
 
     /**
      * The modulation (e.g. FM, AM, etc) used by a particular broadcast service.
@@ -52,7 +71,7 @@ public interface BroadcastFrequencySpecification extends Intangible {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2111">https://github.com/schemaorg/schemaorg/issues/2111</a>
      */
-    void setBroadcastSignalModulation(QualitativeValue broadcastSignalModulation);
+    void addBroadcastSignalModulation(QualitativeValue broadcastSignalModulation);
     /**
      * The modulation (e.g. FM, AM, etc) used by a particular broadcast service.
      *
@@ -60,7 +79,15 @@ public interface BroadcastFrequencySpecification extends Intangible {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2111">https://github.com/schemaorg/schemaorg/issues/2111</a>
      */
-    void setBroadcastSignalModulation(Text broadcastSignalModulation);
+    void addBroadcastSignalModulation(Text broadcastSignalModulation);
+
+    /**
+     * The frequency in MHz for a particular broadcast.
+     *
+     * @return {@link Number} or {@link QuantitativeValue}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
+     */
+    <T> List<T> getBroadcastFrequencyValueList();
 
     /**
      * The frequency in MHz for a particular broadcast.
@@ -76,12 +103,12 @@ public interface BroadcastFrequencySpecification extends Intangible {
      * @param broadcastFrequencyValue Number value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
      */
-    void setBroadcastFrequencyValue(Number broadcastFrequencyValue);
+    void addBroadcastFrequencyValue(Number broadcastFrequencyValue);
     /**
      * The frequency in MHz for a particular broadcast.
      *
      * @param broadcastFrequencyValue QuantitativeValue value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
      */
-    void setBroadcastFrequencyValue(QuantitativeValue broadcastFrequencyValue);
+    void addBroadcastFrequencyValue(QuantitativeValue broadcastFrequencyValue);
 }

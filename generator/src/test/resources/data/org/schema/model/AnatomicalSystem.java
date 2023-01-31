@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.MedicalTherapy;
 import org.schema.model.MedicalCondition;
 import org.schema.model.AnatomicalStructure;
@@ -25,6 +26,14 @@ public interface AnatomicalSystem extends MedicalEntity {
      * @return {@link MedicalTherapy}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
+    List<MedicalTherapy> getRelatedTherapyList();
+
+    /**
+     * A medical therapy related to this anatomy.
+     *
+     * @return {@link MedicalTherapy}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
     MedicalTherapy getRelatedTherapy();
 
     /**
@@ -33,7 +42,15 @@ public interface AnatomicalSystem extends MedicalEntity {
      * @param relatedTherapy MedicalTherapy value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setRelatedTherapy(MedicalTherapy relatedTherapy);
+    void addRelatedTherapy(MedicalTherapy relatedTherapy);
+
+    /**
+     * A medical condition associated with this anatomy.
+     *
+     * @return {@link MedicalCondition}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<MedicalCondition> getRelatedConditionList();
 
     /**
      * A medical condition associated with this anatomy.
@@ -49,7 +66,15 @@ public interface AnatomicalSystem extends MedicalEntity {
      * @param relatedCondition MedicalCondition value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setRelatedCondition(MedicalCondition relatedCondition);
+    void addRelatedCondition(MedicalCondition relatedCondition);
+
+    /**
+     * Related anatomical structure(s) that are not part of the system but relate or connect to it, such as vascular bundles associated with an organ system.
+     *
+     * @return {@link AnatomicalStructure}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<AnatomicalStructure> getRelatedStructureList();
 
     /**
      * Related anatomical structure(s) that are not part of the system but relate or connect to it, such as vascular bundles associated with an organ system.
@@ -65,7 +90,15 @@ public interface AnatomicalSystem extends MedicalEntity {
      * @param relatedStructure AnatomicalStructure value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setRelatedStructure(AnatomicalStructure relatedStructure);
+    void addRelatedStructure(AnatomicalStructure relatedStructure);
+
+    /**
+     * If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Text> getAssociatedPathophysiologyList();
 
     /**
      * If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.
@@ -81,7 +114,15 @@ public interface AnatomicalSystem extends MedicalEntity {
      * @param associatedPathophysiology Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setAssociatedPathophysiology(Text associatedPathophysiology);
+    void addAssociatedPathophysiology(Text associatedPathophysiology);
+
+    /**
+     * Specifying something physically contained by something else. Typically used here for the underlying anatomical structures, such as organs, that comprise the anatomical system.
+     *
+     * @return {@link AnatomicalStructure} or {@link AnatomicalSystem}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    <T> List<T> getComprisedOfList();
 
     /**
      * Specifying something physically contained by something else. Typically used here for the underlying anatomical structures, such as organs, that comprise the anatomical system.
@@ -97,12 +138,12 @@ public interface AnatomicalSystem extends MedicalEntity {
      * @param comprisedOf AnatomicalStructure value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setComprisedOf(AnatomicalStructure comprisedOf);
+    void addComprisedOf(AnatomicalStructure comprisedOf);
     /**
      * Specifying something physically contained by something else. Typically used here for the underlying anatomical structures, such as organs, that comprise the anatomical system.
      *
      * @param comprisedOf AnatomicalSystem value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setComprisedOf(AnatomicalSystem comprisedOf);
+    void addComprisedOf(AnatomicalSystem comprisedOf);
 }

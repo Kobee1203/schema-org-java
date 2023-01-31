@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * A patient-reported or observed dosing schedule for a drug or supplement.

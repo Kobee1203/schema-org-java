@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.URL;
 import org.schema.model.CreativeWork;
 import org.schema.model.datatype.DateTime;
@@ -26,6 +27,13 @@ public interface UserComments extends UserInteraction {
      *
      * @return {@link URL}
      */
+    List<URL> getReplyToUrlList();
+
+    /**
+     * The URL at which a reply may be posted to the specified UserComment.
+     *
+     * @return {@link URL}
+     */
     URL getReplyToUrl();
 
     /**
@@ -33,7 +41,14 @@ public interface UserComments extends UserInteraction {
      *
      * @param replyToUrl URL value to set.
      */
-    void setReplyToUrl(URL replyToUrl);
+    void addReplyToUrl(URL replyToUrl);
+
+    /**
+     * Specifies the CreativeWork associated with the UserComment.
+     *
+     * @return {@link CreativeWork}
+     */
+    List<CreativeWork> getDiscussesList();
 
     /**
      * Specifies the CreativeWork associated with the UserComment.
@@ -47,7 +62,14 @@ public interface UserComments extends UserInteraction {
      *
      * @param discusses CreativeWork value to set.
      */
-    void setDiscusses(CreativeWork discusses);
+    void addDiscusses(CreativeWork discusses);
+
+    /**
+     * The time at which the UserComment was made.
+     *
+     * @return {@link DateTime} or {@link Date}
+     */
+    <T> List<T> getCommentTimeList();
 
     /**
      * The time at which the UserComment was made.
@@ -61,13 +83,20 @@ public interface UserComments extends UserInteraction {
      *
      * @param commentTime DateTime value to set.
      */
-    void setCommentTime(DateTime commentTime);
+    void addCommentTime(DateTime commentTime);
     /**
      * The time at which the UserComment was made.
      *
      * @param commentTime Date value to set.
      */
-    void setCommentTime(Date commentTime);
+    void addCommentTime(Date commentTime);
+
+    /**
+     * The text of the UserComment.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getCommentTextList();
 
     /**
      * The text of the UserComment.
@@ -81,7 +110,14 @@ public interface UserComments extends UserInteraction {
      *
      * @param commentText Text value to set.
      */
-    void setCommentText(Text commentText);
+    void addCommentText(Text commentText);
+
+    /**
+     * The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    <T> List<T> getCreatorList();
 
     /**
      * The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.
@@ -95,11 +131,11 @@ public interface UserComments extends UserInteraction {
      *
      * @param creator Organization value to set.
      */
-    void setCreator(Organization creator);
+    void addCreator(Organization creator);
     /**
      * The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.
      *
      * @param creator Person value to set.
      */
-    void setCreator(Person creator);
+    void addCreator(Person creator);
 }

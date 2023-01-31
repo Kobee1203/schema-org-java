@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.Person;
 import org.schema.model.Organization;
 
@@ -24,6 +25,15 @@ public interface Quotation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/271">https://github.com/schemaorg/schemaorg/issues/271</a>
      */
+    <T> List<T> getSpokenByCharacterList();
+
+    /**
+     * The (e.g. fictional) character, Person or Organization to whom the quotation is attributed within the containing CreativeWork.
+     *
+     * @return {@link Person} or {@link Organization}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/271">https://github.com/schemaorg/schemaorg/issues/271</a>
+     */
     <T> T getSpokenByCharacter();
 
     /**
@@ -33,7 +43,7 @@ public interface Quotation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/271">https://github.com/schemaorg/schemaorg/issues/271</a>
      */
-    void setSpokenByCharacter(Person spokenByCharacter);
+    void addSpokenByCharacter(Person spokenByCharacter);
     /**
      * The (e.g. fictional) character, Person or Organization to whom the quotation is attributed within the containing CreativeWork.
      *
@@ -41,5 +51,5 @@ public interface Quotation extends CreativeWork {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/271">https://github.com/schemaorg/schemaorg/issues/271</a>
      */
-    void setSpokenByCharacter(Organization spokenByCharacter);
+    void addSpokenByCharacter(Organization spokenByCharacter);
 }

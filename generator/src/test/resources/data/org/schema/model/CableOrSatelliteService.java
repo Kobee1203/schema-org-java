@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * A service which provides access to media programming like TV or radio. Access may be via cable or satellite.

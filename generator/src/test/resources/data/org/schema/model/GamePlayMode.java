@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 
 /**
  * Indicates whether this game is multi-player, co-op or single-player.

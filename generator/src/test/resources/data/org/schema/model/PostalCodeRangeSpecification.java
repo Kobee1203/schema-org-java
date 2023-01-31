@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Text;
 
 /**
@@ -23,6 +24,15 @@ public interface PostalCodeRangeSpecification extends StructuredValue {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
+    List<Text> getPostalCodeEndList();
+
+    /**
+     * Last postal code in the range (included). Needs to be after [[postalCodeBegin]].
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
     Text getPostalCodeEnd();
 
     /**
@@ -32,7 +42,16 @@ public interface PostalCodeRangeSpecification extends StructuredValue {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
-    void setPostalCodeEnd(Text postalCodeEnd);
+    void addPostalCodeEnd(Text postalCodeEnd);
+
+    /**
+     * First postal code in a range (included).
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    List<Text> getPostalCodeBeginList();
 
     /**
      * First postal code in a range (included).
@@ -50,5 +69,5 @@ public interface PostalCodeRangeSpecification extends StructuredValue {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
-    void setPostalCodeBegin(Text postalCodeBegin);
+    void addPostalCodeBegin(Text postalCodeBegin);
 }

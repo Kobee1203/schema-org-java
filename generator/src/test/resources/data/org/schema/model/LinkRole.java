@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Text;
 import org.schema.model.Language;
 
@@ -24,6 +25,15 @@ public interface LinkRole extends Role {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1045">https://github.com/schemaorg/schemaorg/issues/1045</a>
      */
+    List<Text> getLinkRelationshipList();
+
+    /**
+     * Indicates the relationship type of a Web link. 
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1045">https://github.com/schemaorg/schemaorg/issues/1045</a>
+     */
     Text getLinkRelationship();
 
     /**
@@ -33,7 +43,15 @@ public interface LinkRole extends Role {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1045">https://github.com/schemaorg/schemaorg/issues/1045</a>
      */
-    void setLinkRelationship(Text linkRelationship);
+    void addLinkRelationship(Text linkRelationship);
+
+    /**
+     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     *
+     * @return {@link Text} or {@link Language}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
+     */
+    <T> List<T> getInLanguageList();
 
     /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
@@ -49,12 +67,12 @@ public interface LinkRole extends Role {
      * @param inLanguage Text value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
      */
-    void setInLanguage(Text inLanguage);
+    void addInLanguage(Text inLanguage);
     /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
      *
      * @param inLanguage Language value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
      */
-    void setInLanguage(Language inLanguage);
+    void addInLanguage(Language inLanguage);
 }

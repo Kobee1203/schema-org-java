@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.MedicalTest;
 import org.schema.model.MedicalProcedure;
 import org.schema.model.MedicalTherapy;
@@ -24,6 +25,14 @@ public interface MedicalClinic extends MedicalOrganization, MedicalBusiness {
      * @return {@link MedicalTest} or {@link MedicalProcedure} or {@link MedicalTherapy}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
+    <T> List<T> getAvailableServiceList();
+
+    /**
+     * A medical service available from this provider.
+     *
+     * @return {@link MedicalTest} or {@link MedicalProcedure} or {@link MedicalTherapy}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
     <T> T getAvailableService();
 
     /**
@@ -32,21 +41,29 @@ public interface MedicalClinic extends MedicalOrganization, MedicalBusiness {
      * @param availableService MedicalTest value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setAvailableService(MedicalTest availableService);
+    void addAvailableService(MedicalTest availableService);
     /**
      * A medical service available from this provider.
      *
      * @param availableService MedicalProcedure value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setAvailableService(MedicalProcedure availableService);
+    void addAvailableService(MedicalProcedure availableService);
     /**
      * A medical service available from this provider.
      *
      * @param availableService MedicalTherapy value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setAvailableService(MedicalTherapy availableService);
+    void addAvailableService(MedicalTherapy availableService);
+
+    /**
+     * A medical specialty of the provider.
+     *
+     * @return {@link MedicalSpecialty}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<MedicalSpecialty> getMedicalSpecialtyList();
 
     /**
      * A medical specialty of the provider.
@@ -62,5 +79,5 @@ public interface MedicalClinic extends MedicalOrganization, MedicalBusiness {
      * @param medicalSpecialty MedicalSpecialty value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setMedicalSpecialty(MedicalSpecialty medicalSpecialty);
+    void addMedicalSpecialty(MedicalSpecialty medicalSpecialty);
 }

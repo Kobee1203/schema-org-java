@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.MedicalProcedureType;
 import org.schema.model.MedicalEntity;
 import org.schema.model.datatype.Text;
@@ -25,6 +26,14 @@ public interface MedicalProcedure extends MedicalEntity {
      * @return {@link MedicalProcedureType}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
+    List<MedicalProcedureType> getProcedureTypeList();
+
+    /**
+     * The type of procedure, for example Surgical, Noninvasive, or Percutaneous.
+     *
+     * @return {@link MedicalProcedureType}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
     MedicalProcedureType getProcedureType();
 
     /**
@@ -33,7 +42,15 @@ public interface MedicalProcedure extends MedicalEntity {
      * @param procedureType MedicalProcedureType value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setProcedureType(MedicalProcedureType procedureType);
+    void addProcedureType(MedicalProcedureType procedureType);
+
+    /**
+     * Typical preparation that a patient must undergo before having the procedure performed.
+     *
+     * @return {@link MedicalEntity} or {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    <T> List<T> getPreparationList();
 
     /**
      * Typical preparation that a patient must undergo before having the procedure performed.
@@ -49,14 +66,22 @@ public interface MedicalProcedure extends MedicalEntity {
      * @param preparation MedicalEntity value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setPreparation(MedicalEntity preparation);
+    void addPreparation(MedicalEntity preparation);
     /**
      * Typical preparation that a patient must undergo before having the procedure performed.
      *
      * @param preparation Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setPreparation(Text preparation);
+    void addPreparation(Text preparation);
+
+    /**
+     * Location in the body of the anatomical structure.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Text> getBodyLocationList();
 
     /**
      * Location in the body of the anatomical structure.
@@ -72,7 +97,15 @@ public interface MedicalProcedure extends MedicalEntity {
      * @param bodyLocation Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setBodyLocation(Text bodyLocation);
+    void addBodyLocation(Text bodyLocation);
+
+    /**
+     * The status of the study (enumerated).
+     *
+     * @return {@link Text} or {@link EventStatusType} or {@link MedicalStudyStatus}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    <T> List<T> getStatusList();
 
     /**
      * The status of the study (enumerated).
@@ -88,21 +121,29 @@ public interface MedicalProcedure extends MedicalEntity {
      * @param status Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setStatus(Text status);
+    void addStatus(Text status);
     /**
      * The status of the study (enumerated).
      *
      * @param status EventStatusType value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setStatus(EventStatusType status);
+    void addStatus(EventStatusType status);
     /**
      * The status of the study (enumerated).
      *
      * @param status MedicalStudyStatus value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setStatus(MedicalStudyStatus status);
+    void addStatus(MedicalStudyStatus status);
+
+    /**
+     * How the procedure is performed.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Text> getHowPerformedList();
 
     /**
      * How the procedure is performed.
@@ -118,7 +159,15 @@ public interface MedicalProcedure extends MedicalEntity {
      * @param howPerformed Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setHowPerformed(Text howPerformed);
+    void addHowPerformed(Text howPerformed);
+
+    /**
+     * Typical or recommended followup care after the procedure is performed.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Text> getFollowupList();
 
     /**
      * Typical or recommended followup care after the procedure is performed.
@@ -134,5 +183,5 @@ public interface MedicalProcedure extends MedicalEntity {
      * @param followup Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setFollowup(Text followup);
+    void addFollowup(Text followup);
 }

@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Text;
 import org.schema.model.AnatomicalStructure;
 import org.schema.model.AnatomicalSystem;
@@ -26,6 +27,14 @@ public interface AnatomicalStructure extends MedicalEntity {
      * @return {@link Text}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
+    List<Text> getBodyLocationList();
+
+    /**
+     * Location in the body of the anatomical structure.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
     Text getBodyLocation();
 
     /**
@@ -34,7 +43,15 @@ public interface AnatomicalStructure extends MedicalEntity {
      * @param bodyLocation Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setBodyLocation(Text bodyLocation);
+    void addBodyLocation(Text bodyLocation);
+
+    /**
+     * Other anatomical structures to which this structure is connected.
+     *
+     * @return {@link AnatomicalStructure}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<AnatomicalStructure> getConnectedToList();
 
     /**
      * Other anatomical structures to which this structure is connected.
@@ -50,7 +67,15 @@ public interface AnatomicalStructure extends MedicalEntity {
      * @param connectedTo AnatomicalStructure value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setConnectedTo(AnatomicalStructure connectedTo);
+    void addConnectedTo(AnatomicalStructure connectedTo);
+
+    /**
+     * The anatomical or organ system that this structure is part of.
+     *
+     * @return {@link AnatomicalSystem}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<AnatomicalSystem> getPartOfSystemList();
 
     /**
      * The anatomical or organ system that this structure is part of.
@@ -66,7 +91,15 @@ public interface AnatomicalStructure extends MedicalEntity {
      * @param partOfSystem AnatomicalSystem value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setPartOfSystem(AnatomicalSystem partOfSystem);
+    void addPartOfSystem(AnatomicalSystem partOfSystem);
+
+    /**
+     * A medical therapy related to this anatomy.
+     *
+     * @return {@link MedicalTherapy}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<MedicalTherapy> getRelatedTherapyList();
 
     /**
      * A medical therapy related to this anatomy.
@@ -82,7 +115,15 @@ public interface AnatomicalStructure extends MedicalEntity {
      * @param relatedTherapy MedicalTherapy value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setRelatedTherapy(MedicalTherapy relatedTherapy);
+    void addRelatedTherapy(MedicalTherapy relatedTherapy);
+
+    /**
+     * An image containing a diagram that illustrates the structure and/or its component substructures and/or connections with other structures.
+     *
+     * @return {@link ImageObject}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<ImageObject> getDiagramList();
 
     /**
      * An image containing a diagram that illustrates the structure and/or its component substructures and/or connections with other structures.
@@ -98,7 +139,15 @@ public interface AnatomicalStructure extends MedicalEntity {
      * @param diagram ImageObject value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setDiagram(ImageObject diagram);
+    void addDiagram(ImageObject diagram);
+
+    /**
+     * A medical condition associated with this anatomy.
+     *
+     * @return {@link MedicalCondition}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<MedicalCondition> getRelatedConditionList();
 
     /**
      * A medical condition associated with this anatomy.
@@ -114,7 +163,15 @@ public interface AnatomicalStructure extends MedicalEntity {
      * @param relatedCondition MedicalCondition value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setRelatedCondition(MedicalCondition relatedCondition);
+    void addRelatedCondition(MedicalCondition relatedCondition);
+
+    /**
+     * Component (sub-)structure(s) that comprise this anatomical structure.
+     *
+     * @return {@link AnatomicalStructure}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<AnatomicalStructure> getSubStructureList();
 
     /**
      * Component (sub-)structure(s) that comprise this anatomical structure.
@@ -130,7 +187,15 @@ public interface AnatomicalStructure extends MedicalEntity {
      * @param subStructure AnatomicalStructure value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setSubStructure(AnatomicalStructure subStructure);
+    void addSubStructure(AnatomicalStructure subStructure);
+
+    /**
+     * If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Text> getAssociatedPathophysiologyList();
 
     /**
      * If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.
@@ -146,5 +211,5 @@ public interface AnatomicalStructure extends MedicalEntity {
      * @param associatedPathophysiology Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setAssociatedPathophysiology(Text associatedPathophysiology);
+    void addAssociatedPathophysiology(Text associatedPathophysiology);
 }

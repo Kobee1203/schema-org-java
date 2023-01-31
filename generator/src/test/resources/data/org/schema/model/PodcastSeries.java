@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.Person;
 import org.schema.model.DataFeed;
 import org.schema.model.datatype.URL;
@@ -23,6 +24,13 @@ public interface PodcastSeries extends CreativeWorkSeries {
      *
      * @return {@link Person}
      */
+    List<Person> getActorList();
+
+    /**
+     * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
     Person getActor();
 
     /**
@@ -30,7 +38,16 @@ public interface PodcastSeries extends CreativeWorkSeries {
      *
      * @param actor Person value to set.
      */
-    void setActor(Person actor);
+    void addActor(Person actor);
+
+    /**
+     * The URL for a feed, e.g. associated with a podcast series, blog, or series of date-stamped updates. This is usually RSS or Atom.
+     *
+     * @return {@link DataFeed} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/373">https://github.com/schemaorg/schemaorg/issues/373</a>
+     */
+    <T> List<T> getWebFeedList();
 
     /**
      * The URL for a feed, e.g. associated with a podcast series, blog, or series of date-stamped updates. This is usually RSS or Atom.
@@ -48,7 +65,7 @@ public interface PodcastSeries extends CreativeWorkSeries {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/373">https://github.com/schemaorg/schemaorg/issues/373</a>
      */
-    void setWebFeed(DataFeed webFeed);
+    void addWebFeed(DataFeed webFeed);
     /**
      * The URL for a feed, e.g. associated with a podcast series, blog, or series of date-stamped updates. This is usually RSS or Atom.
      *
@@ -56,5 +73,5 @@ public interface PodcastSeries extends CreativeWorkSeries {
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/373">https://github.com/schemaorg/schemaorg/issues/373</a>
      */
-    void setWebFeed(URL webFeed);
+    void addWebFeed(URL webFeed);
 }

@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.MedicalCondition;
 import org.schema.model.datatype.Text;
 import org.schema.model.EventStatusType;
@@ -28,6 +29,14 @@ public interface MedicalStudy extends MedicalEntity {
      * @return {@link MedicalCondition}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
+    List<MedicalCondition> getHealthConditionList();
+
+    /**
+     * Specifying the health condition(s) of a patient, medical study, or other target audience.
+     *
+     * @return {@link MedicalCondition}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
     MedicalCondition getHealthCondition();
 
     /**
@@ -36,7 +45,15 @@ public interface MedicalStudy extends MedicalEntity {
      * @param healthCondition MedicalCondition value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setHealthCondition(MedicalCondition healthCondition);
+    void addHealthCondition(MedicalCondition healthCondition);
+
+    /**
+     * The status of the study (enumerated).
+     *
+     * @return {@link Text} or {@link EventStatusType} or {@link MedicalStudyStatus}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    <T> List<T> getStatusList();
 
     /**
      * The status of the study (enumerated).
@@ -52,21 +69,29 @@ public interface MedicalStudy extends MedicalEntity {
      * @param status Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setStatus(Text status);
+    void addStatus(Text status);
     /**
      * The status of the study (enumerated).
      *
      * @param status EventStatusType value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setStatus(EventStatusType status);
+    void addStatus(EventStatusType status);
     /**
      * The status of the study (enumerated).
      *
      * @param status MedicalStudyStatus value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setStatus(MedicalStudyStatus status);
+    void addStatus(MedicalStudyStatus status);
+
+    /**
+     * A subject of the study, i.e. one of the medical conditions, therapies, devices, drugs, etc. investigated by the study.
+     *
+     * @return {@link MedicalEntity}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<MedicalEntity> getStudySubjectList();
 
     /**
      * A subject of the study, i.e. one of the medical conditions, therapies, devices, drugs, etc. investigated by the study.
@@ -82,7 +107,15 @@ public interface MedicalStudy extends MedicalEntity {
      * @param studySubject MedicalEntity value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setStudySubject(MedicalEntity studySubject);
+    void addStudySubject(MedicalEntity studySubject);
+
+    /**
+     * The location in which the study is taking/took place.
+     *
+     * @return {@link AdministrativeArea}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<AdministrativeArea> getStudyLocationList();
 
     /**
      * The location in which the study is taking/took place.
@@ -98,7 +131,14 @@ public interface MedicalStudy extends MedicalEntity {
      * @param studyLocation AdministrativeArea value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void setStudyLocation(AdministrativeArea studyLocation);
+    void addStudyLocation(AdministrativeArea studyLocation);
+
+    /**
+     * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    <T> List<T> getSponsorList();
 
     /**
      * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
@@ -112,11 +152,11 @@ public interface MedicalStudy extends MedicalEntity {
      *
      * @param sponsor Organization value to set.
      */
-    void setSponsor(Organization sponsor);
+    void addSponsor(Organization sponsor);
     /**
      * A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.
      *
      * @param sponsor Person value to set.
      */
-    void setSponsor(Person sponsor);
+    void addSponsor(Person sponsor);
 }

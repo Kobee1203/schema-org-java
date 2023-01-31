@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.Number;
 
 /**
@@ -19,6 +20,13 @@ public interface OrganizationRole extends Role {
      *
      * @return {@link Number}
      */
+    List<Number> getNumberedPositionList();
+
+    /**
+     * A number associated with a role in an organization, for example, the number on an athlete's jersey.
+     *
+     * @return {@link Number}
+     */
     Number getNumberedPosition();
 
     /**
@@ -26,5 +34,5 @@ public interface OrganizationRole extends Role {
      *
      * @param numberedPosition Number value to set.
      */
-    void setNumberedPosition(Number numberedPosition);
+    void addNumberedPosition(Number numberedPosition);
 }

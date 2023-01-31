@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.datatype.URL;
 import org.schema.model.CreativeWorkSeason;
 import org.schema.model.Person;
@@ -33,6 +34,13 @@ public interface VideoGameSeries extends CreativeWorkSeries {
      *
      * @return {@link URL} or {@link CreativeWorkSeason}
      */
+    <T> List<T> getSeasonList();
+
+    /**
+     * A season in a media series.
+     *
+     * @return {@link URL} or {@link CreativeWorkSeason}
+     */
     <T> T getSeason();
 
     /**
@@ -40,13 +48,20 @@ public interface VideoGameSeries extends CreativeWorkSeries {
      *
      * @param season URL value to set.
      */
-    void setSeason(URL season);
+    void addSeason(URL season);
     /**
      * A season in a media series.
      *
      * @param season CreativeWorkSeason value to set.
      */
-    void setSeason(CreativeWorkSeason season);
+    void addSeason(CreativeWorkSeason season);
+
+    /**
+     * A season that is part of the media series.
+     *
+     * @return {@link CreativeWorkSeason}
+     */
+    List<CreativeWorkSeason> getContainsSeasonList();
 
     /**
      * A season that is part of the media series.
@@ -60,7 +75,14 @@ public interface VideoGameSeries extends CreativeWorkSeries {
      *
      * @param containsSeason CreativeWorkSeason value to set.
      */
-    void setContainsSeason(CreativeWorkSeason containsSeason);
+    void addContainsSeason(CreativeWorkSeason containsSeason);
+
+    /**
+     * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getDirectorList();
 
     /**
      * A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
@@ -74,7 +96,14 @@ public interface VideoGameSeries extends CreativeWorkSeries {
      *
      * @param director Person value to set.
      */
-    void setDirector(Person director);
+    void addDirector(Person director);
+
+    /**
+     * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getActorList();
 
     /**
      * An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
@@ -88,7 +117,14 @@ public interface VideoGameSeries extends CreativeWorkSeries {
      *
      * @param actor Person value to set.
      */
-    void setActor(Person actor);
+    void addActor(Person actor);
+
+    /**
+     * The trailer of a movie or tv/radio series, season, episode, etc.
+     *
+     * @return {@link VideoObject}
+     */
+    List<VideoObject> getTrailerList();
 
     /**
      * The trailer of a movie or tv/radio series, season, episode, etc.
@@ -102,7 +138,14 @@ public interface VideoGameSeries extends CreativeWorkSeries {
      *
      * @param trailer VideoObject value to set.
      */
-    void setTrailer(VideoObject trailer);
+    void addTrailer(VideoObject trailer);
+
+    /**
+     * An episode of a TV/radio series or season.
+     *
+     * @return {@link Episode}
+     */
+    List<Episode> getEpisodesList();
 
     /**
      * An episode of a TV/radio series or season.
@@ -116,7 +159,14 @@ public interface VideoGameSeries extends CreativeWorkSeries {
      *
      * @param episodes Episode value to set.
      */
-    void setEpisodes(Episode episodes);
+    void addEpisodes(Episode episodes);
+
+    /**
+     * A piece of data that represents a particular aspect of a fictional character (skill, power, character points, advantage, disadvantage).
+     *
+     * @return {@link Thing}
+     */
+    List<Thing> getCharacterAttributeList();
 
     /**
      * A piece of data that represents a particular aspect of a fictional character (skill, power, character points, advantage, disadvantage).
@@ -130,7 +180,14 @@ public interface VideoGameSeries extends CreativeWorkSeries {
      *
      * @param characterAttribute Thing value to set.
      */
-    void setCharacterAttribute(Thing characterAttribute);
+    void addCharacterAttribute(Thing characterAttribute);
+
+    /**
+     * The number of episodes in this season or series.
+     *
+     * @return {@link Integer}
+     */
+    List<Integer> getNumberOfEpisodesList();
 
     /**
      * The number of episodes in this season or series.
@@ -144,7 +201,14 @@ public interface VideoGameSeries extends CreativeWorkSeries {
      *
      * @param numberOfEpisodes Integer value to set.
      */
-    void setNumberOfEpisodes(Integer numberOfEpisodes);
+    void addNumberOfEpisodes(Integer numberOfEpisodes);
+
+    /**
+     * A season in a media series.
+     *
+     * @return {@link CreativeWorkSeason}
+     */
+    List<CreativeWorkSeason> getSeasonsList();
 
     /**
      * A season in a media series.
@@ -158,7 +222,14 @@ public interface VideoGameSeries extends CreativeWorkSeries {
      *
      * @param seasons CreativeWorkSeason value to set.
      */
-    void setSeasons(CreativeWorkSeason seasons);
+    void addSeasons(CreativeWorkSeason seasons);
+
+    /**
+     * Cheat codes to the game.
+     *
+     * @return {@link CreativeWork}
+     */
+    List<CreativeWork> getCheatCodeList();
 
     /**
      * Cheat codes to the game.
@@ -172,7 +243,14 @@ public interface VideoGameSeries extends CreativeWorkSeries {
      *
      * @param cheatCode CreativeWork value to set.
      */
-    void setCheatCode(CreativeWork cheatCode);
+    void addCheatCode(CreativeWork cheatCode);
+
+    /**
+     * An item is an object within the game world that can be collected by a player or, occasionally, a non-player character.
+     *
+     * @return {@link Thing}
+     */
+    List<Thing> getGameItemList();
 
     /**
      * An item is an object within the game world that can be collected by a player or, occasionally, a non-player character.
@@ -186,7 +264,14 @@ public interface VideoGameSeries extends CreativeWorkSeries {
      *
      * @param gameItem Thing value to set.
      */
-    void setGameItem(Thing gameItem);
+    void addGameItem(Thing gameItem);
+
+    /**
+     * The production company or studio responsible for the item e.g. series, video game, episode etc.
+     *
+     * @return {@link Organization}
+     */
+    List<Organization> getProductionCompanyList();
 
     /**
      * The production company or studio responsible for the item e.g. series, video game, episode etc.
@@ -200,7 +285,14 @@ public interface VideoGameSeries extends CreativeWorkSeries {
      *
      * @param productionCompany Organization value to set.
      */
-    void setProductionCompany(Organization productionCompany);
+    void addProductionCompany(Organization productionCompany);
+
+    /**
+     * An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getActorsList();
 
     /**
      * An actor, e.g. in tv, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
@@ -214,7 +306,14 @@ public interface VideoGameSeries extends CreativeWorkSeries {
      *
      * @param actors Person value to set.
      */
-    void setActors(Person actors);
+    void addActors(Person actors);
+
+    /**
+     * Indicates whether this game is multi-player, co-op or single-player.  The game can be marked as multi-player, co-op and single-player at the same time.
+     *
+     * @return {@link GamePlayMode}
+     */
+    List<GamePlayMode> getPlayModeList();
 
     /**
      * Indicates whether this game is multi-player, co-op or single-player.  The game can be marked as multi-player, co-op and single-player at the same time.
@@ -228,7 +327,14 @@ public interface VideoGameSeries extends CreativeWorkSeries {
      *
      * @param playMode GamePlayMode value to set.
      */
-    void setPlayMode(GamePlayMode playMode);
+    void addPlayMode(GamePlayMode playMode);
+
+    /**
+     * The electronic systems used to play <a href="http://en.wikipedia.org/wiki/Category:Video_game_platforms">video games</a>.
+     *
+     * @return {@link Text} or {@link URL} or {@link Thing}
+     */
+    <T> List<T> getGamePlatformList();
 
     /**
      * The electronic systems used to play <a href="http://en.wikipedia.org/wiki/Category:Video_game_platforms">video games</a>.
@@ -242,19 +348,26 @@ public interface VideoGameSeries extends CreativeWorkSeries {
      *
      * @param gamePlatform Text value to set.
      */
-    void setGamePlatform(Text gamePlatform);
+    void addGamePlatform(Text gamePlatform);
     /**
      * The electronic systems used to play <a href="http://en.wikipedia.org/wiki/Category:Video_game_platforms">video games</a>.
      *
      * @param gamePlatform URL value to set.
      */
-    void setGamePlatform(URL gamePlatform);
+    void addGamePlatform(URL gamePlatform);
     /**
      * The electronic systems used to play <a href="http://en.wikipedia.org/wiki/Category:Video_game_platforms">video games</a>.
      *
      * @param gamePlatform Thing value to set.
      */
-    void setGamePlatform(Thing gamePlatform);
+    void addGamePlatform(Thing gamePlatform);
+
+    /**
+     * The number of seasons in this series.
+     *
+     * @return {@link Integer}
+     */
+    List<Integer> getNumberOfSeasonsList();
 
     /**
      * The number of seasons in this series.
@@ -268,7 +381,14 @@ public interface VideoGameSeries extends CreativeWorkSeries {
      *
      * @param numberOfSeasons Integer value to set.
      */
-    void setNumberOfSeasons(Integer numberOfSeasons);
+    void addNumberOfSeasons(Integer numberOfSeasons);
+
+    /**
+     * The composer of the soundtrack.
+     *
+     * @return {@link Person} or {@link MusicGroup}
+     */
+    <T> List<T> getMusicByList();
 
     /**
      * The composer of the soundtrack.
@@ -282,13 +402,20 @@ public interface VideoGameSeries extends CreativeWorkSeries {
      *
      * @param musicBy Person value to set.
      */
-    void setMusicBy(Person musicBy);
+    void addMusicBy(Person musicBy);
     /**
      * The composer of the soundtrack.
      *
      * @param musicBy MusicGroup value to set.
      */
-    void setMusicBy(MusicGroup musicBy);
+    void addMusicBy(MusicGroup musicBy);
+
+    /**
+     * Indicate how many people can play this game (minimum, maximum, or range).
+     *
+     * @return {@link QuantitativeValue}
+     */
+    List<QuantitativeValue> getNumberOfPlayersList();
 
     /**
      * Indicate how many people can play this game (minimum, maximum, or range).
@@ -302,7 +429,14 @@ public interface VideoGameSeries extends CreativeWorkSeries {
      *
      * @param numberOfPlayers QuantitativeValue value to set.
      */
-    void setNumberOfPlayers(QuantitativeValue numberOfPlayers);
+    void addNumberOfPlayers(QuantitativeValue numberOfPlayers);
+
+    /**
+     * The task that a player-controlled character, or group of characters may complete in order to gain a reward.
+     *
+     * @return {@link Thing}
+     */
+    List<Thing> getQuestList();
 
     /**
      * The task that a player-controlled character, or group of characters may complete in order to gain a reward.
@@ -316,7 +450,14 @@ public interface VideoGameSeries extends CreativeWorkSeries {
      *
      * @param quest Thing value to set.
      */
-    void setQuest(Thing quest);
+    void addQuest(Thing quest);
+
+    /**
+     * Real or fictional location of the game (or part of game).
+     *
+     * @return {@link Place} or {@link URL} or {@link PostalAddress}
+     */
+    <T> List<T> getGameLocationList();
 
     /**
      * Real or fictional location of the game (or part of game).
@@ -330,19 +471,26 @@ public interface VideoGameSeries extends CreativeWorkSeries {
      *
      * @param gameLocation Place value to set.
      */
-    void setGameLocation(Place gameLocation);
+    void addGameLocation(Place gameLocation);
     /**
      * Real or fictional location of the game (or part of game).
      *
      * @param gameLocation URL value to set.
      */
-    void setGameLocation(URL gameLocation);
+    void addGameLocation(URL gameLocation);
     /**
      * Real or fictional location of the game (or part of game).
      *
      * @param gameLocation PostalAddress value to set.
      */
-    void setGameLocation(PostalAddress gameLocation);
+    void addGameLocation(PostalAddress gameLocation);
+
+    /**
+     * An episode of a tv, radio or game media within a series or season.
+     *
+     * @return {@link Episode}
+     */
+    List<Episode> getEpisodeList();
 
     /**
      * An episode of a tv, radio or game media within a series or season.
@@ -356,7 +504,14 @@ public interface VideoGameSeries extends CreativeWorkSeries {
      *
      * @param episode Episode value to set.
      */
-    void setEpisode(Episode episode);
+    void addEpisode(Episode episode);
+
+    /**
+     * A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getDirectorsList();
 
     /**
      * A director of e.g. tv, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
@@ -370,5 +525,5 @@ public interface VideoGameSeries extends CreativeWorkSeries {
      *
      * @param directors Person value to set.
      */
-    void setDirectors(Person directors);
+    void addDirectors(Person directors);
 }

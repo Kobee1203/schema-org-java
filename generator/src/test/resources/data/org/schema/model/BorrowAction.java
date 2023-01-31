@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.Person;
 import org.schema.model.Organization;
 
@@ -20,6 +21,13 @@ public interface BorrowAction extends TransferAction {
      *
      * @return {@link Person} or {@link Organization}
      */
+    <T> List<T> getLenderList();
+
+    /**
+     * A sub property of participant. The person that lends the object being borrowed.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
     <T> T getLender();
 
     /**
@@ -27,11 +35,11 @@ public interface BorrowAction extends TransferAction {
      *
      * @param lender Person value to set.
      */
-    void setLender(Person lender);
+    void addLender(Person lender);
     /**
      * A sub property of participant. The person that lends the object being borrowed.
      *
      * @param lender Organization value to set.
      */
-    void setLender(Organization lender);
+    void addLender(Organization lender);
 }

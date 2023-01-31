@@ -5,6 +5,7 @@
  */
 package org.schema.model;
 
+import java.util.List;
 import org.schema.model.PaymentMethod;
 import org.schema.model.DeliveryMethod;
 
@@ -22,6 +23,14 @@ public interface PaymentChargeSpecification extends PriceSpecification {
      * @return {@link PaymentMethod}
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
+    List<PaymentMethod> getAppliesToPaymentMethodList();
+
+    /**
+     * The payment method(s) to which the payment charge specification applies.
+     *
+     * @return {@link PaymentMethod}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
     PaymentMethod getAppliesToPaymentMethod();
 
     /**
@@ -30,7 +39,15 @@ public interface PaymentChargeSpecification extends PriceSpecification {
      * @param appliesToPaymentMethod PaymentMethod value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setAppliesToPaymentMethod(PaymentMethod appliesToPaymentMethod);
+    void addAppliesToPaymentMethod(PaymentMethod appliesToPaymentMethod);
+
+    /**
+     * The delivery method(s) to which the delivery charge or payment charge specification applies.
+     *
+     * @return {@link DeliveryMethod}
+     * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
+     */
+    List<DeliveryMethod> getAppliesToDeliveryMethodList();
 
     /**
      * The delivery method(s) to which the delivery charge or payment charge specification applies.
@@ -46,5 +63,5 @@ public interface PaymentChargeSpecification extends PriceSpecification {
      * @param appliesToDeliveryMethod DeliveryMethod value to set.
      * @see <a href="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms">http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms</a>
      */
-    void setAppliesToDeliveryMethod(DeliveryMethod appliesToDeliveryMethod);
+    void addAppliesToDeliveryMethod(DeliveryMethod appliesToDeliveryMethod);
 }
