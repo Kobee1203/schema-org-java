@@ -32,19 +32,20 @@ public final class SerializerUtils {
     }
 
     public static Type getJavaType(Class<? extends JsonLdDataType<?>> dataTypeClass) {
-        return CACHE.computeIfAbsent(dataTypeClass, clazz -> {
-            Type type = null;
-            Type genericSuperclass = clazz.getGenericSuperclass();
-            while (genericSuperclass != null && !(genericSuperclass instanceof ParameterizedType)) {
-                genericSuperclass = ((Class<?>) genericSuperclass).getGenericSuperclass();
+        return CACHE.computeIfAbsent(dataTypeClass, clazz -> getTypeParameter(clazz.getGenericSuperclass()));
+    }
+
+    public static Type getTypeParameter(Type genericType) {
+        Type type = null;
+        while (genericType != null && !(genericType instanceof ParameterizedType)) {
+            genericType = ((Class<?>) genericType).getGenericSuperclass();
+        }
+        if (genericType != null) {
+            Type[] actualTypeArguments = ((ParameterizedType) genericType).getActualTypeArguments();
+            if (actualTypeArguments.length > 0) {
+                type = actualTypeArguments[0];
             }
-            if (genericSuperclass != null) {
-                Type[] actualTypeArguments = ((ParameterizedType) genericSuperclass).getActualTypeArguments();
-                if (actualTypeArguments.length > 0) {
-                    type = actualTypeArguments[0];
-                }
-            }
-            return type;
-        });
+        }
+        return type;
     }
 }

@@ -2,10 +2,6 @@ package com.weedow.schemaorg.serializer.deserialization.datatype;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationContext;
-import com.fasterxml.jackson.databind.JavaType;
-import com.fasterxml.jackson.databind.JsonDeserializer;
-import com.fasterxml.jackson.databind.deser.std.StdDelegatingDeserializer;
-import com.fasterxml.jackson.databind.util.Converter;
 import com.weedow.schemaorg.commons.model.JsonLdSubTypes;
 import com.weedow.schemaorg.serializer.utils.SerializerUtils;
 import org.slf4j.Logger;
@@ -20,14 +16,9 @@ public class EnumDeserializer extends AbstractTypeDeserializer<Enum<?>> {
 
     private final Class<?> enumType;
 
-    public EnumDeserializer(Class<?> enumType, JavaType delegateType, JsonDeserializer<?> defaultDeserializer) {
-        super(delegateType, defaultDeserializer);
+    public EnumDeserializer(Class<?> enumType) {
+        super(enumType);
         this.enumType = enumType;
-    }
-
-    @Override
-    protected StdDelegatingDeserializer<Enum<?>> withDelegate(Converter<Object, Enum<?>> converter, JavaType delegateType, JsonDeserializer<?> delegateDeserializer) {
-        return this;
     }
 
     @Override

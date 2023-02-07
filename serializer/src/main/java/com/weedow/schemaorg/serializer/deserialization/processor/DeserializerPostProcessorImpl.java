@@ -6,6 +6,7 @@ import com.weedow.schemaorg.commons.model.JsonLdNode;
 import com.weedow.schemaorg.serializer.converter.ConversionService;
 import com.weedow.schemaorg.serializer.converter.ConversionServiceImpl;
 import com.weedow.schemaorg.serializer.deserialization.spec.DataTypeSpecificationService;
+import com.weedow.schemaorg.serializer.utils.SerializerUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -13,6 +14,7 @@ import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class DeserializerPostProcessorImpl implements PostProcessor {
@@ -47,15 +49,35 @@ public class DeserializerPostProcessorImpl implements PostProcessor {
     private void fixObjectFieldValue(Object obj, Field field) {
         Object fieldValue = getFieldValue(obj, field);
         if (fieldValue != null) {
-            if (JsonLdNode.class.isAssignableFrom(fieldValue.getClass()) && !Enum.class.isAssignableFrom(fieldValue.getClass())) {
+            Class<?> fieldValueClass = fieldValue.getClass();
+            if (JsonLdNode.class.isAssignableFrom(fieldValueClass) && !Enum.class.isAssignableFrom(fieldValueClass)) {
                 fixObjectFieldValues(fieldValue);
             } else if (field.getType() == Object.class) {
-                updateObjectFieldValue(obj, field, fieldValue);
+                updateObjectFieldValue(field, fieldValue).ifPresent(o -> setFieldValue(obj, field, o));
+            } else if (field.getType() == List.class) {
+                fixListFieldValue(field, (List<?>) fieldValue);
             }
         }
     }
 
-    private void updateObjectFieldValue(Object obj, Field field, Object fieldValue) {
+    private void fixListFieldValue(Field field, List<?> list) {
+        Class<?> genericType = (Class<?>) SerializerUtils.getTypeParameter(field.getGenericType());
+        for (int i = 0; i < list.size(); i++) {
+            Object value = list.get(i);
+            Class<?> valueClass = value.getClass();
+            if (JsonLdNode.class.isAssignableFrom(valueClass) && !Enum.class.isAssignableFrom(valueClass)) {
+                fixObjectFieldValues(value);
+            } else if (genericType == Object.class) {
+                final int index = i;
+                // noinspection unchecked - required to cast as List<Object>
+                updateObjectFieldValue(field, value).ifPresent(o -> ((List<Object>) list).set(index, o));
+            }
+        }
+    }
+
+    private Optional<?> updateObjectFieldValue(Field field, Object fieldValue) {
+        Optional<?> opt = Optional.empty();
+
         JsonLdFieldTypes jsonLdFieldTypes = field.getDeclaredAnnotation(JsonLdFieldTypes.class);
         if (jsonLdFieldTypes != null) {
             List<Class<? extends JsonLdDataType<?>>> fieldTypes = filterAndSort(jsonLdFieldTypes.value(), fieldValue);
@@ -64,14 +86,17 @@ public class DeserializerPostProcessorImpl implements PostProcessor {
                     JsonLdDataType<?> value = conversionService.convert(fieldValue, fieldType);
 
                     if (value != null) {
-                        setFieldValue(obj, field, fieldType, value);
+                        opt = Optional.of(value);
                         break;
                     }
                 }
             }
         }
+
+        return opt;
     }
 
+    @SuppressWarnings("unchecked")
     private static List<Class<? extends JsonLdDataType<?>>> filterAndSort(Class<?>[] fieldTypes, Object fieldValue) {
         if (isScalarValue(fieldValue)) {
             return Arrays.stream(fieldTypes)
@@ -92,12 +117,12 @@ public class DeserializerPostProcessorImpl implements PostProcessor {
     }
 
     @SuppressWarnings("java:S3011")
-    private static void setFieldValue(Object obj, Field field, Class<? extends JsonLdDataType<?>> fieldType, JsonLdDataType<?> value) {
+    private static void setFieldValue(Object obj, Field field, Object value) {
         try {
             field.setAccessible(true);
             field.set(obj, value);
         } catch (Exception e) {
-            LOG.warn("Could not instantiate {}", fieldType);
+            LOG.warn("Could not set value {} to '{}': {}", value, field.getName(), e.getMessage());
         }
     }
 

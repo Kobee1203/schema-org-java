@@ -73,7 +73,7 @@ public class JsonLdDeserializerImpl implements JsonLdDeserializer {
                                 .allowIfBaseType(Object.class)
                                 .allowIfSubTypeIsArray()
                                 .build(),
-                        ObjectMapper.DefaultTyping.NON_FINAL,
+                        ObjectMapper.DefaultTyping.NON_CONCRETE_AND_ARRAYS,
                         "@type"
                 )
                 .typeFactory(typeFactory)

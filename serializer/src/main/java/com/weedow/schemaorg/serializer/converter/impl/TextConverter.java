@@ -2,8 +2,6 @@ package com.weedow.schemaorg.serializer.converter.impl;
 
 import com.weedow.schemaorg.commons.model.JsonLdDataType;
 
-import java.lang.reflect.Type;
-
 public class TextConverter extends AbstractConverter {
 
     public static final TextConverter INSTANCE = new TextConverter();
@@ -13,7 +11,7 @@ public class TextConverter extends AbstractConverter {
 
     @Override
     @SuppressWarnings("java:S1872")
-    public boolean supports(Class<?> sourceType, Class<? extends JsonLdDataType<?>> jsonLdDataType, Type javaType) {
+    public boolean supports(Class<? extends JsonLdDataType<?>> jsonLdDataType, Class<?> targetType) {
         return jsonLdDataType.getSimpleName().equals("Text");
     }
 

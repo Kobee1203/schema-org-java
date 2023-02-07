@@ -8,6 +8,7 @@ import com.weedow.schemaorg.serializer.JsonLdException;
 import com.weedow.schemaorg.serializer.data.Example;
 import com.weedow.schemaorg.serializer.data.ObjectDataTypeExample;
 import org.assertj.core.api.Assertions;
+import org.assertj.core.api.InstanceOfAssertFactories;
 import org.junit.jupiter.api.Test;
 import org.schema.model.datatype.Boolean;
 import org.schema.model.datatype.Float;
@@ -21,6 +22,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.Month;
+import java.util.List;
 import java.util.Map;
 
 @TestWithResources
@@ -49,7 +51,7 @@ class JsonLdDeserializerImplTest {
     }
 
     @Test
-    void deserialize_all_data_types(@GivenTextResource("/data/Example.json") String json) throws JsonLdException, MalformedURLException {
+    void deserialize_all_data_types(@GivenTextResource("/data/Example.json") String json) throws JsonLdException {
         JsonLdDeserializer jsonLdDeserializer = new JsonLdDeserializerImpl(Map.of("Example", Example.class));
         Example result = jsonLdDeserializer.deserialize(json);
 
@@ -69,7 +71,7 @@ class JsonLdDeserializerImplTest {
     }
 
     @Test
-    void deserialize_thing(@GivenTextResource("/data/Thing.json") String json) throws JsonLdException, MalformedURLException {
+    void deserialize_thing(@GivenTextResource("/data/Thing.json") String json) throws JsonLdException {
         JsonLdDeserializer jsonLdDeserializer = new JsonLdDeserializerImpl();
         JsonLdNode result = jsonLdDeserializer.deserialize(json);
 
@@ -80,7 +82,61 @@ class JsonLdDeserializerImplTest {
     }
 
     @Test
-    void deserialize_complex_object(@GivenTextResource("/data/Hotel.json") String json) throws JsonLdException, MalformedURLException {
+    void deserialize_thing_with_multiple_values_by_field(@GivenTextResource("/data/Thing_mutliple_values_by_field.json") String json) throws JsonLdException, MalformedURLException {
+        JsonLdDeserializer jsonLdDeserializer = new JsonLdDeserializerImpl();
+        JsonLdNode result = jsonLdDeserializer.deserialize(json);
+
+        Assertions.assertThat(result).isInstanceOf(ThingImpl.class);
+
+        ThingImpl thing = (ThingImpl) result;
+
+        Assertions.assertThat(thing.getContext()).isEqualTo("https://schema.org");
+        Assertions.assertThat(thing.getId()).isEqualTo("my_id");
+        Assertions.assertThat(thing.getName()).extracting("value").isEqualTo("My Thing");
+        Assertions.assertThat(thing.getNameList()).extracting("value").containsExactly("My Thing");
+        Assertions.assertThat(thing.getDescription()).extracting("value").isEqualTo("This is my thing.");
+        Assertions.assertThat(thing.getDescriptionList()).extracting("value").containsExactly("This is my thing.");
+        Assertions.assertThat(thing.getUrlList()).extracting("value").containsExactly(
+                "https://github.com/Kobee1203/schema-org-java",
+                "https://github.com/Kobee1203/schema-org-java/2"
+        );
+        List<Object> identifiers = thing.getIdentifierList();
+        Assertions.assertThat(identifiers).hasSize(2);
+        Assertions.assertThat(identifiers.get(0))
+                .isInstanceOf(PropertyValueImpl.class)
+                .extracting("valueList", InstanceOfAssertFactories.list(List.class))
+                .extracting("value")
+                .containsExactly(123456, 789012);
+
+        Object identifier2 = identifiers.get(1);
+        Assertions.assertThat(identifier2).isInstanceOf(PropertyValueImpl.class);
+        PropertyValueImpl pv2 = (PropertyValueImpl) identifier2;
+
+        List<Object> valueList = pv2.getValueList();
+        Assertions.assertThat(valueList).hasSize(3);
+        Assertions.assertThat(valueList.get(0)).isInstanceOf(Number.class).extracting("value").isEqualTo(10203040);
+        Assertions.assertThat(valueList.get(1)).isInstanceOf(Text.class).extracting("value").isEqualTo("ABC-50607080");
+        Object value3 = valueList.get(2);
+        Assertions.assertThat(value3).isInstanceOf(StructuredValueImpl.class);
+
+        StructuredValueImpl sv = (StructuredValueImpl) value3;
+        Assertions.assertThat(sv.getName())
+                .extracting("value")
+                .isEqualTo("Special Identifier");
+        Assertions.assertThat(sv.getIdentifierList()).hasSize(1);
+        Assertions.assertThat(sv.getIdentifierList().get(0))
+                .isInstanceOf(URL.class)
+                .extracting("value")
+                .isEqualTo("https://github.com/Kobee1203/schema-org-java");
+
+        Object subjectOf = thing.getSubjectOf();
+        Assertions.assertThat(subjectOf).isInstanceOf(CreativeWorkImpl.class)
+                .extracting("isAccessibleForFree.value", "isFamilyFriendly.value")
+                .containsExactly(true, false);
+    }
+
+    @Test
+    void deserialize_complex_object(@GivenTextResource("/data/Hotel.json") String json) throws JsonLdException {
         JsonLdDeserializer jsonLdDeserializer = new JsonLdDeserializerImpl();
         JsonLdNode result = jsonLdDeserializer.deserialize(json);
 
@@ -109,7 +165,7 @@ class JsonLdDeserializerImplTest {
     }
 
     @Test
-    void deserialize_complex_datatype_object(@GivenTextResource("/data/ObjectTypeExample.json") String json) throws JsonLdException {
+    void deserialize_complex_datatype_object(@GivenTextResource("/data/ObjectDataTypeExample.json") String json) throws JsonLdException {
         JsonLdDeserializer jsonLdDeserializer = new JsonLdDeserializerImpl("com.weedow.schemaorg.serializer.data");
         JsonLdNode result = jsonLdDeserializer.deserialize(json);
 

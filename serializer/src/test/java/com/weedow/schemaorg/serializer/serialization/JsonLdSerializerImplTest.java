@@ -83,6 +83,41 @@ class JsonLdSerializerImplTest {
     }
 
     @Test
+    void serialize_thing_with_multiple_values_by_field(@GivenTextResource("/data/Thing_mutliple_values_by_field.json") String expected) throws JsonLdException, MalformedURLException {
+        final JsonLdSerializer jsonLdSerializer = new JsonLdSerializerImpl(JsonLdSerializerOptions.builder().prettyPrint(true).build());
+
+        Thing thing = new ThingImpl();
+        thing.setId("my_id");
+        thing.addName(Text.of("My Thing"));
+        thing.addDescription(Text.of("This is my thing."));
+        thing.addUrl(URL.of(new java.net.URL("https://github.com/Kobee1203/schema-org-java")));
+        thing.addUrl(URL.of(new java.net.URL("https://github.com/Kobee1203/schema-org-java/2")));
+
+        PropertyValue propertyValue1 = new PropertyValueImpl();
+        propertyValue1.addValue(Number.of(123456));
+        propertyValue1.addValue(Number.of(789012));
+        thing.addIdentifier(propertyValue1);
+
+        PropertyValue propertyValue2 = new PropertyValueImpl();
+        propertyValue2.addValue(Number.of(10203040));
+        propertyValue2.addValue(Text.of("ABC-50607080"));
+        StructuredValue structuredValue = new StructuredValueImpl();
+        structuredValue.addName(Text.of("Special Identifier"));
+        structuredValue.addIdentifier(URL.of("https://github.com/Kobee1203/schema-org-java"));
+        propertyValue2.addValue(structuredValue);
+        thing.addIdentifier(propertyValue2);
+
+        CreativeWork subjectOf = new CreativeWorkImpl();
+        subjectOf.addIsAccessibleForFree(Boolean.of(true));
+        subjectOf.addIsFamilyFriendly(Boolean.of(false));
+        thing.addSubjectOf(subjectOf);
+
+        String result = jsonLdSerializer.serialize(thing);
+
+        assertThatJson(result).isEqualTo(expected);
+    }
+
+    @Test
     void serialize_complex_object(@GivenTextResource("/data/Hotel.json") String expected) throws JsonLdException, MalformedURLException {
         final JsonLdSerializer jsonLdSerializer = new JsonLdSerializerImpl(JsonLdSerializerOptions.builder().prettyPrint(true).build());
 
@@ -135,7 +170,7 @@ class JsonLdSerializerImplTest {
     }
 
     @Test
-    void serialize_complex_datatype_object(@GivenTextResource("/data/ObjectTypeExample.json") String expected) throws JsonLdException {
+    void serialize_complex_datatype_object(@GivenTextResource("/data/ObjectDataTypeExample.json") String expected) throws JsonLdException {
         final JsonLdSerializer jsonLdSerializer = new JsonLdSerializerImpl(JsonLdSerializerOptions.builder().prettyPrint(true).build());
 
         ObjectDataTypeExample example = new ObjectDataTypeExample();
