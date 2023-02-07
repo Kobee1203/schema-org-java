@@ -268,9 +268,11 @@ final class SerializerUtils {
 
     Thing thing = new ThingImpl();
     thing.setId("my_id");
-    thing.setName(Text.of("My Thing"));
-    thing.setDescription(Text.of("This is my thing."));
-    thing.setUrl(URL.of(new java.net.URL("https://github.com/Kobee1203/schema-org-java")));
+    thing.addName(Text.of("My Thing"));
+    thing.addDescription(Text.of("This is my thing."));
+    thing.addtUrl(URL.of(new java.net.URL("https://github.com/Kobee1203/schema-org-java")));
+    thing.addAlternateName(Text.of("My Part"));
+    thing.addAlternateName(Text.of("My Object"));
 
     String result = null;
     try {
@@ -286,7 +288,7 @@ final class SerializerUtils {
 This example will give the following result:
 
 ```json
-{"@context":"https://schema.org","@id":"my_id","@type":"Thing","description":"This is my thing.","name":"My Thing","url":"https://github.com/Kobee1203/schema-org-java"}
+{"@context":"https://schema.org","@id":"my_id","@type":"Thing","alternateName":["My Part","My Object"],"description":"This is my thing.","name":"My Thing","url":"https://github.com/Kobee1203/schema-org-java"}
 ```
 
 There is another constructor that receives options as parameters.\
@@ -311,9 +313,11 @@ final class SerializerUtils {
 
     Thing thing = new ThingImpl();
     thing.setId("my_id");
-    thing.setName(Text.of("My Thing"));
-    thing.setDescription(Text.of("This is my thing."));
-    thing.setUrl(URL.of(new java.net.URL("https://github.com/Kobee1203/schema-org-java")));
+    thing.addName(Text.of("My Thing"));
+    thing.addDescription(Text.of("This is my thing."));
+    thing.addUrl(URL.of(new java.net.URL("https://github.com/Kobee1203/schema-org-java")));
+    thing.addAlternateName(Text.of("My Part"));
+    thing.addAlternateName(Text.of("My Object"));
 
     String result = null;
     try {
@@ -333,6 +337,7 @@ This example will give the following result:
   "@context" : "https://schema.org",
   "@id" : "my_id",
   "@type" : "Thing",
+  "alternateName" : [ "My Part", "My Object" ],
   "description" : "This is my thing.",
   "name" : "My Thing",
   "url" : "https://github.com/Kobee1203/schema-org-java"
@@ -359,7 +364,7 @@ final class DeserializerUtils {
 }
 ```
 
-There is another constructor that receives a Map other types allowed by the deserializer.\
+There is another constructor that receives a Map other types allowed by the deserializer.
 - Map key: `@type` value
 - Map value: Class
 
