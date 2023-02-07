@@ -59,7 +59,7 @@ final class SerializerUtils {
     thing.setId("my_id");
     thing.addName(Text.of("My Thing"));
     thing.addDescription(Text.of("This is my thing."));
-    thing.addtUrl(URL.of(new java.net.URL("https://github.com/Kobee1203/schema-org-java")));
+    thing.addUrl(URL.of(new java.net.URL("https://github.com/Kobee1203/schema-org-java")));
     thing.addAlternateName(Text.of("My Part"));
     thing.addAlternateName(Text.of("My Object"));
 
