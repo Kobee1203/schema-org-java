@@ -57,7 +57,7 @@
         <sonar.coverage.exclusions>**/generated-sources/**</sonar.coverage.exclusions>
 
         <!-- Dependencies -->
-        <lombok.version>1.18.24</lombok.version>
+        <lombok.version>1.18.26</lombok.version>
         <logback-classic.version>1.4.5</logback-classic.version>
         <jackson.version>2.14.2</jackson.version>
         <handlebars-helpers.version>4.3.1</handlebars-helpers.version>
